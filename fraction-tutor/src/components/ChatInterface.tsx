@@ -4,6 +4,7 @@ import InputArea from './InputArea';
 import ProgressIndicator from './ProgressIndicator';
 import GeminiService from '../services/geminiService';
 import { useAuth } from '../contexts/AuthContext';
+import { useTheme } from '../hooks/useTheme';
 import { progressService } from '../services/progressService';
 import { sessionStorage } from '../services/sessionStorage';
 import { useSessionPersistence } from '../hooks/useSessionPersistence';
@@ -24,6 +25,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   resumeFromSession = false
 }) => {
   const { user, signInWithGoogle } = useAuth();
+  const { theme } = useTheme();
   const [state, setState] = useState<ConversationState>({
     messages: [],
     currentDifficulty: 'easy',
@@ -408,68 +410,100 @@ const handleStudentSubmit = async (input: string) => {
   const topicDisplayName = currentTopicConfig?.displayName || 'Fraction Division';
 
   return (
-    <div className="flex flex-col h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 scroll-smooth">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 shadow-lg">
-        <div className="max-w-4xl mx-auto flex justify-between items-center p-6">
-          <div className="flex items-center space-x-3">
-            {/* Back Button */}
-            {onBackToTopics && (
-              <button
-                onClick={onBackToTopics}
-                className="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
-                title="Back to topic selection"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-            )}
+    <div
+      className="flex flex-col h-full scroll-smooth"
+      style={{
+        backgroundColor: theme.colors.chat,
+        color: theme.colors.textPrimary,
+      }}
+    >
+      {/* Header with topic info and progress */}
+      <div
+        className="flex items-center justify-between px-6 py-4 border-b"
+        style={{
+          borderColor: theme.colors.border,
+          backgroundColor: theme.colors.chat,
+        }}
+      >
+        <div className="flex items-center space-x-3">
+          {/* Back Button */}
+          {onBackToTopics && (
+            <button
+              onClick={onBackToTopics}
+              className="w-8 h-8 rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2"
+              style={{
+                backgroundColor: theme.colors.interactive,
+                color: theme.colors.textSecondary,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = theme.colors.brand;
+                e.currentTarget.style.color = '#ffffff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = theme.colors.interactive;
+                e.currentTarget.style.color = theme.colors.textSecondary;
+              }}
+              title="Back to topic selection"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          )}
 
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-2xl shadow-md">
-              ➗
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-white">
-                {topicDisplayName}
-              </h1>
-              <p className="text-blue-100 text-sm">Master fractions step by step!</p>
-            </div>
+          <div
+            className="w-8 h-8 rounded-full flex items-center justify-center text-lg text-white"
+            style={{ backgroundColor: theme.colors.brand }}
+          >
+            ➗
           </div>
-          <div className="flex items-center space-x-4">
-            <ProgressIndicator stats={state.sessionStats} currentScore={currentScore} />
+          <div>
+            <h1 className="text-lg font-semibold" style={{ color: theme.colors.textPrimary }}>
+              {topicDisplayName}
+            </h1>
+            <p className="text-sm" style={{ color: theme.colors.textMuted }}>Master fractions step by step!</p>
+          </div>
+        </div>
 
-            {/* Auth Button */}
-            {user ? (
-              <div className="flex items-center space-x-3">
-                <img
-                  src={user.photoURL || undefined}
-                  alt={user.displayName || 'User'}
-                  className="w-8 h-8 rounded-full bg-white/20"
-                />
-                <button
-                  onClick={() => {/* Add logout logic if needed */}}
-                  className="text-white/80 hover:text-white text-sm"
-                  title="Signed in"
-                >
-                  {user.displayName?.split(' ')[0] || 'User'}
-                </button>
-              </div>
-            ) : (
+        <div className="flex items-center space-x-3">
+          <ProgressIndicator stats={state.sessionStats} currentScore={currentScore} />
+
+          {/* Auth Button */}
+          {user ? (
+            <div className="flex items-center space-x-3">
+              <img
+                src={user.photoURL || undefined}
+                alt={user.displayName || 'User'}
+                className="w-7 h-7 rounded-full"
+                style={{ backgroundColor: theme.colors.interactive }}
+              />
               <button
-                onClick={async () => {
-                  try {
-                    await signInWithGoogle();
-                  } catch (error) {
-                    console.error('Sign-in failed:', error);
-                  }
-                }}
-                className="bg-white/20 backdrop-blur hover:bg-white/30 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+                onClick={() => {/* Add logout logic if needed */}}
+                className="text-sm hover:underline"
+                style={{ color: theme.colors.textSecondary }}
+                title="Signed in"
               >
-                Sign In
+                {user.displayName?.split(' ')[0] || 'User'}
               </button>
-            )}
-          </div>
+            </div>
+          ) : (
+            <button
+              onClick={async () => {
+                try {
+                  await signInWithGoogle();
+                } catch (error) {
+                  console.error('Sign-in failed:', error);
+                }
+              }}
+              className="px-3 py-1.5 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2"
+              style={{
+                backgroundColor: theme.colors.brand,
+                color: '#ffffff',
+              }}
+            >
+              Sign In
+            </button>
+          )}
         </div>
       </div>
 
@@ -482,26 +516,42 @@ const handleStudentSubmit = async (input: string) => {
           {isLoading && (
             <div className="flex items-start space-x-3 justify-start">
               {/* Tutor Avatar */}
-              <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-md">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg text-white shadow-md"
+                style={{ backgroundColor: theme.colors.brand }}
+              >
                 🧠
               </div>
 
               {/* Loading Message */}
-              <div className="relative bg-white border border-gray-100 rounded-2xl px-5 py-4 shadow-sm max-w-lg">
+              <div
+                className="relative rounded-2xl px-5 py-4 shadow-sm max-w-lg border"
+                style={{
+                  backgroundColor: theme.colors.tutorMessage,
+                  borderColor: theme.colors.border,
+                  color: theme.colors.textPrimary,
+                }}
+              >
                 {/* Message tail */}
-                <div className="absolute top-4 w-3 h-3 transform rotate-45 bg-white border-l border-t border-gray-100 -left-1.5" />
+                <div
+                  className="absolute top-4 w-3 h-3 transform rotate-45 border-l border-t -left-1.5"
+                  style={{
+                    backgroundColor: theme.colors.tutorMessage,
+                    borderColor: theme.colors.border,
+                  }}
+                />
 
-                <div className="text-xs font-semibold mb-2 text-blue-600">
+                <div className="text-xs font-semibold mb-2" style={{ color: theme.colors.textAccent }}>
                   Math Tutor
                 </div>
 
                 <div className="flex items-center space-x-2">
                   <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" />
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
-                    <div className="w-2 h-2 bg-teal-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                    <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: theme.colors.brand }} />
+                    <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: theme.colors.brand, animationDelay: '0.1s' }} />
+                    <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: theme.colors.brand, animationDelay: '0.2s' }} />
                   </div>
-                  <span className="text-sm text-gray-500 ml-2">Thinking...</span>
+                  <span className="text-sm ml-2" style={{ color: theme.colors.textMuted }}>Thinking...</span>
                 </div>
               </div>
             </div>
