@@ -25,15 +25,67 @@ const RightPanel: React.FC<RightPanelProps> = ({ isCollapsed, width, layoutActio
     { id: '2', content: 'When dividing fractions, multiply by reciprocal', timestamp: new Date() },
   ]);
 
-  if (isCollapsed) {
-    return null;
-  }
-
   const tabs = [
     { id: 'scratchpad', label: 'Scratch Pad', icon: '📝' },
     { id: 'visualizer', label: 'Visualizer', icon: '📊' },
     { id: 'notes', label: 'Notes', icon: '📋' },
   ];
+
+  if (isCollapsed) {
+    return (
+      <div
+        className="h-full flex flex-col items-center py-4 space-y-4 relative z-10"
+        style={{
+          width: 60,
+          background: theme.glass.background,
+          borderLeft: `1px solid ${theme.glass.border}`,
+          backdropFilter: theme.glass.backdrop,
+        }}
+      >
+        {/* Expand Button */}
+        <button
+          onClick={layoutActions.toggleRightPanel}
+          className="p-3 rounded-lg transition-all duration-200 hover:scale-105"
+          style={{
+            backgroundColor: theme.colors.interactive,
+            color: theme.colors.textSecondary,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = theme.colors.brand;
+            e.currentTarget.style.color = '#ffffff';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = theme.colors.interactive;
+            e.currentTarget.style.color = theme.colors.textSecondary;
+          }}
+          title="Expand Scratch Pad"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </button>
+
+        {/* Tool Icons */}
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => {
+              setActiveTab(tab.id as any);
+              layoutActions.toggleRightPanel();
+            }}
+            className="p-2 rounded-lg transition-all duration-200 hover:scale-105"
+            style={{
+              backgroundColor: activeTab === tab.id ? theme.colors.brand : theme.colors.interactive,
+              color: activeTab === tab.id ? '#ffffff' : theme.colors.textSecondary,
+            }}
+            title={tab.label}
+          >
+            <span className="text-lg">{tab.icon}</span>
+          </button>
+        ))}
+      </div>
+    );
+  }
 
   const addNote = () => {
     if (scratchContent.trim()) {
@@ -75,7 +127,7 @@ const RightPanel: React.FC<RightPanelProps> = ({ isCollapsed, width, layoutActio
 
   return (
     <div
-      className="h-full flex flex-col relative z-50 animate-slide-up"
+      className="h-full flex flex-col relative z-10 animate-slide-up"
       style={{
         width,
         background: theme.glass.background,

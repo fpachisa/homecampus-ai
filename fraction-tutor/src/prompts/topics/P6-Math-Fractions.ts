@@ -47,7 +47,7 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
       hard: `Generate a word problem for dividing a proper fraction by a whole number.
 
 Examples of appropriate problems:
-- "A contractor has 7/8 of a tin of paint left. If he uses equal amounts for 5 different rooms, how much paint per room?"
+- "A contractor has 7/8 of a tin of paint left. If he uses equal amounts for 5 different rooms, how much paint is used per room?"
 - "You have 5/12 of your monthly data allowance left. Dividing it equally across 4 devices, what fraction does each device get?"
 
 Guidelines:
@@ -57,6 +57,18 @@ Guidelines:
 - Include scenarios where simplification is needed
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`
+    },
+
+    VISUALIZATION_CONFIG: {
+      easy: {
+        visualizationId: "bar-division-simple"
+      },
+      medium: {
+        visualizationId: "bar-division-complex"
+      },
+      hard: {
+        visualizationId: "bar-division-complex"
+      }
     },
 
     SCORING_CONFIG: {
@@ -127,6 +139,18 @@ Guidelines:
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`
     },
 
+    VISUALIZATION_CONFIG: {
+      easy: {
+        visualizationId: "grouping-model"
+      },
+      medium: {
+        visualizationId: "grouping-model"
+      },
+      hard: {
+        visualizationId: "grouping-model"
+      }
+    },
+
     SCORING_CONFIG: {
       points: {
         easy: 0.11,
@@ -184,6 +208,18 @@ Guidelines:
 - Choose fraction pairs that result in whole number answers if it's a real life situation like number of scoops or pizza slices
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`
+    },
+
+    VISUALIZATION_CONFIG: {
+      easy: {
+        visualizationId: "step-by-step-solution"
+      },
+      medium: {
+        visualizationId: "step-by-step-solution"
+      },
+      hard: {
+        visualizationId: "step-by-step-solution"
+      }
     },
 
     SCORING_CONFIG: {
@@ -247,6 +283,18 @@ Guidelines:
 - May involve converting between different units or concepts
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`
+    },
+
+    VISUALIZATION_CONFIG: {
+      easy: {
+        visualizationId: "bar-division-simple"
+      },
+      medium: {
+        visualizationId: "bar-division-complex"
+      },
+      hard: {
+        visualizationId: "step-by-step-solution"
+      }
     },
 
     SCORING_CONFIG: {

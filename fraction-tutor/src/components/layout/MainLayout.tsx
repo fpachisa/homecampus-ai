@@ -84,15 +84,14 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
         className="absolute inset-0 opacity-30"
         style={{
           backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(88, 101, 242, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(71, 82, 196, 0.05) 0%, transparent 50%)',
+          pointerEvents: 'none',
         }}
       />
       {/* Left Panel - Topics */}
       <div
-        className={`flex-shrink-0 transition-all duration-300 ease-in-out ${
-          layoutState.leftPanelCollapsed ? 'w-0' : ''
-        }`}
+        className="flex-shrink-0 transition-all duration-300 ease-in-out"
         style={{
-          width: layoutState.leftPanelCollapsed ? 0 : layoutState.leftPanelWidth,
+          width: layoutState.leftPanelCollapsed ? 60 : layoutState.leftPanelWidth,
         }}
       >
         <LeftPanel
@@ -161,11 +160,9 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
 
       {/* Right Panel - Scratch Pad */}
       <div
-        className={`flex-shrink-0 transition-all duration-300 ease-in-out ${
-          layoutState.rightPanelCollapsed ? 'w-0' : ''
-        }`}
+        className="flex-shrink-0 transition-all duration-300 ease-in-out"
         style={{
-          width: layoutState.rightPanelCollapsed ? 0 : layoutState.rightPanelWidth,
+          width: layoutState.rightPanelCollapsed ? 60 : layoutState.rightPanelWidth,
         }}
       >
         <RightPanel
@@ -175,41 +172,6 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
         />
       </div>
 
-      {/* Floating Toggle Buttons for Collapsed Panels */}
-      {layoutState.leftPanelCollapsed && (
-        <button
-          onClick={layoutActions.toggleLeftPanel}
-          className="fixed left-4 top-20 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 animate-float"
-          style={{
-            background: theme.gradients.brand,
-            color: '#ffffff',
-            boxShadow: theme.shadows.glow,
-          }}
-          title="Show Topics Panel"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      )}
-
-      {layoutState.rightPanelCollapsed && (
-        <button
-          onClick={layoutActions.toggleRightPanel}
-          className="fixed right-4 top-20 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 animate-float"
-          style={{
-            background: theme.gradients.brand,
-            color: '#ffffff',
-            boxShadow: theme.shadows.glow,
-            animationDelay: '0.2s',
-          }}
-          title="Show Scratch Pad"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-        </button>
-      )}
 
       {/* Mobile Overlay for Panels */}
       {isMobile && (!layoutState.leftPanelCollapsed || !layoutState.rightPanelCollapsed) && (

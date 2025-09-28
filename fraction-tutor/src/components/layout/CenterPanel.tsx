@@ -131,7 +131,7 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
         </div>
 
         {/* Chat Interface Container */}
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1">
           <ChatInterface
             topicId={appState.selectedTopic}
             resumeFromSession={appState.resumeSession}

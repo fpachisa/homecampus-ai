@@ -237,7 +237,8 @@ const initializeConversation = async () => {
   const addMessage = (
     role: 'tutor' | 'student',
     content: string,
-    metadata?: Message['metadata']
+    metadata?: Message['metadata'],
+    visualization?: import('../types/visualization').VisualizationData
   ) => {
     // Prevent empty messages from being added
     if (!content || !content.trim()) {
@@ -250,7 +251,8 @@ const initializeConversation = async () => {
       role,
       content: content.trim(),
       timestamp: new Date(),
-      metadata
+      metadata,
+      visualization
     };
 
     setState(prev => ({
@@ -368,7 +370,32 @@ const handleStudentSubmit = async (input: string) => {
       console.log('Tutor response:', tutorResponse);
 
       // STEP 5: Add tutor response and handle state updates
-      addMessage('tutor', tutorResponse);
+      // Check if visualization is requested and extract visualization data
+      let visualizationData = null;
+      if (instruction.includeVisualization && problemState) {
+        try {
+          // Get visualization ID from topic config
+          const topicConfig = (await import('../prompts/topics/P6-Math-Fractions')).P6_MATH_FRACTIONS;
+          const config = topicConfig[topicId as keyof typeof topicConfig];
+          if (config && config.VISUALIZATION_CONFIG) {
+            const visualizationId = config.VISUALIZATION_CONFIG[problemState.difficulty]?.visualizationId;
+            if (visualizationId) {
+              console.log('Extracting visualization data for:', visualizationId);
+              visualizationData = await geminiService.current.extractVisualizationData(
+                problemState.currentProblemText,
+                visualizationId,
+                instruction.action === 'GIVE_SOLUTION' ? 'solution' : 'hint',
+                topicId
+              );
+              console.log('Extracted visualization data:', visualizationData);
+            }
+          }
+        } catch (error) {
+          console.error('Error extracting visualization data:', error);
+        }
+      }
+
+      addMessage('tutor', tutorResponse, undefined, visualizationData || undefined);
 
       // If instruction was to give a new problem, reset problem state with correct difficulty
       if (instruction.action === "NEW_PROBLEM") {
@@ -508,7 +535,10 @@ const handleStudentSubmit = async (input: string) => {
       </div>
 
       {/* Chat Messages */}
-      <div className="flex-1 overflow-y-auto">
+      <div
+        className="overflow-y-auto"
+        style={{ height: 0, flexGrow: 1 }}
+      >
         <div className="max-w-4xl mx-auto p-6 space-y-6">
           {state.messages.map(message => (
             <MessageBubble key={message.id} message={message} />

@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { GeminiResponse, Message, AnswerEvaluation, EvaluatorInstruction, ProblemState } from '../types/types';
+import type { VisualizationData } from '../types/visualization';
 import { promptResolver } from '../prompts/promptResolver';
 
 class GeminiService {
@@ -383,6 +384,69 @@ const prompt = promptResolver.resolveAnswerEvaluation({
         answerType: "intermediate" as const,
         isMainProblemSolved: false
       };
+    }
+  }
+
+  /**
+   * Extract visualization data from problem text using LLM
+   * Takes a problem and returns structured data for visualization components
+   */
+  async extractVisualizationData(
+    problemText: string,
+    visualizationId: string,
+    trigger: 'solution' | 'hint' | 'explanation',
+    topicId: string
+  ): Promise<VisualizationData | null> {
+    const prompt = promptResolver.resolveVisualizationExtraction({
+      topicId: topicId as any,
+      problemText,
+      visualizationId,
+      trigger
+    });
+
+    console.log('=== VISUALIZATION EXTRACTION DEBUG ===');
+    console.log('Problem text:', problemText);
+    console.log('Visualization ID:', visualizationId);
+    console.log('Trigger:', trigger);
+    console.log('Full prompt:', prompt);
+    console.log('======================================');
+
+    try {
+      const result = await this.model.generateContent(prompt);
+      const responseText = result.response.text().trim();
+
+      console.log('Visualization extraction raw response:', responseText);
+
+      if (!responseText) {
+        console.warn('Empty response from visualization extraction');
+        return null;
+      }
+
+      // Clean and parse JSON response
+      let cleanedText = responseText;
+      if (cleanedText.startsWith('```json')) {
+        cleanedText = cleanedText.replace(/```json\s*/, '').replace(/\s*```$/, '');
+      } else if (cleanedText.startsWith('```')) {
+        cleanedText = cleanedText.replace(/```\s*/, '').replace(/\s*```$/, '');
+      }
+
+      const visualizationData = JSON.parse(cleanedText);
+      console.log('Parsed visualization data:', visualizationData);
+
+      // Validate the structure
+      if (!visualizationData.problemData || !visualizationData.stages || !visualizationData.contextualLabels) {
+        console.warn('Invalid visualization data structure:', visualizationData);
+        return null;
+      }
+
+      // Ensure visualization ID is set
+      visualizationData.visualizationId = visualizationId;
+      visualizationData.trigger = trigger;
+
+      return visualizationData as VisualizationData;
+    } catch (error) {
+      console.error('Visualization extraction error:', error);
+      return null;
     }
   }
 }

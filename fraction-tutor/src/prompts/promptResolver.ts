@@ -19,6 +19,11 @@ export interface PromptContext {
   evaluatorInstruction?: string;
   hintLevel?: number;
   evaluatorReasoning?: string;
+
+// New fields for visualization extraction
+  problemText?: string;
+  visualizationId?: string;
+  trigger?: 'solution' | 'hint' | 'explanation';
 }
 
 export class PromptResolver {
@@ -156,6 +161,69 @@ Response format: [Acknowledgment] + [Transition] + [New Problem]`;
   getTopicScoringConfig(topicId: TopicId) {
     const config = this.getTopicConfig(topicId);
     return config.SCORING_CONFIG;
+  }
+
+  resolveVisualizationExtraction(context: PromptContext): string {
+    const config = this.getTopicConfig(context.topicId);
+
+    return `You are a specialized AI agent that extracts mathematical data from fraction division problems for visualization purposes.
+
+TOPIC: ${config.topicName}
+PROBLEM TEXT: ${context.problemText}
+VISUALIZATION TYPE: ${context.visualizationId}
+TRIGGER: ${context.trigger}
+
+Your task is to analyze the fraction division problem and extract the numerical data and context needed for visualization.
+
+For problems like "You have 3/4 cup of flour and want to divide it equally among 3 loaves. How much flour per loaf?":
+
+Extract:
+1. numerator: 3 (from 3/4)
+2. denominator: 4 (from 3/4)
+3. divisor: 3 (number of groups/parts)
+4. context: descriptive context (e.g., "flour-loaves", "pizza-friends", "ribbon-pieces")
+
+Generate appropriate visualization stages:
+- Stage 1: Show original fraction
+- Stage 2: Show division/partitioning
+- Stage 3: Show result per group
+
+Create contextual labels that match the problem scenario.
+
+IMPORTANT: Return ONLY valid JSON in this exact format:
+{
+  "problemData": {
+    "numerator": number,
+    "denominator": number,
+    "divisor": number,
+    "context": "string"
+  },
+  "stages": [
+    {
+      "id": "original",
+      "title": "Original Amount",
+      "description": "You start with [amount]",
+      "duration": 2000
+    },
+    {
+      "id": "partition",
+      "title": "Divide into Groups",
+      "description": "Split the [amount] into [divisor] equal parts",
+      "duration": 3000
+    },
+    {
+      "id": "result",
+      "title": "Result",
+      "description": "Each part gets [result amount]",
+      "duration": 2000
+    }
+  ],
+  "contextualLabels": {
+    "original": "[amount description]",
+    "division": "[divisor description]",
+    "result": "[result description]"
+  }
+}`;
   }
 }
 

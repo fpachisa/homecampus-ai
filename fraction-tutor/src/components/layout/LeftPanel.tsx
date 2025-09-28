@@ -37,7 +37,73 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   const sessionInfo = sessionStorage.getSessionInfo();
 
   if (isCollapsed) {
-    return null;
+    return (
+      <div
+        className="h-full flex flex-col items-center py-4 space-y-4 relative z-10"
+        style={{
+          width: 60,
+          background: theme.glass.background,
+          borderRight: `1px solid ${theme.glass.border}`,
+          backdropFilter: theme.glass.backdrop,
+        }}
+      >
+        {/* Expand Button */}
+        <button
+          onClick={layoutActions.toggleLeftPanel}
+          className="p-3 rounded-lg transition-all duration-200 hover:scale-105"
+          style={{
+            backgroundColor: theme.colors.interactive,
+            color: theme.colors.textSecondary,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = theme.colors.brand;
+            e.currentTarget.style.color = '#ffffff';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = theme.colors.interactive;
+            e.currentTarget.style.color = theme.colors.textSecondary;
+          }}
+          title="Expand Topics Panel"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        {/* Topic Icons */}
+        {topicConfigs.slice(0, 3).map((topic) => (
+          <button
+            key={topic.id}
+            onClick={() => handleTopicSelect(topic.id)}
+            className="p-2 rounded-lg transition-all duration-200 hover:scale-105"
+            style={{
+              backgroundColor: appState.selectedTopic === topic.id ? theme.colors.brand : theme.colors.interactive,
+              color: appState.selectedTopic === topic.id ? '#ffffff' : theme.colors.textSecondary,
+            }}
+            title={topic.name}
+          >
+            <span className="text-lg">{topic.icon}</span>
+          </button>
+        ))}
+
+        {/* Session Resume Button if available */}
+        {sessionInfo && (
+          <button
+            onClick={handleResumeSession}
+            className="p-2 rounded-lg transition-all duration-200 hover:scale-105 mt-auto"
+            style={{
+              backgroundColor: theme.colors.brand,
+              color: '#ffffff',
+            }}
+            title="Resume Session"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8a2 2 0 002-2V6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
+            </svg>
+          </button>
+        )}
+      </div>
+    );
   }
 
   const filteredTopics = topicConfigs.filter(topic =>
@@ -47,7 +113,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
 
   return (
     <div
-      className="h-full flex flex-col relative z-50 animate-slide-up"
+      className="h-full flex flex-col relative z-10 animate-slide-up"
       style={{
         width,
         background: theme.glass.background,

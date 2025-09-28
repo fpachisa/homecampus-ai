@@ -3,6 +3,7 @@ export interface Message {
   role: 'tutor' | 'student';
   content: string;
   timestamp: Date;
+  visualization?: import('./visualization').VisualizationData; // Optional visualization data
   metadata?: {
     difficulty?: 'easy' | 'medium' | 'hard';
     isCorrect?: boolean;
@@ -56,6 +57,7 @@ export interface EvaluatorInstruction {
   action: "GIVE_HINT" | "GIVE_SOLUTION" | "NEW_PROBLEM" | "CELEBRATE";
   hintLevel?: 1 | 2 | 3;  // Which hint number to give
   reasoning: string;  // Why this action was chosen
+  includeVisualization?: boolean; // Optional: whether to include visualization
 }
 
 export interface AnswerEvaluation {

@@ -1,6 +1,7 @@
 import React from 'react';
 import MathText from './MathText';
 import { useTheme } from '../hooks/useTheme';
+import VisualizationRenderer from './visualizations/VisualizationRenderer';
 import type { Message } from '../types/types';
 
 interface Props {
@@ -61,6 +62,17 @@ const MessageBubble: React.FC<Props> = ({ message }) => {
         <div className="text-sm leading-relaxed whitespace-pre-wrap font-medium">
           <MathText>{message.content}</MathText>
         </div>
+
+        {/* Visualization rendering - only for tutor messages with visualization data */}
+        {isTutor && message.visualization && (
+          <div className="mt-4">
+            <VisualizationRenderer
+              data={message.visualization}
+              theme={theme}
+              className="visualization-in-message"
+            />
+          </div>
+        )}
 
         {message.metadata?.isCorrect !== undefined && (
           <div

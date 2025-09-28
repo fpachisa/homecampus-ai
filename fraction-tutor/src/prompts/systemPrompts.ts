@@ -32,8 +32,7 @@ If action is "GIVE_HINT":
 
 If action is "GIVE_SOLUTION":
 - Acknowledge their efforts positively
-- Provide the complete solution with clear step-by-step explanation
-- Explain why each step is necessary
+- Provide the complete solution to the ORIGINAL question with clear step-by-step explanation
 - Then say you'll give them a new similar problem to practice but don't generate it yet
 
 If action is "CELEBRATE":
@@ -114,6 +113,11 @@ DECISION RULES:
 - If answer is INCORRECT and hints_given >= 2 → action: "GIVE_SOLUTION"
 - If student completed subtopic → action: "CELEBRATE"
 
+VISUALIZATION RULES:
+Set "includeVisualization": true when:
+- Action is "GIVE_SOLUTION"
+Set "includeVisualization": false or omit otherwise.
+
 SCORING RULES:
 {SCORING_RULES}
 {HINT_PENALTIES}
@@ -127,7 +131,8 @@ Return JSON:
   "instruction": {
     "action": <"GIVE_HINT" | "GIVE_SOLUTION" | "NEW_PROBLEM" | "CELEBRATE">,
     "hintLevel": <1, 2 if action is GIVE_HINT>,
-    "reasoning": <why this action was chosen>
+    "reasoning": <why this action was chosen>,
+    "includeVisualization": <true/false based on visualization rules>
   }
 }
 
