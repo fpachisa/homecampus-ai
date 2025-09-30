@@ -6,6 +6,7 @@ interface VisualizationRendererProps {
   data: VisualizationData;
   theme: any; // Theme from useTheme hook
   className?: string;
+  step?: number; // Which visual step to show
 }
 
 /**
@@ -15,7 +16,8 @@ interface VisualizationRendererProps {
 const VisualizationRenderer: React.FC<VisualizationRendererProps> = ({
   data,
   theme,
-  className = ''
+  className = '',
+  step
 }) => {
   // Component mapping - maps visualization IDs to their respective components
   const componentMap: Record<VisualizationId, React.ComponentType<any>> = {
@@ -43,7 +45,7 @@ const VisualizationRenderer: React.FC<VisualizationRendererProps> = ({
   // Render the mapped component with the visualization data
   return (
     <div className={`visualization-container ${className}`}>
-      <Component data={data} theme={theme} />
+      <Component data={data} theme={theme} step={step} />
     </div>
   );
 };

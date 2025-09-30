@@ -37,7 +37,7 @@ npm run preview      # Preview production build
 - **Frontend**: React 19+ with TypeScript
 - **Build Tool**: Vite 7.x
 - **Styling**: Tailwind CSS 4.x
-- **AI Integration**: Google Gemini 2.5 Flash API
+- **AI Integration**: Google Gemini 2.5 Flash API with Claude Sonnet fallback
 - **State Management**: React hooks (useState, useReducer)
 - **Testing**: Vitest with Testing Library
 - **Authentication**: Firebase Auth (optional)
@@ -82,11 +82,36 @@ Located in `src/prompts/`:
 - `topicIds.ts`: Topic identification constants
 - `topics/P6-Math-Fractions.ts`: Subject-specific prompt templates
 
+### AI Fallback System
+
+The application includes a robust fallback mechanism to handle Gemini API availability issues:
+
+**Service Architecture:**
+- `FallbackAIService`: Main orchestrator that handles Gemini → Claude failover
+- `GeminiService`: Primary AI service using Google Gemini 2.5 Flash
+- `ClaudeService`: Fallback service using Anthropic Claude Sonnet
+- `AIService`: Common interface implemented by both services
+
+**Error Handling:**
+- Automatic detection of 503 errors, rate limits, and timeouts
+- Fast-fail approach: immediate Claude fallback for service availability issues
+- Smart retry only for network/timeout errors (not service unavailability)
+- Near-instantaneous fallback to Claude when Gemini returns 503 errors
+- User feedback during fallback attempts ("Still thinking...")
+
+**Configuration:**
+- Gemini API key required, Claude API key optional
+- Configurable retry attempts and delays
+- Works transparently with existing code
+
 ## Environment Setup
 
 Required environment variables (see `.env.example`):
 ```bash
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
+
+# Optional Claude API key for fallback when Gemini is unavailable
+VITE_CLAUDE_API_KEY=your_claude_api_key_here
 
 # Optional Firebase config for authentication
 VITE_FIREBASE_API_KEY=your_firebase_api_key_here
@@ -133,9 +158,11 @@ Test files follow the pattern: `*.test.ts` or `*.test.tsx`
 
 ## Important Implementation Notes
 
-- The application requires active Gemini API connection for core functionality
+- The application requires active Gemini API connection for core functionality (Claude fallback optional)
+- Claude API key provides backup when Gemini experiences 503 errors or rate limits
 - Session state persists locally but can sync to Firebase if configured
 - Math expressions are rendered using KaTeX - ensure proper escaping
 - The scoring system uses a 0-1.00 scale where 1.00 indicates subtopic mastery
-- All AI responses go through error handling with fallback messages
+- All AI responses go through intelligent error handling with fallback support
 - The system supports difficulty progression (easy → medium → hard)
+- Fallback system is transparent to users with appropriate loading messages

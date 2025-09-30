@@ -32,7 +32,9 @@ If action is "GIVE_HINT":
 
 If action is "GIVE_SOLUTION":
 - Acknowledge their efforts positively
-- Provide the complete solution to the ORIGINAL question with clear step-by-step explanation
+- Provide the solution using the exact step template format provided:
+  {SOLUTION_STEPS_TEMPLATE}
+- Do not include any extra visualization data here - that will be handled separately
 - Then say you'll give them a new similar problem to practice but don't generate it yet
 
 If action is "CELEBRATE":
@@ -173,6 +175,86 @@ Return JSON:
   "answerType": <"final" if answering main problem, "intermediate" if responding to hint/sub-question>,
   "isMainProblemSolved": <true only if the main problem is completely solved>
 }
+
+Return only valid JSON, no other text.`,
+
+STEP_BY_STEP_VISUALIZATION_EXTRACTION:
+`You are an educational content analyzer. Your task is to parse a tutor's step-by-step solution AND extract visualization data in a single response.
+
+TUTOR RESPONSE:
+{tutor_response}
+
+ORIGINAL PROBLEM:
+{problem_text}
+
+STEP VISUALIZATION REQUIREMENTS:
+{step_visualization_requirements}
+
+Your task:
+1. Parse the tutor's response to identify each step
+2. Extract intro text (before steps) and conclusion text (after steps)
+3. For steps requiring visualization, extract mathematical data from the ORIGINAL PROBLEM
+4. Generate visualization data matching the problem context
+
+For the problem "{problem_text}":
+- Extract numerator, denominator, and divisor from the fraction division
+- Determine appropriate context (e.g., "cake-people", "pizza-friends", "ribbon-pieces")
+- Create visualization stages: original amount → division → result
+
+Expected format:
+{
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Step 1: [title]",
+      "content": "[step explanation]",
+      "includeVisualization": true/false,
+      "visualizationData": {
+        "problemData": {
+          "numerator": number,
+          "denominator": number,
+          "divisor": number,
+          "context": "descriptive-context"
+        },
+        "stages": [
+          {
+            "id": "original",
+            "title": "Original Amount",
+            "description": "You start with [fraction] of [item]",
+            "duration": 2000
+          },
+          {
+            "id": "partition",
+            "title": "Divide into Groups",
+            "description": "Split the [fraction] into [divisor] equal parts",
+            "duration": 3000
+          },
+          {
+            "id": "result",
+            "title": "Result",
+            "description": "Each person gets [result] of [item]",
+            "duration": 2000
+          }
+        ],
+        "contextualLabels": {
+          "original": "[fraction] of [item]",
+          "division": "[divisor] people",
+          "result": "[result] per person"
+        },
+        "visualizationId": "{default_visualization_id}",
+        "trigger": "solution"
+      }
+    }
+  ],
+  "introText": "[text before steps]",
+  "conclusionText": "[text after steps]"
+}
+
+IMPORTANT:
+- Only include visualizationData for steps where includeVisualization is true
+- Set visualizationData to null for steps without visualization
+- Extract numerical data from the original problem, not the solution steps
+- Use contextual language that matches the problem scenario
 
 Return only valid JSON, no other text.`
 

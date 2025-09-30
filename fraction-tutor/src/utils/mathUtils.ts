@@ -13,7 +13,10 @@ export interface MathMatch {
  * Converts common mathematical notation to LaTeX format
  */
 export function convertToLatex(text: string): string {
-  // Handle fractions: 1/2, 3/4, etc.
+  // Handle complex fractions first: 3/(4 × 3)
+  text = text.replace(/(\d+)\/\((\d+)\s*×\s*(\d+)\)/g, '\\frac{$1}{$2 \\times $3}');
+
+  // Handle simple fractions: 1/2, 3/4, etc.
   text = text.replace(/(\d+)\/(\d+)/g, '\\frac{$1}{$2}');
 
   // Handle division symbol: ÷

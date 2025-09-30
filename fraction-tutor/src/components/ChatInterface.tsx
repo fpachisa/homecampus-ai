@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import MessageBubble from './MessageBubble';
 import InputArea from './InputArea';
 import ProgressIndicator from './ProgressIndicator';
-import GeminiService from '../services/geminiService';
+import FallbackAIService from '../services/fallbackAIService';
+import type { AIService } from '../services/aiService';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../hooks/useTheme';
 import { progressService } from '../services/progressService';
@@ -50,7 +51,9 @@ const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
   const hasInitialized = useRef(false);
 
-  const geminiService = useRef<GeminiService | null>(null);
+  const aiService = useRef<AIService | null>(null);
+  const [fallbackMessage, setFallbackMessage] = useState<string | null>(null);
+  const pendingNewProblemRef = useRef<{difficulty: 'easy' | 'medium' | 'hard', topicId: string} | null>(null);
 
   // Auto-save session state
   useSessionPersistence({
@@ -68,13 +71,39 @@ const [isLoading, setIsLoading] = useState(false);
 
     hasInitialized.current = true;
 
-    // Initialize Gemini service
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    if (!apiKey) {
+    // Initialize AI service with fallback
+    const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    const claudeApiKey = import.meta.env.VITE_CLAUDE_API_KEY;
+
+    if (!geminiApiKey) {
       console.error('Gemini API key not found in environment variables');
       return;
     }
-    geminiService.current = new GeminiService(apiKey);
+
+    // Callback to show fallback messages to user
+    const showFallbackMessage = (message: string) => {
+      setFallbackMessage(message);
+      // Clear the message after a few seconds
+      setTimeout(() => setFallbackMessage(null), 3000);
+    };
+
+    aiService.current = new FallbackAIService(
+      geminiApiKey,
+      claudeApiKey, // optional - can be undefined
+      {
+        maxRetries: 1, // Fast fail - single attempt before Claude fallback
+        retryDelay: 0, // No delay when switching to Claude
+        exponentialBackoff: false, // No exponential backoff needed
+        showFallbackMessage: true
+      },
+      showFallbackMessage
+    );
+
+    console.log('AI Service initialized:', {
+      primary: 'Gemini',
+      fallback: claudeApiKey ? 'Claude' : 'None',
+      hasFallback: Boolean(claudeApiKey)
+    });
 
     // Load previous progress if available
     loadProgress();
@@ -122,14 +151,6 @@ const scrollToBottom = () => {
     );
   };
 
-  // Auto-save progress whenever relevant state changes
-  useEffect(() => {
-    // Only save if we have some progress to save
-    if (state.sessionStats.problemsAttempted > 0) {
-      saveProgress();
-    }
-  }, [currentScore, state.sessionStats.problemsAttempted, state.sessionStats.correctAnswers, state.currentDifficulty]);
-
   // Helper functions for problem state management
   const createNewProblemState = (problemText: string, difficulty: 'easy' | 'medium' | 'hard'): ProblemState => {
     return {
@@ -165,6 +186,34 @@ const scrollToBottom = () => {
   const resetProblemState = (newProblemText: string, difficulty: 'easy' | 'medium' | 'hard') => {
     setProblemState(createNewProblemState(newProblemText, difficulty));
   };
+
+  // Callback for when step-by-step visualization completes
+  const handleStepByStepComplete = useCallback(async () => {
+    const pendingNewProblem = pendingNewProblemRef.current;
+    if (!pendingNewProblem || !aiService.current) return;
+
+    console.log('🎬 ChatInterface: Step-by-step complete, generating new problem');
+    try {
+      const newProblem = await aiService.current.generateQuestion(pendingNewProblem.difficulty, pendingNewProblem.topicId);
+      console.log('📝 ChatInterface: Adding new problem after step-by-step completion');
+
+      addMessage('tutor', newProblem, { difficulty: pendingNewProblem.difficulty });
+      resetProblemState(newProblem, pendingNewProblem.difficulty);
+      setState(prev => ({
+        ...prev,
+        sessionStats: {
+          ...prev.sessionStats,
+          problemsAttempted: prev.sessionStats.problemsAttempted + 1
+        }
+      }));
+
+      pendingNewProblemRef.current = null;
+      console.log('✅ ChatInterface: New problem added after step-by-step completion');
+    } catch (error) {
+      console.error('Failed to generate new problem after step-by-step completion:', error);
+      pendingNewProblemRef.current = null;
+    }
+  }, []); // No dependencies - callback is now stable
 
   const restoreFromSession = async () => {
     const sessionData = sessionStorage.loadSession();
@@ -202,18 +251,18 @@ const scrollToBottom = () => {
 // Legacy function - removed as it's replaced by sequential architecture
 
 const initializeConversation = async () => {
-    if (!geminiService.current) return;
+    if (!aiService.current) return;
 
     setIsLoading(true);
     try {
       // Get initial greeting and first problem in sequence
-      const greeting = await geminiService.current.generateInitialGreeting(topicId);
+      const greeting = await aiService.current.generateInitialGreeting(topicId);
       addMessage('tutor', greeting);
 
       // Wait a moment for greeting to render, then add first problem
       await new Promise(resolve => setTimeout(resolve, 800));
 
-      const firstProblem = await geminiService.current.generateQuestion('easy', topicId);
+      const firstProblem = await aiService.current.generateQuestion('easy', topicId);
       addMessage('tutor', firstProblem, { difficulty: 'easy' });
 
       // Initialize problem state for the first problem
@@ -262,7 +311,7 @@ const initializeConversation = async () => {
   };
 
 const handleStudentSubmit = async (input: string) => {
-    if (!geminiService.current || !input.trim() || !problemState) return;
+    if (!aiService.current || !input.trim() || !problemState) return;
 
     // Add student message
     addMessage('student', input);
@@ -277,7 +326,7 @@ const handleStudentSubmit = async (input: string) => {
           (new Date().getTime() - state.sessionStats.startTime.getTime()) / 60000
         );
 
-        const celebration = await geminiService.current.generateCelebration(
+        const celebration = await aiService.current.generateCelebration(
           currentScore,
           problemsCompleted,
           sessionDuration,
@@ -296,7 +345,7 @@ const handleStudentSubmit = async (input: string) => {
       console.log('Student Response:', input);
 
       // STEP 1: Evaluator Agent - Analyze and provide instruction
-      const instruction = await geminiService.current.evaluateAndInstruct(
+      const instruction = await aiService.current.evaluateAndInstruct(
         input,
         recentHistory,
         problemState,
@@ -359,7 +408,7 @@ const handleStudentSubmit = async (input: string) => {
       }
 
       // STEP 4: Tutor Agent - Execute instruction with correct difficulty
-      const tutorResponse = await geminiService.current.executeInstruction(
+      const tutorResponse = await aiService.current.executeInstruction(
         instruction,
         recentHistory,
         input,
@@ -369,44 +418,54 @@ const handleStudentSubmit = async (input: string) => {
 
       console.log('Tutor response:', tutorResponse);
 
-      // STEP 5: Add tutor response and handle state updates
-      // Check if visualization is requested and extract visualization data
-      let visualizationData = null;
-      if (instruction.includeVisualization && problemState) {
+      // STEP 5: Extract visualization data if required by instruction
+      let structuredVisualizationData = undefined;
+      if (instruction.includeVisualization && problemState?.currentProblemText) {
+        console.log('Instruction includes visualization, extracting structured data...');
         try {
-          // Get visualization ID from topic config
-          const topicConfig = (await import('../prompts/topics/P6-Math-Fractions')).P6_MATH_FRACTIONS;
-          const config = topicConfig[topicId as keyof typeof topicConfig];
-          if (config && config.VISUALIZATION_CONFIG) {
-            const visualizationId = config.VISUALIZATION_CONFIG[problemState.difficulty]?.visualizationId;
-            if (visualizationId) {
-              console.log('Extracting visualization data for:', visualizationId);
-              visualizationData = await geminiService.current.extractVisualizationData(
-                problemState.currentProblemText,
-                visualizationId,
-                instruction.action === 'GIVE_SOLUTION' ? 'solution' : 'hint',
-                topicId
-              );
-              console.log('Extracted visualization data:', visualizationData);
-            }
+          structuredVisualizationData = await aiService.current.extractStepByStepVisualizations(
+            tutorResponse,
+            problemState.currentProblemText,
+            difficultyForExecution,
+            topicId
+          );
+          console.log('Structured visualization data extracted:', structuredVisualizationData);
+
+          // Only use the data if extraction was successful
+          if (!structuredVisualizationData) {
+            console.warn('Visualization extraction returned null, falling back to regular message');
           }
         } catch (error) {
-          console.error('Error extracting visualization data:', error);
+          console.error('Failed to extract visualization data:', error);
+          structuredVisualizationData = undefined;
         }
       }
 
-      addMessage('tutor', tutorResponse, undefined, visualizationData || undefined);
+      // STEP 6: Prepare for new problem generation (no re-render with ref)
+      if (instruction.action === "GIVE_SOLUTION" && structuredVisualizationData) {
+        console.log('🎬 ChatInterface: Setting up step-by-step completion callback');
+        // Store the pending new problem details in ref (no re-render)
+        pendingNewProblemRef.current = { difficulty: difficultyForExecution, topicId };
+      }
+
+      // STEP 7: Add tutor response with visualization data
+      console.log('🏃 ChatInterface: Adding step-by-step message to chat');
+      addMessage('tutor', tutorResponse, { difficulty: difficultyForExecution }, structuredVisualizationData);
+      console.log('✅ ChatInterface: Step-by-step message added');
 
       // If instruction was to give a new problem, reset problem state with correct difficulty
       if (instruction.action === "NEW_PROBLEM") {
         resetProblemState(tutorResponse, difficultyForExecution);
       }
 
-      // STEP 6: Auto-generate new problem after GIVE_SOLUTION
-      if (instruction.action === "GIVE_SOLUTION") {
+      // STEP 8: Auto-generate new problem after GIVE_SOLUTION - only if no visualization
+      if (instruction.action === "GIVE_SOLUTION" && !structuredVisualizationData) {
+        console.log('🔄 ChatInterface: Generating new problem after solution (no visualization)');
         // Generate a new problem at the current difficulty immediately
-        const newProblem = await geminiService.current.generateQuestion(difficultyForExecution, topicId);
+        const newProblem = await aiService.current.generateQuestion(difficultyForExecution, topicId);
+        console.log('📝 ChatInterface: Adding new problem message to chat');
         addMessage('tutor', newProblem, { difficulty: difficultyForExecution });
+        console.log('✅ ChatInterface: New problem message added');
 
         // Reset problem state for the new problem
         resetProblemState(newProblem, difficultyForExecution);
@@ -540,9 +599,23 @@ const handleStudentSubmit = async (input: string) => {
         style={{ height: 0, flexGrow: 1 }}
       >
         <div className="max-w-4xl mx-auto p-6 space-y-6">
-          {state.messages.map(message => (
-            <MessageBubble key={message.id} message={message} />
-          ))}
+          {state.messages.map(message => {
+            // Only pass the callback to messages that have step-by-step visualization
+            const hasStepByStepVisualization = message.visualization &&
+              typeof message.visualization === 'object' &&
+              Array.isArray(message.visualization.steps) &&
+              message.visualization.steps.length > 0;
+
+            return (
+              <MessageBubble
+                key={message.id}
+                message={message}
+                problemText={problemState?.currentProblemText}
+                topicId={topicId}
+                onStepByStepComplete={hasStepByStepVisualization ? handleStepByStepComplete : undefined}
+              />
+            );
+          })}
           {isLoading && (
             <div className="flex items-start space-x-3 justify-start">
               {/* Tutor Avatar */}
@@ -581,7 +654,9 @@ const handleStudentSubmit = async (input: string) => {
                     <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: theme.colors.brand, animationDelay: '0.1s' }} />
                     <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: theme.colors.brand, animationDelay: '0.2s' }} />
                   </div>
-                  <span className="text-sm ml-2" style={{ color: theme.colors.textMuted }}>Thinking...</span>
+                  <span className="text-sm ml-2" style={{ color: theme.colors.textMuted }}>
+                    {fallbackMessage || 'Thinking...'}
+                  </span>
                 </div>
               </div>
             </div>

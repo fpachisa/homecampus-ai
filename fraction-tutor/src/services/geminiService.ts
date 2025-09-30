@@ -2,8 +2,10 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { GeminiResponse, Message, AnswerEvaluation, EvaluatorInstruction, ProblemState } from '../types/types';
 import type { VisualizationData } from '../types/visualization';
 import { promptResolver } from '../prompts/promptResolver';
+import type { AIService } from './aiService';
+import { AIServiceError, AIErrorType } from './aiService';
 
-class GeminiService {
+class GeminiService implements AIService {
   private genAI: GoogleGenerativeAI;
   private model: any;
 
@@ -18,17 +20,22 @@ class GeminiService {
   }
 
   async generateInitialGreeting(topicId: string = 'fraction-division-by-whole-numbers'): Promise<string> {
-    const prompt = promptResolver.resolveInitialGreeting({
-      topicId: topicId as any
-    });
-    const result = await this.model.generateContent(prompt);
-    const text = result.response.text().trim();
+    try {
+      const prompt = promptResolver.resolveInitialGreeting({
+        topicId: topicId as any
+      });
+      const result = await this.model.generateContent(prompt);
+      const text = result.response.text().trim();
 
-    if (!text) {
-      throw new Error('Empty greeting response from Gemini API');
+      if (!text) {
+        throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty greeting response from Gemini API');
+      }
+
+      return text;
+    } catch (error) {
+      console.error('Error generating greeting:', error);
+      throw AIServiceError.fromHttpError(error);
     }
-
-    return text;
   }
 
   async generateCelebration(finalScore: number, problemsCompleted: number, sessionDuration: number, topicId: string = 'fraction-division-by-whole-numbers'): Promise<string> {
@@ -50,7 +57,7 @@ class GeminiService {
       return text;
     } catch (error) {
       console.error('Error generating celebration:', error);
-      return `🎉 Amazing work! You've completed the fraction division subtopic with a score of ${finalScore.toFixed(2)}/1.00! You solved ${problemsCompleted} problems and demonstrated excellent understanding. Keep up the great work! 🌟`;
+      throw AIServiceError.fromHttpError(error);
     }
   }
 
@@ -71,7 +78,7 @@ class GeminiService {
       console.log('Ends with question mark:', text.endsWith('?'));
 
       if (!text) {
-        throw new Error('Empty question response from Gemini API');
+        throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty question response from Gemini API');
       }
 
       // Check if response seems truncated (doesn't end with ? or proper punctuation)
@@ -89,7 +96,7 @@ class GeminiService {
       return text;
     } catch (error) {
       console.error('Error generating question:', error);
-      throw error;
+      throw AIServiceError.fromHttpError(error);
     }
   }
 
@@ -249,15 +256,8 @@ class GeminiService {
     } catch (error) {
       console.error('Evaluator Agent error:', error);
 
-      // Return safe fallback instruction
-      return {
-        answerCorrect: false,
-        pointsEarned: 0,
-        isMainProblemSolved: false,
-        action: "GIVE_HINT",
-        hintLevel: Math.min(problemState.hintsGivenForCurrentProblem + 1, 3) as 1 | 2 | 3,
-        reasoning: "Fallback instruction due to API error"
-      };
+      // Convert to AIServiceError for proper fallback handling
+      throw AIServiceError.fromHttpError(error);
     }
   }
 
@@ -306,26 +306,15 @@ if (instruction.action === "NEW_PROBLEM") {
       console.log('Tutor agent raw response:', responseText);
 
       if (!responseText) {
-        throw new Error('Empty response from Tutor Agent');
+        throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty response from Tutor Agent');
       }
 
       return responseText;
     } catch (error) {
       console.error('Tutor Agent error:', error);
 
-      // Return fallback response based on instruction
-      switch (instruction.action) {
-        case "GIVE_HINT":
-          return `Let me give you a hint: Think about the steps you need to solve this problem. Can you try again?`;
-        case "GIVE_SOLUTION":
-          return `Let me show you the complete solution step by step, then we'll try a new problem.`;
-        case "NEW_PROBLEM":
-          return `Great job! Let me give you a new problem to solve.`;
-        case "CELEBRATE":
-          return `🎉 Congratulations! You've completed this subtopic! Amazing work!`;
-        default:
-          return `I'm having some technical difficulties. Please try again!`;
-      }
+      // Convert to AIServiceError for proper fallback handling
+      throw AIServiceError.fromHttpError(error);
     }
   }
 
@@ -446,6 +435,71 @@ const prompt = promptResolver.resolveAnswerEvaluation({
       return visualizationData as VisualizationData;
     } catch (error) {
       console.error('Visualization extraction error:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Extract visualization data for each step of a step-by-step solution
+   * Parses the tutorResponse to identify steps and extracts visualization for each configured step
+   */
+  async extractStepByStepVisualizations(
+    tutorResponse: string,
+    problemText: string,
+    difficulty: 'easy' | 'medium' | 'hard',
+    topicId: string
+  ): Promise<any> {
+    try {
+      // Get step visualization config from topic
+      const { P6_MATH_FRACTIONS } = await import('../prompts/topics/P6-Math-Fractions');
+      const config = P6_MATH_FRACTIONS[topicId as keyof typeof P6_MATH_FRACTIONS];
+
+      if (!config || !('STEP_VISUALIZATION_CONFIG' in config)) {
+        console.warn('No step visualization config found for topic:', topicId);
+        return null;
+      }
+
+      const stepConfigs = (config as any).STEP_VISUALIZATION_CONFIG[difficulty];
+      if (!stepConfigs || !Array.isArray(stepConfigs)) {
+        console.warn('No step configs found for difficulty:', difficulty);
+        return null;
+      }
+
+      console.log('=== UNIFIED STEP PARSING & VISUALIZATION EXTRACTION ===');
+      console.log('Tutor response:', tutorResponse);
+      console.log('Problem text:', problemText);
+      console.log('Step configs:', stepConfigs);
+
+      // Use centralized prompt from prompt resolver
+      const unifiedPrompt = promptResolver.resolveStepByStepVisualizationExtraction({
+        topicId: topicId as any,
+        tutorResponse,
+        problemText,
+        stepConfigs
+      });
+
+      console.log('Sending unified extraction prompt to LLM...');
+
+      const result = await this.model.generateContent(unifiedPrompt);
+      const responseText = result.response.text().trim();
+
+      console.log('Unified extraction response:', responseText);
+
+      // Clean and parse JSON response
+      let cleanedText = responseText;
+      if (cleanedText.startsWith('```json')) {
+        cleanedText = cleanedText.replace(/```json\s*/, '').replace(/\s*```$/, '');
+      } else if (cleanedText.startsWith('```')) {
+        cleanedText = cleanedText.replace(/```\s*/, '').replace(/\s*```$/, '');
+      }
+
+      const parsedResponse = JSON.parse(cleanedText);
+      console.log('Final unified structured data:', parsedResponse);
+
+      return parsedResponse;
+
+    } catch (error) {
+      console.error('Error in unified step parsing and visualization extraction:', error);
       return null;
     }
   }

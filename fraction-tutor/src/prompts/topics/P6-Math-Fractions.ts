@@ -9,6 +9,23 @@
  * - s1-math-algebra-linear-equations
  */
 
+export interface SolutionStep {
+  stepNumber: number;
+  title: string;
+  instruction: string;
+}
+
+export interface SolutionStepsConfig {
+  template: SolutionStep[];
+}
+
+export interface StepVisualizationConfig {
+  stepNumber: number;
+  includeVisualization: boolean;
+  visualStage: number;
+  visualizationId: string;
+}
+
 export const P6_MATH_FRACTIONS = {
   "p6-math-fractions-dividing-whole-numbers": {
     topicName: "dividing proper fractions by whole numbers",
@@ -18,7 +35,7 @@ export const P6_MATH_FRACTIONS = {
       easy: `Generate a word problem for dividing a proper fraction by a whole number.
 
 Examples of appropriate problems:
-- "You have 1/2 of a chocolate bar and want to share it equally among 3 friends. How much does each friend get?"
+- "You have 3/4 of a chocolate bar and want to share it equally among 3 friends. How much does each friend get?"
 - "There's 2/3 of a pizza left. If we divide it equally between 2 people, what's each person's share?"
 
 Guidelines:
@@ -59,16 +76,47 @@ Guidelines:
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`
     },
 
-    VISUALIZATION_CONFIG: {
-      easy: {
-        visualizationId: "bar-division-simple"
-      },
-      medium: {
-        visualizationId: "bar-division-complex"
-      },
-      hard: {
-        visualizationId: "bar-division-complex"
-      }
+    SOLUTION_STEPS: {
+      template: [
+        {
+          stepNumber: 1,
+          title: "Understand the Problem",
+          instruction: "First, let's identify what we have and what we need to find. We have {fraction} and need to divide it by {divisor}."
+        },
+        {
+          stepNumber: 2,
+          title: "Set Up the Division",
+          instruction: "To divide a fraction by a whole number, we multiply the denominator by the divisor: {numerator}/{denominator} ÷ {divisor} = {numerator}/{denominator × divisor}."
+        },
+        {
+          stepNumber: 3,
+          title: "Simplify if Needed",
+          instruction: "[Show simplification steps]"
+        },
+        {
+          stepNumber: 4,
+          title: "Final Answer",
+          instruction: "[Present the final simplified answer]"
+        }
+      ]
+    },
+
+    STEP_VISUALIZATION_CONFIG: {
+      easy: [
+        { stepNumber: 1, includeVisualization: true, visualStage: 0, visualizationId: "bar-division-simple" },
+        { stepNumber: 2, includeVisualization: true, visualStage: 1, visualizationId: "bar-division-simple" },
+        { stepNumber: 3, includeVisualization: true, visualStage: 2, visualizationId: "bar-division-simple" }
+      ],
+      medium: [
+        { stepNumber: 1, includeVisualization: true, visualStage: 0, visualizationId: "bar-division-complex" },
+        { stepNumber: 2, includeVisualization: true, visualStage: 1, visualizationId: "bar-division-complex" },
+        { stepNumber: 3, includeVisualization: true, visualStage: 2, visualizationId: "bar-division-complex" }
+      ],
+      hard: [
+        { stepNumber: 1, includeVisualization: true, visualStage: 0, visualizationId: "bar-division-complex" },
+        { stepNumber: 2, includeVisualization: true, visualStage: 1, visualizationId: "bar-division-complex" },
+        { stepNumber: 3, includeVisualization: true, visualStage: 2, visualizationId: "bar-division-complex" }
+      ]
     },
 
     SCORING_CONFIG: {

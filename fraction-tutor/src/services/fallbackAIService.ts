@@ -1,0 +1,290 @@
+import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState } from '../types/types';
+import type { VisualizationData } from '../types/visualization';
+import type { AIService } from './aiService';
+import { AIServiceError, AIErrorType } from './aiService';
+import GeminiService from './geminiService';
+import ClaudeService from './claudeService';
+
+interface FallbackConfig {
+  maxRetries: number;
+  retryDelay: number;
+  exponentialBackoff: boolean;
+  showFallbackMessage: boolean;
+}
+
+/**
+ * AI Service that orchestrates between Gemini (primary) and Claude (fallback)
+ * with intelligent error detection and retry logic
+ */
+class FallbackAIService implements AIService {
+  private primaryService: AIService;
+  private fallbackService: AIService | null;
+  private config: FallbackConfig;
+  private fallbackMessageCallback?: (message: string) => void;
+
+  constructor(
+    geminiApiKey: string,
+    claudeApiKey?: string,
+    config: Partial<FallbackConfig> = {},
+    fallbackMessageCallback?: (message: string) => void
+  ) {
+    this.primaryService = new GeminiService(geminiApiKey);
+    this.fallbackService = claudeApiKey ? new ClaudeService(claudeApiKey) : null;
+    this.fallbackMessageCallback = fallbackMessageCallback;
+
+    this.config = {
+      maxRetries: 1, // Single attempt before fallback for fast user experience
+      retryDelay: 0, // No delay before fallback to Claude
+      exponentialBackoff: false, // No exponential delays when Claude is available
+      showFallbackMessage: true,
+      ...config
+    };
+  }
+
+  private async sleep(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  private shouldRetry(error: AIServiceError, attempt: number): boolean {
+    if (attempt >= this.config.maxRetries) return false;
+
+    // For fast fallback: don't retry service availability issues if Claude is available
+    if (this.fallbackService && (
+      error.errorType === AIErrorType.SERVICE_UNAVAILABLE ||
+      error.errorType === AIErrorType.RATE_LIMIT
+    )) {
+      return false; // Skip retries for 503 and rate limits - go straight to Claude
+    }
+
+    // Only retry for genuine network/timeout issues
+    return error.retryable && (
+      error.errorType === AIErrorType.TIMEOUT ||
+      error.errorType === AIErrorType.NETWORK
+    );
+  }
+
+  private shouldFallback(error: AIServiceError): boolean {
+    return this.fallbackService !== null && (
+      error.errorType === AIErrorType.SERVICE_UNAVAILABLE ||
+      error.errorType === AIErrorType.RATE_LIMIT ||
+      error.errorType === AIErrorType.TIMEOUT ||
+      error.errorType === AIErrorType.NETWORK
+    );
+  }
+
+  private notifyFallback(service: 'claude' | 'error'): void {
+    if (this.fallbackMessageCallback && this.config.showFallbackMessage) {
+      if (service === 'claude') {
+        this.fallbackMessageCallback('Still thinking... switching to backup system...');
+      } else {
+        this.fallbackMessageCallback('Having trouble connecting. Please try again.');
+      }
+    }
+  }
+
+  /**
+   * Generic retry and fallback wrapper for AI service calls
+   */
+  private async executeWithFallback<T>(
+    operation: (service: AIService) => Promise<T>,
+    operationName: string
+  ): Promise<T> {
+    let lastError: AIServiceError | null = null;
+
+    // Try primary service with retries
+    for (let attempt = 1; attempt <= this.config.maxRetries; attempt++) {
+      try {
+        console.log(`${operationName}: Attempt ${attempt} with primary service (Gemini)`);
+        return await operation(this.primaryService);
+      } catch (error) {
+        console.warn(`${operationName}: Primary service attempt ${attempt} failed:`, error);
+
+        const aiError = error instanceof AIServiceError ? error : AIServiceError.fromHttpError(error);
+        lastError = aiError;
+
+        if (this.shouldRetry(aiError, attempt)) {
+          const delay = this.config.exponentialBackoff
+            ? this.config.retryDelay * Math.pow(2, attempt - 1)
+            : this.config.retryDelay;
+
+          console.log(`${operationName}: Retrying in ${delay}ms...`);
+          await this.sleep(delay);
+          continue;
+        }
+
+        break;
+      }
+    }
+
+    // Try fallback service if available and appropriate
+    if (lastError && this.shouldFallback(lastError)) {
+      try {
+        console.log(`${operationName}: Switching to fallback service (Claude)`);
+        this.notifyFallback('claude');
+
+        return await operation(this.fallbackService!);
+      } catch (fallbackError) {
+        console.error(`${operationName}: Fallback service also failed:`, fallbackError);
+
+        // If fallback also fails, throw the original error
+        this.notifyFallback('error');
+        throw lastError;
+      }
+    }
+
+    // No fallback available or not appropriate, throw original error
+    if (lastError) {
+      this.notifyFallback('error');
+      throw lastError;
+    }
+
+    throw new AIServiceError(AIErrorType.UNKNOWN, null, false, `${operationName} failed with no error details`);
+  }
+
+  async generateInitialGreeting(topicId: string = 'fraction-division-by-whole-numbers'): Promise<string> {
+    return this.executeWithFallback(
+      (service) => service.generateInitialGreeting(topicId),
+      'generateInitialGreeting'
+    );
+  }
+
+  async generateCelebration(
+    finalScore: number,
+    problemsCompleted: number,
+    sessionDuration: number,
+    topicId: string = 'fraction-division-by-whole-numbers'
+  ): Promise<string> {
+    try {
+      return await this.executeWithFallback(
+        (service) => service.generateCelebration(finalScore, problemsCompleted, sessionDuration, topicId),
+        'generateCelebration'
+      );
+    } catch (error) {
+      console.error('All celebration services failed, providing fallback message:', error);
+
+      // Final safety fallback when both Gemini and Claude fail
+      return `🎉 Amazing work! You've completed the fraction division subtopic with a score of ${finalScore.toFixed(2)}/1.00! You solved ${problemsCompleted} problems and demonstrated excellent understanding. Keep up the great work! 🌟`;
+    }
+  }
+
+  async generateQuestion(
+    difficulty: 'easy' | 'medium' | 'hard',
+    topicId: string = 'fraction-division-by-whole-numbers'
+  ): Promise<string> {
+    return this.executeWithFallback(
+      (service) => service.generateQuestion(difficulty, topicId),
+      'generateQuestion'
+    );
+  }
+
+  async generateResponse(
+    studentResponse: string,
+    recentHistory: Message[],
+    currentDifficulty: 'easy' | 'medium' | 'hard',
+    isComplete: boolean = false,
+    topicId: string = 'fraction-division-by-whole-numbers'
+  ): Promise<GeminiResponse> {
+    return this.executeWithFallback(
+      (service) => service.generateResponse(studentResponse, recentHistory, currentDifficulty, isComplete, topicId),
+      'generateResponse'
+    );
+  }
+
+  async evaluateAndInstruct(
+    studentResponse: string,
+    recentHistory: Message[],
+    problemState: ProblemState,
+    topicId: string
+  ): Promise<EvaluatorInstruction> {
+    try {
+      return await this.executeWithFallback(
+        (service) => service.evaluateAndInstruct(studentResponse, recentHistory, problemState, topicId),
+        'evaluateAndInstruct'
+      );
+    } catch (error) {
+      console.error('All evaluator services failed, providing safe fallback instruction:', error);
+
+      // Final safety fallback when both Gemini and Claude fail
+      return {
+        answerCorrect: false,
+        pointsEarned: 0,
+        isMainProblemSolved: false,
+        action: "GIVE_HINT",
+        hintLevel: Math.min(problemState.hintsGivenForCurrentProblem + 1, 3) as 1 | 2 | 3,
+        reasoning: "Fallback instruction due to all AI services being unavailable"
+      };
+    }
+  }
+
+  async executeInstruction(
+    instruction: EvaluatorInstruction,
+    recentHistory: Message[],
+    studentResponse: string,
+    currentDifficulty: 'easy' | 'medium' | 'hard',
+    topicId: string
+  ): Promise<string> {
+    try {
+      return await this.executeWithFallback(
+        (service) => service.executeInstruction(instruction, recentHistory, studentResponse, currentDifficulty, topicId),
+        'executeInstruction'
+      );
+    } catch (error) {
+      console.error('All tutor services failed, providing fallback response:', error);
+
+      // Final safety fallback when both Gemini and Claude fail
+      switch (instruction.action) {
+        case "GIVE_HINT":
+          return `Let me give you a hint: Think about the steps you need to solve this problem. Can you try again?`;
+        case "GIVE_SOLUTION":
+          return `Let me show you the complete solution step by step, then we'll try a new problem.`;
+        case "NEW_PROBLEM":
+          return `Great job! Let me give you a new problem to solve.`;
+        case "CELEBRATE":
+          return `🎉 Congratulations! You've completed this subtopic! Amazing work!`;
+        default:
+          return `I'm having some technical difficulties. Please try again!`;
+      }
+    }
+  }
+
+  async extractVisualizationData(
+    problemText: string,
+    visualizationId: string,
+    trigger: 'solution' | 'hint' | 'explanation',
+    topicId: string
+  ): Promise<VisualizationData | null> {
+    return this.executeWithFallback(
+      (service) => service.extractVisualizationData(problemText, visualizationId, trigger, topicId),
+      'extractVisualizationData'
+    );
+  }
+
+  async extractStepByStepVisualizations(
+    tutorResponse: string,
+    problemText: string,
+    difficulty: 'easy' | 'medium' | 'hard',
+    topicId: string
+  ): Promise<any> {
+    return this.executeWithFallback(
+      (service) => service.extractStepByStepVisualizations(tutorResponse, problemText, difficulty, topicId),
+      'extractStepByStepVisualizations'
+    );
+  }
+
+  // Utility methods
+  getActiveService(): 'gemini' | 'claude' | 'unknown' {
+    if (this.primaryService instanceof GeminiService) return 'gemini';
+    if (this.fallbackService instanceof ClaudeService) return 'claude';
+    return 'unknown';
+  }
+
+  hasFallback(): boolean {
+    return this.fallbackService !== null;
+  }
+
+  updateConfig(newConfig: Partial<FallbackConfig>): void {
+    this.config = { ...this.config, ...newConfig };
+  }
+}
+
+export default FallbackAIService;

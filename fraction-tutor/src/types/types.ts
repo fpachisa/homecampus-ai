@@ -3,7 +3,7 @@ export interface Message {
   role: 'tutor' | 'student';
   content: string;
   timestamp: Date;
-  visualization?: import('./visualization').VisualizationData; // Optional visualization data
+  visualization?: any; // Optional visualization data - can be VisualizationData or structured step data
   metadata?: {
     difficulty?: 'easy' | 'medium' | 'hard';
     isCorrect?: boolean;

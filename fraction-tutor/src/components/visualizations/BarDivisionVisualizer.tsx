@@ -1,43 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import type { VisualizationData } from '../../types/visualization';
 
 interface BarDivisionVisualizerProps {
   data: VisualizationData;
   theme: any;
   className?: string;
+  step?: number; // Which visual step to show (0, 1, 2)
 }
 
 /**
- * Visualizes fraction division by whole numbers using animated bar model
+ * Visualizes fraction division by whole numbers using step-controlled bar model
  * Shows: original fraction → division lines → result per group
  * Example: 3/4 ÷ 3 = 1/4 for each of 3 groups
  */
 const BarDivisionVisualizer: React.FC<BarDivisionVisualizerProps> = ({
   data,
   theme,
-  className = ''
+  className = '',
+  step = 0
 }) => {
-  const [currentStage, setCurrentStage] = useState(0);
   const { problemData, stages, contextualLabels } = data;
   const { numerator, denominator, divisor } = problemData;
 
-  // Auto-progress through stages
-  useEffect(() => {
-    if (stages.length === 0) return;
-
-    const timer = setTimeout(() => {
-      setCurrentStage(prev =>
-        prev < stages.length - 1 ? prev + 1 : prev
-      );
-    }, stages[currentStage]?.duration || 2000);
-
-    return () => clearTimeout(timer);
-  }, [currentStage, stages]);
-
-  // Reset button handler
-  const handleReset = () => {
-    setCurrentStage(0);
-  };
+  // Use the provided step, but ensure it's within valid range
+  const currentStage = Math.min(step, Math.max(0, stages.length - 1));
 
   // SVG dimensions and styling
   const config = {
@@ -233,27 +219,6 @@ const BarDivisionVisualizer: React.FC<BarDivisionVisualizerProps> = ({
             </text>
           )}
         </svg>
-      </div>
-
-      {/* Controls */}
-      <div className="flex justify-center space-x-2">
-        <button
-          onClick={handleReset}
-          className="px-3 py-1 text-xs rounded-md transition-colors duration-200"
-          style={{
-            backgroundColor: 'transparent',
-            color: colors.textMuted,
-            border: `1px solid ${colors.border}`,
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = colors.background;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
-          }}
-        >
-          Reset Animation
-        </button>
       </div>
     </div>
   );

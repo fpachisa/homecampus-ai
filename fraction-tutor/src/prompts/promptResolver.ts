@@ -1,5 +1,5 @@
 import { SYSTEM_PROMPTS } from './systemPrompts';
-import { P6_MATH_FRACTIONS, type TopicId, type SubtopicConfig } from './topics/P6-Math-Fractions';
+import { P6_MATH_FRACTIONS, type TopicId, type SubtopicConfig, type SolutionStep } from './topics/P6-Math-Fractions';
 
 export interface PromptContext {
   topicId: TopicId;
@@ -24,6 +24,9 @@ export interface PromptContext {
   problemText?: string;
   visualizationId?: string;
   trigger?: 'solution' | 'hint' | 'explanation';
+
+// New fields for step-by-step visualization extraction
+  stepConfigs?: any[];
 }
 
 export class PromptResolver {
@@ -99,13 +102,22 @@ resolveEvaluatorAgent(context: PromptContext): string {
   resolveTutorAgent(context: PromptContext): string {
     const config = this.getTopicConfig(context.topicId);
 
+    // Format solution steps template if available
+    let solutionStepsTemplate = '';
+    if ('SOLUTION_STEPS' in config && config.SOLUTION_STEPS) {
+      solutionStepsTemplate = config.SOLUTION_STEPS.template
+        .map((step: SolutionStep) => `Step ${step.stepNumber}: ${step.instruction}`)
+        .join('\n  ');
+    }
+
     return SYSTEM_PROMPTS.TUTOR_AGENT
       .replace(/{TOPIC_NAME}/g, config.topicName)
       .replace(/{evaluator_instruction}/g, context.evaluatorInstruction || '')
       .replace(/{recent_history}/g, context.recentHistory || '')
       .replace(/{student_response}/g, context.studentResponse || '')
       .replace(/{current_difficulty}/g, context.currentDifficulty || 'easy')
-      .replace(/{hint_level}/g, context.hintLevel?.toString() || '1');
+      .replace(/{hint_level}/g, context.hintLevel?.toString() || '1')
+      .replace(/{SOLUTION_STEPS_TEMPLATE}/g, solutionStepsTemplate);
   }
 
   resolveAnswerEvaluation(context: PromptContext): string {
@@ -224,6 +236,22 @@ IMPORTANT: Return ONLY valid JSON in this exact format:
     "result": "[result description]"
   }
 }`;
+  }
+
+  resolveStepByStepVisualizationExtraction(context: PromptContext): string {
+    // Format step visualization requirements
+    const stepVisualizationRequirements = context.stepConfigs?.map(config =>
+      `Step ${config.stepNumber}: ${config.includeVisualization ? `Include visualization (${config.visualizationId})` : 'No visualization'}`
+    ).join('\n') || '';
+
+    // Get default visualization ID from the first step that has visualization
+    const defaultVisualizationId = context.stepConfigs?.find(config => config.includeVisualization)?.visualizationId || 'bar-division-simple';
+
+    return SYSTEM_PROMPTS.STEP_BY_STEP_VISUALIZATION_EXTRACTION
+      .replace(/{tutor_response}/g, context.tutorResponse || '')
+      .replace(/{problem_text}/g, context.problemText || '')
+      .replace(/{step_visualization_requirements}/g, stepVisualizationRequirements)
+      .replace(/{default_visualization_id}/g, defaultVisualizationId);
   }
 }
 

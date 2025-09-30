@@ -2,15 +2,50 @@ import React from 'react';
 import MathText from './MathText';
 import { useTheme } from '../hooks/useTheme';
 import VisualizationRenderer from './visualizations/VisualizationRenderer';
+import StepByStepRenderer from './StepByStepRenderer';
 import type { Message } from '../types/types';
 
 interface Props {
   message: Message;
+  problemText?: string;
+  topicId?: string;
+  onStepByStepComplete?: () => void;
 }
 
-const MessageBubble: React.FC<Props> = ({ message }) => {
+const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
   const { theme } = useTheme();
   const isTutor = message.role === 'tutor';
+
+  // Type guard to check if visualization data is structured step data
+  const isStructuredStepData = (data: any): data is {steps: any[], introText?: string, conclusionText?: string} => {
+    return data && typeof data === 'object' && Array.isArray(data.steps) && data.steps.length > 0;
+  };
+
+  // Type guard to check if visualization data is simple VisualizationData
+  const isSimpleVisualizationData = (data: any): boolean => {
+    return data && typeof data === 'object' && data.visualizationId && data.problemData && !Array.isArray(data.steps);
+  };
+
+  // Check if this message has structured step data
+  const hasStructuredStepData = isStructuredStepData(message.visualization);
+
+  // Check if this message has simple visualization data
+  const hasSimpleVisualization = isSimpleVisualizationData(message.visualization);
+
+  // Extract the correct data based on type
+  const structuredStepData = hasStructuredStepData ? message.visualization : null;
+  const simpleVisualizationData = hasSimpleVisualization ? message.visualization : null;
+
+  // Debug logging for MessageBubble
+  if (isTutor && message.visualization) {
+    console.log('📧 MessageBubble render:', {
+      messageId: message.id,
+      hasStructuredStepData,
+      hasSimpleVisualization,
+      visualizationType: typeof message.visualization,
+      stepsLength: message.visualization?.steps?.length
+    });
+  }
 
   return (
     <div className={`flex items-start space-x-3 animate-message-appear ${isTutor ? 'justify-start' : 'justify-end flex-row-reverse space-x-reverse'}`}>
@@ -59,19 +94,33 @@ const MessageBubble: React.FC<Props> = ({ message }) => {
           {isTutor ? 'Math Tutor' : 'You'}
         </div>
 
-        <div className="text-sm leading-relaxed whitespace-pre-wrap font-medium">
-          <MathText>{message.content}</MathText>
-        </div>
-
-        {/* Visualization rendering - only for tutor messages with visualization data */}
-        {isTutor && message.visualization && (
-          <div className="mt-4">
-            <VisualizationRenderer
-              data={message.visualization}
-              theme={theme}
-              className="visualization-in-message"
+        {/* Render step-by-step solution or regular message */}
+        {hasStructuredStepData && structuredStepData ? (
+          <div className="step-by-step-solution">
+            <StepByStepRenderer
+              key={`steps-${message.id}`}
+              structuredStepData={structuredStepData}
+              stepDelay={2500}
+              onComplete={onStepByStepComplete}
             />
           </div>
+        ) : (
+          <>
+            <div className="text-sm leading-relaxed whitespace-pre-wrap font-medium">
+              <MathText>{message.content}</MathText>
+            </div>
+
+            {/* Simple visualization rendering - only for tutor messages with simple visualization data */}
+            {isTutor && hasSimpleVisualization && simpleVisualizationData && (
+              <div className="mt-4">
+                <VisualizationRenderer
+                  data={simpleVisualizationData}
+                  theme={theme}
+                  className="visualization-in-message"
+                />
+              </div>
+            )}
+          </>
         )}
 
         {message.metadata?.isCorrect !== undefined && (

@@ -30,7 +30,6 @@ export const useSessionPersistence = ({
     // Create a signature of the current state to avoid unnecessary saves
     const currentSignature = JSON.stringify({
       messagesLength: conversationState.messages.length,
-      lastMessageId: conversationState.messages[conversationState.messages.length - 1]?.id,
       currentScore,
       problemsCompleted,
       currentDifficulty: conversationState.currentDifficulty,
@@ -48,7 +47,7 @@ export const useSessionPersistence = ({
       clearTimeout(timeoutRef.current);
     }
 
-    // Debounced save (wait 1 second after last change)
+    // Debounced save (wait 3 seconds after last change to reduce re-render frequency)
     timeoutRef.current = setTimeout(() => {
       sessionStorage.saveSession(
         topicId,
@@ -60,7 +59,7 @@ export const useSessionPersistence = ({
       );
 
       lastSaveRef.current = currentSignature;
-    }, 1000);
+    }, 3000);
 
     // Cleanup timeout on unmount
     return () => {
@@ -71,7 +70,6 @@ export const useSessionPersistence = ({
   }, [
     topicId,
     conversationState.messages.length,
-    conversationState.messages[conversationState.messages.length - 1]?.id,
     conversationState.currentDifficulty,
     currentScore,
     problemsCompleted,
