@@ -5,7 +5,7 @@ export interface Message {
   timestamp: Date;
   visualization?: any; // Optional visualization data - can be VisualizationData or structured step data
   metadata?: {
-    difficulty?: 'easy' | 'medium' | 'hard';
+    problemType?: number;
     isCorrect?: boolean;
     conceptsCovered?: string[];
   };
@@ -13,7 +13,7 @@ export interface Message {
 
 export interface ConversationState {
   messages: Message[];
-  currentDifficulty: 'easy' | 'medium' | 'hard';
+  currentProblemType: number;
   problemState?: ProblemState;  // Explicit problem tracking
   sessionStats: {
     problemsAttempted: number;
@@ -44,7 +44,7 @@ export interface ProblemState {
   attemptsForCurrentProblem: number;    // Student attempts
   problemStartTime: Date;
   currentProblemText: string;
-  difficulty: 'easy' | 'medium' | 'hard';
+  problemType: number;
 }
 
 export interface EvaluatorInstruction {
@@ -75,6 +75,6 @@ export interface ProgressEvaluation {
   problemsCompleted: number;          // Total problems solved correctly
   currentScore: number;               // Running score (0.00-1.00)
   hintsUsed: number;                  // Hints used for current problem
-  nextDifficulty: 'easy' | 'medium' | 'hard';  // Next difficulty level
+  nextProblemType: number;            // Next problem type
   subtopicComplete: boolean;          // True when score reaches 1.0
 }

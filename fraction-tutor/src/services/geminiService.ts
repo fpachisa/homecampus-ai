@@ -61,10 +61,10 @@ class GeminiService implements AIService {
     }
   }
 
-  async generateQuestion(difficulty: 'easy' | 'medium' | 'hard', topicId: string = 'fraction-division-by-whole-numbers'): Promise<string> {
+  async generateQuestion(problemType: number, topicId: string = 'fraction-division-by-whole-numbers'): Promise<string> {
     const prompt = promptResolver.resolveQuestionGeneration({
       topicId: topicId as any,
-      currentDifficulty: difficulty
+      currentProblemType: problemType
     });
 
     try {
@@ -103,7 +103,7 @@ class GeminiService implements AIService {
   async generateResponse(
     studentResponse: string,
     recentHistory: Message[],
-    currentDifficulty: 'easy' | 'medium' | 'hard',
+    currentProblemType: number,
     isComplete: boolean = false,
     topicId: string = 'fraction-division-by-whole-numbers'
   ): Promise<GeminiResponse> {
@@ -125,7 +125,7 @@ class GeminiService implements AIService {
 
     const prompt = promptResolver.resolveConversationResponse({
       topicId: topicId as any,
-      currentDifficulty,
+      currentProblemType,
       recentHistory: historyText,
       studentResponse
     });
@@ -210,7 +210,7 @@ class GeminiService implements AIService {
 
     const prompt = promptResolver.resolveEvaluatorAgent({
       topicId: topicId as any,
-      currentDifficulty: problemState.difficulty,
+      currentProblemType: problemState.problemType,
       recentHistory: historyText,
       studentResponse,
       currentProblemId: problemState.currentProblemId,
@@ -265,7 +265,7 @@ class GeminiService implements AIService {
     instruction: EvaluatorInstruction,
     recentHistory: Message[],
     studentResponse: string,
-    currentDifficulty: 'easy' | 'medium' | 'hard',
+    currentProblemType: number,
     topicId: string
   ): Promise<string> {
     const historyText = recentHistory
@@ -278,7 +278,7 @@ if (instruction.action === "NEW_PROBLEM") {
       // For new problems, use the question generation prompt with context
       prompt = promptResolver.resolveQuestionGeneration({
         topicId: topicId as any,
-        currentDifficulty: currentDifficulty,
+        currentProblemType: currentProblemType,
         recentHistory: historyText,
         evaluatorReasoning: instruction.reasoning
       });
@@ -289,7 +289,7 @@ if (instruction.action === "NEW_PROBLEM") {
         evaluatorInstruction: JSON.stringify(instruction),
         recentHistory: historyText,
         studentResponse,
-        currentDifficulty,
+        currentProblemType,
         hintLevel: instruction.hintLevel
       });
     }
@@ -323,7 +323,7 @@ if (instruction.action === "NEW_PROBLEM") {
     studentResponse: string,
     _tutorResponse: string,
     recentHistory: Message[],
-    currentDifficulty: string,
+    currentProblemType: number,
     topicId: string
   ): Promise<AnswerEvaluation> {
     const historyText = recentHistory
@@ -332,7 +332,7 @@ if (instruction.action === "NEW_PROBLEM") {
 
 const prompt = promptResolver.resolveAnswerEvaluation({
       topicId: topicId as any,
-      currentDifficulty: currentDifficulty as 'easy' | 'medium' | 'hard',
+      currentProblemType: currentProblemType,
       recentHistory: historyText,
       studentResponse
     });
@@ -442,14 +442,19 @@ const prompt = promptResolver.resolveAnswerEvaluation({
   /**
    * Extract visualization data for each step of a step-by-step solution
    * Parses the tutorResponse to identify steps and extracts visualization for each configured step
+   * Now uses smart context detection to select appropriate visualization!
    */
   async extractStepByStepVisualizations(
     tutorResponse: string,
     problemText: string,
-    difficulty: 'easy' | 'medium' | 'hard',
+    problemType: number,
     topicId: string
   ): Promise<any> {
     try {
+      console.log('=== AI-DRIVEN VISUALIZATION SELECTION ===');
+      console.log('Problem text:', problemText);
+      console.log('Letting AI decide: bar-division or circular-division');
+
       // Get step visualization config from topic
       const { P6_MATH_FRACTIONS } = await import('../prompts/topics/P6-Math-Fractions');
       const config = P6_MATH_FRACTIONS[topicId as keyof typeof P6_MATH_FRACTIONS];
@@ -459,18 +464,17 @@ const prompt = promptResolver.resolveAnswerEvaluation({
         return null;
       }
 
-      const stepConfigs = (config as any).STEP_VISUALIZATION_CONFIG[difficulty];
+      const stepConfigs = (config as any).STEP_VISUALIZATION_CONFIG[problemType];
       if (!stepConfigs || !Array.isArray(stepConfigs)) {
-        console.warn('No step configs found for difficulty:', difficulty);
+        console.warn('No step configs found for problem type:', problemType);
         return null;
       }
 
       console.log('=== UNIFIED STEP PARSING & VISUALIZATION EXTRACTION ===');
       console.log('Tutor response:', tutorResponse);
-      console.log('Problem text:', problemText);
       console.log('Step configs:', stepConfigs);
 
-      // Use centralized prompt from prompt resolver
+      // Use centralized prompt from prompt resolver - AI will decide visualization type
       const unifiedPrompt = promptResolver.resolveStepByStepVisualizationExtraction({
         topicId: topicId as any,
         tutorResponse,
@@ -496,11 +500,134 @@ const prompt = promptResolver.resolveAnswerEvaluation({
       const parsedResponse = JSON.parse(cleanedText);
       console.log('Final unified structured data:', parsedResponse);
 
+      // IMPORTANT: Inject the correct theme based on the context field from AI response
+      // This ensures colors are always correct regardless of what AI generates
+      const { getThemeForContext } = await import('../utils/visualizationRegistry');
+
+      // Find steps with visualization and inject the correct theme based on context
+      if (parsedResponse.steps && Array.isArray(parsedResponse.steps)) {
+        parsedResponse.steps.forEach((step: any) => {
+          if (step.visualizationData) {
+            const contextFromAI = step.visualizationData.context || step.visualizationData.problemData?.context;
+
+            if (contextFromAI) {
+              // Map the context string to a VisualizationContext type
+              const theme = getThemeForContext(contextFromAI as any);
+              step.visualizationData.theme = theme;
+
+              console.log('Injected theme based on context:', {
+                visualizationId: step.visualizationData.visualizationId,
+                context: contextFromAI,
+                theme: theme
+              });
+            }
+          }
+        });
+      }
+
       return parsedResponse;
 
     } catch (error) {
       console.error('Error in unified step parsing and visualization extraction:', error);
       return null;
+    }
+  }
+
+  /**
+   * Visualization Agent: Generate complete solution with visualization data
+   * Single LLM call replaces: Tutor Agent + extractStepByStepVisualizations
+   */
+  async generateVisualizationSolution(
+    problemText: string,
+    problemType: number,
+    topicId: string,
+    recentHistory: Message[],
+    studentResponse: string,
+    evaluatorReasoning: string
+  ): Promise<any> {
+    try {
+      console.log('=== VISUALIZATION AGENT START ===');
+      console.log('Problem text:', problemText);
+      console.log('Problem type:', problemType);
+      console.log('Student response:', studentResponse);
+      console.log('Evaluator reasoning:', evaluatorReasoning);
+
+      // Format history for prompt
+      const historyText = recentHistory
+        .map(m => `${m.role === 'tutor' ? 'Tutor' : 'Student'}: ${m.content}`)
+        .join('\n');
+
+      // Get the prompt for the visualization agent with full context
+      const prompt = promptResolver.resolveVisualizationAgent({
+        topicId: topicId as any,
+        problemText,
+        currentProblemType: problemType,
+        recentHistory: historyText,
+        studentResponse,
+        evaluatorReasoning
+      });
+
+      console.log('Calling Gemini API with Visualization Agent prompt...');
+
+      const result = await this.model.generateContent(prompt);
+      const responseText = result.response.text().trim();
+
+      console.log('Visualization Agent raw response:', responseText);
+
+      // Clean and parse JSON response - handle markdown code fences anywhere in response
+      let cleanedText = responseText;
+
+      // Try to extract JSON from markdown code fences (```json ... ``` or ``` ... ```)
+      const jsonFenceMatch = cleanedText.match(/```json\s*\n?([\s\S]*?)\n?```/);
+      const genericFenceMatch = cleanedText.match(/```\s*\n?([\s\S]*?)\n?```/);
+
+      if (jsonFenceMatch) {
+        cleanedText = jsonFenceMatch[1].trim();
+      } else if (genericFenceMatch) {
+        cleanedText = genericFenceMatch[1].trim();
+      }
+
+      // Additional cleanup: remove any leading/trailing text that's not JSON
+      cleanedText = cleanedText.trim();
+
+      // Find first { and last } to extract just the JSON object
+      const firstBrace = cleanedText.indexOf('{');
+      const lastBrace = cleanedText.lastIndexOf('}');
+      if (firstBrace !== -1 && lastBrace !== -1 && firstBrace < lastBrace) {
+        cleanedText = cleanedText.substring(firstBrace, lastBrace + 1);
+      }
+
+      const parsedResponse = JSON.parse(cleanedText);
+      console.log('Parsed visualization solution data:', parsedResponse);
+
+      // Inject the correct theme based on context from AI response
+      const { getThemeForContext } = await import('../utils/visualizationRegistry');
+
+      if (parsedResponse.steps && Array.isArray(parsedResponse.steps)) {
+        parsedResponse.steps.forEach((step: any) => {
+          if (step.visualizationData) {
+            const contextFromAI = step.visualizationData.context || step.visualizationData.problemData?.context;
+
+            if (contextFromAI) {
+              const theme = getThemeForContext(contextFromAI as any);
+              step.visualizationData.theme = theme;
+
+              console.log('Injected theme for Visualization Agent:', {
+                visualizationId: step.visualizationData.visualizationId,
+                context: contextFromAI,
+                theme: theme
+              });
+            }
+          }
+        });
+      }
+
+      console.log('=== VISUALIZATION AGENT COMPLETE ===');
+      return parsedResponse;
+
+    } catch (error) {
+      console.error('Error in Visualization Agent:', error);
+      throw AIServiceError.fromHttpError(error);
     }
   }
 }

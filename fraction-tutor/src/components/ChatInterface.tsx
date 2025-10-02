@@ -29,7 +29,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   const { theme } = useTheme();
   const [state, setState] = useState<ConversationState>({
     messages: [],
-    currentDifficulty: 'easy',
+    currentProblemType: 1,
     sessionStats: {
       problemsAttempted: 0,
       correctAnswers: 0,
@@ -53,7 +53,7 @@ const [isLoading, setIsLoading] = useState(false);
 
   const aiService = useRef<AIService | null>(null);
   const [fallbackMessage, setFallbackMessage] = useState<string | null>(null);
-  const pendingNewProblemRef = useRef<{difficulty: 'easy' | 'medium' | 'hard', topicId: string} | null>(null);
+  const pendingNewProblemRef = useRef<{problemType: number, topicId: string} | null>(null);
 
   // Auto-save session state
   useSessionPersistence({
@@ -136,7 +136,7 @@ const scrollToBottom = () => {
           problemsAttempted: savedProgress.problemsAttempted,
           correctAnswers: savedProgress.correctAnswers
         },
-        currentDifficulty: savedProgress.currentDifficulty
+        currentProblemType: savedProgress.currentProblemType
       }));
     }
   };
@@ -146,20 +146,20 @@ const scrollToBottom = () => {
       topicId,
       state.sessionStats,
       currentScore,
-      state.currentDifficulty,
+      state.currentProblemType,
       user?.uid
     );
   };
 
   // Helper functions for problem state management
-  const createNewProblemState = (problemText: string, difficulty: 'easy' | 'medium' | 'hard'): ProblemState => {
+  const createNewProblemState = (problemText: string, problemType: number): ProblemState => {
     return {
       currentProblemId: `problem_${Date.now()}`,
       hintsGivenForCurrentProblem: 0,
       attemptsForCurrentProblem: 0,
       problemStartTime: new Date(),
       currentProblemText: problemText,
-      difficulty
+      problemType
     };
   };
 
@@ -183,8 +183,8 @@ const scrollToBottom = () => {
     });
   };
 
-  const resetProblemState = (newProblemText: string, difficulty: 'easy' | 'medium' | 'hard') => {
-    setProblemState(createNewProblemState(newProblemText, difficulty));
+  const resetProblemState = (newProblemText: string, problemType: number) => {
+    setProblemState(createNewProblemState(newProblemText, problemType));
   };
 
   // Callback for when step-by-step visualization completes
@@ -194,11 +194,11 @@ const scrollToBottom = () => {
 
     console.log('🎬 ChatInterface: Step-by-step complete, generating new problem');
     try {
-      const newProblem = await aiService.current.generateQuestion(pendingNewProblem.difficulty, pendingNewProblem.topicId);
+      const newProblem = await aiService.current.generateQuestion(pendingNewProblem.problemType, pendingNewProblem.topicId);
       console.log('📝 ChatInterface: Adding new problem after step-by-step completion');
 
-      addMessage('tutor', newProblem, { difficulty: pendingNewProblem.difficulty });
-      resetProblemState(newProblem, pendingNewProblem.difficulty);
+      addMessage('tutor', newProblem, { problemType: pendingNewProblem.problemType });
+      resetProblemState(newProblem, pendingNewProblem.problemType);
       setState(prev => ({
         ...prev,
         sessionStats: {
@@ -228,7 +228,7 @@ const scrollToBottom = () => {
       setState(prevState => ({
         ...prevState,
         messages: sessionData.messages,
-        currentDifficulty: sessionData.currentDifficulty
+        currentProblemType: sessionData.currentProblemType
       }));
 
       // Restore other state variables
@@ -262,11 +262,11 @@ const initializeConversation = async () => {
       // Wait a moment for greeting to render, then add first problem
       await new Promise(resolve => setTimeout(resolve, 800));
 
-      const firstProblem = await aiService.current.generateQuestion('easy', topicId);
-      addMessage('tutor', firstProblem, { difficulty: 'easy' });
+      const firstProblem = await aiService.current.generateQuestion(1, topicId);
+      addMessage('tutor', firstProblem, { problemType: 1 });
 
       // Initialize problem state for the first problem
-      resetProblemState(firstProblem, 'easy');
+      resetProblemState(firstProblem, 1);
 
       setState(prev => ({
         ...prev,
@@ -385,90 +385,123 @@ const handleStudentSubmit = async (input: string) => {
         console.log('🎉 SUBTOPIC COMPLETED! Score:', newScore.toFixed(2));
       }
 
-      // STEP 3: Calculate difficulty for NEW_PROBLEM actions BEFORE execution
-      let difficultyForExecution = state.currentDifficulty;
+      // STEP 3: Calculate problem type for NEW_PROBLEM actions BEFORE execution
+      let problemTypeForExecution = state.currentProblemType;
       if (instruction.action === "NEW_PROBLEM") {
-        // Calculate next difficulty based on new score
-        let nextDifficulty: 'easy' | 'medium' | 'hard' = 'easy';
-        if (newScore >= 0.5) {
-          nextDifficulty = 'hard';
-        } else if (newScore >= 0.2) {
-          nextDifficulty = 'medium';
+        // Get topic config to determine next problem type
+        const topicConfig = P6_MATH_FRACTIONS[topicId as TopicId];
+        const thresholds = topicConfig.PROBLEM_TYPE_CONFIG.progressionThresholds;
+
+        // Calculate next problem type based on new score
+        let nextProblemType = 1;
+        for (let i = 0; i < thresholds.length; i++) {
+          if (newScore >= thresholds[i]) {
+            nextProblemType = i + 2;
+          }
         }
 
-        difficultyForExecution = nextDifficulty;
+        problemTypeForExecution = nextProblemType;
 
-        // Update state with new difficulty immediately
-        if (nextDifficulty !== state.currentDifficulty) {
+        // Update state with new problem type immediately
+        if (nextProblemType !== state.currentProblemType) {
           setState(prev => ({
             ...prev,
-            currentDifficulty: nextDifficulty
+            currentProblemType: nextProblemType
           }));
         }
       }
 
-      // STEP 4: Tutor Agent - Execute instruction with correct difficulty
-      const tutorResponse = await aiService.current.executeInstruction(
-        instruction,
-        recentHistory,
-        input,
-        difficultyForExecution,
-        topicId
-      );
-
-      console.log('Tutor response:', tutorResponse);
-
-      // STEP 5: Extract visualization data if required by instruction
-      let structuredVisualizationData = undefined;
-      if (instruction.includeVisualization && problemState?.currentProblemText) {
-        console.log('Instruction includes visualization, extracting structured data...');
-        try {
-          structuredVisualizationData = await aiService.current.extractStepByStepVisualizations(
-            tutorResponse,
-            problemState.currentProblemText,
-            difficultyForExecution,
-            topicId
-          );
-          console.log('Structured visualization data extracted:', structuredVisualizationData);
-
-          // Only use the data if extraction was successful
-          if (!structuredVisualizationData) {
-            console.warn('Visualization extraction returned null, falling back to regular message');
+      // STEP 3.5: Check topic config to override visualization setting
+      // This allows topic-specific control over visualization based on problem type
+      if (instruction.action === "GIVE_SOLUTION" && instruction.includeVisualization) {
+        const topicConfig = P6_MATH_FRACTIONS[topicId as TopicId];
+        if (topicConfig && 'STEP_VISUALIZATION_CONFIG' in topicConfig) {
+          const stepConfigs = (topicConfig as any).STEP_VISUALIZATION_CONFIG[problemTypeForExecution];
+          if (stepConfigs && Array.isArray(stepConfigs) && stepConfigs.length > 0) {
+            // Check if any step has visualization enabled
+            const hasVisualization = stepConfigs.some((step: any) => step.includeVisualization === true);
+            if (!hasVisualization) {
+              // Override evaluator's decision - no visualization for this problem type
+              instruction.includeVisualization = false;
+              console.log(`🚫 Visualization disabled for problem type ${problemTypeForExecution} per topic config`);
+            }
           }
-        } catch (error) {
-          console.error('Failed to extract visualization data:', error);
-          structuredVisualizationData = undefined;
         }
       }
 
-      // STEP 6: Prepare for new problem generation (no re-render with ref)
+      // STEP 4: Generate response based on action
+      let tutorResponse: string;
+      let structuredVisualizationData = undefined;
+
+      if (instruction.action === "GIVE_SOLUTION" && instruction.includeVisualization && problemState?.currentProblemText) {
+        // NEW FLOW: Use Visualization Agent for solutions
+        // Single LLM call generates: solution text + complete visualization data
+        console.log('🎨 Using Visualization Agent for solution (1 LLM call)');
+        try {
+          structuredVisualizationData = await aiService.current.generateVisualizationSolution(
+            problemState.currentProblemText,
+            problemTypeForExecution,
+            topicId,
+            recentHistory,
+            input,
+            instruction.reasoning || 'Student needs help with this problem'
+          );
+          console.log('Visualization Agent data:', structuredVisualizationData);
+
+          // Extract tutor response from structured data
+          if (structuredVisualizationData) {
+            // Construct the tutor response text from introText
+            tutorResponse = structuredVisualizationData.introText || "Let me show you how to solve this.";
+          } else {
+            console.warn('Visualization Agent returned null, using fallback');
+            tutorResponse = "Let me show you how to solve this problem step by step.";
+          }
+        } catch (error) {
+          console.error('Failed to generate visualization solution:', error);
+          tutorResponse = "Let me show you how to solve this problem step by step.";
+          structuredVisualizationData = undefined;
+        }
+      } else {
+        // OLD FLOW: Use Tutor Agent for hints, new problems, celebrations
+        console.log('📝 Using Tutor Agent for:', instruction.action);
+        tutorResponse = await aiService.current.executeInstruction(
+          instruction,
+          recentHistory,
+          input,
+          problemTypeForExecution,
+          topicId
+        );
+        console.log('Tutor response:', tutorResponse);
+      }
+
+      // STEP 5: Prepare for new problem generation (no re-render with ref)
       if (instruction.action === "GIVE_SOLUTION" && structuredVisualizationData) {
         console.log('🎬 ChatInterface: Setting up step-by-step completion callback');
         // Store the pending new problem details in ref (no re-render)
-        pendingNewProblemRef.current = { difficulty: difficultyForExecution, topicId };
+        pendingNewProblemRef.current = { problemType: problemTypeForExecution, topicId };
       }
 
-      // STEP 7: Add tutor response with visualization data
-      console.log('🏃 ChatInterface: Adding step-by-step message to chat');
-      addMessage('tutor', tutorResponse, { difficulty: difficultyForExecution }, structuredVisualizationData);
-      console.log('✅ ChatInterface: Step-by-step message added');
+      // STEP 6: Add tutor response with visualization data
+      console.log('🏃 ChatInterface: Adding message to chat');
+      addMessage('tutor', tutorResponse, { problemType: problemTypeForExecution }, structuredVisualizationData);
+      console.log('✅ ChatInterface: Message added');
 
-      // If instruction was to give a new problem, reset problem state with correct difficulty
+      // If instruction was to give a new problem, reset problem state with correct problem type
       if (instruction.action === "NEW_PROBLEM") {
-        resetProblemState(tutorResponse, difficultyForExecution);
+        resetProblemState(tutorResponse, problemTypeForExecution);
       }
 
-      // STEP 8: Auto-generate new problem after GIVE_SOLUTION - only if no visualization
+      // STEP 7: Auto-generate new problem after GIVE_SOLUTION - only if no visualization
       if (instruction.action === "GIVE_SOLUTION" && !structuredVisualizationData) {
         console.log('🔄 ChatInterface: Generating new problem after solution (no visualization)');
-        // Generate a new problem at the current difficulty immediately
-        const newProblem = await aiService.current.generateQuestion(difficultyForExecution, topicId);
+        // Generate a new problem at the current problem type immediately
+        const newProblem = await aiService.current.generateQuestion(problemTypeForExecution, topicId);
         console.log('📝 ChatInterface: Adding new problem message to chat');
-        addMessage('tutor', newProblem, { difficulty: difficultyForExecution });
+        addMessage('tutor', newProblem, { problemType: problemTypeForExecution });
         console.log('✅ ChatInterface: New problem message added');
 
         // Reset problem state for the new problem
-        resetProblemState(newProblem, difficultyForExecution);
+        resetProblemState(newProblem, problemTypeForExecution);
 
         // Increment problems attempted counter
         setState(prev => ({
@@ -598,7 +631,7 @@ const handleStudentSubmit = async (input: string) => {
         className="overflow-y-auto"
         style={{ height: 0, flexGrow: 1 }}
       >
-        <div className="max-w-4xl mx-auto p-6 space-y-6">
+        <div className="w-full mx-auto p-6 space-y-6">
           {state.messages.map(message => {
             // Only pass the callback to messages that have step-by-step visualization
             const hasStepByStepVisualization = message.visualization &&
@@ -623,7 +656,7 @@ const handleStudentSubmit = async (input: string) => {
                 className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg text-white shadow-md"
                 style={{ backgroundColor: theme.colors.brand }}
               >
-                🧠
+                📚
               </div>
 
               {/* Loading Message */}

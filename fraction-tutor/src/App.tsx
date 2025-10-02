@@ -1,9 +1,10 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext, useEffect } from 'react';
 import MainLayout from './components/layout/MainLayout';
 import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { sessionStorage } from './services/sessionStorage';
 import type { TopicId } from './prompts/topics/P6-Math-Fractions';
+import { registerAllVisualizers } from './utils/registerVisualizers';
 import './styles/animations.css';
 
 // App state context for managing application-wide state
@@ -83,6 +84,11 @@ function AppContent() {
 
 // Main App component with providers
 function App() {
+  // Register all visualizers when the app starts
+  useEffect(() => {
+    registerAllVisualizers();
+  }, []);
+
   return (
     <ThemeProvider defaultTheme="dark">
       <AuthProvider>

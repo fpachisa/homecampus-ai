@@ -168,11 +168,11 @@ class FallbackAIService implements AIService {
   }
 
   async generateQuestion(
-    difficulty: 'easy' | 'medium' | 'hard',
+    problemType: number,
     topicId: string = 'fraction-division-by-whole-numbers'
   ): Promise<string> {
     return this.executeWithFallback(
-      (service) => service.generateQuestion(difficulty, topicId),
+      (service) => service.generateQuestion(problemType, topicId),
       'generateQuestion'
     );
   }
@@ -180,12 +180,12 @@ class FallbackAIService implements AIService {
   async generateResponse(
     studentResponse: string,
     recentHistory: Message[],
-    currentDifficulty: 'easy' | 'medium' | 'hard',
+    currentProblemType: number,
     isComplete: boolean = false,
     topicId: string = 'fraction-division-by-whole-numbers'
   ): Promise<GeminiResponse> {
     return this.executeWithFallback(
-      (service) => service.generateResponse(studentResponse, recentHistory, currentDifficulty, isComplete, topicId),
+      (service) => service.generateResponse(studentResponse, recentHistory, currentProblemType, isComplete, topicId),
       'generateResponse'
     );
   }
@@ -220,12 +220,12 @@ class FallbackAIService implements AIService {
     instruction: EvaluatorInstruction,
     recentHistory: Message[],
     studentResponse: string,
-    currentDifficulty: 'easy' | 'medium' | 'hard',
+    currentProblemType: number,
     topicId: string
   ): Promise<string> {
     try {
       return await this.executeWithFallback(
-        (service) => service.executeInstruction(instruction, recentHistory, studentResponse, currentDifficulty, topicId),
+        (service) => service.executeInstruction(instruction, recentHistory, studentResponse, currentProblemType, topicId),
         'executeInstruction'
       );
     } catch (error) {
@@ -262,12 +262,26 @@ class FallbackAIService implements AIService {
   async extractStepByStepVisualizations(
     tutorResponse: string,
     problemText: string,
-    difficulty: 'easy' | 'medium' | 'hard',
+    problemType: number,
     topicId: string
   ): Promise<any> {
     return this.executeWithFallback(
-      (service) => service.extractStepByStepVisualizations(tutorResponse, problemText, difficulty, topicId),
+      (service) => service.extractStepByStepVisualizations(tutorResponse, problemText, problemType, topicId),
       'extractStepByStepVisualizations'
+    );
+  }
+
+  async generateVisualizationSolution(
+    problemText: string,
+    problemType: number,
+    topicId: string,
+    recentHistory: Message[],
+    studentResponse: string,
+    evaluatorReasoning: string
+  ): Promise<any> {
+    return this.executeWithFallback(
+      (service) => service.generateVisualizationSolution(problemText, problemType, topicId, recentHistory, studentResponse, evaluatorReasoning),
+      'generateVisualizationSolution'
     );
   }
 

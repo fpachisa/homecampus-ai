@@ -4,11 +4,47 @@
  * and consumed by pre-defined React visualization components.
  */
 
+// Context types for different problem scenarios
+export type VisualizationContext =
+  | 'chocolate-bar'
+  | 'pizza'
+  | 'cake'
+  | 'ribbon'
+  | 'rope'
+  | 'liquid'
+  | 'measurement'
+  | 'abstract';
+
+// Theme configuration for context-specific styling
+export interface VisualizationTheme {
+  primaryColor: string;
+  secondaryColor: string;
+  accentColor: string;
+  gradientFrom: string;
+  gradientTo: string;
+  borderColor: string;
+  backgroundColor: string;
+  textColor: string;
+  emoji?: string; // Context-specific emoji (e.g., 🍫, 🍕, 📏)
+  iconLabel?: string; // Label for visual elements (e.g., "piece", "slice", "meter")
+}
+
 export interface ProblemData {
   numerator: number;
   denominator: number;
   divisor: number;
-  context: string; // e.g., "flour-loaves", "pizza-friends", "ribbon-pieces"
+  context: VisualizationContext; // Specific context type
+  contextKeywords?: string[]; // Keywords from problem text (e.g., ["chocolate", "bar", "friends"])
+  numberOfRecipients?: number; // For sharing problems (e.g., 3 friends)
+  unit?: string; // Unit of measurement (e.g., "cup", "meter", "liter")
+
+  // Pre-calculated values (provided by Visualization Agent, not calculated by visualizers!)
+  resultNumerator?: number; // Result numerator (typically same as numerator)
+  resultDenominator?: number; // Result denominator (denominator * divisor)
+  simplifiedNumerator?: number; // Simplified numerator (after GCD reduction)
+  simplifiedDenominator?: number; // Simplified denominator (after GCD reduction)
+  totalSmallPieces?: number; // Total pieces after subdivision (numerator * divisor)
+  needsSimplification?: boolean; // True if result can be simplified
 }
 
 export interface VisualizationStage {
@@ -17,6 +53,8 @@ export interface VisualizationStage {
   description: string;
   highlight?: string; // What to highlight in this stage
   duration?: number; // Animation duration in milliseconds
+  stepNumber?: number; // Visual step number (for multi-step visualizations)
+  tutorText?: string; // Custom text from tutor agent for this step
 }
 
 export interface ContextualLabels {
@@ -24,30 +62,57 @@ export interface ContextualLabels {
   division: string; // e.g., "3 equal loaves"
   result: string; // e.g., "flour per loaf"
   unit?: string; // e.g., "cups", "pieces", "meters"
+  recipients?: string[]; // For sharing problems (e.g., ["Friend 1", "Friend 2", "Friend 3"])
 }
 
 export interface VisualizationData {
-  visualizationId: string; // Maps to component (e.g., "bar-division-simple")
+  visualizationId: string; // Maps to component (e.g., "chocolate-bar-division")
+  context: VisualizationContext; // Problem context
+  theme?: VisualizationTheme; // Optional theme override
   problemData: ProblemData;
   stages: VisualizationStage[];
   contextualLabels: ContextualLabels;
   trigger: 'solution' | 'hint' | 'explanation'; // What triggered this visualization
+  interactionMode?: 'auto' | 'manual'; // Auto-advance or manual step control
+  introText?: string; // Intro text from tutor before steps
+  conclusionText?: string; // Conclusion text from tutor after steps
+  mathSummary?: {
+    problem: string; // e.g., "3/4 ÷ 3 = ?"
+    solution: string; // e.g., "3/4 ÷ 3 = 3/12 = 1/4"
+    explanation: string; // Brief contextual explanation
+  };
 }
 
 export interface VisualizationProps {
   data: VisualizationData;
   theme: any; // Theme from useTheme hook
   className?: string;
+  step?: number; // Current step for step-controlled visualizations
+  onStepChange?: (step: number) => void; // Callback for step changes
+  onComplete?: () => void; // Callback when user finishes viewing all steps
 }
 
-// Supported visualization types
+// Supported visualization types (2 generic visualizers)
 export type VisualizationId =
-  | 'bar-division-simple'
-  | 'bar-division-complex'
-  | 'grouping-model'
-  | 'step-by-step-solution';
+  | 'bar-division'      // For linear/rectangular objects (ribbon, chocolate, rope, etc.)
+  | 'circular-division'; // For circular/round objects (pizza, cake, pie, garden, etc.)
 
 export interface VisualizationConfig {
   visualizationId: VisualizationId;
+  context: VisualizationContext;
   description: string; // Human-readable description of what this visualization shows
+  theme: VisualizationTheme; // Default theme for this visualizer
+  supportedOperations: ('division' | 'multiplication' | 'addition' | 'subtraction')[]; // What operations this visualizer supports
+  qualityLevel: 'high' | 'medium' | 'basic'; // Quality/engagement level
+  fallbackId?: VisualizationId; // Fallback visualizer if this one fails
+}
+
+// Metadata for visualization registry
+export interface VisualizationMetadata {
+  id: VisualizationId;
+  displayName: string;
+  context: VisualizationContext;
+  keywords: string[]; // Keywords to match from problem text
+  component: React.ComponentType<any>; // The actual React component
+  config: VisualizationConfig;
 }

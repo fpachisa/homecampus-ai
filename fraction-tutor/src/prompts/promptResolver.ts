@@ -3,7 +3,7 @@ import { P6_MATH_FRACTIONS, type TopicId, type SubtopicConfig, type SolutionStep
 
 export interface PromptContext {
   topicId: TopicId;
-  currentDifficulty?: 'easy' | 'medium' | 'hard';
+  currentProblemType?: number;
   recentHistory?: string;
   studentResponse?: string;
   tutorResponse?: string;
@@ -18,7 +18,7 @@ export interface PromptContext {
   currentProblemText?: string;
   evaluatorInstruction?: string;
   hintLevel?: number;
-  evaluatorReasoning?: string;
+  evaluatorReasoning?: string; // Evaluator's reasoning for giving solution/hint
 
 // New fields for visualization extraction
   problemText?: string;
@@ -27,6 +27,8 @@ export interface PromptContext {
 
 // New fields for step-by-step visualization extraction
   stepConfigs?: any[];
+  detectedContext?: string;
+  detectedVisualizationId?: string;
 }
 
 export class PromptResolver {
@@ -39,20 +41,34 @@ export class PromptResolver {
   }
 
   private formatScoringRules(config: SubtopicConfig): string {
-    const { points } = config.SCORING_CONFIG;
-    return [
-      `- Easy problems: ${points.easy} points base`,
-      `- Medium problems: ${points.medium} points base`,
-      `- Hard problems: ${points.hard} points base`
-    ].join('\n');
+    const scoringConfig = config.SCORING_CONFIG;
+    const rules: string[] = [];
+
+    // Iterate through all problem types in the scoring config
+    for (const [problemType, typeConfig] of Object.entries(scoringConfig)) {
+      if (typeof typeConfig === 'object' && 'basePoints' in typeConfig) {
+        rules.push(`- Problem Type ${problemType}: ${typeConfig.basePoints} points base`);
+      }
+    }
+
+    return rules.join('\n');
   }
 
   private formatHintPenalties(config: SubtopicConfig): string {
-    const { hintPenalties } = config.SCORING_CONFIG;
-    return [
-      `- Easy/Medium: -${hintPenalties.easy.first} for 1st hint, -${hintPenalties.easy.second} for 2nd hint, ${hintPenalties.easy.thirdPlus} points if 3+ hints`,
-      `- Hard: -${hintPenalties.hard.first} for 1st hint, -${hintPenalties.hard.second} for 2nd hint, ${hintPenalties.hard.thirdPlus} points if 3+ hints`
-    ].join('\n');
+    const scoringConfig = config.SCORING_CONFIG;
+    const penalties: string[] = [];
+
+    // Iterate through all problem types in the scoring config
+    for (const [problemType, typeConfig] of Object.entries(scoringConfig)) {
+      if (typeof typeConfig === 'object' && 'hintPenalties' in typeConfig) {
+        const hp = typeConfig.hintPenalties;
+        penalties.push(
+          `- Problem Type ${problemType}: -${hp.first} for 1st hint, -${hp.second} for 2nd hint, ${hp.thirdPlus} points if 3+ hints`
+        );
+      }
+    }
+
+    return penalties.join('\n');
   }
 
   resolveInitialGreeting(context: PromptContext): string {
@@ -67,7 +83,7 @@ export class PromptResolver {
     const config = this.getTopicConfig(context.topicId);
     return SYSTEM_PROMPTS.CONVERSATION_RESPONSE
       .replace(/{TOPIC_NAME}/g, config.topicName)
-      .replace(/{current_difficulty}/g, context.currentDifficulty || 'easy')
+      .replace(/{current_problem_type}/g, context.currentProblemType?.toString() || '1')
       .replace(/{recent_history}/g, context.recentHistory || '')
       .replace(/{student_response}/g, context.studentResponse || '');
   }
@@ -91,7 +107,7 @@ resolveEvaluatorAgent(context: PromptContext): string {
       .replace(/{current_problem_id}/g, context.currentProblemId || 'unknown')
       .replace(/{hints_given}/g, context.hintsGiven?.toString() || '0')
       .replace(/{student_attempts}/g, context.studentAttempts?.toString() || '0')
-      .replace(/{current_difficulty}/g, context.currentDifficulty || 'easy')
+      .replace(/{current_problem_type}/g, context.currentProblemType?.toString() || '1')
       .replace(/{current_problem_text}/g, context.currentProblemText || '')
       .replace(/{SCORING_RULES}/g, scoringRules)
       .replace(/{HINT_PENALTIES}/g, hintPenalties)
@@ -102,12 +118,20 @@ resolveEvaluatorAgent(context: PromptContext): string {
   resolveTutorAgent(context: PromptContext): string {
     const config = this.getTopicConfig(context.topicId);
 
-    // Format solution steps template if available
+    // Get solution steps for current problem type using template mapping
     let solutionStepsTemplate = '';
     if ('SOLUTION_STEPS' in config && config.SOLUTION_STEPS) {
-      solutionStepsTemplate = config.SOLUTION_STEPS.template
-        .map((step: SolutionStep) => `Step ${step.stepNumber}: ${step.instruction}`)
-        .join('\n  ');
+      const problemType = context.currentProblemType || 1;
+      const templateId = config.SOLUTION_STEPS.problemTypeMapping[problemType];
+
+      if (templateId && config.SOLUTION_STEPS.templates[templateId]) {
+        const template = config.SOLUTION_STEPS.templates[templateId];
+        solutionStepsTemplate = template
+          .map((step: SolutionStep) => `Step ${step.stepNumber}: ${step.instruction}`)
+          .join('\n  ');
+      } else {
+        console.warn(`No solution template found for problem type ${problemType}, templateId: ${templateId}`);
+      }
     }
 
     return SYSTEM_PROMPTS.TUTOR_AGENT
@@ -115,7 +139,7 @@ resolveEvaluatorAgent(context: PromptContext): string {
       .replace(/{evaluator_instruction}/g, context.evaluatorInstruction || '')
       .replace(/{recent_history}/g, context.recentHistory || '')
       .replace(/{student_response}/g, context.studentResponse || '')
-      .replace(/{current_difficulty}/g, context.currentDifficulty || 'easy')
+      .replace(/{current_problem_type}/g, context.currentProblemType?.toString() || '1')
       .replace(/{hint_level}/g, context.hintLevel?.toString() || '1')
       .replace(/{SOLUTION_STEPS_TEMPLATE}/g, solutionStepsTemplate);
   }
@@ -129,7 +153,7 @@ resolveEvaluatorAgent(context: PromptContext): string {
       .replace(/{TOPIC_NAME}/g, config.topicName)
       .replace(/{SCORING_RULES}/g, scoringRules)
       .replace(/{HINT_PENALTIES}/g, hintPenalties)
-      .replace(/{current_difficulty}/g, context.currentDifficulty || 'easy')
+      .replace(/{current_problem_type}/g, context.currentProblemType?.toString() || '1')
       .replace(/{recent_history}/g, context.recentHistory || '')
       .replace(/{student_response}/g, context.studentResponse || '')
       .replace(/{tutor_response}/g, context.tutorResponse || '');
@@ -137,8 +161,8 @@ resolveEvaluatorAgent(context: PromptContext): string {
 
 resolveQuestionGeneration(context: PromptContext): string {
     const config = this.getTopicConfig(context.topicId);
-    const difficulty = context.currentDifficulty || 'easy';
-    const basePrompt = config.QUESTION_GENERATION[difficulty];
+    const problemType = context.currentProblemType || 1;
+    const basePrompt = config.QUESTION_GENERATION[problemType];
 
     // If we have evaluator reasoning and history, wrap with acknowledgment context
     if (context.evaluatorReasoning && context.recentHistory) {
@@ -173,6 +197,26 @@ Response format: [Acknowledgment] + [Transition] + [New Problem]`;
   getTopicScoringConfig(topicId: TopicId) {
     const config = this.getTopicConfig(topicId);
     return config.SCORING_CONFIG;
+  }
+
+  getSolutionStepsForProblemType(config: SubtopicConfig, problemType: number): SolutionStep[] | null {
+    if (!('SOLUTION_STEPS' in config) || !config.SOLUTION_STEPS) {
+      return null;
+    }
+
+    const templateId = config.SOLUTION_STEPS.problemTypeMapping[problemType];
+    if (!templateId) {
+      console.warn(`No template mapping for problem type ${problemType}`);
+      return null;
+    }
+
+    const template = config.SOLUTION_STEPS.templates[templateId];
+    if (!template) {
+      console.warn(`Template '${templateId}' not found`);
+      return null;
+    }
+
+    return template;
   }
 
   resolveVisualizationExtraction(context: PromptContext): string {
@@ -241,17 +285,43 @@ IMPORTANT: Return ONLY valid JSON in this exact format:
   resolveStepByStepVisualizationExtraction(context: PromptContext): string {
     // Format step visualization requirements
     const stepVisualizationRequirements = context.stepConfigs?.map(config =>
-      `Step ${config.stepNumber}: ${config.includeVisualization ? `Include visualization (${config.visualizationId})` : 'No visualization'}`
+      `Step ${config.stepNumber}: ${config.includeVisualization ? 'Include visualization' : 'No visualization'}`
     ).join('\n') || '';
-
-    // Get default visualization ID from the first step that has visualization
-    const defaultVisualizationId = context.stepConfigs?.find(config => config.includeVisualization)?.visualizationId || 'bar-division-simple';
 
     return SYSTEM_PROMPTS.STEP_BY_STEP_VISUALIZATION_EXTRACTION
       .replace(/{tutor_response}/g, context.tutorResponse || '')
       .replace(/{problem_text}/g, context.problemText || '')
-      .replace(/{step_visualization_requirements}/g, stepVisualizationRequirements)
-      .replace(/{default_visualization_id}/g, defaultVisualizationId);
+      .replace(/{step_visualization_requirements}/g, stepVisualizationRequirements);
+  }
+
+  resolveVisualizationAgent(context: PromptContext): string {
+    const config = this.getTopicConfig(context.topicId);
+
+    // Get solution steps for current problem type using template mapping (same as resolveTutorAgent)
+    let solutionStepsTemplate = '';
+    if ('SOLUTION_STEPS' in config && config.SOLUTION_STEPS) {
+      const problemType = context.currentProblemType || 1;
+      const templateId = config.SOLUTION_STEPS.problemTypeMapping[problemType];
+
+      if (templateId && config.SOLUTION_STEPS.templates[templateId]) {
+        const template = config.SOLUTION_STEPS.templates[templateId];
+        solutionStepsTemplate = template
+          .map((step: SolutionStep) => `Step ${step.stepNumber}: ${step.instruction}`)
+          .join('\n  ');
+      } else {
+        console.warn(`No solution template found for problem type ${problemType}, templateId: ${templateId}`);
+        solutionStepsTemplate = 'Generate a 4-step solution following standard fraction division procedures.';
+      }
+    }
+
+    return SYSTEM_PROMPTS.VISUALIZATION_AGENT
+      .replace(/{TOPIC_NAME}/g, config.topicName)
+      .replace(/{recent_history}/g, context.recentHistory || '')
+      .replace(/{student_response}/g, context.studentResponse || '')
+      .replace(/{evaluator_reasoning}/g, context.evaluatorReasoning || 'Student needs help with this problem')
+      .replace(/{current_problem_type}/g, context.currentProblemType?.toString() || '1')
+      .replace(/{problem_text}/g, context.problemText || '')
+      .replace(/{SOLUTION_STEPS_TEMPLATE}/g, solutionStepsTemplate);
   }
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import MathText from './MathText';
 import { useTheme } from '../hooks/useTheme';
 import VisualizationRenderer from './visualizations/VisualizationRenderer';
-import StepByStepRenderer from './StepByStepRenderer';
 import type { Message } from '../types/types';
 
 interface Props {
@@ -36,32 +35,52 @@ const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
   const structuredStepData = hasStructuredStepData ? message.visualization : null;
   const simpleVisualizationData = hasSimpleVisualization ? message.visualization : null;
 
+  // Extract visualization data from structured step data
+  // Find the first step that has visualization and use that data
+  let extractedVisualizationData = null;
+  if (structuredStepData) {
+    const stepWithViz = structuredStepData.steps.find((step: any) =>
+      step.includeVisualization && step.visualizationData
+    );
+    if (stepWithViz && stepWithViz.visualizationData) {
+      // AI now provides complete visualization data with all stages and tutorText
+      // Just pass it through with intro/conclusion text
+      extractedVisualizationData = {
+        ...stepWithViz.visualizationData,
+        introText: structuredStepData.introText,
+        conclusionText: structuredStepData.conclusionText
+      };
+    }
+  }
+
   // Debug logging for MessageBubble
   if (isTutor && message.visualization) {
     console.log('📧 MessageBubble render:', {
       messageId: message.id,
       hasStructuredStepData,
       hasSimpleVisualization,
+      extractedVisualizationData: !!extractedVisualizationData,
       visualizationType: typeof message.visualization,
       stepsLength: message.visualization?.steps?.length
     });
   }
 
   return (
-    <div className={`flex items-start space-x-3 animate-message-appear ${isTutor ? 'justify-start' : 'justify-end flex-row-reverse space-x-reverse'}`}>
-      {/* Avatar */}
-      <div
-        className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg text-white shadow-md"
-        style={{
-          backgroundColor: isTutor ? theme.colors.brand : theme.colors.userMessage,
-        }}
-      >
-        {isTutor ? '🧠' : '🙋‍♀️'}
-      </div>
+    <div className={`flex w-full items-start animate-message-appear ${isTutor ? 'justify-start' : 'justify-end'}`}>
+      <div className={`flex items-start ${isTutor ? 'space-x-3' : 'space-x-3 flex-row-reverse space-x-reverse'}`}>
+        {/* Avatar */}
+        <div
+          className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg text-white shadow-md"
+          style={{
+            backgroundColor: isTutor ? theme.colors.brand : theme.colors.userMessage,
+          }}
+        >
+          {isTutor ? '📚' : '🙋‍♀️'}
+        </div>
 
-      {/* Message */}
-      <div
-        className="relative max-w-lg px-5 py-4 transition-all duration-300 hover:scale-[1.02] border backdrop-blur-sm"
+        {/* Message */}
+        <div
+          className="relative max-w-lg px-5 py-4 transition-all duration-300 hover:scale-[1.02] border backdrop-blur-sm"
         style={{
           background: isTutor
             ? `${theme.colors.tutorMessage}`
@@ -94,15 +113,31 @@ const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
           {isTutor ? 'Math Tutor' : 'You'}
         </div>
 
-        {/* Render step-by-step solution or regular message */}
-        {hasStructuredStepData && structuredStepData ? (
-          <div className="step-by-step-solution">
-            <StepByStepRenderer
-              key={`steps-${message.id}`}
-              structuredStepData={structuredStepData}
-              stepDelay={2500}
+        {/* Render visualization or regular message */}
+        {extractedVisualizationData ? (
+          // Render extracted visualization from structured step data
+          <div className="visualization-solution">
+            {/* Display intro text if available */}
+            {extractedVisualizationData.introText && (
+              <div className="text-sm leading-relaxed whitespace-pre-wrap font-medium mb-4">
+                <MathText>{extractedVisualizationData.introText}</MathText>
+              </div>
+            )}
+
+            {/* Render the visualizer directly */}
+            <VisualizationRenderer
+              data={extractedVisualizationData}
+              theme={theme}
+              className="visualization-in-message"
               onComplete={onStepByStepComplete}
             />
+
+            {/* Display conclusion text if available */}
+            {extractedVisualizationData.conclusionText && (
+              <div className="text-sm leading-relaxed whitespace-pre-wrap font-medium mt-4">
+                <MathText>{extractedVisualizationData.conclusionText}</MathText>
+              </div>
+            )}
           </div>
         ) : (
           <>
@@ -135,16 +170,7 @@ const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
           </div>
         )}
 
-        {message.metadata?.difficulty && (
-          <div
-            className="text-xs mt-2"
-            style={{
-              color: isTutor ? theme.colors.textMuted : 'rgba(255,255,255,0.7)',
-            }}
-          >
-            Level: {message.metadata.difficulty}
-          </div>
-        )}
+      </div>
       </div>
     </div>
   );

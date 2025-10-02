@@ -22,10 +22,10 @@ export interface AIService {
   ): Promise<string>;
 
   /**
-   * Generate a new question at specified difficulty
+   * Generate a new question at specified problem type
    */
   generateQuestion(
-    difficulty: 'easy' | 'medium' | 'hard',
+    problemType: number,
     topicId: string
   ): Promise<string>;
 
@@ -35,7 +35,7 @@ export interface AIService {
   generateResponse(
     studentResponse: string,
     recentHistory: Message[],
-    currentDifficulty: 'easy' | 'medium' | 'hard',
+    currentProblemType: number,
     isComplete: boolean,
     topicId: string
   ): Promise<GeminiResponse>;
@@ -57,7 +57,7 @@ export interface AIService {
     instruction: EvaluatorInstruction,
     recentHistory: Message[],
     studentResponse: string,
-    currentDifficulty: 'easy' | 'medium' | 'hard',
+    currentProblemType: number,
     topicId: string
   ): Promise<string>;
 
@@ -77,8 +77,21 @@ export interface AIService {
   extractStepByStepVisualizations(
     tutorResponse: string,
     problemText: string,
-    difficulty: 'easy' | 'medium' | 'hard',
+    problemType: number,
     topicId: string
+  ): Promise<any>;
+
+  /**
+   * Visualization Agent: Generate complete solution with visualization data in one call
+   * Replaces the 2-step flow: executeInstruction (Tutor Agent) → extractStepByStepVisualizations
+   */
+  generateVisualizationSolution(
+    problemText: string,
+    problemType: number,
+    topicId: string,
+    recentHistory: Message[],
+    studentResponse: string,
+    evaluatorReasoning: string
   ): Promise<any>;
 }
 

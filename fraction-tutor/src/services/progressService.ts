@@ -3,7 +3,7 @@ export interface TopicProgress {
   score: number;
   problemsAttempted: number;
   correctAnswers: number;
-  currentDifficulty: 'easy' | 'medium' | 'hard';
+  currentProblemType: number;
   updatedAt: number;
 }
 
@@ -23,7 +23,7 @@ class ProgressService {
     topicId: string,
     sessionStats: SessionStats,
     currentScore: number,
-    difficulty: 'easy' | 'medium' | 'hard',
+    problemType: number,
     userId?: string
   ): void {
     const progress: TopicProgress = {
@@ -31,7 +31,7 @@ class ProgressService {
       score: currentScore,
       problemsAttempted: sessionStats.problemsAttempted,
       correctAnswers: sessionStats.correctAnswers,
-      currentDifficulty: difficulty,
+      currentProblemType: problemType,
       updatedAt: Date.now()
     };
 
@@ -66,7 +66,7 @@ class ProgressService {
         startTime: new Date() // Fresh start time
       },
       guestProgress.score,
-      guestProgress.currentDifficulty,
+      guestProgress.currentProblemType,
       userId
     );
 

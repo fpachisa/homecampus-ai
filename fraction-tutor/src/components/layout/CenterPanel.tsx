@@ -196,7 +196,7 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
               className="w-8 h-8 rounded-full flex items-center justify-center text-lg"
               style={{ backgroundColor: theme.colors.brand }}
             >
-              🧠
+              📚
             </div>
             <div>
               <h1 className="font-semibold text-lg" style={{ color: theme.colors.textPrimary }}>
@@ -301,7 +301,7 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
                   boxShadow: theme.shadows.glow,
                 }}
               >
-                🧠
+                📚
               </div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: theme.colors.textPrimary }}>
                 Welcome to AI Campus!

@@ -5,7 +5,7 @@ export interface SessionData {
   messages: Message[]; // Last 10 messages for context
   currentScore: number;
   problemsCompleted: number;
-  currentDifficulty: 'easy' | 'medium' | 'hard';
+  currentProblemType: number;
   problemState?: ProblemState;
   timestamp: number;
   subtopicComplete: boolean;
@@ -34,7 +34,7 @@ class SessionStorageService {
         messages: conversationState.messages.slice(-MAX_MESSAGES_TO_STORE),
         currentScore,
         problemsCompleted,
-        currentDifficulty: conversationState.currentDifficulty,
+        currentProblemType: conversationState.currentProblemType,
         problemState,
         timestamp: Date.now(),
         subtopicComplete

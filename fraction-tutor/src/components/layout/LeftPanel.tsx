@@ -132,7 +132,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
             className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold animate-float"
             style={{ backgroundColor: theme.colors.brand }}
           >
-            🧠
+            📚
           </div>
           <div>
             <h2 className="font-semibold text-sm" style={{ color: theme.colors.textPrimary }}>

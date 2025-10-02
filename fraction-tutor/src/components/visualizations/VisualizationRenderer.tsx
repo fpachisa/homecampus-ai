@@ -1,38 +1,38 @@
 import React from 'react';
 import type { VisualizationData, VisualizationId } from '../../types/visualization';
-import BarDivisionVisualizer from './BarDivisionVisualizer';
+import { getVisualization, getFallbackVisualization } from '../../utils/visualizationRegistry';
 
 interface VisualizationRendererProps {
   data: VisualizationData;
   theme: any; // Theme from useTheme hook
   className?: string;
   step?: number; // Which visual step to show
+  onComplete?: () => void; // Callback when user completes viewing all steps
 }
 
 /**
  * Central router component for rendering different visualization types
- * Maps visualizationId to the appropriate pre-defined component
+ * Uses the visualization registry to dynamically load the appropriate component
  */
 const VisualizationRenderer: React.FC<VisualizationRendererProps> = ({
   data,
   theme,
   className = '',
-  step
+  step,
+  onComplete
 }) => {
-  // Component mapping - maps visualization IDs to their respective components
-  const componentMap: Record<VisualizationId, React.ComponentType<any>> = {
-    'bar-division-simple': BarDivisionVisualizer,
-    'bar-division-complex': BarDivisionVisualizer,
-    'grouping-model': BarDivisionVisualizer, // TODO: Replace with GroupingVisualizer when created
-    'step-by-step-solution': BarDivisionVisualizer // TODO: Replace with StepByStepVisualizer when created
-  };
+  // Get the visualization from the registry
+  let visualization = getVisualization(data.visualizationId as VisualizationId);
 
-  // Get the component for this visualization ID
-  const Component = componentMap[data.visualizationId as VisualizationId];
+  // If not found, try fallback
+  if (!visualization) {
+    console.warn(`Visualization not found: ${data.visualizationId}, trying fallback...`);
+    visualization = getFallbackVisualization(data.visualizationId as VisualizationId);
+  }
 
-  // If no component found, render a fallback
-  if (!Component) {
-    console.warn(`No visualization component found for ID: ${data.visualizationId}`);
+  // If still not found, render error fallback
+  if (!visualization) {
+    console.error(`No visualization or fallback found for ID: ${data.visualizationId}`);
     return (
       <div className={`visualization-fallback p-4 text-center ${className}`}>
         <p style={{ color: theme?.colors?.textMuted || '#666' }}>
@@ -42,10 +42,12 @@ const VisualizationRenderer: React.FC<VisualizationRendererProps> = ({
     );
   }
 
-  // Render the mapped component with the visualization data
+  // Get the component and render it
+  const Component = visualization.component;
+
   return (
     <div className={`visualization-container ${className}`}>
-      <Component data={data} theme={theme} step={step} />
+      <Component data={data} theme={theme} step={step} onComplete={onComplete} />
     </div>
   );
 };

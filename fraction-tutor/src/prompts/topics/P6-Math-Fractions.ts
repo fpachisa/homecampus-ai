@@ -13,10 +13,16 @@ export interface SolutionStep {
   stepNumber: number;
   title: string;
   instruction: string;
+  mathSummary?: string; // Only for the final step - provides mathematical explanation
 }
 
 export interface SolutionStepsConfig {
-  template: SolutionStep[];
+  templates: {
+    [templateId: string]: SolutionStep[];
+  };
+  problemTypeMapping: {
+    [problemType: number]: string;
+  };
 }
 
 export interface StepVisualizationConfig {
@@ -26,17 +32,40 @@ export interface StepVisualizationConfig {
   visualizationId: string;
 }
 
+export interface ProblemTypeConfig {
+  totalTypes: number;
+  progressionThresholds: number[];
+  completionScore: number;
+}
+
+export interface ScoringConfigForType {
+  basePoints: number;
+  hintPenalties: {
+    first: number;
+    second: number;
+    thirdPlus: number;
+  };
+}
+
 export const P6_MATH_FRACTIONS = {
   "p6-math-fractions-dividing-whole-numbers": {
     topicName: "dividing proper fractions by whole numbers",
     displayName: "Dividing Fractions by Whole Numbers",
 
+    PROBLEM_TYPE_CONFIG: {
+      totalTypes: 3,
+      progressionThresholds: [0.2, 0.5],
+      completionScore: 1.0
+    },
+
     QUESTION_GENERATION: {
-      easy: `Generate a word problem for dividing a proper fraction by a whole number.
+      1: `Generate a word problem for dividing a proper fraction by a whole number.
 
 Examples of appropriate problems:
 - "You have 3/4 of a chocolate bar and want to share it equally among 3 friends. How much does each friend get?"
 - "There's 2/3 of a pizza left. If we divide it equally between 2 people, what's each person's share?"
+
+Context: Pizza, chocolate bar, ribbon, pie, cake, juice, milk, fabric, rope, water, paint etc
 
 Guidelines:
 - Use simple fractions (1/2, 1/3, 2/3, 1/4, 3/4)
@@ -47,7 +76,7 @@ Guidelines:
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
-      medium: `Generate a word problem for dividing a proper fraction by a whole number.
+      2: `Generate a word problem for dividing a proper fraction by a whole number.
 
 Examples of appropriate problems:
 - "Sarah has 3/5 of a ribbon. She needs to cut it into 4 equal pieces for an art project. How long is each piece?"
@@ -61,7 +90,7 @@ Guidelines:
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
-      hard: `Generate a word problem for dividing a proper fraction by a whole number.
+      3: `Generate a word problem for dividing a proper fraction by a whole number.
 
 Examples of appropriate problems:
 - "A contractor has 7/8 of a tin of paint left. If he uses equal amounts for 5 different rooms, how much paint is used per room?"
@@ -77,58 +106,69 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     },
 
     SOLUTION_STEPS: {
-      template: [
-        {
-          stepNumber: 1,
-          title: "Understand the Problem",
-          instruction: "First, let's identify what we have and what we need to find. We have {fraction} and need to divide it by {divisor}."
-        },
-        {
-          stepNumber: 2,
-          title: "Set Up the Division",
-          instruction: "To divide a fraction by a whole number, we multiply the denominator by the divisor: {numerator}/{denominator} ÷ {divisor} = {numerator}/{denominator × divisor}."
-        },
-        {
-          stepNumber: 3,
-          title: "Simplify if Needed",
-          instruction: "[Show simplification steps]"
-        },
-        {
-          stepNumber: 4,
-          title: "Final Answer",
-          instruction: "[Present the final simplified answer]"
-        }
-      ]
+      templates: {
+        "basic-fraction-division": [
+          {
+            stepNumber: 1,
+            title: "Start with the whole",
+            instruction: "Describe how the whole item (e.g., chocolate bar, pizza, ribbon) is divided into {denominator} equal parts. For example: 'The chocolate bar is divided into 4 equal pieces' or 'The pizza is cut into 3 equal slices.'"
+          },
+          {
+            stepNumber: 2,
+            title: "Show what we have",
+            instruction: "Explain that we have {numerator} out of {denominator} parts. For example: 'We have 3/4 of the bar, which means 3 out of 4 pieces' or 'We have 2 out of 3 slices = 2/3 of the pizza.'"
+          },
+          {
+            stepNumber: 3,
+            title: "Divide into equal parts but careful of special cases",
+            instruction: "Explain dividing each of the {numerator} pieces into {divisor} equal parts. Calculate and state the total number of small pieces: {numerator} × {divisor} only when {numerator} is not equal to {divisor} . as this isspecial cases where it's simply 1 part for each. For e.g.:'Divide each of the 3 pieces into 3 parts should not make 9 parts but simply 1 part for each. So we still have 3 parts total.'"
+          },
+          {
+            stepNumber: 4,
+            title: "Final answer",
+            instruction: "Briefly explain how pieces are distributed equally. State each person/group gets {numerator} out of {denominator × divisor} total pieces. Simplify if needed. Example: 'Each friend gets 3/12 = 1/4 of the bar.' Keep it concise - 1-2 sentences max."
+          }
+        ]
+      },
+      problemTypeMapping: {
+        1: "basic-fraction-division",
+        2: "basic-fraction-division",
+        3: "basic-fraction-division"
+      }
     },
 
     STEP_VISUALIZATION_CONFIG: {
-      easy: [
-        { stepNumber: 1, includeVisualization: true, visualStage: 0, visualizationId: "bar-division-simple" },
-        { stepNumber: 2, includeVisualization: true, visualStage: 1, visualizationId: "bar-division-simple" },
-        { stepNumber: 3, includeVisualization: true, visualStage: 2, visualizationId: "bar-division-simple" }
+      // NOTE: visualizationId is auto-detected from problem text by the visualization selector
+      // These IDs are placeholders and will be overridden at runtime
+      1: [
+        { stepNumber: 1, includeVisualization: true, visualStage: 0, visualizationId: "auto-detect" },
+        { stepNumber: 2, includeVisualization: true, visualStage: 1, visualizationId: "auto-detect" },
+        { stepNumber: 3, includeVisualization: true, visualStage: 2, visualizationId: "auto-detect" }
       ],
-      medium: [
-        { stepNumber: 1, includeVisualization: true, visualStage: 0, visualizationId: "bar-division-complex" },
-        { stepNumber: 2, includeVisualization: true, visualStage: 1, visualizationId: "bar-division-complex" },
-        { stepNumber: 3, includeVisualization: true, visualStage: 2, visualizationId: "bar-division-complex" }
+      2: [
+        { stepNumber: 1, includeVisualization: false, visualStage: 0, visualizationId: "auto-detect" },
+        { stepNumber: 2, includeVisualization: false, visualStage: 1, visualizationId: "auto-detect" },
+        { stepNumber: 3, includeVisualization: false, visualStage: 2, visualizationId: "auto-detect" }
       ],
-      hard: [
-        { stepNumber: 1, includeVisualization: true, visualStage: 0, visualizationId: "bar-division-complex" },
-        { stepNumber: 2, includeVisualization: true, visualStage: 1, visualizationId: "bar-division-complex" },
-        { stepNumber: 3, includeVisualization: true, visualStage: 2, visualizationId: "bar-division-complex" }
+      3: [
+        { stepNumber: 1, includeVisualization: false, visualStage: 0, visualizationId: "auto-detect" },
+        { stepNumber: 2, includeVisualization: false, visualStage: 1, visualizationId: "auto-detect" },
+        { stepNumber: 3, includeVisualization: false, visualStage: 2, visualizationId: "auto-detect" }
       ]
     },
 
     SCORING_CONFIG: {
-      points: {
-        easy: 0.11,
-        medium: 0.22,
-        hard: 0.43
+      1: {
+        basePoints: 0.11,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.11 }
       },
-      hintPenalties: {
-        easy: { first: 0.01, second: 0.02, thirdPlus: 0.11 },
-        medium: { first: 0.01, second: 0.02, thirdPlus: 0.22 },
-        hard: { first: 0.02, second: 0.04, thirdPlus: 0.43 }
+      2: {
+        basePoints: 0.22,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.22 }
+      },
+      3: {
+        basePoints: 0.43,
+        hintPenalties: { first: 0.02, second: 0.04, thirdPlus: 0.43 }
       }
     }
   },
@@ -137,8 +177,14 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     topicName: "dividing whole numbers by proper fractions",
     displayName: "Dividing Whole Numbers by Fractions",
 
+    PROBLEM_TYPE_CONFIG: {
+      totalTypes: 3,
+      progressionThresholds: [0.2, 0.5],
+      completionScore: 1.0
+    },
+
     QUESTION_GENERATION: {
-      easy: `Generate a word problem for dividing a whole number by a proper fraction.
+      1: `Generate a word problem for dividing a whole number by a proper fraction.
 
 Examples of appropriate problems:
 - "How many 1/2-cup servings can you make from 3 cups of juice?"
@@ -154,7 +200,7 @@ Guidelines:
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
-      medium: `Generate a word problem for dividing a whole number by a proper fraction.
+      2: `Generate a word problem for dividing a whole number by a proper fraction.
 
 Examples of appropriate problems:
 - "A 6-meter rope is cut into pieces that are each 2/3 meter long. How many pieces can you make?"
@@ -170,7 +216,7 @@ Guidelines:
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
-      hard: `Generate a word problem for dividing a whole number by a proper fraction.
+      3: `Generate a word problem for dividing a whole number by a proper fraction.
 
 Examples of appropriate problems:
 - "A factory produces 12 kg of chocolate per day. Each chocolate bar requires 3/8 kg of chocolate. How many bars can be made per day?"
@@ -188,27 +234,29 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     },
 
     VISUALIZATION_CONFIG: {
-      easy: {
+      1: {
         visualizationId: "grouping-model"
       },
-      medium: {
+      2: {
         visualizationId: "grouping-model"
       },
-      hard: {
+      3: {
         visualizationId: "grouping-model"
       }
     },
 
     SCORING_CONFIG: {
-      points: {
-        easy: 0.11,
-        medium: 0.22,
-        hard: 0.43
+      1: {
+        basePoints: 0.11,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.11 }
       },
-      hintPenalties: {
-        easy: { first: 0.01, second: 0.02, thirdPlus: 0.11 },
-        medium: { first: 0.01, second: 0.02, thirdPlus: 0.22 },
-        hard: { first: 0.02, second: 0.04, thirdPlus: 0.43 }
+      2: {
+        basePoints: 0.22,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.22 }
+      },
+      3: {
+        basePoints: 0.43,
+        hintPenalties: { first: 0.02, second: 0.04, thirdPlus: 0.43 }
       }
     }
   },
@@ -217,8 +265,14 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     topicName: "dividing proper fractions by proper fractions",
     displayName: "Dividing Fractions by Fractions",
 
+    PROBLEM_TYPE_CONFIG: {
+      totalTypes: 3,
+      progressionThresholds: [0.2, 0.5],
+      completionScore: 1.0
+    },
+
     QUESTION_GENERATION: {
-      easy: `Generate a word problem for dividing a proper fraction by a proper fraction.
+      1: `Generate a word problem for dividing a proper fraction by a proper fraction.
 
 Examples of appropriate problems:
 - "You have 1/2 cup of milk. How many 1/4-cup servings can you make?"
@@ -231,7 +285,7 @@ Guidelines:
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
-      medium: `Generate a word problem for dividing a proper fraction by a proper fraction.
+      2: `Generate a word problem for dividing a proper fraction by a proper fraction.
 
 Examples of appropriate problems:
 - "A baker has 5/6 cup of flour. How many 1/12-cup portions can be made?"
@@ -244,7 +298,7 @@ Guidelines:
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
-      hard: `Generate a word problem for dividing a proper fraction by a proper fraction.
+      3: `Generate a word problem for dividing a proper fraction by a proper fraction.
 
 Examples of appropriate problems:
 - "A water tank holds 7/8 liters. If each bottle holds 1/16 liter, how many bottles can be filled completely?"
@@ -259,27 +313,29 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     },
 
     VISUALIZATION_CONFIG: {
-      easy: {
+      1: {
         visualizationId: "step-by-step-solution"
       },
-      medium: {
+      2: {
         visualizationId: "step-by-step-solution"
       },
-      hard: {
+      3: {
         visualizationId: "step-by-step-solution"
       }
     },
 
     SCORING_CONFIG: {
-      points: {
-        easy: 0.11,
-        medium: 0.22,
-        hard: 0.43
+      1: {
+        basePoints: 0.11,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.05 }
       },
-      hintPenalties: {
-        easy: { first: 0.01, second: 0.02, thirdPlus: 0.05 },
-        medium: { first: 0.01, second: 0.02, thirdPlus: 0.11 },
-        hard: { first: 0.02, second: 0.04, thirdPlus: 0.30 }
+      2: {
+        basePoints: 0.22,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.11 }
+      },
+      3: {
+        basePoints: 0.43,
+        hintPenalties: { first: 0.02, second: 0.04, thirdPlus: 0.30 }
       }
     }
   },
@@ -288,8 +344,14 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     topicName: "solving fraction word problems",
     displayName: "Word Problems",
 
+    PROBLEM_TYPE_CONFIG: {
+      totalTypes: 3,
+      progressionThresholds: [0.2, 0.5],
+      completionScore: 1.0
+    },
+
     QUESTION_GENERATION: {
-      easy: `Generate a fraction word problem appropriate for Primary 6 students.
+      1: `Generate a fraction word problem appropriate for Primary 6 students.
 
 Examples of appropriate problems:
 - "Nina had 2 m of lace that she used for making bows. If she needed 2/7 m of lace for each bow, how many bows did she make?"
@@ -304,7 +366,7 @@ Guidelines:
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
-      medium: `Generate a fraction word problem appropriate for Primary 6 students.
+      2: `Generate a fraction word problem appropriate for Primary 6 students.
 
 Examples of appropriate problems:
 - "A chemist fills 5 litres of perfume into bottles that have a capacity of 2/11 litre each. In the end, there is one bottle that is not completely filled. How much perfume does that bottle contain?"
@@ -318,7 +380,7 @@ Guidelines:
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
-      hard: `Generate a fraction word problem appropriate for Primary 6 students.
+      3: `Generate a fraction word problem appropriate for Primary 6 students.
 
 Examples of appropriate problems:
 - "Mr. Lee buys 25 kg of decorative shells from a wholesale market. He then repacks the shells into small bags of 1/4 kg each. If he sells each bag at $3.50, how much money does he collect from the sale of all bags?"
@@ -334,27 +396,29 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     },
 
     VISUALIZATION_CONFIG: {
-      easy: {
+      1: {
         visualizationId: "bar-division-simple"
       },
-      medium: {
+      2: {
         visualizationId: "bar-division-complex"
       },
-      hard: {
+      3: {
         visualizationId: "step-by-step-solution"
       }
     },
 
     SCORING_CONFIG: {
-      points: {
-        easy: 0.11,
-        medium: 0.22,
-        hard: 0.43
+      1: {
+        basePoints: 0.11,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.11 }
       },
-      hintPenalties: {
-        easy: { first: 0.01, second: 0.02, thirdPlus: 0.11 },
-        medium: { first: 0.01, second: 0.02, thirdPlus: 0.22 },
-        hard: { first: 0.02, second: 0.04, thirdPlus: 0.43 }
+      2: {
+        basePoints: 0.22,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.22 }
+      },
+      3: {
+        basePoints: 0.43,
+        hintPenalties: { first: 0.02, second: 0.04, thirdPlus: 0.43 }
       }
     }
   }

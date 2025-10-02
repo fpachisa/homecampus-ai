@@ -1,225 +1,363 @@
-import React from 'react';
-import type { VisualizationData } from '../../types/visualization';
-
-interface BarDivisionVisualizerProps {
-  data: VisualizationData;
-  theme: any;
-  className?: string;
-  step?: number; // Which visual step to show (0, 1, 2)
-}
+import React, { useState } from 'react';
+import type { VisualizationProps } from '../../types/visualization';
+import { StepControls, MathSummaryBox, RecipientDisplay, StepHeader } from './shared/VisualizationUI';
+import MathText from '../MathText';
 
 /**
- * Visualizes fraction division by whole numbers using step-controlled bar model
- * Shows: original fraction → division lines → result per group
- * Example: 3/4 ÷ 3 = 1/4 for each of 3 groups
+ * Generic bar/linear division visualizer
+ * Works for: ribbon, chocolate, rope, fabric, wood, meter, etc.
+ * Demonstrates dividing fractions by whole numbers using bar model
  */
-const BarDivisionVisualizer: React.FC<BarDivisionVisualizerProps> = ({
+const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
   data,
   theme,
   className = '',
-  step = 0
+  onComplete
 }) => {
-  const { problemData, stages, contextualLabels } = data;
-  const { numerator, denominator, divisor } = problemData;
+  const [currentStep, setCurrentStep] = useState(0);
+  const { problemData, contextualLabels, stages } = data;
+  const {
+    numerator,
+    denominator,
+    divisor,
+    numberOfRecipients = divisor,
+    // Pre-calculated values from Visualization Agent (no calculations needed!)
+    resultNumerator = numerator,
+    resultDenominator = denominator * divisor,
+    simplifiedNumerator = numerator,
+    simplifiedDenominator = denominator * divisor,
+    totalSmallPieces = numerator * divisor,
+    needsSimplification = false
+  } = problemData;
 
-  // Use the provided step, but ensure it's within valid range
-  const currentStage = Math.min(step, Math.max(0, stages.length - 1));
+  // Use theme from data, or theme prop, or fallback to abstract theme
+  const visualTheme = data.theme || {
+    primaryColor: '#6366f1',
+    secondaryColor: '#3730a3',
+    accentColor: '#818cf8',
+    gradientFrom: '#eef2ff',
+    gradientTo: '#e0e7ff',
+    borderColor: '#312e81',
+    backgroundColor: '#eef2ff',
+    textColor: '#312e81',
+    emoji: '🔢',
+    iconLabel: 'part'
+  };
+  const totalSteps = stages?.length || 4;
 
-  // SVG dimensions and styling
-  const config = {
-    width: 320,
-    height: 100,
-    strokeWidth: 2,
-    fontSize: 14
+  // Special case: when numerator === divisor, no subdivision needed
+  // Each person gets exactly 1 part (1/denominator)
+  const isSimplifiedCase = numerator === divisor;
+
+  // Colors for recipients (using visually distinct colors)
+  const recipientColors = [
+    '#3b82f6', // blue
+    '#10b981', // green
+    '#8b5cf6', // purple
+    '#f59e0b', // amber
+    '#ef4444', // red
+    '#06b6d4', // cyan
+    '#ec4899', // pink
+    '#84cc16'  // lime
+  ];
+
+  const handlePrevious = () => {
+    setCurrentStep(Math.max(0, currentStep - 1));
   };
 
-  // Calculate segment width for the original fraction
-  const segmentWidth = config.width / denominator;
+  const handleNext = () => {
+    const nextStep = Math.min(totalSteps - 1, currentStep + 1);
+    setCurrentStep(nextStep);
 
-  // Colors from theme
-  const colors = {
-    primary: theme?.colors?.brand || '#3b82f6',
-    primaryHover: theme?.colors?.brandHover || '#2563eb',
-    background: theme?.colors?.interactive || '#f1f5f9',
-    border: theme?.colors?.border || '#d1d5db',
-    text: theme?.colors?.textPrimary || '#1f2937',
-    textMuted: theme?.colors?.textMuted || '#6b7280'
+    // If we just moved to the last step, trigger onComplete
+    if (nextStep === totalSteps - 1 && onComplete) {
+      // Call it after a short delay so user sees the last step first
+      setTimeout(() => {
+        onComplete();
+      }, 500);
+    }
   };
 
-  const renderOriginalFraction = () => {
-    return (
-      <>
-        {/* Background rectangle */}
-        <rect
-          x={0}
-          y={30}
-          width={config.width}
-          height={40}
-          fill="none"
-          stroke={colors.border}
-          strokeWidth={config.strokeWidth}
-          rx={4}
-        />
-
-        {/* Filled segments (original fraction) */}
-        {Array.from({ length: Math.min(numerator, denominator) }).map((_, index) => (
-          <rect
-            key={`original-${index}`}
-            x={index * segmentWidth}
-            y={30}
-            width={segmentWidth}
-            height={40}
-            fill={colors.primary}
-            stroke={colors.primaryHover}
-            strokeWidth={1}
-            rx={2}
-            opacity={currentStage >= 0 ? 0.8 : 0.3}
-            style={{
-              transition: 'opacity 0.6s ease'
-            }}
-          />
-        ))}
-
-        {/* Segment dividers for denominator */}
-        {Array.from({ length: denominator - 1 }).map((_, index) => (
-          <line
-            key={`divider-${index}`}
-            x1={(index + 1) * segmentWidth}
-            y1={30}
-            x2={(index + 1) * segmentWidth}
-            y2={70}
-            stroke={colors.border}
-            strokeWidth={1}
-          />
-        ))}
-      </>
-    );
-  };
-
-  const renderDivisionLines = () => {
-    if (currentStage < 1) return null;
-
-    // Calculate division lines within the filled portion
-    const filledWidth = (numerator / denominator) * config.width;
-    const divisionSpacing = filledWidth / divisor;
-
-    return (
-      <>
-        {Array.from({ length: divisor - 1 }).map((_, index) => (
-          <line
-            key={`division-${index}`}
-            x1={(index + 1) * divisionSpacing}
-            y1={25}
-            x2={(index + 1) * divisionSpacing}
-            y2={75}
-            stroke={colors.primaryHover}
-            strokeWidth={3}
-            strokeDasharray="5,5"
-            opacity={currentStage >= 1 ? 1 : 0}
-            style={{
-              transition: 'opacity 0.6s ease'
-            }}
-          />
-        ))}
-      </>
-    );
-  };
-
-  const renderResultHighlight = () => {
-    if (currentStage < 2) return null;
-
-    // Highlight the first division group as example
-    const filledWidth = (numerator / denominator) * config.width;
-    const groupWidth = filledWidth / divisor;
-
-    return (
-      <rect
-        x={0}
-        y={27}
-        width={groupWidth}
-        height={46}
-        fill="none"
-        stroke={colors.primaryHover}
-        strokeWidth={4}
-        rx={4}
-        opacity={currentStage >= 2 ? 1 : 0}
-        style={{
-          transition: 'opacity 0.6s ease'
-        }}
-      />
-    );
-  };
-
-  const getCurrentStageInfo = () => {
-    if (stages.length === 0) return { title: '', description: '' };
-    return stages[Math.min(currentStage, stages.length - 1)];
-  };
-
-  const stageInfo = getCurrentStageInfo();
+  // Generate recipient data - simplified to show only fraction and result label
+  const recipients = Array.from({ length: numberOfRecipients }, (_, i) => ({
+    name: '', // No name/label
+    color: recipientColors[i % recipientColors.length],
+    fraction: isSimplifiedCase
+      ? `${simplifiedNumerator}/${simplifiedDenominator}`
+      : `${numerator}/${resultDenominator}`,
+    emoji: undefined // No emoji
+  }));
 
   return (
-    <div className={`bar-division-visualizer ${className}`} style={{
-      backgroundColor: colors.background,
-      borderRadius: '12px',
-      padding: '16px',
-      margin: '8px 0'
-    }}>
-      {/* Stage title and description */}
-      <div className="mb-4 text-center">
-        <h3
-          className="font-semibold text-sm mb-1"
-          style={{ color: colors.text }}
-        >
-          {stageInfo.title || 'Fraction Division Visualization'}
-        </h3>
-        <p
-          className="text-xs"
-          style={{ color: colors.textMuted }}
-        >
-          {stageInfo.description || `Dividing ${contextualLabels.original} by ${divisor}`}
-        </p>
+    <div
+      className={`w-full max-w-4xl mx-auto p-8 rounded-lg ${className}`}
+      style={{
+        background: `linear-gradient(to bottom right, ${visualTheme.gradientFrom}, ${visualTheme.gradientTo})`
+      }}
+    >
+      {/* Title - use from data or fallback */}
+      <h2
+        className="text-3xl font-bold text-center mb-6"
+        style={{ color: visualTheme.textColor }}
+      >
+        {visualTheme.emoji} {contextualLabels.original || `${numerator}/${denominator}`}
+      </h2>
+
+      {/* Step Controls */}
+      <StepControls
+        currentStep={currentStep}
+        totalSteps={totalSteps}
+        onPrevious={handlePrevious}
+        onNext={handleNext}
+        primaryColor={visualTheme.primaryColor}
+        disabledColor="#d1d5db"
+      />
+
+      <div className="mb-8">
+        {/* Step 0: Start with whole bar */}
+        {currentStep === 0 && (
+          <div className="text-center animate-fade-in">
+            <StepHeader
+              stepNumber={1}
+              title={stages?.[0]?.title || "Start with the whole amount"}
+              textColor={visualTheme.textColor}
+              emoji={visualTheme.emoji}
+            />
+            <div className="flex justify-center mb-4">
+              <div
+                className="grid gap-1 w-80 h-24 rounded-lg overflow-hidden"
+                style={{
+                  gridTemplateColumns: `repeat(${denominator}, 1fr)`,
+                  border: `4px solid ${visualTheme.borderColor}`,
+                  backgroundColor: '#ffffff'
+                }}
+              >
+                {Array.from({ length: denominator }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="transition-all duration-300"
+                    style={{
+                      backgroundColor: visualTheme.primaryColor,
+                      borderRight: i < denominator - 1 ? `1px solid ${visualTheme.borderColor}` : 'none'
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="text-lg" style={{ color: visualTheme.textColor }}>
+              <MathText>{stages?.[0]?.description || `Divided into ${denominator} equal pieces`}</MathText>
+            </div>
+          </div>
+        )}
+
+        {/* Step 1: Show fraction */}
+        {currentStep === 1 && (
+          <div className="text-center animate-fade-in">
+            <StepHeader
+              stepNumber={2}
+              title={stages?.[1]?.title || `We have ${numerator}/${denominator}`}
+              textColor={visualTheme.textColor}
+              emoji="✨"
+            />
+            <div className="flex justify-center mb-4">
+              <div
+                className="grid gap-1 w-80 h-24 rounded-lg overflow-hidden"
+                style={{
+                  gridTemplateColumns: `repeat(${denominator}, 1fr)`,
+                  border: `4px solid ${visualTheme.borderColor}`,
+                  backgroundColor: '#ffffff'
+                }}
+              >
+                {Array.from({ length: denominator }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="relative transition-all duration-300"
+                    style={{
+                      backgroundColor: i < numerator ? visualTheme.primaryColor : '#e5e7eb',
+                      borderRight: i < denominator - 1 ? `1px solid ${visualTheme.borderColor}` : 'none'
+                    }}
+                  >
+                    {i >= numerator && (
+                      <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-2xl">
+                        ✕
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-lg" style={{ color: visualTheme.textColor }}>
+              <MathText>{stages?.[1]?.description || `${numerator} out of ${denominator} pieces`}</MathText>
+            </div>
+          </div>
+        )}
+
+        {/* Step 2: Divide each piece */}
+        {currentStep === 2 && (
+          <div className="text-center animate-fade-in">
+            <StepHeader
+              stepNumber={3}
+              title={stages?.[2]?.title || `Divide into ${divisor} parts`}
+              textColor={visualTheme.textColor}
+              emoji="✂️"
+            />
+            <div className="flex justify-center mb-4">
+              <div
+                className="grid gap-1 w-80 h-24 rounded-lg overflow-hidden"
+                style={{
+                  gridTemplateColumns: `repeat(${denominator}, 1fr)`,
+                  border: `4px solid ${visualTheme.borderColor}`,
+                  backgroundColor: '#ffffff'
+                }}
+              >
+                {Array.from({ length: denominator }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="relative transition-all duration-300"
+                    style={{
+                      backgroundColor: i < numerator
+                        ? (isSimplifiedCase ? recipientColors[i % recipientColors.length] : visualTheme.primaryColor)
+                        : '#e5e7eb',
+                      borderRight: i < denominator - 1 ? `1px solid ${visualTheme.borderColor}` : 'none'
+                    }}
+                  >
+                    {i < numerator && !isSimplifiedCase && (
+                      <div
+                        className="absolute inset-0 grid gap-[1px]"
+                        style={{ gridTemplateRows: `repeat(${divisor}, 1fr)` }}
+                      >
+                        {Array.from({ length: divisor }).map((_, j) => (
+                          <div
+                            key={j}
+                            className="transition-all duration-300"
+                            style={{
+                              backgroundColor: recipientColors[j % recipientColors.length],
+                              borderBottom: j < divisor - 1 ? `1px solid ${visualTheme.borderColor}` : 'none'
+                            }}
+                          />
+                        ))}
+                      </div>
+                    )}
+                    {i >= numerator && (
+                      <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-2xl">
+                        ✕
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-lg mb-2" style={{ color: visualTheme.textColor }}>
+              <MathText>{stages?.[2]?.description || `Now we have ${totalSmallPieces} small pieces total!`}</MathText>
+            </div>
+          </div>
+        )}
+
+        {/* Step 3: Give to each recipient */}
+        {currentStep === 3 && (
+          <div className="text-center animate-fade-in">
+            <StepHeader
+              stepNumber={4}
+              title={stages?.[3]?.title || `Give ${numerator} pieces each`}
+              textColor={visualTheme.textColor}
+              emoji="🎁"
+            />
+            <div className="flex flex-col items-center gap-6 mb-6">
+              <div
+                className="grid gap-1 w-80 h-24 rounded-lg overflow-hidden"
+                style={{
+                  gridTemplateColumns: `repeat(${denominator}, 1fr)`,
+                  border: `4px solid ${visualTheme.borderColor}`,
+                  backgroundColor: '#ffffff'
+                }}
+              >
+                {Array.from({ length: denominator }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="relative transition-all duration-300"
+                    style={{
+                      backgroundColor: i < numerator
+                        ? (isSimplifiedCase ? recipientColors[i % recipientColors.length] : visualTheme.primaryColor)
+                        : '#e5e7eb',
+                      borderRight: i < denominator - 1 ? `1px solid ${visualTheme.borderColor}` : 'none'
+                    }}
+                  >
+                    {i < numerator && !isSimplifiedCase && (
+                      <div
+                        className="absolute inset-0 grid gap-[1px]"
+                        style={{ gridTemplateRows: `repeat(${divisor}, 1fr)` }}
+                      >
+                        {Array.from({ length: divisor }).map((_, j) => (
+                          <div
+                            key={j}
+                            className="transition-all duration-300"
+                            style={{
+                              backgroundColor: recipientColors[j % recipientColors.length],
+                              borderBottom: j < divisor - 1 ? `1px solid ${visualTheme.borderColor}` : 'none'
+                            }}
+                          />
+                        ))}
+                      </div>
+                    )}
+                    {i >= numerator && !isSimplifiedCase && (
+                      <div className="absolute inset-0">
+                        {/* Show subdivision grid for unused sections too */}
+                        <div
+                          className="absolute inset-0 grid gap-[1px]"
+                          style={{ gridTemplateRows: `repeat(${divisor}, 1fr)` }}
+                        >
+                          {Array.from({ length: divisor }).map((_, j) => (
+                            <div
+                              key={j}
+                              className="transition-all duration-300 bg-gray-200"
+                              style={{
+                                borderBottom: j < divisor - 1 ? `1px solid ${visualTheme.borderColor}` : 'none'
+                              }}
+                            />
+                          ))}
+                        </div>
+                        {/* X mark on top of the subdivided gray sections */}
+                        <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-2xl">
+                          ✕
+                        </div>
+                      </div>
+                    )}
+                    {i >= numerator && isSimplifiedCase && (
+                      <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-2xl">
+                        ✕
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              <RecipientDisplay recipients={recipients} />
+            </div>
+            <div className="text-lg mb-2" style={{ color: visualTheme.textColor }}>
+              <MathText>{stages?.[3]?.description || `Each gets ${numerator}/${resultDenominator}`}</MathText>
+            </div>
+            {needsSimplification && (
+              <p
+                className="text-xl font-bold mt-4"
+                style={{ color: visualTheme.accentColor }}
+              >
+                {numerator}/{resultDenominator} = {simplifiedNumerator}/{simplifiedDenominator}
+              </p>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* SVG Visualization */}
-      <div className="flex justify-center mb-4">
-        <svg width={config.width} height={config.height}>
-          {/* Gradient definition */}
-          <defs>
-            <linearGradient id="fractionGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor={colors.primary} stopOpacity={0.9} />
-              <stop offset="100%" stopColor={colors.primaryHover} stopOpacity={1} />
-            </linearGradient>
-          </defs>
-
-          {renderOriginalFraction()}
-          {renderDivisionLines()}
-          {renderResultHighlight()}
-
-          {/* Labels */}
-          <text
-            x={config.width / 2}
-            y={15}
-            textAnchor="middle"
-            fontSize={config.fontSize}
-            fill={colors.text}
-            fontWeight="500"
-          >
-            {contextualLabels.original}
-          </text>
-
-          {currentStage >= 2 && (
-            <text
-              x={config.width / 2}
-              y={95}
-              textAnchor="middle"
-              fontSize={config.fontSize - 2}
-              fill={colors.textMuted}
-            >
-              Each group: {numerator}/{denominator * divisor} = {numerator}/{denominator * divisor}
-            </text>
-          )}
-        </svg>
-      </div>
+      {/* Mathematical explanation */}
+      <MathSummaryBox
+        problem={data.mathSummary?.problem || `${numerator}/${denominator} ÷ ${divisor} = ?`}
+        solution={data.mathSummary?.solution || `${numerator}/${denominator} ÷ ${divisor} = ${resultNumerator}/${resultDenominator}${needsSimplification ? ` = ${simplifiedNumerator}/${simplifiedDenominator}` : ''}`}
+        explanation={data.mathSummary?.explanation || contextualLabels.result || `Each portion is ${numerator}/${resultDenominator}${needsSimplification ? ` = ${simplifiedNumerator}/${simplifiedDenominator}` : ''}`}
+        backgroundColor="#ffffff"
+        borderColor={visualTheme.borderColor}
+        textColor={visualTheme.textColor}
+        accentColor={visualTheme.accentColor}
+      />
     </div>
   );
 };

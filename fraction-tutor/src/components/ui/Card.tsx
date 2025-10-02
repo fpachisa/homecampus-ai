@@ -203,7 +203,7 @@ export const MessageCard = forwardRef<HTMLDivElement, MessageCardProps>(
 
     const avatarMap = {
       user: '👤',
-      tutor: '🧠',
+      tutor: '📚',
       system: '⚙️',
     };
 

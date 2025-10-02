@@ -104,13 +104,13 @@ class ClaudeService implements AIService {
   }
 
   async generateQuestion(
-    difficulty: 'easy' | 'medium' | 'hard',
+    problemType: number,
     topicId: string = 'fraction-division-by-whole-numbers'
   ): Promise<string> {
     try {
       const prompt = promptResolver.resolveQuestionGeneration({
         topicId: topicId as any,
-        currentDifficulty: difficulty
+        currentProblemType: problemType
       });
 
       const text = await this.generateContent(prompt);
@@ -132,7 +132,7 @@ class ClaudeService implements AIService {
   async generateResponse(
     studentResponse: string,
     recentHistory: Message[],
-    currentDifficulty: 'easy' | 'medium' | 'hard',
+    currentProblemType: number,
     isComplete: boolean = false,
     topicId: string = 'fraction-division-by-whole-numbers'
   ): Promise<GeminiResponse> {
@@ -155,7 +155,7 @@ class ClaudeService implements AIService {
     try {
       const prompt = promptResolver.resolveConversationResponse({
         topicId: topicId as any,
-        currentDifficulty,
+        currentProblemType,
         recentHistory: historyText,
         studentResponse
       });
@@ -195,7 +195,7 @@ class ClaudeService implements AIService {
 
     const prompt = promptResolver.resolveEvaluatorAgent({
       topicId: topicId as any,
-      currentDifficulty: problemState.difficulty,
+      currentProblemType: problemState.problemType,
       recentHistory: historyText,
       studentResponse,
       currentProblemId: problemState.currentProblemId,
@@ -248,7 +248,7 @@ class ClaudeService implements AIService {
     instruction: EvaluatorInstruction,
     recentHistory: Message[],
     studentResponse: string,
-    currentDifficulty: 'easy' | 'medium' | 'hard',
+    currentProblemType: number,
     topicId: string
   ): Promise<string> {
     const historyText = recentHistory
@@ -261,7 +261,7 @@ class ClaudeService implements AIService {
       // For new problems, use the question generation prompt with context
       prompt = promptResolver.resolveQuestionGeneration({
         topicId: topicId as any,
-        currentDifficulty: currentDifficulty,
+        currentProblemType: currentProblemType,
         recentHistory: historyText,
         evaluatorReasoning: instruction.reasoning
       });
@@ -272,7 +272,7 @@ class ClaudeService implements AIService {
         evaluatorInstruction: JSON.stringify(instruction),
         recentHistory: historyText,
         studentResponse,
-        currentDifficulty,
+        currentProblemType,
         hintLevel: instruction.hintLevel
       });
     }
@@ -355,10 +355,19 @@ class ClaudeService implements AIService {
   async extractStepByStepVisualizations(
     tutorResponse: string,
     problemText: string,
-    difficulty: 'easy' | 'medium' | 'hard',
+    problemType: number,
     topicId: string
   ): Promise<any> {
     try {
+      // **NEW**: Use visualization selector to auto-detect context from problem text
+      const { selectVisualization } = await import('../utils/visualizationSelector');
+      const { visualizationId: detectedVisualizationId, context, confidence } = selectVisualization(problemText);
+
+      console.log('=== CONTEXT-AWARE VISUALIZATION DETECTION (Claude) ===');
+      console.log('Problem text:', problemText);
+      console.log('Detected context:', context, 'with confidence:', confidence);
+      console.log('Selected visualization:', detectedVisualizationId);
+
       // Get step visualization config from topic
       const { P6_MATH_FRACTIONS } = await import('../prompts/topics/P6-Math-Fractions');
       const config = P6_MATH_FRACTIONS[topicId as keyof typeof P6_MATH_FRACTIONS];
@@ -368,16 +377,21 @@ class ClaudeService implements AIService {
         return null;
       }
 
-      const stepConfigs = (config as any).STEP_VISUALIZATION_CONFIG[difficulty];
+      let stepConfigs = (config as any).STEP_VISUALIZATION_CONFIG[problemType];
       if (!stepConfigs || !Array.isArray(stepConfigs)) {
-        console.warn('No step configs found for difficulty:', difficulty);
+        console.warn('No step configs found for problem type:', problemType);
         return null;
       }
 
+      // **NEW**: Override all stepConfig visualizationIds with the detected one
+      stepConfigs = stepConfigs.map(stepConfig => ({
+        ...stepConfig,
+        visualizationId: detectedVisualizationId
+      }));
+
       console.log('=== UNIFIED STEP PARSING & VISUALIZATION EXTRACTION (Claude) ===');
       console.log('Tutor response:', tutorResponse);
-      console.log('Problem text:', problemText);
-      console.log('Step configs:', stepConfigs);
+      console.log('Overridden step configs with detected visualization:', stepConfigs);
 
       // Use centralized prompt from prompt resolver
       const unifiedPrompt = promptResolver.resolveStepByStepVisualizationExtraction({
@@ -409,6 +423,115 @@ class ClaudeService implements AIService {
     } catch (error) {
       console.error('Error in unified step parsing and visualization extraction with Claude:', error);
       return null;
+    }
+  }
+
+  /**
+   * Visualization Agent: Generate complete solution with visualization data
+   * Single LLM call replaces: Tutor Agent + extractStepByStepVisualizations
+   */
+  async generateVisualizationSolution(
+    problemText: string,
+    problemType: number,
+    topicId: string,
+    recentHistory: Message[],
+    studentResponse: string,
+    evaluatorReasoning: string
+  ): Promise<any> {
+    try {
+      console.log('=== VISUALIZATION AGENT START (Claude) ===');
+      console.log('Problem text:', problemText);
+      console.log('Problem type:', problemType);
+      console.log('Student response:', studentResponse);
+      console.log('Evaluator reasoning:', evaluatorReasoning);
+
+      // Format history for prompt
+      const historyText = recentHistory
+        .map(m => `${m.role === 'tutor' ? 'Tutor' : 'Student'}: ${m.content}`)
+        .join('\n');
+
+      // Get the prompt for the visualization agent with full context
+      const prompt = promptResolver.resolveVisualizationAgent({
+        topicId: topicId as any,
+        problemText,
+        currentProblemType: problemType,
+        recentHistory: historyText,
+        studentResponse,
+        evaluatorReasoning
+      });
+
+      console.log('Calling Claude API with Visualization Agent prompt...');
+
+      const result = await this.anthropic.messages.create({
+        model: this.model,
+        max_tokens: 4096,
+        temperature: 0.5,
+        messages: [{
+          role: 'user',
+          content: prompt
+        }]
+      });
+
+      const responseText = result.content[0].type === 'text'
+        ? result.content[0].text.trim()
+        : '';
+
+      console.log('Visualization Agent raw response (Claude):', responseText);
+
+      // Clean and parse JSON response - handle markdown code fences anywhere in response
+      let cleanedText = responseText;
+
+      // Try to extract JSON from markdown code fences (```json ... ``` or ``` ... ```)
+      const jsonFenceMatch = cleanedText.match(/```json\s*\n?([\s\S]*?)\n?```/);
+      const genericFenceMatch = cleanedText.match(/```\s*\n?([\s\S]*?)\n?```/);
+
+      if (jsonFenceMatch) {
+        cleanedText = jsonFenceMatch[1].trim();
+      } else if (genericFenceMatch) {
+        cleanedText = genericFenceMatch[1].trim();
+      }
+
+      // Additional cleanup: remove any leading/trailing text that's not JSON
+      cleanedText = cleanedText.trim();
+
+      // Find first { and last } to extract just the JSON object
+      const firstBrace = cleanedText.indexOf('{');
+      const lastBrace = cleanedText.lastIndexOf('}');
+      if (firstBrace !== -1 && lastBrace !== -1 && firstBrace < lastBrace) {
+        cleanedText = cleanedText.substring(firstBrace, lastBrace + 1);
+      }
+
+      const parsedResponse = JSON.parse(cleanedText);
+      console.log('Parsed visualization solution data (Claude):', parsedResponse);
+
+      // Inject the correct theme based on context from AI response
+      const { getThemeForContext } = await import('../utils/visualizationRegistry');
+
+      if (parsedResponse.steps && Array.isArray(parsedResponse.steps)) {
+        parsedResponse.steps.forEach((step: any) => {
+          if (step.visualizationData) {
+            const contextFromAI = step.visualizationData.context || step.visualizationData.problemData?.context;
+
+            if (contextFromAI) {
+              const theme = getThemeForContext(contextFromAI as any);
+              step.visualizationData.theme = theme;
+
+              console.log('Injected theme for Visualization Agent (Claude):', {
+                visualizationId: step.visualizationData.visualizationId,
+                context: contextFromAI,
+                theme: theme
+              });
+            }
+          }
+        });
+      }
+
+      console.log('=== VISUALIZATION AGENT COMPLETE (Claude) ===');
+      return parsedResponse;
+
+    } catch (error) {
+      console.error('Error in Visualization Agent (Claude):', error);
+      throw AIServiceError.fromHttpError(error);
     }
   }
 }
