@@ -15,7 +15,23 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
   onComplete
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const { problemData, contextualLabels, stages } = data;
+
+  // Debug: log the incoming data
+  console.log('🎨 BarDivisionVisualizer received data:', data);
+
+  const { problemData, contextualLabels, stages: dataStages } = data;
+  const stages = data.stages || dataStages;
+
+  // Guard against missing problemData
+  if (!problemData) {
+    console.error('❌ BarDivisionVisualizer: problemData is missing!', data);
+    return (
+      <div className="p-4 text-center text-red-600">
+        <p>Visualization data is incomplete. Missing problem data.</p>
+      </div>
+    );
+  }
+
   const {
     numerator,
     denominator,
@@ -68,14 +84,6 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
   const handleNext = () => {
     const nextStep = Math.min(totalSteps - 1, currentStep + 1);
     setCurrentStep(nextStep);
-
-    // If we just moved to the last step, trigger onComplete
-    if (nextStep === totalSteps - 1 && onComplete) {
-      // Call it after a short delay so user sees the last step first
-      setTimeout(() => {
-        onComplete();
-      }, 500);
-    }
   };
 
   // Generate recipient data - simplified to show only fraction and result label
@@ -90,14 +98,14 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
 
   return (
     <div
-      className={`w-full max-w-4xl mx-auto p-8 rounded-lg ${className}`}
+      className={`w-full mx-auto p-4 rounded-lg ${className}`}
       style={{
         background: `linear-gradient(to bottom right, ${visualTheme.gradientFrom}, ${visualTheme.gradientTo})`
       }}
     >
       {/* Title - use from data or fallback */}
       <h2
-        className="text-3xl font-bold text-center mb-6"
+        className="text-xl font-bold text-center mb-4"
         style={{ color: visualTheme.textColor }}
       >
         {visualTheme.emoji} {contextualLabels.original || `${numerator}/${denominator}`}
@@ -113,7 +121,7 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
         disabledColor="#d1d5db"
       />
 
-      <div className="mb-8">
+      <div className="mb-4">
         {/* Step 0: Start with whole bar */}
         {currentStep === 0 && (
           <div className="text-center animate-fade-in">
@@ -123,12 +131,12 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
               textColor={visualTheme.textColor}
               emoji={visualTheme.emoji}
             />
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-3">
               <div
-                className="grid gap-1 w-80 h-24 rounded-lg overflow-hidden"
+                className="grid gap-1 w-60 h-16 rounded-lg overflow-hidden"
                 style={{
                   gridTemplateColumns: `repeat(${denominator}, 1fr)`,
-                  border: `4px solid ${visualTheme.borderColor}`,
+                  border: `3px solid ${visualTheme.borderColor}`,
                   backgroundColor: '#ffffff'
                 }}
               >
@@ -144,7 +152,7 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
                 ))}
               </div>
             </div>
-            <div className="text-lg" style={{ color: visualTheme.textColor }}>
+            <div className="text-base" style={{ color: visualTheme.textColor }}>
               <MathText>{stages?.[0]?.description || `Divided into ${denominator} equal pieces`}</MathText>
             </div>
           </div>
@@ -159,12 +167,12 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
               textColor={visualTheme.textColor}
               emoji="✨"
             />
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-3">
               <div
-                className="grid gap-1 w-80 h-24 rounded-lg overflow-hidden"
+                className="grid gap-1 w-60 h-16 rounded-lg overflow-hidden"
                 style={{
                   gridTemplateColumns: `repeat(${denominator}, 1fr)`,
-                  border: `4px solid ${visualTheme.borderColor}`,
+                  border: `3px solid ${visualTheme.borderColor}`,
                   backgroundColor: '#ffffff'
                 }}
               >
@@ -186,7 +194,7 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
                 ))}
               </div>
             </div>
-            <div className="text-lg" style={{ color: visualTheme.textColor }}>
+            <div className="text-base" style={{ color: visualTheme.textColor }}>
               <MathText>{stages?.[1]?.description || `${numerator} out of ${denominator} pieces`}</MathText>
             </div>
           </div>
@@ -201,12 +209,12 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
               textColor={visualTheme.textColor}
               emoji="✂️"
             />
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-3">
               <div
-                className="grid gap-1 w-80 h-24 rounded-lg overflow-hidden"
+                className="grid gap-1 w-60 h-16 rounded-lg overflow-hidden"
                 style={{
                   gridTemplateColumns: `repeat(${denominator}, 1fr)`,
-                  border: `4px solid ${visualTheme.borderColor}`,
+                  border: `3px solid ${visualTheme.borderColor}`,
                   backgroundColor: '#ffffff'
                 }}
               >
@@ -247,7 +255,7 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
                 ))}
               </div>
             </div>
-            <div className="text-lg mb-2" style={{ color: visualTheme.textColor }}>
+            <div className="text-base mb-2" style={{ color: visualTheme.textColor }}>
               <MathText>{stages?.[2]?.description || `Now we have ${totalSmallPieces} small pieces total!`}</MathText>
             </div>
           </div>
@@ -262,12 +270,12 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
               textColor={visualTheme.textColor}
               emoji="🎁"
             />
-            <div className="flex flex-col items-center gap-6 mb-6">
+            <div className="flex flex-col items-center gap-4 mb-4">
               <div
-                className="grid gap-1 w-80 h-24 rounded-lg overflow-hidden"
+                className="grid gap-1 w-60 h-16 rounded-lg overflow-hidden"
                 style={{
                   gridTemplateColumns: `repeat(${denominator}, 1fr)`,
-                  border: `4px solid ${visualTheme.borderColor}`,
+                  border: `3px solid ${visualTheme.borderColor}`,
                   backgroundColor: '#ffffff'
                 }}
               >
@@ -333,12 +341,12 @@ const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
 
               <RecipientDisplay recipients={recipients} />
             </div>
-            <div className="text-lg mb-2" style={{ color: visualTheme.textColor }}>
+            <div className="text-base mb-2" style={{ color: visualTheme.textColor }}>
               <MathText>{stages?.[3]?.description || `Each gets ${numerator}/${resultDenominator}`}</MathText>
             </div>
             {needsSimplification && (
               <p
-                className="text-xl font-bold mt-4"
+                className="text-lg font-bold mt-2"
                 style={{ color: visualTheme.accentColor }}
               >
                 {numerator}/{resultDenominator} = {simplifiedNumerator}/{simplifiedDenominator}

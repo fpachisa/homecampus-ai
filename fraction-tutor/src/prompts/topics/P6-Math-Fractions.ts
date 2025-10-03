@@ -25,12 +25,6 @@ export interface SolutionStepsConfig {
   };
 }
 
-export interface StepVisualizationConfig {
-  stepNumber: number;
-  includeVisualization: boolean;
-  visualStage: number;
-  visualizationId: string;
-}
 
 export interface ProblemTypeConfig {
   totalTypes: number;
@@ -53,8 +47,8 @@ export const P6_MATH_FRACTIONS = {
     displayName: "Dividing Fractions by Whole Numbers",
 
     PROBLEM_TYPE_CONFIG: {
-      totalTypes: 3,
-      progressionThresholds: [0.2, 0.5],
+      totalTypes: 4,
+      progressionThresholds: [0.15, 0.30, 0.50],
       completionScore: 1.0
     },
 
@@ -63,9 +57,9 @@ export const P6_MATH_FRACTIONS = {
 
 Examples of appropriate problems:
 - "You have 3/4 of a chocolate bar and want to share it equally among 3 friends. How much does each friend get?"
-- "There's 2/3 of a pizza left. If we divide it equally between 2 people, what's each person's share?"
+- "You have 1/2 of a meter of ribbon. If you cut it into 4 equal pieces for a craft project, how long is each piece?"
 
-Context: Pizza, chocolate bar, ribbon, pie, cake, juice, milk, fabric, rope, water, paint etc
+Context: use items like chocolate bar, ribbon, fabric, juice, or any object that is NOT circular as we have a separate problem type for pizzas
 
 Guidelines:
 - Use simple fractions (1/2, 1/3, 2/3, 1/4, 3/4)
@@ -79,6 +73,23 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
       2: `Generate a word problem for dividing a proper fraction by a whole number.
 
 Examples of appropriate problems:
+- "A pizza is cut into 4 equal slices. If you have 2/3 of the pizza, how many slices do you have?"
+
+Context: use items like pizza, pie, cake, or any circular object
+
+
+Guidelines:
+- Use simple fractions (1/2, 1/3, 2/3, 1/4, 3/4)
+- Use small whole numbers (2, 3, 4)
+- Use relatable, everyday contexts
+- Keep language simple and friendly
+- Ensure the result is a proper fraction
+
+IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
+
+      3: `Generate a word problem for dividing a proper fraction by a whole number.
+
+Examples of appropriate problems:
 - "Sarah has 3/5 of a ribbon. She needs to cut it into 4 equal pieces for an art project. How long is each piece?"
 - "A recipe uses 5/6 cup of milk. If you want to divide it equally among 3 portions, how much milk per portion?"
 
@@ -90,7 +101,7 @@ Guidelines:
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
-      3: `Generate a word problem for dividing a proper fraction by a whole number.
+      4: `Generate a word problem for dividing a proper fraction by a whole number.
 
 Examples of appropriate problems:
 - "A contractor has 7/8 of a tin of paint left. If he uses equal amounts for 5 different rooms, how much paint is used per room?"
@@ -133,42 +144,150 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
       problemTypeMapping: {
         1: "basic-fraction-division",
         2: "basic-fraction-division",
-        3: "basic-fraction-division"
+        3: "basic-fraction-division",
+        4: "basic-fraction-division"
       }
     },
 
-    STEP_VISUALIZATION_CONFIG: {
-      // NOTE: visualizationId is auto-detected from problem text by the visualization selector
-      // These IDs are placeholders and will be overridden at runtime
-      1: [
-        { stepNumber: 1, includeVisualization: true, visualStage: 0, visualizationId: "auto-detect" },
-        { stepNumber: 2, includeVisualization: true, visualStage: 1, visualizationId: "auto-detect" },
-        { stepNumber: 3, includeVisualization: true, visualStage: 2, visualizationId: "auto-detect" }
-      ],
-      2: [
-        { stepNumber: 1, includeVisualization: false, visualStage: 0, visualizationId: "auto-detect" },
-        { stepNumber: 2, includeVisualization: false, visualStage: 1, visualizationId: "auto-detect" },
-        { stepNumber: 3, includeVisualization: false, visualStage: 2, visualizationId: "auto-detect" }
-      ],
-      3: [
-        { stepNumber: 1, includeVisualization: false, visualStage: 0, visualizationId: "auto-detect" },
-        { stepNumber: 2, includeVisualization: false, visualStage: 1, visualizationId: "auto-detect" },
-        { stepNumber: 3, includeVisualization: false, visualStage: 2, visualizationId: "auto-detect" }
-      ]
+    VISUALIZATION_CONFIG: {
+      1: {
+        visualizationId: "bar-division",
+        includeVisualization: true,
+        dataSchema: {
+          // Core problem data
+          numerator: { type: "number", description: "numerator of the fraction" },
+          denominator: { type: "number", description: "denominator of the fraction" },
+          divisor: { type: "number", description: "whole number divisor" },
+          context: { type: "string", description: "object name (chocolate, ribbon, etc.)" },
+          problem_summary: { type: "string", description: "problem summary" },
+          result_unit: { type: "string", description: "unit text (e.g., 'of chocolate bar')" },
+
+          // Visualizer-specific structure
+          stages: {
+            type: "array",
+            count: 4,
+            description: "4-step visualization stages",
+            itemSchema: {
+              id: { type: "string", description: "Step1, Step2 …" },
+              title: { type: "string", description: "Step 1 title, Step 2 title…" },
+              description: { type: "string", description: "Step 1 content, Step 2 content" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "describe the problem briefly" },
+              solution: { type: "string", description: "provide solution" },
+              explanation: { type: "string", description: "concluding remark based on the context" }
+            }
+          }
+        }
+      },
+      2: {
+        visualizationId: "circular-division",
+        includeVisualization: true,
+        dataSchema: {
+          // Core problem data
+          numerator: { type: "number", description: "numerator of the fraction" },
+          denominator: { type: "number", description: "denominator of the fraction" },
+          divisor: { type: "number", description: "whole number divisor" },
+          context: { type: "string", description: "object name (pizza, pie, etc.)" },
+          problem_summary: { type: "string", description: "problem summary" },
+          result_unit: { type: "string", description: "unit text (e.g., 'of a whole pizza)" },
+
+          // Visualizer-specific structure
+          stages: {
+            type: "array",
+            count: 4,
+            description: "4-step visualization stages",
+            itemSchema: {
+              id: { type: "string", description: "Step1, Step2 …" },
+              title: { type: "string", description: "Step 1 title, Step 2 title…" },
+              description: { type: "string", description: "Step 1 content, Step 2 content" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "equation format: '3/4 ÷ 3 = ?'" },
+              solution: { type: "string", description: "solved equation: '3/4 ÷ 3 = 1/4'" },
+              explanation: { type: "string", description: "1-sentence explanation" }
+            }
+          }
+        }
+      },
+      3: {
+        visualizationId: null,
+        includeVisualization: false,
+        dataSchema: {
+          // Text-only solution - no visualization data needed
+          stages: {
+            type: "array",
+            count: 4,
+            description: "4-step solution stages for plain text display",
+            itemSchema: {
+              id: { type: "string", description: "Step1, Step2, Step3, Step4" },
+              title: { type: "string", description: "Step title (e.g., 'Start with the whole')" },
+              description: { type: "string", description: "Step explanation text" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "describe the problem briefly" },
+              solution: { type: "string", description: "provide solution" },
+              explanation: { type: "string", description: "concluding remark based on the context" }
+            }
+          }
+        }
+      },
+      4: {
+        visualizationId: null,
+        includeVisualization: false,
+        dataSchema: {
+          // Text-only solution - no visualization data needed
+          stages: {
+            type: "array",
+            count: 4,
+            description: "4-step solution stages for plain text display",
+            itemSchema: {
+              id: { type: "string", description: "Step1, Step2, Step3, Step4" },
+              title: { type: "string", description: "Step title (e.g., 'Start with the whole')" },
+              description: { type: "string", description: "Step explanation text" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "describe the problem briefly" },
+              solution: { type: "string", description: "provide solution" },
+              explanation: { type: "string", description: "concluding remark based on the context" }
+            }
+          }
+        }
+      }
     },
 
     SCORING_CONFIG: {
       1: {
-        basePoints: 0.11,
-        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.11 }
+        basePoints: 0.05,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.03 }
       },
       2: {
-        basePoints: 0.22,
-        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.22 }
-      },
+        basePoints: 0.05,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.03 }
+      },      
       3: {
-        basePoints: 0.43,
-        hintPenalties: { first: 0.02, second: 0.04, thirdPlus: 0.43 }
+        basePoints: 0.15,
+        hintPenalties: { first: 0.03, second: 0.05, thirdPlus: 0.1 }
+      },
+      4: {
+        basePoints: 0.20,
+        hintPenalties: { first: 0.05, second: 0.07, thirdPlus: 0.10 }
       }
     }
   },
@@ -194,9 +313,8 @@ Examples of appropriate problems:
 Guidelines:
 - Use small whole numbers (2, 3, 4, 5, 6)
 - Use unit fractions (1/2, 1/3, 1/4, 1/5) or simple fractions
-- Focus on "how many groups" or "how many servings" contexts
 - Use everyday situations like cooking, crafting, sharing
-- Results should be simple whole numbers when possible
+- Results should always be a whole numbers
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
@@ -208,11 +326,10 @@ Examples of appropriate problems:
 - "A garden plot is 5 square meters. If each plant needs 2/5 square meters, how many plants can you grow?"
 
 Guidelines:
-- Use whole numbers 4-10
+- Use whole numbers 4-8
 - Use fractions like 2/3, 3/4, 2/5, 3/5, 4/5
 - Create practical scenarios (construction, cooking, gardening)
-- Results may include remainders or mixed numbers
-- Encourage thinking about "how many groups fit"
+- Final answer should NOT be a whole number
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
@@ -226,37 +343,154 @@ Examples of appropriate problems:
 Guidelines:
 - Use larger whole numbers (8-20)
 - Use more complex fractions (3/8, 5/6, 4/7, 7/9, 5/8)
-- Create industrial or professional contexts
 - Focus on practical applications and efficiency
 - Results often involve remainders and decision-making
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`
     },
 
+    SOLUTION_STEPS: {
+      templates: {
+        "basic-whole-number-fraction-division": [
+          {
+            stepNumber: 1,
+            title: "Start with the whole",
+            instruction: "State that we have x number of whole items (e.g., cups of juice, meters of ribbon, pizzas). For example: 'We have 3 cups of juice' or 'We have 4 meters of ribbon.'"
+          },
+          {
+            stepNumber: 2,
+            title: "Divide the whole into fractional parts",
+            instruction: "Explain that we divide the whole into parts based on the fraction denominator. For example: 'Each cup is divided into 2 equal parts since we are using 1/2 cups' or 'Each pizza is cut into 3 equal slices since each person gets 1/3 of a pizza.'"
+          },
+          {
+            stepNumber: 3,
+            title: "Group the parts",
+            instruction: "Group the total parts into sets based on the fraction numerator. State if there is remainder and it cannot be grouped evenly."
+          },
+          {
+            stepNumber: 4,
+            title: "Final answer",
+            instruction: "Count all the groups formed. State the final answer clearly. For example: 'We can make 6 servings of 1/2 cup from 3 cups of juice' or 'we can make only 10 batches of cookies with 8 cups of flour, with some flour left over.'"
+          }
+        ]
+      },
+      problemTypeMapping: {
+        1: "basic-whole-number-fraction-division",
+        2: "basic-whole-number-fraction-division",
+        3: "basic-whole-number-fraction-division"
+      }
+    },
+
     VISUALIZATION_CONFIG: {
       1: {
-        visualizationId: "grouping-model"
+        visualizationId: "whole-number-fraction-division",
+        includeVisualization: true,
+        dataSchema: {
+          // Core problem data
+          initial_number: { type: "number", description: "initial whole number" },
+          numerator: { type: "number", description: "numerator of the fraction" },
+          denominator: { type: "number", description: "denominator of the fraction" },
+          context: { type: "string", description: "object name (chocolate, ribbon, etc.)" },
+          problem_summary: { type: "string", description: "problem summary" },
+          result_unit: { type: "string", description: "unit text that will go with the final answer" },
+
+          // Visualizer-specific structure
+          stages: {
+            type: "array",
+            count: 4,
+            description: "4-step visualization stages",
+            itemSchema: {
+              id: { type: "string", description: "Step1, Step2 …" },
+              title: { type: "string", description: "Step 1 title, Step 2 title…" },
+              description: { type: "string", description: "Step 1 content, Step 2 content" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "describe the original problem briefly" },
+              solution: { type: "string", description: "solve the division using the flip rule" },
+              explanation: { type: "string", description: "1-2 sentence context based conclusion" }
+            }
+          }
+        }
       },
+
       2: {
-        visualizationId: "grouping-model"
+        visualizationId: "whole-number-fraction-division",
+        includeVisualization: true,
+        dataSchema: {
+          // Core problem data
+          initial_number: { type: "number", description: "initial whole number" },
+          numerator: { type: "number", description: "numerator of the fraction" },
+          denominator: { type: "number", description: "denominator of the fraction" },
+          context: { type: "string", description: "object name (chocolate, ribbon, etc.)" },
+          problem_summary: { type: "string", description: "problem summary" },
+          result_unit: { type: "string", description: "unit text that will go with the final answer" },
+
+          // Visualizer-specific structure
+          stages: {
+            type: "array",
+            count: 4,
+            description: "4-step visualization stages",
+            itemSchema: {
+              id: { type: "string", description: "Step1, Step2 …" },
+              title: { type: "string", description: "Step 1 title, Step 2 title…" },
+              description: { type: "string", description: "Step 1 content, Step 2 content" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "describe the original problem briefly" },
+              solution: { type: "string", description: "solve the division using the flip rule" },
+              explanation: { type: "string", description: "1-2 sentence context based conclusion" }
+            }
+          }
+        }
       },
       3: {
-        visualizationId: "grouping-model"
+        visualizationId: "null",
+        includeVisualization: false,
+        dataSchema: {
+          // Visualizer-specific structure
+          stages: {
+            type: "array",
+            count: 4,
+            description: "4-step visualization stages",
+            itemSchema: {
+              id: { type: "string", description: "Step1, Step2 …" },
+              title: { type: "string", description: "Step 1 title, Step 2 title…" },
+              description: { type: "string", description: "Step 1 content, Step 2 content" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "describe the original problem briefly" },
+              solution: { type: "string", description: "solve the division using the flip rule" },
+              explanation: { type: "string", description: "1-2 sentence context based conclusion" }
+            }
+          }
+        }
       }
     },
 
     SCORING_CONFIG: {
       1: {
-        basePoints: 0.11,
-        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.11 }
+        basePoints: 0.1,
+        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.05 }
       },
       2: {
-        basePoints: 0.22,
-        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.22 }
+        basePoints: 0.15,
+        hintPenalties: { first: 0.02, second: 0.04, thirdPlus: 0.07 }
       },
       3: {
-        basePoints: 0.43,
-        hintPenalties: { first: 0.02, second: 0.04, thirdPlus: 0.43 }
+        basePoints: 0.30,
+        hintPenalties: { first: 0.07, second: 0.12, thirdPlus: 0.20 }
       }
     }
   },
@@ -281,7 +515,7 @@ Examples of appropriate problems:
 
 Guidelines:
 - Use simple denominators (2, 4, 6, 8)
-- Choose fraction pairs that result in whole number answers if it's a real life situation like number of scoops or pizza slices
+- Choose fraction pairs that result in whole number answers
 
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`,
 
@@ -312,30 +546,164 @@ Guidelines:
 IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no solutions, no explanations.`
     },
 
+    SOLUTION_STEPS: {
+      templates: {
+        "fraction-dividing-fraction": [
+          {
+            stepNumber: 1,
+            title: "Understand what we have",
+            instruction: "State the initial fraction (dividend) clearly with context. For example: 'We have {numerator1}/{denominator1} {unit}' (e.g., 'We have 5/6 cup of flour' or 'We have 3/4 meter of ribbon')."
+          },
+          {
+            stepNumber: 2,
+            title: "Find common denominator",
+            instruction: "Convert both fractions to the same denominator (LCD - Least Common Denominator). Explain the conversion clearly. For example: '{numerator1}/{denominator1} equals {converted_numerator1}/{lcd}' and 'Each portion is {numerator2}/{denominator2} which equals {converted_numerator2}/{lcd}'."
+          },
+          {
+            stepNumber: 3,
+            title: "Count the portions",
+            instruction: "Count how many {converted_numerator2}/{lcd} portions fit into {converted_numerator1}/{lcd}. Show the simple division: {converted_numerator1} ÷ {converted_numerator2} = {result}. Make it concrete: 'We have {converted_numerator1} parts, and each portion needs {converted_numerator2} parts, so {converted_numerator1} ÷ {converted_numerator2} = {result}'."
+          },
+          {
+            stepNumber: 4,
+            title: "Final answer",
+            instruction: "State the answer clearly with context. For whole number results: 'We can make {result} portions' or 'You can get {result} servings'. For fractional results: 'The answer is {result_fraction} {unit}'. Always relate back to the original problem context."
+          }
+        ]
+      },
+      problemTypeMapping: {
+        1: "fraction-dividing-fraction",
+        2: "fraction-dividing-fraction",
+        3: "fraction-dividing-fraction"
+      }
+    },
+
     VISUALIZATION_CONFIG: {
       1: {
-        visualizationId: "step-by-step-solution"
+        visualizationId: "fraction-fraction-division",
+        includeVisualization: true,
+        dataSchema: {
+          // Dividend fraction (first fraction)
+          numerator1: { type: "number", description: "numerator of dividend fraction" },
+          denominator1: { type: "number", description: "denominator of dividend fraction" },
+
+          // Divisor fraction (second fraction)
+          numerator2: { type: "number", description: "numerator of divisor fraction" },
+          denominator2: { type: "number", description: "denominator of divisor fraction" },
+
+          // Calculated values for visualization
+          lcd: { type: "number", description: "least common denominator of both fractions" },
+          converted_numerator1: { type: "number", description: "dividend numerator when converted to LCD" },
+          converted_numerator2: { type: "number", description: "divisor numerator when converted to LCD" },
+          result: { type: "number", description: "final answer (whole number or fraction as decimal)" },
+          result_fraction: { type: "string", description: "result as fraction string if not whole number (e.g., '3/4')" },
+
+          // Context information
+          context: { type: "string", description: "object name (flour, milk, ribbon, fabric, etc.)" },
+          problem_summary: { type: "string", description: "brief problem summary" },
+          result_unit: { type: "string", description: "unit text for final answer (e.g., 'portions', 'servings', 'pieces')" },
+
+          // Visualization stages
+          stages: {
+            type: "array",
+            count: 5,
+            description: "5-step visualization stages",
+            itemSchema: {
+              id: { type: "string", description: "Step0, Step1, Step2, Step3, Step4" },
+              title: { type: "string", description: "Step title" },
+              description: { type: "string", description: "Step explanation" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "equation format: '5/6 ÷ 1/12 = ?'" },
+              solution: { type: "string", description: "complete solution with steps" },
+              explanation: { type: "string", description: "contextual explanation relating to the problem" }
+            }
+          }
+        }
       },
       2: {
-        visualizationId: "step-by-step-solution"
+        visualizationId: "fraction-fraction-division",
+        includeVisualization: true,
+        dataSchema: {
+          // Same as type 1
+          numerator1: { type: "number", description: "numerator of dividend fraction" },
+          denominator1: { type: "number", description: "denominator of dividend fraction" },
+          numerator2: { type: "number", description: "numerator of divisor fraction" },
+          denominator2: { type: "number", description: "denominator of divisor fraction" },
+          lcd: { type: "number", description: "least common denominator of both fractions" },
+          converted_numerator1: { type: "number", description: "dividend numerator when converted to LCD" },
+          converted_numerator2: { type: "number", description: "divisor numerator when converted to LCD" },
+          result: { type: "number", description: "final answer (whole number or fraction as decimal)" },
+          result_fraction: { type: "string", description: "result as fraction string if not whole number" },
+          context: { type: "string", description: "object name" },
+          problem_summary: { type: "string", description: "brief problem summary" },
+          result_unit: { type: "string", description: "unit text for final answer" },
+
+          stages: {
+            type: "array",
+            count: 5,
+            description: "5-step visualization stages",
+            itemSchema: {
+              id: { type: "string", description: "Step0, Step1, Step2, Step3, Step4" },
+              title: { type: "string", description: "Step title" },
+              description: { type: "string", description: "Step explanation" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "equation format" },
+              solution: { type: "string", description: "complete solution with steps" },
+              explanation: { type: "string", description: "contextual explanation" }
+            }
+          }
+        }
       },
       3: {
-        visualizationId: "step-by-step-solution"
+        visualizationId: null,
+        includeVisualization: false,
+        dataSchema: {
+          // Text-only solution - no visualization
+          stages: {
+            type: "array",
+            count: 4,
+            description: "4-step solution stages for plain text display",
+            itemSchema: {
+              id: { type: "string", description: "Step1, Step2, Step3, Step4" },
+              title: { type: "string", description: "Step title" },
+              description: { type: "string", description: "Step explanation text" }
+            }
+          },
+
+          mathSummary: {
+            type: "object",
+            fields: {
+              problem: { type: "string", description: "equation format" },
+              solution: { type: "string", description: "complete solution" },
+              explanation: { type: "string", description: "mathematical explanation" }
+            }
+          }
+        }
       }
     },
 
     SCORING_CONFIG: {
       1: {
-        basePoints: 0.11,
+        basePoints: 0.1,
         hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.05 }
       },
       2: {
-        basePoints: 0.22,
-        hintPenalties: { first: 0.01, second: 0.02, thirdPlus: 0.11 }
+        basePoints: 0.15,
+        hintPenalties: { first: 0.02, second: 0.04, thirdPlus: 0.07 }
       },
       3: {
-        basePoints: 0.43,
-        hintPenalties: { first: 0.02, second: 0.04, thirdPlus: 0.30 }
+        basePoints: 0.30,
+        hintPenalties: { first: 0.07, second: 0.12, thirdPlus: 0.20 }
       }
     }
   },

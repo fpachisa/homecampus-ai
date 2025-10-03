@@ -111,7 +111,7 @@ export const VISUALIZATION_THEMES: Record<VisualizationContext, VisualizationThe
   }
 };
 
-// Visualization configurations (2 generic visualizers)
+// Visualization configurations
 const VISUALIZATION_CONFIGS: Record<VisualizationId, VisualizationConfig> = {
   'bar-division': {
     visualizationId: 'bar-division',
@@ -127,6 +127,24 @@ const VISUALIZATION_CONFIGS: Record<VisualizationId, VisualizationConfig> = {
     context: 'pizza',
     description: 'Generic circular model for dividing round objects (pizza, cake, pie, garden, etc.)',
     theme: VISUALIZATION_THEMES['pizza'],
+    supportedOperations: ['division'],
+    qualityLevel: 'high',
+    fallbackId: undefined
+  },
+  'whole-number-fraction-division': {
+    visualizationId: 'whole-number-fraction-division',
+    context: 'abstract',
+    description: 'Grouping model for whole number ÷ fraction (e.g., how many 1/2-cup servings from 3 cups)',
+    theme: VISUALIZATION_THEMES['abstract'], // Default neutral theme
+    supportedOperations: ['division'],
+    qualityLevel: 'high',
+    fallbackId: undefined
+  },
+  'fraction-fraction-division': {
+    visualizationId: 'fraction-fraction-division',
+    context: 'liquid',
+    description: 'Common denominator model for fraction ÷ fraction (e.g., how many 1/12-cup portions from 5/6 cup)',
+    theme: VISUALIZATION_THEMES['liquid'], // Default liquid/measuring cup theme
     supportedOperations: ['division'],
     qualityLevel: 'high',
     fallbackId: undefined

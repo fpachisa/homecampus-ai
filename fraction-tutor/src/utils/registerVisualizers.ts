@@ -5,9 +5,11 @@
 
 import { registerVisualization, getVisualizationConfig } from './visualizationRegistry';
 
-// Import the 2 generic visualizer components
+// Import visualizer components
 import BarDivisionVisualizer from '../components/visualizations/BarDivisionVisualizer';
 import CircularDivisionVisualizer from '../components/visualizations/CircularDivisionVisualizer';
+import WholeNumberFractionDivisionVisualizer from '../components/visualizations/WholeNumberFractionDivisionVisualizer';
+import FractionFractionDivisionVisualizer from '../components/visualizations/FractionFractionDivisionVisualizer';
 
 /**
  * Initialize and register all visualizers
@@ -39,7 +41,33 @@ export function registerAllVisualizers(): void {
     });
   }
 
-  console.log('✅ 2 generic visualizers registered successfully');
+  // Register Whole Number ÷ Fraction Visualizer (grouping model)
+  const wholeNumberFractionConfig = getVisualizationConfig('whole-number-fraction-division');
+  if (wholeNumberFractionConfig) {
+    registerVisualization({
+      id: 'whole-number-fraction-division',
+      displayName: 'Whole Number ÷ Fraction Division',
+      context: 'abstract',
+      keywords: [], // Not used - visualizationId is explicitly set in topic config
+      component: WholeNumberFractionDivisionVisualizer,
+      config: wholeNumberFractionConfig
+    });
+  }
+
+  // Register Fraction ÷ Fraction Visualizer (common denominator model)
+  const fractionFractionConfig = getVisualizationConfig('fraction-fraction-division');
+  if (fractionFractionConfig) {
+    registerVisualization({
+      id: 'fraction-fraction-division',
+      displayName: 'Fraction ÷ Fraction Division',
+      context: 'liquid',
+      keywords: ['cup', 'flour', 'milk', 'water', 'liquid', 'measuring', 'portion', 'scoop'], // Common keywords for fraction÷fraction problems
+      component: FractionFractionDivisionVisualizer,
+      config: fractionFractionConfig
+    });
+  }
+
+  console.log('✅ 4 visualizers registered successfully');
 }
 
 export default registerAllVisualizers;

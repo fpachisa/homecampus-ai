@@ -92,10 +92,12 @@ export interface VisualizationProps {
   onComplete?: () => void; // Callback when user finishes viewing all steps
 }
 
-// Supported visualization types (2 generic visualizers)
+// Supported visualization types
 export type VisualizationId =
-  | 'bar-division'      // For linear/rectangular objects (ribbon, chocolate, rope, etc.)
-  | 'circular-division'; // For circular/round objects (pizza, cake, pie, garden, etc.)
+  | 'bar-division'                        // For linear/rectangular objects (ribbon, chocolate, rope, etc.)
+  | 'circular-division'                   // For circular/round objects (pizza, cake, pie, garden, etc.)
+  | 'whole-number-fraction-division'      // For whole number ÷ fraction (grouping model)
+  | 'fraction-fraction-division';         // For fraction ÷ fraction (common denominator model)
 
 export interface VisualizationConfig {
   visualizationId: VisualizationId;

@@ -2,7 +2,7 @@ import type { ConversationState, Message, ProblemState } from '../types/types';
 
 export interface SessionData {
   topicId: string;
-  messages: Message[]; // Last 10 messages for context
+  messages: Message[]; // Full message history (no limit for WhatsApp-style persistence)
   currentScore: number;
   problemsCompleted: number;
   currentProblemType: number;
@@ -11,13 +11,27 @@ export interface SessionData {
   subtopicComplete: boolean;
 }
 
-const SESSION_STORAGE_KEY = 'fraction-tutor-session';
-const MAX_MESSAGES_TO_STORE = 10;
+export interface SessionPreview {
+  topicId: string;
+  lastMessage: string;
+  timestamp: number;
+  problemsCompleted: number;
+  messageCount: number;
+}
+
+const SESSION_STORAGE_PREFIX = 'fraction-tutor-session-';
 const SESSION_EXPIRY_HOURS = 24;
 
 class SessionStorageService {
   /**
-   * Save current session state to localStorage
+   * Get storage key for a specific topic
+   */
+  private getStorageKey(topicId: string): string {
+    return `${SESSION_STORAGE_PREFIX}${topicId}`;
+  }
+
+  /**
+   * Save current session state to localStorage (topic-specific)
    */
   saveSession(
     topicId: string,
@@ -30,8 +44,7 @@ class SessionStorageService {
     try {
       const sessionData: SessionData = {
         topicId,
-        // Only store the last N messages to keep localStorage size manageable
-        messages: conversationState.messages.slice(-MAX_MESSAGES_TO_STORE),
+        messages: conversationState.messages, // Store all messages for full chat history
         currentScore,
         problemsCompleted,
         currentProblemType: conversationState.currentProblemType,
@@ -40,18 +53,18 @@ class SessionStorageService {
         subtopicComplete
       };
 
-      localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessionData));
+      localStorage.setItem(this.getStorageKey(topicId), JSON.stringify(sessionData));
     } catch (error) {
       console.warn('Failed to save session to localStorage:', error);
     }
   }
 
   /**
-   * Load session state from localStorage
+   * Load session state from localStorage for a specific topic
    */
-  loadSession(): SessionData | null {
+  loadSession(topicId: string): SessionData | null {
     try {
-      const stored = localStorage.getItem(SESSION_STORAGE_KEY);
+      const stored = localStorage.getItem(this.getStorageKey(topicId));
       if (!stored) return null;
 
       const sessionData: SessionData = JSON.parse(stored);
@@ -59,13 +72,13 @@ class SessionStorageService {
       // Check if session has expired
       const hoursElapsed = (Date.now() - sessionData.timestamp) / (1000 * 60 * 60);
       if (hoursElapsed > SESSION_EXPIRY_HOURS) {
-        this.clearSession();
+        this.clearSession(topicId);
         return null;
       }
 
       // Validate required fields
       if (!sessionData.topicId || !Array.isArray(sessionData.messages)) {
-        this.clearSession();
+        this.clearSession(topicId);
         return null;
       }
 
@@ -82,53 +95,97 @@ class SessionStorageService {
       return sessionData;
     } catch (error) {
       console.warn('Failed to load session from localStorage:', error);
-      this.clearSession();
+      this.clearSession(topicId);
       return null;
     }
   }
 
   /**
-   * Check if there's a valid saved session
+   * Check if there's a valid saved session for a specific topic
    */
-  hasSavedSession(): boolean {
-    return this.loadSession() !== null;
+  hasSavedSession(topicId: string): boolean {
+    return this.loadSession(topicId) !== null;
   }
 
   /**
-   * Get basic info about saved session without loading full data
+   * Get all saved sessions (for WhatsApp-style list)
    */
-  getSessionInfo(): { topicId: string; timestamp: number; problemsCompleted: number } | null {
+  getAllSessions(): SessionData[] {
     try {
-      const stored = localStorage.getItem(SESSION_STORAGE_KEY);
-      if (!stored) return null;
+      const sessions: SessionData[] = [];
 
-      const sessionData = JSON.parse(stored);
-      const hoursElapsed = (Date.now() - sessionData.timestamp) / (1000 * 60 * 60);
-
-      if (hoursElapsed > SESSION_EXPIRY_HOURS) {
-        this.clearSession();
-        return null;
+      // Iterate through all localStorage keys
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith(SESSION_STORAGE_PREFIX)) {
+          const topicId = key.replace(SESSION_STORAGE_PREFIX, '');
+          const session = this.loadSession(topicId);
+          if (session) {
+            sessions.push(session);
+          }
+        }
       }
 
+      // Sort by timestamp (most recent first)
+      return sessions.sort((a, b) => b.timestamp - a.timestamp);
+    } catch (error) {
+      console.warn('Failed to get all sessions:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Get session preview for WhatsApp-style display
+   */
+  getSessionPreview(topicId: string): SessionPreview | null {
+    try {
+      const session = this.loadSession(topicId);
+      if (!session) return null;
+
+      // Get last tutor message for preview
+      const lastTutorMessage = [...session.messages]
+        .reverse()
+        .find(msg => msg.role === 'tutor');
+
       return {
-        topicId: sessionData.topicId,
-        timestamp: sessionData.timestamp,
-        problemsCompleted: sessionData.problemsCompleted || 0
+        topicId: session.topicId,
+        lastMessage: lastTutorMessage?.content || 'No messages yet',
+        timestamp: session.timestamp,
+        problemsCompleted: session.problemsCompleted,
+        messageCount: session.messages.length
       };
     } catch (error) {
-      console.warn('Failed to get session info:', error);
+      console.warn('Failed to get session preview:', error);
       return null;
     }
   }
 
   /**
-   * Clear saved session
+   * Clear saved session for a specific topic
    */
-  clearSession(): void {
+  clearSession(topicId: string): void {
     try {
-      localStorage.removeItem(SESSION_STORAGE_KEY);
+      localStorage.removeItem(this.getStorageKey(topicId));
     } catch (error) {
       console.warn('Failed to clear session:', error);
+    }
+  }
+
+  /**
+   * Clear all sessions
+   */
+  clearAllSessions(): void {
+    try {
+      const keysToRemove: string[] = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith(SESSION_STORAGE_PREFIX)) {
+          keysToRemove.push(key);
+        }
+      }
+      keysToRemove.forEach(key => localStorage.removeItem(key));
+    } catch (error) {
+      console.warn('Failed to clear all sessions:', error);
     }
   }
 

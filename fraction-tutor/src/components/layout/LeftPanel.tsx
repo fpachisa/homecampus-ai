@@ -31,10 +31,8 @@ function getTopicIcon(topicId: string): string {
 
 const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions }) => {
   const { theme } = useTheme();
-  const { appState, handleTopicSelect, handleResumeSession } = useAppContext();
+  const { appState, handleTopicSelect, handleBackToTopics } = useAppContext();
   const [searchTerm, setSearchTerm] = useState('');
-
-  const sessionInfo = sessionStorage.getSessionInfo();
 
   if (isCollapsed) {
     return (
@@ -47,6 +45,29 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
           backdropFilter: theme.glass.backdrop,
         }}
       >
+        {/* Back to Fractions Button */}
+        <button
+          onClick={handleBackToTopics}
+          className="p-3 rounded-lg transition-all duration-200 hover:scale-105"
+          style={{
+            backgroundColor: theme.colors.interactive,
+            color: theme.colors.textSecondary,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = theme.colors.brand;
+            e.currentTarget.style.color = '#ffffff';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = theme.colors.interactive;
+            e.currentTarget.style.color = theme.colors.textSecondary;
+          }}
+          title="Back to Fractions"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
         {/* Expand Button */}
         <button
           onClick={layoutActions.toggleLeftPanel}
@@ -85,23 +106,6 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
             <span className="text-lg">{topic.icon}</span>
           </button>
         ))}
-
-        {/* Session Resume Button if available */}
-        {sessionInfo && (
-          <button
-            onClick={handleResumeSession}
-            className="p-2 rounded-lg transition-all duration-200 hover:scale-105 mt-auto"
-            style={{
-              backgroundColor: theme.colors.brand,
-              color: '#ffffff',
-            }}
-            title="Resume Session"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8a2 2 0 002-2V6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
-            </svg>
-          </button>
-        )}
       </div>
     );
   }
@@ -124,30 +128,13 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     >
       {/* Panel Header */}
       <div
-        className="flex items-center justify-between p-4 border-b"
+        className="border-b"
         style={{ borderColor: theme.colors.border }}
       >
-        <div className="flex items-center space-x-3">
-          <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold animate-float"
-            style={{ backgroundColor: theme.colors.brand }}
-          >
-            📚
-          </div>
-          <div>
-            <h2 className="font-semibold text-sm" style={{ color: theme.colors.textPrimary }}>
-              AI Campus
-            </h2>
-            <p className="text-xs" style={{ color: theme.colors.textMuted }}>
-              Learn Mathematics
-            </p>
-          </div>
-        </div>
-
-        {/* Collapse Button */}
+        {/* Back to Fractions Button */}
         <button
-          onClick={layoutActions.toggleLeftPanel}
-          className="p-1.5 rounded-md transition-colors duration-200"
+          onClick={handleBackToTopics}
+          className="w-full px-4 py-3 flex items-center space-x-2 transition-colors duration-200 hover:bg-interactive"
           style={{
             color: theme.colors.textSecondary,
           }}
@@ -157,12 +144,53 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = 'transparent';
           }}
-          title="Collapse sidebar"
+          title="Back to Fractions"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
+          <span className="text-sm font-medium">Back to Fractions</span>
         </button>
+
+        {/* Fractions Header */}
+        <div className="flex items-center justify-between px-4 pb-4">
+          <div className="flex items-center space-x-3">
+            <div
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold"
+              style={{ backgroundColor: theme.colors.brand }}
+            >
+              ➗
+            </div>
+            <div>
+              <h2 className="font-semibold text-sm" style={{ color: theme.colors.textPrimary }}>
+                Fractions
+              </h2>
+              <p className="text-xs" style={{ color: theme.colors.textMuted }}>
+                Choose a subtopic
+              </p>
+            </div>
+          </div>
+
+          {/* Collapse Button */}
+          <button
+            onClick={layoutActions.toggleLeftPanel}
+            className="p-1.5 rounded-md transition-colors duration-200"
+            style={{
+              color: theme.colors.textSecondary,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = theme.colors.interactive;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}
+            title="Collapse sidebar"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Search Bar */}
@@ -201,101 +229,97 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
             </h3>
           </div>
 
-          {/* Topic List */}
-          {filteredTopics.map((topic) => (
-            <button
-              key={topic.id}
-              onClick={() => handleTopicSelect(topic.id)}
-              className={`w-full flex items-center space-x-3 px-3 py-3 text-left transition-all duration-300 group ${
-                appState.selectedTopic === topic.id ? 'bg-brand text-white' : ''
-              }`}
-              style={{
-                background: appState.selectedTopic === topic.id ? theme.gradients.brand : 'transparent',
-                color: appState.selectedTopic === topic.id ? '#ffffff' : theme.colors.textSecondary,
-                borderRadius: theme.radius.lg,
-                boxShadow: appState.selectedTopic === topic.id ? theme.shadows.glow : 'none',
-              }}
-              onMouseEnter={(e) => {
-                if (appState.selectedTopic !== topic.id) {
-                  e.currentTarget.style.background = theme.colors.interactive;
-                  e.currentTarget.style.boxShadow = theme.shadows.md;
-                  e.currentTarget.style.transform = 'translateY(-1px)';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (appState.selectedTopic !== topic.id) {
-                  e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.boxShadow = 'none';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }
-              }}
-            >
-              <span className="text-lg">{topic.icon}</span>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium truncate">{topic.name}</p>
-                <p className="text-xs opacity-70 truncate">{topic.description}</p>
-              </div>
-              {appState.selectedTopic === topic.id && (
-                <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              )}
-            </button>
-          ))}
-        </div>
+          {/* Topic List - WhatsApp Style */}
+          {filteredTopics.map((topic) => {
+            const preview = sessionStorage.getSessionPreview(topic.id);
+            const hasSession = preview !== null;
 
-        {/* Session Resume Section */}
-        {sessionInfo && (
-          <div className="mt-6 p-3 rounded-lg" style={{ backgroundColor: theme.colors.interactive }}>
-            <div className="flex items-center space-x-2 mb-2">
-              <div
-                className="w-6 h-6 rounded-full flex items-center justify-center text-xs"
-                style={{ backgroundColor: theme.colors.brand }}
-              >
-                ⏰
-              </div>
-              <h4 className="text-sm font-medium" style={{ color: theme.colors.textPrimary }}>
-                Continue Learning
-              </h4>
-            </div>
-            <p className="text-xs mb-3" style={{ color: theme.colors.textMuted }}>
-              {sessionStorage.getTimeElapsedString(sessionInfo.timestamp)} • {sessionInfo.problemsCompleted} problems completed
-            </p>
-            <div className="flex space-x-2">
+            return (
               <button
-                onClick={handleResumeSession}
-                className="flex-1 text-xs px-3 py-1.5 font-medium transition-all duration-300"
+                key={topic.id}
+                onClick={() => handleTopicSelect(topic.id)}
+                className={`w-full flex items-start space-x-3 px-3 py-3 text-left transition-all duration-300 group ${
+                  appState.selectedTopic === topic.id ? 'bg-brand text-white' : ''
+                }`}
                 style={{
-                  background: theme.gradients.brand,
-                  color: '#ffffff',
-                  borderRadius: theme.radius.md,
-                  boxShadow: theme.shadows.md,
+                  background: appState.selectedTopic === topic.id ? theme.gradients.brand : 'transparent',
+                  color: appState.selectedTopic === topic.id ? '#ffffff' : theme.colors.textSecondary,
+                  borderRadius: theme.radius.lg,
+                  boxShadow: appState.selectedTopic === topic.id ? theme.shadows.glow : 'none',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-1px)';
-                  e.currentTarget.style.boxShadow = theme.shadows.lg;
+                  if (appState.selectedTopic !== topic.id) {
+                    e.currentTarget.style.background = theme.colors.interactive;
+                    e.currentTarget.style.boxShadow = theme.shadows.md;
+                    e.currentTarget.style.transform = 'translateY(-1px)';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = theme.shadows.md;
+                  if (appState.selectedTopic !== topic.id) {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.boxShadow = 'none';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }
                 }}
               >
-                Resume
+                {/* Icon */}
+                <div className="flex-shrink-0">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-lg"
+                    style={{
+                      backgroundColor: appState.selectedTopic === topic.id
+                        ? 'rgba(255, 255, 255, 0.2)'
+                        : theme.colors.interactive,
+                    }}
+                  >
+                    {topic.icon}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="text-sm font-semibold truncate">{topic.name}</p>
+                    {hasSession && (
+                      <span className="text-xs opacity-70 ml-2 flex-shrink-0">
+                        {sessionStorage.getTimeElapsedString(preview.timestamp)}
+                      </span>
+                    )}
+                  </div>
+
+                  {hasSession ? (
+                    <p className="text-xs opacity-70 truncate line-clamp-1">
+                      {preview.lastMessage}
+                    </p>
+                  ) : (
+                    <p className="text-xs opacity-60 truncate">
+                      {topic.description}
+                    </p>
+                  )}
+
+                  {hasSession && (
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-xs opacity-60">
+                        {preview.messageCount} messages
+                      </span>
+                      <span className="text-xs opacity-40">•</span>
+                      <span className="text-xs opacity-60">
+                        {preview.problemsCompleted} solved
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Check mark for selected */}
+                {appState.selectedTopic === topic.id && (
+                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                )}
               </button>
-              <button
-                onClick={() => sessionStorage.clearSession()}
-                className="text-xs px-3 py-1.5 rounded-md font-medium transition-colors duration-200"
-                style={{
-                  backgroundColor: 'transparent',
-                  color: theme.colors.textMuted,
-                  border: `1px solid ${theme.colors.border}`,
-                }}
-              >
-                Start Fresh
-              </button>
-            </div>
-          </div>
-        )}
+            );
+          })}
+        </div>
       </div>
 
       {/* Bottom Section - User Profile Placeholder */}

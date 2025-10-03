@@ -106,3 +106,83 @@ export function replaceWithLatex(text: string): { text: string; hasMath: boolean
   return { text: result, hasMath: true };
 }
 
+/**
+ * Calculate GCD (Greatest Common Divisor) using Euclidean algorithm
+ */
+export function calculateGCD(a: number, b: number): number {
+  a = Math.abs(a);
+  b = Math.abs(b);
+
+  while (b !== 0) {
+    const temp = b;
+    b = a % b;
+    a = temp;
+  }
+
+  return a;
+}
+
+/**
+ * Calculate LCM (Least Common Multiple)
+ */
+export function calculateLCM(a: number, b: number): number {
+  if (a === 0 || b === 0) {
+    return 0;
+  }
+  return Math.abs(a * b) / calculateGCD(a, b);
+}
+
+/**
+ * Simplify a fraction to its lowest terms
+ */
+export function simplifyFraction(numerator: number, denominator: number): { numerator: number; denominator: number } {
+  if (denominator === 0) {
+    throw new Error('Denominator cannot be zero');
+  }
+
+  const gcd = calculateGCD(numerator, denominator);
+  return {
+    numerator: numerator / gcd,
+    denominator: denominator / gcd
+  };
+}
+
+/**
+ * Calculate all math fields for visualization data
+ * Used by Visualization Agent to inject calculated math into LLM-generated content
+ */
+export function calculateVisualizationMath(
+  numerator: number,
+  denominator: number,
+  divisor: number
+): {
+  resultNumerator: number;
+  resultDenominator: number;
+  simplifiedNumerator: number;
+  simplifiedDenominator: number;
+  totalSmallPieces: number;
+  needsSimplification: boolean;
+} {
+  // Calculate result fraction: numerator / (denominator × divisor)
+  const resultNumerator = numerator;
+  const resultDenominator = denominator * divisor;
+
+  // Simplify the result
+  const simplified = simplifyFraction(resultNumerator, resultDenominator);
+
+  // Calculate total pieces after division
+  const totalSmallPieces = numerator * divisor;
+
+  // Check if simplification is needed
+  const needsSimplification = simplified.numerator !== resultNumerator || simplified.denominator !== resultDenominator;
+
+  return {
+    resultNumerator,
+    resultDenominator,
+    simplifiedNumerator: simplified.numerator,
+    simplifiedDenominator: simplified.denominator,
+    totalSmallPieces,
+    needsSimplification
+  };
+}
+

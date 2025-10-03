@@ -1,9 +1,10 @@
-import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState } from '../types/types';
+import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse } from '../types/types';
 import type { VisualizationData } from '../types/visualization';
 import type { AIService } from './aiService';
 import { AIServiceError, AIErrorType } from './aiService';
-import GeminiService from './geminiService';
-import ClaudeService from './claudeService';
+import BaseAIService from './BaseAIService';
+import { GeminiProvider } from './providers/GeminiProvider';
+import { ClaudeProvider } from './providers/ClaudeProvider';
 
 interface FallbackConfig {
   maxRetries: number;
@@ -28,8 +29,13 @@ class FallbackAIService implements AIService {
     config: Partial<FallbackConfig> = {},
     fallbackMessageCallback?: (message: string) => void
   ) {
-    this.primaryService = new GeminiService(geminiApiKey);
-    this.fallbackService = claudeApiKey ? new ClaudeService(claudeApiKey) : null;
+    // Create providers
+    const geminiProvider = new GeminiProvider({ apiKey: geminiApiKey });
+    const claudeProvider = claudeApiKey ? new ClaudeProvider({ apiKey: claudeApiKey }) : null;
+
+    // Create services using BaseAIService with providers
+    this.primaryService = new BaseAIService(geminiProvider);
+    this.fallbackService = claudeProvider ? new BaseAIService(claudeProvider) : null;
     this.fallbackMessageCallback = fallbackMessageCallback;
 
     this.config = {
@@ -148,6 +154,13 @@ class FallbackAIService implements AIService {
     );
   }
 
+  async generateInitialGreetingWithProblem(topicId: string = 'fraction-division-by-whole-numbers'): Promise<InitialGreetingResponse> {
+    return this.executeWithFallback(
+      (service) => service.generateInitialGreetingWithProblem(topicId),
+      'generateInitialGreetingWithProblem'
+    );
+  }
+
   async generateCelebration(
     finalScore: number,
     problemsCompleted: number,
@@ -169,10 +182,11 @@ class FallbackAIService implements AIService {
 
   async generateQuestion(
     problemType: number,
-    topicId: string = 'fraction-division-by-whole-numbers'
-  ): Promise<string> {
+    topicId: string = 'fraction-division-by-whole-numbers',
+    context?: { recentHistory?: string; evaluatorReasoning?: string }
+  ): Promise<QuestionGenerationResponse> {
     return this.executeWithFallback(
-      (service) => service.generateQuestion(problemType, topicId),
+      (service) => service.generateQuestion(problemType, topicId, context),
       'generateQuestion'
     );
   }
@@ -287,9 +301,9 @@ class FallbackAIService implements AIService {
 
   // Utility methods
   getActiveService(): 'gemini' | 'claude' | 'unknown' {
-    if (this.primaryService instanceof GeminiService) return 'gemini';
-    if (this.fallbackService instanceof ClaudeService) return 'claude';
-    return 'unknown';
+    // Since both services use BaseAIService now, we can't distinguish by instanceof
+    // This method is primarily for debugging, so we'll just indicate primary/fallback
+    return 'gemini'; // Primary is always Gemini in current setup
   }
 
   hasFallback(): boolean {

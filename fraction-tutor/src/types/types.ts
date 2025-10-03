@@ -3,11 +3,26 @@ export interface Message {
   role: 'tutor' | 'student';
   content: string;
   timestamp: Date;
+
+  // NEW: Speech and display content separation for AI avatar
+  speechContent?: {
+    text: string;                    // What the avatar speaks
+    emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+    audioUrl?: string;               // Cached TTS audio URL (blob URL)
+    duration?: number;               // Audio duration in milliseconds
+  };
+
+  displayContent?: {
+    text: string;                    // What appears as text on screen
+    showAfterSpeech?: boolean;       // Show text after speech completes
+  };
+
   visualization?: any; // Optional visualization data - can be VisualizationData or structured step data
   metadata?: {
     problemType?: number;
     isCorrect?: boolean;
     conceptsCovered?: string[];
+    messageType?: 'greeting' | 'problem' | 'hint' | 'solution' | 'celebration' | 'feedback';
   };
 }
 
@@ -53,11 +68,38 @@ export interface EvaluatorInstruction {
   pointsEarned: number;
   isMainProblemSolved: boolean;
 
-// Instructions for Tutor
+  // Instructions for Tutor
   action: "GIVE_HINT" | "GIVE_SOLUTION" | "NEW_PROBLEM" | "CELEBRATE";
   hintLevel?: 1 | 2 | 3;  // Which hint number to give
   reasoning: string;  // Why this action was chosen
   includeVisualization?: boolean; // Optional: whether to include visualization
+
+  // NEW: AI-driven speech and display content separation
+  speech?: {
+    text: string;                    // What avatar should speak
+    emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+  };
+
+  display?: {
+    content: string | null;          // What to show as text (null for speech-only)
+    showAfterSpeech?: boolean;       // Show after speech completes
+  };
+}
+
+export interface QuestionGenerationResponse {
+  speech: {
+    text: string;                    // What avatar should speak (acknowledgment + transition)
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+  };
+  display: {
+    content: string;                 // The new problem text
+    showAfterSpeech: boolean;        // Show after speech completes
+  };
+}
+
+export interface InitialGreetingResponse {
+  greeting: string;                  // What avatar should speak (warm welcome message)
+  problem: string;                   // The first problem text to display
 }
 
 export interface AnswerEvaluation {

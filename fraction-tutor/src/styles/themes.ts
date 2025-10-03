@@ -202,72 +202,72 @@ export const darkTheme: Theme = {
 export const lightTheme: Theme = {
   name: 'light',
   colors: {
-    // Light theme - Warm coral/beige palette
-    primary: '#FEFDFB',      // Warm off-white background
-    secondary: '#F5F3F0',    // Light beige sections
-    tertiary: '#EBE8E3',     // Soft beige
+    // Light theme - Enhanced warm coral/orange palette with better contrast
+    primary: '#FFFFFF',      // Pure white background (more vibrant than off-white)
+    secondary: '#FFF8F5',    // Very light peachy background
+    tertiary: '#FFE8DD',     // Light coral tint
 
     // Panels
-    sidebar: '#F5F3F0',      // Left/right panels
-    chat: '#FEFDFB',         // Main chat area
-    overlay: '#FEFDFB',      // Modals/overlays
+    sidebar: '#FFF8F5',      // Left/right panels with warm tint
+    chat: '#FFFFFF',         // Main chat area - pure white
+    overlay: '#FFFFFF',      // Modals/overlays
 
     // Interactive
-    interactive: '#EBE8E3',   // Buttons, inputs
+    interactive: '#FFF0E8',   // Buttons, inputs - light peach
     interactiveHover: '#D97757', // Coral accent
     interactiveActive: '#C46649',
 
     // Text
-    textPrimary: '#2C2825',  // Dark brown
-    textSecondary: '#5C5854',
-    textMuted: '#8C8985',
+    textPrimary: '#1A1A1A',  // Near black (better contrast than brown)
+    textSecondary: '#4A4A4A',
+    textMuted: '#7A7A7A',
     textAccent: '#D97757',   // Coral
 
     // Borders
-    border: '#E3DFD8',
-    divider: '#E3DFD8',
+    border: '#FFE0D1',       // Light coral border
+    divider: '#FFE0D1',
 
     // Status
-    success: '#3ba55c',
-    warning: '#D97757',
-    error: '#d83c3e',
-    info: '#D97757',
+    success: '#10B981',      // Bright green
+    warning: '#F59E0B',      // Amber
+    error: '#EF4444',        // Bright red
+    info: '#D97757',         // Coral
 
     // Brand
-    brand: '#D97757',        // Coral
+    brand: '#D97757',        // Coral (kept same)
     brandHover: '#C46649',
     brandActive: '#B05538',
 
     // Messages
     userMessage: '#D97757',  // Coral
-    tutorMessage: '#F5F3F0', // Light beige
-    systemMessage: '#3ba55c',
+    tutorMessage: '#FFF8F5', // Light peachy background
+    systemMessage: '#10B981',
   },
   shadows: {
-    sm: '0 1px 3px rgba(217, 119, 87, 0.08), 0 1px 2px rgba(217, 119, 87, 0.16)',
-    md: '0 4px 12px rgba(217, 119, 87, 0.10), 0 2px 4px rgba(217, 119, 87, 0.06)',
-    lg: '0 8px 32px rgba(217, 119, 87, 0.12), 0 4px 16px rgba(217, 119, 87, 0.08)',
-    xl: '0 16px 64px rgba(217, 119, 87, 0.15), 0 8px 32px rgba(217, 119, 87, 0.10)',
-    glow: '0 0 20px rgba(217, 119, 87, 0.2), 0 0 40px rgba(217, 119, 87, 0.1)',
-    focus: '0 0 0 3px rgba(217, 119, 87, 0.2), 0 0 20px rgba(217, 119, 87, 0.15)',
+    sm: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)',
+    md: '0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08)',
+    lg: '0 8px 32px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.10)',
+    xl: '0 16px 64px rgba(0, 0, 0, 0.18), 0 8px 32px rgba(0, 0, 0, 0.12)',
+    glow: '0 0 24px rgba(217, 119, 87, 0.3), 0 0 48px rgba(217, 119, 87, 0.15)',
+    focus: '0 0 0 3px rgba(217, 119, 87, 0.3), 0 0 20px rgba(217, 119, 87, 0.15)',
   },
   radius: {
     sm: '0.375rem',
-    md: '0.5rem',
-    lg: '0.75rem',
-    xl: '1rem',
+    md: '0.75rem',
+    lg: '1rem',
+    xl: '1.5rem',
   },
   glass: {
-    background: 'rgba(254, 253, 251, 0.8)',
-    border: 'rgba(217, 119, 87, 0.1)',
-    backdrop: 'blur(12px) saturate(180%)',
-    overlay: 'rgba(254, 253, 251, 0.95)',
+    background: 'rgba(255, 255, 255, 0.85)',
+    border: 'rgba(217, 119, 87, 0.2)',
+    backdrop: 'blur(16px) saturate(180%)',
+    overlay: 'rgba(255, 255, 255, 0.98)',
   },
   gradients: {
     brand: 'linear-gradient(135deg, #D97757 0%, #C46649 100%)',
-    panel: 'linear-gradient(180deg, rgba(254, 253, 251, 0.95) 0%, rgba(245, 243, 240, 0.98) 100%)',
-    accent: 'linear-gradient(90deg, rgba(217, 119, 87, 0.08) 0%, rgba(196, 102, 73, 0.04) 100%)',
-    subtle: 'linear-gradient(180deg, rgba(217, 119, 87, 0.02) 0%, rgba(217, 119, 87, 0.01) 100%)',
+    panel: 'linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 248, 245, 1) 100%)',
+    accent: 'linear-gradient(90deg, rgba(217, 119, 87, 0.1) 0%, rgba(196, 102, 73, 0.05) 100%)',
+    subtle: 'linear-gradient(180deg, rgba(217, 119, 87, 0.04) 0%, rgba(217, 119, 87, 0.01) 100%)',
   },
   typography: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',

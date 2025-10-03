@@ -42,26 +42,16 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
 
   // Generate recipient data
   const recipients = Array.from({ length: numberOfRecipients }, (_, i) => ({
-    name: contextualLabels.recipients?.[i] || `Friend ${i + 1}`,
     color: friendColors[i % friendColors.length],
     fraction: isSimplifiedCase
       ? `${simplifiedNumerator}/${simplifiedDenominator}`
-      : `${numerator}/${resultDenominator}`,
-    emoji: '👤'
+      : `${numerator}/${resultDenominator}`
   }));
 
   const handlePrevious = () => setCurrentStep(Math.max(0, currentStep - 1));
   const handleNext = () => {
     const nextStep = Math.min(totalSteps - 1, currentStep + 1);
     setCurrentStep(nextStep);
-
-    // If we just moved to the last step, trigger onComplete
-    if (nextStep === totalSteps - 1 && onComplete) {
-      // Call it after a short delay so user sees the last step first
-      setTimeout(() => {
-        onComplete();
-      }, 500);
-    }
   };
 
   // SVG Pizza Component
@@ -147,13 +137,13 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
 
   return (
     <div
-      className={`w-full max-w-4xl mx-auto p-8 rounded-lg ${className}`}
+      className={`w-full mx-auto p-4 rounded-lg ${className}`}
       style={{
         background: `linear-gradient(to bottom right, ${visualTheme.gradientFrom}, ${visualTheme.gradientTo})`
       }}
     >
       <h2
-        className="text-3xl font-bold text-center mb-6"
+        className="text-xl font-bold text-center mb-4"
         style={{ color: visualTheme.textColor }}
       >
         {visualTheme.emoji} {contextualLabels.original || `${numerator}/${denominator}`}
@@ -168,7 +158,7 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
         disabledColor="#d1d5db"
       />
 
-      <div className="mb-8">
+      <div className="mb-4">
         {/* Step 0: Whole pizza */}
         {currentStep === 0 && (
           <div className="text-center animate-fade-in">
@@ -191,7 +181,7 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
                 <circle cx="150" cy="150" r="130" fill="none" stroke={visualTheme.borderColor} strokeWidth="4" />
               </svg>
             </div>
-            <div className="text-lg" style={{ color: visualTheme.textColor }}>
+            <div className="text-base" style={{ color: visualTheme.textColor }}>
               <MathText>{stages?.[0]?.description || `Divided into ${denominator} equal parts`}</MathText>
             </div>
           </div>
@@ -206,8 +196,8 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
               textColor={visualTheme.textColor}
               emoji="✨"
             />
-            <div className="flex justify-center mb-4">
-              <svg width="300" height="300" viewBox="0 0 300 300">
+            <div className="flex justify-center mb-3">
+              <svg width="200" height="200" viewBox="0 0 300 300">
                 {Array.from({ length: denominator }).map((_, i) => (
                   <PizzaSlice
                     key={i}
@@ -220,7 +210,7 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
                 <circle cx="150" cy="150" r="130" fill="none" stroke={visualTheme.borderColor} strokeWidth="4" />
               </svg>
             </div>
-            <div className="text-lg" style={{ color: visualTheme.textColor }}>
+            <div className="text-base" style={{ color: visualTheme.textColor }}>
               <MathText>{stages?.[1]?.description || `${numerator} out of ${denominator} parts`}</MathText>
             </div>
           </div>
@@ -235,8 +225,8 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
               textColor={visualTheme.textColor}
               emoji="✂️"
             />
-            <div className="flex justify-center mb-4">
-              <svg width="300" height="300" viewBox="0 0 300 300">
+            <div className="flex justify-center mb-3">
+              <svg width="200" height="200" viewBox="0 0 300 300">
                 {Array.from({ length: denominator }).map((_, i) => (
                   <PizzaSlice
                     key={i}
@@ -251,7 +241,7 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
                 <circle cx="150" cy="150" r="130" fill="none" stroke={visualTheme.borderColor} strokeWidth="4" />
               </svg>
             </div>
-            <div className="text-lg mb-2" style={{ color: visualTheme.textColor }}>
+            <div className="text-base mb-2" style={{ color: visualTheme.textColor }}>
               <MathText>{stages?.[2]?.description || `Now we have ${totalSmallPieces} small pieces total!`}</MathText>
             </div>
           </div>
@@ -266,8 +256,8 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
               textColor={visualTheme.textColor}
               emoji="🎁"
             />
-            <div className="flex flex-col items-center gap-6 mb-6">
-              <svg width="300" height="300" viewBox="0 0 300 300">
+            <div className="flex flex-col items-center gap-4 mb-4">
+              <svg width="200" height="200" viewBox="0 0 300 300">
                 {Array.from({ length: denominator }).map((_, i) => (
                   <PizzaSlice
                     key={i}
@@ -284,11 +274,11 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
 
               <RecipientDisplay recipients={recipients} />
             </div>
-            <div className="text-lg mb-2" style={{ color: visualTheme.textColor }}>
+            <div className="text-base mb-2" style={{ color: visualTheme.textColor }}>
               <MathText>{stages?.[3]?.description || `Each gets ${numerator}/${resultDenominator}`}</MathText>
             </div>
             {needsSimplification && (
-              <p className="text-xl font-bold mt-4" style={{ color: visualTheme.accentColor }}>
+              <p className="text-lg font-bold mt-2" style={{ color: visualTheme.accentColor }}>
                 {numerator}/{resultDenominator} = {simplifiedNumerator}/{simplifiedDenominator}
               </p>
             )}

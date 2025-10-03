@@ -1,4 +1,4 @@
-import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState } from '../types/types';
+import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse } from '../types/types';
 import type { VisualizationData } from '../types/visualization';
 
 /**
@@ -12,6 +12,11 @@ export interface AIService {
   generateInitialGreeting(topicId: string): Promise<string>;
 
   /**
+   * Generate initial greeting with first problem in a single call
+   */
+  generateInitialGreetingWithProblem(topicId: string): Promise<InitialGreetingResponse>;
+
+  /**
    * Generate celebration message for topic completion
    */
   generateCelebration(
@@ -22,12 +27,13 @@ export interface AIService {
   ): Promise<string>;
 
   /**
-   * Generate a new question at specified problem type
+   * Generate a new question at specified problem type with optional context
    */
   generateQuestion(
     problemType: number,
-    topicId: string
-  ): Promise<string>;
+    topicId: string,
+    context?: { recentHistory?: string; evaluatorReasoning?: string }
+  ): Promise<QuestionGenerationResponse>;
 
   /**
    * Generate response to student input (legacy method)

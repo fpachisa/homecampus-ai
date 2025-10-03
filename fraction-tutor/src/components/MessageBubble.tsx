@@ -14,6 +14,7 @@ interface Props {
 const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
   const { theme } = useTheme();
   const isTutor = message.role === 'tutor';
+  const [continueClicked, setContinueClicked] = React.useState(false);
 
   // Type guard to check if visualization data is structured step data
   const isStructuredStepData = (data: any): data is {steps: any[], introText?: string, conclusionText?: string} => {
@@ -25,11 +26,19 @@ const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
     return data && typeof data === 'object' && data.visualizationId && data.problemData && !Array.isArray(data.steps);
   };
 
+  // Type guard to check if this is a plain text solution
+  const isPlainTextSolution = (data: any): boolean => {
+    return data && typeof data === 'object' && data.isPlainTextSolution === true;
+  };
+
   // Check if this message has structured step data
   const hasStructuredStepData = isStructuredStepData(message.visualization);
 
   // Check if this message has simple visualization data
   const hasSimpleVisualization = isSimpleVisualizationData(message.visualization);
+
+  // Check if this message has plain text solution
+  const hasPlainTextSolution = isPlainTextSolution(message.visualization);
 
   // Extract the correct data based on type
   const structuredStepData = hasStructuredStepData ? message.visualization : null;
@@ -43,10 +52,49 @@ const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
       step.includeVisualization && step.visualizationData
     );
     if (stepWithViz && stepWithViz.visualizationData) {
-      // AI now provides complete visualization data with all stages and tutorText
-      // Just pass it through with intro/conclusion text
+      const vizData = stepWithViz.visualizationData;
+
+      // AI returns flat structure, need to nest problemData
       extractedVisualizationData = {
-        ...stepWithViz.visualizationData,
+        visualizationId: vizData.visualizationId || 'bar-division',
+        context: vizData.context || 'abstract',
+        theme: vizData.theme,
+        problemData: {
+          // Whole number ÷ fraction visualizer fields
+          initial_number: vizData.initial_number,
+          // Fraction ÷ whole number visualizer fields
+          numerator: vizData.numerator,
+          denominator: vizData.denominator,
+          divisor: vizData.divisor,
+          // Fraction ÷ Fraction visualizer fields
+          numerator1: vizData.numerator1,
+          denominator1: vizData.denominator1,
+          numerator2: vizData.numerator2,
+          denominator2: vizData.denominator2,
+          lcd: vizData.lcd,
+          converted_numerator1: vizData.converted_numerator1,
+          converted_numerator2: vizData.converted_numerator2,
+          result: vizData.result,
+          result_fraction: vizData.result_fraction,
+          // Common fields
+          context: vizData.context,
+          numberOfRecipients: vizData.numberOfRecipients,
+          unit: vizData.unit || vizData.result_unit,
+          resultNumerator: vizData.resultNumerator,
+          resultDenominator: vizData.resultDenominator,
+          simplifiedNumerator: vizData.simplifiedNumerator,
+          simplifiedDenominator: vizData.simplifiedDenominator,
+          totalSmallPieces: vizData.totalSmallPieces,
+          needsSimplification: vizData.needsSimplification
+        },
+        stages: vizData.stages || [],
+        contextualLabels: vizData.contextualLabels || {
+          original: vizData.problem_summary || '',
+          division: '',
+          result: vizData.result_unit || ''
+        },
+        trigger: 'solution',
+        mathSummary: vizData.mathSummary,
         introText: structuredStepData.introText,
         conclusionText: structuredStepData.conclusionText
       };
@@ -61,13 +109,14 @@ const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
       hasSimpleVisualization,
       extractedVisualizationData: !!extractedVisualizationData,
       visualizationType: typeof message.visualization,
-      stepsLength: message.visualization?.steps?.length
+      stepsLength: message.visualization?.steps?.length,
+      extractedData: extractedVisualizationData
     });
   }
 
   return (
-    <div className={`flex w-full items-start animate-message-appear ${isTutor ? 'justify-start' : 'justify-end'}`}>
-      <div className={`flex items-start ${isTutor ? 'space-x-3' : 'space-x-3 flex-row-reverse space-x-reverse'}`}>
+    <div className={`flex flex-col w-full animate-message-appear ${isTutor ? 'items-start' : 'items-end'}`}>
+      <div className={`flex items-start ${isTutor ? 'space-x-3' : 'space-x-3 flex-row-reverse space-x-reverse'} ${extractedVisualizationData ? 'w-full' : 'max-w-lg'}`}>
         {/* Avatar */}
         <div
           className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg text-white shadow-md"
@@ -80,7 +129,7 @@ const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
 
         {/* Message */}
         <div
-          className="relative max-w-lg px-5 py-4 transition-all duration-300 hover:scale-[1.02] border backdrop-blur-sm"
+          className={`relative ${extractedVisualizationData ? 'flex-1' : 'max-w-lg'} px-5 py-4 transition-all duration-300 hover:scale-[1.02] border backdrop-blur-sm`}
         style={{
           background: isTutor
             ? `${theme.colors.tutorMessage}`
@@ -117,27 +166,12 @@ const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
         {extractedVisualizationData ? (
           // Render extracted visualization from structured step data
           <div className="visualization-solution">
-            {/* Display intro text if available */}
-            {extractedVisualizationData.introText && (
-              <div className="text-sm leading-relaxed whitespace-pre-wrap font-medium mb-4">
-                <MathText>{extractedVisualizationData.introText}</MathText>
-              </div>
-            )}
-
             {/* Render the visualizer directly */}
             <VisualizationRenderer
               data={extractedVisualizationData}
               theme={theme}
               className="visualization-in-message"
-              onComplete={onStepByStepComplete}
             />
-
-            {/* Display conclusion text if available */}
-            {extractedVisualizationData.conclusionText && (
-              <div className="text-sm leading-relaxed whitespace-pre-wrap font-medium mt-4">
-                <MathText>{extractedVisualizationData.conclusionText}</MathText>
-              </div>
-            )}
           </div>
         ) : (
           <>
@@ -170,8 +204,26 @@ const MessageBubble: React.FC<Props> = ({ message, onStepByStepComplete }) => {
           </div>
         )}
 
+        </div>
       </div>
-      </div>
+
+      {/* Continue Button - Show below the visualization card for step-by-step solutions OR plain text solutions */}
+      {(extractedVisualizationData || hasPlainTextSolution) && onStepByStepComplete && !continueClicked && (
+        <div className="w-full flex justify-center mt-4">
+          <button
+            onClick={() => {
+              setContinueClicked(true);
+              onStepByStepComplete();
+            }}
+            className="px-8 py-3 rounded-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            style={{
+              backgroundColor: theme.colors.brand,
+            }}
+          >
+            Continue →
+          </button>
+        </div>
+      )}
     </div>
   );
 };

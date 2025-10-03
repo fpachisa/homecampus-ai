@@ -100,6 +100,9 @@ firebase-debug.*.log
 googleCloudKey.json
 *.key
 *.pem
+# Google Cloud service account credentials
+*-*.json
+aicampus-*.json
 
 # Test files
 coverage/

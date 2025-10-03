@@ -134,7 +134,6 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
         <div className="flex-1">
           <ChatInterface
             topicId={appState.selectedTopic}
-            resumeFromSession={appState.resumeSession}
             onBackToTopics={handleBackToTopics}
           />
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import MathText from '../../MathText';
 
 /**
  * Shared UI components for high-quality visualizations
@@ -29,11 +30,12 @@ export const StepControls: React.FC<StepControlsProps> = ({
   const isNextDisabled = currentStep >= totalSteps - 1;
 
   return (
-    <div className={`flex gap-4 justify-center mb-6 ${className}`}>
+    <div className={`flex justify-between items-center mb-6 ${className}`}>
+      {/* Previous Button */}
       <button
         onClick={onPrevious}
         disabled={isPreviousDisabled}
-        className="px-4 py-2 rounded font-medium transition-all duration-200 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95"
+        className="px-6 py-3 rounded-lg font-semibold transition-all duration-200 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 shadow-lg"
         style={{
           backgroundColor: isPreviousDisabled ? disabledColor : primaryColor,
           color: 'white',
@@ -43,10 +45,12 @@ export const StepControls: React.FC<StepControlsProps> = ({
       >
         Previous
       </button>
+
+      {/* Next Button */}
       <button
         onClick={onNext}
         disabled={isNextDisabled}
-        className="px-4 py-2 rounded font-medium transition-all duration-200 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95"
+        className="px-6 py-3 rounded-lg font-semibold transition-all duration-200 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 shadow-lg"
         style={{
           backgroundColor: isNextDisabled ? disabledColor : primaryColor,
           color: 'white',
@@ -84,38 +88,38 @@ export const MathSummaryBox: React.FC<MathSummaryBoxProps> = ({
 }) => {
   return (
     <div
-      className={`p-6 rounded-lg shadow-md mt-8 ${className}`}
+      className={`p-4 rounded-lg shadow-md mt-4 ${className}`}
       style={{
         backgroundColor,
         border: `2px solid ${borderColor}`
       }}
     >
       <h3
-        className="text-xl font-bold mb-4"
+        className="text-lg font-bold mb-3"
         style={{ color: textColor }}
       >
         The Math:
       </h3>
-      <div className="space-y-3 text-lg">
+      <div className="space-y-2 text-base">
         <p style={{ color: textColor }}>
-          <span className="font-semibold">Problem:</span> {problem}
+          <span className="font-semibold">Problem:</span> <MathText>{problem}</MathText>
         </p>
         <p style={{ color: textColor }}>
           <span className="font-semibold">Solution:</span>{' '}
           <span style={{ color: accentColor, fontWeight: 'bold' }}>
-            {solution}
+            <MathText>{solution}</MathText>
           </span>
         </p>
         {explanation && (
           <p
-            className="text-base mt-4 pt-4"
+            className="text-sm mt-3 pt-3"
             style={{
               color: textColor,
               opacity: 0.8,
               borderTop: `1px solid ${borderColor}`
             }}
           >
-            {explanation}
+            <MathText>{explanation}</MathText>
           </p>
         )}
       </div>
@@ -186,13 +190,13 @@ export const StepHeader: React.FC<StepHeaderProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`text-center mb-4 ${className}`}>
-      {emoji && <div className="text-4xl mb-2">{emoji}</div>}
-      <h3 className="text-xl font-semibold mb-2" style={{ color: textColor }}>
+    <div className={`text-center mb-3 ${className}`}>
+      {emoji && <div className="text-2xl mb-1">{emoji}</div>}
+      <h3 className="text-lg font-semibold mb-1" style={{ color: textColor }}>
         {title}
       </h3>
       {description && (
-        <p className="text-base" style={{ color: textColor, opacity: 0.8 }}>
+        <p className="text-sm" style={{ color: textColor, opacity: 0.8 }}>
           {description}
         </p>
       )}

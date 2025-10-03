@@ -79,6 +79,16 @@ export class PromptResolver {
     );
   }
 
+  resolveInitialGreetingWithProblem(context: PromptContext): string {
+    const config = this.getTopicConfig(context.topicId);
+    const problemType = 1; // Always start with problem type 1
+    const basePrompt = config.QUESTION_GENERATION[problemType];
+
+    return SYSTEM_PROMPTS.INITIAL_GREETING_WITH_PROBLEM
+      .replace(/{TOPIC_NAME}/g, config.topicName)
+      .replace(/{question_generation_base_prompt}/g, basePrompt);
+  }
+
   resolveConversationResponse(context: PromptContext): string {
     const config = this.getTopicConfig(context.topicId);
     return SYSTEM_PROMPTS.CONVERSATION_RESPONSE
@@ -164,34 +174,13 @@ resolveQuestionGeneration(context: PromptContext): string {
     const problemType = context.currentProblemType || 1;
     const basePrompt = config.QUESTION_GENERATION[problemType];
 
-    // If we have evaluator reasoning and history, wrap with acknowledgment context
-    if (context.evaluatorReasoning && context.recentHistory) {
-      return `You are generating a new math problem with appropriate acknowledgment based on the context.
-
-CONTEXT:
-- Recent conversation: ${context.recentHistory}
-- Evaluator's reasoning: ${context.evaluatorReasoning}
-
-YOUR TASK:
-1. First, provide an appropriate acknowledgment based on the context and reasoning:
-   - If the student answered correctly: Celebrate enthusiastically and acknowledge their success
-   - If the student struggled or couldn't answer: Provide encouraging words and positive reinforcement
-
-2. Then say you'll give them a new problem to work on
-
-3. Finally, generate a new problem using these guidelines:
-${basePrompt}
-
-IMPORTANT:
-- Start with acknowledgment, then introduce the new problem
-- Keep the tone warm, encouraging, and age-appropriate for Primary 6
-- The problem generation should follow the specific guidelines above exactly
-
-Response format: [Acknowledgment] + [Transition] + [New Problem]`;
-    }
-
-    // If no context, return the base prompt (backward compatibility)
-    return basePrompt;
+    // Use the new QUESTION_GENERATION_AGENT prompt from systemPrompts
+    return SYSTEM_PROMPTS.QUESTION_GENERATION_AGENT
+      .replace(/{TOPIC_NAME}/g, config.topicName)
+      .replace(/{recent_history}/g, context.recentHistory || '')
+      .replace(/{evaluator_reasoning}/g, context.evaluatorReasoning || 'Continue learning')
+      .replace(/{current_problem_type}/g, context.currentProblemType?.toString() || '1')
+      .replace(/{question_generation_base_prompt}/g, basePrompt);
   }
 
   getTopicScoringConfig(topicId: TopicId) {
@@ -282,22 +271,10 @@ IMPORTANT: Return ONLY valid JSON in this exact format:
 }`;
   }
 
-  resolveStepByStepVisualizationExtraction(context: PromptContext): string {
-    // Format step visualization requirements
-    const stepVisualizationRequirements = context.stepConfigs?.map(config =>
-      `Step ${config.stepNumber}: ${config.includeVisualization ? 'Include visualization' : 'No visualization'}`
-    ).join('\n') || '';
-
-    return SYSTEM_PROMPTS.STEP_BY_STEP_VISUALIZATION_EXTRACTION
-      .replace(/{tutor_response}/g, context.tutorResponse || '')
-      .replace(/{problem_text}/g, context.problemText || '')
-      .replace(/{step_visualization_requirements}/g, stepVisualizationRequirements);
-  }
-
   resolveVisualizationAgent(context: PromptContext): string {
     const config = this.getTopicConfig(context.topicId);
 
-    // Get solution steps for current problem type using template mapping (same as resolveTutorAgent)
+    // Get solution steps for current problem type using template mapping
     let solutionStepsTemplate = '';
     if ('SOLUTION_STEPS' in config && config.SOLUTION_STEPS) {
       const problemType = context.currentProblemType || 1;
@@ -314,6 +291,21 @@ IMPORTANT: Return ONLY valid JSON in this exact format:
       }
     }
 
+    // Get visualization config for this problem type
+    const problemType = context.currentProblemType || 1;
+    let visualizationId = 'bar-division'; // default fallback
+    let dataSchemaJSON = '{}';
+
+    if ('VISUALIZATION_CONFIG' in config && (config as any).VISUALIZATION_CONFIG) {
+      const vizConfig = (config as any).VISUALIZATION_CONFIG[problemType];
+      if (vizConfig) {
+        visualizationId = vizConfig.visualizationId || visualizationId;
+        if (vizConfig.dataSchema) {
+          dataSchemaJSON = JSON.stringify(vizConfig.dataSchema, null, 2);
+        }
+      }
+    }
+
     return SYSTEM_PROMPTS.VISUALIZATION_AGENT
       .replace(/{TOPIC_NAME}/g, config.topicName)
       .replace(/{recent_history}/g, context.recentHistory || '')
@@ -321,7 +313,9 @@ IMPORTANT: Return ONLY valid JSON in this exact format:
       .replace(/{evaluator_reasoning}/g, context.evaluatorReasoning || 'Student needs help with this problem')
       .replace(/{current_problem_type}/g, context.currentProblemType?.toString() || '1')
       .replace(/{problem_text}/g, context.problemText || '')
-      .replace(/{SOLUTION_STEPS_TEMPLATE}/g, solutionStepsTemplate);
+      .replace(/{SOLUTION_STEPS_TEMPLATE}/g, solutionStepsTemplate)
+      .replace(/{visualizationId}/g, visualizationId)
+      .replace(/{dataSchemaJSON}/g, dataSchemaJSON);
   }
 }
 
