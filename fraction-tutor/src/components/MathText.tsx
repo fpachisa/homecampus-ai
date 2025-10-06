@@ -48,6 +48,11 @@ interface TextSegment {
  * Handles: $\frac{1}{3}$ (delimited LaTeX), 4 \div 1/3 (bare LaTeX), 1/2 (plain), $3.50 (money)
  */
 function processTextWithBasicMath(text: string): TextSegment[] {
+  // Safety check for undefined/null text
+  if (!text || typeof text !== 'string') {
+    return [{ type: 'text', content: '' }];
+  }
+
   const segments: TextSegment[] = [];
   let workingText = text;
   let currentIndex = 0;

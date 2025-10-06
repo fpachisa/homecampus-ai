@@ -120,3 +120,120 @@ export interface ProgressEvaluation {
   nextProblemType: number;            // Next problem type
   subtopicComplete: boolean;          // True when score reaches 1.0
 }
+
+// ============================================
+// PRACTICE MODE TYPES
+// ============================================
+
+export type DifficultyTier = 'easy' | 'medium' | 'hard';
+export type DifficultyMode = 'progressive' | 'easy' | 'medium' | 'hard';
+
+export interface ProgressiveConfig {
+  // Advancement criteria
+  advanceAfterStreak: number;          // Default: 5 (consecutive correct to advance)
+  minProblemsBeforeAdvance: number;    // Default: 3 (minimum at current tier before advancing)
+
+  // Regression criteria (optional)
+  allowRegression: boolean;            // Default: false
+  regressAfterFailStreak?: number;     // Default: 3 (consecutive wrong to regress)
+
+  // Starting point
+  startingDifficulty: DifficultyTier;  // Default: 'easy'
+}
+
+export interface PracticeProgressState {
+  currentDifficultyTier: DifficultyTier;
+  problemsAtCurrentTier: number;
+  currentCorrectStreak: number;
+  currentWrongStreak: number;
+  hasUnlockedMedium: boolean;
+  hasUnlockedHard: boolean;
+}
+
+export interface PracticeConfig {
+  mode: 'subtopic' | 'topic';         // Practice single subtopic or mixed topics
+  subtopicId?: string;                 // For subtopic practice
+  problemTypes?: number[];             // Specific problem types or 'all'
+  totalProblems?: number;              // Optional limit (default: unlimited)
+  showSolutions?: boolean;             // Toggle step-by-step on wrong answers (default: true)
+
+  // NEW: Difficulty settings
+  difficulty?: DifficultyMode;         // Difficulty mode (default: 'progressive')
+  progressiveConfig?: ProgressiveConfig; // Configuration for progressive mode
+}
+
+export interface PracticeProblem {
+  id: string;                          // Unique problem ID
+  problemText: string;                 // The word problem
+  correctAnswer: string;               // AI-provided answer (e.g., "1/4")
+  problemType: number;                 // Problem type (1-4)
+  context: string;                     // Context used (chocolate, pizza, etc.)
+  generatedAt: number;                 // Timestamp
+  solutionData?: any;                  // Pre-generated visualization data for "View Solution"
+}
+
+export interface ProblemQueue {
+  topicId: string;                     // Topic or subtopic ID
+  problems: PracticeProblem[];         // Pre-generated problems
+  currentIndex: number;                // Current problem position
+  config: PracticeConfig;              // Practice configuration
+  lastGenerated: number;               // Last batch generation timestamp
+  isPrefetching?: boolean;             // Background prefetch in progress
+}
+
+export interface PracticeState {
+  problemsAttempted: number;           // Total problems attempted
+  correctAnswers: number;              // Correct answers
+  incorrectAnswers: number;            // Incorrect answers
+  currentStreak: number;               // Current correct streak
+  bestStreak: number;                  // Best streak in session
+  startTime: Date;                     // Session start time
+  accuracy: number;                    // Accuracy percentage (0-100)
+
+  // NEW: Progressive difficulty state
+  progressState?: PracticeProgressState; // Only present if using progressive mode
+}
+
+export interface PracticeBatchResponse {
+  problems: PracticeProblem[];         // Array of generated problems
+  generatedAt: number;                 // Batch generation timestamp
+}
+
+// ============================================
+// PRACTICE MODE AI AGENT TYPES
+// ============================================
+
+export interface PracticeProblemState {
+  currentProblemId: string;            // Current problem ID
+  hintsGiven: number;                  // Hints given for current problem
+  attempts: number;                    // Attempts made on current problem
+  isAnswered: boolean;                 // Has this problem been answered correctly?
+  problemStartTime: Date;              // When problem was presented
+}
+
+export interface PracticeAgentResponse {
+  // Intent detection
+  intent: "hint_request" | "answer_submission" | "off_topic";
+
+  // Evaluation results
+  answerCorrect: boolean;              // Is the answer correct?
+  pointsEarned: number;                // Points for this attempt
+  isMainProblemSolved: boolean;        // Problem fully solved?
+  hintLevel?: number;                  // Hint level given (1-3)
+
+  // Speech for avatar
+  speech: {
+    text: string;                      // What avatar speaks
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+  };
+
+  // Display for UI
+  display: {
+    content: string;                   // Actual content OR "none"
+    showAfterSpeech: boolean;          // Show after speech completes
+  };
+
+  // Next action
+  action: "NEXT_PROBLEM" | "GIVE_SOLUTION" | "none";     // Auto-advance, show solution, or wait for input
+  reasoning: string;                   // Why this action (debugging)
+}

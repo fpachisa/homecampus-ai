@@ -2,12 +2,15 @@ import { useState, createContext, useContext, useEffect } from 'react';
 import MainLayout from './components/layout/MainLayout';
 import HomePage from './components/HomePage';
 import FractionsTopicView from './components/FractionsTopicView';
+import ModeSelector from './components/ModeSelector';
+import PracticeInterface from './components/PracticeInterface';
 import TTSTest from './components/TTSTest';
 import AvatarTest from './components/AvatarTest';
 import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { sessionStorage } from './services/sessionStorage';
 import type { TopicId } from './prompts/topics/P6-Math-Fractions';
+import type { PracticeConfig } from './types/types';
 import { registerAllVisualizers } from './utils/registerVisualizers';
 import './styles/animations.css';
 
@@ -15,12 +18,16 @@ import './styles/animations.css';
 interface AppState {
   selectedCategory: string | null; // 'fractions', 'whole-numbers', etc.
   selectedTopic: TopicId | null;
+  selectedMode: 'socratic' | 'practice' | null; // Learning mode
+  practiceConfig?: PracticeConfig; // Practice mode configuration
 }
 
 interface AppContextType {
   appState: AppState;
   handleCategorySelect: (category: string) => void;
   handleTopicSelect: (topicId: TopicId) => void;
+  handleModeSelect: (mode: 'socratic' | 'practice', config?: PracticeConfig) => void;
+  handleBackToModeSelect: () => void;
   handleBackToTopics: () => void;
   handleBackToHome: () => void;
 }
@@ -40,12 +47,16 @@ function AppProvider({ children }: { children: React.ReactNode }) {
   const [appState, setAppState] = useState<AppState>({
     selectedCategory: null,
     selectedTopic: null,
+    selectedMode: null,
+    practiceConfig: undefined,
   });
 
   const handleCategorySelect = (category: string) => {
     setAppState({
       selectedCategory: category,
       selectedTopic: null,
+      selectedMode: null,
+      practiceConfig: undefined,
     });
   };
 
@@ -53,6 +64,24 @@ function AppProvider({ children }: { children: React.ReactNode }) {
     setAppState((prev) => ({
       ...prev,
       selectedTopic: topicId,
+      selectedMode: null, // Reset mode when selecting new topic
+      practiceConfig: undefined,
+    }));
+  };
+
+  const handleModeSelect = (mode: 'socratic' | 'practice', config?: PracticeConfig) => {
+    setAppState((prev) => ({
+      ...prev,
+      selectedMode: mode,
+      practiceConfig: config,
+    }));
+  };
+
+  const handleBackToModeSelect = () => {
+    setAppState((prev) => ({
+      ...prev,
+      selectedMode: null,
+      practiceConfig: undefined,
     }));
   };
 
@@ -60,6 +89,8 @@ function AppProvider({ children }: { children: React.ReactNode }) {
     setAppState((prev) => ({
       ...prev,
       selectedTopic: null,
+      selectedMode: null,
+      practiceConfig: undefined,
     }));
   };
 
@@ -67,6 +98,8 @@ function AppProvider({ children }: { children: React.ReactNode }) {
     setAppState({
       selectedCategory: null,
       selectedTopic: null,
+      selectedMode: null,
+      practiceConfig: undefined,
     });
   };
 
@@ -75,6 +108,8 @@ function AppProvider({ children }: { children: React.ReactNode }) {
       appState,
       handleCategorySelect,
       handleTopicSelect,
+      handleModeSelect,
+      handleBackToModeSelect,
       handleBackToTopics,
       handleBackToHome,
     }}>
@@ -104,9 +139,17 @@ function AppContent() {
   );
 }
 
-// Router component to handle navigation between HomePage, TopicView, and MainLayout
+// Router component to handle navigation between all views
 function AppRouter() {
-  const { appState, handleCategorySelect, handleTopicSelect, handleBackToHome } = useAppContext();
+  const {
+    appState,
+    handleCategorySelect,
+    handleTopicSelect,
+    handleModeSelect,
+    handleBackToModeSelect,
+    handleBackToTopics,
+    handleBackToHome
+  } = useAppContext();
 
   // Show HomePage when no category is selected
   if (!appState.selectedCategory) {
@@ -123,8 +166,35 @@ function AppRouter() {
     );
   }
 
-  // Show MainLayout (3-panel learning interface) when both category and topic are selected
-  return <MainLayout />;
+  // Show ModeSelector when topic is selected but no mode
+  if (appState.selectedTopic && !appState.selectedMode) {
+    return (
+      <ModeSelector
+        topicId={appState.selectedTopic}
+        onModeSelect={handleModeSelect}
+        onBack={handleBackToTopics}
+      />
+    );
+  }
+
+  // Show PracticeInterface when practice mode is selected
+  if (appState.selectedMode === 'practice' && appState.selectedTopic && appState.practiceConfig) {
+    return (
+      <PracticeInterface
+        topicId={appState.selectedTopic}
+        practiceConfig={appState.practiceConfig}
+        onBackToModeSelect={handleBackToModeSelect}
+      />
+    );
+  }
+
+  // Show MainLayout (Socratic learning interface) when Socratic mode is selected
+  if (appState.selectedMode === 'socratic') {
+    return <MainLayout />;
+  }
+
+  // Fallback to home
+  return <HomePage onTopicSelect={handleCategorySelect} />;
 }
 
 // Main App component with providers

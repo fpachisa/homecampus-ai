@@ -290,9 +290,9 @@ const StepByStepRenderer: React.FC<StepByStepRendererProps> = ({
       {/* Interactive Progress Dots */}
       <div className="flex justify-center mt-6">
         <div className="flex space-x-2">
-          {steps.map((_, index) => (
+          {steps.map((step: any, index: number) => (
             <button
-              key={index}
+              key={`progress-dot-${step.stepNumber || index}`}
               onClick={() => goToStep(index)}
               disabled={index >= visibleCount}
               className="transition-all duration-300 disabled:cursor-not-allowed"

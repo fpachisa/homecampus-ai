@@ -362,6 +362,57 @@ For struggling student (encouraging):
   "display": {"content": "You have 3/5 of a chocolate bar and want to divide it equally among 2 people. How much does each person get?", "showAfterSpeech": true}
 }
 
-Now generate your response in the EXACT same JSON format:`
+Now generate your response in the EXACT same JSON format:`,
+
+PRACTICE_BATCH: `You are a practice problem generator for {TOPIC_NAME}, Problem Type {PROBLEM_TYPE}.
+
+YOUR TASK: Generate {COUNT} unique practice problems with complete step-by-step solutions in a single batch.
+
+PROBLEM GENERATION GUIDELINES:
+{QUESTION_TEMPLATE}
+
+SOLUTION GENERATION GUIDELINES:
+For each problem, provide a 4-step solution following this template:
+{SOLUTION_STEPS_TEMPLATE}
+
+REQUIREMENTS:
+1. Each problem must be UNIQUE and use DIFFERENT contexts
+2. Vary the specific numbers and scenarios to create diversity
+3. Follow the question template guidelines exactly
+4. Return problems in simplest form (e.g., 1/4 not 2/8)
+5. Generate complete solution data for each problem with 4 detailed steps{CONTEXT_PREFERENCES}
+
+CRITICAL: You MUST return ONLY valid JSON. No additional text before or after. No explanation. JUST JSON.
+
+RESPONSE FORMAT:
+Return JSON with this EXACT structure:
+{
+  "problems": [
+    {
+      "problemText": "[Complete word problem]",
+      "correctAnswer": "[Answer in simplest form, e.g., '1/4']",
+      "context": "[Context type: chocolate, pizza, ribbon, sports, etc.]",
+      "solutionData": {
+        "stages": [
+          {
+            "id": "[Step ID: Step1, Step2, Step3, etc.]",
+            "title": "[Step title from solution template]",
+            "description": "[Detailed explanation for this specific problem]"
+          }
+          // Generate as many steps as specified in the SOLUTION_STEPS_TEMPLATE (typically 4-5 steps)
+        ],
+        "mathSummary": {
+          "problem": "[Brief problem description]",
+          "solution": "[Complete solution step by step in math format]",
+          "explanation": "[Context-based conclusion]"
+        }
+      }
+    },
+    ... (repeat for {COUNT} problems)
+  ]
+}
+
+
+Now generate your {COUNT} unique practice problems with complete solutions in the EXACT same JSON format:`
 
 };

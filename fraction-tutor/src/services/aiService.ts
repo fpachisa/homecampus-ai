@@ -1,4 +1,4 @@
-import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse } from '../types/types';
+import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem } from '../types/types';
 import type { VisualizationData } from '../types/visualization';
 
 /**
@@ -99,6 +99,33 @@ export interface AIService {
     studentResponse: string,
     evaluatorReasoning: string
   ): Promise<any>;
+
+  /**
+   * Practice Mode: Generate batch of practice problems in a single AI call
+   * Returns array of problems with pre-generated solutions for instant feedback
+   */
+  generatePracticeBatch(
+    problemType: number,
+    topicId: string,
+    count: number,
+    context?: {
+      userPreferences?: string[];      // Preferred contexts (e.g., ["sports", "cooking"])
+      excludeContexts?: string[];      // Recently used contexts to avoid repetition
+      recentProblems?: string[];       // Recent problem texts to avoid duplicates
+    }
+  ): Promise<PracticeProblem[]>;
+
+  /**
+   * Practice Mode: Evaluate student response and generate feedback in a single AI call
+   * Handles intent detection, answer evaluation, and response generation
+   */
+  evaluatePracticeResponse(
+    studentResponse: string,
+    currentProblem: PracticeProblem,
+    problemState: import('../types/types').PracticeProblemState,
+    conversationHistory: Message[],
+    topicId: string
+  ): Promise<import('../types/types').PracticeAgentResponse>;
 }
 
 /**

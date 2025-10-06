@@ -1,4 +1,4 @@
-import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse } from '../types/types';
+import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem, PracticeAgentResponse, PracticeProblemState } from '../types/types';
 import type { VisualizationData } from '../types/visualization';
 import type { AIService } from './aiService';
 import { AIServiceError, AIErrorType } from './aiService';
@@ -296,6 +296,35 @@ class FallbackAIService implements AIService {
     return this.executeWithFallback(
       (service) => service.generateVisualizationSolution(problemText, problemType, topicId, recentHistory, studentResponse, evaluatorReasoning),
       'generateVisualizationSolution'
+    );
+  }
+
+  async generatePracticeBatch(
+    problemType: number,
+    topicId: string,
+    count: number = 3,
+    context?: {
+      userPreferences?: string[];
+      excludeContexts?: string[];
+      recentProblems?: string[];
+    }
+  ): Promise<PracticeProblem[]> {
+    return this.executeWithFallback(
+      (service) => service.generatePracticeBatch(problemType, topicId, count, context),
+      'generatePracticeBatch'
+    );
+  }
+
+  async evaluatePracticeResponse(
+    studentResponse: string,
+    currentProblem: PracticeProblem,
+    problemState: PracticeProblemState,
+    conversationHistory: Message[],
+    topicId: string
+  ): Promise<PracticeAgentResponse> {
+    return this.executeWithFallback(
+      (service) => service.evaluatePracticeResponse(studentResponse, currentProblem, problemState, conversationHistory, topicId),
+      'evaluatePracticeResponse'
     );
   }
 

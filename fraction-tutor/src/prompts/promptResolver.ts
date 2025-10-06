@@ -1,4 +1,5 @@
 import { SYSTEM_PROMPTS } from './systemPrompts';
+import { PRACTICE_AGENT_PROMPT } from './practiceSystemPrompts';
 import { P6_MATH_FRACTIONS, type TopicId, type SubtopicConfig, type SolutionStep } from './topics/P6-Math-Fractions';
 
 export interface PromptContext {
@@ -29,6 +30,18 @@ export interface PromptContext {
   stepConfigs?: any[];
   detectedContext?: string;
   detectedVisualizationId?: string;
+
+// New fields for practice batch generation
+  count?: number;                       // Number of problems to generate
+  userPreferences?: string[];           // Preferred contexts
+  excludeContexts?: string[];           // Recently used contexts
+  recentProblems?: string[];            // Recent problem texts
+
+// New fields for practice agent evaluation
+  currentProblem?: string;              // Current problem text
+  correctAnswer?: string;               // Correct answer for current problem
+  hintsGivenCount?: number;             // Number of hints already given
+  attemptsCount?: number;               // Number of attempts made
 }
 
 export class PromptResolver {
@@ -316,6 +329,65 @@ IMPORTANT: Return ONLY valid JSON in this exact format:
       .replace(/{SOLUTION_STEPS_TEMPLATE}/g, solutionStepsTemplate)
       .replace(/{visualizationId}/g, visualizationId)
       .replace(/{dataSchemaJSON}/g, dataSchemaJSON);
+  }
+
+  resolvePracticeBatch(context: PromptContext): string {
+    const config = this.getTopicConfig(context.topicId);
+    const problemType = context.currentProblemType || 1;
+    const count = context.count || 3;
+
+    // Get question generation template for this problem type
+    const questionTemplate = (config as any).QUESTION_GENERATION[problemType] || '';
+
+    // Get solution steps template for this problem type
+    const solutionStepsConfig = (config as any).SOLUTION_STEPS;
+    let solutionStepsTemplate = '';
+
+    if (solutionStepsConfig) {
+      const templateId = solutionStepsConfig.problemTypeMapping[problemType];
+      const steps = solutionStepsConfig.templates[templateId] || [];
+
+      // Format steps as readable instructions for the AI
+      solutionStepsTemplate = steps.map((step: any) =>
+        `Step ${step.stepNumber}: ${step.title}\n${step.instruction}`
+      ).join('\n\n');
+    }
+
+    // Build context preferences string
+    let contextPreferences = '';
+    if (context.userPreferences && context.userPreferences.length > 0) {
+      contextPreferences = `\nPrefer contexts related to: ${context.userPreferences.join(', ')}`;
+    }
+    if (context.excludeContexts && context.excludeContexts.length > 0) {
+      contextPreferences += `\nAvoid using these contexts (used recently): ${context.excludeContexts.join(', ')}`;
+    }
+
+    return SYSTEM_PROMPTS.PRACTICE_BATCH
+      .replace(/{TOPIC_NAME}/g, config.topicName)
+      .replace(/{PROBLEM_TYPE}/g, problemType.toString())
+      .replace(/{COUNT}/g, count.toString())
+      .replace(/{QUESTION_TEMPLATE}/g, questionTemplate)
+      .replace(/{SOLUTION_STEPS_TEMPLATE}/g, solutionStepsTemplate)
+      .replace(/{CONTEXT_PREFERENCES}/g, contextPreferences);
+  }
+
+  resolvePracticeAgent(context: PromptContext): string {
+    const config = this.getTopicConfig(context.topicId);
+    const currentProblem = context.currentProblem || '';
+    const correctAnswer = context.correctAnswer || '';
+    const studentResponse = context.studentResponse || '';
+    const hintsGiven = context.hintsGivenCount || 0;
+    const attempts = context.attemptsCount || 0;
+    const recentHistory = context.recentHistory || 'No previous conversation';
+
+    return PRACTICE_AGENT_PROMPT
+      .replace(/{TOPIC_NAME}/g, config.topicName)
+      .replace(/{current_problem_text}/g, currentProblem)
+      .replace(/{correct_answer}/g, correctAnswer)
+      .replace(/{student_response}/g, studentResponse)
+      .replace(/{hints_given}/g, hintsGiven.toString())
+      .replace(/{attempts_made}/g, attempts.toString())
+      .replace(/{recent_history}/g, recentHistory);
   }
 }
 

@@ -30,6 +30,11 @@ export interface ProblemTypeConfig {
   totalTypes: number;
   progressionThresholds: number[];
   completionScore: number;
+  difficultyMapping: {
+    easy: number[];
+    medium: number[];
+    hard: number[];
+  };
 }
 
 export interface ScoringConfigForType {
@@ -49,7 +54,12 @@ export const P6_MATH_FRACTIONS = {
     PROBLEM_TYPE_CONFIG: {
       totalTypes: 4,
       progressionThresholds: [0.15, 0.30, 0.50],
-      completionScore: 1.0
+      completionScore: 1.0,
+      difficultyMapping: {
+        easy: [1, 2],
+        medium: [3],
+        hard: [4]
+      }
     },
 
     QUESTION_GENERATION: {
@@ -178,7 +188,7 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
             type: "object",
             fields: {
               problem: { type: "string", description: "describe the problem briefly" },
-              solution: { type: "string", description: "provide solution" },
+              solution: { type: "string", description: "provide full mathematical solution" },
               explanation: { type: "string", description: "concluding remark based on the context" }
             }
           }
@@ -211,9 +221,9 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
           mathSummary: {
             type: "object",
             fields: {
-              problem: { type: "string", description: "equation format: '3/4 ÷ 3 = ?'" },
-              solution: { type: "string", description: "solved equation: '3/4 ÷ 3 = 1/4'" },
-              explanation: { type: "string", description: "1-sentence explanation" }
+              problem: { type: "string", description: "describe the problem briefly" },
+              solution: { type: "string", description: "provide full mathematical solution" },
+              explanation: { type: "string", description: "concluding remark based on the context" }
             }
           }
         }
@@ -238,7 +248,7 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
             type: "object",
             fields: {
               problem: { type: "string", description: "describe the problem briefly" },
-              solution: { type: "string", description: "provide solution" },
+              solution: { type: "string", description: "provide full mathematical solution" },
               explanation: { type: "string", description: "concluding remark based on the context" }
             }
           }
@@ -264,7 +274,7 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
             type: "object",
             fields: {
               problem: { type: "string", description: "describe the problem briefly" },
-              solution: { type: "string", description: "provide solution" },
+              solution: { type: "string", description: "provide full mathematical solution" },
               explanation: { type: "string", description: "concluding remark based on the context" }
             }
           }
@@ -299,7 +309,12 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     PROBLEM_TYPE_CONFIG: {
       totalTypes: 3,
       progressionThresholds: [0.2, 0.5],
-      completionScore: 1.0
+      completionScore: 1.0,
+      difficultyMapping: {
+        easy: [1],
+        medium: [2],
+        hard: [3]
+      }
     },
 
     QUESTION_GENERATION: {
@@ -410,7 +425,7 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
             type: "object",
             fields: {
               problem: { type: "string", description: "describe the original problem briefly" },
-              solution: { type: "string", description: "solve the division using the flip rule" },
+              solution: { type: "string", description: "provide full mathematical solution" },
               explanation: { type: "string", description: "1-2 sentence context based conclusion" }
             }
           }
@@ -445,7 +460,7 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
             type: "object",
             fields: {
               problem: { type: "string", description: "describe the original problem briefly" },
-              solution: { type: "string", description: "solve the division using the flip rule" },
+              solution: { type: "string", description: "provide full mathematical solution" },
               explanation: { type: "string", description: "1-2 sentence context based conclusion" }
             }
           }
@@ -471,7 +486,7 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
             type: "object",
             fields: {
               problem: { type: "string", description: "describe the original problem briefly" },
-              solution: { type: "string", description: "solve the division using the flip rule" },
+              solution: { type: "string", description: "provide full mathematical solution" },
               explanation: { type: "string", description: "1-2 sentence context based conclusion" }
             }
           }
@@ -502,7 +517,12 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     PROBLEM_TYPE_CONFIG: {
       totalTypes: 3,
       progressionThresholds: [0.2, 0.5],
-      completionScore: 1.0
+      completionScore: 1.0,
+      difficultyMapping: {
+        easy: [1],
+        medium: [2],
+        hard: [3]
+      }
     },
 
     QUESTION_GENERATION: {
@@ -618,8 +638,8 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
           mathSummary: {
             type: "object",
             fields: {
-              problem: { type: "string", description: "equation format: '5/6 ÷ 1/12 = ?'" },
-              solution: { type: "string", description: "complete solution with steps" },
+              problem: { type: "string", description: "describe the problem briefly" },
+              solution: { type: "string", description: "provide full mathematical solution" },
               explanation: { type: "string", description: "contextual explanation relating to the problem" }
             }
           }
@@ -658,7 +678,7 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
             type: "object",
             fields: {
               problem: { type: "string", description: "equation format" },
-              solution: { type: "string", description: "complete solution with steps" },
+              solution: { type: "string", description: "provide full mathematical solution" },
               explanation: { type: "string", description: "contextual explanation" }
             }
           }
@@ -684,7 +704,7 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
             type: "object",
             fields: {
               problem: { type: "string", description: "equation format" },
-              solution: { type: "string", description: "complete solution" },
+              solution: { type: "string", description: "provide full mathematical solution" },
               explanation: { type: "string", description: "mathematical explanation" }
             }
           }
@@ -715,7 +735,12 @@ IMPORTANT: Return ONLY the problem statement, nothing else. No extra text, no so
     PROBLEM_TYPE_CONFIG: {
       totalTypes: 3,
       progressionThresholds: [0.2, 0.5],
-      completionScore: 1.0
+      completionScore: 1.0,
+      difficultyMapping: {
+        easy: [1],
+        medium: [2],
+        hard: [3]
+      }
     },
 
     QUESTION_GENERATION: {

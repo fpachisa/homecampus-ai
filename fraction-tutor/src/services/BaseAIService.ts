@@ -1,4 +1,4 @@
-import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse } from '../types/types';
+import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem, PracticeAgentResponse, PracticeProblemState } from '../types/types';
 import type { VisualizationData } from '../types/visualization';
 import { promptResolver } from '../prompts/promptResolver';
 import type { AIService } from './aiService';
@@ -13,7 +13,11 @@ import { calculateVisualizationMath } from '../utils/mathUtils';
  * Provider (Gemini, Claude, etc.) is injected via constructor
  */
 class BaseAIService implements AIService {
-  constructor(private provider: AIProvider) {}
+  private provider: AIProvider;
+
+  constructor(provider: AIProvider) {
+    this.provider = provider;
+  }
 
   async generateInitialGreeting(topicId: string = 'fraction-division-by-whole-numbers'): Promise<string> {
     try {
@@ -317,6 +321,18 @@ class BaseAIService implements AIService {
     }
   }
 
+  async extractStepByStepVisualizations(
+    tutorResponse: string,
+    problemText: string,
+    problemType: number,
+    topicId: string
+  ): Promise<any> {
+    // Deprecated: This method has been replaced by generateVisualizationSolution
+    // Keeping for backward compatibility
+    console.warn('extractStepByStepVisualizations is deprecated, use generateVisualizationSolution instead');
+    return null;
+  }
+
   async extractVisualizationData(
     problemText: string,
     visualizationId: string,
@@ -511,6 +527,193 @@ class BaseAIService implements AIService {
 
     } catch (error) {
       console.error('Error in Visualization Agent:', error);
+      throw AIServiceError.fromHttpError(error);
+    }
+  }
+
+  /**
+   * Generate batch of practice problems in a single AI call
+   * Each problem includes: problemText, correctAnswer, and pre-generated solution data
+   */
+  async generatePracticeBatch(
+    problemType: number,
+    topicId: string,
+    count: number = 3,
+    context?: {
+      userPreferences?: string[];
+      excludeContexts?: string[];
+      recentProblems?: string[];
+    }
+  ): Promise<PracticeProblem[]> {
+    try {
+      console.log('=== PRACTICE BATCH GENERATION START ===');
+      console.log('Generating batch:', { problemType, topicId, count, context });
+
+      // Build the practice batch prompt
+      const prompt = promptResolver.resolvePracticeBatch({
+        topicId: topicId as any,
+        currentProblemType: problemType,
+        count,
+        userPreferences: context?.userPreferences,
+        excludeContexts: context?.excludeContexts,
+        recentProblems: context?.recentProblems
+      });
+
+      const text = await this.provider.generateContent(prompt);
+
+      if (!text) {
+        throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty practice batch response from AI');
+      }
+
+      console.log('Practice batch raw response:', text);
+
+      // Parse JSON response
+      const parsedResponse = parseJSON<{ problems: any[] }>(text);
+
+      // Validate response structure
+      validateRequiredKeys(parsedResponse, ['problems'], 'Invalid practice batch response structure');
+
+      if (!Array.isArray(parsedResponse.problems) || parsedResponse.problems.length === 0) {
+        throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Practice batch returned no problems');
+      }
+
+      // Transform each problem into PracticeProblem format
+      const practiceProblems: PracticeProblem[] = parsedResponse.problems.map((problem: any, index: number) => {
+        // Validate each problem has required fields
+        validateRequiredKeys(problem, ['problemText', 'correctAnswer', 'context'], `Invalid problem ${index + 1} structure`);
+
+        // Validate solutionData if present
+        let validatedSolutionData = null;
+        if (problem.solutionData && typeof problem.solutionData === 'object') {
+          try {
+            // Check for required solutionData fields
+            if (problem.solutionData.stages && Array.isArray(problem.solutionData.stages)) {
+              // Validate each stage has required fields
+              const validStages = problem.solutionData.stages.every((stage: any) =>
+                stage.id && stage.title && stage.description
+              );
+
+              if (validStages && problem.solutionData.mathSummary) {
+                validatedSolutionData = problem.solutionData;
+                console.log(`✓ Problem ${index + 1} has valid solution data with ${problem.solutionData.stages.length} steps`);
+              } else {
+                console.warn(`⚠ Problem ${index + 1} has incomplete solution data, setting to null`);
+              }
+            }
+          } catch (validationError) {
+            console.warn(`⚠ Problem ${index + 1} solution data validation failed:`, validationError);
+          }
+        }
+
+        return {
+          id: `practice_${Date.now()}_${index}`,
+          problemText: problem.problemText,
+          correctAnswer: problem.correctAnswer,
+          problemType,
+          context: problem.context,
+          generatedAt: Date.now(),
+          solutionData: validatedSolutionData
+        };
+      });
+
+      console.log('=== PRACTICE BATCH GENERATION COMPLETE ===');
+      console.log(`Generated ${practiceProblems.length} practice problems`);
+
+      const withSolutions = practiceProblems.filter(p => p.solutionData !== null).length;
+      console.log(`Problems with solution data: ${withSolutions}/${practiceProblems.length}`);
+
+      return practiceProblems;
+
+    } catch (error) {
+      console.error('Error generating practice batch:', error);
+      throw AIServiceError.fromHttpError(error);
+    }
+  }
+
+  /**
+   * Evaluate student response in practice mode with a single AI call
+   */
+  async evaluatePracticeResponse(
+    studentResponse: string,
+    currentProblem: PracticeProblem,
+    problemState: PracticeProblemState,
+    conversationHistory: Message[],
+    topicId: string = 'fraction-division-by-whole-numbers'
+  ): Promise<PracticeAgentResponse> {
+    try {
+      console.log('=== PRACTICE AGENT EVALUATION START ===');
+      console.log('Student Response:', studentResponse);
+      console.log('Current Problem:', currentProblem.problemText);
+      console.log('Correct Answer:', currentProblem.correctAnswer);
+      console.log('Problem State:', problemState);
+
+      // Format conversation history
+      const historyText = formatConversationHistory(conversationHistory);
+
+      // Build the practice agent prompt
+      const prompt = promptResolver.resolvePracticeAgent({
+        topicId: topicId as any,
+        currentProblem: currentProblem.problemText,
+        correctAnswer: currentProblem.correctAnswer,
+        studentResponse,
+        hintsGivenCount: problemState.hintsGiven,
+        attemptsCount: problemState.attempts,
+        recentHistory: historyText
+      });
+
+      const text = await this.provider.generateContent(prompt);
+
+      if (!text) {
+        throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty practice agent response from AI');
+      }
+
+      console.log('Practice agent raw response:', text);
+
+      // Parse JSON response
+      const parsedResponse = parseJSON<PracticeAgentResponse>(text);
+
+      // Validate response structure
+      validateRequiredKeys(
+        parsedResponse,
+        ['intent', 'answerCorrect', 'pointsEarned', 'isMainProblemSolved', 'speech', 'display', 'action', 'reasoning'],
+        'Invalid practice agent response structure'
+      );
+
+      // Validate nested objects
+      validateRequiredKeys(parsedResponse.speech, ['text', 'emotion'], 'Invalid speech structure in practice response');
+      validateRequiredKeys(parsedResponse.display, ['content', 'showAfterSpeech'], 'Invalid display structure in practice response');
+
+      console.log('=== PRACTICE AGENT EVALUATION COMPLETE ===');
+      console.log('Intent:', parsedResponse.intent);
+      console.log('Answer Correct:', parsedResponse.answerCorrect);
+      console.log('Action:', parsedResponse.action);
+
+      return parsedResponse;
+
+    } catch (error) {
+      console.error('Error evaluating practice response:', error);
+
+      // Provide fallback response
+      if (error instanceof SyntaxError) {
+        console.warn('Failed to parse practice agent JSON, using fallback');
+        return {
+          intent: 'answer_submission',
+          answerCorrect: false,
+          pointsEarned: 0,
+          isMainProblemSolved: false,
+          speech: {
+            text: "I'm having trouble understanding your response. Could you try again?",
+            emotion: 'neutral'
+          },
+          display: {
+            content: 'none',
+            showAfterSpeech: true
+          },
+          action: 'none',
+          reasoning: 'Fallback response due to parsing error'
+        };
+      }
+
       throw AIServiceError.fromHttpError(error);
     }
   }
