@@ -1,0 +1,38 @@
+# S3 Mathematics - Trigonometry - Basic Ratios
+# This is our guinea pig for testing the scalable architecture
+
+id: s3-math-trigonometry-basic-ratios
+displayName: "Trigonometric Ratios (sine, cosine, tangent)"
+grade: s3
+subject: math
+topic: trigonometry
+subtopic: basic-ratios
+
+metadata:
+  difficulty: beginner
+  estimatedMinutes: 45
+  prerequisites: []
+
+# Scoring configuration
+# Points are allocated based on difficulty
+scoring:
+  easy:
+    basePoints: 0.10
+    hintPenalties: [0.02, 0.04, 0.06]
+
+  medium:
+    basePoints: 0.20
+    hintPenalties: [0.04, 0.08, 0.12]
+
+  hard:
+    basePoints: 0.30
+    hintPenalties: [0.06, 0.12, 0.20]
+
+# Module availability
+modules:
+  learn: true
+  practice: true
+  visualizations: true
+
+# Notes component path (relative to src/notes/)
+notesComponent: "s3/math/trigonometry/BasicRatios"
