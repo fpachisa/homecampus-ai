@@ -72,11 +72,11 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
   let topicConfig: any;
   if (category === 'fractions') {
     topicConfig = P6_MATH_FRACTIONS[topicId as TopicId];
-  } else if (category === 'trigonometry') {
+  } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
-  } else if (category === 'circle-geometry') {
+  } else if (category === 's3-math-circle-geometry') {
     topicConfig = S3_MATH_CIRCLE_GEOMETRY[topicId as CircleGeometryTopicId];
-  } else if (category === 'quadratic-equations') {
+  } else if (category === 's3-math-quadratic-equations') {
     topicConfig = S3_MATH_QUADRATIC_EQUATIONS[topicId as QuadraticEquationsTopicId];
   }
 

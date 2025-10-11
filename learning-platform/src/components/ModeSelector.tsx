@@ -1,52 +1,72 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useTheme } from '../hooks/useTheme';
-import type { TopicId } from '../prompts/topics/P6-Math-Fractions';
-import type { TrigonometryTopicId } from './TrigonometryTopicView';
-import type { PracticeConfig } from '../types/types';
-import { notesLoader } from '../services/notesLoader';
-import NotesViewer from './NotesViewer';
+import { BackButton } from './BackButton';
 
 interface ModeSelectorProps {
-  topicId: TopicId | TrigonometryTopicId;
-  onModeSelect: (mode: 'socratic' | 'practice', config?: PracticeConfig) => void;
+  category: string;
+  onModeSelect: (mode: 'socratic' | 'practice') => void;
   onBack: () => void;
 }
 
-const ModeSelector: React.FC<ModeSelectorProps> = ({ topicId, onModeSelect, onBack }) => {
-  const { theme } = useTheme();
-  const [hasNotes, setHasNotes] = useState(false);
-  const [showNotes, setShowNotes] = useState(false);
+interface TopicMetadata {
+  displayName: string;
+  icon: string;
+  grade: string;
+  subject: string;
+}
 
-  useEffect(() => {
-    // Check if notes are available for this topic
-    notesLoader.hasNotes(topicId).then(setHasNotes);
-  }, [topicId]);
+function getTopicMetadata(category: string): TopicMetadata {
+  switch (category) {
+    case 'fractions':
+      return {
+        displayName: 'Fractions',
+        icon: '➗',
+        grade: 'Primary 6',
+        subject: 'Mathematics'
+      };
+    case 's3-math-trigonometry':
+      return {
+        displayName: 'Trigonometry',
+        icon: '📐',
+        grade: 'Secondary 3',
+        subject: 'Mathematics'
+      };
+    case 's3-math-circle-geometry':
+      return {
+        displayName: 'Circle Geometry',
+        icon: '⭕',
+        grade: 'Secondary 3',
+        subject: 'Mathematics'
+      };
+    case 's3-math-quadratic-equations':
+      return {
+        displayName: 'Quadratic Equations',
+        icon: '📈',
+        grade: 'Secondary 3',
+        subject: 'Mathematics'
+      };
+    default:
+      return {
+        displayName: category,
+        icon: '📚',
+        grade: 'Unknown',
+        subject: 'Mathematics'
+      };
+  }
+}
+
+const ModeSelector: React.FC<ModeSelectorProps> = ({ category, onModeSelect, onBack }) => {
+  const { theme } = useTheme();
+  const metadata = getTopicMetadata(category);
 
   const handleSocraticMode = () => {
     onModeSelect('socratic');
   };
 
   const handlePracticeMode = () => {
-    // Start with progressive difficulty mode by default
-    const config: PracticeConfig = {
-      mode: 'subtopic',
-      subtopicId: topicId,
-      problemTypes: undefined, // Will be determined by difficulty
-      totalProblems: undefined, // Unlimited
-      showSolutions: true,
-      difficulty: 'progressive', // Default to progressive mode
-      progressiveConfig: undefined // Will use defaults
-    };
-    onModeSelect('practice', config);
+    // New path-based practice system
+    onModeSelect('practice');
   };
-
-  const handleViewNotes = () => {
-    setShowNotes(true);
-  };
-
-  if (showNotes) {
-    return <NotesViewer subtopicId={topicId} onClose={() => setShowNotes(false)} />;
-  }
 
   return (
     <div
@@ -67,72 +87,31 @@ const ModeSelector: React.FC<ModeSelectorProps> = ({ topicId, onModeSelect, onBa
 
       <div className="relative z-10 max-w-4xl w-full">
         {/* Back Button */}
-        <button
-          onClick={onBack}
-          className="mb-6 p-2 rounded-lg transition-all duration-200"
-          style={{
-            backgroundColor: theme.colors.interactive,
-            color: theme.colors.textSecondary
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = theme.colors.brand;
-            e.currentTarget.style.color = '#ffffff';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = theme.colors.interactive;
-            e.currentTarget.style.color = theme.colors.textSecondary;
-          }}
-          title="Back to Topics"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
+        <div className="mb-6">
+          <BackButton onClick={onBack} label="Back to Topics" />
+        </div>
 
         {/* Header */}
         <div className="text-center mb-12">
-          <div
-            className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl text-white mx-auto mb-6"
-            style={{ backgroundColor: theme.colors.brand }}
-          >
-            🎯
+
+          {/* Topic Icon and Name */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div
+              className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl"
+              style={{ backgroundColor: theme.colors.brand }}
+            >
+              {metadata.icon}
+            </div>
+            <h2 className="text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
+              {metadata.displayName}
+            </h2>
           </div>
+
+          {/* Main Heading */}
           <h1 className="text-4xl font-bold mb-3" style={{ color: theme.colors.textPrimary }}>
             Choose Your Learning Mode
           </h1>
-          <p className="text-lg" style={{ color: theme.colors.textSecondary }}>
-            How would you like to practice today?
-          </p>
         </div>
-
-        {/* View Notes Button */}
-        {hasNotes && (
-          <div className="mb-8 text-center">
-            <button
-              onClick={handleViewNotes}
-              className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl transition-all duration-200"
-              style={{
-                background: theme.glass.background,
-                border: `1px solid ${theme.glass.border}`,
-                backdropFilter: theme.glass.backdrop,
-                color: theme.colors.textPrimary
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = theme.shadows.md;
-                e.currentTarget.style.borderColor = '#FFA500';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
-                e.currentTarget.style.borderColor = theme.glass.border;
-              }}
-            >
-              <span className="text-2xl">📖</span>
-              <span className="font-semibold">View Study Notes</span>
-            </button>
-          </div>
-        )}
 
         {/* Mode Cards */}
         <div className="grid md:grid-cols-2 gap-8">

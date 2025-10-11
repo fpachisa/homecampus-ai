@@ -1,0 +1,790 @@
+/**
+ * Practice Session View - Interactive problem-solving interface
+ *
+ * Main practice UI where students solve problems within a lesson.
+ * Handles problem display, answer submission, hints, and solutions.
+ */
+
+import React, { useState, useEffect } from 'react';
+import type { PathNode, PathProblem, PathDifficulty, ProblemAttempt, AttemptHistory, ProblemSessionState } from '../../types/practice';
+import { pathPracticeService } from '../../services/pathPracticeService';
+import { pathProgressService } from '../../services/pathProgressService';
+import { pathConfigLoader } from '../../services/pathConfigLoader';
+import { MathToolRenderer } from './MathToolRenderer';
+import { BackButton } from '../BackButton';
+import Avatar from '../Avatar';
+import { useAudioManager } from '../../hooks/useAudioManager';
+import MathText from '../MathText';
+
+interface PracticeSessionViewProps {
+  category: string;
+  difficulty: PathDifficulty;
+  node: PathNode;
+  onComplete: () => void;
+  onBack: () => void;
+}
+
+interface SessionState {
+  problems: PathProblem[];
+  currentIndex: number;
+  attempts: ProblemAttempt[];
+  hintsUsed: number;
+  showingSolution: boolean;
+  loading: boolean;
+  error: string | null;
+  // Enhanced practice tracking
+  currentProblemSession: ProblemSessionState | null;
+}
+
+export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
+  category,
+  difficulty,
+  node,
+  onComplete,
+  onBack,
+}) => {
+  const [session, setSession] = useState<SessionState>({
+    problems: [],
+    currentIndex: 0,
+    attempts: [],
+    hintsUsed: 0,
+    showingSolution: false,
+    loading: true,
+    error: null,
+    currentProblemSession: null,
+  });
+
+  const [studentAnswer, setStudentAnswer] = useState('');
+  const [feedback, setFeedback] = useState<{
+    isCorrect?: boolean;
+    message?: string;
+    explanation?: string;
+  } | null>(null);
+  const [currentHint, setCurrentHint] = useState<string | null>(null);
+  const [solution, setSolution] = useState<{ steps: string[]; finalAnswer: string } | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [loadingHint, setLoadingHint] = useState(false);
+  const [loadingSolution, setLoadingSolution] = useState(false);
+
+  // Audio manager for Avatar TTS
+  const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText } = useAudioManager();
+
+  // Initialize session: load or generate problems
+  useEffect(() => {
+    initializeSession();
+  }, [node.id]);
+
+  const initializeSession = async () => {
+    try {
+      setSession(prev => ({ ...prev, loading: true, error: null }));
+
+      console.log('=== PRACTICE SESSION INIT ===');
+      console.log('Node ID:', node.id);
+      console.log('Node Title:', node.title);
+      console.log('Problems Required:', node.problemsRequired);
+
+      // Try to load existing session from localStorage
+      const savedSession = loadSessionFromStorage();
+
+      if (savedSession && savedSession.nodeId === node.id) {
+        console.log('📦 Loading cached session from localStorage');
+        console.log('Cached problems count:', savedSession.problems.length);
+        console.log('Cached current index:', savedSession.currentIndex);
+
+        // IMPORTANT: Sync with unified progress to ensure consistency
+        const unifiedProgress = pathProgressService.loadUnifiedProgress(category);
+        const nodeProgress = unifiedProgress?.nodes[node.id];
+        const problemsCompleted = nodeProgress?.problemsAttempted || 0;
+
+        console.log('Unified progress shows:', problemsCompleted, 'problems attempted');
+
+        // Determine the correct current index based on unified progress
+        const correctIndex = Math.max(savedSession.currentIndex, problemsCompleted);
+
+        console.log('Setting current index to:', correctIndex);
+        console.log('Current progress:', correctIndex + 1, '/', savedSession.problems.length);
+        console.log('=============================');
+
+        // If we've already completed all problems, start a new session
+        if (correctIndex >= savedSession.problems.length) {
+          console.log('⚠️ All problems in cached session are complete - generating new session');
+          clearSessionFromStorage();
+          // Fall through to generate new problems
+        } else {
+          // Resume saved session with corrected index
+          const currentProblem = savedSession.problems[correctIndex];
+          setSession(prev => ({
+            ...prev,
+            problems: savedSession.problems,
+            currentIndex: correctIndex,
+            attempts: savedSession.attempts || [],
+            loading: false,
+            currentProblemSession: {
+              problemId: currentProblem?.id || '',
+              attemptCount: 0,
+              attemptHistory: [],
+              canRetry: true,
+              showingSolution: false,
+            },
+          }));
+          return; // Exit early to prevent generating new problems
+        }
+      } else {
+        console.log('🔄 No cached session found - generating new problems with AI...');
+        console.log('Calling pathPracticeService.generateNodeProblems()...');
+
+        // Generate new problems
+        const problems = await pathPracticeService.generateNodeProblems(
+          node,
+          node.problemsRequired
+        );
+
+        console.log('✓ Problems generated:', problems.length);
+        console.log('=============================');
+
+        setSession(prev => ({
+          ...prev,
+          problems,
+          currentIndex: 0,
+          attempts: [],
+          loading: false,
+          currentProblemSession: problems.length > 0 ? {
+            problemId: problems[0].id,
+            attemptCount: 0,
+            attemptHistory: [],
+            canRetry: true,
+            showingSolution: false,
+          } : null,
+        }));
+
+        // Save to localStorage
+        saveSessionToStorage({
+          nodeId: node.id,
+          problems,
+          currentIndex: 0,
+          attempts: [],
+        });
+      }
+    } catch (error) {
+      console.error('Failed to initialize session:', error);
+      setSession(prev => ({
+        ...prev,
+        loading: false,
+        error: 'Failed to load practice session. Please try again.',
+      }));
+    }
+  };
+
+  const loadSessionFromStorage = (): any => {
+    try {
+      const key = `practice_session_${node.id}`;
+      const stored = localStorage.getItem(key);
+      if (!stored) return null;
+
+      const data = JSON.parse(stored);
+      // Convert date strings back to Date objects
+      if (data.problems) {
+        data.problems.forEach((p: any) => {
+          p.generatedAt = new Date(p.generatedAt);
+        });
+      }
+      return data;
+    } catch (error) {
+      console.error('Failed to load session from storage:', error);
+      return null;
+    }
+  };
+
+  const saveSessionToStorage = (data: any) => {
+    try {
+      const key = `practice_session_${node.id}`;
+      localStorage.setItem(key, JSON.stringify(data));
+    } catch (error) {
+      console.error('Failed to save session to storage:', error);
+    }
+  };
+
+  const clearSessionFromStorage = () => {
+    try {
+      const key = `practice_session_${node.id}`;
+      localStorage.removeItem(key);
+    } catch (error) {
+      console.error('Failed to clear session from storage:', error);
+    }
+  };
+
+  const handleSubmitAnswer = async () => {
+    if (!studentAnswer.trim() || submitting) return;
+
+    const currentProblem = session.problems[session.currentIndex];
+    const problemSession = session.currentProblemSession;
+
+    if (!currentProblem || !problemSession) return;
+
+    // Check if we've exceeded attempt limit
+    if (problemSession.attemptCount >= 3) return;
+
+    try {
+      setSubmitting(true);
+
+      // Prepare previous attempts for context
+      const previousAttempts = problemSession.attemptHistory.map(h => ({
+        answer: h.studentAnswer,
+        hint: h.hint,
+      }));
+
+      // Get evaluation with progressive hints
+      const result = await pathPracticeService.evaluateAnswerWithHistory(
+        currentProblem,
+        studentAnswer,
+        problemSession.attemptCount + 1,
+        previousAttempts
+      );
+
+      // Create attempt history entry
+      const attemptEntry: AttemptHistory = {
+        attemptNumber: problemSession.attemptCount + 1,
+        studentAnswer,
+        avatarSpeech: result.avatarSpeech,
+        hint: result.hint,
+        isCorrect: result.isCorrect,
+        timestamp: new Date(),
+      };
+
+      // Update problem session state
+      const updatedProblemSession: ProblemSessionState = {
+        ...problemSession,
+        attemptCount: problemSession.attemptCount + 1,
+        attemptHistory: [...problemSession.attemptHistory, attemptEntry],
+        canRetry: !result.isCorrect && problemSession.attemptCount + 1 < 3,
+        showingSolution: false,
+      };
+
+      // Speak the avatar speech
+      speakText(result.avatarSpeech);
+
+      // If correct or last attempt, record for progress
+      if (result.isCorrect || updatedProblemSession.attemptCount >= 3) {
+        const attempt: ProblemAttempt = {
+          problemId: currentProblem.id,
+          nodeId: node.id,
+          studentAnswer,
+          isCorrect: result.isCorrect,
+          hintsUsed: updatedProblemSession.attemptCount - 1,
+          attemptedAt: new Date(),
+          timeSpentSeconds: 0,
+        };
+
+        const newAttempts = [...session.attempts, attempt];
+        setSession(prev => ({
+          ...prev,
+          attempts: newAttempts,
+          currentProblemSession: updatedProblemSession,
+        }));
+
+        // Save updated session to localStorage
+        saveSessionToStorage({
+          nodeId: node.id,
+          problems: session.problems,
+          currentIndex: session.currentIndex,
+          attempts: newAttempts,
+        });
+        console.log(`💾 Saved attempt (${result.isCorrect ? 'correct' : 'incorrect'}): ${newAttempts.length} total attempts, current index: ${session.currentIndex}`);
+
+        // CRITICAL: Also update unified progress immediately after each problem
+        const pathProgress = pathProgressService.loadUnifiedProgress(category);
+        if (pathProgress) {
+          const allNodes = await pathConfigLoader.loadUnifiedPathNodes(category);
+
+          // Check if this was a first-try success (attemptCount = 1 means first try)
+          const isFirstTry = updatedProblemSession.attemptCount === 1;
+          pathProgressService.recordUnifiedAttempt(pathProgress, node.id, result.isCorrect, allNodes, isFirstTry);
+
+          // Check if node is complete and mark it
+          const nodeProgress = pathProgress.nodes[node.id];
+          if (nodeProgress && nodeProgress.problemsAttempted >= node.problemsRequired) {
+            pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes);
+            console.log(`✅ Node completed! (${nodeProgress.problemsAttempted}/${node.problemsRequired})`);
+          }
+
+          pathProgressService.saveUnifiedProgress(category, pathProgress);
+          console.log(`📊 Updated unified progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired} problems`);
+        }
+      } else {
+        setSession(prev => ({
+          ...prev,
+          currentProblemSession: updatedProblemSession,
+        }));
+      }
+
+      // Clear input if incorrect and can retry
+      if (!result.isCorrect && updatedProblemSession.canRetry) {
+        setStudentAnswer('');
+      }
+    } catch (error) {
+      console.error('Failed to evaluate answer:', error);
+      speakText('Let me try again.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleRequestHint = async () => {
+    const currentProblem = session.problems[session.currentIndex];
+    if (!currentProblem || loadingHint) return;
+
+    try {
+      setLoadingHint(true);
+      const hintLevel = session.hintsUsed + 1;
+      const hint = await pathPracticeService.generateHint(currentProblem, hintLevel);
+
+      setCurrentHint(hint);
+      setSession(prev => ({ ...prev, hintsUsed: prev.hintsUsed + 1 }));
+    } catch (error) {
+      console.error('Failed to generate hint:', error);
+      setCurrentHint('💡 Try breaking down the problem step by step.');
+    } finally {
+      setLoadingHint(false);
+    }
+  };
+
+  const handleShowSolution = async () => {
+    const currentProblem = session.problems[session.currentIndex];
+    if (!currentProblem || loadingSolution) return;
+
+    try {
+      setLoadingSolution(true);
+      const solutionData = await pathPracticeService.getSolution(currentProblem);
+
+      setSolution(solutionData);
+      setSession(prev => ({ ...prev, showingSolution: true }));
+    } catch (error) {
+      console.error('Failed to load solution:', error);
+      setSolution({
+        steps: ['Failed to load solution. Please try again.'],
+        finalAnswer: currentProblem.correctAnswer,
+      });
+    } finally {
+      setLoadingSolution(false);
+    }
+  };
+
+  const handleNextProblem = () => {
+    const nextIndex = session.currentIndex + 1;
+
+    if (nextIndex >= session.problems.length) {
+      // Session complete!
+      completeSession();
+    } else {
+      const nextProblem = session.problems[nextIndex];
+      // Move to next problem with fresh problem session
+      setSession(prev => ({
+        ...prev,
+        currentIndex: nextIndex,
+        hintsUsed: 0,
+        showingSolution: false,
+        currentProblemSession: {
+          problemId: nextProblem.id,
+          attemptCount: 0,
+          attemptHistory: [],
+          canRetry: true,
+          showingSolution: false,
+        },
+      }));
+      setStudentAnswer('');
+      setFeedback(null);
+      setCurrentHint(null);
+      setSolution(null);
+
+      // Save progress
+      const sessionData = {
+        nodeId: node.id,
+        problems: session.problems,
+        currentIndex: nextIndex,
+        attempts: session.attempts,
+      };
+      saveSessionToStorage(sessionData);
+      console.log(`💾 Saved session: Moving to problem ${nextIndex + 1} of ${session.problems.length}`);
+    }
+  };
+
+  const completeSession = async () => {
+    console.log('=== COMPLETING SESSION ===');
+    console.log('Node:', node.id, node.title);
+    console.log('Attempts:', session.attempts.length);
+
+    // Update progress in pathProgressService using UNIFIED system
+    let pathProgress = pathProgressService.loadUnifiedProgress(category);
+
+    if (pathProgress) {
+      console.log('✓ Found existing unified progress');
+
+      // Load all nodes (needed for recording attempts and completion)
+      const allNodes = await pathConfigLoader.loadUnifiedPathNodes(category);
+
+      // Record attempts
+      session.attempts.forEach(attempt => {
+        // Calculate if this was a first try (hintsUsed = 0 means first attempt)
+        const isFirstTry = attempt.hintsUsed === 0;
+        pathProgressService.recordUnifiedAttempt(pathProgress!, node.id, attempt.isCorrect, allNodes, isFirstTry);
+        console.log(`  - Recorded attempt: ${attempt.isCorrect ? 'correct' : 'incorrect'}${isFirstTry ? ' (first try)' : ''}`);
+      });
+
+      // Check if node is complete
+      const nodeProgress = pathProgress.nodes[node.id];
+      if (nodeProgress && nodeProgress.problemsAttempted >= node.problemsRequired) {
+        console.log(`✓ Node complete! (${nodeProgress.problemsAttempted}/${node.problemsRequired})`);
+        pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes);
+      } else {
+        console.log(`  Node in progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired}`);
+      }
+
+      // Save updated state
+      pathProgressService.saveUnifiedProgress(category, pathProgress);
+      console.log('✓ Progress saved to unified system');
+    } else {
+      console.error('❌ No unified progress found!');
+    }
+
+    console.log('===========================');
+
+    // Clear session from storage
+    clearSessionFromStorage();
+
+    // Navigate back to path map
+    onComplete();
+  };
+
+  const getAllNodesForDifficulty = async (): Promise<PathNode[]> => {
+    try {
+      // We need to import pathConfigLoader for this
+      const { pathConfigLoader } = await import('../../services/pathConfigLoader');
+      return await pathConfigLoader.loadPathNodes(category, difficulty);
+    } catch (error) {
+      console.error('Failed to load nodes for difficulty:', error);
+      return [];
+    }
+  };
+
+  // Computed values
+  const currentProblem = session.problems[session.currentIndex];
+  const progress = session.currentIndex + 1;
+  const total = session.problems.length;
+
+  // Progress based on completed problems (attempts recorded), not current problem number
+  const completedProblems = session.attempts.length;
+  const progressPercent = total > 0 ? Math.round((completedProblems / total) * 100) : 0;
+
+  const correctCount = session.attempts.filter(a => a.isCorrect).length;
+  const accuracy = session.attempts.length > 0
+    ? Math.round((correctCount / session.attempts.length) * 100)
+    : 0;
+
+  // Color schemes by difficulty
+  const colorSchemes = {
+    easy: { bg: 'bg-emerald-50', border: 'border-emerald-400', text: 'text-emerald-700', button: 'bg-emerald-600 hover:bg-emerald-700' },
+    medium: { bg: 'bg-amber-50', border: 'border-amber-400', text: 'text-amber-700', button: 'bg-amber-600 hover:bg-amber-700' },
+    hard: { bg: 'bg-rose-50', border: 'border-rose-400', text: 'text-rose-700', button: 'bg-rose-600 hover:bg-rose-700' },
+  };
+
+  const colors = colorSchemes[difficulty];
+
+  if (session.loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="text-center">
+          {/* Animated book icon */}
+          <div className="text-6xl mb-4 animate-bounce">📚</div>
+
+          {/* Loading text with animated dots */}
+          <div className="text-xl text-gray-700 font-semibold flex items-center justify-center gap-1">
+            <span>Loading your practice session</span>
+            <span className="flex gap-1">
+              <span className="animate-pulse" style={{ animationDelay: '0ms' }}>.</span>
+              <span className="animate-pulse" style={{ animationDelay: '200ms' }}>.</span>
+              <span className="animate-pulse" style={{ animationDelay: '400ms' }}>.</span>
+            </span>
+          </div>
+
+          {/* Animated progress bar */}
+          <div className="mt-6 w-64 h-2 bg-white/30 rounded-full overflow-hidden mx-auto">
+            <div className="h-full bg-gradient-to-r from-blue-400 to-indigo-500 animate-pulse" style={{
+              animation: 'loading-bar 1.5s ease-in-out infinite'
+            }}></div>
+          </div>
+
+          {/* Loading spinner circles */}
+          <div className="mt-4 flex justify-center gap-2">
+            <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+            <div className="w-3 h-3 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+            <div className="w-3 h-3 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+          </div>
+        </div>
+
+        <style>{`
+          @keyframes loading-bar {
+            0%, 100% {
+              width: 30%;
+              margin-left: 0%;
+            }
+            50% {
+              width: 70%;
+              margin-left: 30%;
+            }
+          }
+        `}</style>
+      </div>
+    );
+  }
+
+  if (session.error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="text-center max-w-md">
+          <div className="text-6xl mb-4">⚠️</div>
+          <div className="text-xl text-red-600 font-semibold mb-4">{session.error}</div>
+          <button
+            onClick={onBack}
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          >
+            Go Back
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      {/* Header */}
+      <div className="bg-white shadow-md border-b-2 border-blue-200">
+        <div className="max-w-4xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <BackButton onClick={onBack} />
+              <div>
+                <h1 className="text-xl font-bold text-gray-800">{node.title}</h1>
+                <div className="flex items-center space-x-3 mt-1">
+                  <span className={`px-2 py-0.5 rounded text-xs font-semibold ${colors.bg} ${colors.text} ${colors.border} border`}>
+                    {difficulty.toUpperCase()}
+                  </span>
+                  <span className="text-sm text-gray-600">
+                    Problem {progress} of {total}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="text-right">
+              <div className="text-sm text-gray-600">Progress</div>
+              <div className="text-lg font-bold text-gray-800">{progressPercent}%</div>
+            </div>
+          </div>
+
+          {/* Progress Bar */}
+          <div className="mt-3 h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div
+              className={`h-full bg-gradient-to-r ${colors.button} transition-all`}
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* Avatar Component - Fixed Position (stays visible during scroll) */}
+        {(isPlaying || currentSubtitle) && (
+          <div style={{
+            position: 'fixed',
+            top: '120px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1000,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+            <Avatar
+              state={avatarState}
+              subtitle={currentSubtitle}
+              showSubtitle={true}
+              size={120}
+              audioDuration={audioDuration}
+              emotion="encouraging"
+            />
+          </div>
+        )}
+
+        {/* Problem Card */}
+        <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4">Problem {progress}</h2>
+          <div className="text-gray-800 text-lg leading-relaxed mb-6">
+            <MathText>{currentProblem?.problemText || ''}</MathText>
+          </div>
+
+          {/* Math Tool Visualization (if provided by AI) */}
+          {currentProblem?.mathTool && (
+            <MathToolRenderer
+              toolName={currentProblem.mathTool.toolName}
+              parameters={currentProblem.mathTool.parameters}
+              caption={currentProblem.mathTool.caption}
+            />
+          )}
+
+          {/* Attempt History Display - Shows all previous attempts and hints */}
+          {session.currentProblemSession && session.currentProblemSession.attemptHistory.length > 0 && (
+            <div className="mt-6 mb-6 space-y-3">
+              <div className="text-sm font-semibold text-gray-600 mb-2">Previous Attempts:</div>
+              {session.currentProblemSession.attemptHistory.map((attempt, index) => (
+                <div key={index} className="border-l-4 border-blue-300 pl-4 py-2">
+                  {/* Student's Answer */}
+                  <div className="flex items-start space-x-2 mb-2">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm">
+                      🙋‍♀️
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-xs text-gray-500 mb-1">Attempt {attempt.attemptNumber}</div>
+                      <div className="bg-blue-50 rounded-lg px-3 py-2 text-gray-800">
+                        {attempt.studentAnswer}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tutor's Hint/Feedback */}
+                  <div className="flex items-start space-x-2 ml-10">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-sm">
+                      📚
+                    </div>
+                    <div className="flex-1">
+                      <div className={`rounded-lg px-3 py-2 ${
+                        attempt.isCorrect ? 'bg-green-50 text-green-800' : 'bg-yellow-50 text-gray-800'
+                      }`}>
+                        <MathText>{attempt.hint}</MathText>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Answer Input */}
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Your Answer {session.currentProblemSession && session.currentProblemSession.attemptCount > 0
+                  ? `(Attempt ${session.currentProblemSession.attemptCount + 1} of 3)`
+                  : ''}:
+              </label>
+              <input
+                type="text"
+                value={studentAnswer}
+                onChange={(e) => setStudentAnswer(e.target.value)}
+                onKeyPress={(e) => {
+                  const canSubmit = session.currentProblemSession && session.currentProblemSession.canRetry;
+                  if (e.key === 'Enter' && canSubmit && !submitting) {
+                    handleSubmitAnswer();
+                  }
+                }}
+                disabled={
+                  submitting ||
+                  (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
+                  (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect))
+                }
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                placeholder={
+                  session.currentProblemSession && !session.currentProblemSession.canRetry
+                    ? "Maximum attempts reached"
+                    : "Enter your answer..."
+                }
+              />
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex space-x-3">
+              {/* Check if student got it correct */}
+              {session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect) ? (
+                <button
+                  onClick={handleNextProblem}
+                  className={`w-full px-6 py-3 ${colors.button} text-white rounded-lg font-semibold transition`}
+                >
+                  {session.currentIndex >= session.problems.length - 1 ? 'Finish Lesson' : 'Next Problem →'}
+                </button>
+              ) : (
+                <>
+                  {/* If still can retry, show submit button */}
+                  {session.currentProblemSession && session.currentProblemSession.canRetry ? (
+                    <button
+                      onClick={handleSubmitAnswer}
+                      disabled={!studentAnswer.trim() || submitting}
+                      className={`flex-1 px-6 py-3 ${colors.button} text-white rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed`}
+                    >
+                      {submitting ? 'Checking...' : 'Submit Answer'}
+                    </button>
+                  ) : (
+                    /* After 3 failed attempts, show solution and next buttons */
+                    <>
+                      {!solution ? (
+                        <button
+                          onClick={handleShowSolution}
+                          disabled={loadingSolution}
+                          className="flex-1 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition disabled:opacity-50"
+                        >
+                          {loadingSolution ? 'Loading...' : 'Show Solution'}
+                        </button>
+                      ) : (
+                        <button
+                          onClick={handleNextProblem}
+                          className={`flex-1 px-6 py-3 ${colors.button} text-white rounded-lg font-semibold transition`}
+                        >
+                          {session.currentIndex >= session.problems.length - 1 ? 'Finish Lesson' : 'Next Problem →'}
+                        </button>
+                      )}
+                    </>
+                  )}
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Solution Display */}
+          {solution && (
+            <div className="mt-6 p-4 bg-purple-100 border-2 border-purple-400 rounded-lg">
+              <div className="font-semibold text-purple-800 mb-3">Solution:</div>
+              <div className="space-y-2">
+                {solution.steps.map((step, index) => (
+                  <div key={index} className="text-gray-700">
+                    <MathText>{step}</MathText>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 font-semibold text-purple-800">
+                Final Answer: {solution.finalAnswer}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Stats Card */}
+        <div className="bg-white rounded-lg shadow-lg p-4">
+          <div className="flex items-center justify-around text-center">
+            <div>
+              <div className="text-2xl font-bold text-gray-800">{correctCount}/{session.attempts.length}</div>
+              <div className="text-sm text-gray-600">Correct</div>
+            </div>
+            <div className="h-12 w-px bg-gray-300" />
+            <div>
+              <div className="text-2xl font-bold text-gray-800">{accuracy}%</div>
+              <div className="text-sm text-gray-600">Accuracy</div>
+            </div>
+            <div className="h-12 w-px bg-gray-300" />
+            <div>
+              <div className="text-2xl font-bold text-gray-800">{session.hintsUsed}</div>
+              <div className="text-sm text-gray-600">Hints Used</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

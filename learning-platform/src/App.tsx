@@ -1,41 +1,52 @@
 import { useState, createContext, useContext, useEffect } from 'react';
 import MainLayout from './components/layout/MainLayout';
 import HomePage from './components/HomePage';
-import FractionsTopicView from './components/FractionsTopicView';
-import TrigonometryTopicView from './components/TrigonometryTopicView';
-import CircleGeometryTopicView from './components/CircleGeometryTopicView';
-import QuadraticEquationsTopicView from './components/QuadraticEquationsTopicView';
 import ModeSelector from './components/ModeSelector';
-import PracticeInterface from './components/PracticeInterface';
+import { InteractivePathView } from './components/practice/InteractivePathView';
+import { PracticeSessionView } from './components/practice/PracticeSessionView';
+import { AchievementsPage } from './components/practice/AchievementsPage';
 import TTSTest from './components/TTSTest';
 import AvatarTest from './components/AvatarTest';
 import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { sessionStorage } from './services/sessionStorage';
 import type { TopicId } from './prompts/topics/P6-Math-Fractions';
-import type { TrigonometryTopicId } from './components/TrigonometryTopicView';
-import type { CircleGeometryTopicId } from './components/CircleGeometryTopicView';
-import type { QuadraticEquationsTopicId } from './components/QuadraticEquationsTopicView';
-import type { PracticeConfig } from './types/types';
+import type { TrigonometryTopicId } from './prompts/topics/S3-Math-Trigonometry';
+import type { CircleGeometryTopicId } from './prompts/topics/S3-Math-CircleGeometry';
+import type { QuadraticEquationsTopicId } from './prompts/topics/S3-Math-QuadraticEquations';
+import type { PathDifficulty } from './types/practice';
 import { registerAllVisualizers } from './utils/registerVisualizers';
+import { pathConfigLoader } from './services/pathConfigLoader';
+import { pathProgressService } from './services/pathProgressService';
 import './styles/animations.css';
 
 // App state context for managing application-wide state
 interface AppState {
-  selectedCategory: string | null; // 'fractions', 'trigonometry', 'circle-geometry', etc.
+  selectedCategory: string | null; // 'fractions', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations'
   selectedTopic: TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | null;
   selectedMode: 'socratic' | 'practice' | null; // Learning mode
-  practiceConfig?: PracticeConfig; // Practice mode configuration
+
+  // Practice mode state
+  practiceState?: {
+    selectedDifficulty: PathDifficulty | null;
+    selectedNodeId: string | null;
+    showingAchievements: boolean;
+  };
 }
 
 interface AppContextType {
   appState: AppState;
   handleCategorySelect: (category: string) => void;
   handleTopicSelect: (topicId: TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId) => void;
-  handleModeSelect: (mode: 'socratic' | 'practice', config?: PracticeConfig) => void;
+  handleModeSelect: (mode: 'socratic' | 'practice') => void;
+  handleDifficultySelect: (difficulty: PathDifficulty) => void;
+  handleNodeSelect: (difficulty: PathDifficulty, nodeId: string) => void;
+  handleBackToPathMap: () => void;
+  handleBackToPathSelection: () => void;
   handleBackToModeSelect: () => void;
   handleBackToTopics: () => void;
   handleBackToHome: () => void;
+  handleShowAchievements: () => void;
+  handleBackFromAchievements: () => void;
 }
 
 const AppContext = createContext<AppContextType | null>(null);
@@ -54,7 +65,6 @@ function AppProvider({ children }: { children: React.ReactNode }) {
     selectedCategory: null,
     selectedTopic: null,
     selectedMode: null,
-    practiceConfig: undefined,
   });
 
   const handleCategorySelect = (category: string) => {
@@ -62,7 +72,6 @@ function AppProvider({ children }: { children: React.ReactNode }) {
       selectedCategory: category,
       selectedTopic: null,
       selectedMode: null,
-      practiceConfig: undefined,
     });
   };
 
@@ -72,16 +81,80 @@ function AppProvider({ children }: { children: React.ReactNode }) {
       selectedTopic: topicId,
       // Keep socratic mode if already selected, otherwise reset
       selectedMode: prev.selectedMode === 'socratic' ? 'socratic' : null,
-      // Clear practice config when switching topics
-      practiceConfig: undefined,
     }));
   };
 
-  const handleModeSelect = (mode: 'socratic' | 'practice', config?: PracticeConfig) => {
+  const handleModeSelect = (mode: 'socratic' | 'practice') => {
     setAppState((prev) => ({
       ...prev,
       selectedMode: mode,
-      practiceConfig: config,
+    }));
+  };
+
+  const handleDifficultySelect = (difficulty: PathDifficulty) => {
+    setAppState((prev) => ({
+      ...prev,
+      practiceState: {
+        selectedDifficulty: difficulty,
+        selectedNodeId: null,
+      },
+    }));
+  };
+
+  const handleNodeSelect = (difficulty: PathDifficulty, nodeId: string) => {
+    setAppState((prev) => ({
+      ...prev,
+      practiceState: {
+        selectedDifficulty: difficulty,
+        selectedNodeId: nodeId,
+        showingAchievements: false,
+      },
+    }));
+  };
+
+  const handleShowAchievements = () => {
+    setAppState((prev) => ({
+      ...prev,
+      practiceState: {
+        ...prev.practiceState,
+        selectedDifficulty: prev.practiceState?.selectedDifficulty || null,
+        selectedNodeId: null,
+        showingAchievements: true,
+      },
+    }));
+  };
+
+  const handleBackFromAchievements = () => {
+    setAppState((prev) => ({
+      ...prev,
+      practiceState: {
+        ...prev.practiceState,
+        selectedDifficulty: prev.practiceState?.selectedDifficulty || null,
+        selectedNodeId: null,
+        showingAchievements: false,
+      },
+    }));
+  };
+
+  const handleBackToPathMap = () => {
+    setAppState((prev) => ({
+      ...prev,
+      practiceState: {
+        ...prev.practiceState,
+        selectedDifficulty: prev.practiceState?.selectedDifficulty || null,
+        selectedNodeId: null,
+        showingAchievements: false,
+      },
+    }));
+  };
+
+  const handleBackToPathSelection = () => {
+    setAppState((prev) => ({
+      ...prev,
+      practiceState: {
+        selectedDifficulty: null,
+        selectedNodeId: null,
+      },
     }));
   };
 
@@ -89,7 +162,7 @@ function AppProvider({ children }: { children: React.ReactNode }) {
     setAppState((prev) => ({
       ...prev,
       selectedMode: null,
-      practiceConfig: undefined,
+      practiceState: undefined,
     }));
   };
 
@@ -98,7 +171,7 @@ function AppProvider({ children }: { children: React.ReactNode }) {
       ...prev,
       selectedTopic: null,
       selectedMode: null,
-      practiceConfig: undefined,
+      practiceState: undefined,
     }));
   };
 
@@ -107,7 +180,7 @@ function AppProvider({ children }: { children: React.ReactNode }) {
       selectedCategory: null,
       selectedTopic: null,
       selectedMode: null,
-      practiceConfig: undefined,
+      practiceState: undefined,
     });
   };
 
@@ -117,9 +190,15 @@ function AppProvider({ children }: { children: React.ReactNode }) {
       handleCategorySelect,
       handleTopicSelect,
       handleModeSelect,
+      handleDifficultySelect,
+      handleNodeSelect,
+      handleBackToPathMap,
+      handleBackToPathSelection,
       handleBackToModeSelect,
       handleBackToTopics,
       handleBackToHome,
+      handleShowAchievements,
+      handleBackFromAchievements,
     }}>
       {children}
     </AppContext.Provider>
@@ -147,6 +226,107 @@ function AppContent() {
   );
 }
 
+// Practice Router - handles Practice mode navigation
+function PracticeRouter() {
+  const {
+    appState,
+    handleNodeSelect,
+    handleBackToPathMap,
+    handleBackToModeSelect,
+    handleBackFromAchievements,
+    handleShowAchievements,
+  } = useAppContext();
+
+  const [currentNode, setCurrentNode] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+
+  // Load the selected node configuration
+  useEffect(() => {
+    async function loadNode() {
+      if (!appState.practiceState?.selectedNodeId) {
+        setCurrentNode(null);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        const nodes = await pathConfigLoader.loadUnifiedPathNodes(appState.selectedCategory!);
+        const node = nodes.find(n => n.id === appState.practiceState!.selectedNodeId);
+        setCurrentNode(node || null);
+      } catch (error) {
+        console.error('Failed to load node:', error);
+        setCurrentNode(null);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadNode();
+  }, [appState.practiceState?.selectedNodeId]);
+
+  // Show Achievements Page if viewing achievements
+  if (appState.practiceState?.showingAchievements) {
+    const progress = pathProgressService.loadUnifiedProgress(appState.selectedCategory!);
+
+    if (!progress) {
+      return (
+        <div style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <p>Loading achievements...</p>
+        </div>
+      );
+    }
+
+    return (
+      <AchievementsPage
+        progress={progress}
+        onBack={handleBackFromAchievements}
+      />
+    );
+  }
+
+  // Show InteractivePathView if no node selected
+  if (!appState.practiceState?.selectedNodeId) {
+    return (
+      <InteractivePathView
+        category={appState.selectedCategory!}
+        onSelectNode={(nodeId: string) => handleNodeSelect('easy', nodeId)} // Difficulty param kept for compatibility but not used
+        onBack={handleBackToModeSelect}
+        onShowAchievements={handleShowAchievements}
+      />
+    );
+  }
+
+  // Show loading while node loads
+  if (loading || !currentNode) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <p>Loading lesson...</p>
+      </div>
+    );
+  }
+
+  // Show PracticeSessionView when node is loaded
+  return (
+    <PracticeSessionView
+      category={appState.selectedCategory!}
+      difficulty={'easy'} // Kept for compatibility, not used in unified system
+      node={currentNode}
+      onComplete={handleBackToPathMap}
+      onBack={handleBackToPathMap}
+    />
+  );
+}
+
 // Router component to handle navigation between all views
 function AppRouter() {
   const {
@@ -164,66 +344,20 @@ function AppRouter() {
     return <HomePage onTopicSelect={handleCategorySelect} />;
   }
 
-  // Show FractionsTopicView when category is selected but no subtopic
-  if (appState.selectedCategory === 'fractions' && !appState.selectedTopic) {
-    return (
-      <FractionsTopicView
-        onSubtopicSelect={handleTopicSelect}
-        onBackToHome={handleBackToHome}
-      />
-    );
-  }
-
-  // Show TrigonometryTopicView when trigonometry category is selected but no subtopic
-  if (appState.selectedCategory === 'trigonometry' && !appState.selectedTopic) {
-    return (
-      <TrigonometryTopicView
-        onSubtopicSelect={handleTopicSelect}
-        onBackToHome={handleBackToHome}
-      />
-    );
-  }
-
-  // Show CircleGeometryTopicView when circle-geometry category is selected but no subtopic
-  if (appState.selectedCategory === 'circle-geometry' && !appState.selectedTopic) {
-    return (
-      <CircleGeometryTopicView
-        onSubtopicSelect={handleTopicSelect}
-        onBackToHome={handleBackToHome}
-      />
-    );
-  }
-
-  // Show QuadraticEquationsTopicView when quadratic-equations category is selected but no subtopic
-  if (appState.selectedCategory === 'quadratic-equations' && !appState.selectedTopic) {
-    return (
-      <QuadraticEquationsTopicView
-        onSubtopicSelect={(topicId: QuadraticEquationsTopicId) => handleTopicSelect(topicId)}
-        onBackToHome={handleBackToHome}
-      />
-    );
-  }
-
-  // Show ModeSelector when topic is selected but no mode
-  if (appState.selectedTopic && !appState.selectedMode) {
+  // Show ModeSelector when category is selected but no mode
+  if (appState.selectedCategory && !appState.selectedMode) {
     return (
       <ModeSelector
-        topicId={appState.selectedTopic}
+        category={appState.selectedCategory}
         onModeSelect={handleModeSelect}
-        onBack={handleBackToTopics}
+        onBack={handleBackToHome}
       />
     );
   }
 
-  // Show PracticeInterface when practice mode is selected
-  if (appState.selectedMode === 'practice' && appState.selectedTopic && appState.practiceConfig) {
-    return (
-      <PracticeInterface
-        topicId={appState.selectedTopic}
-        practiceConfig={appState.practiceConfig}
-        onBackToModeSelect={handleBackToModeSelect}
-      />
-    );
+  // Show Practice mode (new path-based system)
+  if (appState.selectedMode === 'practice') {
+    return <PracticeRouter />;
   }
 
   // Show MainLayout (Socratic learning interface) when Socratic mode is selected

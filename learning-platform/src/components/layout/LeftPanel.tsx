@@ -64,9 +64,9 @@ function getTopicIcon(topicId: string): string {
 
 function getCategoryDisplayName(category: string): string {
   if (category === 'fractions') return 'Fractions';
-  if (category === 'trigonometry') return 'Trigonometry';
-  if (category === 'circle-geometry') return 'Circle Geometry';
-  if (category === 'quadratic-equations') return 'Quadratic Equations';
+  if (category === 's3-math-trigonometry') return 'Trigonometry';
+  if (category === 's3-math-circle-geometry') return 'Circle Geometry';
+  if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
   return category;
 }
 
@@ -85,7 +85,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 'trigonometry') {
+    } else if (appState.selectedCategory === 's3-math-trigonometry') {
       return Object.entries(S3_MATH_TRIGONOMETRY).map(([topicId, config]) => ({
         id: topicId as TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
         name: config.displayName,
@@ -93,7 +93,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 'circle-geometry') {
+    } else if (appState.selectedCategory === 's3-math-circle-geometry') {
       return Object.entries(S3_MATH_CIRCLE_GEOMETRY).map(([topicId, config]) => ({
         id: topicId as TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
         name: config.displayName,
@@ -101,7 +101,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 'quadratic-equations') {
+    } else if (appState.selectedCategory === 's3-math-quadratic-equations') {
       return Object.entries(S3_MATH_QUADRATIC_EQUATIONS).map(([topicId, config]) => ({
         id: topicId as TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
         name: config.displayName,
@@ -206,11 +206,11 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     let topicConfig;
     if (appState.selectedCategory === 'fractions') {
       topicConfig = P6_MATH_FRACTIONS[topicId as TopicId];
-    } else if (appState.selectedCategory === 'trigonometry') {
+    } else if (appState.selectedCategory === 's3-math-trigonometry') {
       topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
-    } else if (appState.selectedCategory === 'circle-geometry') {
+    } else if (appState.selectedCategory === 's3-math-circle-geometry') {
       topicConfig = S3_MATH_CIRCLE_GEOMETRY[topicId as CircleGeometryTopicId];
-    } else if (appState.selectedCategory === 'quadratic-equations') {
+    } else if (appState.selectedCategory === 's3-math-quadratic-equations') {
       topicConfig = S3_MATH_QUADRATIC_EQUATIONS[topicId as QuadraticEquationsTopicId];
     }
 
@@ -271,8 +271,8 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
               style={{ backgroundColor: theme.colors.brand }}
             >
               {appState.selectedCategory === 'fractions' ? '➗' :
-               appState.selectedCategory === 'trigonometry' ? '📐' :
-               appState.selectedCategory === 'circle-geometry' ? '⭕' : '📈'}
+               appState.selectedCategory === 's3-math-trigonometry' ? '📐' :
+               appState.selectedCategory === 's3-math-circle-geometry' ? '⭕' : '📈'}
             </div>
             <div>
               <h2 className="font-semibold text-sm" style={{ color: theme.colors.textPrimary }}>

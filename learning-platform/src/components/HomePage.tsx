@@ -9,7 +9,7 @@ interface Topic {
   description: string;
   subtopicCount: number;
   isActive: boolean;
-  category?: 'fractions' | 'trigonometry' | 'circle-geometry' | 'quadratic-equations';
+  category?: 'fractions' | 's3-math-trigonometry' | 's3-math-circle-geometry' | 's3-math-quadratic-equations';
   grade?: string;
   subject?: string;
 }
@@ -23,7 +23,7 @@ const topics: Topic[] = [
     description: 'Master trigonometric ratios: sine, cosine, and tangent',
     subtopicCount: 7,
     isActive: true,
-    category: 'trigonometry',
+    category: 's3-math-trigonometry',
     grade: 'Secondary 3',
     subject: 'Mathematics',
   },
@@ -34,7 +34,7 @@ const topics: Topic[] = [
     description: 'Prove geometric theorems: angles, chords, tangents',
     subtopicCount: 7,
     isActive: true,
-    category: 'circle-geometry',
+    category: 's3-math-circle-geometry',
     grade: 'Secondary 3',
     subject: 'Mathematics',
   },
@@ -45,7 +45,7 @@ const topics: Topic[] = [
     description: 'Solving, graphing, and applying quadratic equations and functions',
     subtopicCount: 13,
     isActive: true,
-    category: 'quadratic-equations',
+    category: 's3-math-quadratic-equations',
     grade: 'Secondary 3',
     subject: 'Mathematics',
   },

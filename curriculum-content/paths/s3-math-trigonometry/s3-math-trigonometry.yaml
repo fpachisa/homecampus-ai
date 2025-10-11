@@ -1,0 +1,480 @@
+# Trigonometry - Unified Practice Path
+# Organized into Foundation → Integration → Application layers
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+  # ═══════════════════════════════════════════════════════════
+  # FOUNDATION LAYER (Nodes 1-7): Individual Concepts
+  # ═══════════════════════════════════════════════════════════
+  - id: trig-node-1
+    nodeNumber: 1
+    title: Trigonometric Ratios
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-basic-ratios
+          weight: 1.0
+      problemDescription:
+        - "Provide a right-angled triangle with side lengths, and ask to find the sine, cosine, and tangent. BUT ask only for one ratio at a time."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-2
+    nodeNumber: 2
+    title: Finding Side Lengths
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-basic-ratios
+          weight: 1.0
+      problemDescription:
+        - "Given a right triangle with one angle and one side length, ask to find the length of another side using sine, cosine, or tangent."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-3
+    nodeNumber: 3
+    title: Finding Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-basic-ratios
+          weight: 1.0
+      problemDescription:
+        - "Provide a right triangle with two side lengths, and ask to find one of the non-right angles using inverse trigonometric functions."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-4
+    nodeNumber: 4
+    title: Mixed Problems
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-basic-ratios
+          weight: 1.0
+      problemDescription:
+        - "Mix of problems finding ratios, side lengths, and angles in right triangles using basic trigonometric functions."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-5
+    nodeNumber: 5
+    title: Special Trigonometric Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-basic-ratios
+          weight: 1.0
+      problemDescription:
+        - "Problems involving special angles (30°, 45°, 60°) to find trigonometric ratios, side lengths, or angles in right triangles."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-6
+    nodeNumber: 6
+    title: Real-World Applications
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-basic-ratios
+          weight: 1.0
+      problemDescription:
+        - "Simple real-world scenarios (like ladders, ramps, or heights) requiring the use of basic trigonometric ratios to solve."
+      contexts: ["construction", "navigation", "architecture"]
+      difficulty: easy
+  - id: trig-node-7
+    nodeNumber: 7
+    title: Elevation and Depression Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-problem-solving
+          weight: 1.0
+      problemDescription:
+        - "Problems involving angles of elevation and depression, requiring the use of basic trigonometric ratios to find heights or distances."
+      contexts: ["navigation", "surveying"]
+      difficulty: easy
+  - id: trig-node-8
+    nodeNumber: 8
+    title: 3-D Visualization
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-problem-solving
+          weight: 1.0
+      problemDescription:
+        - "Simple 3D problems involving right triangles in three-dimensional space, requiring the use of basic trigonometric ratios and pythagorean theorem. "
+      contexts: [] 
+      difficulty: easy
+  - id: trig-node-9
+    nodeNumber: 9
+    title: True Bearing Calculations
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-true-bearings
+          weight: 1.0
+      problemDescription:
+        - "Provide basic bearings diagram and ask to calculate true bearings in different scenarios."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-10
+    nodeNumber: 10
+    title: Back Bearings and Reverse directions
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-true-bearings
+          weight: 1.0
+      problemDescription:
+        - "Problems involving calculating back bearings and reverse directions"
+      contexts: []
+      difficulty: easy
+  - id: trig-node-11
+    nodeNumber: 11
+    title: True Bearing Navigation Problems
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-true-bearings
+          weight: 1.0
+      problemDescription:
+        - "Simple navigation problems involving true bearings, distances, and directions"
+      contexts: ["navigation", "maritime", "aviation"]
+      difficulty: easy
+  - id: trig-node-12
+    nodeNumber: 12
+    title: Calculations using Obtuse Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-obtuse-angles
+          weight: 1.0
+      problemDescription:
+        - "Provide an obtuse triangle and ask to find sine, cosine and tangent of the obtuse angle. Only one ratio at a time."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-13
+    nodeNumber: 13
+    title: Word Problems with Obtuse Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-obtuse-angles
+          weight: 1.0
+      problemDescription:
+        - "Simple word problems involving obtuse angles in real-world scenarios, requiring the use of trigonometric ratios and properties of triangles"
+      contexts: ["architecture", "engineering"]
+      difficulty: easy
+  - id: trig-node-14
+    nodeNumber: 14
+    title: Area of Triangles using Trigonometry
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-area-of-triangles
+          weight: 1.0
+      problemDescription:
+        - "Provide a triangle and ask to calculate area that requires using ½ab sin C"
+      contexts: []
+      difficulty: easy
+  - id: trig-node-15
+    nodeNumber: 15
+    title: Finding Side Lengths/Angles using area
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-area-of-triangles
+          weight: 1.0
+      problemDescription:
+        - "Given the area of a triangle and some side lengths/angles, ask to find a missing side length or angle using the area formula ½ab sin C"
+      contexts: []
+      difficulty: easy
+  - id: trig-node-16
+    nodeNumber: 16
+    title: Mixed Problems on Area of Triangles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-area-of-triangles
+          weight: 1.0
+      problemDescription:
+        - "Mix of problems finding area, side lengths, and angles in triangles using the area formula ½ab sin C"
+      contexts: []
+      difficulty: easy
+  - id: trig-node-17
+    nodeNumber: 17
+    title: Sine Rule Basics
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-sine-rule
+          weight: 1.0
+      problemDescription:
+        - "Provide a triangle with two angles and one side, and ask to find a missing side using the Sine Rule."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-18
+    nodeNumber: 18
+    title: Sine Rule Basics - Finding Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-sine-rule
+          weight: 1.0
+      problemDescription:
+        - "Provide a triangle with two sides and one angle, and ask to find a missing angle using the Sine Rule."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-19
+    nodeNumber: 19
+    title: Sine Rule Mixed Problems
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-sine-rule
+          weight: 1.0
+      problemDescription:
+        - "Real world scenarios requiring the use of the Sine Rule to find missing sides or angles in triangles."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-20
+    nodeNumber: 20
+    title: Cosine Rule Basics
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-cosine-rule
+          weight: 1.0
+      problemDescription:
+        - "Provide a triangle with two sides and the included angle, and ask to find the third side using the Cosine Rule."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-21
+    nodeNumber: 21
+    title: Cosine Rule Basics - Finding Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-cosine-rule
+          weight: 1.0
+      problemDescription:
+        - "Provide a triangle with all three sides, and ask to find one of the angles using the Cosine Rule."
+      contexts: []
+      difficulty: easy
+  - id: trig-node-22
+    nodeNumber: 22
+    title: Mix of Cosine and Sine Rule
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-cosine-rule
+          weight: 0.5
+        - id: s3-math-trigonometry-sine-rule
+          weight: 0.5
+      problemDescription:
+        - "Mix of problems requiring the use of both the Sine Rule and Cosine Rule to find missing sides or angles in triangles. But don't reveal which rule to use."
+      contexts: []
+      difficulty: easy
+
+  # ═══════════════════════════════════════════════════════════
+  # INTEGRATION LAYER (Nodes 8-11): Combined Concepts
+  # ═══════════════════════════════════════════════════════════
+
+  - id: trig-node-23
+    nodeNumber: 23
+    title: Sine & Cosine Rule Combined
+    layer: integration
+    problemsRequired: 7
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-sine-rule
+          weight: 0.5
+        - id: s3-math-trigonometry-cosine-rule
+          weight: 0.5
+      problemDescription:
+        - "Given triangle information, determine whether to use sine rule or cosine rule, then solve."
+        - "Multi-step problems: Use cosine rule to find one side, then sine rule to find an angle."
+        - "Mixed problems where you must choose the appropriate rule based on given information (AAS, ASA, SAS, SSA, SSS)."
+      contexts: ["surveying", "engineering"]
+
+  - id: trig-node-24
+    nodeNumber: 24
+    title: Bearings with Trigonometric Rules
+    layer: integration
+    problemsRequired: 7
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-true-bearings
+          weight: 0.4
+        - id: s3-math-trigonometry-sine-rule
+          weight: 0.3
+        - id: s3-math-trigonometry-cosine-rule
+          weight: 0.3
+      problemDescription:
+        - "A plane flies bearing 065° for 200km, then bearing 140° for 150km. How far is it from start? Use bearings to form triangle, then apply sine/cosine rule."
+        - "Navigation problems combining bearings, interior angles (using parallel North lines), and triangle solving."
+        - "Find the bearing and distance to return directly to the starting point after multi-leg journeys."
+      contexts: ["navigation", "maritime", "aviation"]
+
+  - id: trig-node-25
+    nodeNumber: 25
+    title: 3D Trigonometry Problems
+    layer: integration
+    problemsRequired: 7
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-problem-solving
+          weight: 1.0
+      problemDescription:
+        - "3D problems in cuboids: Find angles between diagonals and planes. Use Pythagoras to find base diagonal, then trig for angle."
+        - "Pyramid problems: Find angles between edges, faces, and the base using perpendicular heights and slant heights."
+        - "Multi-step: Extract the relevant 2D triangle from 3D shape, apply Pythagoras for intermediate lengths, then use trig ratios."
+      contexts: ["architecture", "engineering"]
+
+  - id: trig-node-26
+    nodeNumber: 26
+    title: Area of Triangles & Applications
+    layer: integration
+    problemsRequired: 7
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-area-of-triangle
+          weight: 0.7
+        - id: s3-math-trigonometry-sine-rule
+          weight: 0.3
+      problemDescription:
+        - "Calculate triangle area using the formula: Area = ½ab sin C (two sides and included angle)."
+        - "Reverse problems: Given area and two sides, find the included angle."
+        - "Multi-step: Use sine rule to find a missing side or angle first, then calculate area."
+        - "Real-world applications: Land surveying, triangular plots, roof areas."
+      contexts: ["surveying", "architecture", "construction"]
+
+  # ═══════════════════════════════════════════════════════════
+  # APPLICATION LAYER (Nodes 12-15): Exam-Style Problems
+  # ═══════════════════════════════════════════════════════════
+
+  - id: trig-node-27
+    nodeNumber: 27
+    title: Multi-Step Problem Solving
+    layer: application
+    problemsRequired: 8
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-sine-rule
+          weight: 0.3
+        - id: s3-math-trigonometry-cosine-rule
+          weight: 0.3
+        - id: s3-math-trigonometry-problem-solving
+          weight: 0.4
+      problemDescription:
+        - "Complex problems requiring 3+ steps: bearings, triangle formation, multiple rule applications, and distance/angle calculations."
+        - "Exam-style Section A questions: Structured problems with clear parts (a), (b), (c) building on each other."
+        - "Problems combining elevation/depression angles with bearings and triangle solving."
+      contexts: ["navigation", "surveying", "engineering"]
+
+  - id: trig-node-28
+    nodeNumber: 28
+    title: Advanced Navigation & Bearings
+    layer: application
+    problemsRequired: 8
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-true-bearings
+          weight: 0.5
+        - id: s3-math-trigonometry-sine-rule
+          weight: 0.25
+        - id: s3-math-trigonometry-cosine-rule
+          weight: 0.25
+      problemDescription:
+        - "Three-point navigation problems: A→B→C, find distance A→C and bearing from C back to A."
+        - "Problems with multiple course changes, requiring careful angle analysis and sequential triangle solving."
+        - "Mixed 2D/3D navigation: Aircraft altitude changes combined with horizontal bearings and distances."
+      contexts: ["aviation", "maritime", "rally racing"]
+
+  - id: trig-node-29
+    nodeNumber: 29
+    title: Advanced 3D & Spatial Reasoning
+    layer: application
+    problemsRequired: 8
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-problem-solving
+          weight: 0.6
+        - id: s3-math-trigonometry-area-of-triangle
+          weight: 0.4
+      problemDescription:
+        - "Complex 3D geometry: Find angles between lines and planes in pyramids, prisms, and irregular shapes."
+        - "Problems requiring multiple 2D triangle extractions from the same 3D shape."
+        - "Combined problems: Find angles in 3D, then calculate surface areas or volumes using those angles."
+      contexts: ["architecture", "engineering", "construction"]
+
+  - id: trig-node-30
+    nodeNumber: 30
+    title: Exam-Style Mixed Problems
+    layer: application
+    problemsRequired: 8
+    prerequisites: []
+    descriptor:
+      subtopics:
+        - id: s3-math-trigonometry-sine-rule
+          weight: 0.25
+        - id: s3-math-trigonometry-cosine-rule
+          weight: 0.25
+        - id: s3-math-trigonometry-problem-solving
+          weight: 0.25
+        - id: s3-math-trigonometry-area-of-triangle
+          weight: 0.25
+      problemDescription:
+        - "Exam-style Section B questions: Complex application problems requiring selection and integration of multiple concepts."
+        - "Open-ended problems where you must decide which techniques to apply: 'A surveyor needs to... Design a solution approach.'"
+        - "Challenge problems combining 4+ concepts: bearings + 3D geometry + area calculations + rule selection."
+        - "Time-pressured exam simulation: Solve efficiently, show clear working, interpret results in context."
+      contexts: ["exams", "real-world applications", "problem-solving"]

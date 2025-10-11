@@ -177,14 +177,27 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
               stroke={angleColor}
               strokeWidth={2}
             />
-            <text
-              x={x1 + 35}
-              y={y1 - 8}
-              className="text-sm font-semibold"
-              fill={angleColor}
-            >
-              {showThetaLabel ? 'θ' : `${Math.round(calculatedAngle)}°`}
-            </text>
+            {(() => {
+              // Position label along angle bisector to prevent overlap with sides
+              // Use larger radius for smaller angles to avoid overlap
+              const labelRadius = calculatedAngle < 20 ? 45 : calculatedAngle < 35 ? 38 : 32;
+              const bisectorAngle = angleRad / 2; // Middle of the angle
+              const labelX = x1 + labelRadius * Math.cos(bisectorAngle);
+              const labelY = y1 - labelRadius * Math.sin(bisectorAngle);
+
+              return (
+                <text
+                  x={labelX}
+                  y={labelY}
+                  className="text-sm font-semibold"
+                  fill={angleColor}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                >
+                  {showThetaLabel ? 'θ' : `${Math.round(calculatedAngle)}°`}
+                </text>
+              );
+            })()}
           </>
         )}
 

@@ -1,0 +1,233 @@
+/**
+ * Practice Mode Types - Path-Based System
+ *
+ * Simple, organic structure that can evolve over time.
+ * Layered learning path with gamification features.
+ */
+
+// ============================================
+// PATH LAYERS
+// ============================================
+
+export type PathDifficulty = 'easy' | 'medium' | 'hard'; // Deprecated, keeping for backward compatibility
+export type PathLayer = 'foundation' | 'integration' | 'application';
+
+// ============================================
+// NODE STRUCTURE
+// ============================================
+
+export interface NodeDescriptor {
+  // Which subtopics to sample from
+  subtopics: {
+    id: string;
+    weight: number;  // 0-1, probability of selection
+  }[];
+
+  // CRITICAL: Sample problems that define the pattern
+  problemDescription: string[];
+
+  // Context themes to vary
+  contexts: string[];
+
+  // Difficulty level (deprecated, use PathNode.layer instead)
+  difficulty?: PathDifficulty;
+}
+
+export interface PathNode {
+  id: string;                    // e.g., "trig-node-1"
+  nodeNumber: number;            // 1-15 for unified path
+  title: string;                 // e.g., "Finding Missing Sides"
+  problemsRequired: number;      // e.g., 5-8 problems to complete node
+
+  // NEW: Layer categorization
+  layer: PathLayer;              // foundation, integration, or application
+
+  // NEW: Prerequisites (empty array = no prereqs, can start here)
+  prerequisites: string[];       // Array of node IDs that should ideally be completed first
+
+  // Core descriptor for AI problem generation
+  descriptor: NodeDescriptor;
+}
+
+// ============================================
+// PATH CONFIGURATION
+// ============================================
+
+export interface PathConfig {
+  category: string;              // e.g., "trigonometry"
+  difficulty: PathDifficulty;
+  nodes: PathNode[];             // Initial 10 nodes
+  cycle: number;                 // 0 = first 10, 1 = next 10, etc.
+}
+
+export interface PathConfigSet {
+  easy: PathNode[];
+  medium: PathNode[];
+  hard: PathNode[];
+}
+
+// ============================================
+// PROGRESS TRACKING
+// ============================================
+
+export interface NodeProgress {
+  nodeId: string;
+  problemsAttempted: number;
+  problemsCorrect: number;
+  status: 'locked' | 'current' | 'completed';
+  completedAt?: Date;
+  timeSpentSeconds?: number;  // Time spent on this node
+}
+
+// ============================================
+// GAMIFICATION FEATURES
+// ============================================
+
+export interface Achievement {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;           // Emoji or icon name
+  earnedAt: Date;
+  xpReward: number;
+}
+
+export interface DailyStreak {
+  currentStreak: number;        // Current consecutive days
+  longestStreak: number;        // Best streak ever
+  lastActivityDate: string;     // ISO date string (YYYY-MM-DD)
+  streakDates: string[];        // Array of active dates (last 30 days)
+}
+
+export interface SessionStats {
+  date: string;                 // ISO date string
+  problemsSolved: number;
+  timeSpentSeconds: number;
+  xpEarned: number;
+  accuracy: number;             // 0-100%
+}
+
+export interface PathProgress {
+  category: string;
+  difficulty?: PathDifficulty;     // Deprecated: Kept for backward compatibility
+  currentNodeId: string | null;   // Currently selected/active node
+  currentCycle: number;            // Which set of nodes (0 = first set)
+  nodes: Record<string, NodeProgress>;
+
+  // Layer-based progress tracking
+  layerProgress: {
+    foundation: { completed: number; total: number };    // e.g., 5/7
+    integration: { completed: number; total: number };   // e.g., 2/4
+    application: { completed: number; total: number };   // e.g., 0/4
+  };
+
+  totalProblemsAttempted: number;
+  totalProblemsCorrect: number;
+  pathStartedAt: Date;
+  lastUpdated: Date;
+
+  // NEW: Entry point selection (where student chose to start)
+  entryPoint?: 'foundation' | 'integration' | 'application' | 'explore';
+
+  // NEW: Gamification features
+  totalXP: number;                          // Total experience points earned
+  currentLevel: number;                     // Current level (calculated from XP)
+  streak: DailyStreak;                      // Daily streak tracking
+  achievements: Achievement[];              // Earned achievements
+  sessionHistory: SessionStats[];           // Last 30 days of sessions
+  totalTimeSpentSeconds: number;            // Total time spent on this path
+
+  // Weekly/Daily stats for quick access
+  weeklyStats?: {
+    problemsSolved: number;
+    timeSpentSeconds: number;
+    xpEarned: number;
+    averageAccuracy: number;
+  };
+}
+
+// NEW: Unified single path state (replaces 3-path system)
+export interface PracticePathState {
+  category: string;
+  progress: PathProgress;          // Single unified path
+
+  // Deprecated: Keeping for backward compatibility during migration
+  paths?: {
+    easy: PathProgress;
+    medium: PathProgress;
+    hard: PathProgress;
+  };
+}
+
+// ============================================
+// PROBLEM TYPES
+// ============================================
+
+export interface PathProblem {
+  id: string;
+  nodeId: string;
+  problemText: string;
+  correctAnswer: string;
+  context: string;
+  subtopicId: string;
+  difficulty: PathDifficulty;
+  generatedAt: Date;
+  solutionSteps?: string[];        // Optional step-by-step solution
+
+  // Optional math tool visualization (generated by AI)
+  mathTool?: {
+    toolName: string;               // e.g., "rightTriangle", "elevationDepression"
+    parameters: Record<string, any>; // Tool-specific parameters
+    caption: string;                // Caption describing the visualization
+  };
+}
+
+export interface ProblemAttempt {
+  problemId: string;
+  nodeId: string;
+  studentAnswer: string;
+  isCorrect: boolean;
+  hintsUsed: number;
+  attemptedAt: Date;
+  timeSpentSeconds: number;
+}
+
+// ============================================
+// SESSION STATE
+// ============================================
+
+export interface NodeSessionState {
+  nodeId: string;
+  currentProblemIndex: number;
+  problems: PathProblem[];
+  attempts: ProblemAttempt[];
+  startedAt: Date;
+}
+
+// ============================================
+// ENHANCED PRACTICE WITH HISTORY
+// ============================================
+
+export interface AttemptHistory {
+  attemptNumber: number;
+  studentAnswer: string;
+  avatarSpeech: string;    // Brief speech for avatar
+  hint: string;            // Detailed hint for display
+  isCorrect: boolean;
+  timestamp: Date;
+}
+
+export interface EvaluationWithHistory {
+  isCorrect: boolean;
+  avatarSpeech: string;    // Brief encouraging speech for avatar (1-2 sentences)
+  hint: string;            // Detailed hint/feedback displayed on screen
+  hintLevel: number;       // 1-3 based on attempt number
+}
+
+export interface ProblemSessionState {
+  problemId: string;
+  attemptCount: number;    // Current attempt number (1-3)
+  attemptHistory: AttemptHistory[];  // All attempts for this problem
+  canRetry: boolean;       // True if attemptCount < 3
+  showingSolution: boolean;
+}
