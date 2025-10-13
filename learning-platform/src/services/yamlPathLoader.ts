@@ -137,22 +137,49 @@ class YAMLPathLoader {
 
       // Check descriptor
       const desc = node.descriptor;
-      if (!desc.subtopics || !Array.isArray(desc.subtopics) || desc.subtopics.length === 0) {
-        throw new Error(`Invalid descriptor in node ${node.id}: missing or empty subtopics array`);
+
+      // NEW: subtopics is now optional (replaced by mathTool)
+      // For backward compatibility, allow either:
+      // 1) subtopics array (old format)
+      // 2) mathTool/extraMathTool (AI-generated with visualization)
+      // 3) preWrittenQuestions (exam-style with SVG diagrams)
+      const hasSubtopics = desc.subtopics && Array.isArray(desc.subtopics) && desc.subtopics.length > 0;
+      const hasMathTool = desc.mathTool || desc.extraMathTool;
+      const hasPreWrittenQuestions = desc.aiGeneratedQuestions === false &&
+                                     desc.preWrittenQuestions &&
+                                     Array.isArray(desc.preWrittenQuestions) &&
+                                     desc.preWrittenQuestions.length > 0;
+
+      if (!hasSubtopics && !hasMathTool && !hasPreWrittenQuestions) {
+        throw new Error(`Invalid descriptor in node ${node.id}: must have either subtopics array OR mathTool/extraMathTool OR preWrittenQuestions`);
       }
 
-      if (!desc.problemDescription || !Array.isArray(desc.problemDescription)) {
-        throw new Error(`Invalid descriptor in node ${node.id}: missing or invalid problemDescription array`);
+      // Validate pre-written questions structure
+      if (hasPreWrittenQuestions && desc.preWrittenQuestions) {
+        for (const q of desc.preWrittenQuestions) {
+          if (!q.id || !q.problemText) {
+            throw new Error(`Invalid pre-written question in node ${node.id}: missing id or problemText`);
+          }
+        }
       }
 
-      if (!desc.contexts || !Array.isArray(desc.contexts)) {
-        throw new Error(`Invalid descriptor in node ${node.id}: missing or invalid contexts array`);
+      // problemDescription and contexts are only required for AI-generated questions
+      if (!hasPreWrittenQuestions) {
+        if (!desc.problemDescription || !Array.isArray(desc.problemDescription)) {
+          throw new Error(`Invalid descriptor in node ${node.id}: missing or invalid problemDescription array`);
+        }
+
+        if (!desc.contexts || !Array.isArray(desc.contexts)) {
+          throw new Error(`Invalid descriptor in node ${node.id}: missing or invalid contexts array`);
+        }
       }
 
-      // Validate subtopic weights sum to ~1.0
-      const totalWeight = desc.subtopics.reduce((sum, st) => sum + st.weight, 0);
-      if (Math.abs(totalWeight - 1.0) > 0.01) {
-        console.warn(`Warning: Subtopic weights in node ${node.id} sum to ${totalWeight}, not 1.0`);
+      // Validate subtopic weights sum to ~1.0 (only if using old subtopics structure)
+      if (hasSubtopics && desc.subtopics) {
+        const totalWeight = desc.subtopics.reduce((sum, st) => sum + st.weight, 0);
+        if (Math.abs(totalWeight - 1.0) > 0.01) {
+          console.warn(`Warning: Subtopic weights in node ${node.id} sum to ${totalWeight}, not 1.0`);
+        }
       }
     }
 
@@ -178,26 +205,53 @@ class YAMLPathLoader {
 
       // Check descriptor
       const desc = node.descriptor;
-      if (!desc.subtopics || !Array.isArray(desc.subtopics) || desc.subtopics.length === 0) {
-        throw new Error(`Invalid descriptor in node ${node.id}: missing or empty subtopics array`);
+
+      // NEW: subtopics is now optional (replaced by mathTool)
+      // For backward compatibility, allow either:
+      // 1) subtopics array (old format)
+      // 2) mathTool/extraMathTool (AI-generated with visualization)
+      // 3) preWrittenQuestions (exam-style with SVG diagrams)
+      const hasSubtopics = desc.subtopics && Array.isArray(desc.subtopics) && desc.subtopics.length > 0;
+      const hasMathTool = desc.mathTool || desc.extraMathTool;
+      const hasPreWrittenQuestions = desc.aiGeneratedQuestions === false &&
+                                     desc.preWrittenQuestions &&
+                                     Array.isArray(desc.preWrittenQuestions) &&
+                                     desc.preWrittenQuestions.length > 0;
+
+      if (!hasSubtopics && !hasMathTool && !hasPreWrittenQuestions) {
+        throw new Error(`Invalid descriptor in node ${node.id}: must have either subtopics array OR mathTool/extraMathTool OR preWrittenQuestions`);
       }
 
-      if (!desc.problemDescription || !Array.isArray(desc.problemDescription)) {
-        throw new Error(`Invalid descriptor in node ${node.id}: missing or invalid problemDescription array`);
+      // Validate pre-written questions structure
+      if (hasPreWrittenQuestions && desc.preWrittenQuestions) {
+        for (const q of desc.preWrittenQuestions) {
+          if (!q.id || !q.problemText) {
+            throw new Error(`Invalid pre-written question in node ${node.id}: missing id or problemText`);
+          }
+        }
       }
 
-      if (!desc.contexts || !Array.isArray(desc.contexts)) {
-        throw new Error(`Invalid descriptor in node ${node.id}: missing or invalid contexts array`);
+      // problemDescription and contexts are only required for AI-generated questions
+      if (!hasPreWrittenQuestions) {
+        if (!desc.problemDescription || !Array.isArray(desc.problemDescription)) {
+          throw new Error(`Invalid descriptor in node ${node.id}: missing or invalid problemDescription array`);
+        }
+
+        if (!desc.contexts || !Array.isArray(desc.contexts)) {
+          throw new Error(`Invalid descriptor in node ${node.id}: missing or invalid contexts array`);
+        }
       }
 
       if (desc.difficulty !== difficulty) {
         throw new Error(`Difficulty mismatch in node ${node.id}: expected ${difficulty}, got ${desc.difficulty}`);
       }
 
-      // Validate subtopic weights sum to ~1.0
-      const totalWeight = desc.subtopics.reduce((sum, st) => sum + st.weight, 0);
-      if (Math.abs(totalWeight - 1.0) > 0.01) {
-        console.warn(`Warning: Subtopic weights in node ${node.id} sum to ${totalWeight}, not 1.0`);
+      // Validate subtopic weights sum to ~1.0 (only if using old subtopics structure)
+      if (hasSubtopics && desc.subtopics) {
+        const totalWeight = desc.subtopics.reduce((sum, st) => sum + st.weight, 0);
+        if (Math.abs(totalWeight - 1.0) > 0.01) {
+          console.warn(`Warning: Subtopic weights in node ${node.id} sum to ${totalWeight}, not 1.0`);
+        }
       }
     }
   }

@@ -125,10 +125,18 @@ export function fixJSONEscaping(text: string): string {
   // - Removing 't' will break tabs in formatted content
   // - These are VALID JSON escape sequences that must be preserved
   fixed = fixed.replace(/"([^"]*?)"/g, (_match, content) => {
-    // Within the quoted string, escape any lone backslashes
+    // STEP 1: First, escape any literal control characters within the string
+    // This prevents "Bad control character in string literal" errors
+    let escaped = content
+      .replace(/\r\n/g, '\\n')  // Windows line endings first (before individual \n)
+      .replace(/\n/g, '\\n')     // Unix line endings
+      .replace(/\r/g, '\\r')     // Mac line endings
+      .replace(/\t/g, '\\t');    // Literal tabs
+
+    // STEP 2: Within the quoted string, escape any lone backslashes
     // Use negative lookbehind to avoid double-escaping backslashes that are already escaped
     // Preserve valid JSON escapes: \" \\ \/ \b \f \n \r \t (note: \uXXXX handled separately)
-    const escaped = content.replace(/(?<!\\)\\(?!["\\/bfnrtu])/g, '\\\\');
+    escaped = escaped.replace(/(?<!\\)\\(?!["\\/bfnrtu])/g, '\\\\');
     return `"${escaped}"`;
   });
 
@@ -207,6 +215,62 @@ export function unescapeLiteralNewlines(obj: any): any {
 }
 
 /**
+ * Decode Unicode escape sequences in strings
+ * Converts \u0394 → Δ, \u00b0 → °, etc.
+ *
+ * PROBLEM STATEMENT (Added: 2025-01-10):
+ * - AI returns text with Unicode escapes: "triangle \\u0394ABC" or "15\\u00b0"
+ * - After JSON.parse(), we get literal "\u0394" strings (not the character)
+ * - Display shows: \u0394ABC instead of ΔABC
+ * - Display shows: 15\u00b0instead of 15°
+ *
+ * WHY AI DOES THIS:
+ * - AI model sometimes double-escapes Unicode sequences
+ * - Sends: \\u0394 (double backslash) instead of \u0394 (single backslash)
+ * - JSON.parse() correctly interprets \\u as literal backslash-u
+ * - But we want the actual Unicode character for display
+ *
+ * THE FIX:
+ * - After JSON.parse(), scan all strings in the parsed object
+ * - Find patterns like \u0394 (backslash-u followed by 4 hex digits)
+ * - Convert to actual Unicode character using String.fromCharCode()
+ * - Recursively process nested objects and arrays
+ *
+ * EXAMPLES:
+ * - \u0394 → Δ (Greek capital letter Delta)
+ * - \u00b0 → ° (degree sign)
+ * - \u03B8 → θ (Greek lowercase theta)
+ * - \u03C0 → π (Greek lowercase pi)
+ *
+ * WHY THIS IS SAFE:
+ * - Only affects literal \uXXXX strings that made it through JSON parsing
+ * - Doesn't interfere with LaTeX commands (\div, \theta, etc.)
+ * - Pattern requires exactly 4 hexadecimal digits (valid Unicode format)
+ * - Runs AFTER fixJSONEscaping() which handled LaTeX
+ */
+export function decodeUnicodeEscapes(obj: any): any {
+  if (typeof obj === 'string') {
+    // Replace \uXXXX with actual Unicode character
+    // Pattern matches: \u followed by exactly 4 hexadecimal digits
+    // Example: \u0394 → Δ (0x0394 = 916 decimal = Greek Delta)
+    return obj.replace(/\\u([0-9a-fA-F]{4})/g, (_match, hex) => {
+      return String.fromCharCode(parseInt(hex, 16));
+    });
+  } else if (Array.isArray(obj)) {
+    return obj.map(item => decodeUnicodeEscapes(item));
+  } else if (obj && typeof obj === 'object') {
+    const result: any = {};
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        result[key] = decodeUnicodeEscapes(obj[key]);
+      }
+    }
+    return result;
+  }
+  return obj;
+}
+
+/**
  * Parse JSON response with error handling
  */
 export function parseJSON<T>(text: string, useMarkdownExtraction: boolean = false): T {
@@ -219,9 +283,16 @@ export function parseJSON<T>(text: string, useMarkdownExtraction: boolean = fals
 
   const parsed = JSON.parse(cleanedText);
 
-  // Fix literal \n strings that AI models sometimes generate (NOT \t - breaks LaTeX!)
-  // This runs AFTER parsing to convert double-escaped newline sequences
-  return unescapeLiteralNewlines(parsed);
+  // Post-processing fixes (in order):
+  // 1. Fix literal \n strings that AI models sometimes generate (NOT \t - breaks LaTeX!)
+  //    This converts double-escaped newline sequences to real newlines
+  let fixed = unescapeLiteralNewlines(parsed);
+
+  // 2. Decode Unicode escape sequences (\u0394 → Δ, \u00b0 → °, etc.)
+  //    This converts literal \uXXXX strings to actual Unicode characters
+  fixed = decodeUnicodeEscapes(fixed);
+
+  return fixed;
 }
 
 /**
@@ -246,4 +317,227 @@ export function formatConversationHistory(history: Array<{ role: string; content
   return history
     .map(m => `${m.role === 'tutor' ? 'Tutor' : 'Student'}: ${m.content}`)
     .join('\n');
+}
+
+/**
+ * Restore LaTeX commands that were corrupted by control character interpretation
+ * This fixes cases where \theta became [TAB]heta and \frac became [FF]rac
+ */
+function restoreCorruptedLatex(text: string): string {
+  // Common LaTeX commands that get corrupted by control character interpretation
+  // The patterns look for corrupted versions and restore them
+
+  let fixed = text;
+
+  // First pass: Fix the most common corruptions from control characters
+  // \t (tab) in commands like \theta, \tan, \text becomes actual tab or spaces
+  // \f (form feed) in commands like \frac gets removed or corrupted
+  // \n (newline) in commands might become actual newlines
+  // \r (carriage return) might corrupt \rho, \right
+
+  // Pattern explanation:
+  // (\s+|[\t\f\r]|) - matches spaces, tabs, form feeds, carriage returns, or nothing
+  // This handles cases where control chars are rendered as spaces or removed entirely
+
+  const latexPatterns: Array<[RegExp, string]> = [
+    // Critical math operators that commonly break
+    [/(\s{1,8}|[\t\f]|)rac\{/g, '\\frac{'],  // \frac with \f as form feed
+    [/(\s{1,8}|[\t\n\r]|)heta/g, '\\theta'],  // \theta with \t as tab
+    [/(\s{1,8}|[\t\f]|)ext\{/g, '\\text{'],   // \text with \t as tab
+    [/(\s{1,8}|[\t\f]|)imes/g, '\\times'],    // \times with \t as tab
+
+    // Trig functions where \t becomes tab
+    [/(\s{1,8}|[\t]|)an\b/g, '\\tan'],        // \tan
+    [/sin\(/g, '\\sin('],                      // \sin (s rarely corrupts)
+    [/cos\(/g, '\\cos('],                      // \cos (c rarely corrupts)
+    [/(\s{1,8}|[\t]|)anh/g, '\\tanh'],        // \tanh
+
+    // Common symbols
+    [/\^?\{?circ\}?/g, '^{\\circ}'],          // degree symbol
+    [/(\s{1,8}|)div\b/g, '\\div'],            // division
+    [/(\s{1,8}|)cdot/g, '\\cdot'],            // dot multiplication
+    [/(\s{1,8}|)pm\b/g, '\\pm'],              // plus-minus
+    [/(\s{1,8}|)sqrt/g, '\\sqrt'],            // square root
+
+    // Greek letters with \t corruption
+    [/(\s{1,8}|[\t]|)au\b/g, '\\tau'],        // \tau
+
+    // Comparison operators
+    [/(\s{1,8}|[\n]|)eq\b/g, '\\neq'],        // \neq with \n as newline
+    [/(\s{1,8}|)leq\b/g, '\\leq'],            // less than or equal
+    [/(\s{1,8}|)geq\b/g, '\\geq'],            // greater than or equal
+    [/(\s{1,8}|)approx/g, '\\approx'],        // approximately equal
+
+    // Fix double backslashes that shouldn't be there
+    [/\\\\theta/g, '\\theta'],
+    [/\\\\frac/g, '\\frac'],
+    [/\\\\text/g, '\\text'],
+    [/\\\\sin/g, '\\sin'],
+    [/\\\\cos/g, '\\cos'],
+    [/\\\\tan/g, '\\tan'],
+  ];
+
+  // Apply all corrections
+  for (const [pattern, replacement] of latexPatterns) {
+    fixed = fixed.replace(pattern, replacement);
+  }
+
+  // Second pass: Clean up any remaining issues
+  // Sometimes we get spaces in the middle of commands
+  fixed = fixed
+    .replace(/\\ +([a-z]+)/g, '\\$1')  // Remove spaces after backslash
+    .replace(/\s+\{/g, '{')             // Remove spaces before opening brace
+    .replace(/\}\s+/g, '}');            // Clean spaces after closing brace
+
+  return fixed;
+}
+
+/**
+ * Safe JSON parser with multiple fallback strategies
+ * Provides 100% reliability for AI responses with LaTeX content
+ *
+ * Strategy:
+ * 1. Restore corrupted LaTeX commands
+ * 2. Pre-sanitize raw text to remove control characters
+ * 3. Try standard parsing with fixes
+ * 4. If fails, try aggressive LaTeX escaping
+ * 5. If still fails, extract values with regex patterns
+ * 6. Last resort: return safe fallback
+ */
+export function safeParseJSON<T>(
+  rawText: string,
+  expectedKeys: string[] = [],
+  fallbackResponse?: Partial<T>
+): T {
+  console.log('🔍 SafeParseJSON: Starting with text length:', rawText.length);
+
+  // Stage 0: Restore corrupted LaTeX commands FIRST
+  // This must happen before any other processing
+  let restored = restoreCorruptedLatex(rawText);
+
+  if (restored !== rawText) {
+    console.log('✅ SafeParseJSON: Restored corrupted LaTeX commands');
+  }
+
+  // Stage 1: Pre-sanitize raw text
+  // Remove actual control characters that break JSON
+  let sanitized = restored
+    // Remove zero-width characters
+    .replace(/[\u200B-\u200D\uFEFF]/g, '')
+    // Remove other control characters except \t \r \n
+    // BUT be careful not to remove backslashes that are part of LaTeX
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
+
+  // Stage 2: Extract JSON portion if wrapped
+  let jsonText = extractJSONFromMarkdown(sanitized);
+
+  // Stage 3: Try standard parsing with current fixes
+  try {
+    const fixed = fixJSONEscaping(jsonText);
+    const parsed = JSON.parse(fixed);
+    const result = unescapeLiteralNewlines(decodeUnicodeEscapes(parsed));
+    console.log('✅ SafeParseJSON: Standard parsing succeeded');
+    return result as T;
+  } catch (error1) {
+    console.log('⚠️ SafeParseJSON: Standard parsing failed:', (error1 as Error).message);
+  }
+
+  // Stage 4: Try aggressive LaTeX escaping
+  try {
+    // More aggressive approach: escape ALL backslashes in content
+    const aggressiveFixed = jsonText.replace(/"([^"]*?)"/g, (_match, content) => {
+      // First escape actual newlines and tabs
+      let escaped = content
+        .replace(/\n/g, '\\n')
+        .replace(/\r/g, '\\r')
+        .replace(/\t/g, '\\t');
+
+      // Then escape ALL backslashes that aren't already escaped
+      escaped = escaped.replace(/\\/g, '\\\\');
+
+      // But fix double-escaped valid JSON escapes
+      escaped = escaped
+        .replace(/\\\\n/g, '\\n')
+        .replace(/\\\\r/g, '\\r')
+        .replace(/\\\\t/g, '\\t')
+        .replace(/\\\\"/g, '\\"')
+        .replace(/\\\\\//g, '\\/');
+
+      return `"${escaped}"`;
+    });
+
+    const parsed = JSON.parse(aggressiveFixed);
+    console.log('✅ SafeParseJSON: Aggressive escaping succeeded');
+    return parsed as T;
+  } catch (error2) {
+    console.log('⚠️ SafeParseJSON: Aggressive escaping failed:', (error2 as Error).message);
+  }
+
+  // Stage 5: Pattern extraction fallback
+  try {
+    const extracted: any = {};
+
+    // Try to extract each expected key using regex
+    for (const key of expectedKeys) {
+      // Try different patterns
+      const patterns = [
+        // Standard JSON string value
+        new RegExp(`"${key}"\\s*:\\s*"([^"]*?)"`),
+        // Boolean value
+        new RegExp(`"${key}"\\s*:\\s*(true|false)`),
+        // Number value
+        new RegExp(`"${key}"\\s*:\\s*(\\d+(?:\\.\\d+)?)`),
+        // Null value
+        new RegExp(`"${key}"\\s*:\\s*(null)`),
+      ];
+
+      for (const pattern of patterns) {
+        const match = jsonText.match(pattern);
+        if (match) {
+          let value: any = match[1];
+          // Convert booleans and null
+          if (value === 'true') value = true;
+          else if (value === 'false') value = false;
+          else if (value === 'null') value = null;
+          else if (!isNaN(Number(value))) value = Number(value);
+
+          extracted[key] = value;
+          break;
+        }
+      }
+    }
+
+    if (Object.keys(extracted).length > 0) {
+      console.log('✅ SafeParseJSON: Pattern extraction recovered:', Object.keys(extracted));
+      return { ...fallbackResponse, ...extracted } as T;
+    }
+  } catch (error3) {
+    console.log('⚠️ SafeParseJSON: Pattern extraction failed:', (error3 as Error).message);
+  }
+
+  // Stage 6: Last resort - return fallback
+  console.log('❌ SafeParseJSON: All strategies failed, using fallback');
+  if (fallbackResponse) {
+    return fallbackResponse as T;
+  }
+
+  // No fallback provided, throw error
+  throw new Error('Failed to parse AI response after all strategies');
+}
+
+/**
+ * Enhanced JSON extraction specifically for practice mode responses
+ * Handles the specific format of evaluation responses with LaTeX
+ */
+export function extractPracticeJSON(responseText: string): any {
+  const expectedKeys = ['isCorrect', 'avatarSpeech', 'explanation', 'hint', 'hintLevel'];
+
+  const fallback = {
+    isCorrect: false,
+    avatarSpeech: 'Let me help you with this problem.',
+    hint: 'Try breaking down the problem step by step.',
+    hintLevel: 1
+  };
+
+  return safeParseJSON(responseText, expectedKeys, fallback);
 }

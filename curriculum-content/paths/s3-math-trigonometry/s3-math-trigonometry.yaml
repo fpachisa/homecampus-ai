@@ -13,13 +13,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-basic-ratios
-          weight: 1.0
       problemDescription:
         - "Provide a right-angled triangle with side lengths, and ask to find the sine, cosine, and tangent. BUT ask only for one ratio at a time."
       contexts: []
       difficulty: easy
+      mathTool: "rightTriangle"
   - id: trig-node-2
     nodeNumber: 2
     title: Finding Side Lengths
@@ -27,13 +25,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-basic-ratios
-          weight: 1.0
       problemDescription:
         - "Given a right triangle with one angle and one side length, ask to find the length of another side using sine, cosine, or tangent."
       contexts: []
       difficulty: easy
+      mathTool: "rightTriangle"
   - id: trig-node-3
     nodeNumber: 3
     title: Finding Angles
@@ -41,13 +37,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-basic-ratios
-          weight: 1.0
       problemDescription:
         - "Provide a right triangle with two side lengths, and ask to find one of the non-right angles using inverse trigonometric functions."
       contexts: []
       difficulty: easy
+      mathTool: "rightTriangle"
   - id: trig-node-4
     nodeNumber: 4
     title: Mixed Problems
@@ -55,13 +49,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-basic-ratios
-          weight: 1.0
       problemDescription:
         - "Mix of problems finding ratios, side lengths, and angles in right triangles using basic trigonometric functions."
       contexts: []
       difficulty: easy
+      mathTool: "rightTriangle"
   - id: trig-node-5
     nodeNumber: 5
     title: Special Trigonometric Angles
@@ -69,13 +61,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-basic-ratios
-          weight: 1.0
       problemDescription:
         - "Problems involving special angles (30°, 45°, 60°) to find trigonometric ratios, side lengths, or angles in right triangles."
       contexts: []
       difficulty: easy
+      mathTool: "rightTriangle"
   - id: trig-node-6
     nodeNumber: 6
     title: Real-World Applications
@@ -83,13 +73,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-basic-ratios
-          weight: 1.0
       problemDescription:
         - "Simple real-world scenarios (like ladders, ramps, or heights) requiring the use of basic trigonometric ratios to solve."
       contexts: ["construction", "navigation", "architecture"]
       difficulty: easy
+      mathTool: "rightTriangle"
   - id: trig-node-7
     nodeNumber: 7
     title: Elevation and Depression Angles
@@ -97,13 +85,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-problem-solving
-          weight: 1.0
       problemDescription:
         - "Problems involving angles of elevation and depression, requiring the use of basic trigonometric ratios to find heights or distances."
       contexts: ["navigation", "surveying"]
       difficulty: easy
+      mathTool: "elevationDepression"
   - id: trig-node-8
     nodeNumber: 8
     title: 3-D Visualization
@@ -111,13 +97,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-problem-solving
-          weight: 1.0
       problemDescription:
         - "Simple 3D problems involving right triangles in three-dimensional space, requiring the use of basic trigonometric ratios and pythagorean theorem. "
-      contexts: [] 
+      contexts: []
       difficulty: easy
+      mathTool: "cuboid"
   - id: trig-node-9
     nodeNumber: 9
     title: True Bearing Calculations
@@ -125,13 +109,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-true-bearings
-          weight: 1.0
       problemDescription:
         - "Provide basic bearings diagram and ask to calculate true bearings in different scenarios."
       contexts: []
       difficulty: easy
+      mathTool: "bearings"
   - id: trig-node-10
     nodeNumber: 10
     title: Back Bearings and Reverse directions
@@ -139,13 +121,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-true-bearings
-          weight: 1.0
       problemDescription:
         - "Problems involving calculating back bearings and reverse directions"
       contexts: []
       difficulty: easy
+      mathTool: "bearings"
   - id: trig-node-11
     nodeNumber: 11
     title: True Bearing Navigation Problems
@@ -153,13 +133,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-true-bearings
-          weight: 1.0
       problemDescription:
         - "Simple navigation problems involving true bearings, distances, and directions"
       contexts: ["navigation", "maritime", "aviation"]
       difficulty: easy
+      mathTool: "bearings"
   - id: trig-node-12
     nodeNumber: 12
     title: Calculations using Obtuse Angles
@@ -167,13 +145,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-obtuse-angles
-          weight: 1.0
       problemDescription:
         - "Provide an obtuse triangle and ask to find sine, cosine and tangent of the obtuse angle. Only one ratio at a time."
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-13
     nodeNumber: 13
     title: Word Problems with Obtuse Angles
@@ -181,13 +157,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-obtuse-angles
-          weight: 1.0
       problemDescription:
         - "Simple word problems involving obtuse angles in real-world scenarios, requiring the use of trigonometric ratios and properties of triangles"
       contexts: ["architecture", "engineering"]
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-14
     nodeNumber: 14
     title: Area of Triangles using Trigonometry
@@ -195,13 +169,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-area-of-triangles
-          weight: 1.0
       problemDescription:
         - "Provide a triangle and ask to calculate area that requires using ½ab sin C"
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-15
     nodeNumber: 15
     title: Finding Side Lengths/Angles using area
@@ -209,13 +181,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-area-of-triangles
-          weight: 1.0
       problemDescription:
         - "Given the area of a triangle and some side lengths/angles, ask to find a missing side length or angle using the area formula ½ab sin C"
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-16
     nodeNumber: 16
     title: Mixed Problems on Area of Triangles
@@ -223,13 +193,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-area-of-triangles
-          weight: 1.0
       problemDescription:
         - "Mix of problems finding area, side lengths, and angles in triangles using the area formula ½ab sin C"
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-17
     nodeNumber: 17
     title: Sine Rule Basics
@@ -237,13 +205,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-sine-rule
-          weight: 1.0
       problemDescription:
         - "Provide a triangle with two angles and one side, and ask to find a missing side using the Sine Rule."
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-18
     nodeNumber: 18
     title: Sine Rule Basics - Finding Angles
@@ -251,13 +217,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-sine-rule
-          weight: 1.0
       problemDescription:
         - "Provide a triangle with two sides and one angle, and ask to find a missing angle using the Sine Rule."
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-19
     nodeNumber: 19
     title: Sine Rule Mixed Problems
@@ -265,13 +229,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-sine-rule
-          weight: 1.0
       problemDescription:
         - "Real world scenarios requiring the use of the Sine Rule to find missing sides or angles in triangles."
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-20
     nodeNumber: 20
     title: Cosine Rule Basics
@@ -279,13 +241,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-cosine-rule
-          weight: 1.0
       problemDescription:
         - "Provide a triangle with two sides and the included angle, and ask to find the third side using the Cosine Rule."
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-21
     nodeNumber: 21
     title: Cosine Rule Basics - Finding Angles
@@ -293,13 +253,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-cosine-rule
-          weight: 1.0
       problemDescription:
         - "Provide a triangle with all three sides, and ask to find one of the angles using the Cosine Rule."
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
   - id: trig-node-22
     nodeNumber: 22
     title: Mix of Cosine and Sine Rule
@@ -307,15 +265,11 @@ nodes:
     problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-cosine-rule
-          weight: 0.5
-        - id: s3-math-trigonometry-sine-rule
-          weight: 0.5
       problemDescription:
         - "Mix of problems requiring the use of both the Sine Rule and Cosine Rule to find missing sides or angles in triangles. But don't reveal which rule to use."
       contexts: []
       difficulty: easy
+      mathTool: "generalTriangle"
 
   # ═══════════════════════════════════════════════════════════
   # INTEGRATION LAYER (Nodes 8-11): Combined Concepts
@@ -323,158 +277,142 @@ nodes:
 
   - id: trig-node-23
     nodeNumber: 23
-    title: Sine & Cosine Rule Combined
+    title: Trig Ratios of Exterior Angles
     layer: integration
-    problemsRequired: 7
+    problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-sine-rule
-          weight: 0.5
-        - id: s3-math-trigonometry-cosine-rule
-          weight: 0.5
       problemDescription:
-        - "Given triangle information, determine whether to use sine rule or cosine rule, then solve."
-        - "Multi-step problems: Use cosine rule to find one side, then sine rule to find an angle."
-        - "Mixed problems where you must choose the appropriate rule based on given information (AAS, ASA, SAS, SSA, SSS)."
-      contexts: ["surveying", "engineering"]
+        - "Triangle ABC with extended line to point D, forming an exterior angle"
+        - "Given: One side length and one trig ratio (e.g., AC = 26 cm, sin∠BCA = 12/13)"
+        - "Find: sin, cos, or tan of the EXTERIOR angle (e.g., ∠ACD)"
+        - "Only ask for ONE trig ratio at a time (sin OR cos OR tan of the exterior angle)"
+      contexts: []
+      difficulty: easy
+      mathTool: "extendedLineTriangle"
 
   - id: trig-node-24
     nodeNumber: 24
-    title: Bearings with Trigonometric Rules
+    title: Multiple Angles of Depression
     layer: integration
-    problemsRequired: 7
+    problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-true-bearings
-          weight: 0.4
-        - id: s3-math-trigonometry-sine-rule
-          weight: 0.3
-        - id: s3-math-trigonometry-cosine-rule
-          weight: 0.3
       problemDescription:
-        - "A plane flies bearing 065° for 200km, then bearing 140° for 150km. How far is it from start? Use bearings to form triangle, then apply sine/cosine rule."
-        - "Navigation problems combining bearings, interior angles (using parallel North lines), and triangle solving."
-        - "Find the bearing and distance to return directly to the starting point after multi-leg journeys."
-      contexts: ["navigation", "maritime", "aviation"]
+        - "Observer at top of cliff/building sees two objects (boats, cars, etc.) at different angles of depression. Given the height and both angles, find the distance between the two objects."
+        - "Example: Person at cliff top sees two boats. Angles of depression are 62° and 36°. Height is 130m. Find distance between boats."
+      contexts: ["navigation", "surveying", "maritime"]
+      difficulty: easy
+      mathTool: "multipleDepressionAngles"
 
   - id: trig-node-25
     nodeNumber: 25
-    title: 3D Trigonometry Problems
+    title: Quadrilateral Multi-Step Problems
     layer: integration
-    problemsRequired: 7
+    problemsRequired: 5
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-problem-solving
-          weight: 1.0
       problemDescription:
-        - "3D problems in cuboids: Find angles between diagonals and planes. Use Pythagoras to find base diagonal, then trig for angle."
-        - "Pyramid problems: Find angles between edges, faces, and the base using perpendicular heights and slant heights."
-        - "Multi-step: Extract the relevant 2D triangle from 3D shape, apply Pythagoras for intermediate lengths, then use trig ratios."
-      contexts: ["architecture", "engineering"]
+        - "Four points lying on horizontal ground forming a quadrilateral (e.g., PQRS). Given: two sides, three angles at various vertices, and one diagonal."
+        - "Example: Points P, Q, R, S on horizontal ground. PQ = 250m, SR = 285m, ∠QPR = 36°, ∠PSR = 47°, ∠SPR = 70°."
+        - "Ask various questions like (but only one at a time): (a) finding diagonal length using sine/cosine rule, (b) finding other side lengths, (c) calculating triangle areas using ½ab sin C, (d) finding perpendicular distances/shortest distance."
+      contexts: []
+      difficulty: easy
+      mathTool: "quadrilateral"
 
   - id: trig-node-26
     nodeNumber: 26
-    title: Area of Triangles & Applications
+    title: "Exam Practice: Quadrilateral PQRS"
     layer: integration
-    problemsRequired: 7
+    problemsRequired: 4
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-area-of-triangle
-          weight: 0.7
-        - id: s3-math-trigonometry-sine-rule
-          weight: 0.3
-      problemDescription:
-        - "Calculate triangle area using the formula: Area = ½ab sin C (two sides and included angle)."
-        - "Reverse problems: Given area and two sides, find the included angle."
-        - "Multi-step: Use sine rule to find a missing side or angle first, then calculate area."
-        - "Real-world applications: Land surveying, triangular plots, roof areas."
-      contexts: ["surveying", "architecture", "construction"]
+      # This is a pre-written exam-style question - NOT AI generated
+      aiGeneratedQuestions: false
+      difficulty: medium
 
-  # ═══════════════════════════════════════════════════════════
-  # APPLICATION LAYER (Nodes 12-15): Exam-Style Problems
-  # ═══════════════════════════════════════════════════════════
+      # Pre-written questions from actual exam paper
+      preWrittenQuestions:
+        - id: "q26-part-a"
+          questionGroup: "q26"
+          problemText: "Points P, Q, R, S lie on a horizontal ground. PQ = 250 m, SR = 285 m, ∠QPR = 36°, ∠PSR = 47° and ∠SPR = 70°. Calculate:<br><br>(a) the length of PR."
+          avatarIntro: "Let's work through this comprehensive quadrilateral problem from an actual exam. We'll tackle each part step by step."
+          diagramSvg: "/diagrams/s3-trig-26-pqrs.svg"
+
+        - id: "q26-part-b"
+          questionGroup: "q26"
+          problemText: "Points P, Q, R, S lie on a horizontal ground. PQ = 250 m, SR = 285 m, ∠QPR = 36°, ∠PSR = 47° and ∠SPR = 70°. Calculate:<br><br>(b) the length of QR."
+          diagramSvg: "/diagrams/s3-trig-26-pqrs.svg"
+
+        - id: "q26-part-c"
+          questionGroup: "q26"
+          problemText: "Points P, Q, R, S lie on a horizontal ground. PQ = 250 m, SR = 285 m, ∠QPR = 36°, ∠PSR = 47° and ∠SPR = 70°. Calculate:<br><br>(c) the area of triangle PSR."
+          diagramSvg: "/diagrams/s3-trig-26-pqrs.svg"
+
+        - id: "q26-part-d"
+          questionGroup: "q26"
+          problemText: "Points P, Q, R, S lie on a horizontal ground. PQ = 250 m, SR = 285 m, ∠QPR = 36°, ∠PSR = 47° and ∠SPR = 70°. Calculate:<br><br>(d) the shortest distance from Q to PR."
+          diagramSvg: "/diagrams/s3-trig-26-pqrs.svg"
 
   - id: trig-node-27
     nodeNumber: 27
-    title: Multi-Step Problem Solving
-    layer: application
-    problemsRequired: 8
+    title: "Exam Practice: Bearings and Elevation DABC"
+    layer: integration
+    problemsRequired: 6
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-sine-rule
-          weight: 0.3
-        - id: s3-math-trigonometry-cosine-rule
-          weight: 0.3
-        - id: s3-math-trigonometry-problem-solving
-          weight: 0.4
-      problemDescription:
-        - "Complex problems requiring 3+ steps: bearings, triangle formation, multiple rule applications, and distance/angle calculations."
-        - "Exam-style Section A questions: Structured problems with clear parts (a), (b), (c) building on each other."
-        - "Problems combining elevation/depression angles with bearings and triangle solving."
-      contexts: ["navigation", "surveying", "engineering"]
+      # This is a pre-written exam-style question - NOT AI generated
+      aiGeneratedQuestions: false
+      difficulty: medium
+
+      # Pre-written questions from actual exam paper
+      preWrittenQuestions:
+        - id: "q27-part-a-i"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. Calculate:<br><br> (a) the bearing of A from C."
+          avatarIntro: "Let's work through this bearings and elevation problem from an actual exam. We have points on level ground with a building, and we'll solve each part systematically."
+          diagramSvg: "/diagrams/s3-trig-27-dabc.svg"
+
+        - id: "q27-part-a-ii"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. Calculate:<br><br>(b) length AC."
+          diagramSvg: "/diagrams/s3-trig-27-dabc.svg"
+
+        - id: "q27-part-a-iii"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. Calculate:<br><br>(c) length DC."
+          diagramSvg: "/diagrams/s3-trig-27-dabc.svg"
+
+        - id: "q27-part-a-iv"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. Calculate:<br><br>(d) the shortest distance from D to AC."
+          diagramSvg: "/diagrams/s3-trig-27-dabc.svg"
+
+        - id: "q27-part-b-i"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. <br><br>DH is a building. Point H is vertically above D. The angle of elevation of H from A is 9°. Calculate:<br><br>(e) the height of the building."
+          diagramSvg: "/diagrams/s3-trig-27-dabc.svg"
+
+        - id: "q27-part-b-ii"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. <br><br>DH is a building. Point H is vertically above D. The angle of elevation of H from A is 9°. Calculate:<br><br>(f) the greatest possible angle of elevation of H from a point on AC."
+          diagramSvg: "/diagrams/s3-trig-27-dabc.svg"
 
   - id: trig-node-28
     nodeNumber: 28
-    title: Advanced Navigation & Bearings
-    layer: application
-    problemsRequired: 8
+    title: "Exam Practice: Right Triangle and Area Bearings"
+    layer: integration
+    problemsRequired: 6
     prerequisites: []
     descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-true-bearings
-          weight: 0.5
-        - id: s3-math-trigonometry-sine-rule
-          weight: 0.25
-        - id: s3-math-trigonometry-cosine-rule
-          weight: 0.25
-      problemDescription:
-        - "Three-point navigation problems: A→B→C, find distance A→C and bearing from C back to A."
-        - "Problems with multiple course changes, requiring careful angle analysis and sequential triangle solving."
-        - "Mixed 2D/3D navigation: Aircraft altitude changes combined with horizontal bearings and distances."
-      contexts: ["aviation", "maritime", "rally racing"]
+      # This is a pre-written exam-style question - NOT AI generated
+      aiGeneratedQuestions: false
+      difficulty: medium
 
-  - id: trig-node-29
-    nodeNumber: 29
-    title: Advanced 3D & Spatial Reasoning
-    layer: application
-    problemsRequired: 8
-    prerequisites: []
-    descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-problem-solving
-          weight: 0.6
-        - id: s3-math-trigonometry-area-of-triangle
-          weight: 0.4
-      problemDescription:
-        - "Complex 3D geometry: Find angles between lines and planes in pyramids, prisms, and irregular shapes."
-        - "Problems requiring multiple 2D triangle extractions from the same 3D shape."
-        - "Combined problems: Find angles in 3D, then calculate surface areas or volumes using those angles."
-      contexts: ["architecture", "engineering", "construction"]
-
-  - id: trig-node-30
-    nodeNumber: 30
-    title: Exam-Style Mixed Problems
-    layer: application
-    problemsRequired: 8
-    prerequisites: []
-    descriptor:
-      subtopics:
-        - id: s3-math-trigonometry-sine-rule
-          weight: 0.25
-        - id: s3-math-trigonometry-cosine-rule
-          weight: 0.25
-        - id: s3-math-trigonometry-problem-solving
-          weight: 0.25
-        - id: s3-math-trigonometry-area-of-triangle
-          weight: 0.25
-      problemDescription:
-        - "Exam-style Section B questions: Complex application problems requiring selection and integration of multiple concepts."
-        - "Open-ended problems where you must decide which techniques to apply: 'A surveyor needs to... Design a solution approach.'"
-        - "Challenge problems combining 4+ concepts: bearings + 3D geometry + area calculations + rule selection."
-        - "Time-pressured exam simulation: Solve efficiently, show clear working, interpret results in context."
-      contexts: ["exams", "real-world applications", "problem-solving"]
+      # Pre-written questions from actual exam paper
+      preWrittenQuestions:
+        - id: "q28-part-1-a"
+          questionGroup: "q28"
+          problemText: "In the diagram below, ∠DAC = 90°, ∠ACD = 67°, CD = 8 cm, AB = 9 cm, and ABC is a straigt line. Find (a) the length of BC."
+          avatarIntro: "This is a multi-part exam question involving a right triangle and bearings. We'll go through each part step by step."
+          diagramSvg: "/diagrams/s3-trig-28-part-1.svg"

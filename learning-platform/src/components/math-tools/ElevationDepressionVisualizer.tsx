@@ -53,13 +53,25 @@ const ElevationDepressionVisualizer: React.FC<ElevationDepressionVisualizerProps
 
   // SVG dimensions
   const svgWidth = 500;
-  const svgHeight = 350;
   const padding = 40;
 
   // Calculate geometry
   const horizontalLength = 300;
   const angleRad = (calculatedAngle * Math.PI) / 180;
   const verticalLength = horizontalLength * Math.tan(angleRad);
+
+  // Dynamic height based on type and angle
+  // For elevation: need space for observer at bottom + vertical height + padding
+  // For depression: need space for observer at top + vertical height + padding
+  const minHeight = 300;
+  const calculatedHeight = type === 'elevation'
+    ? padding + 50 + verticalLength + 50 + padding  // top padding + observer space + vertical + target space + bottom padding
+    : padding + 50 + verticalLength + 50 + padding; // top padding + observer space + vertical + target space + bottom padding
+  const svgHeight = Math.max(minHeight, calculatedHeight);
+
+  // Dynamic label offset based on angle (for small angles, move label further from vertex)
+  const baseLabelOffset = 45;
+  const labelOffset = calculatedAngle < 25 ? baseLabelOffset + 20 : baseLabelOffset;
 
   // Colors
   const defaultColor = theme.colors.textSecondary || '#666';
@@ -232,8 +244,8 @@ const ElevationDepressionVisualizer: React.FC<ElevationDepressionVisualizerProps
 
               {/* Angle label */}
               <text
-                x={elevationObserverX + 45}
-                y={elevationObserverY - 25}
+                x={elevationObserverX + labelOffset}
+                y={elevationObserverY - (calculatedAngle < 25 ? 25 : 25)}
                 className="text-sm font-semibold"
                 fill={angleColor}
               >
@@ -282,7 +294,7 @@ const ElevationDepressionVisualizer: React.FC<ElevationDepressionVisualizerProps
           {/* "Angle of Elevation" label */}
           <text
             x={elevationObserverX + 50}
-            y={elevationObserverY - 50}
+            y={elevationObserverY - (calculatedAngle < 25 ? 60 : 50)}
             className="text-xs italic"
             fill={angleColor}
           >
@@ -454,8 +466,8 @@ const ElevationDepressionVisualizer: React.FC<ElevationDepressionVisualizerProps
 
               {/* Angle label */}
               <text
-                x={depressionObserverX + 45}
-                y={depressionObserverY + 20}
+                x={depressionObserverX + labelOffset}
+                y={depressionObserverY + (calculatedAngle < 25 ? 20 : 20)}
                 className="text-sm font-semibold"
                 fill={angleColor}
               >
@@ -504,7 +516,7 @@ const ElevationDepressionVisualizer: React.FC<ElevationDepressionVisualizerProps
           {/* "Angle of Depression" label */}
           <text
             x={depressionObserverX + 50}
-            y={depressionObserverY + 45}
+            y={depressionObserverY + (calculatedAngle < 25 ? 45 : 45)}
             className="text-xs italic"
             fill={angleColor}
           >

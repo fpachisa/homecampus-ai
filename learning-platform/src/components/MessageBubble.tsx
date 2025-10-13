@@ -2,23 +2,7 @@ import React from 'react';
 import MathText from './MathText';
 import { useTheme } from '../hooks/useTheme';
 import VisualizationRenderer from './visualizations/VisualizationRenderer';
-import { RightTriangleVisualizer } from './math-tools';
-import ElevationDepressionVisualizer from './math-tools/ElevationDepressionVisualizer';
-import CuboidVisualizer from './math-tools/CuboidVisualizer';
-import PyramidVisualizer from './math-tools/PyramidVisualizer';
-import BearingsVisualizer from './math-tools/BearingsVisualizer';
-import GeneralTriangleVisualizer from './math-tools/GeneralTriangleVisualizer';
-import CircleBasicVisualizer from './math-tools/CircleBasicVisualizer';
-import CircleChordVisualizer from './math-tools/CircleChordVisualizer';
-import CircleAngleVisualizer from './math-tools/CircleAngleVisualizer';
-import CircleTangentVisualizer from './math-tools/CircleTangentVisualizer';
-import ParabolaGraphVisualizer from './math-tools/ParabolaGraphVisualizer';
-import FactoringVisualizer from './math-tools/FactoringVisualizer';
-import CompletingSquareVisualizer from './math-tools/CompletingSquareVisualizer';
-import QuadraticFormulaVisualizer from './math-tools/QuadraticFormulaVisualizer';
-import VertexFormTransformVisualizer from './math-tools/VertexFormTransformVisualizer';
-import RootsVisualizer from './math-tools/RootsVisualizer';
-import WordProblemDiagramVisualizer from './math-tools/WordProblemDiagramVisualizer';
+import { MathToolRenderer } from './practice/MathToolRenderer';
 import type { Message } from '../types/types';
 
 interface Props {
@@ -210,115 +194,14 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
               </div>
             )}
 
-            {/* Math Tool rendering - for visual tools like RightTriangleVisualizer */}
+            {/* Math Tool rendering - using centralized MathToolRenderer */}
             {isTutor && message.metadata?.mathTool && (
               <div className="mt-4">
-                {message.metadata.mathTool.toolName === 'rightTriangle' && (
-                  <RightTriangleVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'elevationDepression' && (
-                  <ElevationDepressionVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'cuboid' && (
-                  <CuboidVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'pyramid' && (
-                  <PyramidVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'bearings' && (
-                  <BearingsVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'generalTriangle' && (
-                  <GeneralTriangleVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {/* Circle geometry tools */}
-                {(message.metadata.mathTool.toolName === 'circleBasic' || message.metadata.mathTool.toolName === 'circleWithArcs') && (
-                  <CircleBasicVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'circleWithChords' && (
-                  <CircleChordVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {(message.metadata.mathTool.toolName === 'circleSemicircle' ||
-                  message.metadata.mathTool.toolName === 'circleAngleCentre' ||
-                  message.metadata.mathTool.toolName === 'circleSameArc') && (
-                  <CircleAngleVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {(message.metadata.mathTool.toolName === 'circleTangent' || message.metadata.mathTool.toolName === 'circleTwoTangents') && (
-                  <CircleTangentVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {/* Quadratic equations tools */}
-                {message.metadata.mathTool.toolName === 'parabolaGraph' && (
-                  <ParabolaGraphVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'factoringVisualizer' && (
-                  <FactoringVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'completingSquareVisualizer' && (
-                  <CompletingSquareVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'quadraticFormulaVisualizer' && (
-                  <QuadraticFormulaVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'vertexFormTransform' && (
-                  <VertexFormTransformVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'rootsVisualizer' && (
-                  <RootsVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
-                {message.metadata.mathTool.toolName === 'wordProblemDiagram' && (
-                  <WordProblemDiagramVisualizer
-                    {...message.metadata.mathTool.parameters}
-                    caption={message.metadata.mathTool.caption}
-                  />
-                )}
+                <MathToolRenderer
+                  toolName={message.metadata.mathTool.toolName}
+                  parameters={message.metadata.mathTool.parameters}
+                  caption={message.metadata.mathTool.caption}
+                />
               </div>
             )}
           </>

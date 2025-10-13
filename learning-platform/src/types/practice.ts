@@ -16,13 +16,19 @@ export type PathLayer = 'foundation' | 'integration' | 'application';
 // NODE STRUCTURE
 // ============================================
 
-export interface NodeDescriptor {
-  // Which subtopics to sample from
-  subtopics: {
-    id: string;
-    weight: number;  // 0-1, probability of selection
-  }[];
+/**
+ * Pre-written question for exam-style problems
+ * Questions are loaded from YAML instead of AI-generated
+ */
+export interface PreWrittenQuestion {
+  id: string;                     // Unique identifier (e.g., "q26-a", "q26-b")
+  problemText: string;            // The actual question text
+  avatarIntro?: string;           // Optional intro speech (typically for first question only)
+  diagramSvg?: string;            // Optional path to pre-built SVG diagram
+  questionGroup?: string;         // Group identifier for multi-part questions (e.g., "q26", "q27")
+}
 
+export interface NodeDescriptor {
   // CRITICAL: Sample problems that define the pattern
   problemDescription: string[];
 
@@ -31,6 +37,21 @@ export interface NodeDescriptor {
 
   // Difficulty level (deprecated, use PathNode.layer instead)
   difficulty?: PathDifficulty;
+
+  // Required math tool/visualization for this node
+  // e.g., "rightTriangle", "extendedLineTriangle", "bearingsVisualizer"
+  mathTool?: string;
+
+  // @deprecated Use mathTool instead. Kept for backward compatibility.
+  extraMathTool?: string;
+
+  // NEW: Flag for pre-written vs AI-generated questions
+  // Default: true (AI-generated)
+  // Set to false for exam-style pre-written questions
+  aiGeneratedQuestions?: boolean;
+
+  // NEW: Pre-written questions (used when aiGeneratedQuestions = false)
+  preWrittenQuestions?: PreWrittenQuestion[];
 }
 
 export interface PathNode {
@@ -180,6 +201,21 @@ export interface PathProblem {
     parameters: Record<string, any>; // Tool-specific parameters
     caption: string;                // Caption describing the visualization
   };
+
+  // NEW: For pre-written questions with pre-built diagrams
+  diagramSvg?: string;             // Path to pre-built SVG diagram
+
+  // NEW: Group identifier for multi-part questions
+  questionGroup?: string;          // Group identifier (e.g., "q26", "q27") for related multi-part questions
+
+  // NEW: Metadata for pre-written questions
+  metadata?: {
+    isPreWritten?: boolean;        // True if loaded from YAML
+    avatarIntro?: string;          // Stored intro speech for first question
+    partNumber?: number;           // Part number (1, 2, 3, etc.)
+    totalParts?: number;           // Total number of parts in the question set
+    [key: string]: any;            // Allow other metadata
+  };
 }
 
 export interface ProblemAttempt {
@@ -212,7 +248,8 @@ export interface AttemptHistory {
   attemptNumber: number;
   studentAnswer: string;
   avatarSpeech: string;    // Brief speech for avatar
-  hint: string;            // Detailed hint for display
+  hint?: string;           // Detailed hint for display (only for incorrect answers)
+  explanation?: string;    // Brief explanation for correct answers
   isCorrect: boolean;
   timestamp: Date;
 }
@@ -220,8 +257,16 @@ export interface AttemptHistory {
 export interface EvaluationWithHistory {
   isCorrect: boolean;
   avatarSpeech: string;    // Brief encouraging speech for avatar (1-2 sentences)
-  hint: string;            // Detailed hint/feedback displayed on screen
-  hintLevel: number;       // 1-3 based on attempt number
+  hint?: string;           // Detailed hint for incorrect answers (only when isCorrect=false)
+  hintLevel?: number;      // 1-3 based on attempt number (only when isCorrect=false)
+  explanation?: string;    // Brief explanation for correct answers (only when isCorrect=true)
+}
+
+export interface RelatedQuestionContext {
+  problemId: string;
+  problemText: string;
+  studentAnswer: string;
+  isCorrect: boolean;
 }
 
 export interface ProblemSessionState {

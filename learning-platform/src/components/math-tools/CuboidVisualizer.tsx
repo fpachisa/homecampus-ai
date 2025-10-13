@@ -35,10 +35,26 @@ const CuboidVisualizer: React.FC<CuboidVisualizerProps> = ({
   const svgWidth = 500;
   const svgHeight = 400;
 
-  // 3D perspective settings - isometric-like view
-  const baseLength = 160; // Depth (front-back)
-  const baseWidth = 200; // Width (left-right)
-  const baseHeight = 180; // Height (up-down)
+  // Extract numeric values from dimension strings (e.g., "5cm" -> 5, "12" -> 12)
+  const parseNumeric = (value: string): number => {
+    const match = value.match(/[\d.]+/);
+    return match ? parseFloat(match[0]) : 1;
+  };
+
+  const widthNum = width ? parseNumeric(width) : 1;
+  const lengthNum = length ? parseNumeric(length) : 1;
+  const heightNum = height ? parseNumeric(height) : 1;
+
+  // Find the maximum dimension to use as reference for scaling
+  const maxDim = Math.max(widthNum, lengthNum, heightNum);
+
+  // Scale factor to fit nicely in the SVG
+  const scaleFactor = 150 / maxDim;
+
+  // Calculate proportional dimensions
+  const baseWidth = widthNum * scaleFactor; // Width (left-right)
+  const baseLength = lengthNum * scaleFactor; // Depth (front-back)
+  const baseHeight = heightNum * scaleFactor; // Height (up-down)
 
   // Isometric angles for pseudo-3D effect
   const depthOffsetX = baseLength * 0.5; // X offset for depth
@@ -259,11 +275,11 @@ const CuboidVisualizer: React.FC<CuboidVisualizerProps> = ({
           </foreignObject>
         )}
 
-        {/* Length label (bottom-left receding edge) */}
+        {/* Length label (bottom-right receding edge BC) */}
         {length && (
           <foreignObject
-            x={frontBottomLeft.x + depthOffsetX / 2 - 30}
-            y={frontBottomLeft.y - depthOffsetY / 2 - 30}
+            x={frontBottomRight.x + depthOffsetX / 2 + 10}
+            y={frontBottomRight.y - depthOffsetY / 2 - 15}
             width={60}
             height={30}
           >
@@ -285,20 +301,22 @@ const CuboidVisualizer: React.FC<CuboidVisualizerProps> = ({
               diagonalFace === 'front' ? frontBottomLeft.x + 80 :
               diagonalFace === 'side' ? frontBottomRight.x + 50 :
               diagonalFace === 'top' ? frontTopLeft.x + 80 :
-              frontBottomLeft.x + (backBottomRight.x - frontBottomLeft.x) / 2 - 40
+              // For bottom face: position along the diagonal AC (from A to C)
+              frontBottomLeft.x + (backBottomRight.x - frontBottomLeft.x) * 0.4 - 40
             }
             y={
               diagonalFace === 'front' ? frontBottomLeft.y - 80 :
               diagonalFace === 'side' ? frontBottomRight.y - 80 :
               diagonalFace === 'top' ? frontTopLeft.y - 30 :
-              frontBottomLeft.y + (backBottomRight.y - frontBottomLeft.y) / 2 + 10
+              // For bottom face: position along the diagonal AC
+              frontBottomLeft.y + (backBottomRight.y - frontBottomLeft.y) * 0.4 + 5
             }
             width={80}
             height={30}
           >
             <div className="flex items-center justify-center h-full">
               <div
-                className="text-base font-semibold"
+                className="text-base font-semibold px-2 rounded"
                 style={{ color: highlightElement === 'faceDiagonal' ? highlightColor : defaultColor }}
               >
                 <MathText>{`$${faceDiagonal}$`}</MathText>
@@ -311,13 +329,13 @@ const CuboidVisualizer: React.FC<CuboidVisualizerProps> = ({
         {spaceDiagonal && showSpaceDiagonal && (
           <foreignObject
             x={frontBottomLeft.x + (backTopRight.x - frontBottomLeft.x) / 2 - 40}
-            y={frontBottomLeft.y + (backTopRight.y - frontBottomLeft.y) / 2 - 40}
+            y={frontBottomLeft.y + (backTopRight.y - frontBottomLeft.y) / 2 - 55}
             width={80}
             height={30}
           >
             <div className="flex items-center justify-center h-full">
               <div
-                className="text-base font-semibold bg-white bg-opacity-80 px-1 rounded"
+                className="text-base font-semibold px-2 rounded"
                 style={{ color: highlightElement === 'spaceDiagonal' ? highlightColor : defaultColor }}
               >
                 <MathText>{`$${spaceDiagonal}$`}</MathText>

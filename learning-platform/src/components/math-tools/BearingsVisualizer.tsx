@@ -43,20 +43,21 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
 }) => {
   const { theme } = useTheme();
 
-  // SVG dimensions - Optimized for visibility
-  const svgWidth = 650;
-  const svgHeight = 400;
-  const padding = 40; // Padding from edges
-
-  // Calculate point positions based on bearings
-  // Start with first point at a fixed position
-  const positions: Array<{ x: number; y: number }> = [];
+  // SVG display dimensions - Fixed for consistent display size
+  const displayHeight = 400;
+  const padding = 60; // Padding from edges for labels and decorations
   const distanceScale = 180; // pixels per "unit" distance
+  const northLineLength = 100;
 
-  // Position first point - bottom-left area with minimal top space
-  positions.push({ x: 200, y: svgHeight - padding - 80 });
+  // ============================================
+  // STEP 1: Calculate all point positions
+  // ============================================
+  const positions: Array<{ x: number; y: number }> = [];
 
-  // Calculate subsequent points based on bearings and topology
+  // Position first point - will be adjusted after bounds calculation
+  positions.push({ x: 200, y: 280 });
+
+  // Calculate subsequent points based on bearings
   for (let i = 1; i < points.length; i++) {
     const previousLeg = legs.find(leg => leg.toPoint === i);
     if (previousLeg) {
@@ -73,11 +74,73 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
       });
     } else {
       // Fallback: place point arbitrarily if no connection defined
-      positions.push({ x: centerX + i * 50, y: centerY + i * 50 });
+      positions.push({ x: 200 + i * 50, y: 280 + i * 50 });
     }
   }
 
-  const northLineLength = 120; // INCREASED from 80
+  // ============================================
+  // STEP 2: Calculate bounds of all elements
+  // ============================================
+  let minX = Infinity, maxX = -Infinity;
+  let minY = Infinity, maxY = -Infinity;
+
+  // Include all point positions
+  positions.forEach(pos => {
+    minX = Math.min(minX, pos.x);
+    maxX = Math.max(maxX, pos.x);
+    minY = Math.min(minY, pos.y);
+    maxY = Math.max(maxY, pos.y);
+  });
+
+  // Account for north lines extending upward
+  positions.forEach(pos => {
+    minY = Math.min(minY, pos.y - northLineLength - 20); // +20 for "N" label
+  });
+
+  // Account for compass rose at first point (if enabled)
+  if (showCompassRose && positions.length > 0) {
+    const compassRadius = 70;
+    minX = Math.min(minX, positions[0].x - compassRadius);
+    maxX = Math.max(maxX, positions[0].x + compassRadius);
+    minY = Math.min(minY, positions[0].y - compassRadius);
+    maxY = Math.max(maxY, positions[0].y + compassRadius);
+  }
+
+  // Account for bearing arcs and labels (extend ~70px from points)
+  positions.forEach(pos => {
+    const arcExtent = 75; // Slightly larger to account for labels
+    minX = Math.min(minX, pos.x - arcExtent);
+    maxX = Math.max(maxX, pos.x + arcExtent);
+    minY = Math.min(minY, pos.y - arcExtent);
+    maxY = Math.max(maxY, pos.y + arcExtent);
+  });
+
+  // Account for bearing lines in single-point bearings
+  legs.forEach(leg => {
+    if (leg.fromPoint === leg.toPoint) {
+      const pos = positions[leg.fromPoint];
+      const bearing = points[leg.fromPoint].bearing;
+      if (bearing !== undefined && bearing !== null) {
+        const bearingLineLength = 140;
+        const mathAngle = 90 - bearing;
+        const rad = (mathAngle * Math.PI) / 180;
+        const lineEndX = pos.x + bearingLineLength * Math.cos(rad);
+        const lineEndY = pos.y - bearingLineLength * Math.sin(rad);
+        minX = Math.min(minX, lineEndX);
+        maxX = Math.max(maxX, lineEndX);
+        minY = Math.min(minY, lineEndY);
+        maxY = Math.max(maxY, lineEndY);
+      }
+    }
+  });
+
+  // ============================================
+  // STEP 3: Apply padding and create viewBox
+  // ============================================
+  const viewBoxMinX = minX - padding;
+  const viewBoxMinY = minY - padding;
+  const viewBoxWidth = (maxX - minX) + (2 * padding);
+  const viewBoxHeight = (maxY - minY) + (2 * padding);
 
   const colors = {
     primary: theme.colors.brand,
@@ -86,26 +149,7 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
     compass: '#4ECDC4',
     northLine: '#00BFFF',
     bearingLine: '#3498DB',
-    bearingArc: '#FF3333', // Brighter red for better visibility
-    interiorAngle: '#9B59B6'
-  };
-
-  // Helper: Calculate interior angle at a point (angle between incoming and outgoing paths)
-  const getInteriorAngle = (pointIndex: number): number | null => {
-    const incomingLeg = legs.find(leg => leg.toPoint === pointIndex);
-    const outgoingLeg = legs.find(leg => leg.fromPoint === pointIndex);
-
-    if (!incomingLeg || !outgoingLeg) return null;
-
-    const incomingBearing = points[incomingLeg.fromPoint].bearing ?? 0;
-    const outgoingBearing = points[pointIndex].bearing ?? 0;
-
-    // Interior angle is the difference between outgoing and incoming bearings
-    let angle = outgoingBearing - incomingBearing;
-    if (angle < 0) angle += 360;
-    if (angle > 180) angle = 360 - angle; // Use smaller angle
-
-    return angle;
+    bearingArc: '#FF3333' // Brighter red for better visibility
   };
 
   return (
@@ -120,9 +164,10 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
     >
       <svg
         width="100%"
-        height={svgHeight}
-        viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+        height={displayHeight}
+        viewBox={`${viewBoxMinX} ${viewBoxMinY} ${viewBoxWidth} ${viewBoxHeight}`}
         style={{ display: 'block', margin: '0 auto' }}
+        preserveAspectRatio="xMidYMid meet"
       >
         {/* ============================================ */}
         {/* NORTH REFERENCE LINES */}
@@ -135,7 +180,7 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
               x2={pos.x}
               y2={pos.y - northLineLength}
               stroke={colors.northLine}
-              strokeWidth="4"
+              strokeWidth="2"
               strokeDasharray="10,6"
               opacity="1"
             />
@@ -143,8 +188,7 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
               x={pos.x + 15}
               y={pos.y - northLineLength - 8}
               fill={colors.northLine}
-              fontSize="18"
-              fontWeight="bold"
+              fontSize="16"
             >
               N
             </text>
@@ -225,7 +269,7 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
                 x2={lineEndX}
                 y2={lineEndY}
                 stroke={colors.bearingLine}
-                strokeWidth="5"
+                strokeWidth="2.5"
                 markerEnd={`url(#arrowhead-${idx})`}
               />
 
@@ -238,7 +282,7 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
                       ${fromPos.y - 50 * Math.cos((bearing * Math.PI) / 180)}`}
                   fill="none"
                   stroke={colors.bearingArc}
-                  strokeWidth="3"
+                  strokeWidth="1.8"
                 />
               )}
 
@@ -259,10 +303,9 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
                           x={labelX}
                           y={labelY + 5}
                           fill="white"
-                          fontSize="20"
-                          fontWeight="bold"
+                          fontSize="18"
                           stroke="white"
-                          strokeWidth="4"
+                          strokeWidth="2"
                           paintOrder="stroke"
                           textAnchor="middle"
                         >
@@ -272,8 +315,7 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
                           x={labelX}
                           y={labelY + 5}
                           fill={colors.bearingArc}
-                          fontSize="20"
-                          fontWeight="bold"
+                          fontSize="18"
                           textAnchor="middle"
                         >
                           {bearing}°
@@ -301,13 +343,13 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
               <defs>
                 <marker
                   id={`arrowhead-${idx}`}
-                  markerWidth="8"
-                  markerHeight="8"
-                  refX="9"
-                  refY="3.5"
+                  markerWidth="5"
+                  markerHeight="5"
+                  refX="5"
+                  refY="2.5"
                   orient="auto"
                 >
-                  <polygon points="0 0, 10 3.5, 0 7" fill={colors.bearingLine} />
+                  <polygon points="0 0, 4 2.5, 0 5" fill={colors.bearingLine} />
                 </marker>
               </defs>
             </g>
@@ -315,129 +357,34 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
         })}
 
         {/* ============================================ */}
-        {/* BACK BEARINGS (if provided) */}
+        {/* WAYPOINTS (POINTS) */}
         {/* ============================================ */}
-        {points.map((point, idx) => {
-          if (!point.backBearing) return null;
-          const pos = positions[idx];
+        {positions.map((pos, idx) => {
+          // Determine if this is the topmost point (smallest y value)
+          const isTopPoint = positions.every((p, i) => i === idx || p.y >= pos.y);
+          // Position label above for topmost point, below for others
+          const labelY = isTopPoint ? pos.y - 15 : pos.y + 35;
 
           return (
-            <g key={`back-bearing-${idx}`}>
-              <path
-                d={`M ${pos.x} ${pos.y - 55}
-                    A 55 55 0 ${point.backBearing > 180 ? 1 : 0} 1
-                    ${pos.x + 55 * Math.sin((point.backBearing * Math.PI) / 180)}
-                    ${pos.y - 55 * Math.cos((point.backBearing * Math.PI) / 180)}`}
-                fill="none"
-                stroke={colors.highlight}
-                strokeWidth="3"
-                strokeDasharray="5,5"
-              />
-              {(() => {
-                const labelAngle = point.backBearing / 2; // Midpoint of the arc
-                const labelRadius = 70; // Inside the arc
-                const labelX = pos.x + labelRadius * Math.sin((labelAngle * Math.PI) / 180);
-                const labelY = pos.y - labelRadius * Math.cos((labelAngle * Math.PI) / 180);
-
-                return (
-                  <>
-                    {/* White background for better visibility */}
-                    <text
-                      x={labelX}
-                      y={labelY + 5}
-                      fill="white"
-                      fontSize="20"
-                      fontWeight="bold"
-                      stroke="white"
-                      strokeWidth="4"
-                      paintOrder="stroke"
-                      textAnchor="middle"
-                    >
-                      {point.backBearing}°
-                    </text>
-                    <text
-                      x={labelX}
-                      y={labelY + 5}
-                      fill={colors.highlight}
-                      fontSize="20"
-                      fontWeight="bold"
-                      textAnchor="middle"
-                    >
-                      {point.backBearing}°
-                    </text>
-                  </>
-                );
-              })()}
-            </g>
-          );
-        })}
-
-        {/* ============================================ */}
-        {/* INTERIOR ANGLES */}
-        {/* ============================================ */}
-        {showInteriorAngles && positions.map((pos, idx) => {
-          const interiorAngle = getInteriorAngle(idx);
-          if (interiorAngle === null) return null;
-
-          const incomingLeg = legs.find(leg => leg.toPoint === idx);
-          if (!incomingLeg) return null;
-
-          const incomingBearing = points[incomingLeg.fromPoint].bearing ?? 0;
-          const outgoingBearing = points[idx].bearing ?? 0;
-
-          // Draw arc from incoming to outgoing bearing
-          const arcRadius = 35;
-          const startAngle = incomingBearing;
-          const endAngle = outgoingBearing;
-
-          return (
-            <g key={`interior-${idx}`}>
-              <path
-                d={`M ${pos.x + arcRadius * Math.sin((startAngle * Math.PI) / 180)}
-                    ${pos.y - arcRadius * Math.cos((startAngle * Math.PI) / 180)}
-                    A ${arcRadius} ${arcRadius} 0 ${Math.abs(endAngle - startAngle) > 180 ? 1 : 0} ${endAngle > startAngle ? 1 : 0}
-                    ${pos.x + arcRadius * Math.sin((endAngle * Math.PI) / 180)}
-                    ${pos.y - arcRadius * Math.cos((endAngle * Math.PI) / 180)}`}
-                fill="none"
-                stroke={colors.interiorAngle}
-                strokeWidth="3"
+            <g key={`point-${idx}`}>
+              <circle
+                cx={pos.x}
+                cy={pos.y}
+                r={highlightPoint === idx ? 10 : 8}
+                fill={highlightPoint === idx ? colors.highlight : colors.primary}
               />
               <text
-                x={pos.x - 20}
-                y={pos.y + 10}
-                fill={colors.interiorAngle}
-                fontSize="20"
-                fontWeight="bold"
+                x={pos.x}
+                y={labelY}
+                fill={theme.colors.textPrimary}
+                fontSize="16"
+                textAnchor="middle"
               >
-                <MathText>{interiorAngleLabel}</MathText>
+                {points[idx].label}
               </text>
             </g>
           );
         })}
-
-        {/* ============================================ */}
-        {/* WAYPOINTS (POINTS) */}
-        {/* ============================================ */}
-        {positions.map((pos, idx) => (
-          <g key={`point-${idx}`}>
-            <circle
-              cx={pos.x}
-              cy={pos.y}
-              r={highlightPoint === idx ? 10 : 8}
-              fill={highlightPoint === idx ? colors.highlight : colors.primary}
-            />
-            <text
-              x={pos.x}
-              y={pos.y + 30}
-              fill={theme.colors.textPrimary}
-              fontSize="22"
-              fontWeight="bold"
-              textAnchor="middle"
-            >
-              {points[idx].label}
-            </text>
-          </g>
-        ))}
       </svg>
 
       {/* Caption */}

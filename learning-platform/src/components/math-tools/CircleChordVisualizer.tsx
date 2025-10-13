@@ -39,31 +39,42 @@ const CircleChordVisualizer: React.FC<CircleChordVisualizerProps> = ({
   const centerY = svgHeight / 2;
   const circleRadius = 130;
 
-  // Chord 1 endpoints (horizontal-ish, above center)
-  const chord1Angle = 60; // degrees from horizontal
-  const chord1Length = 180;
-  const chord1CenterX = centerX - 20;
-  const chord1CenterY = centerY - 50;
+  // Chord 1 endpoints - on circle circumference
+  // Place endpoints at specific angles on the circle
+  const chord1Angle1 = 120; // degrees from positive x-axis
+  const chord1Angle2 = 40; // degrees from positive x-axis
 
-  const chord1X1 = chord1CenterX - (chord1Length / 2) * Math.cos((chord1Angle * Math.PI) / 180);
-  const chord1Y1 = chord1CenterY + (chord1Length / 2) * Math.sin((chord1Angle * Math.PI) / 180);
-  const chord1X2 = chord1CenterX + (chord1Length / 2) * Math.cos((chord1Angle * Math.PI) / 180);
-  const chord1Y2 = chord1CenterY - (chord1Length / 2) * Math.sin((chord1Angle * Math.PI) / 180);
+  const chord1X1 = centerX + circleRadius * Math.cos((chord1Angle1 * Math.PI) / 180);
+  const chord1Y1 = centerY - circleRadius * Math.sin((chord1Angle1 * Math.PI) / 180);
+  const chord1X2 = centerX + circleRadius * Math.cos((chord1Angle2 * Math.PI) / 180);
+  const chord1Y2 = centerY - circleRadius * Math.sin((chord1Angle2 * Math.PI) / 180);
 
   // Midpoint of chord 1
   const chord1MidX = (chord1X1 + chord1X2) / 2;
   const chord1MidY = (chord1Y1 + chord1Y2) / 2;
 
-  // Chord 2 endpoints (horizontal-ish, below center) - mirror of chord 1 if equal chords
-  const chord2Length = equalChords ? chord1Length : 160;
-  const chord2CenterX = centerX + 20;
-  const chord2CenterY = centerY + 50;
-  const chord2Angle = -60; // degrees from horizontal
+  // Calculate chord 1 length for equal chords comparison
+  const chord1Length = Math.sqrt(
+    Math.pow(chord1X2 - chord1X1, 2) + Math.pow(chord1Y2 - chord1Y1, 2)
+  );
 
-  const chord2X1 = chord2CenterX - (chord2Length / 2) * Math.cos((chord2Angle * Math.PI) / 180);
-  const chord2Y1 = chord2CenterY + (chord2Length / 2) * Math.sin((chord2Angle * Math.PI) / 180);
-  const chord2X2 = chord2CenterX + (chord2Length / 2) * Math.cos((chord2Angle * Math.PI) / 180);
-  const chord2Y2 = chord2CenterY - (chord2Length / 2) * Math.sin((chord2Angle * Math.PI) / 180);
+  // Chord 2 endpoints - on circle circumference
+  // For equal chords, calculate angle span to match chord 1 length
+  const chord2Angle1 = 240; // degrees from positive x-axis
+  let chord2Angle2: number;
+
+  if (equalChords) {
+    // Calculate the angular span of chord 1
+    const chord1AngularSpan = Math.abs(chord1Angle2 - chord1Angle1);
+    chord2Angle2 = chord2Angle1 + chord1AngularSpan;
+  } else {
+    chord2Angle2 = 300; // degrees from positive x-axis (shorter chord)
+  }
+
+  const chord2X1 = centerX + circleRadius * Math.cos((chord2Angle1 * Math.PI) / 180);
+  const chord2Y1 = centerY - circleRadius * Math.sin((chord2Angle1 * Math.PI) / 180);
+  const chord2X2 = centerX + circleRadius * Math.cos((chord2Angle2 * Math.PI) / 180);
+  const chord2Y2 = centerY - circleRadius * Math.sin((chord2Angle2 * Math.PI) / 180);
 
   // Midpoint of chord 2
   const chord2MidX = (chord2X1 + chord2X2) / 2;
@@ -161,26 +172,53 @@ const CircleChordVisualizer: React.FC<CircleChordVisualizerProps> = ({
         </text>
 
         {/* Perpendicular from centre to chord 1 */}
-        {showPerpendicular && (
-          <>
-            <line
-              x1={centerX}
-              y1={centerY}
-              x2={chord1MidX}
-              y2={chord1MidY}
-              stroke={colors.perpendicular}
-              strokeWidth="2"
-              strokeDasharray="5,3"
-            />
-            {/* Right angle marker */}
-            <path
-              d={`M ${chord1MidX - 8} ${chord1MidY - 4} L ${chord1MidX - 8} ${chord1MidY + 4} L ${chord1MidX} ${chord1MidY + 4}`}
-              fill="none"
-              stroke={colors.perpendicular}
-              strokeWidth="1.5"
-            />
-          </>
-        )}
+        {showPerpendicular && (() => {
+          // Calculate perpendicular direction to chord
+          const chordDx = chord1X2 - chord1X1;
+          const chordDy = chord1Y2 - chord1Y1;
+          const chordLen = Math.sqrt(chordDx * chordDx + chordDy * chordDy);
+          const chordUnitX = chordDx / chordLen;
+          const chordUnitY = chordDy / chordLen;
+
+          // Right angle marker size
+          const markerSize = 10;
+
+          // Calculate the two arms of the right angle marker
+          const perpX = centerX - chord1MidX;
+          const perpY = centerY - chord1MidY;
+          const perpLen = Math.sqrt(perpX * perpX + perpY * perpY);
+          const perpUnitX = perpX / perpLen;
+          const perpUnitY = perpY / perpLen;
+
+          // Three points for the right angle square
+          const p1x = chord1MidX + chordUnitX * markerSize;
+          const p1y = chord1MidY + chordUnitY * markerSize;
+          const p2x = p1x + perpUnitX * markerSize;
+          const p2y = p1y + perpUnitY * markerSize;
+          const p3x = chord1MidX + perpUnitX * markerSize;
+          const p3y = chord1MidY + perpUnitY * markerSize;
+
+          return (
+            <>
+              <line
+                x1={centerX}
+                y1={centerY}
+                x2={chord1MidX}
+                y2={chord1MidY}
+                stroke={colors.perpendicular}
+                strokeWidth="2"
+                strokeDasharray="5,3"
+              />
+              {/* Right angle marker */}
+              <path
+                d={`M ${p1x} ${p1y} L ${p2x} ${p2y} L ${p3x} ${p3y}`}
+                fill="none"
+                stroke={colors.perpendicular}
+                strokeWidth="1.5"
+              />
+            </>
+          );
+        })()}
 
         {/* Midpoint marker on chord 1 */}
         {showMidpoint && (
@@ -237,26 +275,53 @@ const CircleChordVisualizer: React.FC<CircleChordVisualizerProps> = ({
             </text>
 
             {/* Perpendicular from centre to chord 2 */}
-            {showPerpendicular && (
-              <>
-                <line
-                  x1={centerX}
-                  y1={centerY}
-                  x2={chord2MidX}
-                  y2={chord2MidY}
-                  stroke={colors.perpendicular}
-                  strokeWidth="2"
-                  strokeDasharray="5,3"
-                />
-                {/* Right angle marker */}
-                <path
-                  d={`M ${chord2MidX - 8} ${chord2MidY - 4} L ${chord2MidX - 8} ${chord2MidY + 4} L ${chord2MidX} ${chord2MidY + 4}`}
-                  fill="none"
-                  stroke={colors.perpendicular}
-                  strokeWidth="1.5"
-                />
-              </>
-            )}
+            {showPerpendicular && (() => {
+              // Calculate perpendicular direction to chord 2
+              const chordDx = chord2X2 - chord2X1;
+              const chordDy = chord2Y2 - chord2Y1;
+              const chordLen = Math.sqrt(chordDx * chordDx + chordDy * chordDy);
+              const chordUnitX = chordDx / chordLen;
+              const chordUnitY = chordDy / chordLen;
+
+              // Right angle marker size
+              const markerSize = 10;
+
+              // Calculate the two arms of the right angle marker
+              const perpX = centerX - chord2MidX;
+              const perpY = centerY - chord2MidY;
+              const perpLen = Math.sqrt(perpX * perpX + perpY * perpY);
+              const perpUnitX = perpX / perpLen;
+              const perpUnitY = perpY / perpLen;
+
+              // Three points for the right angle square
+              const p1x = chord2MidX + chordUnitX * markerSize;
+              const p1y = chord2MidY + chordUnitY * markerSize;
+              const p2x = p1x + perpUnitX * markerSize;
+              const p2y = p1y + perpUnitY * markerSize;
+              const p3x = chord2MidX + perpUnitX * markerSize;
+              const p3y = chord2MidY + perpUnitY * markerSize;
+
+              return (
+                <>
+                  <line
+                    x1={centerX}
+                    y1={centerY}
+                    x2={chord2MidX}
+                    y2={chord2MidY}
+                    stroke={colors.perpendicular}
+                    strokeWidth="2"
+                    strokeDasharray="5,3"
+                  />
+                  {/* Right angle marker */}
+                  <path
+                    d={`M ${p1x} ${p1y} L ${p2x} ${p2y} L ${p3x} ${p3y}`}
+                    fill="none"
+                    stroke={colors.perpendicular}
+                    strokeWidth="1.5"
+                  />
+                </>
+              );
+            })()}
 
             {/* Midpoint marker on chord 2 */}
             {showMidpoint && (

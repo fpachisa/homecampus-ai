@@ -4,32 +4,112 @@ import MathText from '../MathText';
 
 interface ParabolaGraphVisualizerProps {
   a: number; // coefficient of x²
-  h: number; // x-coordinate of vertex
-  k: number; // y-coordinate of vertex
+  // For vertex form: y = a(x - h)² + k
+  h?: number; // x-coordinate of vertex
+  k?: number; // y-coordinate of vertex
+  // For standard form: y = ax² + bx + c
+  b?: number; // coefficient of x
+  c?: number; // constant term
   form?: 'vertex' | 'factored' | 'standard';
   showVertex?: boolean;
   showAxisOfSymmetry?: boolean;
   showIntercepts?: boolean;
+  showRoots?: boolean; // Alias for showIntercepts
   showGrid?: boolean;
+  highlightVertex?: boolean; // Alias for showVertex
+  // Range parameters - supports both formats
   xRange?: [number, number];
   yRange?: [number, number];
+  xMin?: number;
+  xMax?: number;
+  yMin?: number;
+  yMax?: number;
   caption?: string;
 }
 
 const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
   a,
-  h,
-  k,
+  h: hProp,
+  k: kProp,
+  b: bProp,
+  c: cProp,
   form = 'vertex',
-  showVertex = true,
+  showVertex: showVertexProp = true,
   showAxisOfSymmetry = true,
-  showIntercepts = false,
+  showIntercepts: showInterceptsProp = false,
+  showRoots = false,
+  highlightVertex = false,
   showGrid = true,
-  xRange = [-10, 10],
-  yRange = [-10, 10],
+  xRange: xRangeProp,
+  yRange: yRangeProp,
+  xMin: xMinProp,
+  xMax: xMaxProp,
+  yMin: yMinProp,
+  yMax: yMaxProp,
   caption
 }) => {
   const { theme } = useTheme();
+
+  // Handle aliases
+  const showVertex = showVertexProp || highlightVertex;
+  const showIntercepts = showInterceptsProp || showRoots;
+
+  // Convert from standard form to vertex form if needed
+  let h: number, k: number;
+
+  if (bProp !== undefined && cProp !== undefined) {
+    // Standard form: y = ax² + bx + c
+    // Convert to vertex form: h = -b/(2a), k = c - b²/(4a)
+    h = -bProp / (2 * a);
+    k = cProp - (bProp * bProp) / (4 * a);
+  } else if (hProp !== undefined && kProp !== undefined) {
+    // Vertex form already provided
+    h = hProp;
+    k = kProp;
+  } else {
+    // Default to origin if neither form is complete
+    console.error('ParabolaGraphVisualizer: Must provide either (h, k) or (b, c) parameters');
+    h = 0;
+    k = 0;
+  }
+
+  // Handle range parameters - support both xRange and xMin/xMax formats
+  let xRange: [number, number];
+  let yRange: [number, number];
+
+  if (xRangeProp) {
+    xRange = xRangeProp;
+  } else if (xMinProp !== undefined && xMaxProp !== undefined) {
+    xRange = [xMinProp, xMaxProp];
+  } else {
+    xRange = [-10, 10];
+  }
+
+  if (yRangeProp) {
+    yRange = yRangeProp;
+  } else if (yMinProp !== undefined && yMaxProp !== undefined) {
+    yRange = [yMinProp, yMaxProp];
+  } else {
+    // Auto-range: ensure vertex is visible with some padding
+    const vertexY = k;
+    const padding = Math.abs(vertexY) * 0.3 || 10; // 30% padding or minimum 10
+
+    // Calculate y-values at the edges of x-range
+    const yAtXMin = a * Math.pow(xRange[0] - h, 2) + k;
+    const yAtXMax = a * Math.pow(xRange[1] - h, 2) + k;
+
+    // Find min and max y values
+    let yMin = Math.min(vertexY, yAtXMin, yAtXMax, 0); // Include 0 for x-axis
+    let yMax = Math.max(vertexY, yAtXMin, yAtXMax, 0);
+
+    // Add padding
+    const ySpan = yMax - yMin;
+    const yPadding = Math.max(ySpan * 0.2, 5); // 20% padding or minimum 5
+    yMin -= yPadding;
+    yMax += yPadding;
+
+    yRange = [yMin, yMax];
+  }
 
   // SVG dimensions
   const width = 500;
@@ -55,13 +135,13 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
   // Generate parabola path
   const generateParabolaPath = (): string => {
     const points: [number, number][] = [];
-    const step = (xRange[1] - xRange[0]) / 100;
+    const step = (xRange[1] - xRange[0]) / 200; // More points for smoother curve
 
     for (let x = xRange[0]; x <= xRange[1]; x += step) {
       const y = parabolaY(x);
-      if (y >= yRange[0] && y <= yRange[1]) {
-        points.push(mathToSVG(x, y));
-      }
+      // Clamp y-values to visible range for continuous path
+      const clampedY = Math.max(yRange[0], Math.min(yRange[1], y));
+      points.push(mathToSVG(x, clampedY));
     }
 
     if (points.length === 0) return '';
@@ -69,13 +149,20 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
     return points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p[0]} ${p[1]}`).join(' ');
   };
 
-  // Calculate x-intercepts
+  // Calculate x-intercepts (roots)
+  // For vertex form y = a(x - h)² + k, solve a(x - h)² + k = 0
+  // => (x - h)² = -k/a
+  // => x = h ± √(-k/a)
   const getXIntercepts = (): number[] => {
-    const discriminant = -4 * a * k;
-    if (discriminant < 0) return [];
-    if (discriminant === 0) return [h];
-    const sqrtDisc = Math.sqrt(discriminant);
-    return [h - sqrtDisc / (2 * a), h + sqrtDisc / (2 * a)];
+    const kOverA = k / a;
+
+    // For real roots, -k/a must be non-negative (k and a have opposite signs)
+    if (kOverA > 0) return []; // No real roots
+    if (kOverA === 0) return [h]; // One root at vertex
+
+    // Two real roots
+    const sqrtTerm = Math.sqrt(-kOverA);
+    return [h - sqrtTerm, h + sqrtTerm];
   };
 
   // Get y-intercept
@@ -111,8 +198,9 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
         {showGrid && (
           <g opacity="0.2">
             {/* Vertical grid lines */}
-            {Array.from({ length: xRange[1] - xRange[0] + 1 }, (_, i) => {
-              const x = xRange[0] + i;
+            {Array.from({ length: Math.ceil(xRange[1] - xRange[0]) + 1 }, (_, i) => {
+              const x = Math.ceil(xRange[0]) + i;
+              if (x > xRange[1]) return null;
               const [svgX] = mathToSVG(x, 0);
               return (
                 <line
@@ -127,8 +215,9 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
               );
             })}
             {/* Horizontal grid lines */}
-            {Array.from({ length: yRange[1] - yRange[0] + 1 }, (_, i) => {
-              const y = yRange[0] + i;
+            {Array.from({ length: Math.ceil(yRange[1] - yRange[0]) + 1 }, (_, i) => {
+              const y = Math.ceil(yRange[0]) + i;
+              if (y > yRange[1]) return null;
               const [, svgY] = mathToSVG(0, y);
               return (
                 <line

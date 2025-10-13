@@ -5,16 +5,16 @@
  * Uses AI to generate contextual problems based on node descriptors.
  */
 
-import type { PathNode, PathProblem, EvaluationWithHistory, AttemptHistory } from '../types/practice';
+import type { PathNode, PathProblem, EvaluationWithHistory, AttemptHistory, RelatedQuestionContext } from '../types/practice';
 import FallbackAIService from './fallbackAIService';
-import { subtopicContentLoader } from './subtopicContentLoader';
 import {
   generatePracticeProblemsPrompt,
   evaluatePracticeAnswerWithHistoryPrompt,
-  generatePracticeHintPrompt,
   generatePracticeSolutionPrompt,
+  solvePreWrittenProblemPrompt,
   extractJSON
 } from '../prompts/practicePrompts';
+import { safeParseJSON, extractPracticeJSON } from './utils/responseParser';
 
 class PathPracticeService {
   private aiService: FallbackAIService;
@@ -40,23 +40,153 @@ class PathPracticeService {
   }
 
   /**
-   * Generate problems for a node using AI
-   * Enhanced with Socratic subtopic content (learning objectives, formulas, visual tools)
+   * Generate problems for a node - either AI-generated or pre-written
+   * Checks node.descriptor.aiGeneratedQuestions flag to determine mode
+   * Optional progress callback for pre-written questions
    */
-  async generateNodeProblems(node: PathNode, count: number): Promise<PathProblem[]> {
-    try {
-      // Load subtopic content for all subtopics in the node descriptor
-      const subtopicIds = node.descriptor.subtopics.map(st => st.id);
-      const subtopicContents = subtopicContentLoader.getMultipleSubtopicContents(subtopicIds);
+  async generateNodeProblems(
+    node: PathNode,
+    count: number,
+    onProgress?: (current: number, total: number) => void
+  ): Promise<PathProblem[]> {
+    // Check if this node uses pre-written questions
+    if (node.descriptor.aiGeneratedQuestions === false) {
+      if (!node.descriptor.preWrittenQuestions) {
+        throw new Error(`Node ${node.id} has aiGeneratedQuestions=false but no preWrittenQuestions defined`);
+      }
+      return this.loadPreWrittenQuestions(node, onProgress);
+    }
 
-      if (subtopicContents.length === 0) {
-        console.warn('No subtopic content found for:', subtopicIds);
+    // Default: AI-generated questions
+    return this.generateProblemsWithAI(node, count);
+  }
+
+  /**
+   * Load pre-written questions from node descriptor
+   * Used for exam-style problems with pre-built diagrams
+   */
+  private async loadPreWrittenQuestions(
+    node: PathNode,
+    onProgress?: (current: number, total: number) => void
+  ): Promise<PathProblem[]> {
+    const questions = node.descriptor.preWrittenQuestions!;
+
+    console.log('=== PRACTICE: Load Pre-Written Questions ===');
+    console.log('Node:', node.id, node.title);
+    console.log('Questions:', questions.length);
+    console.log('=============================================');
+
+    // Map questions to PathProblem format
+    const problems: PathProblem[] = questions.map((q, index) => ({
+      id: q.id,
+      nodeId: node.id,
+      problemText: q.problemText,
+      correctAnswer: '',  // Will be calculated below
+      context: 'exam-style',
+      subtopicId: node.id,
+      difficulty: node.descriptor.difficulty || 'easy',
+      generatedAt: new Date(),
+      mathTool: undefined,  // Pre-written questions use SVG diagrams instead
+      diagramSvg: q.diagramSvg,
+      questionGroup: q.questionGroup,  // Preserve question group for multi-part questions
+      metadata: {
+        isPreWritten: true,
+        avatarIntro: q.avatarIntro,
+        partNumber: index + 1,
+        totalParts: questions.length
+      }
+    }));
+
+    // Calculate solutions for all questions sequentially
+    // This ensures later parts can reference earlier answers
+    console.log('🔄 Calculating solutions for pre-written questions...');
+    for (let i = 0; i < problems.length; i++) {
+      const problem = problems[i];
+
+      // Report progress
+      if (onProgress) {
+        onProgress(i + 1, problems.length);
       }
 
-      // Generate enhanced prompt with subtopic content
-      const prompt = generatePracticeProblemsPrompt(node, count, subtopicContents);
+      // Build context from previously solved parts
+      const previousAnswers = problems.slice(0, i)
+        .filter(p => p.correctAnswer) // Only include solved problems
+        .map(p => ({
+          problemText: p.problemText,
+          answer: p.correctAnswer
+        }));
 
-      console.log('=== PRACTICE: Generate Problems ===');
+      console.log(`  Solving problem ${i + 1}/${problems.length}: ${problem.id}`);
+
+      try {
+        // Calculate this problem's solution
+        const solution = await this.solvePreWrittenProblem(
+          problem.problemText,
+          previousAnswers.length > 0 ? previousAnswers : undefined
+        );
+
+        problem.correctAnswer = solution.correctAnswer;
+        problem.solutionSteps = solution.solutionSteps;
+
+        console.log(`  ✓ Solution: ${solution.correctAnswer}`);
+      } catch (error) {
+        console.error(`  ✗ Failed to solve problem ${problem.id}:`, error);
+        // Leave correctAnswer empty - will be calculated on-demand during evaluation
+        problem.correctAnswer = '';
+        problem.solutionSteps = [];
+      }
+    }
+
+    console.log('✓ All pre-written questions ready');
+    console.log('=============================================');
+
+    return problems;
+  }
+
+  /**
+   * Solve a pre-written problem to get correct answer and solution steps
+   * Used during initial loading of pre-written exam questions
+   */
+  private async solvePreWrittenProblem(
+    problemText: string,
+    previousAnswers?: Array<{ problemText: string; answer: string }>
+  ): Promise<{ correctAnswer: string; solutionSteps: string[] }> {
+    try {
+      const prompt = solvePreWrittenProblemPrompt(problemText, previousAnswers);
+
+      // Call AI provider directly
+      const responseText = await this.callAIDirectly(prompt);
+
+      // Use safe parser for solution responses
+      const data = safeParseJSON(responseText, ['correctAnswer', 'steps'], {
+        correctAnswer: '',
+        steps: []
+      });
+
+      if (!data.correctAnswer || !data.steps || !Array.isArray(data.steps)) {
+        throw new Error('Invalid solution format from AI');
+      }
+
+      return {
+        correctAnswer: data.correctAnswer,
+        solutionSteps: data.steps
+      };
+    } catch (error) {
+      console.error('Failed to solve pre-written problem:', error);
+      throw new Error('Failed to calculate solution for this problem');
+    }
+  }
+
+  /**
+   * Generate problems using AI (original logic)
+   * Uses node descriptor with direct math tool configuration
+   */
+  private async generateProblemsWithAI(node: PathNode, count: number): Promise<PathProblem[]> {
+    try {
+      // Generate prompt using node descriptor directly
+      const prompt = generatePracticeProblemsPrompt(node, count);
+
+      console.log('=== PRACTICE: Generate Problems with AI ===');
       console.log('Node:', node.id, node.title);
       console.log('Count:', count);
       console.log('Prompt:', prompt);
@@ -65,10 +195,12 @@ class PathPracticeService {
       const responseText = await this.callAIDirectly(prompt);
 
       console.log('Response:', responseText);
-      console.log('===================================');
+      console.log('============================================');
 
-      // Parse JSON response
-      const data = extractJSON(responseText);
+      // Use safe parser for problem generation responses
+      const data = safeParseJSON(responseText, ['problems'], {
+        problems: []
+      });
 
       if (!data.problems || !Array.isArray(data.problems)) {
         throw new Error('Invalid response format from AI');
@@ -81,8 +213,8 @@ class PathPracticeService {
         problemText: p.problemText,
         correctAnswer: p.correctAnswer,
         context: p.context,
-        subtopicId: p.subtopicId || node.descriptor.subtopics[0].id,
-        difficulty: node.descriptor.difficulty,
+        subtopicId: node.id, // Use node ID as subtopic ID for now (field kept for backward compatibility)
+        difficulty: node.descriptor.difficulty || 'easy', // Default to 'easy' if not specified
         generatedAt: new Date(),
         // Include mathTool if provided by AI
         mathTool: p.mathTool ? {
@@ -101,58 +233,18 @@ class PathPracticeService {
   }
 
   /**
-   * Evaluate student answer using AI
-   * Calls AI provider directly with custom prompt (not using topicId-based resolution)
-   */
-  async evaluateAnswer(
-    problem: PathProblem,
-    studentAnswer: string
-  ): Promise<{
-    isCorrect: boolean;
-    feedback: string;
-    explanation?: string;
-  }> {
-    try {
-      const prompt = evaluatePracticeAnswerPrompt(
-        problem.problemText,
-        problem.correctAnswer,
-        studentAnswer
-      );
-
-      console.log('=== PRACTICE: Evaluate Answer ===');
-      console.log('Problem:', problem.problemText);
-      console.log('Correct Answer:', problem.correctAnswer);
-      console.log('Student Answer:', studentAnswer);
-      console.log('Prompt:', prompt);
-
-      // Call AI provider directly instead of using generateResponse (which requires valid topicId)
-      const responseText = await this.callAIDirectly(prompt);
-
-      console.log('Response:', responseText);
-      console.log('==================================');
-
-      const data = extractJSON(responseText);
-
-      return {
-        isCorrect: data.isCorrect === true,
-        feedback: data.feedback || (data.isCorrect ? '✓ Correct!' : 'Not quite right.'),
-        explanation: data.explanation
-      };
-    } catch (error) {
-      console.error('Failed to evaluate answer with AI:', error);
-      throw new Error('Failed to evaluate your answer. Please try again.');
-    }
-  }
-
-  /**
    * Enhanced evaluation with attempt history for progressive hints
    * Provides both avatar speech and detailed hints based on attempt number
+   * Optional: Include context from related multi-part questions
+   * Optional: Specify if this is the last problem for context-aware avatar speech
    */
   async evaluateAnswerWithHistory(
     problem: PathProblem,
     studentAnswer: string,
     attemptNumber: number,
-    previousAttempts: Array<{ answer: string; hint: string }>
+    previousAttempts: Array<{ answer: string; hint: string }>,
+    relatedQuestionsContext?: RelatedQuestionContext[],
+    isLastProblem?: boolean
   ): Promise<EvaluationWithHistory> {
     try {
       const prompt = evaluatePracticeAnswerWithHistoryPrompt(
@@ -160,13 +252,17 @@ class PathPracticeService {
         problem.correctAnswer,
         studentAnswer,
         attemptNumber,
-        previousAttempts
+        previousAttempts,
+        relatedQuestionsContext,
+        isLastProblem,
+        problem.solutionSteps  // Pass solution steps for context
       );
 
       console.log('=== PRACTICE: Evaluate with History ===');
       console.log('Problem:', problem.problemText);
       console.log('Attempt Number:', attemptNumber);
       console.log('Previous Attempts:', previousAttempts.length);
+      console.log('Related Questions:', relatedQuestionsContext?.length || 0);
       console.log('Student Answer:', studentAnswer);
 
       // Call AI provider directly
@@ -175,53 +271,42 @@ class PathPracticeService {
       console.log('Response:', responseText);
       console.log('========================================');
 
-      const data = extractJSON(responseText);
+      // Use the new safe parser specifically for evaluation responses
+      const data = extractPracticeJSON(responseText);
 
-      // Ensure all required fields are present
-      return {
-        isCorrect: data.isCorrect === true,
-        avatarSpeech: data.avatarSpeech || (data.isCorrect ?
+      // Build response based on correctness
+      const isCorrect = data.isCorrect === true;
+      const baseResponse = {
+        isCorrect,
+        avatarSpeech: data.avatarSpeech || (isCorrect ?
           'Excellent work! You got it!' :
           `Let's try again. ${attemptNumber < 3 ? 'Take another look.' : 'One more try.'}`),
-        hint: data.hint || 'Think about the problem step by step.',
-        hintLevel: data.hintLevel || attemptNumber
       };
+
+      // Add fields based on correctness
+      if (isCorrect) {
+        // For correct answers: include explanation, no hint/hintLevel
+        return {
+          ...baseResponse,
+          explanation: data.explanation || 'Your answer is correct! Well done.',
+        };
+      } else {
+        // For incorrect answers: include hint and hintLevel, no explanation
+        return {
+          ...baseResponse,
+          hint: data.hint || 'Think about the problem step by step.',
+          hintLevel: data.hintLevel || attemptNumber,
+        };
+      }
     } catch (error) {
       console.error('Failed to evaluate answer with history:', error);
-      // Fallback response
+      // Fallback response (assume incorrect for safety)
       return {
         isCorrect: false,
         avatarSpeech: 'Let me help you with this.',
         hint: 'Take another look at the problem and try breaking it down into smaller steps.',
         hintLevel: attemptNumber
       };
-    }
-  }
-
-  /**
-   * Generate hint using AI
-   */
-  async generateHint(problem: PathProblem, hintLevel: number): Promise<string> {
-    try {
-      const prompt = generatePracticeHintPrompt(problem.problemText, hintLevel);
-
-      console.log('=== PRACTICE: Generate Hint ===');
-      console.log('Problem:', problem.problemText);
-      console.log('Hint Level:', hintLevel);
-      console.log('Prompt:', prompt);
-
-      // Call AI provider directly instead of using generateResponse (which requires valid topicId)
-      const responseText = await this.callAIDirectly(prompt);
-
-      console.log('Response:', responseText);
-      console.log('================================');
-
-      const data = extractJSON(responseText);
-
-      return data.hint || '💡 Try breaking down the problem step by step.';
-    } catch (error) {
-      console.error('Failed to generate hint with AI:', error);
-      throw new Error('Failed to generate hint. Please try again.');
     }
   }
 
@@ -249,7 +334,10 @@ class PathPracticeService {
       console.log('Response:', responseText);
       console.log('===============================');
 
-      const data = extractJSON(responseText);
+      // Use safe parser for solution responses
+      const data = safeParseJSON(responseText, ['steps'], {
+        steps: ['Solution not available']
+      });
 
       return {
         steps: data.steps || ['Solution not available'],

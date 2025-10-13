@@ -78,132 +78,203 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
   // CALCULATE TRIANGLE GEOMETRY
   // ============================================
   // We need at least some angle information to draw the triangle
-  // Default angles if none provided (to make a valid triangle)
-  let calcAngleA = angleA ?? 60;
-  let calcAngleB = angleB ?? 60;
-  let calcAngleC = angleC ?? 60;
+  let calcAngleA: number;
+  let calcAngleB: number;
+  let calcAngleC: number;
 
-  // If only one or two angles provided, calculate the third
-  if (angleA !== null && angleB !== null && angleC === null) {
-    calcAngleC = 180 - angleA - angleB;
-  } else if (angleA !== null && angleC !== null && angleB === null) {
-    calcAngleB = 180 - angleA - angleC;
-  } else if (angleB !== null && angleC !== null && angleA === null) {
-    calcAngleA = 180 - angleB - angleC;
+  // Count how many angles are provided
+  const anglesProvided = [angleA, angleB, angleC].filter(a => a !== null).length;
+
+  if (anglesProvided === 0) {
+    // No angles provided - default to equilateral
+    calcAngleA = 60;
+    calcAngleB = 60;
+    calcAngleC = 60;
+  } else if (anglesProvided === 1) {
+    // Only one angle provided - distribute remaining angles
+    if (angleA !== null) {
+      calcAngleA = angleA;
+      const remaining = 180 - angleA;
+      calcAngleB = remaining / 2;
+      calcAngleC = remaining / 2;
+    } else if (angleB !== null) {
+      calcAngleB = angleB;
+      const remaining = 180 - angleB;
+      calcAngleA = remaining / 2;
+      calcAngleC = remaining / 2;
+    } else {
+      // angleC is provided
+      calcAngleC = angleC!;
+      const remaining = 180 - calcAngleC;
+      calcAngleA = remaining / 2;
+      calcAngleB = remaining / 2;
+    }
+  } else if (anglesProvided === 2) {
+    // Two angles provided - calculate the third
+    if (angleA !== null && angleB !== null) {
+      calcAngleA = angleA;
+      calcAngleB = angleB;
+      calcAngleC = 180 - angleA - angleB;
+    } else if (angleA !== null && angleC !== null) {
+      calcAngleA = angleA;
+      calcAngleC = angleC;
+      calcAngleB = 180 - angleA - angleC;
+    } else {
+      // angleB and angleC provided
+      calcAngleB = angleB!;
+      calcAngleC = angleC!;
+      calcAngleA = 180 - calcAngleB - calcAngleC;
+    }
+  } else {
+    // All three angles provided
+    calcAngleA = angleA!;
+    calcAngleB = angleB!;
+    calcAngleC = angleC!;
   }
 
-  // Determine triangle type based on angles
-  let detectedType: 'acute' | 'obtuse' | 'right' = 'acute';
-  if (Math.abs(calcAngleA - 90) < 0.1 || Math.abs(calcAngleB - 90) < 0.1 || Math.abs(calcAngleC - 90) < 0.1) {
-    detectedType = 'right';
-  } else if (calcAngleA > 90 || calcAngleB > 90 || calcAngleC > 90) {
-    detectedType = 'obtuse';
+  // Validate: ONLY angle A can be obtuse
+  if (calcAngleB > 90 || calcAngleC > 90) {
+    console.error('GeneralTriangleVisualizer: Only angle A can be obtuse. Angles B and C must be ≤ 90°.');
   }
-
-  const finalType = triangleType === 'auto' ? detectedType : triangleType;
 
   // ============================================
   // TRIANGLE LAYOUT
   // ============================================
-  const baseLength = 220; // Length of base side (side c)
-  const svgWidth = 450;
-  const svgHeight = 320;
-  const padding = 90; // Increased from 70 to prevent left cutoff
+  const displayHeight = 320; // Fixed display height
 
-  // Vertex positions
-  // Place vertex C at bottom left, vertex B at bottom right
-  const vertexC = { x: padding, y: svgHeight - padding };
-  const vertexB = { x: padding + baseLength, y: svgHeight - padding };
+  // SIMPLIFIED LAYOUT STRATEGY:
+  // - Always place vertex A at top, BC as base at bottom
+  // - Adjust scaling based on triangle shape for better visualization
 
-  // Calculate vertex A position using angles
-  // From vertex C, go at angle (angleB) for some distance to reach A
+  // Convert angles to radians
+  const angleA_rad = (calcAngleA * Math.PI) / 180;
   const angleB_rad = (calcAngleB * Math.PI) / 180;
   const angleC_rad = (calcAngleC * Math.PI) / 180;
 
-  // Use law of sines to find relative side lengths
-  // Let side c (base) = baseLength
-  // side a / sin(A) = side c / sin(C)
-  // side a = baseLength * sin(A) / sin(C)
-  const sideA_visual = (baseLength * Math.sin((calcAngleA * Math.PI) / 180)) / Math.sin(angleC_rad);
-  const sideB_visual = (baseLength * Math.sin(angleB_rad)) / Math.sin(angleC_rad);
+  // For obtuse angles, use the sides adjacent to the obtuse angle for better proportions
+  // For very obtuse angles (> 120°), scale up to make triangle more visible
+  const isVeryObtuse = calcAngleA > 120;
+  const baseLength = isVeryObtuse ? 300 : 220;
+  const basePadding = 80;
+  const baseY = 240;
 
-  // Position vertex A relative to vertex C
-  const vertexA = {
-    x: vertexC.x + sideB_visual * Math.cos(angleC_rad),
-    y: vertexC.y - sideB_visual * Math.sin(angleC_rad)
+  let vertexA: { x: number; y: number };
+  let vertexB: { x: number; y: number };
+  let vertexC: { x: number; y: number };
+  const baseSide: 'a' = 'a'; // BC is always the base
+
+  // Position base vertices B and C
+  vertexC = { x: basePadding, y: baseY };
+  vertexB = { x: basePadding + baseLength, y: baseY };
+
+  // Calculate position of vertex A using law of sines
+  const sideA_visual = baseLength; // BC is the base
+  const sideC_visual = (sideA_visual * Math.sin(angleC_rad)) / Math.sin(angleA_rad);
+
+  // Position A above the base BC, measured from C at angle C
+  vertexA = {
+    x: vertexC.x + sideC_visual * Math.cos(angleC_rad),
+    y: vertexC.y - sideC_visual * Math.sin(angleC_rad)
   };
 
   // ============================================
   // AMBIGUOUS CASE (SSA) - Calculate second triangle
   // ============================================
-  let vertexA2: { x: number; y: number } | null = null;
-  let hasAmbiguousCase = false;
+  // Note: Ambiguous case calculation is complex and depends on specific SSA configurations
+  // For now, we'll skip this in the refactored version
+  // TODO: Re-implement ambiguous case for all triangle orientations
+  // let vertexA2: { x: number; y: number } | undefined = undefined;
+  // let hasAmbiguousCase = false;
 
-  if (showAmbiguousCase) {
-    // Check if we have SSA case: two sides and a non-included angle
-    // We need to determine if there's a second solution
-    // This occurs when we know side a, side b, and angle C (or similar combinations)
+  // ============================================
+  // CALCULATE DYNAMIC BOUNDS
+  // ============================================
+  const padding = 60; // Padding around all elements
 
-    // For the ambiguous case, we're looking for an alternate position of vertex A
-    // such that the distance from A to B still equals sideA_visual
+  // Scale arc radius based on angle size - smaller arcs for obtuse angles
+  const arcRadiusA = calcAngleA > 90 ? 30 : 40;
+  const arcRadiusB = 40;
+  const arcRadiusC = 40;
 
-    // The second position would be a reflection across the line from C
-    // Calculate using law of sines: if sin(A) has two solutions (acute and obtuse)
+  const labelOffset = 55; // For angle labels
+  const vertexLabelOffset = 20; // For vertex labels
 
-    // Distance from vertex B to the line from C at angle C
-    const lineFromC = {
-      x: vertexC.x + sideB_visual * Math.cos(angleC_rad),
-      y: vertexC.y - sideB_visual * Math.sin(angleC_rad)
-    };
+  // Start with triangle vertices
+  let minX = Math.min(vertexA.x, vertexB.x, vertexC.x);
+  let maxX = Math.max(vertexA.x, vertexB.x, vertexC.x);
+  let minY = Math.min(vertexA.y, vertexB.y, vertexC.y);
+  let maxY = Math.max(vertexA.y, vertexB.y, vertexC.y);
 
-    // Check if circle centered at B with radius sideA_visual intersects
-    // the line from C at angle angleC_rad at two points
+  // Account for vertex labels
+  minY = Math.min(minY, vertexA.y - vertexLabelOffset);
+  maxY = Math.max(maxY, vertexB.y + vertexLabelOffset, vertexC.y + vertexLabelOffset);
 
-    // For simplicity, we'll calculate the alternate vertex A by reflecting
-    // across the line from C to B, maintaining the distance sideA_visual from B
+  // Account for angle arcs and labels if showing angles
+  if (showAngles) {
+    // Angle arcs extend from each vertex (using variable radii)
+    minX = Math.min(minX, vertexA.x - arcRadiusA, vertexB.x - arcRadiusB, vertexC.x - arcRadiusC);
+    maxX = Math.max(maxX, vertexA.x + arcRadiusA, vertexB.x + arcRadiusB, vertexC.x + arcRadiusC);
+    minY = Math.min(minY, vertexA.y - arcRadiusA, vertexB.y - arcRadiusB, vertexC.y - arcRadiusC);
+    maxY = Math.max(maxY, vertexA.y + arcRadiusA, vertexB.y + arcRadiusB, vertexC.y + arcRadiusC);
 
-    // Vector from C in direction of angle C
-    const dirX = Math.cos(angleC_rad);
-    const dirY = -Math.sin(angleC_rad);
+    // Angle labels extend labelOffset from each vertex
+    minX = Math.min(minX, vertexA.x - labelOffset, vertexB.x - labelOffset, vertexC.x - labelOffset);
+    maxX = Math.max(maxX, vertexA.x + labelOffset, vertexB.x + labelOffset, vertexC.x + labelOffset);
+    minY = Math.min(minY, vertexA.y - labelOffset, vertexB.y - labelOffset, vertexC.y - labelOffset);
+    maxY = Math.max(maxY, vertexA.y + labelOffset, vertexB.y + labelOffset, vertexC.y + labelOffset);
+  }
 
-    // Project B onto the line from C
-    const CB_x = vertexB.x - vertexC.x;
-    const CB_y = vertexB.y - vertexC.y;
-    const projection = CB_x * dirX + CB_y * dirY;
+  // Account for side labels if showing sides
+  if (showSides) {
+    // Side labels use foreignObject with width 80, height 30
+    const sideLabelWidth = 40; // Half of 80
+    const sideLabelHeight = 30;
 
-    // Point on line closest to B
-    const closestX = vertexC.x + projection * dirX;
-    const closestY = vertexC.y + projection * dirY;
+    // Side a label (bottom)
+    if (sideA) {
+      const labelX = (vertexB.x + vertexC.x) / 2;
+      const labelY = vertexC.y + 10;
+      minX = Math.min(minX, labelX - sideLabelWidth);
+      maxX = Math.max(maxX, labelX + sideLabelWidth);
+      maxY = Math.max(maxY, labelY + sideLabelHeight);
+    }
 
-    // Distance from B to the line
-    const distToLine = Math.sqrt(
-      Math.pow(vertexB.x - closestX, 2) + Math.pow(vertexB.y - closestY, 2)
-    );
+    // Side b label (left side)
+    if (sideB) {
+      const labelX = (vertexA.x + vertexC.x) / 2 - 55;
+      const labelY = (vertexA.y + vertexC.y) / 2 - 15;
+      minX = Math.min(minX, labelX);
+      maxX = Math.max(maxX, labelX + 80);
+      minY = Math.min(minY, labelY);
+      maxY = Math.max(maxY, labelY + sideLabelHeight);
+    }
 
-    // Check if two intersections exist
-    if (distToLine < sideA_visual) {
-      // Calculate the distance along the line from closest point to intersection points
-      const offset = Math.sqrt(sideA_visual * sideA_visual - distToLine * distToLine);
-
-      // Two possible points: one at +offset, one at -offset
-      const point1X = closestX + offset * dirX;
-      const point1Y = closestY + offset * dirY;
-      const point2X = closestX - offset * dirX;
-      const point2Y = closestY - offset * dirY;
-
-      // Choose the point that's different from vertexA (within tolerance)
-      const dist1 = Math.sqrt(Math.pow(point1X - vertexA.x, 2) + Math.pow(point1Y - vertexA.y, 2));
-      const dist2 = Math.sqrt(Math.pow(point2X - vertexA.x, 2) + Math.pow(point2Y - vertexA.y, 2));
-
-      if (dist1 > 5) {
-        vertexA2 = { x: point1X, y: point1Y };
-        hasAmbiguousCase = true;
-      } else if (dist2 > 5) {
-        vertexA2 = { x: point2X, y: point2Y };
-        hasAmbiguousCase = true;
-      }
+    // Side c label (right side)
+    if (sideC) {
+      const labelX = (vertexA.x + vertexB.x) / 2;
+      const labelY = (vertexA.y + vertexB.y) / 2 - 15;
+      minX = Math.min(minX, labelX);
+      maxX = Math.max(maxX, labelX + 80);
+      minY = Math.min(minY, labelY);
+      maxY = Math.max(maxY, labelY + sideLabelHeight);
     }
   }
+
+  // Account for ambiguous case triangle if present
+  // TODO: Re-enable when ambiguous case is implemented
+  // const ambiguousVertex = vertexA2;
+  // if (showAmbiguousCase && ambiguousVertex) {
+  //   minX = Math.min(minX, ambiguousVertex.x - arcRadius);
+  //   maxX = Math.max(maxX, ambiguousVertex.x + arcRadius);
+  //   minY = Math.min(minY, ambiguousVertex.y - vertexLabelOffset, 30); // Include header text at y=30
+  //   maxY = Math.max(maxY, ambiguousVertex.y + arcRadius);
+  // }
+
+  // Apply padding and create viewBox
+  const viewBoxMinX = minX - padding;
+  const viewBoxMinY = minY - padding;
+  const viewBoxWidth = (maxX - minX) + (2 * padding);
+  const viewBoxHeight = (maxY - minY) + (2 * padding);
 
   // ============================================
   // HELPER FUNCTIONS
@@ -236,24 +307,42 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
     vertex: { x: number; y: number },
     point1: { x: number; y: number },
     point2: { x: number; y: number },
-    radius: number = 40
+    radius: number = 40,
+    expectedAngleDegrees?: number
   ): string => {
     // Calculate angles to both points from vertex (accounting for SVG's Y-down coordinate system)
-    const angle1 = Math.atan2(point1.y - vertex.y, point1.x - vertex.x);
-    const angle2 = Math.atan2(point2.y - vertex.y, point2.x - vertex.x);
+    let angle1 = Math.atan2(point1.y - vertex.y, point1.x - vertex.x);
+    let angle2 = Math.atan2(point2.y - vertex.y, point2.x - vertex.x);
+
+    // Calculate the angle we're sweeping (in radians)
+    let deltaAngle = angle2 - angle1;
+
+    // Normalize to [-PI, PI] range to get the shortest path
+    while (deltaAngle > Math.PI) deltaAngle -= 2 * Math.PI;
+    while (deltaAngle < -Math.PI) deltaAngle += 2 * Math.PI;
+
+    // If we have an expected angle, check if we're drawing the right arc
+    if (expectedAngleDegrees !== undefined) {
+      const expectedRad = (expectedAngleDegrees * Math.PI) / 180;
+      const calculatedRad = Math.abs(deltaAngle);
+
+      // If the calculated angle doesn't match the expected angle (within tolerance),
+      // we need to go the other way around the circle
+      if (Math.abs(calculatedRad - expectedRad) > 0.1) {
+        // Reverse the direction by adding/subtracting 2π
+        if (deltaAngle > 0) {
+          deltaAngle = deltaAngle - 2 * Math.PI;
+        } else {
+          deltaAngle = deltaAngle + 2 * Math.PI;
+        }
+      }
+    }
 
     // Start and end points on the arc
     const startX = vertex.x + radius * Math.cos(angle1);
     const startY = vertex.y + radius * Math.sin(angle1);
     const endX = vertex.x + radius * Math.cos(angle2);
     const endY = vertex.y + radius * Math.sin(angle2);
-
-    // Calculate the angle we're sweeping (in radians)
-    let deltaAngle = angle2 - angle1;
-
-    // Normalize to [-PI, PI] range
-    while (deltaAngle > Math.PI) deltaAngle -= 2 * Math.PI;
-    while (deltaAngle < -Math.PI) deltaAngle += 2 * Math.PI;
 
     // Use the absolute angle to determine large arc flag
     const absAngle = Math.abs(deltaAngle);
@@ -293,9 +382,10 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
     >
       <svg
         width="100%"
-        height={svgHeight}
-        viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+        height={displayHeight}
+        viewBox={`${viewBoxMinX} ${viewBoxMinY} ${viewBoxWidth} ${viewBoxHeight}`}
         style={{ display: 'block', margin: '0 auto' }}
+        preserveAspectRatio="xMidYMid meet"
       >
         {/* ============================================ */}
         {/* TRIANGLE SIDES */}
@@ -333,70 +423,101 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
         {/* ============================================ */}
         {/* SIDE LABELS */}
         {/* ============================================ */}
+        {/* Simplified positioning: base side goes below, others offset from midpoint */}
         {showSides && (
           <>
-            {/* Side a label (bottom) - opposite angle A */}
-            {sideA && (
-              <foreignObject
-                x={(vertexB.x + vertexC.x) / 2 - 40}
-                y={vertexC.y + 10}
-                width="80"
-                height="30"
-              >
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  color: getSideColor('a'),
-                  fontSize: '16px',
-                  fontWeight: 'bold'
-                }}>
-                  <MathText>{ensureLatexWrapped(sideA)}</MathText>
-                </div>
-              </foreignObject>
-            )}
+            {/* Side a label (between B and C) - opposite angle A */}
+            {sideA && (() => {
+              const isBase = baseSide === 'a';
+              const midX = (vertexB.x + vertexC.x) / 2;
+              const midY = (vertexB.y + vertexC.y) / 2;
 
-            {/* Side b label (left side) - opposite angle B */}
-            {sideB && (
-              <foreignObject
-                x={(vertexA.x + vertexC.x) / 2 - 55}
-                y={(vertexA.y + vertexC.y) / 2 - 15}
-                width="80"
-                height="30"
-              >
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  color: getSideColor('b'),
-                  fontSize: '16px',
-                  fontWeight: 'bold'
-                }}>
-                  <MathText>{ensureLatexWrapped(sideB)}</MathText>
-                </div>
-              </foreignObject>
-            )}
+              const labelX = midX - 40; // Center the 80px wide foreignObject
+              const labelY = isBase ? Math.max(vertexB.y, vertexC.y) + 10 : midY - 15;
 
-            {/* Side c label (right side) - opposite angle C */}
-            {sideC && (
-              <foreignObject
-                x={(vertexA.x + vertexB.x) / 2}
-                y={(vertexA.y + vertexB.y) / 2 - 15}
-                width="80"
-                height="30"
-              >
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  color: getSideColor('c'),
-                  fontSize: '16px',
-                  fontWeight: 'bold'
-                }}>
-                  <MathText>{ensureLatexWrapped(sideC)}</MathText>
-                </div>
-              </foreignObject>
-            )}
+              return (
+                <foreignObject x={labelX} y={labelY} width="80" height="30">
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: getSideColor('a'),
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                  }}>
+                    <MathText>{ensureLatexWrapped(sideA)}</MathText>
+                  </div>
+                </foreignObject>
+              );
+            })()}
+
+            {/* Side b label (between A and C) - opposite angle B */}
+            {sideB && (() => {
+              // Side b is never the base (base is always 'a')
+              // Calculate perpendicular offset to move label away from the line
+              const midX = (vertexA.x + vertexC.x) / 2;
+              const midY = (vertexA.y + vertexC.y) / 2;
+
+              // Calculate perpendicular direction (rotate 90° from line direction)
+              const dx = vertexC.x - vertexA.x;
+              const dy = vertexC.y - vertexA.y;
+              const length = Math.sqrt(dx * dx + dy * dy);
+              const perpX = -dy / length; // Perpendicular (to the left)
+              const perpY = dx / length;
+
+              const offsetDistance = 20; // Distance from line
+              const labelX = midX + perpX * offsetDistance - 40; // Center 80px width
+              const labelY = midY + perpY * offsetDistance - 15; // Center 30px height
+
+              return (
+                <foreignObject x={labelX} y={labelY} width="80" height="30">
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: getSideColor('b'),
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                  }}>
+                    <MathText>{ensureLatexWrapped(sideB)}</MathText>
+                  </div>
+                </foreignObject>
+              );
+            })()}
+
+            {/* Side c label (between A and B) - opposite angle C */}
+            {sideC && (() => {
+              // Side c is never the base (base is always 'a')
+              // Calculate perpendicular offset to move label away from the line
+              const midX = (vertexA.x + vertexB.x) / 2;
+              const midY = (vertexA.y + vertexB.y) / 2;
+
+              // Calculate perpendicular direction (rotate 90° from line direction)
+              const dx = vertexB.x - vertexA.x;
+              const dy = vertexB.y - vertexA.y;
+              const length = Math.sqrt(dx * dx + dy * dy);
+              const perpX = dy / length; // Perpendicular (to the right)
+              const perpY = -dx / length;
+
+              const offsetDistance = 20; // Distance from line
+              const labelX = midX + perpX * offsetDistance - 40; // Center 80px width
+              const labelY = midY + perpY * offsetDistance - 15; // Center 30px height
+
+              return (
+                <foreignObject x={labelX} y={labelY} width="80" height="30">
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: getSideColor('c'),
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                  }}>
+                    <MathText>{ensureLatexWrapped(sideC)}</MathText>
+                  </div>
+                </foreignObject>
+              );
+            })()}
           </>
         )}
 
@@ -411,7 +532,7 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
               return (
                 <>
                   <path
-                    d={createAngleArcBetweenPoints(vertexA, vertexC, vertexB, 40)}
+                    d={createAngleArcBetweenPoints(vertexA, vertexC, vertexB, arcRadiusA, calcAngleA)}
                     fill="none"
                     stroke={getAngleColor('A')}
                     strokeWidth="2.5"
@@ -444,7 +565,7 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
               return (
                 <>
                   <path
-                    d={createAngleArcBetweenPoints(vertexB, vertexA, vertexC, 40)}
+                    d={createAngleArcBetweenPoints(vertexB, vertexA, vertexC, arcRadiusB, calcAngleB)}
                     fill="none"
                     stroke={getAngleColor('B')}
                     strokeWidth="2.5"
@@ -477,7 +598,7 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
               return (
                 <>
                   <path
-                    d={createAngleArcBetweenPoints(vertexC, vertexB, vertexA, 40)}
+                    d={createAngleArcBetweenPoints(vertexC, vertexB, vertexA, arcRadiusC, calcAngleC)}
                     fill="none"
                     stroke={getAngleColor('C')}
                     strokeWidth="2.5"
@@ -548,81 +669,17 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
         {/* ============================================ */}
         {/* AMBIGUOUS CASE (SSA) - Second Triangle */}
         {/* ============================================ */}
-        {showAmbiguousCase && hasAmbiguousCase && vertexA2 && (
-          <>
-            {/* Header text */}
-            <text
-              x={svgWidth / 2}
-              y={30}
-              fill={colors.muted}
-              fontSize="12"
-              fontStyle="italic"
-              textAnchor="middle"
-            >
-              Ambiguous case: Two possible triangles
-            </text>
-
-            {/* Second triangle with dashed lines - draw all three sides */}
-            {/* Side a' (from C to B) - base, shared with first triangle */}
-            <line
-              x1={vertexC.x}
-              y1={vertexC.y}
-              x2={vertexB.x}
-              y2={vertexB.y}
-              stroke={colors.muted}
-              strokeWidth="2"
-              strokeDasharray="5,5"
-              opacity="0.6"
-            />
-
-            {/* Side c' (from A2 to B) - dashed */}
-            <line
-              x1={vertexA2.x}
-              y1={vertexA2.y}
-              x2={vertexB.x}
-              y2={vertexB.y}
-              stroke={colors.muted}
-              strokeWidth="2"
-              strokeDasharray="5,5"
-              opacity="0.6"
-            />
-
-            {/* Side b' (from A2 to C) - dashed */}
-            <line
-              x1={vertexA2.x}
-              y1={vertexA2.y}
-              x2={vertexC.x}
-              y2={vertexC.y}
-              stroke={colors.muted}
-              strokeWidth="2"
-              strokeDasharray="5,5"
-              opacity="0.6"
-            />
-
-            {/* Vertex A2 marker */}
-            <circle cx={vertexA2.x} cy={vertexA2.y} r="4" fill={colors.muted} opacity="0.7" />
-            <text
-              x={vertexA2.x}
-              y={vertexA2.y - 10}
-              fill={colors.muted}
-              fontSize="14"
-              fontWeight="bold"
-              textAnchor="middle"
-            >
-              A'
-            </text>
-          </>
-        )}
-        {showAmbiguousCase && !hasAmbiguousCase && (
+        {/* TODO: Re-enable when ambiguous case is implemented */}
+        {showAmbiguousCase && (
           <text
-            x={svgWidth / 2}
+            x={viewBoxMinX + viewBoxWidth / 2}
             y={30}
             fill={colors.muted}
             fontSize="12"
             fontStyle="italic"
             textAnchor="middle"
           >
-            No ambiguous case for this configuration
+            Ambiguous case visualization not yet implemented
           </text>
         )}
       </svg>

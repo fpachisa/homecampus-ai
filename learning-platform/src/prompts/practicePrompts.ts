@@ -7,63 +7,40 @@
  * Enhanced with Socratic content (learning objectives, formulas, visual tools)
  */
 
-import type { PathNode } from '../types/practice';
-import type { SubtopicContent } from '../services/subtopicContentLoader';
-import { S3_MATH_TRIGONOMETRY_CONFIG } from './topics/S3-Math-Trigonometry';
+import type { PathNode, RelatedQuestionContext } from '../types/practice';
 import { parseJSON } from '../services/utils/responseParser';
+import { MATH_TOOLS_REGISTRY, getFilteredTools } from '../components/math-tools/mathToolsRegistry';
 
 /**
- * Generate practice problems based on node descriptor + Socratic subtopic content
+ * Generate practice problems based on node descriptor
  */
 export const generatePracticeProblemsPrompt = (
   node: PathNode,
-  count: number,
-  subtopicContents: SubtopicContent[]
+  count: number
 ): string => {
   const { descriptor } = node;
 
-  // Build subtopic context sections
-  const subtopicSections = descriptor.subtopics.map((st, index) => {
-    const content = subtopicContents[index];
-    if (!content) return '';
-
-    const weight = Math.round(st.weight * 100);
-
-    return `
-**SUBTOPIC ${index + 1}: ${st.id} (${weight}% weight)**
-Display Name: ${content.displayName}
-Focus: ${content.topicName}
-
-Key Formulas:
-${content.relevantFormulas.length > 0 ? content.relevantFormulas.map(f => `- ${f}`).join('\n') : '- (No formulas specified)'}
-
-Available Visual Tools: ${content.availableTools.join(', ')}
-
----
-`;
-  }).join('\n');
-
-  // Collect all unique available tools
-  const allTools = new Set<string>();
-  subtopicContents.forEach(content => {
-    content.availableTools.forEach(tool => allTools.add(tool));
-  });
-
-  // Filter MATH_TOOLS to only include tools available for this practice session
-  // This significantly reduces prompt size (e.g., from 6 tools to 1-2 tools)
-  const filteredMathTools = {
-    description: S3_MATH_TRIGONOMETRY_CONFIG.MATH_TOOLS.description,
-    availableTools: {} as any,
-    usageGuidelines: S3_MATH_TRIGONOMETRY_CONFIG.MATH_TOOLS.usageGuidelines
+  // Helper to normalize tool names (kebab-case to camelCase)
+  const normalizeToolName = (name: string): string => {
+    return name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
   };
 
-  // Only include tools that are in allTools set
-  allTools.forEach(toolName => {
-    const toolDef = S3_MATH_TRIGONOMETRY_CONFIG.MATH_TOOLS.availableTools[toolName];
-    if (toolDef) {
-      filteredMathTools.availableTools[toolName] = toolDef;
-    }
-  });
+  // Get the required math tool for this node
+  // Support both mathTool (new) and extraMathTool (deprecated) for backward compatibility
+  const requiredTool = descriptor.mathTool || descriptor.extraMathTool;
+
+  // Normalize and get tool documentation
+  const toolName = requiredTool ? normalizeToolName(requiredTool) : null;
+  const filteredMathTools = toolName ? getFilteredTools([toolName]) : {};
+  const hasTools = toolName && Object.keys(filteredMathTools).length > 0;
+
+  // Add tool context if specified
+  const toolContext = toolName ? `
+
+**REQUIRED VISUALIZATION:**
+This node requires the "${toolName}" visualization tool.
+Please refer to the VISUAL TOOLS DOCUMENTATION below and use this tool for ALL problems in this node.
+` : '';
 
   return `You are a math problem generator for a learning platform. Generate ${count} practice problems for students.
 
@@ -72,36 +49,31 @@ Title: ${node.title}
 Difficulty: ${descriptor.difficulty}
 Problems Needed: ${count}
 
-${subtopicSections}
-
 **This describes what kind of problems to generate. Follow this and this ONLY to generate problems. Do NOT deviate from this.**
 ${descriptor.problemDescription.map((p, i) => `${i + 1}. ${p}`).join('\n\n')}
 
 **CONTEXTS TO USE:**
-${descriptor.contexts.join(', ')}
-
+${descriptor.contexts.length > 0 ? descriptor.contexts.join(', ') : 'Any appropriate context'}
+${toolContext}
 **VISUAL TOOLS AVAILABLE:**
-You can include visual diagrams to help students understand each problem.
-Available tools: ${Array.from(allTools).join(', ')}
+${toolName ? `You MUST include the "${toolName}" visualization for each problem to help students understand the problem setup.` : 'No specific visualization tool required for this node.'}
 
 **VISUAL TOOLS DOCUMENTATION:**
-${JSON.stringify(filteredMathTools, null, 2)}
+${hasTools ? JSON.stringify(filteredMathTools, null, 2) : 'No tools available'}
 
 **INSTRUCTIONS:**
 1. Generate ${count} NEW problems that:
+   - Follow the guidance provided in problem descriptions above
+   - Use varied contexts to keep problems interesting
+   - Include appropriate units in problem statements and answers
+   - If rounding is needed, then always ask for 3 significant figures in the problem statement
 
-   - Follow the guidance provided in sample problem descriptions to generate the problems
-   - Weight: Generate problems according to subtopic weights (${descriptor.subtopics.map(st => `${Math.round(st.weight * 100)}%`).join(', ')})
-
-2. Include a mathTool visualization if it helps illustrate the problem
-   - Choose a tool from the availableTools list for that subtopic
-   - Use the tool that best illustrates the problem setup
+2. ${toolName ? `Include the "${toolName}" mathTool visualization for EVERY problem` : 'Include a mathTool visualization only if helpful'}
    - Set parameters to match the specific problem values
    - Include a brief caption describing what the diagram shows
 
 3. Ensure all problems are solvable with the concepts from the lesson
-4. Include units in answers where appropriate (meters, degrees, etc.)
-5. Each problem should require 2-3 calculation steps to solve
+
 
 **CRITICAL: Return ONLY valid JSON in this exact format:**
 {
@@ -110,7 +82,6 @@ ${JSON.stringify(filteredMathTools, null, 2)}
       "problemText": "The full problem statement as a string",
       "correctAnswer": "The final answer as a string, with units if applicable",
       "context": "The context/theme used for this problem",
-      "subtopicId": "The subtopic ID this problem focuses on",
       "mathTool": {
         "toolName": "rightTriangle",
         "parameters": {
@@ -129,6 +100,8 @@ ${JSON.stringify(filteredMathTools, null, 2)}
   ]
 }
 
+**IMPORTANT:** If the angle is unknown (what student needs to find), use angle: null or angle: 0 (NOT a string like "A" or "θ").
+
 Generate the JSON now:`;
 };
 
@@ -137,14 +110,45 @@ Generate the JSON now:`;
 /**
  * Enhanced evaluation with progressive hints based on attempt history
  * Provides avatar speech and detailed hints that remain visible
+ * Optional: Include context from related multi-part questions
  */
 export const evaluatePracticeAnswerWithHistoryPrompt = (
   problemText: string,
   correctAnswer: string,
   studentAnswer: string,
   attemptNumber: number,
-  previousAttempts: Array<{ answer: string; hint: string }>
+  previousAttempts: Array<{ answer: string; hint: string }>,
+  relatedQuestionsContext?: RelatedQuestionContext[],
+  isLastProblem?: boolean,
+  solutionSteps?: string[]
 ): string => {
+  // Build related questions context for multi-part exam questions
+  const relatedContext = relatedQuestionsContext && relatedQuestionsContext.length > 0 ?
+    `**RELATED PARTS (Multi-part exam question):**
+This is part of a multi-part question. Here's what the student answered for previous parts:
+
+${relatedQuestionsContext.map((q, i) =>
+  `Part ${i + 1}: ${q.problemText}
+Student's answer: ${q.studentAnswer}
+Result: ${q.isCorrect ? '✓ Correct' : '✗ Incorrect'}`
+).join('\n\n')}
+
+**IMPORTANT:** When evaluating the current answer, consider:
+- Whether the student's approach is consistent with their previous answers
+- If their answer builds correctly on previous results
+- Whether they may have made an error in an earlier part that affects this answer
+
+` : '';
+
+  // Build solution steps context (if available)
+  const solutionContext = solutionSteps && solutionSteps.length > 0 ?
+    `**INTENDED SOLUTION METHOD:**
+The problem should be solved using the following approach:
+${solutionSteps.map((step, i) => `${i + 1}. ${step}`).join('\n')}
+
+**IMPORTANT:** Base your hints on THIS solution method. Do not suggest alternative methods.
+` : '';
+
   // Build history context
   const historyContext = previousAttempts.length > 0 ?
     `**PREVIOUS ATTEMPTS:**
@@ -161,30 +165,32 @@ Hint given: "${attempt.hint}"`
     1: {
       level: 'GENTLE NUDGE',
       instructions: 'Ask what information they have and what they need to find. Point them to think about the problem structure.',
-      avatarSpeech: 'Let\'s look at this together. What information do we have?'
+      avatarSpeech: 'Appropriate short speech to guide the student in the right direction based on the answer they provided. DO NOT assume they said/identified/mentioned something they did not.'
     },
     2: {
       level: 'SPECIFIC GUIDANCE',
       instructions: 'Point to the specific formula, concept, or approach they should use. Mention key relationships.',
-      avatarSpeech: 'Think about which formula or method applies here.'
+      avatarSpeech: 'Appropriate 1-2 sentences speech to guide the student further based on the answer they provided. DO NOT assume they said/identified/mentioned something they did not.'
     },
     3: {
       level: 'DETAILED SETUP',
       instructions: 'Show the equation setup or first steps. Explain the approach clearly but don\'t solve completely.',
-      avatarSpeech: 'Let me show you how to set this up.'
+      avatarSpeech: 'Appropriate 1-2 sentences speech to provide detailed guidance based on the answer they provided. DO NOT assume they said/identified/mentioned something they did not.'
     }
   };
 
   const guidance = hintGuidance[attemptNumber as keyof typeof hintGuidance] || hintGuidance[3];
 
-  return `You are a supportive math tutor evaluating a student's answer and providing progressive guidance.
+  return `You are a supportive math tutor evaluating a student's answer and providing progressive guidance if required.
 
+${relatedContext}
 **PROBLEM:**
 ${problemText}
 
 **CORRECT ANSWER:**
 ${correctAnswer}
 
+${solutionContext}
 ${historyContext}
 
 **STUDENT'S CURRENT ANSWER:**
@@ -196,58 +202,40 @@ ${studentAnswer}
 3. If incorrect (Attempt ${attemptNumber} of 3):
    - Provide ${guidance.level} level feedback
    - ${guidance.instructions}
+   - Use student answer to tailor your hint and Do NOT claim or assume the student said/identified/mentioned something they didn't 
    - Build on previous hints if any were given
    - Be encouraging and supportive
 
 **IMPORTANT GUIDELINES:**
-- avatarSpeech: Brief encouraging sentence (1-2 sentences max) that the avatar will speak, and describe the next action. CRITICAL: DO NOT include any markdown or special characters. Use plain text only.
-- hint: Detailed written feedback that will be displayed on screen permanently
+- avatarSpeech: Brief encouraging sentence (1-2 sentences max) that the avatar will speak. CRITICAL: DO NOT include any markdown or special characters. Use plain text only.
 - For attempt ${attemptNumber}: ${guidance.instructions}
 - Never give away the answer directly
 - Consider their previous attempts and adapt your guidance
 
-**CRITICAL: Return ONLY valid JSON in this exact format:**
+**LATEX FORMATTING (CRITICAL):**
+- Wrap ALL mathematical expressions in $...$ delimiters for inline math
+- Examples: $\sin(\theta)$, $\frac{3}{5}$, $x = 10$, $38^\circ$
+- Use single backslashes for LaTeX commands: \sin, \frac, \theta (NOT \\sin, \\frac, \\theta)
+- JSON parser will automatically handle escaping
+- Variables, formulas, angles, numbers with units: ALL need $ delimiters
+- Common commands: \sin, \cos, \tan, \theta, \frac{numerator}{denominator}, \text{word}, ^\circ (degree)
+
+**CRITICAL: Return ONLY valid JSON. Use the correct format based on whether the answer is correct or incorrect:**
+
+
 {
-  "isCorrect": true or false,
-  "avatarSpeech": "${guidance.avatarSpeech}",
-  "hint": "Detailed hint or feedback that helps the student (2-4 sentences)",
-  "hintLevel": ${attemptNumber}
+  "isCorrect": true,
+  "avatarSpeech": "${isLastProblem ? 'Celebration message acknowledging lesson completion (e.g., Excellent work! You have completed this lesson!)' : 'Celebration message with transition (e.g., Perfect! Let us move on to the next one.)'} ",
+  "explanation": "Brief explanation of why the answer is correct and the approach used (2-3 sentences)"
 }
 
-Generate the JSON now:`;
-};
-
-/**
- * Generate progressive hints for a problem
- */
-export const generatePracticeHintPrompt = (
-  problemText: string,
-  hintLevel: number
-): string => {
-  const hintGuidance = {
-    1: 'Give a gentle nudge - ask what information they have and what they need to find',
-    2: 'Point to the specific trigonometric concept or ratio they should use',
-    3: 'Show the equation setup but don\'t solve it completely'
-  };
-
-  return `You are providing a hint for a math problem. This is hint level ${hintLevel} of 3.
-
-**PROBLEM:**
-${problemText}
-
-**HINT LEVEL ${hintLevel} GUIDANCE:**
-${hintGuidance[hintLevel as keyof typeof hintGuidance] || hintGuidance[3]}
-
-**INSTRUCTIONS:**
-1. Provide a helpful hint appropriate for level ${hintLevel}
-2. Don't give away the answer
-3. Be encouraging and positive
-4. Use simple, clear language
-5. For level 3, you can show the equation setup
-
-**CRITICAL: Return ONLY valid JSON in this exact format:**
+**IF ANSWER IS INCORRECT:**
+Example with proper LaTeX formatting:
 {
-  "hint": "The hint text (1-3 sentences)"
+  "isCorrect": false,
+  "avatarSpeech": "${guidance.avatarSpeech}",
+  "hint": "Detailed hint that helps the student (2-4 sentences). Follow the critical latex formatting rules above.",
+  "hintLevel": ${attemptNumber}
 }
 
 Generate the JSON now:`;
@@ -277,16 +265,82 @@ ${correctAnswer}
 6. Keep each step concise (1-2 sentences)
 7. Include 3-5 steps total
 
+**LATEX FORMATTING (CRITICAL):**
+- Wrap ALL mathematical expressions in $...$ delimiters
+- Examples: $\sin(\theta)$, $\frac{3}{5}$, $x = 10$, $38^\circ$
+- Use single backslashes: \sin, \frac, \theta (NOT \\sin, \\frac, \\theta)
+- Variables, formulas, numbers with units: ALL need $ delimiters
+
 **CRITICAL: Return ONLY valid JSON in this exact format:**
+Example with proper LaTeX formatting:
 {
   "steps": [
-    "Step 1: Clear explanation of what we identify/know",
-    "Step 2: Setting up the equation or choosing the method",
-    "Step 3: Mathematical working with numbers",
-    "Step 4: Final calculation",
-    "Step 5: Answer with units (if applicable)"
+    "Step 1: We need to find the missing side using the given angle $\theta = 35^\circ$ and hypotenuse $h = 10$ m",
+    "Step 2: Use the sine ratio: $\sin(\theta) = \frac{\text{Opposite}}{\text{Hypotenuse}}$",
+    "Step 3: Substitute values: $\sin(35^\circ) = \frac{x}{10}$",
+    "Step 4: Solve for $x$: $x = 10 \times \sin(35^\circ) = 5.74$ m",
+    "Step 5: Final answer: $x = 5.74$ m (3 significant figures)"
   ]
 }
+
+Generate the JSON now:`;
+};
+
+/**
+ * Solve pre-written exam problem to get correct answer and solution steps
+ * Used when loading pre-written questions with empty correctAnswer
+ */
+export const solvePreWrittenProblemPrompt = (
+  problemText: string,
+  previousPartsContext?: Array<{ problemText: string; answer: string }>
+): string => {
+  const previousContext = previousPartsContext && previousPartsContext.length > 0 ? `
+**PREVIOUS PARTS (from same exam question):**
+These parts have been solved. Use their answers if this part depends on them:
+
+${previousPartsContext.map((part, i) => `
+Part ${i + 1}: ${part.problemText}
+Answer: ${part.answer}
+`).join('\n')}
+
+` : '';
+
+  return `You are solving an exam problem to determine the correct answer and solution steps.
+
+${previousContext}
+**CURRENT PROBLEM:**
+${problemText}
+
+**INSTRUCTIONS:**
+1. Solve this problem step-by-step showing all working
+2. Use exact calculations - DO NOT round intermediate values
+3. Only round the final answer to 3 significant figures if needed
+4. If this problem depends on previous parts, use those answers in your calculation
+5. Each step should be clear and explain the reasoning
+
+**LATEX FORMATTING (CRITICAL):**
+- Wrap ALL mathematical expressions in $...$ delimiters
+- Examples: $\sin(\theta)$, $\frac{3}{5}$, $x = 10$, $38^\circ$
+- Use single backslashes: \sin, \frac, \theta (NOT \\sin, \\frac, \\theta)
+- Variables, formulas, angles, numbers with units: ALL need $ delimiters
+
+**CRITICAL: Return ONLY valid JSON in this exact format:**
+Example with proper LaTeX formatting:
+{
+  "correctAnswer": "285 m",
+  "steps": [
+    "Step 1: We need to find distance $PR$. Given: $SR = 285$ m, $\angle SPR = 70^\circ$, $\angle PSR = 47^\circ$",
+    "Step 2: Use the sine rule: $\frac{PR}{\sin(\angle PSR)} = \frac{SR}{\sin(\angle SPR)}$",
+    "Step 3: Substitute: $\frac{PR}{\sin(47^\circ)} = \frac{285}{\sin(70^\circ)}$",
+    "Step 4: Solve: $PR = \frac{285 \times \sin(47^\circ)}{\sin(70^\circ)} = 221.7$ m",
+    "Step 5: Final answer: $PR = 222$ m (3 significant figures)"
+  ]
+}
+
+**IMPORTANT:**
+- correctAnswer must be a concise string (e.g., "320 m", "67.5°", "1250 m²")
+- steps array should have 3-5 clear, numbered steps with proper LaTeX formatting
+- Show mathematical working with $...$ delimiters around all math expressions
 
 Generate the JSON now:`;
 };

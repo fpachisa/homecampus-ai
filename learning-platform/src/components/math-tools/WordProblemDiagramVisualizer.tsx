@@ -3,7 +3,8 @@ import { useTheme } from '../../hooks/useTheme';
 import MathText from '../MathText';
 
 interface WordProblemDiagramVisualizerProps {
-  context: 'fencing' | 'projectile' | 'area' | 'profit';
+  context?: 'fencing' | 'projectile' | 'area' | 'profit';
+  problemType?: 'fencing' | 'projectile' | 'area' | 'profit' | 'optimization' | 'generic';
   labels?: {
     [key: string]: string;
   };
@@ -13,7 +14,8 @@ interface WordProblemDiagramVisualizerProps {
 }
 
 const WordProblemDiagramVisualizer: React.FC<WordProblemDiagramVisualizerProps> = ({
-  context,
+  context: contextProp,
+  problemType: problemTypeProp,
   labels = {},
   showDimensions = true,
   showEquation = false,
@@ -21,58 +23,102 @@ const WordProblemDiagramVisualizer: React.FC<WordProblemDiagramVisualizerProps> 
 }) => {
   const { theme } = useTheme();
 
+  // Handle both parameter names (context and problemType)
+  // Map 'optimization' and 'generic' to appropriate types
+  let context: 'fencing' | 'projectile' | 'area' | 'profit';
+  const inputType = problemTypeProp || contextProp || 'area';
+
+  if (inputType === 'optimization' || inputType === 'generic') {
+    context = 'area'; // Default optimization/generic to area diagram
+  } else {
+    context = inputType as 'fencing' | 'projectile' | 'area' | 'profit';
+  }
+
   const renderFencingDiagram = () => {
-    const width = labels.width || 'x';
-    const length = labels.length || '40 - x';
-    const perimeter = labels.perimeter || '80 m';
+    const width = labels.width || labels.side1 || 'x';
+    const length = labels.length || labels.side3 || '40 - x';
+    const side2 = labels.side2;
+    const perimeter = labels.perimeter || labels.constraint || '80 m';
 
     return (
       <div>
-        <svg width="400" height="300" className="mx-auto">
-          {/* Rectangle */}
+        <svg width="450" height="300" className="mx-auto">
+          {/* Barn or wall (dashed line at top) */}
+          <line
+            x1="125"
+            y1="80"
+            x2="325"
+            y2="80"
+            stroke="#8B4513"
+            strokeWidth="5"
+            strokeDasharray="10 5"
+          />
+          <text
+            x="225"
+            y="70"
+            className="text-xs"
+            fill="#8B4513"
+            textAnchor="middle"
+          >
+            Barn
+          </text>
+
+          {/* Three-sided fence */}
           <rect
-            x="80"
+            x="125"
             y="80"
-            width="240"
-            height="140"
+            width="200"
+            height="120"
             fill="none"
             stroke={theme.colors.brand}
             strokeWidth="3"
           />
 
-          {/* Width label */}
+          {/* Width labels */}
           {showDimensions && (
             <>
+              {/* Left side */}
               <text
-                x="200"
-                y="70"
-                className="text-base font-semibold"
+                x="110"
+                y="145"
+                className="text-sm font-semibold"
                 fill={theme.colors.brand}
                 textAnchor="middle"
               >
-                <tspan>{width}</tspan>
+                {side2 || width}
               </text>
 
-              {/* Length label */}
+              {/* Bottom */}
               <text
-                x="330"
-                y="150"
-                className="text-base font-semibold"
+                x="225"
+                y="215"
+                className="text-sm font-semibold"
                 fill={theme.colors.brand}
                 textAnchor="middle"
               >
-                <tspan>{length}</tspan>
+                {length}
               </text>
 
-              {/* Perimeter note */}
+              {/* Right side */}
               <text
-                x="200"
+                x="340"
+                y="145"
+                className="text-sm font-semibold"
+                fill={theme.colors.brand}
+                textAnchor="middle"
+              >
+                {width}
+              </text>
+
+              {/* Constraint note */}
+              <text
+                x="225"
                 y="250"
                 className="text-sm"
                 fill={theme.colors.textSecondary}
                 textAnchor="middle"
               >
-                Perimeter = {perimeter}
+                {perimeter}
               </text>
             </>
           )}
@@ -160,15 +206,18 @@ const WordProblemDiagramVisualizer: React.FC<WordProblemDiagramVisualizerProps> 
   };
 
   const renderAreaDiagram = () => {
-    const width = labels.width || 'x';
-    const length = labels.length || 'y';
+    // Support multiple label formats
+    const width = labels.width || labels.side1 || 'x';
+    const length = labels.length || labels.side3 || 'y';
+    const side2 = labels.side2 || labels.height;
+    const constraint = labels.constraint;
 
     return (
       <div>
-        <svg width="400" height="300" className="mx-auto">
-          {/* Rectangle */}
+        <svg width="450" height="300" className="mx-auto">
+          {/* Rectangle representing fenced area */}
           <rect
-            x="100"
+            x="125"
             y="80"
             width="200"
             height="120"
@@ -178,27 +227,66 @@ const WordProblemDiagramVisualizer: React.FC<WordProblemDiagramVisualizerProps> 
             strokeWidth="3"
           />
 
+          {/* Barn or wall (dashed line at top) if constraint mentions it */}
+          {constraint && constraint.toLowerCase().includes('barn') && (
+            <line
+              x1="125"
+              y1="80"
+              x2="325"
+              y2="80"
+              stroke="#8B4513"
+              strokeWidth="5"
+              strokeDasharray="10 5"
+            />
+          )}
+
           {showDimensions && (
             <>
+              {/* Top side label */}
               <text
-                x="200"
-                y="70"
-                className="text-base font-semibold"
+                x="225"
+                y="65"
+                className="text-sm font-semibold"
+                fill={theme.colors.brand}
+                textAnchor="middle"
+              >
+                {length}
+              </text>
+
+              {/* Left side label */}
+              <text
+                x="110"
+                y="145"
+                className="text-sm font-semibold"
+                fill={theme.colors.brand}
+                textAnchor="middle"
+              >
+                {side2 || width}
+              </text>
+
+              {/* Right side label */}
+              <text
+                x="340"
+                y="145"
+                className="text-sm font-semibold"
                 fill={theme.colors.brand}
                 textAnchor="middle"
               >
                 {width}
               </text>
 
-              <text
-                x="310"
-                y="140"
-                className="text-base font-semibold"
-                fill={theme.colors.brand}
-                textAnchor="middle"
-              >
-                {length}
-              </text>
+              {/* Constraint note */}
+              {constraint && (
+                <text
+                  x="225"
+                  y="230"
+                  className="text-sm"
+                  fill={theme.colors.textSecondary}
+                  textAnchor="middle"
+                >
+                  {constraint}
+                </text>
+              )}
             </>
           )}
         </svg>

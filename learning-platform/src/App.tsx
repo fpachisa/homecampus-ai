@@ -7,6 +7,7 @@ import { PracticeSessionView } from './components/practice/PracticeSessionView';
 import { AchievementsPage } from './components/practice/AchievementsPage';
 import TTSTest from './components/TTSTest';
 import AvatarTest from './components/AvatarTest';
+import VisualizerTestPage from './pages/VisualizerTestPage';
 import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import type { TopicId } from './prompts/topics/P6-Math-Fractions';
@@ -217,6 +218,10 @@ function AppContent() {
 
   if (testMode === 'avatar') {
     return <AvatarTest />;
+  }
+
+  if (testMode === 'visualizers') {
+    return <VisualizerTestPage />;
   }
 
   return (

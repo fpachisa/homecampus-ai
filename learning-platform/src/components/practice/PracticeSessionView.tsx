@@ -6,7 +6,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import type { PathNode, PathProblem, PathDifficulty, ProblemAttempt, AttemptHistory, ProblemSessionState } from '../../types/practice';
+import type { PathNode, PathProblem, PathDifficulty, ProblemAttempt, AttemptHistory, ProblemSessionState, RelatedQuestionContext } from '../../types/practice';
 import { pathPracticeService } from '../../services/pathPracticeService';
 import { pathProgressService } from '../../services/pathProgressService';
 import { pathConfigLoader } from '../../services/pathConfigLoader';
@@ -34,6 +34,8 @@ interface SessionState {
   error: string | null;
   // Enhanced practice tracking
   currentProblemSession: ProblemSessionState | null;
+  // Store per-problem session state for navigation
+  problemSessions: Record<string, ProblemSessionState>;
 }
 
 export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
@@ -52,19 +54,14 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     loading: true,
     error: null,
     currentProblemSession: null,
+    problemSessions: {},
   });
 
   const [studentAnswer, setStudentAnswer] = useState('');
-  const [feedback, setFeedback] = useState<{
-    isCorrect?: boolean;
-    message?: string;
-    explanation?: string;
-  } | null>(null);
-  const [currentHint, setCurrentHint] = useState<string | null>(null);
   const [solution, setSolution] = useState<{ steps: string[]; finalAnswer: string } | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [loadingHint, setLoadingHint] = useState(false);
   const [loadingSolution, setLoadingSolution] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState<{ current: number; total: number } | null>(null);
 
   // Audio manager for Avatar TTS
   const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText } = useAudioManager();
@@ -113,34 +110,53 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         } else {
           // Resume saved session with corrected index
           const currentProblem = savedSession.problems[correctIndex];
+          const savedProblemSessions = savedSession.problemSessions || {};
+
+          // CRITICAL: Load saved problem session if it exists, otherwise create fresh one
+          const currentProblemSession: ProblemSessionState = savedProblemSessions[currentProblem?.id] || {
+            problemId: currentProblem?.id || '',
+            attemptCount: 0,
+            attemptHistory: [],
+            canRetry: true,
+            showingSolution: false,
+          };
+
           setSession(prev => ({
             ...prev,
             problems: savedSession.problems,
             currentIndex: correctIndex,
             attempts: savedSession.attempts || [],
+            problemSessions: savedProblemSessions,
             loading: false,
-            currentProblemSession: {
-              problemId: currentProblem?.id || '',
-              attemptCount: 0,
-              attemptHistory: [],
-              canRetry: true,
-              showingSolution: false,
-            },
+            currentProblemSession,
           }));
+
           return; // Exit early to prevent generating new problems
         }
       } else {
         console.log('🔄 No cached session found - generating new problems with AI...');
         console.log('Calling pathPracticeService.generateNodeProblems()...');
 
-        // Generate new problems
+        // Generate new problems (with progress callback for pre-written questions)
         const problems = await pathPracticeService.generateNodeProblems(
           node,
-          node.problemsRequired
+          node.problemsRequired,
+          (current, total) => {
+            // Update loading progress (only for pre-written questions)
+            setLoadingProgress({ current, total });
+          }
         );
 
         console.log('✓ Problems generated:', problems.length);
         console.log('=============================');
+
+        // Clear loading progress
+        setLoadingProgress(null);
+
+        // Handle avatar intro for first question if pre-written
+        if (problems.length > 0 && problems[0].metadata?.avatarIntro) {
+          speakText(problems[0].metadata.avatarIntro);
+        }
 
         setSession(prev => ({
           ...prev,
@@ -163,6 +179,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
           problems,
           currentIndex: 0,
           attempts: [],
+          problemSessions: {},
         });
       }
     } catch (error) {
@@ -182,12 +199,33 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
       if (!stored) return null;
 
       const data = JSON.parse(stored);
-      // Convert date strings back to Date objects
+
+      // Convert date strings back to Date objects for problems
       if (data.problems) {
         data.problems.forEach((p: any) => {
           p.generatedAt = new Date(p.generatedAt);
         });
       }
+
+      // CRITICAL: Convert date strings back to Date objects for problemSessions
+      if (data.problemSessions) {
+        Object.keys(data.problemSessions).forEach((problemId: string) => {
+          const problemSession = data.problemSessions[problemId];
+          if (problemSession.attemptHistory) {
+            problemSession.attemptHistory.forEach((attempt: any) => {
+              attempt.timestamp = new Date(attempt.timestamp);
+            });
+          }
+        });
+      }
+
+      // Convert date strings for attempts
+      if (data.attempts) {
+        data.attempts.forEach((attempt: any) => {
+          attempt.attemptedAt = new Date(attempt.attemptedAt);
+        });
+      }
+
       return data;
     } catch (error) {
       console.error('Failed to load session from storage:', error);
@@ -227,18 +265,53 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     try {
       setSubmitting(true);
 
-      // Prepare previous attempts for context
-      const previousAttempts = problemSession.attemptHistory.map(h => ({
-        answer: h.studentAnswer,
-        hint: h.hint,
-      }));
+      // Prepare previous attempts for context (only include hints, not explanations)
+      const previousAttempts = problemSession.attemptHistory
+        .filter(h => !h.isCorrect) // Only include incorrect attempts (which have hints)
+        .map(h => ({
+          answer: h.studentAnswer,
+          hint: h.hint || '', // Provide empty string as fallback
+        }));
 
-      // Get evaluation with progressive hints
+      // Build related questions context for multi-part questions
+      let relatedQuestionsContext: RelatedQuestionContext[] | undefined;
+      if (currentProblem.questionGroup) {
+        // Find all problems in the same question group
+        const relatedProblems = session.problems.filter(p =>
+          p.questionGroup === currentProblem.questionGroup &&
+          p.id !== currentProblem.id
+        );
+
+        // Get attempts for related problems that have been completed
+        relatedQuestionsContext = relatedProblems
+          .map(problem => {
+            // Find the attempt for this problem
+            const attempt = session.attempts.find(a => a.problemId === problem.id);
+            if (!attempt) return null; // Skip if not attempted yet
+
+            return {
+              problemId: problem.id,
+              problemText: problem.problemText,
+              studentAnswer: attempt.studentAnswer,
+              isCorrect: attempt.isCorrect
+            };
+          })
+          .filter((ctx): ctx is RelatedQuestionContext => ctx !== null); // Filter out null values
+
+        console.log('Related Questions Context:', relatedQuestionsContext.length, 'previous parts');
+      }
+
+      // Check if this is the last problem in the session
+      const isLastProblem = session.currentIndex >= session.problems.length - 1;
+
+      // Get evaluation with progressive hints (and related questions context if applicable)
       const result = await pathPracticeService.evaluateAnswerWithHistory(
         currentProblem,
         studentAnswer,
         problemSession.attemptCount + 1,
-        previousAttempts
+        previousAttempts,
+        relatedQuestionsContext,
+        isLastProblem
       );
 
       // Create attempt history entry
@@ -246,7 +319,8 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         attemptNumber: problemSession.attemptCount + 1,
         studentAnswer,
         avatarSpeech: result.avatarSpeech,
-        hint: result.hint,
+        hint: result.hint,           // Only present for incorrect answers
+        explanation: result.explanation, // Only present for correct answers
         isCorrect: result.isCorrect,
         timestamp: new Date(),
       };
@@ -260,8 +334,23 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         showingSolution: false,
       };
 
-      // Speak the avatar speech
-      speakText(result.avatarSpeech);
+      // CRITICAL: Create updatedProblemSessions BEFORE speakText callback to avoid stale closure
+      const updatedProblemSessionsForCallback = {
+        ...session.problemSessions,
+        [currentProblem.id]: updatedProblemSession,
+      };
+
+      // Speak the avatar speech with auto-advance callback for correct answers
+      speakText(
+        result.avatarSpeech,
+        undefined,
+        result.isCorrect ? () => {
+          // Auto-advance to next problem after speech finishes (only for correct answers)
+          // Pass updatedProblemSessions to avoid stale closure bug
+          console.log('✓ Avatar speech complete, auto-advancing to next problem...');
+          handleNextProblem(true, updatedProblemSessionsForCallback);
+        } : undefined
+      );
 
       // If correct or last attempt, record for progress
       if (result.isCorrect || updatedProblemSession.attemptCount >= 3) {
@@ -276,18 +365,24 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         };
 
         const newAttempts = [...session.attempts, attempt];
+
+        // Use the same updatedProblemSessions created earlier for the callback
+        const updatedProblemSessions = updatedProblemSessionsForCallback;
+
         setSession(prev => ({
           ...prev,
           attempts: newAttempts,
           currentProblemSession: updatedProblemSession,
+          problemSessions: updatedProblemSessions,
         }));
 
-        // Save updated session to localStorage
+        // Save updated session to localStorage with updated problemSessions
         saveSessionToStorage({
           nodeId: node.id,
           problems: session.problems,
           currentIndex: session.currentIndex,
           attempts: newAttempts,
+          problemSessions: updatedProblemSessions,
         });
         console.log(`💾 Saved attempt (${result.isCorrect ? 'correct' : 'incorrect'}): ${newAttempts.length} total attempts, current index: ${session.currentIndex}`);
 
@@ -311,10 +406,26 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
           console.log(`📊 Updated unified progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired} problems`);
         }
       } else {
+        // For incorrect attempts that can retry, also save the session state
+        const updatedProblemSessions = {
+          ...session.problemSessions,
+          [currentProblem.id]: updatedProblemSession,
+        };
+
         setSession(prev => ({
           ...prev,
           currentProblemSession: updatedProblemSession,
+          problemSessions: updatedProblemSessions,
         }));
+
+        // Save to localStorage so hints persist on navigation
+        saveSessionToStorage({
+          nodeId: node.id,
+          problems: session.problems,
+          currentIndex: session.currentIndex,
+          attempts: session.attempts,
+          problemSessions: updatedProblemSessions,
+        });
       }
 
       // Clear input if incorrect and can retry
@@ -326,25 +437,6 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
       speakText('Let me try again.');
     } finally {
       setSubmitting(false);
-    }
-  };
-
-  const handleRequestHint = async () => {
-    const currentProblem = session.problems[session.currentIndex];
-    if (!currentProblem || loadingHint) return;
-
-    try {
-      setLoadingHint(true);
-      const hintLevel = session.hintsUsed + 1;
-      const hint = await pathPracticeService.generateHint(currentProblem, hintLevel);
-
-      setCurrentHint(hint);
-      setSession(prev => ({ ...prev, hintsUsed: prev.hintsUsed + 1 }));
-    } catch (error) {
-      console.error('Failed to generate hint:', error);
-      setCurrentHint('💡 Try breaking down the problem step by step.');
-    } finally {
-      setLoadingHint(false);
     }
   };
 
@@ -369,20 +461,47 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     }
   };
 
-  const handleNextProblem = () => {
+  const handleNextProblem = (skipAvatarSpeech = false, existingProblemSessions?: Record<string, ProblemSessionState>) => {
     const nextIndex = session.currentIndex + 1;
 
     if (nextIndex >= session.problems.length) {
       // Session complete!
       completeSession();
     } else {
+      // CRITICAL: Use existingProblemSessions if provided (to avoid stale closure), otherwise use session.problemSessions
+      const baseProblemSessions = existingProblemSessions || session.problemSessions;
+      const updatedProblemSessions = { ...baseProblemSessions };
+
+      // CRITICAL: Only save currentProblemSession if NOT using existingProblemSessions
+      // (because existingProblemSessions already contains the updated current problem session)
+      if (session.currentProblemSession && !existingProblemSessions) {
+        const currentProblem = session.problems[session.currentIndex];
+        updatedProblemSessions[currentProblem.id] = session.currentProblemSession;
+      }
+
       const nextProblem = session.problems[nextIndex];
+
+      // Handle avatar intro for pre-written questions
+      // Skip if already spoken (e.g., during auto-advance after correct answer)
+      if (!skipAvatarSpeech) {
+        if (nextProblem.metadata?.avatarIntro) {
+          // First question with custom intro
+          speakText(nextProblem.metadata.avatarIntro);
+        } else if (nextProblem.metadata?.isPreWritten && nextProblem.metadata.partNumber) {
+          // Subsequent parts - generate contextual transition
+          const partNum = nextProblem.metadata.partNumber;
+          const partLetter = String.fromCharCode(96 + partNum); // 1=a, 2=b, 3=c, etc.
+          speakText(`Let's move on to part ${partLetter}.`);
+        }
+      }
+
       // Move to next problem with fresh problem session
       setSession(prev => ({
         ...prev,
         currentIndex: nextIndex,
         hintsUsed: 0,
         showingSolution: false,
+        problemSessions: updatedProblemSessions, // Save updated problem sessions
         currentProblemSession: {
           problemId: nextProblem.id,
           attemptCount: 0,
@@ -392,20 +511,64 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         },
       }));
       setStudentAnswer('');
-      setFeedback(null);
-      setCurrentHint(null);
       setSolution(null);
 
-      // Save progress
+      // Save progress with updated problem sessions
       const sessionData = {
         nodeId: node.id,
         problems: session.problems,
         currentIndex: nextIndex,
         attempts: session.attempts,
+        problemSessions: updatedProblemSessions, // Use updated version
       };
       saveSessionToStorage(sessionData);
-      console.log(`💾 Saved session: Moving to problem ${nextIndex + 1} of ${session.problems.length}`);
     }
+  };
+
+  const handleNavigateToProblem = (targetIndex: number) => {
+    if (targetIndex === session.currentIndex) return; // Already on this problem
+
+    // Save current problem session state before navigating
+    const updatedProblemSessions = { ...session.problemSessions };
+    if (session.currentProblemSession) {
+      const currentProblem = session.problems[session.currentIndex];
+      updatedProblemSessions[currentProblem.id] = session.currentProblemSession;
+    }
+
+    const targetProblem = session.problems[targetIndex];
+
+    // Load saved session for target problem, or create fresh one
+    const savedProblemSession = updatedProblemSessions[targetProblem.id];
+    const targetProblemSession: ProblemSessionState = savedProblemSession || {
+      problemId: targetProblem.id,
+      attemptCount: 0,
+      attemptHistory: [],
+      canRetry: true,
+      showingSolution: false,
+    };
+
+    // Update session state
+    setSession(prev => ({
+      ...prev,
+      currentIndex: targetIndex,
+      currentProblemSession: targetProblemSession,
+      problemSessions: updatedProblemSessions,
+      hintsUsed: 0,
+      showingSolution: false,
+    }));
+
+    // Clear UI state
+    setStudentAnswer('');
+    setSolution(null);
+
+    // Save to localStorage
+    saveSessionToStorage({
+      nodeId: node.id,
+      problems: session.problems,
+      currentIndex: targetIndex,
+      attempts: session.attempts,
+      problemSessions: updatedProblemSessions,
+    });
   };
 
   const completeSession = async () => {
@@ -455,17 +618,6 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     onComplete();
   };
 
-  const getAllNodesForDifficulty = async (): Promise<PathNode[]> => {
-    try {
-      // We need to import pathConfigLoader for this
-      const { pathConfigLoader } = await import('../../services/pathConfigLoader');
-      return await pathConfigLoader.loadPathNodes(category, difficulty);
-    } catch (error) {
-      console.error('Failed to load nodes for difficulty:', error);
-      return [];
-    }
-  };
-
   // Computed values
   const currentProblem = session.problems[session.currentIndex];
   const progress = session.currentIndex + 1;
@@ -479,6 +631,18 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   const accuracy = session.attempts.length > 0
     ? Math.round((correctCount / session.attempts.length) * 100)
     : 0;
+
+  // Calculate the active working index (furthest problem that needs work)
+  // This is the index of the first problem that hasn't been attempted yet
+  const activeWorkingIndex = session.problems.findIndex((p, idx) =>
+    !session.attempts.some(a => a.problemId === p.id)
+  );
+  // If all problems attempted, active index is last problem
+  const finalActiveIndex = activeWorkingIndex === -1 ? session.problems.length - 1 : activeWorkingIndex;
+
+  // Determine if user is reviewing (viewing a completed problem that's not the active one)
+  const isReviewing = session.currentIndex < finalActiveIndex &&
+                     session.currentProblemSession?.attemptHistory.some(a => a.isCorrect);
 
   // Color schemes by difficulty
   const colorSchemes = {
@@ -498,7 +662,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
           {/* Loading text with animated dots */}
           <div className="text-xl text-gray-700 font-semibold flex items-center justify-center gap-1">
-            <span>Loading your practice session</span>
+            <span>{loadingProgress ? 'Preparing exam questions' : 'Loading your practice session'}</span>
             <span className="flex gap-1">
               <span className="animate-pulse" style={{ animationDelay: '0ms' }}>.</span>
               <span className="animate-pulse" style={{ animationDelay: '200ms' }}>.</span>
@@ -506,11 +670,27 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
             </span>
           </div>
 
+          {/* Progress indicator for pre-written questions */}
+          {loadingProgress && (
+            <div className="mt-3 text-lg text-gray-600">
+              ({loadingProgress.current}/{loadingProgress.total})
+            </div>
+          )}
+
           {/* Animated progress bar */}
           <div className="mt-6 w-64 h-2 bg-white/30 rounded-full overflow-hidden mx-auto">
-            <div className="h-full bg-gradient-to-r from-blue-400 to-indigo-500 animate-pulse" style={{
-              animation: 'loading-bar 1.5s ease-in-out infinite'
-            }}></div>
+            {loadingProgress ? (
+              /* Determinate progress bar for pre-written questions */
+              <div
+                className="h-full bg-gradient-to-r from-blue-400 to-indigo-500 transition-all duration-300"
+                style={{ width: `${(loadingProgress.current / loadingProgress.total) * 100}%` }}
+              />
+            ) : (
+              /* Indeterminate progress bar for AI-generated questions */
+              <div className="h-full bg-gradient-to-r from-blue-400 to-indigo-500 animate-pulse" style={{
+                animation: 'loading-bar 1.5s ease-in-out infinite'
+              }}></div>
+            )}
           </div>
 
           {/* Loading spinner circles */}
@@ -568,9 +748,6 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                   <span className={`px-2 py-0.5 rounded text-xs font-semibold ${colors.bg} ${colors.text} ${colors.border} border`}>
                     {difficulty.toUpperCase()}
                   </span>
-                  <span className="text-sm text-gray-600">
-                    Problem {progress} of {total}
-                  </span>
                 </div>
               </div>
             </div>
@@ -580,12 +757,45 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
             </div>
           </div>
 
-          {/* Progress Bar */}
-          <div className="mt-3 h-2 bg-gray-200 rounded-full overflow-hidden">
-            <div
-              className={`h-full bg-gradient-to-r ${colors.button} transition-all`}
-              style={{ width: `${progressPercent}%` }}
-            />
+          {/* Problem Navigation Pills */}
+          <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
+            {session.problems.map((problem, index) => {
+              const isAttempted = session.attempts.some(a => a.problemId === problem.id);
+              const hasVisited = session.problemSessions[problem.id] !== undefined;
+              const isCurrent = index === session.currentIndex;
+              // Can click if: attempted, current, has visited session, or any problem up to current index
+              const canClick = isAttempted || isCurrent || hasVisited || index <= session.currentIndex;
+
+              return (
+                <button
+                  key={problem.id}
+                  onClick={() => canClick && handleNavigateToProblem(index)}
+                  disabled={!canClick}
+                  className={`w-10 h-10 rounded-full font-semibold transition-all ${
+                    isAttempted
+                      ? 'bg-green-500 text-white hover:bg-green-600 hover:scale-105 cursor-pointer'  // Green for attempted (priority)
+                      : isCurrent
+                      ? 'bg-amber-500 text-white shadow-lg scale-110'  // Orange for current
+                      : hasVisited || index < session.currentIndex
+                      ? 'bg-amber-400 text-white hover:bg-amber-500 hover:scale-105 cursor-pointer'  // Lighter orange for visited
+                      : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-60'  // Grey for not yet reached
+                  } ${isCurrent && isAttempted ? 'ring-4 ring-amber-300' : ''}`}
+                  title={
+                    isCurrent && isAttempted
+                      ? `Current problem ${index + 1} (attempted)`
+                      : isCurrent
+                      ? `Current problem ${index + 1}`
+                      : isAttempted
+                      ? `Navigate to problem ${index + 1} (completed)`
+                      : hasVisited || index < session.currentIndex
+                      ? `Navigate to problem ${index + 1} (visited)`
+                      : `Problem ${index + 1} (not reached yet)`
+                  }
+                >
+                  {index + 1}
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -622,7 +832,21 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
             <MathText>{currentProblem?.problemText || ''}</MathText>
           </div>
 
-          {/* Math Tool Visualization (if provided by AI) */}
+          {/* SVG Diagram (for pre-written questions) */}
+          {currentProblem?.diagramSvg && (
+            <div className="my-4 p-4 bg-white rounded-lg border-2 border-gray-200">
+              <div className="flex justify-center">
+                <img
+                  src={currentProblem.diagramSvg}
+                  alt="Problem diagram"
+                  className="max-w-full h-auto"
+                  style={{ maxHeight: '500px' }}
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Math Tool Visualization (for AI-generated questions) */}
           {currentProblem?.mathTool && (
             <MathToolRenderer
               toolName={currentProblem.mathTool.toolName}
@@ -650,17 +874,23 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                     </div>
                   </div>
 
-                  {/* Tutor's Hint/Feedback */}
-                  <div className="flex items-start space-x-2 ml-10">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-sm">
-                      📚
-                    </div>
-                    <div className="flex-1">
+                  {/* Tutor's Hint/Feedback - WhatsApp style (right-aligned) */}
+                  <div className="flex items-start space-x-2 justify-end">
+                    <div className="max-w-[75%]">
                       <div className={`rounded-lg px-3 py-2 ${
                         attempt.isCorrect ? 'bg-green-50 text-green-800' : 'bg-yellow-50 text-gray-800'
                       }`}>
-                        <MathText>{attempt.hint}</MathText>
+                        {/* Show explanation for correct answers, hint with label for incorrect */}
+                        <MathText>
+                          {attempt.isCorrect
+                            ? (attempt.explanation || '')
+                            : `Hint ${attempt.attemptNumber}: ${attempt.hint || ''}`}
+                        </MathText>
                       </div>
+                    </div>
+                    {/* Tutor label badge */}
+                    <div className="flex-shrink-0 px-2 py-1 rounded bg-indigo-100 text-indigo-700 text-xs font-semibold whitespace-nowrap">
+                      Tutor
                     </div>
                   </div>
                 </div>
@@ -673,15 +903,15 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Your Answer {session.currentProblemSession && session.currentProblemSession.attemptCount > 0
-                  ? `(Attempt ${session.currentProblemSession.attemptCount + 1} of 3)`
+                  ? `(Attempt ${Math.min(session.currentProblemSession.attemptCount + 1, 3)} of 3)`
                   : ''}:
               </label>
               <input
                 type="text"
                 value={studentAnswer}
                 onChange={(e) => setStudentAnswer(e.target.value)}
-                onKeyPress={(e) => {
-                  const canSubmit = session.currentProblemSession && session.currentProblemSession.canRetry;
+                onKeyDown={(e) => {
+                  const canSubmit = session.currentProblemSession?.canRetry ?? false;
                   if (e.key === 'Enter' && canSubmit && !submitting) {
                     handleSubmitAnswer();
                   }
@@ -689,7 +919,8 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                 disabled={
                   submitting ||
                   (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
-                  (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect))
+                  (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
+                  false
                 }
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
                 placeholder={
@@ -705,10 +936,14 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
               {/* Check if student got it correct */}
               {session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect) ? (
                 <button
-                  onClick={handleNextProblem}
+                  onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
                   className={`w-full px-6 py-3 ${colors.button} text-white rounded-lg font-semibold transition`}
                 >
-                  {session.currentIndex >= session.problems.length - 1 ? 'Finish Lesson' : 'Next Problem →'}
+                  {session.currentIndex >= session.problems.length - 1
+                    ? 'Finish Lesson'
+                    : isReviewing
+                    ? `Return to Problem ${finalActiveIndex + 1} →`
+                    : 'Next Problem →'}
                 </button>
               ) : (
                 <>
@@ -734,10 +969,14 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                         </button>
                       ) : (
                         <button
-                          onClick={handleNextProblem}
+                          onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
                           className={`flex-1 px-6 py-3 ${colors.button} text-white rounded-lg font-semibold transition`}
                         >
-                          {session.currentIndex >= session.problems.length - 1 ? 'Finish Lesson' : 'Next Problem →'}
+                          {session.currentIndex >= session.problems.length - 1
+                            ? 'Finish Lesson'
+                            : isReviewing
+                            ? `Return to Problem ${finalActiveIndex + 1} →`
+                            : 'Next Problem →'}
                         </button>
                       )}
                     </>

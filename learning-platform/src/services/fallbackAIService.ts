@@ -367,6 +367,13 @@ class FallbackAIService implements AIService {
     );
   }
 
+  /**
+   * Alias for generate() - provides raw AI completion for testing/utilities
+   */
+  async generateRawCompletion(prompt: string): Promise<string> {
+    return this.generate(prompt);
+  }
+
   // Utility methods
   getActiveService(): 'gemini' | 'claude' | 'unknown' {
     // Since both services use BaseAIService now, we can't distinguish by instanceof

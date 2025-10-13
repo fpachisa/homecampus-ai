@@ -4,6 +4,7 @@ import { S3_MATH_TRIGONOMETRY, S3_MATH_TRIGONOMETRY_CONFIG, type TrigonometryTop
 import { S3_MATH_CIRCLE_GEOMETRY, S3_MATH_CIRCLE_GEOMETRY_CONFIG, type CircleGeometryTopicId } from './topics/S3-Math-CircleGeometry';
 import { S3_MATH_QUADRATIC_EQUATIONS, S3_MATH_QUADRATIC_EQUATIONS_CONFIG, type QuadraticEquationsTopicId } from './topics/S3-Math-QuadraticEquations';
 import { formatConversationHistory } from '../services/utils/responseParser';
+import { getFilteredTools, MATH_TOOLS_REGISTRY } from '../components/math-tools/mathToolsRegistry';
 
 export interface PromptContext {
   topicId: TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | string;
@@ -54,14 +55,17 @@ export interface PromptContext {
 export class PromptResolver {
   /**
    * Get section-scoped math tools
-   * Filters MATH_TOOLS to only include tools available in the current section
+   * Filters tools from centralized registry to only include tools available in the current section
    */
   private getScopedMathTools(context: PromptContext, subtopic: any, global: any): any {
     const currentSection = context.currentSection || (context as any).currentSection;
 
-    // If no current section, return all tools
+    // Get available tools list from global config (MATH_TOOLS_AVAILABLE array)
+    const availableToolsList = global.MATH_TOOLS_AVAILABLE || [];
+
+    // If no current section, return all available tools for this topic
     if (!currentSection || !subtopic.progressionStructure?.sections) {
-      return global.MATH_TOOLS;
+      return getFilteredTools(availableToolsList);
     }
 
     // Find the current section
@@ -69,24 +73,19 @@ export class PromptResolver {
       (s: any) => s.id === currentSection
     );
 
-    // If section has availableTools, filter MATH_TOOLS
+    // If section has availableTools, filter to section-specific tools
     if (section?.availableTools && Array.isArray(section.availableTools)) {
-      const filteredTools: any = {};
-      section.availableTools.forEach((toolKey: string) => {
-        if (global.MATH_TOOLS.availableTools[toolKey]) {
-          filteredTools[toolKey] = global.MATH_TOOLS.availableTools[toolKey];
-        }
-      });
+      const filteredTools = getFilteredTools(section.availableTools);
 
       return {
-        description: `${global.MATH_TOOLS.description} (Section-scoped to: ${currentSection})`,
-        availableTools: filteredTools,
-        usageGuidelines: global.MATH_TOOLS.usageGuidelines
+        description: `Pre-built visual tools (Section-scoped to: ${currentSection})`,
+        tools: filteredTools,
+        usageGuidelines: "Use visual tools to help clarify concepts. Choose tools based on the section's learning objectives."
       };
     }
 
-    // Default: return all tools
-    return global.MATH_TOOLS;
+    // Default: return all available tools for this topic
+    return getFilteredTools(availableToolsList);
   }
 
 

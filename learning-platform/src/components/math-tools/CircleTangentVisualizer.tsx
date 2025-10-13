@@ -74,8 +74,8 @@ const CircleTangentVisualizer: React.FC<CircleTangentVisualizerProps> = ({
   // Angle from center to external point
   const angleOP = Math.atan2(externalPointY - centerY, externalPointX - centerX);
 
-  // Angle from OP to tangent
-  const tangentAngleOffset = Math.asin(circleRadius / distOP);
+  // Angle from OP to tangent point (using cos since OT is radius and perpendicular to tangent)
+  const tangentAngleOffset = Math.acos(circleRadius / distOP);
 
   // Tangent point 1 (upper)
   const angleT1 = angleOP - tangentAngleOffset;
@@ -143,19 +143,6 @@ const CircleTangentVisualizer: React.FC<CircleTangentVisualizerProps> = ({
               strokeWidth={highlightTangent ? 4 : 2.5}
             />
 
-            {/* Tangent label */}
-            {tangentLabel && (
-              <text
-                x={(tangentX1 + tangentX2) / 2 + 20}
-                y={(tangentY1 + tangentY2) / 2 - 10}
-                fill={colors.tangent}
-                fontSize="14"
-                fontStyle="italic"
-              >
-                {tangentLabel}
-              </text>
-            )}
-
             {/* Radius to tangent point */}
             {showRadius && (
               <line
@@ -169,18 +156,37 @@ const CircleTangentVisualizer: React.FC<CircleTangentVisualizerProps> = ({
             )}
 
             {/* Right angle marker */}
-            {showRightAngle && (
-              <rect
-                x={tangentPointX - 8}
-                y={tangentPointY - 8}
-                width="12"
-                height="12"
-                fill="none"
-                stroke={colors.radius}
-                strokeWidth="2"
-                transform={`rotate(${tangentAngle}, ${tangentPointX}, ${tangentPointY})`}
-              />
-            )}
+            {showRightAngle && (() => {
+              const markerSize = 15;
+
+              // Direction vector from tangent point to center (radius direction)
+              const dxRadius = centerX - tangentPointX;
+              const dyRadius = centerY - tangentPointY;
+              const lenRadius = Math.sqrt(dxRadius * dxRadius + dyRadius * dyRadius);
+              const uxRadius = (dxRadius / lenRadius) * markerSize;
+              const uyRadius = (dyRadius / lenRadius) * markerSize;
+
+              // Direction vector along tangent line
+              const dxTangent = tangentX2 - tangentX1;
+              const dyTangent = tangentY2 - tangentY1;
+              const lenTangent = Math.sqrt(dxTangent * dxTangent + dyTangent * dyTangent);
+              const uxTangent = (dxTangent / lenTangent) * markerSize;
+              const uyTangent = (dyTangent / lenTangent) * markerSize;
+
+              // Square corners
+              const corner1 = { x: tangentPointX + uxRadius, y: tangentPointY + uyRadius };
+              const corner2 = { x: corner1.x + uxTangent, y: corner1.y + uyTangent };
+              const corner3 = { x: tangentPointX + uxTangent, y: tangentPointY + uyTangent };
+
+              return (
+                <path
+                  d={`M ${tangentPointX} ${tangentPointY} L ${corner1.x} ${corner1.y} L ${corner2.x} ${corner2.y} L ${corner3.x} ${corner3.y} Z`}
+                  fill="white"
+                  stroke={colors.highlight}
+                  strokeWidth="2.5"
+                />
+              );
+            })()}
 
             {/* Centre O */}
             <circle cx={centerX} cy={centerY} r="4" fill={colors.primary} />
@@ -254,26 +260,60 @@ const CircleTangentVisualizer: React.FC<CircleTangentVisualizerProps> = ({
                 />
 
                 {/* Right angle markers */}
-                <rect
-                  x={t1X - 6}
-                  y={t1Y - 6}
-                  width="10"
-                  height="10"
-                  fill="none"
-                  stroke={colors.radius}
-                  strokeWidth="1.5"
-                  transform={`rotate(${(angleT1 * 180) / Math.PI}, ${t1X}, ${t1Y})`}
-                />
-                <rect
-                  x={t2X - 6}
-                  y={t2Y - 6}
-                  width="10"
-                  height="10"
-                  fill="none"
-                  stroke={colors.radius}
-                  strokeWidth="1.5"
-                  transform={`rotate(${(angleT2 * 180) / Math.PI}, ${t2X}, ${t2Y})`}
-                />
+                {(() => {
+                  const markerSize = 12;
+
+                  // Right angle marker at T1
+                  const dxRadius1 = centerX - t1X;
+                  const dyRadius1 = centerY - t1Y;
+                  const lenRadius1 = Math.sqrt(dxRadius1 * dxRadius1 + dyRadius1 * dyRadius1);
+                  const uxRadius1 = (dxRadius1 / lenRadius1) * markerSize;
+                  const uyRadius1 = (dyRadius1 / lenRadius1) * markerSize;
+
+                  const dxTangent1 = externalPointX - t1X;
+                  const dyTangent1 = externalPointY - t1Y;
+                  const lenTangent1 = Math.sqrt(dxTangent1 * dxTangent1 + dyTangent1 * dyTangent1);
+                  const uxTangent1 = (dxTangent1 / lenTangent1) * markerSize;
+                  const uyTangent1 = (dyTangent1 / lenTangent1) * markerSize;
+
+                  const corner1_1 = { x: t1X + uxRadius1, y: t1Y + uyRadius1 };
+                  const corner1_2 = { x: corner1_1.x + uxTangent1, y: corner1_1.y + uyTangent1 };
+                  const corner1_3 = { x: t1X + uxTangent1, y: t1Y + uyTangent1 };
+
+                  // Right angle marker at T2
+                  const dxRadius2 = centerX - t2X;
+                  const dyRadius2 = centerY - t2Y;
+                  const lenRadius2 = Math.sqrt(dxRadius2 * dxRadius2 + dyRadius2 * dyRadius2);
+                  const uxRadius2 = (dxRadius2 / lenRadius2) * markerSize;
+                  const uyRadius2 = (dyRadius2 / lenRadius2) * markerSize;
+
+                  const dxTangent2 = externalPointX - t2X;
+                  const dyTangent2 = externalPointY - t2Y;
+                  const lenTangent2 = Math.sqrt(dxTangent2 * dxTangent2 + dyTangent2 * dyTangent2);
+                  const uxTangent2 = (dxTangent2 / lenTangent2) * markerSize;
+                  const uyTangent2 = (dyTangent2 / lenTangent2) * markerSize;
+
+                  const corner2_1 = { x: t2X + uxRadius2, y: t2Y + uyRadius2 };
+                  const corner2_2 = { x: corner2_1.x + uxTangent2, y: corner2_1.y + uyTangent2 };
+                  const corner2_3 = { x: t2X + uxTangent2, y: t2Y + uyTangent2 };
+
+                  return (
+                    <>
+                      <path
+                        d={`M ${t1X} ${t1Y} L ${corner1_1.x} ${corner1_1.y} L ${corner1_2.x} ${corner1_2.y} L ${corner1_3.x} ${corner1_3.y} Z`}
+                        fill="white"
+                        stroke={colors.highlight}
+                        strokeWidth="2"
+                      />
+                      <path
+                        d={`M ${t2X} ${t2Y} L ${corner2_1.x} ${corner2_1.y} L ${corner2_2.x} ${corner2_2.y} L ${corner2_3.x} ${corner2_3.y} Z`}
+                        fill="white"
+                        stroke={colors.highlight}
+                        strokeWidth="2"
+                      />
+                    </>
+                  );
+                })()}
               </>
             )}
 
