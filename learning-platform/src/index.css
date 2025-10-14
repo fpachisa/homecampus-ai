@@ -109,4 +109,111 @@
     display: inline;           /* Force inline, override any block defaults */
     margin: 0;                 /* No extra margin around math expressions */
   }
+
+  /* ============================================================================
+     INLINE MATH WRAPPING FIX
+     ============================================================================
+
+     PROBLEM SOLVED:
+     Inline math expressions like $\sin(A)$ were wrapping to a new line when they
+     appeared at the end of long sentences.
+
+     Example: "what is the value of $\sin(A)$?"
+     Without fix: "what is the value of"  (line break here)
+                  "sin(A)?"
+     With fix: "what is the value of sin(A)?" (stays together)
+
+     SOLUTION:
+     - Keep inline math with preceding word using white-space
+     - Allow wrapping if math+context is too long
+     ============================================================================ */
+
+  .katex {
+    display: inline !important;  /* Ensure KaTeX is always inline, not block */
+  }
+
+  /* Prevent awkward line breaks before/within inline math */
+  .math-renderer {
+    display: inline;             /* Keep math renderer inline */
+    white-space: nowrap;         /* Prevent breaking within the math expression */
+  }
+
+  /* Try to keep math with preceding text */
+  span:has(> .math-renderer) {
+    display: inline;             /* Ensure parent span stays inline too */
+  }
+
+  /* ============================================================================
+     SCRATCH PAD - RESPONSIVE GRID LAYOUT
+     ============================================================================
+
+     Desktop/Tablet (≥1024px): Side-by-side layout with problem on left (60%),
+     scratch pad on right (40%). Scratch pad is sticky and scrolls independently.
+
+     Mobile (<1024px): Stacked layout with scratch pad below problem card.
+     Scratch pad is collapsible to save screen space.
+     ============================================================================ */
+
+  .grid-layout-responsive {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr; /* Mobile: stacked */
+  }
+
+  @media (min-width: 1024px) {
+    .grid-layout-responsive {
+      grid-template-columns: 60% 40%; /* Desktop: side-by-side */
+      align-items: start;
+    }
+
+    .scratch-pad-column {
+      position: sticky;
+      top: 1rem;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
+  }
+
+  /* ============================================================================
+     SCRATCH PAD - VISUAL EFFECTS
+     ============================================================================ */
+
+  /* Grid paper background for drawing canvas */
+  .canvas-grid-bg {
+    background-color: #ffffff;
+    background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Lined paper effect for text mode */
+  .text-lined-bg {
+    background-color: #ffffff;
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 24px,
+      #e5e7eb 24px,
+      #e5e7eb 25px
+    );
+  }
+
+  /* Smooth scrollbar for scratch pad on desktop */
+  @media (min-width: 1024px) {
+    .scratch-pad-column::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .scratch-pad-column::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 4px;
+    }
+
+    .scratch-pad-column::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    .scratch-pad-column::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  }
 }

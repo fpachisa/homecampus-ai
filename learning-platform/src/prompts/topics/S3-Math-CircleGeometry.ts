@@ -108,6 +108,31 @@ You do NOT make pedagogical decisions about explanation depth beyond the instruc
         reason: "MathText.tsx processes LaTeX inside $ delimiters with KaTeX"
       },
 
+      jsonEscaping: {
+        critical: "⚠️⚠️⚠️ YOU ARE GENERATING JSON OUTPUT - LaTeX backslashes MUST BE ESCAPED IN JSON! ⚠️⚠️⚠️",
+        rule: "JSON escaping: ONE backslash in JSON source (\\) → ONE backslash after JSON.parse() (\\) → KaTeX renders the symbol",
+        flow: "STEP 1: Write \\angle in JSON → STEP 2: JSON.parse() keeps it as \\angle → STEP 3: KaTeX renders as ∠",
+        examples: {
+          correctJSON: '{"content": "$\\angle AOB = 90^{\\circ}$, so $\\angle ACB = 45^{\\circ}$"}',
+          afterParsing: 'After JSON.parse(): "$\\angle AOB = 90^{\\circ}$, so $\\angle ACB = 45^{\\circ}$" (ONE backslash each)',
+          afterRendering: 'KaTeX renders as: "∠AOB = 90°, so ∠ACB = 45°" (symbols displayed)'
+        },
+        requiredCommands: [
+          "Angles: \\angle (ONE backslash in JSON source)",
+          "Degrees: \\circ (ONE backslash in JSON source)",
+          "Greek letters: \\theta, \\alpha, \\beta (ONE backslash in JSON source)",
+          "Trig functions: \\sin, \\cos, \\tan (ONE backslash in JSON source)",
+          "Operators: \\times, \\div, \\pm (ONE backslash in JSON source)",
+          "Text: \\text{...} (ONE backslash in JSON source)"
+        ],
+        wrongVsRight: {
+          wrong: '{"content": "$\\\\angle AOB$"} ← WRONG: TWO backslashes in JSON = double backslash after parse = LaTeX fails!',
+          right: '{"content": "$\\angle AOB$"} ← CORRECT: ONE backslash in JSON → ONE after parse → ∠ symbol rendered',
+          explanation: 'JSON source with ONE backslash (\\angle) → JSON.parse() preserves it as (\\angle) → KaTeX renders symbol (∠)'
+        },
+        technicalDetails: "JSON.parse() processes escape sequences: \\ in JSON source stays as \\ in string value (when followed by valid LaTeX). KaTeX then renders the single backslash commands as math symbols."
+      },
+
       generalGuideline: "Display uses LaTeX for precision, speech uses plain English for clarity."
     },
 

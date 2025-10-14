@@ -272,7 +272,7 @@ Return a JSON response with EXACTLY these fields:
 - mathTool: (OPTIONAL) If a visual tool from Available Visual Tools would help, include it as:
   {
     "toolName": "technical_key_from_available_tools",
-    "parameters": { /* tool-specific parameters */ },
+    "parameters": { /* tool-specific parameters */ } - DO NOT use latex or markdown in parameters,
     "caption": "Brief explanation of the visual"
   }`;
   }

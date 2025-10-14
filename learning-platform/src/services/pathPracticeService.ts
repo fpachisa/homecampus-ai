@@ -76,12 +76,24 @@ class PathPracticeService {
     console.log('Questions:', questions.length);
     console.log('=============================================');
 
+    // Check if questions have pre-written answers
+    const hasPreWrittenAnswers = questions.some(q => q.finalAnswer && q.stepByStepGuideline);
+    const allHavePreWrittenAnswers = questions.every(q => q.finalAnswer && q.stepByStepGuideline);
+
+    if (allHavePreWrittenAnswers) {
+      console.log('✓ All questions have pre-written answers and solutions - skipping AI solving');
+    } else if (hasPreWrittenAnswers) {
+      console.log('⚠️ Some questions have pre-written answers, others will use AI solving');
+    } else {
+      console.log('🔄 No pre-written answers found - will use AI solving');
+    }
+
     // Map questions to PathProblem format
     const problems: PathProblem[] = questions.map((q, index) => ({
       id: q.id,
       nodeId: node.id,
       problemText: q.problemText,
-      correctAnswer: '',  // Will be calculated below
+      correctAnswer: q.finalAnswer || '',  // Use pre-written answer if available
       context: 'exam-style',
       subtopicId: node.id,
       difficulty: node.descriptor.difficulty || 'easy',
@@ -89,6 +101,7 @@ class PathPracticeService {
       mathTool: undefined,  // Pre-written questions use SVG diagrams instead
       diagramSvg: q.diagramSvg,
       questionGroup: q.questionGroup,  // Preserve question group for multi-part questions
+      solutionSteps: q.stepByStepGuideline || [],  // Use pre-written solution steps if available
       metadata: {
         isPreWritten: true,
         avatarIntro: q.avatarIntro,
@@ -97,44 +110,58 @@ class PathPracticeService {
       }
     }));
 
-    // Calculate solutions for all questions sequentially
-    // This ensures later parts can reference earlier answers
-    console.log('🔄 Calculating solutions for pre-written questions...');
-    for (let i = 0; i < problems.length; i++) {
-      const problem = problems[i];
+    // Only calculate solutions for questions without pre-written answers
+    const questionsNeedingSolutions = problems.filter(p => !p.correctAnswer || !p.solutionSteps?.length);
 
-      // Report progress
-      if (onProgress) {
-        onProgress(i + 1, problems.length);
+    if (questionsNeedingSolutions.length > 0) {
+      console.log(`🔄 Calculating solutions for ${questionsNeedingSolutions.length} questions without pre-written answers...`);
+
+      // Calculate solutions for all questions sequentially
+      // This ensures later parts can reference earlier answers
+      for (let i = 0; i < problems.length; i++) {
+        const problem = problems[i];
+
+        // Skip if already has pre-written answer and solution
+        if (problem.correctAnswer && problem.solutionSteps && problem.solutionSteps.length > 0) {
+          console.log(`  ✓ Using pre-written answer for ${problem.id}: ${problem.correctAnswer}`);
+          continue;
+        }
+
+        // Report progress
+        if (onProgress) {
+          onProgress(i + 1, problems.length);
+        }
+
+        // Build context from previously solved parts
+        const previousAnswers = problems.slice(0, i)
+          .filter(p => p.correctAnswer) // Only include solved problems
+          .map(p => ({
+            problemText: p.problemText,
+            answer: p.correctAnswer
+          }));
+
+        console.log(`  Solving problem ${i + 1}/${problems.length}: ${problem.id}`);
+
+        try {
+          // Calculate this problem's solution using AI
+          const solution = await this.solvePreWrittenProblem(
+            problem.problemText,
+            previousAnswers.length > 0 ? previousAnswers : undefined
+          );
+
+          problem.correctAnswer = solution.correctAnswer;
+          problem.solutionSteps = solution.solutionSteps;
+
+          console.log(`  ✓ Solution: ${solution.correctAnswer}`);
+        } catch (error) {
+          console.error(`  ✗ Failed to solve problem ${problem.id}:`, error);
+          // Leave correctAnswer empty - will be calculated on-demand during evaluation
+          problem.correctAnswer = '';
+          problem.solutionSteps = [];
+        }
       }
-
-      // Build context from previously solved parts
-      const previousAnswers = problems.slice(0, i)
-        .filter(p => p.correctAnswer) // Only include solved problems
-        .map(p => ({
-          problemText: p.problemText,
-          answer: p.correctAnswer
-        }));
-
-      console.log(`  Solving problem ${i + 1}/${problems.length}: ${problem.id}`);
-
-      try {
-        // Calculate this problem's solution
-        const solution = await this.solvePreWrittenProblem(
-          problem.problemText,
-          previousAnswers.length > 0 ? previousAnswers : undefined
-        );
-
-        problem.correctAnswer = solution.correctAnswer;
-        problem.solutionSteps = solution.solutionSteps;
-
-        console.log(`  ✓ Solution: ${solution.correctAnswer}`);
-      } catch (error) {
-        console.error(`  ✗ Failed to solve problem ${problem.id}:`, error);
-        // Leave correctAnswer empty - will be calculated on-demand during evaluation
-        problem.correctAnswer = '';
-        problem.solutionSteps = [];
-      }
+    } else {
+      console.log('✓ All questions have pre-written answers - no AI solving needed');
     }
 
     console.log('✓ All pre-written questions ready');
@@ -311,19 +338,34 @@ class PathPracticeService {
   }
 
   /**
-   * Get solution with steps using AI
+   * Get solution with steps - uses pre-written steps if available, otherwise generates with AI
    */
   async getSolution(problem: PathProblem): Promise<{
     steps: string[];
     finalAnswer: string;
   }> {
+    // Check if problem already has pre-written solution steps
+    if (problem.solutionSteps && problem.solutionSteps.length > 0) {
+      console.log('=== PRACTICE: Get Solution (Pre-Written) ===');
+      console.log('Problem:', problem.problemText);
+      console.log('Using pre-written solution steps');
+      console.log('Steps:', problem.solutionSteps.length);
+      console.log('===========================================');
+
+      return {
+        steps: problem.solutionSteps,
+        finalAnswer: problem.correctAnswer
+      };
+    }
+
+    // Fall back to AI generation if no pre-written solution
     try {
       const prompt = generatePracticeSolutionPrompt(
         problem.problemText,
         problem.correctAnswer
       );
 
-      console.log('=== PRACTICE: Get Solution ===');
+      console.log('=== PRACTICE: Get Solution (AI Generated) ===');
       console.log('Problem:', problem.problemText);
       console.log('Correct Answer:', problem.correctAnswer);
       console.log('Prompt:', prompt);
@@ -332,7 +374,7 @@ class PathPracticeService {
       const responseText = await this.callAIDirectly(prompt);
 
       console.log('Response:', responseText);
-      console.log('===============================');
+      console.log('===========================================');
 
       // Use safe parser for solution responses
       const data = safeParseJSON(responseText, ['steps'], {

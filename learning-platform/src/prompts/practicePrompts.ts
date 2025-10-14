@@ -9,7 +9,7 @@
 
 import type { PathNode, RelatedQuestionContext } from '../types/practice';
 import { parseJSON } from '../services/utils/responseParser';
-import { MATH_TOOLS_REGISTRY, getFilteredTools } from '../components/math-tools/mathToolsRegistry';
+import { getFilteredTools } from '../components/math-tools/mathToolsRegistry';
 
 /**
  * Generate practice problems based on node descriptor
@@ -86,6 +86,7 @@ ${hasTools ? JSON.stringify(filteredMathTools, null, 2) : 'No tools available'}
         "toolName": "rightTriangle",
         "parameters": {
           "angle": 35,
+          "angleLabel": "θ",
           "hypotenuse": "10m",
           "opposite": "x",
           "adjacent": "",
@@ -99,8 +100,6 @@ ${hasTools ? JSON.stringify(filteredMathTools, null, 2) : 'No tools available'}
     }
   ]
 }
-
-**IMPORTANT:** If the angle is unknown (what student needs to find), use angle: null or angle: 0 (NOT a string like "A" or "θ").
 
 Generate the JSON now:`;
 };
@@ -198,8 +197,9 @@ ${studentAnswer}
 
 **EVALUATION INSTRUCTIONS:**
 1. Determine if the answer is correct (accept equivalent forms)
-2. If correct: Celebrate their success!
-3. If incorrect (Attempt ${attemptNumber} of 3):
+2. If you think there the error is due to rounding, say so
+3. If correct: Celebrate their success!
+4. If incorrect (Attempt ${attemptNumber} of 3):
    - Provide ${guidance.level} level feedback
    - ${guidance.instructions}
    - Use student answer to tailor your hint and Do NOT claim or assume the student said/identified/mentioned something they didn't 
@@ -212,13 +212,33 @@ ${studentAnswer}
 - Never give away the answer directly
 - Consider their previous attempts and adapt your guidance
 
-**LATEX FORMATTING (CRITICAL):**
-- Wrap ALL mathematical expressions in $...$ delimiters for inline math
-- Examples: $\sin(\theta)$, $\frac{3}{5}$, $x = 10$, $38^\circ$
-- Use single backslashes for LaTeX commands: \sin, \frac, \theta (NOT \\sin, \\frac, \\theta)
-- JSON parser will automatically handle escaping
-- Variables, formulas, angles, numbers with units: ALL need $ delimiters
-- Common commands: \sin, \cos, \tan, \theta, \frac{numerator}{denominator}, \text{word}, ^\circ (degree)
+**LATEX FORMATTING (CRITICAL - YOU ARE GENERATING JSON!):**
+YOU ARE GENERATING JSON OUTPUT. In JSON strings, backslashes MUST be escaped with double backslashes.
+
+**CORRECT JSON FORMAT (what you must generate):**
+{
+  "explanation": "The angle is $\\\\theta = 45^\\\\circ$, so $\\\\sin(\\\\theta) = \\\\frac{\\\\sqrt{2}}{2}$"
+}
+
+**AFTER JSON PARSING, this displays as:** "The angle is $\\theta = 45^\\circ$, so $\\sin(\\theta) = \\frac{\\sqrt{2}}{2}$"
+
+**REQUIRED: Write LaTeX commands with DOUBLE backslashes in JSON:**
+- Trig functions: \\\\sin, \\\\cos, \\\\tan, \\\\sec, \\\\csc, \\\\cot
+- Fractions: \\\\frac{numerator}{denominator}
+- Greek letters: \\\\theta, \\\\alpha, \\\\beta, \\\\gamma, \\\\pi
+- Geometry: \\\\angle, \\\\triangle, \\\\circ (degree symbol)
+- Operators: \\\\times, \\\\div, \\\\pm, \\\\sqrt{value}
+- Always wrap math in $...$ delimiters
+
+**CRITICAL - DO NOT USE LATEX DOCUMENT COMMANDS:**
+❌ NEVER use: \\\\begin{}, \\\\end{}, \\\\item, \\\\itemize, \\\\enumerate
+❌ These are LaTeX document commands - they will NOT render!
+✅ Instead: Write plain text sentences with embedded math: "First, we find $x = 5$. Then we calculate $y = 10$."
+
+**WRONG - CAUSES ERRORS:**
+Single backslash in JSON: "\\sin", "\\frac", "\\triangle" → These become control characters!
+
+**REMEMBER:** You are writing JSON source code. The JSON parser removes one level of escaping.
 
 **CRITICAL: Return ONLY valid JSON. Use the correct format based on whether the answer is correct or incorrect:**
 
@@ -267,9 +287,11 @@ ${correctAnswer}
 
 **LATEX FORMATTING (CRITICAL):**
 - Wrap ALL mathematical expressions in $...$ delimiters
-- Examples: $\sin(\theta)$, $\frac{3}{5}$, $x = 10$, $38^\circ$
-- Use single backslashes: \sin, \frac, \theta (NOT \\sin, \\frac, \\theta)
+- Examples: $\sin(\theta)$, $\frac{3}{5}$, $x = 10$, $38^\circ$, $26\sqrt{3}$ cm²
+- Use single backslashes: \sin, \frac, \theta, \sqrt{} (NOT \\sin, \\frac, \\theta)
 - Variables, formulas, numbers with units: ALL need $ delimiters
+- Common commands: \sin, \cos, \tan, \frac{num}{denom}, \sqrt{value}, ^\circ
+- WRONG: 26\tsqrt3 or 26sqrt{3} (missing backslash or wrong syntax)
 
 **CRITICAL: Return ONLY valid JSON in this exact format:**
 Example with proper LaTeX formatting:
@@ -320,9 +342,11 @@ ${problemText}
 
 **LATEX FORMATTING (CRITICAL):**
 - Wrap ALL mathematical expressions in $...$ delimiters
-- Examples: $\sin(\theta)$, $\frac{3}{5}$, $x = 10$, $38^\circ$
-- Use single backslashes: \sin, \frac, \theta (NOT \\sin, \\frac, \\theta)
+- Examples: $\sin(\theta)$, $\frac{3}{5}$, $x = 10$, $38^\circ$, $26\sqrt{3}$ cm²
+- Use single backslashes: \sin, \frac, \theta, \sqrt{} (NOT \\sin, \\frac, \\theta)
 - Variables, formulas, angles, numbers with units: ALL need $ delimiters
+- Common commands: \sin, \cos, \tan, \frac{num}{denom}, \sqrt{value}, ^\circ
+- WRONG: 26\tsqrt3 or 26sqrt{3} (missing backslash or wrong syntax)
 
 **CRITICAL: Return ONLY valid JSON in this exact format:**
 Example with proper LaTeX formatting:

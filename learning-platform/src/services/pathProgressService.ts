@@ -385,6 +385,7 @@ class PathProgressService {
       foundation: { completed: 0, total: 0 },
       integration: { completed: 0, total: 0 },
       application: { completed: 0, total: 0 },
+      examPractice: { completed: 0, total: 0 },
     };
 
     nodes.forEach((node) => {

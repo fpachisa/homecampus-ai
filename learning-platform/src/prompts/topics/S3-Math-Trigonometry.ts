@@ -112,9 +112,37 @@ You do NOT make pedagogical decisions about explanation depth or what concepts t
           correct: "$x^2 + 3x = 10$",
           correctWithDegree: "$45^{\\circ}$",
           correctWithText: "$1 \\text{ hectare} = 10,000 \\text{ m}^2$",
-          incorrect: "$\\$100$ investment" // DO NOT put \$ inside $ delimiters
+          correctWithSquareRoot: "$26\\sqrt{3}$ cm² (ALWAYS use \\sqrt{} with braces)",
+          correctWithComplexRoot: "$\\frac{1}{2} \\times 13 \\times 8 \\times \\sin(60°) = 26\\sqrt{3}$",
+          incorrect: "$\\$100$ investment", // DO NOT put \$ inside $ delimiters
+          incorrectRoot: "26\\tsqrt3 or 26sqrt{3}" // WRONG: missing backslash or typo \tsqrt
         },
         reason: "MathText.tsx processes LaTeX inside $ delimiters with KaTeX"
+      },
+
+      jsonEscaping: {
+        critical: "⚠️⚠️⚠️ YOU ARE GENERATING JSON OUTPUT - LaTeX backslashes MUST BE ESCAPED IN JSON! ⚠️⚠️⚠️",
+        rule: "JSON escaping: ONE backslash in JSON source (\\) → ONE backslash after JSON.parse() (\\) → KaTeX renders the symbol",
+        flow: "STEP 1: Write \\theta in JSON → STEP 2: JSON.parse() keeps it as \\theta → STEP 3: KaTeX renders as θ",
+        examples: {
+          correctJSON: '{"content": "The angle is $\\theta = 45^{\\circ}$, so $\\sin(\\theta) = \\frac{\\sqrt{2}}{2}$"}',
+          afterParsing: 'After JSON.parse(): "The angle is $\\theta = 45^{\\circ}$, so $\\sin(\\theta) = \\frac{\\sqrt{2}}{2}$" (ONE backslash each)',
+          afterRendering: 'KaTeX renders as: "The angle is θ = 45°, so sin(θ) = √2/2" (symbols displayed)'
+        },
+        requiredCommands: [
+          "Greek letters: \\theta, \\alpha, \\beta, \\gamma, \\pi (ONE backslash in JSON source)",
+          "Trig functions: \\sin, \\cos, \\tan, \\sec, \\csc, \\cot (ONE backslash in JSON source)",
+          "Fractions: \\frac{numerator}{denominator} (ONE backslash in JSON source)",
+          "Geometry: \\angle, \\triangle, \\circ (ONE backslash in JSON source)",
+          "Operators: \\times, \\div, \\pm, \\sqrt{value} (ONE backslash in JSON source)",
+          "Text: \\text{...} (ONE backslash in JSON source)"
+        ],
+        wrongVsRight: {
+          wrong: '{"content": "$\\\\theta$"} ← WRONG: TWO backslashes in JSON = double backslash after parse = LaTeX fails!',
+          right: '{"content": "$\\theta$"} ← CORRECT: ONE backslash in JSON → ONE after parse → θ symbol rendered',
+          explanation: 'JSON source with ONE backslash (\\theta) → JSON.parse() preserves it as (\\theta) → KaTeX renders symbol (θ)'
+        },
+        technicalDetails: "JSON.parse() processes escape sequences: \\ in JSON source stays as \\ in string value (when followed by valid LaTeX like 't' in \\theta). KaTeX then renders the single backslash commands as math symbols."
       },
 
       generalGuideline: "NEVER mix dollar amounts and LaTeX delimiters. Use \\$ for money, $ for math, never both together."
@@ -398,7 +426,7 @@ Complete the entire subtopic when:
           title: "Triangle Labeling (Foundation)",
           difficulty: "foundational",
           prerequisites: [],
-          masterySignals: "Student correctly identifies all three sides (opposite, adjacent, hypotenuse) in 3+ different triangle configurations with minimal hints",
+          masterySignals: "Student correctly identifies all three sides (opposite, adjacent, hypotenuse) in 2+ different triangle configurations with minimal hints",
           estimatedQuestions: "3-5 questions",
 
           learningObjectives: [
@@ -420,7 +448,7 @@ Complete the entire subtopic when:
           difficulty: "foundational-to-intermediate",
           prerequisites: ["triangle-labeling"],
           masterySignals: "Student correctly recalls and applies SOH-CAH-TOA to identify which ratio to use in 2-3 problems",
-          estimatedQuestions: "4-6 questions",
+          estimatedQuestions: "3-4 questions",
 
           learningObjectives: [
             "Recall and state: sin θ = Opposite / Hypotenuse",
@@ -447,7 +475,7 @@ Complete the entire subtopic when:
           difficulty: "intermediate",
           prerequisites: ["basic-ratios"],
           masterySignals: "Student sets up correct equation, rearranges, and solves for unknown side in 2-3 problems with minimal hints",
-          estimatedQuestions: "4-6 questions",
+          estimatedQuestions: "3-4 questions",
 
           learningObjectives: [
             "Identify which ratio to use based on given and unknown sides",
@@ -528,7 +556,7 @@ Complete the entire subtopic when:
           difficulty: "advanced",
           prerequisites: ["side-calculations", "angle-calculations"],
           masterySignals: "Student independently solves 2-3 word problems with correct diagram setup, ratio selection, and practical interpretation",
-          estimatedQuestions: "4-6 questions",
+          estimatedQuestions: "3-4 questions",
 
           learningObjectives: [
             "Solve height and distance problems (ladders against walls, building heights)",
@@ -638,7 +666,7 @@ Complete the entire subtopic when:
           difficulty: "intermediate",
           prerequisites: ["elevation-depression-concepts"],
           masterySignals: "Student solves 3+ elevation/depression problems correctly, selecting appropriate trig ratios and interpreting results in context",
-          estimatedQuestions: "4-6 questions",
+          estimatedQuestions: "3-4 questions",
 
           learningObjectives: [
             "Set up right triangles from elevation/depression scenarios",
@@ -854,7 +882,7 @@ Complete the entire subtopic when:
           difficulty: "advanced",
           prerequisites: ["bearing-diagrams"],
           masterySignals: "Student solves 2-3 navigation problems combining bearings, distances, and trigonometry",
-          estimatedQuestions: "4-6 questions",
+          estimatedQuestions: "3-4 questions",
 
           learningObjectives: [
             "Solve distance problems using bearings and trigonometry",

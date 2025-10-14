@@ -125,6 +125,31 @@ You do NOT make pedagogical decisions about explanation depth beyond the instruc
           correct_display: "Vertex: $(3, 5)$",
           correct_speech: "Vertex is at the point 3 comma 5"
         }
+      },
+
+      jsonEscaping: {
+        critical: "⚠️⚠️⚠️ YOU ARE GENERATING JSON OUTPUT - LaTeX backslashes MUST BE ESCAPED IN JSON! ⚠️⚠️⚠️",
+        rule: "JSON escaping: ONE backslash in JSON source (\\) → ONE backslash after JSON.parse() (\\) → KaTeX renders the symbol",
+        flow: "STEP 1: Write \\frac in JSON → STEP 2: JSON.parse() keeps it as \\frac → STEP 3: KaTeX renders as fraction",
+        examples: {
+          correctJSON: '{"content": "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$"}',
+          afterParsing: 'After JSON.parse(): "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$" (ONE backslash each)',
+          afterRendering: 'KaTeX renders as: "x = (-b ± √(b² - 4ac))/(2a)" (proper math symbols)'
+        },
+        requiredCommands: [
+          "Fractions: \\frac{numerator}{denominator} (ONE backslash in JSON source)",
+          "Square root: \\sqrt{value} (ONE backslash in JSON source)",
+          "Plus-minus: \\pm (ONE backslash in JSON source)",
+          "Greek letters: \\Delta, \\alpha, \\beta (ONE backslash in JSON source)",
+          "Operators: \\times, \\div, \\leq, \\geq (ONE backslash in JSON source)",
+          "Text: \\text{...} (ONE backslash in JSON source)"
+        ],
+        wrongVsRight: {
+          wrong: '{"content": "$\\\\frac{x}{2}$"} ← WRONG: TWO backslashes in JSON = double backslash after parse = LaTeX fails!',
+          right: '{"content": "$\\frac{x}{2}$"} ← CORRECT: ONE backslash in JSON → ONE after parse → proper fraction rendered',
+          explanation: 'JSON source with ONE backslash (\\frac) → JSON.parse() preserves it as (\\frac) → KaTeX renders as fraction'
+        },
+        technicalDetails: "JSON.parse() processes escape sequences: \\ in JSON source stays as \\ in string value (when followed by valid LaTeX). KaTeX then renders the single backslash commands as math symbols."
       }
     },
 

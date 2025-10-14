@@ -129,14 +129,15 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = ({
     foundation: nodes.filter(n => n.layer === 'foundation'),
     integration: nodes.filter(n => n.layer === 'integration'),
     application: nodes.filter(n => n.layer === 'application'),
+    examPractice: nodes.filter(n => n.layer === 'examPractice'),
   };
 
   // Layer boundaries for milestones
   const foundationEnd = nodesByLayer.foundation.length - 1;
   const integrationEnd = foundationEnd + nodesByLayer.integration.length;
 
-  // Add extra spacing at layer boundaries for milestone markers
-  const layerGap = 100; // Extra gap for milestone markers
+  // Add extra spacing at layer boundaries for dividers
+  const layerGap = 60; // Extra gap for layer dividers
   const nodePositions = basePositions.map((pos, index) => {
     let extraOffset = 0;
 
@@ -234,14 +235,27 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = ({
             );
           })}
 
-          {/* Milestone Markers - positioned in the gap between layers */}
+          {/* Layer Dividers */}
           {nodesByLayer.foundation.length > 0 && foundationEnd + 1 < nodes.length && (
-            <MilestoneMarker
-              type="layer-complete"
-              layer="foundation"
-              position={{ x: 50, y: nodePositions[foundationEnd]?.y + 60 + 100 || 0 }}
-              isUnlocked={progress.layerProgress.foundation.completed === progress.layerProgress.foundation.total}
-            />
+            <div
+              className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+              style={{
+                top: `${((nodePositions[foundationEnd]?.y || 0) + (nodePositions[foundationEnd + 1]?.y || 0)) / 2 + 90}px`,
+                width: '80%'
+              }}
+            >
+              <div className="w-full h-px" style={{ backgroundColor: theme.glass.border }} />
+              <div
+                className="text-sm font-semibold mt-2 px-4 py-1 rounded-full"
+                style={{
+                  color: theme.colors.textSecondary,
+                  backgroundColor: theme.glass.background,
+                  border: `1px solid ${theme.glass.border}`
+                }}
+              >
+                Exam Practice
+              </div>
+            </div>
           )}
 
           {nodesByLayer.integration.length > 0 && integrationEnd < nodes.length && (

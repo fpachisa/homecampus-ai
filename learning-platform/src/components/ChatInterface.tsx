@@ -11,7 +11,7 @@ import { sessionStorage } from '../services/sessionStorage';
 import { useSessionPersistence } from '../hooks/useSessionPersistence';
 import { useAudioManager } from '../hooks/useAudioManager';
 import { stripLatexForSpeech } from '../utils/textUtils';
-import { parseJSON } from '../services/utils/responseParser';
+import { safeParseJSON } from '../services/utils/responseParser';
 import { TOPIC_IDS } from '../prompts/topicIds';
 import { P6_MATH_FRACTIONS } from '../prompts/topics/P6-Math-Fractions';
 import type { TopicId } from '../prompts/topics/P6-Math-Fractions';
@@ -888,13 +888,34 @@ const handleStudentSubmit = async (input: string) => {
         console.log('Tutor response (raw):', tutorResponseRaw);
 
         // Parse the structured response (speech + display)
-        // CRITICAL: Use parseJSON utility which handles LaTeX escaping!
-        // LaTeX like $48^{\circ}$ contains \c which must be escaped to \\c for valid JSON.
-        // Manual JSON.parse() fails on unescaped backslashes - parseJSON() fixes them first.
-        // See: src/services/utils/responseParser.ts for fixJSONEscaping() implementation
+        // CRITICAL: Use safeParseJSON which tries direct parsing first, then applies fixes only if needed!
+        // This prevents double-escaping LaTeX when the AI sends properly formatted JSON.
+        // LaTeX like $\theta$ will be correctly rendered after parsing.
+        // See: src/services/utils/responseParser.ts for safeParseJSON() implementation
         try {
-          const parsedResponse = parseJSON<any>(tutorResponseRaw);
-          console.log('Parsed tutor response:', parsedResponse);
+          console.log('🔍 LaTeX Debug - Raw JSON from AI:', tutorResponseRaw.substring(0, 500));
+          const parsedResponse = safeParseJSON<any>(
+            tutorResponseRaw,
+            ['speech', 'display'], // Expected keys
+            {
+              speech: { text: '', emotion: 'neutral' },
+              display: { content: tutorResponseRaw, showAfterSpeech: false, type: 'hint' }
+            }
+          );
+          console.log('✅ LaTeX Debug - Parsed response:', parsedResponse);
+          if (parsedResponse.display?.content) {
+            console.log('📝 LaTeX Debug - Display content:', parsedResponse.display.content);
+            // Check for LaTeX patterns
+            const latexMatches = parsedResponse.display.content.match(/\$[^$]+\$/g);
+            if (latexMatches) {
+              console.log('🔢 LaTeX Debug - Found LaTeX expressions:', latexMatches);
+              latexMatches.forEach((match: string, index: number) => {
+                // Count backslashes in the match
+                const backslashCount = (match.match(/\\/g) || []).length;
+                console.log(`  [${index}] "${match}" - ${backslashCount} backslash(es)`);
+              });
+            }
+          }
 
           // Check for difficulty progression signal from AI
           if (parsedResponse.assessment?.readyToAdvance === true && state.currentProblemType < 3) {

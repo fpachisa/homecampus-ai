@@ -5,8 +5,8 @@
  * Handles problem display, answer submission, hints, and solutions.
  */
 
-import React, { useState, useEffect } from 'react';
-import type { PathNode, PathProblem, PathDifficulty, ProblemAttempt, AttemptHistory, ProblemSessionState, RelatedQuestionContext } from '../../types/practice';
+import React, { useState, useEffect, useRef } from 'react';
+import type { PathNode, PathProblem, PathDifficulty, ProblemAttempt, AttemptHistory, ProblemSessionState, RelatedQuestionContext, ScratchPadData } from '../../types/practice';
 import { pathPracticeService } from '../../services/pathPracticeService';
 import { pathProgressService } from '../../services/pathProgressService';
 import { pathConfigLoader } from '../../services/pathConfigLoader';
@@ -15,6 +15,8 @@ import { BackButton } from '../BackButton';
 import Avatar from '../Avatar';
 import { useAudioManager } from '../../hooks/useAudioManager';
 import MathText from '../MathText';
+import MathInputToolbar from '../MathInputToolbar';
+import ScratchPad from './ScratchPad';
 
 interface PracticeSessionViewProps {
   category: string;
@@ -62,9 +64,70 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   const [submitting, setSubmitting] = useState(false);
   const [loadingSolution, setLoadingSolution] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState<{ current: number; total: number } | null>(null);
+  const [showMathToolbar, setShowMathToolbar] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Mobile detection for responsive scratch pad
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   // Audio manager for Avatar TTS
   const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText } = useAudioManager();
+
+  // Detect window resize for responsive layout
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Handle math symbol insertion at cursor position
+  const handleMathInsert = (text: string) => {
+    const currentInput = inputRef.current;
+    if (!currentInput) return;
+
+    const start = currentInput.selectionStart || 0;
+    const end = currentInput.selectionEnd || 0;
+    const newValue = studentAnswer.slice(0, start) + text + studentAnswer.slice(end);
+
+    setStudentAnswer(newValue);
+
+    // Set cursor position after inserted text
+    setTimeout(() => {
+      const newCursorPos = start + text.length;
+      currentInput.setSelectionRange(newCursorPos, newCursorPos);
+      currentInput.focus();
+    }, 0);
+  };
+
+  // Handle scratch pad changes and save to session
+  const handleScratchPadChange = (data: ScratchPadData) => {
+    if (!session.currentProblemSession || !currentProblem) return;
+
+    const updatedProblemSession: ProblemSessionState = {
+      ...session.currentProblemSession,
+      scratchPad: data
+    };
+
+    const updatedProblemSessions = {
+      ...session.problemSessions,
+      [currentProblem.id]: updatedProblemSession
+    };
+
+    setSession(prev => ({
+      ...prev,
+      currentProblemSession: updatedProblemSession,
+      problemSessions: updatedProblemSessions
+    }));
+
+    // Save to localStorage
+    saveSessionToStorage({
+      nodeId: node.id,
+      problems: session.problems,
+      currentIndex: session.currentIndex,
+      attempts: session.attempts,
+      problemSessions: updatedProblemSessions,
+    });
+  };
 
   // Initialize session: load or generate problems
   useEffect(() => {
@@ -738,70 +801,66 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
       <div className="bg-white shadow-md border-b-2 border-blue-200">
-        <div className="max-w-4xl mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <BackButton onClick={onBack} />
               <div>
                 <h1 className="text-xl font-bold text-gray-800">{node.title}</h1>
-                <div className="flex items-center space-x-3 mt-1">
-                  <span className={`px-2 py-0.5 rounded text-xs font-semibold ${colors.bg} ${colors.text} ${colors.border} border`}>
-                    {difficulty.toUpperCase()}
-                  </span>
-                </div>
               </div>
             </div>
+            {/* Problem Navigation Pills */}
+            <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
+              {session.problems.map((problem, index) => {
+                const isAttempted = session.attempts.some(a => a.problemId === problem.id);
+                const hasVisited = session.problemSessions[problem.id] !== undefined;
+                const isCurrent = index === session.currentIndex;
+                // Can click if: attempted, current, has visited session, or any problem up to current index
+                const canClick = isAttempted || isCurrent || hasVisited || index <= session.currentIndex;
+
+                return (
+                  <button
+                    key={problem.id}
+                    onClick={() => canClick && handleNavigateToProblem(index)}
+                    disabled={!canClick}
+                    className={`w-10 h-10 rounded-full font-semibold transition-all ${
+                      isAttempted
+                        ? 'bg-green-500 text-white hover:bg-green-600 hover:scale-105 cursor-pointer'  // Green for attempted (priority)
+                        : isCurrent
+                        ? 'bg-amber-500 text-white shadow-lg scale-110'  // Orange for current
+                        : hasVisited || index < session.currentIndex
+                        ? 'bg-amber-400 text-white hover:bg-amber-500 hover:scale-105 cursor-pointer'  // Lighter orange for visited
+                        : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-60'  // Grey for not yet reached
+                    } ${isCurrent && isAttempted ? 'ring-4 ring-amber-300' : ''}`}
+                    title={
+                      isCurrent && isAttempted
+                        ? `Current problem ${index + 1} (attempted)`
+                        : isCurrent
+                        ? `Current problem ${index + 1}`
+                        : isAttempted
+                        ? `Navigate to problem ${index + 1} (completed)`
+                        : hasVisited || index < session.currentIndex
+                        ? `Navigate to problem ${index + 1} (visited)`
+                        : `Problem ${index + 1} (not reached yet)`
+                    }
+                  >
+                    {index + 1}
+                  </button>
+                );
+              })}
+            </div>            
             <div className="text-right">
               <div className="text-sm text-gray-600">Progress</div>
               <div className="text-lg font-bold text-gray-800">{progressPercent}%</div>
             </div>
           </div>
 
-          {/* Problem Navigation Pills */}
-          <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
-            {session.problems.map((problem, index) => {
-              const isAttempted = session.attempts.some(a => a.problemId === problem.id);
-              const hasVisited = session.problemSessions[problem.id] !== undefined;
-              const isCurrent = index === session.currentIndex;
-              // Can click if: attempted, current, has visited session, or any problem up to current index
-              const canClick = isAttempted || isCurrent || hasVisited || index <= session.currentIndex;
 
-              return (
-                <button
-                  key={problem.id}
-                  onClick={() => canClick && handleNavigateToProblem(index)}
-                  disabled={!canClick}
-                  className={`w-10 h-10 rounded-full font-semibold transition-all ${
-                    isAttempted
-                      ? 'bg-green-500 text-white hover:bg-green-600 hover:scale-105 cursor-pointer'  // Green for attempted (priority)
-                      : isCurrent
-                      ? 'bg-amber-500 text-white shadow-lg scale-110'  // Orange for current
-                      : hasVisited || index < session.currentIndex
-                      ? 'bg-amber-400 text-white hover:bg-amber-500 hover:scale-105 cursor-pointer'  // Lighter orange for visited
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-60'  // Grey for not yet reached
-                  } ${isCurrent && isAttempted ? 'ring-4 ring-amber-300' : ''}`}
-                  title={
-                    isCurrent && isAttempted
-                      ? `Current problem ${index + 1} (attempted)`
-                      : isCurrent
-                      ? `Current problem ${index + 1}`
-                      : isAttempted
-                      ? `Navigate to problem ${index + 1} (completed)`
-                      : hasVisited || index < session.currentIndex
-                      ? `Navigate to problem ${index + 1} (visited)`
-                      : `Problem ${index + 1} (not reached yet)`
-                  }
-                >
-                  {index + 1}
-                </button>
-              );
-            })}
-          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Avatar Component - Fixed Position (stays visible during scroll) */}
         {(isPlaying || currentSubtitle) && (
           <div style={{
@@ -825,8 +884,12 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
           </div>
         )}
 
-        {/* Problem Card */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+        {/* Responsive Grid: Problem Card (60%) | Scratch Pad (40%) on desktop, stacked on mobile */}
+        <div className="grid-layout-responsive mb-6">
+          {/* Problem Column */}
+          <div className="problem-column">
+            {/* Problem Card */}
+            <div className="bg-white rounded-lg shadow-lg p-6">
           <h2 className="text-lg font-semibold text-gray-700 mb-4">Problem {progress}</h2>
           <div className="text-gray-800 text-lg leading-relaxed mb-6">
             <MathText>{currentProblem?.problemText || ''}</MathText>
@@ -900,13 +963,48 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
           {/* Answer Input */}
           <div className="space-y-4">
+            {/* Math Toolbar (collapsible) */}
+            {showMathToolbar && (
+              <div className="mb-3">
+                <MathInputToolbar
+                  onInsert={handleMathInsert}
+                  disabled={
+                    submitting ||
+                    (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
+                    (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
+                    false
+                  }
+                />
+              </div>
+            )}
+
             <div>
+              {/* Math toolbar toggle button */}
+              <button
+                onClick={() => setShowMathToolbar(!showMathToolbar)}
+                disabled={
+                  submitting ||
+                  (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
+                  (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
+                  false
+                }
+                className="text-xs px-3 py-1.5 mb-2 rounded-md transition-all duration-150 hover:scale-105 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+                style={{
+                  backgroundColor: showMathToolbar ? '#4f46e5' : '#e5e7eb',
+                  color: showMathToolbar ? '#ffffff' : '#374151',
+                }}
+                title="Toggle math symbols toolbar"
+              >
+                {showMathToolbar ? '✕ Hide Math Symbols' : '∑ Math Symbols'}
+              </button>
+
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Your Answer {session.currentProblemSession && session.currentProblemSession.attemptCount > 0
                   ? `(Attempt ${Math.min(session.currentProblemSession.attemptCount + 1, 3)} of 3)`
                   : ''}:
               </label>
               <input
+                ref={inputRef}
                 type="text"
                 value={studentAnswer}
                 onChange={(e) => setStudentAnswer(e.target.value)}
@@ -1002,9 +1100,21 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
               </div>
             </div>
           )}
+            </div>
+          </div>
+
+          {/* Scratch Pad Column */}
+          <div className="scratch-pad-column">
+            <ScratchPad
+              problemId={currentProblem?.id || ''}
+              initialData={session.currentProblemSession?.scratchPad}
+              onChange={handleScratchPadChange}
+              isMobile={isMobile}
+            />
+          </div>
         </div>
 
-        {/* Stats Card */}
+        {/* Stats Card
         <div className="bg-white rounded-lg shadow-lg p-4">
           <div className="flex items-center justify-around text-center">
             <div>
@@ -1023,6 +1133,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
             </div>
           </div>
         </div>
+     */}
       </div>
     </div>
   );

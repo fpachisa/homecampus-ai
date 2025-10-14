@@ -54,7 +54,44 @@ export function extractJSONFromMarkdown(text: string): string {
  * Fix common JSON escaping issues in AI responses
  * Handles unescaped backslashes in LaTeX formulas and other special characters
  *
- * CRITICAL: This function prevents "Bad escaped character in JSON" errors!
+ * ============================================================================
+ * MATH DELIMITER CONTEXT DETECTION APPROACH
+ * ============================================================================
+ *
+ * THE FUNDAMENTAL PROBLEM:
+ * - AI returns JSON like: {"text": "Since $\triangle ABC$ is..."}
+ * - JSON.parse() interprets \t in \triangle as TAB escape sequence
+ * - Result: "Since $    riangle ABC$" (tab replaces \t)
+ * - Similarly: \theta → [TAB]heta, \tan → [TAB]an, \frac → [FF]rac, \sqrt → [TAB]sqrt
+ *
+ * WHY PATTERN LISTS DON'T WORK:
+ * - Previous approach: Maintain list of 50+ LaTeX commands (theta, tan, triangle, sqrt...)
+ * - Problem: LaTeX has HUNDREDS of commands (\square, \star, \diamond, \angle...)
+ * - Someone adds \theta fix, but forgets \triangle → code breaks again
+ * - NOT SCALABLE: New LaTeX commands require code changes
+ * - Can cause double-escaping when AI sends already-correct JSON
+ *
+ * THIS SOLUTION: MATH DELIMITER CONTEXT DETECTION
+ * - Our prompts require LaTeX to be in $...$ delimiters (see FORMATTING_RULES)
+ * - Inside $...$: Escape ALL backslashes → handles any LaTeX command
+ * - Outside $...$: Use standard JSON escape preservation
+ * - NO PATTERN LISTS NEEDED - works for any LaTeX command (past/future)
+ *
+ * WHAT THIS FIXES:
+ * ✓ \triangle, \square, \angle, \star (geometric shapes)
+ * ✓ \theta, \alpha, \beta (Greek letters)
+ * ✓ \tan, \sin, \cos (trig functions)
+ * ✓ \frac, \div, \times (operators)
+ * ✓ \sqrt, \sum, \int (special functions)
+ * ✓ ANY future LaTeX command without code changes
+ *
+ * EDGE CASES HANDLED:
+ * - Multiple $...$ in same string: ✓ Processes each separately
+ * - Real tabs outside math: ✓ Preserved as \t JSON escapes
+ * - Newlines (\n): ✓ Still work as line breaks outside math
+ * - Money amounts ($10, $3.50): ✗ Will be treated as math (acceptable trade-off)
+ *
+ * CRITICAL: This prevents "Bad escaped character in JSON" errors!
  * AI models return LaTeX like $48^{\circ}$ which contains \c - but JSON requires \\c
  * Without this fix, JSON.parse() fails because \c is not a valid JSON escape sequence.
  *
@@ -62,81 +99,65 @@ export function extractJSONFromMarkdown(text: string): string {
  * Used in: ChatInterface.tsx, BaseAIService.ts, and all agent response parsing
  */
 export function fixJSONEscaping(text: string): string {
-  // Fix unescaped backslashes that appear before special characters
-  // This commonly happens with LaTeX formulas like \div, \frac, etc.
   let fixed = text;
 
-  // Replace unescaped backslashes followed by common LaTeX commands
-  // but only if they're not already escaped
-  const latexCommands = [
-    // Math operators
-    'div', 'frac', 'times', 'cdot', 'pm', 'sqrt', 'sum', 'int', 'infty', 'partial', 'nabla',
-    // Greek letters (lowercase)
-    'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa',
-    'lambda', 'mu', 'nu', 'xi', 'pi', 'rho', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega',
-    // Greek letters (uppercase)
-    'Gamma', 'Delta', 'Theta', 'Lambda', 'Xi', 'Pi', 'Sigma', 'Upsilon', 'Phi', 'Psi', 'Omega',
-    // Trigonometric functions
-    'sin', 'cos', 'tan', 'cot', 'sec', 'csc', 'arcsin', 'arccos', 'arctan',
-    // Logarithms and exponentials
-    'log', 'ln', 'exp',
-    // Common symbols
-    'circ', 'degree', 'angle', 'perp', 'parallel',
-    // Text formatting
-    'text', 'mathrm', 'mathbf', 'mathit',
-    // Brackets and delimiters
-    'left', 'right', 'big', 'Big',
-    // Other common commands
-    'neq', 'leq', 'geq', 'approx', 'equiv'
-  ];
-
-  for (const cmd of latexCommands) {
-    // Match \command but not \\command (already escaped)
-    const regex = new RegExp(`(?<!\\\\)\\\\${cmd}`, 'g');
-    fixed = fixed.replace(regex, `\\\\${cmd}`);
-  }
-
-  // Also handle generic unescaped backslashes within quoted strings
-  // but be careful not to break already-escaped sequences
-  //
-  // CRITICAL FIX (2025-10-08): Added 'n' and 't' explicitly to the lookahead character class
-  // to preserve JSON newline (\n) and tab (\t) escape sequences.
-  //
-  // PROBLEM HISTORY:
-  // - AI generates valid JSON: "content": "Line 1\n\nLine 2"
-  // - Old regex (?<!\\)\\(?!["\\/bfnrtu]) would incorrectly match \n
-  // - Result: \n became \\n (literal backslash-n) instead of newline
-  // - Display showed: "Line 1\n\nLine 2" with visible \n characters
-  //
-  // WHY THE OLD REGEX FAILED:
-  // - The lookahead (?!["\\/bfnrtu]) checks if backslash is NOT followed by escape chars
-  // - BUT in actual strings, \n is a single escape sequence, not two chars
-  // - The regex was treating \n as "backslash followed by n" and escaping it
-  //
-  // THE FIX:
-  // - Explicitly list ALL valid JSON escape sequences in the negative lookahead
-  // - Valid JSON escapes: \" \\ \/ \b \f \n \r \t \uXXXX
-  // - The lookahead now checks: (?!["\\/bfnrtu])
-  //   - This preserves: \" \\ \/ \b \f \n \r \t
-  //   - This escapes: Any other backslash (e.g., LaTeX \div, \theta, etc.)
-  //
-  // IMPORTANT: Do NOT remove 'n' or 't' from this lookahead!
-  // - Removing 'n' will break newlines in AI responses
-  // - Removing 't' will break tabs in formatted content
-  // - These are VALID JSON escape sequences that must be preserved
+  // Process each JSON string value separately
+  // Find quoted strings and handle them individually
   fixed = fixed.replace(/"([^"]*?)"/g, (_match, content) => {
-    // STEP 1: First, escape any literal control characters within the string
-    // This prevents "Bad control character in string literal" errors
-    let escaped = content
-      .replace(/\r\n/g, '\\n')  // Windows line endings first (before individual \n)
-      .replace(/\n/g, '\\n')     // Unix line endings
-      .replace(/\r/g, '\\r')     // Mac line endings
-      .replace(/\t/g, '\\t');    // Literal tabs
 
-    // STEP 2: Within the quoted string, escape any lone backslashes
-    // Use negative lookbehind to avoid double-escaping backslashes that are already escaped
-    // Preserve valid JSON escapes: \" \\ \/ \b \f \n \r \t (note: \uXXXX handled separately)
+    // STEP 1: First escape literal control characters (actual tabs/newlines in the string)
+    // These are control characters that somehow got into the JSON raw text
+    // Example: Actual tab character (0x09) needs to become \t escape sequence
+    let escaped = content
+      .replace(/\r\n/g, '\\n')  // Windows line endings
+      .replace(/\n/g, '\\n')    // Unix line endings
+      .replace(/\r/g, '\\r')    // Mac line endings
+      .replace(/\t/g, '\\t');   // Literal tab characters (NOT \t escape - actual 0x09)
+
+    // STEP 2: Process math delimiters ($...$)
+    // This is THE KEY FIX that eliminates pattern list maintenance!
+    //
+    // INSIDE $...$: Escape ALL backslashes
+    //   - Input:  "Since $\triangle ABC$ is"
+    //   - After:  "Since $\\triangle ABC$ is"
+    //   - Works for ANY LaTeX command (no list needed!)
+    //
+    // OUTSIDE $...$: Leave backslashes for JSON escape processing in next step
+    //   - Preserves \n (newlines), \t (tabs), \" (quotes), etc.
+    //
+    // WHY THIS WORKS:
+    //   - Our AI prompts require math to be in $...$ delimiters (see FORMATTING_RULES)
+    //   - Everything inside $ is LaTeX → escape all backslashes
+    //   - Everything outside $ is plain text → preserve JSON escapes
+    //
+    escaped = escaped.replace(/\$([^$]+)\$/g, (_mathMatch: string, mathContent: string) => {
+      // Inside math delimiter: Escape ALL backslashes
+      // \triangle → \\triangle
+      // \theta → \\theta
+      // \frac{1}{2} → \\frac{1}{2}
+      // \sqrt{3} → \\sqrt{3}
+      // Works for ANY LaTeX command - no pattern matching needed!
+      const escapedMath = mathContent.replace(/\\/g, '\\\\');
+      return `$${escapedMath}$`;
+    });
+
+    // STEP 3: Outside math delimiters, handle remaining backslashes carefully
+    // These might be JSON escapes (\n, \t) or other backslashes that need escaping
+    //
+    // CRITICAL: We must preserve valid JSON escape sequences
+    // Valid JSON escapes: \" \\ \/ \b \f \n \r \t \uXXXX
+    //
+    // This regex says: "Escape backslashes that are NOT followed by valid JSON escape chars"
+    // Negative lookahead (?!["\\/bfnrtu]) checks next character
+    //
+    // Examples:
+    //   - \n → preserved (n is in lookahead)
+    //   - \t → preserved (t is in lookahead)
+    //   - \x → escaped to \\x (x not in lookahead)
+    //
+    // NOTE: Math content already processed above, so this mainly catches edge cases
     escaped = escaped.replace(/(?<!\\)\\(?!["\\/bfnrtu])/g, '\\\\');
+
     return `"${escaped}"`;
   });
 
@@ -353,7 +374,9 @@ function restoreCorruptedLatex(text: string): string {
     [/(\s{1,8}|[\t]|)anh/g, '\\tanh'],        // \tanh
 
     // Common symbols
-    [/\^?\{?circ\}?/g, '^{\\circ}'],          // degree symbol
+    // NOTE: Removed [/\^?\{?circ\}?/g, '^{\\circ}'] pattern - it was too aggressive
+    // and caused double-escaping of correctly-formatted LaTeX like $000^\circ$
+    // The fixJSONEscaping() function (line 133-142) already handles LaTeX inside $...$
     [/(\s{1,8}|)div\b/g, '\\div'],            // division
     [/(\s{1,8}|)cdot/g, '\\cdot'],            // dot multiplication
     [/(\s{1,8}|)pm\b/g, '\\pm'],              // plus-minus
@@ -411,17 +434,10 @@ export function safeParseJSON<T>(
 ): T {
   console.log('🔍 SafeParseJSON: Starting with text length:', rawText.length);
 
-  // Stage 0: Restore corrupted LaTeX commands FIRST
-  // This must happen before any other processing
-  let restored = restoreCorruptedLatex(rawText);
-
-  if (restored !== rawText) {
-    console.log('✅ SafeParseJSON: Restored corrupted LaTeX commands');
-  }
-
   // Stage 1: Pre-sanitize raw text
   // Remove actual control characters that break JSON
-  let sanitized = restored
+  // Do NOT run restoreCorruptedLatex here - it interferes with valid JSON
+  let sanitized = rawText
     // Remove zero-width characters
     .replace(/[\u200B-\u200D\uFEFF]/g, '')
     // Remove other control characters except \t \r \n
@@ -431,15 +447,35 @@ export function safeParseJSON<T>(
   // Stage 2: Extract JSON portion if wrapped
   let jsonText = extractJSONFromMarkdown(sanitized);
 
-  // Stage 3: Try standard parsing with current fixes
+  // Stage 0: Try direct parsing first (trust AI to send correct JSON)
+  // This avoids over-escaping already-correct responses
+  // No corruption fixes applied - parse the JSON as-is
   try {
-    const fixed = fixJSONEscaping(jsonText);
+    const parsed = JSON.parse(jsonText);
+    const result = unescapeLiteralNewlines(decodeUnicodeEscapes(parsed));
+    console.log('✅ SafeParseJSON: Direct parsing succeeded (AI sent correct JSON)');
+    return result as T;
+  } catch (error0) {
+    console.log('⚠️ SafeParseJSON: Direct parsing failed, trying with fixes...', (error0 as Error).message);
+  }
+
+  // Stage 3: Try with corruption restoration and escaping fixes
+  // Only runs if direct parsing failed
+  try {
+    // First restore corrupted LaTeX (for responses with broken backslashes)
+    const restored = restoreCorruptedLatex(jsonText);
+    if (restored !== jsonText) {
+      console.log('✅ SafeParseJSON: Restored corrupted LaTeX in Stage 3');
+    }
+
+    // Then apply escaping fixes
+    const fixed = fixJSONEscaping(restored);
     const parsed = JSON.parse(fixed);
     const result = unescapeLiteralNewlines(decodeUnicodeEscapes(parsed));
-    console.log('✅ SafeParseJSON: Standard parsing succeeded');
+    console.log('✅ SafeParseJSON: Standard parsing with fixes succeeded');
     return result as T;
   } catch (error1) {
-    console.log('⚠️ SafeParseJSON: Standard parsing failed:', (error1 as Error).message);
+    console.log('⚠️ SafeParseJSON: Standard parsing with fixes failed:', (error1 as Error).message);
   }
 
   // Stage 4: Try aggressive LaTeX escaping

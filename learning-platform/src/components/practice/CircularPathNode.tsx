@@ -49,7 +49,7 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
       dark: '#4752C4',
       glow: '#5865F280',
     },
-    application: {
+    examPractice: {
       main: '#EB459E',      // Pink
       light: '#EB459E40',
       dark: '#C73680',

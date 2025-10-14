@@ -10,7 +10,7 @@
 // ============================================
 
 export type PathDifficulty = 'easy' | 'medium' | 'hard'; // Deprecated, keeping for backward compatibility
-export type PathLayer = 'foundation' | 'integration' | 'application';
+export type PathLayer = 'foundation' | 'integration' | 'application' | 'examPractice';
 
 // ============================================
 // NODE STRUCTURE
@@ -26,6 +26,11 @@ export interface PreWrittenQuestion {
   avatarIntro?: string;           // Optional intro speech (typically for first question only)
   diagramSvg?: string;            // Optional path to pre-built SVG diagram
   questionGroup?: string;         // Group identifier for multi-part questions (e.g., "q26", "q27")
+
+  // NEW: Pre-written answer and solution (optional)
+  // If provided, these will be used instead of AI-solving the question
+  finalAnswer?: string;           // The correct final answer (e.g., "222 m", "67.5°", "1250 m²")
+  stepByStepGuideline?: string[]; // Array of solution steps with LaTeX formatting
 }
 
 export interface NodeDescriptor {
@@ -140,6 +145,7 @@ export interface PathProgress {
     foundation: { completed: number; total: number };    // e.g., 5/7
     integration: { completed: number; total: number };   // e.g., 2/4
     application: { completed: number; total: number };   // e.g., 0/4
+    examPractice: { completed: number; total: number };  // e.g., 0/18
   };
 
   totalProblemsAttempted: number;
@@ -269,10 +275,22 @@ export interface RelatedQuestionContext {
   isCorrect: boolean;
 }
 
+// ============================================
+// SCRATCH PAD
+// ============================================
+
+export interface ScratchPadData {
+  mode: 'text' | 'draw';
+  textContent: string;
+  drawingData: string;     // base64 PNG image data
+  lastModified: Date;
+}
+
 export interface ProblemSessionState {
   problemId: string;
   attemptCount: number;    // Current attempt number (1-3)
   attemptHistory: AttemptHistory[];  // All attempts for this problem
   canRetry: boolean;       // True if attemptCount < 3
   showingSolution: boolean;
+  scratchPad?: ScratchPadData; // Optional scratch pad work space
 }

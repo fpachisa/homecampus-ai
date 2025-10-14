@@ -56,6 +56,7 @@ class YAMLPathLoader {
       console.log(`   Foundation: ${config.nodes.filter(n => n.layer === 'foundation').length} nodes`);
       console.log(`   Integration: ${config.nodes.filter(n => n.layer === 'integration').length} nodes`);
       console.log(`   Application: ${config.nodes.filter(n => n.layer === 'application').length} nodes`);
+      console.log(`   Exam Practice: ${config.nodes.filter(n => n.layer === 'examPractice').length} nodes`);
 
       this.cache.set(cacheKey, config.nodes);
       return config.nodes;
@@ -126,7 +127,7 @@ class YAMLPathLoader {
       nodeIds.add(node.id);
 
       // Check layer field
-      if (!node.layer || !['foundation', 'integration', 'application'].includes(node.layer)) {
+      if (!node.layer || !['foundation', 'integration', 'application', 'examPractice'].includes(node.layer)) {
         throw new Error(`Invalid or missing layer in node ${node.id}: ${node.layer}`);
       }
 

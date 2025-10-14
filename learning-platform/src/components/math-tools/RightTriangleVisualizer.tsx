@@ -4,6 +4,7 @@ import MathText from '../MathText';
 
 interface RightTriangleVisualizerProps {
   angle?: number | null; // Acute angle in degrees (0-90), or null/0 to auto-calculate from sides and show θ
+  angleLabel?: string; // Custom label for angle (e.g., 'A', 'B', 'C'), defaults to 'θ'
   hypotenuse?: string; // Label for hypotenuse
   opposite?: string; // Label for opposite side
   adjacent?: string; // Label for adjacent side
@@ -16,6 +17,7 @@ interface RightTriangleVisualizerProps {
 
 const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
   angle = null,
+  angleLabel = 'θ',
   hypotenuse = '',
   opposite = '',
   adjacent = '',
@@ -194,7 +196,7 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
                   textAnchor="middle"
                   dominantBaseline="middle"
                 >
-                  {showThetaLabel ? 'θ' : `${Math.round(calculatedAngle)}°`}
+                  {showThetaLabel ? angleLabel : `${Math.round(calculatedAngle)}°`}
                 </text>
               );
             })()}

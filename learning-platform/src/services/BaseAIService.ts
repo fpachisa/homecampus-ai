@@ -4,7 +4,7 @@ import { promptResolver } from '../prompts/promptResolver';
 import type { AIService } from './aiService';
 import { AIServiceError, AIErrorType } from './aiService';
 import type { AIProvider } from './providers/AIProvider';
-import { parseJSON, validateRequiredKeys, formatConversationHistory, extractJSONFromMarkdown } from './utils/responseParser';
+import { parseJSON, safeParseJSON, validateRequiredKeys, formatConversationHistory, extractJSONFromMarkdown } from './utils/responseParser';
 import { calculateVisualizationMath } from '../utils/mathUtils';
 
 /**
@@ -53,20 +53,11 @@ class BaseAIService implements AIService {
         throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty greeting+problem response from AI');
       }
 
-      // Parse JSON response
-      const parsedResponse = parseJSON<InitialGreetingResponse>(text);
-
-      // Validate response structure (only speech and display are required)
-      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid greeting+problem response structure');
-
-      return parsedResponse;
-    } catch (error) {
-      console.error('Error generating greeting with problem:', error);
-
-      // If JSON parsing fails, provide fallback
-      if (error instanceof SyntaxError) {
-        console.warn('Failed to parse greeting+problem JSON, using fallback');
-        return {
+      // Parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
+      const parsedResponse = safeParseJSON<InitialGreetingResponse>(
+        text,
+        ['speech', 'display'],
+        {
           speech: {
             text: "Welcome! I'm having a bit of trouble generating your first question. Let me try again - could you tell me what topic you'd like to work on?",
             emotion: 'supportive' as const
@@ -75,8 +66,15 @@ class BaseAIService implements AIService {
             content: "I encountered an error. Please refresh the page to start your lesson, or let me know if you need help.",
             showAfterSpeech: true
           }
-        };
-      }
+        }
+      );
+
+      // Validate response structure (only speech and display are required)
+      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid greeting+problem response structure');
+
+      return parsedResponse;
+    } catch (error) {
+      console.error('Error generating greeting with problem:', error);
 
       throw AIServiceError.fromHttpError(error);
     }
@@ -99,20 +97,11 @@ class BaseAIService implements AIService {
         throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty section start response from AI');
       }
 
-      // Parse JSON response
-      const parsedResponse = parseJSON<InitialGreetingResponse>(text);
-
-      // Validate response structure
-      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid section start response structure');
-
-      return parsedResponse;
-    } catch (error) {
-      console.error('Error generating section start question:', error);
-
-      // If JSON parsing fails, provide fallback
-      if (error instanceof SyntaxError) {
-        console.warn('Failed to parse section start JSON, using fallback');
-        return {
+      // Parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
+      const parsedResponse = safeParseJSON<InitialGreetingResponse>(
+        text,
+        ['speech', 'display'],
+        {
           speech: {
             text: "Let's work on this new section together!",
             emotion: 'encouraging' as const
@@ -121,8 +110,15 @@ class BaseAIService implements AIService {
             content: "I encountered an error. Please try clicking the section again.",
             showAfterSpeech: true
           }
-        };
-      }
+        }
+      );
+
+      // Validate response structure
+      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid section start response structure');
+
+      return parsedResponse;
+    } catch (error) {
+      console.error('Error generating section start question:', error);
 
       throw AIServiceError.fromHttpError(error);
     }
@@ -152,20 +148,11 @@ class BaseAIService implements AIService {
         throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty section resume response from AI');
       }
 
-      // Parse JSON response
-      const parsedResponse = parseJSON<InitialGreetingResponse>(text);
-
-      // Validate response structure
-      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid section resume response structure');
-
-      return parsedResponse;
-    } catch (error) {
-      console.error('Error generating section resume:', error);
-
-      // If JSON parsing fails, provide fallback
-      if (error instanceof SyntaxError) {
-        console.warn('Failed to parse section resume JSON, using fallback');
-        return {
+      // Parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
+      const parsedResponse = safeParseJSON<InitialGreetingResponse>(
+        text,
+        ['speech', 'display'],
+        {
           speech: {
             text: "Welcome back! Let's continue where we left off.",
             emotion: 'encouraging' as const
@@ -174,8 +161,15 @@ class BaseAIService implements AIService {
             content: "I encountered an error resuming this section. Please try again.",
             showAfterSpeech: true
           }
-        };
-      }
+        }
+      );
+
+      // Validate response structure
+      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid section resume response structure');
+
+      return parsedResponse;
+    } catch (error) {
+      console.error('Error generating section resume:', error);
 
       throw AIServiceError.fromHttpError(error);
     }
@@ -211,7 +205,7 @@ class BaseAIService implements AIService {
       evaluatorReasoning: context?.evaluatorReasoning,
       questionInstruction: context?.questionInstruction
     });
-
+    console.log('Prompt for question generation:', prompt);
     try {
       const text = await this.provider.generateContent(prompt);
 
@@ -223,8 +217,21 @@ class BaseAIService implements AIService {
         throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty question response from AI');
       }
 
-      // Parse JSON response
-      const parsedResponse = parseJSON<QuestionGenerationResponse>(text);
+      // Parse JSON response using safeParseJSON (tries direct parsing first, prevents double-escaping LaTeX)
+      const parsedResponse = safeParseJSON<QuestionGenerationResponse>(
+        text,
+        ['speech', 'display'],
+        {
+          speech: {
+            text: "Let's try another problem!",
+            emotion: 'encouraging'
+          },
+          display: {
+            content: "Sarah has 2/3 of a pizza and wants to share it equally among 4 friends. How much pizza does each friend get?",
+            showAfterSpeech: true
+          }
+        }
+      );
 
       // Validate response structure
       if (!parsedResponse.speech?.text || !parsedResponse.display?.content) {
@@ -234,21 +241,6 @@ class BaseAIService implements AIService {
       return parsedResponse;
     } catch (error) {
       console.error('Error generating question:', error);
-
-      // If JSON parsing fails, provide fallback
-      if (error instanceof SyntaxError) {
-        console.warn('Failed to parse question JSON, using fallback');
-        return {
-          speech: {
-            text: "Let's try another problem!",
-            emotion: 'encouraging'
-          },
-          display: {
-            content: "Sarah has 2/3 of a pizza and wants to share it equally among 4 friends. How much pizza does each friend get?",
-            showAfterSpeech: true
-          }
-        };
-      }
 
       throw AIServiceError.fromHttpError(error);
     }
@@ -375,8 +367,8 @@ class BaseAIService implements AIService {
 
       console.log('Evaluator agent raw response:', responseText);
 
-      // Clean and parse JSON response
-      const evaluation = parseJSON<any>(responseText);
+      // Clean and parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
+      const evaluation = safeParseJSON<any>(responseText, ['action', 'answerCorrect', 'isMainProblemSolved']);
       console.log('Parsed evaluator instruction:', evaluation);
 
       // Ensure we preserve all required fields from both top level and instruction
@@ -488,8 +480,8 @@ class BaseAIService implements AIService {
         return null;
       }
 
-      // Clean and parse JSON response
-      const visualizationData = parseJSON<any>(responseText);
+      // Clean and parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
+      const visualizationData = safeParseJSON<any>(responseText, ['problemData', 'stages', 'contextualLabels']);
       console.log('Parsed visualization data:', visualizationData);
 
       // Validate the structure
@@ -546,8 +538,8 @@ class BaseAIService implements AIService {
 
       console.log('Solution Agent raw response:', responseText);
 
-      // Clean and parse JSON response - handle markdown code fences anywhere in response
-      const parsedResponse = parseJSON<any>(responseText, true);
+      // Clean and parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
+      const parsedResponse = safeParseJSON<any>(responseText, ['speech', 'display']);
       console.log('Parsed solution data:', parsedResponse);
 
       // NEW FORMAT: AI returns {speech, display, mathTool (optional)} per INTERACTION_PROTOCOL
@@ -602,8 +594,8 @@ class BaseAIService implements AIService {
 
       console.log('Practice batch raw response:', text);
 
-      // Parse JSON response
-      const parsedResponse = parseJSON<{ problems: any[] }>(text);
+      // Parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
+      const parsedResponse = safeParseJSON<{ problems: any[] }>(text, ['problems']);
 
       // Validate response structure
       validateRequiredKeys(parsedResponse, ['problems'], 'Invalid practice batch response structure');
@@ -705,8 +697,27 @@ class BaseAIService implements AIService {
 
       console.log('Practice agent raw response:', text);
 
-      // Parse JSON response
-      const parsedResponse = parseJSON<PracticeAgentResponse>(text);
+      // Parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
+      const parsedResponse = safeParseJSON<PracticeAgentResponse>(
+        text,
+        ['intent', 'answerCorrect', 'pointsEarned', 'isMainProblemSolved', 'speech', 'display', 'action', 'reasoning'],
+        {
+          intent: 'answer_submission',
+          answerCorrect: false,
+          pointsEarned: 0,
+          isMainProblemSolved: false,
+          speech: {
+            text: "I'm having trouble understanding your response. Could you try again?",
+            emotion: 'neutral'
+          },
+          display: {
+            content: 'none',
+            showAfterSpeech: true
+          },
+          action: 'none',
+          reasoning: 'Fallback response due to parsing error'
+        }
+      );
 
       // Validate response structure
       validateRequiredKeys(
@@ -728,28 +739,6 @@ class BaseAIService implements AIService {
 
     } catch (error) {
       console.error('Error evaluating practice response:', error);
-
-      // Provide fallback response
-      if (error instanceof SyntaxError) {
-        console.warn('Failed to parse practice agent JSON, using fallback');
-        return {
-          intent: 'answer_submission',
-          answerCorrect: false,
-          pointsEarned: 0,
-          isMainProblemSolved: false,
-          speech: {
-            text: "I'm having trouble understanding your response. Could you try again?",
-            emotion: 'neutral'
-          },
-          display: {
-            content: 'none',
-            showAfterSpeech: true
-          },
-          action: 'none',
-          reasoning: 'Fallback response due to parsing error'
-        };
-      }
-
       throw AIServiceError.fromHttpError(error);
     }
   }

@@ -104,7 +104,7 @@ export const MathToolRenderer: React.FC<MathToolRendererProps> = ({
 
   // Render the appropriate visualizer
   const renderTool = () => {
-    return <Component {...parameters} />;
+    return <Component {...parameters} caption={caption} />;
   };
 
   return (
@@ -113,13 +113,6 @@ export const MathToolRenderer: React.FC<MathToolRendererProps> = ({
       <div className="flex justify-center">
         {renderTool()}
       </div>
-
-      {/* Optional caption */}
-      {caption && (
-        <div className="mt-3 text-center text-sm text-gray-600 italic">
-          {caption}
-        </div>
-      )}
     </div>
   );
 };

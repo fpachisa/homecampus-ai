@@ -68,30 +68,48 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     whenToUse: "Use for basic trigonometry problems involving right triangles, finding sides or angles using sin/cos/tan.",
 
     parameters: {
-      angle: "number (20-90) | null - the acute angle in degrees, or null/0 to show 'θ' when asking students to find the angle",
+      angle: "number (20-90) | null when asking students to find the angle or Trigonometric Ratios (SOH-CAH-TOA or identifying sides",
+      angleLabel: "string (optional, default: 'θ') - label for the angle arc (DO NOT input latex or markdown. ONLY plain text like 'θ', 'A', 'B' and not '\\theta')",
       hypotenuse: "string - label for hypotenuse (e.g., '10', '10m', 'h')",
       opposite: "string - label for opposite side (e.g., 'x', '5', '5cm')",
       adjacent: "string - label for adjacent side (e.g., 'y', '8', '8m')",
-      highlightSide: "'opposite' | 'adjacent' | 'hypotenuse' | 'none' - which side to highlight in red",
+      highlightSide: "'opposite' | 'adjacent' | 'hypotenuse' | 'none' - which side to highlight in red. Do not highlight when asking students to identify sides.",
       showAngleMark: "boolean - show the angle arc and label",
       showRightAngle: "boolean - show the right angle marker",
       showSideTypeLabels: "boolean (default: false) - show '(Opposite)', '(Adjacent)', '(Hypotenuse)' labels. Set false when asking students to identify sides."
     },
 
-    exampleUsage: {
-      scenario: "Finding opposite side with known angle",
-      caption: "Find the opposite side x when angle=35° and hypotenuse=10",
-      parameters: {
-        angle: 35,
-        hypotenuse: "10",
-        opposite: "x",
-        adjacent: "",
-        highlightSide: "opposite",
-        showAngleMark: true,
-        showRightAngle: true,
-        showSideTypeLabels: false
-      }
-    }
+    exampleUsage:[
+        {
+        scenario: "Finding opposite side with known angle",
+        caption: "Find the opposite side x when angle=35° and hypotenuse=10",
+        parameters: {
+          angle: 35,
+          angleLabel: "",
+          hypotenuse: "10",
+          opposite: "x",
+          adjacent: "",
+          highlightSide: "opposite",
+          showAngleMark: true,
+          showRightAngle: true,
+          showSideTypeLabels: false}
+        },
+        { 
+        scenario: "Asking students to identify sides",
+        caption: "A right triangle with side A, B and C.",
+        parameters: {
+          angle: null,
+          angleLabel: "θ",
+          hypotenuse: "A",
+          opposite: "B",
+          adjacent: "C",
+          highlightSide: "none",
+          showAngleMark: true,
+          showRightAngle: true,
+          showSideTypeLabels: true}
+        }
+    ]
+    
   },
 
   elevationDepression: {
