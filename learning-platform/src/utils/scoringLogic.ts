@@ -1,6 +1,13 @@
 // Pure functions for scoring logic that can be easily tested
 
-import type { ScoringConfigForType } from '../prompts/topics/P6-Math-Fractions';
+export interface ScoringConfigForType {
+  basePoints: number;
+  hintPenalties: {
+    first: number;
+    second: number;
+    thirdPlus: number;
+  };
+}
 
 export interface ScoreCalculationInput {
   problemType: number

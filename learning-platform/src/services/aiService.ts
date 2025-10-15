@@ -47,7 +47,7 @@ export interface AIService {
   generateQuestion(
     problemType: number,
     topicId: string,
-    context?: { recentHistory?: string; evaluatorReasoning?: string; questionInstruction?: any }
+    context?: { recentHistory?: string; evaluatorReasoning?: string; questionInstruction?: any; currentSection?: string }
   ): Promise<QuestionGenerationResponse>;
 
   /**
@@ -114,7 +114,8 @@ export interface AIService {
     recentHistory: Message[],
     studentResponse: string,
     evaluatorReasoning: string,
-    solutionInstruction?: any
+    solutionInstruction?: any,
+    currentSection?: string
   ): Promise<any>;
 
   /**

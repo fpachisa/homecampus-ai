@@ -5,9 +5,9 @@
  * practice problem generation with learning objectives, formulas, and visual tools.
  */
 
-import { S3_MATH_TRIGONOMETRY_SUBTOPICS } from '../prompts/topics/S3-Math-Trigonometry';
-import { S3_MATH_CIRCLE_GEOMETRY } from '../prompts/topics/S3-Math-CircleGeometry';
-import { S3_MATH_QUADRATIC_EQUATIONS } from '../prompts/topics/S3-Math-QuadraticEquations';
+import { S3_MATH_TRIGONOMETRY_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import { S3_MATH_CIRCLE_GEOMETRY } from "../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import { S3_MATH_QUADRATIC_EQUATIONS } from "../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 
 export interface SubtopicContent {
   displayName: string;

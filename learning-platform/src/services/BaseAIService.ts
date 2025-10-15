@@ -1,6 +1,7 @@
 import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem, PracticeAgentResponse, PracticeProblemState } from '../types/types';
 import type { VisualizationData } from '../types/visualization';
-import { promptResolver } from '../prompts/promptResolver';
+// Use new prompt resolver with clean prompt library architecture
+import { newPromptResolver as promptResolver } from '../prompts/newPromptResolver';
 import type { AIService } from './aiService';
 import { AIServiceError, AIErrorType } from './aiService';
 import type { AIProvider } from './providers/AIProvider';
@@ -197,13 +198,14 @@ class BaseAIService implements AIService {
     }
   }
 
-  async generateQuestion(problemType: number, topicId: string = 'fraction-division-by-whole-numbers', context?: { recentHistory?: string; evaluatorReasoning?: string; questionInstruction?: any }): Promise<QuestionGenerationResponse> {
+  async generateQuestion(problemType: number, topicId: string = 'fraction-division-by-whole-numbers', context?: { recentHistory?: string; evaluatorReasoning?: string; questionInstruction?: any; currentSection?: string }): Promise<QuestionGenerationResponse> {
     const prompt = promptResolver.resolveQuestionGeneration({
       topicId: topicId as any,
       currentProblemType: problemType,
       recentHistory: context?.recentHistory,
       evaluatorReasoning: context?.evaluatorReasoning,
-      questionInstruction: context?.questionInstruction
+      questionInstruction: context?.questionInstruction,
+      currentSection: context?.currentSection
     });
     console.log('Prompt for question generation:', prompt);
     try {
@@ -358,6 +360,7 @@ class BaseAIService implements AIService {
     } as any);
 
     console.log('=== EVALUATOR AGENT DEBUG ===');
+    console.log('Full prompt:', prompt);
     console.log('Problem State:', problemState);
     console.log('Student Response:', studentResponse);
     console.log('==============================');
@@ -508,7 +511,8 @@ class BaseAIService implements AIService {
     recentHistory: Message[],
     studentResponse: string,
     evaluatorReasoning: string,
-    solutionInstruction?: any
+    solutionInstruction?: any,
+    currentSection?: string
   ): Promise<any> {
     try {
       console.log('=== SOLUTION AGENT START ===');
@@ -517,6 +521,7 @@ class BaseAIService implements AIService {
       console.log('Student response:', studentResponse);
       console.log('Evaluator reasoning:', evaluatorReasoning);
       console.log('Solution instruction:', solutionInstruction);
+      console.log('Current section:', currentSection);
 
       // Format history for prompt
       const historyText = formatConversationHistory(recentHistory);
@@ -529,7 +534,8 @@ class BaseAIService implements AIService {
         recentHistory: historyText,
         studentResponse,
         evaluatorReasoning,
-        solutionInstruction
+        solutionInstruction,
+        currentSection
       });
 
       console.log('Calling AI with Solution Agent prompt...');

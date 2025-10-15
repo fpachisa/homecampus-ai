@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import type { SectionProgressState } from '../types/types';
-import { S3_MATH_TRIGONOMETRY } from '../prompts/topics/S3-Math-Trigonometry';
-import type { TrigonometryTopicId } from '../prompts/topics/S3-Math-Trigonometry';
-import { S3_MATH_CIRCLE_GEOMETRY } from '../prompts/topics/S3-Math-CircleGeometry';
-import type { CircleGeometryTopicId } from '../prompts/topics/S3-Math-CircleGeometry';
-import { S3_MATH_QUADRATIC_EQUATIONS } from '../prompts/topics/S3-Math-QuadraticEquations';
-import type { QuadraticEquationsTopicId } from '../prompts/topics/S3-Math-QuadraticEquations';
+import { S3_MATH_TRIGONOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import { S3_MATH_CIRCLE_GEOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import type { CircleGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import { S3_MATH_QUADRATIC_EQUATIONS } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
+import type { QuadraticEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 
 interface SectionProgressTrackerProps {
   topicId: string;

@@ -1,17 +1,11 @@
 /**
- * Secondary 3 Mathematics - Circle Geometry
+ * S3 Mathematics - Circle Geometry Topic Configuration
  *
- * AI-First Approach: Minimal configuration, maximum AI intelligence
- * - Mastery-based progression (no points)
- * - Learning objectives derived from curriculum
- * - AI generates appropriate questions (theorem proofs, applications, constructions)
- * - Clear input/output contracts
+ * Clean topic configuration using the new prompt library architecture.
+ * Inherits from base agents, formatting rules, and interaction protocols.
  */
 
-// ============================================
-// TYPE EXPORTS
-// ============================================
-
+// Type exports
 export type CircleGeometryTopicId =
   | 's3-math-circle-geometry-definitions'
   | 's3-math-circle-geometry-angle-semicircle'
@@ -21,20 +15,11 @@ export type CircleGeometryTopicId =
   | 's3-math-circle-geometry-angle-centre'
   | 's3-math-circle-geometry-angle-same-arc';
 
-// ============================================
-// CONFIGURATION STRUCTURE
-// ============================================
+// Topic-specific tutor customization (overrides base)
+export const CIRCLE_GEOMETRY_TUTOR_CUSTOMIZATION = {
+  teachingPhilosophy: `You are a Socratic mathematics tutor for secondary school students learning Circle Geometry.
 
-export const S3_MATH_CIRCLE_GEOMETRY_CONFIG = {
-
-  // ============================================
-  // GLOBAL: Socratic Tutor Identity (Reference for Tutor Agent Only)
-  // ============================================
-  TUTOR_ROLE: `[REFERENCE - Used for Tutor Agent Socratic responses only, NOT for Question/Solution/Evaluator agents]
-
-You are a Socratic mathematics tutor for secondary school students learning Circle Geometry.
-
-Your Teaching Approach:
+Teaching Approach:
 - Guide students to discover geometric proofs through questioning, not direct instruction
 - Help students visualize circle properties and relationships
 - Encourage logical reasoning and proof construction
@@ -42,327 +27,32 @@ Your Teaching Approach:
 - Celebrate insights when students discover theorem relationships
 - Adapt difficulty organically based on student mastery
 
-**IMPORTANT - Text-to-Speech Guidelines:**
-When generating speech.text (what the avatar will speak aloud):
-- Keep speech plain and conversational (no markdown, no LaTeX)
+**Text-to-Speech Guidelines:**
 - Use "angle A O B" instead of "∠AOB" for proper pronunciation
 - Avoid symbols that might be mispronounced
-- For display.content (shown visually), you can use "∠AOB" and symbols normally
+- Keep speech.text plain and conversational (no markdown, no LaTeX)
+- For display.content (shown visually), you can use "∠AOB" and symbols normally`,
 
-Your Visual Tools:
-You have access to PRE-BUILT visual tools to help explain concepts:
-- Use tools when they genuinely help understanding (especially for circle theorems)
-- See MATH_TOOLS section for full details on available tools
-- IMPORTANT: Use the technical name (e.g., "circleWithChords") in the toolName field, NOT the display name
-
-When you use a visual tool, include it in your response using the mathTool field.`,
-
-  // ============================================
-  // GLOBAL: Question Agent Role (Minimal, Focused)
-  // ============================================
-  QUESTION_AGENT_ROLE: `You are the Question Generation Agent - execute targeted instructions to generate geometry questions.
-
-Your sole responsibility is to generate questions based on precise instructions from the Evaluator Agent.
-You do NOT make pedagogical decisions about what concepts to test or when to advance difficulty.`,
-
-  // ============================================
-  // GLOBAL: Solution Agent Role (Minimal, Focused)
-  // ============================================
-  SOLUTION_AGENT_ROLE: `You are the Solution Generation Agent - execute targeted instructions to generate step-by-step geometry solutions.
-
-Your sole responsibility is to generate clear, logical solutions with proper geometric reasoning based on precise instructions from the Evaluator Agent.
-You do NOT make pedagogical decisions about explanation depth beyond the instructions.`,
-
-  // ============================================
-  // GLOBAL: Formatting Rules (CRITICAL - All Agents Must Follow)
-  // ============================================
-  FORMATTING_RULES: {
-    description: "Universal formatting rules that all AI agents must follow in their responses",
-
-    latex: {
-      angles: {
-        rule: "Use $\\angle ABC$ for angles in display, 'angle ABC' in speech",
-        examples: {
-          correct_display: "$\\angle AOB = 90^{\\circ}$",
-          correct_speech: "angle A O B equals 90 degrees",
-          incorrect: "∠AOB = 90°" // Don't use symbols in speech
-        },
-        reason: "TTS engines cannot pronounce mathematical symbols correctly"
-      },
-
-      degrees: {
-        rule: "Use $90^{\\circ}$ (WITH $ delimiters) in display, '90 degrees' in speech",
-        examples: {
-          correct_display: "$90^{\\circ}$",
-          correct_speech: "90 degrees",
-          incorrect: "90°" // Don't use degree symbol in speech
-        }
-      },
-
-      mathExpressions: {
-        rule: "Use $expression$ (WITH $ delimiters) for all math",
-        examples: {
-          correct: "$\\angle AOB = 2 \\times \\angle ACB$",
-          correctWithText: "$\\text{Arc } AB$"
-        },
-        reason: "MathText.tsx processes LaTeX inside $ delimiters with KaTeX"
-      },
-
-      jsonEscaping: {
-        critical: "⚠️⚠️⚠️ YOU ARE GENERATING JSON OUTPUT - LaTeX backslashes MUST BE ESCAPED IN JSON! ⚠️⚠️⚠️",
-        rule: "JSON escaping: ONE backslash in JSON source (\\) → ONE backslash after JSON.parse() (\\) → KaTeX renders the symbol",
-        flow: "STEP 1: Write \\angle in JSON → STEP 2: JSON.parse() keeps it as \\angle → STEP 3: KaTeX renders as ∠",
-        examples: {
-          correctJSON: '{"content": "$\\angle AOB = 90^{\\circ}$, so $\\angle ACB = 45^{\\circ}$"}',
-          afterParsing: 'After JSON.parse(): "$\\angle AOB = 90^{\\circ}$, so $\\angle ACB = 45^{\\circ}$" (ONE backslash each)',
-          afterRendering: 'KaTeX renders as: "∠AOB = 90°, so ∠ACB = 45°" (symbols displayed)'
-        },
-        requiredCommands: [
-          "Angles: \\angle (ONE backslash in JSON source)",
-          "Degrees: \\circ (ONE backslash in JSON source)",
-          "Greek letters: \\theta, \\alpha, \\beta (ONE backslash in JSON source)",
-          "Trig functions: \\sin, \\cos, \\tan (ONE backslash in JSON source)",
-          "Operators: \\times, \\div, \\pm (ONE backslash in JSON source)",
-          "Text: \\text{...} (ONE backslash in JSON source)"
-        ],
-        wrongVsRight: {
-          wrong: '{"content": "$\\\\angle AOB$"} ← WRONG: TWO backslashes in JSON = double backslash after parse = LaTeX fails!',
-          right: '{"content": "$\\angle AOB$"} ← CORRECT: ONE backslash in JSON → ONE after parse → ∠ symbol rendered',
-          explanation: 'JSON source with ONE backslash (\\angle) → JSON.parse() preserves it as (\\angle) → KaTeX renders symbol (∠)'
-        },
-        technicalDetails: "JSON.parse() processes escape sequences: \\ in JSON source stays as \\ in string value (when followed by valid LaTeX). KaTeX then renders the single backslash commands as math symbols."
-      },
-
-      generalGuideline: "Display uses LaTeX for precision, speech uses plain English for clarity."
-    },
-
-    speech: {
-      format: {
-        rule: "PLAIN TEXT only - no markdown (* _ ** ###), no LaTeX ($ \\), no symbols",
-        examples: {
-          correct: "The angle at the centre is twice the angle at the circumference.",
-          incorrect: "The angle at the centre is $2 \\times$ the angle at the circumference."
-        },
-        reason: "speech.text is read aloud by text-to-speech engine"
-      },
-
-      angles: {
-        rule: "Spell out angle names with spaces",
-        examples: {
-          correct: "angle A O B",
-          incorrect: "∠AOB"
-        }
-      },
-
-      numbers: {
-        rule: "Write numbers naturally for speech",
-        examples: {
-          correct: "90 degrees",
-          incorrect: "90°"
-        }
-      }
-    },
-
-    display: {
-      format: {
-        rule: "Can use markdown (**, *, ###, -) and LaTeX ($...$) freely",
-        examples: {
-          correct: "### Step 1\n\nWe know $\\angle AOB = 2 \\times \\angle ACB$\n\n**Important:** The angle at centre..."
-        },
-        reason: "display.content is rendered visually with full markdown/LaTeX support"
-      },
-
-      structuring: {
-        headings: "Use ### for step headings",
-        emphasis: "Use **bold** for key theorems",
-        latex: "Use $ delimiters for all math expressions and symbols"
-      }
-    },
-
-    commonMistakes: [
-      {
-        mistake: "Using ∠ or ° symbols in speech.text",
-        fix: "Use 'angle A O B' and '90 degrees' in speech"
-      },
-      {
-        mistake: "Using LaTeX in speech.text",
-        fix: "speech.text must be plain text. Save LaTeX for display.content"
-      }
-    ]
-  },
-
-  // ============================================
-  // GLOBAL: Visual Math Tools Reference
-  // ============================================
-  // NOTE: Math tool definitions are centralized in mathToolsRegistry.ts
-  // This constant is kept for backward compatibility and references
-  MATH_TOOLS_AVAILABLE: [
-    "circleBasic",
-    "circleWithArcs",
-    "circleWithChords",
-    "circleSemicircle",
-    "circleTangent",
-    "circleTwoTangents",
-    "circleAngleCentre",
-    "circleSameArc",
-    "generalTriangle"
-  ],
-
-  // ============================================
-  // GLOBAL: Input/Output Contract
-  // ============================================
-  INTERACTION_PROTOCOL: {
-
-    description: "Clear contract between system and AI for consistent communication",
-
-    // DIFFICULTY PROGRESSION MODEL
-    progressionModel: {
-      description: "AI-driven organic difficulty progression based on student mastery",
-      difficultyLevels: {
-        1: "foundational - Basic concepts, definitions, theorem statements",
-        2: "intermediate - Theorem proofs, applications, calculations",
-        3: "advanced - Complex problems, combined theorems, multi-step reasoning"
-      },
-      progressionMechanism: "The system tracks currentProblemType (1, 2, or 3). The AI signals readiness to advance via assessment.readyToAdvance field in tutorOutputs. When true, the system will increment difficulty level for subsequent questions.",
-      guidelines: [
-        "Set readyToAdvance: true when student demonstrates consistent mastery (e.g., 2+ correct answers in a row at current level)",
-        "Set readyToAdvance: false if student is still developing understanding or making errors",
-        "Progression is one-way (no automatic regression) - system trusts AI's judgment",
-        "Questions should match the current difficulty level appropriately"
-      ]
-    },
-
-    // What the AI receives from the system
-    inputs: {
-      studentContext: {
-        currentSubtopic: "string - e.g., 's3-math-circle-geometry-angle-semicircle'",
-        currentDifficultyLevel: "string - foundational | intermediate | advanced",
-        chatHistory: "Message[] - last 6 messages for context",
-        problemState: {
-          currentProblem: "string - the problem/question being worked on",
-          hintsGivenSoFar: "number - how many hints given for current problem",
-          attemptsCount: "number - how many attempts student has made",
-          recentPerformance: "string - summary of last 3-5 problems",
-          originalMathTool: "MathTool | null - the original visual tool shown with the problem"
-        }
-      },
-      studentResponse: "string - what the student just submitted"
-    },
-
-    // EVALUATOR AGENT OUTPUT
-    evaluatorOutputs: {
-      answerCorrect: "boolean - is the student's answer correct?",
-      isMainProblemSolved: "boolean - has the main problem been completely solved?",
-
-      assessment: {
-        understanding: "strong | developing | struggling - current understanding level",
-        conceptGaps: "string[] - specific concepts student needs to work on",
-        readyToAdvance: "boolean - ready for next section?"
-      },
-
-      progression: {
-        currentSection: "string - current section ID from progressionStructure",
-        sectionMastered: "boolean - has student mastered current section?",
-        masteryProgress: "string - brief description of progress toward mastery",
-        nextSection: "string | null - next section ID if current is mastered"
-      },
-
-      action: "GIVE_HINT | GIVE_SOLUTION | NEW_PROBLEM | CELEBRATE - next action",
-      hintLevel: "1 | 2 | 3 (optional) - which hint number if action is GIVE_HINT",
-
-      tutorInstruction: "object (optional) - if action is GIVE_HINT or CELEBRATE",
-      questionInstruction: "object (optional) - if action is NEW_PROBLEM",
-      solutionInstruction: "object (optional) - if action is GIVE_SOLUTION",
-
-      reasoning: "string - internal explanation for action (plain text, NO LaTeX)"
-    },
-
-    // TUTOR AGENT OUTPUT
-    tutorOutputs: {
-      speech: {
-        text: "string - what avatar says (plain text, no markdown/LaTeX, suitable for TTS)",
-        emotion: "encouraging | celebratory | supportive | neutral"
-      },
-
-      display: {
-        content: "string | null - what appears in chat bubble (can use markdown/LaTeX)",
-        showAfterSpeech: "boolean - true if display appears after speech",
-        type: "hint | celebration | feedback"
-      },
-
-      mathTool: "OPTIONAL - {toolName: string, parameters: object, caption: string}. CRITICAL: toolName must be technical key (e.g., 'circleSemicircle'), NOT display name."
-    },
-
-    // QUESTION GENERATION OUTPUT
-    questionGenerationOutputs: {
-      speech: {
-        text: "string - brief acknowledgment + transition (plain text, no markdown/LaTeX)",
-        emotion: "encouraging | celebratory | supportive | neutral"
-      },
-
-      display: {
-        content: "string - the new question/problem text",
-        showAfterSpeech: "boolean - true to show after speech",
-        type: "question"
-      },
-
-      mathTool: "OPTIONAL - {toolName: string, parameters: object, caption: string}"
-    },
-
-    // SOLUTION GENERATION OUTPUT
-    solutionOutputs: {
-      speech: {
-        text: "string - brief intro before solution (plain text, 1-2 sentences)",
-        emotion: "supportive | encouraging"
-      },
-
-      display: {
-        content: "string - complete step-by-step solution with reasoning (can use markdown/LaTeX)",
-        showAfterSpeech: "boolean - true to show after speech",
-        type: "solution"
-      },
-
-      mathTool: "OPTIONAL - {toolName: string, parameters: object, caption: string}"
-    },
-
-    // INSTRUCTION SCHEMAS
-    instructionSchemas: {
-      TutorInstruction: {
-        focusConcept: "string - specific concept for hint",
-        studentError: "string - what student did wrong",
-        hintStrategy: "string - approach for hint",
-        relevantInfo: "string - theorem/definition needed",
-        tone: "string - pedagogical tone guidance",
-        depth: "gentle nudge | specific guidance | near-answer"
-      },
-
-      QuestionInstruction: {
-        targetSection: "string - section ID from progressionStructure",
-        targetConcept: "string - specific learning objective to test",
-        difficulty: "foundational | intermediate | advanced",
-        focusObjectives: "string[] - all learning objectives for section",
-        relevantTheorems: "string[] - theorems needed for this question",
-        conceptGaps: "string[] (optional) - concepts student is struggling with",
-        sampleProblems: "array (optional) - example problems for inspiration",
-        questionConstraints: "object (optional) - additional parameters"
-      },
-
-      SolutionInstruction: {
-        problemText: "string - exact problem being solved",
-        studentAttempt: "string - what student tried",
-        explanationFocus: "string - core concept to explain",
-        relevantTheorems: "string[] - theorems needed",
-        relevantConcepts: "string - concepts from learning objectives",
-        explanationDepth: "string - guidance on detail level",
-        studentStrugglePoint: "string - what student is struggling with"
-      }
-    }
-  }
+  visualToolsGuidance: `Use pre-built visual tools when they genuinely help understanding (especially for circle theorems).
+IMPORTANT: Use the technical name (e.g., "circleSemicircle") in the toolName field, NOT the display name.`
 };
 
-// ============================================
-// SUBTOPICS: Learning Objectives
-// ============================================
+// Available math tools for this topic
+export const CIRCLE_GEOMETRY_MATH_TOOLS = [
+  "circleBasic",
+  "circleWithArcs",
+  "circleWithChords",
+  "circleSemicircle",
+  "circleTangent",
+  "circleTwoTangents",
+  "circleAngleCentre",
+  "circleSameArc",
+  "generalTriangle"
+];
+
+// ==========================
+// SUBTOPICS CONFIGURATION
+// ==========================
 
 export const S3_MATH_CIRCLE_GEOMETRY_SUBTOPICS = {
 
@@ -395,7 +85,6 @@ Complete subtopic when:
           prerequisites: [],
           masterySignals: "Student correctly identifies centre, radius, diameter, circumference in 2+ diagrams",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Identify the centre of a circle",
             "Identify the radius (line from centre to circumference)",
@@ -403,15 +92,11 @@ Complete subtopic when:
             "Understand that diameter = 2 × radius",
             "Identify the circumference (perimeter of circle)"
           ],
-
           relevantFormulas: [
             "Diameter = 2 × radius",
             "Radius = diameter ÷ 2"
           ],
-
-          availableTools: [
-            "circleBasic"
-          ]
+          availableTools: ["circleBasic"]
         },
         {
           id: "arcs",
@@ -420,7 +105,6 @@ Complete subtopic when:
           prerequisites: ["circle-parts"],
           masterySignals: "Student distinguishes between major and minor arcs in 2+ examples, correctly identifies sectors",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Define arc as part of the circumference between two points",
             "Distinguish between minor arc (shorter) and major arc (longer)",
@@ -428,15 +112,11 @@ Complete subtopic when:
             "Identify a sector as the region bounded by two radii and an arc",
             "Recognize that arc names use two or three letters (e.g., arc AB, arc ACB)"
           ],
-
           relevantFormulas: [
             "Minor arc + major arc = complete circumference",
             "Arc is measured by the angle it subtends at the centre"
           ],
-
-          availableTools: [
-            "circleWithArcs"
-          ]
+          availableTools: ["circleWithArcs"]
         },
         {
           id: "chords-and-segments",
@@ -445,7 +125,6 @@ Complete subtopic when:
           prerequisites: ["arcs"],
           masterySignals: "Student correctly identifies chords and segments in 2+ diagrams, understands relationship to arcs",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Define a chord as a line segment joining two points on the circumference",
             "Recognize that a diameter is the longest chord",
@@ -453,28 +132,21 @@ Complete subtopic when:
             "Distinguish between major segment and minor segment",
             "Understand that a chord divides a circle into two segments"
           ],
-
           relevantFormulas: [
             "Diameter is a special chord passing through the centre",
             "Chord creates two segments: major and minor"
           ],
-
-          availableTools: [
-            "circleWithArcs",
-            "circleWithChords"
-          ]
+          availableTools: ["circleWithArcs", "circleWithChords"]
         }
       ]
     },
 
-    learningObjectives: `
-Students will master circle terminology:
+    learningObjectives: `Students will master circle terminology:
 1. Circle Parts - Centre, radius, diameter, circumference
 2. Arcs and Sectors - Minor/major arcs, sectors
 3. Chords and Segments - Chords, major/minor segments`,
 
-    keyFormulas: `
-• Diameter = 2 × radius
+    keyFormulas: `• Diameter = 2 × radius
 • Chord: line segment joining two points on circumference
 • Arc: part of circumference between two points
 • Segment: region between chord and arc`
@@ -506,21 +178,16 @@ Complete when student masters all aspects of the theorem`,
           prerequisites: ["s3-math-circle-geometry-definitions"],
           masterySignals: "Student states theorem correctly 1+ times and identifies semicircle setups in diagrams",
           estimatedQuestions: "1-2 questions",
-
           learningObjectives: [
             "State the angle in a semi-circle theorem: The angle in a semi-circle is a right angle (90°)",
             "Identify when a triangle is inscribed in a semi-circle (one side is diameter)",
             "Recognize that the angle opposite the diameter is 90°",
             "Understand the condition: angle must be on the circumference, with diameter as one side"
           ],
-
           relevantFormulas: [
             "If AB is a diameter and C is on the circumference, then ∠ACB = 90°"
           ],
-
-          availableTools: [
-            "circleSemicircle"
-          ]
+          availableTools: ["circleSemicircle"]
         },
         {
           id: "proof",
@@ -529,7 +196,6 @@ Complete when student masters all aspects of the theorem`,
           prerequisites: ["theorem-statement"],
           masterySignals: "Student follows proof logic, explains each step, constructs proof with guidance in 2+ attempts",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Understand the proof approach: draw radii OA, OB, OC (where O is centre)",
             "Recognize that OA = OB = OC (all radii)",
@@ -538,17 +204,12 @@ Complete when student masters all aspects of the theorem`,
             "Complete proof: 2(∠OAC + ∠OCB) = 180°, therefore ∠ACB = 90°",
             "Construct the proof independently"
           ],
-
           relevantFormulas: [
             "In isosceles triangle: base angles are equal",
             "Angle sum in triangle = 180°",
             "∠AOC + ∠OCA + ∠OAC = 180°"
           ],
-
-          availableTools: [
-            "circleSemicircle",
-            "generalTriangle"
-          ]
+          availableTools: ["circleSemicircle", "generalTriangle"]
         },
         {
           id: "applications",
@@ -557,7 +218,6 @@ Complete when student masters all aspects of the theorem`,
           prerequisites: ["proof"],
           masterySignals: "Student applies theorem to find unknown angles in 2+ problems, recognizes when to use theorem",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Identify when angle in semi-circle theorem applies",
             "Use theorem to find unknown angles when diameter is given",
@@ -565,37 +225,29 @@ Complete when student masters all aspects of the theorem`,
             "Apply theorem in multi-step problems",
             "Combine with other angle properties (angle sum, isosceles triangles)"
           ],
-
           relevantFormulas: [
             "If ∠ACB = 90° and A, B, C are on circle, then AB is diameter",
             "In semi-circle: ∠ACB = 90°, so ∠CAB + ∠CBA = 90°"
           ],
-
           sampleProblems: [
             {
-              problem: "In circle with centre O, AB is a diameter. Point C lies on the circumference. If ∠CAB = 35°, find ∠CBA.",
+              problem: "In circle with centre O, AB is a diameter. Point C lies on the circumference. If ∠CAB = 35°, find ∠CBA."
             },
             {
-              problem: "Triangle PQR is inscribed in a circle with PQ as diameter. If ∠QPR = 42°, find ∠PRQ.",
+              problem: "Triangle PQR is inscribed in a circle with PQ as diameter. If ∠QPR = 42°, find ∠PRQ."
             }
           ],
-
-          availableTools: [
-            "circleSemicircle",
-            "generalTriangle"
-          ]
+          availableTools: ["circleSemicircle", "generalTriangle"]
         }
       ]
     },
 
-    learningObjectives: `
-Students will master the angle in semi-circle theorem:
+    learningObjectives: `Students will master the angle in semi-circle theorem:
 1. Theorem Statement - Angle in semi-circle is 90°
 2. Proof - Using isosceles triangles and angle sum
 3. Applications - Finding angles using the theorem`,
 
-    keyFormulas: `
-• The angle in a semi-circle is 90°
+    keyFormulas: `• The angle in a semi-circle is 90°
 • If AB is diameter and C is on circumference, then ∠ACB = 90°
 • Converse: If ∠ACB = 90° (C on circle), then AB is diameter`
   },
@@ -621,7 +273,6 @@ Complete when student masters all chord relationships`,
           prerequisites: ["s3-math-circle-geometry-definitions"],
           masterySignals: "Student states theorem correctly and applies to 2+ problems",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "State theorem: Equal chords subtend equal angles at the centre",
             "Understand the converse: If angles at centre are equal, then chords are equal",
@@ -629,15 +280,11 @@ Complete when student masters all chord relationships`,
             "Apply converse to find equal angles given equal chords",
             "Recognize proof using congruent triangles (SAS)"
           ],
-
           relevantFormulas: [
             "If chord AB = chord CD, then ∠AOB = ∠COD (O is centre)",
             "If ∠AOB = ∠COD, then chord AB = chord CD"
           ],
-
-          availableTools: [
-            "circleWithChords"
-          ]
+          availableTools: ["circleWithChords"]
         },
         {
           id: "perpendicular-bisector",
@@ -646,7 +293,6 @@ Complete when student masters all chord relationships`,
           prerequisites: ["equal-chords-equal-angles"],
           masterySignals: "Student applies perpendicular bisector theorem in 2+ problems",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "State theorem: The perpendicular from the centre to a chord bisects the chord",
             "Understand converse: The line from centre to midpoint of chord is perpendicular to chord",
@@ -654,26 +300,20 @@ Complete when student masters all chord relationships`,
             "Use Pythagoras theorem with radius, half-chord, and perpendicular distance",
             "Recognize that equal chords are equidistant from centre"
           ],
-
           relevantFormulas: [
             "If OM ⊥ chord AB, then AM = MB (M is midpoint)",
             "r² = d² + (chord/2)² where r = radius, d = perpendicular distance to chord",
             "Equal chords have equal perpendicular distances from centre"
           ],
-
           sampleProblems: [
             {
-              problem: "A chord of length 24cm is at a distance of 5cm from the centre of a circle. Find the radius of the circle.",
+              problem: "A chord of length 24cm is at a distance of 5cm from the centre of a circle. Find the radius of the circle."
             },
             {
-              problem: "In a circle with radius 13cm, a chord is 10cm from the centre. Find the length of the chord.",
+              problem: "In a circle with radius 13cm, a chord is 10cm from the centre. Find the length of the chord."
             }
           ],
-
-          availableTools: [
-            "circleWithChords",
-            "generalTriangle"
-          ]
+          availableTools: ["circleWithChords", "generalTriangle"]
         },
         {
           id: "chord-applications",
@@ -682,7 +322,6 @@ Complete when student masters all chord relationships`,
           prerequisites: ["perpendicular-bisector"],
           masterySignals: "Student solves complex multi-step chord problems in 2-3 attempts",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Combine chord theorems with angle properties",
             "Apply Pythagoras theorem in chord problems",
@@ -690,28 +329,21 @@ Complete when student masters all chord relationships`,
             "Use chord theorems in real-world contexts (architecture, engineering)",
             "Prove relationships between chords, radii, and angles"
           ],
-
           relevantFormulas: [
             "All chord theorems combined",
             "Pythagoras: r² = d² + (c/2)² for chord c at distance d from centre radius r"
           ],
-
-          availableTools: [
-            "circleWithChords",
-            "generalTriangle"
-          ]
+          availableTools: ["circleWithChords", "generalTriangle"]
         }
       ]
     },
 
-    learningObjectives: `
-Students will master chord theorems:
+    learningObjectives: `Students will master chord theorems:
 1. Equal Chords - Equal chords subtend equal angles at centre
 2. Perpendicular Bisector - Perpendicular from centre bisects chord
 3. Applications - Solve complex chord problems`,
 
-    keyFormulas: `
-• Equal chords → equal angles at centre (and converse)
+    keyFormulas: `• Equal chords → equal angles at centre (and converse)
 • Perpendicular from centre bisects chord
 • Equal chords are equidistant from centre
 • r² = d² + (chord/2)² (Pythagoras with chords)`
@@ -738,7 +370,6 @@ Complete when student masters all applications`,
           prerequisites: ["s3-math-circle-geometry-definitions"],
           masterySignals: "Student defines tangent correctly and identifies tangents in 2+ diagrams",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Define a tangent as a line that touches the circle at exactly one point",
             "Identify the point of tangency (point where tangent touches circle)",
@@ -746,14 +377,10 @@ Complete when student masters all applications`,
             "Distinguish between secant (cuts circle at 2 points) and tangent (touches at 1 point)",
             "Recognize that there are infinite tangents to a circle"
           ],
-
           relevantFormulas: [
             "Tangent touches circle at exactly one point (point of tangency)"
           ],
-
-          availableTools: [
-            "circleTangent"
-          ]
+          availableTools: ["circleTangent"]
         },
         {
           id: "radius-tangent-perpendicular",
@@ -762,7 +389,6 @@ Complete when student masters all applications`,
           prerequisites: ["tangent-definition"],
           masterySignals: "Student applies radius-tangent perpendicular theorem in 2+ problems",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "State theorem: The radius is perpendicular to the tangent at the point of tangency",
             "Understand that angle between radius and tangent is always 90°",
@@ -770,25 +396,19 @@ Complete when student masters all applications`,
             "Use right-angled triangle properties with radius and tangent",
             "Recognize converse: If a line through a point on the circle is perpendicular to the radius, it is a tangent"
           ],
-
           relevantFormulas: [
             "Radius ⊥ tangent at point of tangency",
             "∠OTP = 90° where O is centre, T is point of tangency, P is on tangent"
           ],
-
           sampleProblems: [
             {
-              problem: "A tangent to a circle with centre O touches at point T. If ∠OTP = x, find x.",
+              problem: "A tangent to a circle with centre O touches at point T. If ∠OTP = x, find x."
             },
             {
-              problem: "From an external point P, a tangent touches circle at T. If OP = 13cm and radius = 5cm, find PT.",
+              problem: "From an external point P, a tangent touches circle at T. If OP = 13cm and radius = 5cm, find PT."
             }
           ],
-
-          availableTools: [
-            "circleTangent",
-            "generalTriangle"
-          ]
+          availableTools: ["circleTangent", "generalTriangle"]
         },
         {
           id: "applications-radius-tangent",
@@ -797,7 +417,6 @@ Complete when student masters all applications`,
           prerequisites: ["radius-tangent-perpendicular"],
           masterySignals: "Student solves multi-step problems using radius-tangent theorem in 2+ attempts",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Apply Pythagoras theorem with radius, tangent, and external point",
             "Solve problems involving tangent lengths",
@@ -805,28 +424,21 @@ Complete when student masters all applications`,
             "Use in construction problems (finding tangent from external point)",
             "Apply to real-world scenarios"
           ],
-
           relevantFormulas: [
             "In right triangle OTP: OP² = OT² + TP² where OT is radius, TP is tangent length",
             "Tangent length = √(distance² - radius²)"
           ],
-
-          availableTools: [
-            "circleTangent",
-            "generalTriangle"
-          ]
+          availableTools: ["circleTangent", "generalTriangle"]
         }
       ]
     },
 
-    learningObjectives: `
-Students will master radius-tangent relationship:
+    learningObjectives: `Students will master radius-tangent relationship:
 1. Tangent Definition - Line touching circle at one point
 2. Perpendicular Theorem - Radius ⊥ tangent at point of tangency
 3. Applications - Solve problems using the theorem`,
 
-    keyFormulas: `
-• Tangent touches circle at exactly one point
+    keyFormulas: `• Tangent touches circle at exactly one point
 • Radius ⊥ tangent at point of tangency
 • OP² = OT² + TP² (Pythagoras with tangent from external point)`
   },
@@ -852,7 +464,6 @@ Complete when student masters all aspects`,
           prerequisites: ["s3-math-circle-geometry-radius-tangent"],
           masterySignals: "Student states theorem and applies in 2+ problems",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "State theorem: Tangents from an external point to a circle are equal in length",
             "Identify the two tangent segments from external point",
@@ -860,14 +471,10 @@ Complete when student masters all aspects`,
             "Understand the setup: one external point, two points of tangency",
             "Apply theorem to find unknown tangent lengths"
           ],
-
           relevantFormulas: [
             "If PA and PB are tangents from external point P, then PA = PB"
           ],
-
-          availableTools: [
-            "circleTwoTangents"
-          ]
+          availableTools: ["circleTwoTangents"]
         },
         {
           id: "proof-equal-tangents",
@@ -876,7 +483,6 @@ Complete when student masters all aspects`,
           prerequisites: ["equal-tangents-theorem"],
           masterySignals: "Student follows proof and can reproduce key steps in 2+ attempts",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Draw radii OA and OB to points of tangency",
             "Recognize right angles: ∠OAP = ∠OBP = 90° (radius ⊥ tangent)",
@@ -885,7 +491,6 @@ Complete when student masters all aspects`,
             "Apply RHS (Right angle-Hypotenuse-Side) congruence: △OAP ≅ △OBP",
             "Conclude PA = PB from congruent triangles"
           ],
-
           relevantFormulas: [
             "∠OAP = ∠OBP = 90° (radius ⊥ tangent)",
             "OA = OB (radii)",
@@ -893,11 +498,7 @@ Complete when student masters all aspects`,
             "△OAP ≅ △OBP (RHS)",
             "∴ PA = PB"
           ],
-
-          availableTools: [
-            "circleTwoTangents",
-            "generalTriangle"
-          ]
+          availableTools: ["circleTwoTangents", "generalTriangle"]
         },
         {
           id: "applications-two-tangents",
@@ -906,7 +507,6 @@ Complete when student masters all aspects`,
           prerequisites: ["proof-equal-tangents"],
           masterySignals: "Student solves complex problems involving equal tangents in 2+ attempts",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Find tangent lengths when other measurements are given",
             "Use equal tangents with Pythagoras theorem",
@@ -915,38 +515,30 @@ Complete when student masters all aspects`,
             "Combine with other circle theorems",
             "Recognize equal tangents in compound shapes"
           ],
-
           relevantFormulas: [
             "PA = PB (equal tangents from P)",
             "PA² = OP² - r² (Pythagoras)",
             "Angle between tangents can be found using triangle properties"
           ],
-
           sampleProblems: [
             {
-              problem: "Two tangents from point P touch circle at A and B. If OP = 10cm and radius = 6cm, find PA.",
+              problem: "Two tangents from point P touch circle at A and B. If OP = 10cm and radius = 6cm, find PA."
             },
             {
-              problem: "Tangents from P to circle touch at A and B. If PA = 12cm and ∠APB = 60°, find the radius.",
+              problem: "Tangents from P to circle touch at A and B. If PA = 12cm and ∠APB = 60°, find the radius."
             }
           ],
-
-          availableTools: [
-            "circleTwoTangents",
-            "generalTriangle"
-          ]
+          availableTools: ["circleTwoTangents", "generalTriangle"]
         }
       ]
     },
 
-    learningObjectives: `
-Students will master tangents from external point:
+    learningObjectives: `Students will master tangents from external point:
 1. Equal Tangents Theorem - Tangents from external point are equal
 2. Proof - Using RHS congruence
 3. Applications - Solve complex tangent problems`,
 
-    keyFormulas: `
-• Tangents from external point P are equal: PA = PB
+    keyFormulas: `• Tangents from external point P are equal: PA = PB
 • Proof uses: radius ⊥ tangent + RHS congruence
 • PA² = OP² - r² (Pythagoras with tangent length)`
   },
@@ -972,7 +564,6 @@ Complete when student masters all applications`,
           prerequisites: ["s3-math-circle-geometry-angle-semicircle"],
           masterySignals: "Student states theorem correctly and identifies setups in 2+ diagrams",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "State theorem: The angle subtended by an arc at the centre is twice the angle subtended by the same arc at any point on the remaining part of the circumference",
             "Identify angle at centre (∠AOB where O is centre)",
@@ -980,15 +571,11 @@ Complete when student masters all applications`,
             "Recognize the relationship: ∠AOB = 2 × ∠ACB",
             "Understand that both angles are subtended by the same arc AB"
           ],
-
           relevantFormulas: [
             "Angle at centre = 2 × angle at circumference (for same arc)",
             "∠AOB = 2 × ∠ACB where O is centre, C is on circumference"
           ],
-
-          availableTools: [
-            "circleAngleCentre"
-          ]
+          availableTools: ["circleAngleCentre"]
         },
         {
           id: "proof-angle-centre",
@@ -997,7 +584,6 @@ Complete when student masters all applications`,
           prerequisites: ["theorem-angle-centre"],
           masterySignals: "Student follows proof logic and explains key steps in 2+ attempts",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Draw radius OC to create isosceles triangles",
             "Recognize OA = OB = OC (all radii)",
@@ -1007,17 +593,12 @@ Complete when student masters all applications`,
             "Show ∠BOC = 2∠BCO (exterior angle in △OBC)",
             "Conclude ∠AOB = ∠AOC + ∠BOC = 2(∠ACO + ∠BCO) = 2∠ACB"
           ],
-
           relevantFormulas: [
             "In isosceles triangle: base angles equal",
             "Exterior angle = sum of opposite interior angles",
             "∠AOB = ∠AOC + ∠BOC = 2∠ACO + 2∠BCO = 2∠ACB"
           ],
-
-          availableTools: [
-            "circleAngleCentre",
-            "generalTriangle"
-          ]
+          availableTools: ["circleAngleCentre", "generalTriangle"]
         },
         {
           id: "applications-angle-centre",
@@ -1026,7 +607,6 @@ Complete when student masters all applications`,
           prerequisites: ["proof-angle-centre"],
           masterySignals: "Student applies theorem to find angles in 4+ problems, including multi-step questions",
           estimatedQuestions: "5-6 questions",
-
           learningObjectives: [
             "Find angle at centre given angle at circumference",
             "Find angle at circumference given angle at centre",
@@ -1035,41 +615,33 @@ Complete when student masters all applications`,
             "Combine with other circle theorems (angle in semicircle, equal chords)",
             "Solve multi-step problems involving multiple angles"
           ],
-
           relevantFormulas: [
             "∠AOB = 2 × ∠ACB (same arc AB)",
             "If ∠AOB is reflex, use (360° - ∠AOB) for major arc calculations",
             "Can combine with: angle sum, isosceles triangles, etc."
           ],
-
           sampleProblems: [
             {
-              problem: "Arc AB subtends ∠ACB = 35° at circumference and ∠AOB at centre O. Find ∠AOB.",
+              problem: "Arc AB subtends ∠ACB = 35° at circumference and ∠AOB at centre O. Find ∠AOB."
             },
             {
-              problem: "In circle with centre O, ∠AOB = 140°. Point C is on the major arc AB. Find ∠ACB.",
+              problem: "In circle with centre O, ∠AOB = 140°. Point C is on the major arc AB. Find ∠ACB."
             },
             {
-              problem: "In circle with centre O, chord AB subtends 60° at C on circumference. If D is on the minor arc AB, find ∠ADB.",
+              problem: "In circle with centre O, chord AB subtends 60° at C on circumference. If D is on the minor arc AB, find ∠ADB."
             }
           ],
-
-          availableTools: [
-            "circleAngleCentre",
-            "generalTriangle"
-          ]
+          availableTools: ["circleAngleCentre", "generalTriangle"]
         }
       ]
     },
 
-    learningObjectives: `
-Students will master angle at centre theorem:
+    learningObjectives: `Students will master angle at centre theorem:
 1. Theorem Statement - Angle at centre = 2 × angle at circumference
 2. Proof - Using isosceles triangles and exterior angle theorem
 3. Applications - Finding angles in complex configurations`,
 
-    keyFormulas: `
-• Angle at centre = 2 × angle at circumference (same arc)
+    keyFormulas: `• Angle at centre = 2 × angle at circumference (same arc)
 • ∠AOB = 2 × ∠ACB where O is centre, C on circumference
 • Proof uses isosceles triangles and exterior angle theorem`
   },
@@ -1095,7 +667,6 @@ Complete when student masters all segment angle properties`,
           prerequisites: ["s3-math-circle-geometry-angle-centre"],
           masterySignals: "Student states theorem and identifies equal angles in same segment in 2+ diagrams",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "State theorem: Angles in the same segment of a circle are equal",
             "Identify the segment (region between chord and arc)",
@@ -1103,15 +674,11 @@ Complete when student masters all segment angle properties`,
             "Understand that ∠ACB = ∠ADB when C and D are in same segment",
             "Distinguish between angles in different segments"
           ],
-
           relevantFormulas: [
             "Angles in same segment are equal",
             "If ∠ACB and ∠ADB are in same segment, then ∠ACB = ∠ADB"
           ],
-
-          availableTools: [
-            "circleSameArc"
-          ]
+          availableTools: ["circleSameArc"]
         },
         {
           id: "proof-same-segment",
@@ -1120,7 +687,6 @@ Complete when student masters all segment angle properties`,
           prerequisites: ["angles-same-segment"],
           masterySignals: "Student connects to angle at centre theorem and explains proof in 2+ attempts",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Use angle at centre theorem: ∠AOB = 2∠ACB and ∠AOB = 2∠ADB",
             "Recognize that both angles relate to same angle at centre",
@@ -1128,17 +694,12 @@ Complete when student masters all segment angle properties`,
             "Understand this works for any points in the same segment",
             "Apply proof logic independently"
           ],
-
           relevantFormulas: [
             "∠AOB = 2∠ACB (angle at centre)",
             "∠AOB = 2∠ADB (angle at centre)",
             "∴ ∠ACB = ∠ADB (angles in same segment)"
           ],
-
-          availableTools: [
-            "circleSameArc",
-            "circleAngleCentre"
-          ]
+          availableTools: ["circleSameArc", "circleAngleCentre"]
         },
         {
           id: "cyclic-quadrilaterals",
@@ -1147,7 +708,6 @@ Complete when student masters all segment angle properties`,
           prerequisites: ["proof-same-segment"],
           masterySignals: "Student identifies cyclic quadrilaterals and applies opposite angle property in 2+ problems",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Define cyclic quadrilateral: four vertices on a circle",
             "State theorem: Opposite angles of cyclic quadrilateral sum to 180°",
@@ -1156,24 +716,19 @@ Complete when student masters all segment angle properties`,
             "Recognize converse: if opposite angles sum to 180°, quadrilateral is cyclic",
             "Use exterior angle property: exterior angle = opposite interior angle"
           ],
-
           relevantFormulas: [
             "In cyclic quadrilateral ABCD: ∠A + ∠C = 180° and ∠B + ∠D = 180°",
             "Exterior angle of cyclic quadrilateral = opposite interior angle"
           ],
-
           sampleProblems: [
             {
-              problem: "ABCD is a cyclic quadrilateral. If ∠A = 85° and ∠B = 70°, find ∠C and ∠D.",
+              problem: "ABCD is a cyclic quadrilateral. If ∠A = 85° and ∠B = 70°, find ∠C and ∠D."
             },
             {
-              problem: "Points P, Q, R, S lie on a circle. If ∠P = 3x and ∠R = 2x + 20°, find x.",
+              problem: "Points P, Q, R, S lie on a circle. If ∠P = 3x and ∠R = 2x + 20°, find x."
             }
           ],
-
-          availableTools: [
-            "circleSameArc"
-          ]
+          availableTools: ["circleSameArc"]
         },
         {
           id: "applications-same-arc",
@@ -1182,7 +737,6 @@ Complete when student masters all segment angle properties`,
           prerequisites: ["cyclic-quadrilaterals"],
           masterySignals: "Student solves complex problems combining multiple circle theorems in 2+ attempts",
           estimatedQuestions: "2-3 questions",
-
           learningObjectives: [
             "Combine angles in same segment with other circle theorems",
             "Solve problems with multiple circles",
@@ -1190,39 +744,37 @@ Complete when student masters all segment angle properties`,
             "Use in real-world contexts (inscribed shapes, architecture)",
             "Prove relationships between angles using circle theorems systematically"
           ],
-
           relevantFormulas: [
             "All circle theorems combined",
             "Angles in same segment, angle at centre, cyclic quadrilaterals, etc."
           ],
-
-          availableTools: [
-            "circleSameArc",
-            "circleAngleCentre",
-            "generalTriangle"
-          ]
+          availableTools: ["circleSameArc", "circleAngleCentre", "generalTriangle"]
         }
       ]
     },
 
-    learningObjectives: `
-Students will master angles in same segment:
+    learningObjectives: `Students will master angles in same segment:
 1. Same Segment Theorem - Angles in same segment are equal
 2. Proof - Using angle at centre theorem
 3. Cyclic Quadrilaterals - Opposite angles sum to 180°
 4. Advanced Applications - Combining multiple theorems`,
 
-    keyFormulas: `
-• Angles in same segment are equal
+    keyFormulas: `• Angles in same segment are equal
 • Proof: Both equal to half the angle at centre
 • Cyclic quadrilateral: opposite angles sum to 180°
 • Exterior angle of cyclic quad = opposite interior angle`
   }
 };
 
-// ============================================
-// EXPORT COMBINED (for backward compatibility)
-// ============================================
+// Export for backward compatibility
+export const S3_MATH_CIRCLE_GEOMETRY: Record<CircleGeometryTopicId, any> = S3_MATH_CIRCLE_GEOMETRY_SUBTOPICS;
 
-export const S3_MATH_CIRCLE_GEOMETRY: Record<CircleGeometryTopicId, any> =
-  S3_MATH_CIRCLE_GEOMETRY_SUBTOPICS;
+// Export config that can be used by PromptLibrary
+export const S3_MATH_CIRCLE_GEOMETRY_CONFIG = {
+  TUTOR_ROLE: CIRCLE_GEOMETRY_TUTOR_CUSTOMIZATION.teachingPhilosophy,
+  QUESTION_AGENT_ROLE: null, // Uses base from prompt-library
+  SOLUTION_AGENT_ROLE: null, // Uses base from prompt-library
+  MATH_TOOLS_AVAILABLE: CIRCLE_GEOMETRY_MATH_TOOLS,
+  // FORMATTING_RULES: imported from prompt-library
+  // INTERACTION_PROTOCOL: imported from prompt-library
+};

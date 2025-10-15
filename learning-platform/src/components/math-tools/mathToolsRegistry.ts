@@ -64,12 +64,12 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     technicalName: "rightTriangle",
     component: "RightTriangleVisualizer",
     category: "trigonometry",
-    description: "Interactive right triangle for teaching trig ratios (SOH-CAH-TOA) and solving for unknown sides or angles.",
+    description: "Interactive right triangle for teaching trig ratios (sine, cosine, tangent) and solving for unknown sides or angles.",
     whenToUse: "Use for basic trigonometry problems involving right triangles, finding sides or angles using sin/cos/tan.",
 
     parameters: {
-      angle: "number (20-90) | null when asking students to find the angle or Trigonometric Ratios (SOH-CAH-TOA or identifying sides",
-      angleLabel: "string (optional, default: 'θ') - label for the angle arc (DO NOT input latex or markdown. ONLY plain text like 'θ', 'A', 'B' and not '\\theta')",
+      angle: "number (20-90) or null when asking students to find the angle or Trigonometric Ratios (Sine, Cosine and Tangent) or identifying sides",
+      angleLabel: "string (optional, default: 'θ') - label for the angle arc (Only Unicode characters allowed)",
       hypotenuse: "string - label for hypotenuse (e.g., '10', '10m', 'h')",
       opposite: "string - label for opposite side (e.g., 'x', '5', '5cm')",
       adjacent: "string - label for adjacent side (e.g., 'y', '8', '8m')",
@@ -96,7 +96,7 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         },
         { 
         scenario: "Asking students to identify sides",
-        caption: "A right triangle with side A, B and C.",
+        caption: "A right triangle with side A, B and C with angle θ.",
         parameters: {
           angle: null,
           angleLabel: "θ",

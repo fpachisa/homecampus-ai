@@ -4,7 +4,6 @@ import { useAppContext } from '../../App';
 import ChatInterface from '../ChatInterface';
 import SubtopicWelcomeScreen from '../SubtopicWelcomeScreen';
 import { sessionStorage } from '../../services/sessionStorage';
-import { P6_MATH_FRACTIONS } from '../../prompts/topics/P6-Math-Fractions';
 import type { LayoutActions, LayoutState } from './MainLayout';
 
 interface CenterPanelProps {

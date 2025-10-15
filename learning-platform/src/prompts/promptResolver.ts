@@ -1,13 +1,16 @@
 import { SYSTEM_PROMPTS } from './systemPrompts';
-import { type TopicId, type SubtopicConfig, type SolutionStep } from './topics/P6-Math-Fractions';
-import { S3_MATH_TRIGONOMETRY, S3_MATH_TRIGONOMETRY_CONFIG, type TrigonometryTopicId } from './topics/S3-Math-Trigonometry';
-import { S3_MATH_CIRCLE_GEOMETRY, S3_MATH_CIRCLE_GEOMETRY_CONFIG, type CircleGeometryTopicId } from './topics/S3-Math-CircleGeometry';
-import { S3_MATH_QUADRATIC_EQUATIONS, S3_MATH_QUADRATIC_EQUATIONS_CONFIG, type QuadraticEquationsTopicId } from './topics/S3-Math-QuadraticEquations';
+import { S3_MATH_TRIGONOMETRY, S3_MATH_TRIGONOMETRY_CONFIG, type TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import { S3_MATH_CIRCLE_GEOMETRY, S3_MATH_CIRCLE_GEOMETRY_CONFIG, type CircleGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import { S3_MATH_QUADRATIC_EQUATIONS, S3_MATH_QUADRATIC_EQUATIONS_CONFIG, type QuadraticEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import { formatConversationHistory } from '../services/utils/responseParser';
 import { getFilteredTools, MATH_TOOLS_REGISTRY } from '../components/math-tools/mathToolsRegistry';
 
+// Legacy type definitions (moved from deleted P6-Math-Fractions)
+export type SubtopicConfig = any;
+export type SolutionStep = any;
+
 export interface PromptContext {
-  topicId: TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | string;
+  topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | string;
   currentProblemType?: number;
   recentHistory?: string;
   studentResponse?: string;
@@ -93,7 +96,7 @@ export class PromptResolver {
    * Get topic configuration using AI-First approach
    * Returns both subtopic config and global config
    */
-  private getTopicConfig(topicId: TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | string): {
+  private getTopicConfig(topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | string): {
     subtopic: any;
     global: any;
   } {
@@ -738,7 +741,7 @@ ${JSON.stringify(global.INTERACTION_PROTOCOL.questionGenerationOutputs, null, 2)
 Generate your question now:`;
   }
 
-  getTopicScoringConfig(topicId: TopicId | TrigonometryTopicId | string) {
+  getTopicScoringConfig(topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | string) {
     // AI-First approach: No rigid scoring config
     // Return progression model instead
     const { global } = this.getTopicConfig(topicId);

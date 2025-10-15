@@ -3,14 +3,15 @@ import { useTheme } from '../../hooks/useTheme';
 import { useAppContext } from '../../App';
 import { sessionStorage } from '../../services/sessionStorage';
 import { progressService } from '../../services/progressService';
-import { P6_MATH_FRACTIONS } from '../../prompts/topics/P6-Math-Fractions';
-import type { TopicId } from '../../prompts/topics/P6-Math-Fractions';
-import { S3_MATH_TRIGONOMETRY } from '../../prompts/topics/S3-Math-Trigonometry';
-import type { TrigonometryTopicId } from '../../prompts/topics/S3-Math-Trigonometry';
-import { S3_MATH_CIRCLE_GEOMETRY } from '../../prompts/topics/S3-Math-CircleGeometry';
-import type { CircleGeometryTopicId } from '../../prompts/topics/S3-Math-CircleGeometry';
-import { S3_MATH_QUADRATIC_EQUATIONS } from '../../prompts/topics/S3-Math-QuadraticEquations';
-import type { QuadraticEquationsTopicId } from '../../prompts/topics/S3-Math-QuadraticEquations';
+// OLD: P6_MATH_FRACTIONS removed - not migrated
+// import { P6_MATH_FRACTIONS } from '../../prompts/topics/P6-Math-Fractions';
+// import type { TopicId } from '../../prompts/topics/P6-Math-Fractions';
+import { S3_MATH_TRIGONOMETRY } from '../../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import type { TrigonometryTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import { S3_MATH_CIRCLE_GEOMETRY } from '../../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import type { CircleGeometryTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import { S3_MATH_QUADRATIC_EQUATIONS } from '../../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
+import type { QuadraticEquationsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -77,17 +78,19 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
 
   // Dynamically get topic configs based on selected category
   const topicConfigs = useMemo(() => {
-    if (appState.selectedCategory === 'fractions') {
-      return Object.entries(P6_MATH_FRACTIONS).map(([topicId, config]) => ({
-        id: topicId as TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
-        name: config.displayName,
-        icon: getTopicIcon(topicId),
-        status: 'active' as const,
-        description: config.topicName,
-      }));
-    } else if (appState.selectedCategory === 's3-math-trigonometry') {
+    // OLD: Fractions not migrated - commented out
+    // if (appState.selectedCategory === 'fractions') {
+    //   return Object.entries(P6_MATH_FRACTIONS).map(([topicId, config]) => ({
+    //     id: topicId as TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
+    //     name: config.displayName,
+    //     icon: getTopicIcon(topicId),
+    //     status: 'active' as const,
+    //     description: config.topicName,
+    //   }));
+    // } else
+    if (appState.selectedCategory === 's3-math-trigonometry') {
       return Object.entries(S3_MATH_TRIGONOMETRY).map(([topicId, config]) => ({
-        id: topicId as TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
@@ -95,7 +98,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
       }));
     } else if (appState.selectedCategory === 's3-math-circle-geometry') {
       return Object.entries(S3_MATH_CIRCLE_GEOMETRY).map(([topicId, config]) => ({
-        id: topicId as TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
@@ -103,7 +106,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
       }));
     } else if (appState.selectedCategory === 's3-math-quadratic-equations') {
       return Object.entries(S3_MATH_QUADRATIC_EQUATIONS).map(([topicId, config]) => ({
-        id: topicId as TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
@@ -204,9 +207,11 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
 
     // Get total sections from config
     let topicConfig;
-    if (appState.selectedCategory === 'fractions') {
-      topicConfig = P6_MATH_FRACTIONS[topicId as TopicId];
-    } else if (appState.selectedCategory === 's3-math-trigonometry') {
+    // OLD: Fractions not migrated - commented out
+    // if (appState.selectedCategory === 'fractions') {
+    //   topicConfig = P6_MATH_FRACTIONS[topicId as TopicId];
+    // } else
+    if (appState.selectedCategory === 's3-math-trigonometry') {
       topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
     } else if (appState.selectedCategory === 's3-math-circle-geometry') {
       topicConfig = S3_MATH_CIRCLE_GEOMETRY[topicId as CircleGeometryTopicId];

@@ -10,10 +10,11 @@ import AvatarTest from './components/AvatarTest';
 import VisualizerTestPage from './pages/VisualizerTestPage';
 import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
-import type { TopicId } from './prompts/topics/P6-Math-Fractions';
-import type { TrigonometryTopicId } from './prompts/topics/S3-Math-Trigonometry';
-import type { CircleGeometryTopicId } from './prompts/topics/S3-Math-CircleGeometry';
-import type { QuadraticEquationsTopicId } from './prompts/topics/S3-Math-QuadraticEquations';
+// OLD: Fractions not migrated - commented out
+// import type { TopicId } from './prompts/topics/P6-Math-Fractions';
+import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import type { CircleGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import type { QuadraticEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import type { PathDifficulty } from './types/practice';
 import { registerAllVisualizers } from './utils/registerVisualizers';
 import { pathConfigLoader } from './services/pathConfigLoader';
@@ -22,8 +23,8 @@ import './styles/animations.css';
 
 // App state context for managing application-wide state
 interface AppState {
-  selectedCategory: string | null; // 'fractions', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations'
-  selectedTopic: TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | null;
+  selectedCategory: string | null; // 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations'
+  selectedTopic: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | null;
   selectedMode: 'socratic' | 'practice' | null; // Learning mode
 
   // Practice mode state
@@ -37,7 +38,7 @@ interface AppState {
 interface AppContextType {
   appState: AppState;
   handleCategorySelect: (category: string) => void;
-  handleTopicSelect: (topicId: TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId) => void;
+  handleTopicSelect: (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId) => void;
   handleModeSelect: (mode: 'socratic' | 'practice') => void;
   handleDifficultySelect: (difficulty: PathDifficulty) => void;
   handleNodeSelect: (difficulty: PathDifficulty, nodeId: string) => void;
@@ -76,7 +77,7 @@ function AppProvider({ children }: { children: React.ReactNode }) {
     });
   };
 
-  const handleTopicSelect = (topicId: TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId) => {
+  const handleTopicSelect = (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId) => {
     setAppState((prev) => ({
       ...prev,
       selectedTopic: topicId,

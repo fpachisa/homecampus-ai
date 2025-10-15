@@ -13,14 +13,12 @@ import { useAudioManager } from '../hooks/useAudioManager';
 import { stripLatexForSpeech } from '../utils/textUtils';
 import { safeParseJSON } from '../services/utils/responseParser';
 import { TOPIC_IDS } from '../prompts/topicIds';
-import { P6_MATH_FRACTIONS } from '../prompts/topics/P6-Math-Fractions';
-import type { TopicId } from '../prompts/topics/P6-Math-Fractions';
-import { S3_MATH_TRIGONOMETRY } from '../prompts/topics/S3-Math-Trigonometry';
-import type { TrigonometryTopicId } from '../prompts/topics/S3-Math-Trigonometry';
-import { S3_MATH_CIRCLE_GEOMETRY } from '../prompts/topics/S3-Math-CircleGeometry';
-import type { CircleGeometryTopicId } from '../prompts/topics/S3-Math-CircleGeometry';
-import { S3_MATH_QUADRATIC_EQUATIONS } from '../prompts/topics/S3-Math-QuadraticEquations';
-import type { QuadraticEquationsTopicId } from '../prompts/topics/S3-Math-QuadraticEquations';
+import { S3_MATH_TRIGONOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import { S3_MATH_CIRCLE_GEOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import type { CircleGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import { S3_MATH_QUADRATIC_EQUATIONS } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
+import type { QuadraticEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import type { ConversationState, Message, ProblemState, EvaluatorInstruction, SectionProgressState, SectionProgressEntry } from '../types/types';
 import { notesLoader } from '../services/notesLoader';
 import NotesViewer from './NotesViewer';
@@ -31,12 +29,8 @@ interface ChatInterfaceProps {
   onBackToTopics?: () => void;
 }
 
-// Helper function to get topic config from either P6 or S3 sources
+// Helper function to get topic config from S3 sources
 const getTopicConfig = (topicId: string) => {
-  // Check if it's a P6 fractions topic
-  if (topicId.startsWith('p6-math-fractions-')) {
-    return P6_MATH_FRACTIONS[topicId as TopicId];
-  }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {
     return S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
@@ -49,12 +43,12 @@ const getTopicConfig = (topicId: string) => {
   if (topicId.startsWith('s3-math-quadratic-')) {
     return S3_MATH_QUADRATIC_EQUATIONS[topicId as QuadraticEquationsTopicId];
   }
-  // Fallback to P6 fractions for unknown topics
-  return P6_MATH_FRACTIONS[topicId as TopicId];
+  // Return undefined for unknown topics
+  return undefined;
 };
 
 const ChatInterface: React.FC<ChatInterfaceProps> = ({
-  topicId = TOPIC_IDS.P6_MATH_FRACTIONS_DIVIDING_WHOLE_NUMBERS,
+  topicId = 's3-math-trigonometry-basic-ratios',
   onBackToTopics,
 }) => {
   const { user, signInWithGoogle } = useAuth();
@@ -311,7 +305,8 @@ const scrollToBottom = () => {
         pendingNewProblem.topicId,
         {
           recentHistory: pendingNewProblem.recentHistory,
-          evaluatorReasoning: pendingNewProblem.evaluatorReasoning
+          evaluatorReasoning: pendingNewProblem.evaluatorReasoning,
+          currentSection: sectionProgress.currentSection
         }
       );
       console.log('📝 ChatInterface: Adding new problem after step-by-step completion');
@@ -655,11 +650,23 @@ const handleStudentSubmit = async (input: string) => {
       }
 
       // Get recent conversation history (filtered by current section)
-      const recentHistory = state.messages
-        .filter(m => m.sectionId === sectionProgress.currentSection)
-        .slice(-6);
+      // IMPORTANT: Add current student input to history since setState is async
+      const currentStudentMessage: Message = {
+        id: Date.now().toString() + '-temp',
+        role: 'student',
+        content: input.trim(),
+        timestamp: new Date(),
+        sectionId: sectionProgress.currentSection
+      };
+
+      const recentHistory = [
+        ...state.messages.filter(m => m.sectionId === sectionProgress.currentSection),
+        currentStudentMessage // Include the message we just added
+      ].slice(-6);
 
       console.log('=== SEQUENTIAL AGENT FLOW START ===');
+      console.log('Recent History Messages:', recentHistory.length);
+      console.log('Recent History (formatted):', recentHistory.map(m => `${m.role}: ${m.content.substring(0, 50)}`));
       console.log('Problem State:', problemState);
       console.log('Student Response:', input);
 
@@ -807,7 +814,8 @@ const handleStudentSubmit = async (input: string) => {
             recentHistory,
             input,
             instruction.reasoning || 'Student needs help with this problem',
-            instruction.solutionInstruction
+            instruction.solutionInstruction,
+            sectionProgress.currentSection
           );
           console.log('Solution Agent data:', structuredVisualizationData);
 
@@ -843,7 +851,8 @@ const handleStudentSubmit = async (input: string) => {
             {
               recentHistory: formattedHistory,
               evaluatorReasoning: instruction.reasoning,
-              questionInstruction: instruction.questionInstruction
+              questionInstruction: instruction.questionInstruction,
+              currentSection: sectionProgress.currentSection
             }
           );
 
