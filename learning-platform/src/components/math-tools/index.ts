@@ -29,6 +29,11 @@ export { default as VertexFormTransformVisualizer } from './VertexFormTransformV
 export { default as RootsVisualizer } from './RootsVisualizer';
 export { default as WordProblemDiagramVisualizer } from './WordProblemDiagramVisualizer';
 
+// Exponential and logarithm visualizers
+export { default as ExponentialGraphVisualizer } from './ExponentialGraphVisualizer';
+export { default as LogarithmGraphVisualizer } from './LogarithmGraphVisualizer';
+export { default as GraphCompareVisualizer } from './GraphCompareVisualizer';
+
 // Re-export registry types and utilities
 export type { MathToolDefinition, MathToolName } from './mathToolsRegistry';
 export {

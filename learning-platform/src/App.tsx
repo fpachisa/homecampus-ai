@@ -15,6 +15,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import type { CircleGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import type { QuadraticEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
+import type { ExponentialLogarithmsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
 import type { PathDifficulty } from './types/practice';
 import { registerAllVisualizers } from './utils/registerVisualizers';
 import { pathConfigLoader } from './services/pathConfigLoader';
@@ -23,8 +24,8 @@ import './styles/animations.css';
 
 // App state context for managing application-wide state
 interface AppState {
-  selectedCategory: string | null; // 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations'
-  selectedTopic: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | null;
+  selectedCategory: string | null; // 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations', 's3-math-exponential-logarithms'
+  selectedTopic: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | null;
   selectedMode: 'socratic' | 'practice' | null; // Learning mode
 
   // Practice mode state
@@ -38,7 +39,7 @@ interface AppState {
 interface AppContextType {
   appState: AppState;
   handleCategorySelect: (category: string) => void;
-  handleTopicSelect: (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId) => void;
+  handleTopicSelect: (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId) => void;
   handleModeSelect: (mode: 'socratic' | 'practice') => void;
   handleDifficultySelect: (difficulty: PathDifficulty) => void;
   handleNodeSelect: (difficulty: PathDifficulty, nodeId: string) => void;
@@ -77,7 +78,7 @@ function AppProvider({ children }: { children: React.ReactNode }) {
     });
   };
 
-  const handleTopicSelect = (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId) => {
+  const handleTopicSelect = (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId) => {
     setAppState((prev) => ({
       ...prev,
       selectedTopic: topicId,

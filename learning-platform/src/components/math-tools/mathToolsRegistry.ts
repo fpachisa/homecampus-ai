@@ -36,7 +36,7 @@ export interface MathToolDefinition {
   name: string;                    // Display name
   technicalName: string;           // Key used in code
   component: string;               // React component name
-  category: 'trigonometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'general';
+  category: 'trigonometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'general';
 
   // Documentation
   description: string;             // What this tool does
@@ -917,6 +917,237 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         showEquation: true
       }
     }
+  },
+
+  // ============================================
+  // EXPONENTIAL AND LOGARITHM TOOLS
+  // ============================================
+
+  exponentialGraph: {
+    name: "Exponential Graph Visualizer",
+    technicalName: "exponentialGraph",
+    component: "ExponentialGraphVisualizer",
+    category: "exponential-logarithm",
+    description: "Interactive graph showing exponential functions f(x) = a × b^x + k. Automatically detects growth (b > 1) or decay (0 < b < 1).",
+    whenToUse: "Use for graphing exponential functions, showing growth/decay patterns, y-intercepts, and horizontal asymptotes.",
+
+    parameters: {
+      base: "number - base b in f(x) = a × b^x (must be positive, b ≠ 1)",
+      coefficient: "number (default: 1) - coefficient a",
+      verticalShift: "number (default: 0) - vertical shift k",
+      showAsymptote: "boolean (default: true) - show horizontal asymptote at y = k",
+      showYIntercept: "boolean (default: true) - show y-intercept at (0, a + k)",
+      highlightPoints: "Array<{x: number, label?: string}> (optional) - points to highlight",
+      xRange: "[number, number] (optional) - x-axis range",
+      yRange: "[number, number] (optional) - y-axis range",
+      xMin: "number (optional) - minimum x value",
+      xMax: "number (optional) - maximum x value",
+      yMin: "number (optional) - minimum y value",
+      yMax: "number (optional) - maximum y value",
+      showGrid: "boolean (default: true) - show grid lines",
+      label: "string (optional) - custom function label",
+      color: "string (optional) - custom curve color",
+      caption: "string (optional) - explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Exponential growth",
+        caption: "Exponential growth function f(x) = 2^x showing base (0, 1) and rapid increase.",
+        parameters: {
+          base: 2,
+          coefficient: 1,
+          verticalShift: 0,
+          showAsymptote: true,
+          showYIntercept: true,
+          xRange: [-3, 5],
+          showGrid: true
+        }
+      },
+      {
+        scenario: "Exponential decay",
+        caption: "Exponential decay function f(x) = 0.5^x showing approach to horizontal asymptote.",
+        parameters: {
+          base: 0.5,
+          coefficient: 1,
+          verticalShift: 0,
+          showAsymptote: true,
+          showYIntercept: true,
+          xRange: [-2, 6],
+          showGrid: true
+        }
+      },
+      {
+        scenario: "Population growth",
+        caption: "Population growth: P(t) = 100 × 1.12^t (12% annual growth, starting at 100)",
+        parameters: {
+          base: 1.12,
+          coefficient: 100,
+          verticalShift: 0,
+          label: "P(t)",
+          showAsymptote: true,
+          showYIntercept: true,
+          highlightPoints: [{ x: 3, label: "(3 years)" }],
+          xRange: [0, 10]
+        }
+      }
+    ]
+  },
+
+  logarithmGraph: {
+    name: "Logarithm Graph Visualizer",
+    technicalName: "logarithmGraph",
+    component: "LogarithmGraphVisualizer",
+    category: "exponential-logarithm",
+    description: "Interactive graph showing logarithmic functions f(x) = a × log_b(x - h) + k. Shows vertical asymptote and key points.",
+    whenToUse: "Use for graphing logarithmic functions, showing domain restrictions (x > 0), vertical asymptotes, and key points like (1, 0) and (base, 1).",
+
+    parameters: {
+      base: "number (default: 10) - base b in log_b(x) (must be positive, b ≠ 1)",
+      coefficient: "number (default: 1) - coefficient a",
+      horizontalShift: "number (default: 0) - horizontal shift h in log(x - h)",
+      verticalShift: "number (default: 0) - vertical shift k",
+      showAsymptote: "boolean (default: true) - show vertical asymptote at x = h",
+      showKeyPoints: "boolean (default: true) - show points (1 + h, 0 + k) and (base + h, 1*a + k)",
+      xRange: "[number, number] (optional) - x-axis range (must be > h)",
+      yRange: "[number, number] (optional) - y-axis range",
+      xMin: "number (optional) - minimum x value",
+      xMax: "number (optional) - maximum x value",
+      yMin: "number (optional) - minimum y value",
+      yMax: "number (optional) - maximum y value",
+      showGrid: "boolean (default: true) - show grid lines",
+      label: "string (optional) - custom function label",
+      color: "string (optional) - custom curve color",
+      caption: "string (optional) - explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Common logarithm (base 10)",
+        caption: "Common logarithm f(x) = log₁₀(x) with vertical asymptote at x = 0.",
+        parameters: {
+          base: 10,
+          coefficient: 1,
+          horizontalShift: 0,
+          verticalShift: 0,
+          showAsymptote: true,
+          showKeyPoints: true,
+          xRange: [0.1, 10],
+          showGrid: true
+        }
+      },
+      {
+        scenario: "Natural logarithm",
+        caption: "Natural logarithm f(x) = ln(x) showing key points (1, 0) and (e, 1).",
+        parameters: {
+          base: Math.E,
+          coefficient: 1,
+          horizontalShift: 0,
+          verticalShift: 0,
+          label: "ln(x)",
+          showAsymptote: true,
+          showKeyPoints: true,
+          xRange: [0.1, 8],
+          showGrid: true
+        }
+      },
+      {
+        scenario: "Base 2 logarithm",
+        caption: "Binary logarithm f(x) = log₂(x) used in computer science.",
+        parameters: {
+          base: 2,
+          coefficient: 1,
+          horizontalShift: 0,
+          verticalShift: 0,
+          label: "log_2(x)",
+          showAsymptote: true,
+          showKeyPoints: true,
+          xRange: [0.1, 10],
+          showGrid: true
+        }
+      }
+    ]
+  },
+
+  graphCompare: {
+    name: "Graph Compare Visualizer",
+    technicalName: "graphCompare",
+    component: "GraphCompareVisualizer",
+    category: "exponential-logarithm",
+    description: "Compare two functions (exponential, logarithm, or linear) on the same graph. Shows both curves with color-coded legend and optional intersection point.",
+    whenToUse: "Use for comparing growth rates (e.g., 2^x vs 3^x), inverse relationships (e.g., 2^x vs log₂(x)), or exponential vs linear growth.",
+
+    parameters: {
+      function1Type: "'exponential' | 'logarithm' | 'linear' - type of first function",
+      function1Params: "object - parameters for function 1 (base, coefficient, shifts, slope, intercept)",
+      function1Label: "string (default: 'f(x)') - label for function 1",
+      function1Color: "string (optional) - color for function 1 curve",
+      function2Type: "'exponential' | 'logarithm' | 'linear' - type of second function",
+      function2Params: "object - parameters for function 2",
+      function2Label: "string (default: 'g(x)') - label for function 2",
+      function2Color: "string (optional) - color for function 2 curve",
+      showIntersection: "boolean (default: false) - highlight intersection point if exists",
+      showLegend: "boolean (default: true) - show color-coded legend",
+      xRange: "[number, number] (optional) - x-axis range",
+      yRange: "[number, number] (optional) - y-axis range",
+      xMin: "number (optional) - minimum x value",
+      xMax: "number (optional) - maximum x value",
+      yMin: "number (optional) - minimum y value",
+      yMax: "number (optional) - maximum y value",
+      showGrid: "boolean (default: true) - show grid lines",
+      caption: "string (optional) - explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Comparing exponential growth rates",
+        caption: "Comparing f(x) = 2^x (slower growth) with g(x) = 5^x (faster growth).",
+        parameters: {
+          function1Type: "exponential",
+          function1Params: { base: 2, coefficient: 1, verticalShift: 0 },
+          function1Label: "f(x) = 2^x",
+          function2Type: "exponential",
+          function2Params: { base: 5, coefficient: 1, verticalShift: 0 },
+          function2Label: "g(x) = 5^x",
+          showIntersection: true,
+          showLegend: true,
+          xRange: [-2, 3],
+          showGrid: true
+        }
+      },
+      {
+        scenario: "Exponential vs logarithm (inverse functions)",
+        caption: "f(x) = 2^x and g(x) = log₂(x) are inverse functions, reflected across y = x.",
+        parameters: {
+          function1Type: "exponential",
+          function1Params: { base: 2 },
+          function1Label: "f(x) = 2^x",
+          function2Type: "logarithm",
+          function2Params: { base: 2 },
+          function2Label: "g(x) = log₂(x)",
+          showIntersection: true,
+          showLegend: true,
+          xRange: [0.1, 5],
+          showGrid: true
+        }
+      },
+      {
+        scenario: "Growth vs decay",
+        caption: "Comparing exponential growth f(x) = 2^x with decay g(x) = 0.5^x.",
+        parameters: {
+          function1Type: "exponential",
+          function1Params: { base: 2 },
+          function1Label: "Growth: 2^x",
+          function2Type: "exponential",
+          function2Params: { base: 0.5 },
+          function2Label: "Decay: 0.5^x",
+          showIntersection: true,
+          showLegend: true,
+          xRange: [-3, 3],
+          showGrid: true
+        }
+      }
+    ]
   }
 };
 

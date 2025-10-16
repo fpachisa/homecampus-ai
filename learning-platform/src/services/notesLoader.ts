@@ -38,6 +38,15 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's3/math/quadratic-equations/GraphPolynomial': () => import('../notes/s3/math/quadratic-equations/GraphPolynomial'),
   's3/math/quadratic-equations/GraphFindingFunction': () => import('../notes/s3/math/quadratic-equations/GraphFindingFunction'),
   's3/math/quadratic-equations/GraphProblemSolving': () => import('../notes/s3/math/quadratic-equations/GraphProblemSolving'),
+  's3/math/exponential-logarithms/ExponentialFunctions': () => import('../notes/s3/math/exponential-logarithms/ExponentialFunctions'),
+  's3/math/exponential-logarithms/ExponentialGraphs': () => import('../notes/s3/math/exponential-logarithms/ExponentialGraphs'),
+  's3/math/exponential-logarithms/ExponentialEquations': () => import('../notes/s3/math/exponential-logarithms/ExponentialEquations'),
+  's3/math/exponential-logarithms/ExponentialGrowth': () => import('../notes/s3/math/exponential-logarithms/ExponentialGrowth'),
+  's3/math/exponential-logarithms/ExponentialDecay': () => import('../notes/s3/math/exponential-logarithms/ExponentialDecay'),
+  's3/math/exponential-logarithms/CommonLogarithms': () => import('../notes/s3/math/exponential-logarithms/CommonLogarithms'),
+  's3/math/exponential-logarithms/LogarithmLaws': () => import('../notes/s3/math/exponential-logarithms/LogarithmLaws'),
+  's3/math/exponential-logarithms/UsingLogarithms': () => import('../notes/s3/math/exponential-logarithms/UsingLogarithms'),
+  's3/math/exponential-logarithms/LogarithmsOtherBases': () => import('../notes/s3/math/exponential-logarithms/LogarithmsOtherBases'),
   // Add more note components here as you create them
   // 'p4/science/biology/PlantParts': () => import('../notes/p4/science/biology/PlantParts'),
 };

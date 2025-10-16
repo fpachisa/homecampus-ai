@@ -8,6 +8,7 @@
 import { S3_MATH_TRIGONOMETRY_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import { S3_MATH_CIRCLE_GEOMETRY } from "../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import { S3_MATH_QUADRATIC_EQUATIONS } from "../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
+import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
 
 export interface SubtopicContent {
   displayName: string;
@@ -29,6 +30,7 @@ class SubtopicContentLoader {
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,
       ...S3_MATH_QUADRATIC_EQUATIONS,
+      ...S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS,
       // Future topics will be added here
     };
   }

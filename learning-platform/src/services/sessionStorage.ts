@@ -21,8 +21,16 @@ export interface SessionPreview {
 }
 
 const SESSION_STORAGE_PREFIX = 'ai-campus-session-';
-const SESSION_EXPIRY_HOURS = 24;
 
+/**
+ * Session Storage Service
+ *
+ * Purpose: Stores conversation data (messages, current problem state) for learning sessions
+ * Lifespan: PERMANENT - Chat history persists forever for student/parent review
+ * Firebase Ready: This will map to conversations collection in Firebase
+ *
+ * Note: sectionProgress is a snapshot only. The source of truth is progressService.
+ */
 class SessionStorageService {
   /**
    * Get storage key for a specific topic
@@ -64,6 +72,7 @@ class SessionStorageService {
 
   /**
    * Load session state from localStorage for a specific topic
+   * Sessions are PERMANENT - no expiry (for student/parent review)
    */
   loadSession(topicId: string): SessionData | null {
     try {
@@ -71,13 +80,6 @@ class SessionStorageService {
       if (!stored) return null;
 
       const sessionData: SessionData = JSON.parse(stored);
-
-      // Check if session has expired
-      const hoursElapsed = (Date.now() - sessionData.timestamp) / (1000 * 60 * 60);
-      if (hoursElapsed > SESSION_EXPIRY_HOURS) {
-        this.clearSession(topicId);
-        return null;
-      }
 
       // Validate required fields
       if (!sessionData.topicId || !Array.isArray(sessionData.messages)) {

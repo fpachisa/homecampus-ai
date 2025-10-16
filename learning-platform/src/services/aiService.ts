@@ -1,4 +1,5 @@
-import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem, SectionProgressState } from '../types/types';
+import type { GeminiResponse, Message, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem, SectionProgressState } from '../types/types';
+import type { EvaluatorOutput, TutorOutput } from '../prompt-library/types/agents';
 import type { VisualizationData } from '../types/visualization';
 
 /**
@@ -62,26 +63,30 @@ export interface AIService {
   ): Promise<GeminiResponse>;
 
   /**
-   * Evaluator Agent: Analyze student response and provide instruction
+   * NEW ARCHITECTURE: Evaluator Agent - Evaluate answer and decide action
+   * Returns simple action + reasoning (no instruction objects)
    */
-  evaluateAndInstruct(
+  evaluateAnswer(
     studentResponse: string,
     recentHistory: Message[],
     problemState: ProblemState,
     topicId: string,
     sectionProgress?: SectionProgressState
-  ): Promise<EvaluatorInstruction>;
+  ): Promise<EvaluatorOutput>;
 
   /**
-   * Tutor Agent: Execute instruction from evaluator
+   * NEW ARCHITECTURE: Tutor Agent - Generate hints and celebrations
+   * Uses evaluator reasoning to provide appropriate feedback
    */
-  executeInstruction(
-    instruction: EvaluatorInstruction,
-    recentHistory: Message[],
+  generateTutorResponse(
+    evaluatorOutput: EvaluatorOutput,
+    currentProblem: string,
     studentResponse: string,
-    currentProblemType: number,
-    topicId: string
-  ): Promise<string>;
+    recentHistory: Message[],
+    problemType: number,
+    topicId: string,
+    currentSection?: string
+  ): Promise<TutorOutput>;
 
   /**
    * Extract visualization data from problem text

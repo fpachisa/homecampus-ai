@@ -1,4 +1,5 @@
-import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem, PracticeAgentResponse, PracticeProblemState } from '../types/types';
+import type { GeminiResponse, Message, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem, PracticeAgentResponse, PracticeProblemState } from '../types/types';
+import type { EvaluatorOutput, TutorOutput } from '../prompt-library/types/agents';
 import type { VisualizationData } from '../types/visualization';
 import type { AIService } from './aiService';
 import { AIServiceError, AIErrorType } from './aiService';
@@ -223,60 +224,76 @@ class FallbackAIService implements AIService {
     );
   }
 
-  async evaluateAndInstruct(
+  /**
+   * NEW ARCHITECTURE: Evaluate student answer and decide next action
+   * Returns simple action + reasoning (no instruction objects)
+   */
+  async evaluateAnswer(
     studentResponse: string,
     recentHistory: Message[],
     problemState: ProblemState,
     topicId: string,
     sectionProgress?: import('../types/types').SectionProgressState
-  ): Promise<EvaluatorInstruction> {
+  ): Promise<EvaluatorOutput> {
     try {
       return await this.executeWithFallback(
-        (service) => service.evaluateAndInstruct(studentResponse, recentHistory, problemState, topicId, sectionProgress),
-        'evaluateAndInstruct'
+        (service) => service.evaluateAnswer(studentResponse, recentHistory, problemState, topicId, sectionProgress),
+        'evaluateAnswer'
       );
     } catch (error) {
-      console.error('All evaluator services failed, providing safe fallback instruction:', error);
+      console.error('All evaluator services failed, providing safe fallback output:', error);
 
       // Final safety fallback when both Gemini and Claude fail
       return {
         answerCorrect: false,
-        isMainProblemSolved: false,
+        understanding: 'struggling',
+        conceptGaps: ['Unable to assess due to service failure'],
+        sectionMastered: false,
+        advanceToNextSection: false,
         action: "GIVE_HINT",
         hintLevel: Math.min(problemState.hintsGivenForCurrentProblem + 1, 3) as 1 | 2 | 3,
-        reasoning: "Fallback instruction due to all AI services being unavailable"
+        reasoning: "Fallback response due to all AI services being unavailable. Please try again."
       };
     }
   }
 
-  async executeInstruction(
-    instruction: EvaluatorInstruction,
-    recentHistory: Message[],
+  /**
+   * NEW ARCHITECTURE: Generate tutor response for hints and celebrations
+   * Uses evaluator reasoning to provide appropriate feedback
+   */
+  async generateTutorResponse(
+    evaluatorOutput: EvaluatorOutput,
+    currentProblem: string,
     studentResponse: string,
-    currentProblemType: number,
-    topicId: string
-  ): Promise<string> {
+    recentHistory: Message[],
+    problemType: number,
+    topicId: string,
+    currentSection?: string
+  ): Promise<TutorOutput> {
     try {
       return await this.executeWithFallback(
-        (service) => service.executeInstruction(instruction, recentHistory, studentResponse, currentProblemType, topicId),
-        'executeInstruction'
+        (service) => service.generateTutorResponse(evaluatorOutput, currentProblem, studentResponse, recentHistory, problemType, topicId, currentSection),
+        'generateTutorResponse'
       );
     } catch (error) {
       console.error('All tutor services failed, providing fallback response:', error);
 
       // Final safety fallback when both Gemini and Claude fail
-      switch (instruction.action) {
-        case "GIVE_HINT":
-          return `Let me give you a hint: Think about the steps you need to solve this problem. Can you try again?`;
-        case "GIVE_SOLUTION":
-          return `Let me show you the complete solution step by step, then we'll try a new problem.`;
-        case "NEW_PROBLEM":
-          return `Great job! Let me give you a new problem to solve.`;
-        case "CELEBRATE":
-          return `🎉 Congratulations! You've completed this subtopic! Amazing work!`;
-        default:
-          return `I'm having some technical difficulties. Please try again!`;
-      }
+      const fallbackText = evaluatorOutput.action === "CELEBRATE"
+        ? "🎉 Congratulations! You've completed this section! Amazing work!"
+        : "Let me give you a hint: Think about the steps you need to solve this problem. Can you try again?";
+
+      return {
+        speech: {
+          text: fallbackText,
+          emotion: evaluatorOutput.action === "CELEBRATE" ? 'celebratory' : 'encouraging'
+        },
+        display: {
+          content: fallbackText,
+          showAfterSpeech: true,
+          type: evaluatorOutput.action === "CELEBRATE" ? 'celebration' : 'hint'
+        }
+      };
     }
   }
 
@@ -311,10 +328,11 @@ class FallbackAIService implements AIService {
     recentHistory: Message[],
     studentResponse: string,
     evaluatorReasoning: string,
-    solutionInstruction?: any
+    solutionInstruction?: any,
+    currentSection?: string
   ): Promise<any> {
     return this.executeWithFallback(
-      (service) => service.generateSolution(problemText, problemType, topicId, recentHistory, studentResponse, evaluatorReasoning, solutionInstruction),
+      (service) => service.generateSolution(problemText, problemType, topicId, recentHistory, studentResponse, evaluatorReasoning, solutionInstruction, currentSection),
       'generateSolution'
     );
   }

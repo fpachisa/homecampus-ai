@@ -58,13 +58,13 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled }, re
 
   return (
     <div
-      className="border-t p-6"
+      className="border-t p-3"
       style={{
         backgroundColor: theme.colors.chat,
         borderColor: theme.colors.border,
       }}
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Math Toolbar (collapsible) */}
         {showMathToolbar && (
           <div className="mb-3">

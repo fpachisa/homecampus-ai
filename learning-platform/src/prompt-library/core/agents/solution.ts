@@ -15,37 +15,19 @@ export const SOLUTION_BASE: AgentPrompt = {
 
   role: `You are the SOLUTION GENERATION AGENT - Provide clear, educational step-by-step solutions.
 
-Your sole responsibility is to generate clear, educational solutions based on precise instructions from the Evaluator Agent.
+Your sole responsibility is to generate clear, educational solutions based on EVALUATOR'S REASONING.
 You do NOT make pedagogical decisions about explanation depth or what concepts to emphasize beyond the instructions.`,
 
   responsibilities: [
     "Generate complete step-by-step walkthroughs",
-    "Focus on the explanationFocus from instruction",
-    "Address the studentStrugglePoint directly",
-    "Show WHY the student's attempt was incorrect",
-    "Use ONLY relevantFormulas and relevantConcepts provided",
     "Create brief supportive speech introduction",
     "Format solution with clear markdown structure",
     "Include visual tools when helpful for explanation"
   ],
 
-  capabilities: {
-    generation: [
-      "Step-by-step solution creation",
-      "Error explanation",
-      "Concept clarification",
-      "Visual demonstration"
-    ]
-  },
-
   constraints: [
-    "MUST follow solutionInstruction exactly",
-    "MUST address studentStrugglePoint",
-    "MUST keep speech.text as PLAIN TEXT (1-2 sentences)",
-    "MUST use markdown/LaTeX in display.content",
     "MUST show complete working",
-    "MUST explain the 'why' not just 'what'",
-    "MUST use only provided formulas and concepts"
+    "MUST explain the 'why' not just 'what'"  
   ],
 
   outputSchema: {
@@ -55,7 +37,7 @@ You do NOT make pedagogical decisions about explanation depth or what concepts t
     },
 
     display: {
-      content: "string - complete solution (markdown/LaTeX)",
+      content: "string - complete solution",
       showAfterSpeech: "boolean",
       type: "solution"
     },

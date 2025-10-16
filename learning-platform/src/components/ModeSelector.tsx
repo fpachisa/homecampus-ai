@@ -45,6 +45,13 @@ function getTopicMetadata(category: string): TopicMetadata {
         grade: 'Secondary 3',
         subject: 'Mathematics'
       };
+    case 's3-math-exponential-logarithms':
+      return {
+        displayName: 'Exponential & Logarithms',
+        icon: '📊',
+        grade: 'Secondary 3',
+        subject: 'Mathematics'
+      };
     default:
       return {
         displayName: category,

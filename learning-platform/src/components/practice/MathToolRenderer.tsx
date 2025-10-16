@@ -29,6 +29,9 @@ import QuadraticFormulaVisualizer from '../math-tools/QuadraticFormulaVisualizer
 import VertexFormTransformVisualizer from '../math-tools/VertexFormTransformVisualizer';
 import RootsVisualizer from '../math-tools/RootsVisualizer';
 import WordProblemDiagramVisualizer from '../math-tools/WordProblemDiagramVisualizer';
+import ExponentialGraphVisualizer from '../math-tools/ExponentialGraphVisualizer';
+import LogarithmGraphVisualizer from '../math-tools/LogarithmGraphVisualizer';
+import GraphCompareVisualizer from '../math-tools/GraphCompareVisualizer';
 
 interface MathToolRendererProps {
   toolName: string;
@@ -70,6 +73,11 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   vertexFormTransform: VertexFormTransformVisualizer,
   rootsVisualizer: RootsVisualizer,
   wordProblemDiagram: WordProblemDiagramVisualizer,
+
+  // Exponential and logarithm tools
+  exponentialGraph: ExponentialGraphVisualizer,
+  logarithmGraph: LogarithmGraphVisualizer,
+  graphCompare: GraphCompareVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

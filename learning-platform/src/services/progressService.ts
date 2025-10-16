@@ -19,6 +19,16 @@ export interface SessionStats {
   startTime: Date;
 }
 
+/**
+ * Progress Service
+ *
+ * Purpose: Stores learning progress data (section mastery, cumulative stats) across all sessions
+ * Lifespan: PERMANENT - Progress data persists forever for student learning records
+ * Firebase Ready: This will map to userProgress collection in Firebase
+ *
+ * IMPORTANT: This is the SOURCE OF TRUTH for sectionProgress.
+ * sessionStorage may contain a snapshot, but this service is authoritative.
+ */
 class ProgressService {
   private getStorageKey(topicId: string, userId?: string): string {
     return userId ? `user_${userId}_progress_${topicId}` : `guest_progress_${topicId}`;

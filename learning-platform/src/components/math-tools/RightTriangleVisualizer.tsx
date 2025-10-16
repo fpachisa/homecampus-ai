@@ -92,8 +92,8 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
 
   // SVG dimensions and positioning
   const padding = 40; // Reduced from 60 for more compact display
-  const svgWidth = adjacentLength + padding * 2 + 70; // Extra space for right-side labels
-  const svgHeight = Math.max(oppositeLength, 80) + padding * 2; // Reduced minimum height
+  const svgWidth = adjacentLength + padding * 2 + 120; // Extra space for right-side labels (increased from 70)
+  const svgHeight = Math.max(oppositeLength, 80) + padding * 2 + 20; // Extra space for bottom labels
 
   // Triangle vertices
   const x1 = padding; // Bottom left (right angle)
@@ -184,8 +184,8 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
               // Use larger radius for smaller angles to avoid overlap
               const labelRadius = calculatedAngle < 20 ? 45 : calculatedAngle < 35 ? 38 : 32;
               const bisectorAngle = angleRad / 2; // Middle of the angle
-              const labelX = x1 + labelRadius * Math.cos(bisectorAngle);
-              const labelY = y1 - labelRadius * Math.sin(bisectorAngle);
+              const labelX = x1 + labelRadius * Math.cos(bisectorAngle)+10;
+              const labelY = y1 - labelRadius * Math.sin(bisectorAngle)-5;
 
               return (
                 <text
@@ -207,9 +207,9 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
         {/* Adjacent label (below bottom side) */}
         {adjacent && (
           <foreignObject
-            x={x1 + adjacentLength / 2 - 40}
+            x={x1 + adjacentLength / 2 - 70}
             y={y1 + 10}
-            width={80}
+            width={140}
             height={30}
             xmlns="http://www.w3.org/1999/xhtml"
           >
@@ -229,7 +229,7 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
           <foreignObject
             x={x2 + 10}
             y={y2 - oppositeLength / 2 - 15}
-            width={60}
+            width={120}
             height={30}
             xmlns="http://www.w3.org/1999/xhtml"
           >
@@ -248,8 +248,8 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
         {hypotenuse && (
           <foreignObject
             x={x1 + (adjacentLength / 2) - 70}
-            y={y1 - (oppositeLength / 2) - 25}
-            width={80}
+            y={y1 - (oppositeLength / 2) - 35}
+            width={140}
             height={30}
             xmlns="http://www.w3.org/1999/xhtml"
           >

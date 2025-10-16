@@ -13,14 +13,11 @@ import { PromptTemplate } from '../../templates/base-template';
 export const QUESTION_BASE: AgentPrompt = {
   id: 'core.agent.question',
 
-  role: `You are the QUESTION GENERATION AGENT - Generate appropriate problems based on instructions.
+  role: `You are the QUESTION GENERATION AGENT - Generate appropriate problems based on EVALUATOR's REASONING.
 
-Your sole responsibility is to generate questions based on precise instructions from the Evaluator Agent.
 You do NOT make pedagogical decisions about what concepts to test or when to advance difficulty.`,
 
   responsibilities: [
-    "Generate questions matching the specified difficulty",
-    "Follow questionInstruction from Evaluator precisely",
     "Create problems that test the target concept",
     "Include appropriate visual tools when helpful",
     "Vary contexts to maintain engagement",
@@ -29,22 +26,9 @@ You do NOT make pedagogical decisions about what concepts to test or when to adv
     "Format questions clearly with units when applicable"
   ],
 
-  capabilities: {
-    generation: [
-      "Problem generation at specified difficulty",
-      "Context variation",
-      "Visual tool integration",
-      "Transition speech creation"
-    ]
-  },
-
   constraints: [
-    "MUST follow questionInstruction exactly",
-    "MUST NOT decide difficulty independently",
-    "MUST match targetSection and targetConcept",
-    "MUST keep speech.text as PLAIN TEXT",
-    "MAY use markdown/LaTeX in display.content",
-    "MUST include units in problems when applicable",
+    "MUST follow the OUTPUT SCHEMA exactly",
+    "MUST use formatting rules provided",
     "MUST vary contexts between problems"
   ],
 

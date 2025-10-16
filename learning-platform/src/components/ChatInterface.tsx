@@ -19,7 +19,10 @@ import { S3_MATH_CIRCLE_GEOMETRY } from '../prompt-library/subjects/mathematics/
 import type { CircleGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import { S3_MATH_QUADRATIC_EQUATIONS } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import type { QuadraticEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
-import type { ConversationState, Message, ProblemState, EvaluatorInstruction, SectionProgressState, SectionProgressEntry } from '../types/types';
+import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
+import type { ExponentialLogarithmsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
+import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry } from '../types/types';
+import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
 import NotesViewer from './NotesViewer';
 import SectionProgressTracker from './SectionProgressTracker';
@@ -42,6 +45,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S3 quadratic equations topic
   if (topicId.startsWith('s3-math-quadratic-')) {
     return S3_MATH_QUADRATIC_EQUATIONS[topicId as QuadraticEquationsTopicId];
+  }
+  // Check if it's an S3 exponential & logarithms topic
+  if (topicId.startsWith('s3-math-exponential-logarithms-')) {
+    return S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as ExponentialLogarithmsTopicId];
   }
   // Return undefined for unknown topics
   return undefined;
@@ -268,7 +275,7 @@ const scrollToBottom = () => {
     };
   };
 
-  const updateProblemState = (instruction: EvaluatorInstruction) => {
+  const updateProblemState = (evaluatorOutput: EvaluatorOutput) => {
     if (!problemState) return;
 
     setProblemState(prev => {
@@ -276,12 +283,12 @@ const scrollToBottom = () => {
 
       const updated = { ...prev };
 
-      // Increment attempts for this problem
-      updated.attemptsForCurrentProblem += 1;
+      // NOTE: attempts are incremented BEFORE evaluator call (see handleStudentSubmit)
+      // This function only updates reactive stats based on evaluator's response
 
-      // Update hints given based on instruction
-      if (instruction.action === "GIVE_HINT") {
-        updated.hintsGivenForCurrentProblem = instruction.hintLevel || 1;
+      // Increment hints given when evaluator decides to give a hint
+      if (evaluatorOutput.action === "GIVE_HINT") {
+        updated.hintsGivenForCurrentProblem += 1;  // INCREMENT, not SET
       }
 
       return updated;
@@ -670,23 +677,41 @@ const handleStudentSubmit = async (input: string) => {
       console.log('Problem State:', problemState);
       console.log('Student Response:', input);
 
-      // STEP 1: Evaluator Agent - Analyze and provide instruction
-      const instruction = await aiService.current.evaluateAndInstruct(
+      // CRITICAL: Increment attempts BEFORE evaluator sees the state
+      // This ensures evaluator receives attemptCount = 1 on first submission
+      const updatedProblemState = {
+        ...problemState,
+        attemptsForCurrentProblem: problemState.attemptsForCurrentProblem + 1
+      };
+
+      // Update state immediately so subsequent code sees the incremented count
+      setProblemState(updatedProblemState);
+
+      // STEP 1: Evaluator Agent - Evaluate answer and decide action
+      const evaluatorOutput = await aiService.current.evaluateAnswer(
         input,
         recentHistory,
-        problemState,
+        updatedProblemState,  // Pass updated state with incremented attempts
         topicId,
-        sectionProgress // Pass current section state
+        sectionProgress
       );
 
-      console.log('Evaluator instruction:', instruction);
-      console.log('Section progression:', instruction.progression);
+      console.log('Evaluator output:', evaluatorOutput);
+      console.log('Action:', evaluatorOutput.action);
+      console.log('Section mastered:', evaluatorOutput.sectionMastered);
+      console.log('Advance to next section:', evaluatorOutput.advanceToNextSection);
 
-      // STEP 2: Update explicit state based on instruction
-      updateProblemState(instruction);
+      // STEP 2: Update problem state based on evaluator output
+      // Note: attempts already incremented above, this updates hints only
+      updateProblemState(evaluatorOutput);
 
-      // Track problems completed
-      if (instruction.isMainProblemSolved) {
+      // Calculate time spent on current problem (for analytics)
+      const timeSpentOnProblem = updatedProblemState.problemStartTime
+        ? Math.round((Date.now() - updatedProblemState.problemStartTime.getTime()) / 1000)
+        : 0;
+
+      // Track problems completed (when evaluator decides to give new problem after correct answer)
+      if (evaluatorOutput.answerCorrect && evaluatorOutput.action === "NEW_PROBLEM") {
         const newProblemsCompleted = problemsCompleted + 1;
         setProblemsCompleted(newProblemsCompleted);
 
@@ -697,11 +722,18 @@ const handleStudentSubmit = async (input: string) => {
             correctAnswers: newProblemsCompleted
           }
         }));
+
+        console.log(`⏱️ Problem completed in ${timeSpentOnProblem}s with ${updatedProblemState.attemptsForCurrentProblem} attempt(s) and ${updatedProblemState.hintsGivenForCurrentProblem} hint(s)`);
+      }
+
+      // Log timing for solution requests (student gave up)
+      if (evaluatorOutput.action === "GIVE_SOLUTION") {
+        console.log(`⏱️ Solution requested after ${timeSpentOnProblem}s with ${updatedProblemState.attemptsForCurrentProblem} attempt(s) and ${updatedProblemState.hintsGivenForCurrentProblem} hint(s)`);
       }
 
       // STEP 2.4: Update section stats for current section
       // Update questionsAttempted, questionsCorrect, and hintsUsed
-      const currentSectionId = instruction.progression?.currentSection || sectionProgress.currentSection;
+      const currentSectionId = sectionProgress.currentSection;
       if (currentSectionId) {
         setSectionProgress(prev => ({
           ...prev,
@@ -709,11 +741,16 @@ const handleStudentSubmit = async (input: string) => {
             if (entry.sectionId === currentSectionId) {
               return {
                 ...entry,
-                questionsAttempted: entry.questionsAttempted + 1,
-                questionsCorrect: instruction.answerCorrect
+                // Only increment when a NEW question is presented (not on every attempt)
+                questionsAttempted: evaluatorOutput.action === "NEW_PROBLEM"
+                  ? entry.questionsAttempted + 1
+                  : entry.questionsAttempted,
+                // Increment correct answers when answer is correct
+                questionsCorrect: evaluatorOutput.answerCorrect
                   ? entry.questionsCorrect + 1
                   : entry.questionsCorrect,
-                hintsUsed: instruction.action === "GIVE_HINT"
+                // Increment hints when evaluator gives a hint
+                hintsUsed: evaluatorOutput.action === "GIVE_HINT"
                   ? entry.hintsUsed + 1
                   : entry.hintsUsed
               };
@@ -721,60 +758,88 @@ const handleStudentSubmit = async (input: string) => {
             return entry;
           })
         }));
-        console.log(`📊 Updated section stats for ${currentSectionId}: attempted +1, correct: ${instruction.answerCorrect ? '+1' : '0'}, hints: ${instruction.action === "GIVE_HINT" ? '+1' : '0'}`);
+        console.log(`📊 Updated section stats for ${currentSectionId}: attempted ${evaluatorOutput.action === "NEW_PROBLEM" ? '+1' : '0'}, correct: ${evaluatorOutput.answerCorrect ? '+1' : '0'}, hints: ${evaluatorOutput.action === "GIVE_HINT" ? '+1' : '0'}`);
       }
 
-      // STEP 2.5: Update section progression based on evaluator feedback
-      if (instruction.progression) {
-        const currentSectionId = instruction.progression.currentSection;
-        const sectionMastered = instruction.progression.sectionMastered;
+      // STEP 2.4.1: Update session-wide stats for hints
+      if (evaluatorOutput.action === "GIVE_HINT") {
+        setState(prev => ({
+          ...prev,
+          sessionStats: {
+            ...prev.sessionStats,
+            hintsProvided: prev.sessionStats.hintsProvided + 1
+          }
+        }));
+        console.log('📊 Session-wide hints provided incremented');
+      }
 
-        // Update current section if it changed
-        if (currentSectionId && currentSectionId !== sectionProgress.currentSection) {
-          console.log(`📍 Section transition: ${sectionProgress.currentSection} → ${currentSectionId}`);
+      // STEP 2.5: Handle section mastery and progression
+      if (evaluatorOutput.sectionMastered && currentSectionId && !sectionProgress.masteredSections.includes(currentSectionId)) {
+        console.log(`✅ Section mastered: ${currentSectionId}`);
 
-          setSectionProgress(prev => ({
-            ...prev,
-            currentSection: currentSectionId
-          }));
+        const newMasteredSections = [...sectionProgress.masteredSections, currentSectionId];
+
+        // Get next section from topic config if advancing
+        let newCurrentSection = currentSectionId;
+        if (evaluatorOutput.advanceToNextSection) {
+          const topicConfig = getTopicConfig(topicId);
+          if (topicConfig && 'progressionStructure' in topicConfig) {
+            const sections = (topicConfig as any).progressionStructure.sections;
+            const currentIndex = sections.findIndex((s: any) => s.id === currentSectionId);
+            if (currentIndex >= 0 && currentIndex < sections.length - 1) {
+              newCurrentSection = sections[currentIndex + 1].id;
+              console.log(`📍 Section transition: ${currentSectionId} → ${newCurrentSection}`);
+            }
+          }
         }
 
-        // Handle section mastery
-        if (sectionMastered && currentSectionId && !sectionProgress.masteredSections.includes(currentSectionId)) {
-          console.log(`✅ Section mastered: ${currentSectionId}`);
+        // Update section history: mark old section as mastered
+        let updatedSectionHistory = sectionProgress.sectionHistory.map(entry =>
+          entry.sectionId === currentSectionId
+            ? { ...entry, masteredAt: Date.now() }
+            : entry
+        );
 
-          const newMasteredSections = [...sectionProgress.masteredSections, currentSectionId];
-          const newCurrentSection = instruction.progression.nextSection || currentSectionId;
-
-          const updatedSectionProgress = {
-            currentSection: newCurrentSection,
-            masteredSections: newMasteredSections,
-            sectionHistory: sectionProgress.sectionHistory.map(entry =>
-              entry.sectionId === currentSectionId
-                ? { ...entry, masteredAt: Date.now() }
-                : entry
-            )
-          };
-
-          setSectionProgress(updatedSectionProgress);
-
-          // IMPORTANT: Save to BOTH session storage AND progress service
-          // Save section progress to progressService (persistent localStorage)
-          progressService.saveProgress(
-            topicId,
-            state.sessionStats,
-            currentScore,
-            state.currentProblemType,
-            user?.uid,
-            updatedSectionProgress
-          );
-
-          console.log(`💾 Saved progress with ${newMasteredSections.length} mastered sections`);
+        // CRITICAL: If advancing to a NEW section, initialize its stats entry
+        if (newCurrentSection !== currentSectionId) {
+          const newSectionExists = updatedSectionHistory.some(entry => entry.sectionId === newCurrentSection);
+          if (!newSectionExists) {
+            const newSectionEntry: SectionProgressEntry = {
+              sectionId: newCurrentSection,
+              enteredAt: Date.now(),
+              masteredAt: null,
+              questionsAttempted: 0,
+              questionsCorrect: 0,
+              hintsUsed: 0
+            };
+            updatedSectionHistory = [...updatedSectionHistory, newSectionEntry];
+            console.log(`📊 Initialized stats for new section: ${newCurrentSection}`);
+          }
         }
+
+        const updatedSectionProgress = {
+          currentSection: newCurrentSection,
+          masteredSections: newMasteredSections,
+          sectionHistory: updatedSectionHistory
+        };
+
+        setSectionProgress(updatedSectionProgress);
+
+        // IMPORTANT: Save to BOTH session storage AND progress service
+        progressService.saveProgress(
+          topicId,
+          state.sessionStats,
+          currentScore,
+          state.currentProblemType,
+          user?.uid,
+          updatedSectionProgress
+        );
+
+        console.log(`💾 Saved progress with ${newMasteredSections.length} mastered sections`);
       }
 
       // Check for subtopic completion (trust evaluator's CELEBRATE action only)
-      if (instruction.action === "CELEBRATE") {
+      if (evaluatorOutput.action === "CELEBRATE") {
         setSubtopicComplete(true);
         console.log('🎉 SUBTOPIC COMPLETED! Evaluator determined mastery achieved.');
       }
@@ -784,25 +849,11 @@ const handleStudentSubmit = async (input: string) => {
       // No score-based thresholds - trust the AI's judgment in progression model
       let problemTypeForExecution = state.currentProblemType;
 
-      // STEP 3.5: Check topic config to override visualization setting
-      // Config has final say on whether visualization is enabled for this problem type
-      if (instruction.action === "GIVE_SOLUTION") {
-        const topicConfig = getTopicConfig(topicId);
-        if (topicConfig && 'VISUALIZATION_CONFIG' in topicConfig) {
-          const vizConfig = (topicConfig as any).VISUALIZATION_CONFIG[problemTypeForExecution];
-          if (vizConfig) {
-            // Config overrides evaluator's decision
-            instruction.includeVisualization = vizConfig.includeVisualization === true;
-            console.log(`📐 Visualization ${instruction.includeVisualization ? 'enabled' : 'disabled'} for problem type ${problemTypeForExecution} per config`);
-          }
-        }
-      }
-
       // STEP 4: Generate response based on action
       let tutorResponse: string;
       let structuredVisualizationData = undefined;
 
-      if (instruction.action === "GIVE_SOLUTION" && problemState?.currentProblemText) {
+      if (evaluatorOutput.action === "GIVE_SOLUTION" && problemState?.currentProblemText) {
         // Use Solution Agent for all solutions (generates step-by-step text)
         // Single LLM call generates: solution text + optional mathTool
         console.log(`🎨 Using Solution Agent for solution`);
@@ -813,8 +864,8 @@ const handleStudentSubmit = async (input: string) => {
             topicId,
             recentHistory,
             input,
-            instruction.reasoning || 'Student needs help with this problem',
-            instruction.solutionInstruction,
+            evaluatorOutput.reasoning,
+            undefined, // No solutionInstruction in new architecture
             sectionProgress.currentSection
           );
           console.log('Solution Agent data:', structuredVisualizationData);
@@ -832,7 +883,7 @@ const handleStudentSubmit = async (input: string) => {
           tutorResponse = "Let me show you how to solve this problem step by step.";
           structuredVisualizationData = undefined;
         }
-      } else if (instruction.action === "NEW_PROBLEM") {
+      } else if (evaluatorOutput.action === "NEW_PROBLEM") {
         // NEW_PROBLEM: Use generateQuestion directly (1 LLM call)
         // This returns both celebration speech AND the new problem
         console.log('🎯 Using Question Generation for NEW_PROBLEM (1 LLM call)');
@@ -850,8 +901,9 @@ const handleStudentSubmit = async (input: string) => {
             topicId,
             {
               recentHistory: formattedHistory,
-              evaluatorReasoning: instruction.reasoning,
-              questionInstruction: instruction.questionInstruction,
+              evaluatorReasoning: evaluatorOutput.reasoning,
+              evaluatorAction: evaluatorOutput.action,
+              advanceToNextSection: evaluatorOutput.advanceToNextSection,
               currentSection: sectionProgress.currentSection
             }
           );
@@ -886,107 +938,67 @@ const handleStudentSubmit = async (input: string) => {
         }
       } else {
         // GIVE_HINT, CELEBRATE: Use Tutor Agent (returns speech + display)
-        console.log('📝 Using Tutor Agent for:', instruction.action);
-        const tutorResponseRaw = await aiService.current.executeInstruction(
-          instruction,
-          recentHistory,
+        console.log('📝 Using Tutor Agent for:', evaluatorOutput.action);
+
+        if (!problemState?.currentProblemText) {
+          console.error('No current problem text for tutor agent');
+          throw new Error('No current problem available');
+        }
+
+        const tutorResponse = await aiService.current.generateTutorResponse(
+          evaluatorOutput,
+          problemState.currentProblemText,
           input,
+          recentHistory,
           problemTypeForExecution,
-          topicId
+          topicId,
+          sectionProgress.currentSection
         );
-        console.log('Tutor response (raw):', tutorResponseRaw);
 
-        // Parse the structured response (speech + display)
-        // CRITICAL: Use safeParseJSON which tries direct parsing first, then applies fixes only if needed!
-        // This prevents double-escaping LaTeX when the AI sends properly formatted JSON.
-        // LaTeX like $\theta$ will be correctly rendered after parsing.
-        // See: src/services/utils/responseParser.ts for safeParseJSON() implementation
-        try {
-          console.log('🔍 LaTeX Debug - Raw JSON from AI:', tutorResponseRaw.substring(0, 500));
-          const parsedResponse = safeParseJSON<any>(
-            tutorResponseRaw,
-            ['speech', 'display'], // Expected keys
-            {
-              speech: { text: '', emotion: 'neutral' },
-              display: { content: tutorResponseRaw, showAfterSpeech: false, type: 'hint' }
-            }
-          );
-          console.log('✅ LaTeX Debug - Parsed response:', parsedResponse);
-          if (parsedResponse.display?.content) {
-            console.log('📝 LaTeX Debug - Display content:', parsedResponse.display.content);
-            // Check for LaTeX patterns
-            const latexMatches = parsedResponse.display.content.match(/\$[^$]+\$/g);
-            if (latexMatches) {
-              console.log('🔢 LaTeX Debug - Found LaTeX expressions:', latexMatches);
-              latexMatches.forEach((match: string, index: number) => {
-                // Count backslashes in the match
-                const backslashCount = (match.match(/\\/g) || []).length;
-                console.log(`  [${index}] "${match}" - ${backslashCount} backslash(es)`);
+        console.log('Tutor response:', tutorResponse);
+
+        // Extract mathTool if present - must be flat format with toolName, parameters, caption
+        const mathTool = tutorResponse.mathTool;
+        if (mathTool) {
+          // Fail fast if using old nested format
+          if ('structure' in mathTool || 'description' in mathTool) {
+            throw new Error('Invalid mathTool format: Do not use wrapper fields like "structure" or "description". Use flat format: {toolName, parameters, caption}');
+          }
+          // Validate required fields
+          if (!mathTool.toolName || !mathTool.parameters) {
+            throw new Error(`Invalid mathTool: missing required fields. Got: ${JSON.stringify(mathTool)}`);
+          }
+        }
+
+        // STEP 5a: Speak the response via avatar
+        if (tutorResponse.speech && tutorResponse.speech.text) {
+          const emotion = tutorResponse.speech.emotion || 'neutral';
+
+          // Speak with callback to show display content after speech completes
+          speakText(tutorResponse.speech.text, emotion, async () => {
+            // STEP 5b: After speech, show display content (if any)
+            // Skip if content is "none" or null (speech-only response)
+            if (tutorResponse.display && tutorResponse.display.content &&
+                tutorResponse.display.content !== "none" &&
+                tutorResponse.display.content !== null) {
+              addMessage('tutor', tutorResponse.display.content, {
+                problemType: problemTypeForExecution,
+                mathTool: mathTool // Include mathTool if present
               });
-            }
-          }
 
-          // Check for difficulty progression signal from AI
-          if (parsedResponse.assessment?.readyToAdvance === true && state.currentProblemType < 3) {
-            const newDifficulty = state.currentProblemType + 1;
-            const difficultyLabel = newDifficulty === 2 ? 'intermediate' : 'advanced';
-            console.log(`📈 AI signals readiness to advance: ${state.currentProblemType} → ${newDifficulty} (${difficultyLabel})`);
-
-            setState(prev => ({
-              ...prev,
-              currentProblemType: newDifficulty
-            }));
-          }
-
-          // Extract mathTool if present - must be flat format with toolName, parameters, caption
-          const mathTool = parsedResponse.mathTool;
-          if (mathTool) {
-            // Fail fast if using old nested format
-            if (mathTool.structure || mathTool.description) {
-              throw new Error('Invalid mathTool format: Do not use wrapper fields like "structure" or "description". Use flat format: {toolName, parameters, caption}');
-            }
-            // Validate required fields
-            if (!mathTool.toolName || !mathTool.parameters) {
-              throw new Error(`Invalid mathTool: missing required fields. Got: ${JSON.stringify(mathTool)}`);
-            }
-          }
-
-          // STEP 5a: Speak the introduction via avatar
-          if (parsedResponse.speech && parsedResponse.speech.text) {
-            const emotion = parsedResponse.speech.emotion || 'neutral';
-
-            // Speak with callback to show display content after speech completes
-            speakText(parsedResponse.speech.text, emotion, async () => {
-              // STEP 5b: After speech, show display content (if any)
-              // Skip if content is "none" or null (speech-only response)
-              if (parsedResponse.display && parsedResponse.display.content &&
-                  parsedResponse.display.content !== "none" &&
-                  parsedResponse.display.content !== null) {
-                addMessage('tutor', parsedResponse.display.content, {
-                  problemType: problemTypeForExecution,
-                  mathTool: mathTool // Include mathTool if present
-                });
-
-                // Auto-focus input after displaying problem/question
-                if (parsedResponse.display.type === 'question' || parsedResponse.display.type === 'hint') {
-                  setTimeout(() => {
-                    inputAreaRef.current?.focus();
-                  }, 300); // Small delay for smooth UX
-                }
+              // Auto-focus input after displaying hint
+              if (tutorResponse.display.type === 'hint') {
+                setTimeout(() => {
+                  inputAreaRef.current?.focus();
+                }, 300); // Small delay for smooth UX
               }
-            });
-          }
-
-        } catch (parseError) {
-          console.error('Failed to parse tutor response as JSON, falling back to plain text:', parseError);
-          // Fallback: treat as plain text
-          tutorResponse = tutorResponseRaw;
-          addMessage('tutor', tutorResponse, { problemType: problemTypeForExecution });
+            }
+          });
         }
       }
 
       // STEP 5: Handle GIVE_SOLUTION display
-      if (instruction.action === "GIVE_SOLUTION") {
+      if (evaluatorOutput.action === "GIVE_SOLUTION") {
         // Store the pending new problem details in ref (no re-render)
         // This must happen for ALL solutions, not just those with visualization
         // Format recent history properly before storing (filtered by current section)
@@ -1001,7 +1013,7 @@ const handleStudentSubmit = async (input: string) => {
           problemType: problemTypeForExecution,
           topicId,
           recentHistory: formattedHistory,
-          evaluatorReasoning: instruction.reasoning
+          evaluatorReasoning: evaluatorOutput.reasoning
         };
 
         if (structuredVisualizationData) {
@@ -1025,7 +1037,8 @@ const handleStudentSubmit = async (input: string) => {
       // No additional logic needed here
 
       console.log('=== SEQUENTIAL AGENT FLOW COMPLETE ===');
-      console.log('Final state - Problems completed:', instruction.isMainProblemSolved ? problemsCompleted + 1 : problemsCompleted);
+      console.log('Final state - Problems completed:', problemsCompleted);
+      console.log('Evaluator action taken:', evaluatorOutput.action);
 
     } catch (error) {
       console.error('Failed to process sequential agent flow:', error);
@@ -1053,6 +1066,9 @@ const handleStudentSubmit = async (input: string) => {
     if (topicId.startsWith('s3-math-quadratic-')) {
       return 'Master quadratic equations step by step!';
     }
+    if (topicId.startsWith('s3-math-exponential-logarithms-')) {
+      return 'Master exponential functions and logarithms!';
+    }
     return 'Master mathematics step by step!';
   };
 
@@ -1069,6 +1085,9 @@ const handleStudentSubmit = async (input: string) => {
     }
     if (topicId.startsWith('s3-math-quadratic-')) {
       return '📈';
+    }
+    if (topicId.startsWith('s3-math-exponential-logarithms-')) {
+      return '📊';
     }
     return '📚';
   };
@@ -1092,12 +1111,13 @@ const handleStudentSubmit = async (input: string) => {
       >
       {/* Header with topic info and progress */}
       <div
-        className="flex items-center justify-between px-6 py-4 border-b"
+        className="flex items-center justify-between px-4 py-3 border-b"
         style={{
           borderColor: theme.colors.border,
           backgroundColor: theme.colors.chat,
         }}
       >
+        {/* Left: Back button + Topic info */}
         <div className="flex items-center space-x-3">
           {/* Back Button */}
           {onBackToTopics && (
@@ -1138,7 +1158,19 @@ const handleStudentSubmit = async (input: string) => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-3">
+        {/* Center: Section Progress Tracker */}
+        {sectionProgress.currentSection && (
+          <SectionProgressTracker
+            topicId={topicId}
+            sectionProgress={sectionProgress}
+            onSectionClick={handleSectionClick}
+            messages={state.messages}
+            compact={true}
+          />
+        )}
+
+        {/* Right: Notes + Auth buttons */}
+        <div className="flex items-center space-x-4">
           {/* View Notes Button */}
           {hasNotes && (
             <button
@@ -1205,27 +1237,17 @@ const handleStudentSubmit = async (input: string) => {
         </div>
       </div>
 
-      {/* Section Progress Tracker */}
-      {sectionProgress.currentSection && (
-        <SectionProgressTracker
-          topicId={topicId}
-          sectionProgress={sectionProgress}
-          onSectionClick={handleSectionClick}
-          messages={state.messages}
-        />
-      )}
-
       {/* Chat Messages */}
       <div
         className="overflow-y-auto"
         style={{ height: 0, flexGrow: 1 }}
       >
-        <div className="w-full mx-auto p-6 space-y-6">
+        <div className="max-w-5xl mx-auto p-3 space-y-4">
           {/* Avatar - Fixed Position (stays visible during scroll) */}
           {(state.messages.length === 0 || isPlaying) && (
             <div style={{
               position: 'fixed',
-              top: '120px',
+              top: '100px',
               left: '50%',
               transform: 'translateX(-50%)',
               zIndex: 1000,

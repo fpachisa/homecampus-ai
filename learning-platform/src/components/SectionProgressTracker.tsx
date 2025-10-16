@@ -13,13 +13,15 @@ interface SectionProgressTrackerProps {
   sectionProgress: SectionProgressState;
   onSectionClick: (sectionId: string) => void;
   messages: import('../types/types').Message[];  // To detect which sections have been started
+  compact?: boolean;  // Compact mode for header integration
 }
 
 const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
   topicId,
   sectionProgress,
   onSectionClick,
-  messages
+  messages,
+  compact = false
 }) => {
   const { theme } = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -101,11 +103,73 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     return colors[difficulty as keyof typeof colors] || '#6b7280';
   };
 
+  // Compact mode: just circles, no wrapper or counter
+  if (compact) {
+    return (
+      <div className="flex items-center space-x-1">
+        {sections.map((section: any, index: number) => {
+          const status = getSectionStatus(section.id);
+          const statusColor = getStatusColor(status);
+          const isActive = status === 'current';
+
+          return (
+            <React.Fragment key={section.id}>
+              {/* Step indicator - smaller for header */}
+              <div
+                className="relative group cursor-pointer"
+                title={`${section.title} - ${status} (click to jump)`}
+                onClick={() => onSectionClick(section.id)}
+              >
+                <div
+                  className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-semibold transition-all hover:scale-110 ${
+                    isActive ? 'ring-2 ring-offset-1' : ''
+                  }`}
+                  style={{
+                    backgroundColor: status === 'upcoming' ? theme.colors.chat : statusColor,
+                    color: status === 'upcoming' ? theme.colors.textMuted : '#ffffff',
+                    border: status === 'upcoming' ? `2px solid ${theme.colors.interactive}` : 'none',
+                    opacity: status === 'in-progress' ? 0.9 : 1
+                  }}
+                >
+                  {status === 'completed' ? '✓' : index + 1}
+                </div>
+
+                {/* Tooltip on hover */}
+                <div
+                  className="hidden group-hover:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 rounded shadow-lg whitespace-nowrap z-20"
+                  style={{
+                    backgroundColor: theme.colors.chat,
+                    border: `1px solid ${statusColor}`,
+                    fontSize: '11px',
+                    color: theme.colors.textPrimary
+                  }}
+                >
+                  {section.title}
+                </div>
+              </div>
+
+              {/* Connector line - shorter for compact */}
+              {index < sections.length - 1 && (
+                <div
+                  className="w-3 h-0.5"
+                  style={{
+                    backgroundColor: status === 'completed' ? '#10b981' : theme.colors.interactive
+                  }}
+                />
+              )}
+            </React.Fragment>
+          );
+        })}
+      </div>
+    );
+  }
+
+  // Full mode: with border, background, expand/collapse
   return (
     <div
       className="border-b px-4 py-2.5"
       style={{
-        backgroundColor: theme.colors.surface,
+        backgroundColor: theme.colors.chat,
         borderColor: theme.colors.interactive
       }}
     >
@@ -134,10 +198,9 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
                         isActive ? 'ring-2 ring-offset-1' : ''
                       }`}
                       style={{
-                        backgroundColor: status === 'upcoming' ? theme.colors.background : statusColor,
+                        backgroundColor: status === 'upcoming' ? theme.colors.chat : statusColor,
                         color: status === 'upcoming' ? theme.colors.textMuted : '#ffffff',
                         border: status === 'upcoming' ? `2px solid ${theme.colors.interactive}` : 'none',
-                        ringColor: statusColor,
                         opacity: status === 'in-progress' ? 0.9 : 1  // Slightly transparent to distinguish from current
                       }}
                     >
@@ -148,7 +211,7 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
                     <div
                       className="hidden group-hover:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 rounded shadow-lg whitespace-nowrap z-20"
                       style={{
-                        backgroundColor: theme.colors.surface,
+                        backgroundColor: theme.colors.chat,
                         border: `1px solid ${statusColor}`,
                         fontSize: '11px',
                         color: theme.colors.textPrimary

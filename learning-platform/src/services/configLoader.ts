@@ -706,6 +706,232 @@ export class ConfigLoader {
           practice: true,
           visualizations: true
         }
+      },
+      // Exponential & Logarithms
+      's3-math-exponential-logarithms-exponential-functions': {
+        id: 's3-math-exponential-logarithms-exponential-functions',
+        displayName: 'Exponential Functions',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponential-logarithms',
+        subtopic: 'exponential-functions',
+        metadata: {
+          difficulty: 'beginner',
+          estimatedMinutes: 40,
+          prerequisites: []
+        },
+        notesComponent: 's3/math/exponential-logarithms/ExponentialFunctions',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponential-logarithms-exponential-graphs': {
+        id: 's3-math-exponential-logarithms-exponential-graphs',
+        displayName: 'Graphs of Exponential Functions',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponential-logarithms',
+        subtopic: 'exponential-graphs',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-exponential-logarithms-exponential-functions']
+        },
+        notesComponent: 's3/math/exponential-logarithms/ExponentialGraphs',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponential-logarithms-exponential-equations': {
+        id: 's3-math-exponential-logarithms-exponential-equations',
+        displayName: 'Exponential Equations',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponential-logarithms',
+        subtopic: 'exponential-equations',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-exponential-logarithms-exponential-functions']
+        },
+        notesComponent: 's3/math/exponential-logarithms/ExponentialEquations',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponential-logarithms-exponential-growth': {
+        id: 's3-math-exponential-logarithms-exponential-growth',
+        displayName: 'Exponential Growth',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponential-logarithms',
+        subtopic: 'exponential-growth',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-exponential-logarithms-exponential-functions']
+        },
+        notesComponent: 's3/math/exponential-logarithms/ExponentialGrowth',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponential-logarithms-exponential-decay': {
+        id: 's3-math-exponential-logarithms-exponential-decay',
+        displayName: 'Exponential Decay',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponential-logarithms',
+        subtopic: 'exponential-decay',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-exponential-logarithms-exponential-growth']
+        },
+        notesComponent: 's3/math/exponential-logarithms/ExponentialDecay',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponential-logarithms-common-logarithms': {
+        id: 's3-math-exponential-logarithms-common-logarithms',
+        displayName: 'Common Logarithms',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponential-logarithms',
+        subtopic: 'common-logarithms',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-exponential-logarithms-exponential-functions']
+        },
+        notesComponent: 's3/math/exponential-logarithms/CommonLogarithms',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponential-logarithms-logarithm-laws': {
+        id: 's3-math-exponential-logarithms-logarithm-laws',
+        displayName: 'Laws of Logarithms',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponential-logarithms',
+        subtopic: 'logarithm-laws',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-exponential-logarithms-common-logarithms']
+        },
+        notesComponent: 's3/math/exponential-logarithms/LogarithmLaws',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponential-logarithms-using-logarithms': {
+        id: 's3-math-exponential-logarithms-using-logarithms',
+        displayName: 'Using Logarithms to Solve Equations',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponential-logarithms',
+        subtopic: 'using-logarithms',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['s3-math-exponential-logarithms-logarithm-laws']
+        },
+        notesComponent: 's3/math/exponential-logarithms/UsingLogarithms',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponential-logarithms-logarithms-other-bases': {
+        id: 's3-math-exponential-logarithms-logarithms-other-bases',
+        displayName: 'Logarithms in Other Bases',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponential-logarithms',
+        subtopic: 'logarithms-other-bases',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-exponential-logarithms-common-logarithms']
+        },
+        notesComponent: 's3/math/exponential-logarithms/LogarithmsOtherBases',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
       }
     };
 

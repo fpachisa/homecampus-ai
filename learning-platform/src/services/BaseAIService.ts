@@ -1,4 +1,5 @@
-import type { GeminiResponse, Message, EvaluatorInstruction, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem, PracticeAgentResponse, PracticeProblemState } from '../types/types';
+import type { GeminiResponse, Message, ProblemState, QuestionGenerationResponse, InitialGreetingResponse, PracticeProblem, PracticeAgentResponse, PracticeProblemState } from '../types/types';
+import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import type { VisualizationData } from '../types/visualization';
 // Use new prompt resolver with clean prompt library architecture
 import { newPromptResolver as promptResolver } from '../prompts/newPromptResolver';
@@ -198,14 +199,29 @@ class BaseAIService implements AIService {
     }
   }
 
-  async generateQuestion(problemType: number, topicId: string = 'fraction-division-by-whole-numbers', context?: { recentHistory?: string; evaluatorReasoning?: string; questionInstruction?: any; currentSection?: string }): Promise<QuestionGenerationResponse> {
+  async generateQuestion(
+    problemType: number,
+    topicId: string = 'fraction-division-by-whole-numbers',
+    context?: {
+      recentHistory?: string;
+      evaluatorReasoning?: string;
+      evaluatorAction?: string;
+      advanceToNextSection?: boolean;
+      currentSection?: string;
+      recentProblems?: string[];
+    }
+  ): Promise<QuestionGenerationResponse> {
     const prompt = promptResolver.resolveQuestionGeneration({
       topicId: topicId as any,
       currentProblemType: problemType,
       recentHistory: context?.recentHistory,
       evaluatorReasoning: context?.evaluatorReasoning,
-      questionInstruction: context?.questionInstruction,
-      currentSection: context?.currentSection
+      evaluatorInstruction: {
+        action: context?.evaluatorAction || 'NEW_PROBLEM',
+        advanceToNextSection: context?.advanceToNextSection || false
+      },
+      currentSection: context?.currentSection,
+      recentProblems: context?.recentProblems
     });
     console.log('Prompt for question generation:', prompt);
     try {
@@ -325,16 +341,20 @@ class BaseAIService implements AIService {
     }
   }
 
-  async evaluateAndInstruct(
+  /**
+   * Evaluate student answer and decide next action
+   * Returns action + reasoning (no instruction objects)
+   */
+  async evaluateAnswer(
     studentResponse: string,
     recentHistory: Message[],
     problemState: ProblemState,
     topicId: string,
     sectionProgress?: import('../types/types').SectionProgressState
-  ): Promise<EvaluatorInstruction> {
+  ): Promise<EvaluatorOutput> {
     const historyText = formatConversationHistory(recentHistory);
 
-    // Extract current section's detailed stats from sectionHistory
+    // Extract current section's detailed stats
     const currentSectionStats = sectionProgress?.sectionHistory.find(
       entry => entry.sectionId === sectionProgress.currentSection
     );
@@ -348,10 +368,9 @@ class BaseAIService implements AIService {
       hintsGiven: problemState.hintsGivenForCurrentProblem,
       studentAttempts: problemState.attemptsForCurrentProblem,
       currentProblemText: problemState.currentProblemText,
-      originalMathTool: problemState.originalMathTool, // Pass ground truth for validation
+      originalMathTool: problemState.originalMathTool,
       currentSection: sectionProgress?.currentSection,
       masteredSections: sectionProgress?.masteredSections,
-      // NEW: Pass current section's detailed stats for accurate mastery tracking
       sectionStats: currentSectionStats ? {
         questionsAttempted: currentSectionStats.questionsAttempted,
         questionsCorrect: currentSectionStats.questionsCorrect,
@@ -359,84 +378,116 @@ class BaseAIService implements AIService {
       } : undefined
     } as any);
 
-    console.log('=== EVALUATOR AGENT DEBUG ===');
-    console.log('Full prompt:', prompt);
-    console.log('Problem State:', problemState);
+    console.log('=== EVALUATOR (SIMPLIFIED) DEBUG ===');
     console.log('Student Response:', studentResponse);
-    console.log('==============================');
+    console.log('Current Section:', sectionProgress?.currentSection);
+    console.log('Full Prompt:', prompt);
+    console.log('====================================');
 
     try {
       const responseText = await this.provider.generateContent(prompt);
 
-      console.log('Evaluator agent raw response:', responseText);
+      console.log('Evaluator raw response:', responseText);
 
-      // Clean and parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
-      const evaluation = safeParseJSON<any>(responseText, ['action', 'answerCorrect', 'isMainProblemSolved']);
-      console.log('Parsed evaluator instruction:', evaluation);
+      // Parse the evaluator output
+      const evaluation = safeParseJSON<EvaluatorOutput>(
+        responseText,
+        ['action', 'answerCorrect', 'understanding', 'reasoning']
+      );
 
-      // Ensure we preserve all required fields from both top level and instruction
-      if (evaluation.instruction) {
-        return {
-          ...evaluation,
-          ...evaluation.instruction,
-          // Explicitly preserve critical fields from top level
-          answerCorrect: evaluation.answerCorrect,
-          isMainProblemSolved: evaluation.isMainProblemSolved
-        };
-      }
+      console.log('Parsed evaluator output:', evaluation);
+
+      // Validate required fields
+      validateRequiredKeys(
+        evaluation,
+        ['action', 'answerCorrect', 'understanding', 'sectionMastered', 'advanceToNextSection', 'reasoning'],
+        'Invalid evaluator output'
+      );
+
       return evaluation;
     } catch (error) {
-      console.error('Evaluator Agent error:', error);
-
-      // Convert to AIServiceError for proper fallback handling
+      console.error('Evaluator error:', error);
       throw AIServiceError.fromHttpError(error);
     }
   }
 
-  async executeInstruction(
-    instruction: EvaluatorInstruction,
-    recentHistory: Message[],
+  /**
+   * Generate tutor response for hints and celebrations
+   * Uses evaluator reasoning to provide appropriate feedback
+   */
+  async generateTutorResponse(
+    evaluatorOutput: EvaluatorOutput,
+    currentProblem: string,
     studentResponse: string,
-    currentProblemType: number,
-    topicId: string
-  ): Promise<string> {
-    const historyText = formatConversationHistory(recentHistory);
-
-    // Use tutor agent prompt for all actions
-    // For NEW_PROBLEM, this returns only celebration speech (display.content is null)
-    // The actual problem is generated separately via generateQuestion call
-    const prompt = promptResolver.resolveTutorAgent({
-      topicId: topicId as any,
-      tutorInstruction: instruction.tutorInstruction,
-      evaluatorAssessment: instruction.assessment,
-      answerCorrect: instruction.answerCorrect,
-      evaluatorReasoning: instruction.reasoning,
-      recentHistory: historyText,
-      studentResponse,
-      currentProblemType,
-      hintLevel: instruction.hintLevel,
-      currentSection: instruction.progression?.currentSection  // Pass section for scoped math tools
-    });
-
-    console.log('=== TUTOR AGENT DEBUG ===');
-    console.log('Instruction:', instruction);
-    console.log('Action:', instruction.action);
-    console.log('=========================');
-
+    recentHistory: Message[],
+    problemType: number,
+    topicId: string,
+    currentSection?: string
+  ): Promise<import('../prompt-library/types/agents').TutorOutput> {
     try {
+      console.log('=== TUTOR AGENT START ===');
+      console.log('Action:', evaluatorOutput.action);
+      console.log('Evaluator reasoning:', evaluatorOutput.reasoning);
+      console.log('Hint level:', evaluatorOutput.hintLevel);
+
+      // Format history for prompt
+      const historyText = formatConversationHistory(recentHistory);
+
+      // Get the prompt for the tutor agent
+      const prompt = promptResolver.resolveTutorAgent({
+        topicId: topicId as any,
+        currentProblemType: problemType,
+        recentHistory: historyText,
+        studentResponse,
+        currentProblemText: currentProblem,
+        evaluatorAssessment: {
+          answerCorrect: evaluatorOutput.answerCorrect,
+          understanding: evaluatorOutput.understanding,
+          conceptGaps: evaluatorOutput.conceptGaps
+        },
+        evaluatorReasoning: evaluatorOutput.reasoning,
+        evaluatorInstruction: {
+          action: evaluatorOutput.action,
+          hintLevel: evaluatorOutput.hintLevel
+        },
+        currentSection
+      });
+
+      console.log('Calling AI with Tutor Agent prompt...');
+      console.log('Full tutor prompt:', prompt);
+
       const responseText = await this.provider.generateContent(prompt);
 
-      console.log('Tutor agent raw response:', responseText);
+      console.log('Tutor Agent raw response:', responseText);
 
-      if (!responseText) {
-        throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty response from Tutor Agent');
-      }
+      // Parse JSON response using safeParseJSON (prevents double-escaping LaTeX)
+      const parsedResponse = safeParseJSON<import('../prompt-library/types/agents').TutorOutput>(
+        responseText,
+        ['speech', 'display'],
+        {
+          speech: {
+            text: "Let me help you with that.",
+            emotion: 'encouraging'
+          },
+          display: {
+            content: null,
+            showAfterSpeech: false,
+            type: evaluatorOutput.action === "CELEBRATE" ? 'celebration' : 'hint'
+          }
+        }
+      );
 
-      return responseText;
+      console.log('Parsed tutor response:', parsedResponse);
+
+      // Validate required fields
+      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid tutor response');
+      validateRequiredKeys(parsedResponse.speech, ['text', 'emotion'], 'Invalid speech structure');
+
+      console.log('=== TUTOR AGENT COMPLETE ===');
+      return parsedResponse;
+
     } catch (error) {
-      console.error('Tutor Agent error:', error);
-
-      // Convert to AIServiceError for proper fallback handling
+      console.error('Error in Tutor Agent:', error);
       throw AIServiceError.fromHttpError(error);
     }
   }
@@ -520,7 +571,6 @@ class BaseAIService implements AIService {
       console.log('Problem type:', problemType);
       console.log('Student response:', studentResponse);
       console.log('Evaluator reasoning:', evaluatorReasoning);
-      console.log('Solution instruction:', solutionInstruction);
       console.log('Current section:', currentSection);
 
       // Format history for prompt
@@ -529,17 +579,22 @@ class BaseAIService implements AIService {
       // Get the prompt for the solution agent with full context
       const prompt = promptResolver.resolveSolutionAgent({
         topicId: topicId as any,
-        problemText,
+        currentProblemText: problemText, // Map problemText to currentProblemText
         currentProblemType: problemType,
         recentHistory: historyText,
         studentResponse,
         evaluatorReasoning,
+        evaluatorAssessment: {
+          understanding: 'struggling', // Provide default assessment for solutions
+          conceptGaps: ['Requested full solution']
+        },
         solutionInstruction,
         currentSection
       });
 
       console.log('Calling AI with Solution Agent prompt...');
-
+      console.log('Full prompt:', prompt);
+      
       const responseText = await this.provider.generateContent(prompt, 4096);
 
       console.log('Solution Agent raw response:', responseText);

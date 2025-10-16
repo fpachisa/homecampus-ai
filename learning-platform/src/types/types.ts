@@ -65,48 +65,7 @@ export interface ProblemState {
   originalMathTool?: MathTool;          // Original visual tool shown with the problem (for validation)
 }
 
-export interface EvaluatorInstruction {
-  // Evaluation results
-  answerCorrect: boolean;
-  isMainProblemSolved: boolean;
-
-  // Assessment of student understanding
-  assessment: {
-    understanding: 'strong' | 'developing' | 'struggling';
-    conceptGaps: string[];
-    readyToAdvance: boolean;
-  };
-
-  // Progression tracking
-  progression: {
-    currentSection: string;
-    sectionMastered: boolean;
-    masteryProgress: string;
-    nextSection: string | null;
-  };
-
-  // Instructions for Tutor
-  action: "GIVE_HINT" | "GIVE_SOLUTION" | "NEW_PROBLEM" | "CELEBRATE";
-  hintLevel?: 1 | 2 | 3;  // Which hint number to give
-  reasoning: string;  // Why this action was chosen
-  includeVisualization?: boolean; // Optional: whether to include visualization
-
-  // Targeted instructions for UI agents (only include the relevant one based on action)
-  tutorInstruction?: any;  // For GIVE_HINT or CELEBRATE
-  questionInstruction?: any;  // For NEW_PROBLEM
-  solutionInstruction?: any;  // For GIVE_SOLUTION
-
-  // NEW: AI-driven speech and display content separation (legacy - may be removed)
-  speech?: {
-    text: string;                    // What avatar should speak
-    emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
-  };
-
-  display?: {
-    content: string | null;          // What to show as text (null for speech-only)
-    showAfterSpeech?: boolean;       // Show after speech completes
-  };
-}
+// EvaluatorInstruction removed - use EvaluatorOutput from prompt-library/types/agents.ts instead
 
 export interface QuestionGenerationResponse {
   speech: {
@@ -146,9 +105,6 @@ export interface AnswerEvaluation {
   hintsUsed: number;                // Hints used for THIS problem
   answerType: "final" | "intermediate";  // Type of answer given
   isMainProblemSolved: boolean;     // Is the main problem fully solved?
-
-  // New fields for sequential architecture
-  instruction?: EvaluatorInstruction;  // Instructions for Tutor
 }
 
 export interface ProgressEvaluation {

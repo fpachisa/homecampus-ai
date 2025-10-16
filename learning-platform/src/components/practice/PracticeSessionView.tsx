@@ -910,7 +910,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
           )}
 
           {/* Math Tool Visualization (for AI-generated questions) */}
-          {currentProblem?.mathTool && (
+          {currentProblem?.mathTool && currentProblem.mathTool.toolName !== "none" && (
             <MathToolRenderer
               toolName={currentProblem.mathTool.toolName}
               parameters={currentProblem.mathTool.parameters}

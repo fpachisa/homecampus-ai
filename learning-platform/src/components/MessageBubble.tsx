@@ -120,7 +120,7 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
 
   return (
     <div className={`flex flex-col w-full animate-message-appear ${isTutor ? 'items-start' : 'items-end'}`}>
-      <div className={`flex items-start ${isTutor ? 'space-x-3' : 'space-x-3 flex-row-reverse space-x-reverse'} ${extractedVisualizationData ? 'w-full' : 'max-w-lg'}`}>
+      <div className={`flex items-start ${isTutor ? 'space-x-3' : 'space-x-3 flex-row-reverse space-x-reverse'} ${extractedVisualizationData ? 'w-full' : 'max-w-3xl'}`}>
         {/* Avatar */}
         <div
           className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg text-white shadow-md"
@@ -133,7 +133,7 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
 
         {/* Message */}
         <div
-          className={`relative ${extractedVisualizationData ? 'flex-1' : 'max-w-lg'} px-5 py-4 transition-all duration-300 hover:scale-[1.02] border backdrop-blur-sm`}
+          className={`relative ${extractedVisualizationData ? 'flex-1' : 'max-w-3xl'} px-5 py-4 transition-all duration-300 hover:scale-[1.02] border backdrop-blur-sm`}
         style={{
           background: isTutor
             ? `${theme.colors.tutorMessage}`
@@ -195,7 +195,7 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
             )}
 
             {/* Math Tool rendering - using centralized MathToolRenderer */}
-            {isTutor && message.metadata?.mathTool && (
+            {isTutor && message.metadata?.mathTool && message.metadata.mathTool.toolName !== "none" && (
               <div className="mt-4">
                 <MathToolRenderer
                   toolName={message.metadata.mathTool.toolName}

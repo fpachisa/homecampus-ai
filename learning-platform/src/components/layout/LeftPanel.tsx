@@ -12,6 +12,8 @@ import { S3_MATH_CIRCLE_GEOMETRY } from '../../prompt-library/subjects/mathemati
 import type { CircleGeometryTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import { S3_MATH_QUADRATIC_EQUATIONS } from '../../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import type { QuadraticEquationsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
+import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
+import type { ExponentialLogarithmsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -60,6 +62,17 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('graph-finding-function')) return '🔎';
   if (topicId.includes('graph-problem-solving')) return '🎨';
 
+  // S3 Exponential & Logarithms icons
+  if (topicId.includes('exponential-functions')) return '📈';
+  if (topicId.includes('exponential-graphs')) return '📊';
+  if (topicId.includes('exponential-equations')) return '🔢';
+  if (topicId.includes('exponential-growth')) return '📈';
+  if (topicId.includes('exponential-decay')) return '📉';
+  if (topicId.includes('common-logarithms')) return '🔤';
+  if (topicId.includes('logarithm-laws')) return '⚖️';
+  if (topicId.includes('using-logarithms')) return '🔧';
+  if (topicId.includes('logarithms-other-bases')) return '🔠';
+
   return '📐';
 }
 
@@ -68,6 +81,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's3-math-trigonometry') return 'Trigonometry';
   if (category === 's3-math-circle-geometry') return 'Circle Geometry';
   if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
+  if (category === 's3-math-exponential-logarithms') return 'Exponential & Logarithms';
   return category;
 }
 
@@ -106,7 +120,15 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
       }));
     } else if (appState.selectedCategory === 's3-math-quadratic-equations') {
       return Object.entries(S3_MATH_QUADRATIC_EQUATIONS).map(([topicId, config]) => ({
-        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's3-math-exponential-logarithms') {
+      return Object.entries(S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
@@ -217,6 +239,8 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
       topicConfig = S3_MATH_CIRCLE_GEOMETRY[topicId as CircleGeometryTopicId];
     } else if (appState.selectedCategory === 's3-math-quadratic-equations') {
       topicConfig = S3_MATH_QUADRATIC_EQUATIONS[topicId as QuadraticEquationsTopicId];
+    } else if (appState.selectedCategory === 's3-math-exponential-logarithms') {
+      topicConfig = S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as ExponentialLogarithmsTopicId];
     }
 
     const sections = (topicConfig as any)?.progressionStructure?.sections || [];
@@ -277,7 +301,9 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
             >
               {appState.selectedCategory === 'fractions' ? '➗' :
                appState.selectedCategory === 's3-math-trigonometry' ? '📐' :
-               appState.selectedCategory === 's3-math-circle-geometry' ? '⭕' : '📈'}
+               appState.selectedCategory === 's3-math-circle-geometry' ? '⭕' :
+               appState.selectedCategory === 's3-math-quadratic-equations' ? '📈' :
+               appState.selectedCategory === 's3-math-exponential-logarithms' ? '📊' : '📈'}
             </div>
             <div>
               <h2 className="font-semibold text-sm" style={{ color: theme.colors.textPrimary }}>

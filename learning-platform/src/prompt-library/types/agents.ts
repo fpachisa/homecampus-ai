@@ -23,46 +23,32 @@ export interface EvaluatorInput {
   };
 }
 
+/**
+ * Evaluator Output
+ * Evaluator only assesses and decides, no longer generates instructions
+ * Reasoning becomes the communication layer between agents
+ */
 export interface EvaluatorOutput {
+  // Assessment
   answerCorrect: boolean;
-  isMainProblemSolved: boolean;
+  understanding: 'strong' | 'developing' | 'struggling';
+  conceptGaps: string[];
 
-  assessment: {
-    understanding: 'strong' | 'developing' | 'struggling';
-    conceptGaps: string[];
-    readyToAdvance: boolean;
-  };
+  // Progression decision
+  sectionMastered: boolean;
+  advanceToNextSection: boolean;
 
-  progression: {
-    currentSection: string;
-    sectionMastered: boolean;
-    masteryProgress: string;
-    nextSection?: string | null;
-  };
-
+  // Action decision (from decision matrix)
   action: 'GIVE_HINT' | 'GIVE_SOLUTION' | 'NEW_PROBLEM' | 'CELEBRATE';
   hintLevel?: 1 | 2 | 3;
 
-  // Instructions for other agents
-  tutorInstruction?: TutorInstruction;
-  questionInstruction?: QuestionInstruction;
-  solutionInstruction?: SolutionInstruction;
-
-  reasoning: string;
+  // Detailed reasoning for other agents to use
+  reasoning: string;  // Plain text explanation of assessment and decision
 }
 
 // ============================================
 // Tutor Agent Types
 // ============================================
-
-export interface TutorInstruction {
-  focusConcept: string;
-  studentError: string;
-  hintStrategy: string;
-  relevantInfo: string;
-  tone: string;
-  depth: 'gentle nudge' | 'specific guidance' | 'near-answer';
-}
 
 export interface TutorOutput {
   speech: {
@@ -87,17 +73,6 @@ export interface TutorOutput {
 // Question Agent Types
 // ============================================
 
-export interface QuestionInstruction {
-  targetSection: string;
-  targetConcept: string;
-  difficulty: DifficultyLevel;
-  focusObjectives: string[];
-  relevantFormulas: string[];
-  conceptGaps?: string[];
-  sampleProblems?: any[];
-  questionConstraints?: Record<string, any>;
-}
-
 export interface QuestionOutput {
   speech: {
     text: string;
@@ -120,16 +95,6 @@ export interface QuestionOutput {
 // ============================================
 // Solution Agent Types
 // ============================================
-
-export interface SolutionInstruction {
-  problemText: string;
-  studentAttempt: string;
-  explanationFocus: string;
-  relevantFormulas: string[];
-  relevantConcepts: string;
-  explanationDepth: string;
-  studentStrugglePoint: string;
-}
 
 export interface SolutionOutput {
   speech: {

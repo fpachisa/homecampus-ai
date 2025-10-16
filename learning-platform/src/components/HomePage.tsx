@@ -9,7 +9,7 @@ interface Topic {
   description: string;
   subtopicCount: number;
   isActive: boolean;
-  category?: 'fractions' | 's3-math-trigonometry' | 's3-math-circle-geometry' | 's3-math-quadratic-equations';
+  category?: 'fractions' | 's3-math-trigonometry' | 's3-math-circle-geometry' | 's3-math-quadratic-equations' | 's3-math-exponential-logarithms';
   grade?: string;
   subject?: string;
 }
@@ -46,6 +46,17 @@ const topics: Topic[] = [
     subtopicCount: 13,
     isActive: true,
     category: 's3-math-quadratic-equations',
+    grade: 'Secondary 3',
+    subject: 'Mathematics',
+  },
+  {
+    id: 's3-exponential-logarithms',
+    name: 'Exponential & Logarithms',
+    icon: '📊',
+    description: 'Master exponential functions, growth, decay, and logarithmic relationships',
+    subtopicCount: 9,
+    isActive: true,
+    category: 's3-math-exponential-logarithms',
     grade: 'Secondary 3',
     subject: 'Mathematics',
   },

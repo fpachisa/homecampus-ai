@@ -6,6 +6,8 @@ import { S3_MATH_CIRCLE_GEOMETRY } from '../prompt-library/subjects/mathematics/
 import type { CircleGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import { S3_MATH_QUADRATIC_EQUATIONS } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import type { QuadraticEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
+import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
+import type { ExponentialLogarithmsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -54,6 +56,17 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('graph-finding-function')) return '🔎';
   if (topicId.includes('graph-problem-solving')) return '🎨';
 
+  // S3 Exponential & Logarithms icons
+  if (topicId.includes('exponential-functions')) return '📈';
+  if (topicId.includes('exponential-graphs')) return '📊';
+  if (topicId.includes('exponential-equations')) return '🔢';
+  if (topicId.includes('exponential-growth')) return '📈';
+  if (topicId.includes('exponential-decay')) return '📉';
+  if (topicId.includes('common-logarithms')) return '🔤';
+  if (topicId.includes('logarithm-laws')) return '⚖️';
+  if (topicId.includes('using-logarithms')) return '🔧';
+  if (topicId.includes('logarithms-other-bases')) return '🔠';
+
   return '📐';
 }
 
@@ -74,6 +87,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S3_MATH_CIRCLE_GEOMETRY[topicId as CircleGeometryTopicId];
   } else if (category === 's3-math-quadratic-equations') {
     topicConfig = S3_MATH_QUADRATIC_EQUATIONS[topicId as QuadraticEquationsTopicId];
+  } else if (category === 's3-math-exponential-logarithms') {
+    topicConfig = S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as ExponentialLogarithmsTopicId];
   }
 
   if (!topicConfig) {

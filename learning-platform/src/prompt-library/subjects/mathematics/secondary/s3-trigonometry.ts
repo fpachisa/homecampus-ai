@@ -26,7 +26,7 @@ Teaching Approach:
 - Use relatable, real-world contexts
 
 **Text-to-Speech Guidelines:**
-- Use "S O H, C A H, T O A" instead of "SOH-CAH-TOA" for proper pronunciation
+- For mnemonic Use "S O H, C A H, T O A" instead of "SOH-CAH-TOA" for proper pronunciation
 - Avoid acronyms that might be mispronounced - spell them out with spaces
 - Keep speech.text plain and conversational (no markdown, no LaTeX)
 - For display.content (shown visually), you can use "SOH-CAH-TOA" normally`,
@@ -366,13 +366,14 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
       ]
     },
 
-    learningObjectives: `Students will progress through 6 sections:
-                        1. Triangle Labeling (foundational) - Identify opposite, adjacent, hypotenuse
-                        2. Basic Ratios (foundational→intermediate) - Learn sine, cosine, tangent definitions
-                        3. Side Calculations (intermediate) - Find unknown sides using trig ratios
-                        4. Angle Calculations (intermediate) - Find angles using inverse functions
-                        5. Special Angles (intermediate→advanced) - Master exact values for 30°, 45°, 60°
-                        6. Real-World Problems (advanced) - Apply to height, distance, elevation scenarios`,
+    learningObjectives: [
+      "Students will progress through 6 sections:",
+      "1. Triangle Labeling (foundational) - Identify opposite, adjacent, hypotenuse",
+      "2. Basic Ratios (foundational→intermediate) - Learn sine, cosine, tangent definitions",
+      "3. Side Calculations (intermediate) - Find unknown sides using trig ratios",
+      "4. Angle Calculations (intermediate) - Find angles using inverse functions",
+      "5. Special Angles (intermediate→advanced) - Master exact values for 30°, 45°, 60°",
+      "6. Real-World Problems (advanced) - Apply to height, distance, elevation scenarios"],
 
     keyFormulas: `• sin θ = O/H    (Sine = Opposite / Hypotenuse)
                   • cos θ = A/H    (Cosine = Adjacent / Hypotenuse)
@@ -398,6 +399,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["s3-math-trigonometry-basic-ratios"],
           masterySignals: "Student correctly identifies and distinguishes between angles of elevation and depression in 3+ scenarios, and understands they are alternate angles",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ correct identifications without hints",
+                "Consistent distinction between elevation and depression across different contexts"
+              ],
+              qualitative: [
+                "Correctly identifies horizontal line of sight in all diagrams",
+                "Explains that elevation and depression angles are alternate angles",
+                "Draws clear, accurate diagrams showing angle relationships",
+                "Uses correct terminology (horizontal, elevation, depression)"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with prompting"],
+              qualitative: [
+                "Understands concept but uncertain about angle direction",
+                "Needs hints to identify horizontal reference line",
+                "Diagrams lack clarity or precision"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect identifications", "Requests solution early"],
+              qualitative: [
+                "Confuses angles of elevation with depression",
+                "Cannot identify horizontal reference line",
+                "Does not understand alternate angle relationship"
+              ]
+            }
+          },
           learningObjectives: [
             "Define angle of elevation (angle from horizontal UP to an object)",
             "Define angle of depression (angle from horizontal DOWN to an object)",
@@ -417,6 +448,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["elevation-depression-concepts"],
           masterySignals: "Student solves 3+ elevation/depression problems correctly, selecting appropriate trig ratios and interpreting results in context",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ problems solved correctly without hints",
+                "Consistent accurate ratio selection across different scenarios"
+              ],
+              qualitative: [
+                "Sets up right triangles correctly from word problems",
+                "Selects appropriate trigonometric ratio (sin, cos, tan)",
+                "Interprets results with correct units and context",
+                "Verifies answers are reasonable for the situation"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on setup or ratio selection"],
+              qualitative: [
+                "Understands process but struggles with diagram setup",
+                "Needs prompting to identify given vs unknown sides",
+                "Can solve once triangle is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect attempts", "Requests solution early"],
+              qualitative: [
+                "Cannot translate word problem into triangle diagram",
+                "Selects wrong trigonometric ratio",
+                "Does not recognize elevation/depression context as trig problem"
+              ]
+            }
+          },
           learningObjectives: [
             "Set up right triangles from elevation/depression scenarios",
             "Identify which sides are given and unknown",
@@ -450,6 +511,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["elevation-depression-calculations"],
           masterySignals: "Student identifies the correct 2D plane within 3D shapes in 2+ problems and draws accurate 2D triangles",
           estimatedQuestions: "2-3 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ correct 2D triangle extractions without hints",
+                "Consistent identification across different 3D shapes"
+              ],
+              qualitative: [
+                "Visualizes 3D shapes accurately and identifies right triangles within them",
+                "Extracts the correct 2D plane from the 3D shape",
+                "Recognizes when Pythagoras is needed first for diagonals",
+                "Labels all dimensions clearly (length, width, height)"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on which plane to extract"],
+              qualitative: [
+                "Understands concept but struggles with spatial visualization",
+                "Needs prompting to identify the correct triangle",
+                "Can proceed once the 2D triangle is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect plane selections", "Requests solution early"],
+              qualitative: [
+                "Cannot visualize 3D shapes or extract 2D triangles",
+                "Does not understand space diagonals vs face diagonals",
+                "Cannot identify when to use Pythagoras first"
+              ]
+            }
+          },
           learningObjectives: [
             "Visualize 3D shapes (cuboids, pyramids, prisms) and identify right-angled triangles within them",
             "Extract the relevant 2D triangle from the 3D shape",
@@ -470,6 +561,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["3d-visualization"],
           masterySignals: "Student independently solves 2-3 complex 3D problems, correctly combining Pythagoras and trigonometry",
           estimatedQuestions: "4-5 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ complex 3D problems solved independently",
+                "Consistent multi-step reasoning (Pythagoras → Trigonometry)"
+              ],
+              qualitative: [
+                "Correctly combines Pythagoras and trigonometry in sequence",
+                "Solves for angles between lines and planes accurately",
+                "Applies to cuboids, pyramids, and cones correctly",
+                "Verifies answers make sense in 3D context"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on multi-step approach"],
+              qualitative: [
+                "Understands individual steps but struggles with sequencing",
+                "Needs prompting on when to use Pythagoras vs trigonometry",
+                "Can complete once approach is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect attempts", "Requests solution early"],
+              qualitative: [
+                "Cannot sequence Pythagoras and trigonometry steps",
+                "Does not recognize multi-step nature of problem",
+                "Cannot solve independently even with 2D triangle extracted"
+              ]
+            }
+          },
           learningObjectives: [
             "Solve for angles between lines and planes (e.g., diagonal to base)",
             "Solve for angles in cuboids, rectangular prisms",
@@ -487,11 +608,11 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
       ]
     },
 
-    learningObjectives: `Students will progress through 4 sections:
-1. Elevation/Depression Concepts (foundational) - Define and identify angles of elevation and depression
-2. Elevation/Depression Calculations (intermediate) - Solve real-world height and distance problems
-3. 3D Visualization (intermediate) - Extract 2D triangles from 3D shapes
-4. 3D Problem Solving (advanced) - Solve complex multi-step 3D problems`,
+    learningObjectives: ["Students will progress through 4 sections:",
+                          "1. Elevation/Depression Concepts (foundational) - Define and identify angles of elevation and depression",
+                          "2. Elevation/Depression Calculations (intermediate) - Solve real-world height and distance problems",
+                          "3. 3D Visualization (intermediate) - Extract 2D triangles from 3D shapes",
+                          "4. 3D Problem Solving (advanced) - Solve complex multi-step 3D problems"],
 
     keyFormulas: `• sin θ = O/H, cos θ = A/H, tan θ = O/A
 • tan θ = height / distance (common for elevation/depression)
@@ -512,6 +633,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["s3-math-trigonometry-basic-ratios"],
           masterySignals: "Student correctly reads and writes bearings in 3+ scenarios, always using 3 digits and measuring clockwise from North",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ bearings read and written correctly without hints",
+                "Consistent use of 3-digit format across all scenarios"
+              ],
+              qualitative: [
+                "Always measures clockwise from North",
+                "Uses correct 3-digit format (e.g., 045° not 45°)",
+                "Identifies cardinal directions correctly (N=000°, E=090°, S=180°, W=270°)",
+                "Reads bearings accurately from compass diagrams"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with prompting on format or direction"],
+              qualitative: [
+                "Understands concept but inconsistent with 3-digit format",
+                "Needs reminders about clockwise measurement",
+                "Can identify cardinal directions with hints"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect bearings", "Requests solution early"],
+              qualitative: [
+                "Confuses clockwise with counterclockwise measurement",
+                "Does not use 3-digit format consistently",
+                "Cannot identify North reference or cardinal directions"
+              ]
+            }
+          },
           learningObjectives: [
             "Define bearing as direction measured clockwise from North",
             "Express bearings as 3-digit numbers (000° to 360°)",
@@ -534,6 +685,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["bearing-fundamentals"],
           masterySignals: "Student calculates back bearings correctly in 3+ problems, applying add/subtract 180° rules accurately",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ back bearings calculated correctly without hints",
+                "Consistent application of ±180° rules"
+              ],
+              qualitative: [
+                "Correctly applies add 180° rule when bearing < 180°",
+                "Correctly applies subtract 180° rule when bearing ≥ 180°",
+                "Understands back bearing is the reverse direction",
+                "Verifies answers make sense (opposite directions)"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on which rule to apply"],
+              qualitative: [
+                "Understands concept but uncertain which rule to use",
+                "Needs prompting to check if bearing < or ≥ 180°",
+                "Can calculate once rule is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect calculations", "Requests solution early"],
+              qualitative: [
+                "Confuses add and subtract 180° rules",
+                "Does not understand reverse direction concept",
+                "Cannot determine which rule applies to given bearing"
+              ]
+            }
+          },
           learningObjectives: [
             "Understand that back bearing is the reverse direction",
             "Apply rule: if bearing < 180°, add 180° for back bearing",
@@ -554,6 +735,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["back-bearings"],
           masterySignals: "Student draws accurate bearing diagrams in 2-3 scenarios, correctly showing North lines and angles",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ diagrams drawn accurately without hints",
+                "Consistent correct representation of North lines and angles"
+              ],
+              qualitative: [
+                "Draws parallel North lines at each location",
+                "Marks bearings correctly as clockwise angles from North",
+                "Identifies alternate angles between parallel North lines",
+                "Uses diagrams to set up triangle problems correctly"
+              ]
+            },
+            developing: {
+              quantitative: ["1 diagram correct with hints on North lines or angles"],
+              qualitative: [
+                "Understands concept but diagrams lack precision",
+                "Needs prompting for parallel North lines",
+                "Can identify angles once diagram structure is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect diagrams", "Requests solution early"],
+              qualitative: [
+                "Cannot draw North lines correctly or recognize parallelism",
+                "Does not mark bearings as clockwise from North",
+                "Does not recognize alternate angle relationships"
+              ]
+            }
+          },
           learningObjectives: [
             "Draw North lines at each location (parallel lines)",
             "Mark bearings correctly as clockwise angles from North",
@@ -574,6 +785,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["bearing-diagrams"],
           masterySignals: "Student solves 2-3 navigation problems combining bearings, distances, and trigonometry",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ navigation problems solved independently",
+                "Consistent application of bearings with trigonometry"
+              ],
+              qualitative: [
+                "Combines bearings with sine/cosine rules correctly",
+                "Calculates final positions after multiple bearing changes",
+                "Finds distances between positions accurately",
+                "Interprets results in navigation context (shortest distance, direction)"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on triangle setup or rule selection"],
+              qualitative: [
+                "Understands bearings but struggles with trigonometry integration",
+                "Needs prompting on which rule to use (Pythagoras, sine, cosine)",
+                "Can solve once triangle is set up"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect attempts", "Requests solution early"],
+              qualitative: [
+                "Cannot combine bearings with trigonometry",
+                "Does not recognize when paths form triangles",
+                "Cannot determine which formula applies to navigation context"
+              ]
+            }
+          },
           learningObjectives: [
             "Solve distance problems using bearings and trigonometry",
             "Calculate final position after multiple bearing changes",
@@ -603,11 +844,11 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
       ]
     },
 
-    learningObjectives: `Students will progress through 4 sections:
-1. Bearing Fundamentals (foundational) - Define bearings, 3-digit format, cardinal directions
-2. Back Bearings (intermediate) - Calculate reverse directions using ±180° rules
-3. Bearing Diagrams (intermediate) - Draw and interpret diagrams with North lines
-4. Navigation Calculations (advanced) - Solve multi-step navigation problems`,
+    learningObjectives: ["Students will progress through 4 sections:",
+                        "1. Bearing Fundamentals (foundational) - Define bearings, 3-digit format, cardinal directions",
+                        "2. Back Bearings (intermediate) - Calculate reverse directions using ±180° rules",
+                        "3. Bearing Diagrams (intermediate) - Draw and interpret diagrams with North lines",
+                        "4. Navigation Calculations (advanced) - Solve multi-step navigation problems"],
 
     keyFormulas: `• Bearings: 000° to 360°, measured clockwise from North
 • Cardinal directions: N=000°, E=090°, S=180°, W=270°
@@ -629,6 +870,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["s3-math-trigonometry-basic-ratios"],
           masterySignals: "Student identifies obtuse angles correctly and understands the angle range 90° < θ < 180° in 2-3 scenarios",
           estimatedQuestions: "2-3 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ obtuse angles identified correctly without hints",
+                "Consistent recognition of 90° < θ < 180° range"
+              ],
+              qualitative: [
+                "Correctly defines obtuse angles as between 90° and 180°",
+                "Understands obtuse angles cannot exist in right-angled triangles",
+                "Recognizes when trigonometry extends beyond 90°",
+                "Identifies obtuse angles in non-right triangles"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on angle range"],
+              qualitative: [
+                "Understands concept but uncertain about exact range",
+                "Needs prompting to distinguish obtuse from other angle types",
+                "Can identify once range is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect identifications", "Requests solution early"],
+              qualitative: [
+                "Confuses obtuse angles with acute or reflex angles",
+                "Does not understand 90° < θ < 180° range",
+                "Cannot recognize when angles are beyond right-angle scope"
+              ]
+            }
+          },
           learningObjectives: [
             "Define obtuse angles as angles between 90° and 180°",
             "Understand that obtuse angles cannot exist in right-angled triangles",
@@ -645,6 +916,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["obtuse-angle-definition"],
           masterySignals: "Student correctly applies 180° - θ relationships for all three trig functions in 3+ problems",
           estimatedQuestions: "4-5 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ correct applications of supplementary relationships",
+                "Consistent accuracy across sin, cos, and tan"
+              ],
+              qualitative: [
+                "Correctly applies sin(180° - θ) = sin θ",
+                "Correctly applies cos(180° - θ) = -cos θ",
+                "Correctly applies tan(180° - θ) = -tan θ",
+                "Explains why sine stays positive while cosine and tangent become negative"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on sign changes"],
+              qualitative: [
+                "Understands concept but uncertain about which functions change sign",
+                "Needs prompting for negative signs on cosine and tangent",
+                "Can apply once relationship is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect applications", "Requests solution early"],
+              qualitative: [
+                "Confuses which functions stay positive vs become negative",
+                "Does not understand supplementary angle concept",
+                "Cannot apply 180° - θ relationships correctly"
+              ]
+            }
+          },
           learningObjectives: [
             "Understand that 180° - θ is the supplementary angle",
             "Apply: sin(180° - θ) = sin θ (sine stays positive)",
@@ -666,6 +967,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["supplementary-relationships"],
           masterySignals: "Student correctly determines which trig ratios are positive/negative in different quadrants for 3+ angles",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ correct sign determinations across quadrants",
+                "Consistent application of ASTC rule"
+              ],
+              qualitative: [
+                "Recalls ASTC mnemonic (All Students Take Calculus)",
+                "Identifies quadrant I (0°-90°): all positive",
+                "Identifies quadrant II (90°-180°): only sine positive",
+                "Determines sign before calculating values"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on ASTC or quadrant"],
+              qualitative: [
+                "Partial recall of ASTC rule",
+                "Needs prompting for which quadrant angle is in",
+                "Can determine sign once quadrant is identified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect sign determinations", "Requests solution early"],
+              qualitative: [
+                "Cannot recall or apply ASTC rule",
+                "Confuses which functions are positive in each quadrant",
+                "Does not understand quadrant system"
+              ]
+            }
+          },
           learningObjectives: [
             "Understand the four quadrants (0°-90°, 90°-180°, 180°-270°, 270°-360°)",
             "Know that in first quadrant (0°-90°): all ratios are positive",
@@ -687,6 +1018,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["sign-patterns"],
           masterySignals: "Student solves 2-3 problems involving obtuse angles, correctly applying relationships and determining signs",
           estimatedQuestions: "4-5 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ obtuse angle problems solved correctly",
+                "Consistent application of relationships and sign rules"
+              ],
+              qualitative: [
+                "Calculates exact values using supplementary relationships",
+                "Solves equations recognizing obtuse vs acute solutions",
+                "Applies obtuse angles correctly in sine/cosine rule problems",
+                "Verifies which solution (acute or obtuse) makes sense in context"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on relationship or sign"],
+              qualitative: [
+                "Understands process but struggles with sign determination",
+                "Needs prompting to consider obtuse solution possibility",
+                "Can solve once approach is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect calculations", "Requests solution early"],
+              qualitative: [
+                "Cannot calculate obtuse angle values",
+                "Always selects acute solution, ignoring obtuse possibility",
+                "Does not apply supplementary relationships correctly"
+              ]
+            }
+          },
           learningObjectives: [
             "Calculate exact values: sin(120°), cos(150°), tan(135°) using relationships",
             "Solve equations like sin θ = 0.5 where θ is obtuse (θ = 150°, not 30°)",
@@ -705,11 +1066,11 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
       ]
     },
 
-    learningObjectives: `Students will progress through 4 sections:
-1. Obtuse Angle Definition (foundational) - Understand angles beyond 90°
-2. Supplementary Relationships (intermediate) - Master sin(180°-θ), cos(180°-θ), tan(180°-θ)
-3. Sign Patterns (intermediate) - Learn ASTC rule for quadrants
-4. Obtuse Calculations (advanced) - Solve problems with obtuse angles`,
+    learningObjectives: ["Students will progress through 4 sections:",
+                        "1. Obtuse Angle Definition (foundational) - Understand angles beyond 90°",
+                        "2. Supplementary Relationships (intermediate) - Master sin(180°-θ), cos(180°-θ), tan(180°-θ)",
+                        "3. Sign Patterns (intermediate) - Learn ASTC rule for quadrants",
+                        "4. Obtuse Calculations (advanced) - Solve problems with obtuse angles"],
 
     keyFormulas: `• Obtuse angles: 90° < θ < 180°
 • sin(180° - θ) = sin θ (positive in quadrant II)
@@ -731,6 +1092,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["s3-math-trigonometry-basic-ratios"],
           masterySignals: "Student explains why Area = ½ab sin C works and identifies the two sides and included angle in 3+ diagrams",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ correct identifications of sides and included angle",
+                "Consistent recognition across different triangle orientations"
+              ],
+              qualitative: [
+                "Explains why Area = ½ab sin C works (relates to height = b sin C)",
+                "Correctly identifies included angle between two given sides",
+                "Selects appropriate formula variation (½ab sin C, ½bc sin A, or ½ac sin B)",
+                "Understands formula works for ALL triangles, not just right-angled"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on included angle"],
+              qualitative: [
+                "Understands formula but struggles to identify included angle",
+                "Needs prompting for which sides and angle to use",
+                "Can apply once components are clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect identifications", "Requests solution early"],
+              qualitative: [
+                "Cannot identify included angle vs non-included angle",
+                "Does not understand why formula requires included angle",
+                "Confuses with other triangle area formulas"
+              ]
+            }
+          },
           learningObjectives: [
             "Understand that Area = ½ab sin C requires two sides and the included angle",
             "Recognize the included angle is the angle BETWEEN the two given sides",
@@ -752,6 +1143,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["area-formula-understanding"],
           masterySignals: "Student calculates areas correctly in 3+ problems with two sides and included angle given",
           estimatedQuestions: "4-5 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ area calculations correct without hints",
+                "Consistent accuracy across different triangle configurations"
+              ],
+              qualitative: [
+                "Identifies two sides and included angle from given information",
+                "Substitutes values correctly into Area = ½ab sin C",
+                "Calculates using calculator in degree mode correctly",
+                "Expresses answers with appropriate units (cm², m², etc.) and rounding"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on substitution or calculation"],
+              qualitative: [
+                "Understands formula but makes substitution errors",
+                "Needs prompting for calculator mode or unit conversion",
+                "Can complete once setup is verified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect calculations", "Requests solution early"],
+              qualitative: [
+                "Cannot substitute values correctly into formula",
+                "Calculator mode errors (radians vs degrees)",
+                "Does not include appropriate units or rounds incorrectly"
+              ]
+            }
+          },
           learningObjectives: [
             "Identify the two sides and included angle from given information",
             "Substitute values correctly into Area = ½ab sin C",
@@ -772,6 +1193,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["area-basic-calculations"],
           masterySignals: "Student solves 2-3 reverse problems, finding unknown angle or side when area is given",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ reverse problems solved correctly",
+                "Consistent rearrangement and calculation accuracy"
+              ],
+              qualitative: [
+                "Rearranges Area = ½ab sin C to find angle: sin C = 2×Area/(ab)",
+                "Uses inverse sine correctly: C = sin⁻¹(2×Area/(ab))",
+                "Rearranges to find unknown side when area and angle given",
+                "Considers whether acute or obtuse angle is appropriate in context"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on rearrangement or inverse function"],
+              qualitative: [
+                "Understands concept but struggles with algebraic rearrangement",
+                "Needs prompting for inverse sine application",
+                "Can solve once equation is set up"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect attempts", "Requests solution early"],
+              qualitative: [
+                "Cannot rearrange formula algebraically",
+                "Does not understand inverse trigonometric functions",
+                "Does not verify if answer makes sense (angle range, positive side length)"
+              ]
+            }
+          },
           learningObjectives: [
             "Rearrange Area = ½ab sin C to find angle C: sin C = 2×Area/(ab)",
             "Find angle using inverse sine: C = sin⁻¹(2×Area/(ab))",
@@ -793,6 +1244,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["area-basic-calculations"],
           masterySignals: "Student solves 2-3 contextual problems involving land, design, or construction where triangle area formula applies",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ real-world problems solved correctly",
+                "Consistent application to different contexts (land, design, construction)"
+              ],
+              qualitative: [
+                "Interprets word problems and identifies two sides and included angle",
+                "Applies Area = ½ab sin C to practical contexts correctly",
+                "Compares areas of different triangular regions when required",
+                "Expresses answers with appropriate precision, units, and context"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on problem interpretation"],
+              qualitative: [
+                "Understands formula but struggles to extract information from word problem",
+                "Needs prompting to identify which measurements correspond to sides/angle",
+                "Can solve once triangle setup is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect attempts", "Requests solution early"],
+              qualitative: [
+                "Cannot translate real-world context into triangle area problem",
+                "Does not recognize when to apply formula",
+                "Cannot extract relevant measurements from problem description"
+              ]
+            }
+          },
           learningObjectives: [
             "Apply area formula to land surveying problems",
             "Solve problems involving triangular plots, gardens, roofs",
@@ -809,11 +1290,11 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
       ]
     },
 
-    learningObjectives: `Students will progress through 4 sections:
-1. Area Formula Understanding (foundational) - Understand Area = ½ab sin C and why it works
-2. Basic Area Calculations (intermediate) - Calculate triangle areas given two sides and included angle
-3. Reverse Problems (advanced) - Find angles or sides when area is given
-4. Real-World Applications (advanced) - Apply to surveying, design, construction contexts`,
+    learningObjectives: ["Students will progress through 4 sections:",
+                        "1. Area Formula Understanding (foundational) - Understand Area = ½ab sin C and why it works",
+                        "2. Basic Area Calculations (intermediate) - Calculate triangle areas given two sides and included angle",
+                        "3. Reverse Problems (advanced) - Find angles or sides when area is given",
+                        "4. Real-World Applications (advanced) - Apply to surveying, design, construction contexts"],
 
     keyFormulas: `• Area = ½ab sin C (a, b are two sides; C is the included angle between them)
 • Area = ½bc sin A (alternate form using sides b, c and angle A)
@@ -835,6 +1316,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["s3-math-trigonometry-basic-ratios"],
           masterySignals: "Student observes that a/sin A = b/sin B = c/sin C through measurement or guided exploration in 2+ triangles",
           estimatedQuestions: "2-3 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ observations/verifications of sine rule pattern",
+                "Consistent recognition that side/sin(opposite angle) is constant"
+              ],
+              qualitative: [
+                "States the sine rule: a/sin A = b/sin B = c/sin C",
+                "Understands relationship between sides and opposite angles",
+                "Recognizes this works for ALL triangles, not just right-angled",
+                "Can state equivalent reciprocal form: sin A/a = sin B/b = sin C/c"
+              ]
+            },
+            developing: {
+              quantitative: ["1 verification with hints on pattern recognition"],
+              qualitative: [
+                "Observes pattern but struggles to articulate the rule",
+                "Needs prompting for opposite angle relationship",
+                "Can state rule once pattern is clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Cannot observe or verify pattern", "Requests solution early"],
+              qualitative: [
+                "Does not recognize relationship between sides and opposite angles",
+                "Cannot see pattern in side/sin ratios",
+                "Confuses with other triangle relationships"
+              ]
+            }
+          },
           learningObjectives: [
             "Understand that sine rule relates sides to their opposite angles",
             "Observe pattern: side/sin(opposite angle) gives same value for all three sides",
@@ -855,6 +1366,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["sine-rule-discovery"],
           masterySignals: "Student correctly identifies 3+ scenarios where sine rule should be used: AAS, ASA, SSA cases",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ scenarios correctly identified as sine rule cases",
+                "Consistent recognition of AAS, ASA, and SSA patterns"
+              ],
+              qualitative: [
+                "Recognizes AAS (two angles and a side) situations",
+                "Recognizes ASA (angle-side-angle) situations",
+                "Recognizes SSA (two sides and non-included angle) situations",
+                "Distinguishes when sine rule is appropriate vs when to use other methods"
+              ]
+            },
+            developing: {
+              quantitative: ["1 scenario identified with hints on pattern"],
+              qualitative: [
+                "Understands concept but struggles to identify cases from diagrams",
+                "Needs prompting for AAS vs ASA vs SSA distinction",
+                "Can proceed once case type is identified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect identifications", "Requests solution early"],
+              qualitative: [
+                "Cannot identify when sine rule applies",
+                "Confuses sine rule scenarios with cosine rule (SAS, SSS)",
+                "Does not understand AAS, ASA, SSA notation"
+              ]
+            }
+          },
           learningObjectives: [
             "Recognize AAS (two angles and a side) situations",
             "Recognize ASA (angle-side-angle) situations",
@@ -875,6 +1416,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["when-to-use-sine-rule"],
           masterySignals: "Student solves 3+ problems finding unknown sides using sine rule, with correct setup and calculation",
           estimatedQuestions: "4-5 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ sides found correctly using sine rule",
+                "Consistent accurate setup and rearrangement"
+              ],
+              qualitative: [
+                "Sets up proportion correctly: a/sin A = b/sin B",
+                "Rearranges to solve for unknown side: a = b × sin A / sin B",
+                "Substitutes values and calculates accurately",
+                "Expresses answers with appropriate units and precision"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on rearrangement or calculation"],
+              qualitative: [
+                "Sets up proportion correctly but struggles with algebra",
+                "Needs prompting for rearrangement steps",
+                "Calculator errors (degree mode) or precision issues"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect attempts", "Requests solution early"],
+              qualitative: [
+                "Cannot set up proportion correctly",
+                "Does not understand how to rearrange for unknown",
+                "Cannot determine which sides and angles to use"
+              ]
+            }
+          },
           learningObjectives: [
             "Set up proportion: a/sin A = b/sin B",
             "Rearrange to solve for unknown side: a = b × sin A / sin B",
@@ -895,6 +1466,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["sine-rule-find-sides"],
           masterySignals: "Student solves 2-3 problems finding angles, recognizing ambiguous case (SSA) when it occurs",
           estimatedQuestions: "4-5 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ angles found correctly using sine rule",
+                "Consistent recognition and handling of ambiguous case (SSA)"
+              ],
+              qualitative: [
+                "Sets up proportion and rearranges: sin A = a × sin B / b",
+                "Uses inverse sine correctly: A = sin⁻¹(a × sin B / b)",
+                "Recognizes ambiguous case: two possible angles (acute and obtuse)",
+                "Determines correct angle using angle sum (A + B + C = 180°) and context"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on ambiguous case or angle selection"],
+              qualitative: [
+                "Can find acute solution but forgets obtuse possibility",
+                "Needs prompting for inverse sine application or ambiguous case",
+                "Can verify solution once both angles are identified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect attempts", "Requests solution early"],
+              qualitative: [
+                "Cannot use inverse sine to find angle",
+                "Does not recognize ambiguous case exists",
+                "Cannot determine which angle is valid using angle sum"
+              ]
+            }
+          },
           learningObjectives: [
             "Set up proportion to find angle: sin A/a = sin B/b",
             "Rearrange: sin A = a × sin B / b",
@@ -917,6 +1518,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["sine-rule-find-angles"],
           masterySignals: "Student solves 2-3 real-world problems using sine rule in navigation, surveying, or design contexts",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ real-world problems solved using sine rule",
+                "Consistent application across different contexts (navigation, surveying, design)"
+              ],
+              qualitative: [
+                "Translates word problems into triangle setups correctly",
+                "Applies sine rule to navigation problems with bearings",
+                "Solves surveying problems (distances across rivers, heights)",
+                "Combines sine rule with other concepts (area, bearings) when needed"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on problem setup or context translation"],
+              qualitative: [
+                "Understands sine rule but struggles with word problem interpretation",
+                "Needs prompting to identify given angles and sides from context",
+                "Can solve once triangle is set up"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect attempts", "Requests solution early"],
+              qualitative: [
+                "Cannot translate real-world context into sine rule problem",
+                "Does not recognize when to apply sine rule in practical scenarios",
+                "Cannot extract relevant measurements from problem description"
+              ]
+            }
+          },
           learningObjectives: [
             "Apply sine rule to navigation problems with bearings",
             "Solve surveying problems (distances across rivers, heights)",
@@ -933,12 +1564,12 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
       ]
     },
 
-    learningObjectives: `Students will progress through 5 sections:
-1. Sine Rule Discovery (foundational) - Discover and state a/sin A = b/sin B = c/sin C
-2. When to Use (intermediate) - Identify AAS, ASA, SSA scenarios
-3. Finding Sides (intermediate) - Use sine rule to calculate unknown sides
-4. Finding Angles (advanced) - Calculate angles, handle ambiguous case
-5. Real-World Applications (advanced) - Apply to navigation, surveying, design`,
+    learningObjectives: ["Students will progress through 5 sections:",
+                        "1. Sine Rule Discovery (foundational) - Discover and state a/sin A = b/sin B = c/sin C",
+                        "2. When to Use (intermediate) - Identify AAS, ASA, SSA scenarios",
+                        "3. Finding Sides (intermediate) - Use sine rule to calculate unknown sides",
+                        "4. Finding Angles (advanced) - Calculate angles, handle ambiguous case",
+                        "5. Real-World Applications (advanced) - Apply to navigation, surveying, design"],
 
     keyFormulas: `• Sine Rule: a/sin A = b/sin B = c/sin C
 • Reciprocal form: sin A/a = sin B/b = sin C/c
@@ -961,6 +1592,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["s3-math-trigonometry-basic-ratios"],
           masterySignals: "Student states the cosine rule and recognizes it as generalization of Pythagoras in 2-3 scenarios",
           estimatedQuestions: "2-3 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ correct statements or applications of cosine rule concept",
+                "Consistent recognition of connection to Pythagoras"
+              ],
+              qualitative: [
+                "States the cosine rule: c² = a² + b² - 2ab cos C",
+                "Explains it generalizes Pythagoras (when C = 90°, cos 90° = 0)",
+                "Recognizes all three forms (for finding a, b, or c)",
+                "Identifies that angle C must be opposite side c"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on formula or Pythagoras connection"],
+              qualitative: [
+                "Can state formula but struggles to explain Pythagoras connection",
+                "Needs prompting for alternate forms of the rule",
+                "Partial understanding of opposite side-angle relationship"
+              ]
+            },
+            struggling: {
+              quantitative: ["Cannot state or apply cosine rule", "Requests solution early"],
+              qualitative: [
+                "Confuses cosine rule with sine rule or Pythagoras",
+                "Does not understand generalization concept",
+                "Cannot identify which angle corresponds to which side"
+              ]
+            }
+          },
           learningObjectives: [
             "State the cosine rule: c² = a² + b² - 2ab cos C",
             "Understand that it generalizes Pythagoras (when C = 90°, cos 90° = 0)",
@@ -983,6 +1644,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["cosine-rule-understanding"],
           masterySignals: "Student correctly identifies 3+ scenarios requiring cosine rule: SAS and SSS cases",
           estimatedQuestions: "3-4 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ scenarios correctly identified as cosine rule cases",
+                "Consistent recognition of SAS and SSS patterns"
+              ],
+              qualitative: [
+                "Recognizes SAS (two sides and included angle) → use to find third side",
+                "Recognizes SSS (three sides) → use to find any angle",
+                "Distinguishes when to use cosine rule vs sine rule",
+                "Identifies which form of cosine rule based on unknown"
+              ]
+            },
+            developing: {
+              quantitative: ["1 scenario identified with hints on pattern"],
+              qualitative: [
+                "Understands concept but struggles to identify SAS vs SSS from diagrams",
+                "Needs prompting to distinguish from sine rule scenarios",
+                "Can proceed once case type is identified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect identifications", "Requests solution early"],
+              qualitative: [
+                "Cannot identify when cosine rule applies",
+                "Confuses cosine rule scenarios with sine rule (AAS, ASA, SSA)",
+                "Does not understand SAS, SSS notation"
+              ]
+            }
+          },
           learningObjectives: [
             "Recognize SAS (two sides and included angle) situations → use to find third side",
             "Recognize SSS (three sides) situations → use to find any angle",
@@ -1004,6 +1695,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["when-to-use-cosine-rule"],
           masterySignals: "Student solves 3+ SAS problems, correctly substituting into c² = a² + b² - 2ab cos C",
           estimatedQuestions: "4-5 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ sides found correctly using cosine rule",
+                "Consistent accurate substitution and calculation"
+              ],
+              qualitative: [
+                "Identifies two given sides and included angle correctly",
+                "Substitutes correctly into c² = a² + b² - 2ab cos C",
+                "Calculates with correct order of operations",
+                "Takes square root correctly to find final side length"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on substitution or calculation order"],
+              qualitative: [
+                "Understands formula but makes substitution or order of operations errors",
+                "Needs prompting for square root step or calculator mode",
+                "Can complete once calculation steps are clarified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect calculations", "Requests solution early"],
+              qualitative: [
+                "Cannot substitute values correctly into formula",
+                "Does not follow order of operations (squares, multiplication, then subtraction)",
+                "Forgets to take square root or makes calculator errors"
+              ]
+            }
+          },
           learningObjectives: [
             "Identify the two given sides (a and b) and included angle (C)",
             "Substitute correctly into c² = a² + b² - 2ab cos C",
@@ -1026,6 +1747,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["cosine-rule-find-sides"],
           masterySignals: "Student solves 3+ SSS problems, correctly rearranging and using cos⁻¹",
           estimatedQuestions: "4-5 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ angles found correctly using cosine rule",
+                "Consistent accurate rearrangement and inverse cosine application"
+              ],
+              qualitative: [
+                "Rearranges correctly: cos C = (a² + b² - c²)/(2ab)",
+                "Substitutes three known sides correctly",
+                "Calculates cosine value (recognizes negative → obtuse)",
+                "Uses inverse cosine correctly: C = cos⁻¹((a² + b² - c²)/(2ab))"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on rearrangement or inverse function"],
+              qualitative: [
+                "Understands concept but struggles with algebraic rearrangement",
+                "Needs prompting for inverse cosine application",
+                "Can complete once equation is set up"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect attempts", "Requests solution early"],
+              qualitative: [
+                "Cannot rearrange formula algebraically to isolate cos C",
+                "Does not understand inverse cosine function",
+                "Does not recognize negative cosine indicates obtuse angle"
+              ]
+            }
+          },
           learningObjectives: [
             "Rearrange c² = a² + b² - 2ab cos C to find angle: cos C = (a² + b² - c²)/(2ab)",
             "Substitute three known sides correctly",
@@ -1049,6 +1800,36 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
           prerequisites: ["cosine-rule-find-angles", "s3-math-trigonometry-sine-rule"],
           masterySignals: "Student correctly chooses appropriate rule (sine or cosine) in 3+ mixed problems",
           estimatedQuestions: "4-5 questions",
+          masteryRubric: {
+            mastery: {
+              quantitative: [
+                "2+ mixed problems solved with correct rule selection",
+                "Consistent identification of when to use sine vs cosine rule"
+              ],
+              qualitative: [
+                "Analyzes given information (sides and angles) systematically",
+                "Chooses sine rule for: AAS, ASA, SSA",
+                "Chooses cosine rule for: SAS, SSS",
+                "Solves multi-step problems combining both rules when needed"
+              ]
+            },
+            developing: {
+              quantitative: ["1 correct with hints on rule selection"],
+              qualitative: [
+                "Understands both rules but uncertain which applies to given scenario",
+                "Needs prompting to analyze what information is given",
+                "Can solve once correct rule is identified"
+              ]
+            },
+            struggling: {
+              quantitative: ["Multiple incorrect rule selections", "Requests solution early"],
+              qualitative: [
+                "Cannot determine which rule applies to problem",
+                "Does not analyze given information systematically",
+                "Confuses AAS/ASA/SSA with SAS/SSS patterns"
+              ]
+            }
+          },
           learningObjectives: [
             "Analyze given information (sides and angles)",
             "Choose sine rule for: AAS, ASA, SSA",
@@ -1068,12 +1849,12 @@ export const S3_MATH_TRIGONOMETRY_SUBTOPICS = {
       ]
     },
 
-    learningObjectives: `Students will progress through 5 sections:
-1. Cosine Rule Understanding (foundational) - State c² = a² + b² - 2ab cos C, see Pythagoras connection
-2. When to Use (intermediate) - Identify SAS and SSS scenarios
-3. Finding Sides (intermediate) - Calculate unknown sides from SAS
-4. Finding Angles (advanced) - Calculate angles from SSS using rearranged form
-5. Choosing Sine or Cosine (advanced) - Decide which rule to apply in mixed problems`,
+    learningObjectives: ["Students will progress through 5 sections:",
+                        "1. Cosine Rule Understanding (foundational) - State c² = a² + b² - 2ab cos C, see Pythagoras connection",
+                        "2. When to Use (intermediate) - Identify SAS and SSS scenarios",
+                        "3. Finding Sides (intermediate) - Calculate unknown sides from SAS",
+                        "4. Finding Angles (advanced) - Calculate angles from SSS using rearranged form",
+                        "5. Choosing Sine or Cosine (advanced) - Decide which rule to apply in mixed problems"],
 
     keyFormulas: `• Cosine Rule: c² = a² + b² - 2ab cos C
 • Alternate forms: a² = b² + c² - 2bc cos A, b² = a² + c² - 2ac cos B

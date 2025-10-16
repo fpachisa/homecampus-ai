@@ -7,16 +7,15 @@ import {
   PromptLibrary,
   PromptBuilder,
   FORMATTING_RULES,
-  INTERACTION_PROTOCOL,
   EVALUATOR_BASE,
   EVALUATOR_DECISION_MATRIX,
-  HINT_PROGRESSION,
+  HINT_TEMPLATES,
   TUTOR_BASE,
   QUESTION_BASE,
   SOLUTION_BASE
 } from '../prompt-library';
 
-
+import { formatConversationHistory } from '../services/utils/responseParser';
 import { getFilteredTools } from '../components/math-tools/mathToolsRegistry';
 
 // Import topic configurations
@@ -24,6 +23,7 @@ import { getFilteredTools } from '../components/math-tools/mathToolsRegistry';
 import { S3_MATH_TRIGONOMETRY, S3_MATH_TRIGONOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import { S3_MATH_CIRCLE_GEOMETRY, S3_MATH_CIRCLE_GEOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import { S3_MATH_QUADRATIC_EQUATIONS, S3_MATH_QUADRATIC_EQUATIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
+import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS, EXPONENTIAL_LOGARITHMS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
 
 // OLD: Still in legacy format (to be migrated)
 // None remaining!
@@ -37,6 +37,10 @@ export interface PromptContext {
   sectionProgress?: any;
   currentSection?: string;
   masteredSections?: string[];
+
+  // Section-specific fields
+  sectionId?: string;
+  sectionMessages?: any[];
 
   // Evaluator specific
   currentProblemId?: string;
@@ -111,6 +115,36 @@ export class NewPromptResolver {
   }
 
   /**
+   * Get next section detail for transitions
+   * Returns null if no next section exists
+   */
+  private getNextSectionDetail(context: PromptContext, subtopic: any): any {
+    if (!context.currentSection || !subtopic.progressionStructure?.sections) {
+      return null;
+    }
+
+    const sections = subtopic.progressionStructure.sections;
+    const currentIndex = sections.findIndex((s: any) => s.id === context.currentSection);
+
+    if (currentIndex === -1 || currentIndex >= sections.length - 1) {
+      return null;  // No next section
+    }
+
+    const nextSection = sections[currentIndex + 1];
+    const position = `${currentIndex + 2} of ${sections.length}`;
+
+    return {
+      id: nextSection.id,
+      title: nextSection.title,
+      position,
+      difficulty: nextSection.difficulty,
+      objectives: nextSection.learningObjectives,
+      formulas: nextSection.relevantFormulas || [],
+      prerequisites: nextSection.prerequisites || []
+    };
+  }
+
+  /**
    * Get section-scoped math tools
    * Filters tools from centralized registry to only include tools available in the current section
    */
@@ -165,6 +199,11 @@ export class NewPromptResolver {
       return { subtopic, global: S3_MATH_QUADRATIC_EQUATIONS_CONFIG };
     }
 
+    if (topicId.startsWith('s3-math-exponential-logarithms-')) {
+      const subtopic = S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as any];
+      return { subtopic, global: EXPONENTIAL_LOGARITHMS_CONFIG };
+    }
+
     throw new Error(`Topic ${topicId} not found`);
   }
 
@@ -217,7 +256,7 @@ export class NewPromptResolver {
           },
 
           display: {
-            content: "string | null - markdown/LaTeX content",
+            content: "string - first introductory problem text",
             showAfterSpeech: "boolean",
             type: "initial_problem"
           },
@@ -235,11 +274,13 @@ export class NewPromptResolver {
   }
 
   /**
-   * Resolve evaluator agent prompt (Three-Tier Context Architecture)
+   * Resolve evaluator agent prompt (Simplified Architecture)
    *
-   * TIER 1: Topic Overview - provides "big picture" progression context
-   * TIER 2: Current Section Detail - detailed rubric and objectives for THIS section only
-   * TIER 3: Future Sections - excluded to reduce token usage
+   * Evaluator focuses ONLY on:
+   * - Assessing current response
+   * - Deciding next action (using decision matrix)
+   * - Determining section progression (using mastery rubric)
+   * - Providing detailed reasoning for other agents
    */
   resolveEvaluatorAgent(context: PromptContext): string {
     const { subtopic } = this.getTopicConfig(context.topicId);
@@ -249,22 +290,13 @@ export class NewPromptResolver {
       // Base role and responsibilities
       .addRole(EVALUATOR_BASE.role)
       .addSection('RESPONSIBILITIES', EVALUATOR_BASE.responsibilities)
-      .addSection('CAPABILITIES', EVALUATOR_BASE.capabilities)
-      .addSection('CONSTRAINTS', EVALUATOR_BASE.constraints)
 
-      // Decision-making rules
+      // Decision-making rules (CRITICAL - keep these)
       .addSection('DECISION MATRIX', EVALUATOR_DECISION_MATRIX)
-      .addSection('HINT PROGRESSION STRATEGY', HINT_PROGRESSION)
 
-      // TIER 1: Topic Overview (always included for progression context)
-      .addSection('TOPIC OVERVIEW', {
-        name: subtopic.displayName,
-        learningObjectives: subtopic.learningObjectives  // High-level 6-section summary
-      })
-
-      // TIER 2: Current Section Detail (full context for THIS section only)
+      // Current section detail ONLY (minimal context)
       .addIf(!!currentSectionDetail, (b) => {
-        b.addSection('CURRENT SECTION (DETAILED)', {
+        b.addSection('CURRENT SECTION', {
           title: currentSectionDetail.title,
           position: currentSectionDetail.position,
           difficulty: currentSectionDetail.difficulty,
@@ -274,14 +306,9 @@ export class NewPromptResolver {
         });
       })
 
-      // Interaction protocol
-      .addSection('INSTRUCTION SCHEMAS', INTERACTION_PROTOCOL.instructionSchemas)
-      .addSection('EVALUATOR OUTPUT SCHEMA', INTERACTION_PROTOCOL.evaluatorOutputs)
-
       // Current problem context
       .addSection('CURRENT PROBLEM', {
         problem: context.currentProblemText || 'N/A',
-        problemId: context.currentProblemId || 'unknown',
         studentResponse: context.studentResponse || 'No response yet'
       })
 
@@ -289,8 +316,6 @@ export class NewPromptResolver {
       .addSection('QUANTITATIVE DATA', {
         hintsGiven: context.hintsGiven || 0,
         studentAttempts: context.studentAttempts || 0,
-        currentSection: context.currentSection || 'Not set',
-        masteredSections: context.masteredSections?.join(', ') || 'None yet',
         sectionStats: context.sectionStats || 'No stats available'
       })
 
@@ -306,75 +331,181 @@ export class NewPromptResolver {
         b.addSection('ORIGINAL VISUAL TOOL (GROUND TRUTH)', context.originalMathTool);
       })
 
-      .addTask("Evaluate the student's response against the mastery rubric. Use topic overview for progression context. Assess both quantitative (from data) and qualitative (from response analysis) criteria. Return ONLY a JSON object with the evaluator output schema.");
+      .addTask(`Evaluate the student's response against the question asked.
+Determine if the answer is correct and if it answers the main question or is just an intermediate step or answer to a tutor hint.
+Use the DECISION MATRIX to select the appropriate action.
+Use QUANTITATIVE DATA and masteryRubic of the CURRECT SECTION to determine if section is mastered.
+Provide detailed reasoning that other agents can use to generate appropriate content.
 
+Return ONLY a JSON object matching the output schema below.`)
+
+      .addSection('OUTPUT SCHEMA', {
+        answerCorrect: "boolean - true only if final answer is correct",
+        understanding: "mastery | developing | struggling - understanding level based on masteryRubric",
+        conceptGaps: "string[] - specific concepts student needs to work on",
+        sectionMastered: "boolean - true if understanding is mastery",
+        advanceToNextSection: "boolean - true if sectionMastered is true",
+        action: "GIVE_HINT | GIVE_SOLUTION | NEW_PROBLEM | CELEBRATE - next action",
+        hintLevel: "1 | 2 | 3 (optional) - hint level if action is GIVE_HINT",
+        reasoning: "string - detailed explanation for other agents (plain text, NO LaTeX)"
+      });
     return builder.build();
   }
 
   /**
-   * Resolve tutor agent prompt
+   * Resolve tutor agent prompt (Minimized - Reasoning-Focused)
+   *
+   * Tutor Agent focuses ONLY on:
+   * - Generating Socratic hints based on evaluator's assessment
+   * - Celebrating achievements
+   * - Using evaluator's reasoning to craft targeted guidance
    */
   resolveTutorAgent(context: PromptContext): string {
     const { subtopic, global } = this.getTopicConfig(context.topicId);
     const scopedMathTools = this.getScopedMathTools(context, subtopic, global);
+    const currentSectionDetail = this.getCurrentSectionDetail(context, subtopic);
 
     const builder = new PromptBuilder()
       .addRole(TUTOR_BASE.role)
       .addSection('RESPONSIBILITIES', TUTOR_BASE.responsibilities)
       .addSection('CONSTRAINTS', TUTOR_BASE.constraints)
 
-      .addSection('TEACHING PHILOSOPHY', global.TUTOR_ROLE || '')
       .addFormattingRules(FORMATTING_RULES)
-      .addOutputSchema(TUTOR_BASE.outputSchema!)
       .addVisualTools(scopedMathTools)
 
-      .addSection('INSTRUCTION FROM EVALUATOR', context.tutorInstruction || {})
-      .addSection("EVALUATOR'S ASSESSMENT", context.evaluatorAssessment || {})
-      .addSection("EVALUATOR'S REASONING", context.evaluatorReasoning || '')
+      // Current problem (was missing!)
+      .addSection('PROBLEM TO SOLVE', context.currentProblemText || 'No problem available')
 
+      // Section formulas (was missing!)
+      .addIf(!!currentSectionDetail?.formulas, (b) => {
+        b.addSection('RELEVANT FORMULAS', currentSectionDetail.formulas);
+      })
+
+      // Evaluator's assessment and reasoning (primary guidance)
+      .addSection("EVALUATOR'S ACTION", context.evaluatorInstruction?.action || 'GIVE_HINT')
+      .addSection("EVALUATOR'S ASSESSMENT", context.evaluatorAssessment || 'No assessment provided')
+      .addSection("EVALUATOR'S REASONING", context.evaluatorReasoning || 'No reasoning provided')
+      .addSection('HINT TEMPLATE', HINT_TEMPLATES)
+
+      // Current context
       .addSection('CURRENT CONTEXT', {
         studentResponse: context.studentResponse || '',
-        recentHistory: context.recentHistory || '',
         hintLevel: context.hintLevel || 1,
         answerCorrect: context.answerCorrect || false
       })
 
-      .addTask("Execute the tutorInstruction to generate an appropriate Socratic hint or celebration. Return a properly formatted JSON response.");
+      // Recent history
+      .addSection('RECENT HISTORY', context.recentHistory || '')
+      .addOutputSchema(TUTOR_BASE.outputSchema!)
+
+      .addTask(`Generate an appropriate Socratic hint or celebration based on evaluator's reasoning.
+
+For GIVE_HINT action:
+  - Use evaluator's reasoning to understand what student missed
+  - Craft a progressive hint (level ${context.hintLevel || 1}) based on the HINT TEMPLATE
+  - Guide discovery, don't give the answer directly
+
+For CELEBRATE action:
+  - Celebrate the achievement warmly
+  - Reference their progress from evaluator's assessment
+
+CRITICAL: Return JSON only and in the exact format as OUTPUT SCHEMA`);
 
     return builder.build();
   }
 
   /**
-   * Resolve question agent prompt
+   * Resolve question agent prompt (Enhanced - Curriculum-Aware)
+   *
+   * Question Agent is now the curriculum expert, handling:
+   * - Problem generation for current section
+   * - Section transitions when evaluator signals advancement
+   * - Problem variation to avoid repetition
    */
   resolveQuestionGeneration(context: PromptContext): string {
     const { subtopic, global } = this.getTopicConfig(context.topicId);
     const scopedMathTools = this.getScopedMathTools(context, subtopic, global);
+    const currentSectionDetail = this.getCurrentSectionDetail(context, subtopic);
+    const nextSectionDetail = this.getNextSectionDetail(context, subtopic);
 
     const builder = new PromptBuilder()
       .addRole(QUESTION_BASE.role)
       .addSection('RESPONSIBILITIES', QUESTION_BASE.responsibilities)
       .addSection('CONSTRAINTS', QUESTION_BASE.constraints)
 
+      // FULL CURRICULUM CONTEXT (for transition awareness)
+      .addSection('SUBTOPIC OVERVIEW', {
+        name: subtopic.displayName,
+        learningObjectives: subtopic.learningObjectives  // All sections summary
+      })
+
+      // Current section detail (full context)
+      .addIf(!!currentSectionDetail, (b) => {
+        b.addSection('CURRENT SECTION', {
+          title: currentSectionDetail.title,
+          position: currentSectionDetail.position,
+          difficulty: currentSectionDetail.difficulty,
+          objectives: currentSectionDetail.objectives,
+          formulas: currentSectionDetail.formulas
+        });
+      })
+
+      // Next section detail (for smooth transitions, if applicable)
+      .addIf(!!nextSectionDetail, (b) => {
+        b.addSection('NEXT SECTION (FOR TRANSITIONS)', {
+          title: nextSectionDetail.title,
+          position: nextSectionDetail.position,
+          difficulty: nextSectionDetail.difficulty,
+          objectives: nextSectionDetail.objectives,
+          formulas: nextSectionDetail.formulas
+        });
+      })
+
       .addFormattingRules(FORMATTING_RULES)
       .addOutputSchema(QUESTION_BASE.outputSchema!)
       .addVisualTools(scopedMathTools)
 
-      .addSection('INSTRUCTION FROM EVALUATOR', context.questionInstruction || {})
+      // Evaluator's decision and reasoning
+      .addSection("EVALUATOR'S ACTION", context.evaluatorInstruction?.action || 'NEW_PROBLEM')
       .addSection("EVALUATOR'S REASONING", context.evaluatorReasoning || '')
-      .addSection('RECENT HISTORY', context.recentHistory || '')
+      .addSection("ADVANCE TO NEXT SECTION", context.evaluatorInstruction?.advanceToNextSection || false) 
 
-      .addTask("Execute the questionInstruction to generate a new problem. Return JSON only.");
+      // Recent history and problems for variation
+      .addSection('RECENT HISTORY', context.recentHistory || '')
+      .addIf(!!context.recentProblems, (b) => {
+        b.addSection('RECENT PROBLEMS', context.recentProblems);
+      })
+
+      .addTask(`Generate an appropriate problem based on evaluator's decision. 
+
+Rule: Ensure the problem only has one part unless the second part is using the answer from the first part.
+
+If ADVANCE TO NEXT SECTION is true:
+  - Generate an introductory problem for the NEXT SECTION
+  - Acknowledge the transition in your speech
+  - Start with easier objectives from next section
+
+Otherwise:
+  - Generate a problem for the CURRENT SECTION
+  - Match the difficulty and objectives of current section
+
+Return JSON only.`);
 
     return builder.build();
   }
 
   /**
-   * Resolve solution agent prompt
+   * Resolve solution agent prompt (Minimized - Reasoning-Focused)
+   *
+   * Solution Agent focuses ONLY on:
+   * - Providing step-by-step solution walkthrough
+   * - Explaining the "why" not just the "what"
+   * - Addressing struggle points from evaluator's reasoning
    */
   resolveSolutionAgent(context: PromptContext): string {
     const { subtopic, global } = this.getTopicConfig(context.topicId);
     const scopedMathTools = this.getScopedMathTools(context, subtopic, global);
+    const currentSectionDetail = this.getCurrentSectionDetail(context, subtopic);
 
     const builder = new PromptBuilder()
       .addRole(SOLUTION_BASE.role)
@@ -385,10 +516,31 @@ export class NewPromptResolver {
       .addOutputSchema(SOLUTION_BASE.outputSchema!)
       .addVisualTools(scopedMathTools)
 
-      .addSection('INSTRUCTION FROM EVALUATOR', context.solutionInstruction || {})
-      .addSection("EVALUATOR'S REASONING", context.evaluatorReasoning || '')
+      // Current problem
+      .addSection('PROBLEM TO SOLVE', context.currentProblemText || '')
 
-      .addTask("Execute the solutionInstruction to generate a complete educational solution. Return JSON only.");
+      // Section formulas (for explanation reference)
+      .addIf(!!currentSectionDetail?.formulas, (b) => {
+        b.addSection('RELEVANT FORMULAS', currentSectionDetail.formulas);
+      })
+
+      // Evaluator's reasoning (what student struggled with)
+      .addSection("EVALUATOR'S REASONING", context.evaluatorReasoning || '')
+      .addSection("EVALUATOR'S ASSESSMENT", context.evaluatorAssessment)
+
+      // Recent history
+      .addSection('RECENT HISTORY', context.recentHistory || '')
+
+      .addTask(`Provide a complete step-by-step solution to the problem.
+
+Focus on:
+  - Breaking down the solution into clear steps
+  - Explaining WHY each step is necessary
+  - Addressing the struggle points from evaluator's reasoning
+  - Using relevant formulas from the section
+  - Making the solution educational, not just mechanical
+
+Return JSON only.`);
 
     return builder.build();
   }
@@ -530,14 +682,206 @@ export class NewPromptResolver {
   }
 
   /**
-   * Bridge methods for compatibility
+   * Resolve section start question
+   * Called when student jumps to a new section
    */
-  resolveSectionStartQuestion(context: any): string {
-    return this.resolveInitialGreetingWithProblem(context);
+  resolveSectionStartQuestion(context: PromptContext): string {
+    const { subtopic, global } = this.getTopicConfig(context.topicId);
+
+    // Use sectionId if provided, otherwise fall back to currentSection
+    const targetSectionId = context.sectionId || context.currentSection;
+
+    if (!targetSectionId) {
+      throw new Error('sectionId or currentSection must be provided for section start question');
+    }
+
+    // Find the target section details
+    const sections = subtopic.progressionStructure?.sections || [];
+    const targetSection = sections.find((s: any) => s.id === targetSectionId);
+
+    if (!targetSection) {
+      throw new Error(`Section ${targetSectionId} not found in topic ${context.topicId}`);
+    }
+
+    const targetIndex = sections.indexOf(targetSection);
+    const position = `${targetIndex + 1} of ${sections.length}`;
+
+    // Scope tools to target section
+    const contextWithTargetSection = {
+      ...context,
+      currentSection: targetSectionId
+    };
+    const scopedMathTools = this.getScopedMathTools(contextWithTargetSection, subtopic, global);
+
+    // Build prompt using PromptBuilder
+    const builder = this.promptLibrary.createBuilder()
+      .addRole(global.TUTOR_ROLE || "You are a Socratic mathematics tutor")
+      .addContext({
+        topic: subtopic.displayName,
+        topicName: subtopic.topicName
+      })
+
+      .addSection('TARGET SECTION (Student Jumped To)', {
+        id: targetSection.id,
+        title: targetSection.title,
+        position: position,
+        difficulty: targetSection.difficulty,
+        focusObjectives: targetSection.focusObjectives || targetSection.learningObjectives,
+        objectives: targetSection.learningObjectives,
+        formulas: targetSection.relevantFormulas || []
+      })
+
+      .addFormattingRules(FORMATTING_RULES)
+      .addVisualTools(scopedMathTools)
+
+      .addTask(`The student has jumped to a new section: "${targetSection.title}".
+
+Your task:
+1. Generate a brief transition message acknowledging this section change
+2. Immediately present a question from THIS specific section to assess their understanding
+
+Question guidance:
+- Focus on section: ${targetSection.id}
+- Test the objectives from THIS section only
+- Match the section's difficulty level: ${targetSection.difficulty}
+- Use visuals if helpful (scoped to this section)
+- Start with foundational concepts from this section`)
+
+      .addOutputSchema({
+        speech: {
+          text: "string - Brief transition message (plain text for TTS)",
+          emotion: "encouraging"
+        },
+        display: {
+          content: "string - First question from target section (can use markdown and LaTeX)",
+          showAfterSpeech: "boolean",
+          type: "question"
+        },
+        mathTool: {
+          toolName: "string - technical key from available tools (OPTIONAL)",
+          parameters: "object - tool parameters (OPTIONAL)",
+          caption: "string - explanation (OPTIONAL)"
+        }
+      })
+
+      .addSection('CRITICAL', 'Return ONLY valid JSON. speech.text must be PLAIN TEXT (no markdown, no LaTeX). display.content CAN use markdown and LaTeX.');
+
+    return builder.build();
   }
 
-  resolveSectionResume(context: any): string {
-    return this.resolveInitialGreetingWithProblem(context);
+  /**
+   * Resolve section resume
+   * Called when student returns to an unfinished section
+   */
+  resolveSectionResume(context: PromptContext): string {
+    const { subtopic, global } = this.getTopicConfig(context.topicId);
+
+    // Use sectionId if provided, otherwise fall back to currentSection
+    const targetSectionId = context.sectionId || context.currentSection;
+
+    if (!targetSectionId) {
+      throw new Error('sectionId or currentSection must be provided for section resume');
+    }
+
+    // Find the target section details
+    const sections = subtopic.progressionStructure?.sections || [];
+    const targetSection = sections.find((s: any) => s.id === targetSectionId);
+
+    if (!targetSection) {
+      throw new Error(`Section ${targetSectionId} not found in topic ${context.topicId}`);
+    }
+
+    const targetIndex = sections.indexOf(targetSection);
+    const position = `${targetIndex + 1} of ${sections.length}`;
+
+    // Format recent conversation from this section
+    const conversationContext = context.sectionMessages
+      ? formatConversationHistory(context.sectionMessages)
+      : 'No previous conversation in this section';
+
+    // Format section stats if available
+    const sectionStats = context.sectionStats || {
+      questionsAttempted: 0,
+      questionsCorrect: 0,
+      hintsUsed: 0,
+      enteredAt: Date.now(),
+      masteredAt: null
+    };
+
+    // Scope tools to target section
+    const contextWithTargetSection = {
+      ...context,
+      currentSection: targetSectionId
+    };
+    const scopedMathTools = this.getScopedMathTools(contextWithTargetSection, subtopic, global);
+
+    // Build prompt using PromptBuilder
+    const builder = this.promptLibrary.createBuilder()
+      .addRole(global.TUTOR_ROLE || "You are a Socratic mathematics tutor")
+      .addContext({
+        topic: subtopic.displayName,
+        topicName: subtopic.topicName
+      })
+
+      .addSection('SECTION BEING RESUMED', {
+        id: targetSection.id,
+        title: targetSection.title,
+        position: position,
+        difficulty: targetSection.difficulty,
+        focusObjectives: targetSection.focusObjectives || targetSection.learningObjectives,
+        objectives: targetSection.learningObjectives,
+        formulas: targetSection.relevantFormulas || []
+      })
+
+      .addSection('SECTION PROGRESS SO FAR', {
+        questionsAttempted: sectionStats.questionsAttempted || 0,
+        questionsCorrect: sectionStats.questionsCorrect || 0,
+        hintsUsed: sectionStats.hintsUsed || 0,
+        startedAt: sectionStats.enteredAt ? new Date(sectionStats.enteredAt).toLocaleString() : 'Unknown',
+        status: sectionStats.masteredAt ? 'Mastered' : 'In Progress'
+      })
+
+      .addSection('RECENT CONVERSATION IN THIS SECTION', conversationContext)
+
+      .addFormattingRules(FORMATTING_RULES)
+      .addVisualTools(scopedMathTools)
+
+      .addTask(`The student is returning to this section after working on something else.
+
+Your task:
+1. Welcome them back to this section warmly
+2. Briefly summarize what was covered (based on recent conversation) - keep it to 1-2 sentences max
+3. Identify where they left off
+4. Either repeat the last unanswered question OR provide a relevant follow-up question
+
+Resume guidance:
+- Be warm and welcoming (e.g., "Welcome back to ${targetSection.title}!")
+- Keep summary brief and encouraging
+- Focus on section: ${targetSection.id}
+- Continue testing objectives from this section
+- Match difficulty level: ${targetSection.difficulty}
+- Use visuals if helpful`)
+
+      .addOutputSchema({
+        speech: {
+          text: "string - Welcome back message with brief summary (plain text for TTS)",
+          emotion: "encouraging"
+        },
+        display: {
+          content: "string - Question to continue with (can use markdown and LaTeX)",
+          showAfterSpeech: "boolean",
+          type: "question"
+        },
+        mathTool: {
+          toolName: "string - technical key from available tools (OPTIONAL)",
+          parameters: "object - tool parameters (OPTIONAL)",
+          caption: "string - explanation (OPTIONAL)"
+        }
+      })
+
+      .addSection('CRITICAL', 'Return ONLY valid JSON. speech.text must be PLAIN TEXT (no markdown, no LaTeX). display.content CAN use markdown and LaTeX.');
+
+    return builder.build();
   }
 }
 
