@@ -14,6 +14,16 @@ import { S3_MATH_QUADRATIC_EQUATIONS } from '../../prompt-library/subjects/mathe
 import type { QuadraticEquationsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
 import type { ExponentialLogarithmsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
+import { S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
+import type { SetsVennDiagramsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
+import { S3_MATH_EXPONENTS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-exponents';
+import type { ExponentsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-exponents';
+import { S3_MATH_SURDS_RADICALS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
+import type { SurdsRadicalsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
+import { S3_MATH_STATISTICS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-statistics';
+import type { StatisticsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-statistics';
+import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
+import type { RelationsFunctionsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -73,6 +83,47 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('using-logarithms')) return '🔧';
   if (topicId.includes('logarithms-other-bases')) return '🔠';
 
+  // S3 Sets & Venn Diagrams icons
+  if (topicId.includes('sets-fundamentals')) return '📦';
+  if (topicId.includes('sets-complement')) return '🔄';
+  if (topicId.includes('sets-intersection-union')) return '🔗';
+  if (topicId.includes('sets-special-number-sets')) return '🔢';
+  if (topicId.includes('sets-interval-notation')) return '📏';
+  if (topicId.includes('sets-venn-diagrams')) return '⭕';
+  if (topicId.includes('sets-venn-regions')) return '🎯';
+  if (topicId.includes('sets-numbers-in-regions')) return '🔢';
+  if (topicId.includes('sets-problem-solving')) return '🧩';
+
+  // S3 Exponents icons
+  if (topicId.includes('exponents-laws')) return '⚡';
+  if (topicId.includes('exponents-rational')) return '√';
+  if (topicId.includes('exponents-standard-form')) return '🔬';
+
+  // S3 Surds & Radicals icons
+  if (topicId.includes('surds-fundamentals')) return '√';
+  if (topicId.includes('surds-simplifying')) return '🔍';
+  if (topicId.includes('surds-addition-subtraction')) return '➕';
+  if (topicId.includes('surds-multiplication-division')) return '✖️';
+  if (topicId.includes('surds-rationalizing')) return '🔄';
+  if (topicId.includes('surds-mixed-operations')) return '🧮';
+
+  // S3 Statistics icons
+  if (topicId.includes('statistics-data-types')) return '📊';
+  if (topicId.includes('statistics-distributions')) return '📉';
+  if (topicId.includes('statistics-centre')) return '📍';
+  if (topicId.includes('statistics-boxplots')) return '📦';
+  if (topicId.includes('statistics-cumulative')) return '📈';
+  if (topicId.includes('statistics-deviation')) return '📏';
+  if (topicId.includes('statistics-normal')) return '🔔';
+
+  // S3 Relations & Functions icons
+  if (topicId.includes('relations-functions-fundamentals')) return '🔗';
+  if (topicId.includes('function-notation')) return '📝';
+  if (topicId.includes('domain-range')) return '📊';
+  if (topicId.includes('sign-diagrams')) return '📉';
+  if (topicId.includes('transformations')) return '🔄';
+  if (topicId.includes('absolute-value')) return '📏';
+
   return '📐';
 }
 
@@ -82,6 +133,11 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's3-math-circle-geometry') return 'Circle Geometry';
   if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
   if (category === 's3-math-exponential-logarithms') return 'Exponential & Logarithms';
+  if (category === 's3-math-sets-venn-diagrams') return 'Sets & Venn Diagrams';
+  if (category === 's3-math-exponents') return 'Exponents';
+  if (category === 's3-math-surds-radicals') return 'Surds & Radicals';
+  if (category === 's3-math-statistics') return 'Statistics';
+  if (category === 's3-math-relations-functions') return 'Relations & Functions';
   return category;
 }
 
@@ -129,6 +185,46 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (appState.selectedCategory === 's3-math-exponential-logarithms') {
       return Object.entries(S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's3-math-sets-venn-diagrams') {
+      return Object.entries(S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's3-math-exponents') {
+      return Object.entries(S3_MATH_EXPONENTS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's3-math-surds-radicals') {
+      return Object.entries(S3_MATH_SURDS_RADICALS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's3-math-statistics') {
+      return Object.entries(S3_MATH_STATISTICS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's3-math-relations-functions') {
+      return Object.entries(S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
@@ -241,6 +337,10 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
       topicConfig = S3_MATH_QUADRATIC_EQUATIONS[topicId as QuadraticEquationsTopicId];
     } else if (appState.selectedCategory === 's3-math-exponential-logarithms') {
       topicConfig = S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as ExponentialLogarithmsTopicId];
+    } else if (appState.selectedCategory === 's3-math-sets-venn-diagrams') {
+      topicConfig = S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS[topicId as SetsVennDiagramsTopicId];
+    } else if (appState.selectedCategory === 's3-math-exponents') {
+      topicConfig = S3_MATH_EXPONENTS_SUBTOPICS[topicId as ExponentsTopicId];
     }
 
     const sections = (topicConfig as any)?.progressionStructure?.sections || [];
@@ -303,7 +403,9 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
                appState.selectedCategory === 's3-math-trigonometry' ? '📐' :
                appState.selectedCategory === 's3-math-circle-geometry' ? '⭕' :
                appState.selectedCategory === 's3-math-quadratic-equations' ? '📈' :
-               appState.selectedCategory === 's3-math-exponential-logarithms' ? '📊' : '📈'}
+               appState.selectedCategory === 's3-math-exponential-logarithms' ? '📊' :
+               appState.selectedCategory === 's3-math-sets-venn-diagrams' ? '⭕' :
+               appState.selectedCategory === 's3-math-exponents' ? '⚡' : '📈'}
             </div>
             <div>
               <h2 className="font-semibold text-sm" style={{ color: theme.colors.textPrimary }}>

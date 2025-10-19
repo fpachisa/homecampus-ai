@@ -21,6 +21,16 @@ import { S3_MATH_QUADRATIC_EQUATIONS } from '../prompt-library/subjects/mathemat
 import type { QuadraticEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
 import type { ExponentialLogarithmsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
+import { S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
+import type { SetsVennDiagramsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
+import { S3_MATH_EXPONENTS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-exponents';
+import type { ExponentsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-exponents';
+import { S3_MATH_SURDS_RADICALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
+import type { SurdsRadicalsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
+import { S3_MATH_STATISTICS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
+import type { StatisticsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
+import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
+import type { RelationsFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -50,8 +60,50 @@ const getTopicConfig = (topicId: string) => {
   if (topicId.startsWith('s3-math-exponential-logarithms-')) {
     return S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as ExponentialLogarithmsTopicId];
   }
+  // Check if it's an S3 sets & Venn diagrams topic
+  if (topicId.startsWith('s3-math-sets-')) {
+    return S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS[topicId as SetsVennDiagramsTopicId];
+  }
+  // Check if it's an S3 exponents topic
+  if (topicId.startsWith('s3-math-exponents-')) {
+    return S3_MATH_EXPONENTS_SUBTOPICS[topicId as ExponentsTopicId];
+  }
+  // Check if it's an S3 surds & radicals topic
+  if (topicId.startsWith('s3-math-surds-')) {
+    return S3_MATH_SURDS_RADICALS_SUBTOPICS[topicId as SurdsRadicalsTopicId];
+  }
+  // Check if it's an S3 statistics topic
+  if (topicId.startsWith('s3-math-statistics-')) {
+    return S3_MATH_STATISTICS_SUBTOPICS[topicId as StatisticsTopicId];
+  }
+  // Check if it's an S3 relations-functions topic
+  if (topicId.startsWith('s3-math-relations-')) {
+    return S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS[topicId as RelationsFunctionsTopicId];
+  }
   // Return undefined for unknown topics
   return undefined;
+};
+
+/**
+ * Validates and sanitizes mathTool object from AI responses
+ * Returns validated mathTool or undefined if invalid
+ */
+const validateMathTool = (mathTool: any): import('../types/types').MathTool | undefined => {
+  if (!mathTool) return undefined;
+
+  // Check for old nested format
+  if ('structure' in mathTool || 'description' in mathTool) {
+    console.error('Invalid mathTool format: nested structure not allowed');
+    return undefined;
+  }
+
+  // Validate required fields
+  if (!mathTool.toolName || typeof mathTool.toolName !== 'string' || !mathTool.parameters) {
+    console.warn('Invalid or empty mathTool object, filtering it out:', mathTool);
+    return undefined;
+  }
+
+  return mathTool;
 };
 
 const ChatInterface: React.FC<ChatInterfaceProps> = ({
@@ -320,13 +372,14 @@ const scrollToBottom = () => {
 
       // Speak the celebration/transition, then show the problem
       const emotion = questionResponse.speech.emotion || 'celebratory';
+      const validatedMathTool = validateMathTool(questionResponse.mathTool);
       speakText(questionResponse.speech.text, emotion, () => {
         // After speech, show the problem
         addMessage('tutor', questionResponse.display.content, {
           problemType: pendingNewProblem.problemType,
-          mathTool: questionResponse.mathTool // Include mathTool if present
+          mathTool: validatedMathTool // Include mathTool if present and valid
         });
-        resetProblemState(questionResponse.display.content, pendingNewProblem.problemType, questionResponse.mathTool);
+        resetProblemState(questionResponse.display.content, pendingNewProblem.problemType, validatedMathTool);
         setState(prev => ({
           ...prev,
           sessionStats: {
@@ -446,6 +499,7 @@ const initializeConversation = async () => {
       }
 
       // Speak the greeting via avatar (no chat message, just subtitle)
+      const validatedMathTool = validateMathTool(response.mathTool);
       speakText(response.speech.text, response.speech.emotion, () => {
         // Check again before updating state
         if (currentTopicRef.current !== initTopicId) return;
@@ -453,11 +507,11 @@ const initializeConversation = async () => {
         // After greeting is spoken, show the first problem
         addMessage('tutor', response.display.content, {
           problemType: 1,
-          mathTool: response.mathTool // Include optional mathTool if AI provided it
+          mathTool: validatedMathTool // Include optional mathTool if valid
         });
 
         // Initialize problem state for the first problem
-        resetProblemState(response.display.content, 1, response.mathTool);
+        resetProblemState(response.display.content, 1, validatedMathTool);
 
         setState(prev => ({
           ...prev,
@@ -563,14 +617,15 @@ const initializeConversation = async () => {
 
         // Speak the resume/summary
         const emotion = resumeResponse.speech.emotion || 'encouraging';
+        const validatedMathTool = validateMathTool(resumeResponse.mathTool);
         speakText(resumeResponse.speech.text, emotion, () => {
           // After speech, show the question
           // IMPORTANT: Pass explicit sectionId to avoid race condition with state update
           addMessage('tutor', resumeResponse.display.content, {
             problemType: 1,
-            mathTool: resumeResponse.mathTool
+            mathTool: validatedMathTool
           }, undefined, sectionId);  // Explicit sectionId
-          resetProblemState(resumeResponse.display.content, 1, resumeResponse.mathTool);
+          resetProblemState(resumeResponse.display.content, 1, validatedMathTool);
         });
 
       } catch (error) {
@@ -611,14 +666,15 @@ const initializeConversation = async () => {
 
       // Speak the greeting/transition
       const emotion = response.speech.emotion || 'encouraging';
+      const validatedMathTool = validateMathTool(response.mathTool);
       speakText(response.speech.text, emotion, () => {
         // After speech, show the problem
         // IMPORTANT: Pass explicit sectionId to avoid race condition with state update
         addMessage('tutor', response.display.content, {
           problemType: 1, // Start with basic problem type for new section
-          mathTool: response.mathTool
+          mathTool: validatedMathTool
         }, undefined, sectionId);  // Explicit sectionId
-        resetProblemState(response.display.content, 1, response.mathTool);
+        resetProblemState(response.display.content, 1, validatedMathTool);
       });
 
     } catch (error) {
@@ -912,13 +968,14 @@ const handleStudentSubmit = async (input: string) => {
 
           // Speak the celebration, then show the problem
           const emotion = questionResponse.speech.emotion || 'celebratory';
+          const validatedMathTool = validateMathTool(questionResponse.mathTool);
           speakText(questionResponse.speech.text, emotion, () => {
             // After speech, show the problem
             addMessage('tutor', questionResponse.display.content, {
               problemType: problemTypeForExecution,
-              mathTool: questionResponse.mathTool // Include mathTool if present
+              mathTool: validatedMathTool // Include mathTool if present and valid
             });
-            resetProblemState(questionResponse.display.content, problemTypeForExecution, questionResponse.mathTool);
+            resetProblemState(questionResponse.display.content, problemTypeForExecution, validatedMathTool);
             setState(prev => ({
               ...prev,
               sessionStats: {
@@ -957,18 +1014,8 @@ const handleStudentSubmit = async (input: string) => {
 
         console.log('Tutor response:', tutorResponse);
 
-        // Extract mathTool if present - must be flat format with toolName, parameters, caption
-        const mathTool = tutorResponse.mathTool;
-        if (mathTool) {
-          // Fail fast if using old nested format
-          if ('structure' in mathTool || 'description' in mathTool) {
-            throw new Error('Invalid mathTool format: Do not use wrapper fields like "structure" or "description". Use flat format: {toolName, parameters, caption}');
-          }
-          // Validate required fields
-          if (!mathTool.toolName || !mathTool.parameters) {
-            throw new Error(`Invalid mathTool: missing required fields. Got: ${JSON.stringify(mathTool)}`);
-          }
-        }
+        // Extract and validate mathTool if present
+        const mathTool = validateMathTool(tutorResponse.mathTool);
 
         // STEP 5a: Speak the response via avatar
         if (tutorResponse.speech && tutorResponse.speech.text) {
@@ -1023,11 +1070,12 @@ const handleStudentSubmit = async (input: string) => {
           // Speak the intro speech, then show the solution
           const speechText = structuredVisualizationData.speech?.text || "Let me show you how to solve this.";
           const emotion = structuredVisualizationData.speech?.emotion || 'supportive';
+          const validatedMathTool = validateMathTool(structuredVisualizationData.mathTool);
           speakText(speechText, emotion, () => {
             // Display the solution text with optional mathTool
             addMessage('tutor', tutorResponse, {
               problemType: problemTypeForExecution,
-              mathTool: structuredVisualizationData.mathTool
+              mathTool: validatedMathTool
             }, { isPlainTextSolution: true }); // Mark as solution to show Continue button
           });
         }
@@ -1069,6 +1117,21 @@ const handleStudentSubmit = async (input: string) => {
     if (topicId.startsWith('s3-math-exponential-logarithms-')) {
       return 'Master exponential functions and logarithms!';
     }
+    if (topicId.startsWith('s3-math-sets-')) {
+      return 'Master sets and Venn diagrams!';
+    }
+    if (topicId.startsWith('s3-math-exponents-')) {
+      return 'Master exponents and powers!';
+    }
+    if (topicId.startsWith('s3-math-surds-')) {
+      return 'Master surds and radicals!';
+    }
+    if (topicId.startsWith('s3-math-statistics-')) {
+      return 'Master statistics and data analysis!';
+    }
+    if (topicId.startsWith('s3-math-relations-')) {
+      return 'Master functions and transformations!';
+    }
     return 'Master mathematics step by step!';
   };
 
@@ -1088,6 +1151,21 @@ const handleStudentSubmit = async (input: string) => {
     }
     if (topicId.startsWith('s3-math-exponential-logarithms-')) {
       return '📊';
+    }
+    if (topicId.startsWith('s3-math-sets-')) {
+      return '🔄';
+    }
+    if (topicId.startsWith('s3-math-exponents-')) {
+      return '⚡';
+    }
+    if (topicId.startsWith('s3-math-surds-')) {
+      return '√';
+    }
+    if (topicId.startsWith('s3-math-statistics-')) {
+      return '📊';
+    }
+    if (topicId.startsWith('s3-math-relations-')) {
+      return '🔗';
     }
     return '📚';
   };
@@ -1335,7 +1413,7 @@ const handleStudentSubmit = async (input: string) => {
       </div>
 
       {/* Input Area */}
-      <InputArea ref={inputAreaRef} onSubmit={handleStudentSubmit} disabled={isLoading} />
+      <InputArea ref={inputAreaRef} onSubmit={handleStudentSubmit} disabled={isLoading} topicId={topicId} />
       </div>
     </>
   );

@@ -1,0 +1,276 @@
+# Sets and Venn Diagrams - Unified Practice Path
+# Organized into Foundation → Core Operations → Application layers
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+  # ═══════════════════════════════════════════════════════════
+  # FOUNDATION LAYER : Basic Set Concepts
+  # ═══════════════════════════════════════════════════════════
+  - id: sets-node-1
+    nodeNumber: 1
+    title: Set Notation and Membership
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide a set definition and ask students to identify elements using ∈ and ∉ notation, or count elements using n(A) notation."
+      contexts: []
+      difficulty: easy
+      mathTool: "setVisualizer"
+
+  - id: sets-node-2
+    nodeNumber: 2
+    title: Finite vs Infinite Sets
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Present different sets and ask students to classify them as finite or infinite, and find n(A) for finite sets."
+      contexts: []
+      difficulty: easy
+      mathTool: "setVisualizer"
+
+  - id: sets-node-3
+    nodeNumber: 3
+    title: Subsets and Equal Sets
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide two sets and ask if one is a subset of another using ⊆ notation, or determine if sets are equal."
+      contexts: []
+      difficulty: easy
+      mathTool: "vennDiagram"
+
+  - id: sets-node-4
+    nodeNumber: 4
+    title: Universal Set and Complements
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Given a universal set U and set A, ask students to find the complement A' or use n(A') = n(U) - n(A)."
+      contexts: []
+      difficulty: easy
+      mathTool: "vennDiagram"
+
+  # ═══════════════════════════════════════════════════════════
+  # CORE OPERATIONS : Intersection, Union, and Number Sets
+  # ═══════════════════════════════════════════════════════════
+  - id: sets-node-5
+    nodeNumber: 5
+    title: Intersection of Sets
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide two sets A and B, ask students to find A ∩ B (elements in BOTH sets) or identify disjoint sets."
+      contexts: []
+      difficulty: easy
+      mathTool: "vennDiagram"
+
+  - id: sets-node-6
+    nodeNumber: 6
+    title: Union of Sets
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide two sets A and B, ask students to find A ∪ B (elements in EITHER set) and apply cardinality formula."
+      contexts: []
+      difficulty: easy
+      mathTool: "vennDiagram"
+
+  - id: sets-node-7
+    nodeNumber: 7
+    title: Combined Set Operations
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Problems involving combined operations like (A ∪ B)', (A ∩ B)', A ∩ B', A ∪ B' requiring correct operation order."
+      contexts: []
+      difficulty: easy
+      mathTool: "vennDiagram"
+
+  - id: sets-node-8
+    nodeNumber: 8
+    title: Special Number Sets
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Problems using special number sets: ℕ (natural), ℤ (integers), ℤ⁺, ℤ⁻, ℚ (rational), ℚ' (irrational), ℝ (real)."
+      contexts: []
+      difficulty: easy
+      mathTool: "numberLine"
+
+  - id: sets-node-9
+    nodeNumber: 9
+    title: Interval Notation
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Read and write intervals using [a, b], (a, b), [a, b), (a, b] notation, and convert between notations."
+      contexts: []
+      difficulty: easy
+      mathTool: "numberLine"
+
+  # ═══════════════════════════════════════════════════════════
+  # APPLICATION LAYER : Venn Diagrams and Problem Solving
+  # ═══════════════════════════════════════════════════════════
+  - id: sets-node-10
+    nodeNumber: 10
+    title: Drawing Venn Diagrams
+    layer: examPractice
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Given sets and their elements, ask students to place elements correctly in Venn diagram regions."
+      contexts: []
+      difficulty: medium
+      mathTool: "vennDiagram"
+
+  - id: sets-node-11
+    nodeNumber: 11
+    title: Shading Venn Diagram Regions
+    layer: examPractice
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Ask students to identify or shade regions representing A ∩ B, A ∪ B, A', (A ∪ B)', (A ∩ B)' on Venn diagrams."
+      contexts: []
+      difficulty: medium
+      mathTool: "vennDiagram"
+
+  - id: sets-node-12
+    nodeNumber: 12
+    title: Counting Elements in Venn Diagrams
+    layer: examPractice
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide a two-set Venn diagram with counts, ask to find 'A only', 'B only', 'both', or 'neither' using systematic filling."
+      contexts: []
+      difficulty: medium
+      mathTool: "vennDiagram"
+
+  - id: sets-node-13
+    nodeNumber: 13
+    title: Using Cardinality Formula
+    layer: examPractice
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Apply n(A ∪ B) = n(A) + n(B) - n(A ∩ B) to find unknowns when other values are given."
+      contexts: []
+      difficulty: medium
+      mathTool: "vennDiagram"
+
+  - id: sets-node-14
+    nodeNumber: 14
+    title: Set Identities and Laws
+    layer: examPractice
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Verify set identities using Venn diagrams or apply laws like De Morgan's: (A ∪ B)' = A' ∩ B', (A ∩ B)' = A' ∪ B'."
+      contexts: []
+      difficulty: medium
+      mathTool: "vennDiagram"
+
+  # ═══════════════════════════════════════════════════════════
+  # REAL-WORLD APPLICATIONS : Survey and Word Problems
+  # ═══════════════════════════════════════════════════════════
+  - id: sets-node-15
+    nodeNumber: 15
+    title: Two-Set Survey Problems
+    layer: application
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Real-world survey scenarios (sports, languages, preferences) requiring Venn diagrams to find 'how many both', 'exactly one', 'neither'."
+      contexts: ["surveys", "preferences", "activities"]
+      difficulty: hard
+      mathTool: "vennDiagram"
+
+  - id: sets-node-16
+    nodeNumber: 16
+    title: Finding Unknown Using Survey Data
+    layer: application
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Given partial survey information (total, one category count, neither), find the missing values using cardinality formula."
+      contexts: ["surveys", "classes", "clubs"]
+      difficulty: hard
+      mathTool: "vennDiagram"
+
+  - id: sets-node-17
+    nodeNumber: 17
+    title: Three-Set Venn Diagrams
+    layer: application
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Problems involving three overlapping sets (A, B, C) with 8 regions, requiring systematic filling from center outward."
+      contexts: ["surveys", "classifications"]
+      difficulty: hard
+      mathTool: "vennDiagram3"
+
+  - id: sets-node-18
+    nodeNumber: 18
+    title: Exactly One vs At Least One
+    layer: application
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Complex problems distinguishing 'exactly one' (exclusive regions), 'exactly two' (pairwise only), 'at least one' (union) in three-set scenarios."
+      contexts: ["surveys", "streaming services", "languages"]
+      difficulty: hard
+      mathTool: "vennDiagram3"
+
+  - id: sets-node-19
+    nodeNumber: 19
+    title: Mixed Problem Solving
+    layer: application
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Mix of complex problems requiring all concepts: set operations, complements, Venn diagrams, cardinality formulas, survey interpretation."
+      contexts: ["surveys", "classifications", "real-world scenarios"]
+      difficulty: hard
+      mathTool: "vennDiagram"
+
+  - id: sets-node-20
+    nodeNumber: 20
+    title: Advanced Applications
+    layer: application
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Advanced real-world problems combining multiple set concepts, requiring strategic problem-solving and verification of solutions."
+      contexts: ["business", "marketing", "demographics"]
+      difficulty: hard
+      mathTool: "vennDiagram3"

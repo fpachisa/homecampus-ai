@@ -5,13 +5,14 @@ import MathInputToolbar from './MathInputToolbar';
 interface Props {
   onSubmit: (input: string) => void;
   disabled: boolean;
+  topicId?: string;
 }
 
 export interface InputAreaHandle {
   focus: () => void;
 }
 
-const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled }, ref) => {
+const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topicId }, ref) => {
   const { theme } = useTheme();
   const [input, setInput] = useState('');
   const [showMathToolbar, setShowMathToolbar] = useState(false);
@@ -68,12 +69,12 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled }, re
         {/* Math Toolbar (collapsible) */}
         {showMathToolbar && (
           <div className="mb-3">
-            <MathInputToolbar onInsert={handleMathInsert} disabled={disabled} />
+            <MathInputToolbar onInsert={handleMathInsert} disabled={disabled} topicId={topicId} />
           </div>
         )}
 
         <div
-          className="flex items-end space-x-4 p-4 border backdrop-blur-sm"
+          className="flex items-center space-x-3 p-3 border backdrop-blur-sm"
           style={{
             background: theme.glass.background,
             borderColor: theme.glass.border,
@@ -82,50 +83,46 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled }, re
             backdropFilter: theme.glass.backdrop,
           }}
         >
-          <div className="flex-1 space-y-2">
-            {/* Math toolbar toggle button */}
-            <button
-              onClick={() => setShowMathToolbar(!showMathToolbar)}
-              disabled={disabled}
-              className="text-xs px-3 py-1.5 rounded-md transition-all duration-150 hover:scale-105 focus:outline-none"
-              style={{
-                backgroundColor: showMathToolbar ? theme.colors.brand : theme.colors.interactive,
-                color: showMathToolbar ? '#ffffff' : theme.colors.textPrimary,
-                cursor: disabled ? 'not-allowed' : 'pointer',
-              }}
-              title="Toggle math symbols toolbar"
-            >
-              {showMathToolbar ? '✕ Hide' : '∑ Math Symbols'}
-            </button>
+          {/* Math toolbar toggle button - inside input area */}
+          <button
+            onClick={() => setShowMathToolbar(!showMathToolbar)}
+            disabled={disabled}
+            className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-150 focus:outline-none"
+            style={{
+              backgroundColor: showMathToolbar ? theme.colors.brand : theme.colors.interactive,
+              color: showMathToolbar ? '#ffffff' : theme.colors.textPrimary,
+              cursor: disabled ? 'not-allowed' : 'pointer',
+            }}
+            onMouseEnter={(e) => {
+              if (!disabled) {
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+            title="Toggle math symbols"
+          >
+            <span className="text-lg">{showMathToolbar ? '✕' : '∑'}</span>
+          </button>
 
-            <input
-              ref={inputRef}
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={handleKeyPress}
-              disabled={disabled}
-              placeholder="Type your answer or ask for help..."
-              className="w-full px-4 py-3 border-2 rounded-xl text-sm focus:outline-none focus:ring-2 disabled:cursor-not-allowed transition-all duration-200"
-              style={{
-                backgroundColor: theme.colors.chat,
-                borderColor: theme.colors.border,
-                color: theme.colors.textPrimary,
-                ...(disabled && {
-                  backgroundColor: theme.colors.interactive,
-                  color: theme.colors.textMuted,
-                }),
-              }}
-              onFocus={(e) => {
-                e.target.style.borderColor = theme.colors.brand;
-                e.target.style.boxShadow = theme.shadows.focus;
-              }}
-              onBlur={(e) => {
-                e.target.style.borderColor = theme.colors.border;
-                e.target.style.boxShadow = 'none';
-              }}
-            />
-          </div>
+          {/* Input field */}
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyPress={handleKeyPress}
+            disabled={disabled}
+            placeholder="Type your answer or ask for help..."
+            className="flex-1 px-4 py-3 bg-transparent text-sm focus:outline-none disabled:cursor-not-allowed transition-all duration-200"
+            style={{
+              color: theme.colors.textPrimary,
+              ...(disabled && {
+                color: theme.colors.textMuted,
+              }),
+            }}
+          />
 
           <button
             onClick={handleSubmit}

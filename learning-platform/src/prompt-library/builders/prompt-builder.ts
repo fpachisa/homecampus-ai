@@ -87,7 +87,13 @@ export class PromptBuilder {
   /**
    * Add visual tools from math tools registry
    */
-  addVisualTools(toolNames: string[] | Record<string, any>): this {
+  addVisualTools(toolNames: string[] | Record<string, any> | string): this {
+    // Handle "NO tools available" string message
+    if (typeof toolNames === 'string') {
+      this.addComponent('visual_tools', 'AVAILABLE VISUAL TOOLS', toolNames);
+      return this;
+    }
+
     let tools: Record<string, any>;
 
     // If already filtered tools object, use directly

@@ -6,32 +6,16 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { ttsService } from '../services/ttsService';
 
+const SPEAKER_STORAGE_KEY = 'tts_speaker_preference';
+
 interface AudioQueueItem {
   text: string;
   emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
   onComplete?: () => void;
 }
 
-/**
- * Normalize text for TTS pronunciation
- * Handles acronyms and terms that need special pronunciation
- */
-function normalizeTextForTTS(text: string): string {
-  let normalized = text;
-
-  // Replace SOH-CAH-TOA with spaced letters for proper pronunciation
-  normalized = normalized.replace(/SOH-CAH-TOA/gi, 'S.O.H. C.A.H. T.O.A.');
-
-  // Replace individual acronyms when standalone
-  normalized = normalized.replace(/\bSOH\b/gi, 'S.O.H.');
-  normalized = normalized.replace(/\bCAH\b/gi, 'C.A.H.');
-  normalized = normalized.replace(/\bTOA\b/gi, 'T.O.A.');
-
-  // Add more replacements as needed for other math terms
-  // Example: normalized = normalized.replace(/\bLCM\b/g, 'L.C.M.');
-
-  return normalized;
-}
+// Note: Text normalization for pronunciation is now handled by the TTS providers internally
+// (CloudTTSProvider for Google Cloud TTS, GeminiTTSProvider for Gemini TTS)
 
 interface UseAudioManagerReturn {
   isPlaying: boolean;
@@ -78,23 +62,21 @@ export const useAudioManager = (): UseAudioManagerReturn => {
       }
 
       console.log('🔊 Speaking:', item.text);
+      console.log('🎭 Emotion:', item.emotion || 'neutral');
 
       // Set avatar to speaking state (but no subtitle yet - waiting for audio to start)
       setAvatarState('speaking');
       setIsPlaying(true);
 
-      // NOTE: Chirp 3 HD voices do not support SSML
-      // SSML is disabled for this voice - using plain text only
-      // Normalize text for better TTS pronunciation (e.g., SOH-CAH-TOA → S.O.H. C.A.H. T.O.A.)
-      const textToSpeak = normalizeTextForTTS(item.text);
+      // Get speaker preference from localStorage
+      const preferredSpeaker = localStorage.getItem(SPEAKER_STORAGE_KEY) || undefined;
 
-      console.log('🔊 Normalized text for TTS:', textToSpeak !== item.text ? `"${item.text}" → "${textToSpeak}"` : 'No changes');
-
-      // Synthesize speech (useSsml = false for Chirp 3 HD compatibility)
+      // Synthesize speech with emotion and speaker preference
+      // New TTS system uses emotion parameter for voice context control
       const audioBlob = await ttsService.synthesize(
-        textToSpeak,
-        { speakingRate: playbackSpeed },
-        false
+        item.text,
+        item.emotion || 'neutral',
+        preferredSpeaker
       );
 
       // Create audio
@@ -192,7 +174,9 @@ export const useAudioManager = (): UseAudioManagerReturn => {
     if (audioRef.current) {
       audioRef.current.playbackRate = speed;
     }
-    if (ttsService) {
+    // Note: setSpeakingRate is deprecated in favor of emotion-based voice control
+    // Only works with Cloud TTS provider
+    if (ttsService && ttsService.isAvailable()) {
       ttsService.setSpeakingRate(speed);
     }
   }, []);

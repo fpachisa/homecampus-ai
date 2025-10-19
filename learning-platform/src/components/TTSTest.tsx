@@ -1,20 +1,23 @@
 /**
  * TTS Test Component
- * Temporary component to test Google Cloud TTS integration
- * Can be removed after TTS is fully integrated
+ * Test new Gemini TTS with emotion-based voice control
  */
 
 import React, { useState } from 'react';
 import { ttsService } from '../services/ttsService';
+import type { EmotionType } from '../services/tts/TTSProvider';
+import { useSpeakerConfig } from '../hooks/useSpeakerConfig';
 
 const TTSTest: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [testText, setTestText] = useState("Hello! I'm your math tutor. Let's learn about fractions together!");
+  const [emotion, setEmotion] = useState<EmotionType>('neutral');
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const { currentSpeaker, availableSpeakers, setSpeaker } = useSpeakerConfig();
 
   const handleTest = async () => {
-    if (!ttsService) {
+    if (!ttsService || !ttsService.isAvailable()) {
       setError('TTS Service is not initialized. Check your API key.');
       return;
     }
@@ -23,10 +26,10 @@ const TTSTest: React.FC = () => {
     setError(null);
 
     try {
-      console.log('Testing TTS with text:', testText);
+      console.log('Testing TTS with:', { text: testText, emotion, speaker: currentSpeaker });
 
-      // Synthesize speech
-      const audioBlob = await ttsService.synthesize(testText);
+      // Synthesize speech with emotion and speaker
+      const audioBlob = await ttsService.synthesize(testText, emotion, currentSpeaker);
 
       // Create object URL for audio playback
       const url = URL.createObjectURL(audioBlob);
@@ -52,24 +55,28 @@ const TTSTest: React.FC = () => {
     }
   };
 
-  const testPhrases = [
-    "Hello! I'm your math tutor. Let's learn about fractions together!",
-    "Great job! You nailed it!",
-    "Let me give you a hint that might help.",
-    "Excellent work! You're really getting the hang of this!",
-    "Don't worry, let me show you how to solve this step by step."
+  const testPhrases: Array<{ text: string; emotion: EmotionType }> = [
+    { text: "Hello! I'm your math tutor. Let's learn about fractions together!", emotion: 'neutral' },
+    { text: "Great job! You nailed it!", emotion: 'celebratory' },
+    { text: "Let me give you a hint that might help.", emotion: 'supportive' },
+    { text: "Excellent work! You're really getting the hang of this!", emotion: 'celebratory' },
+    { text: "Don't worry, let me show you how to solve this step by step.", emotion: 'supportive' },
+    { text: "Keep trying! You're on the right track!", emotion: 'encouraging' }
   ];
 
   return (
     <div style={{
       padding: '40px',
-      maxWidth: '800px',
+      maxWidth: '900px',
       margin: '0 auto',
       fontFamily: 'system-ui, sans-serif'
     }}>
-      <h1>🔊 TTS Service Test</h1>
+      <h1>🔊 TTS Service Test - Gemini 2.5 Flash</h1>
+      <p style={{ color: '#666', marginBottom: '20px' }}>
+        Provider: <strong>{ttsService?.getProviderName() || 'None'}</strong>
+      </p>
 
-      {!ttsService && (
+      {!ttsService || !ttsService.isAvailable() ? (
         <div style={{
           padding: '20px',
           background: '#fee',
@@ -77,9 +84,54 @@ const TTSTest: React.FC = () => {
           borderRadius: '8px',
           marginBottom: '20px'
         }}>
-          ❌ TTS Service not initialized. Check VITE_GOOGLE_TTS_API_KEY in .env file.
+          ❌ TTS Service not initialized. Check VITE_GEMINI_API_KEY in .env file.
         </div>
-      )}
+      ) : null}
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+        <div>
+          <label style={{ display: 'block', marginBottom: '10px', fontWeight: 'bold' }}>
+            Emotion:
+          </label>
+          <select
+            value={emotion}
+            onChange={(e) => setEmotion(e.target.value as EmotionType)}
+            style={{
+              width: '100%',
+              padding: '10px',
+              fontSize: '16px',
+              borderRadius: '8px',
+              border: '1px solid #ddd'
+            }}
+          >
+            <option value="neutral">Neutral</option>
+            <option value="encouraging">Encouraging</option>
+            <option value="celebratory">Celebratory</option>
+            <option value="supportive">Supportive</option>
+          </select>
+        </div>
+
+        <div>
+          <label style={{ display: 'block', marginBottom: '10px', fontWeight: 'bold' }}>
+            Speaker:
+          </label>
+          <select
+            value={currentSpeaker}
+            onChange={(e) => setSpeaker(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '10px',
+              fontSize: '16px',
+              borderRadius: '8px',
+              border: '1px solid #ddd'
+            }}
+          >
+            {availableSpeakers.map((speaker) => (
+              <option key={speaker} value={speaker}>{speaker}</option>
+            ))}
+          </select>
+        </div>
+      </div>
 
       <div style={{ marginBottom: '20px' }}>
         <label style={{ display: 'block', marginBottom: '10px', fontWeight: 'bold' }}>
@@ -104,7 +156,10 @@ const TTSTest: React.FC = () => {
         {testPhrases.map((phrase, idx) => (
           <button
             key={idx}
-            onClick={() => setTestText(phrase)}
+            onClick={() => {
+              setTestText(phrase.text);
+              setEmotion(phrase.emotion);
+            }}
             style={{
               padding: '8px 12px',
               marginRight: '8px',
@@ -115,7 +170,7 @@ const TTSTest: React.FC = () => {
               cursor: 'pointer'
             }}
           >
-            Phrase {idx + 1}
+            {phrase.emotion} #{idx + 1}
           </button>
         ))}
       </div>
@@ -173,11 +228,16 @@ const TTSTest: React.FC = () => {
       }}>
         <h3>Configuration:</h3>
         <ul style={{ listStyle: 'none', padding: 0 }}>
-          <li>🎙️ <strong>Voice:</strong> en-US-Chirp3-HD-Sulafat</li>
-          <li>🔧 <strong>Format:</strong> MP3</li>
+          <li>🤖 <strong>Provider:</strong> {ttsService?.getProviderName() || 'None'}</li>
+          <li>🎙️ <strong>Speaker:</strong> {currentSpeaker}</li>
+          <li>🎭 <strong>Current Emotion:</strong> {emotion}</li>
+          <li>🔧 <strong>Format:</strong> WAV (Gemini) / MP3 (Cloud)</li>
           <li>⚡ <strong>Cache:</strong> 1 hour</li>
-          <li>📊 <strong>Speaking Rate:</strong> {ttsService?.getConfig().audioConfig.speakingRate || 1.0}x</li>
+          <li>🔄 <strong>Fallback:</strong> Enabled</li>
         </ul>
+        <p style={{ marginTop: '10px', fontSize: '14px', color: '#666' }}>
+          Available Speakers: {availableSpeakers.join(', ')}
+        </p>
       </div>
     </div>
   );

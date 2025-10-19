@@ -9,6 +9,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 import { X, BookOpen, Printer, Loader2 } from 'lucide-react';
 import { notesLoader } from '../services/notesLoader';
 import { configLoader } from '../services/configLoader';
+import NotesThemeWrapper from './NotesThemeWrapper';
 
 interface NotesViewerProps {
   subtopicId: string;
@@ -122,7 +123,9 @@ const NotesViewer: React.FC<NotesViewerProps> = ({ subtopicId, onClose }) => {
             }
           >
             <div className="max-w-5xl mx-auto px-4 py-8">
-              <NotesComponent />
+              <NotesThemeWrapper>
+                <NotesComponent />
+              </NotesThemeWrapper>
             </div>
           </Suspense>
         )}

@@ -1,187 +1,158 @@
 /**
- * Google Cloud Text-to-Speech Service
- * Uses REST API for client-side text-to-speech with Sulafat (Chirp 3 HD) voice
+ * TTS Service with Provider Pattern
+ * Supports multiple TTS providers: Gemini TTS (primary), Google Cloud TTS (fallback)
  */
 
-interface TTSConfig {
-  voice: {
-    languageCode: string;
-    name: string;
-  };
-  audioConfig: {
-    audioEncoding: string;
-    speakingRate: number;
-    pitch: number;
-    volumeGainDb: number;
-  };
-}
+import type { TTSProvider, TTSSynthesizeOptions, EmotionType } from './tts/TTSProvider';
+import { GeminiTTSProvider } from './tts/GeminiTTSProvider';
+import { CloudTTSProvider } from './tts/CloudTTSProvider';
 
-interface TTSResponse {
-  audioContent: string; // Base64 encoded audio
-}
+type TTSProviderType = 'gemini' | 'cloud';
 
-interface CachedAudio {
-  blob: Blob;
-  timestamp: number;
-}
-
+/**
+ * TTS Service with automatic fallback
+ * Uses Gemini TTS by default, falls back to Cloud TTS if unavailable
+ */
 class TTSService {
-  private apiKey: string;
-  private apiEndpoint = 'https://texttospeech.googleapis.com/v1/text:synthesize';
-  private cache: Map<string, CachedAudio> = new Map();
-  private cacheExpiry = 1000 * 60 * 60; // 1 hour cache
+  private primaryProvider: TTSProvider | null = null;
+  private fallbackProvider: TTSProvider | null = null;
+  private providerType: TTSProviderType;
 
-  // Sulafat voice configuration (Chirp 3 HD)
-  private config: TTSConfig = {
-    voice: {
-      languageCode: 'en-US',
-      name: 'en-US-Chirp3-HD-Sulafat'
-    },
-    audioConfig: {
-      audioEncoding: 'MP3',
-      speakingRate: 3.5,
-      pitch: 0.0,
-      volumeGainDb: 0.0
-    }
-  };
+  constructor(
+    providerType: TTSProviderType = 'gemini',
+    geminiApiKey?: string,
+    cloudApiKey?: string,
+    defaultSpeaker?: string
+  ) {
+    this.providerType = providerType;
 
-  constructor(apiKey: string) {
-    if (!apiKey) {
-      throw new Error('Google Cloud TTS API key is required');
+    // Initialize primary provider based on type
+    if (providerType === 'gemini' && geminiApiKey) {
+      try {
+        this.primaryProvider = new GeminiTTSProvider({
+          apiKey: geminiApiKey,
+          defaultSpeaker: defaultSpeaker || 'callirrhoe'
+        });
+        console.log('✅ Gemini TTS initialized as primary provider');
+      } catch (error) {
+        console.warn('⚠️ Failed to initialize Gemini TTS:', error);
+      }
     }
-    this.apiKey = apiKey;
+
+    if (providerType === 'cloud' && cloudApiKey) {
+      try {
+        this.primaryProvider = new CloudTTSProvider({
+          apiKey: cloudApiKey
+        });
+        console.log('✅ Cloud TTS initialized as primary provider');
+      } catch (error) {
+        console.warn('⚠️ Failed to initialize Cloud TTS:', error);
+      }
+    }
+
+    // Initialize fallback provider (opposite of primary)
+    if (providerType === 'gemini' && cloudApiKey) {
+      try {
+        this.fallbackProvider = new CloudTTSProvider({
+          apiKey: cloudApiKey
+        });
+        console.log('✅ Cloud TTS initialized as fallback provider');
+      } catch (error) {
+        console.warn('⚠️ Failed to initialize fallback Cloud TTS:', error);
+      }
+    }
+
+    if (providerType === 'cloud' && geminiApiKey) {
+      try {
+        this.fallbackProvider = new GeminiTTSProvider({
+          apiKey: geminiApiKey,
+          defaultSpeaker: defaultSpeaker || 'callirrhoe'
+        });
+        console.log('✅ Gemini TTS initialized as fallback provider');
+      } catch (error) {
+        console.warn('⚠️ Failed to initialize fallback Gemini TTS:', error);
+      }
+    }
+
+    if (!this.primaryProvider && !this.fallbackProvider) {
+      console.warn('⚠️ No TTS providers available. Voice features will be disabled.');
+    }
   }
 
   /**
-   * Convert text to speech
-   * @param text - The text to convert to speech (plain text or SSML)
-   * @param options - Optional configuration overrides
-   * @param useSsml - If true, treat text as SSML markup
+   * Synthesize speech with automatic fallback
+   * @param text - Text to speak
+   * @param emotion - Emotion/tone for the voice (used by Gemini TTS)
+   * @param speaker - Optional speaker override
    * @returns Audio blob ready for playback
    */
   async synthesize(
     text: string,
-    options?: Partial<TTSConfig['audioConfig']>,
-    useSsml: boolean = false
+    emotion: EmotionType = 'neutral',
+    speaker?: string
   ): Promise<Blob> {
-    // Normalize text for caching
-    const cacheKey = this.getCacheKey(text, options, useSsml);
+    // Ensure speaker name is lowercase (Gemini TTS requirement)
+    const normalizedSpeaker = speaker?.toLowerCase();
 
-    // Check cache first
-    const cached = this.getFromCache(cacheKey);
-    if (cached) {
-      console.log('🔊 TTS: Using cached audio for:', text.substring(0, 50));
-      return cached;
-    }
+    const options: TTSSynthesizeOptions = {
+      text,
+      emotion,
+      speaker: normalizedSpeaker
+    };
 
-    console.log('🔊 TTS: Synthesizing audio for:', text.substring(0, 50));
-
-    try {
-      // Prepare request payload
-      // Use 'ssml' field if SSML is enabled, otherwise use 'text'
-      const requestBody = {
-        input: useSsml ? { ssml: text } : { text },
-        voice: this.config.voice,
-        audioConfig: {
-          ...this.config.audioConfig,
-          ...options
-        }
-      };
-
-      // Call Google Cloud TTS API
-      const response = await fetch(`${this.apiEndpoint}?key=${this.apiKey}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestBody)
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(
-          `TTS API Error: ${response.status} ${response.statusText}. ${JSON.stringify(errorData)}`
-        );
+    // Try primary provider first
+    if (this.primaryProvider) {
+      try {
+        return await this.primaryProvider.synthesize(options);
+      } catch (error) {
+        console.error(`❌ ${this.primaryProvider.getProviderName()} failed:`, error);
+        console.log('🔄 Attempting fallback provider...');
       }
-
-      const data: TTSResponse = await response.json();
-
-      // Convert base64 audio to Blob
-      const audioBlob = this.base64ToBlob(data.audioContent, 'audio/mp3');
-
-      // Cache the result
-      this.addToCache(cacheKey, audioBlob);
-
-      console.log('✅ TTS: Audio synthesized successfully');
-      return audioBlob;
-
-    } catch (error) {
-      console.error('❌ TTS Error:', error);
-      throw new Error(`Failed to synthesize speech: ${error}`);
-    }
-  }
-
-  /**
-   * Convert base64 string to Blob
-   */
-  private base64ToBlob(base64: string, mimeType: string): Blob {
-    const byteCharacters = atob(base64);
-    const byteNumbers = new Array(byteCharacters.length);
-
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
     }
 
-    const byteArray = new Uint8Array(byteNumbers);
-    return new Blob([byteArray], { type: mimeType });
-  }
-
-  /**
-   * Generate cache key from text, options, and SSML flag
-   */
-  private getCacheKey(text: string, options?: Partial<TTSConfig['audioConfig']>, useSsml?: boolean): string {
-    const optionsKey = options ? JSON.stringify(options) : '';
-    const ssmlKey = useSsml ? '_ssml' : '';
-    return `${text.trim().toLowerCase()}_${optionsKey}${ssmlKey}`;
-  }
-
-  /**
-   * Get audio from cache if available and not expired
-   */
-  private getFromCache(key: string): Blob | null {
-    const cached = this.cache.get(key);
-
-    if (!cached) return null;
-
-    // Check if cache has expired
-    const isExpired = Date.now() - cached.timestamp > this.cacheExpiry;
-    if (isExpired) {
-      this.cache.delete(key);
-      return null;
+    // Fallback to secondary provider
+    if (this.fallbackProvider) {
+      try {
+        return await this.fallbackProvider.synthesize(options);
+      } catch (error) {
+        console.error(`❌ ${this.fallbackProvider.getProviderName()} failed:`, error);
+        throw new Error('All TTS providers failed');
+      }
     }
 
-    return cached.blob;
+    throw new Error('No TTS providers available');
   }
 
   /**
-   * Add audio to cache
+   * Get supported speakers from current provider
    */
-  private addToCache(key: string, blob: Blob): void {
-    this.cache.set(key, {
-      blob,
-      timestamp: Date.now()
-    });
+  getSupportedSpeakers(): string[] {
+    return this.primaryProvider?.getSupportedSpeakers() || [];
   }
 
   /**
-   * Pre-cache common phrases to reduce latency
-   * Call this during app initialization
+   * Get current provider name
    */
-  async preloadCommonPhrases(phrases: string[]): Promise<void> {
+  getProviderName(): string {
+    return this.primaryProvider?.getProviderName() || 'None';
+  }
+
+  /**
+   * Clear cache for all providers
+   */
+  clearCache(): void {
+    this.primaryProvider?.clearCache();
+    this.fallbackProvider?.clearCache();
+  }
+
+  /**
+   * Pre-cache common phrases
+   */
+  async preloadCommonPhrases(phrases: string[], emotion: EmotionType = 'neutral'): Promise<void> {
     console.log('🔊 TTS: Preloading common phrases...');
 
     const promises = phrases.map(phrase =>
-      this.synthesize(phrase).catch(err => {
+      this.synthesize(phrase, emotion).catch(err => {
         console.warn(`Failed to preload phrase: "${phrase}"`, err);
       })
     );
@@ -191,38 +162,39 @@ class TTSService {
   }
 
   /**
-   * Clear the cache
+   * Check if TTS is available
    */
-  clearCache(): void {
-    this.cache.clear();
-    console.log('🗑️ TTS: Cache cleared');
+  isAvailable(): boolean {
+    return this.primaryProvider !== null || this.fallbackProvider !== null;
   }
 
   /**
-   * Update speaking rate (0.25 to 4.0)
+   * Set speaking rate (Cloud TTS only)
+   * @deprecated Use emotion parameter instead for better voice control
    */
   setSpeakingRate(rate: number): void {
-    if (rate < 0.25 || rate > 4.0) {
-      throw new Error('Speaking rate must be between 0.25 and 4.0');
+    if (this.primaryProvider instanceof CloudTTSProvider) {
+      this.primaryProvider.setSpeakingRate(rate);
     }
-    this.config.audioConfig.speakingRate = rate;
-  }
-
-  /**
-   * Get current configuration
-   */
-  getConfig(): TTSConfig {
-    return { ...this.config };
+    if (this.fallbackProvider instanceof CloudTTSProvider) {
+      this.fallbackProvider.setSpeakingRate(rate);
+    }
   }
 }
 
-// Create and export singleton instance
-const apiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY;
+// Initialize TTS service based on environment configuration
+const providerType = (import.meta.env.VITE_TTS_PROVIDER || 'gemini') as TTSProviderType;
+const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const cloudApiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY;
+const defaultSpeaker = import.meta.env.VITE_TTS_SPEAKER || 'callirrhoe';
 
-if (!apiKey) {
-  console.warn('⚠️ Google Cloud TTS API key not found. Voice features will be disabled.');
-}
+console.log(`🔧 TTS Configuration: Provider=${providerType}, Speaker=${defaultSpeaker}`);
 
-export const ttsService = apiKey ? new TTSService(apiKey) : null;
+export const ttsService = new TTSService(
+  providerType,
+  geminiApiKey,
+  cloudApiKey,
+  defaultSpeaker
+);
 
 export default TTSService;

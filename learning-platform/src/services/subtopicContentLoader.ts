@@ -9,6 +9,11 @@ import { S3_MATH_TRIGONOMETRY_SUBTOPICS } from "../prompt-library/subjects/mathe
 import { S3_MATH_CIRCLE_GEOMETRY } from "../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import { S3_MATH_QUADRATIC_EQUATIONS } from "../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
+import { S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
+import { S3_MATH_EXPONENTS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-exponents';
+import { S3_MATH_SURDS_RADICALS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
+import { S3_MATH_STATISTICS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
+import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 
 export interface SubtopicContent {
   displayName: string;
@@ -31,6 +36,11 @@ class SubtopicContentLoader {
       ...S3_MATH_CIRCLE_GEOMETRY,
       ...S3_MATH_QUADRATIC_EQUATIONS,
       ...S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS,
+      ...S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS,
+      ...S3_MATH_EXPONENTS_SUBTOPICS,
+      ...S3_MATH_SURDS_RADICALS_SUBTOPICS,
+      ...S3_MATH_STATISTICS_SUBTOPICS,
+      ...S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS,
       // Future topics will be added here
     };
   }

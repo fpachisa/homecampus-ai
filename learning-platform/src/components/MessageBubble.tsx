@@ -195,7 +195,9 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
             )}
 
             {/* Math Tool rendering - using centralized MathToolRenderer */}
-            {isTutor && message.metadata?.mathTool && message.metadata.mathTool.toolName !== "none" && (
+            {isTutor && message.metadata?.mathTool &&
+             message.metadata.mathTool.toolName &&
+             message.metadata.mathTool.toolName !== "none" && (
               <div className="mt-4">
                 <MathToolRenderer
                   toolName={message.metadata.mathTool.toolName}

@@ -9,7 +9,7 @@ interface Topic {
   description: string;
   subtopicCount: number;
   isActive: boolean;
-  category?: 'fractions' | 's3-math-trigonometry' | 's3-math-circle-geometry' | 's3-math-quadratic-equations' | 's3-math-exponential-logarithms';
+  category?: 'fractions' | 's3-math-trigonometry' | 's3-math-circle-geometry' | 's3-math-quadratic-equations' | 's3-math-exponential-logarithms' | 's3-math-sets-venn-diagrams' | 's3-math-exponents' | 's3-math-surds-radicals' | 's3-math-statistics' | 's3-math-relations-functions';
   grade?: string;
   subject?: string;
 }
@@ -57,6 +57,61 @@ const topics: Topic[] = [
     subtopicCount: 9,
     isActive: true,
     category: 's3-math-exponential-logarithms',
+    grade: 'Secondary 3',
+    subject: 'Mathematics',
+  },
+  {
+    id: 's3-sets-venn-diagrams',
+    name: 'Sets & Venn Diagrams',
+    icon: '🔵',
+    description: 'Master set theory, operations, and problem solving with Venn diagrams',
+    subtopicCount: 9,
+    isActive: true,
+    category: 's3-math-sets-venn-diagrams',
+    grade: 'Secondary 3',
+    subject: 'Mathematics',
+  },
+  {
+    id: 's3-exponents',
+    name: 'Exponents',
+    icon: '⚡',
+    description: 'Master exponent laws, rational exponents, and scientific notation',
+    subtopicCount: 3,
+    isActive: true,
+    category: 's3-math-exponents',
+    grade: 'Secondary 3',
+    subject: 'Mathematics',
+  },
+  {
+    id: 's3-surds-radicals',
+    name: 'Surds & Radicals',
+    icon: '√',
+    description: 'Simplify surds, rationalize denominators, and master surd operations',
+    subtopicCount: 6,
+    isActive: true,
+    category: 's3-math-surds-radicals',
+    grade: 'Secondary 3',
+    subject: 'Mathematics',
+  },
+  {
+    id: 's3-relations-functions',
+    name: 'Relations & Functions',
+    icon: '🔗',
+    description: 'Master functions, domain, range, transformations, and absolute value',
+    subtopicCount: 6,
+    isActive: true,
+    category: 's3-math-relations-functions',
+    grade: 'Secondary 3',
+    subject: 'Mathematics',
+  },
+  {
+    id: 's3-statistics',
+    name: 'Statistics',
+    icon: '📊',
+    description: 'Analyze data with mean, median, box plots, and normal distribution',
+    subtopicCount: 7,
+    isActive: true,
+    category: 's3-math-statistics',
     grade: 'Secondary 3',
     subject: 'Mathematics',
   },

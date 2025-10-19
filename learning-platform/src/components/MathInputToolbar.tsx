@@ -1,41 +1,18 @@
 import React from 'react';
 import { useTheme } from '../hooks/useTheme';
-
-interface MathButton {
-  label: string;
-  insert: string;
-  tooltip: string;
-}
+import { getSymbolsForTopic, type MathButton } from './mathSymbolSets';
 
 interface Props {
   onInsert: (text: string) => void;
   disabled?: boolean;
+  topicId?: string;
 }
 
-const MathInputToolbar: React.FC<Props> = ({ onInsert, disabled = false }) => {
+const MathInputToolbar: React.FC<Props> = ({ onInsert, disabled = false, topicId = '' }) => {
   const { theme } = useTheme();
 
-  // Define math operation buttons
-  const mathButtons: MathButton[] = [
-    { label: '÷', insert: ' ÷ ', tooltip: 'Divide' },
-    { label: '×', insert: ' × ', tooltip: 'Multiply' },
-    { label: '−', insert: ' − ', tooltip: 'Subtract' },
-    { label: '+', insert: ' + ', tooltip: 'Add' },
-    { label: '√', insert: '√(', tooltip: 'Square root' },
-    { label: 'x²', insert: '^2', tooltip: 'Square' },
-    { label: 'xⁿ', insert: '^', tooltip: 'Power' },
-    { label: '¹⁄ₓ', insert: '1/', tooltip: 'Reciprocal (inverse)' },
-    { label: '/', insert: '/', tooltip: 'Fraction bar' },
-    { label: '()', insert: '()', tooltip: 'Parentheses' },
-    { label: 'π', insert: 'π', tooltip: 'Pi' },
-    { label: '°', insert: '°', tooltip: 'Degree symbol' },
-    { label: 'sin', insert: 'sin(', tooltip: 'Sine' },
-    { label: 'cos', insert: 'cos(', tooltip: 'Cosine' },
-    { label: 'tan', insert: 'tan(', tooltip: 'Tangent' },
-    { label: 'sin⁻¹', insert: 'sin⁻¹(', tooltip: 'Inverse sine (arcsin)' },
-    { label: 'cos⁻¹', insert: 'cos⁻¹(', tooltip: 'Inverse cosine (arccos)' },
-    { label: 'tan⁻¹', insert: 'tan⁻¹(', tooltip: 'Inverse tangent (arctan)' },
-  ];
+  // Get topic-specific symbols dynamically
+  const mathButtons: MathButton[] = getSymbolsForTopic(topicId);
 
   const handleButtonClick = (insert: string) => {
     if (!disabled) {
@@ -47,7 +24,7 @@ const MathInputToolbar: React.FC<Props> = ({ onInsert, disabled = false }) => {
     <div
       className="flex flex-wrap gap-1.5 p-3 border rounded-lg"
       style={{
-        backgroundColor: theme.colors.surface,
+        backgroundColor: theme.colors.interactive,
         borderColor: theme.colors.border,
       }}
     >

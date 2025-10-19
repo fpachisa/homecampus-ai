@@ -32,6 +32,15 @@ import WordProblemDiagramVisualizer from '../math-tools/WordProblemDiagramVisual
 import ExponentialGraphVisualizer from '../math-tools/ExponentialGraphVisualizer';
 import LogarithmGraphVisualizer from '../math-tools/LogarithmGraphVisualizer';
 import GraphCompareVisualizer from '../math-tools/GraphCompareVisualizer';
+import VennDiagram2SetVisualizer from '../math-tools/VennDiagram2SetVisualizer';
+import VennDiagram3SetVisualizer from '../math-tools/VennDiagram3SetVisualizer';
+import SetVisualizer from '../math-tools/SetVisualizer';
+import NumberLineVisualizer from '../math-tools/NumberLineVisualizer';
+import BarChartVisualizer from '../math-tools/BarChartVisualizer';
+import HistogramVisualizer from '../math-tools/HistogramVisualizer';
+import BoxPlotVisualizer from '../math-tools/BoxPlotVisualizer';
+import ScatterPlotVisualizer from '../math-tools/ScatterPlotVisualizer';
+import CartesianPlaneVisualizer from '../math-tools/CartesianPlaneVisualizer';
 
 interface MathToolRendererProps {
   toolName: string;
@@ -78,6 +87,21 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   exponentialGraph: ExponentialGraphVisualizer,
   logarithmGraph: LogarithmGraphVisualizer,
   graphCompare: GraphCompareVisualizer,
+
+  // Sets and Venn diagrams tools
+  vennDiagram: VennDiagram2SetVisualizer,
+  vennDiagram3: VennDiagram3SetVisualizer,
+  setVisualizer: SetVisualizer,
+  numberLine: NumberLineVisualizer,
+
+  // Statistics tools
+  barChart: BarChartVisualizer,
+  histogram: HistogramVisualizer,
+  boxPlot: BoxPlotVisualizer,
+  scatterPlot: ScatterPlotVisualizer,
+
+  // Coordinate geometry tools
+  cartesianPlane: CartesianPlaneVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({
@@ -85,6 +109,16 @@ export const MathToolRenderer: React.FC<MathToolRendererProps> = ({
   parameters,
   caption
 }) => {
+  // Defensive check: Handle undefined/empty toolName
+  if (!toolName || typeof toolName !== 'string') {
+    console.error('MathToolRenderer: Invalid or missing toolName', { toolName, parameters });
+    return (
+      <div className="p-4 bg-red-50 border border-red-300 rounded text-red-800">
+        Error: Math tool missing required toolName
+      </div>
+    );
+  }
+
   // Normalize tool name (handle kebab-case variants)
   const normalizedToolName = toolName.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 

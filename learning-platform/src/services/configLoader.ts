@@ -932,6 +932,792 @@ export class ConfigLoader {
           practice: true,
           visualizations: true
         }
+      },
+      // Sets & Venn Diagrams
+      's3-math-sets-fundamentals': {
+        id: 's3-math-sets-fundamentals',
+        displayName: 'Sets',
+        grade: 's3',
+        subject: 'math',
+        topic: 'sets-venn-diagrams',
+        subtopic: 'fundamentals',
+        metadata: {
+          difficulty: 'beginner',
+          estimatedMinutes: 40,
+          prerequisites: []
+        },
+        notesComponent: 's3/math/sets-venn-diagrams/Sets',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-sets-complement': {
+        id: 's3-math-sets-complement',
+        displayName: 'Complement of a Set',
+        grade: 's3',
+        subject: 'math',
+        topic: 'sets-venn-diagrams',
+        subtopic: 'complement',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 35,
+          prerequisites: ['s3-math-sets-fundamentals']
+        },
+        notesComponent: 's3/math/sets-venn-diagrams/ComplementOfSet',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-sets-intersection-union': {
+        id: 's3-math-sets-intersection-union',
+        displayName: 'Intersection and Union',
+        grade: 's3',
+        subject: 'math',
+        topic: 'sets-venn-diagrams',
+        subtopic: 'intersection-union',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 40,
+          prerequisites: ['s3-math-sets-fundamentals']
+        },
+        notesComponent: 's3/math/sets-venn-diagrams/IntersectionUnion',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-sets-special-number-sets': {
+        id: 's3-math-sets-special-number-sets',
+        displayName: 'Special Number Sets',
+        grade: 's3',
+        subject: 'math',
+        topic: 'sets-venn-diagrams',
+        subtopic: 'special-number-sets',
+        metadata: {
+          difficulty: 'beginner',
+          estimatedMinutes: 35,
+          prerequisites: ['s3-math-sets-fundamentals']
+        },
+        notesComponent: 's3/math/sets-venn-diagrams/SpecialNumberSets',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-sets-interval-notation': {
+        id: 's3-math-sets-interval-notation',
+        displayName: 'Interval Notation',
+        grade: 's3',
+        subject: 'math',
+        topic: 'sets-venn-diagrams',
+        subtopic: 'interval-notation',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 40,
+          prerequisites: ['s3-math-sets-special-number-sets']
+        },
+        notesComponent: 's3/math/sets-venn-diagrams/IntervalNotation',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-sets-venn-diagrams': {
+        id: 's3-math-sets-venn-diagrams',
+        displayName: 'Venn Diagrams',
+        grade: 's3',
+        subject: 'math',
+        topic: 'sets-venn-diagrams',
+        subtopic: 'venn-diagrams',
+        metadata: {
+          difficulty: 'beginner',
+          estimatedMinutes: 40,
+          prerequisites: ['s3-math-sets-fundamentals']
+        },
+        notesComponent: 's3/math/sets-venn-diagrams/VennDiagrams',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-sets-venn-regions': {
+        id: 's3-math-sets-venn-regions',
+        displayName: 'Venn Diagram Regions',
+        grade: 's3',
+        subject: 'math',
+        topic: 'sets-venn-diagrams',
+        subtopic: 'venn-regions',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-sets-venn-diagrams', 'intersection-union']
+        },
+        notesComponent: 's3/math/sets-venn-diagrams/VennDiagramRegions',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-sets-numbers-in-regions': {
+        id: 's3-math-sets-numbers-in-regions',
+        displayName: 'Numbers in Regions',
+        grade: 's3',
+        subject: 'math',
+        topic: 'sets-venn-diagrams',
+        subtopic: 'numbers-in-regions',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-sets-venn-diagrams', 'intersection-union']
+        },
+        notesComponent: 's3/math/sets-venn-diagrams/NumbersInRegions',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-sets-problem-solving': {
+        id: 's3-math-sets-problem-solving',
+        displayName: 'Problem Solving with Venn Diagrams',
+        grade: 's3',
+        subject: 'math',
+        topic: 'sets-venn-diagrams',
+        subtopic: 'problem-solving',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['s3-math-sets-numbers-in-regions']
+        },
+        notesComponent: 's3/math/sets-venn-diagrams/ProblemSolvingVenn',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      // Exponents
+      's3-math-exponents-laws': {
+        id: 's3-math-exponents-laws',
+        displayName: 'Exponent Laws',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponents',
+        subtopic: 'laws',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: []
+        },
+        notesComponent: 's3/math/exponents/ExponentLaws',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponents-rational': {
+        id: 's3-math-exponents-rational',
+        displayName: 'Rational Exponents',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponents',
+        subtopic: 'rational',
+        metadata: {
+          difficulty: 'intermediate-to-advanced',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-exponents-laws']
+        },
+        notesComponent: 's3/math/exponents/RationalExponents',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-exponents-standard-form': {
+        id: 's3-math-exponents-standard-form',
+        displayName: 'Standard Form (Scientific Notation)',
+        grade: 's3',
+        subject: 'math',
+        topic: 'exponents',
+        subtopic: 'standard-form',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-exponents-laws']
+        },
+        notesComponent: 's3/math/exponents/StandardForm',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-surds-fundamentals': {
+        id: 's3-math-surds-fundamentals',
+        displayName: 'Understanding Surds',
+        grade: 's3',
+        subject: 'math',
+        topic: 'surds-radicals',
+        subtopic: 'fundamentals',
+        metadata: {
+          difficulty: 'foundational',
+          estimatedMinutes: 40,
+          prerequisites: []
+        },
+        notesComponent: 's3/math/surds-radicals/SurdsFundamentals',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-surds-simplifying': {
+        id: 's3-math-surds-simplifying',
+        displayName: 'Simplifying Surds',
+        grade: 's3',
+        subject: 'math',
+        topic: 'surds-radicals',
+        subtopic: 'simplifying',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-surds-fundamentals']
+        },
+        notesComponent: 's3/math/surds-radicals/SimplifyingSurds',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-surds-addition-subtraction': {
+        id: 's3-math-surds-addition-subtraction',
+        displayName: 'Adding & Subtracting Surds',
+        grade: 's3',
+        subject: 'math',
+        topic: 'surds-radicals',
+        subtopic: 'addition-subtraction',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 40,
+          prerequisites: ['s3-math-surds-simplifying']
+        },
+        notesComponent: 's3/math/surds-radicals/AddingSubtractingSurds',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-surds-multiplication-division': {
+        id: 's3-math-surds-multiplication-division',
+        displayName: 'Multiplying & Dividing Surds',
+        grade: 's3',
+        subject: 'math',
+        topic: 'surds-radicals',
+        subtopic: 'multiplication-division',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-surds-simplifying']
+        },
+        notesComponent: 's3/math/surds-radicals/MultiplyingDividingSurds',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-surds-rationalizing': {
+        id: 's3-math-surds-rationalizing',
+        displayName: 'Rationalizing Denominators',
+        grade: 's3',
+        subject: 'math',
+        topic: 'surds-radicals',
+        subtopic: 'rationalizing',
+        metadata: {
+          difficulty: 'intermediate-to-advanced',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-surds-multiplication-division']
+        },
+        notesComponent: 's3/math/surds-radicals/RationalizingDenominators',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-surds-mixed-operations': {
+        id: 's3-math-surds-mixed-operations',
+        displayName: 'Mixed Operations',
+        grade: 's3',
+        subject: 'math',
+        topic: 'surds-radicals',
+        subtopic: 'mixed-operations',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['s3-math-surds-rationalizing']
+        },
+        notesComponent: 's3/math/surds-radicals/MixedOperations',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+
+      // S3 Statistics subtopics
+      's3-math-statistics-data-types': {
+        id: 's3-math-statistics-data-types',
+        displayName: 'Data Types and Organization',
+        grade: 's3',
+        subject: 'math',
+        topic: 'statistics',
+        subtopic: 'data-types',
+        metadata: {
+          difficulty: 'foundational',
+          estimatedMinutes: 45,
+          prerequisites: []
+        },
+        notesComponent: 's3/math/statistics/DataTypes',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+
+      's3-math-statistics-distributions': {
+        id: 's3-math-statistics-distributions',
+        displayName: 'Describing Data Distributions',
+        grade: 's3',
+        subject: 'math',
+        topic: 'statistics',
+        subtopic: 'distributions',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 40,
+          prerequisites: ['s3-math-statistics-data-types']
+        },
+        notesComponent: null,
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+
+      's3-math-statistics-centre': {
+        id: 's3-math-statistics-centre',
+        displayName: 'Measures of Centre',
+        grade: 's3',
+        subject: 'math',
+        topic: 'statistics',
+        subtopic: 'centre',
+        metadata: {
+          difficulty: 'foundational-intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-statistics-data-types']
+        },
+        notesComponent: 's3/math/statistics/MeasuresOfCentre',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+
+      's3-math-statistics-boxplots': {
+        id: 's3-math-statistics-boxplots',
+        displayName: 'Box Plots and Quartiles',
+        grade: 's3',
+        subject: 'math',
+        topic: 'statistics',
+        subtopic: 'boxplots',
+        metadata: {
+          difficulty: 'intermediate-advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['s3-math-statistics-centre']
+        },
+        notesComponent: 's3/math/statistics/BoxPlots',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+
+      's3-math-statistics-cumulative': {
+        id: 's3-math-statistics-cumulative',
+        displayName: 'Cumulative Frequency Graphs',
+        grade: 's3',
+        subject: 'math',
+        topic: 'statistics',
+        subtopic: 'cumulative',
+        metadata: {
+          difficulty: 'intermediate-advanced',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-statistics-centre']
+        },
+        notesComponent: 's3/math/statistics/CumulativeFrequency',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+
+      's3-math-statistics-deviation': {
+        id: 's3-math-statistics-deviation',
+        displayName: 'Standard Deviation',
+        grade: 's3',
+        subject: 'math',
+        topic: 'statistics',
+        subtopic: 'deviation',
+        metadata: {
+          difficulty: 'intermediate-advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['s3-math-statistics-centre']
+        },
+        notesComponent: 's3/math/statistics/StandardDeviation',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+
+      's3-math-statistics-normal': {
+        id: 's3-math-statistics-normal',
+        displayName: 'The Normal Distribution',
+        grade: 's3',
+        subject: 'math',
+        topic: 'statistics',
+        subtopic: 'normal',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 60,
+          prerequisites: ['s3-math-statistics-deviation']
+        },
+        notesComponent: 's3/math/statistics/NormalDistribution',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      // S3 Relations & Functions subtopics
+      's3-math-relations-functions-fundamentals': {
+        id: 's3-math-relations-functions-fundamentals',
+        displayName: 'Relations and Functions Fundamentals',
+        grade: 's3',
+        subject: 'math',
+        topic: 'relations-functions',
+        subtopic: 'fundamentals',
+        metadata: {
+          difficulty: 'foundational',
+          estimatedMinutes: 45,
+          prerequisites: []
+        },
+        notesComponent: 's3/math/relations-functions/RelationsFunctionsFundamentals',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-function-notation': {
+        id: 's3-math-function-notation',
+        displayName: 'Function Notation',
+        grade: 's3',
+        subject: 'math',
+        topic: 'relations-functions',
+        subtopic: 'function-notation',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 40,
+          prerequisites: ['s3-math-relations-functions-fundamentals']
+        },
+        notesComponent: 's3/math/relations-functions/FunctionNotation',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-domain-range': {
+        id: 's3-math-domain-range',
+        displayName: 'Domain and Range',
+        grade: 's3',
+        subject: 'math',
+        topic: 'relations-functions',
+        subtopic: 'domain-range',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-function-notation']
+        },
+        notesComponent: 's3/math/relations-functions/DomainAndRange',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-sign-diagrams': {
+        id: 's3-math-sign-diagrams',
+        displayName: 'Sign Diagrams',
+        grade: 's3',
+        subject: 'math',
+        topic: 'relations-functions',
+        subtopic: 'sign-diagrams',
+        metadata: {
+          difficulty: 'intermediate-advanced',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-domain-range']
+        },
+        notesComponent: 's3/math/relations-functions/SignDiagrams',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-transformations': {
+        id: 's3-math-transformations',
+        displayName: 'Transformations of Graphs',
+        grade: 's3',
+        subject: 'math',
+        topic: 'relations-functions',
+        subtopic: 'transformations',
+        metadata: {
+          difficulty: 'intermediate-advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['s3-math-function-notation']
+        },
+        notesComponent: 's3/math/relations-functions/TransformationsOfGraphs',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-absolute-value': {
+        id: 's3-math-absolute-value',
+        displayName: 'Absolute Value Function',
+        grade: 's3',
+        subject: 'math',
+        topic: 'relations-functions',
+        subtopic: 'absolute-value',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-function-notation', 's3-math-transformations']
+        },
+        notesComponent: 's3/math/relations-functions/AbsoluteValueFunction',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
       }
     };
 

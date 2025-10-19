@@ -36,7 +36,7 @@ export interface MathToolDefinition {
   name: string;                    // Display name
   technicalName: string;           // Key used in code
   component: string;               // React component name
-  category: 'trigonometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'general';
+  category: 'trigonometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'sets' | 'statistics' | 'general' | 'coordinate-geometry';
 
   // Documentation
   description: string;             // What this tool does
@@ -1145,6 +1145,629 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           showLegend: true,
           xRange: [-3, 3],
           showGrid: true
+        }
+      }
+    ]
+  },
+
+  // ============================================
+  // SETS AND VENN DIAGRAMS TOOLS
+  // ============================================
+
+  vennDiagram: {
+    name: "Two-Set Venn Diagram",
+    technicalName: "vennDiagram",
+    component: "VennDiagram2SetVisualizer",
+    category: "sets",
+    description: "Interactive two-set Venn diagram showing sets A and B within universal set U. Supports overlapping, disjoint, subset, and equal set relationships. Can display elements or counts in regions, shade specific regions for operations.",
+    whenToUse: "Use for teaching set operations (∩, ∪, '), set relationships (subset, disjoint), counting elements in regions, or visualizing survey problems with two categories.",
+
+    parameters: {
+      setALabel: "string (default: 'A') - label for first set",
+      setBLabel: "string (default: 'B') - label for second set",
+      universalSetLabel: "string (default: 'U') - label for universal set",
+      layout: "'overlapping' | 'disjoint' | 'subset' | 'equal' (default: 'overlapping') - relationship between sets",
+      aOnlyElements: "string[] | number - elements only in A (not in B), or count",
+      bOnlyElements: "string[] | number - elements only in B (not in A), or count",
+      intersectionElements: "string[] | number - elements in both A and B, or count",
+      neitherElements: "string[] | number - elements in neither A nor B (outside both), or count",
+      showElements: "boolean (default: true) - show actual elements vs just counts",
+      showRegionCounts: "boolean (default: false) - use (n) bracket notation for counts",
+      shadeRegion: "'none' | 'intersection' | 'union' | 'aOnly' | 'bOnly' | 'aComplement' | 'bComplement' | 'neither' | 'unionComplement' (default: 'none')",
+      highlightSet: "'A' | 'B' | 'both' | 'none' (default: 'none') - highlight set borders",
+      caption: "string (optional) - explanation text below diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Counting elements in regions",
+        caption: "Venn diagram showing n(A only) = 4, n(A ∩ B) = 6, n(B only) = 3, n(neither) = 7",
+        parameters: {
+          setALabel: "A",
+          setBLabel: "B",
+          layout: "overlapping",
+          aOnlyElements: 4,
+          bOnlyElements: 3,
+          intersectionElements: 6,
+          neitherElements: 7,
+          showRegionCounts: true,
+          shadeRegion: "none"
+        }
+      },
+      {
+        scenario: "Visualizing intersection",
+        caption: "Shaded region shows A ∩ B (elements in both sets)",
+        parameters: {
+          setALabel: "A",
+          setBLabel: "B",
+          layout: "overlapping",
+          aOnlyElements: ["1", "2"],
+          bOnlyElements: ["5", "6"],
+          intersectionElements: ["3", "4"],
+          showElements: true,
+          shadeRegion: "intersection"
+        }
+      },
+      {
+        scenario: "Subset relationship",
+        caption: "Set A is a subset of set B (A ⊆ B)",
+        parameters: {
+          setALabel: "A",
+          setBLabel: "B",
+          layout: "subset",
+          aOnlyElements: ["1", "2", "3"],
+          bOnlyElements: ["4", "5", "6"],
+          showElements: true
+        }
+      }
+    ]
+  },
+
+  vennDiagram3: {
+    name: "Three-Set Venn Diagram",
+    technicalName: "vennDiagram3",
+    component: "VennDiagram3SetVisualizer",
+    category: "sets",
+    description: "Interactive three-set Venn diagram with 8 distinct regions: A only, B only, C only, A∩B only, A∩C only, B∩C only, A∩B∩C (center), and neither. Essential for complex counting problems and set identities.",
+    whenToUse: "Use for three-set problems, complex survey questions (e.g., 'How many speak all three languages?'), counting 'exactly one', 'exactly two', 'at least one', verifying set identities, or De Morgan's laws.",
+
+    parameters: {
+      setALabel: "string (default: 'A') - label for first set",
+      setBLabel: "string (default: 'B') - label for second set",
+      setCLabel: "string (default: 'C') - label for third set",
+      universalSetLabel: "string (default: 'U') - label for universal set",
+      aOnly: "string[] | number - elements only in A (not in B or C), or count",
+      bOnly: "string[] | number - elements only in B (not in A or C), or count",
+      cOnly: "string[] | number - elements only in C (not in A or B), or count",
+      abOnly: "string[] | number - elements in A∩B but not C, or count",
+      acOnly: "string[] | number - elements in A∩C but not B, or count",
+      bcOnly: "string[] | number - elements in B∩C but not A, or count",
+      abc: "string[] | number - elements in A∩B∩C (all three), or count",
+      neither: "string[] | number - elements in none of A, B, C, or count",
+      showElements: "boolean (default: false) - show actual elements vs counts",
+      showRegionCounts: "boolean (default: true) - use (n) bracket notation",
+      shadeRegions: "string[] (default: []) - array of region names to shade: 'aOnly', 'bOnly', 'cOnly', 'abOnly', 'acOnly', 'bcOnly', 'abc', 'neither'",
+      highlightSets: "string[] (default: []) - array of set names to highlight borders: 'A', 'B', 'C'",
+      caption: "string (optional) - explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Three-language survey problem",
+        caption: "Venn diagram for students speaking English, French, German with counts in all 8 regions",
+        parameters: {
+          setALabel: "English",
+          setBLabel: "French",
+          setCLabel: "German",
+          aOnly: 11,
+          bOnly: 8,
+          cOnly: 5,
+          abOnly: 4,
+          acOnly: 3,
+          bcOnly: 2,
+          abc: 2,
+          neither: 6,
+          showRegionCounts: true
+        }
+      },
+      {
+        scenario: "Finding 'exactly one' count",
+        caption: "Shaded regions show students speaking exactly one language",
+        parameters: {
+          setALabel: "A",
+          setBLabel: "B",
+          setCLabel: "C",
+          aOnly: 10,
+          bOnly: 8,
+          cOnly: 6,
+          abOnly: 3,
+          acOnly: 2,
+          bcOnly: 2,
+          abc: 1,
+          neither: 4,
+          shadeRegions: ["aOnly", "bOnly", "cOnly"],
+          showRegionCounts: true
+        }
+      }
+    ]
+  },
+
+  setVisualizer: {
+    name: "Set Visualizer",
+    technicalName: "setVisualizer",
+    component: "SetVisualizer",
+    category: "sets",
+    description: "Visual representation of individual sets showing notation, elements, cardinality, and relationships. Displays sets in list notation, box, or circle format.",
+    whenToUse: "Use for introducing set notation { }, showing elements, teaching n(A) cardinality, demonstrating ∈ and ∉ membership, or showing set relationships like ⊆, =, or disjoint.",
+
+    parameters: {
+      setName: "string (default: 'A') - set label",
+      elements: "string[] - array of elements in the set",
+      setDescription: "string (optional) - description like 'factors of 12' or 'even numbers < 10' (shown instead of listing all elements)",
+      displayMode: "'list' | 'box' | 'circle' (default: 'list') - visual representation style",
+      showCardinality: "boolean (default: false) - show n(A) = count",
+      showBraces: "boolean (default: true) - show { } notation",
+      isSubsetOf: "string (optional) - show 'A ⊆ B' relationship",
+      isEqualTo: "string (optional) - show 'A = B' relationship",
+      isDisjointFrom: "string (optional) - show 'A ∩ B = ∅' relationship",
+      membershipExamples: "Array<{element: string, isMember: boolean}> (optional) - show ∈ or ∉ examples",
+      caption: "string (optional) - explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Introducing set notation",
+        caption: "Set A with elements listed in { } notation",
+        parameters: {
+          setName: "A",
+          elements: ["1", "2", "3", "4", "5"],
+          displayMode: "box",
+          showCardinality: true,
+          showBraces: true
+        }
+      },
+      {
+        scenario: "Element membership examples",
+        caption: "Showing which elements are in set A and which are not",
+        parameters: {
+          setName: "A",
+          elements: ["2", "4", "6", "8"],
+          displayMode: "list",
+          membershipExamples: [
+            { element: "2", isMember: true },
+            { element: "3", isMember: false },
+            { element: "6", isMember: true }
+          ]
+        }
+      },
+      {
+        scenario: "Set relationships",
+        caption: "Set A is a subset of set B",
+        parameters: {
+          setName: "A",
+          elements: ["1", "2"],
+          displayMode: "circle",
+          isSubsetOf: "B"
+        }
+      }
+    ]
+  },
+
+  numberLine: {
+    name: "Number Line Visualizer",
+    technicalName: "numberLine",
+    component: "NumberLineVisualizer",
+    category: "sets",
+    description: "Interactive number line for intervals, inequalities, and number sets. Shows open circles (○) for excluded endpoints and closed circles (●) for included endpoints. Supports shading intervals and unbounded regions.",
+    whenToUse: "Use for interval notation [a, b], (a, b], teaching inequalities x < 5 or x ≥ -2, visualizing special number sets (ℤ, ℚ, ℝ), or showing union of intervals.",
+
+    parameters: {
+      min: "number (default: -5) - minimum value on number line",
+      max: "number (default: 5) - maximum value on number line",
+      step: "number (default: 1) - spacing between tick marks",
+      intervals: "Array<{start: number | null, end: number | null, startInclusive?: boolean, endInclusive?: boolean, color?: string, label?: string}> - intervals to shade. Use null for ±∞",
+      points: "Array<{value: number, label?: string, style: 'open' | 'closed' | 'none', color?: string}> (optional) - individual points to mark",
+      showTickMarks: "boolean (default: true) - show tick marks",
+      showTickLabels: "boolean (default: true) - show numbers at ticks",
+      showArrows: "boolean (default: true) - show arrows at line ends",
+      highlightIntegers: "boolean (default: false) - make integer ticks more prominent",
+      title: "string (optional) - title above number line",
+      caption: "string (optional) - explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Closed interval [2, 5]",
+        caption: "Interval [2, 5] showing both endpoints included (closed circles)",
+        parameters: {
+          min: 0,
+          max: 7,
+          intervals: [
+            { start: 2, end: 5, startInclusive: true, endInclusive: true, label: "[2, 5]" }
+          ]
+        }
+      },
+      {
+        scenario: "Half-open interval (1, 4]",
+        caption: "Interval (1, 4] with 1 excluded (open circle) and 4 included (closed circle)",
+        parameters: {
+          min: 0,
+          max: 6,
+          intervals: [
+            { start: 1, end: 4, startInclusive: false, endInclusive: true, label: "(1, 4]" }
+          ]
+        }
+      },
+      {
+        scenario: "Unbounded interval x ≥ 3",
+        caption: "Interval [3, ∞) showing x ≥ 3 with arrow to the right",
+        parameters: {
+          min: 0,
+          max: 8,
+          intervals: [
+            { start: 3, end: null, startInclusive: true, label: "[3, ∞)" }
+          ]
+        }
+      },
+      {
+        scenario: "Union of intervals",
+        caption: "Showing [-2, 1) ∪ (3, 5] as two separate shaded regions",
+        parameters: {
+          min: -3,
+          max: 6,
+          intervals: [
+            { start: -2, end: 1, startInclusive: true, endInclusive: false, color: "#86efac" },
+            { start: 3, end: 5, startInclusive: false, endInclusive: true, color: "#86efac" }
+          ]
+        }
+      }
+    ]
+  },
+
+  // ============================================
+  // STATISTICS TOOLS
+  // ============================================
+
+  barChart: {
+    name: "Bar Chart Visualizer",
+    technicalName: "barChart",
+    component: "BarChartVisualizer",
+    category: "statistics",
+    description: "Displays discrete categorical data with frequencies/counts. Shows vertical or horizontal bars representing frequency for each category. Used for survey results, favorite items, and categorical distributions.",
+    whenToUse: "Use for discrete data like categories, survey results, favorite colors, or any data where you count occurrences in distinct categories. Perfect for comparing frequencies across non-numeric categories.",
+
+    parameters: {
+      categories: "string[] - Category labels (e.g., ['Red', 'Blue', 'Green'])",
+      values: "number[] - Frequencies/counts for each category (same length as categories)",
+      xLabel: "string (optional) - X-axis label (e.g., 'Color', 'Category')",
+      yLabel: "string (optional, default: 'Frequency') - Y-axis label",
+      title: "string (optional) - Chart title displayed at top",
+      showValues: "boolean (optional, default: true) - Show frequency numbers on/above bars",
+      highlightIndex: "number (optional, default: -1) - Index of bar to highlight (0-based, -1 for none)",
+      orientation: "'vertical' | 'horizontal' (optional, default: 'vertical') - Bar direction",
+      caption: "string (optional) - Explanation text below chart (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Survey results - favorite colors",
+        caption: "Class survey showing favorite colors: Red (5), Blue (8), Green (3), Yellow (4)",
+        parameters: {
+          categories: ["Red", "Blue", "Green", "Yellow"],
+          values: [5, 8, 3, 4],
+          xLabel: "Color",
+          yLabel: "Number of Students",
+          title: "Favorite Colors",
+          showValues: true,
+          highlightIndex: 1  // Highlight Blue (most popular)
+        }
+      },
+      {
+        scenario: "Horizontal bar chart for long category names",
+        caption: "Comparison of programming languages usage",
+        parameters: {
+          categories: ["JavaScript", "Python", "Java"],
+          values: [45, 38, 28],
+          xLabel: "Percentage",
+          yLabel: "Language",
+          orientation: "horizontal",
+          showValues: true
+        }
+      }
+    ]
+  },
+
+  histogram: {
+    name: "Histogram Visualizer",
+    technicalName: "histogram",
+    component: "HistogramVisualizer",
+    category: "statistics",
+    description: "Displays continuous data distributions using class intervals and frequencies. Bars are continuous (no gaps) representing frequency density. Shows how data is distributed across ranges.",
+    whenToUse: "Use for continuous data like heights, weights, test scores, ages, or temperatures. Perfect for showing distribution shape, identifying patterns, and finding modal classes.",
+
+    parameters: {
+      intervals: "Array<{start: number, end: number, frequency: number}> - Class intervals with frequencies. Intervals should be contiguous (end of one = start of next)",
+      xLabel: "string (optional) - X-axis label describing the variable (e.g., 'Height (cm)', 'Test Score')",
+      yLabel: "string (optional, default: 'Frequency') - Y-axis label",
+      title: "string (optional) - Chart title displayed at top",
+      showFrequencies: "boolean (optional, default: true) - Show frequency numbers on top of bars",
+      showMidpoints: "boolean (optional, default: false) - Show class midpoint markers below bars",
+      highlightInterval: "number (optional, default: -1) - Index of interval to highlight (0-based, -1 for none)",
+      caption: "string (optional) - Explanation text below chart (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Height distribution",
+        caption: "Height distribution of 30 students showing most are 150-160 cm tall",
+        parameters: {
+          intervals: [
+            { start: 140, end: 150, frequency: 3 },
+            { start: 150, end: 160, frequency: 12 },
+            { start: 160, end: 170, frequency: 10 },
+            { start: 170, end: 180, frequency: 5 }
+          ],
+          xLabel: "Height (cm)",
+          yLabel: "Frequency",
+          title: "Student Heights",
+          showFrequencies: true,
+          highlightInterval: 1  // Highlight modal class
+        }
+      },
+      {
+        scenario: "Test scores with midpoints",
+        caption: "Showing class midpoints for calculating estimates",
+        parameters: {
+          intervals: [
+            { start: 0, end: 20, frequency: 2 },
+            { start: 20, end: 40, frequency: 5 },
+            { start: 40, end: 60, frequency: 8 },
+            { start: 60, end: 80, frequency: 12 },
+            { start: 80, end: 100, frequency: 3 }
+          ],
+          xLabel: "Test Score",
+          showMidpoints: true,
+          showFrequencies: true
+        }
+      }
+    ]
+  },
+
+  boxPlot: {
+    name: "Box Plot Visualizer",
+    technicalName: "boxPlot",
+    component: "BoxPlotVisualizer",
+    category: "statistics",
+    description: "Displays five-number summary (min, Q1, median, Q3, max) using box-and-whisker plot. Shows data spread, skewness, and outliers. The box represents the interquartile range (IQR = Q3 - Q1), containing the middle 50% of data.",
+    whenToUse: "Use for showing data distribution, comparing spread between datasets, identifying outliers, or visualizing quartiles and range. Essential for understanding data variability and detecting unusual values.",
+
+    parameters: {
+      min: "number - Minimum value (lower whisker end)",
+      q1: "number - First quartile Q₁ (25th percentile, lower box edge)",
+      median: "number - Median (50th percentile, line inside box)",
+      q3: "number - Third quartile Q₃ (75th percentile, upper box edge)",
+      max: "number - Maximum value (upper whisker end)",
+      outliers: "number[] (optional, default: []) - Outlier values plotted as individual points beyond whiskers",
+      label: "string (optional) - Dataset label displayed at top (e.g., 'Class A Test Scores')",
+      showLabels: "boolean (optional, default: true) - Show five-number summary labels on the plot",
+      showIQR: "boolean (optional, default: false) - Highlight and label the IQR region",
+      orientation: "'horizontal' | 'vertical' (optional, default: 'horizontal') - Box plot orientation",
+      caption: "string (optional) - Explanation text below plot (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Test scores distribution",
+        caption: "Box plot showing test scores: Min=45, Q₁=62, Median=75, Q₃=84, Max=98. IQR=22 shows middle 50% spread.",
+        parameters: {
+          min: 45,
+          q1: 62,
+          median: 75,
+          q3: 84,
+          max: 98,
+          label: "Math Test Scores",
+          showLabels: true,
+          showIQR: true
+        }
+      },
+      {
+        scenario: "Data with outliers",
+        caption: "Height data with two outliers: one very tall (192cm) and one very short (142cm)",
+        parameters: {
+          min: 150,
+          q1: 160,
+          median: 168,
+          q3: 175,
+          max: 185,
+          outliers: [142, 192],
+          label: "Student Heights (cm)",
+          showLabels: true,
+          orientation: "horizontal"
+        }
+      }
+    ]
+  },
+
+  scatterPlot: {
+    name: "Scatter Plot Visualizer",
+    technicalName: "scatterPlot",
+    component: "ScatterPlotVisualizer",
+    category: "statistics",
+    description: "Displays bivariate data as points on x-y axes to show relationships between two variables. Optional trend line shows direction and strength of linear relationship. Used for identifying correlation patterns.",
+    whenToUse: "Use for exploring relationships between two variables (e.g., study time vs test score, height vs weight). Perfect for identifying positive/negative correlation, detecting outliers, and showing data clustering patterns.",
+
+    parameters: {
+      points: "Array<{x: number, y: number, label?: string}> - Data points to plot. Each point needs x and y coordinates, optional label for annotation",
+      xLabel: "string (optional) - X-axis label describing the independent variable (e.g., 'Study Hours', 'Temperature')",
+      yLabel: "string (optional) - Y-axis label describing the dependent variable (e.g., 'Test Score', 'Ice Cream Sales')",
+      title: "string (optional) - Chart title displayed at top",
+      showTrendLine: "boolean (optional, default: false) - Show line of best fit (linear regression)",
+      showGrid: "boolean (optional, default: true) - Show grid lines for easier reading",
+      xRange: "[number, number] (optional) - X-axis range as [min, max]. Auto-calculated with 10% padding if not provided",
+      yRange: "[number, number] (optional) - Y-axis range as [min, max]. Auto-calculated with 10% padding if not provided",
+      highlightPoint: "number (optional, default: -1) - Index of point to highlight (0-based, -1 for none)",
+      caption: "string (optional) - Explanation text below plot (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Study time vs test score with positive correlation",
+        caption: "Scatter plot showing positive correlation: more study hours lead to higher test scores. Trend line: y = 8.2x + 45",
+        parameters: {
+          points: [
+            { x: 1, y: 55 },
+            { x: 2, y: 62 },
+            { x: 3, y: 70 },
+            { x: 4, y: 75 },
+            { x: 5, y: 85 },
+            { x: 6, y: 92 }
+          ],
+          xLabel: "Study Hours",
+          yLabel: "Test Score (%)",
+          title: "Study Time vs Performance",
+          showTrendLine: true,
+          showGrid: true
+        }
+      },
+      {
+        scenario: "Temperature vs ice cream sales",
+        caption: "Scatter plot with labeled outlier point showing unusually high sales",
+        parameters: {
+          points: [
+            { x: 15, y: 120 },
+            { x: 20, y: 180 },
+            { x: 25, y: 240 },
+            { x: 30, y: 310 },
+            { x: 22, y: 420, label: "Festival day" }  // Outlier
+          ],
+          xLabel: "Temperature (°C)",
+          yLabel: "Sales ($)",
+          showTrendLine: true,
+          highlightPoint: 4
+        }
+      }
+    ]
+  },
+
+  // ============================================
+  // COORDINATE GEOMETRY TOOLS
+  // ============================================
+
+  cartesianPlane: {
+    name: "Cartesian Plane Visualizer",
+    technicalName: "cartesianPlane",
+    component: "CartesianPlaneVisualizer",
+    category: "coordinate-geometry",
+    description: "General-purpose coordinate grid for plotting points, drawing lines, and graphing curves. Supports relations, functions, transformations, and domain/range visualization. Highly versatile tool for coordinate geometry.",
+    whenToUse: "Use for plotting points (relations/functions), graphing linear equations, showing function transformations (shifts, stretches, reflections), visualizing domain/range restrictions, vertical line test, and any problem involving the x-y coordinate plane.",
+
+    parameters: {
+      xMin: "number (optional, default: -10) - Minimum x-axis value",
+      xMax: "number (optional, default: 10) - Maximum x-axis value",
+      yMin: "number (optional, default: -10) - Minimum y-axis value",
+      yMax: "number (optional, default: 10) - Maximum y-axis value",
+      showGrid: "boolean (optional, default: true) - Show grid lines",
+      points: "Array<{x: number, y: number, label?: string, color?: string, style?: 'open' | 'closed'}> (optional) - Points to plot. Use 'open' for hollow circles, 'closed' for filled",
+      lines: "Array<{type: 'linear' | 'vertical' | 'horizontal', slope?: number, yIntercept?: number, xValue?: number, yValue?: number, equation?: string, color?: string, style?: 'solid' | 'dashed'}> (optional) - Lines to draw. For linear: provide slope and yIntercept. For vertical: provide xValue. For horizontal: provide yValue",
+      curves: "Array<{type: 'quadratic' | 'absolute' | 'custom', points: Array<{x: number, y: number}>, equation?: string, color?: string, style?: 'solid' | 'dashed'}> (optional) - Pre-calculated curve points to connect",
+      highlightRegion: "{type: 'vertical' | 'horizontal' | 'rectangle', xMin?: number, xMax?: number, yMin?: number, yMax?: number, color?: string, label?: string} (optional) - Region to highlight (e.g., for domain/range)",
+      title: "string (optional) - Title displayed at top",
+      xLabel: "string (optional, default: 'x') - X-axis label",
+      yLabel: "string (optional, default: 'y') - Y-axis label",
+      caption: "string (optional) - Explanation text below plot (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Plotting a relation as points",
+        caption: "A relation showing 4 points on the coordinate plane",
+        parameters: {
+          points: [
+            { x: 1, y: 2, label: "(1,2)" },
+            { x: 3, y: 4, label: "(3,4)" },
+            { x: 5, y: 1, label: "(5,1)" },
+            { x: 2, y: 3, label: "(2,3)" }
+          ],
+          title: "Relation as Points",
+          xMin: -1,
+          xMax: 7,
+          yMin: -1,
+          yMax: 6
+        }
+      },
+      {
+        scenario: "Graphing a linear function",
+        caption: "The line y = 2x + 1 graphed on the coordinate plane",
+        parameters: {
+          lines: [
+            { type: "linear", slope: 2, yIntercept: 1, equation: "y = 2x + 1" }
+          ],
+          title: "Linear Function",
+          xMin: -5,
+          xMax: 5,
+          yMin: -5,
+          yMax: 12
+        }
+      },
+      {
+        scenario: "Vertical line test",
+        caption: "Testing if a relation is a function using vertical lines",
+        parameters: {
+          points: [
+            { x: 1, y: 2 },
+            { x: 1, y: 4 },
+            { x: 3, y: 3 }
+          ],
+          lines: [
+            { type: "vertical", xValue: 1, equation: "x = 1", style: "dashed" }
+          ],
+          title: "Vertical Line Test",
+          caption: "Two points share x=1, so this is NOT a function"
+        }
+      },
+      {
+        scenario: "Showing domain restriction",
+        caption: "Function defined only for x ≥ 2",
+        parameters: {
+          lines: [
+            { type: "linear", slope: 1, yIntercept: 0, equation: "y = x" }
+          ],
+          highlightRegion: {
+            type: "vertical",
+            xMin: 2,
+            xMax: 10,
+            color: "#10b981",
+            label: "Domain: x ≥ 2"
+          },
+          points: [
+            { x: 2, y: 2, style: "closed", label: "(2,2)" }
+          ]
+        }
+      },
+      {
+        scenario: "Absolute value function",
+        caption: "The graph of f(x) = |x|",
+        parameters: {
+          curves: [
+            {
+              type: "absolute",
+              points: [
+                { x: -5, y: 5 },
+                { x: -4, y: 4 },
+                { x: -3, y: 3 },
+                { x: -2, y: 2 },
+                { x: -1, y: 1 },
+                { x: 0, y: 0 },
+                { x: 1, y: 1 },
+                { x: 2, y: 2 },
+                { x: 3, y: 3 },
+                { x: 4, y: 4 },
+                { x: 5, y: 5 }
+              ],
+              equation: "f(x) = |x|"
+            }
+          ],
+          title: "Absolute Value Function"
         }
       }
     ]

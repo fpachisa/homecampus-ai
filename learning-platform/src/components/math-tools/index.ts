@@ -34,6 +34,9 @@ export { default as ExponentialGraphVisualizer } from './ExponentialGraphVisuali
 export { default as LogarithmGraphVisualizer } from './LogarithmGraphVisualizer';
 export { default as GraphCompareVisualizer } from './GraphCompareVisualizer';
 
+// Coordinate geometry visualizers
+export { default as CartesianPlaneVisualizer } from './CartesianPlaneVisualizer';
+
 // Re-export registry types and utilities
 export type { MathToolDefinition, MathToolName } from './mathToolsRegistry';
 export {

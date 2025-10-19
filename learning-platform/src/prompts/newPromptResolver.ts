@@ -24,6 +24,11 @@ import { S3_MATH_TRIGONOMETRY, S3_MATH_TRIGONOMETRY_CONFIG } from '../prompt-lib
 import { S3_MATH_CIRCLE_GEOMETRY, S3_MATH_CIRCLE_GEOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import { S3_MATH_QUADRATIC_EQUATIONS, S3_MATH_QUADRATIC_EQUATIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS, EXPONENTIAL_LOGARITHMS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
+import { S3_MATH_SETS_VENN_DIAGRAMS, S3_MATH_SETS_VENN_DIAGRAMS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
+import { S3_MATH_EXPONENTS_SUBTOPICS, S3_MATH_EXPONENTS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-exponents';
+import { S3_MATH_SURDS_RADICALS_SUBTOPICS, S3_MATH_SURDS_RADICALS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
+import { S3_MATH_STATISTICS_SUBTOPICS, S3_MATH_STATISTICS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
+import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS, S3_MATH_RELATIONS_FUNCTIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 
 // OLD: Still in legacy format (to be migrated)
 // None remaining!
@@ -168,6 +173,11 @@ export class NewPromptResolver {
     if (section?.availableTools && Array.isArray(section.availableTools)) {
       const filteredTools = getFilteredTools(section.availableTools);
 
+      // Check if tools object is empty
+      if (Object.keys(filteredTools).length === 0) {
+        return "NO visual tools available for this section. DO NOT attempt to create or use visual tools.";
+      }
+
       return {
         description: `Pre-built visual tools (Section-scoped to: ${currentSection})`,
         tools: filteredTools,
@@ -202,6 +212,31 @@ export class NewPromptResolver {
     if (topicId.startsWith('s3-math-exponential-logarithms-')) {
       const subtopic = S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as any];
       return { subtopic, global: EXPONENTIAL_LOGARITHMS_CONFIG };
+    }
+
+    if (topicId.startsWith('s3-math-sets-')) {
+      const subtopic = S3_MATH_SETS_VENN_DIAGRAMS[topicId as any];
+      return { subtopic, global: S3_MATH_SETS_VENN_DIAGRAMS_CONFIG };
+    }
+
+    if (topicId.startsWith('s3-math-exponents-')) {
+      const subtopic = S3_MATH_EXPONENTS_SUBTOPICS[topicId as any];
+      return { subtopic, global: S3_MATH_EXPONENTS_CONFIG };
+    }
+
+    if (topicId.startsWith('s3-math-surds-')) {
+      const subtopic = S3_MATH_SURDS_RADICALS_SUBTOPICS[topicId as any];
+      return { subtopic, global: S3_MATH_SURDS_RADICALS_CONFIG };
+    }
+
+    if (topicId.startsWith('s3-math-statistics-')) {
+      const subtopic = S3_MATH_STATISTICS_SUBTOPICS[topicId as any];
+      return { subtopic, global: S3_MATH_STATISTICS_CONFIG };
+    }
+
+    if (topicId.startsWith('s3-math-relations-')) {
+      const subtopic = S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS[topicId as any];
+      return { subtopic, global: S3_MATH_RELATIONS_FUNCTIONS_CONFIG };
     }
 
     throw new Error(`Topic ${topicId} not found`);
@@ -240,7 +275,7 @@ export class NewPromptResolver {
     const scopedMathTools = this.getScopedMathTools(contextWithFirstSection, subtopic, global);
 
     const builder = this.promptLibrary.createBuilder()
-      .addRole(global.TUTOR_ROLE || "You are a Socratic mathematics tutor")
+      .addRole("You are a warm and friendly math tutor")
       .addContext({
         topic: subtopic.displayName,
         topicName: subtopic.topicName
@@ -268,7 +303,8 @@ export class NewPromptResolver {
           }
 
       })
-      .addSection("CRITICAL", "Return ONLY valid JSON");
+      .addSection("CRITICAL", "Return ONLY valid JSON exactly as per OUTPUT SCHEMA even if no mathTool used still provide all fields and keep it blank.")
+      .addSection("CRITICAL", "Ask only one question unless the second part is using the answer from the first part.");
 
     return builder.build();
   }
@@ -337,7 +373,7 @@ Use the DECISION MATRIX to select the appropriate action.
 Use QUANTITATIVE DATA and masteryRubic of the CURRECT SECTION to determine if section is mastered.
 Provide detailed reasoning that other agents can use to generate appropriate content.
 
-Return ONLY a JSON object matching the output schema below.`)
+Return ONLY a JSON object exactly matching the output schema below.`)
 
       .addSection('OUTPUT SCHEMA', {
         answerCorrect: "boolean - true only if final answer is correct",
@@ -409,7 +445,8 @@ For CELEBRATE action:
   - Celebrate the achievement warmly
   - Reference their progress from evaluator's assessment
 
-CRITICAL: Return JSON only and in the exact format as OUTPUT SCHEMA`);
+CRITICAL: Return JSON only and in the exact format as OUTPUT SCHEMA. Even if no mathTool used still provide all fields and keep it blank.`)
+.addSection("CRITICAL", "Ask only one question unless the second part is using the answer from the first part.");
 
     return builder.build();
   }
@@ -489,7 +526,8 @@ Otherwise:
   - Generate a problem for the CURRENT SECTION
   - Match the difficulty and objectives of current section
 
-Return JSON only.`);
+CRITICAL: Return JSON only and in the exact format as OUTPUT SCHEMA`)
+.addSection("CRITICAL", "Ask only one question unless the second part is using the answer from the first part.");
 
     return builder.build();
   }
@@ -540,7 +578,7 @@ Focus on:
   - Using relevant formulas from the section
   - Making the solution educational, not just mechanical
 
-Return JSON only.`);
+CRITICAL: Return JSON only and in the exact format as OUTPUT SCHEMA`);
 
     return builder.build();
   }

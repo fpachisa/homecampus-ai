@@ -130,6 +130,17 @@ Student Answer → Evaluator (decides action) →
 - `ClaudeService`: Fallback provider using Anthropic Claude Sonnet
 - Automatic failover with smart retry logic (fast-fail for 503, retry for network errors)
 
+**TTS System** (`src/services/tts/`):
+- **Provider Pattern**: Similar to AI providers, supports multiple TTS backends
+- `TTSProvider.ts`: Interface for TTS providers with emotion and speaker support
+- `GeminiTTSProvider.ts`: Gemini 2.5 Flash TTS with emotion-driven voice control
+- `CloudTTSProvider.ts`: Google Cloud TTS (legacy, fallback only)
+- `emotionPrompts.ts`: Emotion-to-prompt mapping for voice context control
+- **Emotion System**: Maps AI agent emotions to voice prompts (encouraging, celebratory, supportive, neutral)
+- **Speaker Selection**: 30+ prebuilt voices (Kore, Puck, Charon, Callirhoe, etc.)
+- **Automatic Fallback**: Gemini TTS → Cloud TTS on failure
+- **Hooks**: `useAudioManager` (playback queue), `useSpeakerConfig` (speaker preferences)
+
 #### Curriculum System
 **Path-Based Learning** (`curriculum-content/paths/`):
 - Hierarchical structure: Subject → Path → Topics → Problems
@@ -193,11 +204,22 @@ path:
 
 Required environment variables (create `.env` in `learning-platform/`):
 ```bash
-# Required: Primary AI provider
+# Required: Primary AI provider (also used for Gemini TTS)
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
 
 # Optional: Fallback AI provider (activates on Gemini 503 errors)
 VITE_CLAUDE_API_KEY=your_claude_api_key_here
+
+# TTS Configuration (New!)
+# Provider: "gemini" (default, uses Gemini 2.5 Flash TTS) or "cloud" (legacy)
+VITE_TTS_PROVIDER=gemini
+
+# Default Speaker/Voice for Gemini TTS (MUST be lowercase)
+# Available: kore, puck, charon, callirrhoe, aoede, fenrir, sulafat, leda, and 22 more
+VITE_TTS_SPEAKER=callirrhoe
+
+# Optional: Google Cloud TTS API Key (fallback only)
+VITE_GOOGLE_TTS_API_KEY=your_google_tts_api_key_here
 
 # Optional: Firebase authentication
 VITE_FIREBASE_API_KEY=your_firebase_api_key_here
