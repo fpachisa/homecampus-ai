@@ -947,7 +947,8 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       showGrid: "boolean (default: true) - show grid lines",
       label: "string (optional) - custom function label",
       color: "string (optional) - custom curve color",
-      caption: "string (optional) - explanation text"
+      caption: "string (optional) - explanation text",
+      realWorldContext: "boolean (default: false) - if true, x-axis starts at 0 (for time, population, etc. where negative values don't make sense)"
     },
 
     exampleUsage: [
@@ -978,7 +979,7 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       },
       {
-        scenario: "Population growth",
+        scenario: "Population growth (real-world context)",
         caption: "Population growth: P(t) = 100 × 1.12^t (12% annual growth, starting at 100)",
         parameters: {
           base: 1.12,
@@ -988,7 +989,7 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           showAsymptote: true,
           showYIntercept: true,
           highlightPoints: [{ x: 3, label: "(3 years)" }],
-          xRange: [0, 10]
+          realWorldContext: true  // Starts x-axis at 0 (no negative time)
         }
       }
     ]
@@ -1153,6 +1154,63 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
   // ============================================
   // SETS AND VENN DIAGRAMS TOOLS
   // ============================================
+
+  vennDiagram1Set: {
+    name: "Single-Set Venn Diagram",
+    technicalName: "vennDiagram1Set",
+    component: "VennDiagram1SetVisualizer",
+    category: "sets",
+    description: "Interactive single-set Venn diagram showing one set A within universal set U. Perfect for teaching set complements (A'), universal sets, and basic set notation with one set.",
+    whenToUse: "Use for single-set problems: teaching A' (complement), n(A) and n(A'), visualizing 'elements in A' vs 'elements not in A', or introducing universal set concept with one set.",
+
+    parameters: {
+      setLabel: "string (default: 'A') - label for the set",
+      universalSetLabel: "string (default: 'U') - label for universal set",
+      setElements: "string[] | number - elements in the set A, or count",
+      complementElements: "string[] | number - elements in A' (outside A), or count",
+      showElements: "boolean (default: true) - show actual elements vs just counts",
+      showRegionCounts: "boolean (default: false) - use (n) bracket notation for counts",
+      shadeRegion: "'none' | 'set' | 'complement' | 'universal' (default: 'none') - which region to shade",
+      caption: "string (optional) - explanation text below diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Visualizing set complement",
+        caption: "Set M with complement M' shaded (elements not in M)",
+        parameters: {
+          setLabel: "M",
+          universalSetLabel: "U",
+          setElements: 5,
+          complementElements: 8,
+          showRegionCounts: true,
+          shadeRegion: "complement"
+        }
+      },
+      {
+        scenario: "Elements in set vs outside",
+        caption: "Set A = {1, 2, 3} and A' = {4, 5, 6, 7, 8} within U",
+        parameters: {
+          setLabel: "A",
+          setElements: ["1", "2", "3"],
+          complementElements: ["4", "5", "6", "7", "8"],
+          showElements: true,
+          shadeRegion: "none"
+        }
+      },
+      {
+        scenario: "Highlighting the set itself",
+        caption: "Shaded region shows set M (elements in M)",
+        parameters: {
+          setLabel: "M",
+          setElements: ["a", "b", "c"],
+          complementElements: ["d", "e", "f"],
+          showElements: true,
+          shadeRegion: "set"
+        }
+      }
+    ]
+  },
 
   vennDiagram: {
     name: "Two-Set Venn Diagram",
@@ -1658,8 +1716,8 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     technicalName: "cartesianPlane",
     component: "CartesianPlaneVisualizer",
     category: "coordinate-geometry",
-    description: "General-purpose coordinate grid for plotting points, drawing lines, and graphing curves. Supports relations, functions, transformations, and domain/range visualization. Highly versatile tool for coordinate geometry.",
-    whenToUse: "Use for plotting points (relations/functions), graphing linear equations, showing function transformations (shifts, stretches, reflections), visualizing domain/range restrictions, vertical line test, and any problem involving the x-y coordinate plane.",
+    description: "General-purpose 2D coordinate grid for plotting points, drawing lines, and graphing curves. Supports relations, functions, transformations, and domain/range visualization. Highly versatile tool for 2D coordinate geometry.",
+    whenToUse: "Use for 2D coordinate problems: plotting points (relations/functions), graphing linear equations, showing function transformations (shifts, stretches, reflections), visualizing domain/range restrictions, vertical line test, and any problem involving the x-y coordinate plane.",
 
     parameters: {
       xMin: "number (optional, default: -10) - Minimum x-axis value",
@@ -1768,6 +1826,101 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
             }
           ],
           title: "Absolute Value Function"
+        }
+      }
+    ]
+  },
+
+  coordinate3DPlane: {
+    name: "3D Coordinate Plane with Cuboid",
+    technicalName: "coordinate3DPlane",
+    component: "Coordinate3DPlaneVisualizer",
+    category: "coordinate-geometry",
+    description: "3D coordinate system showing a cuboid (rectangular prism) on extended X, Y, Z axes. Shows only origin label and custom points specified by AI. Perfect for teaching 3D coordinates with specific points of interest.",
+    whenToUse: "Use for 3D coordinate problems: teaching coordinate system with origin and axes, plotting specific points in 3D space, finding distance between points, calculating midpoint. Shows only origin 'O' and custom points you specify - no vertex labels cluttering the diagram.",
+
+    parameters: {
+      length: "string (optional, default: '4') - Y-axis dimension (depth, front-back). Can include units like '4cm' or just '4'",
+      width: "string (optional, default: '3') - X-axis dimension (left-right). Can include units like '3cm' or just '3'",
+      height: "string (optional, default: '5') - Z-axis dimension (up-down). Can include units like '5cm' or just '5'",
+
+      showFaceDiagonal: "boolean (optional) - Show diagonal on a face of the cuboid",
+      showSpaceDiagonal: "boolean (optional) - Show space diagonal (body diagonal) from origin to opposite corner",
+      faceDiagonal: "string (optional) - Label for face diagonal (e.g., 'd', '5cm')",
+      spaceDiagonal: "string (optional) - Label for space diagonal (e.g., 'd', '7.07cm')",
+      diagonalFace: "'front' | 'side' | 'top' | 'bottom' (optional) - Which face to show diagonal on",
+      highlightElement: "'length' | 'width' | 'height' | 'faceDiagonal' | 'spaceDiagonal' | 'none' (optional) - Highlight specific element in red",
+
+      showAxes: "boolean (optional, default: true) - Show X (red), Y (green), Z (blue) axes with arrows and labels. Axes extend well beyond the cuboid.",
+      showGrid: "boolean (optional, default: false) - Show grid lines on specified plane",
+      gridPlane: "'xy' | 'xz' | 'yz' | 'none' (optional, default: 'none') - Which coordinate plane to show grid on",
+      showOriginLabel: "boolean (optional, default: true) - Show 'O' label at origin point (0,0,0)",
+
+      customPoints: "array of {x: number, y: number, z: number, label: string} (optional) - Specific points to display on the diagram. Example: [{x: 4, y: 3, z: 5, label: 'P'}] will highlight point (4,3,5) with red dot. If identifying point on a plane for e.g. XY plane then z SHOULD BE 0",
+
+      title: "string (optional) - Title displayed above visualization",
+      caption: "string (optional) - Explanation text below visualization (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Plotting a point P in 3D space",
+        caption: "Point P(4,3,5) plotted on 3D coordinate system with cuboid reference",
+        parameters: {
+          length: "4",
+          width: "6",
+          height: "5",
+          showAxes: true,
+          showOriginLabel: true,
+          customPoints: [
+            { x: 4, y: 3, z: 5, label: "P" }
+          ]
+        }
+      },
+      {
+        scenario: "Finding distance between two points in 3D",
+        caption: "Points A(2,1,3) and B(5,4,7) showing distance calculation setup",
+        parameters: {
+          length: "5",
+          width: "6",
+          height: "8",
+          showAxes: true,
+          showOriginLabel: true,
+          customPoints: [
+            { x: 2, y: 1, z: 3, label: "A" },
+            { x: 5, y: 4, z: 7, label: "B" }
+          ]
+        }
+      },
+      {
+        scenario: "Finding midpoint M between two points",
+        caption: "Midpoint M(3.5, 2.5, 5) between A(2,1,3) and B(5,4,7)",
+        parameters: {
+          length: "5",
+          width: "6",
+          height: "8",
+          showAxes: true,
+          showOriginLabel: true,
+          customPoints: [
+            { x: 2, y: 1, z: 3, label: "A" },
+            { x: 5, y: 4, z: 7, label: "B" },
+            { x: 3.5, y: 2.5, z: 5, label: "M" }
+          ]
+        }
+      },
+      {
+        scenario: "Teaching 3D coordinate system with grid",
+        caption: "3D coordinate axes with XY-plane grid for reference",
+        parameters: {
+          length: "4",
+          width: "6",
+          height: "5",
+          showAxes: true,
+          showGrid: true,
+          gridPlane: "xy",
+          showOriginLabel: true,
+          customPoints: [
+            { x: 4, y: 6, z: 0, label: "P" }]
         }
       }
     ]

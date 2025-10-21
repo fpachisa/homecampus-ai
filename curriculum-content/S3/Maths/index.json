@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "filename": "s3-math-trigonometry.yaml",
+      "displayName": "Trigonometry",
+      "category": "s3-math-trigonometry"
+    },
+    {
+      "filename": "s3-math-exponential-logarithms.yaml",
+      "displayName": "Exponential & Logarithms",
+      "category": "s3-math-exponential-logarithms"
+    },
+    {
+      "filename": "s3-math-sets-venn-diagrams.yaml",
+      "displayName": "Sets & Venn Diagrams",
+      "category": "s3-math-sets-venn-diagrams"
+    },
+    {
+      "filename": "s3-math-exponents.yaml",
+      "displayName": "Exponents",
+      "category": "s3-math-exponents"
+    },
+    {
+      "filename": "s3-math-surds-radicals.yaml",
+      "displayName": "Surds & Radicals",
+      "category": "s3-math-surds-radicals"
+    },
+    {
+      "filename": "s3-math-relations-functions.yaml",
+      "displayName": "Relations & Functions",
+      "category": "s3-math-relations-functions"
+    },
+    {
+      "filename": "s3-math-statistics.yaml",
+      "displayName": "Statistics",
+      "category": "s3-math-statistics"
+    
+    },
+    {
+      "filename": "s3-math-coordinate-geometry.yaml",
+      "displayName": "Coordinate Geometry",
+      "category": "s3-math-coordinate-geometry"
+    
+    }
+  ]
+}

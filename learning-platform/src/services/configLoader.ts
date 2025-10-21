@@ -1718,6 +1718,182 @@ export class ConfigLoader {
           practice: true,
           visualizations: true
         }
+      },
+      // S3 Coordinate Geometry subtopics
+      's3-math-coord-geom-fundamentals': {
+        id: 's3-math-coord-geom-fundamentals',
+        displayName: 'Coordinate Plane Fundamentals',
+        grade: 's3',
+        subject: 'math',
+        topic: 'coordinate-geometry',
+        subtopic: 'fundamentals',
+        metadata: {
+          difficulty: 'beginner',
+          estimatedMinutes: 45,
+          prerequisites: []
+        },
+        notesComponent: 's3/math/coordinate-geometry/CoordinatePlaneFundamentals',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-coord-geom-gradient': {
+        id: 's3-math-coord-geom-gradient',
+        displayName: 'Gradient and Line Relationships',
+        grade: 's3',
+        subject: 'math',
+        topic: 'coordinate-geometry',
+        subtopic: 'gradient',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-coord-geom-fundamentals']
+        },
+        notesComponent: 's3/math/coordinate-geometry/GradientAndLineRelationships',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-coord-geom-line-equations': {
+        id: 's3-math-coord-geom-line-equations',
+        displayName: 'Line Equations',
+        grade: 's3',
+        subject: 'math',
+        topic: 'coordinate-geometry',
+        subtopic: 'line-equations',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-coord-geom-gradient']
+        },
+        notesComponent: 's3/math/coordinate-geometry/LineEquations',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-coord-geom-graphing': {
+        id: 's3-math-coord-geom-graphing',
+        displayName: 'Graphing Straight Lines',
+        grade: 's3',
+        subject: 'math',
+        topic: 'coordinate-geometry',
+        subtopic: 'graphing',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-coord-geom-line-equations']
+        },
+        notesComponent: 's3/math/coordinate-geometry/GraphingStraightLines',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-coord-geom-perpendicular-bisectors': {
+        id: 's3-math-coord-geom-perpendicular-bisectors',
+        displayName: 'Perpendicular Bisectors',
+        grade: 's3',
+        subject: 'math',
+        topic: 'coordinate-geometry',
+        subtopic: 'perpendicular-bisectors',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 40,
+          prerequisites: ['s3-math-coord-geom-gradient', 's3-math-coord-geom-line-equations']
+        },
+        notesComponent: 's3/math/coordinate-geometry/PerpendicularBisectors',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-coord-geom-applications': {
+        id: 's3-math-coord-geom-applications',
+        displayName: 'Coordinate Geometry Applications',
+        grade: 's3',
+        subject: 'math',
+        topic: 'coordinate-geometry',
+        subtopic: 'applications',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 50,
+          prerequisites: ['s3-math-coord-geom-gradient', 's3-math-coord-geom-line-equations']
+        },
+        notesComponent: 's3/math/coordinate-geometry/CoordinateGeometryApplications',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's3-math-coord-geom-3d': {
+        id: 's3-math-coord-geom-3d',
+        displayName: '3-Dimensional Coordinate Geometry',
+        grade: 's3',
+        subject: 'math',
+        topic: 'coordinate-geometry',
+        subtopic: '3d',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['s3-math-coord-geom-fundamentals']
+        },
+        notesComponent: 's3/math/coordinate-geometry/ThreeDimensionalCoordinates',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
       }
     };
 

@@ -23,6 +23,7 @@ export { PromptRegistry } from './registry/prompt-registry';
 // Formatting
 export {
   FORMATTING_RULES,
+  FORMATTING_DECISION_TREE,
   validateFormatting,
   FormatConverter,
   FORMATTING_PRESETS

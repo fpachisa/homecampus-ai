@@ -231,6 +231,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = ({
                 layer={node.layer}
                 position={adjustedPosition}
                 onClick={() => onSelectNode(node.id)}
+                displayNumber={index + 1}
               />
             );
           })}

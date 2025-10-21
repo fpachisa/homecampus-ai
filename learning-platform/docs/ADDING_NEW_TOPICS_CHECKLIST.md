@@ -517,13 +517,17 @@ constructor() {
 
 ---
 
-**Last Updated:** 2025-10-17
+**Last Updated:** 2025-10-19
 **Verified Topics:**
 - ✅ Trigonometry (7 subtopics)
 - ✅ Circle Geometry (7 subtopics)
 - ✅ Quadratic Equations (13 subtopics)
 - ✅ Exponential & Logarithms (9 subtopics)
 - ✅ Sets & Venn Diagrams (9 subtopics)
-- ✅ Exponents (3 subtopics) - **FULLY TESTED** *(including newPromptResolver & configLoader fixes)*
+- ✅ Exponents (3 subtopics)
+- ✅ Surds & Radicals (6 subtopics)
+- ✅ Statistics (7 subtopics)
+- ✅ Relations & Functions (6 subtopics)
+- ✅ Coordinate Geometry (6 subtopics) - **LATEST**
 
 **Total Files Required Per Topic:** 11 files (1 topic config + HomePage.tsx + App.tsx + 5 UI components + 4 service files)

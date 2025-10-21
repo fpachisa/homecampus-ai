@@ -23,6 +23,7 @@ interface CircularPathNodeProps {
   layer: PathLayer;
   position: { x: number; y: number; rotation: number };
   onClick: () => void;
+  displayNumber?: number; // Optional override for sequential display numbering
 }
 
 export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
@@ -32,6 +33,7 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
   layer,
   position,
   onClick,
+  displayNumber,
 }) => {
   const { theme } = useTheme();
 
@@ -48,6 +50,12 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
       light: '#5865F240',
       dark: '#4752C4',
       glow: '#5865F280',
+    },
+    application: {
+      main: '#10B981',      // Green - for real-world applications
+      light: '#10B98140',
+      dark: '#059669',
+      glow: '#10B98180',
     },
     examPractice: {
       main: '#EB459E',      // Pink
@@ -78,7 +86,7 @@ export const CircularPathNode: React.FC<CircularPathNodeProps> = ({
   // Icon selection based on status
   const getIcon = (): string => {
     if (status === 'completed') return '✓';
-    return String(node.nodeNumber);
+    return String(displayNumber ?? node.nodeNumber);
   };
 
   // Determine if clickable

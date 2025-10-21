@@ -2,6 +2,7 @@
  * Path Configuration Loader
  *
  * Loads path node configurations for practice mode from YAML files.
+ * Files are organized by grade and subject (e.g., curriculum-content/S3/Maths/)
  * Scalable architecture supporting unlimited categories and paths.
  */
 
@@ -13,7 +14,7 @@ class PathConfigLoader {
 
   /**
    * Load path nodes for a given category and difficulty
-   * Automatically loads from YAML files in curriculum-content/paths/
+   * Automatically loads from YAML files organized by grade/subject structure
    */
   async loadPathNodes(category: string, difficulty: PathDifficulty): Promise<PathNode[]> {
     const cacheKey = `${category}-${difficulty}`;

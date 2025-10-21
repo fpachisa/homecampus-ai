@@ -1,0 +1,899 @@
+# Surds Radicals - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: surds-node-1
+  nodeNumber: 1
+  title: Understanding Surds vs Rational Roots
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Is $\sqrt{13}$ a surd? Explain your reasoning concisely.
+      avatarIntro: Welcome to the basics of surds! Remember, a surd is an irrational number resulting from taking the root
+        of a number that is not a perfect power.
+      mathTool: null
+      finalAnswer: Yes. 13 is not a perfect square, therefore $\sqrt{13}$ is an irrational number, which fits the definition
+        of a surd.
+      stepByStepGuideline:
+      - 'Recall the definition of a surd: A surd is the root of a positive integer that results in an irrational number.'
+      - Check if 13 is a perfect square (1, 4, 9, 16...).
+      - Since 13 is not a perfect square, its square root cannot be simplified to a rational number.
+      - Conclude that $\sqrt{13}$ is a surd.
+      id: q1-1
+      questionGroup: q1
+    - problemText: 'True or False: The expression $\sqrt{1}$ is classified as a surd. Justify your answer.'
+      mathTool: null
+      finalAnswer: False. $\sqrt{1} = 1$. Since 1 is an integer, it is a rational number (it belongs to $\mathbb{Q}$). Surds
+        must be irrational.
+      stepByStepGuideline:
+      - Evaluate the expression $\sqrt{1}$. The result is 1.
+      - Determine if the result (1) is rational or irrational. 1 is rational.
+      - Since surds are defined as irrational square roots, the statement is false.
+      id: q1-2
+      questionGroup: q1
+    - problemText: 'Which of the following expressions are surds: $\sqrt{5}, \sqrt{9}, \sqrt{10}, \sqrt{25}$?'
+      mathTool: null
+      finalAnswer: The surds are $\sqrt{5}$ and $\sqrt{10}$. This is because 5 and 10 are not perfect squares. $\sqrt{9}=3$
+        and $\sqrt{25}=5$, which are rational.
+      stepByStepGuideline:
+      - Examine each number under the square root sign.
+      - 'Identify perfect squares: 9 ($3^2$) and 25 ($5^2$). The square roots of these numbers are rational and therefore
+        not surds.'
+      - 'Identify non-perfect squares: 5 and 10. The square roots of these numbers are irrational and thus are surds.'
+      - 'List the identified surds: $\sqrt{5}$ and $\sqrt{10}$.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: 'Identify all surds from the following list of square roots: $\sqrt{36}, \sqrt{40}, \sqrt{64}, \sqrt{72},
+        \sqrt{121}$.'
+      mathTool: null
+      finalAnswer: 'The surds are $\sqrt{40}$ and $\sqrt{72}$. The numbers 40 and 72 are non-perfect squares. (Note: $\sqrt{36}=6,
+        \sqrt{64}=8, \sqrt{121}=11$, all of which are rational).'
+      stepByStepGuideline:
+      - Review the list and check if the radicand (the number inside the root) is a perfect square.
+      - 'Check 36: $6^2 = 36$ (Not a surd).'
+      - 'Check 40: Not a perfect square (Surd).'
+      - 'Check 64: $8^2 = 64$ (Not a surd).'
+      - 'Check 72: Not a perfect square (Surd).'
+      - 'Check 121: $11^2 = 121$ (Not a surd).'
+      - List the expressions identified as surds.
+      id: q1-4
+      questionGroup: q1
+    - problemText: Is the number $\sqrt{169}$ a surd? Give a concise reason for your conclusion, referencing rationality.
+      mathTool: null
+      finalAnswer: No. 169 is a perfect square ($13^2$). Therefore, $\sqrt{169} = 13$. Since 13 can be expressed as a fraction
+        ($13/1$), it is a rational number, and thus $\sqrt{169}$ is not a surd.
+      stepByStepGuideline:
+      - Determine if 169 is a perfect square.
+      - Calculate $\sqrt{169}$, which is 13.
+      - Since the result (13) is a rational number, conclude that $\sqrt{169}$ does not fit the definition of a surd.
+      id: q1-5
+      questionGroup: q1
+- id: surds-node-2
+  nodeNumber: 2
+  title: Multiplication and Division Properties
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the following expression using the multiplication property of surds: $4\sqrt{2} \times 5\sqrt{3}$.'
+      avatarIntro: Great job reaching this section! Remember that when multiplying surds with coefficients, you multiply the
+        coefficients together and the radicands together.
+      mathTool: null
+      finalAnswer: '$20\sqrt{6}$'
+      stepByStepGuideline:
+      - 'Group the coefficients and the radicands separately: $(4 \times 5) \times (\sqrt{2} \times \sqrt{3})$.'
+      - 'Multiply the coefficients: $4 \times 5 = 20$.'
+      - 'Apply the multiplication property $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$ to the surds: $\sqrt{2} \times \sqrt{3}
+        = \sqrt{2 \times 3} = \sqrt{6}$.'
+      - 'Combine the results: $20\sqrt{6}$.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: Simplify the quotient $\frac{\sqrt{50}}{\sqrt{2}}$.
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Apply the division property of surds: $\frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}}$.'
+      - 'Rewrite the expression as a single square root: $\sqrt{\frac{50}{2}}$.'
+      - 'Perform the division inside the square root: $\sqrt{25}$.'
+      - 'Calculate the final value: $\sqrt{25} = 5$.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: Simplify the expression $3\sqrt{5} \times 2\sqrt{7}$.
+      mathTool: null
+      finalAnswer: '$6\sqrt{35}$'
+      stepByStepGuideline:
+      - 'Multiply the coefficients together: $3 \times 2 = 6$.'
+      - 'Multiply the radicands together using $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$: $\sqrt{5} \times \sqrt{7} = \sqrt{35}$.'
+      - 'Combine the results: $6\sqrt{35}$.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: Simplify $\sqrt{\frac{16}{81}}$ by applying the division property of surds.
+      mathTool: null
+      finalAnswer: 4/9
+      stepByStepGuideline:
+      - 'Apply the property $\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$ to separate the numerator and denominator: $\frac{\sqrt{16}}{\sqrt{81}}$.'
+      - 'Evaluate the square root of the numerator: $\sqrt{16} = 4$.'
+      - 'Evaluate the square root of the denominator: $\sqrt{81} = 9$.'
+      - 'Write the simplified fraction: $4/9$.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: Simplify the quotient $\frac{\sqrt{10}}{\sqrt{5}}$, leaving your answer in surd form if necessary.
+      mathTool: null
+      finalAnswer: '$\sqrt{2}$'
+      stepByStepGuideline:
+      - 'Apply the division property of surds: $\frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}}$.'
+      - 'Rewrite the expression as a single square root: $\sqrt{\frac{10}{5}}$.'
+      - 'Perform the division inside the square root: $\sqrt{2}$.'
+      - Since 2 is not a perfect square, the surd $\sqrt{2}$ is the final simplified answer.
+      id: q2-5
+      questionGroup: q2
+- id: surds-node-3
+  nodeNumber: 3
+  title: Extracting Perfect Square Factors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Write $\sqrt{20}$ in simplest surd form.
+      avatarIntro: To simplify surds, always look for the largest perfect square factor hidden within the square root.
+      mathTool: null
+      finalAnswer: 2\u221a5
+      stepByStepGuideline:
+      - Identify the largest perfect square factor of 20. The perfect square factors are 1 and 4. The largest is 4.
+      - 'Rewrite $\sqrt{20}$ using this factor: $\sqrt{20} = \sqrt{4 \times 5}$.'
+      - 'Apply the property $\sqrt{ab} = \sqrt{a} \times \sqrt{b}$: $\sqrt{4 \times 5} = \sqrt{4} \times \sqrt{5}$.'
+      - 'Simplify the perfect square: $2 \times \sqrt{5}$.'
+      - The simplest surd form is $2\sqrt{5}$.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Simplify $\sqrt{75}$.
+      mathTool: null
+      finalAnswer: 5\u221a3
+      stepByStepGuideline:
+      - Identify the largest perfect square factor of 75. The largest perfect square factor is 25.
+      - 'Rewrite $\sqrt{75}$ as the product of the perfect square and the remaining factor: $\sqrt{75} = \sqrt{25 \times 3}$.'
+      - 'Separate the roots: $\sqrt{25} \times \sqrt{3}$.'
+      - 'Calculate the square root of the perfect square: $5 \times \sqrt{3}$.'
+      - The simplified form is $5\sqrt{3}$.
+      id: q3-2
+      questionGroup: q3
+    - problemText: Express $\sqrt{17}$ in its simplest form.
+      mathTool: null
+      finalAnswer: \u221a17
+      stepByStepGuideline:
+      - Check the factors of 17. Since 17 is a prime number, its only factors are 1 and 17.
+      - Determine if 17 contains any perfect square factors greater than 1.
+      - Since 17 does not contain any perfect square factors, the surd is already in its simplest form.
+      - The simplest form is $\sqrt{17}$.
+      id: q3-3
+      questionGroup: q3
+    - problemText: Write $\sqrt{80}$ in simplest surd form.
+      mathTool: null
+      finalAnswer: 4\u221a5
+      stepByStepGuideline:
+      - Identify the largest perfect square factor of 80. The perfect squares that divide 80 are 4 and 16. The largest is
+        16.
+      - 'Rewrite the surd: $\sqrt{80} = \sqrt{16 \times 5}$.'
+      - 'Separate the roots using the multiplication property: $\sqrt{16} \times \sqrt{5}$.'
+      - 'Simplify the perfect square root: $4 \times \sqrt{5}$.'
+      - The simplest surd form is $4\sqrt{5}$.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Simplify $\sqrt{63}$.
+      mathTool: null
+      finalAnswer: 3\u221a7
+      stepByStepGuideline:
+      - Identify the largest perfect square factor of 63. The largest perfect square factor is 9.
+      - 'Express the radicand as a product: $\sqrt{63} = \sqrt{9 \times 7}$.'
+      - 'Separate the terms: $\sqrt{9} \times \sqrt{7}$.'
+      - Simplify $\sqrt{9}$ to 3.
+      - The simplified expression is $3\sqrt{7}$.
+      id: q3-5
+      questionGroup: q3
+- id: surds-node-4
+  nodeNumber: 4
+  title: Simplifying Complex Surds with Prime Factorization
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Write $\sqrt{432}$ in its simplest surd form. (Hint: Find the prime factorization first.)'
+      avatarIntro: Simplifying surds requires finding perfect square factors hiding inside the square root. Let's use prime
+        factorization to tackle this complex number!
+      mathTool: null
+      finalAnswer: 12√3
+      stepByStepGuideline:
+      - 'Find the prime factorization of the radicand: $432 = 2^4 \times 3^3$.'
+      - 'Group the factors into pairs (perfect squares) and leave the remainder: $\sqrt{432} = \sqrt{(2^4 \times 3^2) \times
+        3}$.'
+      - 'Extract the perfect square factors from the square root: $2^2 \times 3 \times \sqrt{3}$.'
+      - 'Calculate the coefficient: $4 \times 3 \times \sqrt{3} = 12\sqrt{3}$.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: Write the expression $\frac{12 + \sqrt{72}}{6}$ in the form $a + b\sqrt{k}$, where $a, b, k$ are rational
+        numbers.
+      mathTool: null
+      finalAnswer: 2 + √2
+      stepByStepGuideline:
+      - 'First, simplify the surd in the numerator: $\sqrt{72} = \sqrt{36 \times 2} = 6\sqrt{2}$.'
+      - 'Substitute the simplified surd back into the expression: $\frac{12 + 6\sqrt{2}}{6}$.'
+      - 'Divide each term in the numerator by the denominator: $\frac{12}{6} + \frac{6\sqrt{2}}{6}$.'
+      - 'Simplify the resulting expression: $2 + \sqrt{2}$.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: Simplify $\sqrt{175}$, ensuring your answer is in simplest surd form.
+      mathTool: null
+      finalAnswer: 5√7
+      stepByStepGuideline:
+      - 'Find the prime factorization of 175: $175 = 5^2 \times 7$.'
+      - 'Rewrite the surd using the factorization: $\sqrt{175} = \sqrt{5^2 \times 7}$.'
+      - 'Extract the perfect square factor ($5^2$): $5\sqrt{7}$. This is the simplest surd form.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: Express $\frac{8 - \sqrt{32}}{4}$ in the form $a + b\sqrt{k}$, where $a$ and $b$ are rational numbers.
+      mathTool: null
+      finalAnswer: 2 - √2
+      stepByStepGuideline:
+      - 'Simplify the surd in the numerator: $\sqrt{32} = \sqrt{16 \times 2} = 4\sqrt{2}$.'
+      - 'Substitute the simplified surd back into the expression: $\frac{8 - 4\sqrt{2}}{4}$.'
+      - 'Divide each term in the numerator by the denominator: $\frac{8}{4} - \frac{4\sqrt{2}}{4}$.'
+      - 'Simplify the resulting expression: $2 - \sqrt{2}$.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: Determine the simplest surd form of $\sqrt{288}$.
+      mathTool: null
+      finalAnswer: 12√2
+      stepByStepGuideline:
+      - 'Find the prime factorization of 288: $288 = 2^5 \times 3^2$.'
+      - 'Group the factors into perfect square pairs: $\sqrt{288} = \sqrt{(2^4 \times 3^2) \times 2}$.'
+      - 'Extract the perfect square factors: $2^2 \times 3 \times \sqrt{2}$.'
+      - 'Calculate the coefficient: $4 \times 3 \times \sqrt{2} = 12\sqrt{2}$.'
+      id: q4-5
+      questionGroup: q4
+- id: surds-node-5
+  nodeNumber: 5
+  title: Adding and Subtracting Like Surds
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the following expression: $9\sqrt{11} - 8\sqrt{11}$'
+      avatarIntro: Remember, adding and subtracting surds works just like combining like terms in algebra. Only the coefficients
+        change!
+      mathTool: null
+      finalAnswer: '$\sqrt{11}$'
+      stepByStepGuideline:
+      - Identify that the terms $9\sqrt{11}$ and $8\sqrt{11}$ are like surds because they share the same radicand (11).
+      - 'Combine the coefficients: $9 - 8 = 1$.'
+      - Since the coefficient is 1, we do not need to write it explicitly. The simplified expression is $\sqrt{11}$.
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'Calculate the sum of the following like surds: $10\sqrt{2} + 7\sqrt{2}$'
+      mathTool: null
+      finalAnswer: $17\sqrt{2}$
+      stepByStepGuideline:
+      - Identify the common radicand, which is 2. These are like surds.
+      - 'Add the coefficients: $10 + 7 = 17$.'
+      - Keep the radicand unchanged. The simplified expression is $17\sqrt{2}$.
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'Simplify the expression: $3\sqrt{5} - 7\sqrt{5}$'
+      mathTool: null
+      finalAnswer: $-4\sqrt{5}$
+      stepByStepGuideline:
+      - Identify the common radicand, which is 5.
+      - 'Subtract the coefficients: $3 - 7 = -4$.'
+      - Keep the radicand unchanged. The simplified expression is $-4\sqrt{5}$.
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'Combine the following surds: $6\sqrt{7} + 3\sqrt{7} - 10\sqrt{7}$'
+      mathTool: null
+      finalAnswer: $-\sqrt{7}$
+      stepByStepGuideline:
+      - Identify that all three terms are like surds, sharing the radicand 7.
+      - 'Combine the coefficients using the order of operations: $6 + 3 - 10$.'
+      - $9 - 10 = -1$.
+      - Since the coefficient is -1, we write the final answer as $-\sqrt{7}$.
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'Simplify the expression by grouping like surds: $5\sqrt{3} + 4\sqrt{13} - 2\sqrt{3} + 9\sqrt{13}$'
+      mathTool: null
+      finalAnswer: $3\sqrt{3} + 13\sqrt{13}$
+      stepByStepGuideline:
+      - 'Group the like surds together: $(5\sqrt{3} - 2\sqrt{3}) + (4\sqrt{13} + 9\sqrt{13})$.'
+      - 'Combine the coefficients of the $\sqrt{3}$ terms: $5 - 2 = 3$. This gives $3\sqrt{3}$.'
+      - 'Combine the coefficients of the $\sqrt{13}$ terms: $4 + 9 = 13$. This gives $13\sqrt{13}$.'
+      - Since $\sqrt{3}$ and $\sqrt{13}$ are unlike surds, they cannot be combined further. The final simplified expression
+        is $3\sqrt{3} + 13\sqrt{13}$.
+      id: q5-5
+      questionGroup: q5
+- id: surds-node-6
+  nodeNumber: 6
+  title: Simplifying Before Combining Unlike Surds
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the following expression: $\sqrt{48} + \sqrt{75}$'
+      avatarIntro: Remember, the first step when adding unlike surds is always to simplify each term individually to see if
+        they share a common base.
+      mathTool: null
+      finalAnswer: 9√3
+      stepByStepGuideline:
+      - 'Simplify the first term: $\sqrt{48} = \sqrt{16 \times 3} = 4\sqrt{3}$.'
+      - 'Simplify the second term: $\sqrt{75} = \sqrt{25 \times 3} = 5\sqrt{3}$.'
+      - 'Substitute the simplified terms back into the expression: $4\sqrt{3} + 5\sqrt{3}$.'
+      - 'Combine the like surds by adding the coefficients: $(4 + 5)\sqrt{3} = 9\sqrt{3}$.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: 'Simplify: $\sqrt{72} - \sqrt{32} + \sqrt{8}$'
+      mathTool: null
+      finalAnswer: 4√2
+      stepByStepGuideline:
+      - 'Simplify each surd individually:'
+      - $\sqrt{72} = \sqrt{36 \times 2} = 6\sqrt{2}$
+      - $\sqrt{32} = \sqrt{16 \times 2} = 4\sqrt{2}$
+      - $\sqrt{8} = \sqrt{4 \times 2} = 2\sqrt{2}$
+      - 'Substitute the simplified terms back: $6\sqrt{2} - 4\sqrt{2} + 2\sqrt{2}$.'
+      - 'Combine the like surds by operating on the coefficients: $(6 - 4 + 2)\sqrt{2} = 4\sqrt{2}$.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: 'Simplify the expression: $3\sqrt{20} + \sqrt{45}$'
+      mathTool: null
+      finalAnswer: 9√5
+      stepByStepGuideline:
+      - 'Simplify the first term, remembering the coefficient:'
+      - $3\sqrt{20} = 3\sqrt{4 \times 5} = 3(2\sqrt{5}) = 6\sqrt{5}$.
+      - 'Simplify the second term:'
+      - $\sqrt{45} = \sqrt{9 \times 5} = 3\sqrt{5}$.
+      - 'Substitute the simplified terms back into the expression: $6\sqrt{5} + 3\sqrt{5}$.'
+      - 'Combine the like surds: $(6 + 3)\sqrt{5} = 9\sqrt{5}$.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Simplify the expression $\sqrt{28} + \sqrt{80}$. If the terms remain unlike, leave them separate.
+      mathTool: null
+      finalAnswer: 2√7 + 4√5
+      stepByStepGuideline:
+      - 'Simplify the first term: $\sqrt{28} = \sqrt{4 \times 7} = 2\sqrt{7}$.'
+      - 'Simplify the second term: $\sqrt{80} = \sqrt{16 \times 5} = 4\sqrt{5}$.'
+      - 'Substitute the simplified terms back: $2\sqrt{7} + 4\sqrt{5}$.'
+      - Since the resulting radicands (7 and 5) are different, these are unlike surds and cannot be combined further.
+      id: q6-4
+      questionGroup: q6
+    - problemText: 'Simplify the expression: $4\sqrt{12} - 2\sqrt{27}$'
+      mathTool: null
+      finalAnswer: 2√3
+      stepByStepGuideline:
+      - 'Simplify the first term, accounting for the external coefficient:'
+      - $4\sqrt{12} = 4\sqrt{4 \times 3} = 4(2\sqrt{3}) = 8\sqrt{3}$.
+      - 'Simplify the second term, accounting for the external coefficient:'
+      - $2\sqrt{27} = 2\sqrt{9 \times 3} = 2(3\sqrt{3}) = 6\sqrt{3}$.
+      - 'Substitute the simplified terms back into the expression: $8\sqrt{3} - 6\sqrt{3}$.'
+      - 'Combine the like surds by subtracting the coefficients: $(8 - 6)\sqrt{3} = 2\sqrt{3}$.'
+      id: q6-5
+      questionGroup: q6
+- id: surds-node-7
+  nodeNumber: 7
+  title: Multiplying Surds
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify: $\sqrt{5} \times \sqrt{7}$'
+      avatarIntro: Let's start with the basics of multiplying surds. Remember that the square root of a multiplied by the
+        square root of b equals the square root of a times b.
+      mathTool: null
+      finalAnswer: \u221a35
+      stepByStepGuideline:
+      - Apply the rule $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$.
+      - 'Multiply the numbers under the square root sign: $5 \times 7 = 35$.'
+      - Check if $\sqrt{35}$ can be simplified. Since 35 has no perfect square factors (other than 1), the answer is $\sqrt{35}$.
+      id: q7-1
+      questionGroup: q7
+    - problemText: Calculate the value of $\sqrt{3} \times \sqrt{3}$.
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Recall that multiplying a square root by itself results in the number under the root: $\sqrt{a} \times \sqrt{a} =
+        a$.'
+      - Therefore, $\sqrt{3} \times \sqrt{3} = 3$.
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'Simplify the expression: $3\sqrt{2} \times 4\sqrt{5}$'
+      mathTool: null
+      finalAnswer: 12\u221a10
+      stepByStepGuideline:
+      - 'Multiply the coefficients (numbers outside the root): $3 \times 4 = 12$.'
+      - 'Multiply the surds (numbers inside the root): $\sqrt{2} \times \sqrt{5} = \sqrt{10}$.'
+      - 'Combine the results: $12\sqrt{10}$.'
+      - Check if $\sqrt{10}$ can be simplified. Since 10 has no perfect square factors, the final answer is $12\sqrt{10}$.
+      id: q7-3
+      questionGroup: q7
+    - problemText: Calculate the value of $\sqrt{8} \times \sqrt{2}$.
+      mathTool: null
+      finalAnswer: '4'
+      stepByStepGuideline:
+      - 'Multiply the numbers under the square root sign: $\sqrt{8} \times \sqrt{2} = \sqrt{8 \times 2} = \sqrt{16}$.'
+      - Simplify the resulting surd. Since 16 is a perfect square, $\sqrt{16} = 4$.
+      id: q7-4
+      questionGroup: q7
+    - problemText: 'Simplify the product: $4\sqrt{3} \times 2\sqrt{6}$'
+      mathTool: null
+      finalAnswer: 24\u221a2
+      stepByStepGuideline:
+      - 'Multiply the coefficients: $4 \times 2 = 8$.'
+      - 'Multiply the surds: $\sqrt{3} \times \sqrt{6} = \sqrt{18}$.'
+      - The intermediate result is $8\sqrt{18}$.
+      - 'Simplify $\sqrt{18}$ by finding the largest perfect square factor: $\sqrt{18} = \sqrt{9 \times 2} = 3\sqrt{2}$.'
+      - 'Multiply the coefficient 8 by the extracted integer 3: $8 \times 3 = 24$.'
+      - The fully simplified answer is $24\sqrt{2}$.
+      id: q7-5
+      questionGroup: q7
+- id: surds-node-8
+  nodeNumber: 8
+  title: Dividing Surds
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify: $\sqrt{75} / \sqrt{3}$'
+      avatarIntro: Dividing surds is often easier than multiplying! Remember that the square root of a divided by the square
+        root of b equals the square root of a over b, and look out for perfect squares.
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Apply the division rule for surds: $\sqrt{75} / \sqrt{3} = \sqrt{75/3}$.'
+      - 'Calculate the quotient inside the radical: $75 \div 3 = 25$.'
+      - 'Evaluate the square root: $\sqrt{25} = 5$.'
+      - The simplified answer is 5.
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'Simplify: $\sqrt{21} / \sqrt{3}$'
+      mathTool: null
+      finalAnswer: \u221a7
+      stepByStepGuideline:
+      - 'Apply the division rule for surds: $\sqrt{21} / \sqrt{3} = \sqrt{21/3}$.'
+      - 'Calculate the quotient inside the radical: $21 \div 3 = 7$.'
+      - The simplified expression is $\sqrt{7}$, as 7 has no perfect square factors.
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'Simplify: $20\sqrt{6} / 4\sqrt{3}$'
+      mathTool: null
+      finalAnswer: 5\u221a2
+      stepByStepGuideline:
+      - 'Divide the coefficients (the numbers outside the radicals): $20 \div 4 = 5$.'
+      - 'Divide the radicands (the numbers inside the radicals): $\sqrt{6} / \sqrt{3} = \sqrt{6/3} = \sqrt{2}$.'
+      - 'Combine the results: $5\sqrt{2}$.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'Simplify: $18\sqrt{15} / 6\sqrt{5}$'
+      mathTool: null
+      finalAnswer: 3\u221a3
+      stepByStepGuideline:
+      - 'Divide the coefficients: $18 \div 6 = 3$.'
+      - 'Divide the radicands: $\sqrt{15} / \sqrt{5} = \sqrt{15/5} = \sqrt{3}$.'
+      - 'Combine the results to get the simplest form: $3\sqrt{3}$.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'Simplify: $\sqrt{27} / \sqrt{3}$'
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Apply the division rule for surds: $\sqrt{27} / \sqrt{3} = \sqrt{27/3}$.'
+      - 'Calculate the quotient inside the radical: $27 \div 3 = 9$.'
+      - 'Evaluate the square root: $\sqrt{9} = 3$.'
+      - The final answer is the rational number 3.
+      id: q8-5
+      questionGroup: q8
+- id: surds-node-9
+  nodeNumber: 9
+  title: Expanding Brackets with Surds
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Expand and simplify the expression: $\sqrt{2}(3 + \sqrt{2})$'
+      avatarIntro: Time to practice expanding brackets with surds! Remember to distribute the term outside the bracket to
+        every term inside.
+      mathTool: null
+      finalAnswer: 2 + 3\u221a2
+      stepByStepGuideline:
+      - 'Apply the distributive law: $\sqrt{2}(3 + \sqrt{2}) = (\sqrt{2} \times 3) + (\sqrt{2} \times \sqrt{2})$.'
+      - 'Simplify the terms: $3\sqrt{2} + 2$.'
+      - 'Write the final answer with the rational term first: $2 + 3\sqrt{2}$.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: 'Expand and simplify the expression: $(4 + \sqrt{3})(4 - \sqrt{3})$'
+      mathTool: null
+      finalAnswer: '13'
+      stepByStepGuideline:
+      - 'Recognise this is a difference of squares pattern: $(a + \sqrt{b})(a - \sqrt{b}) = a^2 - b$.'
+      - Substitute $a=4$ and $b=3$.
+      - Calculate $4^2 - (\sqrt{3})^2$.
+      - 'Simplify: $16 - 3 = 13$.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: 'Expand and simplify the expression: $(\sqrt{3} + 2)(\sqrt{3} + 4)$'
+      mathTool: null
+      finalAnswer: 11 + 6\u221a3
+      stepByStepGuideline:
+      - Use the FOIL method (First, Outer, Inner, Last).
+      - 'First: $\sqrt{3} \times \sqrt{3} = 3$.'
+      - 'Outer: $\sqrt{3} \times 4 = 4\sqrt{3}$.'
+      - 'Inner: $2 \times \sqrt{3} = 2\sqrt{3}$.'
+      - 'Last: $2 \times 4 = 8$.'
+      - 'Combine the terms: $3 + 4\sqrt{3} + 2\sqrt{3} + 8$.'
+      - 'Combine like terms (rational with rational, surds with surds): $(3 + 8) + (4\sqrt{3} + 2\sqrt{3}) = 11 + 6\sqrt{3}$.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: 'Expand and simplify the expression: $(\sqrt{5} + 1)(\sqrt{5} + 3)$'
+      mathTool: null
+      finalAnswer: 8 + 4\u221a5
+      stepByStepGuideline:
+      - Use the FOIL method.
+      - 'First: $\sqrt{5} \times \sqrt{5} = 5$.'
+      - 'Outer: $\sqrt{5} \times 3 = 3\sqrt{5}$.'
+      - 'Inner: $1 \times \sqrt{5} = \sqrt{5}$.'
+      - 'Last: $1 \times 3 = 3$.'
+      - 'Combine the terms: $5 + 3\sqrt{5} + \sqrt{5} + 3$.'
+      - 'Combine like terms: $(5 + 3) + (3\sqrt{5} + 1\sqrt{5}) = 8 + 4\sqrt{5}$.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: 'Expand and simplify the expression: $(\sqrt{5} + \sqrt{2})(\sqrt{3} + 1)$'
+      mathTool: null
+      finalAnswer: \u221a15 + \u221a5 + \u221a6 + \u221a2
+      stepByStepGuideline:
+      - Use the FOIL method.
+      - 'First: $\sqrt{5} \times \sqrt{3} = \sqrt{15}$.'
+      - 'Outer: $\sqrt{5} \times 1 = \sqrt{5}$.'
+      - 'Inner: $\sqrt{2} \times \sqrt{3} = \sqrt{6}$.'
+      - 'Last: $\sqrt{2} \times 1 = \sqrt{2}$.'
+      - The expanded expression is $\sqrt{15} + \sqrt{5} + \sqrt{6} + \sqrt{2}$.
+      - Since there are no rational terms and all the surds ($\sqrt{15}, \sqrt{5}, \sqrt{6}, \sqrt{2}$) are unlike and cannot
+        be simplified further, the expression is already in its simplest form.
+      id: q9-5
+      questionGroup: q9
+- id: surds-node-10
+  nodeNumber: 10
+  title: Rationalizing Monomial Denominators
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Write the expression $\frac{1}{\sqrt{7}}$ in standard form with a rational denominator.
+      avatarIntro: Rationalizing denominators is crucial for expressing surds in their simplest and standard form. Remember,
+        multiply the top and bottom by the irrational term in the denominator!
+      mathTool: null
+      finalAnswer: √7/7
+      stepByStepGuideline:
+      - To rationalize the denominator, multiply the fraction by $\frac{\sqrt{7}}{\sqrt{7}}$ (which is equal to 1).
+      - 'Multiply the numerators: $1 \times \sqrt{7} = \sqrt{7}$.'
+      - 'Multiply the denominators: $\sqrt{7} \times \sqrt{7} = 7$.'
+      - The rationalized expression is $\frac{\sqrt{7}}{7}$.
+      id: q10-1
+      questionGroup: q10
+    - problemText: Rationalize the denominator of the fraction $\frac{4}{\sqrt{5}}$.
+      mathTool: null
+      finalAnswer: 4√5/5
+      stepByStepGuideline:
+      - Multiply the fraction $\frac{4}{\sqrt{5}}$ by $\frac{\sqrt{5}}{\sqrt{5}}$.
+      - 'Numerator calculation: $4 \times \sqrt{5} = 4\sqrt{5}$.'
+      - 'Denominator calculation: $\sqrt{5} \times \sqrt{5} = 5$.'
+      - The resulting fraction is $\frac{4\sqrt{5}}{5}$. Check that no further simplification is possible between 4 and 5.
+      id: q10-2
+      questionGroup: q10
+    - problemText: Express $\frac{10}{\sqrt{5}}$ in its simplest form with a rational denominator.
+      mathTool: null
+      finalAnswer: 2√5
+      stepByStepGuideline:
+      - 'Multiply the expression by $\frac{\sqrt{5}}{\sqrt{5}}$ to rationalize the denominator: $\frac{10}{\sqrt{5}} \times
+        \frac{\sqrt{5}}{\sqrt{5}}$.'
+      - This gives $\frac{10\sqrt{5}}{5}$.
+      - 'Simplify the resulting fraction by dividing the coefficients: $\frac{10}{5} = 2$.'
+      - The simplest form is $2\sqrt{5}$.
+      id: q10-3
+      questionGroup: q10
+    - problemText: Rationalize the denominator and simplify the expression $\frac{6}{\sqrt{8}}$.
+      mathTool: null
+      finalAnswer: 3√2/2
+      stepByStepGuideline:
+      - 'First, simplify the denominator: $\sqrt{8} = \sqrt{4 \times 2} = 2\sqrt{2}$.'
+      - The expression becomes $\frac{6}{2\sqrt{2}}$.
+      - 'Simplify the coefficients: $\frac{6}{2} = 3$. The expression is now $\frac{3}{\sqrt{2}}$.'
+      - 'Rationalize by multiplying by $\frac{\sqrt{2}}{\sqrt{2}}$: $\frac{3}{\sqrt{2}} \times \frac{\sqrt{2}}{\sqrt{2}}$.'
+      - This results in $\frac{3\sqrt{2}}{2}$.
+      id: q10-4
+      questionGroup: q10
+    - problemText: Write $\frac{5}{\sqrt{2}}$ as an equivalent fraction having an integer denominator.
+      mathTool: null
+      finalAnswer: 5√2/2
+      stepByStepGuideline:
+      - To obtain an integer denominator, multiply the numerator and denominator by $\sqrt{2}$.
+      - 'Calculation: $\frac{5}{\sqrt{2}} \times \frac{\sqrt{2}}{\sqrt{2}}$.'
+      - The numerator is $5\sqrt{2}$.
+      - The denominator is $\sqrt{2} \times \sqrt{2} = 2$.
+      - The resulting expression is $\frac{5\sqrt{2}}{2}$.
+      id: q10-5
+      questionGroup: q10
+- id: surds-node-11
+  nodeNumber: 11
+  title: Rationalizing Binomial Denominators with Conjugates
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Rationalize the denominator of the expression: $\frac{1}{2 + \sqrt{3}}$'
+      avatarIntro: Ready to practice rationalizing binomial denominators? Remember to multiply the top and bottom by the conjugate!
+      mathTool: null
+      finalAnswer: 2 - √3
+      stepByStepGuideline:
+      - Identify the conjugate of the denominator $(2 + \sqrt{3})$, which is $(2 - \sqrt{3})$.
+      - 'Multiply the numerator and denominator by the conjugate: $\frac{1}{2 + \sqrt{3}} \times \frac{2 - \sqrt{3}}{2 - \sqrt{3}}$'
+      - 'Calculate the numerator: $1 \times (2 - \sqrt{3}) = 2 - \sqrt{3}$'
+      - 'Calculate the denominator using the difference of squares formula $(a+b)(a-b) = a^2 - b^2$: $(2)^2 - (\sqrt{3})^2
+        = 4 - 3 = 1$.'
+      - 'Simplify the fraction: $\frac{2 - \sqrt{3}}{1} = 2 - \sqrt{3}$.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: Express $\frac{6}{3 - \sqrt{2}}$ in simplest form with a rational denominator.
+      mathTool: null
+      finalAnswer: (18 + 6√2)/7
+      stepByStepGuideline:
+      - Identify the conjugate of the denominator $(3 - \sqrt{2})$, which is $(3 + \sqrt{2})$.
+      - 'Multiply the numerator and denominator by the conjugate: $\frac{6}{3 - \sqrt{2}} \times \frac{3 + \sqrt{2}}{3 + \sqrt{2}}$'
+      - 'Calculate the denominator: $(3)^2 - (\sqrt{2})^2 = 9 - 2 = 7$.'
+      - 'Calculate the numerator: $6(3 + \sqrt{2}) = 18 + 6\sqrt{2}$.'
+      - The result is $\frac{18 + 6\sqrt{2}}{7}$.
+      id: q11-2
+      questionGroup: q11
+    - problemText: Write $\frac{1 - 2\sqrt{3}}{1 + \sqrt{3}}$ in simplest form.
+      mathTool: null
+      finalAnswer: (-7 + 3√3)/2 or 3√3/2 - 7/2
+      stepByStepGuideline:
+      - Identify the conjugate of the denominator $(1 + \sqrt{3})$, which is $(1 - \sqrt{3})$.
+      - 'Multiply the fraction by the conjugate over itself: $\frac{1 - 2\sqrt{3}}{1 + \sqrt{3}} \times \frac{1 - \sqrt{3}}{1
+        - \sqrt{3}}$'
+      - 'Calculate the denominator: $(1)^2 - (\sqrt{3})^2 = 1 - 3 = -2$.'
+      - 'Expand the numerator: $(1 - 2\sqrt{3})(1 - \sqrt{3}) = 1(1) + 1(-\sqrt{3}) - 2\sqrt{3}(1) + (-2\sqrt{3})(-\sqrt{3})$.'
+      - 'Simplify the numerator: $1 - \sqrt{3} - 2\sqrt{3} + 2(3) = 1 + 6 - 3\sqrt{3} = 7 - 3\sqrt{3}$.'
+      - The result is $\frac{7 - 3\sqrt{3}}{-2}$.
+      - 'Simplify by dividing by $-2$: $\frac{-7 + 3\sqrt{3}}{2}$.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: 'Rationalize the denominator and simplify the expression: $\frac{\sqrt{6} + \sqrt{2}}{\sqrt{6} - \sqrt{2}}$.'
+      mathTool: null
+      finalAnswer: 2 + √3
+      stepByStepGuideline:
+      - Identify the conjugate of the denominator $(\sqrt{6} - \sqrt{2})$, which is $(\sqrt{6} + \sqrt{2})$.
+      - 'Multiply the fraction by the conjugate over itself: $\frac{\sqrt{6} + \sqrt{2}}{\sqrt{6} - \sqrt{2}} \times \frac{\sqrt{6}
+        + \sqrt{2}}{\sqrt{6} + \sqrt{2}}$'
+      - 'Calculate the denominator: $(\sqrt{6})^2 - (\sqrt{2})^2 = 6 - 2 = 4$.'
+      - 'Expand the numerator: $(\sqrt{6} + \sqrt{2})^2 = (\sqrt{6})^2 + 2(\sqrt{6})(\sqrt{2}) + (\sqrt{2})^2$.'
+      - 'Simplify the numerator: $6 + 2\sqrt{12} + 2 = 8 + 2(2\sqrt{3}) = 8 + 4\sqrt{3}$.'
+      - The result is $\frac{8 + 4\sqrt{3}}{4}$.
+      - 'Simplify by dividing both terms in the numerator by 4: $2 + \sqrt{3}$.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: 'Rationalize the denominator: $\frac{1}{1 - \sqrt{2}}$.'
+      mathTool: null
+      finalAnswer: -1 - √2
+      stepByStepGuideline:
+      - Identify the conjugate of the denominator $(1 - \sqrt{2})$, which is $(1 + \sqrt{2})$.
+      - 'Multiply the fraction by the conjugate over itself: $\frac{1}{1 - \sqrt{2}} \times \frac{1 + \sqrt{2}}{1 + \sqrt{2}}$'
+      - 'Calculate the numerator: $1 + \sqrt{2}$.'
+      - 'Calculate the denominator: $(1)^2 - (\sqrt{2})^2 = 1 - 2 = -1$.'
+      - 'Simplify the fraction: $\frac{1 + \sqrt{2}}{-1} = -(1 + \sqrt{2}) = -1 - \sqrt{2}$.'
+      id: q11-5
+      questionGroup: q11
+- id: surds-node-12
+  nodeNumber: 12
+  title: Combined Surd Operations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the expression: $(\sqrt{48} + \sqrt{12})\sqrt{3}$'
+      avatarIntro: Working with combined surd operations requires careful application of simplification rules before performing
+        multiplication or addition.
+      mathTool: null
+      finalAnswer: '18'
+      stepByStepGuideline:
+      - 'Step 1: Simplify the surds inside the bracket. $\sqrt{48} = \sqrt{16 \times 3} = 4\sqrt{3}$ and $\sqrt{12} = \sqrt{4
+        \times 3} = 2\sqrt{3}$.'
+      - 'Step 2: Substitute the simplified surds back into the expression: $(4\sqrt{3} + 2\sqrt{3})\sqrt{3}$.'
+      - 'Step 3: Combine the like surds inside the bracket: $(6\sqrt{3})\sqrt{3}$.'
+      - 'Step 4: Perform the multiplication: $6 \times (\sqrt{3} \times \sqrt{3}) = 6 \times 3 = 18$.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: 'Expand and simplify the expression: $(\sqrt{50} - \sqrt{8})(\sqrt{18} + \sqrt{2})$'
+      mathTool: null
+      finalAnswer: '24'
+      stepByStepGuideline:
+      - 'Step 1: Simplify all surds. $\sqrt{50} = 5\sqrt{2}$, $\sqrt{8} = 2\sqrt{2}$, $\sqrt{18} = 3\sqrt{2}$.'
+      - 'Step 2: Substitute the simplified surds back into the expression: $(5\sqrt{2} - 2\sqrt{2})(3\sqrt{2} + \sqrt{2})$.'
+      - 'Step 3: Simplify the terms within each bracket by combining like surds: $(3\sqrt{2})(4\sqrt{2})$.'
+      - 'Step 4: Perform the multiplication: $3 \times 4 \times (\sqrt{2} \times \sqrt{2}) = 12 \times 2 = 24$.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: 'Rationalize and simplify: $\frac{\sqrt{125} + \sqrt{45}}{\sqrt{5}}$'
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Step 1: Simplify the surds in the numerator. $\sqrt{125} = \sqrt{25 \times 5} = 5\sqrt{5}$ and $\sqrt{45} = \sqrt{9
+        \times 5} = 3\sqrt{5}$.'
+      - 'Step 2: Rewrite the expression: $\frac{5\sqrt{5} + 3\sqrt{5}}{\sqrt{5}}$.'
+      - 'Step 3: Combine the like surds in the numerator: $\frac{8\sqrt{5}}{\sqrt{5}}$.'
+      - 'Step 4: Perform the division by cancelling the common surd $\sqrt{5}$: $8$.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: 'Simplify the expression: $(\sqrt{32} - \sqrt{8})^2$'
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Step 1: Simplify the surds inside the bracket. $\sqrt{32} = \sqrt{16 \times 2} = 4\sqrt{2}$ and $\sqrt{8} = \sqrt{4
+        \times 2} = 2\sqrt{2}$.'
+      - 'Step 2: Rewrite the expression: $(4\sqrt{2} - 2\sqrt{2})^2$.'
+      - 'Step 3: Combine the like surds inside the bracket: $(2\sqrt{2})^2$.'
+      - 'Step 4: Evaluate the square: $(2\sqrt{2}) \times (2\sqrt{2}) = (2 \times 2) \times (\sqrt{2} \times \sqrt{2}) = 4
+        \times 2 = 8$.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: 'Simplify the expression: $2\sqrt{3} + \frac{\sqrt{75} - \sqrt{12}}{\sqrt{3}}$'
+      mathTool: null
+      finalAnswer: $3 + 2\sqrt{3}$
+      stepByStepGuideline:
+      - 'Step 1: Simplify the surds in the numerator of the fraction. $\sqrt{75} = 5\sqrt{3}$ and $\sqrt{12} = 2\sqrt{3}$.'
+      - 'Step 2: Rewrite the expression: $2\sqrt{3} + \frac{5\sqrt{3} - 2\sqrt{3}}{\sqrt{3}}$.'
+      - 'Step 3: Combine the terms in the numerator of the fraction: $2\sqrt{3} + \frac{3\sqrt{3}}{\sqrt{3}}$.'
+      - 'Step 4: Perform the division in the fractional part: $\frac{3\sqrt{3}}{\sqrt{3}} = 3$.'
+      - 'Step 5: Add the resulting integer to the remaining term: $2\sqrt{3} + 3$. (Written as $3 + 2\sqrt{3}$ for standard
+        form.)'
+      id: q12-5
+      questionGroup: q12
+- id: surds-node-13
+  nodeNumber: 13
+  title: Problem Solving with Surds in Geometry
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: none
+    preWrittenQuestions:
+    - problemText: A square garden path has a diagonal measurement of 12 meters. Calculate the exact length of one side of
+        the path.
+      avatarIntro: Geometry problems often require finding exact lengths. Remember that in a square, the diagonal equals the
+        side length times the square root of two.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: $6\sqrt{2} m$
+      stepByStepGuideline:
+      - The relationship between the diagonal (d) and the side (s) of a square is $d = s\sqrt{2}$.
+      - 'Substitute the given diagonal length: $12 = s\sqrt{2}$.'
+      - 'Solve for s: $s = \frac{12}{\sqrt{2}}$.'
+      - 'Rationalize the denominator: $s = \frac{12\sqrt{2}}{\sqrt{2} \times \sqrt{2}} = \frac{12\sqrt{2}}{2}$.'
+      - 'Simplify to find the exact side length: $s = 6\sqrt{2}$ m.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: An artist is designing a logo based on an equilateral triangle with a side length of 8 cm. Find the exact
+        height (h) of the triangle, using the formula $h = \frac{\sqrt{3}}{2}s$.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: $4\sqrt{3} cm$
+      stepByStepGuideline:
+      - Identify the side length (s) as 8 cm.
+      - 'Use the given formula for the height of an equilateral triangle: $h = \frac{\sqrt{3}}{2}s$.'
+      - 'Substitute the side length: $h = \frac{\sqrt{3}}{2}(8)$.'
+      - 'Calculate the exact height: $h = 4\sqrt{3}$ cm.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: "A right-angled triangle has two legs measuring 2 cm and 3 cm. \n\na) Find the exact length of the hypotenuse.\n\
+        \nb) Use the provided number line tool to estimate the location of this length."
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 10
+          step: 1
+          points:
+          - value: \sqrt{13}
+            label: \sqrt{13} \approx 3.61
+            style: closed
+            color: '#5865F2'
+          showTickMarks: true
+          showTickLabels: true
+          highlightIntegers: true
+          title: Approximate location of surd value
+          caption: '\sqrt{13}'
+      finalAnswer: '$\sqrt{13} cm$'
+      stepByStepGuideline:
+      - 'Apply Pythagoras'' theorem: $a^2 + b^2 = c^2$, where a=2 and b=3 are the legs and c is the hypotenuse.'
+      - 'Substitute the values: $2^2 + 3^2 = c^2$.'
+      - 'Calculate the squares: $4 + 9 = c^2$.'
+      - 'Find $c^2$: $c^2 = 13$.'
+      - 'Find the exact length of the hypotenuse (c): $c = \sqrt{13}$ cm.'
+      - 'For part (b), estimate the value: $\sqrt{13}$ is between $\sqrt{9}=3$ and $\sqrt{16}=4$, approximately 3.61.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: A poster is shaped like a rectangle with length $4\sqrt{5}$ inches and width $\sqrt{5}$ inches. Calculate
+        the exact perimeter of the poster.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: $10\sqrt{5}$ inches
+      stepByStepGuideline:
+      - The formula for the perimeter of a rectangle is $P = 2(L + W)$.
+      - 'Substitute the given dimensions: $P = 2(4\sqrt{5} + \sqrt{5})$.'
+      - 'Combine the like surds inside the bracket: $4\sqrt{5} + \sqrt{5} = 5\sqrt{5}$.'
+      - 'Calculate the perimeter: $P = 2(5\sqrt{5})$.'
+      - 'Simplify the result: $P = 10\sqrt{5}$ inches.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A window pane is rectangular with dimensions $3\sqrt{2}$ cm and $\sqrt{2}$ cm. Find the exact area of the
+        window pane.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: '6 cm\textsuperscript{2}'
+      stepByStepGuideline:
+      - The formula for the area of a rectangle is $A = L \times W$.
+      - 'Substitute the given dimensions: $A = (3\sqrt{2}) \times (\sqrt{2})$.'
+      - 'Multiply the rational parts (3 and 1) and the surd parts (\sqrt{2} and \sqrt{2}): $A = 3 \times (\sqrt{2} \times
+        \sqrt{2})$.'
+      - Since $\sqrt{2} \times \sqrt{2} = 2$, the area is $A = 3 \times 2$.
+      - The exact area is $6$ cm\textsuperscript{2}.
+      id: q13-5
+      questionGroup: q13

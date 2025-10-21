@@ -9,7 +9,7 @@ interface Topic {
   description: string;
   subtopicCount: number;
   isActive: boolean;
-  category?: 'fractions' | 's3-math-trigonometry' | 's3-math-circle-geometry' | 's3-math-quadratic-equations' | 's3-math-exponential-logarithms' | 's3-math-sets-venn-diagrams' | 's3-math-exponents' | 's3-math-surds-radicals' | 's3-math-statistics' | 's3-math-relations-functions';
+  category?: 'fractions' | 's3-math-trigonometry' | 's3-math-circle-geometry' | 's3-math-quadratic-equations' | 's3-math-exponential-logarithms' | 's3-math-sets-venn-diagrams' | 's3-math-exponents' | 's3-math-surds-radicals' | 's3-math-statistics' | 's3-math-relations-functions' | 's3-math-coordinate-geometry';
   grade?: string;
   subject?: string;
 }
@@ -112,6 +112,17 @@ const topics: Topic[] = [
     subtopicCount: 7,
     isActive: true,
     category: 's3-math-statistics',
+    grade: 'Secondary 3',
+    subject: 'Mathematics',
+  },
+  {
+    id: 's3-coordinate-geometry',
+    name: 'Coordinate Geometry',
+    icon: '📍',
+    description: 'Master the Cartesian plane, distance, gradients, and line equations',
+    subtopicCount: 6,
+    isActive: true,
+    category: 's3-math-coordinate-geometry',
     grade: 'Secondary 3',
     subject: 'Mathematics',
   },

@@ -14,6 +14,7 @@ import { S3_MATH_EXPONENTS_SUBTOPICS } from "../prompt-library/subjects/mathemat
 import { S3_MATH_SURDS_RADICALS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
 import { S3_MATH_STATISTICS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
 import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
+import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
 
 export interface SubtopicContent {
   displayName: string;
@@ -41,6 +42,7 @@ class SubtopicContentLoader {
       ...S3_MATH_SURDS_RADICALS_SUBTOPICS,
       ...S3_MATH_STATISTICS_SUBTOPICS,
       ...S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS,
+      ...S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS,
       // Future topics will be added here
     };
   }

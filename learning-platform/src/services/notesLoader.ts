@@ -79,6 +79,14 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's3/math/relations-functions/SignDiagrams': () => import('../notes/s3/math/relations-functions/SignDiagrams'),
   's3/math/relations-functions/TransformationsOfGraphs': () => import('../notes/s3/math/relations-functions/TransformationsOfGraphs'),
   's3/math/relations-functions/AbsoluteValueFunction': () => import('../notes/s3/math/relations-functions/AbsoluteValueFunction'),
+  // S3 Coordinate Geometry notes
+  's3/math/coordinate-geometry/CoordinatePlaneFundamentals': () => import('../notes/s3/math/coordinate-geometry/CoordinatePlaneFundamentals'),
+  's3/math/coordinate-geometry/GradientAndLineRelationships': () => import('../notes/s3/math/coordinate-geometry/GradientAndLineRelationships'),
+  's3/math/coordinate-geometry/LineEquations': () => import('../notes/s3/math/coordinate-geometry/LineEquations'),
+  's3/math/coordinate-geometry/GraphingStraightLines': () => import('../notes/s3/math/coordinate-geometry/GraphingStraightLines'),
+  's3/math/coordinate-geometry/PerpendicularBisectors': () => import('../notes/s3/math/coordinate-geometry/PerpendicularBisectors'),
+  's3/math/coordinate-geometry/CoordinateGeometryApplications': () => import('../notes/s3/math/coordinate-geometry/CoordinateGeometryApplications'),
+  's3/math/coordinate-geometry/ThreeDimensionalCoordinates': () => import('../notes/s3/math/coordinate-geometry/ThreeDimensionalCoordinates'),
   // Add more note components here as you create them
   // 'p4/science/biology/PlantParts': () => import('../notes/p4/science/biology/PlantParts'),
 };

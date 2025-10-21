@@ -1,0 +1,2108 @@
+# Sets Venn Diagrams - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: sets-node-1
+  nodeNumber: 1
+  title: Set Notation and Membership
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Let $A$ be the set defined as $A = \{x: x \text{ is a factor of } 60\}$. List all the elements of set
+        $A$.'
+      avatarIntro: Hello! Let's start by reviewing how to identify all the factors of a given number. This will help us list
+        the elements of set A correctly.
+      finalAnswer: '{1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60}'
+      stepByStepGuideline:
+      - 'Define a factor: A number that divides 60 exactly without leaving a remainder.'
+      - 'Systematically find all pairs of numbers whose product is 60: (1, 60), (2, 30), (3, 20), (4, 15), (5, 12), and (6,
+        10).'
+      - List all the unique factors found in ascending order.
+      - The elements of set A are {1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60}.
+      id: q1-1
+      questionGroup: q1
+    - problemText: Let $B$ be the set of positive integers that are multiples of 4 and less than 80. Find $n(B)$, the cardinality
+        (number of elements) of set $B$.
+      finalAnswer: '19'
+      stepByStepGuideline:
+      - 'Identify the definition of set $B$: Multiples of 4, starting from $4 \times 1$, up to the largest multiple less than
+        80.'
+      - The elements are $4, 8, 12, \dots$
+      - 'Find how many times 4 goes into 80: $80 \div 4 = 20$. This means 80 is the 20th multiple of 4.'
+      - Since the condition is 'less than 80', 80 itself is excluded.
+      - The set B contains multiples $4 \times 1$ through $4 \times 19$. Therefore, $n(B) = 19$.
+      id: q1-2
+      questionGroup: q1
+    - problemText: 'Let $P$ be the set of all prime numbers less than 30. Determine whether the following statement is True
+        or False: $17 \in P$.'
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - 'Recall the definition of a prime number: a natural number greater than 1 that has no positive divisors other than
+        1 and itself.'
+      - 'List the prime numbers less than 30: $P = \{2, 3, 5, 7, 11, 13, 17, 19, 23, 29\}$.'
+      - The statement $17 \in P$ means '17 is an element of set P'.
+      - Since 17 is found within the listed elements of $P$, the statement is True.
+      id: q1-3
+      questionGroup: q1
+    - problemText: Let $C$ be the set of all composite numbers $x$ such that $10 < x < 25$. List all the elements of set $C$.
+      finalAnswer: '{12, 14, 15, 16, 18, 20, 21, 22, 24}'
+      stepByStepGuideline:
+      - 'Define the required integers: numbers strictly between 10 and 25, which are {11, 12, 13, 14, 15, 16, 17, 18, 19,
+        20, 21, 22, 23, 24}.'
+      - 'Identify prime numbers in this range (numbers with only 1 and itself as factors): 11, 13, 17, 19, 23.'
+      - 'Identify composite numbers (numbers that have factors other than 1 and itself): These are the remaining integers.'
+      - The elements of set $C$ are {12, 14, 15, 16, 18, 20, 21, 22, 24}.
+      id: q1-4
+      questionGroup: q1
+    - problemText: 'Let $S$ be the set of positive perfect square integers less than 150.
+
+        A) Find the cardinality, $n(S)$.
+
+        B) Determine if the statement $130 \notin S$ is True or False.'
+      finalAnswer: A) 12; B) True
+      stepByStepGuideline:
+      - 'Part A: List the positive perfect squares until the square exceeds 150.'
+      - The squares are $1^2=1, 2^2=4, \dots, 12^2=144$. Since $13^2=169$, it is excluded.
+      - The elements of $S$ are the squares of integers 1 through 12. Thus, $n(S) = 12$.
+      - 'Part B: Determine if 130 is a perfect square.'
+      - Since $11^2 = 121$ and $12^2 = 144$, 130 falls between two perfect squares and is not a perfect square itself.
+      - The notation $130 \notin S$ means '130 is not an element of S'. Since 130 is not a perfect square, it is not in $S$.
+        The statement is True.
+      id: q1-5
+      questionGroup: q1
+- id: sets-node-2
+  nodeNumber: 2
+  title: Finite vs Infinite Sets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Let A be the set of all integers greater than 1000. Is A a finite set or an infinite set?
+      avatarIntro: Let's start with a foundational concept. Remember, a set is infinite if it continues forever without a
+        clear end point.
+      mathTool: null
+      finalAnswer: Infinite
+      stepByStepGuideline:
+      - 'Step 1: Analyze the definition of set A. The set consists of integers starting from 1001 (1001, 1002, 1003, ...).'
+      - 'Step 2: Determine if there is an upper limit defined. Since the definition only specifies ''greater than 1000'' and
+        does not provide an upper bound, the integers continue indefinitely.'
+      - 'Step 3: Conclude that because the number of elements is unlimited, the set A is infinite.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: Let B = {x | x is a multiple of 7 and x < 40}. Find the cardinality of B, denoted as n(B).
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Step 1: Identify the elements of B. The elements must be multiples of 7.'
+      - 'Step 2: List the multiples of 7: 7, 14, 21, 28, 35, 42, ...'
+      - 'Step 3: Apply the condition that the elements must be strictly less than 40. The set B is {7, 14, 21, 28, 35}.'
+      - 'Step 4: Count the number of elements in B. n(B) = 5.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: Consider the set C, defined as the set of all positive factors of 96. Is C a finite set or an infinite
+        set?
+      mathTool: null
+      finalAnswer: Finite
+      stepByStepGuideline:
+      - 'Step 1: Recall the definition of factors. The factors of a specific number are the integers that divide it exactly.'
+      - 'Step 2: Recognize that for any specific positive integer (like 96), there is a limited, countable list of factors.'
+      - 'Step 3: Since the list of factors (1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 96) eventually ends, the set C is finite.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: Let D be the set of perfect squares that lie strictly between 15 and 75. Determine the number of elements
+        in D, n(D).
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Step 1: List the perfect squares: $1^2=1$, $2^2=4$, $3^2=9$, $4^2=16$, $5^2=25$, $6^2=36$, $7^2=49$, $8^2=64$, $9^2=81$,
+        and so on.'
+      - 'Step 2: Identify which of these squares fall strictly between 15 and 75 (i.e., $> 15$ and $< 75$).'
+      - 'Step 3: The elements of D are {16, 25, 36, 49, 64}.'
+      - 'Step 4: Count the elements in D. n(D) = 5.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: Let E be the set of all prime numbers. Is E a finite set or an infinite set?
+      mathTool: null
+      finalAnswer: Infinite
+      stepByStepGuideline:
+      - 'Step 1: Recall the definition of a prime number (a natural number greater than 1 that has exactly two distinct positive
+        divisors: 1 and itself).'
+      - 'Step 2: Consider the sequence of prime numbers: 2, 3, 5, 7, 11, 13, ...'
+      - 'Step 3: According to established mathematical theorems (Euclid''s proof), there is no largest prime number; the sequence
+        continues forever.'
+      - 'Step 4: Conclude that the set E has an unlimited number of elements and is therefore infinite.'
+      id: q2-5
+      questionGroup: q2
+- id: sets-node-3
+  nodeNumber: 3
+  title: Subsets and Equal Sets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: Consider Set A = {10, 20, 30} and Set B = {5, 10, 15, 20, 25, 30}. Is A a subset of B (A ⊆ B)?
+      avatarIntro: Welcome! Let's test your understanding of set relationships. Remember, A is a subset of B if every element
+        in A is also in B.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          layout: subset
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: 'Yes'
+      stepByStepGuideline:
+      - To determine if A ⊆ B, we must check if every element in Set A is also present in Set B.
+      - 'Set A contains elements: 10, 20, 30.'
+      - 'Set B contains elements: 5, 10, 15, 20, 25, 30.'
+      - Since 10 ∈ B, 20 ∈ B, and 30 ∈ B, all elements of A are in B. Therefore, A is a subset of B.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Let Set P be the set of all factors of 12 (P = {1, 2, 3, 4, 6, 12}). Let Set Q be the set of all odd integers
+        less than 10 (Q = {1, 3, 5, 7, 9}). Is P a subset of Q (P ⊆ Q)?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: P
+          setBLabel: Q
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: 'No'
+      stepByStepGuideline:
+      - For P to be a subset of Q, every element in P must also be in Q.
+      - P = {1, 2, 3, 4, 6, 12}.
+      - Q = {1, 3, 5, 7, 9}.
+      - We check elements in P. The element 2 is in P, but 2 is not in Q. (Similarly, 4, 6, 12 are not in Q).
+      - Since there is at least one element in P (like 2) that is not in Q, P is not a subset of Q (P ⊄ Q).
+      id: q3-2
+      questionGroup: q3
+    - problemText: Set C is defined as the set of distinct letters used in the word 'SUCCESS'. Set D is defined as {S, U,
+        C, E}. Are Set C and Set D equal (C = D)?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: C
+          setBLabel: D
+          layout: equal
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: 'Yes'
+      stepByStepGuideline:
+      - First, determine the elements of Set C by listing the distinct letters in 'SUCCESS'. C = {S, U, C, E}.
+      - Set D is given as D = {S, U, C, E}.
+      - Two sets are equal if they contain exactly the same elements. The order in which elements are listed does not matter.
+      - Since C and D contain the exact same elements, C = D.
+      id: q3-3
+      questionGroup: q3
+    - problemText: Let Set R be the set of all prime numbers between 50 and 60. Let Set S be the empty set (S = ∅). Is S a
+        subset of R (S ⊆ R)?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: S
+          setBLabel: R
+          layout: subset
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: 'Yes'
+      stepByStepGuideline:
+      - The empty set (∅) is the set containing no elements.
+      - A fundamental rule of set theory states that the empty set is a subset of every set.
+      - Even though R = {53, 59} (or any other set), the condition for S ⊆ R is always met when S = ∅.
+      - Therefore, the empty set S is a subset of R.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Set K is defined as the set of integers k such that -2 < k < 2. Set L is defined as {0, 1, 2}. Are the
+        sets K and L equal (K = L)?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: K
+          setBLabel: L
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: 'No'
+      stepByStepGuideline:
+      - First, list the elements of Set K. Integers k such that -2 < k < 2 are -1, 0, and 1. So, K = {-1, 0, 1}.
+      - Set L is given as L = {0, 1, 2}.
+      - For K and L to be equal, they must contain exactly the same elements.
+      - Set K contains -1, which is not in L. Set L contains 2, which is not in K.
+      - Since the sets do not contain the exact same elements, K ≠ L.
+      id: q3-5
+      questionGroup: q3
+- id: sets-node-4
+  nodeNumber: 4
+  title: Universal Set and Complements
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: Let the universal set U be the set of integers from 1 to 15, i.e., U = {1, 2, 3, ..., 15}. Let A be the
+        set A = {3, 5, 7, 9, 11, 13, 15}. Determine the complement of A, denoted by A'.
+      avatarIntro: Welcome! Understanding complements is crucial in set theory. Remember, the complement includes everything
+        in the universal set that is NOT in the specified subset.
+      mathTool:
+        toolName: vennDiagram1Set
+        parameters:
+          setLabel: A
+          universalSetLabel: U
+          shadeRegion: complement
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{1, 2, 4, 6, 8, 10, 12, 14}'
+      stepByStepGuideline:
+      - 'Identify the universal set U: U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}.'
+      - 'Identify the subset A: A = {3, 5, 7, 9, 11, 13, 15}.'
+      - The complement A' consists of all elements in U that are not in A.
+      - 'List the remaining elements: A'' = {1, 2, 4, 6, 8, 10, 12, 14}.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: The universal set U is the set of all positive integers less than 50. Let P be the set of prime numbers
+        within U. Given that n(P) = 15, find the number of elements in the complement of P, n(P').
+      mathTool: null
+      finalAnswer: '34'
+      stepByStepGuideline:
+      - Determine the number of elements in the universal set U. Since U contains positive integers less than 50, U = {1,
+        2, ..., 49}. Thus, n(U) = 49.
+      - 'Identify the number of elements in set P: n(P) = 15.'
+      - 'Use the formula for the complement: n(P'') = n(U) - n(P).'
+      - 'Calculate the result: n(P'') = 49 - 15 = 34.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: Let the universal set U be the set of all days of the week. Let D be the set of weekend days, D = {Saturday,
+        Sunday}. List the elements of the complement D'.
+      mathTool:
+        toolName: vennDiagram1Set
+        parameters:
+          setLabel: D
+          universalSetLabel: U
+          shadeRegion: complement
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{Monday, Tuesday, Wednesday, Thursday, Friday}'
+      stepByStepGuideline:
+      - 'Identify the universal set U: U = {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}.'
+      - 'Identify the subset D: D = {Saturday, Sunday}.'
+      - The complement D' includes all days in U that are not in D.
+      - 'List the remaining elements: D'' = {Monday, Tuesday, Wednesday, Thursday, Friday}.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: Let U be the set of all months of the year. Let M be the set of months that start with the letter 'J'.
+        Find the number of months in the complement of M, n(M').
+      mathTool: null
+      finalAnswer: '9'
+      stepByStepGuideline:
+      - 'Determine the number of elements in the universal set U: n(U) = 12 (since there are 12 months in a year).'
+      - 'Determine the elements in set M: M = {January, June, July}. Therefore, n(M) = 3.'
+      - 'Use the formula for the complement: n(M'') = n(U) - n(M).'
+      - 'Calculate the result: n(M'') = 12 - 3 = 9.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: Let U be the set of all 26 letters of the English alphabet. Let V be the set of vowels, V = {A, E, I, O,
+        U}. Describe the elements of the complement V'.
+      mathTool:
+        toolName: vennDiagram1Set
+        parameters:
+          setLabel: V
+          universalSetLabel: U
+          shadeRegion: complement
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z} (The set of all consonants)'
+      stepByStepGuideline:
+      - Identify the universal set U (all 26 letters).
+      - 'Identify the subset V (vowels): V = {A, E, I, O, U}.'
+      - The complement V' contains all elements in U that are not in V.
+      - V' is the set of all consonants of the English alphabet.
+      id: q4-5
+      questionGroup: q4
+- id: sets-node-5
+  nodeNumber: 5
+  title: Intersection of Sets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: Let Set A = {10, 20, 30, 40} and Set B = {5, 15, 20, 30, 50}. Find the intersection of A and B, denoted
+        by A ∩ B.
+      avatarIntro: Welcome! Understanding the intersection of sets is key to organizing data. Remember, the intersection includes
+        only the elements shared by both sets.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          layout: overlapping
+          shadeRegion: intersection
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{20, 30}'
+      stepByStepGuideline:
+      - 'Identify the elements in Set A: {10, 20, 30, 40}.'
+      - 'Identify the elements in Set B: {5, 15, 20, 30, 50}.'
+      - Compare the two sets and list all elements that appear in both A and B.
+      - The common elements are 20 and 30. Therefore, A ∩ B = {20, 30}.
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'Set C is the set of vowels: {a, e, i, o, u}. Set D is the set of letters: {b, c, d, f, i}. Determine the
+        intersection C ∩ D.'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: C
+          setBLabel: D
+          layout: overlapping
+          shadeRegion: intersection
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{i}'
+      stepByStepGuideline:
+      - 'List the elements in Set C: {a, e, i, o, u}.'
+      - 'List the elements in Set D: {b, c, d, f, i}.'
+      - Identify the single element that is present in both Set C and Set D.
+      - The only common element is 'i'. Therefore, C ∩ D = {i}.
+      id: q5-2
+      questionGroup: q5
+    - problemText: Set P is the set of all prime factors of 30. Set Q is the set of all prime factors of 77. Are sets P and
+        Q disjoint? Answer yes or no, and state the resulting intersection.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: P (Prime Factors of 30)
+          setBLabel: Q (Prime Factors of 77)
+          layout: disjoint
+          shadeRegion: intersection
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: Yes; P ∩ Q = {} or Ø
+      stepByStepGuideline:
+      - 'Determine the prime factors of 30: 30 = 2 × 3 × 5. So, P = {2, 3, 5}.'
+      - 'Determine the prime factors of 77: 77 = 7 × 11. So, Q = {7, 11}.'
+      - Check for common elements between P and Q. Since there are no common elements, the intersection P ∩ Q is the empty
+        set (Ø).
+      - Since the intersection is the empty set, the sets P and Q are disjoint. The answer is Yes.
+      id: q5-3
+      questionGroup: q5
+    - problemText: Let M4 be the set of multiples of 4 less than 40. Let M6 be the set of multiples of 6 less than 40. Find
+        M4 ∩ M6.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: M4
+          setBLabel: M6
+          layout: overlapping
+          shadeRegion: intersection
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{12, 24, 36}'
+      stepByStepGuideline:
+      - 'List the elements of M4 (Multiples of 4 less than 40): {4, 8, 12, 16, 20, 24, 28, 32, 36}.'
+      - 'List the elements of M6 (Multiples of 6 less than 40): {6, 12, 18, 24, 30, 36}.'
+      - Identify the elements common to both lists (which are the common multiples of 4 and 6, or multiples of their LCM,
+        12).
+      - The common elements are 12, 24, and 36. Thus, M4 ∩ M6 = {12, 24, 36}.
+      id: q5-4
+      questionGroup: q5
+    - problemText: Set P is the set of all prime numbers less than 10. Set S = {7, 9, 11}. What is P ∩ S?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: P (Prime < 10)
+          setBLabel: S
+          layout: overlapping
+          shadeRegion: intersection
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{7}'
+      stepByStepGuideline:
+      - 'Define Set P by listing all prime numbers less than 10: P = {2, 3, 5, 7}.'
+      - Set S is given as S = {7, 9, 11}.
+      - Find the elements that are present in both P and S.
+      - The only common element is 7. Therefore, P ∩ S = {7}.
+      id: q5-5
+      questionGroup: q5
+- id: sets-node-6
+  nodeNumber: 6
+  title: Union of Sets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Set A contains the numbers {10, 15, 20, 25, 30}. Set B contains the numbers {20, 25, 35, 40, 45}. List
+        all the elements in A ∪ B.
+      avatarIntro: Ready to test your set theory skills? Remember, the union of two sets includes all elements found in either
+        set, without listing duplicates.
+      mathTool: null
+      finalAnswer: '{10, 15, 20, 25, 30, 35, 40, 45}'
+      stepByStepGuideline:
+      - 'Identify the elements in Set A: A = {10, 15, 20, 25, 30}.'
+      - 'Identify the elements in Set B: B = {20, 25, 35, 40, 45}.'
+      - The union (A ∪ B) includes all elements from both sets. List all elements, ensuring that any elements common to both
+        sets ({20, 25}) are listed only once.
+      - A ∪ B = {10, 15, 20, 25, 30, 35, 40, 45}.
+      id: q6-1
+      questionGroup: q6
+    - problemText: Let F be the set of factors of 36. Let M be the set of multiples of 9 that are less than 50. Calculate
+        the cardinality of F ∪ M, using the formula n(F ∪ M) = n(F) + n(M) - n(F ∩ M).
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: F
+          setBLabel: M
+          layout: overlapping
+          shadeRegion: union
+          showElements: false
+          showRegionCounts: true
+      finalAnswer: '11'
+      stepByStepGuideline:
+      - 'Determine the elements and cardinality of F: Factors of 36 are {1, 2, 3, 4, 6, 9, 12, 18, 36}. So, n(F) = 9.'
+      - 'Determine the elements and cardinality of M: Multiples of 9 less than 50 are {9, 18, 27, 36, 45}. So, n(M) = 5.'
+      - 'Determine the intersection F ∩ M: Elements common to both sets are {9, 18, 36}. So, n(F ∩ M) = 3.'
+      - 'Apply the cardinality formula: n(F ∪ M) = n(F) + n(M) - n(F ∩ M).'
+      - n(F ∪ M) = 9 + 5 - 3 = 11.
+      id: q6-2
+      questionGroup: q6
+    - problemText: In a survey of students who own pets, Set X represents students who own cats and Set Y represents students
+        who own dogs. Given that n(X) = 52, n(Y) = 37, and n(X ∩ Y) = 14, find the total number of students who own either
+        a cat or a dog (n(X ∪ Y)).
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: X
+          setBLabel: Y
+          layout: overlapping
+          shadeRegion: union
+          showElements: false
+          showRegionCounts: true
+      finalAnswer: '75'
+      stepByStepGuideline:
+      - 'Identify the given cardinalities: n(X) = 52, n(Y) = 37, and n(X ∩ Y) = 14.'
+      - 'Use the Principle of Inclusion-Exclusion (Cardinality Formula) for the union: n(X ∪ Y) = n(X) + n(Y) - n(X ∩ Y).'
+      - 'Substitute the values: n(X ∪ Y) = 52 + 37 - 14.'
+      - 'Calculate the result: 89 - 14 = 75.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Let P be the set of prime numbers less than 20. Let D be the set of numbers that are divisible by 4 and
+        are less than 25. List the elements of P ∪ D.
+      mathTool: null
+      finalAnswer: '{2, 3, 4, 5, 7, 8, 11, 12, 13, 16, 17, 19, 20, 24}'
+      stepByStepGuideline:
+      - 'Determine the elements of P (Prime numbers < 20): P = {2, 3, 5, 7, 11, 13, 17, 19}.'
+      - 'Determine the elements of D (Numbers divisible by 4 and < 25): D = {4, 8, 12, 16, 20, 24}.'
+      - Identify the intersection (P ∩ D). Since prime numbers (except 2) are odd, and all numbers in D are even, there is
+        no overlap (P ∩ D = Ø).
+      - 'The union (P ∪ D) is the combination of all elements from both sets:'
+      - P ∪ D = {2, 3, 4, 5, 7, 8, 11, 12, 13, 16, 17, 19, 20, 24}.
+      id: q6-4
+      questionGroup: q6
+    - problemText: Let E be the set of even numbers between 10 and 30 (inclusive). Let T be the set of numbers that are multiples
+        of 3 between 5 and 25 (inclusive). Find the cardinality of E ∪ T.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: E
+          setBLabel: T
+          layout: overlapping
+          shadeRegion: union
+          showElements: false
+          showRegionCounts: true
+      finalAnswer: '13'
+      stepByStepGuideline:
+      - 'Determine the elements and cardinality of E: E = {10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30}. n(E) = 11.'
+      - 'Determine the elements and cardinality of T: T = {6, 9, 12, 15, 18, 21, 24}. n(T) = 7.'
+      - 'Determine the intersection E ∩ T: These are numbers that are both even and multiples of 3 (i.e., multiples of 6)
+        in the given range: {12, 18, 24}. n(E ∩ T) = 3.'
+      - 'Apply the cardinality formula: n(E ∪ T) = n(E) + n(T) - n(E ∩ T).'
+      - n(E ∪ T) = 11 + 7 - 3 = 15.
+      id: q6-5
+      questionGroup: q6
+- id: sets-node-7
+  nodeNumber: 7
+  title: Combined Set Operations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: Let the universal set $U = \{1, 2, 3, \dots, 10\}$. Let $A$ be the set of even numbers in $U$, and $B =
+        \{1, 2, 3, 5\}$. Find the set $(A \cup B)'$.
+      avatarIntro: Set theory can seem tricky, but breaking down combined operations step-by-step makes it easy! Start by
+        finding the union first.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          universalSetLabel: U
+          layout: overlapping
+          shadeRegion: unionComplement
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{7, 9}'
+      stepByStepGuideline:
+      - 'Identify the sets: $U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. $A = \{2, 4, 6, 8, 10\}$ (Even numbers). $B = \{1, 2,
+        3, 5\}$.'
+      - 'Calculate the union $A \cup B$: $A \cup B = \{1, 2, 3, 4, 5, 6, 8, 10\}$.'
+      - 'Calculate the complement $(A \cup B)''$: This set contains all elements in $U$ that are not in $A \cup B$.'
+      - $(A \cup B)' = \{7, 9\}$.
+      id: q7-1
+      questionGroup: q7
+    - problemText: Consider the universal set $U = \{1, 2, 3, \dots, 15\}$. Let $A$ be the set of multiples of 3 in $U$, and
+        $B$ be the set of odd numbers in $U$. Determine the set $A \cap B'$.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          universalSetLabel: U
+          layout: overlapping
+          shadeRegion: aOnly
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{6, 12}'
+      stepByStepGuideline:
+      - 'Define the sets: $U = \{1, 2, \dots, 15\}$. $A = \{3, 6, 9, 12, 15\}$. $B = \{1, 3, 5, 7, 9, 11, 13, 15\}$.'
+      - 'Find the complement of $B$, $B''$: $B''$ contains all even numbers in $U$. $B'' = \{2, 4, 6, 8, 10, 12, 14\}$.'
+      - 'Calculate the intersection $A \cap B''$: This set contains elements that are in $A$ AND in $B''$.'
+      - $A \cap B' = \{6, 12\}$.
+      id: q7-2
+      questionGroup: q7
+    - problemText: Given $U = \{1, 2, 3, 4, 5, 6, 7, 8\}$, $A = \{1, 2, 3\}$, and $B = \{3, 4, 5, 6\}$. Find the resulting
+        set for the operation $A' \cap B$.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          universalSetLabel: U
+          layout: overlapping
+          shadeRegion: bOnly
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{4, 5, 6}'
+      stepByStepGuideline:
+      - 'Identify the sets: $U = \{1, 2, 3, 4, 5, 6, 7, 8\}$, $A = \{1, 2, 3\}$, and $B = \{3, 4, 5, 6\}$.'
+      - 'First, find the complement of $A$, $A''$: $A''$ contains all elements in $U$ that are not in $A$. $A'' = \{4, 5,
+        6, 7, 8\}$.'
+      - 'Calculate the intersection $A'' \cap B$: This set contains elements common to both $A''$ and $B$.'
+      - $A' \cap B = \{4, 5, 6\}$.
+      id: q7-3
+      questionGroup: q7
+    - problemText: Let $U = \{1, 2, 3, \dots, 12\}$. Let $A$ be the set of prime numbers in $U$, and $B$ be the set of factors
+        of 12. Find the set $A \cup B'$.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          universalSetLabel: U
+          layout: overlapping
+          shadeRegion: none
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{2, 3, 5, 7, 8, 9, 10, 11}'
+      stepByStepGuideline:
+      - 'Define the sets: $U = \{1, 2, \dots, 12\}$. $A = \{2, 3, 5, 7, 11\}$ (Prime numbers). $B = \{1, 2, 3, 4, 6, 12\}$
+        (Factors of 12).'
+      - 'Find the complement of $B$, $B''$: $B''$ contains elements in $U$ not in $B$. $B'' = \{5, 7, 8, 9, 10, 11\}$.'
+      - 'Calculate the union $A \cup B''$: Combine all elements from $A$ and $B''$, listing common elements only once.'
+      - $A \cup B' = \{2, 3, 5, 7, 11\} \cup \{5, 7, 8, 9, 10, 11\} = \{2, 3, 5, 7, 8, 9, 10, 11\}$.
+      id: q7-4
+      questionGroup: q7
+    - problemText: Given the universal set $U = \{1, 2, 3, \dots, 9\}$. Let $A = \{1, 3, 5, 7, 9\}$ and $B = \{6, 7, 8, 9\}$.
+        Determine the elements in $(A \cap B)'$.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          universalSetLabel: U
+          layout: overlapping
+          shadeRegion: none
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{1, 2, 3, 4, 5, 6, 8}'
+      stepByStepGuideline:
+      - 'Identify the sets: $U = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}$, $A = \{1, 3, 5, 7, 9\}$, and $B = \{6, 7, 8, 9\}$.'
+      - 'First, find the intersection $A \cap B$: This set contains elements common to both $A$ and $B$. $A \cap B = \{7,
+        9\}$.'
+      - 'Calculate the complement $(A \cap B)''$: This set contains all elements in $U$ that are not in $A \cap B$.'
+      - $(A \cap B)' = \{1, 2, 3, 4, 5, 6, 8\}$.
+      id: q7-5
+      questionGroup: q7
+- id: sets-node-8
+  nodeNumber: 8
+  title: Special Number Sets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'True or false: -5 ∈ ℤ⁻ (negative integers)?'
+      avatarIntro: Understanding number sets is fundamental in mathematics. Let's start with a basic check on integers.
+      mathTool: null
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - 'Identify the set ℤ⁻: This represents the set of all negative integers, which includes numbers like -1, -2, -3, and
+        so on.'
+      - 'Check the given number: The number is -5.'
+      - 'Determine membership: Since -5 is a whole number less than zero, it is a negative integer. Therefore, the statement
+        is True.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'True or false: ℚ ⊆ ℝ (rational numbers are a subset of real numbers)?'
+      mathTool: null
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - 'Define the sets: ℚ represents the set of all rational numbers (numbers that can be written as a fraction a/b, where
+        b ≠ 0). ℝ represents the set of all real numbers (all rational numbers and all irrational numbers).'
+      - 'Analyze the relationship: If ℚ is a subset of ℝ, every element in ℚ must also be in ℝ.'
+      - 'Conclusion: Since real numbers include all rational numbers, the set of rational numbers is entirely contained within
+        the set of real numbers. The statement is True.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'True or false: √2 ∈ ℚ (rational numbers)?'
+      mathTool: null
+      finalAnswer: 'False'
+      stepByStepGuideline:
+      - 'Identify the number: √2 is the square root of 2.'
+      - 'Define ℚ: Rational numbers (ℚ) are numbers that can be expressed as a simple fraction.'
+      - 'Determine classification: √2 is an irrational number because its decimal representation is non-terminating and non-repeating,
+        and it cannot be written as a simple fraction.'
+      - 'Conclusion: Since √2 is irrational, it is not a member of the set of rational numbers (ℚ). The statement is False.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'True or false: ℤ⁻ ⊆ ℕ (negative integers are a subset of natural numbers)?'
+      mathTool: null
+      finalAnswer: 'False'
+      stepByStepGuideline:
+      - 'Define ℤ⁻: The set of negative integers, such as {-1, -2, -3, ...}.'
+      - 'Define ℕ: The set of natural numbers (or counting numbers), usually defined as {1, 2, 3, ...}. (Note: Even if ℕ includes
+        0, it does not include negative numbers).'
+      - 'Check for subset condition: For ℤ⁻ to be a subset of ℕ, every element in ℤ⁻ must also be in ℕ. Since ℤ⁻ contains
+        negative numbers and ℕ only contains positive numbers (and possibly zero), this condition is not met.'
+      - 'Conclusion: These sets are mutually exclusive (disjoint). The statement is False.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'True or false: 0 ∈ ℤ⁺ (positive integers)?'
+      mathTool: null
+      finalAnswer: 'False'
+      stepByStepGuideline:
+      - 'Identify the set ℤ⁺: This represents the set of all positive integers, which includes {1, 2, 3, 4, ...}.'
+      - 'Analyze the number 0: Zero is defined as neither positive nor negative.'
+      - 'Determine membership: Since ℤ⁺ only includes numbers strictly greater than zero, 0 is not included in this set.'
+      - 'Conclusion: The statement is False.'
+      id: q8-5
+      questionGroup: q8
+- id: sets-node-9
+  nodeNumber: 9
+  title: Interval Notation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Write the meaning of the interval notation [1, 10] if the variable represents real numbers (x ∈ ℝ).
+      avatarIntro: Let's start by reviewing how we read different types of interval notation. Remember what those square brackets
+        mean!
+      finalAnswer: All real numbers greater than or equal to 1 and less than or equal to 10.
+      stepByStepGuideline:
+      - 'Identify the number set: Real numbers (ℝ), meaning the solution includes all fractions and decimals between the endpoints.'
+      - 'Identify the boundary symbols: Square brackets [ ] indicate inclusion of the endpoints (closed interval).'
+      - 'Translate the notation into a verbal description: The set starts exactly at 1 and ends exactly at 10, including both
+        values.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: Write the interval notation that represents the set of all real numbers x such that -5 < x ≤ 2.
+      finalAnswer: (-5, 2]
+      stepByStepGuideline:
+      - 'Analyze the left boundary: x is strictly greater than -5 (x > -5). This corresponds to an open parenthesis (.'
+      - 'Analyze the right boundary: x is less than or equal to 2 (x ≤ 2). This corresponds to a closed square bracket ].'
+      - 'Combine the boundaries to form the half-open interval notation: (-5, 2].'
+      id: q9-2
+      questionGroup: q9
+    - problemText: List all the elements contained within the set {x ∈ ℤ | -3 < x < 5}.
+      finalAnswer: '{-2, -1, 0, 1, 2, 3, 4}'
+      stepByStepGuideline:
+      - 'Identify the number set: Integers (ℤ). This means only whole numbers (positive, negative, and zero) are included.'
+      - 'Identify the boundaries: The numbers must be strictly greater than -3 and strictly less than 5.'
+      - 'Determine the elements: Starting just above -3 gives -2. Ending just below 5 gives 4. List all integers between -2
+        and 4, inclusive.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: List all the elements contained within the set {x ∈ ℕ | 0 ≤ x < 7}. (Assume ℕ = {1, 2, 3, ...})
+      finalAnswer: '{1, 2, 3, 4, 5, 6}'
+      stepByStepGuideline:
+      - 'Identify the number set: Natural numbers (ℕ), which typically starts at 1 (1, 2, 3, ...).'
+      - 'Analyze the inequality: x must be greater than or equal to 0 and strictly less than 7.'
+      - 'Determine the elements: Although the inequality starts at 0, 0 is not a natural number. The first natural number
+        satisfying the condition is 1. The set stops just before 7, meaning 6 is the last element.'
+      - 'List the elements: {1, 2, 3, 4, 5, 6}.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: Write the interval notation [-8, 15) in set-builder notation.
+      finalAnswer: '{x ∈ ℝ | -8 ≤ x < 15}'
+      stepByStepGuideline:
+      - 'Identify the number set: Since no set is specified, assume Real numbers (ℝ) for standard interval notation context.'
+      - 'Analyze the left bracket: The square bracket [ means the starting value (-8) is included, corresponding to the inequality
+        ≤.'
+      - 'Analyze the right bracket: The parenthesis ) means the ending value (15) is excluded, corresponding to the inequality
+        <.'
+      - 'Construct the set-builder notation using the appropriate inequalities: {x ∈ ℝ | -8 ≤ x < 15}.'
+      id: q9-5
+      questionGroup: q9
+- id: sets-node-10
+  nodeNumber: 10
+  title: Drawing Venn Diagrams
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Given the universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, set A = {1, 2, 3, 4, 5}, and set B = {4, 5,
+        6, 7, 8}. If you were to draw a Venn diagram, how many elements would be placed in the region representing the intersection
+        (A ∩ B)?
+      avatarIntro: Drawing Venn diagrams helps us visualize relationships between sets. Let's start by finding the common
+        elements.
+      mathTool: null
+      finalAnswer: '2'
+      stepByStepGuideline:
+      - Identify the elements common to both Set A and Set B.
+      - A = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7, 8}.
+      - The elements in the intersection (A ∩ B) are {4, 5}.
+      - Count the number of elements in the intersection, which is 2.
+      id: q10-1
+      questionGroup: q10
+    - problemText: Consider the universal set U defined as the integers from 1 to 12. Set A contains the elements {1, 3, 5,
+        7} and Set B contains {2, 4, 6, 8}. If you draw a two-circle Venn diagram, will the circles overlap? (i.e., are the
+        sets disjoint?)
+      mathTool: null
+      finalAnswer: 'Yes'
+      stepByStepGuideline:
+      - Determine if there are any elements shared between Set A and Set B.
+      - A = {1, 3, 5, 7} and B = {2, 4, 6, 8}.
+      - Since there are no common elements (A ∩ B is the empty set), the sets are disjoint.
+      - Disjoint sets mean the circles do not overlap in a Venn diagram. The answer to 'are they disjoint?' is Yes.
+      id: q10-2
+      questionGroup: q10
+    - problemText: Given U = {a, b, c, d, e, f, g, h}, suppose set A = {a, b, c} and set B = {a, b, c, d, e}. When constructing
+        the Venn diagram, how many elements belong to 'B only' (the region B \ A)?
+      mathTool: null
+      finalAnswer: '2'
+      stepByStepGuideline:
+      - Identify all elements in Set B.
+      - Identify the elements in B that are also in A (the intersection).
+      - 'Subtract the elements of A from B to find the elements in ''B only'': B \ A = {a, b, c, d, e} \ {a, b, c} = {d, e}.'
+      - Count the resulting elements. The count is 2.
+      id: q10-3
+      questionGroup: q10
+    - problemText: In a survey represented by U (where n(U) = 15), Set A lists individuals who prefer apples and Set B lists
+        individuals who prefer bananas. If A = {1, 3, 5, 7, 9, 11} and B = {3, 6, 9, 12, 15}, how many individuals prefer
+        only apples (A \ B)?
+      mathTool: null
+      finalAnswer: '4'
+      stepByStepGuideline:
+      - 'Identify the intersection A ∩ B: {3, 9}.'
+      - To find 'A only' (A \ B), remove the intersection elements from Set A.
+      - A \ B = {1, 3, 5, 7, 9, 11} \ {3, 9} = {1, 5, 7, 11}.
+      - Count the number of elements remaining in A only, which is 4.
+      id: q10-4
+      questionGroup: q10
+    - problemText: Let U be the set of integers from 1 to 10. Set A = {1, 2, 3, 4, 5, 6} and Set B = {5, 6, 7, 8, 9}. If you
+        draw the Venn diagram, how many elements would be placed in the region representing 'B only' (elements in B but not
+        in A)?
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Identify all elements in Set B: {5, 6, 7, 8, 9}.'
+      - 'Identify the intersection A ∩ B: {5, 6}.'
+      - 'Remove the intersection elements from B to find B only: {5, 6, 7, 8, 9} \ {5, 6} = {7, 8, 9}.'
+      - Count the number of elements in B only, which is 3.
+      id: q10-5
+      questionGroup: q10
+- id: sets-node-11
+  nodeNumber: 11
+  title: Shading Venn Diagram Regions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: Study the Venn diagram below. What set operation is represented by the shaded region where sets A and B
+        overlap?
+      avatarIntro: Venn diagrams help us visualize set operations. Look closely at the shaded area in this diagram to determine
+        the correct operation.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          universalSetLabel: U
+          layout: overlapping
+          shadeRegion: intersection
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: A ∩ B (Intersection)
+      stepByStepGuideline:
+      - Analyze the location of the shaded region.
+      - The shaded area is the shared space common to both Set A and Set B.
+      - The set operation defined by elements belonging to both sets simultaneously is the intersection, represented by A
+        ∩ B.
+      id: q11-1
+      questionGroup: q11
+    - problemText: Identify the set operation represented by the shading in the diagram, which covers all elements belonging
+        to A, B, or both.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          universalSetLabel: U
+          layout: overlapping
+          shadeRegion: union
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: A ∪ B (Union)
+      stepByStepGuideline:
+      - Observe that the entire area covered by circle A and the entire area covered by circle B is shaded.
+      - This means the shaded region includes all elements present in A OR B.
+      - This corresponds to the union of the two sets, A ∪ B.
+      id: q11-2
+      questionGroup: q11
+    - problemText: The diagram shows the universal set U and set A. The shaded area includes all elements in U that are not
+        in A. Which operation is this?
+      mathTool:
+        toolName: vennDiagram1Set
+        parameters:
+          setLabel: A
+          universalSetLabel: U
+          shadeRegion: complement
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: A' (Complement of A)
+      stepByStepGuideline:
+      - The shaded region covers everything within the universal set U except for the contents of circle A.
+      - By definition, the set of elements in the universal set that are not in a specific set A is the complement of A.
+      - The correct notation is A'.
+      id: q11-3
+      questionGroup: q11
+    - problemText: Analyze the shaded region shown. It includes all elements of A that are *not* also elements of B. Express
+        this operation using set notation.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          universalSetLabel: U
+          layout: overlapping
+          shadeRegion: aOnly
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: A \ B (A minus B or A set difference B)
+      stepByStepGuideline:
+      - The shading is confined strictly to the portion of circle A that does not overlap with circle B.
+      - This region represents elements that belong to A but exclude any elements belonging to B.
+      - This is the set difference operation, A ∖ B.
+      id: q11-4
+      questionGroup: q11
+    - problemText: What set operation is represented by the shaded region, which includes only the elements of the universal
+        set U that belong to neither A nor B?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A
+          setBLabel: B
+          universalSetLabel: U
+          layout: overlapping
+          shadeRegion: neither
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: (A ∪ B)' (Complement of A Union B)
+      stepByStepGuideline:
+      - The shaded region is outside of both circle A and circle B, but still within the universal set U.
+      - The combined area of A and B is the union (A ∪ B).
+      - Since the shading represents everything *outside* the union, it is the complement of the union, written as (A ∪ B)'.
+      id: q11-5
+      questionGroup: q11
+- id: sets-node-12
+  nodeNumber: 12
+  title: Counting Elements in Two-Set Venn Diagrams
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: A survey of 25 students asked whether they take Art (A) or Biology (B) classes. The results showed that
+        10 students take Art only, 5 students take both Art and Biology, and 8 students take Biology only. If 2 students take
+        neither subject, how many total students were surveyed (n(U))?
+      avatarIntro: Great job starting this section! Remember that finding the total population means summing up every single
+        region in the Venn diagram, including those outside the sets.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A (Art)
+          setBLabel: B (Biology)
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '25'
+      stepByStepGuideline:
+      - 'Identify the count for each region: A only = 10, Intersection (A ∩ B) = 5, B only = 8, Neither = 2.'
+      - The total number of surveyed students, n(U), is the sum of all regions.
+      - 'Calculate: n(U) = 10 + 5 + 8 + 2.'
+      - n(U) = 25.
+      id: q12-1
+      questionGroup: q12
+    - problemText: In a market survey, 17 people drink Coffee (A) and 22 people drink Tea (B). If 6 people drink both Coffee
+        and Tea (A ∩ B), how many people drink Coffee only?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A (Coffee)
+          setBLabel: B (Tea)
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '11'
+      stepByStepGuideline:
+      - The number of elements in 'A only' is found by subtracting the intersection from the total count of set A.
+      - n(A only) = n(A) - n(A ∩ B).
+      - 'Substitute the given values: n(A only) = 17 - 6.'
+      - n(A only) = 11.
+      id: q12-2
+      questionGroup: q12
+    - problemText: A travel agency surveyed 45 clients (n(U)=45) about their preferred transportation, Train (A) or Bus (B).
+        The results showed 15 clients preferred Train only, 10 preferred both, and 12 preferred Bus only. How many clients
+        preferred neither Train nor Bus?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A (Train)
+          setBLabel: B (Bus)
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - First, find the total number of clients who preferred at least one mode of transport, which is the union (A U B).
+      - n(A U B) = (A only) + (A ∩ B) + (B only) = 15 + 10 + 12 = 37.
+      - The number who preferred neither is found by subtracting the union from the universal set.
+      - Neither = n(U) - n(A U B) = 45 - 37.
+      - Neither = 8.
+      id: q12-3
+      questionGroup: q12
+    - problemText: In a school survey about sports, 8 students play Football only (A only), 7 students play both Football
+        and Hockey (A ∩ B), and 14 students play Hockey only (B only). How many students play Hockey (n(B))?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A (Football)
+          setBLabel: B (Hockey)
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '21'
+      stepByStepGuideline:
+      - The total number of students who play Hockey, n(B), includes those who play Hockey only and those who play both sports.
+      - n(B) = (B only) + (A ∩ B).
+      - 'Substitute the given counts: n(B) = 14 + 7.'
+      - n(B) = 21.
+      id: q12-4
+      questionGroup: q12
+    - problemText: 'A bookstore tracked customer purchases: 12 customers bought Fiction only (A only), 3 customers bought
+        both Fiction and Non-Fiction (A ∩ B), 9 customers bought Non-Fiction only (B only), and 1 customer bought neither.
+        What is the total number of customers who bought at least one book (n(A U B))?'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: A (Fiction)
+          setBLabel: B (Non-Fiction)
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '24'
+      stepByStepGuideline:
+      - The number of elements in the union (n(A U B)) represents all elements inside the circles.
+      - n(A U B) = (A only) + (A ∩ B) + (B only).
+      - 'Substitute the given counts: n(A U B) = 12 + 3 + 9.'
+      - n(A U B) = 24.
+      id: q12-5
+      questionGroup: q12
+- id: sets-node-13
+  nodeNumber: 13
+  title: Applying the Cardinality Formula
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: In a Secondary 3 class, 30 students joined the Mathematics Club (M) and 40 students joined the Science
+        Club (S). If 60 students joined at least one club, how many students joined both the Mathematics Club and the Science
+        Club?
+      avatarIntro: This problem requires you to apply the Principle of Inclusion-Exclusion. Remember that the total members
+        must equal the sum of members in A and B, minus those counted twice.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: M (Math)
+          setBLabel: S (Science)
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '10'
+      stepByStepGuideline:
+      - 'Identify the given values: n(M) = 30, n(S) = 40, and n(M ∪ S) = 60.'
+      - 'Use the Cardinality Formula: n(M ∪ S) = n(M) + n(S) - n(M ∩ S).'
+      - 'Rearrange the formula to solve for the intersection: n(M ∩ S) = n(M) + n(S) - n(M ∪ S).'
+      - 'Substitute the values: n(M ∩ S) = 30 + 40 - 60.'
+      - 'Calculate the result: n(M ∩ S) = 70 - 60 = 10.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: A survey of students showed that 45 liked History (H) and 35 liked Geography (G). If 15 students liked
+        both History and Geography, how many students liked History or Geography?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: H (History)
+          setBLabel: G (Geography)
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '65'
+      stepByStepGuideline:
+      - 'Identify the given values: n(H) = 45, n(G) = 35, and n(H ∩ G) = 15.'
+      - 'Use the Cardinality Formula to find the union: n(H ∪ G) = n(H) + n(G) - n(H ∩ G).'
+      - 'Substitute the values: n(H ∪ G) = 45 + 35 - 15.'
+      - 'Calculate the result: n(H ∪ G) = 80 - 15 = 65.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: Out of 80 people surveyed (U), 32 prefer Pizza (P) and 48 prefer Burgers (B). If 10 people prefer both,
+        how many people prefer neither Pizza nor Burgers?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: P (Pizza)
+          setBLabel: B (Burger)
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '10'
+      stepByStepGuideline:
+      - 'First, find the total number of people who prefer Pizza or Burgers, n(P ∪ B), using the formula: n(P ∪ B) = n(P)
+        + n(B) - n(P ∩ B).'
+      - 'Substitute the values: n(P ∪ B) = 32 + 48 - 10 = 70.'
+      - 'To find those who prefer neither, subtract the union from the universal set: n(Neither) = n(U) - n(P ∪ B).'
+      - 'Calculate the result: n(Neither) = 80 - 70 = 10.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: In a drama club, every member must choose to participate in Theater (T) or Music (M) or both. There are
+        55 members in total [n(T ∪ M) = 55]. If 30 members chose Music and 8 members chose both Theater and Music, how many
+        members chose Theater?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: T (Theater)
+          setBLabel: M (Music)
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '33'
+      stepByStepGuideline:
+      - 'Identify the known variables: n(M) = 30, n(T ∩ M) = 8, and n(T ∪ M) = 55.'
+      - 'Use the Cardinality Formula: n(T ∪ M) = n(T) + n(M) - n(T ∩ M).'
+      - 'Rearrange the formula to solve for the unknown set n(T): n(T) = n(T ∪ M) - n(M) + n(T ∩ M).'
+      - 'Substitute the values: n(T) = 55 - 30 + 8.'
+      - 'Calculate the result: n(T) = 25 + 8 = 33.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A class of 75 students (U) was surveyed regarding their sports preferences. It was found that 62 students
+        played at least one sport (Soccer or Basketball). How many students played neither Soccer nor Basketball?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Soccer
+          setBLabel: Basketball
+          universalSetLabel: U
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '13'
+      stepByStepGuideline:
+      - Identify the universal set size, n(U) = 75, and the size of the union, n(S ∪ B) = 62.
+      - 'The number of elements in neither set is found by subtracting the union from the universal set: n(Neither) = n(U)
+        - n(S ∪ B).'
+      - 'Substitute the values: n(Neither) = 75 - 62.'
+      - 'Calculate the result: n(Neither) = 13.'
+      id: q13-5
+      questionGroup: q13
+- id: sets-node-14
+  nodeNumber: 14
+  title: Three-Set Venn Diagrams
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram3
+    preWrittenQuestions:
+    - problemText: 'A survey of students regarding their preferred study subjects yielded the following data:
+
+        - 5 students prefer all three subjects (Math, Science, History).
+
+        - 12 students prefer Math and Science.
+
+        - 10 students prefer Science and History.
+
+        How many students prefer Math and Science only (not History)?'
+      avatarIntro: Venn diagrams are powerful tools! Remember to start by placing the count of elements that belong to all
+        three sets first, then work outward.
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: Math
+          setBLabel: Science
+          setCLabel: History
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '7'
+      stepByStepGuideline:
+      - 'Identify the center region (M ∩ S ∩ H): 5 students.'
+      - 'Identify the total intersection of Math and Science (M ∩ S): 12 students.'
+      - The region for Math and Science only (M ∩ S \ H) is found by subtracting the center from the total intersection.
+      - 'Calculation: 12 - 5 = 7.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: 'In a three-set Venn diagram representing sets A, B, and C, the following counts for specific regions are
+        known:
+
+        - Elements in A ∩ B ∩ C = 3
+
+        - Elements in A only = 10
+
+        - Elements in A ∩ B only (not C) = 6
+
+        - Elements in A ∩ C only (not B) = 4
+
+        - Elements in B ∩ C only (not A) = 5
+
+        How many elements belong to exactly two of the three sets?'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: A
+          setBLabel: B
+          setCLabel: C
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '15'
+      stepByStepGuideline:
+      - The elements belonging to exactly two sets are the sum of the three two-way intersection regions, excluding the center.
+      - Identify the counts for A ∩ B only (6), A ∩ C only (4), and B ∩ C only (5).
+      - 'Sum these counts: 6 + 4 + 5 = 15.'
+      - '(Note: The counts for A only and A ∩ B ∩ C are distractors for this specific question.)'
+      id: q14-2
+      questionGroup: q14
+    - problemText: 'A group of 31 people were asked if they use social media platforms X, Y, or Z. The following counts were
+        recorded for the overlap regions:
+
+        - All three platforms (X ∩ Y ∩ Z) = 2
+
+        - X and Y only = 4
+
+        - X and Z only = 3
+
+        - Y and Z only = 5
+
+        Additionally, the total cardinality of each set is known:
+
+        - N(X) = 15
+
+        - N(Y) = 18
+
+        - N(Z) = 14
+
+        Assuming everyone uses at least one platform, what is the total number of people surveyed?'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: X
+          setBLabel: Y
+          setCLabel: Z
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '31'
+      stepByStepGuideline:
+      - 'First, calculate the elements belonging to X only (R_X): N(X) - (X∩Y only) - (X∩Z only) - (Center) = 15 - 4 - 3 -
+        2 = 6.'
+      - 'Second, calculate the elements belonging to Y only (R_Y): N(Y) - (X∩Y only) - (Y∩Z only) - (Center) = 18 - 4 - 5
+        - 2 = 7.'
+      - 'Third, calculate the elements belonging to Z only (R_Z): N(Z) - (X∩Z only) - (Y∩Z only) - (Center) = 14 - 3 - 5 -
+        2 = 4.'
+      - 'The total number of people is the sum of all 7 internal regions: (R_X + R_Y + R_Z) + (X∩Y only + X∩Z only + Y∩Z only)
+        + (Center).'
+      - Total = (6 + 7 + 4) + (4 + 3 + 5) + 2 = 17 + 12 + 2 = 31.
+      id: q14-3
+      questionGroup: q14
+    - problemText: 'Set B contains 22 elements in total. We know the following about the regions related to B:
+
+        - Elements in B only (not A or C) = 5
+
+        - Elements shared by all three sets (A ∩ B ∩ C) = 4
+
+        - Elements shared by A and B only (not C) = 7
+
+        How many elements are in B and C only (not A)?'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: A
+          setBLabel: B
+          setCLabel: C
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '6'
+      stepByStepGuideline:
+      - 'The total number of elements in Set B is the sum of the four regions contained within the B circle: B only, A ∩ B
+        only, B ∩ C only, and A ∩ B ∩ C.'
+      - Let R_BC be the count for B ∩ C only.
+      - N(B) = (B only) + (A ∩ B only) + (R_BC) + (A ∩ B ∩ C).
+      - 'Substitute the known values: 22 = 5 + 7 + R_BC + 4.'
+      - 'Simplify the known sum: 22 = 16 + R_BC.'
+      - 'Solve for R_BC: R_BC = 22 - 16 = 6.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: 'Given three sets P, Q, and R, the intersections are defined as follows:
+
+        - The number of elements common to all three (P ∩ Q ∩ R) = 4.
+
+        - The total intersection of P and Q is N(P ∩ Q) = 10.
+
+        - The total intersection of Q and R is N(Q ∩ R) = 12.
+
+        - The total intersection of P and R is N(P ∩ R) = 8.
+
+        How many elements are shared by exactly two of the three sets?'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: P
+          setBLabel: Q
+          setCLabel: R
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '18'
+      stepByStepGuideline:
+      - 'First, find the count for P ∩ Q only: N(P ∩ Q) - N(P ∩ Q ∩ R) = 10 - 4 = 6.'
+      - 'Second, find the count for Q ∩ R only: N(Q ∩ R) - N(P ∩ Q ∩ R) = 12 - 4 = 8.'
+      - 'Third, find the count for P ∩ R only: N(P ∩ R) - N(P ∩ Q ∩ R) = 8 - 4 = 4.'
+      - The elements shared by exactly two sets is the sum of these three calculated regions.
+      - Total = 6 + 8 + 4 = 18.
+      id: q14-5
+      questionGroup: q14
+- id: sets-node-15
+  nodeNumber: 15
+  title: Two-Set Word Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: A survey was conducted at a community fitness center regarding class attendance. Of the members surveyed,
+        65 attended Yoga sessions, 42 attended Pilates sessions, and 15 members attended both. If 10 members attended neither
+        type of session, what is the total number of members surveyed?
+      avatarIntro: Welcome! Let's use Venn diagrams to organize this survey data. Start by identifying the number of people
+        in the overlap, and work your way outwards.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Yoga
+          setBLabel: Pilates
+          universalSetLabel: Total Members
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '102'
+      stepByStepGuideline:
+      - 'Find the number of members who attended only Yoga: 65 - 15 = 50.'
+      - 'Find the number of members who attended only Pilates: 42 - 15 = 27.'
+      - 'Calculate the number of members who attended at least one session: 50 (Only Yoga) + 27 (Only Pilates) + 15 (Both)
+        = 92.'
+      - 'Add those who attended neither session to find the total surveyed: 92 + 10 = 102.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: In a school cafeteria, 80 students were surveyed about their favorite lunch items. 55 students said they
+        liked pasta and 48 students said they liked salad. If 5 students reported liking neither pasta nor salad, how many
+        students like both pasta and salad?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Pasta
+          setBLabel: Salad
+          universalSetLabel: Total Students
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '28'
+      stepByStepGuideline:
+      - 'Determine the number of students who like at least one item: 80 (Total) - 5 (Neither) = 75.'
+      - 'Sum the number of students in the individual sets: 55 (Pasta) + 48 (Salad) = 103.'
+      - 'The difference between the sum of the sets and the total number of students who like at least one item gives the
+        intersection: 103 - 75 = 28.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: '95 participants in a media study were asked about two popular streaming shows, Show A and Show B. 50 participants
+        watched Show A, 35 watched Show B, and 12 watched both shows.
+
+
+        a) How many participants watched exactly one of the two shows?
+
+
+        b) How many participants watched neither Show A nor Show B?'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Show A
+          setBLabel: Show B
+          universalSetLabel: Total Participants
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer:
+        a: '61'
+        b: '22'
+      stepByStepGuideline:
+      - 'Calculate those who watched Only Show A: 50 - 12 = 38.'
+      - 'Calculate those who watched Only Show B: 35 - 12 = 23.'
+      - 'Answer part (a): Add those who watched exactly one show: 38 + 23 = 61.'
+      - 'Calculate the total number of viewers who watched at least one show: 61 (Exactly one) + 12 (Both) = 73.'
+      - 'Answer part (b): Subtract the total engaged viewers from the total participants: 95 - 73 = 22.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: In a college semester, 120 students were enrolled in either a Science or Math course. 78 students took
+        Physics, 64 students took Chemistry, and 25 students took both courses. How many students are taking neither Physics
+        nor Chemistry?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Physics
+          setBLabel: Chemistry
+          universalSetLabel: Total Students
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Find the number of students taking only Physics: 78 - 25 = 53.'
+      - 'Find the number of students taking only Chemistry: 64 - 25 = 39.'
+      - 'Calculate the total number of students taking at least one course: 53 + 39 + 25 = 117.'
+      - 'Subtract the total participants from the universal set (total surveyed) to find those taking neither: 120 - 117 =
+        3.'
+      id: q15-4
+      questionGroup: q15
+    - problemText: A survey of 70 high school students found that 45 belong to the Art Club and 32 belong to the Drama Club.
+        If 10 students belong to both clubs, how many students belong to exactly one club?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Art Club
+          setBLabel: Drama Club
+          universalSetLabel: Total Students
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '57'
+      stepByStepGuideline:
+      - 'Calculate the number of students who belong only to the Art Club: 45 - 10 = 35.'
+      - 'Calculate the number of students who belong only to the Drama Club: 32 - 10 = 22.'
+      - 'Add the counts for those belonging to exactly one club: 35 + 22 = 57.'
+      id: q15-5
+      questionGroup: q15
+- id: sets-node-16
+  nodeNumber: 16
+  title: Complex Two-Set Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: A survey was conducted among 75 students regarding their appearance. 45 students reported having brown
+        eyes, 50 reported having straight hair, and 12 students had neither brown eyes nor straight hair. How many students
+        have brown eyes but do not have straight hair?
+      avatarIntro: This problem involves analyzing overlapping sets. Remember to use the total population and the 'neither'
+        group to find the size of the union first!
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Brown Eyes
+          setBLabel: Straight Hair
+          universalSetLabel: Total Students (75)
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '13'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the size of the union, n(A U B). n(U) = n(A U B) + n(Neither). 75 = n(A U B) + 12. So, n(A U B)
+        = 63.'
+      - 'Step 2: Calculate the intersection, n(A ∩ B), using the formula: n(A ∩ B) = n(A) + n(B) - n(A U B). n(A ∩ B) = 45
+        + 50 - 63 = 32.'
+      - 'Step 3: Determine the number of students who have brown eyes only (A only). n(A only) = n(A) - n(A ∩ B). n(A only)
+        = 45 - 32 = 13.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: In a company of 120 employees, a survey on beverage preference showed that 65 employees like hot cocoa
+        and 55 employees like iced tea. If 30 employees like both hot cocoa and iced tea, how many employees like neither
+        hot cocoa nor iced tea?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Hot Cocoa
+          setBLabel: Iced Tea
+          universalSetLabel: Total Employees (120)
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '30'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the number of employees who like hot cocoa only: n(A only) = 65 - 30 = 35.'
+      - 'Step 2: Calculate the number of employees who like iced tea only: n(B only) = 55 - 30 = 25.'
+      - 'Step 3: Calculate the size of the union (those who like at least one drink): n(A U B) = n(A only) + n(B only) + n(A
+        ∩ B) = 35 + 25 + 30 = 90.'
+      - 'Step 4: Calculate the number who like neither: n(Neither) = n(U) - n(A U B). n(Neither) = 120 - 90 = 30.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: A survey of 90 families asked about device ownership. 50 families own an E-reader (A), 40 families own
+        a Game Console (B), and 15 families own both devices. How many families own neither an E-reader nor a Game Console?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: E-Reader
+          setBLabel: Game Console
+          universalSetLabel: Total Families (90)
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '15'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the number of families who own only an E-reader (A only): 50 - 15 = 35.'
+      - 'Step 2: Calculate the number of families who own only a Game Console (B only): 40 - 15 = 25.'
+      - 'Step 3: Sum the known regions: A only + B only + Intersection = 35 + 25 + 15 = 75.'
+      - 'Step 4: Determine the number who own neither: n(Neither) = n(U) - (Sum of known regions). 90 - 75 = 15.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: Out of 150 students, 80 speak Mandarin, and 40 speak both Mandarin and Malay. If 25 students speak neither
+        language, how many students speak Malay but do not speak Mandarin?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Mandarin
+          setBLabel: Malay
+          universalSetLabel: Total Students (150)
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '45'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the size of the union, n(A U B). n(A U B) = n(U) - n(Neither). 150 - 25 = 125.'
+      - 'Step 2: Calculate the number of students who speak Mandarin only (A only): 80 - 40 = 40.'
+      - 'Step 3: Use the union formula: n(A U B) = n(A only) + n(A ∩ B) + n(B only).'
+      - 'Step 4: Solve for n(B only): 125 = 40 + 40 + n(B only). 125 = 80 + n(B only).'
+      - 'Step 5: n(B only) = 125 - 80 = 45.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: In a class of 60 children, 35 wear glasses and 30 wear braces. If 10 children wear neither glasses nor
+        braces, how many children wear braces but not glasses?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Glasses
+          setBLabel: Braces
+          universalSetLabel: Total Children (60)
+          layout: overlapping
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '15'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the size of the union, n(A U B). n(A U B) = n(U) - n(Neither). 60 - 10 = 50.'
+      - 'Step 2: Calculate the intersection, n(A ∩ B): n(A ∩ B) = n(A) + n(B) - n(A U B). n(A ∩ B) = 35 + 30 - 50 = 15. (15
+        children wear both).'
+      - 'Step 3: Determine the number of children who wear braces only (B only): n(B only) = n(B) - n(A ∩ B).'
+      - 'Step 4: n(B only) = 30 - 15 = 15.'
+      id: q16-5
+      questionGroup: q16
+- id: sets-node-17
+  nodeNumber: 17
+  title: Three-Set Survey Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram3
+    preWrittenQuestions:
+    - problemText: 'A survey of 120 travelers recorded their ability to speak Spanish (S), Mandarin (M), or Arabic (A).
+
+
+        60 speak Spanish.
+
+        55 speak Mandarin.
+
+        40 speak Arabic.
+
+        25 speak Spanish and Mandarin.
+
+        18 speak Spanish and Arabic.
+
+        15 speak Mandarin and Arabic.
+
+        8 speak all three languages.
+
+
+        a) How many travelers speak exactly two of these languages?
+
+        b) How many travelers speak none of these languages?'
+      avatarIntro: Venn diagrams are great tools for organizing information about overlapping groups. Remember to start filling
+        the diagram from the center intersection outwards!
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: Spanish
+          setBLabel: Mandarin
+          setCLabel: Arabic
+          showElements: false
+          showRegionCounts: false
+      finalAnswer:
+        a: '34'
+        b: '15'
+      stepByStepGuideline:
+      - 'Start with the intersection of all three: n(S∩M∩A) = 8.'
+      - 'Calculate the regions for exactly two languages (A∩B only, A∩C only, B∩C only): n(S∩M only) = 25 - 8 = 17; n(S∩A
+        only) = 18 - 8 = 10; n(M∩A only) = 15 - 8 = 7.'
+      - 'For part (a), sum the ''exactly two'' regions: 17 + 10 + 7 = 34.'
+      - 'Calculate the regions for exactly one language: n(S only) = 60 - 17 - 10 - 8 = 25; n(M only) = 55 - 17 - 7 - 8 =
+        23; n(A only) = 40 - 10 - 7 - 8 = 15.'
+      - 'Calculate the total number of travelers who speak at least one language: 34 + 8 + 25 + 23 + 15 = 105.'
+      - 'For part (b), subtract the total covered from the survey total: 120 - 105 = 15.'
+      id: q17-1
+      questionGroup: q17
+    - problemText: 'A survey of 95 households reported their subscriptions to three streaming services: Crave (C), Apple TV
+        (A), and BritBox (B).
+
+
+        45 subscribe to Crave.
+
+        40 subscribe to Apple TV.
+
+        35 subscribe to BritBox.
+
+        15 subscribe to Crave and Apple TV.
+
+        12 subscribe to Crave and BritBox.
+
+        10 subscribe to Apple TV and BritBox.
+
+        5 subscribe to all three services.
+
+
+        How many households subscribe to exactly one streaming service?'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: Crave
+          setBLabel: Apple TV
+          setCLabel: BritBox
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '61'
+      stepByStepGuideline:
+      - 'Identify the center: n(C∩A∩B) = 5.'
+      - 'Calculate the regions for exactly two services: n(C∩A only) = 15 - 5 = 10; n(C∩B only) = 12 - 5 = 7; n(A∩B only)
+        = 10 - 5 = 5.'
+      - 'Calculate the region for Crave only: n(C only) = 45 - 10 - 7 - 5 = 23.'
+      - 'Calculate the region for Apple TV only: n(A only) = 40 - 10 - 5 - 5 = 20.'
+      - 'Calculate the region for BritBox only: n(B only) = 35 - 7 - 5 - 5 = 18.'
+      - 'Sum the regions for exactly one service: 23 + 20 + 18 = 61.'
+      id: q17-2
+      questionGroup: q17
+    - problemText: 'In a Physical Education class of 140 students, participation in three sports was tracked: Soccer (S),
+        Basketball (B), and Volleyball (V).
+
+
+        70 play Soccer.
+
+        65 play Basketball.
+
+        50 play Volleyball.
+
+        30 play Soccer and Basketball.
+
+        20 play Soccer and Volleyball.
+
+        25 play Basketball and Volleyball.
+
+        10 play all three sports.
+
+
+        a) How many students play at least one sport?
+
+        b) How many students play Soccer or Basketball, but do NOT play Volleyball?'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: Soccer
+          setBLabel: Basketball
+          setCLabel: Volleyball
+          showElements: false
+          showRegionCounts: false
+      finalAnswer:
+        a: '120'
+        b: '70'
+      stepByStepGuideline:
+      - 'Start with the triple intersection: 10.'
+      - 'Calculate the ''exactly two'' regions: n(S∩B only) = 30 - 10 = 20; n(S∩V only) = 20 - 10 = 10; n(B∩V only) = 25 -
+        10 = 15.'
+      - 'Calculate the ''exactly one'' regions: n(S only) = 70 - 20 - 10 - 10 = 30; n(B only) = 65 - 20 - 15 - 10 = 20; n(V
+        only) = 50 - 10 - 15 - 10 = 15.'
+      - 'For part (a), sum all regions within the circles (At least one): 30 + 20 + 15 + 20 + 10 + 15 + 10 = 120.'
+      - 'For part (b), find the regions representing (S or B) excluding V. This includes S only, B only, and S∩B only: 30
+        + 20 + 20 = 70.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: 'A music school surveyed 110 students about the instruments they play: Piano (P), Guitar (G), and Drums
+        (D).
+
+
+        55 play Piano.
+
+        45 play Guitar.
+
+        30 play Drums.
+
+        18 play Piano and Guitar.
+
+        10 play Piano and Drums.
+
+        8 play Guitar and Drums.
+
+        3 play all three instruments.
+
+
+        How many students play exactly two musical instruments?'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: Piano
+          setBLabel: Guitar
+          setCLabel: Drums
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '27'
+      stepByStepGuideline:
+      - 'Identify the number playing all three: n(P∩G∩D) = 3.'
+      - 'Calculate the number playing Piano and Guitar only: 18 - 3 = 15.'
+      - 'Calculate the number playing Piano and Drums only: 10 - 3 = 7.'
+      - 'Calculate the number playing Guitar and Drums only: 8 - 3 = 5.'
+      - 'To find the number who play exactly two instruments, sum these three regions: 15 + 7 + 5 = 27.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: 'A college surveyed 135 students regarding their enrollment in three science subjects: Physics (P), Chemistry
+        (C), and Biology (B).
+
+
+        80 take Physics.
+
+        75 take Chemistry.
+
+        60 take Biology.
+
+        40 take Physics and Chemistry.
+
+        35 take Physics and Biology.
+
+        30 take Chemistry and Biology.
+
+        20 take all three subjects.
+
+
+        a) How many students take exactly three subjects?
+
+        b) How many students take exactly one subject?'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: Physics
+          setBLabel: Chemistry
+          setCLabel: Biology
+          showElements: false
+          showRegionCounts: false
+      finalAnswer:
+        a: '20'
+        b: '65'
+      stepByStepGuideline:
+      - 'For part (a), the number of students taking exactly three subjects is simply the triple intersection: 20.'
+      - 'To find the number taking exactly one subject, first calculate the ''exactly two'' regions: n(P∩C only) = 40 - 20
+        = 20; n(P∩B only) = 35 - 20 = 15; n(C∩B only) = 30 - 20 = 10.'
+      - 'Calculate the ''exactly one'' regions: n(P only) = 80 - 20 - 15 - 20 = 25; n(C only) = 75 - 20 - 10 - 20 = 25; n(B
+        only) = 60 - 15 - 10 - 20 = 15.'
+      - 'For part (b), sum the ''exactly one'' regions: 25 + 25 + 15 = 65.'
+      id: q17-5
+      questionGroup: q17
+- id: sets-node-18
+  nodeNumber: 18
+  title: Set Identities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'True or false: For any set A within a universal set U, the union of A and its complement, $A \cup A''$,
+        results in the universal set U.'
+      avatarIntro: Set identities are fundamental rules in set theory. Let's test your knowledge of how sets interact with
+        their complements and the universal set.
+      mathTool: null
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - Recall the definition of the complement of a set, A'. A' contains all elements in U that are not in A.
+      - The union $A \cup A'$ includes all elements that are either in A or in A'.
+      - Since every element in the universal set U must be either in A or not in A (i.e., in A'), the union $A \cup A'$ must
+        equal U. This is the Complement Law.
+      id: q18-1
+      questionGroup: q18
+    - problemText: 'True or false: The intersection of any set A and the empty set $\emptyset$ is the set A (i.e., $A \cap
+        \emptyset = A$).'
+      mathTool: null
+      finalAnswer: 'False'
+      stepByStepGuideline:
+      - The intersection of two sets contains only the elements common to both sets.
+      - The empty set $\emptyset$ contains no elements.
+      - 'Therefore, there can be no common elements between A and $\emptyset$. The correct identity is the Domination Law
+        for Intersection: $A \cap \emptyset = \emptyset$.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: 'True or false: If A is a set and U is the universal set, the intersection $A \cap U$ simplifies to A.'
+      mathTool: null
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - The universal set U contains all possible elements under consideration.
+      - The intersection $A \cap U$ includes all elements common to both A and U.
+      - Since A is defined within U, every element in A is also in U. Thus, the common elements are exactly the elements of
+        A. This is the Identity Law for Intersection.
+      id: q18-3
+      questionGroup: q18
+    - problemText: 'True or false: According to the Idempotent laws, $A \cup A$ is always equal to the universal set U.'
+      mathTool: null
+      finalAnswer: 'False'
+      stepByStepGuideline:
+      - The Idempotent Law states that the union of a set with itself results in the set itself.
+      - If an element is in A, it is also in $A \cup A$. If an element is in $A \cup A$, it must be in A.
+      - Therefore, $A \cup A = A$. It is only equal to U if A itself happens to be the universal set U.
+      id: q18-4
+      questionGroup: q18
+    - problemText: 'True or false: Taking the complement of the complement of a set A yields the original set A, i.e., $(A'')''
+        = A$.'
+      mathTool: null
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - A' represents all elements NOT in A.
+      - $(A')'$ represents all elements NOT in A'.
+      - If an element is not in A', it must be one of the elements originally in A.
+      - This is known as the Double Complement Law, and it holds true for any set A.
+      id: q18-5
+      questionGroup: q18
+- id: sets-node-19
+  nodeNumber: 19
+  title: De Morgan's Laws
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Let the universal set $U = \{1, 2, 3, 4, 5, 6, 7, 8\}$. Suppose $A = \{1, 2, 3, 4\}$ and $B = \{3, 4, 5,
+        6\}$. Calculate the set $(A \cup B)'$ and the set $A' \cap B'$. Does De Morgan's first law hold for these specific
+        sets?
+      avatarIntro: De Morgan's Laws are fundamental tools in set theory. Let's practice verifying the first law using specific
+        elements in a universal set.
+      mathTool: null
+      finalAnswer: Yes, both resulting sets are {7, 8}.
+      stepByStepGuideline:
+      - 'First, find the union of A and B: $A \cup B = \{1, 2, 3, 4, 5, 6\}$.'
+      - 'Next, find the complement of the union: $(A \cup B)'' = U \setminus (A \cup B) = \{7, 8\}$.'
+      - 'Now, find the complements of A and B separately: $A'' = \{5, 6, 7, 8\}$ and $B'' = \{1, 2, 7, 8\}$.'
+      - 'Finally, find the intersection of the complements: $A'' \cap B'' = \{7, 8\}$.'
+      - Since $(A \cup B)' = A' \cap B'$, the law holds for these sets.
+      id: q19-1
+      questionGroup: q19
+    - problemText: 'True or False: The identity $(P \cap Q)'' = P'' \cup Q''$ is always true for any subsets P and Q of a
+        universal set U. Use the visual representation provided by the Venn diagrams to confirm your answer.'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          diagrams:
+          - setALabel: P
+            setBLabel: Q
+            universalSetLabel: U
+            layout: overlapping
+            shadeRegion: A_ONLY, B_ONLY, UNIVERSAL_ONLY
+            showElements: false
+            showRegionCounts: false
+            title: (P ∩ Q)'
+          - setALabel: P
+            setBLabel: Q
+            universalSetLabel: U
+            layout: overlapping
+            shadeRegion: A_ONLY, B_ONLY, UNIVERSAL_ONLY
+            showElements: false
+            showRegionCounts: false
+            title: P' ∪ Q'
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - This identity is known as De Morgan's second law.
+      - 'To verify, consider the region for $(P \cap Q)''$: this is everything outside the intersection of P and Q.'
+      - 'Consider the region for $P'' \cup Q''$: $P''$ includes everything outside P, and $Q''$ includes everything outside
+        Q. The union of these complements includes every element that is not simultaneously in both P and Q.'
+      - Since both expressions describe the exact same region (the entire universal set U minus the intersection $P \cap Q$),
+        the identity is always true.
+      id: q19-2
+      questionGroup: q19
+    - problemText: Given the universal set $U = \{a, b, c, d, e, f, g\}$, and two disjoint sets $A = \{a, b, c\}$ and $B =
+        \{d, e\}$. Verify De Morgan's second law by finding the elements in $(A \cap B)'$ and the elements in $A' \cup B'$.
+      mathTool: null
+      finalAnswer: Both sets equal U, or {a, b, c, d, e, f, g}.
+      stepByStepGuideline:
+      - Since A and B are disjoint, $A \cap B = \{\}$.
+      - 'The complement of the empty set is the universal set: $(A \cap B)'' = U = \{a, b, c, d, e, f, g\}$.'
+      - 'Calculate the complements: $A'' = \{d, e, f, g\}$ and $B'' = \{a, b, c, f, g\}$.'
+      - 'Calculate the union of the complements: $A'' \cup B'' = \{d, e, f, g, a, b, c\} = U$.'
+      - Since $(A \cap B)' = A' \cup B'$, the law is verified.
+      id: q19-3
+      questionGroup: q19
+    - problemText: Is the statement $(X' \cap Y') = (X \cup Y)'$ always true? Analyze the shaded regions in the Venn diagrams
+        for visual proof.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          diagrams:
+          - setALabel: X
+            setBLabel: Y
+            universalSetLabel: U
+            layout: overlapping
+            shadeRegion: UNIVERSAL_ONLY
+            showElements: false
+            showRegionCounts: false
+            title: (X' ∩ Y')
+          - setALabel: X
+            setBLabel: Y
+            universalSetLabel: U
+            layout: overlapping
+            shadeRegion: UNIVERSAL_ONLY
+            showElements: false
+            showRegionCounts: false
+            title: (X ∪ Y)'
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - The expression $(X \cup Y)'$ represents De Morgan's first law applied directly, defining the region outside the union
+        of X and Y (i.e., only the universal set region).
+      - The expression $(X' \cap Y')$ represents the intersection of everything outside X ($X'$) and everything outside Y
+        ($Y'$). This intersection is exactly the region outside the union of X and Y.
+      - Since both shaded diagrams are identical (shading only the universal region), the identity is true. This confirms
+        De Morgan's first law, $(A \cup B)' = A' \cap B'$.
+      id: q19-4
+      questionGroup: q19
+    - problemText: 'True or False: The identity $(A'' \cup B)'' = A \cap B''$ holds true for all sets A and B?'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          diagrams:
+          - setALabel: A
+            setBLabel: B
+            universalSetLabel: U
+            layout: overlapping
+            shadeRegion: A_ONLY
+            showElements: false
+            showRegionCounts: false
+            title: (A' ∪ B)'
+          - setALabel: A
+            setBLabel: B
+            universalSetLabel: U
+            layout: overlapping
+            shadeRegion: A_ONLY
+            showElements: false
+            showRegionCounts: false
+            title: A ∪ B'
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - 'We apply De Morgan''s first law to the left-hand side (LHS): $(A'' \cup B)'' = (A'')'' \cap B''$.'
+      - 'The complement of the complement of A is A itself: $(A'')'' = A$.'
+      - Therefore, the LHS simplifies to $A \cap B'$.
+      - Since the simplified LHS, $A \cap B'$, is equal to the right-hand side (RHS), the identity is true.
+      - Visually, both expressions represent the region where elements are in A but not in B (A only).
+      id: q19-5
+      questionGroup: q19
+- id: sets-node-20
+  nodeNumber: 20
+  title: Distributive Laws
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Let A = {1, 2, 3, 4}, B = {3, 4, 5}, and C = {1, 5, 6}. Using the Distributive Law, compute the resulting
+        set for $A \cap (B \cup C)$.
+      avatarIntro: Welcome! Let's practice applying the distributive laws to set operations. Remember to handle the operations
+        inside the parentheses first.
+      mathTool: null
+      finalAnswer: '{1, 3, 4}'
+      stepByStepGuideline:
+      - 'First, calculate the union inside the parentheses: $B \cup C$. $B \cup C = \{3, 4, 5\} \cup \{1, 5, 6\} = \{1, 3,
+        4, 5, 6\}$.'
+      - 'Next, calculate the intersection of A with the result: $A \cap (B \cup C)$.'
+      - $A \cap (B \cup C) = \{1, 2, 3, 4\} \cap \{1, 3, 4, 5, 6\}$.
+      - The elements common to both sets are 1, 3, and 4. Thus, $A \cap (B \cup C) = \{1, 3, 4\}$.
+      id: q20-1
+      questionGroup: q20
+    - problemText: Given the sets A = {p, q, r}, B = {q, r, s}, and C = {r, s, t}. Find the resulting set for the expression
+        $A \cup (B \cap C)$.
+      mathTool: null
+      finalAnswer: '{p, q, r, s}'
+      stepByStepGuideline:
+      - 'First, find the intersection inside the parentheses: $B \cap C$. $B \cap C = \{q, r, s\} \cap \{r, s, t\} = \{r,
+        s\}$.'
+      - 'Next, find the union of A with the result: $A \cup (B \cap C)$.'
+      - $A \cup (B \cap C) = \{p, q, r\} \cup \{r, s\}$.
+      - 'Combining all unique elements gives the final set: $\{p, q, r, s\}$.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: Let A = {10, 20, 30}, B = {20, 40}, and C = {30, 40, 50}. Verify the distributive law $A \cap (B \cup C)
+        = (A \cap B) \cup (A \cap C)$ by calculating the resulting set.
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: A
+          setBLabel: B
+          setCLabel: C
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: '{20, 30}'
+      stepByStepGuideline:
+      - 'Calculate the Left-Hand Side (LHS): $A \cap (B \cup C)$. $B \cup C = \{20, 30, 40, 50\}$. $A \cap (B \cup C) = \{10,
+        20, 30\} \cap \{20, 30, 40, 50\} = \{20, 30\}$.'
+      - 'Calculate the Right-Hand Side (RHS): $(A \cap B) \cup (A \cap C)$.'
+      - $A \cap B = \{20\}$. $A \cap C = \{30\}$.
+      - $(A \cap B) \cup (A \cap C) = \{20\} \cup \{30\} = \{20, 30\}$.
+      - Since LHS = RHS = {20, 30}, the identity is verified. The resulting set is {20, 30}.
+      id: q20-3
+      questionGroup: q20
+    - problemText: 'True or False: For any three arbitrary sets A, B, and C, the identity $A \cup (B \cap C) = (A \cup B)
+        \cap (A \cup C)$ holds.'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: A
+          setBLabel: B
+          setCLabel: C
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - This identity represents the property that Union distributes over Intersection.
+      - The formula states that taking the union of A with the intersection of B and C yields the same result as taking the
+        intersection of (A union B) and (A union C).
+      - This is a fundamental distributive law in Set Theory, and it is always true.
+      id: q20-4
+      questionGroup: q20
+    - problemText: 'Determine if the following statement is True or False for all non-empty sets A, B, and C: $A \cap (B \cup
+        C) = (A \cap B) \cap (A \cap C)$.'
+      mathTool:
+        toolName: vennDiagram3
+        parameters:
+          setALabel: A
+          setBLabel: B
+          setCLabel: C
+          showElements: false
+          showRegionCounts: false
+      finalAnswer: 'False'
+      stepByStepGuideline:
+      - The correct Distributive Law for intersection over union is $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+      - The given statement incorrectly uses intersection ($\cap$) instead of union ($\cup$) on the right-hand side.
+      - 'Consider a counterexample: Let A = {1, 2}, B = {2, 3}, C = {4}.'
+      - 'LHS: $A \cap (B \cup C) = \{1, 2\} \cap \{2, 3, 4\} = \{2\}$.'
+      - 'RHS: $(A \cap B) \cap (A \cap C)$. $A \cap B = \{2\}$. $A \cap C = \emptyset$. $(A \cap B) \cap (A \cap C) = \{2\}
+        \cap \emptyset = \emptyset$.'
+      - Since LHS $\neq$ RHS, the statement is False.
+      id: q20-5
+      questionGroup: q20

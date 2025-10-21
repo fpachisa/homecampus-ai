@@ -1,0 +1,709 @@
+# Exponents - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: exponents-laws-node-1
+  nodeNumber: 1
+  title: Understanding Exponent Notation and Terminology
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Evaluate the expression $4^3$.
+      avatarIntro: Welcome! Let's start by calculating the value of a power. Remember what the base and exponent tell you.
+      mathTool: null
+      finalAnswer: '64'
+      stepByStepGuideline:
+      - The expression $4^3$ means the base 4 is multiplied by itself 3 times.
+      - "Calculate: $4 \times 4 \times 4$."
+      - "$4 \times 4 = 16$."
+      - "$16 \times 4 = 64$."
+      id: q1-1
+      questionGroup: q1
+    - problemText: In the expression $9^7$, which number represents the base?
+      mathTool: null
+      finalAnswer: '9'
+      stepByStepGuideline:
+      - Recall that in exponential notation $a^n$, $a$ is the base.
+      - The base is the number that is being multiplied repeatedly.
+      - In $9^7$, the base is 9.
+      id: q1-2
+      questionGroup: q1
+    - problemText: 'Write the repeated multiplication $5 \times 5 \times 5 \times 5 \times 5$ using exponential notation.'
+      mathTool: null
+      finalAnswer: $5^5$
+      stepByStepGuideline:
+      - Identify the number being multiplied (the base), which is 5.
+      - Count how many times 5 is multiplied (the exponent or index), which is 5 times.
+      - 'Write the expression as base raised to the exponent: $5^5$.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: In the expression $4^{10}$, what is the index (or exponent)?
+      mathTool: null
+      finalAnswer: '10'
+      stepByStepGuideline:
+      - The index or exponent is the small raised number that indicates how many factors of the base are used.
+      - In $4^{10}$, the index is 10.
+      id: q1-4
+      questionGroup: q1
+    - problemText: Write the expression $6^3$ as repeated multiplication (expanded form).
+      mathTool: null
+      finalAnswer: $6 \times 6 \times 6$
+      stepByStepGuideline:
+      - The notation $6^3$ means the base 6 is multiplied by itself, and the exponent 3 tells us the number of factors.
+      - Therefore, $6^3$ expands to $6 \times 6 \times 6$.
+      id: q1-5
+      questionGroup: q1
+- id: exponents-laws-node-2
+  nodeNumber: 2
+  title: Multiplication and Division Laws
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the expression using the multiplication law of exponents: $5^4 \times 5^5$'
+      avatarIntro: Ready to test your knowledge of exponent laws? Remember that when multiplying powers with the same base,
+        you add the exponents.
+      mathTool: null
+      finalAnswer: $5^9$
+      stepByStepGuideline:
+      - Identify the base and the operation. The base is 5 and the operation is multiplication.
+      - 'Apply the multiplication law: $a^m \times a^n = a^{m+n}$.'
+      - 'Add the exponents: $4 + 5 = 9$.'
+      - The simplified expression is $5^9$.
+      id: q2-1
+      questionGroup: q2
+    - problemText: 'Simplify the algebraic expression using the division law of exponents: $\frac{x^{15}}{x^8}$'
+      mathTool: null
+      finalAnswer: $x^7$
+      stepByStepGuideline:
+      - Identify the base and the operation. The base is x and the operation is division.
+      - 'Apply the division law: $\frac{a^m}{a^n} = a^{m-n}$.'
+      - 'Subtract the exponents: $15 - 8 = 7$.'
+      - The simplified expression is $x^7$.
+      id: q2-2
+      questionGroup: q2
+    - problemText: 'Simplify the following expression involving three terms: $2^2 \times 2^3 \times 2^4$'
+      mathTool: null
+      finalAnswer: $2^9$
+      stepByStepGuideline:
+      - The operation is multiplication and the base (2) is the same for all terms.
+      - Apply the multiplication law repeatedly by adding all exponents.
+      - 'Add the exponents: $2 + 3 + 4 = 9$.'
+      - The simplified expression is $2^9$.
+      id: q2-3
+      questionGroup: q2
+    - problemText: 'Simplify the mixed operation expression: $\frac{a^7 \times a^2}{a^3}$'
+      mathTool: null
+      finalAnswer: $a^6$
+      stepByStepGuideline:
+      - 'First, simplify the numerator using the multiplication law: $a^7 \times a^2 = a^{7+2} = a^9$.'
+      - The expression becomes $\frac{a^9}{a^3}$.
+      - 'Next, apply the division law: $\frac{a^m}{a^n} = a^{m-n}$.'
+      - 'Subtract the exponents: $9 - 3 = 6$.'
+      - The simplified expression is $a^6$.
+      id: q2-4
+      questionGroup: q2
+    - problemText: 'Simplify the expression: $\frac{7^{20}}{7^{13}}$'
+      mathTool: null
+      finalAnswer: $7^7$
+      stepByStepGuideline:
+      - The expression involves division with the same base (7).
+      - 'Apply the division law of exponents: subtract the exponent of the denominator from the exponent of the numerator.'
+      - 'Calculate the difference in exponents: $20 - 13 = 7$.'
+      - The simplified expression is $7^7$.
+      id: q2-5
+      questionGroup: q2
+- id: exponents-laws-node-3
+  nodeNumber: 3
+  title: Power Laws and Nested Exponents
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the following expression using the power-to-power law: $(3^5)^4$'
+      avatarIntro: Mastering exponent rules requires practice! Remember that when raising a power to another power, you multiply
+        the exponents.
+      mathTool: null
+      finalAnswer: $3^{20}$
+      stepByStepGuideline:
+      - The expression is in the form $(a^m)^n$.
+      - According to the power-to-power law, $(a^m)^n = a^{mn}$.
+      - 'Multiply the inner exponent (5) by the outer exponent (4): $5 \times 4 = 20$.'
+      - The simplified expression is $3^{20}$.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Simplify the expression $(pq)^3$.
+      mathTool: null
+      finalAnswer: $p^3 q^3$
+      stepByStepGuideline:
+      - The expression is in the form $(ab)^n$.
+      - 'According to the product-to-power law, the exponent must be applied to every factor inside the parentheses: $(pq)^3
+        = p^3 q^3$.'
+      - The simplified expression is $p^3 q^3$.
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'Simplify the expression using the quotient-to-power law: $\left(\frac{m}{n}\right)^4$'
+      mathTool: null
+      finalAnswer: $\frac{m^4}{n^4}$
+      stepByStepGuideline:
+      - The expression is in the form $\left(\frac{a}{b}\right)^n$.
+      - 'According to the quotient-to-power law, the exponent applies to both the numerator and the denominator: $\left(\frac{m}{n}\right)^4
+        = \frac{m^4}{n^4}$.'
+      - The simplified expression is $\frac{m^4}{n^4}$.
+      id: q3-3
+      questionGroup: q3
+    - problemText: 'Simplify the expression: $(a^7)^3$'
+      mathTool: null
+      finalAnswer: $a^{21}$
+      stepByStepGuideline:
+      - The expression is in the form $(a^m)^n$.
+      - 'Apply the power-to-power law by multiplying the exponents: $7 \times 3 = 21$.'
+      - The simplified expression is $a^{21}$.
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'Simplify the expression: $(4t)^2$'
+      mathTool: null
+      finalAnswer: $16t^2$
+      stepByStepGuideline:
+      - The expression is in the form $(ab)^n$.
+      - 'Apply the product-to-power law by distributing the exponent 2 to both factors: $(4t)^2 = 4^2 t^2$.'
+      - 'Calculate the numerical base raised to the power: $4^2 = 16$.'
+      - The simplified expression is $16t^2$.
+      id: q3-5
+      questionGroup: q3
+- id: exponents-laws-node-4
+  nodeNumber: 4
+  title: Zero and Negative Exponents
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the expression: $(3x)^0$'
+      avatarIntro: Zero and negative exponents are essential concepts in algebra. Remember the key rules as you work through
+        these problems!
+      mathTool: null
+      finalAnswer: '1'
+      stepByStepGuideline:
+      - The zero exponent rule states that any non-zero base raised to the power of zero is equal to 1.
+      - Since the base is $(3x)$ and we assume $3x \neq 0$, we have $(3x)^0 = 1$.
+      id: q4-1
+      questionGroup: q4
+    - problemText: 'Evaluate: $4^{-2}$'
+      mathTool: null
+      finalAnswer: $\frac{1}{16}$
+      stepByStepGuideline:
+      - 'Apply the negative exponent rule: $a^{-n} = \frac{1}{a^n}$.'
+      - Therefore, $4^{-2} = \frac{1}{4^2}$.
+      - 'Calculate the denominator: $4^2 = 16$.'
+      - The evaluated expression is $\frac{1}{16}$.
+      id: q4-2
+      questionGroup: q4
+    - problemText: Write $m^{-4}$ without using a negative exponent.
+      mathTool: null
+      finalAnswer: $\frac{1}{m^4}$
+      stepByStepGuideline:
+      - Use the negative exponent rule $a^{-n} = \frac{1}{a^n}$.
+      - The base is $m$ and the exponent is $-4$.
+      - Writing the expression without a negative exponent gives $m^{-4} = \frac{1}{m^4}$.
+      id: q4-3
+      questionGroup: q4
+    - problemText: Simplify the expression $7t^{-4}$, writing your answer without negative exponents.
+      mathTool: null
+      finalAnswer: $\frac{7}{t^4}$
+      stepByStepGuideline:
+      - Identify that the negative exponent $(-4)$ applies only to the base $t$, not the coefficient 7.
+      - 'Apply the negative exponent rule to the variable term: $t^{-4} = \frac{1}{t^4}$.'
+      - 'Rewrite the expression: $7t^{-4} = 7 \times \frac{1}{t^4}$.'
+      - 'Combine the terms to get the simplified fraction: $\frac{7}{t^4}$.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: Write the expression $\frac{5}{y^3}$ using a negative exponent.
+      mathTool: null
+      finalAnswer: $5y^{-3}$
+      stepByStepGuideline:
+      - 'Recall the rule for converting a fraction to a negative exponent: $\frac{1}{a^n} = a^{-n}$.'
+      - Apply this rule to the variable part $\frac{1}{y^3}$, which becomes $y^{-3}$.
+      - The coefficient 5 remains in the numerator.
+      - The resulting expression is $5y^{-3}$.
+      id: q4-5
+      questionGroup: q4
+- id: exponents-laws-node-5
+  nodeNumber: 5
+  title: Writing Powers with Prime Bases
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Write $16 \times 2^{x-1}$ as a single power with base 2.'
+      avatarIntro: Remember that simplifying expressions often requires converting all composite numbers to the same prime
+        base first. You can do this!
+      mathTool: null
+      finalAnswer: $2^{x+3}$
+      stepByStepGuideline:
+      - 'Recognize that $16$ can be written as a power of $2$: $16 = 2^4$.'
+      - "Substitute this back into the expression: $2^4 \times 2^{x-1}$."
+      - "Apply the multiplication law of exponents ($a^m \times a^n = a^{m+n}$): $2^{4 + (x-1)}$."
+      - 'Simplify the exponent: $4 + x - 1 = x + 3$.'
+      - The simplified expression is $2^{x+3}$.
+      id: q5-1
+      questionGroup: q5
+    - problemText: Simplify $\frac{81}{9}$ and express the answer as a single power of 3.
+      mathTool: null
+      finalAnswer: $3^2$ or 9
+      stepByStepGuideline:
+      - 'Convert both the numerator and denominator to base 3: $81 = 3^4$ and $9 = 3^2$.'
+      - 'Rewrite the expression: $\frac{3^4}{3^2}$.'
+      - 'Apply the division law of exponents ($a^m / a^n = a^{m-n}$): $3^{4-2}$.'
+      - 'Simplify the exponent: $3^2$.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: Write $125^{m+1}$ as a single power with base 5.
+      mathTool: null
+      finalAnswer: $5^{3(m+1)}$ or $5^{3m+3}$
+      stepByStepGuideline:
+      - 'Recognize that $125$ can be written as a power of $5$: $125 = 5^3$.'
+      - 'Substitute this back into the expression: $(5^3)^{m+1}$.'
+      - 'Apply the power-to-power law of exponents ($(a^m)^n = a^{mn}$): $5^{3(m+1)}$.'
+      - The exponent can be distributed to yield $5^{3m+3}$.
+      id: q5-3
+      questionGroup: q5
+    - problemText: Simplify $\frac{64}{2^{3n-2}}$ and write the expression as a single power of 2.
+      mathTool: null
+      finalAnswer: $2^{8-3n}$
+      stepByStepGuideline:
+      - 'Convert the composite number to base 2: $64 = 2^6$.'
+      - 'Rewrite the expression: $\frac{2^6}{2^{3n-2}}$.'
+      - 'Apply the division law of exponents ($a^m / a^n = a^{m-n}$): $2^{6 - (3n-2)}$.'
+      - 'Distribute the negative sign in the exponent carefully: $2^{6 - 3n + 2}$.'
+      - 'Combine the constant terms: $2^{8 - 3n}$.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: Simplify $\frac{27^a}{3^{2a-1}}$ and express the result as a single power of 3.
+      mathTool: null
+      finalAnswer: $3^{a+1}$
+      stepByStepGuideline:
+      - 'Convert the composite base 27 to base 3: $27 = 3^3$.'
+      - 'Rewrite the numerator using the power law: $27^a = (3^3)^a = 3^{3a}$.'
+      - 'The full expression becomes: $\frac{3^{3a}}{3^{2a-1}}$.'
+      - 'Apply the division law of exponents: $3^{3a - (2a-1)}$.'
+      - 'Distribute the negative sign in the exponent: $3^{3a - 2a + 1}$.'
+      - 'Simplify the exponent by combining like terms: $3^{a+1}$.'
+      id: q5-5
+      questionGroup: q5
+- id: exponents-rational-node-1
+  nodeNumber: 6
+  title: Rational Exponents of Form 1/n (nth Roots)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Evaluate $121^{\frac{1}{2}}$.
+      avatarIntro: This lesson focuses on understanding rational exponents as nth roots. Remember that raising a number to
+        the power of 1/2 is the same as taking the square root.
+      mathTool: null
+      finalAnswer: '11'
+      stepByStepGuideline:
+      - Recall that $a^{\frac{1}{2}}$ is equivalent to the square root of $a$, or $\sqrt{a}$.
+      - Therefore, $121^{\frac{1}{2}} = \sqrt{121}$.
+      - Since $11 \times 11 = 121$, the square root of 121 is 11.
+      id: q6-1
+      questionGroup: q6
+    - problemText: Evaluate $216^{\frac{1}{3}}$.
+      mathTool: null
+      finalAnswer: '6'
+      stepByStepGuideline:
+      - Recall that $a^{\frac{1}{3}}$ is equivalent to the cube root of $a$, or $\sqrt[3]{a}$.
+      - Therefore, $216^{\frac{1}{3}} = \sqrt[3]{216}$.
+      - Find the number that, when multiplied by itself three times, equals 216.
+      - Since $6 \times 6 \times 6 = 216$, the cube root of 216 is 6.
+      id: q6-2
+      questionGroup: q6
+    - problemText: Write the expression $\sqrt[5]{x}$ in exponential form.
+      mathTool: null
+      finalAnswer: $x^{\frac{1}{5}}$
+      stepByStepGuideline:
+      - The general rule for converting a radical to an exponential form is $\sqrt[n]{a} = a^{\frac{1}{n}}$.
+      - In the expression $\sqrt[5]{x}$, the base is $x$ and the root index $n$ is 5.
+      - 'Substitute these values into the exponential form: $x^{\frac{1}{5}}$.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Evaluate $300^{\frac{1}{2}}$. Use your calculator and round your answer to 2 decimal places.
+      mathTool: null
+      finalAnswer: '17.32'
+      stepByStepGuideline:
+      - The expression $300^{\frac{1}{2}}$ is the square root of 300, $\sqrt{300}$.
+      - 'Use a calculator to find the value: $\sqrt{300} \approx 17.320508...$'
+      - Round the result to 2 decimal places. The third decimal digit is 0, so we keep the second decimal digit as 2.
+      - The final answer is 17.32.
+      id: q6-4
+      questionGroup: q6
+    - problemText: Evaluate $625^{\frac{1}{4}}$.
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - Recall that $a^{\frac{1}{4}}$ is equivalent to the fourth root of $a$, or $\sqrt[4]{a}$.
+      - Therefore, $625^{\frac{1}{4}} = \sqrt[4]{625}$.
+      - Find the number that, when multiplied by itself four times, equals 625.
+      - Since $5 \times 5 \times 5 \times 5 = 625$, the fourth root of 625 is 5.
+      id: q6-5
+      questionGroup: q6
+- id: exponents-rational-node-2
+  nodeNumber: 7
+  title: Rational Exponents of Form m/n
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Evaluate the expression $16^{\frac{3}{4}}$.
+      avatarIntro: When evaluating rational exponents, remember that the denominator represents the root and the numerator
+        represents the power. Choosing to take the root first often makes the calculation much easier!
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - Recognize that $16^{\frac{3}{4}}$ can be calculated using the form $(\sqrt[n]{a})^m$. Here, $n=4$ and $m=3$.
+      - 'Calculate the 4th root of the base: $\sqrt[4]{16} = 2$.'
+      - 'Raise the result to the power of 3: $2^3 = 8$.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Evaluate $9^{\frac{3}{2}}$.
+      mathTool: null
+      finalAnswer: '27'
+      stepByStepGuideline:
+      - Recognize that $9^{\frac{3}{2}}$ involves taking the square root (since the denominator is 2) and then cubing the
+        result (since the numerator is 3).
+      - 'Calculate the square root of 9: $\sqrt{9} = 3$.'
+      - 'Raise the result to the power of 3: $3^3 = 27$.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: Simplify the expression $8^{\frac{1}{3}} \times 8^{\frac{2}{3}}$.
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - Apply the product rule for exponents, $a^m \times a^n = a^{m+n}$, since the bases are the same.
+      - 'Add the fractional exponents: $\frac{1}{3} + \frac{2}{3} = \frac{3}{3} = 1$.'
+      - The expression simplifies to $8^1$, which is 8.
+      id: q7-3
+      questionGroup: q7
+    - problemText: 'Simplify and evaluate the expression: $\frac{32^{\frac{3}{5}}}{32^{\frac{1}{5}}}$.'
+      mathTool: null
+      finalAnswer: '4'
+      stepByStepGuideline:
+      - Apply the quotient rule for exponents, $\frac{a^m}{a^n} = a^{m-n}$, since the bases are the same.
+      - 'Subtract the fractional exponents: $\frac{3}{5} - \frac{1}{5} = \frac{2}{5}$.'
+      - The expression simplifies to $32^{\frac{2}{5}}$.
+      - 'Evaluate $32^{\frac{2}{5}}$ by taking the 5th root first: $(\sqrt[5]{32})^2$. Since $\sqrt[5]{32}=2$, the result
+        is $2^2 = 4$.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: Evaluate $16^{\frac{3}{2}}$.
+      mathTool: null
+      finalAnswer: '64'
+      stepByStepGuideline:
+      - Recognize that $16^{\frac{3}{2}}$ involves taking the square root of 16 and then raising the result to the power of
+        3.
+      - 'Calculate the square root of 16: $\sqrt{16} = 4$.'
+      - 'Raise the result to the power of 3: $4^3 = 64$.'
+      id: q7-5
+      questionGroup: q7
+- id: exponents-rational-node-3
+  nodeNumber: 8
+  title: Converting Between Exponential and Radical Forms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Write $\sqrt{P}$ in exponential form.
+      avatarIntro: Converting between radical and exponential forms is a fundamental skill in algebra. Let's start with a
+        simple square root conversion.
+      mathTool: null
+      finalAnswer: P^{\frac{1}{2}}
+      stepByStepGuideline:
+      - 'Recall the conversion rule for radicals to exponential form: $\sqrt[n]{a} = a^{\frac{1}{n}}$.'
+      - A square root ($\sqrt{P}$) has an implied root index of 2.
+      - Therefore, $\sqrt{P}$ written in exponential form is $P^{\frac{1}{2}}$.
+      id: q8-1
+      questionGroup: q8
+    - problemText: Write the expression $k^{\frac{4}{5}}$ in radical form.
+      mathTool: null
+      finalAnswer: $\sqrt[5]{k^4} \text{ or } (\sqrt[5]{k})^4$
+      stepByStepGuideline:
+      - Identify the components of the fractional exponent $k^{\frac{4}{5}}$. The denominator (5) is the root index, and the
+        numerator (4) is the power.
+      - Apply the rule $a^{\frac{m}{n}} = \sqrt[n]{a^m}$.
+      - The radical form is $\sqrt[5]{k^4}$. (Alternatively, $(\sqrt[5]{k})^4$ is also correct.)
+      id: q8-2
+      questionGroup: q8
+    - problemText: Convert the radical expression $\sqrt[7]{y^3}$ into exponential form.
+      mathTool: null
+      finalAnswer: y^{\frac{3}{7}}
+      stepByStepGuideline:
+      - Identify the root index (7) and the power (3).
+      - 'Recall that the root index becomes the denominator and the power becomes the numerator of the fractional exponent:
+        $\sqrt[n]{a^m} = a^{\frac{m}{n}}$.'
+      - The exponential form is $y^{\frac{3}{7}}$.
+      id: q8-3
+      questionGroup: q8
+    - problemText: Convert the expression $z^{\frac{5}{3}}$ into radical form.
+      mathTool: null
+      finalAnswer: $\sqrt[3]{z^5} \text{ or } (\sqrt[3]{z})^5$
+      stepByStepGuideline:
+      - Identify the denominator (3) as the root index and the numerator (5) as the power.
+      - Apply the conversion rule $a^{\frac{m}{n}} = \sqrt[n]{a^m}$.
+      - The radical form is $\sqrt[3]{z^5}$. (Alternatively, $(\sqrt[3]{z})^5$ is also correct.)
+      id: q8-4
+      questionGroup: q8
+    - problemText: Write the expression $\sqrt[3]{27a^9}$ in exponential form and simplify the result fully.
+      mathTool: null
+      finalAnswer: $(27a^9)^{\frac{1}{3}} \text{ or } 3a^3$
+      stepByStepGuideline:
+      - 'Convert the radical expression into exponential form using the rule $\sqrt[n]{A} = A^{\frac{1}{n}}$:'
+      - $$\sqrt[3]{27a^9} = (27a^9)^{\frac{1}{3}}$$
+      - 'To simplify, apply the exponent to all factors inside the parenthesis:'
+      - $$27^{\frac{1}{3}} \cdot (a^9)^{\frac{1}{3}}$$
+      - Calculate $27^{\frac{1}{3}} = 3$ and $(a^9)^{\frac{1}{3}} = a^{9 \cdot \frac{1}{3}} = a^3$.
+      - The simplified result is $3a^3$.
+      id: q8-5
+      questionGroup: q8
+- id: exponents-standard-form-node-1
+  nodeNumber: 9
+  title: Understanding and Writing Standard Form
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: The world population is estimated to be approximately 8,000,000,000 people. Write this number in standard
+        form (scientific notation).
+      avatarIntro: Standard form is essential for handling extremely large or extremely small numbers! Remember the coefficient
+        must be between 1 and 10.
+      mathTool: null
+      finalAnswer: $8 \times 10^9$
+      stepByStepGuideline:
+      - 'Identify the coefficient ''a'': Move the decimal point until it is after the first significant digit (8). This gives
+        $a = 8$.'
+      - 'Determine the exponent ''k'': Count the number of places the decimal point moved. Since 8,000,000,000 is a large
+        number, the exponent is positive.'
+      - The decimal moved 9 places to the left (from the end of the number to after the 8).
+      - 'Write the number in standard form: $8 \times 10^9$.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: Write the number 0.0000089 in standard form.
+      mathTool: null
+      finalAnswer: $8.9 \times 10^{-6}$
+      stepByStepGuideline:
+      - 'Identify the coefficient ''a'': Move the decimal point until it is after the first significant digit (8). This gives
+        $a = 8.9$.'
+      - 'Determine the exponent ''k'': Count the number of places the decimal point moved. Since the original number is less
+        than 1, the exponent must be negative.'
+      - The decimal moved 6 places to the right.
+      - 'Write the number in standard form: $8.9 \times 10^{-6}$.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: Write 680,000 in standard form.
+      mathTool: null
+      finalAnswer: $6.8 \times 10^5$
+      stepByStepGuideline:
+      - 'Identify the coefficient ''a'': Place the decimal point after the first significant digit (6). This gives $a = 6.8$.'
+      - 'Determine the exponent ''k'': Count how many places the decimal moved from its original position (at the end of 680,000)
+        to its new position.'
+      - The decimal moved 5 places to the left.
+      - Since the original number is large (greater than 10), the exponent is positive 5. The standard form is $6.8 \times
+        10^5$.
+      id: q9-3
+      questionGroup: q9
+    - problemText: The approximate thickness of a human hair is 0.000075 meters. Express this measurement in standard form.
+      mathTool: null
+      finalAnswer: $7.5 \times 10^{-5}$
+      stepByStepGuideline:
+      - 'Identify the coefficient ''a'': Move the decimal point to the right until it is positioned after the first non-zero
+        digit (7). This gives $a = 7.5$.'
+      - 'Determine the exponent ''k'': Count the number of places the decimal point moved. Since the original number is small
+        (less than 1), the exponent is negative.'
+      - The decimal moved 5 places to the right.
+      - 'Write the number in standard form: $7.5 \times 10^{-5}$.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: Write 2.7 in standard form.
+      mathTool: null
+      finalAnswer: $2.7 \times 10^0$
+      stepByStepGuideline:
+      - Check the range of the number. Since 2.7 is already between 1 and 10, the coefficient 'a' is 2.7.
+      - The exponent 'k' represents how many times 10 is multiplied or divided. Since the coefficient is already in the correct
+        range, the exponent is 0.
+      - 'Write the number in standard form: $2.7 \times 10^0$.'
+      id: q9-5
+      questionGroup: q9
+- id: exponents-standard-form-node-2
+  nodeNumber: 10
+  title: Converting Between Standard and Ordinary Form
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Write $3.6 \times 10^5$ as an ordinary number.
+      avatarIntro: Standard form is super useful for handling really big or really small numbers. Let's start by converting
+        this large number back to its ordinary form!
+      mathTool: null
+      finalAnswer: 360,000 or 360000
+      stepByStepGuideline:
+      - Identify the exponent $k$. Here, $k=5$.
+      - Since the exponent is positive, the ordinary number must be larger than 3.6. Move the decimal point 5 places to the
+        right.
+      - 'Fill the resulting gaps with zeros: $3.60000$.'
+      - The ordinary number is 360,000.
+      id: q10-1
+      questionGroup: q10
+    - problemText: Write 0.000000782 in standard form ($a \times 10^k$).
+      mathTool: null
+      finalAnswer: $7.82 \times 10^{-7}$
+      stepByStepGuideline:
+      - 'Identify the first significant figure (7) and place the decimal point after it: 7.82.'
+      - Count the number of places the original decimal point moved to reach the new position.
+      - The decimal moved 7 places to the right.
+      - Since the original number (0.000000782) is less than 1, the exponent must be negative. $k = -7$.
+      - The standard form is $7.82 \times 10^{-7}$.
+      id: q10-2
+      questionGroup: q10
+    - problemText: Write $2.36 \times 10^{-5}$ as an ordinary number.
+      mathTool: null
+      finalAnswer: '0.0000236'
+      stepByStepGuideline:
+      - Identify the exponent $k$. Here, $k=-5$.
+      - Since the exponent is negative, the ordinary number must be smaller than 2.36. Move the decimal point 5 places to
+        the left.
+      - The movement creates 4 leading zeros before the 2.
+      - The ordinary number is 0.0000236.
+      id: q10-3
+      questionGroup: q10
+    - problemText: Write 890,000,000 in standard form ($a \times 10^k$).
+      mathTool: null
+      finalAnswer: $8.9 \times 10^8$
+      stepByStepGuideline:
+      - 'Identify the first significant figure (8) and place the decimal point after it: 8.9.'
+      - Count the number of places the implied decimal point (at the end of 890,000,000) moved to reach the new position (8.9).
+      - The decimal moved 8 places to the left.
+      - Since the original number is large (greater than 1), the exponent must be positive. $k = 8$.
+      - The standard form is $8.9 \times 10^8$.
+      id: q10-4
+      questionGroup: q10
+    - problemText: The speed of light in a vacuum is approximately $3 \times 10^8$ meters per second. Write this speed as
+        an ordinary number.
+      mathTool: null
+      finalAnswer: 300,000,000 m/s
+      stepByStepGuideline:
+      - 'The speed is given in standard form: $3 \times 10^8$.'
+      - The exponent $k=8$ is positive, so move the decimal point 8 places to the right to obtain the ordinary number.
+      - Starting with 3.0, moving 8 places right gives 300,000,000.
+      - The ordinary number is 300,000,000 m/s.
+      id: q10-5
+      questionGroup: q10
+- id: exponents-standard-form-node-3
+  nodeNumber: 11
+  title: Understanding Place Value and k
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: In the number 0.00000782, what is the place value position of the first significant digit, 7? State your
+        answer using both the place name and the corresponding power of 10.
+      avatarIntro: Understanding the connection between exponents and place value is crucial for mastering standard form.
+        Let's start with a small number.
+      mathTool: null
+      finalAnswer: Millionths place or $10^{-6}$
+      stepByStepGuideline:
+      - Identify the first significant digit, which is 7.
+      - Determine how many places the digit 7 is to the right of the decimal point. The 7 is in the sixth decimal place.
+      - The sixth decimal place is called the millionths place.
+      - The millionths place is represented by $10^{-6}$.
+      id: q11-1
+      questionGroup: q11
+    - problemText: "When a very large number, like the estimated age of the Earth, is written in standard form as $6.8 \t\
+        imes 10^9$ years, what essential information does the $10^9$ component convey about the original number?"
+      mathTool: null
+      finalAnswer: It represents the place value of the first significant digit (the 6), which is the billions place.
+      stepByStepGuideline:
+      - Recall that standard form is written as $a \times 10^k$, where $a$ is the first significant figure followed by a decimal.
+      - The exponent $k$ determines the magnitude of the number.
+      - Specifically, $10^k$ represents the place value of the first significant digit.
+      - Since $k=9$, $10^9$ corresponds to the billions place.
+      id: q11-2
+      questionGroup: q11
+    - problemText: 'A company''s inventory count is 45,000 items. When this value is expressed in standard form as $4.5 \times
+        10^k$, determine the value of the exponent $k$.'
+      mathTool: null
+      finalAnswer: '4'
+      stepByStepGuideline:
+      - Identify the starting position of the decimal point (at the end of 45,000).
+      - Identify the required position of the decimal point for standard form (after the first significant digit, 4).
+      - 'Count the number of places the decimal must move: 45,000 $\to$ 4.5000. This is 4 places to the left.'
+      - Since the original number is greater than 10, the exponent $k$ is positive, so $k=4$.
+      id: q11-3
+      questionGroup: q11
+    - problemText: A measurement is recorded in standard form $a \times 10^k$. If the exponent $k$ is equal to $-3$, what
+        does this immediately tell you about the magnitude of the original measurement compared to 1?
+      mathTool: null
+      finalAnswer: The original number is less than 1.
+      stepByStepGuideline:
+      - Analyze the sign of the exponent $k$. Here, $k = -3$, which is negative.
+      - A negative exponent indicates that the decimal point must be moved to the left to obtain the standard form, meaning
+        the original number was a small fraction.
+      - Therefore, if $k < 0$, the original number must be less than 1.
+      id: q11-4
+      questionGroup: q11
+    - problemText: Consider the number 450,000. State the place value of the first significant digit (4), and explain why
+        this confirms that the standard form conversion must use $10^5$.
+      mathTool: null
+      finalAnswer: The digit 4 is in the hundred thousands place, which is equivalent to $10^5$.
+      stepByStepGuideline:
+      - Locate the first significant digit, 4.
+      - Determine the place value of the digit 4 in 450,000; it is 400,000.
+      - 'Write 400,000 as a power of 10: $400,000 = 4 \times 100,000 = 4 \times 10^5$.'
+      - Since the place value of the first digit is $10^5$, the exponent $k$ in standard form ($4.5 \times 10^k$) must be
+        5.
+      id: q11-5
+      questionGroup: q11

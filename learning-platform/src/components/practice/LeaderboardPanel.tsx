@@ -16,6 +16,14 @@ interface LeaderboardPanelProps {
 export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({ progress, allNodes }) => {
   const { theme } = useTheme();
 
+  // Layer color scheme (matching CircularPathNode)
+  const layerColors = {
+    foundation: '#FFA500',
+    integration: '#5865F2',
+    application: '#10B981',
+    examPractice: '#EB459E',
+  };
+
   // Daily goal (5 problems) - safely handle undefined sessionHistory
   const dailyGoalTarget = 5;
   const todayProblems = progress.sessionHistory && progress.sessionHistory.length > 0
@@ -113,7 +121,7 @@ export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({ progress, al
                         className="h-full transition-all"
                         style={{
                           width: `${progressPercent}%`,
-                          backgroundColor: node.layer === 'foundation' ? '#FFA500' : node.layer === 'integration' ? '#5865F2' : '#EB459E',
+                          backgroundColor: layerColors[node.layer] || layerColors.foundation,
                         }}
                       />
                     </div>

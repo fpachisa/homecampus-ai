@@ -274,27 +274,26 @@ const LogarithmGraphVisualizer: React.FC<LogarithmGraphVisualizerProps> = ({
           </>
         )}
 
-        {/* Y-axis */}
-        {xRange[0] <= 0 && xRange[1] >= 0 && (
-          <>
-            <line
-              x1={mathToSVG(0, 0)[0]}
-              y1={padding}
-              x2={mathToSVG(0, 0)[0]}
-              y2={height - padding}
-              stroke={axisColor}
-              strokeWidth={2}
-            />
-            <text
-              x={mathToSVG(0, 0)[0] + 5}
-              y={padding - 5}
-              className="text-sm font-semibold"
-              fill={axisColor}
-            >
-              y
-            </text>
-          </>
-        )}
+        {/* Y-axis - Always show for logarithm graphs */}
+        {/* For log graphs, show Y-axis on left edge since domain starts > 0 */}
+        <>
+          <line
+            x1={padding}
+            y1={padding}
+            x2={padding}
+            y2={height - padding}
+            stroke={axisColor}
+            strokeWidth={2}
+          />
+          <text
+            x={padding + 5}
+            y={padding - 5}
+            className="text-sm font-semibold"
+            fill={axisColor}
+          >
+            y
+          </text>
+        </>
 
         {/* Logarithm curve */}
         <path
@@ -318,10 +317,11 @@ const LogarithmGraphVisualizer: React.FC<LogarithmGraphVisualizerProps> = ({
                   fill={keyPointColor}
                 />
                 <text
-                  x={mathToSVG(keyPoint1X, keyPoint1Y)[0] + 12}
-                  y={mathToSVG(keyPoint1X, keyPoint1Y)[1] + 5}
+                  x={mathToSVG(keyPoint1X, keyPoint1Y)[0] - 15}
+                  y={mathToSVG(keyPoint1X, keyPoint1Y)[1] + 20}
                   className="text-sm font-semibold"
                   fill={keyPointColor}
+                  textAnchor="start"
                 >
                   ({keyPoint1X}, {keyPoint1Y.toFixed(1)})
                 </text>
@@ -339,10 +339,11 @@ const LogarithmGraphVisualizer: React.FC<LogarithmGraphVisualizerProps> = ({
                   fill={keyPointColor}
                 />
                 <text
-                  x={mathToSVG(keyPoint2X, keyPoint2Y)[0] + 12}
-                  y={mathToSVG(keyPoint2X, keyPoint2Y)[1] + 5}
+                  x={mathToSVG(keyPoint2X, keyPoint2Y)[0]}
+                  y={mathToSVG(keyPoint2X, keyPoint2Y)[1] - 15}
                   className="text-sm font-semibold"
                   fill={keyPointColor}
+                  textAnchor="middle"
                 >
                   ({keyPoint2X}, {keyPoint2Y.toFixed(1)})
                 </text>

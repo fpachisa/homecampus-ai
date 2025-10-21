@@ -32,8 +32,8 @@ interface BearingsVisualizerProps {
 }
 
 const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
-  points,
-  legs,
+  points = [],
+  legs = [],
   showInteriorAngles = false,
   interiorAngleLabel = 'θ',
   showCompassRose = true,
@@ -42,6 +42,15 @@ const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
   caption
 }) => {
   const { theme } = useTheme();
+
+  // Validate required props
+  if (!points || points.length === 0) {
+    return (
+      <div style={{ padding: '20px', color: theme.colors.error || 'red' }}>
+        Error: BearingsVisualizer requires at least one point.
+      </div>
+    );
+  }
 
   // SVG display dimensions - Fixed for consistent display size
   const displayHeight = 400;

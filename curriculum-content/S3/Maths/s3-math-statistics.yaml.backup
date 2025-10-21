@@ -1,0 +1,1919 @@
+# Statistics - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: stats-node-1
+  nodeNumber: 1
+  title: Population, Sample, Census, and Survey
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A researcher at Riverview High School surveys 200 students out of the total student population of 1500
+        regarding their interest in joining a new robotics club. Is this data collection effort a census or a survey?
+      avatarIntro: Welcome! Let's start by defining the difference between gathering information from everyone (a census)
+        versus just a select group (a survey).
+      mathTool: null
+      finalAnswer: Survey
+      stepByStepGuideline:
+      - 'Step 1: Define a census as collecting data from every member of the population.'
+      - 'Step 2: Define a survey as collecting data from only a subset (sample) of the population.'
+      - 'Step 3: Since the researcher only collected data from 200 students out of the 1500 total students, they used a sample.
+        Therefore, this is a survey.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: A hospital analyzed the medical records of all 800 patients who underwent surgery last year to calculate
+        the average length of their stay. What is the population in this scenario?
+      mathTool: null
+      finalAnswer: All 800 patients who underwent surgery last year
+      stepByStepGuideline:
+      - 'Step 1: Recall that the population is the entire group being studied.'
+      - 'Step 2: In this scenario, the analysis covered every single patient (all 800) who had surgery last year.'
+      - 'Step 3: Therefore, the population is the entire group of patients who underwent surgery last year.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: A factory produces a batch of 5000 smartphone screens. Quality control randomly selects 50 screens from
+        the batch and tests them for scratch resistance. Identify the sample in this data collection process.
+      mathTool: null
+      finalAnswer: The 50 smartphone screens randomly selected and tested
+      stepByStepGuideline:
+      - 'Step 1: Identify the total group (population), which is the 5000 smartphone screens.'
+      - 'Step 2: Identify the subset from which data was actually collected (the sample).'
+      - 'Step 3: The factory only tested 50 screens. Thus, the sample is the 50 screens tested.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: A city planning office wants feedback on a new transport route. The city has 5000 households and distributes
+        a questionnaire to 300 randomly selected households. Explain the primary reason why the city chose to use a survey
+        instead of a census.
+      mathTool: null
+      finalAnswer: A survey is faster, less costly, and requires fewer personnel than attempting to collect feedback from
+        all 5000 households (a census).
+      stepByStepGuideline:
+      - 'Step 1: Understand the difference in scope: A census requires contacting every member of the population (5000 households),
+        while a survey uses a smaller sample (300 households).'
+      - 'Step 2: Consider the practical limitations of contacting a large population.'
+      - 'Step 3: The primary advantages of using a sample (survey) are reduced time, cost, and resource expenditure compared
+        to a full census.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: A government agency conducts a census of all 1000 registered businesses in a small industrial zone to collect
+        information about the number of full-time employees each business employs. What is the variable being measured in
+        this data collection effort?
+      mathTool: null
+      finalAnswer: The number of full-time employees (per business)
+      stepByStepGuideline:
+      - 'Step 1: Define a variable as the specific characteristic that is being measured or recorded.'
+      - 'Step 2: Read the scenario to determine what piece of information the agency is collecting from each business.'
+      - 'Step 3: The agency is gathering data on ''the number of full-time employees''. This is the variable.'
+      id: q1-5
+      questionGroup: q1
+- id: stats-node-2
+  nodeNumber: 2
+  title: Classifying Discrete and Continuous Data
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Classify the following variable as discrete or continuous: The weight, measured in kilograms, of a package
+        ready for shipping.'
+      avatarIntro: Understanding the difference between data you count and data you measure is key to statistical analysis.
+        Let's practice classifying data types!
+      mathTool: null
+      finalAnswer: Continuous
+      stepByStepGuideline:
+      - Determine if the variable is found by counting or by measuring.
+      - Weight is a physical attribute that must be measured, often limited only by the precision of the scale used.
+      - Since weight can take on any value within a given range (e.g., 1.5 kg, 1.53 kg, 1.534 kg), it is a continuous variable.
+      id: q2-1
+      questionGroup: q2
+    - problemText: Is the number of goals scored in a field hockey game discrete or continuous? Explain your reasoning.
+      mathTool: null
+      finalAnswer: Discrete
+      stepByStepGuideline:
+      - Consider how the variable is recorded.
+      - Goals are counted in whole, exact units (0, 1, 2, 3...). It is impossible to score a fractional goal (e.g., 2.5 goals).
+      - Because the variable takes on only distinct, countable values, it is discrete.
+      id: q2-2
+      questionGroup: q2
+    - problemText: Explain why the time taken for a runner to complete a 100-meter sprint is classified as a continuous variable.
+      mathTool: null
+      finalAnswer: Continuous
+      stepByStepGuideline:
+      - Continuous variables arise from measurement.
+      - Time is measured and can be refined to include increasingly precise fractional units (e.g., 9.86 seconds, 9.864 seconds,
+        9.8642 seconds).
+      - Since the time can theoretically take any value within a range, it is continuous.
+      id: q2-3
+      questionGroup: q2
+    - problemText: 'Identify the discrete variable from the following list:
+
+        (A) The area of a garden plot
+
+        (B) The volume of water in a tank
+
+        (C) The number of books on a library shelf'
+      mathTool: null
+      finalAnswer: (C) The number of books on a library shelf
+      stepByStepGuideline:
+      - 'Review the definition: Discrete data is counted, Continuous data is measured.'
+      - (A) Area is measured, making it continuous.
+      - (B) Volume is measured, making it continuous.
+      - (C) The number of books must be counted using exact whole numbers (1, 2, 3...). This is the discrete variable.
+      id: q2-4
+      questionGroup: q2
+    - problemText: 'Which of these variables is continuous?
+
+        (A) The number of students absent from school today
+
+        (B) The temperature inside a refrigerator
+
+        (C) The number of cookies sold at a bakery'
+      mathTool: null
+      finalAnswer: (B) The temperature inside a refrigerator
+      stepByStepGuideline:
+      - Analyze each option based on whether it is counted or measured.
+      - (A) The number of students is counted (discrete).
+      - (B) Temperature is measured and can take any value within a range (e.g., 4.5°C or 4.53°C). This is continuous.
+      - (C) The number of cookies is counted (discrete).
+      id: q2-5
+      questionGroup: q2
+- id: stats-node-3
+  nodeNumber: 3
+  title: Frequency Tables and Mode for Discrete Data
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A teacher recorded the scores (out of 5) obtained by 10 students on a short math quiz: 3, 4, 2, 3, 5,
+        3, 1, 4, 3, 2. Create a frequency table using tally marks and numerical frequency, then identify the mode of the scores.'
+      avatarIntro: Understanding how often specific data values occur is fundamental. Let's start by organizing this raw data
+        into a frequency table!
+      mathTool: {}
+      finalAnswer: Mode = 3
+      stepByStepGuideline:
+      - 'Step 1: Identify the range of scores (1 to 5).'
+      - 'Step 2: Tally the occurrences of each score:
+
+        Score 1: I (F=1)
+
+        Score 2: II (F=2)
+
+        Score 3: IIII (F=4)
+
+        Score 4: II (F=2)
+
+        Score 5: I (F=1)'
+      - 'Step 3: The mode is the value with the highest frequency.'
+      - 'Step 4: Score 3 has the highest frequency (4).'
+      - 'Step 5: The mode is 3.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: 'A survey of 16 high school students recorded the number of hours they spent studying last week: 5, 8,
+        7, 5, 6, 9, 8, 5, 10, 7, 5, 6, 8, 9, 5, 7. What is the mode of the number of hours studied?'
+      mathTool: {}
+      finalAnswer: 5 hours
+      stepByStepGuideline:
+      - 'Step 1: List all unique data values: 5, 6, 7, 8, 9, 10.'
+      - 'Step 2: Count the frequency of each value: 5 appears 5 times, 6 appears 2 times, 7 appears 3 times, 8 appears 3 times,
+        9 appears 2 times, 10 appears 1 time.'
+      - 'Step 3: The mode is the value that occurs most frequently.'
+      - 'Step 4: Since 5 has the highest frequency (5), the mode is 5 hours.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'The ages of members attending a community club meeting were grouped into classes as shown below:
+
+
+        Age Group (years) | Frequency
+
+        ------------------|----------
+
+        20 – 29 | 12
+
+        30 – 39 | 25
+
+        40 – 49 | 18
+
+
+        Identify the modal class for this distribution.'
+      mathTool: {}
+      finalAnswer: 30 – 39 years
+      stepByStepGuideline:
+      - 'Step 1: Understand that the modal class is the class interval with the highest frequency.'
+      - 'Step 2: Compare the frequencies for each class: 12, 25, and 18.'
+      - 'Step 3: The highest frequency is 25.'
+      - 'Step 4: The class corresponding to the highest frequency (25) is 30 – 39.'
+      - 'Step 5: The modal class is 30 – 39 years.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: From the column graph shown, which displays the number of emails received per hour by an employee over
+        34 hours, identify the mode (the most frequently occurring number of emails).
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - '0'
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          values:
+          - 5
+          - 8
+          - 12
+          - 6
+          - 3
+          xLabel: Number of Emails Received
+          yLabel: Frequency
+          showValues: true
+      finalAnswer: 2 emails
+      stepByStepGuideline:
+      - 'Step 1: The mode corresponds to the tallest column in the graph, as this indicates the highest frequency.'
+      - 'Step 2: Locate the highest bar. The highest bar reaches a frequency of 12.'
+      - 'Step 3: Read the category label (the value on the x-axis) corresponding to this tallest bar.'
+      - 'Step 4: The category label is ''2''.'
+      - 'Step 5: The mode is 2 emails.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'A football team''s goals scored per game over 18 matches were recorded as: 1, 3, 2, 0, 1, 4, 1, 2, 1,
+        3, 1, 0, 1, 2, 4, 1, 3, 1. First, determine the mode (the number of goals scored most frequently), and then state
+        how many matches resulted in the modal score.'
+      mathTool: {}
+      finalAnswer: The mode is 1 goal, and it appears 9 times.
+      stepByStepGuideline:
+      - 'Step 1: Count the frequency of each score: 0 (2 times), 1 (9 times), 2 (3 times), 3 (3 times), 4 (2 times).'
+      - 'Step 2: Identify the mode. The score with the highest frequency is 1.'
+      - 'Step 3: Determine the frequency of the mode (1).'
+      - 'Step 4: The score 1 appears 9 times.'
+      - 'Step 5: The mode is 1 goal, and it appears 9 times.'
+      id: q3-5
+      questionGroup: q3
+- id: stats-node-4
+  nodeNumber: 4
+  title: Continuous Data and Histograms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: none
+    preWrittenQuestions:
+    - problemText: A highway safety study records the speed (s, in km/h) of vehicles. Explain precisely what the class interval
+        notation 80 ≤ s < 90 means in terms of the speed measured.
+      avatarIntro: Histograms are essential for visualizing continuous data. Let's make sure we understand the precise meaning
+        of the class intervals used!
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: The speed (s) is greater than or equal to 80 km/h, but strictly less than 90 km/h. This means 80 km/h is
+        included in the class, but 90 km/h is not.
+      stepByStepGuideline:
+      - Analyze the inequality symbols used in the class interval 80 ≤ s < 90.
+      - The symbol ≤ (less than or equal to) indicates that the lower boundary (80) is included in the class.
+      - The symbol < (strictly less than) indicates that the upper boundary (90) is excluded from the class.
+      - 'Combine these interpretations: The class contains all speeds starting exactly at 80 km/h up to (but not including)
+        90 km/h.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: Explain the essential difference between a histogram and a standard column graph (bar chart) and why this
+        difference necessitates that the bars in a histogram must touch.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: A column graph displays discrete data categories where gaps exist between categories. A histogram displays
+        continuous data (like distance or time) grouped into contiguous class intervals. The bars must touch in a histogram
+        to signify that the end of one class interval is the exact start of the next, showing the continuous nature of the
+        data being measured.
+      stepByStepGuideline:
+      - Define the data type represented by a column graph (discrete/categorical data).
+      - Define the data type represented by a histogram (continuous data).
+      - Explain that continuous data means there are no gaps between possible values.
+      - Conclude that in a histogram, the boundaries between bars must touch to represent the continuity of the scale, where
+        the upper limit of one class is the lower limit of the next.
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'A weather station records daily maximum temperatures (T, in °C). For the class interval 20 ≤ T < 25, which
+        of the following temperature readings would be included: 19.9 °C, 20.0 °C, 24.9 °C, 25.0 °C, 25.1 °C?'
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: 20.0 °C and 24.9 °C. (20.0 °C is included because T is greater than or equal to 20, and 25.0 °C is excluded
+        because T must be strictly less than 25.)
+      stepByStepGuideline:
+      - 'Review the class boundaries: The class includes values where T ≥ 20 and T < 25.'
+      - 'Check 19.9 °C: Is 19.9 ≥ 20? No. Excluded.'
+      - 'Check 20.0 °C: Is 20.0 ≥ 20? Yes. Is 20.0 < 25? Yes. Included.'
+      - 'Check 24.9 °C: Is 24.9 ≥ 20? Yes. Is 24.9 < 25? Yes. Included.'
+      - 'Check 25.0 °C: Is 25.0 < 25? No. Excluded.'
+      - 'Check 25.1 °C: Is 25.1 < 25? No. Excluded.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: From the histogram shown, which displays the heights (H, in cm) of plants in a greenhouse, identify the
+        upper boundary of the modal class (the class with the highest frequency).
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals:
+          - 100
+          - 120
+          - 140
+          - 160
+          - 180
+          frequencies:
+          - 5
+          - 12
+          - 18
+          - 7
+          xLabel: Height (cm)
+          yLabel: Frequency
+          showFrequencies: true
+      finalAnswer: 160 cm
+      stepByStepGuideline:
+      - Identify the modal class by finding the bar with the greatest height (highest frequency). The highest frequency is
+        18.
+      - Determine the class interval corresponding to this frequency (18). This class spans from 140 cm to 160 cm, represented
+        by the notation 140 ≤ H < 160.
+      - Identify the upper boundary of this class. The upper boundary is the maximum value the class approaches, which is
+        160 cm.
+      id: q4-4
+      questionGroup: q4
+    - problemText: A nutritionist groups the weights (w, in kg) of teenagers using the class interval 65 ≤ w < 75. Calculate
+        the width of this class interval.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: 10 kg
+      stepByStepGuideline:
+      - Identify the lower boundary (L) and the upper boundary (U) of the class interval. L = 65 kg and U = 75 kg.
+      - The width of a class interval is calculated by subtracting the lower boundary from the upper boundary (Width = U -
+        L).
+      - 'Calculate: Width = 75 kg - 65 kg.'
+      - The width of the class interval is 10 kg.
+      id: q4-5
+      questionGroup: q4
+- id: stats-node-5
+  nodeNumber: 5
+  title: Describing Distribution Shapes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: histogram
+    preWrittenQuestions:
+    - problemText: Describe the shape of the distribution of annual income levels shown in the histogram. Is it symmetric,
+        positively skewed, or negatively skewed?
+      avatarIntro: Understanding distribution shapes is key to interpreting real-world data like income levels. Take a look
+        at the histogram to determine the skew.
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals: '[0, 10, 20, 30, 40, 50, 60, 70, 80]'
+          xLabel: Annual Income ($ thousands)
+          yLabel: Frequency
+          showFrequencies: true
+          dataPoints:
+          - 15
+          - 25
+          - 30
+          - 20
+          - 10
+          - 5
+          - 2
+          - 1
+      finalAnswer: Positively skewed (The bulk of the data is on the left, and the tail stretches out to the right, indicating
+        a few high earners pulling the average up.)
+      stepByStepGuideline:
+      - Examine the histogram to determine where the majority of the data points are clustered.
+      - Identify the direction of the 'tail'—the section of the graph where frequencies decrease gradually over a long range.
+      - If the tail points to the right (higher values), the distribution is positively skewed.
+      - If the tail points to the left (lower values), the distribution is negatively skewed.
+      id: q5-1
+      questionGroup: q5
+    - problemText: A sports scientist measures the reaction times (in milliseconds) of 50 athletes. Most reaction times fall
+        between 180 ms and 210 ms. However, one athlete recorded an unusually slow time of 450 ms. Identify whether 450 ms
+        is an outlier and explain why.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: Yes, 450 ms is an outlier. It is a value that lies significantly outside the main cluster of the data (180
+        ms to 210 ms) and is far removed from the rest of the observations.
+      stepByStepGuideline:
+      - 'Recall the definition of an outlier: a data point that differs significantly from other observations.'
+      - Compare the data point in question (450 ms) to the range where the majority of the data lies (180 ms to 210 ms).
+      - Since 450 ms is more than double the highest reaction time in the main cluster, it is considered an observation that
+        is noticeably far from the central body of the data, thus qualifying as an outlier.
+      id: q5-2
+      questionGroup: q5
+    - problemText: Based on the histogram shown, which represents the heights of students in a grade level, is the distribution
+        symmetric or skewed?
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals: '[150, 155, 160, 165, 170, 175, 180, 185]'
+          xLabel: Height (cm)
+          yLabel: Frequency
+          showFrequencies: true
+          dataPoints:
+          - 5
+          - 15
+          - 30
+          - 35
+          - 30
+          - 15
+          - 5
+      finalAnswer: Symmetric (The distribution forms a clear bell shape, where the left side is roughly a mirror image of
+        the right side, centered around the mean.)
+      stepByStepGuideline:
+      - Examine the shape of the histogram.
+      - Check if the data is distributed evenly around a central point (the mode/median).
+      - If the graph can be folded vertically along the center and the two halves match approximately, the distribution is
+        symmetric.
+      id: q5-3
+      questionGroup: q5
+    - problemText: A teacher graphed the scores from a major comprehensive exam. Is the distribution shown in the histogram
+        bimodal? Explain your reasoning.
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals: '[40, 50, 60, 70, 80, 90, 100]'
+          xLabel: Test Score (%)
+          yLabel: Frequency
+          showFrequencies: true
+          dataPoints:
+          - 5
+          - 15
+          - 8
+          - 10
+          - 25
+          - 10
+      finalAnswer: Yes, the distribution is bimodal. It clearly has two distinct, non-adjacent peaks (or high-frequency modes)
+        centered around the 50-60% interval and the 80-90% interval.
+      stepByStepGuideline:
+      - Identify the 'peaks' or modes in the histogram—the bars with the highest frequency.
+      - If the histogram has one clear peak, it is unimodal.
+      - If the histogram has two distinct, non-adjacent peaks, it is bimodal. This often suggests two different populations
+        or groups within the data set.
+      id: q5-4
+      questionGroup: q5
+    - problemText: The histogram displays the selling prices of houses in an affluent neighborhood. Which direction is the
+        tail of this distribution pointing? (i.e., Is it positively skewed or negatively skewed?)
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals: '[200, 400, 600, 800, 1000, 1200, 1400]'
+          xLabel: House Price ($ thousands)
+          yLabel: Frequency
+          showFrequencies: true
+          dataPoints:
+          - 5
+          - 15
+          - 30
+          - 45
+          - 20
+          - 10
+      finalAnswer: Negatively skewed (The bulk of the data is concentrated at the high end of the scale, and the tail stretches
+        out to the left, toward lower values.)
+      stepByStepGuideline:
+      - Locate the main cluster of the data. Here, most houses sell for $800k and above.
+      - Identify the direction in which the frequencies drop off gradually.
+      - Since the long, thin tail points towards the lower values (the left side), the distribution is negatively skewed.
+      id: q5-5
+      questionGroup: q5
+- id: stats-node-6
+  nodeNumber: 6
+  title: Calculating the Mean
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A scientist recorded the time, in minutes, required for four different chemical reactions to complete:
+        8, 12, 10, and 6. Calculate the mean time for these reactions.'
+      avatarIntro: Calculating the mean is a fundamental skill in statistics. Remember, the mean is simply the sum of all
+        values divided by the count.
+      mathTool: null
+      finalAnswer: 9 minutes
+      stepByStepGuideline:
+      - 'Step 1: Calculate the sum of the times (Σx). Σx = 8 + 12 + 10 + 6 = 36.'
+      - 'Step 2: Determine the count of data points (n). n = 4.'
+      - 'Step 3: Calculate the mean (Σx / n). x̄ = 36 / 4 = 9.'
+      - The mean time required for the reactions is 9 minutes.
+      id: q6-1
+      questionGroup: q6
+    - problemText: 'The final exam scores for six students in a math class were: 72, 84, 78, 90, 81, and 75. Find x̄ for this
+        data.'
+      mathTool: null
+      finalAnswer: '80'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the sum of the scores (Σx). Σx = 72 + 84 + 78 + 90 + 81 + 75 = 480.'
+      - 'Step 2: Determine the count of data points (n). n = 6.'
+      - 'Step 3: Calculate the mean (x̄). x̄ = Σx / n = 480 / 6 = 80.'
+      - The mean score (x̄) is 80.
+      id: q6-2
+      questionGroup: q6
+    - problemText: 'A boutique recorded the prices (in $) of ten high-end dresses sold last weekend: 125, 150, 110, 135, 140,
+        120, 155, 130, 115, 145. What is the average selling price?'
+      mathTool: null
+      finalAnswer: $132.50
+      stepByStepGuideline:
+      - 'Step 1: Calculate the sum of the prices (Σx). Σx = 125 + 150 + 110 + 135 + 140 + 120 + 155 + 130 + 115 + 145 = 1325.'
+      - 'Step 2: Determine the count of data points (n). n = 10.'
+      - 'Step 3: Calculate the mean (Σx / n). x̄ = 1325 / 10 = 132.5.'
+      - The average selling price is $132.50.
+      id: q6-3
+      questionGroup: q6
+    - problemText: The heights (in cm) of five basketball players are recorded as 165, 172, 180, 168, and 175. Find Σx / n
+        for this data.
+      mathTool: null
+      finalAnswer: 172 cm
+      stepByStepGuideline:
+      - 'Step 1: Calculate the sum of the heights (Σx). Σx = 165 + 172 + 180 + 168 + 175 = 860.'
+      - 'Step 2: Determine the count of data points (n). n = 5.'
+      - 'Step 3: Calculate the mean (Σx / n). x̄ = 860 / 5 = 172.'
+      - The mean height is 172 cm.
+      id: q6-4
+      questionGroup: q6
+    - problemText: 'A hiker tracked the daily distances covered (in km) over seven days: 5, 8, 12, 6, 10, 7, and 9. Calculate
+        the mean daily distance covered, rounding your answer to two decimal places.'
+      mathTool: null
+      finalAnswer: 8.14 km
+      stepByStepGuideline:
+      - 'Step 1: Calculate the sum of the distances (Σx). Σx = 5 + 8 + 12 + 6 + 10 + 7 + 9 = 57.'
+      - 'Step 2: Determine the count of data points (n). n = 7.'
+      - 'Step 3: Calculate the mean (Σx / n). x̄ = 57 / 7.'
+      - 'Step 4: Perform the division and round: 57 / 7 ≈ 8.1428...'
+      - The mean daily distance covered is 8.14 km.
+      id: q6-5
+      questionGroup: q6
+- id: stats-node-7
+  nodeNumber: 7
+  title: Finding the Median
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A website tracks customer review ratings (out of 20) for a new product. The scores from the first seven
+        reviews were recorded as: 15, 8, 12, 19, 5, 10, 14. Find the median of these ratings.'
+      avatarIntro: Finding the median is all about finding the exact middle point of a data set. Remember, the first step
+        is always to order the data!
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Step 1: Order the data set: 5, 8, 10, 12, 14, 15, 19.'
+      - 'Step 2: Determine the count (n). Here, n = 7 (odd).'
+      - 'Step 3: The median position is (n+1)/2 = (7+1)/2 = 4th position.'
+      - 'Step 4: The value in the 4th position is 12. Therefore, the median is 12.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: 'A company performs a quarterly check of its inventory across 8 different warehouses. The inventory counts
+        for a specific high-value part are: 85, 42, 60, 91, 77, 50, 68, 55. Calculate Q₂ (the median) for this data set.'
+      mathTool: null
+      finalAnswer: '64'
+      stepByStepGuideline:
+      - 'Step 1: Order the data set: 42, 50, 55, 60, 68, 77, 85, 91.'
+      - 'Step 2: Determine the count (n). Here, n = 8 (even).'
+      - 'Step 3: The median is the average of the two middle values (positions n/2 and n/2 + 1), which are the 4th and 5th
+        positions (60 and 68).'
+      - 'Step 4: Calculate the average: (60 + 68) / 2 = 128 / 2 = 64. Therefore, Q₂ is 64.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'A farmer recorded the daily rainfall (in mm) over nine consecutive days: 33.5, 41.0, 25.5, 30.0, 45.5,
+        20.0, 31.0, 28.5, 40.0. Find the 50th percentile of the rainfall data.'
+      mathTool: null
+      finalAnswer: 31.0 mm
+      stepByStepGuideline:
+      - 'Step 1: Order the data set: 20.0, 25.5, 28.5, 30.0, 31.0, 33.5, 40.0, 41.0, 45.5.'
+      - 'Step 2: Determine the count (n). Here, n = 9 (odd).'
+      - 'Step 3: The 50th percentile is the median. The position is (n+1)/2 = (9+1)/2 = 5th position.'
+      - 'Step 4: The value in the 5th position is 31.0. The median (50th percentile) is 31.0 mm.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: 'The exchange rate between two currencies was tracked over six trading days: 1.25, 1.30, 1.15, 1.28, 1.32,
+        1.20. What is the middle value when this data set of exchange rates is ordered?'
+      mathTool: null
+      finalAnswer: '1.265'
+      stepByStepGuideline:
+      - 'Step 1: Order the data set: 1.15, 1.20, 1.25, 1.28, 1.30, 1.32.'
+      - 'Step 2: Determine the count (n). Here, n = 6 (even).'
+      - 'Step 3: The middle value (median) is the average of the 3rd and 4th positions: 1.25 and 1.28.'
+      - 'Step 4: Calculate the average: (1.25 + 1.28) / 2 = 2.53 / 2 = 1.265.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: 'A clinic recorded the waiting times (in minutes) for the first 10 patients one morning: 22, 35, 40, 18,
+        25, 30, 45, 28, 38, 32. Find the median of these waiting times.'
+      mathTool: null
+      finalAnswer: 31 minutes
+      stepByStepGuideline:
+      - 'Step 1: Order the data set: 18, 22, 25, 28, 30, 32, 35, 38, 40, 45.'
+      - 'Step 2: Determine the count (n). Here, n = 10 (even).'
+      - 'Step 3: The median is the average of the two middle values (positions 5 and 6), which are 30 and 32.'
+      - 'Step 4: Calculate the average: (30 + 32) / 2 = 62 / 2 = 31. The median is 31 minutes.'
+      id: q7-5
+      questionGroup: q7
+- id: stats-node-8
+  nodeNumber: 8
+  title: Identifying the Mode
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Find the mode of the following shoe sizes recorded from a sample of shoppers: 8, 9, 8, 7, 10, 8, 9, 8,
+        11.'
+      avatarIntro: Welcome! Today we are focusing on identifying the mode—the most popular value in a data set. Let's start
+        with a basic raw data list.
+      mathTool: {}
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Step 1: List all the unique data values: 7, 8, 9, 10, 11.'
+      - 'Step 2: Count the frequency (number of times) each value appears:'
+      - '7: 1 time'
+      - '8: 4 times'
+      - '9: 2 times'
+      - '10: 1 time'
+      - '11: 1 time'
+      - 'Step 3: The mode is the value that appears most frequently. Since 8 appears 4 times, it is the mode.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'A researcher collected data on the number of non-academic books read by participants last month: 1, 5,
+        2, 1, 6, 5, 4, 3. Is this data set bimodal? If so, state the modes.'
+      mathTool: {}
+      finalAnswer: Yes, the data is bimodal. The modes are 1 and 5.
+      stepByStepGuideline:
+      - 'Step 1: Determine the frequency of each value in the data set: 1, 5, 2, 1, 6, 5, 4, 3.'
+      - 'Step 2: Count the occurrences:'
+      - 1 appears twice.
+      - 5 appears twice.
+      - 2, 3, 4, 6 each appear once.
+      - 'Step 3: Since both 1 and 5 share the highest frequency (2), the data set has two modes. Therefore, it is bimodal.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'A local bakery tracked the number of loaves of bread sold daily over 25 days. The results were recorded
+        as follows: 40 loaves (sold on 6 days), 45 loaves (sold on 8 days), 50 loaves (sold on 5 days), 55 loaves (sold on
+        6 days). What is the most frequent number of loaves sold (the mode)?'
+      mathTool: {}
+      finalAnswer: 45 loaves
+      stepByStepGuideline:
+      - 'Step 1: Identify the value (number of loaves) and its corresponding frequency (number of days).'
+      - 'Step 2: Compare the frequencies:'
+      - 40 loaves has a frequency of 6.
+      - 45 loaves has a frequency of 8.
+      - 50 loaves has a frequency of 5.
+      - 55 loaves has a frequency of 6.
+      - 'Step 3: The highest frequency is 8, which corresponds to the value 45. Therefore, the mode is 45 loaves.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: From the bar chart shown, which displays the customer ratings (out of 5 stars) for a new app, identify
+        the mode of the ratings.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          values:
+          - 5
+          - 7
+          - 12
+          - 10
+          - 3
+          yLabel: Frequency
+          showValues: true
+      finalAnswer: 3 stars
+      stepByStepGuideline:
+      - 'Step 1: Locate the bar that represents the highest frequency (the tallest bar) on the chart.'
+      - 'Step 2: The tallest bar corresponds to a frequency of 12.'
+      - 'Step 3: Identify the category (rating) associated with this tallest bar. The category is 3.'
+      - 'Step 4: Therefore, the mode is 3 stars.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'A vet recorded the types of pets brought in during a morning session: Dog, Cat, Rabbit, Guinea Pig, Snake,
+        Bird. Does this set of data have a mode? Explain why or why not.'
+      mathTool: {}
+      finalAnswer: No, this data set does not have a mode.
+      stepByStepGuideline:
+      - 'Step 1: Determine the frequency of appearance for each type of pet.'
+      - 'Step 2: Dog (1), Cat (1), Rabbit (1), Guinea Pig (1), Snake (1), Bird (1).'
+      - 'Step 3: Since every value appears exactly the same number of times (once), there is no value that occurs *most* frequently.
+        Therefore, the data set has no mode.'
+      id: q8-5
+      questionGroup: q8
+- id: stats-node-9
+  nodeNumber: 9
+  title: Estimating Mean from Grouped Data
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A power company monitored the monthly electricity usage (in kWh) for 30 households in a small town. Use
+        the grouped data below to estimate the mean monthly usage. Show your steps clearly, preferably using a table format.
+
+
+        | Usage (kWh) | Frequency |
+
+        |-------------|-----------|
+
+        | 100 - 109   | 7         |
+
+        | 110 - 119   | 12        |
+
+        | 120 - 129   | 9         |
+
+        | 130 - 139   | 2         |'
+      avatarIntro: Estimating the mean from grouped data is a crucial skill. Remember, we use the midpoint of each class interval
+        to represent all the data points within that range.
+      mathTool: null
+      finalAnswer: 116.5 kWh
+      stepByStepGuideline:
+      - 'Calculate the midpoint (M) for each class: 104.5, 114.5, 124.5, 134.5.'
+      - 'Calculate the product of midpoint and frequency (M × f) for each class: (104.5 × 7) = 731.5, (114.5 × 12) = 1374,
+        (124.5 × 9) = 1120.5, (134.5 × 2) = 269.'
+      - 'Find the total frequency (Σf): 7 + 12 + 9 + 2 = 30.'
+      - 'Find the sum of the products (Σ(M × f)): 731.5 + 1374 + 1120.5 + 269 = 3495.'
+      - 'Estimate the mean by calculating Σ(M × f) / Σf: 3495 / 30 = 116.5 kWh.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: A professor recorded the scores from a history exam. For the group of students whose scores (x) fall in
+        the range $75 \le x < 80$, calculate the class midpoint used for estimating the mean score.
+      mathTool: null
+      finalAnswer: '77.5'
+      stepByStepGuideline:
+      - 'Identify the lower boundary (L) and upper boundary (U) of the interval: L=75, U=80.'
+      - 'Use the midpoint formula: Midpoint = (L + U) / 2.'
+      - 'Calculate: Midpoint = (75 + 80) / 2 = 155 / 2 = 77.5.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: 'The daily travel time (t, in minutes) for a sample of 50 commuters is summarized in the frequency table
+        below. Estimate the mean travel time.
+
+
+        | Time (t, min) | Frequency |
+
+        |---------------|-----------|
+
+        | $0 \le t < 20$  | 15        |
+
+        | $20 \le t < 40$ | 25        |
+
+        | $40 \le t < 60$ | 10        |'
+      mathTool: null
+      finalAnswer: 28 minutes
+      stepByStepGuideline:
+      - 'Calculate the midpoints (M) for the intervals: 10, 30, and 50.'
+      - 'Calculate M × f for each class: (10 × 15) = 150, (30 × 25) = 750, (50 × 10) = 500.'
+      - 'Find the sum of the products Σ(M × f): 150 + 750 + 500 = 1400.'
+      - Confirm the total frequency Σf = 50.
+      - 'Estimate the mean using the formula Σ(M × f) / Σf: 1400 / 50 = 28 minutes.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: 'A factory monitors the output (units produced per hour) of its machines. Calculate the value of the estimated
+        mean using the expression: $\frac{\Sigma(M \times f)}{\Sigma f}$. Round your answer to two decimal places.
+
+
+        | Units Produced | Frequency |
+
+        |----------------|-----------|
+
+        | 1 - 5          | 4         |
+
+        | 6 - 10         | 6         |
+
+        | 11 - 15        | 10        |
+
+        | 16 - 20        | 8         |
+
+        | 21 - 25        | 2         |'
+      mathTool: null
+      finalAnswer: 12.67 units
+      stepByStepGuideline:
+      - 'Calculate the midpoints (M) for the intervals: 3, 8, 13, 18, 23.'
+      - 'Calculate the total frequency Σf: 4 + 6 + 10 + 8 + 2 = 30.'
+      - 'Calculate M × f for each class: 12, 48, 130, 144, 46.'
+      - 'Calculate the sum of products Σ(M × f): 12 + 48 + 130 + 144 + 46 = 380.'
+      - 'Calculate the estimated mean: 380 / 30 ≈ 12.666...'
+      - 'Round the result to two decimal places: 12.67 units.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: 'A retail store surveyed 66 customers about their age (a, in years). Estimate the mean age of the customers
+        based on the following frequency distribution. Round your answer to one decimal place.
+
+
+        | Age (a) | Frequency |
+
+        |-------------------|-----------|
+
+        | $15 \le a < 25$ | 18        |
+
+        | $25 \le a < 35$ | 24        |
+
+        | $35 \le a < 45$ | 15        |
+
+        | $45 \le a < 55$ | 9         |'
+      mathTool: null
+      finalAnswer: 32.3 years
+      stepByStepGuideline:
+      - 'Calculate the midpoints (M) for the intervals: 20, 30, 40, 50.'
+      - 'Calculate M × f for each class: (20 × 18) = 360, (30 × 24) = 720, (40 × 15) = 600, (50 × 9) = 450.'
+      - 'Calculate the sum of the products Σ(M × f): 360 + 720 + 600 + 450 = 2130.'
+      - Confirm the total frequency Σf = 66.
+      - 'Estimate the mean: 2130 / 66 ≈ 32.2727...'
+      - 'Round the result to one decimal place: 32.3 years.'
+      id: q9-5
+      questionGroup: q9
+- id: stats-node-10
+  nodeNumber: 10
+  title: Five-Number Summary and Quartiles
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A logistics company tracked the weight, in grams, of nine different parcels handled during peak hour:
+        45, 78, 52, 60, 48, 70, 55, 63, 50. Find the five-number summary for this data set.'
+      avatarIntro: Understanding the five-number summary is crucial for describing data distribution. Remember to order the
+        data first!
+      mathTool: null
+      finalAnswer: Min=45, Q₁=49, Q₂=55, Q₃=66.5, Max=78
+      stepByStepGuideline:
+      - 'Order the data: 45, 48, 50, 52, 55, 60, 63, 70, 78 (n=9).'
+      - 'Identify the Minimum (Min) and Maximum (Max): Min = 45, Max = 78.'
+      - 'Calculate the Median (Q₂): Q₂ is the 5th value, which is 55.'
+      - 'Calculate the Lower Quartile (Q₁): This is the median of the lower half (45, 48, 50, 52). Q₁ = (48 + 50) / 2 = 49.'
+      - 'Calculate the Upper Quartile (Q₃): This is the median of the upper half (60, 63, 70, 78). Q₃ = (63 + 70) / 2 = 66.5.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: 'A financial analyst recorded the values (in thousands of dollars) of twelve different assets: 110.5, 180.0,
+        95.0, 140.5, 55.0, 120.0, 165.5, 70.0, 150.0, 100.0, 130.0, 175.5. Find Q₁ and Q₃ for this data.'
+      mathTool: null
+      finalAnswer: Q₁ = 97.5, Q₃ = 157.75
+      stepByStepGuideline:
+      - 'Order the data (n=12): 55.0, 70.0, 95.0, 100.0, 110.5, 120.0, 130.0, 140.5, 150.0, 165.5, 175.5, 180.0.'
+      - 'Identify the Lower Half (first 6 values): 55.0, 70.0, 95.0, 100.0, 110.5, 120.0.'
+      - 'Calculate Q₁: The median of the lower half, Q₁ = (95.0 + 100.0) / 2 = 97.5.'
+      - 'Identify the Upper Half (last 6 values): 130.0, 140.5, 150.0, 165.5, 175.5, 180.0.'
+      - 'Calculate Q₃: The median of the upper half, Q₃ = (150.0 + 165.5) / 2 = 157.75.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: 'A small business tracked the number of customer emails received daily over 15 consecutive days: 10, 2,
+        15, 8, 20, 5, 12, 18, 9, 25, 7, 14, 11, 6, 17. What is the lower quartile (Q₁) of the number of emails received?'
+      mathTool: null
+      finalAnswer: '7'
+      stepByStepGuideline:
+      - 'Order the data (n=15): 2, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 17, 18, 20, 25.'
+      - 'Identify the Median (Q₂): Q₂ is the 8th value, which is 11.'
+      - 'Identify the Lower Half: The 7 values below Q₂ are 2, 5, 6, 7, 8, 9, 10.'
+      - 'Calculate the Lower Quartile (Q₁): This is the median of the lower half. Q₁ is the 4th value in the lower half, which
+        is 7.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'Calculate the minimum, Q₁, Q₂, Q₃, and maximum for the following set of 10 hourly temperature readings
+        (°C): 22, 35, 28, 30, 25, 31, 27, 33, 29, 24.'
+      mathTool: null
+      finalAnswer: Min=22, Q₁=25, Q₂=28.5, Q₃=31, Max=35
+      stepByStepGuideline:
+      - 'Order the data (n=10): 22, 24, 25, 27, 28, 29, 30, 31, 33, 35.'
+      - 'Identify the Minimum (Min) and Maximum (Max): Min = 22, Max = 35.'
+      - 'Calculate the Median (Q₂): Q₂ is the average of the 5th and 6th values: (28 + 29) / 2 = 28.5.'
+      - 'Calculate the Lower Quartile (Q₁): This is the median of the first 5 values (22, 24, 25, 27, 28). Q₁ = 25.'
+      - 'Calculate the Upper Quartile (Q₃): This is the median of the last 5 values (29, 30, 31, 33, 35). Q₃ = 31.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: 'A construction company tracked the costs (in thousands of currency units) for seven recent small building
+        projects: 150, 75, 110, 190, 80, 125, 100. Find the 25th percentile and the 75th percentile of this cost data.'
+      mathTool: null
+      finalAnswer: The 25th percentile is 80 and the 75th percentile is 150.
+      stepByStepGuideline:
+      - 'Order the data (n=7): 75, 80, 100, 110, 125, 150, 190.'
+      - The 25th percentile is Q₁. The median (Q₂) is 110.
+      - 'Identify the Lower Half (data below Q₂): 75, 80, 100.'
+      - 'Calculate Q₁ (25th percentile): The median of the lower half is 80.'
+      - 'Identify the Upper Half (data above Q₂): 125, 150, 190.'
+      - 'Calculate Q₃ (75th percentile): The median of the upper half is 150.'
+      id: q10-5
+      questionGroup: q10
+- id: stats-node-11
+  nodeNumber: 11
+  title: Range and Interquartile Range
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A quality control team assessed the efficiency rating (out of 100) for several manufacturing processes.
+        The five-number summary derived from the data is: Minimum = 35, Q₁ = 58, Median = 72, Q₃ = 85, Maximum = 98. Calculate
+        the Range and the Interquartile Range (IQR) for these efficiency ratings.'
+      avatarIntro: Hello! Understanding the spread of data is crucial in statistics. Let's start by calculating the range
+        and IQR.
+      mathTool: null
+      finalAnswer: Range = 63; IQR = 27
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Range. The Range is the difference between the maximum and minimum values. Range = Maximum
+        - Minimum.'
+      - 'Step 2: Substitute the values: Range = 98 - 35 = 63.'
+      - 'Step 3: Calculate the Interquartile Range (IQR). The IQR is the difference between the third quartile (Q₃) and the
+        first quartile (Q₁). IQR = Q₃ - Q₁.'
+      - 'Step 4: Substitute the values: IQR = 85 - 58 = 27.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A real estate agent is analyzing the sale prices of homes in a small neighborhood. If one exceptionally
+        expensive mansion is added to a dataset consisting primarily of moderately priced homes, which measure of spread—the
+        Range or the Interquartile Range (IQR)—will be dramatically increased? Explain briefly why this occurs.
+      mathTool: null
+      finalAnswer: The Range will be dramatically increased. This is because the Range depends entirely on the maximum value
+        (the outlier), whereas the IQR only measures the spread of the middle 50% of the data (between Q₁ and Q₃), which are
+        not directly affected by extreme outliers.
+      stepByStepGuideline:
+      - 'Step 1: Define the Range and IQR. Range uses the maximum and minimum values. IQR uses Q₃ and Q₁.'
+      - 'Step 2: Determine the effect of the outlier (the expensive mansion). The outlier will become the new maximum value.'
+      - 'Step 3: Since the Range calculation (Max - Min) uses the maximum value, the Range will increase significantly.'
+      - 'Step 4: The IQR relies on the central 50% of the data (Q₁ and Q₃). A single outlier far from the center typically
+        does not change the quartiles much, meaning the IQR remains relatively stable.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: 'A company compares the daily production units achieved by two different factories over a month. The five-number
+        summaries (in units) are provided below:
+
+
+        Factory A: Min=50, Q₁=150, Median=200, Q₃=250, Max=450
+
+        Factory B: Min=100, Q₁=180, Median=205, Q₃=220, Max=300
+
+
+        Which factory''s production data shows greater overall variability (using the Range), and which factory shows greater
+        consistency in the middle 50% of production (using the IQR)? Justify your answer.'
+      mathTool: null
+      finalAnswer: Factory A has greater overall variability (Range = 400). Factory B shows greater consistency in the middle
+        50% (IQR = 40).
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Range for Factory A: Range = Max - Min = 450 - 50 = 400.'
+      - 'Step 2: Calculate the Range for Factory B: Range = Max - Min = 300 - 100 = 200.'
+      - 'Step 3: Compare Ranges. Factory A (400) has a larger range than Factory B (200), indicating greater overall variability.'
+      - 'Step 4: Calculate the IQR for Factory A: IQR = Q₃ - Q₁ = 250 - 150 = 100.'
+      - 'Step 5: Calculate the IQR for Factory B: IQR = Q₃ - Q₁ = 220 - 180 = 40.'
+      - 'Step 6: Compare IQRs. Factory B (40) has a smaller IQR than Factory A (100). A smaller IQR signifies less spread
+        and therefore greater consistency in the central 50% of the data.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: 'A startup tracked the number of unique daily website clicks over several weeks. The resulting five-number
+        summary is: Minimum = 12, Q₁ = 21, Median = 30, Q₃ = 42, Maximum = 48. Calculate the spread of the middle 50% of the
+        daily click data.'
+      mathTool: null
+      finalAnswer: 21 clicks
+      stepByStepGuideline:
+      - 'Step 1: Identify that the ''spread of the middle 50%'' is the definition of the Interquartile Range (IQR).'
+      - 'Step 2: State the formula for IQR: IQR = Q₃ - Q₁.'
+      - 'Step 3: Identify the third quartile (Q₃ = 42) and the first quartile (Q₁ = 21) from the given summary.'
+      - 'Step 4: Calculate the IQR: IQR = 42 - 21 = 21.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: A medical researcher is studying patient recovery times measured in days. If the dataset includes a few
+        patients who experienced extremely short recovery times and one patient who had an exceptionally long recovery time,
+        explain why the Interquartile Range (IQR) is the preferred measure of spread over the Range for reporting typical
+        recovery time variability.
+      mathTool: null
+      finalAnswer: The IQR is preferred because it is resistant to outliers. Since the Range uses the extreme values (minimum
+        and maximum), the exceptionally long recovery time (outlier) would inflate the Range, giving a misleading representation
+        of the typical spread. The IQR, focusing only on the middle 50% of data (between Q₁ and Q₃), provides a stable measure
+        of central variability unaffected by these extremes.
+      stepByStepGuideline:
+      - 'Step 1: Define the function of the Range and IQR in relation to outliers.'
+      - 'Step 2: Explain how the Range is affected: The Range is calculated using the minimum and maximum. The ''exceptionally
+        long recovery time'' is an outlier that directly determines the maximum value, making the Range sensitive to this
+        extreme data point.'
+      - 'Step 3: Explain why IQR is better: The IQR measures the spread between Q₁ and Q₃ (the central 50% of the data). Since
+        quartiles are generally resistant to extreme outliers, the IQR provides a more robust and reliable measure of the
+        typical variability found within the main body of patients.'
+      id: q11-5
+      questionGroup: q11
+- id: stats-node-12
+  nodeNumber: 12
+  title: Constructing Box-and-Whisker Plots
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: boxPlot
+    preWrittenQuestions:
+    - problemText: From the box plot shown, which represents the daily rainfall measurements over a period, what percentage
+        of the measurements fall within the central box?
+      avatarIntro: Box plots provide a quick visual summary of data distribution. Let's start by recalling what the central
+        box represents.
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          min: 12
+          q1: 18
+          median: 25
+          q3: 35
+          max: 45
+          label: Daily Rainfall (mm)
+          showLabels: true
+      finalAnswer: 50%
+      stepByStepGuideline:
+      - The central box in a box-and-whisker plot is defined by the first quartile (Q₁) and the third quartile (Q₃).
+      - By definition, the data between Q₁ and Q₃ represents the middle 50% of the entire dataset.
+      - Therefore, 50% of the rainfall measurements fall within the central box.
+      id: q12-1
+      questionGroup: q12
+    - problemText: From the box plot shown, which illustrates the wait times at a clinic, what portion (as a percentage) of
+        the data is represented by the upper whisker?
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          min: 30
+          q1: 45
+          median: 60
+          q3: 80
+          max: 95
+          label: Clinic Wait Time (minutes)
+          showLabels: true
+      finalAnswer: 25%
+      stepByStepGuideline:
+      - A box-and-whisker plot divides the data into four sections, each representing 25% of the data.
+      - The upper whisker extends from the third quartile (Q₃ = 80 minutes) to the maximum value (Max = 95 minutes).
+      - This section represents the highest 25% of the observed wait times.
+      id: q12-2
+      questionGroup: q12
+    - problemText: From the box plot shown, which displays the height measurements of a species of tree, calculate the Interquartile
+        Range (IQR).
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          min: 60
+          q1: 90
+          median: 120
+          q3: 160
+          max: 190
+          label: Tree Height (cm)
+          showLabels: true
+      finalAnswer: 70 cm
+      stepByStepGuideline:
+      - 'The Interquartile Range (IQR) is calculated as the difference between the third quartile (Q₃) and the first quartile
+        (Q₁): IQR = Q₃ - Q₁.'
+      - From the plot, identify Q₁ (the start of the box) = 90 cm.
+      - From the plot, identify Q₃ (the end of the box) = 160 cm.
+      - 'Calculate IQR: 160 cm - 90 cm = 70 cm.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: From the box plot shown, which summarizes the duration of recent customer service phone calls, determine
+        the overall range of the data.
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          min: 32
+          q1: 40
+          median: 55
+          q3: 75
+          max: 98
+          label: Call Duration (seconds)
+          showLabels: true
+      finalAnswer: 66 seconds
+      stepByStepGuideline:
+      - 'The overall range of a dataset is calculated as the difference between the maximum value and the minimum value: Range
+        = Max - Min.'
+      - From the plot, identify the minimum value (Min) = 32 seconds.
+      - From the plot, identify the maximum value (Max) = 98 seconds.
+      - 'Calculate the range: 98 seconds - 32 seconds = 66 seconds.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: From the box plot shown, representing scores achieved on a difficult video game level, identify the median
+        score (Q₂).
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          min: 10
+          q1: 16
+          median: 22
+          q3: 38
+          max: 48
+          label: Video Game Score
+          showLabels: true
+      finalAnswer: '22'
+      stepByStepGuideline:
+      - The median (Q₂) is the middle value of the entire dataset.
+      - In a box-and-whisker plot, the median is indicated by the vertical line drawn inside the central box.
+      - Reading the value corresponding to this line, the median score (Q₂) is 22.
+      id: q12-5
+      questionGroup: q12
+- id: stats-node-13
+  nodeNumber: 13
+  title: Comparing Data Sets with Parallel Box Plots
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: boxPlot
+    preWrittenQuestions:
+    - problemText: Two research groups, A and B, participated in an experiment tracking reaction times (in milliseconds).
+        Based on the box plots shown, which group (A or B) demonstrated a slower average reaction time?
+      avatarIntro: Parallel box plots are a fantastic way to visually compare the center and spread of two different data
+        sets. Let's practice comparing medians and IQRs!
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          datasets:
+          - min: 2
+            q1: 4
+            median: 6
+            q3: 8
+            max: 10
+            label: Group A
+            showLabels: true
+            showIQR: true
+          - min: 1
+            q1: 3
+            median: 7
+            q3: 10
+            max: 12
+            label: Group B
+            showLabels: true
+            showIQR: true
+      finalAnswer: Group B
+      stepByStepGuideline:
+      - Identify the measure of center, which is the median (Q₂). The slower average time corresponds to the higher median.
+      - Median for Group A is 6 milliseconds.
+      - Median for Group B is 7 milliseconds.
+      - Since 7 > 6, Group B had a slower average reaction time.
+      id: q13-1
+      questionGroup: q13
+    - problemText: The box plots shown display the daily maximum temperatures (°C) recorded over a month for City X and City
+        Y. Which city experiences more consistent daily maximum temperatures?
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          datasets:
+          - min: 15
+            q1: 18
+            median: 24
+            q3: 30
+            max: 35
+            label: City X
+            showLabels: true
+            showIQR: true
+          - min: 19
+            q1: 20
+            median: 25
+            q3: 27
+            max: 32
+            label: City Y
+            showLabels: true
+            showIQR: true
+      finalAnswer: City Y
+      stepByStepGuideline:
+      - Consistency is measured by the spread, specifically the Interquartile Range (IQR). A smaller IQR indicates greater
+        consistency.
+      - 'Calculate IQR for City X: IQR = Q₃ - Q₁ = 30 - 18 = 12°C.'
+      - 'Calculate IQR for City Y: IQR = Q₃ - Q₁ = 27 - 20 = 7°C.'
+      - Since 7 < 12, City Y has a smaller IQR and therefore experiences more consistent temperatures.
+      id: q13-2
+      questionGroup: q13
+    - problemText: The box plots show customer waiting times (in minutes) at two service counters during peak hours. Which
+        counter exhibits greater variability in waiting times?
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          datasets:
+          - min: 2
+            q1: 5
+            median: 10
+            q3: 25
+            max: 30
+            label: Counter 1
+            showLabels: true
+            showIQR: true
+          - min: 5
+            q1: 8
+            median: 12
+            q3: 16
+            max: 20
+            label: Counter 2
+            showLabels: true
+            showIQR: true
+      finalAnswer: Counter 1
+      stepByStepGuideline:
+      - Variability is measured by the spread, specifically the Interquartile Range (IQR). Greater variability means a larger
+        IQR.
+      - 'Calculate IQR for Counter 1: IQR = Q₃ - Q₁ = 25 - 5 = 20 minutes.'
+      - 'Calculate IQR for Counter 2: IQR = Q₃ - Q₁ = 16 - 8 = 8 minutes.'
+      - Since 20 > 8, Counter 1 has a larger IQR and thus greater variability in waiting times.
+      id: q13-3
+      questionGroup: q13
+    - problemText: The box plots compare student test scores for Math and Science exams. If an academic department seeks the
+        subject area where student performance is generally more reliable (less spread out), which subject should they focus
+        on, based on the box plots?
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          datasets:
+          - min: 50
+            q1: 60
+            median: 75
+            q3: 85
+            max: 95
+            label: Math Scores
+            showLabels: true
+            showIQR: true
+          - min: 40
+            q1: 65
+            median: 80
+            q3: 95
+            max: 100
+            label: Science Scores
+            showLabels: true
+            showIQR: true
+      finalAnswer: Math Scores
+      stepByStepGuideline:
+      - Reliability or 'less spread out' performance is indicated by a smaller Interquartile Range (IQR).
+      - 'Calculate IQR for Math Scores: IQR = Q₃ - Q₁ = 85 - 60 = 25.'
+      - 'Calculate IQR for Science Scores: IQR = Q₃ - Q₁ = 95 - 65 = 30.'
+      - Since 25 < 30, Math scores have a smaller IQR, indicating more reliable or consistent performance.
+      id: q13-4
+      questionGroup: q13
+    - problemText: Analyze the box plots representing the time (in seconds) required for Machine 1 and Machine 2 to produce
+        a component. Compare their typical performance (center) and consistency (spread).
+      mathTool:
+        toolName: boxPlot
+        parameters:
+          datasets:
+          - min: 5
+            q1: 10
+            median: 15
+            q3: 20
+            max: 25
+            label: Machine 1
+            showLabels: true
+            showIQR: true
+          - min: 8
+            q1: 12
+            median: 17
+            q3: 25
+            max: 30
+            label: Machine 2
+            showLabels: true
+            showIQR: true
+      finalAnswer: Machine 1 is faster on average (Median=15s vs 17s) and more consistent (IQR=10s vs 13s).
+      stepByStepGuideline:
+      - 'Compare the center using the median (Q₂): Machine 1 Median = 15s; Machine 2 Median = 17s. Machine 1 is faster on
+        average.'
+      - 'Compare the spread using the IQR: Machine 1 IQR = 20 - 10 = 10s.'
+      - Machine 2 IQR = 25 - 12 = 13s.
+      - Since 10s < 13s, Machine 1 is more consistent in its production time.
+      id: q13-5
+      questionGroup: q13
+- id: stats-node-14
+  nodeNumber: 14
+  title: Cumulative Frequency Tables and Percentiles
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A teacher recorded the number of books read by a group of students over the summer break. Using the frequency
+        table below, list the cumulative frequencies in order from the first row to the last.
+      avatarIntro: Welcome! Understanding cumulative frequency is crucial for interpreting large datasets. Let's start by
+        calculating the running total for this frequency table.
+      mathTool: null
+      finalAnswer: 8, 20, 25, 28
+      stepByStepGuideline:
+      - 'Step 1: The first cumulative frequency is the same as the first frequency: 8.'
+      - 'Step 2: Add the next frequency (12) to the previous cumulative frequency (8): 8 + 12 = 20.'
+      - 'Step 3: Add the next frequency (5) to the previous cumulative frequency (20): 20 + 5 = 25.'
+      - 'Step 4: Add the final frequency (3) to the previous cumulative frequency (25): 25 + 3 = 28.'
+      - 'Step 5: The cumulative frequencies are 8, 20, 25, 28.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: The table shows the travel time (in minutes) taken by a sample of employees to reach their workplace. Based
+        on this grouped data, what is the cumulative frequency for employees who travel 30 minutes or less?
+      mathTool: null
+      finalAnswer: '32'
+      stepByStepGuideline:
+      - 'Step 1: Identify the classes that fall within ''30 minutes or less''. These are 0–10, 11–20, and 21–30.'
+      - 'Step 2: Calculate the cumulative frequency up to and including the 21–30 class.'
+      - 'Step 3: Cumulative frequency = (Frequency of 0–10) + (Frequency of 11–20) + (Frequency of 21–30).'
+      - 'Step 4: Cumulative frequency = 10 + 15 + 7 = 32.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: Explain the relationship between the median (Q₂) and the 50th percentile, and the upper quartile (Q₃) and
+        the 75th percentile.
+      mathTool: null
+      finalAnswer: The median (Q₂) is equivalent to the 50th percentile, meaning 50% of the data falls below this value. The
+        upper quartile (Q₃) is equivalent to the 75th percentile, meaning 75% of the data falls below this value.
+      stepByStepGuideline:
+      - 'Step 1: Define the median (Q₂). The median divides the data set into two equal halves (50% below, 50% above).'
+      - 'Step 2: Define the 50th percentile. The P₅₀ is the value below which 50% of the data lies.'
+      - 'Step 3: Define the upper quartile (Q₃). Q₃ is the value below which 75% of the data lies.'
+      - 'Step 4: Define the 75th percentile. The P₇₅ is the value below which 75% of the data lies.'
+      - 'Step 5: Conclude that Q₂ = P₅₀ and Q₃ = P₇₅.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: 'A small school tracked the number of days absent for 15 students: 1, 0, 2, 1, 3, 0, 1, 2, 1, 1, 0, 3,
+        1, 2, 1. If you constructed a frequency table for this data and calculated the cumulative frequency, what would the
+        final cumulative frequency be, and why?'
+      mathTool: null
+      finalAnswer: The final cumulative frequency would be 15, because the final cumulative frequency must always equal the
+        total number of observations (n).
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of observations (n) by counting the data points provided.'
+      - 'Step 2: There are 15 observations in the dataset.'
+      - 'Step 3: Recall the definition of cumulative frequency: it is the running total of frequencies.'
+      - 'Step 4: The final cumulative frequency must account for all observations in the dataset, thus it must equal the total
+        number of observations, n=15.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: A company surveyed customers using a satisfaction rating scale (1 to 5). Calculate the cumulative frequency
+        for customers who gave a rating of 3 or less.
+      mathTool: null
+      finalAnswer: '17'
+      stepByStepGuideline:
+      - 'Step 1: Identify the frequencies corresponding to ratings of 1, 2, and 3.'
+      - 'Step 2: Frequency for Rating 1 is 2.'
+      - 'Step 3: Frequency for Rating 2 is 5.'
+      - 'Step 4: Frequency for Rating 3 is 10.'
+      - 'Step 5: Calculate the cumulative frequency by summing these frequencies: 2 + 5 + 10 = 17.'
+      id: q14-5
+      questionGroup: q14
+- id: stats-node-15
+  nodeNumber: 15
+  title: Drawing and Reading Cumulative Frequency Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A cumulative frequency graph is constructed to display the lifespan (in hours) of 80 randomly sampled batteries.
+        Based on this graph, explain the necessary procedure to estimate the median lifespan.
+      avatarIntro: It's time to practice reading crucial statistical measures directly from the cumulative frequency graph.
+        Remember the S-curve starts at 0!
+      mathTool: null
+      finalAnswer: You must find the lifespan (x-value) corresponding to a cumulative frequency of 40 (since the median is
+        at n/2 = 80/2 = 40).
+      stepByStepGuideline:
+      - Identify the total number of data points, n. Here, n=80.
+      - 'Calculate the position of the median: Median position = n/2 = 80 / 2 = 40.'
+      - Locate the cumulative frequency value of 40 on the y-axis.
+      - Move horizontally from 40 to intersect the cumulative frequency curve.
+      - Move vertically down from the intersection point to read the corresponding value on the x-axis (lifespan), which is
+        the estimated median.
+      id: q15-1
+      questionGroup: q15
+    - problemText: A cumulative frequency graph tracks the scores of 60 students on a geography quiz. To estimate the lower
+        quartile (Q₁) from this graph, what cumulative frequency value should the analyst look for on the vertical axis?
+      mathTool: null
+      finalAnswer: 15 (Q₁ is located at n/4 = 60/4 = 15)
+      stepByStepGuideline:
+      - The lower quartile (Q₁) is located at the position n/4.
+      - Given the total number of students, n = 60.
+      - 'Calculate the required cumulative frequency value: 60 / 4 = 15.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: If a cumulative frequency graph represents the weights of 100 harvested vegetables, explain the procedure
+        required to estimate the upper quartile (Q₃) using the graph.
+      mathTool: null
+      finalAnswer: Estimate the weight (x-value) corresponding to a cumulative frequency of 75 (since Q₃ is at 3n/4 = 3 *
+        100 / 4 = 75).
+      stepByStepGuideline:
+      - Identify the total number of data points, n. Here, n=100.
+      - 'Calculate the position of the upper quartile (Q₃): Q₃ position = 3n/4 = 3 * 100 / 4 = 75.'
+      - Locate the cumulative frequency value of 75 on the y-axis.
+      - Move horizontally to the curve and vertically down to read the corresponding weight on the x-axis.
+      id: q15-3
+      questionGroup: q15
+    - problemText: A cumulative frequency graph illustrates the speeds of 120 vehicles measured on a highway. If the graph
+        is used to find how many vehicles were traveling at 95 km/h or less, what reading procedure should be followed?
+      mathTool: null
+      finalAnswer: Locate 95 km/h on the upper boundary (x-axis), move vertically up to the curve, and read the corresponding
+        cumulative frequency value on the y-axis.
+      stepByStepGuideline:
+      - When determining the count (frequency) below a specific value (X), the procedure requires reading the y-axis (Cumulative
+        Frequency).
+      - Start at the given speed (95 km/h) on the x-axis.
+      - Trace a line vertically up to the smooth cumulative frequency curve.
+      - Trace a line horizontally from the curve to the y-axis to find the corresponding cumulative frequency value, which
+        represents the number of vehicles traveling at 95 km/h or less.
+      id: q15-4
+      questionGroup: q15
+    - problemText: A cumulative frequency graph represents the daily electricity usage (kWh) for 50 households. If you are
+        asked to find the usage level that 30 households fall below, what is the required reading procedure?
+      mathTool: null
+      finalAnswer: Locate 30 on the cumulative frequency (y-axis), move horizontally to the curve, and read the corresponding
+        electricity usage value (x-value).
+      stepByStepGuideline:
+      - When determining a data value (X) corresponding to a specific frequency (Y), the procedure requires reading the x-axis
+        (Upper Boundary).
+      - Start at the given number of households (cumulative frequency = 30) on the y-axis.
+      - Trace a line horizontally across to the smooth cumulative frequency curve.
+      - Trace a line vertically down from the curve to the x-axis to find the corresponding electricity usage level.
+      id: q15-5
+      questionGroup: q15
+- id: stats-node-16
+  nodeNumber: 16
+  title: Interpreting Distribution from Cumulative Frequency Curves
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A cumulative frequency curve showing the annual salaries of entry-level employees at a startup rises steeply
+        for the lower salary brackets and then levels off very gradually towards the maximum observed salary. What does this
+        curve shape suggest about the distribution of salaries?
+      avatarIntro: Understanding the shape of a cumulative frequency curve tells us a lot about how data is spread out. Let's
+        practice interpreting skewness!
+      mathTool: null
+      finalAnswer: Positively skewed. This signifies that the majority of the data (salaries) is concentrated at the lower
+        values, with a long tail extending toward significantly higher salaries.
+      stepByStepGuideline:
+      - 'Identify the pattern of steepness: A steep initial rise indicates a high frequency of observations at the beginning
+        (lower values).'
+      - 'Identify the pattern of leveling: A gradual leveling off indicates very few observations at the end (higher values).'
+      - 'Relate this pattern to skewness: Concentration at the low end with a long tail to the right means the distribution
+        is positively skewed.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: If the cumulative frequency curve for scores on a well-designed standardized aptitude test forms a smooth,
+        centrally balanced S-shape, is the distribution of scores symmetric or skewed?
+      mathTool: null
+      finalAnswer: Symmetric.
+      stepByStepGuideline:
+      - Recall the shape associated with symmetry in a cumulative frequency curve.
+      - A smooth, balanced S-shape indicates that the rate of increase is fastest around the center (median) and slows down
+        evenly towards both tails.
+      - This balance confirms that the data is distributed symmetrically around the center.
+      id: q16-2
+      questionGroup: q16
+    - problemText: The cumulative frequency curve detailing the time taken (in seconds) to complete a simple assembly task
+        starts gently but quickly becomes very steep towards the end of the distribution range. Describe the skewness and
+        concentration of data.
+      mathTool: null
+      finalAnswer: Negatively skewed (tail on the left). The data is concentrated at higher time values, meaning most participants
+        took a longer time to complete the task.
+      stepByStepGuideline:
+      - 'Analyze the curve movement: A gentle start indicates few observations at low values (fast completion times).'
+      - 'Analyze the curve movement: A steep end indicates many observations accumulating rapidly at high values (slow completion
+        times).'
+      - Concentration at the high end of the variable scale implies a negative skew.
+      id: q16-3
+      questionGroup: q16
+    - problemText: A cumulative frequency curve showing the number of defects found per batch of manufactured items exhibits
+        a very steep rise early in the graph corresponding to low defect counts. What does this initial steep rise indicate
+        about the distribution of defects?
+      mathTool: null
+      finalAnswer: The initial steep rise indicates that the concentration of data is high at the low end of the defect count
+        scale; the majority of batches have few or zero defects.
+      stepByStepGuideline:
+      - 'Understand the relationship between steepness and frequency: The steeper the curve, the more data points fall into
+        that interval.'
+      - Since the steepness occurs at the beginning (low defect counts), it shows that the frequency is highest for low values.
+      - This indicates that the bulk of the distribution is concentrated near the origin.
+      id: q16-4
+      questionGroup: q16
+    - problemText: If the cumulative frequency curve for final grades on an intentionally easy university module starts slowly
+        but accelerates rapidly and becomes very steep near the maximum possible score, is the resulting distribution of grades
+        symmetric or skewed, and in which direction?
+      mathTool: null
+      finalAnswer: Skewed negatively. (The grades are concentrated at the high score end, causing the tail to extend to the
+        left towards lower scores.)
+      stepByStepGuideline:
+      - 'Evaluate the shape: Gentle start (few low scores), Steep end (many high scores).'
+      - 'Determine concentration: The concentration is towards the high end of the grade scale.'
+      - 'Relate to skewness: When the concentration is at the high end, the distribution is negatively skewed.'
+      id: q16-5
+      questionGroup: q16
+- id: stats-node-17
+  nodeNumber: 17
+  title: Understanding Deviation from the Mean
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A fitness enthusiast recorded the number of steps taken over five days: 14,000, 17,000, 20,000, 23,000,
+        and 26,000 steps. The mean number of steps (x̄) is 20,000. Calculate the deviation (x - x̄) for each of the five daily
+        recordings.'
+      avatarIntro: Understanding how individual data points relate to the average is key in statistics. Let's calculate the
+        deviation for each value.
+      mathTool: null
+      finalAnswer: '-6,000, -3,000, 0, 3,000, 6,000 steps. (Note: The sum of these deviations is 0.)'
+      stepByStepGuideline:
+      - 'Identify the mean (x̄): x̄ = 20,000.'
+      - 'Calculate the deviation for each data point using the formula: Deviation = x - x̄.'
+      - 14,000 - 20,000 = -6,000
+      - 17,000 - 20,000 = -3,000
+      - 20,000 - 20,000 = 0
+      - 23,000 - 20,000 = 3,000
+      - 26,000 - 20,000 = 6,000
+      id: q17-1
+      questionGroup: q17
+    - problemText: 'Five temperature readings (°C) were taken from a specialized storage unit: 40, 45, 50, 55, 60. The average
+        temperature (mean) for this data set is 50°C. Identify which readings have a positive deviation and list those readings.'
+      mathTool: null
+      finalAnswer: The readings with a positive deviation are 55°C and 60°C.
+      stepByStepGuideline:
+      - Recall that a positive deviation occurs when the data value (x) is greater than the mean (x̄).
+      - The mean (x̄) is 50°C.
+      - 'Check each reading against the mean: 40 < 50 (Negative), 45 < 50 (Negative), 50 = 50 (Zero), 55 > 50 (Positive),
+        60 > 50 (Positive).'
+      - The values with positive deviations are 55 and 60.
+      id: q17-2
+      questionGroup: q17
+    - problemText: Explain the fundamental mathematical property that guarantees the sum of all deviations (Σ(x - x̄)) for
+        any given data set will always equal zero.
+      mathTool: null
+      finalAnswer: The sum of all deviations is zero because the mean (x̄) is the central balance point of the data. By definition,
+        the mean is calculated such that the total distance of all values below the mean exactly cancels out the total distance
+        of all values above the mean.
+      stepByStepGuideline:
+      - 'Define the deviation: Deviation measures the distance and direction of a data point from the mean.'
+      - 'Define the mean: The arithmetic mean is the point in a distribution where the total ''pull'' of the data points below
+        it equals the total ''pull'' of the data points above it.'
+      - 'Conclusion: Since negative deviations (values below the mean) perfectly balance positive deviations (values above
+        the mean), their sum must be zero.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: 'The number of goals scored by a hockey team in five games were: 4, 8, 10, 12, 16. The mean number of goals
+        (x̄) is 10. Calculate the squared deviation (x - x̄)² for each game score.'
+      mathTool: null
+      finalAnswer: 36, 4, 0, 4, 36
+      stepByStepGuideline:
+      - 'Identify the mean (x̄): x̄ = 10.'
+      - 'Calculate the deviation (x - x̄) for each score: -6, -2, 0, 2, 6.'
+      - 'Square each deviation:'
+      - (-6)² = 36
+      - (-2)² = 4
+      - (0)² = 0
+      - (2)² = 4
+      - (6)² = 36
+      id: q17-4
+      questionGroup: q17
+    - problemText: When calculating the variance and standard deviation, why is it necessary to square the individual deviations
+        (x - x̄) before averaging them?
+      mathTool: null
+      finalAnswer: We square the deviations because the sum of the raw deviations (x - x̄) is always zero. Squaring ensures
+        that all resulting values are positive, preventing the positive and negative deviations from cancelling each other
+        out. This allows us to calculate a meaningful measure of the total spread or variability within the data set.
+      stepByStepGuideline:
+      - 'State the problem: The raw deviations sum to zero (Σ(x - x̄) = 0).'
+      - 'Explain the solution: Squaring converts all negative deviations into positive values.'
+      - 'State the result: By making all deviations positive, we can accurately measure the total magnitude of the spread
+        of the data points away from the mean.'
+      id: q17-5
+      questionGroup: q17
+- id: stats-node-19
+  nodeNumber: 19
+  title: Interpreting Standard Deviation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Two courier companies track their delivery times over a month. SpeedyTrack reports a standard deviation
+        of 6.5 minutes, while DependaGo reports a standard deviation of 1.8 minutes. Which company offers more consistent
+        and reliable delivery service?
+      avatarIntro: Standard deviation helps us understand how spread out data is. Let's compare the consistency of these two
+        courier services!
+      mathTool: null
+      finalAnswer: DependaGo, because the smaller standard deviation (σ=1.8 minutes) indicates that their delivery times are
+        clustered closer to the mean, making their service more consistent and reliable.
+      stepByStepGuideline:
+      - Recall that standard deviation (σ) measures the spread of data around the mean.
+      - A smaller σ indicates less variation, meaning the data points are highly consistent.
+      - 'Compare the two values: 1.8 minutes (DependaGo) is significantly smaller than 6.5 minutes (SpeedyTrack).'
+      - 'Conclusion: DependaGo is the more consistent and reliable service.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: In a standardized math exam, the scores for Class A had a standard deviation of 8 points, and the scores
+        for Class B had a standard deviation of 22 points. Which class showed greater variability in student performance?
+      mathTool: null
+      finalAnswer: Class B, because the larger standard deviation (σ=22 points) signifies a wider spread of scores, indicating
+        inconsistent performance and high variability.
+      stepByStepGuideline:
+      - 'Understand the relationship between variability and standard deviation: greater variability means a larger σ.'
+      - 'Compare the standard deviations: 22 points (Class B) is much larger than 8 points (Class A).'
+      - The class with the larger σ has the scores that are most spread out from the average score.
+      - 'Conclusion: Class B exhibited greater variability.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: A quality control manager measures the diameter of newly manufactured bolts and finds the standard deviation
+        (σ) is 2.5 mm. Interpret what this relatively small standard deviation suggests about the quality and consistency
+        of the manufacturing process.
+      mathTool: null
+      finalAnswer: The small standard deviation (σ=2.5 mm) suggests that the bolt diameters are tightly grouped around the
+        mean specification, indicating high consistency and good quality control in the manufacturing process.
+      stepByStepGuideline:
+      - Identify the magnitude of the standard deviation (2.5 mm is relatively small for manufacturing tolerances).
+      - 'Interpret the meaning of a small σ: the data points are close to the mean.'
+      - 'Apply this to the context: the diameters of the bolts do not vary much from the desired average diameter.'
+      - 'Conclusion: The process is consistent and produces uniform results (high quality).'
+      id: q19-3
+      questionGroup: q19
+    - problemText: Two athletes practice a reaction drill. Athlete X achieves a standard deviation of 0.05 seconds in their
+        times, while Athlete Y achieves 0.12 seconds. Compare the reliability of the two athletes based on these standard
+        deviation values.
+      mathTool: null
+      finalAnswer: Athlete X is more reliable. A standard deviation of 0.05 seconds is significantly smaller than 0.12 seconds,
+        meaning Athlete X's reaction times are more consistent and less spread out than Athlete Y's.
+      stepByStepGuideline:
+      - Reliability is directly related to consistency, which is measured by a smaller standard deviation.
+      - 'Compare the two standard deviations: 0.05 s vs 0.12 s.'
+      - Identify the athlete with the smaller σ (Athlete X).
+      - 'Conclusion: Athlete X''s performance varies less, making them more reliable.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: Over a month, the temperature readings inside a specialized laboratory showed a standard deviation of 18°C.
+        What does this large standard deviation indicate about the stability of the laboratory environment?
+      mathTool: null
+      finalAnswer: The large standard deviation (σ=18°C) indicates that the temperature readings are highly unstable and widely
+        variable, meaning the actual temperature deviated significantly and frequently from the average temperature during
+        the measurement period.
+      stepByStepGuideline:
+      - Identify that 18°C represents a large standard deviation, especially for a controlled laboratory setting.
+      - 'Interpret the meaning of a large σ: the data points are widely spread out from the mean.'
+      - 'Apply this to the context: the temperature is not stable and fluctuates greatly.'
+      - 'Conclusion: The environment is highly unstable and inconsistent.'
+      id: q19-5
+      questionGroup: q19
+- id: stats-node-20
+  nodeNumber: 20
+  title: Characteristics of Normal Distribution
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Describe two essential geometric characteristics of the Normal Distribution curve, focusing on its visual
+        appearance and symmetry.
+      avatarIntro: Welcome! Understanding the basic characteristics of the normal distribution is crucial for working with
+        statistical data. Let's start with its shape!
+      mathTool: null
+      finalAnswer: The curve is bell-shaped and perfectly symmetrical around its center (the mean).
+      stepByStepGuideline:
+      - Identify the common name for the shape of the normal distribution (bell curve).
+      - Identify the property relating the left and right sides of the curve (symmetry).
+      - State that the curve is bell-shaped and symmetrical about the central axis (mean).
+      id: q20-1
+      questionGroup: q20
+    - problemText: If the distribution of human weights in a large, representative sample follows a perfect normal curve,
+        and the mean weight is 75 kg, what must be the values of the median and the mode for this data set?
+      mathTool: null
+      finalAnswer: Both the median and the mode must also be 75 kg, because in a normal distribution, Mean = Median = Mode.
+      stepByStepGuideline:
+      - Recall the relationship between the measures of central tendency (mean, median, mode) in a normal distribution.
+      - State that these three measures are equal.
+      - Conclude that if the mean is 75 kg, the median and mode must also be 75 kg.
+      id: q20-2
+      questionGroup: q20
+    - problemText: The Normal Distribution curve is often described as having tails that approach, but never actually touch,
+        the horizontal axis (x-axis). What does the extreme rarity of data points far from the mean indicate in a variable
+        like standardized test scores?
+      mathTool: null
+      finalAnswer: It indicates that scores extremely far from the average (either very high or very low) have a frequency
+        approaching zero, meaning they are extremely rare events.
+      stepByStepGuideline:
+      - Define what the height of the curve represents (frequency or density).
+      - Explain that as the curve approaches the x-axis, the frequency approaches zero.
+      - Relate this low frequency to the occurrence of extreme values in the data set.
+      id: q20-3
+      questionGroup: q20
+    - problemText: Why is the highest point of the Normal Distribution curve always located exactly at the center (where Mean
+        = Median = Mode)?
+      mathTool: null
+      finalAnswer: The highest point (the peak) represents the mode, which is the value that occurs most frequently. In a
+        normal distribution, the most frequent value clusters around the center/mean.
+      stepByStepGuideline:
+      - Identify what the peak of a frequency distribution represents (the mode/highest frequency).
+      - Recall that in a normal distribution, data naturally clusters around the center.
+      - Explain that since the mean, median, and mode are equal and represent the center, the highest frequency must occur
+        at that central point.
+      id: q20-4
+      questionGroup: q20
+    - problemText: Give three distinct, measurable variables that are commonly modeled using the Normal Distribution in the
+        real world.
+      mathTool: null
+      finalAnswer: 'Acceptable examples include: human heights, IQ scores, blood pressure, birth weights, standardized test
+        scores, or measurement errors.'
+      stepByStepGuideline:
+      - Recall that the normal distribution applies to variables influenced by many small, random factors.
+      - Identify measurable human or natural attributes that typically cluster around an average.
+      - List three distinct examples (e.g., human heights, IQ scores, and shoe sizes).
+      id: q20-5
+      questionGroup: q20
+- id: stats-node-21
+  nodeNumber: 21
+  title: The Empirical Rule (68-95-99.7)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: IQ scores are normally distributed with a mean (μ) of 100 and a standard deviation (σ) of 15. According
+        to the Empirical Rule, what percentage of people have an IQ score greater than 115?
+      avatarIntro: Welcome! Let us apply the Empirical Rule, also known as the 68-95-99.7 rule, to analyze real-world data
+        distributions.
+      mathTool: null
+      finalAnswer: 16%
+      stepByStepGuideline:
+      - 'Identify the given values: μ = 100, σ = 15.'
+      - The value 115 corresponds to μ + σ (100 + 15 = 115).
+      - The Empirical Rule states that 68% of data falls within μ ± σ.
+      - 'Calculate the percentage of data outside this range: 100% - 68% = 32%.'
+      - Due to symmetry, this remaining 32% is split equally between the upper tail (above μ + σ) and the lower tail (below
+        μ - σ).
+      - 'Calculate the percentage above 115: 32% / 2 = 16%.'
+      id: q21-1
+      questionGroup: q21
+    - problemText: The heights of adult males in a city are normally distributed with a mean (μ) of 170 cm and a standard
+        deviation (σ) of 5 cm. Calculate the interval defined by μ ± 2σ.
+      mathTool: null
+      finalAnswer: 160 cm to 180 cm
+      stepByStepGuideline:
+      - Identify the mean (μ = 170 cm) and standard deviation (σ = 5 cm).
+      - 'Calculate the value of 2σ: 2 × 5 cm = 10 cm.'
+      - 'Calculate the lower bound (μ - 2σ): 170 cm - 10 cm = 160 cm.'
+      - 'Calculate the upper bound (μ + 2σ): 170 cm + 10 cm = 180 cm.'
+      - The interval is 160 cm to 180 cm. (This interval contains approximately 95% of the data.)
+      id: q21-2
+      questionGroup: q21
+    - problemText: A study of adult weights shows a normal distribution with a mean (μ) of 75 kg and a standard deviation
+        (σ) of 10 kg. What percentage of the weights are expected to fall within 3 standard deviations of the mean?
+      mathTool: null
+      finalAnswer: 99.7%
+      stepByStepGuideline:
+      - Recall the Empirical Rule (68-95-99.7).
+      - The rule states that approximately 68% of data falls within 1 standard deviation (μ ± σ).
+      - Approximately 95% of data falls within 2 standard deviations (μ ± 2σ).
+      - Approximately 99.7% of data falls within 3 standard deviations (μ ± 3σ).
+      - Therefore, 99.7% of the weights are expected to fall within 3 standard deviations of the mean.
+      id: q21-3
+      questionGroup: q21
+    - problemText: The time taken for students to complete a specific task is normally distributed with a mean (μ) of 50 minutes
+        and a standard deviation (σ) of 8 minutes. Calculate the range of times that contains approximately 95% of all students.
+      mathTool: null
+      finalAnswer: 34 minutes to 66 minutes
+      stepByStepGuideline:
+      - Identify that 95% of data corresponds to the interval μ ± 2σ.
+      - Identify the mean (μ = 50 minutes) and standard deviation (σ = 8 minutes).
+      - 'Calculate the value of 2σ: 2 × 8 minutes = 16 minutes.'
+      - 'Calculate the lower bound (μ - 2σ): 50 - 16 = 34 minutes.'
+      - 'Calculate the upper bound (μ + 2σ): 50 + 16 = 66 minutes.'
+      - The range is 34 minutes to 66 minutes.
+      id: q21-4
+      questionGroup: q21
+    - problemText: Scores on a short quiz follow a normal distribution with a mean (μ) of 20 points and a standard deviation
+        (σ) of 3 points. What percentage of scores would you expect to find between 17 points and 23 points?
+      mathTool: null
+      finalAnswer: 68%
+      stepByStepGuideline:
+      - 'Identify the given interval boundaries: 17 points and 23 points.'
+      - Determine the relationship between the boundaries and the mean (μ = 20) and standard deviation (σ = 3).
+      - 'Lower bound: 17 = 20 - 3, which is μ - σ.'
+      - 'Upper bound: 23 = 20 + 3, which is μ + σ.'
+      - The interval is μ ± σ (1 standard deviation from the mean).
+      - According to the Empirical Rule, 68% of data falls within one standard deviation of the mean.
+      id: q21-5
+      questionGroup: q21
+- id: stats-node-22
+  nodeNumber: 22
+  title: Probability Estimates Using Normal Distribution
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: The weights of apples harvested from a farm are normally distributed with a mean (μ) of 450 grams and a
+        standard deviation (σ) of 25 grams. If 1000 apples are randomly selected, estimate the number of apples expected to
+        weigh more than 500 grams.
+      avatarIntro: Ready to apply the Empirical Rule? Remember that standard deviations mark clear boundaries for probability
+        estimates in a normal distribution.
+      mathTool: null
+      finalAnswer: ≈ 25 apples
+      stepByStepGuideline:
+      - Identify the mean (μ) = 450 g and standard deviation (σ) = 25 g.
+      - 'Determine the relationship between the boundary (500 g) and the mean: 500 = 450 + 2(25). This is μ + 2σ.'
+      - Using the Empirical Rule, 95% of data falls within μ ± 2σ. Therefore, the proportion falling outside this range is
+        100% - 95% = 5%.
+      - Since the distribution is symmetric, the proportion above μ + 2σ is half of 5%, which is 2.5% or 0.025.
+      - 'Calculate the expected count: 0.025 × 1000 = 25.'
+      id: q22-1
+      questionGroup: q22
+    - problemText: A particular airline tracks its flight delays, which are normally distributed with a mean (μ) delay of
+        12 minutes and a standard deviation (σ) of 3 minutes. What is the probability that a randomly selected flight delay
+        is between 9 minutes and 18 minutes? Express your answer as a decimal probability.
+      mathTool: null
+      finalAnswer: '0.815'
+      stepByStepGuideline:
+      - Identify the mean (μ) = 12 minutes and standard deviation (σ) = 3 minutes.
+      - 'Determine the standard deviation boundaries for the interval [9, 18]: 9 = 12 - 3 (μ - 1σ) and 18 = 12 + 2(3) (μ +
+        2σ).'
+      - The interval spans from μ - 1σ to μ + 2σ.
+      - Using the Empirical Rule, the area from μ - σ to μ is 68% / 2 = 34%.
+      - The area from μ to μ + 2σ is 95% / 2 = 47.5%.
+      - 'Total probability = 34% + 47.5% = 81.5%. Expressed as a decimal: 0.815.'
+      id: q22-2
+      questionGroup: q22
+    - problemText: The lifetime of a certain type of industrial fan follows a normal distribution with a mean (μ) of 5000
+        hours and a standard deviation (σ) of 200 hours. What proportion of these fans is expected to have a lifetime less
+        than 4400 hours? Express your answer as a percentage.
+      mathTool: null
+      finalAnswer: 0.15%
+      stepByStepGuideline:
+      - Identify the mean (μ) = 5000 hours and standard deviation (σ) = 200 hours.
+      - 'Determine the relationship between the boundary (4400 hours) and the mean: 4400 = 5000 - 3(200). This is μ - 3σ.'
+      - Using the Empirical Rule, 99.7% of data falls within μ ± 3σ. The proportion outside this range is 100% - 99.7% = 0.3%.
+      - Since the distribution is symmetric, the proportion less than μ - 3σ is half of 0.3%, which is 0.15%.
+      id: q22-3
+      questionGroup: q22
+    - problemText: IQ scores are normally distributed with a mean (μ) of 100 and a standard deviation (σ) of 15. If 200 people
+        are randomly selected, approximately how many are expected to have an IQ score between 115 and 130?
+      mathTool: null
+      finalAnswer: ≈ 27 people
+      stepByStepGuideline:
+      - Identify the mean (μ) = 100 and standard deviation (σ) = 15.
+      - 'Determine the standard deviation boundaries for the interval [115, 130]: 115 = 100 + 15 (μ + 1σ) and 130 = 100 +
+        2(15) (μ + 2σ).'
+      - The interval required is between μ + σ and μ + 2σ.
+      - Using the Empirical Rule, 68% falls within μ ± σ and 95% falls within μ ± 2σ.
+      - The proportion between μ + σ and μ + 2σ is calculated as (95% - 68%) / 2 = 27% / 2 = 13.5% or 0.135.
+      - 'Calculate the expected count: 0.135 × 200 = 27.'
+      id: q22-4
+      questionGroup: q22
+    - problemText: The results of a standardized history test are normally distributed with a mean (μ) score of 70 points
+        and a standard deviation (σ) of 5 points. What is the probability that a student scores between 60 and 85 points?
+        Express your answer as a decimal rounded to four places.
+      mathTool: null
+      finalAnswer: '0.9735'
+      stepByStepGuideline:
+      - Identify the mean (μ) = 70 and standard deviation (σ) = 5.
+      - 'Determine the standard deviation boundaries for the interval [60, 85]: 60 = 70 - 2(5) (μ - 2σ) and 85 = 70 + 3(5)
+        (μ + 3σ).'
+      - The required interval spans from μ - 2σ to μ + 3σ.
+      - Area from μ - 2σ to μ is 95% / 2 = 47.5%.
+      - Area from μ to μ + 3σ is 99.7% / 2 = 49.85%.
+      - Total probability = 47.5% + 49.85% = 97.35%.
+      - 'Express as a decimal: 0.9735.'
+      id: q22-5
+      questionGroup: q22

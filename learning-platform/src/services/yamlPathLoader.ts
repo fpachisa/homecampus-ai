@@ -1,7 +1,8 @@
 /**
  * YAML Path Loader
  *
- * Loads unified path configurations from YAML files in curriculum-content/paths/
+ * Loads unified path configurations from YAML files in curriculum-content/
+ * Organized by grade and subject (e.g., curriculum-content/S3/Maths/)
  * Provides type-safe loading with validation
  *
  * NEW: Supports single unified path files (Foundation → Integration → Application)
@@ -16,8 +17,64 @@ interface YAMLPathConfig {
 }
 
 class YAMLPathLoader {
-  private basePathUrl = '/curriculum-content/paths';
+  private basePathUrl = '/curriculum-content';
   private cache: Map<string, PathNode[]> = new Map();
+
+  /**
+   * Decode Unicode escape sequences in strings
+   * Converts "\uXXXX" to actual Unicode characters
+   * Example: "\u222a" → "∪", "\u2229" → "∩"
+   */
+  private decodeUnicodeEscapes(obj: any): any {
+    if (typeof obj === 'string') {
+      // Replace all \uXXXX sequences with actual Unicode characters
+      return obj.replace(/\\u([0-9a-fA-F]{4})/g, (match, hex) => {
+        return String.fromCharCode(parseInt(hex, 16));
+      });
+    }
+
+    if (Array.isArray(obj)) {
+      return obj.map(item => this.decodeUnicodeEscapes(item));
+    }
+
+    if (obj !== null && typeof obj === 'object') {
+      const decoded: any = {};
+      for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          decoded[key] = this.decodeUnicodeEscapes(obj[key]);
+        }
+      }
+      return decoded;
+    }
+
+    return obj;
+  }
+
+  /**
+   * Parse category string to extract grade and subject
+   * Format: {grade}-{subject}-{topic} (e.g., "s3-math-trigonometry")
+   * Returns: { grade: "S3", subject: "Maths", category: "s3-math-trigonometry" }
+   */
+  private parseCategoryPath(category: string): { grade: string; subject: string; category: string } {
+    const parts = category.split('-');
+
+    if (parts.length < 2) {
+      throw new Error(`Invalid category format: ${category}. Expected format: {grade}-{subject}-{topic}`);
+    }
+
+    const grade = parts[0]; // e.g., "s3"
+    const subject = parts[1]; // e.g., "math"
+
+    // Map to directory structure
+    const gradeDir = grade.toUpperCase(); // s3 → S3
+    const subjectDir = subject === 'math' ? 'Maths' : subject.charAt(0).toUpperCase() + subject.slice(1); // math → Maths
+
+    return {
+      grade: gradeDir,
+      subject: subjectDir,
+      category: category
+    };
+  }
 
   /**
    * Load unified path nodes from single YAML file (NEW)
@@ -32,7 +89,9 @@ class YAMLPathLoader {
     }
 
     try {
-      const yamlPath = `${this.basePathUrl}/${category}/${category}.yaml`;
+      // Parse category to get grade/subject directory structure
+      const { grade, subject } = this.parseCategoryPath(category);
+      const yamlPath = `${this.basePathUrl}/${grade}/${subject}/${category}.yaml`;
 
       console.log(`📂 Loading unified path: ${yamlPath}`);
 
@@ -43,7 +102,10 @@ class YAMLPathLoader {
       }
 
       const yamlText = await response.text();
-      const config = YAML.parse(yamlText) as YAMLPathConfig;
+      const rawConfig = YAML.parse(yamlText) as YAMLPathConfig;
+
+      // Decode Unicode escape sequences (e.g., \u222a → ∪)
+      const config = this.decodeUnicodeEscapes(rawConfig) as YAMLPathConfig;
 
       if (!config || !config.nodes || !Array.isArray(config.nodes)) {
         throw new Error(`Invalid YAML structure in ${yamlPath}: missing or invalid 'nodes' array`);
@@ -75,7 +137,9 @@ class YAMLPathLoader {
     console.warn(`⚠️ loadPath() is deprecated. Use loadUnifiedPath() instead.`);
 
     try {
-      const yamlPath = `${this.basePathUrl}/${category}/${category}-${difficulty}.yaml`;
+      // Parse category to get grade/subject directory structure
+      const { grade, subject } = this.parseCategoryPath(category);
+      const yamlPath = `${this.basePathUrl}/${grade}/${subject}/${category}-${difficulty}.yaml`;
 
       console.log(`📂 Loading legacy path config: ${yamlPath}`);
 
@@ -89,7 +153,10 @@ class YAMLPathLoader {
       const yamlText = await response.text();
 
       // Parse YAML
-      const config = YAML.parse(yamlText) as YAMLPathConfig;
+      const rawConfig = YAML.parse(yamlText) as YAMLPathConfig;
+
+      // Decode Unicode escape sequences (e.g., \u222a → ∪)
+      const config = this.decodeUnicodeEscapes(rawConfig) as YAMLPathConfig;
 
       if (!config || !config.nodes || !Array.isArray(config.nodes)) {
         throw new Error(`Invalid YAML structure in ${yamlPath}: missing or invalid 'nodes' array`);
@@ -262,7 +329,9 @@ class YAMLPathLoader {
    */
   async pathExists(category: string, difficulty: PathDifficulty): Promise<boolean> {
     try {
-      const yamlPath = `${this.basePathUrl}/${category}/${category}-${difficulty}.yaml`;
+      // Parse category to get grade/subject directory structure
+      const { grade, subject } = this.parseCategoryPath(category);
+      const yamlPath = `${this.basePathUrl}/${grade}/${subject}/${category}-${difficulty}.yaml`;
       const response = await fetch(yamlPath, { method: 'HEAD' });
       return response.ok;
     } catch {

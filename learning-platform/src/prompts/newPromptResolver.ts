@@ -29,6 +29,7 @@ import { S3_MATH_EXPONENTS_SUBTOPICS, S3_MATH_EXPONENTS_CONFIG } from '../prompt
 import { S3_MATH_SURDS_RADICALS_SUBTOPICS, S3_MATH_SURDS_RADICALS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
 import { S3_MATH_STATISTICS_SUBTOPICS, S3_MATH_STATISTICS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
 import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS, S3_MATH_RELATIONS_FUNCTIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
+import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS, S3_MATH_COORDINATE_GEOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
 
 // OLD: Still in legacy format (to be migrated)
 // None remaining!
@@ -237,6 +238,11 @@ export class NewPromptResolver {
     if (topicId.startsWith('s3-math-relations-')) {
       const subtopic = S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS[topicId as any];
       return { subtopic, global: S3_MATH_RELATIONS_FUNCTIONS_CONFIG };
+    }
+
+    if (topicId.startsWith('s3-math-coord-geom-')) {
+      const subtopic = S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS[topicId as any];
+      return { subtopic, global: S3_MATH_COORDINATE_GEOMETRY_CONFIG };
     }
 
     throw new Error(`Topic ${topicId} not found`);

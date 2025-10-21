@@ -1,0 +1,1693 @@
+# Trigonometry - Unified Practice Path
+# Organized into Foundation → examPractice → Application layers
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+  # ═══════════════════════════════════════════════════════════
+  # FOUNDATION LAYER : Individual Concepts
+  # ═══════════════════════════════════════════════════════════
+  - id: trig-node-1
+    nodeNumber: 1
+    title: Trigonometric Ratios
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide a right-angled triangle with side lengths, and ask to find the sine, cosine, and tangent. BUT ask only for one ratio at a time."
+      contexts: []
+      difficulty: easy
+      mathTool: "rightTriangle"
+  - id: trig-node-2
+    nodeNumber: 2
+    title: Finding Side Lengths
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Given a right triangle with one angle and one side length, ask to find the length of another side using sine, cosine, or tangent."
+      contexts: []
+      difficulty: easy
+      mathTool: "rightTriangle"
+  - id: trig-node-3
+    nodeNumber: 3
+    title: Finding Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide a right triangle with two side lengths, and ask to find one of the non-right angles using inverse trigonometric functions."
+      contexts: []
+      difficulty: easy
+      mathTool: "rightTriangle"
+  - id: trig-node-4
+    nodeNumber: 4
+    title: Mixed Problems
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Mix of problems finding ratios, side lengths, and angles in right triangles using basic trigonometric functions."
+      contexts: []
+      difficulty: easy
+      mathTool: "rightTriangle"
+  - id: trig-node-5
+    nodeNumber: 5
+    title: Special Trigonometric Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Problems involving special angles (30°, 45°, 60°) to find trigonometric ratios, side lengths, or angles in right triangles."
+      contexts: []
+      difficulty: easy
+      mathTool: "rightTriangle"
+  - id: trig-node-6
+    nodeNumber: 6
+    title: Real-World Applications
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Simple real-world scenarios (like ladders, ramps, or heights) requiring the use of basic trigonometric ratios to solve."
+      contexts: ["construction", "navigation", "architecture"]
+      difficulty: easy
+      mathTool: "rightTriangle"
+  - id: trig-node-7
+    nodeNumber: 7
+    title: Elevation and Depression Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Problems involving angles of elevation and depression, requiring the use of basic trigonometric ratios to find heights or distances."
+      contexts: ["navigation", "surveying"]
+      difficulty: easy
+      mathTool: "elevationDepression"
+  - id: trig-node-8
+    nodeNumber: 8
+    title: 3-D Visualization
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Simple 3D problems involving right triangles in three-dimensional space, requiring the use of basic trigonometric ratios and pythagorean theorem. "
+      contexts: []
+      difficulty: easy
+      mathTool: "cuboid"
+  - id: trig-node-9
+    nodeNumber: 9
+    title: True Bearing Calculations
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide basic bearings diagram and ask to calculate true bearings in different scenarios."
+      contexts: []
+      difficulty: easy
+      mathTool: "bearings"
+  - id: trig-node-10
+    nodeNumber: 10
+    title: Back Bearings and Reverse directions
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Problems involving calculating back bearings and reverse directions"
+      contexts: []
+      difficulty: easy
+      mathTool: "bearings"
+  - id: trig-node-11
+    nodeNumber: 11
+    title: True Bearing Navigation Problems
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Simple navigation problems involving true bearings, distances, and directions"
+      contexts: ["navigation", "maritime", "aviation"]
+      difficulty: easy
+      mathTool: "bearings"
+  - id: trig-node-12
+    nodeNumber: 12
+    title: Calculations using Obtuse Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide an obtuse triangle and ask to find sine, cosine and tangent of the obtuse angle. Only one ratio at a time."
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-13
+    nodeNumber: 13
+    title: Word Problems with Obtuse Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Simple word problems involving obtuse angles in real-world scenarios, requiring the use of trigonometric ratios and properties of triangles"
+      contexts: ["architecture", "engineering"]
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-14
+    nodeNumber: 14
+    title: Area of Triangles using Trigonometry
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide a triangle and ask to calculate area that requires using ½ab sin C"
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-15
+    nodeNumber: 15
+    title: Finding Side Lengths/Angles using area
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Given the area of a triangle and some side lengths/angles, ask to find a missing side length or angle using the area formula ½ab sin C"
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-16
+    nodeNumber: 16
+    title: Mixed Problems on Area of Triangles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Mix of problems finding area, side lengths, and angles in triangles using the area formula ½ab sin C"
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-17
+    nodeNumber: 17
+    title: Sine Rule Basics
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide a triangle with two angles and one side, and ask to find a missing side using the Sine Rule."
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-18
+    nodeNumber: 18
+    title: Sine Rule Basics - Finding Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide a triangle with two sides and one angle, and ask to find a missing angle using the Sine Rule."
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-19
+    nodeNumber: 19
+    title: Sine Rule Mixed Problems
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Real world scenarios requiring the use of the Sine Rule to find missing sides or angles in triangles."
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-20
+    nodeNumber: 20
+    title: Cosine Rule Basics
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide a triangle with two sides and the included angle, and ask to find the third side using the Cosine Rule."
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-21
+    nodeNumber: 21
+    title: Cosine Rule Basics - Finding Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Provide a triangle with all three sides, and ask to find one of the angles using the Cosine Rule."
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+  - id: trig-node-22
+    nodeNumber: 22
+    title: Mix of Cosine and Sine Rule
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Mix of problems requiring the use of both the Sine Rule and Cosine Rule to find missing sides or angles in triangles. But don't reveal which rule to use."
+      contexts: []
+      difficulty: easy
+      mathTool: "generalTriangle"
+
+  # ═══════════════════════════════════════════════════════════
+  # examPractice LAYER (Nodes 8-11): Combined Concepts
+  # ═══════════════════════════════════════════════════════════
+
+  - id: trig-node-23
+    nodeNumber: 23
+    title: Trig Ratios of Exterior Angles
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Triangle ABC with extended line to point D, forming an exterior angle"
+        - "Given: One side length and one trig ratio (e.g., AC = 26 cm, sin∠BCA = 12/13)"
+        - "Find: sin, cos, or tan of the EXTERIOR angle (e.g., ∠ACD)"
+        - "Only ask for ONE trig ratio at a time (sin OR cos OR tan of the exterior angle)"
+      contexts: []
+      difficulty: easy
+      mathTool: "extendedLineTriangle"
+
+  - id: trig-node-24
+    nodeNumber: 24
+    title: Multiple Angles of Depression
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Observer at top of cliff/building sees two objects (boats, cars, etc.) at different angles of depression. Given the height and both angles, find the distance between the two objects."
+        - "Example: Person at cliff top sees two boats. Angles of depression are 62° and 36°. Height is 130m. Find distance between boats."
+      contexts: ["navigation", "surveying", "maritime"]
+      difficulty: easy
+      mathTool: "multipleDepressionAngles"
+
+  - id: trig-node-25
+    nodeNumber: 25
+    title: Quadrilateral Multi-Step Problems
+    layer: foundation
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      problemDescription:
+        - "Four points lying on horizontal ground forming a quadrilateral (e.g., PQRS). Given: two sides, three angles at various vertices, and one diagonal."
+        - "Example: Points P, Q, R, S on horizontal ground. PQ = 250m, SR = 285m, ∠QPR = 36°, ∠PSR = 47°, ∠SPR = 70°."
+        - "Ask various questions like (but only one at a time): (a) finding diagonal length using sine/cosine rule, (b) finding other side lengths, (c) calculating triangle areas using ½ab sin C, (d) finding perpendicular distances/shortest distance."
+      contexts: []
+      difficulty: easy
+      mathTool: "quadrilateral"
+
+  - id: trig-node-26
+    nodeNumber: 26
+    title: "Exam Practice: Quadrilateral PQRS"
+    layer: examPractice
+    problemsRequired: 4
+    prerequisites: []
+    descriptor:
+      # This is a pre-written exam-style question - NOT AI generated
+      aiGeneratedQuestions: false
+      difficulty: medium
+
+      # Pre-written questions from actual exam paper
+      preWrittenQuestions:
+        - id: "q26-part-a"
+          questionGroup: "q26"
+          problemText: "Points P, Q, R, S lie on a horizontal ground. PQ = 250 m, SR = 285 m, ∠QPR = 36°, ∠PSR = 47° and ∠SPR = 70°. Calculate:<br><br>(a) the length of PR."
+          avatarIntro: "Let's work through this comprehensive quadrilateral problem from an actual exam. We'll tackle each part step by step."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-26-pqrs.svg"
+          # Pre-written answer and solution (optional - if omitted, AI will solve)
+          finalAnswer: "222 m"
+          stepByStepGuideline:
+            - "Step 1: In triangle $PSR$, we know $SR = 285$ m, $\\angle PSR = 47^\\circ$, and $\\angle SPR = 70^\\circ$"
+            - "Step 2: Find the third angle: $\\angle SRP = 180^\\circ - 47^\\circ - 70^\\circ = 63^\\circ$"
+            - "Step 3: Apply the sine rule: $\\frac{PR}{\\sin(\\angle PSR)} = \\frac{SR}{\\sin(\\angle SPR)}$"
+            - "Step 4: Substitute values: $\\frac{PR}{\\sin(47^\\circ)} = \\frac{285}{\\sin(70^\\circ)}$"
+            - "Step 5: Solve for $PR$: $PR = \\frac{285 \\times \\sin(47^\\circ)}{\\sin(70^\\circ)} = 221.7$ m"
+            - "Step 6: Round to 3 significant figures: $PR = 222$ m"
+
+        - id: "q26-part-b"
+          questionGroup: "q26"
+          problemText: "Points P, Q, R, S lie on a horizontal ground. PQ = 250 m, SR = 285 m, ∠QPR = 36°, ∠PSR = 47° and ∠SPR = 70°. Calculate:<br><br>(b) the length of QR."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-26-pqrs.svg"
+          # Pre-written answer and solution (builds on part a)
+          finalAnswer: "148 m"
+          stepByStepGuideline:
+            - "Step 1: From part (a), we found $PR = 222$ m. We also know $PQ = 250$ m and $\\angle QPR = 36^\\circ$"
+            - "Step 2: In triangle $PQR$, we have two sides and the included angle, so we use the cosine rule"
+            - "Step 3: Apply cosine rule: $QR^2 = PQ^2 + PR^2 - 2(PQ)(PR)\\cos(\\angle QPR)$"
+            - "Step 4: Substitute values: $QR^2 = 250^2 + 222^2 - 2(250)(222)\\cos(36^\\circ)$"
+            - "Step 5: Calculate: $QR^2 = 62500 + 49284 - 111000 \\times 0.809 = 21985$"
+            - "Step 6: Take square root: $QR = \\sqrt{21985} = 148.3$ m"
+            - "Step 7: Round to 3 significant figures: $QR = 148$ m"
+
+        - id: "q26-part-c"
+          questionGroup: "q26"
+          problemText: "Points P, Q, R, S lie on a horizontal ground. PQ = 250 m, SR = 285 m, ∠QPR = 36°, ∠PSR = 47° and ∠SPR = 70°. Calculate:<br><br>(c) the area of triangle PSR."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-26-pqrs.svg"
+          # Pre-written answer and solution (uses results from part a)
+          finalAnswer: "28200 m²"
+          stepByStepGuideline:
+            - "Step 1: First, we need to find $PS$. In triangle $PSR$, find the third angle: $\\angle PRS = 180^\\circ - 47^\\circ - 70^\\circ = 63^\\circ$"
+            - "Step 2: Use sine rule to find $PS$: $\\frac{PS}{\\sin(\\angle PRS)} = \\frac{SR}{\\sin(\\angle SPR)}$"
+            - "Step 3: Substitute values: $\\frac{PS}{\\sin(63^\\circ)} = \\frac{285}{\\sin(70^\\circ)}$"
+            - "Step 4: Solve for $PS$: $PS = \\frac{285 \\times \\sin(63^\\circ)}{\\sin(70^\\circ)} = \\frac{285 \\times 0.891}{0.940} = 270$ m"
+            - "Step 5: Now use area formula with two sides and included angle at $P$: Area $= \\frac{1}{2} \\times PS \\times PR \\times \\sin(\\angle SPR)$"
+            - "Step 6: From part (a), $PR = 222$ m. Substitute: Area $= \\frac{1}{2} \\times 270 \\times 222 \\times \\sin(70^\\circ)$"
+            - "Step 7: Calculate: Area $= \\frac{1}{2} \\times 59940 \\times 0.9397 = 28156$ m²"
+            - "Step 8: Round to 3 significant figures: Area $= 28200$ m²"
+
+        - id: "q26-part-d"
+          questionGroup: "q26"
+          problemText: "Points P, Q, R, S lie on a horizontal ground. PQ = 250 m, SR = 285 m, ∠QPR = 36°, ∠PSR = 47° and ∠SPR = 70°. Calculate:<br><br>(d) the shortest distance from Q to PR."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-26-pqrs.svg"
+          # Pre-written answer and solution
+          finalAnswer: "147 m"
+          stepByStepGuideline:
+            - "Step 1: The shortest distance from point $Q$ to line $PR$ is the perpendicular distance, which forms a right angle with $PR$"
+            - "Step 2: In triangle $PQR$, we can drop a perpendicular from $Q$ to line $PR$. Let's call this perpendicular height $h$"
+            - "Step 3: Using trigonometry in the right triangle formed: $h = PQ \\times \\sin(\\angle QPR)$"
+            - "Step 4: We know $PQ = 250$ m and $\\angle QPR = 36^\\circ$"
+            - "Step 5: Substitute values: $h = 250 \\times \\sin(36^\\circ)$"
+            - "Step 6: Calculate: $h = 250 \\times 0.5878 = 146.95$ m"
+            - "Step 7: Round to 3 significant figures: Shortest distance $= 147$ m"
+
+  - id: trig-node-27
+    nodeNumber: 27
+    title: "Bearings and Elevation"
+    layer: examPractice
+    problemsRequired: 6
+    prerequisites: []
+    descriptor:
+      # This is a pre-written exam-style question - NOT AI generated
+      aiGeneratedQuestions: false
+      difficulty: medium
+
+      # Pre-written questions from actual exam paper
+      preWrittenQuestions:
+        - id: "q27-part-a-i"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. Calculate:<br><br> (a) the bearing of A from C."
+          avatarIntro: "Let's work through this bearings and elevation problem from an actual exam. We have points on level ground with a building, and we'll solve each part systematically."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-27-dabc.svg"
+          finalAnswer: "255°"
+          stepByStepGuideline:
+          - "Step 1: AB is due east. ∠CAB = 15°, so the direction of AC is 15° above the east direction."
+          - "Step 2: A bearing is measured clockwise from North. A line 15° above East corresponds to a bearing of 90° − 15° = 075° from A to C."
+          - "Step 3: The reverse direction (from C to A) is 180° opposite: 075° + 180°."
+          - "Step 4: Hence the bearing of A from C is 255°."
+
+        - id: "q27-part-a-ii"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. Calculate:<br><br>(b) length AC."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-27-dabc.svg"
+          finalAnswer: "25.9 m (to 3 s.f.)"
+          stepByStepGuideline:
+          -  "Step 1: Triangle ACB is right-angled at B with AB = 25 m and ∠CAB = 15°."
+          -  "Step 2: Use cosine on ∠CAB: cos 15° = AB / AC."
+          -  "Step 3: Rearrange: AC = AB / cos 15°."
+          -  "Step 4: Substitute: AC = 25 / cos 15° = 25.8819… m."
+          -  "Step 5: Round to 3 s.f.: AC = 25.9 m."
+
+        - id: "q27-part-a-iii"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. Calculate:<br><br>(c) length DC."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-27-dabc.svg"
+          finalAnswer: "13.6 m (to 3 s.f.)"
+          stepByStepGuideline:
+          - "Step 1: In △ADC, the included angle at A between AD and AC is ∠DAC = 27°."
+          - "Step 2: Use the Cosine Rule: DC² = AD² + AC² − 2(AD)(AC)cos27°."
+          - "Step 3: Insert AD = 30 m and AC = 25.8819… m."
+          - "Step 4: Compute: DC = √[30² + 25.8819² − 2(30)(25.8819)cos27°] = 13.646… m."
+          - "Step 5: Round to 3 s.f.: DC = 13.6 m."
+
+        - id: "q27-part-a-iv"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. Calculate:<br><br>(d) the shortest distance from D to AC."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-27-dabc.svg"
+          finalAnswer: "13.6 m (to 3 s.f.)"
+          stepByStepGuideline:
+          - "Step 1: The shortest distance from D to AC is the perpendicular from D to AC."
+          - "Step 2: At A, the angle between AD and AC is 27°, so this perpendicular is the opposite side to 27° in △(A, foot, D)."
+          - "Step 3: Therefore distance = AD × sin 27°."
+          - "Step 4: Substitute AD = 30 m: distance = 30 × sin 27° = 13.6197… m."
+          - "Step 5: Round to 3 s.f.: shortest distance = 13.6 m."
+
+        - id: "q27-part-b-i"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. <br><br>DH is a building. Point H is vertically above D. The angle of elevation of H from A is 9°. Calculate:<br><br>(e) the height of the building."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-27-dabc.svg"
+          finalAnswer: "4.75 m (to 3 s.f.)"
+          stepByStepGuideline:
+          - "Step 1: H is vertically above D; from A the horizontal ground distance to D is AD = 30 m."
+          - "Step 2: The angle of elevation of H from A is 9°."
+          - "Step 3: In right triangle A–D–H: tan 9° = DH / AD."
+          - "Step 4: Hence DH = AD × tan 9° = 30 × tan 9° = 4.7515… m."
+          - "Step 5: Round to 3 s.f.: height of the building = 4.75 m."
+
+        - id: "q27-part-b-ii"
+          questionGroup: "q27"
+          problemText: "In the diagram, D, C, B and A are points on level ground. B is due east of A. ∠DAC = 27°, ∠CAB = 15° and ∠CBA = 90°. AD = 30 m and AB = 25 m. <br><br>DH is a building. Point H is vertically above D. The angle of elevation of H from A is 9°. Calculate:<br><br>(f) the greatest possible angle of elevation of H from a point on AC."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-27-dabc.svg"
+          finalAnswer: "19.2° (to 3 s.f.)"
+          stepByStepGuideline:
+          - "Step 1: For a fixed height DH, the elevation angle from a point on AC is largest when the horizontal distance to D is smallest."
+          - "Step 2: The smallest distance from D to AC is the perpendicular distance found in (a)(iv): 13.6197… m."
+          - "Step 3: Let X be that closest point on AC. Then tan θ_max = DH / XD = DH / (13.6197…)."
+          - "Step 4: Substitute DH = 4.7515… m: θ_max = arctan(4.7515… / 13.6197…)."
+          - "Step 5: Calculate: θ_max = 19.232…°, so the greatest possible angle of elevation ≈ 19.2°."
+
+  - id: trig-node-28
+    nodeNumber: 28
+    title: "Exam Practice: Right Triangle and Area Bearings"
+    layer: examPractice
+    problemsRequired: 6
+    prerequisites: []
+    descriptor:
+      # This is a pre-written exam-style question - NOT AI generated
+      aiGeneratedQuestions: false
+      difficulty: medium
+
+      # Pre-written questions from actual exam paper
+      preWrittenQuestions:
+        - id: "q28-part-1-a"
+          questionGroup: "q28a"
+          problemText: "In the diagram below, ∠DBC = 90°, ∠ACD = 60°, CD = 8 cm, AB = 9 cm, and ABC is a straight line. Find:<br><br>(a) the length of BC."
+          avatarIntro: "This is a multi-part exam question involving a right triangle and bearings. We'll go through each part step by step."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-28-part-1.svg"
+          finalAnswer: "4 cm"
+          stepByStepGuideline:
+            - "Step 1: Identify the relevant triangle to find BC, which is the right-angled triangle △DBC."
+            - "Step 2: In △DBC, we are given the hypotenuse CD = 8 cm and the angle ∠DCB = 60°. The side BC is adjacent to this angle."
+            - "Step 3: Use the cosine trigonometric ratio, which relates the adjacent side, the hypotenuse, and the angle: cos(θ) = Adjacent/Hypotenuse."
+            - "Step 4: Substitute the known values into the formula: cos(60°) = BC/8."
+            - "Step 5: Solve for BC. Since cos(60°) = 0.5, the equation becomes 0.5 = BC/8."
+            - "Step 6: Therefore, BC = 8 × 0.5 = 4 cm."
+
+        - id: "q28-part-1-b"
+          questionGroup: "q28a"
+          problemText: "In the diagram below, ∠DBC = 90°, ∠ACD = 60°, CD = 8 cm, AB = 9 cm, and ABC is a straight line. Find:<br><br>(b) the area of triangle ACD."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-28-part-1.svg"
+          finalAnswer: "26√3 cm²"
+          stepByStepGuideline:
+            - "Step 1: The formula for the area of a triangle is 1/2 × base × height."
+            - "Step 2: For △ACD, we can consider AC as the base. The corresponding height is the perpendicular distance from D to the line AC."
+            - "Step 3: Since ∠DBC = 90°, the line segment DB is the height of △ACD."
+            - "Step 4: First, calculate the length of the base AC. Since ABC is a straight line, AC = AB + BC = 9 cm + 4 cm = 13 cm."
+            - "Step 5: Next, calculate the height DB using the right-angled triangle △DBC. DB is the side opposite to the 60° angle."
+            - "Step 6: Use the sine trigonometric ratio: sin(θ) = Opposite/Hypotenuse. So, sin(60°) = DB/8."
+            - "Step 7: Solve for DB. Since sin(60°) = √3/2, we have DB = 8 × (√3/2) = 4√3 cm."
+            - "Step 8: Finally, calculate the area of △ACD: Area = 1/2 × AC × DB = 1/2 × 13 × 4√3 = 26√3 cm²."
+
+        - id: "q28-part-2-a"
+          questionGroup: "q28b"
+          problemText: "During a softball match, 4 players are standing at position A, B, C and D on the outfield as shown.<br><br> C is due north of D. AB = 4m, BC = 3m, CD = 2m, ∠BAD = 78° and ∠BCD = 102°. Find:<br><br>(a) the bearing of B from C."
+          avatarIntro: "Let's continue with the next part of this exam question involving bearings and distances between players on a softball field."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-28-part-2.jpg"
+          finalAnswer: "282°"
+          stepByStepGuideline:
+            - "Step 1: The bearing of B from C is the angle measured clockwise from the North line at C to the line segment CB."
+            - "Step 2: It's given that C is due North of D, so the line segment CD points South from C. The bearing of D from C is 180°."
+            - "Step 3: The angle ∠BCD is given as 102°. This is the angle between the South line (CD) and the line segment CB."
+            - "Step 4: To find the full bearing, we measure clockwise from North. The angle from North to the South line is 180°. The angle from the South line clockwise to CB is 102°. Therefore, the total bearing is 180° + 102° = 282°."
+
+        - id: "q28-part-2-b"
+          questionGroup: "q28b"
+          problemText: "During a softball match, 4 players are standing at position A, B, C and D on the outfield as shown.<br><br> C is due north of D. AB = 4m, BC = 3m, CD = 2m, ∠BAD = 78° and ∠BCD = 102°. Find:<br><br>(b) the distance BD."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-28-part-2.jpg"
+          finalAnswer: "3.94 m (to 3 s.f.)"
+          stepByStepGuideline:
+            - "Step 1: To find the distance BD, consider the triangle △BCD."
+            - "Step 2: We know two sides, BC = 3 m and CD = 2 m, and the included angle ∠BCD = 102°."
+            - "Step 3: Apply the Cosine Rule: BD² = BC² + CD² - 2(BC)(CD)cos(∠BCD)."
+            - "Step 4: Substitute the known values into the formula: BD² = 3² + 2² - 2(3)(2)cos(102°)."
+            - "Step 5: Calculate the value: BD² = 9 + 4 - 12(-0.2079...) = 13 + 2.4949... = 15.4949..."
+            - "Step 6: Take the square root to find the length of BD: BD = √15.4949... ≈ 3.9363 m."
+            - "Step 7: Round the result to 3 significant figures: BD ≈ 3.94 m."
+
+        - id: "q28-part-2-c"
+          questionGroup: "q28b"
+          problemText: "During a softball match, 4 players are standing at position A, B, C and D on the outfield as shown.<br><br> C is due north of D. AB = 4m, BC = 3m, CD = 2m, ∠BAD = 78° and ∠BCD = 102°. Find:<br><br>(c) the angle ADB"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-28-part-2.jpg"
+          finalAnswer: "83.7° (to 1 d.p.)"
+          stepByStepGuideline:
+            - "Step 1: To find ∠ADB, consider the triangle △ABD."
+            - "Step 2: From the question and part (b), we know the side lengths AB = 4 m, BD ≈ 3.9363 m, and the angle ∠BAD = 78°."
+            - "Step 3: Apply the Sine Rule to △ABD: AB/sin(∠ADB) = BD/sin(∠BAD)."
+            - "Step 4: Substitute the known values: 4/sin(∠ADB) = 3.9363/sin(78°)."
+            - "Step 5: Rearrange the formula to solve for sin(∠ADB): sin(∠ADB) = (4 × sin(78°))/3.9363."
+            - "Step 6: Calculate the value: sin(∠ADB) ≈ (4 × 0.9781)/3.9363 ≈ 0.9940."
+            - "Step 7: Find the angle by taking the inverse sine: ∠ADB = arcsin(0.9940) ≈ 83.699°."
+            - "Step 8: Round the answer to 1 decimal place: ∠ADB ≈ 83.7°."
+
+        - id: "q28-part-2-d"
+          questionGroup: "q28b"
+          problemText: "During a softball match, 4 players are standing at position A, B, C and D on the outfield as shown.<br><br> C is due north of D. AB = 4m, BC = 3m, CD = 2m, ∠BAD = 78° and ∠BCD = 102°.<br><br>(d) A player had to run from position B to a point along AD to catch a fly ball thrown from D to A. Find the shortest distance the player had to run."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-28-part-2.jpg"
+          finalAnswer: "3.91 m (to 3 s.f.)"
+          stepByStepGuideline:
+            - "Step 1: The shortest distance from position B to the line segment AD is the perpendicular distance from point B to the line AD."
+            - "Step 2: Consider the triangle △ABD. The shortest distance is the height of the triangle from vertex B to the base AD."
+            - "Step 3: Let the shortest distance be 'h'. We can use the formula for the area of a triangle involving sine: Area = 1/2 * a * b * sin(C)."
+            - "Step 4: In △ABD, let 'h' be the height from B to AD. We can use the right-angled triangle formed by this height. The hypotenuse is AB = 4 m, and the angle is ∠BAD = 78°."
+            - "Step 5: Use the sine ratio: sin(∠BAD) = Opposite/Hypotenuse = h/AB."
+            - "Step 6: Substitute the values: sin(78°) = h/4."
+            - "Step 7: Solve for h: h = 4 × sin(78°)."
+            - "Step 8: Calculate the distance: h ≈ 4 × 0.9781 ≈ 3.9126 m."
+            - "Step 9: Round the result to 3 significant figures: The shortest distance is 3.91 m."
+
+  - id: trig-node-29
+    nodeNumber: 29
+    title: "Sin, Cos, Tan"
+    layer: examPractice
+    problemsRequired: 4
+    prerequisites: []
+    descriptor:
+      # This is a pre-written exam-style question - NOT AI generated
+      aiGeneratedQuestions: false
+      difficulty: medium
+
+      # Pre-written questions from actual exam paper
+      preWrittenQuestions:
+        - id: "q29-part-1-a"
+          questionGroup: "q29a"
+          problemText: "Given that sin θ = √5/7 and 90° ≤ θ ≤ 180°, find the exact value of tan θ in the simplest form."
+          avatarIntro: "Let's solve this trigonometric problem step by step, starting with the given information about sin θ."
+          diagramSvg: ""
+          finalAnswer: "-√55/22"
+          stepByStepGuideline:
+            - "Step 1: Determine the quadrant for the angle θ. Since 90° ≤ θ ≤ 180°, the angle θ lies in Quadrant II."
+            - "Step 2: Recall the signs of trigonometric functions in Quadrant II. Sine is positive, while cosine and tangent are negative. This means our final answer for tan θ must be negative."
+            - "Step 3: Use the Pythagorean identity sin²θ + cos²θ = 1 to find the value of cos θ."
+            - "Step 4: Substitute the given value of sin θ: (√5/7)² + cos²θ = 1."
+            - "Step 5: Simplify the equation: 5/49 + cos²θ = 1, which gives cos²θ = 1 - 5/49 = 44/49."
+            - "Step 6: Solve for cos θ: cos θ = ±√(44/49) = ±√44 / 7 = ±(2√11)/7."
+            - "Step 7: Since θ is in Quadrant II, cos θ is negative. Therefore, cos θ = -(2√11)/7."
+            - "Step 8: Use the identity tan θ = sin θ / cos θ to find tan θ."
+            - "Step 9: Substitute the values of sin θ and cos θ: tan θ = (√5/7) / (-(2√11)/7)."
+            - "Step 10: Simplify the expression by cancelling the 7s: tan θ = -√5 / (2√11)."
+            - "Step 11: Rationalize the denominator by multiplying the numerator and denominator by √11: tan θ = - (√5 × √11) / (2√11 × √11) = -√55 / (2 × 11)."
+            - "Step 12: The final simplified exact value is tan θ = -√55/22."
+
+        - id: "q29-part-2-a"
+          questionGroup: "q29b"
+          problemText: "The diagram shows triangle ABC, with AB = 3 cm and AC = 8 cm. The area of the triangle is 6√3 cm², and ∠ABC is obtuse. Find:<br><br>(a) the exact value of sin BÂC;"
+          avatarIntro: "This question involves using the area formula for a triangle and the cosine rule. Let's start with the first part."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-29-part-2.png"
+          finalAnswer: "√3/2"
+          stepByStepGuideline:
+            - "Step 1: Recall the formula for the area of a triangle using two sides and the included angle: Area = (1/2)ab sin(C)."
+            - "Step 2: Apply this formula to △ABC with sides AB = 3, AC = 8, and the included angle ∠BAC. The area is given as 6√3."
+            - "Step 3: Substitute the known values into the formula: 6√3 = (1/2) × 3 × 8 × sin(∠BAC)."
+            - "Step 4: Simplify the right-hand side of the equation: 6√3 = 12 × sin(∠BAC)."
+            - "Step 5: Solve for sin(∠BAC) by dividing both sides by 12: sin(∠BAC) = (6√3) / 12."
+            - "Step 6: Simplify the fraction to get the exact value: sin(∠BAC) = √3 / 2."
+
+        - id: "q29-part-2-b"
+          questionGroup: "q29b"
+          problemText: "The diagram shows triangle ABC, with AB = 3 cm and AC = 8 cm. The area of the triangle is 6√3 cm², and ∠ABC is obtuse. Find:<br><br>(b) the exact value of cos BÂC;"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-29-part-2.png"
+          finalAnswer: "1/2"
+          stepByStepGuideline:
+            - "Step 1: From part (a), we found that sin(∠BAC) = √3/2. This implies that ∠BAC could be 60° or 120°."
+            - "Step 2: We are given that ∠ABC is obtuse (i.e., ∠ABC > 90°). The sum of angles in a triangle is 180°."
+            - "Step 3: If ∠BAC were 120°, then the sum of just two angles (∠BAC + ∠ABC) would be greater than 120° + 90° = 210°, which is impossible for a triangle. Therefore, ∠BAC must be acute."
+            - "Step 4: Since ∠BAC is acute and sin(∠BAC) = √3/2, the angle must be 60°."
+            - "Step 5: The exact value of cos(60°) is 1/2. So, cos(∠BAC) = 1/2."
+            - "Alternative Step 4: Use the Pythagorean identity sin²(θ) + cos²(θ) = 1. So, (√3/2)² + cos²(∠BAC) = 1."
+            - "Alternative Step 5: This gives 3/4 + cos²(∠BAC) = 1, so cos²(∠BAC) = 1/4. Therefore, cos(∠BAC) = ±1/2. Since we deduced ∠BAC is acute, we choose the positive value."
+
+        - id: "q29-part-2-c"
+          questionGroup: "q29b"
+          problemText: "The diagram shows triangle ABC, with AB = 3 cm and AC = 8 cm. The area of the triangle is 6√3 cm², and ∠ABC is obtuse. Find:<br><br>(c) the length BC."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-29-part-2.png"
+          finalAnswer: "7 cm"
+          stepByStepGuideline:
+            - "Step 1: To find the length of side BC, we can use the Cosine Rule, as we know two sides (AB and AC) and the cosine of the included angle (∠BAC)."
+            - "Step 2: The Cosine Rule states: a² = b² + c² - 2bc cos(A). In our triangle, this is BC² = AB² + AC² - 2(AB)(AC)cos(∠BAC)."
+            - "Step 3: Substitute the known values: AB = 3, AC = 8, and cos(∠BAC) = 1/2 from part (b)."
+            - "Step 4: The equation becomes: BC² = 3² + 8² - 2(3)(8)(1/2)."
+            - "Step 5: Calculate the values: BC² = 9 + 64 - 24."
+            - "Step 6: Simplify the expression: BC² = 73 - 24 = 49."
+            - "Step 7: Take the square root to find the length: BC = √49 = 7."
+            - "Step 8: Therefore, the length of BC is 7 cm."
+
+  - id: trig-node-30
+    nodeNumber: 30
+    title: "Elevation, Bearings, and Triangle Properties"
+    layer: examPractice
+    problemsRequired: 6
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: medium
+      preWrittenQuestions:
+        - id: "q30-part-1-a"
+          questionGroup: "q30a"
+          problemText: "In the diagram below, BD is a vertical building and A is a point on the ground such that AD = 50 m. The angle of elevation of B from A is 60°.<br><br>(a) Find the height of the building."
+          avatarIntro: "This is a two-part question on angles of elevation. Let's start by finding the height of the building BD."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-30-part-1.png"
+          finalAnswer: "86.6 m"
+          stepByStepGuideline:
+            - "Step 1: Identify the relevant triangle, which is the right-angled triangle △ABD, with the right angle at D."
+            - "Step 2: We need to find the height BD, which is the side opposite the 60° angle. We are given the adjacent side AD = 50 m."
+            - "Step 3: Use the tangent trigonometric ratio: tan(θ) = Opposite/Adjacent."
+            - "Step 4: Substitute the values: tan(60°) = BD / 50."
+            - "Step 5: Solve for BD: BD = 50 × tan(60°)."
+            - "Step 6: Since tan(60°) = √3, the exact height is 50√3 m. Calculating this gives approximately 86.6025... m."
+            - "Step 7: Round the answer to 3 significant figures: height = 86.6 m."
+
+        - id: "q30-part-1-b"
+          questionGroup: "q30a"
+          problemText: "In the diagram below, BD is a vertical building and A is a point on the ground such that AD = 50 m. The angle of elevation of B from A is 60°. C is a point on the ground such that CD = 30 m.<br><br>(b) Find the angle of elevation of the top of the building from C."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-30-part-1.png"
+          finalAnswer: "70.9°"
+          stepByStepGuideline:
+            - "Step 1: The angle of elevation from C is ∠BCD. Consider the right-angled triangle △BCD."
+            - "Step 2: We know the opposite side BD = 50√3 m (from part a) and the adjacent side CD = 30 m."
+            - "Step 3: Use the tangent trigonometric ratio: tan(∠BCD) = Opposite/Adjacent = BD / CD."
+            - "Step 4: Substitute the values: tan(∠BCD) = (50√3) / 30."
+            - "Step 5: Calculate the value of the angle: ∠BCD = arctan((50√3)/30) ≈ 70.893°."
+            - "Step 6: Round the answer to 1 decimal place as shown in the answer key: ∠BCD = 70.9°."
+
+        - id: "q30-part-2-a"
+          questionGroup: "q30b"
+          problemText: "In the diagram below, A, B and C are points on level ground. A is due east of C, AB = 21.7 m, BC = 15 m and ∠ABC = 28°.<br><br>Calculate<br>(a) the length of AC;"
+          avatarIntro: "Here's a multi-part question on bearings and triangle calculations. First, let's find the length of AC."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-30-part-2.png"
+          finalAnswer: "11.0 m"
+          stepByStepGuideline:
+            - "Step 1: To find the length of AC, we use the Cosine Rule in △ABC, as we have two sides (AB and BC) and the included angle (∠ABC)."
+            - "Step 2: The Cosine Rule is: AC² = AB² + BC² - 2(AB)(BC)cos(∠ABC)."
+            - "Step 3: Substitute the given values: AC² = 21.7² + 15² - 2(21.7)(15)cos(28°)."
+            - "Step 4: Calculate the terms: AC² = 470.89 + 225 - 651cos(28°) ≈ 695.89 - 574.80."
+            - "Step 5: Simplify: AC² ≈ 121.09."
+            - "Step 6: Take the square root: AC = √121.09 ≈ 11.004 m."
+            - "Step 7: Round to 3 significant figures: AC = 11.0 m."
+
+        - id: "q30-part-2-b"
+          questionGroup: "q30b"
+          problemText: "In the diagram below, A, B and C are points on level ground. A is due east of C, AB = 21.7 m, BC = 15 m and ∠ABC = 28°.<br><br>Calculate<br>(b) the bearing of B from A;"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-30-part-2.png"
+          finalAnswer: "230°"
+          stepByStepGuideline:
+            - "Step 1: The bearing of B from A is the angle measured clockwise from the North line at A."
+            - "Step 2: Since A is due east of C, the line segment AC points West from A. The bearing of C from A is 270°."
+            - "Step 3: We need to find the angle ∠BAC using the Sine Rule in △ABC: BC/sin(∠BAC) = AC/sin(∠ABC)."
+            - "Step 4: Rearrange and substitute values: sin(∠BAC) = (BC × sin(∠ABC)) / AC = (15 × sin(28°)) / 11.004 ≈ 0.640."
+            - "Step 5: Find the angle: ∠BAC = arcsin(0.640) ≈ 39.79°."
+            - "Step 6: From the diagram, the line AB is 'above' the West line (AC) in a counter-clockwise sense. The bearing is found by subtracting this angle from the bearing of West: Bearing = 270° - 39.79° ≈ 230.21°."
+            - "Step 7: Round: The bearing is 230°."
+
+        - id: "q30-part-2-c"
+          questionGroup: "q30b"
+          problemText: "In the diagram below, A, B and C are points on level ground. A is due east of C, AB = 21.7 m, BC = 15 m and ∠ABC = 28°.<br><br>Calculate<br>(c) the area of △ABC;"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-30-part-2.png"
+          finalAnswer: "76.4 m²"
+          stepByStepGuideline:
+            - "Step 1: Use the formula for the area of a triangle given two sides and the included angle: Area = (1/2)ab sin(C)."
+            - "Step 2: In △ABC, the area is (1/2) × AB × BC × sin(∠ABC)."
+            - "Step 3: Substitute the known values: Area = (1/2) × 21.7 × 15 × sin(28°)."
+            - "Step 4: Calculate the result: Area ≈ 0.5 × 21.7 × 15 × 0.4695 ≈ 76.41 m²."
+            - "Step 5: Round the answer to 3 significant figures: Area = 76.4 m²."
+
+        - id: "q30-part-2-d"
+          questionGroup: "q30b"
+          problemText: "In the diagram below, A, B and C are points on level ground. A is due east of C, AB = 21.7 m, BC = 15 m and ∠ABC = 28°.<br><br>Calculate<br>(d) the shortest distance from C to AB."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-30-part-2.png"
+          finalAnswer: "7.04 m"
+          stepByStepGuideline:
+            - "Step 1: The shortest distance from a point to a line is the perpendicular distance. Let this height be 'h' from vertex C to the base AB."
+            - "Step 2: We can imagine a right-angled triangle where BC is the hypotenuse, and 'h' is the side opposite to the angle ∠ABC."
+            - "Step 3: This logic is incorrect. The height is from C to AB. The angle ∠ABC is not part of the right-angled triangle containing the height and hypotenuse AC or BC directly. We must use the area."
+            - "Step 4: Use the formula Area = (1/2) × base × height. We use AB as the base."
+            - "Step 5: From part (c), Area ≈ 76.41 m². The base AB = 21.7 m."
+            - "Step 6: 76.41 = (1/2) × 21.7 × h."
+            - "Step 7: Solve for h: h = (2 × 76.41) / 21.7 ≈ 7.042 m."
+            - "Step 8: Round to 3 significant figures: The shortest distance is 7.04 m."
+  - id: trig-node-31
+    nodeNumber: 31
+    title: "Right-Angled Triangle Properties and Trigonometry"
+    layer: examPractice
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: medium
+      preWrittenQuestions:
+        - id: "q31-part-1-a"
+          questionGroup: "q31a"
+          problemText: "In triangle ABC, AB = 6 cm, AC = 8 cm and BC = 10 cm. BC is produced to D and CD = 5 cm.<br><br>(a) Justify why ∠ BAC is a right angle."
+          avatarIntro: "This question combines several trigonometry concepts, starting with the converse of Pythagoras' Theorem. Let's get started."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-31-part-1.png"
+          finalAnswer: "The side lengths satisfy the converse of Pythagoras' Theorem (6² + 8² = 10²)."
+          stepByStepGuideline:
+            - "Step 1: State the converse of Pythagoras' Theorem: If a² + b² = c², where c is the longest side of a triangle, then the angle opposite side c is a right angle."
+            - "Step 2: Identify the sides of △ABC: AB = 6, AC = 8, and the longest side is BC = 10."
+            - "Step 3: Calculate the sum of the squares of the two shorter sides: AB² + AC² = 6² + 8² = 36 + 64 = 100."
+            - "Step 4: Calculate the square of the longest side: BC² = 10² = 100."
+            - "Step 5: Since AB² + AC² = BC², the condition for the converse of Pythagoras' Theorem is met."
+            - "Step 6: Therefore, the angle opposite the longest side BC, which is ∠BAC, must be a right angle (90°)."
+
+        - id: "q31-part-1-bi"
+          questionGroup: "q31a"
+          problemText: "In triangle ABC, AB = 6 cm, AC = 8 cm and BC = 10 cm. BC is produced to D and CD = 5 cm.<br><br>(b) State the value of<br>(i) tan ∠ ABC,"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-31-part-1.png"
+          finalAnswer: "4/3"
+          stepByStepGuideline:
+            - "Step 1: Since △ABC is a right-angled triangle, we can use the SOH-CAH-TOA definitions."
+            - "Step 2: The tangent of an angle is the ratio of the Opposite side to the Adjacent side (tan θ = Opposite/Adjacent)."
+            - "Step 3: For angle ∠ABC, the opposite side is AC = 8 cm."
+            - "Step 4: The adjacent side is AB = 6 cm."
+            - "Step 5: Substitute the values into the ratio: tan(∠ABC) = 8 / 6."
+            - "Step 6: Simplify the fraction to its simplest form: tan(∠ABC) = 4/3."
+
+        - id: "q31-part-1-bii"
+          questionGroup: "q31a"
+          problemText: "In triangle ABC, AB = 6 cm, AC = 8 cm and BC = 10 cm. BC is produced to D and CD = 5 cm.<br><br>(b) State the value of<br>(ii) sin ∠ ACD."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-31-part-1.png"
+          finalAnswer: "3/5"
+          stepByStepGuideline:
+            - "Step 1: Recognize that B, C, and D lie on a straight line. This means that ∠ACB and ∠ACD are supplementary angles (they add up to 180°)."
+            - "Step 2: A property of sine for supplementary angles is that sin(180° - θ) = sin(θ). Therefore, sin(∠ACD) = sin(∠ACB)."
+            - "Step 3: Find the value of sin(∠ACB) using the right-angled triangle △ABC."
+            - "Step 4: The sine of an angle is the ratio of the Opposite side to the Hypotenuse (sin θ = Opposite/Hypotenuse)."
+            - "Step 5: For angle ∠ACB, the opposite side is AB = 6 cm, and the hypotenuse is BC = 10 cm."
+            - "Step 6: Substitute the values: sin(∠ACB) = 6 / 10."
+            - "Step 7: Simplify the fraction: sin(∠ACB) = 3/5. Therefore, sin(∠ACD) = 3/5."
+
+        - id: "q31-part-1-c"
+          questionGroup: "q31a"
+          problemText: "In triangle ABC, AB = 6 cm, AC = 8 cm and BC = 10 cm. BC is produced to D and CD = 5 cm.<br><br>(c) Find the area of triangle ACD."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-31-part-1.png"
+          finalAnswer: "12 cm²"
+          stepByStepGuideline:
+            - "Step 1: Use the formula for the area of a triangle: Area = (1/2)ab sin(C), where a and b are two sides and C is the included angle."
+            - "Step 2: For △ACD, we know the sides AC = 8 cm and CD = 5 cm. The included angle is ∠ACD."
+            - "Step 3: From part (b)(ii), we found that sin(∠ACD) = 3/5."
+            - "Step 4: Substitute these values into the area formula: Area = (1/2) × 8 × 5 × (3/5)."
+            - "Step 5: Simplify the expression: Area = 4 × 5 × (3/5) = 20 × (3/5)."
+            - "Step 6: Calculate the final area: Area = 12 cm²."
+
+        - id: "q31-part-1-d"
+          questionGroup: "q31a"
+          problemText: "In triangle ABC, AB = 6 cm, AC = 8 cm and BC = 10 cm. BC is produced to D and CD = 5 cm.<br><br>(d) What is the value of AD?"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-31-part-1.png"
+          finalAnswer: "√153 cm"
+          stepByStepGuideline:
+            - "Step 1: To find the length of a side given two sides and the included angle, use the Cosine Rule: a² = b² + c² - 2bc cos(A)."
+            - "Step 2: Apply the rule to △ACD to find AD: AD² = AC² + CD² - 2(AC)(CD)cos(∠ACD)."
+            - "Step 3: We need to find cos(∠ACD). Since ∠ACB and ∠ACD are supplementary, cos(∠ACD) = -cos(∠ACB)."
+            - "Step 4: Find cos(∠ACB) from the right-angled triangle △ABC. cos θ = Adjacent/Hypotenuse."
+            - "Step 5: For ∠ACB, the adjacent side is AC = 8 and the hypotenuse is BC = 10. So, cos(∠ACB) = 8/10 = 4/5."
+            - "Step 6: Therefore, cos(∠ACD) = -4/5."
+            - "Step 7: Substitute all known values into the Cosine Rule: AD² = 8² + 5² - 2(8)(5)(-4/5)."
+            - "Step 8: Calculate the terms: AD² = 64 + 25 - (80)(-4/5) = 89 - (-64)."
+            - "Step 9: Simplify the expression: AD² = 89 + 64 = 153."
+            - "Step 10: Therefore, AD = √153 cm, which is what we needed to show."
+
+  - id: trig-node-32
+    nodeNumber: 32
+    title: "Bearings, Triangle Rules, and 3D Trigonometry"
+    layer: examPractice
+    problemsRequired: 6
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: hard
+      preWrittenQuestions:
+        - id: "q32-part-1-a"
+          questionGroup: "q32a"
+          problemText: "A, B and C are points on level ground of a theme park. Point B is 9 m away and at a bearing of 065° from A. Point C is at a bearing of 340° from A and ∠ABC = 35°.<br><br>Calculate<br>(a) the bearing of C from B;"
+          avatarIntro: "This is a complex multi-part question involving bearings, triangle rules, and even a bit of 3D trigonometry. Let's break it down, starting with the first part."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-32-part-1.png"
+          finalAnswer: "280°"
+          stepByStepGuideline:
+            - "Step 1: First, find the back bearing of A from B. The bearing of B from A is 065°. The back bearing is 065° + 180° = 245°."
+            - "Step 2: The bearing of C from B is the angle measured clockwise from the North line at B to the line segment BC."
+            - "Step 3: This bearing can be found by adding the angle ∠ABC to the back bearing of A from B."
+            - "Step 4: Bearing of C from B = Bearing of A from B + ∠ABC = 245° + 35° = 280°."
+
+        - id: "q32-part-1-b"
+          questionGroup: "q32a"
+          problemText: "A, B and C are points on level ground of a theme park. Point B is 9 m away and at a bearing of 065° from A. Point C is at a bearing of 340° from A and ∠ABC = 35°.<br><br>Calculate<br>(b) ∠ ACB;"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-32-part-1.png"
+          finalAnswer: "60°"
+          stepByStepGuideline:
+            - "Step 1: First, we need to find the angle ∠BAC inside the triangle. This is the angle between the lines AB and AC."
+            - "Step 2: The angle can be calculated from the given bearings from point A. The total angle around a point is 360°."
+            - "Step 3: ∠BAC = 360° - (Bearing of C from A - Bearing of B from A) = 360° - (340° - 065°) = 360° - 275° = 85°."
+            - "Step 4: Now that we have two angles in △ABC (∠BAC = 85° and ∠ABC = 35°), we can find the third angle."
+            - "Step 5: The sum of angles in a triangle is 180°. So, ∠ACB = 180° - 85° - 35° = 60°."
+
+        - id: "q32-part-1-c"
+          questionGroup: "q32a"
+          problemText: "A, B and C are points on level ground of a theme park. Point B is 9 m away and at a bearing of 065° from A. Point C is at a bearing of 340° from A and ∠ABC = 35°.<br><br>Calculate<br>(c) the length of AC;"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-32-part-1.png"
+          finalAnswer: "5.96 m"
+          stepByStepGuideline:
+            - "Step 1: We can use the Sine Rule to find the length of AC, as we know all the angles and the length of the side opposite ∠ACB."
+            - "Step 2: The Sine Rule states: AC/sin(∠ABC) = AB/sin(∠ACB)."
+            - "Step 3: Substitute the known values: AC/sin(35°) = 9/sin(60°)."
+            - "Step 4: Rearrange the formula to solve for AC: AC = (9 × sin(35°)) / sin(60°)."
+            - "Step 5: Calculate the value: AC ≈ (9 × 0.5736) / 0.8660 ≈ 5.958 m."
+            - "Step 6: Round the answer to 3 significant figures: AC = 5.96 m."
+
+        - id: "q32-part-1-d"
+          questionGroup: "q32a"
+          problemText: "A, B and C are points on level ground of a theme park. Point B is 9 m away and at a bearing of 065° from A. Point C is at a bearing of 340° from A and ∠ABC = 35°.<br><br>Calculate<br>(d) the area of △ ABC."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-32-part-1.png"
+          finalAnswer: "26.7 m²"
+          stepByStepGuideline:
+            - "Step 1: Use the formula for the area of a triangle: Area = (1/2)ab sin(C), where C is the angle between sides a and b."
+            - "Step 2: We can use sides AB, AC and the included angle ∠BAC."
+            - "Step 3: Substitute the values: Area = (1/2) × AB × AC × sin(∠BAC) = (1/2) × 9 × 5.958... × sin(85°)."
+            - "Step 4: Calculate the result: Area ≈ 0.5 × 9 × 5.958 × 0.9962 ≈ 26.705 m²."
+            - "Step 5: Round the answer to 3 significant figures: Area = 26.7 m²."
+
+        - id: "q32-part-1-e"
+          questionGroup: "q32a"
+          problemText: "Alan walked from point B to C and stopped at a point D where AC = AD. Find the distance Alan walked."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-32-part-1.png"
+          finalAnswer: "4.39 m"
+          stepByStepGuideline:
+            - "Step 1: The phrasing implies Alan walked from B and stopped at a point D on the line segment BC. The condition is that △ACD is an isosceles triangle with AC = AD."
+            - "Step 2: Consider △ACD. We know AC ≈ 5.96 m, and from part (b), ∠ACD (which is the same as ∠ACB) is 60°."
+            - "Step 3: In an isosceles triangle, if one of the base angles is 60°, the other must also be 60°, making the triangle equilateral. Let's confirm using the Cosine Rule: AD² = AC² + CD² - 2(AC)(CD)cos(60°)."
+            - "Step 4: Since AD = AC, we get AC² = AC² + CD² - 2(AC)(CD)(0.5), which simplifies to 0 = CD² - AC × CD. This gives CD = AC."
+            - "Step 5: So, △ACD is equilateral, and CD = AC ≈ 5.96 m."
+            - "Step 6: Alan walked the distance BD. First, find the full length of BC using the Sine Rule: BC/sin(85°) = 9/sin(60°), which gives BC ≈ 10.35 m."
+            - "Step 7: The distance Alan walked is BD = BC - CD ≈ 10.35 - 5.96 = 4.39 m."
+
+        - id: "q32-part-1-f"
+          questionGroup: "q32a"
+          problemText: "Sue is at the top of a 6-metre tower at A and she spotted Alan standing at D. Find the angle of depression of Alan from Sue."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-32-part-1.png"
+          finalAnswer: "45.2°"
+          stepByStepGuideline:
+            - "Step 1: This is a right-angled triangle problem. Let S be Sue's position at the top of the tower. The triangle is △SAD, with a right angle at A."
+            - "Step 2: The height of the tower is the 'opposite' side, SA = 6 m. The horizontal distance is the 'adjacent' side, AD."
+            - "Step 3: From part (e), we found that AD = AC ≈ 5.958 m."
+            - "Step 4: The angle of depression from Sue to Alan is equal to the angle of elevation from Alan to Sue, which is the angle ∠SDA."
+            - "Step 5: Use the tangent ratio: tan(∠SDA) = Opposite/Adjacent = SA/AD."
+            - "Step 6: tan(∠SDA) = 6 / 5.958... ≈ 1.0069."
+            - "Step 7: Find the angle by taking the inverse tangent: ∠SDA = arctan(1.0069) ≈ 45.198°."
+            - "Step 8: Round the answer to 1 decimal place: The angle of depression is 45.2°."
+
+  - id: trig-node-33
+    nodeNumber: 33
+    title: "Triangle Properties and Area"
+    layer: examPractice
+    problemsRequired: 4
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: medium
+      preWrittenQuestions:
+        - id: "q33-part-1-a"
+          questionGroup: "q33a"
+          problemText: "The figure below shows triangle BCD in which point A lies on BD. It is given that ∠CDB = 60°, ∠CAB = 120°, AB = 7 cm and AC = 8 cm.<br><br>(a) Find the length of CD."
+          avatarIntro: "This question involves using angle properties on a straight line, identifying triangle types, and applying the Sine/Cosine and Area rules. Let's begin!"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-33-part-1.png"
+          finalAnswer: "8 cm"
+          stepByStepGuideline:
+            - "Step 1: Identify that points B, A, and D are on a straight line. Therefore, the angles on the line at point A, ∠CAB and ∠CAD, are supplementary (add up to 180°)."
+            - "Step 2: Calculate ∠CAD: ∠CAD = 180° - ∠CAB = 180° - 120° = 60°."
+            - "Step 3: Consider the triangle △ACD. We now know two angles: ∠CAD = 60° and ∠CDA (or ∠CDB) = 60°."
+            - "Step 4: The sum of angles in a triangle is 180°. Calculate the third angle, ∠ACD: ∠ACD = 180° - 60° - 60° = 60°."
+            - "Step 5: Since all three angles in △ACD are 60°, it is an equilateral triangle."
+            - "Step 6: In an equilateral triangle, all sides are equal in length. Since AC = 8 cm, it follows that CD = 8 cm."
+
+        - id: "q33-part-1-b"
+          questionGroup: "q33a"
+          problemText: "The figure below shows triangle BCD in which point A lies on BD. It is given that ∠CDB = 60°, ∠CAB = 120°, AB = 7 cm and AC = 8 cm.<br><br>(b) State the type of triangle ACD."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-33-part-1.png"
+          finalAnswer: "Equilateral triangle"
+          stepByStepGuideline:
+            - "Step 1: Recall the results from part (a). We calculated all three angles of △ACD."
+            - "Step 2: The angles are ∠CAD = 60°, ∠CDA = 60°, and ∠ACD = 60°."
+            - "Step 3: A triangle where all three interior angles are equal (and therefore all 60°) is defined as an equilateral triangle."
+
+        - id: "q33-part-1-c"
+          questionGroup: "q33a"
+          problemText: "The figure below shows triangle BCD in which point A lies on BD. It is given that ∠CDB = 60°, ∠CAB = 120°, AB = 7 cm and AC = 8 cm.<br><br>(c) Hence or otherwise, find the length of CB."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-33-part-1.png"
+          finalAnswer: "13 cm"
+          stepByStepGuideline:
+            - "Step 1: To find the length of CB, consider the triangle △ABC."
+            - "Step 2: We know the lengths of two sides, AB = 7 cm and AC = 8 cm, and the angle between them, ∠CAB = 120°."
+            - "Step 3: Apply the Cosine Rule, which states: a² = b² + c² - 2bc cos(A)."
+            - "Step 4: Substitute the values from △ABC: CB² = AB² + AC² - 2(AB)(AC)cos(∠CAB)."
+            - "Step 5: CB² = 7² + 8² - 2(7)(8)cos(120°)."
+            - "Step 6: Calculate the squares and the value of cos(120°) = -0.5: CB² = 49 + 64 - 112(-0.5)."
+            - "Step 7: Simplify the expression: CB² = 113 + 56 = 169."
+            - "Step 8: Take the square root to find the length of CB: CB = √169 = 13 cm."
+
+        - id: "q33-part-1-d"
+          questionGroup: "q33a"
+          problemText: "The figure below shows triangle BCD in which point A lies on BD. It is given that ∠CDB = 60°, ∠CAB = 120°, AB = 7 cm and AC = 8 cm.<br><br>(d) Find the area of triangle BCD leaving your answer in the form a√b cm²."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-33-part-1.png"
+          finalAnswer: "30√3 cm²"
+          stepByStepGuideline:
+            - "Step 1: The area of the large triangle △BCD can be found by calculating the area of the two smaller triangles, △ABC and △ACD, and adding them together."
+            - "Step 2: Calculate the area of △ABC using the formula Area = (1/2)ab sin(C): Area(△ABC) = (1/2) × AB × AC × sin(∠CAB)."
+            - "Step 3: Substitute the values: Area(△ABC) = (1/2) × 7 × 8 × sin(120°). Since sin(120°) = sin(60°) = √3/2, the area is (1/2) × 56 × (√3/2) = 14√3 cm²."
+            - "Step 4: Calculate the area of △ACD. Since it is an equilateral triangle with side length 8 cm, we can use the formula Area = (s²√3)/4."
+            - "Step 5: Substitute the side length s = 8: Area(△ACD) = (8²√3)/4 = (64√3)/4 = 16√3 cm²."
+            - "Step 6: Add the two areas to find the total area of △BCD: Area(△BCD) = Area(△ABC) + Area(△ACD) = 14√3 + 16√3."
+            - "Step 7: The final area is 30√3 cm²."
+
+  - id: trig-node-34
+    nodeNumber: 34
+    title: "Cosine Rule and Bearings with Quadratic Equation"
+    layer: examPractice
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: hard
+      preWrittenQuestions:
+        - id: "q34-part-1-a"
+          questionGroup: "q34a"
+          problemText: "The figure shows a point S which lies 36 km south of point L. The points P and Q are both 26 km from L. The bearing of Q from S is 025°. The points S, P and Q all lie on a straight line. It is given that SP = x km.<br><br>(a) Use the cosine rule, to derive the quadratic equation involving x."
+          avatarIntro: "This is a challenging multi-part question that connects the cosine rule with quadratic equations and bearings. Let's tackle it one step at a time."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-34-part-1.png"
+          finalAnswer: "x² − 65.25x + 620 = 0"
+          stepByStepGuideline:
+            - "Step 1: Identify the triangle to apply the Cosine Rule. Since the equation involves x (the length of SP), we should use △SLP."
+            - "Step 2: Identify the known sides and angles in △SLP. We have SL = 36 km, LP = 26 km, and SP = x km."
+            - "Step 3: Determine the angle ∠LSP. Since L is North of S, the line LS runs along the North-South line. The bearing of Q from S is 025°, which is the angle ∠LSQ. As S, P, and Q are collinear, ∠LSP = ∠LSQ = 25°."
+            - "Step 4: Apply the Cosine Rule to △SLP: LP² = SL² + SP² - 2(SL)(SP)cos(∠LSP)."
+            - "Step 5: Substitute the known values: 26² = 36² + x² - 2(36)(x)cos(25°)."
+            - "Step 6: Calculate the values: 676 = 1296 + x² - 72x(0.9063...)."
+            - "Step 7: Simplify the term with cos(25°): 676 = 1296 + x² - 65.254x."
+            - "Step 8: Rearrange the equation into the standard quadratic form ax² + bx + c = 0. This gives x² - 65.25x + 1296 - 676 = 0."
+            - "Step 9: Finalize the equation: x² - 65.25x + 620 = 0."
+
+        - id: "q34-part-1-bi"
+          questionGroup: "q34a"
+          problemText: "The figure shows a point S which lies 36 km south of point L...<br><br>(b)(i) Solve the equation x² − 65.25x + 620 = 0, giving your answers correct to 3 significant figures."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-34-part-1.png"
+          finalAnswer: "x = 11.5 or x = 53.7"
+          stepByStepGuideline:
+            - "Step 1: Use the quadratic formula x = [-b ± √(b² - 4ac)] / 2a to solve for x."
+            - "Step 2: Identify the coefficients: a = 1, b = -65.25, c = 620."
+            - "Step 3: Substitute the values into the formula: x = [ -(-65.25) ± √((-65.25)² - 4(1)(620)) ] / 2(1)."
+            - "Step 4: Calculate the discriminant (the part inside the square root): b² - 4ac = 4257.5625 - 2480 = 1777.5625."
+            - "Step 5: Calculate the square root of the discriminant: √1777.5625 ≈ 42.161."
+            - "Step 6: Calculate the two possible values for x: x₁ = (65.25 + 42.161) / 2 and x₂ = (65.25 - 42.161) / 2."
+            - "Step 7: x₁ ≈ 107.411 / 2 ≈ 53.7055. x₂ ≈ 23.089 / 2 ≈ 11.5445."
+            - "Step 8: Round both answers to 3 significant figures: x = 53.7 or x = 11.5."
+
+        - id: "q34-part-1-bii"
+          questionGroup: "q34a"
+          problemText: "The figure shows a point S which lies 36 km south of point L...<br><br>(ii) Hence, find the length of SQ."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-34-part-1.png"
+          finalAnswer: "53.7 km"
+          stepByStepGuideline:
+            - "Step 1: The equation x² - 65.25x + 620 = 0 gives the possible distances from S along the line SQ for a point that is 26 km from L."
+            - "Step 2: Both P and Q satisfy this condition. So the two solutions, 11.5 km and 53.7 km, represent the lengths SP and SQ."
+            - "Step 3: From the diagram, point P lies between S and Q, which means SP is the shorter distance and SQ is the longer distance."
+            - "Step 4: Therefore, SP ≈ 11.5 km and SQ ≈ 53.7 km."
+            - "Step 5: The length of SQ is 53.7 km (to 3 s.f.)."
+
+        - id: "q34-part-1-c"
+          questionGroup: "q34a"
+          problemText: "The figure shows a point S which lies 36 km south of point L...<br><br>(c) Show that ∠LPS = 144°."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-34-part-1.png"
+          finalAnswer: "∠LPS is shown to be 144.2°, which is approximately 144°."
+          stepByStepGuideline:
+            - "Step 1: To find ∠LPS, we can use the Sine Rule in △SLP. We know SL = 36, LP = 26, SP ≈ 11.5445, and ∠LSP = 25°."
+            - "Step 2: State the Sine Rule: sin(∠LPS)/SL = sin(∠LSP)/LP."
+            - "Step 3: Substitute the values: sin(∠LPS)/36 = sin(25°)/26."
+            - "Step 4: Solve for sin(∠LPS): sin(∠LPS) = (36 × sin(25°)) / 26 ≈ 0.5851."
+            - "Step 5: Find the angle: ∠LPS = arcsin(0.5851). This gives an acute angle of ≈ 35.8°. However, from the diagram, ∠LPS is clearly obtuse."
+            - "Step 6: The obtuse angle with the same sine value is 180° - 35.8° = 144.2°."
+            - "Step 7: Therefore, ∠LPS ≈ 144.2°, which shows that the angle is approximately 144°."
+
+        - id: "q34-part-1-d"
+          questionGroup: "q34a"
+          problemText: "The figure shows a point S which lies 36 km south of point L...<br><br>(d) Find the bearing of P from L."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-34-part-1.png"
+          finalAnswer: "169°"
+          stepByStepGuideline:
+            - "Step 1: The bearing of P from L is the angle measured clockwise from the North line at L. Since S is due South of L, the bearing of S from L is 180°."
+            - "Step 2: From the diagram, the bearing of P is less than 180°. The bearing will be 180° - ∠SLP."
+            - "Step 3: To find the bearing, we must first calculate the angle ∠SLP inside the triangle △SLP."
+            - "Step 4: Use the Cosine Rule to find ∠SLP, as we know all three sides (SL=36, LP=26, SP≈11.54): SP² = SL² + LP² - 2(SL)(LP)cos(∠SLP)."
+            - "Step 5: Rearrange to solve for cos(∠SLP): cos(∠SLP) = (SL² + LP² - SP²) / (2 × SL × LP)."
+            - "Step 6: Substitute the values: cos(∠SLP) = (36² + 26² - 11.5445²) / (2 × 36 × 26)."
+            - "Step 7: Calculate the result: cos(∠SLP) = (1296 + 676 - 133.27) / 1872 = 1838.73 / 1872 ≈ 0.9822."
+            - "Step 8: Find the angle by taking the inverse cosine: ∠SLP = arccos(0.9822) ≈ 10.8°."
+            - "Step 9: Calculate the bearing of P from L: Bearing = 180° - ∠SLP ≈ 180° - 10.8° = 169.2°."
+            - "Step 10: Rounding to the nearest degree, the bearing is 169°."
+
+  - id: trig-node-35
+    nodeNumber: 35
+    title: "Right-Angled Triangle Trigonometry and Elevation"
+    layer: examPractice
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: medium
+      preWrittenQuestions:
+        - id: "q35-part-1-a"
+          questionGroup: "q35a"
+          problemText: "The triangle ABC is such that AB = 2 units , AC = 4 units and ∠ABC = 90°.<br><br>(a) Find the length of BC."
+          avatarIntro: "This question set involves right-angled triangles. We'll use Pythagoras' theorem and basic trigonometric ratios. Let's start with the first part."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-35-part-1.png"
+          finalAnswer: "2√3 units"
+          stepByStepGuideline:
+            - "Step 1: Identify the given triangle as a right-angled triangle with the hypotenuse being the side opposite the right angle, which is AC."
+            - "Step 2: Apply Pythagoras' Theorem: AB² + BC² = AC²."
+            - "Step 3: Substitute the known values: 2² + BC² = 4²."
+            - "Step 4: Calculate the squares: 4 + BC² = 16."
+            - "Step 5: Solve for BC²: BC² = 16 - 4 = 12."
+            - "Step 6: Take the square root to find the length of BC: BC = √12."
+            - "Step 7: Simplify the surd: BC = √(4 × 3) = 2√3 units."
+
+        - id: "q35-part-1-b"
+          questionGroup: "q35a"
+          problemText: "The triangle ABC is such that AB = 2 units , AC = 4 units and ∠ABC = 90°.<br><br>(b) Find ∠ACB."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-35-part-1.png"
+          finalAnswer: "30°"
+          stepByStepGuideline:
+            - "Step 1: Use trigonometric ratios (SOH-CAH-TOA) in the right-angled triangle △ABC."
+            - "Step 2: To find ∠ACB, we can use the sine ratio, as we know the opposite side (AB = 2) and the hypotenuse (AC = 4)."
+            - "Step 3: The sine ratio is sin(θ) = Opposite/Hypotenuse."
+            - "Step 4: Substitute the values: sin(∠ACB) = 2 / 4 = 0.5."
+            - "Step 5: Find the angle by taking the inverse sine: ∠ACB = arcsin(0.5)."
+            - "Step 6: Therefore, ∠ACB = 30°."
+
+        - id: "q35-part-1-c"
+          questionGroup: "q35a"
+          problemText: "The triangle ABC is such that AB = 2 units , AC = 4 units and ∠ABC = 90°.<br><br>(c) The point F lies on AC such that BF is perpendicular to AC. Find the length of BF."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-35-part-1.png"
+          finalAnswer: "√3 units"
+          stepByStepGuideline:
+            - "Step 1: Consider the new right-angled triangle △BFC, where ∠BFC = 90°."
+            - "Step 2: In this triangle, BC is the hypotenuse. From part (a), we know BC = 2√3."
+            - "Step 3: From part (b), we know the angle ∠BCF (which is the same as ∠BCA) is 30°."
+            - "Step 4: The length we need to find, BF, is the side opposite the 30° angle in △BFC."
+            - "Step 5: Use the sine ratio: sin(∠BCF) = Opposite/Hypotenuse = BF/BC."
+            - "Step 6: Substitute the known values: sin(30°) = BF / (2√3)."
+            - "Step 7: Since sin(30°) = 0.5, the equation is 0.5 = BF / (2√3)."
+            - "Step 8: Solve for BF: BF = 0.5 × 2√3 = √3 units."
+
+        - id: "q35-part-2-a"
+          questionGroup: "q35b"
+          problemText: "AD represents a tower of height 4 metres. Points B, C and D lie on a straight line on the ground. The distance from A to B is 10 metres.<br><br>(a) Find the angle of elevation of A from B."
+          avatarIntro: "Now for a question involving angles of elevation. Let's begin."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-35-part-2.png"
+          finalAnswer: "23.6°"
+          stepByStepGuideline:
+            - "Step 1: The angle of elevation of A from B is the angle ∠ABD in the right-angled triangle △ADB."
+            - "Step 2: In this triangle, the height of the tower AD is the side opposite the angle, and the distance AB is the hypotenuse."
+            - "Step 3: Use the sine ratio: sin(θ) = Opposite/Hypotenuse."
+            - "Step 4: Substitute the values: sin(∠ABD) = AD / AB = 4 / 10 = 0.4."
+            - "Step 5: Find the angle by taking the inverse sine: ∠ABD = arcsin(0.4) ≈ 23.578°."
+            - "Step 6: Round the answer to 1 decimal place: 23.6°."
+
+        - id: "q35-part-2-b"
+          questionGroup: "q35b"
+          problemText: "AD represents a tower of height 4 metres. Points B, C and D lie on a straight line on the ground. The distance from A to B is 10 metres. The distance from A to C is the same as the distance from C to B.<br><br>(b) Find the distance from C to B."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-35-part-2.png"
+          finalAnswer: "5.46 m"
+          stepByStepGuideline:
+            - "Step 1: First find the total horizontal distance DB using Pythagoras' Theorem in the right-angled triangle △ADB: AD² + DB² = AB²."
+            - "Step 2: Substitute values: 4² + DB² = 10², which gives 16 + DB² = 100."
+            - "Step 3: Solve for DB: DB² = 84, so DB = √84 m."
+            - "Step 4: Now consider the right-angled triangle △ADC. We have AC² = AD² + DC² = 4² + DC² = 16 + DC²."
+            - "Step 5: We are given that AC = CB. Since B, C, D are on a straight line, we also know that DB = DC + CB."
+            - "Step 6: Substitute AC for CB in the distance equation: DB = DC + AC. Rearranging gives DC = DB - AC = √84 - AC."
+            - "Step 7: Substitute this expression for DC into the equation from Step 4: AC² = 16 + (√84 - AC)²."
+            - "Step 8: Expand and simplify: AC² = 16 + 84 - 2(√84)AC + AC². This simplifies to 0 = 100 - 2√84 AC."
+            - "Step 9: Solve for AC: 2√84 AC = 100, so AC = 100 / (2√84) = 50 / √84 ≈ 5.455 m."
+            - "Step 10: The question asks for the distance from C to B, which is equal to AC. Rounding to 3 significant figures gives 5.46 m."
+
+  - id: trig-node-36
+    nodeNumber: 36
+    title: "Coordinate Geometry and Trigonometry"
+    layer: examPractice
+    problemsRequired: 5
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: hard
+      preWrittenQuestions:
+        - id: "q36-part-1-a"
+          questionGroup: "q36a"
+          problemText: "In the diagram below, A (0,0), B (400, 300) and C are three points on level ground. BÂC = 60° and the length of AC is 1000 units.<br><br>(a) What is the length of AB in units."
+          avatarIntro: "This question combines coordinate geometry with trigonometry, including the distance formula, area rule, bearings, and the cosine rule. Let's start with the first part."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-36-part-1.png"
+          finalAnswer: "500 units"
+          stepByStepGuideline:
+            - "Step 1: Use the distance formula to find the length of the line segment between two points A(x₁, y₁) and B(x₂, y₂): d = √((x₂ - x₁)² + (y₂ - y₁)²)."
+            - "Step 2: Substitute the coordinates of A(0, 0) and B(400, 300)."
+            - "Step 3: AB = √((400 - 0)² + (300 - 0)²)."
+            - "Step 4: Calculate the squares: AB = √(400² + 300²) = √(160000 + 90000)."
+            - "Step 5: Simplify the expression: AB = √250000."
+            - "Step 6: Take the square root: AB = 500 units."
+
+        - id: "q36-part-1-b"
+          questionGroup: "q36a"
+          problemText: "In the diagram below, A (0,0), B (400, 300) and C are three points on level ground. BÂC = 60° and the length of AC is 1000 units.<br><br>(b) Find the area of Triangle ABC."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-36-part-1.png"
+          finalAnswer: "217000 square units"
+          stepByStepGuideline:
+            - "Step 1: Use the formula for the area of a triangle given two sides and the included angle: Area = (1/2)ab sin(C)."
+            - "Step 2: For △ABC, the two known sides are AB = 500 and AC = 1000, and the included angle is ∠BAC = 60°."
+            - "Step 3: Substitute the values into the formula: Area = (1/2) × 500 × 1000 × sin(60°)."
+            - "Step 4: Calculate the numerical value: Area = 250000 × sin(60°) ≈ 216506.35 square units."
+            - "Step 5: Round the answer to 3 significant figures: Area = 217000 square units."
+
+        - id: "q36-part-1-c"
+          questionGroup: "q36a"
+          problemText: "In the diagram below, A (0,0), B (400, 300) and C are three points on level ground. BÂC = 60° and the length of AC is 1000 units.<br><br>(c) What is the bearing of B from A?"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-36-part-1.png"
+          finalAnswer: "053.1°."
+          stepByStepGuideline:
+            - "Step 1: The bearing is measured clockwise from the North direction (positive y-axis)."
+            - "Step 2: First, find the angle θ that the line segment AB makes with the positive x-axis (East direction)."
+            - "Step 3: Using the coordinates of B(400, 300), we can form a right-angled triangle. tan(θ) = Opposite/Adjacent = 300/400 = 0.75."
+            - "Step 4: Calculate the angle: θ = arctan(0.75) ≈ 36.87°."
+            - "Step 5: The bearing is the angle between the North line and AB. Bearing = 90° - θ."
+            - "Step 6: Bearing ≈ 90° - 36.87° = 53.13°."
+            - "Step 7: Rounding to one decimal place and expressing in bearing format gives 053.1°."
+
+        - id: "q36-part-1-di"
+          questionGroup: "q36a"
+          problemText: "In the diagram below, A (0,0), B (400, 300) and C are three points on level ground. BÂC = 60° and the length of AC is 1000 units.<br><br>(d) (i) Find the length of BC;"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-36-part-1.png"
+          finalAnswer: "866 units"
+          stepByStepGuideline:
+            - "Step 1: Use the Cosine Rule to find the length of BC: BC² = AB² + AC² - 2(AB)(AC)cos(∠BAC)."
+            - "Step 2: Substitute the known values: BC² = 500² + 1000² - 2(500)(1000)cos(60°)."
+            - "Step 3: Calculate: BC² = 250000 + 1000000 - 1000000(0.5)."
+            - "Step 4: Simplify the expression: BC² = 750000."
+            - "Step 5: Take the square root: BC = √750000 ≈ 866.025 units."
+            - "Step 6: Round the answer to 3 significant figures: BC = 866 units."
+
+        - id: "q36-part-1-dii"
+          questionGroup: "q36a"
+          problemText: "In the diagram below, A (0,0), B (400, 300) and C are three points on level ground. BÂC = 60° and the length of AC is 1000 units.<br><br>(d) (ii) Find the coordinates of C."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-36-part-1.png"
+          finalAnswer: "C(920, -392)"
+          stepByStepGuideline:
+            - "Step 1: Find the angle that the line AB makes with the positive x-axis, let's call it θ_B. From B(400, 300), tan(θ_B) = 300/400, so θ_B = arctan(0.75) ≈ 36.87°."
+            - "Step 2: The angle for C, θ_C, is 60° clockwise from the angle for B. So, θ_C = θ_B - 60° ≈ 36.87° - 60° = -23.13°."
+            - "Step 3: The coordinates of C are given by (r cos θ, r sin θ), where r = 1000."
+            - "Step 4: Calculate the x-coordinate: x_C = 1000 × cos(-23.13°) ≈ 919.6."
+            - "Step 5: Calculate the y-coordinate: y_C = 1000 × sin(-23.13°) ≈ -392.8."
+            - "Step 6: Round the coordinates to the nearest integer: C(920, -392)."
+
+  - id: trig-node-37
+    nodeNumber: 37
+    title: "Sine and Cosine Rules, Area of Triangle"
+    layer: examPractice
+    problemsRequired: 4
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: medium
+      preWrittenQuestions:
+        - id: "q37-part-1-a"
+          questionGroup: "q37a"
+          problemText: "The diagram shows a triangle PRS. P, Q and S lie on a straight line. PQ = 4 km, QR = 6 km, RS = 6.34 km, ∠RQS = 60° and ∠RSQ = 55°.<br><br>(a) Find the distance PR."
+          avatarIntro: "This question set uses the sine rule, cosine rule, and area formulas for non-right-angled triangles. Let's start with the first part."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-37-part-1.png"
+          finalAnswer: "8.72 km"
+          stepByStepGuideline:
+            - "Step 1: To find PR, we need to use the Cosine Rule in triangle PQR."
+            - "Step 2: We know PQ = 4 and QR = 6. We need the included angle, ∠PQR."
+            - "Step 3: Since P, Q, and S are on a straight line, ∠PQR and ∠RQS are supplementary. So, ∠PQR = 180° - ∠RQS."
+            - "Step 4: Substitute the given value: ∠PQR = 180° - 60° = 120°."
+            - "Step 5: Apply the Cosine Rule: PR² = PQ² + QR² - 2(PQ)(QR)cos(∠PQR)."
+            - "Step 6: Substitute the values: PR² = 4² + 6² - 2(4)(6)cos(120°)."
+            - "Step 7: Calculate: PR² = 16 + 36 - 48(-0.5) = 52 + 24 = 76."
+            - "Step 8: Take the square root: PR = √76 ≈ 8.7177 km."
+            - "Step 9: Round to 3 significant figures: PR = 8.72 km."
+
+        - id: "q37-part-1-b"
+          questionGroup: "q37a"
+          problemText: "The diagram shows a triangle PRS. P, Q and S lie on a straight line. PQ = 4 km, QR = 6 km, RS = 6.34 km, ∠RQS = 60° and ∠RSQ = 55°.<br><br>(b) Find the area of the triangle PRS."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-37-part-1.png"
+          finalAnswer: "27.6 km²"
+          stepByStepGuideline:
+            - "Step 1: The area of triangle PRS can be found using the formula Area = (1/2) × base × height."
+            - "Step 2: The base is the line segment PS. First, we need to find the length of QS using the Sine Rule in △RQS."
+            - "Step 3: Find the third angle in △RQS: ∠QRS = 180° - 60° - 55° = 65°."
+            - "Step 4: Apply the Sine Rule: QS/sin(65°) = QR/sin(55°). So, QS = (6 × sin(65°))/sin(55°) ≈ 6.638 km."
+            - "Step 5: The total length of the base is PS = PQ + QS = 4 + 6.638 = 10.638 km."
+            - "Step 6: The height of △PRS is the perpendicular distance from R to the line PS. Let's call it 'h'. In △RQS, h = QR × sin(∠RQS) = 6 × sin(60°) = 3√3 km."
+            - "Step 7: Calculate the area: Area = (1/2) × PS × h = (1/2) × 10.638 × 3√3 ≈ 27.63 km²."
+            - "Step 8: Round to 3 significant figures: Area = 27.6 km²."
+
+        - id: "q37-part-2-a"
+          questionGroup: "q37b"
+          problemText: "The diagram below shows triangles ABC and CBD. AC = 10 units, ∠ABC = 90°, ∠CAB = 30°, ∠CBD = 45° and ∠BDC = 60°.<br><br>(a) Find the length of BC."
+          avatarIntro: "Here's a question involving SOH-CAH-TOA in a right-angled triangle and the Sine Rule. Let's start."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-37-part-2.png"
+          finalAnswer: "5 units"
+          stepByStepGuideline:
+            - "Step 1: Consider the right-angled triangle △ABC."
+            - "Step 2: We are given the hypotenuse AC = 10 and an angle ∠CAB = 30°."
+            - "Step 3: The side we need to find, BC, is opposite the 30° angle."
+            - "Step 4: Use the sine trigonometric ratio: sin(θ) = Opposite/Hypotenuse."
+            - "Step 5: Substitute the values: sin(30°) = BC / 10."
+            - "Step 6: Since sin(30°) = 0.5, we have 0.5 = BC / 10."
+            - "Step 7: Solve for BC: BC = 10 × 0.5 = 5 units."
+
+        - id: "q37-part-2-b"
+          questionGroup: "q37b"
+          problemText: "The diagram below shows triangles ABC and CBD. AC = 10 units, ∠ABC = 90°, ∠CAB = 30°, ∠CBD = 45° and ∠BDC = 60°.<br><br>(b) Find the exact length of CD, expressing your answer in the form q√6, where q ∈ Q."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-37-part-2.png"
+          finalAnswer: "5√6 / 3 units"
+          stepByStepGuideline:
+            - "Step 1: Consider the triangle △CBD. We know BC = 5, ∠CBD = 45°, and ∠BDC = 60°."
+            - "Step 2: We can find the length of side CD using the Sine Rule: a/sin(A) = b/sin(B)."
+            - "Step 3: Apply the rule to △CBD: CD/sin(∠CBD) = BC/sin(∠BDC)."
+            - "Step 4: Substitute the known values: CD/sin(45°) = 5/sin(60°)."
+            - "Step 5: Solve for CD: CD = (5 × sin(45°)) / sin(60°)."
+            - "Step 6: Use the exact values for the trigonometric functions: sin(45°) = √2/2 and sin(60°) = √3/2."
+            - "Step 7: Substitute the exact values: CD = (5 × (√2/2)) / (√3/2)."
+            - "Step 8: Simplify the expression: CD = 5√2 / √3."
+            - "Step 9: Rationalize the denominator by multiplying the numerator and denominator by √3: CD = (5√2 × √3) / (√3 × √3) = 5√6 / 3."
+            - "Step 10: This is in the required form, where q = 5/3."
+
+  - id: trig-node-38
+    nodeNumber: 38
+    title: "Bearings, 3D Trigonometry and Triangle Rules"
+    layer: examPractice
+    problemsRequired: 4
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: hard
+      preWrittenQuestions:
+        - id: "q38-part-1-a"
+          questionGroup: "q38a"
+          problemText: "In the diagram below, P is a point at sea level at the foot of a vertical cliff. Two boats, Q and R, are on the surface of the sea. PQ = 0.55 km and PR = 0.645 km. The bearing of Q from P is 062° and the bearing of R from P is 109°.<br><br>(a) What is the distance between the two boats, QR, correct to 3 significant figures."
+          avatarIntro: "This multi-part problem involves bearings, the sine and cosine rules, and angles of elevation. Let's start by finding the distance between the boats."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-38-part-1.png"
+          finalAnswer: "The distance QR is 0.484 km."
+          stepByStepGuideline:
+            - "Step 1: First, find the angle ∠QPR, which is the angle between the two boats as seen from point P."
+            - "Step 2: The angle is the difference between the two given bearings: ∠QPR = 109° - 62° = 47°."
+            - "Step 3: Now consider the triangle △PQR. We know two sides (PQ = 0.55, PR = 0.645) and the included angle (∠QPR = 47°)."
+            - "Step 4: Apply the Cosine Rule to find the length of the third side, QR: QR² = PQ² + PR² - 2(PQ)(PR)cos(∠QPR)."
+            - "Step 5: Substitute the known values: QR² = 0.55² + 0.645² - 2(0.55)(0.645)cos(47°)."
+            - "Step 6: Calculate the value: QR² ≈ 0.3025 + 0.416025 - 0.7095(0.6820) ≈ 0.718525 - 0.48388 ≈ 0.234645."
+            - "Step 7: Take the square root: QR ≈ √0.234645 ≈ 0.4844 km."
+            - "Step 8: Rounding to 3 significant figures, QR ≈ 0.484 km."
+
+        - id: "q38-part-1-b"
+          questionGroup: "q38a"
+          problemText: "In the diagram below, P is a point at sea level at the foot of a vertical cliff. Two boats, Q and R, are on the surface of the sea. PQ = 0.55 km and PR = 0.645 km. The bearing of Q from P is 062° and the bearing of R from P is 109°.<br><br>(b) Find ∠PQR ."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-38-part-1.png"
+          finalAnswer: "76.9°"
+          stepByStepGuideline:
+            - "Step 1: To find the angle ∠PQR in △PQR, we can use the Sine Rule, since we now know all sides and one angle."
+            - "Step 2: The Sine Rule states: sin(A)/a = sin(B)/b. We will use PR/sin(∠PQR) = QR/sin(∠QPR)."
+            - "Step 3: Rearrange to solve for sin(∠PQR): sin(∠PQR) = (PR × sin(∠QPR)) / QR."
+            - "Step 4: Substitute the values (using the more accurate value for QR): sin(∠PQR) = (0.645 × sin(47°)) / 0.4844."
+            - "Step 5: Calculate the value: sin(∠PQR) ≈ (0.645 × 0.7314) / 0.4844 ≈ 0.9738."
+            - "Step 6: Find the angle by taking the inverse sine: ∠PQR = arcsin(0.9738) ≈ 76.85°."
+            - "Step 7: Round the angle to one decimal place: ∠PQR ≈ 76.9°."
+
+        - id: "q38-part-1-c"
+          questionGroup: "q38a"
+          problemText: "In the diagram below, P is a point at sea level at the foot of a vertical cliff. Two boats, Q and R, are on the surface of the sea. PQ = 0.55 km and PR = 0.645 km. The bearing of Q from P is 062° and the bearing of R from P is 109°.<br><br>(d) Find the shortest distance of P to QR."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-38-part-1.png"
+          finalAnswer: "0.536 km"
+          stepByStepGuideline:
+            - "Step 1: The shortest distance from a point to a line is the perpendicular distance. This is the height of △PQR with QR as the base."
+            - "Step 2: We can find this height using the area of the triangle. Area = (1/2) × base × height."
+            - "Step 3: First, calculate the area of △PQR using the formula Area = (1/2)ab sin(C): Area = (1/2) × PQ × PR × sin(∠QPR)."
+            - "Step 4: Area = (1/2) × 0.55 × 0.645 × sin(47°) ≈ 0.1297 km²."
+            - "Step 5: Now use the other area formula with base QR and height h: 0.1297 = (1/2) × QR × h."
+            - "Step 6: Substitute the value for QR: 0.1297 = (1/2) × 0.4844 × h."
+            - "Step 7: Solve for h: h = (2 × 0.1297) / 0.4844 ≈ 0.5355 km."
+            - "Step 8: Round the shortest distance to 3 significant figures: 0.536 km."
+
+        - id: "q38-part-1-d"
+          questionGroup: "q38a"
+          problemText: "S is a point at the top of the cliff vertically above P. The angle of elevation of S from R is 9°.<br><br>(e) Find the height of the cliff, PS."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-38-part-1.png"
+          finalAnswer: "0.102 km"
+          stepByStepGuideline:
+            - "Step 1: Since S is vertically above P, the triangle △SPR is a right-angled triangle, with the right angle at P."
+            - "Step 2: The height of the cliff is the length of the side PS."
+            - "Step 3: We are given the horizontal distance PR = 0.645 km, which is the side adjacent to the angle of elevation."
+            - "Step 4: The angle of elevation of S from R is ∠SRP = 9°."
+            - "Step 5: Use the tangent trigonometric ratio: tan(θ) = Opposite/Adjacent."
+            - "Step 6: tan(∠SRP) = PS / PR."
+            - "Step 7: Substitute the values: tan(9°) = PS / 0.645."
+            - "Step 8: Solve for PS: PS = 0.645 × tan(9°) ≈ 0.645 × 0.1584 ≈ 0.10217 km."
+            - "Step 9: Round the height to 3 significant figures: PS = 0.102 km."
+
+  - id: trig-node-39
+    nodeNumber: 39
+    title: "Bearings and Sine Rule Application"
+    layer: examPractice
+    problemsRequired: 3
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: medium
+      preWrittenQuestions:
+        - id: "q39-part-1-a"
+          questionGroup: "q39a"
+          problemText: "The diagram below shows the positions of three city landmarks A, B and C. The bearing of B from A is 030°. The bearing of C from B is 125°. AB is 6 km and AC is 7.5 km.<br><br>(a) Find angle ABC."
+          avatarIntro: "This is a three-part bearings problem where we'll need to use parallel line properties and the Sine Rule. Let's start by finding angle ABC."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-39-part-1.png"
+          finalAnswer: "85°"
+          stepByStepGuideline:
+            - "Step 1: Draw a North-South line through point B, which is parallel to the North line at A."
+            - "Step 2: The bearing of B from A is 030°. Because the North lines are parallel, the alternate interior angle between the line AB and the South line at B is also 30°."
+            - "Step 3: The bearing of C from B is given as 125°. This is the angle from the North line at B to the line BC."
+            - "Step 4: The angle between the South line at B and the line BC can be calculated as 180° - 125° = 55°."
+            - "Step 5: Angle ABC is the sum of the two angles around point B that form it: ∠ABC = 30° + 55° = 85°."
+
+        - id: "q39-part-1-b"
+          questionGroup: "q39a"
+          problemText: "The diagram below shows the positions of three city landmarks A, B and C. The bearing of B from A is 030°. The bearing of C from B is 125°. AB is 6 km and AC is 7.5 km.<br><br>(b) Find angle ACB."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-39-part-1.png"
+          finalAnswer: "52.8°"
+          stepByStepGuideline:
+            - "Step 1: In triangle ABC, we know side AB = 6 km, side AC = 7.5 km, and the angle opposite AC, which is ∠ABC = 85°."
+            - "Step 2: Apply the Sine Rule to find ∠ACB: AC/sin(∠ABC) = AB/sin(∠ACB)."
+            - "Step 3: Substitute the known values: 7.5/sin(85°) = 6/sin(∠ACB)."
+            - "Step 4: Rearrange the formula to solve for sin(∠ACB): sin(∠ACB) = (6 × sin(85°)) / 7.5."
+            - "Step 5: Calculate the value: sin(∠ACB) ≈ 0.79695."
+            - "Step 6: Find the angle by taking the inverse sine: ∠ACB = arcsin(0.79695) ≈ 52.83°."
+            - "Step 7: Round to one decimal place: ∠ACB ≈ 52.8°."
+
+        - id: "q39-part-1-c"
+          questionGroup: "q39a"
+          problemText: "The diagram below shows the positions of three city landmarks A, B and C. The bearing of B from A is 030°. The bearing of C from B is 125°. AB is 6 km and AC is 7.5 km.<br><br>(c) Find the bearing of A from C."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-39-part-1.png"
+          finalAnswer: "252.2°"
+          stepByStepGuideline:
+            - "Step 1: To find the bearing of A from C, we first need to find the back bearing of B from C."
+            - "Step 2: The bearing of C from B is 125°."
+            - "Step 3: The back bearing of B from C is 125° + 180° = 305°. This is the angle measured clockwise from the North line at C to the line segment CB."
+            - "Step 4: The bearing of A from C is found by adjusting this angle by ∠ACB. From the diagram, the line CA is anti-clockwise from CB, so we subtract ∠ACB."
+            - "Step 5: Bearing of A from C = Bearing of B from C - ∠ACB."
+            - "Step 6: Substitute the values using the more accurate value for the angle: Bearing = 305° - 52.83° ≈ 252.17°."
+            - "Step 7: Round to one decimal place: The bearing is 252.2°."
+
+  - id: trig-node-40
+    nodeNumber: 40
+    title: "Cosine Rule, Area, and 3D Elevation"
+    layer: examPractice
+    problemsRequired: 4
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: medium
+      preWrittenQuestions:
+        - id: "q40-part-1-a"
+          questionGroup: "q40a"
+          problemText: "The fence BD separates two triangular plots of land ABD and BDC. It is given that AB = 1.8 m, BC = 4.5 m, CD = 3.6 m, AD = 5.3 m and ∠BCD = 55°.<br><br>Calculate<br>(a) the length BD;"
+          avatarIntro: "This problem involves the Cosine Rule, the area formula for a triangle, and a final part on 3D trigonometry. Let's solve it step-by-step."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-40-part-1.png"
+          finalAnswer: "3.82 m"
+          stepByStepGuideline:
+            - "Step 1: To find the length of the fence BD, consider the triangle △BDC."
+            - "Step 2: We know two sides (BC = 4.5, CD = 3.6) and the included angle (∠BCD = 55°). We can use the Cosine Rule."
+            - "Step 3: The Cosine Rule states: a² = b² + c² - 2bc cos(A). Here, BD² = BC² + CD² - 2(BC)(CD)cos(∠BCD)."
+            - "Step 4: Substitute the values: BD² = 4.5² + 3.6² - 2(4.5)(3.6)cos(55°)."
+            - "Step 5: Calculate the value: BD² = 20.25 + 12.96 - 32.4(0.5736) ≈ 33.21 - 18.58 = 14.63."
+            - "Step 6: Take the square root: BD = √14.63 ≈ 3.8249 m."
+            - "Step 7: Round to 3 significant figures: BD = 3.82 m."
+
+        - id: "q40-part-1-b"
+          questionGroup: "q40a"
+          problemText: "The fence BD separates two triangular plots of land ABD and BDC...<br><br>Calculate<br>(b) ∠BAD;"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-40-part-1.png"
+          finalAnswer: "28.9°"
+          stepByStepGuideline:
+            - "Step 1: To find ∠BAD, consider the triangle △ABD."
+            - "Step 2: We know all three sides: AB = 1.8, AD = 5.3, and BD ≈ 3.8249 m (from part a)."
+            - "Step 3: Use the Cosine Rule rearranged to find an angle: cos(A) = (b² + c² - a²) / 2bc."
+            - "Step 4: cos(∠BAD) = (AB² + AD² - BD²) / (2 × AB × AD)."
+            - "Step 5: Substitute the values: cos(∠BAD) = (1.8² + 5.3² - 3.8249²) / (2 × 1.8 × 5.3)."
+            - "Step 6: Calculate: cos(∠BAD) = (3.24 + 28.09 - 14.63) / 19.08 = 16.7 / 19.08 ≈ 0.87526."
+            - "Step 7: Find the angle by taking the inverse cosine: ∠BAD = arccos(0.87526) ≈ 28.91°."
+            - "Step 8: Round to 1 decimal place: ∠BAD = 28.9°."
+
+        - id: "q40-part-1-c"
+          questionGroup: "q40a"
+          problemText: "The fence BD separates two triangular plots of land ABD and BDC...<br><br>Calculate<br>(c) the area of triangular plot of land BAD."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-40-part-1.png"
+          finalAnswer: "2.31 m²"
+          stepByStepGuideline:
+            - "Step 1: Use the formula for the area of a triangle given two sides and the included angle: Area = (1/2)ab sin(C)."
+            - "Step 2: In △BAD, we can use sides AB, AD and the included angle ∠BAD."
+            - "Step 3: Area = (1/2) × AB × AD × sin(∠BAD)."
+            - "Step 4: Substitute the values: Area = (1/2) × 1.8 × 5.3 × sin(28.91°)."
+            - "Step 5: Calculate: Area ≈ 4.77 × 0.4834 ≈ 2.306 m²."
+            - "Step 6: Round to 3 significant figures: Area = 2.31 m²."
+
+        - id: "q40-part-1-d"
+          questionGroup: "q40a"
+          problemText: "A drone was hovering 6 m vertically above the point D.<br><br>(d) Find the angle of elevation of the drone from the point A."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-40-part-1.png"
+          finalAnswer: "48.5°"
+          stepByStepGuideline:
+            - "Step 1: This situation forms a right-angled triangle. Let the drone be at point E. The triangle is △EDA, with the right angle at D."
+            - "Step 2: The height of the drone, ED, is 6 m. This is the side 'opposite' the angle of elevation."
+            - "Step 3: The horizontal distance on the ground, AD, is 5.3 m. This is the side 'adjacent' to the angle of elevation."
+            - "Step 4: The angle of elevation is ∠EAD. We can use the tangent ratio: tan(θ) = Opposite/Adjacent."
+            - "Step 5: tan(∠EAD) = ED / AD = 6 / 5.3."
+            - "Step 6: Find the angle by taking the inverse tangent: ∠EAD = arctan(6 / 5.3) ≈ 48.54°."
+            - "Step 7: Round to 1 decimal place: The angle of elevation is 48.5°."
+
+  - id: trig-node-41
+    nodeNumber: 41
+    title: "Right-Angled Trigonometry and Exact Values"
+    layer: examPractice
+    problemsRequired: 4
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: medium
+      preWrittenQuestions:
+        - id: "q41-part-1-a"
+          questionGroup: "q41a"
+          problemText: "In triangle ABC, AC = 15 cm, angle ABC = 90° and sin θ = 4/5. BCD is a straight line.<br><br>(a) Calculate the length of AB."
+          avatarIntro: "This question involves a right-angled triangle and supplementary angles. Let's solve it part by part."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-41-part-1.png"
+          finalAnswer: "12 cm"
+          stepByStepGuideline:
+            - "Step 1: In the right-angled triangle ABC, the angle θ is ∠ACB."
+            - "Step 2: Use the sine ratio: sin(θ) = Opposite/Hypotenuse = AB/AC."
+            - "Step 3: Substitute the given values, sin(θ) = 4/5 and AC = 15: 4/5 = AB / 15."
+            - "Step 4: Solve for AB: AB = 15 × (4/5) = 12 cm."
+
+        - id: "q41-part-1-b"
+          questionGroup: "q41a"
+          problemText: "In triangle ABC, AC = 15 cm, angle ABC = 90° and sin θ = 4/5. BCD is a straight line.<br><br>(b) Find the value of tan θ."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-41-part-1.png"
+          finalAnswer: "4/3"
+          stepByStepGuideline:
+            - "Step 1: To find tan(θ), we need the length of the adjacent side, BC."
+            - "Step 2: Use Pythagoras' Theorem in △ABC: AB² + BC² = AC²."
+            - "Step 3: Substitute known values: 12² + BC² = 15²."
+            - "Step 4: 144 + BC² = 225."
+            - "Step 5: Solve for BC: BC² = 81, so BC = 9 cm."
+            - "Step 6: Use the tangent ratio: tan(θ) = Opposite/Adjacent = AB/BC."
+            - "Step 7: Substitute the lengths: tan(θ) = 12 / 9, which simplifies to 4/3."
+
+        - id: "q41-part-1-c"
+          questionGroup: "q41a"
+          problemText: "In triangle ABC, AC = 15 cm, angle ABC = 90° and sin θ = 4/5. BCD is a straight line.<br><br>(c) Find the value of cos(180° − θ)."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-41-part-1.png"
+          finalAnswer: "-3/5"
+          stepByStepGuideline:
+            - "Step 1: Recall the trigonometric identity: cos(180° - θ) = -cos(θ)."
+            - "Step 2: First, find the value of cos(θ) from the triangle △ABC."
+            - "Step 3: Use the cosine ratio: cos(θ) = Adjacent/Hypotenuse = BC/AC."
+            - "Step 4: From part (b), BC = 9 cm and we are given AC = 15 cm."
+            - "Step 5: cos(θ) = 9 / 15 = 3/5."
+            - "Step 6: Substitute this value into the identity: cos(180° - θ) = -(3/5) = -3/5."
+
+        - id: "q41-part-2-a"
+          questionGroup: "q41b"
+          problemText: "Evaluate and simplify 4sin60° − tan30° in the form k√3 , where k is a real number."
+          avatarIntro: "For this question, you need to know the exact values of some common trigonometric angles."
+          diagramSvg: ""
+          finalAnswer: "(5/3)√3"
+          stepByStepGuideline:
+            - "Step 1: Recall the exact trigonometric values: sin(60°) = √3 / 2 and tan(30°) = 1/√3."
+            - "Step 2: Substitute these values into the expression: 4(√3 / 2) - (1/√3)."
+            - "Step 3: Simplify the expression to 2√3 - 1/√3."
+            - "Step 4: To subtract, find a common denominator by rationalizing the second term: 1/√3 = √3/3."
+            - "Step 5: The expression is now 2√3 - (√3/3)."
+            - "Step 6: Rewrite 2√3 as (6√3)/3."
+            - "Step 7: Perform the subtraction: (6√3)/3 - (√3/3) = (5√3)/3."
+            - "Step 8: This is in the form k√3, where k = 5/3."
+
+  - id: trig-node-42
+    nodeNumber: 42
+    title: "3D Trigonometry in a Prism"
+    layer: examPractice
+    problemsRequired: 2
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: hard
+      preWrittenQuestions:
+        - id: "q42-part-1-a"
+          questionGroup: "q42a"
+          problemText: "The diagram shows a prism where its cross-sectional area is a right-angled triangle. AB = 24 cm, BC = 8 cm, FC = 6 cm and angle FCB = 90°.<br><br>(a) Find angle FAC."
+          avatarIntro: "This problem involves finding angles in a 3D prism. We'll need to use Pythagoras' Theorem and trigonometric ratios. Let's start with the first angle."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-42-part-1.png"
+          finalAnswer: "13.3°"
+          stepByStepGuideline:
+            - "Step 1: Interpret the geometry. This is a right prism where the triangular faces BCF and ADE are the cross-sections, and it's resting on the rectangular face ABCD."
+            - "Step 2: The angle ∠FAC is in the triangle △FAC. We need to find the lengths of its sides."
+            - "Step 3: Find the length of AC. In the rectangular base ABCD, △ABC is a right-angled triangle. By Pythagoras' Theorem, AC² = AB² + BC² = 24² + 8² = 576 + 64 = 640. So, AC = √640 cm."
+            - "Step 4: The length of FC is given as 6 cm."
+            - "Step 5: Because it's a right prism, the vertical edge FC is perpendicular to the base plane ABCD. This means FC is perpendicular to AC, and △FAC is a right-angled triangle at C."
+            - "Step 6: In the right-angled △FAC, we can use the tangent ratio: tan(∠FAC) = Opposite / Adjacent = FC / AC."
+            - "Step 7: Substitute the values: tan(∠FAC) = 6 / √640."
+            - "Step 8: Calculate the angle: ∠FAC = arctan(6 / √640) ≈ 13.34°."
+            - "Step 9: Round to one decimal place: ∠FAC = 13.3°."
+
+        - id: "q42-part-1-b"
+          questionGroup: "q42a"
+          problemText: "M is the midpoint of EF.<br><br>(b) Find angle AMB."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-42-part-1.png"
+          finalAnswer: "100.4°"
+          stepByStepGuideline:
+            - "Step 1: To find the angle, let's place the prism in a 3D coordinate system. Let B be the origin (0, 0, 0)."
+            - "Step 2: Let A be along the x-axis, so A = (24, 0, 0). Let C be along the y-axis, so C = (0, 8, 0)."
+            - "Step 3: Since ∠BCF = 90° and FC is perpendicular to the base, F will be at (0, 8, 6)."
+            - "Step 4: The vertex E corresponds to F. The vector from B to A is (24, 0, 0). So, E = F + (vector BA's equivalent starting from F's xy coordinates) = (24, 8, 6)."
+            - "Step 5: Find the midpoint M of EF: M = ( (0+24)/2, (8+8)/2, (6+6)/2 ) = (12, 8, 6)."
+            - "Step 6: Now consider the triangle △AMB with vertices A(24,0,0), M(12,8,6), and B(0,0,0)."
+            - "Step 7: Find the lengths of the sides AM and BM using the distance formula."
+            - "Step 8: AM = √((24-12)² + (0-8)² + (0-6)²) = √(144 + 64 + 36) = √244."
+            - "Step 9: BM = √((12-0)² + (8-0)² + (6-0)²) = √(144 + 64 + 36) = √244."
+            - "Step 10: The length of AB is 24. Since AM = BM, △AMB is an isosceles triangle."
+            - "Step 11: Use the Cosine Rule to find ∠AMB: cos(∠AMB) = (AM² + BM² - AB²) / (2 * AM * BM)."
+            - "Step 12: cos(∠AMB) = (244 + 244 - 24²) / (2 * 244) = (488 - 576) / 488 = -88 / 488."
+            - "Step 13: ∠AMB = arccos(-88 / 488) ≈ 100.38°."
+            - "Step 14: Round to one decimal place: ∠AMB = 100.4°."
+
+  - id: trig-node-43
+    nodeNumber: 43
+    title: "Playground Geometry and 3D Trigonometry"
+    layer: examPractice
+    problemsRequired: 6
+    prerequisites: []
+    descriptor:
+      aiGeneratedQuestions: false
+      difficulty: hard
+      preWrittenQuestions:
+        - id: "q43-part-1-a"
+          questionGroup: "q43a"
+          problemText: "The diagram represents an aerial view of a playground. It consists of two triangles OAC and OCD. The length of OC is 7.9 m, OD is 8.2 m and CD is 7.6 m. B is a point on AC such that OA = OB. The length of OB is 4.8 m. Angle OCA is 34°. The bearing of D from O is 068°.<br><br>(a) Find angle OBC."
+          avatarIntro: "This is a challenging problem involving bearings, 2D and 3D trigonometry. Let's solve it step-by-step, starting with the first part. 📐"
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-43-part-1.png"
+          finalAnswer: "113.1°"
+          stepByStepGuideline:
+            - "Step 1: First, apply the Sine Rule to the larger triangle △OAC to find ∠OAC. We have `OA/sin(∠OCA) = OC/sin(∠OAC)`."
+            - "Step 2: Since OA = OB, OA = 4.8 m. Substitute the known values: `4.8/sin(34°) = 7.9/sin(∠OAC)`."
+            - "Step 3: Solve for `sin(∠OAC)`: `sin(∠OAC) = (7.9 × sin(34°)) / 4.8 ≈ 0.9201`."
+            - "Step 4: Find the angle: `∠OAC = arcsin(0.9201) ≈ 66.95°`."
+            - "Step 5: Since OA = OB, triangle △OAB is isosceles. The base angles are equal, so `∠OBA = ∠OAB = ∠OAC ≈ 66.95°`."
+            - "Step 6: Points A, B, and C are on a straight line, so ∠OBA and ∠OBC are supplementary (add up to 180°)."
+            - "Step 7: Calculate ∠OBC: `∠OBC = 180° - 66.95° = 113.05°`."
+            - "Step 8: Round the answer to one decimal place: `∠OBC = 113.1°`."
+
+        - id: "q43-part-1-b"
+          questionGroup: "q43a"
+          problemText: "A vertical lamppost is constructed at point D and has a height 2 m.<br><br>(b) Calculate the angle of elevation of the top of the lamppost from O."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-43-part-1.png"
+          finalAnswer: "13.7°"
+          stepByStepGuideline:
+            - "Step 1: Let the top of the lamppost be T. The situation forms a right-angled triangle △ODT, with the right angle at D."
+            - "Step 2: The height of the lamppost, TD, is the side opposite the angle of elevation (2 m). The horizontal distance, OD, is the adjacent side (8.2 m)."
+            - "Step 3: Use the tangent ratio: `tan(angle) = Opposite / Adjacent`."
+            - "Step 4: `tan(∠TOD) = 2 / 8.2`."
+            - "Step 5: Find the angle by taking the inverse tangent: `∠TOD = arctan(2 / 8.2) ≈ 13.70°`."
+            - "Step 6: Round to one decimal place: `13.7°`."
+
+        - id: "q43-part-1-c"
+          questionGroup: "q43a"
+          problemText: "The diagram represents an aerial view of a playground...<br><br>(c) Find angle COD."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-43-part-1.png"
+          finalAnswer: "56.3°"
+          stepByStepGuideline:
+            - "Step 1: In triangle △OCD, we know the lengths of all three sides: OC = 7.9 m, OD = 8.2 m, and CD = 7.6 m."
+            - "Step 2: Apply the Cosine Rule to find ∠COD: `CD² = OC² + OD² - 2(OC)(OD)cos(∠COD)`."
+            - "Step 3: Rearrange the formula: `cos(∠COD) = (OC² + OD² - CD²) / (2 × OC × OD)`."
+            - "Step 4: Substitute the values: `cos(∠COD) = (7.9² + 8.2² - 7.6²) / (2 × 7.9 × 8.2)`."
+            - "Step 5: Calculate the result: `cos(∠COD) ≈ 0.5548`."
+            - "Step 6: Find the angle: `∠COD = arccos(0.5548) ≈ 56.30°`."
+            - "Step 7: Round to one decimal place: `56.3°`."
+
+        - id: "q43-part-1-d"
+          questionGroup: "q43a"
+          problemText: "The diagram represents an aerial view of a playground...<br><br>(d) Find the bearing of C from O."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-43-part-1.png"
+          finalAnswer: "124 or 124.3°"
+          stepByStepGuideline:
+            - "Step 1: The bearing of D from O is given as 068°."
+            - "Step 2: The bearing of C from O is the angle from the North line at O to the line OC."
+            - "Step 3: Based on the diagram, the line OC is clockwise from the line OD."
+            - "Step 4: Therefore, the bearing of C from O is the bearing of D plus the angle between the lines, ∠COD."
+            - "Step 5: Bearing of C = `Bearing of D + ∠COD = 68° + 56.30° = 124.3°`."
+            - "Step 6: Express the answer in the standard 3-figure bearing format: `124°`."
+
+        - id: "q43-part-1-e"
+          questionGroup: "q43a"
+          problemText: "The diagram represents an aerial view of a playground...<br><br>(e) Calculate the area of the triangular plot of land OCD."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-43-part-1.png"
+          finalAnswer: "26.9 m²"
+          stepByStepGuideline:
+            - "Step 1: Use the formula for the area of a triangle: `Area = (1/2)ab sin(C)`."
+            - "Step 2: We can use the sides OC and OD and the included angle ∠COD."
+            - "Step 3: Substitute the values: `Area = (1/2) × 7.9 × 8.2 × sin(56.30°)`."
+            - "Step 4: Calculate the area: `Area ≈ 26.94 m²`."
+            - "Step 5: Round the answer to 3 significant figures: `26.9 m²`."
+
+        - id: "q43-part-1-f"
+          questionGroup: "q43a"
+          problemText: "A rope of length 6 m is attached to the lamppost at point D.<br><br>(f) Determine whether the rope can extend into the triangular plot of land OBC. Justify your answer."
+          diagramSvg: "/diagrams/s3/maths/trig/s3-trig-43-part-1.png"
+          finalAnswer: "No, the rope cannot extend into the plot OBC."
+          stepByStepGuideline:
+            - "Step 1: First, determine the shortest distance from the lamppost's base (point D) to the plot of land OBC."
+            - "Step 2: The boundary of the plot closest to D is the line segment OC. The shortest distance from D to the plot is therefore the perpendicular distance from D to the line segment OC."
+            - "Step 3: We can find this perpendicular distance (height, `h`) using the area of △OCD calculated in the previous part: `Area = (1/2) × base × h`."
+            - "Step 4: Using OC as the base: `26.94 = (1/2) × 7.9 × h`."
+            - "Step 5: Solve for `h`: `h = (2 × 26.94) / 7.9 ≈ 6.82 m`."
+            - "Step 6: The rope is 6 m long. We must compare this length to the shortest distance."
+            - "Step 7: **Justification:** The shortest distance from point D to the triangular plot OBC is approximately 6.82 m. Since the rope's length (6 m) is less than this shortest distance (`6 m < 6.82 m`), the rope cannot reach or extend into the plot.  Rope too short!"

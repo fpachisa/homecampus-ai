@@ -31,6 +31,8 @@ import { S3_MATH_STATISTICS_SUBTOPICS } from '../prompt-library/subjects/mathema
 import type { StatisticsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
 import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import type { RelationsFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
+import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import type { CoordinateGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -79,6 +81,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S3 relations-functions topic
   if (topicId.startsWith('s3-math-relations-')) {
     return S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS[topicId as RelationsFunctionsTopicId];
+  }
+  // Check if it's an S3 coordinate geometry topic
+  if (topicId.startsWith('s3-math-coord-geom-')) {
+    return S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS[topicId as CoordinateGeometryTopicId];
   }
   // Return undefined for unknown topics
   return undefined;

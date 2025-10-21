@@ -36,6 +36,11 @@ export { default as GraphCompareVisualizer } from './GraphCompareVisualizer';
 
 // Coordinate geometry visualizers
 export { default as CartesianPlaneVisualizer } from './CartesianPlaneVisualizer';
+export { default as Coordinate3DPlaneVisualizer } from './Coordinate3DPlaneVisualizer';
+
+// Sets and Venn diagrams visualizers
+export { default as VennDiagram1SetVisualizer } from './VennDiagram1SetVisualizer';
+export { default as VennDiagram2SetVisualizer } from './VennDiagram2SetVisualizer';
 
 // Re-export registry types and utilities
 export type { MathToolDefinition, MathToolName } from './mathToolsRegistry';

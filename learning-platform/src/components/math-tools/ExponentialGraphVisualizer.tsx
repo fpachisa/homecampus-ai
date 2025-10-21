@@ -19,6 +19,7 @@ interface ExponentialGraphVisualizerProps {
   label?: string; // custom function label
   color?: string; // custom curve color
   caption?: string;
+  realWorldContext?: boolean; // if true, start x from 0 (no negative time/population)
 }
 
 const ExponentialGraphVisualizer: React.FC<ExponentialGraphVisualizerProps> = ({
@@ -37,7 +38,8 @@ const ExponentialGraphVisualizer: React.FC<ExponentialGraphVisualizerProps> = ({
   showGrid = true,
   label,
   color,
-  caption
+  caption,
+  realWorldContext = false
 }) => {
   const { theme } = useTheme();
 
@@ -65,7 +67,8 @@ const ExponentialGraphVisualizer: React.FC<ExponentialGraphVisualizerProps> = ({
     xRange = [xMinProp, xMaxProp];
   } else {
     // Default range: show enough to see the curve shape
-    xRange = [-3, 3];
+    // For real-world contexts (time, population), start from 0
+    xRange = realWorldContext ? [0, 6] : [-3, 3];
   }
 
   // Calculate exponential function value
@@ -229,13 +232,12 @@ const ExponentialGraphVisualizer: React.FC<ExponentialGraphVisualizerProps> = ({
               opacity={0.6}
             />
             <text
-              x={width - padding - 5}
-              y={mathToSVG(0, verticalShift)[1] - 5}
+              x={width - padding - 60}
+              y={mathToSVG(0, verticalShift)[1] - 8}
               className="text-xs font-semibold"
               fill={asymptoteColor}
-              textAnchor="end"
+              textAnchor="start"
             >
-              y = {verticalShift}
             </text>
           </>
         )}
@@ -303,10 +305,11 @@ const ExponentialGraphVisualizer: React.FC<ExponentialGraphVisualizerProps> = ({
               fill={interceptColor}
             />
             <text
-              x={mathToSVG(0, yIntercept)[0] + 12}
-              y={mathToSVG(0, yIntercept)[1] + 5}
+              x={mathToSVG(0, yIntercept)[0] + (isGrowth ? -10 : 60)}
+              y={mathToSVG(0, yIntercept)[1] + (isGrowth ? -10 : -10)}
               className="text-sm font-semibold"
               fill={interceptColor}
+              textAnchor="end"
             >
               (0, {yIntercept.toFixed(1)})
             </text>

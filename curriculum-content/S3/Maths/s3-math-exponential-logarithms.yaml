@@ -1,0 +1,2300 @@
+# Exponential Logarithms - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: exp-func-node-1
+  nodeNumber: 1
+  title: Understanding Exponential Functions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Determine whether the function $f(x) = 5^x$ is classified as an exponential function. Explain your reasoning
+        based on the position of the variable.
+      avatarIntro: Welcome! Let's start by reviewing the fundamental definition of an exponential function. Remember where
+        the variable must be located!
+      mathTool: null
+      finalAnswer: Yes, $f(x) = 5^x$ is an exponential function.
+      stepByStepGuideline:
+      - 'Recall the definition of an exponential function: $f(x) = a^x$, where $a$ is a constant base and $x$ is the variable
+        exponent.'
+      - In the function $f(x) = 5^x$, the base is the constant 5, and the variable $x$ is in the exponent.
+      - Since the variable is in the exponent, this function matches the definition of an exponential function.
+      id: q1-1
+      questionGroup: q1
+    - problemText: Is the function $g(x) = x^4$ an exponential function? Justify your answer.
+      mathTool: null
+      finalAnswer: No, $g(x) = x^4$ is not an exponential function.
+      stepByStepGuideline:
+      - Analyze the structure of the function $g(x) = x^4$.
+      - In this function, the variable $x$ is the base, and the exponent (4) is a constant number.
+      - Functions where the variable is the base and the exponent is a constant are defined as polynomial functions, not exponential
+        functions.
+      id: q1-2
+      questionGroup: q1
+    - problemText: Consider the function $h(x) = 2 \cdot 3^x$. Is this an exponential function, even though it is multiplied
+        by a coefficient?
+      mathTool: null
+      finalAnswer: Yes, $h(x) = 2 \cdot 3^x$ is an exponential function.
+      stepByStepGuideline:
+      - Identify the core structure of the function $h(x) = 2 \cdot 3^x$.
+      - The defining characteristic of an exponential function is the presence of the variable $x$ in the exponent, acting
+        on a constant base (3).
+      - Although the function is vertically stretched by the coefficient 2, the variable remains in the exponent, confirming
+        that the function is exponential.
+      id: q1-3
+      questionGroup: q1
+    - problemText: Explain why $k(x) = 3x^2 + 5$ cannot be classified as an exponential function.
+      mathTool: null
+      finalAnswer: $k(x) = 3x^2 + 5$ is not an exponential function because the variable $x$ is the base, not the exponent.
+      stepByStepGuideline:
+      - Compare the structure of $k(x) = 3x^2 + 5$ with the general form of an exponential function $f(x) = a^x$.
+      - In $k(x)$, the variable $x$ is the base, and it is raised to a constant power (2). The function also includes other
+        polynomial terms and a constant shift.
+      - Since the variable is not located in the exponent, $k(x)$ is a polynomial function (specifically, a quadratic function),
+        not an exponential function.
+      id: q1-4
+      questionGroup: q1
+    - problemText: Classify the function $m(x) = 0.8^x + 1$. Is it exponential or non-exponential?
+      mathTool: null
+      finalAnswer: It is an exponential function.
+      stepByStepGuideline:
+      - Examine the primary term of the function, $0.8^x$.
+      - The base (0.8) is a constant, and the variable ($x$) is in the exponent.
+      - The addition of the constant (+1) represents a vertical shift but does not change the fundamental category of the
+        function. Because the variable is in the exponent, $m(x)$ is exponential.
+      id: q1-5
+      questionGroup: q1
+- id: exp-func-node-2
+  nodeNumber: 2
+  title: Evaluating Exponential Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: For the exponential function $f(x) = 3^x + 5$, evaluate $f(0)$.
+      avatarIntro: Evaluating exponential functions requires careful substitution. Remember the rule that any non-zero number
+        raised to the power of zero is one!
+      mathTool: null
+      finalAnswer: '6'
+      stepByStepGuideline:
+      - 'Substitute $x=0$ into the function: $f(0) = 3^0 + 5$.'
+      - 'Apply the rule $a^0 = 1$: $3^0 = 1$.'
+      - 'Calculate the result: $f(0) = 1 + 5 = 6$.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: The function $f(x) = 5^{-x} - 2$ models a decay process. Find the value of $f(1)$.
+      mathTool: null
+      finalAnswer: -1.8 or -9/5
+      stepByStepGuideline:
+      - 'Substitute $x=1$ into the function: $f(1) = 5^{-(1)} - 2$.'
+      - 'Apply the negative exponent rule $a^{-n} = 1/a^n$: $5^{-1} = 1/5$.'
+      - 'Calculate the result: $f(1) = 1/5 - 2$.'
+      - 'Convert to a common denominator or decimal: $1/5 - 10/5 = -9/5$, or $0.2 - 2 = -1.8$.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: Given the function $f(x) = 4 \times 2^x$, determine the value of $f(-2)$.
+      mathTool: null
+      finalAnswer: '1'
+      stepByStepGuideline:
+      - 'Substitute $x=-2$ into the function: $f(-2) = 4 \times 2^{-2}$.'
+      - 'Apply the negative exponent rule: $2^{-2} = 1/2^2 = 1/4$.'
+      - 'Calculate the result: $f(-2) = 4 \times (1/4)$.'
+      - 'Simplify: $f(-2) = 1$.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: Evaluate the function $g(x) = 10^{(x-3)}$ when $x=1$.
+      mathTool: null
+      finalAnswer: 0.01 or 1/100
+      stepByStepGuideline:
+      - 'Substitute $x=1$ into the function: $g(1) = 10^{(1-3)}$.'
+      - 'Simplify the exponent: $g(1) = 10^{-2}$.'
+      - 'Apply the negative exponent rule: $10^{-2} = 1/10^2 = 1/100$.'
+      - 'Express the final answer as a decimal: $g(1) = 0.01$.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: Calculate the value of the expression $h(x) = 2^x + 3$ when $x=3$.
+      mathTool: null
+      finalAnswer: '11'
+      stepByStepGuideline:
+      - 'Substitute $x=3$ into the expression: $h(3) = 2^3 + 3$.'
+      - 'Calculate the exponential term: $2^3 = 2 \times 2 \times 2 = 8$.'
+      - 'Calculate the final result: $h(3) = 8 + 3 = 11$.'
+      id: q2-5
+      questionGroup: q2
+- id: exp-func-node-3
+  nodeNumber: 3
+  title: Identifying Exponential vs Non-Exponential
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Consider the function $f(x) = 3 \cdot 5^x + 10$. Is this function classified as exponential or non-exponential?
+        Provide a detailed explanation focusing on the position of the variable $x$.
+      avatarIntro: Identifying functions is key to understanding their behavior. Remember to look closely at where the variable
+        is located in relation to the operations.
+      mathTool: null
+      finalAnswer: Exponential
+      stepByStepGuideline:
+      - 'Recall the definition of an exponential function: the variable must appear in the exponent of a constant base.'
+      - In the function $f(x) = 3 \cdot 5^x + 10$, the variable $x$ is the exponent attached to the base 5.
+      - The multiplication by 3 (coefficient) and the addition of 10 (vertical shift) do not change the fundamental structure
+        where the variable is the exponent.
+      - Therefore, $f(x)$ is an exponential function.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Classify the function $g(x) = 2x - 7^3$. Is it exponential or non-exponential? Explain why the term $7^3$
+        does not make the function exponential.
+      mathTool: null
+      finalAnswer: Non-Exponential
+      stepByStepGuideline:
+      - Analyze the terms in the function $g(x) = 2x - 7^3$.
+      - The first term, $2x$, is a linear term where the variable $x$ is the base (raised implicitly to the power 1).
+      - The second term, $7^3$, is a constant value (since 7 and 3 are both fixed numbers; $7^3 = 343$).
+      - Since the variable $x$ is not in the exponent of a constant base anywhere in the expression, the function is non-exponential
+        (specifically, it is a linear polynomial). The constant exponential term $7^3$ is irrelevant to the function's classification
+        regarding $x$.
+      id: q3-2
+      questionGroup: q3
+    - problemText: Determine whether $h(x) = 0.5^x$ is an exponential function. Justify your answer based on the role of the
+        variable.
+      mathTool: null
+      finalAnswer: Exponential
+      stepByStepGuideline:
+      - Examine the structure of $h(x) = 0.5^x$.
+      - The base is the constant $0.5$.
+      - The variable $x$ occupies the position of the exponent.
+      - By definition, any function where a constant base is raised to a power containing the variable is an exponential function.
+        Since $x$ is the exponent, $h(x)$ is exponential.
+      id: q3-3
+      questionGroup: q3
+    - problemText: Consider the function $k(x) = 5x^2 + 3^4$. Classify this function as exponential or non-exponential, and
+        explain your choice by identifying the base and exponent for the variable term.
+      mathTool: null
+      finalAnswer: Non-Exponential
+      stepByStepGuideline:
+      - Identify where the variable $x$ appears in $k(x) = 5x^2 + 3^4$.
+      - The variable appears in the term $5x^2$. Here, $x$ is the base, and the exponent is the constant number 2.
+      - The term $3^4$ is a constant value (81) and does not contain the variable $x$.
+      - Since the variable $x$ is the base and not in the exponent, the function is a polynomial (quadratic) and is therefore
+        non-exponential.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Is the function $m(x) = x^3$ an exponential function? Explain why or why not, contrasting its structure
+        with the required form of an exponential equation.
+      mathTool: null
+      finalAnswer: Non-Exponential
+      stepByStepGuideline:
+      - The function $m(x) = x^3$ is a polynomial function (specifically, a cubic function).
+      - In this function, the variable $x$ is the base, and the exponent is the constant number 3.
+      - For a function to be exponential, the base must be a constant number greater than zero and not equal to one, and the
+        exponent must contain the variable.
+      - Since the variable is the base, $m(x)$ is non-exponential.
+      id: q3-5
+      questionGroup: q3
+- id: exp-graph-node-2
+  nodeNumber: 5
+  title: Key Features of Exponential Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: exponentialGraph
+    preWrittenQuestions:
+    - problemText: From the graph of $f(x) = 2^x$ shown below, identify both the y-intercept and the domain of the function.
+      avatarIntro: Ready to practice reading key features from exponential graphs? Remember, the base affects growth rate,
+        but the fundamental structure remains the same!
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 2
+          showAsymptote: true
+          showYIntercept: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 'Y-intercept: (0, 1). Domain: All real numbers (or $\mathbb{R}$).'
+      stepByStepGuideline:
+      - Identify the y-intercept by locating the point where the graph crosses the y-axis. For $f(x) = b^x$, this is always
+        (0, 1).
+      - Determine the domain by observing the possible x-values the graph covers. Since the graph extends indefinitely horizontally
+        in both directions, the domain is all real numbers.
+      id: q5-1
+      questionGroup: q5
+    - problemText: From the graph of $f(x) = 5^x$ shown below, identify the horizontal asymptote and the range of the function.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 5
+          showAsymptote: true
+          showYIntercept: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 'Horizontal Asymptote: $y=0$. Range: $y > 0$ (or $(0, \infty)$).'
+      stepByStepGuideline:
+      - The horizontal asymptote is the line that the graph approaches but never touches as $x$ approaches negative infinity.
+        For $f(x) = b^x$, this line is $y=0$.
+      - The range consists of all possible y-values. Since the graph lies entirely above the horizontal asymptote $y=0$, the
+        range is all positive real numbers, $y > 0$.
+      id: q5-2
+      questionGroup: q5
+    - problemText: From the graph of $f(x) = 0.5^x$ shown below, describe the behavior of the function as $x \to \infty$ and
+        its behavior as $x \to -\infty$.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.5
+          showAsymptote: true
+          showYIntercept: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: As $x \to \infty$, $f(x) \to 0$. As $x \to -\infty$, $f(x) \to \infty$.
+      stepByStepGuideline:
+      - Analyze the graph as $x$ moves far to the right ($x \to \infty$). The graph approaches the horizontal asymptote $y=0$,
+        so $f(x) \to 0$.
+      - Analyze the graph as $x$ moves far to the left ($x \to -\infty$). The graph increases without bound, so $f(x) \to
+        \infty$.
+      id: q5-3
+      questionGroup: q5
+    - problemText: From the graph of $f(x) = 3^x$ shown below, identify the y-intercept, the horizontal asymptote, and describe
+        the behavior of the function as $x \to -\infty$.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 3
+          showAsymptote: true
+          showYIntercept: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 'Y-intercept: (0, 1). Horizontal Asymptote: $y=0$. Behavior as $x \to -\infty$: $f(x) \to 0$.'
+      stepByStepGuideline:
+      - The y-intercept is where $x=0$, which is (0, 1).
+      - The horizontal asymptote is the line $y=0$.
+      - Observe the graph as $x$ moves toward negative infinity (left side). The graph approaches the asymptote $y=0$, meaning
+        $f(x) \to 0$.
+      id: q5-4
+      questionGroup: q5
+    - problemText: From the graph of $f(x) = 0.8^x$ shown below, identify the range, the domain, and the y-intercept.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.8
+          showAsymptote: true
+          showYIntercept: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 'Range: $y > 0$. Domain: All real numbers (or $\mathbb{R}$). Y-intercept: (0, 1).'
+      stepByStepGuideline:
+      - The range is the set of all output values (y-values). Since the function is always positive, the range is $y > 0$.
+      - The domain is the set of all input values (x-values). Since the graph extends infinitely left and right, the domain
+        is all real numbers.
+      - The y-intercept is the point where the graph crosses the y-axis, which is always (0, 1) for a function of the form
+        $f(x) = b^x$.
+      id: q5-5
+      questionGroup: q5
+- id: exp-graph-node-3
+  nodeNumber: 6
+  title: Comparing Growth and Decay Functions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: graphCompare
+    preWrittenQuestions:
+    - problemText: The graphs of $f(x)=3^x$ and $g(x)=10^x$ are shown below. Which function exhibits a much steeper growth
+        rate for $x>0$? Explain the difference in steepness using the concept of the base size.
+      avatarIntro: Comparing exponential functions is all about looking at the base. Remember, the larger the base, the faster
+        the function grows!
+      mathTool:
+        toolName: graphCompare
+        parameters:
+          function1Type: exponential
+          function1Params:
+            base: 3
+          function1Label: f(x)
+          function2Type: exponential
+          function2Params:
+            base: 10
+          function2Label: g(x)
+          showLegend: true
+      finalAnswer: $g(x)=10^x$ exhibits a much steeper growth rate. This is because $g(x)$ has a significantly larger base
+        (10 > 3). The base determines the multiplication factor for each unit increase in $x$; thus, multiplying by 10 causes
+        the output to increase much faster than multiplying by 3.
+      stepByStepGuideline:
+      - 'Observe the graph: $g(x)=10^x$ is visually steeper than $f(x)=3^x$ for $x>0$.'
+      - 'Identify the bases: The base of $f(x)$ is 3 and the base of $g(x)$ is 10.'
+      - 'Explain the comparison: Since $10 > 3$, the function $g(x)$ grows faster. A larger base means the function is multiplied
+        by a larger factor for every increment of $x$, resulting in a steeper curve.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: The graphs of $f(x)=0.5^x$ and $g(x)=0.8^x$ are shown below. Both functions represent decay. Which function
+        decays faster (approaches the x-axis more quickly)? Explain your answer by comparing the base sizes relative to 1.
+      mathTool:
+        toolName: graphCompare
+        parameters:
+          function1Type: exponential
+          function1Params:
+            base: 0.5
+          function1Label: f(x)
+          function2Type: exponential
+          function2Params:
+            base: 0.8
+          function2Label: g(x)
+          showLegend: true
+      finalAnswer: $f(x)=0.5^x$ decays faster. For exponential decay functions ($0 < b < 1$), the function with the base closer
+        to 0 (and farther from 1) decays more rapidly. Since $0.5$ is closer to 0 than $0.8$, $f(x)$ loses value more quickly.
+      stepByStepGuideline:
+      - 'Observe the graph: $f(x)=0.5^x$ drops below $g(x)=0.8^x$ more quickly as $x$ increases, indicating faster decay.'
+      - 'Identify the bases: Bases are 0.5 and 0.8. Both are decay bases ($0 < b < 1$).'
+      - 'Determine the rate: Decay is faster when the base is smaller (closer to 0). Since $0.5 < 0.8$, $f(x)$ decays faster
+        because it retains only 50% of its previous value per unit step, while $g(x)$ retains 80%.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: The graphs of $f(x)=2^x$ and $g(x)=0.5^x$ are shown below. Describe the fundamental difference in the behavior
+        of the two functions (growth vs. decay). How does the size of the base explain this difference?
+      mathTool:
+        toolName: graphCompare
+        parameters:
+          function1Type: exponential
+          function1Params:
+            base: 2
+          function1Label: f(x)
+          function2Type: exponential
+          function2Params:
+            base: 0.5
+          function2Label: g(x)
+          showLegend: true
+      finalAnswer: $f(x)=2^x$ is exponential growth, and $g(x)=0.5^x$ is exponential decay. This difference is determined
+        by the base relative to the number 1. $f(x)$ grows because its base (2) is greater than 1, meaning the quantity increases
+        over time. $g(x)$ decays because its base (0.5) is between 0 and 1, meaning the quantity decreases over time.
+      stepByStepGuideline:
+      - 'Analyze the graph: $f(x)$ increases as $x$ increases (growth); $g(x)$ decreases as $x$ increases (decay).'
+      - 'Identify the bases: Base of $f(x)$ is 2; base of $g(x)$ is 0.5.'
+      - 'Relate base size to behavior: If the base $b > 1$, the function exhibits growth. If the base $0 < b < 1$, the function
+        exhibits decay. This explains why $f(x)$ grows and $g(x)$ decays.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: The graphs of $f(x)=2^x$ and $g(x)=3^x$ are shown below. Although both functions represent growth, which
+        function is steeper for $x>0$? Explain your observation using the multiplication factor inherent in the base.
+      mathTool:
+        toolName: graphCompare
+        parameters:
+          function1Type: exponential
+          function1Params:
+            base: 2
+          function1Label: f(x)
+          function2Type: exponential
+          function2Params:
+            base: 3
+          function2Label: g(x)
+          showLegend: true
+      finalAnswer: $g(x)=3^x$ is steeper. Since $3 > 2$, $g(x)$ has a larger base. The base represents the multiplication
+        factor applied for every unit increase in $x$. Since multiplying by 3 causes a faster rate of increase than multiplying
+        by 2, $g(x)$ grows more rapidly.
+      stepByStepGuideline:
+      - 'Visually inspect the graph: $g(x)$ appears slightly steeper than $f(x)$ for positive $x$ values.'
+      - 'Compare the bases: Base of $f(x)$ is 2, base of $g(x)$ is 3.'
+      - 'Relate base size to growth rate: In exponential growth, a larger base leads to a steeper curve because the output
+        is multiplied by a larger factor at each step, accumulating value more quickly.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: The graphs of $f(x)=0.3^x$ and $g(x)=0.7^x$ are shown below. Compare the decay rates. Which base value
+        corresponds to the function that approaches the horizontal asymptote ($y=0$) faster? Explain why this function decays
+        faster.
+      mathTool:
+        toolName: graphCompare
+        parameters:
+          function1Type: exponential
+          function1Params:
+            base: 0.3
+          function1Label: f(x)
+          function2Type: exponential
+          function2Params:
+            base: 0.7
+          function2Label: g(x)
+          showLegend: true
+      finalAnswer: The base $0.3$ corresponds to $f(x)$, which approaches the asymptote faster (decays faster). For decay
+        functions, the base represents the percentage of the value remaining after each time period (30% remaining vs 70%
+        remaining). Since 0.3 is farther from 1, the function decreases more aggressively toward zero.
+      stepByStepGuideline:
+      - 'Observe the decay curves: $f(x)=0.3^x$ drops faster and stays closer to the x-axis for $x>0$.'
+      - 'Identify the bases: Bases are 0.3 and 0.7.'
+      - 'Explain the decay speed: Decay is faster when the retention factor (base) is smaller. A base of 0.3 means the function
+        is only 30% of its previous value, resulting in a 70% decrease per step. A base of 0.7 results in only a 30% decrease
+        per step. Therefore, $f(x)$ decays faster.'
+      id: q6-5
+      questionGroup: q6
+- id: exp-eq-node-1
+  nodeNumber: 7
+  title: Simple Same-Base Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Solve the exponential equation $2^x = \frac{1}{16}$. Remember the fundamental rule for solving these equations:
+        If $a^x = a^k$, then $x = k$.'
+      avatarIntro: Solving exponential equations often relies on converting numbers into powers of the same base. You've got
+        this!
+      mathTool: null
+      finalAnswer: $x = -4$
+      stepByStepGuideline:
+      - The goal is to write both sides of the equation with the same base (Base 2).
+      - Recognize that $16 = 2^4$. Using the rule for negative exponents, $\frac{1}{16} = 2^{-4}$.
+      - 'Rewrite the equation: $2^x = 2^{-4}$.'
+      - 'Apply the rule: If the bases are the same, the exponents must be equal. Equate the exponents: $x = -4$.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Determine the value of $x$ that satisfies the equation $3^{(x-1)} = 81$. State the rule that allows you
+        to equate the exponents.
+      mathTool: null
+      finalAnswer: $x = 5$
+      stepByStepGuideline:
+      - 'Express 81 as a power of 3: $81 = 3^4$.'
+      - 'Rewrite the original equation with the same base: $3^{(x-1)} = 3^4$.'
+      - 'Apply the rule (If $a^x = a^k$, then $x = k$). Equate the exponents: $x - 1 = 4$.'
+      - 'Solve the resulting linear equation for $x$: $x = 4 + 1$.'
+      - Therefore, $x = 5$.
+      id: q7-2
+      questionGroup: q7
+    - problemText: Find the solution to the equation $6 \times 3^x = 54$. Ensure you isolate the exponential term before attempting
+        to convert bases.
+      mathTool: null
+      finalAnswer: $x = 2$
+      stepByStepGuideline:
+      - 'First, isolate the exponential term $3^x$ by dividing both sides of the equation by the coefficient 6: $3^x = \frac{54}{6}$.'
+      - 'Simplify the right side: $3^x = 9$.'
+      - 'Express 9 as a power of 3: $9 = 3^2$.'
+      - 'Rewrite the equation: $3^x = 3^2$.'
+      - 'Apply the rule (If $a^x = a^k$, then $x = k$): $x = 2$.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: Solve the equation $5^x = 125$.
+      mathTool: null
+      finalAnswer: $x = 3$
+      stepByStepGuideline:
+      - Identify the base needed (Base 5).
+      - Express 125 as a power of 5. Since $5 \times 5 \times 5 = 125$, we have $125 = 5^3$.
+      - 'Rewrite the equation with the same base: $5^x = 5^3$.'
+      - 'Equate the exponents: $x = 3$.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: Solve the equation $2^{(2x+1)} = \frac{1}{8}$.
+      mathTool: null
+      finalAnswer: $x = -2$
+      stepByStepGuideline:
+      - Express $\frac{1}{8}$ as a power of 2. Since $8 = 2^3$, we use negative exponents to write $\frac{1}{8} = 2^{-3}$.
+      - 'Rewrite the equation using the same base: $2^{(2x+1)} = 2^{-3}$.'
+      - 'Equate the exponents: $2x + 1 = -3$.'
+      - 'Solve the linear equation: Subtract 1 from both sides: $2x = -3 - 1$, so $2x = -4$.'
+      - 'Divide by 2: $x = -2$.'
+      id: q7-5
+      questionGroup: q7
+- id: exp-eq-node-2
+  nodeNumber: 8
+  title: Complex Same-Base Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Solve the following exponential equation for $x$: $$4 \times 5^x = 500$$'
+      avatarIntro: Solving complex exponential equations requires isolating the base first. Remember to always look for a
+        common base once the exponential term is by itself!
+      mathTool: null
+      finalAnswer: x = 3
+      stepByStepGuideline:
+      - 'Isolate the exponential term $5^x$ by dividing both sides by 4: $5^x = \frac{500}{4}$, which simplifies to $5^x =
+        125$.'
+      - 'Convert the number 125 into a power of the base 5: $125 = 5^3$. The equation becomes $5^x = 5^3$.'
+      - 'Since the bases are the same, equate the exponents: $x = 3$.'
+      - 'Verify the solution: $4 \times 5^3 = 4 \times 125 = 500$. The solution is correct.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'Find the value of $x$ that satisfies the equation: $$5^x = \frac{1}{125}$$'
+      mathTool: null
+      finalAnswer: x = -3
+      stepByStepGuideline:
+      - 'First, express the denominator 125 using the base 5: $125 = 5^3$. The equation becomes $5^x = \frac{1}{5^3}$.'
+      - 'Use the negative exponent rule, which states that $\frac{1}{a^n} = a^{-n}$. Apply this rule to the right side: $5^x
+        = 5^{-3}$.'
+      - 'Since the bases are equal, equate the exponents: $x = -3$.'
+      - 'Verify the solution: $5^{-3} = \frac{1}{5^3} = \frac{1}{125}$. The solution is correct.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: Solve the exponential equation $4^x = 2^{x+2}$. This requires using the power of a power rule.
+      mathTool: null
+      finalAnswer: x = 2
+      stepByStepGuideline:
+      - 'Convert the larger base (4) to the common base (2): $4 = 2^2$. The equation becomes $(2^2)^x = 2^{x+2}$.'
+      - 'Apply the power rule $(a^m)^n = a^{mn}$ to the left side: $2^{2x} = 2^{x+2}$.'
+      - 'Since the bases are equal, equate the exponents: $2x = x + 2$.'
+      - 'Solve the resulting linear equation: Subtract $x$ from both sides: $2x - x = 2$, so $x = 2$.'
+      - 'Verify the solution: Left side $4^2 = 16$. Right side $2^{(2+2)} = 2^4 = 16$. The solution is correct.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'Solve for $x$ in the equation: $$2^{x+1} = \frac{1}{8}$$'
+      mathTool: null
+      finalAnswer: x = -4
+      stepByStepGuideline:
+      - Express the fraction using the base 2. Since $8 = 2^3$, the equation is $2^{x+1} = \frac{1}{2^3}$.
+      - 'Apply the negative exponent rule $\frac{1}{a^n} = a^{-n}$ to convert the fraction: $2^{x+1} = 2^{-3}$.'
+      - 'Equate the exponents: $x + 1 = -3$.'
+      - 'Solve the multi-step algebraic equation: Subtract 1 from both sides: $x = -3 - 1$, so $x = -4$.'
+      - 'Verify the solution: $2^{(-4+1)} = 2^{-3} = \frac{1}{2^3} = \frac{1}{8}$. The solution is correct.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'Determine the value of $x$ for the equation: $$\left(\frac{1}{2}\right)^x = 2^{x-1}$$'
+      mathTool: null
+      finalAnswer: x = 1/2
+      stepByStepGuideline:
+      - 'Convert the fractional base $\frac{1}{2}$ into a power of 2 using the rule $\frac{1}{a^n} = a^{-n}$: $\frac{1}{2}
+        = 2^{-1}$.'
+      - 'Substitute this back into the equation: $(2^{-1})^x = 2^{x-1}$.'
+      - 'Apply the power rule $(a^m)^n = a^{mn}$ to the left side: $2^{-x} = 2^{x-1}$.'
+      - 'Equate the exponents: $-x = x - 1$.'
+      - 'Solve the algebraic equation: Subtract $x$ from both sides: $-2x = -1$.'
+      - 'Divide by -2: $x = \frac{-1}{-2}$, so $x = \frac{1}{2}$.'
+      - 'Verify the solution: Left side $(\frac{1}{2})^{1/2} = \frac{1}{\sqrt{2}}$. Right side $2^{(1/2 - 1)} = 2^{-1/2} =
+        \frac{1}{2^{1/2}} = \frac{1}{\sqrt{2}}$. The solution is correct.'
+      id: q8-5
+      questionGroup: q8
+- id: exp-eq-node-3
+  nodeNumber: 9
+  title: Technology for Unsolvable Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: exponentialGraph
+    preWrittenQuestions:
+    - problemText: "A biologist is tracking a strain of bacteria where the population $P$ grows according to the model $P(t)\
+        \ = 2^t$, where $t$ is time in hours. We need to find the exact time $t$ when the population reaches 7 units. This\
+        \ leads to the exponential equation $2^t = 7$. \n\nSince 7 is not an integer power of 2, the same-base method fails.\
+        \ Use the graphing tool or a scientific calculator to find the approximate solution for $t$. Round your answer to\
+        \ 3 decimal places.\n\n(Remember: Logarithms will provide the exact solution to this type of equation in later sections.)"
+      avatarIntro: Great job mastering the same-base technique! Now, let's explore how technology helps us solve equations
+        that don't fit that simple pattern.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 2
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: t ≈ 2.807
+      stepByStepGuideline:
+      - Recognize that the same-base method cannot be used because 7 cannot be written as $2^k$ where k is an integer or simple
+        fraction.
+      - To solve $2^t = 7$ using graphing technology, plot the functions $Y_1 = 2^x$ and $Y_2 = 7$.
+      - Find the point of intersection between the two graphs.
+      - The x-coordinate of the intersection point is the approximate solution.
+      - Using a calculator (or the log definition), $\log_2(7) \approx 2.80735$.
+      - Rounding the result to 3 decimal places gives $t \approx 2.807$ hours.
+      id: q9-1
+      questionGroup: q9
+    - problemText: "An investment grows based on the formula $A(t) = 3^t$, where $A(t)$ is the growth factor after $t$ years.\
+        \ We want to know how many years it takes for the growth factor to reach 20. Solve the equation $3^t = 20$. \n\nExplain\
+        \ why the same-base method fails here, and then use technology (graphing intersection or calculator) to find the approximate\
+        \ solution. Round your answer to 4 decimal places.\n\n(Note: Logarithms will solve this exactly in later sections.)"
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 3
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: t ≈ 2.7268
+      stepByStepGuideline:
+      - The same-base method fails because 20 is not a simple power of 3 ($3^2 = 9$ and $3^3 = 27$).
+      - To solve $3^t = 20$ graphically, plot $Y_1 = 3^x$ and $Y_2 = 20$.
+      - Locate the intersection point.
+      - 'Using a calculator or the graph intersection feature, find the x-coordinate: $t = \log_3(20) \approx 2.726833$.'
+      - Rounding the result to 4 decimal places gives $t \approx 2.7268$ years.
+      id: q9-2
+      questionGroup: q9
+    - problemText: "The scale for measuring the intensity of certain natural phenomena uses a base-5 exponential model. If\
+        \ the current intensity level requires solving the equation $5^x = 100$, determine the value of $x$. \n\nState clearly\
+        \ why the same-base method is ineffective for this equation (100 is not a power of 5). Then, use the provided tool\
+        \ or a calculator to find the approximate value of $x$. Round your answer to 2 decimal places.\n\n(Preview: Logarithms\
+        \ are the mathematical tool designed to solve equations like this exactly.)"
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 5
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: x ≈ 2.86
+      stepByStepGuideline:
+      - The same-base method fails because $5^2 = 25$ and $5^3 = 125$; 100 is not an integer power of 5.
+      - To solve $5^x = 100$ using technology, find the intersection of $Y_1 = 5^x$ and $Y_2 = 100$.
+      - The x-coordinate of the intersection is the solution.
+      - Using a calculator, $x = \log_5(100) \approx 2.86135$.
+      - Rounding the result to 2 decimal places gives $x \approx 2.86$.
+      id: q9-3
+      questionGroup: q9
+    - problemText: "A specialized filter reduces the intensity of light, $L$, according to the formula $L = 2^x$, where $x$\
+        \ represents the thickness of the filter material. If the required final light intensity is 0.271, we need to solve\
+        \ $2^x = 0.271$. \n\nExplain why the same-base method is not practical here, and use technology to find the approximate\
+        \ solution for $x$. Pay attention to the sign of your answer. Round your answer to 3 decimal places.\n\n(This type\
+        \ of equation is solved exactly using Logarithms.)"
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 2
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: x ≈ -1.885
+      stepByStepGuideline:
+      - The same-base method is ineffective because 0.271 is not a simple power of 2.
+      - To find the solution, graph $Y_1 = 2^x$ and $Y_2 = 0.271$ and find the intersection.
+      - Since the target value (0.271) is less than 1 (the y-intercept of $2^x$), the exponent $x$ must be negative.
+      - Using a calculator, $x = \log_2(0.271) \approx -1.88452$.
+      - Rounding the result to 3 decimal places gives $x \approx -1.885$.
+      id: q9-4
+      questionGroup: q9
+    - problemText: "The concentration of a drug in a patient's bloodstream, $C$, decreases over time $t$ (in hours) following\
+        \ the model $C(t) = 7^{-t}$. Determine the time $t$ when the concentration reaches 23 units. This requires solving\
+        \ the equation $7^{-t} = 23$. \n\nSince 23 is not a power of 7, the same-base method fails. Use technology (graphing\
+        \ $Y_1 = 7^{-x}$ and $Y_2 = 23$ or using a calculator) to find the approximate time $t$. Round your answer to 3 decimal\
+        \ places.\n\n(Remember: Logarithms solve these equations exactly.)"
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 7
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: t ≈ -1.565
+      stepByStepGuideline:
+      - The same-base method fails because 23 is not a simple power of 7 ($7^1 = 7, 7^2 = 49$).
+      - We need to solve $7^{-t} = 23$. Let $k = -t$. We first solve $7^k = 23$.
+      - Using a calculator, $k = \log_7(23) \approx 1.56457$.
+      - Since $k = -t$, then $t = -k$. Thus, $t \approx -1.56457$.
+      - 'Note on context: Since time $t$ must be positive in a real-world decay scenario, this result implies the concentration
+        was 23 units 1.565 hours BEFORE the initial measurement (t=0). Mathematically, the solution is $t \approx -1.565$.'
+      - Rounding to 3 decimal places gives $t \approx -1.565$ hours.
+      id: q9-5
+      questionGroup: q9
+- id: exp-growth-node-2
+  nodeNumber: 11
+  title: Growth Formula Calculations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: exponentialGraph
+    preWrittenQuestions:
+    - problemText: A population of rabbits starts at 100 and increases by 10% per year. Using the growth formula $f(n) = p
+        \times a^n$, where $p$ is the initial population and $a$ is the growth factor, calculate the expected rabbit population
+        after 5 years. (Round your final answer to the nearest whole rabbit.)
+      avatarIntro: Exponential functions are crucial for modeling real-world growth, like populations or investments. Let's
+        practice applying the formula correctly.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.1
+          coefficient: 100
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 161 rabbits
+      stepByStepGuideline:
+      - 'Determine the growth factor ($a$): Since the rate ($r$) is 10%, $a = 1 + \frac{10}{100} = 1.10$.'
+      - Identify the initial population ($p = 100$) and the time ($n = 5$ years).
+      - 'Substitute the values into the formula: $f(5) = 100 \times (1.10)^5$.'
+      - 'Calculate the result: $f(5) = 100 \times 1.61051$.'
+      - The population is $161.051$. Rounding to the nearest whole rabbit gives 161.
+      id: q11-1
+      questionGroup: q11
+    - problemText: An initial investment of $500 is placed into an account that yields a compound interest growth rate of
+        5% per year. Using the formula $A(t) = P(1+r)^t$, where $A(t)$ is the future value, calculate the value of the investment
+        after 10 years. (Round your final answer to 2 decimal places.)
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.05
+          coefficient: 500
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: $814.45
+      stepByStepGuideline:
+      - 'Determine the growth factor ($a$): Rate ($r$) is 5%, so $a = 1 + 0.05 = 1.05$.'
+      - Identify the principal ($P = 500$) and the time ($t = 10$ years).
+      - 'Substitute the values into the formula: $A(10) = 500 \times (1.05)^{10}$.'
+      - 'Calculate the result: $A(10) = 500 \times 1.6288946...$'
+      - The future value is approximately $814.4473$. Rounding to two decimal places gives $814.45.
+      id: q11-2
+      questionGroup: q11
+    - problemText: A culture starts with 50 bacteria cells. If the population increases at a rate of 20% every hour, use the
+        formula $P(t) = 50 \times a^t$ to find the population size after 3 hours. (Round your answer to the nearest whole
+        bacterium.)
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.2
+          coefficient: 50
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 86 bacteria
+      stepByStepGuideline:
+      - 'Determine the growth factor ($a$): Rate ($r$) is 20%, so $a = 1 + 0.20 = 1.20$.'
+      - Identify the initial population ($P = 50$) and the time ($t = 3$ hours).
+      - 'Substitute the values into the formula: $P(3) = 50 \times (1.20)^3$.'
+      - 'Calculate the result: $P(3) = 50 \times 1.728$.'
+      - The population is $86.4$. Rounding to the nearest whole bacterium gives 86.
+      id: q11-3
+      questionGroup: q11
+    - problemText: A wildlife reserve introduces 200 mongooses into a new area. The population is observed to grow by 7% annually.
+        Using the growth model $M(t) = 200 \times a^t$, determine the estimated mongoose population after 15 years. (Round
+        your answer to the nearest whole mongoose.)
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.07
+          coefficient: 200
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 552 mongooses
+      stepByStepGuideline:
+      - 'Determine the growth factor ($a$): Rate ($r$) is 7%, so $a = 1 + 0.07 = 1.07$.'
+      - Identify the initial population ($P = 200$) and the time ($t = 15$ years).
+      - 'Substitute the values into the formula: $M(15) = 200 \times (1.07)^{15}$.'
+      - 'Calculate the result: $M(15) = 200 \times 2.75903...$'
+      - The population is approximately $551.806$. Rounding to the nearest whole mongoose gives 552.
+      id: q11-4
+      questionGroup: q11
+    - problemText: A conservation project begins monitoring 80 gorillas. Due to successful conservation efforts, the population
+        is increasing at a rapid rate of 15% per decade. Using the formula $G(d) = 80 \times a^d$, where $d$ is the number
+        of decades, calculate the projected gorilla population after 20 decades. (Round your answer to the nearest whole gorilla.)
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.15
+          coefficient: 80
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 1309 gorillas
+      stepByStepGuideline:
+      - 'Determine the growth factor ($a$): Rate ($r$) is 15%, so $a = 1 + 0.15 = 1.15$.'
+      - Identify the initial population ($P = 80$) and the time ($d = 20$ decades).
+      - 'Substitute the values into the formula: $G(20) = 80 \times (1.15)^{20}$.'
+      - 'Calculate the result: $G(20) = 80 \times 16.3665...$'
+      - The population is approximately $1309.32$. Rounding to the nearest whole gorilla gives 1309.
+      id: q11-5
+      questionGroup: q11
+- id: exp-growth-node-3
+  nodeNumber: 12
+  title: Real-World Growth Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: exponentialGraph
+    preWrittenQuestions:
+    - problemText: A financial analyst invests $10,000 into a savings bond that guarantees an annual compound interest rate
+        of 6%. Assuming the interest is compounded annually and no withdrawals are made, calculate the total value of the
+        investment after 10 years.
+      avatarIntro: Ready to tackle real-world financial growth? Setting up the exponential model correctly is the first step
+        to success!
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.06
+          coefficient: 10000
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: $17,908.48
+      stepByStepGuideline:
+      - Identify the initial value (P = $10,000), the growth rate (r = 0.06), and the time period (t = 10 years).
+      - 'Set up the exponential growth formula: $A(t) = P(1+r)^t$.'
+      - 'Substitute the values: $A(10) = 10000 \times (1 + 0.06)^{10} = 10000 \times (1.06)^{10}$.'
+      - 'Calculate the value: $10000 \times 1.7908477...$'
+      - 'Round the final answer to two decimal places (since it is money): $17,908.48.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: A culture of bacteria starts with an initial population of 1,000 cells. If the population increases at
+        a rapid rate of 30% every hour, what will the estimated population size be after 4 hours?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.3
+          coefficient: 1000
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 2,856 bacteria
+      stepByStepGuideline:
+      - Identify the initial population ($P_0 = 1000$), the hourly growth rate (r = 0.30), and the time period (t = 4 hours).
+      - 'Set up the exponential growth formula: $P(t) = P_0(1+r)^t$.'
+      - 'Substitute the values: $P(4) = 1000 \times (1 + 0.30)^4 = 1000 \times (1.30)^4$.'
+      - 'Calculate the value: $1000 \times 2.8561 = 2856.1$.'
+      - 'Round the final answer to the nearest whole number, as population counts must be integers: 2,856 bacteria.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: In a closed ecosystem, a population of rabbits starts at 50 individuals. If the population grows consistently
+        by 7% per year, calculate the expected number of rabbits after 15 years.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.07
+          coefficient: 50
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 138 rabbits
+      stepByStepGuideline:
+      - Identify the initial population ($P_0 = 50$), the annual growth rate (r = 0.07), and the time period (t = 15 years).
+      - 'Set up the exponential growth formula: $P(t) = P_0(1+r)^t$.'
+      - 'Substitute the values: $P(15) = 50 \times (1 + 0.07)^{15} = 50 \times (1.07)^{15}$.'
+      - 'Calculate the value: $50 \times 2.75903... \approx 137.95$.'
+      - 'Round the final answer to the nearest whole number: 138 rabbits.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: The population of a small town is currently 45,000 people. Local planning projections indicate a consistent
+        annual growth rate of 2.5%. Based on this model, what is the projected population of the town after 20 years?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.025
+          coefficient: 45000
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 73,737 people
+      stepByStepGuideline:
+      - Identify the initial population ($P_0 = 45,000$), the annual growth rate (r = 0.025), and the time period (t = 20
+        years).
+      - 'Set up the exponential growth formula: $P(t) = P_0(1+r)^t$.'
+      - 'Substitute the values: $P(20) = 45000 \times (1 + 0.025)^{20} = 45000 \times (1.025)^{20}$.'
+      - 'Calculate the value: $45000 \times 1.63861... \approx 73737.45$.'
+      - 'Round the final answer to the nearest whole number: 73,737 people.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: An investor purchases a new high-growth digital asset currently valued at $1,500. If the asset experiences
+        a stable annual growth rate of 15%, what will its total value be after 5 years?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.15
+          coefficient: 1500
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: $3,017.04
+      stepByStepGuideline:
+      - Identify the initial value (P = $1,500), the annual growth rate (r = 0.15), and the time period (t = 5 years).
+      - 'Set up the exponential growth formula: $A(t) = P(1+r)^t$.'
+      - 'Substitute the values: $A(5) = 1500 \times (1 + 0.15)^5 = 1500 \times (1.15)^5$.'
+      - 'Calculate the value: $1500 \times 2.011357...$'
+      - 'Round the final answer to two decimal places (since it is money): $3,017.04.'
+      id: q12-5
+      questionGroup: q12
+- id: exp-decay-node-1
+  nodeNumber: 13
+  title: Understanding Exponential Decay
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: exponentialGraph
+    preWrittenQuestions:
+    - problemText: The concentration of a specific drug in a patient's bloodstream decreases by 10% every hour through metabolism.
+        Identify the decay factor ($a$) for this process and explain why the factor confirms this relationship is one of exponential
+        decay.
+      avatarIntro: Welcome! We are exploring exponential decay, where quantities decrease by a constant percentage over time.
+        Let's analyze this drug metabolism scenario.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.9
+          coefficient: 1
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: The decay factor is 0.90. This confirms exponential decay because the factor $a$ is less than 1 but greater
+        than 0 ($0 < 0.90 < 1$), meaning the initial quantity is multiplied by a fraction in each time period, causing it
+        to decrease steadily towards zero.
+      stepByStepGuideline:
+      - Identify the rate of decrease ($r$). Here, $r = 10\%$, or 0.10.
+      - Calculate the decay factor ($a$) using the formula $a = 1 - r$. $a = 1 - 0.10 = 0.90$.
+      - 'State the condition for exponential decay: $0 < a < 1$. Since $0 < 0.90 < 1$, the process is exponential decay.'
+      - Explain that a factor between 0 and 1 ensures the quantity decreases but never reaches zero (as illustrated by the
+        graph approaching the asymptote $y=0$).
+      id: q13-1
+      questionGroup: q13
+    - problemText: A piece of machinery loses 25% of its remaining value due to depreciation every year. Calculate the decay
+        factor $a$ and demonstrate mathematically that this factor satisfies the condition required for exponential decay.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.75
+          coefficient: 1
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: The decay factor $a$ is 0.75. The condition for exponential decay is $0 < a < 1$. Since $0 < 0.75 < 1$,
+        this confirms the machinery's value follows an exponential decay model.
+      stepByStepGuideline:
+      - Identify the percentage decrease, $r = 25\% = 0.25$.
+      - 'Use the alternative form $a = 1 - r$ to find the decay factor: $a = 1 - 0.25 = 0.75$.'
+      - Verify the decay condition. Exponential decay occurs when the base $a$ satisfies $0 < a < 1$.
+      - Since $0.75$ falls within this range, the rate represents decay.
+      id: q13-2
+      questionGroup: q13
+    - problemText: The temperature of a heated substance cools according to an exponential model with a decay factor $a =
+        0.80$ per minute. What is the equivalent percentage rate of decrease ($r$) per minute?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.8
+          coefficient: 1
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: The percentage rate of decrease ($r$) is 20%.
+      stepByStepGuideline:
+      - 'Recall the relationship between decay factor ($a$) and rate of decrease ($r$): $a = 1 - r$.'
+      - 'Substitute the given decay factor: $0.80 = 1 - r$.'
+      - 'Solve for the rate $r$: $r = 1 - 0.80 = 0.20$.'
+      - "Convert the decimal rate to a percentage: $0.20 \times 100 = 20\\%$. The temperature decreases by 20% each minute."
+      id: q13-3
+      questionGroup: q13
+    - problemText: An electrical current in a circuit drops by 30% per day after a surge protector activates. Calculate the
+        decay factor $a$. Explain the significance of the mathematical condition $0 < a < 1$ in the context of the current
+        level over time.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.7
+          coefficient: 1
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: The decay factor $a$ is 0.70. The condition $0 < a < 1$ signifies that the quantity (current) is multiplied
+        by a value less than 1 in each period, causing it to decrease consistently. Since $a > 0$, the quantity remains positive
+        and never instantaneously reaches zero (approaching the asymptote $y=0$).
+      stepByStepGuideline:
+      - 'Identify the rate of decrease: $r = 30\% = 0.30$.'
+      - 'Calculate the decay factor: $a = 1 - 0.30 = 0.70$.'
+      - 'Explain the significance of $a < 1$: Since the factor is less than 1, the value decreases over time.'
+      - 'Explain the significance of $a > 0$: Since the factor is positive, the quantity itself must remain positive, meaning
+        the current will approach zero but never actually vanish according to this ideal model.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A radioactive substance loses 15% of its mass every day. Write the calculation for the decay factor $a$
+        using the alternative form $a = 1 - r/100$, and confirm if the resulting value represents exponential decay.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.85
+          coefficient: 1
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: The calculation is $a = 1 - 15/100 = 1 - 0.15 = 0.85$. Since $0 < 0.85 < 1$, the resulting value confirms
+        this process is exponential decay.
+      stepByStepGuideline:
+      - Identify the percentage rate $r = 15$.
+      - 'Apply the decay factor formula: $a = 1 - r/100$.'
+      - 'Calculate the value: $a = 1 - 15/100 = 1 - 0.15 = 0.85$.'
+      - 'Confirm decay: Because the resulting decay factor $a = 0.85$ is strictly between 0 and 1, the model represents exponential
+        decay.'
+      id: q13-5
+      questionGroup: q13
+- id: exp-decay-node-2
+  nodeNumber: 14
+  title: Decay Formula Calculations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: exponentialGraph
+    preWrittenQuestions:
+    - problemText: An initial electric current in a circuit measures 500 milliamps. Due to resistance, the current decreases
+        by 10% every second. Use the exponential decay formula, $I(t) = p \times a^t$, where $p$ is the initial current and
+        $a$ is the decay factor, to determine the current remaining after 4 seconds. (Round to two decimal places.)
+      avatarIntro: Great job reaching this section! We are going to calculate how quickly things decrease using the decay
+        formula. Remember to find the decay factor first!
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.9
+          coefficient: 500
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: 328.05 milliamps
+      stepByStepGuideline:
+      - Identify the initial value $p = 500$ milliamps and the rate of decay $r = 10\%$.
+      - Calculate the decay factor $a = 1 - r/100 = 1 - 0.10 = 0.90$.
+      - 'Substitute the values into the formula for time $t=4$: $I(4) = 500 \times (0.90)^4$.'
+      - 'Calculate the result: $I(4) = 500 \times 0.6561 = 328.05$.'
+      - The current remaining after 4 seconds is 328.05 milliamps.
+      id: q14-1
+      questionGroup: q14
+    - problemText: A large metal block is heated to $1000\text{°C}$ and then allowed to cool. Its temperature decreases exponentially
+        by 20% every hour. Use the formula $T(t) = p \times a^t$ to calculate the temperature of the block after 2 hours.
+        (Round to two decimal places.)
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.8
+          coefficient: 1000
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: 640.00 °C
+      stepByStepGuideline:
+      - Identify the initial temperature $p = 1000\text{°C}$ and the rate of decrease $r = 20\%$.
+      - Calculate the decay factor $a = 1 - r/100 = 1 - 0.20 = 0.80$.
+      - 'Substitute the values into the formula for time $t=2$: $T(2) = 1000 \times (0.80)^2$.'
+      - 'Calculate the result: $T(2) = 1000 \times 0.64 = 640$.'
+      - The temperature after 2 hours is 640.00 °C.
+      id: q14-2
+      questionGroup: q14
+    - problemText: A sample of radioactive material initially has a mass of 100 grams. This substance decays at a rate of
+        30% per year. Using the decay formula $M(t) = p \times a^t$, where $M(t)$ is the remaining mass after $t$ years, find
+        the mass of the sample remaining after 5 years. (Round to two decimal places.)
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.7
+          coefficient: 100
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: 16.81 grams
+      stepByStepGuideline:
+      - Identify the initial mass $p = 100$ grams and the decay rate $r = 30\%$.
+      - Calculate the decay factor $a = 1 - r/100 = 1 - 0.30 = 0.70$.
+      - 'Substitute the values into the formula for time $t=5$: $M(5) = 100 \times (0.70)^5$.'
+      - 'Calculate the result: $M(5) = 100 \times 0.16807 \approx 16.807$.'
+      - Rounding to two decimal places, the mass remaining after 5 years is 16.81 grams.
+      id: q14-3
+      questionGroup: q14
+    - problemText: A patient receives a 200 mg dose of medication. The concentration of the drug in the bloodstream decreases
+        by 15% every hour. Use the formula $C(t) = p \times a^t$ to calculate the concentration remaining after 10 hours.
+        (Round to two decimal places.)
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.85
+          coefficient: 200
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: 39.37 mg
+      stepByStepGuideline:
+      - Identify the initial concentration $p = 200$ mg and the decay rate $r = 15\%$.
+      - Calculate the decay factor $a = 1 - r/100 = 1 - 0.15 = 0.85$.
+      - 'Substitute the values into the formula for time $t=10$: $C(10) = 200 \times (0.85)^{10}$.'
+      - 'Calculate the result: $C(10) = 200 \times 0.196874... \approx 39.3748$.'
+      - Rounding to two decimal places, the concentration remaining after 10 hours is 39.37 mg.
+      id: q14-4
+      questionGroup: q14
+    - problemText: A high-power electrical component starts operating with an initial current of 320 milliamps. Due to energy
+        loss, the current decreases by 25% every minute. Use the decay formula $I(t) = p \times a^t$ to find the current remaining
+        after 15 minutes. (Round to two decimal places.)
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.75
+          coefficient: 320
+          showGrid: true
+          realWorldContext: true
+          showAsymptote: true
+      finalAnswer: 4.28 milliamps
+      stepByStepGuideline:
+      - Identify the initial current $p = 320$ milliamps and the decay rate $r = 25\%$.
+      - Calculate the decay factor $a = 1 - r/100 = 1 - 0.25 = 0.75$.
+      - 'Substitute the values into the formula for time $t=15$: $I(15) = 320 \times (0.75)^{15}$.'
+      - 'Calculate the result: $I(15) = 320 \times 0.013363... \approx 4.276$.'
+      - Rounding to two decimal places, the current remaining after 15 minutes is 4.28 milliamps.
+      id: q14-5
+      questionGroup: q14
+- id: exp-decay-node-3
+  nodeNumber: 15
+  title: Half-Life Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: exponentialGraph
+    preWrittenQuestions:
+    - problemText: Iodine-131 is a radioisotope used in medicine that decays relatively quickly. If Iodine-131 has a half-life
+        of 10 days, and a lab sample initially contains 40 grams, calculate the mass remaining after 40 days.
+      avatarIntro: Welcome! Half-life helps us understand how quickly radioactive materials or substances decay. Let's practice
+        applying the half-life formula.
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.5
+          coefficient: 40
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 2.5 grams
+      stepByStepGuideline:
+      - 'Step 1: Calculate the number of half-lives ($n$) that have elapsed. Use the formula: $n = \text{Total Time} / \text{Half-Life
+        Period}$. $n = 40 \text{ days} / 10 \text{ days} = 4$ half-lives.'
+      - 'Step 2: Apply the half-life formula $A(n) = A_0 \times (1/2)^n$, where $A_0$ is the initial amount (40 g).'
+      - 'Step 3: Substitute the values: $A(4) = 40 \times (1/2)^4$.'
+      - 'Step 4: Calculate the fractional decay: $(1/2)^4 = 1/16$. (After 1 half-life = 50%, 2 = 25%, 3 = 12.5%, 4 = 6.25%).'
+      - 'Step 5: Calculate the remaining mass: $A(4) = 40 \times (1/16) = 2.5$ grams.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: Carbon-14 is used extensively in dating ancient artifacts. It has a relatively long half-life of approximately
+        50 years (for this calculation). If an organic sample initially contains 100 milligrams of Carbon-14, how much Carbon-14
+        will remain after 150 years?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.5
+          coefficient: 100
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 12.5 milligrams
+      stepByStepGuideline:
+      - 'Step 1: Calculate the number of half-lives ($n$) elapsed. $n = 150 \text{ years} / 50 \text{ years} = 3$ half-lives.'
+      - 'Step 2: Apply the half-life formula: $A(n) = A_0 \times (1/2)^n$. $A_0 = 100 \text{ mg}$.'
+      - 'Step 3: Substitute the values: $A(3) = 100 \times (1/2)^3$.'
+      - 'Step 4: Calculate the fractional decay: $(1/2)^3 = 1/8$. (This represents 12.5% remaining).'
+      - 'Step 5: Calculate the remaining amount: $A(3) = 100 \times (1/8) = 12.5$ milligrams.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: Uranium-238, often used in geological dating, has a half-life of 100 years for the purpose of this calculation.
+        A rock formation initially contained 200 kilograms of Uranium-238. How many kilograms will remain after 200 years?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.5
+          coefficient: 200
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 50 kilograms
+      stepByStepGuideline:
+      - 'Step 1: Calculate the number of half-lives ($n$). $n = 200 \text{ years} / 100 \text{ years} = 2$ half-lives.'
+      - 'Step 2: Apply the half-life formula $A(n) = A_0 \times (1/2)^n$, where $A_0 = 200 \text{ kg}$.'
+      - 'Step 3: Substitute the values: $A(2) = 200 \times (1/2)^2$.'
+      - 'Step 4: Calculate the fractional decay: $(1/2)^2 = 1/4$. (This represents 25% remaining).'
+      - 'Step 5: Calculate the remaining mass: $A(2) = 200 \times (1/4) = 50$ kilograms.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: Strontium-90 activity is measured in Becquerels (Bq). If a sample of Strontium-90 has a half-life of 20
+        hours and starts with an activity of 80 Bq, what is the activity of the sample after 80 hours?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.5
+          coefficient: 80
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 5 Bq
+      stepByStepGuideline:
+      - 'Step 1: Determine the number of half-lives ($n$) elapsed. $n = 80 \text{ hours} / 20 \text{ hours} = 4$ half-lives.'
+      - 'Step 2: Use the formula $A(n) = A_0 \times (1/2)^n$, where $A_0 = 80 \text{ Bq}$.'
+      - 'Step 3: Substitute the values: $A(4) = 80 \times (1/2)^4$.'
+      - 'Step 4: Calculate the fractional decay: $(1/2)^4 = 1/16$.'
+      - 'Step 5: Calculate the remaining activity: $A(4) = 80 \times (1/16) = 5$ Bq.'
+      id: q15-4
+      questionGroup: q15
+    - problemText: A specific medication is metabolized by the body with a half-life of 25 minutes. If a patient receives
+        a dose resulting in an initial concentration of 100 units in the bloodstream, what concentration remains after 75
+        minutes?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.5
+          coefficient: 100
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 12.5 units
+      stepByStepGuideline:
+      - 'Step 1: Determine the number of half-lives ($n$) elapsed. $n = 75 \text{ minutes} / 25 \text{ minutes} = 3$ half-lives.'
+      - 'Step 2: Use the half-life decay formula $A(n) = A_0 \times (1/2)^n$, where $A_0 = 100 \text{ units}$.'
+      - 'Step 3: Substitute the values: $A(3) = 100 \times (1/2)^3$.'
+      - 'Step 4: Calculate the fractional decay: $(1/2)^3 = 1/8$. (This corresponds to 12.5% remaining.)'
+      - 'Step 5: Calculate the remaining concentration: $A(3) = 100 \times (1/8) = 12.5$ units.'
+      id: q15-5
+      questionGroup: q15
+- id: log-common-node-1
+  nodeNumber: 16
+  title: Understanding Logarithms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Given the exponential relationship $10^2 = 100$, explain how the logarithm works as the inverse operation.
+        Convert this expression into its equivalent logarithmic form.
+      avatarIntro: Welcome! Logarithms are simply a different way to ask about exponents. Let's practice converting between
+        these two forms to solidify your understanding.
+      mathTool: null
+      finalAnswer: \log 100 = 2
+      stepByStepGuideline:
+      - 'Recall the fundamental definition of the common logarithm: If $10^x = y$, then $\log y = x$. The logarithm asks,
+        ''What power (x) must 10 be raised to in order to equal y?'''
+      - In the given equation, $10^2 = 100$, the power $x$ is 2, and the result $y$ is 100.
+      - 'Substitute these values into the logarithmic form: $\log 100 = 2$. This means the power of 10 that gives 100 is 2.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: The logarithmic expression $\log 0.001 = -3$ asks, 'What power of 10 yields 0.001?' Convert this statement
+        back into its corresponding exponential form.
+      mathTool: null
+      finalAnswer: 10^{-3} = 0.001
+      stepByStepGuideline:
+      - The logarithmic form $\log y = x$ is equivalent to the exponential form $10^x = y$.
+      - In $\log 0.001 = -3$, the base is 10, the logarithm result (the exponent, $x$) is -3, and the input value ($y$) is
+        0.001.
+      - Substituting these parts into the exponential form yields $10^{-3} = 0.001$. This confirms that a negative exponent
+        results in a value between 0 and 1.
+      id: q16-2
+      questionGroup: q16
+    - problemText: We know that $10^4 = 10,000$. Express this relationship using the logarithmic notation. Ensure your answer
+        clearly shows that the logarithm represents the exponent needed.
+      mathTool: null
+      finalAnswer: \log 10000 = 4
+      stepByStepGuideline:
+      - The equation $10^4 = 10000$ identifies the power (4) that the base (10) is raised to.
+      - The logarithmic form, $\log y = x$, is designed to isolate and define this exponent $x$.
+      - Using the values, the equivalent logarithmic statement is $\log 10000 = 4$.
+      id: q16-3
+      questionGroup: q16
+    - problemText: Convert the logarithmic statement $\log 1 = 0$ into its equivalent exponential form. This demonstrates
+        a key property of exponents related to the base 10 system.
+      mathTool: null
+      finalAnswer: 10^0 = 1
+      stepByStepGuideline:
+      - 'Recall the conversion rule: $\log y = x$ means $10^x = y$.'
+      - In the given statement, the base is 10, the exponent ($x$) is 0, and the result ($y$) is 1.
+      - Substituting these components into the exponential form gives $10^0 = 1$. This confirms the general rule that any
+        non-zero number raised to the power of zero equals one.
+      id: q16-4
+      questionGroup: q16
+    - problemText: Given the exponential equation $10^{-1} = 0.1$, rewrite this equation using the common logarithm ('log').
+        How does the logarithmic form reflect the definition of a negative exponent?
+      mathTool: null
+      finalAnswer: \log 0.1 = -1
+      stepByStepGuideline:
+      - The exponential form $10^{-1} = 0.1$ states that the power -1 applied to base 10 results in 0.1.
+      - 'The logarithmic function finds this power (exponent). We use the conversion: If $10^x = y$, then $\log y = x$.'
+      - Substituting the values yields $\log 0.1 = -1$. The negative result (-1) in the logarithm indicates that the original
+        number (0.1) was obtained by taking the reciprocal of the base raised to a positive power ($1/10^1$).
+      id: q16-5
+      questionGroup: q16
+- id: log-common-node-2
+  nodeNumber: 17
+  title: Calculator Use for Logarithms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Use your calculator to determine the value of log 28. Round your final answer to 3 decimal places. Afterwards,
+        verify that your answer is reasonable by comparing it to the known benchmarks log 10 = 1 and log 100 = 2.
+      avatarIntro: Practicing calculator use for logarithms is essential! Remember that the log button on your calculator
+        calculates the base 10 logarithm.
+      mathTool: null
+      finalAnswer: log 28 ≈ 1.447
+      stepByStepGuideline:
+      - 'Step 1: Use the log button on your calculator to find the value of log 28.'
+      - log 28 ≈ 1.447158...
+      - 'Step 2: Round the result to 3 decimal places.'
+      - log 28 ≈ 1.447
+      - 'Step 3: Check the answer against benchmarks. Since 10 < 28 < 100, the logarithm must be between log 10 = 1 and log
+        100 = 2. Since 1 < 1.447 < 2, the answer is reasonable.'
+      id: q17-1
+      questionGroup: q17
+    - problemText: The intensity level of a sound source, measured in Decibels (dB), is related to the logarithm of the ratio
+        of intensities. If the logarithm of the intensity ratio (log x) is calculated to be 1.5, find the actual ratio x.
+        Round your answer to 2 decimal places.
+      mathTool: null
+      finalAnswer: x ≈ 31.62
+      stepByStepGuideline:
+      - 'Step 1: If log x = 1.5, convert the logarithmic equation to an exponential equation using the definition of the common
+        logarithm: x = 10^1.5.'
+      - 'Step 2: Use your calculator to evaluate 10^1.5.'
+      - x = 10^1.5 ≈ 31.62277...
+      - 'Step 3: Round the result to 2 decimal places.'
+      - x ≈ 31.62
+      - 'Step 4: Check the answer against benchmarks. Since 10^1 = 10 and 10^2 = 100, and 1 < 1.5 < 2, the value of x must
+        be between 10 and 100. Since 10 < 31.62 < 100, the answer is reasonable.'
+      id: q17-2
+      questionGroup: q17
+    - problemText: In computer science, algorithms are sometimes analyzed using logarithms. Calculate log 500, rounding your
+        answer to 4 decimal places. Check if your answer falls logically between the benchmarks log 100 = 2 and log 1000 =
+        3.
+      mathTool: null
+      finalAnswer: log 500 ≈ 2.6990
+      stepByStepGuideline:
+      - 'Step 1: Use the calculator to find the value of log 500.'
+      - log 500 ≈ 2.6989700...
+      - 'Step 2: Round the result to 4 decimal places. (Note: The fifth digit is 7, so round up the fourth digit).'
+      - log 500 ≈ 2.6990
+      - 'Step 3: Check the answer against benchmarks. Since 100 < 500 < 1000, the logarithm must be between log 100 = 2 and
+        log 1000 = 3. Since 2 < 2.6990 < 3, the answer is reasonable.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: The pH scale often involves negative logarithmic values. Suppose a chemical calculation yields log x =
+        -0.5. Calculate the value of x, rounding your answer to 3 decimal places. Use the benchmark log 1 = 0 to verify the
+        reasonableness of your answer.
+      mathTool: null
+      finalAnswer: x ≈ 0.316
+      stepByStepGuideline:
+      - 'Step 1: Convert the logarithmic equation log x = -0.5 into its exponential form: x = 10^-0.5.'
+      - 'Step 2: Use your calculator to evaluate 10^-0.5.'
+      - x = 10^-0.5 ≈ 0.316227...
+      - 'Step 3: Round the result to 3 decimal places.'
+      - x ≈ 0.316
+      - 'Step 4: Check the answer against benchmarks. Since log x is negative (-0.5), x must be less than 1 (since log 1 =
+        0). The result 0.316 is less than 1, so the answer is reasonable.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: The magnitude of an earthquake on the Richter scale is proportional to the logarithm of the wave amplitude.
+        If a specific amplitude corresponds to log 85, calculate this value, rounding your answer to 2 decimal places. Use
+        the benchmarks log 10 = 1 and log 100 = 2 to confirm your answer is sensible.
+      mathTool: null
+      finalAnswer: log 85 ≈ 1.93
+      stepByStepGuideline:
+      - 'Step 1: Use the log button on your calculator to find the value of log 85.'
+      - log 85 ≈ 1.929418...
+      - 'Step 2: Round the result to 2 decimal places.'
+      - log 85 ≈ 1.93
+      - 'Step 3: Check the answer against benchmarks. Since 10 < 85 < 100, the logarithm must be between log 10 = 1 and log
+        100 = 2. Since 1 < 1.93 < 2, the answer is reasonable.'
+      id: q17-5
+      questionGroup: q17
+- id: log-common-node-3
+  nodeNumber: 18
+  title: Domain of Logarithmic Functions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: logarithmGraph
+    preWrittenQuestions:
+    - problemText: When analyzing sound attenuation through a specialized material, engineers use logarithmic scales. Explain
+        mathematically why the expression $\log(0)$ is meaningless and undefined in the context of the common logarithm function
+        $f(x) = \log x$.
+      avatarIntro: Understanding the domain restrictions of logarithms is essential for correctly interpreting data in science
+        and engineering. Let's start with zero.
+      mathTool:
+        toolName: logarithmGraph
+        parameters:
+          base: 10
+          showAsymptote: true
+          showKeyPoints: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: Log(0) is undefined.
+      stepByStepGuideline:
+      - 'Recall that the logarithmic equation $y = \log x$ is defined by its inverse exponential relationship: $10^y = x$.'
+      - 'If we attempt to evaluate $\log(0)$, we are asking: ''What exponent, $y$, must 10 be raised to in order to equal
+        0?'''
+      - This translates to the equation $10^y = 0$.
+      - There is no real number $y$ that satisfies this equation, as any positive base (like 10) raised to any real power
+        will always result in a positive value (never zero or negative).
+      - Therefore, $x=0$ is outside the domain of the logarithm function.
+      id: q18-1
+      questionGroup: q18
+    - problemText: The apparent brightness of celestial objects is often measured using a logarithmic magnitude scale. If
+        a calculation resulted in trying to find $\log(-10)$, explain why this value is impossible to obtain using the definition
+        of the common logarithm.
+      mathTool:
+        toolName: logarithmGraph
+        parameters:
+          base: 10
+          showAsymptote: true
+          showKeyPoints: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: Log(-10) is undefined.
+      stepByStepGuideline:
+      - The expression $\log(-10)$ requires us to find an exponent $y$ such that $10^y = -10$.
+      - If 10 is raised to a positive power (e.g., $10^2 = 100$), the result is positive.
+      - If 10 is raised to a negative power (e.g., $10^{-2} = 0.01$), the result is positive.
+      - If 10 is raised to the power of zero ($10^0 = 1$), the result is positive.
+      - Since 10 raised to any real power is always positive, it can never equal a negative number like -10. Thus, negative
+        numbers are not allowed in the domain of the logarithm.
+      id: q18-2
+      questionGroup: q18
+    - problemText: In information theory, the amount of information (I) often relates logarithmically to the probability (P).
+        For the basic common logarithm function $f(x) = \log x$, state the domain using inequality notation and explain what
+        this restriction means in terms of the graph you see.
+      mathTool:
+        toolName: logarithmGraph
+        parameters:
+          base: 10
+          showAsymptote: true
+          showKeyPoints: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 'Domain: $x > 0$.'
+      stepByStepGuideline:
+      - The domain of a function consists of all permissible input values, $x$.
+      - For the logarithm function $f(x) = \log x$, the argument $x$ must be strictly greater than zero ($x > 0$).
+      - This is because the inverse exponential function, $10^y = x$, only produces positive results for $x$.
+      - Graphically, this restriction means that the curve of the function exists entirely to the right of the y-axis, never
+        touching or crossing it.
+      id: q18-3
+      questionGroup: q18
+    - problemText: A mathematician is modeling a complex growth pattern using the basic logarithmic function $f(x) = \log
+        x$. Identify the range of this function and explain why the range covers all real numbers.
+      mathTool:
+        toolName: logarithmGraph
+        parameters:
+          base: 10
+          showAsymptote: true
+          showKeyPoints: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: 'Range: All real numbers, or $(-\infty, \infty)$.'
+      stepByStepGuideline:
+      - The range of a function refers to all possible output values, $y$.
+      - The logarithmic function $y = \log x$ is the inverse of the exponential function $x = 10^y$.
+      - Since the base (10) is positive, we can raise it to any real number $y$. If $y$ is a very large positive number, $x$
+        is very large. If $y$ is a very large negative number, $x$ is very close to zero.
+      - Because the inputs of the exponential function ($y$) cover all real numbers, the outputs (range) of the inverse logarithmic
+        function must also cover all real numbers.
+      - Graphically, the curve extends infinitely high and infinitely low, covering all possible y-values.
+      id: q18-4
+      questionGroup: q18
+    - problemText: When analyzing the change in concentration during a chemical reaction using the function $f(x) = \log x$,
+        where is the vertical asymptote located? Explain the connection between this asymptote and the function's domain restriction.
+      mathTool:
+        toolName: logarithmGraph
+        parameters:
+          base: 10
+          showAsymptote: true
+          showKeyPoints: true
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: The vertical asymptote is located at $x = 0$ (the y-axis).
+      stepByStepGuideline:
+      - A vertical asymptote exists where the function approaches positive or negative infinity.
+      - For $f(x) = \log x$, as $x$ approaches 0 from the right side (e.g., $x=0.0001$), the value of the function decreases
+        rapidly towards $-\infty$.
+      - Therefore, the line $x = 0$ (the y-axis) is the vertical asymptote.
+      - The vertical asymptote $x=0$ marks the boundary of the domain. Since the function is only defined for $x > 0$, the
+        graph cannot exist on or to the left of this vertical line.
+      id: q18-5
+      questionGroup: q18
+- id: log-laws-node-1
+  nodeNumber: 19
+  title: Product Law of Logarithms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A financial analyst is modeling the compound growth factor of an investment, which is currently represented
+        by the logarithm of a product: $\log(2 \times 7)$. Use the Product Law of Logarithms, $\log(ab) = \log a + \log b$,
+        to expand this expression into a sum of two logarithms.'
+      avatarIntro: Ready to practice the Product Law? This law helps us turn multiplication inside a logarithm into addition
+        outside the logarithm.
+      finalAnswer: log 2 + log 7
+      stepByStepGuideline:
+      - 'Identify the Product Law of Logarithms: $\log(ab) = \log a + \log b$.'
+      - Apply the law to the given expression $\log(2 \times 7)$. Here, $a=2$ and $b=7$.
+      - 'Expand the product into a sum: $\log 2 + \log 7$.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: In an engineering context, two separate logarithmic measurements, $\log 2$ and $\log 9$, need to be combined
+        to find the total scaling factor. Use the Product Law of Logarithms, $\log a + \log b = \log(ab)$, to simplify the
+        expression $\log 2 + \log 9$ into a single logarithm.
+      finalAnswer: log 18
+      stepByStepGuideline:
+      - 'Identify the Product Law of Logarithms for simplification: $\log a + \log b = \log(ab)$.'
+      - 'Apply the law to the given sum: $\log 2 + \log 9$. Here, $a=2$ and $b=9$.'
+      - 'Combine the logarithms by multiplying the arguments: $\log(2 \times 9)$.'
+      - 'Calculate the final argument: $\log 18$.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: A population model calculates the growth rate using the expression $\log(4 \times 9)$. Use the Product
+        Law of Logarithms, $\log(ab) = \log a + \log b$, to expand this product into a sum of logarithms.
+      finalAnswer: log 4 + log 9
+      stepByStepGuideline:
+      - 'Recall the Product Law of Logarithms: $\log(ab) = \log a + \log b$.'
+      - Identify the arguments in the product $\log(4 \times 9)$. Here, $a=4$ and $b=9$.
+      - 'Apply the law to expand the expression: $\log 4 + \log 9$.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: 'To measure the cumulative complexity in a data compression algorithm, two complexity factors are summed
+        logarithmically: $\log 5 + \log 8$. Use the Product Law of Logarithms, $\log a + \log b = \log(ab)$, to simplify this
+        sum into a single logarithm.'
+      finalAnswer: log 40
+      stepByStepGuideline:
+      - 'Identify the Product Law of Logarithms for combining sums: $\log a + \log b = \log(ab)$.'
+      - Apply the law to the expression $\log 5 + \log 8$. Here, $a=5$ and $b=8$.
+      - 'Combine the terms by multiplying the arguments: $\log(5 \times 8)$.'
+      - 'Calculate the final argument: $\log 40$.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: A formula for calculating the scaled area of a geometric shape involves the expression $\log(2 \times 3
+        \times 5)$. Use the extended Product Law of Logarithms, which states that the logarithm of a product of multiple factors
+        equals the sum of the logarithms of those factors, to expand this expression.
+      finalAnswer: log 2 + log 3 + log 5
+      stepByStepGuideline:
+      - 'Recognize the extended Product Law: $\log(abc) = \log a + \log b + \log c$.'
+      - 'Identify the three factors in the expression $\log(2 \times 3 \times 5)$: $a=2$, $b=3$, and $c=5$.'
+      - 'Expand the product into a sum of logarithms: $\log 2 + \log 3 + \log 5$.'
+      id: q19-5
+      questionGroup: q19
+- id: log-laws-node-2
+  nodeNumber: 20
+  title: Quotient Law of Logarithms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: In material science calculations, the difference in scaling factors is sometimes represented by the quotient
+        of logarithms, such as $\log(20/4)$. Use the Quotient Law of Logarithms, $\log(a/b) = \log a - \log b$, to expand
+        this expression into a difference of two logarithms. Ensure the order reflects numerator minus denominator.
+      avatarIntro: Welcome! Let's practice using the Quotient Law. Remember, dividing inside the logarithm means subtracting
+        the logarithms outside.
+      mathTool: null
+      finalAnswer: \log 20 - \log 4
+      stepByStepGuideline:
+      - 'Identify the Quotient Law: $\log(a/b) = \log a - \log b$.'
+      - Identify the numerator ($a=20$) and the denominator ($b=4$) in the expression $\log(20/4)$.
+      - Apply the law, ensuring the logarithm of the numerator ($\log 20$) comes first, followed by the subtraction of the
+        logarithm of the denominator ($\log 4$).
+      - The expanded form is $\log 20 - \log 4$.
+      id: q20-1
+      questionGroup: q20
+    - problemText: An acoustic engineer measures a change in sound intensity represented by $\log 50 - \log 2$. Simplify this
+        expression into a single logarithm using the Quotient Law. Ensure you fully simplify the resulting fraction.
+      mathTool: null
+      finalAnswer: \log 25
+      stepByStepGuideline:
+      - 'Recall the Quotient Law for simplifying differences: $\log a - \log b = \log(a/b)$.'
+      - 'Combine the two terms into a single logarithm of a quotient: $\log 50 - \log 2 = \log(50/2)$.'
+      - 'Perform the division inside the logarithm: $50 / 2 = 25$.'
+      - The simplified single logarithm is $\log 25$.
+      id: q20-2
+      questionGroup: q20
+    - problemText: A fluid dynamics model utilizes the term $\log(30/5)$ to calculate the ratio of flow rates. Apply the Quotient
+        Law of Logarithms, $\log(a/b) = \log a - \log b$, to expand this quotient into the difference between two logarithms.
+      mathTool: null
+      finalAnswer: \log 30 - \log 5
+      stepByStepGuideline:
+      - 'Use the Quotient Law for expansion: $\log(a/b) = \log a - \log b$.'
+      - The numerator is 30, and the denominator is 5.
+      - Expand the expression by taking the logarithm of the numerator minus the logarithm of the denominator.
+      - The result is $\log 30 - \log 5$.
+      id: q20-3
+      questionGroup: q20
+    - problemText: A cartographer calculates a map scale factor difference as $\log 100 - \log 4$. Use the Quotient Law of
+        Logarithms to combine this difference into a single logarithm, $\log(a/b)$. Simplify the numerical value completely.
+      mathTool: null
+      finalAnswer: \log 25
+      stepByStepGuideline:
+      - 'Apply the Quotient Law in reverse: $\log a - \log b = \log(a/b)$.'
+      - Identify $a=100$ and $b=4$.
+      - 'Combine the terms: $\log 100 - \log 4 = \log(100/4)$.'
+      - 'Calculate the quotient: $100 / 4 = 25$.'
+      - The final simplified expression is $\log 25$.
+      id: q20-4
+      questionGroup: q20
+    - problemText: An ecologist models the ratio of initial to final biomass using the expression $\log(100/25)$. Expand this
+        expression into a difference of logarithms using the Quotient Law, $\log(a/b) = \log a - \log b$.
+      mathTool: null
+      finalAnswer: \log 100 - \log 25
+      stepByStepGuideline:
+      - The Quotient Law states that the logarithm of a quotient is the difference of the logarithms.
+      - Identify the numerator (100) and the denominator (25).
+      - Write the expression as the log of the numerator minus the log of the denominator.
+      - The expanded form is $\log 100 - \log 25$.
+      id: q20-5
+      questionGroup: q20
+- id: log-laws-node-3
+  nodeNumber: 21
+  title: Power Law of Logarithms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A chemical engineer is modeling the growth factor of a specific compound in a reaction, represented by
+        the logarithmic term $\log(5^3)$. Apply the Power Law of Logarithms, $\log(a^n) = n \times \log a$, to expand this
+        expression fully.
+      avatarIntro: Welcome! Today we are focusing on the Power Law of Logarithms. Remember, the exponent inside the logarithm
+        becomes a coefficient outside.
+      mathTool: null
+      finalAnswer: 3 log 5
+      stepByStepGuideline:
+      - 'Identify the expression: $\log(5^3)$.'
+      - Identify the base $a=5$ and the exponent $n=3$.
+      - 'Apply the Power Law: $\log(a^n) = n \times \log a$.'
+      - 'Substitute the values: $\log(5^3) = 3 \log 5$.'
+      id: q21-1
+      questionGroup: q21
+    - problemText: An equation modeling the decay of soil nutrients due to erosion involves the logarithmic term $\log(2^{-2})$.
+        Use the Power Law of Logarithms to fully expand this expression.
+      mathTool: null
+      finalAnswer: -2 log 2
+      stepByStepGuideline:
+      - 'Identify the expression: $\log(2^{-2})$.'
+      - Identify the exponent $n=-2$.
+      - 'Apply the Power Law: $\log(a^n) = n \times \log a$.'
+      - 'Rewrite the expression: $\log(2^{-2}) = -2 \log 2$.'
+      id: q21-2
+      questionGroup: q21
+    - problemText: In optics, the scaling factor for light absorption through a dense medium is sometimes represented by $\log(\sqrt{10})$.
+        Apply the Power Law of Logarithms to rewrite this expression without the root symbol.
+      mathTool: null
+      finalAnswer: (1/2) log 10
+      stepByStepGuideline:
+      - 'First, rewrite the root as a fractional exponent: $\log(\sqrt{10}) = \log(10^{1/2})$.'
+      - Identify the exponent $n = 1/2$.
+      - 'Apply the Power Law: $\log(a^n) = n \times \log a$.'
+      - 'Rewrite the expression: $\log(10^{1/2}) = (1/2) \log 10$.'
+      id: q21-3
+      questionGroup: q21
+    - problemText: When calculating the scaled distance to a distant star cluster, an astronomer arrives at the expression
+        $4 \log 2$. Use the Power Law of Logarithms in reverse, $n \times \log a = \log(a^n)$, to write this expression as
+        a single logarithm and simplify the result.
+      mathTool: null
+      finalAnswer: log 16
+      stepByStepGuideline:
+      - 'Identify the expression: $4 \log 2$.'
+      - Identify the coefficient $n=4$ and the argument $a=2$.
+      - 'Apply the Power Law in reverse, moving the coefficient into the argument as an exponent: $\log(2^4)$.'
+      - 'Calculate the value of the exponent: $2^4 = 16$.'
+      - 'Write the final single logarithm: $\log 16$.'
+      id: q21-4
+      questionGroup: q21
+    - problemText: A meteorological calculation for normalizing atmospheric pressure yields the term $-\log 3$. Write this
+        expression as a single logarithm by treating the coefficient as $-1$ and applying the Power Law. Fully simplify the
+        resulting argument.
+      mathTool: null
+      finalAnswer: log(1/3)
+      stepByStepGuideline:
+      - 'Identify the expression: $-\log 3$. Note that this is equivalent to $-1 \times \log 3$.'
+      - 'Apply the Power Law in reverse, bringing the coefficient $-1$ into the argument as an exponent: $\log(3^{-1})$.'
+      - Simplify the argument using the negative exponent rule ($a^{-1} = 1/a$).
+      - The final single logarithm is $\log(1/3)$.
+      id: q21-5
+      questionGroup: q21
+- id: log-laws-node-4
+  nodeNumber: 22
+  title: Combined Law Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'In data security, the complexity of an encryption key is often measured using a logarithmic scale. Simplify
+        the following expression, representing the combination of three security factors $a$, $b$, and $c$, into a single
+        logarithm: $\log a + \log b - \log c$.'
+      avatarIntro: Hello! Logarithm laws are essential for simplifying complex scientific measurements. Let's practice combining
+        multiple rules to simplify or expand these expressions.
+      mathTool: null
+      finalAnswer: \log\left(\frac{ab}{c}\right)
+      stepByStepGuideline:
+      - 'Use the Product Law of Logarithms to combine the first two terms: $\log a + \log b = \log(ab)$.'
+      - 'Substitute this back into the expression: $\log(ab) - \log c$.'
+      - 'Use the Quotient Law of Logarithms to combine the remaining terms: $\log(ab) - \log c = \log\left(\frac{ab}{c}\right)$.'
+      id: q22-1
+      questionGroup: q22
+    - problemText: 'A seismologist models the energy release ($E$) of a complex earthquake using a formula involving the logarithm
+        of a ratio of variables: $\log\left(\frac{x^3y}{z^2}\right)$, where $x, y,$ and $z$ are various displacement parameters.
+        Expand this expression completely into a sum and/or difference of individual logarithms.'
+      mathTool: null
+      finalAnswer: 3 \log x + \log y - 2 \log z
+      stepByStepGuideline:
+      - 'Apply the Quotient Law first to separate the numerator and denominator: $\log\left(\frac{x^3y}{z^2}\right) = \log(x^3y)
+        - \log(z^2)$.'
+      - 'Apply the Product Law to the first term: $\log(x^3y) = \log(x^3) + \log y$.'
+      - 'Substitute back: $(\log(x^3) + \log y) - \log(z^2)$.'
+      - 'Apply the Power Law to all terms with exponents: $3 \log x + \log y - 2 \log z$.'
+      id: q22-2
+      questionGroup: q22
+    - problemText: 'An astronomer is calculating the final calibration factor for distance measurement, which requires simplifying
+        the following logarithmic expression: $\log 5 + 3 \log 2 - \log 8$. Write the final result as a single, fully simplified
+        logarithm.'
+      mathTool: null
+      finalAnswer: \log 5
+      stepByStepGuideline:
+      - 'Apply the Power Law to the second term: $3 \log 2 = \log(2^3) = \log 8$.'
+      - 'Substitute this back into the expression: $\log 5 + \log 8 - \log 8$.'
+      - 'Combine the terms using the Product and Quotient Laws: $\log\left(\frac{5 \times 8}{8}\right)$.'
+      - 'Simplify the argument: $\log 5$.'
+      id: q22-3
+      questionGroup: q22
+    - problemText: In a biological study, the ratio of the squared density of a microbial colony ($a^2$) to the environmental
+        resistance factor ($b$) is analyzed logarithmically using the expression $\log\left(\frac{a^2}{b}\right)$. Expand
+        this expression completely.
+      mathTool: null
+      finalAnswer: 2 \log a - \log b
+      stepByStepGuideline:
+      - 'Apply the Quotient Law to separate the numerator and denominator: $\log\left(\frac{a^2}{b}\right) = \log(a^2) - \log
+        b$.'
+      - 'Apply the Power Law to the first term: $\log(a^2) = 2 \log a$.'
+      - The fully expanded expression is $2 \log a - \log b$.
+      id: q22-4
+      questionGroup: q22
+    - problemText: A telecommunications engineer is combining two separate signal strength measurements, where the first signal
+        $x$ is squared and then combined with signal $y$. The combined logarithmic measurement is given by $2 \log x + \log
+        y$. Write this expression as a single logarithm.
+      mathTool: null
+      finalAnswer: \log(x^2y)
+      stepByStepGuideline:
+      - 'Apply the Power Law to the first term: $2 \log x = \log(x^2)$.'
+      - 'Substitute this back into the expression: $\log(x^2) + \log y$.'
+      - 'Apply the Product Law to combine the terms into a single logarithm: $\log(x^2y)$.'
+      id: q22-5
+      questionGroup: q22
+- id: log-using-node-1
+  nodeNumber: 23
+  title: Understanding the Logarithm Method
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A computer scientist is calculating how many generations ($x$) a new processor architecture must iterate
+        to achieve a performance gain of 19 times, modeled by the equation $3^x = 19$. Why must logarithms be used to solve
+        for $x$ in this equation, rather than attempting to write both sides with the same base? (This is equivalent to asking:
+        Why use logarithms for $A^x=B$ when B is not a power of A?)'
+      avatarIntro: Solving exponential equations can be tricky when the bases don't match. Let's explore how logarithms unlock
+        these variables.
+      mathTool: null
+      finalAnswer: Logarithms must be used because 19 cannot be written as a simple integer power of 3 ($3^2=9$ and $3^3=27$).
+        Since the variable $x$ is in the exponent, the only way to isolate it algebraically is by applying the Power Law of
+        Logarithms, which requires taking the log of both sides first. This brings $x$ down to the base line.
+      stepByStepGuideline:
+      - Identify that 19 is not an integer power of 3, meaning the same-base method is impossible.
+      - Explain that the variable $x$ is 'trapped' in the exponent.
+      - State that taking the logarithm of both sides (e.g., $\log(3^x) = \log(19)$) allows the use of the Power Law.
+      - Explain that the Power Law transforms the equation to $x \log 3 = \log 19$, making $x$ solvable by division.
+      id: q23-1
+      questionGroup: q23
+    - problemText: A geologist is dating a sample where the fraction of remaining radioactive material ($0.15$) is related
+        to time ($t$) by the equation $0.5^t = 0.15$. Explain *when* the same-base method fails for solving exponential equations
+        like this, and what characteristic of the numbers (0.5 and 0.15) prevents its use here.
+      mathTool: null
+      finalAnswer: The same-base method fails when the two sides of the equation ($0.5$ and $0.15$) cannot be easily expressed
+        as powers of a common base, particularly when the resulting exponent would be non-integer. For $0.5^t = 0.15$, $0.15$
+        is not a recognizable integer or simple rational power of $0.5$. If we tried to write $0.15 = 0.5^k$, $k$ would be
+        irrational or complicated, making the logarithm method the necessary and direct approach.
+      stepByStepGuideline:
+      - 'Define the same-base method: expressing both sides of $A^x=B$ using a base $C$, such that $C^a = C^b$ implies $a=b$.'
+      - Identify that this method fails when $B$ is not a clean, simple power of $A$ (or when $A$ and $B$ do not share a simple
+        common base $C$).
+      - Explain that since $0.15$ is a complex fraction of $0.5$ (it's not $0.5^1, 0.5^2, 0.5^{-1}$, etc.), the relationship
+        is not immediately obvious, necessitating the logarithm method.
+      id: q23-2
+      questionGroup: q23
+    - problemText: An architect models the required height factor ($h$) of a new building design using the equation $5^h =
+        100$. Explain the crucial algebraic step that occurs immediately after taking the logarithm of both sides of this
+        equation, and how this step transforms the equation from exponential form (where $h$ is trapped) to linear form (where
+        $h$ can be isolated).
+      mathTool: null
+      finalAnswer: 'The crucial algebraic step is applying the Power Law of Logarithms. After taking the log of both sides:
+        $\log(5^h) = \log(100)$. The Power Law, $\log(a^n) = n \log a$, is applied to the left side, resulting in $h \log
+        5 = \log 100$. This step transforms the equation because it moves the exponent $h$ from the super-script position
+        down to the base line, making it accessible for isolation using simple division.'
+      stepByStepGuideline:
+      - 'State the initial transformation: Take $\log$ of both sides: $\log(5^h) = \log(100)$.'
+      - 'Identify the Power Law of Logarithms: $\log(a^n) = n \log a$.'
+      - 'Explain that applying the Power Law brings the variable $h$ down from the exponent to become a coefficient: $h \log
+        5 = \log 100$.'
+      - Conclude by stating that $h$ can now be isolated by dividing by $\log 5$, solving the equation.
+      id: q23-3
+      questionGroup: q23
+    - problemText: A music theorist is investigating a specialized tuning system where the frequency increases by 6% per step
+        ($n$). To find the number of steps required to achieve a total frequency multiplier of 1.8, they must solve $1.06^n
+        = 1.8$. Describe the complete, step-by-step process required to solve for $n$ using the logarithm method, starting
+        from taking the log of both sides.
+      mathTool: null
+      finalAnswer: 'The general process involves four steps: 1. Take the logarithm of both sides: $\log(1.06^n) = \log(1.8)$.
+        2. Apply the Power Law to bring the exponent down: $n \log(1.06) = \log(1.8)$. 3. Isolate the variable ($n$) by dividing
+        both sides by the logarithmic coefficient: $n = \frac{\log(1.8)}{\log(1.06)}$. 4. Calculate the numerical value using
+        a calculator.'
+      stepByStepGuideline:
+      - 'Step 1: Take the logarithm of both sides of the equation $1.06^n = 1.8$ to get $\log(1.06^n) = \log(1.8)$.'
+      - 'Step 2: Apply the Power Law ($\log(a^n) = n \log a$) to transform the equation into $n \log(1.06) = \log(1.8)$.'
+      - 'Step 3: Isolate the variable $n$ by dividing both sides by $\log(1.06)$, resulting in $n = \frac{\log(1.8)}{\log(1.06)}$.'
+      - 'Step 4: Use a calculator to compute the numerical value of the expression.'
+      id: q23-4
+      questionGroup: q23
+    - problemText: An environmental scientist models the rapid growth of an algal bloom using the equation $4^{2t} = 50$,
+        where $t$ is time in weeks. After taking the logarithm of both sides, show how the Power Law of Logarithms is applied
+        to the left side, $\log(4^{2t})$, and explain why applying this law is necessary before solving for the variable $t$.
+      mathTool: null
+      finalAnswer: 'After taking the log: $\log(4^{2t}) = \log(50)$. We apply the Power Law, treating the entire exponent
+        $(2t)$ as the power $n$. The law states $\log(a^n) = n \log a$. This yields $(2t) \log 4 = \log 50$. Applying this
+        law is necessary because $t$ is currently trapped in the exponent; bringing it down transforms the equation into a
+        linear form ($2t \cdot \text{constant} = \text{constant}$), allowing $t$ to be isolated using basic arithmetic operations
+        (division).'
+      stepByStepGuideline:
+      - 'Write the equation after taking the log of both sides: $\log(4^{2t}) = \log(50)$.'
+      - Identify the exponent as $2t$ and the base as 4.
+      - 'Show the application of the Power Law: $(2t) \log 4 = \log 50$.'
+      - Explain that this step is required because it transforms the equation from exponential (where $t$ is inaccessible)
+        to linear (where $t$ can be isolated by dividing by $2 \log 4$).
+      id: q23-5
+      questionGroup: q23
+- id: log-using-node-2
+  nodeNumber: 24
+  title: Solving Exponential Equations with Logs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A biologist is tracking a rabbit population that increases by a factor of 3 every generation. If the current
+        population must grow to 20 times its size to stabilize the ecosystem, how many generations ($x$) are required? Solve
+        the equation $3^x = 20$ using logarithms, giving your answer to 3 decimal places.
+      avatarIntro: Solving exponential equations often requires logarithms when the bases cannot be easily matched. Remember
+        to use the power law to bring the variable down!
+      mathTool: null
+      finalAnswer: '2.727'
+      stepByStepGuideline:
+      - 'The equation is $3^x = 20$. Since the bases cannot be made the same, take the logarithm of both sides: $\log(3^x)
+        = \log(20)$.'
+      - 'Apply the Power Law of Logarithms: $x \log 3 = \log 20$.'
+      - 'Isolate $x$ by dividing: $x = \frac{\log 20}{\log 3}$.'
+      - 'Use a calculator to find the numerical value: $x \approx \frac{1.3010}{0.4771}$.'
+      - 'Calculate the final value and round to 3 decimal places: $x \approx 2.727$ generations.'
+      id: q24-1
+      questionGroup: q24
+    - problemText: A small financial institution uses the model $4 \times 3^x = 100$ to predict the required time ($x$, in
+        years) for a specific asset to reach a value of 100, starting from an initial scaled factor of 4. Solve for $x$ using
+        logarithms. Round your answer to 3 decimal places.
+      mathTool: null
+      finalAnswer: '2.930'
+      stepByStepGuideline:
+      - 'Start with the equation $4 \times 3^x = 100$. First, isolate the exponential term by dividing both sides by 4: $3^x
+        = \frac{100}{4}$, so $3^x = 25$.'
+      - 'Take the logarithm of both sides: $\log(3^x) = \log(25)$.'
+      - 'Apply the Power Law: $x \log 3 = \log 25$.'
+      - 'Solve for $x$: $x = \frac{\log 25}{\log 3}$.'
+      - 'Calculate the final value and round to 3 decimal places: $x \approx 2.9299 \approx 2.930$ years.'
+      id: q24-2
+      questionGroup: q24
+    - problemText: In physics, the intensity of light ($I$) passing through a filter can be modeled by an exponential decay
+        function. If the relationship between the number of filters ($x$) and the resulting intensity factor is given by $2^{(x+1)}
+        = 10$, find the value of $x$. Give your answer to 3 decimal places.
+      mathTool: null
+      finalAnswer: '2.322'
+      stepByStepGuideline:
+      - 'Start with the equation $2^{(x+1)} = 10$. Take the logarithm of both sides: $\log(2^{(x+1)}) = \log(10)$.'
+      - 'Apply the Power Law: $(x+1) \log 2 = \log 10$.'
+      - 'Isolate the term $(x+1)$: $x+1 = \frac{\log 10}{\log 2}$.'
+      - 'Calculate the quotient: $x+1 \approx \frac{1}{0.30103} \approx 3.3219$.'
+      - 'Solve for $x$: $x = 3.3219 - 1 = 2.3219$.'
+      - 'Round to 3 decimal places: $x \approx 2.322$.'
+      id: q24-3
+      questionGroup: q24
+    - problemText: A strain of bacteria doubles its population size (factor of 5) every hour. To determine how many hours
+        ($x$) it takes for the population to increase by a factor of 100, we solve the equation $5^x = 100$. Solve this equation
+        using logarithms, rounding your result to 3 decimal places.
+      mathTool: null
+      finalAnswer: '2.861'
+      stepByStepGuideline:
+      - 'The equation is $5^x = 100$. Take the logarithm of both sides: $\log(5^x) = \log(100)$.'
+      - 'Apply the Power Law: $x \log 5 = \log 100$.'
+      - 'Isolate $x$: $x = \frac{\log 100}{\log 5}$.'
+      - We know that $\log 100 = 2$. So, $x = \frac{2}{\log 5}$.
+      - 'Calculate the final value and round to 3 decimal places: $x \approx \frac{2}{0.69897} \approx 2.86135 \approx 2.861$
+        hours.'
+      id: q24-4
+      questionGroup: q24
+    - problemText: An engineer is testing the relationship between applied pressure ($P$) and the time ($x$, in minutes) until
+        a material fails, modeled by the equation $3 \times 5^x = 150$. Solve for $x$ using logarithms, rounding your answer
+        to 3 decimal places.
+      mathTool: null
+      finalAnswer: '2.431'
+      stepByStepGuideline:
+      - 'Start with the equation $3 \times 5^x = 150$. First, isolate the exponential term by dividing both sides by 3: $5^x
+        = \frac{150}{3}$, so $5^x = 50$.'
+      - 'Take the logarithm of both sides: $\log(5^x) = \log(50)$.'
+      - 'Apply the Power Law: $x \log 5 = \log 50$.'
+      - 'Solve for $x$: $x = \frac{\log 50}{\log 5}$.'
+      - 'Calculate the final value: $x \approx \frac{1.69897}{0.69897} \approx 2.43067$.'
+      - 'Round to 3 decimal places: $x \approx 2.431$ minutes.'
+      id: q24-5
+      questionGroup: q24
+- id: log-using-node-3
+  nodeNumber: 25
+  title: Real-World Logarithm Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: exponentialGraph
+    preWrittenQuestions:
+    - problemText: A financial advisor estimates that an initial investment of $10,000 will grow at an annual interest rate
+        of 8%, compounded yearly. Assuming this rate remains constant, how long will it take for the investment to double
+        in value, reaching $20,000?
+      avatarIntro: These real-world problems require you to set up an exponential model and then use logarithms to solve for
+        the time variable. You got this!
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.08
+          coefficient: 10000
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: Approximately 9.0 years
+      stepByStepGuideline:
+      - 'Set up the exponential growth equation: $10000(1.08)^t = 20000$.'
+      - 'Isolate the exponential term: $(1.08)^t = 2$.'
+      - 'Take the logarithm of both sides: $\log(1.08^t) = \log(2)$.'
+      - 'Use the Power Law of Logarithms: $t \times \log(1.08) = \log(2)$.'
+      - 'Solve for t: $t = \frac{\log(2)}{\log(1.08)}$.'
+      - 'Calculate the result: $t \approx 9.006$. Interpreting the result, it will take approximately 9.0 years for the investment
+        to double.'
+      id: q25-1
+      questionGroup: q25
+    - problemText: A laboratory sample contains 200 grams of a radioactive material that decays at a rate of 10% per hour.
+        How long will it take for the mass of the material to reduce to 10 grams?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.9
+          coefficient: 200
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: Approximately 28.4 hours
+      stepByStepGuideline:
+      - 'Set up the exponential decay equation, noting the decay factor is $1 - 0.10 = 0.90$: $200(0.90)^t = 10$.'
+      - 'Isolate the exponential term: $(0.90)^t = 10 / 200$, so $(0.90)^t = 0.05$.'
+      - 'Take the logarithm of both sides: $\log(0.90^t) = \log(0.05)$.'
+      - 'Use the Power Law of Logarithms: $t \times \log(0.90) = \log(0.05)$.'
+      - 'Solve for t: $t = \frac{\log(0.05)}{\log(0.90)}$.'
+      - 'Calculate the result: $t \approx 28.43$. Interpreting the result, it will take approximately 28.4 hours.'
+      id: q25-2
+      questionGroup: q25
+    - problemText: A newly established reserve starts with 50 rabbits. Due to ideal conditions, the population increases by
+        15% per year. How many years will it take for the rabbit population to reach 300?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.15
+          coefficient: 50
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: Approximately 12.8 years
+      stepByStepGuideline:
+      - 'Set up the exponential growth equation: $50(1.15)^n = 300$.'
+      - 'Isolate the exponential term: $(1.15)^n = 300 / 50$, so $(1.15)^n = 6$.'
+      - 'Take the logarithm of both sides: $\log(1.15^n) = \log(6)$.'
+      - 'Use the Power Law of Logarithms: $n \times \log(1.15) = \log(6)$.'
+      - 'Solve for n: $n = \frac{\log(6)}{\log(1.15)}$.'
+      - 'Calculate the result: $n \approx 12.81$. Interpreting the result, it will take approximately 12.8 years.'
+      id: q25-3
+      questionGroup: q25
+    - problemText: A retirement fund starts with a principal amount of $5,000. It earns an average annual return of 6%, compounded
+        annually. How long will it take for the value of the fund to reach $15,000?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 1.06
+          coefficient: 5000
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: Approximately 18.9 years
+      stepByStepGuideline:
+      - 'Set up the exponential growth equation: $5000(1.06)^t = 15000$.'
+      - 'Isolate the exponential term: $(1.06)^t = 15000 / 5000$, so $(1.06)^t = 3$.'
+      - 'Take the logarithm of both sides: $\log(1.06^t) = \log(3)$.'
+      - 'Use the Power Law of Logarithms: $t \times \log(1.06) = \log(3)$.'
+      - 'Solve for t: $t = \frac{\log(3)}{\log(1.06)}$.'
+      - 'Calculate the result: $t \approx 18.85$. Interpreting the result, it will take approximately 18.9 years.'
+      id: q25-4
+      questionGroup: q25
+    - problemText: A chemical spill introduces 100 grams of a pollutant into a lake. Due to natural processes, the pollutant
+        degrades at a continuous rate of 5% per day. How many days will pass before only 25 grams of the pollutant remain
+        in the lake?
+      mathTool:
+        toolName: exponentialGraph
+        parameters:
+          base: 0.95
+          coefficient: 100
+          showGrid: true
+          realWorldContext: true
+      finalAnswer: Approximately 27.0 days
+      stepByStepGuideline:
+      - 'Set up the exponential decay equation, noting the decay factor is $1 - 0.05 = 0.95$: $100(0.95)^t = 25$.'
+      - 'Isolate the exponential term: $(0.95)^t = 25 / 100$, so $(0.95)^t = 0.25$.'
+      - 'Take the logarithm of both sides: $\log(0.95^t) = \log(0.25)$.'
+      - 'Use the Power Law of Logarithms: $t \times \log(0.95) = \log(0.25)$.'
+      - 'Solve for t: $t = \frac{\log(0.25)}{\log(0.95)}$.'
+      - 'Calculate the result: $t \approx 27.028$. Interpreting the result, it will take approximately 27.0 days.'
+      id: q25-5
+      questionGroup: q25
+- id: log-bases-node-1
+  nodeNumber: 26
+  title: Understanding Logarithms in Any Base
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: An architect is designing a structure where the required area factor ($x$) relates to the scaling base
+        ($a=3$) and the complexity index ($n=2$) by the exponential relationship $3^2 = 9$. Convert this relationship into
+        its equivalent logarithmic form.
+      avatarIntro: Welcome! Logarithms and exponentials are two sides of the same mathematical coin. Let's practice converting
+        between them to solidify our understanding of the base definition.
+      mathTool: null
+      finalAnswer: log₃(9) = 2
+      stepByStepGuideline:
+      - Identify the base ($a$), the exponent ($n$), and the result ($x$) in the exponential form $a^n = x$. Here, $a=3$,
+        $n=2$, and $x=9$.
+      - 'Recall the definition of a logarithm: If $a^n = x$, then $\log_a(x) = n$.'
+      - 'Substitute the values into the logarithmic form: $\log_3(9) = 2$.'
+      id: q26-1
+      questionGroup: q26
+    - problemText: A sound engineer measures the intensity level of a concert using a logarithmic scale. They determine that
+        the power relationship can be described by $\log_5(125) = 3$. Convert this measurement relationship into its equivalent
+        exponential form.
+      mathTool: null
+      finalAnswer: 5³ = 125
+      stepByStepGuideline:
+      - Identify the base ($a$), the result ($x$), and the exponent ($n$) in the logarithmic form $\log_a(x) = n$. Here, $a=5$,
+        $x=125$, and $n=3$.
+      - 'Recall the definition of the logarithm: $\log_a(x) = n$ means $a^n = x$.'
+      - 'Substitute the values into the exponential form: $5^3 = 125$.'
+      id: q26-2
+      questionGroup: q26
+    - problemText: In a chemistry experiment, the dilution factor ($D$) relates to the number of steps ($n$) taken using base
+        $a=2$. The resulting relationship is given by $2^{-2} = \frac{1}{4}$. Convert this exponential relationship into its
+        equivalent logarithmic form.
+      mathTool: null
+      finalAnswer: log₂(1/4) = -2
+      stepByStepGuideline:
+      - Identify the base ($a$), the exponent ($n$), and the result ($x$) in the exponential form $a^n = x$. Here, $a=2$,
+        $n=-2$, and $x=\frac{1}{4}$.
+      - 'Convert using the definition: If $a^n = x$, then $\log_a(x) = n$.'
+      - 'Substitute the values: $\log_2(\frac{1}{4}) = -2$.'
+      id: q26-3
+      questionGroup: q26
+    - problemText: A mathematician is studying patterns involving the base 7. They established the relationship $\log_7(49)
+        = 2$. Convert this logarithmic equation into its equivalent exponential form.
+      mathTool: null
+      finalAnswer: 7² = 49
+      stepByStepGuideline:
+      - The logarithmic statement $\log_7(49) = 2$ means that 7 raised to the power of 2 equals 49.
+      - Identify the base ($a=7$), the exponent ($n=2$), and the result ($x=49$).
+      - 'Write in exponential form $a^n = x$: $7^2 = 49$.'
+      id: q26-4
+      questionGroup: q26
+    - problemText: A financial analyst models the rapid depreciation of a specific asset. The decay factor is represented
+        by the logarithmic equation $\log_3(\frac{1}{3}) = -1$. Convert this relationship into its equivalent exponential
+        form.
+      mathTool: null
+      finalAnswer: 3⁻¹ = 1/3
+      stepByStepGuideline:
+      - The logarithmic form is $\log_a(x) = n$, where $a=3$, $x=\frac{1}{3}$, and $n=-1$.
+      - The equivalent exponential form is $a^n = x$.
+      - 'Substitute the values: $3^{-1} = \frac{1}{3}$.'
+      id: q26-5
+      questionGroup: q26
+- id: log-bases-node-2
+  nodeNumber: 27
+  title: Converting Between Bases
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Astronomers use logarithmic scales to classify the brightness of stars. If a particular scale uses base
+        2, determine the resulting magnitude calculation for a brightness factor of 20. Use the change of base formula $\log_a(x)
+        = \log(x) / \log(a)$ and a calculator to find $\log_2(20)$, rounded to 2 decimal places.
+      avatarIntro: Great job focusing on logarithmic conversions! Remember, the change of base formula lets us evaluate any
+        logarithm using standard base 10 or natural logarithm buttons on a calculator.
+      finalAnswer: '4.32'
+      stepByStepGuideline:
+      - 'Identify the logarithm to be evaluated: $\log_2(20)$.'
+      - 'Apply the change of base formula: $\log_2(20) = \frac{\log(20)}{\log(2)}$ (or using natural logarithms: $\frac{\ln(20)}{\ln(2)}$).'
+      - 'Calculate the numerator and denominator using a calculator: $\log(20) \approx 1.30103$ and $\log(2) \approx 0.30103$.'
+      - 'Perform the division: $\frac{1.30103}{0.30103} \approx 4.32193...$'
+      - 'Round the result to 2 decimal places: 4.32. Verify that $2^{4.32} \approx 20$.'
+      id: q27-1
+      questionGroup: q27
+    - problemText: The modified Richter scale uses a base 10 logarithm, but a seismologist proposes a new scale based on soil
+        density variations requiring a base 3 logarithm. If the energy ratio recorded during an event is 40 compared to baseline,
+        calculate the intensity reading $R = \log_3(40)$. Use the change of base formula $\log_a(x) = \log(x) / \log(a)$ and
+        a calculator, rounding your final answer to 3 decimal places.
+      finalAnswer: '3.358'
+      stepByStepGuideline:
+      - 'Identify the logarithm to be evaluated: $\log_3(40)$.'
+      - 'Apply the change of base formula: $\log_3(40) = \frac{\log(40)}{\log(3)}$.'
+      - 'Calculate the numerator and denominator using a calculator: $\log(40) \approx 1.60206$ and $\log(3) \approx 0.47712$.'
+      - 'Perform the division: $\frac{1.60206}{0.47712} \approx 3.35773...$'
+      - 'Round the result to 3 decimal places: 3.358. Verification: $3^{3.358}$ should be close to 40.'
+      id: q27-2
+      questionGroup: q27
+    - problemText: While standard pH is base 10, a chemist is analyzing a highly alkaline substance using a specialized base
+        5 scale where $A = \log_5(C)$ defines the alkalinity index $A$ based on concentration factor $C$. If the concentration
+        factor $C$ is 50, calculate the index $A$. Use the change of base formula $\log_a(x) = \log(x) / \log(a)$ and a calculator
+        to find $\log_5(50)$, rounded to 2 decimal places.
+      finalAnswer: '2.43'
+      stepByStepGuideline:
+      - 'Identify the logarithm to be evaluated: $\log_5(50)$.'
+      - 'Apply the change of base formula using natural logarithms: $\log_5(50) = \frac{\ln(50)}{\ln(5)}$.'
+      - 'Calculate the numerator and denominator using a calculator: $\ln(50) \approx 3.91202$ and $\ln(5) \approx 1.60944$.'
+      - 'Perform the division: $\frac{3.91202}{1.60944} \approx 2.43067...$'
+      - 'Round the result to 2 decimal places: 2.43. Verification: $5^{2.43} \approx 50$.'
+      id: q27-3
+      questionGroup: q27
+    - problemText: In digital information theory, the amount of information ($I$) is often measured in bits (base 2). If an
+        algorithm needs to distinguish between 100 equally likely outcomes, the required information $I$ is given by $\log_2(100)$.
+        Calculate this value using the change of base formula $\log_a(x) = \log(x) / \log(a)$, ensuring your final answer
+        is rounded to 3 decimal places.
+      finalAnswer: '6.644'
+      stepByStepGuideline:
+      - 'Identify the logarithm to be evaluated: $\log_2(100)$.'
+      - 'Apply the change of base formula: $\log_2(100) = \frac{\log(100)}{\log(2)}$.'
+      - 'Note that $\log(100) = 2$. Calculate the denominator: $\log(2) \approx 0.30103$.'
+      - 'Perform the division: $\frac{2}{0.30103} \approx 6.64385...$'
+      - 'Round the result to 3 decimal places: 6.644. Verification: $2^{6.644}$ should be close to 100.'
+      id: q27-4
+      questionGroup: q27
+    - problemText: 'A cognitive psychologist models the time ($T$) required to recall a list of items based on list length
+        ($L$) using a logarithmic function in base 3: $T = \log_3(L)$. If the list length factor $L$ is 80, calculate the
+        recall time $T$. Use the change of base formula $\log_a(x) = \log(x) / \log(a)$ and a calculator, rounding the result
+        to 2 decimal places.'
+      finalAnswer: '3.99'
+      stepByStepGuideline:
+      - 'Identify the logarithm to be evaluated: $\log_3(80)$.'
+      - 'Apply the change of base formula: $\log_3(80) = \frac{\log(80)}{\log(3)}$.'
+      - 'Calculate the numerator and denominator using a calculator: $\log(80) \approx 1.90309$ and $\log(3) \approx 0.47712$.'
+      - 'Perform the division: $\frac{1.90309}{0.47712} \approx 3.98869...$'
+      - 'Round the result to 2 decimal places: 3.99. Verification: $3^{3.99}$ should be close to 80.'
+      id: q27-5
+      questionGroup: q27
+- id: log-bases-node-3
+  nodeNumber: 28
+  title: Universal Logarithm Properties
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: In a specialized acoustics scale using base $b=9$, calculate the value of $\log_9(1)$. Explain the fundamental
+        reason why the logarithm of 1 is always zero, regardless of the base chosen (provided the base is valid).
+      avatarIntro: Welcome! Understanding the universal properties of logarithms is key to mastering this topic. Let's start
+        by looking at what happens when the argument is one.
+      mathTool: null
+      finalAnswer: '0'
+      stepByStepGuideline:
+      - 'Step 1: Recall the definition of the logarithm: $\log_a(x) = y$ means $a^y = x$.'
+      - 'Step 2: Apply this definition to the given problem: $\log_9(1) = y$ means $9^y = 1$.'
+      - 'Step 3: Since any non-zero number raised to the power of 0 equals 1, we must have $y=0$. Thus, $\log_9(1) = 0$.'
+      - 'Step 4: This property ($\log_a(1) = 0$) is universal because $a^0 = 1$ is true for any valid logarithm base $a$.'
+      id: q28-1
+      questionGroup: q28
+    - problemText: A storage system uses a highly optimized addressing scheme based on base 11. Determine the exact value
+        of $\log_{11}(11)$. Explain the corresponding exponential relationship that defines this universal property.
+      mathTool: null
+      finalAnswer: '1'
+      stepByStepGuideline:
+      - 'Step 1: Identify the base ($a=11$) and the argument ($x=11$). The problem is to evaluate $\log_{11}(11)$.'
+      - 'Step 2: Recall the universal property that states $\log_a(a) = 1$. This is because $a^1 = a$.'
+      - 'Step 3: Applying this property, $\log_{11}(11) = 1$.'
+      - 'Step 4: The corresponding exponential relationship is $11^1 = 11$, showing that the exponent needed to get the base
+        itself is always 1.'
+      id: q28-2
+      questionGroup: q28
+    - problemText: An equation relating geological rock stress factors involves the expression $\log_5(125)$. Evaluate this
+        expression by recognizing that 125 is a power of the base 5, utilizing the identity $\log_a(a^n) = n$.
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Step 1: Identify the base ($a=5$) and express the argument (125) as a power of the base.'
+      - 'Step 2: $125 = 5 \times 5 \times 5 = 5^3$.'
+      - 'Step 3: Substitute this back into the logarithmic expression: $\log_5(125) = \log_5(5^3)$.'
+      - 'Step 4: Apply the identity $\log_a(a^n) = n$. Therefore, $\log_5(5^3) = 3$.'
+      id: q28-3
+      questionGroup: q28
+    - problemText: An environmental scientist models the ratio of initial pollution ($P_I$) to current pollution ($P_C$) using
+        the expression $\log_4(64 P_I) - \log_4(P_I)$. Simplify this expression completely using the Quotient Law of Logarithms.
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Step 1: Apply the Quotient Law of Logarithms: $\log_a(M) - \log_a(N) = \log_a(M/N)$.'
+      - 'Step 2: Simplify the expression: $\log_4(64 P_I) - \log_4(P_I) = \log_4 \left( \frac{64 P_I}{P_I} \right)$.'
+      - 'Step 3: Cancel the variable $P_I$: $\log_4(64)$.'
+      - 'Step 4: Evaluate $\log_4(64)$ by expressing 64 as a power of 4: $64 = 4^3$. Thus, $\log_4(4^3) = 3$.'
+      id: q28-4
+      questionGroup: q28
+    - problemText: In telecommunications, two amplifiers increase a signal by factors $F_1 = 16$ and $F_2 = 4$. If the combined
+        gain is calculated using base 2 logarithms as $\log_2(16) + \log_2(4)$, evaluate this expression using the Product
+        Law of Logarithms first, and then simplify the result.
+      mathTool: null
+      finalAnswer: '6'
+      stepByStepGuideline:
+      - 'Step 1: Apply the Product Law of Logarithms: $\log_a(M) + \log_a(N) = \log_a(M \times N)$.'
+      - 'Step 2: Combine the terms: $\log_2(16) + \log_2(4) = \log_2(16 \times 4)$.'
+      - 'Step 3: Calculate the product: $\log_2(64)$.'
+      - 'Step 4: Evaluate $\log_2(64)$ by finding the exponent $n$ such that $2^n = 64$. Since $2^6 = 64$, the result is 6.'
+      id: q28-5
+      questionGroup: q28

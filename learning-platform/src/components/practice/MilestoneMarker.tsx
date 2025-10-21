@@ -35,19 +35,32 @@ export const MilestoneMarker: React.FC<MilestoneMarkerProps> = ({
     }
 
     if (type === 'layer-complete') {
+      const layerConfig = {
+        foundation: { icon: '⭐', color: '#FFA500' },
+        integration: { icon: '💎', color: '#5865F2' },
+        application: { icon: '🎯', color: '#10B981' },
+        examPractice: { icon: '👑', color: '#EB459E' },
+      };
+      const config = layerConfig[layer!] || layerConfig.foundation;
       return {
-        icon: layer === 'foundation' ? '⭐' : layer === 'integration' ? '💎' : '👑',
+        icon: config.icon,
         title: `${layer} Complete!`,
-        color: layer === 'foundation' ? '#FFA500' : layer === 'integration' ? '#5865F2' : '#EB459E',
+        color: config.color,
         size: '80px',
       };
     }
 
     // layer-start
+    const layerColors = {
+      foundation: '#FFA500',
+      integration: '#5865F2',
+      application: '#10B981',
+      examPractice: '#EB459E',
+    };
     return {
       icon: '📦',
       title: `${layer} Layer`,
-      color: layer === 'foundation' ? '#FFA500' : layer === 'integration' ? '#5865F2' : '#EB459E',
+      color: layerColors[layer!] || layerColors.foundation,
       size: '60px',
     };
   };

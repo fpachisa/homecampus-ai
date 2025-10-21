@@ -19,6 +19,8 @@ import { S3_MATH_STATISTICS_SUBTOPICS } from '../prompt-library/subjects/mathema
 import type { StatisticsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
 import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import type { RelationsFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
+import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import type { CoordinateGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -74,6 +76,10 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s3-math-relations-')) {
       const subtopic = S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS[topicId as RelationsFunctionsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s3-math-coord-geom-')) {
+      const subtopic = S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS[topicId as CoordinateGeometryTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

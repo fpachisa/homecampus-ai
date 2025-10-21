@@ -40,6 +40,7 @@ IMPORTANT: Use the technical name (e.g., "vennDiagram") in the toolName field, N
 
 // Available math tools for this topic
 export const SETS_VENN_DIAGRAMS_MATH_TOOLS = [
+  "vennDiagram1Set",
   "vennDiagram",
   "vennDiagram3",
   "numberLine",
@@ -241,7 +242,7 @@ export const S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS = {
             "Complement: A' = {x ∈ U | x ∉ A}",
             "A' contains all elements of U that are NOT in A"
           ],
-          availableTools: ["vennDiagram", "setVisualizer"]
+          availableTools: ["vennDiagram1Set", "setVisualizer"]
         },
         {
           id: "complement-properties",
@@ -292,7 +293,7 @@ export const S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS = {
             "n(A) + n(A') = n(U)",
             "n(A) = n(U) - n(A')"
           ],
-          availableTools: ["vennDiagram"]
+          availableTools: ["vennDiagram1Set"]
         }
       ]
     },

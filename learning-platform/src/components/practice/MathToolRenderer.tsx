@@ -32,6 +32,7 @@ import WordProblemDiagramVisualizer from '../math-tools/WordProblemDiagramVisual
 import ExponentialGraphVisualizer from '../math-tools/ExponentialGraphVisualizer';
 import LogarithmGraphVisualizer from '../math-tools/LogarithmGraphVisualizer';
 import GraphCompareVisualizer from '../math-tools/GraphCompareVisualizer';
+import VennDiagram1SetVisualizer from '../math-tools/VennDiagram1SetVisualizer';
 import VennDiagram2SetVisualizer from '../math-tools/VennDiagram2SetVisualizer';
 import VennDiagram3SetVisualizer from '../math-tools/VennDiagram3SetVisualizer';
 import SetVisualizer from '../math-tools/SetVisualizer';
@@ -41,9 +42,10 @@ import HistogramVisualizer from '../math-tools/HistogramVisualizer';
 import BoxPlotVisualizer from '../math-tools/BoxPlotVisualizer';
 import ScatterPlotVisualizer from '../math-tools/ScatterPlotVisualizer';
 import CartesianPlaneVisualizer from '../math-tools/CartesianPlaneVisualizer';
+import Coordinate3DPlaneVisualizer from '../math-tools/Coordinate3DPlaneVisualizer';
 
 interface MathToolRendererProps {
-  toolName: string;
+  toolName: string | null | undefined;
   parameters: Record<string, any>;
   caption?: string;
 }
@@ -89,6 +91,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   graphCompare: GraphCompareVisualizer,
 
   // Sets and Venn diagrams tools
+  vennDiagram1Set: VennDiagram1SetVisualizer,
   vennDiagram: VennDiagram2SetVisualizer,
   vennDiagram3: VennDiagram3SetVisualizer,
   setVisualizer: SetVisualizer,
@@ -102,6 +105,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
 
   // Coordinate geometry tools
   cartesianPlane: CartesianPlaneVisualizer,
+  coordinate3DPlane: Coordinate3DPlaneVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({
@@ -109,14 +113,11 @@ export const MathToolRenderer: React.FC<MathToolRendererProps> = ({
   parameters,
   caption
 }) => {
-  // Defensive check: Handle undefined/empty toolName
+  // Defensive check: Handle null/undefined toolName
+  // When mathTool is intentionally omitted (null), just don't render anything
   if (!toolName || typeof toolName !== 'string') {
-    console.error('MathToolRenderer: Invalid or missing toolName', { toolName, parameters });
-    return (
-      <div className="p-4 bg-red-50 border border-red-300 rounded text-red-800">
-        Error: Math tool missing required toolName
-      </div>
-    );
+    // Return null silently - this is intentional for questions that don't need visualization
+    return null;
   }
 
   // Normalize tool name (handle kebab-case variants)
@@ -124,24 +125,18 @@ export const MathToolRenderer: React.FC<MathToolRendererProps> = ({
 
   // Validate tool exists in registry
   if (!toolExists(normalizedToolName)) {
-    console.warn(`Unknown tool name: ${toolName} (normalized: ${normalizedToolName})`);
-    return (
-      <div className="p-4 bg-yellow-50 border border-yellow-300 rounded text-yellow-800">
-        Unknown visualization: {toolName}
-      </div>
-    );
+    console.warn(`MathToolRenderer: Unknown tool name: ${toolName} (normalized: ${normalizedToolName}). Silently ignoring.`);
+    // Return null silently - invalid toolName, don't show error to user
+    return null;
   }
 
   // Get component from map
   const Component = COMPONENT_MAP[normalizedToolName];
 
   if (!Component) {
-    console.error(`Tool "${normalizedToolName}" exists in registry but not in component map. Please add to COMPONENT_MAP.`);
-    return (
-      <div className="p-4 bg-red-50 border border-red-300 rounded text-red-800">
-        Configuration error: {toolName}
-      </div>
-    );
+    console.error(`MathToolRenderer: Tool "${normalizedToolName}" exists in registry but not in component map. Please add to COMPONENT_MAP. Silently ignoring.`);
+    // Return null silently - configuration error, don't show error to user
+    return null;
   }
 
   // Render the appropriate visualizer

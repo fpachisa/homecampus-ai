@@ -98,7 +98,11 @@ class PathPracticeService {
       subtopicId: node.id,
       difficulty: node.descriptor.difficulty || 'easy',
       generatedAt: new Date(),
-      mathTool: undefined,  // Pre-written questions use SVG diagrams instead
+      mathTool: q.mathTool ? {
+        toolName: q.mathTool.toolName,
+        parameters: q.mathTool.parameters,
+        caption: ''  // Caption not provided in pre-written questions
+      } : undefined,  // Use mathTool if provided, otherwise rely on diagramSvg
       diagramSvg: q.diagramSvg,
       questionGroup: q.questionGroup,  // Preserve question group for multi-part questions
       solutionSteps: q.stepByStepGuideline || [],  // Use pre-written solution steps if available
@@ -291,6 +295,8 @@ class PathPracticeService {
       console.log('Previous Attempts:', previousAttempts.length);
       console.log('Related Questions:', relatedQuestionsContext?.length || 0);
       console.log('Student Answer:', studentAnswer);
+      console.log('Prompt:', prompt);
+
 
       // Call AI provider directly
       const responseText = await this.callAIDirectly(prompt);

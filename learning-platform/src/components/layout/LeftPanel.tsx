@@ -24,6 +24,8 @@ import { S3_MATH_STATISTICS_SUBTOPICS } from '../../prompt-library/subjects/math
 import type { StatisticsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-statistics';
 import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import type { RelationsFunctionsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
+import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import type { CoordinateGeometryTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -124,6 +126,14 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('transformations')) return '🔄';
   if (topicId.includes('absolute-value')) return '📏';
 
+  // S3 Coordinate Geometry icons
+  if (topicId.includes('coord-geom-fundamentals')) return '📍';
+  if (topicId.includes('coord-geom-gradient')) return '📈';
+  if (topicId.includes('coord-geom-line-equations')) return '📝';
+  if (topicId.includes('coord-geom-graphing')) return '📊';
+  if (topicId.includes('coord-geom-perpendicular-bisectors')) return '⊥';
+  if (topicId.includes('coord-geom-applications')) return '🎯';
+
   return '📐';
 }
 
@@ -138,6 +148,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's3-math-surds-radicals') return 'Surds & Radicals';
   if (category === 's3-math-statistics') return 'Statistics';
   if (category === 's3-math-relations-functions') return 'Relations & Functions';
+  if (category === 's3-math-coordinate-geometry') return 'Coordinate Geometry';
   return category;
 }
 
@@ -225,6 +236,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (appState.selectedCategory === 's3-math-relations-functions') {
       return Object.entries(S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's3-math-coordinate-geometry') {
+      return Object.entries(S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

@@ -227,15 +227,15 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
         {/* Opposite label (right of vertical side) */}
         {opposite && (
           <foreignObject
-            x={x2 + 10}
+            x={x2 + 5}
             y={y2 - oppositeLength / 2 - 15}
-            width={120}
+            width={100}
             height={30}
             xmlns="http://www.w3.org/1999/xhtml"
           >
-            <div className="flex items-center justify-center h-full">
+            <div className="flex items-start justify-start h-full">
               <div
-                className="text-base font-semibold"
+                className="text-base font-semibold whitespace-nowrap"
                 style={{ color: highlightSide === 'opposite' ? highlightColor : defaultColor }}
               >
                 <MathText>{`$${opposite}$`}</MathText>
@@ -247,15 +247,15 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
         {/* Hypotenuse label (middle of diagonal) */}
         {hypotenuse && (
           <foreignObject
-            x={x1 + (adjacentLength / 2) - 70}
-            y={y1 - (oppositeLength / 2) - 35}
-            width={140}
+            x={x1 + (adjacentLength / 2) - 60}
+            y={y1 - (oppositeLength / 2) - 50}
+            width={120}
             height={30}
             xmlns="http://www.w3.org/1999/xhtml"
           >
             <div className="flex items-center justify-center h-full">
               <div
-                className="text-base font-semibold"
+                className="text-base font-semibold whitespace-nowrap"
                 style={{ color: highlightSide === 'hypotenuse' ? highlightColor : defaultColor }}
               >
                 <MathText>{`$${hypotenuse}$`}</MathText>

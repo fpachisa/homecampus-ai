@@ -209,38 +209,70 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
           </g>
         )}
 
-        {/* A only shading */}
+        {/* A only shading - shade A but exclude intersection with B */}
         {shouldShade('aOnly') && shadeRegion !== 'union' && (
-          <circle
-            cx={positions.aX}
-            cy="150"
-            r={aRadius}
-            fill={shadeColor}
-            opacity="0.5"
-          />
+          <g>
+            <defs>
+              <mask id="aOnlyMask">
+                {/* White circle A = area to shade */}
+                <circle cx={positions.aX} cy="150" r={aRadius} fill="white" />
+                {/* Black circle B = area to exclude */}
+                <circle cx={positions.bX} cy="150" r={bRadius} fill="black" />
+              </mask>
+            </defs>
+            {/* Shade circle A, but mask out circle B */}
+            <circle
+              cx={positions.aX}
+              cy="150"
+              r={aRadius}
+              fill={shadeColor}
+              opacity="0.6"
+              mask="url(#aOnlyMask)"
+            />
+          </g>
         )}
 
-        {/* B only shading */}
+        {/* B only shading - shade B but exclude intersection with A */}
         {shouldShade('bOnly') && shadeRegion !== 'union' && (
-          <circle
-            cx={positions.bX}
-            cy="150"
-            r={bRadius}
-            fill={shadeColor}
-            opacity="0.5"
-          />
+          <g>
+            <defs>
+              <mask id="bOnlyMask">
+                {/* White circle B = area to shade */}
+                <circle cx={positions.bX} cy="150" r={bRadius} fill="white" />
+                {/* Black circle A = area to exclude */}
+                <circle cx={positions.aX} cy="150" r={aRadius} fill="black" />
+              </mask>
+            </defs>
+            {/* Shade circle B, but mask out circle A */}
+            <circle
+              cx={positions.bX}
+              cy="150"
+              r={bRadius}
+              fill={shadeColor}
+              opacity="0.6"
+              mask="url(#bOnlyMask)"
+            />
+          </g>
         )}
 
-        {/* Intersection shading */}
+        {/* Intersection shading - using clip path for accurate lens shape */}
         {layout === 'overlapping' && shouldShade('intersection') && shadeRegion !== 'union' && (
-          <ellipse
-            cx={(positions.aX + positions.bX) / 2}
-            cy="150"
-            rx="50"
-            ry="85"
-            fill={shadeColor}
-            opacity="0.7"
-          />
+          <g>
+            <defs>
+              <clipPath id="intersectionClip">
+                <circle cx={positions.aX} cy="150" r={aRadius} />
+              </clipPath>
+            </defs>
+            {/* Circle B clipped by Circle A to create the actual intersection */}
+            <circle
+              cx={positions.bX}
+              cy="150"
+              r={bRadius}
+              fill={shadeColor}
+              opacity="0.7"
+              clipPath="url(#intersectionClip)"
+            />
+          </g>
         )}
 
         {/* Circle A */}
@@ -248,8 +280,8 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
           cx={positions.aX}
           cy="150"
           r={aRadius}
-          fill={shadeRegion === 'union' ? 'none' : setAColor}
-          fillOpacity={shadeRegion === 'union' ? 0 : 0.3}
+          fill={shadeRegion !== 'none' ? 'none' : setAColor}
+          fillOpacity={shadeRegion !== 'none' ? 0 : 0.3}
           {...getCircleBorder('A')}
         />
 
@@ -258,38 +290,52 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
           cx={positions.bX}
           cy="150"
           r={bRadius}
-          fill={shadeRegion === 'union' ? 'none' : setBColor}
-          fillOpacity={shadeRegion === 'union' ? 0 : 0.3}
+          fill={shadeRegion !== 'none' ? 'none' : setBColor}
+          fillOpacity={shadeRegion !== 'none' ? 0 : 0.3}
           {...getCircleBorder('B')}
         />
 
-        {/* Shade "neither" region if needed */}
+        {/* Shade "neither" region if needed - entire area outside both circles */}
         {shouldShade('neither') && (
-          <rect
-            x="370"
-            y="220"
-            width="50"
-            height="50"
-            fill={shadeColor}
-            opacity="0.7"
-            rx="5"
-          />
+          <g>
+            <defs>
+              <mask id="neitherMask">
+                {/* White rectangle = entire universal set */}
+                <rect x="20" y="20" width="410" height="260" fill="white" />
+                {/* Black circles = areas to exclude (A and B) */}
+                <circle cx={positions.aX} cy="150" r={aRadius} fill="black" />
+                <circle cx={positions.bX} cy="150" r={bRadius} fill="black" />
+              </mask>
+            </defs>
+            {/* Shade the entire universal set, but mask out circles A and B */}
+            <rect
+              x="20"
+              y="20"
+              width="410"
+              height="260"
+              fill={shadeColor}
+              opacity="0.6"
+              mask="url(#neitherMask)"
+            />
+          </g>
         )}
 
         {/* Set labels */}
         {layout === 'subset' ? (
           <>
-            <text x={positions.aX} y="55" fontSize="14" fontWeight="bold" textAnchor="middle" fill={setAColor}>
-              {setALabel}
-            </text>
+            {/* Outer circle label (Set B) - positioned at top */}
             <text x={positions.bX} y="55" fontSize="14" fontWeight="bold" textAnchor="middle" fill={setBColor}>
               {setBLabel}
+            </text>
+            {/* Inner circle label (Set A) - positioned below outer label */}
+            <text x={positions.aX} y="85" fontSize="14" fontWeight="bold" textAnchor="middle" fill={setAColor}>
+              {setALabel}
             </text>
           </>
         ) : layout === 'equal' ? (
           <>
             <text x={positions.aX} y="55" fontSize="14" fontWeight="bold" textAnchor="middle" fill={setAColor}>
-              {setALabel} = {setBLabel}
+              {setALabel} = {setBLabel}?
             </text>
           </>
         ) : (
@@ -330,7 +376,6 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
         {/* Equal layout shows note */}
         {layout === 'equal' && (
           <text x="225" y="220" fontSize="14" textAnchor="middle" fill="#6b7280" fontStyle="italic">
-            A = B (same elements)
           </text>
         )}
 

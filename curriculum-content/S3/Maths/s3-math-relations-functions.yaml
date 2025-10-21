@@ -1,0 +1,1240 @@
+# Relations Functions - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: relations-node-1
+  nodeNumber: 1
+  title: Identifying Relations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Is the set of ordered pairs {(1, 5), (2, 8), (3, 11), (4, 14)} a relation?
+      avatarIntro: A relation is simply a connection between two sets of data, usually represented by x and y. Let's practice
+        identifying them.
+      mathTool: null
+      finalAnswer: Yes, this set is a relation.
+      stepByStepGuideline:
+      - Recall the definition of a relation in mathematics.
+      - A relation is any set of ordered pairs (x, y) that connects elements from one set (x) to elements of another set (y).
+      - Since {(1, 5), (2, 8), (3, 11), (4, 14)} is a set containing ordered pairs, it satisfies the definition of a relation.
+      id: q1-1
+      questionGroup: q1
+    - problemText: Does the equation $y = 3x - 1$ represent a relation?
+      mathTool: null
+      finalAnswer: Yes, $y = 3x - 1$ represents a relation.
+      stepByStepGuideline:
+      - Consider what the equation $y = 3x - 1$ defines.
+      - This equation generates an infinite set of points (x, y) that lie on a straight line.
+      - Since a relation is defined as any set of ordered pairs connecting x and y, an equation that defines such a set (even
+        if infinite) is a relation.
+      id: q1-2
+      questionGroup: q1
+    - problemText: Is $y = x^2 + 5$ considered a relation in the Cartesian plane?
+      mathTool: null
+      finalAnswer: Yes, $y = x^2 + 5$ is considered a relation.
+      stepByStepGuideline:
+      - Identify the components of the given mathematical statement.
+      - The equation relates the variable x (input) to the variable y (output) through a specific rule (squaring x and adding
+        5).
+      - This relationship results in an infinite collection of ordered pairs (x, y) which, by definition, constitutes a relation.
+      id: q1-3
+      questionGroup: q1
+    - problemText: Identify if the correspondence between the age of a car (x) and its current market value (y) represents
+        a relation.
+      mathTool: null
+      finalAnswer: Yes, this represents a relation.
+      stepByStepGuideline:
+      - Determine if the description links two variables.
+      - The description connects the age of the car (x) to its market value (y).
+      - Because for every age (x), there is a corresponding market value (y), this correspondence forms a set of ordered pairs
+        (Age, Value), fulfilling the requirements of a relation.
+      id: q1-4
+      questionGroup: q1
+    - problemText: Does the set of points {(-3, 9), (-1, 1), (0, 0), (1, 1), (2, 4), (3, 9)} qualify as a relation?
+      mathTool: null
+      finalAnswer: Yes, the set qualifies as a relation.
+      stepByStepGuideline:
+      - Count the number of ordered pairs and examine their components.
+      - The collection contains 6 distinct ordered pairs, each linking an x-coordinate to a y-coordinate.
+      - Any collection of ordered pairs (finite or infinite) defines a connection between x and y and is therefore classified
+        as a relation.
+      id: q1-5
+      questionGroup: q1
+- id: functions-node-1
+  nodeNumber: 2
+  title: Identifying Functions from Sets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Is the set of ordered pairs {(-5, 10), (-2, 4), (0, 0), (3, -6)} a function?
+      avatarIntro: Functions are special types of relations where every input has exactly one output. Let's check these sets
+        to see if they meet that rule!
+      mathTool: null
+      finalAnswer: Yes, it is a function.
+      stepByStepGuideline:
+      - 'Identify the x-coordinates (inputs) in the set: -5, -2, 0, and 3.'
+      - Check if any x-coordinate is repeated.
+      - Since all x-coordinates are unique, the set satisfies the definition of a function.
+      - 'Conclusion: The set {(-5, 10), (-2, 4), (0, 0), (3, -6)} is a function because no input value is mapped to more than
+        one output value.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: Determine if the relation {(-3, 1), (-1, 0), (-3, 3)} is a function.
+      mathTool: null
+      finalAnswer: No, it is NOT a function.
+      stepByStepGuideline:
+      - 'Identify the x-coordinates (inputs) in the relation: -3, -1, and -3.'
+      - Observe that the x-coordinate -3 appears twice.
+      - In the points (-3, 1) and (-3, 3), the input -3 is associated with two different outputs (1 and 3).
+      - 'Conclusion: This relation fails the function test because a single input value (-3) is mapped to multiple output
+        values.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: Check if the set {(1, 9), (2, -4), (3, 9), (4, 1), (5, -4)} satisfies the function definition.
+      mathTool: null
+      finalAnswer: Yes, it is a function.
+      stepByStepGuideline:
+      - 'List all the x-coordinates (inputs): 1, 2, 3, 4, 5.'
+      - 'List all the y-coordinates (outputs): 9, -4, 9, 1, -4.'
+      - Examine the x-coordinates to see if any repeat. The x-coordinates (1, 2, 3, 4, 5) are all unique.
+      - Note that the y-coordinates 9 and -4 repeat, but this does not violate the function definition (it is acceptable for
+        different inputs to have the same output).
+      - 'Conclusion: Since every input has exactly one output, the set defines a function.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: Is the set of ordered pairs {(-2, 1), (3, 4), (-2, 0), (1, 4)} a function?
+      mathTool: null
+      finalAnswer: No, it is NOT a function.
+      stepByStepGuideline:
+      - 'Inspect the x-coordinates of the ordered pairs: -2, 3, -2, and 1.'
+      - Identify the repeated x-coordinate. The value x = -2 appears in both the first point (-2, 1) and the third point (-2,
+        0).
+      - The input -2 is mapped to two different outputs (1 and 0).
+      - 'Conclusion: The set is not a function because the input -2 does not have a unique output.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: Determine if the relation {(9, -1), (-4, 7), (1, 0)} is a function.
+      mathTool: null
+      finalAnswer: Yes, it is a function.
+      stepByStepGuideline:
+      - 'Identify the domain (set of x-coordinates): 9, -4, and 1.'
+      - Verify if any domain element is repeated.
+      - Since 9, -4, and 1 are all distinct values, each input maps to exactly one output.
+      - 'Conclusion: The relation satisfies the definition of a function.'
+      id: q2-5
+      questionGroup: q2
+- id: vertical-line-test-node-1
+  nodeNumber: 3
+  title: Applying Vertical Line Test
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A graph shows a straight line with a positive slope passing through the origin. Is this graph a function?
+        Apply the vertical line test to justify your answer.
+      avatarIntro: The Vertical Line Test is a quick visual tool. Let's practice determining if a graph represents a function!
+      mathTool: null
+      finalAnswer: Yes, this graph is a function. When applying the vertical line test, every possible vertical line cuts
+        the straight line at exactly one point. Since no x-value has more than one corresponding y-value, it satisfies the
+        definition of a function.
+      stepByStepGuideline:
+      - 'Recall the Vertical Line Test (VLT): If any vertical line intersects the graph at more than one point, the graph
+        is NOT a function.'
+      - Imagine drawing vertical lines across the straight line graph.
+      - Observe that regardless of where the vertical line is drawn, it will intersect the straight line only once.
+      - Conclude that since the vertical line intersects the graph at most once everywhere, the graph represents a function.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Consider the graph of an ellipse centered at the origin that is wider than it is tall. Does this curve
+        pass the vertical line test?
+      mathTool: null
+      finalAnswer: No, the ellipse fails the vertical line test. For any vertical line drawn within the horizontal boundaries
+        of the ellipse (but not at the far sides), the line will cut the curve twice (once on the top half and once on the
+        bottom half).
+      stepByStepGuideline:
+      - Visualize the shape of an ellipse centered at the origin.
+      - Consider a vertical line passing through the middle section of the ellipse.
+      - Note that this vertical line intersects the ellipse at two distinct points, meaning one input x-value corresponds
+        to two output y-values.
+      - Since the VLT fails (the line cuts the graph more than once), the ellipse does not represent a function.
+      id: q3-2
+      questionGroup: q3
+    - problemText: State the definition of the Vertical Line Test (VLT) and explain the fundamental reason why this visual
+        test works for identifying functions.
+      mathTool: null
+      finalAnswer: The Vertical Line Test states that a graph represents a function if and only if every vertical line drawn
+        on the graph intersects the graph at most once. It works because a vertical line represents a single constant x-value
+        (input). If that line cuts the graph twice or more, it means that single input x-value is associated with multiple
+        output y-values, which violates the core definition of a function.
+      stepByStepGuideline:
+      - 'Define the VLT rule: A graph must be intersected by any vertical line at most once.'
+      - 'Explain the significance of a vertical line: A vertical line represents a single domain element (x-value).'
+      - 'Explain the implication of multiple intersections: If a vertical line cuts the graph multiple times, it means that
+        single x-value yields multiple y-values.'
+      - 'Relate this back to the function definition: A function requires that every input (x) has exactly one output (y).'
+      id: q3-3
+      questionGroup: q3
+    - problemText: A graph displays a semi-circle that lies entirely above the x-axis. Does this graph represent a function?
+      mathTool: null
+      finalAnswer: Yes, this graph represents a function. When applying the vertical line test, any vertical line drawn within
+        the domain of the semi-circle will cut the graph exactly once. Thus, it passes the VLT.
+      stepByStepGuideline:
+      - Visualize the semi-circle lying above the x-axis.
+      - Consider drawing vertical lines across this graph.
+      - Since the semi-circle only includes the top half of the corresponding full circle, any vertical line will intersect
+        the curve at a maximum of one point.
+      - Conclude that because the line cuts the graph at most once, the semi-circle is a function.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Consider the graph of a vertical line defined by the equation $x = 4$. Explain why this specific graph
+        fails the vertical line test and is therefore not a function.
+      mathTool: null
+      finalAnswer: This graph fails the vertical line test dramatically. The vertical line test requires that every vertical
+        line cuts the graph at most once. If we draw a vertical line at $x=4$ (which is the graph itself), this line intersects
+        the graph at infinitely many points along the entire length of the line. This means the input $x=4$ is associated
+        with infinite possible y-values, immediately failing the function criterion.
+      stepByStepGuideline:
+      - 'Identify the graph: It is a vertical line at a fixed x-value (x=4).'
+      - Apply the VLT by considering a vertical line passing through x=4.
+      - Note that the vertical line drawn at x=4 overlaps perfectly with the graph itself.
+      - 'Determine the number of intersections: The vertical line intersects the graph infinitely many times.'
+      - Conclude that because one input (x=4) has infinite outputs, the vertical line fails the VLT and is not a function.
+      id: q3-5
+      questionGroup: q3
+- id: function-notation-node-1
+  nodeNumber: 4
+  title: Understanding f(x) Notation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: How is the notation g(t) read in mathematics, particularly when dealing with the function g(t) = 4t - 5?
+      avatarIntro: Welcome! Let's start by making sure we understand the basic language of functions. Pay close attention
+        to how we pronounce function notation.
+      mathTool: null
+      finalAnswer: The notation g(t) is read as 'g of t'.
+      stepByStepGuideline:
+      - Identify the function name (g) and the input variable (t).
+      - Function notation (g(t)) is read by stating the function name first, followed by 'of', and then the input variable.
+      - Therefore, g(t) is read as 'g of t'.
+      id: q4-1
+      questionGroup: q4
+    - problemText: In the context of the function p(n) = n² + 2, what mathematical quantity or concept does the entire notation
+        p(n) represent?
+      mathTool: null
+      finalAnswer: p(n) represents the output value, the function value, or the result obtained when the input n is processed
+        by the function rule p.
+      stepByStepGuideline:
+      - Recall that function notation is a way to express the relationship between input and output.
+      - The variable inside the parentheses (n) is the input.
+      - The entire expression p(n) stands for the result of the function operation.
+      - Therefore, p(n) represents the output value associated with the input n.
+      id: q4-2
+      questionGroup: q4
+    - problemText: Given the function notation h(a) = 2a² - 3a + 1, clearly identify the role of the letter h and the role
+        of the variable a.
+      mathTool: null
+      finalAnswer: h is the name of the function (the function rule being applied), and a is the input variable (or independent
+        variable) to be substituted into the rule.
+      stepByStepGuideline:
+      - Analyze the structure of function notation h(a).
+      - The letter outside the parentheses (h) is conventionally used to name the specific function or rule.
+      - The variable inside the parentheses (a) represents the value that goes into the function, known as the input.
+      id: q4-3
+      questionGroup: q4
+    - problemText: In coordinate geometry, we often write equations as y = 5x + 2. How is the notation y = f(x) related to
+        this, and what does it communicate about the relationship between x and y?
+      mathTool: null
+      finalAnswer: The notation y = f(x) is equivalent to saying y is the output of the function f when x is the input. It
+        emphasizes that y is dependent on x according to the rule defined by f.
+      stepByStepGuideline:
+      - 'Understand the equivalence: y represents the dependent variable (output) and f(x) represents the function output.'
+      - When we write y = f(x), we are explicitly stating that the value of y is determined entirely by applying the function
+        rule f to the input value x.
+      - This notation confirms that the relationship is functional, meaning for every input x, there is exactly one output
+        y.
+      id: q4-4
+      questionGroup: q4
+    - problemText: A common mistake is interpreting the notation q(x) as the multiplication of q by x. Explain why this interpretation
+        is fundamentally incorrect in the context of functions like q(x) = x - 1.
+      mathTool: null
+      finalAnswer: q(x) does not mean multiplication. The parentheses in function notation indicate that x is the input argument
+        being substituted into the function rule named q, not being multiplied by q.
+      stepByStepGuideline:
+      - 'Recall the purpose of function notation: to map an input to an output via a rule.'
+      - In standard algebraic notation, adjacent terms or terms separated by parentheses usually imply multiplication, but
+        this is an exception for function notation.
+      - The notation q(x) specifically denotes 'the output of function q when the input is x', distinguishing it clearly from
+        algebraic multiplication.
+      id: q4-5
+      questionGroup: q4
+- id: evaluating-node-1
+  nodeNumber: 5
+  title: Evaluating Functions with Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: If the function $f$ is defined by $f(x) = 2x^2 - 3x + 5$, evaluate $f(2)$.
+      avatarIntro: Evaluating functions is a fundamental skill. Remember to substitute the input value for every instance
+        of the variable x.
+      mathTool: null
+      finalAnswer: '7'
+      stepByStepGuideline:
+      - 'Substitute $x=2$ into the function: $f(2) = 2(2)^2 - 3(2) + 5$.'
+      - 'Calculate the powers first: $f(2) = 2(4) - 3(2) + 5$.'
+      - 'Perform multiplication: $f(2) = 8 - 6 + 5$.'
+      - 'Simplify the expression: $f(2) = 2 + 5 = 7.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: Given the linear function $g(x) = 4x - 9$, determine the value of $g(0)$.
+      mathTool: null
+      finalAnswer: '-9'
+      stepByStepGuideline:
+      - 'Substitute $x=0$ into the function: $g(0) = 4(0) - 9$.'
+      - 'Perform multiplication: $g(0) = 0 - 9$.'
+      - 'Simplify to find the final value: $g(0) = -9.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: For the function $h(x) = x^2 + 2x - 1$, find the value of $h(-3)$.
+      mathTool: null
+      finalAnswer: '2'
+      stepByStepGuideline:
+      - 'Substitute $x=-3$ into the function, using parentheses: $h(-3) = (-3)^2 + 2(-3) - 1$.'
+      - 'Calculate the squared term and perform multiplication: $h(-3) = 9 - 6 - 1$.'
+      - 'Simplify the expression: $h(-3) = 3 - 1 = 2.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: Evaluate the cubic function $p(x) = x^3 + 5x$ when $x = -1$. That is, find $p(-1)$.
+      mathTool: null
+      finalAnswer: '-6'
+      stepByStepGuideline:
+      - 'Substitute $x=-1$ into the function: $p(-1) = (-1)^3 + 5(-1)$.'
+      - 'Calculate the powers and multiplication: $p(-1) = -1 - 5$.'
+      - 'Simplify the expression: $p(-1) = -6.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: If $f(x) = -3x^2 + 2$, calculate $f(4)$.
+      mathTool: null
+      finalAnswer: '-46'
+      stepByStepGuideline:
+      - 'Substitute $x=4$ into the function: $f(4) = -3(4)^2 + 2$.'
+      - 'Calculate the power first: $f(4) = -3(16) + 2$.'
+      - 'Perform the multiplication: $f(4) = -48 + 2$.'
+      - 'Simplify the expression: $f(4) = -46.'
+      id: q5-5
+      questionGroup: q5
+- id: evaluating-node-2
+  nodeNumber: 6
+  title: Evaluating with Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: If the function $f$ is defined by $f(x) = 3x - 4$, find and simplify the expression for $f(2x)$.
+      avatarIntro: This type of problem requires you to replace every instance of the input variable with the given expression.
+        Remember to use parentheses!
+      finalAnswer: 6x - 4
+      stepByStepGuideline:
+      - 'Start with the function definition: $f(x) = 3x - 4$.'
+      - 'Substitute $2x$ in place of $x$: $f(2x) = 3(2x) - 4$.'
+      - 'Multiply the terms: $3(2x) = 6x$.'
+      - 'Write the final simplified expression: $6x - 4$.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: Given the function $g(t) = t^2 + 5$, evaluate $g(t + h)$ and expand the result completely.
+      finalAnswer: t² + 2th + h² + 5
+      stepByStepGuideline:
+      - 'Start with the function definition: $g(t) = t^2 + 5$.'
+      - 'Substitute $(t + h)$ in place of $t$: $g(t + h) = (t + h)^2 + 5$.'
+      - 'Expand the binomial $(t + h)^2$: $(t + h)^2 = t^2 + 2th + h^2$.'
+      - 'Combine the expanded terms with the constant: $t^2 + 2th + h^2 + 5$.'
+      - The result is already simplified as there are no like terms to combine.
+      id: q6-2
+      questionGroup: q6
+    - problemText: If $h(n) = -2n^2 + 3$, find the expression for $h(-n)$.
+      finalAnswer: -2n² + 3
+      stepByStepGuideline:
+      - 'Start with the function definition: $h(n) = -2n^2 + 3$.'
+      - 'Substitute $(-n)$ in place of $n$, ensuring parentheses are used: $h(-n) = -2(-n)^2 + 3$.'
+      - Simplify the term $(-n)^2$. Since the exponent is even, $(-n)^2 = n^2$.
+      - 'Substitute this back into the expression: $h(-n) = -2(n^2) + 3$.'
+      - The final simplified expression is $-2n^2 + 3$.
+      id: q6-3
+      questionGroup: q6
+    - problemText: Given the quadratic function $f(x) = x^2 + 4x + 1$, find and simplify $f(x - 1)$.
+      finalAnswer: x² + 2x - 2
+      stepByStepGuideline:
+      - 'Start with the function definition: $f(x) = x^2 + 4x + 1$.'
+      - 'Substitute $(x - 1)$ for every $x$: $f(x - 1) = (x - 1)^2 + 4(x - 1) + 1$.'
+      - 'Expand the terms:'
+      - 1. $(x - 1)^2 = x^2 - 2x + 1$
+      - 2. $4(x - 1) = 4x - 4$
+      - 'Rewrite the full expression: $f(x - 1) = (x^2 - 2x + 1) + (4x - 4) + 1$.'
+      - 'Combine like terms:'
+      - 'x-terms: $-2x + 4x = 2x$'
+      - 'Constant terms: $1 - 4 + 1 = -2$'
+      - The final simplified expression is $x^2 + 2x - 2$.
+      id: q6-4
+      questionGroup: q6
+    - problemText: Let $g(x) = x^3 - 3x$. Find and simplify the expression for $g(x/2)$.
+      finalAnswer: x³/8 - 3x/2
+      stepByStepGuideline:
+      - 'Start with the function definition: $g(x) = x^3 - 3x$.'
+      - 'Substitute $(x/2)$ in place of $x$: $g(x/2) = (x/2)^3 - 3(x/2)$.'
+      - 'Simplify the first term, $(x/2)^3$: $(x/2)^3 = x^3 / 2^3 = x^3/8$.'
+      - 'Simplify the second term, $3(x/2)$: $3x/2$.'
+      - 'Write the final simplified expression: $x^3/8 - 3x/2$.'
+      id: q6-5
+      questionGroup: q6
+- id: domain-range-node-1
+  nodeNumber: 7
+  title: Finding Domain and Range
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A function's domain is described as the set of all x-values defined from -3 to 5, including -3 but strictly
+        excluding 5. Write the domain using interval notation.
+      avatarIntro: Understanding how to translate descriptive language into mathematical notation is key to mastering domain
+        and range. Remember what each type of bracket signifies!
+      mathTool: null
+      finalAnswer: 'Domain: [-3, 5)'
+      stepByStepGuideline:
+      - Identify the variable being described. Since the question asks for the domain, we are looking at the x-values.
+      - 'Identify the lower bound: -3.'
+      - 'Identify the upper bound: 5.'
+      - 'Determine the appropriate bracket for the lower bound: Since -3 is ''included'', use a square bracket [.'
+      - 'Determine the appropriate bracket for the upper bound: Since 5 is ''strictly excluded'', use a round bracket ).'
+      - 'Combine the bounds into the final interval notation: [-3, 5).'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Consider the function $f(x) = |x| + 2$. Knowing that the absolute value of any real number, $|x|$, is always
+        non-negative (zero or positive), determine the range of this function and write it in interval notation.
+      mathTool: null
+      finalAnswer: 'Range: [2, \u221e)'
+      stepByStepGuideline:
+      - The core component is $|x|$. Since $|x| \ge 0$ for all real numbers x.
+      - 'The function $f(x)$ takes this minimum value (0) and adds 2: $f(x) = 0 + 2 = 2$. Therefore, the minimum output value
+        (range minimum) is 2.'
+      - Since $|x|$ can increase infinitely, $f(x)$ can also increase infinitely.
+      - The range starts at 2 (inclusive) and goes towards positive infinity.
+      - In interval notation, this is written as [2, \u221e). Note that infinity always uses a round bracket.
+      id: q7-2
+      questionGroup: q7
+    - problemText: A particular function has output values (y-values) that range strictly between -10 and -1. Both endpoints
+        are excluded. Write the range of this function using interval notation.
+      mathTool: null
+      finalAnswer: 'Range: (-10, -1)'
+      stepByStepGuideline:
+      - Identify that the question is asking for the Range (output values or y-values).
+      - Identify the lower bound (-10) and the upper bound (-1).
+      - Since both endpoints are 'strictly between' the values, they are excluded.
+      - Excluded endpoints require round brackets ( ).
+      - The resulting interval notation is (-10, -1).
+      id: q7-3
+      questionGroup: q7
+    - problemText: The horizontal extent of a function (its domain) covers all real numbers up to and including 12. Write
+        the domain in interval notation.
+      mathTool: null
+      finalAnswer: 'Domain: (\u221e, 12]'
+      stepByStepGuideline:
+      - The question asks for the Domain, which is the horizontal extent (x-values).
+      - The x-values cover 'all real numbers up to' 12. This means the values start from negative infinity (-\u221e) and stop
+        at 12.
+      - Negative infinity is always represented by a round bracket (.
+      - Since 12 is 'included', it is represented by a square bracket ].
+      - The domain is written as (-\u221e, 12].
+      id: q7-4
+      questionGroup: q7
+    - problemText: For the linear function $g(x) = 5x - 7$, where x can be any real number, what is the range of the function?
+        Express your answer using interval notation.
+      mathTool: null
+      finalAnswer: 'Range: (\u221e, \u221e)'
+      stepByStepGuideline:
+      - 'Identify the type of function: $g(x) = 5x - 7$ is a linear function.'
+      - A non-constant linear function extends infinitely in both the positive and negative y-directions.
+      - Since there are no restrictions on the input (domain is all real numbers), the output (range) will also cover all
+        real numbers.
+      - 'The set of all real numbers is represented in interval notation from negative infinity to positive infinity: (-\u221e,
+        \u221e).'
+      id: q7-5
+      questionGroup: q7
+- id: natural-domain-node-1
+  nodeNumber: 8
+  title: Natural Domain with Restrictions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: Find the natural domain of the function $f(x) = \sqrt{x + 4}$.
+      avatarIntro: Understanding the domain of a function is crucial. Remember, for a square root to be defined in the real
+        numbers, the value under the root must be non-negative.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -6
+          max: 4
+          intervals:
+          - start: -4
+            end: null
+            startInclusive: true
+            label: '[-4, \u221e)'
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Natural domain: [-4, \u221e) or {x | x \u2265 -4}'
+      stepByStepGuideline:
+      - 'Identify the restriction: Since the function involves a square root, the radicand (the expression under the square
+        root) must be greater than or equal to zero.'
+      - 'Set up the inequality: $x + 4 \ge 0$.'
+      - 'Solve the inequality: Subtract 4 from both sides to get $x \ge -4$.'
+      - 'State the natural domain: In interval notation, the domain is $[-4, \infty)$.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: Find the natural domain of the function $f(x) = \frac{1}{x - 7}$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 4
+          max: 10
+          intervals:
+          - start: null
+            end: 7
+            startInclusive: false
+            endInclusive: false
+            label: (-\u221e, 7)
+          - start: 7
+            end: null
+            startInclusive: false
+            endInclusive: false
+            label: (7, \u221e)
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Natural domain: (-\u221e, 7) \u222a (7, \u221e) or {x | x \u2260 7}'
+      stepByStepGuideline:
+      - 'Identify the restriction: Since the function involves division, the denominator cannot be equal to zero.'
+      - 'Set up the exclusion condition: $x - 7 \ne 0$.'
+      - 'Solve the condition: Add 7 to both sides to find $x \ne 7$.'
+      - 'State the natural domain: The domain includes all real numbers except 7. In interval notation, this is $(-\infty,
+        7) \cup (7, \infty)$.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: Find the natural domain of the function $f(x) = \frac{5}{\sqrt{x - 3}}$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 8
+          intervals:
+          - start: 3
+            end: null
+            startInclusive: false
+            label: (3, \u221e)
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Natural domain: (3, \u221e) or {x | x > 3}'
+      stepByStepGuideline:
+      - 'Identify the restriction: This function has two restrictions combined: a square root and a denominator.'
+      - 'Determine the combined inequality: For the function to be defined, the radicand must be greater than zero (strictly
+        greater, because if it were zero, the denominator would be zero, which is undefined).'
+      - 'Set up the strict inequality: $x - 3 > 0$.'
+      - 'Solve the inequality: Add 3 to both sides to get $x > 3$.'
+      - 'State the natural domain: In interval notation, the domain is $(3, \infty)$.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: Find the natural domain of the function $f(x) = \sqrt{5 - x}$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 10
+          intervals:
+          - start: null
+            end: 5
+            endInclusive: true
+            label: (-\u221e, 5]
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Natural domain: (-\u221e, 5] or {x | x \u2264 5}'
+      stepByStepGuideline:
+      - 'Identify the restriction: The radicand must be greater than or equal to zero.'
+      - 'Set up the inequality: $5 - x \ge 0$.'
+      - 'Solve the inequality: Subtract 5 from both sides: $-x \ge -5$.'
+      - 'Solve the inequality (cont.): Multiply or divide by -1, remembering to reverse the inequality sign: $x \le 5$.'
+      - 'State the natural domain: In interval notation, the domain is $(-\infty, 5]$.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: Find the natural domain of the function $f(x) = \frac{\sqrt{x - 1}}{x - 6}$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 10
+          intervals:
+          - start: 1
+            end: 6
+            startInclusive: true
+            endInclusive: false
+            label: '[1, 6)'
+          - start: 6
+            end: null
+            startInclusive: false
+            label: (6, \u221e)
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Natural domain: [1, 6) \u222a (6, \u221e) or {x | x \u2265 1, x \u2260 6}'
+      stepByStepGuideline:
+      - 'Identify the restrictions: We have a square root in the numerator and a linear term in the denominator, requiring
+        two separate conditions.'
+      - 'Condition 1 (Square Root): The radicand must be non-negative. $x - 1 \ge 0 \implies x \ge 1$.'
+      - 'Condition 2 (Denominator): The denominator cannot be zero. $x - 6 \ne 0 \implies x \ne 6$.'
+      - 'Combine the conditions: We need $x \ge 1$ AND $x \ne 6$.'
+      - 'State the natural domain: The domain starts at 1 (inclusive), continues indefinitely, but excludes the point 6. In
+        interval notation, this is $[1, 6) \cup (6, \infty)$.'
+      id: q8-5
+      questionGroup: q8
+- id: sign-diagrams-node-1
+  nodeNumber: 9
+  title: Creating Sign Diagrams
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: Create a sign diagram for the rational function $f(x) = \frac{x - 4}{x + 2}$. Identify all critical values
+        (zeros and undefined points) and determine the sign (+ or -) of $f(x)$ in the resulting intervals.
+      avatarIntro: Understanding how functions behave around their critical points is fundamental for solving inequalities.
+        Let's create a detailed sign diagram!
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -5
+          max: 7
+          points:
+          - value: -2
+            label: '|'
+            style: none
+          - value: 4
+            label: 
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Critical values: Zero at x = 4 (numerator), Undefined at x = -2 (denominator). Sign diagram: x < -2 (Positive),
+        -2 < x < 4 (Negative), x > 4 (Positive).'
+      stepByStepGuideline:
+      - 'Identify critical values: The function is zero when the numerator is zero, $x - 4 = 0$, so $x = 4$. The function
+        is undefined when the denominator is zero, $x + 2 = 0$, so $x = -2$.'
+      - 'Mark the critical values on the number line: Mark x = 4 with a solid dot (•) and x = -2 with a dashed line (|).'
+      - 'Test regions: Choose a test value in each region defined by the critical values (-2 and 4).'
+      - 'Region 1 (x < -2, e.g., x = -3): $f(-3) = \frac{-3 - 4}{-3 + 2} = \frac{-7}{-1} = 7$. Sign is Positive (+).'
+      - 'Region 2 (-2 < x < 4, e.g., x = 0): $f(0) = \frac{0 - 4}{0 + 2} = \frac{-4}{2} = -2$. Sign is Negative (-).'
+      - 'Region 3 (x > 4, e.g., x = 5): $f(5) = \frac{5 - 4}{5 + 2} = \frac{1}{7}$. Sign is Positive (+).'
+      id: q9-1
+      questionGroup: q9
+    - problemText: Consider the function $g(x) = (x - 1)(x - 5)$. Determine the zeros of the function and use them to construct
+        a sign diagram, detailing the sign (+ or -) in each interval.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -2
+          max: 8
+          points:
+          - value: 1
+            label: 
+            style: closed
+          - value: 5
+            label: 
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Critical values: Zeros at x = 1 and x = 5. Sign diagram: x < 1 (Positive), 1 < x < 5 (Negative), x > 5
+        (Positive).'
+      stepByStepGuideline:
+      - 'Identify critical values (zeros): Set $g(x) = 0$. $(x - 1)(x - 5) = 0$, giving zeros at $x = 1$ and $x = 5$.'
+      - 'Mark the critical values on the number line: Mark both x = 1 and x = 5 with solid dots (•).'
+      - 'Test regions: Choose a test value in each region defined by the zeros (1 and 5).'
+      - 'Region 1 (x < 1, e.g., x = 0): $g(0) = (-1)(-5) = 5$. Sign is Positive (+).'
+      - 'Region 2 (1 < x < 5, e.g., x = 3): $g(3) = (3 - 1)(3 - 5) = (2)(-2) = -4$. Sign is Negative (-).'
+      - 'Region 3 (x > 5, e.g., x = 6): $g(6) = (6 - 1)(6 - 5) = (5)(1) = 5$. Sign is Positive (+).'
+      id: q9-2
+      questionGroup: q9
+    - problemText: For the function $h(x) = \frac{x + 3}{x + 5}$, determine the critical values (zeros and undefined points)
+        and use them to establish a sign diagram showing the behavior of the function across all intervals.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -8
+          max: 2
+          points:
+          - value: -5
+            label: '|'
+            style: none
+          - value: -3
+            label: 
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Critical values: Zero at x = -3 (numerator), Undefined at x = -5 (denominator). Sign diagram: x < -5 (Positive),
+        -5 < x < -3 (Negative), x > -3 (Positive).'
+      stepByStepGuideline:
+      - 'Identify critical values: Zero occurs when $x + 3 = 0$, so $x = -3$. Undefined occurs when $x + 5 = 0$, so $x = -5$.'
+      - 'Mark the critical values on the number line: Mark x = -3 with a solid dot (•) and x = -5 with a dashed line (|).'
+      - 'Test regions: Choose a test value in each region defined by the critical values (-5 and -3).'
+      - 'Region 1 (x < -5, e.g., x = -6): $h(-6) = \frac{-6 + 3}{-6 + 5} = \frac{-3}{-1} = 3$. Sign is Positive (+).'
+      - 'Region 2 (-5 < x < -3, e.g., x = -4): $h(-4) = \frac{-4 + 3}{-4 + 5} = \frac{-1}{1} = -1$. Sign is Negative (-).'
+      - 'Region 3 (x > -3, e.g., x = 0): $h(0) = \frac{0 + 3}{0 + 5} = \frac{3}{5}$. Sign is Positive (+).'
+      id: q9-3
+      questionGroup: q9
+    - problemText: Determine the zeros of the polynomial function $p(x) = (x + 4)(x - 2)$. Draw a sign diagram, labeling the
+        zeros and indicating the sign (+ or -) of $p(x)$ in the intervals established by these zeros.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -7
+          max: 5
+          points:
+          - value: -4
+            label: 
+            style: closed
+          - value: 2
+            label: 
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Critical values: Zeros at x = -4 and x = 2. Sign diagram: x < -4 (Positive), -4 < x < 2 (Negative), x
+        > 2 (Positive).'
+      stepByStepGuideline:
+      - 'Identify critical values (zeros): Set $p(x) = 0$. $(x + 4)(x - 2) = 0$, giving zeros at $x = -4$ and $x = 2$.'
+      - 'Mark the critical values on the number line: Mark both x = -4 and x = 2 with solid dots (•).'
+      - 'Test regions: Choose a test value in each region defined by the zeros (-4 and 2).'
+      - 'Region 1 (x < -4, e.g., x = -5): $p(-5) = (-5 + 4)(-5 - 2) = (-1)(-7) = 7$. Sign is Positive (+).'
+      - 'Region 2 (-4 < x < 2, e.g., x = 0): $p(0) = (0 + 4)(0 - 2) = (4)(-2) = -8$. Sign is Negative (-).'
+      - 'Region 3 (x > 2, e.g., x = 3): $p(3) = (3 + 4)(3 - 2) = (7)(1) = 7$. Sign is Positive (+).'
+      id: q9-4
+      questionGroup: q9
+    - problemText: Find the zero for the linear function $q(x) = x + 1$ and construct a sign diagram showing where the function
+        is positive and where it is negative.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -4
+          max: 4
+          points:
+          - value: -1
+            label: 
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: 'Critical value: Zero at x = -1. Sign diagram: x < -1 (Negative), x > -1 (Positive).'
+      stepByStepGuideline:
+      - 'Identify the critical value (zero): Set $q(x) = 0$. $x + 1 = 0$, so $x = -1$.'
+      - 'Mark the critical value on the number line: Mark x = -1 with a solid dot (•).'
+      - 'Test regions: Choose a test value in each region defined by the zero.'
+      - 'Region 1 (x < -1, e.g., x = -2): $q(-2) = -2 + 1 = -1$. Sign is Negative (-).'
+      - 'Region 2 (x > -1, e.g., x = 0): $q(0) = 0 + 1 = 1$. Sign is Positive (+).'
+      id: q9-5
+      questionGroup: q9
+- id: sign-changes-node-1
+  nodeNumber: 10
+  title: Sign Changes with Powers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Consider the function $f(x) = (x - 2)^3$. Determine whether the sign of $f(x)$ changes as $x$ passes through
+        the zero at $x = 2$. Explain your answer based on the power of the factor and describe the graphical behavior at that
+        point.
+      avatarIntro: 'Understanding how the power of a factor affects the sign of a function is crucial for sketching graphs.
+        Remember the rule: odd powers cross, even powers touch.'
+      mathTool: null
+      finalAnswer: Yes, the sign changes at x = 2. The factor (x - 2) has power 3 (odd). Since the power is odd, the graph
+        crosses the x-axis at x = 2, causing a sign change.
+      stepByStepGuideline:
+      - 'Identify the zero of the function: $x = 2$.'
+      - Identify the power (multiplicity) of the factor $(x - 2)$, which is 3.
+      - Determine if the power is odd or even. 3 is an odd number.
+      - 'Apply the rule: If the power is odd, the sign changes.'
+      - 'Conclude the graphical behavior: The graph crosses the x-axis at $x = 2$.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: For the function $g(x) = (x + 3)^4$, analyze the zero at $x = -3$. Does the sign of $g(x)$ change here?
+        Justify your conclusion by referencing the power of the factor, and state what this means for the graph of $g(x)$.
+      mathTool: null
+      finalAnswer: No, the sign does NOT change at $x = -3$. The factor $(x + 3)$ has power 4 (even). Since the power is even,
+        the sign remains the same (positive on both sides of the zero). Graphically, the function touches the x-axis at $x
+        = -3$ and turns around.
+      stepByStepGuideline:
+      - 'Identify the zero of the function: $x = -3$.'
+      - Identify the power (multiplicity) of the factor $(x + 3)$, which is 4.
+      - Determine if the power is odd or even. 4 is an even number.
+      - 'Apply the rule: If the power is even, the sign does not change.'
+      - 'Conclude the graphical behavior: The graph touches the x-axis at $x = -3$.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: Analyze the sign changes for the function $h(x) = (x - 4)(x + 1)^2$. For each zero, $x = 4$ and $x = -1$,
+        state whether the sign changes and explain the reason based on the power.
+      mathTool: null
+      finalAnswer: 'At $x = 4$: The sign changes. The factor $(x - 4)$ has power 1 (odd), so the graph crosses the x-axis.
+
+        At $x = -1$: The sign does NOT change. The factor $(x + 1)^2$ has power 2 (even), so the graph touches the x-axis.'
+      stepByStepGuideline:
+      - 'Identify all zeros: $x = 4$ and $x = -1$.'
+      - 'Analyze $x = 4$: The factor is $(x - 4)$, which has power 1. Since 1 is odd, the sign changes, and the graph crosses
+        the axis.'
+      - 'Analyze $x = -1$: The factor is $(x + 1)^2$, which has power 2. Since 2 is even, the sign does not change, and the
+        graph touches the axis.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: Given the polynomial function $p(x) = (x - 5)(x - 1)^3$, examine the behavior of the function's sign around
+        its zeros, $x = 5$ and $x = 1$. For each zero, determine if the sign changes and relate this to the corresponding
+        factor's power.
+      mathTool: null
+      finalAnswer: 'At $x = 5$: The sign changes. The factor $(x - 5)$ has power 1 (odd). The graph crosses the x-axis.
+
+        At $x = 1$: The sign changes. The factor $(x - 1)^3$ has power 3 (odd). The graph crosses the x-axis (but is momentarily
+        flat/horizontal at the intercept due to the power being > 1).'
+      stepByStepGuideline:
+      - 'Identify all zeros: $x = 5$ and $x = 1$.'
+      - 'Analyze $x = 5$: The factor $(x - 5)$ has power 1. Since 1 is odd, the sign changes, and the graph crosses the x-axis.'
+      - 'Analyze $x = 1$: The factor $(x - 1)^3$ has power 3. Since 3 is odd, the sign changes, and the graph crosses the
+        x-axis.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: The function $q(x) = (x - 6)(x + 2)^2(x - 3)$ has three zeros. Identify all critical values where a sign
+        change occurs. For the critical values where the sign does NOT change, provide the specific reason based on the factor's
+        power.
+      mathTool: null
+      finalAnswer: 'Sign changes occur at $x = 6$ and $x = 3$. Both corresponding factors, $(x - 6)$ and $(x - 3)$, have power
+        1 (odd), causing the graph to cross the x-axis.
+
+
+        Sign does NOT change at $x = -2$. The factor $(x + 2)^2$ has power 2 (even), causing the graph to touch the x-axis
+        and turn around.'
+      stepByStepGuideline:
+      - 'Identify all zeros and their powers: $x = 6$ (Power 1), $x = -2$ (Power 2), $x = 3$ (Power 1).'
+      - 'Check $x = 6$: Power 1 (Odd) → Sign Changes.'
+      - 'Check $x = 3$: Power 1 (Odd) → Sign Changes.'
+      - 'Check $x = -2$: Power 2 (Even) → Sign Does NOT Change.'
+      - List the final conclusion, specifying the powers for all cases.
+      id: q10-5
+      questionGroup: q10
+- id: translations-node-1
+  nodeNumber: 11
+  title: Vertical and Horizontal Translations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: The graph of a generic function $y = f(x)$ is shifted down 3 units. Write the equation of the new function,
+        $g(x)$.
+      avatarIntro: Translations help us understand how moving a graph changes its equation. Remember that vertical shifts
+        are intuitive!
+      mathTool: null
+      finalAnswer: $g(x) = f(x) - 3$
+      stepByStepGuideline:
+      - 'Identify the type of transformation: This is a vertical shift.'
+      - 'Determine the direction and magnitude: Shifted down 3 units.'
+      - Vertical shifts are represented by adding a constant $k$ outside the function, $y = f(x) + k$.
+      - Since the shift is down, $k$ must be negative. $k = -3$.
+      - 'Substitute the value into the general form to get the new equation: $y = f(x) - 3$.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: Describe the transformation required to convert the graph of $y = |x|$ to the graph of $y = |x + 5|$.
+      mathTool: null
+      finalAnswer: Horizontal shift left 5 units.
+      stepByStepGuideline:
+      - 'Analyze where the change occurs: The change is inside the function (within the absolute value bars), indicating a
+        horizontal shift.'
+      - Identify the value $h$ in the form $y = f(x - h)$. Here we have $x + 5$, which is equivalent to $x - (-5)$.
+      - Since $h = -5$, the graph shifts 5 units in the negative direction.
+      - A shift in the negative direction is a shift to the left. The shift is left 5 units.
+      id: q11-2
+      questionGroup: q11
+    - problemText: If the graph of the parabolic function $y = x^2$ is shifted right 2 units and up 4 units, write the equation
+        of the resulting function.
+      mathTool: null
+      finalAnswer: $y = (x - 2)^2 + 4$
+      stepByStepGuideline:
+      - 'Apply the horizontal shift first: Shifting right 2 units means replacing $x$ with $(x - 2)$. The intermediate equation
+        is $y = (x - 2)^2$.'
+      - 'Apply the vertical shift: Shifting up 4 units means adding 4 outside the function.'
+      - 'Combine both transformations: $y = (x - 2)^2 + 4$.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: What transformation converts the graph of the reciprocal function $y = \frac{1}{x}$ to the graph of $y
+        = \frac{1}{x - 1}$?
+      mathTool: null
+      finalAnswer: Horizontal shift right 1 unit.
+      stepByStepGuideline:
+      - Compare the two equations. The change involves replacing $x$ with $(x - 1)$ in the denominator.
+      - This indicates a horizontal shift of the form $y = f(x - h)$.
+      - Since we have $(x - 1)$, the value of $h$ is $+1$.
+      - A positive value of $h$ results in a shift to the right. Therefore, the transformation is a horizontal shift right
+        1 unit.
+      id: q11-4
+      questionGroup: q11
+    - problemText: Describe the transformations required to convert the graph of $y = \sqrt{x}$ into the graph of $y = \sqrt{x
+        + 3} - 1$. State the direction and magnitude of each shift.
+      mathTool: null
+      finalAnswer: Horizontal shift left 3 units and vertical shift down 1 unit.
+      stepByStepGuideline:
+      - 'Analyze the term inside the square root: The term is $(x + 3)$. This corresponds to $x - (-3)$, so $h = -3$. A negative
+        $h$ means a shift left 3 units.'
+      - 'Analyze the term outside the square root: The term is $-1$. This corresponds to $k = -1$. A negative $k$ means a
+        shift down 1 unit.'
+      - The combined transformation is a horizontal shift left 3 units and a vertical shift down 1 unit.
+      id: q11-5
+      questionGroup: q11
+- id: reflections-node-1
+  nodeNumber: 13
+  title: Reflections in Axes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Describe the transformation required to obtain the graph of $y = f(-x)$ from the original graph of $y =
+        f(x)$. Explain which coordinates are affected by this change.
+      avatarIntro: Understanding reflections is key to mastering function transformations! Let's start by looking at what
+        happens when the negative sign is applied inside the function.
+      mathTool: null
+      finalAnswer: 'Reflection in the y-axis. The negative sign inside the function affects the x-values: $(x, y) \to (-x,
+        y)$. The graph flips horizontally, swapping the left and right sides.'
+      stepByStepGuideline:
+      - Identify the location of the negative sign (inside the function, affecting the input $x$).
+      - Determine the corresponding reflection axis (negative inside implies reflection in the y-axis).
+      - 'Explain the effect on the coordinates: The $x$-values are negated, while the $y$-values remain the same.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: The graph of $y = \sqrt{x}$ is reflected in the x-axis. Write the equation of the resulting function and
+        describe the effect on the range of the function.
+      mathTool: null
+      finalAnswer: The equation is $y = -\sqrt{x}$. Since the reflection is in the x-axis, the negative sign is applied outside
+        the function, negating all y-values. The original range $[0, \infty)$ becomes $(-\infty, 0]$.
+      stepByStepGuideline:
+      - 'Recognize that reflection in the x-axis requires a negative sign outside the function: $y = -f(x)$.'
+      - Apply this rule to the base function $y = \sqrt{x}$ to obtain the new equation $y = -\sqrt{x}$.
+      - Determine the original range of $y = \sqrt{x}$, which is $[0, \infty)$.
+      - Explain that negating the $y$-values flips the range vertically, so the new range is $(-\infty, 0]$.
+      id: q13-2
+      questionGroup: q13
+    - problemText: Which axis is the reflection for the transformation $y = x^2$ to $y = (-x)^2$? If you graphed both functions,
+        why would they appear identical?
+      mathTool: null
+      finalAnswer: Reflection in the y-axis. The negative sign is applied inside the function, affecting the x-values. They
+        appear identical because $y = x^2$ is an even function (symmetric about the y-axis), meaning $f(x) = f(-x)$.
+      stepByStepGuideline:
+      - Identify the location of the negative sign (inside the input term, affecting $x$). This indicates a reflection across
+        the y-axis.
+      - 'Calculate the result of the transformation: $y = (-x)^2 = x^2$.'
+      - Explain that functions where $f(-x) = f(x)$ are symmetric about the y-axis (even functions). Reflecting a symmetric
+        function across its axis of symmetry yields the original graph.
+      id: q13-3
+      questionGroup: q13
+    - problemText: Write the equation for the function $y = x^3$ after it is reflected in the y-axis. Simplify the resulting
+        equation and state what this simplification tells you about the symmetry of the original function.
+      mathTool: null
+      finalAnswer: The reflection in the y-axis is $y = (-x)^3$. Simplifying this gives $y = -x^3$. This result shows that
+        $f(-x) = -f(x)$, meaning the original function $y = x^3$ is an odd function (rotational symmetry about the origin).
+      stepByStepGuideline:
+      - 'Recognize that reflection in the y-axis means replacing $x$ with $-x$: $y = f(-x)$.'
+      - Apply this to $y = x^3$ to get the reflected equation $y = (-x)^3$.
+      - 'Simplify the expression: Since the exponent is odd, $(-x)^3 = -x^3$.'
+      - Compare the resulting function ($y = -x^3$) to the original function ($y = x^3$). Since $f(-x) = -f(x)$, the function
+        is defined as odd.
+      id: q13-4
+      questionGroup: q13
+    - problemText: Describe the transformation from the generic function $y = f(x)$ to $y = -f(x)$. Specifically, identify
+        any points on the graph that remain invariant (unchanged) under this transformation.
+      mathTool: null
+      finalAnswer: 'Reflection in the x-axis. The negative sign is outside the function, meaning every y-coordinate is negated:
+        $(x, y) \to (x, -y)$. The points that remain invariant are the x-intercepts (where $y=0$), because reflecting a point
+        $(a, 0)$ across the x-axis results in $(a, -0)$ or $(a, 0)$ itself.'
+      stepByStepGuideline:
+      - Identify the negative sign location (outside the function, affecting the output $y$). This defines the transformation
+        as a reflection in the x-axis.
+      - 'Explain the effect on coordinates: $y$-values are negated while $x$-values are unchanged.'
+      - 'Determine the condition for an invariant point: A point $(x, y)$ is invariant if $(x, y) = (x, -y)$.'
+      - Solve the condition $y = -y$, which only occurs when $y=0$. Thus, all x-intercepts are invariant points.
+      id: q13-5
+      questionGroup: q13
+- id: absolute-value-node-1
+  nodeNumber: 14
+  title: Understanding Absolute Value
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: Evaluate $|-9|$. Use the definition of absolute value to explain your answer.
+      avatarIntro: Welcome! Absolute value measures the distance a number is from zero. Let's practice evaluating expressions
+        using this fundamental concept.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -10
+          max: 10
+          points:
+          - value: 0
+            label: '0'
+            style: closed
+          - value: -9
+            label: '-9'
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: '9'
+      stepByStepGuideline:
+      - 'Identify the number inside the absolute value bars: $x = -9$.'
+      - 'Since $x < 0$, we apply the rule: $|x| = -x$.'
+      - 'Substitute the value: $|-9| = -(-9)$.'
+      - 'Simplify the expression: $-(-9) = 9$.'
+      - The absolute value of -9 is 9, representing a distance of 9 units from 0.
+      id: q14-1
+      questionGroup: q14
+    - problemText: Find the value of $|8 - 3|$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -10
+          max: 10
+          points:
+          - value: 0
+            label: 
+            style: closed
+          - value: 5
+            label: 
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'First, simplify the expression inside the absolute value bars: $8 - 3 = 5$.'
+      - The expression becomes $|5|$.
+      - 'Since 5 is a positive number ($x \ge 0$), the absolute value is the number itself: $|5| = 5.'
+      - The value of $|8 - 3|$ is 5.
+      id: q14-2
+      questionGroup: q14
+    - problemText: Simplify $|2 - 10|$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -10
+          max: 10
+          points:
+          - value: 0
+            label:
+            style: closed
+          - value: -8
+            label: 
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Simplify the expression inside the absolute value bars: $2 - 10 = -8$.'
+      - The expression becomes $|-8|$.
+      - 'Since $-8$ is negative ($x < 0$), the absolute value is the opposite of the number: $|-8| = -(-8)$.'
+      - The simplified value is 8.
+      id: q14-3
+      questionGroup: q14
+    - problemText: Explain why the statement $|x| = -5$ is impossible for any real number $x$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -10
+          max: 10
+          points:
+          - value: 0
+            label: 
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: No, absolute value represents distance, which must always be non-negative. Therefore, |x| must satisfy
+        |x| ≥ 0.
+      stepByStepGuideline:
+      - 'Recall the fundamental property of absolute value: $|x|$ represents the distance from $x$ to 0 on the number line.'
+      - Distance is inherently a non-negative quantity (it can be zero or positive, but never negative).
+      - Therefore, the output of the absolute value function must always be greater than or equal to zero (i.e., $|x| \geq
+        0$).
+      - Since $-5$ is a negative number, the equation $|x| = -5$ is impossible; it has no real solutions.
+      id: q14-4
+      questionGroup: q14
+    - problemText: Evaluate $|-3 \times 2|$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -10
+          max: 10
+          points:
+          - value: 0
+            label:
+            style: closed
+          - value: -6
+            label: 
+            style: closed
+          showTickMarks: true
+          showArrows: true
+      finalAnswer: '6'
+      stepByStepGuideline:
+      - 'Calculate the product inside the absolute value bars: $-3 \times 2 = -6$.'
+      - The expression simplifies to $|-6|$.
+      - 'Since $-6$ is negative ($x < 0$), we take the opposite of the number: $|-6| = -(-6)$.'
+      - The resulting value is 6.
+      id: q14-5
+      questionGroup: q14
+- id: graphing-absolute-node-1
+  nodeNumber: 15
+  title: Graphing Absolute Value Functions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: What shape is the graph of the basic absolute value function $y = |x|$? Identify the coordinates of the
+        vertex shown in the graph below.
+      avatarIntro: Welcome! Absolute value functions create a unique V-shape. Let's start by understanding the basic form
+        and its key feature, the vertex.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -1
+          yMax: 5
+          showGrid: true
+          curves:
+          - type: absolute
+            points:
+            - x: -4
+              y: 4
+            - x: -2
+              y: 2
+            - x: 0
+              y: 0
+            - x: 2
+              y: 2
+            - x: 4
+              y: 4
+            equation: y = |x|
+          points:
+          - x: 0
+            y: 0
+            label: Vertex (0,0)
+            style: closed
+      finalAnswer: The shape is a V-shape (or 'check mark' shape). The vertex is at (0, 0).
+      stepByStepGuideline:
+      - 'Step 1: Recall the standard form of the absolute value function, $y = |x|$. This graph is always symmetric about
+        the y-axis and opens upwards.'
+      - 'Step 2: Identify the characteristic shape, which is a ''V''.'
+      - 'Step 3: The vertex is the lowest point where the two linear rays meet. For the basic function $y = |x|$, this point
+        is the origin, (0, 0).'
+      id: q15-1
+      questionGroup: q15
+    - problemText: Find the coordinates of the vertex for the absolute value function $y = |x - 3| - 2$.
+      mathTool: null
+      finalAnswer: Vertex at (3, -2).
+      stepByStepGuideline:
+      - 'Step 1: Identify the standard transformed form of the absolute value function: $y = |x - h| + k$. The vertex is located
+        at $(h, k)$.'
+      - 'Step 2: Compare the given equation, $y = |x - 3| - 2$, to the standard form.'
+      - 'Step 3: Identify $h = 3$ (due to the horizontal shift right 3 units) and $k = -2$ (due to the vertical shift down
+        2 units).'
+      - 'Step 4: State the vertex coordinates: $(3, -2)$.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: State the domain and range of the function $y = -|x|$.
+      mathTool: null
+      finalAnswer: 'Domain: All real numbers (or $(-\infty, \infty)$). Range: $y \leq 0$ (or $(-\infty, 0]$).'
+      stepByStepGuideline:
+      - 'Step 1: Determine the domain. Absolute value functions are defined for all real numbers, so the domain is $(-\infty,
+        \infty)$.'
+      - 'Step 2: Determine the vertex. Since there are no shifts, the vertex is $(0, 0)$.'
+      - 'Step 3: Analyze the reflection. The negative sign outside the absolute value, $y = -|x|$, indicates a reflection
+        across the x-axis, meaning the V-shape opens downward.'
+      - 'Step 4: Since the highest point (vertex) is $y=0$ and the graph opens downward, the range consists of all values
+        less than or equal to zero: $y \leq 0$.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: Describe how the graph of $y = 2|x|$ differs from the basic graph of $y = |x|$, specifically focusing on
+        the shape of the V.
+      mathTool: null
+      finalAnswer: The graph of $y = 2|x|$ is vertically stretched by a factor of 2. It is narrower and steeper than $y =
+        |x|$.
+      stepByStepGuideline:
+      - 'Step 1: Recognize that the coefficient $a=2$ in the equation $y = 2|x|$ represents a vertical scale factor.'
+      - 'Step 2: A vertical scale factor $a > 1$ results in a vertical stretch.'
+      - 'Step 3: Describe the visual effect: A vertical stretch makes the graph narrower and the rays steeper compared to
+        the parent function $y = |x|$ (which has slopes of 1 and -1).'
+      id: q15-4
+      questionGroup: q15
+    - problemText: The function $y = |x + 4| + 1$ is composed of two linear rays meeting at the vertex. State the slope (gradient)
+        of the left ray ($x < -4$) and the slope of the right ray ($x > -4$).
+      mathTool: null
+      finalAnswer: 'Slope of the left ray ($x < -4$): -1. Slope of the right ray ($x > -4$): 1.'
+      stepByStepGuideline:
+      - 'Step 1: Identify the transformations. The function $y = |x + 4| + 1$ is shifted left 4 units and up 1 unit. This
+        translation moves the vertex to $(-4, 1)$, but does not change the orientation or stretch/compression.'
+      - 'Step 2: Recall the slopes of the parent function $y = |x|$. The right side has a slope of 1, and the left side has
+        a slope of -1.'
+      - 'Step 3: Since there is no reflection or vertical stretch/compression ($a=1$), the slopes remain the same as the parent
+        function, regardless of the translation.'
+      - 'Step 4: The slope of the ray where $x$ is less than the vertex''s x-coordinate (the left ray) is -1. The slope of
+        the ray where $x$ is greater than the vertex''s x-coordinate (the right ray) is 1.'
+      id: q15-5
+      questionGroup: q15

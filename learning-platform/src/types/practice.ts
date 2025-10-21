@@ -27,6 +27,13 @@ export interface PreWrittenQuestion {
   diagramSvg?: string;            // Optional path to pre-built SVG diagram
   questionGroup?: string;         // Group identifier for multi-part questions (e.g., "q26", "q27")
 
+  // NEW: Math tool for interactive visualizations (alternative to diagramSvg)
+  // Used for AI-generated pre-written questions that use interactive tools instead of static diagrams
+  mathTool?: {
+    toolName: string;              // e.g., "setVisualizer", "rightTriangle"
+    parameters: Record<string, any>; // Tool-specific parameters
+  };
+
   // NEW: Pre-written answer and solution (optional)
   // If provided, these will be used instead of AI-solving the question
   finalAnswer?: string;           // The correct final answer (e.g., "222 m", "67.5°", "1250 m²")

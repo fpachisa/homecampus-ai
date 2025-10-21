@@ -10,7 +10,7 @@
 import type { PathNode, RelatedQuestionContext } from '../types/practice';
 import { parseJSON } from '../services/utils/responseParser';
 import { getFilteredTools } from '../components/math-tools/mathToolsRegistry';
-
+import { FORMATTING_DECISION_TREE } from '../prompt-library';
 /**
  * Generate practice problems based on node descriptor
  */
@@ -212,33 +212,15 @@ ${studentAnswer}
 - Never give away the answer directly
 - Consider their previous attempts and adapt your guidance
 
-**LATEX FORMATTING (CRITICAL - YOU ARE GENERATING JSON!):**
-YOU ARE GENERATING JSON OUTPUT. In JSON strings, backslashes MUST be escaped with double backslashes.
+**FORMATTING RULES:**
+${FORMATTING_DECISION_TREE}
 
-**CORRECT JSON FORMAT (what you must generate):**
-{
-  "explanation": "The angle is $\\\\theta = 45^\\\\circ$, so $\\\\sin(\\\\theta) = \\\\frac{\\\\sqrt{2}}{2}$"
-}
-
-**AFTER JSON PARSING, this displays as:** "The angle is $\\theta = 45^\\circ$, so $\\sin(\\theta) = \\frac{\\sqrt{2}}{2}$"
-
-**REQUIRED: Write LaTeX commands with DOUBLE backslashes in JSON:**
-- Trig functions: \\\\sin, \\\\cos, \\\\tan, \\\\sec, \\\\csc, \\\\cot
-- Fractions: \\\\frac{numerator}{denominator}
-- Greek letters: \\\\theta, \\\\alpha, \\\\beta, \\\\gamma, \\\\pi
-- Geometry: \\\\angle, \\\\triangle, \\\\circ (degree symbol)
-- Operators: \\\\times, \\\\div, \\\\pm, \\\\sqrt{value}
-- Always wrap math in $...$ delimiters
-
-**CRITICAL - DO NOT USE LATEX DOCUMENT COMMANDS:**
-❌ NEVER use: \\\\begin{}, \\\\end{}, \\\\item, \\\\itemize, \\\\enumerate
-❌ These are LaTeX document commands - they will NOT render!
-✅ Instead: Write plain text sentences with embedded math: "First, we find $x = 5$. Then we calculate $y = 10$."
-
-**WRONG - CAUSES ERRORS:**
-Single backslash in JSON: "\\sin", "\\frac", "\\triangle" → These become control characters!
-
-**REMEMBER:** You are writing JSON source code. The JSON parser removes one level of escaping.
+**Critical Rules:**
+1. Unicode First: Use θ, °, ², × instead of LaTeX for simple symbols
+2. LaTeX for complex: Use $\\frac{x+1}{2x-3}$ for fractions and complex expressions
+3. JSON escaping: ONE backslash in JSON (e.g., {"content": "$\\frac{1}{2}$"})
+4. Speech text: Plain text only - no markdown, no Unicode symbols, no LaTeX
+5. Display content: Unicode first, then LaTeX when needed, markdown for structure
 
 **CRITICAL: Return ONLY valid JSON. Use the correct format based on whether the answer is correct or incorrect:**
 

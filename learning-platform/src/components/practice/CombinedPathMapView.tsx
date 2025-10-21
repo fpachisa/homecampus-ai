@@ -73,6 +73,7 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
     foundation: nodes.filter(n => n.layer === 'foundation'),
     integration: nodes.filter(n => n.layer === 'integration'),
     application: nodes.filter(n => n.layer === 'application'),
+    examPractice: nodes.filter(n => n.layer === 'examPractice'),
   };
 
   // Layer metadata
@@ -80,8 +81,8 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
     foundation: {
       title: 'Foundation',
       icon: '🏗️',
-      color: '#57F287',
-      colorLight: '#57F28720',
+      color: '#FFA500',
+      colorLight: '#FFA50020',
       description: 'Core concepts and individual skills',
     },
     integration: {
@@ -94,9 +95,16 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
     application: {
       title: 'Application',
       icon: '🎯',
+      color: '#10B981',
+      colorLight: '#10B98120',
+      description: 'Real-world problem solving',
+    },
+    examPractice: {
+      title: 'Exam Practice',
+      icon: '👑',
       color: '#EB459E',
       colorLight: '#EB459E20',
-      description: 'Exam-style and real-world problems',
+      description: 'Exam-style questions and practice',
     },
   };
 
@@ -251,6 +259,11 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
           const layerNodes = nodesByLayer[layer];
           const meta = layerMetadata[layer];
 
+          // Calculate display number offset (count of all nodes in previous layers)
+          const displayNumberOffset = (['foundation', 'integration', 'application'] as PathLayer[])
+            .slice(0, layerIndex)
+            .reduce((sum, prevLayer) => sum + nodesByLayer[prevLayer].length, 0);
+
           return (
             <div key={layer} id={`layer-${layer}`} className="mb-8">
               {/* Layer Divider */}
@@ -320,7 +333,7 @@ export const CombinedPathMapView: React.FC<CombinedPathMapViewProps> = ({
                           }}
                         >
                           <span className="text-xl">
-                            {getNodeStatus(node.id) === 'completed' ? '✓' : node.nodeNumber}
+                            {getNodeStatus(node.id) === 'completed' ? '✓' : displayNumberOffset + index + 1}
                           </span>
                         </div>
 

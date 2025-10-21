@@ -317,25 +317,34 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
     // Calculate the angle we're sweeping (in radians)
     let deltaAngle = angle2 - angle1;
 
-    // Normalize to [-PI, PI] range to get the shortest path
-    while (deltaAngle > Math.PI) deltaAngle -= 2 * Math.PI;
-    while (deltaAngle < -Math.PI) deltaAngle += 2 * Math.PI;
-
-    // If we have an expected angle, check if we're drawing the right arc
+    // For triangle interior angles, we ALWAYS want the arc that matches the expected angle
+    // Don't normalize to shortest path - instead match the expected angle direction
     if (expectedAngleDegrees !== undefined) {
       const expectedRad = (expectedAngleDegrees * Math.PI) / 180;
-      const calculatedRad = Math.abs(deltaAngle);
 
-      // If the calculated angle doesn't match the expected angle (within tolerance),
-      // we need to go the other way around the circle
-      if (Math.abs(calculatedRad - expectedRad) > 0.1) {
-        // Reverse the direction by adding/subtracting 2π
-        if (deltaAngle > 0) {
-          deltaAngle = deltaAngle - 2 * Math.PI;
-        } else {
-          deltaAngle = deltaAngle + 2 * Math.PI;
-        }
+      // Normalize deltaAngle to [0, 2PI]
+      while (deltaAngle < 0) deltaAngle += 2 * Math.PI;
+      while (deltaAngle >= 2 * Math.PI) deltaAngle -= 2 * Math.PI;
+
+      // If the arc is going the long way (exterior angle), flip it
+      if (deltaAngle > Math.PI && expectedRad <= Math.PI) {
+        // We're drawing the exterior, flip to interior
+        deltaAngle = deltaAngle - 2 * Math.PI;
+      } else if (deltaAngle < Math.PI && expectedRad > Math.PI) {
+        // We need the reflex angle
+        deltaAngle = deltaAngle - 2 * Math.PI;
       }
+    } else {
+      // No expected angle - normalize to shortest path [-PI, PI]
+      while (deltaAngle > Math.PI) deltaAngle -= 2 * Math.PI;
+      while (deltaAngle < -Math.PI) deltaAngle += 2 * Math.PI;
+    }
+
+    const absAngle = Math.abs(deltaAngle);
+
+    // Prevent invalid arcs
+    if (absAngle < 0.01 || absAngle > 2 * Math.PI - 0.01) {
+      return '';
     }
 
     // Start and end points on the arc
@@ -345,7 +354,6 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
     const endY = vertex.y + radius * Math.sin(angle2);
 
     // Use the absolute angle to determine large arc flag
-    const absAngle = Math.abs(deltaAngle);
     const largeArcFlag = absAngle > Math.PI ? 1 : 0;
 
     // Sweep flag: 1 for clockwise (positive deltaAngle in SVG coords), 0 for counterclockwise

@@ -1,0 +1,2628 @@
+# Coordinate Geometry Exemplars - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: coord-geom-node-1
+  nodeNumber: 1
+  title: Cartesian Plane and Coordinates
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: From the grid shown, determine the coordinates of point T.
+      avatarIntro: Welcome! Let's start by practicing how to read coordinates accurately from the Cartesian plane. Remember
+        to always list the x-coordinate first.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -10
+          xMax: 10
+          yMin: -10
+          yMax: 10
+          showGrid: true
+          points:
+          - label: T
+            x: -8
+            y: -3
+      finalAnswer: (-8, -3)
+      stepByStepGuideline:
+      - Identify the horizontal position (x-coordinate) of point T. Starting from the origin (0, 0), move left 8 units. So,
+        x = -8.
+      - Identify the vertical position (y-coordinate) of point T. From x = -8, move down 3 units. So, y = -3.
+      - 'Write the coordinates as an ordered pair (x, y): (-8, -3). Since both coordinates are negative, the point is in Quadrant
+        III.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: Point R has coordinates (-4, 5). In which quadrant is point R located?
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          points:
+          - label: R
+            x: -4
+            y: 5
+      finalAnswer: Quadrant II
+      stepByStepGuideline:
+      - 'Analyze the signs of the coordinates: Point R is (-4, 5).'
+      - The x-coordinate is negative (x < 0). This means the point is to the left of the y-axis.
+      - The y-coordinate is positive (y > 0). This means the point is above the x-axis.
+      - The region where x is negative and y is positive is Quadrant II.
+      id: q1-2
+      questionGroup: q1
+    - problemText: From the grid shown, point P lies on the y-axis. What is the x-coordinate of point P?
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -10
+          xMax: 10
+          yMin: -10
+          yMax: 10
+          showGrid: true
+          points:
+          - label: P
+            x: 0
+            y: -6
+      finalAnswer: '0'
+      stepByStepGuideline:
+      - 'Recall the definition of the axes: Any point that lies on the y-axis has an x-coordinate of 0.'
+      - Point P is located exactly on the vertical y-axis.
+      - Therefore, its horizontal distance from the origin is zero. The x-coordinate is 0.
+      id: q1-3
+      questionGroup: q1
+    - problemText: A point K is located 3 units to the right of the y-axis and 2 units below the x-axis. Write the ordered
+        pair (x, y) for point K and identify which quadrant it is in.
+      mathTool: null
+      finalAnswer: (3, -2). Quadrant IV.
+      stepByStepGuideline:
+      - 'Determine the x-coordinate: 3 units to the right of the y-axis means x = +3.'
+      - 'Determine the y-coordinate: 2 units below the x-axis means y = -2.'
+      - The ordered pair is (3, -2).
+      - Since x is positive and y is negative, the point K is located in Quadrant IV.
+      id: q1-4
+      questionGroup: q1
+    - problemText: From the grid shown, point Q is located at (6, 9). What is the value of the y-coordinate for point Q?
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -10
+          xMax: 10
+          yMin: -10
+          yMax: 10
+          showGrid: true
+          points:
+          - label: Q
+            x: 6
+            y: 9
+      finalAnswer: '9'
+      stepByStepGuideline:
+      - Recall that coordinates are written in the order (x, y).
+      - For point Q(6, 9), the first value, 6, is the x-coordinate (horizontal position).
+      - The second value, 9, is the y-coordinate (vertical position).
+      - The value of the y-coordinate for point Q is 9.
+      id: q1-5
+      questionGroup: q1
+- id: coord-geom-node-2
+  nodeNumber: 2
+  title: Distance Between Two Points
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: Calculate the exact distance between point A(1, 2) and point B(4, 6).
+      avatarIntro: The distance formula is directly derived from the Pythagorean theorem. Remember to calculate the horizontal
+        and vertical steps first!
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: 1
+            y: 2
+            label: A
+          - x: 4
+            y: 6
+            label: B
+      finalAnswer: 5 units
+      stepByStepGuideline:
+      - 'Identify the coordinates: A(x₁, y₁) = (1, 2) and B(x₂, y₂) = (4, 6).'
+      - 'Calculate the horizontal step (change in x): $\Delta x = 4 - 1 = 3$.'
+      - 'Calculate the vertical step (change in y): $\Delta y = 6 - 2 = 4$.'
+      - 'Apply the distance formula: $d = \sqrt{(\Delta x)² + (\Delta y)²} = \sqrt{3² + 4²}$.'
+      - 'Calculate: $d = \sqrt{9 + 16} = \sqrt{25}$.'
+      - 'Simplify the result: $d = 5$ units.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: Calculate the exact length of the line segment [PQ] where P has coordinates (−4, −1) and Q has coordinates
+        (2, 5). Express your answer in the simplest surd form.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: -4
+            y: -1
+            label: P
+          - x: 2
+            y: 5
+            label: Q
+      finalAnswer: $6\sqrt{2}$ units
+      stepByStepGuideline:
+      - 'Determine the horizontal step: $\Delta x = |2 - (-4)| = 6$.'
+      - 'Determine the vertical step: $\Delta y = |5 - (-1)| = 6$.'
+      - 'Use the distance formula: $d = \sqrt{6² + 6²}$.'
+      - 'Calculate: $d = \sqrt{36 + 36} = \sqrt{72}$.'
+      - 'Simplify the surd: $\sqrt{72} = \sqrt{36 \times 2} = 6\sqrt{2}$ units.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: Points P(5, b) and Q(2, −1) are $\sqrt{34}$ units apart. Find the possible value(s) of b.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: 2
+            y: -1
+            label: Q
+          - x: 5
+            y: 4
+            label: P₁
+          - x: 5
+            y: -6
+            label: P₂
+      finalAnswer: b = 4 or b = −6
+      stepByStepGuideline:
+      - 'Set up the distance formula using $d = \sqrt{34}$: $(\sqrt{34})² = (5 - 2)² + (b - (-1))²$.'
+      - 'Simplify the equation: $34 = 3² + (b + 1)²$.'
+      - 'Calculate the known squared term: $34 = 9 + (b + 1)²$.'
+      - 'Isolate the unknown term: $(b + 1)² = 34 - 9 = 25$.'
+      - 'Take the square root of both sides, remembering both positive and negative solutions: $b + 1 = \pm 5$.'
+      - 'Solve for the two possible values of b: $b = 5 - 1 = 4$ or $b = -5 - 1 = -6$.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: How far apart are the points A(−4, 0) and B(1, 3)? Give your answer as an exact surd.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: -4
+            y: 0
+            label: A
+          - x: 1
+            y: 3
+            label: B
+      finalAnswer: $\sqrt{34}$ units
+      stepByStepGuideline:
+      - 'Calculate the horizontal distance (x-step): $\Delta x = |1 - (-4)| = 5$.'
+      - 'Calculate the vertical distance (y-step): $\Delta y = |3 - 0| = 3$.'
+      - 'Apply the Pythagorean theorem: $d² = 5² + 3²$.'
+      - 'Calculate the square of the distance: $d² = 25 + 9 = 34$.'
+      - 'Find the distance: $d = \sqrt{34}$. Since 34 has no square factors, the surd cannot be simplified further.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: Three points are located at X(1, 1), Y(4, 5), and Z(−1, 3). Determine which pair of points is closest together.
+        Give the exact distance between them.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: 1
+            y: 1
+            label: X
+          - x: 4
+            y: 5
+            label: Y
+          - x: -1
+            y: 3
+            label: Z
+      finalAnswer: X and Z, distance $2\sqrt{2}$ units
+      stepByStepGuideline:
+      - 'Calculate the distance XY: $\Delta x = 3, \Delta y = 4$. $d_{XY} = \sqrt{3² + 4²} = \sqrt{25} = 5$ units.'
+      - 'Calculate the distance YZ: $\Delta x = |4 - (-1)| = 5, \Delta y = |5 - 3| = 2$. $d_{YZ} = \sqrt{5² + 2²} = \sqrt{25
+        + 4} = \sqrt{29}$ units (approx 5.39).'
+      - 'Calculate the distance XZ: $\Delta x = |1 - (-1)| = 2, \Delta y = |1 - 3| = 2$. $d_{XZ} = \sqrt{2² + 2²} = \sqrt{4
+        + 4} = \sqrt{8}$ units.'
+      - 'Simplify the shortest distance: $\sqrt{8} = \sqrt{4 \times 2} = 2\sqrt{2}$ units (approx 2.83).'
+      - Compare the distances (5, $\sqrt{29}$, $2\sqrt{2}$). Since $2\sqrt{2}$ is the smallest value, the points X and Z are
+        closest together.
+      id: q2-5
+      questionGroup: q2
+- id: coord-geom-node-3
+  nodeNumber: 3
+  title: Midpoint of Line Segment
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: Find the coordinates of the midpoint M of the line segment [AB], where A is at (-5, 7) and B is at (4,
+        2). Express the coordinates as decimals or fractions.
+      avatarIntro: The midpoint formula relies on finding the average of the x-coordinates and the average of the y-coordinates.
+        You can do this!
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -8
+          xMax: 8
+          yMin: -8
+          yMax: 8
+          showGrid: true
+          points: A(-5, 7), B(4, 2)
+      finalAnswer: M(-0.5, 4.5) or M(-1/2, 9/2)
+      stepByStepGuideline:
+      - 'To find the x-coordinate of the midpoint M, average the x-coordinates of A and B: $M_x = \frac{x_A + x_B}{2} = \frac{-5
+        + 4}{2} = \frac{-1}{2} = -0.5$.'
+      - 'To find the y-coordinate of the midpoint M, average the y-coordinates of A and B: $M_y = \frac{y_A + y_B}{2} = \frac{7
+        + 2}{2} = \frac{9}{2} = 4.5$.'
+      - The coordinates of the midpoint M are (-0.5, 4.5).
+      id: q3-1
+      questionGroup: q3
+    - problemText: Point M(1, -2) is the midpoint of the line segment [PQ]. If P has coordinates (-3, 4), find the coordinates
+        of the endpoint Q.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -8
+          xMax: 8
+          yMin: -8
+          yMax: 8
+          showGrid: true
+          points: P(-3, 4), M(1, -2)
+      finalAnswer: Q(5, -8)
+      stepByStepGuideline:
+      - Let Q be $(x_Q, y_Q)$. We use the formula $M_x = \frac{x_P + x_Q}{2}$ and $M_y = \frac{y_P + y_Q}{2}$.
+      - 'Solve for $x_Q$: $1 = \frac{-3 + x_Q}{2}$. Multiply by 2: $2 = -3 + x_Q$. Thus, $x_Q = 2 + 3 = 5$.'
+      - 'Solve for $y_Q$: $-2 = \frac{4 + y_Q}{2}$. Multiply by 2: $-4 = 4 + y_Q$. Thus, $y_Q = -4 - 4 = -8$.'
+      - The coordinates of endpoint Q are (5, -8).
+      id: q3-2
+      questionGroup: q3
+    - problemText: A circle has a diameter [AB]. The coordinates of the endpoints of the diameter are A(7, -1) and B(-3, -5).
+        Find the coordinates of the centre C of the circle.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -8
+          xMax: 8
+          yMin: -8
+          yMax: 8
+          showGrid: true
+          points: A(7, -1), B(-3, -5)
+      finalAnswer: C(2, -3)
+      stepByStepGuideline:
+      - The centre of the circle is the midpoint of the diameter [AB].
+      - 'Calculate the x-coordinate of the centre C: $C_x = \frac{x_A + x_B}{2} = \frac{7 + (-3)}{2} = \frac{4}{2} = 2$.'
+      - 'Calculate the y-coordinate of the centre C: $C_y = \frac{y_A + y_B}{2} = \frac{-1 + (-5)}{2} = \frac{-6}{2} = -3$.'
+      - The coordinates of the centre C are (2, -3).
+      id: q3-3
+      questionGroup: q3
+    - problemText: The vertices of a triangle are T(1, 1), U(5, -7), and V(-3, -5). Find the coordinates of M, the midpoint
+        of the side UV.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -8
+          xMax: 8
+          yMin: -8
+          yMax: 8
+          showGrid: true
+          points: T(1, 1), U(5, -7), V(-3, -5)
+      finalAnswer: M(1, -6)
+      stepByStepGuideline:
+      - We need to find the midpoint M of the segment UV using the coordinates U(5, -7) and V(-3, -5).
+      - 'Calculate the x-coordinate of M: $M_x = \frac{x_U + x_V}{2} = \frac{5 + (-3)}{2} = \frac{2}{2} = 1$.'
+      - 'Calculate the y-coordinate of M: $M_y = \frac{y_U + y_V}{2} = \frac{-7 + (-5)}{2} = \frac{-12}{2} = -6$.'
+      - The coordinates of M are (1, -6).
+      id: q3-4
+      questionGroup: q3
+    - problemText: Line segment [RS] connects R(-6, 2) and S(4, 6). A point K is located at (-1, 4). Show that K is the midpoint
+        of [RS] by verifying that the distance RK is equal to the distance KS. (Give the exact distance.)
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -8
+          xMax: 8
+          yMin: -8
+          yMax: 8
+          showGrid: true
+          points: R(-6, 2), S(4, 6), K(-1, 4)
+      finalAnswer: Distance RK = KS = $\sqrt{29}$
+      stepByStepGuideline:
+      - 'First, calculate the distance RK using the distance formula: $RK = \sqrt{(x_K - x_R)^2 + (y_K - y_R)^2}$.'
+      - $RK = \sqrt{(-1 - (-6))^2 + (4 - 2)^2} = \sqrt{(5)^2 + (2)^2} = \sqrt{25 + 4} = \sqrt{29}$.
+      - 'Next, calculate the distance KS: $KS = \sqrt{(x_S - x_K)^2 + (y_S - y_K)^2}$.'
+      - $KS = \sqrt{(4 - (-1))^2 + (6 - 4)^2} = \sqrt{(5)^2 + (2)^2} = \sqrt{25 + 4} = \sqrt{29}$.
+      - Since $RK = KS = \sqrt{29}$, the point K is equidistant from R and S, confirming it is the midpoint of the segment
+        [RS].
+      id: q3-5
+      questionGroup: q3
+- id: coord-geom-node-4
+  nodeNumber: 4
+  title: Calculating and Interpreting Gradient
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate the gradient of the line that passes through the points A(−2, −3) and B(4, 1).
+      avatarIntro: Great job moving onto gradients! Remember that the gradient tells us the steepness and direction of a line.
+        Let's calculate the gradient for these two points using the formula.
+      mathTool: null
+      finalAnswer: 2/3
+      stepByStepGuideline:
+      - 'Identify the coordinates: $(x_1, y_1) = (-2, -3)$ and $(x_2, y_2) = (4, 1)$.'
+      - 'Apply the gradient formula: $m = (y₂ - y₁) / (x₂ - x₁)$.'
+      - 'Substitute the values: $m = (1 - (-3)) / (4 - (-2))$.'
+      - 'Calculate the change in y (rise) and change in x (run): $m = 4 / 6$.'
+      - 'Simplify the fraction: $m = 2/3$.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: Determine the gradient of the straight line defined by the equation $y = 5$. Explain briefly what this
+        gradient value signifies about the line's orientation.
+      mathTool: null
+      finalAnswer: Gradient = 0. (This signifies the line is perfectly horizontal.)
+      stepByStepGuideline:
+      - Recognize the form of the equation $y = 5$. This represents a horizontal line passing through y=5.
+      - For any horizontal line, the change in y (rise) is zero.
+      - The gradient $m = \text{rise} / \text{run} = 0 / \text{run} = 0$.
+      - A gradient of 0 means the line has no slope and is parallel to the x-axis.
+      id: q4-2
+      questionGroup: q4
+    - problemText: From the graph shown, the line L passes through points (1, 4) and (3, 0). Calculate the gradient (m) of
+        the line L by determining the ratio of the vertical step (rise) to the horizontal step (run).
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -1
+          xMax: 5
+          yMin: -1
+          yMax: 5
+          showGrid: true
+          lines: '[{"point1": [1, 4], "point2": [3, 0], "color": "blue"}]'
+          points: '[{"coord": [1, 4], "color": "red"}, {"coord": [3, 0], "color": "red"}]'
+      finalAnswer: '-2'
+      stepByStepGuideline:
+      - 'Identify two clear points on the line: $(x_1, y_1) = (1, 4)$ and $(x_2, y_2) = (3, 0)$.'
+      - 'Calculate the run (horizontal step): $x_2 - x_1 = 3 - 1 = 2$.'
+      - 'Calculate the rise (vertical step): $y_2 - y_1 = 0 - 4 = -4$.'
+      - 'Calculate the gradient: $m = \text{rise} / \text{run} = -4 / 2$.'
+      - The gradient is -2.
+      id: q4-3
+      questionGroup: q4
+    - problemText: Find the gradient of the line segment connecting points C(−1, 5) and D(−1, −2). Based on your answer, describe
+        the orientation of this line.
+      mathTool: null
+      finalAnswer: Undefined. (The line is vertical.)
+      stepByStepGuideline:
+      - 'Identify the coordinates: $(x_1, y_1) = (-1, 5)$ and $(x_2, y_2) = (-1, -2)$.'
+      - 'Apply the gradient formula: $m = (y₂ - y₁) / (x₂ - x₁)$.'
+      - 'Substitute the values: $m = (-2 - 5) / (-1 - (-1))$.'
+      - 'Calculate the result: $m = -7 / 0$.'
+      - Since division by zero is mathematically undefined, the gradient is undefined. This occurs only for vertical lines.
+      id: q4-4
+      questionGroup: q4
+    - problemText: For the line passing through points G(6, −1) and H(0, 3), calculate the vertical step (rise) and the horizontal
+        step (run) required to move from H to G. Use these values to find the gradient.
+      mathTool: null
+      finalAnswer: Rise = -4, Run = 6, Gradient = -2/3
+      stepByStepGuideline:
+      - Define the movement from $H(0, 3)$ to $G(6, -1)$.
+      - 'Calculate the horizontal step (Run): $x_G - x_H = 6 - 0 = 6$.'
+      - 'Calculate the vertical step (Rise): $y_G - y_H = -1 - 3 = -4$.'
+      - 'Calculate the gradient: $m = \text{Rise} / \text{Run} = -4 / 6$.'
+      - 'Simplify the gradient: $m = -2/3$.'
+      id: q4-5
+      questionGroup: q4
+- id: coord-geom-node-5
+  nodeNumber: 5
+  title: Parallel Lines and Equal Gradients
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: Line $L_A$ has a gradient of 4. Line $L_B$ is parallel to $L_A$. What is the gradient of $L_B$?
+      avatarIntro: 'Welcome to the lesson on parallel lines! Remember the fundamental rule: parallel lines always share the
+        same steepness.'
+      mathTool: null
+      finalAnswer: '4'
+      stepByStepGuideline:
+      - 'Recall the definition of parallel lines: two lines are parallel if and only if their gradients are equal ($m_A =
+        m_B$).'
+      - Since $L_A$ has a gradient $m_A = 4$ and $L_B$ is parallel to $L_A$, the gradient of $L_B$ must also be 4.
+      id: q5-1
+      questionGroup: q5
+    - problemText: A line $k$ is defined by the equation $3y + x = 9$. Find the gradient of any line $j$ that is parallel
+        to line $k$. Express your answer as a fraction.
+      mathTool: null
+      finalAnswer: -1/3
+      stepByStepGuideline:
+      - Convert the equation of line $k$ into the slope-intercept form $y = mx + c$. Start with $3y + x = 9$.
+      - 'Isolate $y$: $3y = -x + 9$.'
+      - "Divide by 3: $y = -\frac{1}{3}x + 3$."
+      - 'Identify the gradient of line $k$: $m_k = -1/3$.'
+      - Since line $j$ is parallel to line $k$, their gradients must be equal, so $m_j = m_k = -1/3$.
+      id: q5-2
+      questionGroup: q5
+    - problemText: Use the graph provided. Line $L_1$ passes through points $A(-4, -1)$ and $B(2, 3)$. Line $L_2$ passes through
+        points $C(-3, 1)$ and $D(3, 5)$. Determine whether $L_1$ and $L_2$ are parallel, justifying your answer using their
+        gradients.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines: '[{''p1'': [-4, -1], ''p2'': [2, 3], ''label'': ''L1'', ''color'': ''blue''}, {''p1'': [-3, 1], ''p2'': [3,
+            5], ''label'': ''L2'', ''color'': ''red''}]'
+      finalAnswer: Yes, they are parallel.
+      stepByStepGuideline:
+      - 'Calculate the gradient of $L_1$ using the points $A(-4, -1)$ and $B(2, 3)$: $m_1 = \frac{y_2 - y_1}{x_2 - x_1} =
+        \frac{3 - (-1)}{2 - (-4)} = \frac{4}{6} = \frac{2}{3}.'
+      - 'Calculate the gradient of $L_2$ using the points $C(-3, 1)$ and $D(3, 5)$: $m_2 = \frac{y_2 - y_1}{x_2 - x_1} = \frac{5
+        - 1}{3 - (-3)} = \frac{4}{6} = \frac{2}{3}.'
+      - Since the gradients are equal ($m_1 = m_2 = 2/3$), the lines $L_1$ and $L_2$ are parallel.
+      id: q5-3
+      questionGroup: q5
+    - problemText: Line $P$ is given by the equation $y = -2$ and Line $Q$ is given by the equation $y = 5$. Are Line $P$
+        and Line $Q$ parallel? Explain why.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines: '[{''type'': ''horizontal'', ''y'': -2, ''label'': ''P'', ''color'': ''purple''}, {''type'': ''horizontal'',
+            ''y'': 5, ''label'': ''Q'', ''color'': ''orange''}]'
+      finalAnswer: Yes, they are parallel.
+      stepByStepGuideline:
+      - Identify the nature of the lines. $y = -2$ and $y = 5$ are both horizontal lines.
+      - The gradient ($m$) of any horizontal line is 0.
+      - Since $m_P = 0$ and $m_Q = 0$, their gradients are equal, $m_P = m_Q$. Therefore, Line $P$ and Line $Q$ are parallel.
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'Four lines are defined by the following pairs of points:
+
+        Line $L_1$: (1, 1) and (3, 5)
+
+        Line $L_2$: (-2, 4) and (1, 1)
+
+        Line $L_3$: (0, 0) and (-2, -4)
+
+        Line $L_4$: (0, 3) and (2, 2)
+
+        Identify which pair(s) of lines are parallel to each other.'
+      mathTool: null
+      finalAnswer: $L_1$ and $L_3$
+      stepByStepGuideline:
+      - 'Calculate the gradient of $L_1$: $m_1 = \frac{5 - 1}{3 - 1} = \frac{4}{2} = 2$.'
+      - 'Calculate the gradient of $L_2$: $m_2 = \frac{1 - 4}{1 - (-2)} = \frac{-3}{3} = -1$.'
+      - 'Calculate the gradient of $L_3$: $m_3 = \frac{-4 - 0}{-2 - 0} = \frac{-4}{-2} = 2$.'
+      - 'Calculate the gradient of $L_4$: $m_4 = \frac{2 - 3}{2 - 0} = \frac{-1}{2}$.'
+      - Compare the gradients. Since $m_1 = m_3 = 2$, lines $L_1$ and $L_3$ are parallel.
+      id: q5-5
+      questionGroup: q5
+- id: coord-geom-node-6
+  nodeNumber: 6
+  title: Perpendicular Lines and Negative Reciprocals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: Line $L_P$ has a gradient $m_P = 2$. Find the gradient $m_Q$ of a line $L_Q$ that is perpendicular to $L_P$.
+        Use the graph provided to visualize the 90° relationship, ensuring $L_P$ and $L_Q$ intersect at the origin.
+      avatarIntro: Welcome to the world of geometry! Remember that perpendicular lines have gradients whose product is negative
+        one. Let's find that negative reciprocal!
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - id: LP
+            type: line
+            points:
+            - - -2
+              - -4
+            - - 2
+              - 4
+            color: blue
+          - id: LQ
+            type: line
+            points:
+            - - -4
+              - 2
+            - - 4
+              - -2
+            color: red
+      finalAnswer: −1/2
+      stepByStepGuideline:
+      - 'Identify the gradient of the original line: $m_P = 2$.'
+      - For lines to be perpendicular, the gradient $m_Q$ must be the negative reciprocal of $m_P$.
+      - The reciprocal of 2 is $1/2$.
+      - The negative reciprocal is $\text{negative}(1/2)$, so $m_Q = -1/2$.
+      - 'Verification: $m_P \times m_Q = 2 \times (-1/2) = -1$.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: Line A has gradient $m_A = 3/4$ and Line B has gradient $m_B = -4/3$. Use the relationship $m_1 \times
+        m_2 = -1$ to formally verify if Line A and Line B are perpendicular. Illustrate this relationship graphically, assuming
+        both lines pass through the origin.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - id: LA
+            type: line
+            points:
+            - - -4
+              - -3
+            - - 4
+              - 3
+            color: blue
+          - id: LB
+            type: line
+            points:
+            - - -3
+              - 4
+            - - 3
+              - -4
+            color: red
+      finalAnswer: Yes, they are perpendicular because (3/4) × (−4/3) = −1.
+      stepByStepGuideline:
+      - 'Identify the given gradients: $m_A = 3/4$ and $m_B = -4/3$.'
+      - 'Calculate the product of the gradients: $m_A \times m_B = (3/4) \times (-4/3)$.'
+      - 'Multiply the numerators and denominators: $(3 \times -4) / (4 \times 3) = -12 / 12$.'
+      - 'Simplify the product: $-12/12 = -1$.'
+      - Since the product is $-1$, the lines are perpendicular.
+      id: q6-2
+      questionGroup: q6
+    - problemText: Line $L_R$ passes through the points $R(-3, 1)$ and $S(5, 5)$. Calculate the gradient of $L_R$. Subsequently,
+        determine the gradient $m_T$ of a line $L_T$ that is perpendicular to $L_R$.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - id: LR
+            type: line
+            points:
+            - - -3
+              - 1
+            - - 5
+              - 5
+            color: blue
+          - id: LT
+            type: line
+            points:
+            - - -3
+              - 1
+            - - -1
+              - -3
+            color: red
+      finalAnswer: The gradient of $L_R$ is $1/2$. The gradient of $L_T$ is −2.
+      stepByStepGuideline:
+      - 'First, calculate the gradient $m_R$ using the points $R(-3, 1)$ and $S(5, 5)$: $m_R = (y_2 - y_1) / (x_2 - x_1) =
+        (5 - 1) / (5 - (-3))$.'
+      - 'Calculate the difference: $m_R = 4 / 8 = 1/2$.'
+      - To find the gradient $m_T$ of the perpendicular line $L_T$, find the negative reciprocal of $m_R$.
+      - The reciprocal of $1/2$ is 2.
+      - The negative reciprocal is $-2$. Thus, $m_T = -2$.
+      id: q6-3
+      questionGroup: q6
+    - problemText: Line $L_1$ has a gradient $m_1 = -5/2$. Determine the gradient $m_2$ of a line $L_2$ that is perpendicular
+        to $L_1$. Write down the resulting gradient and verify that $m_1 \times m_2 = -1$.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - id: L1
+            type: line
+            points:
+            - - 2
+              - -5
+            - - -2
+              - 5
+            color: blue
+          - id: L2
+            type: line
+            points:
+            - - 5
+              - 2
+            - - -5
+              - -2
+            color: red
+      finalAnswer: '$m_2 = 2/5$. Verification: (−5/2) × (2/5) = −1.'
+      stepByStepGuideline:
+      - Identify the given gradient $m_1 = -5/2$.
+      - To find the perpendicular gradient $m_2$, find the negative reciprocal of $m_1$.
+      - Flip the fraction (2/5) and change the sign (negative becomes positive).
+      - Therefore, $m_2 = 2/5$.
+      - 'Verify the product: $m_1 \times m_2 = (-5/2) \times (2/5) = -10/10 = -1$.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: Line $H$ is defined by the equation $y = 3$ and Line $V$ is defined by the equation $x = -2$. Explain the
+        relationship between these two lines and justify why they are perpendicular based on their geometric orientation,
+        noting how their gradients interact.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - id: H
+            type: line
+            points:
+            - - -5
+              - 3
+            - - 5
+              - 3
+            color: blue
+          - id: V
+            type: line
+            points:
+            - - -2
+              - 5
+            - - -2
+              - -5
+            color: red
+      finalAnswer: The lines are perpendicular. Line H is horizontal ($m_H = 0$) and Line V is vertical ($m_V$ is undefined).
+        Horizontal and vertical lines always intersect at a 90° angle.
+      stepByStepGuideline:
+      - Determine the characteristics of Line H ($y=3$). This is a horizontal line, meaning its gradient $m_H = 0$.
+      - Determine the characteristics of Line V ($x=-2$). This is a vertical line, meaning its gradient $m_V$ is undefined.
+      - 'Recall the geometric definition of perpendicularity: lines meeting at a 90° angle.'
+      - Since horizontal lines are perfectly level and vertical lines are perfectly upright, they always meet at a right angle
+        (90°).
+      - Therefore, the lines are perpendicular, even though the algebraic product rule $m_1 \times m_2 = -1$ cannot be applied
+        due to the undefined gradient.
+      id: q6-5
+      questionGroup: q6
+- id: coord-geom-node-7
+  nodeNumber: 7
+  title: Point-Gradient Form y − y₁ = m(x − x₁)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: Write the equation of the line L, in point-gradient form, that has a gradient $m = -4$ and passes through
+        the point $P(3, 5)$. Expand your final answer into the slope-intercept form ($y = mx + c$).
+      avatarIntro: Welcome! Let's practice using the point-gradient formula. Remember, this form is perfect when you know
+        the slope and one point on the line.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          points: '[(3, 5)]'
+      finalAnswer: y − 5 = −4(x − 3) or y = −4x + 17
+      stepByStepGuideline:
+      - Identify the given gradient $m = -4$ and the point $(x_1, y_1) = (3, 5)$.
+      - 'Substitute these values into the point-gradient form: $y - y_1 = m(x - x_1)$. This gives $y - 5 = -4(x - 3)$.'
+      - 'To convert to slope-intercept form ($y = mx + c$), expand the right side: $y - 5 = -4x + 12$.'
+      - 'Add 5 to both sides: $y = -4x + 17$.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Determine the equation of the line, in point-gradient form, that passes through the points $A(4, -3)$ and
+        $B(-2, -7)$. Use point A in your final point-gradient equation.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          points: '[(4, -3), (-2, -7)]'
+      finalAnswer: y + 3 = (2/3)(x - 4) or y = (2/3)x - 17/3
+      stepByStepGuideline:
+      - 'First, calculate the gradient $m$ using the two points $A(4, -3)$ and $B(-2, -7)$: $m = \frac{y_2 - y_1}{x_2 - x_1}
+        = \frac{-7 - (-3)}{-2 - 4} = \frac{-4}{-6} = \frac{2}{3}$.'
+      - Use the point-gradient form $y - y_1 = m(x - x_1)$ with the calculated gradient $m = 2/3$ and point $A(4, -3)$.
+      - 'Substitute: $y - (-3) = \frac{2}{3}(x - 4)$. Simplify to $y + 3 = \frac{2}{3}(x - 4)$.'
+      - 'Optional: Expand to slope-intercept form: $y + 3 = \frac{2}{3}x - \frac{8}{3}$. Subtract 3 (or 9/3): $y = \frac{2}{3}x
+        - \frac{8}{3} - \frac{9}{3} = \frac{2}{3}x - \frac{17}{3}$.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: A line M is parallel to the line $4x + y = 1$. If line M passes through the point $Q(-2, -7)$, write the
+        equation of line M in point-gradient form.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -7
+          yMax: 5
+          showGrid: true
+          points: '[(-2, -7)]'
+      finalAnswer: y + 7 = −4(x + 2)
+      stepByStepGuideline:
+      - 'Find the gradient of the reference line $4x + y = 1$. Convert it to slope-intercept form: $y = -4x + 1$. Thus, the
+        gradient is $m_{ref} = -4$.'
+      - Since Line M is parallel to the reference line, $m_M = m_{ref} = -4$.
+      - Use the point-gradient form $y - y_1 = m(x - x_1)$ with $m = -4$ and the point $Q(-2, -7)$.
+      - 'Substitute: $y - (-7) = -4(x - (-2))$. Simplify to $y + 7 = -4(x + 2)$.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: 'Find the equation of the line K, in point-gradient form, that is perpendicular to the line $L: y = \frac{2}{5}x
+        + 8$ and passes through the point $R(-1, 2)$.'
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          points: '[(-1, 2)]'
+      finalAnswer: y − 2 = (−5/2)(x + 1)
+      stepByStepGuideline:
+      - Determine the gradient of line L. From $y = \frac{2}{5}x + 8$, the gradient is $m_L = 2/5$.
+      - Since line K is perpendicular to line L, its gradient $m_K$ must satisfy $m_L \times m_K = -1$. Therefore, $m_K =
+        -1 / (2/5) = -5/2$.
+      - Use the point-gradient form $y - y_1 = m(x - x_1)$ with $m = -5/2$ and the point $R(-1, 2)$.
+      - 'Substitute: $y - 2 = \frac{-5}{2}(x - (-1))$. Simplify to $y - 2 = \frac{-5}{2}(x + 1)$.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: A line V passes through the point $P(3, 5)$ and has an undefined gradient. Although point-gradient form
+        is typically used for defined gradients, write the simplest equation describing this line.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          points: '[(3, 5)], "lines": [{"type": "vertical", "x": 3}]'
+      finalAnswer: x = 3
+      stepByStepGuideline:
+      - An undefined gradient signifies a vertical line.
+      - A vertical line has the property that the x-coordinate is constant for all points on the line.
+      - Since the line passes through $P(3, 5)$, where $x = 3$, the equation for the line is simply $x = 3$.
+      id: q7-5
+      questionGroup: q7
+- id: coord-geom-node-8
+  nodeNumber: 8
+  title: Gradient-Intercept Form y = mx + c
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: State the gradient ($m$) and the y-intercept ($c$) for the straight line defined by the equation $y = -4x
+        - 3$.
+      avatarIntro: Understanding the gradient-intercept form is key to solving coordinate geometry problems. Let's start by
+        identifying the core components of this equation!
+      mathTool: null
+      finalAnswer: Gradient m = -4, y-intercept c = -3
+      stepByStepGuideline:
+      - The equation is in the standard gradient-intercept form, $y = mx + c$.
+      - The gradient ($m$) is the coefficient of $x$. In $y = -4x - 3$, $m = -4$.
+      - The y-intercept ($c$) is the constant term. In $y = -4x - 3$, $c = -3$.
+      id: q8-1
+      questionGroup: q8
+    - problemText: Write the equation of a line in the form $y = mx + c$ if it has a gradient ($m$) of $\frac{1}{2}$ and its
+        y-intercept ($c$) is 5.
+      mathTool: null
+      finalAnswer: y = \frac{1}{2}x + 5
+      stepByStepGuideline:
+      - 'Recall the gradient-intercept form: $y = mx + c$.'
+      - Substitute the given gradient $m = \frac{1}{2}$ into the equation.
+      - Substitute the given y-intercept $c = 5$ into the equation.
+      - The resulting equation is $y = \frac{1}{2}x + 5$.
+      id: q8-2
+      questionGroup: q8
+    - problemText: A line L is described by the equation $y = 7$. State the gradient ($m$) and the y-intercept ($c$) of this
+        line.
+      mathTool: null
+      finalAnswer: Gradient m = 0, y-intercept c = 7
+      stepByStepGuideline:
+      - The equation $y = 7$ represents a horizontal line.
+      - A horizontal line has a gradient ($m$) of 0. We can rewrite the equation as $y = 0x + 7$.
+      - Comparing this to $y = mx + c$, the gradient $m = 0$.
+      - The y-intercept ($c$) is the point where the line crosses the y-axis, which is the constant term, $c = 7$. (The line
+        passes through (0, 7)).
+      id: q8-3
+      questionGroup: q8
+    - problemText: From the graph shown, determine the gradient ($m$) and the y-intercept ($c$) of the plotted line L.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -8
+          yMax: 8
+          showGrid: true
+          lines: '[{''type'': ''line'', ''p1'': {''x'': 0, ''y'': -1}, ''p2'': {''x'': 2, ''y'': -5}, ''label'': ''L''}]'
+      finalAnswer: Gradient m = -2, y-intercept c = -1
+      stepByStepGuideline:
+      - 'Identify the y-intercept ($c$): The line crosses the y-axis at $(0, -1)$. Thus, $c = -1$.'
+      - Identify the gradient ($m$) using two clear points, such as $(0, -1)$ and $(1, -3)$.
+      - 'Calculate the gradient using rise over run ($m = \frac{\text{rise}}{\text{run}}$): Moving from $(0, -1)$ to $(1,
+        -3)$ involves a vertical change (rise) of $-2$ and a horizontal change (run) of $1$.'
+      - Calculate $m = \frac{-2}{1} = -2$.
+      id: q8-4
+      questionGroup: q8
+    - problemText: A line is defined by the equation $4x - 3y = 0$. Rewrite this equation in the gradient-intercept form ($y
+        = mx + c$) and state the gradient ($m$) and the y-intercept ($c$).
+      mathTool: null
+      finalAnswer: 'Equation: y = \frac{4}{3}x. Gradient m = \frac{4}{3}, y-intercept c = 0'
+      stepByStepGuideline:
+      - 'Start with the given equation: $4x - 3y = 0$.'
+      - 'Isolate the term containing $y$: $-3y = -4x$.'
+      - 'Divide both sides by $-3$ to solve for $y$: $y = \frac{-4x}{-3}$.'
+      - 'Simplify the expression to get the gradient-intercept form: $y = \frac{4}{3}x$.'
+      - Identify the gradient ($m$) and y-intercept ($c$). Here $m = \frac{4}{3}$ and since there is no constant term, $c
+        = 0$.
+      id: q8-5
+      questionGroup: q8
+- id: coord-geom-node-9
+  nodeNumber: 9
+  title: General Form and Conversions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A line is defined by the slope-intercept equation $y = -\frac{3}{4}x + 2$. Convert this equation into the
+        general form $ax + by = d$, ensuring that $a$, $b$, and $d$ are integers and the coefficient $a$ is positive.
+      avatarIntro: Working with different equation forms is essential in algebra. Let's start by converting this slope-intercept
+        equation into the general form.
+      mathTool: null
+      finalAnswer: 3x + 4y = 8
+      stepByStepGuideline:
+      - 'Multiply the entire equation $y = -\frac{3}{4}x + 2$ by 4 to eliminate the fraction: $4y = 4(-\frac{3}{4}x) + 4(2)$,
+        resulting in $4y = -3x + 8$.'
+      - Rearrange the terms so that the x and y terms are on the left side of the equation and the constant is on the right
+        side.
+      - 'Add $3x$ to both sides: $3x + 4y = 8$.'
+      - 'Verify the form $ax + by = d$: $a=3$, $b=4$, $d=8$. Since $a=3 > 0$, the equation is in the correct general form.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: Convert the line given in general form, $3x - 5y = 15$, into the slope-intercept form $y = mx + c$. State
+        the resulting equation.
+      mathTool: null
+      finalAnswer: y = (3/5)x - 3
+      stepByStepGuideline:
+      - 'Start with the general form: $3x - 5y = 15$.'
+      - 'Isolate the $y$ term by subtracting $3x$ from both sides: $-5y = -3x + 15$.'
+      - 'Divide the entire equation by $-5$ to solve for $y$: $y = \frac{-3}{-5}x + \frac{15}{-5}$.'
+      - 'Simplify the fractions: $y = \frac{3}{5}x - 3$.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: Determine the gradient ($m$) of the straight line represented by the general form equation $2x - 7y = -14$.
+      mathTool: null
+      finalAnswer: 2/7
+      stepByStepGuideline:
+      - The general form is $ax + by = d$, where $a=2$ and $b=-7$.
+      - The gradient $m$ can be calculated directly using the formula $m = -a/b$.
+      - 'Substitute the values: $m = -2 / (-7)$.'
+      - 'Simplify the expression: $m = 2/7$.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: A line is given by the general form equation $10x + 5y = 50$. Find both the x-intercept and the y-intercept
+        of this line.
+      mathTool: null
+      finalAnswer: 'x-intercept: 5; y-intercept: 10'
+      stepByStepGuideline:
+      - To find the x-intercept, set $y=0$ in the equation $10x + 5y = 50$.
+      - This gives $10x + 5(0) = 50$, so $10x = 50$. Solving for $x$, $x = 5$.
+      - To find the y-intercept, set $x=0$ in the equation $10x + 5y = 50$.
+      - This gives $10(0) + 5y = 50$, so $5y = 50$. Solving for $y$, $y = 10$.
+      id: q9-4
+      questionGroup: q9
+    - problemText: What is the gradient of the line defined by the equation $x = 6$?
+      mathTool: null
+      finalAnswer: Undefined
+      stepByStepGuideline:
+      - The equation $x = 6$ represents a vertical line.
+      - A vertical line passes through all points where the x-coordinate is 6, regardless of the y-coordinate.
+      - The change in x ($\Delta x$) is zero along this line.
+      - Since the gradient $m = \Delta y / \Delta x$, and division by zero is undefined, the gradient of a vertical line is
+        undefined.
+      id: q9-5
+      questionGroup: q9
+- id: coord-geom-node-10
+  nodeNumber: 10
+  title: Graphing from y = mx + c
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Describe the three essential steps required to accurately graph the line defined by the equation $y = 2x
+        - 3$. Focus on starting point and movement based on the gradient.
+      avatarIntro: Mastering the gradient-intercept method is crucial for graphing linear equations quickly. Let's practice
+        breaking down the process step-by-step.
+      mathTool: null
+      finalAnswer: 'Step 1: Plot the y-intercept at (0, -3). Step 2: Since the gradient is $m = 2 = 2/1$, move 1 unit horizontally
+        (right) and 2 units vertically (up) from the intercept to find the second point (1, -1). Step 3: Draw a straight line
+        passing through both points, extending it with arrows.'
+      stepByStepGuideline:
+      - Identify the y-intercept $c = -3$. Plot the point (0, -3).
+      - 'Identify the gradient $m = 2$. Write this as a fraction: $2/1$ (Rise/Run).'
+      - From (0, -3), move 1 unit right and 2 units up to locate the second point, (1, -1).
+      - Draw a straight line through (0, -3) and (1, -1), ensuring the line is extended with arrows in both directions.
+      id: q10-1
+      questionGroup: q10
+    - problemText: Explain the exact procedure, including the specific coordinate movements, to graph the line $y = -\frac{3}{4}x
+        + 5$ using the gradient-intercept method.
+      mathTool: null
+      finalAnswer: 1) Plot the y-intercept at (0, 5). 2) Use the gradient $m = -3/4$. From (0, 5), move 4 units right (run)
+        and 3 units down (rise is negative) to plot the second point (4, 2). 3) Draw and extend the straight line through
+        (0, 5) and (4, 2).
+      stepByStepGuideline:
+      - Identify the y-intercept $c = 5$. Plot the point (0, 5).
+      - Identify the gradient $m = -3/4$. The run is 4 and the rise is -3 (down).
+      - Starting at (0, 5), move 4 units right and 3 units down to find the second point (4, 2).
+      - Draw the line connecting these two points and extend it with arrows.
+      id: q10-2
+      questionGroup: q10
+    - problemText: From the graph shown below, which represents the line $y = \frac{1}{2}x$, identify the y-intercept and
+        list two distinct points (other than the intercept) that lie on the line.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -8
+          yMax: 8
+          showGrid: true
+          lines:
+          - type: line
+            points:
+            - - -4
+              - -2
+            - - 4
+              - 2
+      finalAnswer: 'Y-intercept: (0, 0). Two other points: Possible answers include (2, 1), (4, 2), (-2, -1), or (-4, -2).'
+      stepByStepGuideline:
+      - The y-intercept is the point where the line crosses the y-axis, which is the origin (0, 0).
+      - Use the gradient $m = 1/2$. Starting from (0, 0), move 2 units right and 1 unit up to find (2, 1).
+      - 'Repeat the movement: From (2, 1), move 2 units right and 1 unit up to find (4, 2).'
+      - 'Check points moving left: 2 units left, 1 unit down gives (-2, -1).'
+      id: q10-3
+      questionGroup: q10
+    - problemText: The graph of a straight line is shown below. Verify the y-intercept of the line and use the gradient to
+        find the coordinates of a third point (a verification point) on the line.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -8
+          yMax: 8
+          showGrid: true
+          lines:
+          - type: line
+            points:
+            - - -1
+              - 5
+            - - 2
+              - -1
+      finalAnswer: The line passes through (0, 3), so the y-intercept is (0, 3). The gradient is $m = \frac{\text{rise}}{\text{run}}
+        = \frac{-2}{1} = -2$. Starting from (1, 1), moving 1 right and 2 down gives the third point (2, -1).
+      stepByStepGuideline:
+      - Locate where the line crosses the y-axis (x=0). This is the y-intercept, (0, 3).
+      - Identify two clear points on the line, for example (0, 3) and (1, 1).
+      - 'Calculate the gradient: $m = \frac{1 - 3}{1 - 0} = -2$.'
+      - 'Use the gradient $m=-2/1$ (1 right, 2 down) from the point (1, 1) to find the third point: $(1+1, 1-2) = (2, -1)$.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: Determine the coordinates of the starting point (y-intercept) and the second point needed to graph the
+        equation $y = -x - 5$.
+      mathTool: null
+      finalAnswer: 'Starting Point (y-intercept): (0, -5). Second Point: Since $m = -1 = -1/1$, move 1 unit right and 1 unit
+        down from (0, -5) to get (1, -6).'
+      stepByStepGuideline:
+      - The y-intercept $c$ is the constant term, $c = -5$. The starting point is (0, -5).
+      - 'The gradient $m$ is the coefficient of $x$, $m = -1$. Write this as a fraction: $m = -1/1$ (Run 1, Rise -1).'
+      - From the starting point (0, -5), move 1 unit right and 1 unit down.
+      - 'Calculate the coordinates of the second point: $(0+1, -5-1) = (1, -6)$.'
+      id: q10-5
+      questionGroup: q10
+- id: coord-geom-node-11
+  nodeNumber: 11
+  title: Graphing from ax + by = d
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Graph the linear equation $2x + 3y = 12$ by finding and plotting its x-intercept and y-intercept. You must
+        use the intercept method.
+      avatarIntro: Using intercepts is a very efficient way to graph a line when the equation is given in the general form.
+        Remember to set one variable to zero at a time!
+      mathTool: null
+      finalAnswer: The graph is a straight line passing through the x-intercept (6, 0) and the y-intercept (0, 4).
+      stepByStepGuideline:
+      - 'To find the y-intercept, set $x = 0$: $2(0) + 3y = 12$, which simplifies to $3y = 12$. Solving gives $y = 4$. The
+        y-intercept is $(0, 4)$.'
+      - 'To find the x-intercept, set $y = 0$: $2x + 3(0) = 12$, which simplifies to $2x = 12$. Solving gives $x = 6$. The
+        x-intercept is $(6, 0)$.'
+      - Plot the points $(0, 4)$ and $(6, 0)$ on the Cartesian plane. Draw a straight line connecting these two points and
+        extend it with arrows in both directions.
+      id: q11-1
+      questionGroup: q11
+    - problemText: Find the coordinates of the x-intercept and the y-intercept for the line defined by the equation $5x +
+        2y = 10$.
+      mathTool: null
+      finalAnswer: 'x-intercept: (2, 0). y-intercept: (0, 5).'
+      stepByStepGuideline:
+      - 'Find the x-intercept by setting $y = 0$: $5x + 2(0) = 10$. $5x = 10$, so $x = 2$. The x-intercept is $(2, 0)$.'
+      - 'Find the y-intercept by setting $x = 0$: $5(0) + 2y = 10$. $2y = 10$, so $y = 5$. The y-intercept is $(0, 5)$.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: Plot the straight line defined by the general form equation $2x - y = 4$. State the two intercepts used
+        for plotting.
+      mathTool: null
+      finalAnswer: The line passes through the x-intercept (2, 0) and the y-intercept (0, -4).
+      stepByStepGuideline:
+      - 'Find the x-intercept (let $y = 0$): $2x - 0 = 4$, so $2x = 4$. $x = 2$. The x-intercept is $(2, 0)$.'
+      - 'Find the y-intercept (let $x = 0$): $2(0) - y = 4$, so $-y = 4$. $y = -4$. The y-intercept is $(0, -4)$.'
+      - Plot the points $(2, 0)$ and $(0, -4)$ and draw a straight line through them.
+      id: q11-3
+      questionGroup: q11
+    - problemText: The line shown on the Cartesian plane below represents the equation $3x + 4y = 12$. Verify the coordinates
+        of the x-intercept and the y-intercept by calculation and check if they match the points shown on the graph.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -2
+          xMax: 8
+          yMin: -2
+          yMax: 8
+          showGrid: true
+          lines:
+            - type: linear
+              slope: -0.75
+              yIntercept: 3
+              equation: "3x + 4y = 12"
+              color: blue
+      finalAnswer: The calculated intercepts are x-intercept (4, 0) and y-intercept (0, 3). These match the points where the
+        line crosses the axes on the graph.
+      stepByStepGuideline:
+      - 'Calculate the x-intercept by setting $y=0$: $3x + 4(0) = 12$. $3x = 12$, so $x = 4$. The x-intercept is $(4, 0)$.'
+      - 'Calculate the y-intercept by setting $x=0$: $3(0) + 4y = 12$. $4y = 12$, so $y = 3$. The y-intercept is $(0, 3)$.'
+      - 'Verify the results: By observing the graph, the line crosses the x-axis at $x=4$ and the y-axis at $y=3$. The intercepts
+        are verified.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: Determine the x-intercept and the y-intercept for the equation $3x - 2y = 6$. Ensure your final answer
+        is given as coordinate pairs.
+      mathTool: null
+      finalAnswer: 'x-intercept: (2, 0). y-intercept: (0, -3).'
+      stepByStepGuideline:
+      - 'To find the x-intercept, substitute $y = 0$ into the equation: $3x - 2(0) = 6$. $3x = 6$, so $x = 2$. The x-intercept
+        is $(2, 0)$.'
+      - 'To find the y-intercept, substitute $x = 0$ into the equation: $3(0) - 2y = 6$. $-2y = 6$, so $y = -3$. The y-intercept
+        is $(0, -3)$.'
+      id: q11-5
+      questionGroup: q11
+- id: coord-geom-node-12
+  nodeNumber: 12
+  title: Finding Equations from Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: The straight line L is shown on the Cartesian plane. Determine the gradient ($m$) by counting the rise
+        over run, read the y-intercept ($c$), and write the equation of the line in the form $y = mx + c$.
+      avatarIntro: Great job reaching this section! Finding equations from graphs requires careful observation of where the
+        line crosses the axes and how steep it is. Let's start with a standard diagonal line.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - points:
+            - - -1
+              - -1
+            - - 1
+              - 3
+            label: L
+      finalAnswer: y = 2x + 1
+      stepByStepGuideline:
+      - 'Step 1: Identify the y-intercept ($c$). The line crosses the y-axis at (0, 1). Thus, c = 1.'
+      - 'Step 2: Determine the gradient ($m$) by counting rise over run between two clear points, for example, (0, 1) and
+        (1, 3). Rise = 3 - 1 = 2. Run = 1 - 0 = 1. Therefore, m = Rise / Run = 2 / 1 = 2.'
+      - 'Step 3: Substitute the gradient ($m=2$) and the y-intercept ($c=1$) into the general form $y = mx + c$ to get the
+        equation: y = 2x + 1.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: The line M passes through the origin. Write down the equation of line M shown in the graph below.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - points:
+            - - -2
+              - 2
+            - - 2
+              - -2
+            label: M
+      finalAnswer: y = -x
+      stepByStepGuideline:
+      - 'Step 1: Identify the y-intercept ($c$). Since the line passes through the origin (0, 0), c = 0.'
+      - 'Step 2: Choose two clear points on the line, such as (0, 0) and (1, -1), to calculate the gradient ($m$).'
+      - 'Step 3: Calculate the gradient: $m = (y_2 - y_1) / (x_2 - x_1) = (-1 - 0) / (1 - 0) = -1$.'
+      - 'Step 4: Substitute $m=-1$ and $c=0$ into $y = mx + c$ to get the equation: y = -1x + 0, or simply y = -x.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: The graph shows a special straight line P. Identify the coordinates of two points on the line and use them
+        to determine the equation of line P.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - points:
+            - - -5
+              - -3
+            - - 5
+              - -3
+            label: P
+      finalAnswer: y = -3
+      stepByStepGuideline:
+      - 'Step 1: Observe that Line P is a horizontal line.'
+      - 'Step 2: Note the coordinates of any two points on the line, for example, (0, -3) and (4, -3).'
+      - 'Step 3: Since the y-coordinate is constant for all points on a horizontal line, the equation takes the form y = k,
+        where k is the y-coordinate.'
+      - 'Step 4: The line passes through y = -3. The equation is y = -3.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: Write the equation for the vertical line Q shown in the graph below.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - points:
+            - - 4
+              - -5
+            - - 4
+              - 5
+            label: Q
+      finalAnswer: x = 4
+      stepByStepGuideline:
+      - 'Step 1: Observe that Line Q is a vertical line.'
+      - 'Step 2: Note the coordinates of any two points on the line, for example, (4, 0) and (4, 5).'
+      - 'Step 3: Since the x-coordinate is constant for all points on a vertical line, the equation takes the form x = k,
+        where k is the x-coordinate.'
+      - 'Step 4: The line passes through x = 4. The equation is x = 4.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: For the line R shown, identify the y-intercept and calculate the gradient using the points (0, -2) and
+        (3, -1). Write the equation of line R.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          lines:
+          - points:
+            - - -3
+              - -3
+            - - 3
+              - -1
+            label: R
+      finalAnswer: y = (1/3)x - 2
+      stepByStepGuideline:
+      - 'Step 1: Identify the y-intercept ($c$). The line crosses the y-axis at (0, -2). Thus, c = -2.'
+      - 'Step 2: Calculate the gradient ($m$) using the given points $(x_1, y_1) = (0, -2)$ and $(x_2, y_2) = (3, -1)$.'
+      - 'Step 3: $m = (y_2 - y_1) / (x_2 - x_1) = (-1 - (-2)) / (3 - 0) = (1) / (3)$. The gradient is 1/3.'
+      - 'Step 4: Substitute the gradient ($m=1/3$) and the y-intercept ($c=-2$) into the general form $y = mx + c$ to get
+        the equation: y = (1/3)x - 2.'
+      id: q12-5
+      questionGroup: q12
+- id: coord-geom-node-13
+  nodeNumber: 13
+  title: Perpendicular Bisector Concept
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: A line segment [AB] is shown on the Cartesian plane, along with its perpendicular bisector (L). Define
+        the term 'perpendicular bisector' of a line segment [AB] by stating the two geometric properties it must satisfy regarding
+        the segment [AB].
+      avatarIntro: Understanding the definition is the first step! Think about where the line crosses the segment and how
+        it crosses it.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          points:
+          - id: A
+            x: -3
+            y: 0
+            color: blue
+          - id: B
+            x: 3
+            y: 0
+            color: blue
+          lines:
+          - type: segment
+            p1: A
+            p2: B
+            color: blue
+            label: '[AB]'
+          - type: line
+            p1:
+            - 0
+            - -5
+            p2:
+            - 0
+            - 5
+            color: red
+            label: L
+      finalAnswer: The perpendicular bisector is a line that 1) passes through the midpoint of the segment [AB] and 2) is
+        perpendicular (forms a 90° angle) to the segment [AB].
+      stepByStepGuideline:
+      - Recall the two components implied by the name 'perpendicular bisector'.
+      - The term 'bisector' means the line divides the segment into two equal halves, thus passing through the midpoint.
+      - The term 'perpendicular' means the line forms a right angle (90°) with the segment.
+      - Combine these two properties for the full definition.
+      id: q13-1
+      questionGroup: q13
+    - problemText: Segment [AB] connects A(1, 1) and B(5, 3). A point P(4, 0) is tested. Use the distance formula to calculate
+        the lengths of PA and PB. Based on your results, determine if P lies on the perpendicular bisector of [AB].
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -1
+          xMax: 7
+          yMin: -1
+          yMax: 5
+          showGrid: true
+          points:
+          - id: A
+            x: 1
+            y: 1
+            color: blue
+          - id: B
+            x: 5
+            y: 3
+            color: blue
+          - id: P
+            x: 4
+            y: 0
+            color: red
+          lines:
+          - type: segment
+            p1: A
+            p2: B
+            color: blue
+            label: '[AB]'
+          - type: line
+            p1:
+            - 2
+            - 4
+            p2:
+            - 4
+            - 0
+            color: gray
+            label: L (Bisector)
+      finalAnswer: PA = √10 and PB = √10. Since PA = PB, the point P(4, 0) lies on the perpendicular bisector of [AB].
+      stepByStepGuideline:
+      - Use the distance formula $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$ to calculate PA.
+      - 'PA: $\sqrt{(4 - 1)^2 + (0 - 1)^2} = \sqrt{3^2 + (-1)^2} = \sqrt{9 + 1} = \sqrt{10}$.'
+      - Use the distance formula to calculate PB.
+      - 'PB: $\sqrt{(4 - 5)^2 + (0 - 3)^2} = \sqrt{(-1)^2 + (-3)^2} = \sqrt{1 + 9} = \sqrt{10}$.'
+      - Compare the distances. Since PA = PB, the point P satisfies the equidistance property and therefore lies on the perpendicular
+        bisector.
+      id: q13-2
+      questionGroup: q13
+    - problemText: Point P is defined as lying on the perpendicular bisector of segment [AB]. State the geometric property
+        that relates the distances PA and PB. Furthermore, if a point Q(0, 4) is located off the bisector, and A=(-4, 2) and
+        B=(2, 2) are given, would Q be closer to A or B, based on the proximity regions defined by the bisector?
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -1
+          yMax: 5
+          showGrid: true
+          points:
+          - id: A
+            x: -4
+            y: 2
+            color: blue
+          - id: B
+            x: 2
+            y: 2
+            color: blue
+          - id: Q
+            x: 0
+            y: 4
+            color: red
+          lines:
+          - type: segment
+            p1: A
+            p2: B
+            color: blue
+            label: '[AB]'
+          - type: line
+            p1:
+            - -1
+            - -1
+            p2:
+            - -1
+            - 5
+            color: red
+            label: L (Bisector)
+      finalAnswer: 'Property: Any point P on the perpendicular bisector is equidistant from the endpoints (PA = PB). Proximity:
+        The perpendicular bisector (x = -1) divides the plane. Since Q(0, 4) is located where $x > -1$, it falls into the
+        region closer to B. Q is closer to B.'
+      stepByStepGuideline:
+      - 'Identify the equidistance property: If P is on the bisector, PA must equal PB.'
+      - Determine the equation of the perpendicular bisector for A(-4, 2) and B(2, 2). The midpoint M is (-1, 2). Since [AB]
+        is horizontal, the bisector is the vertical line x = -1.
+      - The line x = -1 separates the plane into points closer to A (where x < -1) and points closer to B (where x > -1).
+      - Check the coordinates of Q(0, 4). Since 0 > -1, Q is in the region closer to B.
+      id: q13-3
+      questionGroup: q13
+    - problemText: Segment [AB] connects A(-2, 0) and B(4, 0). Two points, P(1, 3) and Q(3, 1), are given. By calculating
+        the distances from A and B for both points, determine which single point (P or Q) lies on the perpendicular bisector
+        of [AB].
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -3
+          xMax: 5
+          yMin: -1
+          yMax: 4
+          showGrid: true
+          points:
+          - id: A
+            x: -2
+            y: 0
+            color: blue
+          - id: B
+            x: 4
+            y: 0
+            color: blue
+          - id: P
+            x: 1
+            y: 3
+            color: red
+          - id: Q
+            x: 3
+            y: 1
+            color: orange
+          lines:
+          - type: segment
+            p1: A
+            p2: B
+            color: blue
+            label: '[AB]'
+          - type: line
+            p1:
+            - 1
+            - -1
+            p2:
+            - 1
+            - 4
+            color: gray
+            label: L (Bisector)
+      finalAnswer: Point P lies on the perpendicular bisector. PA = √18 and PB = √18. Point Q does not lie on the bisector
+        as QA = √26 and QB = √2.
+      stepByStepGuideline:
+      - 'For P(1, 3): Calculate PA = $\sqrt{(1 - (-2))^2 + (3 - 0)^2} = \sqrt{3^2 + 3^2} = \sqrt{18}$.'
+      - Calculate PB = $\sqrt{(1 - 4)^2 + (3 - 0)^2} = \sqrt{(-3)^2 + 3^2} = \sqrt{18}$.
+      - Since PA = PB, P lies on the perpendicular bisector.
+      - 'For Q(3, 1): Calculate QA = $\sqrt{(3 - (-2))^2 + (1 - 0)^2} = \sqrt{5^2 + 1^2} = \sqrt{26}$.'
+      - Calculate QB = $\sqrt{(3 - 4)^2 + (1 - 0)^2} = \sqrt{(-1)^2 + 1^2} = \sqrt{2}$.
+      - Since QA ≠ QB, Q does not lie on the perpendicular bisector.
+      id: q13-4
+      questionGroup: q13
+    - problemText: In city planning, two new emergency service centers, Station A and Station B, must serve the population
+        efficiently. Explain how the perpendicular bisector of the line segment connecting A and B is used to determine the
+        boundary where a person requiring assistance is guaranteed to be closer to Station A than to Station B. (This boundary
+        forms part of a Voronoi diagram.)
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -3
+          yMax: 3
+          showGrid: true
+          points:
+          - id: A
+            x: -3
+            y: 2
+            color: blue
+            label: Station A
+          - id: B
+            x: 3
+            y: -1
+            color: red
+            label: Station B
+          lines:
+          - type: segment
+            p1:
+            - -3
+            - 2
+            p2:
+            - 3
+            - -1
+            color: gray
+          - type: line
+            p1:
+            - 0
+            - -3
+            p2:
+            - 0
+            - 3
+            color: black
+            label: Boundary (Bisector)
+      finalAnswer: The perpendicular bisector represents the locus of all points equidistant from Station A and Station B.
+        This line acts as the boundary. Any point on the side of the bisector containing Station A (the proximity region of
+        A) is strictly closer to A than to B, thus ensuring the guaranteed closer service from Station A.
+      stepByStepGuideline:
+      - 'Identify the purpose of the boundary: It must separate the regions based on minimum distance.'
+      - 'Recall the equidistance property: Points on the perpendicular bisector are equally far from A and B.'
+      - If a point moves slightly off the bisector toward A, its distance to A becomes smaller than its distance to B.
+      - 'Therefore, the perpendicular bisector defines the exact boundary line, dividing the plane into two proximity regions:
+        one where all points are closer to A, and one where all points are closer to B.'
+      id: q13-5
+      questionGroup: q13
+- id: coord-geom-node-14
+  nodeNumber: 14
+  title: Finding Equation of Perpendicular Bisector
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: A line segment connects Point A(1, 2) and Point B(5, 6). Find the equation of the perpendicular bisector
+        of [AB] and express your answer in the gradient-intercept form ($y = mx + c$).
+      avatarIntro: Mastering the perpendicular bisector requires combining midpoint calculation, gradient finding, and linear
+        equation skills. Let's tackle this fundamental geometry problem!
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 8
+          yMin: -5
+          yMax: 8
+          showGrid: true
+          points:
+          - x: 1
+            y: 2
+            label: A
+          - x: 5
+            y: 6
+            label: B
+          lines:
+          - type: segment
+            p1:
+            - 1
+            - 2
+            p2:
+            - 5
+            - 6
+          - type: line
+            equation: y = -x + 7
+      finalAnswer: $y = -x + 7$
+      stepByStepGuideline:
+      - 'Step 1: Calculate the midpoint M of [AB]. M = ((1+5)/2, (2+6)/2) = (3, 4).'
+      - 'Step 2: Calculate the gradient ($m_{AB}$) of segment [AB]. $m_{AB} = (6 - 2) / (5 - 1) = 4/4 = 1$.'
+      - 'Step 3: Determine the perpendicular gradient ($m_{perp}$). $m_{perp} = -1 / m_{AB} = -1/1 = -1$.'
+      - 'Step 4: Use the point-gradient form $y - y_M = m_{perp}(x - x_M)$ with M(3, 4) and $m_{perp} = -1$: $y - 4 = -1(x
+        - 3)$.'
+      - 'Step 5: Simplify the equation to the required gradient-intercept form ($y = mx + c$): $y - 4 = -x + 3$, so $y = -x
+        + 7$.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: Two landmarks, P(3, 1) and Q(6, 5), are marked on a map. A surveyor needs to establish a safety boundary
+        that runs along the perpendicular bisector of the line segment [PQ]. Find the equation of this boundary line and present
+        your final answer in the general form ($ax + by = d$), where a, b, and d are integers.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 8
+          yMin: -5
+          yMax: 8
+          showGrid: true
+          points:
+          - x: 3
+            y: 1
+            label: P
+          - x: 6
+            y: 5
+            label: Q
+          lines:
+          - type: segment
+            p1:
+            - 3
+            - 1
+            p2:
+            - 6
+            - 5
+          - type: line
+            equation: 6x + 8y = 51
+      finalAnswer: $6x + 8y = 51$
+      stepByStepGuideline:
+      - 'Step 1: Calculate the midpoint M of [PQ]. M = ((3+6)/2, (1+5)/2) = (9/2, 3).'
+      - 'Step 2: Calculate the gradient ($m_{PQ}$) of segment [PQ]. $m_{PQ} = (5 - 1) / (6 - 3) = 4/3$.'
+      - 'Step 3: Determine the perpendicular gradient ($m_{perp}$). $m_{perp} = -1 / (4/3) = -3/4$.'
+      - 'Step 4: Use the point-gradient form $y - y_M = m_{perp}(x - x_M)$ with M(9/2, 3) and $m_{perp} = -3/4$: $y - 3 =
+        -3/4 (x - 9/2)$.'
+      - 'Step 5: Simplify and rearrange to the general form ($ax + by = d$). Multiply the entire equation by 8 to clear denominators:
+        $8(y - 3) = 8(-3/4)(x - 9/2) \implies 8y - 24 = -6(x - 9/2) \implies 8y - 24 = -6x + 27$. Rearranging gives $6x +
+        8y = 51$.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: An engineering team is planning a route for a new underground cable segment [CD], connecting C(−4, −1)
+        and D(2, 3). Determine the equation of the line perpendicular to and passing through the center of this segment. Give
+        your answer in the form $y = mx + c$.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 8
+          yMin: -5
+          yMax: 8
+          showGrid: true
+          points:
+          - x: -4
+            y: -1
+            label: C
+          - x: 2
+            y: 3
+            label: D
+          lines:
+          - type: segment
+            p1:
+            - -4
+            - -1
+            p2:
+            - 2
+            - 3
+          - type: line
+            equation: y = -1.5x - 0.5
+      finalAnswer: $y = -\frac{3}{2}x - \frac{1}{2}$
+      stepByStepGuideline:
+      - 'Step 1: Calculate the midpoint M of [CD]. M = ((-4+2)/2, (-1+3)/2) = (-1, 1).'
+      - 'Step 2: Calculate the gradient ($m_{CD}$) of segment [CD]. $m_{CD} = (3 - (-1)) / (2 - (-4)) = 4/6 = 2/3$.'
+      - 'Step 3: Determine the perpendicular gradient ($m_{perp}$). $m_{perp} = -1 / (2/3) = -3/2$.'
+      - 'Step 4: Use the point-gradient form $y - y_M = m_{perp}(x - x_M)$ with M(-1, 1) and $m_{perp} = -3/2$: $y - 1 = -3/2
+        (x - (-1))$, or $y - 1 = -3/2 (x + 1)$.'
+      - 'Step 5: Simplify the equation to the required gradient-intercept form ($y = mx + c$): $y - 1 = -3/2 x - 3/2$. Adding
+        1 (or 2/2) to both sides gives $y = -3/2 x - 1/2$.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: A particle moves along a straight path defined by the segment [RS] where R(0, 5) and S(4, 1). Find the
+        equation of the line that perpendicularly bisects this segment. Express your final answer in the general form ($ax
+        + by = d$).
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 8
+          yMin: -5
+          yMax: 8
+          showGrid: true
+          points:
+          - x: 0
+            y: 5
+            label: R
+          - x: 4
+            y: 1
+            label: S
+          lines:
+          - type: segment
+            p1:
+            - 0
+            - 5
+            p2:
+            - 4
+            - 1
+          - type: line
+            equation: y = x + 1
+      finalAnswer: $x - y = -1$ (or $y - x = 1$)
+      stepByStepGuideline:
+      - 'Step 1: Calculate the midpoint M of [RS]. M = ((0+4)/2, (5+1)/2) = (2, 3).'
+      - 'Step 2: Calculate the gradient ($m_{RS}$) of segment [RS]. $m_{RS} = (1 - 5) / (4 - 0) = -4/4 = -1$. (This is an
+        integer gradient).'
+      - 'Step 3: Determine the perpendicular gradient ($m_{perp}$). $m_{perp} = -1 / (-1) = 1$.'
+      - 'Step 4: Use the point-gradient form $y - y_M = m_{perp}(x - x_M)$ with M(2, 3) and $m_{perp} = 1$: $y - 3 = 1(x -
+        2)$.'
+      - 'Step 5: Simplify and rearrange to the general form ($ax + by = d$): $y - 3 = x - 2$. Subtract x and add 3 to both
+        sides: $-x + y = 1$, or equivalently, $x - y = -1$.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: In architectural design, a support beam must be positioned along the perpendicular bisector of a wall segment
+        [GH], where G(−3, 6) and H(5, 1). Find the equation of the line representing the support beam, leaving your final
+        answer in the point-gradient form ($y - y_1 = m(x - x_1)$). Use the exact fractional coordinates for the midpoint.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 8
+          yMin: -5
+          yMax: 8
+          showGrid: true
+          points:
+          - x: -3
+            y: 6
+            label: G
+          - x: 5
+            y: 1
+            label: H
+          lines:
+          - type: segment
+            p1:
+            - -3
+            - 6
+            p2:
+            - 5
+            - 1
+          - type: line
+            equation: 16x - 10y = -19
+      finalAnswer: $y - \frac{7}{2} = \frac{8}{5}(x - 1)$
+      stepByStepGuideline:
+      - 'Step 1: Calculate the midpoint M of [GH]. M = ((-3+5)/2, (6+1)/2) = (1, 7/2).'
+      - 'Step 2: Calculate the gradient ($m_{GH}$) of segment [GH]. $m_{GH} = (1 - 6) / (5 - (-3)) = -5/8$.'
+      - 'Step 3: Determine the perpendicular gradient ($m_{perp}$). $m_{perp} = -1 / (-5/8) = 8/5$.'
+      - 'Step 4: Use the midpoint M(1, 7/2) and the perpendicular gradient $m_{perp} = 8/5$ to write the equation directly
+        in the point-gradient form ($y - y_1 = m(x - x_1)$): $y - 7/2 = 8/5 (x - 1)$.'
+      - 'Step 5: The answer is already in the required point-gradient form.'
+      id: q14-5
+      questionGroup: q14
+- id: coord-geom-node-15
+  nodeNumber: 15
+  title: Proving Triangle Properties
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: A construction project defines a triangular section using vertices A(0, 0), B(6, 0), and C(3, 4). Use the
+        distance formula to prove that triangle ABC is isosceles.
+      avatarIntro: Welcome! Proving triangle properties using coordinate geometry requires careful calculation of distances
+        or gradients. Let's start by calculating all three side lengths.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -1
+          xMax: 7
+          yMin: -1
+          yMax: 5
+          showGrid: true
+          points:
+          - coord:
+            - 0
+            - 0
+            label: A
+          - coord:
+            - 6
+            - 0
+            label: B
+          - coord:
+            - 3
+            - 4
+            label: C
+      finalAnswer: The lengths are AB = 6, AC = 5, and BC = 5. Since AC = BC, triangle ABC is isosceles.
+      stepByStepGuideline:
+      - 'Calculate the length of side AB using the distance formula: $d_{AB} = \sqrt{(6-0)^2 + (0-0)^2} = \sqrt{36} = 6$.'
+      - 'Calculate the length of side AC: $d_{AC} = \sqrt{(3-0)^2 + (4-0)^2} = \sqrt{9 + 16} = \sqrt{25} = 5$.'
+      - 'Calculate the length of side BC: $d_{BC} = \sqrt{(3-6)^2 + (4-0)^2} = \sqrt{(-3)^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25}
+        = 5$.'
+      - Compare the side lengths. Since AC = BC = 5, state the conclusion that triangle ABC is isosceles.
+      id: q15-1
+      questionGroup: q15
+    - problemText: Three navigation points are defined by coordinates D(1, 4), E(5, 6), and F(7, 2). Use the gradient formula
+        to prove that triangle DEF is right-angled.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 0
+          xMax: 8
+          yMin: 1
+          yMax: 7
+          showGrid: true
+          points:
+          - coord:
+            - 1
+            - 4
+            label: D
+          - coord:
+            - 5
+            - 6
+            label: E
+          - coord:
+            - 7
+            - 2
+            label: F
+      finalAnswer: The gradient of DE is 1/2 and the gradient of EF is -2. Since $m_{DE} \times m_{EF} = (1/2) \times (-2)
+        = -1$, the sides DE and EF are perpendicular, meaning triangle DEF is right-angled at E.
+      stepByStepGuideline:
+      - 'Calculate the gradient of side DE: $m_{DE} = (6-4)/(5-1) = 2/4 = 1/2$.'
+      - 'Calculate the gradient of side EF: $m_{EF} = (2-6)/(7-5) = -4/2 = -2$.'
+      - 'Calculate the gradient of side DF: $m_{DF} = (2-4)/(7-1) = -2/6 = -1/3$. (Optional step, but good practice)'
+      - Check if any two gradients multiply to -1. $m_{DE} \times m_{EF} = (1/2) \times (-2) = -1$.
+      - Since the product of the gradients of DE and EF is -1, the angle at E is $90^\circ$. Conclude that triangle DEF is
+        right-angled.
+      id: q15-2
+      questionGroup: q15
+    - problemText: A geometric design features a triangle PQR with vertices P(2, 2), Q(6, 2), and R(4, $2 + 2\sqrt{3}$). Prove
+        that triangle PQR is equilateral by calculating all three side lengths.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 1
+          xMax: 7
+          yMin: 1
+          yMax: 6
+          showGrid: true
+          points:
+          - coord:
+            - 2
+            - 2
+            label: P
+          - coord:
+            - 6
+            - 2
+            label: Q
+          - coord:
+            - 4
+            - 5.46
+            label: R
+      finalAnswer: The lengths are PQ = 4, PR = 4, and QR = 4. Since all three sides are equal, triangle PQR is equilateral.
+      stepByStepGuideline:
+      - 'Calculate the length of side PQ: $d_{PQ} = \sqrt{(6-2)^2 + (2-2)^2} = \sqrt{4^2 + 0} = 4$.'
+      - 'Calculate the length of side PR: $d_{PR} = \sqrt{(4-2)^2 + (2+2\sqrt{3}-2)^2} = \sqrt{2^2 + (2\sqrt{3})^2} = \sqrt{4
+        + 12} = \sqrt{16} = 4$.'
+      - 'Calculate the length of side QR: $d_{QR} = \sqrt{(4-6)^2 + (2+2\sqrt{3}-2)^2} = \sqrt{(-2)^2 + (2\sqrt{3})^2} = \sqrt{4
+        + 12} = \sqrt{16} = 4$.'
+      - Since PQ = PR = QR = 4, conclude that triangle PQR is equilateral.
+      id: q15-3
+      questionGroup: q15
+    - problemText: Given triangle JKL with vertices J(1, 1), K(4, 3), and L(2, 6). Use the Pythagorean theorem ($a^2 + b^2
+        = c^2$) and the distance formula to prove that JKL is a right-angled triangle.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 0
+          xMax: 7
+          yMin: 0
+          yMax: 7
+          showGrid: true
+          points:
+          - coord:
+            - 1
+            - 1
+            label: J
+          - coord:
+            - 4
+            - 3
+            label: K
+          - coord:
+            - 2
+            - 6
+            label: L
+      finalAnswer: $JK^2 = 13$, $KL^2 = 13$, and $LJ^2 = 26$. Since $JK^2 + KL^2 = 13 + 13 = 26 = LJ^2$, the triangle JKL
+        satisfies the Pythagorean theorem and is therefore right-angled (at K).
+      stepByStepGuideline:
+      - 'Calculate the square of the length of JK: $JK^2 = (4-1)^2 + (3-1)^2 = 3^2 + 2^2 = 9 + 4 = 13$.'
+      - 'Calculate the square of the length of KL: $KL^2 = (2-4)^2 + (6-3)^2 = (-2)^2 + 3^2 = 4 + 9 = 13$.'
+      - 'Calculate the square of the length of LJ (the longest side): $LJ^2 = (1-2)^2 + (1-6)^2 = (-1)^2 + (-5)^2 = 1 + 25
+        = 26$.'
+      - Check if $JK^2 + KL^2 = LJ^2$. Since $13 + 13 = 26$, the condition is met.
+      - Conclude that triangle JKL is right-angled.
+      id: q15-4
+      questionGroup: q15
+    - problemText: A surveyor marks three boundary points E(-3, 1), F(1, 5), and G(5, 1). Calculate the lengths of all three
+        sides to confirm that triangle EFG is isosceles.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 7
+          yMin: 0
+          yMax: 6
+          showGrid: true
+          points:
+          - coord:
+            - -3
+            - 1
+            label: E
+          - coord:
+            - 1
+            - 5
+            label: F
+          - coord:
+            - 5
+            - 1
+            label: G
+      finalAnswer: The lengths are EF = $\sqrt{32}$, FG = $\sqrt{32}$, and GE = 8. Since EF = FG, triangle EFG is isosceles.
+      stepByStepGuideline:
+      - 'Calculate the length of side EF: $d_{EF} = \sqrt{(1 - (-3))^2 + (5 - 1)^2} = \sqrt{4^2 + 4^2} = \sqrt{16 + 16} =
+        \sqrt{32}$.'
+      - 'Calculate the length of side FG: $d_{FG} = \sqrt{(5 - 1)^2 + (1 - 5)^2} = \sqrt{4^2 + (-4)^2} = \sqrt{16 + 16} =
+        \sqrt{32}$.'
+      - 'Calculate the length of side GE: $d_{GE} = \sqrt{(-3 - 5)^2 + (1 - 1)^2} = \sqrt{(-8)^2 + 0^2} = \sqrt{64} = 8$.'
+      - Compare the side lengths. Since EF = FG = $\sqrt{32}$, conclude that triangle EFG is isosceles.
+      id: q15-5
+      questionGroup: q15
+- id: coord-geom-node-16
+  nodeNumber: 16
+  title: Proving Quadrilateral Properties
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: A surveyor maps out a plot of land defined by the coordinates A(1, 1), B(5, 3), C(6, 0), and D(2, -2).
+        Prove that the quadrilateral ABCD is a parallelogram using the property that opposite sides must be parallel.
+      avatarIntro: Mastering coordinate geometry proofs is essential! Use the gradient formula carefully to determine if opposite
+        sides of this quadrilateral are parallel.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -2
+          xMax: 7
+          yMin: -3
+          yMax: 4
+          showGrid: true
+          points:
+          - x: 1
+            y: 1
+            label: A
+          - x: 5
+            y: 3
+            label: B
+          - x: 6
+            y: 0
+            label: C
+          - x: 2
+            y: -2
+            label: D
+      finalAnswer: The quadrilateral ABCD is a parallelogram because opposite sides AB and DC have a gradient of 1/2, and
+        opposite sides BC and AD have a gradient of -3. Since both pairs of opposite sides are parallel, the figure is a parallelogram.
+      stepByStepGuideline:
+      - 'Calculate the gradient of side AB: m_AB = (3 - 1) / (5 - 1) = 2/4 = 1/2.'
+      - 'Calculate the gradient of side DC: m_DC = (0 - (-2)) / (6 - 2) = 2/4 = 1/2.'
+      - Since m_AB = m_DC, the sides AB and DC are parallel.
+      - 'Calculate the gradient of side BC: m_BC = (0 - 3) / (6 - 5) = -3/1 = -3.'
+      - 'Calculate the gradient of side AD: m_AD = (-2 - 1) / (2 - 1) = -3/1 = -3.'
+      - Since m_BC = m_AD, the sides BC and AD are parallel. As both pairs of opposite sides are parallel, ABCD is a parallelogram.
+      id: q16-1
+      questionGroup: q16
+    - problemText: Given the vertices P(0, 0), Q(4, 3), R(8, 0), and S(4, -3), prove that the quadrilateral PQRS is a rhombus.
+        Justify your answer using the defining property of a rhombus.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -1
+          xMax: 9
+          yMin: -4
+          yMax: 4
+          showGrid: true
+          points:
+          - x: 0
+            y: 0
+            label: P
+          - x: 4
+            y: 3
+            label: Q
+          - x: 8
+            y: 0
+            label: R
+          - x: 4
+            y: -3
+            label: S
+      finalAnswer: The quadrilateral PQRS is a rhombus because the lengths of all four sides are equal (PQ = QR = RS = SP
+        = 5 units).
+      stepByStepGuideline:
+      - 'Use the distance formula to calculate the length of side PQ: PQ = sqrt[(4-0)² + (3-0)²] = sqrt[16 + 9] = 5.'
+      - 'Calculate the length of side QR: QR = sqrt[(8-4)² + (0-3)²] = sqrt[16 + 9] = 5.'
+      - 'Calculate the length of side RS: RS = sqrt[(4-8)² + (-3-0)²] = sqrt[16 + 9] = 5.'
+      - 'Calculate the length of side SP: SP = sqrt[(0-4)² + (0-(-3))²] = sqrt[16 + 9] = 5.'
+      - Since all four side lengths (PQ, QR, RS, SP) are equal, PQRS is a rhombus.
+      id: q16-2
+      questionGroup: q16
+    - problemText: Show that the quadrilateral EFGH with vertices E(1, 3), F(4, 4), G(6, -2), and H(3, -3) is a rectangle.
+        You must prove it is a parallelogram first, and then show that adjacent sides are perpendicular.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 0
+          xMax: 7
+          yMin: -4
+          yMax: 5
+          showGrid: true
+          points:
+          - x: 1
+            y: 3
+            label: E
+          - x: 4
+            y: 4
+            label: F
+          - x: 6
+            y: -2
+            label: G
+          - x: 3
+            y: -3
+            label: H
+      finalAnswer: EFGH is a rectangle. Opposite sides EF and HG are parallel (m=1/3), and FG and EH are parallel (m=-3),
+        confirming it is a parallelogram. Since the adjacent sides EF and FG have gradients (1/3) and (-3), their product
+        is -1, meaning they are perpendicular (90°).
+      stepByStepGuideline:
+      - 'Calculate the gradients of the four sides: m_EF = 1/3, m_HG = 1/3; m_FG = -3, m_EH = -3.'
+      - Confirm EFGH is a parallelogram because opposite sides have equal gradients (EF || HG and FG || EH).
+      - Check for perpendicularity between adjacent sides EF and FG.
+      - 'Multiply the adjacent gradients: m_EF × m_FG = (1/3) × (-3) = -1.'
+      - Since the product of the gradients of two adjacent sides is -1, the angle ∠EFG is 90°. A parallelogram with a right
+        angle is a rectangle.
+      id: q16-3
+      questionGroup: q16
+    - problemText: A design layout uses the vertices J(0, 2), K(4, 0), L(2, -4), and M(-2, -2). Prove that the quadrilateral
+        JKLM is a square.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -3
+          xMax: 5
+          yMin: -5
+          yMax: 3
+          showGrid: true
+          points:
+          - x: 0
+            y: 2
+            label: J
+          - x: 4
+            y: 0
+            label: K
+          - x: 2
+            y: -4
+            label: L
+          - x: -2
+            y: -2
+            label: M
+      finalAnswer: JKLM is a square because all four sides are equal in length (√20 units), and adjacent sides JK (m=-1/2)
+        and KL (m=2) are perpendicular (since (-1/2) * 2 = -1).
+      stepByStepGuideline:
+      - 'Calculate the side lengths using the distance formula: JK = KL = LM = MJ = sqrt(20). This confirms it is a rhombus
+        (or square).'
+      - 'Calculate the gradient of side JK: m_JK = (0 - 2) / (4 - 0) = -2/4 = -1/2.'
+      - 'Calculate the gradient of side KL: m_KL = (-4 - 0) / (2 - 4) = -4/-2 = 2.'
+      - 'Check for perpendicularity of adjacent sides: m_JK × m_KL = (-1/2) × 2 = -1.'
+      - Since all sides are equal and adjacent sides are perpendicular, the quadrilateral JKLM is a square.
+      id: q16-4
+      questionGroup: q16
+    - problemText: Prove that the quadrilateral RSTU with vertices R(1, 5), S(5, 1), T(3, -3), and U(-1, 1) is a parallelogram
+        using the property that its diagonals must bisect each other (i.e., they share the same midpoint).
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -2
+          xMax: 6
+          yMin: -4
+          yMax: 6
+          showGrid: true
+          points:
+          - x: 1
+            y: 5
+            label: R
+          - x: 5
+            y: 1
+            label: S
+          - x: 3
+            y: -3
+            label: T
+          - x: -1
+            y: 1
+            label: U
+      finalAnswer: The quadrilateral RSTU is a parallelogram because the midpoint of diagonal RT is (2, 1) and the midpoint
+        of diagonal SU is also (2, 1). Since the diagonals bisect each other, RSTU is a parallelogram.
+      stepByStepGuideline:
+      - 'Identify the two diagonals: RT and SU.'
+      - 'Find the midpoint of diagonal RT: M_RT = ((x_R + x_T)/2, (y_R + y_T)/2) = ((1 + 3)/2, (5 + (-3))/2) = (4/2, 2/2)
+        = (2, 1).'
+      - 'Find the midpoint of diagonal SU: M_SU = ((x_S + x_U)/2, (y_S + y_U)/2) = ((5 + (-1))/2, (1 + 1)/2) = (4/2, 2/2)
+        = (2, 1).'
+      - Compare the midpoints. Since M_RT = M_SU, the diagonals bisect each other, proving that RSTU is a parallelogram.
+      id: q16-5
+      questionGroup: q16
+- id: coord-geom-node-17
+  nodeNumber: 17
+  title: Proving Collinearity
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: Show that the points A(2, 1), B(4, 5), and C(6, 9) are collinear using the gradient method.
+      avatarIntro: Understanding collinearity is key to geometric proofs. Remember, points are collinear if the gradient between
+        any two adjacent pairs is identical.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -1
+          xMax: 7
+          yMin: 0
+          yMax: 10
+          showGrid: true
+          points:
+          - x: 2
+            y: 1
+            label: A
+          - x: 4
+            y: 5
+            label: B
+          - x: 6
+            y: 9
+            label: C
+      finalAnswer: The points A, B, and C are collinear because $m_{AB} = 2$ and $m_{BC} = 2$. Since the gradients are equal,
+        the points lie on the same straight line.
+      stepByStepGuideline:
+      - Calculate the gradient of the line segment AB using $m = (y_2 - y_1) / (x_2 - x_1)$.
+      - $m_{AB} = (5 - 1) / (4 - 2) = 4 / 2 = 2$.
+      - Calculate the gradient of the line segment BC.
+      - $m_{BC} = (9 - 5) / (6 - 4) = 4 / 2 = 2$.
+      - Compare the gradients. Since $m_{AB} = m_{BC} = 2$, the points A, B, and C are collinear.
+      id: q17-1
+      questionGroup: q17
+    - problemText: Are the three points P(0, 7), Q(3, 4), and R(5, 0) collinear? Justify your answer using gradient calculations.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -1
+          xMax: 6
+          yMin: -1
+          yMax: 8
+          showGrid: true
+          points:
+          - x: 0
+            y: 7
+            label: P
+          - x: 3
+            y: 4
+            label: Q
+          - x: 5
+            y: 0
+            label: R
+      finalAnswer: The points P, Q, and R are NOT collinear because $m_{PQ} = -1$ and $m_{QR} = -2$. Since the gradients are
+        not equal ($-1 \neq -2$), the points do not lie on the same straight line.
+      stepByStepGuideline:
+      - Calculate the gradient of the segment PQ.
+      - $m_{PQ} = (4 - 7) / (3 - 0) = -3 / 3 = -1$.
+      - Calculate the gradient of the segment QR.
+      - $m_{QR} = (0 - 4) / (5 - 3) = -4 / 2 = -2$.
+      - Compare the gradients. Since $m_{PQ} \neq m_{QR}$, the points P, Q, and R are not collinear.
+      id: q17-2
+      questionGroup: q17
+    - problemText: Verify the collinearity of points D(-4, -5), E(-4, 0), and F(-4, 3) using gradient analysis. Explain the
+        meaning of the result.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 0
+          yMin: -6
+          yMax: 4
+          showGrid: true
+          points:
+          - x: -4
+            y: -5
+            label: D
+          - x: -4
+            y: 0
+            label: E
+          - x: -4
+            y: 3
+            label: F
+      finalAnswer: The points D, E, and F are collinear. Both $m_{DE}$ and $m_{EF}$ result in division by zero, meaning the
+        line is vertical. All points lying on the same vertical line (where $x=-4$) are collinear.
+      stepByStepGuideline:
+      - Calculate the gradient of the segment DE.
+      - $m_{DE} = (0 - (-5)) / (-4 - (-4)) = 5 / 0$. The gradient is undefined.
+      - Calculate the gradient of the segment EF.
+      - $m_{EF} = (3 - 0) / (-4 - (-4)) = 3 / 0$. The gradient is undefined.
+      - Since both segments have an undefined gradient, they form a vertical line ($x=-4$). Therefore, the points D, E, and
+        F are collinear.
+      id: q17-3
+      questionGroup: q17
+    - problemText: Prove that the points J(-1, 6), K(3, 6), and L(7, 6) lie on the same straight line.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -2
+          xMax: 8
+          yMin: 4
+          yMax: 8
+          showGrid: true
+          points:
+          - x: -1
+            y: 6
+            label: J
+          - x: 3
+            y: 6
+            label: K
+          - x: 7
+            y: 6
+            label: L
+      finalAnswer: The points J, K, and L are collinear because $m_{JK} = 0$ and $m_{KL} = 0$. Since the gradients are equal
+        to zero, the points lie on the same horizontal line ($y=6$).
+      stepByStepGuideline:
+      - Calculate the gradient of the segment JK.
+      - $m_{JK} = (6 - 6) / (3 - (-1)) = 0 / 4 = 0$.
+      - Calculate the gradient of the segment KL.
+      - $m_{KL} = (6 - 6) / (7 - 3) = 0 / 4 = 0$.
+      - Since $m_{JK} = m_{KL} = 0$, the points J, K, and L are collinear.
+      id: q17-4
+      questionGroup: q17
+    - problemText: Show that the points R(7, 8), S(1, 5), and T(-5, 2) are collinear.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 8
+          yMin: 0
+          yMax: 9
+          showGrid: true
+          points:
+          - x: 7
+            y: 8
+            label: R
+          - x: 1
+            y: 5
+            label: S
+          - x: -5
+            y: 2
+            label: T
+      finalAnswer: The points R, S, and T are collinear because $m_{RS} = 1/2$ and $m_{ST} = 1/2$. Since the gradients are
+        equal, the points lie on the same straight line.
+      stepByStepGuideline:
+      - Calculate the gradient of the line segment RS.
+      - $m_{RS} = (5 - 8) / (1 - 7) = -3 / -6 = 1/2$.
+      - Calculate the gradient of the line segment ST.
+      - $m_{ST} = (2 - 5) / (-5 - 1) = -3 / -6 = 1/2$.
+      - Since $m_{RS} = m_{ST} = 1/2$, the points R, S, and T are collinear.
+      id: q17-5
+      questionGroup: q17
+- id: coord-geom-node-18
+  nodeNumber: 18
+  title: 3D Coordinates and Rectangular Prisms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: coordinate3DPlane
+    preWrittenQuestions:
+    - problemText: A large cargo container is modeled as a rectangular prism with dimensions 5 units (length, X-axis) × 6
+        units (depth, Y-axis) × 8 units (height, Z-axis). If one corner of the container is placed at the origin (0, 0, 0),
+        what are the coordinates of the corner opposite to the origin?
+      avatarIntro: Welcome! Understanding 3D coordinates is key to visualizing shapes in space. Let's start by finding the
+        coordinates of the furthest point in this container.
+      mathTool:
+        toolName: coordinate3DPlane
+        parameters:
+          length: 5
+          width: 6
+          height: 8
+          showAxes: true
+          showOriginLabel: true
+          customPoints: []
+      finalAnswer: (5, 6, 8)
+      stepByStepGuideline:
+      - 'Identify the dimensions corresponding to the axes: Length = 5 (X), Depth = 6 (Y), Height = 8 (Z).'
+      - When a rectangular prism has one corner at the origin (0, 0, 0), the opposite corner represents the maximum extent
+        along each axis.
+      - The coordinates of the opposite corner are (Length, Depth, Height).
+      - 'Substitute the values: (5, 6, 8).'
+      id: q18-1
+      questionGroup: q18
+    - problemText: A sculptor designs a geometric model in the shape of a perfect cube with side length 3 units. If one vertex
+        is positioned at the origin (0, 0, 0), list all 8 coordinates that define the vertices of this cube.
+      mathTool:
+        toolName: coordinate3DPlane
+        parameters:
+          length: 3
+          width: 3
+          height: 3
+          showAxes: true
+          showOriginLabel: true
+          customPoints: []
+      finalAnswer: (0, 0, 0), (3, 0, 0), (0, 3, 0), (0, 0, 3), (3, 3, 0), (3, 0, 3), (0, 3, 3), (3, 3, 3)
+      stepByStepGuideline:
+      - A cube with side length 3 starting at the origin has maximum coordinates (3, 3, 3).
+      - The coordinates of the vertices are formed by combining 0 and the dimension value (3) for the X, Y, and Z positions.
+      - 'List all 8 possible combinations: (0, 0, 0), (3, 0, 0), (0, 3, 0), (0, 0, 3), (3, 3, 0), (3, 0, 3), (0, 3, 3), and
+        (3, 3, 3).'
+      id: q18-2
+      questionGroup: q18
+    - problemText: A structural engineer places a support point P(2, 3, 4) at a corner of a standard rectangular prism whose
+        dimensions are 2 (length) × 3 (depth) × 4 (height). Assuming the standard orientation (X=length, Y=depth, Z=height),
+        which numerical value in the ordered triple P(2, 3, 4) represents the depth of the prism?
+      mathTool:
+        toolName: coordinate3DPlane
+        parameters:
+          length: 3
+          width: 2
+          height: 4
+          showAxes: true
+          showOriginLabel: true
+          customPoints:
+          - 2,3,4
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Recall the standard coordinate convention for a rectangular prism originating at (0, 0, 0): (X, Y, Z) corresponds
+        to (Length, Depth, Height).'
+      - The depth is represented by the Y-coordinate.
+      - For the point P(2, 3, 4), the Y-coordinate is 3. Therefore, 3 represents the depth of the prism.
+      id: q18-3
+      questionGroup: q18
+    - problemText: A manufacturing company uses large storage units modeled as rectangular prisms measuring 4 units × 7 units
+        × 9 units. How many distinct vertices (corners) does this three-dimensional shape have?
+      mathTool:
+        toolName: coordinate3DPlane
+        parameters:
+          length: 7
+          width: 4
+          height: 9
+          showAxes: true
+          showOriginLabel: true
+          customPoints: []
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - A rectangular prism (or cuboid) is defined by its length, width (depth), and height.
+      - Regardless of the specific dimensions (4, 7, and 9), a rectangular prism always has 8 corners.
+      - These 8 vertices correspond to all possible combinations of the minimum (0) and maximum dimension values along the
+        X, Y, and Z axes.
+      id: q18-4
+      questionGroup: q18
+    - problemText: A robot is navigating a simulated 3D environment defined by a cube with side length 5, starting at the
+        origin. The robot must move to the specific vertex that lies on the YZ coordinate plane (where X=0) and has the maximum
+        possible Z-coordinate. What are the coordinates of this target vertex?
+      mathTool:
+        toolName: coordinate3DPlane
+        parameters:
+          length: 5
+          width: 5
+          height: 5
+          showAxes: true
+          showOriginLabel: true
+          customPoints:
+          - 0,5,5
+      finalAnswer: (0, 5, 5)
+      stepByStepGuideline:
+      - 'Identify the constraints: The cube has side length 5, so coordinates are combinations of 0 and 5.'
+      - The vertex must lie on the YZ plane. This means the X-coordinate must be 0.
+      - The vertex must have the maximum possible Z-coordinate, which is Z=5.
+      - The remaining Y-coordinate must also be a dimension extreme (0 or 5). Choosing Y=5 ensures it is a vertex and maximizes
+        the distance from the XZ plane.
+      - Combining these requirements gives the coordinates (X, Y, Z) = (0, 5, 5).
+      id: q18-5
+      questionGroup: q18
+- id: coord-geom-node-19
+  nodeNumber: 19
+  title: Distance in 3D - Space Diagonal
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: coordinate3DPlane
+    preWrittenQuestions:
+    - problemText: A delivery drone follows a flight path starting at point A(2, -1, 4) and ending at point B(-1, 3, 0). Calculate
+        the straight-line distance, in exact surd form, that the drone traveled between A and B.
+      avatarIntro: Mastering the 3D distance formula is key to navigating space. Let's start by finding the distance between
+        two points.
+      mathTool: null
+      finalAnswer: √41 units
+      stepByStepGuideline:
+      - 'Identify the coordinates: A(x₁, y₁, z₁) = (2, -1, 4) and B(x₂, y₂, z₂) = (-1, 3, 0).'
+      - 'Apply the 3D distance formula: d = √[(x₂−x₁)² + (y₂−y₁)² + (z₂−z₁)²].'
+      - 'Substitute the values: d = √[(-1 - 2)² + (3 - (-1))² + (0 - 4)²].'
+      - 'Calculate the squares: d = √[(-3)² + (4)² + (-4)²] = √[9 + 16 + 16].'
+      - 'Simplify the result: d = √41. Since 41 is a prime number, the surd cannot be simplified further.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: A construction company is installing a long diagonal bracing wire inside a rectangular shelving unit. The
+        unit has dimensions of Length = 6 meters, Width = 2 meters, and Height = 3 meters. Calculate the exact length of the
+        space diagonal (the bracing wire).
+      mathTool:
+        toolName: coordinate3DPlane
+        parameters:
+          length: 2
+          width: 6
+          height: 3
+          showAxes: true
+          showSpaceDiagonal: true
+      finalAnswer: 7 meters
+      stepByStepGuideline:
+      - 'Identify the dimensions: l = 6, w = 2, h = 3.'
+      - 'Apply the space diagonal formula: d = √(l² + w² + h²).'
+      - 'Substitute the values: d = √(6² + 2² + 3²).'
+      - 'Calculate the squares: d = √(36 + 4 + 9).'
+      - 'Sum the values: d = √49.'
+      - 'Find the square root: d = 7 meters.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: An engineer needs to place a second anchor point Q(1, 6, z) such that the distance between it and the first
+        anchor point P(4, 2, 1) is exactly √41 units. Find the two possible values of the z-coordinate for point Q.
+      mathTool: null
+      finalAnswer: z = 5 or z = -3
+      stepByStepGuideline:
+      - 'Set up the distance formula using the given distance d = √41: d² = (x₂−x₁)² + (y₂−y₁)² + (z₂−z₁)².'
+      - 'Substitute known values: (√41)² = (1 - 4)² + (6 - 2)² + (z - 1)².'
+      - 'Simplify the equation: 41 = (-3)² + (4)² + (z - 1)².'
+      - 'Calculate the known squared terms: 41 = 9 + 16 + (z - 1)², which simplifies to 41 = 25 + (z - 1)².'
+      - 'Isolate the unknown term: (z - 1)² = 41 - 25 = 16.'
+      - 'Take the square root of both sides: z - 1 = ±4.'
+      - 'Solve for z using both positive and negative roots: z = 1 + 4 = 5 or z = 1 - 4 = -3.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: Two satellites are positioned in space at coordinates C(3, 5, 8) and D(5, 7, 6). Verify that the distance
+        separating the two satellites is exactly $2\sqrt{3}$ units.
+      mathTool: null
+      finalAnswer: The distance is √12, which simplifies to 2√3 units. Verification successful.
+      stepByStepGuideline:
+      - 'Identify the coordinates: C(3, 5, 8) and D(5, 7, 6).'
+      - 'Calculate the square of the distance using the 3D distance formula: d² = (5-3)² + (7-5)² + (6-8)².'
+      - 'Calculate the differences and squares: d² = (2)² + (2)² + (-2)² = 4 + 4 + 4.'
+      - 'Sum the results: d² = 12.'
+      - Find the distance d = √12.
+      - 'Simplify the surd: √12 = √(4 × 3) = 2√3 units. The verification is successful.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: A custom cubic aquarium is designed with side lengths of 50 cm. Calculate the exact length of the longest
+        internal measuring stick needed to span the tank from one corner to the opposite corner (the space diagonal). Express
+        your answer in simplest surd form.
+      mathTool:
+        toolName: coordinate3DPlane
+        parameters:
+          length: 5
+          width: 5
+          height: 5
+          showAxes: true
+          showSpaceDiagonal: true
+      finalAnswer: 50√3 cm
+      stepByStepGuideline:
+      - 'Note the dimensions: Since it is a cube with side length 50, l = 50, w = 50, h = 50.'
+      - 'Apply the space diagonal formula: d = √(l² + w² + h²).'
+      - 'Substitute the values: d = √(50² + 50² + 50²).'
+      - 'Calculate the squares: d = √(2500 + 2500 + 2500) = √(3 × 2500).'
+      - 'Simplify the surd by taking the square root of 2500: d = 50√3 cm.'
+      id: q19-5
+      questionGroup: q19
+- id: coord-geom-node-20
+  nodeNumber: 20
+  title: Midpoint in 3D - Center of Cuboid
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: coordinate3DPlane
+    preWrittenQuestions:
+    - problemText: A large display case, shaped like a cuboid, has one corner anchored at the origin (0, 0, 0). The opposite
+        corner is located at P(4, 6, 8) units. Calculate the coordinates of the geometric center of the display case. This
+        center point is where all space diagonals intersect.
+      avatarIntro: Welcome to 3D geometry! Finding the center of a cuboid is just like finding the midpoint of its longest
+        diagonal. Let's practice averaging coordinates.
+      mathTool:
+        toolName: coordinate3DPlane
+        parameters:
+          length: 6
+          width: 4
+          height: 8
+          showAxes: true
+          showSpaceDiagonal: true
+          customPoints: (2, 3, 4)
+      finalAnswer: (2, 3, 4)
+      stepByStepGuideline:
+      - 'The center of a cuboid starting at the origin (0, 0, 0) and ending at (x, y, z) is found by halving each dimension:
+        (x/2, y/2, z/2).'
+      - Apply the midpoint formula to the coordinates (0, 0, 0) and (4, 6, 8).
+      - 'X-coordinate: (0 + 4) / 2 = 2'
+      - 'Y-coordinate: (0 + 6) / 2 = 3'
+      - 'Z-coordinate: (0 + 8) / 2 = 4'
+      - The center of the cuboid is (2, 3, 4).
+      id: q20-1
+      questionGroup: q20
+    - problemText: A drone follows a trajectory starting at point A(1, 2, 3) and flying directly to point B(5, 7, 9). To refuel
+        halfway, the drone must land at the midpoint M of the segment AB. Calculate the coordinates of the refueling point
+        M.
+      mathTool: null
+      finalAnswer: (3, 4.5, 6) or (3, 9/2, 6)
+      stepByStepGuideline:
+      - Use the 3D midpoint formula M = ((x₁+x₂)/2, (y₁+y₂)/2, (z₁+z₂)/2).
+      - 'Calculate the X-coordinate: (1 + 5) / 2 = 6 / 2 = 3.'
+      - 'Calculate the Y-coordinate: (2 + 7) / 2 = 9 / 2 = 4.5.'
+      - 'Calculate the Z-coordinate: (3 + 9) / 2 = 12 / 2 = 6.'
+      - The midpoint M is (3, 4.5, 6).
+      id: q20-2
+      questionGroup: q20
+    - problemText: A construction crew needs to place a seismic sensor P₂ such that the midpoint M of the line segment P₁P₂
+        is exactly (3.5, 2.5, 4). If the first sensor is placed at P₁(1, 3, 5), determine the coordinates of the second sensor
+        P₂.
+      mathTool: null
+      finalAnswer: (6, 2, 3)
+      stepByStepGuideline:
+      - 'Use the working backwards formula: Endpoint = 2 * Midpoint - Known Endpoint.'
+      - Let P₂ = (x₂, y₂, z₂).
+      - 'Calculate x₂: x₂ = 2(3.5) - 1 = 7 - 1 = 6.'
+      - 'Calculate y₂: y₂ = 2(2.5) - 3 = 5 - 3 = 2.'
+      - 'Calculate z₂: z₂ = 2(4) - 5 = 8 - 5 = 3.'
+      - The coordinates of the second sensor P₂ are (6, 2, 3).
+      id: q20-3
+      questionGroup: q20
+    - problemText: A shipping crate measures 7 meters long, 5 meters wide, and 3 meters high. If one corner is located at
+        the origin (0, 0, 0), find the exact coordinates of the center point where the longest internal diagonal (space diagonal)
+        crosses.
+      mathTool:
+        toolName: coordinate3DPlane
+        parameters:
+          length: 5
+          width: 7
+          height: 3
+          showAxes: true
+          showSpaceDiagonal: true
+          customPoints: (3.5, 2.5, 1.5)
+      finalAnswer: (3.5, 2.5, 1.5) or (7/2, 5/2, 3/2)
+      stepByStepGuideline:
+      - The space diagonal connects (0, 0, 0) to the opposite corner (7, 5, 3).
+      - The center of the cuboid is the midpoint of this diagonal.
+      - 'X-coordinate: (0 + 7) / 2 = 7/2 or 3.5'
+      - 'Y-coordinate: (0 + 5) / 2 = 5/2 or 2.5'
+      - 'Z-coordinate: (0 + 3) / 2 = 3/2 or 1.5'
+      - The center coordinates are (3.5, 2.5, 1.5).
+      id: q20-4
+      questionGroup: q20
+    - problemText: In a theoretical model of particle movement, a particle travels from position R(-2, 4, 1) to position S(6,
+        -8, 5). Determine the exact halfway point M of this movement path.
+      mathTool: null
+      finalAnswer: (2, -2, 3)
+      stepByStepGuideline:
+      - Apply the 3D midpoint formula M = ((x₁+x₂)/2, (y₁+y₂)/2, (z₁+z₂)/2).
+      - 'Calculate the X-coordinate: (-2 + 6) / 2 = 4 / 2 = 2.'
+      - 'Calculate the Y-coordinate: (4 + (-8)) / 2 = -4 / 2 = -2.'
+      - 'Calculate the Z-coordinate: (1 + 5) / 2 = 6 / 2 = 3.'
+      - The midpoint M is (2, -2, 3).
+      id: q20-5
+      questionGroup: q20
