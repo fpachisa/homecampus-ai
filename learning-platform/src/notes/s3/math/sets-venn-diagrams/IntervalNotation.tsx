@@ -112,7 +112,7 @@ const IntervalNotation = () => {
               <ul className="list-disc list-inside ml-4 space-y-1">
                 <li><span className="font-mono">x ∈ ℝ</span> means "x is a real number"</li>
                 <li><span className="font-mono">|</span> means "such that"</li>
-                <li><span className="font-mono">-3 < x</span> means "x is greater than -3" (open circle at -3)</li>
+                <li><span className="font-mono">-3 &lt; x</span> means "x is greater than -3" (open circle at -3)</li>
                 <li><span className="font-mono">x ≤ 2</span> means "x is less than or equal to 2" (filled circle at 2)</li>
               </ul>
             </div>

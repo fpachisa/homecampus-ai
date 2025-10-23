@@ -1,6 +1,18 @@
 {
   "files": [
     {
+      "filename": "s3-math-quadratic-equations.yaml",
+      "displayName": "Quadratic Equations",
+      "category": "s3-math-quadratic-equations"
+    
+    },
+    {
+      "filename": "s3-math-circle-geometry.yaml",
+      "displayName": "Circle Geometry",
+      "category": "s3-math-circle-geometry"
+    
+    },
+    {
       "filename": "s3-math-trigonometry.yaml",
       "displayName": "Trigonometry",
       "category": "s3-math-trigonometry"

@@ -68,12 +68,12 @@ const DomainAndRange = () => {
           <div className="bg-green-50 dark:bg-green-900/30 p-6 rounded border-2 border-green-300 dark:border-green-600 mb-4">
             <h3 className="font-bold text-green-700 dark:text-green-300 mb-3">Example:</h3>
             <p className="mb-3 text-gray-800 dark:text-gray-200">
-              For a relation defined for all x such that 1 ≤ x < 5, with y-values satisfying −2 < y ≤ 4:
+              For a relation defined for all x such that 1 ≤ x &lt; 5, with y-values satisfying −2 &lt; y ≤ 4:
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-white dark:bg-gray-800 p-4 rounded">
                 <p className="font-semibold mb-2 text-gray-900 dark:text-gray-100">Domain:</p>
-                <p className="font-mono text-sm text-gray-800 dark:text-gray-200">{'{'}x | 1 ≤ x < 5{'}'}</p>
+                <p className="font-mono text-sm text-gray-800 dark:text-gray-200">{'{'}x | 1 ≤ x &lt; 5{'}'}</p>
                 <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">Read as: "the set of x such that x is greater than or equal to 1 and less than 5"</p>
               </div>
               <div className="bg-white dark:bg-gray-800 p-4 rounded">

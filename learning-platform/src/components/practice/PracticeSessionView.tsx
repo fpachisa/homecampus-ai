@@ -13,6 +13,9 @@ import { pathConfigLoader } from '../../services/pathConfigLoader';
 import { MathToolRenderer } from './MathToolRenderer';
 import { BackButton } from '../BackButton';
 import Avatar from '../Avatar';
+import { useAuth } from '../../contexts/AuthContext';
+import { useProgressSync } from '../../hooks/useProgressSync';
+import { SyncStatusIndicator } from '../SyncStatusIndicator';
 import { useAudioManager } from '../../hooks/useAudioManager';
 import MathText from '../MathText';
 import MathInputToolbar from '../MathInputToolbar';
@@ -72,6 +75,10 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
   // Audio manager for Avatar TTS
   const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText } = useAudioManager();
+
+  // Auth and progress sync
+  const { user } = useAuth();
+  const { isSyncing, lastSyncTime, syncError } = useProgressSync(user?.uid || null);
 
   // Detect window resize for responsive layout
   useEffect(() => {
@@ -465,7 +472,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
             console.log(`✅ Node completed! (${nodeProgress.problemsAttempted}/${node.problemsRequired})`);
           }
 
-          pathProgressService.saveUnifiedProgress(category, pathProgress);
+          pathProgressService.saveUnifiedProgress(category, pathProgress, user?.uid);
           console.log(`📊 Updated unified progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired} problems`);
         }
       } else {

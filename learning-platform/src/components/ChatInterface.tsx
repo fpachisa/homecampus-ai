@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import MessageBubble from './MessageBubble';
 import InputArea, { type InputAreaHandle } from './InputArea';
 import Avatar from './Avatar';
+import { SyncStatusIndicator } from './SyncStatusIndicator';
 import FallbackAIService from '../services/fallbackAIService';
 import type { AIService } from '../services/aiService';
 import { useAuth } from '../contexts/AuthContext';
@@ -169,7 +170,7 @@ const [isLoading, setIsLoading] = useState(false);
   const inputAreaRef = useRef<InputAreaHandle>(null);
 
   // Auto-save session state
-  useSessionPersistence({
+  const { isSyncing, lastSyncTime, syncError } = useSessionPersistence({
     topicId,
     conversationState: state,
     currentScore,
@@ -1253,8 +1254,16 @@ const handleStudentSubmit = async (input: string) => {
           />
         )}
 
-        {/* Right: Notes + Auth buttons */}
+        {/* Right: Sync Status + Notes + Auth buttons */}
         <div className="flex items-center space-x-4">
+          {/* Sync Status Indicator */}
+          <SyncStatusIndicator
+            isSyncing={isSyncing}
+            lastSyncTime={lastSyncTime}
+            syncError={syncError}
+            compact={false}
+          />
+
           {/* View Notes Button */}
           {hasNotes && (
             <button

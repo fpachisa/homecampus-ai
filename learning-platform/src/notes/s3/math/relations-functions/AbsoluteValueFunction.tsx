@@ -54,7 +54,7 @@ const AbsoluteValueFunction = () => {
 
                 <div className="bg-red-50 dark:bg-red-900/30 p-4 rounded border border-red-300 dark:border-red-600">
                   <p className="font-semibold mb-2 text-red-700 dark:text-red-300">For Negative Numbers:</p>
-                  <p className="text-sm mb-2 text-gray-800 dark:text-gray-200">If <strong>x < 0</strong>, then <strong>|x| = −x</strong></p>
+                  <p className="text-sm mb-2 text-gray-800 dark:text-gray-200">If <strong>x &lt; 0</strong>, then <strong>|x| = −x</strong></p>
                   <div className="space-y-1 text-xs font-mono text-gray-700 dark:text-gray-300">
                     <p>|−5| = −(−5) = 5</p>
                     <p>|−2.3| = −(−2.3) = 2.3</p>

@@ -13,6 +13,7 @@ interface CircleAngleVisualizerProps {
   // Angle at centre mode props
   arcPoints?: string; // arc endpoints (e.g., 'AB')
   circumferencePoint1?: string; // point on circumference (e.g., 'C')
+  arcAngleDegrees?: number; // angle of arc AB at centre (default: 80) - controls diagram shape
   showAngleCentre?: boolean; // show angle AOB at centre (default: true)
   showAngleCircumference?: boolean; // show angle ACB at circumference (default: true)
   angleCentreLabel?: string; // label for centre angle (e.g., '$2\\theta$')
@@ -21,10 +22,13 @@ interface CircleAngleVisualizerProps {
 
   // Same arc mode props
   circumferencePoint2?: string; // second point on circumference (e.g., 'D')
+  oppositeSegments?: boolean; // position C and D on opposite sides of chord AB (default: false)
   showAngle1?: boolean; // show angle ACB (default: true)
   showAngle2?: boolean; // show angle ADB (default: true)
   angleLabel?: string; // common label for both angles (e.g., '$\\theta$')
+  angleLabel2?: string; // optional separate label for second angle (e.g., '?')
   highlightSegment?: boolean; // shade the segment containing the angles (default: false)
+  // Note: same arc mode also uses arcAngleDegrees from angle at centre mode
 
   caption?: string; // optional caption
 }
@@ -37,15 +41,18 @@ const CircleAngleVisualizer: React.FC<CircleAngleVisualizerProps> = ({
   highlightDiameter = false,
   arcPoints,
   circumferencePoint1,
+  arcAngleDegrees = 80,
   showAngleCentre = true,
   showAngleCircumference = true,
   angleCentreLabel,
   angleCircumferenceLabel,
   highlightArc = false,
   circumferencePoint2,
+  oppositeSegments = false,
   showAngle1 = true,
   showAngle2 = true,
   angleLabel,
+  angleLabel2,
   highlightSegment = false,
   caption
 }) => {
@@ -82,20 +89,29 @@ const CircleAngleVisualizer: React.FC<CircleAngleVisualizerProps> = ({
   let pointAAngle, pointBAngle, angleCDeg, angleDDeg;
 
   if (isAngleCentreMode) {
-    // Position P and Q such that they create a nice arc (not a diameter)
-    // P at 200°, Q at 340° (this creates a 140° arc)
-    pointAAngle = 200;
-    pointBAngle = 340;
-    angleCDeg = 280; // R on the major arc between P and Q
+    // Position A and B to create visual arc based on arcAngleDegrees
+    // Center the arc at 90° (top), spread symmetrically based on arcAngleDegrees
+    const halfArc = arcAngleDegrees / 2;
+    pointAAngle = 90 + halfArc; // upper-left from top
+    pointBAngle = 90 - halfArc; // upper-right from top
+    angleCDeg = 270; // C at bottom, looking up at arc AB
   } else if (isSameArcMode) {
-    // For same arc mode, A and B form the chord at the top
-    // A at 145° (top-left), B at 35° (top-right)
-    pointAAngle = 145;
-    pointBAngle = 35;
-    // C and D should both be on the major arc (lower portion)
-    // Position them so lines don't pass through center
-    angleCDeg = 235; // C at 235° (bottom-left, on major arc)
-    angleDDeg = 305; // D at 305° (bottom-right, on major arc)
+    // For same arc mode, A and B form the chord at the top, using arcAngleDegrees
+    const halfArc = arcAngleDegrees / 2;
+    pointAAngle = 90 + halfArc; // upper-left from top
+    pointBAngle = 90 - halfArc; // upper-right from top
+
+    if (oppositeSegments) {
+      // Position C and D on OPPOSITE sides of chord AB
+      // C on minor arc (above/top), D on major arc (below/bottom)
+      angleCDeg = 90; // C at top (on minor arc AB)
+      angleDDeg = 270; // D at bottom (on major arc AB)
+    } else {
+      // Both C and D on the same segment (major arc below)
+      // Position them symmetrically in the major arc
+      angleCDeg = 235; // C at 235° (bottom-left, on major arc)
+      angleDDeg = 305; // D at 305° (bottom-right, on major arc)
+    }
   } else {
     // For semicircle mode, use diameter (180° apart)
     pointAAngle = 180;
@@ -103,21 +119,41 @@ const CircleAngleVisualizer: React.FC<CircleAngleVisualizerProps> = ({
     angleCDeg = 90; // top of circle
   }
 
-  // Point A
+  // Point A (using mathematical coordinates: Y- goes up)
   const pointAX = centerX + circleRadius * Math.cos((pointAAngle * Math.PI) / 180);
-  const pointAY = centerY + circleRadius * Math.sin((pointAAngle * Math.PI) / 180);
+  const pointAY = centerY - circleRadius * Math.sin((pointAAngle * Math.PI) / 180);
 
-  // Point B
+  // Point A label position (radially outward)
+  const labelAOffset = 25;
+  const labelAX = centerX + (circleRadius + labelAOffset) * Math.cos((pointAAngle * Math.PI) / 180);
+  const labelAY = centerY - (circleRadius + labelAOffset) * Math.sin((pointAAngle * Math.PI) / 180);
+
+  // Point B (using mathematical coordinates: Y- goes up)
   const pointBX = centerX + circleRadius * Math.cos((pointBAngle * Math.PI) / 180);
-  const pointBY = centerY + circleRadius * Math.sin((pointBAngle * Math.PI) / 180);
+  const pointBY = centerY - circleRadius * Math.sin((pointBAngle * Math.PI) / 180);
 
-  // Point C
+  // Point B label position (radially outward)
+  const labelBOffset = 25;
+  const labelBX = centerX + (circleRadius + labelBOffset) * Math.cos((pointBAngle * Math.PI) / 180);
+  const labelBY = centerY - (circleRadius + labelBOffset) * Math.sin((pointBAngle * Math.PI) / 180);
+
+  // Point C (using mathematical coordinates: Y- goes up)
   const pointCX = centerX + circleRadius * Math.cos((angleCDeg * Math.PI) / 180);
-  const pointCY = centerY + circleRadius * Math.sin((angleCDeg * Math.PI) / 180);
+  const pointCY = centerY - circleRadius * Math.sin((angleCDeg * Math.PI) / 180);
 
-  // Point D (only for same arc mode)
+  // Point C label position (radially outward to avoid overlap with right angle marker)
+  const labelCOffset = showRightAngleMarker ? 35 : 20; // Extra offset when right angle marker shown
+  const labelCX = centerX + (circleRadius + labelCOffset) * Math.cos((angleCDeg * Math.PI) / 180);
+  const labelCY = centerY - (circleRadius + labelCOffset) * Math.sin((angleCDeg * Math.PI) / 180);
+
+  // Point D (only for same arc mode) (using mathematical coordinates: Y- goes up)
   const pointDX = centerX + circleRadius * Math.cos(((angleDDeg || 50) * Math.PI) / 180);
-  const pointDY = centerY + circleRadius * Math.sin(((angleDDeg || 50) * Math.PI) / 180);
+  const pointDY = centerY - circleRadius * Math.sin(((angleDDeg || 50) * Math.PI) / 180);
+
+  // Point D label position (radially outward)
+  const labelDOffset = 20;
+  const labelDX = centerX + (circleRadius + labelDOffset) * Math.cos(((angleDDeg || 50) * Math.PI) / 180);
+  const labelDY = centerY - (circleRadius + labelDOffset) * Math.sin(((angleDDeg || 50) * Math.PI) / 180);
 
   // Helper to draw angle arc
   const drawAngleArc = (
@@ -142,6 +178,39 @@ const CircleAngleVisualizer: React.FC<CircleAngleVisualizerProps> = ({
     const sweepFlag = deltaAngle > 0 ? 1 : 0;
 
     return `M ${startX} ${startY} A ${radius} ${radius} 0 ${largeArcFlag} ${sweepFlag} ${endX} ${endY}`;
+  };
+
+  // Helper to get text anchor based on angle (for proper label positioning)
+  const getTextAnchor = (angleDeg: number): {
+    textAnchor: 'start' | 'middle' | 'end';
+    dominantBaseline: 'auto' | 'middle' | 'hanging'
+  } => {
+    // Normalize angle to 0-360
+    const normalizedAngle = ((angleDeg % 360) + 360) % 360;
+
+    let textAnchor: 'start' | 'middle' | 'end' = 'middle';
+    let dominantBaseline: 'auto' | 'middle' | 'hanging' = 'middle';
+
+    // Determine horizontal alignment
+    if (normalizedAngle > 45 && normalizedAngle < 135) {
+      // Top half
+      textAnchor = 'middle';
+      dominantBaseline = 'auto'; // Text below the anchor point
+    } else if (normalizedAngle >= 135 && normalizedAngle < 225) {
+      // Left half
+      textAnchor = 'end'; // Text to the left of anchor point
+      dominantBaseline = 'middle';
+    } else if (normalizedAngle >= 225 && normalizedAngle < 315) {
+      // Bottom half
+      textAnchor = 'middle';
+      dominantBaseline = 'hanging'; // Text above the anchor point
+    } else {
+      // Right half (315-360 and 0-45)
+      textAnchor = 'start'; // Text to the right of anchor point
+      dominantBaseline = 'middle';
+    }
+
+    return { textAnchor, dominantBaseline };
   };
 
   // Helper to get angle label position
@@ -288,13 +357,13 @@ const CircleAngleVisualizer: React.FC<CircleAngleVisualizerProps> = ({
 
             {/* Points */}
             <circle cx={pointAX} cy={pointAY} r="5" fill={colors.primary} />
-            <text x={pointAX - 15} y={pointAY + 5} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold">{pointALabel}</text>
+            <text x={labelAX} y={labelAY} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold" {...getTextAnchor(pointAAngle)}>{pointALabel}</text>
 
             <circle cx={pointBX} cy={pointBY} r="5" fill={colors.primary} />
-            <text x={pointBX + 15} y={pointBY + 5} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold">{pointBLabel}</text>
+            <text x={labelBX} y={labelBY} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold" {...getTextAnchor(pointBAngle)}>{pointBLabel}</text>
 
             <circle cx={pointCX} cy={pointCY} r="5" fill={colors.primary} />
-            <text x={pointCX} y={pointCY - 15} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold" textAnchor="middle">{pointCLabel}</text>
+            <text x={labelCX} y={labelCY} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold" {...getTextAnchor(angleCDeg)}>{pointCLabel}</text>
           </>
         )}
 
@@ -393,28 +462,25 @@ const CircleAngleVisualizer: React.FC<CircleAngleVisualizerProps> = ({
 
             {/* Points */}
             <circle cx={pointAX} cy={pointAY} r="5" fill={colors.primary} />
-            <text x={pointAX - 15} y={pointAY + 5} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold">{pointALabel}</text>
+            <text x={labelAX} y={labelAY} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold" {...getTextAnchor(pointAAngle)}>{pointALabel}</text>
 
             <circle cx={pointBX} cy={pointBY} r="5" fill={colors.primary} />
-            <text x={pointBX + 15} y={pointBY + 5} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold">{pointBLabel}</text>
+            <text x={labelBX} y={labelBY} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold" {...getTextAnchor(pointBAngle)}>{pointBLabel}</text>
 
             <circle cx={pointCX} cy={pointCY} r="5" fill={colors.primary} />
-            <text x={pointCX} y={pointCY - 15} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold" textAnchor="middle">{pointCLabel}</text>
+            <text x={labelCX} y={labelCY} fill={theme.colors.textPrimary} fontSize="16" fontWeight="bold" {...getTextAnchor(angleCDeg)}>{pointCLabel}</text>
           </>
         )}
 
         {/* SAME ARC MODE */}
         {isSameArcMode && (
           <>
-            {/* Minor arc highlighting (upper arc from A to B) */}
+            {/* Major segment highlighting (containing points C and D) */}
             {highlightSegment && (
               <path
-                d={`M ${pointAX} ${pointAY} A ${circleRadius} ${circleRadius} 0 0 0 ${pointBX} ${pointBY}`}
-                fill="none"
-                stroke={colors.highlight}
-                strokeWidth="6"
-                strokeLinecap="round"
-                opacity="0.6"
+                d={`M ${pointAX} ${pointAY} A ${circleRadius} ${circleRadius} 0 1 0 ${pointBX} ${pointBY} L ${pointAX} ${pointAY} Z`}
+                fill={colors.segment}
+                stroke="none"
               />
             )}
 
@@ -431,24 +497,68 @@ const CircleAngleVisualizer: React.FC<CircleAngleVisualizerProps> = ({
 
             {/* Angle at C */}
             {showAngle1 && (
-              <path
-                d={drawAngleArc({ x: pointCX, y: pointCY }, { x: pointAX, y: pointAY }, { x: pointBX, y: pointBY }, 30)}
-                fill="none"
-                stroke={colors.angle}
-                strokeWidth="2.5"
-                opacity="0.8"
-              />
+              <>
+                <path
+                  d={drawAngleArc({ x: pointCX, y: pointCY }, { x: pointAX, y: pointAY }, { x: pointBX, y: pointBY }, 30)}
+                  fill="none"
+                  stroke={colors.angle}
+                  strokeWidth="2.5"
+                  opacity="0.8"
+                />
+                {angleLabel && (() => {
+                  const labelPos = getAngleLabelPosition(
+                    { x: pointCX, y: pointCY },
+                    { x: pointAX, y: pointAY },
+                    { x: pointBX, y: pointBY },
+                    45
+                  );
+                  return (
+                    <foreignObject
+                      x={labelPos.x - 30}
+                      y={labelPos.y - 15}
+                      width="60"
+                      height="30"
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'center', color: colors.angle, fontSize: '16px', fontWeight: 'bold' }}>
+                        <MathText>{ensureLatexWrapped(angleLabel)}</MathText>
+                      </div>
+                    </foreignObject>
+                  );
+                })()}
+              </>
             )}
 
             {/* Angle at D */}
             {showAngle2 && (
-              <path
-                d={drawAngleArc({ x: pointDX, y: pointDY }, { x: pointAX, y: pointAY }, { x: pointBX, y: pointBY }, 30)}
-                fill="none"
-                stroke={colors.angle}
-                strokeWidth="2.5"
-                opacity="0.8"
-              />
+              <>
+                <path
+                  d={drawAngleArc({ x: pointDX, y: pointDY }, { x: pointAX, y: pointAY }, { x: pointBX, y: pointBY }, 30)}
+                  fill="none"
+                  stroke={colors.angle}
+                  strokeWidth="2.5"
+                  opacity="0.8"
+                />
+                {(angleLabel2 || angleLabel) && (() => {
+                  const labelPos = getAngleLabelPosition(
+                    { x: pointDX, y: pointDY },
+                    { x: pointAX, y: pointAY },
+                    { x: pointBX, y: pointBY },
+                    45
+                  );
+                  return (
+                    <foreignObject
+                      x={labelPos.x - 30}
+                      y={labelPos.y - 15}
+                      width="60"
+                      height="30"
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'center', color: colors.angle, fontSize: '16px', fontWeight: 'bold' }}>
+                        <MathText>{ensureLatexWrapped(angleLabel2 || angleLabel)}</MathText>
+                      </div>
+                    </foreignObject>
+                  );
+                })()}
+              </>
             )}
 
             {/* Centre O */}
@@ -459,42 +569,42 @@ const CircleAngleVisualizer: React.FC<CircleAngleVisualizerProps> = ({
             {/* Calculate label positions based on angle to ensure they're outside the circle */}
             <circle cx={pointAX} cy={pointAY} r="5" fill={colors.primary} />
             <text
-              x={centerX + (circleRadius + 20) * Math.cos((pointAAngle * Math.PI) / 180)}
-              y={centerY + (circleRadius + 20) * Math.sin((pointAAngle * Math.PI) / 180) + 5}
+              x={labelAX}
+              y={labelAY}
               fill={theme.colors.textPrimary}
               fontSize="16"
               fontWeight="bold"
-              textAnchor="middle"
+              {...getTextAnchor(pointAAngle)}
             >{pointALabel}</text>
 
             <circle cx={pointBX} cy={pointBY} r="5" fill={colors.primary} />
             <text
-              x={centerX + (circleRadius + 20) * Math.cos((pointBAngle * Math.PI) / 180)}
-              y={centerY + (circleRadius + 20) * Math.sin((pointBAngle * Math.PI) / 180) + 5}
+              x={labelBX}
+              y={labelBY}
               fill={theme.colors.textPrimary}
               fontSize="16"
               fontWeight="bold"
-              textAnchor="middle"
+              {...getTextAnchor(pointBAngle)}
             >{pointBLabel}</text>
 
             <circle cx={pointCX} cy={pointCY} r="5" fill={colors.primary} />
             <text
-              x={centerX + (circleRadius + 20) * Math.cos((angleCDeg * Math.PI) / 180)}
-              y={centerY + (circleRadius + 20) * Math.sin((angleCDeg * Math.PI) / 180) + 5}
+              x={labelCX}
+              y={labelCY}
               fill={theme.colors.textPrimary}
               fontSize="16"
               fontWeight="bold"
-              textAnchor="middle"
+              {...getTextAnchor(angleCDeg)}
             >{pointCLabel}</text>
 
             <circle cx={pointDX} cy={pointDY} r="5" fill={colors.primary} />
             <text
-              x={centerX + (circleRadius + 20) * Math.cos(((angleDDeg || 50) * Math.PI) / 180)}
-              y={centerY + (circleRadius + 20) * Math.sin(((angleDDeg || 50) * Math.PI) / 180) + 5}
+              x={labelDX}
+              y={labelDY}
               fill={theme.colors.textPrimary}
               fontSize="16"
               fontWeight="bold"
-              textAnchor="middle"
+              {...getTextAnchor(angleDDeg || 50)}
             >{pointDLabel}</text>
           </>
         )}

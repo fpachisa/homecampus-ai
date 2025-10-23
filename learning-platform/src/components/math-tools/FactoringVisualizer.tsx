@@ -197,17 +197,79 @@ const FactoringVisualizer: React.FC<FactoringVisualizerProps> = ({
     return steps;
   };
 
+  // Generate factored form string
+  const getFactoredForm = (): string => {
+    if (!hasRealRoots) {
+      return 'Cannot be factored (no real roots)';
+    }
+
+    if (method === 'factor-pairs' && a === 1) {
+      const pairs = findFactorPairs(c, b);
+      if (pairs) {
+        const [p, q] = pairs;
+        return `$(x ${p >= 0 ? '+' : '-'} ${Math.abs(p)})(x ${q >= 0 ? '+' : '-'} ${Math.abs(q)}) = 0$`;
+      }
+    } else if (method === 'difference-squares' && b === 0 && c < 0) {
+      const sqrtA = Math.sqrt(Math.abs(a));
+      const sqrtC = Math.sqrt(Math.abs(c));
+      return `$(${sqrtA}x + ${sqrtC})(${sqrtA}x - ${sqrtC}) = 0$`;
+    }
+
+    // General case: use roots
+    if (root1 !== null && root2 !== null) {
+      const r1 = -root1;
+      const r2 = -root2;
+      return `$${a !== 1 ? a : ''}(x ${r1 >= 0 ? '+' : '-'} ${Math.abs(r1).toFixed(1)})(x ${r2 >= 0 ? '+' : '-'} ${Math.abs(r2).toFixed(1)}) = 0$`;
+    }
+
+    return 'Cannot factor';
+  };
+
   return (
     <div className="my-4 p-4 rounded-lg border" style={{ borderColor: theme.colors.border, backgroundColor: theme.colors.surface }}>
       <div className="text-lg font-bold mb-4" style={{ color: theme.colors.textPrimary }}>
         Factoring Process
       </div>
 
-      {showSteps ? (
-        <div>{generateSteps()}</div>
-      ) : (
+      {/* Original Equation */}
+      <div className="mb-3">
+        <div className="text-sm font-semibold mb-1" style={{ color: theme.colors.textMuted }}>
+          Original Equation:
+        </div>
+        <div className="text-base font-semibold" style={{ color: theme.colors.textPrimary }}>
+          <MathText>{equation || `$${a === 1 ? '' : a}x^2 ${b >= 0 ? '+' : '-'} ${Math.abs(b)}x ${c >= 0 ? '+' : '-'} ${Math.abs(c)} = 0$`}</MathText>
+        </div>
+      </div>
+
+      {/* Factored Form - Always shown */}
+      <div className="mb-3 p-3 rounded" style={{ backgroundColor: theme.colors.interactive }}>
+        <div className="text-sm font-semibold mb-1" style={{ color: theme.colors.textMuted }}>
+          Factored Form:
+        </div>
         <div className="text-base font-semibold" style={{ color: theme.colors.brand }}>
-          <MathText>Factored form will be shown here</MathText>
+          <MathText>{getFactoredForm()}</MathText>
+        </div>
+      </div>
+
+      {/* Solutions - Always shown if they exist */}
+      {hasRealRoots && root1 !== null && root2 !== null && (
+        <div className="mb-3">
+          <div className="text-sm font-semibold mb-1" style={{ color: theme.colors.textMuted }}>
+            Solutions:
+          </div>
+          <div className="text-base font-semibold" style={{ color: theme.colors.brand }}>
+            <MathText>{`$x = ${root1.toFixed(2)}$ or $x = ${root2.toFixed(2)}$`}</MathText>
+          </div>
+        </div>
+      )}
+
+      {/* Detailed Steps - Only shown if showSteps is true */}
+      {showSteps && (
+        <div className="mt-4 pt-4 border-t" style={{ borderColor: theme.colors.border }}>
+          <div className="text-sm font-bold mb-3" style={{ color: theme.colors.textMuted }}>
+            Step-by-step process:
+          </div>
+          <div>{generateSteps()}</div>
         </div>
       )}
 

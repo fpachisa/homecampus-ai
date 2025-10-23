@@ -24,17 +24,22 @@ export class ClaudeProvider implements AIProvider {
 
   async generateContent(prompt: string, maxTokens?: number): Promise<string> {
     try {
-      const response = await this.anthropic.messages.create({
-        model: this.modelName,
-        max_tokens: maxTokens || this.defaultMaxTokens,
-        temperature: this.temperature,
-        messages: [
-          {
-            role: 'user',
-            content: prompt
-          }
-        ]
-      });
+      // Add 30-second timeout to prevent hanging requests
+      const response = await this.withTimeout(
+        this.anthropic.messages.create({
+          model: this.modelName,
+          max_tokens: maxTokens || this.defaultMaxTokens,
+          temperature: this.temperature,
+          messages: [
+            {
+              role: 'user',
+              content: prompt
+            }
+          ]
+        }),
+        30000, // 30 seconds
+        'Claude API request timed out after 30 seconds'
+      );
 
       // Extract text content from Claude response
       const content = response.content[0];
@@ -62,6 +67,11 @@ export class ClaudeProvider implements AIProvider {
     } catch (error: any) {
       console.error('Claude API error:', error);
 
+      // Check if this is a timeout error
+      if (error.name === 'TimeoutError' || error.message?.includes('timed out')) {
+        throw new AIServiceError(AIErrorType.TIMEOUT, error, true, error.message);
+      }
+
       // Map Claude-specific errors
       if (error.status === 429) {
         throw new AIServiceError(AIErrorType.RATE_LIMIT, error, true, error.message);
@@ -75,6 +85,28 @@ export class ClaudeProvider implements AIProvider {
 
       throw AIServiceError.fromHttpError(error);
     }
+  }
+
+  /**
+   * Wraps a promise with a timeout
+   */
+  private withTimeout<T>(
+    promise: Promise<T>,
+    timeoutMs: number,
+    timeoutMessage: string
+  ): Promise<T> {
+    return new Promise((resolve, reject) => {
+      const timeoutId = setTimeout(() => {
+        const error = new Error(timeoutMessage);
+        error.name = 'TimeoutError';
+        reject(error);
+      }, timeoutMs);
+
+      promise
+        .then(resolve)
+        .catch(reject)
+        .finally(() => clearTimeout(timeoutId));
+    });
   }
 
   getProviderName(): string {

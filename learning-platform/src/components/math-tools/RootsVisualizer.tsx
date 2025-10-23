@@ -72,6 +72,24 @@ const RootsVisualizer: React.FC<RootsVisualizerProps> = ({
   const rootColor = '#10b981';
   const vertexColor = '#ef4444';
 
+  // Smart label positioning based on parabola shape
+  const opensUpward = a > 0;
+  const rootDistance = Math.abs(root2 - root1);
+
+  // Position root labels away from the parabola
+  // If opens upward, labels go below; if opens downward, labels go above
+  const rootLabelOffset = opensUpward ? 25 : -15;
+
+  // Position vertex label on opposite side of the parabola
+  // If opens upward (vertex is minimum), label goes below
+  // If opens downward (vertex is maximum), label goes above
+  const vertexLabelYOffset = opensUpward ? 25 : -15;
+
+  // Adjust horizontal offset if roots are very close together
+  const rootsAreClose = rootDistance < 3;
+  const root1XOffset = rootsAreClose && root1 < root2 ? -30 : 0;
+  const root2XOffset = rootsAreClose && root2 > root1 ? 30 : 0;
+
   return (
     <div className="my-4">
       {showFactoredForm && (
@@ -153,7 +171,7 @@ const RootsVisualizer: React.FC<RootsVisualizerProps> = ({
             strokeWidth={3}
           />
 
-          {/* Roots (x-intercepts) */}
+          {/* Roots (x-intercepts) with smart positioning */}
           <circle
             cx={mathToSVG(root1, 0)[0]}
             cy={mathToSVG(root1, 0)[1]}
@@ -161,8 +179,8 @@ const RootsVisualizer: React.FC<RootsVisualizerProps> = ({
             fill={rootColor}
           />
           <text
-            x={mathToSVG(root1, 0)[0]}
-            y={mathToSVG(root1, 0)[1] + 20}
+            x={mathToSVG(root1, 0)[0] + root1XOffset}
+            y={mathToSVG(root1, 0)[1] + rootLabelOffset}
             className="text-sm font-semibold"
             fill={rootColor}
             textAnchor="middle"
@@ -177,8 +195,8 @@ const RootsVisualizer: React.FC<RootsVisualizerProps> = ({
             fill={rootColor}
           />
           <text
-            x={mathToSVG(root2, 0)[0]}
-            y={mathToSVG(root2, 0)[1] + 20}
+            x={mathToSVG(root2, 0)[0] + root2XOffset}
+            y={mathToSVG(root2, 0)[1] + rootLabelOffset}
             className="text-sm font-semibold"
             fill={rootColor}
             textAnchor="middle"
@@ -186,7 +204,7 @@ const RootsVisualizer: React.FC<RootsVisualizerProps> = ({
             x = {root2}
           </text>
 
-          {/* Vertex */}
+          {/* Vertex with smart positioning */}
           {highlightVertex && (
             <>
               <circle
@@ -196,10 +214,11 @@ const RootsVisualizer: React.FC<RootsVisualizerProps> = ({
                 fill={vertexColor}
               />
               <text
-                x={mathToSVG(h, k)[0] + 10}
-                y={mathToSVG(h, k)[1] - 10}
+                x={mathToSVG(h, k)[0]}
+                y={mathToSVG(h, k)[1] + vertexLabelYOffset}
                 className="text-sm font-semibold"
                 fill={vertexColor}
+                textAnchor="middle"
               >
                 ({h.toFixed(1)}, {k.toFixed(1)})
               </text>

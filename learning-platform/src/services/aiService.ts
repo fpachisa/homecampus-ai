@@ -166,6 +166,43 @@ export const AIErrorType = {
 export type AIErrorType = typeof AIErrorType[keyof typeof AIErrorType];
 
 /**
+ * User-friendly error messages for each error type
+ * These are displayed to students instead of technical error details
+ */
+export const AI_ERROR_MESSAGES: Record<AIErrorType, { title: string; message: string; action: string }> = {
+  rate_limit: {
+    title: 'Too Many Requests',
+    message: 'You\'re working very quickly! Please wait a moment before trying again.',
+    action: 'Wait 30 seconds and try again'
+  },
+  service_unavailable: {
+    title: 'AI Tutor Unavailable',
+    message: 'The AI tutor is temporarily unavailable. We\'re trying another service for you.',
+    action: 'Please wait a moment'
+  },
+  timeout: {
+    title: 'Request Timeout',
+    message: 'The AI tutor is taking too long to respond. This might be due to a slow connection.',
+    action: 'Try again'
+  },
+  authentication: {
+    title: 'Authentication Error',
+    message: 'There\'s an issue with the AI service authentication. Please contact support.',
+    action: 'Contact support'
+  },
+  network: {
+    title: 'Connection Lost',
+    message: 'Unable to reach the AI service. Please check your internet connection.',
+    action: 'Check connection and retry'
+  },
+  unknown: {
+    title: 'Something Went Wrong',
+    message: 'We encountered an unexpected error. Your progress has been saved.',
+    action: 'Try again or refresh the page'
+  }
+};
+
+/**
  * Enhanced error class for AI service errors
  */
 export class AIServiceError extends Error {
@@ -177,6 +214,13 @@ export class AIServiceError extends Error {
   ) {
     super(message || `AI Service Error: ${errorType}`);
     this.name = 'AIServiceError';
+  }
+
+  /**
+   * Get user-friendly error message for display in UI
+   */
+  getUserMessage(): { title: string; message: string; action: string } {
+    return AI_ERROR_MESSAGES[this.errorType];
   }
 
   static fromHttpError(error: any): AIServiceError {

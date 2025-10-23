@@ -36,8 +36,8 @@ const TransformationsOfGraphs = () => {
                 <p className="text-center text-sm text-gray-600 dark:text-gray-400">Adds/subtracts outside the function</p>
               </div>
               <ul className="space-y-2 text-sm text-gray-800 dark:text-gray-200">
-                <li>• If <strong>k > 0</strong>: shift <strong>upward</strong> by k units</li>
-                <li>• If <strong>k < 0</strong>: shift <strong>downward</strong> by |k| units</li>
+                <li>• If <strong>k &gt; 0</strong>: shift <strong>upward</strong> by k units</li>
+                <li>• If <strong>k &lt; 0</strong>: shift <strong>downward</strong> by |k| units</li>
               </ul>
               <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded mt-3 text-xs text-gray-700 dark:text-gray-300">
                 <p><strong>Example:</strong></p>

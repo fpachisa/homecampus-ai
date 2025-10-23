@@ -5,7 +5,8 @@ import MathText from '../MathText';
 interface CircleBasicVisualizerProps {
   // Basic circle mode props
   radius?: string; // radius label (e.g., 'r', '5cm', '10')
-  showCentre?: boolean; // show centre point O (default: true)
+  centreLabel?: string; // centre point label (e.g., 'O', 'P', 'C') (default: 'O')
+  showCentre?: boolean; // show centre point (default: true)
   showRadius?: boolean; // show radius line (default: false)
   showDiameter?: boolean; // show diameter line (default: false)
   highlightElement?: 'radius' | 'diameter' | 'centre' | 'none'; // which element to highlight in red
@@ -24,6 +25,7 @@ interface CircleBasicVisualizerProps {
 
 const CircleBasicVisualizer: React.FC<CircleBasicVisualizerProps> = ({
   radius = 'r',
+  centreLabel = 'O',
   showCentre = true,
   showRadius = false,
   showDiameter = false,
@@ -57,6 +59,13 @@ const CircleBasicVisualizer: React.FC<CircleBasicVisualizerProps> = ({
   const pointAY = centerY - circleRadius * Math.sin((angleA * Math.PI) / 180);
   const pointBX = centerX + circleRadius * Math.cos((angleB * Math.PI) / 180);
   const pointBY = centerY - circleRadius * Math.sin((angleB * Math.PI) / 180);
+
+  // Calculate label positions (radially outward from center to avoid overlap)
+  const labelOffset = 25; // Distance beyond circle radius for labels
+  const labelAX = centerX + (circleRadius + labelOffset) * Math.cos((angleA * Math.PI) / 180);
+  const labelAY = centerY - (circleRadius + labelOffset) * Math.sin((angleA * Math.PI) / 180);
+  const labelBX = centerX + (circleRadius + labelOffset) * Math.cos((angleB * Math.PI) / 180);
+  const labelBY = centerY - (circleRadius + labelOffset) * Math.sin((angleB * Math.PI) / 180);
 
   // Calculate arc paths
   const largeArcFlag = arcAngle > 180 ? 1 : 0;
@@ -126,7 +135,7 @@ const CircleBasicVisualizer: React.FC<CircleBasicVisualizerProps> = ({
                   fontWeight="bold"
                   textAnchor="middle"
                 >
-                  O
+                  {centreLabel}
                 </text>
               </>
             )}
@@ -211,7 +220,7 @@ const CircleBasicVisualizer: React.FC<CircleBasicVisualizerProps> = ({
               fontWeight="bold"
               textAnchor="middle"
             >
-              O
+              {centreLabel}
             </text>
 
             {/* Segment shading (if enabled) */}
@@ -262,12 +271,13 @@ const CircleBasicVisualizer: React.FC<CircleBasicVisualizerProps> = ({
             {/* Point A */}
             <circle cx={pointAX} cy={pointAY} r="5" fill={colors.primary} />
             <text
-              x={pointAX}
-              y={pointAY - 15}
+              x={labelAX}
+              y={labelAY}
               fill={theme.colors.textPrimary}
               fontSize="16"
               fontWeight="bold"
               textAnchor="middle"
+              dominantBaseline="middle"
             >
               {pointA}
             </text>
@@ -275,12 +285,13 @@ const CircleBasicVisualizer: React.FC<CircleBasicVisualizerProps> = ({
             {/* Point B */}
             <circle cx={pointBX} cy={pointBY} r="5" fill={colors.primary} />
             <text
-              x={pointBX}
-              y={pointBY - 15}
+              x={labelBX}
+              y={labelBY}
               fill={theme.colors.textPrimary}
               fontSize="16"
               fontWeight="bold"
               textAnchor="middle"
+              dominantBaseline="middle"
             >
               {pointB}
             </text>

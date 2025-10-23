@@ -58,7 +58,7 @@ const SignDiagrams = () => {
                 <div className="bg-red-50 dark:bg-red-900/30 p-3 rounded border border-red-300 dark:border-red-600">
                   <p className="font-bold text-red-700 dark:text-red-300 mb-1">Negative (−)</p>
                   <p className="text-gray-700 dark:text-gray-300">Function is below x-axis</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">f(x) < 0</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">f(x) &lt; 0</p>
                 </div>
                 <div className="bg-blue-50 dark:bg-blue-900/30 p-3 rounded border border-blue-300 dark:border-blue-600">
                   <p className="font-bold text-blue-700 dark:text-blue-300 mb-1">Zero (0)</p>

@@ -1,0 +1,2232 @@
+# Circle Geometry - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: circle-parts-node-1
+  nodeNumber: 1
+  title: Identifying Circle Parts
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleBasic
+    preWrittenQuestions:
+    - problemText: A circular pond is drawn on a map, represented by the circle shown below. Point O marks the exact middle
+        of the pond. What is the correct term for point O?
+      avatarIntro: Welcome to the world of geometry! Let's start by identifying the fundamental parts of a circle.
+      mathTool:
+        toolName: circleBasic
+        parameters:
+          radius: 7
+          showCentre: true
+          showRadius: false
+          showDiameter: false
+          highlightElement: none
+      finalAnswer: The centre of the circle.
+      stepByStepGuideline:
+      - Recall the definition of the centre of a circle.
+      - The centre is the specific point that is equidistant from every point on the circumference.
+      - Identify point O as this central point.
+      id: q1-1
+      questionGroup: q1
+    - problemText: A designer is working on a circular badge that has a radius of 12 mm. Calculate the diameter of the badge.
+      mathTool: null
+      finalAnswer: 24 mm
+      stepByStepGuideline:
+      - 'Identify the relationship between the diameter (D) and the radius (r): D = 2 × r.'
+      - Substitute the given radius (r = 12 mm) into the formula.
+      - 'Calculate the result: D = 2 × 12 mm = 24 mm.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: Look at the diagram of the circle shown, with centre P. Define what the radius is in relation to this circle.
+      mathTool:
+        toolName: circleBasic
+        parameters:
+          radius: 5
+          showCentre: true
+          showRadius: false
+          showDiameter: false
+          centreLabel: P
+          highlightElement: none
+      finalAnswer: The radius is any straight line segment connecting the centre (P) to any point on the circumference.
+      stepByStepGuideline:
+      - Recall the definition of a radius.
+      - A radius starts at the center and ends at the boundary.
+      - 'Use precise terminology: it is a line segment connecting the centre to the circumference.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: The diameter of a large circular machine part is 16 cm. What is the radius of the machine part?
+      mathTool: null
+      finalAnswer: 8 cm
+      stepByStepGuideline:
+      - 'Identify the relationship between the radius (r) and the diameter (D): r = D / 2.'
+      - Substitute the given diameter (D = 16 cm) into the formula.
+      - 'Calculate the result: r = 16 cm / 2 = 8 cm.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: A circular garden with centre C is being planned. Describe the required characteristics of the diameter
+        of this garden.
+      mathTool:
+        toolName: circleBasic
+        parameters:
+          radius: 10
+          showCentre: true
+          showRadius: false
+          showDiameter: false
+          centreLabel: C
+          highlightElement: none
+      finalAnswer: The diameter is a straight line segment that passes through the centre (C) and connects two points on the
+        circumference.
+      stepByStepGuideline:
+      - Recall the definition of the diameter.
+      - The diameter must be a line segment connecting two points on the circumference.
+      - Crucially, this line segment must pass through the centre (C).
+      id: q1-5
+      questionGroup: q1
+- id: arcs-node-1
+  nodeNumber: 2
+  title: Major and Minor Arcs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleWithArcs
+    preWrittenQuestions:
+    - problemText: A logo designer creates a circular element where points A and B define a minor arc measuring 100°. Calculate
+        the measure of the corresponding major arc AB.
+      avatarIntro: Working with arcs is crucial for understanding circular geometry. Remember that a full circle measures
+        360 degrees!
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: A
+          pointB: B
+          arcAngle: 100
+          showChord: false
+          showMinorArc: true
+          showMajorArc: false
+          showSegment: false
+      finalAnswer: 260°
+      stepByStepGuideline:
+      - Recall that the sum of the minor arc and the major arc spanning the same endpoints (A and B) must equal the total
+        degrees in a circle (360°).
+      - Major Arc AB = 360° - Minor Arc AB.
+      - 'Substitute the given minor arc measure: Major Arc AB = 360° - 100°.'
+      - 'Calculate the result: 260°.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: On a circular clock face, the minute hand moves from position M to position N. The resulting arc shown
+        in the diagram is the longer path connecting M and N. If the minor arc MN measures 160°, classify the arc MN shown
+        in the diagram.
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: M
+          pointB: N
+          arcAngle: 160
+          showChord: false
+          showMinorArc: false
+          showMajorArc: true
+          showSegment: false
+      finalAnswer: Major arc
+      stepByStepGuideline:
+      - An arc is classified as minor if its measure is less than 180°.
+      - An arc is classified as major if its measure is greater than 180°.
+      - The major arc measure is 360° - 160° = 200°.
+      - Since 200° > 180°, the arc shown (the longer path) is a major arc.
+      id: q2-2
+      questionGroup: q2
+    - problemText: Points A and B define the ends of a circular boundary on a map. If C is a third point located on the longer
+        arc connecting A and B, use proper notation to identify this major arc.
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: A
+          pointB: B
+          arcAngle: 120
+          showChord: false
+          showMinorArc: true
+          showMajorArc: false
+          showSegment: false
+      finalAnswer: arc ACB (or arc BCA)
+      stepByStepGuideline:
+      - A minor arc is typically denoted using its two endpoints (e.g., arc AB).
+      - 'A major arc requires three points for proper notation: the two endpoints and one intermediate point lying on the
+        arc.'
+      - Since A and B are the endpoints and C lies on the longer arc (major arc), the correct notation is arc ACB.
+      id: q2-3
+      questionGroup: q2
+    - problemText: A circular pizza, centered at O, is cut such that points X and Y are on the crust. The area enclosed by
+        the two radii OX and OY and the minor arc XY is removed. What geometric term describes this specific portion of the
+        circle?
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: X
+          pointB: Y
+          arcAngle: 90
+          showChord: false
+          showMinorArc: true
+          showMajorArc: false
+          showSegment: false
+      finalAnswer: Sector
+      stepByStepGuideline:
+      - 'Identify the components defining the region: two radii (OX and OY) and the intercepted arc (XY).'
+      - By definition, a sector is the region of a circle bounded by two radii and their intercepted arc.
+      - The geometric term for this portion is a sector.
+      id: q2-4
+      questionGroup: q2
+    - problemText: An architect designs a circular window feature where the endpoints P and Q define a minor arc that measures
+        60°. Determine the degree measure of the corresponding major arc PQ.
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: P
+          pointB: Q
+          arcAngle: 60
+          showChord: false
+          showMinorArc: true
+          showMajorArc: false
+          showSegment: false
+      finalAnswer: 300°
+      stepByStepGuideline:
+      - The total degrees in a circle is 360°.
+      - To find the major arc measure, subtract the minor arc measure from 360°.
+      - Major Arc PQ = 360° - 60°.
+      - Major Arc PQ = 300°.
+      id: q2-5
+      questionGroup: q2
+- id: chords-and-segments-node-1
+  nodeNumber: 3
+  title: Chords and Segments
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleWithArcs
+    preWrittenQuestions:
+    - problemText: 'True or False: In analyzing a circular gear mechanism, the diameter is defined as the longest possible
+        chord that must pass directly through the center point of the gear.'
+      avatarIntro: Great job on defining the basic parts of a circle! Now let's explore chords and how they relate to the
+        circle's structure.
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: A
+          pointB: B
+          arcAngle: 100
+          showChord: true
+          showMinorArc: false
+          showMajorArc: false
+          showSegment: true
+      finalAnswer: 'True'
+      stepByStepGuideline:
+      - 'Recall the definition of a chord: A line segment joining any two points on the circumference of a circle.'
+      - 'Recall the definition of a diameter: A chord that passes through the center of the circle.'
+      - The diameter is, by definition, the longest chord possible in any circle. Therefore, the statement is true.
+      id: q3-1
+      questionGroup: q3
+    - problemText: A landscape architect is designing a circular path system in a park. In the diagram showing the boundary,
+        the straight line segment connecting two points, A and B, on the circumference is drawn. What is the geometric term
+        for this line segment AB?
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: A
+          pointB: B
+          arcAngle: 100
+          showChord: true
+          showMinorArc: false
+          showMajorArc: false
+          showSegment: true
+      finalAnswer: Chord
+      stepByStepGuideline:
+      - Identify the line segment AB in the diagram.
+      - Observe that A and B are both points located on the circumference of the circle.
+      - A line segment joining two points on the circumference is defined as a chord.
+      id: q3-2
+      questionGroup: q3
+    - problemText: A circular cutting board is divided by a straight cut PQ, creating two segments. The diagram illustrates
+        these two pieces. Which term correctly describes the larger of the two segments created by the chord PQ?
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: P
+          pointB: Q
+          arcAngle: 100
+          showChord: true
+          showMinorArc: false
+          showMajorArc: false
+          showSegment: true
+      finalAnswer: Major segment
+      stepByStepGuideline:
+      - A chord divides a circle into two regions called segments.
+      - The smaller region is known as the minor segment.
+      - The larger region is known as the major segment.
+      id: q3-3
+      questionGroup: q3
+    - problemText: A scientist uses a model of a circular biological cell cross-section. The line segment XY creates two segments,
+        one of which is shaded (as shown). How should the smaller, shaded region defined by the chord XY be classified?
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: X
+          pointB: Y
+          arcAngle: 120
+          showChord: true
+          showMinorArc: false
+          showMajorArc: false
+          showSegment: true
+      finalAnswer: Minor segment
+      stepByStepGuideline:
+      - 'A chord divides the circle into two segments: a major segment and a minor segment.'
+      - The question asks to classify the smaller region.
+      - The smaller region bounded by the chord and the minor arc is always called the minor segment.
+      id: q3-4
+      questionGroup: q3
+    - problemText: An archaeologist studies an ancient circular foundation. A straight line CD connects two opposite points
+        on the outer edge, dividing the circular area into two distinct sections. What is the general geometric term used
+        to describe these two sections that the chord CD creates?
+      mathTool:
+        toolName: circleWithArcs
+        parameters:
+          pointA: C
+          pointB: D
+          arcAngle: 100
+          showChord: true
+          showMinorArc: false
+          showMajorArc: false
+          showSegment: true
+      finalAnswer: Segments (or Circular segments)
+      stepByStepGuideline:
+      - Identify that CD is a chord because it connects two points on the circumference.
+      - 'Recall the definition of segments: A chord divides the interior of a circle into two regions.'
+      - These regions are generally referred to as circular segments (major and minor).
+      id: q3-5
+      questionGroup: q3
+- id: theorem-statement-node-1
+  nodeNumber: 4
+  title: Angle in Semicircle Theorem
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleSemicircle
+    preWrittenQuestions:
+    - problemText: An architectural plan shows a circular window design. AB is the diameter of the circle, and C is a point
+        on the circumference. Based on the diagram, determine the measure of angle ACB.
+      avatarIntro: This theorem is fundamental in understanding cyclic geometry. Let's start by applying it to find an unknown
+        angle.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AB
+          pointOnCircle: C
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: false
+      finalAnswer: 90°
+      stepByStepGuideline:
+      - Identify AB as the diameter of the circle.
+      - Recognize that C is a point on the circumference, forming a triangle ACB where the side AB is the diameter.
+      - Apply the Angle in a Semicircle Theorem, which states that any angle subtended by the diameter at the circumference
+        is 90°.
+      - Therefore, the measure of angle ACB is 90°.
+      id: q4-1
+      questionGroup: q4
+    - problemText: In geometry, a triangle is inscribed within a circle such that one of its sides is the diameter. State
+        the specific theorem that defines the measure of the angle opposite the diameter.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AB
+          pointOnCircle: C
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: false
+      finalAnswer: The angle in a semi-circle is a right angle (90°).
+      stepByStepGuideline:
+      - Recall the definition of a semicircle (half a circle, bounded by a diameter).
+      - Recall the theorem relating to angles formed when the diameter is one side of an inscribed triangle.
+      - 'State the theorem: The angle subtended by the diameter at any point on the circumference is a right angle (90°).'
+      id: q4-2
+      questionGroup: q4
+    - problemText: A surveyor uses points P and Q to mark the endpoints of a path that passes through the center of a circular
+        clearing. R is another point on the boundary. We form triangle PRQ. Explain why angle PRQ must be 90°.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: PQ
+          pointOnCircle: R
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: true
+      finalAnswer: PQ is the diameter, and R is a point on the circumference. The Angle in a Semicircle Theorem guarantees
+        that the angle subtended by the diameter (PQ) at the circumference (R) is 90°.
+      stepByStepGuideline:
+      - Identify PQ as the diameter of the circular clearing (as the path passes through the center).
+      - Identify R as the vertex of the angle that lies on the circumference.
+      - Apply the Angle in a Semicircle Theorem.
+      - Conclude that since the angle ∠PRQ is subtended by the diameter at the circumference, it must be 90°.
+      id: q4-3
+      questionGroup: q4
+    - problemText: In a CAD drawing for an engineering component, XY represents the diameter of a circular section. M is a
+        point on the circumference used for alignment. Determine the measure of angle XMY.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: XY
+          pointOnCircle: M
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: false
+      finalAnswer: 90 degrees
+      stepByStepGuideline:
+      - Identify XY as the diameter of the circular section.
+      - Recognize that the triangle XYM is inscribed in the semicircle.
+      - The angle opposite the diameter is the angle subtended at the circumference, which is ∠XMY.
+      - Based on the Angle in a Semicircle Theorem, ∠XMY must be 90 degrees.
+      id: q4-4
+      questionGroup: q4
+    - problemText: Given a circle where AB is the diameter and N is a point on the circumference, triangle ANB is formed.
+        State the geometric reason that determines the measure of angle ANB.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AB
+          pointOnCircle: N
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: false
+      finalAnswer: Angle in a semi-circle is a right angle.
+      stepByStepGuideline:
+      - 'Analyze the given setup: AB is the diameter, and N is on the circumference.'
+      - Determine that the angle ∠ANB is subtended by the diameter at the circumference.
+      - The governing principle is the Angle in a Semicircle Theorem.
+      - 'State the reason clearly: Angle in a semi-circle is a right angle.'
+      id: q4-5
+      questionGroup: q4
+- id: proof-node-1
+  nodeNumber: 5
+  title: Proving Angle in Semicircle
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleSemicircle
+    preWrittenQuestions:
+    - problemText: In the geometric proof setup for the Angle in a Semicircle theorem, O is the centre, AB is the diameter,
+        and C is a point on the circumference. Radii OA, OC, and OB are drawn. If $\angle OAC = 30^\circ$, find the measure
+        of $\angle OCA$.
+      avatarIntro: Welcome! Let us practice proving geometric theorems related to circles. Remember that all radii of the
+        same circle are equal.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AB
+          pointOnCircle: C
+          showAngle: true
+          showRightAngleMarker: true
+          highlightDiameter: false
+      finalAnswer: $30^\circ$
+      stepByStepGuideline:
+      - Identify the triangle OAC. Since OA and OC are both radii of the circle, OA = OC.
+      - Therefore, triangle OAC is an isosceles triangle.
+      - In an isosceles triangle, the base angles opposite the equal sides are equal. Thus, $\angle OCA = \angle OAC$.
+      - Given $\angle OAC = 30^\circ$, we find $\angle OCA = 30^\circ$.
+      id: q5-1
+      questionGroup: q5
+    - problemText: A surveyor uses map coordinates to define a circular boundary with center O and diameter AB. C is a fixed
+        point on the boundary. Explain the fundamental geometric reason why triangle OBC must be an isosceles triangle.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AB
+          pointOnCircle: C
+          showAngle: true
+          showRightAngleMarker: true
+          highlightDiameter: false
+      finalAnswer: Triangle OBC is isosceles because OB and OC are both radii of the circle, meaning OB = OC.
+      stepByStepGuideline:
+      - 'Recall the definition of a radius: a segment connecting the center of the circle to a point on the circumference.'
+      - O is the center of the circle.
+      - OB connects the center O to the circumference point B (the endpoint of the diameter).
+      - OC connects the center O to the circumference point C.
+      - Since all radii in the same circle are equal in length, OB = OC, making triangle OBC isosceles.
+      id: q5-2
+      questionGroup: q5
+    - problemText: A mechanical drawing shows a circular component centered at O, with AB as the diameter. If the base angle
+        $\angle OAC$ in the isosceles triangle OAC measures $40^\circ$, apply the angle sum property of a triangle to calculate
+        the central angle $\angle AOC$.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AB
+          pointOnCircle: C
+          showAngle: true
+          showRightAngleMarker: true
+          highlightDiameter: false
+      finalAnswer: $100^\circ$
+      stepByStepGuideline:
+      - Identify that $\triangle OAC$ is isosceles (OA = OC, radii).
+      - If $\angle OAC = 40^\circ$, then the other base angle $\angle OCA = 40^\circ$.
+      - The sum of angles in a triangle is $180^\circ$.
+      - 'Calculate $\angle AOC$: $\angle AOC = 180^\circ - (\angle OAC + \angle OCA)$.'
+      - $\angle AOC = 180^\circ - (40^\circ + 40^\circ) = 180^\circ - 80^\circ = 100^\circ$.
+      id: q5-3
+      questionGroup: q5
+    - problemText: "In a theoretical geometry problem proving the Angle in a Semicircle theorem, we use the exterior angle\
+        \ property. If we let $\\angle OAC = 35^\\circ$, and knowing that $\\triangle OAC$ is isosceles, complete the statement\
+        \ regarding the exterior angle $\\angle BOC$. \n\nStatement: $\\angle BOC = \\dots$ because $\\dots$"
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AB
+          pointOnCircle: C
+          showAngle: true
+          showRightAngleMarker: true
+          highlightDiameter: false
+      finalAnswer: $\angle BOC = 70^\circ$ because the exterior angle of a triangle is equal to the sum of the two interior
+        opposite angles (i.e., $\angle BOC = \angle OAC + \angle OCA$).
+      stepByStepGuideline:
+      - Identify that $\triangle OAC$ is isosceles, so $\angle OCA = \angle OAC = 35^\circ$.
+      - Recognize that $\angle BOC$ is the exterior angle to $\triangle OAC$ at vertex O.
+      - 'Apply the Exterior Angle Theorem: The measure of an exterior angle of a triangle equals the sum of the measures of
+        its two remote interior angles.'
+      - Therefore, $\angle BOC = \angle OAC + \angle OCA$.
+      - 'Substitute the known angles: $\angle BOC = 35^\circ + 35^\circ = 70^\circ$.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'An astronomical model shows a body C orbiting center O, where AB is the diameter of the path. If $\angle
+        OAC = 25^\circ$, calculate the measure of $\angle OCB$. (Hint: Use the property that $\angle ACB = 90^\circ$ and the
+        isosceles property of $\triangle OAC$).'
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AB
+          pointOnCircle: C
+          showAngle: true
+          showRightAngleMarker: true
+          highlightDiameter: false
+      finalAnswer: $65^\circ$
+      stepByStepGuideline:
+      - First, use the isosceles property of $\triangle OAC$. Since OA = OC (radii), $\angle OCA = \angle OAC = 25^\circ$.
+      - The Angle in a Semicircle Theorem states that $\angle ACB = 90^\circ$.
+      - 'Angle $\angle ACB$ is composed of two smaller angles: $\angle ACB = \angle OCA + \angle OCB$.'
+      - 'Substitute the known values: $90^\circ = 25^\circ + \angle OCB$.'
+      - 'Solve for $\angle OCB$: $\angle OCB = 90^\circ - 25^\circ = 65^\circ$.'
+      id: q5-5
+      questionGroup: q5
+- id: applications-node-1
+  nodeNumber: 6
+  title: Applying Angle in Semicircle
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleSemicircle
+    preWrittenQuestions:
+    - problemText: In an engineering schematic, a circular cutout has diameter AB. Point C is on the circumference. If $\angle
+        CAB = 40^\circ$, determine the measure of $\angle CBA$.
+      avatarIntro: Let's start by recalling the Angle in a Semicircle theorem. This theorem is crucial for solving problems
+        involving triangles inscribed in circles.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AB
+          pointOnCircle: C
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: false
+      finalAnswer: $50^\circ$
+      stepByStepGuideline:
+      - Identify that since AB is the diameter and C is on the circumference, $\angle ACB$ is the angle in a semicircle.
+      - State the measure of $\angle ACB = 90^\circ$ (Angle in Semicircle theorem).
+      - 'Use the angle sum property of a triangle ($\triangle ABC$): $\angle CBA = 180^\circ - \angle ACB - \angle CAB$.'
+      - 'Calculate the final angle: $\angle CBA = 180^\circ - 90^\circ - 40^\circ = 50^\circ$.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: A robotic arm traces a circular path. P and Q define the diameter of this path, and R is a point reached
+        on the circumference. If $\angle PQR = 30^\circ$, calculate the value of $\angle QPR$.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: PQ
+          pointOnCircle: R
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: false
+      finalAnswer: $60^\circ$
+      stepByStepGuideline:
+      - Identify that PQ is the diameter, so the angle subtended at R, $\angle PRQ$, is $90^\circ$ (Angle in Semicircle).
+      - Apply the angle sum property of $\triangle PQR$. The sum of angles is $180^\circ$.
+      - 'Calculate the unknown angle: $\angle QPR = 180^\circ - 90^\circ - 30^\circ = 60^\circ$.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: Three geographical markers X, Y, and Z lie on the boundary of a circular national park lake. The segment
+        XY forms the diameter across the lake. If the observation angle $\angle YXZ = 52^\circ$, determine the size of $\angle
+        XYZ$.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: XY
+          pointOnCircle: Z
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: false
+      finalAnswer: $38^\circ$
+      stepByStepGuideline:
+      - Since XY is the diameter, the angle subtended by Z, $\angle XZY$, is $90^\circ$ (Angle in Semicircle).
+      - Use the fact that the sum of angles in $\triangle XYZ$ is $180^\circ$.
+      - Calculate $\angle XYZ = 180^\circ - 90^\circ - 52^\circ$.
+      - $\angle XYZ = 38^\circ$.
+      id: q6-3
+      questionGroup: q6
+    - problemText: A circular picture frame uses a rigid support structure where segment QR is the diameter. Point P is fixed
+        on the frame's edge. If the measured angle $\angle PRQ = 45^\circ$, find the measure of $\angle PQR$.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: QR
+          pointOnCircle: P
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: false
+      finalAnswer: $45^\circ$
+      stepByStepGuideline:
+      - Identify that QR is the diameter, therefore $\angle QPR = 90^\circ$ (Angle in Semicircle).
+      - Use the angle sum property of $\triangle PQR$.
+      - 'Calculate the remaining angle: $\angle PQR = 180^\circ - 90^\circ - 45^\circ$.'
+      - $\angle PQR = 45^\circ$.
+      id: q6-4
+      questionGroup: q6
+    - problemText: A cross-section of a circular tunnel shows points A and C defining the diameter. B is a point on the inner
+        wall. Triangle ABC is formed. Given that $\angle BAC = 25^\circ$, find the measure of $\angle BCA$.
+      mathTool:
+        toolName: circleSemicircle
+        parameters:
+          diameter: AC
+          pointOnCircle: B
+          showAngle: true
+          showRightAngleMarker: false
+          highlightDiameter: false
+      finalAnswer: $65^\circ$
+      stepByStepGuideline:
+      - Identify that AC is the diameter, thus $\angle ABC = 90^\circ$ (Angle in Semicircle).
+      - Apply the angle sum property of $\triangle ABC$.
+      - 'Calculate the final angle: $\angle BCA = 180^\circ - 90^\circ - 25^\circ$.'
+      - $\angle BCA = 65^\circ$.
+      id: q6-5
+      questionGroup: q6
+- id: equal-chords-equal-angles-node-1
+  nodeNumber: 7
+  title: Equal Chords Subtend Equal Angles
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleWithChords
+    preWrittenQuestions:
+    - problemText: A clock maker is designing a specialty clock face with center O. Two non-adjacent chords, AB and CD, are
+        measured to be exactly the same length (AB = CD). If the angle subtended by chord AB at the centre, $\angle AOB$,
+        is $70^\circ$, find the measure of the angle subtended by chord CD, $\angle COD$.
+      avatarIntro: Ready to test your knowledge on circle theorems? Remember the relationship between equal chords and the
+        angles they create at the center.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          chord2Points: CD
+          showPerpendicular: false
+          showMidpoint: false
+          equalChords: true
+          highlightChord: none
+      finalAnswer: 70\u00b0
+      stepByStepGuideline:
+      - 'Identify the given information: Chords AB and CD are equal (AB = CD), and the angle subtended by AB is $\angle AOB
+        = 70^\circ$.'
+      - 'Recall the theorem: Equal chords in a circle subtend equal angles at the centre.'
+      - Since AB = CD, it must follow that $\angle AOB = \angle COD$.
+      - Therefore, $\angle COD = 70^\circ$.
+      id: q7-1
+      questionGroup: q7
+    - problemText: 'A chef is cutting a large circular pizza, centered at O. Two slices are cut such that the central angles
+        formed are equal: $\angle POQ = 110^\circ$ and $\angle ROS = 110^\circ$. What conclusion can be drawn about the lengths
+        of the crust edges (chords) PQ and RS?'
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: PQ
+          chord2Points: RS
+          showPerpendicular: false
+          showMidpoint: false
+          equalChords: false
+          highlightChord: none
+      finalAnswer: Chord PQ = Chord RS (Equal angles at the centre subtend equal chords)
+      stepByStepGuideline:
+      - 'Identify the given information: The angles subtended by the chords PQ and RS at the centre O are equal ($\angle POQ
+        = \angle ROS = 110^\circ$).'
+      - 'Recall the converse theorem: If the angles subtended by two chords at the centre of a circle are equal, then the
+        chords are equal.'
+      - Therefore, we can conclude that the length of chord PQ is equal to the length of chord RS.
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'An engineer designs a component for a wheel, centered at O. Two distinct sections are defined by chords
+        XY and MN. The engineer ensures that the angles subtended by these chords are both right angles: $\angle XOY = 90^\circ$
+        and $\angle MON = 90^\circ$. Based on this information, state the geometric relationship between the chords XY and
+        MN.'
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: XY
+          chord2Points: MN
+          showPerpendicular: false
+          showMidpoint: false
+          equalChords: false
+          highlightChord: none
+      finalAnswer: XY = MN (Equal angles at centre subtend equal chords)
+      stepByStepGuideline:
+      - Observe that the central angles $\angle XOY$ and $\angle MON$ are equal ($90^\circ$).
+      - 'Apply the converse of the Equal Chords, Equal Angles theorem: If the angles subtended by two chords at the centre
+        are equal, then the chords are equal.'
+      - Conclude that chord XY must be equal in length to chord MN.
+      id: q7-3
+      questionGroup: q7
+    - problemText: A jeweller is crafting a circular pendant with centre O. She constructs two chords, AB and CD, such that
+        chord AB is congruent to chord CD. If the angle subtended by chord AB is measured to be $120^\circ$, determine the
+        measure of the angle subtended by chord CD. State the theorem that justifies your answer.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          chord2Points: CD
+          showPerpendicular: false
+          showMidpoint: false
+          equalChords: true
+          highlightChord: none
+      finalAnswer: $120^\circ$ (Equal chords subtend equal angles at the centre)
+      stepByStepGuideline:
+      - Identify that the lengths of the chords are equal (AB = CD).
+      - 'Identify the angle subtended by chord AB at the centre: $\angle AOB = 120^\circ$.'
+      - 'Apply the theorem: Equal chords subtend equal angles at the centre.'
+      - Therefore, the angle subtended by CD, $\angle COD$, must also be $120^\circ$.
+      id: q7-4
+      questionGroup: q7
+    - problemText: A circular fountain pool has centre O. Two identical support cables, PQ and RS, are attached to the circumference,
+        acting as equal chords (PQ = RS). If the angle subtended by cable PQ at the centre is $\angle POQ = 60^\circ$, what
+        is the measure of $\angle ROS$?
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: PQ
+          chord2Points: RS
+          showPerpendicular: false
+          showMidpoint: false
+          equalChords: true
+          highlightChord: none
+      finalAnswer: 60\u00b0
+      stepByStepGuideline:
+      - The problem states that the chords PQ and RS are identical (equal).
+      - The angle subtended by chord PQ is given as $\angle POQ = 60^\circ$.
+      - According to the theorem, equal chords in a circle subtend equal angles at the centre.
+      - Therefore, $\angle ROS = \angle POQ = 60^\circ$.
+      id: q7-5
+      questionGroup: q7
+- id: perpendicular-bisector-node-1
+  nodeNumber: 8
+  title: Perpendicular from Centre Bisects Chord
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleWithChords
+    preWrittenQuestions:
+    - problemText: A circular gear design has its centre O. A straight edge (representing chord AB) measures 24 cm. If the
+        perpendicular distance from the centre O to the chord AB is 5 cm, find the radius (r) of the circular gear.
+      avatarIntro: Ready to tackle geometry problems? Remember the relationship between the radius, the distance from the
+        centre, and half the chord length using Pythagoras' theorem.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: false
+          highlightChord: 1
+      finalAnswer: 13 cm
+      stepByStepGuideline:
+      - The perpendicular from the centre O to the chord AB bisects the chord. Since the chord is 24 cm, the half-chord length
+        is $24 \div 2 = 12$ cm.
+      - We form a right-angled triangle with the radius (r) as the hypotenuse, the perpendicular distance (5 cm), and the
+        half-chord (12 cm) as the legs.
+      - 'Apply the Pythagorean theorem: $r^2 = d^2 + (\text{half-chord})^2$.'
+      - 'Substitute the values: $r^2 = 5^2 + 12^2$.'
+      - 'Calculate: $r^2 = 25 + 144 = 169$.'
+      - 'Find the radius: $r = \sqrt{169} = 13$ cm.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: A circular fence enclosure has a radius of 10 m. A straight section of the fence (chord AB) is located
+        6 m from the centre of the enclosure. Calculate the total length of this straight section of fence.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: false
+          highlightChord: 1
+      finalAnswer: 16 m
+      stepByStepGuideline:
+      - Let the half-chord length be $x$. We use the relationship $r^2 = d^2 + x^2$, where $r = 10$ m and $d = 6$ m.
+      - 'Rearrange the formula to find the half-chord length: $x^2 = r^2 - d^2$.'
+      - 'Substitute the values: $x^2 = 10^2 - 6^2 = 100 - 36 = 64$.'
+      - 'Find the half-chord length: $x = \sqrt{64} = 8$ m.'
+      - Since the perpendicular from the centre bisects the chord, the total length of the chord (straight section of fence)
+        is $2 \times x$.
+      - Chord length = $2 \times 8 = 16$ m.
+      id: q8-2
+      questionGroup: q8
+    - problemText: The cross-section of a large sewer pipe has a radius of 17 cm. A stagnant water level forms a straight
+        line (chord AB) 30 cm wide across the pipe's interior. What is the perpendicular distance (d) from the centre of the
+        pipe to the water level?
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: false
+          highlightChord: 1
+      finalAnswer: 8 cm
+      stepByStepGuideline:
+      - The perpendicular from the centre to the chord bisects the chord. The chord length is 30 cm, so the half-chord length
+        is $30 \div 2 = 15$ cm.
+      - We use the relationship $r^2 = d^2 + (\text{half-chord})^2$, where $r = 17$ cm and the half-chord is 15 cm.
+      - 'Rearrange the formula to find the distance: $d^2 = r^2 - (\text{half-chord})^2$.'
+      - 'Substitute the values: $d^2 = 17^2 - 15^2 = 289 - 225$.'
+      - 'Calculate: $d^2 = 64$.'
+      - Find the distance $d = \sqrt{64} = 8$ cm.
+      id: q8-3
+      questionGroup: q8
+    - problemText: A landscape architect is designing a circular pond. A decorative stone path (chord AB) spans 8 m across
+        the water. If the shortest distance from the centre of the pond to the path is 3 m, what is the radius of the pond?
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: false
+          highlightChord: 1
+      finalAnswer: 5 m
+      stepByStepGuideline:
+      - First, find the half-chord length. Since the path is 8 m, the half-chord is $8 \div 2 = 4$ m.
+      - The radius (r) is the hypotenuse of the right-angled triangle formed by the radius, the distance (d = 3 m), and the
+        half-chord (4 m).
+      - 'Apply the Pythagorean theorem: $r^2 = d^2 + (\text{half-chord})^2$.'
+      - 'Substitute the values: $r^2 = 3^2 + 4^2$.'
+      - 'Calculate: $r^2 = 9 + 16 = 25$.'
+      - 'Find the radius: $r = \sqrt{25} = 5$ m.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: A circular trampoline structure has a radius of 9 cm. A support bar (chord AB) is attached such that its
+        perpendicular distance from the centre is 4 cm. Calculate the length of the support bar, giving your answer correct
+        to 3 significant figures.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: false
+          highlightChord: 1
+      finalAnswer: 16.1 cm
+      stepByStepGuideline:
+      - 'Let $x$ be the half-chord length. Using the Pythagorean theorem: $r^2 = d^2 + x^2$, where $r = 9$ cm and $d = 4$
+        cm.'
+      - 'Find the half-chord length: $x^2 = r^2 - d^2$.'
+      - 'Substitute the values: $x^2 = 9^2 - 4^2 = 81 - 16 = 65$.'
+      - 'Calculate $x$: $x = \sqrt{65} \approx 8.06226$ cm.'
+      - The total length of the support bar (chord) is $2x$.
+      - Chord length = $2 \times \sqrt{65} \approx 16.1245$ cm.
+      - Rounding the answer to 3 significant figures gives 16.1 cm.
+      id: q8-5
+      questionGroup: q8
+- id: chord-applications-node-1
+  nodeNumber: 9
+  title: Chord Theorem Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleWithChords
+    preWrittenQuestions:
+    - problemText: A large circular satellite dish component has a radius of 20 cm. Two identical support struts, represented
+        by chords AB and CD, are installed. If the length of each strut (chord) is 32 cm, calculate the perpendicular distance
+        (d) from the center of the dish to the struts.
+      avatarIntro: Welcome! Let's apply the relationship between the radius, chord length, and distance from the center using
+        the Pythagorean theorem.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          chord2Points: CD
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: true
+          highlightChord: none
+      finalAnswer: 12 cm
+      stepByStepGuideline:
+      - The radius (r) is the hypotenuse of the right triangle formed by the radius, half the chord length (c/2), and the
+        perpendicular distance (d). r = 20 cm, c/2 = 32 cm / 2 = 16 cm.
+      - 'Apply the Pythagorean theorem: $r^2 = d^2 + (c/2)^2$.'
+      - $20^2 = d^2 + 16^2$
+      - $400 = d^2 + 256$
+      - $d^2 = 400 - 256 = 144$
+      - Therefore, $d = \sqrt{144} = 12$ cm.
+      section: chord-applications
+      id: q9-1
+      questionGroup: q9
+    - problemText: A circular art installation frame has a radius of 25 cm. Two straight structural wires are attached, forming
+        chords AB and CD. Chord AB measures 48 cm, and Chord CD measures 40 cm. Determine the perpendicular distance of the
+        shorter chord (CD) from the center O. Based on your results, state which wire (AB or CD) is further from the center.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          chord2Points: CD
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: false
+          highlightChord: CD
+      finalAnswer: 15 cm. Chord CD is further from the center.
+      stepByStepGuideline:
+      - We need to find the distance (d) for both chords.
+      - 'For Chord AB (c=48, c/2=24): $d_{AB}^2 = r^2 - (c/2)^2 = 25^2 - 24^2 = 625 - 576 = 49$. $d_{AB} = 7$ cm.'
+      - 'For Chord CD (c=40, c/2=20): $d_{CD}^2 = r^2 - (c/2)^2 = 25^2 - 20^2 = 625 - 400 = 225$. $d_{CD} = 15$ cm.'
+      - The shorter chord (CD) has a distance of 15 cm from the center.
+      - Since $15 > 7$, Chord CD is further from the center than Chord AB.
+      section: chord-applications
+      id: q9-2
+      questionGroup: q9
+    - problemText: A circular sports field is being designed. The boundary is circular with center O. A temporary boundary
+        marker, Chord AB, measures 24 m long and is located 9 m from the center O. A permanent marker, Chord CD, is planned
+        to be 18 m long. Calculate the perpendicular distance of the permanent marker (Chord CD) from the center O.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          chord2Points: CD
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: false
+          highlightChord: CD
+      finalAnswer: 12 m
+      stepByStepGuideline:
+      - 'Step 1: Use Chord AB to find the radius (r) of the circle. $r^2 = d_1^2 + (c_1/2)^2$.'
+      - $r^2 = 9^2 + (24/2)^2 = 81 + 12^2 = 81 + 144 = 225$. Thus, $r = 15$ m.
+      - 'Step 2: Use the calculated radius (r=15 m) to find the distance ($d_2$) of Chord CD (c_2 = 18 m). $d_2^2 = r^2 -
+        (c_2/2)^2$.'
+      - $d_2^2 = 15^2 - (18/2)^2 = 225 - 9^2 = 225 - 81 = 144$.
+      - 'Step 3: Calculate the final distance: $d_2 = \sqrt{144} = 12$ m.'
+      section: chord-applications
+      id: q9-3
+      questionGroup: q9
+    - problemText: In a circle with center O, two unequal chords AB and CD are drawn such that the length of chord AB is greater
+        than the length of chord CD (AB > CD). Let $d_1$ be the perpendicular distance from O to AB, and $d_2$ be the perpendicular
+        distance from O to CD. Prove geometrically that $d_1 < d_2$.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          chord2Points: CD
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: false
+          highlightChord: none
+      finalAnswer: Proof requires showing that since AB > CD, (AB/2) > (CD/2). Using $d^2 = r^2 - (c/2)^2$, if (c/2) increases,
+        $d^2$ must decrease, hence $d_1 < d_2$.
+      stepByStepGuideline:
+      - 'Both chords relate to the radius (r) via the Pythagorean theorem: $d^2 = r^2 - (c/2)^2$. Since they are in the same
+        circle, r is constant.'
+      - We are given $AB > CD$. Dividing by 2, we get $(AB/2) > (CD/2)$.
+      - 'Substitute into the Pythagorean relationship: $d_1^2 = r^2 - (AB/2)^2$ and $d_2^2 = r^2 - (CD/2)^2$.'
+      - Since $(AB/2)^2$ is a larger value being subtracted from the constant $r^2$ than $(CD/2)^2$, it follows that $d_1^2
+        < d_2^2$.
+      - Therefore, the perpendicular distance $d_1$ (to the longer chord AB) must be less than the perpendicular distance
+        $d_2$ (to the shorter chord CD). Longer chords are closer to the center.
+      section: chord-applications
+      id: q9-4
+      questionGroup: q9
+    - problemText: The cross-section of a circular hydraulic reservoir has center O. A measurement taken across a certain
+        level (Chord AB) shows a width of 30 cm, located 9 cm perpendicularly from the center O. If a second measurement level
+        (Chord CD) is located only 5 cm perpendicularly from the center, find the exact length of Chord CD.
+      mathTool:
+        toolName: circleWithChords
+        parameters:
+          chord1Points: AB
+          chord2Points: CD
+          showPerpendicular: true
+          showMidpoint: true
+          equalChords: false
+          highlightChord: CD
+      finalAnswer: $2\sqrt{281}$ cm
+      stepByStepGuideline:
+      - 'Step 1: Determine the square of the radius ($r^2$) using the data for Chord AB. $r^2 = d_1^2 + (c_1/2)^2$.'
+      - $r^2 = 9^2 + (30/2)^2 = 81 + 15^2 = 81 + 225 = 306$. $r^2 = 306$.
+      - 'Step 2: Use $r^2$ to find half the length of Chord CD ($c_2/2$), given $d_2 = 5$ cm. $(c_2/2)^2 = r^2 - d_2^2$.'
+      - $(c_2/2)^2 = 306 - 5^2 = 306 - 25 = 281$.
+      - 'Step 3: Find the length of Chord CD. $c_2/2 = \sqrt{281}$.'
+      - Therefore, $c_2 = 2\sqrt{281}$ cm.
+      section: chord-applications
+      id: q9-5
+      questionGroup: q9
+- id: tangent-definition-node-1
+  nodeNumber: 10
+  title: Understanding Tangents
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleTangent
+    preWrittenQuestions:
+    - problemText: A straight line L is drawn such that it intersects a circular pathway at exactly one point, labeled T.
+        The line never enters the interior of the circle. Based on geometric definitions, what is line L called?
+      avatarIntro: Welcome to the section on tangents! Let's start by defining the key lines that interact with a circle.
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: false
+          showRightAngle: false
+          tangentLabel: tangent
+          highlightRadius: false
+          highlightTangent: true
+      finalAnswer: A tangent line (or tangent)
+      stepByStepGuideline:
+      - Recall the definitions of lines intersecting a circle.
+      - A line that cuts through a circle at two points is called a secant.
+      - A line that touches the circle at exactly one point and remains outside the circle's interior is defined as a tangent
+        line.
+      - Since line L intersects the pathway (circle) at exactly one point T and does not cross inside, it is a tangent line.
+      id: q10-1
+      questionGroup: q10
+    - problemText: Imagine a circular wheel rolling along a flat road, represented by a straight line. If the wheel (circle)
+        touches the road (line) at exactly one location, P, what is P known as in circle geometry?
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: P
+          showRadius: false
+          showRightAngle: false
+          tangentLabel: Road
+          highlightRadius: false
+          highlightTangent: true
+      finalAnswer: The point of tangency
+      stepByStepGuideline:
+      - The road represents the tangent line, as it touches the wheel (circle) at a single point.
+      - The specific point where a tangent line touches the circle is defined as the point of tangency.
+      - Therefore, point P is the point of tangency.
+      id: q10-2
+      questionGroup: q10
+    - problemText: Line A intersects a circle at two distinct points, X and Y. Line B intersects the same circle at exactly
+        one point, M. Explain the fundamental geometric difference between Line A and Line B.
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: M
+          showRadius: false
+          showRightAngle: false
+          tangentLabel: Line B
+          highlightRadius: false
+          highlightTangent: true
+      finalAnswer: Line A is a secant because it intersects the circle at two points (X and Y), whereas Line B is a tangent
+        because it touches the circle at exactly one point (M), which is the point of tangency.
+      stepByStepGuideline:
+      - Identify the definition based on the number of intersection points.
+      - Line A intersects the circle at two points, satisfying the definition of a secant line.
+      - Line B intersects the circle at exactly one point, satisfying the definition of a tangent line.
+      - The difference is that a secant cuts the circle internally, while a tangent only touches the circumference externally.
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'True or False: If a straight line touches a circle at point A, and then immediately crosses into the interior
+        of the circle after point A, it is still considered a tangent line. Justify your answer.'
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: A
+          showRadius: false
+          showRightAngle: false
+          tangentLabel: Design Line
+          highlightRadius: false
+          highlightTangent: true
+      finalAnswer: False. A tangent line must touch the circle at exactly one point and never cross into the interior of the
+        circle. If the line crosses into the interior, it becomes a secant line.
+      stepByStepGuideline:
+      - Recall the complete definition of a tangent line.
+      - 'A tangent must meet two criteria: 1) Touch the circle at exactly one point, AND 2) Never cross into the circle''s
+        interior.'
+      - If the line crosses into the interior, regardless of touching the edge first, it violates the tangent property and
+        is classified as a secant (assuming it exits the circle again) or a line containing a chord.
+      - Therefore, the statement is False.
+      id: q10-4
+      questionGroup: q10
+    - problemText: If a line L intersects a circle, which of the following intersection counts MUST be true if L is classified
+        as a tangent?
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: false
+          showRightAngle: false
+          tangentLabel: Line L
+          highlightRadius: false
+          highlightTangent: true
+      finalAnswer: Exactly one point of intersection.
+      stepByStepGuideline:
+      - Consider the various ways a line can interact with a circle.
+      - A line can intersect a circle at zero points (external line), one point (tangent), or two points (secant).
+      - By definition, a tangent is the line that touches the circle at precisely one location.
+      - Therefore, a tangent must have exactly one point of intersection.
+      id: q10-5
+      questionGroup: q10
+- id: radius-tangent-perpendicular-node-1
+  nodeNumber: 11
+  title: Radius Perpendicular to Tangent
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleTangent
+    preWrittenQuestions:
+    - problemText: A satellite moves in a circular path (center O). A signal transmitter is located at point P outside the
+        circle. The signal path PT is tangent to the orbit at point T. What is the measure of $\angle OTP$?
+      avatarIntro: This theorem is fundamental to understanding how radii and tangents interact. Remember the key relationship
+        they share at the point of contact!
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: false
+          tangentLabel: tangent
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: 90°
+      stepByStepGuideline:
+      - Identify OT as the radius of the circle.
+      - Identify PT as the tangent line touching the circle at T.
+      - 'Apply the theorem: The radius drawn to the point of tangency is perpendicular to the tangent.'
+      - Therefore, the angle $\angle OTP$ is 90°.
+      id: q11-1
+      questionGroup: q11
+    - problemText: A bicycle wheel (center O) has a radius of 5 cm. A measurement tool is placed at an external point P, 13
+        cm away from the center O. If the tool handle PT is tangent to the wheel at T, calculate the length of the tool handle
+        PT.
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: false
+          tangentLabel: tangent
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: 12 cm
+      stepByStepGuideline:
+      - Identify the triangle OTP, which is right-angled at T because the radius OT is perpendicular to the tangent PT.
+      - Given $OT = 5$ cm (radius) and $OP = 13$ cm (hypotenuse).
+      - 'Use the Pythagorean theorem: $OP^2 = OT^2 + PT^2$.'
+      - 'Substitute the known values: $13^2 = 5^2 + PT^2$.'
+      - $169 = 25 + PT^2$.
+      - $PT^2 = 169 - 25 = 144$.
+      - 'Calculate PT: $PT = \sqrt{144} = 12$ cm.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: An engineering schematic shows a circular component (radius 3 cm, center O). A support beam PT, 4 cm long,
+        is attached tangentially at T. Calculate the distance OP from the external end of the beam P to the center O.
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: false
+          tangentLabel: tangent
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: 5 cm
+      stepByStepGuideline:
+      - Recognize that $\triangle OTP$ is a right-angled triangle, with the right angle at T (Radius $\perp$ Tangent).
+      - Given $OT = 3$ cm (radius) and $PT = 4$ cm (tangent length).
+      - 'OP is the hypotenuse. Use the Pythagorean theorem: $OP^2 = OT^2 + PT^2$.'
+      - 'Substitute values: $OP^2 = 3^2 + 4^2$.'
+      - $OP^2 = 9 + 16 = 25$.
+      - 'Calculate OP: $OP = \sqrt{25} = 5$ cm.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: A construction blueprint features a circular arch (center O) and a temporary straight scaffold beam (tangent)
+        touching the arch at point T. If P is any point on the scaffold beam, which angle formed by the radius OT and the
+        tangent PT must be a right angle?
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: false
+          tangentLabel: tangent
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: $\angle OTP$
+      stepByStepGuideline:
+      - The radius is the line segment OT, and the tangent is the line segment PT.
+      - The theorem states that the radius is perpendicular to the tangent at the point of contact (T).
+      - Perpendicular lines form a 90° angle.
+      - Therefore, the angle at the point of tangency, $\angle OTP$, must be a right angle.
+      id: q11-4
+      questionGroup: q11
+    - problemText: A small moon orbits a planet (center O). A space probe is located at an external point P. The distance
+        OP is 17 units. The probe fires a laser beam PT that is tangent to the moon's orbit at T, and the beam length PT is
+        15 units. Find the radius of the moon's orbit (OT).
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: false
+          tangentLabel: tangent
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: 8 units
+      stepByStepGuideline:
+      - Since PT is tangent and OT is the radius, $\triangle OTP$ is right-angled at T.
+      - Given $OP = 17$ (hypotenuse) and $PT = 15$ (tangent length). We need to find $OT$ (radius).
+      - 'Use the Pythagorean theorem: $OT^2 = OP^2 - PT^2$.'
+      - 'Substitute values: $OT^2 = 17^2 - 15^2$.'
+      - $OT^2 = 289 - 225$.
+      - $OT^2 = 64$.
+      - 'Calculate OT: $OT = \sqrt{64} = 8$ units.'
+      id: q11-5
+      questionGroup: q11
+- id: applications-radius-tangent-node-1
+  nodeNumber: 12
+  title: Radius-Tangent Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleTangent
+    preWrittenQuestions:
+    - problemText: A powerful radio tower signal covers a circular area with a radius (OT) of 8 km. A receiving station P
+        is set up outside this area. A signal path PT is established tangentially to the edge of the coverage circle at T,
+        such that the length of the tangent PT is 15 km. Calculate the straight-line distance (OP) from the center of the
+        tower O to the receiving station P.
+      avatarIntro: These application problems combine the radius-tangent theorem with Pythagoras' theorem. Remember that the
+        radius is always perpendicular to the tangent at the point of contact!
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: true
+          tangentLabel: PT
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: 17 km
+      stepByStepGuideline:
+      - 'Identify the given values: Radius OT = 8 km and Tangent length PT = 15 km.'
+      - Recognize that the radius OT is perpendicular to the tangent PT at the point of contact T, forming a right-angled
+        triangle OPT.
+      - 'Apply the Pythagorean theorem to find the hypotenuse OP: OP² = OT² + PT².'
+      - 'Substitute the values: OP² = 8² + 15² = 64 + 225 = 289.'
+      - 'Calculate the distance OP by taking the square root: OP = √289 = 17 km.'
+      section: applications-radius-tangent
+      id: q12-1
+      questionGroup: q12
+    - problemText: A surveyor needs to measure the straight distance of a projected path PT that is tangent to a circular
+        curved section of a road (radius OT = 12 m). The external starting point P is 20 m away from the center O of the curved
+        section. Determine the exact length of the tangent path PT.
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: true
+          tangentLabel: PT
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: 16 m
+      stepByStepGuideline:
+      - 'Identify the given values: Hypotenuse OP = 20 m and Radius OT = 12 m.'
+      - Recognize that △OPT is a right-angled triangle where OT is perpendicular to PT.
+      - 'Apply the Pythagorean theorem to find the tangent length PT: PT² = OP² - OT².'
+      - 'Substitute the values: PT² = 20² - 12² = 400 - 144 = 256.'
+      - 'Calculate the length PT by taking the square root: PT = √256 = 16 m.'
+      section: applications-radius-tangent
+      id: q12-2
+      questionGroup: q12
+    - problemText: In a mechanical design, a robotic arm extends from a pivot point P, 25 cm away from the center O of a circular
+        component. The arm segment PT is 24 cm long and is designed to touch the component tangentially at T. Calculate the
+        radius (OT) of the circular component.
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: true
+          tangentLabel: PT
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: 7 cm
+      stepByStepGuideline:
+      - 'Identify the given values: Hypotenuse OP = 25 cm and Tangent length PT = 24 cm.'
+      - Recognize that △OPT is a right-angled triangle where the radius OT is perpendicular to the tangent PT.
+      - 'Apply the Pythagorean theorem to find the radius OT: OT² = OP² - PT².'
+      - 'Substitute the values: OT² = 25² - 24² = 625 - 576 = 49.'
+      - 'Calculate the radius OT by taking the square root: OT = √49 = 7 cm.'
+      section: applications-radius-tangent
+      id: q12-3
+      questionGroup: q12
+    - problemText: An architect is modeling a dome structure centered at O, with a radius of 10 units. A temporary support
+        beam PT of length 24 units is anchored externally at P, touching the dome tangentially at T. Find the distance OP
+        from the anchor point P to the center O of the dome.
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: true
+          tangentLabel: PT
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: 26 units
+      stepByStepGuideline:
+      - 'Identify the given values: Radius OT = 10 units and Tangent length PT = 24 units.'
+      - Since the radius is perpendicular to the tangent at T, △OPT is a right-angled triangle.
+      - 'Apply the Pythagorean theorem to find the hypotenuse OP: OP² = OT² + PT².'
+      - 'Substitute the values: OP² = 10² + 24² = 100 + 576 = 676.'
+      - 'Calculate the distance OP by taking the square root: OP = √676 = 26 units.'
+      section: applications-radius-tangent
+      id: q12-4
+      questionGroup: q12
+    - problemText: In a geological model simulating Earth's curvature (Center O), a tangential sight line PT is established
+        from an external observation point P. The radius OT is 12 units and the tangential distance PT is 16 units. Calculate
+        the area of the right-angled triangle △OPT formed by the center, the point of tangency, and the observation point.
+      mathTool:
+        toolName: circleTangent
+        parameters:
+          tangentPoint: T
+          showRadius: true
+          showRightAngle: true
+          tangentLabel: PT
+          highlightRadius: false
+          highlightTangent: false
+      finalAnswer: 96 square units
+      stepByStepGuideline:
+      - 'Identify the components of the right-angled triangle △OPT: The two legs (base and height) are the radius OT and the
+        tangent PT.'
+      - The lengths are OT = 12 units and PT = 16 units.
+      - 'Use the formula for the area of a right-angled triangle: Area = (1/2) × base × height.'
+      - 'Substitute the values: Area = (1/2) × OT × PT = (1/2) × 12 × 16.'
+      - 'Calculate the area: Area = 6 × 16 = 96 square units.'
+      section: applications-radius-tangent
+      id: q12-5
+      questionGroup: q12
+- id: equal-tangents-theorem-node-1
+  nodeNumber: 13
+  title: Tangents from External Point are Equal
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleTwoTangents
+    preWrittenQuestions:
+    - problemText: In the design of a decorative clock mechanism, point P represents a fixed pivot. Two straight support rods,
+        PA and PB, are attached tangentially to a circular gear wheel at points A and B respectively. If the length of rod
+        PA is 10 cm, what is the length of rod PB?
+      avatarIntro: 'Welcome! Remember the crucial theorem: tangents drawn from the same external point to a circle must always
+        be equal in length.'
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: false
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: 10 cm
+      stepByStepGuideline:
+      - Identify that PA and PB are tangent segments drawn from the external point P to the circle.
+      - 'Apply the theorem: Tangents drawn from an external point to a circle are equal in length (PA = PB).'
+      - Since PA = 10 cm, then PB must also be 10 cm.
+      section: equal-tangents-theorem
+      id: q13-1
+      questionGroup: q13
+    - problemText: A pulley system is designed such that the belt runs tangentially to the circular pulley wheel. From an
+        anchor point P, the two tangential segments PA and PB have lengths defined by PA = (2x + 3) meters and PB = (3x -
+        2) meters. Determine the value of x.
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: false
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: x = 5
+      stepByStepGuideline:
+      - 'Since PA and PB are tangents from the external point P, their lengths must be equal: PA = PB.'
+      - 'Set up the algebraic equation: 2x + 3 = 3x - 2.'
+      - 'Rearrange the terms to solve for x: 3 + 2 = 3x - 2x.'
+      - 'Simplify to find the value of x: 5 = x.'
+      section: equal-tangents-theorem
+      id: q13-2
+      questionGroup: q13
+    - problemText: In the provided diagram, P is an external point, and PA and PB are tangent segments to the circle. State
+        the geometric theorem that defines the relationship between the lengths PA and PB.
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: false
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: Tangents drawn from an external point to a circle are equal in length (PA = PB).
+      stepByStepGuideline:
+      - 'Identify the key components: an external point P and two tangent segments PA and PB.'
+      - Recall the fundamental theorem relating these components.
+      - 'State the theorem: Tangents from an external point to a circle are equal in length.'
+      section: equal-tangents-theorem
+      id: q13-3
+      questionGroup: q13
+    - problemText: A security fence section includes a circular curve. From an observation post P, two straight barriers PA
+        and PB are installed tangentially to the curve. The lengths are PA = (4x + 1) units and PB = (5x - 3) units. Calculate
+        the actual length of the barrier PA.
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: false
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: 17 units
+      stepByStepGuideline:
+      - 'Set the lengths of the equal tangent segments equal to each other: PA = PB, so 4x + 1 = 5x - 3.'
+      - 'Solve the equation for x: 1 + 3 = 5x - 4x, which gives x = 4.'
+      - 'Substitute the value of x back into the expression for PA: PA = 4x + 1.'
+      - PA = 4(4) + 1 = 16 + 1 = 17 units.
+      section: equal-tangents-theorem
+      id: q13-4
+      questionGroup: q13
+    - problemText: A light beam aiming system uses a circular lens housing. Two stabilizing arms, PA and PB, extend tangentially
+        from the mounting point P to the lens housing edge. If the length of arm PA is 18 mm, what is the total combined length
+        of the two stabilizing arms (PA + PB)?
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: false
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: 36 mm
+      stepByStepGuideline:
+      - Recognize that PA and PB are tangent segments from the same external point P, meaning PA = PB.
+      - Since PA = 18 mm, then PB must also equal 18 mm.
+      - 'Calculate the total combined length: Total Length = PA + PB.'
+      - Total Length = 18 mm + 18 mm = 36 mm.
+      section: equal-tangents-theorem
+      id: q13-5
+      questionGroup: q13
+- id: proof-equal-tangents-node-1
+  nodeNumber: 14
+  title: Proving Equal Tangents
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleTwoTangents
+    preWrittenQuestions:
+    - problemText: In the geometric proof demonstrating that tangents PA and PB drawn from an external point P are equal,
+        we analyze triangles $\triangle OAP$ and $\triangle OBP$. The first step requires proving that these are right-angled
+        triangles. State the precise geometric theorem that justifies why $\angle OAP = 90^\circ$.
+      avatarIntro: Hello! Let's dive into circle geometry. Understanding the relationship between a radius and a tangent is
+        the foundation for proving the Equal Tangents Theorem.
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: true
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: The radius drawn to the point of tangency is perpendicular to the tangent line (Radius ⊥ Tangent Theorem).
+      stepByStepGuideline:
+      - Recall the fundamental relationship between a radius and a tangent line.
+      - The line segment OA is the radius drawn to the point of tangency A.
+      - By definition, a radius is perpendicular to the tangent at the point of contact.
+      - Therefore, the justification is the geometric theorem stating that the radius is perpendicular to the tangent.
+      id: q14-1
+      questionGroup: q14
+    - problemText: 'We aim to prove that $\triangle OAP$ is congruent to $\triangle OBP$. We have established the following
+        facts: $OA = OB$ (Radii), $OP = OP$ (Common hypotenuse), and $\angle OAP = \angle OBP = 90^\circ$ (Radius $\perp$
+        Tangent). Which specific congruence criterion (SSS, SAS, ASA, AAS, or RHS) guarantees that these two triangles are
+        congruent?'
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: true
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: RHS (Right angle, Hypotenuse, Side)
+      stepByStepGuideline:
+      - 'Analyze the established facts: We have a right angle (R), a common hypotenuse (H, which is OP), and a pair of equal
+        corresponding sides (S, which are the radii OA and OB).'
+      - Since the congruence relies on the Right angle, the Hypotenuse, and one other Side, the criterion used is RHS.
+      id: q14-2
+      questionGroup: q14
+    - problemText: When setting up the proof for $\triangle OAP \cong \triangle OBP$, we rely on specific properties of the
+        circle to establish equality between corresponding sides. Provide the geometric justification for why $OA = OB$, and
+        explain the role of the side $OP$ in relating the two triangles.
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: true
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: 'Justification for $OA = OB$: They are both radii of the same circle, and all radii of a given circle are
+        equal in length. Role of $OP$: $OP$ is the common side to both triangles, acting specifically as the hypotenuse in
+        both right-angled triangles.'
+      stepByStepGuideline:
+      - OA and OB connect the center O to the circle's edge, meaning they are radii. All radii in the same circle are equal.
+      - The side OP is shared by both triangles $\triangle OAP$ and $\triangle OBP$.
+      - Since $\angle OAP = 90^\circ$, OP is opposite the right angle, meaning it is the hypotenuse.
+      - Therefore, OP is the common hypotenuse.
+      id: q14-3
+      questionGroup: q14
+    - problemText: Assume that the proof successfully established that $\triangle OAP$ is congruent to $\triangle OBP$. Explain
+        the final logical step that allows us to conclude that the tangent lengths $PA$ and $PB$ are equal.
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: true
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: Since the triangles are congruent ($\triangle OAP \cong \triangle OBP$), their corresponding parts must
+        be equal (CPCTC), meaning the corresponding sides PA and PB are equal in length.
+      stepByStepGuideline:
+      - Congruence means that all corresponding angles and sides of the two triangles are identical.
+      - PA and PB are corresponding sides of the congruent triangles $\triangle OAP$ and $\triangle OBP$.
+      - The principle of Corresponding Parts of Congruent Triangles are Congruent (CPCTC) dictates that if the triangles are
+        congruent, then PA = PB.
+      id: q14-4
+      questionGroup: q14
+    - problemText: The proof for equal tangents relies on establishing congruence using the RHS criterion. List the three
+        specific pairs of corresponding parts (two sides and one angle) that must be proven equal or common to satisfy the
+        RHS conditions for $\triangle OAP$ and $\triangle OBP$.
+      mathTool:
+        toolName: circleTwoTangents
+        parameters:
+          externalPoint: P
+          tangentPoint1: A
+          tangentPoint2: B
+          showRadii: true
+          showTangentLengths: true
+          highlightTangents: false
+      finalAnswer: '1. Right Angle: $\angle OAP = \angle OBP = 90^\circ$ (R); 2. Hypotenuse: $OP = OP$ (Common Side) (H);
+        3. Side: $OA = OB$ (Radii) (S).'
+      stepByStepGuideline:
+      - The RHS rule requires a Right angle, the Hypotenuse, and one other side.
+      - 'Identify the Right angle: $\angle OAP = \angle OBP = 90^\circ$ (Radius ⊥ Tangent).'
+      - 'Identify the Hypotenuse: OP is opposite the right angle and is common to both triangles.'
+      - 'Identify the Side: OA and OB are the remaining sides and are equal because they are radii.'
+      id: q14-5
+      questionGroup: q14
+- id: theorem-angle-centre-node-1
+  nodeNumber: 16
+  title: Angle at Centre Theorem
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleAngleCentre
+    preWrittenQuestions:
+    - problemText: A satellite tracking system models its coverage path as a circle with centre O. The path segment defined
+        by Arc AB subtends an angle of $40^{\circ}$ at the receiving station C on the coverage boundary. Calculate the measure
+        of the angle subtended by Arc AB at the centre O, denoted by $\angle AOB$.
+      avatarIntro: Great job reaching this milestone! Remember, the angle at the centre is always double the angle at the
+        circumference when they are subtended by the same arc.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          arcAngleDegrees: 80
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: x
+          angleCircumferenceLabel: 40°
+          highlightArc: true
+      finalAnswer: 80°
+      stepByStepGuideline:
+      - 'Identify the given angles: $\angle ACB = 40^{\circ}$ (Angle at circumference) and $\angle AOB = x$ (Angle at centre).'
+      - Both angles are subtended by the same arc AB.
+      - 'Apply the Angle at Centre Theorem: $\angle AOB = 2 \times \angle ACB$.'
+      - 'Substitute the known value: $x = 2 \times 40^{\circ}$.'
+      - 'Calculate the result: $x = 80^{\circ}$.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: An architectural blueprint shows a circular dome cross-section centered at O. The central angle $\angle
+        POQ$, formed by two structural supports P and Q, measures $60^{\circ}$. If R is an observation point located on the
+        circumference, find the measure of the angle $\angle PRQ$ subtended by the minor arc PQ.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: PQ
+          circumferencePoint1: R
+          arcAngleDegrees: 60
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: 60°
+          angleCircumferenceLabel: y
+          highlightArc: true
+      finalAnswer: 30°
+      stepByStepGuideline:
+      - 'Identify the given angles: $\angle POQ = 60^{\circ}$ (Angle at centre) and $\angle PRQ = y$ (Angle at circumference).'
+      - Since both angles are subtended by the same arc PQ, the angle at the circumference is half the angle at the centre.
+      - 'Apply the relationship: $\angle PRQ = \angle POQ \div 2$.'
+      - 'Substitute the known value: $y = 60^{\circ} \div 2$.'
+      - 'Calculate the result: $y = 30^{\circ}$.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: A surveyor is analyzing a circular boundary defined by points X and Y, with centre O. Point M is a geodesic
+        marker on the boundary. The surveyor measures the central angle $\angle XOY$ and the angle $\angle XMY$. Which specific
+        arc subtends both the central angle $\angle XOY$ and the angle at the circumference $\angle XMY$?
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: XY
+          circumferencePoint1: M
+          arcAngleDegrees: 80
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: ∠XOY
+          angleCircumferenceLabel: ∠XMY
+          highlightArc: true
+      finalAnswer: Arc XY
+      stepByStepGuideline:
+      - 'Recall the definition of a subtended angle: The angle is formed by lines drawn from the endpoints of the arc to a
+        specific point (either the centre or a point on the circumference).'
+      - Analyze the central angle $\angle XOY$. Its endpoints are X and Y, meaning it is subtended by Arc XY.
+      - Analyze the angle at the circumference $\angle XMY$. Its endpoints are X and Y, meaning it is also subtended by Arc
+        XY.
+      - 'Conclusion: Both angles are subtended by Arc XY.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: A robotic sensor uses a circular calibration system centered at O. If the arc PQ registers an angle $\angle
+        PMQ = 55^{\circ}$ at a monitor point M on the circumference, calculate the required central angle $\angle POQ$.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: PQ
+          circumferencePoint1: M
+          arcAngleDegrees: 110
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: z
+          angleCircumferenceLabel: 55°
+          highlightArc: true
+      finalAnswer: 110°
+      stepByStepGuideline:
+      - 'Identify the relationship: The angle at the centre ($\angle POQ$) is twice the angle at the circumference ($\angle
+        PMQ$) when subtended by the same arc PQ.'
+      - 'Write the formula: $\angle POQ = 2 \times \angle PMQ$.'
+      - 'Substitute the known value: $\angle POQ = 2 \times 55^{\circ}$.'
+      - 'Calculate the result: $\angle POQ = 110^{\circ}$.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: Given a circle with centre O, if the arc AB subtends the central angle $\angle AOB$ and the angle at the
+        circumference $\angle ACB$, write down the mathematical relationship between these two angles, based on the Angle
+        at Centre Theorem. (Use standard angle notation $\angle$).
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          arcAngleDegrees: 80
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: ∠AOB
+          angleCircumferenceLabel: ∠ACB
+          highlightArc: true
+      finalAnswer: ∠AOB = 2 × ∠ACB
+      stepByStepGuideline:
+      - 'Identify the angle at the centre (the larger angle): $\angle AOB$.'
+      - 'Identify the angle at the circumference (the smaller angle): $\angle ACB$.'
+      - 'State the Angle at Centre Theorem, which relates these two angles: The angle at the centre is twice the angle at
+        the circumference.'
+      - 'Write the relationship mathematically: $\angle AOB = 2 \times \angle ACB$.'
+      id: q16-5
+      questionGroup: q16
+- id: proof-angle-centre-node-1
+  nodeNumber: 17
+  title: Proving Angle at Centre
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleAngleCentre
+    preWrittenQuestions:
+    - problemText: In the initial steps of proving the Angle at Centre theorem, the radius OC is drawn, dividing $\triangle
+        OAB$ into $\triangle OAC$ and $\triangle OBC$. Considering triangle OAC, if the base angle $\angle ACO = 20^{\circ}$,
+        use the Exterior Angle Theorem to find the angle $\angle AOC$.
+      avatarIntro: Understanding geometric proofs requires mastery of fundamental theorems. Let's apply the exterior angle
+        theorem to one part of the angle at centre proof.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          arcAngleDegrees: 80
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: $2\theta$
+          angleCircumferenceLabel: $\theta$
+          highlightArc: false
+      finalAnswer: $40^{\circ}$
+      stepByStepGuideline:
+      - Identify that $\triangle OAC$ is isosceles because OA = OC (both are radii).
+      - Since base angles are equal, $\angle OAC = \angle ACO = 20^{\circ}$.
+      - 'Apply the Exterior Angle Theorem to $\triangle OAC$: The exterior angle $\angle AOC$ is equal to the sum of the opposite
+        interior angles.'
+      - $\angle AOC = \angle OAC + \angle ACO = 20^{\circ} + 20^{\circ} = 40^{\circ}$.
+      id: q17-1
+      questionGroup: q17
+    - problemText: In the construction used to prove the Angle at Centre theorem, radii OA, OB, and OC are drawn. Provide
+        the necessary geometric reason why $\triangle OBC$ must be an isosceles triangle.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          arcAngleDegrees: 80
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: $2\theta$
+          angleCircumferenceLabel: $\theta$
+          highlightArc: false
+      finalAnswer: Triangle OBC is isosceles because two of its sides, OB and OC, are radii of the same circle, meaning they
+        are equal in length (OB = OC).
+      stepByStepGuideline:
+      - 'Define the vertices of $\triangle OBC$: O is the center, B and C are on the circumference.'
+      - 'Identify the sides connected to the center: OB and OC.'
+      - State the property that all radii of the same circle are equal.
+      - Conclude that since OB = OC, the triangle is isosceles.
+      id: q17-2
+      questionGroup: q17
+    - problemText: Focusing on triangle OAC in the proof structure, we know OA = OC. Suppose the base angle $\angle OAC$ is
+        $30^{\circ}$. Calculate the measure of the vertex angle $\angle AOC$.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          arcAngleDegrees: 80
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: $2\theta$
+          angleCircumferenceLabel: $\theta$
+          highlightArc: false
+      finalAnswer: $120^{\circ}$
+      stepByStepGuideline:
+      - 'Recognize that since $\triangle OAC$ is isosceles (OA=OC), the base angles are equal: $\angle OCA = \angle OAC =
+        30^{\circ}$.'
+      - Use the property that the sum of interior angles in a triangle is $180^{\circ}$.
+      - 'Calculate the vertex angle: $\angle AOC = 180^{\circ} - (\angle OAC + \angle OCA)$.'
+      - 'Substitute the values: $\angle AOC = 180^{\circ} - (30^{\circ} + 30^{\circ}) = 180^{\circ} - 60^{\circ} = 120^{\circ}$.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: 'The proof requires summing the central angles: $\angle AOB = \angle AOC + \angle BOC$. If we have previously
+        established that $\angle AOC = 2\angle ACO$ and $\angle BOC = 2\angle BCO$ using the exterior angle theorem, complete
+        the proof step by expressing the total central angle $\angle AOB$ solely in terms of the angle at the circumference,
+        $\angle ACB$.'
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          arcAngleDegrees: 80
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: $2\theta$
+          angleCircumferenceLabel: $\theta$
+          highlightArc: false
+      finalAnswer: $ \angle AOB = 2\angle ACB $
+      stepByStepGuideline:
+      - 'Start with the summation step: $\angle AOB = \angle AOC + \angle BOC$.'
+      - 'Substitute the derived relationships using the exterior angle theorem: $\angle AOB = 2\angle ACO + 2\angle BCO$.'
+      - 'Factor out the common term: $\angle AOB = 2(\angle ACO + \angle BCO)$.'
+      - 'Note that the angle at the circumference, $\angle ACB$, is the sum of the two base angles: $\angle ACB = \angle ACO
+        + \angle BCO$.'
+      - 'Substitute $\angle ACB$ back into the equation to complete the proof: $\angle AOB = 2\angle ACB$.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: During the proof of the angle at centre theorem, the angle at circumference $\angle ACB$ is split into
+        two parts by radius OC. If $\angle ACO = 35^{\circ}$ and $\angle BCO = 40^{\circ}$, calculate the total central angle
+        $\angle AOB$ by applying the exterior angle theorem to both triangles ($\triangle OAC$ and $\triangle OBC$) and summing
+        the results.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          arcAngleDegrees: 80
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: $2\theta$
+          angleCircumferenceLabel: $\theta$
+          highlightArc: false
+      finalAnswer: $150^{\circ}$
+      stepByStepGuideline:
+      - 'Calculate $\angle AOC$: Since $\triangle OAC$ is isosceles, $\angle AOC = 2 \times \angle ACO$. $\angle AOC = 2 \times
+        35^{\circ} = 70^{\circ}$.'
+      - 'Calculate $\angle BOC$: Since $\triangle OBC$ is isosceles, $\angle BOC = 2 \times \angle BCO$. $\angle BOC = 2 \times
+        40^{\circ} = 80^{\circ}$.'
+      - 'Find the total central angle $\angle AOB$ by summing the parts: $\angle AOB = \angle AOC + \angle BOC$.'
+      - $\angle AOB = 70^{\circ} + 80^{\circ} = 150^{\circ}$.
+      id: q17-5
+      questionGroup: q17
+- id: applications-angle-centre-node-1
+  nodeNumber: 18
+  title: Angle at Centre Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleAngleCentre
+    preWrittenQuestions:
+    - problemText: A landscape architect designs a circular park layout centered at O. An ornamental fountain is placed along
+        Arc AB, which subtends a central angle $\angle AOB = 60^{\circ}$. If viewing platform C is located on the major arc
+        AB, find the angle $\angle ACB$ subtended by the fountain arc.
+      avatarIntro: Welcome! Let's start with a foundational problem applying the relationship between the angle at the center
+        and the angle at the circumference.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          arcAngleDegrees: 60
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: '60'
+          angleCircumferenceLabel: '?'
+          highlightArc: false
+      finalAnswer: 30°
+      stepByStepGuideline:
+      - 'Identify the central angle subtended by the minor arc AB: $\angle AOB = 60^{\circ}$.'
+      - 'Identify the angle at the circumference subtended by the same minor arc AB: $\angle ACB$.'
+      - 'Apply the Angle at Centre Theorem: $\angle ACB = \frac{1}{2} \angle AOB$.'
+      - 'Calculate the required angle: $\angle ACB = \frac{1}{2} \times 60^{\circ} = 30^{\circ}$.'
+      section: applications-angle-centre
+      id: q18-1
+      questionGroup: q18
+    - problemText: A rotating mechanical part centered at O features a defect along Arc XY. The minor central angle subtended
+        by this defect is $\angle XOY = 100^{\circ}$. If a sensor Z is positioned on the major arc XY, calculate the angle
+        $\angle XZY$ measured by the sensor.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: XY
+          circumferencePoint1: Z
+          arcAngleDegrees: 100
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: '100'
+          angleCircumferenceLabel: '?'
+          highlightArc: false
+      finalAnswer: 130°
+      stepByStepGuideline:
+      - Since Z is on the major arc, the angle $\angle XZY$ is subtended by the reflex angle at the centre.
+      - 'Calculate the reflex angle $\angle XOY$: $360^{\circ} - 100^{\circ} = 260^{\circ}$.'
+      - 'Apply the Angle at Centre Theorem using the reflex angle: $\angle XZY = \frac{1}{2} \times (\text{Reflex } \angle
+        XOY)$.'
+      - 'Calculate the angle: $\angle XZY = \frac{1}{2} \times 260^{\circ} = 130^{\circ}$.'
+      section: applications-angle-centre
+      id: q18-2
+      questionGroup: q18
+    - problemText: A surveyor measures a circular field boundary. Arc DE of the boundary subtends an angle $\angle DFE = 70^{\circ}$
+        at measurement point F on the circumference. If O is the center of the boundary circle, find the central angle $\angle
+        DOE$ subtended by Arc DE.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: DE
+          circumferencePoint1: F
+          arcAngleDegrees: 140
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: '?'
+          angleCircumferenceLabel: '70'
+          highlightArc: false
+      finalAnswer: 140°
+      stepByStepGuideline:
+      - 'Identify the angle at the circumference: $\angle DFE = 70^{\circ}$.'
+      - 'Identify the central angle subtended by the same arc DE: $\angle DOE$.'
+      - 'Apply the Angle at Centre Theorem: $\angle DOE = 2 \times \angle DFE$.'
+      - 'Calculate the central angle: $\angle DOE = 2 \times 70^{\circ} = 140^{\circ}$.'
+      section: applications-angle-centre
+      id: q18-3
+      questionGroup: q18
+    - problemText: In an engineering design using a circular component centered at O, A and B are fixed points on the circumference.
+        Given that radius OA forms an angle $\angle OAB = 55^{\circ}$ with chord AB, find the angle $\angle ACB$ subtended
+        by Arc AB at point C on the major arc.
+      mathTool:
+        toolName: circleAngleCentre
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          arcAngleDegrees: 80
+          showAngleCentre: true
+          showAngleCircumference: true
+          angleCentreLabel: '?'
+          angleCircumferenceLabel: '?'
+          highlightArc: false
+      finalAnswer: 35°
+      stepByStepGuideline:
+      - Recognize that OA and OB are radii, so $\triangle OAB$ is an isosceles triangle with $OA = OB$.
+      - 'Find the base angle $\angle OBA$: Since $OA = OB$, $\angle OBA = \angle OAB = 55^{\circ}$.'
+      - 'Calculate the central angle $\angle AOB$ (sum of angles in a triangle): $\angle AOB = 180^{\circ} - (55^{\circ} +
+        55^{\circ}) = 180^{\circ} - 110^{\circ} = 70^{\circ}$.'
+      - 'Apply the Angle at Centre Theorem: $\angle ACB = \frac{1}{2} \angle AOB$.'
+      - 'Calculate the required angle: $\angle ACB = \frac{1}{2} \times 70^{\circ} = 35^{\circ}$.'
+      section: applications-angle-centre
+      id: q18-4
+      questionGroup: q18
+    - problemText: A model of celestial navigation uses a circular path centered at O. Arc AB subtends a central angle $\angle
+        AOB = 80^{\circ}$. Point D is on the major arc AB, and point C is on the minor arc AB. Find the difference between
+        $\angle ACB$ and $\angle ADB$.
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          circumferencePoint2: D
+          arcAngleDegrees: 80
+          oppositeSegments: true
+          showAngle1: true
+          showAngle2: true
+          angleLabel: ""
+          angleLabel2: ""
+          highlightSegment: false
+      finalAnswer: 100°
+      stepByStepGuideline:
+      - 'Find $\angle ADB$: This angle is subtended by the minor arc AB. $\angle ADB = \frac{1}{2} \angle AOB = \frac{1}{2}
+        \times 80^{\circ} = 40^{\circ}$.'
+      - 'Find the reflex angle at the centre: Reflex $\angle AOB = 360^{\circ} - 80^{\circ} = 280^{\circ}$.'
+      - 'Find $\angle ACB$: This angle is subtended by the major arc AB (using the reflex angle). $\angle ACB = \frac{1}{2}
+        \times 280^{\circ} = 140^{\circ}$.'
+      - 'Calculate the difference: Difference = $\angle ACB - \angle ADB = 140^{\circ} - 40^{\circ} = 100^{\circ}$.'
+      section: applications-angle-centre
+      id: q18-5
+      questionGroup: q18
+- id: angles-same-segment-node-1
+  nodeNumber: 19
+  title: Angles in Same Segment
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleSameArc
+    preWrittenQuestions:
+    - problemText: A geologist is mapping rock formations along a circular boundary. Arc PQ subtends an angle $\angle PCQ
+        = 50^{\circ}$ at observation point C. If point D lies on the same segment as C, what is the measure of $\angle PDQ$?
+      avatarIntro: Welcome! Let's practice applying circle theorems. Remember, geometry often relies on identifying which
+        rules apply to which shapes.
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: PQ
+          circumferencePoint1: C
+          circumferencePoint2: D
+          arcAngleDegrees: 100
+          showAngle1: true
+          showAngle2: true
+          angleLabel: 50^{\circ}
+          highlightSegment: false
+      finalAnswer: 50^{\circ}
+      stepByStepGuideline:
+      - 'Identify the given information: $\angle PCQ = 50^{\circ}$.'
+      - 'Identify the relationship between points C and D: They lie in the same segment defined by chord PQ.'
+      - 'Apply the Angles in the Same Segment theorem: Angles subtended by the same arc (PQ) in the same segment are equal.'
+      - Conclude that $\angle PDQ = \angle PCQ = 50^{\circ}$.
+      id: q19-1
+      questionGroup: q19
+    - problemText: A fundamental property of circles involves angles subtended by the same arc at the circumference. State
+        the geometric theorem concerning angles lying in the same segment of a circle.
+      mathTool: null
+      finalAnswer: Angles in the same segment of a circle are equal.
+      stepByStepGuideline:
+      - 'Recall the definition of a segment: the region bounded by a chord and the associated arc.'
+      - Recall the theorem relating angles measured from points within that segment.
+      - 'State the theorem clearly: Angles in the same segment of a circle are equal.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: An artist is designing a circular stained glass window using chord XY. Points R and S are chosen on the
+        circumference in the major segment defined by XY. Based on the theorem of angles in the same segment, list the two
+        angles that must be equal and state the common arc they subtend.
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: XY
+          circumferencePoint1: R
+          circumferencePoint2: S
+          arcAngleDegrees: 80
+          showAngle1: false
+          showAngle2: false
+          angleLabel: \theta
+          highlightSegment: false
+      finalAnswer: The equal angles are $\angle XRY$ and $\angle XSY$. They are both subtended by Arc XY.
+      stepByStepGuideline:
+      - 'Identify the chord/arc defining the segment: XY.'
+      - 'Identify the points in the segment: R and S.'
+      - 'Form the angles subtended by the arc XY at R and S: $\angle XRY$ and $\angle XSY$.'
+      - 'State the conclusion based on the theorem: $\angle XRY = \angle XSY$, subtended by Arc XY.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: In an optical setup, light rays trace paths AMB and ANB within a circular lens, where A and B are fixed
+        source points. If $\angle AMB = 65^{\circ}$ and $\angle ANB = 65^{\circ}$, what geometric condition must points M
+        and N satisfy relative to the chord AB?
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: M
+          circumferencePoint2: N
+          arcAngleDegrees: 130
+          showAngle1: true
+          showAngle2: true
+          angleLabel: 65^{\circ}
+          highlightSegment: true
+      finalAnswer: Points M and N must lie in the same segment (defined by the chord AB).
+      stepByStepGuideline:
+      - Observe that the two angles, $\angle AMB$ and $\angle ANB$, are equal.
+      - Recognize that both angles are subtended by the same arc AB.
+      - 'Recall the converse of the Angles in the Same Segment theorem: If two angles subtended by the same arc are equal,
+        the points from which they are measured must lie in the same segment.'
+      - Conclude that M and N must lie in the same segment defined by chord AB.
+      id: q19-4
+      questionGroup: q19
+    - problemText: Two passengers, R and S, on a large Ferris wheel are observing the supports X and Y. The angle formed by
+        the lines of sight to X and Y from R is $\angle XRY = 35^{\circ}$. If R and S are located in the same segment defined
+        by the chord XY, find the measure of the angle $\angle XSY$.
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: XY
+          circumferencePoint1: R
+          circumferencePoint2: S
+          arcAngleDegrees: 70
+          showAngle1: true
+          showAngle2: true
+          angleLabel: 35^{\circ}
+          highlightSegment: false
+      finalAnswer: 35^{\circ}
+      stepByStepGuideline:
+      - Identify that $\angle XRY$ and $\angle XSY$ are both subtended by the arc XY.
+      - Note that R and S are given to be in the same segment.
+      - 'Apply the theorem: Angles in the same segment are equal.'
+      - Therefore, $\angle XSY = \angle XRY = 35^{\circ}$.
+      id: q19-5
+      questionGroup: q19
+- id: proof-same-segment-node-1
+  nodeNumber: 20
+  title: Proving Angles in Same Segment
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: circleSameArc
+    preWrittenQuestions:
+    - problemText: In a cartography project, O marks the center of a circular region. Arc AB subtends a central angle $\angle
+        AOB = 90^{\circ}$. Two observation points, C and D, are located on the circumference within the major segment defined
+        by Arc AB. Calculate the measures of $\angle ACB$ and $\angle ADB$.
+      avatarIntro: Understanding how angles relate to the centre is key to proving relationships on the circumference. Let's
+        use the Angle at Centre Theorem!
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          circumferencePoint2: D
+          arcAngleDegrees: 80
+          showAngle1: true
+          showAngle2: true
+          angleLabel: $\theta$
+          highlightSegment: false
+      finalAnswer: $\angle ACB = 45^{\circ}$ and $\angle ADB = 45^{\circ}$
+      stepByStepGuideline:
+      - 'The Angle at Centre Theorem states that the angle subtended at the centre is double the angle subtended at any point
+        on the circumference by the same arc: $\angle ACB = \frac{1}{2}\angle AOB$.'
+      - 'Calculate $\angle ACB$: $\angle ACB = 90^{\circ} \div 2 = 45^{\circ}$.'
+      - Since $\angle ADB$ is subtended by the same arc AB in the same segment as C, it must also equal half the angle at
+        the centre.
+      - 'Calculate $\angle ADB$: $\angle ADB = 90^{\circ} \div 2 = 45^{\circ}$. Thus, $\angle ACB = \angle ADB$.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: When proving that angles subtended by the same arc (AB) in the same segment are equal (i.e., $\angle ACB
+        = \angle ADB$), we rely heavily on the Angle at Centre Theorem. Explain in detail how relating both $\angle ACB$ and
+        $\angle ADB$ back to the central angle $\angle AOB$ proves their equality.
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          circumferencePoint2: D
+          arcAngleDegrees: 80
+          showAngle1: true
+          showAngle2: true
+          angleLabel: $\theta$
+          highlightSegment: false
+      finalAnswer: Both $\angle ACB$ and $\angle ADB$ are subtended by the same arc AB. By the Angle at Centre Theorem, $\angle
+        AOB = 2\angle ACB$ and $\angle AOB = 2\angle ADB$. Since both $2\angle ACB$ and $2\angle ADB$ are equal to the same
+        central angle $\angle AOB$, we must have $2\angle ACB = 2\angle ADB$. Dividing by 2 then proves that $\angle ACB =
+        \angle ADB$.
+      stepByStepGuideline:
+      - 'State the relationship for point C: $\angle AOB = 2\angle ACB$ (Angle at Centre Theorem).'
+      - 'State the relationship for point D: $\angle AOB = 2\angle ADB$ (Angle at Centre Theorem).'
+      - 'Since both $2\angle ACB$ and $2\angle ADB$ are equal to the same angle $\angle AOB$, equate them: $2\angle ACB =
+        2\angle ADB$.'
+      - The final step is to divide both sides by 2, proving $\angle ACB = \angle ADB$.
+      id: q20-2
+      questionGroup: q20
+    - problemText: 'A robotic arm follows a circular path centered at O. Arc AB dictates a movement path where the central
+        angle $\angle AOB = 110^{\circ}$. If C and D are two sensor locations recording the path, complete the following crucial
+        step in the geometric proof that shows $\angle ACB$ and $\angle ADB$ are equal:
+
+        Given:
+
+        i) $\angle AOB = 2\angle ACB$ (Angle at Centre Theorem applied to C)
+
+        ii) $\angle AOB = 2\angle ADB$ (Angle at Centre Theorem applied to D)
+
+        Complete the resulting algebraic statement derived from (i) and (ii).'
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          circumferencePoint2: D
+          arcAngleDegrees: 80
+          showAngle1: true
+          showAngle2: true
+          angleLabel: $\theta$
+          highlightSegment: false
+      finalAnswer: $2\angle ACB = 2\angle ADB$
+      stepByStepGuideline:
+      - The proof relies on the transitive property of equality (if a=b and c=b, then a=c).
+      - Since both $2\angle ACB$ and $2\angle ADB$ are equal to $\angle AOB$, they must be equal to each other.
+      - The resulting algebraic statement is $2\angle ACB = 2\angle ADB$.
+      id: q20-3
+      questionGroup: q20
+    - problemText: An astronomer tracks two satellites, C and D, orbiting along a path defined by the circular segment AB.
+        The angle subtended at the centre O is $\angle AOB = 70^{\circ}$. During the proof that $\angle ACB = \angle ADB$,
+        we establish the intermediate relationship $2\angle ACB = 2\angle ADB$. Explain the final logical step required to
+        conclude definitively that $\angle ACB = \angle ADB$.
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          circumferencePoint2: D
+          arcAngleDegrees: 80
+          showAngle1: true
+          showAngle2: true
+          angleLabel: $\theta$
+          highlightSegment: false
+      finalAnswer: Divide both sides of the equation $2\angle ACB = 2\angle ADB$ by 2. This mathematical operation establishes
+        that $\angle ACB = \angle ADB$.
+      stepByStepGuideline:
+      - The intermediate step provides the equality $2\angle ACB = 2\angle ADB$.
+      - The goal is to isolate $\angle ACB$ and $\angle ADB$.
+      - The required logical step is to divide the entire equation by 2.
+      - 'This yields the conclusion: $\angle ACB = \angle ADB$.'
+      id: q20-4
+      questionGroup: q20
+    - problemText: A jewelry designer is creating a circular pendant centered at O. Two gems, A and B, define an arc. If the
+        central angle subtended by this arc is $\angle AOB = 120^{\circ}$, and two viewing facets C and D are cut into the
+        major segment, find the measure of the viewing angles $\angle ACB$ and $\angle ADB$.
+      mathTool:
+        toolName: circleSameArc
+        parameters:
+          arcPoints: AB
+          circumferencePoint1: C
+          circumferencePoint2: D
+          arcAngleDegrees: 80
+          showAngle1: true
+          showAngle2: true
+          angleLabel: $\theta$
+          highlightSegment: false
+      finalAnswer: $\angle ACB = 60^{\circ}$ and $\angle ADB = 60^{\circ}$
+      stepByStepGuideline:
+      - 'Use the Angle at Centre Theorem: Angle at circumference = (1/2) * Angle at centre.'
+      - 'Calculate $\angle ACB$: $\angle ACB = 120^{\circ} \div 2 = 60^{\circ}$.'
+      - Since both $\angle ACB$ and $\angle ADB$ are subtended by the same arc AB and lie in the same segment, they must be
+        equal.
+      - Therefore, $\angle ADB = 60^{\circ}$.
+      id: q20-5
+      questionGroup: q20

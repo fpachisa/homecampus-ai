@@ -9,8 +9,12 @@ import TTSTest from './components/TTSTest';
 import AvatarTest from './components/AvatarTest';
 import VisualizerTestPage from './pages/VisualizerTestPage';
 import QuestionPreviewPage from './components/QuestionPreviewPage';
-import { AuthProvider } from './contexts/AuthContext';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { ActiveProfileProvider } from './contexts/ActiveProfileContext';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import LandingPage from './components/LandingPage';
+import { authService } from './services/authService';
 // OLD: Fractions not migrated - commented out
 // import type { TopicId } from './prompts/topics/P6-Math-Fractions';
 import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
@@ -238,9 +242,11 @@ function AppContent() {
   }
 
   return (
-    <AppProvider>
-      <AppRouter />
-    </AppProvider>
+    <ErrorBoundary>
+      <AppProvider>
+        <AppRouter />
+      </AppProvider>
+    </ErrorBoundary>
   );
 }
 
@@ -335,13 +341,15 @@ function PracticeRouter() {
 
   // Show PracticeSessionView when node is loaded
   return (
-    <PracticeSessionView
-      category={appState.selectedCategory!}
-      difficulty={'easy'} // Kept for compatibility, not used in unified system
-      node={currentNode}
-      onComplete={handleBackToPathMap}
-      onBack={handleBackToPathMap}
-    />
+    <ErrorBoundary>
+      <PracticeSessionView
+        category={appState.selectedCategory!}
+        difficulty={'easy'} // Kept for compatibility, not used in unified system
+        node={currentNode}
+        onComplete={handleBackToPathMap}
+        onBack={handleBackToPathMap}
+      />
+    </ErrorBoundary>
   );
 }
 
@@ -356,6 +364,87 @@ function AppRouter() {
     handleBackToTopics,
     handleBackToHome
   } = useAppContext();
+  const { user, userProfile, loading } = useAuth();
+  const [showLanding, setShowLanding] = useState(() => {
+    // Check if user has completed onboarding
+    const hasCompletedOnboarding = localStorage.getItem('onboarding-completed');
+    return !hasCompletedOnboarding && !user;
+  });
+  const [inviteMessage, setInviteMessage] = useState<string | null>(null);
+
+  // Handle invite acceptance from URL parameters
+  useEffect(() => {
+    const handleInvites = async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const parentInviteToken = urlParams.get('parentInvite');
+      const childInviteToken = urlParams.get('childInvite');
+
+      if (parentInviteToken && user) {
+        try {
+          await authService.acceptParentInvite(parentInviteToken, user.uid);
+          setInviteMessage('Successfully connected to your child\'s account!');
+          // Remove token from URL
+          window.history.replaceState({}, '', window.location.pathname);
+        } catch (error: any) {
+          console.error('Error accepting parent invite:', error);
+          setInviteMessage(`Error: ${error.message}`);
+        }
+      }
+
+      if (childInviteToken && user) {
+        try {
+          await authService.acceptChildInvite(childInviteToken, user.uid);
+          setInviteMessage('Successfully connected to your parent\'s account!');
+          // Remove token from URL
+          window.history.replaceState({}, '', window.location.pathname);
+        } catch (error: any) {
+          console.error('Error accepting child invite:', error);
+          setInviteMessage(`Error: ${error.message}`);
+        }
+      }
+    };
+
+    if (user && !loading) {
+      handleInvites();
+    }
+  }, [user, loading]);
+
+  // Show loading while auth state is being determined
+  if (loading) {
+    return null; // or a loading spinner
+  }
+
+  // Show landing page for first-time visitors
+  if (showLanding) {
+    return (
+      <LandingPage
+        onComplete={() => {
+          localStorage.setItem('onboarding-completed', 'true');
+          setShowLanding(false);
+        }}
+      />
+    );
+  }
+
+  // Show invite message if present
+  if (inviteMessage) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-8" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+        <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-md text-center">
+          <div className="text-6xl mb-4">{inviteMessage.includes('Error') ? '⚠️' : '🎉'}</div>
+          <h2 className="text-2xl font-bold mb-2" style={{ color: '#1a1a2e' }}>{inviteMessage.includes('Error') ? 'Oops!' : 'Success!'}</h2>
+          <p className="text-gray-600 mb-6">{inviteMessage}</p>
+          <button
+            onClick={() => setInviteMessage(null)}
+            className="px-6 py-3 rounded-lg font-medium text-white"
+            style={{ backgroundColor: '#667eea' }}
+          >
+            Continue to Dashboard
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   // Show HomePage when no category is selected
   if (!appState.selectedCategory) {
@@ -380,7 +469,11 @@ function AppRouter() {
 
   // Show MainLayout (Socratic learning interface) when Socratic mode is selected
   if (appState.selectedMode === 'socratic') {
-    return <MainLayout />;
+    return (
+      <ErrorBoundary>
+        <MainLayout />
+      </ErrorBoundary>
+    );
   }
 
   // Fallback to home
@@ -397,7 +490,9 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark">
       <AuthProvider>
-        <AppContent />
+        <ActiveProfileProvider>
+          <AppContent />
+        </ActiveProfileProvider>
       </AuthProvider>
     </ThemeProvider>
   );

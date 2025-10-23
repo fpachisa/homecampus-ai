@@ -28,7 +28,13 @@ export class GeminiProvider implements AIProvider {
 
   async generateContent(prompt: string, maxTokens?: number): Promise<string> {
     try {
-      const result = await this.model.generateContent(prompt);
+      // Add 30-second timeout to prevent hanging requests
+      const result = await this.withTimeout(
+        this.model.generateContent(prompt),
+        30000, // 30 seconds
+        'Gemini API request timed out after 30 seconds'
+      );
+
       const text = result.response.text().trim();
 
       if (!text) {
@@ -44,6 +50,11 @@ export class GeminiProvider implements AIProvider {
     } catch (error: any) {
       console.error('Gemini API error:', error);
 
+      // Check if this is a timeout error
+      if (error.name === 'TimeoutError' || error.message?.includes('timed out')) {
+        throw new AIServiceError(AIErrorType.TIMEOUT, error, true, error.message);
+      }
+
       // Map Gemini-specific errors
       if (error.status === 429) {
         throw new AIServiceError(AIErrorType.RATE_LIMIT, error, true, error.message);
@@ -57,6 +68,28 @@ export class GeminiProvider implements AIProvider {
 
       throw AIServiceError.fromHttpError(error);
     }
+  }
+
+  /**
+   * Wraps a promise with a timeout
+   */
+  private withTimeout<T>(
+    promise: Promise<T>,
+    timeoutMs: number,
+    timeoutMessage: string
+  ): Promise<T> {
+    return new Promise((resolve, reject) => {
+      const timeoutId = setTimeout(() => {
+        const error = new Error(timeoutMessage);
+        error.name = 'TimeoutError';
+        reject(error);
+      }, timeoutMs);
+
+      promise
+        .then(resolve)
+        .catch(reject)
+        .finally(() => clearTimeout(timeoutId));
+    });
   }
 
   getProviderName(): string {

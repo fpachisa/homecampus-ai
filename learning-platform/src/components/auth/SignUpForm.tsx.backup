@@ -1,0 +1,345 @@
+import React, { useState } from 'react';
+import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from '../../hooks/useTheme';
+import type { SignUpData } from '../../types/user';
+
+interface SignUpFormProps {
+  onSuccess?: () => void;
+  onSwitchToSignIn?: () => void;
+}
+
+export const SignUpForm: React.FC<SignUpFormProps> = ({
+  onSuccess,
+  onSwitchToSignIn,
+}) => {
+  const { signUp } = useAuth();
+  const { theme } = useTheme();
+  const [accountType, setAccountType] = useState<'student' | 'parent'>('student');
+  const [formData, setFormData] = useState<SignUpData>({
+    email: '',
+    password: '',
+    displayName: '',
+    gradeLevel: 'Secondary 3',
+    isParent: false,
+  });
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [addStudentNow, setAddStudentNow] = useState(false);
+  const [studentInfo, setStudentInfo] = useState({
+    displayName: '',
+    gradeLevel: 'Secondary 3',
+  });
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const validateForm = (): boolean => {
+    if (formData.password.length < 6) {
+      setError('Password must be at least 6 characters long');
+      return false;
+    }
+
+    if (formData.password !== confirmPassword) {
+      setError('Passwords do not match');
+      return false;
+    }
+
+    if (!formData.displayName.trim()) {
+      setError('Please enter your name');
+      return false;
+    }
+
+    if (accountType === 'parent' && addStudentNow) {
+      if (!studentInfo.displayName.trim()) {
+        setError('Please enter student name');
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const signUpPayload: SignUpData = {
+        ...formData,
+        isParent: accountType === 'parent',
+      };
+
+      if (accountType === 'parent' && addStudentNow && studentInfo.displayName) {
+        signUpPayload.studentInfo = studentInfo;
+      }
+
+      await signUp(signUpPayload);
+      onSuccess?.();
+    } catch (err: any) {
+      setError(err.message || 'Failed to create account');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const gradeLevels = [
+    'Primary 1', 'Primary 2', 'Primary 3', 'Primary 4', 'Primary 5', 'Primary 6',
+    'Secondary 1', 'Secondary 2', 'Secondary 3', 'Secondary 4', 'Secondary 5',
+  ];
+
+  // Common input styles
+  const inputStyle = {
+    backgroundColor: theme.colors.inputBg || theme.colors.interactive,
+    border: `1px solid ${theme.colors.border}`,
+    color: theme.colors.textPrimary,
+  };
+
+  const handleInputFocus = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>) => {
+    e.currentTarget.style.borderColor = theme.colors.brand;
+  };
+
+  const handleInputBlur = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>) => {
+    e.currentTarget.style.borderColor = theme.colors.border;
+  };
+
+  return (
+    <div className="w-full max-w-md mx-auto p-6 max-h-[90vh] overflow-y-auto">
+      <h2 className="text-2xl font-bold mb-6 text-center" style={{ color: theme.colors.textPrimary }}>
+        Create Your Account
+      </h2>
+
+      {error && (
+        <div className="mb-4 p-3 bg-red-500/10 border border-red-500/50 rounded-lg text-red-500 text-sm">
+          {error}
+        </div>
+      )}
+
+      {/* Account Type Selection */}
+      <div className="mb-6">
+        <label className="block text-sm font-medium mb-2" style={{ color: theme.colors.textSecondary }}>
+          I am a:
+        </label>
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            onClick={() => setAccountType('student')}
+            className="py-3 px-4 border rounded-lg font-medium transition-all"
+            style={{
+              backgroundColor: accountType === 'student' ? theme.colors.brand : 'transparent',
+              borderColor: accountType === 'student' ? theme.colors.brand : theme.colors.border,
+              color: accountType === 'student' ? '#ffffff' : theme.colors.textSecondary,
+            }}
+            onMouseEnter={(e) => {
+              if (accountType !== 'student') {
+                e.currentTarget.style.backgroundColor = theme.colors.interactive;
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (accountType !== 'student') {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }
+            }}
+          >
+            Student
+          </button>
+          <button
+            type="button"
+            onClick={() => setAccountType('parent')}
+            className="py-3 px-4 border rounded-lg font-medium transition-all"
+            style={{
+              backgroundColor: accountType === 'parent' ? theme.colors.brand : 'transparent',
+              borderColor: accountType === 'parent' ? theme.colors.brand : theme.colors.border,
+              color: accountType === 'parent' ? '#ffffff' : theme.colors.textSecondary,
+            }}
+            onMouseEnter={(e) => {
+              if (accountType !== 'parent') {
+                e.currentTarget.style.backgroundColor = theme.colors.interactive;
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (accountType !== 'parent') {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }
+            }}
+          >
+            Parent
+          </button>
+        </div>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Common Fields */}
+        <div>
+          <label htmlFor="displayName" className="block text-sm font-medium mb-1">
+            {accountType === 'parent' ? 'Your Name' : 'Your Name'}
+          </label>
+          <input
+            type="text"
+            id="displayName"
+            value={formData.displayName}
+            onChange={(e) => setFormData({ ...formData, displayName: e.target.value })}
+            className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+            disabled={loading}
+            placeholder="e.g., John Smith"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium mb-1">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+            disabled={loading}
+          />
+        </div>
+
+        {accountType === 'student' && (
+          <div>
+            <label htmlFor="gradeLevel" className="block text-sm font-medium mb-1">
+              Grade Level
+            </label>
+            <select
+              id="gradeLevel"
+              value={formData.gradeLevel}
+              onChange={(e) => setFormData({ ...formData, gradeLevel: e.target.value })}
+              className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+              disabled={loading}
+            >
+              {gradeLevels.map((level) => (
+                <option key={level} value={level}>
+                  {level}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        <div>
+          <label htmlFor="password" className="block text-sm font-medium mb-1">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            value={formData.password}
+            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+            className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+            disabled={loading}
+            minLength={6}
+          />
+          <p className="mt-1 text-xs text-gray-400">At least 6 characters</p>
+        </div>
+
+        <div>
+          <label htmlFor="confirmPassword" className="block text-sm font-medium mb-1">
+            Confirm Password
+          </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+            disabled={loading}
+          />
+        </div>
+
+        {/* Parent-specific: Add student option */}
+        {accountType === 'parent' && (
+          <div className="pt-4 border-t border-gray-700">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={addStudentNow}
+                onChange={(e) => setAddStudentNow(e.target.checked)}
+                className="w-4 h-4 rounded border-gray-600 bg-gray-800 text-blue-600 focus:ring-2 focus:ring-blue-500"
+              />
+              <span className="text-sm font-medium">Add student now (optional)</span>
+            </label>
+
+            {addStudentNow && (
+              <div className="mt-4 space-y-3 p-4 bg-gray-800/50 rounded-lg">
+                <div>
+                  <label htmlFor="studentName" className="block text-sm font-medium mb-1">
+                    Student Name
+                  </label>
+                  <input
+                    type="text"
+                    id="studentName"
+                    value={studentInfo.displayName}
+                    onChange={(e) =>
+                      setStudentInfo({ ...studentInfo, displayName: e.target.value })
+                    }
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    disabled={loading}
+                    placeholder="e.g., Sarah Smith"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="studentGrade" className="block text-sm font-medium mb-1">
+                    Student Grade Level
+                  </label>
+                  <select
+                    id="studentGrade"
+                    value={studentInfo.gradeLevel}
+                    onChange={(e) =>
+                      setStudentInfo({ ...studentInfo, gradeLevel: e.target.value })
+                    }
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    disabled={loading}
+                  >
+                    {gradeLevels.map((level) => (
+                      <option key={level} value={level}>
+                        {level}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <p className="text-xs text-gray-400">
+                  You can add more students later from your dashboard
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 text-white font-medium rounded-lg transition-colors mt-6"
+        >
+          {loading ? 'Creating account...' : 'Create Account'}
+        </button>
+      </form>
+
+      {onSwitchToSignIn && (
+        <p className="mt-6 text-center text-sm text-gray-400">
+          Already have an account?{' '}
+          <button
+            type="button"
+            onClick={onSwitchToSignIn}
+            className="text-blue-500 hover:text-blue-400 font-medium"
+          >
+            Sign in
+          </button>
+        </p>
+      )}
+    </div>
+  );
+};

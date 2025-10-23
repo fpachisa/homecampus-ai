@@ -49,6 +49,13 @@ const CircleChordVisualizer: React.FC<CircleChordVisualizerProps> = ({
   const chord1X2 = centerX + circleRadius * Math.cos((chord1Angle2 * Math.PI) / 180);
   const chord1Y2 = centerY - circleRadius * Math.sin((chord1Angle2 * Math.PI) / 180);
 
+  // Chord 1 label positions (radially outward to avoid cutoff)
+  const labelOffset = 25;
+  const label1X1 = centerX + (circleRadius + labelOffset) * Math.cos((chord1Angle1 * Math.PI) / 180);
+  const label1Y1 = centerY - (circleRadius + labelOffset) * Math.sin((chord1Angle1 * Math.PI) / 180);
+  const label1X2 = centerX + (circleRadius + labelOffset) * Math.cos((chord1Angle2 * Math.PI) / 180);
+  const label1Y2 = centerY - (circleRadius + labelOffset) * Math.sin((chord1Angle2 * Math.PI) / 180);
+
   // Midpoint of chord 1
   const chord1MidX = (chord1X1 + chord1X2) / 2;
   const chord1MidY = (chord1Y1 + chord1Y2) / 2;
@@ -75,6 +82,12 @@ const CircleChordVisualizer: React.FC<CircleChordVisualizerProps> = ({
   const chord2Y1 = centerY - circleRadius * Math.sin((chord2Angle1 * Math.PI) / 180);
   const chord2X2 = centerX + circleRadius * Math.cos((chord2Angle2 * Math.PI) / 180);
   const chord2Y2 = centerY - circleRadius * Math.sin((chord2Angle2 * Math.PI) / 180);
+
+  // Chord 2 label positions (radially outward to avoid cutoff)
+  const label2X1 = centerX + (circleRadius + labelOffset) * Math.cos((chord2Angle1 * Math.PI) / 180);
+  const label2Y1 = centerY - (circleRadius + labelOffset) * Math.sin((chord2Angle1 * Math.PI) / 180);
+  const label2X2 = centerX + (circleRadius + labelOffset) * Math.cos((chord2Angle2 * Math.PI) / 180);
+  const label2Y2 = centerY - (circleRadius + labelOffset) * Math.sin((chord2Angle2 * Math.PI) / 180);
 
   // Midpoint of chord 2
   const chord2MidX = (chord2X1 + chord2X2) / 2;
@@ -149,24 +162,26 @@ const CircleChordVisualizer: React.FC<CircleChordVisualizerProps> = ({
         {/* Chord 1 endpoints */}
         <circle cx={chord1X1} cy={chord1Y1} r="5" fill={colors.primary} />
         <text
-          x={chord1X1 - 15}
-          y={chord1Y1 - 10}
+          x={label1X1}
+          y={label1Y1}
           fill={theme.colors.textPrimary}
           fontSize="16"
           fontWeight="bold"
           textAnchor="middle"
+          dominantBaseline="middle"
         >
           {chord1Label1}
         </text>
 
         <circle cx={chord1X2} cy={chord1Y2} r="5" fill={colors.primary} />
         <text
-          x={chord1X2 + 15}
-          y={chord1Y2 - 10}
+          x={label1X2}
+          y={label1Y2}
           fill={theme.colors.textPrimary}
           fontSize="16"
           fontWeight="bold"
           textAnchor="middle"
+          dominantBaseline="middle"
         >
           {chord1Label2}
         </text>
@@ -252,24 +267,26 @@ const CircleChordVisualizer: React.FC<CircleChordVisualizerProps> = ({
             {/* Chord 2 endpoints */}
             <circle cx={chord2X1} cy={chord2Y1} r="5" fill={colors.primary} />
             <text
-              x={chord2X1 - 15}
-              y={chord2Y1 + 20}
+              x={label2X1}
+              y={label2Y1}
               fill={theme.colors.textPrimary}
               fontSize="16"
               fontWeight="bold"
               textAnchor="middle"
+              dominantBaseline="middle"
             >
               {chord2Label1}
             </text>
 
             <circle cx={chord2X2} cy={chord2Y2} r="5" fill={colors.primary} />
             <text
-              x={chord2X2 + 15}
-              y={chord2Y2 + 20}
+              x={label2X2}
+              y={label2Y2}
               fill={theme.colors.textPrimary}
               fontSize="16"
               fontWeight="bold"
               textAnchor="middle"
+              dominantBaseline="middle"
             >
               {chord2Label2}
             </text>

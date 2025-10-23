@@ -463,7 +463,8 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
 
     parameters: {
       radius: "string - radius label (e.g., 'r', '5cm', '10')",
-      showCentre: "boolean (default: true) - show centre point O",
+      centreLabel: "string (optional, default: 'O') - centre point label (e.g., 'O', 'P', 'C')",
+      showCentre: "boolean (default: true) - show centre point",
       showRadius: "boolean (default: false) - show radius line",
       showDiameter: "boolean (default: false) - show diameter line",
       highlightElement: "'radius' | 'diameter' | 'centre' | 'none'"
@@ -474,6 +475,7 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       caption: "A circle with centre O and radius 5cm",
       parameters: {
         radius: "5cm",
+        centreLabel: "O",
         showCentre: true,
         showRadius: true,
         showDiameter: false,
@@ -494,6 +496,7 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       pointA: "string - first point on circumference (e.g., 'A')",
       pointB: "string - second point on circumference (e.g., 'B')",
       arcAngle: "number (0-360) - angle subtended by arc at centre",
+      centreLabel: "string (optional, default: 'O') - centre point label (e.g., 'O', 'P', 'C')",
       showChord: "boolean (default: false) - show chord AB",
       showMinorArc: "boolean (default: true) - highlight minor arc",
       showMajorArc: "boolean (default: false) - highlight major arc",
@@ -507,6 +510,7 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         pointA: "A",
         pointB: "B",
         arcAngle: 120,
+        centreLabel: "O",
         showChord: true,
         showMinorArc: true,
         showMajorArc: false,
@@ -647,11 +651,12 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
 
     parameters: {
       arcPoints: "string - arc endpoints (e.g., 'AB')",
-      circumferencePoint: "string - point on circumference (e.g., 'C')",
+      circumferencePoint1: "string - point on circumference (e.g., 'C')",
+      arcAngleDegrees: "number (optional, default: 80) - angle of arc AB at centre in degrees (controls diagram shape)",
       showAngleCentre: "boolean (default: true) - show angle AOB",
       showAngleCircumference: "boolean (default: true) - show angle ACB",
-      angleCentreLabel: "string (optional) - label for centre angle (e.g., '$2\\theta$')",
-      angleCircumferenceLabel: "string (optional) - label for circumference angle (e.g., '$\\theta$')",
+      angleCentreLabel: "string (optional) - label for centre angle (e.g., '$2\\theta$', '100')",
+      angleCircumferenceLabel: "string (optional) - label for circumference angle (e.g., '$\\theta$', '50°')",
       highlightArc: "boolean (default: false)"
     },
 
@@ -660,11 +665,12 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       caption: "∠AOB = 2 × ∠ACB (both subtended by arc AB)",
       parameters: {
         arcPoints: "AB",
-        circumferencePoint: "C",
+        circumferencePoint1: "C",
+        arcAngleDegrees: 110,
         showAngleCentre: true,
         showAngleCircumference: true,
-        angleCentreLabel: "$2\\theta$",
-        angleCircumferenceLabel: "$\\theta$",
+        angleCentreLabel: "110°",
+        angleCircumferenceLabel: "55°",
         highlightArc: true
       }
     }
@@ -682,23 +688,29 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       arcPoints: "string - arc endpoints (e.g., 'AB')",
       circumferencePoint1: "string - first point on circumference (e.g., 'C')",
       circumferencePoint2: "string (optional) - second point (e.g., 'D')",
+      arcAngleDegrees: "number (optional, default: 80) - angle of arc AB at centre in degrees (controls diagram shape)",
+      oppositeSegments: "boolean (optional, default: false) - position C and D on opposite sides of chord AB (C on minor arc, D on major arc)",
       showAngle1: "boolean (default: true) - show angle ACB",
       showAngle2: "boolean (default: true) - show angle ADB",
-      angleLabel: "string (optional) - common label (e.g., '$\\theta$')",
+      angleLabel: "string (optional) - label for angle at C (e.g., '$\\theta$', '45°')",
+      angleLabel2: "string (optional) - separate label for angle at D, defaults to angleLabel",
       highlightSegment: "boolean (default: false) - shade the segment"
     },
 
     exampleUsage: {
-      scenario: "Angles in same segment are equal",
-      caption: "∠ACB = ∠ADB (both in same segment, subtended by arc AB)",
+      scenario: "Angles in opposite segments (comparison)",
+      caption: "Compare ∠ACB (minor segment) and ∠ADB (major segment)",
       parameters: {
         arcPoints: "AB",
         circumferencePoint1: "C",
         circumferencePoint2: "D",
+        arcAngleDegrees: 100,
+        oppositeSegments: true,
         showAngle1: true,
         showAngle2: true,
-        angleLabel: "$\\theta$",
-        highlightSegment: true
+        angleLabel: "$50^{\\circ}$",
+        angleLabel2: "$130^{\\circ}$",
+        highlightSegment: false
       }
     }
   },

@@ -428,9 +428,9 @@ const SpecialNumberSets = () => {
           <h2 className="text-2xl font-semibold mb-4 text-yellow-800">Key Takeaways</h2>
           <ul className="list-disc list-inside space-y-2">
             <li><strong>ℕ (Natural numbers):</strong> {'{0, 1, 2, 3, ...}'} - counting numbers from 0</li>
-            <li><strong>ℤ (Integers):</strong> {..., -2, -1, 0, 1, 2, ...} - whole numbers (positive, negative, zero)</li>
+            <li><strong>ℤ (Integers):</strong> {'{..., -2, -1, 0, 1, 2, ...}'} - whole numbers (positive, negative, zero)</li>
             <li><strong>ℤ⁺ (Positive integers):</strong> {'{1, 2, 3, ...}'} - positive whole numbers only</li>
-            <li><strong>ℤ⁻ (Negative integers):</strong> {..., -3, -2, -1} - negative whole numbers only</li>
+            <li><strong>ℤ⁻ (Negative integers):</strong> {'{..., -3, -2, -1}'} - negative whole numbers only</li>
             <li><strong>ℚ (Rational numbers):</strong> Numbers that can be written as p/q (integers, fractions, terminating/repeating decimals)</li>
             <li><strong>ℚ' (Irrational numbers):</strong> Numbers that cannot be written as fractions (√2, √3, π)</li>
             <li><strong>ℝ (Real numbers):</strong> All numbers on the number line (rational + irrational)</li>

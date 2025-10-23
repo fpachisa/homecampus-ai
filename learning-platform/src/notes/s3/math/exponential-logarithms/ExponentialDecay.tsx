@@ -463,7 +463,7 @@ const ExponentialDecay = () => {
                 <summary className="cursor-pointer text-blue-600 hover:underline">Show Solution</summary>
                 <div className="mt-2 p-3 bg-gray-50 rounded space-y-2">
                   <p><strong>Exponential decay</strong></p>
-                  <p>The base is 0.8, which is between 0 and 1 (0 < 0.8 < 1)</p>
+                  <p>The base is 0.8, which is between 0 and 1 (0 &lt; 0.8 &lt; 1)</p>
                   <p>This means the function decreases over time</p>
                 </div>
               </details>
