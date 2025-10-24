@@ -169,10 +169,10 @@ export const FORMATTING_RULES: FormattingRules = {
   },
   
   
-  // RULE 2: LaTeX Only When Necessary and for fractions
+  // RULE 2: LaTeX Only When ABSOLUTELY Necessary and for fractions
   latex: {
     mathExpressions: {
-      rule: "Use $...$ LaTeX ONLY when Unicode cannot represent the expression",
+      rule: "Use $...$ LaTeX ONLY when Unicode or Markdown cannot represent the expression and is ABSOLUTELY ESSENTIAL",
       examples: {
         correct: [
           "All fractions: $\\frac{1}{2}$, $\\frac{13}{27}$ or $\\frac{x+1}{2x-3}$",
@@ -213,7 +213,7 @@ export const FORMATTING_RULES: FormattingRules = {
 
   display: {
     format: {
-      rule: "Use Unicode first, LaTeX when needed, markdown for structure",
+      rule: "Use Unicode first, markdown for emphasis and structure, LaTeX only when absolutely needed",
       examples: {
         correct: "### Step 1\n\nWe have θ = 30° and need to find x.\n\nUsing the formula: x = $\\frac{opposite}{hypotenuse}$"
       },

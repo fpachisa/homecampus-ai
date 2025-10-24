@@ -38,7 +38,7 @@ export const UnifiedAuthForm: React.FC<UnifiedAuthFormProps> = ({
           className="text-4xl font-bold mb-3"
           style={{ color: theme.colors.textPrimary }}
         >
-          Welcome to AI Campus
+          Welcome to Home Campus
         </h1>
         <p
           className="text-base"
@@ -186,7 +186,7 @@ export const UnifiedAuthForm: React.FC<UnifiedAuthFormProps> = ({
         className="mt-8 text-xs text-center leading-relaxed"
         style={{ color: theme.colors.textMuted }}
       >
-        By continuing, you agree to AI Campus's Terms of Service and Privacy Policy
+        By continuing, you agree to Home Campus's Terms of Service and Privacy Policy
       </p>
     </div>
   );

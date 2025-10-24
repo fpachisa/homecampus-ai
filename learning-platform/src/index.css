@@ -134,13 +134,14 @@
 
   /* Prevent awkward line breaks before/within inline math */
   .math-renderer {
-    display: inline;             /* Keep math renderer inline */
+    display: inline-block;       /* Prevent line breaks before math - treat as atomic unit */
     white-space: nowrap;         /* Prevent breaking within the math expression */
+    vertical-align: baseline;    /* Align with text baseline for proper positioning */
   }
 
   /* Try to keep math with preceding text */
   span:has(> .math-renderer) {
-    display: inline;             /* Ensure parent span stays inline too */
+    display: inline-block;             /* Ensure parent span stays inline too */
   }
 
   /* ============================================================================

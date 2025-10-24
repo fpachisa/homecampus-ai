@@ -35,13 +35,6 @@ export const ParentDashboard: React.FC = () => {
   const linkedChildren = userProfile.linkedChildren || [];
   const totalChildren = childProfiles.length + linkedChildren.length + pendingInvites.length;
 
-  console.log('ParentDashboard render:', {
-    childProfiles: childProfiles.length,
-    linkedChildren: linkedChildren.length,
-    pendingInvites: pendingInvites.length,
-    totalChildren,
-  });
-
   return (
     <div className="max-w-7xl mx-auto">
       {/* Welcome Section */}

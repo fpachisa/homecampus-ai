@@ -5,16 +5,19 @@
  * practice problem generation with learning objectives, formulas, and visual tools.
  */
 
-import { S3_MATH_TRIGONOMETRY_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
-import { S3_MATH_CIRCLE_GEOMETRY } from "../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
-import { S3_MATH_QUADRATIC_EQUATIONS } from "../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
-import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
-import { S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
-import { S3_MATH_EXPONENTS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-exponents';
-import { S3_MATH_SURDS_RADICALS_SUBTOPICS } from "../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
+import { S3_MATH_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import { S3_MATH_CIRCLE_GEOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import { S3_MATH_QUADRATIC_EQUATIONS } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
+import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
+import { S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
+import { S3_MATH_EXPONENTS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-exponents';
+import { S3_MATH_SURDS_RADICALS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
 import { S3_MATH_STATISTICS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
 import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import { DIFFERENTIAL_CALCULUS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import { S4_MATH_INTEGRATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
+import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 
 export interface SubtopicContent {
   displayName: string;
@@ -43,6 +46,10 @@ class SubtopicContentLoader {
       ...S3_MATH_STATISTICS_SUBTOPICS,
       ...S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS,
       ...S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS,
+      // S4 Math topics
+      ...DIFFERENTIAL_CALCULUS_SUBTOPICS,
+      ...S4_MATH_INTEGRATION_SUBTOPICS,
+      ...S4_MATH_PROBABILITY_SUBTOPICS,
       // Future topics will be added here
     };
   }

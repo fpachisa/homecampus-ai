@@ -142,32 +142,29 @@ Evaluate the student's response, assess their understanding, track progression, 
 export const EVALUATOR_DECISION_MATRIX = {
   GIVE_HINT: {
     conditions: [
-      "Answer is incorrect",
-      "Hints given < 2",
-      "Student shows partial understanding"
+      "Final answer is incorrect",
+      "Hints given < 3"
     ]
   },
 
   GIVE_SOLUTION: {
     conditions: [
-      "Answer is incorrect AND hints given >= 2",
-      "Student explicitly asks for solution"
+      "Final Answer is incorrect AND hints given > 2",
+      "Never show solution for hints given < 2 even if student asks for it explicitly"
     ]
   },
 
   NEW_PROBLEM: {
     conditions: [
       "Answer is correct",
-      "Solution was just shown",
-      "Student demonstrates understanding"
+      "Solution was just shown"
     ]
   },
 
   CELEBRATE: {
     conditions: [
       "All sections mastered",
-      "Final problem of topic completed",
-      "Exceptional performance milestone"
+      "Final problem of topic completed"
     ]
   }
 };

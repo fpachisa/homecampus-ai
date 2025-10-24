@@ -53,7 +53,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
             </div>
             <div>
               <h1 className="text-2xl font-bold" style={{ color: theme.colors.textPrimary }}>
-                AI Campus
+                Home Campus
               </h1>
             </div>
           </div>
@@ -98,7 +98,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
               className="text-5xl md:text-6xl font-bold mb-4"
               style={{ color: theme.colors.textPrimary }}
             >
-              Personalized AI Learning
+              AI-Powered Home Learning
             </h2>
             <h3
               className="text-2xl md:text-3xl mb-6"
@@ -192,7 +192,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       <footer className="relative z-10 px-8 py-6 border-t" style={{ borderColor: theme.colors.border }}>
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm" style={{ color: theme.colors.textMuted }}>
-            © 2025 AI Campus - Personalized Learning Platform
+            © 2025 Home Campus - Personalized Learning Platform
           </p>
         </div>
       </footer>

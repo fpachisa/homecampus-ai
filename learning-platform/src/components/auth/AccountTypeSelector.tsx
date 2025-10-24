@@ -19,7 +19,7 @@ export const AccountTypeSelector: React.FC<AccountTypeSelectorProps> = ({
           className="text-3xl font-bold mb-3"
           style={{ color: theme.colors.textPrimary }}
         >
-          Welcome to AI Campus!
+          Welcome to Home Campus!
         </h1>
         <p
           className="text-base"

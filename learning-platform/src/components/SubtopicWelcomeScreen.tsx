@@ -20,6 +20,12 @@ import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../prompt-library/subject
 import type { RelationsFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
 import type { CoordinateGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import { DIFFERENTIAL_CALCULUS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import type { DifferentialCalculusTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import { S4_MATH_INTEGRATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
+import type { IntegrationTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
+import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
+import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -128,6 +134,29 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('coord-geom-perpendicular-bisectors')) return '⊥';
   if (topicId.includes('coord-geom-applications')) return '🎯';
 
+  // S4 Differential Calculus icons
+  if (topicId === 'limits') return '∞';
+  if (topicId === 'gradient-tangent') return '📈';
+  if (topicId === 'derivative-function') return 'f′';
+  if (topicId === 'first-principles') return '△';
+  if (topicId === 'differentiation-rules') return '∂';
+  if (topicId === 'tangent-equations') return '📐';
+  if (topicId === 'stationary-points') return '📊';
+
+  // S4 Integration icons
+  if (topicId === 's4-math-integration-area-under-curves') return '📊';
+  if (topicId === 's4-math-integration-antiderivatives') return '∫';
+  if (topicId === 's4-math-integration-rules') return '📏';
+  if (topicId === 's4-math-integration-definite-integrals') return '🎯';
+  if (topicId === 's4-math-integration-riemann-sums') return '📐';
+
+  // S4 Probability icons
+  if (topicId === 's4-math-probability-basic-concepts') return '🎲';
+  if (topicId === 's4-math-probability-combined-events') return '🔢';
+  if (topicId === 's4-math-probability-trees') return '🌳';
+  if (topicId === 's4-math-probability-conditional') return '🔀';
+  if (topicId === 's4-math-probability-applications') return '🎯';
+
   return '📐';
 }
 
@@ -162,6 +191,12 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS[topicId as RelationsFunctionsTopicId];
   } else if (category === 's3-math-coordinate-geometry') {
     topicConfig = S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS[topicId as CoordinateGeometryTopicId];
+  } else if (category === 's4-math-differential-calculus') {
+    topicConfig = DIFFERENTIAL_CALCULUS_SUBTOPICS[topicId as DifferentialCalculusTopicId];
+  } else if (category === 's4-math-integration') {
+    topicConfig = S4_MATH_INTEGRATION_SUBTOPICS[topicId as IntegrationTopicId];
+  } else if (category === 's4-math-probability') {
+    topicConfig = S4_MATH_PROBABILITY_SUBTOPICS[topicId as ProbabilityTopicId];
   }
 
   if (!topicConfig) {

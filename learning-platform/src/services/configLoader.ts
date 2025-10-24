@@ -1894,6 +1894,435 @@ export class ConfigLoader {
           practice: true,
           visualizations: true
         }
+      },
+      // S4 Differential Calculus
+      'limits': {
+        id: 'limits',
+        displayName: 'Limits',
+        grade: 's4',
+        subject: 'math',
+        topic: 'differential-calculus',
+        subtopic: 'limits',
+        metadata: {
+          difficulty: 'foundational',
+          estimatedMinutes: 50,
+          prerequisites: []
+        },
+        notesComponent: 's4/math/differential-calculus/Limits',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      'gradient-tangent': {
+        id: 'gradient-tangent',
+        displayName: 'Gradient of a Tangent',
+        grade: 's4',
+        subject: 'math',
+        topic: 'differential-calculus',
+        subtopic: 'gradient-tangent',
+        metadata: {
+          difficulty: 'foundational-to-intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['limits']
+        },
+        notesComponent: 's4/math/differential-calculus/GradientOfTangent',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      'derivative-function': {
+        id: 'derivative-function',
+        displayName: 'The Derivative Function',
+        grade: 's4',
+        subject: 'math',
+        topic: 'differential-calculus',
+        subtopic: 'derivative-function',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 45,
+          prerequisites: ['gradient-tangent']
+        },
+        notesComponent: 's4/math/differential-calculus/DerivativeFunction',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      'first-principles': {
+        id: 'first-principles',
+        displayName: 'Differentiation from First Principles',
+        grade: 's4',
+        subject: 'math',
+        topic: 'differential-calculus',
+        subtopic: 'first-principles',
+        metadata: {
+          difficulty: 'intermediate-to-advanced',
+          estimatedMinutes: 50,
+          prerequisites: ['derivative-function']
+        },
+        notesComponent: 's4/math/differential-calculus/FirstPrinciples',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      'differentiation-rules': {
+        id: 'differentiation-rules',
+        displayName: 'Rules for Differentiation',
+        grade: 's4',
+        subject: 'math',
+        topic: 'differential-calculus',
+        subtopic: 'differentiation-rules',
+        metadata: {
+          difficulty: 'intermediate-to-advanced',
+          estimatedMinutes: 60,
+          prerequisites: ['first-principles']
+        },
+        notesComponent: 's4/math/differential-calculus/DifferentiationRules',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      'tangent-equations': {
+        id: 'tangent-equations',
+        displayName: 'Finding the Equation of a Tangent',
+        grade: 's4',
+        subject: 'math',
+        topic: 'differential-calculus',
+        subtopic: 'tangent-equations',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 45,
+          prerequisites: ['differentiation-rules']
+        },
+        notesComponent: 's4/math/differential-calculus/TangentEquations',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      'stationary-points': {
+        id: 'stationary-points',
+        displayName: 'Stationary Points',
+        grade: 's4',
+        subject: 'math',
+        topic: 'differential-calculus',
+        subtopic: 'stationary-points',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['tangent-equations']
+        },
+        notesComponent: 's4/math/differential-calculus/StationaryPoints',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      // S4 Integration
+      's4-math-integration-area-under-curves': {
+        id: 's4-math-integration-area-under-curves',
+        displayName: 'Area Under Curves',
+        grade: 's4',
+        subject: 'math',
+        topic: 'integration',
+        subtopic: 's4-math-integration-area-under-curves',
+        metadata: {
+          difficulty: 'foundational',
+          estimatedMinutes: 60,
+          prerequisites: []
+        },
+        notesComponent: 's4/math/integration/AreaUnderCurves',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-integration-antiderivatives': {
+        id: 's4-math-integration-antiderivatives',
+        displayName: 'Antiderivatives & Introduction to Integration',
+        grade: 's4',
+        subject: 'math',
+        topic: 'integration',
+        subtopic: 's4-math-integration-antiderivatives',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 55,
+          prerequisites: ['s4-math-integration-area-under-curves']
+        },
+        notesComponent: 's4/math/integration/Antiderivatives',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-integration-rules': {
+        id: 's4-math-integration-rules',
+        displayName: 'Rules for Integration',
+        grade: 's4',
+        subject: 'math',
+        topic: 'integration',
+        subtopic: 's4-math-integration-rules',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s4-math-integration-antiderivatives']
+        },
+        notesComponent: 's4/math/integration/IntegrationRules',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-integration-definite-integrals': {
+        id: 's4-math-integration-definite-integrals',
+        displayName: 'The Definite Integral',
+        grade: 's4',
+        subject: 'math',
+        topic: 'integration',
+        subtopic: 's4-math-integration-definite-integrals',
+        metadata: {
+          difficulty: 'intermediate-to-advanced',
+          estimatedMinutes: 60,
+          prerequisites: ['s4-math-integration-rules']
+        },
+        notesComponent: 's4/math/integration/DefiniteIntegrals',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-integration-riemann-sums': {
+        id: 's4-math-integration-riemann-sums',
+        displayName: 'Riemann Sums',
+        grade: 's4',
+        subject: 'math',
+        topic: 'integration',
+        subtopic: 's4-math-integration-riemann-sums',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['s4-math-integration-definite-integrals']
+        },
+        notesComponent: 's4/math/integration/RiemannSums',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+
+      // S4 Probability
+      's4-math-probability-basic-concepts': {
+        id: 's4-math-probability-basic-concepts',
+        displayName: 'Basic Probability Concepts',
+        grade: 's4',
+        subject: 'math',
+        topic: 'probability',
+        subtopic: 's4-math-probability-basic-concepts',
+        metadata: {
+          difficulty: 'foundational',
+          estimatedMinutes: 50,
+          prerequisites: []
+        },
+        notesComponent: 's4/math/probability/BasicConcepts',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-probability-combined-events': {
+        id: 's4-math-probability-combined-events',
+        displayName: 'Combined Events & Probability Rules',
+        grade: 's4',
+        subject: 'math',
+        topic: 'probability',
+        subtopic: 's4-math-probability-combined-events',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 55,
+          prerequisites: ['s4-math-probability-basic-concepts']
+        },
+        notesComponent: 's4/math/probability/CombinedEvents',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-probability-trees': {
+        id: 's4-math-probability-trees',
+        displayName: 'Probability Trees',
+        grade: 's4',
+        subject: 'math',
+        topic: 'probability',
+        subtopic: 's4-math-probability-trees',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s4-math-probability-combined-events']
+        },
+        notesComponent: 's4/math/probability/ProbabilityTrees',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-probability-conditional': {
+        id: 's4-math-probability-conditional',
+        displayName: 'Conditional Probability',
+        grade: 's4',
+        subject: 'math',
+        topic: 'probability',
+        subtopic: 's4-math-probability-conditional',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 60,
+          prerequisites: ['s4-math-probability-trees']
+        },
+        notesComponent: 's4/math/probability/ConditionalProbability',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-probability-applications': {
+        id: 's4-math-probability-applications',
+        displayName: 'Applications & Problem Solving',
+        grade: 's4',
+        subject: 'math',
+        topic: 'probability',
+        subtopic: 's4-math-probability-applications',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['s4-math-probability-conditional']
+        },
+        notesComponent: 's4/math/probability/Applications',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
       }
     };
 

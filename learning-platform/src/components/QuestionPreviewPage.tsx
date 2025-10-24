@@ -28,6 +28,7 @@ const QuestionPreviewPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [layerFilter, setLayerFilter] = useState<PathLayer | 'all'>('all');
   const [headerCollapsed, setHeaderCollapsed] = useState(false);
+  const [displayLimit, setDisplayLimit] = useState(50);
 
   // Load manifest on mount
   useEffect(() => {
@@ -38,12 +39,18 @@ const QuestionPreviewPage: React.FC = () => {
   useEffect(() => {
     if (selectedFile) {
       loadYAMLFile(selectedFile);
+      setDisplayLimit(50); // Reset to 10 when changing files
     }
   }, [selectedFile]);
 
+  // Reset display limit when layer filter changes
+  useEffect(() => {
+    setDisplayLimit(50);
+  }, [layerFilter]);
+
   const loadManifest = async () => {
     try {
-      const response = await fetch('/curriculum-content/S3/Maths/index.json');
+      const response = await fetch('/curriculum-content/index.json');
       if (!response.ok) {
         throw new Error('Failed to load manifest');
       }
@@ -91,14 +98,18 @@ const QuestionPreviewPage: React.FC = () => {
   };
 
   // Filter questions by layer
-  const filteredQuestions = layerFilter === 'all'
+  const allFilteredQuestions = layerFilter === 'all'
     ? questions
     : questions.filter((q) => q.layer === layerFilter);
+
+  // Apply display limit for pagination
+  const filteredQuestions = allFilteredQuestions.slice(0, displayLimit);
+  const hasMore = allFilteredQuestions.length > displayLimit;
 
   // Stats
   const nodeCount = nodes.length;
   const questionCount = questions.length;
-  const filteredCount = filteredQuestions.length;
+  const filteredCount = allFilteredQuestions.length;
 
   // Layer counts
   const layerCounts = {
@@ -280,17 +291,34 @@ const QuestionPreviewPage: React.FC = () => {
         )}
 
         {!loading && !error && filteredQuestions.length > 0 && (
-          <div className="space-y-6">
-            {filteredQuestions.map((question, index) => (
-              <QuestionPreviewCard
-                key={`${question.nodeId}-${question.id}-${index}`}
-                question={question}
-                nodeTitle={question.nodeTitle}
-                nodeId={question.nodeId}
-                layer={question.layer}
-              />
-            ))}
-          </div>
+          <>
+            <div className="space-y-6">
+              {filteredQuestions.map((question, index) => (
+                <QuestionPreviewCard
+                  key={`${question.nodeId}-${question.id}-${index}`}
+                  question={question}
+                  nodeTitle={question.nodeTitle}
+                  nodeId={question.nodeId}
+                  layer={question.layer}
+                />
+              ))}
+            </div>
+
+            {/* Showing count and Load More */}
+            <div className="text-center py-6 space-y-4">
+              <div className="text-sm text-gray-600">
+                Showing {filteredQuestions.length} of {filteredCount} questions
+              </div>
+              {hasMore && (
+                <button
+                  onClick={() => setDisplayLimit(displayLimit + 50)}
+                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Load 50 More ({filteredCount - displayLimit} remaining)
+                </button>
+              )}
+            </div>
+          </>
         )}
       </div>
 

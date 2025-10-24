@@ -15,7 +15,6 @@ import { BackButton } from '../BackButton';
 import Avatar from '../Avatar';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProgressSync } from '../../hooks/useProgressSync';
-import { SyncStatusIndicator } from '../SyncStatusIndicator';
 import { useAudioManager } from '../../hooks/useAudioManager';
 import MathText from '../MathText';
 import MathInputToolbar from '../MathInputToolbar';

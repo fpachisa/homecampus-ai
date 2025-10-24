@@ -63,10 +63,10 @@ const HomePage: React.FC<HomePageProps> = ({ onTopicSelect }) => {
               </div>
               <div>
                 <h1 className="text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
-                  AI Campus
+                  Home Campus
                 </h1>
                 <p className="text-sm" style={{ color: theme.colors.textMuted }}>
-                  Personalized AI Learning
+                  AI-Powered Home Learning
                 </p>
               </div>
             </div>

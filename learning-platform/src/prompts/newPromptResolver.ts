@@ -30,6 +30,9 @@ import { S3_MATH_SURDS_RADICALS_SUBTOPICS, S3_MATH_SURDS_RADICALS_CONFIG } from 
 import { S3_MATH_STATISTICS_SUBTOPICS, S3_MATH_STATISTICS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
 import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS, S3_MATH_RELATIONS_FUNCTIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS, S3_MATH_COORDINATE_GEOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import { DIFFERENTIAL_CALCULUS_SUBTOPICS, DIFFERENTIAL_CALCULUS_TUTOR_CUSTOMIZATION, S4_DIFFERENTIAL_CALCULUS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import { S4_MATH_INTEGRATION_SUBTOPICS, INTEGRATION_TUTOR_CUSTOMIZATION, INTEGRATION_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
+import { S4_MATH_PROBABILITY_SUBTOPICS, PROBABILITY_TUTOR_CUSTOMIZATION, PROBABILITY_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 
 // OLD: Still in legacy format (to be migrated)
 // None remaining!
@@ -243,6 +246,33 @@ export class NewPromptResolver {
     if (topicId.startsWith('s3-math-coord-geom-')) {
       const subtopic = S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS[topicId as any];
       return { subtopic, global: S3_MATH_COORDINATE_GEOMETRY_CONFIG };
+    }
+
+    // S4 Differential Calculus - direct topic IDs
+    const differentialCalculusTopics = ['limits', 'gradient-tangent', 'derivative-function', 'first-principles', 'differentiation-rules', 'tangent-equations', 'stationary-points'];
+    if (differentialCalculusTopics.includes(topicId)) {
+      const subtopic = DIFFERENTIAL_CALCULUS_SUBTOPICS[topicId as any];
+      return { subtopic, global: S4_DIFFERENTIAL_CALCULUS_CONFIG };
+    }
+
+    // S4 Integration - full topic IDs
+    if (topicId in S4_MATH_INTEGRATION_SUBTOPICS) {
+      const subtopic = S4_MATH_INTEGRATION_SUBTOPICS[topicId as keyof typeof S4_MATH_INTEGRATION_SUBTOPICS];
+      const global = {
+        tutorCustomization: INTEGRATION_TUTOR_CUSTOMIZATION,
+        availableTools: INTEGRATION_MATH_TOOLS
+      };
+      return { subtopic, global };
+    }
+
+    // S4 Probability - full topic IDs
+    if (topicId in S4_MATH_PROBABILITY_SUBTOPICS) {
+      const subtopic = S4_MATH_PROBABILITY_SUBTOPICS[topicId as keyof typeof S4_MATH_PROBABILITY_SUBTOPICS];
+      const global = {
+        tutorCustomization: PROBABILITY_TUTOR_CUSTOMIZATION,
+        availableTools: PROBABILITY_MATH_TOOLS
+      };
+      return { subtopic, global };
     }
 
     throw new Error(`Topic ${topicId} not found`);

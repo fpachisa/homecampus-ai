@@ -26,6 +26,12 @@ import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../../prompt-library/subj
 import type { RelationsFunctionsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
 import type { CoordinateGeometryTopicId } from '../../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import { DIFFERENTIAL_CALCULUS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import type { DifferentialCalculusTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import { S4_MATH_INTEGRATION_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s4-integration';
+import type { IntegrationTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-integration';
+import { S4_MATH_PROBABILITY_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s4-probability';
+import type { ProbabilityTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-probability';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -134,6 +140,29 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('coord-geom-perpendicular-bisectors')) return '⊥';
   if (topicId.includes('coord-geom-applications')) return '🎯';
 
+  // S4 Differential Calculus icons
+  if (topicId === 'limits') return '∞';
+  if (topicId === 'gradient-tangent') return '📈';
+  if (topicId === 'derivative-function') return 'f′';
+  if (topicId === 'first-principles') return '△';
+  if (topicId === 'differentiation-rules') return '∂';
+  if (topicId === 'tangent-equations') return '📐';
+  if (topicId === 'stationary-points') return '📊';
+
+  // S4 Integration icons
+  if (topicId === 's4-math-integration-area-under-curves') return '📊';
+  if (topicId === 's4-math-integration-antiderivatives') return '∫';
+  if (topicId === 's4-math-integration-rules') return '📏';
+  if (topicId === 's4-math-integration-definite-integrals') return '🎯';
+  if (topicId === 's4-math-integration-riemann-sums') return '📐';
+
+  // S4 Probability icons
+  if (topicId === 's4-math-probability-basic-concepts') return '🎲';
+  if (topicId === 's4-math-probability-combined-events') return '🔢';
+  if (topicId === 's4-math-probability-trees') return '🌳';
+  if (topicId === 's4-math-probability-conditional') return '🔀';
+  if (topicId === 's4-math-probability-applications') return '🎯';
+
   return '📐';
 }
 
@@ -145,6 +174,9 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's3-math-exponential-logarithms') return 'Exponential & Logarithms';
   if (category === 's3-math-sets-venn-diagrams') return 'Sets & Venn Diagrams';
   if (category === 's3-math-exponents') return 'Exponents';
+  if (category === 's4-math-differential-calculus') return 'Differential Calculus';
+  if (category === 's4-math-integration') return 'Integration';
+  if (category === 's4-math-probability') return 'Probability';
   if (category === 's3-math-surds-radicals') return 'Surds & Radicals';
   if (category === 's3-math-statistics') return 'Statistics';
   if (category === 's3-math-relations-functions') return 'Relations & Functions';
@@ -244,6 +276,30 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (appState.selectedCategory === 's3-math-coordinate-geometry') {
       return Object.entries(S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's4-math-differential-calculus') {
+      return Object.entries(DIFFERENTIAL_CALCULUS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's4-math-integration') {
+      return Object.entries(S4_MATH_INTEGRATION_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (appState.selectedCategory === 's4-math-probability') {
+      return Object.entries(S4_MATH_PROBABILITY_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId | ProbabilityTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
@@ -424,7 +480,8 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
                appState.selectedCategory === 's3-math-quadratic-equations' ? '📈' :
                appState.selectedCategory === 's3-math-exponential-logarithms' ? '📊' :
                appState.selectedCategory === 's3-math-sets-venn-diagrams' ? '⭕' :
-               appState.selectedCategory === 's3-math-exponents' ? '⚡' : '📈'}
+               appState.selectedCategory === 's3-math-exponents' ? '⚡' :
+               appState.selectedCategory === 's4-math-probability' ? '🎲' : '📈'}
             </div>
             <div>
               <h2 className="font-semibold text-sm" style={{ color: theme.colors.textPrimary }}>

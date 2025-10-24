@@ -18,10 +18,10 @@ interface VennDiagram2SetProps {
   layout?: 'overlapping' | 'disjoint' | 'subset' | 'equal';
 
   // Elements or counts in regions
-  aOnlyElements?: string[] | number;
-  bOnlyElements?: string[] | number;
-  intersectionElements?: string[] | number;
-  neitherElements?: string[] | number;
+  aOnlyElements?: string[] | string | number;
+  bOnlyElements?: string[] | string | number;
+  intersectionElements?: string[] | string | number;
+  neitherElements?: string[] | string | number;
 
   // Visual options
   showElements?: boolean;        // Show actual elements or just counts
@@ -56,17 +56,42 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
   shadeColor = '#86efac',
   caption
 }) => {
-  // Convert elements to arrays if they're numbers
-  const aOnly = typeof aOnlyElements === 'number' ? [String(aOnlyElements)] : aOnlyElements;
-  const bOnly = typeof bOnlyElements === 'number' ? [String(bOnlyElements)] : bOnlyElements;
-  const intersection = typeof intersectionElements === 'number' ? [String(intersectionElements)] : intersectionElements;
-  const neither = typeof neitherElements === 'number' ? [String(neitherElements)] : neitherElements;
+  // Convert elements to arrays, handling number, string, and string[] cases
+  const normalizeElements = (input: string[] | string | number): string[] => {
+    if (typeof input === 'number') {
+      return [String(input)];
+    }
+    if (typeof input === 'string') {
+      // Plain string (e.g., "P(P)") - treat as a single label/element
+      return [input];
+    }
+    // Already an array
+    return input;
+  };
+
+  const aOnly = normalizeElements(aOnlyElements);
+  const bOnly = normalizeElements(bOnlyElements);
+  const intersection = normalizeElements(intersectionElements);
+  const neither = normalizeElements(neitherElements);
 
   // Calculate counts
-  const aOnlyCount = typeof aOnlyElements === 'number' ? aOnlyElements : aOnlyElements.length;
-  const bOnlyCount = typeof bOnlyElements === 'number' ? bOnlyElements : bOnlyElements.length;
-  const intersectionCount = typeof intersectionElements === 'number' ? intersectionElements : intersectionElements.length;
-  const neitherCount = typeof neitherElements === 'number' ? neitherElements : neitherElements.length;
+  const getCount = (input: string[] | string | number): number => {
+    if (typeof input === 'number') {
+      return input;
+    }
+    if (typeof input === 'string') {
+      // Try to parse as number, otherwise treat as label with count 1
+      const parsed = Number(input);
+      return isNaN(parsed) ? 1 : parsed;
+    }
+    // Array - return length
+    return input.length;
+  };
+
+  const aOnlyCount = getCount(aOnlyElements);
+  const bOnlyCount = getCount(bOnlyElements);
+  const intersectionCount = getCount(intersectionElements);
+  const neitherCount = getCount(neitherElements);
 
   // Determine circle positions based on layout
   const getCirclePositions = () => {
@@ -114,6 +139,37 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
 
   // Render elements or count in a region
   const renderRegionContent = (elements: string[], count: number, x: number, y: number) => {
+    // Check if we have non-numeric labels (like "P(P)" or "P(P')")
+    const hasLabels = elements.length > 0 && elements.some(elem => isNaN(Number(elem)));
+
+    // Priority 1: If we have string labels (non-numeric), always show them directly
+    if (hasLabels) {
+      const displayElements = elements.slice(0, 5);
+      return (
+        <g>
+          {displayElements.map((elem, idx) => (
+            <text
+              key={idx}
+              x={x}
+              y={y + (idx - displayElements.length / 2) * 16}
+              fontSize="14"
+              fontWeight="bold"
+              textAnchor="middle"
+              fill="#1f2937"
+            >
+              {elem}
+            </text>
+          ))}
+          {elements.length > 5 && (
+            <text x={x} y={y + (displayElements.length / 2) * 16 + 8} fontSize="12" textAnchor="middle" fill="#6b7280">
+              ...
+            </text>
+          )}
+        </g>
+      );
+    }
+
+    // Priority 2: If showRegionCounts is true, show (count) notation
     if (showRegionCounts) {
       return (
         <text x={x} y={y} fontSize="18" fontWeight="bold" textAnchor="middle" fill="#1f2937">
@@ -122,8 +178,8 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
       );
     }
 
-    if (showElements && elements.length > 0 && typeof aOnlyElements !== 'number') {
-      // Show actual elements (max 5 to avoid clutter)
+    // Priority 3: Show elements if available
+    if (showElements && elements.length > 0) {
       const displayElements = elements.slice(0, 5);
       return (
         <g>
@@ -148,7 +204,7 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
       );
     }
 
-    // Show count as number (no brackets)
+    // Priority 4: Show plain count
     if (count > 0) {
       return (
         <text x={x} y={y} fontSize="18" fontWeight="bold" textAnchor="middle" fill="#1f2937">

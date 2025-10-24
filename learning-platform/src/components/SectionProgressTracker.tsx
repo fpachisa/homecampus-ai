@@ -21,6 +21,12 @@ import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../prompt-library/subject
 import type { RelationsFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
 import type { CoordinateGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import { DIFFERENTIAL_CALCULUS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import type { DifferentialCalculusTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import { S4_MATH_INTEGRATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
+import type { IntegrationTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
+import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
+import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -80,6 +86,22 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s3-math-coord-geom-')) {
       const subtopic = S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS[topicId as CoordinateGeometryTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // S4 Differential Calculus topics (direct topic IDs, no prefix)
+    const differentialCalculusTopics = ['limits', 'gradient-tangent', 'derivative-function', 'first-principles', 'differentiation-rules', 'tangent-equations', 'stationary-points'];
+    if (differentialCalculusTopics.includes(topicId)) {
+      const subtopic = DIFFERENTIAL_CALCULUS_SUBTOPICS[topicId as DifferentialCalculusTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // S4 Integration topics
+    if (topicId.startsWith('s4-math-integration-')) {
+      const subtopic = S4_MATH_INTEGRATION_SUBTOPICS[topicId as IntegrationTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // S4 Probability topics
+    if (topicId.startsWith('s4-math-probability-')) {
+      const subtopic = S4_MATH_PROBABILITY_SUBTOPICS[topicId as ProbabilityTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];
@@ -159,7 +181,6 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
               {/* Step indicator - smaller for header */}
               <div
                 className="relative group cursor-pointer"
-                title={`${section.title} - ${status} (click to jump)`}
                 onClick={() => onSectionClick(section.id)}
               >
                 <div
@@ -178,12 +199,16 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
 
                 {/* Tooltip on hover */}
                 <div
-                  className="hidden group-hover:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 rounded shadow-lg whitespace-nowrap z-20"
+                  className="hidden group-hover:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 rounded shadow-lg z-50"
                   style={{
                     backgroundColor: theme.colors.chat,
                     border: `1px solid ${statusColor}`,
                     fontSize: '11px',
-                    color: theme.colors.textPrimary
+                    color: theme.colors.textPrimary,
+                    maxWidth: '200px',
+                    textAlign: 'center',
+                    whiteSpace: 'normal',
+                    wordWrap: 'break-word'
                   }}
                 >
                   {section.title}
@@ -232,7 +257,6 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
                   {/* Step indicator */}
                   <div
                     className="relative group cursor-pointer"
-                    title={`${section.title} - ${status} (click to jump)`}
                     onClick={() => onSectionClick(section.id)}
                   >
                     <div
@@ -251,12 +275,16 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
 
                     {/* Tooltip on hover */}
                     <div
-                      className="hidden group-hover:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 rounded shadow-lg whitespace-nowrap z-20"
+                      className="hidden group-hover:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 rounded shadow-lg z-50"
                       style={{
                         backgroundColor: theme.colors.chat,
                         border: `1px solid ${statusColor}`,
                         fontSize: '11px',
-                        color: theme.colors.textPrimary
+                        color: theme.colors.textPrimary,
+                        maxWidth: '200px',
+                        textAlign: 'center',
+                        whiteSpace: 'normal',
+                        wordWrap: 'break-word'
                       }}
                     >
                       {section.title}

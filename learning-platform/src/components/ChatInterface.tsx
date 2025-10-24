@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import MessageBubble from './MessageBubble';
 import InputArea, { type InputAreaHandle } from './InputArea';
 import Avatar from './Avatar';
-import { SyncStatusIndicator } from './SyncStatusIndicator';
 import FallbackAIService from '../services/fallbackAIService';
 import type { AIService } from '../services/aiService';
 import { useAuth } from '../contexts/AuthContext';
@@ -34,6 +33,12 @@ import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS } from '../prompt-library/subject
 import type { RelationsFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
 import type { CoordinateGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import { DIFFERENTIAL_CALCULUS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import type { DifferentialCalculusTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import { S4_MATH_INTEGRATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
+import type { IntegrationTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
+import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
+import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -86,6 +91,19 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S3 coordinate geometry topic
   if (topicId.startsWith('s3-math-coord-geom-')) {
     return S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS[topicId as CoordinateGeometryTopicId];
+  }
+  // Check if it's an S4 differential calculus topic (direct topic IDs)
+  const differentialCalculusTopics = ['limits', 'gradient-tangent', 'derivative-function', 'first-principles', 'differentiation-rules', 'tangent-equations', 'stationary-points'];
+  if (differentialCalculusTopics.includes(topicId)) {
+    return DIFFERENTIAL_CALCULUS_SUBTOPICS[topicId as DifferentialCalculusTopicId];
+  }
+  // Check if it's an S4 integration topic
+  if (topicId.startsWith('s4-math-integration-')) {
+    return S4_MATH_INTEGRATION_SUBTOPICS[topicId as IntegrationTopicId];
+  }
+  // Check if it's an S4 probability topic
+  if (topicId.startsWith('s4-math-probability-')) {
+    return S4_MATH_PROBABILITY_SUBTOPICS[topicId as ProbabilityTopicId];
   }
   // Return undefined for unknown topics
   return undefined;
@@ -1139,6 +1157,9 @@ const handleStudentSubmit = async (input: string) => {
     if (topicId.startsWith('s3-math-relations-')) {
       return 'Master functions and transformations!';
     }
+    if (topicId.startsWith('s4-math-probability-')) {
+      return 'Master probability and statistics!';
+    }
     return 'Master mathematics step by step!';
   };
 
@@ -1173,6 +1194,9 @@ const handleStudentSubmit = async (input: string) => {
     }
     if (topicId.startsWith('s3-math-relations-')) {
       return '🔗';
+    }
+    if (topicId.startsWith('s4-math-probability-')) {
+      return '🎲';
     }
     return '📚';
   };
@@ -1254,16 +1278,8 @@ const handleStudentSubmit = async (input: string) => {
           />
         )}
 
-        {/* Right: Sync Status + Notes + Auth buttons */}
+        {/* Right: Notes + Auth buttons */}
         <div className="flex items-center space-x-4">
-          {/* Sync Status Indicator */}
-          <SyncStatusIndicator
-            isSyncing={isSyncing}
-            lastSyncTime={lastSyncTime}
-            syncError={syncError}
-            compact={false}
-          />
-
           {/* View Notes Button */}
           {hasNotes && (
             <button

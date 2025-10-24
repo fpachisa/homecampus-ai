@@ -87,6 +87,26 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's3/math/coordinate-geometry/PerpendicularBisectors': () => import('../notes/s3/math/coordinate-geometry/PerpendicularBisectors'),
   's3/math/coordinate-geometry/CoordinateGeometryApplications': () => import('../notes/s3/math/coordinate-geometry/CoordinateGeometryApplications'),
   's3/math/coordinate-geometry/ThreeDimensionalCoordinates': () => import('../notes/s3/math/coordinate-geometry/ThreeDimensionalCoordinates'),
+  // S4 Differential Calculus notes
+  's4/math/differential-calculus/Limits': () => import('../notes/s4/math/differential-calculus/Limits'),
+  's4/math/differential-calculus/GradientOfTangent': () => import('../notes/s4/math/differential-calculus/GradientOfTangent'),
+  's4/math/differential-calculus/DerivativeFunction': () => import('../notes/s4/math/differential-calculus/DerivativeFunction'),
+  's4/math/differential-calculus/FirstPrinciples': () => import('../notes/s4/math/differential-calculus/FirstPrinciples'),
+  's4/math/differential-calculus/DifferentiationRules': () => import('../notes/s4/math/differential-calculus/DifferentiationRules'),
+  's4/math/differential-calculus/TangentEquations': () => import('../notes/s4/math/differential-calculus/TangentEquations'),
+  's4/math/differential-calculus/StationaryPoints': () => import('../notes/s4/math/differential-calculus/StationaryPoints'),
+  // S4 Integration notes
+  's4/math/integration/AreaUnderCurves': () => import('../notes/s4/math/integration/AreaUnderCurves'),
+  's4/math/integration/Antiderivatives': () => import('../notes/s4/math/integration/Antiderivatives'),
+  's4/math/integration/IntegrationRules': () => import('../notes/s4/math/integration/IntegrationRules'),
+  's4/math/integration/DefiniteIntegrals': () => import('../notes/s4/math/integration/DefiniteIntegrals'),
+  's4/math/integration/RiemannSums': () => import('../notes/s4/math/integration/RiemannSums'),
+  // S4 Probability notes
+  's4/math/probability/BasicConcepts': () => import('../notes/s4/math/probability/BasicConcepts'),
+  's4/math/probability/CombinedEvents': () => import('../notes/s4/math/probability/CombinedEvents'),
+  's4/math/probability/ProbabilityTrees': () => import('../notes/s4/math/probability/ProbabilityTrees'),
+  's4/math/probability/ConditionalProbability': () => import('../notes/s4/math/probability/ConditionalProbability'),
+  's4/math/probability/Applications': () => import('../notes/s4/math/probability/Applications'),
   // Add more note components here as you create them
   // 'p4/science/biology/PlantParts': () => import('../notes/p4/science/biology/PlantParts'),
 };

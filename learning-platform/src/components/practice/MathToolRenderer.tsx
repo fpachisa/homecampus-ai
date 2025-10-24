@@ -44,6 +44,21 @@ import ScatterPlotVisualizer from '../math-tools/ScatterPlotVisualizer';
 import CartesianPlaneVisualizer from '../math-tools/CartesianPlaneVisualizer';
 import Coordinate3DPlaneVisualizer from '../math-tools/Coordinate3DPlaneVisualizer';
 
+// Calculus visualizers
+import FunctionGraphVisualizer from '../math-tools/FunctionGraphVisualizer';
+import LimitVisualizerComponent from '../math-tools/LimitVisualizerComponent';
+import TangentVisualizerComponent from '../math-tools/TangentVisualizerComponent';
+import SecantTangentComparisonVisualizer from '../math-tools/SecantTangentComparisonVisualizer';
+import DerivativeGrapherVisualizer from '../math-tools/DerivativeGrapherVisualizer';
+import FirstPrinciplesVisualizer from '../math-tools/FirstPrinciplesVisualizer';
+import ChainRuleVisualizer from '../math-tools/ChainRuleVisualizer';
+import NormalLineGrapherVisualizer from '../math-tools/NormalLineGrapherVisualizer';
+import StationaryPointsVisualizer from '../math-tools/StationaryPointsVisualizer';
+import OptimizationGrapherVisualizer from '../math-tools/OptimizationGrapherVisualizer';
+import AreaApproximationVisualizer from '../math-tools/AreaApproximationVisualizer';
+import DefiniteIntegralVisualizer from '../math-tools/DefiniteIntegralVisualizer';
+import RiemannSumVisualizer from '../math-tools/RiemannSumVisualizer';
+
 interface MathToolRendererProps {
   toolName: string | null | undefined;
   parameters: Record<string, any>;
@@ -106,6 +121,23 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   // Coordinate geometry tools
   cartesianPlane: CartesianPlaneVisualizer,
   coordinate3DPlane: Coordinate3DPlaneVisualizer,
+
+  // Calculus tools - Differential Calculus
+  functionGraph: FunctionGraphVisualizer,
+  limitVisualizer: LimitVisualizerComponent,
+  tangentVisualizer: TangentVisualizerComponent,
+  secantTangentComparison: SecantTangentComparisonVisualizer,
+  derivativeGrapher: DerivativeGrapherVisualizer,
+  firstPrinciplesVisualizer: FirstPrinciplesVisualizer,
+  chainRuleVisualizer: ChainRuleVisualizer,
+  normalLineGrapher: NormalLineGrapherVisualizer,
+  stationaryPointsVisualizer: StationaryPointsVisualizer,
+  optimizationGrapher: OptimizationGrapherVisualizer,
+
+  // Calculus tools - Integration
+  areaApproximation: AreaApproximationVisualizer,
+  definiteIntegralVisualizer: DefiniteIntegralVisualizer,
+  riemannSumVisualizer: RiemannSumVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

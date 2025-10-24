@@ -416,20 +416,22 @@ function restoreCorruptedLatex(text: string): string {
 }
 
 /**
- * Safe JSON parser with multiple fallback strategies
- * Provides 100% reliability for AI responses with LaTeX content
+ * Safe JSON parser that trusts AI-generated JSON
+ * Simplified approach with only two stages (no legacy fallbacks)
  *
  * Strategy:
- * 1. Restore corrupted LaTeX commands
- * 2. Pre-sanitize raw text to remove control characters
- * 3. Try standard parsing with fixes
- * 4. If fails, try aggressive LaTeX escaping
- * 5. If still fails, extract values with regex patterns
- * 6. Last resort: return safe fallback
+ * 1. Pre-sanitize raw text to remove control characters
+ * 2. Extract JSON portion if wrapped in markdown
+ * 3. Stage 0: Try direct parsing (trust AI formatting)
+ * 4. Stage 3: Try with escaping fixes only (no corruption restoration)
+ * 5. If both fail: use fallback or throw error
+ *
+ * Note: We removed legacy fallback stages (aggressive escaping, pattern extraction)
+ * because the AI now consistently sends correctly-formatted JSON
  */
 export function safeParseJSON<T>(
   rawText: string,
-  expectedKeys: string[] = [],
+  expectedKeys: string[] = [], // Unused, kept for backward compatibility
   fallbackResponse?: Partial<T>
 ): T {
   console.log('🔍 SafeParseJSON: Starting with text length:', rawText.length);
@@ -459,106 +461,30 @@ export function safeParseJSON<T>(
     console.log('⚠️ SafeParseJSON: Direct parsing failed, trying with fixes...', (error0 as Error).message);
   }
 
-  // Stage 3: Try with corruption restoration and escaping fixes
+  // Stage 3: Try with escaping fixes only (trust AI formatting, no corruption restoration)
   // Only runs if direct parsing failed
+  // NOTE: We removed restoreCorruptedLatex() because it was causing false positives
+  // on correctly-formatted AI responses (e.g., "greater than" → "greater \tan")
   try {
-    // First restore corrupted LaTeX (for responses with broken backslashes)
-    const restored = restoreCorruptedLatex(jsonText);
-    if (restored !== jsonText) {
-      console.log('✅ SafeParseJSON: Restored corrupted LaTeX in Stage 3');
-    }
-
-    // Then apply escaping fixes
-    const fixed = fixJSONEscaping(restored);
+    // Apply JSON escaping fixes for edge cases
+    const fixed = fixJSONEscaping(jsonText);
     const parsed = JSON.parse(fixed);
     const result = unescapeLiteralNewlines(decodeUnicodeEscapes(parsed));
-    console.log('✅ SafeParseJSON: Standard parsing with fixes succeeded');
+    console.log('✅ SafeParseJSON: Stage 3 (escaping fixes only) succeeded');
     return result as T;
   } catch (error1) {
-    console.log('⚠️ SafeParseJSON: Standard parsing with fixes failed:', (error1 as Error).message);
-  }
+    console.error('❌ SafeParseJSON: Both Stage 0 and Stage 3 failed!', (error1 as Error).message);
 
-  // Stage 4: Try aggressive LaTeX escaping
-  try {
-    // More aggressive approach: escape ALL backslashes in content
-    const aggressiveFixed = jsonText.replace(/"([^"]*?)"/g, (_match, content) => {
-      // First escape actual newlines and tabs
-      let escaped = content
-        .replace(/\n/g, '\\n')
-        .replace(/\r/g, '\\r')
-        .replace(/\t/g, '\\t');
-
-      // Then escape ALL backslashes that aren't already escaped
-      escaped = escaped.replace(/\\/g, '\\\\');
-
-      // But fix double-escaped valid JSON escapes
-      escaped = escaped
-        .replace(/\\\\n/g, '\\n')
-        .replace(/\\\\r/g, '\\r')
-        .replace(/\\\\t/g, '\\t')
-        .replace(/\\\\"/g, '\\"')
-        .replace(/\\\\\//g, '\\/');
-
-      return `"${escaped}"`;
-    });
-
-    const parsed = JSON.parse(aggressiveFixed);
-    console.log('✅ SafeParseJSON: Aggressive escaping succeeded');
-    return parsed as T;
-  } catch (error2) {
-    console.log('⚠️ SafeParseJSON: Aggressive escaping failed:', (error2 as Error).message);
-  }
-
-  // Stage 5: Pattern extraction fallback
-  try {
-    const extracted: any = {};
-
-    // Try to extract each expected key using regex
-    for (const key of expectedKeys) {
-      // Try different patterns
-      const patterns = [
-        // Standard JSON string value
-        new RegExp(`"${key}"\\s*:\\s*"([^"]*?)"`),
-        // Boolean value
-        new RegExp(`"${key}"\\s*:\\s*(true|false)`),
-        // Number value
-        new RegExp(`"${key}"\\s*:\\s*(\\d+(?:\\.\\d+)?)`),
-        // Null value
-        new RegExp(`"${key}"\\s*:\\s*(null)`),
-      ];
-
-      for (const pattern of patterns) {
-        const match = jsonText.match(pattern);
-        if (match) {
-          let value: any = match[1];
-          // Convert booleans and null
-          if (value === 'true') value = true;
-          else if (value === 'false') value = false;
-          else if (value === 'null') value = null;
-          else if (!isNaN(Number(value))) value = Number(value);
-
-          extracted[key] = value;
-          break;
-        }
-      }
+    // Use fallback if provided
+    if (fallbackResponse) {
+      console.log('⚠️ SafeParseJSON: Using fallback response');
+      return fallbackResponse as T;
     }
 
-    if (Object.keys(extracted).length > 0) {
-      console.log('✅ SafeParseJSON: Pattern extraction recovered:', Object.keys(extracted));
-      return { ...fallbackResponse, ...extracted } as T;
-    }
-  } catch (error3) {
-    console.log('⚠️ SafeParseJSON: Pattern extraction failed:', (error3 as Error).message);
+    // No fallback provided, throw error with details
+    console.error('Raw text sample:', rawText.substring(0, 200));
+    throw new Error(`Failed to parse AI response: ${(error1 as Error).message}`);
   }
-
-  // Stage 6: Last resort - return fallback
-  console.log('❌ SafeParseJSON: All strategies failed, using fallback');
-  if (fallbackResponse) {
-    return fallbackResponse as T;
-  }
-
-  // No fallback provided, throw error
-  throw new Error('Failed to parse AI response after all strategies');
 }
 
 /**

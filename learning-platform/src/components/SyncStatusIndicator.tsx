@@ -66,16 +66,17 @@ export const SyncStatusIndicator: React.FC<SyncStatusIndicatorProps> = ({
     );
   }
 
-  if (lastSyncTime) {
-    return (
-      <div className="flex items-center gap-2 text-xs" style={{ color: theme.colors.success }}>
-        <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-          <path d="M5 13l4 4L19 7" />
-        </svg>
-        {!compact && <span>Saved {getRelativeTime(lastSyncTime)}</span>}
-      </div>
-    );
-  }
+  // Don't show "Saved just now" - it's distracting
+  // if (lastSyncTime) {
+  //   return (
+  //     <div className="flex items-center gap-2 text-xs" style={{ color: theme.colors.success }}>
+  //       <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+  //         <path d="M5 13l4 4L19 7" />
+  //       </svg>
+  //       {!compact && <span>Saved {getRelativeTime(lastSyncTime)}</span>}
+  //     </div>
+  //   );
+  // }
 
   return null;
 };

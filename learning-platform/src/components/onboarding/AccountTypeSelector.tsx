@@ -27,7 +27,7 @@ export const AccountTypeSelector: React.FC<AccountTypeSelectorProps> = ({ onSele
   return (
     <div>
       <h2 className="text-3xl font-bold mb-2 text-center" style={{ color: theme.colors.textPrimary }}>
-        Welcome to AI Campus
+        Welcome to Home Campus
       </h2>
       <p className="text-center mb-8" style={{ color: theme.colors.textSecondary }}>
         Let's get started. Are you a student or parent?

@@ -1,0 +1,2827 @@
+# S4 Math Probability Exemplars - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: probability-node-1
+  nodeNumber: 1
+  title: Listing Sample Spaces and Counting Outcomes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Three fair coins are tossed simultaneously. List the complete sample space, S, using set notation, and
+        state the total number of outcomes, n(S).
+      avatarIntro: Understanding the sample space is the foundational step in probability. Let's systematically list all possibilities
+        when tossing three coins.
+      finalAnswer: S = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}, n(S) = 8
+      stepByStepGuideline:
+      - 'Identify the possible outcomes for a single coin toss: Head (H) or Tail (T).'
+      - 'Systematically list all combinations for tossing three coins. A useful method is starting with HHH and changing the
+        last outcome first: HHH, HHT, HTH, THH, HTT, THT, TTH, TTT.'
+      - 'List the sample space S using set notation: S = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}.'
+      - Count the total number of outcomes to find n(S). n(S) = 8.
+      id: q1-1
+      questionGroup: q1
+    - problemText: A small deck contains cards numbered 1, 2, 3, 4, 5, 6, 7, and 8. An experiment consists of drawing one
+        card. Let E be the event that the card drawn is a multiple of 3. List the favorable outcomes for event E using set
+        notation.
+      finalAnswer: E = {3, 6}
+      stepByStepGuideline:
+      - 'Identify the universal sample space S: S = {1, 2, 3, 4, 5, 6, 7, 8}.'
+      - 'Define the event E: The number drawn is a multiple of 3.'
+      - Check each outcome in S to see if it satisfies the condition (is divisible by 3).
+      - The numbers that are multiples of 3 are 3 and 6.
+      - 'List the favorable outcomes for E using set notation: E = {3, 6}.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: An experiment involves rolling a standard six-sided die and then tossing a single coin. List the complete
+        sample space S for this experiment, expressing each outcome as an ordered pair (die result, coin result).
+      finalAnswer: S = {(1, H), (1, T), (2, H), (2, T), (3, H), (3, T), (4, H), (4, T), (5, H), (5, T), (6, H), (6, T)}
+      stepByStepGuideline:
+      - 'Identify the outcomes for the first stage (Die roll): {1, 2, 3, 4, 5, 6}.'
+      - 'Identify the outcomes for the second stage (Coin toss): {H, T}.'
+      - Systematically combine every outcome from the first stage with every outcome from the second stage, listed as ordered
+        pairs (D, C).
+      - 'List the complete sample space S: S = {(1, H), (1, T), (2, H), (2, T), (3, H), (3, T), (4, H), (4, T), (5, H), (5,
+        T), (6, H), (6, T)}.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: 'A bag contains four colored balls: Red (R), Blue (B), Green (G), and Yellow (Y). Two balls are selected
+        from the bag, one after the other, without replacement. Let E be the event that the first ball selected is Green (G).
+        List all the favorable outcomes for event E.'
+      finalAnswer: E = {(G, R), (G, B), (G, Y)}
+      stepByStepGuideline:
+      - 'Identify the available outcomes: R, B, G, Y.'
+      - The experiment involves selecting two balls without replacement. The outcome is an ordered pair (First ball, Second
+        ball).
+      - 'Define Event E: The first ball selected must be Green (G).'
+      - List all possible pairs where the first element is G. Since the balls are selected without replacement, the second
+        ball cannot be G.
+      - The possible second balls are R, B, or Y.
+      - 'List the favorable outcomes for E: E = {(G, R), (G, B), (G, Y)}.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: A spinner is divided into five equally sized sectors, labeled P, Q, R, S, and T. If the spinner is spun
+        once, how many possible outcomes are there in the sample space, S? (Find n(S))
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Identify the outcomes listed on the spinner: P, Q, R, S, T.'
+      - The experiment consists of spinning the spinner once.
+      - 'The sample space S is the set of all possible results: S = {P, Q, R, S, T}.'
+      - Count the number of distinct outcomes in the sample space. n(S) = 5.
+      id: q1-5
+      questionGroup: q1
+- id: probability-node-2
+  nodeNumber: 2
+  title: Calculating Basic Probabilities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Two standard, fair six-sided dice are rolled simultaneously. Calculate the probability that the sum of
+        the numbers shown on the two dice is exactly 7. Express your answer as a simplified fraction.
+      avatarIntro: Welcome! Understanding how to calculate probabilities based on sample spaces is key to mastering this topic.
+        Let's start with a classic dice problem!
+      mathTool: null
+      finalAnswer: 1/6
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of possible outcomes, n(S). When rolling two dice, n(S) = 6 × 6 = 36.'
+      - 'Step 2: Determine the number of favorable outcomes, n(E), where the sum is 7. The pairs that sum to 7 are: (1, 6),
+        (2, 5), (3, 4), (4, 3), (5, 2), and (6, 1). Thus, n(E) = 6.'
+      - 'Step 3: Calculate the probability using the formula P(E) = n(E) / n(S). P(Sum=7) = 6/36.'
+      - 'Step 4: Simplify the fraction. P(Sum=7) = 1/6.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: A bag contains 3 red marbles, 5 blue marbles, 7 green marbles, and 5 yellow marbles. If one marble is drawn
+        completely at random from the bag, what is the probability that the marble drawn is blue? Express your answer as a
+        percentage.
+      mathTool: null
+      finalAnswer: 25%
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total number of marbles in the bag, n(S). n(S) = 3 (Red) + 5 (Blue) + 7 (Green) + 5 (Yellow)
+        = 20.'
+      - 'Step 2: Identify the number of favorable outcomes, n(E). The number of blue marbles is 5, so n(E) = 5.'
+      - 'Step 3: Calculate the probability P(E) = n(E) / n(S). P(Blue) = 5/20.'
+      - 'Step 4: Simplify and convert the fraction to a percentage. 5/20 = 1/4. 1/4 = 0.25, which is 25%.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: A single card is drawn at random from a standard deck of 52 playing cards. Find the probability that the
+        card drawn is a Face Card (Jack, Queen, or King). Express your answer as a decimal, rounded to 3 significant figures.
+      mathTool: null
+      finalAnswer: '0.231'
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of outcomes, n(S). A standard deck has 52 cards, so n(S) = 52.'
+      - 'Step 2: Determine the number of favorable outcomes, n(E). A standard deck has 4 suits, and each suit has 3 face cards
+        (Jack, Queen, King). n(E) = 4 × 3 = 12.'
+      - 'Step 3: Calculate the probability P(E) = n(E) / n(S). P(Face Card) = 12/52.'
+      - 'Step 4: Simplify the fraction: 12/52 = 3/13.'
+      - 'Step 5: Convert to a decimal rounded to 3 significant figures. 3 ÷ 13 ≈ 0.23076... Rounded to 3 significant figures,
+        this is 0.231.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: A class consists of 15 male students and 15 female students. If one student is selected at random to represent
+        the class, what is the probability that the student selected is either male or female? Express your answer as a simplified
+        fraction.
+      mathTool: null
+      finalAnswer: '1'
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of outcomes, n(S). n(S) = 15 (Male) + 15 (Female) = 30.'
+      - 'Step 2: Determine the number of favorable outcomes, n(E). Since every student in the class is classified as either
+        male or female, the event that the selected student is male or female covers all possible outcomes. n(E) = 30.'
+      - 'Step 3: Calculate the probability P(E) = n(E) / n(S). P(Male or Female) = 30/30.'
+      - 'Step 4: Simplify the fraction. P(E) = 1. (This is a certain event).'
+      id: q2-4
+      questionGroup: q2
+    - problemText: A fair spinner is divided into 10 equally sized sectors, labeled with the numbers 1 through 10. If the
+        spinner is spun once, what is the probability that it lands on a prime number? Express your answer as a simplified
+        fraction.
+      mathTool: null
+      finalAnswer: 2/5
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of possible outcomes, n(S). The numbers are 1 to 10, so n(S) = 10.'
+      - 'Step 2: Identify the prime numbers in the sample space. Prime numbers are numbers greater than 1 whose only positive
+        divisors are 1 and themselves. The primes are {2, 3, 5, 7}. The number of favorable outcomes, n(E), is 4.'
+      - 'Step 3: Calculate the probability using the formula P(E) = n(E) / n(S). P(Prime) = 4/10.'
+      - 'Step 4: Simplify the fraction. P(Prime) = 2/5.'
+      id: q2-5
+      questionGroup: q2
+- id: probability-node-3
+  nodeNumber: 3
+  title: Complementary Events and Probability
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Ethan is a professional tennis player. The probability that he wins his next match, P(W), is 0.7. What
+        is the probability that he does not win the match, P(W')?
+      avatarIntro: Great job reaching this section! Complementary events are fundamental. Remember, an event must either happen
+        or not happen, so the probabilities always sum to one.
+      mathTool: null
+      finalAnswer: 0.3 or 3/10
+      stepByStepGuideline:
+      - Identify the event A (Winning) and its probability P(W) = 0.7.
+      - Identify the complementary event A' (Not Winning), denoted as P(W').
+      - 'Apply the rule for complementary events: P(W'') = 1 - P(W).'
+      - 'Calculate: P(W'') = 1 - 0.7 = 0.3.'
+      section: complementary-events
+      id: q3-1
+      questionGroup: q3
+    - problemText: A factory produces colored pens. The probability of randomly selecting a blue pen, P(B), is 3/8. What is
+        the probability of selecting a pen that is not blue, P(B')?
+      mathTool: null
+      finalAnswer: 5/8
+      stepByStepGuideline:
+      - 'Identify the probability of the event: P(B) = 3/8.'
+      - 'Identify the complementary event: P(B'') (Not Blue).'
+      - 'Use the complementary rule: P(B'') = 1 - P(B).'
+      - 'Calculate: P(B'') = 1 - 3/8. Since 1 = 8/8, P(B'') = 8/8 - 3/8 = 5/8.'
+      section: complementary-events
+      id: q3-2
+      questionGroup: q3
+    - problemText: A driving school records show that the probability of a student failing the final test, P(F), is 0.25.
+        If passing (P) and failing (F) are complementary events, what is the probability that a student passes the test, P(P)?
+      mathTool: null
+      finalAnswer: 0.75 or 3/4
+      stepByStepGuideline:
+      - 'Identify the probability of the complementary event: P(F) = 0.25.'
+      - 'Identify the desired event: P(P). Since P and F are complementary, P(P) = P(F'').'
+      - 'Apply the complementary rule: P(P) = 1 - P(F).'
+      - 'Calculate: P(P) = 1 - 0.25 = 0.75.'
+      section: complementary-events
+      id: q3-3
+      questionGroup: q3
+    - problemText: If A is any event in a sample space S, explain the relationship between the probability of A, P(A), and
+        the probability of its complement, P(A'). Use the visualization provided to confirm this relationship.
+      mathTool:
+        toolName: vennDiagram1Set
+        parameters:
+          setLabel: A
+          universalSetLabel: S
+          setElements: Outcomes in A
+          complementElements: Outcomes in A'
+          showRegionCounts: true
+          shadeRegion: none
+          caption: The relationship between event A and its complement A' in the sample space S.
+      finalAnswer: P(A) + P(A') = 1. Since A and A' cover the entire sample space S and have no outcomes in common, the sum
+        of their probabilities must equal the probability of the sample space, which is 1.
+      stepByStepGuideline:
+      - 'Define complementary events: A and A'' are mutually exclusive (they cannot happen simultaneously) and collectively
+        exhaustive (one of them must happen).'
+      - 'State the relationship: Since A and A'' together make up the entire sample space S, the total probability is P(S)
+        = P(A) + P(A'').'
+      - 'State the probability of the sample space: P(S) is always equal to 1.'
+      - 'Conclude the relationship: Therefore, P(A) + P(A'') = 1, which implies P(A'') = 1 - P(A).'
+      section: complementary-events
+      id: q3-4
+      questionGroup: q3
+    - problemText: The probability that it will NOT snow on Christmas Day is 4/5. Let S be the event that it snows. Find P(S).
+      mathTool: null
+      finalAnswer: 1/5
+      stepByStepGuideline:
+      - 'Identify the given probability: P(S'') (Probability it will NOT snow) = 4/5.'
+      - 'Identify the probability required: P(S) (Probability it WILL snow).'
+      - Recognize that P(S) and P(S') are complementary events.
+      - 'Apply the complementary rule: P(S) = 1 - P(S'').'
+      - 'Calculate: P(S) = 1 - 4/5. Since 1 = 5/5, P(S) = 5/5 - 4/5 = 1/5.'
+      section: complementary-events
+      id: q3-5
+      questionGroup: q3
+- id: probability-node-4
+  nodeNumber: 4
+  title: Probability with Set Notation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: 'In a survey of Secondary 3 students, let M be the event that a student enjoys Mathematics, and S be the
+        event that a student enjoys Science. The following probabilities are known:
+
+        P(M) = 0.60
+
+        P(S) = 0.50
+
+        P(M ∩ S) = 0.30
+
+
+        Calculate P(M ∪ S).'
+      avatarIntro: Welcome! Understanding how to combine probabilities using union and intersection notation is key to probability
+        theory. Let's start with a calculation problem!
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Math
+          setBLabel: Science
+          universalSetLabel: Students (N=100)
+          layout: overlapping
+          aOnlyElements: '30'
+          bOnlyElements: '20'
+          intersectionElements: '30'
+          neitherElements: '20'
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Distribution of Subject Preferences (Counts scaled for visualization)
+      finalAnswer: '0.80'
+      stepByStepGuideline:
+      - The formula for the probability of the union of two events is P(A ∪ B) = P(A) + P(B) - P(A ∩ B).
+      - 'Substitute the given probabilities into the formula: P(M ∪ S) = P(M) + P(S) - P(M ∩ S).'
+      - P(M ∪ S) = 0.60 + 0.50 - 0.30.
+      - 'Calculate the result: P(M ∪ S) = 1.10 - 0.30 = 0.80.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: 'A sports club has 100 members. Let T be the event that a member plays Tennis, and B be the event that
+        a member plays Basketball. The Venn diagram below shows the number of members in each category.
+
+
+        Calculate the probability that a randomly selected member plays both Tennis and Basketball, P(T ∩ B).'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Tennis (T)
+          setBLabel: Basketball (B)
+          universalSetLabel: Members (N=100)
+          layout: overlapping
+          aOnlyElements: '35'
+          bOnlyElements: '25'
+          intersectionElements: '30'
+          neitherElements: '10'
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Sports Participation among 100 Club Members
+      finalAnswer: '0.3'
+      stepByStepGuideline:
+      - Identify the number of members who play both Tennis and Basketball. This corresponds to the intersection region (T
+        ∩ B) in the Venn diagram.
+      - From the diagram, the number of members in the intersection is 30.
+      - The total number of members (sample space, N(S)) is 100.
+      - Calculate the probability P(T ∩ B) = Number in Intersection / Total Members.
+      - P(T ∩ B) = 30 / 100 = 0.3.
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'In a survey about lunch choices, let P be the event that a student prefers Pizza and B be the event that
+        a student prefers Burgers. The Venn diagram shows the distribution of preferences.
+
+
+        Describe the event P ∪ B in simple, everyday language.'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Prefers Pizza (P)
+          setBLabel: Prefers Burgers (B)
+          universalSetLabel: Students
+          layout: overlapping
+          aOnlyElements: '40'
+          bOnlyElements: '30'
+          intersectionElements: '15'
+          neitherElements: '15'
+          showRegionCounts: true
+          shadeRegion: AUB
+          caption: Student Food Preferences
+      finalAnswer: The event P ∪ B represents selecting a student who prefers Pizza OR prefers Burgers (or both).
+      stepByStepGuideline:
+      - Recall that the union symbol (∪) means 'OR' in probability language, representing outcomes belonging to event P, event
+        B, or both.
+      - Event P is 'prefers Pizza'.
+      - Event B is 'prefers Burgers'.
+      - Therefore, P ∪ B describes the event of selecting a student who prefers Pizza or Burgers (or both).
+      id: q4-3
+      questionGroup: q4
+    - problemText: 'A neighborhood survey recorded pet ownership. Let D be the event that a household owns a Dog, and C be
+        the event that a household owns a Cat.
+
+
+        The probabilities are:
+
+        P(D) = 0.70
+
+        P(C) = 0.45
+
+        P(D ∪ C) = 0.85
+
+
+        Using the Addition Rule for Probability, find the probability that a household owns both a Dog and a Cat, P(D ∩ C).'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Dog Owners (D)
+          setBLabel: Cat Owners (C)
+          universalSetLabel: Households (N=100)
+          layout: overlapping
+          aOnlyElements: '40'
+          bOnlyElements: '15'
+          intersectionElements: '30'
+          neitherElements: '15'
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Pet Ownership Distribution
+      finalAnswer: '0.30'
+      stepByStepGuideline:
+      - 'Start with the Addition Rule: P(D ∪ C) = P(D) + P(C) - P(D ∩ C).'
+      - 'Rearrange the formula to solve for the intersection: P(D ∩ C) = P(D) + P(C) - P(D ∪ C).'
+      - 'Substitute the given probabilities: P(D ∩ C) = 0.70 + 0.45 - 0.85.'
+      - 'Calculate the result: P(D ∩ C) = 1.15 - 0.85 = 0.30.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: 'A card is drawn from a non-standard deck containing only the numbers 1 through 10. The sample space is
+        S = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}.
+
+
+        Let A be the event ''The number is less than 6''.
+
+        Let B be the event ''The number is even''.
+
+
+        List the outcomes that belong to the event A ∩ B.'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Number < 6 (A)
+          setBLabel: Even Number (B)
+          universalSetLabel: S = {1, ..., 10}
+          layout: overlapping
+          aOnlyElements: '3'
+          bOnlyElements: '3'
+          intersectionElements: '2'
+          neitherElements: '2'
+          showRegionCounts: true
+          shadeRegion: AANDB
+          caption: Outcomes for numbers 1 to 10
+      finalAnswer: '{2, 4}'
+      stepByStepGuideline:
+      - 'Identify the outcomes for Event A: A = {1, 2, 3, 4, 5}.'
+      - 'Identify the outcomes for Event B: B = {2, 4, 6, 8, 10}.'
+      - Recall that the intersection symbol (∩) means 'AND', requiring outcomes that are in both sets A and B simultaneously.
+      - 'Compare the two sets to find common elements: A ∩ B = {2, 4}.'
+      - The outcomes belonging to A ∩ B are {2, 4}.
+      id: q4-5
+      questionGroup: q4
+- id: probability-node-5
+  nodeNumber: 5
+  title: Identifying Mutually Exclusive Events
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: 'The probability that it will rain (R) tomorrow is 0.4, and the probability that it will be sunny (S) is
+        0.2. Weather forecasters state that rain and bright sunshine are mutually exclusive events for tomorrow.
+
+
+        Calculate the probability that it will either rain or be sunny tomorrow, P(R ∪ S).'
+      avatarIntro: Hello! We are focusing on mutually exclusive events today. Remember, if two events cannot happen at the
+        same time, calculating the 'or' probability is straightforward!
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Rain (R)
+          setBLabel: Sunny (S)
+          layout: disjoint
+          aOnlyElements: 40
+          bOnlyElements: 20
+          intersectionElements: []
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Probability of Rain or Sunny Day (Mutually Exclusive)
+      finalAnswer: '0.6'
+      stepByStepGuideline:
+      - 'Identify the key information: P(R) = 0.4 and P(S) = 0.2.'
+      - Recognize that R and S are mutually exclusive, meaning P(R ∩ S) = 0.
+      - 'Apply the Addition Rule for Mutually Exclusive Events: P(R ∪ S) = P(R) + P(S).'
+      - 'Calculate: P(R ∪ S) = 0.4 + 0.2 = 0.6.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'A standard six-sided die is rolled once.
+
+        Let A be the event of rolling an odd number.
+
+        Let B be the event of rolling an even number.
+
+
+        Are events A and B mutually exclusive? Explain your reasoning, referencing the intersection of the two sets.'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Odd Number (A)
+          setBLabel: Even Number (B)
+          layout: disjoint
+          aOnlyElements: 3
+          bOnlyElements: 3
+          intersectionElements: []
+          showRegionCounts: true
+          shadeRegion: none
+          caption: 'Outcomes of Rolling a Die: Odd vs. Even'
+      finalAnswer: Yes, A and B are mutually exclusive. The intersection is empty, meaning P(A ∩ B) = 0, as a number cannot
+        be both odd and even simultaneously.
+      stepByStepGuideline:
+      - 'List the outcomes for Event A (Odd numbers): A = {1, 3, 5}. n(A) = 3.'
+      - 'List the outcomes for Event B (Even numbers): B = {2, 4, 6}. n(B) = 3.'
+      - Determine the intersection (A ∩ B). Since there are no numbers common to both sets, A ∩ B = {}.
+      - Since the intersection is empty, the probability of the intersection is zero, P(A ∩ B) = 0. Therefore, A and B are
+        mutually exclusive.
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'A single card is drawn from a standard deck of 52 cards.
+
+        Let E be the event of drawing a Spade.
+
+        Let F be the event of drawing a Face Card (Jack, Queen, or King).
+
+
+        Are events E and F mutually exclusive? Justify your answer using the concept of overlap and the provided Venn Diagram.'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Spade (E)
+          setBLabel: Face Card (F)
+          layout: overlapping
+          aOnlyElements: 10
+          bOnlyElements: 9
+          intersectionElements:
+          - 3
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Card Draw Events E and F
+      finalAnswer: No, E and F are not mutually exclusive. They overlap because it is possible to draw a card that is both
+        a Spade and a Face Card (the Jack, Queen, and King of Spades). Since P(E ∩ F) = 3/52, which is not zero, they are
+        not mutually exclusive.
+      stepByStepGuideline:
+      - 'Identify the possible outcomes for Event E (Spades): 13 cards.'
+      - 'Identify the possible outcomes for Event F (Face Cards): 12 cards.'
+      - Determine if there are any outcomes common to both events (E ∩ F). The Jack, Queen, and King of Spades satisfy both
+        conditions.
+      - Since n(E ∩ F) = 3, the probability P(E ∩ F) = 3/52 ≠ 0.
+      - 'Conclusion: Because the intersection is not zero, the events are not mutually exclusive; they are overlapping.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'In a survey of commuters, the probability of choosing to cycle to work (C) is 0.35, and the probability
+        of choosing to drive a car (D) is 0.50. Assume that for any single commute, a person uses exactly one primary mode
+        of transport.
+
+
+        If C and D are mutually exclusive events, what must the probability of both cycling AND driving on the same commute
+        be, P(C ∩ D)?'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Cycling (C)
+          setBLabel: Driving (D)
+          layout: disjoint
+          aOnlyElements: 35
+          bOnlyElements: 50
+          intersectionElements: []
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Commuting Methods (Mutually Exclusive Assumption)
+      finalAnswer: P(C ∩ D) = 0
+      stepByStepGuideline:
+      - 'Recall the definition of mutually exclusive events: Two events A and B are mutually exclusive if they cannot occur
+        at the same time.'
+      - 'Mathematically, this means the probability of their intersection is zero: P(A ∩ B) = 0.'
+      - Since C (cycling) and D (driving) are stated to be mutually exclusive, the probability that a person is doing both
+        simultaneously for a single commute must be 0.
+      - Therefore, P(C ∩ D) = 0.
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'In a school, let F be the event that a student plays Football, and B be the event that a student plays
+        Basketball.
+
+
+        Given the probabilities: P(F) = 0.40, P(B) = 0.30, and P(F ∩ B) = 0.15.
+
+
+        1. Are F and B mutually exclusive?
+
+        2. Calculate the probability that a student plays Football or Basketball, P(F ∪ B).'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Football (F)
+          setBLabel: Basketball (B)
+          layout: overlapping
+          aOnlyElements: 0.25
+          bOnlyElements: 0.15
+          intersectionElements:
+          - 0.15
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Student Participation in Sports
+      finalAnswer: 1. No, F and B are not mutually exclusive. 2. P(F ∪ B) = 0.55
+      stepByStepGuideline:
+      - 'Determine mutual exclusivity: Events are mutually exclusive only if P(F ∩ B) = 0. Since P(F ∩ B) = 0.15 (which is
+        greater than zero), the events are NOT mutually exclusive.'
+      - 'Since the events overlap, use the General Addition Rule: P(F ∪ B) = P(F) + P(B) - P(F ∩ B).'
+      - 'Substitute the given probabilities: P(F ∪ B) = 0.40 + 0.30 - 0.15.'
+      - 'Calculate: P(F ∪ B) = 0.70 - 0.15 = 0.55.'
+      id: q5-5
+      questionGroup: q5
+- id: probability-node-6
+  nodeNumber: 6
+  title: General Addition Rule with Overlap
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: 'A large multinational company conducted a survey of its employees regarding language proficiency. Let
+        E be the event that an employee speaks English, and S be the event that an employee speaks Spanish.
+
+
+        $P(E) = 0.70$
+
+        $P(S) = 0.40$
+
+        $P(E \cap S) = 0.25$
+
+
+        Use the General Addition Rule to find the probability that a randomly selected employee speaks English or Spanish
+        (or both). Express your answer as a percentage.'
+      avatarIntro: Welcome! Let's practice using the General Addition Rule. Remember that when events overlap, you must subtract
+        the intersection to avoid double-counting.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: English Speakers (E)
+          setBLabel: Spanish Speakers (S)
+          layout: overlapping
+          aOnlyElements: 45
+          bOnlyElements: 15
+          intersectionElements: 25
+          showRegionCounts: true
+          shadeRegion: union
+          caption: Probability Distribution (Out of 100%)
+      finalAnswer: 0.85 or 85%
+      stepByStepGuideline:
+      - 'Identify the given probabilities: P(E) = 0.70, P(S) = 0.40, and P(E \cap S) = 0.25.'
+      - 'Apply the General Addition Rule for overlapping events: $P(E \cup S) = P(E) + P(S) - P(E \cap S)$.'
+      - 'Substitute the values: $P(E \cup S) = 0.70 + 0.40 - 0.25$.'
+      - 'Calculate the result: $P(E \cup S) = 1.10 - 0.25 = 0.85$.'
+      - 'Convert the decimal probability to a percentage: 85%.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: A single card is drawn at random from a standard deck of 52 playing cards. Find the probability that the
+        card drawn is either a Red card (R) or a King (K). Express your answer as a simplified fraction.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Red Cards (R)
+          setBLabel: Kings (K)
+          layout: overlapping
+          aOnlyElements: 24
+          bOnlyElements: 2
+          intersectionElements: 2
+          showRegionCounts: true
+          shadeRegion: union
+          caption: Card Drawing Sample Space (Total 52)
+      finalAnswer: $7/13$
+      stepByStepGuideline:
+      - 'Determine the probabilities for each event in a standard 52-card deck: P(R) = 26/52 (Red cards) and P(K) = 4/52 (Kings).'
+      - 'Identify the overlap: P(R \cap K) is the probability of drawing a Red King. There are 2 Red Kings (King of Hearts,
+        King of Diamonds), so P(R \cap K) = 2/52.'
+      - 'Apply the General Addition Rule: $P(R \cup K) = P(R) + P(K) - P(R \cap K)$.'
+      - 'Substitute the fractions: $P(R \cup K) = 26/52 + 4/52 - 2/52$.'
+      - 'Calculate the sum: $P(R \cup K) = 28/52$.'
+      - 'Simplify the fraction by dividing the numerator and denominator by their greatest common divisor (4): $28/52 = 7/13$.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: A single fair six-sided die is rolled once. Let E be the event of rolling an even number, and G be the
+        event of rolling a number greater than 3. Calculate $P(E \cup G)$. Express your answer as a simplified fraction.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Even Numbers (E)
+          setBLabel: Greater than 3 (G)
+          layout: overlapping
+          aOnlyElements: 1
+          bOnlyElements: 1
+          intersectionElements: 2
+          showRegionCounts: true
+          shadeRegion: union
+          caption: Outcomes of a Six-Sided Die Roll
+      finalAnswer: $2/3$
+      stepByStepGuideline:
+      - 'List the outcomes for each event in the sample space S = {1, 2, 3, 4, 5, 6}: E = {2, 4, 6} (P(E) = 3/6); G = {4,
+        5, 6} (P(G) = 3/6).'
+      - 'Identify the intersection: E \cap G = {4, 6}. $P(E \cap G) = 2/6$.'
+      - 'Apply the General Addition Rule: $P(E \cup G) = P(E) + P(G) - P(E \cap G)$.'
+      - 'Substitute the probabilities: $P(E \cup G) = 3/6 + 3/6 - 2/6$.'
+      - 'Calculate the result: $P(E \cup G) = 4/6$.'
+      - 'Simplify the fraction: $4/6 = 2/3$.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: In a market analysis, the probability that a customer lives in Region A (A) is 0.50, and the probability
+        that a customer is interested in Product X (X) is 0.60. If the probability that a customer satisfies both conditions
+        is 0.30, what is the probability that a customer lives in Region A or is interested in Product X?
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Region A Residents (A)
+          setBLabel: Product X Interest (X)
+          layout: overlapping
+          aOnlyElements: 20
+          bOnlyElements: 30
+          intersectionElements: 30
+          showRegionCounts: true
+          shadeRegion: union
+          caption: Customer Probability Distribution (Out of 100%)
+      finalAnswer: '0.80'
+      stepByStepGuideline:
+      - 'Identify the given probabilities: P(A) = 0.50, P(X) = 0.60, and P(A \cap X) = 0.30.'
+      - 'Use the General Addition Rule to find $P(A \cup X)$: $P(A \cup X) = P(A) + P(X) - P(A \cap X)$.'
+      - 'Substitute the values: $P(A \cup X) = 0.50 + 0.60 - 0.30$.'
+      - 'Calculate the result: $P(A \cup X) = 1.10 - 0.30 = 0.80$.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: A survey of 200 Secondary school students showed that 100 students participate in the Music Club (M) and
+        80 students participate in the Art Club (A). If 30 students participate in both clubs, calculate the probability that
+        a randomly selected student participates in the Music Club or the Art Club (or both). Express your answer as a percentage.
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Music Club (M)
+          setBLabel: Art Club (A)
+          layout: overlapping
+          aOnlyElements: 70
+          bOnlyElements: 50
+          intersectionElements: 30
+          showRegionCounts: true
+          shadeRegion: union
+          caption: Student Participation (Total 200)
+      finalAnswer: 75%
+      stepByStepGuideline:
+      - 'First, calculate the probabilities based on the total number of students (200): P(M) = 100/200 = 0.50; P(A) = 80/200
+        = 0.40; P(M \cap A) = 30/200 = 0.15.'
+      - 'Apply the General Addition Rule: $P(M \cup A) = P(M) + P(A) - P(M \cap A)$.'
+      - 'Substitute the decimal probabilities: $P(M \cup A) = 0.50 + 0.40 - 0.15$.'
+      - 'Calculate the result: $P(M \cup A) = 0.90 - 0.15 = 0.75$.'
+      - 'Convert the decimal probability to a percentage: 75%.'
+      id: q6-5
+      questionGroup: q6
+- id: probability-node-7
+  nodeNumber: 7
+  title: Identifying Independent Events
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Spinner A is divided into three equal sections labeled {1, 2, 3}. Spinner B is divided into four equal
+        sections labeled {4, 5, 6, 7}. If both spinners are spun simultaneously, let E be the event that Spinner A lands on
+        1, and F be the event that Spinner B lands on 5.
+
+
+        Are events E and F independent? Provide a conceptual explanation.'
+      avatarIntro: Welcome to the world of independent events! Let's explore situations where one outcome doesn't influence
+        another.
+      mathTool: null
+      finalAnswer: Yes, E and F are independent.
+      stepByStepGuideline:
+      - 'Recall the definition of independent events: Two events are independent if the occurrence of one event does not affect
+        the probability of the other event occurring.'
+      - Identify the nature of the events E (result of Spinner A) and F (result of Spinner B).
+      - Since Spinner A and Spinner B are separate physical devices being spun simultaneously, the outcome of Spinner A has
+        no physical or probabilistic influence on the outcome of Spinner B.
+      - 'Conclusion: Events E and F are independent because they result from separate experiments.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: 'Events X and Y have the following probabilities:
+
+        P(X) = 2/5
+
+        P(Y) = 5/8
+
+        P(X \u2229 Y) = 1/4
+
+
+        Use the multiplication rule, P(X \u2229 Y) = P(X) \u00d7 P(Y), to determine if events X and Y are independent. Show
+        your calculation.'
+      mathTool: null
+      finalAnswer: Yes, events X and Y are independent.
+      stepByStepGuideline:
+      - 'State the multiplication rule for independence: Events X and Y are independent if P(X \u2229 Y) = P(X) \u00d7 P(Y).'
+      - 'Calculate the product of the individual probabilities: P(X) \u00d7 P(Y) = (2/5) \u00d7 (5/8).'
+      - 'Simplify the product: (2/5) \u00d7 (5/8) = 10/40 = 1/4.'
+      - 'Compare the calculated product with the given probability of the intersection: We found P(X) \u00d7 P(Y) = 1/4. We
+        are given P(X \u2229 Y) = 1/4.'
+      - Since P(X \u2229 Y) = P(X) \u00d7 P(Y) (1/4 = 1/4), the events X and Y are independent.
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'A drawer contains 4 pairs of matching socks: 4 blue socks and 4 black socks (8 socks total). A person
+        randomly selects one sock, notes its color, and puts it in their pocket. They then select a second sock.
+
+
+        Let B1 be the event that the first sock drawn is blue, and B2 be the event that the second sock drawn is blue.
+
+
+        Are events B1 and B2 independent? Explain your reasoning related to how the sample space changes.'
+      mathTool: null
+      finalAnswer: No, B1 and B2 are dependent events.
+      stepByStepGuideline:
+      - 'Identify the type of selection process: This is drawing without replacement, as the first sock is kept.'
+      - 'Calculate the initial probability P(B1): P(B1) = 4/8 = 1/2.'
+      - Analyze how the outcome of B1 affects the probability of B2.
+      - If B1 occurs (a blue sock was drawn first), there are now 7 socks left, 3 of which are blue. Thus P(B2 | B1) = 3/7.
+      - If B1 does not occur (a black sock was drawn first), there are 7 socks left, 4 of which are blue. Thus P(B2 | B1')
+        = 4/7.
+      - Since the probability of B2 depends on the outcome of B1 (3/7 \u2260 4/7), the events are dependent.
+      id: q7-3
+      questionGroup: q7
+    - problemText: 'Events A and B are mutually exclusive. P(A) = 0.5 and P(B) = 0.3.
+
+
+        1. What is P(A \u2229 B)?
+
+        2. Are A and B independent? Explain why or why not, referencing the definition of independence.'
+      mathTool: null
+      finalAnswer: 1. P(A \u2229 B) = 0. 2. A and B are NOT independent.
+      stepByStepGuideline:
+      - 'Determine P(A \u2229 B): Since A and B are mutually exclusive, they cannot happen at the same time. Therefore, P(A
+        \u2229 B) = 0.'
+      - 'Apply the test for independence: Check if P(A \u2229 B) = P(A) \u00d7 P(B).'
+      - 'Calculate the product P(A) \u00d7 P(B): 0.5 \u00d7 0.3 = 0.15.'
+      - 'Compare the intersection probability and the product: P(A \u2229 B) = 0, but P(A) \u00d7 P(B) = 0.15.'
+      - Since 0 \u2260 0.15, the events A and B are not independent. Mutually exclusive events with non-zero probabilities
+        are always dependent, because the occurrence of one event (A) makes the probability of the other event (B) zero.
+      id: q7-4
+      questionGroup: q7
+    - problemText: 'A survey tracked customer loyalty for a new product.
+
+        Let L be the event that a customer shows high loyalty, where P(L) = 0.80.
+
+        Let R be the event that a customer recommends the product, where P(R) = 0.40.
+
+
+        It was found that the probability that a customer both shows high loyalty AND recommends the product is P(L \u2229
+        R) = 0.25.
+
+
+        Determine if the events L and R are independent.'
+      mathTool: null
+      finalAnswer: No, events L and R are not independent.
+      stepByStepGuideline:
+      - 'State the condition for independence: L and R are independent if P(L \u2229 R) = P(L) \u00d7 P(R).'
+      - 'Calculate the product of the individual probabilities: P(L) \u00d7 P(R) = 0.80 \u00d7 0.40.'
+      - 'Determine the product value: 0.80 \u00d7 0.40 = 0.32.'
+      - 'Compare the calculated product with the given intersection probability: We found P(L) \u00d7 P(R) = 0.32. We are
+        given P(L \u2229 R) = 0.25.'
+      - Since 0.25 \u2260 0.32, the multiplication rule fails. Therefore, the events L and R are not independent (they are
+        dependent).
+      id: q7-5
+      questionGroup: q7
+- id: probability-node-8
+  nodeNumber: 8
+  title: Multiplication Rule for Independent Events
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A fair coin is tossed and a fair six-sided die is rolled. Find the probability of getting Tails AND rolling
+        an odd number.
+      avatarIntro: We are looking at independent events here. Remember, when events are independent, we multiply their probabilities
+        together to find the probability of both happening.
+      mathTool: null
+      finalAnswer: 1/4
+      stepByStepGuideline:
+      - 'Identify the probability of the first event, A: Getting Tails on the coin. P(Tails) = 1/2.'
+      - 'Identify the outcomes for the second event, B: Rolling an odd number on the die (1, 3, 5). P(Odd) = 3/6 = 1/2.'
+      - 'Since the events are independent, use the multiplication rule: P(A and B) = P(A) × P(B).'
+      - 'Calculate the final probability: P(Tails and Odd) = 1/2 × 1/2 = 1/4.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'A spinner is divided into 5 equal sections: 2 Red, 2 Blue, 1 Green. The spinner is spun three independent
+        times. Find the probability of landing on Red, then Blue, then Red (R, B, R).'
+      mathTool: null
+      finalAnswer: 8/125
+      stepByStepGuideline:
+      - 'Determine the probability for each color: P(Red) = 2/5, P(Blue) = 2/5, P(Green) = 1/5.'
+      - The required sequence is Red, then Blue, then Red. Since the spins are independent, we multiply the probabilities
+        for each stage.
+      - P(R and B and R) = P(R) × P(B) × P(R).
+      - 'Calculate the result: 2/5 × 2/5 × 2/5 = 8/125.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: A box contains 3 yellow balls and 7 purple balls (10 total). A ball is drawn, its color recorded, and then
+        replaced. This process is repeated independently. What is the probability that both balls drawn are purple?
+      mathTool: null
+      finalAnswer: 49/100
+      stepByStepGuideline:
+      - Determine the probability of drawing a purple ball in a single draw. Total balls = 10. Purple balls = 7. P(Purple)
+        = 7/10.
+      - Since the ball is replaced, the second draw is independent of the first. P(Purple on second draw) = 7/10.
+      - 'Use the multiplication rule for two independent events: P(Purple AND Purple) = P(Purple 1) × P(Purple 2).'
+      - 'Calculate the result: 7/10 × 7/10 = 49/100.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: Four fair coins are tossed simultaneously. Calculate the probability of obtaining the specific sequence
+        Head, Tail, Head, Tail (HTHT).
+      mathTool: null
+      finalAnswer: 1/16
+      stepByStepGuideline:
+      - 'Determine the probability of getting Head (H) and Tail (T) on a single fair coin toss: P(H) = 1/2 and P(T) = 1/2.'
+      - Since the four tosses are independent, we multiply the probabilities of the specific outcomes in the sequence.
+      - P(HTHT) = P(H) × P(T) × P(H) × P(T).
+      - 'Calculate the final probability: 1/2 × 1/2 × 1/2 × 1/2 = 1/16.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: Three fair six-sided dice are rolled independently. Find the probability of rolling a '5' on the first
+        die, an even number on the second die, AND a number less than 3 on the third die.
+      mathTool: null
+      finalAnswer: 1/36
+      stepByStepGuideline:
+      - 'Determine the probability of the first event (A): Rolling a ''5''. P(A) = 1/6.'
+      - 'Determine the probability of the second event (B): Rolling an even number (2, 4, 6). P(B) = 3/6 = 1/2.'
+      - 'Determine the probability of the third event (C): Rolling a number less than 3 (1, 2). P(C) = 2/6 = 1/3.'
+      - 'Since the rolls are independent, use the multiplication rule for three events: P(A and B and C) = P(A) × P(B) × P(C).'
+      - 'Calculate the final probability: 1/6 × 1/2 × 1/3 = 2/36 = 1/36.'
+      id: q8-5
+      questionGroup: q8
+- id: probability-node-9
+  nodeNumber: 9
+  title: Recognizing Dependent Events
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: probabilityTree
+    preWrittenQuestions:
+    - problemText: 'A standard deck of 52 playing cards is used. Two cards are drawn sequentially without replacement.
+
+
+        Calculate the probability that both cards drawn are Aces. Express your answer as a simplified fraction.'
+      avatarIntro: We are looking at dependent events today! Remember that when items are not replaced, the total count and
+        the count of specific items change, making the second draw dependent on the first.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Ace (A)
+            probability: 0.0769
+          - outcome: Not Ace (A')
+            probability: 0.9231
+          stage2:
+          - outcome: Ace (A)
+            probability: 0.0588
+          - outcome: Not Ace (A')
+            probability: 0.9412
+          - outcome: Ace (A)
+            probability: 0.0784
+          - outcome: Not Ace (A')
+            probability: 0.9216
+          showProbabilities: true
+          caption: Drawing two cards without replacement
+      finalAnswer: 1/221
+      stepByStepGuideline:
+      - 'Identify the initial probability of drawing an Ace: P(1st Ace) = 4/52.'
+      - Since the draw is without replacement, the deck now has 51 cards remaining, and 3 of them are Aces.
+      - 'Identify the updated probability of drawing a second Ace, given the first was an Ace: P(2nd Ace | 1st Ace) = 3/51.'
+      - 'Calculate the combined probability: P(Both Aces) = P(1st Ace) × P(2nd Ace | 1st Ace) = (4/52) × (3/51).'
+      - 'Multiply the fractions: 12 / 2652.'
+      - 'Simplify the fraction: 1/221.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: 'A class consists of 5 boys and 7 girls (12 students total). Two students are randomly selected from the
+        class to represent the school, without replacement.
+
+
+        Calculate the probability that the first student selected is a boy and the second student selected is a girl.'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Boy (B)
+            probability: 0.4167
+          - outcome: Girl (G)
+            probability: 0.5833
+          stage2:
+          - outcome: Boy (B)
+            probability: 0.3636
+          - outcome: Girl (G)
+            probability: 0.6364
+          - outcome: Boy (B)
+            probability: 0.4545
+          - outcome: Girl (G)
+            probability: 0.5455
+          showProbabilities: true
+          caption: Selecting two students without replacement
+      finalAnswer: 35/132
+      stepByStepGuideline:
+      - 'Determine the initial probability of selecting a boy: P(1st Boy) = 5/12.'
+      - 'Determine the composition of the remaining group after a boy is selected (11 students remaining: 4 boys, 7 girls).'
+      - 'Determine the probability of selecting a girl second, given the first was a boy: P(2nd Girl | 1st Boy) = 7/11.'
+      - 'Calculate the joint probability: P(Boy then Girl) = P(1st Boy) × P(2nd Girl | 1st Boy) = (5/12) × (7/11).'
+      - 'Multiply the fractions: 35/132.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: 'A box contains 4 Red, 3 Blue, and 1 Green marble (8 marbles total). Two marbles are drawn randomly from
+        the box without replacement.
+
+
+        Find the probability that both marbles drawn are Blue.'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Blue (B)
+            probability: 0.375
+          - outcome: Not Blue (B')
+            probability: 0.625
+          stage2:
+          - outcome: Blue (B)
+            probability: 0.2857
+          - outcome: Not Blue (B')
+            probability: 0.7143
+          - outcome: Blue (B)
+            probability: 0.4286
+          - outcome: Not Blue (B')
+            probability: 0.5714
+          showProbabilities: true
+          caption: Drawing two marbles without replacement
+      finalAnswer: 3/28
+      stepByStepGuideline:
+      - 'Determine the initial probability of drawing a Blue marble: P(1st Blue) = 3/8.'
+      - Since the draw is without replacement, there are 7 marbles remaining, and 2 of them are Blue.
+      - 'Determine the updated probability of drawing a second Blue marble, given the first was Blue: P(2nd Blue | 1st Blue)
+        = 2/7.'
+      - 'Calculate the combined probability: P(Both Blue) = P(1st Blue) × P(2nd Blue | 1st Blue) = (3/8) × (2/7).'
+      - 'Multiply the fractions: 6/56.'
+      - 'Simplify the fraction: 3/28.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: 'A quality control manager selects two components sequentially from a batch of 10 components, where 3 are
+        defective (D) and 7 are good (G). The sampling is done without replacement.
+
+
+        Explain why the events ''First component is defective'' and ''Second component is defective'' are dependent events,
+        referring specifically to the probabilities involved.'
+      finalAnswer: The events are dependent because the probability of the second event changes based on the outcome of the
+        first event. If the first component drawn is defective (P(D1) = 3/10), the probability of the second component being
+        defective decreases to 2/9 (since there are now 9 total components remaining, with 2 defective ones). If the first
+        component drawn was good, the probability of the second component being defective would be 3/9.
+      stepByStepGuideline:
+      - 'Define dependent events: Two events are dependent if the outcome of the first event affects the probability of the
+        second event.'
+      - 'Establish the initial probability for the first draw: P(1st Defective) = 3/10.'
+      - 'Analyze the scenario after the first draw (assuming the first was defective): The pool changes from 10 items (3D,
+        7G) to 9 items (2D, 7G).'
+      - 'Calculate the conditional probability: P(2nd Defective | 1st Defective) = 2/9.'
+      - 'Compare the probabilities: Since 3/10 ≠ 2/9, the events are dependent because drawing the first defective item changed
+        the composition of the remaining sample, thereby changing the probability of the second draw.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: 'A jar contains 9 Yellow discs and 6 Orange discs (15 discs total). Two discs are drawn sequentially without
+        replacement.
+
+
+        Given that the first disc drawn was Yellow, calculate the probability that the second disc drawn is Orange. Express
+        your answer as a simplified fraction.'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Yellow (Y)
+            probability: 0.6
+          - outcome: Orange (O)
+            probability: 0.4
+          stage2:
+          - outcome: Yellow (Y)
+            probability: 0.5714
+          - outcome: Orange (O)
+            probability: 0.4286
+          - outcome: Yellow (Y)
+            probability: 0.6429
+          - outcome: Orange (O)
+            probability: 0.3571
+          showProbabilities: true
+          caption: Drawing two discs without replacement
+      finalAnswer: 3/7
+      stepByStepGuideline:
+      - 'Identify the condition: The first disc drawn was Yellow (Y1).'
+      - 'Determine the remaining composition of the jar after Y1 is removed: 14 discs remain (8 Yellow, 6 Orange).'
+      - The question asks for the conditional probability P(O2 | Y1).
+      - 'Calculate the probability of drawing Orange from the remaining 14 discs: 6 favorable outcomes (Orange) out of 14
+        total outcomes.'
+      - P(Second Orange | First Yellow) = 6/14.
+      - 'Simplify the fraction: 3/7.'
+      id: q9-5
+      questionGroup: q9
+- id: probability-node-10
+  nodeNumber: 10
+  title: Constructing Tree Diagrams for Two-Stage Experiments
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: probabilityTree
+    preWrittenQuestions:
+    - problemText: A scientist is tracking the success rate of a new vaccine trial. The probability of success (S) in the
+        first patient is 0.75, and failure (F) is 0.25. If the result for the second patient is independent of the first,
+        construct a tree diagram showing the two stages. Based on the diagram provided, what probability must be labeled on
+        the branch leading to 'Failure (F)' in Stage 2, assuming the previous outcome was 'Success (S)'?
+      avatarIntro: Tree diagrams are essential tools for visualizing sequential and conditional probabilities. Let's practice
+        setting up the structure for two independent events.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Success (S)
+            probability: 0.75
+          - outcome: Failure (F)
+            probability: 0.25
+          stage2:
+          - outcome: S
+            probability: 0.75
+          - outcome: F
+            probability: 0.25
+          showProbabilities: true
+          caption: Results of a two-stage vaccine trial
+      finalAnswer: '0.25'
+      stepByStepGuideline:
+      - 'Identify the given probabilities for a single trial: P(S) = 0.75 and P(F) = 0.25.'
+      - Since the two trials are independent, the probabilities for Stage 2 remain the same regardless of the outcome of Stage
+        1.
+      - The branch leading to 'Failure (F)' in Stage 2 (from any Stage 1 result) must be labeled with the probability P(F)
+        = 0.25.
+      id: q10-1
+      questionGroup: q10
+    - problemText: A box contains 9 vouchers for a 'Discount' (D) and 1 voucher for a 'Free Item' (F). A customer selects
+        a voucher, notes the result, and replaces it. They select a second voucher. Using the provided tree diagram structure
+        (without probabilities shown), list all possible final outcomes systematically.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Discount (D)
+            probability: 0.9
+          - outcome: Free Item (F)
+            probability: 0.1
+          stage2:
+          - outcome: D
+            probability: 0.9
+          - outcome: F
+            probability: 0.1
+          showProbabilities: false
+          caption: Drawing vouchers with replacement
+      finalAnswer: DD, DF, FD, FF
+      stepByStepGuideline:
+      - 'The tree diagram has two stages, each with two possible outcomes: D (Discount) and F (Free Item).'
+      - To find the final outcomes, follow every path from the start to the end of the second stage.
+      - 'Path 1: Stage 1 (D) then Stage 2 (D) -> DD.'
+      - 'Path 2: Stage 1 (D) then Stage 2 (F) -> DF.'
+      - 'Path 3: Stage 1 (F) then Stage 2 (D) -> FD.'
+      - 'Path 4: Stage 1 (F) then Stage 2 (F) -> FF.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: 'A fair six-sided die is rolled twice. The outcome of each roll is categorized as Low (L: 1, 2, 3) or High
+        (H: 4, 5, 6). The probability of Low is 0.5 and High is 0.5. Examine the provided tree diagram. How can you verify
+        that the probabilities sum to 1 at the branching point corresponding to the first roll being ''Low''?'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Low (L)
+            probability: 0.5
+          - outcome: High (H)
+            probability: 0.5
+          stage2:
+          - outcome: L
+            probability: 0.5
+          - outcome: H
+            probability: 0.5
+          showProbabilities: true
+          caption: Two rolls of a fair die (Low/High outcomes)
+      finalAnswer: The branches stemming from the first outcome 'Low (L)' in Stage 2 are labeled 0.5 (for L) and 0.5 (for
+        H). Since 0.5 + 0.5 = 1.0, the probabilities sum to 1 at that branching point, confirming the structure is correct.
+      stepByStepGuideline:
+      - 'Identify the specific branching point: the node reached after the first roll resulted in ''Low (L)''.'
+      - Identify the probabilities on the branches extending from this node into Stage 2. These are P(L in Stage 2) = 0.5
+        and P(H in Stage 2) = 0.5.
+      - 'Verify the sum of these probabilities: 0.5 + 0.5 = 1.0.'
+      - Since the sum is 1, the outcomes L and H cover all possibilities for the second roll, satisfying the rule for a complete
+        tree diagram node.
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'Two independent daily events are monitored: whether the local train is delayed (D) or runs on time (D''),
+        and whether the cafeteria serves soup (S) or not (S''). P(D) = 0.4 and P(S) = 0.7. Complete the labeling of the branches
+        in the tree diagram provided by identifying the missing probability for the branch ''No Rain (R'')'' in Stage 1.'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Delayed (D)
+            probability: 0.4
+          - outcome: On Time (D')
+            probability: 0.6
+          stage2:
+          - outcome: Soup (S)
+            probability: 0.7
+          - outcome: No Soup (S')
+            probability: 0.3
+          showProbabilities: true
+          caption: Modeling two independent daily events
+      finalAnswer: '0.6'
+      stepByStepGuideline:
+      - In Stage 1, the outcomes are Delayed (D) and On Time (D'). These are complementary events.
+      - The sum of probabilities for all outcomes stemming from the initial start point must equal 1.
+      - We are given P(D) = 0.4.
+      - Therefore, the probability of the complementary event, P(D'), is 1 - P(D).
+      - P(D') = 1 - 0.4 = 0.6.
+      id: q10-4
+      questionGroup: q10
+    - problemText: A coin is biased such that the probability of landing Heads (H) is 2/3 and the probability of landing Tails
+        (T) is 1/3. The coin is tossed twice. Use the provided tree diagram, which shows the structure and probabilities (0.67
+        ≈ 2/3 and 0.33 ≈ 1/3), to identify the path that represents the outcome of getting Tails on the first toss and Heads
+        on the second toss, and state the probability of that specific outcome.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Heads (H)
+            probability: 0.67
+          - outcome: Tails (T)
+            probability: 0.33
+          stage2:
+          - outcome: H
+            probability: 0.67
+          - outcome: T
+            probability: 0.33
+          showProbabilities: true
+          caption: Tossing a biased coin twice
+      finalAnswer: The path is TH. The probability is P(T) * P(H) = (1/3) * (2/3) = 2/9. (Using the exact fractions, 0.33
+        * 0.67 ≈ 0.2211)
+      stepByStepGuideline:
+      - 'Identify the required sequence: Tails (T) in Stage 1, then Heads (H) in Stage 2. This corresponds to the path TH.'
+      - 'Find the probability for Tails in Stage 1: P(T) = 1/3.'
+      - 'Find the probability for Heads in Stage 2 (following T): P(H) = 2/3.'
+      - 'Since the tosses are independent, multiply the probabilities along the path: P(TH) = P(T) × P(H) = (1/3) × (2/3)
+        = 2/9.'
+      id: q10-5
+      questionGroup: q10
+- id: probability-node-11
+  nodeNumber: 11
+  title: Calculating Probabilities from Tree Diagrams
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: probabilityTree
+    preWrittenQuestions:
+    - problemText: A fair coin is tossed two times independently. Using the provided tree diagram, calculate the probability
+        of obtaining Tails on the first toss AND Heads on the second toss (TH).
+      avatarIntro: Tree diagrams are excellent tools for visualizing sequential independent events. Remember to multiply probabilities
+        along the branches and add probabilities across different paths!
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: H
+            probability: 1/2
+          - outcome: T
+            probability: 1/2
+          stage2:
+          - outcome: H
+            probability: 1/2
+          - outcome: T
+            probability: 1/2
+          highlightPaths:
+          - T-H
+          showProbabilities: true
+          caption: Outcomes of tossing a fair coin twice.
+      finalAnswer: 1/4
+      stepByStepGuideline:
+      - 'Identify the specific path corresponding to the sequence Tails (T) then Heads (H): the path T-H.'
+      - 'Apply the multiply-along rule: Multiply the probability of T in Stage 1 by the probability of H in Stage 2.'
+      - P(TH) = P(T) × P(H) = 1/2 × 1/2.
+      - 'Calculate the result: P(TH) = 1/4.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A bag contains 5 Red (R) marbles and 3 Blue (B) marbles. A marble is drawn, its color noted, and then replaced.
+        A second marble is drawn. Using the tree diagram, find the probability that both marbles drawn are the same color.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: R
+            probability: 5/8
+          - outcome: B
+            probability: 3/8
+          stage2:
+          - outcome: R
+            probability: 5/8
+          - outcome: B
+            probability: 3/8
+          highlightPaths:
+          - R-R
+          - B-B
+          showProbabilities: true
+          caption: Probability of drawing two marbles with replacement from a bag containing 5 Red and 3 Blue.
+      finalAnswer: 17/32
+      stepByStepGuideline:
+      - 'Identify the paths that result in the same color: Red-Red (RR) and Blue-Blue (BB).'
+      - 'Calculate P(RR) using the multiply-along rule: P(RR) = 5/8 × 5/8 = 25/64.'
+      - 'Calculate P(BB) using the multiply-along rule: P(BB) = 3/8 × 3/8 = 9/64.'
+      - 'Apply the add-across rule to find the total probability: P(Same Color) = P(RR) + P(BB) = 25/64 + 9/64.'
+      - 'P(Same Color) = 34/64. Simplify the fraction: 17/32.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: A spinner is sectioned such that the probability of landing on Section A is 1/3, and the probability of
+        landing on Section B is 2/3. The spinner is spun twice independently. Calculate the probability of landing on Section
+        A at least once.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: A
+            probability: 1/3
+          - outcome: B
+            probability: 2/3
+          stage2:
+          - outcome: A
+            probability: 1/3
+          - outcome: B
+            probability: 2/3
+          highlightPaths:
+          - A-A
+          - A-B
+          - B-A
+          showProbabilities: true
+          caption: Probability of two independent spins on a spinner sectioned into A (P=1/3) and B (P=2/3).
+      finalAnswer: 5/9
+      stepByStepGuideline:
+      - 'Identify the paths where A occurs at least once: AA, AB, and BA.'
+      - 'Calculate the probability of each path using the multiply-along rule:'
+      - P(AA) = 1/3 × 1/3 = 1/9.
+      - P(AB) = 1/3 × 2/3 = 2/9.
+      - P(BA) = 2/3 × 1/3 = 2/9.
+      - 'Apply the add-across rule: P(at least one A) = P(AA) + P(AB) + P(BA) = 1/9 + 2/9 + 2/9.'
+      - The final probability is 5/9. (Alternatively, calculate 1 - P(BB) = 1 - (2/3 × 2/3) = 1 - 4/9 = 5/9).
+      id: q11-3
+      questionGroup: q11
+    - problemText: A standard six-sided die is rolled twice. The outcome is categorized as Success (S) if a 1 or 2 is rolled
+        (P(S) = 1/3), and Failure (F) if a 3, 4, 5, or 6 is rolled (P(F) = 2/3). Using the tree diagram, find the probability
+        of getting exactly one Success in the two rolls (in any order).
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: S
+            probability: 1/3
+          - outcome: F
+            probability: 2/3
+          stage2:
+          - outcome: S
+            probability: 1/3
+          - outcome: F
+            probability: 2/3
+          highlightPaths:
+          - S-F
+          - F-S
+          showProbabilities: true
+          caption: Outcomes of rolling a die twice, categorized as Success (S) or Failure (F).
+      finalAnswer: 4/9
+      stepByStepGuideline:
+      - 'Identify the paths that result in exactly one Success: Success then Failure (SF) and Failure then Success (FS).'
+      - 'Calculate P(SF) using the multiply-along rule: P(SF) = P(S) × P(F) = 1/3 × 2/3 = 2/9.'
+      - 'Calculate P(FS) using the multiply-along rule: P(FS) = P(F) × P(S) = 2/3 × 1/3 = 2/9.'
+      - 'Apply the add-across rule to find the total probability: P(Exactly one S) = P(SF) + P(FS).'
+      - P(Exactly one S) = 2/9 + 2/9 = 4/9.
+      id: q11-4
+      questionGroup: q11
+    - problemText: A machine produces items that are either Good (G) with a probability of 0.6, or Defective (D) with a probability
+        of 0.4. Two items are tested independently. Use the tree diagram to find the probability that the two items have different
+        outcomes (one Good and one Defective).
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: G
+            probability: '0.6'
+          - outcome: D
+            probability: '0.4'
+          stage2:
+          - outcome: G
+            probability: '0.6'
+          - outcome: D
+            probability: '0.4'
+          highlightPaths:
+          - G-D
+          - D-G
+          showProbabilities: true
+          caption: Probability tree for testing two independent items produced by a machine (G=Good, D=Defective).
+      finalAnswer: '0.48'
+      stepByStepGuideline:
+      - 'Identify the paths where the outcomes are different: Good then Defective (GD) and Defective then Good (DG).'
+      - 'Calculate P(GD) using the multiply-along rule: P(GD) = 0.6 × 0.4 = 0.24.'
+      - 'Calculate P(DG) using the multiply-along rule: P(DG) = 0.4 × 0.6 = 0.24.'
+      - 'Apply the add-across rule to find the total probability: P(Different Outcomes) = P(GD) + P(DG).'
+      - P(Different Outcomes) = 0.24 + 0.24 = 0.48.
+      id: q11-5
+      questionGroup: q11
+- id: probability-node-12
+  nodeNumber: 12
+  title: Multi-Stage Tree Diagrams (3+ Stages)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: probabilityTree
+    preWrittenQuestions:
+    - problemText: A coin is biased such that the probability of landing Heads (H) is $0.6$ and the probability of landing
+        Tails (T) is $0.4$. The coin is tossed three independent times. Find the probability of obtaining exactly two Heads.
+      avatarIntro: Tree diagrams are essential for tracking multiple events. Remember to multiply probabilities along the
+        branches and add the probabilities of all relevant final outcomes.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: H
+            probability: 0.6
+          - outcome: T
+            probability: 0.4
+          stage2:
+          - outcome: H
+            probability: 0.6
+          - outcome: T
+            probability: 0.4
+          stage3:
+          - outcome: H
+            probability: 0.6
+          - outcome: T
+            probability: 0.4
+          highlightPaths:
+          - H H T
+          - H T H
+          - T H H
+          showProbabilities: true
+          caption: Biased Coin Tossed Three Times
+      finalAnswer: '0.432'
+      stepByStepGuideline:
+      - 'Identify the possible sequences that result in exactly two Heads: HHT, HTH, and THH.'
+      - 'Calculate the probability for each sequence using P(H) = 0.6 and P(T) = 0.4:'
+      - P(HHT) = 0.6 × 0.6 × 0.4 = 0.144
+      - P(HTH) = 0.6 × 0.4 × 0.6 = 0.144
+      - P(THH) = 0.4 × 0.6 × 0.6 = 0.144
+      - 'Add the probabilities of these mutually exclusive paths: P(Exactly 2 H) = 0.144 + 0.144 + 0.144 = 0.432.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: A bag contains 4 Green (G) balls and 1 White (W) ball. A ball is drawn, its color recorded, and then replaced.
+        This process is repeated three times. Calculate the probability of drawing a Green ball, then a White ball, then a
+        Green ball (GWG).
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: G
+            probability: 0.8
+          - outcome: W
+            probability: 0.2
+          stage2:
+          - outcome: G
+            probability: 0.8
+          - outcome: W
+            probability: 0.2
+          stage3:
+          - outcome: G
+            probability: 0.8
+          - outcome: W
+            probability: 0.2
+          highlightPaths:
+          - G W G
+          showProbabilities: true
+          caption: Drawing Balls with Replacement 3 Times
+      finalAnswer: '0.128'
+      stepByStepGuideline:
+      - 'Determine the probabilities for a single draw: P(G) = 4/5 = 0.8 and P(W) = 1/5 = 0.2.'
+      - Since the drawing is done with replacement, the stages are independent.
+      - 'Calculate the probability of the sequence GWG by multiplying the probabilities along the path:'
+      - P(GWG) = P(G) × P(W) × P(G) = 0.8 × 0.2 × 0.8.
+      - P(GWG) = 0.128.
+      id: q12-2
+      questionGroup: q12
+    - problemText: A fair six-sided die is rolled three times. We define a 'Success' (S) as rolling a number greater than
+        4 (i.e., 5 or 6), and 'Failure' (F) as rolling a number less than or equal to 4. Find the probability of obtaining
+        at least two Successes in the three rolls.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: S
+            probability: 0.333
+          - outcome: F
+            probability: 0.667
+          stage2:
+          - outcome: S
+            probability: 0.333
+          - outcome: F
+            probability: 0.667
+          stage3:
+          - outcome: S
+            probability: 0.333
+          - outcome: F
+            probability: 0.667
+          highlightPaths:
+          - S S F
+          - S F S
+          - F S S
+          - S S S
+          showProbabilities: true
+          caption: Rolling a Die 3 Times (Success is > 4)
+      finalAnswer: 7/27
+      stepByStepGuideline:
+      - 'Determine the probabilities: P(S) = P(5 or 6) = 2/6 = 1/3. P(F) = P(1, 2, 3, or 4) = 4/6 = 2/3.'
+      - 'Identify the outcomes for ''at least two Successes'': exactly 2 Successes (SSF, SFS, FSS) or exactly 3 Successes
+        (SSS).'
+      - 'Calculate the probability for each 2-Success sequence: P(SSF) = (1/3)(1/3)(2/3) = 2/27. Since there are 3 such paths
+        (SSF, SFS, FSS), their combined probability is 3 × (2/27) = 6/27.'
+      - 'Calculate the probability for 3 Successes: P(SSS) = (1/3)(1/3)(1/3) = 1/27.'
+      - 'Add the probabilities: P(at least 2 S) = 6/27 + 1/27 = 7/27.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: Three independent machines (M1, M2, M3) operate in sequence. The probability of success (S) for M1 is $0.8$,
+        for M2 is $0.5$, and for M3 is $0.3$. Calculate the probability that M1 succeeds, M2 fails (F), and M3 succeeds (S,
+        F, S).
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: S1
+            probability: 0.8
+          - outcome: F1
+            probability: 0.2
+          stage2:
+          - outcome: S2
+            probability: 0.5
+          - outcome: F2
+            probability: 0.5
+          stage3:
+          - outcome: S3
+            probability: 0.3
+          - outcome: F3
+            probability: 0.7
+          highlightPaths:
+          - S1 F2 S3
+          showProbabilities: true
+          caption: Reliability of Three Independent Machines
+      finalAnswer: '0.12'
+      stepByStepGuideline:
+      - 'Identify the probabilities for success (S) and failure (F) for each machine:'
+      - 'M1: P(S1) = 0.8, P(F1) = 1 - 0.8 = 0.2'
+      - 'M2: P(S2) = 0.5, P(F2) = 1 - 0.5 = 0.5'
+      - 'M3: P(S3) = 0.3, P(F3) = 1 - 0.3 = 0.7'
+      - 'The required sequence is S, F, S. Since the events are independent, multiply the probabilities along the path:'
+      - P(S, F, S) = P(S1) × P(F2) × P(S3)
+      - P(S, F, S) = 0.8 × 0.5 × 0.3 = 0.4 × 0.3 = 0.12.
+      id: q12-4
+      questionGroup: q12
+    - problemText: In a factory batch, the probability that a component is Defective (D) is $1/4$, and the probability that
+        it is Good (G) is $3/4$. Three components are selected independently with replacement. Calculate the probability that
+        fewer than two components are defective.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: G
+            probability: 0.75
+          - outcome: D
+            probability: 0.25
+          stage2:
+          - outcome: G
+            probability: 0.75
+          - outcome: D
+            probability: 0.25
+          stage3:
+          - outcome: G
+            probability: 0.75
+          - outcome: D
+            probability: 0.25
+          highlightPaths:
+          - G G G
+          - D G G
+          - G D G
+          - G G D
+          showProbabilities: true
+          caption: Component Testing with Replacement
+      finalAnswer: 27/32
+      stepByStepGuideline:
+      - Fewer than two defective components means zero defective (0 D) or exactly one defective (1 D).
+      - P(G) = 3/4, P(D) = 1/4.
+      - 'Case 1: Zero Defective (GGG). P(GGG) = (3/4) × (3/4) × (3/4) = 27/64.'
+      - 'Case 2: Exactly One Defective (DGG, GDG, GGD). P(DGG) = (1/4) × (3/4) × (3/4) = 9/64. Since there are 3 such combinations,
+        the total probability for Case 2 is 3 × (9/64) = 27/64.'
+      - 'Add the probabilities of the relevant paths: P(< 2 D) = P(0 D) + P(1 D) = 27/64 + 27/64 = 54/64.'
+      - 'Simplify the fraction: 54/64 = 27/32.'
+      id: q12-5
+      questionGroup: q12
+- id: probability-node-13
+  nodeNumber: 13
+  title: Tree Diagrams Without Replacement
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: probabilityTree
+    preWrittenQuestions:
+    - problemText: 'A box contains 5 Green (G) balls and 7 Purple (P) balls, making 12 balls in total. Two balls are drawn
+        sequentially without replacement.
+
+
+        Calculate the probability that the first ball drawn is Green AND the second ball drawn is Purple. Express your answer
+        as a simplified fraction.'
+      avatarIntro: Tree diagrams are essential when probabilities change. Remember that drawing without replacement means
+        the total number of items decreases after every draw!
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: G
+            probability: 5/12
+          - outcome: P
+            probability: 7/12
+          stage2:
+          - outcome: G
+            probability: 4/11
+          - outcome: P
+            probability: 7/11
+          - outcome: G
+            probability: 5/11
+          - outcome: P
+            probability: 6/11
+          showProbabilities: true
+          caption: Drawing 2 balls without replacement
+      finalAnswer: 35/132
+      stepByStepGuideline:
+      - 'Identify the required sequence: P(Green first, then Purple) or P(G, P).'
+      - 'Calculate the probability of the first event, P(G1). There are 5 Green balls out of 12 total: P(G1) = 5/12.'
+      - 'Calculate the probability of the second event, P(P2 | G1). Since a Green ball was removed and not replaced, there
+        are now 11 balls remaining. The number of Purple balls is still 7: P(P2 | G1) = 7/11.'
+      - 'Multiply the probabilities along the path: P(G, P) = P(G1) × P(P2 | G1) = 5/12 × 7/11.'
+      - 'Calculate the final product: 35/132. This fraction is already simplified.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: 'A small management team consists of 3 Managers (M) and 5 Staff members (S), totaling 8 people. Two people
+        are selected randomly and sequentially for a project committee without replacement.
+
+
+        Find the probability that at least one of the two people selected is a Manager. Express your answer as a simplified
+        fraction.'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: M
+            probability: 3/8
+          - outcome: S
+            probability: 5/8
+          stage2:
+          - outcome: M
+            probability: 2/7
+          - outcome: S
+            probability: 5/7
+          - outcome: M
+            probability: 3/7
+          - outcome: S
+            probability: 4/7
+          showProbabilities: true
+          caption: Selecting 2 people without replacement
+      finalAnswer: 9/14
+      stepByStepGuideline:
+      - 'Identify the required probability: P(at least one Manager). This is the complement of P(No Managers).'
+      - P(No Managers) means selecting Staff, then Staff (S, S).
+      - 'Calculate P(S1): 5 Staff members out of 8 total: P(S1) = 5/8.'
+      - 'Calculate P(S2 | S1): After one Staff member is removed, there are 4 Staff members left out of 7 total: P(S2 | S1)
+        = 4/7.'
+      - Calculate P(S, S) = 5/8 × 4/7 = 20/56.
+      - 'Simplify P(S, S): 20/56 = 5/14.'
+      - 'Use the complement rule: P(at least one Manager) = 1 - P(S, S) = 1 - 5/14.'
+      - 'Calculate the final probability: 1 - 5/14 = 9/14.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: 'Three cards are drawn sequentially without replacement from a standard deck of 52 playing cards.
+
+
+        Find the probability that all three cards drawn are Spades. Express your answer as a simplified fraction.'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Spade
+            probability: 13/52
+          - outcome: Not Spade
+            probability: 39/52
+          stage2:
+          - outcome: Spade
+            probability: 12/51
+          - outcome: Not Spade
+            probability: 39/51
+          - outcome: Spade
+            probability: 13/51
+          - outcome: Not Spade
+            probability: 38/51
+          showProbabilities: true
+          caption: Drawing 2 cards without replacement
+      finalAnswer: 11/850
+      stepByStepGuideline:
+      - 'Identify the required outcome: P(Spade, Spade, Spade).'
+      - 'P(Spade 1): There are 13 Spades in 52 cards: 13/52.'
+      - 'P(Spade 2 | Spade 1): After one Spade is removed, there are 12 Spades left out of 51 cards: 12/51.'
+      - 'P(Spade 3 | Spade 1, Spade 2): After two Spades are removed, there are 11 Spades left out of 50 cards: 11/50.'
+      - 'Multiply the probabilities: P(3 Spades) = 13/52 × 12/51 × 11/50.'
+      - 'Calculate the product: 13/52 × 12/51 × 11/50 = 1716 / 132600.'
+      - 'Simplify the fraction (or use cancellation: 1/4 × 12/51 × 11/50 = 3/51 × 11/50 = 1/17 × 11/50 = 11/850).'
+      id: q13-3
+      questionGroup: q13
+    - problemText: 'A batch of 15 components contains 4 Defective (D) items and 11 Non-Defective (ND) items. A quality control
+        inspector selects three components sequentially without replacement.
+
+
+        Calculate the probability that the selection follows the specific sequence: Defective, then Non-Defective, then Defective
+        (D, ND, D). Express your answer as a simplified fraction.'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: D
+            probability: 4/15
+          - outcome: ND
+            probability: 11/15
+          stage2:
+          - outcome: D
+            probability: 3/14
+          - outcome: ND
+            probability: 11/14
+          - outcome: D
+            probability: 4/14
+          - outcome: ND
+            probability: 10/14
+          showProbabilities: true
+          caption: Sampling 2 components without replacement
+      finalAnswer: 22/455
+      stepByStepGuideline:
+      - 'Identify the required sequence: P(D, ND, D).'
+      - 'P(D1): 4 Defective items out of 15 total: P(D1) = 4/15.'
+      - 'P(ND2 | D1): After one Defective item is removed, there are 11 Non-Defective items remaining out of 14 total: P(ND2
+        | D1) = 11/14.'
+      - 'P(D3 | D1, ND2): After the first two draws (D, ND), there are now 3 Defective items left out of 13 total: P(D3 |
+        D1, ND2) = 3/13.'
+      - 'Multiply the probabilities: P(D, ND, D) = 4/15 × 11/14 × 3/13.'
+      - 'Calculate the numerator: 4 × 11 × 3 = 132.'
+      - 'Calculate the denominator: 15 × 14 × 13 = 2730.'
+      - 'The result is 132/2730. Simplify the fraction (divide numerator and denominator by 6): 22/455.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: 'A stationery box contains 4 Pencils (P), 3 Erasers, and 2 Rulers, making 9 items total. Two items are
+        drawn sequentially and randomly without replacement.
+
+
+        Find the probability that the first item drawn is a Pencil and the second item drawn is NOT a Pencil. Express your
+        answer as a simplified fraction.'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Pencil (P)
+            probability: 4/9
+          - outcome: Not Pencil (NP)
+            probability: 5/9
+          stage2:
+          - outcome: P
+            probability: 3/8
+          - outcome: NP
+            probability: 5/8
+          - outcome: P
+            probability: 4/8
+          - outcome: NP
+            probability: 4/8
+          showProbabilities: true
+          caption: Drawing 2 items without replacement (P vs NP)
+      finalAnswer: 5/18
+      stepByStepGuideline:
+      - 'Define the categories: Pencil (P) = 4 items. Not Pencil (NP) = 3 Erasers + 2 Rulers = 5 items. Total = 9.'
+      - 'Identify the required sequence: P(Pencil first, then Not Pencil) or P(P, NP).'
+      - 'Calculate P(P1): 4 Pencils out of 9 total: P(P1) = 4/9.'
+      - 'Calculate P(NP2 | P1): Since a Pencil was removed, 5 Not Pencils remain out of 8 total items: P(NP2 | P1) = 5/8.'
+      - 'Multiply the probabilities along the path: P(P, NP) = 4/9 × 5/8.'
+      - 'Calculate the product: 20/72.'
+      - 'Simplify the fraction (divide numerator and denominator by 4): 5/18.'
+      id: q13-5
+      questionGroup: q13
+- id: probability-node-14
+  nodeNumber: 14
+  title: Understanding Conditional Probability P(A|B)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: twoWayTable
+    preWrittenQuestions:
+    - problemText: A survey tracked 100 students regarding their gender and their chosen major (Science or Arts). The results
+        are summarized in the table. If a student is selected at random, given that the student is Female, what is the probability
+        that she majors in Science?
+      avatarIntro: Conditional probability is about narrowing down your focus. We only look at a specific subgroup (the condition)
+        to calculate the likelihood of an event.
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - Male
+          - Female
+          columnLabels:
+          - Science
+          - Arts
+          data:
+          - - 25
+            - 35
+          - - 15
+            - 25
+          highlightRow: 1
+          highlightColumn: -1
+          showTotals: true
+          caption: Student Major Breakdown by Gender
+      finalAnswer: 15/40 or 3/8 or 0.375
+      stepByStepGuideline:
+      - 'Identify the condition: The student selected is Female. This means the restricted sample space is the ''Female''
+        row total.'
+      - 'Determine the size of the restricted sample space (Denominator): Total Females = 15 (Science) + 25 (Arts) = 40.'
+      - 'Identify the favorable outcome (Numerator): Females who major in Science = 15.'
+      - 'Calculate the conditional probability: P(Science | Female) = (Number of Females in Science) / (Total Number of Females)
+        = 15 / 40.'
+      - 'Simplify the fraction: 15/40 = 3/8.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: In meteorological terms, let $W$ be the event of heavy wind, and $T$ be the event of a thunderstorm. Explain
+        in words what the expression $P(W | T)$ represents in this context.
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - variable
+          - variable
+          columnLabels:
+          - variable
+          - variable
+          data:
+          - - 10
+            - 15
+          - - 20
+            - 25
+          highlightRow: -1
+          highlightColumn: -1
+          showTotals: true
+          caption: variable
+      finalAnswer: P(W | T) is the probability that heavy wind occurs, given that a thunderstorm has already occurred. This
+        calculation restricts the sample space only to days experiencing a thunderstorm.
+      stepByStepGuideline:
+      - 'Identify the notation: P(A | B) means ''the probability of A given B''.'
+      - 'Identify event A: Heavy wind (W).'
+      - 'Identify event B (The condition): Thunderstorm (T).'
+      - 'Combine the interpretation: P(W | T) is the probability of heavy wind occurring, specifically considering only the
+        instances where a thunderstorm occurs.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: A factory tracks components produced by two machines, Machine A and Machine B. Let $D$ be the event that
+        a component is defective, and $A$ be the event that a component came from Machine A. Explain the fundamental difference
+        between calculating $P(D)$ and calculating $P(D | A)$.
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - variable
+          - variable
+          columnLabels:
+          - variable
+          - variable
+          data:
+          - - 10
+            - 15
+          - - 20
+            - 25
+          highlightRow: -1
+          highlightColumn: -1
+          showTotals: true
+          caption: variable
+      finalAnswer: $P(D)$ is the overall probability that a randomly chosen component is defective, considering all components
+        produced by both Machine A and Machine B. $P(D | A)$ is the conditional probability that a component is defective,
+        restricting the sample space ONLY to those components produced by Machine A.
+      stepByStepGuideline:
+      - 'Define P(D): This is the marginal probability, calculated using the total population (all components from all machines)
+        as the denominator.'
+      - 'Define P(D | A): This is the conditional probability, calculated using only the subset defined by the condition (components
+        from Machine A) as the denominator.'
+      - 'State the difference: $P(D | A)$ uses a restricted sample space defined by the condition A, whereas $P(D)$ uses the
+        entire original sample space.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: Fifty students were surveyed about their participation in Soccer and Tennis. The results are shown in the
+        table. If a student is selected at random, calculate the probability that they play Tennis, given that the student
+        plays Soccer.
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - Plays Soccer
+          - Does Not Play Soccer
+          columnLabels:
+          - Plays Tennis
+          - Does Not Play Tennis
+          data:
+          - - 10
+            - 15
+          - - 8
+            - 17
+          highlightRow: 0
+          highlightColumn: -1
+          showTotals: true
+          caption: Student Participation in Sports (N=50)
+      finalAnswer: 10/25 or 2/5 or 0.4
+      stepByStepGuideline:
+      - 'Identify the condition: The student plays Soccer. This restricts the focus to the ''Plays Soccer'' row.'
+      - 'Determine the restricted sample space (Denominator): Total students who play Soccer = 10 + 15 = 25.'
+      - 'Identify the favorable outcome (Numerator): Students who meet the condition (Soccer) AND play Tennis = 10.'
+      - 'Calculate the conditional probability: P(Tennis | Soccer) = (Number who play both) / (Total number who play Soccer)
+        = 10 / 25.'
+      - 'Simplify the fraction: 10/25 = 2/5.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: A new diagnostic test is used to screen patients for Disease X. Let $D$ be the event that a patient has
+        Disease X, and $T^-$ be the event that the test result is negative. If a researcher is calculating $P(D | T^-)$, what
+        is the restricted sample space being used?
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - variable
+          - variable
+          columnLabels:
+          - variable
+          - variable
+          data:
+          - - 10
+            - 15
+          - - 20
+            - 25
+          highlightRow: -1
+          highlightColumn: -1
+          showTotals: true
+          caption: variable
+      finalAnswer: The restricted sample space is the group of all patients who received a negative test result ($T^-$).
+      stepByStepGuideline:
+      - Analyze the conditional notation $P(A | B)$. Event B is the condition that restricts the sample space.
+      - 'Identify the condition B in $P(D | T^-)$: $T^-$, which is a negative test result.'
+      - 'State the restricted space: The calculation only considers the group of patients whose test results were negative,
+        regardless of whether they actually have the disease or not.'
+      id: q14-5
+      questionGroup: q14
+- id: probability-node-15
+  nodeNumber: 15
+  title: Conditional Probability Formula P(A|B) = P(A ∩ B) / P(B)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vennDiagram
+    preWrittenQuestions:
+    - problemText: A manufacturer tracks product features. Let L be the event that a product is Large, and B be the event
+        that it is Blue. The probabilities are $P(L) = 0.6$, $P(B) = 0.5$, and $P(L \cap B) = 0.35$. Using the conditional
+        probability formula, find the probability that a product is Large, given that it is Blue, $P(L | B)$.
+      avatarIntro: Conditional probability helps us refine our predictions based on prior knowledge. Remember that the condition
+        always determines the denominator!
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Large (L)
+          setBLabel: Blue (B)
+          layout: overlapping
+          aOnlyElements: 0.25
+          bOnlyElements: 0.15
+          intersectionElements: 0.35
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Probability distribution of product features L and B.
+      finalAnswer: 0.7 or 7/10
+      stepByStepGuideline:
+      - 'Identify the formula for conditional probability: $P(L | B) = P(L \cap B) / P(B)$.'
+      - 'Identify the required values from the problem: $P(L \cap B) = 0.35$ (the numerator) and $P(B) = 0.5$ (the condition/denominator).'
+      - 'Substitute the values into the formula: $P(L | B) = 0.35 / 0.5$.'
+      - 'Calculate the final probability: $P(L | B) = 0.7$.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: 'In a university survey, 40% of students study Design (D), so $P(D) = 0.4$. It is found that the probability
+        a student studies Programming (P) given they study Design is 0.7, so $P(P | D) = 0.7$.
+
+
+        Use the multiplication rule for probability to find the probability that a student studies both Design and Programming,
+        $P(P \cap D)$.'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Programming (P)
+          setBLabel: Design (D)
+          layout: overlapping
+          aOnlyElements: 0.22
+          bOnlyElements: 0.12
+          intersectionElements: 0.28
+          showRegionCounts: true
+          shadeRegion: none
+          caption: A hypothetical distribution of students with Programming (P) and Design (D) skills.
+      finalAnswer: 0.28 or 7/25
+      stepByStepGuideline:
+      - 'Recall the rearranged formula for intersection probability: $P(A \cap B) = P(B) \times P(A | B)$. In this context,
+        $P(P \cap D) = P(D) \times P(P | D)$.'
+      - 'Identify the required values: $P(D) = 0.4$ and $P(P | D) = 0.7$.'
+      - 'Substitute the values into the multiplication rule: $P(P \cap D) = 0.4 \times 0.7$.'
+      - 'Calculate the final probability: $P(P \cap D) = 0.28$.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: 'A market researcher found that the probability that a randomly selected person lives in City X (X) is
+        $P(X) = 0.6$. The probability that a person lives in City X AND prefers coffee (C) is $P(C \cap X) = 0.24$.
+
+
+        What is the probability that a person prefers coffee, given that they live in City X, $P(C | X)$?'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Prefers Coffee (C)
+          setBLabel: Lives in City X (X)
+          layout: overlapping
+          aOnlyElements: 0.16
+          bOnlyElements: 0.36
+          intersectionElements: 0.24
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Probability distribution of preference C and location X.
+      finalAnswer: 0.4 or 2/5
+      stepByStepGuideline:
+      - 'State the conditional probability formula: $P(C | X) = P(C \cap X) / P(X)$.'
+      - 'Identify the numerator (the intersection probability): $P(C \cap X) = 0.24$.'
+      - 'Identify the denominator (the condition probability): $P(X) = 0.6$.'
+      - 'Calculate the conditional probability: $P(C | X) = 0.24 / 0.6 = 0.4$.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: 'In a clinical trial, the probability that a patient experiences a severe Headache (H) is $P(H) = 0.7$.
+        The probability of receiving a Positive Test result (T+) given that the patient has a Headache is $P(T+ | H) = 0.3$.
+
+
+        Calculate the probability that a patient experiences a Headache AND receives a Positive Test result, $P(H \cap T+)$.'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Headache (H)
+          setBLabel: Positive Test (T+)
+          layout: overlapping
+          aOnlyElements: 0.49
+          bOnlyElements: 0.19
+          intersectionElements: 0.21
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Hypothetical probability distribution of patients experiencing H and receiving T+.
+      finalAnswer: 0.21 or 21/100
+      stepByStepGuideline:
+      - 'Use the rearrangement of the conditional probability formula: $P(H \cap T+) = P(H) \times P(T+ | H)$.'
+      - 'Identify the given probabilities: $P(H) = 0.7$ and $P(T+ | H) = 0.3$.'
+      - 'Multiply the probabilities to find the intersection: $P(H \cap T+) = 0.7 \times 0.3$.'
+      - The resulting probability is $P(H \cap T+) = 0.21$.
+      id: q15-4
+      questionGroup: q15
+    - problemText: 'In a neighbourhood, 40% of households own a Cat (C), and 30% own a Dog (D). It is known that 55% of households
+        own at least one of these pets, $P(C \cup D) = 0.55$.
+
+
+        Find the probability that a randomly chosen household owns a Cat, given that they already own a Dog, $P(C | D)$.'
+      mathTool:
+        toolName: vennDiagram
+        parameters:
+          setALabel: Owns Cat (C)
+          setBLabel: Owns Dog (D)
+          layout: overlapping
+          aOnlyElements: 0.25
+          bOnlyElements: 0.15
+          intersectionElements: 0.15
+          showRegionCounts: true
+          shadeRegion: none
+          caption: Probability distribution of pet ownership C and D.
+      finalAnswer: 0.5 or 1/2
+      stepByStepGuideline:
+      - 'First, find the probability of the intersection, $P(C \cap D)$, using the Addition Rule: $P(C \cap D) = P(C) + P(D)
+        - P(C \cup D)$.'
+      - 'Substitute the given values: $P(C \cap D) = 0.4 + 0.3 - 0.55 = 0.7 - 0.55 = 0.15$.'
+      - 'Apply the conditional probability formula: $P(C | D) = P(C \cap D) / P(D)$.'
+      - Identify the numerator ($P(C \cap D) = 0.15$) and the denominator ($P(D) = 0.3$).
+      - 'Calculate the result: $P(C | D) = 0.15 / 0.3 = 0.5$.'
+      id: q15-5
+      questionGroup: q15
+- id: probability-node-16
+  nodeNumber: 16
+  title: Conditional Probability Using Tree Diagrams
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: probabilityTree
+    preWrittenQuestions:
+    - problemText: "A new screening test is developed for a rare infectious disease. Only 2% of the population carries this\
+        \ disease (D). The test has a sensitivity of 95% (it correctly identifies 95% of those with the disease) and a specificity\
+        \ of 90% (it correctly identifies 90% of those without the disease). \n\nIf a randomly selected person tests positive\
+        \ (T+), calculate the probability that they actually have the disease. Use the tree diagram provided to structure\
+        \ your calculation."
+      avatarIntro: Conditional probability problems often challenge our intuition, especially when dealing with rare events.
+        A tree diagram is essential here to organize the sequential probabilities before applying Bayes' theorem.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Disease (D)
+            probability: '0.02'
+          - outcome: No Disease (D')
+            probability: '0.98'
+          stage2:
+          - outcome: Test Positive (T+)
+            probability: '0.95'
+          - outcome: Test Negative (T-)
+            probability: '0.05'
+          - outcome: Test Positive (T+)
+            probability: '0.10'
+          - outcome: Test Negative (T-)
+            probability: '0.90'
+          showProbabilities: true
+          caption: Disease Screening Test Probabilities
+      finalAnswer: 0.1624 or 16.24%
+      stepByStepGuideline:
+      - 'Identify the required conditional probability: $P(D | T^+)$. This is calculated using Bayes'' theorem: $P(D | T^+)
+        = P(D \cap T^+) / P(T^+)$.'
+      - 'Calculate the probability of testing positive and having the disease: $P(D \cap T^+) = P(D) \times P(T^+ | D) = 0.02
+        \times 0.95 = 0.019$.'
+      - 'Calculate the probability of testing positive overall, $P(T^+)$, using the Law of Total Probability (summing all
+        paths leading to $T^+$): $P(T^+) = P(D \cap T^+) + P(D'' \cap T^+) = (0.02 \times 0.95) + (0.98 \times 0.10) = 0.019
+        + 0.098 = 0.117$.'
+      - 'Calculate the final conditional probability: $P(D | T^+) = 0.019 / 0.117 \approx 0.16239$. Rounding to four significant
+        figures gives 0.1624 or 16.24%.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: 'A factory uses two machines, Machine A and Machine B, to produce specialized components. Machine A produces
+        60% of the total output, and Machine B produces the remaining 40%. The defect rate for Machine A is 3%, and the defect
+        rate for Machine B is 5%.
+
+
+        If a component is randomly selected and found to be Defective (D), what is the probability that it came from Machine
+        A?'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Machine A
+            probability: '0.60'
+          - outcome: Machine B
+            probability: '0.40'
+          stage2:
+          - outcome: Defective (D)
+            probability: '0.03'
+          - outcome: Non-Defective (ND)
+            probability: '0.97'
+          - outcome: Defective (D)
+            probability: '0.05'
+          - outcome: Non-Defective (ND)
+            probability: '0.95'
+          showProbabilities: true
+          caption: Component Production and Defect Rates
+      finalAnswer: 0.4737 or 47.37% (or 18/38 = 9/19)
+      stepByStepGuideline:
+      - 'Define the events and calculate the path probabilities: $P(A \cap D) = P(A) \times P(D | A) = 0.60 \times 0.03 =
+        0.018$.'
+      - 'Calculate the probability of a defective component coming from Machine B: $P(B \cap D) = P(B) \times P(D | B) = 0.40
+        \times 0.05 = 0.020$.'
+      - 'Calculate the total probability of a component being defective, $P(D)$: $P(D) = P(A \cap D) + P(B \cap D) = 0.018
+        + 0.020 = 0.038$.'
+      - 'Apply the conditional probability formula: $P(A | D) = P(A \cap D) / P(D) = 0.018 / 0.038$.'
+      - 'Simplify the result: $18/38 = 9/19 \approx 0.4737$.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: 'A bag contains 4 Yellow (Y) marbles and 6 Blue (B) marbles. Two marbles are drawn sequentially without
+        replacement.
+
+
+        Calculate the probability that the first marble drawn was Yellow, given that the second marble drawn is Blue.'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: 1st Yellow (Y1)
+            probability: 4/10
+          - outcome: 1st Blue (B1)
+            probability: 6/10
+          stage2:
+          - outcome: 2nd Yellow (Y2)
+            probability: 3/9
+          - outcome: 2nd Blue (B2)
+            probability: 6/9
+          - outcome: 2nd Yellow (Y2)
+            probability: 4/9
+          - outcome: 2nd Blue (B2)
+            probability: 5/9
+          showProbabilities: true
+          caption: Drawing Marbles Without Replacement
+      finalAnswer: 4/9
+      stepByStepGuideline:
+      - 'Identify the required probability: $P(Y1 | B2) = P(Y1 \cap B2) / P(B2)$.'
+      - 'Calculate the probability of the path ''Yellow then Blue'': $P(Y1 \cap B2) = P(Y1) \times P(B2 | Y1) = (4/10) \times
+        (6/9) = 24/90$.'
+      - 'Calculate the probability of the path ''Blue then Blue'': $P(B1 \cap B2) = P(B1) \times P(B2 | B1) = (6/10) \times
+        (5/9) = 30/90$.'
+      - 'Calculate the total probability of the second marble being blue, $P(B2)$: $P(B2) = P(Y1 \cap B2) + P(B1 \cap B2)
+        = 24/90 + 30/90 = 54/90$.'
+      - 'Calculate the conditional probability: $P(Y1 | B2) = (24/90) / (54/90) = 24/54$.'
+      - 'Simplify the fraction: $24/54 = 4/9$.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: 'An email service classifies incoming messages as either Legitimate (L) or Spam (S). Based on historical
+        data, 80% of emails are Legitimate. The filter system has the following performance:
+
+
+        If an email is Spam, the probability it is correctly Detected (D) is 98%.
+
+        If an email is Legitimate, the probability it is incorrectly Detected (False Positive) is 5%.
+
+
+        If an email is flagged by the filter as Detected, what is the probability that it is actually Legitimate?'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Legitimate (L)
+            probability: '0.80'
+          - outcome: Spam (S)
+            probability: '0.20'
+          stage2:
+          - outcome: Detected (D)
+            probability: '0.05'
+          - outcome: Not Detected (ND)
+            probability: '0.95'
+          - outcome: Detected (D)
+            probability: '0.98'
+          - outcome: Not Detected (ND)
+            probability: '0.02'
+          showProbabilities: true
+          caption: Email Spam Filter Performance
+      finalAnswer: 0.1695 or 16.95% (or 40/236 = 10/59)
+      stepByStepGuideline:
+      - 'Identify the required conditional probability: $P(L | D)$.'
+      - 'Calculate the probability of a Legitimate email being Detected (False Positive): $P(L \cap D) = P(L) \times P(D |
+        L) = 0.80 \times 0.05 = 0.04$.'
+      - 'Calculate the probability of a Spam email being Detected (True Positive): $P(S \cap D) = P(S) \times P(D | S) = 0.20
+        \times 0.98 = 0.196$.'
+      - 'Calculate the total probability of an email being Detected, $P(D)$: $P(D) = P(L \cap D) + P(S \cap D) = 0.04 + 0.196
+        = 0.236$.'
+      - 'Apply the conditional probability formula: $P(L | D) = P(L \cap D) / P(D) = 0.04 / 0.236$.'
+      - 'Calculate the final value: $0.04 / 0.236 \approx 0.16949$. Rounding to four significant figures gives 0.1695 or 16.95%.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: 'A commuter knows that morning traffic conditions are Heavy (H) 40% of the time and Light (L) 60% of the
+        time. The probability of being delayed (D) during the commute depends heavily on the traffic:
+
+
+        $P(D | H) = 0.7$
+
+        $P(D | L) = 0.2$
+
+
+        If the commuter experiences a delay this morning, what is the probability that the traffic conditions were Heavy?'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Heavy Traffic (H)
+            probability: '0.40'
+          - outcome: Light Traffic (L)
+            probability: '0.60'
+          stage2:
+          - outcome: Delay (D)
+            probability: '0.70'
+          - outcome: No Delay (D')
+            probability: '0.30'
+          - outcome: Delay (D)
+            probability: '0.20'
+          - outcome: No Delay (D')
+            probability: '0.80'
+          showProbabilities: true
+          caption: Traffic Conditions and Commute Delay
+      finalAnswer: 0.7 or 70%
+      stepByStepGuideline:
+      - 'Identify the required conditional probability: $P(H | D)$.'
+      - 'Calculate the probability of Heavy Traffic and Delay: $P(H \cap D) = P(H) \times P(D | H) = 0.40 \times 0.70 = 0.28$.'
+      - 'Calculate the probability of Light Traffic and Delay: $P(L \cap D) = P(L) \times P(D | L) = 0.60 \times 0.20 = 0.12$.'
+      - 'Calculate the total probability of a Delay, $P(D)$: $P(D) = P(H \cap D) + P(L \cap D) = 0.28 + 0.12 = 0.40$.'
+      - 'Apply the conditional probability formula: $P(H | D) = P(H \cap D) / P(D) = 0.28 / 0.40$.'
+      - 'Simplify the result: $0.28 / 0.40 = 28/40 = 7/10 = 0.7$.'
+      id: q16-5
+      questionGroup: q16
+- id: probability-node-17
+  nodeNumber: 17
+  title: Conditional Probability from Two-Way Tables
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: twoWayTable
+    preWrittenQuestions:
+    - problemText: A marketing survey tracked 150 consumers regarding their age group and their preference between two new
+        products, Product X and Product Y. The results are summarized in the table. If a randomly selected consumer prefers
+        Product X, what is the probability that they are Under 30?
+      avatarIntro: Conditional probability helps us narrow down the sample space based on specific information. Remember,
+        the 'given' condition becomes your new total or denominator!
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - Under 30
+          - 30 or Older
+          columnLabels:
+          - Prefers Product X
+          - Prefers Product Y
+          data:
+          - - 40
+            - 25
+          - - 30
+            - 55
+          highlightCell:
+            row: -1
+            col: -1
+          highlightRow: -1
+          highlightColumn: 0
+          showTotals: true
+          caption: Consumer Product Preferences by Age Group
+      finalAnswer: 40/70 or 4/7 (approx 0.571)
+      stepByStepGuideline:
+      - 'Identify the condition (the given event): The consumer Prefers Product X.'
+      - Determine the total number of consumers who prefer Product X (the denominator). Total X = 40 + 30 = 70.
+      - 'Identify the number of consumers who satisfy both the condition and the desired outcome (the numerator): Consumers
+        who are Under 30 AND prefer Product X is 40.'
+      - 'Calculate the conditional probability: P(Under 30 | Prefers X) = 40 / 70 = 4/7.'
+      id: q17-1
+      questionGroup: q17
+    - problemText: A research study surveyed 180 individuals on their highest education level and current employment status.
+        The data is shown below. Given that a randomly selected person has a University Graduation, calculate the probability
+        that they are employed Full-time.
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - High School Grad
+          - University Grad
+          columnLabels:
+          - Full-time
+          - Part-time
+          - Unemployed
+          data:
+          - - 30
+            - 45
+            - 15
+          - - 60
+            - 20
+            - 10
+          highlightCell:
+            row: -1
+            col: -1
+          highlightRow: 1
+          highlightColumn: -1
+          showTotals: true
+          caption: Employment Status by Education Level
+      finalAnswer: 60/90 or 2/3 (approx 0.667)
+      stepByStepGuideline:
+      - 'Identify the condition: The person has a University Graduation.'
+      - 'Calculate the total number of University Grads (denominator): 60 + 20 + 10 = 90.'
+      - Find the number of University Grads who are Full-time (numerator), which is 60.
+      - 'Calculate the conditional probability: P(Full-time | University Grad) = 60 / 90 = 2/3.'
+      id: q17-2
+      questionGroup: q17
+    - problemText: 'A political poll surveyed 100 voters across three districts regarding their preferred candidate (A or
+        B). The results are summarized in the table. Compare the two probabilities: P(Supports Candidate A | Lives in South
+        District) versus P(Lives in South District | Supports Candidate A).'
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - North District
+          - Central District
+          - South District
+          columnLabels:
+          - Candidate A
+          - Candidate B
+          data:
+          - - 10
+            - 20
+          - - 15
+            - 15
+          - - 25
+            - 15
+          highlightCell:
+            row: -1
+            col: -1
+          highlightRow: -1
+          highlightColumn: -1
+          showTotals: true
+          caption: Voter Preference by District
+      finalAnswer: P(A | South) = 0.625, P(South | A) = 0.500. Therefore, P(A | South) is higher.
+      stepByStepGuideline:
+      - 'Calculate P(Supports Candidate A | Lives in South District): The condition is South District (Total 40). The intersection
+        is 25. P(A | South) = 25/40 = 0.625.'
+      - 'Calculate P(Lives in South District | Supports Candidate A): The condition is Supports Candidate A (Total 50). The
+        intersection is 25. P(South | A) = 25/50 = 0.500.'
+      - 'Compare the two values: 0.625 > 0.500. P(A | South) is higher than P(South | A).'
+      id: q17-3
+      questionGroup: q17
+    - problemText: In a clinical trial involving 120 patients, researchers tested the effectiveness of Drug A against a placebo.
+        The outcomes are recorded in the table. Calculate the probability that a patient experienced 'No Change', given that
+        they received the Placebo.
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - Drug A
+          - Placebo
+          columnLabels:
+          - Recovered
+          - No Change
+          data:
+          - - 50
+            - 10
+          - - 35
+            - 25
+          highlightCell:
+            row: 1
+            col: 1
+          highlightRow: -1
+          highlightColumn: -1
+          showTotals: true
+          caption: Clinical Trial Outcomes
+      finalAnswer: 25/60 or 5/12 (approx 0.417)
+      stepByStepGuideline:
+      - 'Identify the condition (denominator): The patient received the Placebo. Total Placebo patients = 35 + 25 = 60.'
+      - 'Identify the favorable outcome (numerator): The patient experienced ''No Change'' AND received the Placebo. This
+        value is 25.'
+      - 'Calculate the conditional probability: P(No Change | Placebo) = 25 / 60.'
+      - 'Simplify the fraction: 25/60 = 5/12.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: A survey tracked 200 individuals regarding their primary device type and how frequently they use it (High,
+        Medium, or Low). If a randomly selected individual primarily uses a Laptop, what is the probability that their usage
+        frequency is High?
+      mathTool:
+        toolName: twoWayTable
+        parameters:
+          rowLabels:
+          - Phone
+          - Tablet
+          - Laptop
+          columnLabels:
+          - High Frequency
+          - Medium Frequency
+          - Low Frequency
+          data:
+          - - 60
+            - 30
+            - 10
+          - - 10
+            - 20
+            - 15
+          - - 20
+            - 25
+            - 10
+          highlightCell:
+            row: -1
+            col: -1
+          highlightRow: 2
+          highlightColumn: -1
+          showTotals: true
+          caption: Device Usage Frequency
+      finalAnswer: 20/55 or 4/11 (approx 0.364)
+      stepByStepGuideline:
+      - 'Identify the condition: The user primarily uses a Laptop.'
+      - 'Determine the total number of Laptop users (denominator): 20 + 25 + 10 = 55.'
+      - 'Find the number of Laptop users who have High Usage Frequency (numerator): 20.'
+      - 'Calculate the conditional probability: P(High Frequency | Laptop) = 20 / 55.'
+      - 'Simplify the fraction: 20/55 = 4/11.'
+      id: q17-5
+      questionGroup: q17
+- id: probability-node-18
+  nodeNumber: 18
+  title: Real-World Probability Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A local arcade game costs $10 to play. There is a 25% chance of winning a grand prize of $30, and a 75%
+        chance of winning nothing. Calculate the expected value of playing this game and determine if it is fair for the player.
+        Explain your conclusion.
+      avatarIntro: Real-world probability helps us decide whether risks are worth taking, whether in games, medicine, or finance.
+        Let's start by analyzing a common game scenario.
+      mathTool: null
+      finalAnswer: Expected value = $7.50. The game is not fair because the expected gain ($7.50) is less than the cost ($10),
+        resulting in an expected loss of $2.50 per game.
+      stepByStepGuideline:
+      - 'Identify the possible outcomes (Win $30, Win $0) and their corresponding probabilities: P(Win) = 0.25, P(Lose) =
+        0.75.'
+      - 'Calculate the expected value (E) of the prize money: E = (Prize 1 * P1) + (Prize 2 * P2). E = (30 * 0.25) + (0 *
+        0.75) = $7.50.'
+      - Determine fairness by comparing the expected gain ($7.50) to the cost to play ($10).
+      - Since the expected gain ($7.50) is less than the cost ($10), the game is not fair for the player. The player expects
+        to lose $10 - $7.50 = $2.50 on average per play.
+      id: q18-1
+      questionGroup: q18
+    - problemText: A batch of electronic components has a moderate defect rate of 8%. A quality control manager randomly selects
+        4 components for testing. Assuming the quality of each component is independent, calculate the probability that all
+        4 components are non-defective.
+      mathTool: null
+      finalAnswer: 0.706 or 70.6%
+      stepByStepGuideline:
+      - Determine the probability that a single component is non-defective (P(Non-defective)). If the defect rate is 8% (0.08),
+        then P(Non-defective) = 1 - 0.08 = 0.92.
+      - Since the components are independent, the probability that all 4 are non-defective is the product of their individual
+        probabilities.
+      - Calculate P(4 non-defective) = P(Non-defective) * P(Non-defective) * P(Non-defective) * P(Non-defective) = (0.92)⁴.
+      - 'Calculate the final value: 0.92⁴ ≈ 0.70637.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: A diagnostic test for Virus Z has a known sensitivity of 95% and a specificity of 90%. Explain, in plain
+        language relating to diagnostic accuracy, what the sensitivity rate of 95% means for a patient who actually has Virus
+        Z. Calculate the probability of a false negative result based solely on this sensitivity.
+      mathTool: null
+      finalAnswer: Sensitivity means that 95% of patients who truly have Virus Z will correctly receive a positive test result.
+        The probability of a false negative is 1 - 0.95 = 0.05 or 5%.
+      stepByStepGuideline:
+      - 'Define Sensitivity: Sensitivity is the probability that the test correctly identifies someone who has the condition
+        (P(Test Positive | Has Disease)).'
+      - 'Explain the meaning of 95% sensitivity in context: 95% sensitivity means that if a patient truly has Virus Z, there
+        is a 95% chance the test will correctly indicate a positive result.'
+      - 'Define False Negative: A false negative occurs when a person has the disease but the test returns a negative result
+        (P(Test Negative | Has Disease)).'
+      - 'Calculate the probability of a False Negative: This is 1 minus the sensitivity. P(False Negative) = 1 - 0.95 = 0.05.'
+      id: q18-3
+      questionGroup: q18
+    - problemText: An insurance company determines that for a specific type of vehicle, there is a 2% chance that a driver
+        will file a major claim resulting in a $20,000 payout over the course of a year. If the company wants the average
+        premium to cover the expected cost of claims plus an administrative fee of $150, what should the annual premium be?
+      mathTool: null
+      finalAnswer: The annual premium should be $550.
+      stepByStepGuideline:
+      - Identify the probability of a major claim (P=0.02) and the resulting payout ($20,000).
+      - 'Calculate the expected cost of the claim to the insurance company: Expected Cost = P(Claim) * Payout Amount.'
+      - Expected Cost = 0.02 * $20,000 = $400.
+      - Calculate the required annual premium by adding the administrative fee to the expected cost.
+      - Annual Premium = Expected Cost + Administrative Fee = $400 + $150 = $550.
+      id: q18-4
+      questionGroup: q18
+    - problemText: A local weather channel predicts the probability of rain for Saturday is 60% and the probability of rain
+        for Sunday is 70%. Assuming these two days' weather patterns are independent events, calculate the probability that
+        it rains on only one of the two days (i.e., Rain on Saturday AND No Rain on Sunday OR No Rain on Saturday AND Rain
+        on Sunday).
+      mathTool: null
+      finalAnswer: 0.46 or 46%
+      stepByStepGuideline:
+      - 'Establish the probabilities for rain (R) and no rain (R'') for both days: P(R_Sat) = 0.6, P(R''_Sat) = 1 - 0.6 =
+        0.4. P(R_Sun) = 0.7, P(R''_Sun) = 1 - 0.7 = 0.3.'
+      - 'Identify the two mutually exclusive scenarios where it rains on only one day: Scenario 1: Rain on Saturday AND No
+        Rain on Sunday (P(R_Sat ∩ R''_Sun)). Scenario 2: No Rain on Saturday AND Rain on Sunday (P(R''_Sat ∩ R_Sun)).'
+      - 'Calculate the probability of Scenario 1 (due to independence): P(R_Sat ∩ R''_Sun) = P(R_Sat) * P(R''_Sun) = 0.6 *
+        0.3 = 0.18.'
+      - 'Calculate the probability of Scenario 2 (due to independence): P(R''_Sat ∩ R_Sun) = P(R''_Sat) * P(R_Sun) = 0.4 *
+        0.7 = 0.28.'
+      - 'Calculate the total probability by adding the probabilities of the two scenarios: P(Only one day) = 0.18 + 0.28 =
+        0.46.'
+      id: q18-5
+      questionGroup: q18
+- id: probability-node-19
+  nodeNumber: 19
+  title: At Least and At Most Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A biased coin lands heads (H) with a probability of 0.3. If the coin is tossed 3 times, what is the probability
+        of observing at least one head?
+      avatarIntro: Probabilities involving 'at least one' are often best solved using the complement rule. Think about what
+        the opposite of 'at least one head' is.
+      mathTool: null
+      finalAnswer: 0.657 or 65.7%
+      stepByStepGuideline:
+      - 'Identify the required probability: P(at least one head). This is equivalent to P(1 or 2 or 3 heads).'
+      - 'Use the complement rule: P(at least one head) = 1 - P(no heads).'
+      - Calculate P(no heads), which means getting 3 tails (TTT). The probability of tails is P(T) = 1 - 0.3 = 0.7.
+      - P(no heads) = P(T) * P(T) * P(T) = (0.7)³ = 0.343.
+      - 'Apply the complement rule: P(at least one head) = 1 - 0.343 = 0.657.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: A professional hockey player has a 70% chance of scoring on a penalty shot. If the player takes 4 penalty
+        shots during a game, what is the probability that they score at most 2 goals?
+      mathTool: null
+      finalAnswer: '0.3483'
+      stepByStepGuideline:
+      - 'Identify the required probability: P(at most 2 goals). This means calculating P(0 goals) + P(1 goal) + P(2 goals).'
+      - Let P(Success) = 0.7 and P(Failure) = 0.3. The number of trials N=4.
+      - 'Calculate P(0 goals): P(0) = 4C0 * (0.7)⁰ * (0.3)⁴ = 1 * 1 * 0.0081 = 0.0081.'
+      - 'Calculate P(1 goal): P(1) = 4C1 * (0.7)¹ * (0.3)³ = 4 * 0.7 * 0.027 = 0.0756.'
+      - 'Calculate P(2 goals): P(2) = 4C2 * (0.7)² * (0.3)² = 6 * 0.49 * 0.09 = 0.2646.'
+      - 'Sum the probabilities: P(at most 2) = 0.0081 + 0.0756 + 0.2646 = 0.3483.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: A customer service representative successfully resolves a query 60% of the time. If they handle 5 queries
+        in a shift, what is the probability that they resolve at least 4 queries?
+      mathTool: null
+      finalAnswer: '0.33696'
+      stepByStepGuideline:
+      - 'Identify the required probability: P(at least 4 successes). This means calculating P(4 successes) + P(5 successes).
+        (Note: Since ''k'' is high, the direct calculation is simpler than using the complement rule 1 - [P(0) + P(1) + P(2)
+        + P(3)]).'
+      - Let P(S) = 0.6 and P(F) = 0.4. N=5.
+      - 'Calculate P(4 successes): P(4) = 5C4 * (0.6)⁴ * (0.4)¹ = 5 * 0.1296 * 0.4 = 0.2592.'
+      - 'Calculate P(5 successes): P(5) = 5C5 * (0.6)⁵ * (0.4)⁰ = 1 * 0.07776 * 1 = 0.07776.'
+      - 'Sum the probabilities: P(at least 4) = 0.2592 + 0.07776 = 0.33696.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: An online advertisement campaign has a click-through rate of 20%. If a user sees the ad 4 independent times,
+        find the probability that the user clicks on the ad at least 3 times.
+      mathTool: null
+      finalAnswer: '0.0272'
+      stepByStepGuideline:
+      - 'Identify the required probability: P(at least 3 clicks). This means calculating P(3 clicks) + P(4 clicks).'
+      - Let P(Click) = 0.2 and P(No Click) = 0.8. N=4.
+      - 'Calculate P(3 clicks): P(3) = 4C3 * (0.2)³ * (0.8)¹ = 4 * 0.008 * 0.8 = 0.0256.'
+      - 'Calculate P(4 clicks): P(4) = 4C4 * (0.2)⁴ * (0.8)⁰ = 1 * 0.0016 * 1 = 0.0016.'
+      - 'Sum the probabilities: P(at least 3) = 0.0256 + 0.0016 = 0.0272.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: A fair six-sided die is rolled 3 times. What is the probability of rolling the number 5 at most 1 time?
+      mathTool: null
+      finalAnswer: 25/27
+      stepByStepGuideline:
+      - 'Identify the required probability: P(at most 1 five). This means calculating P(0 fives) + P(1 five).'
+      - Let P(S) = P(rolling a 5) = 1/6. Let P(F) = P(not rolling a 5) = 5/6. N=3.
+      - 'Calculate P(0 fives): P(0) = 3C0 * (1/6)⁰ * (5/6)³ = 1 * 1 * (125/216) = 125/216.'
+      - 'Calculate P(1 five): P(1) = 3C1 * (1/6)¹ * (5/6)² = 3 * (1/6) * (25/36) = 75/216.'
+      - 'Sum the probabilities: P(at most 1) = 125/216 + 75/216 = 200/216.'
+      - 'Simplify the fraction: 200/216 can be divided by 8 to get 25/27.'
+      id: q19-5
+      questionGroup: q19
+- id: probability-node-20
+  nodeNumber: 20
+  title: Complex Multi-Step Probability Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: probabilityTree
+    preWrittenQuestions:
+    - problemText: 'A manufacturer uses two different production lines, Line A and Line B, to produce specialized electronic
+        sensors. Line A accounts for 65% of the total daily output, and Line B accounts for the remaining 35%. Historical
+        data shows that Line A has a non-defective rate of 92%, while Line B, being newer, has a non-defective rate of 98%.
+
+
+        If a sensor is selected randomly from the total output, what is the probability that it is non-defective?'
+      avatarIntro: This problem requires using the Law of Total Probability. Remember to break down the overall outcome based
+        on the different sources contributing to the output.
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Line A
+            probability: 0.65
+          - outcome: Line B
+            probability: 0.35
+          stage2:
+          - outcome: Non-Defective | A
+            probability: 0.92
+          - outcome: Defective | A
+            probability: 0.08
+          - outcome: Non-Defective | B
+            probability: 0.98
+          - outcome: Defective | B
+            probability: 0.02
+          showProbabilities: true
+          caption: Probability of sensor output based on production line
+      finalAnswer: 0.941 or 94.1%
+      stepByStepGuideline:
+      - 'Define the events: A (Line A), B (Line B), ND (Non-Defective). We are looking for P(ND).'
+      - 'Apply the Law of Total Probability: P(ND) = P(A)P(ND|A) + P(B)P(ND|B).'
+      - 'Substitute the given values: P(ND) = (0.65 × 0.92) + (0.35 × 0.98).'
+      - 'Calculate the component probabilities: P(A and ND) = 0.598. P(B and ND) = 0.343.'
+      - 'Sum the results: P(ND) = 0.598 + 0.343 = 0.941.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: 'A drawer contains 10 socks: 4 Black (B) and 6 Grey (G). A person randomly draws 3 socks sequentially without
+        replacement.
+
+
+        Calculate the probability that the person draws at least two Grey socks.'
+      mathTool: null
+      finalAnswer: 0.667 or 2/3
+      stepByStepGuideline:
+      - 'Identify the required outcomes for ''at least two Grey socks'': (i) Exactly 2 Grey and 1 Black, or (ii) Exactly 3
+        Grey.'
+      - 'Calculate the probability of obtaining 3 Grey socks (GGG): P(G₁) × P(G₂|G₁) × P(G₃|G₁G₂) = (6/10) × (5/9) × (4/8)
+        = 120/720.'
+      - 'Calculate the probability of obtaining exactly 2 Grey and 1 Black. This can occur in three sequences: GGB, GBG, BGG.'
+      - 'Calculate P(GGB): (6/10) × (5/9) × (4/8) = 120/720.'
+      - 'Calculate P(GBG): (6/10) × (4/9) × (5/8) = 120/720.'
+      - 'Calculate P(BGG): (4/10) × (6/9) × (5/8) = 120/720.'
+      - 'Sum the probabilities for the three sequences: P(2G, 1B) = 3 × (120/720) = 360/720.'
+      - 'Calculate the total probability: P(≥ 2G) = P(3G) + P(2G, 1B) = 120/720 + 360/720 = 480/720 = 2/3 ≈ 0.667.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: 'A university conducted a survey on student reading preferences. 70% of students prefer Digital books (D),
+        and 30% prefer Physical books (P).
+
+
+        The survey also revealed that 85% of Digital book fans visit the library weekly (V), while 95% of Physical book fans
+        visit the library weekly.
+
+
+        If a randomly chosen student is known to visit the library weekly, what is the probability that they prefer Digital
+        books? (Use Bayes'' Theorem).'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Digital (D)
+            probability: 0.7
+          - outcome: Physical (P)
+            probability: 0.3
+          stage2:
+          - outcome: Visit (V) | D
+            probability: 0.85
+          - outcome: No Visit (NV) | D
+            probability: 0.15
+          - outcome: Visit (V) | P
+            probability: 0.95
+          - outcome: No Visit (NV) | P
+            probability: 0.05
+          showProbabilities: true
+          caption: Student preference and library visiting habits
+      finalAnswer: 0.676 (or 67.6%)
+      stepByStepGuideline:
+      - 'We need to find P(D | V). Use Bayes'' Theorem: P(D | V) = P(D and V) / P(V).'
+      - 'Step 1: Calculate P(D and V) = P(D) × P(V|D) = 0.70 × 0.85 = 0.595.'
+      - 'Step 2: Calculate P(P and V) = P(P) × P(V|P) = 0.30 × 0.95 = 0.285.'
+      - 'Step 3: Calculate the total probability of visiting P(V) using the Law of Total Probability: P(V) = P(D and V) +
+        P(P and V) = 0.595 + 0.285 = 0.880.'
+      - 'Step 4: Apply Bayes'' formula: P(D | V) = 0.595 / 0.880 ≈ 0.6761.'
+      id: q20-3
+      questionGroup: q20
+    - problemText: 'An experiment has two stages. First, a fair six-sided die is rolled.
+
+
+        If the roll is 1 or 2 (P=1/3), a single ball is drawn from Urn A, which contains 4 Red and 6 Blue balls.
+
+
+        If the roll is 3, 4, 5, or 6 (P=2/3), two balls are drawn sequentially without replacement from Urn B, which contains
+        5 Red and 5 Blue balls.
+
+
+        What is the probability that exactly one Red ball is drawn in total?'
+      mathTool:
+        toolName: probabilityTree
+        parameters:
+          stage1:
+          - outcome: Urn A Selected
+            probability: 0.3333
+          - outcome: Urn B Selected
+            probability: 0.6667
+          stage2:
+          - outcome: 1 Red | A
+            probability: 0.4
+          - outcome: Not 1 Red | A
+            probability: 0.6
+          - outcome: 1 Red | B
+            probability: 0.5556
+          - outcome: Not 1 Red | B
+            probability: 0.4444
+          showProbabilities: true
+          caption: Experiment stages leading to selection of 1 Red ball
+      finalAnswer: 0.504 (or 68/135)
+      stepByStepGuideline:
+      - 'Identify the two mutually exclusive cases based on the die roll: Case A (P=1/3) and Case B (P=2/3).'
+      - 'Case A: Urn A (4R, 6B). Probability of drawing exactly 1 Red is P(R|A) = 4/10 = 0.4.'
+      - Calculate P(1R and A) = P(A) × P(R|A) = (1/3) × (4/10) = 4/30.
+      - 'Case B: Urn B (5R, 5B). Drawing 2 balls without replacement. Probability of drawing exactly 1 Red is P(RB) + P(BR).'
+      - Calculate P(RB) = (5/10) × (5/9) = 25/90. Calculate P(BR) = (5/10) × (5/9) = 25/90.
+      - 'P(1R|B) = 50/90 = 5/9. (Note: 5/9 ≈ 0.5556 used in the tool).'
+      - Calculate P(1R and B) = P(B) × P(1R|B) = (2/3) × (5/9) = 10/27.
+      - 'Apply Law of Total Probability: P(1R) = P(1R and A) + P(1R and B) = 4/30 + 10/27.'
+      - 'Find a common denominator (135): 4/30 = 18/135. 10/27 = 50/135. P(1R) = 68/135 ≈ 0.5037.'
+      id: q20-4
+      questionGroup: q20
+    - problemText: 'A company has a small team of 5 employees: 3 Men (M) and 2 Women (W). They are interviewed one by one
+        in a random order.
+
+
+        The interview process stops immediately once both women have been interviewed.
+
+
+        Calculate the probability that the process stops exactly after the 4th interview.'
+      mathTool: null
+      finalAnswer: 0.3 (or 3/10)
+      stepByStepGuideline:
+      - 'The process stops exactly after the 4th interview (S4) if two conditions are met: (1) The 4th person must be the
+        second woman (W₂). (2) Exactly one woman (W₁) and two men (M₁, M₂) must have been interviewed in the first three positions.'
+      - 'Identify the three possible sequences of gender for the first four interviews: WMMW, MWMW, MMWW.'
+      - 'Calculate the probability for the sequence WMMW (using multiplication rule for dependent events): P(W₁) × P(M₂|W₁)
+        × P(M₃|W₁M₂) × P(W₄|W₁M₂M₃) = (2/5) × (3/4) × (2/3) × (1/2) = 12/120 = 1/10.'
+      - 'Calculate the probability for the sequence MWMW: P(M₁) × P(W₂|M₁) × P(M₃|M₁W₂) × P(W₄|M₁W₂M₃) = (3/5) × (2/4) × (2/3)
+        × (1/2) = 12/120 = 1/10.'
+      - 'Calculate the probability for the sequence MMWW: P(M₁) × P(M₂|M₁) × P(W₃|M₁M₂) × P(W₄|M₁M₂W₃) = (3/5) × (2/4) × (2/3)
+        × (1/2) = 12/120 = 1/10.'
+      - 'Sum the probabilities for the three possible stopping sequences: P(Stops at S4) = 1/10 + 1/10 + 1/10 = 3/10 or 0.3.'
+      id: q20-5
+      questionGroup: q20

@@ -36,7 +36,7 @@ export interface MathToolDefinition {
   name: string;                    // Display name
   technicalName: string;           // Key used in code
   component: string;               // React component name
-  category: 'trigonometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'sets' | 'statistics' | 'general' | 'coordinate-geometry';
+  category: 'trigonometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'sets' | 'statistics' | 'general' | 'coordinate-geometry' | 'calculus' | 'probability';
 
   // Documentation
   description: string;             // What this tool does
@@ -1933,6 +1933,559 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           showOriginLabel: true,
           customPoints: [
             { x: 4, y: 6, z: 0, label: "P" }]
+        }
+      }
+    ]
+  },
+
+  // ============================================
+  // DIFFERENTIAL CALCULUS TOOLS
+  // ============================================
+
+  functionGraph: {
+    name: "Function Grapher",
+    technicalName: "functionGraph",
+    component: "FunctionGraphVisualizer",
+    category: "calculus",
+    description: "Generic function plotter for visualizing mathematical functions",
+    whenToUse: "Use for plotting any function expression, marking specific points, or showing function behavior. IMPORTANT: For rational functions or functions with asymptotes (e.g., 1/x, 1/(x^2+1)), ALWAYS specify yMin and yMax to prevent rendering crashes from extreme values.",
+
+    parameters: {
+      expression: "string - function expression like 'x^2', 'sin(x)', '2*x+3'",
+      xMin: "number (optional, default: -5) - minimum x value",
+      xMax: "number (optional, default: 5) - maximum x value",
+      yMin: "number (**REQUIRED for rational functions/asymptotes**, otherwise auto-calculated) - minimum y value to prevent crashes from extreme values",
+      yMax: "number (**REQUIRED for rational functions/asymptotes**, otherwise auto-calculated) - maximum y value to prevent crashes from extreme values",
+      showGrid: "boolean (optional, default: true) - show grid lines",
+      showPoints: "array (optional) - points to mark: [{x: number, label?: string, color?: string}]",
+      color: "string (optional, default: blue) - curve color",
+      label: "string (optional) - function label",
+      caption: "string (optional) - caption below graph"
+    },
+
+    exampleUsage: {
+      scenario: "Plot f(x) = x^2 with marked point at x=2",
+      caption: "Quadratic function with vertex at origin",
+      parameters: {
+        expression: "x^2",
+        xMin: -3,
+        xMax: 3,
+        showPoints: [{x: 2, label: "(2,4)", color: "#ef4444"}],
+        label: "f(x) = x²"
+      }
+    }
+  },
+
+  limitVisualizer: {
+    name: "Limit Visualizer",
+    technicalName: "limitVisualizer",
+    component: "LimitVisualizerComponent",
+    category: "calculus",
+    description: "Visualize limits at a point, showing approach from both sides and continuity",
+    whenToUse: "Use for teaching limits, showing when limits exist vs don't exist, and demonstrating continuity",
+
+    parameters: {
+      expression: "string - function expression",
+      limitPoint: "number - x-value where limit is evaluated",
+      limitValue: "number (optional) - the limit value if it exists",
+      leftValue: "number (optional) - f(x) as x approaches from left",
+      rightValue: "number (optional) - f(x) as x approaches from right",
+      functionValue: "number (optional) - f(limitPoint), may differ from limit",
+      showApproach: "boolean (optional, default: true) - show approach arrows",
+      xMin: "number (optional, auto-calculated) - minimum x",
+      xMax: "number (optional, auto-calculated) - maximum x",
+      caption: "string (optional) - caption"
+    },
+
+    exampleUsage: {
+      scenario: "Limit exists but function not continuous",
+      caption: "lim(x→2) f(x) = 4, but f(2) = 6 (removable discontinuity)",
+      parameters: {
+        expression: "(x^2-4)/(x-2)",
+        limitPoint: 2,
+        limitValue: 4,
+        functionValue: 6,
+        showApproach: true
+      }
+    }
+  },
+
+  tangentVisualizer: {
+    name: "Tangent Line Visualizer",
+    technicalName: "tangentVisualizer",
+    component: "TangentVisualizerComponent",
+    category: "calculus",
+    description: "Show function with tangent line at a specific point",
+    whenToUse: "Use for introducing derivatives, showing instantaneous rate of change, or demonstrating tangent lines. IMPORTANT: For polynomial functions of degree ≥3 (cubic, quartic, etc.), specify xMin/xMax centered around tangentPoint to constrain the view and prevent extreme function values far from the point of interest.",
+
+    parameters: {
+      expression: "string - function expression",
+      tangentPoint: "number - x-value where tangent is drawn",
+      slope: "number (optional, auto-calculated) - tangent slope",
+      showSlope: "boolean (optional, default: true) - show slope value",
+      showPoint: "boolean (optional, default: true) - show point of tangency",
+      xMin: "number (**Recommended for polynomials degree≥3**) - minimum x to constrain range near tangent point",
+      xMax: "number (**Recommended for polynomials degree≥3**) - maximum x to constrain range near tangent point",
+      caption: "string (optional) - caption"
+    },
+
+    exampleUsage: {
+      scenario: "Tangent to f(x)=x^2 at x=1",
+      caption: "Tangent line has slope 2 at x=1",
+      parameters: {
+        expression: "x^2",
+        tangentPoint: 1,
+        slope: 2,
+        showSlope: true
+      }
+    }
+  },
+
+  secantTangentComparison: {
+    name: "Secant vs Tangent Comparison",
+    technicalName: "secantTangentComparison",
+    component: "SecantTangentComparisonVisualizer",
+    category: "calculus",
+    description: "Compare secant line (average rate) with tangent line (instantaneous rate)",
+    whenToUse: "Use for teaching the difference between average and instantaneous rates of change",
+
+    parameters: {
+      expression: "string - function expression",
+      point1: "number - first point x-coordinate (for secant)",
+      point2: "number - second point x-coordinate (for secant)",
+      tangentPoint: "number (optional, defaults to point1) - tangent point",
+      showBoth: "boolean (optional, default: true) - show both lines",
+      showSlopes: "boolean (optional, default: true) - show slope values",
+      xMin: "number (optional) - minimum x",
+      xMax: "number (optional) - maximum x",
+      caption: "string (optional) - caption"
+    },
+
+    exampleUsage: {
+      scenario: "Secant vs tangent for f(x)=x^2",
+      caption: "As points get closer, secant approaches tangent",
+      parameters: {
+        expression: "x^2",
+        point1: 1,
+        point2: 2,
+        tangentPoint: 1,
+        showBoth: true
+      }
+    }
+  },
+
+  derivativeGrapher: {
+    name: "Function and Derivative Grapher",
+    technicalName: "derivativeGrapher",
+    component: "DerivativeGrapherVisualizer",
+    category: "calculus",
+    description: "Side-by-side graphs of f(x) and f'(x) showing their relationship",
+    whenToUse: "Use for showing how derivative relates to original function behavior",
+
+    parameters: {
+      originalExpression: "string - f(x) expression",
+      derivativeExpression: "string - f'(x) expression",
+      showRelation: "boolean (optional, default: false) - connect corresponding points",
+      highlightPoints: "array (optional) - x-values to highlight: [1, 2, 3]",
+      xMin: "number (optional, default: -5) - minimum x",
+      xMax: "number (optional, default: 5) - maximum x",
+      caption: "string (optional) - caption"
+    },
+
+    exampleUsage: {
+      scenario: "f(x)=x^2 and f'(x)=2x",
+      caption: "Where f(x) increasing, f'(x) > 0; where decreasing, f'(x) < 0",
+      parameters: {
+        originalExpression: "x^2",
+        derivativeExpression: "2*x",
+        highlightPoints: [0, 2]
+      }
+    }
+  },
+
+  firstPrinciplesVisualizer: {
+    name: "First Principles Visualizer",
+    technicalName: "firstPrinciplesVisualizer",
+    component: "FirstPrinciplesVisualizer",
+    category: "calculus",
+    description: "Geometric interpretation of derivative definition with rise/run triangle",
+    whenToUse: "Use for teaching derivative definition from first principles",
+
+    parameters: {
+      expression: "string - function expression",
+      point: "number - x-value where derivative is calculated",
+      h: "number - delta x value (small like 0.5 or 0.1)",
+      showTriangle: "boolean (optional, default: true) - show rise/run triangle",
+      showFormula: "boolean (optional, default: true) - show derivative formula",
+      xMin: "number (optional) - minimum x",
+      xMax: "number (optional) - maximum x",
+      caption: "string (optional) - caption"
+    },
+
+    exampleUsage: {
+      scenario: "First principles for f(x)=x^2 at x=1 with h=0.5",
+      caption: "As h→0, [f(x+h)-f(x)]/h approaches f'(x)",
+      parameters: {
+        expression: "x^2",
+        point: 1,
+        h: 0.5,
+        showTriangle: true,
+        showFormula: true
+      }
+    }
+  },
+
+  chainRuleVisualizer: {
+    name: "Chain Rule Visualizer",
+    technicalName: "chainRuleVisualizer",
+    component: "ChainRuleVisualizer",
+    category: "calculus",
+    description: "Visualize function composition for chain rule",
+    whenToUse: "Use for teaching chain rule and function composition",
+
+    parameters: {
+      outerFunction: "string - f(u) in terms of u",
+      innerFunction: "string - g(x) in terms of x",
+      compositeExpression: "string (optional) - f(g(x)) composite",
+      evaluationPoint: "number (optional, default: 1) - x to evaluate",
+      showSteps: "boolean (optional, default: true) - show step breakdown",
+      caption: "string (optional) - caption"
+    },
+
+    exampleUsage: {
+      scenario: "Chain rule for (2x+1)^3",
+      caption: "d/dx[f(g(x))] = f'(g(x))·g'(x)",
+      parameters: {
+        outerFunction: "u^3",
+        innerFunction: "2*x+1",
+        compositeExpression: "(2*x+1)^3",
+        evaluationPoint: 1
+      }
+    }
+  },
+
+  normalLineGrapher: {
+    name: "Normal Line Grapher",
+    technicalName: "normalLineGrapher",
+    component: "NormalLineGrapherVisualizer",
+    category: "calculus",
+    description: "Show tangent and perpendicular normal line",
+    whenToUse: "Use for teaching normal lines and perpendicular gradients. CRITICAL: ALWAYS specify xMin/xMax to constrain the normal line, as it can extend to extreme y-values (especially when tangent is steep). Center the range around the point of tangency.",
+
+    parameters: {
+      expression: "string - function expression",
+      point: "number - x-value where lines are drawn",
+      tangentSlope: "number (optional, auto-calculated) - tangent slope",
+      showAngles: "boolean (optional, default: true) - show perpendicular indicator",
+      showSlopes: "boolean (optional, default: true) - show slope values",
+      xMin: "number (**STRONGLY RECOMMENDED**, default: point-4) - minimum x to constrain normal line extension and prevent extreme y-values",
+      xMax: "number (**STRONGLY RECOMMENDED**, default: point+4) - maximum x to constrain normal line extension and prevent extreme y-values",
+      caption: "string (optional) - caption"
+    },
+
+    exampleUsage: {
+      scenario: "Tangent and normal at x=2 for f(x)=x^2",
+      caption: "Normal perpendicular to tangent: m₁·m₂ = -1",
+      parameters: {
+        expression: "x^2",
+        point: 2,
+        showAngles: true
+      }
+    }
+  },
+
+  stationaryPointsVisualizer: {
+    name: "Stationary Points Visualizer",
+    technicalName: "stationaryPointsVisualizer",
+    component: "StationaryPointsVisualizer",
+    category: "calculus",
+    description: "Mark and classify stationary points (maxima, minima, inflection)",
+    whenToUse: "Use for showing critical points where f'(x)=0",
+
+    parameters: {
+      expression: "string - function expression",
+      stationaryPoints: "array - [{x: number, y: number, type: 'max'|'min'|'inflection', label?: string}]",
+      showDerivativeZero: "boolean (optional, default: true) - show f'(x)=0 annotation",
+      xMin: "number (optional) - minimum x",
+      xMax: "number (optional) - maximum x",
+      caption: "string (optional) - caption"
+    },
+
+    exampleUsage: {
+      scenario: "f(x)=x^3-3x with max and min",
+      caption: "Local maximum at (-1,2) and local minimum at (1,-2)",
+      parameters: {
+        expression: "x^3-3*x",
+        stationaryPoints: [
+          {x: -1, y: 2, type: "max", label: "Max"},
+          {x: 1, y: -2, type: "min", label: "Min"}
+        ]
+      }
+    }
+  },
+
+  optimizationGrapher: {
+    name: "Optimization Grapher",
+    technicalName: "optimizationGrapher",
+    component: "OptimizationGrapherVisualizer",
+    category: "calculus",
+    description: "Visualize optimization problems with marked optimal point",
+    whenToUse: "Use for applied optimization problems (maximize/minimize)",
+
+    parameters: {
+      expression: "string - function to optimize",
+      optimal: "object - {x: number, y: number} optimal point",
+      type: "string (optional, default: 'maximize') - 'maximize' or 'minimize'",
+      constraint: "string (optional) - constraint description",
+      showConstraints: "boolean (optional, default: false) - shade constraint region",
+      xMin: "number (optional) - minimum x",
+      xMax: "number (optional) - maximum x",
+      caption: "string (optional) - caption"
+    },
+
+    exampleUsage: {
+      scenario: "Maximize area with perimeter 20",
+      caption: "Maximum area 25 when square is 5×5",
+      parameters: {
+        expression: "x*(10-x)",
+        optimal: {x: 5, y: 25},
+        type: "maximize",
+        constraint: "x + y = 10 (half-perimeter)"
+      }
+    }
+  },
+
+  // ============================================
+  // INTEGRATION TOOLS
+  // ============================================
+
+  areaApproximation: {
+    name: "Area Approximation Visualizer",
+    technicalName: "areaApproximation",
+    component: "AreaApproximationVisualizer",
+    category: "calculus",
+    description: "Visualize area under curve using rectangle approximations (left, right, midpoint Riemann sums)",
+    whenToUse: "Use when teaching Riemann sums, rectangle approximation method, or introducing integration as area under curve",
+
+    parameters: {
+      functionExpression: "string - function expression (e.g., 'x^2', '2*x+1', 'sin(x)')",
+      lowerBound: "number - lower limit of integration (a)",
+      upperBound: "number - upper limit of integration (b)",
+      rectangles: "number (2-20) - number of rectangles to use",
+      method: "'left' | 'right' | 'midpoint' - approximation method",
+      showExact: "boolean (optional, default: false) - show exact area for comparison"
+    },
+
+    exampleUsage: {
+      scenario: "Approximate area under x^2 from 0 to 2 using 6 left rectangles",
+      caption: "Using 6 left rectangles to approximate ∫₀² x² dx",
+      parameters: {
+        functionExpression: "x^2",
+        lowerBound: 0,
+        upperBound: 2,
+        rectangles: 6,
+        method: "left",
+        showExact: true
+      }
+    }
+  },
+
+  definiteIntegralVisualizer: {
+    name: "Definite Integral Visualizer",
+    technicalName: "definiteIntegralVisualizer",
+    component: "DefiniteIntegralVisualizer",
+    category: "calculus",
+    description: "Visualize definite integrals with shaded area under curve between bounds",
+    whenToUse: "Use for definite integral problems, showing area between curve and x-axis, or when evaluating ∫ₐᵇ f(x)dx",
+
+    parameters: {
+      functionExpression: "string - function expression (e.g., 'x^2+1', '3*x', 'cos(x)')",
+      lowerBound: "number - lower limit a",
+      upperBound: "number - upper limit b",
+      shadeArea: "boolean (optional, default: true) - shade the area under curve",
+      showValue: "boolean (optional, default: true) - display calculated integral value"
+    },
+
+    exampleUsage: {
+      scenario: "Evaluate ∫₁³ (2x+1) dx",
+      caption: "Definite integral from 1 to 3 of 2x+1",
+      parameters: {
+        functionExpression: "2*x+1",
+        lowerBound: 1,
+        upperBound: 3,
+        shadeArea: true,
+        showValue: true
+      }
+    }
+  },
+
+  riemannSumVisualizer: {
+    name: "Riemann Sum Comparison",
+    technicalName: "riemannSumVisualizer",
+    component: "RiemannSumVisualizer",
+    category: "calculus",
+    description: "Compare multiple Riemann sum approximation methods side-by-side (left, right, midpoint, trapezoid)",
+    whenToUse: "Use when comparing accuracy of different approximation methods or teaching the relationship between Riemann sums and integration",
+
+    parameters: {
+      functionExpression: "string - function to integrate",
+      lowerBound: "number - lower limit a",
+      upperBound: "number - upper limit b",
+      partitions: "number (4-12) - number of subdivisions",
+      showMethods: "Array<'left'|'right'|'midpoint'|'trapezoid'> (optional, default: ['left','right','midpoint']) - which methods to compare"
+    },
+
+    exampleUsage: {
+      scenario: "Compare left, right, and midpoint approximations for x^2 from 0 to 2 using 8 partitions",
+      caption: "Compare approximation methods with 8 partitions",
+      parameters: {
+        functionExpression: "x^2",
+        lowerBound: 0,
+        upperBound: 2,
+        partitions: 8,
+        showMethods: ["left", "right", "midpoint", "trapezoid"]
+      }
+    }
+  },
+
+  // ============================================
+  // PROBABILITY TOOLS
+  // ============================================
+
+  probabilityTree: {
+    name: "Probability Tree Diagram",
+    technicalName: "probabilityTree",
+    component: "ProbabilityTreeVisualizer",
+    category: "probability",
+    description: "Interactive probability tree for multi-stage experiments. Shows branches with outcomes and probabilities, multiply-along-branch rule, and final outcome probabilities.",
+    whenToUse: "Use for two or three-stage experiments (coin flips, dice rolls, drawing with/without replacement), conditional probability, dependent/independent events, and calculating P(specific sequence).",
+
+    parameters: {
+      stage1: "Array<{outcome: string, probability: number}> - first stage branches",
+      stage2: "Array<{outcome: string, probability: number}> - second stage branches",
+      stage3: "Array<{outcome: string, probability: number}> (optional) - third stage branches",
+      highlightPaths: "string[] (optional, default: []) - paths to highlight like ['Heads-Red', 'Tails-Blue']",
+      showProbabilities: "boolean (optional, default: true) - show probabilities on branches and endpoints",
+      caption: "string (optional) - explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Two coin flips",
+        caption: "Probability tree showing all outcomes for flipping two coins",
+        parameters: {
+          stage1: [
+            { outcome: "Heads", probability: 0.5 },
+            { outcome: "Tails", probability: 0.5 }
+          ],
+          stage2: [
+            { outcome: "Heads", probability: 0.5 },
+            { outcome: "Tails", probability: 0.5 }
+          ],
+          showProbabilities: true
+        }
+      },
+      {
+        scenario: "Drawing without replacement",
+        caption: "Drawing 2 balls from bag with 3 red, 2 blue (without replacement)",
+        parameters: {
+          stage1: [
+            { outcome: "Red", probability: 0.6 },
+            { outcome: "Blue", probability: 0.4 }
+          ],
+          stage2: [
+            { outcome: "Red", probability: 0.5 },
+            { outcome: "Blue", probability: 0.5 }
+          ],
+          highlightPaths: ["Red-Red"],
+          caption: "Note: Stage 2 probabilities change based on Stage 1 outcome"
+        }
+      },
+      {
+        scenario: "Medical testing (3 stages)",
+        caption: "Disease testing with initial probability, test result, and confirmation",
+        parameters: {
+          stage1: [
+            { outcome: "Disease", probability: 0.01 },
+            { outcome: "No Disease", probability: 0.99 }
+          ],
+          stage2: [
+            { outcome: "Positive", probability: 0.95 },
+            { outcome: "Negative", probability: 0.05 }
+          ],
+          stage3: [
+            { outcome: "Confirm+", probability: 0.99 },
+            { outcome: "Confirm-", probability: 0.01 }
+          ]
+        }
+      }
+    ]
+  },
+
+  twoWayTable: {
+    name: "Two-Way Table (Contingency Table)",
+    technicalName: "twoWayTable",
+    component: "TwoWayTableVisualizer",
+    category: "probability",
+    description: "Interactive two-way table for categorical data and conditional probability. Shows row/column totals, highlights cells/rows/columns for conditional probability calculations.",
+    whenToUse: "Use for survey data, medical testing results, customer categorization, calculating P(A|B) from tables, identifying independence, or organizing categorical data.",
+
+    parameters: {
+      rowLabels: "string[] - row category labels",
+      columnLabels: "string[] - column category labels",
+      data: "number[][] - 2D array of counts: data[row][column]",
+      highlightCell: "{row: number, col: number} (optional) - highlight specific cell",
+      highlightRow: "number (optional) - highlight entire row (for 'given' condition)",
+      highlightColumn: "number (optional) - highlight entire column (for 'given' condition)",
+      showTotals: "boolean (optional, default: true) - show row, column, and grand totals",
+      showProbabilities: "boolean (optional, default: false) - show probabilities alongside counts",
+      caption: "string (optional) - explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Gender vs Purchase preference survey",
+        caption: "Two-way table showing survey results for 110 people",
+        parameters: {
+          rowLabels: ["Male", "Female"],
+          columnLabels: ["Yes", "No"],
+          data: [
+            [30, 20],
+            [45, 15]
+          ],
+          showTotals: true,
+          showProbabilities: false
+        }
+      },
+      {
+        scenario: "Conditional probability: P(Male | Yes)",
+        caption: "Find P(Male | answered Yes). Highlight 'Yes' column since it's the condition.",
+        parameters: {
+          rowLabels: ["Male", "Female"],
+          columnLabels: ["Yes", "No"],
+          data: [
+            [30, 20],
+            [45, 15]
+          ],
+          highlightColumn: 0,
+          highlightCell: { row: 0, col: 0 },
+          showTotals: true,
+          caption: "P(Male | Yes) = 30/75 = 0.4"
+        }
+      },
+      {
+        scenario: "Medical testing: Disease vs Test result",
+        caption: "100 patients: Disease status vs Test result",
+        parameters: {
+          rowLabels: ["Has Disease", "No Disease"],
+          columnLabels: ["Test Positive", "Test Negative"],
+          data: [
+            [9, 1],
+            [5, 85]
+          ],
+          showTotals: true,
+          showProbabilities: true,
+          caption: "Find P(Has Disease | Test Positive) = 9/(9+5) = 9/14"
         }
       }
     ]

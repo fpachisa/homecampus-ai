@@ -134,7 +134,7 @@ const NotesViewer: React.FC<NotesViewerProps> = ({ subtopicId, onClose }) => {
       {/* Footer - Print only */}
       <div className="hidden print:block p-4 border-t border-gray-200">
         <p className="text-sm text-gray-600 text-center">
-          AI Campus Learning Platform - {subtopicName}
+          Home Campus Learning Platform - {subtopicName}
         </p>
       </div>
     </div>

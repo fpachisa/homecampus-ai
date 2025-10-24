@@ -279,7 +279,7 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
             </div>
             <div>
               <h1 className="font-semibold text-lg" style={{ color: theme.colors.textPrimary }}>
-                AI Campus
+                Home Campus
               </h1>
               <p className="text-sm" style={{ color: theme.colors.textMuted }}>
                 Select a topic to start learning!
@@ -383,7 +383,7 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
                 📚
               </div>
               <h2 className="text-2xl font-bold mb-4" style={{ color: theme.colors.textPrimary }}>
-                Welcome to AI Campus!
+                Welcome to Home Campus!
               </h2>
               <p className="text-lg mb-6" style={{ color: theme.colors.textMuted }}>
                 Your AI-powered math tutor is ready to help you master mathematics step by step.

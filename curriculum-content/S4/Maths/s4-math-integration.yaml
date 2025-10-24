@@ -1,0 +1,2251 @@
+# S4 Math Integration - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: integration-node-1
+  nodeNumber: 1
+  title: Finding Areas Using Geometric Shapes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: definiteIntegralVisualizer
+    preWrittenQuestions:
+    - problemText: Find the exact area of the region bounded by the line $y = 3x$, the x-axis, and the vertical lines $x =
+        0$ and $x = 4$. Identify the geometric shape formed.
+      avatarIntro: Calculating the area under a straight line is often easier than it looks! Identify the shape first, then
+        use the right formula.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 3x
+          lowerBound: 0
+          upperBound: 4
+          shadeArea: true
+          showValue: false
+      finalAnswer: The shape is a triangle. The area is 24 square units.
+      stepByStepGuideline:
+      - 'Step 1: Identify the geometric shape. Since the line passes through the origin (0, 0) and the integration starts
+        at x = 0, the shape formed with the x-axis is a right-angled triangle.'
+      - 'Step 2: Determine the base and height. The base is the interval length: $b = 4 - 0 = 4$. The height is the y-value
+        at the upper bound: $h = 3(4) = 12$.'
+      - 'Step 3: Calculate the area using the formula $A = \frac{1}{2}bh$. $A = \frac{1}{2}(4)(12) = 24$.'
+      - The exact area is 24 square units.
+      id: q1-1
+      questionGroup: q1
+    - problemText: A robot arm follows the path defined by the function $y = 2x + 1$. Calculate the exact area swept out beneath
+        this path (above the x-axis) between $x = 0$ and $x = 3$. What geometric shape is this?
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 2x + 1
+          lowerBound: 0
+          upperBound: 3
+          shadeArea: true
+          showValue: false
+      finalAnswer: The shape is a trapezoid. The area is 12 square units.
+      stepByStepGuideline:
+      - 'Step 1: Identify the geometric shape. Since $y=2x+1$ has a positive y-intercept and the interval starts at $x=0$,
+        the shape formed with the x-axis is a trapezoid.'
+      - 'Step 2: Determine the lengths of the parallel sides (a and b) and the height (h). Height $h = 3 - 0 = 3$. Side $a$
+        (at $x=0$): $y = 2(0) + 1 = 1$. Side $b$ (at $x=3$): $y = 2(3) + 1 = 7$.'
+      - 'Step 3: Calculate the area using the trapezoid formula $A = \frac{1}{2}(a+b)h$. $A = \frac{1}{2}(1+7)(3) = \frac{1}{2}(8)(3)
+        = 12$.'
+      - The exact area is 12 square units.
+      id: q1-2
+      questionGroup: q1
+    - problemText: Determine the exact area under the line $y = 0.5x + 4$ from $x = 2$ to $x = 6$. Describe the shape formed
+        by this region and the x-axis.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 0.5x + 4
+          lowerBound: 2
+          upperBound: 6
+          shadeArea: true
+          showValue: false
+      finalAnswer: The shape is a trapezoid. The area is 24 square units.
+      stepByStepGuideline:
+      - 'Step 1: Identify the geometric shape. Since the region is bounded by a straight line, two vertical lines, and the
+        x-axis, and the parallel sides are unequal, the shape is a trapezoid.'
+      - 'Step 2: Determine the height (h) and the parallel side lengths (a and b). Height $h = 6 - 2 = 4$. Side $a$ (at $x=2$):
+        $y = 0.5(2) + 4 = 1 + 4 = 5$. Side $b$ (at $x=6$): $y = 0.5(6) + 4 = 3 + 4 = 7$.'
+      - 'Step 3: Calculate the area using $A = \frac{1}{2}(a+b)h$. $A = \frac{1}{2}(5+7)(4) = \frac{1}{2}(12)(4) = 24$.'
+      - The exact area is 24 square units.
+      id: q1-3
+      questionGroup: q1
+    - problemText: Find the exact area of the region bounded by the horizontal line $y = 5$, the x-axis, and the vertical
+        lines $x = 1$ and $x = 7$. What common geometric shape is this?
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: '5'
+          lowerBound: 1
+          upperBound: 7
+          shadeArea: true
+          showValue: false
+      finalAnswer: The shape is a rectangle. The area is 30 square units.
+      stepByStepGuideline:
+      - 'Step 1: Identify the geometric shape. Since $y=5$ is a horizontal line, the shape formed is a rectangle.'
+      - 'Step 2: Determine the width and height of the rectangle. Width $W = 7 - 1 = 6$. Height $H = 5$.'
+      - 'Step 3: Calculate the area using $A = W \times H$. $A = 6 \times 5 = 30$.'
+      - The exact area is 30 square units.
+      id: q1-4
+      questionGroup: q1
+    - problemText: A storage facility has a roof line modeled by the function $y = 4x + 2$. If the ground level is the x-axis,
+        calculate the total area beneath this roof structure between $x = 1$ and $x = 3$. Give your answer in square units.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 4x + 2
+          lowerBound: 1
+          upperBound: 3
+          shadeArea: true
+          showValue: false
+      finalAnswer: 20 square units.
+      stepByStepGuideline:
+      - 'Step 1: Identify the geometric shape. The region is a trapezoid.'
+      - 'Step 2: Determine the height (h) and the parallel side lengths (a and b). Height $h = 3 - 1 = 2$. Side $a$ (at $x=1$):
+        $y = 4(1) + 2 = 6$. Side $b$ (at $x=3$): $y = 4(3) + 2 = 14$.'
+      - 'Step 3: Calculate the area using $A = \frac{1}{2}(a+b)h$. $A = \frac{1}{2}(6+14)(2) = \frac{1}{2}(20)(2) = 20$.'
+      - The exact area is 20 square units.
+      id: q1-5
+      questionGroup: q1
+- id: integration-node-2
+  nodeNumber: 2
+  title: Estimating Areas by Counting Squares
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A landscape architect is designing a curved flower bed whose boundary follows the function $y = x^2$ on
+        a coordinate plane. To estimate the area needed for soil, they overlay a standard 1×1 unit grid onto the design. They
+        count 8 squares that are entirely within the boundary (full squares) and 6 squares that are partially within the boundary
+        (partial squares). Using the estimation formula, what is the approximate area of the flower bed?
+      avatarIntro: 'Estimating area using grids is a powerful technique for regions we can''t easily measure. Remember the
+        core formula: full squares plus half the partial squares.'
+      mathTool: null
+      finalAnswer: 11 square units
+      stepByStepGuideline:
+      - 'Identify the counts: Full squares = 8, Partial squares = 6.'
+      - 'Apply the estimation formula: Area ≈ Full + ½(Partial).'
+      - 'Calculate the contribution from partial squares: ½ × 6 = 3.'
+      - 'Calculate the total estimated area: 8 + 3 = 11 square units. Since the grid size is 1×1, no further scaling is required.'
+      section: counting-squares
+      id: q2-1
+      questionGroup: q2
+    - problemText: A cartographer is digitizing the area of a small, semi-circular island region. They use a fine grid consisting
+        of 0.5×0.5 km squares. After counting the squares covered by the island, they determine there are 18 full squares
+        and 10 partial squares. Estimate the total area of the island in square kilometers.
+      mathTool: null
+      finalAnswer: 5.75 square km
+      stepByStepGuideline:
+      - 'Identify the counts and grid area: Full squares = 18, Partial squares = 10. The area of one grid square is 0.5 ×
+        0.5 = 0.25 square km.'
+      - 'Estimate the total number of equivalent full squares using the formula: Equivalent Full Squares = Full + ½(Partial).'
+      - 'Calculate: 18 + ½(10) = 18 + 5 = 23 equivalent full squares.'
+      - 'Calculate the total estimated area by multiplying the equivalent full squares by the grid square area: Area = 23
+        × 0.25 = 5.75 square km.'
+      section: counting-squares
+      id: q2-2
+      questionGroup: q2
+    - problemText: An engineer needs to calculate the surface area of a specialized curved component, modeled by a region
+        under the curve $y = √x$. They use a highly detailed grid where each square measures 0.25×0.25 units. The counting
+        results show 12 full squares and 8 partial squares. What is the estimated total area of the component?
+      mathTool: null
+      finalAnswer: 1 square unit
+      stepByStepGuideline:
+      - 'Identify the counts and grid area: Full squares = 12, Partial squares = 8. The area of one grid square is 0.25 ×
+        0.25 = 0.0625 square units (or 1/16).'
+      - 'Estimate the total number of equivalent full squares: Equivalent Full Squares = Full + ½(Partial).'
+      - 'Calculate: 12 + ½(8) = 12 + 4 = 16 equivalent full squares.'
+      - 'Calculate the total estimated area by multiplying by the grid area: Area = 16 × 0.0625 = 1 square unit.'
+      section: counting-squares
+      id: q2-3
+      questionGroup: q2
+    - problemText: A museum is commissioning a large mural based on a semi-circle design. The artist uses a 1×1 unit reference
+        grid. They count 15 full squares completely covered by the mural design and 12 partial squares. Estimate the total
+        area the mural will cover.
+      mathTool: null
+      finalAnswer: 21 square units
+      stepByStepGuideline:
+      - 'Identify the counts: Full squares = 15, Partial squares = 12.'
+      - 'Apply the estimation formula for a 1×1 grid: Area ≈ Full + ½(Partial).'
+      - 'Calculate the contribution from partial squares: ½ × 12 = 6.'
+      - 'Calculate the total estimated area: 15 + 6 = 21 square units.'
+      section: counting-squares
+      id: q2-4
+      questionGroup: q2
+    - problemText: In a physics experiment, the area under a non-linear force-distance graph (which approximates $y = x^2$)
+        represents the work done. A researcher overlays a grid of 0.5×0.5 units onto the graph. They count 7 full squares
+        and 5 partial squares beneath the curve. Estimate the total work done (area) represented by this region.
+      mathTool: null
+      finalAnswer: 2.375 units of work
+      stepByStepGuideline:
+      - 'Identify the counts and grid area: Full squares = 7, Partial squares = 5. The area of one grid square is 0.5 × 0.5
+        = 0.25 square units.'
+      - 'Estimate the total number of equivalent full squares: Equivalent Full Squares = Full + ½(Partial).'
+      - 'Calculate: 7 + ½(5) = 7 + 2.5 = 9.5 equivalent full squares.'
+      - 'Calculate the total estimated area: Area = 9.5 × 0.25 = 2.375 units of work.'
+      section: counting-squares
+      id: q2-5
+      questionGroup: q2
+- id: integration-node-3
+  nodeNumber: 3
+  title: Rectangle Approximation Method
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A chemical engineer is estimating the total volume of product flow ($V$) over a 2-hour period, where the
+        rate of flow is modeled by $f(t) = t^2 + 1$ (in liters per hour). Use the left endpoint method with $n=4$ subintervals
+        to approximate the area under the curve from $t=0$ to $t=2$. First, calculate the width $\Delta t$, and then find
+        the sum $L_4$.
+      avatarIntro: Welcome! Approximating areas under curves is a fundamental skill in calculus. Let's practice using the
+        left endpoint method for this real-world application.
+      mathTool: null
+      finalAnswer: $$\Delta t = 0.5$$. $$L_4 = 3.25$$ liters
+      stepByStepGuideline:
+      - 'Calculate the width of each subinterval: $$\Delta t = \frac{b - a}{n} = \frac{2 - 0}{4} = 0.5$$.'
+      - 'Identify the left endpoints for the four intervals: $t_0=0, t_1=0.5, t_2=1.0, t_3=1.5$.'
+      - 'Evaluate the function $f(t) = t^2 + 1$ at these points:'
+      - $$f(0) = 1$$
+      - $$f(0.5) = 1.25$$
+      - $$f(1.0) = 2$$
+      - $$f(1.5) = 3.25$$
+      - 'Calculate the left Riemann sum: $$L_4 = \Delta t \cdot [f(0) + f(0.5) + f(1.0) + f(1.5)]$$'
+      - $$L_4 = 0.5 \cdot [1 + 1.25 + 2 + 3.25] = 0.5 \cdot [6.5] = 3.25$$ square units (liters).
+      id: q3-1
+      questionGroup: q3
+    - problemText: A runner's speed (in meters per second) is modeled by $v(t) = 2t$ over a time interval from $t=1$ to $t=5$
+        seconds. Approximate the total distance traveled (the area under the speed curve) using the right endpoint method
+        with $n=4$ subintervals. Calculate $\Delta t$ and the resulting approximation $R_4$.
+      mathTool: null
+      finalAnswer: $$\Delta t = 1$$. $$R_4 = 28$$ meters
+      stepByStepGuideline:
+      - 'Calculate the width of each subinterval: $$\Delta t = \frac{b - a}{n} = \frac{5 - 1}{4} = 1$$.'
+      - 'Identify the right endpoints for the four intervals: $t_1=2, t_2=3, t_3=4, t_4=5$.'
+      - 'Evaluate the function $v(t) = 2t$ at these points:'
+      - $$v(2) = 4$$
+      - $$v(3) = 6$$
+      - $$v(4) = 8$$
+      - $$v(5) = 10$$
+      - 'Calculate the right Riemann sum: $$R_4 = \Delta t \cdot [v(2) + v(3) + v(4) + v(5)]$$'
+      - $$R_4 = 1 \cdot [4 + 6 + 8 + 10] = 28$$ square units (meters).
+      id: q3-2
+      questionGroup: q3
+    - problemText: An architect models a section of a curved wall using the function $f(x) = 4 - x^2$ over the domain $x=0$
+        to $x=2$. To estimate the surface area, use the midpoint method with only $n=2$ rectangles. Determine $\Delta x$ and
+        the resulting approximation $M_2$.
+      mathTool: null
+      finalAnswer: $$\Delta x = 1$$. $$M_2 = 5.5$$ square units
+      stepByStepGuideline:
+      - 'Calculate the width of each subinterval: $$\Delta x = \frac{b - a}{n} = \frac{2 - 0}{2} = 1$$.'
+      - 'Identify the two intervals: [0, 1] and [1, 2].'
+      - 'Determine the midpoints of the intervals: $$\bar{x}_1 = 0.5$$ and $$\bar{x}_2 = 1.5$$.'
+      - 'Evaluate the function $f(x) = 4 - x^2$ at the midpoints:'
+      - $$f(0.5) = 4 - (0.5)^2 = 4 - 0.25 = 3.75$$
+      - $$f(1.5) = 4 - (1.5)^2 = 4 - 2.25 = 1.75$$
+      - 'Calculate the midpoint Riemann sum: $$M_2 = \Delta x \cdot [f(0.5) + f(1.5)]$$'
+      - $$M_2 = 1 \cdot [3.75 + 1.75] = 5.5$$ square units.
+      id: q3-3
+      questionGroup: q3
+    - problemText: In a thermodynamics experiment, the work done is represented by the area under the curve $f(x) = \frac{1}{x}$
+        from $x=1$ to $x=3$. The diagram below shows the approximation using the left endpoint method with $n=4$ rectangles.
+        Calculate the value of the approximation $L_4$ shown in the diagram. Express your answer as a simplified fraction.
+      mathTool:
+        toolName: areaApproximation
+        parameters:
+          functionExpression: 1/x
+          lowerBound: 1
+          upperBound: 3
+          rectangles: 4
+          method: left
+          showExact: false
+      finalAnswer: $$L_4 = \frac{77}{60}$$
+      stepByStepGuideline:
+      - 'Calculate the width of each subinterval: $$\Delta x = \frac{3 - 1}{4} = 0.5$$.'
+      - 'Identify the left endpoints: $x_0=1, x_1=1.5, x_2=2, x_3=2.5$.'
+      - 'Evaluate the function $f(x) = 1/x$ at these points:'
+      - $$f(1) = 1$$
+      - $$f(1.5) = 1/1.5 = 2/3$$
+      - $$f(2) = 1/2$$
+      - $$f(2.5) = 1/2.5 = 2/5$$
+      - 'Calculate the left Riemann sum: $$L_4 = 0.5 \cdot [1 + 2/3 + 1/2 + 2/5]$$'
+      - 'Find a common denominator (30) for the terms in brackets:'
+      - $$L_4 = 0.5 \cdot [\frac{30}{30} + \frac{20}{30} + \frac{15}{30} + \frac{12}{30}]$$
+      - $$L_4 = 0.5 \cdot \frac{77}{30} = \frac{1}{2} \cdot \frac{77}{30} = \frac{77}{60}$$.
+      id: q3-4
+      questionGroup: q3
+    - problemText: A biologist is modeling the rate of change of a certain insect population using the function $P'(t) = t^2
+        - 2t$ (in thousands of insects per year) from $t=2$ to $t=6$ years. Use the right endpoint method with $n=4$ rectangles
+        to estimate the total population change during this period. Determine $\Delta t$ and the corresponding sum $R_4$.
+      mathTool: null
+      finalAnswer: $$\Delta t = 1$$. $$R_4 = 50$$ thousand insects
+      stepByStepGuideline:
+      - 'Calculate the width of each subinterval: $$\Delta t = \frac{b - a}{n} = \frac{6 - 2}{4} = 1$$.'
+      - 'Identify the right endpoints for the four intervals: $t_1=3, t_2=4, t_3=5, t_4=6$.'
+      - 'Evaluate the rate function $P''(t) = t^2 - 2t$ at these points:'
+      - $$P'(3) = 3^2 - 2(3) = 9 - 6 = 3$$
+      - $$P'(4) = 4^2 - 2(4) = 16 - 8 = 8$$
+      - $$P'(5) = 5^2 - 2(5) = 25 - 10 = 15$$
+      - $$P'(6) = 6^2 - 2(6) = 36 - 12 = 24$$
+      - 'Calculate the right Riemann sum: $$R_4 = \Delta t \cdot [P''(3) + P''(4) + P''(5) + P''(6)]$$'
+      - $$R_4 = 1 \cdot [3 + 8 + 15 + 24] = 50$$ thousand insects.
+      id: q3-5
+      questionGroup: q3
+- id: integration-node-4
+  nodeNumber: 4
+  title: From Approximation to Integration
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: riemannSumVisualizer
+    preWrittenQuestions:
+    - problemText: 'An engineering firm models the density profile of a new composite material using the function $f(x) =
+        x^2 + 1$ over the interval $x = 0$ to $x = 1$. The accumulated density corresponds to the area under this curve. They
+        calculate the Left Riemann sum ($L_n$) for increasing numbers of partitions:
+
+
+        $L_{10} \approx 1.285$
+
+        $L_{100} \approx 1.328$
+
+        $L_{1000} \approx 1.3328$
+
+
+        The exact accumulated density is $4/3 \approx 1.3333$. Explain the relationship between the limit of the Riemann sum,
+        $\lim_{n\to\infty} L_n$, and the definite integral $\int_0^1 (x^2+1) dx$.'
+      avatarIntro: This problem asks you to connect the concept of finding the limit of approximations to the formal notation
+        of integration. Think about what happens to the rectangle width as the number of rectangles increases indefinitely.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2 + 1
+          lowerBound: 0
+          upperBound: 1
+          partitions: 8
+          showMethods:
+          - left
+      finalAnswer: 'The sequence shows that as $n \to \infty$, the approximations approach the exact area $4/3$. The relationship
+        is that the definite integral $\int_0^1 (x^2+1) dx$ is defined as the limit of the Riemann sums: $\lim_{n\to\infty}
+        \sum_{i=1}^n f(x_i^*) \Delta x$. This means the integral represents the exact accumulated density, not an approximation.'
+      stepByStepGuideline:
+      - 'Analyze the numerical progression: Notice that as $n$ increases by a factor of 10, the approximated value gets closer
+        to $4/3 \approx 1.3333$.'
+      - 'Define the limit: Recognize that the process of taking $n \to \infty$ forces the width of the rectangles ($\Delta
+        x$) to approach zero, resulting in an exact measurement of the area.'
+      - 'Connect notation: State that the integral symbol $\int$ is shorthand for the limit process $\lim_{n\to\infty} \sum$,
+        and $dx$ represents the infinitesimal width (the limit of $\Delta x$).'
+      - 'Conclude the meaning: Therefore, $\int_0^1 (x^2+1) dx = \lim_{n\to\infty} L_n$, which yields the exact accumulated
+        density.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: 'A financial analyst models the rate of growth of an investment using $f(x) = 2x$ (rate in thousands per
+        year) over a 3-year period ($x = 0$ to $x = 3$). The total accumulated growth is the area under this function. They
+        calculate the Right Riemann sum ($R_n$):
+
+
+        $R_{4} = 11.25$
+
+        $R_{8} = 10.125$
+
+        $R_{16} = 9.5625$
+
+
+        The exact accumulated growth is 9 thousand. Explain what happens to the width of the rectangles, $\Delta x$, as $n$
+        progresses in this sequence and how this relates to the differential $dx$ in the exact area notation $\int_0^3 2x
+        \, dx$.'
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: 2*x
+          lowerBound: 0
+          upperBound: 3
+          partitions: 16
+          showMethods:
+          - right
+      finalAnswer: As $n$ increases (4, 8, 16, ...), the width of the rectangles $\Delta x = 3/n$ decreases, approaching zero.
+        When $n \to \infty$, $\Delta x \to 0$. The differential $dx$ in the integral notation $\int_0^3 2x \, dx$ represents
+        this infinitesimal width achieved in the limit, ensuring that the sum provides the exact area (9), rather than an
+        approximation.
+      stepByStepGuideline:
+      - Calculate $\Delta x$ for the given $n$ values (e.g., $\Delta x_4 = 3/4 = 0.75$; $\Delta x_{16} = 3/16 = 0.1875$).
+        Observe that the width decreases.
+      - 'Explain the limiting process: As the number of rectangles ($n$) approaches infinity, the width of each rectangle
+        ($\Delta x$) approaches zero.'
+      - 'Define $dx$: State that $dx$ is the notation used in calculus to represent the limit of $\Delta x$ as $n \to \infty$.
+        It signifies an infinitesimally small width.'
+      - 'Connect to accuracy: Conclude that because the integral uses $dx$, it sums infinitely many infinitesimally thin rectangles,
+        resulting in the exact area of 9.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: A sensor measures the accumulated concentration of a pollutant, modeled by $f(x) = 3x$, between $x = 1$
+        and $x = 3$. The exact accumulated concentration is 12 units. Approximations using Left ($L_n$) and Right ($R_n$)
+        Riemann sums are calculated for $n=5, 10, 20$. Explain why both $L_n$ and $R_n$ must converge to the same value (12)
+        as $n$ increases, even though one is an underestimate and the other is an overestimate for this specific function.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: 3*x
+          lowerBound: 1
+          upperBound: 3
+          partitions: 10
+          showMethods:
+          - left
+          - right
+      finalAnswer: 'Since $f(x) = 3x$ is continuous on $[1, 3]$, the exact area must lie between $L_n$ and $R_n$. As $n \to
+        \infty$, the difference between $R_n$ and $L_n$ approaches zero because the error (the area of the strips of space
+        at the top of the rectangles) vanishes. Since they bracket the true area, both the limit of the left sum and the limit
+        of the right sum must equal the exact value defined by the integral: $\lim_{n\to\infty} L_n = \lim_{n\to\infty} R_n
+        = \int_1^3 3x \, dx = 12$.'
+      stepByStepGuideline:
+      - 'Identify the function property: Recognize that $f(x) = 3x$ is increasing on $[1, 3]$. This means $L_n$ will always
+        underestimate and $R_n$ will always overestimate the true area.'
+      - 'Analyze the difference: State that the difference between $R_n$ and $L_n$ is $(f(b) - f(a))\Delta x$. As $n \to \infty$,
+        $\Delta x \to 0$, so the difference between the two sums approaches zero.'
+      - 'Apply the Squeeze Theorem (conceptually): Since the exact area is trapped between the decreasing $R_n$ and the increasing
+        $L_n$, and the distance between them shrinks to zero, both limits must converge to the exact area (12).'
+      - 'Relate to integration: Confirm that the definite integral notation captures this singular limit value, regardless
+        of the approximation method used.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: 'A computer graphics program models a curved shading area using $f(x) = x^2$ from $x = 0$ to $x = 2$. The
+        total shaded area is exactly $8/3$. To verify the area, the program calculates Midpoint Riemann sums ($M_n$) for increasing
+        partitions:
+
+
+        $M_{10} \approx 2.6656$
+
+        $M_{100} \approx 2.66665$
+
+        $M_{1000} \approx 2.6666665$
+
+
+        If the Riemann sum is written as $S_n = \sum_{i=1}^n f(x_i) \Delta x$, explain how the integral notation $\int_0^2
+        x^2 dx$ fundamentally represents the concept of taking the limit of this finite sum.'
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2
+          lowerBound: 0
+          upperBound: 2
+          partitions: 20
+          showMethods:
+          - midpoint
+      finalAnswer: The integral notation $\int_0^2 x^2 dx$ is a compact way of writing $\lim_{n\to\infty} S_n$. The $\int$
+        symbol evolved from an elongated 'S' (for summation), representing the infinite sum of area contributions. $f(x)$
+        represents the height of the rectangle, and $dx$ represents the infinitesimal width (limit of $\Delta x$). This transition
+        from $\sum$ (finite sum of rectangles) to $\int$ (infinite sum of infinitesimally thin strips) is what allows us to
+        calculate the exact shaded area of $8/3$.
+      stepByStepGuideline:
+      - 'Analyze the progression: Note that the values quickly approach $8/3 \approx 2.666667$, confirming convergence.'
+      - 'Identify the components of the Riemann sum: $S_n = \sum_{i=1}^n f(x_i) \Delta x$ consists of summing $n$ finite rectangles.'
+      - 'Identify the components of the integral: $\int_a^b f(x) dx$ consists of the integral sign (infinite sum), the integrand
+        $f(x)$ (height), and $dx$ (infinitesimal width).'
+      - 'Establish the connection: Explain that the integral is the formal definition of the limit: $\int_a^b f(x) dx = \lim_{n\to\infty}
+        \sum_{i=1}^n f(x_i) \Delta x$. This limit process is what converts the approximation into the exact area.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: A manufacturing quality control process tracks the rate of accumulated error, modeled by $f(x) = x^2 +
+        1$ over the time interval $x = 0$ to $x = 2$. The total accumulated error is the area under this curve, which is exactly
+        $14/3$. If we use rectangles to approximate this area, explain why the area calculated by the definite integral must
+        be considered the exact value, while any Riemann sum approximation (Left, Right, or Midpoint) using a finite number
+        of rectangles ($n$) is inherently inaccurate.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2 + 1
+          lowerBound: 0
+          upperBound: 2
+          partitions: 8
+          showMethods:
+          - left
+          - right
+          - midpoint
+      finalAnswer: A finite Riemann sum is inaccurate because each rectangle has a finite width ($\Delta x > 0$), meaning
+        the height is determined by a single point within that interval, leaving small gaps or overlaps between the top of
+        the rectangle and the curve. This error disappears only when we take the limit as $n \to \infty$. The definite integral
+        $\int_0^2 (x^2 + 1) dx$ represents this limit where the rectangles are infinitesimally thin ($dx$), eliminating all
+        gaps and providing the mathematically exact accumulated error of $14/3$.
+      stepByStepGuideline:
+      - 'Define Approximation Error: Explain that for any finite $n$, there is an inherent error because the top edge of the
+        rectangle does not perfectly follow the curve $f(x)$.'
+      - 'Describe the limit condition: State that accuracy is only achieved when the width of the rectangles, $\Delta x$,
+        shrinks to zero, which happens when $n \to \infty$.'
+      - 'Connect the integral to exactness: Define the integral as the exact area because it is the limit of the Riemann sums.
+        It sums infinitely many terms, each representing an infinitesimally small area contribution ($f(x) dx$).'
+      - 'Contrast Approximation vs. Integration: Conclude that Riemann sums are estimates of the area, while the definite
+        integral *is* the area.'
+      id: q4-5
+      questionGroup: q4
+- id: integration-node-5
+  nodeNumber: 5
+  title: Understanding Antiderivatives
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: If a function $F(x) = x^3$ has a derivative $f(x) = 3x^2$, how do we define the relationship between $F(x)$
+        and $f(x)$? Verify this definition by showing the differentiation step.
+      avatarIntro: Welcome! Understanding the relationship between a function and its derivative is key to integration. Let's
+        start with the definition of an antiderivative.
+      mathTool: null
+      finalAnswer: '$F(x) = x^3$ is an antiderivative of $f(x) = 3x^2$. Verification: $d/dx[x^3] = 3x^2$.'
+      stepByStepGuideline:
+      - 'Recall the definition of an antiderivative: If $F''(x) = f(x)$, then $F(x)$ is an antiderivative of $f(x)$.'
+      - Since the problem states $d/dx[x^3] = 3x^2$, $F(x) = x^3$ is by definition an antiderivative of $f(x) = 3x^2$.
+      - 'Verify by performing the differentiation: $d/dx[x^3] = 3x^{3-1} = 3x^2$. This matches $f(x)$. The verification is
+        successful.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: A process has a rate of accumulation defined by the function $f(x) = 8x$. Find the accumulated quantity
+        function, $F(x)$, which is the antiderivative of $f(x)$. Check your result by differentiating $F(x)$.
+      mathTool: null
+      finalAnswer: '$F(x) = 4x^2$. Verification: $d/dx[4x^2] = 8x$.'
+      stepByStepGuideline:
+      - To find the antiderivative of $f(x) = 8x$, we reverse the power rule. We look for a function $F(x)$ such that $F'(x)
+        = 8x$.
+      - We know that differentiation decreases the power by 1, so the antiderivative must have power 2 ($x^2$).
+      - If $F(x) = Ax^2$, then $F'(x) = 2Ax$. We require $2A = 8$, so $A = 4$.
+      - Thus, $F(x) = 4x^2$.
+      - 'Verification: Differentiate the result: $d/dx[4x^2] = 4 \cdot 2x = 8x$. This matches $f(x)$.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: Find an antiderivative, $G(x)$, for the function $g(x) = 5x^4$. State the function $G(x)$ and confirm that
+        $G'(x) = g(x)$.
+      mathTool: null
+      finalAnswer: '$G(x) = x^5$. Confirmation: $d/dx[x^5] = 5x^4$.'
+      stepByStepGuideline:
+      - To find the antiderivative of $g(x) = 5x^4$, consider what function yields $5x^4$ when differentiated.
+      - Since differentiation reduces the power by 1, the original function must have power 5 ($x^5$).
+      - If $G(x) = x^5$, then $G'(x) = 5x^{5-1} = 5x^4$.
+      - The antiderivative is $G(x) = x^5$.
+      - 'Confirm the result by differentiating $G(x)$: $d/dx[x^5] = 5x^4$. This confirms $G''(x) = g(x)$.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: If $h(x)$ is defined as a constant function $h(x) = 12$, find an antiderivative $H(x)$. What function must
+        be differentiated to obtain the constant 12? Verify your result.
+      mathTool: null
+      finalAnswer: '$H(x) = 12x$. Verification: $d/dx[12x] = 12$.'
+      stepByStepGuideline:
+      - Recall that the derivative of $cx$ is $c$.
+      - If $h(x) = 12$, we are looking for a function $H(x)$ such that $H'(x) = 12$.
+      - The antiderivative is $H(x) = 12x$.
+      - 'Verification: Differentiate $H(x)$: $d/dx[12x] = 12$. This matches $h(x)$.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: Determine an antiderivative $A(x)$ for the polynomial expression $a(x) = 2x + 4$. Note that you must find
+        the antiderivative for each term separately. Show your verification step clearly.
+      mathTool: null
+      finalAnswer: '$A(x) = x^2 + 4x$. Verification: $d/dx[x^2 + 4x] = 2x + 4$.'
+      stepByStepGuideline:
+      - The antiderivative of a sum is the sum of the antiderivatives. We treat $a(x) = 2x + 4$ term by term.
+      - 'Term 1: Antiderivative of $2x$. Since $d/dx[x^2] = 2x$, the antiderivative is $x^2$.'
+      - 'Term 2: Antiderivative of $4$. Since $d/dx[4x] = 4$, the antiderivative is $4x$.'
+      - The combined antiderivative is $A(x) = x^2 + 4x$.
+      - 'Verification: Differentiate $A(x)$: $d/dx[x^2 + 4x] = d/dx[x^2] + d/dx[4x] = 2x + 4$. This matches $a(x)$.'
+      id: q5-5
+      questionGroup: q5
+- id: integration-node-6
+  nodeNumber: 6
+  title: The Constant of Integration
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: When calculating the indefinite integral $\int 6x \, dx$, we obtain the result $3x^2 + C$. Explain in detail
+        why the constant of integration, $C$, must be included, even though $\frac{d}{dx}[3x^2] = 6x$. What fundamental property
+        of differentiation necessitates the inclusion of $C$?
+      avatarIntro: Understanding the constant of integration is crucial for mastering antiderivatives. Let's start with a
+        foundational conceptual question.
+      finalAnswer: The constant of integration $C$ must be included because the derivative of any constant is zero, i.e.,
+        $\frac{d}{dx}[C] = 0$. This means that any function of the form $3x^2 + C$ will differentiate back to $6x$. Since
+        differentiation 'loses' information about the original constant, $C$ represents the entire family of functions whose
+        derivative is $6x$.
+      stepByStepGuideline:
+      - 'Recall the definition of the antiderivative: $F(x)$ is an antiderivative of $f(x)$ if $F''(x) = f(x)$.'
+      - 'Calculate the derivative of a general antiderivative: $\frac{d}{dx}[3x^2 + C]$.'
+      - 'Apply the constant rule for differentiation: $\frac{d}{dx}[C] = 0$. Therefore, $\frac{d}{dx}[3x^2 + C] = 6x + 0 =
+        6x$.'
+      - Conclude that because the constant disappears during differentiation, the $+C$ must be included in the indefinite
+        integral to represent all possible functions (the family of antiderivatives) that could have been differentiated to
+        yield $6x$.
+      id: q6-1
+      questionGroup: q6
+    - problemText: A particle's velocity is modeled by $v(t) = 2t$ m/s. The position function $s(t)$ is the antiderivative
+        of the velocity function. If the particle's position is measured such that $s(1) = 5$ meters, find the specific position
+        function $s(t)$.
+      finalAnswer: $s(t) = t^2 + 4$
+      stepByStepGuideline:
+      - 'Find the general position function $s(t)$ by integrating the velocity function $v(t)$: $s(t) = \int 2t \, dt = t^2
+        + C$.'
+      - 'Use the initial condition $s(1) = 5$ to solve for the constant $C$. Substitute $t=1$ and $s(t)=5$ into the general
+        equation: $5 = (1)^2 + C$.'
+      - 'Solve the equation for $C$: $5 = 1 + C$, so $C = 4$.'
+      - 'Write the specific position function using the calculated value of $C$: $s(t) = t^2 + 4$.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: Find the particular antiderivative $F(x)$ of the function $f(x) = 4x^3$ that satisfies the initial condition
+        $F(0) = -2$.
+      finalAnswer: $F(x) = x^4 - 2$
+      stepByStepGuideline:
+      - 'Find the general antiderivative $F(x)$ by integrating $f(x)$: $F(x) = \int 4x^3 \, dx = x^4 + C$.'
+      - 'Use the initial condition $F(0) = -2$ to solve for $C$. Substitute $x=0$ and $F(x)=-2$ into the general equation:
+        $-2 = (0)^4 + C$.'
+      - 'Solve for $C$: $C = -2$.'
+      - 'State the particular antiderivative $F(x)$: $F(x) = x^4 - 2$.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: If $F(x)$ is an antiderivative of $f(x) = x$, we know $F(x) = \frac{1}{2}x^2 + C$. Describe the relationship
+        between the graphs of $F_1(x) = \frac{1}{2}x^2 + 3$ (where $C=3$) and $F_2(x) = \frac{1}{2}x^2 - 5$ (where $C=-5$).
+        What geometric transformation relates these two curves, and how does this illustrate the concept of the family of
+        antiderivatives?
+      finalAnswer: The graph of $F_1(x)$ is related to $F_2(x)$ by a vertical translation (shift). Specifically, $F_1(x)$
+        is 8 units vertically above $F_2(x)$. This illustrates that all antiderivatives of $f(x)$ are vertical shifts of one
+        another, meaning they all share the exact same shape and slope (derivative) at every corresponding $x$-value.
+      stepByStepGuideline:
+      - Identify that both $F_1(x)$ and $F_2(x)$ have the same functional form ($\frac{1}{2}x^2$) but differ only by a constant.
+      - 'Calculate the difference between the two constants: $3 - (-5) = 8$.'
+      - 'Describe the geometric transformation: Since the difference is constant, the graph of $F_1(x)$ is a vertical translation
+        of the graph of $F_2(x)$ by 8 units upwards.'
+      - 'Explain the significance: This shows that the constant of integration $C$ controls the vertical position of the antiderivative
+        curve without changing its instantaneous slope or shape, which confirms why they share the same derivative $f(x)$.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: Show that $M(x) = x^3 + 10$ and $D(x) = x^3 - 75$ are both valid antiderivatives of $f(x) = 3x^2$. Explain
+        why the existence of these two different functions reinforces the need to write $+ C$ when finding the indefinite
+        integral $\int 3x^2 \, dx$.
+      finalAnswer: Both $M(x)$ and $D(x)$ are valid antiderivatives because their derivatives are $M'(x) = 3x^2 + 0 = 3x^2$
+        and $D'(x) = 3x^2 - 0 = 3x^2$. The need for $+ C$ is reinforced because the indefinite integral represents the set
+        of *all* functions whose derivative is $3x^2$. Since $M(x)$ and $D(x)$ (which differ by a constant) both satisfy this
+        condition, the general solution must use $+ C$ to encompass every possibility.
+      stepByStepGuideline:
+      - 'Verify $M(x)$ is an antiderivative by differentiating it: $M''(x) = \frac{d}{dx}[x^3 + 10] = 3x^2 + 0 = 3x^2$.'
+      - 'Verify $D(x)$ is an antiderivative by differentiating it: $D''(x) = \frac{d}{dx}[x^3 - 75] = 3x^2 - 0 = 3x^2$.'
+      - Note that both functions differentiate to the original function $f(x) = 3x^2$.
+      - Explain that since the indefinite integral asks for the general form of *all* functions that satisfy the derivative
+        condition, and since functions differing only by a constant (like 10 and -75) share the same derivative, the solution
+        must include $+ C$ to generalize the result.
+      id: q6-5
+      questionGroup: q6
+- id: integration-node-7
+  nodeNumber: 7
+  title: Indefinite Integral Notation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'In the expression $\int (4x^3 - x) dx$, identify the following components and explain their meaning: (a)
+        The elongated symbol ''$\int$'', (b) The expression $(4x^3 - x)$, and (c) The differential ''$dx$''.'
+      avatarIntro: Understanding integral notation is the first step toward mastering calculus. Let's break down what each
+        part of the indefinite integral means!
+      mathTool: null
+      finalAnswer: (a) $\int$ is the integral sign, which historically originates from an elongated 'S' representing summation.
+        It signals the operation of finding the antiderivative. (b) $(4x^3 - x)$ is the integrand, which is the function being
+        integrated (the rate of change). (c) $dx$ is the differential, indicating that the integration is performed with respect
+        to the variable $x$.
+      stepByStepGuideline:
+      - Identify the integral sign ($\int$). Explain its origin (elongated S for Sum) and its operational meaning (find the
+        antiderivative/integral).
+      - Identify the function placed between the integral sign and the differential ($4x^3 - x$). This function is called
+        the integrand.
+      - Identify the differential ($dx$). This term specifies the variable of integration.
+      - Ensure all three components are clearly defined based on standard calculus notation.
+      id: q7-1
+      questionGroup: q7
+    - problemText: Write the proper mathematical notation for finding 'the indefinite integral of the function $f(t) = 2t
+        + 5$ with respect to the variable $t$'.
+      mathTool: null
+      finalAnswer: $$\int (2t + 5) dt$$
+      stepByStepGuideline:
+      - The phrase 'indefinite integral' requires the use of the integral sign ($\int$).
+      - The function being integrated, known as the integrand, is $(2t + 5)$. Place this immediately after the integral sign.
+      - The phrase 'with respect to the variable $t$' requires the differential $dt$ to close the notation.
+      - 'Combine these components to form the final indefinite integral expression: $\int (2t + 5) dt$.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'Consider the two types of integral notation: $\int f(x) dx$ and $\int_a^b f(x) dx$. Explain the fundamental
+        conceptual difference between the indefinite integral (the first notation) and the definite integral (the second notation),
+        focusing on the role of the limits of integration ($a$ and $b$).'
+      mathTool: null
+      finalAnswer: The indefinite integral $\int f(x) dx$ represents the family of all antiderivatives of $f(x)$ and results
+        in a *function* (often written as $F(x) + C$). The definite integral $\int_a^b f(x) dx$ represents the net accumulated
+        change or area under the curve of $f(x)$ from $x=a$ to $x=b$. Since it has limits of integration ($a$ and $b$), it
+        results in a single *numerical value*.
+      stepByStepGuideline:
+      - Define the indefinite integral ($\int f(x) dx$) as the process of finding the antiderivative.
+      - State the result of the indefinite integral is a family of functions (hence the required $+ C$).
+      - Define the definite integral ($\int_a^b f(x) dx$) as the area or net accumulated change over a specific interval.
+      - State the result of the definite integral is a specific numerical value, derived by evaluating the antiderivative
+        at the limits $b$ and $a$ (Fundamental Theorem of Calculus).
+      id: q7-3
+      questionGroup: q7
+    - problemText: Analyze the integral expression $\int e^u du$. (a) What is the integrand? (b) What is the variable of integration?
+        (c) How would the meaning change if the expression were incorrectly written as $\int e^u dx$?
+      mathTool: null
+      finalAnswer: (a) The integrand is $e^u$. (b) The variable of integration is $u$, indicated by the differential $du$.
+        (c) If the expression were written as $\int e^u dx$, it would imply that $u$ is treated as a constant, and the integration
+        is being performed with respect to $x$. This is generally incorrect or impractical unless $u$ is defined as a constant
+        independent of $x$.
+      stepByStepGuideline:
+      - Identify the function immediately following the integral sign as the integrand ($e^u$).
+      - Identify the variable indicated by the differential ($du$) as the variable of integration ($u$).
+      - Explain that the differential $dx$ dictates the variable of integration.
+      - 'Describe the implication of $\int e^u dx$: $e^u$ would be treated as a constant quantity relative to $x$, leading
+        to the result $e^u x + C$ (assuming $u$ is independent of $x$). This highlights the importance of matching the integrand
+        variable with the differential variable.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: Translate the mathematical notation $\int (x^3 + x^2 + x) dx$ into a clear, descriptive phrase, explaining
+        the operation being requested in terms of antiderivatives. Also, mention the historical origin of the $\int$ symbol.
+      mathTool: null
+      finalAnswer: This notation requests 'the family of all antiderivatives of the function $x^3 + x^2 + x$ with respect
+        to the variable $x$'. The integral sign ($\int$) is an elongated 'S', which stands for 'Sum', connecting integration
+        conceptually to the process of summing infinitely small areas (Riemann sums).
+      stepByStepGuideline:
+      - 'Start by translating the operation specified by the integral sign: finding the antiderivative or indefinite integral.'
+      - 'Identify the integrand: $x^3 + x^2 + x$.'
+      - 'Identify the variable of integration based on $dx$: with respect to $x$.'
+      - Combine these elements into a descriptive phrase.
+      - Finally, provide the historical context of the $\int$ symbol (elongated S for Sum).
+      id: q7-5
+      questionGroup: q7
+- id: integration-node-8
+  nodeNumber: 8
+  title: Basic Integration Formulas
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the indefinite integral of the rate function $f(x) = x^5$.
+      avatarIntro: Welcome! Now that we understand antiderivatives, let's practice applying the fundamental integration formulas.
+        Remember to always include the constant of integration, + C.
+      mathTool: null
+      finalAnswer: x⁶/6 + C
+      stepByStepGuideline:
+      - Identify the function type. This is a power function, $x^n$, where $n=5$.
+      - 'Apply the power rule for integration: $\int x^n dx = \frac{x^{n+1}}{n+1} + C$.'
+      - 'Calculate the new exponent: $5 + 1 = 6$.'
+      - 'Divide by the new exponent: $\frac{x^6}{6}$.'
+      - The indefinite integral is $\frac{x^6}{6} + C$.
+      id: q8-1
+      questionGroup: q8
+    - problemText: Evaluate the indefinite integral $\int 8 \, dx$.
+      mathTool: null
+      finalAnswer: 8x + C
+      stepByStepGuideline:
+      - Identify the function type. This is the integral of a constant, $k=8$.
+      - 'Apply the constant rule for integration: $\int k \, dx = kx + C$.'
+      - 'Substitute the constant value: $8x + C$.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: Determine the antiderivative of $g(x) = 2e^x$.
+      mathTool: null
+      finalAnswer: 2eˣ + C
+      stepByStepGuideline:
+      - Identify the function type. This involves the exponential function $e^x$.
+      - 'Recall the integration rule for exponentials: $\int e^x dx = e^x + C$.'
+      - 'Apply the constant multiple rule: $\int 2e^x dx = 2 \int e^x dx$.'
+      - The result is $2e^x + C$.
+      id: q8-3
+      questionGroup: q8
+    - problemText: Calculate the indefinite integral $\int 2 \sin(x) \, dx$.
+      mathTool: null
+      finalAnswer: -2cos(x) + C
+      stepByStepGuideline:
+      - Identify the function type. This involves the trigonometric function $\sin(x)$.
+      - 'Recall the integration rule for sine: $\int \sin(x) dx = -\cos(x) + C$.'
+      - 'Apply the constant multiple rule: $\int 2 \sin(x) dx = 2 \int \sin(x) dx$.'
+      - The result is $2(-\cos(x)) + C$, which simplifies to $-2\cos(x) + C$.
+      id: q8-4
+      questionGroup: q8
+    - problemText: Evaluate $\int 3 \cos(x) \, dx$.
+      mathTool: null
+      finalAnswer: 3sin(x) + C
+      stepByStepGuideline:
+      - Identify the function type. This involves the trigonometric function $\cos(x)$.
+      - 'Recall the integration rule for cosine: $\int \cos(x) dx = \sin(x) + C$.'
+      - 'Apply the constant multiple rule: $\int 3 \cos(x) dx = 3 \int \cos(x) dx$.'
+      - The result is $3\sin(x) + C$.
+      id: q8-5
+      questionGroup: q8
+- id: integration-node-9
+  nodeNumber: 9
+  title: The Power Rule for Integration
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Use the power rule for integration, $\int x^n \, dx = \frac{x^{n+1}}{n+1} + C$, to find the indefinite
+        integral of $f(x) = x^6$.
+      avatarIntro: Great job reaching this section! We are going to practice integrating basic powers of x, ensuring we handle
+        positive, fractional, and negative exponents correctly.
+      mathTool: null
+      finalAnswer: x⁷/7 + C
+      stepByStepGuideline:
+      - Identify the exponent $n$. Here, $n=6$.
+      - 'Apply the power rule: increase the exponent by 1 ($n+1 = 7$) and divide by the new exponent.'
+      - $\int x^6 \, dx = \frac{x^{6+1}}{6+1} + C$
+      - 'Simplify the result: $\frac{x^7}{7} + C$.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: Evaluate the indefinite integral $\int \sqrt[3]{x} \, dx$. You must first rewrite the cube root notation
+        using a fractional exponent.
+      mathTool: null
+      finalAnswer: (3/4)x^(4/3) + C
+      stepByStepGuideline:
+      - 'Rewrite the root expression using a fractional exponent: $\sqrt[3]{x} = x^{1/3}$.'
+      - The integral becomes $\int x^{1/3} \, dx$. Here, $n = 1/3$.
+      - 'Apply the power rule: $n+1 = 1/3 + 1 = 4/3$.'
+      - The result is $\frac{x^{4/3}}{4/3} + C$.
+      - 'Simplify the complex fraction by multiplying by the reciprocal of the denominator: $\frac{3}{4}x^{4/3} + C$.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: Find the indefinite integral of the function $g(x) = \frac{1}{x^4}$. Start by rewriting the reciprocal
+        expression using a negative exponent.
+      mathTool: null
+      finalAnswer: -1/(3x³) + C
+      stepByStepGuideline:
+      - 'Rewrite the function using a negative exponent: $\frac{1}{x^4} = x^{-4}$.'
+      - The integral is $\int x^{-4} \, dx$. Here, $n = -4$.
+      - 'Apply the power rule: $n+1 = -4 + 1 = -3$.'
+      - The result is $\frac{x^{-3}}{-3} + C$.
+      - 'Simplify and express the final answer without negative exponents: $-\frac{1}{3x^3} + C$.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: Calculate the indefinite integral $\int x^{5/2} \, dx$. Simplify the coefficient in your final answer.
+      mathTool: null
+      finalAnswer: (2/7)x^(7/2) + C
+      stepByStepGuideline:
+      - Identify the exponent $n$. Here, $n = 5/2$.
+      - 'Apply the power rule by finding $n+1$: $5/2 + 1 = 5/2 + 2/2 = 7/2$.'
+      - The result is $\frac{x^{7/2}}{7/2} + C$.
+      - 'Simplify the coefficient by inverting and multiplying: $\frac{2}{7}x^{7/2} + C$.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: Determine the indefinite integral of $h(x) = x^{-2}$. Express your final answer without using negative
+        exponents.
+      mathTool: null
+      finalAnswer: -1/x + C
+      stepByStepGuideline:
+      - Identify the exponent $n$. Here, $n = -2$.
+      - 'Apply the power rule: $n+1 = -2 + 1 = -1$.'
+      - The result is $\frac{x^{-1}}{-1} + C$.
+      - 'Simplify the expression and rewrite $x^{-1}$ as $1/x$: $-\frac{1}{x} + C$.'
+      id: q9-5
+      questionGroup: q9
+- id: integration-node-10
+  nodeNumber: 10
+  title: Constant Multiple Rule
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Use the Constant Multiple Rule to evaluate the indefinite integral $\int 4x^3 \, dx$. You must show the
+        step where the constant is factored out, and simplify the final result.
+      avatarIntro: The Constant Multiple Rule is essential for simplifying integrals. Remember, constants factor out, but
+        variables do not!
+      mathTool: null
+      finalAnswer: x⁴ + C
+      stepByStepGuideline:
+      - 'Identify the constant multiple, k=4, and factor it out of the integral: $\int 4x^3 \, dx = 4 \cdot \int x^3 \, dx$.'
+      - 'Apply the Power Rule for integration to the remaining term: $\int x^3 \, dx = \frac{x^{3+1}}{3+1} + C'' = \frac{x^4}{4}
+        + C''$.'
+      - 'Substitute this result back into the expression: $4 \cdot \left( \frac{x^4}{4} \right) + C$. (Note: The constant
+        $C''$ multiplied by 4 is just a new arbitrary constant $C$).'
+      - 'Simplify the expression to obtain the final antiderivative: $x^4 + C$.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: Evaluate the indefinite integral $\int \frac{1}{2}e^x \, dx$. Clearly demonstrate the application of the
+        Constant Multiple Rule and include the constant of integration.
+      mathTool: null
+      finalAnswer: \frac{1}{2}e^x + C
+      stepByStepGuideline:
+      - 'Factor the constant k = 1/2 out of the integral: $\int \frac{1}{2}e^x \, dx = \frac{1}{2} \cdot \int e^x \, dx$.'
+      - 'Find the antiderivative of the exponential function: $\int e^x \, dx = e^x + C''$.'
+      - 'Multiply the constant back in: $\frac{1}{2} \cdot (e^x) + C$.'
+      - The final answer is $\frac{1}{2}e^x + C$.
+      id: q10-2
+      questionGroup: q10
+    - problemText: Apply the Constant Multiple Rule to find the indefinite integral $\int 3\sin(x) \, dx$. Ensure your final
+        answer is fully simplified.
+      mathTool: null
+      finalAnswer: -3\cos(x) + C
+      stepByStepGuideline:
+      - 'Factor the constant k=3 out of the integral: $\int 3\sin(x) \, dx = 3 \cdot \int \sin(x) \, dx$.'
+      - 'Recall the antiderivative of $\sin(x)$: $\int \sin(x) \, dx = -\cos(x) + C''$.'
+      - 'Substitute the antiderivative back and multiply by the constant: $3 \cdot (-\cos(x)) + C$.'
+      - 'Simplify the result: $-3\cos(x) + C$.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: Using the Constant Multiple Rule, find the indefinite integral $\int \frac{3}{4}x^4 \, dx$. Show the step
+        where the constant 3/4 is factored out and express your final answer as a single simplified fraction.
+      mathTool: null
+      finalAnswer: \frac{3x^5}{20} + C
+      stepByStepGuideline:
+      - 'Factor out the constant $k = \frac{3}{4}$: $\int \frac{3}{4}x^4 \, dx = \frac{3}{4} \cdot \int x^4 \, dx$.'
+      - 'Apply the Power Rule for integration: $\int x^4 \, dx = \frac{x^{4+1}}{4+1} + C'' = \frac{x^5}{5} + C''$.'
+      - 'Multiply the constant back into the result: $\frac{3}{4} \cdot \left( \frac{x^5}{5} \right) + C$.'
+      - 'Simplify the coefficient by multiplying the fractions: $\frac{3 \cdot x^5}{4 \cdot 5} + C = \frac{3x^5}{20} + C$.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: Calculate the indefinite integral $\int 6\cos(x) \, dx$. Explicitly show how the Constant Multiple Rule
+        is used in your solution.
+      mathTool: null
+      finalAnswer: 6\sin(x) + C
+      stepByStepGuideline:
+      - 'Factor the constant k=6 out of the integral: $\int 6\cos(x) \, dx = 6 \cdot \int \cos(x) \, dx$.'
+      - 'Find the antiderivative of $\cos(x)$: $\int \cos(x) \, dx = \sin(x) + C''$.'
+      - 'Multiply the constant back into the antiderivative: $6 \cdot (\sin(x)) + C$.'
+      - The resulting indefinite integral is $6\sin(x) + C$.
+      id: q10-5
+      questionGroup: q10
+- id: integration-node-11
+  nodeNumber: 11
+  title: Sum and Difference Rule
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Apply the Sum Rule for integration to find the indefinite integral of $f(x) = x^3 + 2x^2$. Show the separation
+        of terms before integrating.
+      avatarIntro: You've mastered the power rule and constant multiple rule. Now, let's combine these skills using the Sum
+        Rule to integrate multi-term functions!
+      mathTool: null
+      finalAnswer: x⁴/4 + 2x³/3 + C
+      stepByStepGuideline:
+      - 'Apply the Sum Rule to separate the integral: $\int (x^3 + 2x^2) dx = \int x^3 dx + \int 2x^2 dx$.'
+      - Use the Power Rule $\int x^n dx = \frac{x^{n+1}}{n+1} + C$ and the Constant Multiple Rule on each term.
+      - 'Integrate the first term: $\int x^3 dx = \frac{x^{3+1}}{3+1} = \frac{x^4}{4}$.'
+      - 'Integrate the second term: $\int 2x^2 dx = 2 \cdot \frac{x^{2+1}}{2+1} = \frac{2x^3}{3}$.'
+      - 'Combine the results and add the constant of integration C: $\frac{x^4}{4} + \frac{2x^3}{3} + C$.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: Calculate the indefinite integral of the polynomial $P(x) = 3x^2 - 4x + 2$. Ensure you correctly apply
+        the Difference Rule and simplify your final answer.
+      mathTool: null
+      finalAnswer: x³ - 2x² + 2x + C
+      stepByStepGuideline:
+      - 'Apply the Sum and Difference Rules to integrate term by term: $\int (3x^2 - 4x + 2) dx = \int 3x^2 dx - \int 4x dx
+        + \int 2 dx$.'
+      - 'Integrate the first term: $\int 3x^2 dx = 3 \cdot \frac{x^3}{3} = x^3$.'
+      - 'Integrate the second term: $\int 4x dx = 4 \cdot \frac{x^2}{2} = 2x^2$.'
+      - 'Integrate the constant term: $\int 2 dx = 2x$.'
+      - 'Combine the results and add C: $x^3 - 2x^2 + 2x + C$.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: Evaluate the indefinite integral $\int (x^4 - x^2) dx$.
+      mathTool: null
+      finalAnswer: x⁵/5 - x³/3 + C
+      stepByStepGuideline:
+      - 'Apply the Difference Rule to integrate term by term: $\int (x^4 - x^2) dx = \int x^4 dx - \int x^2 dx$.'
+      - 'Use the Power Rule on the first term: $\int x^4 dx = \frac{x^5}{5}$.'
+      - 'Use the Power Rule on the second term: $\int x^2 dx = \frac{x^3}{3}$.'
+      - 'Combine the results and add the constant of integration C: $\frac{x^5}{5} - \frac{x^3}{3} + C$.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: Find the antiderivative of $g(x) = 2x^3 - 3x^2 + 5x$. Simplify the resulting coefficients.
+      mathTool: null
+      finalAnswer: x⁴/2 - x³ + 5x²/2 + C
+      stepByStepGuideline:
+      - 'Integrate the polynomial term by term using the Power Rule and Constant Multiple Rule: $\int (2x^3 - 3x^2 + 5x) dx$.'
+      - 'Integrate $2x^3$: $\frac{2x^4}{4} = \frac{x^4}{2}$.'
+      - 'Integrate $-3x^2$: $-\frac{3x^3}{3} = -x^3$.'
+      - 'Integrate $5x$: $\frac{5x^2}{2}$.'
+      - 'Combine all terms and add C: $\frac{x^4}{2} - x^3 + \frac{5x^2}{2} + C$.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: Determine the indefinite integral $\int (3x^2 + 4x) dx$. Simplify the resulting expression fully.
+      mathTool: null
+      finalAnswer: x³ + 2x² + C
+      stepByStepGuideline:
+      - 'Apply the Sum Rule and integrate term by term: $\int (3x^2 + 4x) dx$.'
+      - 'Integrate the first term: $\int 3x^2 dx = 3 \cdot \frac{x^3}{3}$.'
+      - 'Integrate the second term: $\int 4x dx = 4 \cdot \frac{x^2}{2}$.'
+      - 'Simplify the coefficients: $x^3 + 2x^2$.'
+      - 'Add the constant of integration C: $x^3 + 2x^2 + C$.'
+      id: q11-5
+      questionGroup: q11
+- id: integration-node-12
+  nodeNumber: 12
+  title: Combining Integration Rules
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the indefinite integral of the polynomial function $f(x) = x^4 + 2x^3 - 3x^2 + x - 5$. Apply the Sum/Difference
+        Rule and the Power Rule systematically.
+      avatarIntro: Ready to put all your integration rules together? This problem tests your ability to handle multiple terms
+        and mixed signs efficiently.
+      section: combining-integration-rules
+      finalAnswer: x^5/5 + x^4/2 - x^3 + x^2/2 - 5x + C
+      stepByStepGuideline:
+      - The integral is $\int (x^4 + 2x^3 - 3x^2 + x - 5) dx$.
+      - Apply the Power Rule ($\int x^n dx = \frac{x^{n+1}}{n+1} + C$) and Constant Multiple Rule to each term separately.
+      - 'Integrate term by term: $\frac{x^{4+1}}{5} + 2\frac{x^{3+1}}{4} - 3\frac{x^{2+1}}{3} + \frac{x^{1+1}}{2} - 5x + C$.'
+      - 'Simplify the coefficients: $\frac{x^5}{5} + \frac{2x^4}{4} - \frac{3x^3}{3} + \frac{x^2}{2} - 5x + C$.'
+      - The final simplified answer is $x^5/5 + x^4/2 - x^3 + x^2/2 - 5x + C$.
+      id: q12-1
+      questionGroup: q12
+    - problemText: Evaluate $\int -3(2x^3 - 1/x^2) \, dx$. Ensure you rewrite the expression in power form before integrating
+        and handle the negative constant multiple.
+      section: combining-integration-rules
+      finalAnswer: -3x^4/2 - 3/x + C
+      stepByStepGuideline:
+      - 'Rewrite the fraction as a negative exponent: $1/x^2 = x^{-2}$. The integral becomes $\int -3(2x^3 - x^{-2}) \, dx$.'
+      - 'Distribute the constant: $\int (-6x^3 + 3x^{-2}) \, dx$.'
+      - 'Apply the Power Rule and integrate term by term: $-6\frac{x^{3+1}}{4} + 3\frac{x^{-2+1}}{-1} + C$.'
+      - This simplifies to $-6x^4/4 + 3x^{-1}/(-1) + C$.
+      - 'Simplify coefficients and rewrite the negative exponent: $-3x^4/2 - 3x^{-1} + C$.'
+      - The final answer is $-3x^4/2 - 3/x + C$.
+      id: q12-2
+      questionGroup: q12
+    - problemText: Determine the antiderivative of $h(x) = 4x^3 - 6x^2 + 2x - 7$.
+      section: combining-integration-rules
+      finalAnswer: x^4 - 2x^3 + x^2 - 7x + C
+      stepByStepGuideline:
+      - The required antiderivative is $\int (4x^3 - 6x^2 + 2x - 7) dx$.
+      - Apply the Power Rule and Constant Multiple Rule to each term.
+      - 'Integrate term by term: $4\frac{x^{3+1}}{4} - 6\frac{x^{2+1}}{3} + 2\frac{x^{1+1}}{2} - 7x + C$.'
+      - 'Simplify the coefficients: $4x^4/4 - 6x^3/3 + 2x^2/2 - 7x + C$.'
+      - The final simplified answer is $x^4 - 2x^3 + x^2 - 7x + C$.
+      id: q12-3
+      questionGroup: q12
+    - problemText: Calculate the indefinite integral $\int 4(x^2 + \sqrt{x}) \, dx$. Simplify any resulting fractional coefficients
+        and express the final answer using fractional exponents.
+      section: combining-integration-rules
+      finalAnswer: 4x^3/3 + (8/3)x^{3/2} + C
+      stepByStepGuideline:
+      - 'Rewrite the root expression as a fractional exponent: $\sqrt{x} = x^{1/2}$. The integral is $\int 4(x^2 + x^{1/2})
+        \, dx$.'
+      - 'Distribute the constant: $\int (4x^2 + 4x^{1/2}) \, dx$.'
+      - 'Apply the Power Rule: $4\frac{x^{2+1}}{3} + 4\frac{x^{1/2 + 1}}{1/2 + 1} + C$.'
+      - 'Simplify the exponents: $4x^3/3 + 4\frac{x^{3/2}}{3/2} + C$.'
+      - 'To simplify the second term, divide by $3/2$ (multiply by $2/3$): $4x^3/3 + 4 \cdot (2/3)x^{3/2} + C$.'
+      - The final simplified answer is $4x^3/3 + (8/3)x^{3/2} + C$.
+      id: q12-4
+      questionGroup: q12
+    - problemText: Evaluate $\int -2(3x + 2\sqrt{x} - 5/x^3) \, dx$. Show the step where you rewrite all terms using exponents
+        before applying the integration rules.
+      section: combining-integration-rules
+      finalAnswer: -3x^2 - (8/3)x^{3/2} - 5/x^2 + C
+      stepByStepGuideline:
+      - 'Rewrite roots and fractions using exponent notation: $\sqrt{x} = x^{1/2}$ and $1/x^3 = x^{-3}$. The expression inside
+        the integral is $-2(3x^1 + 2x^{1/2} - 5x^{-3})$.'
+      - 'Distribute the constant $-2$: $\int (-6x - 4x^{1/2} + 10x^{-3}) \, dx$.'
+      - 'Apply the Power Rule to each term: $-6\frac{x^2}{2} - 4\frac{x^{3/2}}{3/2} + 10\frac{x^{-2}}{-2} + C$.'
+      - 'Simplify the coefficients and exponents: $-3x^2 - 4 \cdot (2/3)x^{3/2} - 5x^{-2} + C$.'
+      - The final simplified answer, ensuring positive exponents are used where appropriate, is $-3x^2 - (8/3)x^{3/2} - 5/x^2
+        + C$.
+      id: q12-5
+      questionGroup: q12
+- id: integration-node-13
+  nodeNumber: 13
+  title: The Fundamental Theorem of Calculus
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: definiteIntegralVisualizer
+    preWrittenQuestions:
+    - problemText: Use the Fundamental Theorem of Calculus (FTC) to evaluate the definite integral $\int_1^2 3x^2 dx$. Show
+        the antiderivative using bracket notation and calculate the final numeric value.
+      avatarIntro: The Fundamental Theorem of Calculus turns integral evaluation into a simple substitution and subtraction
+        problem. Let's practice finding the area under a curve!
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 3*x^2
+          lowerBound: 1
+          upperBound: 2
+          shadeArea: true
+          showValue: true
+      finalAnswer: '7'
+      stepByStepGuideline:
+      - Find the antiderivative $F(x)$ of $f(x) = 3x^2$. Using the power rule, $F(x) = x^3$.
+      - 'Apply the Fundamental Theorem of Calculus: $\int_1^2 3x^2 dx = [x^3]_1^2$.'
+      - 'Evaluate $F(b) - F(a)$: Substitute the upper limit (2) and subtract the substitution of the lower limit (1).'
+      - 'Calculation: $F(2) - F(1) = 2^3 - 1^3 = 8 - 1$.'
+      - The final value is 7.
+      id: q13-1
+      questionGroup: q13
+    - problemText: Calculate the definite integral $\int_0^3 (x^2 + x) dx$. Present your solution clearly using bracket notation
+        and simplify the resulting fraction or decimal.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: x^2 + x
+          lowerBound: 0
+          upperBound: 3
+          shadeArea: true
+          showValue: true
+      finalAnswer: 27/2 or 13.5
+      stepByStepGuideline:
+      - Find the antiderivative $F(x)$ of $f(x) = x^2 + x$. $F(x) = \frac{x^3}{3} + \frac{x^2}{2}$.
+      - 'Apply the Fundamental Theorem of Calculus: $\int_0^3 (x^2 + x) dx = \left[\frac{x^3}{3} + \frac{x^2}{2}\right]_0^3$.'
+      - Evaluate $F(3) - F(0)$. Since the lower limit is 0, $F(0)$ will be 0.
+      - 'Calculation: $F(3) = \frac{3^3}{3} + \frac{3^2}{2} = \frac{27}{3} + \frac{9}{2} = 9 + 4.5$.'
+      - 'Combine the results: $9 + 4.5 = 13.5$, or expressed as a fraction: $\frac{18}{2} + \frac{9}{2} = \frac{27}{2}$.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: Evaluate $\int_1^4 (4x - 3) dx$. Ensure you show the substitution step $F(b) - F(a)$ clearly after finding
+        the antiderivative.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 4*x - 3
+          lowerBound: 1
+          upperBound: 4
+          shadeArea: true
+          showValue: true
+      finalAnswer: '21'
+      stepByStepGuideline:
+      - Find the antiderivative $F(x)$ of $f(x) = 4x - 3$. $F(x) = 2x^2 - 3x$.
+      - 'Apply the Fundamental Theorem of Calculus: $\int_1^4 (4x - 3) dx = [2x^2 - 3x]_1^4$.'
+      - 'Evaluate $F(4)$: $2(4)^2 - 3(4) = 2(16) - 12 = 32 - 12 = 20$.'
+      - 'Evaluate $F(1)$: $2(1)^2 - 3(1) = 2 - 3 = -1$.'
+      - 'Calculate $F(4) - F(1)$: $20 - (-1) = 20 + 1$.'
+      - The final value is 21.
+      id: q13-3
+      questionGroup: q13
+    - problemText: Find the value of the definite integral $\int_0^2 x^3 dx$. Use the bracket notation to represent the application
+        of the limits.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: x^3
+          lowerBound: 0
+          upperBound: 2
+          shadeArea: true
+          showValue: true
+      finalAnswer: '4'
+      stepByStepGuideline:
+      - Find the antiderivative $F(x)$ of $f(x) = x^3$. $F(x) = \frac{x^4}{4}$.
+      - 'Apply the Fundamental Theorem of Calculus: $\int_0^2 x^3 dx = \left[\frac{x^4}{4}\right]_0^2$.'
+      - Evaluate $F(2) - F(0)$.
+      - 'Calculation: $F(2) - F(0) = \frac{2^4}{4} - \frac{0^4}{4} = \frac{16}{4} - 0$.'
+      - The final value is 4.
+      id: q13-4
+      questionGroup: q13
+    - problemText: Determine the area represented by $\int_2^4 (2x + 1) dx$. Show the step where you substitute both the upper
+        limit (4) and the lower limit (2) into the antiderivative.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 2*x + 1
+          lowerBound: 2
+          upperBound: 4
+          shadeArea: true
+          showValue: true
+      finalAnswer: '14'
+      stepByStepGuideline:
+      - Find the antiderivative $F(x)$ of $f(x) = 2x + 1$. $F(x) = x^2 + x$.
+      - 'Apply the Fundamental Theorem of Calculus: $\int_2^4 (2x + 1) dx = [x^2 + x]_2^4$.'
+      - 'Evaluate $F(4)$: $4^2 + 4 = 16 + 4 = 20$.'
+      - 'Evaluate $F(2)$: $2^2 + 2 = 4 + 2 = 6$.'
+      - 'Calculate $F(4) - F(2)$: $20 - 6$.'
+      - The final value is 14.
+      id: q13-5
+      questionGroup: q13
+- id: integration-node-14
+  nodeNumber: 14
+  title: Properties of Definite Integrals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: If $\int_0^3 g(x) dx = 10$, find the value of $\int_3^0 g(x) dx$.
+      avatarIntro: Understanding the properties of definite integrals is crucial for solving complex calculus problems. Let's
+        start by looking at how reversing the limits affects the integral value.
+      mathTool: null
+      finalAnswer: '-10'
+      stepByStepGuideline:
+      - 'Identify the property being applied: Reversing the limits of integration changes the sign of the definite integral.'
+      - The property states that $\int_a^b f(x) dx = -\int_b^a f(x) dx$.
+      - Since $\int_0^3 g(x) dx = 10$, then $\int_3^0 g(x) dx = -10$.
+      id: q14-1
+      questionGroup: q14
+    - problemText: Given $\int_0^2 f(x) dx = 8$ and $\int_2^4 f(x) dx = 12$, find the value of $\int_0^4 f(x) dx$.
+      mathTool: null
+      finalAnswer: '20'
+      stepByStepGuideline:
+      - 'Identify the property being applied: The Additivity Property (or Interval Addition Property).'
+      - The property states that $\int_a^b f(x) dx + \int_b^c f(x) dx = \int_a^c f(x) dx$.
+      - 'Substitute the given values: $\int_0^4 f(x) dx = \int_0^2 f(x) dx + \int_2^4 f(x) dx$.'
+      - 'Calculate the result: $8 + 12 = 20$.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: Evaluate the definite integral $\int_{18}^{18} (x^2 - 3x + 5) dx$.
+      mathTool: null
+      finalAnswer: '0'
+      stepByStepGuideline:
+      - 'Identify the property being applied: The Zero Width Property.'
+      - The property states that if the upper and lower limits of integration are the same (i.e., $\int_a^a f(x) dx$), the
+        value of the definite integral is zero, regardless of the function $f(x)$.
+      - Since the limits are both 18, the integral evaluates to 0.
+      id: q14-3
+      questionGroup: q14
+    - problemText: If $\int_1^4 h(t) dt = 6$, find the value of $\int_1^4 3h(t) dt$.
+      mathTool: null
+      finalAnswer: '18'
+      stepByStepGuideline:
+      - 'Identify the property being applied: The Constant Multiple Rule.'
+      - The property states that $\int_a^b k \cdot f(x) dx = k \cdot \int_a^b f(x) dx$, where $k$ is a constant.
+      - 'Factor out the constant 3: $\int_1^4 3h(t) dt = 3 \cdot \int_1^4 h(t) dt$.'
+      - 'Substitute the given value: $3 \cdot 6 = 18$.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: We know that $\int_1^6 p(x) dx = 15$ and $\int_4^6 p(x) dx = 5$. Find the value of $\int_1^4 p(x) dx$.
+      mathTool: null
+      finalAnswer: '10'
+      stepByStepGuideline:
+      - 'Apply the Additivity Property: $\int_1^6 p(x) dx = \int_1^4 p(x) dx + \int_4^6 p(x) dx$.'
+      - 'Substitute the known values into the equation: $15 = \int_1^4 p(x) dx + 5$.'
+      - Solve for the unknown integral $\int_1^4 p(x) dx$ by subtracting 5 from 15.
+      - $\int_1^4 p(x) dx = 15 - 5 = 10$.
+      id: q14-5
+      questionGroup: q14
+- id: integration-node-15
+  nodeNumber: 15
+  title: Areas Below the x-axis
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: definiteIntegralVisualizer
+    preWrittenQuestions:
+    - problemText: Evaluate the net area represented by the definite integral $\int_0^2 (x - 2) dx$. Explain why the calculated
+        result is negative in the context of the function's graph.
+      avatarIntro: Integrals can represent signed areas. Let's calculate the net area for this function and understand why
+        the result carries a negative sign.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: x - 2
+          lowerBound: 0
+          upperBound: 2
+          shadeArea: true
+          showValue: true
+      finalAnswer: The net area is -2. The result is negative because the function f(x) = x - 2 is negative (i.e., the graph
+        lies below the x-axis) over the entire interval [0, 2].
+      stepByStepGuideline:
+      - 'Find the antiderivative of $f(x) = x - 2$: $F(x) = x^2/2 - 2x$.'
+      - 'Apply the Fundamental Theorem of Calculus: $F(2) - F(0)$.'
+      - Calculate $F(2) = (2)^2/2 - 2(2) = 2 - 4 = -2$.
+      - Calculate $F(0) = 0^2/2 - 2(0) = 0$.
+      - The net area is $-2 - 0 = -2$.
+      - The result is negative because the function $f(x) = x - 2$ is less than zero for all $x$ in the integration interval
+        $[0, 2]$, meaning the area lies below the x-axis.
+      id: q15-1
+      questionGroup: q15
+    - problemText: 'For the function $f(x) = x^2 - 4$ on the interval $[-2, 2]$:
+
+        (a) Calculate the net area represented by $\int_{-2}^2 f(x) dx$.
+
+        (b) Calculate the total geometric area bounded by the function and the x-axis on this interval.'
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: x^2 - 4
+          lowerBound: -2
+          upperBound: 2
+          shadeArea: true
+          showValue: true
+      finalAnswer: (a) Net Area = -32/3. (b) Total Geometric Area = 32/3.
+      stepByStepGuideline:
+      - Identify that $f(x) = x^2 - 4$ is entirely below the x-axis on the interval $[-2, 2]$.
+      - 'Find the antiderivative: $F(x) = x^3/3 - 4x$.'
+      - '(a) Calculate the Net Area: $\int_{-2}^2 (x^2 - 4) dx = F(2) - F(-2)$.'
+      - $F(2) = 8/3 - 8 = 8/3 - 24/3 = -16/3$.
+      - $F(-2) = -8/3 - 4(-2) = -8/3 + 8 = -8/3 + 24/3 = 16/3$.
+      - Net Area $= (-16/3) - (16/3) = -32/3$.
+      - '(b) Since the function is entirely negative, the Total Geometric Area is the absolute value of the Net Area: $|-32/3|
+        = 32/3$.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: 'The function $f(x) = x - 1$ crosses the x-axis at $x=1$. Using the interval $[0, 2]$:
+
+        (a) Determine the net area $\int_0^2 (x - 1) dx$.
+
+        (b) Determine the total geometric area bounded by the curve and the x-axis.'
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: x - 1
+          lowerBound: 0
+          upperBound: 2
+          shadeArea: true
+          showValue: true
+      finalAnswer: (a) Net Area = 0. (b) Total Geometric Area = 1.
+      stepByStepGuideline:
+      - 'Find the antiderivative: $F(x) = x^2/2 - x$.'
+      - '(a) Calculate the Net Area: $F(2) - F(0)$. $F(2) = 2^2/2 - 2 = 2 - 2 = 0$. $F(0) = 0$. Net Area = $0 - 0 = 0$.'
+      - '(b) To find the Total Geometric Area, the integral must be split at the zero $x=1$: Total Area $= |\int_0^1 (x -
+        1) dx| + |\int_1^2 (x - 1) dx|$.'
+      - 'Region 1 (Negative): $\int_0^1 (x - 1) dx = [x^2/2 - x]_0^1 = (1/2 - 1) - 0 = -1/2$. Absolute value is $1/2$.'
+      - 'Region 2 (Positive): $\int_1^2 (x - 1) dx = [x^2/2 - x]_1^2 = (2 - 2) - (1/2 - 1) = 0 - (-1/2) = 1/2$. Absolute value
+        is $1/2$.'
+      - Total Geometric Area $= 1/2 + 1/2 = 1$.
+      id: q15-3
+      questionGroup: q15
+    - problemText: Calculate the net area represented by the definite integral $\int_0^3 (x^2 - 4) dx$. Note that $f(x) =
+        x^2 - 4$ is negative on part of this interval and positive on the remainder.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: x^2 - 4
+          lowerBound: 0
+          upperBound: 3
+          shadeArea: true
+          showValue: true
+      finalAnswer: Net Area = -3.
+      stepByStepGuideline:
+      - 'Find the antiderivative of $f(x) = x^2 - 4$: $F(x) = x^3/3 - 4x$.'
+      - 'Calculate the Net Area using the Fundamental Theorem of Calculus: $F(3) - F(0)$.'
+      - Calculate $F(3) = (3)^3/3 - 4(3) = 27/3 - 12 = 9 - 12 = -3$.
+      - Calculate $F(0) = 0^3/3 - 4(0) = 0$.
+      - The net area is $-3 - 0 = -3$. (The negative area between x=0 and x=2 outweighs the positive area between x=2 and
+        x=3).
+      id: q15-4
+      questionGroup: q15
+    - problemText: 'Consider the function $f(x) = 2 - x$ on the interval $[2, 4]$.
+
+        (a) Calculate the net area.
+
+        (b) Calculate the total geometric area.'
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 2 - x
+          lowerBound: 2
+          upperBound: 4
+          shadeArea: true
+          showValue: true
+      finalAnswer: (a) Net Area = -2. (b) Total Geometric Area = 2.
+      stepByStepGuideline:
+      - Identify that $f(x) = 2 - x$ is negative or zero on the interval $[2, 4]$.
+      - 'Find the antiderivative: $F(x) = 2x - x^2/2$.'
+      - '(a) Calculate the Net Area: $\int_2^4 (2 - x) dx = F(4) - F(2)$.'
+      - $F(4) = 2(4) - 4^2/2 = 8 - 8 = 0$.
+      - $F(2) = 2(2) - 2^2/2 = 4 - 2 = 2$.
+      - Net Area $= 0 - 2 = -2$.
+      - '(b) Since the function is entirely negative, the Total Geometric Area is the absolute value of the Net Area: $|-2|
+        = 2$.'
+      id: q15-5
+      questionGroup: q15
+- id: integration-node-16
+  nodeNumber: 16
+  title: Applications of Definite Integrals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: definiteIntegralVisualizer
+    preWrittenQuestions:
+    - problemText: A rocket launches vertically. Its velocity (in meters per second) is given by the function $v(t) = 25 +
+        4t$. Calculate the total distance the rocket travels during the first 4 seconds ($t=0$ to $t=4$).
+      avatarIntro: Definite integrals are crucial for finding total change when you know the rate of change. Let's apply this
+        concept to motion and economics.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 25 + 4t
+          lowerBound: 0
+          upperBound: 4
+          shadeArea: true
+          showValue: false
+      finalAnswer: 132 meters
+      stepByStepGuideline:
+      - 'Set up the definite integral to find distance: Distance = $\int_{0}^{4} (25 + 4t) dt$.'
+      - 'Find the antiderivative: $[25t + 2t^2]_{0}^{4}$.'
+      - 'Apply the Fundamental Theorem of Calculus: $F(4) - F(0) = (25(4) + 2(4)^2) - (25(0) + 2(0)^2)$.'
+      - 'Calculate the result: $(100 + 32) - 0 = 132$.'
+      - The total distance traveled is 132 meters.
+      id: q16-1
+      questionGroup: q16
+    - problemText: A company determines that the marginal cost (MC) of producing $q$ units of a product is given by $MC(q)
+        = 60 + q$ dollars per unit. Find the total cost incurred by increasing production from 20 units to 30 units.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 60 + q
+          lowerBound: 20
+          upperBound: 30
+          shadeArea: true
+          showValue: false
+      finalAnswer: $850
+      stepByStepGuideline:
+      - 'Set up the definite integral for total cost: Total Cost = $\int_{20}^{30} (60 + q) dq$.'
+      - 'Find the antiderivative: $[60q + \frac{1}{2}q^2]_{20}^{30}$.'
+      - 'Evaluate at the upper limit (30): $F(30) = 60(30) + 0.5(30)^2 = 1800 + 450 = 2250$.'
+      - 'Evaluate at the lower limit (20): $F(20) = 60(20) + 0.5(20)^2 = 1200 + 200 = 1400$.'
+      - 'Calculate the difference: $2250 - 1400 = 850$.'
+      - The total cost is $850.
+      id: q16-2
+      questionGroup: q16
+    - problemText: An object moves along a straight line. Its velocity (in cm/s) is described by the function $v(t) = 10 +
+        t^2$. Determine the distance the object travels between $t=1$ second and $t=5$ seconds.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 10 + t^2
+          lowerBound: 1
+          upperBound: 5
+          shadeArea: true
+          showValue: false
+      finalAnswer: $\frac{244}{3}$ cm (or $81\frac{1}{3}$ cm)
+      stepByStepGuideline:
+      - 'Set up the definite integral for distance: Distance = $\int_{1}^{5} (10 + t^2) dt$.'
+      - 'Find the antiderivative: $[10t + \frac{1}{3}t^3]_{1}^{5}$.'
+      - 'Evaluate at the upper limit (5): $F(5) = 10(5) + \frac{1}{3}(5)^3 = 50 + \frac{125}{3}$.'
+      - 'Evaluate at the lower limit (1): $F(1) = 10(1) + \frac{1}{3}(1)^3 = 10 + \frac{1}{3}$.'
+      - 'Calculate the difference: $(50 + \frac{125}{3}) - (10 + \frac{1}{3}) = 40 + \frac{124}{3}$.'
+      - 'Convert to a single fraction: $40 = \frac{120}{3}$. $40 + \frac{124}{3} = \frac{244}{3}$. The distance is $\frac{244}{3}$
+        cm.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: A small manufacturing facility has a marginal cost function $MC(q) = 40 + 3q$ dollars per unit. Calculate
+        the increase in total cost required to boost production from $q=5$ units to $q=15$ units.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 40 + 3q
+          lowerBound: 5
+          upperBound: 15
+          shadeArea: true
+          showValue: false
+      finalAnswer: $700
+      stepByStepGuideline:
+      - 'Set up the definite integral: Total Cost = $\int_{5}^{15} (40 + 3q) dq$.'
+      - 'Find the antiderivative: $[40q + \frac{3}{2}q^2]_{5}^{15}$.'
+      - 'Evaluate at the upper limit (15): $F(15) = 40(15) + 1.5(15)^2 = 600 + 337.5 = 937.5$.'
+      - 'Evaluate at the lower limit (5): $F(5) = 40(5) + 1.5(5)^2 = 200 + 37.5 = 237.5$.'
+      - 'Calculate the difference: $937.5 - 237.5 = 700$.'
+      - The increase in total cost is $700.
+      id: q16-4
+      questionGroup: q16
+    - problemText: Water flows into a large reservoir at a rate given by $R(t) = 30 - 2t$ liters per minute, where $t$ is
+        the time in minutes. Find the total volume of water that flows into the reservoir between $t=2$ minutes and $t=6$
+        minutes.
+      mathTool:
+        toolName: definiteIntegralVisualizer
+        parameters:
+          functionExpression: 30 - 2t
+          lowerBound: 2
+          upperBound: 6
+          shadeArea: true
+          showValue: false
+      finalAnswer: 88 Liters
+      stepByStepGuideline:
+      - 'The accumulated volume is found by integrating the rate function: Volume = $\int_{2}^{6} (30 - 2t) dt$.'
+      - 'Find the antiderivative: $[30t - t^2]_{2}^{6}$.'
+      - 'Evaluate at the upper limit (6): $F(6) = 30(6) - (6)^2 = 180 - 36 = 144$.'
+      - 'Evaluate at the lower limit (2): $F(2) = 30(2) - (2)^2 = 60 - 4 = 56$.'
+      - 'Calculate the total accumulated volume: $144 - 56 = 88$.'
+      - The total volume of water accumulated is 88 Liters.
+      id: q16-5
+      questionGroup: q16
+- id: integration-node-17
+  nodeNumber: 17
+  title: Types of Riemann Sums
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: areaApproximation
+    preWrittenQuestions:
+    - problemText: A company is modeling the cumulative strain (in arbitrary units) on a new material over time $t$ (in hours)
+        using the function $f(t) = t^2 + 1$. Estimate the total cumulative strain accumulated between $t=1$ and $t=5$ hours
+        using the Left Riemann sum with $N=4$ partitions.
+      avatarIntro: Riemann sums allow us to estimate the total accumulated change when we only know the rate function. Let's
+        calculate this approximation!
+      mathTool:
+        toolName: areaApproximation
+        parameters:
+          functionExpression: x^2 + 1
+          lowerBound: 1
+          upperBound: 5
+          rectangles: 4
+          method: left
+          showExact: false
+      finalAnswer: '34'
+      stepByStepGuideline:
+      - 'Calculate the width of each partition: $\Delta x = (b - a) / N = (5 - 1) / 4 = 1$.'
+      - 'Identify the left endpoints: $x_0 = 1, x_1 = 2, x_2 = 3, x_3 = 4$.'
+      - 'Evaluate the function $f(t) = t^2 + 1$ at these endpoints: $f(1)=2, f(2)=5, f(3)=10, f(4)=17$.'
+      - 'Compute the Left Riemann sum $L_4$: $L_4 = \Delta x \cdot [f(1) + f(2) + f(3) + f(4)] = 1 \cdot (2 + 5 + 10 + 17)$.'
+      - The estimated cumulative strain is $L_4 = 34$ units.
+      id: q17-1
+      questionGroup: q17
+    - problemText: The force required to stretch a spring beyond its natural length $x$ (in meters) is given by $F(x) = 3x$
+        Newtons. Approximate the total work done (the area under the Force curve) to stretch the spring from $x=0$ m to $x=2$
+        m using the Right Riemann sum with $N=6$ partitions.
+      mathTool:
+        toolName: areaApproximation
+        parameters:
+          functionExpression: 3x
+          lowerBound: 0
+          upperBound: 2
+          rectangles: 6
+          method: right
+          showExact: false
+      finalAnswer: '7'
+      stepByStepGuideline:
+      - 'Calculate the width of each partition: $\Delta x = (b - a) / N = (2 - 0) / 6 = 1/3$.'
+      - 'Identify the right endpoints: $x_1 = 1/3, x_2 = 2/3, x_3 = 1, x_4 = 4/3, x_5 = 5/3, x_6 = 2$.'
+      - 'Evaluate the function $F(x) = 3x$ at these endpoints: $F(1/3)=1, F(2/3)=2, F(1)=3, F(4/3)=4, F(5/3)=5, F(2)=6$.'
+      - 'Compute the Right Riemann sum $R_6$: $R_6 = \Delta x \cdot [F(1/3) + ... + F(2)] = (1/3) \cdot (1 + 2 + 3 + 4 + 5
+        + 6)$.'
+      - The estimated work done is $R_6 = (1/3) \cdot 21 = 7$ units of work (Joules).
+      id: q17-2
+      questionGroup: q17
+    - problemText: The rate $R(t)$ at which pollutants are being removed from a river (in tons per day) is modeled by $R(t)
+        = t^2 - t$, where $t$ is the number of days since the cleanup began. Calculate the total estimated amount of pollutant
+        removed between day $t=1$ and day $t=3$ using the Midpoint Riemann sum with $N=2$ partitions.
+      mathTool:
+        toolName: areaApproximation
+        parameters:
+          functionExpression: x^2 - x
+          lowerBound: 1
+          upperBound: 3
+          rectangles: 2
+          method: midpoint
+          showExact: false
+      finalAnswer: '4.5'
+      stepByStepGuideline:
+      - 'Calculate the width of each partition: $\Delta x = (b - a) / N = (3 - 1) / 2 = 1$.'
+      - 'Determine the midpoints of the two intervals [1, 2] and [2, 3]: $x̄_1 = 1.5$ and $x̄_2 = 2.5$.'
+      - 'Evaluate the function $R(t) = t^2 - t$ at these midpoints:'
+      - ' $R(1.5) = (1.5)^2 - 1.5 = 2.25 - 1.5 = 0.75$'
+      - ' $R(2.5) = (2.5)^2 - 2.5 = 6.25 - 2.5 = 3.75$'
+      - 'Compute the Midpoint Riemann sum $M_2$: $M_2 = \Delta x \cdot [R(1.5) + R(2.5)] = 1 \cdot (0.75 + 3.75)$.'
+      - The estimated amount of pollutant removed is $M_2 = 4.5$ tons.
+      id: q17-3
+      questionGroup: q17
+    - problemText: The power consumption rate $P(t)$ of a factory (in megawatts) is given by $P(t) = 2t$, where $t$ is the
+        time in hours. Estimate the total energy consumed over the first 2 hours ($t=0$ to $t=2$) using the Left Riemann sum
+        with $N=5$ partitions.
+      mathTool:
+        toolName: areaApproximation
+        parameters:
+          functionExpression: 2x
+          lowerBound: 0
+          upperBound: 2
+          rectangles: 5
+          method: left
+          showExact: false
+      finalAnswer: '3.2'
+      stepByStepGuideline:
+      - 'Calculate the width of each partition: $\Delta x = (2 - 0) / 5 = 0.4$.'
+      - 'Identify the left endpoints: $x_0=0, x_1=0.4, x_2=0.8, x_3=1.2, x_4=1.6$.'
+      - 'Evaluate the function $P(t) = 2t$ at these endpoints: $P(0)=0, P(0.4)=0.8, P(0.8)=1.6, P(1.2)=2.4, P(1.6)=3.2$.'
+      - 'Compute the Left Riemann sum $L_5$: $L_5 = \Delta x \cdot [P(0) + P(0.4) + P(0.8) + P(1.2) + P(1.6)] = 0.4 \cdot
+        (0 + 0.8 + 1.6 + 2.4 + 3.2)$.'
+      - The estimated energy consumed is $L_5 = 0.4 \cdot 8 = 3.2$ megawatt-hours.
+      id: q17-4
+      questionGroup: q17
+    - problemText: A machine's production rate $R(t)$ for widgets (in widgets per hour) is modeled by the function $R(t) =
+        t^2$. Approximate the total number of widgets produced during the first 4 hours of operation ($t=0$ to $t=4$) using
+        the Midpoint Riemann sum with $N=4$ partitions.
+      mathTool:
+        toolName: areaApproximation
+        parameters:
+          functionExpression: x^2
+          lowerBound: 0
+          upperBound: 4
+          rectangles: 4
+          method: midpoint
+          showExact: false
+      finalAnswer: '21'
+      stepByStepGuideline:
+      - 'Calculate the width of each partition: $\Delta x = (4 - 0) / 4 = 1$.'
+      - 'Determine the midpoints of the four intervals: $x̄_1 = 0.5, x̄_2 = 1.5, x̄_3 = 2.5, x̄_4 = 3.5$.'
+      - 'Evaluate the function $R(t) = t^2$ at these midpoints:'
+      - ' $R(0.5)=0.25, R(1.5)=2.25, R(2.5)=6.25, R(3.5)=12.25$.'
+      - 'Compute the Midpoint Riemann sum $M_4$: $M_4 = \Delta x \cdot [R(0.5) + R(1.5) + R(2.5) + R(3.5)] = 1 \cdot (0.25
+        + 2.25 + 6.25 + 12.25)$.'
+      - The estimated total production is $M_4 = 21$ widgets.
+      id: q17-5
+      questionGroup: q17
+- id: integration-node-18
+  nodeNumber: 18
+  title: Riemann Sum Accuracy
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: riemannSumVisualizer
+    preWrittenQuestions:
+    - problemText: 'A scientist is monitoring the velocity profile of a fluid draining from a tank, modeled by $f(x) = x^2$
+        on the interval $[0, 2]$. The exact accumulated distance (area) is $8/3 \approx 2.6667$. You calculate the Left Riemann
+        Sums (LHS) for increasing partitions:
+
+
+        $L_4 = 1.75$
+
+        $L_8 = 2.1875$
+
+        $L_{16} = 2.421875$
+
+
+        Based on these results, describe the pattern of convergence. Specifically, what happens to the absolute error $|L_n
+        - 8/3|$ as $n$ doubles, and what does this imply about the approximation quality?'
+      avatarIntro: Welcome! Riemann Sums help us estimate areas. Let's practice analyzing how quickly these estimates approach
+        the exact value as we increase the number of rectangles.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2
+          lowerBound: 0
+          upperBound: 2
+          partitions: 8
+          showMethods:
+          - left
+          - right
+          - midpoint
+      finalAnswer: As $n$ doubles (4 to 8 to 16), the Left Sum increases and gets closer to the exact value (2.6667). The
+        absolute error decreases significantly, roughly halving with each doubling of $n$. This pattern confirms that the
+        approximation improves rapidly, meaning the sum converges to the definite integral value as $n \to \infty$.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the initial errors relative to the exact value $E = 8/3 \approx 2.6667$.'
+      - 'Step 2: $E_4 = |1.75 - 2.6667| \approx 0.9167$.'
+      - 'Step 3: $E_8 = |2.1875 - 2.6667| \approx 0.4792$.'
+      - 'Step 4: $E_{16} = |2.421875 - 2.6667| \approx 0.2448$.'
+      - 'Step 5: Observe the pattern: $E_8$ is roughly half of $E_4$, and $E_{16}$ is roughly half of $E_8$. This demonstrates
+        that the error is reduced proportionally to $1/n$, confirming convergence.'
+      id: q18-1
+      questionGroup: q18
+    - problemText: A rod of length 1 meter (interval $[0, 1]$) has a linear density function $f(x) = 2x$ (kg/m). The exact
+        total mass (integral) is 1 kg. You estimate the total mass using 5 partitions ($n=5$). Calculate the absolute error
+        for the Right Riemann Sum ($R_5$) and the Midpoint Riemann Sum ($M_5$). Which method is more accurate for this function
+        and partition size?
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: 2x
+          lowerBound: 0
+          upperBound: 1
+          partitions: 5
+          showMethods:
+          - left
+          - right
+          - midpoint
+      finalAnswer: The Right Riemann Sum $R_5 = 1.2$. The absolute error is $|1.2 - 1| = 0.2$. The Midpoint Riemann Sum $M_5
+        = 1.0$. The absolute error is $|1.0 - 1| = 0$. The Midpoint sum is significantly more accurate, providing the exact
+        value because the function is linear.
+      stepByStepGuideline:
+      - 'Step 1: Determine the partition width: $\Delta x = (1 - 0) / 5 = 0.2$.'
+      - 'Step 2: Calculate $R_5$. Right endpoints are 0.2, 0.4, 0.6, 0.8, 1.0. $R_5 = 0.2 \times [2(0.2) + 2(0.4) + 2(0.6)
+        + 2(0.8) + 2(1.0)] = 0.2 \times 6 = 1.2$. Error $E_R = |1.2 - 1| = 0.2$.'
+      - 'Step 3: Calculate $M_5$. Midpoints are 0.1, 0.3, 0.5, 0.7, 0.9. $M_5 = 0.2 \times [2(0.1) + 2(0.3) + 2(0.5) + 2(0.7)
+        + 2(0.9)] = 0.2 \times 5 = 1.0$. Error $E_M = |1.0 - 1| = 0$.'
+      - 'Step 4: Compare errors. $E_M = 0$ is smaller than $E_R = 0.2$. The Midpoint method is superior in this case.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: 'A biologist tracks the accumulated growth of a bacterial colony over the time interval $[1, 3]$ hours,
+        where the rate of growth is modeled by $f(t) = t^2 + 1$. The exact accumulated growth is $32/3 \approx 10.6667$ units.
+        You use the Right Riemann Sum ($R_n$) and obtain the following approximations:
+
+
+        $R_{10} \approx 11.08$
+
+        $R_{20} \approx 10.87$
+
+        $R_{40} \approx 10.77$
+
+
+        Estimate the ratio of error reduction between $R_{10}$ and $R_{20}$, and between $R_{20}$ and $R_{40}$. What general
+        rule about error reduction does this sequence illustrate?'
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2 + 1
+          lowerBound: 1
+          upperBound: 3
+          partitions: 20
+          showMethods:
+          - left
+          - right
+          - midpoint
+      finalAnswer: Error $E_{10} \approx 0.4133$. Error $E_{20} \approx 0.2033$. Error $E_{40} \approx 0.1033$. The ratio
+        $E_{20}/E_{10} \approx 0.492$, and $E_{40}/E_{20} \approx 0.508$. This sequence illustrates the general rule that
+        for Left or Right Riemann Sums, doubling the number of partitions ($n$) approximately halves the absolute error.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the absolute errors using the exact value $10.6667$.'
+      - 'Step 2: $E_{10} = |11.08 - 10.6667| \approx 0.4133$.'
+      - 'Step 3: $E_{20} = |10.87 - 10.6667| \approx 0.2033$.'
+      - 'Step 4: $E_{40} = |10.77 - 10.6667| \approx 0.1033$.'
+      - 'Step 5: Calculate the error reduction ratios: $E_{20}/E_{10} \approx 0.2033 / 0.4133 \approx 0.492$. $E_{40}/E_{20}
+        \approx 0.1033 / 0.2033 \approx 0.508$.'
+      - 'Step 6: Conclude that doubling $n$ halves the error, showing linear convergence proportional to $1/n$.'
+      id: q18-3
+      questionGroup: q18
+    - problemText: Consider the function $f(x) = 3x - 1$ over the interval $[0, 2]$. The exact area is 4. We calculate a sequence
+        of Midpoint Riemann Sums ($M_n$) for $n=5, 10, 20$. Explain the theoretical relationship between these sums and the
+        definite integral $\int_0^2 (3x - 1) dx$. What value must $\lim_{n\to\infty} M_n$ equal, and what condition on the
+        partition width $\Delta x$ ensures this convergence?
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: 3x - 1
+          lowerBound: 0
+          upperBound: 2
+          partitions: 10
+          showMethods:
+          - left
+          - right
+          - midpoint
+      finalAnswer: The definite integral is defined as the limit of the Riemann Sums. Therefore, $\lim_{n\to\infty} M_n$ must
+        equal the exact value of the integral, which is 4. Convergence to the exact value requires the partition width $\Delta
+        x$ to approach zero as $n$ approaches infinity ($\Delta x \to 0$ as $n \to \infty$).
+      stepByStepGuideline:
+      - 'Step 1: Recall the definition of the definite integral: $\int_a^b f(x) dx = \lim_{n\to\infty} \sum_{i=1}^n f(x_i^*)
+        \Delta x$.'
+      - 'Step 2: Identify the exact value given by the integral: 4.'
+      - 'Step 3: State that all types of Riemann sums (Left, Right, Midpoint) must converge to the definite integral value
+        as $n \to \infty$. Thus, $\lim_{n\to\infty} M_n = 4$.'
+      - 'Step 4: Analyze the condition required for convergence. Since $\Delta x = (b-a)/n$, as $n$ increases without bound
+        ($n \to \infty$), the partition width $\Delta x$ must approach zero. This ensures that the rectangles fit the area
+        perfectly in the limit.'
+      id: q18-4
+      questionGroup: q18
+    - problemText: 'To estimate the area under the curve $f(x) = x^2 + 1$ on $[0, 1]$, we use $n=8$ partitions. Use the provided
+        visualization tool (or sketch based on the function''s shape) to compare the Left Sum ($L_8$), Right Sum ($R_8$),
+        and Midpoint Sum ($M_8$).
+
+
+        (a) For this increasing function, which method(s) will underestimate the exact area?
+
+        (b) Based on the visual fit, which method is expected to yield the most accurate approximation (smallest error) for
+        $n=8$?'
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2 + 1
+          lowerBound: 0
+          upperBound: 1
+          partitions: 8
+          showMethods:
+          - left
+          - right
+          - midpoint
+      finalAnswer: (a) Since $f(x) = x^2 + 1$ is an increasing function on $[0, 1]$, the Left Sum ($L_8$) will underestimate
+        the area (rectangles lie entirely below the curve). (b) The Midpoint Sum ($M_8$) is generally the most accurate method
+        for a given $n$. Visually, the midpoint rectangles balance the area missed on one side with the excess area on the
+        other side of the curve, leading to a much smaller overall error compared to $L_8$ or $R_8$.
+      stepByStepGuideline:
+      - 'Step 1: Analyze the function $f(x) = x^2 + 1$. Its first derivative $f''(x) = 2x$ is positive on $[0, 1]$, meaning
+        the function is strictly increasing.'
+      - 'Step 2: Determine over/underestimation for L and R sums. For an increasing function, the Left Sum uses the lowest
+        height in each interval (underestimates), and the Right Sum uses the highest height (overestimates).'
+      - 'Step 3: Analyze the Midpoint Sum ($M_8$). The Midpoint method tends to average out errors because the error in the
+        region where the function is concave up (like $x^2+1$) is much smaller than $L_n$ or $R_n$.'
+      - 'Step 4: Conclude that $L_8$ underestimates, $R_8$ overestimates, and $M_8$ provides the best approximation due to
+        its inherent error cancellation properties.'
+      id: q18-5
+      questionGroup: q18
+- id: integration-node-19
+  nodeNumber: 19
+  title: The Formal Definition of Integration
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: riemannSumVisualizer
+    preWrittenQuestions:
+    - problemText: Write out the formal limit definition of the definite integral $\int_1^3 x^3 dx$ using Riemann sum notation.
+        Clearly define $\Delta x$ and $x_i$ (assuming a right endpoint approximation for clarity, though the definition holds
+        for any $x_i^*$).
+      avatarIntro: Understanding the formal definition of integration is crucial, even if we use the Fundamental Theorem of
+        Calculus to solve problems quickly. Let's start by defining the definite integral.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^3
+          lowerBound: 1
+          upperBound: 3
+          partitions: 16
+          showMethods:
+          - right
+      finalAnswer: $$\int_1^3 x^3 dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i) \cdot \Delta x$$ where $\Delta x = \frac{2}{n}$
+        and $x_i = 1 + i \cdot \frac{2}{n}$.
+      stepByStepGuideline:
+      - Identify the function $f(x) = x^3$, the lower bound $a=1$, and the upper bound $b=3$.
+      - 'Calculate the width of each subinterval: $\Delta x = \frac{b-a}{n} = \frac{3-1}{n} = \frac{2}{n}$.'
+      - 'Determine the position of the sample point $x_i$ (using the right endpoint): $x_i = a + i \Delta x = 1 + i \cdot
+        \frac{2}{n}$.'
+      - 'Substitute these components into the formal definition: $\int_a^b f(x) dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i)
+        \cdot \Delta x$.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: Explain, using precise geometric terms, why the limit process $\lim_{n\to\infty}$ is essential in the Riemann
+        sum definition of integration to yield the exact area under the curve $f(x) = \sin(x)$ on $[0, 2]$. What happens to
+        the error as $n$ increases indefinitely?
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: sin(x)
+          lowerBound: 0
+          upperBound: 2
+          partitions: 20
+          showMethods:
+          - left
+          - right
+      finalAnswer: The Riemann sum calculates the area using a finite number ($n$) of rectangles, which leaves small gaps
+        or overlaps between the tops of the rectangles and the curve. This represents the error. The limit $\lim_{n\to\infty}$
+        forces the number of rectangles ($n$) to increase without bound, causing the width of each rectangle ($\Delta x$)
+        to approach zero. As $\Delta x \to 0$, the gaps/overlaps vanish, and the sum of the rectangular areas converges precisely
+        to the exact geometric area under the curve.
+      stepByStepGuideline:
+      - 'Define the Riemann sum conceptually: It approximates area using rectangles.'
+      - 'Identify the source of error: The difference between the rectangular area and the true area caused by the finite
+        width $\Delta x$.'
+      - 'Explain the effect of $n \to \infty$: This makes $\Delta x \to 0$.'
+      - 'Conclude: As $\Delta x \to 0$, the approximation error tends to zero, ensuring the limit equals the exact area.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: In the Riemann sum definition of integration, $\sum_{i=1}^{n} f(x_i) \cdot \Delta x$, explain the specific
+        geometric role played by the components (a) $f(x_i)$ and (b) $\Delta x$. Use $f(x) = 2x$ on the interval $[0, 1]$
+        as a visual aid.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: 2x
+          lowerBound: 0
+          upperBound: 1
+          partitions: 12
+          showMethods:
+          - right
+      finalAnswer: '(a) $f(x_i)$: This represents the height of the $i$-th rectangle. It is the value of the function evaluated
+        at a specific sample point $x_i$ within the $i$-th subinterval.
+
+        (b) $\Delta x$: This represents the uniform width of the $i$-th rectangle (the base). The term $f(x_i) \cdot \Delta
+        x$ is therefore the area of a single approximating rectangle.'
+      stepByStepGuideline:
+      - 'Recall the geometry of the Riemann sum: it is a sum of rectangles.'
+      - Identify $f(x_i)$ as the vertical component (the output of the function). In the context of a rectangle, this is the
+        height.
+      - Identify $\Delta x$ as the horizontal component (the length of the subinterval). In the context of a rectangle, this
+        is the width.
+      - 'Explain the product $f(x_i) \cdot \Delta x$: It is the area of that individual rectangle.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: "The definite integral $\\int_a^b f(x) dx$ is often called the continuous analog of the Riemann sum $\\\
+        lim_{n\\to\\infty} \\sum_{i=1}^{n} f(x_i) \\cdot \\Delta x$. Explain the precise notational correspondence between:\
+        \ \n(a) The integral sign $\\int$ and the summation symbol $\\sum$. \n(b) The differential $dx$ and the width $\\\
+        Delta x$."
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2
+          lowerBound: 0
+          upperBound: 2
+          partitions: 16
+          showMethods:
+          - left
+      finalAnswer: "(a) The integral sign $\\int$ is an elongated 'S' (for Sum). It represents a continuous summation over\
+        \ an infinite number of infinitesimally small elements, replacing the discrete summation $\\sum$ which deals with\
+        \ a finite number of elements ($n$). \n(b) The differential $dx$ represents the infinitesimally small width (or base)\
+        \ of the rectangle, which is the result of applying the limit to $\\Delta x$. Specifically, $dx = \\lim_{\\Delta x\
+        \ \\to 0} \\Delta x$."
+      stepByStepGuideline:
+      - 'Analyze the $\int$ symbol: Connect its origin (elongated S) to the operation of summation ($\sum$).'
+      - 'Analyze the $dx$ term: Connect it to the width $\Delta x$ in the Riemann sum.'
+      - 'Explain the limit connection: Clarify that $dx$ is the result of taking the limit as $n \to \infty$, causing $\Delta
+        x$ to become infinitesimally small.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: A core requirement for the definite integral to exist is that the limit of the Riemann sum must be independent
+        of the choice of sample points $x_i^*$ (left endpoint, right endpoint, midpoint, etc.). Explain why this condition
+        is mathematically necessary for the result to represent the unique 'Area Under the Curve'. Use the provided visualizer
+        showing different methods for $f(x) = x^3$ on $[0, 2]$.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^3
+          lowerBound: 0
+          upperBound: 2
+          partitions: 16
+          showMethods:
+          - left
+          - right
+          - midpoint
+      finalAnswer: 'The definite integral $\int_a^b f(x) dx$ represents a single, fixed, geometric quantity: the net area.
+        If the limit depended on whether we chose the left endpoint or the right endpoint (i.e., if $\lim L_n \neq \lim R_n$),
+        the ''area'' would not be uniquely defined. For the integral to exist, all possible Riemann sums (using any choice
+        of sample point $x_i^*$) must converge to the same value as $n \to \infty$. This ensures that the contribution of
+        the specific choice of height within the subinterval vanishes as the width of the subinterval approaches zero.'
+      stepByStepGuideline:
+      - 'Define the goal of integration: To find a single, unique value (the area).'
+      - 'Identify the consequence of dependence: If the limit varied based on $x_i^*$, the resulting ''area'' would not be
+        unique.'
+      - 'Explain why independence occurs for continuous functions: As $n \to \infty$, the length of the subinterval $\Delta
+        x \to 0$. Since the subinterval becomes infinitesimally small, the choice of where to take the height ($x_i^*$) within
+        that tiny interval becomes irrelevant, forcing all methods to converge to the same limit.'
+      id: q19-5
+      questionGroup: q19
+- id: integration-node-20
+  nodeNumber: 20
+  title: The Trapezoidal Rule
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: riemannSumVisualizer
+    preWrittenQuestions:
+    - problemText: An architect is calculating the area of a non-standard foundation plan whose width is defined by the function
+        $f(x) = x^2$ meters, spanning the length interval $x=0$ to $x=2$ meters. Use the Trapezoidal Rule with $n=4$ partitions
+        to estimate the total area.
+      avatarIntro: The trapezoidal rule is a powerful tool for estimating areas under curves. Let's practice applying the
+        formula carefully to find this foundation's area.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2
+          lowerBound: 0
+          upperBound: 2
+          partitions: 4
+          showMethods:
+          - trapezoid
+      finalAnswer: $T_4 = 2.75$ square meters
+      stepByStepGuideline:
+      - 'Calculate the width of each partition: $\Delta x = (b - a) / n = (2 - 0) / 4 = 0.5$.'
+      - 'Identify the endpoints for the trapezoids: $x_0=0, x_1=0.5, x_2=1, x_3=1.5, x_4=2$.'
+      - 'Evaluate the function at these points: $f(0)=0, f(0.5)=0.25, f(1)=1, f(1.5)=2.25, f(2)=4$.'
+      - Apply the Trapezoidal Rule formula $T_4 = (\Delta x/2)[f(x_0) + 2f(x_1) + 2f(x_2) + 2f(x_3) + f(x_4)]$.
+      - 'Substitute the values: $T_4 = (0.5/2)[0 + 2(0.25) + 2(1) + 2(2.25) + 4]$.'
+      - 'Calculate the result: $T_4 = 0.25[0 + 0.5 + 2 + 4.5 + 4] = 0.25[11] = 2.75$.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: A linear flux rate is modeled by $f(t) = 4t$ units per hour over the time interval $t=0$ to $t=4$ hours.
+        Estimate the total accumulated flux using the Trapezoidal Rule with only $n=2$ partitions. Explain why the result
+        is exactly equal to the actual accumulated flux.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: 4x
+          lowerBound: 0
+          upperBound: 4
+          partitions: 2
+          showMethods:
+          - trapezoid
+      finalAnswer: $T_2 = 32$. The result is exact because trapezoids perfectly fit a linear function.
+      stepByStepGuideline:
+      - 'Calculate the partition width: $\Delta x = (4 - 0) / 2 = 2$.'
+      - 'Identify the endpoints: $x_0=0, x_1=2, x_2=4$.'
+      - 'Evaluate the function: $f(0)=0, f(2)=8, f(4)=16$.'
+      - 'Apply the Trapezoidal Rule: $T_2 = (2/2)[f(0) + 2f(2) + f(4)] = 1[0 + 2(8) + 16]$.'
+      - 'Calculate the result: $T_2 = 1[16 + 16] = 32$.'
+      - 'Explain the exactness: Since $f(t) = 4t$ is a linear function, the linear interpolation used by the trapezoidal rule
+        precisely follows the curve, resulting in zero approximation error.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: A mining operation tracks the rate of resource consumption, $R(t)$, modeled by $R(t) = t^3$ (tons per month),
+        where $t$ is the month number. Estimate the total cumulative resource consumption between $t=1$ and $t=3$ months using
+        the Trapezoidal Rule with $n=4$.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^3
+          lowerBound: 1
+          upperBound: 3
+          partitions: 4
+          showMethods:
+          - trapezoid
+      finalAnswer: $T_4 = 20.5$ tons
+      stepByStepGuideline:
+      - 'Calculate the partition width: $\Delta x = (3 - 1) / 4 = 0.5$.'
+      - 'Identify the endpoints: $x_0=1, x_1=1.5, x_2=2, x_3=2.5, x_4=3$.'
+      - 'Evaluate the function $f(x) = x^3$ at these points: $f(1)=1, f(1.5)=3.375, f(2)=8, f(2.5)=15.625, f(3)=27$.'
+      - 'Apply the Trapezoidal Rule: $T_4 = (0.5/2)[f(1) + 2f(1.5) + 2f(2) + 2f(2.5) + f(3)]$.'
+      - 'Substitute the values: $T_4 = 0.25[1 + 2(3.375) + 2(8) + 2(15.625) + 27]$.'
+      - 'Calculate the sum: $T_4 = 0.25[1 + 6.75 + 16 + 31.25 + 27] = 0.25[82]$.'
+      - 'Final result: $T_4 = 20.5$.'
+      id: q20-3
+      questionGroup: q20
+    - problemText: In an engineering context, the rate of heat flow (in Joules per second) is modeled by $R(t) = t^2 + 1$
+        over a 4-second period ($t=0$ to $t=4$). Estimate the total energy (accumulated heat) transferred during this time
+        using the Trapezoidal Rule with $n=4$ partitions.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2 + 1
+          lowerBound: 0
+          upperBound: 4
+          partitions: 4
+          showMethods:
+          - trapezoid
+      finalAnswer: $T_4 = 26$ Joules
+      stepByStepGuideline:
+      - 'Calculate the partition width: $\Delta x = (4 - 0) / 4 = 1$.'
+      - 'Identify the endpoints: $x_0=0, x_1=1, x_2=2, x_3=3, x_4=4$.'
+      - 'Evaluate the function $f(x) = x^2 + 1$: $f(0)=1, f(1)=2, f(2)=5, f(3)=10, f(4)=17$.'
+      - 'Apply the Trapezoidal Rule: $T_4 = (1/2)[f(0) + 2f(1) + 2f(2) + 2f(3) + f(4)]$.'
+      - 'Substitute the values: $T_4 = 0.5[1 + 2(2) + 2(5) + 2(10) + 17]$.'
+      - 'Calculate the sum: $T_4 = 0.5[1 + 4 + 10 + 20 + 17] = 0.5[52]$.'
+      - 'Final result: $T_4 = 26$.'
+      id: q20-4
+      questionGroup: q20
+    - problemText: A chemist tracks the linear accumulation of a product $P(x) = 2x$ grams, where $x$ is the concentration
+        measurement (from $x=1$ to $x=3$). Use the Trapezoidal Rule with $n=6$ partitions to calculate the total accumulation.
+        Based on the fundamental understanding of the trapezoidal rule, compare this result to what you would expect from
+        the Left Endpoint Sum ($L_6$) and the Right Endpoint Sum ($R_6$).
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: 2x
+          lowerBound: 1
+          upperBound: 3
+          partitions: 6
+          showMethods:
+          - trapezoid
+      finalAnswer: $T_6 = 8$. The result is the average of $L_6$ and $R_6$, and is exact for this linear function.
+      stepByStepGuideline:
+      - 'Calculate the partition width: $\Delta x = (3 - 1) / 6 = 1/3$.'
+      - 'Identify the endpoints: $x_0=1, x_1=4/3, x_2=5/3, x_3=2, x_4=7/3, x_5=8/3, x_6=3$.'
+      - 'Evaluate $f(x)=2x$ at these points: $f(x_i) = 2, 8/3, 10/3, 4, 14/3, 16/3, 6$.'
+      - 'Apply the Trapezoidal Rule: $T_6 = (1/6)[f(1) + 2f(4/3) + 2f(5/3) + 2f(2) + 2f(7/3) + 2f(8/3) + f(3)]$.'
+      - 'Substitute the values: $T_6 = (1/6)[2 + 16/3 + 20/3 + 8 + 28/3 + 32/3 + 6]$.'
+      - 'Simplify the calculation: $T_6 = (1/6) \times [ (2+8+6) + (16+20+28+32)/3 ] = (1/6) \times [ 16 + 96/3 ] = (1/6)
+        \times [16 + 32] = 48/6 = 8$.'
+      - 'Comparison: Since the trapezoidal rule averages the heights of adjacent endpoints, $T_n = (L_n + R_n)/2$. For linear
+        functions, this average perfectly matches the area, making the result exact.'
+      id: q20-5
+      questionGroup: q20
+- id: integration-node-21
+  nodeNumber: 21
+  title: Riemann Sums Comprehensive Review
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: riemannSumVisualizer
+    preWrittenQuestions:
+    - problemText: A robot's acceleration rate is modeled by $f(t) = t^3$ meters per second squared over the time interval
+        $t=0$ to $t=2$ seconds. The total change in velocity corresponds to the exact area under the curve, which is 4 units.
+        Calculate the Left sum ($L_4$), Right sum ($R_4$), Midpoint sum ($M_4$), and Trapezoidal sum ($T_4$) using $n=4$ partitions.
+        Based on your calculations, rank these four approximation methods from most accurate to least accurate.
+      avatarIntro: We're going to compare four different ways to estimate the area under a curve. Remember, the goal is always
+        to get as close to the exact integral as possible!
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^3
+          lowerBound: 0
+          upperBound: 2
+          partitions: 4
+          showMethods:
+          - left
+          - right
+          - midpoint
+          - trapezoid
+      finalAnswer: 'Exact Area = 4. L₄ = 2.25, R₄ = 6.25, T₄ = 4.25, M₄ = 3.875. Ranking (Most Accurate to Least Accurate):
+        1. Midpoint (Error 0.125), 2. Trapezoidal (Error 0.25), 3. Left (Error 1.75), 4. Right (Error 2.25).'
+      stepByStepGuideline:
+      - 'Calculate $\Delta x$: $\Delta x = (2 - 0) / 4 = 0.5$.'
+      - 'Calculate the four sums: $L_4 = 0.5(f(0)+f(0.5)+f(1)+f(1.5)) = 2.25$. $R_4 = 0.5(f(0.5)+f(1)+f(1.5)+f(2)) = 6.25$.
+        $T_4 = (L_4 + R_4)/2 = 4.25$. $M_4 = 0.5(f(0.25)+f(0.75)+f(1.25)+f(1.75)) = 3.875$.'
+      - 'Calculate the absolute error for each method using the known exact value of 4: Error(L) = |2.25 - 4| = 1.75. Error(R)
+        = |6.25 - 4| = 2.25. Error(T) = |4.25 - 4| = 0.25. Error(M) = |3.875 - 4| = 0.125.'
+      - 'Rank based on the smallest error: Midpoint is most accurate, followed by Trapezoidal, Left, and finally Right.'
+      id: q21-1
+      questionGroup: q21
+    - problemText: A chemist models the rate of change of pollutant concentration in a water sample using the function $f(x)
+        = \sqrt{x}$ over the interval $x=0$ to $x=1$. If you estimate the accumulated change using $n=5$ partitions, explain
+        the relationship between the exact integral (E) and the Trapezoidal Rule ($T_5$) and Midpoint Rule ($M_5$). Then,
+        combine this with the knowledge that $f(x)$ is an increasing function to establish the complete inequality chain involving
+        $L_5, R_5, M_5, T_5$, and $E$.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: sqrt(x)
+          lowerBound: 0
+          upperBound: 1
+          partitions: 5
+          showMethods:
+          - left
+          - right
+          - midpoint
+          - trapezoid
+      finalAnswer: 'Since $f(x) = \sqrt{x}$ is concave down on $[0, 1]$: $T_5$ will underestimate the area, and $M_5$ will
+        overestimate the area, meaning $T_5 < E < M_5$. Since $f(x)$ is increasing: $L_5$ underestimates and $R_5$ overestimates,
+        meaning $L_5 < E < R_5$. The complete inequality chain is $L_5 < T_5 < E < M_5 < R_5$.'
+      stepByStepGuideline:
+      - Analyze the concavity of $f(x) = \sqrt{x}$. The second derivative is $f''(x) = -1/(4x^{3/2})$, which is negative on
+        $(0, 1)$. Thus, the function is concave down.
+      - 'Determine the error bounds due to concavity: For concave down functions, the Trapezoidal Rule underestimates ($T_n
+        < E$) because the straight line connecting the endpoints lies below the curve. The Midpoint Rule overestimates ($M_n
+        > E$) because the tangent line at the midpoint lies above the curve.'
+      - 'Determine the error bounds due to monotonicity: Since $f(x)$ is increasing, the Left Sum ($L_n$) uses heights that
+        are too small (underestimates), and the Right Sum ($R_n$) uses heights that are too large (overestimates), so $L_n
+        < E < R_n$.'
+      - 'Combine the inequalities. For increasing and concave down functions, the Trapezoidal error is generally smaller than
+        the Left error, and the Midpoint error is generally smaller than the Right error, leading to the full chain: $L_5
+        < T_5 < E < M_5 < R_5$.'
+      id: q21-2
+      questionGroup: q21
+    - problemText: The rate of thermal energy transfer (in Joules per second) across a heat sink is modeled by the linear
+        function $f(t) = 2t$ over the interval $t=1$ to $t=3$ seconds. The exact accumulated energy is 8 Joules. Calculate
+        the approximations $L_6, R_6, T_6,$ and $M_6$ using $n=6$ partitions. Explain why the Trapezoidal Rule and Midpoint
+        Rule provide the exact value for this specific function, while the Left and Right sums do not.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: 2x
+          lowerBound: 1
+          upperBound: 3
+          partitions: 6
+          showMethods:
+          - left
+          - right
+          - midpoint
+          - trapezoid
+      finalAnswer: $L_6 = 22/3 \approx 7.333$, $R_6 = 26/3 \approx 8.667$. $T_6 = 8$, $M_6 = 8$. The Trapezoidal Rule is exact
+        for linear functions because the trapezoid perfectly matches the area beneath a straight line segment. The Midpoint
+        Rule is also exact for linear functions because the error from the slope on the left side of the midpoint exactly
+        cancels the error from the slope on the right side.
+      stepByStepGuideline:
+      - 'Calculate $\Delta x$: $\Delta x = (3 - 1) / 6 = 1/3$.'
+      - 'Calculate $L_6$ and $R_6$: $L_6 = 7.333$ (underestimate) and $R_6 = 8.667$ (overestimate).'
+      - 'Calculate $T_6$: $T_6 = (7.333 + 8.667) / 2 = 8$. This is exact.'
+      - 'Calculate $M_6$: For $f(x)=2x$, the midpoint estimate must also be exact, $M_6=8$.'
+      - 'Explain the exactness: Since $f(x)$ is linear ($f''''(x)=0$), there is no concavity. The Trapezoidal Rule relies
+        on approximating the curve with straight lines; if the curve is already a straight line, the approximation is perfect.
+        Similarly, the Midpoint Rule rectangle is balanced perfectly over a linear function segment.'
+      id: q21-3
+      questionGroup: q21
+    - problemText: An engineer estimates the cross-sectional area of a component modeled by $f(x) = x^2$ on the interval $[0,
+        2]$ using $n=5$ subdivisions. Using the visualization tool provided, or by analyzing the shape of $f(x)$, compare
+        the type of error (overestimate or underestimate) generated by the Trapezoidal Rule ($T_5$) versus the Midpoint Rule
+        ($M_5$). Explain how the function's concavity determines these opposite error behaviors.
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^2
+          lowerBound: 0
+          upperBound: 2
+          partitions: 5
+          showMethods:
+          - left
+          - right
+          - midpoint
+          - trapezoid
+      finalAnswer: Since $f(x) = x^2$ is concave up on $[0, 2]$, the Trapezoidal Rule ($T_5$) will be an overestimate (the
+        straight line segment connecting the endpoints lies above the curve). Conversely, the Midpoint Rule ($M_5$) will be
+        an underestimate (the tangent line at the midpoint lies below the curve). Thus, $M_5 < \text{Exact} < T_5$.
+      stepByStepGuideline:
+      - 'Determine the concavity: $f(x) = x^2$ has $f''''(x) = 2$, which is positive. Therefore, the function is concave up
+        on the interval $[0, 2]$.'
+      - 'Analyze Trapezoidal Error: For a concave up function, the segments connecting the endpoints of the curve will always
+        lie above the curve itself, causing the trapezoid to include extra area. Therefore, $T_5$ is an overestimate.'
+      - 'Analyze Midpoint Error: For a concave up function, the tangent line at the midpoint of the interval will always lie
+        below the curve. Since the Midpoint Rule uses this tangent behavior for its local approximation, $M_5$ is an underestimate.'
+      - 'Conclusion: The error signs are opposite due to concavity: $T_5$ overestimates and $M_5$ underestimates.'
+      id: q21-4
+      questionGroup: q21
+    - problemText: 'Consider approximating the definite integral $\int_1^3 x^3 dx$. If we calculate a Left Riemann Sum ($L_n$)
+        and a Trapezoidal Sum ($T_n$) using a very large number of partitions ($n \to \infty$).
+
+
+        1. What exact value will both $L_n$ and $T_n$ approach?
+
+        2. Explain the fundamental difference between $L_n$ and $T_n$ for a fixed, finite $n$, and how this difference vanishes
+        in the limit.'
+      mathTool:
+        toolName: riemannSumVisualizer
+        parameters:
+          functionExpression: x^3
+          lowerBound: 1
+          upperBound: 3
+          partitions: 6
+          showMethods:
+          - left
+          - right
+          - midpoint
+          - trapezoid
+      finalAnswer: '1. Both $L_n$ and $T_n$ will approach the exact value of the definite integral, which is 20.
+
+        2. For a fixed $n$, $L_n$ approximates the area using rectangles whose height is determined by the left endpoint,
+        leading to significant error (underestimation for $x^3$). $T_n$ approximates the area using trapezoids, which averages
+        the left and right endpoints, resulting in a much smaller, second-order error. As $n \to \infty$, the width of the
+        partitions $\Delta x$ approaches zero, making the difference between the rectangular and trapezoidal heights negligible,
+        thus forcing both approximations to converge to the same exact integral value.'
+      stepByStepGuideline:
+      - 'Calculate the exact integral: $\int_1^3 x^3 dx = [x^4/4]_1^3 = (3^4/4) - (1^4/4) = 81/4 - 1/4 = 80/4 = 20$.'
+      - 'State the convergence principle: As the number of partitions $n$ approaches infinity, the limit of any Riemann sum
+        (Left, Right, Midpoint, or Trapezoidal) converges to the exact value of the definite integral, provided the function
+        is continuous.'
+      - 'Explain the finite difference: For finite $n$, $L_n$ uses constant height over each interval, creating a first-order
+        error proportional to $\Delta x$. $T_n$ uses the average of the endpoints, which cancels out the linear error term
+        and creates a smaller, second-order error proportional to $(\Delta x)^2$.'
+      - 'Explain vanishing difference: Since $\Delta x \to 0$ as $n \to \infty$, both the first-order error (L) and the second-order
+        error (T) disappear, meaning $L_n$ and $T_n$ both approach 20.'
+      id: q21-5
+      questionGroup: q21

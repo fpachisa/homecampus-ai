@@ -42,6 +42,10 @@ export { default as Coordinate3DPlaneVisualizer } from './Coordinate3DPlaneVisua
 export { default as VennDiagram1SetVisualizer } from './VennDiagram1SetVisualizer';
 export { default as VennDiagram2SetVisualizer } from './VennDiagram2SetVisualizer';
 
+// Probability visualizers
+export { default as ProbabilityTreeVisualizer } from './ProbabilityTreeVisualizer';
+export { default as TwoWayTableVisualizer } from './TwoWayTableVisualizer';
+
 // Re-export registry types and utilities
 export type { MathToolDefinition, MathToolName } from './mathToolsRegistry';
 export {

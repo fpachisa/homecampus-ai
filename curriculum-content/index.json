@@ -1,0 +1,64 @@
+{
+  "files": [
+    {
+      "filename": "S4/Maths/s4-math-integration.yaml",
+      "displayName": "S4 - Integration",
+      "category": "s4-math-integration"
+    },
+    {
+      "filename": "S4/Maths/s4-math-differential-calculus.yaml",
+      "displayName": "S4 - Differential Calculus",
+      "category": "s4-math-differential-calculus"
+    },
+    {
+      "filename": "S3/Maths/s3-math-quadratic-equations.yaml",
+      "displayName": "S3 - Quadratic Equations",
+      "category": "s3-math-quadratic-equations"
+    },
+    {
+      "filename": "S3/Maths/s3-math-circle-geometry.yaml",
+      "displayName": "S3 - Circle Geometry",
+      "category": "s3-math-circle-geometry"
+    },
+    {
+      "filename": "S3/Maths/s3-math-trigonometry.yaml",
+      "displayName": "S3 - Trigonometry",
+      "category": "s3-math-trigonometry"
+    },
+    {
+      "filename": "S3/Maths/s3-math-exponential-logarithms.yaml",
+      "displayName": "S3 - Exponential & Logarithms",
+      "category": "s3-math-exponential-logarithms"
+    },
+    {
+      "filename": "S3/Maths/s3-math-sets-venn-diagrams.yaml",
+      "displayName": "S3 - Sets & Venn Diagrams",
+      "category": "s3-math-sets-venn-diagrams"
+    },
+    {
+      "filename": "S3/Maths/s3-math-exponents.yaml",
+      "displayName": "S3 - Exponents",
+      "category": "s3-math-exponents"
+    },
+    {
+      "filename": "S3/Maths/s3-math-surds-radicals.yaml",
+      "displayName": "S3 - Surds & Radicals",
+      "category": "s3-math-surds-radicals"
+    },
+    {
+      "filename": "S3/Maths/s3-math-relations-functions.yaml",
+      "displayName": "S3 - Relations & Functions",
+      "category": "s3-math-relations-functions"
+    },
+    {
+      "filename": "S3/Maths/s3-math-statistics.yaml",
+      "displayName": "S3 - Statistics",
+      "category": "s3-math-statistics"
+    },
+    {
+      "filename": "S3/Maths/s3-math-coordinate-geometry.yaml",
+      "displayName": "S3 - Coordinate Geometry",
+      "category": "s3-math-coordinate-geometry"
+    }
+  ]
+}

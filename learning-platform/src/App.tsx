@@ -27,6 +27,9 @@ import type { SurdsRadicalsTopicId } from '../prompt-library/subjects/mathematic
 import type { StatisticsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
 import type { RelationsFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import type { CoordinateGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
+import type { DifferentialCalculusTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import type { IntegrationTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
+import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import type { PathDifficulty } from './types/practice';
 import { registerAllVisualizers } from './utils/registerVisualizers';
 import { pathConfigLoader } from './services/pathConfigLoader';
@@ -35,8 +38,8 @@ import './styles/animations.css';
 
 // App state context for managing application-wide state
 interface AppState {
-  selectedCategory: string | null; // 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations', 's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents', 's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions', 's3-math-coordinate-geometry'
-  selectedTopic: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | null;
+  selectedCategory: string | null; // 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations', 's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents', 's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions', 's3-math-coordinate-geometry', 's4-math-differential-calculus', 's4-math-integration', 's4-math-probability'
+  selectedTopic: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId | ProbabilityTopicId | null;
   selectedMode: 'socratic' | 'practice' | null; // Learning mode
 
   // Practice mode state
@@ -50,7 +53,7 @@ interface AppState {
 interface AppContextType {
   appState: AppState;
   handleCategorySelect: (category: string) => void;
-  handleTopicSelect: (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId) => void;
+  handleTopicSelect: (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId | ProbabilityTopicId) => void;
   handleModeSelect: (mode: 'socratic' | 'practice') => void;
   handleDifficultySelect: (difficulty: PathDifficulty) => void;
   handleNodeSelect: (difficulty: PathDifficulty, nodeId: string) => void;
@@ -89,7 +92,7 @@ function AppProvider({ children }: { children: React.ReactNode }) {
     });
   };
 
-  const handleTopicSelect = (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId) => {
+  const handleTopicSelect = (topicId: TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId) => {
     setAppState((prev) => ({
       ...prev,
       selectedTopic: topicId,

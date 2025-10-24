@@ -440,11 +440,9 @@ class AuthService {
       );
 
       const snapshot = await getDocs(q);
-      console.log('Found pending invites:', snapshot.size);
 
       const pendingInvites = snapshot.docs.map(doc => {
         const data = doc.data();
-        console.log('Invite data:', data);
         return {
           email: data.toEmail,
           displayName: data.childInfo?.displayName || 'Unknown',
@@ -453,7 +451,6 @@ class AuthService {
         };
       });
 
-      console.log('Processed invites:', pendingInvites);
       return pendingInvites;
     } catch (error) {
       console.error('Error fetching pending invites:', error);
