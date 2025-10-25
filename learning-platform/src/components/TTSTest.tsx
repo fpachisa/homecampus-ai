@@ -3,7 +3,7 @@
  * Test new Gemini TTS with emotion-based voice control
  */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ttsService } from '../services/ttsService';
 import type { EmotionType } from '../services/tts/TTSProvider';
 import { useSpeakerConfig } from '../hooks/useSpeakerConfig';

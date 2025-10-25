@@ -10,7 +10,7 @@
  */
 
 import * as YAML from 'yaml';
-import type { PathNode, PathDifficulty, PathLayer } from '../types/practice';
+import type { PathNode, PathDifficulty } from '../types/practice';
 
 interface YAMLPathConfig {
   nodes: PathNode[];
@@ -28,7 +28,7 @@ class YAMLPathLoader {
   private decodeUnicodeEscapes(obj: any): any {
     if (typeof obj === 'string') {
       // Replace all \uXXXX sequences with actual Unicode characters
-      return obj.replace(/\\u([0-9a-fA-F]{4})/g, (match, hex) => {
+      return obj.replace(/\\u([0-9a-fA-F]{4})/g, (_match, hex) => {
         return String.fromCharCode(parseInt(hex, 16));
       });
     }

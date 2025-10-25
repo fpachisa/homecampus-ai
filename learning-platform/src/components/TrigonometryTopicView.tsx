@@ -3,7 +3,7 @@ import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { sessionStorage } from '../services/sessionStorage';
 import { progressService } from '../services/progressService';
-import { S3_MATH_TRIGONOMETRY } from "../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import { S3_MATH_TRIGONOMETRY } from "../prompt-library/subjects/mathematics/secondary/s3-trigonometry";
 
 // Define the subtopic IDs for trigonometry
 export type TrigonometryTopicId =

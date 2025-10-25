@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const RelationsFunctionsFundamentals = () => {
   const [showExample1, setShowExample1] = useState(false);
   const [showExample2, setShowExample2] = useState(false);
-  const [testPoints, setTestPoints] = useState<Array<[number, number]>>([
+  const [testPoints, _setTestPoints] = useState<Array<[number, number]>>([
     [1, 2],
     [2, 3],
     [3, 4]

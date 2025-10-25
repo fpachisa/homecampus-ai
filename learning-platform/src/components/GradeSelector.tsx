@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import type { GradeLevel } from '../config/topicsByGrade';
 import { GRADE_LEVELS } from '../config/topicsByGrade';

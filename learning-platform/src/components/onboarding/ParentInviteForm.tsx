@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 
 interface ParentInviteFormProps {
@@ -7,7 +7,7 @@ interface ParentInviteFormProps {
   onBack: () => void;
 }
 
-export const ParentInviteForm: React.FC<ParentInviteFormProps> = ({ studentName, onComplete, onBack }) => {
+export const ParentInviteForm: React.FC<ParentInviteFormProps> = ({ studentName: _studentName, onComplete, onBack }) => {
   const { theme } = useTheme();
   const [parentEmail, setParentEmail] = useState('');
   const [emailError, setEmailError] = useState('');

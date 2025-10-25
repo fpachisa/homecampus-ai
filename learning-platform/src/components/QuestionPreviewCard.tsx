@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import MathText from './MathText';
 import { MathToolRenderer } from './practice/MathToolRenderer';
 import type { PreWrittenQuestion } from '../types/practice';
@@ -14,7 +14,7 @@ interface QuestionPreviewCardProps {
 const QuestionPreviewCard: React.FC<QuestionPreviewCardProps> = ({
   question,
   nodeTitle,
-  nodeId,
+  nodeId: _nodeId,
   layer,
 }) => {
   const [solutionExpanded, setSolutionExpanded] = useState(false);

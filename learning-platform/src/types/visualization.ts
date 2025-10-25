@@ -38,6 +38,23 @@ export interface ProblemData {
   numberOfRecipients?: number; // For sharing problems (e.g., 3 friends)
   unit?: string; // Unit of measurement (e.g., "cup", "meter", "liter")
 
+  // For fraction ÷ fraction problems
+  numerator1?: number;
+  denominator1?: number;
+  numerator2?: number;
+  denominator2?: number;
+  lcd?: number; // Least common denominator
+  converted_numerator1?: number; // Numerator after LCD conversion
+  converted_numerator2?: number; // Numerator after LCD conversion
+  result?: number; // Final result value
+  result_fraction?: string; // Result as fraction string
+
+  // For whole number ÷ fraction problems
+  initial_number?: number;
+
+  // Result unit
+  result_unit?: string;
+
   // Pre-calculated values (provided by Visualization Agent, not calculated by visualizers!)
   resultNumerator?: number; // Result numerator (typically same as numerator)
   resultDenominator?: number; // Result denominator (denominator * divisor)

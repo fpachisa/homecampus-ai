@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ExponentLaws = () => {
   const [baseA, setBaseA] = useState(2);

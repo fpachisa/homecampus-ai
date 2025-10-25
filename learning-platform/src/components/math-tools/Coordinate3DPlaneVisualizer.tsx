@@ -36,8 +36,8 @@ interface Coordinate3DPlaneVisualizerProps {
   gridPlane?: 'xy' | 'xz' | 'yz' | 'none';  // Which plane to show grid on
   showOriginLabel?: boolean;  // Show O at origin (default: true)
 
-  // Custom points to display (AI can specify specific points)
-  customPoints?: CustomPoint[];
+  // Custom points to display (can be array or JSON/text string from AI)
+  customPoints?: CustomPoint[] | string;
 
   // Display
   caption?: string;
@@ -48,8 +48,8 @@ const Coordinate3DPlaneVisualizer: React.FC<Coordinate3DPlaneVisualizerProps> = 
   length = '',
   width = '',
   height = '',
-  faceDiagonal = '',
-  spaceDiagonal = '',
+  faceDiagonal: _faceDiagonal = '',
+  spaceDiagonal: _spaceDiagonal = '',
   highlightElement = 'none',
   showFaceDiagonal = false,
   showSpaceDiagonal = false,
@@ -62,7 +62,7 @@ const Coordinate3DPlaneVisualizer: React.FC<Coordinate3DPlaneVisualizerProps> = 
   caption,
   title
 }) => {
-  const { theme } = useTheme();
+  const { theme: _theme } = useTheme();
 
   // Normalize customPoints to ensure it's always an array with proper {x, y, z} structure
   const normalizedCustomPoints = React.useMemo(() => {
@@ -167,7 +167,6 @@ const Coordinate3DPlaneVisualizer: React.FC<Coordinate3DPlaneVisualizerProps> = 
   const backTopLeft = { x: frontTopLeft.x + depthOffsetX, y: frontTopLeft.y - depthOffsetY }; // H
 
   // Colors
-  const defaultColor = theme.colors.textSecondary || '#666';
   const highlightColor = '#ef4444';
   const faceColor = '#e0e7ff'; // Light blue for faces
   const edgeColor = '#475569'; // Dark gray for edges
@@ -467,7 +466,7 @@ const Coordinate3DPlaneVisualizer: React.FC<Coordinate3DPlaneVisualizerProps> = 
     <div className="my-4">
       {title && (
         <div className="text-center mb-2">
-          <MathText content={title} className="text-lg font-semibold" />
+          <MathText className="text-lg font-semibold">{title}</MathText>
         </div>
       )}
 
@@ -491,7 +490,7 @@ const Coordinate3DPlaneVisualizer: React.FC<Coordinate3DPlaneVisualizerProps> = 
 
       {caption && (
         <div className="text-center mt-3 text-sm text-gray-600 dark:text-gray-400">
-          <MathText content={caption} />
+          <MathText>{caption}</MathText>
         </div>
       )}
     </div>

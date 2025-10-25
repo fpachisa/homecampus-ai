@@ -5,7 +5,7 @@
  * Provides a clean, distraction-free reading experience with navigation controls.
  */
 
-import React, { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { X, BookOpen, Printer, Loader2 } from 'lucide-react';
 import { notesLoader } from '../services/notesLoader';
 import { configLoader } from '../services/configLoader';

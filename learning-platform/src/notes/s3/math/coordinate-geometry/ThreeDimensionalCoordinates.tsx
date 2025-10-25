@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ThreeDimensionalCoordinates = () => {
   const [showExample1, setShowExample1] = useState(false);

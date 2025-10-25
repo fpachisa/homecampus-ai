@@ -72,9 +72,6 @@ export const StreakCounter: React.FC<StreakCounterProps> = ({ streak }) => {
           {weeks.map((week, weekIdx) => (
             <div key={weekIdx} className="flex space-x-0.5">
               {week.map((day, dayIdx) => {
-                const date = new Date(day.date);
-                const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
-
                 return (
                   <div
                     key={dayIdx}

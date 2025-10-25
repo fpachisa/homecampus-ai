@@ -57,6 +57,9 @@ export interface NodeDescriptor {
   // @deprecated Use mathTool instead. Kept for backward compatibility.
   extraMathTool?: string;
 
+  // @deprecated Old format with subtopics. Kept for backward compatibility.
+  subtopics?: any[];
+
   // NEW: Flag for pre-written vs AI-generated questions
   // Default: true (AI-generated)
   // Set to false for exam-style pre-written questions

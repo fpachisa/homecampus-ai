@@ -1,12 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Limits = () => {
-  const [showExample1, setShowExample1] = useState(false);
-  const [showExample2, setShowExample2] = useState(false);
-  const [showExample3, setShowExample3] = useState(false);
-  const [showExample4, setShowExample4] = useState(false);
-  const [showExample5, setShowExample5] = useState(false);
-  const [showExample6, setShowExample6] = useState(false);
   const [showPractice1, setShowPractice1] = useState(false);
   const [showPractice2, setShowPractice2] = useState(false);
   const [showPractice3, setShowPractice3] = useState(false);

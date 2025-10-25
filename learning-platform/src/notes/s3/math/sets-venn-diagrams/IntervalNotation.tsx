@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const IntervalNotation = () => {
   const [selectedInterval, setSelectedInterval] = useState('closed');

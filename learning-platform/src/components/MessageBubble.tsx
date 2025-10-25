@@ -4,6 +4,7 @@ import { useTheme } from '../hooks/useTheme';
 import VisualizationRenderer from './visualizations/VisualizationRenderer';
 import { MathToolRenderer } from './practice/MathToolRenderer';
 import type { Message } from '../types/types';
+import type { VisualizationData } from '../types/visualization';
 
 interface Props {
   message: Message;
@@ -47,7 +48,7 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
 
   // Extract visualization data from structured step data
   // Find the first step that has visualization and use that data
-  let extractedVisualizationData = null;
+  let extractedVisualizationData: VisualizationData | null = null;
   if (structuredStepData) {
     const stepWithViz = structuredStepData.steps.find((step: any) =>
       step.includeVisualization && step.visualizationData

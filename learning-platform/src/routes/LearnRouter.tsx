@@ -1,6 +1,5 @@
-import { Routes, Route, useParams, useSearchParams, Navigate } from 'react-router-dom';
+import { Routes, Route, useParams, Navigate } from 'react-router-dom';
 import MainLayout from '../components/layout/MainLayout';
-import SubtopicWelcomeScreen from '../components/SubtopicWelcomeScreen';
 
 /**
  * LearnRouter handles all /learn/* routes

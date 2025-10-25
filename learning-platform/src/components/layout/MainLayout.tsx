@@ -11,10 +11,12 @@ interface MainLayoutProps {
 export interface LayoutState {
   leftPanelCollapsed: boolean;
   leftPanelWidth: number;
+  rightPanelCollapsed: boolean;
 }
 
 export interface LayoutActions {
   toggleLeftPanel: () => void;
+  toggleRightPanel: () => void;
   setLeftPanelWidth: (width: number) => void;
   collapseAllPanels: () => void;
   expandAllPanels: () => void;
@@ -27,6 +29,7 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
   const [layoutState, setLayoutState] = useState<LayoutState>({
     leftPanelCollapsed: false,
     leftPanelWidth: 320, // Default Discord sidebar width
+    rightPanelCollapsed: false,
   });
 
   // Layout actions
@@ -34,14 +37,17 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
     toggleLeftPanel: () =>
       setLayoutState(prev => ({ ...prev, leftPanelCollapsed: !prev.leftPanelCollapsed })),
 
+    toggleRightPanel: () =>
+      setLayoutState(prev => ({ ...prev, rightPanelCollapsed: !prev.rightPanelCollapsed })),
+
     setLeftPanelWidth: (width: number) =>
       setLayoutState(prev => ({ ...prev, leftPanelWidth: Math.max(200, Math.min(500, width)) })),
 
     collapseAllPanels: () =>
-      setLayoutState(prev => ({ ...prev, leftPanelCollapsed: true })),
+      setLayoutState(prev => ({ ...prev, leftPanelCollapsed: true, rightPanelCollapsed: true })),
 
     expandAllPanels: () =>
-      setLayoutState(prev => ({ ...prev, leftPanelCollapsed: false })),
+      setLayoutState(prev => ({ ...prev, leftPanelCollapsed: false, rightPanelCollapsed: false })),
   };
 
   // Responsive breakpoints

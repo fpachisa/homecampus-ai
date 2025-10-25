@@ -1,4 +1,4 @@
-import type { SectionProgressState, SectionProgressEntry } from '../types/types';
+import type { SectionProgressState } from '../types/types';
 
 export interface TopicProgress {
   topicId: string;

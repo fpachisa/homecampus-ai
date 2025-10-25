@@ -139,7 +139,7 @@ export const ChildCard: React.FC<ChildCardProps> = ({ child, type, onSwitch }) =
           borderColor: theme.colors.border,
         }}
       >
-        {formatLastActivity(lastActivity)}
+        {formatLastActivity(lastActivity ?? undefined)}
       </div>
 
       {/* View Arrow */}

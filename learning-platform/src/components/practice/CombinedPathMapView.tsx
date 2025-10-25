@@ -5,11 +5,10 @@
  * All nodes are unlocked with smart entry point suggestions.
  */
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { PathNode, PathLayer, PathProgress } from '../../types/practice';
 import { yamlPathLoader } from '../../services/yamlPathLoader';
 import { pathProgressService } from '../../services/pathProgressService';
-import { PathNodeCard } from './PathNodeCard';
 import { useTheme } from '../../hooks/useTheme';
 
 interface CombinedPathMapViewProps {

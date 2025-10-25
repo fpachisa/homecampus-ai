@@ -57,7 +57,7 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
   highlightAngle = 'none',
   showAngles = true,
   showSides = true,
-  triangleType = 'auto',
+  triangleType: _triangleType = 'auto',
   showAmbiguousCase = false,
   caption
 }) => {
@@ -148,7 +148,6 @@ const GeneralTriangleVisualizer: React.FC<GeneralTriangleVisualizerProps> = ({
 
   // Convert angles to radians
   const angleA_rad = (calcAngleA * Math.PI) / 180;
-  const angleB_rad = (calcAngleB * Math.PI) / 180;
   const angleC_rad = (calcAngleC * Math.PI) / 180;
 
   // For obtuse angles, use the sides adjacent to the obtuse angle for better proportions

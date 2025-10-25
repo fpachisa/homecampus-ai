@@ -7,43 +7,63 @@
 // Enums and Constants (Must be first due to forward references)
 // ============================================
 
-export enum SubjectType {
-  MATHEMATICS = 'mathematics',
-  SCIENCE = 'science',
-  LANGUAGE = 'language',
-  HUMANITIES = 'humanities',
-  ARTS = 'arts',
-  TECHNOLOGY = 'technology'
-}
+export type SubjectType =
+  | 'mathematics'
+  | 'science'
+  | 'language'
+  | 'humanities'
+  | 'arts'
+  | 'technology';
 
-export enum GradeLevel {
+export const SubjectType = {
+  MATHEMATICS: 'mathematics' as const,
+  SCIENCE: 'science' as const,
+  LANGUAGE: 'language' as const,
+  HUMANITIES: 'humanities' as const,
+  ARTS: 'arts' as const,
+  TECHNOLOGY: 'technology' as const
+};
+
+export type GradeLevel =
   // Primary
-  P1 = 'primary-1',
-  P2 = 'primary-2',
-  P3 = 'primary-3',
-  P4 = 'primary-4',
-  P5 = 'primary-5',
-  P6 = 'primary-6',
+  | 'primary-1' | 'primary-2' | 'primary-3' | 'primary-4' | 'primary-5' | 'primary-6'
   // Secondary
-  S1 = 'secondary-1',
-  S2 = 'secondary-2',
-  S3 = 'secondary-3',
-  S4 = 'secondary-4',
-  S5 = 'secondary-5',
+  | 'secondary-1' | 'secondary-2' | 'secondary-3' | 'secondary-4' | 'secondary-5'
   // Junior College
-  JC1 = 'jc-1',
-  JC2 = 'jc-2',
+  | 'jc-1' | 'jc-2'
   // Kindergarten
-  K1 = 'kindergarten-1',
-  K2 = 'kindergarten-2'
-}
+  | 'kindergarten-1' | 'kindergarten-2';
 
-export enum DifficultyLevel {
-  FOUNDATIONAL = 'foundational',
-  INTERMEDIATE = 'intermediate',
-  ADVANCED = 'advanced',
-  EXPERT = 'expert'
-}
+export const GradeLevel = {
+  P1: 'primary-1' as const,
+  P2: 'primary-2' as const,
+  P3: 'primary-3' as const,
+  P4: 'primary-4' as const,
+  P5: 'primary-5' as const,
+  P6: 'primary-6' as const,
+  S1: 'secondary-1' as const,
+  S2: 'secondary-2' as const,
+  S3: 'secondary-3' as const,
+  S4: 'secondary-4' as const,
+  S5: 'secondary-5' as const,
+  JC1: 'jc-1' as const,
+  JC2: 'jc-2' as const,
+  K1: 'kindergarten-1' as const,
+  K2: 'kindergarten-2' as const
+};
+
+export type DifficultyLevel =
+  | 'foundational'
+  | 'intermediate'
+  | 'advanced'
+  | 'expert';
+
+export const DifficultyLevel = {
+  FOUNDATIONAL: 'foundational' as const,
+  INTERMEDIATE: 'intermediate' as const,
+  ADVANCED: 'advanced' as const,
+  EXPERT: 'expert' as const
+};
 
 // ============================================
 // Template Types
@@ -201,6 +221,14 @@ export interface RegistryConfig {
 // ============================================
 
 export interface FormattingRules {
+  unicode?: {
+    rule: string;
+    examples?: {
+      correct?: string[];
+      incorrect?: string[];
+    };
+    reason?: string;
+  };
   latex?: LatexRules;
   speech?: SpeechRules;
   display?: DisplayRules;

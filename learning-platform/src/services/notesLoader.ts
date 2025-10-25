@@ -6,7 +6,7 @@
  */
 
 import { configLoader } from './configLoader';
-import { ComponentType } from 'react';
+import { type ComponentType } from 'react';
 
 // Import all notes components statically
 // This is required because Vite doesn't support fully dynamic imports

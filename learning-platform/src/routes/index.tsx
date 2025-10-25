@@ -9,7 +9,6 @@ import { OnboardingWizard } from '../components/onboarding/OnboardingWizard';
 const LandingPage = lazy(() => import('../components/LandingPage'));
 const HomePage = lazy(() => import('../components/HomePage'));
 const UnifiedAuthForm = lazy(() => import('../components/auth/UnifiedAuthForm'));
-const MainLayout = lazy(() => import('../components/layout/MainLayout'));
 const ParentDashboard = lazy(() => import('../components/parent/ParentDashboard'));
 const ErrorBoundary = lazy(() => import('../components/ErrorBoundary'));
 

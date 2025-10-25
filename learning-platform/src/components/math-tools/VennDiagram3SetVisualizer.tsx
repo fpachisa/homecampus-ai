@@ -17,11 +17,6 @@
 
 import React from 'react';
 
-interface Region {
-  elements?: string[] | number;
-  count?: number;
-}
-
 interface VennDiagram3SetProps {
   // Set labels
   setALabel?: string;
@@ -81,11 +76,6 @@ const VennDiagram3SetVisualizer: React.FC<VennDiagram3SetProps> = ({
   // Helper to get count
   const getCount = (data: string[] | number): number => {
     return typeof data === 'number' ? data : data.length;
-  };
-
-  // Helper to get elements array
-  const getElements = (data: string[] | number): string[] => {
-    return typeof data === 'number' ? [String(data)] : data;
   };
 
   const counts = {

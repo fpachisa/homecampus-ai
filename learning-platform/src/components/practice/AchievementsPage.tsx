@@ -5,12 +5,11 @@
  * Shows progress and stats related to achievements.
  */
 
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import type { Achievement, PathProgress } from '../../types/practice';
 import { achievementService } from '../../services/achievementService';
 import { useTheme } from '../../hooks/useTheme';
 import { BackButton } from '../BackButton';
-import MathText from '../MathText';
 
 interface AchievementsPageProps {
   progress: PathProgress;

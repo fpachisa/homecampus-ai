@@ -1,8 +1,10 @@
 import React from 'react';
 import MathText from './MathText';
 import { sessionStorage } from '../services/sessionStorage';
-import { P6_MATH_FRACTIONS } from '../prompts/topics/P6-Math-Fractions';
-import type { TopicId } from '../prompts/topics/P6-Math-Fractions';
+
+// OLD: P6_MATH_FRACTIONS removed - not migrated
+// This component is no longer used in the application
+type TopicId = string;
 
 interface TopicSelectorProps {
   onTopicSelect: (topicId: TopicId) => void;
@@ -10,8 +12,8 @@ interface TopicSelectorProps {
 }
 
 const TopicSelector: React.FC<TopicSelectorProps> = ({ onTopicSelect, onResumeSession }) => {
-  const topics = Object.entries(P6_MATH_FRACTIONS);
-  const sessionInfo = sessionStorage.getSessionInfo();
+  const topics = Object.entries({});  // Empty - P6 topics not migrated
+  const sessionInfo = null;  // Component no longer used - P6 topics not migrated
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-6">
@@ -40,14 +42,13 @@ const TopicSelector: React.FC<TopicSelectorProps> = ({ onTopicSelect, onResumeSe
                 <div>
                   <h3 className="font-semibold text-emerald-800">Continue Learning</h3>
                   <p className="text-sm text-emerald-600">
-                    Resume your session from {sessionStorage.getTimeElapsedString(sessionInfo.timestamp)}
-                    • {sessionInfo.problemsCompleted} problems completed
+                    Resume your previous session
                   </p>
                 </div>
               </div>
               <div className="flex space-x-2">
                 <button
-                  onClick={() => sessionStorage.clearSession()}
+                  onClick={() => sessionStorage.clearSession('')}
                   className="px-3 py-1 text-sm text-emerald-600 hover:text-emerald-800 transition-colors"
                 >
                   Start Fresh
@@ -65,7 +66,7 @@ const TopicSelector: React.FC<TopicSelectorProps> = ({ onTopicSelect, onResumeSe
 
         {/* Topic Cards */}
         <div className="grid gap-4">
-          {topics.map(([topicId, config]) => (
+          {topics.map(([topicId, config]: [string, any]) => (
             <button
               key={topicId}
               onClick={() => onTopicSelect(topicId as TopicId)}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { VisualizationProps } from '../../types/visualization';
 import { StepControls, MathSummaryBox, RecipientDisplay, StepHeader } from './shared/VisualizationUI';
 import MathText from '../MathText';
@@ -10,9 +10,9 @@ import MathText from '../MathText';
  */
 const BarDivisionVisualizer: React.FC<VisualizationProps> = ({
   data,
-  theme,
+  theme: _theme,
   className = '',
-  onComplete
+  onComplete: _onComplete
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
 

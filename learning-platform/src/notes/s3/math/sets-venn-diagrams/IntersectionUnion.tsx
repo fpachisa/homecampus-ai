@@ -1,15 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const IntersectionUnion = () => {
   const [operation, setOperation] = useState<'intersection' | 'union'>('intersection');
   const [showExample1, setShowExample1] = useState(false);
   const [showExample2, setShowExample2] = useState(false);
-
-  // Example sets for interactive demo
-  const setA = [1, 3, 4, 6];
-  const setB = [2, 3, 5, 6, 7];
-  const intersection = [3, 6];
-  const union = [1, 2, 3, 4, 5, 6, 7];
 
   // Venn Diagram for Intersection and Union
   const VennDiagramOperation = ({ op }: { op: 'intersection' | 'union' }) => {

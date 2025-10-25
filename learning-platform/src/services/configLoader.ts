@@ -1425,7 +1425,7 @@ export class ConfigLoader {
           estimatedMinutes: 40,
           prerequisites: ['s3-math-statistics-data-types']
         },
-        notesComponent: null,
+        notesComponent: undefined,
         teachingTemplate: '',
         scoring: {
           easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },

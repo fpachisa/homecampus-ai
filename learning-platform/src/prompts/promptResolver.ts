@@ -3,7 +3,7 @@ import { S3_MATH_TRIGONOMETRY, S3_MATH_TRIGONOMETRY_CONFIG, type TrigonometryTop
 import { S3_MATH_CIRCLE_GEOMETRY, S3_MATH_CIRCLE_GEOMETRY_CONFIG, type CircleGeometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import { S3_MATH_QUADRATIC_EQUATIONS, S3_MATH_QUADRATIC_EQUATIONS_CONFIG, type QuadraticEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import { formatConversationHistory } from '../services/utils/responseParser';
-import { getFilteredTools, MATH_TOOLS_REGISTRY } from '../components/math-tools/mathToolsRegistry';
+import { getFilteredTools } from '../components/math-tools/mathToolsRegistry';
 
 // Legacy type definitions (moved from deleted P6-Math-Fractions)
 export type SubtopicConfig = any;

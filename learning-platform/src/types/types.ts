@@ -31,6 +31,7 @@ export interface Message {
 export interface ConversationState {
   messages: Message[];
   currentProblemType: number;
+  currentDifficulty?: 'easy' | 'medium' | 'hard';  // Optional difficulty level
   problemState?: ProblemState;  // Explicit problem tracking
   sessionStats: {
     problemsAttempted: number;
@@ -118,7 +119,36 @@ export interface ProgressEvaluation {
 // ============================================
 // PRACTICE MODE TYPES (PATH-BASED)
 // ============================================
-// Types will be imported from types/practice.ts
+// Main types imported from types/practice.ts (PathProblem, PathNode, etc.)
+
+// Legacy practice mode types (used in old practice service methods)
+export interface PracticeProblem {
+  problemText: string;
+  correctAnswer: string;
+  hints?: string[];
+}
+
+export interface PracticeProblemState {
+  hintsGiven: number;
+  attempts: number;
+}
+
+export interface PracticeAgentResponse {
+  intent: string;
+  answerCorrect: boolean;
+  pointsEarned: number;
+  isMainProblemSolved: boolean;
+  speech: {
+    text: string;
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+  };
+  display: {
+    content: string;
+    showAfterSpeech: boolean;
+  };
+  action: string;
+  reasoning: string;
+}
 
 // ============================================
 // SECTION PROGRESSION TRACKING

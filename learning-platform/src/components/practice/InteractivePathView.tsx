@@ -6,7 +6,7 @@
  * Right: Leaderboard & Goals
  */
 
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
 import type { PathNode, PathLayer, PathProgress } from '../../types/practice';
@@ -34,7 +34,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const centerPanelRef = useRef<HTMLDivElement>(null);
-  const [pathWidth, setPathWidth] = useState(600);
+  const [_pathWidth, setPathWidth] = useState(600);
 
   useEffect(() => {
     loadPathData();

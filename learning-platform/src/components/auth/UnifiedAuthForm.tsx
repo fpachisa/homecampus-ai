@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 
 interface UnifiedAuthFormProps {
-  onEmailSubmit: (email: string) => void;
-  onGoogleSignIn: () => void;
+  onEmailSubmit?: (email: string) => void;
+  onGoogleSignIn?: () => void;
   loading?: boolean;
   error?: string | null;
 }
@@ -20,7 +20,7 @@ export const UnifiedAuthForm: React.FC<UnifiedAuthFormProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email.trim()) {
-      onEmailSubmit(email.trim());
+      onEmailSubmit?.(email.trim());
     }
   };
 
@@ -65,7 +65,7 @@ export const UnifiedAuthForm: React.FC<UnifiedAuthFormProps> = ({
       {/* Google Sign-In */}
       <button
         type="button"
-        onClick={onGoogleSignIn}
+        onClick={() => onGoogleSignIn?.()}
         disabled={loading}
         className="w-full py-3.5 px-4 font-semibold rounded-lg text-base transition-all flex items-center justify-center gap-3 mb-6"
         style={{

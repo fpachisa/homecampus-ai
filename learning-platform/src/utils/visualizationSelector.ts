@@ -23,14 +23,14 @@ const CONTEXT_KEYWORDS: Record<VisualizationContext, string[]> = {
 
 // Visualization ID mappings for contexts
 const CONTEXT_TO_VISUALIZATION: Record<VisualizationContext, VisualizationId> = {
-  'chocolate-bar': 'chocolate-bar-division',
-  'pizza': 'pizza-sharing',
-  'cake': 'cake-division',
-  'ribbon': 'ribbon-cutting',
-  'rope': 'rope-cutting',
-  'liquid': 'liquid-pouring',
-  'measurement': 'measurement-division',
-  'abstract': 'abstract-bar-division'
+  'chocolate-bar': 'bar-division',
+  'pizza': 'circular-division',
+  'cake': 'circular-division',
+  'ribbon': 'bar-division',
+  'rope': 'bar-division',
+  'liquid': 'bar-division',
+  'measurement': 'bar-division',
+  'abstract': 'bar-division'
 };
 
 /**
@@ -154,9 +154,9 @@ export function selectVisualization(
   const visualization = getVisualization(visualizationId);
 
   // If not registered, fall back to abstract
-  if (!visualization && visualizationId !== 'abstract-bar-division') {
+  if (!visualization && visualizationId !== 'bar-division') {
     return {
-      visualizationId: 'abstract-bar-division',
+      visualizationId: 'bar-division',
       context: 'abstract',
       confidence: 0.7,
       fallbackId: undefined
@@ -190,7 +190,7 @@ export function getVisualizationWithFallback(
   }
 
   // Ultimate fallback
-  return 'abstract-bar-division';
+  return 'bar-division';
 }
 
 /**

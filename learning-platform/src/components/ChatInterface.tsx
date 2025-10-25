@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import MessageBubble from './MessageBubble';
 import InputArea, { type InputAreaHandle } from './InputArea';
 import Avatar from './Avatar';
@@ -10,9 +10,6 @@ import { progressService } from '../services/progressService';
 import { sessionStorage } from '../services/sessionStorage';
 import { useSessionPersistence } from '../hooks/useSessionPersistence';
 import { useAudioManager } from '../hooks/useAudioManager';
-import { stripLatexForSpeech } from '../utils/textUtils';
-import { safeParseJSON } from '../services/utils/responseParser';
-import { TOPIC_IDS } from '../prompts/topicIds';
 import { S3_MATH_TRIGONOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import { S3_MATH_CIRCLE_GEOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
@@ -163,11 +160,14 @@ const [isLoading, setIsLoading] = useState(false);
 
   // Audio Manager for TTS and Avatar control
   const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText, stopSpeaking } = useAudioManager();
-  const [showSubtitle, setShowSubtitle] = useState(true); // User preference
+  const [showSubtitle] = useState(true); // User preference
 
   // Notes viewer state
   const [hasNotes, setHasNotes] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
+
+  // Error state
+  const [_error, setError] = useState<string | null>(null);
 
   // Section progression state
   const [sectionProgress, setSectionProgress] = useState<SectionProgressState>({
@@ -188,7 +188,7 @@ const [isLoading, setIsLoading] = useState(false);
   const inputAreaRef = useRef<InputAreaHandle>(null);
 
   // Auto-save session state
-  const { isSyncing, lastSyncTime, syncError } = useSessionPersistence({
+  const { isSyncing: _isSyncing, lastSyncTime: _lastSyncTime, syncError: _syncError } = useSessionPersistence({
     topicId,
     conversationState: state,
     currentScore,
@@ -328,18 +328,7 @@ const scrollToBottom = () => {
     }
   };
 
-  const saveProgress = () => {
-    progressService.saveProgress(
-      topicId,
-      state.sessionStats,
-      currentScore,
-      state.currentProblemType,
-      user?.uid,
-      sectionProgress
-    );
-  };
-
-  // Helper functions for problem state management
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const createNewProblemState = (problemText: string, problemType: number, mathTool?: import('../types/types').MathTool): ProblemState => {
     return {
       currentProblemId: `problem_${Date.now()}`,
@@ -376,56 +365,7 @@ const scrollToBottom = () => {
     setProblemState(createNewProblemState(newProblemText, problemType, mathTool));
   };
 
-  // Callback for when step-by-step visualization completes (Continue button clicked)
-  const handleStepByStepComplete = useCallback(async () => {
-    const pendingNewProblem = pendingNewProblemRef.current;
-    if (!pendingNewProblem || !aiService.current) return;
-
-    console.log('🎬 ChatInterface: Step-by-step complete, Continue button clicked');
-
-    try {
-      const questionResponse = await aiService.current.generateQuestion(
-        pendingNewProblem.problemType,
-        pendingNewProblem.topicId,
-        {
-          recentHistory: pendingNewProblem.recentHistory,
-          evaluatorReasoning: pendingNewProblem.evaluatorReasoning,
-          currentSection: sectionProgress.currentSection
-        }
-      );
-      console.log('📝 ChatInterface: Adding new problem after step-by-step completion');
-
-      // Speak the celebration/transition, then show the problem
-      const emotion = questionResponse.speech.emotion || 'celebratory';
-      const validatedMathTool = validateMathTool(questionResponse.mathTool);
-      speakText(questionResponse.speech.text, emotion, () => {
-        // After speech, show the problem
-        addMessage('tutor', questionResponse.display.content, {
-          problemType: pendingNewProblem.problemType,
-          mathTool: validatedMathTool // Include mathTool if present and valid
-        });
-        resetProblemState(questionResponse.display.content, pendingNewProblem.problemType, validatedMathTool);
-        setState(prev => ({
-          ...prev,
-          sessionStats: {
-            ...prev.sessionStats,
-            problemsAttempted: prev.sessionStats.problemsAttempted + 1
-          }
-        }));
-
-        // Auto-focus input after new problem is displayed
-        setTimeout(() => {
-          inputAreaRef.current?.focus();
-        }, 300);
-      });
-
-      pendingNewProblemRef.current = null;
-      console.log('✅ ChatInterface: New problem added after step-by-step completion');
-    } catch (error) {
-      console.error('Failed to generate new problem after step-by-step completion:', error);
-      pendingNewProblemRef.current = null;
-    }
-  }, []); // No dependencies - callback is now stable
+  // Removed unused _handleStepByStepComplete callback
 
   const restoreFromSession = async () => {
     const restoreTopicId = currentTopicRef.current; // Capture current topic
@@ -983,8 +923,6 @@ const handleStudentSubmit = async (input: string) => {
             {
               recentHistory: formattedHistory,
               evaluatorReasoning: evaluatorOutput.reasoning,
-              evaluatorAction: evaluatorOutput.action,
-              advanceToNextSection: evaluatorOutput.advanceToNextSection,
               currentSection: sectionProgress.currentSection
             }
           );
@@ -1100,8 +1038,9 @@ const handleStudentSubmit = async (input: string) => {
             // Display the solution text with optional mathTool
             addMessage('tutor', tutorResponse, {
               problemType: problemTypeForExecution,
-              mathTool: validatedMathTool
-            }, { isPlainTextSolution: true }); // Mark as solution to show Continue button
+              mathTool: validatedMathTool,
+              messageType: 'solution'
+            });
           });
         }
       }

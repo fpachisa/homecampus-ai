@@ -49,7 +49,7 @@ const SetVisualizer: React.FC<SetVisualizerProps> = ({
   isDisjointFrom,
   membershipExamples = [],
   color = '#3b82f6',
-  highlightColor = '#fbbf24',
+  highlightColor: _highlightColor = '#fbbf24',
   caption
 }) => {
   // Render set notation

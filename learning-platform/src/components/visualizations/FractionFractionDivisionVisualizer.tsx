@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { VisualizationProps } from '../../types/visualization';
 import { StepControls, MathSummaryBox, StepHeader } from './shared/VisualizationUI';
 import MathText from '../MathText';
@@ -17,9 +17,9 @@ import { calculateLCM } from '../../utils/mathUtils';
  */
 const FractionFractionDivisionVisualizer: React.FC<VisualizationProps> = ({
   data,
-  theme,
+  theme: _theme,
   className = '',
-  onComplete
+  onComplete: _onComplete
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -38,10 +38,10 @@ const FractionFractionDivisionVisualizer: React.FC<VisualizationProps> = ({
   }
 
   const {
-    numerator1,      // Dividend numerator (e.g., 5 from 5/6)
-    denominator1,    // Dividend denominator (e.g., 6 from 5/6)
-    numerator2,      // Divisor numerator (e.g., 1 from 1/12)
-    denominator2     // Divisor denominator (e.g., 12 from 1/12)
+    numerator1 = 1,      // Dividend numerator (e.g., 5 from 5/6)
+    denominator1 = 1,    // Dividend denominator (e.g., 6 from 5/6)
+    numerator2 = 1,      // Divisor numerator (e.g., 1 from 1/12)
+    denominator2 = 1     // Divisor denominator (e.g., 12 from 1/12)
   } = problemData;
 
   // Calculate LCD and converted values
@@ -87,7 +87,6 @@ const FractionFractionDivisionVisualizer: React.FC<VisualizationProps> = ({
 
   // Calculate portions for display (limit to reasonable number for visualization)
   const displayablePortions = Math.min(Math.floor(result), 20);
-  const hasRemainder = !isWholeNumber && result > 1;
 
   return (
     <div
@@ -172,7 +171,7 @@ const FractionFractionDivisionVisualizer: React.FC<VisualizationProps> = ({
                     ))}
                   </div>
                   <div className="absolute bottom-2 left-0 right-0 text-center text-xs font-semibold" style={{ color: visualTheme.textColor }}>
-                    {visualTheme.iconLabel.toUpperCase()}
+                    {visualTheme.iconLabel?.toUpperCase() || 'ITEM'}
                   </div>
                 </div>
                 {/* Cup rim */}

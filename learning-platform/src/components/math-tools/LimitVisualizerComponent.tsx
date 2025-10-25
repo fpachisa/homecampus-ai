@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 
 interface LimitVisualizerProps {
@@ -21,7 +21,7 @@ const LimitVisualizerComponent: React.FC<LimitVisualizerProps> = ({
   leftValue,
   rightValue,
   functionValue,
-  showApproach = true,
+  showApproach: _showApproach = true,
   xMin,
   xMax,
   caption
@@ -166,8 +166,8 @@ const LimitVisualizerComponent: React.FC<LimitVisualizerProps> = ({
   // Overall limit only exists if both one-sided limits agree, or if explicitly provided
   const actualLimitValue = limitValue ?? (limitsAgree ? leftValue : undefined);
 
-  const isContinuous = actualLimitValue !== undefined &&
-    actualFunctionValue !== undefined &&
+  const isContinuous = actualLimitValue != null &&
+    actualFunctionValue != null &&
     Math.abs(actualLimitValue - actualFunctionValue) < 0.01;
 
   return (
@@ -253,7 +253,7 @@ const LimitVisualizerComponent: React.FC<LimitVisualizerProps> = ({
               strokeWidth="3"
             />
             {/* Function value marker */}
-            {actualFunctionValue !== undefined && (
+            {actualFunctionValue != null && (
               <circle
                 cx={mathToSVG(limitPoint, actualFunctionValue)[0]}
                 cy={mathToSVG(limitPoint, actualFunctionValue)[1]}
@@ -267,7 +267,7 @@ const LimitVisualizerComponent: React.FC<LimitVisualizerProps> = ({
         )}
 
         {/* Single limit marker (when limit exists) */}
-        {actualLimitValue !== undefined && (
+        {actualLimitValue != null && (
           <>
             <circle
               cx={mathToSVG(limitPoint, actualLimitValue)[0]}
@@ -278,7 +278,7 @@ const LimitVisualizerComponent: React.FC<LimitVisualizerProps> = ({
               strokeWidth="3"
             />
             {/* Function value (if different from limit) */}
-            {actualFunctionValue !== undefined && !isContinuous && (
+            {actualFunctionValue != null && !isContinuous && (
               <circle
                 cx={mathToSVG(limitPoint, actualFunctionValue)[0]}
                 cy={mathToSVG(limitPoint, actualFunctionValue)[1]}

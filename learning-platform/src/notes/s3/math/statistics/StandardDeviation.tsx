@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const StandardDeviation = () => {
   const [showExample1, setShowExample1] = useState(false);
@@ -70,7 +70,7 @@ const StandardDeviation = () => {
           </div>
 
           <div className="bg-white dark:bg-gray-800 p-6 rounded border-2 border-gray-300 dark:border-gray-600 mb-4">
-            <h3 className="font-bold mb-3 text-gray-900 dark:text-gray-100">Example: Deviations for data set {2, 3, 5, 9, 11}</h3>
+            <h3 className="font-bold mb-3 text-gray-900 dark:text-gray-100">Example: Deviations for data set {'{'} 2, 3, 5, 9, 11 {'}'}</h3>
 
             <div className="mb-3">
               <p className="text-sm text-gray-700 dark:text-gray-300">

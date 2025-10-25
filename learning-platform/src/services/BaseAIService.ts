@@ -6,8 +6,7 @@ import { newPromptResolver as promptResolver } from '../prompts/newPromptResolve
 import type { AIService } from './aiService';
 import { AIServiceError, AIErrorType } from './aiService';
 import type { AIProvider } from './providers/AIProvider';
-import { parseJSON, safeParseJSON, validateRequiredKeys, formatConversationHistory, extractJSONFromMarkdown } from './utils/responseParser';
-import { calculateVisualizationMath } from '../utils/mathUtils';
+import { safeParseJSON, validateRequiredKeys, formatConversationHistory } from './utils/responseParser';
 
 /**
  * Base AI Service Implementation
@@ -493,10 +492,10 @@ class BaseAIService implements AIService {
   }
 
   async extractStepByStepVisualizations(
-    tutorResponse: string,
-    problemText: string,
-    problemType: number,
-    topicId: string
+    _tutorResponse: string,
+    _problemText: string,
+    _problemType: number,
+    _topicId: string
   ): Promise<any> {
     // Deprecated: This method has been replaced by generateSolution
     // Keeping for backward compatibility
@@ -707,7 +706,7 @@ class BaseAIService implements AIService {
       console.log('=== PRACTICE BATCH GENERATION COMPLETE ===');
       console.log(`Generated ${practiceProblems.length} practice problems`);
 
-      const withSolutions = practiceProblems.filter(p => p.solutionData !== null).length;
+      const withSolutions = practiceProblems.filter(p => (p as any).solutionData !== null).length;
       console.log(`Problems with solution data: ${withSolutions}/${practiceProblems.length}`);
 
       return practiceProblems;

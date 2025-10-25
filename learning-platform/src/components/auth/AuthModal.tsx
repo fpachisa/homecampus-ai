@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { UnifiedAuthForm } from './UnifiedAuthForm';
 import { EmailSentConfirmation } from './EmailSentConfirmation';
 import { ProfileSetupWizard } from './ProfileSetupWizard';

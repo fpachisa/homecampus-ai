@@ -81,6 +81,9 @@ export interface UserProfile {
 
   // For student accounts
   parentUid?: string;          // Parent's UID if linked
+  parentEmail?: string;        // Parent's email address
+  parentInvitePending?: boolean; // True if parent invite has been sent
+  parentLinked?: boolean;      // True if parent account is linked
 
   pathProgress: {
     [pathId: string]: PathProgressData;

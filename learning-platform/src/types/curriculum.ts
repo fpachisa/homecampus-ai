@@ -10,7 +10,7 @@
 // ============================================
 
 export interface CurriculumMetadata {
-  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  difficulty: 'beginner' | 'intermediate' | 'advanced' | 'foundational' | 'intermediate-to-advanced' | 'foundational-intermediate' | 'intermediate-advanced' | 'foundational-to-intermediate';
   estimatedMinutes: number;
   prerequisites: string[];
 }
@@ -139,7 +139,7 @@ export interface SubtopicYAML {
   subtopic: string;
 
   metadata: {
-    difficulty: 'beginner' | 'intermediate' | 'advanced';
+    difficulty: 'beginner' | 'intermediate' | 'advanced' | 'foundational' | 'intermediate-to-advanced' | 'foundational-intermediate' | 'intermediate-advanced' | 'foundational-to-intermediate';
     estimatedMinutes: number;
     prerequisites: string[];
   };

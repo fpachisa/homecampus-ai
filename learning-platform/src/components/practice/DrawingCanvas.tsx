@@ -5,7 +5,7 @@
  * Allows freehand drawing with color, pen size, and eraser tools.
  */
 
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 interface DrawingCanvasProps {
   initialImage?: string;  // base64 PNG to restore previous drawing

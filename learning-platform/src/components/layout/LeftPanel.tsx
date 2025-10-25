@@ -1,9 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
 import { sessionStorage } from '../../services/sessionStorage';
-import { progressService } from '../../services/progressService';
 // OLD: P6_MATH_FRACTIONS removed - not migrated
 // import { P6_MATH_FRACTIONS } from '../../prompts/topics/P6-Math-Fractions';
 // import type { TopicId } from '../../prompts/topics/P6-Math-Fractions';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { S3_MATH_TRIGONOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
@@ -34,131 +34,6 @@ interface SubtopicWelcomeScreenProps {
   onBack: () => void;
 }
 
-function getTopicIcon(topicId: string): string {
-  // P6 Fractions icons
-  if (topicId.includes('dividing-whole-numbers')) return '➗';
-  if (topicId.includes('whole-number-dividing')) return '🔢';
-  if (topicId.includes('fraction-dividing-fraction')) return '📏';
-  if (topicId.includes('word-problems')) return '📝';
-
-  // S3 Trigonometry icons
-  if (topicId.includes('basic-ratios')) return '📐';
-  if (topicId.includes('problem-solving')) return '🧮';
-  if (topicId.includes('true-bearings')) return '🧭';
-  if (topicId.includes('obtuse-angles')) return '📏';
-  if (topicId.includes('area-of-triangle')) return '🔺';
-  if (topicId.includes('sine-rule')) return '📊';
-  if (topicId.includes('cosine-rule')) return '📈';
-
-  // S3 Circle Geometry icons
-  if (topicId.includes('definitions')) return '⭕';
-  if (topicId.includes('angle-semicircle')) return '📐';
-  if (topicId.includes('chords')) return '📏';
-  if (topicId.includes('radius-tangent')) return '📍';
-  if (topicId.includes('tangents-external')) return '✏️';
-  if (topicId.includes('angle-centre')) return '🎯';
-  if (topicId.includes('angle-same-arc')) return '🔵';
-
-  // S3 Quadratic Equations icons
-  if (topicId.includes('solving-standard-form')) return '🔢';
-  if (topicId.includes('solving-factorization')) return '✂️';
-  if (topicId.includes('solving-fractional')) return '➗';
-  if (topicId.includes('solving-completing-square')) return '◼️';
-  if (topicId.includes('solving-formula')) return '📐';
-  if (topicId.includes('solving-exponential')) return '⚡';
-  if (topicId.includes('word-problems')) return '💡';
-  if (topicId.includes('graph-features')) return '📊';
-  if (topicId.includes('graph-completed-square')) return '🎯';
-  if (topicId.includes('graph-factorised')) return '🔍';
-  if (topicId.includes('graph-polynomial')) return '📈';
-  if (topicId.includes('graph-finding-function')) return '🔎';
-  if (topicId.includes('graph-problem-solving')) return '🎨';
-
-  // S3 Exponential & Logarithms icons
-  if (topicId.includes('exponential-functions')) return '📈';
-  if (topicId.includes('exponential-graphs')) return '📊';
-  if (topicId.includes('exponential-equations')) return '🔢';
-  if (topicId.includes('exponential-growth')) return '📈';
-  if (topicId.includes('exponential-decay')) return '📉';
-  if (topicId.includes('common-logarithms')) return '🔤';
-  if (topicId.includes('logarithm-laws')) return '⚖️';
-  if (topicId.includes('using-logarithms')) return '🔧';
-  if (topicId.includes('logarithms-other-bases')) return '🔠';
-
-  // S3 Sets & Venn Diagrams icons
-  if (topicId.includes('sets-fundamentals')) return '📦';
-  if (topicId.includes('sets-complement')) return '🔄';
-  if (topicId.includes('sets-intersection-union')) return '🔗';
-  if (topicId.includes('sets-special-number-sets')) return '🔢';
-  if (topicId.includes('sets-interval-notation')) return '📏';
-  if (topicId.includes('sets-venn-diagrams')) return '⭕';
-  if (topicId.includes('sets-venn-regions')) return '🎯';
-  if (topicId.includes('sets-numbers-in-regions')) return '🔢';
-  if (topicId.includes('sets-problem-solving')) return '🧩';
-
-  // S3 Exponents icons
-  if (topicId.includes('exponents-laws')) return '⚡';
-  if (topicId.includes('exponents-rational')) return '√';
-  if (topicId.includes('exponents-standard-form')) return '🔬';
-
-  // S3 Surds & Radicals icons
-  if (topicId.includes('surds-fundamentals')) return '√';
-  if (topicId.includes('surds-simplifying')) return '🔍';
-  if (topicId.includes('surds-addition-subtraction')) return '➕';
-  if (topicId.includes('surds-multiplication-division')) return '✖️';
-  if (topicId.includes('surds-rationalizing')) return '🔄';
-  if (topicId.includes('surds-mixed-operations')) return '🧮';
-
-  // S3 Statistics icons
-  if (topicId.includes('statistics-data-types')) return '📊';
-  if (topicId.includes('statistics-distributions')) return '📉';
-  if (topicId.includes('statistics-centre')) return '📍';
-  if (topicId.includes('statistics-boxplots')) return '📦';
-  if (topicId.includes('statistics-cumulative')) return '📈';
-  if (topicId.includes('statistics-deviation')) return '📏';
-  if (topicId.includes('statistics-normal')) return '🔔';
-
-  // S3 Relations & Functions icons
-  if (topicId.includes('relations-functions-fundamentals')) return '🔗';
-  if (topicId.includes('function-notation')) return '📝';
-  if (topicId.includes('domain-range')) return '📊';
-  if (topicId.includes('sign-diagrams')) return '📉';
-  if (topicId.includes('transformations')) return '🔄';
-  if (topicId.includes('absolute-value')) return '📏';
-
-  // S3 Coordinate Geometry icons
-  if (topicId.includes('coord-geom-fundamentals')) return '📍';
-  if (topicId.includes('coord-geom-gradient')) return '📈';
-  if (topicId.includes('coord-geom-line-equations')) return '📝';
-  if (topicId.includes('coord-geom-graphing')) return '📊';
-  if (topicId.includes('coord-geom-perpendicular-bisectors')) return '⊥';
-  if (topicId.includes('coord-geom-applications')) return '🎯';
-
-  // S4 Differential Calculus icons
-  if (topicId === 's4-math-differential-calculus-limits') return '∞';
-  if (topicId === 's4-math-differential-calculus-gradient-tangent') return '📈';
-  if (topicId === 's4-math-differential-calculus-derivative-function') return 'f′';
-  if (topicId === 's4-math-differential-calculus-first-principles') return '△';
-  if (topicId === 's4-math-differential-calculus-differentiation-rules') return '∂';
-  if (topicId === 's4-math-differential-calculus-tangent-equations') return '📐';
-  if (topicId === 's4-math-differential-calculus-stationary-points') return '📊';
-
-  // S4 Integration icons
-  if (topicId === 's4-math-integration-area-under-curves') return '📊';
-  if (topicId === 's4-math-integration-antiderivatives') return '∫';
-  if (topicId === 's4-math-integration-rules') return '📏';
-  if (topicId === 's4-math-integration-definite-integrals') return '🎯';
-  if (topicId === 's4-math-integration-riemann-sums') return '📐';
-
-  // S4 Probability icons
-  if (topicId === 's4-math-probability-basic-concepts') return '🎲';
-  if (topicId === 's4-math-probability-combined-events') return '🔢';
-  if (topicId === 's4-math-probability-trees') return '🌳';
-  if (topicId === 's4-math-probability-conditional') return '🔀';
-  if (topicId === 's4-math-probability-applications') return '🎯';
-
-  return '📐';
-}
 
 const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
   topicId,
@@ -204,7 +79,6 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
   }
 
   const sections = topicConfig.progressionStructure?.sections || [];
-  const icon = getTopicIcon(topicId);
 
   return (
     <div

@@ -100,7 +100,6 @@ const QuadrilateralCompositeVisualizer: React.FC<QuadrilateralCompositeVisualize
   const CD = sideLengths[2];  // Side 2-3
   const DA = sideLengths[3];  // Side 3-0
 
-  const angleA = angleValues[0];
   const angleB = angleValues[1];
   const angleC = angleValues[2];
   const angleD = angleValues[3];

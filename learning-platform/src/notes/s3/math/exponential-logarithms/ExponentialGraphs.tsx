@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ExponentialGraphs = () => {
   const [selectedBase, setSelectedBase] = useState(2);

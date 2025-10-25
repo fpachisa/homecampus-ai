@@ -92,7 +92,6 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
   } else {
     // Auto-range: ensure vertex is visible with some padding
     const vertexY = k;
-    const padding = Math.abs(vertexY) * 0.3 || 10; // 30% padding or minimum 10
 
     // Calculate y-values at the edges of x-range
     const yAtXMin = a * Math.pow(xRange[0] - h, 2) + k;

@@ -168,19 +168,6 @@ const StationaryPointsVisualizer: React.FC<StationaryPointsVisualizerProps> = ({
     }
   };
 
-  const getPointLabel = (type: string) => {
-    switch (type) {
-      case 'max':
-        return 'Maximum';
-      case 'min':
-        return 'Minimum';
-      case 'inflection':
-        return 'Inflection';
-      default:
-        return 'Point';
-    }
-  };
-
   // Show error if path generation failed
   if (!path) {
     return (

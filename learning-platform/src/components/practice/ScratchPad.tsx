@@ -9,7 +9,7 @@
  * - Responsive: Side-by-side on desktop, collapsible on mobile
  */
 
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import DrawingCanvas from './DrawingCanvas';
 import type { ScratchPadData } from '../../types/practice';
 

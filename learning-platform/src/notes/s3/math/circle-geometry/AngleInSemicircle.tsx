@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const AngleInSemicircle = () => {
   const [showProof, setShowProof] = useState(false);
-  const [exampleStep, setExampleStep] = useState(1);
+  const [_exampleStep, _setExampleStep] = useState(1);
 
   // Semicircle Theorem Visualizer
   const SemicircleVisualizer = ({ showRadii = false, showAngles = false }) => {

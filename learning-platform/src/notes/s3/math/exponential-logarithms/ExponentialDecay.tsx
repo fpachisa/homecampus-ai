@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ExponentialDecay = () => {
   const [showExample1, setShowExample1] = useState(false);
@@ -48,7 +48,7 @@ const ExponentialDecay = () => {
 
         {/* Curve */}
         <path
-          d={times.map((t, i) => {
+          d={times.map((_t, i) => {
             const xPos = 50 + (i * 50);
             const yPos = 200 - (values[i] * scale);
             return `${i === 0 ? 'M' : 'L'} ${xPos},${yPos}`;

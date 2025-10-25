@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ExponentialFunctions = () => {
   const [selectedBase, setSelectedBase] = useState(2);
-  const [selectedFunction, setSelectedFunction] = useState('3^x');
+  const [_selectedFunction, _setSelectedFunction] = useState('3^x');
   const [showExample1, setShowExample1] = useState(false);
   const [showExample2, setShowExample2] = useState(false);
-
-  // Calculate exponential values
-  const calculateExp = (base: number, x: number) => {
-    return Math.pow(base, x).toFixed(2);
-  };
 
   // Function Visualizer Component
   const FunctionVisualizer = ({ base = 2 }: { base: number }) => {
@@ -57,7 +52,7 @@ const ExponentialFunctions = () => {
 
         {/* Smooth curve through points */}
         <path
-          d={`M ${100},${200 - yValues[0] * scale} ${xValues.slice(1).map((x, i) => {
+          d={`M ${100},${200 - yValues[0] * scale} ${xValues.slice(1).map((_x, i) => {
             const xPos = 50 + (i + 2) * 50;
             const yPos = 200 - yValues[i + 1] * scale;
             return `L ${xPos},${yPos}`;

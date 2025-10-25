@@ -11,7 +11,6 @@ export class GeminiProvider implements AIProvider {
   private model: any;
   private modelName: string;
   private temperature: number;
-  private defaultMaxTokens: number;
 
   constructor(config: AIProviderConfig) {
     this.genAI = new GoogleGenerativeAI(config.apiKey);
@@ -26,14 +25,14 @@ export class GeminiProvider implements AIProvider {
     });
   }
 
-  async generateContent(prompt: string, maxTokens?: number): Promise<string> {
+  async generateContent(prompt: string, _maxTokens?: number): Promise<string> {
     try {
       // Add 30-second timeout to prevent hanging requests
       const result = await this.withTimeout(
         this.model.generateContent(prompt),
         30000, // 30 seconds
         'Gemini API request timed out after 30 seconds'
-      );
+      ) as any;
 
       const text = result.response.text().trim();
 

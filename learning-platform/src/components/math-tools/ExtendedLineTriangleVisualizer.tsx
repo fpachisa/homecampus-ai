@@ -84,7 +84,6 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
 
   // Calculate the third angle if not provided
   let calcAngleAtA = angleAtA ?? 180 - angleAtB - (interiorAngleAtC ?? 60);
-  let calcInteriorAngleAtC = interiorAngleAtC ?? 180 - angleAtB - calcAngleAtA;
 
   // Triangle base and height
   const baseLength = 180; // Length of AB (base) - reduced for better fit
@@ -117,14 +116,16 @@ const ExtendedLineTriangleVisualizer: React.FC<ExtendedLineTriangleVisualizerPro
   };
 
   // Calculate actual side lengths for display
-  const actualSideBC = Math.sqrt(
+  const _actualSideBC = Math.sqrt(
     Math.pow(vertexCPos.x - vertexBPos.x, 2) +
     Math.pow(vertexCPos.y - vertexBPos.y, 2)
   );
-  const actualSideAC = Math.sqrt(
+  void _actualSideBC; // Suppress unused variable warning
+  const _actualSideAC = Math.sqrt(
     Math.pow(vertexCPos.x - vertexAPos.x, 2) +
     Math.pow(vertexCPos.y - vertexAPos.y, 2)
   );
+  void _actualSideAC; // Suppress unused variable warning
 
   // ============================================
   // HELPER FUNCTIONS

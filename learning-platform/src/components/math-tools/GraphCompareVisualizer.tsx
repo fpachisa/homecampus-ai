@@ -177,7 +177,6 @@ const GraphCompareVisualizer: React.FC<GraphCompareVisualizerProps> = ({
     if (!showIntersection) return null;
 
     const step = (xRange[1] - xRange[0]) / 100;
-    let prevDiff = Infinity;
     let bestX = xRange[0];
     let bestDiff = Infinity;
 

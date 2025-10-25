@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import React from 'react';
 import { useTheme } from '../../hooks/useTheme';
 import MathText from '../MathText';
@@ -52,8 +53,8 @@ const FactoringVisualizer: React.FC<FactoringVisualizerProps> = ({
   }
 
   // Generate steps based on method
-  const generateSteps = (): JSX.Element[] => {
-    const steps: JSX.Element[] = [];
+  const generateSteps = (): React.ReactElement[] => {
+    const steps: React.ReactElement[] = [];
 
     // Original equation
     const originalEq = equation || `${a === 1 ? '' : a}x^2 ${b >= 0 ? '+' : '-'} ${Math.abs(b)}x ${c >= 0 ? '+' : '-'} ${Math.abs(c)} = 0`;

@@ -21,7 +21,7 @@ export function stripLatexForSpeech(text: string): string {
 
   // Step 1: Convert \frac{numerator}{denominator} to spoken form
   // Matches: \frac{3}{4} -> "three quarters" or "3 over 4"
-  result = result.replace(/\\frac\{(\d+)\}\{(\d+)\}/g, (match, num, denom) => {
+  result = result.replace(/\\frac\{(\d+)\}\{(\d+)\}/g, (_match, num, denom) => {
     return convertFractionToSpeech(parseInt(num), parseInt(denom));
   });
 
@@ -36,7 +36,7 @@ export function stripLatexForSpeech(text: string): string {
 
   // Step 4: Convert plain fractions like 1/2, 3/4 to spoken form
   // Only match fractions that look like actual fractions (not dates, ratios, etc.)
-  result = result.replace(/\b(\d+)\/(\d+)\b/g, (match, num, denom) => {
+  result = result.replace(/\b(\d+)\/(\d+)\b/g, (_match, num, denom) => {
     return convertFractionToSpeech(parseInt(num), parseInt(denom));
   });
 

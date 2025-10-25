@@ -33,10 +33,10 @@ class PathProgressService {
       const state: PracticePathState = JSON.parse(stored);
 
       // Convert date strings back to Date objects
-      Object.values(state.paths).forEach((path) => {
+      Object.values(state.paths as any).forEach((path: any) => {
         path.pathStartedAt = new Date(path.pathStartedAt);
         path.lastUpdated = new Date(path.lastUpdated);
-        Object.values(path.nodes).forEach((node) => {
+        Object.values(path.nodes).forEach((node: any) => {
           if (node.completedAt) {
             node.completedAt = new Date(node.completedAt);
           }
@@ -93,7 +93,7 @@ class PathProgressService {
       totalProblemsCorrect: 0,
       pathStartedAt: now,
       lastUpdated: now,
-    };
+    } as PathProgress;
   }
 
   /**
@@ -112,6 +112,7 @@ class PathProgressService {
         medium: this.initializePathProgress(category, 'medium', mediumNodes),
         hard: this.initializePathProgress(category, 'hard', hardNodes),
       },
+      progress: {} as any,
     };
   }
 
@@ -221,6 +222,9 @@ class PathProgressService {
    * Reset progress for a specific path
    */
   resetPath(state: PracticePathState, difficulty: PathDifficulty, nodes: PathNode[]): void {
+    if (!state.paths) {
+      state.paths = { easy: this.initializePathProgress(state.category, 'easy', []), medium: this.initializePathProgress(state.category, 'medium', []), hard: this.initializePathProgress(state.category, 'hard', []) };
+    }
     state.paths[difficulty] = this.initializePathProgress(state.category, difficulty, nodes);
     this.savePathProgress(state);
   }
@@ -302,6 +306,8 @@ class PathProgressService {
     mediumNodes: PathNode[],
     hardNodes: PathNode[]
   ): boolean {
+    if (!state.paths) return false;
+
     const easyUpdated = this.syncProgressWithConfig(state.paths.easy, easyNodes);
     const mediumUpdated = this.syncProgressWithConfig(state.paths.medium, mediumNodes);
     const hardUpdated = this.syncProgressWithConfig(state.paths.hard, hardNodes);
@@ -378,9 +384,10 @@ class PathProgressService {
       progressSyncService.savePracticeState(uid || null, category, {
         category,
         paths: {
-          [progress.difficulty]: progress,
-        },
-      }).catch(error => {
+          [progress.difficulty as string]: progress,
+        } as any,
+        progress: {} as any,
+      } as PracticePathState).catch(error => {
         console.error('Failed to sync practice progress to Firestore:', error);
       });
     } catch (error) {

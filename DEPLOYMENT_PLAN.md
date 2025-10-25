@@ -392,7 +392,7 @@ export default defineConfig({
    - Navigate to https://console.firebase.google.com
    - Click "Create a project"
    - Project name: `HomeCampus Production`
-   - Project ID: `homecampus-prod` (must be globally unique)
+   - Project ID: `homecampus-ai` (must be globally unique)
    - Enable Google Analytics (recommended)
    - Select region: Choose closest to target audience
 
@@ -435,7 +435,7 @@ export default defineConfig({
    ```
 
 **Exit Criteria:**
-- ✅ Firebase project created with ID `homecampus-prod`
+- ✅ Firebase project created with ID `homecampus-ai`
 - ✅ All required services enabled
 - ✅ Web app registered with Firebase config available
 - ✅ `.firebaserc` created with project mapping
@@ -672,7 +672,7 @@ service cloud.firestore {
 
 1. **Create service account in GCP:**
    - Go to https://console.cloud.google.com
-   - Select `homecampus-prod` project
+   - Select `homecampus-ai` project
    - Navigate to IAM & Admin → Service Accounts
    - Click "Create Service Account"
    - Name: `github-actions-deployer`
@@ -892,7 +892,7 @@ Add the following secrets:
 | `VITE_CLAUDE_API_KEY` | Claude API key (fallback) | Anthropic Console |
 | `VITE_FIREBASE_API_KEY` | Firebase web API key | Firebase Console → Project Settings → Web App |
 | `VITE_FIREBASE_AUTH_DOMAIN` | Firebase auth domain | Same as above |
-| `VITE_FIREBASE_PROJECT_ID` | `homecampus-prod` | Same as above |
+| `VITE_FIREBASE_PROJECT_ID` | `homecampus-ai` | Same as above |
 | `VITE_FIREBASE_STORAGE_BUCKET` | Firebase storage bucket | Same as above |
 | `VITE_FIREBASE_MESSAGING_SENDER_ID` | Firebase messaging sender ID | Same as above |
 | `VITE_FIREBASE_APP_ID` | Firebase app ID | Same as above |
@@ -1053,7 +1053,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           channelId: live
-          projectId: homecampus-prod
+          projectId: homecampus-ai
 
       - name: Deploy Firestore rules
         uses: w9jds/firebase-action@v13.10.0
@@ -1067,7 +1067,7 @@ jobs:
         run: |
           echo "✅ Deployment successful!"
           echo "🌐 Production URL: https://homecampus.ai"
-          echo "📊 View deployment: https://console.firebase.google.com/project/homecampus-prod/hosting"
+          echo "📊 View deployment: https://console.firebase.google.com/project/homecampus-ai/hosting"
 ```
 
 **Exit Criteria:**
@@ -1148,7 +1148,7 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          projectId: homecampus-prod
+          projectId: homecampus-ai
           expires: 7d
         id: firebase_hosting_preview
 
@@ -1183,7 +1183,7 @@ jobs:
 - [ ] ✅ All TypeScript errors resolved
 - [ ] ✅ `npm run build` succeeds locally
 - [ ] ✅ `npm run test:run` passes with 100% success
-- [ ] ✅ Firebase project created (`homecampus-prod`)
+- [ ] ✅ Firebase project created (`homecampus-ai`)
 - [ ] ✅ Firebase Hosting configured
 - [ ] ✅ Firestore rules deployed and tested
 - [ ] ✅ Service account created with proper permissions
@@ -1237,7 +1237,7 @@ git push origin main
 **4. Verify deployment:**
 ```bash
 # Check Firebase hosting URL first
-open https://homecampus-prod.web.app
+open https://homecampus-ai.web.app
 
 # If DNS propagated, check custom domain
 open https://homecampus.ai
@@ -1252,7 +1252,7 @@ open https://homecampus.ai
 
 **6. Monitor Firebase logs:**
 ```bash
-firebase functions:log --project homecampus-prod
+firebase functions:log --project homecampus-ai
 ```
 
 ---
@@ -1694,10 +1694,10 @@ firebase functions:log --project homecampus-prod
 
 ```bash
 # List recent releases
-firebase hosting:clone homecampus-prod:PREVIOUS_VERSION homecampus-prod:live
+firebase hosting:clone homecampus-ai:PREVIOUS_VERSION homecampus-ai:live
 
 # Example:
-firebase hosting:clone homecampus-prod:abc123 homecampus-prod:live
+firebase hosting:clone homecampus-ai:abc123 homecampus-ai:live
 ```
 
 **Method 3: Git Revert + Redeploy**
@@ -1722,7 +1722,7 @@ npm ci
 npm run build
 
 # Deploy
-firebase deploy --only hosting --project homecampus-prod
+firebase deploy --only hosting --project homecampus-ai
 ```
 
 ---
@@ -1731,7 +1731,7 @@ firebase deploy --only hosting --project homecampus-prod
 
 ```bash
 # If new Firestore rules break production
-firebase deploy --only firestore:rules --project homecampus-prod
+firebase deploy --only firestore:rules --project homecampus-ai
 ```
 
 **Emergency rule bypass (USE ONLY IN EXTREME EMERGENCY):**
@@ -1799,14 +1799,14 @@ service cloud.firestore {
 
 ## Timeline & Milestones
 
-| Phase | Duration | Start | End | Owner |
-|-------|----------|-------|-----|-------|
-| **Phase 0: Pre-Flight** | 3-5 hours | Day 1 | Day 1 | Dev Team |
-| └─ Fix TypeScript errors | 2-4 hours | | | Dev Team |
-| └─ Generate assets | 30 min | | | Dev Team |
-| └─ Update metadata | 15 min | | | Dev Team |
-| └─ Optimize build config | 20 min | | | Dev Team |
-| **Phase 1: Infrastructure** | 2-3 hours | Day 1 | Day 1 | DevOps |
+| Phase | Duration | Start | End | Status | Owner |
+|-------|----------|-------|-----|--------|-------|
+| **Phase 0: Pre-Flight** | 3-5 hours → 6-9 hours | Day 1 | In Progress | 🟡 28% Complete | Dev Team |
+| └─ Fix TypeScript errors | 2-4 hours → 4-7 hours | ✓ Started | In Progress | 🟡 28% (126/445 fixed) | Dev Team |
+| └─ Generate assets | 30 min | | Pending | ⚪ Not Started | Dev Team |
+| └─ Update metadata | 15 min | | Pending | ⚪ Not Started | Dev Team |
+| └─ Optimize build config | 20 min | | Pending | ⚪ Not Started | Dev Team |
+| **Phase 1: Infrastructure** | 2-3 hours | Day 1 | Day 1 | ⚪ Not Started | DevOps |
 | └─ Create Firebase project | 30 min | | | DevOps |
 | └─ Configure hosting | 20 min | | | DevOps |
 | └─ Set up Firestore rules | 30 min | | | DevOps |
@@ -1838,16 +1838,18 @@ service cloud.firestore {
 
 ### Immediate Actions (Today)
 
-1. **Fix TypeScript errors** (BLOCKER)
+1. **Continue fixing TypeScript errors** (BLOCKER) 🟡 IN PROGRESS
    ```bash
    cd learning-platform
    npm run build
-   # Fix all 54 errors in the output
+   # Currently: 319 errors remaining (down from 445)
+   # See TYPESCRIPT_FIXES.md for detailed progress and next steps
+   # Estimated: 4-7 hours remaining
    ```
 
-2. **Create Firebase project**
+2. **Create Firebase project** ⚪ BLOCKED (waiting for TypeScript fixes)
    - Go to https://console.firebase.google.com
-   - Create `homecampus-prod` project
+   - Create `homecampus-ai` project
 
 3. **Generate assets**
    - Use ImageMagick or online tool
@@ -1944,9 +1946,9 @@ ab -n 1000 -c 10 http://localhost:4173/
 | `VITE_GEMINI_API_KEY` | Yes | Google Gemini API key | `AIza...` |
 | `VITE_CLAUDE_API_KEY` | No | Claude API key (fallback) | `sk-ant-...` |
 | `VITE_FIREBASE_API_KEY` | Yes | Firebase API key | `AIza...` |
-| `VITE_FIREBASE_AUTH_DOMAIN` | Yes | Firebase auth domain | `homecampus-prod.firebaseapp.com` |
-| `VITE_FIREBASE_PROJECT_ID` | Yes | Firebase project ID | `homecampus-prod` |
-| `VITE_FIREBASE_STORAGE_BUCKET` | Yes | Firebase storage bucket | `homecampus-prod.appspot.com` |
+| `VITE_FIREBASE_AUTH_DOMAIN` | Yes | Firebase auth domain | `homecampus-ai.firebaseapp.com` |
+| `VITE_FIREBASE_PROJECT_ID` | Yes | Firebase project ID | `homecampus-ai` |
+| `VITE_FIREBASE_STORAGE_BUCKET` | Yes | Firebase storage bucket | `homecampus-ai.appspot.com` |
 | `VITE_FIREBASE_MESSAGING_SENDER_ID` | Yes | Firebase messaging sender ID | `123456789` |
 | `VITE_FIREBASE_APP_ID` | Yes | Firebase app ID | `1:123456789:web:abc...` |
 | `VITE_GOOGLE_TTS_API_KEY` | No | Google Cloud TTS key (fallback) | `AIza...` |

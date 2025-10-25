@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Antiderivatives = () => {
   const [showEx1, setShowEx1] = useState(false);

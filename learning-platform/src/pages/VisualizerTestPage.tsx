@@ -5,8 +5,8 @@
  * Allows selecting any visualizer and having real AI generate a test question that uses it.
  */
 
-import React, { useState } from 'react';
-import { MATH_TOOLS_REGISTRY, getAllToolNames, getToolDefinition } from '../components/math-tools/mathToolsRegistry';
+import { useState } from 'react';
+import { getAllToolNames, getToolDefinition } from '../components/math-tools/mathToolsRegistry';
 import { MathToolRenderer } from '../components/practice/MathToolRenderer';
 import { getFallbackAIService } from '../services/fallbackAIService';
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Sets = () => {
   const [selectedSet, setSelectedSet] = useState('P');
@@ -17,34 +17,6 @@ const Sets = () => {
   const isElementInSet = (element: string, setName: string) => {
     const num = parseInt(element);
     return exampleSets[setName]?.includes(num);
-  };
-
-  // Set Visualizer Component
-  const SetVisualizer = ({ setName, elements }: { setName: string; elements: number[] }) => {
-    return (
-      <svg width="300" height="200" className="mx-auto">
-        {/* Oval/ellipse for set */}
-        <ellipse cx="150" cy="100" rx="120" ry="80" fill="#dbeafe" stroke="#2563eb" strokeWidth="3" />
-
-        {/* Set label */}
-        <text x="30" y="30" className="text-2xl font-bold fill-blue-600">{setName}</text>
-
-        {/* Elements */}
-        {elements.map((el, i) => {
-          const angle = (i / elements.length) * 2 * Math.PI;
-          const x = 150 + 60 * Math.cos(angle);
-          const y = 100 + 40 * Math.sin(angle);
-          return (
-            <g key={i}>
-              <circle cx={x} cy={y} r="18" fill="white" stroke="#1e40af" strokeWidth="2" />
-              <text x={x} y={y + 5} textAnchor="middle" className="text-sm font-semibold fill-blue-700">
-                {el}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
-    );
   };
 
   return (

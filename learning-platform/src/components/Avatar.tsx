@@ -4,7 +4,7 @@
  * States: idle (pulse), speaking (waveform), listening (ripple)
  */
 
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 
 export type AvatarState = 'idle' | 'speaking' | 'listening';
@@ -30,7 +30,7 @@ const Avatar: React.FC<AvatarProps> = ({
 }) => {
   const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
   const pulsePhaseRef = useRef(0);
 
   // Word-by-word subtitle reveal

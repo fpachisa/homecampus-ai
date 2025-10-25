@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const SpecialNumberSets = () => {
   const [selectedSet, setSelectedSet] = useState('N');

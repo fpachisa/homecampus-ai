@@ -62,6 +62,7 @@ import RiemannSumVisualizer from '../math-tools/RiemannSumVisualizer';
 interface MathToolRendererProps {
   toolName: string | null | undefined;
   parameters: Record<string, any>;
+  caption?: string;
 }
 
 // Component map - maps registry tool names to actual React components

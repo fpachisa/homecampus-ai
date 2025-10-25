@@ -158,15 +158,6 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
   };
 
-  const getDifficultyBadge = (difficulty: string) => {
-    const colors = {
-      foundational: '#3b82f6', // blue
-      intermediate: '#8b5cf6', // purple
-      advanced: '#ef4444' // red
-    };
-    return colors[difficulty as keyof typeof colors] || '#6b7280';
-  };
-
   // Compact mode: just circles, no wrapper or counter
   if (compact) {
     return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { VisualizationProps } from '../../types/visualization';
 import { StepControls, MathSummaryBox, StepHeader } from './shared/VisualizationUI';
 import MathText from '../MathText';
@@ -10,9 +10,9 @@ import MathText from '../MathText';
  */
 const WholeNumberFractionDivisionVisualizer: React.FC<VisualizationProps> = ({
   data,
-  theme,
+  theme: _theme,
   className = '',
-  onComplete
+  onComplete: _onComplete
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -31,7 +31,7 @@ const WholeNumberFractionDivisionVisualizer: React.FC<VisualizationProps> = ({
   }
 
   const {
-    initial_number, // e.g., 3 (cups)
+    initial_number = 1, // e.g., 3 (cups)
     numerator,      // e.g., 1 (from 1/2)
     denominator     // e.g., 2 (from 1/2)
   } = problemData;

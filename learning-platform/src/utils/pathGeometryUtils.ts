@@ -32,7 +32,6 @@ export const generateMeanderingPath = (
 
   for (let i = 0; i < nodeCount; i++) {
     // Create a sine wave pattern with some variation
-    const progress = i / Math.max(1, nodeCount - 1);
     const frequency = 0.4; // How many waves along the path - reduced from 0.5
     const phaseShift = i * 0.2; // Add variety to the wave - reduced from 0.3
 

@@ -92,9 +92,9 @@ const ProbabilityTreeVisualizer: React.FC<ProbabilityTreeProps> = ({
   });
 
   normalizedStage1.forEach((s1Item, s1Idx) => {
-    normalizedStage2.forEach((s2Item, s2Idx) => {
+    normalizedStage2.forEach((s2Item, _s2Idx) => {
       if (hasStage3 && normalizedStage3) {
-        normalizedStage3.forEach((s3Item, s3Idx) => {
+        normalizedStage3.forEach((s3Item, _s3Idx) => {
           const pathString = `${s1Item.outcome}-${s2Item.outcome}-${s3Item.outcome}`;
           const combinedProb = s1Item.probability * s2Item.probability * s3Item.probability;
 
@@ -137,7 +137,7 @@ const ProbabilityTreeVisualizer: React.FC<ProbabilityTreeProps> = ({
     return {
       stage1Item: s1Item,
       stage1Y: stage1Ys[s1Idx],
-      stage2Paths: normalizedStage2.map((s2Item, s2Idx) => {
+      stage2Paths: normalizedStage2.map((s2Item, _s2Idx) => {
         const pathsForThisStage2 = pathsForThisStage1.filter(p => p.stage2Item.outcome === s2Item.outcome);
         const avgY = pathsForThisStage2.reduce((sum, p) => sum + p.stage2Y, 0) / pathsForThisStage2.length;
         return {

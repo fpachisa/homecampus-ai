@@ -345,7 +345,7 @@ const ScatterPlotVisualizer: React.FC<ScatterPlotVisualizerProps> = ({
       {/* Caption */}
       {caption && (
         <div className="text-sm mt-2" style={{ color: mutedColor, maxWidth: '500px', textAlign: 'center' }}>
-          <MathText content={caption} />
+          <MathText>{caption}</MathText>
         </div>
       )}
 

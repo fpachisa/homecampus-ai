@@ -1,4 +1,4 @@
-import React, { useState, useRef, useImperativeHandle, forwardRef, type KeyboardEvent } from 'react';
+import { useState, useRef, useImperativeHandle, forwardRef, type KeyboardEvent } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import MathInputToolbar from './MathInputToolbar';
 

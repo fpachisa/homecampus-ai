@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AccountTypeSelector } from './AccountTypeSelector';
 import { StudentProfileForm } from './StudentProfileForm';
 import { ParentProfileForm } from './ParentProfileForm';
@@ -69,7 +69,7 @@ export const ProfileSetupWizard: React.FC<ProfileSetupWizardProps> = ({
               className="text-xs font-semibold"
               style={{ color: theme.colors.textSecondary }}
             >
-              Step {currentStep === 'account-type' ? 1 : 2} of 2
+              Step {(currentStep as WizardStep) === 'account-type' ? 1 : 2} of 2
             </span>
             <button
               onClick={() => setCurrentStep('account-type')}
@@ -88,7 +88,7 @@ export const ProfileSetupWizard: React.FC<ProfileSetupWizardProps> = ({
               className="h-full transition-all duration-500 ease-out rounded-full"
               style={{
                 backgroundColor: theme.colors.brand,
-                width: currentStep === 'account-type' ? '50%' : '100%',
+                width: (currentStep as WizardStep) === 'account-type' ? '50%' : '100%',
               }}
             />
           </div>

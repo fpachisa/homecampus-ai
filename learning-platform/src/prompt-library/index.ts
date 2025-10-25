@@ -96,6 +96,10 @@ import { PromptBuilder } from './builders/prompt-builder';
 import { PromptTemplate } from './templates/base-template';
 import { FORMATTING_RULES } from './core/protocols/formatting';
 import { INTERACTION_PROTOCOL } from './core/protocols/interaction';
+import { EVALUATOR_BASE } from './core/agents/evaluator';
+import { TUTOR_BASE } from './core/agents/tutor';
+import { QUESTION_BASE } from './core/agents/question';
+import { SOLUTION_BASE } from './core/agents/solution';
 import type { TopicConfig, PromptContext } from './types/prompts';
 
 /**
@@ -242,7 +246,7 @@ export class PromptLibrary {
   /**
    * Build tutor prompt
    */
-  buildTutorPrompt(topicId: string, instruction: any, context: PromptContext): string {
+  buildTutorPrompt(_topicId: string, instruction: any, context: PromptContext): string {
     const builder = new PromptBuilder()
       .addRole(TUTOR_BASE.role)
       .addSection('RESPONSIBILITIES', TUTOR_BASE.responsibilities)
@@ -258,7 +262,7 @@ export class PromptLibrary {
   /**
    * Build question prompt
    */
-  buildQuestionPrompt(topicId: string, instruction: any, context: PromptContext): string {
+  buildQuestionPrompt(_topicId: string, instruction: any, context: PromptContext): string {
     const builder = new PromptBuilder()
       .addRole(QUESTION_BASE.role)
       .addSection('RESPONSIBILITIES', QUESTION_BASE.responsibilities)
@@ -274,7 +278,7 @@ export class PromptLibrary {
   /**
    * Build solution prompt
    */
-  buildSolutionPrompt(topicId: string, instruction: any, context: PromptContext): string {
+  buildSolutionPrompt(_topicId: string, instruction: any, context: PromptContext): string {
     const builder = new PromptBuilder()
       .addRole(SOLUTION_BASE.role)
       .addSection('RESPONSIBILITIES', SOLUTION_BASE.responsibilities)

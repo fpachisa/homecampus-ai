@@ -18,7 +18,7 @@ const VertexFormTransformVisualizer: React.FC<VertexFormTransformVisualizerProps
   h,
   k,
   showTransformations = true,
-  animateTransform = false,
+  animateTransform: _animateTransform = false,
   caption
 }) => {
   const { theme } = useTheme();

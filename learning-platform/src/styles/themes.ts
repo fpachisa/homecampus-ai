@@ -11,6 +11,8 @@ export interface Theme {
     sidebar: string;
     chat: string;
     overlay: string;
+    panel: string;
+    surface: string;
 
     // Interactive elements
     interactive: string;
@@ -111,6 +113,8 @@ export const darkTheme: Theme = {
     sidebar: '#2B2B2B',      // Left/right panels
     chat: '#2B2B2B',         // Main chat area
     overlay: '#1F1F1F',      // Modals/overlays
+    panel: '#2B2B2B',        // General panel background
+    surface: '#1F1F1F',      // Card/container surface
 
     // Interactive
     interactive: '#383838',   // Buttons, inputs
@@ -211,6 +215,8 @@ export const lightTheme: Theme = {
     sidebar: '#FFF8F5',      // Left/right panels with warm tint
     chat: '#FFFFFF',         // Main chat area - pure white
     overlay: '#FFFFFF',      // Modals/overlays
+    panel: '#FFF8F5',        // General panel background
+    surface: '#FFFFFF',      // Card/container surface
 
     // Interactive
     interactive: '#FFF0E8',   // Buttons, inputs - light peach

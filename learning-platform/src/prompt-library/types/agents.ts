@@ -3,8 +3,6 @@
  * Types for different AI agents in the system
  */
 
-import { DifficultyLevel } from './prompts';
-
 // ============================================
 // Evaluator Agent Types
 // ============================================

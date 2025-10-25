@@ -1,10 +1,4 @@
-import React, { useState } from 'react';
-
 const DerivativeFunction = () => {
-  const [showExample1, setShowExample1] = useState(false);
-  const [showExample2, setShowExample2] = useState(false);
-  const [showPractice1, setShowPractice1] = useState(false);
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-800 dark:to-purple-800 p-8 text-white">

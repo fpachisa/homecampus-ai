@@ -206,14 +206,21 @@ export const AI_ERROR_MESSAGES: Record<AIErrorType, { title: string; message: st
  * Enhanced error class for AI service errors
  */
 export class AIServiceError extends Error {
+  errorType: AIErrorType;
+  originalError: Error | null;
+  retryable: boolean;
+
   constructor(
-    public errorType: AIErrorType,
-    public originalError: Error | null = null,
-    public retryable: boolean = false,
+    errorType: AIErrorType,
+    originalError: Error | null = null,
+    retryable: boolean = false,
     message?: string
   ) {
     super(message || `AI Service Error: ${errorType}`);
     this.name = 'AIServiceError';
+    this.errorType = errorType;
+    this.originalError = originalError;
+    this.retryable = retryable;
   }
 
   /**

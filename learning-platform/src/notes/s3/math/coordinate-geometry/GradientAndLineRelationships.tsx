@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const GradientAndLineRelationships = () => {
   const [showExample1, setShowExample1] = useState(false);

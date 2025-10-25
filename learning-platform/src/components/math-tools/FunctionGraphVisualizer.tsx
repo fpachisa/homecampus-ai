@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import React from 'react';
 import { useTheme } from '../../hooks/useTheme';
 import { calculateSafeYRange } from './utils/safeRangeCalculator';
@@ -140,7 +141,7 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
   const [originX, originY] = mathToSVG(0, 0);
 
   // Grid lines
-  const gridLines: JSX.Element[] = [];
+  const gridLines: React.ReactElement[] = [];
   if (showGrid) {
     // Vertical grid lines
     for (let x = Math.ceil(xMin); x <= Math.floor(xMax); x++) {

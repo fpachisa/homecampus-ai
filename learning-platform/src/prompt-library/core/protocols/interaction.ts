@@ -3,7 +3,7 @@
  * Clear contract between system and AI for consistent communication
  */
 
-import type { InteractionProtocol, DifficultyLevel } from '../../types/prompts';
+import type { InteractionProtocol } from '../../types/prompts';
 
 /**
  * Complete interaction protocol defining inputs and outputs

@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const TrigonometricRatios = () => {
   const [triangleType, setTriangleType] = useState('opposite');
-  const [selectedAngle, setSelectedAngle] = useState(30);
+  const [selectedAngle, setSelectedAngle] = useState<30 | 45 | 60>(30);
 
   const RightTriangle = ({ angle = 30, highlight = 'opposite' }) => {
-    const width = 200;
     const height = 150;
     const angleRad = (angle * Math.PI) / 180;
     const opposite = height;
     const adjacent = opposite / Math.tan(angleRad);
-    const hypotenuse = Math.sqrt(opposite * opposite + adjacent * adjacent);
 
     return (
       <svg width="350" height="250" className="mx-auto">
@@ -40,8 +38,8 @@ const TrigonometricRatios = () => {
     );
   };
 
-  const SpecialAngleTriangle = ({ angle }) => {
-    const triangles = {
+  const SpecialAngleTriangle = ({ angle }: { angle: 30 | 45 | 60 }) => {
+    const triangles: Record<30 | 45 | 60, { a: number; b: number; h: number; angle1: number; angle2: number }> = {
       30: { a: 1, b: Math.sqrt(3), h: 2, angle1: 30, angle2: 60 },
       45: { a: 1, b: 1, h: Math.sqrt(2), angle1: 45, angle2: 45 },
       60: { a: Math.sqrt(3), b: 1, h: 2, angle1: 60, angle2: 30 }

@@ -3,7 +3,7 @@ import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { sessionStorage } from '../services/sessionStorage';
 import { progressService } from '../services/progressService';
-import { S3_MATH_CIRCLE_GEOMETRY } from "../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+import { S3_MATH_CIRCLE_GEOMETRY } from "../prompt-library/subjects/mathematics/secondary/s3-circle-geometry";
 
 // Define the subtopic IDs for circle geometry
 export type CircleGeometryTopicId =

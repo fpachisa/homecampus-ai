@@ -4,10 +4,9 @@ import {
   signInWithEmailLink,
   signInWithPopup,
   signOut,
-  updateProfile,
   type User as FirebaseUser,
 } from 'firebase/auth';
-import { doc, setDoc, getDoc, updateDoc, collection, addDoc, deleteDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
+import { doc, setDoc, getDoc, updateDoc, collection, addDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
 import { auth, googleProvider, firestore } from './firebase';
 import { emailService } from './emailService';
 import type { UserProfile } from '../types/user';
@@ -277,6 +276,8 @@ class AuthService {
         gradeLevel: studentInfo.gradeLevel,
         isGuest: false,
         isParent: false,
+        profileCompleted: true,
+        accountType: 'student',
         parentUid,
         pathProgress: {},
         settings: {
@@ -387,7 +388,7 @@ class AuthService {
       expiresAt.setDate(expiresAt.getDate() + 7); // 7 days expiry
 
       // Create invite document
-      const inviteRef = await addDoc(collection(firestore, 'invites'), {
+      await addDoc(collection(firestore, 'invites'), {
         token,
         type: 'student-to-parent',
         fromUid: studentUid,

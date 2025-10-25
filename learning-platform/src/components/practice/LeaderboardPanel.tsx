@@ -116,7 +116,7 @@ export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({ progress, al
                     {node.title}
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: theme.colors.background }}>
+                    <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: theme.colors.secondary }}>
                       <div
                         className="h-full transition-all"
                         style={{

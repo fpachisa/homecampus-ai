@@ -341,81 +341,6 @@ export function formatConversationHistory(history: Array<{ role: string; content
 }
 
 /**
- * Restore LaTeX commands that were corrupted by control character interpretation
- * This fixes cases where \theta became [TAB]heta and \frac became [FF]rac
- */
-function restoreCorruptedLatex(text: string): string {
-  // Common LaTeX commands that get corrupted by control character interpretation
-  // The patterns look for corrupted versions and restore them
-
-  let fixed = text;
-
-  // First pass: Fix the most common corruptions from control characters
-  // \t (tab) in commands like \theta, \tan, \text becomes actual tab or spaces
-  // \f (form feed) in commands like \frac gets removed or corrupted
-  // \n (newline) in commands might become actual newlines
-  // \r (carriage return) might corrupt \rho, \right
-
-  // Pattern explanation:
-  // (\s+|[\t\f\r]|) - matches spaces, tabs, form feeds, carriage returns, or nothing
-  // This handles cases where control chars are rendered as spaces or removed entirely
-
-  const latexPatterns: Array<[RegExp, string]> = [
-    // Critical math operators that commonly break
-    [/(\s{1,8}|[\t\f]|)rac\{/g, '\\frac{'],  // \frac with \f as form feed
-    [/(\s{1,8}|[\t\n\r]|)heta/g, '\\theta'],  // \theta with \t as tab
-    [/(\s{1,8}|[\t\f]|)ext\{/g, '\\text{'],   // \text with \t as tab
-    [/(\s{1,8}|[\t\f]|)imes/g, '\\times'],    // \times with \t as tab
-
-    // Trig functions where \t becomes tab
-    [/(\s{1,8}|[\t]|)an\b/g, '\\tan'],        // \tan
-    [/sin\(/g, '\\sin('],                      // \sin (s rarely corrupts)
-    [/cos\(/g, '\\cos('],                      // \cos (c rarely corrupts)
-    [/(\s{1,8}|[\t]|)anh/g, '\\tanh'],        // \tanh
-
-    // Common symbols
-    // NOTE: Removed [/\^?\{?circ\}?/g, '^{\\circ}'] pattern - it was too aggressive
-    // and caused double-escaping of correctly-formatted LaTeX like $000^\circ$
-    // The fixJSONEscaping() function (line 133-142) already handles LaTeX inside $...$
-    [/(\s{1,8}|)div\b/g, '\\div'],            // division
-    [/(\s{1,8}|)cdot/g, '\\cdot'],            // dot multiplication
-    [/(\s{1,8}|)pm\b/g, '\\pm'],              // plus-minus
-    [/(\s{1,8}|)sqrt/g, '\\sqrt'],            // square root
-
-    // Greek letters with \t corruption
-    [/(\s{1,8}|[\t]|)au\b/g, '\\tau'],        // \tau
-
-    // Comparison operators
-    [/(\s{1,8}|[\n]|)eq\b/g, '\\neq'],        // \neq with \n as newline
-    [/(\s{1,8}|)leq\b/g, '\\leq'],            // less than or equal
-    [/(\s{1,8}|)geq\b/g, '\\geq'],            // greater than or equal
-    [/(\s{1,8}|)approx/g, '\\approx'],        // approximately equal
-
-    // Fix double backslashes that shouldn't be there
-    [/\\\\theta/g, '\\theta'],
-    [/\\\\frac/g, '\\frac'],
-    [/\\\\text/g, '\\text'],
-    [/\\\\sin/g, '\\sin'],
-    [/\\\\cos/g, '\\cos'],
-    [/\\\\tan/g, '\\tan'],
-  ];
-
-  // Apply all corrections
-  for (const [pattern, replacement] of latexPatterns) {
-    fixed = fixed.replace(pattern, replacement);
-  }
-
-  // Second pass: Clean up any remaining issues
-  // Sometimes we get spaces in the middle of commands
-  fixed = fixed
-    .replace(/\\ +([a-z]+)/g, '\\$1')  // Remove spaces after backslash
-    .replace(/\s+\{/g, '{')             // Remove spaces before opening brace
-    .replace(/\}\s+/g, '}');            // Clean spaces after closing brace
-
-  return fixed;
-}
-
-/**
  * Safe JSON parser that trusts AI-generated JSON
  * Simplified approach with only two stages (no legacy fallbacks)
  *
@@ -431,7 +356,7 @@ function restoreCorruptedLatex(text: string): string {
  */
 export function safeParseJSON<T>(
   rawText: string,
-  expectedKeys: string[] = [], // Unused, kept for backward compatibility
+  _expectedKeys: string[] = [], // Unused, kept for backward compatibility
   fallbackResponse?: Partial<T>
 ): T {
   console.log('🔍 SafeParseJSON: Starting with text length:', rawText.length);

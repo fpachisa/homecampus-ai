@@ -1,9 +1,4 @@
-import React, { useState } from 'react';
-
 const DifferentiationRules = () => {
-  const [showExample1, setShowExample1] = useState(false);
-  const [showExample2, setShowExample2] = useState(false);
-  const [showExample3, setShowExample3] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">

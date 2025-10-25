@@ -2,8 +2,8 @@ import React from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { sessionStorage } from '../services/sessionStorage';
-import { P6_MATH_FRACTIONS } from '../prompts/topics/P6-Math-Fractions';
-import type { TopicId } from '../prompts/topics/P6-Math-Fractions';
+
+type TopicId = string;  // Temporary type definition until P6 is migrated
 
 interface FractionsTopicViewProps {
   onSubtopicSelect: (topicId: TopicId) => void;

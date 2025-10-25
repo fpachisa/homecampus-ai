@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const SignDiagrams = () => {
   const [showExample1, setShowExample1] = useState(false);
@@ -68,7 +68,7 @@ const SignDiagrams = () => {
                 <div className="bg-green-50 dark:bg-green-900/30 p-3 rounded border border-green-300 dark:border-green-600">
                   <p className="font-bold text-green-700 dark:text-green-300 mb-1">Positive (+)</p>
                   <p className="text-gray-700 dark:text-gray-300">Function is above x-axis</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">f(x) > 0</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">f(x) &gt; 0</p>
                 </div>
               </div>
             </div>
@@ -241,7 +241,7 @@ const SignDiagrams = () => {
               </div>
               <div>
                 <p className="text-sm mb-2 text-gray-800 dark:text-gray-200"><strong>Step 2: Check sign in each region</strong></p>
-                <p className="text-sm text-gray-700 dark:text-gray-300">Test x = −3: f(−3) = (−6)(1) < 0 → negative</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">Test x = −3: f(−3) = (−6)(1) &lt; 0 → negative</p>
               </div>
               <div>
                 <p className="text-sm mb-2 text-gray-800 dark:text-gray-200"><strong>Step 3: Apply power rules</strong></p>
@@ -296,9 +296,9 @@ const SignDiagrams = () => {
 
                   <div>
                     <p className="font-semibold mb-2 text-gray-900 dark:text-gray-100">Step 2: Test signs in each region</p>
-                    <p className="text-sm text-gray-800 dark:text-gray-200">• x < −1: Try x = −2: f(−2) = (−1)/(−4) = + (positive)</p>
-                    <p className="text-sm text-gray-800 dark:text-gray-200">• −1 < x < 2: Try x = 0: f(0) = (1)/(−2) = − (negative)</p>
-                    <p className="text-sm text-gray-800 dark:text-gray-200">• x > 2: Try x = 3: f(3) = (4)/(1) = + (positive)</p>
+                    <p className="text-sm text-gray-800 dark:text-gray-200">• x &lt; −1: Try x = −2: f(−2) = (−1)/(−4) = + (positive)</p>
+                    <p className="text-sm text-gray-800 dark:text-gray-200">• −1 &lt; x &lt; 2: Try x = 0: f(0) = (1)/(−2) = − (negative)</p>
+                    <p className="text-sm text-gray-800 dark:text-gray-200">• x &gt; 2: Try x = 3: f(3) = (4)/(1) = + (positive)</p>
                   </div>
 
                   <div>
@@ -400,7 +400,7 @@ const SignDiagrams = () => {
               <details className="mt-2">
                 <summary className="cursor-pointer text-blue-600 dark:text-blue-400 hover:underline">Show Solutions</summary>
                 <div className="mt-2 p-3 bg-gray-50 dark:bg-gray-700/50 rounded space-y-3 text-sm text-gray-800 dark:text-gray-200">
-                  <p><strong>a)</strong> Zeros at x = 5: negative for x < 5, positive for x > 5</p>
+                  <p><strong>a)</strong> Zeros at x = 5: negative for x &lt; 5, positive for x &gt; 5</p>
                   <p><strong>b)</strong> Zeros at x = 1 and x = −3: + | −3 | − | 1 | +</p>
                   <p><strong>c)</strong> Zero at x = −2 (even, no change), x = 1 (odd, change): + | −2 | + | 1 | +</p>
                 </div>
@@ -419,7 +419,7 @@ const SignDiagrams = () => {
                 <summary className="cursor-pointer text-blue-600 dark:text-blue-400 hover:underline">Show Solutions</summary>
                 <div className="mt-2 p-3 bg-gray-50 dark:bg-gray-700/50 rounded space-y-2 text-sm text-gray-800 dark:text-gray-200">
                   <p><strong>a)</strong> Undefined when 4 − x = 0 → x = 4</p>
-                  <p><strong>b)</strong> Sign diagram: + | 4 | − (positive for x < 4, undefined at x = 4, negative for x > 4)</p>
+                  <p><strong>b)</strong> Sign diagram: + | 4 | − (positive for x &lt; 4, undefined at x = 4, negative for x &gt; 4)</p>
                 </div>
               </details>
             </div>

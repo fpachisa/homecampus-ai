@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { useAuth } from '../contexts/AuthContext';

@@ -201,7 +201,7 @@ const RiemannMethodCard: React.FC<RiemannMethodCardProps> = ({
   area,
   exactArea,
   color,
-  functionExpression,
+  functionExpression: _functionExpression,
   lowerBound,
   upperBound,
   partitions,

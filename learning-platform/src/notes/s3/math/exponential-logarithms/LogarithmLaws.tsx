@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const LogarithmLaws = () => {
   const [showProof1, setShowProof1] = useState(false);

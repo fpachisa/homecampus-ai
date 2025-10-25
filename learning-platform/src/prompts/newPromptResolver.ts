@@ -30,7 +30,7 @@ import { S3_MATH_SURDS_RADICALS_SUBTOPICS, S3_MATH_SURDS_RADICALS_CONFIG } from 
 import { S3_MATH_STATISTICS_SUBTOPICS, S3_MATH_STATISTICS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
 import { S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS, S3_MATH_RELATIONS_FUNCTIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-relations-functions';
 import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS, S3_MATH_COORDINATE_GEOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-coordinate-geometry';
-import { DIFFERENTIAL_CALCULUS_SUBTOPICS, DIFFERENTIAL_CALCULUS_TUTOR_CUSTOMIZATION, S4_DIFFERENTIAL_CALCULUS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
+import { DIFFERENTIAL_CALCULUS_SUBTOPICS, S4_DIFFERENTIAL_CALCULUS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
 import { S4_MATH_INTEGRATION_SUBTOPICS, INTEGRATION_TUTOR_CUSTOMIZATION, INTEGRATION_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
 import { S4_MATH_PROBABILITY_SUBTOPICS, PROBABILITY_TUTOR_CUSTOMIZATION, PROBABILITY_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 
@@ -199,59 +199,59 @@ export class NewPromptResolver {
   private getTopicConfig(topicId: string): { subtopic: any; global: any } {
     // Bridge to old system - will be replaced when topics are migrated
     if (topicId.startsWith('s3-math-trigonometry-')) {
-      const subtopic = S3_MATH_TRIGONOMETRY[topicId as any];
+      const subtopic = (S3_MATH_TRIGONOMETRY as any)[topicId];
       return { subtopic, global: S3_MATH_TRIGONOMETRY_CONFIG };
     }
 
     if (topicId.startsWith('s3-math-circle-geometry-')) {
-      const subtopic = S3_MATH_CIRCLE_GEOMETRY[topicId as any];
+      const subtopic = (S3_MATH_CIRCLE_GEOMETRY as any)[topicId];
       return { subtopic, global: S3_MATH_CIRCLE_GEOMETRY_CONFIG };
     }
 
     if (topicId.startsWith('s3-math-quadratic-')) {
-      const subtopic = S3_MATH_QUADRATIC_EQUATIONS[topicId as any];
+      const subtopic = (S3_MATH_QUADRATIC_EQUATIONS as any)[topicId];
       return { subtopic, global: S3_MATH_QUADRATIC_EQUATIONS_CONFIG };
     }
 
     if (topicId.startsWith('s3-math-exponential-logarithms-')) {
-      const subtopic = S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as any];
+      const subtopic = (S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS as any)[topicId];
       return { subtopic, global: EXPONENTIAL_LOGARITHMS_CONFIG };
     }
 
     if (topicId.startsWith('s3-math-sets-')) {
-      const subtopic = S3_MATH_SETS_VENN_DIAGRAMS[topicId as any];
+      const subtopic = (S3_MATH_SETS_VENN_DIAGRAMS as any)[topicId];
       return { subtopic, global: S3_MATH_SETS_VENN_DIAGRAMS_CONFIG };
     }
 
     if (topicId.startsWith('s3-math-exponents-')) {
-      const subtopic = S3_MATH_EXPONENTS_SUBTOPICS[topicId as any];
+      const subtopic = (S3_MATH_EXPONENTS_SUBTOPICS as any)[topicId];
       return { subtopic, global: S3_MATH_EXPONENTS_CONFIG };
     }
 
     if (topicId.startsWith('s3-math-surds-')) {
-      const subtopic = S3_MATH_SURDS_RADICALS_SUBTOPICS[topicId as any];
+      const subtopic = (S3_MATH_SURDS_RADICALS_SUBTOPICS as any)[topicId];
       return { subtopic, global: S3_MATH_SURDS_RADICALS_CONFIG };
     }
 
     if (topicId.startsWith('s3-math-statistics-')) {
-      const subtopic = S3_MATH_STATISTICS_SUBTOPICS[topicId as any];
+      const subtopic = (S3_MATH_STATISTICS_SUBTOPICS as any)[topicId];
       return { subtopic, global: S3_MATH_STATISTICS_CONFIG };
     }
 
     if (topicId.startsWith('s3-math-relations-')) {
-      const subtopic = S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS[topicId as any];
+      const subtopic = (S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS as any)[topicId];
       return { subtopic, global: S3_MATH_RELATIONS_FUNCTIONS_CONFIG };
     }
 
     if (topicId.startsWith('s3-math-coord-geom-')) {
-      const subtopic = S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS[topicId as any];
+      const subtopic = (S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS as any)[topicId];
       return { subtopic, global: S3_MATH_COORDINATE_GEOMETRY_CONFIG };
     }
 
     // S4 Differential Calculus - direct topic IDs
     const differentialCalculusTopics = ['s4-math-differential-calculus-limits', 's4-math-differential-calculus-gradient-tangent', 's4-math-differential-calculus-derivative-function', 's4-math-differential-calculus-first-principles', 's4-math-differential-calculus-differentiation-rules', 's4-math-differential-calculus-tangent-equations', 's4-math-differential-calculus-stationary-points'];
     if (differentialCalculusTopics.includes(topicId)) {
-      const subtopic = DIFFERENTIAL_CALCULUS_SUBTOPICS[topicId as any];
+      const subtopic = (DIFFERENTIAL_CALCULUS_SUBTOPICS as any)[topicId];
       return { subtopic, global: S4_DIFFERENTIAL_CALCULUS_CONFIG };
     }
 

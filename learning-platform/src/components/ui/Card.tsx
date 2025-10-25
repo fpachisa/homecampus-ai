@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import type { HTMLAttributes, ReactNode } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 
@@ -178,13 +178,13 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
 Card.displayName = 'Card';
 
 // Message Card specialized component
-export interface MessageCardProps extends Omit<CardProps, 'variant' | 'children'> {
+export type MessageCardProps = Omit<CardProps, 'children' | 'variant'> & {
   role: 'user' | 'tutor' | 'system';
   author?: string;
   content?: ReactNode;
   reactions?: Array<{ emoji: string; count: number; active?: boolean }>;
   onReaction?: (emoji: string) => void;
-}
+};
 
 export const MessageCard = forwardRef<HTMLDivElement, MessageCardProps>(
   (

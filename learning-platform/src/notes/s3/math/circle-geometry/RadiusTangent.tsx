@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 const RadiusTangent = () => {
   const TangentVisualizer = ({ showRightAngle = true }) => {
     const centerX = 200;

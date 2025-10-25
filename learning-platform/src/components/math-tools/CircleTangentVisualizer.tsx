@@ -26,7 +26,7 @@ const CircleTangentVisualizer: React.FC<CircleTangentVisualizerProps> = ({
   tangentPoint = 'T',
   showRadius = true,
   showRightAngle = false,
-  tangentLabel,
+  tangentLabel: _tangentLabel,
   highlightRadius = false,
   highlightTangent = false,
   externalPoint,
@@ -69,7 +69,6 @@ const CircleTangentVisualizer: React.FC<CircleTangentVisualizerProps> = ({
   // Calculate tangent points for two tangents mode
   // Using geometry: tangent points are where lines from P touch the circle
   const distOP = Math.sqrt(Math.pow(externalPointX - centerX, 2) + Math.pow(externalPointY - centerY, 2));
-  const tangentLength = Math.sqrt(distOP * distOP - circleRadius * circleRadius);
 
   // Angle from center to external point
   const angleOP = Math.atan2(externalPointY - centerY, externalPointX - centerX);
@@ -88,12 +87,13 @@ const CircleTangentVisualizer: React.FC<CircleTangentVisualizerProps> = ({
   const t2Y = centerY + circleRadius * Math.sin(angleT2);
 
   // Helper function to ensure LaTeX expressions are properly wrapped
-  const ensureLatexWrapped = (text: string | undefined): string => {
+  const _ensureLatexWrapped = (text: string) => {
     if (!text) return '';
     if (text.startsWith('$') && text.endsWith('$')) return text;
     if (text.includes('\\')) return `$${text}$`;
     return text;
   };
+  void _ensureLatexWrapped; // Suppress unused variable warning
 
   const colors = {
     primary: theme.colors.brand,

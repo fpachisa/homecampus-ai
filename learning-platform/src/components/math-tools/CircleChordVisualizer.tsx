@@ -61,9 +61,10 @@ const CircleChordVisualizer: React.FC<CircleChordVisualizerProps> = ({
   const chord1MidY = (chord1Y1 + chord1Y2) / 2;
 
   // Calculate chord 1 length for equal chords comparison
-  const chord1Length = Math.sqrt(
+  const _chord1Length = Math.sqrt(
     Math.pow(chord1X2 - chord1X1, 2) + Math.pow(chord1Y2 - chord1Y1, 2)
   );
+  void _chord1Length; // Suppress unused variable warning
 
   // Chord 2 endpoints - on circle circumference
   // For equal chords, calculate angle span to match chord 1 length
@@ -94,12 +95,13 @@ const CircleChordVisualizer: React.FC<CircleChordVisualizerProps> = ({
   const chord2MidY = (chord2Y1 + chord2Y2) / 2;
 
   // Helper function to ensure LaTeX expressions are properly wrapped
-  const ensureLatexWrapped = (text: string | undefined): string => {
+  const _ensureLatexWrapped = (text: string) => {
     if (!text) return '';
     if (text.startsWith('$') && text.endsWith('$')) return text;
     if (text.includes('\\')) return `$${text}$`;
     return text;
   };
+  void _ensureLatexWrapped; // Suppress unused variable warning
 
   const colors = {
     primary: theme.colors.brand,

@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import React from 'react';
 import { useTheme } from '../../hooks/useTheme';
 import MathText from '../MathText';
@@ -31,8 +32,8 @@ const CompletingSquareVisualizer: React.FC<CompletingSquareVisualizerProps> = ({
   const q = isSimple ? c - (b * b) / 4 : c - (b * b) / (4 * a);
 
   // Generate algebraic steps
-  const generateSteps = (): JSX.Element[] => {
-    const steps: JSX.Element[] = [];
+  const generateSteps = (): React.ReactElement[] => {
+    const steps: React.ReactElement[] = [];
 
     // Step 0: Original
     steps.push(

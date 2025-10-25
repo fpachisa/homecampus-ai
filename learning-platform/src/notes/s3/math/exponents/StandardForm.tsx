@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const StandardForm = () => {
   const [inputNumber, setInputNumber] = useState('68000000');

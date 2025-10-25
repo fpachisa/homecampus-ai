@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const TransformationsOfGraphs = () => {
   const [showExample1, setShowExample1] = useState(false);
@@ -53,8 +53,8 @@ const TransformationsOfGraphs = () => {
                 <p className="text-center text-sm text-gray-600 dark:text-gray-400">Replaces x with (x − h)</p>
               </div>
               <ul className="space-y-2 text-sm text-gray-800 dark:text-gray-200">
-                <li>• If <strong>h > 0</strong>: shift <strong>right</strong> by h units</li>
-                <li>• If <strong>h < 0</strong>: shift <strong>left</strong> by |h| units</li>
+                <li>• If <strong>h &gt; 0</strong>: shift <strong>right</strong> by h units</li>
+                <li>• If <strong>h &lt; 0</strong>: shift <strong>left</strong> by |h| units</li>
               </ul>
               <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded mt-3 text-xs text-gray-700 dark:text-gray-300">
                 <p><strong>Example:</strong></p>
@@ -107,12 +107,12 @@ const TransformationsOfGraphs = () => {
             <div className="bg-green-50 dark:bg-green-900/30 p-6 rounded border-2 border-green-400 dark:border-green-600">
               <h3 className="font-bold text-green-700 dark:text-green-300 mb-3">Vertical Stretch:</h3>
               <div className="bg-white dark:bg-gray-800 p-4 rounded mb-3">
-                <p className="text-center text-2xl font-mono mb-2 text-gray-900 dark:text-gray-100">y = p f(x), p > 0</p>
+                <p className="text-center text-2xl font-mono mb-2 text-gray-900 dark:text-gray-100">y = p f(x), p &gt; 0</p>
                 <p className="text-center text-sm text-gray-600 dark:text-gray-400">Multiply whole function by p</p>
               </div>
               <ul className="space-y-2 text-sm text-gray-800 dark:text-gray-200">
-                <li>• If <strong>p > 1</strong>: <strong>stretch</strong> away from x-axis (taller)</li>
-                <li>• If <strong>0 < p < 1</strong>: <strong>compress</strong> toward x-axis (shorter)</li>
+                <li>• If <strong>p &gt; 1</strong>: <strong>stretch</strong> away from x-axis (taller)</li>
+                <li>• If <strong>0 &lt; p &lt; 1</strong>: <strong>compress</strong> toward x-axis (shorter)</li>
                 <li>• Each point becomes <strong>p times</strong> its previous distance from x-axis</li>
               </ul>
               <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded mt-3 text-xs text-gray-700 dark:text-gray-300">
@@ -125,12 +125,12 @@ const TransformationsOfGraphs = () => {
             <div className="bg-purple-50 dark:bg-purple-900/30 p-6 rounded border-2 border-purple-400 dark:border-purple-600">
               <h3 className="font-bold text-purple-700 dark:text-purple-300 mb-3">Horizontal Stretch:</h3>
               <div className="bg-white dark:bg-gray-800 p-4 rounded mb-3">
-                <p className="text-center text-2xl font-mono mb-2 text-gray-900 dark:text-gray-100">y = f(qx), q > 0</p>
+                <p className="text-center text-2xl font-mono mb-2 text-gray-900 dark:text-gray-100">y = f(qx), q &gt; 0</p>
                 <p className="text-center text-sm text-gray-600 dark:text-gray-400">Multiply x by q inside function</p>
               </div>
               <ul className="space-y-2 text-sm text-gray-800 dark:text-gray-200">
-                <li>• If <strong>q > 1</strong>: <strong>compress</strong> toward y-axis (narrower)</li>
-                <li>• If <strong>0 < q < 1</strong>: <strong>stretch</strong> away from y-axis (wider)</li>
+                <li>• If <strong>q &gt; 1</strong>: <strong>compress</strong> toward y-axis (narrower)</li>
+                <li>• If <strong>0 &lt; q &lt; 1</strong>: <strong>stretch</strong> away from y-axis (wider)</li>
                 <li>• Each point becomes <strong>1/q times</strong> its previous distance from y-axis</li>
               </ul>
               <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded mt-3 text-xs text-gray-700 dark:text-gray-300">
@@ -144,8 +144,8 @@ const TransformationsOfGraphs = () => {
           <div className="bg-yellow-50 dark:bg-yellow-900/30 p-4 rounded border-2 border-yellow-400 dark:border-yellow-600">
             <h3 className="font-bold mb-3 text-yellow-800 dark:text-yellow-200">Key Difference:</h3>
             <p className="text-sm text-gray-800 dark:text-gray-200">
-              • <strong>Vertical stretch (y = p f(x)):</strong> p > 1 stretches, 0 < p < 1 compresses<br/>
-              • <strong>Horizontal stretch (y = f(qx)):</strong> q > 1 compresses, 0 < q < 1 stretches (opposite!)
+              • <strong>Vertical stretch (y = p f(x)):</strong> p &gt; 1 stretches, 0 &lt; p &lt; 1 compresses<br/>
+              • <strong>Horizontal stretch (y = f(qx)):</strong> q &gt; 1 compresses, 0 &lt; q &lt; 1 stretches (opposite!)
             </p>
           </div>
         </div>
@@ -214,22 +214,22 @@ const TransformationsOfGraphs = () => {
                   <tr className="border-b border-gray-300 dark:border-gray-600">
                     <td className="px-4 py-2">Vertical translation</td>
                     <td className="px-4 py-2 font-mono">y = f(x) + k</td>
-                    <td className="px-4 py-2">Up k units (k > 0) or down |k| units (k < 0)</td>
+                    <td className="px-4 py-2">Up k units (k &gt; 0) or down |k| units (k &lt; 0)</td>
                   </tr>
                   <tr className="border-b border-gray-300 dark:border-gray-600">
                     <td className="px-4 py-2">Horizontal translation</td>
                     <td className="px-4 py-2 font-mono">y = f(x − h)</td>
-                    <td className="px-4 py-2">Right h units (h > 0) or left |h| units (h < 0)</td>
+                    <td className="px-4 py-2">Right h units (h &gt; 0) or left |h| units (h &lt; 0)</td>
                   </tr>
                   <tr className="border-b border-gray-300 dark:border-gray-600">
                     <td className="px-4 py-2">Vertical stretch</td>
                     <td className="px-4 py-2 font-mono">y = p f(x)</td>
-                    <td className="px-4 py-2">p > 1 stretches, 0 < p < 1 compresses</td>
+                    <td className="px-4 py-2">p &gt; 1 stretches, 0 &lt; p &lt; 1 compresses</td>
                   </tr>
                   <tr className="border-b border-gray-300 dark:border-gray-600">
                     <td className="px-4 py-2">Horizontal stretch</td>
                     <td className="px-4 py-2 font-mono">y = f(qx)</td>
-                    <td className="px-4 py-2">q > 1 compresses, 0 < q < 1 stretches</td>
+                    <td className="px-4 py-2">q &gt; 1 compresses, 0 &lt; q &lt; 1 stretches</td>
                   </tr>
                   <tr className="border-b border-gray-300 dark:border-gray-600">
                     <td className="px-4 py-2">Reflection in x-axis</td>
@@ -467,8 +467,8 @@ const TransformationsOfGraphs = () => {
           <ul className="list-disc list-inside space-y-2 text-gray-800 dark:text-gray-200">
             <li><strong>Vertical translation:</strong> y = f(x) + k moves up/down k units</li>
             <li><strong>Horizontal translation:</strong> y = f(x − h) moves right/left (opposite of sign!)</li>
-            <li><strong>Vertical stretch:</strong> y = p f(x) where p > 1 stretches, 0 < p < 1 compresses</li>
-            <li><strong>Horizontal stretch:</strong> y = f(qx) where q > 1 compresses, 0 < q < 1 stretches</li>
+            <li><strong>Vertical stretch:</strong> y = p f(x) where p &gt; 1 stretches, 0 &lt; p &lt; 1 compresses</li>
+            <li><strong>Horizontal stretch:</strong> y = f(qx) where q &gt; 1 compresses, 0 &lt; q &lt; 1 stretches</li>
             <li><strong>Reflection in x-axis:</strong> y = −f(x) flips over x-axis</li>
             <li><strong>Reflection in y-axis:</strong> y = f(−x) flips over y-axis</li>
             <li>Translations preserve shape, stretches change shape, reflections create mirror images</li>

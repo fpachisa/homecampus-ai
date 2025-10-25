@@ -34,8 +34,8 @@ interface BearingsVisualizerProps {
 const BearingsVisualizer: React.FC<BearingsVisualizerProps> = ({
   points = [],
   legs = [],
-  showInteriorAngles = false,
-  interiorAngleLabel = 'θ',
+  showInteriorAngles: _showInteriorAngles = false,
+  interiorAngleLabel: _interiorAngleLabel = 'θ',
   showCompassRose = true,
   showNorthLines = true,
   highlightPoint = -1,

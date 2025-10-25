@@ -97,7 +97,7 @@ const MultipleDepressionAnglesVisualizer: React.FC<MultipleDepressionAnglesVisua
   const groundColor = '#94a3b8';
 
   // Calculate target positions based on angles (now with proper scaling)
-  const targetPositions = targets.map((target, index) => {
+  const targetPositions = targets.map((target, _index) => {
     const angle = target.angle ?? 30; // Default angle for visualization
     const angleRad = (angle * Math.PI) / 180;
 
@@ -110,8 +110,8 @@ const MultipleDepressionAnglesVisualizer: React.FC<MultipleDepressionAnglesVisua
     return {
       x: baseX + horizontalDistance,
       y: baseY,
-      angle: angle,
-      ...target
+      ...target,
+      angle: angle
     };
   });
 
@@ -268,8 +268,6 @@ const MultipleDepressionAnglesVisualizer: React.FC<MultipleDepressionAnglesVisua
 
               {/* Angle arc at Q */}
               {target.angle !== null && (() => {
-                const angleRad = (target.angle * Math.PI) / 180;
-
                 // Use different arc radii for each target to make them visually distinct
                 // Larger angles get smaller radii, smaller angles get larger radii
                 const arcRadius = 35 + (index * 20);

@@ -5,14 +5,13 @@
  * Uses AI to generate contextual problems based on node descriptors.
  */
 
-import type { PathNode, PathProblem, EvaluationWithHistory, AttemptHistory, RelatedQuestionContext } from '../types/practice';
+import type { PathNode, PathProblem, EvaluationWithHistory, RelatedQuestionContext } from '../types/practice';
 import FallbackAIService from './fallbackAIService';
 import {
   generatePracticeProblemsPrompt,
   evaluatePracticeAnswerWithHistoryPrompt,
   generatePracticeSolutionPrompt,
-  solvePreWrittenProblemPrompt,
-  extractJSON
+  solvePreWrittenProblemPrompt
 } from '../prompts/practicePrompts';
 import { safeParseJSON, extractPracticeJSON } from './utils/responseParser';
 

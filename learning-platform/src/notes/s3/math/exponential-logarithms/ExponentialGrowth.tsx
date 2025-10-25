@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ExponentialGrowth = () => {
-  const [selectedTime, setSelectedTime] = useState(15);
+  const [_selectedTime, _setSelectedTime] = useState(15);
   const [showExample1, setShowExample1] = useState(false);
   const [showExample2, setShowExample2] = useState(false);
 
@@ -36,7 +36,7 @@ const ExponentialGrowth = () => {
 
         {/* Curve */}
         <path
-          d={times.map((t, i) => {
+          d={times.map((_t, i) => {
             const xPos = 50 + (i * 50);
             const yPos = 200 - (values[i] * scale);
             return `${i === 0 ? 'M' : 'L'} ${xPos},${yPos}`;

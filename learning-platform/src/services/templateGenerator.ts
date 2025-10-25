@@ -9,7 +9,6 @@
 import { doc, updateDoc, Timestamp } from 'firebase/firestore';
 import { ref, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from './firebase';
-import type { TeachingTemplate } from '../types/curriculum';
 import { getFallbackAIService } from './fallbackAIService';
 
 export class TemplateGenerator {
@@ -206,15 +205,6 @@ Return ONLY the template content as markdown. No preamble or explanation.`;
   private async saveTemplate(subtopicId: string, template: string): Promise<void> {
     const docRef = doc(firestore, 'subtopics', subtopicId);
 
-    const templateData: Partial<TeachingTemplate> = {
-      subtopicId,
-      version: 'v1',
-      generatedAt: new Date(),
-      content: template,
-      wordCount: this.countWords(template),
-      sections: this.extractSections(template)
-    };
-
     await updateDoc(docRef, {
       teachingTemplate: template,
       templateGeneratedAt: Timestamp.now(),
@@ -230,23 +220,6 @@ Return ONLY the template content as markdown. No preamble or explanation.`;
    */
   private countWords(text: string): number {
     return text.split(/\s+/).filter(word => word.length > 0).length;
-  }
-
-  /**
-   * Extract section titles from markdown
-   */
-  private extractSections(markdown: string): string[] {
-    const sections: string[] = [];
-    const lines = markdown.split('\n');
-
-    for (const line of lines) {
-      const match = line.match(/^##\s+(.+)$/);
-      if (match) {
-        sections.push(match[1]);
-      }
-    }
-
-    return sections;
   }
 
   /**

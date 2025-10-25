@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { VisualizationProps } from '../../types/visualization';
 import { StepControls, MathSummaryBox, RecipientDisplay, StepHeader } from './shared/VisualizationUI';
 import MathText from '../MathText';
@@ -12,7 +12,7 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
   data,
   theme,
   className = '',
-  onComplete
+  onComplete: _onComplete
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const { problemData, contextualLabels, stages } = data;
@@ -42,6 +42,7 @@ const CircularDivisionVisualizer: React.FC<VisualizationProps> = ({
 
   // Generate recipient data
   const recipients = Array.from({ length: numberOfRecipients }, (_, i) => ({
+    name: `Person ${i + 1}`,
     color: friendColors[i % friendColors.length],
     fraction: isSimplifiedCase
       ? `${simplifiedNumerator}/${simplifiedDenominator}`

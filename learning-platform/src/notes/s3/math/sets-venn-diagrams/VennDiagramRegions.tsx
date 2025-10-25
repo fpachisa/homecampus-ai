@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const VennDiagramRegions = () => {
   const [selectedIdentity, setSelectedIdentity] = useState('complement-union');

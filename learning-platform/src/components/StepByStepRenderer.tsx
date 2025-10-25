@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import VisualizationRenderer from './visualizations/VisualizationRenderer';
-import type { VisualizationData } from '../types/visualization';
-import type { SolutionStep } from '../prompts/topics/P6-Math-Fractions';
 import { useTheme } from '../hooks/useTheme';
 
 interface StepByStepRendererProps {

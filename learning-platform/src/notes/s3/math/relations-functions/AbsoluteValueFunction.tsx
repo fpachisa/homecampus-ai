@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const AbsoluteValueFunction = () => {
   const [showExample1, setShowExample1] = useState(false);
@@ -144,7 +144,7 @@ const AbsoluteValueFunction = () => {
                 y = |x| = {'{'}
                 <span className="text-sm align-middle">
                   <span className="inline-block ml-2">x, if x ≥ 0</span><br/>
-                  <span className="inline-block ml-8">−x, if x < 0</span>
+                  <span className="inline-block ml-8">−x, if x &lt; 0</span>
                 </span>
                 {'}'}
               </p>
@@ -173,7 +173,7 @@ const AbsoluteValueFunction = () => {
               </div>
 
               <div className="bg-gray-50 dark:bg-gray-700/50 p-4 rounded">
-                <h4 className="font-semibold mb-2 text-gray-900 dark:text-gray-100">Left side (x < 0):</h4>
+                <h4 className="font-semibold mb-2 text-gray-900 dark:text-gray-100">Left side (x &lt; 0):</h4>
                 <ul className="list-disc list-inside space-y-1 text-sm text-gray-800 dark:text-gray-200">
                   <li>Follows y = −x</li>
                   <li>Gradient = −1</li>
@@ -239,7 +239,7 @@ const AbsoluteValueFunction = () => {
               </div>
               <div className="bg-white dark:bg-gray-800 p-3 rounded">
                 <p className="font-mono mb-1 text-gray-900 dark:text-gray-100">y = a|x|</p>
-                <p className="text-gray-700 dark:text-gray-300">Vertical stretch/compression by factor |a|. If a < 0, also reflects over x-axis</p>
+                <p className="text-gray-700 dark:text-gray-300">Vertical stretch/compression by factor |a|. If a &lt; 0, also reflects over x-axis</p>
               </div>
               <div className="bg-white dark:bg-gray-800 p-3 rounded">
                 <p className="font-mono mb-1 text-gray-900 dark:text-gray-100">y = |−x| = |x|</p>
@@ -289,7 +289,7 @@ const AbsoluteValueFunction = () => {
                   <div>
                     <p className="font-semibold mb-2 text-gray-900 dark:text-gray-100">a) |−7|</p>
                     <div className="ml-4 space-y-1 text-sm text-gray-800 dark:text-gray-200">
-                      <p>Since −7 < 0, use |x| = −x</p>
+                      <p>Since −7 &lt; 0, use |x| = −x</p>
                       <p className="font-mono">|−7| = −(−7) = 7</p>
                     </div>
                   </div>
@@ -437,9 +437,9 @@ const AbsoluteValueFunction = () => {
           <h2 className="text-2xl font-semibold mb-4 text-yellow-800 dark:text-yellow-200">Key Takeaways</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-800 dark:text-gray-200">
             <li><strong>Absolute value</strong> |x| represents the distance from 0, so it's always ≥ 0</li>
-            <li>If x ≥ 0, then |x| = x; if x < 0, then |x| = −x</li>
+            <li>If x ≥ 0, then |x| = x; if x &lt; 0, then |x| = −x</li>
             <li>The graph of <strong>y = |x|</strong> is a V-shaped graph with vertex at (0, 0)</li>
-            <li>For x < 0, the graph follows y = −x (gradient −1)</li>
+            <li>For x &lt; 0, the graph follows y = −x (gradient −1)</li>
             <li>For x ≥ 0, the graph follows y = x (gradient 1)</li>
             <li>Domain of y = |x| is all real numbers; range is y ≥ 0</li>
             <li>Transformations: y = |x − h| + k has vertex at (h, k)</li>

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Chords = () => {
-  const [showProof, setShowProof] = useState(false);
+  const [_showProof, _setShowProof] = useState(false);
 
   const ChordsVisualizer = ({ showEqual = false, showPerpendicular = false }) => {
     const centerX = 200;
@@ -13,7 +13,7 @@ const Chords = () => {
     const chord2Angle1 = 130;
     const chord2Angle2 = 230;
 
-    const getPoint = (angle) => ({
+    const getPoint = (angle: number) => ({
       x: centerX + radius * Math.cos((angle * Math.PI) / 180),
       y: centerY + radius * Math.sin((angle * Math.PI) / 180)
     });

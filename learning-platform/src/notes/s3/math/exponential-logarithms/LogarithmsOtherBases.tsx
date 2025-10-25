@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const LogarithmsOtherBases = () => {
   const [showExample1, setShowExample1] = useState(false);
   const [showExample2, setShowExample2] = useState(false);
-  const [selectedConversion, setSelectedConversion] = useState('2^5=32');
+  const [selectedConversion, setSelectedConversion] = useState<'2^5=32' | '3^2=9' | '5^-1=0.2' | '7^0=1'>('2^5=32');
 
   // Conversion visualizer
   const ConversionVisualizer = () => {
-    const conversions = {
+    const conversions: Record<typeof selectedConversion, { exp: string; log: string }> = {
       '2^5=32': { exp: '2^5 = 32', log: 'log₂ 32 = 5' },
       '3^2=9': { exp: '3^2 = 9', log: 'log₃ 9 = 2' },
       '5^-1=0.2': { exp: '5^(-1) = 1/5', log: 'log₅(1/5) = -1' },
@@ -20,7 +20,7 @@ const LogarithmsOtherBases = () => {
           {Object.keys(conversions).map(key => (
             <button
               key={key}
-              onClick={() => setSelectedConversion(key)}
+              onClick={() => setSelectedConversion(key as typeof selectedConversion)}
               className={`px-3 py-1 rounded text-sm ${
                 selectedConversion === key
                   ? 'bg-purple-600 text-white'

@@ -5,7 +5,7 @@
  * Handles problem display, answer submission, hints, and solutions.
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { PathNode, PathProblem, PathDifficulty, ProblemAttempt, AttemptHistory, ProblemSessionState, RelatedQuestionContext, ScratchPadData } from '../../types/practice';
 import { pathPracticeService } from '../../services/pathPracticeService';
 import { pathProgressService } from '../../services/pathProgressService';
@@ -77,7 +77,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
   // Auth and progress sync
   const { user } = useAuth();
-  const { isSyncing, lastSyncTime, syncError } = useProgressSync(user?.uid || null);
+  const { isSyncing: _isSyncing, lastSyncTime: _lastSyncTime, syncError: _syncError } = useProgressSync(user?.uid || null);
 
   // Detect window resize for responsive layout
   useEffect(() => {
@@ -696,14 +696,9 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   const completedProblems = session.attempts.length;
   const progressPercent = total > 0 ? Math.round((completedProblems / total) * 100) : 0;
 
-  const correctCount = session.attempts.filter(a => a.isCorrect).length;
-  const accuracy = session.attempts.length > 0
-    ? Math.round((correctCount / session.attempts.length) * 100)
-    : 0;
-
   // Calculate the active working index (furthest problem that needs work)
   // This is the index of the first problem that hasn't been attempted yet
-  const activeWorkingIndex = session.problems.findIndex((p, idx) =>
+  const activeWorkingIndex = session.problems.findIndex((p, _idx) =>
     !session.attempts.some(a => a.problemId === p.id)
   );
   // If all problems attempted, active index is last problem

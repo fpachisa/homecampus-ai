@@ -63,14 +63,14 @@ interface CartesianPlaneVisualizerProps {
   yMax?: number;             // Default: 10
   showGrid?: boolean;        // Default: true
 
-  // Points to Plot
-  points?: Point[];
+  // Points to Plot (can be array or JSON/text string from AI)
+  points?: Point[] | string;
 
-  // Lines to Draw
-  lines?: Line[];
+  // Lines to Draw (can be array or JSON/text string from AI)
+  lines?: Line[] | string;
 
-  // Curves to Draw
-  curves?: Curve[];
+  // Curves to Draw (can be array or JSON/text string from AI)
+  curves?: Curve[] | string;
 
   // Highlight Region
   highlightRegion?: HighlightRegion;
@@ -692,7 +692,7 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
 
       // Generate SVG path
       const pathData = curve.points
-        .map((point, i) => {
+        .map((point: { x: number; y: number }, i: number) => {
           const x = toSVGX(point.x);
           const y = toSVGY(point.y);
           return i === 0 ? `M ${x} ${y}` : `L ${x} ${y}`;
@@ -865,7 +865,7 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
       {/* Caption */}
       {caption && (
         <div className="text-sm mt-2" style={{ color: mutedColor, maxWidth: '500px', textAlign: 'center' }}>
-          <MathText content={caption} />
+          <MathText>{caption}</MathText>
         </div>
       )}
     </div>

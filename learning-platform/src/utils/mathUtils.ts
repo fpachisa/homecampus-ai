@@ -56,16 +56,17 @@ export function findMathExpressions(text: string): MathMatch[] {
       const latex = convertToLatex(original);
 
       // Avoid duplicate matches
+      const matchIndex = match.index ?? 0;
       const isDuplicate = matches.some(m =>
-        m.startIndex <= match.index! && match.index! <= m.endIndex
+        m.startIndex <= matchIndex && matchIndex <= m.endIndex
       );
 
       if (!isDuplicate) {
         matches.push({
           original,
           latex,
-          startIndex: match.index!,
-          endIndex: match.index! + original.length
+          startIndex: matchIndex,
+          endIndex: matchIndex + original.length
         });
       }
     }

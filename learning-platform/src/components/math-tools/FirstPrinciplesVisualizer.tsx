@@ -74,7 +74,6 @@ const FirstPrinciplesVisualizer: React.FC<FirstPrinciplesVisualizerProps> = ({
   }
 
   // Calculate difference quotient (approximate derivative)
-  const differenceQuotient = (yPlusH - y) / h;
 
   // Auto-calculate range centered around the two points
   const xMinCalc = xMin ?? point - 2;
@@ -320,7 +319,7 @@ const FirstPrinciplesVisualizer: React.FC<FirstPrinciplesVisualizerProps> = ({
           fill={theme.colors.textPrimary}
           fontSize="12"
           fontWeight="bold"
-          textAnchor={label1Pos.anchor}
+          textAnchor={label1Pos.anchor as 'inherit' | 'end' | 'start' | 'middle'}
         >
           (x, f(x))
         </text>
@@ -339,7 +338,7 @@ const FirstPrinciplesVisualizer: React.FC<FirstPrinciplesVisualizerProps> = ({
           fill={theme.colors.textPrimary}
           fontSize="12"
           fontWeight="bold"
-          textAnchor={label2Pos.anchor}>
+          textAnchor={label2Pos.anchor as 'inherit' | 'end' | 'start' | 'middle'}>
           (x+h, f(x+h))
         </text>
 

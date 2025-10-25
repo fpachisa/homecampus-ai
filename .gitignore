@@ -92,9 +92,9 @@ Thumbs.db
 
 # Firebase
 .firebase/
-.firebaserc
 firebase-debug.log
 firebase-debug.*.log
+# Note: .firebaserc, firebase.json, firestore.rules, and firestore.indexes.json should be committed
 
 # API Keys and sensitive files
 googleCloudKey.json

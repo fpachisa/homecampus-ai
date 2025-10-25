@@ -4,7 +4,7 @@
  * Simple confetti animation triggered on achievements and completions.
  */
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface ConfettiAnimationProps {
   trigger: boolean;

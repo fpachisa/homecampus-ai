@@ -9,8 +9,7 @@ import type {
   RegistryEntry,
   RegistryConfig,
   TopicConfig,
-  AgentPrompt,
-  PromptResponse
+  AgentPrompt
 } from '../types/prompts';
 
 interface CacheEntry {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const DomainAndRange = () => {
   const [showExample1, setShowExample1] = useState(false);
@@ -78,7 +78,7 @@ const DomainAndRange = () => {
               </div>
               <div className="bg-white dark:bg-gray-800 p-4 rounded">
                 <p className="font-semibold mb-2 text-gray-900 dark:text-gray-100">Range:</p>
-                <p className="font-mono text-sm text-gray-800 dark:text-gray-200">{'{'}y | −2 < y ≤ 4{'}'}</p>
+                <p className="font-mono text-sm text-gray-800 dark:text-gray-200">{'{'}y | −2 &lt; y ≤ 4{'}'}</p>
                 <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">Read as: "the set of y such that y is greater than −2 and less than or equal to 4"</p>
               </div>
             </div>
@@ -96,11 +96,11 @@ const DomainAndRange = () => {
               </div>
               <div className="flex items-center gap-4">
                 <span className="font-mono w-32 text-gray-900 dark:text-gray-100">(a, b)</span>
-                <span className="text-gray-700 dark:text-gray-300">Open interval: a < x < b (excludes endpoints)</span>
+                <span className="text-gray-700 dark:text-gray-300">Open interval: a &lt; x &lt; b (excludes endpoints)</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="font-mono w-32 text-gray-900 dark:text-gray-100">[a, b)</span>
-                <span className="text-gray-700 dark:text-gray-300">Half-open: a ≤ x < b (includes a, excludes b)</span>
+                <span className="text-gray-700 dark:text-gray-300">Half-open: a ≤ x &lt; b (includes a, excludes b)</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="font-mono w-32 text-gray-900 dark:text-gray-100">(-∞, a]</span>
@@ -152,8 +152,8 @@ const DomainAndRange = () => {
               <div className="bg-white dark:bg-gray-800 p-3 rounded">
                 <p className="font-semibold mb-1 text-gray-900 dark:text-gray-100">3. Combined Restrictions:</p>
                 <p className="font-mono mb-1">f(x) = 2/√(x + 3)</p>
-                <p className="text-gray-700 dark:text-gray-300">Restrictions: x + 3 > 0 (square root and denominator both require x + 3 > 0)</p>
-                <p className="text-indigo-600 dark:text-indigo-400">Natural domain: {'{'}x | x > −3{'}'} or (−3, ∞)</p>
+                <p className="text-gray-700 dark:text-gray-300">Restrictions: x + 3 &gt; 0 (square root and denominator both require x + 3 &gt; 0)</p>
+                <p className="text-indigo-600 dark:text-indigo-400">Natural domain: {'{'}x | x &gt; −3{'}'} or (−3, ∞)</p>
               </div>
             </div>
           </div>
@@ -322,7 +322,7 @@ const DomainAndRange = () => {
                   <p><strong>b)</strong> {'{'}x | x ≠ 0{'}'} or (-∞, 0) ∪ (0, ∞)</p>
                   <p><strong>c)</strong> {'{'}x | x ≥ 3{'}'} or [3, ∞)</p>
                   <p><strong>d)</strong> {'{'}x | x ≠ −5{'}'} or (-∞, −5) ∪ (−5, ∞)</p>
-                  <p><strong>e)</strong> {'{'}x | x > 0{'}'} or (0, ∞) [must be positive for both √ and denominator]</p>
+                  <p><strong>e)</strong> {'{'}x | x &gt; 0{'}'} or (0, ∞) [must be positive for both √ and denominator]</p>
                   <p><strong>f)</strong> {'{'}x | 0 ≤ x ≤ 2{'}'} or [0, 2] [x ≥ 0 AND x ≤ 2]</p>
                 </div>
               </details>

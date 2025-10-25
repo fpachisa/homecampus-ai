@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { yamlPathLoader } from '../services/yamlPathLoader';
 import QuestionPreviewCard from './QuestionPreviewCard';
 import type { PathNode, PreWrittenQuestion, PathLayer } from '../types/practice';

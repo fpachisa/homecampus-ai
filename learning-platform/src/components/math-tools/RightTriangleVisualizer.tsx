@@ -88,7 +88,6 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
   // Calculate side lengths for display (not to scale, but proportional)
   const adjacentLength = baseWidth;
   const oppositeLength = adjacentLength * Math.tan(angleRad);
-  const hypotenuseLength = Math.sqrt(adjacentLength * adjacentLength + oppositeLength * oppositeLength);
 
   // SVG dimensions and positioning
   const padding = 40; // Reduced from 60 for more compact display

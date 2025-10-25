@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ComplementOfSet = () => {
   const [showExample1, setShowExample1] = useState(false);
@@ -6,7 +6,7 @@ const ComplementOfSet = () => {
 
   // Visual Complement Component
   const ComplementVisualizer = ({
-    U,
+    U: _U,
     A,
     AComplement
   }: {

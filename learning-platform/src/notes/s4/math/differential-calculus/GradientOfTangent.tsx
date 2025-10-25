@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const GradientOfTangent = () => {
-  const [showExample1, setShowExample1] = useState(false);
-  const [showExample2, setShowExample2] = useState(false);
   const [showPractice1, setShowPractice1] = useState(false);
   const [showPractice2, setShowPractice2] = useState(false);
 

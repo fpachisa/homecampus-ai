@@ -16,7 +16,6 @@ type TTSProviderType = 'gemini' | 'cloud';
 class TTSService {
   private primaryProvider: TTSProvider | null = null;
   private fallbackProvider: TTSProvider | null = null;
-  private providerType: TTSProviderType;
 
   constructor(
     providerType: TTSProviderType = 'gemini',
@@ -24,8 +23,6 @@ class TTSService {
     cloudApiKey?: string,
     defaultSpeaker?: string
   ) {
-    this.providerType = providerType;
-
     // Initialize primary provider based on type
     if (providerType === 'gemini' && geminiApiKey) {
       try {

@@ -182,7 +182,7 @@ interface StepHeaderProps {
 }
 
 export const StepHeader: React.FC<StepHeaderProps> = ({
-  stepNumber,
+  stepNumber: _stepNumber,
   title,
   description,
   emoji,

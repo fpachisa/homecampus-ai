@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
@@ -21,7 +21,6 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
   const [voiceEnabled, setVoiceEnabled] = useState(true);
 
   // Get section and topic from query params
-  const section = searchParams.get('section') || '1';
   const topicFromQuery = searchParams.get('topic');
 
   // Determine the actual subtopic ID to use:

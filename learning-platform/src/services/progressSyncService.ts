@@ -301,7 +301,7 @@ class ProgressSyncService {
       totalProblemsCompleted:
         (progress.conversationState?.sessionStats.correctAnswers || 0) +
         Object.values(progress.practiceState || {}).reduce(
-          (sum, path) => sum + path.totalProblemsCorrect,
+          (sum, path) => sum + (path.progress?.totalProblemsCorrect || 0),
           0
         ),
       dataSize: JSON.stringify(progress).length,
