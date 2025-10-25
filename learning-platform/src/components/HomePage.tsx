@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { useAppNavigation } from '../hooks/useAppNavigation';
@@ -7,7 +7,7 @@ import { ProfileSwitcher } from './ProfileSwitcher';
 import { ParentDashboard } from './parent/ParentDashboard';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { GradeSelector } from './GradeSelector';
-import { topicsByGrade, getTopicsByGrade, GRADE_LEVELS, type Topic, type GradeLevel } from '../config/topicsByGrade';
+import { getTopicsByGrade, GRADE_LEVELS, type GradeLevel } from '../config/topicsByGrade';
 
 const HomePage: React.FC = () => {
   const { goToLearn, goToPractice } = useAppNavigation();
@@ -20,12 +20,14 @@ const HomePage: React.FC = () => {
   const [selectedGrade, setSelectedGrade] = useState<GradeLevel | null>(null);
   const [showOtherGrades, setShowOtherGrades] = useState(false);
 
+  // State for Learn/Practice mode
+  const [selectedMode, setSelectedMode] = useState<'learn' | 'practice'>('learn');
+
   // Only calculate grade/topic info for students (not when viewing as parent)
   const currentGrade = !isViewingAsParent ? ((activeProfile?.gradeLevel as GradeLevel) || 'Secondary 3') : 'Secondary 3';
   const displayGrade = selectedGrade || currentGrade;
 
   // Get topics for the display grade (only used for students)
-  const myTopics = getTopicsByGrade(currentGrade);
   const displayTopics = getTopicsByGrade(displayGrade);
 
   // Other grades to explore (excluding current grade)
@@ -53,11 +55,8 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-bold text-white animate-float"
-                style={{ backgroundColor: theme.colors.brand }}
-              >
-                📚
+              <div className="w-12 h-12 flex items-center justify-center animate-float">
+                <img src="/logo.png" alt="Home Campus Logo" className="w-12 h-12 object-contain" />
               </div>
               <div>
                 <h1 className="text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
@@ -114,7 +113,6 @@ const HomePage: React.FC = () => {
       <AuthModal
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
-        defaultView="signIn"
       />
 
       {/* Main Content */}
@@ -133,15 +131,48 @@ const HomePage: React.FC = () => {
                       : 'Choose a topic to begin your learning journey'}
                   </h2>
                 </div>
-                {activeProfile && (
-                  <GradeSelector
-                    currentGrade={displayGrade}
-                    onGradeChange={(grade) => {
-                      setSelectedGrade(grade);
-                      setShowOtherGrades(false);
-                    }}
-                  />
-                )}
+                <div className="flex items-center gap-4">
+                  {/* Mode Toggle */}
+                  {activeProfile && (
+                    <div
+                      className="flex items-center rounded-lg p-1"
+                      style={{
+                        background: theme.colors.interactive,
+                        border: `1px solid ${theme.glass.border}`,
+                      }}
+                    >
+                      <button
+                        onClick={() => setSelectedMode('learn')}
+                        className="px-4 py-2 rounded-md font-medium transition-all duration-200 text-sm"
+                        style={{
+                          backgroundColor: selectedMode === 'learn' ? theme.colors.brand : 'transparent',
+                          color: selectedMode === 'learn' ? '#ffffff' : theme.colors.textSecondary,
+                        }}
+                      >
+                        Learn Mode
+                      </button>
+                      <button
+                        onClick={() => setSelectedMode('practice')}
+                        className="px-4 py-2 rounded-md font-medium transition-all duration-200 text-sm"
+                        style={{
+                          backgroundColor: selectedMode === 'practice' ? theme.colors.brand : 'transparent',
+                          color: selectedMode === 'practice' ? '#ffffff' : theme.colors.textSecondary,
+                        }}
+                      >
+                        Practice Mode
+                      </button>
+                    </div>
+                  )}
+                  {activeProfile && (
+                    <GradeSelector
+                      currentGrade={displayGrade}
+                      onGradeChange={(grade) => {
+                        setSelectedGrade(grade);
+                        setShowOtherGrades(false);
+                      }}
+                    />
+                  )}
+                </div>
               </div>
 
               {/* Info banner when viewing different grade */}
@@ -191,15 +222,23 @@ const HomePage: React.FC = () => {
                   const isActive = topic.isActive;
 
                     return (
-                      <div
+                      <button
                         key={topic.id}
-                        className="group relative p-6 rounded-2xl transition-all duration-300 text-left"
+                        onClick={() =>
+                          isActive &&
+                          (selectedMode === 'learn'
+                            ? goToLearn(topic.category!, undefined, true)
+                            : goToPractice(topic.category!))
+                        }
+                        disabled={!isActive}
+                        className="group relative p-6 rounded-2xl transition-all duration-300 text-left w-full"
                         style={{
                           background: isActive ? theme.glass.background : theme.colors.interactive,
                           border: `1px solid ${theme.glass.border}`,
                           backdropFilter: isActive ? theme.glass.backdrop : 'none',
                           opacity: isActive ? 1 : 0.5,
                           boxShadow: theme.shadows.md,
+                          cursor: isActive ? 'pointer' : 'default',
                         }}
                         onMouseEnter={(e) => {
                           if (isActive) {
@@ -241,51 +280,8 @@ const HomePage: React.FC = () => {
                           {topic.description}
                         </p>
 
-                        {/* Action Buttons or Coming Soon */}
-                        {isActive ? (
-                          <div className="flex gap-3 mt-4">
-                            <button
-                              onClick={() => goToLearn(topic.category!, undefined, true)}
-                              className="flex-1 py-2.5 px-4 rounded-lg font-medium transition-all duration-200"
-                              style={{
-                                background: theme.gradients.brand,
-                                color: '#ffffff',
-                                boxShadow: theme.shadows.sm,
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'scale(1.02)';
-                                e.currentTarget.style.boxShadow = theme.shadows.md;
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'scale(1)';
-                                e.currentTarget.style.boxShadow = theme.shadows.sm;
-                              }}
-                            >
-                              Learn
-                            </button>
-                            <button
-                              onClick={() => goToPractice(topic.category!)}
-                              className="flex-1 py-2.5 px-4 rounded-lg font-medium transition-all duration-200"
-                              style={{
-                                backgroundColor: 'transparent',
-                                color: theme.colors.brand,
-                                border: `2px solid ${theme.colors.brand}`,
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.backgroundColor = theme.colors.brand;
-                                e.currentTarget.style.color = '#ffffff';
-                                e.currentTarget.style.transform = 'scale(1.02)';
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.backgroundColor = 'transparent';
-                                e.currentTarget.style.color = theme.colors.brand;
-                                e.currentTarget.style.transform = 'scale(1)';
-                              }}
-                            >
-                              Practice
-                            </button>
-                          </div>
-                        ) : (
+                        {/* Status indicator */}
+                        {!isActive && (
                           <div
                             className="text-sm font-medium mt-4"
                             style={{ color: theme.colors.textMuted }}
@@ -302,13 +298,28 @@ const HomePage: React.FC = () => {
                           />
                         )}
 
-                        {/* Subtopic count */}
+                        {/* Footer with subtopic count and action hint */}
                         {isActive && (
-                          <div className="mt-3 text-xs" style={{ color: theme.colors.textMuted }}>
-                            {topic.subtopicCount} subtopics
+                          <div className="mt-4 pt-3 border-t flex items-center justify-between" style={{ borderColor: theme.colors.border }}>
+                            <div className="text-xs" style={{ color: theme.colors.textMuted }}>
+                              {topic.subtopicCount} subtopics
+                            </div>
+                            <div className="flex items-center gap-1 text-xs font-medium" style={{ color: theme.colors.brand }}>
+                              <span className="opacity-0 group-hover:opacity-100 transition-opacity">
+                                {selectedMode === 'learn' ? 'Start Learning' : 'Start Practice'}
+                              </span>
+                              <svg
+                                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
                           </div>
                         )}
-                      </div>
+                      </button>
                     );
                   })}
               </div>
@@ -381,11 +392,8 @@ const HomePage: React.FC = () => {
                           }}
                         >
                           <div className="flex items-center gap-3 mb-3">
-                            <div
-                              className="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
-                              style={{ backgroundColor: theme.colors.brand }}
-                            >
-                              📚
+                            <div className="w-12 h-12 flex items-center justify-center">
+                              <img src="/logo.png" alt="Home Campus Logo" className="w-12 h-12 object-contain" />
                             </div>
                             <h4 className="text-lg font-semibold" style={{ color: theme.colors.textPrimary }}>
                               {grade}

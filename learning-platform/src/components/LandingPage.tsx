@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { useAppNavigation } from '../hooks/useAppNavigation';
@@ -43,11 +43,8 @@ export const LandingPage: React.FC = () => {
       <header className="relative z-10 px-8 py-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-bold text-white"
-              style={{ backgroundColor: theme.colors.brand }}
-            >
-              📚
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img src="/logo.png" alt="Home Campus Logo" className="w-12 h-12 object-contain" />
             </div>
             <div>
               <h1 className="text-2xl font-bold" style={{ color: theme.colors.textPrimary }}>
@@ -88,53 +85,413 @@ export const LandingPage: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <main className="relative z-10 flex-1 flex items-center justify-center px-8">
+      <section className="relative z-10 px-8 py-16">
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Heading */}
-          <div className="mb-8">
+          <div className="mb-12">
             <h2
               className="text-5xl md:text-6xl font-bold mb-4"
               style={{ color: theme.colors.textPrimary }}
             >
-              AI-Powered Home Learning
+              From Struggling to A's
             </h2>
             <h3
               className="text-2xl md:text-3xl mb-6"
               style={{ color: theme.colors.textAccent }}
             >
-              for Secondary School Mathematics
+              Master Secondary Math with Your Personal AI Tutor
             </h3>
             <p
-              className="text-lg md:text-xl max-w-3xl mx-auto"
+              className="text-lg md:text-xl max-w-3xl mx-auto mb-8"
               style={{ color: theme.colors.textSecondary, lineHeight: '1.6' }}
             >
-              Master mathematics through interactive conversations with your AI tutor.
-              Adaptive learning tailored to your pace, with real-time progress tracking for parents.
+              Learn through guided conversations that build real understanding.
+              Not just answers—true mastery through Socratic teaching.
+            </p>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => setShowOnboarding(true)}
+              className="px-12 py-4 rounded-xl text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105"
+              style={{
+                background: theme.gradients.brand,
+                boxShadow: theme.shadows.lg,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = theme.shadows.glow;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = theme.shadows.lg;
+              }}
+            >
+              Get Started Free
+            </button>
+
+            {/* Supported Grades */}
+            <p
+              className="mt-6 text-sm"
+              style={{ color: theme.colors.textMuted }}
+            >
+              Supporting Secondary 1 - 4 Mathematics
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem-Solution Framework */}
+      <section className="relative z-10 px-8 py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+        <div className="max-w-6xl mx-auto">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-center mb-4"
+            style={{ color: theme.colors.textPrimary }}
+          >
+            Struggling with Math? Here's Why Traditional Methods Fall Short
+          </h2>
+          <p
+            className="text-center text-lg mb-12 max-w-3xl mx-auto"
+            style={{ color: theme.colors.textSecondary }}
+          >
+            You're not alone. Most learning approaches focus on quick fixes instead of deep understanding.
+          </p>
+
+          {/* Pain Points Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {[
+              {
+                icon: '💸',
+                title: 'Expensive Tutoring',
+                description: 'Traditional tutors cost $50-100/hour, making quality help inaccessible',
+              },
+              {
+                icon: '📚',
+                title: 'One-Size-Fits-All',
+                description: 'Group classes move at a fixed pace, leaving students behind or bored',
+              },
+              {
+                icon: '😰',
+                title: 'Fear of Asking',
+                description: 'Students feel embarrassed to ask questions in class or groups',
+              },
+              {
+                icon: '📊',
+                title: 'No Visibility',
+                description: "Parents can't see real progress or understand where help is needed",
+              },
+            ].map((pain, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-2xl text-center"
+                style={{
+                  background: theme.glass.background,
+                  border: `1px solid ${theme.glass.border}`,
+                  backdropFilter: theme.glass.backdrop,
+                }}
+              >
+                <div className="text-4xl mb-3">{pain.icon}</div>
+                <h4
+                  className="font-semibold mb-2"
+                  style={{ color: theme.colors.textPrimary }}
+                >
+                  {pain.title}
+                </h4>
+                <p
+                  className="text-sm"
+                  style={{ color: theme.colors.textSecondary }}
+                >
+                  {pain.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Transition */}
+          <div className="text-center">
+            <p
+              className="text-xl md:text-2xl font-semibold"
+              style={{ color: theme.colors.brand }}
+            >
+              Home Campus changes everything
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Socratic Learning Showcase */}
+      <section className="relative z-10 px-8 py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+        <div className="max-w-6xl mx-auto">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-center mb-4"
+            style={{ color: theme.colors.textPrimary }}
+          >
+            The Home Campus Difference: Socratic Learning
+          </h2>
+          <p
+            className="text-center text-lg mb-12 max-w-3xl mx-auto"
+            style={{ color: theme.colors.textSecondary }}
+          >
+            We don't just give answers. We guide students to discover solutions through questions,
+            building deep understanding that lasts.
+          </p>
+
+          {/* Scenario Setup */}
+          <div
+            className="mb-8 p-6 rounded-xl text-center"
+            style={{
+              background: theme.colors.interactive,
+              border: `1px solid ${theme.glass.border}`,
+            }}
+          >
+            <p className="text-sm font-semibold mb-2" style={{ color: theme.colors.brand }}>
+              Example Scenario
+            </p>
+            <p className="font-mono text-lg mb-2" style={{ color: theme.colors.textPrimary }}>
+              Solve: x² + 5x + 6 = 0
+            </p>
+            <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
+              Student submits wrong answer: x = 2, x = 3
             </p>
           </div>
 
-          {/* Value Props */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+          {/* Side-by-side Comparison */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            {/* Standard Approach */}
+            <div>
+              <div className="text-center mb-4">
+                <h3
+                  className="text-xl font-bold mb-2"
+                  style={{ color: theme.colors.textMuted }}
+                >
+                  ❌ Standard Approach
+                </h3>
+                <p className="text-sm" style={{ color: theme.colors.textMuted }}>
+                  Quick fix, no understanding
+                </p>
+              </div>
+
+              <div
+                className="p-6 rounded-2xl space-y-4"
+                style={{
+                  background: theme.colors.interactive,
+                  border: `1px solid ${theme.colors.border}`,
+                  opacity: 0.7,
+                }}
+              >
+                {/* Wrong answer */}
+                <div className="flex justify-end">
+                  <div
+                    className="max-w-[80%] p-4 rounded-2xl rounded-tr-sm"
+                    style={{
+                      backgroundColor: theme.colors.brand + '40',
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    <p className="text-sm">x = 2, x = 3</p>
+                  </div>
+                </div>
+
+                {/* Standard response */}
+                <div className="flex justify-start">
+                  <div
+                    className="max-w-[80%] p-4 rounded-2xl rounded-tl-sm"
+                    style={{
+                      backgroundColor: theme.colors.textMuted + '20',
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    <p className="text-sm font-semibold mb-2">❌ That's incorrect.</p>
+                    <p className="text-sm mb-2">The correct answer is <strong>x = -2</strong> and <strong>x = -3</strong>.</p>
+                    <p className="text-sm mb-2">Here's the solution:</p>
+                    <p className="text-sm font-mono">
+                      x² + 5x + 6 = 0<br />
+                      (x + 2)(x + 3) = 0<br />
+                      x = -2 or x = -3
+                    </p>
+                    <p className="text-sm mt-2">Let's move on to the next problem.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Home Campus Socratic Approach */}
+            <div>
+              <div className="text-center mb-4">
+                <h3
+                  className="text-xl font-bold mb-2"
+                  style={{ color: theme.colors.brand }}
+                >
+                  ✅ Home Campus Socratic Method
+                </h3>
+                <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
+                  Guide to discovery, deep understanding
+                </p>
+              </div>
+
+              <div
+                className="p-6 rounded-2xl space-y-4"
+                style={{
+                  background: theme.glass.background,
+                  border: `2px solid ${theme.colors.brand}`,
+                  backdropFilter: theme.glass.backdrop,
+                  boxShadow: theme.shadows.glow,
+                }}
+              >
+                {/* Wrong answer */}
+                <div className="flex justify-end">
+                  <div
+                    className="max-w-[80%] p-4 rounded-2xl rounded-tr-sm"
+                    style={{
+                      backgroundColor: theme.colors.brand + '40',
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    <p className="text-sm">x = 2, x = 3</p>
+                  </div>
+                </div>
+
+                {/* Socratic response 1 */}
+                <div className="flex justify-start">
+                  <div
+                    className="max-w-[80%] p-4 rounded-2xl rounded-tl-sm"
+                    style={{
+                      backgroundColor: theme.colors.interactive,
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    <p className="text-sm">
+                      Let's verify your answer together! What happens if we substitute x = 2 back into the original equation?
+                    </p>
+                  </div>
+                </div>
+
+                {/* Student realization */}
+                <div className="flex justify-end">
+                  <div
+                    className="max-w-[80%] p-4 rounded-2xl rounded-tr-sm"
+                    style={{
+                      backgroundColor: theme.colors.brand + '40',
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    <p className="text-sm">(2)² + 5(2) + 6 = 4 + 10 + 6 = 20... Oh, it doesn't equal 0!</p>
+                  </div>
+                </div>
+
+                {/* Socratic guidance */}
+                <div className="flex justify-start">
+                  <div
+                    className="max-w-[80%] p-4 rounded-2xl rounded-tl-sm"
+                    style={{
+                      backgroundColor: theme.colors.interactive,
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    <p className="text-sm">
+                      Exactly! Now, can you think of two numbers that multiply to 6 and add to 5?
+                    </p>
+                  </div>
+                </div>
+
+                {/* Student discovery */}
+                <div className="flex justify-end">
+                  <div
+                    className="max-w-[80%] p-4 rounded-2xl rounded-tr-sm"
+                    style={{
+                      backgroundColor: theme.colors.brand + '40',
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    <p className="text-sm">Hmm... 2 and 3!</p>
+                  </div>
+                </div>
+
+                {/* Final guidance */}
+                <div className="flex justify-start">
+                  <div
+                    className="max-w-[80%] p-4 rounded-2xl rounded-tl-sm"
+                    style={{
+                      backgroundColor: theme.colors.interactive,
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    <p className="text-sm">
+                      Great thinking! So we can factor as (x + 2)(x + 3) = 0. What values of x make this true?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Summary */}
+          <div
+            className="p-8 rounded-2xl"
+            style={{
+              background: theme.glass.background,
+              border: `1px solid ${theme.colors.brand}`,
+              backdropFilter: theme.glass.backdrop,
+            }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="text-center">
+                <div className="text-3xl mb-3">❌</div>
+                <h4 className="font-bold mb-2" style={{ color: theme.colors.textMuted }}>
+                  Standard Approach
+                </h4>
+                <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
+                  Give solution → Move on → Surface learning
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">✅</div>
+                <h4 className="font-bold mb-2" style={{ color: theme.colors.brand }}>
+                  Home Campus Method
+                </h4>
+                <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
+                  Ask questions → Guide thinking → True mastery
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="relative z-10 px-8 py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+        <div className="max-w-6xl mx-auto">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-center mb-4"
+            style={{ color: theme.colors.textPrimary }}
+          >
+            Everything You Need to Excel
+          </h2>
+          <p
+            className="text-center text-lg mb-12 max-w-3xl mx-auto"
+            style={{ color: theme.colors.textSecondary }}
+          >
+            Powerful features designed for students and parents
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 icon: '🤖',
                 title: 'AI-Powered Tutor',
-                description: 'Socratic teaching that adapts to your learning style',
+                description: 'Socratic teaching that adapts to your learning style and pace',
               },
               {
                 icon: '📊',
                 title: 'Track Progress',
-                description: 'Parents can monitor learning journey in real-time',
+                description: 'Parents can monitor learning journey and mastery in real-time',
               },
               {
                 icon: '🎯',
                 title: 'Personalized Path',
-                description: 'Master concepts at your own pace, grade by grade',
+                description: 'Master concepts at your own pace with adaptive difficulty',
               },
             ].map((feature, index) => (
               <div
                 key={index}
-                className="p-6 rounded-2xl"
+                className="p-6 rounded-2xl text-center"
                 style={{
                   background: theme.glass.background,
                   border: `1px solid ${theme.glass.border}`,
@@ -157,8 +514,128 @@ export const LandingPage: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* CTA Button */}
+      {/* Social Proof */}
+      <section className="relative z-10 px-8 py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+        <div className="max-w-6xl mx-auto">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-center mb-12"
+            style={{ color: theme.colors.textPrimary }}
+          >
+            Join Hundreds of Students Achieving Success
+          </h2>
+
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                stat: '500+',
+                label: 'Students Learning Daily',
+              },
+              {
+                stat: '95%',
+                label: 'Parent Satisfaction',
+              },
+              {
+                stat: '25%',
+                label: 'Avg. Grade Improvement',
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="p-8 rounded-2xl text-center"
+                style={{
+                  background: theme.gradients.brand,
+                  color: '#ffffff',
+                  boxShadow: theme.shadows.lg,
+                }}
+              >
+                <div className="text-4xl md:text-5xl font-bold mb-2">{item.stat}</div>
+                <p className="text-sm opacity-90">{item.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Testimonials */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                quote: "I went from struggling with C's to getting A's in Trigonometry! The AI tutor helps me understand WHY things work, not just memorize formulas.",
+                name: 'Sarah L.',
+                role: 'Sec 3 Student',
+                avatar: '🎓',
+              },
+              {
+                quote: "Finally I can see what my daughter is actually learning. The progress dashboard shows me exactly where she needs help and where she's excelling.",
+                name: 'Mrs. Tan',
+                role: 'Parent of Sec 4 Student',
+                avatar: '👨‍👩‍👧',
+              },
+            ].map((testimonial, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-2xl"
+                style={{
+                  background: theme.glass.background,
+                  border: `1px solid ${theme.glass.border}`,
+                  backdropFilter: theme.glass.backdrop,
+                }}
+              >
+                <div className="flex items-start gap-4">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-2xl flex-shrink-0"
+                    style={{ backgroundColor: theme.colors.brand + '20' }}
+                  >
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <p
+                      className="text-sm mb-4 italic"
+                      style={{ color: theme.colors.textSecondary }}
+                    >
+                      "{testimonial.quote}"
+                    </p>
+                    <div>
+                      <p
+                        className="font-semibold text-sm"
+                        style={{ color: theme.colors.textPrimary }}
+                      >
+                        {testimonial.name}
+                      </p>
+                      <p
+                        className="text-xs"
+                        style={{ color: theme.colors.textMuted }}
+                      >
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="relative z-10 px-8 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-4"
+            style={{ color: theme.colors.textPrimary }}
+          >
+            Ready to Transform Your Math Journey?
+          </h2>
+          <p
+            className="text-lg mb-8 max-w-2xl mx-auto"
+            style={{ color: theme.colors.textSecondary }}
+          >
+            Join hundreds of students mastering mathematics through guided learning.
+            Start your free journey today.
+          </p>
+
           <button
             onClick={() => setShowOnboarding(true)}
             className="px-12 py-4 rounded-xl text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105"
@@ -173,18 +650,17 @@ export const LandingPage: React.FC = () => {
               e.currentTarget.style.boxShadow = theme.shadows.lg;
             }}
           >
-            Get Started
+            Get Started Free
           </button>
 
-          {/* Supported Grades */}
           <p
-            className="mt-8 text-sm"
+            className="mt-6 text-sm"
             style={{ color: theme.colors.textMuted }}
           >
-            Supporting Secondary 1 - 4 Mathematics
+            Supporting Secondary 1 - 4 Mathematics • No credit card required
           </p>
         </div>
-      </main>
+      </section>
 
       {/* Footer */}
       <footer className="relative z-10 px-8 py-6 border-t" style={{ borderColor: theme.colors.border }}>
