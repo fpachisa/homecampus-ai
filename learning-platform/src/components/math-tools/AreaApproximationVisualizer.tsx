@@ -17,27 +17,64 @@ const AreaApproximationVisualizer: React.FC<AreaApproximationVisualizerProps> = 
   method,
   showExact = false
 }) => {
+  // Detect the variable name from the expression (x, t, θ, etc.)
+  const detectVariable = (expr: string): string => {
+    // Remove math function names to avoid false matches
+    const cleaned = expr
+      .replace(/sin|cos|tan|sqrt|ln|log|exp|abs/gi, '')
+      .replace(/\d+/g, ''); // Remove numbers
+
+    // Find the first alphabetic character (or Greek letter)
+    const match = cleaned.match(/[a-z]/i);
+    return match ? match[0] : 'x';
+  };
+
+  const variableName = useMemo(() => detectVariable(functionExpression), [functionExpression]);
+
   // Safe function evaluator
-  const evaluateFunction = (x: number): number => {
+  const evaluateFunction = (value: number): number => {
     try {
       // Simple expression parser for common functions
-      const expr = functionExpression
+      let expr = functionExpression
+        .replace(/\s+/g, '') // Remove all spaces first
         .replace(/\^/g, '**')
-        .replace(/sin/g, 'Math.sin')
-        .replace(/cos/g, 'Math.cos')
-        .replace(/tan/g, 'Math.tan')
-        .replace(/sqrt/g, 'Math.sqrt')
-        .replace(/ln/g, 'Math.log')
-        .replace(/log/g, 'Math.log10')
-        // Handle unary minus before exponentiation (e.g., -x^2 -> -(x**2))
+        // STEP 1: Replace math functions with PLACEHOLDERS (uppercase tokens that won't match [a-z])
+        .replace(/sin/gi, '__SINE__')
+        .replace(/cos/gi, '__COSINE__')
+        .replace(/tan/gi, '__TANGENT__')
+        .replace(/sqrt/gi, '__SQRT__')
+        .replace(/ln/gi, '__LN__')
+        .replace(/log/gi, '__LOG__')
+        .replace(/exp/gi, '__EXP__')
+        .replace(/abs/gi, '__ABS__')
+        // STEP 2: Now apply implicit multiplication (safe because functions are placeholders)
+        // Handle implicit multiplication: number followed by letter (3x -> 3*x)
+        .replace(/(\d)([a-z])/gi, '$1*$2')
+        // Handle implicit multiplication: letter followed by opening paren (x( -> x*(, but __SINE__( stays)
+        .replace(/([a-z])(\()/gi, '$1*$2')
+        // Handle implicit multiplication: closing paren followed by opening paren )( -> )*(
+        .replace(/(\))(\()/g, '$1*$2')
+        // Handle implicit multiplication: closing paren followed by number/letter ()2 -> ()*2, ()x -> ()*x)
+        .replace(/(\))(\d|[a-z])/gi, '$1*$2')
+        // STEP 3: Convert placeholders to Math.xxx functions
+        .replace(/__SINE__/g, 'Math.sin')
+        .replace(/__COSINE__/g, 'Math.cos')
+        .replace(/__TANGENT__/g, 'Math.tan')
+        .replace(/__SQRT__/g, 'Math.sqrt')
+        .replace(/__LN__/g, 'Math.log')
+        .replace(/__LOG__/g, 'Math.log10')
+        .replace(/__EXP__/g, 'Math.exp')
+        .replace(/__ABS__/g, 'Math.abs')
+        // Handle unary minus before exponentiation (e.g., -x**2 -> -(x**2))
         .replace(/-([a-z]+)\*\*(\w+)/gi, '-($1**$2)');
 
+      // Create function with detected variable name
       // eslint-disable-next-line no-new-func
-      const fn = new Function('x', `return ${expr}`);
-      const result = fn(x);
+      const fn = new Function(variableName, `return ${expr}`);
+      const result = fn(value);
       return isNaN(result) || !isFinite(result) ? 0 : result;
     } catch (error) {
-      console.error('Function evaluation error:', error);
+      console.error('Function evaluation error:', error, 'Original:', functionExpression);
       return 0;
     }
   };
@@ -96,7 +133,7 @@ const AreaApproximationVisualizer: React.FC<AreaApproximationVisualizerProps> = 
       approximateArea: approxArea,
       exactArea: exact
     };
-  }, [functionExpression, lowerBound, upperBound, rectangles, method, showExact]);
+  }, [functionExpression, lowerBound, upperBound, rectangles, method, showExact, variableName]);
 
   // SVG dimensions and scaling
   const width = 600;
@@ -149,7 +186,7 @@ const AreaApproximationVisualizer: React.FC<AreaApproximationVisualizerProps> = 
           Area Approximation: {method.charAt(0).toUpperCase() + method.slice(1)} Riemann Sum
         </h3>
         <p className="text-sm text-gray-700 dark:text-gray-300">
-          Function: f(x) = {functionExpression} | Interval: [{lowerBound}, {upperBound}] | Rectangles: {rectangles}
+          Function: f({variableName}) = {functionExpression} | Interval: [{lowerBound}, {upperBound}] | Rectangles: {rectangles}
         </p>
       </div>
 
@@ -250,7 +287,7 @@ const AreaApproximationVisualizer: React.FC<AreaApproximationVisualizerProps> = 
           textAnchor="middle"
           className="text-sm font-bold fill-green-600 dark:fill-green-400"
         >
-          a = {lowerBound}
+          {/* a = {lowerBound} */}
         </text>
         <text
           x={scaleX(upperBound)}
@@ -258,7 +295,7 @@ const AreaApproximationVisualizer: React.FC<AreaApproximationVisualizerProps> = 
           textAnchor="middle"
           className="text-sm font-bold fill-green-600 dark:fill-green-400"
         >
-          b = {upperBound}
+          {/* b = {lowerBound} */}
         </text>
       </svg>
 

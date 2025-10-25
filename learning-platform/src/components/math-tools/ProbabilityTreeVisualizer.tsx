@@ -30,12 +30,34 @@ const ProbabilityTreeVisualizer: React.FC<ProbabilityTreeProps> = ({
   showProbabilities = true,
   caption
 }) => {
-  const hasStage3 = stage3 && stage3.length > 0;
+  // Normalize probabilities (convert strings to numbers if needed)
+  const normalizeProbability = (p: number | string | any): number => {
+    if (typeof p === 'number') return p;
+    if (typeof p === 'string') {
+      const parsed = parseFloat(p);
+      return isNaN(parsed) ? 0 : parsed;
+    }
+    return 0;
+  };
+
+  const normalizeStage = (stage: TreeOutcome[]): TreeOutcome[] => {
+    return stage.map(item => ({
+      outcome: item.outcome,
+      probability: normalizeProbability(item.probability)
+    }));
+  };
+
+  // Normalize all stages
+  const normalizedStage1 = normalizeStage(stage1);
+  const normalizedStage2 = normalizeStage(stage2);
+  const normalizedStage3 = stage3 ? normalizeStage(stage3) : undefined;
+
+  const hasStage3 = normalizedStage3 && normalizedStage3.length > 0;
   const numStages = hasStage3 ? 3 : 2;
 
   // Calculate total width based on number of stages
   const width = numStages === 2 ? 600 : 800;
-  const height = Math.max(300, stage1.length * stage2.length * (hasStage3 ? stage3!.length : 1) * 40);
+  const height = Math.max(400, normalizedStage1.length * normalizedStage2.length * (hasStage3 ? normalizedStage3!.length : 1) * 80);
 
   // Stage positions (x-coordinates)
   const stage1X = 50;
@@ -44,7 +66,7 @@ const ProbabilityTreeVisualizer: React.FC<ProbabilityTreeProps> = ({
   const endX = numStages === 2 ? 450 : 700;
 
   // Calculate vertical spacing
-  const totalEndpoints = stage1.length * stage2.length * (hasStage3 ? stage3!.length : 1);
+  const totalEndpoints = normalizedStage1.length * normalizedStage2.length * (hasStage3 ? normalizedStage3!.length : 1);
   const verticalSpacing = (height - 100) / totalEndpoints;
 
   // Generate all paths
@@ -63,16 +85,16 @@ const ProbabilityTreeVisualizer: React.FC<ProbabilityTreeProps> = ({
   }> = [];
 
   // Calculate midpoint Y for stage 1 branches
-  const stage1Ys = stage1.map((_, idx) => {
-    const startY = 50 + (idx * (height - 100) / stage1.length);
-    const endY = 50 + ((idx + 1) * (height - 100) / stage1.length);
+  const stage1Ys = normalizedStage1.map((_, idx) => {
+    const startY = 50 + (idx * (height - 100) / normalizedStage1.length);
+    const endY = 50 + ((idx + 1) * (height - 100) / normalizedStage1.length);
     return (startY + endY) / 2;
   });
 
-  stage1.forEach((s1Item, s1Idx) => {
-    stage2.forEach((s2Item, s2Idx) => {
-      if (hasStage3 && stage3) {
-        stage3.forEach((s3Item, s3Idx) => {
+  normalizedStage1.forEach((s1Item, s1Idx) => {
+    normalizedStage2.forEach((s2Item, s2Idx) => {
+      if (hasStage3 && normalizedStage3) {
+        normalizedStage3.forEach((s3Item, s3Idx) => {
           const pathString = `${s1Item.outcome}-${s2Item.outcome}-${s3Item.outcome}`;
           const combinedProb = s1Item.probability * s2Item.probability * s3Item.probability;
 
@@ -110,12 +132,12 @@ const ProbabilityTreeVisualizer: React.FC<ProbabilityTreeProps> = ({
   });
 
   // Group stage2 by stage1 for midpoint calculation
-  const stage2GroupedByStage1 = stage1.map((s1Item, s1Idx) => {
+  const stage2GroupedByStage1 = normalizedStage1.map((s1Item, s1Idx) => {
     const pathsForThisStage1 = allPaths.filter(p => p.stage1Item.outcome === s1Item.outcome);
     return {
       stage1Item: s1Item,
       stage1Y: stage1Ys[s1Idx],
-      stage2Paths: stage2.map((s2Item, s2Idx) => {
+      stage2Paths: normalizedStage2.map((s2Item, s2Idx) => {
         const pathsForThisStage2 = pathsForThisStage1.filter(p => p.stage2Item.outcome === s2Item.outcome);
         const avgY = pathsForThisStage2.reduce((sum, p) => sum + p.stage2Y, 0) / pathsForThisStage2.length;
         return {
@@ -334,7 +356,7 @@ const ProbabilityTreeVisualizer: React.FC<ProbabilityTreeProps> = ({
 
       {/* Caption */}
       {caption && (
-        <div className="text-sm text-center text-gray-600 max-w-2xl px-4">
+        <div className="text-sm text-center text-gray-900 dark:text-gray-100 max-w-2xl px-4 mt-2 font-medium">
           <MathText>{caption}</MathText>
         </div>
       )}

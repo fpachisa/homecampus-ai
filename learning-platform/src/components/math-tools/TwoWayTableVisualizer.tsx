@@ -174,7 +174,7 @@ const TwoWayTableVisualizer: React.FC<TwoWayTableProps> = ({
 
       {/* Caption */}
       {caption && (
-        <div className="text-sm text-center text-gray-600 max-w-2xl px-4 mt-2">
+        <div className="text-sm text-center text-gray-900 dark:text-gray-100 max-w-2xl px-4 mt-2 font-medium">
           <MathText>{caption}</MathText>
         </div>
       )}

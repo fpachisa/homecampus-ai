@@ -7,6 +7,8 @@
  */
 
 import React, { useEffect, useState, useRef } from 'react';
+import { useParams } from 'react-router-dom';
+import { useAppNavigation } from '../../hooks/useAppNavigation';
 import type { PathNode, PathLayer, PathProgress } from '../../types/practice';
 import { yamlPathLoader } from '../../services/yamlPathLoader';
 import { pathProgressService } from '../../services/pathProgressService';
@@ -19,18 +21,13 @@ import { BackButton } from '../BackButton';
 import { useTheme } from '../../hooks/useTheme';
 
 interface InteractivePathViewProps {
-  category: string;
-  onSelectNode: (nodeId: string) => void;
-  onBack: () => void;
-  onShowAchievements?: () => void;
+  // Props removed - now reads from URL
 }
 
-export const InteractivePathView: React.FC<InteractivePathViewProps> = ({
-  category,
-  onSelectNode,
-  onBack,
-  onShowAchievements,
-}) => {
+export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
+  const { pathId } = useParams<{ pathId: string }>();
+  const { goToPractice, goToHome } = useAppNavigation();
+  const category = pathId!; // pathId is the category
   const { theme } = useTheme();
   const [nodes, setNodes] = useState<PathNode[]>([]);
   const [progress, setProgress] = useState<PathProgress | null>(null);
@@ -107,7 +104,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = ({
             {error || 'Failed to load path'}
           </div>
           <button
-            onClick={onBack}
+            onClick={goToHome}
             className="px-6 py-2 rounded-lg transition"
             style={{
               backgroundColor: theme.colors.brand,
@@ -183,10 +180,10 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = ({
         }}
       >
         <div className="p-4 border-b flex-shrink-0" style={{ borderColor: theme.glass.border }}>
-          <BackButton onClick={onBack} />
+          <BackButton onClick={goToHome} />
         </div>
         <div className="flex-1 overflow-y-auto">
-          <StatsPanel progress={progress} onShowAchievements={onShowAchievements} />
+          <StatsPanel progress={progress} />
         </div>
       </div>
 
@@ -230,7 +227,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = ({
                 status={getNodeStatus(node.id)}
                 layer={node.layer}
                 position={adjustedPosition}
-                onClick={() => onSelectNode(node.id)}
+                onClick={() => goToPractice(category, node.id)}
                 displayNumber={index + 1}
               />
             );
@@ -299,3 +296,5 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = ({
     </div>
   );
 };
+
+export default InteractivePathView;

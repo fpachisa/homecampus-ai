@@ -382,3 +382,5 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete, 
     </div>
   );
 };
+
+export default OnboardingWizard;

@@ -62,7 +62,6 @@ import RiemannSumVisualizer from '../math-tools/RiemannSumVisualizer';
 interface MathToolRendererProps {
   toolName: string | null | undefined;
   parameters: Record<string, any>;
-  caption?: string;
 }
 
 // Component map - maps registry tool names to actual React components
@@ -118,6 +117,9 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   boxPlot: BoxPlotVisualizer,
   scatterPlot: ScatterPlotVisualizer,
 
+  // Probability tools
+  // NOT ADDED FOR A REASON....CHECK BEFORE ADDING
+
   // Coordinate geometry tools
   cartesianPlane: CartesianPlaneVisualizer,
   coordinate3DPlane: Coordinate3DPlaneVisualizer,
@@ -142,8 +144,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({
   toolName,
-  parameters,
-  caption
+  parameters
 }) => {
   // Defensive check: Handle null/undefined toolName
   // When mathTool is intentionally omitted (null), just don't render anything
@@ -173,13 +174,13 @@ export const MathToolRenderer: React.FC<MathToolRendererProps> = ({
 
   // Render the appropriate visualizer
   const renderTool = () => {
-    return <Component {...parameters} caption={caption} />;
+    return <Component {...parameters} />;
   };
 
   return (
     <div className="my-4 p-4 bg-white rounded-lg border-2 border-gray-200">
       {/* Render the visualization */}
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center">
         {renderTool()}
       </div>
     </div>

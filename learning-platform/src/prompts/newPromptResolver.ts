@@ -249,7 +249,7 @@ export class NewPromptResolver {
     }
 
     // S4 Differential Calculus - direct topic IDs
-    const differentialCalculusTopics = ['limits', 'gradient-tangent', 'derivative-function', 'first-principles', 'differentiation-rules', 'tangent-equations', 'stationary-points'];
+    const differentialCalculusTopics = ['s4-math-differential-calculus-limits', 's4-math-differential-calculus-gradient-tangent', 's4-math-differential-calculus-derivative-function', 's4-math-differential-calculus-first-principles', 's4-math-differential-calculus-differentiation-rules', 's4-math-differential-calculus-tangent-equations', 's4-math-differential-calculus-stationary-points'];
     if (differentialCalculusTopics.includes(topicId)) {
       const subtopic = DIFFERENTIAL_CALCULUS_SUBTOPICS[topicId as any];
       return { subtopic, global: S4_DIFFERENTIAL_CALCULUS_CONFIG };

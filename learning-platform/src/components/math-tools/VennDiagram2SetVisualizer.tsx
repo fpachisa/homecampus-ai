@@ -238,7 +238,7 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
           strokeWidth="3"
           rx="10"
         />
-        <text x="30" y="45" fontSize="20" fontWeight="bold" fill="#0369a1">
+        <text x="30" y="45" fontSize="14" fontWeight="bold" fill="#0369a1">
           {universalSetLabel}
         </text>
 
@@ -441,7 +441,7 @@ const VennDiagram2SetVisualizer: React.FC<VennDiagram2SetProps> = ({
 
       {/* Caption */}
       {caption && (
-        <div className="text-sm text-center text-gray-600 max-w-md px-4">
+        <div className="text-sm text-center text-gray-900 dark:text-gray-100 max-w-md px-4 mt-2 font-medium">
           <MathText>{caption}</MathText>
         </div>
       )}

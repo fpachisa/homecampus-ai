@@ -42,13 +42,35 @@ const VennDiagram1SetVisualizer: React.FC<VennDiagram1SetProps> = ({
   shadeColor = '#86efac',
   caption
 }) => {
-  // Convert elements to arrays if they're numbers
-  const setElem = typeof setElements === 'number' ? [String(setElements)] : setElements;
-  const complementElem = typeof complementElements === 'number' ? [String(complementElements)] : complementElements;
+  // Determine if elements are labels (strings), counts (numbers), or actual element arrays
+  const isSetLabel = typeof setElements === 'string';
+  const isComplementLabel = typeof complementElements === 'string';
+
+  // Convert to appropriate format
+  const setElem = typeof setElements === 'number'
+    ? [String(setElements)]
+    : Array.isArray(setElements)
+      ? setElements
+      : [];
+
+  const complementElem = typeof complementElements === 'number'
+    ? [String(complementElements)]
+    : Array.isArray(complementElements)
+      ? complementElements
+      : [];
 
   // Calculate counts
-  const setCount = typeof setElements === 'number' ? setElements : setElements.length;
-  const complementCount = typeof complementElements === 'number' ? complementElements : complementElements.length;
+  const setCount = typeof setElements === 'number'
+    ? setElements
+    : Array.isArray(setElements)
+      ? setElements.length
+      : 0;
+
+  const complementCount = typeof complementElements === 'number'
+    ? complementElements
+    : Array.isArray(complementElements)
+      ? complementElements.length
+      : 0;
 
   // Circle position (centered)
   const centerX = 225;
@@ -60,8 +82,25 @@ const VennDiagram1SetVisualizer: React.FC<VennDiagram1SetProps> = ({
   const shouldShadeComplement = shadeRegion === 'complement' || shadeRegion === 'universal';
 
   // Render elements or count in a region
-  const renderRegionContent = (elements: string[], count: number, x: number, y: number) => {
-    if (showRegionCounts) {
+  const renderRegionContent = (
+    elements: string[],
+    count: number,
+    x: number,
+    y: number,
+    isLabel: boolean,
+    labelText?: string | string[] | number
+  ) => {
+    // If it's a descriptive label (string), just show the label
+    if (isLabel && typeof labelText === 'string') {
+      return (
+        <text x={x} y={y} fontSize="14" textAnchor="middle" fill="#1f2937" className="font-medium">
+          {labelText}
+        </text>
+      );
+    }
+
+    // Show count in (n) notation
+    if (showRegionCounts && count > 0) {
       return (
         <text x={x} y={y} fontSize="18" fontWeight="bold" textAnchor="middle" fill="#1f2937">
           ({count})
@@ -69,8 +108,8 @@ const VennDiagram1SetVisualizer: React.FC<VennDiagram1SetProps> = ({
       );
     }
 
-    if (showElements && elements.length > 0 && typeof setElements !== 'number') {
-      // Show actual elements (max 5 to avoid clutter)
+    // Show actual elements (max 5 to avoid clutter)
+    if (showElements && elements.length > 0 && !isLabel) {
       const displayElements = elements.slice(0, 5);
       return (
         <g>
@@ -177,16 +216,17 @@ const VennDiagram1SetVisualizer: React.FC<VennDiagram1SetProps> = ({
         </text>
 
         {/* Region contents - inside the circle */}
-        {renderRegionContent(setElem, setCount, centerX, centerY)}
+        {renderRegionContent(setElem, setCount, centerX, centerY, isSetLabel, setElements)}
 
         {/* Region contents - outside the circle (complement) */}
         {/* Position in bottom right corner of universal set */}
-        {complementCount > 0 && renderRegionContent(complementElem, complementCount, 370, 245)}
+        {(complementCount > 0 || isComplementLabel) &&
+          renderRegionContent(complementElem, complementCount, 370, 245, isComplementLabel, complementElements)}
       </svg>
 
       {/* Caption */}
       {caption && (
-        <div className="text-sm text-center text-gray-600 max-w-md px-4">
+        <div className="text-sm text-center text-gray-900 dark:text-gray-100 max-w-md px-4 mt-2 font-medium">
           <MathText>{caption}</MathText>
         </div>
       )}

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
-import { useAppContext } from '../../App';
+import { useAppNavigation } from '../../hooks/useAppNavigation';
 import ChatInterface from '../ChatInterface';
 import SubtopicWelcomeScreen from '../SubtopicWelcomeScreen';
 import { sessionStorage } from '../../services/sessionStorage';
+import { getFirstSubtopicId } from '../../utils/topicHelpers';
 import type { LayoutActions, LayoutState } from './MainLayout';
 
 interface CenterPanelProps {
@@ -12,9 +14,23 @@ interface CenterPanelProps {
 }
 
 const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState }) => {
-  const { theme, setTheme, toggleTheme } = useTheme();
-  const { appState, handleBackToTopics } = useAppContext();
+  const { theme, toggleTheme } = useTheme();
+  const { pathId } = useParams<{ pathId: string }>();
+  const [searchParams] = useSearchParams();
+  const { goToHome } = useAppNavigation();
   const [voiceEnabled, setVoiceEnabled] = useState(true);
+
+  // Get section and topic from query params
+  const section = searchParams.get('section') || '1';
+  const topicFromQuery = searchParams.get('topic');
+
+  // Determine the actual subtopic ID to use:
+  // 1. Use topic from query param if provided
+  // 2. Otherwise, use first subtopic for the path
+  const selectedTopic = topicFromQuery || (pathId ? getFirstSubtopicId(pathId) : null);
+
+  // Category is the pathId (e.g., 's4-math-probability')
+  const category = pathId || '';
 
   // Track which topics user has dismissed this session (separate from localStorage)
   const [dismissedTopics, setDismissedTopics] = useState<Set<string>>(new Set());
@@ -22,16 +38,16 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
   // Calculate if welcome screen should show - SYNCHRONOUSLY during render
   // This prevents ChatInterface from mounting before the check completes
   const shouldShowWelcome = React.useMemo(() => {
-    if (!appState.selectedTopic) return false;
+    if (!selectedTopic) return false;
 
     // If user dismissed it this session, don't show again
-    if (dismissedTopics.has(appState.selectedTopic)) return false;
+    if (dismissedTopics.has(selectedTopic)) return false;
 
     // Check if user has an existing session for this topic
-    const hasSession = sessionStorage.getSessionPreview(appState.selectedTopic) !== null;
+    const hasSession = sessionStorage.getSessionPreview(selectedTopic) !== null;
 
     // Check if user has seen welcome screen for this topic (persisted)
-    const welcomeScreenKey = `welcome_seen_${appState.selectedTopic}`;
+    const welcomeScreenKey = `welcome_seen_${selectedTopic}`;
     const hasSeenWelcome = localStorage.getItem(welcomeScreenKey) === 'true';
 
     // Show welcome screen only if:
@@ -39,36 +55,36 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
     // 2. User has NOT seen it before for this topic
     // 3. User does NOT have an existing session (first time visiting)
     return !hasSeenWelcome && !hasSession;
-  }, [appState.selectedTopic, dismissedTopics]);
+  }, [selectedTopic, dismissedTopics]);
 
   // Handle start learning from welcome screen
   const handleStartLearning = (enableVoice: boolean) => {
-    if (appState.selectedTopic) {
+    if (selectedTopic) {
       // Mark welcome screen as seen (persisted)
-      const welcomeScreenKey = `welcome_seen_${appState.selectedTopic}`;
+      const welcomeScreenKey = `welcome_seen_${selectedTopic}`;
       localStorage.setItem(welcomeScreenKey, 'true');
 
       // Set voice preference
       setVoiceEnabled(enableVoice);
 
       // Mark as dismissed for this session (triggers useMemo recalculation)
-      setDismissedTopics(prev => new Set([...prev, appState.selectedTopic!]));
+      setDismissedTopics(prev => new Set([...prev, selectedTopic]));
     }
   };
 
   // Handle back from welcome screen
   const handleBackFromWelcome = () => {
-    handleBackToTopics();
+    goToHome();
   };
 
   // If a topic is selected, show either welcome screen or ChatInterface
-  if (appState.selectedTopic) {
+  if (selectedTopic) {
     // Show welcome screen if it's the user's first time
     if (shouldShowWelcome) {
       return (
         <SubtopicWelcomeScreen
-          topicId={appState.selectedTopic}
-          category={appState.selectedCategory || ''}
+          topicId={selectedTopic}
+          category={category}
           onStartLearning={handleStartLearning}
           onBack={handleBackFromWelcome}
         />
@@ -212,9 +228,9 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
         {/* Chat Interface Container */}
         <div className="flex-1">
           <ChatInterface
-            key={appState.selectedTopic}
-            topicId={appState.selectedTopic}
-            onBackToTopics={handleBackToTopics}
+            key={selectedTopic}
+            topicId={selectedTopic}
+            onBackToTopics={goToHome}
           />
         </div>
       </div>

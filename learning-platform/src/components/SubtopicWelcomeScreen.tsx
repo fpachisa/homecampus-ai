@@ -135,13 +135,13 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('coord-geom-applications')) return '🎯';
 
   // S4 Differential Calculus icons
-  if (topicId === 'limits') return '∞';
-  if (topicId === 'gradient-tangent') return '📈';
-  if (topicId === 'derivative-function') return 'f′';
-  if (topicId === 'first-principles') return '△';
-  if (topicId === 'differentiation-rules') return '∂';
-  if (topicId === 'tangent-equations') return '📐';
-  if (topicId === 'stationary-points') return '📊';
+  if (topicId === 's4-math-differential-calculus-limits') return '∞';
+  if (topicId === 's4-math-differential-calculus-gradient-tangent') return '📈';
+  if (topicId === 's4-math-differential-calculus-derivative-function') return 'f′';
+  if (topicId === 's4-math-differential-calculus-first-principles') return '△';
+  if (topicId === 's4-math-differential-calculus-differentiation-rules') return '∂';
+  if (topicId === 's4-math-differential-calculus-tangent-equations') return '📐';
+  if (topicId === 's4-math-differential-calculus-stationary-points') return '📊';
 
   // S4 Integration icons
   if (topicId === 's4-math-integration-area-under-curves') return '📊';

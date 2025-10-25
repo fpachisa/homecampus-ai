@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
+import { useParams } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
-import { useAppContext } from '../../App';
+import { useAppNavigation } from '../../hooks/useAppNavigation';
 import { sessionStorage } from '../../services/sessionStorage';
 import { progressService } from '../../services/progressService';
 // OLD: P6_MATH_FRACTIONS removed - not migrated
@@ -141,13 +142,13 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('coord-geom-applications')) return '🎯';
 
   // S4 Differential Calculus icons
-  if (topicId === 'limits') return '∞';
-  if (topicId === 'gradient-tangent') return '📈';
-  if (topicId === 'derivative-function') return 'f′';
-  if (topicId === 'first-principles') return '△';
-  if (topicId === 'differentiation-rules') return '∂';
-  if (topicId === 'tangent-equations') return '📐';
-  if (topicId === 'stationary-points') return '📊';
+  if (topicId === 's4-math-differential-calculus-limits') return '∞';
+  if (topicId === 's4-math-differential-calculus-gradient-tangent') return '📈';
+  if (topicId === 's4-math-differential-calculus-derivative-function') return 'f′';
+  if (topicId === 's4-math-differential-calculus-first-principles') return '△';
+  if (topicId === 's4-math-differential-calculus-differentiation-rules') return '∂';
+  if (topicId === 's4-math-differential-calculus-tangent-equations') return '📐';
+  if (topicId === 's4-math-differential-calculus-stationary-points') return '📊';
 
   // S4 Integration icons
   if (topicId === 's4-math-integration-area-under-curves') return '📊';
@@ -186,13 +187,51 @@ function getCategoryDisplayName(category: string): string {
 
 const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions }) => {
   const { theme } = useTheme();
-  const { appState, handleTopicSelect, handleBackToTopics } = useAppContext();
+  const { pathId } = useParams<{ pathId: string }>();
+  const { goToLearn, goToHome } = useAppNavigation();
   const [searchTerm, setSearchTerm] = useState('');
+
+  // Derive category from pathId
+  // Derive category from pathId
+  // Import helper to check if it's a valid path
+  const knownPaths = [
+    's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
+    's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
+    's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
+    's3-math-coordinate-geometry', 's4-math-differential-calculus', 's4-math-integration',
+    's4-math-probability'
+  ];
+
+  const selectedCategory = pathId
+    ? (knownPaths.includes(pathId)
+        ? pathId  // It's already a known path/category
+        : pathId.split('-').slice(0, 3).join('-'))  // Extract category from subtopic
+    : '';
+
+  console.log('[LeftPanel] pathId from URL:', pathId);
+  console.log('[LeftPanel] derived selectedCategory:', selectedCategory);
+
+  const [selectedTopic, setSelectedTopic] = useState<string>('');
+
+  // Handle topic selection - navigate to learn mode with category and topic
+  const handleTopicSelect = (topicId: string) => {
+    setSelectedTopic(topicId);
+    // Navigate to Socratic mode with the selected topic
+    if (selectedCategory) {
+      goToLearn(selectedCategory, undefined, true, topicId);
+    }
+  };
+
+  // Handle back to topics - go back to home page
+  const handleBackToTopics = () => {
+    goToHome();
+  };
 
   // Dynamically get topic configs based on selected category
   const topicConfigs = useMemo(() => {
+    console.log('[LeftPanel] selectedCategory:', selectedCategory);
     // OLD: Fractions not migrated - commented out
-    // if (appState.selectedCategory === 'fractions') {
+    // if (selectedCategory === 'fractions') {
     //   return Object.entries(P6_MATH_FRACTIONS).map(([topicId, config]) => ({
     //     id: topicId as TopicId | TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
     //     name: config.displayName,
@@ -201,7 +240,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     //     description: config.topicName,
     //   }));
     // } else
-    if (appState.selectedCategory === 's3-math-trigonometry') {
+    if (selectedCategory === 's3-math-trigonometry') {
       return Object.entries(S3_MATH_TRIGONOMETRY).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
         name: config.displayName,
@@ -209,7 +248,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's3-math-circle-geometry') {
+    } else if (selectedCategory === 's3-math-circle-geometry') {
       return Object.entries(S3_MATH_CIRCLE_GEOMETRY).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
         name: config.displayName,
@@ -217,7 +256,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's3-math-quadratic-equations') {
+    } else if (selectedCategory === 's3-math-quadratic-equations') {
       return Object.entries(S3_MATH_QUADRATIC_EQUATIONS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId,
         name: config.displayName,
@@ -225,7 +264,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's3-math-exponential-logarithms') {
+    } else if (selectedCategory === 's3-math-exponential-logarithms') {
       return Object.entries(S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId,
         name: config.displayName,
@@ -233,7 +272,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's3-math-sets-venn-diagrams') {
+    } else if (selectedCategory === 's3-math-sets-venn-diagrams') {
       return Object.entries(S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId,
         name: config.displayName,
@@ -241,7 +280,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's3-math-exponents') {
+    } else if (selectedCategory === 's3-math-exponents') {
       return Object.entries(S3_MATH_EXPONENTS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId,
         name: config.displayName,
@@ -249,7 +288,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's3-math-surds-radicals') {
+    } else if (selectedCategory === 's3-math-surds-radicals') {
       return Object.entries(S3_MATH_SURDS_RADICALS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId,
         name: config.displayName,
@@ -257,7 +296,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's3-math-statistics') {
+    } else if (selectedCategory === 's3-math-statistics') {
       return Object.entries(S3_MATH_STATISTICS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId,
         name: config.displayName,
@@ -265,7 +304,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's3-math-relations-functions') {
+    } else if (selectedCategory === 's3-math-relations-functions') {
       return Object.entries(S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId,
         name: config.displayName,
@@ -273,7 +312,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's3-math-coordinate-geometry') {
+    } else if (selectedCategory === 's3-math-coordinate-geometry') {
       return Object.entries(S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId,
         name: config.displayName,
@@ -281,15 +320,19 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's4-math-differential-calculus') {
-      return Object.entries(DIFFERENTIAL_CALCULUS_SUBTOPICS).map(([topicId, config]) => ({
+    } else if (selectedCategory === 's4-math-differential-calculus') {
+      console.log('[LeftPanel] Differential Calculus matched!');
+      console.log('[LeftPanel] DIFFERENTIAL_CALCULUS_SUBTOPICS keys:', Object.keys(DIFFERENTIAL_CALCULUS_SUBTOPICS));
+      const entries = Object.entries(DIFFERENTIAL_CALCULUS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's4-math-integration') {
+      console.log('[LeftPanel] Mapped entries:', entries);
+      return entries;
+    } else if (selectedCategory === 's4-math-integration') {
       return Object.entries(S4_MATH_INTEGRATION_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId,
         name: config.displayName,
@@ -297,7 +340,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
-    } else if (appState.selectedCategory === 's4-math-probability') {
+    } else if (selectedCategory === 's4-math-probability') {
       return Object.entries(S4_MATH_PROBABILITY_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId | ProbabilityTopicId,
         name: config.displayName,
@@ -307,9 +350,9 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
       }));
     }
     return [];
-  }, [appState.selectedCategory]);
+  }, [selectedCategory]);
 
-  const categoryName = getCategoryDisplayName(appState.selectedCategory || '');
+  const categoryName = getCategoryDisplayName(selectedCategory || '');
 
   if (isCollapsed) {
     return (
@@ -375,8 +418,8 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
             onClick={() => handleTopicSelect(topic.id)}
             className="p-2 rounded-lg transition-all duration-200 hover:scale-105"
             style={{
-              backgroundColor: appState.selectedTopic === topic.id ? theme.colors.brand : theme.colors.interactive,
-              color: appState.selectedTopic === topic.id ? '#ffffff' : theme.colors.textSecondary,
+              backgroundColor: selectedTopic === topic.id ? theme.colors.brand : theme.colors.interactive,
+              color: selectedTopic === topic.id ? '#ffffff' : theme.colors.textSecondary,
             }}
             title={topic.name}
           >
@@ -401,20 +444,20 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     // Get total sections from config
     let topicConfig;
     // OLD: Fractions not migrated - commented out
-    // if (appState.selectedCategory === 'fractions') {
+    // if (selectedCategory === 'fractions') {
     //   topicConfig = P6_MATH_FRACTIONS[topicId as TopicId];
     // } else
-    if (appState.selectedCategory === 's3-math-trigonometry') {
+    if (selectedCategory === 's3-math-trigonometry') {
       topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
-    } else if (appState.selectedCategory === 's3-math-circle-geometry') {
+    } else if (selectedCategory === 's3-math-circle-geometry') {
       topicConfig = S3_MATH_CIRCLE_GEOMETRY[topicId as CircleGeometryTopicId];
-    } else if (appState.selectedCategory === 's3-math-quadratic-equations') {
+    } else if (selectedCategory === 's3-math-quadratic-equations') {
       topicConfig = S3_MATH_QUADRATIC_EQUATIONS[topicId as QuadraticEquationsTopicId];
-    } else if (appState.selectedCategory === 's3-math-exponential-logarithms') {
+    } else if (selectedCategory === 's3-math-exponential-logarithms') {
       topicConfig = S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as ExponentialLogarithmsTopicId];
-    } else if (appState.selectedCategory === 's3-math-sets-venn-diagrams') {
+    } else if (selectedCategory === 's3-math-sets-venn-diagrams') {
       topicConfig = S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS[topicId as SetsVennDiagramsTopicId];
-    } else if (appState.selectedCategory === 's3-math-exponents') {
+    } else if (selectedCategory === 's3-math-exponents') {
       topicConfig = S3_MATH_EXPONENTS_SUBTOPICS[topicId as ExponentsTopicId];
     }
 
@@ -474,14 +517,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
               className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold"
               style={{ backgroundColor: theme.colors.brand }}
             >
-              {appState.selectedCategory === 'fractions' ? '➗' :
-               appState.selectedCategory === 's3-math-trigonometry' ? '📐' :
-               appState.selectedCategory === 's3-math-circle-geometry' ? '⭕' :
-               appState.selectedCategory === 's3-math-quadratic-equations' ? '📈' :
-               appState.selectedCategory === 's3-math-exponential-logarithms' ? '📊' :
-               appState.selectedCategory === 's3-math-sets-venn-diagrams' ? '⭕' :
-               appState.selectedCategory === 's3-math-exponents' ? '⚡' :
-               appState.selectedCategory === 's4-math-probability' ? '🎲' : '📈'}
+              {selectedCategory === 'fractions' ? '➗' :
+               selectedCategory === 's3-math-trigonometry' ? '📐' :
+               selectedCategory === 's3-math-circle-geometry' ? '⭕' :
+               selectedCategory === 's3-math-quadratic-equations' ? '📈' :
+               selectedCategory === 's3-math-exponential-logarithms' ? '📊' :
+               selectedCategory === 's3-math-sets-venn-diagrams' ? '⭕' :
+               selectedCategory === 's3-math-exponents' ? '⚡' :
+               selectedCategory === 's4-math-probability' ? '🎲' : '📈'}
             </div>
             <div>
               <h2 className="font-semibold text-sm" style={{ color: theme.colors.textPrimary }}>
@@ -547,7 +590,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
           {/* Section Header */}
           <div className="px-2 py-1.5">
             <h3 className="text-xs font-semibold uppercase tracking-wide" style={{ color: theme.colors.textMuted }}>
-              {appState.selectedCategory === 'fractions' ? 'Primary 6 Mathematics' : 'Secondary 3 Mathematics'}
+              {selectedCategory === 'fractions' ? 'Primary 6 Mathematics' : 'Secondary 3 Mathematics'}
             </h3>
           </div>
 
@@ -562,23 +605,23 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
                 key={topic.id}
                 onClick={() => handleTopicSelect(topic.id)}
                 className={`w-full flex items-start space-x-3 px-3 py-3 text-left transition-all duration-300 group ${
-                  appState.selectedTopic === topic.id ? 'bg-brand text-white' : ''
+                  selectedTopic === topic.id ? 'bg-brand text-white' : ''
                 }`}
                 style={{
-                  background: appState.selectedTopic === topic.id ? theme.gradients.brand : 'transparent',
-                  color: appState.selectedTopic === topic.id ? '#ffffff' : theme.colors.textSecondary,
+                  background: selectedTopic === topic.id ? theme.gradients.brand : 'transparent',
+                  color: selectedTopic === topic.id ? '#ffffff' : theme.colors.textSecondary,
                   borderRadius: theme.radius.lg,
-                  boxShadow: appState.selectedTopic === topic.id ? theme.shadows.glow : 'none',
+                  boxShadow: selectedTopic === topic.id ? theme.shadows.glow : 'none',
                 }}
                 onMouseEnter={(e) => {
-                  if (appState.selectedTopic !== topic.id) {
+                  if (selectedTopic !== topic.id) {
                     e.currentTarget.style.background = theme.colors.interactive;
                     e.currentTarget.style.boxShadow = theme.shadows.md;
                     e.currentTarget.style.transform = 'translateY(-1px)';
                   }
                 }}
                 onMouseLeave={(e) => {
-                  if (appState.selectedTopic !== topic.id) {
+                  if (selectedTopic !== topic.id) {
                     e.currentTarget.style.background = 'transparent';
                     e.currentTarget.style.boxShadow = 'none';
                     e.currentTarget.style.transform = 'translateY(0)';
@@ -590,7 +633,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-lg"
                     style={{
-                      backgroundColor: appState.selectedTopic === topic.id
+                      backgroundColor: selectedTopic === topic.id
                         ? 'rgba(255, 255, 255, 0.2)'
                         : theme.colors.interactive,
                     }}
@@ -613,12 +656,12 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
                   {hasSession && sectionProgress.total > 0 && (
                     <div className="mt-2 space-y-1">
                       {/* Progress Bar */}
-                      <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: appState.selectedTopic === topic.id ? 'rgba(255, 255, 255, 0.2)' : theme.colors.interactive }}>
+                      <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: selectedTopic === topic.id ? 'rgba(255, 255, 255, 0.2)' : theme.colors.interactive }}>
                         <div
                           className="h-full rounded-full transition-all duration-300"
                           style={{
                             width: `${sectionProgress.percentage}%`,
-                            backgroundColor: appState.selectedTopic === topic.id ? '#ffffff' : theme.colors.brand,
+                            backgroundColor: selectedTopic === topic.id ? '#ffffff' : theme.colors.brand,
                           }}
                         />
                       </div>
@@ -636,7 +679,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
                 </div>
 
                 {/* Check mark for selected */}
-                {appState.selectedTopic === topic.id && (
+                {selectedTopic === topic.id && (
                   <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>

@@ -322,8 +322,8 @@ nodes:
       mathTool:
         toolName: vennDiagram
         parameters:
-          setALabel: Prefers Pizza (P)
-          setBLabel: Prefers Burgers (B)
+          setALabel: Pizza (P)
+          setBLabel: Burgers (B)
           universalSetLabel: Students
           layout: overlapping
           aOnlyElements: '40'
@@ -391,8 +391,8 @@ nodes:
       mathTool:
         toolName: vennDiagram
         parameters:
-          setALabel: Number < 6 (A)
-          setBLabel: Even Number (B)
+          setALabel: Event A
+          setBLabel: Event B
           universalSetLabel: S = {1, ..., 10}
           layout: overlapping
           aOnlyElements: '3'
@@ -551,19 +551,7 @@ nodes:
         1. Are F and B mutually exclusive?
 
         2. Calculate the probability that a student plays Football or Basketball, P(F ∪ B).'
-      mathTool:
-        toolName: vennDiagram
-        parameters:
-          setALabel: Football (F)
-          setBLabel: Basketball (B)
-          layout: overlapping
-          aOnlyElements: 0.25
-          bOnlyElements: 0.15
-          intersectionElements:
-          - 0.15
-          showRegionCounts: true
-          shadeRegion: none
-          caption: Student Participation in Sports
+      mathTool: null
       finalAnswer: 1. No, F and B are not mutually exclusive. 2. P(F ∪ B) = 0.55
       stepByStepGuideline:
       - 'Determine mutual exclusivity: Events are mutually exclusive only if P(F ∩ B) = 0. Since P(F ∩ B) = 0.15 (which is
@@ -602,8 +590,8 @@ nodes:
       mathTool:
         toolName: vennDiagram
         parameters:
-          setALabel: English Speakers (E)
-          setBLabel: Spanish Speakers (S)
+          setALabel: English (E)
+          setBLabel: Spanish (S)
           layout: overlapping
           aOnlyElements: 45
           bOnlyElements: 15
@@ -650,7 +638,7 @@ nodes:
       mathTool:
         toolName: vennDiagram
         parameters:
-          setALabel: Even Numbers (E)
+          setALabel: Even (E)
           setBLabel: Greater than 3 (G)
           layout: overlapping
           aOnlyElements: 1
@@ -676,8 +664,8 @@ nodes:
       mathTool:
         toolName: vennDiagram
         parameters:
-          setALabel: Region A Residents (A)
-          setBLabel: Product X Interest (X)
+          setALabel: (A)
+          setBLabel: (X)
           layout: overlapping
           aOnlyElements: 20
           bOnlyElements: 30
@@ -699,8 +687,8 @@ nodes:
       mathTool:
         toolName: vennDiagram
         parameters:
-          setALabel: Music Club (M)
-          setBLabel: Art Club (A)
+          setALabel: Music (M)
+          setBLabel: Art (A)
           layout: overlapping
           aOnlyElements: 70
           bOnlyElements: 50
@@ -920,25 +908,7 @@ nodes:
         Calculate the probability that both cards drawn are Aces. Express your answer as a simplified fraction.'
       avatarIntro: We are looking at dependent events today! Remember that when items are not replaced, the total count and
         the count of specific items change, making the second draw dependent on the first.
-      mathTool:
-        toolName: probabilityTree
-        parameters:
-          stage1:
-          - outcome: Ace (A)
-            probability: 0.0769
-          - outcome: Not Ace (A')
-            probability: 0.9231
-          stage2:
-          - outcome: Ace (A)
-            probability: 0.0588
-          - outcome: Not Ace (A')
-            probability: 0.9412
-          - outcome: Ace (A)
-            probability: 0.0784
-          - outcome: Not Ace (A')
-            probability: 0.9216
-          showProbabilities: true
-          caption: Drawing two cards without replacement
+      mathTool: null
       finalAnswer: 1/221
       stepByStepGuideline:
       - 'Identify the initial probability of drawing an Ace: P(1st Ace) = 4/52.'
@@ -955,24 +925,7 @@ nodes:
 
         Calculate the probability that the first student selected is a boy and the second student selected is a girl.'
       mathTool:
-        toolName: probabilityTree
-        parameters:
-          stage1:
-          - outcome: Boy (B)
-            probability: 0.4167
-          - outcome: Girl (G)
-            probability: 0.5833
-          stage2:
-          - outcome: Boy (B)
-            probability: 0.3636
-          - outcome: Girl (G)
-            probability: 0.6364
-          - outcome: Boy (B)
-            probability: 0.4545
-          - outcome: Girl (G)
-            probability: 0.5455
-          showProbabilities: true
-          caption: Selecting two students without replacement
+        toolName: null
       finalAnswer: 35/132
       stepByStepGuideline:
       - 'Determine the initial probability of selecting a boy: P(1st Boy) = 5/12.'
@@ -987,25 +940,7 @@ nodes:
 
 
         Find the probability that both marbles drawn are Blue.'
-      mathTool:
-        toolName: probabilityTree
-        parameters:
-          stage1:
-          - outcome: Blue (B)
-            probability: 0.375
-          - outcome: Not Blue (B')
-            probability: 0.625
-          stage2:
-          - outcome: Blue (B)
-            probability: 0.2857
-          - outcome: Not Blue (B')
-            probability: 0.7143
-          - outcome: Blue (B)
-            probability: 0.4286
-          - outcome: Not Blue (B')
-            probability: 0.5714
-          showProbabilities: true
-          caption: Drawing two marbles without replacement
+      mathTool: null
       finalAnswer: 3/28
       stepByStepGuideline:
       - 'Determine the initial probability of drawing a Blue marble: P(1st Blue) = 3/8.'
@@ -1044,25 +979,7 @@ nodes:
 
         Given that the first disc drawn was Yellow, calculate the probability that the second disc drawn is Orange. Express
         your answer as a simplified fraction.'
-      mathTool:
-        toolName: probabilityTree
-        parameters:
-          stage1:
-          - outcome: Yellow (Y)
-            probability: 0.6
-          - outcome: Orange (O)
-            probability: 0.4
-          stage2:
-          - outcome: Yellow (Y)
-            probability: 0.5714
-          - outcome: Orange (O)
-            probability: 0.4286
-          - outcome: Yellow (Y)
-            probability: 0.6429
-          - outcome: Orange (O)
-            probability: 0.3571
-          showProbabilities: true
-          caption: Drawing two discs without replacement
+      mathTool: null
       finalAnswer: 3/7
       stepByStepGuideline:
       - 'Identify the condition: The first disc drawn was Yellow (Y1).'
@@ -2021,8 +1938,8 @@ nodes:
       mathTool:
         toolName: vennDiagram
         parameters:
-          setALabel: Prefers Coffee (C)
-          setBLabel: Lives in City X (X)
+          setALabel: (C)
+          setBLabel: (X)
           layout: overlapping
           aOnlyElements: 0.16
           bOnlyElements: 0.36
@@ -2047,7 +1964,7 @@ nodes:
         toolName: vennDiagram
         parameters:
           setALabel: Headache (H)
-          setBLabel: Positive Test (T+)
+          setBLabel: Positive (T+)
           layout: overlapping
           aOnlyElements: 0.49
           bOnlyElements: 0.19

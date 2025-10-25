@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme } from '../../hooks/useTheme';
 import { useActiveProfile } from '../../contexts/ActiveProfileContext';
-import { useAppContext } from '../../App';
+import { useAppNavigation } from '../../hooks/useAppNavigation';
 
 interface ProfileMenuProps {
   onOpenAuth?: () => void;
@@ -12,7 +12,7 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({ onOpenAuth }) => {
   const { user, userProfile, logout, loading } = useAuth();
   const { theme } = useTheme();
   const { switchToSelf } = useActiveProfile();
-  const { handleBackToHome } = useAppContext();
+  const { goToHome } = useAppNavigation();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -176,7 +176,7 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({ onOpenAuth }) => {
                 onClick={() => {
                   setIsOpen(false);
                   switchToSelf(); // Switch to viewing as parent
-                  handleBackToHome(); // Navigate back to home page
+                  goToHome(); // Navigate back to home page
                 }}
                 className="w-full px-4 py-2 text-left text-sm transition-colors flex items-center gap-2"
                 style={{ color: theme.colors.textSecondary }}

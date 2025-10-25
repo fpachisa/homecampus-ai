@@ -89,7 +89,7 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     // S4 Differential Calculus topics (direct topic IDs, no prefix)
-    const differentialCalculusTopics = ['limits', 'gradient-tangent', 'derivative-function', 'first-principles', 'differentiation-rules', 'tangent-equations', 'stationary-points'];
+    const differentialCalculusTopics = ['s4-math-differential-calculus-limits', 's4-math-differential-calculus-gradient-tangent', 's4-math-differential-calculus-derivative-function', 's4-math-differential-calculus-first-principles', 's4-math-differential-calculus-differentiation-rules', 's4-math-differential-calculus-tangent-equations', 's4-math-differential-calculus-stationary-points'];
     if (differentialCalculusTopics.includes(topicId)) {
       const subtopic = DIFFERENTIAL_CALCULUS_SUBTOPICS[topicId as DifferentialCalculusTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];

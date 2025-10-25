@@ -15,27 +15,64 @@ const DefiniteIntegralVisualizer: React.FC<DefiniteIntegralVisualizerProps> = ({
   shadeArea = true,
   showValue = true
 }) => {
+  // Detect the variable name from the expression (x, t, θ, etc.)
+  const detectVariable = (expr: string): string => {
+    // Remove math function names to avoid false matches
+    const cleaned = expr
+      .replace(/sin|cos|tan|sqrt|ln|log|exp|abs/gi, '')
+      .replace(/\d+/g, ''); // Remove numbers
+
+    // Find the first alphabetic character (or Greek letter)
+    const match = cleaned.match(/[a-z]/i);
+    return match ? match[0] : 'x';
+  };
+
+  const variableName = useMemo(() => detectVariable(functionExpression), [functionExpression]);
+
   // Safe function evaluator
-  const evaluateFunction = (x: number): number => {
+  const evaluateFunction = (value: number): number => {
     try {
       // Simple expression parser for common functions
-      const expr = functionExpression
+      let expr = functionExpression
+        .replace(/\s+/g, '') // Remove all spaces first
         .replace(/\^/g, '**')
-        .replace(/sin/g, 'Math.sin')
-        .replace(/cos/g, 'Math.cos')
-        .replace(/tan/g, 'Math.tan')
-        .replace(/sqrt/g, 'Math.sqrt')
-        .replace(/ln/g, 'Math.log')
-        .replace(/log/g, 'Math.log10')
-        // Handle unary minus before exponentiation (e.g., -x^2 -> -(x**2))
+        // STEP 1: Replace math functions with PLACEHOLDERS (uppercase tokens that won't match [a-z])
+        .replace(/sin/gi, '__SINE__')
+        .replace(/cos/gi, '__COSINE__')
+        .replace(/tan/gi, '__TANGENT__')
+        .replace(/sqrt/gi, '__SQRT__')
+        .replace(/ln/gi, '__LN__')
+        .replace(/log/gi, '__LOG__')
+        .replace(/exp/gi, '__EXP__')
+        .replace(/abs/gi, '__ABS__')
+        // STEP 2: Now apply implicit multiplication (safe because functions are placeholders)
+        // Handle implicit multiplication: number followed by letter (3x -> 3*x)
+        .replace(/(\d)([a-z])/gi, '$1*$2')
+        // Handle implicit multiplication: letter followed by opening paren (x( -> x*(, but __SINE__( stays)
+        .replace(/([a-z])(\()/gi, '$1*$2')
+        // Handle implicit multiplication: closing paren followed by opening paren )( -> )*(
+        .replace(/(\))(\()/g, '$1*$2')
+        // Handle implicit multiplication: closing paren followed by number/letter ()2 -> ()*2, ()x -> ()*x)
+        .replace(/(\))(\d|[a-z])/gi, '$1*$2')
+        // STEP 3: Convert placeholders to Math.xxx functions
+        .replace(/__SINE__/g, 'Math.sin')
+        .replace(/__COSINE__/g, 'Math.cos')
+        .replace(/__TANGENT__/g, 'Math.tan')
+        .replace(/__SQRT__/g, 'Math.sqrt')
+        .replace(/__LN__/g, 'Math.log')
+        .replace(/__LOG__/g, 'Math.log10')
+        .replace(/__EXP__/g, 'Math.exp')
+        .replace(/__ABS__/g, 'Math.abs')
+        // Handle unary minus before exponentiation (e.g., -x**2 -> -(x**2))
         .replace(/-([a-z]+)\*\*(\w+)/gi, '-($1**$2)');
 
+      // Create function with detected variable name
       // eslint-disable-next-line no-new-func
-      const fn = new Function('x', `return ${expr}`);
-      const result = fn(x);
+      const fn = new Function(variableName, `return ${expr}`);
+      const result = fn(value);
       return isNaN(result) || !isFinite(result) ? 0 : result;
     } catch (error) {
-      console.error('Function evaluation error:', error);
+      console.error('Function evaluation error:', error, 'Original:', functionExpression);
       return 0;
     }
   };
@@ -92,7 +129,7 @@ const DefiniteIntegralVisualizer: React.FC<DefiniteIntegralVisualizerProps> = ({
       minY: Math.min(min, 0) * 1.1,
       area: calculatedArea
     };
-  }, [functionExpression, lowerBound, upperBound, shadeArea]);
+  }, [functionExpression, lowerBound, upperBound, shadeArea, variableName]);
 
   // SVG dimensions and scaling
   const width = 600;
@@ -110,19 +147,6 @@ const DefiniteIntegralVisualizer: React.FC<DefiniteIntegralVisualizerProps> = ({
   // Generate path for function curve
   const pathData = points
     .map((p, i) => `${i === 0 ? 'M' : 'L'} ${scaleX(p.x)} ${scaleY(p.y)}`)
-    .join(' ');
-
-  // Transform shaded path for SVG coordinates
-  const transformedShadedPath = shadedPath
-    .split(' ')
-    .map((token) => {
-      if (token === 'M' || token === 'L' || token === 'Z') return token;
-      const coords = token.split(',').length === 2 ? token.split(',') : [token];
-      if (coords.length === 2) {
-        return `${scaleX(parseFloat(coords[0]))},${scaleY(parseFloat(coords[1]))}`;
-      }
-      return token;
-    })
     .join(' ');
 
   // Parse and transform the shaded path properly
@@ -150,7 +174,7 @@ const DefiniteIntegralVisualizer: React.FC<DefiniteIntegralVisualizerProps> = ({
           Definite Integral Visualization
         </h3>
         <p className="text-sm text-gray-700 dark:text-gray-300">
-          ∫<sub>{lowerBound}</sub><sup>{upperBound}</sup> ({functionExpression}) dx
+          ∫<sub>{lowerBound}</sub><sup>{upperBound}</sup> ({functionExpression}) d{variableName}
         </p>
       </div>
 
@@ -275,7 +299,7 @@ const DefiniteIntegralVisualizer: React.FC<DefiniteIntegralVisualizerProps> = ({
           textAnchor="middle"
           className="text-sm font-bold fill-green-600 dark:fill-green-400"
         >
-          a = {lowerBound}
+          {/* a = {lowerBound} */}
         </text>
         <text
           x={scaleX(upperBound)}
@@ -283,7 +307,7 @@ const DefiniteIntegralVisualizer: React.FC<DefiniteIntegralVisualizerProps> = ({
           textAnchor="middle"
           className="text-sm font-bold fill-green-600 dark:fill-green-400"
         >
-          b = {upperBound}
+          {/* b = {lowerBound} */}
         </text>
 
         {/* Function label */}
@@ -293,7 +317,7 @@ const DefiniteIntegralVisualizer: React.FC<DefiniteIntegralVisualizerProps> = ({
           textAnchor="end"
           className="text-sm font-semibold fill-red-600 dark:fill-red-400"
         >
-          f(x) = {functionExpression}
+          f({variableName}) = {functionExpression}
         </text>
       </svg>
 
@@ -303,11 +327,11 @@ const DefiniteIntegralVisualizer: React.FC<DefiniteIntegralVisualizerProps> = ({
             Definite Integral Value:
           </p>
           <p className="text-2xl font-mono text-indigo-700 dark:text-indigo-300">
-            ∫<sub>{lowerBound}</sub><sup>{upperBound}</sup> ({functionExpression}) dx ≈ {area.toFixed(4)}
+            ∫<sub>{lowerBound}</sub><sup>{upperBound}</sup> ({functionExpression}) d{variableName} ≈ {area.toFixed(4)}
           </p>
           {area < 0 && (
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
-              Note: Negative value indicates area below the x-axis
+              Note: Negative value indicates area below the {variableName}-axis
             </p>
           )}
         </div>

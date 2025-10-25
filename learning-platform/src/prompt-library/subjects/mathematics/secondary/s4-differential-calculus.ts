@@ -7,13 +7,13 @@
 
 // Type exports
 export type DifferentialCalculusTopicId =
-  | 'limits'
-  | 'gradient-tangent'
-  | 'derivative-function'
-  | 'first-principles'
-  | 'differentiation-rules'
-  | 'tangent-equations'
-  | 'stationary-points';
+  | 's4-math-differential-calculus-limits'
+  | 's4-math-differential-calculus-gradient-tangent'
+  | 's4-math-differential-calculus-derivative-function'
+  | 's4-math-differential-calculus-first-principles'
+  | 's4-math-differential-calculus-differentiation-rules'
+  | 's4-math-differential-calculus-tangent-equations'
+  | 's4-math-differential-calculus-stationary-points';
 
 // Topic-specific tutor customization (overrides base)
 export const DIFFERENTIAL_CALCULUS_TUTOR_CUSTOMIZATION = {
@@ -86,7 +86,7 @@ export const DIFFERENTIAL_CALCULUS_SUBTOPICS = {
   // ==========================================================================
   // A. LIMITS
   // ==========================================================================
-  'limits': {
+  's4-math-differential-calculus-limits': {
     displayName: 'Limits',
     topicName: 'limits',
 
@@ -335,7 +335,7 @@ export const DIFFERENTIAL_CALCULUS_SUBTOPICS = {
   // ==========================================================================
   // B. GRADIENT OF TANGENT
   // ==========================================================================
-  'gradient-tangent': {
+  's4-math-differential-calculus-gradient-tangent': {
     displayName: 'Gradient of a Tangent',
     topicName: 'finding the gradient of a tangent',
 
@@ -518,7 +518,7 @@ export const DIFFERENTIAL_CALCULUS_SUBTOPICS = {
   // ==========================================================================
   // C. DERIVATIVE FUNCTION
   // ==========================================================================
-  'derivative-function': {
+  's4-math-differential-calculus-derivative-function': {
     displayName: 'The Derivative Function',
     topicName: 'the derivative function',
 
@@ -707,7 +707,7 @@ export const DIFFERENTIAL_CALCULUS_SUBTOPICS = {
   // ==========================================================================
   // D. FIRST PRINCIPLES
   // ==========================================================================
-  'first-principles': {
+  's4-math-differential-calculus-first-principles': {
     displayName: 'Differentiation from First Principles',
     topicName: 'differentiation from first principles',
 
@@ -894,7 +894,7 @@ export const DIFFERENTIAL_CALCULUS_SUBTOPICS = {
   // ==========================================================================
   // E. DIFFERENTIATION RULES
   // ==========================================================================
-  'differentiation-rules': {
+  's4-math-differential-calculus-differentiation-rules': {
     displayName: 'Rules for Differentiation',
     topicName: 'differentiation rules',
 
@@ -1196,7 +1196,7 @@ export const DIFFERENTIAL_CALCULUS_SUBTOPICS = {
   // ==========================================================================
   // F. TANGENT EQUATIONS
   // ==========================================================================
-  'tangent-equations': {
+  's4-math-differential-calculus-tangent-equations': {
     displayName: 'Finding the Equation of a Tangent',
     topicName: 'equations of tangents and normals',
 
@@ -1387,7 +1387,7 @@ export const DIFFERENTIAL_CALCULUS_SUBTOPICS = {
   // ==========================================================================
   // G. STATIONARY POINTS
   // ==========================================================================
-  'stationary-points': {
+  's4-math-differential-calculus-stationary-points': {
     displayName: 'Stationary Points',
     topicName: 'stationary points and optimization',
 

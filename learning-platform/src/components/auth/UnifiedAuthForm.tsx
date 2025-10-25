@@ -191,3 +191,5 @@ export const UnifiedAuthForm: React.FC<UnifiedAuthFormProps> = ({
     </div>
   );
 };
+
+export default UnifiedAuthForm;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
+import { useAppNavigation } from '../hooks/useAppNavigation';
 import { ProfileMenu, AuthModal } from './auth';
 import { ProfileSwitcher } from './ProfileSwitcher';
 import { ParentDashboard } from './parent/ParentDashboard';
@@ -8,11 +9,8 @@ import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { GradeSelector } from './GradeSelector';
 import { topicsByGrade, getTopicsByGrade, GRADE_LEVELS, type Topic, type GradeLevel } from '../config/topicsByGrade';
 
-interface HomePageProps {
-  onTopicSelect: (category: string) => void;
-}
-
-const HomePage: React.FC<HomePageProps> = ({ onTopicSelect }) => {
+const HomePage: React.FC = () => {
+  const { goToLearn, goToPractice } = useAppNavigation();
   const { theme } = useTheme();
   const { toggleTheme, isDark } = useThemeContext();
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -193,17 +191,14 @@ const HomePage: React.FC<HomePageProps> = ({ onTopicSelect }) => {
                   const isActive = topic.isActive;
 
                     return (
-                      <button
+                      <div
                         key={topic.id}
-                        onClick={() => isActive && onTopicSelect(topic.category!)}
-                        disabled={!isActive}
                         className="group relative p-6 rounded-2xl transition-all duration-300 text-left"
                         style={{
                           background: isActive ? theme.glass.background : theme.colors.interactive,
                           border: `1px solid ${theme.glass.border}`,
                           backdropFilter: isActive ? theme.glass.backdrop : 'none',
                           opacity: isActive ? 1 : 0.5,
-                          cursor: isActive ? 'pointer' : 'not-allowed',
                           boxShadow: theme.shadows.md,
                         }}
                         onMouseEnter={(e) => {
@@ -246,16 +241,53 @@ const HomePage: React.FC<HomePageProps> = ({ onTopicSelect }) => {
                           {topic.description}
                         </p>
 
-                        {/* Subtopic count or Coming Soon */}
+                        {/* Action Buttons or Coming Soon */}
                         {isActive ? (
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm" style={{ color: theme.colors.textMuted }}>
-                              {topic.subtopicCount} subtopics
-                            </span>
+                          <div className="flex gap-3 mt-4">
+                            <button
+                              onClick={() => goToLearn(topic.category!, undefined, true)}
+                              className="flex-1 py-2.5 px-4 rounded-lg font-medium transition-all duration-200"
+                              style={{
+                                background: theme.gradients.brand,
+                                color: '#ffffff',
+                                boxShadow: theme.shadows.sm,
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.02)';
+                                e.currentTarget.style.boxShadow = theme.shadows.md;
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.boxShadow = theme.shadows.sm;
+                              }}
+                            >
+                              Learn
+                            </button>
+                            <button
+                              onClick={() => goToPractice(topic.category!)}
+                              className="flex-1 py-2.5 px-4 rounded-lg font-medium transition-all duration-200"
+                              style={{
+                                backgroundColor: 'transparent',
+                                color: theme.colors.brand,
+                                border: `2px solid ${theme.colors.brand}`,
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.backgroundColor = theme.colors.brand;
+                                e.currentTarget.style.color = '#ffffff';
+                                e.currentTarget.style.transform = 'scale(1.02)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                                e.currentTarget.style.color = theme.colors.brand;
+                                e.currentTarget.style.transform = 'scale(1)';
+                              }}
+                            >
+                              Practice
+                            </button>
                           </div>
                         ) : (
                           <div
-                            className="text-sm font-medium"
+                            className="text-sm font-medium mt-4"
                             style={{ color: theme.colors.textMuted }}
                           >
                             Coming Soon
@@ -269,7 +301,14 @@ const HomePage: React.FC<HomePageProps> = ({ onTopicSelect }) => {
                             style={{ backgroundColor: theme.colors.success }}
                           />
                         )}
-                      </button>
+
+                        {/* Subtopic count */}
+                        {isActive && (
+                          <div className="mt-3 text-xs" style={{ color: theme.colors.textMuted }}>
+                            {topic.subtopicCount} subtopics
+                          </div>
+                        )}
+                      </div>
                     );
                   })}
               </div>

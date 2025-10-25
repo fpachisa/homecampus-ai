@@ -1144,3 +1144,5 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     </div>
   );
 };
+
+export default PracticeSessionView;

@@ -93,7 +93,7 @@ const getTopicConfig = (topicId: string) => {
     return S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS[topicId as CoordinateGeometryTopicId];
   }
   // Check if it's an S4 differential calculus topic (direct topic IDs)
-  const differentialCalculusTopics = ['limits', 'gradient-tangent', 'derivative-function', 'first-principles', 'differentiation-rules', 'tangent-equations', 'stationary-points'];
+  const differentialCalculusTopics = ['s4-math-differential-calculus-limits', 's4-math-differential-calculus-gradient-tangent', 's4-math-differential-calculus-derivative-function', 's4-math-differential-calculus-first-principles', 's4-math-differential-calculus-differentiation-rules', 's4-math-differential-calculus-tangent-equations', 's4-math-differential-calculus-stationary-points'];
   if (differentialCalculusTopics.includes(topicId)) {
     return DIFFERENTIAL_CALCULUS_SUBTOPICS[topicId as DifferentialCalculusTopicId];
   }

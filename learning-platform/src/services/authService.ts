@@ -9,6 +9,7 @@ import {
 } from 'firebase/auth';
 import { doc, setDoc, getDoc, updateDoc, collection, addDoc, deleteDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
 import { auth, googleProvider, firestore } from './firebase';
+import { emailService } from './emailService';
 import type { UserProfile } from '../types/user';
 
 /**
@@ -495,10 +496,23 @@ class AuthService {
         accepted: false,
       });
 
-      // TODO: Send actual email via email service
+      // Send email via Firebase Trigger Email extension
       const inviteUrl = `${window.location.origin}?childInvite=${token}`;
-      console.log('Child invite URL:', inviteUrl);
-      console.log('Send this URL to:', childEmail);
+
+      try {
+        await emailService.sendInviteEmail(
+          childEmail,
+          inviteUrl,
+          childInfo,
+          parentProfile.displayName
+        );
+        console.log('[AuthService] Invite email sent successfully to:', childEmail);
+      } catch (emailError) {
+        console.error('[AuthService] Failed to send invite email:', emailError);
+        // Don't fail the invite creation if email fails
+        // The invite URL is still generated and can be shared manually
+        console.log('[AuthService] Invite URL (share manually):', inviteUrl);
+      }
 
       return token;
     } catch (error) {

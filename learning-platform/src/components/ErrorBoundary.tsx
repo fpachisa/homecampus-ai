@@ -282,3 +282,5 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, onReset, onReload 
 export const ErrorBoundary: React.FC<ErrorBoundaryProps> = (props) => {
   return <ErrorBoundaryClass {...props} />;
 };
+
+export default ErrorBoundary;

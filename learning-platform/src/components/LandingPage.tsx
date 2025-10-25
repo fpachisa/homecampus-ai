@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
+import { useAppNavigation } from '../hooks/useAppNavigation';
 import { OnboardingWizard } from './onboarding/OnboardingWizard';
 
-interface LandingPageProps {
-  onComplete: () => void;
-}
-
-export const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
+export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
   const { toggleTheme, isDark } = useThemeContext();
+  const { goToHome } = useAppNavigation();
   const [showOnboarding, setShowOnboarding] = useState(false);
 
   if (showOnboarding) {
@@ -17,7 +15,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       <OnboardingWizard
         onComplete={() => {
           setShowOnboarding(false);
-          onComplete();
+          goToHome(); // Navigate to home after onboarding
         }}
         onCancel={() => setShowOnboarding(false)}
       />

@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "filename": "S4/Maths/s4-math-probability.yaml",
+      "displayName": "S4 - Probability",
+      "category": "s4-math-probability"
+    },
+    {
       "filename": "S4/Maths/s4-math-integration.yaml",
       "displayName": "S4 - Integration",
       "category": "s4-math-integration"
