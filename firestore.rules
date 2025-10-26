@@ -25,13 +25,15 @@ service cloud.firestore {
       // Parent-child relationships
       match /parents/{parentId} {
         allow read: if isOwner(userId) || isOwner(parentId);
-        allow write: if isOwner(userId);
+        // Allow student to manage OR allow parent to create their own entry
+        allow write: if isOwner(userId) || isOwner(parentId);
       }
 
       // Children under parent account
       match /children/{childId} {
         allow read: if isOwner(userId) || isOwner(childId);
-        allow write: if isOwner(userId);
+        // Allow parent to manage OR allow child to create their own entry
+        allow write: if isOwner(userId) || isOwner(childId);
       }
     }
 
@@ -61,8 +63,11 @@ service cloud.firestore {
       allow create: if isAuthenticated();
       // Anyone can read invites (needed to accept invite)
       allow read: if true;
-      // Only creator can update/delete their invites
-      allow update, delete: if isAuthenticated() && resource.data.fromUid == request.auth.uid;
+      // Creator can update/delete, OR recipient can update to accept
+      allow update: if isAuthenticated() &&
+        (resource.data.fromUid == request.auth.uid ||
+         request.resource.data.acceptedByUid == request.auth.uid);
+      allow delete: if isAuthenticated() && resource.data.fromUid == request.auth.uid;
     }
 
     // Email queue for Firebase Email Extension
