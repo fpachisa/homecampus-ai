@@ -251,7 +251,8 @@ class AuthService {
   async updateUserProfile(uid: string, updates: Partial<UserProfile>): Promise<void> {
     try {
       const docRef = doc(firestore, 'users', uid);
-      await updateDoc(docRef, { ...updates });
+      // Use setDoc with merge to create document if it doesn't exist
+      await setDoc(docRef, { ...updates }, { merge: true });
     } catch (error) {
       console.error('Error updating user profile:', error);
       throw error;
