@@ -4,6 +4,7 @@ import { useThemeContext } from '../contexts/ThemeContext';
 import { useAppNavigation } from '../hooks/useAppNavigation';
 import { OnboardingWizard } from './onboarding/OnboardingWizard';
 import { authService } from '../services/authService';
+import logoImage from '/logo.png?url';
 
 export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
@@ -90,7 +91,7 @@ export const LandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 flex items-center justify-center">
-              <img src="/logo.png" alt="Home Campus Logo" className="w-12 h-12 object-contain" />
+              <img src={logoImage} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
             </div>
             <div>
               <h1 className="text-2xl font-bold" style={{ color: theme.colors.textPrimary }}>

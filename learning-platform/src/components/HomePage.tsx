@@ -8,6 +8,7 @@ import { ParentDashboard } from './parent/ParentDashboard';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { GradeSelector } from './GradeSelector';
 import { getTopicsByGrade, GRADE_LEVELS, type GradeLevel } from '../config/topicsByGrade';
+import logoImage from '/logo.png?url';
 
 const HomePage: React.FC = () => {
   const { goToLearn, goToPractice } = useAppNavigation();
@@ -56,7 +57,7 @@ const HomePage: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 flex items-center justify-center animate-float">
-                <img src="/logo.png" alt="Home Campus Logo" className="w-12 h-12 object-contain" />
+                <img src={logoImage} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
               </div>
               <div>
                 <h1 className="text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
@@ -393,7 +394,7 @@ const HomePage: React.FC = () => {
                         >
                           <div className="flex items-center gap-3 mb-3">
                             <div className="w-12 h-12 flex items-center justify-center">
-                              <img src="/logo.png" alt="Home Campus Logo" className="w-12 h-12 object-contain" />
+                              <img src={logoImage} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
                             </div>
                             <h4 className="text-lg font-semibold" style={{ color: theme.colors.textPrimary }}>
                               {grade}
