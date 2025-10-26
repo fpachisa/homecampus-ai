@@ -101,8 +101,11 @@ googleCloudKey.json
 *.key
 *.pem
 # Google Cloud service account credentials
-*-*.json
+# Note: Be specific to avoid catching package-lock.json
+*-[0-9a-f]*.json
 aicampus-*.json
+# But allow package-lock.json
+!package-lock.json
 
 # Test files
 coverage/
