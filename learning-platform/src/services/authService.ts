@@ -532,20 +532,42 @@ class AuthService {
   }
 
   /**
+   * Get invite information by token
+   */
+  async getInviteByToken(token: string): Promise<any | null> {
+    try {
+      const invitesRef = collection(firestore, 'invites');
+      const inviteQuery = query(invitesRef, where('token', '==', token));
+      const inviteSnapshot = await getDocs(inviteQuery);
+
+      if (inviteSnapshot.empty) {
+        return null;
+      }
+
+      return inviteSnapshot.docs[0].data();
+    } catch (error) {
+      console.error('Error getting invite:', error);
+      return null;
+    }
+  }
+
+  /**
    * Accept parent invite
    * Links parent account to student account
    */
   async acceptParentInvite(token: string, parentUid: string): Promise<void> {
     try {
-      // Find invite by token
+      // Find invite by token field
       const invitesRef = collection(firestore, 'invites');
-      const inviteQuery = await getDoc(doc(invitesRef, token));
+      const inviteQuery = query(invitesRef, where('token', '==', token));
+      const inviteSnapshot = await getDocs(inviteQuery);
 
-      if (!inviteQuery.exists()) {
+      if (inviteSnapshot.empty) {
         throw new Error('Invite not found or expired');
       }
 
-      const inviteData = inviteQuery.data();
+      const inviteDoc = inviteSnapshot.docs[0];
+      const inviteData = inviteDoc.data();
 
       if (inviteData.type !== 'student-to-parent') {
         throw new Error('Invalid invite type');
@@ -585,7 +607,7 @@ class AuthService {
       });
 
       // Mark invite as accepted
-      await updateDoc(doc(invitesRef, token), {
+      await updateDoc(inviteDoc.ref, {
         accepted: true,
         acceptedAt: serverTimestamp(),
         acceptedByUid: parentUid,

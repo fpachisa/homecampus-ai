@@ -35,14 +35,24 @@ interface OnboardingData {
 interface OnboardingWizardProps {
   onComplete: () => void;
   onCancel: () => void;
+  inviteToken?: string | null;
+  inviteInfo?: any;
 }
 
-export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete, onCancel }) => {
+export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
+  onComplete,
+  onCancel,
+  inviteToken,
+  inviteInfo
+}) => {
   const { theme } = useTheme();
   const { user, sendVerificationEmail, signInWithGoogle, reloadProfile } = useAuth();
-  const [step, setStep] = useState<OnboardingStep>('account-type');
+  // If invite exists, skip account selection and go straight to auth
+  const initialStep: OnboardingStep = inviteToken ? 'auth' : 'account-type';
+  const [step, setStep] = useState<OnboardingStep>(initialStep);
   const [data, setData] = useState<OnboardingData>({
-    accountType: null,
+    // Auto-set account type to 'parent' if invite exists
+    accountType: inviteToken ? 'parent' : null,
     email: null,
     displayName: null,
     gradeLevel: null,
@@ -173,13 +183,28 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({ onComplete, 
           displayName,
           accountType: 'parent',
           isParent: true,
+          profileCompleted: true,
         });
+
+        // If accepting an invite, link parent to student
+        if (inviteToken) {
+          await authService.acceptParentInvite(inviteToken, user.uid);
+          console.log('✅ Parent linked to student via invite!');
+          // Skip add-children and go straight to complete
+          setStep('complete');
+        } else {
+          // Normal flow - ask parent to add children
+          setStep('add-children');
+        }
       }
-      setStep('add-children');
     } catch (error) {
       console.error('Error saving parent profile:', error);
       // Continue to next step anyway - don't block onboarding
-      setStep('add-children');
+      if (inviteToken) {
+        setStep('complete');
+      } else {
+        setStep('add-children');
+      }
     } finally {
       setIsProcessing(false);
     }

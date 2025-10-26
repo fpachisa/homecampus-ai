@@ -1,23 +1,62 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { useAppNavigation } from '../hooks/useAppNavigation';
 import { OnboardingWizard } from './onboarding/OnboardingWizard';
+import { authService } from '../services/authService';
 
 export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
   const { toggleTheme, isDark } = useThemeContext();
   const { goToHome } = useAppNavigation();
   const [showOnboarding, setShowOnboarding] = useState(false);
+  const [inviteToken, setInviteToken] = useState<string | null>(null);
+  const [inviteInfo, setInviteInfo] = useState<any>(null);
+
+  // Check for invite token in URL on mount
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('parentInvite');
+
+    if (token) {
+      setInviteToken(token);
+      // Store in localStorage in case user refreshes
+      localStorage.setItem('pendingInviteToken', token);
+
+      // Fetch invite info to show student name
+      authService.getInviteByToken(token).then(invite => {
+        if (invite) {
+          setInviteInfo(invite);
+          // Auto-open onboarding for invite acceptance
+          setShowOnboarding(true);
+        }
+      });
+    } else {
+      // Check localStorage for pending invite
+      const storedToken = localStorage.getItem('pendingInviteToken');
+      if (storedToken) {
+        setInviteToken(storedToken);
+        authService.getInviteByToken(storedToken).then(invite => {
+          if (invite) {
+            setInviteInfo(invite);
+          }
+        });
+      }
+    }
+  }, []);
 
   if (showOnboarding) {
     return (
       <OnboardingWizard
         onComplete={() => {
           setShowOnboarding(false);
+          // Clear invite token from localStorage
+          localStorage.removeItem('pendingInviteToken');
           goToHome(); // Navigate to home after onboarding
         }}
         onCancel={() => setShowOnboarding(false)}
+        inviteToken={inviteToken}
+        inviteInfo={inviteInfo}
       />
     );
   }
