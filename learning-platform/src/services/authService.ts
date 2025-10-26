@@ -410,11 +410,20 @@ class AuthService {
         parentEmail: parentEmail,
       });
 
-      // TODO: Send actual email via email service (Firebase Functions, SendGrid, etc.)
-      // For now, log the invite URL
+      // Send invite email
       const inviteUrl = `${window.location.origin}?parentInvite=${token}`;
-      console.log('Parent invite URL:', inviteUrl);
-      console.log('Send this URL to:', parentEmail);
+
+      await emailService.sendInviteEmail(
+        parentEmail,
+        inviteUrl,
+        {
+          displayName: studentProfile.displayName,
+          gradeLevel: studentProfile.gradeLevel,
+        },
+        'Student' // Parent name placeholder since we don't have it yet
+      );
+
+      console.log('Parent invite email sent successfully to:', parentEmail);
 
       return token;
     } catch (error) {
