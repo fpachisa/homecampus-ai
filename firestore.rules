@@ -55,6 +55,16 @@ service cloud.firestore {
       allow update, delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
     }
 
+    // Parent/Student invite links
+    match /invites/{inviteId} {
+      // Authenticated users can create invites
+      allow create: if isAuthenticated();
+      // Anyone can read invites (needed to accept invite)
+      allow read: if true;
+      // Only creator can update/delete their invites
+      allow update, delete: if isAuthenticated() && resource.data.fromUid == request.auth.uid;
+    }
+
     // Email queue for Firebase Email Extension
     match /mail/{mailId} {
       // Authenticated users can create email documents
