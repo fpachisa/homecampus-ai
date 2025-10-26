@@ -611,26 +611,28 @@ class AuthService {
       });
       console.log('[AuthService] Created parent/children subcollection document');
 
-      // Also update profile fields for backward compatibility
-      await this.updateUserProfile(studentUid, {
-        parentUid: parentUid,
-        parentLinked: true,
-        parentInvitePending: false,
-      });
+      // Update parent's own profile with linkedChildren (parent has permission)
+      try {
+        const parentProfile = await this.getUserProfile(parentUid);
+        const linkedChildren = parentProfile?.linkedChildren || [];
 
-      const parentProfile = await this.getUserProfile(parentUid);
-      const linkedChildren = parentProfile?.linkedChildren || [];
+        linkedChildren.push({
+          uid: studentUid,
+          email: inviteData.toEmail,
+          displayName: inviteData.studentInfo.displayName,
+          grade: inviteData.studentInfo.gradeLevel,
+        });
 
-      linkedChildren.push({
-        uid: studentUid,
-        email: inviteData.toEmail,
-        displayName: inviteData.studentInfo.displayName,
-        grade: inviteData.studentInfo.gradeLevel,
-      });
+        await this.updateUserProfile(parentUid, {
+          linkedChildren,
+        });
+        console.log('[AuthService] Updated parent profile with linkedChildren');
+      } catch (error) {
+        console.warn('[AuthService] Could not update parent profile fields (non-critical):', error);
+      }
 
-      await this.updateUserProfile(parentUid, {
-        linkedChildren,
-      });
+      // Note: Student profile fields (parentUid, parentLinked) cannot be updated by parent
+      // due to Firestore security rules. The subcollections are sufficient for linking.
 
       // Mark invite as accepted
       await updateDoc(inviteDoc.ref, {
