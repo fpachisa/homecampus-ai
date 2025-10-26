@@ -11,7 +11,7 @@ import { generateInviteEmail } from '../templates/emails/inviteEmail';
 
 // Email configuration from environment variables
 const EMAIL_COLLECTION = import.meta.env.VITE_EMAIL_COLLECTION || 'mail';
-const FROM_EMAIL = import.meta.env.VITE_FROM_EMAIL || 'noreply@homecampus.com';
+const FROM_EMAIL = import.meta.env.VITE_FROM_EMAIL || 'noreply@homecampus.ai';
 const FROM_NAME = import.meta.env.VITE_FROM_NAME || 'Home Campus';
 
 export interface EmailMessage {
