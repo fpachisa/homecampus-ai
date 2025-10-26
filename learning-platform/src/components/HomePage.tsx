@@ -8,7 +8,8 @@ import { ParentDashboard } from './parent/ParentDashboard';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { GradeSelector } from './GradeSelector';
 import { getTopicsByGrade, GRADE_LEVELS, type GradeLevel } from '../config/topicsByGrade';
-import logoImage from '/logo.png?url';
+import logoLight from '/logo.png?url';
+import logoDark from '/logo-dark.png?url';
 
 const HomePage: React.FC = () => {
   const { goToLearn, goToPractice } = useAppNavigation();
@@ -23,6 +24,9 @@ const HomePage: React.FC = () => {
 
   // State for Learn/Practice mode
   const [selectedMode, setSelectedMode] = useState<'learn' | 'practice'>('learn');
+
+  // Theme-aware logo
+  const logoSrc = isDark ? logoDark : logoLight;
 
   // Only calculate grade/topic info for students (not when viewing as parent)
   const currentGrade = !isViewingAsParent ? ((activeProfile?.gradeLevel as GradeLevel) || 'Secondary 3') : 'Secondary 3';
@@ -57,7 +61,7 @@ const HomePage: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 flex items-center justify-center animate-float">
-                <img src={logoImage} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
+                <img src={logoSrc} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
               </div>
               <div>
                 <h1 className="text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
@@ -394,7 +398,7 @@ const HomePage: React.FC = () => {
                         >
                           <div className="flex items-center gap-3 mb-3">
                             <div className="w-12 h-12 flex items-center justify-center">
-                              <img src={logoImage} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
+                              <img src={logoSrc} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
                             </div>
                             <h4 className="text-lg font-semibold" style={{ color: theme.colors.textPrimary }}>
                               {grade}
