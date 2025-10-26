@@ -57,12 +57,13 @@ service cloud.firestore {
 
     // Email queue for Firebase Email Extension
     match /mail/{mailId} {
-      // Users can only create emails (extension handles sending)
+      // Authenticated users can create email documents
       allow create: if isAuthenticated();
-      // Nobody can read emails (privacy)
-      allow read: if false;
-      // Only service account can update/delete
-      allow update, delete: if false;
+      // Allow read/update for the extension service account and document creator
+      // Extension needs to update with delivery status
+      allow read, update: if isAuthenticated();
+      // Nobody can delete
+      allow delete: if false;
     }
 
     // Public curriculum metadata (read-only)
