@@ -333,6 +333,8 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
               <p className="mb-6" style={{ color: theme.colors.textSecondary }}>
                 {data.accountType === 'student'
                   ? 'Enter your email to get started'
+                  : inviteInfo
+                  ? `You've been invited to monitor ${inviteInfo.studentName || 'your child'}'s learning progress`
                   : 'Enter your email to create your parent account'}
               </p>
               <UnifiedAuthForm
@@ -382,6 +384,8 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
               <p className="text-lg mb-8" style={{ color: theme.colors.textSecondary }}>
                 {data.accountType === 'student'
                   ? 'Your account is ready. Let\'s start learning!'
+                  : inviteToken && inviteInfo
+                  ? `You're now connected with ${inviteInfo.studentName || 'your child'}. Ready to monitor their progress!`
                   : 'Your parent account is set up. Ready to monitor progress!'}
               </p>
               <button
