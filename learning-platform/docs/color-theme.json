@@ -1,0 +1,104 @@
+{
+  "brand": {
+    "primary": "#D97757",
+    "hover": "#C46649",
+    "active": "#B05538"
+  },
+  "light": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#FFF8F5",
+      "tertiary": "#FFE8DD"
+    },
+    "panel": {
+      "sidebar": "#FFF8F5",
+      "chat": "#FFFFFF",
+      "overlay": "#FFFFFF"
+    },
+    "interactive": {
+      "base": "#FFF0E8",
+      "hover": "#D97757",
+      "active": "#C46649"
+    },
+    "text": {
+      "primary": "#1A1A1A",
+      "secondary": "#4A4A4A",
+      "muted": "#7A7A7A",
+      "accent": "#D97757"
+    },
+    "border": {
+      "base": "#FFE0D1",
+      "divider": "#FFE0D1"
+    },
+    "status": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#D97757"
+    },
+    "messages": {
+      "user": "#D97757",
+      "tutor": "#FFF8F5",
+      "system": "#10B981"
+    },
+    "gradients": {
+      "brand": "linear-gradient(135deg, #D97757 0%, #C46649 100%)",
+      "panel": "linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 248, 245, 1) 100%)",
+      "accent": "linear-gradient(90deg, rgba(217, 119, 87, 0.1) 0%, rgba(196, 102, 73, 0.05) 100%)",
+      "subtle": "linear-gradient(180deg, rgba(217, 119, 87, 0.04) 0%, rgba(217, 119, 87, 0.01) 100%)"
+    }
+  },
+  "dark": {
+    "background": {
+      "primary": "#1F1F1F",
+      "secondary": "#2B2B2B",
+      "tertiary": "#383838"
+    },
+    "panel": {
+      "sidebar": "#2B2B2B",
+      "chat": "#2B2B2B",
+      "overlay": "#1F1F1F"
+    },
+    "interactive": {
+      "base": "#383838",
+      "hover": "#D97757",
+      "active": "#C46649"
+    },
+    "text": {
+      "primary": "#E8E8E5",
+      "secondary": "#A8A8A3",
+      "muted": "#6B6B68",
+      "accent": "#D97757"
+    },
+    "border": {
+      "base": "#383838",
+      "divider": "#383838"
+    },
+    "status": {
+      "success": "#3BA55C",
+      "warning": "#FAA61A",
+      "error": "#ED4245",
+      "info": "#D97757"
+    },
+    "messages": {
+      "user": "#D97757",
+      "tutor": "#383838",
+      "system": "#3BA55C"
+    },
+    "gradients": {
+      "brand": "linear-gradient(135deg, #D97757 0%, #C46649 100%)",
+      "panel": "linear-gradient(180deg, rgba(43, 43, 43, 0.95) 0%, rgba(31, 31, 31, 0.98) 100%)",
+      "accent": "linear-gradient(90deg, rgba(217, 119, 87, 0.1) 0%, rgba(196, 102, 73, 0.05) 100%)",
+      "subtle": "linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)"
+    }
+  },
+  "notes": {
+    "additionalUtilityColors": {
+      "glowBlue": ["rgba(59, 130, 246, 0.3)", "rgba(59, 130, 246, 0.6)"],
+      "scratchGrid": {"bg": "#FFFFFF", "dot": "#D1D5DB"},
+      "linedPaper": "#E5E7EB",
+      "scrollbar": {"track": "#F1F5F9", "thumb": "#CBD5E1", "thumbHover": "#94A3B8"}
+    }
+  }
+}
+

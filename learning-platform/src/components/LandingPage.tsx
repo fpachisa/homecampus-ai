@@ -19,6 +19,7 @@ export const LandingPage: React.FC = () => {
     const token = urlParams.get('parentInvite');
 
     if (token) {
+      console.log('[LandingPage] Invite token detected in URL:', token);
       setInviteToken(token);
       // Store in localStorage in case user refreshes
       localStorage.setItem('pendingInviteToken', token);
@@ -26,15 +27,21 @@ export const LandingPage: React.FC = () => {
       // Fetch invite info to show student name
       authService.getInviteByToken(token).then(invite => {
         if (invite) {
+          console.log('[LandingPage] Invite info fetched:', invite);
           setInviteInfo(invite);
           // Auto-open onboarding for invite acceptance
           setShowOnboarding(true);
+        } else {
+          console.warn('[LandingPage] No invite found for token:', token);
         }
+      }).catch(error => {
+        console.error('[LandingPage] Error fetching invite:', error);
       });
     } else {
       // Check localStorage for pending invite
       const storedToken = localStorage.getItem('pendingInviteToken');
       if (storedToken) {
+        console.log('[LandingPage] Restoring invite token from localStorage:', storedToken);
         setInviteToken(storedToken);
         authService.getInviteByToken(storedToken).then(invite => {
           if (invite) {

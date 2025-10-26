@@ -188,8 +188,14 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
 
         // If accepting an invite, link parent to student
         if (inviteToken) {
-          await authService.acceptParentInvite(inviteToken, user.uid);
-          console.log('✅ Parent linked to student via invite!');
+          console.log('[OnboardingWizard] Attempting to accept invite with token:', inviteToken);
+          try {
+            await authService.acceptParentInvite(inviteToken, user.uid);
+            console.log('✅ Parent linked to student via invite!');
+          } catch (inviteError) {
+            console.error('❌ Failed to accept invite:', inviteError);
+            // Continue anyway - user can be linked later
+          }
           // Skip add-children and go straight to complete
           setStep('complete');
         } else {

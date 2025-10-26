@@ -557,17 +557,21 @@ class AuthService {
    */
   async acceptParentInvite(token: string, parentUid: string): Promise<void> {
     try {
+      console.log('[AuthService] Accepting parent invite, token:', token, 'parentUid:', parentUid);
+
       // Find invite by token field
       const invitesRef = collection(firestore, 'invites');
       const inviteQuery = query(invitesRef, where('token', '==', token));
       const inviteSnapshot = await getDocs(inviteQuery);
 
       if (inviteSnapshot.empty) {
+        console.error('[AuthService] Invite not found for token:', token);
         throw new Error('Invite not found or expired');
       }
 
       const inviteDoc = inviteSnapshot.docs[0];
       const inviteData = inviteDoc.data();
+      console.log('[AuthService] Invite found:', inviteData);
 
       if (inviteData.type !== 'student-to-parent') {
         throw new Error('Invalid invite type');
@@ -583,15 +587,37 @@ class AuthService {
       }
 
       const studentUid = inviteData.studentInfo.uid;
+      console.log('[AuthService] Linking student:', studentUid, 'to parent:', parentUid);
 
-      // Update student profile - link to parent
+      // Create subcollection documents for parent-child relationship
+      // 1. Add parent to student's parents subcollection
+      const studentParentsRef = doc(firestore, `users/${studentUid}/parents/${parentUid}`);
+      await setDoc(studentParentsRef, {
+        parentUid: parentUid,
+        linkedAt: serverTimestamp(),
+        inviteToken: token,
+      });
+      console.log('[AuthService] Created student/parents subcollection document');
+
+      // 2. Add child to parent's children subcollection
+      const parentChildrenRef = doc(firestore, `users/${parentUid}/children/${studentUid}`);
+      await setDoc(parentChildrenRef, {
+        childUid: studentUid,
+        displayName: inviteData.studentInfo.displayName,
+        gradeLevel: inviteData.studentInfo.gradeLevel,
+        email: inviteData.studentInfo.email || inviteData.toEmail,
+        linkedAt: serverTimestamp(),
+        inviteToken: token,
+      });
+      console.log('[AuthService] Created parent/children subcollection document');
+
+      // Also update profile fields for backward compatibility
       await this.updateUserProfile(studentUid, {
         parentUid: parentUid,
         parentLinked: true,
         parentInvitePending: false,
       });
 
-      // Update parent profile - add linked child
       const parentProfile = await this.getUserProfile(parentUid);
       const linkedChildren = parentProfile?.linkedChildren || [];
 
@@ -613,8 +639,10 @@ class AuthService {
         acceptedByUid: parentUid,
       });
 
+      console.log('[AuthService] ✅ Parent invite accepted successfully');
+
     } catch (error) {
-      console.error('Error accepting parent invite:', error);
+      console.error('[AuthService] ❌ Error accepting parent invite:', error);
       throw error;
     }
   }
