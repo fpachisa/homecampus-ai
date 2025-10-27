@@ -545,49 +545,51 @@ All data is stored directly in the `{subtopicId}` and `{topicId}` documents - th
 
 ```
 firestore/
-└── users/
-    └── {userId}/
-        ├── profile: {                  ← User info (1-2 KB)
-        │   email, displayName, role,
-        │   settings: {
-        │     ttsSpeaker, theme, audioEnabled
-        │   }
-        │}
-        │
-        ├── progressSummary: {          ← DENORMALIZED for parent queries (5-10 KB)
+├── users/
+│   └── {userId}: {                 ← User profile (1-2 KB)
+│       email, displayName, role,
+│       settings: {
+│         ttsSpeaker, theme, audioEnabled
+│       }
+│     }
+│
+└── progressSummaries/              ← Top-level collection (valid 2-segment path!)
+    └── {userId}: {                 ← DENORMALIZED for parent queries (5-10 KB)
         │   totalTopicsStarted: number
         │   totalTopicsCompleted: number
         │   totalProblemsCorrect: number
         │   totalTimeSpentSeconds: number
         │   currentLevel: number
-        │   totalXP: number
-        │
-        │   // Quick subtopic list for parent dashboard (Learn mode)
-        │   learnSubtopics: {
-        │     [subtopicId]: {           // e.g., "s3-math-trigonometry-basic-ratios"
-        │       displayName: string
-        │       topicId: string         // Parent topic: "s3-math-trigonometry"
-        │       grade: string
-        │       progress: number        // 0-100% (sections completed)
-        │       lastActive: timestamp
-        │       problemsCorrect: number
-        │       timeSpent: number
-        │     }
-        │   }
-        │
-        │   // Practice summary (topic-level)
-        │   practiceTopics: {
-        │     [topicId]: {              // e.g., "s3-math-trigonometry"
-        │       displayName: string
-        │       nodesCompleted: number
-        │       totalXP: number
-        │       lastActive: timestamp
-        │     }
-        │   }
-        │
-        │   lastUpdated: timestamp
-        │}
-        │
+          totalXP: number
+
+          // Quick subtopic list for parent dashboard (Learn mode)
+          learnSubtopics: {
+            [subtopicId]: {           // e.g., "s3-math-trigonometry-basic-ratios"
+              displayName: string
+              topicId: string         // Parent topic: "s3-math-trigonometry"
+              grade: string
+              progress: number        // 0-100% (sections completed)
+              lastActive: timestamp
+              problemsCorrect: number
+              timeSpent: number
+            }
+          }
+
+          // Practice summary (topic-level)
+          practiceTopics: {
+            [topicId]: {              // e.g., "s3-math-trigonometry"
+              displayName: string
+              nodesCompleted: number
+              totalXP: number
+              lastActive: timestamp
+            }
+          }
+
+          lastUpdated: timestamp
+        }
+
+├── users/                          ← User-specific data
+│   └── {userId}/
         ├── /learn/                     ← SUBCOLLECTION
         │   └── {subtopicId}: {         ← DOCUMENT (e.g., "s3-math-trigonometry-basic-ratios")
         │       subtopicId: string      // Full ID: "s3-math-trigonometry-basic-ratios"

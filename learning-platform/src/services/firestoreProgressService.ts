@@ -71,7 +71,7 @@ export async function saveLearnProgress(
     });
 
     // 2. Update progress summary for parent dashboard
-    const summaryRef = doc(firestore, `users/${uid}/progressSummary`);
+    const summaryRef = doc(firestore, 'progressSummaries', uid);
 
     // Calculate progress percentage
     const totalSections = 6; // TODO: Get from curriculum config
@@ -142,7 +142,7 @@ export async function loadLearnProgress(
 export async function getProgressSummary(
   uid: string
 ): Promise<ProgressSummary | null> {
-  const summaryRef = doc(firestore, `users/${uid}/progressSummary`);
+  const summaryRef = doc(firestore, 'progressSummaries', uid);
   const snap = await getDoc(summaryRef);
 
   if (!snap.exists()) {
@@ -270,7 +270,7 @@ export function conversationStateFromFirestore(
  * @param uid - User ID
  */
 export async function initializeProgressSummary(uid: string): Promise<void> {
-  const summaryRef = doc(firestore, `users/${uid}/progressSummary`);
+  const summaryRef = doc(firestore, 'progressSummaries', uid);
 
   // Check if already exists
   const snap = await getDoc(summaryRef);
@@ -327,7 +327,7 @@ export async function savePracticeProgress(
     });
 
     // 2. Update progress summary for parent dashboard
-    const summaryRef = doc(firestore, `users/${uid}/progressSummary`);
+    const summaryRef = doc(firestore, 'progressSummaries', uid);
 
     const summaryUpdate: Partial<ProgressSummary> = {
       practiceTopics: {

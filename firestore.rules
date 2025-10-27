@@ -47,12 +47,6 @@ service cloud.firestore {
         allow write: if isOwner(userId);
       }
 
-      // Progress summary (denormalized for parent dashboard - single read!)
-      match /progressSummary {
-        allow read: if isOwner(userId) || isParent(userId);
-        allow write: if isOwner(userId);
-      }
-
       // Learn mode conversations (subtopic level: users/{uid}/learn/{subtopicId})
       match /learn/{subtopicId} {
         allow read: if isOwner(userId) || isParent(userId);
@@ -64,6 +58,13 @@ service cloud.firestore {
         allow read: if isOwner(userId) || isParent(userId);
         allow write: if isOwner(userId) && !rateLimit();
       }
+    }
+
+    // Progress summaries (denormalized for parent dashboard - single read!)
+    // Top-level collection for valid 2-segment paths
+    match /progressSummaries/{userId} {
+      allow read: if isOwner(userId) || isParent(userId);
+      allow write: if isOwner(userId);
     }
 
     // Parent/Student invite links

@@ -272,7 +272,7 @@ users/{userId}/learn/{subtopicId}
 
 ### Progress Summary (Parent Dashboard)
 ```
-users/{userId}/progressSummary
+progressSummaries/{userId}
 - learnSubtopics: {
     [subtopicId]: {
       displayName, progress, lastActive, ...
