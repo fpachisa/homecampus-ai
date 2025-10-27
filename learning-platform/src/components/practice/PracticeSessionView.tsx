@@ -10,6 +10,11 @@ import type { PathNode, PathProblem, PathDifficulty, ProblemAttempt, AttemptHist
 import { pathPracticeService } from '../../services/pathPracticeService';
 import { pathProgressService } from '../../services/pathProgressService';
 import { pathConfigLoader } from '../../services/pathConfigLoader';
+import {
+  savePracticeProgress,
+  loadPracticeProgress,
+  pathProgressToFirestore
+} from '../../services/firestoreProgressService';
 import { MathToolRenderer } from './MathToolRenderer';
 import { BackButton } from '../BackButton';
 import Avatar from '../Avatar';
@@ -60,6 +65,33 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     currentProblemSession: null,
     problemSessions: {},
   });
+
+  // Helper function to save practice progress to Firestore
+  const saveProgressToFirestore = async (
+    pathProgress: any,
+    allNodes: PathNode[],
+    userId: string | undefined
+  ) => {
+    if (!userId) return;
+
+    try {
+      // Extract topic displayName from the path or nodes
+      const displayName = allNodes[0]?.title?.split(' - ')[0] || category;
+
+      // Convert PathProgress to Firestore format
+      const firestoreProgress = pathProgressToFirestore(
+        pathProgress,
+        category, // topicId
+        displayName,
+        allNodes
+      );
+
+      await savePracticeProgress(userId, category, firestoreProgress);
+      console.log('✅ Practice progress saved to Firestore');
+    } catch (error) {
+      console.error('Failed to save practice progress to Firestore:', error);
+    }
+  };
 
   const [studentAnswer, setStudentAnswer] = useState('');
   const [solution, setSolution] = useState<{ steps: string[]; finalAnswer: string } | null>(null);
@@ -473,6 +505,9 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
           pathProgressService.saveUnifiedProgress(category, pathProgress, user?.uid);
           console.log(`📊 Updated unified progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired} problems`);
+
+          // Also save to Firestore
+          await saveProgressToFirestore(pathProgress, allNodes, user?.uid);
         }
       } else {
         // For incorrect attempts that can retry, also save the session state
@@ -674,6 +709,9 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
       // Save updated state
       pathProgressService.saveUnifiedProgress(category, pathProgress);
       console.log('✓ Progress saved to unified system');
+
+      // Also save to Firestore
+      await saveProgressToFirestore(pathProgress, allNodes, user?.uid);
     } else {
       console.error('❌ No unified progress found!');
     }

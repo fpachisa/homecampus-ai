@@ -6,9 +6,12 @@ import FallbackAIService from '../services/fallbackAIService';
 import type { AIService } from '../services/aiService';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../hooks/useTheme';
-import { progressService } from '../services/progressService';
-import { sessionStorage } from '../services/sessionStorage';
-import { useSessionPersistence } from '../hooks/useSessionPersistence';
+import {
+  saveLearnProgress,
+  loadLearnProgress,
+  conversationStateToFirestore,
+  conversationStateFromFirestore
+} from '../services/firestoreProgressService';
 import { useAudioManager } from '../hooks/useAudioManager';
 import { S3_MATH_TRIGONOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
@@ -193,16 +196,74 @@ const [isLoading, setIsLoading] = useState(false);
   const currentTopicRef = useRef<string>(topicId);
   const inputAreaRef = useRef<InputAreaHandle>(null);
 
-  // Auto-save session state
-  const { isSyncing: _isSyncing, lastSyncTime: _lastSyncTime, syncError: _syncError } = useSessionPersistence({
+  // Helper functions to extract metadata from topicId (subtopicId)
+  const getPathIdFromSubtopicId = (subtopicId: string): string => {
+    // s3-math-trigonometry-basic-ratios → s3-math-trigonometry
+    const parts = subtopicId.split('-');
+    return parts.slice(0, -1).join('-') || parts.join('-');
+  };
+
+  const getGradeFromSubtopicId = (subtopicId: string): string => {
+    // s3-math-trigonometry-basic-ratios → Secondary 3
+    // s4-math-probability-sample-space → Secondary 4
+    const match = subtopicId.match(/^s(\d+)/);
+    if (match) {
+      return `Secondary ${match[1]}`;
+    }
+    return 'Secondary 3'; // fallback
+  };
+
+  // Auto-save to Firestore (debounced)
+  const saveTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  useEffect(() => {
+    // Clear existing timeout
+    if (saveTimeoutRef.current) {
+      clearTimeout(saveTimeoutRef.current);
+    }
+
+    // Only save if user is authenticated and has messages
+    if (!user?.uid || state.messages.length === 0) {
+      return;
+    }
+
+    // Debounce saves (3 seconds after last change)
+    saveTimeoutRef.current = setTimeout(async () => {
+      try {
+        const topicConfig = getTopicConfig(topicId);
+        const pathId = getPathIdFromSubtopicId(topicId);
+        const grade = getGradeFromSubtopicId(topicId);
+        const displayName = topicConfig?.displayName || 'Unknown Topic';
+
+        const firestoreConv = conversationStateToFirestore(
+          state,
+          topicId, // subtopicId
+          pathId,  // topicId (parent path)
+          displayName,
+          grade,
+          sectionProgress
+        );
+
+        await saveLearnProgress(user.uid, topicId, firestoreConv);
+        console.log('✅ Progress auto-saved to Firestore');
+      } catch (error) {
+        console.error('Failed to auto-save progress:', error);
+      }
+    }, 3000);
+
+    return () => {
+      if (saveTimeoutRef.current) {
+        clearTimeout(saveTimeoutRef.current);
+      }
+    };
+  }, [
+    user?.uid,
     topicId,
-    conversationState: state,
-    currentScore,
-    problemsCompleted,
-    subtopicComplete,
-    problemState: problemState || undefined,
-    sectionProgress
-  });
+    state.messages.length,
+    state.currentProblemType,
+    state.sessionStats.correctAnswers,
+    sectionProgress.currentSection,
+    sectionProgress.masteredSections.length
+  ]);
 
   // Initialize AI service once
   useEffect(() => {
@@ -283,16 +344,9 @@ const [isLoading, setIsLoading] = useState(false);
     setSubtopicComplete(false);
     setProblemState(null);
 
-    // Load previous progress if available
-    loadProgress();
-
-    // Auto-restore session if available, otherwise start new conversation
-    const savedSession = sessionStorage.loadSession(topicId);
-    if (savedSession) {
-      restoreFromSession();
-    } else {
-      initializeConversation();
-    }
+    // Auto-restore session from Firestore if available, otherwise start new conversation
+    // Note: restoreFromSession handles both loading and fallback to initialization
+    restoreFromSession();
 
     // Cleanup function - runs when topicId changes or component unmounts
     return () => {
@@ -313,24 +367,29 @@ const scrollToBottom = () => {
   };
 
   // Progress persistence functions
-  const loadProgress = () => {
-    const savedProgress = progressService.loadProgress(topicId, user?.uid);
-    if (savedProgress) {
-      setCurrentScore(savedProgress.score);
-      setState(prev => ({
-        ...prev,
-        sessionStats: {
-          ...prev.sessionStats,
-          problemsAttempted: savedProgress.problemsAttempted,
-          correctAnswers: savedProgress.correctAnswers
-        },
-        currentProblemType: savedProgress.currentProblemType
-      }));
+  const loadProgress = async () => {
+    if (!user?.uid) return;
 
-      // Load section progress if available
-      if (savedProgress.sectionProgress) {
-        setSectionProgress(savedProgress.sectionProgress);
+    try {
+      const savedConversation = await loadLearnProgress(user.uid, topicId);
+      if (savedConversation) {
+        const { conversationState: loadedState, sectionProgress: loadedSection } =
+          conversationStateFromFirestore(savedConversation);
+
+        // Restore session stats and problem type
+        setState(prev => ({
+          ...prev,
+          sessionStats: loadedState.sessionStats,
+          currentProblemType: loadedState.currentProblemType
+        }));
+
+        // Restore section progress
+        setSectionProgress(loadedSection);
+
+        console.log('✅ Progress loaded from Firestore');
       }
+    } catch (error) {
+      console.error('Failed to load progress from Firestore:', error);
     }
   };
 
@@ -375,49 +434,53 @@ const scrollToBottom = () => {
 
   const restoreFromSession = async () => {
     const restoreTopicId = currentTopicRef.current; // Capture current topic
-    const sessionData = sessionStorage.loadSession(topicId);
 
-    if (!sessionData || sessionData.messages.length === 0) {
-      // Fallback to new conversation if session is empty or corrupted
-      console.log('No valid session data or empty messages, starting new conversation');
-      if (currentTopicRef.current === restoreTopicId) {
-        initializeConversation();
-      }
+    if (!user?.uid) {
+      console.log('No authenticated user, starting new conversation');
+      initializeConversation();
       return;
     }
 
     try {
+      const savedConversation = await loadLearnProgress(user.uid, topicId);
+
+      if (!savedConversation || savedConversation.messages.length === 0) {
+        // No saved data, start new conversation
+        console.log('No saved conversation found, starting new');
+        if (currentTopicRef.current === restoreTopicId) {
+          initializeConversation();
+        }
+        return;
+      }
+
       // Check if topic hasn't changed
       if (currentTopicRef.current !== restoreTopicId) {
         console.log('Topic changed during restore, aborting');
         return;
       }
 
+      // Convert Firestore format to local state
+      const { conversationState: restoredState, sectionProgress: restoredSection } =
+        conversationStateFromFirestore(savedConversation);
+
       // Restore conversation state
-      setState(prevState => ({
-        ...prevState,
-        messages: sessionData.messages,
-        currentProblemType: sessionData.currentProblemType
-      }));
+      setState(restoredState);
 
-      // Restore other state variables
-      setCurrentScore(sessionData.currentScore);
-      setProblemsCompleted(sessionData.problemsCompleted);
-      setSubtopicComplete(sessionData.subtopicComplete);
-
-      if (sessionData.problemState) {
-        setProblemState(sessionData.problemState);
+      // Restore problem state if exists
+      if (restoredState.problemState) {
+        setProblemState(restoredState.problemState);
       }
 
       // Restore section progress
-      if (sessionData.sectionProgress) {
-        setSectionProgress(sessionData.sectionProgress);
-        console.log('📍 Restored section progress:', sessionData.sectionProgress.currentSection);
-      }
+      setSectionProgress(restoredSection);
 
-      console.log('Session restored successfully for topic:', topicId, 'with', sessionData.messages.length, 'messages');
+      // Note: currentScore and problemsCompleted are derived from sessionStats
+      // No need to restore them separately
+
+      console.log('✅ Session restored from Firestore:', topicId, 'with', restoredState.messages.length, 'messages');
+      console.log('📍 Restored section:', restoredSection.currentSection);
     } catch (error) {
-      console.error('Failed to restore session:', error);
+      console.error('Failed to restore session from Firestore:', error);
       // Fallback to new conversation
       if (currentTopicRef.current === restoreTopicId) {
         initializeConversation();
@@ -852,17 +915,8 @@ const handleStudentSubmit = async (input: string) => {
 
         setSectionProgress(updatedSectionProgress);
 
-        // IMPORTANT: Save to BOTH session storage AND progress service
-        progressService.saveProgress(
-          topicId,
-          state.sessionStats,
-          currentScore,
-          state.currentProblemType,
-          user?.uid,
-          updatedSectionProgress
-        );
-
-        console.log(`💾 Saved progress with ${newMasteredSections.length} mastered sections`);
+        // Note: Auto-save to Firestore will trigger via useEffect (debounced)
+        console.log(`✨ Section progress updated with ${newMasteredSections.length} mastered sections`);
       }
 
       // Check for subtopic completion (trust evaluator's CELEBRATE action only)

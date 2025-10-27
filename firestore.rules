@@ -12,49 +12,52 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
 
+    // Check if user is parent using profile.parents array
     function isParent(childId) {
       return isAuthenticated() &&
-        exists(/databases/$(database)/documents/users/$(childId)/parents/$(request.auth.uid));
+        exists(/databases/$(database)/documents/users/$(childId)/profile) &&
+        get(/databases/$(database)/documents/users/$(childId)/profile)
+          .data.parents.hasAny([request.auth.uid]);
     }
 
-    // User profiles
+    // Rate limiting helper - prevent rapid writes (1 second minimum)
+    function rateLimit() {
+      return request.time < resource.data.lastUpdated + duration.value(1, 's');
+    }
+
+    // Validate progress update structure
+    function validateProgressUpdate() {
+      return request.resource.data.keys().hasAll(['lastUpdated', 'messages']) &&
+             request.resource.data.messages is list &&
+             request.resource.data.messages.size() < 1500; // Prevent abuse
+    }
+
+    // User data - new hybrid collection structure
     match /users/{userId} {
-      // Users can read/write their own profile
-      allow read, write: if isOwner(userId);
 
-      // Parent-child relationships
-      match /parents/{parentId} {
-        allow read: if isOwner(userId) || isOwner(parentId);
-        // Allow student to manage OR allow parent to create their own entry
-        allow write: if isOwner(userId) || isOwner(parentId);
-      }
-
-      // Children under parent account
-      match /children/{childId} {
-        allow read: if isOwner(userId) || isOwner(childId);
-        // Allow parent to manage OR allow child to create their own entry
-        allow write: if isOwner(userId) || isOwner(childId);
-      }
-    }
-
-    // Learning progress data
-    match /progress/{userId} {
-      allow read: if isOwner(userId) || isParent(userId);
-      allow write: if isOwner(userId);
-
-      // Granular progress tracking
-      match /paths/{pathId} {
+      // User profile document
+      match /profile {
         allow read: if isOwner(userId) || isParent(userId);
         allow write: if isOwner(userId);
       }
-    }
 
-    // Practice session data
-    match /sessions/{sessionId} {
-      allow read: if isAuthenticated() &&
-        (resource.data.userId == request.auth.uid || isParent(resource.data.userId));
-      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
-      allow update, delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      // Progress summary (denormalized for parent dashboard - single read!)
+      match /progressSummary {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) && !rateLimit();
+      }
+
+      // Learn mode conversations (subtopic level: users/{uid}/learn/{subtopicId}/conversation)
+      match /learn/{subtopicId}/conversation {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) && validateProgressUpdate() && !rateLimit();
+      }
+
+      // Practice mode progress (topic level: users/{uid}/practice/{topicId}/progress)
+      match /practice/{topicId}/progress {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) && !rateLimit();
+      }
     }
 
     // Parent/Student invite links

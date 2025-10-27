@@ -28,9 +28,12 @@ import {
 import { firestore } from './firebase';
 import type {
   LearnConversation,
-  ProgressSummary
+  ProgressSummary,
+  PracticeProgress,
+  PracticeNodeProgress
 } from '../types/firestore';
 import type { ConversationState, SectionProgressState } from '../types/types';
+import type { PathProgress, PathNode } from '../types/practice';
 
 // Import the helper functions
 import {
@@ -282,4 +285,182 @@ export async function initializeProgressSummary(uid: string): Promise<void> {
   };
 
   await setDoc(summaryRef, initialSummary);
+}
+
+// ============================================
+// PRACTICE MODE FUNCTIONS
+// ============================================
+
+/**
+ * Save Practice Mode Progress
+ *
+ * Saves practice progress and updates progress summary.
+ * Uses simple retry logic (3 attempts with 1-second delay).
+ *
+ * @param uid - User ID
+ * @param topicId - Topic ID (e.g., "s3-math-trigonometry")
+ * @param progress - Practice progress data to save
+ * @param retryCount - Internal retry counter
+ */
+export async function savePracticeProgress(
+  uid: string,
+  topicId: string,
+  progress: PracticeProgress,
+  retryCount = 0
+): Promise<void> {
+  try {
+    const batch = writeBatch(firestore);
+
+    // 1. Save practice progress document
+    const progressRef = doc(firestore, `users/${uid}/practice/${topicId}/progress`);
+    batch.set(progressRef, {
+      ...progress,
+      lastUpdated: serverTimestamp()
+    });
+
+    // 2. Update progress summary for parent dashboard
+    const summaryRef = doc(firestore, `users/${uid}/progressSummary`);
+
+    const summaryUpdate: Partial<ProgressSummary> = {
+      practiceTopics: {
+        [topicId]: {
+          displayName: progress.displayName,
+          nodesCompleted: Object.values(progress.nodes).filter(n => n.status === 'completed').length,
+          totalNodes: Object.keys(progress.nodes).length,
+          totalXP: progress.totalXP,
+          currentLevel: progress.currentLevel,
+          lastActive: serverTimestamp() as Timestamp
+        }
+      },
+      lastUpdated: serverTimestamp() as Timestamp
+    };
+
+    batch.set(summaryRef, summaryUpdate, { merge: true });
+
+    await batch.commit();
+  } catch (error) {
+    // Simple retry logic (3 attempts)
+    if (retryCount < 3) {
+      await new Promise(r => setTimeout(r, 1000));
+      return savePracticeProgress(uid, topicId, progress, retryCount + 1);
+    }
+    throw error;
+  }
+}
+
+/**
+ * Load Practice Mode Progress
+ *
+ * Loads practice progress for a specific topic.
+ *
+ * @param uid - User ID
+ * @param topicId - Topic ID
+ * @returns Practice progress or null if not found
+ */
+export async function loadPracticeProgress(
+  uid: string,
+  topicId: string
+): Promise<PracticeProgress | null> {
+  const progressRef = doc(firestore, `users/${uid}/practice/${topicId}/progress`);
+  const snap = await getDoc(progressRef);
+
+  if (!snap.exists()) {
+    return null;
+  }
+
+  return snap.data() as PracticeProgress;
+}
+
+/**
+ * List All Practice Topics
+ *
+ * Gets metadata for all practice topics a student has started.
+ * Use getProgressSummary() instead for dashboard views (more efficient).
+ *
+ * @param uid - User ID
+ * @returns Array of topic IDs
+ */
+export async function listPracticeTopics(uid: string): Promise<string[]> {
+  const practiceRef = collection(firestore, `users/${uid}/practice`);
+  const snap = await getDocs(practiceRef);
+
+  return snap.docs.map(doc => doc.id);
+}
+
+/**
+ * Convert PathProgress (localStorage format) to PracticeProgress (Firestore format)
+ *
+ * @param pathProgress - Practice progress from pathProgressService
+ * @param topicId - Topic ID (e.g., "s3-math-trigonometry")
+ * @param displayName - Display name for the topic
+ * @param allNodes - All nodes in the path (for metadata)
+ * @returns Firestore-compatible PracticeProgress
+ */
+export function pathProgressToFirestore(
+  pathProgress: PathProgress,
+  topicId: string,
+  displayName: string,
+  allNodes: PathNode[]
+): PracticeProgress {
+  // Convert node progress to Firestore format
+  const firestoreNodes: Record<string, PracticeNodeProgress> = {};
+
+  Object.entries(pathProgress.nodes).forEach(([nodeId, nodeProgress]) => {
+    const nodeMetadata = allNodes.find(n => n.id === nodeId);
+
+    firestoreNodes[nodeId] = {
+      nodeId,
+      nodeNumber: nodeMetadata?.nodeNumber || 0,
+      title: nodeMetadata?.title || 'Unknown',
+      layer: (nodeMetadata?.layer as any) || 'foundation',
+      problemsAttempted: nodeProgress.problemsAttempted,
+      problemsCorrect: nodeProgress.problemsCorrect,
+      status: nodeProgress.status,
+      completedAt: nodeProgress.completedAt ? Timestamp.fromDate(nodeProgress.completedAt) : undefined,
+      timeSpentSeconds: 0 // Not tracked in PathProgress
+    };
+  });
+
+  // Calculate layer progress
+  const layerProgress = {
+    foundation: { completed: 0, total: 0 },
+    integration: { completed: 0, total: 0 },
+    application: { completed: 0, total: 0 },
+    examPractice: { completed: 0, total: 0 }
+  };
+
+  allNodes.forEach(node => {
+    const layer = node.layer as any;
+    if (layerProgress[layer]) {
+      layerProgress[layer].total++;
+      if (pathProgress.nodes[node.id]?.status === 'completed') {
+        layerProgress[layer].completed++;
+      }
+    }
+  });
+
+  return {
+    topicId,
+    displayName,
+    currentNodeId: pathProgress.currentNodeId,
+    currentCycle: pathProgress.currentCycle,
+    nodes: firestoreNodes,
+    layerProgress,
+    totalXP: 0, // Not tracked in PathProgress
+    currentLevel: 1, // Not tracked in PathProgress
+    streak: {
+      currentStreak: 0,
+      longestStreak: 0,
+      lastActivityDate: new Date().toISOString().split('T')[0],
+      streakDates: []
+    },
+    achievements: [],
+    sessionHistory: [],
+    totalProblemsAttempted: pathProgress.totalProblemsAttempted,
+    totalProblemsCorrect: pathProgress.totalProblemsCorrect,
+    totalTimeSpentSeconds: 0, // Not tracked in PathProgress
+    pathStartedAt: Timestamp.fromDate(pathProgress.pathStartedAt),
+    lastUpdated: Timestamp.fromDate(pathProgress.lastUpdated),
+    createdAt: Timestamp.fromDate(pathProgress.pathStartedAt)
+  };
 }
