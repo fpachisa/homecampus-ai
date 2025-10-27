@@ -12,12 +12,10 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
 
-    // Check if user is parent using profile.parents array
+    // Check if user is parent using subcollection
     function isParent(childId) {
       return isAuthenticated() &&
-        exists(/databases/$(database)/documents/users/$(childId)/profile) &&
-        get(/databases/$(database)/documents/users/$(childId)/profile)
-          .data.parents.hasAny([request.auth.uid]);
+        exists(/databases/$(database)/documents/users/$(childId)/parents/$(request.auth.uid));
     }
 
     // Rate limiting helper - prevent rapid writes (1 second minimum)
@@ -34,17 +32,25 @@ service cloud.firestore {
 
     // User data - new hybrid collection structure
     match /users/{userId} {
+      // Main user profile document
+      allow read: if isOwner(userId) || isParent(userId);
+      allow write: if isOwner(userId);
 
-      // User profile document
-      match /profile {
-        allow read: if isOwner(userId) || isParent(userId);
+      // Parent-child relationship subcollections
+      match /parents/{parentId} {
+        allow read: if isOwner(userId) || request.auth.uid == parentId;
+        allow write: if isOwner(userId) || request.auth.uid == parentId;
+      }
+
+      match /children/{childId} {
+        allow read: if isOwner(userId);
         allow write: if isOwner(userId);
       }
 
       // Progress summary (denormalized for parent dashboard - single read!)
       match /progressSummary {
         allow read: if isOwner(userId) || isParent(userId);
-        allow write: if isOwner(userId) && !rateLimit();
+        allow write: if isOwner(userId);
       }
 
       // Learn mode conversations (subtopic level: users/{uid}/learn/{subtopicId}/conversation)
