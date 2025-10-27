@@ -234,6 +234,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
 
   'Secondary 4': [
     {
+      id: 's4-quadratic-functions',
+      name: 'Quadratic Functions',
+      icon: '📊',
+      description: 'Master quadratic functions, parabolas, transformations, vertex form, and real-world applications',
+      subtopicCount: 5,
+      isActive: true,
+      category: 's4-math-quad',
+      grade: 'Secondary 4',
+      subject: 'Mathematics',
+    },
+    {
       id: 's4-differential-calculus',
       name: 'Differential Calculus',
       icon: '∫',

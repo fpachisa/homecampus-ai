@@ -36,6 +36,8 @@ import { S4_MATH_INTEGRATION_SUBTOPICS } from '../prompt-library/subjects/mathem
 import type { IntegrationTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
 import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
+import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
+import type { QuadraticFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -101,6 +103,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S4 probability topic
   if (topicId.startsWith('s4-math-probability-')) {
     return S4_MATH_PROBABILITY_SUBTOPICS[topicId as ProbabilityTopicId];
+  }
+  // Check if it's an S4 quadratic functions topic
+  if (topicId.startsWith('s4-math-quad-')) {
+    return S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS[topicId as QuadraticFunctionsTopicId];
   }
   // Return undefined for unknown topics
   return undefined;
@@ -1099,6 +1105,9 @@ const handleStudentSubmit = async (input: string) => {
     if (topicId.startsWith('s4-math-probability-')) {
       return 'Master probability and statistics!';
     }
+    if (topicId.startsWith('s4-math-quad-')) {
+      return 'Master quadratic functions and parabolas!';
+    }
     return 'Master mathematics step by step!';
   };
 
@@ -1136,6 +1145,9 @@ const handleStudentSubmit = async (input: string) => {
     }
     if (topicId.startsWith('s4-math-probability-')) {
       return '🎲';
+    }
+    if (topicId.startsWith('s4-math-quad-')) {
+      return '📊';
     }
     return '📚';
   };

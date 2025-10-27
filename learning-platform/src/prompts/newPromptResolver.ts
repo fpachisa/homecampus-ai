@@ -33,6 +33,7 @@ import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS, S3_MATH_COORDINATE_GEOMETRY_CONF
 import { DIFFERENTIAL_CALCULUS_SUBTOPICS, S4_DIFFERENTIAL_CALCULUS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
 import { S4_MATH_INTEGRATION_SUBTOPICS, INTEGRATION_TUTOR_CUSTOMIZATION, INTEGRATION_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
 import { S4_MATH_PROBABILITY_SUBTOPICS, PROBABILITY_TUTOR_CUSTOMIZATION, PROBABILITY_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
+import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 
 // OLD: Still in legacy format (to be migrated)
 // None remaining!
@@ -271,6 +272,15 @@ export class NewPromptResolver {
       const global = {
         tutorCustomization: PROBABILITY_TUTOR_CUSTOMIZATION,
         availableTools: PROBABILITY_MATH_TOOLS
+      };
+      return { subtopic, global };
+    }
+
+    // S4 Quadratic Functions - full topic IDs
+    if (topicId in S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS) {
+      const subtopic = S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS[topicId as keyof typeof S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS];
+      const global = {
+        MATH_TOOLS_AVAILABLE: ['graphingCalculator', 'coordinatePlane']
       };
       return { subtopic, global };
     }

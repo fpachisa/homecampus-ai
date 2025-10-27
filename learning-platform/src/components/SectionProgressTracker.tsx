@@ -27,6 +27,8 @@ import { S4_MATH_INTEGRATION_SUBTOPICS } from '../prompt-library/subjects/mathem
 import type { IntegrationTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
 import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
+import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
+import type { QuadraticFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -102,6 +104,11 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // S4 Probability topics
     if (topicId.startsWith('s4-math-probability-')) {
       const subtopic = S4_MATH_PROBABILITY_SUBTOPICS[topicId as ProbabilityTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // S4 Quadratic Functions topics
+    if (topicId.startsWith('s4-math-quad-')) {
+      const subtopic = S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS[topicId as QuadraticFunctionsTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];
@@ -190,16 +197,17 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
 
                 {/* Tooltip on hover */}
                 <div
-                  className="hidden group-hover:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 rounded shadow-lg z-50"
+                  className="hidden group-hover:block absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1.5 rounded shadow-lg z-50"
                   style={{
                     backgroundColor: theme.colors.chat,
                     border: `1px solid ${statusColor}`,
-                    fontSize: '11px',
+                    fontSize: '12px',
                     color: theme.colors.textPrimary,
-                    maxWidth: '200px',
+                    minWidth: '150px',
+                    maxWidth: '280px',
                     textAlign: 'center',
-                    whiteSpace: 'normal',
-                    wordWrap: 'break-word'
+                    whiteSpace: 'nowrap',
+                    overflow: 'visible'
                   }}
                 >
                   {section.title}
@@ -266,16 +274,17 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
 
                     {/* Tooltip on hover */}
                     <div
-                      className="hidden group-hover:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 rounded shadow-lg z-50"
+                      className="hidden group-hover:block absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1.5 rounded shadow-lg z-50"
                       style={{
                         backgroundColor: theme.colors.chat,
                         border: `1px solid ${statusColor}`,
-                        fontSize: '11px',
+                        fontSize: '12px',
                         color: theme.colors.textPrimary,
-                        maxWidth: '200px',
+                        minWidth: '150px',
+                        maxWidth: '280px',
                         textAlign: 'center',
-                        whiteSpace: 'normal',
-                        wordWrap: 'break-word'
+                        whiteSpace: 'nowrap',
+                        overflow: 'visible'
                       }}
                     >
                       {section.title}

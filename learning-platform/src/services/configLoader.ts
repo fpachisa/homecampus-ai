@@ -2323,6 +2323,133 @@ export class ConfigLoader {
           practice: true,
           visualizations: true
         }
+      },
+
+      // S4 Quadratic Functions
+      's4-math-quad-fundamentals': {
+        id: 's4-math-quad-fundamentals',
+        displayName: 'Quadratic Functions Fundamentals',
+        grade: 's4',
+        subject: 'math',
+        topic: 'quadratic-functions',
+        subtopic: 's4-math-quad-fundamentals',
+        metadata: {
+          difficulty: 'foundational',
+          estimatedMinutes: 50,
+          prerequisites: []
+        },
+        notesComponent: 's4/math/quadratic-functions/QuadraticFundamentals',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-quad-graphs-transformations': {
+        id: 's4-math-quad-graphs-transformations',
+        displayName: 'Graphs and Transformations',
+        grade: 's4',
+        subject: 'math',
+        topic: 'quadratic-functions',
+        subtopic: 's4-math-quad-graphs-transformations',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 55,
+          prerequisites: ['s4-math-quad-fundamentals']
+        },
+        notesComponent: 's4/math/quadratic-functions/GraphsTransformations',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-quad-key-features': {
+        id: 's4-math-quad-key-features',
+        displayName: 'Key Features of Parabolas',
+        grade: 's4',
+        subject: 'math',
+        topic: 'quadratic-functions',
+        subtopic: 's4-math-quad-key-features',
+        metadata: {
+          difficulty: 'intermediate',
+          estimatedMinutes: 50,
+          prerequisites: ['s4-math-quad-graphs-transformations']
+        },
+        notesComponent: 's4/math/quadratic-functions/KeyFeatures',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-quad-finding-functions': {
+        id: 's4-math-quad-finding-functions',
+        displayName: 'Finding Quadratic Functions',
+        grade: 's4',
+        subject: 'math',
+        topic: 'quadratic-functions',
+        subtopic: 's4-math-quad-finding-functions',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 60,
+          prerequisites: ['s4-math-quad-key-features']
+        },
+        notesComponent: 's4/math/quadratic-functions/FindingQuadratics',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
+      },
+      's4-math-quad-inequalities': {
+        id: 's4-math-quad-inequalities',
+        displayName: 'Quadratic Inequalities',
+        grade: 's4',
+        subject: 'math',
+        topic: 'quadratic-functions',
+        subtopic: 's4-math-quad-inequalities',
+        metadata: {
+          difficulty: 'advanced',
+          estimatedMinutes: 55,
+          prerequisites: ['s4-math-quad-finding-functions']
+        },
+        notesComponent: 's4/math/quadratic-functions/QuadraticInequalities',
+        teachingTemplate: '',
+        scoring: {
+          easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+          medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+          hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+        },
+        modules: {
+          learn: true,
+          practice: true,
+          visualizations: true
+        }
       }
     };
 

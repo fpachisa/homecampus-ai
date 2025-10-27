@@ -26,6 +26,8 @@ import { S4_MATH_INTEGRATION_SUBTOPICS } from '../prompt-library/subjects/mathem
 import type { IntegrationTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
 import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
+import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
+import type { QuadraticFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -72,6 +74,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S4_MATH_INTEGRATION_SUBTOPICS[topicId as IntegrationTopicId];
   } else if (category === 's4-math-probability') {
     topicConfig = S4_MATH_PROBABILITY_SUBTOPICS[topicId as ProbabilityTopicId];
+  } else if (category === 's4-math-quad') {
+    topicConfig = S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS[topicId as QuadraticFunctionsTopicId];
   }
 
   if (!topicConfig) {

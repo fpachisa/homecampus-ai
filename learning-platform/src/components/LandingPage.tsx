@@ -1,32 +1,50 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { useAppNavigation } from '../hooks/useAppNavigation';
 import { OnboardingWizard } from './onboarding/OnboardingWizard';
+import { AuthModal } from './auth/AuthModal';
 import { authService } from '../services/authService';
 import logoLight from '/logo.png?url';
 import logoDark from '/logo-dark.png?url';
 
 export const LandingPage: React.FC = () => {
+  const location = useLocation();
   const { theme } = useTheme();
   const { toggleTheme, isDark } = useThemeContext();
-  const { goToHome } = useAppNavigation();
+  const { goToHome, goToLogin, goToSignup, goToLanding } = useAppNavigation();
   const [showOnboarding, setShowOnboarding] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
   const [inviteToken, setInviteToken] = useState<string | null>(null);
   const [inviteInfo, setInviteInfo] = useState<any>(null);
 
   // Theme-aware logo
   const logoSrc = isDark ? logoDark : logoLight;
 
-  // Check for invite token in URL on mount
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const token = urlParams.get('parentInvite');
-    const currentPath = window.location.pathname;
+  // Stable callback for closing AuthModal (prevents infinite loops)
+  const handleAuthModalClose = useCallback(() => {
+    setShowAuthModal(false);
+    goToHome(); // Navigate to home after successful login
+  }, [goToHome]);
 
-    // Auto-open onboarding modal if on /login or /signup routes
-    if (currentPath === '/login' || currentPath === '/signup') {
-      setShowOnboarding(true);
+  // Check for invite token in URL and route changes
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const token = urlParams.get('parentInvite');
+
+    // Distinguish between login (existing users) and signup (new users)
+    // Only update state if it needs to change to prevent infinite loops
+    if (location.pathname === '/login') {
+      if (!showAuthModal) setShowAuthModal(true);
+      if (showOnboarding) setShowOnboarding(false);
+    } else if (location.pathname === '/signup') {
+      if (!showOnboarding) setShowOnboarding(true);
+      if (showAuthModal) setShowAuthModal(false);
+    } else {
+      // On root path, close both modals
+      if (showAuthModal) setShowAuthModal(false);
+      if (showOnboarding) setShowOnboarding(false);
     }
 
     if (token) {
@@ -42,6 +60,7 @@ export const LandingPage: React.FC = () => {
           setInviteInfo(invite);
           // Auto-open onboarding for invite acceptance
           setShowOnboarding(true);
+          setShowAuthModal(false);
         } else {
           console.warn('[LandingPage] No invite found for token:', token);
         }
@@ -49,19 +68,21 @@ export const LandingPage: React.FC = () => {
         console.error('[LandingPage] Error fetching invite:', error);
       });
     } else {
-      // Check localStorage for pending invite
-      const storedToken = localStorage.getItem('pendingInviteToken');
-      if (storedToken) {
-        console.log('[LandingPage] Restoring invite token from localStorage:', storedToken);
-        setInviteToken(storedToken);
-        authService.getInviteByToken(storedToken).then(invite => {
-          if (invite) {
-            setInviteInfo(invite);
-          }
-        });
+      // Check localStorage for pending invite (only on initial mount at root path)
+      if (location.pathname === '/') {
+        const storedToken = localStorage.getItem('pendingInviteToken');
+        if (storedToken) {
+          console.log('[LandingPage] Restoring invite token from localStorage:', storedToken);
+          setInviteToken(storedToken);
+          authService.getInviteByToken(storedToken).then(invite => {
+            if (invite) {
+              setInviteInfo(invite);
+            }
+          });
+        }
       }
     }
-  }, []);
+  }, [location.pathname, location.search]);
 
   if (showOnboarding) {
     return (
@@ -72,7 +93,10 @@ export const LandingPage: React.FC = () => {
           localStorage.removeItem('pendingInviteToken');
           goToHome(); // Navigate to home after onboarding
         }}
-        onCancel={() => setShowOnboarding(false)}
+        onCancel={() => {
+          setShowOnboarding(false);
+          goToLanding(); // Navigate back to landing page root
+        }}
         inviteToken={inviteToken}
         inviteInfo={inviteInfo}
       />
@@ -114,7 +138,7 @@ export const LandingPage: React.FC = () => {
           <div className="flex items-center gap-3">
             {/* Sign In Button */}
             <button
-              onClick={() => setShowOnboarding(true)}
+              onClick={goToLogin}
               className="px-4 py-2 rounded-lg font-semibold transition-all duration-200"
               style={{
                 backgroundColor: theme.colors.brand,
@@ -189,7 +213,7 @@ export const LandingPage: React.FC = () => {
 
             {/* CTA Button */}
             <button
-              onClick={() => setShowOnboarding(true)}
+              onClick={goToSignup}
               className="px-12 py-4 rounded-xl text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105"
               style={{
                 background: theme.gradients.brand,
@@ -715,7 +739,7 @@ export const LandingPage: React.FC = () => {
           </p>
 
           <button
-            onClick={() => setShowOnboarding(true)}
+            onClick={goToSignup}
             className="px-12 py-4 rounded-xl text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105"
             style={{
               background: theme.gradients.brand,
@@ -748,6 +772,12 @@ export const LandingPage: React.FC = () => {
           </p>
         </div>
       </footer>
+
+      {/* Auth Modal - for existing users to log in */}
+      <AuthModal
+        isOpen={showAuthModal}
+        onClose={handleAuthModalClose}
+      />
     </div>
   );
 };

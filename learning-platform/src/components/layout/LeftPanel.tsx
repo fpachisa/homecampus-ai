@@ -32,6 +32,8 @@ import { S4_MATH_INTEGRATION_SUBTOPICS } from '../../prompt-library/subjects/mat
 import type { IntegrationTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-integration';
 import { S4_MATH_PROBABILITY_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s4-probability';
 import type { ProbabilityTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-probability';
+import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
+import type { QuadraticFunctionsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -163,6 +165,13 @@ function getTopicIcon(topicId: string): string {
   if (topicId === 's4-math-probability-conditional') return '🔀';
   if (topicId === 's4-math-probability-applications') return '🎯';
 
+  // S4 Quadratic Functions icons
+  if (topicId === 's4-math-quad-fundamentals') return '📊';
+  if (topicId === 's4-math-quad-graphs-transformations') return '📈';
+  if (topicId === 's4-math-quad-key-features') return '🎯';
+  if (topicId === 's4-math-quad-finding-functions') return '🔍';
+  if (topicId === 's4-math-quad-inequalities') return '⚖️';
+
   return '📐';
 }
 
@@ -177,6 +186,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's4-math-differential-calculus') return 'Differential Calculus';
   if (category === 's4-math-integration') return 'Integration';
   if (category === 's4-math-probability') return 'Probability';
+  if (category === 's4-math-quad') return 'Quadratic Functions';
   if (category === 's3-math-surds-radicals') return 'Surds & Radicals';
   if (category === 's3-math-statistics') return 'Statistics';
   if (category === 's3-math-relations-functions') return 'Relations & Functions';
@@ -198,7 +208,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
     's3-math-coordinate-geometry', 's4-math-differential-calculus', 's4-math-integration',
-    's4-math-probability'
+    's4-math-probability', 's4-math-quad'
   ];
 
   const selectedCategory = pathId
@@ -342,6 +352,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 's4-math-probability') {
       return Object.entries(S4_MATH_PROBABILITY_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId | ProbabilityTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's4-math-quad') {
+      return Object.entries(S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId | ProbabilityTopicId | QuadraticFunctionsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

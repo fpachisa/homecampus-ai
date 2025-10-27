@@ -107,6 +107,13 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's4/math/probability/ProbabilityTrees': () => import('../notes/s4/math/probability/ProbabilityTrees'),
   's4/math/probability/ConditionalProbability': () => import('../notes/s4/math/probability/ConditionalProbability'),
   's4/math/probability/Applications': () => import('../notes/s4/math/probability/Applications'),
+
+  // S4 Quadratic Functions notes
+  's4/math/quadratic-functions/QuadraticFundamentals': () => import('../notes/s4/math/quadratic-functions/QuadraticFundamentals'),
+  's4/math/quadratic-functions/GraphsTransformations': () => import('../notes/s4/math/quadratic-functions/GraphsTransformations'),
+  's4/math/quadratic-functions/KeyFeatures': () => import('../notes/s4/math/quadratic-functions/KeyFeatures'),
+  's4/math/quadratic-functions/FindingQuadratics': () => import('../notes/s4/math/quadratic-functions/FindingQuadratics'),
+  's4/math/quadratic-functions/QuadraticInequalities': () => import('../notes/s4/math/quadratic-functions/QuadraticInequalities'),
   // Add more note components here as you create them
   // 'p4/science/biology/PlantParts': () => import('../notes/p4/science/biology/PlantParts'),
 };
