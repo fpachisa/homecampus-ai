@@ -102,7 +102,7 @@ export async function saveLearnProgress(
 ): Promise<void> {
   try {
     // Save conversation
-    const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}/conversation`);
+    const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}`);
     await setDoc(convRef, conversation);
 
     // Update summary for parent dashboard
@@ -131,7 +131,7 @@ export async function loadLearnProgress(
   uid: string,
   subtopicId: string
 ): Promise<LearnConversation | null> {
-  const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}/conversation`);
+  const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}`);
   const snap = await getDoc(convRef);
   return snap.exists() ? snap.data() as LearnConversation : null;
 }
@@ -395,7 +395,7 @@ firestore/
 **Query Examples:**
 ```typescript
 // Student: Load specific subtopic (Learn mode)
-doc(firestore, `users/${uid}/learn/${subtopicId}/conversation`)
+doc(firestore, `users/${uid}/learn/${subtopicId}`)
 // Example: users/uid123/learn/s3-math-trigonometry-basic-ratios/conversation
 
 // Student: Load practice for topic
@@ -891,7 +891,7 @@ interface PracticeProgress {
 ```typescript
 // Single read - 80-100 KB
 const subtopicId = 's3-math-trigonometry-basic-ratios';
-const conversationRef = doc(firestore, `users/${uid}/learn/${subtopicId}/conversation`);
+const conversationRef = doc(firestore, `users/${uid}/learn/${subtopicId}`);
 const snap = await getDoc(conversationRef);
 ```
 
@@ -1163,7 +1163,7 @@ interface ConsistencyStrategy {
           };
 
           // Write both documents in transaction
-          const conversationRef = doc(firestore, `users/${uid}/learn/${subtopicId}/conversation`);
+          const conversationRef = doc(firestore, `users/${uid}/learn/${subtopicId}`);
           transaction.set(conversationRef, conversationUpdate);
           transaction.set(summaryRef, newSummary, { merge: true });
         });
@@ -1338,7 +1338,7 @@ async function archiveOldMessages(
       // Update conversation with remaining messages
       const conversationRef = doc(
         firestore,
-        `users/${uid}/learn/${subtopicId}/conversation`
+        `users/${uid}/learn/${subtopicId}`
       );
       transaction.update(conversationRef, {
         messages: toKeep,
@@ -2099,7 +2099,7 @@ export async function saveLearnProgress(
     const batch = writeBatch(firestore);
 
     // 1. Conversation document
-    const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}/conversation`);
+    const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}`);
     batch.set(convRef, conversation);
 
     // 2. Summary for parent dashboard
@@ -2132,7 +2132,7 @@ export async function loadLearnProgress(
   uid: string,
   subtopicId: string
 ): Promise<LearnConversation | null> {
-  const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}/conversation`);
+  const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}`);
   const snap = await getDoc(convRef);
   return snap.exists() ? snap.data() as LearnConversation : null;
 }

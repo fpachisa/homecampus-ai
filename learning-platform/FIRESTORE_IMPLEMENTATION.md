@@ -143,7 +143,7 @@ This document guides you through deploying and using the Firestore integration f
    ```bash
    # Go to Firestore Database
    # Navigate to:
-   # - users/test-user/learn/s3-math-test/conversation
+   # - users/test-user/learn/s3-math-test
    # - users/test-user/progressSummary
    #
    # You should see the saved data
@@ -261,7 +261,7 @@ return (
 
 ### Learn Mode (Subtopic Level)
 ```
-users/{userId}/learn/{subtopicId}/conversation
+users/{userId}/learn/{subtopicId}
 - subtopicId: "s3-math-trigonometry-basic-ratios"
 - topicId: "s3-math-trigonometry"
 - messages: Message[]

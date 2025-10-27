@@ -4,10 +4,10 @@
  * Following the Hybrid Collection Model (Option D) from FIRESTORE_DATA_STRATEGY.md
  *
  * Collection Structure:
- * - users/{userId}/profile
+ * - users/{userId} (main user profile document)
  * - users/{userId}/progressSummary
- * - users/{userId}/learn/{subtopicId}/conversation
- * - users/{userId}/practice/{topicId}/progress
+ * - users/{userId}/learn/{subtopicId}
+ * - users/{userId}/practice/{topicId}
  */
 
 import { Timestamp } from 'firebase/firestore';

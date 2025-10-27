@@ -53,14 +53,14 @@ service cloud.firestore {
         allow write: if isOwner(userId);
       }
 
-      // Learn mode conversations (subtopic level: users/{uid}/learn/{subtopicId}/conversation)
-      match /learn/{subtopicId}/conversation {
+      // Learn mode conversations (subtopic level: users/{uid}/learn/{subtopicId})
+      match /learn/{subtopicId} {
         allow read: if isOwner(userId) || isParent(userId);
         allow write: if isOwner(userId) && validateProgressUpdate() && !rateLimit();
       }
 
-      // Practice mode progress (topic level: users/{uid}/practice/{topicId}/progress)
-      match /practice/{topicId}/progress {
+      // Practice mode progress (topic level: users/{uid}/practice/{topicId})
+      match /practice/{topicId} {
         allow read: if isOwner(userId) || isParent(userId);
         allow write: if isOwner(userId) && !rateLimit();
       }

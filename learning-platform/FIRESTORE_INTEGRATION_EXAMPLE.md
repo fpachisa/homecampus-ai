@@ -283,7 +283,7 @@ After running your app:
 2. Select your project (homecampus-ai)
 3. Go to Firestore Database
 4. You should see:
-   - `users/{userId}/learn/{subtopicId}/conversation`
+   - `users/{userId}/learn/{subtopicId}`
    - `users/{userId}/progressSummary`
 
 ### 2. Test Offline Mode
@@ -312,7 +312,7 @@ Every save creates/updates two documents:
 
 ### 1. Conversation Document (~80-100KB)
 ```
-users/{userId}/learn/{subtopicId}/conversation
+users/{userId}/learn/{subtopicId}
 ├── messages: Array<Message>           // Full chat history
 ├── sectionProgress: {...}             // Current section, mastered sections
 ├── problemState: {...}                // Current problem details

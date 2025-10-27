@@ -11,7 +11,8 @@
  * - Simple Retry Logic: 3 retries with exponential backoff
  *
  * Collection Paths:
- * - users/{uid}/learn/{subtopicId}/conversation
+ * - users/{uid}/learn/{subtopicId}
+ * - users/{uid}/practice/{topicId}
  * - users/{uid}/progressSummary
  */
 
@@ -63,7 +64,7 @@ export async function saveLearnProgress(
     const batch = writeBatch(firestore);
 
     // 1. Save conversation document
-    const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}/conversation`);
+    const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}`);
     batch.set(convRef, {
       ...conversation,
       lastUpdated: serverTimestamp()
@@ -119,7 +120,7 @@ export async function loadLearnProgress(
   uid: string,
   subtopicId: string
 ): Promise<LearnConversation | null> {
-  const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}/conversation`);
+  const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}`);
   const snap = await getDoc(convRef);
 
   if (!snap.exists()) {
@@ -312,7 +313,7 @@ export async function savePracticeProgress(
     const batch = writeBatch(firestore);
 
     // 1. Save practice progress document
-    const progressRef = doc(firestore, `users/${uid}/practice/${topicId}/progress`);
+    const progressRef = doc(firestore, `users/${uid}/practice/${topicId}`);
     batch.set(progressRef, {
       ...progress,
       lastUpdated: serverTimestamp()
@@ -361,7 +362,7 @@ export async function loadPracticeProgress(
   uid: string,
   topicId: string
 ): Promise<PracticeProgress | null> {
-  const progressRef = doc(firestore, `users/${uid}/practice/${topicId}/progress`);
+  const progressRef = doc(firestore, `users/${uid}/practice/${topicId}`);
   const snap = await getDoc(progressRef);
 
   if (!snap.exists()) {
