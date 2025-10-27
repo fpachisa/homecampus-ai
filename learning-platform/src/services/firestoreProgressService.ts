@@ -23,19 +23,12 @@ import {
   serverTimestamp,
   Timestamp,
   collection,
-  query,
-  orderBy,
   getDocs
 } from 'firebase/firestore';
 import { firestore } from './firebase';
 import type {
   LearnConversation,
-  ProgressSummary,
-  LearnSubtopicSummary,
-  FirestoreMessage,
-  messageToFirestore,
-  messageFromFirestore,
-  calculateProgress
+  ProgressSummary
 } from '../types/firestore';
 import type { ConversationState, SectionProgressState } from '../types/types';
 
@@ -181,6 +174,7 @@ export async function listLearnSubtopics(uid: string): Promise<string[]> {
  * @param topicId - Topic ID
  * @param displayName - Display name
  * @param grade - Grade level
+ * @param sectionProgress - Section progression state
  * @returns Firestore-compatible conversation
  */
 export function conversationStateToFirestore(
@@ -188,14 +182,9 @@ export function conversationStateToFirestore(
   subtopicId: string,
   topicId: string,
   displayName: string,
-  grade: string
+  grade: string,
+  sectionProgress: SectionProgressState
 ): LearnConversation {
-  // Get section progress from state or create default
-  const sectionProgress: SectionProgressState = state.problemState?.sectionProgress || {
-    currentSection: 'introduction',
-    masteredSections: [],
-    sectionHistory: []
-  };
 
   return {
     subtopicId,
@@ -232,31 +221,33 @@ export function conversationStateToFirestore(
  * Helper function to convert Firestore data to local state.
  *
  * @param conversation - Firestore conversation
- * @returns Local conversation state
+ * @returns Object with conversation state and section progress
  */
 export function conversationStateFromFirestore(
   conversation: LearnConversation
-): ConversationState {
+): { conversationState: ConversationState; sectionProgress: SectionProgressState } {
   return {
-    messages: conversation.messages.map(convertMessageFromFirestore),
-    currentProblemType: conversation.problemState?.currentProblemType || 1,
-    problemState: conversation.problemState ? {
-      currentProblemId: conversation.problemState.currentProblemId,
-      hintsGivenForCurrentProblem: conversation.problemState.hintsProvided,
-      attemptsForCurrentProblem: conversation.problemState.attempts,
-      problemStartTime: new Date(),
-      currentProblemText: conversation.problemState.currentProblemText,
-      problemType: conversation.problemState.currentProblemType,
-      originalMathTool: conversation.problemState.mathTool,
-      sectionProgress: conversation.sectionProgress
-    } : undefined,
-    sessionStats: {
-      problemsAttempted: conversation.sessionStats.problemsAttempted,
-      correctAnswers: conversation.sessionStats.correctAnswers,
-      hintsProvided: conversation.sessionStats.hintsProvided,
-      startTime: conversation.sessionStats.startTime.toDate()
+    conversationState: {
+      messages: conversation.messages.map(convertMessageFromFirestore),
+      currentProblemType: conversation.problemState?.currentProblemType || 1,
+      problemState: conversation.problemState ? {
+        currentProblemId: conversation.problemState.currentProblemId,
+        hintsGivenForCurrentProblem: conversation.problemState.hintsProvided,
+        attemptsForCurrentProblem: conversation.problemState.attempts,
+        problemStartTime: new Date(),
+        currentProblemText: conversation.problemState.currentProblemText,
+        problemType: conversation.problemState.currentProblemType,
+        originalMathTool: conversation.problemState.mathTool
+      } : undefined,
+      sessionStats: {
+        problemsAttempted: conversation.sessionStats.problemsAttempted,
+        correctAnswers: conversation.sessionStats.correctAnswers,
+        hintsProvided: conversation.sessionStats.hintsProvided,
+        startTime: conversation.sessionStats.startTime.toDate()
+      },
+      studentProfile: conversation.studentProfile
     },
-    studentProfile: conversation.studentProfile
+    sectionProgress: conversation.sectionProgress
   };
 }
 

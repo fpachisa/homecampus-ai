@@ -21,8 +21,7 @@ import {
   conversationStateToFirestore,
   conversationStateFromFirestore
 } from '../services/firestoreProgressService';
-import type { ConversationState } from '../types/types';
-import type { LearnConversation } from '../types/firestore';
+import type { ConversationState, SectionProgressState } from '../types/types';
 
 export interface UseFirestoreProgressOptions {
   subtopicId: string;
@@ -37,8 +36,8 @@ export interface UseFirestoreProgressOptions {
 export interface UseFirestoreProgressReturn {
   loading: boolean;
   error: Error | null;
-  saveProgress: (state: ConversationState) => Promise<void>;
-  loadProgress: () => Promise<ConversationState | null>;
+  saveProgress: (state: ConversationState, sectionProgress: SectionProgressState) => Promise<void>;
+  loadProgress: () => Promise<{ conversationState: ConversationState; sectionProgress: SectionProgressState } | null>;
   lastSaved: Date | null;
   isSaving: boolean;
 }
@@ -55,21 +54,19 @@ export function useFirestoreProgress(
     topicId,
     displayName,
     grade,
-    autoLoad = true,
-    saveDebounceMs = 2000
+    autoLoad = true
   } = options;
 
   const [loading, setLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<Error | null>(null);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
-  const [saveTimeout, setSaveTimeout] = useState<NodeJS.Timeout | null>(null);
 
   /**
    * Save conversation state to Firestore
    */
   const saveProgress = useCallback(
-    async (state: ConversationState): Promise<void> => {
+    async (state: ConversationState, sectionProgress: SectionProgressState): Promise<void> => {
       if (!userId) {
         console.warn('Cannot save progress: userId is null');
         return;
@@ -84,7 +81,8 @@ export function useFirestoreProgress(
           subtopicId,
           topicId,
           displayName,
-          grade
+          grade,
+          sectionProgress
         );
 
         await saveLearnProgress(userId, subtopicId, firestoreConv);
@@ -102,31 +100,9 @@ export function useFirestoreProgress(
   );
 
   /**
-   * Save with debounce to avoid excessive writes
-   */
-  const debouncedSave = useCallback(
-    (state: ConversationState): void => {
-      // Clear existing timeout
-      if (saveTimeout) {
-        clearTimeout(saveTimeout);
-      }
-
-      // Set new timeout
-      const timeout = setTimeout(() => {
-        saveProgress(state).catch(err => {
-          console.error('Debounced save failed:', err);
-        });
-      }, saveDebounceMs);
-
-      setSaveTimeout(timeout);
-    },
-    [saveProgress, saveDebounceMs, saveTimeout]
-  );
-
-  /**
    * Load conversation state from Firestore
    */
-  const loadProgress = useCallback(async (): Promise<ConversationState | null> => {
+  const loadProgress = useCallback(async (): Promise<{ conversationState: ConversationState; sectionProgress: SectionProgressState } | null> => {
     if (!userId) {
       return null;
     }
@@ -160,17 +136,6 @@ export function useFirestoreProgress(
       loadProgress();
     }
   }, [autoLoad, userId, loadProgress]);
-
-  /**
-   * Cleanup timeout on unmount
-   */
-  useEffect(() => {
-    return () => {
-      if (saveTimeout) {
-        clearTimeout(saveTimeout);
-      }
-    };
-  }, [saveTimeout]);
 
   return {
     loading,

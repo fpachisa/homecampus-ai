@@ -10,7 +10,7 @@
  * - users/{userId}/practice/{topicId}/progress
  */
 
-import type { Timestamp } from 'firebase/firestore';
+import { Timestamp } from 'firebase/firestore';
 import type { Message, SectionProgressState, MathTool } from './types';
 
 // ============================================
