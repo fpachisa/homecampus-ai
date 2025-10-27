@@ -1,0 +1,115 @@
+rules_version = '2';
+
+/**
+ * Firestore Security Rules - MVP Implementation
+ *
+ * Architecture: Hybrid Collection Model (Option D)
+ *
+ * Collection Structure:
+ * - users/{userId}/profile
+ * - users/{userId}/progressSummary
+ * - users/{userId}/learn/{subtopicId}/conversation
+ * - users/{userId}/practice/{topicId}/progress
+ *
+ * Security Model:
+ * - Students can read/write their own data
+ * - Parents can read their children's data (read-only)
+ * - Rate limiting: Prevents rapid writes (1-second minimum between updates)
+ */
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ============================================
+    // HELPER FUNCTIONS
+    // ============================================
+
+    // Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Check if user owns the data
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Check if user is a parent of the child
+    function isParent(childId) {
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/users/$(childId)/profile) &&
+        get(/databases/$(database)/documents/users/$(childId)/profile)
+          .data.parents.hasAny([request.auth.uid]);
+    }
+
+    // Rate limiting - prevent rapid writes
+    function rateLimit() {
+      return request.time < resource.data.lastUpdated + duration.value(1, 's');
+    }
+
+    // Validate progress update structure
+    function validateProgressUpdate() {
+      return request.resource.data.keys().hasAll(['lastUpdated', 'messages']) &&
+             request.resource.data.messages is list &&
+             request.resource.data.messages.size() < 1500; // Prevent abuse
+    }
+
+    // Validate profile update structure
+    function validateProfileUpdate() {
+      return request.resource.data.keys().hasAll(['uid', 'email', 'displayName', 'role']) &&
+             request.resource.data.role in ['student', 'parent', 'admin'];
+    }
+
+    // ============================================
+    // USER DATA RULES
+    // ============================================
+
+    match /users/{userId} {
+
+      // User profile
+      match /profile {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) && validateProfileUpdate();
+      }
+
+      // Progress summary (denormalized for parent dashboard)
+      match /progressSummary {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) && !rateLimit();
+      }
+
+      // Learn mode conversations (subtopic level)
+      match /learn/{subtopicId}/conversation {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) && validateProgressUpdate() && !rateLimit();
+      }
+
+      // Practice mode progress (topic level)
+      match /practice/{topicId}/progress {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) && !rateLimit();
+      }
+    }
+
+    // ============================================
+    // PARENT-CHILD INVITES (Existing System)
+    // ============================================
+
+    match /invites/{inviteId} {
+      allow create: if isAuthenticated();
+      allow read: if true; // Anyone can read invites (they contain invite codes)
+      allow update: if isAuthenticated() &&
+        (resource.data.fromUid == request.auth.uid ||
+         request.resource.data.acceptedByUid == request.auth.uid);
+      allow delete: if isAuthenticated() && resource.data.fromUid == request.auth.uid;
+    }
+
+    // ============================================
+    // DENY ALL OTHER ACCESS
+    // ============================================
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

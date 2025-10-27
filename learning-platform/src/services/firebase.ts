@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 // Load .env in Node environments (scripts)
@@ -32,5 +32,17 @@ export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const firestore = getFirestore(app);
 export const storage = getStorage(app);
+
+// Enable offline persistence (MVP requirement)
+// Only enable in browser environment
+if (typeof window !== 'undefined') {
+  enableIndexedDbPersistence(firestore).catch((err) => {
+    if (err.code === 'failed-precondition') {
+      console.log('Offline mode disabled: Multiple tabs open');
+    } else if (err.code === 'unimplemented') {
+      console.log('Offline mode not available in this browser');
+    }
+  });
+}
 
 export default app;
