@@ -189,8 +189,8 @@ export function conversationStateToFirestore(
   grade: string,
   sectionProgress: SectionProgressState
 ): LearnConversation {
-
-  return {
+  // Build the base conversation object
+  const conversation: LearnConversation = {
     subtopicId,
     topicId,
     categoryId: topicId, // Alias for backward compatibility
@@ -198,14 +198,6 @@ export function conversationStateToFirestore(
     displayName,
     messages: state.messages.map(convertMessageToFirestore),
     sectionProgress,
-    problemState: state.problemState ? {
-      currentProblemId: state.problemState.currentProblemId,
-      currentProblemText: state.problemState.currentProblemText,
-      currentProblemType: state.problemState.problemType,
-      hintsProvided: state.problemState.hintsGivenForCurrentProblem,
-      attempts: state.problemState.attemptsForCurrentProblem,
-      mathTool: state.problemState.originalMathTool
-    } : undefined,
     sessionStats: {
       problemsAttempted: state.sessionStats.problemsAttempted,
       correctAnswers: state.sessionStats.correctAnswers,
@@ -217,6 +209,21 @@ export function conversationStateToFirestore(
     lastUpdated: Timestamp.now(),
     createdAt: Timestamp.now()
   };
+
+  // Only add problemState if it exists (Firestore doesn't allow undefined)
+  if (state.problemState) {
+    conversation.problemState = {
+      currentProblemId: state.problemState.currentProblemId,
+      currentProblemText: state.problemState.currentProblemText,
+      currentProblemType: state.problemState.problemType,
+      hintsProvided: state.problemState.hintsGivenForCurrentProblem,
+      attempts: state.problemState.attemptsForCurrentProblem,
+      // Only include mathTool if it's defined
+      ...(state.problemState.originalMathTool && { mathTool: state.problemState.originalMathTool })
+    };
+  }
+
+  return conversation;
 }
 
 /**

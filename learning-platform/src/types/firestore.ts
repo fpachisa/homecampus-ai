@@ -261,12 +261,24 @@ export interface SessionHistoryEntry {
 
 /**
  * Convert local Message to Firestore-compatible FirestoreMessage
+ * Strips undefined values (Firestore doesn't allow undefined)
  */
 export function messageToFirestore(message: Message): FirestoreMessage {
-  return {
-    ...message,
+  const firestoreMessage: any = {
+    id: message.id,
+    role: message.role,
+    content: message.content,
     timestamp: Timestamp.fromDate(message.timestamp)
   };
+
+  // Only add optional fields if they're defined (not undefined)
+  if (message.sectionId !== undefined) firestoreMessage.sectionId = message.sectionId;
+  if (message.speechContent !== undefined) firestoreMessage.speechContent = message.speechContent;
+  if (message.displayContent !== undefined) firestoreMessage.displayContent = message.displayContent;
+  if (message.metadata !== undefined) firestoreMessage.metadata = message.metadata;
+  if (message.visualization !== undefined) firestoreMessage.visualization = message.visualization;
+
+  return firestoreMessage as FirestoreMessage;
 }
 
 /**
