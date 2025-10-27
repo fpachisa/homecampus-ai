@@ -430,8 +430,8 @@ export function pathProgressToFirestore(
   };
 
   allNodes.forEach(node => {
-    const layer = node.layer as any;
-    if (layerProgress[layer]) {
+    const layer = node.layer as 'foundation' | 'integration' | 'application' | 'examPractice';
+    if (layer in layerProgress) {
       layerProgress[layer].total++;
       if (pathProgress.nodes[node.id]?.status === 'completed') {
         layerProgress[layer].completed++;

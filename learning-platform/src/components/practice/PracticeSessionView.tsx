@@ -12,7 +12,6 @@ import { pathProgressService } from '../../services/pathProgressService';
 import { pathConfigLoader } from '../../services/pathConfigLoader';
 import {
   savePracticeProgress,
-  loadPracticeProgress,
   pathProgressToFirestore
 } from '../../services/firestoreProgressService';
 import { MathToolRenderer } from './MathToolRenderer';

@@ -366,33 +366,6 @@ const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Progress persistence functions
-  const loadProgress = async () => {
-    if (!user?.uid) return;
-
-    try {
-      const savedConversation = await loadLearnProgress(user.uid, topicId);
-      if (savedConversation) {
-        const { conversationState: loadedState, sectionProgress: loadedSection } =
-          conversationStateFromFirestore(savedConversation);
-
-        // Restore session stats and problem type
-        setState(prev => ({
-          ...prev,
-          sessionStats: loadedState.sessionStats,
-          currentProblemType: loadedState.currentProblemType
-        }));
-
-        // Restore section progress
-        setSectionProgress(loadedSection);
-
-        console.log('✅ Progress loaded from Firestore');
-      }
-    } catch (error) {
-      console.error('Failed to load progress from Firestore:', error);
-    }
-  };
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const createNewProblemState = (problemText: string, problemType: number, mathTool?: import('../types/types').MathTool): ProblemState => {
     return {
