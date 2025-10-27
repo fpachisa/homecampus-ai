@@ -44,6 +44,37 @@ import {
 } from '../types/firestore';
 
 /**
+ * Recursively remove undefined values from an object
+ * Firestore doesn't allow undefined values - they must be null or omitted
+ */
+function stripUndefined(obj: any): any {
+  if (obj === null || obj === undefined) {
+    return null;
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map(item => stripUndefined(item));
+  }
+
+  if (obj instanceof Timestamp || obj instanceof Date) {
+    return obj;
+  }
+
+  if (typeof obj === 'object') {
+    const cleaned: any = {};
+    for (const key in obj) {
+      const value = obj[key];
+      if (value !== undefined) {
+        cleaned[key] = stripUndefined(value);
+      }
+    }
+    return cleaned;
+  }
+
+  return obj;
+}
+
+/**
  * Save Learn Mode Progress
  *
  * Saves conversation data and updates progress summary in a single batch.
@@ -65,10 +96,11 @@ export async function saveLearnProgress(
 
     // 1. Save conversation document
     const convRef = doc(firestore, `users/${uid}/learn/${subtopicId}`);
-    batch.set(convRef, {
+    const cleanedConversation = stripUndefined({
       ...conversation,
       lastUpdated: serverTimestamp()
     });
+    batch.set(convRef, cleanedConversation);
 
     // 2. Update progress summary for parent dashboard
     const summaryRef = doc(firestore, 'progressSummaries', uid);
@@ -94,7 +126,8 @@ export async function saveLearnProgress(
       lastUpdated: serverTimestamp() as Timestamp
     };
 
-    batch.set(summaryRef, summaryUpdate, { merge: true });
+    const cleanedSummaryUpdate = stripUndefined(summaryUpdate);
+    batch.set(summaryRef, cleanedSummaryUpdate, { merge: true });
 
     await batch.commit();
   } catch (error) {
@@ -321,10 +354,11 @@ export async function savePracticeProgress(
 
     // 1. Save practice progress document
     const progressRef = doc(firestore, `users/${uid}/practice/${topicId}`);
-    batch.set(progressRef, {
+    const cleanedProgress = stripUndefined({
       ...progress,
       lastUpdated: serverTimestamp()
     });
+    batch.set(progressRef, cleanedProgress);
 
     // 2. Update progress summary for parent dashboard
     const summaryRef = doc(firestore, 'progressSummaries', uid);
@@ -343,7 +377,8 @@ export async function savePracticeProgress(
       lastUpdated: serverTimestamp() as Timestamp
     };
 
-    batch.set(summaryRef, summaryUpdate, { merge: true });
+    const cleanedSummaryUpdate = stripUndefined(summaryUpdate);
+    batch.set(summaryRef, cleanedSummaryUpdate, { merge: true });
 
     await batch.commit();
   } catch (error) {
