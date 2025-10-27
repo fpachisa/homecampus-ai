@@ -19,6 +19,34 @@ class ProgressSyncService {
   private lastSaveTime: number = 0;
 
   /**
+   * Sanitize data for Firestore by removing undefined values
+   * Firestore doesn't allow undefined - must use null or omit the field
+   */
+  private sanitizeForFirestore(obj: any): any {
+    if (obj === null || obj === undefined) {
+      return null;
+    }
+
+    if (Array.isArray(obj)) {
+      return obj.map(item => this.sanitizeForFirestore(item));
+    }
+
+    if (typeof obj === 'object') {
+      const sanitized: any = {};
+      for (const key in obj) {
+        const value = obj[key];
+        // Skip undefined values entirely (don't include them)
+        if (value !== undefined) {
+          sanitized[key] = this.sanitizeForFirestore(value);
+        }
+      }
+      return sanitized;
+    }
+
+    return obj;
+  }
+
+  /**
    * Start automatic progress syncing
    * @param uid User ID (for Firestore) or null (for localStorage)
    */
@@ -108,29 +136,50 @@ class ProgressSyncService {
    * Save to Firestore (authenticated users)
    */
   private async saveToFirestore(uid: string, snapshot: ProgressSnapshot): Promise<void> {
+    // Validate UID before attempting Firestore operation
+    if (!uid || uid === 'guest' || uid.length < 10) {
+      console.warn('⚠️ Invalid UID for Firestore save, using localStorage instead:', uid);
+      this.saveToLocalStorage(snapshot);
+      return;
+    }
+
     const docRef = doc(firestore, 'progress', uid);
 
     try {
+      // Sanitize data to remove undefined values (Firestore doesn't allow them)
+      const sanitized = this.sanitizeForFirestore(snapshot);
+
       // Check if document exists
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
         // Update existing document
         await updateDoc(docRef, {
-          ...snapshot,
+          ...sanitized,
           lastUpdated: new Date().toISOString(),
         });
       } else {
         // Create new document
         await setDoc(docRef, {
-          ...snapshot,
+          ...sanitized,
           createdAt: new Date().toISOString(),
           lastUpdated: new Date().toISOString(),
         });
       }
-    } catch (error) {
+
+      console.log(`✅ Saved to Firestore for user ${uid}`);
+    } catch (error: any) {
       console.error('Failed to save to Firestore:', error);
+
+      // Log additional details for permission errors
+      if (error?.code === 'permission-denied') {
+        console.error('❌ Permission denied - User may not be authenticated or document path incorrect');
+        console.error('   UID:', uid);
+        console.error('   Document path:', `progress/${uid}`);
+      }
+
       // Fallback to localStorage on error
+      console.warn('⚠️ Falling back to localStorage');
       this.saveToLocalStorage(snapshot);
     }
   }

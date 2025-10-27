@@ -74,7 +74,7 @@ export const useSessionPersistence = ({
         topicId,
         categoryId: topicId.split('-').slice(0, -1).join('-'), // Extract category from topicId
         messages: conversationState.messages,
-        problemState,
+        ...(problemState && { problemState }), // Only include if defined
         sessionStats: {
           problemsAttempted: conversationState.sessionStats.problemsAttempted,
           correctAnswers: conversationState.sessionStats.correctAnswers,
@@ -129,7 +129,7 @@ export const useSessionPersistence = ({
         topicId,
         categoryId: topicId.split('-').slice(0, -1).join('-'),
         messages: conversationState.messages,
-        problemState,
+        ...(problemState && { problemState }), // Only include if defined
         sessionStats: {
           problemsAttempted: conversationState.sessionStats.problemsAttempted,
           correctAnswers: conversationState.sessionStats.correctAnswers,
