@@ -31,7 +31,7 @@ export function generateInviteEmail(data: InviteEmailData): string {
     </p>
 
     <!-- Account Details Box -->
-    <div style="background-color: #f3f4f6; border-left: 4px solid #667eea; padding: 20px; margin: 24px 0; border-radius: 4px;">
+    <div style="background-color: #FFF8F5; border-left: 4px solid #D97757; padding: 20px; margin: 24px 0; border-radius: 4px;">
       <p style="margin: 0 0 12px; color: #374151; font-size: 14px; font-weight: 600;">
         Your Account Details:
       </p>
@@ -46,7 +46,7 @@ export function generateInviteEmail(data: InviteEmailData): string {
     <!-- CTA Button -->
     <table role="presentation" style="margin: 32px 0;">
       <tr>
-        <td style="border-radius: 6px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <td style="border-radius: 6px; background: linear-gradient(135deg, #D97757 0%, #C46649 100%);">
           <a href="${inviteUrl}" style="display: inline-block; padding: 16px 40px; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 6px;">
             Accept Invite & Create Account
           </a>
@@ -58,7 +58,7 @@ export function generateInviteEmail(data: InviteEmailData): string {
     <p style="margin: 24px 0 16px; color: #6b7280; font-size: 14px; line-height: 1.6;">
       Or copy and paste this link into your browser:
     </p>
-    <p style="margin: 0 0 24px; color: #667eea; font-size: 14px; word-break: break-all;">
+    <p style="margin: 0 0 24px; color: #D97757; font-size: 14px; word-break: break-all;">
       ${inviteUrl}
     </p>
 

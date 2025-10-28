@@ -37,7 +37,7 @@ export function baseEmailTemplate({ title, preheader, content }: BaseEmailProps)
 
           <!-- Header -->
           <tr>
-            <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px 8px 0 0;">
+            <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #D97757 0%, #C46649 100%); border-radius: 8px 8px 0 0;">
               <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">
                 📚 Home Campus
               </h1>
@@ -61,7 +61,7 @@ export function baseEmailTemplate({ title, preheader, content }: BaseEmailProps)
                 AI-Powered Home Learning Platform
               </p>
               <div style="margin-top: 20px;">
-                <a href="mailto:support@homecampus.com" style="color: #667eea; text-decoration: none; font-size: 12px;">Contact Support</a>
+                <a href="mailto:support@homecampus.com" style="color: #D97757; text-decoration: none; font-size: 12px;">Contact Support</a>
               </div>
             </td>
           </tr>
