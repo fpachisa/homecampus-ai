@@ -2453,24 +2453,15 @@ export class ConfigLoader {
       }
     };
 
-    if (mockConfigs[subtopicId]) {
-      const mockConfig = mockConfigs[subtopicId];
-
-      // Cache the mock config
-      this.cache.set(subtopicId, mockConfig);
-      this.cacheTimestamps.set(subtopicId, Date.now());
-
-      return mockConfig;
-    }
-
+    // Load from Firestore
     console.log(`[ConfigLoader] Loading ${subtopicId} from Firestore`);
 
-    // Load from Firestore
     const docRef = doc(firestore, 'subtopics', subtopicId);
     const docSnap = await getDoc(docRef);
 
     if (!docSnap.exists()) {
-      throw new Error(`Subtopic configuration not found: ${subtopicId}`);
+      console.error(`[ConfigLoader] ❌ Config not found in Firestore: ${subtopicId}`);
+      throw new Error(`Subtopic configuration not found: ${subtopicId}. Please ensure it has been migrated to Firestore.`);
     }
 
     const config = this.deserializeConfig(docSnap.data());
@@ -2479,6 +2470,7 @@ export class ConfigLoader {
     this.cache.set(subtopicId, config);
     this.cacheTimestamps.set(subtopicId, Date.now());
 
+    console.log(`[ConfigLoader] ✅ Loaded from Firestore: ${subtopicId}`);
     return config;
   }
 

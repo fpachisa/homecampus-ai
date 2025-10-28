@@ -1,0 +1,107 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ============================================
+    // HELPER FUNCTIONS
+    // ============================================
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isParent(childId) {
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/users/$(childId)) &&
+        get(/databases/$(database)/documents/users/$(childId)).data.parents.hasAny([request.auth.uid]);
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        request.auth.token.admin == true;
+    }
+
+    // Rate limiting helper - prevent rapid writes
+    function rateLimit() {
+      return request.time < resource.data.lastUpdated + duration.value(1, 's');
+    }
+
+    // ============================================
+    // USER DATA COLLECTIONS
+    // ============================================
+
+    // User documents (profiles)
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isParent(userId);
+      allow write: if isOwner(userId);
+
+      // Learn mode conversations (subtopic level)
+      match /learn/{subtopicId} {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) && !rateLimit();
+      }
+
+      // Practice mode progress (topic level)
+      match /practice/{topicId} {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) && !rateLimit();
+      }
+    }
+
+    // Progress summaries (denormalized for parent dashboard)
+    match /progressSummaries/{userId} {
+      allow read: if isOwner(userId) || isParent(userId);
+      allow write: if isOwner(userId) && !rateLimit();
+    }
+
+    // ============================================
+    // CURRICULUM COLLECTIONS (Public Read)
+    // ============================================
+
+    // Subtopic configurations
+    // Contains: notesComponent paths, scoring configs, learning objectives
+    match /subtopics/{subtopicId} {
+      // Public read - anyone can view curriculum
+      allow read: if true;
+
+      // Admin write only - content management
+      allow write: if isAdmin();
+    }
+
+    // Topic metadata (future)
+    // Contains: topic-level information, icon, subtopic lists
+    match /topics/{topicId} {
+      // Public read - anyone can view curriculum
+      allow read: if true;
+
+      // Admin write only - content management
+      allow write: if isAdmin();
+    }
+
+    // ============================================
+    // PARENT-CHILD INVITES (Existing)
+    // ============================================
+
+    match /invites/{inviteId} {
+      allow create: if isAuthenticated();
+      allow read: if true;
+      allow update: if isAuthenticated() &&
+        (resource.data.fromUid == request.auth.uid ||
+         request.resource.data.acceptedByUid == request.auth.uid);
+      allow delete: if isAuthenticated() && resource.data.fromUid == request.auth.uid;
+    }
+
+    // ============================================
+    // DENY ALL OTHER ACCESS
+    // ============================================
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
