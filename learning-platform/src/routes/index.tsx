@@ -35,8 +35,14 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 };
 
 // Protected route wrapper - requires authentication
-export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const { user, loading } = useAuth();
+export const ProtectedRoute = ({
+  children,
+  skipOnboardingCheck = false
+}: {
+  children: React.ReactNode;
+  skipOnboardingCheck?: boolean;
+}) => {
+  const { user, loading, needsProfileSetup } = useAuth();
 
   if (loading) {
     return <PageLoader />;
@@ -44,6 +50,12 @@ export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 
   if (!user) {
     return <Navigate to="/login" replace />;
+  }
+
+  // Redirect to onboarding if user needs to complete profile setup
+  // Skip this check for the onboarding page itself to prevent infinite loop
+  if (!skipOnboardingCheck && needsProfileSetup) {
+    return <Navigate to="/onboarding" replace />;
   }
 
   return <>{children}</>;
@@ -132,7 +144,7 @@ export const router = createBrowserRouter([
     path: '/onboarding',
     element: (
       <RootLayout>
-        <ProtectedRoute>
+        <ProtectedRoute skipOnboardingCheck={true}>
           <OnboardingPage />
         </ProtectedRoute>
       </RootLayout>
