@@ -56,12 +56,13 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
     // Invite flow: go to auth
     if (inviteToken) return 'auth';
 
-    // Email verification return: prioritize URL parameter over userProfile
-    // This prevents race condition where userProfile hasn't loaded yet
-    const accountType = accountTypeFromUrl || userProfile?.accountType;
+    // Email verification return: prioritize sessionStorage > URL param > userProfile
+    // sessionStorage is most reliable as it survives redirects and URL changes
+    const accountTypeFromSession = sessionStorage.getItem('onboarding_accountType') as 'student' | 'parent' | null;
+    const accountType = accountTypeFromSession || accountTypeFromUrl || userProfile?.accountType;
 
     if (user && accountType) {
-      console.log('[OnboardingWizard] Email verification detected, accountType:', accountType);
+      console.log('[OnboardingWizard] Email verification detected, accountType:', accountType, '(from:', accountTypeFromSession ? 'sessionStorage' : accountTypeFromUrl ? 'URL' : 'userProfile', ')');
       return accountType === 'student' ? 'student-profile' : 'parent-profile';
     }
 
@@ -72,8 +73,13 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
   const initialStep: OnboardingStep = getInitialStep();
   const [step, setStep] = useState<OnboardingStep>(initialStep);
   const [data, setData] = useState<OnboardingData>({
-    // Prioritize: invite > URL param > userProfile > null
-    accountType: inviteToken ? 'parent' : (accountTypeFromUrl || userProfile?.accountType || null),
+    // Prioritize: invite > sessionStorage > URL param > userProfile > null
+    accountType: inviteToken
+      ? 'parent'
+      : (sessionStorage.getItem('onboarding_accountType') as 'student' | 'parent' | null)
+      || accountTypeFromUrl
+      || userProfile?.accountType
+      || null,
     email: user?.email || null,
     displayName: userProfile?.displayName || null,
     gradeLevel: userProfile?.gradeLevel || null,
@@ -304,8 +310,10 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
     // Reload profile to ensure latest data is loaded
     await reloadProfile();
 
-    // Clean up URL parameters (emailSignIn, accountType) now that onboarding is complete
+    // Clean up URL parameters and sessionStorage now that onboarding is complete
     window.history.replaceState({}, document.title, window.location.pathname);
+    sessionStorage.removeItem('onboarding_accountType');
+    console.log('[OnboardingWizard] Cleaned up sessionStorage and URL parameters');
 
     // All data collected, proceed to app
     onComplete();

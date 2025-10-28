@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Navigate } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
 import { useAppNavigation } from '../hooks/useAppNavigation';
+import { useAuth } from '../contexts/AuthContext';
 import { OnboardingWizard } from './onboarding/OnboardingWizard';
 import { AuthModal } from './auth/AuthModal';
 import { authService } from '../services/authService';
@@ -14,6 +15,7 @@ export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
   const { toggleTheme, isDark } = useThemeContext();
   const { goToHome, goToLogin, goToSignup, goToLanding } = useAppNavigation();
+  const { user, isProcessingEmailLink } = useAuth();
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [inviteToken, setInviteToken] = useState<string | null>(null);
@@ -91,8 +93,15 @@ export const LandingPage: React.FC = () => {
     }
   }, [location.pathname, location.search]);
 
-  // Show loading spinner while fetching invite information
-  if (loadingInvite) {
+  // Redirect authenticated users to /home (prevents homepage flash during email verification)
+  // This runs after email link is processed by AuthContext
+  if (user && !showOnboarding && !showAuthModal && !inviteToken) {
+    console.log('[LandingPage] Authenticated user detected, redirecting to /home');
+    return <Navigate to="/home" replace />;
+  }
+
+  // Show loading spinner while processing email link or fetching invite information
+  if (isProcessingEmailLink || loadingInvite) {
     return (
       <div
         className="flex items-center justify-center min-h-screen"
@@ -104,7 +113,7 @@ export const LandingPage: React.FC = () => {
             style={{ borderColor: theme.colors.brand }}
           />
           <p style={{ color: theme.colors.textSecondary }}>
-            Loading invitation...
+            {isProcessingEmailLink ? 'Verifying your email...' : 'Loading invitation...'}
           </p>
         </div>
       </div>
