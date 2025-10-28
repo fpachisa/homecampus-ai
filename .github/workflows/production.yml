@@ -8,7 +8,7 @@ on:
       - 'learning-platform/**'
       - '.github/workflows/production.yml'
       - 'firebase.json'
-      - 'firestore.rules'
+      - 'firestore.rules'  # Root Firestore rules (single source of truth)
 
   workflow_dispatch:
     inputs:

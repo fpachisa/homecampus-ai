@@ -12,15 +12,24 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
 
-    // Check if user is parent using subcollection
     function isParent(childId) {
       return isAuthenticated() &&
-        exists(/databases/$(database)/documents/users/$(childId)/parents/$(request.auth.uid));
+        exists(/databases/$(database)/documents/users/$(childId)) &&
+        get(/databases/$(database)/documents/users/$(childId)).data.parents.hasAny([request.auth.uid]);
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        request.auth.token.admin == true;
     }
 
     // Rate limiting helper - prevent rapid writes (1 second minimum)
     function rateLimit() {
-      return request.time < resource.data.lastUpdated + duration.value(1, 's');
+      // Allow if document doesn't exist yet (first save) or no lastUpdated field
+      return resource != null
+        && resource.data != null
+        && resource.data.lastUpdated != null
+        && request.time < resource.data.lastUpdated + duration.value(1, 's');
     }
 
     // Validate progress update structure
@@ -64,7 +73,7 @@ service cloud.firestore {
     // Top-level collection for valid 2-segment paths
     match /progressSummaries/{userId} {
       allow read: if isOwner(userId) || isParent(userId);
-      allow write: if isOwner(userId);
+      allow write: if isOwner(userId) && !rateLimit();
     }
 
     // Parent/Student invite links
@@ -101,6 +110,30 @@ service cloud.firestore {
     match /analytics/{eventId} {
       allow create: if isAuthenticated();
       allow read, update, delete: if false;
+    }
+
+    // ============================================
+    // CURRICULUM COLLECTIONS (Public Read)
+    // ============================================
+
+    // Subtopic configurations
+    // Contains: notesComponent paths, scoring configs, learning objectives
+    match /subtopics/{subtopicId} {
+      // Public read - anyone can view curriculum
+      allow read: if true;
+
+      // Admin write only - content management
+      allow write: if isAdmin();
+    }
+
+    // Topic metadata (future)
+    // Contains: topic-level information, icon, subtopic lists
+    match /topics/{topicId} {
+      // Public read - anyone can view curriculum
+      allow read: if true;
+
+      // Admin write only - content management
+      allow write: if isAdmin();
     }
 
     // Deny all other access by default
