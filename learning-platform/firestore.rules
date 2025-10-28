@@ -28,7 +28,11 @@ service cloud.firestore {
 
     // Rate limiting helper - prevent rapid writes
     function rateLimit() {
-      return request.time < resource.data.lastUpdated + duration.value(1, 's');
+      // Allow if document doesn't exist yet (first save) or no lastUpdated field
+      return resource != null
+        && resource.data != null
+        && resource.data.lastUpdated != null
+        && request.time < resource.data.lastUpdated + duration.value(1, 's');
     }
 
     // ============================================
