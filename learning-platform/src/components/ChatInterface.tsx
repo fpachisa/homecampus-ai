@@ -356,7 +356,8 @@ const [isLoading, setIsLoading] = useState(false);
       // Clear loading state when switching topics
       setIsLoading(false);
     };
-  }, [topicId, stopSpeaking]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [topicId]);
 
   useEffect(() => {
     scrollToBottom();
