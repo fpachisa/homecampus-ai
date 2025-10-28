@@ -9,10 +9,11 @@ interface AuthContextType {
   user: User | null;
   userProfile: UserProfile | null;
   loading: boolean;
-  needsProfileSetup: boolean; // NEW - tracks if profile setup is needed
+  needsProfileSetup: boolean; // Tracks if profile setup is needed
+  isProcessingEmailLink: boolean; // Tracks if email link is being processed (prevents page flash)
 
-  // New email link auth methods
-  sendVerificationEmail: (email: string) => Promise<void>;
+  // Email link auth methods
+  sendVerificationEmail: (email: string, accountType?: 'student' | 'parent') => Promise<void>;
   completeEmailSignIn: (email: string) => Promise<void>;
 
   // Keep existing methods
@@ -20,7 +21,7 @@ interface AuthContextType {
   logout: () => Promise<void>;
   updateProfile: (updates: Partial<UserProfile>) => Promise<void>;
   completeProfileSetup: (profileData: Partial<UserProfile>) => Promise<void>;
-  reloadProfile: () => Promise<void>; // NEW - manually reload profile from Firestore
+  reloadProfile: () => Promise<void>; // Manually reload profile from Firestore
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -42,11 +43,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [needsProfileSetup, setNeedsProfileSetup] = useState(false);
+  const [isProcessingEmailLink, setIsProcessingEmailLink] = useState(false);
 
-  // Send verification email
-  const sendVerificationEmail = async (email: string) => {
+  // Send verification email with account type for cross-device flow
+  const sendVerificationEmail = async (email: string, accountType?: 'student' | 'parent') => {
     try {
-      await authService.sendVerificationEmail(email);
+      await authService.sendVerificationEmail(email, accountType);
     } catch (error) {
       console.error('Error sending verification email:', error);
       throw error;
@@ -159,23 +161,29 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const handleEmailLink = async () => {
       // Check if current URL is an email sign-in link
       if (isSignInWithEmailLink(auth, window.location.href)) {
-        // Get email from localStorage or prompt user
-        let email = authService.getSavedEmail();
+        setIsProcessingEmailLink(true); // Show loading state (prevents page flash)
 
-        if (!email) {
-          // If no saved email, this might be a different device
-          // In production, you'd want to show a modal asking for email
-          email = window.prompt('Please provide your email for confirmation');
-        }
+        try {
+          const url = new URL(window.location.href);
+          const urlParams = new URLSearchParams(url.search);
 
-        if (email) {
-          try {
+          // Try to get email from URL first (cross-device), then localStorage
+          let email = urlParams.get('email') || authService.getSavedEmail();
+
+          if (!email) {
+            // Last resort: prompt user (only if URL doesn't have email)
+            email = window.prompt('Please provide your email for confirmation');
+          }
+
+          if (email) {
             await completeEmailSignIn(email);
             // Clean up URL (remove email link params)
             window.history.replaceState({}, document.title, window.location.pathname);
-          } catch (error) {
-            console.error('Error handling email link:', error);
           }
+        } catch (error) {
+          console.error('Error handling email link:', error);
+        } finally {
+          setIsProcessingEmailLink(false);
         }
       }
     };
@@ -188,6 +196,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     userProfile,
     loading,
     needsProfileSetup,
+    isProcessingEmailLink,
     sendVerificationEmail,
     completeEmailSignIn,
     signInWithGoogle,

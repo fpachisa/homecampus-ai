@@ -18,6 +18,7 @@ export const LandingPage: React.FC = () => {
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [inviteToken, setInviteToken] = useState<string | null>(null);
   const [inviteInfo, setInviteInfo] = useState<any>(null);
+  const [loadingInvite, setLoadingInvite] = useState(false);
 
   // Theme-aware logo
   const logoSrc = isDark ? logoDark : logoLight;
@@ -50,6 +51,7 @@ export const LandingPage: React.FC = () => {
     if (token) {
       console.log('[LandingPage] Invite token detected in URL:', token);
       setInviteToken(token);
+      setLoadingInvite(true); // Show loading immediately
       // Store in localStorage in case user refreshes
       localStorage.setItem('pendingInviteToken', token);
 
@@ -66,6 +68,8 @@ export const LandingPage: React.FC = () => {
         }
       }).catch(error => {
         console.error('[LandingPage] Error fetching invite:', error);
+      }).finally(() => {
+        setLoadingInvite(false); // Hide loading when done
       });
     } else {
       // Check localStorage for pending invite (only on initial mount at root path)
@@ -74,15 +78,38 @@ export const LandingPage: React.FC = () => {
         if (storedToken) {
           console.log('[LandingPage] Restoring invite token from localStorage:', storedToken);
           setInviteToken(storedToken);
+          setLoadingInvite(true);
           authService.getInviteByToken(storedToken).then(invite => {
             if (invite) {
               setInviteInfo(invite);
             }
+          }).finally(() => {
+            setLoadingInvite(false);
           });
         }
       }
     }
   }, [location.pathname, location.search]);
+
+  // Show loading spinner while fetching invite information
+  if (loadingInvite) {
+    return (
+      <div
+        className="flex items-center justify-center min-h-screen"
+        style={{ background: theme.gradients.panel }}
+      >
+        <div className="text-center">
+          <div
+            className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 mx-auto mb-4"
+            style={{ borderColor: theme.colors.brand }}
+          />
+          <p style={{ color: theme.colors.textSecondary }}>
+            Loading invitation...
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (showOnboarding) {
     return (

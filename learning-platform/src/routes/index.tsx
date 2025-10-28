@@ -42,9 +42,10 @@ export const ProtectedRoute = ({
   children: React.ReactNode;
   skipOnboardingCheck?: boolean;
 }) => {
-  const { user, loading, needsProfileSetup } = useAuth();
+  const { user, loading, needsProfileSetup, isProcessingEmailLink } = useAuth();
 
-  if (loading) {
+  // Show loading during auth check OR email link processing (prevents page flash)
+  if (loading || isProcessingEmailLink) {
     return <PageLoader />;
   }
 

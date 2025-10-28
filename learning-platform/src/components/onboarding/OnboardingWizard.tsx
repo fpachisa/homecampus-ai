@@ -80,7 +80,8 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
     setAuthError(null);
 
     try {
-      await sendVerificationEmail(email);
+      // Pass account type to email link for cross-device persistence
+      await sendVerificationEmail(email, data.accountType || undefined);
       updateData({ email });
 
       // Show themed confirmation modal
@@ -423,7 +424,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
       <ConfirmationModal
         isOpen={showEmailConfirmation}
         onClose={() => setShowEmailConfirmation(false)}
-        title="homecampus.ai says"
+        title="Email Confirmation"
         message={`Verification email sent to ${confirmationEmail}. Please check your inbox and click the link to continue.`}
         confirmText="OK"
       />

@@ -18,19 +18,35 @@ import type { UserProfile } from '../types/user';
 class AuthService {
   /**
    * Send verification email link for sign in/sign up
+   * @param email - User's email address
+   * @param accountType - Optional account type (student/parent) for cross-device persistence
    */
-  async sendVerificationEmail(email: string): Promise<void> {
+  async sendVerificationEmail(email: string, accountType?: 'student' | 'parent'): Promise<void> {
     try {
+      // Build URL with account type and email as query parameters
+      // This ensures cross-device compatibility (works if user clicks link on different device)
+      const params = new URLSearchParams({
+        emailSignIn: 'true',
+        email: email, // Email in URL for cross-device verification
+      });
+
+      if (accountType) {
+        params.append('accountType', accountType);
+      }
+
       const actionCodeSettings = {
         // URL to redirect to after email link click
-        url: window.location.origin + '?emailSignIn=true',
+        url: `${window.location.origin}/?${params.toString()}`,
         handleCodeInApp: true,
       };
 
       await sendSignInLinkToEmail(auth, email, actionCodeSettings);
 
-      // Save email to localStorage for email link completion
+      // Save to localStorage as backup (works for same-device flow)
       window.localStorage.setItem('emailForSignIn', email);
+      if (accountType) {
+        window.localStorage.setItem('accountTypeForSignIn', accountType);
+      }
     } catch (error: any) {
       console.error('Send email error:', error);
       throw this.handleAuthError(error);
@@ -49,18 +65,25 @@ class AuthService {
         throw new Error('Invalid verification link');
       }
 
+      // Extract account type from URL parameters (for cross-device flow)
+      const url = new URL(link);
+      const accountTypeFromUrl = url.searchParams.get('accountType') as 'student' | 'parent' | null;
+
+      console.log('[AuthService] Email sign-in with accountType from URL:', accountTypeFromUrl);
+
       // Sign in with email link
       const userCredential = await signInWithEmailLink(auth, email, link);
 
-      // Clear email from localStorage
+      // Clear localStorage
       window.localStorage.removeItem('emailForSignIn');
+      window.localStorage.removeItem('accountTypeForSignIn');
 
       // Check if this is a new user (profile doesn't exist)
       const profileExists = await this.userProfileExists(userCredential.user.uid);
 
       if (!profileExists) {
-        // Create minimal profile - user will complete setup next
-        await this.createMinimalProfile(userCredential.user);
+        // Create minimal profile with account type from URL - user will complete setup next
+        await this.createMinimalProfile(userCredential.user, accountTypeFromUrl);
       } else {
         // Update last login for existing users
         await this.updateLastLogin(userCredential.user.uid);
@@ -118,8 +141,13 @@ class AuthService {
 
   /**
    * Create minimal user profile (for new sign-ins before profile setup)
+   * @param user - Firebase user object
+   * @param accountType - Optional account type from email verification URL (cross-device flow)
    */
-  private async createMinimalProfile(user: FirebaseUser): Promise<void> {
+  private async createMinimalProfile(
+    user: FirebaseUser,
+    accountType?: 'student' | 'parent' | null
+  ): Promise<void> {
     const userProfile: Partial<UserProfile> = {
       uid: user.uid,
       email: user.email,
@@ -127,9 +155,9 @@ class AuthService {
       photoURL: user.photoURL,
       gradeLevel: '', // Will be set during profile setup
       isGuest: false,
-      isParent: false,
-      profileCompleted: false, // NEW - marks that setup is needed
-      accountType: 'student', // Default, will be updated during setup
+      isParent: accountType === 'parent', // Use URL param if available
+      profileCompleted: false, // Marks that setup is needed
+      accountType: accountType || 'student', // Use URL param or default to student
       pathProgress: {},
       settings: {
         ttsSpeaker: 'callirrhoe',
@@ -139,6 +167,8 @@ class AuthService {
       createdAt: new Date().toISOString(),
       lastLogin: new Date().toISOString(),
     };
+
+    console.log('[AuthService] Creating minimal profile with accountType:', accountType);
 
     await setDoc(doc(firestore, 'users', user.uid), userProfile);
   }
