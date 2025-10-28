@@ -23,15 +23,6 @@ service cloud.firestore {
         request.auth.token.admin == true;
     }
 
-    // Rate limiting helper - prevent rapid writes (1 second minimum)
-    function rateLimit() {
-      // Allow if document doesn't exist yet (first save) or no lastUpdated field
-      return resource != null
-        && resource.data != null
-        && resource.data.lastUpdated != null
-        && request.time < resource.data.lastUpdated + duration.value(1, 's');
-    }
-
     // Validate progress update structure
     function validateProgressUpdate() {
       return request.resource.data.keys().hasAll(['lastUpdated', 'messages']) &&
@@ -59,13 +50,13 @@ service cloud.firestore {
       // Learn mode conversations (subtopic level: users/{uid}/learn/{subtopicId})
       match /learn/{subtopicId} {
         allow read: if isOwner(userId) || isParent(userId);
-        allow write: if isOwner(userId) && validateProgressUpdate() && !rateLimit();
+        allow write: if isOwner(userId) && validateProgressUpdate();
       }
 
       // Practice mode progress (topic level: users/{uid}/practice/{topicId})
       match /practice/{topicId} {
         allow read: if isOwner(userId) || isParent(userId);
-        allow write: if isOwner(userId) && !rateLimit();
+        allow write: if isOwner(userId);
       }
     }
 
@@ -73,7 +64,7 @@ service cloud.firestore {
     // Top-level collection for valid 2-segment paths
     match /progressSummaries/{userId} {
       allow read: if isOwner(userId) || isParent(userId);
-      allow write: if isOwner(userId) && !rateLimit();
+      allow write: if isOwner(userId);
     }
 
     // Parent/Student invite links
