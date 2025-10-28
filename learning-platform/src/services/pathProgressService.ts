@@ -14,7 +14,6 @@ import type {
 } from '../types/practice';
 import { streakService } from './streakService';
 import { achievementService } from './achievementService';
-import { progressSyncService } from './progressSyncService';
 
 class PathProgressService {
   private readonly STORAGE_KEY_PREFIX = 'practice_path_state_';
@@ -375,21 +374,10 @@ class PathProgressService {
   /**
    * Save unified progress to localStorage
    */
-  saveUnifiedProgress(category: string, progress: PathProgress, uid?: string | null): void {
+  saveUnifiedProgress(category: string, progress: PathProgress): void {
     try {
       const key = `${this.UNIFIED_STORAGE_KEY_PREFIX}${category}`;
       localStorage.setItem(key, JSON.stringify(progress));
-
-      // NEW: Also sync to Firestore/localStorage using progressSyncService
-      progressSyncService.savePracticeState(uid || null, category, {
-        category,
-        paths: {
-          [progress.difficulty as string]: progress,
-        } as any,
-        progress: {} as any,
-      } as PracticePathState).catch(error => {
-        console.error('Failed to sync practice progress to Firestore:', error);
-      });
     } catch (error) {
       console.error('Failed to save unified progress:', error);
     }

@@ -500,7 +500,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
             console.log(`✅ Node completed! (${nodeProgress.problemsAttempted}/${node.problemsRequired})`);
           }
 
-          pathProgressService.saveUnifiedProgress(category, pathProgress, user?.uid);
+          pathProgressService.saveUnifiedProgress(category, pathProgress);
           console.log(`📊 Updated unified progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired} problems`);
 
           // Also save to Firestore
