@@ -82,10 +82,23 @@ const STANDARD_MODULES = {
 };
 
 /**
- * All subtopic configurations to migrate
- * This includes EVERYTHING from mockConfigs plus the 7 missing Differential Calculus configs
+ * Load all subtopic configurations from extracted JSON + Differential Calculus configs
  */
-const ALL_CONFIGS = [
+
+// Import old configs from JSON (96 configs)
+let oldConfigs: any[] = [];
+try {
+  const oldConfigsJson = readFileSync(path.join(__dirname, '../tmp-all-configs.json'), 'utf-8');
+  oldConfigs = JSON.parse(oldConfigsJson);
+  console.log(`📦 Loaded ${oldConfigs.length} configs from extracted JSON`);
+} catch (error) {
+  console.log('ℹ️  No old configs JSON found, will only migrate Differential Calculus');
+}
+
+/**
+ * New Differential Calculus configs (7 configs)
+ */
+const DIFFERENTIAL_CALCULUS_CONFIGS = [
   // ============================================
   // S4 DIFFERENTIAL CALCULUS (7 NEW CONFIGS)
   // ============================================
@@ -207,14 +220,11 @@ const ALL_CONFIGS = [
     teachingTemplate: '',
     scoring: STANDARD_SCORING,
     modules: STANDARD_MODULES
-  },
-
-  // ============================================
-  // TODO: Add remaining ~95 configs from mockConfigs
-  // ============================================
-  // For now, this script only includes the 7 new Differential Calculus configs.
-  // You can add the rest manually or extract them programmatically from configLoader.ts
+  }
 ];
+
+// Combine old configs + new Differential Calculus configs
+const ALL_CONFIGS = [...oldConfigs, ...DIFFERENTIAL_CALCULUS_CONFIGS];
 
 /**
  * Migrate all configs to Firestore

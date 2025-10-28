@@ -69,9 +69,8 @@ service cloud.firestore {
       // Public read - anyone can view curriculum
       allow read: if true;
 
-      // ⚠️ TEMPORARY: Allow all writes for migration
-      // TODO: Revert to "if isAdmin()" after migration complete
-      allow write: if true;
+      // Admin write only - content management
+      allow write: if isAdmin();
     }
 
     // Topic metadata (future)
