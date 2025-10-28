@@ -137,6 +137,17 @@ const validateMathTool = (mathTool: any): import('../types/types').MathTool | un
   return mathTool;
 };
 
+// Loading message mapping with contextual, emoji-enriched feedback
+const LOADING_MESSAGES: Record<string, string> = {
+  evaluating: '🤔 Analyzing your answer...',
+  generating_hint: '💭 Crafting a helpful hint...',
+  generating_solution: '📝 Preparing step-by-step solution...',
+  generating_question: '✨ Creating a new problem...',
+  celebrating: '🎉 Great work! Preparing celebration...',
+  initializing: '📚 Starting your learning session...',
+  loading_section: '📖 Loading section...'
+};
+
 const ChatInterface: React.FC<ChatInterfaceProps> = ({
   topicId = 's3-math-trigonometry-basic-ratios',
   onBackToTopics,
@@ -159,7 +170,19 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
     }
   });
 
-const [isLoading, setIsLoading] = useState(false);
+  // Loading state with contextual stages
+  type LoadingStage = 'evaluating' | 'generating_hint' | 'generating_solution' |
+                       'generating_question' | 'celebrating' | 'initializing' |
+                       'loading_section' | null;
+
+  const [loadingState, setLoadingState] = useState<{ active: boolean; stage: LoadingStage }>({
+    active: false,
+    stage: null
+  });
+
+  // Legacy isLoading for backward compatibility
+  const isLoading = loadingState.active;
+
   const [currentScore, setCurrentScore] = useState(0);
   const [subtopicComplete, setSubtopicComplete] = useState(false);
   const [problemsCompleted, setProblemsCompleted] = useState(0);
@@ -323,7 +346,7 @@ const [isLoading, setIsLoading] = useState(false);
     const loadingTopicId = topicId; // Capture for closure
 
     // Reset state completely when switching topics (including loading state)
-    setIsLoading(false);
+    setLoadingState({ active: false, stage: null });
     setState({
       messages: [],
       currentProblemType: 1,
@@ -354,7 +377,7 @@ const [isLoading, setIsLoading] = useState(false);
       // Stop any playing audio when switching topics
       stopSpeaking();
       // Clear loading state when switching topics
-      setIsLoading(false);
+      setLoadingState({ active: false, stage: null });
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topicId]);
@@ -468,7 +491,7 @@ const initializeConversation = async () => {
     if (!aiService.current) return;
 
     const initTopicId = currentTopicRef.current; // Capture current topic
-    setIsLoading(true);
+    setLoadingState({ active: true, stage: 'initializing' });
     try {
       // Initialize section progress for new session
       const topicConfig = getTopicConfig(topicId);
@@ -542,7 +565,7 @@ const initializeConversation = async () => {
       throw error;
     } finally {
       if (currentTopicRef.current === initTopicId) {
-        setIsLoading(false);
+        setLoadingState({ active: false, stage: null });
       }
     }
   };
@@ -613,7 +636,7 @@ const initializeConversation = async () => {
         return;
       }
 
-      setIsLoading(true);
+      setLoadingState({ active: true, stage: 'loading_section' });
       try {
         // Generate resume with summary and next question
         const resumeResponse = await aiService.current.generateSectionResume(
@@ -640,7 +663,7 @@ const initializeConversation = async () => {
         console.error('Failed to generate section resume:', error);
         setError('Failed to resume section. Please try again.');
       } finally {
-        setIsLoading(false);
+        setLoadingState({ active: false, stage: null });
       }
       return;
     }
@@ -668,7 +691,7 @@ const initializeConversation = async () => {
     }
 
     // Generate first question for this section
-    setIsLoading(true);
+    setLoadingState({ active: true, stage: 'loading_section' });
     try {
       const response = await aiService.current.generateSectionStartQuestion(topicId, sectionId);
 
@@ -689,7 +712,7 @@ const initializeConversation = async () => {
       console.error('Failed to generate section start question:', error);
       setError('Failed to start new section. Please try again.');
     } finally {
-      setIsLoading(false);
+      setLoadingState({ active: false, stage: null });
     }
   };
 
@@ -698,7 +721,9 @@ const handleStudentSubmit = async (input: string) => {
 
     // Add student message
     addMessage('student', input);
-    setIsLoading(true);
+
+    // Stage 1: Start with evaluating stage
+    setLoadingState({ active: true, stage: 'evaluating' });
 
     try {
       // Check if subtopic is already complete
@@ -764,6 +789,15 @@ const handleStudentSubmit = async (input: string) => {
       console.log('Action:', evaluatorOutput.action);
       console.log('Section mastered:', evaluatorOutput.sectionMastered);
       console.log('Advance to next section:', evaluatorOutput.advanceToNextSection);
+
+      // Stage 2: Update loading stage based on evaluator's decision
+      const stageMap: Record<string, LoadingStage> = {
+        'GIVE_HINT': 'generating_hint',
+        'GIVE_SOLUTION': 'generating_solution',
+        'NEW_PROBLEM': 'generating_question',
+        'CELEBRATE': 'celebrating'
+      };
+      setLoadingState({ active: true, stage: stageMap[evaluatorOutput.action] || null });
 
       // STEP 2: Update problem state based on evaluator output
       // Note: attempts already incremented above, this updates hints only
@@ -1090,7 +1124,8 @@ const handleStudentSubmit = async (input: string) => {
       console.error('Failed to process sequential agent flow:', error);
       throw error;
     } finally {
-      setIsLoading(false);
+      // Clear loading state
+      setLoadingState({ active: false, stage: null });
     }
   };
 
@@ -1412,7 +1447,7 @@ const handleStudentSubmit = async (input: string) => {
                     <div className="w-2 h-2 rounded-full animate-bounce" style={{ backgroundColor: theme.colors.brand, animationDelay: '0.2s' }} />
                   </div>
                   <span className="text-sm ml-2" style={{ color: theme.colors.textMuted }}>
-                    {fallbackMessage || 'Thinking...'}
+                    {fallbackMessage || (loadingState.stage ? LOADING_MESSAGES[loadingState.stage] : 'Thinking...')}
                   </span>
                 </div>
               </div>
