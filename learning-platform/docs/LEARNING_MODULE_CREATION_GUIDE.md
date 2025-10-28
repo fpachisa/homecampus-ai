@@ -131,13 +131,82 @@ export const [TOPIC]_SUBTOPICS = {
 - `sampleProblems`: (Optional) Example problems
 - `availableTools`: Visual tools for this section
 
-### Step 4: Integration into Platform
+### Step 4: Firestore Configuration Upload
 **Input**:
 - Completed config file from Step 3
 - Created notes from Step 2
 
 **Overview**:
-After creating the topic configuration and notes files, you must integrate them into the platform by updating 10 core files. This step registers your topic with the UI components, service layers, and AI systems.
+Subtopic configurations are now stored in Firestore (not hardcoded). You need to add your new subtopic configs to the Firestore `subtopics` collection.
+
+**Configuration Structure for Firestore**:
+Each subtopic requires a document in the `subtopics/{subtopicId}` collection with this structure:
+
+```typescript
+{
+  id: string;                      // "s3-math-[topic]-[subtopic]"
+  displayName: string;             // "Display Name for UI"
+  grade: string;                   // "s3" or "s4"
+  subject: string;                 // "math"
+  topic: string;                   // "topic-name"
+  subtopic: string;                // "subtopic-name"
+
+  metadata: {
+    difficulty: string;            // "beginner" | "intermediate" | "advanced"
+    estimatedMinutes: number;      // 45
+    prerequisites: string[];       // ["prerequisite-subtopic-id"]
+  },
+
+  notesComponent: string;          // "s3/math/topic-name/SubtopicName"
+  teachingTemplate: string;        // "" (populated by AI system)
+
+  scoring: {
+    easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
+    medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
+    hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
+  },
+
+  modules: {
+    learn: true,
+    practice: true,
+    visualizations: true
+  },
+
+  // Auto-generated timestamps
+  createdAt: Timestamp,
+  updatedAt: Timestamp
+}
+```
+
+**Upload Methods**:
+
+**Option A: Using Migration Script (Recommended)**
+1. Add your subtopic configs to `scripts/migrateAllConfigs.ts`
+2. Add to the appropriate array (or create a new one)
+3. Run the migration script:
+   ```bash
+   npx tsx scripts/migrateAllConfigs.ts
+   ```
+4. Verify in Firebase Console → Firestore Database → `subtopics` collection
+
+**Option B: Firebase Console (Quick for 1-2 subtopics)**
+1. Go to Firebase Console → Firestore Database
+2. Navigate to `subtopics` collection
+3. Click "Add document"
+4. Use the subtopic ID as the document ID
+5. Add all required fields manually
+
+**Option C: Admin Script (For bulk updates)**
+Create a custom script similar to `migrateAllConfigs.ts` for your specific topic.
+
+### Step 5: Platform Integration
+**Input**:
+- Configs uploaded to Firestore (Step 4)
+- Created notes from Step 2
+- Completed config file from Step 3
+
+**Overview**:
+After uploading configs to Firestore, you must integrate your topic into the platform UI by updating 9 core files. ConfigLoader automatically fetches from Firestore, so no configuration updates needed there.
 
 **📋 For detailed step-by-step instructions, see:**
 👉 **[ADDING_NEW_TOPICS_CHECKLIST.md](./ADDING_NEW_TOPICS_CHECKLIST.md)**
@@ -149,7 +218,7 @@ The checklist provides:
 - ✅ Detailed explanations of why each file matters
 - ✅ Testing procedures to verify integration
 
-**Files to Update (10 total)**:
+**Files to Update (9 total)**:
 1. **HomePage.tsx** - Topic card display
 2. **App.tsx** - Application state and types
 3. **LeftPanel.tsx** - Navigation panel
@@ -159,16 +228,19 @@ The checklist provides:
 7. **subtopicContentLoader.ts** - Content loading
 8. **notesLoader.ts** - Notes registration
 9. **newPromptResolver.ts** - AI prompt resolution
-10. **configLoader.ts** - Notes configuration
+
+**Note**: `configLoader.ts` no longer needs manual updates - it automatically fetches configs from Firestore.
 
 **Quick Verification**:
 After completing all updates from the checklist:
 - [ ] Run `npm run build` - no TypeScript errors
+- [ ] Configs visible in Firestore Console
 - [ ] Topic card appears on HomePage
 - [ ] Subtopics load when clicked
 - [ ] Chat interface works without errors
 - [ ] Notes display correctly (if applicable)
 - [ ] AI responses generate successfully
+- [ ] ConfigLoader fetches configs from Firestore (check browser console)
 
 ---
 
@@ -219,6 +291,12 @@ After completing all updates from the checklist:
    - Format: `.ts` TypeScript
    - Location: `learning-platform/src/prompt-library/subjects/mathematics/secondary/[topic-name].ts`
    - Size: Typically 800-1,200 lines
+
+3. **Firestore Subtopic Configs** (1 per subtopic)
+   - Format: JSON documents in Firestore
+   - Location: `subtopics/{subtopicId}` collection
+   - Added via: Migration script or Firebase Console
+   - Size: ~500 bytes per document
 
 
 ---
@@ -274,6 +352,16 @@ After completing all updates from the checklist:
 3. Use clear pronunciation guides
 4. Avoid markdown/LaTeX in speech text
 5. Keep speech conversational
+
+### Firestore Configuration Management
+1. Use consistent ID format: `s3-math-[topic]-[subtopic]`
+2. Always include full topic path in IDs (not just subtopic name)
+3. Verify `notesComponent` path matches actual file location
+4. Test configs in Firestore before bulk migration
+5. Use migration scripts for multiple subtopics
+6. Maintain consistency in difficulty levels and prerequisites
+7. Keep metadata accurate (estimatedMinutes, difficulty)
+8. Use Firebase Console for quick single-config updates
 
 ---
 
