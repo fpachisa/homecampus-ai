@@ -104,6 +104,10 @@ const OnboardingPage = () => {
   const navigate = useNavigate();
   const { loading } = useAuth();
 
+  // Extract accountType from URL (set during email verification flow)
+  const urlParams = new URLSearchParams(window.location.search);
+  const accountTypeFromUrl = urlParams.get('accountType') as 'student' | 'parent' | null;
+
   // Wait for auth state to fully resolve before showing wizard
   if (loading) {
     return <PageLoader />;
@@ -113,6 +117,7 @@ const OnboardingPage = () => {
     <OnboardingWizard
       onComplete={() => navigate('/home')}
       onCancel={() => navigate('/')}
+      accountTypeFromUrl={accountTypeFromUrl}
     />
   );
 };

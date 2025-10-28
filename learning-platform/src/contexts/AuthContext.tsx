@@ -180,8 +180,20 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
           if (email) {
             await completeEmailSignIn(email);
-            // Clean up URL (remove email link params)
-            window.history.replaceState({}, document.title, window.location.pathname);
+            // Preserve important params (emailSignIn, accountType) for OnboardingWizard
+            // but remove Firebase-specific params (apiKey, mode, oobCode, etc.)
+            const preservedParams = new URLSearchParams();
+            const emailSignIn = urlParams.get('emailSignIn');
+            const accountType = urlParams.get('accountType');
+
+            if (emailSignIn) preservedParams.set('emailSignIn', emailSignIn);
+            if (accountType) preservedParams.set('accountType', accountType);
+
+            const newUrl = preservedParams.toString()
+              ? `${window.location.pathname}?${preservedParams.toString()}`
+              : window.location.pathname;
+
+            window.history.replaceState({}, document.title, newUrl);
           }
         } catch (error) {
           console.error('Error handling email link:', error);

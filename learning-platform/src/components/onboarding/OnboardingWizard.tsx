@@ -38,13 +38,15 @@ interface OnboardingWizardProps {
   onCancel: () => void;
   inviteToken?: string | null;
   inviteInfo?: any;
+  accountTypeFromUrl?: 'student' | 'parent' | null;
 }
 
 export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
   onComplete,
   onCancel,
   inviteToken,
-  inviteInfo
+  inviteInfo,
+  accountTypeFromUrl
 }) => {
   const { theme } = useTheme();
   const { user, userProfile, sendVerificationEmail, signInWithGoogle, reloadProfile } = useAuth();
@@ -54,9 +56,13 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
     // Invite flow: go to auth
     if (inviteToken) return 'auth';
 
-    // Email verification return: user is authenticated with accountType → skip to profile step
-    if (user && userProfile?.accountType) {
-      return userProfile.accountType === 'student' ? 'student-profile' : 'parent-profile';
+    // Email verification return: prioritize URL parameter over userProfile
+    // This prevents race condition where userProfile hasn't loaded yet
+    const accountType = accountTypeFromUrl || userProfile?.accountType;
+
+    if (user && accountType) {
+      console.log('[OnboardingWizard] Email verification detected, accountType:', accountType);
+      return accountType === 'student' ? 'student-profile' : 'parent-profile';
     }
 
     // New user: start at account type selection
@@ -66,8 +72,8 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
   const initialStep: OnboardingStep = getInitialStep();
   const [step, setStep] = useState<OnboardingStep>(initialStep);
   const [data, setData] = useState<OnboardingData>({
-    // Load from invite, userProfile, or default to null
-    accountType: inviteToken ? 'parent' : (userProfile?.accountType || null),
+    // Prioritize: invite > URL param > userProfile > null
+    accountType: inviteToken ? 'parent' : (accountTypeFromUrl || userProfile?.accountType || null),
     email: user?.email || null,
     displayName: userProfile?.displayName || null,
     gradeLevel: userProfile?.gradeLevel || null,
@@ -297,6 +303,10 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
   const handleComplete = async () => {
     // Reload profile to ensure latest data is loaded
     await reloadProfile();
+
+    // Clean up URL parameters (emailSignIn, accountType) now that onboarding is complete
+    window.history.replaceState({}, document.title, window.location.pathname);
+
     // All data collected, proceed to app
     onComplete();
   };
