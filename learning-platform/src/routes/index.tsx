@@ -99,10 +99,10 @@ const InviteHandler = () => {
 };
 
 // Onboarding page wrapper with navigation
-// Waits for userProfile to load before rendering wizard (prevents race condition)
+// Waits for auth state to fully resolve before rendering wizard (prevents race condition)
 const OnboardingPage = () => {
   const navigate = useNavigate();
-  const { userProfile, loading } = useAuth();
+  const { loading } = useAuth();
 
   // Wait for auth state to fully resolve before showing wizard
   if (loading) {
