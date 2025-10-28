@@ -105,6 +105,12 @@ jobs:
         working-directory: ${{ env.WORKING_DIR }}
         run: npm run build
 
+      - name: Copy curriculum content to dist
+        run: |
+          echo "📚 Copying curriculum content to dist..."
+          cp -r curriculum-content/ learning-platform/dist/curriculum-content/
+          echo "✅ Curriculum content copied ($(find learning-platform/dist/curriculum-content -name '*.yaml' | wc -l) YAML files)"
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
