@@ -47,16 +47,30 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
   inviteInfo
 }) => {
   const { theme } = useTheme();
-  const { user, sendVerificationEmail, signInWithGoogle, reloadProfile } = useAuth();
-  // If invite exists, skip account selection and go straight to auth
-  const initialStep: OnboardingStep = inviteToken ? 'auth' : 'account-type';
+  const { user, userProfile, sendVerificationEmail, signInWithGoogle, reloadProfile } = useAuth();
+
+  // Determine initial step intelligently based on user state
+  const getInitialStep = (): OnboardingStep => {
+    // Invite flow: go to auth
+    if (inviteToken) return 'auth';
+
+    // Email verification return: user is authenticated with accountType → skip to profile step
+    if (user && userProfile?.accountType) {
+      return userProfile.accountType === 'student' ? 'student-profile' : 'parent-profile';
+    }
+
+    // New user: start at account type selection
+    return 'account-type';
+  };
+
+  const initialStep: OnboardingStep = getInitialStep();
   const [step, setStep] = useState<OnboardingStep>(initialStep);
   const [data, setData] = useState<OnboardingData>({
-    // Auto-set account type to 'parent' if invite exists
-    accountType: inviteToken ? 'parent' : null,
-    email: null,
-    displayName: null,
-    gradeLevel: null,
+    // Load from invite, userProfile, or default to null
+    accountType: inviteToken ? 'parent' : (userProfile?.accountType || null),
+    email: user?.email || null,
+    displayName: userProfile?.displayName || null,
+    gradeLevel: userProfile?.gradeLevel || null,
     parentEmail: null,
     children: [],
   });
@@ -127,6 +141,26 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
       }
     }
   }, [user, step, data.accountType]);
+
+  // Handle authenticated users returning from email verification
+  // This catches cases where user lands on 'account-type' step but is already authenticated
+  useEffect(() => {
+    if (user && userProfile && !inviteToken) {
+      // Update wizard data with profile information
+      updateData({
+        accountType: userProfile.accountType,
+        email: user.email || '',
+        displayName: userProfile.displayName,
+        gradeLevel: userProfile.gradeLevel,
+      });
+
+      // If stuck on account-type step but profile has accountType, jump to profile step
+      if (step === 'account-type' && userProfile.accountType) {
+        console.log('[OnboardingWizard] Detected authenticated user with accountType, jumping to profile step');
+        setStep(userProfile.accountType === 'student' ? 'student-profile' : 'parent-profile');
+      }
+    }
+  }, [user, userProfile, inviteToken, step]);
 
   const handleStudentProfileComplete = async (displayName: string, gradeLevel: string) => {
     updateData({ displayName, gradeLevel });

@@ -43,7 +43,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [needsProfileSetup, setNeedsProfileSetup] = useState(false);
-  const [isProcessingEmailLink, setIsProcessingEmailLink] = useState(false);
+  // Initialize based on URL check to prevent homepage flash (runs before first render)
+  const [isProcessingEmailLink, setIsProcessingEmailLink] = useState(() =>
+    isSignInWithEmailLink(auth, window.location.href)
+  );
 
   // Send verification email with account type for cross-device flow
   const sendVerificationEmail = async (email: string, accountType?: 'student' | 'parent') => {
