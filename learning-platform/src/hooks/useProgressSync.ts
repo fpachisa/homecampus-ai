@@ -1,3 +1,18 @@
+/**
+ * @deprecated This hook is DEPRECATED and should NOT be used.
+ *
+ * ISSUE: This hook uses the old progressSyncService which writes to the wrong
+ * Firestore path (progress/{uid}) that has no security rules, causing permission errors.
+ *
+ * REPLACEMENT: Use firestoreProgressService directly in components:
+ * - For Learn mode: saveLearnProgress(uid, subtopicId, conversationStateToFirestore(...))
+ * - For Practice mode: savePracticeProgress(uid, topicId, pathProgressToFirestore(...))
+ *
+ * See ChatInterface.tsx (lines 218-266) for correct implementation example.
+ *
+ * TODO: This file should be deleted once migration is verified complete.
+ */
+
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { progressSyncService } from '../services/progressSyncService';
 import type { ConversationSnapshot, ProgressSnapshot } from '../types/progress';

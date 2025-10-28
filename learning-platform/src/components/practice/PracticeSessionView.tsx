@@ -18,7 +18,6 @@ import { MathToolRenderer } from './MathToolRenderer';
 import { BackButton } from '../BackButton';
 import Avatar from '../Avatar';
 import { useAuth } from '../../contexts/AuthContext';
-import { useProgressSync } from '../../hooks/useProgressSync';
 import { useAudioManager } from '../../hooks/useAudioManager';
 import MathText from '../MathText';
 import MathInputToolbar from '../MathInputToolbar';
@@ -106,9 +105,8 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   // Audio manager for Avatar TTS
   const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText } = useAudioManager();
 
-  // Auth and progress sync
+  // Auth
   const { user } = useAuth();
-  const { isSyncing: _isSyncing, lastSyncTime: _lastSyncTime, syncError: _syncError } = useProgressSync(user?.uid || null);
 
   // Detect window resize for responsive layout
   useEffect(() => {

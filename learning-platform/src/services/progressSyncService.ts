@@ -1,6 +1,27 @@
 /**
+ * @deprecated This service is DEPRECATED and should NOT be used.
+ *
+ * CRITICAL ISSUE: This service writes to Firestore path `progress/{uid}` which has
+ * NO security rules defined, causing "Missing or insufficient permissions" errors.
+ *
+ * ROOT CAUSE: This was built before the Firestore re-architecture. The correct paths are:
+ * - Learn mode: users/{uid}/learn/{subtopicId}
+ * - Practice mode: users/{uid}/practice/{topicId}
+ *
+ * REPLACEMENT: Use firestoreProgressService instead:
+ * - saveLearnProgress(uid, subtopicId, conversation)
+ * - savePracticeProgress(uid, topicId, progress)
+ *
+ * See FIRESTORE_DATA_STRATEGY.md for architecture details.
+ *
+ * TODO: This file should be deleted once migration is verified complete.
+ */
+
+/**
  * Progress Sync Service
  * Handles automatic saving and syncing of user progress to Firestore (authenticated) or localStorage (guests)
+ *
+ * @deprecated - See file header comment
  */
 
 import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';

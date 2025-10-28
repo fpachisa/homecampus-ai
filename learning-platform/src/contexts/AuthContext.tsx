@@ -3,7 +3,6 @@ import { onAuthStateChanged, isSignInWithEmailLink } from 'firebase/auth';
 import type { User } from 'firebase/auth';
 import { auth } from '../services/firebase';
 import { authService } from '../services/authService';
-import { progressSyncService } from '../services/progressSyncService';
 import type { UserProfile } from '../types/user';
 
 interface AuthContextType {
@@ -144,31 +143,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         // Check if profile setup is needed
         const needsSetup = await authService.needsProfileSetup(firebaseUser.uid);
         setNeedsProfileSetup(needsSetup);
-
-        // Start auto-sync for authenticated user
-        progressSyncService.startAutoSync(firebaseUser.uid);
-
-        // Check for guest data to migrate (only for non-anonymous users)
-        if (!firebaseUser.isAnonymous) {
-          const guestData = progressSyncService.loadGuestData();
-          if (guestData) {
-            try {
-              console.log('📦 Migrating guest progress to authenticated user...');
-              await progressSyncService.migrateGuestProgress(guestData, firebaseUser.uid);
-              console.log('✅ Guest progress migrated successfully!');
-              // Note: Could show toast notification here in the future
-            } catch (error) {
-              console.error('❌ Failed to migrate guest progress:', error);
-            }
-          }
-        }
       } else {
         setUserProfile(null);
         setNeedsProfileSetup(false);
-
-        // Stop auto-sync and start guest mode sync
-        progressSyncService.stopAutoSync();
-        progressSyncService.startAutoSync(null); // null = guest mode
       }
 
       setLoading(false);
