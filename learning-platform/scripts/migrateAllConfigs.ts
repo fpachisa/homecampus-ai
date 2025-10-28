@@ -17,6 +17,7 @@ import { getFirestore, Timestamp } from 'firebase-admin/firestore';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
+import { readFileSync } from 'fs';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -40,7 +41,10 @@ if (getApps().length === 0) {
     const serviceAccountPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
     if (serviceAccountPath) {
-      const serviceAccount = require(serviceAccountPath);
+      // Read and parse service account JSON file
+      const serviceAccountJson = readFileSync(serviceAccountPath, 'utf-8');
+      const serviceAccount = JSON.parse(serviceAccountJson);
+
       initializeApp({
         credential: cert(serviceAccount),
         projectId
