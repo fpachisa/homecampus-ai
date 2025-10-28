@@ -1,6 +1,8 @@
 /**
  * TTS Service with Provider Pattern
- * Supports multiple TTS providers: Gemini TTS (primary), Google Cloud TTS (fallback)
+ * Supports multiple TTS providers: Google Cloud TTS (primary), Gemini TTS (fallback)
+ *
+ * PRODUCTION CONFIG: Always uses Cloud TTS as primary provider for reliability
  */
 
 import type { TTSProvider, TTSSynthesizeOptions, EmotionType } from './tts/TTSProvider';
@@ -11,7 +13,7 @@ type TTSProviderType = 'gemini' | 'cloud';
 
 /**
  * TTS Service with automatic fallback
- * Uses Gemini TTS by default, falls back to Cloud TTS if unavailable
+ * Uses Cloud TTS by default (production config), falls back to Gemini TTS if unavailable
  */
 class TTSService {
   private primaryProvider: TTSProvider | null = null;
@@ -179,8 +181,9 @@ class TTSService {
   }
 }
 
-// Initialize TTS service based on environment configuration
-const providerType = (import.meta.env.VITE_TTS_PROVIDER || 'gemini') as TTSProviderType;
+// Initialize TTS service - ALWAYS use Cloud TTS for production
+// Provider type is hardcoded to 'cloud' for reliable production behavior
+const providerType: TTSProviderType = 'cloud'; // Changed from env-based to hardcoded
 const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const cloudApiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY;
 const defaultSpeaker = import.meta.env.VITE_TTS_SPEAKER || 'callirrhoe';
