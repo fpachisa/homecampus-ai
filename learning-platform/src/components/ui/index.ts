@@ -15,3 +15,5 @@ export type { AvatarProps, AvatarGroupProps } from './Avatar';
 
 export { ThemeToggle, AnimatedThemeToggle } from './ThemeToggle';
 export type { ThemeToggleProps, AnimatedThemeToggleProps } from './ThemeToggle';
+
+export { ConfirmationModal } from './ConfirmationModal';

@@ -8,6 +8,7 @@ import { ParentInviteForm } from './ParentInviteForm';
 import { ParentProfileForm } from './ParentProfileForm';
 import { AddChildrenForm } from './AddChildrenForm';
 import { UnifiedAuthForm } from '../auth/UnifiedAuthForm';
+import { ConfirmationModal } from '../ui/ConfirmationModal';
 
 export type AccountType = 'student' | 'parent' | null;
 export type OnboardingStep =
@@ -62,6 +63,8 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
   const [_isProcessing, setIsProcessing] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
   const [authLoading, setAuthLoading] = useState(false);
+  const [showEmailConfirmation, setShowEmailConfirmation] = useState(false);
+  const [confirmationEmail, setConfirmationEmail] = useState('');
 
   const updateData = (updates: Partial<OnboardingData>) => {
     setData(prev => ({ ...prev, ...updates }));
@@ -80,8 +83,9 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
       await sendVerificationEmail(email);
       updateData({ email });
 
-      // Show success message and wait for email verification
-      alert(`Verification email sent to ${email}. Please check your inbox and click the link to continue.`);
+      // Show themed confirmation modal
+      setConfirmationEmail(email);
+      setShowEmailConfirmation(true);
 
       // Note: User will complete sign-in via email link, then return to app
       // The auth state change will be handled by AuthContext
@@ -414,6 +418,15 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
           )}
         </div>
       </div>
+
+      {/* Email Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={showEmailConfirmation}
+        onClose={() => setShowEmailConfirmation(false)}
+        title="homecampus.ai says"
+        message={`Verification email sent to ${confirmationEmail}. Please check your inbox and click the link to continue.`}
+        confirmText="OK"
+      />
     </div>
   );
 };
