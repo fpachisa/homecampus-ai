@@ -502,4 +502,138 @@ export class PromptRegistry {
                 type === 'agent' ? this.agents : this.topics;
     return map.delete(id);
   }
+
+  // ============================================
+  // Dynamic Topic Loading
+  // ============================================
+
+  /**
+   * Load topics from directory (async)
+   * Note: This method is async and should be called during initialization
+   * Only works in Node.js environments
+   */
+  async loadFromDirectory(directoryPath: string, options?: any): Promise<number> {
+    try {
+      // Check if we're in Node.js environment
+      const isNode = typeof process !== 'undefined' && process.versions?.node;
+      if (!isNode) {
+        console.warn('[PromptRegistry] Filesystem loading not available in browser');
+        return 0;
+      }
+
+      // Dynamic import of topic-loader (only in Node.js, with Vite ignore comment)
+      const { loadTopicsFromDirectory } = await import(/* @vite-ignore */ './topic-loader.js');
+
+      const topics = await loadTopicsFromDirectory(directoryPath, options);
+      let loadedCount = 0;
+
+      for (const topicModule of topics) {
+        // Register each subtopic
+        for (const [subtopicId, subtopicData] of Object.entries(topicModule.subtopics)) {
+          this.registerTopic(subtopicId, {
+            topicId: subtopicId,
+            subject: topicModule.metadata?.subject as any,
+            gradeLevel: topicModule.metadata?.grade as any,
+            learningObjectives: subtopicData.learningObjectives || [],
+            progressionStructure: subtopicData.progressionStructure,
+            agents: {},
+            ...subtopicData,
+            _config: topicModule.config // Store global config with subtopic
+          }, {
+            source: 'filesystem',
+            filePath: topicModule.metadata?.topicId,
+            loadedAt: Date.now()
+          });
+          loadedCount++;
+        }
+      }
+
+      return loadedCount;
+    } catch (error) {
+      console.error('Failed to load topics from directory:', error);
+      return 0;
+    }
+  }
+
+  /**
+   * Load a single topic file
+   * Only works in Node.js environments
+   */
+  async loadTopicFile(filePath: string): Promise<boolean> {
+    try {
+      // Check if we're in Node.js environment
+      const isNode = typeof process !== 'undefined' && process.versions?.node;
+      if (!isNode) {
+        console.warn('[PromptRegistry] Filesystem loading not available in browser');
+        return false;
+      }
+
+      const { loadTopicFile } = await import(/* @vite-ignore */ './topic-loader.js');
+
+      const topicModule = await loadTopicFile(filePath);
+      if (!topicModule) return false;
+
+      // Register all subtopics from this file
+      for (const [subtopicId, subtopicData] of Object.entries(topicModule.subtopics)) {
+        this.registerTopic(subtopicId, {
+          topicId: subtopicId,
+          subject: topicModule.metadata?.subject as any,
+          gradeLevel: topicModule.metadata?.grade as any,
+          learningObjectives: subtopicData.learningObjectives || [],
+          progressionStructure: subtopicData.progressionStructure,
+          agents: {},
+          ...subtopicData,
+          _config: topicModule.config
+        }, {
+          source: 'filesystem',
+          filePath: topicModule.metadata?.topicId,
+          loadedAt: Date.now()
+        });
+      }
+
+      return true;
+    } catch (error) {
+      console.error('Failed to load topic file:', filePath, error);
+      return false;
+    }
+  }
+
+  /**
+   * Get topic with its config
+   * Returns both subtopic data and global config
+   */
+  getTopicWithConfig(id: string): { subtopic: any; global: any } | undefined {
+    const topic = this.getTopic(id);
+    if (!topic) return undefined;
+
+    return {
+      subtopic: topic,
+      global: (topic as any)._config || {}
+    };
+  }
+
+  /**
+   * List all subtopic IDs from loaded topics
+   */
+  listSubtopicIds(): string[] {
+    return Array.from(this.topics.keys());
+  }
+
+  /**
+   * Filter topics by subject and grade
+   */
+  getTopicsBySubject(subject: string): TopicConfig[] {
+    return Array.from(this.topics.values())
+      .filter(entry => entry.data.subject === subject)
+      .map(entry => entry.data);
+  }
+
+  /**
+   * Get all topics for a specific grade level
+   */
+  getTopicsByGrade(gradeLevel: string): TopicConfig[] {
+    return Array.from(this.topics.values())
+      .filter(entry => entry.data.gradeLevel === gradeLevel)
+      .map(entry => entry.data);
+  }
 }

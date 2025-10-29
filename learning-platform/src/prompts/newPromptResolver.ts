@@ -17,14 +17,15 @@ import {
 
 import { formatConversationHistory } from '../services/utils/responseParser';
 import { getFilteredTools } from '../components/math-tools/mathToolsRegistry';
+import { PromptRegistry } from '../prompt-library/registry/prompt-registry';
 
-// Import topic configurations
-// NEW: Migrated to prompt-library structure
-import { S3_MATH_TRIGONOMETRY, S3_MATH_TRIGONOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
-import { S3_MATH_CIRCLE_GEOMETRY, S3_MATH_CIRCLE_GEOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
+// Import topic configurations for browser bundle (filesystem loading not available in browser)
+// In Node.js environments (tests, scripts), topics can be loaded dynamically from filesystem
+import { S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
+import { S3_MATH_CIRCLE_GEOMETRY_SUBTOPICS, S3_MATH_CIRCLE_GEOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
 import { S3_MATH_QUADRATIC_EQUATIONS, S3_MATH_QUADRATIC_EQUATIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-quadratic-equations';
 import { S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS, EXPONENTIAL_LOGARITHMS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-exponential-logarithms';
-import { S3_MATH_SETS_VENN_DIAGRAMS, S3_MATH_SETS_VENN_DIAGRAMS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
+import { S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS, S3_MATH_SETS_VENN_DIAGRAMS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-sets-venn-diagrams';
 import { S3_MATH_EXPONENTS_SUBTOPICS, S3_MATH_EXPONENTS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-exponents';
 import { S3_MATH_SURDS_RADICALS_SUBTOPICS, S3_MATH_SURDS_RADICALS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-surds-radicals';
 import { S3_MATH_STATISTICS_SUBTOPICS, S3_MATH_STATISTICS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s3-statistics';
@@ -35,8 +36,55 @@ import { S4_MATH_INTEGRATION_SUBTOPICS, INTEGRATION_TUTOR_CUSTOMIZATION, INTEGRA
 import { S4_MATH_PROBABILITY_SUBTOPICS, PROBABILITY_TUTOR_CUSTOMIZATION, PROBABILITY_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 
-// OLD: Still in legacy format (to be migrated)
-// None remaining!
+/**
+ * Register all imported topics with the PromptRegistry
+ * This ensures topics are available in browser environments where filesystem access isn't possible
+ */
+function registerBrowserTopics() {
+  const registry = PromptRegistry.getInstance();
+
+  // Helper to register topics
+  const registerTopics = (subtopics: Record<string, any>, config: any) => {
+    Object.entries(subtopics).forEach(([id, data]) => {
+      registry.registerTopic(id, {
+        topicId: id,
+        subject: 'mathematics' as any,
+        gradeLevel: id.startsWith('s3') ? 'secondary-3' as any : 'secondary-4' as any,
+        learningObjectives: data.learningObjectives || [],
+        progressionStructure: data.progressionStructure,
+        agents: {},
+        ...data,
+        _config: config
+      }, {
+        source: 'static-import',
+        loadedAt: Date.now()
+      });
+    });
+  };
+
+  // Register all S3 topics
+  registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);
+  registerTopics(S3_MATH_CIRCLE_GEOMETRY_SUBTOPICS, S3_MATH_CIRCLE_GEOMETRY_CONFIG);
+  registerTopics(S3_MATH_QUADRATIC_EQUATIONS, S3_MATH_QUADRATIC_EQUATIONS_CONFIG);
+  registerTopics(S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS, EXPONENTIAL_LOGARITHMS_CONFIG);
+  registerTopics(S3_MATH_SETS_VENN_DIAGRAMS_SUBTOPICS, S3_MATH_SETS_VENN_DIAGRAMS_CONFIG);
+  registerTopics(S3_MATH_EXPONENTS_SUBTOPICS, S3_MATH_EXPONENTS_CONFIG);
+  registerTopics(S3_MATH_SURDS_RADICALS_SUBTOPICS, S3_MATH_SURDS_RADICALS_CONFIG);
+  registerTopics(S3_MATH_STATISTICS_SUBTOPICS, S3_MATH_STATISTICS_CONFIG);
+  registerTopics(S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS, S3_MATH_RELATIONS_FUNCTIONS_CONFIG);
+  registerTopics(S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS, S3_MATH_COORDINATE_GEOMETRY_CONFIG);
+
+  // Register S4 topics
+  registerTopics(DIFFERENTIAL_CALCULUS_SUBTOPICS, S4_DIFFERENTIAL_CALCULUS_CONFIG);
+  registerTopics(S4_MATH_INTEGRATION_SUBTOPICS, { tutorCustomization: INTEGRATION_TUTOR_CUSTOMIZATION, availableTools: INTEGRATION_MATH_TOOLS });
+  registerTopics(S4_MATH_PROBABILITY_SUBTOPICS, { tutorCustomization: PROBABILITY_TUTOR_CUSTOMIZATION, availableTools: PROBABILITY_MATH_TOOLS });
+  registerTopics(S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS, { MATH_TOOLS_AVAILABLE: ['graphingCalculator', 'coordinatePlane'] });
+
+  console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
+}
+
+// Register topics immediately for browser use
+registerBrowserTopics();
 
 export interface PromptContext {
   topicId: string;
@@ -88,9 +136,11 @@ export interface PromptContext {
 
 export class NewPromptResolver {
   private promptLibrary: PromptLibrary;
+  private registry: PromptRegistry;
 
   constructor() {
     this.promptLibrary = new PromptLibrary();
+    this.registry = PromptRegistry.getInstance();
   }
 
   /**
@@ -195,97 +245,24 @@ export class NewPromptResolver {
   }
 
   /**
-   * Get topic configuration (temporary bridge to old system)
+   * Get topic configuration from registry
+   * Topics are already loaded from static imports at module initialization
    */
   private getTopicConfig(topicId: string): { subtopic: any; global: any } {
-    // Bridge to old system - will be replaced when topics are migrated
-    if (topicId.startsWith('s3-math-trigonometry-')) {
-      const subtopic = (S3_MATH_TRIGONOMETRY as any)[topicId];
-      return { subtopic, global: S3_MATH_TRIGONOMETRY_CONFIG };
+    // Get topic from registry (already populated from static imports)
+    const config = this.registry.getTopicWithConfig(topicId);
+
+    if (!config) {
+      const available = this.registry.listSubtopicIds();
+      throw new Error(
+        `Topic ${topicId} not found in registry.\n` +
+        `Registry has ${available.length} topics loaded.\n` +
+        `Available topics: ${available.slice(0, 10).join(', ')}${available.length > 10 ? '...' : ''}\n` +
+        `You requested: ${topicId}`
+      );
     }
 
-    if (topicId.startsWith('s3-math-circle-geometry-')) {
-      const subtopic = (S3_MATH_CIRCLE_GEOMETRY as any)[topicId];
-      return { subtopic, global: S3_MATH_CIRCLE_GEOMETRY_CONFIG };
-    }
-
-    if (topicId.startsWith('s3-math-quadratic-')) {
-      const subtopic = (S3_MATH_QUADRATIC_EQUATIONS as any)[topicId];
-      return { subtopic, global: S3_MATH_QUADRATIC_EQUATIONS_CONFIG };
-    }
-
-    if (topicId.startsWith('s3-math-exponential-logarithms-')) {
-      const subtopic = (S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS as any)[topicId];
-      return { subtopic, global: EXPONENTIAL_LOGARITHMS_CONFIG };
-    }
-
-    if (topicId.startsWith('s3-math-sets-')) {
-      const subtopic = (S3_MATH_SETS_VENN_DIAGRAMS as any)[topicId];
-      return { subtopic, global: S3_MATH_SETS_VENN_DIAGRAMS_CONFIG };
-    }
-
-    if (topicId.startsWith('s3-math-exponents-')) {
-      const subtopic = (S3_MATH_EXPONENTS_SUBTOPICS as any)[topicId];
-      return { subtopic, global: S3_MATH_EXPONENTS_CONFIG };
-    }
-
-    if (topicId.startsWith('s3-math-surds-')) {
-      const subtopic = (S3_MATH_SURDS_RADICALS_SUBTOPICS as any)[topicId];
-      return { subtopic, global: S3_MATH_SURDS_RADICALS_CONFIG };
-    }
-
-    if (topicId.startsWith('s3-math-statistics-')) {
-      const subtopic = (S3_MATH_STATISTICS_SUBTOPICS as any)[topicId];
-      return { subtopic, global: S3_MATH_STATISTICS_CONFIG };
-    }
-
-    if (topicId.startsWith('s3-math-relations-')) {
-      const subtopic = (S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS as any)[topicId];
-      return { subtopic, global: S3_MATH_RELATIONS_FUNCTIONS_CONFIG };
-    }
-
-    if (topicId.startsWith('s3-math-coord-geom-')) {
-      const subtopic = (S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS as any)[topicId];
-      return { subtopic, global: S3_MATH_COORDINATE_GEOMETRY_CONFIG };
-    }
-
-    // S4 Differential Calculus - direct topic IDs
-    const differentialCalculusTopics = ['s4-math-differential-calculus-limits', 's4-math-differential-calculus-gradient-tangent', 's4-math-differential-calculus-derivative-function', 's4-math-differential-calculus-first-principles', 's4-math-differential-calculus-differentiation-rules', 's4-math-differential-calculus-tangent-equations', 's4-math-differential-calculus-stationary-points'];
-    if (differentialCalculusTopics.includes(topicId)) {
-      const subtopic = (DIFFERENTIAL_CALCULUS_SUBTOPICS as any)[topicId];
-      return { subtopic, global: S4_DIFFERENTIAL_CALCULUS_CONFIG };
-    }
-
-    // S4 Integration - full topic IDs
-    if (topicId in S4_MATH_INTEGRATION_SUBTOPICS) {
-      const subtopic = S4_MATH_INTEGRATION_SUBTOPICS[topicId as keyof typeof S4_MATH_INTEGRATION_SUBTOPICS];
-      const global = {
-        tutorCustomization: INTEGRATION_TUTOR_CUSTOMIZATION,
-        availableTools: INTEGRATION_MATH_TOOLS
-      };
-      return { subtopic, global };
-    }
-
-    // S4 Probability - full topic IDs
-    if (topicId in S4_MATH_PROBABILITY_SUBTOPICS) {
-      const subtopic = S4_MATH_PROBABILITY_SUBTOPICS[topicId as keyof typeof S4_MATH_PROBABILITY_SUBTOPICS];
-      const global = {
-        tutorCustomization: PROBABILITY_TUTOR_CUSTOMIZATION,
-        availableTools: PROBABILITY_MATH_TOOLS
-      };
-      return { subtopic, global };
-    }
-
-    // S4 Quadratic Functions - full topic IDs
-    if (topicId in S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS) {
-      const subtopic = S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS[topicId as keyof typeof S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS];
-      const global = {
-        MATH_TOOLS_AVAILABLE: ['graphingCalculator', 'coordinatePlane']
-      };
-      return { subtopic, global };
-    }
-
-    throw new Error(`Topic ${topicId} not found`);
+    return config;
   }
 
   /**

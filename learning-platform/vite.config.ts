@@ -16,6 +16,13 @@ export default defineConfig({
     chunkSizeWarningLimit: 500,
 
     rollupOptions: {
+      // Exclude Node.js-only modules from browser bundle
+      external: [
+        'fs',
+        'path',
+        './topic-loader'
+      ],
+
       output: {
         // Manual chunking for better caching
         manualChunks: {
