@@ -105,11 +105,16 @@ jobs:
         working-directory: ${{ env.WORKING_DIR }}
         run: npm run build
 
-      - name: Copy curriculum content to dist
+      - name: Verify curriculum content in build
         run: |
-          echo "📚 Copying curriculum content to dist..."
-          cp -r curriculum-content/ learning-platform/dist/curriculum-content/
-          echo "✅ Curriculum content copied ($(find learning-platform/dist/curriculum-content -name '*.yaml' | wc -l) YAML files)"
+          echo "📚 Verifying curriculum content in dist..."
+          if [ -d "learning-platform/dist/curriculum-content" ]; then
+            YAML_COUNT=$(find learning-platform/dist/curriculum-content -name '*.yaml' | wc -l)
+            echo "✅ Curriculum content verified ($YAML_COUNT YAML files)"
+          else
+            echo "❌ ERROR: curriculum-content not found in dist!"
+            exit 1
+          fi
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
