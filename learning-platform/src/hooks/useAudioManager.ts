@@ -10,7 +10,7 @@ const SPEAKER_STORAGE_KEY = 'tts_speaker_preference';
 
 interface AudioQueueItem {
   text: string;
-  emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+  emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
   onComplete?: () => void;
 }
 
@@ -23,6 +23,7 @@ interface UseAudioManagerReturn {
   avatarState: 'idle' | 'speaking' | 'listening';
   audioDuration: number;  // Duration of current audio in seconds
   speakText: (text: string, emotion?: AudioQueueItem['emotion'], onComplete?: () => void) => Promise<void>;
+  speakTextWithAudio: (text: string, audioUrl: string, emotion?: AudioQueueItem['emotion'], onComplete?: () => void) => Promise<void>;
   stopSpeaking: () => void;
   clearQueue: () => void;
   setPlaybackSpeed: (speed: number) => void;
@@ -181,6 +182,68 @@ export const useAudioManager = (): UseAudioManagerReturn => {
     }
   }, []);
 
+  // Speak text using pre-generated audio URL (for cached greetings)
+  const speakTextWithAudio = useCallback(async (
+    text: string,
+    audioUrl: string,
+    emotion?: AudioQueueItem['emotion'],
+    onComplete?: () => void
+  ) => {
+    try {
+      console.log('🎵 Playing pre-generated audio:', audioUrl);
+      console.log('🎭 Emotion:', emotion || 'neutral');
+
+      // Set avatar to speaking state
+      setAvatarState('speaking');
+      setIsPlaying(true);
+
+      // Load audio from URL
+      const audio = new Audio(audioUrl);
+      audioRef.current = audio;
+
+      // Get audio duration when metadata loads
+      audio.onloadedmetadata = () => {
+        setAudioDuration(audio.duration);
+        console.log(`🎵 Audio duration: ${audio.duration}s`);
+      };
+
+      // Show subtitle when audio starts playing
+      audio.onplay = () => {
+        console.log('🎬 Audio started, showing subtitle');
+        setCurrentSubtitle(text);
+      };
+
+      audio.onended = () => {
+        console.log('✅ Speech completed');
+        setIsPlaying(false);
+        setAvatarState('idle');
+        setCurrentSubtitle('');
+        audioRef.current = null;
+
+        // Call completion callback
+        onComplete?.();
+      };
+
+      audio.onerror = (err) => {
+        console.error('❌ Audio playback error:', err);
+        setIsPlaying(false);
+        setAvatarState('idle');
+        setCurrentSubtitle('');
+        audioRef.current = null;
+        onComplete?.();
+      };
+
+      await audio.play();
+
+    } catch (error) {
+      console.error('❌ Pre-generated audio error:', error);
+      setIsPlaying(false);
+      setAvatarState('idle');
+      setCurrentSubtitle('');
+      onComplete?.();
+    }
+  }, []);
+
   // Cleanup on unmount
   useEffect(() => {
     return () => {
@@ -194,6 +257,7 @@ export const useAudioManager = (): UseAudioManagerReturn => {
     avatarState,
     audioDuration,
     speakText,
+    speakTextWithAudio,
     stopSpeaking,
     clearQueue,
     setPlaybackSpeed: handleSetPlaybackSpeed

@@ -10,6 +10,7 @@ const LandingPage = lazy(() => import('../components/LandingPage'));
 const HomePage = lazy(() => import('../components/HomePage'));
 const ParentDashboard = lazy(() => import('../components/parent/ParentDashboard'));
 const ErrorBoundary = lazy(() => import('../components/ErrorBoundary'));
+const GreetingsViewer = lazy(() => import('../pages/GreetingsViewer'));
 
 // Sub-routers (to be created)
 import LearnRouter from './LearnRouter';
@@ -218,6 +219,14 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <DevRouter />
+      </RootLayout>
+    ),
+  },
+  {
+    path: '/greetings-viewer',
+    element: (
+      <RootLayout>
+        <GreetingsViewer />
       </RootLayout>
     ),
   },

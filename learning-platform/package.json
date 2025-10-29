@@ -14,7 +14,10 @@
     "coverage": "vitest run --coverage",
     "sync-curriculum": "tsx scripts/sync-curriculum.ts",
     "generate-template": "tsx scripts/generate-template.ts",
-    "verify-template": "tsx scripts/verify-template.ts"
+    "verify-template": "tsx scripts/verify-template.ts",
+    "generate-initial-audio": "tsx scripts/generateInitialAudio.ts",
+    "generate-ai-samples": "tsx scripts/generateAISamples.ts",
+    "migrate:subtopics": "tsx scripts/renameRelationsFunctionsSubtopics.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.64.0",

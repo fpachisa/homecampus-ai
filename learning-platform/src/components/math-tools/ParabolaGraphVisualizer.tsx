@@ -167,6 +167,11 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
   // Get y-intercept
   const yIntercept = parabolaY(0);
 
+  // Helper: Check if two points are the same (within tolerance)
+  const pointsEqual = (x1: number, y1: number, x2: number, y2: number, tolerance = 0.01): boolean => {
+    return Math.abs(x1 - x2) < tolerance && Math.abs(y1 - y2) < tolerance;
+  };
+
   // Colors
   const gridColor = theme.colors.border || '#e5e7eb';
   const axisColor = theme.colors.textSecondary || '#6b7280';
@@ -272,7 +277,7 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
             />
             <text
               x={mathToSVG(h, yRange[1])[0]}
-              y={mathToSVG(h, yRange[1])[1] - 5}
+              y={padding - 10}
               className="text-xs"
               fill={parabolaColor}
               textAnchor="middle"
@@ -300,10 +305,11 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
               fill={vertexColor}
             />
             <text
-              x={mathToSVG(h, k)[0] + 10}
-              y={mathToSVG(h, k)[1] - 10}
+              x={mathToSVG(h, k)[0]}
+              y={mathToSVG(h, k)[1] - 15}
               className="text-sm font-semibold"
               fill={vertexColor}
+              textAnchor="middle"
             >
               ({h}, {k})
             </text>
@@ -314,7 +320,9 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
         {showIntercepts && (
           <>
             {/* X-intercepts */}
-            {getXIntercepts().map((xInt, i) => (
+            {getXIntercepts()
+              .filter(xInt => !pointsEqual(xInt, 0, h, k)) // Don't show if same as vertex
+              .map((xInt, i) => (
               <g key={`x-intercept-${i}`}>
                 <circle
                   cx={mathToSVG(xInt, 0)[0]}
@@ -333,8 +341,10 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
                 </text>
               </g>
             ))}
-            {/* Y-intercept */}
-            {yIntercept >= yRange[0] && yIntercept <= yRange[1] && (
+            {/* Y-intercept - only show if not the same as vertex */}
+            {yIntercept >= yRange[0] &&
+             yIntercept <= yRange[1] &&
+             !pointsEqual(0, yIntercept, h, k) && (
               <g>
                 <circle
                   cx={mathToSVG(0, yIntercept)[0]}
@@ -344,7 +354,7 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
                 />
                 <text
                   x={mathToSVG(0, yIntercept)[0] + 15}
-                  y={mathToSVG(0, yIntercept)[1]}
+                  y={mathToSVG(0, yIntercept)[1] + 5}
                   className="text-xs"
                   fill={interceptColor}
                 >

@@ -8,11 +8,11 @@
 // Type exports
 export type RelationsFunctionsTopicId =
   | 's3-math-relations-functions-fundamentals'
-  | 's3-math-function-notation'
-  | 's3-math-domain-range'
-  | 's3-math-sign-diagrams'
-  | 's3-math-transformations'
-  | 's3-math-absolute-value';
+  | 's3-math-relations-functions-function-notation'
+  | 's3-math-relations-functions-domain-range'
+  | 's3-math-relations-functions-sign-diagrams'
+  | 's3-math-relations-functions-transformations'
+  | 's3-math-relations-functions-absolute-value';
 
 // Topic-specific tutor customization (overrides base)
 export const RELATIONS_FUNCTIONS_TUTOR_CUSTOMIZATION = {
@@ -233,7 +233,7 @@ export const S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS = {
 • Functions require unique x-values (y-values can repeat)`
   },
 
-  's3-math-function-notation': {
+  's3-math-relations-functions-function-notation': {
     displayName: 'Function Notation',
     topicName: 'function notation and evaluating f(x)',
 
@@ -366,7 +366,7 @@ export const S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS = {
 • Function machine: input → function → output`
   },
 
-  's3-math-domain-range': {
+  's3-math-relations-functions-domain-range': {
     displayName: 'Domain and Range',
     topicName: 'domain, range, and natural domain of functions',
 
@@ -502,7 +502,7 @@ export const S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS = {
 • Always use ( ) with ∞ or -∞`
   },
 
-  's3-math-sign-diagrams': {
+  's3-math-relations-functions-sign-diagrams': {
     displayName: 'Sign Diagrams',
     topicName: 'sign diagrams and analyzing function behavior',
 
@@ -635,7 +635,7 @@ export const S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS = {
 • Example: (x-a)³ changes sign, (x-a)² doesn't`
   },
 
-  's3-math-transformations': {
+  's3-math-relations-functions-transformations': {
     displayName: 'Transformations of Graphs',
     topicName: 'translations, stretches, and reflections of function graphs',
 
@@ -831,7 +831,7 @@ export const S3_MATH_RELATIONS_FUNCTIONS_SUBTOPICS = {
 • Transformations can combine: y = -2f(x - 3) + 1`
   },
 
-  's3-math-absolute-value': {
+  's3-math-relations-functions-absolute-value': {
     displayName: 'Absolute Value Function',
     topicName: 'absolute value (modulus) and its graph',
 

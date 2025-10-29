@@ -306,11 +306,11 @@ export class NewPromptResolver {
       .addObjectives(subtopic.learningObjectives ? [subtopic.learningObjectives] : [])
       .addFormattingRules(FORMATTING_RULES)
       .addVisualTools(scopedMathTools)
-      .addTask(`Greet the student warmly and introduce ${subtopic.topicName}` + ` Then generate the first intoductory problem on ${firstSection.title}`)
+      .addTask(`Greet the student encouragingly and introduce ${subtopic.topicName}` + ` Then generate the first intoductory problem on ${firstSection.title}`)
       .addOutputSchema({
           speech: {
-            text: "string - plain text for avatar speech",
-            emotion: "warm"
+            text: "string - plain text for avatar speech, no LaTeX, no markdown, no HTML, no special characters.",
+            emotion: "excited"
           },
 
           display: {

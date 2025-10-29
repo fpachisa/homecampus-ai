@@ -85,7 +85,7 @@ const QuadraticFormulaVisualizer: React.FC<QuadraticFormulaVisualizerProps> = ({
       {showDiscriminant && (
         <div className="mb-3 p-3 rounded" style={{ backgroundColor: theme.colors.interactive }}>
           <div className="text-sm font-semibold mb-1" style={{ color: theme.colors.textMuted }}>
-            Discriminant: $b^2 - 4ac$
+            <MathText>Discriminant: $b^2 - 4ac$</MathText>
           </div>
           <div className="text-base font-semibold" style={{ color: discriminant >= 0 ? '#10b981' : '#ef4444' }}>
             <MathText>{`$${b}^2 - 4(${a})(${c}) = ${discriminant}$`}</MathText>

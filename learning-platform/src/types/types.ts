@@ -8,7 +8,7 @@ export interface Message {
   // NEW: Speech and display content separation for AI avatar
   speechContent?: {
     text: string;                    // What the avatar speaks
-    emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+    emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
     audioUrl?: string;               // Cached TTS audio URL (blob URL)
     duration?: number;               // Audio duration in milliseconds
   };
@@ -71,7 +71,7 @@ export interface ProblemState {
 export interface QuestionGenerationResponse {
   speech: {
     text: string;                    // What avatar should speak (acknowledgment + transition)
-    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
   };
   display: {
     content: string;                 // The new problem text
@@ -89,7 +89,7 @@ export interface MathTool {
 export interface InitialGreetingResponse {
   speech: {
     text: string;                    // What avatar should speak (warm welcome message) - MUST be plain text, no markdown or LaTeX
-    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
   };
   display: {
     content: string;                 // The first problem text to display
@@ -140,7 +140,7 @@ export interface PracticeAgentResponse {
   isMainProblemSolved: boolean;
   speech: {
     text: string;
-    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
   };
   display: {
     content: string;

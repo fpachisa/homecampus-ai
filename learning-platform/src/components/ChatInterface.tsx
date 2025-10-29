@@ -41,11 +41,12 @@ import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathem
 import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import type { QuadraticFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
-import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry } from '../types/types';
+import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
 import NotesViewer from './NotesViewer';
 import SectionProgressTracker from './SectionProgressTracker';
+import { getCachedGreeting } from '../data/initialGreetingsCache';
 
 interface ChatInterfaceProps {
   topicId?: string;
@@ -191,7 +192,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   const hasInitialized = useRef(false);
 
   // Audio Manager for TTS and Avatar control
-  const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText, stopSpeaking } = useAudioManager();
+  const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText, speakTextWithAudio, stopSpeaking } = useAudioManager();
   const [showSubtitle] = useState(true); // User preference
 
   // Notes viewer state
@@ -520,8 +521,18 @@ const initializeConversation = async () => {
         console.log(`📍 Initialized section progression starting at: ${firstSection.id}`);
       }
 
-      // Get initial greeting and first problem in a single LLM call
-      const response = await aiService.current.generateInitialGreetingWithProblem(topicId);
+      // Get initial greeting and first problem
+      // Check cache first for instant load, fall back to AI generation
+      let response: InitialGreetingResponse;
+      const cachedGreeting = getCachedGreeting(topicId);
+
+      if (cachedGreeting) {
+        console.log('⚡ Using cached initial greeting (instant load)');
+        response = cachedGreeting;
+      } else {
+        console.log('🤖 No cached greeting found, generating with AI...');
+        response = await aiService.current.generateInitialGreetingWithProblem(topicId);
+      }
 
       // Check if topic hasn't changed while we were waiting
       if (currentTopicRef.current !== initTopicId) {
@@ -530,8 +541,41 @@ const initializeConversation = async () => {
       }
 
       // Speak the greeting via avatar (no chat message, just subtitle)
+      // Use pre-generated audio if available for instant playback
       const validatedMathTool = validateMathTool(response.mathTool);
-      speakText(response.speech.text, response.speech.emotion, () => {
+      const preGeneratedAudioUrl = cachedGreeting?.speech.preGeneratedAudioUrl;
+
+      if (preGeneratedAudioUrl) {
+        console.log('🎵 Using pre-generated audio (zero TTS delay)');
+        speakTextWithAudio(response.speech.text, preGeneratedAudioUrl, response.speech.emotion, () => {
+          // Check again before updating state
+          if (currentTopicRef.current !== initTopicId) return;
+
+          // After greeting is spoken, show the first problem
+          addMessage('tutor', response.display.content, {
+            problemType: 1,
+            mathTool: validatedMathTool // Include optional mathTool if valid
+          });
+
+          // Initialize problem state for the first problem
+          resetProblemState(response.display.content, 1, validatedMathTool);
+
+          setState(prev => ({
+            ...prev,
+            sessionStats: {
+              ...prev.sessionStats,
+              problemsAttempted: 1
+            }
+          }));
+
+          // Auto-focus input after first problem is displayed
+          setTimeout(() => {
+            inputAreaRef.current?.focus();
+          }, 300);
+        });
+      } else {
+        console.log('🔊 Generating TTS audio on-the-fly');
+        speakText(response.speech.text, response.speech.emotion, () => {
         // Check again before updating state
         if (currentTopicRef.current !== initTopicId) return;
 
@@ -557,6 +601,7 @@ const initializeConversation = async () => {
           inputAreaRef.current?.focus();
         }, 300);
       });
+      }
 
       // Don't add greeting as a message - it's spoken only
 
