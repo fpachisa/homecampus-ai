@@ -65,6 +65,12 @@ coverage/
 .cache/
 public/
 
+# Exception: Allow pre-generated audio files for learning-platform
+!learning-platform/public/
+!learning-platform/public/assets/
+!learning-platform/public/assets/audio/
+!learning-platform/public/assets/audio/**
+
 # Storybook build outputs
 .out/
 .storybook-out/
