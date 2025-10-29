@@ -44,30 +44,59 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
   // - Solution: Calculate the actual angle from sides, but display "θ" as the label
 
   let calculatedAngle: number = angle ?? 0;
-  let showThetaLabel = false;
+  let showLabelInsteadOfDegrees = false;
 
-  if (angle === null || angle === 0) {
-    showThetaLabel = true; // Display "θ" instead of numeric value
+  // PRIORITY: If angleLabel is explicitly provided (not default 'θ'), show it
+  // This handles cases like: angle: 55, angleLabel: 'α' → display 'α' not '55°'
+  const hasCustomLabel = angleLabel && angleLabel !== 'θ';
 
-    // Try to calculate angle from given sides
-    // Priority: opposite + adjacent > opposite + hypotenuse > adjacent + hypotenuse
+  if (hasCustomLabel) {
+    // User wants to show a custom label (e.g., 'α', 'β', 'A', 'B')
+    // Use the provided angle for drawing, but display the label
+    showLabelInsteadOfDegrees = true;
+    if (angle === null || angle === 0) {
+      // No angle provided, try to calculate from sides for accurate drawing
+      if (opposite && adjacent) {
+        const opp = parseFloat(opposite);
+        const adj = parseFloat(adjacent);
+        if (!isNaN(opp) && !isNaN(adj) && adj !== 0) {
+          calculatedAngle = (Math.atan(opp / adj) * 180) / Math.PI;
+        }
+      } else if (opposite && hypotenuse) {
+        const opp = parseFloat(opposite);
+        const hyp = parseFloat(hypotenuse);
+        if (!isNaN(opp) && !isNaN(hyp) && hyp !== 0) {
+          calculatedAngle = (Math.asin(opp / hyp) * 180) / Math.PI;
+        }
+      } else if (adjacent && hypotenuse) {
+        const adj = parseFloat(adjacent);
+        const hyp = parseFloat(hypotenuse);
+        if (!isNaN(adj) && !isNaN(hyp) && hyp !== 0) {
+          calculatedAngle = (Math.acos(adj / hyp) * 180) / Math.PI;
+        }
+      }
+      // Fallback to 30° if calculation fails
+      if (calculatedAngle === 0 || isNaN(calculatedAngle)) {
+        calculatedAngle = 30;
+      }
+    }
+  } else if (angle === null || angle === 0) {
+    // No custom label and no angle provided - calculate from sides and show 'θ'
+    showLabelInsteadOfDegrees = true;
 
     if (opposite && adjacent) {
-      // Use arctan(opposite/adjacent) - most common for tangent problems
       const opp = parseFloat(opposite);
       const adj = parseFloat(adjacent);
       if (!isNaN(opp) && !isNaN(adj) && adj !== 0) {
         calculatedAngle = (Math.atan(opp / adj) * 180) / Math.PI;
       }
     } else if (opposite && hypotenuse) {
-      // Use arcsin(opposite/hypotenuse) - for sine problems
       const opp = parseFloat(opposite);
       const hyp = parseFloat(hypotenuse);
       if (!isNaN(opp) && !isNaN(hyp) && hyp !== 0) {
         calculatedAngle = (Math.asin(opp / hyp) * 180) / Math.PI;
       }
     } else if (adjacent && hypotenuse) {
-      // Use arccos(adjacent/hypotenuse) - for cosine problems
       const adj = parseFloat(adjacent);
       const hyp = parseFloat(hypotenuse);
       if (!isNaN(adj) && !isNaN(hyp) && hyp !== 0) {
@@ -75,7 +104,7 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
       }
     }
 
-    // Fallback to 30° if calculation fails (e.g., non-numeric labels like "x", "h")
+    // Fallback to 30° if calculation fails
     if (calculatedAngle === 0 || isNaN(calculatedAngle)) {
       calculatedAngle = 30;
     }
@@ -195,7 +224,7 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
                   textAnchor="middle"
                   dominantBaseline="middle"
                 >
-                  {showThetaLabel ? angleLabel : `${Math.round(calculatedAngle)}°`}
+                  {showLabelInsteadOfDegrees ? angleLabel : `${Math.round(calculatedAngle)}°`}
                 </text>
               );
             })()}
