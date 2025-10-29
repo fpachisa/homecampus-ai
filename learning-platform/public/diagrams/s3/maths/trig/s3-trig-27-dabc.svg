@@ -1,0 +1,84 @@
+<svg viewBox="0 0 650 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Scale: 10 pixels = 1 meter -->
+  <!-- A at (100, 400) - origin point -->
+  <!-- B at (350, 400) - 25m due east (250 pixels right) -->
+  <!-- ∠CAB = 15°, ∠CBA = 90° -->
+  <!-- C is above B: BC = AB × tan(15°) ≈ 250 × 0.268 ≈ 67 pixels -->
+  <!-- C at (350, 333) -->
+  <!-- ∠DAC = 27°, so ∠DAB = 42° (15° + 27°) -->
+  <!-- AD = 30m = 300 pixels at 42° angle -->
+  <!-- D_x = 100 + 300×cos(42°) ≈ 100 + 223 = 323 -->
+  <!-- D_y = 400 - 300×sin(42°) ≈ 400 - 201 = 199 -->
+  <!-- H is above D, 9° elevation from A -->
+
+  <!-- Line AB (horizontal base) -->
+  <line x1="100" y1="400" x2="350" y2="400"
+        stroke="black" stroke-width="2"/>
+
+  <!-- Line BC (vertical) -->
+  <line x1="350" y1="400" x2="350" y2="333"
+        stroke="black" stroke-width="2"/>
+
+  <!-- Line AC -->
+  <line x1="100" y1="400" x2="350" y2="333"
+        stroke="black" stroke-width="2"/>
+
+  <!-- Line AD -->
+  <line x1="100" y1="400" x2="323" y2="199"
+        stroke="black" stroke-width="2"/>
+
+  <!-- Line DC -->
+  <line x1="323" y1="199" x2="350" y2="333"
+        stroke="black" stroke-width="2"/>
+
+  <!-- Building DH (vertical from D) -->
+  <line x1="323" y1="199" x2="323" y2="50"
+        stroke="black" stroke-width="2"/>
+
+  <!-- Right angle at B -->
+  <rect x="340" y="390" width="10" height="10"
+        fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- North arrow at A -->
+  <line x1="50" y1="420" x2="50" y2="360"
+        stroke="black" stroke-width="2"/>
+  <polygon points="50,360 45,370 55,370" fill="black"/>
+  <text x="50" y="350" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">N</text>
+
+  <!-- Angle arcs at A -->
+  <!-- 15° arc (from AB horizontal to AC) -->
+  <path d="M 150,400 A 50,50 0 0,0 148,387"
+        fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- 27° arc (from AC to AD) -->
+  <path d="M 144,388 A 45,45 0 0,0 133,370"
+        fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- Point markers -->
+  <circle cx="100" cy="400" r="3" fill="black"/>
+  <circle cx="350" cy="400" r="3" fill="black"/>
+  <circle cx="350" cy="333" r="3" fill="black"/>
+  <circle cx="323" cy="199" r="3" fill="black"/>
+  <circle cx="323" cy="50" r="3" fill="black"/>
+
+  <!-- Point labels -->
+  <text x="85" y="418" font-family="Arial, sans-serif" font-size="20" font-style="italic">A</text>
+  <text x="360" y="418" font-family="Arial, sans-serif" font-size="20" font-style="italic">B</text>
+  <text x="365" y="338" font-family="Arial, sans-serif" font-size="20" font-style="italic">C</text>
+  <text x="338" y="202" font-family="Arial, sans-serif" font-size="20" font-style="italic">D</text>
+  <text x="338" y="45" font-family="Arial, sans-serif" font-size="20" font-style="italic">H</text>
+
+  <!-- Distance labels -->
+  <!-- 25 m on AB -->
+  <text x="215" y="425" font-family="Arial, sans-serif" font-size="18">25 m</text>
+
+  <!-- 30 m on AD -->
+  <text x="185" y="290" font-family="Arial, sans-serif" font-size="18">30 m</text>
+
+  <!-- Angle labels -->
+  <!-- 27° -->
+  <text x="143" y="380" font-family="Arial, sans-serif" font-size="16">27</text>
+
+  <!-- 15° -->
+  <text x="163" y="400" font-family="Arial, sans-serif" font-size="16">15</text>
+</svg>

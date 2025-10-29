@@ -1,0 +1,47 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .line { stroke: #333; stroke-width: 1.5; fill: none; }
+      .label { font-family: Arial, sans-serif; font-size: 16px; fill: #333; }
+      .measurement { font-family: Arial, sans-serif; font-size: 14px; fill: #333; }
+      .right-angle { stroke: #333; stroke-width: 1.5; fill: none; }
+      .angle-arc { stroke: #333; stroke-width: 1; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Triangle lines -->
+  <!-- Base AC -->
+  <line x1="50" y1="300" x2="310" y2="300" class="line"/>
+
+  <!-- DB (perpendicular) -->
+  <line x1="230" y1="300" x2="230" y2="161" class="line"/>
+
+  <!-- DC -->
+  <line x1="230" y1="161" x2="310" y2="300" class="line"/>
+
+  <!-- DA -->
+  <line x1="230" y1="161" x2="50" y2="300" class="line"/>
+
+  <!-- Right angle marker at B -->
+  <path d="M 230 290 L 240 290 L 240 300" class="right-angle"/>
+
+  <!-- 60° angle arc at C -->
+  <path d="M 280 300 A 30 30 0 0 1 295 274" class="angle-arc"/>
+
+  <!-- Labels for vertices -->
+  <text x="40" y="320" class="label">A</text>
+  <text x="230" y="320" class="label" text-anchor="middle">B</text>
+  <text x="320" y="320" class="label">C</text>
+  <text x="230" y="145" class="label" text-anchor="middle">D</text>
+
+  <!-- Measurements -->
+  <!-- AB = 9 cm -->
+  <text x="140" y="340" class="measurement" text-anchor="middle">9 cm</text>
+
+  <!-- DC = 8 cm -->
+  <text x="285" y="220" class="measurement">8 cm</text>
+
+  <!-- 60° angle -->
+  <text x="265" y="280" class="measurement">60°</text>
+</svg>

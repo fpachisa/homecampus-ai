@@ -1,0 +1,52 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define the quadrilateral points -->
+  <!-- S (bottom left) -->
+  <polygon points="80,320 80,320" fill="none"/>
+
+  <!-- Main quadrilateral SPQR -->
+  <polyline points="80,320 480,320 520,80 240,60 80,320"
+            fill="none" stroke="black" stroke-width="2"/>
+
+  <!-- Diagonal PR (shown with dashed line) -->
+  <line x1="240" y1="60" x2="480" y2="320"
+        stroke="black" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- Base SR -->
+  <line x1="80" y1="320" x2="480" y2="320"
+        stroke="black" stroke-width="2"/>
+
+  <!-- Angle arc at S (47° - angle PSR) -->
+  <path d="M 120,320 A 40,40 0 0,0 102,287"
+        fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- Angle arc at P for 70° (angle SPR - from PS to PR) -->
+  <path d="M 216,98 A 45,45 0 0,0 271,93"
+        fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- Angle arc at P for 36° (angle QPR - from PQ to PR) -->
+  <path d="M 290,64 A 50,50 0 0,1 274,97"
+        fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- Points labels -->
+  <text x="65" y="335" font-family="Arial, sans-serif" font-size="20" font-style="italic">S</text>
+  <text x="485" y="335" font-family="Arial, sans-serif" font-size="20" font-style="italic">R</text>
+  <text x="230" y="45" font-family="Arial, sans-serif" font-size="20" font-style="italic">P</text>
+  <text x="530" y="85" font-family="Arial, sans-serif" font-size="20" font-style="italic">Q</text>
+
+  <!-- Measurements -->
+  <!-- 285 m on base SR -->
+  <text x="250" y="350" font-family="Arial, sans-serif" font-size="18">285 m</text>
+
+  <!-- 250 m on side PQ -->
+  <text x="395" y="50" font-family="Arial, sans-serif" font-size="18">250 m</text>
+
+  <!-- Angles -->
+  <!-- 47° at S (angle PSR) -->
+  <text x="118" y="305" font-family="Arial, sans-serif" font-size="16">47°</text>
+
+  <!-- 70° at P (angle SPR) -->
+  <text x="245" y="125" font-family="Arial, sans-serif" font-size="16">70°</text>
+
+  <!-- 36° at P (angle QPR) -->
+  <text x="288" y="88" font-family="Arial, sans-serif" font-size="16">36°</text>
+</svg>
