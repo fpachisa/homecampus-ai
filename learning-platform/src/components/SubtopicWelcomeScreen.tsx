@@ -129,7 +129,7 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
               </svg>
             </button>
             <h2 className="text-lg font-semibold" style={{ color: theme.colors.textPrimary }}>
-              Ready to Learn?
+              Back to Topics
             </h2>
           </div>
 

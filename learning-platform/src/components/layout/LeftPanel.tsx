@@ -506,27 +506,6 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         className="border-b"
         style={{ borderColor: theme.colors.border }}
       >
-        {/* Back Button */}
-        <button
-          onClick={handleBackToTopics}
-          className="w-full px-4 py-3 flex items-center space-x-2 transition-colors duration-200 hover:bg-interactive"
-          style={{
-            color: theme.colors.textSecondary,
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = theme.colors.interactive;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
-          }}
-          title={`Back to ${categoryName}`}
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          <span className="text-sm font-medium">Back to {categoryName}</span>
-        </button>
-
         {/* Category Header */}
         <div className="flex items-center justify-between px-4 pb-4">
           <div className="flex items-center space-x-3">
