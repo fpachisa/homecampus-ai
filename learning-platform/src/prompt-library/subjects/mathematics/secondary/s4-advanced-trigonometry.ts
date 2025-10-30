@@ -3,9 +3,6 @@
  *
  * Clean topic configuration using the new prompt library architecture.
  * Inherits from base agents, formatting rules, and interaction protocols.
- *
- * NOTE: This module uses the unitCircle mathTool which is currently a PLACEHOLDER
- * and needs to be developed. See bottom of file for tool specification.
  */
 
 // Type exports
@@ -42,20 +39,19 @@ Teaching Approach:
 
 Available Tools:
 - functionGraph: For graphing y = sin x, y = cos x, y = tan x and transformations
-- unitCircle: PLACEHOLDER TOOL (to be developed) - For unit circle visualization
+- unitCircle: For unit circle visualization with special angles, ASTC, and reference triangles
 - rightTriangle: For right triangle contexts (review if needed)
 - generalTriangle: For general triangle contexts
 
-IMPORTANT: Use the technical name (e.g., "functionGraph") in the toolName field, NOT the display name.
-IMPORTANT: unitCircle is a placeholder - tool needs development before full functionality.`
+IMPORTANT: Use the technical name (e.g., "functionGraph") in the toolName field, NOT the display name.`
 };
 
 // Available math tools for this topic
 export const ADVANCED_TRIGONOMETRY_MATH_TOOLS = [
-  "functionGraph",    // AVAILABLE - For sin/cos/tan graphs
-  "unitCircle",       // PLACEHOLDER (to be developed) - For unit circle
-  "rightTriangle",    // AVAILABLE - For review contexts
-  "generalTriangle"   // AVAILABLE - For triangle contexts
+  "functionGraph",    // For sin/cos/tan graphs
+  "unitCircle",       // For unit circle visualization
+  "rightTriangle",    // For review contexts
+  "generalTriangle"   // For triangle contexts
 ];
 
 // ==========================
@@ -125,7 +121,7 @@ export const S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS = {
             "Angle measurement: positive = anticlockwise, negative = clockwise",
             "Range: −1 ≤ cos θ ≤ 1 and −1 ≤ sin θ ≤ 1"
           ],
-          availableTools: ["unitCircle"]  // PLACEHOLDER - to be developed
+          availableTools: ["unitCircle"]
         },
         {
           id: "special-angle-values",
@@ -199,7 +195,7 @@ export const S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS = {
             "Derivation using 45-45-90 triangle: sides 1, 1, √2",
             "Symmetry: sin(180° − θ) = sin θ,  cos(180° − θ) = −cos θ"
           ],
-          availableTools: ["unitCircle"]  // PLACEHOLDER - to be developed
+          availableTools: ["unitCircle"]
         },
         {
           id: "signs-quadrants-astc",
@@ -268,7 +264,7 @@ export const S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS = {
             "  • cos θ = x-coordinate (positive right of y-axis, negative left)",
             "  • tan θ = y/x (positive if same signs, negative if opposite signs)"
           ],
-          availableTools: ["unitCircle"]  // PLACEHOLDER - to be developed
+          availableTools: ["unitCircle"]
         },
         {
           id: "pythagorean-identity",
@@ -336,7 +332,7 @@ export const S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS = {
             "  sin²θ = 1 − (1/2)² = 1 − 1/4 = 3/4",
             "  sin θ = √(3/4) = √3/2  (positive in Q1)"
           ],
-          availableTools: ["unitCircle"]  // PLACEHOLDER - to be developed
+          availableTools: ["unitCircle"]
         }
       ]
     },
@@ -959,7 +955,7 @@ export const S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS = {
             "  Positive sine → Q1 and Q2",
             "  Solutions: θ = 30°, 150°"
           ],
-          availableTools: ["unitCircle", "functionGraph"]  // unitCircle PLACEHOLDER, functionGraph AVAILABLE
+          availableTools: ["unitCircle", "functionGraph"]
         },
         {
           id: "negative-complementary-identities",
@@ -1039,7 +1035,7 @@ export const S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS = {
             "Example: sin(−30°) = −sin 30° = −1/2",
             "Example: cos 20° = sin(90° − 20°) = sin 70°"
           ],
-          availableTools: ["unitCircle"]  // PLACEHOLDER - to be developed
+          availableTools: ["unitCircle"]
         },
         {
           id: "double-angle-identities",
@@ -1311,7 +1307,7 @@ export const S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS = {
             "  • Simplifies calculus formulas",
             "  • Natural unit for rotational motion"
           ],
-          availableTools: ["unitCircle"]  // PLACEHOLDER - to be developed
+          availableTools: ["unitCircle"]
         },
         {
           id: "degree-radian-conversion",
@@ -1392,7 +1388,7 @@ export const S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS = {
             "  • 30° = π/6,  45° = π/4,  60° = π/3,  90° = π/2",
             "  • 180° = π,  270° = 3π/2,  360° = 2π"
           ],
-          availableTools: ["unitCircle"]  // PLACEHOLDER - to be developed
+          availableTools: ["unitCircle"]
         },
         {
           id: "arc-length-sector-area",
@@ -1475,7 +1471,7 @@ export const S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS = {
             "  • Find radius: s = 15 cm, θ = 3 radians",
             "    r = s/θ = 15/3 = 5 cm"
           ],
-          availableTools: ["unitCircle"]  // PLACEHOLDER - to be developed
+          availableTools: ["unitCircle"]
         }
       ]
     },
@@ -1509,64 +1505,3 @@ export const S4_ADVANCED_TRIGONOMETRY_CONFIG = {
   // FORMATTING_RULES: imported from prompt-library
   // INTERACTION_PROTOCOL: imported from prompt-library
 };
-
-/**
- * ==========================================================================================
- * FUTURE DEVELOPMENT NOTE: unitCircle Math Tool Specification
- * ==========================================================================================
- *
- * The following tool is used throughout this module but currently does NOT exist.
- * It needs to be developed to provide full functionality for unit circle visualization.
- *
- * Tool Name: unitCircle
- * File Location (to create): src/components/math-tools/UnitCircleVisualizer.tsx
- *
- * Required Interface:
- *
- * interface UnitCircleVisualizerProps {
- *   angle?: number;                    // Angle in degrees (default: 45)
- *   showPoint?: boolean;               // Show P(cos θ, sin θ) (default: true)
- *   showTriangle?: boolean;            // Show reference triangle (default: false)
- *   showQuadrants?: boolean;           // Highlight quadrants (default: false)
- *   showSpecialAngles?: boolean;       // Mark 0°, 30°, 45°, 60°, 90°, etc. (default: false)
- *   highlightQuadrant?: 1 | 2 | 3 | 4; // Highlight specific quadrant (default: none)
- *   showCoordinates?: boolean;         // Display (cos θ, sin θ) (default: true)
- *   showASTC?: boolean;                // Show ASTC labels (default: false)
- *   showAngleArc?: boolean;            // Show arc from 0° to θ (default: true)
- *   angleMode?: 'degrees' | 'radians'; // Display mode (default: 'degrees')
- * }
- *
- * Required Visual Features:
- * 1. Circle with center (0, 0) and radius 1 unit
- * 2. Coordinate axes (x and y) clearly marked
- * 3. Point P that moves to position (cos θ, sin θ) based on angle
- * 4. Optional reference triangle from origin to P showing sin θ and cos θ
- * 5. Angle arc showing θ from positive x-axis
- * 6. Quadrant highlighting capability
- * 7. Special angle markers at multiples of 30° and 45°
- * 8. ASTC labels in each quadrant when enabled
- * 9. Coordinate display for point P
- * 10. Support both degree and radian display
- *
- * Sections requiring this tool (10 out of 17 total):
- * - unit-circle-fundamentals
- * - special-angle-values
- * - signs-quadrants-astc
- * - pythagorean-identity
- * - solving-basic-equations (with functionGraph)
- * - negative-complementary-identities
- * - understanding-radians
- * - degree-radian-conversion
- * - arc-length-sector-area
- *
- * Priority: HIGH - This tool is critical for effective teaching of unit circle concepts.
- *
- * Once developed:
- * 1. Remove PLACEHOLDER comments in this file
- * 2. Register tool in mathToolsRegistry.ts
- * 3. Create React component following existing tool patterns
- * 4. Test with sample problems from above sections
- * 5. Update notes files to use interactive tool instead of static diagrams
- *
- * ==========================================================================================
- */

@@ -1481,7 +1481,7 @@ nodes:
             style: open
             color: '#3b82f6'
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           showArrows: true
           caption: Critical values from factored form
       finalAnswer: -7 < x < 2
@@ -1512,7 +1512,7 @@ nodes:
             style: closed
             color: '#3b82f6'
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           showArrows: true
           caption: Critical values from factored form
       finalAnswer: x \leq -5 \text{ or } x \geq 3
@@ -1542,7 +1542,7 @@ nodes:
             style: open
             color: '#3b82f6'
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           showArrows: true
           caption: Critical values from factored form
       finalAnswer: x < 1 \text{ or } x > 4
@@ -1573,7 +1573,7 @@ nodes:
             style: closed
             color: '#3b82f6'
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           showArrows: true
           caption: Critical values from factored form
       finalAnswer: -2 \leq x \leq 5
@@ -1603,7 +1603,7 @@ nodes:
             style: open
             color: '#3b82f6'
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           showArrows: true
           caption: Critical values from factored form
       finalAnswer: x < -3 \text{ or } x > 4
@@ -1647,7 +1647,7 @@ nodes:
             style: closed
             color: '#10b981'
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           caption: Solution range for 0 \u2264 x \u2264 5
       finalAnswer: 0 \u2264 x \u2264 5
       stepByStepGuideline:
@@ -1678,7 +1678,7 @@ nodes:
             style: closed
             color: '#10b981'
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           caption: Solution where x \u2264 -2 or x \u2265 6
       finalAnswer: x \u2264 -2 \text{ or } x \u2265 6
       stepByStepGuideline:
@@ -1702,7 +1702,7 @@ nodes:
             style: closed
             color: '#10b981'
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           caption: The perfect square is always non-negative.
       finalAnswer: \text{All real numbers } (t \in \mathbb{R})
       stepByStepGuideline:
@@ -1726,7 +1726,7 @@ nodes:
             style: closed
             color: '#10b981'
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           caption: Only the point x = -3 satisfies the inequality.
       finalAnswer: x = -3
       stepByStepGuideline:
@@ -1748,7 +1748,7 @@ nodes:
           step: 1
           points: []
           showTickMarks: true
-          showTickLabels: true
+          showTickLabels: false
           caption: There are no real roots, and the function is always positive.
       finalAnswer: \text{No solution } (\emptyset)
       stepByStepGuideline:

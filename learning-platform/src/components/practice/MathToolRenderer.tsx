@@ -10,6 +10,7 @@ import { toolExists } from '../math-tools/mathToolsRegistry';
 
 // Import all visualizers
 import RightTriangleVisualizer from '../math-tools/RightTriangleVisualizer';
+import UnitCircleVisualizer from '../math-tools/UnitCircleVisualizer';
 import ElevationDepressionVisualizer from '../math-tools/ElevationDepressionVisualizer';
 import MultipleDepressionAnglesVisualizer from '../math-tools/MultipleDepressionAnglesVisualizer';
 import GeneralTriangleVisualizer from '../math-tools/GeneralTriangleVisualizer';
@@ -70,6 +71,7 @@ interface MathToolRendererProps {
 const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   // Trigonometry tools
   rightTriangle: RightTriangleVisualizer,
+  unitCircle: UnitCircleVisualizer,
   elevationDepression: ElevationDepressionVisualizer,
   multipleDepressionAngles: MultipleDepressionAnglesVisualizer,
   generalTriangle: GeneralTriangleVisualizer,

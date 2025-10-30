@@ -17,7 +17,7 @@ interface YAMLPathConfig {
 }
 
 class YAMLPathLoader {
-  private basePathUrl = '/learning-platform/public/curriculum-content';
+  private basePathUrl = '/curriculum-content';
   private cache: Map<string, PathNode[]> = new Map();
 
   /**

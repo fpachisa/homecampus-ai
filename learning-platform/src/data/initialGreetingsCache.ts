@@ -3114,7 +3114,13 @@ What are the coordinates (x, y) of the point on the unit circle that corresponds
     },
     mathTool: {
           "toolName": "unitCircle",
-          "parameters": {},
+          "parameters": {      
+            "angle": 90,
+            "showPoint": true,
+            "showCoordinates": false,
+            "showAngleArc": true,
+            "showTriangle": false
+            },
           "caption": "The Unit Circle visualization helps locate coordinates based on angles."
     }
   },

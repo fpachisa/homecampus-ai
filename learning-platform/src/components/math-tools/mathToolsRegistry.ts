@@ -109,7 +109,96 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           showSideTypeLabels: true}
         }
     ]
-    
+
+  },
+
+  unitCircle: {
+    name: "Unit Circle Visualizer",
+    technicalName: "unitCircle",
+    component: "UnitCircleVisualizer",
+    category: "trigonometry",
+    description: "Interactive unit circle visualization showing the relationship between angles and coordinates (cos θ, sin θ). Supports special angles, reference triangles, ASTC quadrant rules, and both degree/radian modes.",
+    whenToUse: "Use for teaching unit circle fundamentals, special angle values (30°, 45°, 60°, 90°), quadrant signs (ASTC), Pythagorean identity, radian measure, or any problem involving circular trigonometry. Perfect for demonstrating how cos and sin relate to x and y coordinates on the unit circle.",
+
+    parameters: {
+      angle: "number (optional, default: 45) - angle in degrees to display. Use common values like 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330 for special angles",
+      showPoint: "boolean (optional, default: true) - show point P at (cos θ, sin θ) on the circle",
+      showTriangle: "boolean (optional, default: false) - show reference right triangle connecting origin to point P, with legs showing cos θ and sin θ. Use when teaching how sin/cos relate to unit circle or Pythagorean identity",
+      showQuadrants: "boolean (optional, default: false) - lightly highlight all four quadrants with different shading. Use when teaching quadrant concepts",
+      showSpecialAngles: "boolean (optional, default: false) - mark and label special angles at 30°, 45°, 60°, 90°, etc. around the circle. Use when teaching special angle values or asking students to identify angles",
+      highlightQuadrant: "1 | 2 | 3 | 4 (optional) - highlight a specific quadrant (1=top-right, 2=top-left, 3=bottom-left, 4=bottom-right). Use when focusing on signs in a particular quadrant",
+      showCoordinates: "boolean (optional, default: true) - display the (cos θ, sin θ) coordinates next to point P. Set false when asking students to find the coordinates",
+      showASTC: "boolean (optional, default: false) - show ASTC labels in each quadrant (All-Sin-Tan-Cos). Use when teaching which trig functions are positive in each quadrant",
+      showAngleArc: "boolean (optional, default: true) - show arc from positive x-axis to the angle θ. Set false for cleaner display when arc is not needed",
+      angleMode: "'degrees' | 'radians' (optional, default: 'degrees') - display angles in degrees or radians. Use 'radians' when teaching radian measure or converting between degrees/radians"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Basic unit circle at 45°",
+        caption: "Point P at 45° on the unit circle shows cos(45°) and sin(45°)",
+        parameters: {
+          angle: 45,
+          showPoint: true,
+          showCoordinates: true,
+          showAngleArc: true
+        }
+      },
+      {
+        scenario: "Teaching reference triangle and Pythagorean identity",
+        caption: "Reference triangle shows that (cos θ)² + (sin θ)² = 1",
+        parameters: {
+          angle: 30,
+          showPoint: true,
+          showTriangle: true,
+          showCoordinates: true,
+          showAngleArc: true
+        }
+      },
+      {
+        scenario: "Special angles marked for reference",
+        caption: "All special angles marked on the unit circle",
+        parameters: {
+          angle: 60,
+          showPoint: true,
+          showSpecialAngles: true,
+          showCoordinates: true
+        }
+      },
+      {
+        scenario: "ASTC demonstration in quadrant 2",
+        caption: "Quadrant 2: Only sine is positive (S in ASTC)",
+        parameters: {
+          angle: 120,
+          showPoint: true,
+          showASTC: true,
+          highlightQuadrant: 2,
+          showCoordinates: true
+        }
+      },
+      {
+        scenario: "Radian mode for advanced students",
+        caption: "Unit circle with angles displayed in radians",
+        parameters: {
+          angle: 60,
+          showPoint: true,
+          showSpecialAngles: true,
+          showCoordinates: true,
+          angleMode: "radians"
+        }
+      },
+      {
+        scenario: "Finding coordinates (coordinates hidden for student to determine)",
+        caption: "What are the coordinates of point P at θ = 135°?",
+        parameters: {
+          angle: 135,
+          showPoint: true,
+          showCoordinates: false,
+          showAngleArc: true,
+          showTriangle: true
+        }
+      }
+    ]
   },
 
   elevationDepression: {
@@ -1960,7 +2049,8 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
       showPoints: "array (optional) - points to mark: [{x: number, label?: string, color?: string}]",
       color: "string (optional, default: blue) - curve color",
       label: "string (optional) - function label",
-      caption: "string (optional) - caption below graph"
+      caption: "string (optional) - caption below graph",
+      xAxisMode: "string (optional, default: 'radians') - 'degrees' or 'radians'. **CRITICAL for trig functions**: When xMin/xMax are in degrees (e.g., 0-720), MUST set xAxisMode: 'degrees' to convert x values to radians before evaluating trig functions"
     },
 
     exampleUsage: {

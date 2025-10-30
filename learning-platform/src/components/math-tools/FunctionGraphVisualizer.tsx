@@ -14,6 +14,7 @@ interface FunctionGraphVisualizerProps {
   color?: string; // Curve color
   label?: string; // Function label
   caption?: string;
+  xAxisMode?: 'degrees' | 'radians'; // For trig functions: treat x-axis as degrees or radians (default: radians)
 }
 
 const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
@@ -26,7 +27,8 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
   showPoints = [],
   color,
   label,
-  caption
+  caption,
+  xAxisMode = 'radians'
 }) => {
   const { theme } = useTheme();
   const curveColor = color || '#3b82f6'; // blue default
@@ -41,6 +43,9 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
         .replace(/([a-z])(\d)/gi, '$1*$2')  // x2 -> x*2
         // Handle unary minus before exponentiation (e.g., -x^2 -> -(x**2))
         .replace(/-([a-z]+)\*\*(\w+)/gi, '-($1**$2)');
+
+      // Convert degrees to radians for trig functions if needed
+      const xValue = xAxisMode === 'degrees' ? (x * Math.PI / 180) : x;
 
       // Create safe evaluation context
       const Math_sin = Math.sin;
@@ -61,9 +66,9 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
       expr = expr.replace(/log\(/g, 'Math_log(');
       expr = expr.replace(/exp\(/g, 'Math_exp(');
 
-      // Evaluate with context
+      // Evaluate with context - use converted xValue for trig functions
       const result = Function('x', 'Math_sin', 'Math_cos', 'Math_tan', 'Math_sqrt', 'Math_abs', 'Math_log', 'Math_exp', `return ${expr}`)(
-        x, Math_sin, Math_cos, Math_tan, Math_sqrt, Math_abs, Math_log, Math_exp
+        xValue, Math_sin, Math_cos, Math_tan, Math_sqrt, Math_abs, Math_log, Math_exp
       );
 
       return isFinite(result) ? result : null;

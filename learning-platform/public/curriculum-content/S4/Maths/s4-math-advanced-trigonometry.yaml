@@ -1,0 +1,2147 @@
+# S4 Math Advanced Trigonometry - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: advanced-trig-node-1
+  nodeNumber: 1
+  title: Unit Circle Coordinates
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: State the exact coordinates of point P on the unit circle corresponding to an angle θ = 60° measured counterclockwise
+        from the positive x-axis.
+      avatarIntro: Remember, for any point on the unit circle, the coordinates are given by (cos θ, sin θ). Use your knowledge
+        of special triangles to find the exact values.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 60
+          showPoint: true
+          showCoordinates: false
+          showAngleArc: true
+          angleMode: degrees
+      finalAnswer: P = (1/2, √3/2)
+      stepByStepGuideline:
+      - 'Identify the angle: θ = 60°. This is in Quadrant I, so both x (cosine) and y (sine) coordinates are positive.'
+      - 'Recall the definition: The coordinates (x, y) are (cos θ, sin θ).'
+      - 'Determine the exact trigonometric values: cos 60° = 1/2 and sin 60° = √3/2.'
+      - The exact coordinates are (1/2, √3/2).
+      id: q1-1
+      questionGroup: q1
+    - problemText: A point P is at angle 150° on the unit circle. State its exact coordinates (x, y).
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 150
+          showPoint: true
+          showCoordinates: false
+          showAngleArc: true
+          angleMode: degrees
+      finalAnswer: P = (-√3/2, 1/2)
+      stepByStepGuideline:
+      - 'Identify the angle: θ = 150°. This is in Quadrant II.'
+      - 'Determine the reference angle: 180° - 150° = 30°.'
+      - 'Calculate the coordinates using the reference angle: cos 30° = √3/2 and sin 30° = 1/2.'
+      - 'Adjust signs for Quadrant II (x is negative, y is positive): cos 150° = -√3/2 and sin 150° = 1/2.'
+      - The coordinates are (-√3/2, 1/2).
+      id: q1-2
+      questionGroup: q1
+    - problemText: Point Q lies on the unit circle at 225° measured anticlockwise from the positive x-axis. What are the exact
+        coordinates of Q?
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 225
+          showPoint: true
+          showCoordinates: false
+          showAngleArc: true
+          angleMode: degrees
+      finalAnswer: Q = (-√2/2, -√2/2)
+      stepByStepGuideline:
+      - 'Identify the angle: θ = 225°. This is in Quadrant III.'
+      - 'Determine the reference angle: 225° - 180° = 45°.'
+      - 'Calculate the coordinates using the reference angle: cos 45° = √2/2 and sin 45° = √2/2.'
+      - 'Adjust signs for Quadrant III (both x and y are negative): cos 225° = -√2/2 and sin 225° = -√2/2.'
+      - The exact coordinates are (-√2/2, -√2/2).
+      id: q1-3
+      questionGroup: q1
+    - problemText: Find the coordinates of the point on the unit circle at 300°.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 300
+          showPoint: true
+          showCoordinates: false
+          showAngleArc: true
+          angleMode: degrees
+      finalAnswer: (1/2, -√3/2)
+      stepByStepGuideline:
+      - 'Identify the angle: θ = 300°. This is in Quadrant IV.'
+      - 'Determine the reference angle: 360° - 300° = 60°.'
+      - 'Calculate the coordinates using the reference angle: cos 60° = 1/2 and sin 60° = √3/2.'
+      - 'Adjust signs for Quadrant IV (x is positive, y is negative): cos 300° = 1/2 and sin 300° = -√3/2.'
+      - The coordinates are (1/2, -√3/2).
+      id: q1-4
+      questionGroup: q1
+    - problemText: A point P lies on the unit circle and corresponds to the angle θ = 270°. Determine the exact coordinates
+        (x, y) of point P.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 270
+          showPoint: true
+          showCoordinates: false
+          showAngleArc: true
+          angleMode: degrees
+      finalAnswer: P = (0, -1)
+      stepByStepGuideline:
+      - 'Identify the angle: θ = 270°. This is an axis angle, lying on the negative y-axis.'
+      - 'Recall the coordinates definition: (x, y) = (cos θ, sin θ).'
+      - 'Evaluate the trigonometric functions for 270°: cos 270° = 0 and sin 270° = -1.'
+      - The coordinates of the point R are (0, -1).
+      id: q1-5
+      questionGroup: q1
+- id: advanced-trig-node-2
+  nodeNumber: 2
+  title: Unit Circle Relationships
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: A point P on the unit circle corresponds to an angle of 75° measured anticlockwise from the positive x-axis.
+        Relative to the origin, is P above or below the x-axis? Is it to the left or right of the y-axis?
+      avatarIntro: Understanding how angles relate to coordinates on the unit circle is key. Let's determine the location
+        of this point!
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 75
+          showPoint: true
+          showQuadrants: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: P is above the x-axis and to the right of the y-axis.
+      stepByStepGuideline:
+      - 'Determine the quadrant: Since 0° < 75° < 90°, the angle lies in Quadrant I.'
+      - 'Recall the relationship: The y-coordinate is sin θ. In Quadrant I, sin 75° is positive, so the point is above the
+        x-axis.'
+      - 'Recall the relationship: The x-coordinate is cos θ. In Quadrant I, cos 75° is positive, so the point is to the right
+        of the y-axis.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: An angle θ = 160° is measured anticlockwise from the positive x-axis. In which quadrant does the corresponding
+        point P on the unit circle lie?
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 160
+          showPoint: true
+          showQuadrants: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: Quadrant II.
+      stepByStepGuideline:
+      - 'Identify the quadrant boundaries: Quadrant I runs from 0° to 90°. Quadrant II runs from 90° to 180°.'
+      - 'Locate the angle: Since 90° < 160° < 180°, the angle terminates in the second quadrant.'
+      - 'Conclusion: The point P lies in Quadrant II.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: For a point P on the unit circle corresponding to the angle θ = 245°, determine whether cos θ and sin θ
+        are positive or negative.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 245
+          showPoint: true
+          showQuadrants: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: cos 245° is negative; sin 245° is negative.
+      stepByStepGuideline:
+      - 'Determine the quadrant: Since 180° < 245° < 270°, the angle lies in Quadrant III.'
+      - 'Identify the sign of cos θ: cos θ corresponds to the x-coordinate. In Quadrant III, the x-coordinates are negative.'
+      - 'Identify the sign of sin θ: sin θ corresponds to the y-coordinate. In Quadrant III, the y-coordinates are negative.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: If a point P(x, y) is located on the unit circle at an angle of 320°, what can you deduce about the signs
+        of its coordinates, x and y?
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 320
+          showPoint: true
+          showQuadrants: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: x is positive (x > 0) and y is negative (y < 0).
+      stepByStepGuideline:
+      - 'Identify the quadrant: The angle 320° is between 270° and 360°, placing the point P in Quadrant IV.'
+      - 'Determine the sign of x: In Quadrant IV, points are to the right of the y-axis, meaning the x-coordinate (cos 320°)
+        must be positive.'
+      - 'Determine the sign of y: In Quadrant IV, points are below the x-axis, meaning the y-coordinate (sin 320°) must be
+        negative.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: A point R is located on the unit circle at an angle of 210°. Is R to the left or right of the y-axis, and
+        which quadrant is R located in?
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 210
+          showPoint: true
+          showQuadrants: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: R is to the left of the y-axis. It is located in Quadrant III.
+      stepByStepGuideline:
+      - 'Determine the quadrant: Since 180° < 210° < 270°, the angle terminates in Quadrant III.'
+      - 'Relate quadrant to coordinates: In Quadrant III, the x-coordinate (cos 210°) is negative.'
+      - 'Determine position relative to y-axis: Since the x-coordinate is negative, the point R must be located to the left
+        of the y-axis.'
+      id: q2-5
+      questionGroup: q2
+- id: advanced-trig-node-3
+  nodeNumber: 3
+  title: Exact Values for Special Angles
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: Find the exact coordinates (x, y) of the point P on the unit circle corresponding to the angle 30° measured
+        from the positive x-axis.
+      avatarIntro: Welcome! Understanding coordinates for special angles is key to mastering trigonometry. Let's start with
+        30 degrees.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 30
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: (√3/2, 1/2)
+      stepByStepGuideline:
+      - 'Recall the definition of coordinates on the unit circle: P(x, y) = (cos θ, sin θ). For θ = 30°, we need cos 30° and
+        sin 30°.'
+      - Use the 30-60-90 reference triangle (sides 1, √3, 2, where 1 is opposite 30° and √3 is opposite 60°).
+      - 'Calculate sin 30° (Opposite/Hypotenuse): 1/2.'
+      - 'Calculate cos 30° (Adjacent/Hypotenuse): √3/2.'
+      - The exact coordinates are (√3/2, 1/2).
+      id: q3-1
+      questionGroup: q3
+    - problemText: State the exact value of tan 60° and explain how the side ratios of the 30-60-90 triangle are used to determine
+        this value.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 60
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: 'tan 60° = √3. Explanation: Tan θ = Opposite / Adjacent. In the 30-60-90 triangle, the side opposite 60°
+        is √3 and the side adjacent to 60° is 1. Thus, tan 60° = √3 / 1 = √3.'
+      stepByStepGuideline:
+      - 'Identify the relevant reference triangle: the 30-60-90 triangle, with side lengths 1 (opposite 30°), √3 (opposite
+        60°), and hypotenuse 2.'
+      - 'Recall the definition of the tangent ratio: tan θ = Opposite / Adjacent.'
+      - For θ = 60°, the opposite side length is √3 and the adjacent side length is 1.
+      - 'Substitute the values: tan 60° = √3 / 1.'
+      - 'State the exact value: tan 60° = √3.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: Given that sin 45° = 1/√2 and cos 45° = 1/√2, calculate the exact value of tan 45° using the identity tan
+        θ = sin θ / cos θ.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: '1'
+      stepByStepGuideline:
+      - 'Start with the identity: tan 45° = sin 45° / cos 45°.'
+      - 'Substitute the given exact values: tan 45° = (1/√2) / (1/√2).'
+      - Simplify the expression by dividing the numerator by the denominator.
+      - Since the numerator and denominator are identical, the result is 1.
+      id: q3-3
+      questionGroup: q3
+    - problemText: Find the exact value of cos 0°. Explain your answer based on the position of the point on the unit circle.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 0
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: '1. Explanation: At θ = 0°, the point P on the unit circle lies on the positive x-axis at (1, 0). Since
+        cos θ is defined as the x-coordinate, cos 0° = 1.'
+      stepByStepGuideline:
+      - Identify the position of the terminal ray for θ = 0°. This ray lies along the positive x-axis.
+      - Determine the coordinates of the point P where the ray intersects the unit circle. This point is (1, 0).
+      - Recall that on the unit circle, cos θ corresponds to the x-coordinate.
+      - Therefore, cos 0° = 1.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Determine the exact value of sin 90°. Explain why a right-angled reference triangle cannot be formed in
+        the traditional way for this angle, and state the definition used instead.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 90
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: '1. Explanation: At 90°, the terminal side is along the positive y-axis, intersecting the unit circle at
+        (0, 1). A reference triangle cannot be formed because the adjacent side (x-coordinate) is 0. Instead, we use the definition
+        that sin θ is the y-coordinate on the unit circle, so sin 90° = 1.'
+      stepByStepGuideline:
+      - Identify the position of the terminal ray for θ = 90°. This ray lies along the positive y-axis.
+      - Determine the coordinates of the point P where the ray intersects the unit circle. This point is (0, 1).
+      - Explain that standard reference triangles require a non-zero adjacent side, but at 90°, the adjacent side (x-coordinate)
+        is zero.
+      - Recall that on the unit circle, sin θ corresponds to the y-coordinate.
+      - Therefore, sin 90° = 1.
+      id: q3-5
+      questionGroup: q3
+- id: advanced-trig-node-4
+  nodeNumber: 4
+  title: Symmetry and Special Angles
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: Using symmetry, find the exact value of $\sin 120^\circ$ given that $\sin 60^\circ = \frac{\sqrt{3}}{2}$.
+        Explain how the relationship $\sin(180^\circ - \theta) = \sin \theta$ applies.
+      avatarIntro: Ready to explore symmetry? We're focusing on how angles in the second quadrant relate to their reference
+        angles.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 120
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $ \frac{\sqrt{3}}{2} $
+      stepByStepGuideline:
+      - Identify the reference angle ($\theta$) for $120^\circ$. Since $120^\circ$ is in Quadrant II, the reference angle
+        is $180^\circ - 120^\circ = 60^\circ$.
+      - 'Apply the symmetry relationship for sine in Quadrant II: $\sin(180^\circ - \theta) = \sin \theta$.'
+      - 'Substitute the values: $\sin 120^\circ = \sin(180^\circ - 60^\circ) = \sin 60^\circ$.'
+      - Given that $\sin 60^\circ = \frac{\sqrt{3}}{2}$, therefore, $\sin 120^\circ = \frac{\sqrt{3}}{2}$.
+      id: q4-1
+      questionGroup: q4
+    - problemText: Using symmetry, find the exact value of $\cos 135^\circ$ given that $\cos 45^\circ = \frac{1}{\sqrt{2}}$.
+        Explain the sign change that occurs due to the quadrant.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 135
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $ -\frac{1}{\sqrt{2}} $
+      stepByStepGuideline:
+      - Identify the reference angle ($\theta$) for $135^\circ$. Since $135^\circ$ is in Quadrant II, the reference angle
+        is $180^\circ - 135^\circ = 45^\circ$.
+      - 'Apply the symmetry relationship for cosine in Quadrant II: $\cos(180^\circ - \theta) = -\cos \theta$.'
+      - 'Substitute the values: $\cos 135^\circ = \cos(180^\circ - 45^\circ) = -\cos 45^\circ$.'
+      - Given that $\cos 45^\circ = \frac{1}{\sqrt{2}}$, therefore, $\cos 135^\circ = -\frac{1}{\sqrt{2}}$. The cosine value
+        is negative because the x-coordinate is negative in Quadrant II.
+      id: q4-2
+      questionGroup: q4
+    - problemText: Find all angles $\theta$ from $0^\circ$ to $360^\circ$ for which $\sin \theta = \frac{1}{2}$. Use symmetry
+        to find the solution in the second quadrant.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 150
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $ 30^\circ \text{ and } 150^\circ $
+      stepByStepGuideline:
+      - Determine the acute reference angle ($\theta_R$) whose sine is $1/2$. This angle is $\theta_R = 30^\circ$. This gives
+        the solution in Quadrant I.
+      - Sine is positive in Quadrant I and Quadrant II.
+      - 'Quadrant I solution: $\theta_1 = 30^\circ$.'
+      - 'Quadrant II solution: Use symmetry based on $180^\circ$: $\theta_2 = 180^\circ - \theta_R = 180^\circ - 30^\circ
+        = 150^\circ$.'
+      - The angles are $30^\circ$ and $150^\circ$.
+      id: q4-3
+      questionGroup: q4
+    - problemText: Find all angles $\theta$ from $0^\circ$ to $360^\circ$ for which $\cos \theta = -\frac{1}{2}$. Use symmetry
+        and quadrant rules to find both solutions.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 120
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $ 120^\circ \text{ and } 240^\circ $
+      stepByStepGuideline:
+      - Determine the acute reference angle ($\theta_R$) whose cosine is $1/2$ (ignoring the negative sign). This angle is
+        $\theta_R = 60^\circ$.
+      - Since $\cos \theta$ is negative, the solutions must lie in Quadrant II and Quadrant III.
+      - 'Quadrant II solution (Symmetry based on $180^\circ$): $\theta_1 = 180^\circ - \theta_R = 180^\circ - 60^\circ = 120^\circ$.'
+      - 'Quadrant III solution (Symmetry based on $180^\circ$): $\theta_2 = 180^\circ + \theta_R = 180^\circ + 60^\circ =
+        240^\circ$.'
+      - The angles are $120^\circ$ and $240^\circ$.
+      id: q4-4
+      questionGroup: q4
+    - problemText: Use unit circle symmetry to find the exact value of $\cos 150^\circ$. You must first identify the reference
+        angle and then apply the appropriate symmetry rule for the cosine function in that quadrant.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 150
+          showPoint: true
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $ -\frac{\sqrt{3}}{2} $
+      stepByStepGuideline:
+      - 'Identify the quadrant: $150^\circ$ lies in Quadrant II.'
+      - 'Determine the reference angle ($\theta$): $180^\circ - 150^\circ = 30^\circ$.'
+      - 'Find the value of the cosine of the reference angle: $\cos 30^\circ = \frac{\sqrt{3}}{2}$.'
+      - 'Apply the symmetry rule for cosine in Quadrant II: $\cos 150^\circ = -\cos 30^\circ$. Cosine is negative in Quadrant
+        II.'
+      - Therefore, $\cos 150^\circ = -\frac{\sqrt{3}}{2}$.
+      id: q4-5
+      questionGroup: q4
+- id: advanced-trig-node-5
+  nodeNumber: 5
+  title: ASTC Rule Application
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: Determine whether sin 75°, cos 75°, and tan 75° are positive or negative. Use the ASTC rule to justify
+        your answer.
+      avatarIntro: Understanding the signs of trigonometric ratios is key to solving complex problems. Let's use the ASTC
+        rule to determine the sign for this acute angle.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 75
+          showPoint: true
+          showASTC: true
+          highlightQuadrant: 1
+          showCoordinates: false
+          angleMode: degrees
+      finalAnswer: sin 75° is positive, cos 75° is positive, and tan 75° is positive.
+      stepByStepGuideline:
+      - 'Step 1: Identify the quadrant for the angle θ = 75°. Since 0° < 75° < 90°, the angle lies in Quadrant 1.'
+      - 'Step 2: Apply the ASTC rule. In Quadrant 1 (A - All), all three primary trigonometric ratios (sin, cos, and tan)
+        are positive.'
+      - 'Step 3: Conclude the signs: sin 75° is positive, cos 75° is positive, and tan 75° is positive.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: If sin θ is positive and tan θ is negative, use the ASTC rule to determine the quadrant in which θ lies.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: null
+          showPoint: false
+          showASTC: true
+          highlightQuadrant: 2
+          showCoordinates: false
+          angleMode: degrees
+      finalAnswer: Quadrant 2
+      stepByStepGuideline:
+      - 'Step 1: Analyze the first condition: sin θ is positive. This occurs in Quadrant 1 (All) or Quadrant 2 (Sin).'
+      - 'Step 2: Analyze the second condition: tan θ is negative. This occurs in Quadrant 2 or Quadrant 4.'
+      - 'Step 3: Find the quadrant that satisfies both conditions. The only quadrant where sin is positive AND tan is negative
+        is Quadrant 2.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: Given the angle $\theta = 150^\circ$, use the ASTC rule to identify which of the primary trigonometric
+        ratios (sin, cos, or tan) is positive.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 150
+          showPoint: true
+          showASTC: true
+          highlightQuadrant: 2
+          showCoordinates: false
+          angleMode: degrees
+      finalAnswer: Only sin 150° is positive.
+      stepByStepGuideline:
+      - 'Step 1: Determine the quadrant for the angle $\theta = 150^\circ$. Since 90° < 150° < 180°, the angle lies in Quadrant
+        2.'
+      - 'Step 2: Apply the ASTC mnemonic. In Quadrant 2 (''S'' - Students/Sin), only the sine function is positive.'
+      - 'Step 3: Conclude that sin 150° is positive, while cos 150° and tan 150° are negative.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: An angle θ satisfies the conditions where cos θ > 0 and sin θ < 0. In which quadrant must θ lie? Justify
+        your answer using the ASTC mnemonic.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: null
+          showPoint: false
+          showASTC: true
+          highlightQuadrant: 4
+          showCoordinates: false
+          angleMode: degrees
+      finalAnswer: Quadrant 4
+      stepByStepGuideline:
+      - 'Step 1: Analyze the condition cos θ > 0 (Cosine is positive). This occurs in Quadrant 1 (All) or Quadrant 4 (Cos).'
+      - 'Step 2: Analyze the condition sin θ < 0 (Sine is negative). This occurs in Quadrant 3 (Tan) or Quadrant 4 (Cos).'
+      - 'Step 3: The only quadrant that satisfies both conditions (Cos positive AND Sin negative) is Quadrant 4.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: Determine the signs (+ or -) of sin θ, cos θ, and tan θ when θ = 240°. Explain your reasoning based on
+        the ASTC diagram.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 240
+          showPoint: true
+          showASTC: true
+          highlightQuadrant: 3
+          showCoordinates: false
+          angleMode: degrees
+      finalAnswer: sin 240° is negative, cos 240° is negative, tan 240° is positive.
+      stepByStepGuideline:
+      - 'Step 1: Identify the quadrant for the angle θ = 240°. Since 180° < 240° < 270°, the angle lies in Quadrant 3.'
+      - 'Step 2: Apply the ASTC rule. In Quadrant 3 (''T'' - Take/Tan), only the tangent function is positive.'
+      - 'Step 3: If tan is positive, both sin and cos must be negative (since tan θ = sin θ / cos θ, and a positive result
+        requires two negatives or two positives, but Q3 means sin/cos are negative).'
+      id: q5-5
+      questionGroup: q5
+- id: advanced-trig-node-6
+  nodeNumber: 6
+  title: Using the Pythagorean Identity
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: If $\cos \theta = \frac{4}{5}$ and $0^{\circ} < \theta < 90^{\circ}$, use the Pythagorean Identity to find
+        the exact value of $\sin \theta$. Subsequently, calculate the value of $\tan \theta$.
+      avatarIntro: The Pythagorean Identity, cos squared theta plus sin squared theta equals 1, is essential for finding missing
+        trigonometric ratios when the quadrant is known. Remember to check the sign!
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showTriangle: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $\sin \theta = \frac{3}{5}$, $\tan \theta = \frac{3}{4}$
+      stepByStepGuideline:
+      - Use the identity $\sin^2\theta + \cos^2\theta = 1$. Rearranging gives $\sin^2\theta = 1 - \cos^2\theta$.
+      - 'Substitute the given value: $\sin^2\theta = 1 - (\frac{4}{5})^2 = 1 - \frac{16}{25} = \frac{25 - 16}{25} = \frac{9}{25}$.'
+      - 'Take the square root: $\sin \theta = \pm\sqrt{\frac{9}{25}} = \pm\frac{3}{5}$.'
+      - Since $0^{\circ} < \theta < 90^{\circ}$ (Quadrant 1), $\sin \theta$ must be positive. Thus, $\sin \theta = \frac{3}{5}$.
+      - 'Calculate $\tan \theta$ using $\tan \theta = \frac{\sin \theta}{\cos \theta}$: $\tan \theta = \frac{3/5}{4/5} = \frac{3}{4}$.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: Given that $\sin \theta = \frac{12}{13}$ and the angle $\theta$ lies in the second quadrant ($90^{\circ}
+        < \theta < 180^{\circ}$). Find the exact value of $\cos \theta$, and then determine $\tan \theta$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 135
+          showTriangle: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $\cos \theta = -\frac{5}{13}$, $\tan \theta = -\frac{12}{5}$
+      stepByStepGuideline:
+      - Use the identity $\cos^2\theta = 1 - \sin^2\theta$.
+      - 'Substitute the value: $\cos^2\theta = 1 - (\frac{12}{13})^2 = 1 - \frac{144}{169} = \frac{169 - 144}{169} = \frac{25}{169}$.'
+      - 'Take the square root: $\cos \theta = \pm\sqrt{\frac{25}{169}} = \pm\frac{5}{13}$.'
+      - Since $90^{\circ} < \theta < 180^{\circ}$ (Quadrant 2), $\cos \theta$ must be negative. Thus, $\cos \theta = -\frac{5}{13}$.
+      - 'Calculate $\tan \theta$: $\tan \theta = \frac{\sin \theta}{\cos \theta} = \frac{12/13}{-5/13} = -\frac{12}{5}$.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: An angle $\theta$ lies in the third quadrant ($180^{\circ} < \theta < 270^{\circ}$). If $\cos \theta =
+        -\frac{2}{3}$, find the exact value of $\sin \theta$. (Your answer should involve a surd, if necessary.)
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 225
+          showTriangle: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $\sin \theta = -\frac{\sqrt{5}}{3}$
+      stepByStepGuideline:
+      - Use the identity $\sin^2\theta = 1 - \cos^2\theta$.
+      - 'Substitute the value: $\sin^2\theta = 1 - (-\frac{2}{3})^2 = 1 - \frac{4}{9} = \frac{9 - 4}{9} = \frac{5}{9}$.'
+      - 'Take the square root: $\sin \theta = \pm\sqrt{\frac{5}{9}} = \pm\frac{\sqrt{5}}{3}$.'
+      - Since $180^{\circ} < \theta < 270^{\circ}$ (Quadrant 3), $\sin \theta$ must be negative.
+      - Therefore, $\sin \theta = -\frac{\sqrt{5}}{3}$.
+      id: q6-3
+      questionGroup: q6
+    - problemText: Given $\sin \theta = -\frac{1}{2}$ and the angle $\theta$ is in the fourth quadrant ($270^{\circ} < \theta
+        < 360^{\circ}$). Determine the exact values of $\cos \theta$ and $\tan \theta$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 315
+          showTriangle: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $\cos \theta = \frac{\sqrt{3}}{2}$, $\tan \theta = -\frac{1}{\sqrt{3}}$ (or $-\frac{\sqrt{3}}{3}$)
+      stepByStepGuideline:
+      - Use the identity $\cos^2\theta = 1 - \sin^2\theta$.
+      - 'Substitute the value: $\cos^2\theta = 1 - (-\frac{1}{2})^2 = 1 - \frac{1}{4} = \frac{3}{4}$.'
+      - 'Take the square root: $\cos \theta = \pm\sqrt{\frac{3}{4}} = \pm\frac{\sqrt{3}}{2}$.'
+      - Since $270^{\circ} < \theta < 360^{\circ}$ (Quadrant 4), $\cos \theta$ must be positive. Thus, $\cos \theta = \frac{\sqrt{3}}{2}$.
+      - 'Calculate $\tan \theta$: $\tan \theta = \frac{\sin \theta}{\cos \theta} = \frac{-1/2}{\sqrt{3}/2} = -\frac{1}{\sqrt{3}}$.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: If $\sin \theta = \frac{5}{13}$ and it is known that $\cos \theta < 0$, find the exact value of $\cos \theta$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 110
+          showTriangle: true
+          showCoordinates: false
+          showQuadrants: true
+          angleMode: degrees
+      finalAnswer: $\cos \theta = -\frac{12}{13}$
+      stepByStepGuideline:
+      - First, determine the quadrant. Since $\sin \theta > 0$ and $\cos \theta < 0$, the angle $\theta$ must lie in Quadrant
+        2.
+      - Use the identity $\cos^2\theta = 1 - \sin^2\theta$.
+      - 'Substitute the value: $\cos^2\theta = 1 - (\frac{5}{13})^2 = 1 - \frac{25}{169} = \frac{169 - 25}{169} = \frac{144}{169}$.'
+      - 'Take the square root: $\cos \theta = \pm\sqrt{\frac{144}{169}} = \pm\frac{12}{13}$.'
+      - Since $\theta$ is in Quadrant 2 (where cosine is negative), we choose the negative sign. $\cos \theta = -\frac{12}{13}$.
+      id: q6-5
+      questionGroup: q6
+- id: advanced-trig-node-7
+  nodeNumber: 7
+  title: Sine and Cosine Function Properties
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: State the domain and the range of the basic trigonometric function $y = \sin x$. Express the range using
+        inequality notation.
+      avatarIntro: Let's test your knowledge of the fundamental properties of the sine function! Remember that the domain
+        defines the possible input values and the range defines the possible output values.
+      mathTool: null
+      finalAnswer: 'Domain: All real numbers ($x \in \mathbb{R}$); Range: $-1 \le y \le 1$'
+      stepByStepGuideline:
+      - 'Recall the definition of the domain for $y = \sin x$: Since the function is continuous and defined for all angles,
+        the domain is all real numbers.'
+      - 'Recall the definition of the range for $y = \sin x$: The value of the sine function on the unit circle oscillates
+        between -1 (minimum) and 1 (maximum).'
+      - 'State the final answer: Domain is $x \in \mathbb{R}$ and the Range is $-1 \le y \le 1$.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Find the minimum value of the function $y = \cos x$ and state all values of $x$ where this minimum occurs
+        for the interval $0^{\circ} \le x \le 720^{\circ}$.
+      mathTool: null
+      finalAnswer: Minimum value = -1, occurs at $x = 180^{\circ}, 540^{\circ}$
+      stepByStepGuideline:
+      - Identify the minimum value of $y = \cos x$. The minimum value is always -1.
+      - Determine the first angle in the interval $0^{\circ} \le x \le 720^{\circ}$ where $\cos x = -1$. This occurs at $x
+        = 180^{\circ}$.
+      - 'Since the period is $360^{\circ}$, find the subsequent occurrences by adding $360^{\circ}$: $180^{\circ} + 360^{\circ}
+        = 540^{\circ}$.'
+      - Check if the next occurrence ($540^{\circ} + 360^{\circ} = 900^{\circ}$) is within the given interval. Since $900^{\circ}
+        > 720^{\circ}$, the minimum occurs only at $180^{\circ}$ and $540^{\circ}$.
+      id: q7-2
+      questionGroup: q7
+    - problemText: Determine all the values of $x$ in the interval $0^{\circ} \le x \le 720^{\circ}$ for which $y = \sin x$
+        equals zero (i.e., find the zeros of the function).
+      mathTool: null
+      finalAnswer: $x = 0^{\circ}, 180^{\circ}, 360^{\circ}, 540^{\circ}, 720^{\circ}$
+      stepByStepGuideline:
+      - Identify the angles where the sine function equals zero in the first cycle ($0^{\circ} \le x \le 360^{\circ}$). These
+        are $x = 0^{\circ}, 180^{\circ}, 360^{\circ}$.
+      - Use the period ($360^{\circ}$) to find the zeros in the second cycle ($360^{\circ} < x \le 720^{\circ}$).
+      - 'Add $360^{\circ}$ to the first set of zeros: $180^{\circ} + 360^{\circ} = 540^{\circ}$.'
+      - Note that $360^{\circ} + 360^{\circ} = 720^{\circ}$ is the end point and must be included.
+      - 'List all zeros in ascending order: $0^{\circ}, 180^{\circ}, 360^{\circ}, 540^{\circ}, 720^{\circ}$.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: State the period and the amplitude of the function $y = \cos x$. Explain what the amplitude physically
+        represents on the graph.
+      mathTool: null
+      finalAnswer: Period = $360^{\circ}$; Amplitude = 1. The amplitude represents the maximum distance the function's graph
+        deviates vertically from its center line ($y=0$).
+      stepByStepGuideline:
+      - 'State the period of the basic cosine function: $360^{\circ}$.'
+      - 'State the amplitude of the basic cosine function: 1.'
+      - 'Define what the amplitude represents: The amplitude is the distance from the horizontal midline (in this case, $y=0$)
+        to the maximum or minimum value. Since the range is [-1, 1], the distance from 0 to 1 is 1.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: The maximum value of both $y = \sin x$ and $y = \cos x$ is 1. For the interval $0^{\circ} \le x \le 360^{\circ}$,
+        state the value of $x$ where $y = \sin x$ reaches its maximum, and the value of $x$ where $y = \cos x$ reaches its
+        maximum. Based on these points, describe the phase relationship (shift) between the two functions.
+      mathTool: null
+      finalAnswer: '$y = \sin x$ reaches maximum (1) at $x = 90^{\circ}$. $y = \cos x$ reaches maximum (1) at $x = 0^{\circ}$
+        and $x = 360^{\circ}$. The phase relationship is a $90^{\circ}$ shift: the graph of cosine leads sine by $90^{\circ}$
+        (or, the graph of sine lags cosine by $90^{\circ}$).'
+      stepByStepGuideline:
+      - Identify the $x$-value where $y = \sin x$ reaches its maximum (1) in the interval $0^{\circ} \le x \le 360^{\circ}$.
+        This is $x = 90^{\circ}$.
+      - Identify the $x$-value where $y = \cos x$ reaches its maximum (1) in the interval $0^{\circ} \le x \le 360^{\circ}$.
+        This occurs at $x = 0^{\circ}$ (and $360^{\circ}$).
+      - 'Compare the two maximum positions: $90^{\circ} - 0^{\circ} = 90^{\circ}$.'
+      - 'Conclude the phase relationship: The cosine function is shifted $90^{\circ}$ to the left relative to the sine function,
+        meaning $\cos x = \sin(x + 90^{\circ})$.'
+      id: q7-5
+      questionGroup: q7
+- id: advanced-trig-node-8
+  nodeNumber: 8
+  title: Tangent Function Properties
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Identify all angles $x$ in the interval $0^{\circ} \le x \le 540^{\circ}$ for which the function $y = \tan
+        x$ is undefined. Explain the mathematical reason why the tangent function becomes undefined at these specific angles.
+      avatarIntro: Understanding when a function breaks down is just as important as knowing when it works! Let's examine
+        the behavior of the tangent function.
+      mathTool: null
+      finalAnswer: The tangent function is undefined at $x = 90^{\circ}$, $x = 270^{\circ}$, and $x = 450^{\circ}$. The reason
+        is that $\tan x = \frac{\sin x}{\cos x}$. At these angles, $\cos x = 0$, leading to division by zero, which is mathematically
+        undefined.
+      stepByStepGuideline:
+      - 'Recall the definition of the tangent function: $\tan x = \frac{\sin x}{\cos x}$.'
+      - 'Identify the condition under which $\tan x$ is undefined: when the denominator, $\cos x$, is equal to zero.'
+      - List the angles within the interval $0^{\circ} \le x \le 540^{\circ}$ where $\cos x = 0$. These are $90^{\circ}$,
+        $270^{\circ}$, and $450^{\circ}$.
+      - Conclude that $y = \tan x$ is undefined at $x = 90^{\circ}$, $x = 270^{\circ}$, and $x = 450^{\circ}$ due to division
+        by zero.
+      id: q8-1
+      questionGroup: q8
+    - problemText: Explain mathematically why the period of the function $y = \tan x$ is $180^{\circ}$ and not $360^{\circ}$,
+        like the sine and cosine functions. Use the relationships between $\sin(\theta + 180^{\circ})$ and $\cos(\theta +
+        180^{\circ})$ in your explanation.
+      mathTool: null
+      finalAnswer: The period is $180^{\circ}$ because $\tan(\theta + 180^{\circ}) = \tan \theta$. We know that $\sin(\theta
+        + 180^{\circ}) = -\sin \theta$ and $\cos(\theta + 180^{\circ}) = -\cos \theta$. Therefore, $\tan(\theta + 180^{\circ})
+        = \frac{\sin(\theta + 180^{\circ})}{\cos(\theta + 180^{\circ})} = \frac{-\sin \theta}{-\cos \theta} = \frac{\sin \theta}{\cos
+        \theta} = \tan \theta$. Since the function repeats its values every $180^{\circ}$, this is the fundamental period.
+      stepByStepGuideline:
+      - 'Define the tangent function using sine and cosine: $\tan \theta = \frac{\sin \theta}{\cos \theta}$.'
+      - 'Use the reduction formulas for sine and cosine shifted by $180^{\circ}$: $\sin(\theta + 180^{\circ}) = -\sin \theta$
+        and $\cos(\theta + 180^{\circ}) = -\cos \theta$.'
+      - 'Substitute these into the tangent identity: $\tan(\theta + 180^{\circ}) = \frac{\sin(\theta + 180^{\circ})}{\cos(\theta
+        + 180^{\circ})} = \frac{-\sin \theta}{-\cos \theta}$.'
+      - 'Simplify the expression by cancelling the negative signs: $\frac{-\sin \theta}{-\cos \theta} = \frac{\sin \theta}{\cos
+        \theta} = \tan \theta$.'
+      - Since $\tan(\theta + 180^{\circ}) = \tan \theta$, the function repeats every $180^{\circ}$, confirming the period.
+      id: q8-2
+      questionGroup: q8
+    - problemText: State the domain and the range of the basic tangent function, $y = \tan x$. Explain how the existence of
+        vertical asymptotes influences the domain.
+      mathTool: null
+      finalAnswer: 'Domain: The domain is all real numbers $x$, except where $x = 90^{\circ} + 180^{\circ}k$, where $k$ is
+        any integer ($k \in \mathbb{Z}$). The domain excludes these values because they correspond to the vertical asymptotes
+        where the function is undefined. Range: The range is all real numbers, $y \in \mathbb{R}$.'
+      stepByStepGuideline:
+      - Determine the range first. Since the graph of $y = \tan x$ extends infinitely upwards and downwards towards the asymptotes,
+        the range includes all real numbers.
+      - Determine the domain. The domain excludes angles where $\cos x = 0$, which causes vertical asymptotes.
+      - 'Identify the general formula for the asymptotes: $x = 90^{\circ}$ plus any multiple of the period ($180^{\circ}$).
+        This is expressed as $x = 90^{\circ} + 180^{\circ}k$, where $k$ is an integer.'
+      - State the domain by excluding these asymptotic values.
+      id: q8-3
+      questionGroup: q8
+    - problemText: Find all equations for the vertical asymptotes of the function $y = \tan x$ within the interval $-180^{\circ}
+        < x < 180^{\circ}$.
+      mathTool: null
+      finalAnswer: The vertical asymptotes occur where $\cos x = 0$. In the interval $-180^{\circ} < x < 180^{\circ}$, the
+        asymptotes are $x = -90^{\circ}$ and $x = 90^{\circ}$.
+      stepByStepGuideline:
+      - Recall that vertical asymptotes for $y = \tan x$ occur when $\cos x = 0$.
+      - 'Use the general formula for asymptotes: $x = 90^{\circ} + 180^{\circ}k$, where $k$ is an integer.'
+      - Substitute integer values for $k$ to find solutions in the interval $-180^{\circ} < x < 180^{\circ}$.
+      - For $k=0$, $x = 90^{\circ}$.
+      - For $k=-1$, $x = 90^{\circ} - 180^{\circ} = -90^{\circ}$.
+      - 'List the resulting equations for the asymptotes: $x = -90^{\circ}$ and $x = 90^{\circ}$.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: The sine and cosine functions both have an amplitude of 1. Explain why the tangent function, $y = \tan
+        x$, is said to have no amplitude.
+      mathTool: null
+      finalAnswer: Amplitude is defined as half the distance between the maximum and minimum values of a periodic function.
+        The tangent function has no amplitude because it is unbounded; its range is all real numbers ($-\infty$ to $+\infty$).
+        As $x$ approaches an asymptote (e.g., $90^{\circ}$), the value of $\tan x$ approaches infinity or negative infinity,
+        meaning there is no defined maximum or minimum value.
+      stepByStepGuideline:
+      - 'Define amplitude: Amplitude is half the difference between the maximum and minimum values of a function.'
+      - Analyze the behavior of $y = \tan x$. As $x$ approaches its vertical asymptotes, the function values grow infinitely
+        large (or infinitely small).
+      - 'Identify the range of $y = \tan x$: All real numbers, $y \in \mathbb{R}$.'
+      - Conclude that because the function is unbounded (it has no maximum or minimum), the concept of amplitude does not
+        apply.
+      id: q8-5
+      questionGroup: q8
+- id: advanced-trig-node-9
+  nodeNumber: 9
+  title: Reading Trigonometric Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: From the graph of $y = \sin x$ shown below, use the visualization to find all angles $x$ where $\sin x
+        = 0.8$ for the interval $0^{\circ} \le x \le 720^{\circ}$. Give your answers to the nearest degree.
+      avatarIntro: Reading values directly from trigonometric graphs helps us visualize the periodic nature of sine and cosine
+        functions. Use the graph provided to locate the solutions.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: sin(x)
+          xMin: 0
+          xMax: 720
+          yMin: -1.5
+          yMax: 1.5
+          xAxisMode: degrees
+          showGrid: true
+      finalAnswer: x \approx 53^{\circ}, 127^{\circ}, 413^{\circ}, 487^{\circ}
+      stepByStepGuideline:
+      - Draw a horizontal line at $y = 0.8$ on the graph.
+      - Identify the intersection points within the first period ($0^{\circ}$ to $360^{\circ}$). These occur roughly at $x
+        \approx 53^{\circ}$ (Q1) and $x \approx 180^{\circ} - 53^{\circ} = 127^{\circ}$ (Q2).
+      - Use the periodicity ($360^{\circ}$) to find solutions in the second period ($360^{\circ}$ to $720^{\circ}$).
+      - 'First periodic solution: $53^{\circ} + 360^{\circ} = 413^{\circ}$.'
+      - 'Second periodic solution: $127^{\circ} + 360^{\circ} = 487^{\circ}$.'
+      - The solutions are $x \approx 53^{\circ}, 127^{\circ}, 413^{\circ}, 487^{\circ}$.
+      id: q9-1
+      questionGroup: q9
+    - problemText: From the graph of $y = \cos x$ shown below, state the maximum value and all $x$-values where this maximum
+        occurs for the interval $0^{\circ} \le x \le 540^{\circ}$.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: cos(x)
+          xMin: 0
+          xMax: 540
+          yMin: -1.5
+          yMax: 1.5
+          xAxisMode: degrees
+          showGrid: true
+      finalAnswer: Maximum value is 1, occurring at x = 0^{\circ} and x = 360^{\circ}.
+      stepByStepGuideline:
+      - Identify the highest point (peak) reached by the cosine graph. This is the maximum value.
+      - The maximum value of $y = \cos x$ is 1.
+      - Locate the $x$-coordinates where the graph reaches $y = 1$ within the interval $0^{\circ} \le x \le 540^{\circ}$.
+      - The maximum occurs at $x = 0^{\circ}$ and, due to periodicity, at $x = 0^{\circ} + 360^{\circ} = 360^{\circ}$.
+      - The next maximum would be at $360^{\circ} + 360^{\circ} = 720^{\circ}$, which is outside the interval.
+      id: q9-2
+      questionGroup: q9
+    - problemText: Use the graph of $y = \cos x$ shown below to solve the equation $\cos x = -0.7$ for the interval $0^{\circ}
+        \le x \le 360^{\circ}$. Give your answers to the nearest degree.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: cos(x)
+          xMin: 0
+          xMax: 360
+          yMin: -1.5
+          yMax: 1.5
+          xAxisMode: degrees
+          showGrid: true
+      finalAnswer: x \approx 134^{\circ}, 226^{\circ}
+      stepByStepGuideline:
+      - Draw a horizontal line at $y = -0.7$ on the graph.
+      - Identify the intersection points within the interval $0^{\circ} \le x \le 360^{\circ}$.
+      - Since $\cos x$ is negative, the solutions lie in the second quadrant (Q2) and the third quadrant (Q3).
+      - Find the reference angle $\alpha$ such that $\cos \alpha = 0.7$. $\alpha \approx 45.6^{\circ}$.
+      - 'Q2 solution: $x = 180^{\circ} - 45.6^{\circ} \approx 134.4^{\circ}$.'
+      - 'Q3 solution: $x = 180^{\circ} + 45.6^{\circ} \approx 225.6^{\circ}$.'
+      - Rounding to the nearest degree, the solutions are $x \approx 134^{\circ}$ and $x \approx 226^{\circ}$.
+      id: q9-3
+      questionGroup: q9
+    - problemText: From the graph of $y = \sin x$ shown below, find all angles $x$ where $\sin x = -0.5$ for the interval
+        $0^{\circ} \le x \le 540^{\circ}$.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: sin(x)
+          xMin: 0
+          xMax: 540
+          yMin: -1.5
+          yMax: 1.5
+          xAxisMode: degrees
+          showGrid: true
+      finalAnswer: x = 210^{\circ}, 330^{\circ}
+      stepByStepGuideline:
+      - Draw a horizontal line at $y = -0.5$.
+      - Identify the reference angle $\alpha$ for $\sin \alpha = 0.5$, which is $\alpha = 30^{\circ}$.
+      - Since $\sin x$ is negative, the solutions lie in Q3 and Q4.
+      - 'Q3 solution: $x = 180^{\circ} + 30^{\circ} = 210^{\circ}$.'
+      - 'Q4 solution: $x = 360^{\circ} - 30^{\circ} = 330^{\circ}$.'
+      - Check for solutions in the extended interval ($360^{\circ} < x \le 540^{\circ}$). The next solution would be $210^{\circ}
+        + 360^{\circ} = 570^{\circ}$, which is outside the given range.
+      - The solutions are $x = 210^{\circ}, 330^{\circ}$.
+      id: q9-4
+      questionGroup: q9
+    - problemText: From the graph of $y = \sin x$ shown below, state the minimum value and all $x$-values where this minimum
+        occurs for the interval $0^{\circ} \le x \le 720^{\circ}$.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: sin(x)
+          xMin: 0
+          xMax: 720
+          yMin: -1.5
+          yMax: 1.5
+          xAxisMode: degrees
+          showGrid: true
+      finalAnswer: Minimum value is -1, occurring at x = 270^{\circ} and x = 630^{\circ}.
+      stepByStepGuideline:
+      - Identify the lowest point (trough) reached by the sine graph. This is the minimum value.
+      - The minimum value of $y = \sin x$ is -1.
+      - Locate the $x$-coordinates where the graph reaches $y = -1$ within the interval $0^{\circ} \le x \le 720^{\circ}$.
+      - In the first period ($0^{\circ}$ to $360^{\circ}$), the minimum occurs at $x = 270^{\circ}$.
+      - 'Use the periodicity ($360^{\circ}$) to find the next occurrence: $270^{\circ} + 360^{\circ} = 630^{\circ}$.'
+      - The next minimum would be $630^{\circ} + 360^{\circ} = 990^{\circ}$, which is outside the interval.
+      id: q9-5
+      questionGroup: q9
+- id: advanced-trig-node-10
+  nodeNumber: 10
+  title: Amplitude and Period Changes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the amplitude and the period of the function $y = 4 \sin(3x)$.
+      avatarIntro: Understanding how the coefficients 'a' and 'b' affect the sine function is crucial. Remember, amplitude
+        is calculated using |a| and period uses 360 degrees divided by b.
+      finalAnswer: Amplitude = 4, Period = 120°
+      stepByStepGuideline:
+      - Identify the value of $a$ and $b$ from the equation $y = a \sin(bx)$. Here, $a=4$ and $b=3$.
+      - 'Calculate the amplitude using the formula: Amplitude = $|a|$. Amplitude = $|4| = 4$.'
+      - 'Calculate the period using the formula: Period = $360^{\circ}/b$. Period = $360^{\circ}/3 = 120^{\circ}$.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: Write an equation for a cosine function with an amplitude of 1.5 and a period of $90^{\circ}$.
+      finalAnswer: The possible equations are $y = 1.5 \cos(4x)$ or $y = -1.5 \cos(4x)$
+      stepByStepGuideline:
+      - 'Determine the value of $b$ using the period formula: Period = $360^{\circ}/b$. Given Period = $90^{\circ}$, we solve:
+        $90^{\circ} = 360^{\circ}/b$, which means $b = 360/90 = 4$.'
+      - 'Determine the value of $a$ using the amplitude formula: Amplitude = $|a|$. Given Amplitude = 1.5, we have $|a| =
+        1.5$. Thus, $a$ can be $1.5$ or $-1.5$.'
+      - Substitute the values of $a$ and $b$ into the general cosine equation $y = a \cos(bx)$. The possible equations are
+        $y = 1.5 \cos(4x)$ or $y = -1.5 \cos(4x)$.
+      id: q10-2
+      questionGroup: q10
+    - problemText: Describe the sequence of transformations required to transform the graph of $y = \sin x$ into the graph
+        of $y = -2 \sin(0.5x)$.
+      finalAnswer: 1. Vertical stretch by a factor of 2. 2. Reflection in the x-axis. 3. Horizontal stretch by a factor of
+        2 (which changes the period from 360° to 720°).
+      stepByStepGuideline:
+      - Identify the value of $a$ and $b$. Here $a = -2$ and $b = 0.5$.
+      - The value $|a| = 2$ indicates a vertical stretch by a factor of 2.
+      - Since $a$ is negative ($a = -2$), there is a reflection in the x-axis.
+      - The value $b = 0.5$ indicates a horizontal stretch by a factor of $1/b = 1/0.5 = 2$. This transformation changes the
+        period from $360^{\circ}$ to $720^{\circ}$.
+      id: q10-3
+      questionGroup: q10
+    - problemText: Find the possible values of $a$ and the exact value of $b$ if the function $y = a \cos(bx)$ has an amplitude
+        of 5 and a period of $240^{\circ}$.
+      finalAnswer: Possible values for $a$ are $\pm 5$. The value of $b$ is $1.5$ (or $\frac{3}{2}$).
+      stepByStepGuideline:
+      - 'Use the amplitude formula: Amplitude = $|a|$. Since the amplitude is 5, $|a| = 5$. Therefore, $a = 5$ or $a = -5$.'
+      - 'Use the period formula: Period = $360^{\circ}/b$. Since the period is $240^{\circ}$, solve for $b$: $240^{\circ}
+        = 360^{\circ}/b$.'
+      - 'Calculate $b$: $b = 360/240$. Simplify the fraction: $b = 3/2 = 1.5$.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: Determine the amplitude and period of the function $y = 0.5 \cos(4x)$.
+      finalAnswer: Amplitude = 0.5, Period = 90°
+      stepByStepGuideline:
+      - Identify the value of $a$ and $b$ from the equation $y = a \cos(bx)$. Here, $a=0.5$ and $b=4$.
+      - 'Calculate the amplitude using the formula: Amplitude = $|a|$. Amplitude = $|0.5| = 0.5$.'
+      - 'Calculate the period using the formula: Period = $360^{\circ}/b$. Period = $360^{\circ}/4 = 90^{\circ}$.'
+      id: q10-5
+      questionGroup: q10
+- id: advanced-trig-node-11
+  nodeNumber: 11
+  title: Horizontal and Vertical Translations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Describe all transformations applied to the basic function $y = \sin x$ to obtain the graph of $y = \sin(x
+        + 60^{\circ}) - 3$. State the equation of the new principal axis.
+      avatarIntro: Understanding how translations affect the position of a graph is crucial. Remember that horizontal shifts
+        are counter-intuitive!
+      mathTool: null
+      finalAnswer: 'Horizontal shift: left 60° (note: x + 60° means shift left). Vertical shift: down 3 units. Principal axis
+        changes from y = 0 to y = -3.'
+      stepByStepGuideline:
+      - 'Identify the horizontal shift (c) from the term inside the function: $(x + 60^{\circ})$. Since this is $x - (-60^{\circ})$,
+        the shift is $60^{\circ}$ to the left.'
+      - 'Identify the vertical shift (d) from the constant added outside the function: $-3$. This means the graph shifts 3
+        units down.'
+      - The principal axis is determined by the vertical shift $d$. Since $d = -3$, the principal axis is $y = -3$.
+      id: q11-1
+      questionGroup: q11
+    - problemText: State the principal axis and the range of the trigonometric function $y = 4 \cos x + 2$.
+      mathTool: null
+      finalAnswer: 'Principal axis: y = 2. Range: [-2, 6] or -2 \le y \le 6.'
+      stepByStepGuideline:
+      - Identify the vertical shift $d$. In the form $y = a \cos x + d$, we have $d = 2$. This value determines the principal
+        axis.
+      - Identify the amplitude $|a|$. Here, $a = 4$.
+      - Calculate the range using the formula $[d - |a|, d + |a|]$. Range = $[2 - 4, 2 + 4] = [-2, 6]$.
+      id: q11-2
+      questionGroup: q11
+    - problemText: Find the vertical shift and state the equation of the principal axis for the function $y = 2 \sin x - 1$.
+      mathTool: null
+      finalAnswer: 'Vertical shift: down 1 unit. Principal axis: y = -1.'
+      stepByStepGuideline:
+      - Identify the constant term $d$. In $y = 2 \sin x - 1$, $d = -1$.
+      - Since $d = -1$, the vertical shift is 1 unit down.
+      - The principal axis is the line $y = d$. Therefore, the principal axis is $y = -1$.
+      id: q11-3
+      questionGroup: q11
+    - problemText: State the range of the function $y = \cos(x - 90^{\circ}) + 3$. Express your answer using interval notation.
+      mathTool: null
+      finalAnswer: 'Range: [2, 4]'
+      stepByStepGuideline:
+      - Identify the amplitude $|a|$. Since there is no coefficient written before the cosine function, the amplitude $|a|
+        = 1$.
+      - 'Identify the vertical shift $d$. The constant added is $+3$, so $d = 3$. (Note: The horizontal shift, $-90^{\circ}$,
+        does not affect the range.)'
+      - Calculate the range using the formula $[d - |a|, d + |a|]$. Range = $[3 - 1, 3 + 1] = [2, 4]$.
+      id: q11-4
+      questionGroup: q11
+    - problemText: Describe all transformations applied to $y = \cos x$ to get $y = \cos(x - 45^{\circ}) + 1$. State the equation
+        of the new principal axis.
+      mathTool: null
+      finalAnswer: 'Horizontal shift: right 45° (note: x - 45° means shift right). Vertical shift: up 1 unit. Principal axis
+        changes from y = 0 to y = 1.'
+      stepByStepGuideline:
+      - 'Identify the horizontal shift (c) from the term inside the function: $(x - 45^{\circ})$. This indicates a shift of
+        $45^{\circ}$ to the right.'
+      - 'Identify the vertical shift (d) from the constant added outside the function: $+1$. This means the graph shifts 1
+        unit up.'
+      - The principal axis is determined by the vertical shift $d$. Since $d = 1$, the principal axis is $y = 1$.
+      id: q11-5
+      questionGroup: q11
+- id: advanced-trig-node-12
+  nodeNumber: 12
+  title: General Form Analysis
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'For the trigonometric function $y = -3 \sin(4(x - 60^{\circ})) + 2$, state the following properties:
+
+
+        1. Amplitude
+
+        2. Period
+
+        3. Horizontal Shift (direction and magnitude)
+
+        4. Vertical Shift (direction and magnitude)
+
+        5. Equation of the Principal Axis
+
+        6. Range of the function'
+      avatarIntro: This set of problems focuses on analyzing the general form of trigonometric functions. Remember to carefully
+        identify parameters a, b, c, and d to determine all the properties.
+      mathTool: null
+      finalAnswer: 'Amplitude = 3. Period = 90°. Horizontal Shift: Right 60°. Vertical Shift: Up 2 units. Principal Axis:
+        y = 2. Range: [-1, 5]. (Note: The negative sign on ''a'' indicates a reflection in the x-axis.)'
+      stepByStepGuideline:
+      - 'Identify the parameters: a = -3, b = 4, c = 60°, d = 2.'
+      - 'Calculate Amplitude: Amplitude = |a| = |-3| = 3.'
+      - 'Calculate Period: Period = 360° / b = 360° / 4 = 90°.'
+      - 'Determine Horizontal Shift: Since c = 60° (positive), the shift is 60° to the right.'
+      - 'Determine Vertical Shift: Since d = 2 (positive), the shift is 2 units up.'
+      - 'State the Principal Axis: The principal axis is y = d, so y = 2.'
+      - 'Calculate the Range: Range = [d - |a|, d + |a|] = [2 - 3, 2 + 3] = [-1, 5].'
+      id: q12-1
+      questionGroup: q12
+    - problemText: 'Write the equation of a cosine function in the form $y = a \cos(b(x - c)) + d$ that satisfies the following
+        conditions:
+
+
+        Function: Cosine
+
+        Amplitude: 4
+
+        Period: $720^{\circ}$
+
+        Horizontal Shift: Left $45^{\circ}$
+
+        Vertical Shift: Down 1 unit'
+      mathTool: null
+      finalAnswer: $y = 4 \cos(0.5(x + 45^{\circ})) - 1$ (or equivalent forms, like $y = 4 \cos(0.5x + 22.5^{\circ}) - 1$)
+      stepByStepGuideline:
+      - 'Determine ''a'' (Amplitude): Since Amplitude = 4, we can choose a = 4 (or a = -4).'
+      - 'Determine ''b'' (Period Factor): Use the formula Period = 360° / b. If Period = 720°, then b = 360° / 720° = 0.5.'
+      - 'Determine ''c'' (Horizontal Shift): A shift of Left 45° means (x + 45°), so c = -45°.'
+      - 'Determine ''d'' (Vertical Shift): A shift of Down 1 unit means d = -1.'
+      - 'Substitute the parameters into the general form $y = a \cos(b(x - c)) + d$: $y = 4 \cos(0.5(x - (-45^{\circ}))) -
+        1$, which simplifies to $y = 4 \cos(0.5(x + 45^{\circ})) - 1$.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: Analyze the function $y = 2 \cos(3(x + 30^{\circ})) - 2$. Determine the equation of the principal axis
+        and the range of the function. Show your calculation for the range.
+      mathTool: null
+      finalAnswer: 'Principal Axis: y = -2. Range: [-4, 0].'
+      stepByStepGuideline:
+      - 'Identify the relevant parameters: a = 2 and d = -2.'
+      - 'Determine the Principal Axis: The principal axis is given by y = d. Therefore, the principal axis is y = -2.'
+      - 'Determine the Range: The range is defined by $[d - |a|, d + |a|]$.'
+      - 'Substitute the values: Range = [-2 - |2|, -2 + |2|].'
+      - 'Calculate the result: Range = [-2 - 2, -2 + 2] = [-4, 0].'
+      id: q12-3
+      questionGroup: q12
+    - problemText: Identify and describe all five transformations required to transform the base function $y = \sin x$ into
+        the function $y = -2 \sin(2(x + 45^{\circ})) + 3$. Be specific about the type (stretch/compression/shift/reflection)
+        and the magnitude of each change.
+      mathTool: null
+      finalAnswer: '1. Vertical stretch by a factor of 2.
+
+        2. Reflection across the x-axis (due to a = -2).
+
+        3. Horizontal compression by a factor of 1/2 (Period is 180°).
+
+        4. Horizontal shift of 45° to the left.
+
+        5. Vertical shift of 3 units up.'
+      stepByStepGuideline:
+      - 'Analyze the parameter a = -2: This represents a vertical stretch by a factor of 2 and a reflection across the x-axis.'
+      - 'Analyze the parameter b = 2: This represents a horizontal compression (or scaling) by a factor of 1/2, changing the
+        period from 360° to 180°.'
+      - 'Analyze the parameter c = -45° (from x + 45°): This represents a horizontal shift of 45° to the left.'
+      - 'Analyze the parameter d = 3: This represents a vertical shift of 3 units up.'
+      - List all five transformations clearly.
+      id: q12-4
+      questionGroup: q12
+    - problemText: 'Write the equation of a sine function in the form $y = a \sin(b(x - c)) + d$ given the following properties.
+        Assume the function is reflected across the x-axis.
+
+
+        Function: Sine
+
+        Amplitude: 3
+
+        Period: $120^{\circ}$
+
+        Horizontal Shift: Right $30^{\circ}$
+
+        Vertical Shift: Up 1 unit'
+      mathTool: null
+      finalAnswer: $y = -3 \sin(3(x - 30^{\circ})) + 1$
+      stepByStepGuideline:
+      - 'Determine ''a'': Since Amplitude = 3 and the function is reflected, a = -3.'
+      - 'Determine ''b'': Use Period = 360° / b. If Period = 120°, then b = 360° / 120° = 3.'
+      - 'Determine ''c'': A shift Right 30° means (x - 30°), so c = 30°.'
+      - 'Determine ''d'': A shift Up 1 unit means d = 1.'
+      - 'Substitute the parameters into the general form $y = a \sin(b(x - c)) + d$: $y = -3 \sin(3(x - 30^{\circ})) + 1$.'
+      id: q12-5
+      questionGroup: q12
+- id: advanced-trig-node-13
+  nodeNumber: 13
+  title: Solving Trigonometric Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: Using the unit circle and ASTC rules, solve the equation $2 \sin \theta - 1 = 0$ for the interval $0^{\circ}
+        \le \theta \le 360^{\circ}$.
+      avatarIntro: Solving trigonometric equations requires you to find the reference angle first. Remember to use ASTC to
+        figure out the correct quadrants!
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 30
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          showASTC: false
+          angleMode: degrees
+      finalAnswer: \theta = 30^{\circ}, 150^{\circ}
+      stepByStepGuideline:
+      - 'Rearrange the equation to isolate $\sin \theta$: $2 \sin \theta = 1$, so $\sin \theta = 1/2$.'
+      - Find the reference angle $\alpha$. Since $\sin 30^{\circ} = 1/2$, the reference angle $\alpha = 30^{\circ}$.
+      - Determine the quadrants using ASTC. Since $\sin \theta$ is positive, solutions lie in Quadrant 1 (A) and Quadrant
+        2 (S).
+      - 'Calculate the angles in the required quadrants: Quadrant 1: $\theta = \alpha = 30^{\circ}$. Quadrant 2: $\theta =
+        180^{\circ} - \alpha = 180^{\circ} - 30^{\circ} = 150^{\circ}$.'
+      - Verify that both solutions are within the interval $0^{\circ} \le \theta \le 360^{\circ}$. The solutions are $30^{\circ}$
+        and $150^{\circ}$.
+      id: q13-1
+      questionGroup: q13
+    - problemText: Solve the equation $\cos \theta = -1/\sqrt{2}$ using the unit circle and ASTC for the extended interval
+        $0^{\circ} \le \theta \le 720^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          showASTC: false
+          angleMode: degrees
+      finalAnswer: \theta = 135^{\circ}, 225^{\circ}, 495^{\circ}, 585^{\circ}
+      stepByStepGuideline:
+      - Find the reference angle $\alpha$ by considering $|\cos \theta| = 1/\sqrt{2}$. Since $\cos 45^{\circ} = 1/\sqrt{2}$,
+        the reference angle $\alpha = 45^{\circ}$.
+      - Determine the quadrants using ASTC. Since $\cos \theta$ is negative, solutions lie in Quadrant 2 (S) and Quadrant
+        3 (T).
+      - 'Calculate the primary solutions ($0^{\circ} \le \theta \le 360^{\circ}$): Quadrant 2: $\theta = 180^{\circ} - 45^{\circ}
+        = 135^{\circ}$. Quadrant 3: $\theta = 180^{\circ} + 45^{\circ} = 225^{\circ}$.'
+      - 'Find solutions in the extended interval $0^{\circ} \le \theta \le 720^{\circ}$ by adding $360^{\circ}$ to the primary
+        solutions: $135^{\circ} + 360^{\circ} = 495^{\circ}$. $225^{\circ} + 360^{\circ} = 585^{\circ}$.'
+      - The solutions are $135^{\circ}, 225^{\circ}, 495^{\circ}, 585^{\circ}$.
+      id: q13-2
+      questionGroup: q13
+    - problemText: Using the unit circle and ASTC, determine all solutions for $\tan \theta = -\sqrt{3}$ in the interval $0^{\circ}
+        \le \theta \le 360^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 60
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          showASTC: false
+          angleMode: degrees
+      finalAnswer: \theta = 120^{\circ}, 300^{\circ}
+      stepByStepGuideline:
+      - Find the reference angle $\alpha$ by considering $|\tan \theta| = \sqrt{3}$. Since $\tan 60^{\circ} = \sqrt{3}$, the
+        reference angle $\alpha = 60^{\circ}$.
+      - Determine the quadrants using ASTC. Since $\tan \theta$ is negative, solutions lie in Quadrant 2 (S) and Quadrant
+        4 (C).
+      - 'Calculate the angles in the required quadrants: Quadrant 2: $\theta = 180^{\circ} - 60^{\circ} = 120^{\circ}$. Quadrant
+        4: $\theta = 360^{\circ} - 60^{\circ} = 300^{\circ}$.'
+      - Verify that both solutions are within the interval $0^{\circ} \le \theta \le 360^{\circ}$. The solutions are $120^{\circ}$
+        and $300^{\circ}$.
+      id: q13-3
+      questionGroup: q13
+    - problemText: Solve $\sin \theta = -\sqrt{3}/2$ using ASTC, finding all solutions in the interval $-180^{\circ} \le \theta
+        \le 180^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 60
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          showASTC: false
+          angleMode: degrees
+      finalAnswer: \theta = -120^{\circ}, -60^{\circ}
+      stepByStepGuideline:
+      - Find the reference angle $\alpha$ by considering $|\sin \theta| = \sqrt{3}/2$. Since $\sin 60^{\circ} = \sqrt{3}/2$,
+        the reference angle $\alpha = 60^{\circ}$.
+      - Determine the quadrants using ASTC. Since $\sin \theta$ is negative, solutions lie in Quadrant 3 (T) and Quadrant
+        4 (C).
+      - Find the angles corresponding to these quadrants, adjusted for the negative interval ($-180^{\circ}$ to $180^{\circ}$).
+        This means we look for negative coterminal angles.
+      - 'Quadrant 3 angle: $180^{\circ} + 60^{\circ} = 240^{\circ}$. In the given interval, this is $240^{\circ} - 360^{\circ}
+        = -120^{\circ}$.'
+      - 'Quadrant 4 angle: $360^{\circ} - 60^{\circ} = 300^{\circ}$. In the given interval, this is $300^{\circ} - 360^{\circ}
+        = -60^{\circ}$.'
+      - The solutions are $\theta = -120^{\circ}$ and $-60^{\circ}$.
+      id: q13-4
+      questionGroup: q13
+    - problemText: Using the unit circle and ASTC, solve the equation $\sqrt{3} \cos \theta = 3/2$ for $0^{\circ} \le \theta
+        \le 360^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 30
+          showSpecialAngles: true
+          showCoordinates: false
+          showQuadrants: true
+          showASTC: false
+          angleMode: degrees
+      finalAnswer: \theta = 30^{\circ}, 330^{\circ}
+      stepByStepGuideline:
+      - 'Rearrange the equation to isolate $\cos \theta$: $\cos \theta = \frac{3}{2\sqrt{3}}$. Rationalize the denominator:
+        $\cos \theta = \frac{3\sqrt{3}}{6} = \frac{\sqrt{3}}{2}$.'
+      - Find the reference angle $\alpha$. Since $\cos 30^{\circ} = \sqrt{3}/2$, the reference angle $\alpha = 30^{\circ}$.
+      - Determine the quadrants using ASTC. Since $\cos \theta$ is positive, solutions lie in Quadrant 1 (A) and Quadrant
+        4 (C).
+      - 'Calculate the angles: Quadrant 1: $\theta = \alpha = 30^{\circ}$. Quadrant 4: $\theta = 360^{\circ} - \alpha = 360^{\circ}
+        - 30^{\circ} = 330^{\circ}$.'
+      - The solutions are $30^{\circ}$ and $330^{\circ}$.
+      id: q13-5
+      questionGroup: q13
+- id: advanced-trig-node-14
+  nodeNumber: 14
+  title: Solving Equations - Extended Intervals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: Solve the trigonometric equation $\sqrt{2} \sin \theta = 1$ for all values of $\theta$ in the extended
+        interval $0^{\circ} \le \theta \le 540^{\circ}$.
+      avatarIntro: Solving trigonometric equations over extended intervals requires finding the base solutions and then systematically
+        adding multiples of the period. Let's tackle this problem using the unit circle.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showSpecialAngles: true
+          showCoordinates: false
+          showASTC: true
+          angleMode: degrees
+      finalAnswer: $45^{\circ}, 135^{\circ}, 405^{\circ}, 495^{\circ}$
+      stepByStepGuideline:
+      - 'Isolate the trigonometric function: $\sin \theta = 1 / \sqrt{2}$, which simplifies to $\sin \theta = \sqrt{2}/2$.'
+      - Determine the reference angle ($\alpha$). Since $\sin 45^{\circ} = \sqrt{2}/2$, the reference angle is $\alpha = 45^{\circ}$.
+      - 'Identify the quadrants where sine is positive (ASTC rule): Q1 and Q2.'
+      - 'Find the base solutions in the interval $[0^{\circ}, 360^{\circ}]$: Q1: $\theta_1 = 45^{\circ}$. Q2: $\theta_2 =
+        180^{\circ} - 45^{\circ} = 135^{\circ}$.'
+      - 'Find solutions in the extended interval $0^{\circ} \le \theta \le 540^{\circ}$ by adding multiples of the period
+        ($360^{\circ}$):'
+      - 'From $\theta_1 = 45^{\circ}$: $45^{\circ} + 360^{\circ} = 405^{\circ}$. ($405^{\circ} < 540^{\circ}$)'
+      - 'From $\theta_2 = 135^{\circ}$: $135^{\circ} + 360^{\circ} = 495^{\circ}$. ($495^{\circ} < 540^{\circ}$)'
+      - The next additions ($405^{\circ} + 360^{\circ}$ and $495^{\circ} + 360^{\circ}$) exceed $540^{\circ}$.
+      - 'List all solutions in ascending order: $45^{\circ}, 135^{\circ}, 405^{\circ}, 495^{\circ}$.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: Find all exact solutions for the equation $2 \cos \theta = \sqrt{3}$ in the interval $0^{\circ} \le \theta
+        \le 720^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showSpecialAngles: true
+          showCoordinates: false
+          showASTC: true
+          angleMode: degrees
+      finalAnswer: $30^{\circ}, 330^{\circ}, 390^{\circ}, 690^{\circ}$
+      stepByStepGuideline:
+      - 'Isolate the cosine function: $\cos \theta = \sqrt{3}/2$.'
+      - Determine the reference angle ($\alpha$). Since $\cos 30^{\circ} = \sqrt{3}/2$, the reference angle is $\alpha = 30^{\circ}$.
+      - 'Identify the quadrants where cosine is positive (ASTC rule): Q1 and Q4.'
+      - 'Find the base solutions in the interval $[0^{\circ}, 360^{\circ}]$:'
+      - 'Q1: $\theta_1 = 30^{\circ}$.'
+      - 'Q4: $\theta_2 = 360^{\circ} - 30^{\circ} = 330^{\circ}$.'
+      - 'Find solutions in the extended interval $0^{\circ} \le \theta \le 720^{\circ}$ by adding $360^{\circ}$:'
+      - 'Add $360^{\circ}$ to $\theta_1$: $30^{\circ} + 360^{\circ} = 390^{\circ}$.'
+      - 'Add $360^{\circ}$ to $\theta_2$: $330^{\circ} + 360^{\circ} = 690^{\circ}$.'
+      - Adding $360^{\circ}$ again to $390^{\circ}$ or $690^{\circ}$ will exceed $720^{\circ}$.
+      - 'List all solutions: $30^{\circ}, 330^{\circ}, 390^{\circ}, 690^{\circ}$.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: Determine all solutions for the equation $\sqrt{3} \tan \theta - 1 = 0$ in the interval $0^{\circ} \le
+        \theta \le 540^{\circ}$. Remember the period for tangent is $180^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showSpecialAngles: true
+          showCoordinates: false
+          showASTC: true
+          angleMode: degrees
+      finalAnswer: $30^{\circ}, 210^{\circ}, 390^{\circ}$
+      stepByStepGuideline:
+      - 'Isolate the tangent function: $\tan \theta = 1 / \sqrt{3}$.'
+      - Determine the reference angle ($\alpha$). Since $\tan 30^{\circ} = 1/\sqrt{3}$, the reference angle is $\alpha = 30^{\circ}$.
+      - Since the period of tangent is $180^{\circ}$, we only need the principal solution in $[0^{\circ}, 180^{\circ})$. Tangent
+        is positive in Q1, so the principal solution is $\theta_0 = 30^{\circ}$.
+      - 'Generate solutions by adding multiples of the period ($180^{\circ}$):'
+      - 'k = 0: $\theta = 30^{\circ}$'
+      - 'k = 1: $30^{\circ} + 180^{\circ} = 210^{\circ}$'
+      - 'k = 2: $210^{\circ} + 180^{\circ} = 390^{\circ}$'
+      - 'k = 3: $390^{\circ} + 180^{\circ} = 570^{\circ}$ (Exceeds $540^{\circ}$, stop).'
+      - 'List all solutions: $30^{\circ}, 210^{\circ}, 390^{\circ}$.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: Solve $2 \sin \theta - 1 = 0$ for $\theta$ in the interval $0^{\circ} \le \theta \le 900^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showSpecialAngles: true
+          showCoordinates: false
+          showASTC: true
+          angleMode: degrees
+      finalAnswer: $30^{\circ}, 150^{\circ}, 390^{\circ}, 510^{\circ}, 750^{\circ}, 870^{\circ}$
+      stepByStepGuideline:
+      - 'Isolate the sine function: $\sin \theta = 1/2$.'
+      - Determine the reference angle ($\alpha$). Since $\sin 30^{\circ} = 1/2$, the reference angle is $\alpha = 30^{\circ}$.
+      - 'Identify the quadrants where sine is positive (ASTC rule): Q1 and Q2.'
+      - 'Find the base solutions in the interval $[0^{\circ}, 360^{\circ}]$:'
+      - 'Q1: $\theta_1 = 30^{\circ}$.'
+      - 'Q2: $\theta_2 = 180^{\circ} - 30^{\circ} = 150^{\circ}$.'
+      - 'Find solutions in the extended interval $0^{\circ} \le \theta \le 900^{\circ}$ by adding multiples of the period
+        ($360^{\circ}$):'
+      - 'k=1 (Add $360^{\circ}$): $30^{\circ} + 360^{\circ} = 390^{\circ}$; $150^{\circ} + 360^{\circ} = 510^{\circ}$.'
+      - 'k=2 (Add $720^{\circ}$): $30^{\circ} + 720^{\circ} = 750^{\circ}$; $150^{\circ} + 720^{\circ} = 870^{\circ}$.'
+      - 'k=3 (Add $1080^{\circ}$): Exceeds $900^{\circ}$.'
+      - 'List all solutions: $30^{\circ}, 150^{\circ}, 390^{\circ}, 510^{\circ}, 750^{\circ}, 870^{\circ}$.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: Solve $\tan \theta + 1 = 0$ for all values of $\theta$ in the interval $0^{\circ} \le \theta \le 720^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showSpecialAngles: true
+          showCoordinates: false
+          showASTC: true
+          angleMode: degrees
+      finalAnswer: $135^{\circ}, 315^{\circ}, 495^{\circ}, 675^{\circ}$
+      stepByStepGuideline:
+      - 'Isolate the tangent function: $\tan \theta = -1$.'
+      - Determine the reference angle ($\alpha$). Since $\tan 45^{\circ} = 1$, the reference angle is $\alpha = 45^{\circ}$.
+      - 'Identify the quadrants where tangent is negative (ASTC rule): Q2 and Q4.'
+      - 'Find the principal solution in Q2: $\theta_0 = 180^{\circ} - 45^{\circ} = 135^{\circ}$. (The period is $180^{\circ}$,
+        so we use the general solution $\theta = 135^{\circ} + 180^{\circ}k$ to find all answers).'
+      - 'Generate solutions in the interval $0^{\circ} \le \theta \le 720^{\circ}$:'
+      - 'k = 0: $135^{\circ}$'
+      - 'k = 1: $135^{\circ} + 180^{\circ} = 315^{\circ}$'
+      - 'k = 2: $315^{\circ} + 180^{\circ} = 495^{\circ}$'
+      - 'k = 3: $495^{\circ} + 180^{\circ} = 675^{\circ}$'
+      - 'k = 4: $675^{\circ} + 180^{\circ} = 855^{\circ}$ (Exceeds $720^{\circ}$, stop).'
+      - 'List all solutions: $135^{\circ}, 315^{\circ}, 495^{\circ}, 675^{\circ}$.'
+      id: q14-5
+      questionGroup: q14
+- id: advanced-trig-node-15
+  nodeNumber: 15
+  title: Negative Angle Identities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: Explain why the identity $\sin(-\theta) = -\sin \theta$ holds true by describing the geometric relationship
+        between the terminal arm of $\theta$ and the terminal arm of $-\theta$ on the unit circle.
+      avatarIntro: Understanding how angles relate geometrically on the unit circle is key to mastering trigonometric identities.
+        Let's explore the negative angle identities!
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showPoint: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: The terminal arm for $-\theta$ is a reflection of the terminal arm for $\theta$ across the x-axis. If the
+        coordinates of the point for $\theta$ are $(\cos \theta, \sin \theta)$, the reflected point for $-\theta$ will have
+        coordinates $(\cos \theta, -\sin \theta)$. Since the y-coordinate represents the sine value, $\sin(-\theta) = -\sin
+        \theta$.
+      stepByStepGuideline:
+      - 'Identify the coordinates of the point P corresponding to the angle $\theta$ on the unit circle: P = (cos $\theta$,
+        sin $\theta$).'
+      - Identify the geometric relationship between the angle $\theta$ and the angle $-\theta$. The terminal arm of $-\theta$
+        is the reflection of the terminal arm of $\theta$ across the x-axis.
+      - Determine the coordinates of the reflected point P' corresponding to the angle $-\theta$. A reflection across the
+        x-axis transforms (x, y) to (x, -y). Thus, P' = (cos $\theta$, -sin $\theta$).
+      - 'Since the coordinates of P'' are also defined by (cos($-\theta$), sin($-\theta$)), we equate the y-components: $\sin(-\theta)
+        = -\sin \theta$.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: Use the negative angle identity to evaluate $\sin(-30^{\circ})$, then find the exact value of $\cos(-60^{\circ})$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 30
+          showPoint: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: $-\frac{1}{2}$ and $\frac{1}{2}$
+      stepByStepGuideline:
+      - 'Part 1: Apply the negative angle identity for sine, $\sin(-\theta) = -\sin \theta$. Thus, $\sin(-30^{\circ}) = -\sin
+        30^{\circ}$.'
+      - 'Substitute the known exact value: $\sin(-30^{\circ}) = -(1/2) = -1/2$.'
+      - 'Part 2: Apply the negative angle identity for cosine, $\cos(-\theta) = \cos \theta$. Thus, $\cos(-60^{\circ}) = \cos
+        60^{\circ}$.'
+      - 'Substitute the known exact value: $\cos(-60^{\circ}) = 1/2$.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: Find the exact value of $\tan(-60^{\circ})$ without using a calculator.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 60
+          showPoint: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: $-\sqrt{3}$
+      stepByStepGuideline:
+      - 'Apply the negative angle identity for tangent: $\tan(-\theta) = -\tan \theta$.'
+      - 'Substitute the angle: $\tan(-60^{\circ}) = -\tan 60^{\circ}$.'
+      - Recall the exact value of $\tan 60^{\circ} = \sqrt{3}$.
+      - Therefore, $\tan(-60^{\circ}) = -\sqrt{3}$.
+      id: q15-3
+      questionGroup: q15
+    - problemText: Simplify $\cos(-90^{\circ})$ using the negative angle identity, and state the exact value.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 90
+          showPoint: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: '0'
+      stepByStepGuideline:
+      - 'Identify the appropriate negative angle identity for cosine: $\cos(-\theta) = \cos \theta$ (Cosine is an even function).'
+      - 'Apply the identity: $\cos(-90^{\circ}) = \cos 90^{\circ}$.'
+      - Recall the exact value of $\cos 90^{\circ}$. The terminal arm is along the positive y-axis, and the x-coordinate is
+        0.
+      - The exact value is 0.
+      id: q15-4
+      questionGroup: q15
+    - problemText: Determine the exact value of $\sin(-45^{\circ})$ using the appropriate negative angle identity.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showPoint: true
+          showCoordinates: true
+          angleMode: degrees
+      finalAnswer: $-\frac{\sqrt{2}}{2}$ or $-\frac{1}{\sqrt{2}}$
+      stepByStepGuideline:
+      - 'Apply the negative angle identity for sine: $\sin(-\theta) = -\sin \theta$ (Sine is an odd function).'
+      - 'Substitute the angle: $\sin(-45^{\circ}) = -\sin 45^{\circ}$.'
+      - Recall the exact value of $\sin 45^{\circ} = \frac{\sqrt{2}}{2}$.
+      - Therefore, $\sin(-45^{\circ}) = -\frac{\sqrt{2}}{2}$.
+      id: q15-5
+      questionGroup: q15
+- id: advanced-trig-node-16
+  nodeNumber: 16
+  title: Complementary Angle Identities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: Use the complementary identity to find the exact value of $\sin 60^{\circ}$ given that $\cos 30^{\circ}
+        = \frac{\sqrt{3}}{2}$.
+      avatarIntro: Great work! Complementary angle identities show us the deep connection between sine and cosine, especially
+        when dealing with angles that add up to 90 degrees.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 60
+          showPoint: true
+          showCoordinates: true
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: $ \sin 60^{\circ} = \frac{\sqrt{3}}{2}$
+      stepByStepGuideline:
+      - 'Identify the relationship between the angles: $60^{\circ} + 30^{\circ} = 90^{\circ}$, so they are complementary angles.'
+      - 'Apply the complementary angle identity: $\sin \theta = \cos(90^{\circ} - \theta)$.'
+      - 'Substitute $\theta = 60^{\circ}$: $\sin 60^{\circ} = \cos(90^{\circ} - 60^{\circ}) = \cos 30^{\circ}$.'
+      - 'Use the given value: Since $\cos 30^{\circ} = \frac{\sqrt{3}}{2}$, then $\sin 60^{\circ} = \frac{\sqrt{3}}{2}$.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: Given that $\sin 45^{\circ} = \frac{1}{\sqrt{2}}$, use the complementary identity to determine the exact
+        value of $\cos 45^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 45
+          showPoint: true
+          showCoordinates: true
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: $ \cos 45^{\circ} = \frac{1}{\sqrt{2}}$
+      stepByStepGuideline:
+      - 'Identify the complementary angle for $45^{\circ}$: $90^{\circ} - 45^{\circ} = 45^{\circ}$.'
+      - 'Apply the complementary angle identity: $\cos \theta = \sin(90^{\circ} - \theta)$.'
+      - 'Substitute $\theta = 45^{\circ}$: $\cos 45^{\circ} = \sin(90^{\circ} - 45^{\circ}) = \sin 45^{\circ}$.'
+      - Since $\sin 45^{\circ} = \frac{1}{\sqrt{2}}$ is given, then $\cos 45^{\circ} = \frac{1}{\sqrt{2}}$.
+      id: q16-2
+      questionGroup: q16
+    - problemText: Use the complementary angle identity $\sin \theta = \cos(90^{\circ} - \theta)$ to verify the relationship
+        between $\sin 15^{\circ}$ and $\cos 75^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 15
+          showPoint: true
+          showCoordinates: true
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: Since $90^{\circ} - 15^{\circ} = 75^{\circ}$, the identity $\sin 15^{\circ} = \cos 75^{\circ}$ is verified.
+      stepByStepGuideline:
+      - 'Start with the identity: $\sin \theta = \cos(90^{\circ} - \theta)$.'
+      - Substitute the angle $\theta = 15^{\circ}$ into the identity.
+      - 'Calculate the complementary angle: $90^{\circ} - 15^{\circ} = 75^{\circ}$.'
+      - 'Substitute this back into the identity: $\sin 15^{\circ} = \cos 75^{\circ}$.'
+      - The verification shows that the sine of $15^{\circ}$ must equal the cosine of its complementary angle, $75^{\circ}$.
+      id: q16-3
+      questionGroup: q16
+    - problemText: Explain, using the definitions of sine (Opposite/Hypotenuse) and cosine (Adjacent/Hypotenuse) in a general
+        right triangle with acute angle $\theta$, why the identity $\cos(90^{\circ} - \theta) = \sin \theta$ must be true.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 25
+          showPoint: true
+          showCoordinates: true
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: In a right triangle, the side opposite $\theta$ is the side adjacent to the angle $(90^{\circ} - \theta)$.
+        Since $\sin \theta = \text{Opposite}/\text{Hypotenuse}$ and $\cos(90^{\circ} - \theta) = \text{Adjacent}/\text{Hypotenuse}$
+        (relative to $90^{\circ} - \theta$), and these sides are the same, the identity holds.
+      stepByStepGuideline:
+      - Consider a right triangle with acute angles $\theta$ and $(90^{\circ} - \theta)$. Let $O$ be the side opposite $\theta$,
+        $A$ be the side adjacent to $\theta$, and $H$ be the hypotenuse.
+      - 'Define $\sin \theta$: $\sin \theta = O/H$.'
+      - 'Identify the sides relative to the complementary angle $(90^{\circ} - \theta)$: The side adjacent to $(90^{\circ}
+        - \theta)$ is $O$, and the side opposite $(90^{\circ} - \theta)$ is $A$.'
+      - 'Define $\cos(90^{\circ} - \theta)$: $\cos(90^{\circ} - \theta) = \text{Adjacent (to } 90^{\circ} - \theta)/H = O/H$.'
+      - Since both expressions equal $O/H$, we conclude that $\cos(90^{\circ} - \theta) = \sin \theta$.
+      id: q16-4
+      questionGroup: q16
+    - problemText: A scientist measures that $\cos 70^{\circ} \approx 0.3420$. Using the complementary angle identity, find
+        the value of $\sin 20^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 20
+          showPoint: true
+          showCoordinates: true
+          showTriangle: true
+          angleMode: degrees
+      finalAnswer: $ \sin 20^{\circ} \approx 0.3420$
+      stepByStepGuideline:
+      - 'Identify the relationship between the angles $20^{\circ}$ and $70^{\circ}$: They are complementary since $20^{\circ}
+        + 70^{\circ} = 90^{\circ}$.'
+      - Apply the complementary angle identity $\sin \theta = \cos(90^{\circ} - \theta)$.
+      - 'Set $\theta = 20^{\circ}$: $\sin 20^{\circ} = \cos(90^{\circ} - 20^{\circ}) = \cos 70^{\circ}$.'
+      - 'Use the given value: Since $\cos 70^{\circ} \approx 0.3420$, then $\sin 20^{\circ} \approx 0.3420$.'
+      id: q16-5
+      questionGroup: q16
+- id: advanced-trig-node-17
+  nodeNumber: 17
+  title: Double Angle Formulas
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Given that $\sin \theta = 5/13$ and $\theta$ lies in the first quadrant ($0^{\circ} < \theta < 90^{\circ}$).
+        Find the exact value of $\sin 2\theta$, and subsequently find the exact value of $\cos 2\theta$ using the primary
+        double angle identity.
+      avatarIntro: The double angle formulas are essential tools in trigonometry. Remember to use the Pythagorean identity
+        first to find the missing trigonometric ratio!
+      mathTool: null
+      finalAnswer: sin 2\theta = 120/169, cos 2\theta = 119/169
+      stepByStepGuideline:
+      - 'Step 1: Determine $\cos \theta$. Since $\theta$ is in Q1, $\cos \theta$ is positive. $\cos \theta = \sqrt{1 - \sin^2
+        \theta} = \sqrt{1 - (5/13)^2} = \sqrt{1 - 25/169} = \sqrt{144/169} = 12/13$.'
+      - 'Step 2: Calculate $\sin 2\theta$ using the identity $\sin 2\theta = 2 \sin \theta \cos \theta$. $\sin 2\theta = 2(5/13)(12/13)
+        = 120/169$.'
+      - 'Step 3: Calculate $\cos 2\theta$ using the identity $\cos 2\theta = \cos^2\theta - \sin^2\theta$. $\cos 2\theta =
+        (12/13)^2 - (5/13)^2 = 144/169 - 25/169 = 119/169$.'
+      id: q17-1
+      questionGroup: q17
+    - problemText: If $\cos \theta = -1/2$ and $\theta$ is in the second quadrant ($90^{\circ} < \theta < 180^{\circ}$), calculate
+        the exact values of $\sin 2\theta$ and $\cos 2\theta$. Use the derived identity for $\cos 2\theta$ that only requires
+        $\cos \theta$.
+      mathTool: null
+      finalAnswer: sin 2\theta = -\sqrt{3}/2, cos 2\theta = -1/2
+      stepByStepGuideline:
+      - 'Step 1: Determine $\sin \theta$. Since $\theta$ is in Q2, $\sin \theta$ is positive. $\sin \theta = \sqrt{1 - \cos^2
+        \theta} = \sqrt{1 - (-1/2)^2} = \sqrt{1 - 1/4} = \sqrt{3/4} = \sqrt{3}/2$.'
+      - 'Step 2: Calculate $\sin 2\theta$ using the identity $\sin 2\theta = 2 \sin \theta \cos \theta$. $\sin 2\theta = 2(\sqrt{3}/2)(-1/2)
+        = -\sqrt{3}/2$.'
+      - 'Step 3: Calculate $\cos 2\theta$ using the identity $\cos 2\theta = 2\cos^2\theta - 1$. $\cos 2\theta = 2(-1/2)^2
+        - 1 = 2(1/4) - 1 = 1/2 - 1 = -1/2$.'
+      id: q17-2
+      questionGroup: q17
+    - problemText: Using the double angle identity for cosine, show that $\cos 60^{\circ} = 1/2$, given that the exact value
+        of $\cos 30^{\circ} = \sqrt{3}/2$.
+      mathTool: null
+      finalAnswer: 1/2
+      stepByStepGuideline:
+      - 'Step 1: Recognize that $60^{\circ} = 2 \times 30^{\circ}$. Let $\theta = 30^{\circ}$ and apply the identity $\cos
+        2\theta = 2\cos^2\theta - 1$.'
+      - 'Step 2: Substitute the known value of $\cos 30^{\circ}$: $\cos 60^{\circ} = 2\cos^2(30^{\circ}) - 1 = 2(\sqrt{3}/2)^2
+        - 1$.'
+      - 'Step 3: Simplify the expression: $\cos 60^{\circ} = 2(3/4) - 1 = 3/2 - 1 = 1/2$.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: Verify the double angle identity $\cos 2\theta = 1 - 2\sin^2\theta$ by starting with the primary identity
+        $\cos 2\theta = \cos^2\theta - \sin^2\theta$ and applying the Pythagorean identity $\cos^2\theta + \sin^2\theta =
+        1$. Show all algebraic steps.
+      mathTool: null
+      finalAnswer: The verification is complete when $\cos^2\theta - \sin^2\theta$ is transformed into $1 - 2\sin^2\theta$.
+      stepByStepGuideline:
+      - 'Step 1: Start with the primary identity: $\cos 2\theta = \cos^2\theta - \sin^2\theta$.'
+      - 'Step 2: Use the Pythagorean identity $\cos^2\theta + \sin^2\theta = 1$ to isolate $\cos^2\theta = 1 - \sin^2\theta$.'
+      - 'Step 3: Substitute this expression for $\cos^2\theta$ into the primary identity: $\cos 2\theta = (1 - \sin^2\theta)
+        - \sin^2\theta$.'
+      - 'Step 4: Combine like terms to reach the required derived identity: $\cos 2\theta = 1 - 2\sin^2\theta$.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: Given $\sin \theta = 4/5$ and $90^{\circ} < \theta < 180^{\circ}$ (Quadrant II). Find the exact value of
+        $\sin 2\theta$.
+      mathTool: null
+      finalAnswer: -24/25
+      stepByStepGuideline:
+      - 'Step 1: Determine the value of $\cos \theta$. Since $\theta$ is in Q2, $\cos \theta$ is negative. $\cos \theta =
+        -\sqrt{1 - \sin^2 \theta} = -\sqrt{1 - (4/5)^2} = -\sqrt{1 - 16/25} = -\sqrt{9/25} = -3/5$.'
+      - 'Step 2: Apply the double angle identity $\sin 2\theta = 2 \sin \theta \cos \theta$.'
+      - 'Step 3: Substitute the known values: $\sin 2\theta = 2(4/5)(-3/5) = -24/25$.'
+      id: q17-5
+      questionGroup: q17
+- id: advanced-trig-node-18
+  nodeNumber: 18
+  title: Algebraic Manipulation with Trig
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Simplify the expression $7 \sin \theta \cos \theta - 3 \sin \theta + 4 \sin \theta \cos \theta + 9 \sin
+        \theta$ and express the result in factored form.
+      avatarIntro: Trigonometric functions can be treated just like variables when combining terms. Look for common terms
+        and factor them out to simplify this expression.
+      mathTool: null
+      finalAnswer: \sin \theta (11 \cos \theta + 6)
+      stepByStepGuideline:
+      - 'Group like terms together: $(7 \sin \theta \cos \theta + 4 \sin \theta \cos \theta) + (-3 \sin \theta + 9 \sin \theta)$.'
+      - 'Combine the coefficients for each group: $11 \sin \theta \cos \theta + 6 \sin \theta$.'
+      - 'Factor out the common trigonometric term, $\sin \theta$: $\sin \theta (11 \cos \theta + 6)$.'
+      id: q18-1
+      questionGroup: q18
+    - problemText: 'Expand and simplify the following expression using algebraic expansion and the Pythagorean identity: $(2
+        \cos \theta + \sin \theta)^2 + (\cos \theta - 2 \sin \theta)^2$.'
+      mathTool: null
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Expand the first term $(2 \cos \theta + \sin \theta)^2$: $4 \cos^2 \theta + 4 \sin \theta \cos \theta + \sin^2 \theta$.'
+      - 'Expand the second term $(\cos \theta - 2 \sin \theta)^2$: $\cos^2 \theta - 4 \sin \theta \cos \theta + 4 \sin^2 \theta$.'
+      - 'Add the expanded results: $(4 \cos^2 \theta + 4 \sin \theta \cos \theta + \sin^2 \theta) + (\cos^2 \theta - 4 \sin
+        \theta \cos \theta + 4 \sin^2 \theta)$.'
+      - 'Combine like terms. Note that the middle terms cancel out: $(4 \cos^2 \theta + \cos^2 \theta) + (\sin^2 \theta +
+        4 \sin^2 \theta) = 5 \cos^2 \theta + 5 \sin^2 \theta$.'
+      - 'Factor out 5 and apply the Pythagorean identity $(\cos^2 \theta + \sin^2 \theta = 1)$: $5 (\cos^2 \theta + \sin^2
+        \theta) = 5(1) = 5$.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: 'Prove the trigonometric identity by transforming the Left Hand Side (LHS) into the Right Hand Side (RHS):
+        $\cos^2 \theta - \sin^2 \theta = 1 - 2 \sin^2 \theta$.'
+      mathTool: null
+      finalAnswer: LHS = 1 - 2 sin^2 θ = RHS ✓
+      stepByStepGuideline:
+      - 'Start with the Left Hand Side (LHS): LHS $= \cos^2 \theta - \sin^2 \theta$.'
+      - Use the Pythagorean identity $\cos^2 \theta + \sin^2 \theta = 1$ to substitute for $\cos^2 \theta$. Rearranging gives
+        $\cos^2 \theta = 1 - \sin^2 \theta$.
+      - 'Substitute this expression into the LHS: LHS $= (1 - \sin^2 \theta) - \sin^2 \theta$.'
+      - 'Simplify the expression by combining the $\sin^2 \theta$ terms: LHS $= 1 - 2 \sin^2 \theta$.'
+      - Since LHS $= 1 - 2 \sin^2 \theta$, which equals the RHS, the identity is proven.
+      id: q18-3
+      questionGroup: q18
+    - problemText: 'Simplify the algebraic trigonometric expression: $\frac{\cos^4 \theta - \sin^4 \theta}{\cos^2 \theta -
+        \sin^2 \theta}$.'
+      mathTool: null
+      finalAnswer: '1'
+      stepByStepGuideline:
+      - Recognize the numerator as a difference of squares, $a^2 - b^2 = (a-b)(a+b)$, where $a = \cos^2 \theta$ and $b = \sin^2
+        \theta$.
+      - 'Factor the numerator: $\cos^4 \theta - \sin^4 \theta = (\cos^2 \theta - \sin^2 \theta)(\cos^2 \theta + \sin^2 \theta)$.'
+      - 'Rewrite the full fraction: $\frac{(\cos^2 \theta - \sin^2 \theta)(\cos^2 \theta + \sin^2 \theta)}{\cos^2 \theta -
+        \sin^2 \theta}$.'
+      - Cancel the common factor $(\cos^2 \theta - \sin^2 \theta)$ from the numerator and the denominator.
+      - The remaining expression is $\cos^2 \theta + \sin^2 \theta$.
+      - 'Apply the Pythagorean identity: $\cos^2 \theta + \sin^2 \theta = 1$.'
+      id: q18-4
+      questionGroup: q18
+    - problemText: 'Prove the identity: $(5 \sin \theta + 2 \cos \theta)^2 + (2 \sin \theta - 5 \cos \theta)^2 = 29$.'
+      mathTool: null
+      finalAnswer: LHS = 29 = RHS ✓
+      stepByStepGuideline:
+      - 'Start with the Left Hand Side (LHS) and expand the first squared term: $(5 \sin \theta + 2 \cos \theta)^2 = 25 \sin^2
+        \theta + 20 \sin \theta \cos \theta + 4 \cos^2 \theta$.'
+      - 'Expand the second squared term: $(2 \sin \theta - 5 \cos \theta)^2 = 4 \sin^2 \theta - 20 \sin \theta \cos \theta
+        + 25 \cos^2 \theta$.'
+      - 'Add the two expanded results:'
+      - LHS $= (25 \sin^2 \theta + 20 \sin \theta \cos \theta + 4 \cos^2 \theta) + (4 \sin^2 \theta - 20 \sin \theta \cos
+        \theta + 25 \cos^2 \theta)$.
+      - 'Combine the like terms. The $20 \sin \theta \cos \theta$ terms cancel out:'
+      - LHS $= (25 \sin^2 \theta + 4 \sin^2 \theta) + (4 \cos^2 \theta + 25 \cos^2 \theta) = 29 \sin^2 \theta + 29 \cos^2
+        \theta$.
+      - 'Factor out 29: LHS $= 29 (\sin^2 \theta + \cos^2 \theta)$.'
+      - 'Apply the Pythagorean identity $(\sin^2 \theta + \cos^2 \theta = 1)$: LHS $= 29 (1) = 29$.'
+      - Since LHS $= 29$, which equals the RHS, the identity is proven.
+      id: q18-5
+      questionGroup: q18
+- id: advanced-trig-node-19
+  nodeNumber: 19
+  title: Understanding Radian Measure
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: Use the fundamental definition of radian measure, $\theta = \frac{\text{arc length}}{\text{radius}}$, to
+        prove that a full rotation around a circle corresponds exactly to $2\pi$ radians.
+      avatarIntro: Welcome! Understanding where $2\pi$ comes from is key to mastering radians. Let's start by deriving the
+        full circle measure.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 360
+          angleMode: radians
+          showSpecialAngles: true
+          showAngleArc: true
+          showCoordinates: true
+      finalAnswer: A full rotation is $2\pi$ radians.
+      stepByStepGuideline:
+      - 'Step 1: Recall the formula for the circumference (arc length) of a full circle with radius $r$: $s = 2\pi r$.'
+      - 'Step 2: Apply the definition of radian measure: $\theta = \frac{\text{arc length}}{\text{radius}} = \frac{s}{r}$.'
+      - 'Step 3: Substitute the circumference into the radian formula: $\theta = \frac{2\pi r}{r}$.'
+      - 'Step 4: Cancel the radius ($r$) from the numerator and denominator, resulting in $\theta = 2\pi$. This proves that
+        a full circle is $2\pi$ radians.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: A circular track has a radius of $7.5$ meters. If an athlete runs along an arc of $15$ meters, what is
+        the measure of the angle subtended at the center of the track? Express your answer exactly in radians.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 2
+          angleMode: radians
+          showSpecialAngles: true
+          showAngleArc: true
+          showCoordinates: true
+      finalAnswer: 2 radians
+      stepByStepGuideline:
+      - 'Step 1: Identify the given values: Arc length ($s$) = 15 m, Radius ($r$) = 7.5 m.'
+      - 'Step 2: Use the radian measure formula: $\theta = s/r$.'
+      - 'Step 3: Substitute the values: $\theta = 15 / 7.5$.'
+      - 'Step 4: Calculate the result: $\theta = 2$. The angle subtended is 2 radians.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: Define 1 radian precisely based on the relationship between arc length ($s$) and radius ($r$).
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 1
+          angleMode: radians
+          showSpecialAngles: true
+          showAngleArc: true
+          showCoordinates: true
+      finalAnswer: 1 radian is the angle subtended at the center of a circle when the arc length is exactly equal to the radius
+        of the circle ($s = r$).
+      stepByStepGuideline:
+      - 'Step 1: State the fundamental radian definition: $\theta = s/r$.'
+      - 'Step 2: To achieve $\theta = 1$, the arc length ($s$) must equal the radius ($r$).'
+      - 'Step 3: Formulate the definition: One radian is the measure of the central angle that intercepts an arc equal in
+        length to the radius.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: Explain how the definition of a radian relates the measure of a straight angle ($180^{\circ}$) to the value
+        $\pi$. Show how this leads to the key relationship $\pi \text{ radians} = 180^{\circ}$.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 180
+          angleMode: radians
+          showSpecialAngles: true
+          showAngleArc: true
+          showCoordinates: true
+      finalAnswer: $180^{\circ} = \pi$ radians because $180^{\circ}$ covers half the circle, and half the circumference is
+        $\pi r$.
+      stepByStepGuideline:
+      - 'Step 1: Recognize that $180^{\circ}$ corresponds to a straight angle, which covers exactly half of the circle''s
+        rotation.'
+      - 'Step 2: Determine the arc length ($s$) for half a circle. Half the circumference is $s = \frac{1}{2}(2\pi r) = \pi
+        r$.'
+      - 'Step 3: Apply the radian definition $\theta = s/r$.'
+      - 'Step 4: Substitute the half-circle arc length: $\theta = \frac{\pi r}{r} = \pi$. Therefore, $180^{\circ}$ is equivalent
+        to $\pi$ radians.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: The formula for radian measure is $\theta = s/r$. Based on this formula, explain why the radian measure
+        of an angle is considered a dimensionless quantity.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 90
+          angleMode: radians
+          showSpecialAngles: true
+          showAngleArc: true
+          showCoordinates: true
+      finalAnswer: Radians are dimensionless because they are calculated as the ratio of two lengths (arc length $s$ divided
+        by radius $r$), meaning the units of length cancel out.
+      stepByStepGuideline:
+      - 'Step 1: State the formula: $\theta = s/r$.'
+      - 'Step 2: Identify the units of measurement for $s$ (arc length) and $r$ (radius). Both are measured in units of length
+        (e.g., meters, centimeters).'
+      - 'Step 3: Analyze the unit calculation for the ratio: $\text{Units}(\theta) = \frac{\text{Unit of Length}}{\text{Unit
+        of Length}}$.'
+      - 'Step 4: Conclude that since the units cancel out, the resulting measure (radians) is a pure number without physical
+        dimensions, hence dimensionless.'
+      id: q19-5
+      questionGroup: q19
+- id: advanced-trig-node-20
+  nodeNumber: 20
+  title: Converting Degrees and Radians
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: unitCircle
+    preWrittenQuestions:
+    - problemText: Convert 270° to radians (leave your answer in terms of π). Then, convert 5π/6 radians to degrees.
+      avatarIntro: Conversion between degrees and radians is crucial in trigonometry. Let's start with a combined problem
+        to test both directions.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 3π/2
+          angleMode: radians
+          showSpecialAngles: true
+          showCoordinates: false
+      finalAnswer: 270° converts to 3π/2 radians. 5π/6 radians converts to 150°.
+      stepByStepGuideline:
+      - 'To convert degrees to radians, multiply by π/180: 270° × π/180.'
+      - 'Simplify the fraction 270/180 by dividing both by 90: 3/2. Thus, 270° = 3π/2 radians.'
+      - 'To convert radians to degrees, multiply by 180/π: 5π/6 × 180/π.'
+      - 'Cancel out π and simplify the fraction: (5 × 180) / 6. Since 180/6 = 30, we have 5 × 30 = 150°.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: Convert 4π/3 radians to degrees.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 4π/3
+          angleMode: radians
+          showSpecialAngles: true
+          showCoordinates: false
+      finalAnswer: 240°
+      stepByStepGuideline:
+      - To convert radians to degrees, multiply the radian measure by 180/π.
+      - 'Set up the calculation: (4π/3) × (180/π).'
+      - Cancel out π. The expression becomes (4/3) × 180.
+      - Calculate 180 / 3 = 60. Then multiply 4 × 60 = 240°.
+      id: q20-2
+      questionGroup: q20
+    - problemText: Convert 72° to radians. Ensure your final answer is an exact fraction expressed in terms of π.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 2π/5
+          angleMode: radians
+          showSpecialAngles: true
+          showCoordinates: false
+      finalAnswer: 2π/5 radians
+      stepByStepGuideline:
+      - To convert degrees to radians, multiply the degree measure by π/180.
+      - 'Set up the calculation: 72° × π/180 = 72π/180.'
+      - Simplify the fraction 72/180. Both numbers are divisible by 36.
+      - 72 ÷ 36 = 2 and 180 ÷ 36 = 5.
+      - The resulting radian measure is 2π/5.
+      id: q20-3
+      questionGroup: q20
+    - problemText: What is the degree equivalent of 3π/2 radians?
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 3π/2
+          angleMode: radians
+          showSpecialAngles: true
+          showCoordinates: false
+      finalAnswer: 270°
+      stepByStepGuideline:
+      - Use the conversion factor 180/π to convert radians to degrees.
+      - 'Set up the multiplication: (3π/2) × (180/π).'
+      - Cancel out π from the numerator and denominator.
+      - Calculate (3/2) × 180. Since 180/2 = 90, multiply 3 × 90.
+      - The result is 270°.
+      id: q20-4
+      questionGroup: q20
+    - problemText: First, convert 210° to radians (in terms of π). Second, convert π/5 radians to degrees.
+      mathTool:
+        toolName: unitCircle
+        parameters:
+          angle: 7π/6
+          angleMode: radians
+          showSpecialAngles: true
+          showCoordinates: false
+      finalAnswer: 210° converts to 7π/6 radians. π/5 radians converts to 36°.
+      stepByStepGuideline:
+      - 'Part 1 (Degrees to Radians): Multiply 210° by π/180.'
+      - 'Simplify the fraction 210/180 by dividing both by 30: 7/6. So, 210° = 7π/6 radians.'
+      - 'Part 2 (Radians to Degrees): Multiply π/5 by 180/π.'
+      - 'Cancel out π: 180 / 5.'
+      - 'Calculate the final degree measure: 36°.'
+      id: q20-5
+      questionGroup: q20
+- id: advanced-trig-node-21
+  nodeNumber: 21
+  title: Arc Length and Sector Area Formulas
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Calculate the exact arc length of a circular slice of pizza with a radius of 6 cm, where the central angle
+        subtended is $\pi/4$ radians. (Angle already in radians)
+      avatarIntro: Welcome! Let's start with the fundamental formula for arc length. Remember that the angle must always be
+        measured in radians.
+      mathTool: null
+      finalAnswer: $3\pi/2 \text{ cm or } 1.5\pi \text{ cm } (\approx 4.71 \text{ cm})$
+      stepByStepGuideline:
+      - The formula for arc length is $s = r\theta$.
+      - Substitute the given radius $r = 6 \text{ cm}$ and angle $\theta = \pi/4$ radians into the formula.
+      - $$s = 6 \times \frac{\pi}{4}$$
+      - 'Simplify the expression to find the exact arc length:'
+      - $$s = \frac{6\pi}{4} = \frac{3\pi}{2} \text{ cm}$$
+      id: q21-1
+      questionGroup: q21
+    - problemText: A windshield wiper sweeps an angle of $60^{\circ}$ on a car window. If the effective length of the wiper
+        blade (radius) is 8 cm, find the exact area cleaned by the wiper in terms of $\pi$. (Remember to convert the angle
+        to radians first)
+      mathTool: null
+      finalAnswer: $32\pi/3 \text{ cm}^2 (\approx 33.51 \text{ cm}^2)$
+      stepByStepGuideline:
+      - 'Step 1: Convert the central angle from degrees to radians:'
+      - $$\theta = 60^{\circ} \times \frac{\pi}{180} = \frac{\pi}{3} \text{ radians}$$
+      - 'Step 2: Use the formula for the area of a sector, $A = (1/2)r^2\theta$.'
+      - 'Substitute $r = 8 \text{ cm}$ and $\theta = \pi/3$ radians:'
+      - $$A = \frac{1}{2}(8)^2 \left(\frac{\pi}{3}\right)$$
+      - 'Step 3: Calculate the area:'
+      - $$A = \frac{1}{2}(64)\left(\frac{\pi}{3}\right) = 32 \times \frac{\pi}{3} = \frac{32\pi}{3} \text{ cm}^2$$
+      id: q21-2
+      questionGroup: q21
+    - problemText: A rope is wrapped along a circular arc measuring 12 meters. If this arc subtends a central angle of 2 radians,
+        calculate the radius of the circular object.
+      mathTool: null
+      finalAnswer: $6 \text{ m}$
+      stepByStepGuideline:
+      - 'Start with the arc length formula: $s = r\theta$.'
+      - 'Rearrange the formula to solve for the radius: $r = s/\theta$.'
+      - 'Substitute the given arc length $s = 12 \text{ m}$ and angle $\theta = 2 \text{ radians}$:'
+      - $$r = \frac{12}{2}$$
+      - 'Calculate the radius:'
+      - $$r = 6 \text{ m}$$
+      id: q21-3
+      questionGroup: q21
+    - problemText: A cyclist travels along an arc of 2 meters on a circular track which has a radius of 5 meters. What is
+        the exact measure of the angle ($\theta$) swept out, expressed in radians?
+      mathTool: null
+      finalAnswer: $0.4 \text{ radians}$
+      stepByStepGuideline:
+      - 'Start with the arc length formula: $s = r\theta$.'
+      - 'Rearrange the formula to solve for the angle: $\theta = s/r$.'
+      - 'Substitute the given arc length $s = 2 \text{ m}$ and radius $r = 5 \text{ m}$:'
+      - $$\theta = \frac{2}{5}$$
+      - 'Calculate the angle:'
+      - $$\theta = 0.4 \text{ radians}$$
+      id: q21-4
+      questionGroup: q21
+    - problemText: A sector of a circular flower bed has an area of $10\pi$ m$^2$. If the central angle of the sector is $\pi/5$
+        radians, find the radius of the flower bed.
+      mathTool: null
+      finalAnswer: $10 \text{ m}$
+      stepByStepGuideline:
+      - 'Start with the sector area formula: $A = (1/2)r^2\theta$.'
+      - 'Rearrange the formula to solve for the radius squared: $r^2 = 2A/\theta$.'
+      - 'Substitute the given area $A = 10\pi \text{ m}^2$ and angle $\theta = \pi/5$ radians:'
+      - $$r^2 = \frac{2(10\pi)}{\pi/5}$$
+      - 'Simplify the expression:'
+      - $$r^2 = \frac{20\pi}{1} \times \frac{5}{\pi} = 100$$
+      - 'Take the square root to find the radius:'
+      - $$r = \sqrt{100} = 10 \text{ m}$$
+      id: q21-5
+      questionGroup: q21

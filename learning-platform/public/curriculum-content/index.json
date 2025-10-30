@@ -1,7 +1,12 @@
 {
   "files": [
     {
-      "filename": "S4/Maths/s4-quadratic-functions.yaml",
+      "filename": "S4/Maths/s4-math-advanced-trigonometry.yaml",
+      "displayName": "S4 - Advanced Trigonometry",
+      "category": "s4-math-advanced-trigonometry"
+    },
+    {
+      "filename": "S4/Maths/s4-math-quadratic-functions.yaml",
       "displayName": "S4 - Quadratic Functions",
       "category": "s4-math-quadratic-functions"
     },
