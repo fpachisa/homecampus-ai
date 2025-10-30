@@ -30,6 +30,8 @@ import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subject
 import type { QuadraticFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import type { AdvancedTrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
+import { S4_VECTORS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
+import type { S4VectorsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -80,6 +82,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS[topicId as QuadraticFunctionsTopicId];
   } else if (category === 's4-math-advanced-trig') {
     topicConfig = S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS[topicId as AdvancedTrigonometryTopicId];
+  } else if (category === 's4-math-vectors') {
+    topicConfig = S4_VECTORS_SUBTOPICS[topicId as S4VectorsTopicId];
   }
 
   if (!topicConfig) {

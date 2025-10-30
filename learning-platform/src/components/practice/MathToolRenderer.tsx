@@ -45,6 +45,11 @@ import ScatterPlotVisualizer from '../math-tools/ScatterPlotVisualizer';
 import CartesianPlaneVisualizer from '../math-tools/CartesianPlaneVisualizer';
 import Coordinate3DPlaneVisualizer from '../math-tools/Coordinate3DPlaneVisualizer';
 
+// Vector visualizers
+import VectorDiagramTool from '../math-tools/VectorDiagramTool';
+import ComponentFormVisualizer from '../math-tools/ComponentFormVisualizer';
+import DotProductVisualizer from '../math-tools/DotProductVisualizer';
+
 // Calculus visualizers
 import FunctionGraphVisualizer from '../math-tools/FunctionGraphVisualizer';
 import LimitVisualizerComponent from '../math-tools/LimitVisualizerComponent';
@@ -126,6 +131,11 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   // Coordinate geometry tools
   cartesianPlane: CartesianPlaneVisualizer,
   coordinate3DPlane: Coordinate3DPlaneVisualizer,
+
+  // Vector tools
+  vectorDiagram: VectorDiagramTool,
+  componentForm: ComponentFormVisualizer,
+  dotProduct: DotProductVisualizer,
 
   // Calculus tools - Differential Calculus
   functionGraph: FunctionGraphVisualizer,

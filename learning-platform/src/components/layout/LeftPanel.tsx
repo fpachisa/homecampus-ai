@@ -36,6 +36,8 @@ import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../../prompt-library/subj
 import type { QuadraticFunctionsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import type { AdvancedTrigonometryTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
+import { S4_VECTORS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s4-vectors';
+import type { S4VectorsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -181,6 +183,13 @@ function getTopicIcon(topicId: string): string {
   if (topicId === 's4-math-advanced-trig-equations-identities') return '∑';
   if (topicId === 's4-math-advanced-trig-radians') return '🔵';
 
+  // S4 Vectors icons
+  if (topicId === 's4-math-vectors-fundamentals') return '→';
+  if (topicId === 's4-math-vectors-component-form') return '📊';
+  if (topicId === 's4-math-vectors-magnitude-ops') return '📏';
+  if (topicId === 's4-math-vectors-parallelism') return '⫽';
+  if (topicId === 's4-math-vectors-dot-product') return '•';
+
   return '📐';
 }
 
@@ -197,6 +206,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's4-math-probability') return 'Probability';
   if (category === 's4-math-quad') return 'Quadratic Functions';
   if (category === 's4-math-advanced-trig') return 'Advanced Trigonometry';
+  if (category === 's4-math-vectors') return 'Vectors';
   if (category === 's3-math-surds-radicals') return 'Surds & Radicals';
   if (category === 's3-math-statistics') return 'Statistics';
   if (category === 's3-math-relations-functions') return 'Relations & Functions';
@@ -218,7 +228,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
     's3-math-coordinate-geometry', 's4-math-differential-calculus', 's4-math-integration',
-    's4-math-probability', 's4-math-quad', 's4-math-advanced-trig'
+    's4-math-probability', 's4-math-quad', 's4-math-advanced-trig', 's4-math-vectors'
   ];
 
   const selectedCategory = pathId
@@ -383,6 +393,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         status: 'active' as const,
         description: config.topicName,
       }));
+    } else if (selectedCategory === 's4-math-vectors') {
+      return Object.entries(S4_VECTORS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId | ExponentialLogarithmsTopicId | SetsVennDiagramsTopicId | ExponentsTopicId | SurdsRadicalsTopicId | StatisticsTopicId | RelationsFunctionsTopicId | CoordinateGeometryTopicId | DifferentialCalculusTopicId | IntegrationTopicId | ProbabilityTopicId | QuadraticFunctionsTopicId | AdvancedTrigonometryTopicId | S4VectorsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
     }
     return [];
   }, [selectedCategory]);
@@ -525,7 +543,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
         style={{ borderColor: theme.colors.border }}
       >
         {/* Category Header */}
-        <div className="flex items-center justify-between px-4 pb-4">
+        <div className="flex items-center justify-between px-4 py-4">
           <div className="flex items-center space-x-3">
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold"
@@ -604,7 +622,6 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
           {/* Section Header */}
           <div className="px-2 py-1.5">
             <h3 className="text-xs font-semibold uppercase tracking-wide" style={{ color: theme.colors.textMuted }}>
-              {selectedCategory === 'fractions' ? 'Primary 6 Mathematics' : 'Secondary 3 Mathematics'}
             </h3>
           </div>
 

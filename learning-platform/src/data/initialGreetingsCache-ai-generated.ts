@@ -2,8 +2,8 @@
  * AI-Generated Initial Greetings Cache (BATCH MODE with VARIATION)
  *
  * Generated using BATCH generation via scripts/generateAISamples.ts
- * Generated on: 2025-10-30T06:26:29.772Z
- * Topic filter: s4-math-advanced-trig (5 subtopics)
+ * Generated on: 2025-10-30T09:30:16.544Z
+ * Topic filter: s4-math-vectors (5 subtopics)
  * Generation method: Batch (with variation control)
  *
  * Features:
@@ -22,89 +22,87 @@ import type { InitialGreetingResponse } from '../types/types';
 export interface CachedGreeting extends Omit<InitialGreetingResponse, 'speech'> {
   speech: {
     text: string;
-    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
-    preGeneratedAudioUrl?: string;
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm';
+    preGeneratedAudioUrl: string;
   };
 }
 
 export const INITIAL_GREETINGS_AI_GENERATED: Record<string, CachedGreeting> = {
-  's4-math-advanced-trig-unit-circle': {
+  's4-math-vectors-fundamentals': {
     speech: {
-      text: `Welcome! We are starting at the very heart of trigonometry: the Unit Circle. This elegant tool connects angles to coordinates, making complex problems visual and manageable.`,
+      text: `Greetings! We are starting our journey into vectors by laying the groundwork. Understanding the difference between a simple number and a quantity that has direction is crucial. Let us make sure we have the basic definitions down.`,
       emotion: 'warm',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-unit-circle.wav'
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-fundamentals.mp3'
     },
     display: {
-      content: `### Understanding the Unit Circle
+      content: `### Scalars and Vectors
 
-What are the coordinates (x, y) of the point on the unit circle that corresponds to the angle \$\\theta = 90°\$?`,
-      showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "unitCircle",
-          "parameters": {},
-          "caption": "The Unit Circle visualization helps locate coordinates based on angles."
-    }
-  },
+Which of the following physical quantities is a **vector** (requires both magnitude and direction)?
 
-  's4-math-advanced-trig-functions-graphs': {
-    speech: {
-      text: `Hey there! Get ready to see trigonometry in motion. When we graph sine and cosine, we reveal beautiful, repeating waves that model everything from sound to light.`,
-      emotion: 'excited',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-functions-graphs.wav'
-    },
-    display: {
-      content: `### The Sine and Cosine Functions
-
-For the standard sine function, \$y = \\sin(x)\$:
-
-1. What is the maximum value of the function?`,
+1. Mass
+2. Speed
+3. Velocity
+4. Temperature`,
       showAfterSpeech: true
     }
   },
 
-  's4-math-advanced-trig-transformations': {
+  's4-math-vectors-component-form': {
     speech: {
-      text: `Greetings! Think of trigonometric functions as elastic bands. We are going to learn how to stretch, compress, and move these waves precisely. This is where we gain control over the graphs.`,
+      text: `Hi there! Vectors are fantastic tools, but drawing them all the time can be slow. This section teaches us how to move vectors onto the coordinate plane, transforming visual geometry into straightforward algebra. Ready to see how components simplify everything?`,
       emotion: 'encouraging',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-transformations.wav'
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-component-form.mp3'
     },
     display: {
-      content: `### Amplitude and Period Changes
+      content: `### Vectors in Component Form
 
-Consider the function \$y = 3\\cos(x)\$.
+Vector **v** has an initial point P(2, 5) and a terminal point Q(8, 1).
 
-How does the coefficient 3 affect the **amplitude** of the graph compared to the standard function \$y = \\cos(x)\$?`,
+Express **v** in component form \$\\langle a, b \\rangle\$.`,
       showAfterSpeech: true
     }
   },
 
-  's4-math-advanced-trig-equations-identities': {
+  's4-math-vectors-magnitude-ops': {
     speech: {
-      text: `Hello! We are stepping into the realm of trigonometric puzzles. Solving these equations requires combining algebra skills with our knowledge of angles and periodicity. Let us start simple.`,
-      emotion: 'supportive',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-equations-identities.wav'
-    },
-    display: {
-      content: `### Solving Trigonometric Equations
-
-Find all solutions for \$\\theta\$ in the interval \$0° \\le \\theta < 360°\$ for the equation:
-
-\$\$\\sin(\\theta) = \\frac{1}{2}\$\$`,
-      showAfterSpeech: true
-    }
-  },
-
-  's4-math-advanced-trig-radians': {
-    speech: {
-      text: `Hi! We are transitioning from degrees to a more natural, fundamental way to measure angles: radians. This system is essential for calculus and advanced physics because it links arc length directly to the radius.`,
+      text: `Welcome! If a vector tells you where to go, the magnitude tells you how far! We are tackling the essential skill of finding the length of any vector, which is just a quick application of the distance formula. Let us calculate some distance!`,
       emotion: 'warm',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-radians.wav'
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-magnitude-ops.mp3'
     },
     display: {
-      content: `### Understanding Radian Measure
+      content: `### The Magnitude of a Vector
 
-If a circle has a radius (\$r\$) of 1 unit, what is the radian measure of the central angle (\$\\theta\$) that subtends an arc length (\$s\$) of 1 unit?`,
+Find the magnitude of the vector **u** = \$\\langle -3, 4 \\rangle\$.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-vectors-parallelism': {
+    speech: {
+      text: `Hey! Think of vectors as paths. When are two paths running perfectly alongside each other, even if one is longer or shorter? That is what parallelism is all about! We will explore the simple algebraic condition that defines this key geometric relationship.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-parallelism.mp3'
+    },
+    display: {
+      content: `### Parallelism
+
+Determine if the vectors **a** = \$\\langle 6, -2 \\rangle\$ and **b** = \$\\langle -18, 6 \\rangle\$ are parallel.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-vectors-dot-product': {
+    speech: {
+      text: `Good morning! The dot product is one of the most powerful tools in vector math because it allows us to multiply two vectors and get a single, useful number, a scalar, back. This number unlocks concepts like angles and projections. Let us start with the calculation itself.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-dot-product.mp3'
+    },
+    display: {
+      content: `### The Scalar (Dot) Product
+
+Given vectors **u** = \$\\langle 5, 2 \\rangle\$ and **v** = \$\\langle -1, 3 \\rangle\$.
+
+Calculate the dot product **u** \$\\cdot\$ **v**.`,
       showAfterSpeech: true
     }
   }

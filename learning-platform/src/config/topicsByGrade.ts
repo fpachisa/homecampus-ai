@@ -256,6 +256,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       subject: 'Mathematics',
     },
     {
+      id: 's4-vectors',
+      name: 'Vectors',
+      icon: '→',
+      description: 'Master vector fundamentals, geometric operations, component form, magnitude, parallelism, and dot product',
+      subtopicCount: 5,
+      isActive: true,
+      category: 's4-math-vectors',
+      grade: 'Secondary 4',
+      subject: 'Mathematics',
+    },
+    {
       id: 's4-differential-calculus',
       name: 'Differential Calculus',
       icon: '∫',

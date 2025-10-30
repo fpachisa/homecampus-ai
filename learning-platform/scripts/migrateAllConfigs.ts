@@ -18,6 +18,7 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
+import { S4_VECTORS_CONFIGS } from './s4-vectors-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -327,8 +328,8 @@ const ADVANCED_TRIGONOMETRY_CONFIGS = [
   }
 ];
 
-// Combine old configs + Differential Calculus + Advanced Trigonometry configs
-const ALL_CONFIGS = [...oldConfigs, ...DIFFERENTIAL_CALCULUS_CONFIGS, ...ADVANCED_TRIGONOMETRY_CONFIGS];
+// Combine old configs + Differential Calculus + Advanced Trigonometry + Vectors configs
+const ALL_CONFIGS = [...oldConfigs, ...DIFFERENTIAL_CALCULUS_CONFIGS, ...ADVANCED_TRIGONOMETRY_CONFIGS, ...S4_VECTORS_CONFIGS];
 
 /**
  * Migrate all configs to Firestore

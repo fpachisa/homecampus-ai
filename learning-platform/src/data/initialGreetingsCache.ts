@@ -3185,7 +3185,90 @@ Find all solutions for \$\\theta\$ in the interval \$0° \\le \\theta < 360°\$ 
 If a circle has a radius (\$r\$) of 1 unit, what is the radian measure of the central angle (\$\\theta\$) that subtends an arc length (\$s\$) of 1 unit?`,
       showAfterSpeech: true
     }
-  }
+  },
+  /**
+   * ========================================
+   * S4 MATHEMATICS - Vectors
+   * ========================================
+   */
+  's4-math-vectors-fundamentals': {
+    speech: {
+      text: `Greetings! We are starting our journey into vectors by laying the groundwork. Understanding the difference between a simple number and a quantity that has direction is crucial. Let us make sure we have the basic definitions down.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-fundamentals.mp3'
+    },
+    display: {
+      content: `### Scalars and Vectors
+
+Which of the following physical quantities is a **vector** (requires both magnitude and direction)?
+
+1. Mass
+2. Speed
+3. Velocity
+4. Temperature`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-vectors-component-form': {
+    speech: {
+      text: `Hi there! Vectors are fantastic tools, but drawing them all the time can be slow. This section teaches us how to move vectors onto the coordinate plane, transforming visual geometry into straightforward algebra. Ready to see how components simplify everything?`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-component-form.mp3'
+    },
+    display: {
+      content: `### Vectors in Component Form
+
+Vector **v** has an initial point P(2, 5) and a terminal point Q(8, 1).
+
+Express **v** in component form \$\\langle a, b \\rangle\$.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-vectors-magnitude-ops': {
+    speech: {
+      text: `Welcome! If a vector tells you where to go, the magnitude tells you how far! We are tackling the essential skill of finding the length of any vector, which is just a quick application of the distance formula. Let us calculate some distance!`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-magnitude-ops.mp3'
+    },
+    display: {
+      content: `### The Magnitude of a Vector
+
+Find the magnitude of the vector **u** = \$\\langle -3, 4 \\rangle\$.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-vectors-parallelism': {
+    speech: {
+      text: `Hey! Think of vectors as paths. When are two paths running perfectly alongside each other, even if one is longer or shorter? That is what parallelism is all about! We will explore the simple algebraic condition that defines this key geometric relationship.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-parallelism.mp3'
+    },
+    display: {
+      content: `### Parallelism
+
+Determine if the vectors **a** = \$\\langle 6, -2 \\rangle\$ and **b** = \$\\langle -18, 6 \\rangle\$ are parallel.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-vectors-dot-product': {
+    speech: {
+      text: `Hello! The dot product is one of the most powerful tools in vector math because it allows us to multiply two vectors and get a single, useful number, a scalar, back. This number unlocks concepts like angles and projections. Let us start with the calculation itself.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-dot-product.mp3'
+    },
+    display: {
+      content: `### The Scalar (Dot) Product
+
+Given vectors **u** = \$\\langle 5, 2 \\rangle\$ and **v** = \$\\langle -1, 3 \\rangle\$.
+
+Calculate the dot product **u** \$\\cdot\$ **v**.`,
+      showAfterSpeech: true
+    }
+  }  
 
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,

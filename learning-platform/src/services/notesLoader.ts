@@ -120,6 +120,12 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's4/math/advanced-trigonometry/Transformations': () => import('../notes/s4/math/advanced-trigonometry/Transformations'),
   's4/math/advanced-trigonometry/EquationsIdentities': () => import('../notes/s4/math/advanced-trigonometry/EquationsIdentities'),
   's4/math/advanced-trigonometry/RadianMeasure': () => import('../notes/s4/math/advanced-trigonometry/RadianMeasure'),
+  // S4 Vectors notes
+  's4/math/vectors/VectorFundamentals': () => import('../notes/s4/math/vectors/VectorFundamentals'),
+  's4/math/vectors/ComponentForm': () => import('../notes/s4/math/vectors/ComponentForm'),
+  's4/math/vectors/MagnitudeOperations': () => import('../notes/s4/math/vectors/MagnitudeOperations'),
+  's4/math/vectors/Parallelism': () => import('../notes/s4/math/vectors/Parallelism'),
+  's4/math/vectors/DotProduct': () => import('../notes/s4/math/vectors/DotProduct'),
   // Add more note components here as you create them
   // 'p4/science/biology/PlantParts': () => import('../notes/p4/science/biology/PlantParts'),
 };

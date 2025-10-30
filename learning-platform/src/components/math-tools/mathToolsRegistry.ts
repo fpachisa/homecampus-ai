@@ -2579,6 +2579,193 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       }
     ]
+  },
+
+  // ============================================
+  // VECTOR TOOLS
+  // ============================================
+
+  vectorDiagram: {
+    name: "Vector Diagram Tool",
+    technicalName: "vectorDiagram",
+    component: "VectorDiagramTool",
+    category: "general",
+    description: "Visualizes vectors on a coordinate grid with support for operations like addition, subtraction, and scalar multiplication. Shows geometric representation of vectors with arrows.",
+    whenToUse: "Use when teaching vector addition (triangle/parallelogram law), vector subtraction, or scalar multiplication. Perfect for geometric representation of vectors. Use for foundational vector concepts.",
+
+    parameters: {
+      vectors: "string - JSON array of vectors: [{\"label\":\"a\",\"x\":3,\"y\":4},{\"label\":\"b\",\"x\":-2,\"y\":1}]. Each vector needs label (string), x (number), y (number). Keep it simple with 1-3 vectors maximum.",
+      operation: "'none' | 'add' | 'subtract' | 'scalar' (default: 'none') - operation to visualize. 'add' shows triangle law, 'subtract' shows difference, 'scalar' shows scalar multiples, 'none' shows individual vectors from origin",
+      resultant: "boolean (default: false) - show resultant vector in green when operation is 'add' or 'subtract'",
+      showComponents: "boolean (default: false) - show i,j component breakdown as dashed lines for each vector",
+      gridSize: "number (default: 10, range: 5-15) - grid scale for visualization. Use smaller values for larger vectors"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Vector addition using triangle law",
+        caption: "Adding vectors a = (3,4) and b = (-2,1) using triangle law with resultant",
+        parameters: {
+          vectors: "[{\"label\":\"a\",\"x\":3,\"y\":4},{\"label\":\"b\",\"x\":-2,\"y\":1}]",
+          operation: "add",
+          resultant: true,
+          showComponents: false,
+          gridSize: 10
+        }
+      },
+      {
+        scenario: "Individual vectors from origin",
+        caption: "Two vectors p and q shown from the origin",
+        parameters: {
+          vectors: "[{\"label\":\"p\",\"x\":4,\"y\":3},{\"label\":\"q\",\"x\":2,\"y\":-1}]",
+          operation: "none",
+          resultant: false,
+          showComponents: false,
+          gridSize: 10
+        }
+      },
+      {
+        scenario: "Vector with component breakdown",
+        caption: "Vector v = (3,2) with i and j components shown",
+        parameters: {
+          vectors: "[{\"label\":\"v\",\"x\":3,\"y\":2}]",
+          operation: "none",
+          resultant: false,
+          showComponents: true,
+          gridSize: 10
+        }
+      }
+    ]
+  },
+
+  componentForm: {
+    name: "Component Form Visualizer",
+    technicalName: "componentForm",
+    component: "ComponentFormVisualizer",
+    category: "general",
+    description: "Shows vector in both geometric and component form (column notation and i,j notation) on a coordinate grid. Displays magnitude calculation and component breakdown.",
+    whenToUse: "Use when teaching component form, i,j notation, column vectors, or converting between geometric and algebraic representation. Perfect for sections on position vectors and vector components.",
+
+    parameters: {
+      vectorX: "number - x-component of the vector (horizontal component)",
+      vectorY: "number - y-component of the vector (vertical component)",
+      label: "string (default: 'v') - vector label (e.g., 'a', 'b', 'p', 'v')",
+      showIJ: "boolean (default: true) - show i,j notation below diagram (e.g., 3i + 4j)",
+      showColumn: "boolean (default: true) - show column vector notation below diagram",
+      showGrid: "boolean (default: true) - show coordinate grid with axes",
+      highlightComponent: "'none' | 'x' | 'y' | 'both' (default: 'none') - highlight specific component in red. Use 'x' when focusing on horizontal component, 'y' for vertical, 'both' for complete breakdown, 'none' for regular display"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Basic vector in component form",
+        caption: "Vector a = (3,4) shown with both notations and magnitude",
+        parameters: {
+          vectorX: 3,
+          vectorY: 4,
+          label: "a",
+          showIJ: true,
+          showColumn: true,
+          showGrid: true,
+          highlightComponent: "none"
+        }
+      },
+      {
+        scenario: "Highlighting x-component",
+        caption: "Vector p = (5,2) with horizontal component highlighted",
+        parameters: {
+          vectorX: 5,
+          vectorY: 2,
+          label: "p",
+          showIJ: true,
+          showColumn: true,
+          showGrid: true,
+          highlightComponent: "x"
+        }
+      },
+      {
+        scenario: "Negative components",
+        caption: "Vector b = (-2,3) showing negative x-component",
+        parameters: {
+          vectorX: -2,
+          vectorY: 3,
+          label: "b",
+          showIJ: true,
+          showColumn: true,
+          showGrid: true,
+          highlightComponent: "none"
+        }
+      }
+    ]
+  },
+
+  dotProduct: {
+    name: "Dot Product Visualizer",
+    technicalName: "dotProduct",
+    component: "DotProductVisualizer",
+    category: "general",
+    description: "Visualizes two vectors and calculates their dot product, angle between them, and checks for perpendicularity. Shows both geometric and algebraic representation of scalar product.",
+    whenToUse: "Use when teaching dot product (scalar product), angle between vectors, perpendicularity test (a·b = 0), or geometric applications of dot product. Essential for advanced vector topics.",
+
+    parameters: {
+      vector1X: "number - x-component of first vector",
+      vector1Y: "number - y-component of first vector",
+      vector2X: "number - x-component of second vector",
+      vector2Y: "number - y-component of second vector",
+      label1: "string (default: 'a') - label for first vector",
+      label2: "string (default: 'b') - label for second vector",
+      showAngle: "boolean (default: true) - show angle arc and angle calculation between vectors",
+      showDotProduct: "boolean (default: true) - show dot product calculation and value",
+      showMagnitudes: "boolean (default: false) - show magnitude values of both vectors"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Calculating dot product and angle",
+        caption: "Find dot product of a = (2,3) and b = (4,1) and angle between them",
+        parameters: {
+          vector1X: 2,
+          vector1Y: 3,
+          vector2X: 4,
+          vector2Y: 1,
+          label1: "a",
+          label2: "b",
+          showAngle: true,
+          showDotProduct: true,
+          showMagnitudes: false
+        }
+      },
+      {
+        scenario: "Perpendicular vectors",
+        caption: "Vectors p = (3,2) and q = (-2,3) are perpendicular (p·q = 0)",
+        parameters: {
+          vector1X: 3,
+          vector1Y: 2,
+          vector2X: -2,
+          vector2Y: 3,
+          label1: "p",
+          label2: "q",
+          showAngle: true,
+          showDotProduct: true,
+          showMagnitudes: true
+        }
+      },
+      {
+        scenario: "Testing perpendicularity",
+        caption: "Check if vectors u = (1,2) and v = (4,-2) are perpendicular",
+        parameters: {
+          vector1X: 1,
+          vector1Y: 2,
+          vector2X: 4,
+          vector2Y: -2,
+          label1: "u",
+          label2: "v",
+          showAngle: true,
+          showDotProduct: true,
+          showMagnitudes: false
+        }
+      }
+    ]
   }
 };
 

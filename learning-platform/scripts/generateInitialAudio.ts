@@ -147,17 +147,33 @@ async function generateAllAudio() {
   // Dynamically import the cache
   const { INITIAL_GREETINGS_CACHE } = await import('../src/data/initialGreetingsCache.ts');
 
-  const topicIds = Object.keys(INITIAL_GREETINGS_CACHE);
-  console.log(`Found ${topicIds.length} topics in cache\n`);
+  const allTopicIds = Object.keys(INITIAL_GREETINGS_CACHE);
+  console.log(`Found ${allTopicIds.length} topics in cache\n`);
+
+  // Pre-filter to only topics that need generation
+  console.log('🔍 Checking which files need generation...\n');
+  const topicsNeedingGeneration = allTopicIds.filter(topicId => {
+    const audioFileName = `${topicId}.mp3`;
+    const audioFilePath = resolve(audioDir, audioFileName);
+    return !existsSync(audioFilePath);
+  });
+
+  const alreadyExistCount = allTopicIds.length - topicsNeedingGeneration.length;
+  console.log(`✓ ${topicsNeedingGeneration.length} files need generation`);
+  console.log(`✓ ${alreadyExistCount} files already exist\n`);
+
+  if (topicsNeedingGeneration.length === 0) {
+    console.log('✅ All audio files already exist! Nothing to generate.\n');
+    return;
+  }
 
   let successCount = 0;
   let failCount = 0;
-  let skippedCount = 0;
 
-  // Process in batches
+  // Process in batches (only files needing generation)
   const batches = [];
-  for (let i = 0; i < topicIds.length; i += BATCH_SIZE) {
-    batches.push(topicIds.slice(i, i + BATCH_SIZE));
+  for (let i = 0; i < topicsNeedingGeneration.length; i += BATCH_SIZE) {
+    batches.push(topicsNeedingGeneration.slice(i, i + BATCH_SIZE));
   }
 
   console.log(`Processing ${batches.length} batches...\n`);
@@ -170,21 +186,14 @@ async function generateAllAudio() {
     for (let i = 0; i < batch.length; i++) {
       const topicId = batch[i];
       const greeting = INITIAL_GREETINGS_CACHE[topicId];
-      const audioFileName = `${topicId}.mp3`;  // Changed from .wav to .mp3
+      const audioFileName = `${topicId}.mp3`;
       const audioFilePath = resolve(audioDir, audioFileName);
       const overallIndex = batchIndex * BATCH_SIZE + i + 1;
 
-      console.log(`\n[${overallIndex}/${topicIds.length}] ${topicId}`);
+      console.log(`\n[${overallIndex}/${topicsNeedingGeneration.length}] ${topicId}`);
       console.log(`   Text: "${greeting.speech.text.substring(0, 60)}..."`);
 
       try {
-        // Check if file already exists (MP3 format)
-        if (existsSync(audioFilePath)) {
-          console.log(`   ⏭️  Already exists, skipping...`);
-          skippedCount++;
-          continue;
-        }
-
         // Generate audio (MP3 format)
         const { audioData, duration } = await generateAudio(
           greeting.speech.text
@@ -217,15 +226,17 @@ async function generateAllAudio() {
   // Summary
   console.log('\n' + '='.repeat(60));
   console.log('Generation Complete!\n');
-  console.log(`✅ Success:  ${successCount}/${topicIds.length}`);
-  console.log(`⏭️  Skipped:  ${skippedCount}/${topicIds.length}`);
+  console.log(`✅ Success:  ${successCount}/${topicsNeedingGeneration.length}`);
   if (failCount > 0) {
-    console.log(`❌ Failed:   ${failCount}/${topicIds.length}`);
+    console.log(`❌ Failed:   ${failCount}/${topicsNeedingGeneration.length}`);
   }
+  console.log(`📊 Total topics: ${allTopicIds.length}`);
+  console.log(`   - Already existed: ${alreadyExistCount}`);
+  console.log(`   - Newly generated: ${successCount}`);
   console.log(`\n📁 Audio files saved to: ${audioDir}`);
   console.log('\nNext steps:');
   console.log('1. Verify audio files play correctly');
-  console.log('2. Update initialGreetingsCache.ts to reference .wav files');
+  console.log('2. Update initialGreetingsCache.ts to reference .mp3 files');
   console.log('3. Test initial load performance\n');
 }
 

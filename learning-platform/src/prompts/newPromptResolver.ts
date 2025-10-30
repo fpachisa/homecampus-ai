@@ -36,6 +36,7 @@ import { S4_MATH_INTEGRATION_SUBTOPICS, INTEGRATION_TUTOR_CUSTOMIZATION, INTEGRA
 import { S4_MATH_PROBABILITY_SUBTOPICS, PROBABILITY_TUTOR_CUSTOMIZATION, PROBABILITY_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS, S4_ADVANCED_TRIGONOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
+import { S4_VECTORS_SUBTOPICS, S4_VECTORS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -81,6 +82,7 @@ function registerBrowserTopics() {
   registerTopics(S4_MATH_PROBABILITY_SUBTOPICS, { tutorCustomization: PROBABILITY_TUTOR_CUSTOMIZATION, availableTools: PROBABILITY_MATH_TOOLS });
   registerTopics(S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS, { MATH_TOOLS_AVAILABLE: ['graphingCalculator', 'coordinatePlane'] });
   registerTopics(S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS, S4_ADVANCED_TRIGONOMETRY_CONFIG);
+  registerTopics(S4_VECTORS_SUBTOPICS, S4_VECTORS_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }

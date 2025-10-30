@@ -43,6 +43,8 @@ import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subject
 import type { QuadraticFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import type { AdvancedTrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
+import { S4_VECTORS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
+import type { S4VectorsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -117,6 +119,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S4 advanced trigonometry topic
   if (topicId.startsWith('s4-math-advanced-trig-')) {
     return S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS[topicId as AdvancedTrigonometryTopicId];
+  }
+  // Check if it's an S4 vectors topic
+  if (topicId.startsWith('s4-math-vectors-')) {
+    return S4_VECTORS_SUBTOPICS[topicId as S4VectorsTopicId];
   }
   // Return undefined for unknown topics
   return undefined;
@@ -1225,6 +1231,9 @@ const handleStudentSubmit = async (input: string) => {
     if (topicId.startsWith('s4-math-advanced-trig-')) {
       return 'Master advanced trigonometry!';
     }
+    if (topicId.startsWith('s4-math-vectors-')) {
+      return 'Master vectors and geometric operations!';
+    }
     return 'Master mathematics step by step!';
   };
 
@@ -1268,6 +1277,9 @@ const handleStudentSubmit = async (input: string) => {
     }
     if (topicId.startsWith('s4-math-advanced-trig-')) {
       return '∠';
+    }
+    if (topicId.startsWith('s4-math-vectors-')) {
+      return '→';
     }
     return '📚';
   };
