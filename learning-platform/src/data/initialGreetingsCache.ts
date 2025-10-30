@@ -3095,6 +3095,91 @@ Solve the following quadratic inequality and express your answer in interval not
       showAfterSpeech: true
     }
   },
+  /**
+   * ========================================
+   * S4 MATHEMATICS - Advanced Trigonometry
+   * ========================================
+   */
+  's4-math-advanced-trig-unit-circle': {
+    speech: {
+      text: `Welcome! We are starting at the very heart of trigonometry: the Unit Circle. This elegant tool connects angles to coordinates, making complex problems visual and manageable.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-unit-circle.mp3'
+    },
+    display: {
+      content: `### Understanding the Unit Circle
+
+What are the coordinates (x, y) of the point on the unit circle that corresponds to the angle \$\\theta = 90°\$?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "unitCircle",
+          "parameters": {},
+          "caption": "The Unit Circle visualization helps locate coordinates based on angles."
+    }
+  },
+
+  's4-math-advanced-trig-functions-graphs': {
+    speech: {
+      text: `Hey there! Get ready to see trigonometry in motion. When we graph sine and cosine, we reveal beautiful, repeating waves that model everything from sound to light.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-functions-graphs.mp3'
+    },
+    display: {
+      content: `### The Sine and Cosine Functions
+
+For the standard sine function, \$y = \\sin(x)\$:
+
+1. What is the maximum value of the function?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-advanced-trig-transformations': {
+    speech: {
+      text: `Greetings! Think of trigonometric functions as elastic bands. We are going to learn how to stretch, compress, and move these waves precisely. This is where we gain control over the graphs.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-transformations.mp3'
+    },
+    display: {
+      content: `### Amplitude and Period Changes
+
+Consider the function \$y = 3\\cos(x)\$.
+
+How does the coefficient 3 affect the **amplitude** of the graph compared to the standard function \$y = \\cos(x)\$?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-advanced-trig-equations-identities': {
+    speech: {
+      text: `Hello! We are stepping into the realm of trigonometric puzzles. Solving these equations requires combining algebra skills with our knowledge of angles and periodicity. Let us start simple.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-equations-identities.mp3'
+    },
+    display: {
+      content: `### Solving Trigonometric Equations
+
+Find all solutions for \$\\theta\$ in the interval \$0° \\le \\theta < 360°\$ for the equation:
+
+\$\$\\sin(\\theta) = \\frac{1}{2}\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-advanced-trig-radians': {
+    speech: {
+      text: `Hi! We are transitioning from degrees to a more natural, fundamental way to measure angles: radians. This system is essential for calculus and advanced physics because it links arc length directly to the radius.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-radians.mp3'
+    },
+    display: {
+      content: `### Understanding Radian Measure
+
+If a circle has a radius (\$r\$) of 1 unit, what is the radian measure of the central angle (\$\\theta\$) that subtends an arc length (\$s\$) of 1 unit?`,
+      showAfterSpeech: true
+    }
+  }
 
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,

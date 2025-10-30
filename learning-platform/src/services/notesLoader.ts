@@ -114,6 +114,12 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's4/math/quadratic-functions/KeyFeatures': () => import('../notes/s4/math/quadratic-functions/KeyFeatures'),
   's4/math/quadratic-functions/FindingQuadratics': () => import('../notes/s4/math/quadratic-functions/FindingQuadratics'),
   's4/math/quadratic-functions/QuadraticInequalities': () => import('../notes/s4/math/quadratic-functions/QuadraticInequalities'),
+  // S4 Advanced Trigonometry notes
+  's4/math/advanced-trigonometry/UnitCircleSpecialAngles': () => import('../notes/s4/math/advanced-trigonometry/UnitCircleSpecialAngles'),
+  's4/math/advanced-trigonometry/TrigonometricFunctionsGraphs': () => import('../notes/s4/math/advanced-trigonometry/TrigonometricFunctionsGraphs'),
+  's4/math/advanced-trigonometry/Transformations': () => import('../notes/s4/math/advanced-trigonometry/Transformations'),
+  's4/math/advanced-trigonometry/EquationsIdentities': () => import('../notes/s4/math/advanced-trigonometry/EquationsIdentities'),
+  's4/math/advanced-trigonometry/RadianMeasure': () => import('../notes/s4/math/advanced-trigonometry/RadianMeasure'),
   // Add more note components here as you create them
   // 'p4/science/biology/PlantParts': () => import('../notes/p4/science/biology/PlantParts'),
 };

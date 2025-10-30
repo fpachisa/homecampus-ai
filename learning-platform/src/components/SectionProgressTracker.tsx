@@ -29,6 +29,8 @@ import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathem
 import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import type { QuadraticFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
+import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
+import type { AdvancedTrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -109,6 +111,11 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     // S4 Quadratic Functions topics
     if (topicId.startsWith('s4-math-quad-')) {
       const subtopic = S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS[topicId as QuadraticFunctionsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    // S4 Advanced Trigonometry topics
+    if (topicId.startsWith('s4-math-advanced-trig-')) {
+      const subtopic = S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS[topicId as AdvancedTrigonometryTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     return [];

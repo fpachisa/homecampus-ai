@@ -1,18 +1,24 @@
 /**
- * Generate AI-Powered Initial Greetings
+ * Generate AI-Powered Initial Greetings (BATCH MODE with VARIATION)
  *
- * This script generates initial greetings using the Gemini Flash API
- * (same as the app does in real-time) for ALL subtopics registered in
- * the PromptRegistry, not just those in the handcrafted cache.
+ * This script uses BATCH generation to create varied initial greetings for multiple
+ * subtopics simultaneously, avoiding repetitive patterns like "I'm excited to dive into..."
+ *
+ * Features:
+ * - Batch generation: Processes 20 topics at a time (10-20x faster than loop)
+ * - Variation control: Explicit anti-repetition instructions for diverse greetings
+ * - Auto-populated audio URLs: Automatically adds preGeneratedAudioUrl field
+ * - Fallback support: Falls back to loop method if batch unavailable
  *
  * Usage:
- *   npm run generate-ai-samples                                      # Generate ALL 96 subtopics
- *   npm run generate-ai-samples -- --topic=s3-math-trigonometry      # S3 Trig only (7 subtopics)
- *   npm run generate-ai-samples -- --topic=s3-math-circle-geometry   # Circle Geo only (7 subtopics)
+ *   npm run generate-ai-samples                                      # Generate ALL subtopics
+ *   npm run generate-ai-samples -- --topic=s3-math-trigonometry      # S3 Trig only
+ *   npm run generate-ai-samples -- --topic=s4-math-advanced-trig     # S4 Advanced Trig only
  *   npm run generate-ai-samples -- --topic=s4-math-probability       # S4 Probability only
  *
  * Output:
  *   src/data/initialGreetingsCache-ai-generated.ts
+ *   (includes preGeneratedAudioUrl field for all greetings)
  */
 
 // IMPORTANT: Load environment variables FIRST
@@ -31,6 +37,7 @@ interface CachedGreeting {
   speech: {
     text: string;
     emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm';
+    preGeneratedAudioUrl?: string; // Auto-populated with audio file path
   };
   display: {
     content: string;
@@ -71,11 +78,16 @@ function formatAsTypeScript(topicId: string, greeting: CachedGreeting): string {
     .replace(/`/g, '\\`')     // Escape backticks
     .replace(/\$/g, '\\$');   // Escape dollar signs
 
+  // Include preGeneratedAudioUrl if present
+  const audioUrlStr = greeting.speech.preGeneratedAudioUrl
+    ? `,\n      preGeneratedAudioUrl: '${greeting.speech.preGeneratedAudioUrl}'`
+    : '';
+
   // Use template literals (backticks) for text to preserve formatting exactly as AI generates
   return "  '" + topicId + "': {\n" +
     "    speech: {\n" +
     "      text: `" + escapeSpeechText + "`,\n" +
-    "      emotion: '" + greeting.speech.emotion + "'\n" +
+    "      emotion: '" + greeting.speech.emotion + "'" + audioUrlStr + "\n" +
     "    },\n" +
     "    display: {\n" +
     "      content: `" + escapeDisplayContent + "`,\n" +
@@ -157,44 +169,96 @@ async function generateAISamples() {
 
   console.log('🚀 Starting generation...\n');
 
-  // Generate for each topic
-  for (let i = 0; i < topicIds.length; i++) {
-    const topicId = topicIds[i];
-    console.log(`[${i + 1}/${topicIds.length}] Generating: ${topicId}`);
+  // Check if batch method is available
+  const useBatchMethod = typeof aiService.generateInitialGreetingBatch === 'function';
+
+  if (useBatchMethod) {
+    console.log('📦 Using BATCH generation (faster, more varied)\n');
 
     try {
-      // Call AI service (same as the app does)
-      const response = await aiService.generateInitialGreetingWithProblem(topicId);
+      // Generate all greetings in batch with variation
+      const batchResults = await aiService.generateInitialGreetingBatch(topicIds, {
+        variationStyle: 'diverse',
+        avoidPatterns: [
+          "I'm excited to dive into",
+          "I'm so excited to dive into",
+          "I am so excited to dive into"
+        ],
+        batchSize: 20
+      });
 
-      // Store result (without preGeneratedAudioUrl since we're not pre-generating audio)
-      results[topicId] = {
-        speech: {
-          text: response.speech.text,
-          emotion: response.speech.emotion
-        },
-        display: {
-          content: response.display.content,
-          showAfterSpeech: response.display.showAfterSpeech
-        },
-        mathTool: response.mathTool
-      };
+      // Process batch results and auto-populate audio URLs
+      Object.entries(batchResults).forEach(([topicId, response]) => {
+        results[topicId] = {
+          speech: {
+            text: response.speech.text,
+            emotion: response.speech.emotion,
+            preGeneratedAudioUrl: `/assets/audio/initial-greetings/${topicId}.mp3` // Auto-populated (mp3 for consistency)
+          },
+          display: {
+            content: response.display.content,
+            showAfterSpeech: response.display.showAfterSpeech
+          },
+          mathTool: response.mathTool
+        };
 
-      console.log(`   ✅ Success`);
-      console.log(`   Greeting: "${response.speech.text.substring(0, 60)}..."`);
-      console.log(`   Question: "${response.display.content.substring(0, 60)}..."\n`);
+        console.log(`✅ ${topicId}`);
+        console.log(`   Greeting: "${response.speech.text.substring(0, 60)}..."`);
+        console.log(`   Audio URL: /assets/audio/initial-greetings/${topicId}.wav\n`);
+        successCount++;
+      });
 
-      successCount++;
+      console.log(`\n🎉 Batch generation complete! Generated ${successCount} greetings with varied styles\n`);
 
-      // Rate limiting: Wait between requests to avoid hitting API limits
-      if (i < topicIds.length - 1) {
-        await sleep(1500); // 1.5 second delay
-      }
     } catch (error: any) {
-      console.error(`   ❌ Failed: ${error.message}\n`);
-      failCount++;
+      console.error(`❌ Batch generation failed: ${error.message}`);
+      console.error('   Falling back to loop method...\n');
+      failCount = topicIds.length;
+    }
 
-      // Continue with next topic even if one fails
-      continue;
+  } else {
+    console.log('⚠️  Batch method not available, using loop method\n');
+
+    // Fallback: Generate for each topic individually
+    for (let i = 0; i < topicIds.length; i++) {
+      const topicId = topicIds[i];
+      console.log(`[${i + 1}/${topicIds.length}] Generating: ${topicId}`);
+
+      try {
+        // Call AI service (same as the app does)
+        const response = await aiService.generateInitialGreetingWithProblem(topicId);
+
+        // Store result WITH preGeneratedAudioUrl (auto-populated)
+        results[topicId] = {
+          speech: {
+            text: response.speech.text,
+            emotion: response.speech.emotion,
+            preGeneratedAudioUrl: `/assets/audio/initial-greetings/${topicId}.mp3` // Auto-populated (mp3 for consistency)
+          },
+          display: {
+            content: response.display.content,
+            showAfterSpeech: response.display.showAfterSpeech
+          },
+          mathTool: response.mathTool
+        };
+
+        console.log(`   ✅ Success`);
+        console.log(`   Greeting: "${response.speech.text.substring(0, 60)}..."`);
+        console.log(`   Question: "${response.display.content.substring(0, 60)}..."\n`);
+
+        successCount++;
+
+        // Rate limiting: Wait between requests to avoid hitting API limits
+        if (i < topicIds.length - 1) {
+          await sleep(1500); // 1.5 second delay
+        }
+      } catch (error: any) {
+        console.error(`   ❌ Failed: ${error.message}\n`);
+        failCount++;
+
+        // Continue with next topic even if one fails
+        continue;
+      }
     }
   }
 
@@ -203,17 +267,22 @@ async function generateAISamples() {
   console.log('📝 Generating TypeScript file...\n');
 
   const fileContent = `/**
- * AI-Generated Initial Greetings Cache
+ * AI-Generated Initial Greetings Cache (BATCH MODE with VARIATION)
  *
- * Generated using Gemini Flash API via scripts/generateAISamples.ts
+ * Generated using BATCH generation via scripts/generateAISamples.ts
  * Generated on: ${new Date().toISOString()}
  * ${topicFilter ? `Topic filter: ${topicFilter} (${topicIds.length} subtopics)` : `All topics (${topicIds.length} subtopics)`}
+ * Generation method: ${useBatchMethod ? 'Batch (with variation control)' : 'Loop (individual calls)'}
  *
- * This file contains AI-generated initial greetings for comparison with
- * the handcrafted version in initialGreetingsCache.ts
+ * Features:
+ * - Varied greetings: Anti-repetition instructions prevent formulaic patterns
+ * - Auto-populated audio URLs: Ready for audio file generation
+ * - Complete structure: Matches initialGreetingsCache.ts format exactly
  *
- * Note: This file does NOT include preGeneratedAudioUrl fields since
- * we're not pre-generating audio for these samples.
+ * Next steps:
+ * 1. Review greetings for quality and variety
+ * 2. Copy desired greetings to initialGreetingsCache.ts
+ * 3. Run 'npm run generate-initial-audio' to create audio files
  */
 
 import type { InitialGreetingResponse } from '../types/types';

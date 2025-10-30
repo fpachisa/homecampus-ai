@@ -1,0 +1,1762 @@
+# S4 Quadratic Functions - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: quad-fund-1
+  nodeNumber: 1
+  title: Identifying Quadratic Functions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: State whether the function $y = 5x^2 + 4x + 3$ is a quadratic function. If it is, clearly identify the
+        values of the leading coefficient $a$, the linear coefficient $b$, and the constant term $c$.
+      avatarIntro: Welcome! Understanding the standard form of a quadratic function is the first step in mastering this topic.
+        Let's start with identifying the key components.
+      mathTool: null
+      finalAnswer: Yes, it is a quadratic function. a = 5, b = 4, c = 3
+      stepByStepGuideline:
+      - 'Step 1: Compare the given function, $y = 5x^2 + 4x + 3$, to the standard form $y = ax^2 + bx + c$.'
+      - 'Step 2: Since the highest power of $x$ is 2 and $a=5$ (which is not zero), the function is quadratic.'
+      - 'Step 3: Identify the coefficients: $a$ is the coefficient of $x^2$, $b$ is the coefficient of $x$, and $c$ is the
+        constant term.'
+      - 'Step 4: Therefore, $a = 5$, $b = 4$, and $c = 3$.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: For the function $f(x) = -2x^2 + 10$, identify the coefficients $a, b,$ and $c$. Note that this function
+        is missing the linear term.
+      mathTool: null
+      finalAnswer: a = -2, b = 0, c = 10
+      stepByStepGuideline:
+      - 'Step 1: Rewrite the function in standard form $f(x) = ax^2 + bx + c$. $f(x) = -2x^2 + 0x + 10$.'
+      - 'Step 2: Identify the leading coefficient $a$ (coefficient of $x^2$). $a = -2$.'
+      - 'Step 3: Identify the linear coefficient $b$ (coefficient of $x$). Since there is no $x$ term, $b = 0$.'
+      - 'Step 4: Identify the constant term $c$. $c = 10$.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: Explain why the function $y = 4x^3 - 2x + 8$ is NOT a quadratic function.
+      mathTool: null
+      finalAnswer: It is not a quadratic function because the highest power (degree) of $x$ is 3, not 2. For a function to
+        be quadratic, the highest degree must be 2.
+      stepByStepGuideline:
+      - 'Step 1: Recall the definition of a quadratic function: a function where the highest power of the variable is 2 ($x^2$).'
+      - 'Step 2: Examine the given function $y = 4x^3 - 2x + 8$.'
+      - 'Step 3: The highest power of $x$ is 3 (due to the term $4x^3$).'
+      - 'Step 4: Since the highest power is 3, the function is cubic, not quadratic.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: Given the two functions, $h(x) = 5^x$ and $g(x) = -4x^2 - 6x - 15$, which one is the quadratic function?
+        State its coefficients $a, b,$ and $c$.
+      mathTool: null
+      finalAnswer: $g(x) = -4x^2 - 6x - 15$ is the quadratic function. a = -4, b = -6, c = -15.
+      stepByStepGuideline:
+      - 'Step 1: Analyze $h(x) = 5^x$. Since the variable $x$ is in the exponent, this is an exponential function, not quadratic.'
+      - 'Step 2: Analyze $g(x) = -4x^2 - 6x - 15$. This function is in the standard form $ax^2 + bx + c$, with the highest
+        power of $x$ being 2. This is the quadratic function.'
+      - 'Step 3: Identify the coefficients of $g(x)$: $a$ (coefficient of $x^2$) = -4, $b$ (coefficient of $x$) = -6, and
+        $c$ (constant term) = -15.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: Express the function $g(x) = -x^2 - 8x + 1$ using $y = $ notation, and identify the values of the coefficients
+        $a, b,$ and $c$.
+      mathTool: null
+      finalAnswer: $y = -x^2 - 8x + 1$. a = -1, b = -8, c = 1.
+      stepByStepGuideline:
+      - 'Step 1: To convert from function notation $g(x)$ to $y =$ notation, simply replace $g(x)$ with $y$: $y = -x^2 - 8x
+        + 1$.'
+      - 'Step 2: Identify the coefficient $a$. Since $a$ is the coefficient of $x^2$, and $-x^2$ is equivalent to $-1x^2$,
+        $a = -1$.'
+      - 'Step 3: Identify the coefficient $b$ (coefficient of $x$). $b = -8$.'
+      - 'Step 4: Identify the constant term $c$. $c = 1$.'
+      id: q1-5
+      questionGroup: q1
+- id: quad-fund-2
+  nodeNumber: 2
+  title: Evaluating Quadratic Functions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: For the quadratic function $f(x) = 3x^2 - 4x + 1$, find the value of $f(-2)$.
+      avatarIntro: Evaluating quadratic functions requires careful use of the order of operations, especially when dealing
+        with negative inputs. Remember that squaring a negative number results in a positive number!
+      mathTool: null
+      finalAnswer: '21'
+      stepByStepGuideline:
+      - 'Substitute $x = -2$ into the function: $f(-2) = 3(-2)^2 - 4(-2) + 1$.'
+      - 'Calculate the squared term first: $(-2)^2 = 4$. The expression becomes $f(-2) = 3(4) - 4(-2) + 1$.'
+      - 'Perform multiplication: $3(4) = 12$ and $-4(-2) = 8$. The expression is $f(-2) = 12 + 8 + 1$.'
+      - 'Perform addition: $12 + 8 + 1 = 21$.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: The height $H$ (in meters) of a ball dropped from a small tower is modeled by the function $H(t) = -5t^2
+        + 8$, where $t$ is the time in seconds after it is dropped. Find the height of the ball at $t = 1$ second.
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Substitute $t = 1$ into the function $H(t) = -5t^2 + 8$: $H(1) = -5(1)^2 + 8$.'
+      - 'Calculate the squared term: $(1)^2 = 1$.'
+      - 'Multiply: $-5(1) = -5$.'
+      - 'Calculate the final value: $-5 + 8 = 3$ meters.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: Evaluate the quadratic function $y = 2x^2 + 8x - 10$ when $x = 0$.
+      mathTool: null
+      finalAnswer: '-10'
+      stepByStepGuideline:
+      - 'Substitute $x = 0$ into the equation: $y = 2(0)^2 + 8(0) - 10$.'
+      - 'Calculate the terms involving zero: $2(0) + 8(0) = 0$.'
+      - The result is $y = 0 + 0 - 10$.
+      - The evaluated value is $-10$.
+      id: q2-3
+      questionGroup: q2
+    - problemText: Given the function $g(x) = -2x^2 + 6x - 3$, find $g(0.5)$.
+      mathTool: null
+      finalAnswer: '-0.5'
+      stepByStepGuideline:
+      - 'Substitute $x = 0.5$ into the function: $g(0.5) = -2(0.5)^2 + 6(0.5) - 3$.'
+      - 'Calculate the squared term: $(0.5)^2 = 0.25$.'
+      - 'Calculate the products: $-2(0.25) = -0.5$ and $6(0.5) = 3$.'
+      - The expression becomes $g(0.5) = -0.5 + 3 - 3$.
+      - 'Simplify to find the final answer: $-0.5$.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: The distance $s$ (in kilometers) traveled by a remote-controlled vehicle over a short period is described
+        by $s(t) = -t^2 + 2t - 5$, where $t$ is the time in hours. Calculate $s(4)$.
+      mathTool: null
+      finalAnswer: '-13'
+      stepByStepGuideline:
+      - 'Substitute $t = 4$ into the function $s(t) = -t^2 + 2t - 5$: $s(4) = -(4)^2 + 2(4) - 5$.'
+      - 'Calculate the exponent first: $(4)^2 = 16$. Note the negative sign applies after squaring: $s(4) = -16 + 2(4) - 5$.'
+      - 'Perform multiplication: $2(4) = 8$.'
+      - 'Calculate the sum: $s(4) = -16 + 8 - 5$.'
+      - 'Simplify: $-16 + 8 = -8$. Then $-8 - 5 = -13$.'
+      id: q2-5
+      questionGroup: q2
+- id: quad-fund-3
+  nodeNumber: 3
+  title: Solving Quadratic Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Solve the quadratic equation $x^2 - 3x - 10 = 0$ by factoring.
+      avatarIntro: Factoring is a powerful technique for solving quadratics, especially when the roots are integers. Remember
+        to look for two numbers that multiply to the constant term and add up to the coefficient of the x term.
+      mathTool: null
+      finalAnswer: x = 5 or x = -2
+      stepByStepGuideline:
+      - 'The equation is already set to zero: $x^2 - 3x - 10 = 0$.'
+      - Find two integers that multiply to -10 and add up to -3. These numbers are 5 and -2.
+      - 'Factor the quadratic: $(x - 5)(x + 2) = 0$.'
+      - 'Apply the Zero Product Property (ZPP), setting each factor equal to zero: $x - 5 = 0$ or $x + 2 = 0$.'
+      - 'Solve for $x$: $x = 5$ or $x = -2$.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: Find the value(s) of $x$ when $y = 0$ for the function $y = x^2 + 5x$.
+      mathTool: null
+      finalAnswer: x = 0 or x = -5
+      stepByStepGuideline:
+      - 'Set $y$ equal to zero: $x^2 + 5x = 0$.'
+      - 'Factor out the greatest common factor, which is $x$: $x(x + 5) = 0$.'
+      - 'Apply the Zero Product Property (ZPP), setting each factor equal to zero: $x = 0$ or $x + 5 = 0$.'
+      - 'Solve for $x$: $x = 0$ or $x = -5$.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'Solve by factoring: $x^2 + 4x + 4 = 0$.'
+      mathTool: null
+      finalAnswer: x = -2 (one solution)
+      stepByStepGuideline:
+      - The equation is $x^2 + 4x + 4 = 0$. Recognize that this is a perfect square trinomial.
+      - 'Factor the quadratic: $(x + 2)(x + 2) = 0$, or $(x + 2)^2 = 0$.'
+      - 'Apply the Zero Product Property: $x + 2 = 0$.'
+      - 'Solve for $x$: $x = -2$. Since this is a perfect square, there is only one distinct real solution.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: Find $x$ when $f(x) = 0$ for the function $f(x) = x^2 - 36$.
+      mathTool: null
+      finalAnswer: x = 6 or x = -6
+      stepByStepGuideline:
+      - 'Set the function equal to zero: $x^2 - 36 = 0$.'
+      - Recognize this equation as a difference of squares ($a^2 - b^2 = (a-b)(a+b)$), where $a=x$ and $b=6$.
+      - 'Factor the equation: $(x - 6)(x + 6) = 0$.'
+      - 'Apply the Zero Product Property (ZPP): $x - 6 = 0$ or $x + 6 = 0$.'
+      - 'Solve for $x$: $x = 6$ or $x = -6$.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: Solve the equation $x^2 + 6 = 7x$ by factoring.
+      mathTool: null
+      finalAnswer: x = 6 or x = 1
+      stepByStepGuideline:
+      - 'Rearrange the equation so that it is set equal to zero: $x^2 - 7x + 6 = 0$.'
+      - Find two integers that multiply to 6 and add up to -7. These numbers are -6 and -1.
+      - 'Factor the quadratic: $(x - 6)(x - 1) = 0$.'
+      - 'Apply the Zero Product Property (ZPP): $x - 6 = 0$ or $x - 1 = 0$.'
+      - 'Solve for $x$: $x = 6$ or $x = 1$.'
+      id: q3-5
+      questionGroup: q3
+- id: quad-graph-1
+  nodeNumber: 4
+  title: Creating Tables of Values for Parabolas
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Create a table of values for the quadratic function $y = x^2 - 4x + 3$ using integer x-values from $x =
+        -1$ to $x = 5$. Use the resulting table to identify the vertex of the parabola.
+      avatarIntro: Creating a table of values is essential for understanding how a parabola is shaped. Remember to calculate
+        the y-value carefully for each x-input!
+      mathTool: null
+      finalAnswer: 'The table should show the y-values: 8, 3, 0, -1, 0, 3, 8, corresponding to x-values -1 to 5. The minimum
+        value is y = -1, which occurs at x = 2. Therefore, the vertex is (2, -1).'
+      stepByStepGuideline:
+      - Set up a table with columns for x and y.
+      - Substitute each integer x-value from -1 to 5 into the function $y = x^2 - 4x + 3$.
+      - 'Calculate the corresponding y-values: x=-1, y=8; x=0, y=3; x=1, y=0; x=2, y=-1; x=3, y=0; x=4, y=3; x=5, y=8.'
+      - Identify the point where the y-values stop decreasing and start increasing (the minimum point). This is the vertex.
+      - The minimum y-value is -1, occurring at x=2. The vertex is (2, -1).
+      id: q4-1
+      questionGroup: q4
+    - problemText: Complete a table of values for the function $y = -2x^2 + 5$ using integer x-values from $x = -3$ to $x
+        = 3$. Based on the equation or the table, does the parabola open upward or downward?
+      mathTool: null
+      finalAnswer: 'The table should show the y-values: -13, -3, 3, 5, 3, -3, -13, corresponding to x-values -3 to 3. Since
+        the leading coefficient $a = -2$ is negative, or because the y-values decrease away from the maximum value (5), the
+        parabola opens downward.'
+      stepByStepGuideline:
+      - Set up a table and substitute x-values from -3 to 3 into $y = -2x^2 + 5$.
+      - 'Calculate y-values: x=-3, y=-13; x=-2, y=-3; x=-1, y=3; x=0, y=5; x=1, y=3; x=2, y=-3; x=3, y=-13.'
+      - Examine the leading coefficient $a$. Since $a = -2$ (which is less than 0), the parabola opens downward.
+      id: q4-2
+      questionGroup: q4
+    - problemText: Create a table of values for the function $y = 3x^2 + 6x - 1$ using integer x-values from $x = -3$ to $x
+        = 1$. What is the axis of symmetry for this parabola, based on the symmetry observed in your table?
+      mathTool: null
+      finalAnswer: 'The table should show the y-values: 8, -1, -4, -1, 8, corresponding to x-values -3 to 1. The y-values
+        are symmetric around the minimum value y = -4 at x = -1. The axis of symmetry is the vertical line passing through
+        the vertex, so the axis of symmetry is $x = -1$.'
+      stepByStepGuideline:
+      - Set up a table and substitute x-values from -3 to 1 into $y = 3x^2 + 6x - 1$.
+      - 'Calculate y-values: x=-3, y=8; x=-2, y=-1; x=-1, y=-4; x=0, y=-1; x=1, y=8.'
+      - Observe the symmetry in the y-values (8, -1, -4, -1, 8). The central x-value where the minimum occurs is the axis
+        of symmetry.
+      - The axis of symmetry is $x = -1$.
+      id: q4-3
+      questionGroup: q4
+    - problemText: Create a table of values for $y = -x^2 + 2x - 3$ using integer x-values from $x = 0$ to $x = 4$. What is
+        the y-intercept of the parabola, based on your table?
+      mathTool: null
+      finalAnswer: 'The table should show the y-values: -3, -2, -3, -6, -11, corresponding to x-values 0 to 4. The y-intercept
+        is the point where $x=0$. From the table, when $x=0$, $y=-3$. The y-intercept is -3 (or the point (0, -3)).'
+      stepByStepGuideline:
+      - Set up a table and substitute x-values from 0 to 4 into $y = -x^2 + 2x - 3$.
+      - 'Calculate y-values: x=0, y=-3; x=1, y=-2; x=2, y=-3; x=3, y=-6; x=4, y=-11.'
+      - The y-intercept is the value of y when x=0.
+      - From the table, the y-intercept is -3.
+      id: q4-4
+      questionGroup: q4
+    - problemText: Create a table of values for the function $y = 2x^2 - 6x$ using integer x-values from $x = -2$ to $x =
+        4$. Identify the vertex from the table, noting where the minimum y-value occurs.
+      mathTool: null
+      finalAnswer: 'The table should show the y-values: 20, 8, 0, -4, -4, 0, 8, corresponding to x-values -2 to 4. The minimum
+        y-value is -4, which occurs at both x=1 and x=2. Since the minimum value is repeated symmetrically, the vertex must
+        lie exactly halfway between these two x-values. The vertex is $(1.5, -4)$.'
+      stepByStepGuideline:
+      - Set up a table and substitute x-values from -2 to 4 into $y = 2x^2 - 6x$.
+      - 'Calculate y-values: x=-2, y=20; x=-1, y=8; x=0, y=0; x=1, y=-4; x=2, y=-4; x=3, y=0; x=4, y=8.'
+      - Identify the lowest y-value. Since -4 appears twice, the axis of symmetry must be exactly between $x=1$ and $x=2$,
+        which is $x=1.5$.
+      - The vertex is $(1.5, -4)$.
+      id: q4-5
+      questionGroup: q4
+- id: quad-graph-2
+  nodeNumber: 5
+  title: Interpreting Parabola Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabola
+    preWrittenQuestions:
+    - problemText: Observe the parabola shown in the graph below. Based on its shape and location, determine if the vertex
+        represents a maximum value or a minimum value for the function.
+      avatarIntro: We are going to practice interpreting graphs of parabolas today! Remember that the vertex is the highest
+        or lowest point on the curve.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -1
+          h: 2
+          k: 5
+          form: vertex
+          showVertex: true
+          showAxisOfSymmetry: true
+          showGrid: true
+          xRange:
+          - -2
+          - 6
+          yRange:
+          - 0
+          - 10
+      finalAnswer: The vertex represents a maximum value.
+      stepByStepGuideline:
+      - Locate the vertex (turning point) of the parabola on the graph. The vertex is at (2, 5).
+      - Observe the direction the parabola opens. Since the parabola opens downward, the vertex is the highest point on the
+        graph.
+      - A highest point on a function represents a maximum value.
+      id: q5-1
+      questionGroup: q5
+    - problemText: From the graph shown, identify the equation of the axis of symmetry.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 0.5
+          h: -3
+          k: 1
+          form: vertex
+          showVertex: true
+          showAxisOfSymmetry: true
+          showGrid: true
+          xRange:
+          - -7
+          - 1
+          yRange:
+          - -3
+          - 6
+      finalAnswer: x = -3
+      stepByStepGuideline:
+      - The axis of symmetry is the vertical line that passes through the vertex of the parabola.
+      - First, identify the coordinates of the vertex from the graph. The vertex is at (-3, 1).
+      - The axis of symmetry is defined by the x-coordinate of the vertex. Therefore, the equation is x = -3.
+      id: q5-2
+      questionGroup: q5
+    - problemText: Using the graph provided, state the coordinates of the vertex of the parabola.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -2
+          h: -4
+          k: -3
+          form: vertex
+          showVertex: true
+          showAxisOfSymmetry: true
+          showGrid: true
+          xRange:
+          - -6
+          - -2
+          yRange:
+          - -7
+          - -1
+      finalAnswer: The vertex coordinates are (-4, -3).
+      stepByStepGuideline:
+      - The vertex is the turning point of the parabola (the lowest or highest point).
+      - Locate the marked vertex point on the graph.
+      - Read the corresponding x-coordinate (-4) and y-coordinate (-3).
+      - The coordinates of the vertex are (-4, -3).
+      id: q5-3
+      questionGroup: q5
+    - problemText: Examine the parabola displayed in the graph. Does this parabola open upward or downward?
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 2
+          h: 1
+          k: -5
+          form: vertex
+          showVertex: true
+          showAxisOfSymmetry: true
+          showGrid: true
+          xRange:
+          - -3
+          - 5
+          yRange:
+          - -7
+          - 5
+      finalAnswer: The parabola opens upward.
+      stepByStepGuideline:
+      - Observe the direction of the arms (branches) of the parabola.
+      - If the arms extend towards the positive y-direction (up), the parabola opens upward.
+      - If the arms extend towards the negative y-direction (down), the parabola opens downward.
+      - In this graph, the arms point up, so the parabola opens upward.
+      id: q5-4
+      questionGroup: q5
+    - problemText: From the graph of the parabola shown, what is the y-intercept?
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -0.5
+          h: 0
+          k: 3
+          form: vertex
+          showVertex: true
+          showAxisOfSymmetry: true
+          showGrid: true
+          xRange:
+          - -4
+          - 4
+          yRange:
+          - -5
+          - 5
+      finalAnswer: The y-intercept is (0, 3).
+      stepByStepGuideline:
+      - The y-intercept is the point where the graph crosses the vertical y-axis (where x = 0).
+      - Locate the intersection point of the parabola and the y-axis.
+      - Read the coordinates of this point. The graph crosses the y-axis at y = 3.
+      - The coordinates of the y-intercept are (0, 3).
+      id: q5-5
+      questionGroup: q5
+- id: quad-graph-3
+  nodeNumber: 6
+  title: Effect of Coefficient a on Parabola Shape
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabola
+    preWrittenQuestions:
+    - problemText: Consider the quadratic function $y = -4x^2$. Observing the coefficient $a$, does this parabola open upward
+        (like a U) or downward (like an inverted U)?
+      avatarIntro: Understanding how the coefficient 'a' affects a parabola is key to predicting its shape without graphing.
+        Let's analyze the direction first!
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -4
+          h: 0
+          k: 0
+          form: vertex
+          showVertex: true
+          showGrid: true
+          xRange:
+          - -2
+          - 2
+          yRange:
+          - -16
+          - 2
+      finalAnswer: The parabola opens downward.
+      stepByStepGuideline:
+      - Identify the coefficient $a$. In $y = -4x^2$, $a = -4$.
+      - 'Recall the rule for opening direction: If $a > 0$, the parabola opens upward. If $a < 0$, the parabola opens downward.'
+      - Since $a = -4$ is negative ($a < 0$), the parabola opens downward.
+      id: q6-1
+      questionGroup: q6
+    - problemText: Compare the parabola $y = 0.75x^2$ to the standard parabola $y = x^2$. Is $y = 0.75x^2$ wider (compressed)
+        or narrower (stretched) than $y = x^2$?
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 0.75
+          h: 0
+          k: 0
+          form: vertex
+          showVertex: true
+          showGrid: true
+          xRange:
+          - -4
+          - 4
+          yRange:
+          - -2
+          - 12
+      finalAnswer: Wider (compressed)
+      stepByStepGuideline:
+      - Identify the coefficient $a$. Here, $a = 0.75$.
+      - 'Determine the absolute value of $a$: $|a| = |0.75| = 0.75$.'
+      - Compare $|a|$ to 1. Since $0.75 < 1$, the parabola is wider than the standard parabola $y = x^2$ (where $|a|=1$).
+        This is also known as a vertical compression.
+      id: q6-2
+      questionGroup: q6
+    - problemText: For the function $y = 2x^2$, analyze the absolute value of the coefficient $a$. Is $|a|$ greater than 1,
+        equal to 1, or less than 1? How does this relate to the width of the parabola?
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 2
+          h: 0
+          k: 0
+          form: vertex
+          showVertex: true
+          showGrid: true
+          xRange:
+          - -3
+          - 3
+          yRange:
+          - -2
+          - 18
+      finalAnswer: $|a|$ is greater than 1 ($|2| > 1$). This means the parabola is narrower (vertically stretched).
+      stepByStepGuideline:
+      - 'Identify the coefficient $a$: $a = 2$.'
+      - 'Calculate the absolute value: $|a| = |2| = 2$.'
+      - Compare $|a|$ to 1. Since $2 > 1$, the parabola is narrower than $y = x^2$.
+      id: q6-3
+      questionGroup: q6
+    - problemText: 'You are comparing two parabolas: $f(x) = -3x^2$ and $g(x) = 0.25x^2$. Based solely on the coefficients,
+        which parabola is thinner (more vertically stretched)?'
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -3
+          h: 0
+          k: 0
+          form: vertex
+          showVertex: true
+          showGrid: true
+          xRange:
+          - -3
+          - 3
+          yRange:
+          - -18
+          - 2
+      finalAnswer: $f(x) = -3x^2$ is thinner.
+      stepByStepGuideline:
+      - The width of a parabola is determined by the absolute value of coefficient $a$. The larger the absolute value $|a|$,
+        the thinner the parabola.
+      - 'Calculate $|a|$ for $f(x)$: $|-3| = 3$.'
+      - 'Calculate $|a|$ for $g(x)$: $|0.25| = 0.25$.'
+      - 'Compare the absolute values: Since $3 > 0.25$, the parabola $f(x) = -3x^2$ is thinner.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: Describe the overall shape and opening direction of the parabola $y = -0.5x^2$ relative to the standard
+        parabola $y = x^2$. (Include both width and direction.)
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -0.5
+          h: 0
+          k: 0
+          form: vertex
+          showVertex: true
+          showGrid: true
+          xRange:
+          - -4
+          - 4
+          yRange:
+          - -10
+          - 2
+      finalAnswer: It opens downward and is wider than $y = x^2$.
+      stepByStepGuideline:
+      - Determine the opening direction using the sign of $a$. Since $a = -0.5$ is negative, the parabola opens downward.
+      - Determine the width using the absolute value of $a$. $|a| = |-0.5| = 0.5$.
+      - Since $|a| < 1$ ($0.5 < 1$), the parabola is wider (compressed) compared to $y = x^2$.
+      id: q6-5
+      questionGroup: q6
+- id: quad-graph-4
+  nodeNumber: 7
+  title: Vertex Form and Translations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Identify the coordinates of the vertex for the parabola defined by the equation $y = (x - 4)^2 + 3$.
+      avatarIntro: Excellent job reviewing the basic properties of quadratic functions! Now, let's practice reading the vertex
+        directly from the vertex form equation.
+      mathTool: null
+      finalAnswer: (4, 3)
+      stepByStepGuideline:
+      - 'Recall the vertex form of a quadratic equation: $y = a(x - h)^2 + k$. The vertex coordinates are $(h, k)$.'
+      - Compare the given equation $y = (x - 4)^2 + 3$ to the standard form.
+      - 'The term $(x - 4)$ means $h = 4$. (Remember: the sign of $h$ is opposite to what is shown in the parenthesis).'
+      - The term $+ 3$ means $k = 3$.
+      - The vertex is $(h, k) = (4, 3).
+      id: q7-1
+      questionGroup: q7
+    - problemText: Write the equation of a parabola in vertex form, $y = a(x - h)^2 + k$, given that the vertex is located
+        at $(-3, -5)$ and the vertical stretch factor $a$ is $-2$.
+      mathTool: null
+      finalAnswer: $y = -2(x + 3)^2 - 5$
+      stepByStepGuideline:
+      - 'Identify the given values: Vertex $(h, k) = (-3, -5)$ and $a = -2$.'
+      - 'Substitute $h$ and $k$ into the vertex form: $y = a(x - h)^2 + k$.'
+      - 'Substitute $h = -3$: $x - (-3) = x + 3$. The squared term is $(x + 3)^2$.'
+      - 'Substitute $k = -5$: the vertical shift term is $-5$.'
+      - 'Substitute $a = -2$: $y = -2(x + 3)^2 - 5$.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: Describe the transformation required to change the base parabola $y = x^2$ into the new parabola $y = 0.5(x
+        + 1)^2 + 5$.
+      mathTool: null
+      finalAnswer: Horizontal shift left 1 unit, Vertical shift up 5 units, and Vertical compression (widening) by a factor
+        of 0.5.
+      stepByStepGuideline:
+      - 'Identify the vertex $(h, k)$ from the equation: $h = -1$ (from $x + 1$) and $k = 5$.'
+      - 'The horizontal shift corresponds to $h$: $h = -1$ means a shift left 1 unit.'
+      - 'The vertical shift corresponds to $k$: $k = 5$ means a shift up 5 units.'
+      - The coefficient $a = 0.5$. Since $0 < |a| < 1$, this indicates a vertical compression, making the parabola wider,
+        by a factor of 0.5.
+      id: q7-3
+      questionGroup: q7
+    - problemText: Determine the vertex $(h, k)$ of the parabola defined by the equation $y = 3(x + 5)^2$.
+      mathTool: null
+      finalAnswer: (-5, 0)
+      stepByStepGuideline:
+      - Rewrite the equation $y = 3(x + 5)^2$ in the standard vertex form $y = a(x - h)^2 + k$. The equation can be written
+        as $y = 3(x - (-5))^2 + 0$.
+      - 'Identify $h$ from the term $(x - h)$: since we have $(x + 5)$, $h = -5$.'
+      - 'Identify $k$ from the term $+ k$: since there is no vertical shift shown, $k = 0$.'
+      - The vertex is $(h, k) = (-5, 0)$.
+      id: q7-4
+      questionGroup: q7
+    - problemText: State the equation of the axis of symmetry for the parabola $y = -(x - 2)^2 - 8$.
+      mathTool: null
+      finalAnswer: $x = 2$
+      stepByStepGuideline:
+      - Recall that the axis of symmetry for a parabola in vertex form $y = a(x - h)^2 + k$ is the vertical line $x = h$.
+      - Identify the value of $h$ from the given equation $y = -(x - 2)^2 - 8$.
+      - Since the equation contains $(x - 2)$, the value of $h$ is 2.
+      - The equation of the axis of symmetry is $x = 2$.
+      id: q7-5
+      questionGroup: q7
+- id: quad-graph-5
+  nodeNumber: 8
+  title: Completing the Square
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Convert the quadratic equation $y = x^2 + 6x + 1$ into vertex form, $y = (x - h)^2 + k$, by completing
+        the square. State the resulting vertex coordinates.
+      avatarIntro: Completing the square is a powerful technique for rewriting quadratics. Remember to use (b/2) squared to
+        create that perfect square trinomial.
+      mathTool: null
+      finalAnswer: y = (x + 3)² - 8. Vertex is (-3, -8)
+      stepByStepGuideline:
+      - 'Group the x terms: $y = (x^2 + 6x) + 1$.'
+      - 'Calculate $(b/2)^2$: $(6/2)^2 = 3^2 = 9$.'
+      - 'Add and subtract 9 inside the expression: $y = (x^2 + 6x + 9) + 1 - 9$.'
+      - 'Factor the perfect square trinomial and simplify the constants: $y = (x + 3)^2 - 8$.'
+      - 'Identify the vertex (h, k): Since the form is $y = (x - h)^2 + k$, the vertex is (-3, -8).'
+      id: q8-1
+      questionGroup: q8
+    - problemText: Express the quadratic function $y = x^2 - 4x + 5$ in the vertex form $y = (x - h)^2 + k$ by completing
+        the square, and state the vertex.
+      mathTool: null
+      finalAnswer: y = (x - 2)² + 1. Vertex is (2, 1)
+      stepByStepGuideline:
+      - 'Group the x terms: $y = (x^2 - 4x) + 5$.'
+      - 'Calculate $(b/2)^2$: $(-4/2)^2 = (-2)^2 = 4$.'
+      - 'Add and subtract 4: $y = (x^2 - 4x + 4) + 5 - 4$.'
+      - 'Factor the perfect square and simplify the constants: $y = (x - 2)^2 + 1$.'
+      - State the vertex (h, k), noting that h = 2 and k = 1.
+      id: q8-2
+      questionGroup: q8
+    - problemText: Complete the square for the equation $y = 2x^2 - 8x + 3$. Express the result in vertex form $y = a(x -
+        h)^2 + k$ and identify the vertex.
+      mathTool: null
+      finalAnswer: y = 2(x - 2)² - 5. Vertex is (2, -5)
+      stepByStepGuideline:
+      - 'Factor out the leading coefficient $a=2$ from the first two terms: $y = 2(x^2 - 4x) + 3$.'
+      - Inside the parentheses, find $(b/2)^2$ for the term $x^2 - 4x$. $( -4/2)^2 = 4$.
+      - 'Add 4 inside the parentheses. Since it is inside a factor of 2, you must subtract $2 \times 4 = 8$ outside: $y =
+        2(x^2 - 4x + 4) + 3 - 8$.'
+      - 'Factor the perfect square and simplify the constants: $y = 2(x - 2)^2 - 5$.'
+      - 'Identify the vertex (h, k): (2, -5).'
+      id: q8-3
+      questionGroup: q8
+    - problemText: Find the vertex of the parabola defined by $y = -x^2 + 6x$ by completing the square. Provide the vertex
+        form and the coordinates of the vertex.
+      mathTool: null
+      finalAnswer: y = -(x - 3)² + 9. Vertex is (3, 9)
+      stepByStepGuideline:
+      - 'Factor out $a=-1$: $y = -(x^2 - 6x)$. (Note: $c=0$).'
+      - 'Inside the parentheses, calculate $(b/2)^2$: $(-6/2)^2 = 9$.'
+      - 'Add 9 inside the parentheses. Since $a=-1$ was factored out, adding 9 inside actually subtracts 9 overall, so you
+        must add 9 outside to balance: $y = -(x^2 - 6x + 9) + 9$.'
+      - 'Factor the perfect square: $y = -(x - 3)^2 + 9$.'
+      - 'Identify the vertex (h, k): (3, 9).'
+      id: q8-4
+      questionGroup: q8
+    - problemText: Convert the standard form quadratic equation $y = 3x^2 + 6x - 5$ to vertex form by completing the square.
+        State the final equation and the vertex.
+      mathTool: null
+      finalAnswer: y = 3(x + 1)² - 8. Vertex is (-1, -8)
+      stepByStepGuideline:
+      - 'Factor out the leading coefficient $a=3$ from the $x^2$ and $x$ terms: $y = 3(x^2 + 2x) - 5$.'
+      - Inside the parentheses, find $(b/2)^2$ for the term $x^2 + 2x$. $(2/2)^2 = 1$.
+      - 'Add 1 inside the parentheses. Since $a=3$ was factored out, adding 1 inside means adding $3 \times 1 = 3$ overall.
+        Subtract 3 outside to balance: $y = 3(x^2 + 2x + 1) - 5 - 3$.'
+      - 'Factor the perfect square trinomial and simplify the constants: $y = 3(x + 1)^2 - 8$.'
+      - The vertex is (h, k), which is (-1, -8).
+      id: q8-5
+      questionGroup: q8
+- id: quad-feat-1
+  nodeNumber: 9
+  title: Finding x and y Intercepts Algebraically
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the y-intercept of the quadratic function defined by the equation $y = x^2 - 4x + 8$.
+      avatarIntro: Finding intercepts is crucial for graphing parabolas. Remember that the y-intercept always occurs when
+        x equals zero!
+      mathTool: null
+      finalAnswer: y = 8, or the point (0, 8)
+      stepByStepGuideline:
+      - To find the y-intercept, set the x value to zero in the equation.
+      - 'Substitute x = 0 into the equation: $y = (0)^2 - 4(0) + 8$.'
+      - 'Simplify the equation: $y = 0 - 0 + 8$.'
+      - The y-intercept is y = 8.
+      id: q9-1
+      questionGroup: q9
+    - problemText: Find both x-intercepts for the parabola described by the equation $y = x^2 - 7x + 6$.
+      mathTool: null
+      finalAnswer: x = 1 and x = 6
+      stepByStepGuideline:
+      - 'To find the x-intercepts, set y = 0: $x^2 - 7x + 6 = 0$.'
+      - Factor the quadratic equation. We look for two numbers that multiply to 6 and add up to -7. These numbers are -1 and
+        -6.
+      - 'Factor the equation: $(x - 1)(x - 6) = 0$.'
+      - 'Set each factor equal to zero and solve for x: $x - 1 = 0 \implies x = 1$ and $x - 6 = 0 \implies x = 6$.'
+      - The x-intercepts are x = 1 and x = 6.
+      id: q9-2
+      questionGroup: q9
+    - problemText: Find all intercepts (both x and y) for the quadratic function $y = x^2 - 3x - 10$.
+      mathTool: null
+      finalAnswer: 'x-intercepts: x = -2 and x = 5. y-intercept: y = -10.'
+      stepByStepGuideline:
+      - 'Find the y-intercept by setting x = 0: $y = (0)^2 - 3(0) - 10$, so $y = -10$.'
+      - 'Find the x-intercepts by setting y = 0: $x^2 - 3x - 10 = 0$.'
+      - Factor the quadratic. We need two numbers that multiply to -10 and add to -3. These numbers are -5 and 2.
+      - 'Factor the equation: $(x - 5)(x + 2) = 0$.'
+      - 'Set each factor to zero: $x - 5 = 0 \implies x = 5$ and $x + 2 = 0 \implies x = -2$.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: Determine the x-intercept(s) of the parabola defined by $y = x^2 + 4x + 4$.
+      mathTool: null
+      finalAnswer: x = -2 (This parabola has only one x-intercept)
+      stepByStepGuideline:
+      - 'Set y = 0 to find the x-intercepts: $x^2 + 4x + 4 = 0$.'
+      - Recognize that this is a perfect square trinomial.
+      - 'Factor the equation: $(x + 2)^2 = 0$.'
+      - 'Solve for x: $x + 2 = 0 \implies x = -2$.'
+      - Since the factor is repeated, there is only one distinct x-intercept, meaning the parabola touches the axis at this
+        point.
+      id: q9-4
+      questionGroup: q9
+    - problemText: How many x-intercepts does the parabola defined by the equation $y = x^2 + 2x + 3$ have? (You must justify
+        your answer algebraically, for example, using the discriminant or by attempting to solve for x.)
+      mathTool: null
+      finalAnswer: Zero x-intercepts.
+      stepByStepGuideline:
+      - To determine the number of real x-intercepts, we can use the discriminant, $D = b^2 - 4ac$.
+      - 'Identify the coefficients: a = 1, b = 2, and c = 3.'
+      - 'Calculate the discriminant: $D = (2)^2 - 4(1)(3)$.'
+      - 'Calculate the value: $D = 4 - 12 = -8$.'
+      - Since the discriminant (D = -8) is negative ($D < 0$), the quadratic equation has no real roots, meaning the parabola
+        does not cross or touch the x-axis. There are zero x-intercepts.
+      id: q9-5
+      questionGroup: q9
+- id: quad-feat-2
+  nodeNumber: 10
+  title: Graphical Interpretation of Intercepts
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabola
+    preWrittenQuestions:
+    - problemText: From the graph shown below, identify the coordinates of all intercepts (x-intercepts and the y-intercept)
+        for this parabola.
+      avatarIntro: Reading mathematical information directly from a graph is a crucial skill. Pay close attention to where
+        the curve crosses the axes.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 1
+          b: -1
+          c: -6
+          form: standard
+          showIntercepts: true
+          showGrid: true
+          xRange:
+          - -4
+          - 5
+          yRange:
+          - -7
+          - 5
+      finalAnswer: x-intercepts at (-2, 0) and (3, 0); y-intercept at (0, -6).
+      stepByStepGuideline:
+      - An x-intercept is a point where the graph crosses the x-axis (where y=0). Locate these points on the graph.
+      - 'Read the coordinates for the x-intercepts: (-2, 0) and (3, 0).'
+      - A y-intercept is a point where the graph crosses the y-axis (where x=0). Locate this point on the graph.
+      - 'Read the coordinate for the y-intercept: (0, -6).'
+      id: q10-1
+      questionGroup: q10
+    - problemText: Observe the parabola shown in the graph. Based on its position relative to the x-axis, how many x-intercepts
+        does this parabola have?
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -1
+          b: 0
+          c: -2
+          form: standard
+          showIntercepts: true
+          showGrid: true
+          xRange:
+          - -5
+          - 5
+          yRange:
+          - -8
+          - 2
+      finalAnswer: Zero x-intercepts.
+      stepByStepGuideline:
+      - The x-intercepts are the points where the graph crosses or touches the horizontal x-axis.
+      - Examine the graph. Since the parabola opens downward and its highest point (vertex) is below the x-axis, it never
+        reaches or crosses the x-axis.
+      - Therefore, the parabola has zero x-intercepts.
+      id: q10-2
+      questionGroup: q10
+    - problemText: The parabola shown represents a perfect square function, meaning it has only one x-intercept. Identify
+        the exact coordinates of this single x-intercept and the y-intercept.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 2
+          b: -4
+          c: 2
+          form: standard
+          showIntercepts: true
+          showGrid: true
+          xRange:
+          - -2
+          - 4
+          yRange:
+          - -1
+          - 8
+      finalAnswer: x-intercept at (1, 0); y-intercept at (0, 2).
+      stepByStepGuideline:
+      - Locate the point where the parabola touches the x-axis. This is the single x-intercept.
+      - The coordinates of this point are (1, 0).
+      - Locate the point where the parabola crosses the y-axis. This is the y-intercept.
+      - The coordinates of this point are (0, 2).
+      id: q10-3
+      questionGroup: q10
+    - problemText: Based on the graph of the parabola $y = -2x^2 + 6x + 8$, does the function cross the x-axis? If yes, state
+        the total number of times it crosses.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -2
+          b: 6
+          c: 8
+          form: standard
+          showIntercepts: true
+          showGrid: true
+          xRange:
+          - -3
+          - 6
+          yRange:
+          - -5
+          - 15
+      finalAnswer: Yes, the parabola crosses the x-axis 2 times.
+      stepByStepGuideline:
+      - Identify the x-axis (the horizontal line where y=0).
+      - Visually inspect the graph to see if the curve intersects this line.
+      - The parabola clearly crosses the x-axis at two distinct points.
+      - Therefore, the function crosses the x-axis 2 times.
+      id: q10-4
+      questionGroup: q10
+    - problemText: The parabola shown has the equation $y = x^2 - 6x + 5$. How many points of intersection does this graph
+        have with the x-axis?
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 1
+          b: -6
+          c: 5
+          form: standard
+          showIntercepts: true
+          showGrid: true
+          xRange:
+          - 0
+          - 6
+          yRange:
+          - -5
+          - 10
+      finalAnswer: Two points of intersection.
+      stepByStepGuideline:
+      - Points of intersection with the x-axis are the x-intercepts.
+      - Look at the graph and count how many times the curve crosses the x-axis (the horizontal axis).
+      - The parabola crosses the x-axis at x=1 and x=5.
+      - Thus, there are two points of intersection.
+      id: q10-5
+      questionGroup: q10
+- id: quad-feat-3
+  nodeNumber: 11
+  title: Axis of Symmetry Formula
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabola
+    preWrittenQuestions:
+    - problemText: Find the axis of symmetry for the quadratic function $y = 2x^2 + 8x + 3$.
+      avatarIntro: Understanding the axis of symmetry is crucial, as it tells us the exact vertical centerline of the parabola.
+        Remember to use the formula x = -b/(2a).
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 2
+          b: 8
+          c: 3
+          form: standard
+          showAxisOfSymmetry: true
+          showVertex: false
+          showGrid: true
+          xRange:
+          - -6
+          - 2
+          yRange:
+          - -6
+          - 10
+      finalAnswer: $x = -2$
+      stepByStepGuideline:
+      - Identify the coefficients a and b from the standard form $y = ax^2 + bx + c$. Here, $a=2$ and $b=8$.
+      - 'Apply the axis of symmetry formula: $x = -b / (2a)$.'
+      - 'Substitute the values: $x = -8 / (2 \times 2)$.'
+      - 'Simplify the expression: $x = -8 / 4 = -2$.'
+      - The equation of the axis of symmetry is $x = -2$.
+      id: q11-1
+      questionGroup: q11
+    - problemText: Determine the equation of the axis of symmetry for the parabola defined by $f(x) = -x^2 + 6x + 5$.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -1
+          b: 6
+          c: 5
+          form: standard
+          showAxisOfSymmetry: true
+          showVertex: false
+          showGrid: true
+          xRange:
+          - -1
+          - 7
+          yRange:
+          - -5
+          - 15
+      finalAnswer: $x = 3$
+      stepByStepGuideline:
+      - Identify the coefficients a and b. Here, $a=-1$ and $b=6$.
+      - 'Apply the axis of symmetry formula: $x = -b / (2a)$.'
+      - 'Substitute the values, paying close attention to the negative sign for $a$: $x = -6 / (2 \times -1)$.'
+      - 'Simplify the expression: $x = -6 / -2 = 3$.'
+      - The equation of the axis of symmetry is $x = 3$.
+      id: q11-2
+      questionGroup: q11
+    - problemText: A projectile follows a parabolic path and hits the ground (x-axis) at $x = -1$ meters and $x = 5$ meters.
+        What is the equation of the axis of symmetry for this path?
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 1
+          b: -4
+          c: -5
+          form: standard
+          showAxisOfSymmetry: true
+          showVertex: false
+          showGrid: true
+          xRange:
+          - -2
+          - 6
+          yRange:
+          - -10
+          - 5
+      finalAnswer: $x = 2$
+      stepByStepGuideline:
+      - The axis of symmetry is always located exactly midway between the x-intercepts.
+      - Calculate the midpoint of the two x-intercepts, $x_1 = -1$ and $x_2 = 5$.
+      - 'Midpoint formula: $x = (x_1 + x_2) / 2$.'
+      - 'Substitute the values: $x = (-1 + 5) / 2$.'
+      - 'Calculate: $x = 4 / 2 = 2$.'
+      - The equation of the axis of symmetry is $x = 2$.
+      id: q11-3
+      questionGroup: q11
+    - problemText: Calculate the axis of symmetry for the parabola $y = 2x^2 - 4x + 5$.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 2
+          b: -4
+          c: 5
+          form: standard
+          showAxisOfSymmetry: true
+          showVertex: false
+          showGrid: true
+          xRange:
+          - -3
+          - 5
+          yRange:
+          - 0
+          - 10
+      finalAnswer: $x = 1$
+      stepByStepGuideline:
+      - Identify the coefficients a and b. Here, $a=2$ and $b=-4$.
+      - 'Apply the axis of symmetry formula: $x = -b / (2a)$.'
+      - 'Substitute the values: $x = -(-4) / (2 \times 2)$. Note that $-b$ is positive 4.'
+      - 'Simplify the expression: $x = 4 / 4 = 1$.'
+      - The equation of the axis of symmetry is $x = 1$.
+      id: q11-4
+      questionGroup: q11
+    - problemText: Determine the equation of the axis of symmetry for the quadratic function $y = 5x^2 - 10$.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 5
+          b: 0
+          c: -10
+          form: standard
+          showAxisOfSymmetry: true
+          showVertex: false
+          showGrid: true
+          xRange:
+          - -4
+          - 4
+          yRange:
+          - -12
+          - 10
+      finalAnswer: $x = 0$
+      stepByStepGuideline:
+      - Identify the coefficients a and b. The equation is $y = 5x^2 + 0x - 10$, so $a=5$ and $b=0$.
+      - 'Apply the axis of symmetry formula: $x = -b / (2a)$.'
+      - 'Substitute the values: $x = -0 / (2 \times 5)$.'
+      - 'Simplify the expression: $x = 0 / 10 = 0$.'
+      - The equation of the axis of symmetry is $x = 0$ (the y-axis).
+      id: q11-5
+      questionGroup: q11
+- id: quad-feat-4
+  nodeNumber: 12
+  title: Finding the Vertex (Turning Point)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the coordinates of the vertex (turning point) for the pure function $f(x) = 2x^2 - 12x + 5$. State
+        whether this vertex represents a maximum or a minimum value.
+      avatarIntro: Finding the vertex of a parabola is crucial! Remember to use the vertex formula $x = -b/(2a)$ first, and
+        then substitute that value back into the function.
+      mathTool: null
+      finalAnswer: Vertex (3, -13). This is a minimum.
+      stepByStepGuideline:
+      - Identify the coefficients a, b, and c. For $f(x) = 2x^2 - 12x + 5$, we have a = 2, b = -12, and c = 5.
+      - 'Calculate the x-coordinate of the vertex using the formula $x = -b/(2a)$: $x = -(-12) / (2 \times 2) = 12 / 4 = 3$.'
+      - 'Substitute $x=3$ back into the function to find the y-coordinate: $f(3) = 2(3)^2 - 12(3) + 5 = 2(9) - 36 + 5 = 18
+        - 36 + 5 = -13$.'
+      - The vertex is (3, -13).
+      - Since $a = 2$ is positive ($a > 0$), the parabola opens upwards, meaning the vertex is a minimum.
+      id: q12-1
+      questionGroup: q12
+    - problemText: The height $H$, in meters, of a projectile launched upwards is modeled by the function $H(t) = -t^2 + 8t
+        + 1$, where $t$ is the time in seconds after launch. Find the maximum height reached by the projectile.
+      mathTool: null
+      finalAnswer: The maximum height reached is 17 meters.
+      stepByStepGuideline:
+      - 'Identify the coefficients: $a = -1$ and $b = 8$.'
+      - 'Calculate the time $t$ at which the maximum height occurs using the vertex formula $t = -b/(2a)$: $t = -8 / (2 \times
+        -1) = -8 / -2 = 4$ seconds.'
+      - 'Substitute $t=4$ back into the height function $H(t)$ to find the maximum height: $H(4) = -(4)^2 + 8(4) + 1$.'
+      - 'Calculate the result: $H(4) = -16 + 32 + 1 = 17$.'
+      - The maximum height is 17 meters.
+      id: q12-2
+      questionGroup: q12
+    - problemText: A company's daily profit $P$, in thousands of dollars, depends on the number of items $x$ (in hundreds)
+        sold, according to the model $P(x) = -3x^2 + 6x$. Determine the number of items (x) that must be sold to maximize
+        the daily profit.
+      mathTool: null
+      finalAnswer: The profit is maximized when x = 1 hundred items (or 100 items) are sold.
+      stepByStepGuideline:
+      - 'Identify the coefficients: $a = -3$ and $b = 6$. Since $a<0$, the function has a maximum.'
+      - 'Calculate the value of $x$ (number of items) at which the maximum profit occurs using $x = -b/(2a)$: $x = -6 / (2
+        \times -3) = -6 / -6 = 1$.'
+      - The maximum profit occurs when $x=1$. (The question asks only for the value of x.)
+      id: q12-3
+      questionGroup: q12
+    - problemText: The total cost $C$ (in dollars) of producing $n$ units of a product is given by the function $C(n) = n^2
+        + 4n + 10$. Find the coordinates of the turning point for this cost function.
+      mathTool: null
+      finalAnswer: The coordinates of the turning point are (-2, 6).
+      stepByStepGuideline:
+      - 'Identify the coefficients: $a = 1$ and $b = 4$.'
+      - 'Calculate the x-coordinate (or n-coordinate) of the turning point using $n = -b/(2a)$: $n = -4 / (2 \times 1) = -4
+        / 2 = -2$.'
+      - 'Substitute $n=-2$ back into the cost function $C(n)$ to find the minimum cost (y-coordinate): $C(-2) = (-2)^2 + 4(-2)
+        + 10$.'
+      - 'Calculate the result: $C(-2) = 4 - 8 + 10 = 6$.'
+      - The coordinates of the turning point are (-2, 6).
+      id: q12-4
+      questionGroup: q12
+    - problemText: The area $A$ of a rectangular region, based on its width $w$, is modeled by the function $A(w) = -2w^2
+        + 12w - 5$. Find the vertex of this function and state whether it represents the maximum or minimum possible area.
+      mathTool: null
+      finalAnswer: Vertex (3, 13). This is a maximum.
+      stepByStepGuideline:
+      - 'Identify the coefficients: $a = -2$ and $b = 12$.'
+      - 'Calculate the w-coordinate of the vertex using $w = -b/(2a)$: $w = -12 / (2 \times -2) = -12 / -4 = 3$.'
+      - 'Substitute $w=3$ back into the area function $A(w)$ to find the A-coordinate: $A(3) = -2(3)^2 + 12(3) - 5$.'
+      - 'Calculate the result: $A(3) = -2(9) + 36 - 5 = -18 + 36 - 5 = 13$.'
+      - The vertex is (3, 13).
+      - Since $a = -2$ is negative ($a < 0$), the parabola opens downwards, meaning the vertex is a maximum.
+      id: q12-5
+      questionGroup: q12
+- id: quad-find-1
+  nodeNumber: 13
+  title: Finding Equations from Vertex
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the equation of the parabola with vertex $(3, -5)$ that passes through the point $(5, 3)$. Write your
+        answer in vertex form $f(x) = a(x - h)^2 + k$.
+      avatarIntro: Learning how to find the equation of a parabola when you know its turning point is a fundamental skill
+        in quadratic functions. Remember to use the vertex form!
+      mathTool: null
+      finalAnswer: f(x) = 2(x - 3)^2 - 5
+      stepByStepGuideline:
+      - 'Start with the vertex form $f(x) = a(x - h)^2 + k$ and substitute the vertex $(3, -5)$: $f(x) = a(x - 3)^2 - 5$.'
+      - 'Substitute the coordinates of the additional point $(5, 3)$ into the equation: $3 = a(5 - 3)^2 - 5$.'
+      - 'Solve for $a$: $3 = a(2)^2 - 5$, which simplifies to $3 = 4a - 5$.'
+      - 'Add 5 to both sides: $8 = 4a$. Calculate $a = 2$.'
+      - 'Write the final equation in vertex form: $f(x) = 2(x - 3)^2 - 5$.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: A parabola has its vertex at $(-2, 8)$ and its graph includes the point $(0, 4)$. Determine the equation
+        of this parabola in vertex form.
+      mathTool: null
+      finalAnswer: f(x) = -(x + 2)^2 + 8
+      stepByStepGuideline:
+      - 'Start with the vertex form $f(x) = a(x - h)^2 + k$ and substitute the vertex $(-2, 8)$: $f(x) = a(x + 2)^2 + 8$.'
+      - 'Substitute the given point $(0, 4)$: $4 = a(0 + 2)^2 + 8$.'
+      - 'Solve for $a$: $4 = a(4) + 8$.'
+      - 'Subtract 8 from both sides: $-4 = 4a$.'
+      - 'Calculate $a = -1$. Write the final equation: $f(x) = -(x + 2)^2 + 8$.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: Write the equation for a quadratic function in vertex form, given that its vertex is located at $(0, -3)$
+        and the function passes through the point $(4, 5)$.
+      mathTool: null
+      finalAnswer: f(x) = \frac{1}{2}x^2 - 3
+      stepByStepGuideline:
+      - 'Substitute the vertex $(0, -3)$ into the vertex form $f(x) = a(x - h)^2 + k$: $f(x) = a(x - 0)^2 - 3$, or $f(x) =
+        ax^2 - 3$.'
+      - 'Substitute the point $(4, 5)$: $5 = a(4)^2 - 3$.'
+      - 'Solve for $a$: $5 = 16a - 3$.'
+      - 'Add 3 to both sides: $8 = 16a$.'
+      - 'Calculate $a = 8/16 = 1/2$. Write the final equation: $f(x) = \frac{1}{2}x^2 - 3$.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: Determine the equation of the parabola whose turning point is $(-4, -8)$ and which is known to pass through
+        the coordinate $(-1, 1)$.
+      mathTool: null
+      finalAnswer: f(x) = (x + 4)^2 - 8
+      stepByStepGuideline:
+      - 'Substitute the vertex $(-4, -8)$ into the vertex form $f(x) = a(x - h)^2 + k$: $f(x) = a(x + 4)^2 - 8$.'
+      - 'Substitute the point $(-1, 1)$: $1 = a(-1 + 4)^2 - 8$.'
+      - 'Solve for $a$: $1 = a(3)^2 - 8$, so $1 = 9a - 8$.'
+      - 'Add 8 to both sides: $9 = 9a$.'
+      - 'Calculate $a = 1$. Write the final equation: $f(x) = (x + 4)^2 - 8$.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A quadratic function has a vertex on the x-axis at $(1, 0)$ and opens downwards, passing through the point
+        $(3, -3)$. Find the vertex form equation of this function.
+      mathTool: null
+      finalAnswer: f(x) = -\frac{3}{4}(x - 1)^2
+      stepByStepGuideline:
+      - 'Substitute the vertex $(1, 0)$ into the vertex form $f(x) = a(x - h)^2 + k$: $f(x) = a(x - 1)^2 + 0$, or $f(x) =
+        a(x - 1)^2$.'
+      - 'Substitute the point $(3, -3)$: $-3 = a(3 - 1)^2$.'
+      - 'Solve for $a$: $-3 = a(2)^2$, so $-3 = 4a$.'
+      - Calculate $a = -3/4$.
+      - 'Write the final equation: $f(x) = -\frac{3}{4}(x - 1)^2$.'
+      id: q13-5
+      questionGroup: q13
+- id: quad-find-2
+  nodeNumber: 14
+  title: Finding Equations from x-Intercepts
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: An engineer designs a parabolic archway. The base of the arch meets the ground (x-axis) at $x = 1$ meter
+        and $x = 4$ meters. If the arch passes through the height of 20 meters at the vertical axis ($x=0$), determine the
+        quadratic equation that models the shape of the arch.
+      avatarIntro: Finding the equation of a parabola when you know where it crosses the x-axis is a crucial skill. Remember
+        to use the intercept form first!
+      mathTool: null
+      finalAnswer: $f(x) = 5(x - 1)(x - 4)$
+      stepByStepGuideline:
+      - 'Identify the x-intercepts: $\alpha = 1$ and $\beta = 4$. Write the equation in intercept form: $f(x) = a(x - 1)(x
+        - 4)$.'
+      - 'Use the given y-intercept $(0, 20)$ to find the stretch factor $a$. Substitute $x=0$ and $f(x)=20$: $20 = a(0 - 1)(0
+        - 4)$.'
+      - 'Simplify the equation: $20 = a(-1)(-4)$, so $20 = 4a$.'
+      - 'Solve for $a$: $a = 20/4 = 5$.'
+      - 'Write the final equation using the value of $a$: $f(x) = 5(x - 1)(x - 4)$.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: A suspension cable on a bridge follows a parabolic curve. The cable is anchored to the road (x-axis) at
+        $x = -2$ kilometers and $x = 5$ kilometers. If the cable passes directly over the origin ($x=0$) at a height of 20
+        kilometers, find the quadratic equation that describes the cable's path.
+      mathTool: null
+      finalAnswer: $f(x) = -2(x + 2)(x - 5)$
+      stepByStepGuideline:
+      - 'Identify the x-intercepts: $\alpha = -2$ and $\beta = 5$. Write the equation in intercept form: $f(x) = a(x - (-2))(x
+        - 5)$, which simplifies to $f(x) = a(x + 2)(x - 5)$.'
+      - 'Use the given y-intercept $(0, 20)$ to find the stretch factor $a$. Substitute $x=0$ and $f(x)=20$: $20 = a(0 + 2)(0
+        - 5)$.'
+      - 'Simplify the equation: $20 = a(2)(-5)$, so $20 = -10a$.'
+      - 'Solve for $a$: $a = 20 / (-10) = -2$.'
+      - 'Write the final equation: $f(x) = -2(x + 2)(x - 5)$.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: The trajectory of a model aircraft is modeled by a quadratic function $f(x)$. The aircraft takes off at
+        $x = -1$ and lands at $x = 6$. The trajectory reaches a minimum point where it passes through the coordinate $(2,
+        -24)$. Determine the equation $f(x)$ for the path.
+      mathTool: null
+      finalAnswer: $f(x) = 2(x + 1)(x - 6)$
+      stepByStepGuideline:
+      - 'Identify the x-intercepts: $\alpha = -1$ and $\beta = 6$. Write the equation in intercept form: $f(x) = a(x + 1)(x
+        - 6)$.'
+      - 'Use the additional point $(2, -24)$ to find the stretch factor $a$. Substitute $x=2$ and $f(x)=-24$: $-24 = a(2 +
+        1)(2 - 6)$.'
+      - 'Simplify the equation: $-24 = a(3)(-4)$, so $-24 = -12a$.'
+      - 'Solve for $a$: $a = -24 / (-12) = 2$.'
+      - 'Write the final equation: $f(x) = 2(x + 1)(x - 6)$.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: A cross-section of a parabolic reflector is defined by a quadratic function. The parabola intersects the
+        horizontal axis at $x = -4$ and $x = 3$. If the parabola passes through the point $(-1, 36)$, find the equation of
+        the function.
+      mathTool: null
+      finalAnswer: $f(x) = -3(x + 4)(x - 3)$
+      stepByStepGuideline:
+      - 'Identify the x-intercepts: $\alpha = -4$ and $\beta = 3$. Write the equation in intercept form: $f(x) = a(x + 4)(x
+        - 3)$.'
+      - 'Use the additional point $(-1, 36)$ to find the stretch factor $a$. Substitute $x=-1$ and $f(x)=36$: $36 = a(-1 +
+        4)(-1 - 3)$.'
+      - 'Simplify the equation: $36 = a(3)(-4)$, so $36 = -12a$.'
+      - 'Solve for $a$: $a = 36 / (-12) = -3$.'
+      - 'Write the final equation: $f(x) = -3(x + 4)(x - 3)$.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: A quadratic function has zeros (x-intercepts) at $x = 2$ and $x = 7$. The graph of the function crosses
+        the y-axis at $y = 5$. Find the equation of this quadratic function.
+      mathTool: null
+      finalAnswer: $f(x) = \frac{5}{14}(x - 2)(x - 7)$
+      stepByStepGuideline:
+      - 'Identify the x-intercepts: $\alpha = 2$ and $\beta = 7$. Write the equation in intercept form: $f(x) = a(x - 2)(x
+        - 7)$.'
+      - 'Use the given y-intercept $(0, 5)$ to find the stretch factor $a$. Substitute $x=0$ and $f(x)=5$: $5 = a(0 - 2)(0
+        - 7)$.'
+      - 'Simplify the equation: $5 = a(-2)(-7)$, so $5 = 14a$.'
+      - 'Solve for $a$: $a = 5/14$.'
+      - 'Write the final equation: $f(x) = \frac{5}{14}(x - 2)(x - 7)$.'
+      id: q14-5
+      questionGroup: q14
+- id: quad-find-3
+  nodeNumber: 15
+  title: Real-World Optimization Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabola
+    preWrittenQuestions:
+    - problemText: A stone is thrown vertically upward from the top of a 5-meter platform. Its height, $H$ (in meters), above
+        the ground $t$ seconds after being thrown is modeled by the function $H(t) = -4.9t^2 + 30t + 5$. Find the maximum
+        height the stone reaches and the time at which this maximum height occurs.
+      avatarIntro: Real-world problems often involve finding the peak or lowest point of a curve. Remember that the vertex
+        of a parabola helps us find these optimal values.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -4.9
+          b: 30
+          c: 5
+          form: standard
+          showVertex: false
+          showGrid: true
+          xMin: 0
+          xMax: 7
+          yMin: 0
+          yMax: 60
+          caption: Stone height over time
+      finalAnswer: The maximum height the stone reaches is approximately 50.96 meters, occurring at approximately t = 3.06
+        seconds.
+      stepByStepGuideline:
+      - 'Identify the vertex formula for time: $t = -b / (2a)$. Here, $a = -4.9$ and $b = 30$.'
+      - 'Calculate the time to reach maximum height: $t = -30 / (2 \times -4.9) = 30 / 9.8 \approx 3.06$ seconds.'
+      - 'Substitute this time back into the height function to find the maximum height: $H(3.06) = -4.9(3.06)^2 + 30(3.06)
+        + 5$.'
+      - 'Calculate the result: $H(3.06) \approx -4.9(9.36) + 91.8 + 5 \approx -45.86 + 96.8 \approx 50.94$ meters. (Using
+        more precise calculation: $50.96$ meters).'
+      id: q15-1
+      questionGroup: q15
+    - problemText: A boutique company sells specialized vintage jewelry. The daily profit $P$ (in dollars) depends on the
+        number of items $x$ sold, according to the function $P(x) = -0.5x^2 + 50x - 150$. How many items must the company
+        sell daily to maximize their profit, and what is that maximum profit?
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -0.5
+          b: 50
+          c: -150
+          form: standard
+          showVertex: false
+          showGrid: true
+          xMin: 0
+          xMax: 120
+          yMin: -200
+          yMax: 1200
+          caption: Profit based on units sold
+      finalAnswer: The company must sell 50 items to achieve a maximum profit of $1100.
+      stepByStepGuideline:
+      - Determine the number of items $x$ that maximizes profit using the vertex formula $x = -b / (2a)$. $a = -0.5$, $b =
+        50$.
+      - 'Calculate $x$: $x = -50 / (2 \times -0.5) = -50 / -1 = 50$ items.'
+      - Substitute $x=50$ into the profit function to find the maximum profit $P(50)$.
+      - Calculate $P(50) = -0.5(50)^2 + 50(50) - 150 = -0.5(2500) + 2500 - 150 = -1250 + 2500 - 150 = 1100$ dollars.
+      id: q15-2
+      questionGroup: q15
+    - problemText: A farmer has 100 meters of fencing material and wants to enclose a rectangular garden. He plans to use
+        an existing long barn wall as one side of the enclosure, meaning he only needs to fence the remaining three sides.
+        What dimensions (width and length) should the farmer choose to maximize the enclosed area?
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -2
+          b: 100
+          c: 0
+          form: standard
+          showVertex: false
+          showGrid: true
+          xMin: 0
+          xMax: 60
+          yMin: 0
+          yMax: 1300
+          caption: Area vs. Width of Garden
+      finalAnswer: The dimensions should be 25 meters (width perpendicular to the wall) by 50 meters (length parallel to the
+        wall), resulting in a maximum area of 1250 square meters.
+      stepByStepGuideline:
+      - Let $W$ be the width (two sides) and $L$ be the length (one side parallel to the barn). The perimeter constraint is
+        $2W + L = 100$.
+      - 'Express $L$ in terms of $W$: $L = 100 - 2W$.'
+      - Form the area function $A(W) = W \times L = W(100 - 2W) = -2W^2 + 100W$.
+      - 'Find the optimal width $W$ using the vertex formula: $W = -100 / (2 \times -2) = 25$ meters.'
+      - 'Find the corresponding length: $L = 100 - 2(25) = 50$ meters.'
+      - 'Calculate the maximum area: $A = 25 \times 50 = 1250$ square meters.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: A model rocket is launched from a 20-foot tall platform. Its height $H$ (in feet) after $t$ seconds is
+        modeled by the function $H(t) = -16t^2 + 40t + 20$. Determine the time it takes for the rocket to hit the ground (where
+        $H(t)=0$). Round your answer to two decimal places.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: -16
+          b: 40
+          c: 20
+          form: standard
+          showVertex: false
+          showGrid: true
+          xMin: 0
+          xMax: 3.5
+          yMin: -10
+          yMax: 50
+          caption: Rocket height in feet over time
+      finalAnswer: The rocket hits the ground after approximately 2.93 seconds.
+      stepByStepGuideline:
+      - 'Set the height function to zero: $-16t^2 + 40t + 20 = 0$.'
+      - 'Use the quadratic formula: $t = [-b \pm \sqrt{b^2 - 4ac}] / (2a)$.'
+      - 'Substitute values: $t = [-40 \pm \sqrt{40^2 - 4(-16)(20)}] / (2 \times -16)$.'
+      - 'Simplify the discriminant: $t = [-40 \pm \sqrt{1600 + 1280}] / -32 = [-40 \pm \sqrt{2880}] / -32$.'
+      - 'Calculate the square root: $\sqrt{2880} \approx 53.67$.'
+      - 'Find the positive time root: $t = (-40 - 53.67) / -32 = -93.67 / -32 \approx 2.927$. (The positive root from the
+        ''+'' operation results in negative time, which is discarded).'
+      - 'Round the result: $t \approx 2.93$ seconds.'
+      id: q15-4
+      questionGroup: q15
+    - problemText: The daily cost $C$ (in dollars) of manufacturing $x$ specialized machine parts is modeled by the quadratic
+        function $C(x) = 3x^2 - 72x + 600$. Determine the number of parts that should be manufactured daily to achieve the
+        minimum cost, and state what that minimum cost is.
+      mathTool:
+        toolName: parabola
+        parameters:
+          a: 3
+          b: -72
+          c: 600
+          form: standard
+          showVertex: false
+          showGrid: true
+          xMin: 0
+          xMax: 30
+          yMin: 100
+          yMax: 700
+          caption: Manufacturing cost vs. production level
+      finalAnswer: The minimum cost of $168 is achieved when 12 parts are manufactured.
+      stepByStepGuideline:
+      - Since $a = 3$ (positive), the parabola opens upward, indicating a minimum value at the vertex.
+      - Calculate the quantity $x$ that minimizes cost using the vertex formula $x = -b / (2a)$. $a = 3$, $b = -72$.
+      - 'Calculate $x$: $x = -(-72) / (2 \times 3) = 72 / 6 = 12$ parts.'
+      - Substitute $x=12$ into the cost function to find the minimum cost $C(12)$.
+      - Calculate $C(12) = 3(12)^2 - 72(12) + 600 = 3(144) - 864 + 600 = 432 - 864 + 600 = 168$ dollars.
+      id: q15-5
+      questionGroup: q15
+- id: quad-ineq-1
+  nodeNumber: 16
+  title: Solving Inequalities with Sign Diagrams
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: Solve $x^2 < 14 - 5x$ using a sign diagram.
+      avatarIntro: Solving quadratic inequalities requires careful attention to critical values and sign changes. Remember
+        to always rearrange the inequality first!
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -10
+          max: 5
+          step: 1
+          points:
+          - value: -7
+            label: '-7'
+            style: open
+            color: '#3b82f6'
+          - value: 2
+            label: '2'
+            style: open
+            color: '#3b82f6'
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: Critical values from factored form
+      finalAnswer: -7 < x < 2
+      stepByStepGuideline:
+      - 'Rearrange the inequality to have zero on the RHS: $x^2 + 5x - 14 < 0$.'
+      - 'Factor the quadratic expression: $(x + 7)(x - 2) < 0$.'
+      - 'Identify the critical values (zeros): $x = -7$ and $x = 2$.'
+      - Draw a sign diagram and test a value in each of the three regions defined by the critical values. The sign pattern
+        for $(x+7)(x-2)$ is Positive | Negative | Positive.
+      - 'Since the inequality requires the expression to be less than zero (negative), the solution is the region between
+        the roots, excluding the endpoints (open circles): $-7 < x < 2$.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: Use a sign diagram to solve $x^2 + 2x \geq 15$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -8
+          max: 6
+          step: 1
+          points:
+          - value: -5
+            label: '-5'
+            style: closed
+            color: '#3b82f6'
+          - value: 3
+            label: '3'
+            style: closed
+            color: '#3b82f6'
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: Critical values from factored form
+      finalAnswer: x \leq -5 \text{ or } x \geq 3
+      stepByStepGuideline:
+      - 'Rearrange the inequality: $x^2 + 2x - 15 \geq 0$.'
+      - 'Factor the quadratic expression: $(x + 5)(x - 3) \geq 0$.'
+      - 'Identify the critical values (zeros): $x = -5$ and $x = 3$.'
+      - Draw a sign diagram. The sign pattern for $(x+5)(x-3)$ is Positive | Negative | Positive.
+      - 'Since the inequality requires the expression to be greater than or equal to zero (positive or zero), the solution
+        includes the regions outside the roots, including the endpoints (closed circles): $x \leq -5$ or $x \geq 3$.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: Solve $-x^2 + 5x - 4 < 0$ using a sign diagram.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -2
+          max: 7
+          step: 1
+          points:
+          - value: 1
+            label: '1'
+            style: open
+            color: '#3b82f6'
+          - value: 4
+            label: '4'
+            style: open
+            color: '#3b82f6'
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: Critical values from factored form
+      finalAnswer: x < 1 \text{ or } x > 4
+      stepByStepGuideline:
+      - 'Multiply the entire inequality by -1 and reverse the inequality symbol to ensure the leading coefficient is positive:
+        $x^2 - 5x + 4 > 0$.'
+      - 'Factor the resulting quadratic expression: $(x - 1)(x - 4) > 0$.'
+      - 'Identify the critical values (zeros): $x = 1$ and $x = 4$.'
+      - Draw a sign diagram. The sign pattern for $(x-1)(x-4)$ is Positive | Negative | Positive.
+      - 'Since the inequality requires the expression to be greater than zero (positive), the solution includes the regions
+        outside the roots, excluding the endpoints (open circles): $x < 1$ or $x > 4$.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: Find the solution to the inequality $(2x + 4)(x - 5) \leq 0$ using a sign diagram.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -5
+          max: 8
+          step: 1
+          points:
+          - value: -2
+            label: '-2'
+            style: closed
+            color: '#3b82f6'
+          - value: 5
+            label: '5'
+            style: closed
+            color: '#3b82f6'
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: Critical values from factored form
+      finalAnswer: -2 \leq x \leq 5
+      stepByStepGuideline:
+      - 'The inequality is already factored and set to zero: $(2x + 4)(x - 5) \leq 0$.'
+      - 'Identify the critical values (zeros) by setting each factor to zero: $2x + 4 = 0 \implies x = -2$ and $x - 5 = 0
+        \implies x = 5$.'
+      - Draw a sign diagram and test the regions. The sign pattern for $(2x+4)(x-5)$ is Positive | Negative | Positive.
+      - 'Since the inequality requires the expression to be less than or equal to zero (negative or zero), the solution is
+        the region between the roots, including the endpoints (closed circles): $-2 \leq x \leq 5$.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: Solve $x^2 - x > 12$ using a sign diagram.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -6
+          max: 7
+          step: 1
+          points:
+          - value: -3
+            label: '-3'
+            style: open
+            color: '#3b82f6'
+          - value: 4
+            label: '4'
+            style: open
+            color: '#3b82f6'
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: Critical values from factored form
+      finalAnswer: x < -3 \text{ or } x > 4
+      stepByStepGuideline:
+      - 'Rearrange the inequality to have zero on the RHS: $x^2 - x - 12 > 0$.'
+      - 'Factor the quadratic expression: $(x + 3)(x - 4) > 0$.'
+      - 'Identify the critical values (zeros): $x = -3$ and $x = 4$.'
+      - Draw a sign diagram. The sign pattern for $(x+3)(x-4)$ is Positive | Negative | Positive.
+      - 'Since the inequality requires the expression to be strictly greater than zero (positive), the solution includes the
+        regions outside the roots, excluding the endpoints (open circles): $x < -3$ or $x > 4$.'
+      id: q16-5
+      questionGroup: q16
+- id: quad-ineq-2
+  nodeNumber: 17
+  title: Non-Strict Inequalities and Special Cases
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: A designer is calculating dimensions such that the square of the length $x$ does not exceed five times
+        the length. Solve the inequality $x^2 \leq 5x$ to find the possible range of $x$ (assuming $x \geq 0$).
+      avatarIntro: Quadratic inequalities are powerful tools for modeling real-world constraints. Remember to handle non-strict
+        inequalities correctly by including the endpoints!
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -1
+          max: 6
+          step: 1
+          points:
+          - value: 0
+            label: '0'
+            style: closed
+            color: '#10b981'
+          - value: 5
+            label: '5'
+            style: closed
+            color: '#10b981'
+          showTickMarks: true
+          showTickLabels: true
+          caption: Solution range for 0 \u2264 x \u2264 5
+      finalAnswer: 0 \u2264 x \u2264 5
+      stepByStepGuideline:
+      - 'Rewrite the inequality in standard form: $x^2 - 5x \leq 0$.'
+      - Find the critical values by solving $x^2 - 5x = 0$, which factors as $x(x - 5) = 0$. Critical values are $x = 0$ and
+        $x = 5$.
+      - Use a sign diagram or test points. Since the parabola $y = x^2 - 5x$ opens upward, it is negative (or zero) between
+        the roots.
+      - Since the inequality is non-strict (\u2264), the endpoints are included. The solution is $0 \leq x \leq 5$.
+      id: q17-1
+      questionGroup: q17
+    - problemText: A company determines that its profit $P$ (in thousands of dollars), based on producing $x$ units, is modeled
+        by the function $P(x) = x^2 - 4x$. To meet expansion goals, the profit must be at least 12 thousand dollars. Solve
+        the inequality $x^2 - 4x \geq 12$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -4
+          max: 8
+          step: 1
+          points:
+          - value: -2
+            label: '-2'
+            style: closed
+            color: '#10b981'
+          - value: 6
+            label: '6'
+            style: closed
+            color: '#10b981'
+          showTickMarks: true
+          showTickLabels: true
+          caption: Solution where x \u2264 -2 or x \u2265 6
+      finalAnswer: x \u2264 -2 \text{ or } x \u2265 6
+      stepByStepGuideline:
+      - 'Rewrite the inequality in standard form: $x^2 - 4x - 12 \geq 0$.'
+      - 'Find the critical values by factoring the quadratic: $(x - 6)(x + 2) = 0$. Critical values are $x = 6$ and $x = -2$.'
+      - Since the parabola opens upward, the function is greater than or equal to zero outside the roots.
+      - Include the endpoints because the inequality is non-strict (\u2265). The solution is $x \leq -2$ or $x \geq 6$.
+      id: q17-2
+      questionGroup: q17
+    - problemText: A quality control mechanism monitors fluctuation $F$ modeled by $F(t) = t^2 - 4t + 4$. Determine the time
+        intervals $t$ for which the fluctuation is non-negative, $F(t) \geq 0$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -3
+          max: 7
+          step: 1
+          points:
+          - value: 2
+            label: '2'
+            style: closed
+            color: '#10b981'
+          showTickMarks: true
+          showTickLabels: true
+          caption: The perfect square is always non-negative.
+      finalAnswer: \text{All real numbers } (t \in \mathbb{R})
+      stepByStepGuideline:
+      - 'Factor the quadratic expression: $t^2 - 4t + 4 = (t - 2)^2$.'
+      - The inequality becomes $(t - 2)^2 \geq 0$.
+      - Since the square of any real number is always non-negative (greater than or equal to zero), this inequality is always
+        true for all real values of $t$.
+      - 'Solution: All real numbers.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: Find the value(s) of $x$ that satisfy the inequality $x^2 + 6x + 9 \leq 0$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -5
+          max: -1
+          step: 1
+          points:
+          - value: -3
+            label: '-3'
+            style: closed
+            color: '#10b981'
+          showTickMarks: true
+          showTickLabels: true
+          caption: Only the point x = -3 satisfies the inequality.
+      finalAnswer: x = -3
+      stepByStepGuideline:
+      - 'Factor the quadratic expression: $x^2 + 6x + 9 = (x + 3)^2$.'
+      - The inequality becomes $(x + 3)^2 \leq 0$.
+      - Since the square of any real number must be non-negative, $(x + 3)^2$ can never be less than zero.
+      - Therefore, the only way for the inequality to hold is if $(x + 3)^2$ equals zero. This occurs only when $x + 3 = 0$,
+        so $x = -3$.
+      id: q17-4
+      questionGroup: q17
+    - problemText: A mathematical model predicts the minimum cost $C$ for a process using the function $C(x) = x^2 + 2x +
+        3$. Determine if there are any values of $x$ for which the cost is less than or equal to 0, i.e., solve $x^2 + 2x
+        + 3 \leq 0$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -5
+          max: 3
+          step: 1
+          points: []
+          showTickMarks: true
+          showTickLabels: true
+          caption: There are no real roots, and the function is always positive.
+      finalAnswer: \text{No solution } (\emptyset)
+      stepByStepGuideline:
+      - Analyze the discriminant $D = b^2 - 4ac$ for the quadratic $x^2 + 2x + 3$.
+      - Calculate $D = (2)^2 - 4(1)(3) = 4 - 12 = -8$.
+      - Since the discriminant $D$ is negative, there are no real roots, meaning the parabola never crosses the x-axis.
+      - Since the leading coefficient $a = 1$ is positive, the parabola opens upward and is always positive ($x^2 + 2x + 3
+        > 0$ for all real $x$).
+      - Therefore, it is impossible for $x^2 + 2x + 3$ to be less than or equal to zero. The solution is no solution.
+      id: q17-5
+      questionGroup: q17

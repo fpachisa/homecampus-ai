@@ -223,8 +223,112 @@ const DIFFERENTIAL_CALCULUS_CONFIGS = [
   }
 ];
 
-// Combine old configs + new Differential Calculus configs
-const ALL_CONFIGS = [...oldConfigs, ...DIFFERENTIAL_CALCULUS_CONFIGS];
+/**
+ * S4 Advanced Trigonometry configs (5 configs)
+ */
+const ADVANCED_TRIGONOMETRY_CONFIGS = [
+  // ============================================
+  // S4 ADVANCED TRIGONOMETRY (5 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Unit Circle & Special Angles
+  {
+    id: 's4-math-advanced-trig-unit-circle',
+    displayName: 'Unit Circle & Special Angles',
+    grade: 's4',
+    subject: 'math',
+    topic: 'advanced-trigonometry',
+    subtopic: 'unit-circle',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s3-math-trigonometry-basic-ratios', 's3-math-trigonometry-obtuse-angles']
+    },
+    notesComponent: 's4/math/advanced-trigonometry/UnitCircleSpecialAngles',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Trigonometric Functions & Graphs
+  {
+    id: 's4-math-advanced-trig-functions-graphs',
+    displayName: 'Trigonometric Functions & Graphs',
+    grade: 's4',
+    subject: 'math',
+    topic: 'advanced-trigonometry',
+    subtopic: 'functions-graphs',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s4-math-advanced-trig-unit-circle']
+    },
+    notesComponent: 's4/math/advanced-trigonometry/TrigonometricFunctionsGraphs',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Transformations
+  {
+    id: 's4-math-advanced-trig-transformations',
+    displayName: 'Transformations of Trigonometric Functions',
+    grade: 's4',
+    subject: 'math',
+    topic: 'advanced-trigonometry',
+    subtopic: 'transformations',
+    metadata: {
+      difficulty: 'advanced' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s4-math-advanced-trig-functions-graphs']
+    },
+    notesComponent: 's4/math/advanced-trigonometry/Transformations',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Trigonometric Equations & Identities
+  {
+    id: 's4-math-advanced-trig-equations-identities',
+    displayName: 'Trigonometric Equations & Identities',
+    grade: 's4',
+    subject: 'math',
+    topic: 'advanced-trigonometry',
+    subtopic: 'equations-identities',
+    metadata: {
+      difficulty: 'advanced' as const,
+      estimatedMinutes: 65,
+      prerequisites: ['s4-math-advanced-trig-unit-circle', 's4-math-advanced-trig-functions-graphs']
+    },
+    notesComponent: 's4/math/advanced-trigonometry/EquationsIdentities',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 5: Radian Measure
+  {
+    id: 's4-math-advanced-trig-radians',
+    displayName: 'Radian Measure',
+    grade: 's4',
+    subject: 'math',
+    topic: 'advanced-trigonometry',
+    subtopic: 'radians',
+    metadata: {
+      difficulty: 'advanced' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s4-math-advanced-trig-unit-circle']
+    },
+    notesComponent: 's4/math/advanced-trigonometry/RadianMeasure',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
+// Combine old configs + Differential Calculus + Advanced Trigonometry configs
+const ALL_CONFIGS = [...oldConfigs, ...DIFFERENTIAL_CALCULUS_CONFIGS, ...ADVANCED_TRIGONOMETRY_CONFIGS];
 
 /**
  * Migrate all configs to Firestore
@@ -298,6 +402,21 @@ async function verify() {
     .map(c => c.id);
 
   for (const id of diffCalcIds) {
+    const doc = await db.collection('subtopics').doc(id).get();
+    if (doc.exists) {
+      console.log(`  ✓ ${id}`);
+    } else {
+      console.log(`  ✗ MISSING: ${id}`);
+    }
+  }
+
+  // Check for Advanced Trigonometry configs
+  console.log('\n📋 Advanced Trigonometry configs:');
+  const advTrigIds = ALL_CONFIGS
+    .filter(c => c.id.startsWith('s4-math-advanced-trig'))
+    .map(c => c.id);
+
+  for (const id of advTrigIds) {
     const doc = await db.collection('subtopics').doc(id).get();
     if (doc.exists) {
       console.log(`  ✓ ${id}`);

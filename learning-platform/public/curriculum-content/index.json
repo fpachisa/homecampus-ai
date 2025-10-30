@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "filename": "S4/Maths/s4-quadratic-functions.yaml",
+      "displayName": "S4 - Quadratic Functions",
+      "category": "s4-math-quadratic-functions"
+    },
+    {
       "filename": "S4/Maths/s4-math-probability.yaml",
       "displayName": "S4 - Probability",
       "category": "s4-math-probability"

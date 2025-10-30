@@ -162,6 +162,30 @@ class FallbackAIService implements AIService {
     );
   }
 
+  async generateInitialGreetingBatch(
+    topicIds: string[],
+    options?: {
+      variationStyle?: 'diverse' | 'consistent';
+      avoidPatterns?: string[];
+      batchSize?: number;
+    }
+  ): Promise<Record<string, InitialGreetingResponse>> {
+    return this.executeWithFallback(
+      (service) => {
+        if (typeof service.generateInitialGreetingBatch === 'function') {
+          return service.generateInitialGreetingBatch(topicIds, options);
+        }
+        throw new AIServiceError(
+          AIErrorType.UNKNOWN,
+          null,
+          false,
+          'Batch generation not supported by service'
+        );
+      },
+      'generateInitialGreetingBatch'
+    );
+  }
+
   async generateSectionStartQuestion(topicId: string, sectionId: string): Promise<InitialGreetingResponse> {
     return this.executeWithFallback(
       (service) => service.generateSectionStartQuestion(topicId, sectionId),

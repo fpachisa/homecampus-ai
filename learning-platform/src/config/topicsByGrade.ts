@@ -245,6 +245,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       subject: 'Mathematics',
     },
     {
+      id: 's4-advanced-trigonometry',
+      name: 'Advanced Trigonometry',
+      icon: '∠',
+      description: 'Master the unit circle, trigonometric graphs, transformations, equations, identities, and radians',
+      subtopicCount: 5,
+      isActive: true,
+      category: 's4-math-advanced-trig',
+      grade: 'Secondary 4',
+      subject: 'Mathematics',
+    },
+    {
       id: 's4-differential-calculus',
       name: 'Differential Calculus',
       icon: '∫',

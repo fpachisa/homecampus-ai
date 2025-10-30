@@ -1,7 +1,7 @@
 /**
  * Generate Initial Audio Files using Google Cloud Chirp-3 HD
  *
- * Generates pre-generated TTS audio files for all 96 initial greetings,
+ * Generates pre-generated TTS MP3 audio files for all initial greetings,
  * eliminating TTS API calls during initial load.
  *
  * Usage:
@@ -9,6 +9,9 @@
  *
  * Requirements:
  *   - VITE_GOOGLE_TTS_API_KEY environment variable must be set
+ *
+ * Output:
+ *   - MP3 files saved to: public/assets/audio/initial-greetings/{topicId}.mp3
  */
 
 // IMPORTANT: Load environment variables FIRST
@@ -32,30 +35,11 @@ const BATCH_SIZE = 10;            // Process 10 files at a time
 const DELAY_BETWEEN_REQUESTS = 2000;  // 2 seconds between each request
 const DELAY_BETWEEN_BATCHES = 10000;  // 10 seconds between batches
 
-// Import types
-interface CachedGreeting {
-  speech: {
-    text: string;
-    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'excited' | 'warm';
-    preGeneratedAudioUrl?: string;
-  };
-  display: {
-    content: string;
-    showAfterSpeech: boolean;
-  };
-  mathTool?: {
-    toolName: string;
-    parameters: Record<string, any>;
-    caption?: string;
-  };
-}
-
 /**
  * Generate audio using Google Cloud Chirp-3 HD TTS API
  */
 async function generateAudio(
-  text: string,
-  emotion: string
+  text: string
 ): Promise<{ audioData: ArrayBuffer; duration: number }> {
   const apiKey = env.VITE_GOOGLE_TTS_API_KEY;
 
@@ -74,9 +58,9 @@ async function generateAudio(
       name: VOICE_NAME
     },
     audioConfig: {
-      audioEncoding: 'LINEAR16',
-      speakingRate: SPEAKING_RATE,
-      sampleRateHertz: 24000
+      audioEncoding: 'MP3',  // Generate MP3 directly instead of LINEAR16
+      speakingRate: SPEAKING_RATE
+      // No sampleRateHertz needed for MP3 encoding
     }
   };
 
@@ -99,7 +83,7 @@ async function generateAudio(
     throw new Error('No audio data in Google Cloud TTS response');
   }
 
-  // Convert base64 to ArrayBuffer
+  // Convert base64 to Buffer (MP3 format)
   const base64Audio = data.audioContent;
   const binaryString = atob(base64Audio);
   const bytes = new Uint8Array(binaryString.length);
@@ -107,52 +91,13 @@ async function generateAudio(
     bytes[i] = binaryString.charCodeAt(i);
   }
 
-  // Calculate duration
-  const sampleRate = 24000;
-  const duration = bytes.length / 2 / sampleRate;
+  // Estimate duration (MP3, approximate)
+  const estimatedDuration = text.length / 15; // Rough estimate: ~15 chars per second
 
   return {
     audioData: bytes.buffer,
-    duration: duration
+    duration: estimatedDuration
   };
-}
-
-/**
- * Convert PCM audio to WAV format with proper headers
- */
-function convertPCMtoWAV(pcmData: ArrayBuffer, sampleRate: number = 24000): Buffer {
-  const pcmBuffer = Buffer.from(pcmData);
-  const pcmLength = pcmBuffer.length;
-
-  // WAV file parameters
-  const numChannels = 1;
-  const bitsPerSample = 16;
-  const byteRate = sampleRate * numChannels * (bitsPerSample / 8);
-  const blockAlign = numChannels * (bitsPerSample / 8);
-
-  // Create WAV header (44 bytes)
-  const header = Buffer.alloc(44);
-
-  // RIFF chunk descriptor
-  header.write('RIFF', 0);
-  header.writeUInt32LE(36 + pcmLength, 4);
-  header.write('WAVE', 8);
-
-  // fmt sub-chunk
-  header.write('fmt ', 12);
-  header.writeUInt32LE(16, 16);
-  header.writeUInt16LE(1, 20);
-  header.writeUInt16LE(numChannels, 22);
-  header.writeUInt32LE(sampleRate, 24);
-  header.writeUInt32LE(byteRate, 28);
-  header.writeUInt16LE(blockAlign, 32);
-  header.writeUInt16LE(bitsPerSample, 34);
-
-  // data sub-chunk
-  header.write('data', 36);
-  header.writeUInt32LE(pcmLength, 40);
-
-  return Buffer.concat([header, pcmBuffer]);
 }
 
 /**
@@ -225,7 +170,7 @@ async function generateAllAudio() {
     for (let i = 0; i < batch.length; i++) {
       const topicId = batch[i];
       const greeting = INITIAL_GREETINGS_CACHE[topicId];
-      const audioFileName = `${topicId}.wav`;
+      const audioFileName = `${topicId}.mp3`;  // Changed from .wav to .mp3
       const audioFilePath = resolve(audioDir, audioFileName);
       const overallIndex = batchIndex * BATCH_SIZE + i + 1;
 
@@ -233,26 +178,23 @@ async function generateAllAudio() {
       console.log(`   Text: "${greeting.speech.text.substring(0, 60)}..."`);
 
       try {
-        // Check if file already exists
+        // Check if file already exists (MP3 format)
         if (existsSync(audioFilePath)) {
           console.log(`   ⏭️  Already exists, skipping...`);
           skippedCount++;
           continue;
         }
 
-        // Generate audio
+        // Generate audio (MP3 format)
         const { audioData, duration } = await generateAudio(
-          greeting.speech.text,
-          greeting.speech.emotion
+          greeting.speech.text
         );
 
-        // Convert to WAV
-        const wavData = convertPCMtoWAV(audioData, 24000);
+        // Save MP3 data directly to file
+        const mp3Buffer = Buffer.from(audioData);
+        writeFileSync(audioFilePath, mp3Buffer);
 
-        // Save to file
-        writeFileSync(audioFilePath, wavData);
-
-        console.log(`   ✅ Generated: ${duration.toFixed(1)}s, ${(wavData.length / 1024).toFixed(0)}KB`);
+        console.log(`   ✅ Generated: ${duration.toFixed(1)}s, ${(mp3Buffer.length / 1024).toFixed(0)}KB`);
         successCount++;
 
         // Rate limiting: Wait between requests (except for last item in last batch)

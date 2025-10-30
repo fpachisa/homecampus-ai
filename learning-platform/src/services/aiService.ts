@@ -18,6 +18,27 @@ export interface AIService {
   generateInitialGreetingWithProblem(topicId: string): Promise<InitialGreetingResponse>;
 
   /**
+   * BATCH GENERATION: Generate initial greetings for multiple topics with variation
+   * Used by scripts/generateAISamples.ts for efficient batch generation
+   * Produces varied greetings to avoid repetitive patterns across topics
+   *
+   * @param topicIds - Array of topic IDs to generate greetings for
+   * @param options - Batch generation options
+   * @param options.variationStyle - 'diverse' for maximum variation, 'consistent' for uniform style
+   * @param options.avoidPatterns - Array of phrases to avoid (e.g., ["I'm excited to dive into"])
+   * @param options.batchSize - Number of topics to process per AI call (default: 20)
+   * @returns Record mapping topicId to InitialGreetingResponse
+   */
+  generateInitialGreetingBatch?(
+    topicIds: string[],
+    options?: {
+      variationStyle?: 'diverse' | 'consistent';
+      avoidPatterns?: string[];
+      batchSize?: number;
+    }
+  ): Promise<Record<string, InitialGreetingResponse>>;
+
+  /**
    * Generate section-specific start question when jumping to a new section
    */
   generateSectionStartQuestion(topicId: string, sectionId: string): Promise<InitialGreetingResponse>;

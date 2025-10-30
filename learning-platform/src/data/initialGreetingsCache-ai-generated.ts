@@ -1,15 +1,20 @@
 /**
- * AI-Generated Initial Greetings Cache
+ * AI-Generated Initial Greetings Cache (BATCH MODE with VARIATION)
  *
- * Generated using Gemini Flash API via scripts/generateAISamples.ts
- * Generated on: 2025-10-29T09:19:40.588Z
- * Topic filter: s3-math-relation (6 subtopics)
+ * Generated using BATCH generation via scripts/generateAISamples.ts
+ * Generated on: 2025-10-30T06:26:29.772Z
+ * Topic filter: s4-math-advanced-trig (5 subtopics)
+ * Generation method: Batch (with variation control)
  *
- * This file contains AI-generated initial greetings for comparison with
- * the handcrafted version in initialGreetingsCache.ts
+ * Features:
+ * - Varied greetings: Anti-repetition instructions prevent formulaic patterns
+ * - Auto-populated audio URLs: Ready for audio file generation
+ * - Complete structure: Matches initialGreetingsCache.ts format exactly
  *
- * Note: This file does NOT include preGeneratedAudioUrl fields since
- * we're not pre-generating audio for these samples.
+ * Next steps:
+ * 1. Review greetings for quality and variety
+ * 2. Copy desired greetings to initialGreetingsCache.ts
+ * 3. Run 'npm run generate-initial-audio' to create audio files
  */
 
 import type { InitialGreetingResponse } from '../types/types';
@@ -18,328 +23,89 @@ export interface CachedGreeting extends Omit<InitialGreetingResponse, 'speech'> 
   speech: {
     text: string;
     emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
+    preGeneratedAudioUrl?: string;
   };
 }
 
 export const INITIAL_GREETINGS_AI_GENERATED: Record<string, CachedGreeting> = {
-  's3-math-relations-functions-fundamentals': {
+  's4-math-advanced-trig-unit-circle': {
     speech: {
-      text: `Welcome! Today we are diving into one of the most fundamental ideas in algebra and calculus: relations and functions. We'll start by defining what a relation is, then we'll learn how to spot a special type of relation called a function, and finally, we'll use a cool trick called the Vertical Line Test to check our graphs! Let's jump right into understanding relations.`,
-      emotion: 'excited'
+      text: `Welcome! We are starting at the very heart of trigonometry: the Unit Circle. This elegant tool connects angles to coordinates, making complex problems visual and manageable.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-unit-circle.wav'
     },
     display: {
-      content: `### Understanding Relations
+      content: `### Understanding the Unit Circle
 
-A **relation** is simply a set of ordered pairs (x, y).
-
-Consider the following finite relation, R, plotted below:
-\$\$R = \\{(-3, 5), (1, 2), (-3, 0), (4, 2)\\}\$\$
-
-1. What is the **Domain** of the relation R?
-2. What is the **Range** of the relation R?`,
+What are the coordinates (x, y) of the point on the unit circle that corresponds to the angle \$\\theta = 90°\$?`,
       showAfterSpeech: true
     },
     mathTool: {
-          "toolName": "cartesianPlane",
-          "parameters": {
-                "points": [
-                      {
-                            "x": -3,
-                            "y": 5,
-                            "label": "(-3, 5)"
-                      },
-                      {
-                            "x": 1,
-                            "y": 2,
-                            "label": "(1, 2)"
-                      },
-                      {
-                            "x": -3,
-                            "y": 0,
-                            "label": "(-3, 0)"
-                      },
-                      {
-                            "x": 4,
-                            "y": 2,
-                            "label": "(4, 2)"
-                      }
-                ],
-                "title": "Relation R",
-                "xMin": -5,
-                "xMax": 5,
-                "yMin": -1,
-                "yMax": 6
-          },
-          "caption": "The points representing the relation R plotted on the coordinate plane."
+          "toolName": "unitCircle",
+          "parameters": {},
+          "caption": "The Unit Circle visualization helps locate coordinates based on angles."
     }
   },
 
-  's3-math-relations-functions-function-notation': {
+  's4-math-advanced-trig-functions-graphs': {
     speech: {
-      text: `Welcome! We are diving into function notation today. This is a super useful concept that helps us describe relationships between variables clearly. We'll start by understanding what f of x actually means, and then we'll practice substituting values into functions to solve them. Ready to jump in?`,
-      emotion: 'excited'
+      text: `Hey there! Get ready to see trigonometry in motion. When we graph sine and cosine, we reveal beautiful, repeating waves that model everything from sound to light.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-functions-graphs.wav'
     },
     display: {
-      content: `### Section 1: Function Notation Basics
+      content: `### The Sine and Cosine Functions
 
-Function notation, written as \$f(x)\$, is a way to name a function and show its input variable.
+For the standard sine function, \$y = \\sin(x)\$:
 
-Consider the notation \$f(x) = 3x - 5\$.
-
-**Question:** What does the letter 'f' represent in this notation?`,
+1. What is the maximum value of the function?`,
       showAfterSpeech: true
     }
   },
 
-  's3-math-relations-functions-domain-range': {
+  's4-math-advanced-trig-transformations': {
     speech: {
-      text: `Hello! I'm excited to dive into one of the most fundamental concepts in function analysis: Domain and Range. These ideas tell us exactly what input values a function can take and what output values it can produce. We'll start by visualizing these concepts on a graph, and then we'll move on to finding the natural domain of functions with restrictions like square roots and denominators. Ready to start?`,
-      emotion: 'excited'
+      text: `Greetings! Think of trigonometric functions as elastic bands. We are going to learn how to stretch, compress, and move these waves precisely. This is where we gain control over the graphs.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-transformations.wav'
     },
     display: {
-      content: `### Introductory Problem
+      content: `### Amplitude and Period Changes
 
-Look at the graph of the function below. It shows a segment of a parabola. 
+Consider the function \$y = 3\\cos(x)\$.
 
-What are the **Domain** (x-values) and the **Range** (y-values) of this function, expressed in interval notation?`,
+How does the coefficient 3 affect the **amplitude** of the graph compared to the standard function \$y = \\cos(x)\$?`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "cartesianPlane",
-          "parameters": {
-                "xMin": -3,
-                "xMax": 3,
-                "yMin": -1,
-                "yMax": 5,
-                "points": [
-                      {
-                            "x": -2,
-                            "y": 4,
-                            "style": "closed",
-                            "label": "(-2, 4)"
-                      },
-                      {
-                            "x": 2,
-                            "y": 4,
-                            "style": "open",
-                            "label": "(2, 4)"
-                      }
-                ],
-                "curves": [
-                      {
-                            "type": "custom",
-                            "points": [
-                                  {
-                                        "x": -2,
-                                        "y": 4
-                                  },
-                                  {
-                                        "x": -1.5,
-                                        "y": 2.25
-                                  },
-                                  {
-                                        "x": -1,
-                                        "y": 1
-                                  },
-                                  {
-                                        "x": -0.5,
-                                        "y": 0.25
-                                  },
-                                  {
-                                        "x": 0,
-                                        "y": 0
-                                  },
-                                  {
-                                        "x": 0.5,
-                                        "y": 0.25
-                                  },
-                                  {
-                                        "x": 1,
-                                        "y": 1
-                                  },
-                                  {
-                                        "x": 1.5,
-                                        "y": 2.25
-                                  },
-                                  {
-                                        "x": 2,
-                                        "y": 4
-                                  }
-                            ],
-                            "equation": "y = x²"
-                      }
-                ],
-                "title": "Function Segment: f(x) = x²",
-                "xLabel": "Domain (x)",
-                "yLabel": "Range (y)"
-          },
-          "caption": "A segment of the parabola y = x² defined from x = -2 (inclusive, closed circle) to x = 2 (exclusive, open circle)."
     }
   },
 
-  's3-math-relations-functions-sign-diagrams': {
+  's4-math-advanced-trig-equations-identities': {
     speech: {
-      text: `Hello! Today we are diving into a super useful tool called Sign Diagrams. These diagrams are fantastic for quickly figuring out where a function is positive, negative, zero, or undefined. This skill is essential for analyzing function behavior, solving inequalities, and even sketching graphs! Let's start with the basics: identifying the critical points.`,
-      emotion: 'excited'
+      text: `Hello! We are stepping into the realm of trigonometric puzzles. Solving these equations requires combining algebra skills with our knowledge of angles and periodicity. Let us start simple.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-equations-identities.wav'
     },
     display: {
-      content: `### Section 1: Creating Sign Diagrams
+      content: `### Solving Trigonometric Equations
 
-A sign diagram is built around **critical points**, which are the values of \$x\$ where the function \$f(x)\$ is either \$0\$ (a zero) or undefined.
+Find all solutions for \$\\theta\$ in the interval \$0° \\le \\theta < 360°\$ for the equation:
 
-Consider the function:
-\$\$f(x) = \\frac{x-3}{x+1}\$\$
-
-**Question:** What are the critical points for this function? (List the values of \$x\$ where \$f(x) = 0\$ or \$f(x)\$ is undefined.)`,
+\$\$\\sin(\\theta) = \\frac{1}{2}\$\$`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "numberLine",
-          "parameters": {
-                "min": -5,
-                "max": 5,
-                "step": 1,
-                "showTickMarks": true,
-                "showTickLabels": true,
-                "title": "Number Line for $f(x)$",
-                "points": [
-                      {
-                            "value": -1,
-                            "style": "none"
-                      },
-                      {
-                            "value": 3,
-                            "style": "none"
-                      }
-                ]
-          },
-          "caption": "These critical points will divide the number line into intervals where the function's sign remains constant."
     }
   },
 
-  's3-math-relations-functions-transformations': {
+  's4-math-advanced-trig-radians': {
     speech: {
-      text: `Hello! I'm so excited to dive into a really fun topic today: Transformations of Graphs! We're going to learn how to take a basic function and move it around, stretch it, or flip it, all by changing its equation. We'll start with the simplest type of transformation: Translations, or just plain old shifts. Are you ready to see how we can move graphs up, down, left, and right?`,
-      emotion: 'excited'
+      text: `Hi! We are transitioning from degrees to a more natural, fundamental way to measure angles: radians. This system is essential for calculus and advanced physics because it links arc length directly to the radius.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-radians.wav'
     },
     display: {
-      content: `## Section 1: Translations (Shifts)
+      content: `### Understanding Radian Measure
 
-We start with the parent function \$f(x) = |x|\$ (blue line).
-
-Consider the transformed function \$g(x) = |x| + 3\$ (red line).
-
-Look at the graph provided. How does the graph of \$g(x)\$ relate to the graph of \$f(x)\$?`,
+If a circle has a radius (\$r\$) of 1 unit, what is the radian measure of the central angle (\$\\theta\$) that subtends an arc length (\$s\$) of 1 unit?`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "cartesianPlane",
-          "parameters": {
-                "xMin": -6,
-                "xMax": 6,
-                "yMin": -1,
-                "yMax": 9,
-                "title": "Vertical Translation",
-                "curves": [
-                      {
-                            "type": "absolute",
-                            "points": [
-                                  {
-                                        "x": -5,
-                                        "y": 5
-                                  },
-                                  {
-                                        "x": -3,
-                                        "y": 3
-                                  },
-                                  {
-                                        "x": 0,
-                                        "y": 0
-                                  },
-                                  {
-                                        "x": 3,
-                                        "y": 3
-                                  },
-                                  {
-                                        "x": 5,
-                                        "y": 5
-                                  }
-                            ],
-                            "equation": "f(x) = |x|",
-                            "color": "blue"
-                      },
-                      {
-                            "type": "absolute",
-                            "points": [
-                                  {
-                                        "x": -5,
-                                        "y": 8
-                                  },
-                                  {
-                                        "x": -3,
-                                        "y": 6
-                                  },
-                                  {
-                                        "x": 0,
-                                        "y": 3
-                                  },
-                                  {
-                                        "x": 3,
-                                        "y": 6
-                                  },
-                                  {
-                                        "x": 5,
-                                        "y": 8
-                                  }
-                            ],
-                            "equation": "g(x) = |x| + 3",
-                            "color": "red"
-                      }
-                ]
-          },
-          "caption": "The parent function $f(x) = |x|$ (blue) is shifted to create $g(x) = |x| + 3$ (red)."
-    }
-  },
-
-  's3-math-relations-functions-absolute-value': {
-    speech: {
-      text: `Welcome! Today we are diving into a really cool concept: the absolute value function, sometimes called the modulus. It sounds fancy, but at its heart, absolute value is simply about distance. We'll start by mastering what absolute value means and how to calculate it, and then we'll move on to graphing those famous V-shapes! Are you ready to jump in?`,
-      emotion: 'excited'
-    },
-    display: {
-      content: `Let's start with the basics. The absolute value of a number represents its distance from zero on the number line. Since distance is always positive or zero, the result of an absolute value operation is never negative.
-
-### Question 1
-
-What is the value of \$|-4|\$?`,
-      showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "numberLine",
-          "parameters": {
-                "min": -6,
-                "max": 6,
-                "step": 1,
-                "points": [
-                      {
-                            "value": -4,
-                            "label": "-4",
-                            "style": "closed",
-                            "color": "#ef4444"
-                      }
-                ],
-                "intervals": [
-                      {
-                            "start": -4,
-                            "end": 0,
-                            "startInclusive": true,
-                            "endInclusive": true,
-                            "color": "#3b82f6"
-                      }
-                ],
-                "highlightIntegers": true
-          },
-          "caption": "The absolute value, $|-4|$, is the distance from -4 to 0. Count the units!"
     }
   }
 };

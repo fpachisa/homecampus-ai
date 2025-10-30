@@ -17,6 +17,7 @@ import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../prompt-library/subject
 import { DIFFERENTIAL_CALCULUS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
 import { S4_MATH_INTEGRATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
 import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
+import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 
 /**
  * Get the subtopics configuration for a given path/category
@@ -49,6 +50,8 @@ export function getSubtopicsForPath(pathId: string): Record<string, any> | null 
       return S4_MATH_INTEGRATION_SUBTOPICS;
     case 's4-math-probability':
       return S4_MATH_PROBABILITY_SUBTOPICS;
+    case 's4-math-advanced-trig':
+      return S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS;
     default:
       return null;
   }

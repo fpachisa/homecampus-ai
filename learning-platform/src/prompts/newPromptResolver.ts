@@ -35,6 +35,7 @@ import { DIFFERENTIAL_CALCULUS_SUBTOPICS, S4_DIFFERENTIAL_CALCULUS_CONFIG } from
 import { S4_MATH_INTEGRATION_SUBTOPICS, INTEGRATION_TUTOR_CUSTOMIZATION, INTEGRATION_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
 import { S4_MATH_PROBABILITY_SUBTOPICS, PROBABILITY_TUTOR_CUSTOMIZATION, PROBABILITY_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
+import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS, S4_ADVANCED_TRIGONOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -79,6 +80,7 @@ function registerBrowserTopics() {
   registerTopics(S4_MATH_INTEGRATION_SUBTOPICS, { tutorCustomization: INTEGRATION_TUTOR_CUSTOMIZATION, availableTools: INTEGRATION_MATH_TOOLS });
   registerTopics(S4_MATH_PROBABILITY_SUBTOPICS, { tutorCustomization: PROBABILITY_TUTOR_CUSTOMIZATION, availableTools: PROBABILITY_MATH_TOOLS });
   registerTopics(S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS, { MATH_TOOLS_AVAILABLE: ['graphingCalculator', 'coordinatePlane'] });
+  registerTopics(S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS, S4_ADVANCED_TRIGONOMETRY_CONFIG);
 
   console.log(`[NewPromptResolver] Registered ${registry.listSubtopicIds().length} subtopics from static imports`);
 }
@@ -328,6 +330,103 @@ export class NewPromptResolver {
       })
       .addSection("CRITICAL", "Return ONLY valid JSON exactly as per OUTPUT SCHEMA even if no mathTool used still provide all fields and keep it blank.")
       .addSection("CRITICAL", "Ask only one question unless the second part is using the answer from the first part.");
+
+    return builder.build();
+  }
+
+  /**
+   * BATCH VERSION: Resolve initial greeting + problem for multiple topics
+   * Generates varied greetings to avoid repetitive patterns
+   *
+   * @param topics - Array of topic configurations with IDs and first sections
+   * @param variationStyle - 'diverse' for maximum variation, 'consistent' for uniform style
+   * @param avoidPatterns - Array of phrases to avoid in greetings
+   * @returns Prompt string for batch generation
+   */
+  resolveInitialGreetingBatch(context: {
+    topics: Array<{
+      topicId: string;
+      displayName: string;
+      topicName: string;
+      firstSection: any;
+      learningObjectives?: string;
+    }>;
+    variationStyle: 'diverse' | 'consistent';
+    avoidPatterns: string[];
+  }): string {
+    const { topics, variationStyle, avoidPatterns } = context;
+
+    // Build topic list for prompt
+    const topicsList = topics.map((t, i) =>
+      `${i + 1}. **${t.topicId}**: ${t.displayName} (First section: "${t.firstSection?.title || 'Introduction'}")`
+    ).join('\n');
+
+    // Build variation instructions based on style
+    const variationInstructions = variationStyle === 'diverse' ? [
+      'Each greeting must have a UNIQUE opening style and sentence structure',
+      'Vary greeting words: use different combinations of Hello/Hi/Hey/Welcome/Greetings',
+      'Vary enthusiasm levels across greetings (some warm, some excited, some encouraging)',
+      'Use different approaches to introduce topics (metaphors, real-world connections, curiosity hooks)',
+      'Avoid ANY repetitive phrases or patterns across greetings',
+      avoidPatterns.length > 0 ? `NEVER use these overused phrases: ${avoidPatterns.map(p => `"${p}"`).join(', ')}` : null,
+      'Each greeting should feel distinctly different while maintaining a warm, supportive teaching voice'
+    ].filter(Boolean) : [
+      'Maintain a consistent warm and friendly tone across all greetings',
+      'Use similar teaching approaches but vary specific wording',
+      avoidPatterns.length > 0 ? `Avoid these phrases: ${avoidPatterns.map(p => `"${p}"`).join(', ')}` : null,
+      'Keep greetings professional and aligned with the tutoring brand'
+    ].filter(Boolean);
+
+    const builder = this.promptLibrary.createBuilder()
+      .addRole("You are creating VARIED initial greetings for a math tutoring platform")
+      .addSection('TASK', `Generate ${topics.length} UNIQUE initial greetings with first problems for the following subtopics:
+
+${topicsList}
+
+Each greeting should:
+1. Warmly introduce the specific subtopic with a UNIQUE style
+2. Present an introductory problem from the first section
+3. Follow all formatting rules and output schema requirements`)
+      .addSection('VARIATION REQUIREMENTS', {
+        style: variationStyle,
+        instructions: variationInstructions,
+        goal: 'Create greetings that feel fresh and unique, NOT repetitive or formulaic'
+      })
+      .addSection('FORMATTING RULES', FORMATTING_RULES)
+      .addSection('OUTPUT SCHEMA', {
+        description: 'Return a JSON object with greetings keyed by topicId',
+        structure: {
+          greetings: {
+            '[topicId]': {
+              speech: {
+                text: 'string - plain text for TTS, NO LaTeX, NO markdown, NO hyphens in acronyms (e.g., "S O H C A H T O A" not "SOH-CAH-TOA")',
+                emotion: 'string - vary emotions: "encouraging", "excited", "warm", "supportive"'
+              },
+              display: {
+                content: 'string - first problem with markdown/LaTeX formatting, section header, clear question',
+                showAfterSpeech: 'boolean - always true',
+                type: '"initial_problem"'
+              },
+              mathTool: {
+                _note: 'OPTIONAL - only if visual tool enhances the first problem',
+                toolName: 'string - tool technical key (e.g., "rightTriangle", "unitCircle")',
+                parameters: 'object - tool-specific parameters',
+                caption: 'string - description of what the visualization shows'
+              }
+            }
+          }
+        }
+      })
+      .addSection('CRITICAL REQUIREMENTS', [
+        'Return ONLY valid JSON matching the output schema exactly',
+        'Include ALL topic IDs in the greetings object',
+        `Ensure MAXIMUM variation - no two greetings should start or sound similar`,
+        'speech.text must be plain text suitable for text-to-speech (no special characters)',
+        'display.content can use markdown and LaTeX with proper escaping',
+        'Use ONE backslash in LaTeX (e.g., "$\\\\theta$" not "$\\\\\\\\theta$")',
+        'mathTool is optional - include only when it genuinely helps understanding',
+        'Ask only one question per greeting unless multi-part questions share context'
+      ]);
 
     return builder.build();
   }

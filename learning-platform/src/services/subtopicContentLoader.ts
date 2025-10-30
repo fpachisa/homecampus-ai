@@ -18,6 +18,7 @@ import { S3_MATH_COORDINATE_GEOMETRY_SUBTOPICS } from '../prompt-library/subject
 import { DIFFERENTIAL_CALCULUS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-differential-calculus';
 import { S4_MATH_INTEGRATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-integration';
 import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
+import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 
 export interface SubtopicContent {
   displayName: string;
@@ -50,6 +51,7 @@ class SubtopicContentLoader {
       ...DIFFERENTIAL_CALCULUS_SUBTOPICS,
       ...S4_MATH_INTEGRATION_SUBTOPICS,
       ...S4_MATH_PROBABILITY_SUBTOPICS,
+      ...S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS,
       // Future topics will be added here
     };
   }

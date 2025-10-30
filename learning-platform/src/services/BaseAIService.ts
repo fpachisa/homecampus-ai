@@ -3,6 +3,7 @@ import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import type { VisualizationData } from '../types/visualization';
 // Use new prompt resolver with clean prompt library architecture
 import { newPromptResolver as promptResolver } from '../prompts/newPromptResolver';
+import { PromptRegistry } from '../prompt-library/registry/prompt-registry';
 import type { AIService } from './aiService';
 import { AIServiceError, AIErrorType } from './aiService';
 import type { AIProvider } from './providers/AIProvider';
@@ -75,6 +76,99 @@ class BaseAIService implements AIService {
 
       throw AIServiceError.fromHttpError(error);
     }
+  }
+
+  /**
+   * BATCH GENERATION: Generate initial greetings for multiple topics with variation
+   * Used by scripts/generateAISamples.ts for efficient batch generation
+   */
+  async generateInitialGreetingBatch(
+    topicIds: string[],
+    options: {
+      variationStyle?: 'diverse' | 'consistent';
+      avoidPatterns?: string[];
+      batchSize?: number;
+    } = {}
+  ): Promise<Record<string, InitialGreetingResponse>> {
+    const batchSize = options.batchSize || 20;
+    const variationStyle = options.variationStyle || 'diverse';
+    const avoidPatterns = options.avoidPatterns || [];
+    const allResults: Record<string, InitialGreetingResponse> = {};
+    const registry = PromptRegistry.getInstance();
+
+    // Process topics in chunks to avoid token limits
+    for (let i = 0; i < topicIds.length; i += batchSize) {
+      const chunk = topicIds.slice(i, i + batchSize);
+      console.log(`[Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(topicIds.length / batchSize)}] Processing ${chunk.length} topics...`);
+
+      try {
+        // Get topic configurations from registry
+        const topics = chunk.map(id => {
+          const config = registry.getTopic(id);
+          if (!config) {
+            throw new Error(`Topic ${id} not found in registry`);
+          }
+
+          const firstSection = config.progressionStructure?.sections?.[0];
+          const objectives = Array.isArray(config.learningObjectives)
+            ? config.learningObjectives.join('; ')
+            : config.learningObjectives;
+
+          return {
+            topicId: id,
+            displayName: config.displayName || config.topicName || id,
+            topicName: config.topicName || id,
+            firstSection: firstSection || { id: 'intro', title: 'Introduction' },
+            learningObjectives: objectives
+          };
+        });
+
+        // Build batch prompt using new resolver
+        const prompt = promptResolver.resolveInitialGreetingBatch({
+          topics,
+          variationStyle,
+          avoidPatterns
+        });
+
+        // Call AI provider with larger token limit for batch
+        const text = await this.provider.generateContent(prompt, 8192);
+
+        if (!text) {
+          throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty batch response from AI');
+        }
+
+        // Parse batch response
+        const parsed = safeParseJSON<{ greetings: Record<string, InitialGreetingResponse> }>(
+          text,
+          ['greetings'],
+          { greetings: {} }
+        );
+
+        if (!parsed.greetings || Object.keys(parsed.greetings).length === 0) {
+          throw new AIServiceError(
+            AIErrorType.UNKNOWN,
+            null,
+            false,
+            'AI returned empty greetings object'
+          );
+        }
+
+        // Validate each greeting
+        Object.entries(parsed.greetings).forEach(([topicId, greeting]) => {
+          validateRequiredKeys(greeting, ['speech', 'display'], `Invalid greeting for ${topicId}`);
+        });
+
+        // Merge results
+        Object.assign(allResults, parsed.greetings);
+        console.log(`  ✓ Generated ${Object.keys(parsed.greetings).length} greetings`);
+
+      } catch (error) {
+        console.error(`[Batch ${Math.floor(i / batchSize) + 1}] Failed:`, error);
+        throw AIServiceError.fromHttpError(error);
+      }
+    }
+
+    return allResults;
   }
 
   async generateSectionStartQuestion(topicId: string, sectionId: string): Promise<InitialGreetingResponse> {

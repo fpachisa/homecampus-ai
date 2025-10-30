@@ -41,6 +41,8 @@ import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathem
 import type { ProbabilityTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-probability';
 import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import type { QuadraticFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
+import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
+import type { AdvancedTrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -111,6 +113,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S4 quadratic functions topic
   if (topicId.startsWith('s4-math-quad-')) {
     return S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS[topicId as QuadraticFunctionsTopicId];
+  }
+  // Check if it's an S4 advanced trigonometry topic
+  if (topicId.startsWith('s4-math-advanced-trig-')) {
+    return S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS[topicId as AdvancedTrigonometryTopicId];
   }
   // Return undefined for unknown topics
   return undefined;
@@ -1216,6 +1222,9 @@ const handleStudentSubmit = async (input: string) => {
     if (topicId.startsWith('s4-math-quad-')) {
       return 'Master quadratic functions and parabolas!';
     }
+    if (topicId.startsWith('s4-math-advanced-trig-')) {
+      return 'Master advanced trigonometry!';
+    }
     return 'Master mathematics step by step!';
   };
 
@@ -1256,6 +1265,9 @@ const handleStudentSubmit = async (input: string) => {
     }
     if (topicId.startsWith('s4-math-quad-')) {
       return '📊';
+    }
+    if (topicId.startsWith('s4-math-advanced-trig-')) {
+      return '∠';
     }
     return '📚';
   };
