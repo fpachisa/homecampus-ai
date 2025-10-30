@@ -217,6 +217,14 @@ export interface PracticeProgress {
 
   lastUpdated: Timestamp;
   createdAt: Timestamp;
+
+  // Weekly stats (for UI display)
+  weeklyStats?: {
+    problemsSolved: number;
+    timeSpentSeconds: number;
+    xpEarned: number;
+    averageAccuracy: number;
+  };
 }
 
 export interface PracticeNodeProgress {

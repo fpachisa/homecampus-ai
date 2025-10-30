@@ -489,21 +489,20 @@ export function pathProgressToFirestore(
     currentCycle: pathProgress.currentCycle,
     nodes: firestoreNodes,
     layerProgress,
-    totalXP: 0, // Not tracked in PathProgress
-    currentLevel: 1, // Not tracked in PathProgress
-    streak: {
-      currentStreak: 0,
-      longestStreak: 0,
-      lastActivityDate: new Date().toISOString().split('T')[0],
-      streakDates: []
-    },
-    achievements: [],
-    sessionHistory: [],
+    totalXP: pathProgress.totalXP,
+    currentLevel: pathProgress.currentLevel,
+    streak: pathProgress.streak,
+    achievements: pathProgress.achievements.map(a => ({
+      ...a,
+      earnedAt: Timestamp.fromDate(a.earnedAt)
+    })),
+    sessionHistory: pathProgress.sessionHistory,
     totalProblemsAttempted: pathProgress.totalProblemsAttempted,
     totalProblemsCorrect: pathProgress.totalProblemsCorrect,
-    totalTimeSpentSeconds: 0, // Not tracked in PathProgress
+    totalTimeSpentSeconds: pathProgress.totalTimeSpentSeconds,
     pathStartedAt: Timestamp.fromDate(pathProgress.pathStartedAt),
     lastUpdated: Timestamp.fromDate(pathProgress.lastUpdated),
-    createdAt: Timestamp.fromDate(pathProgress.pathStartedAt)
+    createdAt: Timestamp.fromDate(pathProgress.pathStartedAt),
+    weeklyStats: pathProgress.weeklyStats
   };
 }
