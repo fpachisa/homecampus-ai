@@ -63,6 +63,65 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
     y: centerY - y * scale // Flip y-axis for mathematical convention
   });
 
+  // Label collision detection
+  const labelPositions: Array<{ x: number; y: number; width: number; height: number }> = [];
+
+  const calculateLabelPosition = (endX: number, endY: number, angle: number, label: string) => {
+    // Estimate label dimensions
+    const charWidth = 11;
+    const labelWidth = label.length * charWidth;
+    const labelHeight = 22;
+
+    // Try multiple positions around the arrow tip (closer to arrow)
+    const offsetDistance = 15; // Reduced from 25 to 15 for closer placement
+    const positions = [
+      // Above-right (perpendicular offset)
+      { x: endX + Math.cos(angle + Math.PI / 2) * offsetDistance, y: endY + Math.sin(angle + Math.PI / 2) * offsetDistance },
+      // Below-left (opposite perpendicular)
+      { x: endX + Math.cos(angle - Math.PI / 2) * offsetDistance, y: endY + Math.sin(angle - Math.PI / 2) * offsetDistance },
+      // Forward along arrow direction
+      { x: endX + Math.cos(angle) * offsetDistance, y: endY + Math.sin(angle) * offsetDistance },
+      // Diagonal above
+      { x: endX + Math.cos(angle + Math.PI / 3) * offsetDistance, y: endY + Math.sin(angle + Math.PI / 3) * offsetDistance },
+      // Diagonal below
+      { x: endX + Math.cos(angle - Math.PI / 3) * offsetDistance, y: endY + Math.sin(angle - Math.PI / 3) * offsetDistance },
+    ];
+
+    // Find first non-colliding position
+    for (const pos of positions) {
+      const bounds = {
+        x: pos.x - labelWidth / 2,
+        y: pos.y - labelHeight / 2,
+        width: labelWidth,
+        height: labelHeight
+      };
+
+      const hasCollision = labelPositions.some(existing => {
+        return !(
+          bounds.x + bounds.width < existing.x ||
+          bounds.x > existing.x + existing.width ||
+          bounds.y + bounds.height < existing.y ||
+          bounds.y > existing.y + existing.height
+        );
+      });
+
+      if (!hasCollision) {
+        labelPositions.push(bounds);
+        return pos;
+      }
+    }
+
+    // Fallback to first position
+    const fallback = positions[0];
+    labelPositions.push({
+      x: fallback.x - labelWidth / 2,
+      y: fallback.y - labelHeight / 2,
+      width: labelWidth,
+      height: labelHeight
+    });
+    return fallback;
+  };
+
   // Draw arrow
   const drawArrow = (
     startX: number,
@@ -88,9 +147,10 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
     const arrowX2 = endX - arrowSize * Math.cos(angle + Math.PI / 6);
     const arrowY2 = endY - arrowSize * Math.sin(angle + Math.PI / 6);
 
-    // Label position (midpoint, slightly offset)
-    const labelX = (startX + endX) / 2 + 15;
-    const labelY = (startY + endY) / 2 - 10;
+    // Label position at end of arrow with smart offset
+    const labelPos = calculateLabelPosition(endX, endY, angle, label);
+    const labelX = labelPos.x;
+    const labelY = labelPos.y;
 
     return (
       <g key={`arrow-${label}-${startX}-${startY}`}>
@@ -114,6 +174,8 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
             fontSize="18"
             fontWeight="bold"
             fill={color}
+            textAnchor="middle"
+            dominantBaseline="middle"
             className="select-none"
           >
             {label}
@@ -199,24 +261,43 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
     const elements = [];
 
     if (operation === 'none' || operation === 'scalar') {
-      // Draw each vector from origin
+      // Group identical vectors together
+      const vectorGroups = new Map<string, { vectors: Vector[], indices: number[] }>();
+
       vectorList.forEach((v, idx) => {
+        const key = `${v.x},${v.y}`;
+        if (!vectorGroups.has(key)) {
+          vectorGroups.set(key, { vectors: [], indices: [] });
+        }
+        vectorGroups.get(key)!.vectors.push(v);
+        vectorGroups.get(key)!.indices.push(idx);
+      });
+
+      // Draw each unique vector with combined labels
+      vectorGroups.forEach((group) => {
+        const v = group.vectors[0];
         const start = toSVG(0, 0);
         const end = toSVG(v.x, v.y);
         const colors = ['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6'];
-        const color = colors[idx % colors.length];
+
+        // Use first color, or mix colors if multiple vectors
+        const color = colors[group.indices[0] % colors.length];
+
+        // Combine labels with commas if multiple identical vectors
+        const combinedLabel = group.vectors.map(vec => vec.label).join(', ');
 
         elements.push(
-          drawArrow(start.x, start.y, end.x, end.y, color, v.label)
+          drawArrow(start.x, start.y, end.x, end.y, color, combinedLabel)
         );
 
-        // Show components if requested
+        // Show components if requested (only for first vector in group)
         if (showComponents && v.x !== 0 && v.y !== 0) {
           const componentColor = '#94a3b8';
+          const firstIdx = group.indices[0];
           // X component
           elements.push(
             <line
-              key={`comp-x-${idx}`}
+              key={`comp-x-${firstIdx}`}
               x1={start.x}
               y1={start.y}
               x2={toSVG(v.x, 0).x}
@@ -230,7 +311,7 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
           // Y component
           elements.push(
             <line
-              key={`comp-y-${idx}`}
+              key={`comp-y-${firstIdx}`}
               x1={toSVG(v.x, 0).x}
               y1={toSVG(v.x, 0).y}
               x2={end.x}
@@ -244,7 +325,7 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
           // Labels for components
           elements.push(
             <text
-              key={`comp-label-x-${idx}`}
+              key={`comp-label-x-${firstIdx}`}
               x={(start.x + toSVG(v.x, 0).x) / 2}
               y={start.y + 20}
               fontSize="14"
@@ -257,7 +338,7 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
           );
           elements.push(
             <text
-              key={`comp-label-y-${idx}`}
+              key={`comp-label-y-${firstIdx}`}
               x={toSVG(v.x, 0).x + 20}
               y={(toSVG(v.x, 0).y + end.y) / 2}
               fontSize="14"
