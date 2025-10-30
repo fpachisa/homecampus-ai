@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AvatarTest from '../components/AvatarTest';
 import QuestionPreviewPage from '../components/QuestionPreviewPage';
+import VisualizerTestPage from '../pages/VisualizerTestPage';
 // Import other dev components as needed
 
 /**
@@ -31,14 +32,9 @@ const AvatarTestPage = () => {
   return <AvatarTest />;
 };
 
-// Math Visualizer Gallery
+// Math Visualizer Testing Lab
 const VisualizerGallery = () => {
-  return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
-      <h1 className="text-3xl font-bold mb-6">Math Visualizer Gallery</h1>
-      <p className="text-gray-300">Gallery of all available math visualizers - TODO: Implement</p>
-    </div>
-  );
+  return <VisualizerTestPage />;
 };
 
 // Question Preview Tool - uses QuestionPreviewPage component
@@ -51,7 +47,7 @@ const DevHome = () => {
   const devTools = [
     { path: '/dev/tts', name: 'TTS Testing', description: 'Test text-to-speech functionality' },
     { path: '/dev/avatar', name: 'Avatar Testing', description: 'Test avatar animations and interactions' },
-    { path: '/dev/visualizers', name: 'Math Visualizers', description: 'Gallery of all math visualization tools' },
+    { path: '/dev/visualizers', name: 'Math Visualizer Testing Lab', description: 'Test all math visualizers with AI-generated questions' },
     { path: '/dev/preview', name: 'Question Preview', description: 'Preview and test question generation' },
   ];
 
