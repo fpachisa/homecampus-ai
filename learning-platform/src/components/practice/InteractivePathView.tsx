@@ -9,9 +9,15 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
+import { useAuth } from '../../contexts/AuthContext';
 import type { PathNode, PathLayer, PathProgress } from '../../types/practice';
 import { yamlPathLoader } from '../../services/yamlPathLoader';
 import { pathProgressService } from '../../services/pathProgressService';
+import {
+  loadPracticeProgress,
+  savePracticeProgress,
+  pathProgressToFirestore
+} from '../../services/firestoreProgressService';
 import { generateMeanderingPath } from '../../utils/pathGeometryUtils';
 import { CircularPathNode } from './CircularPathNode';
 import { StatsPanel } from './StatsPanel';
@@ -27,6 +33,7 @@ interface InteractivePathViewProps {
 export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   const { pathId } = useParams<{ pathId: string }>();
   const { goToPractice, goToHome } = useAppNavigation();
+  const { user } = useAuth();
   const category = pathId!; // pathId is the category
   const { theme } = useTheme();
   const [nodes, setNodes] = useState<PathNode[]>([]);
@@ -62,17 +69,85 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       const loadedNodes = await yamlPathLoader.loadUnifiedPath(category);
       setNodes(loadedNodes);
 
-      // Load or initialize progress
-      let pathProgress = pathProgressService.loadUnifiedProgress(category);
+      let pathProgress: PathProgress | null = null;
 
+      // PRIORITY 1: Try loading from Firestore (if authenticated)
+      if (user?.uid) {
+        try {
+          const firestoreProgress = await loadPracticeProgress(user.uid, category);
+
+          if (firestoreProgress) {
+            // Convert Firestore format to PathProgress format
+            pathProgress = {
+              category: firestoreProgress.topicId,
+              currentNodeId: firestoreProgress.currentNodeId,
+              currentCycle: firestoreProgress.currentCycle,
+              nodes: {},
+              layerProgress: firestoreProgress.layerProgress,
+              totalProblemsAttempted: firestoreProgress.totalProblemsAttempted,
+              totalProblemsCorrect: firestoreProgress.totalProblemsCorrect,
+              pathStartedAt: firestoreProgress.pathStartedAt.toDate(),
+              lastUpdated: firestoreProgress.pathStartedAt.toDate(),
+              totalXP: firestoreProgress.totalXP,
+              currentLevel: firestoreProgress.currentLevel,
+              streak: firestoreProgress.streak,
+              // Convert achievements: Timestamp -> Date
+              achievements: firestoreProgress.achievements.map(a => ({
+                ...a,
+                earnedAt: a.earnedAt.toDate()
+              })),
+              sessionHistory: firestoreProgress.sessionHistory,
+              totalTimeSpentSeconds: firestoreProgress.totalTimeSpentSeconds,
+            };
+
+            // Convert node progress (include nodeId)
+            Object.entries(firestoreProgress.nodes).forEach(([nodeId, firestoreNode]) => {
+              pathProgress!.nodes[nodeId] = {
+                nodeId,
+                problemsAttempted: firestoreNode.problemsAttempted,
+                problemsCorrect: firestoreNode.problemsCorrect,
+                status: firestoreNode.status,
+                completedAt: firestoreNode.completedAt?.toDate(),
+              };
+            });
+
+            console.log('✅ Loaded progress from Firestore');
+          }
+        } catch (firestoreErr) {
+          console.warn('Failed to load from Firestore, falling back to localStorage:', firestoreErr);
+        }
+      }
+
+      // PRIORITY 2: Fall back to localStorage if Firestore had no data
+      if (!pathProgress) {
+        pathProgress = pathProgressService.loadUnifiedProgress(category);
+        if (pathProgress) {
+          console.log('📂 Loaded progress from localStorage');
+        }
+      }
+
+      // PRIORITY 3: Initialize new progress if neither source had data
       if (!pathProgress) {
         pathProgress = pathProgressService.initializeUnifiedProgress(category, loadedNodes);
-        pathProgressService.saveUnifiedProgress(category, pathProgress);
+        console.log('🆕 Initialized new progress');
       } else {
+        // Sync progress with current nodes (handles new nodes added to path)
         const wasUpdated = pathProgressService.syncUnifiedProgress(pathProgress, loadedNodes);
         if (wasUpdated) {
-          pathProgressService.saveUnifiedProgress(category, pathProgress);
+          console.log('🔄 Synced progress with current path structure');
         }
+      }
+
+      // Save to both localStorage and Firestore
+      pathProgressService.saveUnifiedProgress(category, pathProgress);
+
+      if (user?.uid) {
+        const displayName = category.replace(/^s\d+-math-/i, '');
+        const firestoreProgress = pathProgressToFirestore(pathProgress, category, displayName, loadedNodes);
+        await savePracticeProgress(user.uid, category, firestoreProgress);
+        console.log('💾 Saved progress to both localStorage and Firestore');
+      } else {
+        console.log('💾 Saved progress to localStorage only (not authenticated)');
       }
 
       setProgress(pathProgress);
