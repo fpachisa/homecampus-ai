@@ -683,22 +683,24 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     if (pathProgress) {
       console.log('✓ Found existing unified progress');
 
-      // Load all nodes (needed for recording attempts and completion)
+      // Load all nodes (needed for completion check)
       const allNodes = await pathConfigLoader.loadUnifiedPathNodes(category);
 
-      // Record attempts
-      session.attempts.forEach(attempt => {
-        // Calculate if this was a first try (hintsUsed = 0 means first attempt)
-        const isFirstTry = attempt.hintsUsed === 0;
-        pathProgressService.recordUnifiedAttempt(pathProgress!, node.id, attempt.isCorrect, allNodes, isFirstTry);
-        console.log(`  - Recorded attempt: ${attempt.isCorrect ? 'correct' : 'incorrect'}${isFirstTry ? ' (first try)' : ''}`);
-      });
+      // NOTE: We do NOT re-record attempts here because they are already tracked in real-time
+      // in handleSubmitAnswer (line 494). Re-recording would cause duplicate counting.
+      // Each problem is saved to both localStorage and Firestore immediately after submission.
 
-      // Check if node is complete
+      // Check if node is complete (it may already be marked complete from real-time tracking)
       const nodeProgress = pathProgress.nodes[node.id];
       if (nodeProgress && nodeProgress.problemsAttempted >= node.problemsRequired) {
         console.log(`✓ Node complete! (${nodeProgress.problemsAttempted}/${node.problemsRequired})`);
-        pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes);
+
+        // Only complete the node if it's not already marked as completed
+        if (nodeProgress.status !== 'completed') {
+          pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes);
+        } else {
+          console.log('  Node already marked as completed');
+        }
       } else {
         console.log(`  Node in progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired}`);
       }
