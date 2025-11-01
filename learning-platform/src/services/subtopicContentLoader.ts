@@ -22,6 +22,7 @@ import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subje
 import { S4_VECTORS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
+import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
 
 export interface SubtopicContent {
   displayName: string;
@@ -42,6 +43,7 @@ class SubtopicContentLoader {
       // S1 Math topics
       ...S1_MATH_FACTORS_MULTIPLES_SUBTOPICS,
       ...S1_MATH_REAL_NUMBERS_SUBTOPICS,
+      ...S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

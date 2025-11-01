@@ -23,6 +23,10 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's1/math/real-numbers/MultiplicationDivisionIntegers': () => import('../notes/s1/math/real-numbers/MultiplicationDivisionIntegers'),
   's1/math/real-numbers/RationalIrrationalNumbers': () => import('../notes/s1/math/real-numbers/RationalIrrationalNumbers'),
   's1/math/real-numbers/OperationsRealNumbers': () => import('../notes/s1/math/real-numbers/OperationsRealNumbers'),
+  // S1 Approximation & Estimation notes
+  's1/math/approximation-estimation/RoundingDecimalPlaces': () => import('../notes/s1/math/approximation-estimation/RoundingDecimalPlaces'),
+  's1/math/approximation-estimation/SignificantFigures': () => import('../notes/s1/math/approximation-estimation/SignificantFigures'),
+  's1/math/approximation-estimation/EstimationTechniques': () => import('../notes/s1/math/approximation-estimation/EstimationTechniques'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

@@ -49,6 +49,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       subject: 'Mathematics',
     },
     {
+      id: 's1-approximation-estimation',
+      name: 'Approximation & Estimation',
+      icon: '≈',
+      description: 'Master rounding, significant figures, and estimation techniques for real-world problem solving',
+      subtopicCount: 3,
+      isActive: true,
+      category: 's1-math-approximation-estimation',
+      grade: 'Secondary 1',
+      subject: 'Mathematics',
+    },
+    {
       id: 's1-algebra-basics',
       name: 'Algebra Basics',
       icon: '🔤',

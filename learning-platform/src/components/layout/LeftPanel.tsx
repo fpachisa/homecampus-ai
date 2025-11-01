@@ -42,6 +42,8 @@ import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../../prompt-library/subjec
 import type { FactorsMultiplesTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 import type { RealNumbersTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
+import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
+import type { ApproximationEstimationTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -215,6 +217,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 'fractions') return 'Fractions';
   if (category === 's1-math-factors-multiples') return 'Factors & Multiples';
   if (category === 's1-math-real-numbers') return 'Real Numbers';
+  if (category === 's1-math-approximation-estimation') return 'Approximation & Estimation';
   if (category === 's3-math-trigonometry') return 'Trigonometry';
   if (category === 's3-math-circle-geometry') return 'Circle Geometry';
   if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
@@ -244,7 +247,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   // Derive category from pathId
   // Import helper to check if it's a valid path
   const knownPaths = [
-    's1-math-factors-multiples', 's1-math-real-numbers',
+    's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation',
     's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
@@ -301,6 +304,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 's1-math-real-numbers') {
       return Object.entries(S1_MATH_REAL_NUMBERS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as RealNumbersTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's1-math-approximation-estimation') {
+      return Object.entries(S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as ApproximationEstimationTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
