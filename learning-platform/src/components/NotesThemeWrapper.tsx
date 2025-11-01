@@ -231,34 +231,34 @@ const NotesThemeWrapper: React.FC<NotesThemeWrapperProps> = ({ children }) => {
 
     /* Gradients - keep as-is, they work in both themes */
 
-    /* Ensure text in colored boxes is visible */
-    .notes-theme-wrapper .bg-purple-50 *,
-    .notes-theme-wrapper .bg-purple-100 * {
+    /* Ensure text in colored boxes is visible - BUT DON'T override KaTeX! */
+    .notes-theme-wrapper .bg-purple-50 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *),
+    .notes-theme-wrapper .bg-purple-100 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #e9d5ff !important; /* purple-200 */
     }
 
-    .notes-theme-wrapper .bg-blue-50 *,
-    .notes-theme-wrapper .bg-blue-100 * {
+    .notes-theme-wrapper .bg-blue-50 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *),
+    .notes-theme-wrapper .bg-blue-100 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #dbeafe !important; /* blue-100 */
     }
 
-    .notes-theme-wrapper .bg-green-50 *,
-    .notes-theme-wrapper .bg-green-100 * {
+    .notes-theme-wrapper .bg-green-50 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *),
+    .notes-theme-wrapper .bg-green-100 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #dcfce7 !important; /* green-100 */
     }
 
-    .notes-theme-wrapper .bg-yellow-50 *,
-    .notes-theme-wrapper .bg-yellow-100 * {
+    .notes-theme-wrapper .bg-yellow-50 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *),
+    .notes-theme-wrapper .bg-yellow-100 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #fef9c3 !important; /* yellow-100 */
     }
 
-    .notes-theme-wrapper .bg-red-50 *,
-    .notes-theme-wrapper .bg-red-100 * {
+    .notes-theme-wrapper .bg-red-50 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *),
+    .notes-theme-wrapper .bg-red-100 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #fee2e2 !important; /* red-100 */
     }
 
-    .notes-theme-wrapper .bg-orange-50 *,
-    .notes-theme-wrapper .bg-orange-100 * {
+    .notes-theme-wrapper .bg-orange-50 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *),
+    .notes-theme-wrapper .bg-orange-100 *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #ffedd5 !important; /* orange-100 */
     }
 
@@ -393,11 +393,11 @@ const NotesThemeWrapper: React.FC<NotesThemeWrapperProps> = ({ children }) => {
     }
 
     /* ========================================
-       TEXT IN GRADIENT BOXES (Fix formula text)
+       TEXT IN GRADIENT BOXES (Fix formula text) - DON'T override KaTeX!
        ======================================== */
 
     /* All text in red gradient boxes */
-    .notes-theme-wrapper [class*="from-red"][class*="to-red"] * {
+    .notes-theme-wrapper [class*="from-red"][class*="to-red"] *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #fef2f2 !important; /* red-50 - very light */
     }
 
@@ -407,7 +407,7 @@ const NotesThemeWrapper: React.FC<NotesThemeWrapperProps> = ({ children }) => {
     }
 
     /* All text in blue gradient boxes */
-    .notes-theme-wrapper [class*="from-blue"][class*="to-blue"] * {
+    .notes-theme-wrapper [class*="from-blue"][class*="to-blue"] *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #eff6ff !important; /* blue-50 - very light */
     }
 
@@ -417,7 +417,7 @@ const NotesThemeWrapper: React.FC<NotesThemeWrapperProps> = ({ children }) => {
     }
 
     /* All text in green gradient boxes */
-    .notes-theme-wrapper [class*="from-green"][class*="to-green"] * {
+    .notes-theme-wrapper [class*="from-green"][class*="to-green"] *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #f0fdf4 !important; /* green-50 - very light */
     }
 
@@ -427,7 +427,7 @@ const NotesThemeWrapper: React.FC<NotesThemeWrapperProps> = ({ children }) => {
     }
 
     /* All text in purple gradient boxes */
-    .notes-theme-wrapper [class*="from-purple"][class*="to-purple"] * {
+    .notes-theme-wrapper [class*="from-purple"][class*="to-purple"] *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #faf5ff !important; /* purple-50 - very light */
     }
 
@@ -437,7 +437,7 @@ const NotesThemeWrapper: React.FC<NotesThemeWrapperProps> = ({ children }) => {
     }
 
     /* All text in yellow gradient boxes */
-    .notes-theme-wrapper [class*="from-yellow"][class*="to-yellow"] * {
+    .notes-theme-wrapper [class*="from-yellow"][class*="to-yellow"] *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #fefce8 !important; /* yellow-50 - very light */
     }
 
@@ -447,7 +447,7 @@ const NotesThemeWrapper: React.FC<NotesThemeWrapperProps> = ({ children }) => {
     }
 
     /* All text in orange gradient boxes */
-    .notes-theme-wrapper [class*="from-orange"][class*="to-orange"] * {
+    .notes-theme-wrapper [class*="from-orange"][class*="to-orange"] *:not(.katex):not(.katex *):not(.math-renderer):not(.math-renderer *) {
       color: #ffedd5 !important; /* orange-100 - very light */
     }
 

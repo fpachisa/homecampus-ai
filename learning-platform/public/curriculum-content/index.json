@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "filename": "S4/Maths/s4-math-vectors.yaml",
+      "displayName": "S4 - Vectors",
+      "category": "s4-math-vectors"
+    },
+    {
       "filename": "S4/Maths/s4-math-advanced-trigonometry.yaml",
       "displayName": "S4 - Advanced Trigonometry",
       "category": "s4-math-advanced-trigonometry"

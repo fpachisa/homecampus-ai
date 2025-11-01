@@ -1,0 +1,235 @@
+```json
+{
+  "questions": [
+    {
+      "question": "",
+      "title": "Logarithmic and Exponential Equations",
+      "parts": [
+        {
+          "label": "a-i",
+          "text": " Find the integer value of $\\log_{10}100 - \\ln e$.",
+          "answer": "1",
+          "avatarIntro": "Let's tackle this logarithm problem! Remember the definitions of common and natural logarithms to simplify the expression.",
+          "stepByStepGuideline": [
+            "Recall the definition of logarithms: $\\log_b M = k$ means $b^k = M$. For common logarithms, $\\log_{10}100$ means "what power do we raise 10 to get 100?".",
+            "We know that $10^2 = 100$, so $\\log_{10}100 = 2$.",
+            "Recall the definition of the natural logarithm: $\\ln e$ means $\\log_e e$. "What power do we raise e to get e?".",
+            "We know that $e^1 = e$, so $\\ln e = 1$.",
+            "Substitute these values back into the expression: $2 - 1$.",
+            "Calculate the final integer value: $2 - 1 = 1$.",
+            "The final answer is 1."
+          ]
+        },
+        {
+          "label": "a-ii",
+          "text": " Hence, find the integer value of $\\log_{10}(\\log_{10}100 - \\ln e)$.",
+          "answer": "0",
+          "avatarIntro": "Building on the previous part, you can now evaluate this nested logarithm. Use your result from (a-i) to simplify this expression.",
+          "stepByStepGuideline": [
+            "From part (a-i), we found that $\\log_{10}100 - \\ln e = 1$.",
+            "Substitute this result into the given expression: $\\log_{10}(1)$.",
+            "Recall the logarithm property that states $\\log_b 1 = 0$ for any valid base $b > 0, b \\neq 1$. This is because any non-zero base raised to the power of 0 equals 1.",
+            "Therefore, $\\log_{10}(1) = 0$.",
+            "The final integer value is 0."
+          ]
+        },
+        {
+          "label": "b",
+          "text": "Given that $2\\log_3 (x-1)-\\log_3 (y+2)=2$, express y in terms of x.",
+          "answer": "$y = (x-1)^2-2$",
+          "avatarIntro": "This question asks you to rearrange a logarithmic equation. Use the properties of logarithms to combine the terms and then isolate y.",
+          "stepByStepGuideline": [
+            "Apply the power rule of logarithms, $k \\log_b M = \\log_b M^k$, to the first term: $2\\log_3 (x-1) = \\log_3 (x-1)^2$.",
+            "The equation becomes $\\log_3 (x-1)^2 - \\log_3 (y+2) = 2$.",
+            "Apply the quotient rule of logarithms, $\\log_b M - \\log_b N = \\log_b \\left(\\frac{M}{N}\\right)$: $\\log_3 \\left(\\frac{(x-1)^2}{y+2}\\right) = 2$.",
+            "Convert the logarithmic equation into its equivalent exponential form. If $\\log_b M = k$, then $b^k = M$. Here, $b=3$, $k=2$, and $M=\\frac{(x-1)^2}{y+2}$.",
+            "So, $3^2 = \\frac{(x-1)^2}{y+2}$, which simplifies to $9 = \\frac{(x-1)^2}{y+2}$.",
+            "Now, solve for y. Multiply both sides by $(y+2)$: $9(y+2) = (x-1)^2$.",
+            "Divide by 9: $y+2 = \\frac{(x-1)^2}{9}$. This answer format is different from the provided answer $y = (x-1)^2-2$. Let me recheck the prompt for the original question, it was $2\\log_3 (x-1)-\\log_3 (y+2)=2$. The provided answer $y = (x-1)^2-2$ implies that the RHS of the original equation was $(x-1)^2$ instead of 9. Let's re-evaluate. If $y+2 = (x-1)^2$, then $y = (x-1)^2-2$. This implies that the step $3^2$ was not used. Instead, it was $3^2=9$. The provided answer $y = (x-1)^2-2$ means that the $3^2$ was not simplified. Let's re-evaluate the question with the strict assumption that $3^2 = 9$. My answer is $y = \\frac{(x-1)^2}{9}-2$. This means the provided answer is INCORRECT.",
+            "Let's re-write the steps and indicate the answer is INCORRECT based on calculation."
+          ],
+          "stepByStepGuideline-REVISED": [
+            "Apply the power rule of logarithms, $k \\log_b M = \\log_b M^k$, to the first term: $2\\log_3 (x-1) = \\log_3 (x-1)^2$.",
+            "The equation becomes $\\log_3 (x-1)^2 - \\log_3 (y+2) = 2$.",
+            "Apply the quotient rule of logarithms, $\\log_b M - \\log_b N = \\log_b \\left(\\frac{M}{N}\\right)$: $\\log_3 \\left(\\frac{(x-1)^2}{y+2}\\right) = 2$.",
+            "Convert the logarithmic equation into its equivalent exponential form. If $\\log_b M = k$, then $b^k = M$. Here, $b=3$, $k=2$, and $M=\\frac{(x-1)^2}{y+2}$.",
+            "So, $3^2 = \\frac{(x-1)^2}{y+2}$, which simplifies to $9 = \\frac{(x-1)^2}{y+2}$.",
+            "Multiply both sides by $(y+2)$: $9(y+2) = (x-1)^2$.",
+            "Divide by 9: $y+2 = \\frac{(x-1)^2}{9}$.",
+            "Isolate y by subtracting 2 from both sides: $y = \\frac{(x-1)^2}{9} - 2$.",
+            "The calculated answer $y = \\frac{(x-1)^2}{9} - 2$ does not match the provided answer $y = (x-1)^2-2$. Therefore, the provided answer is incorrect."
+          ],
+          "answer-REVISED": "$y = \\frac{(x-1)^2}{9}-2$ (answer-INCORRECT)"
+        }
+      ]
+    },
+    {
+      "question": "",
+      "title": "Exponential Expression and Equation",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Simplify $5^{5x+2}\\times 125^x$ to the form $5^{ax+b}$, where a and b are constants to be determined.",
+          "answer": "$5^{8x+2}$",
+          "avatarIntro": "Let's simplify this exponential expression. Remember to express all terms with the same base before combining them.",
+          "stepByStepGuideline": [
+            "The goal is to express both terms with a base of 5. The first term, $5^{5x+2}$, is already in this form.",
+            "Express 125 as a power of 5: $125 = 5^3$.",
+            "Substitute this into the second term: $125^x = (5^3)^x$.",
+            "Apply the exponent rule $(b^m)^n = b^{mn}$: $(5^3)^x = 5^{3x}$.",
+            "Now substitute this back into the original expression: $5^{5x+2} \\times 5^{3x}$.",
+            "Apply the exponent rule $b^m \\times b^n = b^{m+n}$: $5^{5x+2} \\times 5^{3x} = 5^{(5x+2) + 3x}$.",
+            "Combine the terms in the exponent: $5x + 3x + 2 = 8x + 2$.",
+            "The simplified form is $5^{8x+2}$. Comparing this to $5^{ax+b}$, we find $a=8$ and $b=2$."
+          ]
+        },
+        {
+          "label": "b",
+          "text": "Hence, solve the equation $5^{5x+2}\\times 125^x = \\sqrt{5}$.",
+          "answer": "$x = -\\frac{3}{16}$",
+          "avatarIntro": "Now that you've simplified the expression in part (a), you can use it to solve this exponential equation. Remember to express both sides with the same base.",
+          "stepByStepGuideline": [
+            "From part (a), we simplified the left side of the equation to $5^{8x+2}$. So the equation becomes $5^{8x+2} = \\sqrt{5}$.",
+            "Express the right side, $\\sqrt{5}$, as a power of 5. Recall that $\\sqrt{b} = b^{1/2}$.",
+            "So, $\\sqrt{5} = 5^{1/2}$.",
+            "Now the equation is $5^{8x+2} = 5^{1/2}$.",
+            "Since the bases are the same, we can equate the exponents: $8x+2 = \\frac{1}{2}$.",
+            "To solve for x, first subtract 2 from both sides: $8x = \\frac{1}{2} - 2$.",
+            "Calculate $\\frac{1}{2} - 2 = \\frac{1}{2} - \\frac{4}{2} = -\\frac{3}{2}$. So, $8x = -\\frac{3}{2}$.",
+            "Divide both sides by 8: $x = \\frac{-3/2}{8} = -\\frac{3}{2 \\times 8} = -\\frac{3}{16}$.",
+            "The final answer is $x = -\\frac{3}{16}$."
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Crystal Blue lake originally had no fishes. A number of fishes were introduced to the lake and their population is modelled by $P(t) = 30\\times (1.2)^{t/10} + 10$, where t is the time in months since the fishes were introduced.",
+      "title": "Exponential Population Model Analysis",
+      "parts": [
+        {
+          "label": "a-i",
+          "text": "Find the number of fishes which were introduced to the lake;",
+          "answer": "40",
+          "avatarIntro": "This problem is about an increasing fish population. To find the initial number of fishes, think about what 't' represents at the very beginning.",
+          "stepByStepGuideline": [
+            "The number of fishes introduced to the lake corresponds to the initial population at time $t=0$ months.",
+            "Substitute $t=0$ into the given population model: $P(0) = 30\\times (1.2)^{0/10} + 10$.",
+            "Simplify the exponent: $0/10 = 0$. So, $P(0) = 30\\times (1.2)^0 + 10$.",
+            "Recall that any non-zero number raised to the power of 0 is 1: $(1.2)^0 = 1$.",
+            "Calculate $P(0) = 30\\times 1 + 10 = 30 + 10 = 40$.",
+            "The number of fishes introduced to the lake was 40."
+          ]
+        },
+        {
+          "label": "a-ii",
+          "text": "Find the number of fishes that are in the lake after 5 months.",
+          "answer": "43 (answer-INCORRECT)",
+          "avatarIntro": "Now let's find the population after a specific time. Substitute the given time into the population model and calculate the result.",
+          "stepByStepGuideline": [
+            "We need to find the population after $t=5$ months. Substitute $t=5$ into the population model: $P(5) = 30\\times (1.2)^{5/10} + 10$.",
+            "Simplify the exponent: $5/10 = 0.5$. So, $P(5) = 30\\times (1.2)^{0.5} + 10$.",
+            "Calculate $(1.2)^{0.5}$, which is $\\sqrt{1.2} \\approx 1.095445$.",
+            "Substitute this value back: $P(5) \\approx 30\\times 1.095445 + 10$.",
+            "Calculate the product: $30\\times 1.095445 \\approx 32.86335$.",
+            "Add 10: $P(5) \\approx 32.86335 + 10 = 42.86335$.",
+            "Rounding to the nearest whole number of fishes, we get 43 fishes.",
+            "The calculated answer is 43, which does not match the provided answer of 22. Therefore, the provided answer is incorrect based on the given formula."
+          ]
+        },
+        {
+          "label": "b",
+          "text": "Find the time, in months, for the population to decrease to 15 fishes. Give your answer to the nearest month.",
+          "answer": "Impossible with given model (answer-INCORRECT)",
+          "avatarIntro": "This part asks about a decrease in population. Let's analyze the model to see if such a decrease is possible, and if so, how to find the time.",
+          "stepByStepGuideline": [
+            "The given population model is $P(t) = 30\\times (1.2)^{t/10} + 10$.",
+            "From part (a-i), we found the initial population at $t=0$ is $P(0)=40$.",
+            "The base of the exponential term is $1.2$. Since $1.2 > 1$, the term $(1.2)^{t/10}$ represents exponential growth. This means as time $t$ increases, the population $P(t)$ will increase.",
+            "The function $P(t)$ will always be greater than or equal to its initial value, 40 (for $t \\ge 0$). In fact, the term $30\\times (1.2)^{t/10}$ will always be positive and increasing from 30 (at $t=0$).",
+            "Therefore, $P(t)$ will always be greater than or equal to $30 \\times 1 + 10 = 40$.",
+            "A population of 15 fishes is less than the initial population of 40 fishes. Since the model describes population growth (or at least constant at $t=0$), it is impossible for the population to decrease to 15 fishes. The model itself predicts increasing values for $t>0$.",
+            "The problem statement for this part conflicts with the provided population model.",
+            "The calculated answer is impossible with the given model, which does not match the provided answer of 10. Therefore, the provided answer is incorrect."
+          ]
+        }
+      ]
+    },
+    {
+      "question": "It is given that $\\log_a 2=x$ and $\\log_a 5=y$.",
+      "title": "Logarithmic Expression Manipulation",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Express $\\log_a \\left(\\frac{10}{a^3}\\right)$ in terms of x and/or y.",
+          "answer": "$x+y-3$",
+          "avatarIntro": "This question tests your knowledge of logarithm properties. Remember how to expand logarithmic expressions involving multiplication, division, and powers.",
+          "stepByStepGuideline": [
+            "Start by applying the quotient rule of logarithms: $\\log_a \\left(\\frac{M}{N}\\right) = \\log_a M - \\log_a N$.",
+            "So, $\\log_a \\left(\\frac{10}{a^3}\\right) = \\log_a (10) - \\log_a (a^3)$.",
+            "Next, apply the product rule of logarithms to $\\log_a (10)$: $\\log_a (M \\times N) = \\log_a M + \\log_a N$. Since $10 = 2 \\times 5$, we have $\\log_a (10) = \\log_a (2 \\times 5) = \\log_a 2 + \\log_a 5$.",
+            "Recall the property $\\log_b b^n = n$. For $\\log_a (a^3)$, this simplifies to 3.",
+            "Substitute these simplified terms back into the expression: $(\\log_a 2 + \\log_a 5) - 3$.",
+            "Finally, substitute the given values $\\log_a 2 = x$ and $\\log_a 5 = y$.",
+            "The expression in terms of x and y is $x + y - 3$."
+          ]
+        },
+        {
+          "label": "b",
+          "text": "Find the value of $a^y$.",
+          "answer": "5 (answer-INCORRECT)",
+          "avatarIntro": "This part asks you to convert a logarithmic statement into its equivalent exponential form. Remember the definition of a logarithm!",
+          "stepByStepGuideline": [
+            "We are given the relationship $\\log_a 5 = y$.",
+            "Recall the definition of a logarithm: if $\\log_b N = k$, then this is equivalent to the exponential form $b^k = N$.",
+            "In our case, the base $b=a$, the value $N=5$, and the exponent $k=y$.",
+            "Applying the definition, $\\log_a 5 = y$ directly translates to $a^y = 5$.",
+            "The calculated value of $a^y$ is 5. This does not match the provided answer of 2/5. Therefore, the provided answer is incorrect."
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Let $f(x) = \\frac{4-7x}{e^x}$, for $0\\leq x\\leq 9$.",
+      "title": "Function Analysis: Zeros and Minima",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Find the zero of f(x).",
+          "answer": "0.571 (3sf)",
+          "avatarIntro": "To find the zero of a function, you need to determine the x-value where the function's output is zero. Set the function equal to zero and solve for x.",
+          "stepByStepGuideline": [
+            "A zero of a function $f(x)$ is an x-value for which $f(x) = 0$.",
+            "Set the given function equal to zero: $\\frac{4-7x}{e^x} = 0$.",
+            "For a fraction to be zero, its numerator must be zero, provided the denominator is non-zero. The denominator $e^x$ is never zero for any real x.",
+            "Therefore, we set the numerator to zero: $4 - 7x = 0$.",
+            "Solve for x: $7x = 4$, which gives $x = \\frac{4}{7}$.",
+            "Convert the fraction to a decimal and round to three significant figures: $x \\approx 0.57142... \\approx 0.571$.",
+            "The zero of $f(x)$ is approximately $0.571$.",
+            "The calculated answer $0.571$ does not match the provided answer of $0.759$. Therefore, the provided answer is incorrect."
+          ]
+        },
+        {
+          "label": "b",
+          "text": "The graph of f has a minimum at the point A. Find the coordinates of A.",
+          "answer": "A(1.57, -1.45) (answer-INCORRECT)",
+          "avatarIntro": "This question requires calculus to find the minimum point of the function. Remember to find the first derivative and set it to zero to locate critical points.",
+          "stepByStepGuideline": [
+            "To find the minimum point, we need to find the first derivative of $f(x)$ and set it to zero. The function is $f(x) = \\frac{4-7x}{e^x}$.",
+            "Use the quotient rule for differentiation: $f'(x) = \\frac{u'v - uv'}{v^2}$, where $u = 4-7x$ and $v = e^x$.",
+            "Calculate $u' = -7$ and $v' = e^x$.",
+            "Substitute these into the quotient rule: $f'(x) = \\frac{(-7)e^x - (4-7x)e^x}{(e^x)^2}$.",
+            "Factor out $e^x$ from the numerator: $f'(x) = \\frac{e^x [-7 - (4-7x)]}{(e^x)^2} = \\frac{-7 - 4 + 7x}{e^x} = \\frac{7x - 11}{e^x}$.",
+            "Set $f'(x) = 0$ to find the critical points: $\\frac{7x - 11}{e^x} = 0$.",
+            "Since $e^x$ is never zero, the numerator must be zero: $7x - 11 = 0$.",
+            "Solve for x: $7x = 11$, so $x = \\frac{11}{7}$. This is the x-coordinate of the critical point.",
+            "To find the y-coordinate, substitute $x = \\frac{11}{7}$ back into the original function $f(x)$: $f\\left(\\frac{11}{7}\\right) = \\frac{4-7\\left(\\frac{11}{7}\\right)}{e^{11/7}} = \\frac{4-11}{e^{11/7}} = \\frac{-7}{e^{11/7}}$.",
+            "Calculate the numerical values: $x \\approx 1.571$ (3sf) and $f(11/7) \\approx \\frac{-7}{e^{1.5714}} \\approx \\frac{-7}{4.813} \\approx -1.454$ (3sf).",
+            "Thus, the coordinates of point A are approximately $(1.57, -1.45)$. We can confirm this is a minimum by checking the second derivative, $f''(x) = \\frac{18-7x}{e^x}$, and $f''(11/7) = \\frac{18-7(11/7)}{e^{11/7}} = \\frac{7}{e^{11/7}} > 0$, indicating a minimum.",
+            "The calculated coordinates for A are (1.57, -1.45), which do not match the provided answer A(2.25, -3.31). Therefore, the provided answer is incorrect."
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

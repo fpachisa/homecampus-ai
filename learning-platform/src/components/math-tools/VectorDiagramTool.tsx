@@ -33,12 +33,75 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
     );
   }
 
+  // Calculate bounds from all vectors for auto-scaling
+  const calculateVectorBounds = () => {
+    if (vectorList.length === 0) return { minX: -10, maxX: 10, minY: -10, maxY: 10 };
+
+    let minX = 0, maxX = 0, minY = 0, maxY = 0;
+
+    // ONLY check the input vectors (not resultant)
+    // This ensures the grid scales to show the problem values, not calculation results
+    vectorList.forEach(v => {
+      minX = Math.min(minX, v.x);
+      maxX = Math.max(maxX, v.x);
+      minY = Math.min(minY, v.y);
+      maxY = Math.max(maxY, v.y);
+    });
+
+    // For subtract operation, also include -b in bounds since it's displayed
+    if (operation === 'subtract' && vectorList.length >= 2) {
+      const negX = -vectorList[1].x;
+      const negY = -vectorList[1].y;
+      minX = Math.min(minX, negX);
+      maxX = Math.max(maxX, negX);
+      minY = Math.min(minY, negY);
+      maxY = Math.max(maxY, negY);
+    }
+
+    // Add 25% padding for visual breathing room and resultant
+    const rangeX = Math.max(maxX - minX, 1);
+    const rangeY = Math.max(maxY - minY, 1);
+    const paddingX = Math.max(1, rangeX * 0.25);
+    const paddingY = Math.max(1, rangeY * 0.25);
+
+    return {
+      minX: Math.floor(minX - paddingX),
+      maxX: Math.ceil(maxX + paddingX),
+      minY: Math.floor(minY - paddingY),
+      maxY: Math.ceil(maxY + paddingY)
+    };
+  };
+
+  const bounds = calculateVectorBounds();
+
   // SVG dimensions
   const width = 600;
   const height = 600;
-  const centerX = width / 2;
-  const centerY = height / 2;
-  const scale = 25; // pixels per grid unit
+
+  // Calculate dynamic scale to fit all vectors
+  const rangeX = Math.max(bounds.maxX - bounds.minX, 1);
+  const rangeY = Math.max(bounds.maxY - bounds.minY, 1);
+
+  // Scale to fit the larger dimension (with margins for labels)
+  const dynamicScale = Math.min(
+    (width - 100) / rangeX,   // Leave 100px for labels
+    (height - 100) / rangeY
+  );
+
+  // Use manual gridSize if provided, otherwise use auto-scale
+  const effectiveGridSize = gridSize !== 10 ? gridSize : Math.max(
+    Math.abs(bounds.minX),
+    Math.abs(bounds.maxX),
+    Math.abs(bounds.minY),
+    Math.abs(bounds.maxY)
+  );
+
+  // If manual gridSize is provided and differs from default, calculate scale based on it
+  const scale = gridSize !== 10 ? (width - 100) / (gridSize * 2) : dynamicScale;
+
+  // Center based on actual vector bounds
+  const centerX = width / 2 - ((bounds.minX + bounds.maxX) / 2) * scale;
+  const centerY = height / 2 + ((bounds.minY + bounds.maxY) / 2) * scale;
 
   // Calculate resultant vector if needed
   let resultantVector: Vector | null = null;
@@ -188,9 +251,57 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
   // Draw grid
   const renderGrid = () => {
     const lines = [];
-    const range = gridSize;
+    // Use calculated effective grid size for auto-scaling
+    const range = Math.ceil(effectiveGridSize);
 
-    for (let i = -range; i <= range; i++) {
+    // Calculate "nice" grid intervals based on the actual vector values
+    // This ensures grid lines align with problem values (e.g., 50, 100, 150)
+    const calculateNiceInterval = (_rangeValue: number): number => {
+      // Find the magnitude of the largest vector value
+      const maxValue = Math.max(
+        ...vectorList.map(v => Math.max(Math.abs(v.x), Math.abs(v.y)))
+      );
+
+      // Choose intervals that are "nice" round numbers
+      // Priority: show actual vector values on grid when possible
+      if (maxValue <= 10) return 1;
+      if (maxValue <= 20) return 2;
+      if (maxValue <= 30) return 5;
+      if (maxValue <= 50) return 5;
+      if (maxValue <= 100) return 10;
+      if (maxValue <= 150) return 25;   // For values like 100, 150 → grid at 0, 25, 50, 75, 100, 125, 150
+      if (maxValue <= 200) return 50;   // For values like 150, 200 → grid at 0, 50, 100, 150, 200
+      if (maxValue <= 500) return 50;
+      if (maxValue <= 1000) return 100;
+      return 200;
+    };
+
+    // Grid line interval - finer than labels
+    const calculateGridLineInterval = (rangeValue: number): number => {
+      const niceInterval = calculateNiceInterval(rangeValue);
+      // Grid lines can be denser for larger intervals
+      if (niceInterval >= 100) return niceInterval / 2;  // Half as dense
+      if (niceInterval >= 50) return niceInterval / 2;
+      return niceInterval;
+    };
+
+    // Label interval - less frequent to avoid crowding
+    const calculateLabelInterval = (rangeValue: number): number => {
+      const niceInterval = calculateNiceInterval(rangeValue);
+      // Labels match the nice interval (or 2x for very small intervals)
+      if (niceInterval <= 2) return niceInterval * 2;
+      return niceInterval;
+    };
+
+    const gridLineInterval = calculateGridLineInterval(range);
+    const labelInterval = calculateLabelInterval(range);
+
+    // Calculate a nice starting point that's a multiple of gridLineInterval
+    const startPos = Math.floor(-range / gridLineInterval) * gridLineInterval;
+    const endPos = Math.ceil(range / gridLineInterval) * gridLineInterval;
+
+    // Draw grid lines at appropriate intervals (not every unit!)
+    for (let i = startPos; i <= endPos; i += gridLineInterval) {
       const svgPos = toSVG(i, 0);
       const svgPosY = toSVG(0, i);
 
@@ -222,8 +333,8 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
         />
       );
 
-      // Grid labels
-      if (i !== 0 && i % 2 === 0) {
+      // Grid labels - use adaptive interval
+      if (i !== 0 && i % labelInterval === 0) {
         lines.push(
           <text
             key={`label-x-${i}`}

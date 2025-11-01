@@ -33,6 +33,8 @@ import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subje
 import type { AdvancedTrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import { S4_VECTORS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import type { S4VectorsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
+import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
+import type { FactorsMultiplesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -54,6 +56,10 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
 
   // Get topic configuration
   const getTopicSections = () => {
+    if (topicId.startsWith('s1-math-factors-multiples-')) {
+      const subtopic = S1_MATH_FACTORS_MULTIPLES_SUBTOPICS[topicId as FactorsMultiplesTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
     if (topicId.startsWith('s3-math-trigonometry-')) {
       const subtopic = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];

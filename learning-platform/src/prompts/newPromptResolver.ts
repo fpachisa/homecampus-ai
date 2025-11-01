@@ -37,6 +37,7 @@ import { S4_MATH_PROBABILITY_SUBTOPICS, PROBABILITY_TUTOR_CUSTOMIZATION, PROBABI
 import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-quadratic-functions';
 import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS, S4_ADVANCED_TRIGONOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import { S4_VECTORS_SUBTOPICS, S4_VECTORS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
+import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS, S1_FACTORS_MULTIPLES_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -48,10 +49,22 @@ function registerBrowserTopics() {
   // Helper to register topics
   const registerTopics = (subtopics: Record<string, any>, config: any) => {
     Object.entries(subtopics).forEach(([id, data]) => {
+      // Determine grade level from ID prefix
+      let gradeLevel: any = 'secondary-3'; // default
+      if (id.startsWith('s1')) {
+        gradeLevel = 'secondary-1';
+      } else if (id.startsWith('s2')) {
+        gradeLevel = 'secondary-2';
+      } else if (id.startsWith('s3')) {
+        gradeLevel = 'secondary-3';
+      } else if (id.startsWith('s4')) {
+        gradeLevel = 'secondary-4';
+      }
+
       registry.registerTopic(id, {
         topicId: id,
         subject: 'mathematics' as any,
-        gradeLevel: id.startsWith('s3') ? 'secondary-3' as any : 'secondary-4' as any,
+        gradeLevel: gradeLevel,
         learningObjectives: data.learningObjectives || [],
         progressionStructure: data.progressionStructure,
         agents: {},
@@ -63,6 +76,9 @@ function registerBrowserTopics() {
       });
     });
   };
+
+  // Register S1 topics
+  registerTopics(S1_MATH_FACTORS_MULTIPLES_SUBTOPICS, S1_FACTORS_MULTIPLES_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);

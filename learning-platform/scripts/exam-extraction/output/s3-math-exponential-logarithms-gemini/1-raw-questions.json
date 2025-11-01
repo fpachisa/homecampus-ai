@@ -1,0 +1,369 @@
+{
+  "questions": [
+    {
+      "question": "Let $f(x)=\\ln(2x+4)+3$ for $-2<x<3$.",
+      "parts": [
+        {
+          "label": "a-i",
+          "text": "For the graph of f, find the x- intercept",
+          "answer": "$x = -1.98$",
+          "parentLabel": "a",
+          "parentText": "For the graph of f,"
+        },
+        {
+          "label": "a-ii",
+          "text": "For the graph of f, find the y- intercept",
+          "answer": "$y = 4.39$",
+          "parentLabel": "a",
+          "parentText": "For the graph of f,"
+        },
+        {
+          "label": "b",
+          "text": "Hence, sketch the graph of f",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "question": "A hot chemical was left to cool in the science laboratory. Its temperature, T is given by the formulae $T = 50+16e^{-kt}$ where k is a constant and t is the number of hours after the chemical has been placed there.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Given that the temperature of the chemical is 60° after 1 hour, find the value of k.",
+          "answer": "k=0.470 (3sf)"
+        },
+        {
+          "label": "b",
+          "text": "Using your value of k, find the number of hours needed for the chemical to cool to at least 54°. Give your answer to the nearest hour.",
+          "answer": "t-2.95-3 hours"
+        }
+      ]
+    },
+    {
+      "question": "A man buys a new car. After t months, its value, $V$ is given by $V = 125000e^{-pt}$, where p is a real constant.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Find the value of the car when the man first bought it.",
+          "answer": "$125 000"
+        },
+        {
+          "label": "b-i",
+          "text": "The value of the car after 1 year is expected to be $80 000. Show that the value of p is $\\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)$.",
+          "answer": "",
+          "parentLabel": "b",
+          "parentText": "The value of the car after 1 year is expected to be $80 000."
+        },
+        {
+          "label": "b-ii",
+          "text": "The value of the car after 1 year is expected to be $80 000. Find the expected value of the car after 2 years.",
+          "answer": "$51200",
+          "parentLabel": "b",
+          "parentText": "The value of the car after 1 year is expected to be $80 000."
+        },
+        {
+          "label": "c",
+          "text": "Find the age of the car, correct to the nearest month, when its expected value becomes $10 000.",
+          "answer": "68 months"
+        }
+      ]
+    },
+    {
+      "question": "The amount of radioactive substance in an experiment after t hours is given by $R = 50e^{-2t}$ grams.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Find the amount of radioactive substance at the start of the experiment.",
+          "answer": "50 grams"
+        },
+        {
+          "label": "b",
+          "text": "Find the exact time where half of the substance is left.",
+          "answer": "ln$\\sqrt{2}$"
+        }
+      ]
+    },
+    {
+      "question": "Let $f(x) = \\log_2(x+3)+2$ where $-2.9\\leq x \\leq 10$.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Write down the coordinates of the x and y intercepts of the graph of f.",
+          "answer": "x-intercept is (-2.75,0), y-intercept is (0, 3.58)"
+        },
+        {
+          "label": "b",
+          "text": "Find the range of f.",
+          "answer": "{y | -1.32 \\leq y \\leq 5.70}"
+        },
+        {
+          "label": "c",
+          "text": "Express f(x) as $\\log_2 k(x+3)$ where k is a constant to be found.",
+          "answer": "k=4"
+        }
+      ]
+    },
+    {
+      "question": "In a forest, the population of wolves after x years is given by $W = 30(2^x)$.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Find the value of x when the population of wolves reaches 50.",
+          "answer": "$x = \\log_2 \\frac{5}{3}$"
+        },
+        {
+          "label": "b-i",
+          "text": "In the same forest, the population of rabbits after x years is given by $R = 20e^{Bx}$. The population of rabbits after one year is 34. Write down the initial population of the rabbits.",
+          "answer": "20",
+          "parentLabel": "b",
+          "parentText": "In the same forest, the population of rabbits after x years is given by $R = 20e^{Bx}$. The population of rabbits after one year is 34."
+        },
+        {
+          "label": "b-ii",
+          "text": "In the same forest, the population of rabbits after x years is given by $R = 20e^{Bx}$. The population of rabbits after one year is 34. Find the value of B.",
+          "answer": "ln 1.7 or 0.531",
+          "parentLabel": "b",
+          "parentText": "In the same forest, the population of rabbits after x years is given by $R = 20e^{Bx}$. The population of rabbits after one year is 34."
+        },
+        {
+          "label": "c",
+          "text": "Find the population of rabbits at the end of 5 years to the nearest whole number.",
+          "answer": "284"
+        },
+        {
+          "label": "d",
+          "text": "Solve the equation R=W.",
+          "answer": "x = 1.35"
+        },
+        {
+          "label": "e",
+          "text": "Hence, write down how many years does it take for the population of rabbits to first exceed wolves.",
+          "answer": "1.35 years"
+        }
+      ]
+    },
+    {
+      "question": "The temperature in °C of a pot of water is given by $T(m) = 80(2.64)^{-0.3m}+10$, where m is the number of minutes after the pot is removed from the cooker.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Show that the temperature of water (when the pot has just been removed from the cooker) is 90°C.",
+          "answer": "90°C"
+        },
+        {
+          "label": "b",
+          "text": "Sketch the graph of T(m) for $0\\leq m \\leq 10$.",
+          "answer": ""
+        },
+        {
+          "label": "c",
+          "text": "Find the temperature of the water after 3 minutes.",
+          "answer": ""
+        },
+        {
+          "label": "d",
+          "text": "Find the time taken for the temperature to reach 58°C.",
+          "answer": "m = 1.75 minutes"
+        },
+        {
+          "label": "e",
+          "text": "On the same axes, sketch the graph of S(m) for $0\\leq m \\leq 10$.",
+          "answer": ""
+        },
+        {
+          "label": "f",
+          "text": "Solve S(m) = T(m).",
+          "answer": "m = 3.45 minutes"
+        },
+        {
+          "label": "g",
+          "text": "In the context of the equation, explain what the answer in (f) represents.",
+          "answer": "It represents the time taken (in mins) for the soup and the water to reach the same temperature."
+        }
+      ]
+    },
+    {
+      "question": "The weight of a decaying material in a science experiment is given by $W = 1000\\times\\left(\\frac{4}{5}\\right)^x$ grams where x is the number of hours from the start of the experiment.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Find the initial weight of the material.",
+          "answer": "1000"
+        },
+        {
+          "label": "b",
+          "text": "Find the number of hours taken for the weight of the material to be 640 grams.",
+          "answer": "4"
+        }
+      ]
+    },
+    {
+      "question": "The mass, M, of carbon-14, in grams, remaining in a piece of fossilised wood is given by $M=100e^{-kt}$, where k is a constant and t is measured in years. It takes 5730 years for the carbon-14 to be reduced to half its initial mass.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Find the initial mass.",
+          "answer": "100"
+        },
+        {
+          "label": "b",
+          "text": "Find the value of k.",
+          "answer": "0.000121"
+        },
+        {
+          "label": "c",
+          "text": "Using the value of k found in (b), find the number of years for the mass of carbon-14 to be reduced to 30.",
+          "answer": "9950 years"
+        }
+      ]
+    },
+    {
+      "question": "",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Given that $m = \\log_x 5$ and $n = \\log_x 7$, express $\\log_x 175$ in terms of m and n.",
+          "answer": "$2m + n$"
+        },
+        {
+          "label": "b-i",
+          "text": " On the grid given, sketch the graph of $y = 2\\log_e 2.7x$ for the domain of $0 < x \\leq 4$.",
+          "answer": "",
+          "parentLabel": "b",
+          "parentText": ""
+        },
+        {
+          "label": "b-ii",
+          "text": " Solve the equation $3x-2=2\\log_e 2.7x$.",
+          "answer": "x = 0.161 or 1.53 (3 s.f.)",
+          "parentLabel": "b",
+          "parentText": ""
+        }
+      ]
+    },
+    {
+      "question": "",
+      "parts": [
+        {
+          "label": "a-i",
+          "text": " Find the integer value of $\\log_{10}100 - \\ln e$.",
+          "answer": "1",
+          "parentLabel": "a",
+          "parentText": ""
+        },
+        {
+          "label": "a-ii",
+          "text": " Hence, find the integer value of $\\log_{10}(\\log_{10}100 - \\ln e)$.",
+          "answer": "0",
+          "parentLabel": "a",
+          "parentText": ""
+        },
+        {
+          "label": "b",
+          "text": "Given that $2\\log_3 (x-1)-\\log_3 (y+2)=2$, express y in terms of x.",
+          "answer": "$y = (x-1)^2-2$"
+        }
+      ]
+    },
+    {
+      "question": "",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Simplify $5^{5x+2}\\times 125^x$ to the form $5^{ax+b}$, where a and b are constants to be determined.",
+          "answer": "$5^{8x+2}$"
+        },
+        {
+          "label": "b",
+          "text": "Hence, solve the equation $5^{5x+2}\\times 125^x = \\sqrt{5}$.",
+          "answer": "$x = -\\frac{3}{16}$"
+        }
+      ]
+    },
+    {
+      "question": "Crystal Blue lake originally had no fishes. A number of fishes were introduced to the lake and their population is modelled by $P(t) = 30\\times (1.2)^{t/10} + 10$, where t is the time in months since the fishes were introduced.",
+      "parts": [
+        {
+          "label": "a-i",
+          "text": "Find the number of fishes which were introduced to the lake;",
+          "answer": "40",
+          "parentLabel": "a",
+          "parentText": "Find the number of fishes"
+        },
+        {
+          "label": "a-ii",
+          "text": "Find the number of fishes that are in the lake after 5 months.",
+          "answer": "22",
+          "parentLabel": "a",
+          "parentText": "Find the number of fishes"
+        },
+        {
+          "label": "b",
+          "text": "Find the time, in months, for the population to decrease to 15 fishes. Give your answer to the nearest month.",
+          "answer": "10"
+        }
+      ]
+    },
+    {
+      "question": "It is given that $\\log_a 2=x$ and $\\log_a 5=y$.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Express $\\log_a \\left(\\frac{10}{a^3}\\right)$ in terms of x and/or y.",
+          "answer": "$x+y-3$"
+        },
+        {
+          "label": "b",
+          "text": "Find the value of $a^y$.",
+          "answer": "2/5"
+        }
+      ]
+    },
+    {
+      "question": "Let $f(x) = \\frac{4-7x}{e^x}$, for $0\\leq x\\leq 9$.",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Find the zero of f(x).",
+          "answer": "0.759"
+        },
+        {
+          "label": "b",
+          "text": "The graph of f has a minimum at the point A. Find the coordinates of A.",
+          "answer": "A(2.25, -3.31)"
+        },
+        {
+          "label": "c",
+          "text": "On the following grid, sketch the graph of f.",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "question": "Let $f(x) = \\frac{1}{\\sqrt{x+2}}$.",
+      "parts": [
+        {
+          "label": "a-i",
+          "text": "Find the domain of f;",
+          "answer": "x>-2",
+          "parentLabel": "a",
+          "parentText": "Find"
+        },
+        {
+          "label": "a-ii",
+          "text": "Find the range of f.",
+          "answer": "f(x)>0",
+          "parentLabel": "a",
+          "parentText": "Find"
+        },
+        {
+          "label": "b-i",
+          "text": "Let $g(x) = 2-\\ln(x^2-1)$. Solve f(x) = g(x).",
+          "answer": "x=-1.59, x = 2.36",
+          "parentLabel": "b",
+          "parentText": "Let $g(x) = 2-\\ln(x^2-1)$."
+        }
+      ]
+    }
+  ]
+}

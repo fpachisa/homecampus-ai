@@ -220,30 +220,53 @@ const DotProductVisualizer: React.FC<DotProductVisualizerProps> = ({
         {drawArrow(origin.x, origin.y, vector2End.x, vector2End.y, '#ef4444', label2)}
 
         {/* Perpendicular indicator */}
-        {isPerpendicular && (
-          <g>
-            <rect
-              x={centerX - 15}
-              y={centerY - 15}
-              width="15"
-              height="15"
-              fill="none"
-              stroke="#10b981"
-              strokeWidth="2"
-              className="dark:stroke-green-400"
-            />
-            <text
-              x={centerX + 30}
-              y={centerY + 5}
-              fontSize="14"
-              fontWeight="bold"
-              fill="#10b981"
-              className="select-none dark:fill-green-400"
-            >
-              ⊥
-            </text>
-          </g>
-        )}
+        {isPerpendicular && (() => {
+          // Calculate angles of both vectors in SVG coordinates (y is flipped)
+          const angle1 = Math.atan2(-vector1Y, vector1X);
+          const angle2 = Math.atan2(-vector2Y, vector2X);
+
+          // Size of the right angle marker
+          const markerSize = 20;
+
+          // Calculate the four corners of the right angle marker
+          // Start from origin, go along vector 1, turn 90°, go along vector 2, back to origin
+          const p1 = { x: centerX, y: centerY }; // origin
+          const p2 = {
+            x: centerX + markerSize * Math.cos(angle1),
+            y: centerY + markerSize * Math.sin(angle1)
+          };
+          const p3 = {
+            x: centerX + markerSize * Math.cos(angle1) + markerSize * Math.cos(angle2),
+            y: centerY + markerSize * Math.sin(angle1) + markerSize * Math.sin(angle2)
+          };
+          const p4 = {
+            x: centerX + markerSize * Math.cos(angle2),
+            y: centerY + markerSize * Math.sin(angle2)
+          };
+
+          return (
+            <g>
+              {/* Draw the right angle marker as a path */}
+              <path
+                d={`M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} L ${p3.x} ${p3.y} L ${p4.x} ${p4.y} Z`}
+                fill="none"
+                stroke="#10b981"
+                strokeWidth="2"
+                className="dark:stroke-green-400"
+              />
+              <text
+                x={centerX + 30}
+                y={centerY + 5}
+                fontSize="14"
+                fontWeight="bold"
+                fill="#10b981"
+                className="select-none dark:fill-green-400"
+              >
+                ⊥
+              </text>
+            </g>
+          );
+        })()}
       </svg>
 
       {/* Information panel */}

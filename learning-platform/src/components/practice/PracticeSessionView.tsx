@@ -1134,7 +1134,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                 ))}
               </div>
               <div className="mt-3 font-semibold text-purple-800">
-                Final Answer: {solution.finalAnswer}
+                Final Answer: <MathText>{solution.finalAnswer}</MathText>
               </div>
             </div>
           )}

@@ -328,8 +328,112 @@ const ADVANCED_TRIGONOMETRY_CONFIGS = [
   }
 ];
 
-// Combine old configs + Differential Calculus + Advanced Trigonometry + Vectors configs
-const ALL_CONFIGS = [...oldConfigs, ...DIFFERENTIAL_CALCULUS_CONFIGS, ...ADVANCED_TRIGONOMETRY_CONFIGS, ...S4_VECTORS_CONFIGS];
+/**
+ * S1 Factors & Multiples configs (5 configs)
+ */
+const S1_FACTORS_MULTIPLES_CONFIGS = [
+  // ============================================
+  // S1 FACTORS & MULTIPLES (5 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Introduction to Factors & Multiples
+  {
+    id: 's1-math-factors-multiples-introduction',
+    displayName: 'Introduction to Factors & Multiples',
+    grade: 's1',
+    subject: 'math',
+    topic: 'factors-multiples',
+    subtopic: 'introduction',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 50,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/factors-multiples/IntroductionToFactorsMultiples',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Prime Numbers and Factorisation
+  {
+    id: 's1-math-factors-multiples-prime-factorisation',
+    displayName: 'Prime Numbers and Factorisation',
+    grade: 's1',
+    subject: 'math',
+    topic: 'factors-multiples',
+    subtopic: 'prime-factorisation',
+    metadata: {
+      difficulty: 'foundational-to-intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-factors-multiples-introduction']
+    },
+    notesComponent: 's1/math/factors-multiples/PrimeNumbersAndFactorisation',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Highest Common Factor (HCF)
+  {
+    id: 's1-math-factors-multiples-hcf',
+    displayName: 'Highest Common Factor (HCF)',
+    grade: 's1',
+    subject: 'math',
+    topic: 'factors-multiples',
+    subtopic: 'hcf',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-factors-multiples-prime-factorisation']
+    },
+    notesComponent: 's1/math/factors-multiples/HighestCommonFactor',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Lowest Common Multiple (LCM)
+  {
+    id: 's1-math-factors-multiples-lcm',
+    displayName: 'Lowest Common Multiple (LCM)',
+    grade: 's1',
+    subject: 'math',
+    topic: 'factors-multiples',
+    subtopic: 'lcm',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-factors-multiples-hcf']
+    },
+    notesComponent: 's1/math/factors-multiples/LowestCommonMultiple',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 5: Square and Cube Roots
+  {
+    id: 's1-math-factors-multiples-square-cube-roots',
+    displayName: 'Square and Cube Roots',
+    grade: 's1',
+    subject: 'math',
+    topic: 'factors-multiples',
+    subtopic: 'square-cube-roots',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-factors-multiples-prime-factorisation']
+    },
+    notesComponent: 's1/math/factors-multiples/SquareAndCubeRoots',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
+// Combine old configs + S1 + S4 configs
+const ALL_CONFIGS = [...oldConfigs, ...S1_FACTORS_MULTIPLES_CONFIGS, ...DIFFERENTIAL_CALCULUS_CONFIGS, ...ADVANCED_TRIGONOMETRY_CONFIGS, ...S4_VECTORS_CONFIGS];
 
 /**
  * Migrate all configs to Firestore

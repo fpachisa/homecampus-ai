@@ -229,6 +229,23 @@ const UnitCircleVisualizer: React.FC<UnitCircleVisualizerProps> = ({
               strokeWidth={2}
             />
 
+            {/* Right angle marker at corner (pointX, centerY) */}
+            {(() => {
+              const markerSize = 15;
+              // Draw right angle marker at the corner of the triangle
+              return (
+                <rect
+                  x={pointX - (cosTheta >= 0 ? markerSize : 0)}
+                  y={centerY - (sinTheta >= 0 ? markerSize : 0)}
+                  width={markerSize}
+                  height={markerSize}
+                  fill="none"
+                  stroke={triangleColor}
+                  strokeWidth={1.5}
+                />
+              );
+            })()}
+
             {/* Label cos θ */}
             <foreignObject
               x={centerX + (pointX - centerX) / 2 - 30}
@@ -260,59 +277,102 @@ const UnitCircleVisualizer: React.FC<UnitCircleVisualizerProps> = ({
         )}
 
         {/* Angle arc */}
-        {showAngleArc && angle !== null && angle !== 0 && (
-          <>
-            <path
-              d={getAngleArcPath()}
-              fill="none"
-              stroke={angleArcColor}
-              strokeWidth={2}
-            />
-            {/* Angle label - positioned outside the arc to avoid overlap */}
-            {(() => {
-              // Position label well outside the arc (arc is at 40px radius)
-              const normalized = ((angle % 360) + 360) % 360;
-              let labelAngle = angleRad / 2; // Default: bisector
-              let labelRadius = 75; // Well outside the 40px arc to avoid overlap
+        {showAngleArc && angle !== null && angle !== 0 && (() => {
+          const normalized = ((angle % 360) + 360) % 360;
+          const isRightAngle = Math.abs(normalized - 90) < 1 || Math.abs(normalized - 270) < 1;
 
-              // For angles near cardinal directions, adjust positioning
-              if (normalized >= 80 && normalized <= 100) {
-                // 90° - position more horizontally
-                labelAngle = 45 * Math.PI / 180; // Position at 45°
-                labelRadius = 80;
-              } else if (normalized >= 170 && normalized <= 190) {
-                // 180° - position at 90° (top)
-                labelAngle = 90 * Math.PI / 180;
-                labelRadius = 80;
-              } else if (normalized >= 260 && normalized <= 280) {
-                // 270° - position at 135° (upper left)
-                labelAngle = 135 * Math.PI / 180;
-                labelRadius = 80;
-              } else if (normalized >= 40 && normalized <= 50) {
-                // 45° - move further out to avoid arc overlap
-                labelRadius = 80;
-              }
+          return (
+            <>
+              {/* Show arc only if NOT a right angle */}
+              {!isRightAngle && (
+                <path
+                  d={getAngleArcPath()}
+                  fill="none"
+                  stroke={angleArcColor}
+                  strokeWidth={2}
+                />
+              )}
 
-              const labelX = centerX + labelRadius * Math.cos(labelAngle);
-              const labelY = centerY - labelRadius * Math.sin(labelAngle);
+              {/* Right angle marker for 90° and 270° */}
+              {isRightAngle && (() => {
+                const markerSize = 25;
+                const is90 = Math.abs(normalized - 90) < 1;
 
-              return (
-                <foreignObject
-                  x={labelX - 40}
-                  y={labelY - 12}
-                  width={80}
-                  height={25}
-                >
-                  <div className="flex items-center justify-center h-full">
-                    <div className="text-sm font-semibold" style={{ color: angleArcColor }}>
-                      <MathText>{angleMode === 'radians' ? `$\\theta$` : `$\\theta = ${angle}°$`}</MathText>
+                if (is90) {
+                  // 90° - marker in quadrant 1
+                  return (
+                    <rect
+                      x={centerX}
+                      y={centerY - markerSize}
+                      width={markerSize}
+                      height={markerSize}
+                      fill="none"
+                      stroke={angleArcColor}
+                      strokeWidth={2}
+                    />
+                  );
+                } else {
+                  // 270° - marker in quadrant 3
+                  return (
+                    <rect
+                      x={centerX - markerSize}
+                      y={centerY}
+                      width={markerSize}
+                      height={markerSize}
+                      fill="none"
+                      stroke={angleArcColor}
+                      strokeWidth={2}
+                    />
+                  );
+                }
+              })()}
+
+              {/* Angle label - positioned outside the arc to avoid overlap */}
+              {(() => {
+                // Position label well outside the arc (arc is at 40px radius)
+                const normalized = ((angle % 360) + 360) % 360;
+                let labelAngle = angleRad / 2; // Default: bisector
+                let labelRadius = 75; // Well outside the 40px arc to avoid overlap
+
+                // For angles near cardinal directions, adjust positioning
+                if (normalized >= 80 && normalized <= 100) {
+                  // 90° - position more horizontally
+                  labelAngle = 45 * Math.PI / 180; // Position at 45°
+                  labelRadius = 80;
+                } else if (normalized >= 170 && normalized <= 190) {
+                  // 180° - position at 90° (top)
+                  labelAngle = 90 * Math.PI / 180;
+                  labelRadius = 80;
+                } else if (normalized >= 260 && normalized <= 280) {
+                  // 270° - position at 135° (upper left)
+                  labelAngle = 135 * Math.PI / 180;
+                  labelRadius = 80;
+                } else if (normalized >= 40 && normalized <= 50) {
+                  // 45° - move further out to avoid arc overlap
+                  labelRadius = 80;
+                }
+
+                const labelX = centerX + labelRadius * Math.cos(labelAngle);
+                const labelY = centerY - labelRadius * Math.sin(labelAngle);
+
+                return (
+                  <foreignObject
+                    x={labelX - 40}
+                    y={labelY - 12}
+                    width={80}
+                    height={25}
+                  >
+                    <div className="flex items-center justify-center h-full">
+                      <div className="text-sm font-semibold" style={{ color: angleArcColor }}>
+                        <MathText>{angleMode === 'radians' ? `$\\theta$` : `$\\theta = ${angle}°$`}</MathText>
+                      </div>
                     </div>
-                  </div>
-                </foreignObject>
-              );
-            })()}
-          </>
-        )}
+                  </foreignObject>
+                );
+              })()}
+            </>
+          );
+        })()}
 
         {/* Point P */}
         {showPoint && (

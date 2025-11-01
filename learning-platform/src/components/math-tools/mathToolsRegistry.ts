@@ -2590,15 +2590,15 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     technicalName: "vectorDiagram",
     component: "VectorDiagramTool",
     category: "general",
-    description: "Visualizes vectors on a coordinate grid with support for operations like addition, subtraction, and scalar multiplication. Shows geometric representation of vectors with arrows.",
-    whenToUse: "Use when teaching vector addition (triangle/parallelogram law), vector subtraction, or scalar multiplication. Perfect for geometric representation of vectors. Use for foundational vector concepts.",
+    description: "Visualizes vectors on a coordinate grid with support for operations like addition, subtraction, and scalar multiplication. Shows geometric representation of vectors with arrows. Grid automatically scales to fit any vector size.",
+    whenToUse: "Use when teaching vector addition (triangle/parallelogram law), vector subtraction, or scalar multiplication. Perfect for geometric representation of vectors. Use for foundational vector concepts. For relative motion with same-direction vectors, use operation='none' with appropriate positive/negative coordinates.",
 
     parameters: {
-      vectors: "string - JSON array of vectors: [{\"label\":\"a\",\"x\":3,\"y\":4},{\"label\":\"b\",\"x\":-2,\"y\":1}]. Each vector needs label (string), x (number), y (number). Keep it simple with 1-3 vectors maximum.",
-      operation: "'none' | 'add' | 'subtract' | 'scalar' (default: 'none') - operation to visualize. 'add' shows triangle law, 'subtract' shows difference, 'scalar' shows scalar multiples, 'none' shows individual vectors from origin",
+      vectors: "string - JSON array of vectors: [{\"label\":\"a\",\"x\":3,\"y\":4},{\"label\":\"b\",\"x\":-2,\"y\":1}]. Each vector needs label (string), x (number), y (number). Keep it simple with 1-3 vectors maximum. Use negative coordinates to represent opposite directions (e.g., x=-150 for West).",
+      operation: "'none' | 'add' | 'subtract' | 'scalar' (default: 'none') - operation to visualize. 'add' shows triangle law, 'subtract' shows a and -b from origin (for teaching a-b=a+(-b) concept), 'scalar' shows scalar multiples, 'none' shows individual vectors as-is from origin. IMPORTANT: For relative motion problems (cars, trains), use 'none' and encode direction in coordinates (e.g., x=60, x=40 for same direction; x=100, x=-150 for opposite directions). Only use 'subtract' when teaching the mathematical concept of vector subtraction.",
       resultant: "boolean (default: false) - show resultant vector in green when operation is 'add' or 'subtract'",
       showComponents: "boolean (default: false) - show i,j component breakdown as dashed lines for each vector",
-      gridSize: "number (default: 10, range: 5-15) - grid scale for visualization. Use smaller values for larger vectors"
+      gridSize: "number (optional, auto-scales if not provided) - manual grid scale override. Grid automatically calculates optimal scale based on vector magnitudes. Only specify this to force a particular scale. Supports any positive number."
     },
 
     exampleUsage: [
@@ -2633,6 +2633,36 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           resultant: false,
           showComponents: true,
           gridSize: 10
+        }
+      },
+      {
+        scenario: "Relative motion - same direction",
+        caption: "Car A at 60 km/h east, Car B at 40 km/h east (both pointing right)",
+        parameters: {
+          vectors: "[{\"label\":\"v_A\",\"x\":60,\"y\":0},{\"label\":\"v_B\",\"x\":40,\"y\":0}]",
+          operation: "none",
+          resultant: false,
+          showComponents: false
+        }
+      },
+      {
+        scenario: "Relative motion - opposite directions",
+        caption: "Train A at 100 km/h east, Train B at 150 km/h west (opposite directions)",
+        parameters: {
+          vectors: "[{\"label\":\"v_A\",\"x\":100,\"y\":0},{\"label\":\"v_B\",\"x\":-150,\"y\":0}]",
+          operation: "none",
+          resultant: false,
+          showComponents: false
+        }
+      },
+      {
+        scenario: "Teaching subtraction concept",
+        caption: "Vector subtraction a - b = a + (-b), shows both a and -b",
+        parameters: {
+          vectors: "[{\"label\":\"a\",\"x\":6,\"y\":0},{\"label\":\"b\",\"x\":4,\"y\":0}]",
+          operation: "subtract",
+          resultant: false,
+          showComponents: false
         }
       }
     ]

@@ -27,9 +27,20 @@ export const GRADE_LEVELS: GradeLevel[] = [
 export const topicsByGrade: Record<GradeLevel, Topic[]> = {
   'Secondary 1': [
     {
+      id: 's1-factors-multiples',
+      name: 'Factors & Multiples',
+      icon: '🔢',
+      description: 'Master prime numbers, HCF, LCM, and square/cube roots',
+      subtopicCount: 5,
+      isActive: true,
+      category: 's1-math-factors-multiples',
+      grade: 'Secondary 1',
+      subject: 'Mathematics',
+    },
+    {
       id: 's1-numbers-operations',
       name: 'Numbers & Operations',
-      icon: '🔢',
+      icon: '➗',
       description: 'Master integers, fractions, decimals, and percentages',
       subtopicCount: 8,
       isActive: false, // Coming soon

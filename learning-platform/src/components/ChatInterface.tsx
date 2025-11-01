@@ -45,6 +45,8 @@ import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subje
 import type { AdvancedTrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import { S4_VECTORS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import type { S4VectorsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
+import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
+import type { FactorsMultiplesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -59,6 +61,10 @@ interface ChatInterfaceProps {
 
 // Helper function to get topic config from S3 sources
 const getTopicConfig = (topicId: string) => {
+  // Check if it's an S1 factors & multiples topic
+  if (topicId.startsWith('s1-math-factors-multiples-')) {
+    return S1_MATH_FACTORS_MULTIPLES_SUBTOPICS[topicId as FactorsMultiplesTopicId];
+  }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {
     return S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];

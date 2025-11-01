@@ -11,6 +11,13 @@ import { type ComponentType } from 'react';
 // Import all notes components statically
 // This is required because Vite doesn't support fully dynamic imports
 const notesComponents: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
+  // S1 Factors & Multiples notes
+  's1/math/factors-multiples/IntroductionToFactorsMultiples': () => import('../notes/s1/math/factors-multiples/IntroductionToFactorsMultiples'),
+  's1/math/factors-multiples/PrimeNumbersAndFactorisation': () => import('../notes/s1/math/factors-multiples/PrimeNumbersAndFactorisation'),
+  's1/math/factors-multiples/HighestCommonFactor': () => import('../notes/s1/math/factors-multiples/HighestCommonFactor'),
+  's1/math/factors-multiples/LowestCommonMultiple': () => import('../notes/s1/math/factors-multiples/LowestCommonMultiple'),
+  's1/math/factors-multiples/SquareAndCubeRoots': () => import('../notes/s1/math/factors-multiples/SquareAndCubeRoots'),
+  // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),
   's3/math/trigonometry/TrueBearings': () => import('../notes/s3/math/trigonometry/TrueBearings'),

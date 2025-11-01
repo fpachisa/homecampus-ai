@@ -38,6 +38,8 @@ import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../../prompt-library/su
 import type { AdvancedTrigonometryTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import { S4_VECTORS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import type { S4VectorsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s4-vectors';
+import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
+import type { FactorsMultiplesTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -52,6 +54,13 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('whole-number-dividing')) return '🔢';
   if (topicId.includes('fraction-dividing-fraction')) return '📏';
   if (topicId.includes('word-problems')) return '📝';
+
+  // S1 Factors & Multiples icons
+  if (topicId.includes('introduction')) return '🔢';
+  if (topicId.includes('prime-factorisation')) return '🌲';
+  if (topicId.includes('hcf')) return '🔺';
+  if (topicId.includes('lcm')) return '🔷';
+  if (topicId.includes('square-cube-roots')) return '√';
 
   // S3 Trigonometry icons
   if (topicId.includes('basic-ratios')) return '📐';
@@ -224,6 +233,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   // Derive category from pathId
   // Import helper to check if it's a valid path
   const knownPaths = [
+    's1-math-factors-multiples',
     's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
@@ -269,7 +279,15 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     //     description: config.topicName,
     //   }));
     // } else
-    if (selectedCategory === 's3-math-trigonometry') {
+    if (selectedCategory === 's1-math-factors-multiples') {
+      return Object.entries(S1_MATH_FACTORS_MULTIPLES_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as FactorsMultiplesTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's3-math-trigonometry') {
       return Object.entries(S3_MATH_TRIGONOMETRY).map(([topicId, config]) => ({
         id: topicId as TrigonometryTopicId | CircleGeometryTopicId | QuadraticEquationsTopicId,
         name: config.displayName,

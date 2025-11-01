@@ -459,7 +459,13 @@ export function pathProgressToFirestore(
       problemsAttempted: nodeProgress.problemsAttempted,
       problemsCorrect: nodeProgress.problemsCorrect,
       status: nodeProgress.status,
-      completedAt: nodeProgress.completedAt ? Timestamp.fromDate(nodeProgress.completedAt) : undefined,
+      completedAt: nodeProgress.completedAt
+        ? Timestamp.fromDate(
+            nodeProgress.completedAt instanceof Date
+              ? nodeProgress.completedAt
+              : new Date(nodeProgress.completedAt)
+          )
+        : undefined,
       timeSpentSeconds: 0 // Not tracked in PathProgress
     };
   });
@@ -492,17 +498,42 @@ export function pathProgressToFirestore(
     totalXP: pathProgress.totalXP,
     currentLevel: pathProgress.currentLevel,
     streak: pathProgress.streak,
-    achievements: pathProgress.achievements.map(a => ({
-      ...a,
-      earnedAt: Timestamp.fromDate(a.earnedAt)
-    })),
+    achievements: pathProgress.achievements.map(a => {
+      // Convert earnedAt to Date if it's not already
+      let earnedAtDate: Date;
+      if (a.earnedAt instanceof Date) {
+        earnedAtDate = a.earnedAt;
+      } else if (typeof a.earnedAt === 'string' || typeof a.earnedAt === 'number') {
+        earnedAtDate = new Date(a.earnedAt);
+      } else {
+        // Fallback to current date if invalid
+        earnedAtDate = new Date();
+      }
+
+      return {
+        ...a,
+        earnedAt: Timestamp.fromDate(earnedAtDate)
+      };
+    }),
     sessionHistory: pathProgress.sessionHistory,
     totalProblemsAttempted: pathProgress.totalProblemsAttempted,
     totalProblemsCorrect: pathProgress.totalProblemsCorrect,
     totalTimeSpentSeconds: pathProgress.totalTimeSpentSeconds,
-    pathStartedAt: Timestamp.fromDate(pathProgress.pathStartedAt),
-    lastUpdated: Timestamp.fromDate(pathProgress.lastUpdated),
-    createdAt: Timestamp.fromDate(pathProgress.pathStartedAt),
+    pathStartedAt: Timestamp.fromDate(
+      pathProgress.pathStartedAt instanceof Date
+        ? pathProgress.pathStartedAt
+        : new Date(pathProgress.pathStartedAt)
+    ),
+    lastUpdated: Timestamp.fromDate(
+      pathProgress.lastUpdated instanceof Date
+        ? pathProgress.lastUpdated
+        : new Date(pathProgress.lastUpdated)
+    ),
+    createdAt: Timestamp.fromDate(
+      pathProgress.pathStartedAt instanceof Date
+        ? pathProgress.pathStartedAt
+        : new Date(pathProgress.pathStartedAt)
+    ),
     weeklyStats: pathProgress.weeklyStats
   };
 }

@@ -1,0 +1,2545 @@
+# S4 Math Vectors - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: vectors-node-1
+  nodeNumber: 1
+  title: Classifying Scalars and Vectors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Classify the following physical measurements as either scalar or vector quantities:
+
+        (A) The mass of a textbook is 1.5 kg.
+
+        (B) A car is moving at 25 m/s.
+
+        (C) A strong wind exerts 100 Newtons of force to the west.'
+      avatarIntro: Hello! Understanding the difference between scalar and vector quantities is crucial in physics. Let's start
+        with this classification challenge.
+      mathTool: null
+      finalAnswer: (A) Scalar (B) Scalar (C) Vector
+      stepByStepGuideline:
+      - 'Analyze quantity (A): Mass (1.5 kg) only requires a size (magnitude) to be fully described. It is a scalar.'
+      - 'Analyze quantity (B): Speed (25 m/s) only gives magnitude. Since no direction is specified, it is classified as a
+        scalar.'
+      - 'Analyze quantity (C): Force (100 N) is given along with a direction (west). Since it requires both magnitude and
+        direction, it is a vector.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: "Which of the following physical quantities is a vector quantity: \n(A) Time taken to boil water (5 minutes)\n\
+        (B) The temperature of a freezer (-10 °C)\n(C) The acceleration of a rocket (5 g upwards)\n(D) The total distance\
+        \ walked (3 kilometers)"
+      mathTool: null
+      finalAnswer: (C) The acceleration of a rocket (5 g upwards)
+      stepByStepGuideline:
+      - 'Recall the definitions: A scalar has magnitude only; a vector has magnitude and direction.'
+      - 'Check (A) Time: Magnitude only (Scalar).'
+      - 'Check (B) Temperature: Magnitude only (Scalar).'
+      - 'Check (C) Acceleration: Requires magnitude (5 g) and direction (upwards). This is a vector.'
+      - 'Check (D) Distance: Magnitude only (Scalar). Therefore, acceleration is the only vector quantity listed.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: Explain why the term 'Displacement' is classified as a vector quantity, while 'Distance' is classified
+        as a scalar quantity, even though both are measured in meters (m).
+      mathTool: null
+      finalAnswer: Distance is scalar because it only measures the total path length (magnitude). Displacement is vector because
+        it measures the change in position from a starting point, requiring both magnitude (how far) and a specific direction
+        (where the object ended up relative to the start).
+      stepByStepGuideline:
+      - 'Define Distance: Distance is the total path length traveled, which only requires a numerical value (magnitude). Thus,
+        it is scalar.'
+      - 'Define Displacement: Displacement is the shortest straight-line path between the start and end points, which requires
+        both a numerical value (magnitude) and a specified direction.'
+      - 'Conclude the classification: Since displacement requires direction, it is a vector, while distance, lacking direction,
+        is a scalar.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: 'Consider the concepts of speed and velocity. If a car travels 60 km/h East, which term describes this
+        measurement: scalar (speed) or vector (velocity)? Justify your choice.'
+      mathTool: null
+      finalAnswer: Vector (Velocity).
+      stepByStepGuideline:
+      - 'Analyze the given measurement: The measurement is ''60 km/h East''. This includes a magnitude (60 km/h) and a specific
+        direction (East).'
+      - 'Recall the definitions: Speed is scalar (magnitude only). Velocity is vector (magnitude and direction).'
+      - 'Classify the measurement: Since the measurement includes direction, it represents velocity, which is a vector quantity.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: A student measures the volume of water in a tank as 50 m³. Is volume a scalar or a vector quantity? Explain
+        your reasoning based on the fundamental characteristics of the two classifications.
+      mathTool: null
+      finalAnswer: Volume is a scalar quantity.
+      stepByStepGuideline:
+      - 'Define Volume: Volume measures the amount of three-dimensional space occupied by an object or substance.'
+      - 'Determine direction requirement: When describing volume (e.g., 50 m³), specifying a direction (like North or Up)
+        is meaningless and irrelevant.'
+      - 'Conclude classification: Since volume only requires magnitude (50 m³) for its complete description, it fits the definition
+        of a scalar quantity.'
+      id: q1-5
+      questionGroup: q1
+- id: vectors-node-2
+  nodeNumber: 2
+  title: Equal and Negative Vectors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vectorDiagram
+    preWrittenQuestions:
+    - problemText: Two construction workers are applying force to tow a heavy slab. Worker A applies a force vector $\vec{F}_A$
+        of 10 N directed right. Worker B applies a force vector $\vec{F}_B$ of 10 N directed right. Are these two force vectors
+        considered equal vectors? Justify your answer.
+      avatarIntro: Welcome! Let's practice recognizing when vectors are identical. Remember, both size and orientation matter!
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"F_A","x":10,"y":0},{"label":"F_B","x":10,"y":0}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: Yes, $\vec{F}_A$ and $\vec{F}_B$ are equal vectors.
+      stepByStepGuideline:
+      - 'Recall the definition of equal vectors: two vectors are equal if and only if they have the exact same magnitude and
+        the exact same direction.'
+      - 'Analyze the magnitude: Both vectors have a magnitude of 10 N.'
+      - 'Analyze the direction: Both vectors are directed right.'
+      - 'Conclusion: Since both magnitude and direction are identical, the vectors are equal.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: A service elevator travels 7 meters upwards, represented by vector $\vec{P}$. Describe the characteristics
+        (magnitude and direction) of the negative vector, $-\vec{P}$.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"P","x":0,"y":7},{"label":"-P","x":0,"y":-7}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: The vector $-\vec{P}$ has a magnitude of 7 m, directed downwards (opposite direction).
+      stepByStepGuideline:
+      - 'Recall the definition of a negative vector: A negative vector $(-\vec{P})$ has the same magnitude as the original
+        vector $(\vec{P})$, but points in the exact opposite direction.'
+      - The magnitude of $\vec{P}$ is 7 m, so the magnitude of $-\vec{P}$ is also 7 m.
+      - The direction of $\vec{P}$ is upwards, so the direction of $-\vec{P}$ must be the opposite, which is downwards.
+      id: q2-2
+      questionGroup: q2
+    - problemText: Vector $\vec{X}$ represents a wind velocity of 12 m/s blowing due North. Vector $\vec{Y}$ represents a
+        different wind velocity of 12 m/s blowing Northeast. Determine if $\vec{X}$ and $\vec{Y}$ are equal vectors.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"X","x":0,"y":12},{"label":"Y","x":8.5,"y":8.5}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: No, $\vec{X}$ and $\vec{Y}$ are not equal vectors.
+      stepByStepGuideline:
+      - 'Check the magnitudes: Both vectors have a magnitude of 12 m/s, so their magnitudes are equal.'
+      - 'Check the directions: Vector $\vec{X}$ points North, while Vector $\vec{Y}$ points Northeast.'
+      - Since the directions are different, the vectors are not equal. (For vectors to be equal, both magnitude AND direction
+        must match precisely).
+      id: q2-3
+      questionGroup: q2
+    - problemText: A robot travels 15 km West (Vector $\vec{R}$). Later, a drone travels 8 km West (Vector $\vec{S}$). Are
+        these two displacement vectors equal? Explain why or why not, focusing on the concepts of direction and magnitude.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"R","x":-15,"y":0},{"label":"S","x":-8,"y":0}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: No, they are not equal vectors.
+      stepByStepGuideline:
+      - 'Examine the direction: Both vectors point West, so their directions are the same (they are parallel).'
+      - 'Examine the magnitude: Vector $\vec{R}$ has a magnitude of 15 km, and Vector $\vec{S}$ has a magnitude of 8 km.'
+      - Since the magnitudes are different (15 km $\neq$ 8 km), the vectors are not equal, even though they share the same
+        direction.
+      id: q2-4
+      questionGroup: q2
+    - problemText: 'The diagram shows four vectors: $\vec{a}$, $\vec{b}$, $\vec{c}$, and $\vec{d}$. Based on the visual representation,
+        identify which two vectors are equal and identify the negative vector relationship.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"a","x":5,"y":3},{"label":"b","x":5,"y":3},{"label":"c","x":-5,"y":-3},{"label":"d","x":5,"y":-3}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: 'Equal vectors: $\vec{a} = \vec{b}$. Negative vector relationship: $\vec{c} = -\vec{a}$ (or $\vec{c} =
+        -\vec{b}$).'
+      stepByStepGuideline:
+      - 'Identify equal vectors: Equal vectors must have the same length (magnitude) and point in the same direction. Vectors
+        $\vec{a}$ and $\vec{b}$ are identical in both length and orientation, therefore $\vec{a} = \vec{b}$.'
+      - 'Identify negative vectors: A negative vector has the same length but points in the exact opposite direction.'
+      - Compare $\vec{a}$ and $\vec{c}$. Vector $\vec{c}$ has the same length as $\vec{a}$ but points in the opposite direction
+        (down and left, instead of up and right). Therefore, $\vec{c}$ is the negative of $\vec{a}$, written as $\vec{c} =
+        -\vec{a}$.
+      id: q2-5
+      questionGroup: q2
+- id: vectors-node-3
+  nodeNumber: 3
+  title: Vector Addition - Perpendicular Vectors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vectorDiagram
+    preWrittenQuestions:
+    - problemText: Two perpendicular forces, $\vec{F}_1$ (3 N acting right) and $\vec{F}_2$ (4 N acting upward), are applied
+        simultaneously to an object. Calculate the magnitude and direction of the resultant force, $\vec{R} = \vec{F}_1 +
+        \vec{F}_2$.
+      avatarIntro: Ready to tackle vector addition? Remember that when vectors are perpendicular, the Pythagorean theorem
+        and basic trigonometry are your best tools!
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"F1","x":3,"y":0},{"label":"F2","x":0,"y":4}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: 'Magnitude: 5 N; Direction: 53.13° up of right.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the magnitude (R) using the Pythagorean theorem: $R = \sqrt{F_1^2 + F_2^2}$. $R = \sqrt{3^2 + 4^2}
+        = \sqrt{9 + 16} = \sqrt{25} = 5$ N.'
+      - 'Step 2: Calculate the direction ($\theta$) using the tangent function, where $\theta$ is the angle relative to the
+        horizontal force ($\vec{F}_1$). $\tan \theta = \text{Opposite}/\text{Adjacent} = 4/3$.'
+      - 'Step 3: Calculate the angle: $\theta = \arctan(4/3) \approx 53.13^{\circ}$.'
+      - 'Step 4: State the final direction clearly: 53.13° up of right.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: A delivery drone first flies 12 km East and then turns exactly 90° to fly 5 km North. What is the magnitude
+        of the resultant displacement of the drone from its starting point?
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"D_E","x":12,"y":0},{"label":"D_N","x":0,"y":5}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: 13 km
+      stepByStepGuideline:
+      - 'Step 1: Identify the two perpendicular displacement vectors: $D_E = 12$ km and $D_N = 5$ km.'
+      - 'Step 2: Use the Pythagorean theorem to find the magnitude (R) of the resultant displacement: $R = \sqrt{D_E^2 + D_N^2}$.'
+      - 'Step 3: Calculate: $R = \sqrt{12^2 + 5^2} = \sqrt{144 + 25} = \sqrt{169}$.'
+      - 'Step 4: The magnitude of the resultant displacement is 13 km.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'A particle’s motion is defined by two perpendicular velocity components: $V_x = 8$ m/s along the positive
+        x-axis and $V_y = 15$ m/s along the positive y-axis. Determine the magnitude and the angle (relative to the positive
+        x-axis) of the resultant velocity.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"Vx","x":8,"y":0},{"label":"Vy","x":0,"y":15}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: 'Magnitude: 17 m/s; Direction: 61.93° relative to the positive x-axis.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the magnitude (R) using $R = \sqrt{V_x^2 + V_y^2}$. $R = \sqrt{8^2 + 15^2} = \sqrt{64 + 225} =
+        \sqrt{289}$.'
+      - 'Step 2: The resultant magnitude is 17 m/s.'
+      - 'Step 3: Calculate the direction ($\theta$) relative to the x-axis using $\tan \theta = V_y / V_x$. $\tan \theta =
+        15/8$.'
+      - 'Step 4: Calculate the angle: $\theta = \arctan(15/8) \approx 61.93^{\circ}$.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: A small aircraft is affected by two perpendicular wind vectors. Wind A has a horizontal velocity of 6 m/s,
+        and Wind B has a vertical velocity of 8 m/s. Calculate the overall magnitude of the resultant wind velocity affecting
+        the aircraft.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"WA","x":6,"y":0},{"label":"WB","x":0,"y":8}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: 10 m/s
+      stepByStepGuideline:
+      - 'Step 1: The two components of the wind velocity are $v_H = 6$ m/s and $v_V = 8$ m/s.'
+      - 'Step 2: Use the Pythagorean theorem to find the magnitude (R): $R = \sqrt{v_H^2 + v_V^2}$.'
+      - 'Step 3: Calculate: $R = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100}$.'
+      - 'Step 4: The magnitude of the resultant velocity is 10 m/s.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'A robotic rover follows a path defined by two displacement vectors: $\vec{D}_1$ (12 meters North) followed
+        by $\vec{D}_2$ (9 meters West). Find the magnitude of the resultant displacement and its direction, expressed as degrees
+        North of West.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"D_N","x":0,"y":12},{"label":"D_W","x":-9,"y":0}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: 'Magnitude: 15 m; Direction: 53.13° North of West.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the magnitude (R) using the components 9 m and 12 m: $R = \sqrt{9^2 + 12^2} = \sqrt{81 + 144} =
+        \sqrt{225}$.'
+      - 'Step 2: The resultant magnitude is 15 m.'
+      - 'Step 3: To find the direction North of West, the angle ($\theta$) is adjacent to the West vector (9 m) and opposite
+        the North vector (12 m).'
+      - 'Step 4: Use $\tan \theta = \text{Opposite}/\text{Adjacent} = 12/9$.'
+      - 'Step 5: Calculate the angle: $\theta = \arctan(12/9) \approx 53.13^{\circ}$.'
+      - 'Step 6: State the direction relative to the reference axis: 53.13° North of West.'
+      id: q3-5
+      questionGroup: q3
+- id: vectors-node-4
+  nodeNumber: 4
+  title: Vector Addition - Non-Perpendicular Vectors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vectorDiagram
+    preWrittenQuestions:
+    - problemText: Two forces, $\vec{F}_1$ of magnitude 8 N and $\vec{F}_2$ of magnitude 12 N, are applied to an object. The
+        angle between the two force vectors is 120°. Calculate the magnitude of the resultant force, $\vec{R}$, using the
+        formula $R^2 = a^2 + b^2 + 2ab \cos \theta$. (Round your answer to two decimal places).
+      avatarIntro: Understanding how to add vectors that are not perpendicular is crucial. Remember to use the general cosine
+        rule carefully, especially when dealing with obtuse angles.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"F1","x":8,"y":0},{"label":"F2","x":-6,"y":10.39}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: 10.58 N
+      stepByStepGuideline:
+      - 'Identify the given magnitudes: $a = 8$ N, $b = 12$ N, and the angle $\theta = 120^{\circ}$.'
+      - 'Substitute the values into the cosine rule: $R^2 = 8^2 + 12^2 + 2(8)(12) \cos(120^{\circ})$.'
+      - 'Calculate the components: $R^2 = 64 + 144 + 192(-0.5)$.'
+      - 'Simplify the equation: $R^2 = 208 - 96 = 112$.'
+      - 'Calculate the resultant magnitude: $R = \sqrt{112} \approx 10.58$ N.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: 'A hiker follows two sequential displacements: $\vec{D}_1$ of 20 meters and $\vec{D}_2$ of 30 meters. The
+        angle between the directions of these two displacement vectors is $45^{\circ}$. Determine the magnitude of the hiker''s
+        total resultant displacement.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"D1","x":20,"y":0},{"label":"D2","x":21.21,"y":21.21}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: 46.35 meters
+      stepByStepGuideline:
+      - 'Identify the given vector magnitudes and angle: $a = 20$ m, $b = 30$ m, $\theta = 45^{\circ}$.'
+      - 'Apply the vector addition formula: $R^2 = a^2 + b^2 + 2ab \cos \theta$.'
+      - 'Substitute the values: $R^2 = 20^2 + 30^2 + 2(20)(30) \cos(45^{\circ})$.'
+      - 'Calculate: $R^2 = 400 + 900 + 1200(0.7071)$.'
+      - 'Simplify: $R^2 = 1300 + 848.52 = 2148.52$.'
+      - 'Find the resultant magnitude: $R = \sqrt{2148.52} \approx 46.35$ meters.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'A motorboat attempts to cross a river. The boat''s velocity relative to the water ($\vec{V}_B$) is 10
+        m/s, and the river current''s velocity ($\vec{V}_C$) is 15 m/s. The captain steers the boat such that the angle between
+        $\vec{V}_B$ and $\vec{V}_C$ is $60^{\circ}$.
+
+
+        (A) Sketch a diagram illustrating the addition of these two vectors using the Parallelogram Law.
+
+        (B) Calculate the magnitude of the resultant velocity using the appropriate vector addition formula.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"VB","x":10,"y":0},{"label":"VC","x":7.5,"y":12.99}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: (B) 21.79 m/s
+      stepByStepGuideline:
+      - (A) Sketching the Parallelogram Law requires drawing both vectors ($\vec{V}_B$ and $\vec{V}_C$) originating from the
+        same point, completing the parallelogram shape, and drawing the resultant vector as the diagonal originating from
+        the common starting point.
+      - (B) Identify $a = 10$ m/s, $b = 15$ m/s, and $\theta = 60^{\circ}$.
+      - 'Use the formula: $R^2 = a^2 + b^2 + 2ab \cos \theta$.'
+      - 'Substitute values: $R^2 = 10^2 + 15^2 + 2(10)(15) \cos(60^{\circ})$.'
+      - 'Calculate: $R^2 = 100 + 225 + 300(0.5)$.'
+      - 'Simplify: $R^2 = 325 + 150 = 475$.'
+      - 'Find the resultant magnitude: $R = \sqrt{475} \approx 21.79$ m/s.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: Two forces, $\vec{F}_A$ (5 N) and $\vec{F}_B$ (7 N), act on a particle. If the angle between them is exactly
+        $90^{\circ}$, show how the general vector addition formula $R^2 = a^2 + b^2 + 2ab \cos \theta$ simplifies to the Pythagorean
+        theorem, and calculate the magnitude of the resultant force.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"FA","x":5,"y":0},{"label":"FB","x":0,"y":7}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: 'The formula simplifies to $R^2 = a^2 + b^2$. Resultant magnitude: 8.60 N.'
+      stepByStepGuideline:
+      - 'Start with the general formula: $R^2 = a^2 + b^2 + 2ab \cos \theta$.'
+      - Substitute $\theta = 90^{\circ}$. Since $\cos(90^{\circ}) = 0$, the term $2ab \cos \theta$ vanishes.
+      - The formula simplifies to $R^2 = a^2 + b^2$, which is the Pythagorean theorem.
+      - 'Calculate the magnitude using the simplified formula: $R^2 = 5^2 + 7^2 = 25 + 49 = 74$.'
+      - The resultant magnitude is $R = \sqrt{74} \approx 8.60$ N.
+      id: q4-4
+      questionGroup: q4
+    - problemText: Vector $\vec{A}$ has a magnitude of 10 units and Vector $\vec{B}$ has a magnitude of 15 units. If the angle
+        between them is $30^{\circ}$, calculate the magnitude of the resultant vector $\vec{R} = \vec{A} + \vec{B}$. (Give
+        your answer to two decimal places).
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"A","x":10,"y":0},{"label":"B","x":12.99,"y":7.5}]'
+          operation: add
+          resultant: false
+          showComponents: false
+      finalAnswer: 24.18 units
+      stepByStepGuideline:
+      - 'Identify the values: $a = 10$, $b = 15$, $\theta = 30^{\circ}$.'
+      - 'Use the cosine rule for vector addition: $R^2 = a^2 + b^2 + 2ab \cos \theta$.'
+      - 'Substitute the values: $R^2 = 10^2 + 15^2 + 2(10)(15) \cos(30^{\circ})$.'
+      - 'Calculate the components: $R^2 = 100 + 225 + 300(0.8660)$.'
+      - 'Simplify: $R^2 = 325 + 259.80 = 584.80$.'
+      - 'Find the resultant magnitude: $R = \sqrt{584.80} \approx 24.18$ units.'
+      id: q4-5
+      questionGroup: q4
+- id: vectors-node-5
+  nodeNumber: 5
+  title: Vector Subtraction Fundamentals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vectorDiagram
+    preWrittenQuestions:
+    - problemText: 'Two tugboats are maneuvering a large barge. Tug A applies a force vector $\vec{F}_A$ of 10 kilonewtons
+        (kN) directed due East. Tug B applies a force vector $\vec{F}_B$ of 6 kN, also directed due East.
+
+
+        Calculate the difference vector $\vec{F}_A - \vec{F}_B$. State the magnitude and direction of the resulting force
+        difference.'
+      avatarIntro: Vector subtraction is key in physics! Remember, subtracting a vector is the same as adding its negative,
+        which means reversing its direction.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"FA","x":10,"y":0},{"label":"FB","x":6,"y":0}]'
+          operation: subtract
+          resultant: false
+          showComponents: false
+      finalAnswer: 4 kN East
+      stepByStepGuideline:
+      - 'Identify the vector subtraction rule: $\vec{F}_A - \vec{F}_B = \vec{F}_A + (-\vec{F}_B)$.'
+      - Determine the negative vector $-\vec{F}_B$. Since $\vec{F}_B$ is 6 kN East, $-\vec{F}_B$ is 6 kN West.
+      - 'Apply vector addition using the triangle law: Add $\vec{F}_A$ (10 kN East) and $-\vec{F}_B$ (6 kN West).'
+      - 'Since the vectors are collinear and point in opposite directions, subtract their magnitudes: $10 \text{ kN} - 6 \text{
+        kN} = 4 \text{ kN}$.'
+      - The resultant direction is the direction of the larger vector, which is East. Thus, $\vec{F}_A - \vec{F}_B = 4 \text{
+        kN East}$.
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'A submarine undergoes two sequential depth changes. Vector $\vec{A}$ represents a displacement of 8 meters
+        upward, and Vector $\vec{B}$ represents a displacement of 5 meters downward.
+
+
+        Calculate the magnitude of the difference vector $|\vec{A} - \vec{B}|$.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"A","x":0,"y":8},{"label":"B","x":0,"y":-5}]'
+          operation: subtract
+          resultant: false
+          showComponents: false
+      finalAnswer: 13 meters
+      stepByStepGuideline:
+      - 'Apply the subtraction rule: $\vec{A} - \vec{B} = \vec{A} + (-\vec{B})$.'
+      - Determine the negative vector $-\vec{B}$. Since $\vec{B}$ is 5 meters downward, $-\vec{B}$ is 5 meters upward.
+      - 'Perform the addition: $\vec{A}$ (8 m Up) $+ (-\vec{B})$ (5 m Up).'
+      - 'Since both resulting vectors point in the same direction (Up), their magnitudes add up: $8 \text{ m} + 5 \text{ m}
+        = 13 \text{ m}$.'
+      - The magnitude of the difference vector $|\vec{A} - \vec{B}|$ is 13 meters.
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'A drone''s intended flight path is described by velocity vector $\vec{V}_A$ (12 m/s East). However, it
+        encounters a crosswind described by velocity vector $\vec{V}_B$ (7 m/s North).
+
+
+        Find the magnitude of the velocity difference vector $|\vec{V}_A - \vec{V}_B|$.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"VA","x":12,"y":0},{"label":"VB","x":0,"y":7}]'
+          operation: subtract
+          resultant: false
+          showComponents: false
+      finalAnswer: 13.89 m/s
+      stepByStepGuideline:
+      - 'Rewrite the subtraction as addition: $\vec{V}_A - \vec{V}_B = \vec{V}_A + (-\vec{V}_B)$.'
+      - Determine the negative vector $-\vec{V}_B$. Since $\vec{V}_B$ is 7 m/s North, $-\vec{V}_B$ is 7 m/s South.
+      - The resultant vector $\vec{R}$ is the sum of $\vec{V}_A$ (12 m/s East) and $-\vec{V}_B$ (7 m/s South). These two components
+        are perpendicular.
+      - 'Use the Pythagorean theorem to find the magnitude: $|R| = \sqrt{|V_A|^2 + |-V_B|^2}$.'
+      - $|R| = \sqrt{12^2 + 7^2} = \sqrt{144 + 49} = \sqrt{193}$.
+      - 'Calculate the final magnitude: $|R| \approx 13.89 \text{ m/s}$.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'Two water currents flow through a canal. Current $\vec{C}_A$ has a speed of 15 m/s directed Left (West),
+        and Current $\vec{C}_B$ has a speed of 9 m/s, also directed Left (West).
+
+
+        Compare the magnitude and direction of the difference vector $(\vec{C}_A - \vec{C}_B)$ versus the difference vector
+        $(\vec{C}_B - \vec{C}_A)$.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"CA","x":-15,"y":0},{"label":"CB","x":-9,"y":0}]'
+          operation: subtract
+          resultant: false
+          showComponents: false
+      finalAnswer: $(\vec{C}_A - \vec{C}_B) = 6 \text{ m/s Left (West)}; (\vec{C}_B - \vec{C}_A) = 6 \text{ m/s Right (East)}$
+      stepByStepGuideline:
+      - 'Calculate $\vec{C}_A - \vec{C}_B$: This is $\vec{C}_A + (-\vec{C}_B)$. Since $\vec{C}_B$ is 9 m/s Left, $-\vec{C}_B$
+        is 9 m/s Right.'
+      - Adding $\vec{C}_A$ (15 L) and $-\vec{C}_B$ (9 R) results in $15 - 9 = 6 \text{ m/s}$ in the direction of the larger
+        vector (Left/West).
+      - 'Calculate $\vec{C}_B - \vec{C}_A$: This is $\vec{C}_B + (-\vec{C}_A)$. Since $\vec{C}_A$ is 15 m/s Left, $-\vec{C}_A$
+        is 15 m/s Right.'
+      - Adding $\vec{C}_B$ (9 L) and $-\vec{C}_A$ (15 R) results in $15 - 9 = 6 \text{ m/s}$ in the direction of the larger
+        vector (Right/East).
+      - 'Conclusion: Vector subtraction is not commutative. The magnitudes are equal (6 m/s), but the directions are opposite
+        (West vs. East).'
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'A surveyor maps two displacement vectors for a geological shift. Vector $\vec{D}_A$ is 12 cm North, and
+        Vector $\vec{D}_B$ is 7 cm West.
+
+
+        Calculate the magnitude of the difference vector $|\vec{D}_A - \vec{D}_B|$ and determine the primary direction (e.g.,
+        NE, NW, SE, SW) of the resulting vector.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"DA","x":0,"y":12},{"label":"DB","x":-7,"y":0}]'
+          operation: subtract
+          resultant: false
+          showComponents: false
+      finalAnswer: $|\vec{D}_A - \vec{D}_B| \approx 13.89 \text{ cm}$, primary direction is Northeast (NE).
+      stepByStepGuideline:
+      - 'Apply the subtraction rule: $\vec{D}_A - \vec{D}_B = \vec{D}_A + (-\vec{D}_B)$.'
+      - Determine the negative vector $-\vec{D}_B$. Since $\vec{D}_B$ is 7 cm West, $-\vec{D}_B$ is 7 cm East.
+      - The resultant vector $\vec{R}$ is the sum of $\vec{D}_A$ (12 cm North) and $-\vec{D}_B$ (7 cm East). These components
+        are perpendicular.
+      - 'Use the Pythagorean theorem to find the magnitude: $|R| = \sqrt{12^2 + 7^2} = \sqrt{144 + 49} = \sqrt{193}$.'
+      - 'Calculate the final magnitude: $|R| \approx 13.89 \text{ cm}$.'
+      - Since the resultant vector has a North component (from $\vec{D}_A$) and an East component (from $-\vec{D}_B$), the
+        primary direction is Northeast (NE).
+      id: q5-5
+      questionGroup: q5
+- id: vectors-node-7
+  nodeNumber: 7
+  title: Scalar Multiplication and Direction
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vectorDiagram
+    preWrittenQuestions:
+    - problemText: A river current velocity is represented by vector $\vec{C}$, where $|\vec{C}| = 5\text{ m/s}$ and the direction
+        is Downstream (Down). A new flow rate requires the velocity vector to be scaled by a factor of 3. Determine the magnitude
+        and direction of the new velocity vector, $3\vec{C}$.
+      avatarIntro: Great job reaching this section! Remember that when you multiply a vector by a positive scalar, the direction
+        stays the same, but the magnitude changes proportionally.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"C","x":0,"y":-5},{"label":"3C","x":0,"y":-15}]'
+          operation: scalar
+          resultant: false
+          showComponents: false
+      finalAnswer: The new velocity vector $3\vec{C}$ has a magnitude of 15 m/s and is directed Down (Downstream).
+      stepByStepGuideline:
+      - 'Identify the original magnitude: $|\vec{C}| = 5\text{ m/s}$.'
+      - 'Identify the scalar multiplier: $k = 3$. Since $k$ is positive, the direction remains the same (Down).'
+      - 'Calculate the new magnitude: $|3\vec{C}| = |k| \times |\vec{C}| = 3 \times 5\text{ m/s} = 15\text{ m/s}$.'
+      - State the final result, including both the calculated magnitude and the original direction.
+      id: q7-1
+      questionGroup: q7
+    - problemText: Vector $\vec{F}$ represents an initial push of 10 N directed East. If a braking system applies a force
+        represented by $-2\vec{F}$, what are the magnitude and direction of the braking force?
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"F","x":10,"y":0},{"label":"-2F","x":-20,"y":0}]'
+          operation: scalar
+          resultant: false
+          showComponents: false
+      finalAnswer: The braking force $-2\vec{F}$ has a magnitude of 20 N and is directed West.
+      stepByStepGuideline:
+      - 'Identify the original magnitude: $|\vec{F}| = 10\text{ N}$.'
+      - 'Identify the scalar multiplier: $k = -2$. Since $k$ is negative, the direction must be reversed.'
+      - 'Calculate the new magnitude using the absolute value of the scalar: $|-2\vec{F}| = |-2| \times 10\text{ N} = 20\text{
+        N}$.'
+      - Determine the new direction. The opposite of East is West. The vector is 20 N West.
+      id: q7-2
+      questionGroup: q7
+    - problemText: An aircraft's primary velocity is $\vec{V}$, where $|\vec{V}| = 12\text{ km/h}$ North. For a scaled map
+        representation, the velocity vector must be represented by $0.5\vec{V}$. Find the magnitude and direction of the vector
+        $0.5\vec{V}$.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"V","x":0,"y":12},{"label":"0.5V","x":0,"y":6}]'
+          operation: scalar
+          resultant: false
+          showComponents: false
+      finalAnswer: The scaled vector $0.5\vec{V}$ has a magnitude of 6 km/h and is directed North.
+      stepByStepGuideline:
+      - 'Identify the original magnitude: $|\vec{V}| = 12\text{ km/h}$.'
+      - 'Identify the scalar multiplier: $k = 0.5$. Since $k$ is positive and less than 1, the magnitude shrinks, but the
+        direction remains the same (North).'
+      - 'Calculate the new magnitude: $|0.5\vec{V}| = 0.5 \times 12\text{ km/h} = 6\text{ km/h}$.'
+      - 'State the result: 6 km/h North.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: A robot's displacement is given by vector $\vec{D}$, representing 20 m West. If the programmer reverses
+        half of the displacement path, the final movement is represented by the vector $-0.5\vec{D}$. Describe the magnitude
+        and direction of $-0.5\vec{D}$.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"D","x":-20,"y":0},{"label":"-0.5D","x":10,"y":0}]'
+          operation: scalar
+          resultant: false
+          showComponents: false
+      finalAnswer: The vector $-0.5\vec{D}$ has a magnitude of 10 m and is directed East.
+      stepByStepGuideline:
+      - 'Identify the original magnitude and direction: $|\vec{D}| = 20\text{ m}$ West.'
+      - 'Identify the scalar multiplier: $k = -0.5$. The negative sign indicates a reversal of direction, and the magnitude
+        is halved.'
+      - 'Calculate the magnitude: $|-0.5\vec{D}| = |-0.5| \times 20\text{ m} = 10\text{ m}$.'
+      - Determine the new direction. The opposite of West is East. The vector is 10 m East.
+      id: q7-4
+      questionGroup: q7
+    - problemText: A small rocket engine generates a thrust vector $\vec{P}$ of magnitude 15 N directed Up. If the system
+        is upgraded to produce four times the thrust, what are the magnitude and direction of the new thrust vector, $4\vec{P}$?
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"P","x":0,"y":5},{"label":"4P","x":0,"y":20}]'
+          operation: scalar
+          resultant: false
+          showComponents: false
+      finalAnswer: The new thrust vector $4\vec{P}$ has a magnitude of 60 N and is directed Up.
+      stepByStepGuideline:
+      - 'Identify the original magnitude: $|\vec{P}| = 15\text{ N}$.'
+      - 'Identify the scalar multiplier: $k = 4$. Since $k$ is positive, the direction remains the same (Up).'
+      - 'Calculate the new magnitude: $|4\vec{P}| = 4 \times 15\text{ N} = 60\text{ N}$.'
+      - 'State the final result: 60 N Up.'
+      id: q7-5
+      questionGroup: q7
+- id: vectors-node-8
+  nodeNumber: 8
+  title: Simplifying Vector Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the following vector expression completely: $3(\mathbf{x} + 2\mathbf{y}) - 5\mathbf{x} + \mathbf{y}$.'
+      avatarIntro: Vector algebra is just like regular algebra! Remember to apply the distributive property first, and then
+        combine your like vector terms.
+      mathTool: null
+      finalAnswer: -2\mathbf{x} + 7\mathbf{y}
+      stepByStepGuideline:
+      - 'Step 1: Apply the distributive property to the first term: $3(\mathbf{x} + 2\mathbf{y}) = 3\mathbf{x} + 6\mathbf{y}$.'
+      - 'Step 2: Rewrite the entire expression: $3\mathbf{x} + 6\mathbf{y} - 5\mathbf{x} + \mathbf{y}$.'
+      - 'Step 3: Group the like vector terms (x terms and y terms): $(3\mathbf{x} - 5\mathbf{x}) + (6\mathbf{y} + \mathbf{y})$.'
+      - 'Step 4: Combine the like terms: $-2\mathbf{x} + 7\mathbf{y}$.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'Simplify the expression by expanding the parentheses and combining like terms: $4(\mathbf{a} - 3\mathbf{b})
+        - 2(3\mathbf{a} - \mathbf{b})$.'
+      mathTool: null
+      finalAnswer: -2\mathbf{a} - 10\mathbf{b}
+      stepByStepGuideline:
+      - 'Step 1: Distribute the scalar 4 into the first parenthesis: $4\mathbf{a} - 12\mathbf{b}$.'
+      - 'Step 2: Distribute the scalar -2 into the second parenthesis, remembering to change the sign of both terms: $-2(3\mathbf{a}
+        - \mathbf{b}) = -6\mathbf{a} + 2\mathbf{b}$.'
+      - 'Step 3: Combine the expanded results: $4\mathbf{a} - 12\mathbf{b} - 6\mathbf{a} + 2\mathbf{b}$.'
+      - 'Step 4: Group and combine the ''a'' terms: $(4\mathbf{a} - 6\mathbf{a}) = -2\mathbf{a}$.'
+      - 'Step 5: Group and combine the ''b'' terms: $(-12\mathbf{b} + 2\mathbf{b}) = -10\mathbf{b}$.'
+      - 'Step 6: Write the final simplified expression: $-2\mathbf{a} - 10\mathbf{b}$.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: If vector $\mathbf{p} = 2\mathbf{a} - 4\mathbf{b}$ and vector $\mathbf{q} = \mathbf{a} + 5\mathbf{b}$,
+        find the simplified expression for $3\mathbf{p} - 2\mathbf{q}$.
+      mathTool: null
+      finalAnswer: 4\mathbf{a} - 22\mathbf{b}
+      stepByStepGuideline:
+      - 'Step 1: Substitute the definitions of \mathbf{p} and \mathbf{q} into the target expression: $3(2\mathbf{a} - 4\mathbf{b})
+        - 2(\mathbf{a} + 5\mathbf{b})$.'
+      - 'Step 2: Apply the distributive property to both terms:'
+      - 'First term: $3(2\mathbf{a} - 4\mathbf{b}) = 6\mathbf{a} - 12\mathbf{b}$.'
+      - 'Second term: $-2(\mathbf{a} + 5\mathbf{b}) = -2\mathbf{a} - 10\mathbf{b}$.'
+      - 'Step 3: Combine the results: $6\mathbf{a} - 12\mathbf{b} - 2\mathbf{a} - 10\mathbf{b}$.'
+      - 'Step 4: Combine the ''a'' terms: $(6\mathbf{a} - 2\mathbf{a}) = 4\mathbf{a}$.'
+      - 'Step 5: Combine the ''b'' terms: $(-12\mathbf{b} - 10\mathbf{b}) = -22\mathbf{b}$.'
+      - 'Step 6: State the final simplified expression: $4\mathbf{a} - 22\mathbf{b}$.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'Simplify the expression involving three vector variables: $-2(\mathbf{x} + 3\mathbf{y} - \mathbf{z}) +
+        5(\mathbf{x} - \mathbf{y} + 2\mathbf{z})$.'
+      mathTool: null
+      finalAnswer: 3\mathbf{x} - 11\mathbf{y} + 12\mathbf{z}
+      stepByStepGuideline:
+      - 'Step 1: Apply the distributive property for the first term: $-2\mathbf{x} - 6\mathbf{y} + 2\mathbf{z}$.'
+      - 'Step 2: Apply the distributive property for the second term: $+ 5\mathbf{x} - 5\mathbf{y} + 10\mathbf{z}$.'
+      - 'Step 3: Combine the results: $-2\mathbf{x} - 6\mathbf{y} + 2\mathbf{z} + 5\mathbf{x} - 5\mathbf{y} + 10\mathbf{z}$.'
+      - 'Step 4: Group and combine the ''x'' terms: $(-2\mathbf{x} + 5\mathbf{x}) = 3\mathbf{x}$.'
+      - 'Step 5: Group and combine the ''y'' terms: $(-6\mathbf{y} - 5\mathbf{y}) = -11\mathbf{y}$.'
+      - 'Step 6: Group and combine the ''z'' terms: $(2\mathbf{z} + 10\mathbf{z}) = 12\mathbf{z}$.'
+      - 'Step 7: Write the final simplified expression: $3\mathbf{x} - 11\mathbf{y} + 12\mathbf{z}$.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'Simplify the nested vector expression: $5\mathbf{p} - [2(\mathbf{p} - 3\mathbf{q}) - \mathbf{q}]$.'
+      mathTool: null
+      finalAnswer: 3\mathbf{p} + 7\mathbf{q}
+      stepByStepGuideline:
+      - 'Step 1: Simplify the inner parentheses first: $2(\mathbf{p} - 3\mathbf{q}) = 2\mathbf{p} - 6\mathbf{q}$.'
+      - 'Step 2: Substitute this back into the brackets: $5\mathbf{p} - [2\mathbf{p} - 6\mathbf{q} - \mathbf{q}]$.'
+      - 'Step 3: Combine like terms inside the brackets: $5\mathbf{p} - [2\mathbf{p} - 7\mathbf{q}]$.'
+      - 'Step 4: Distribute the negative sign across the terms inside the brackets: $5\mathbf{p} - 2\mathbf{p} + 7\mathbf{q}$.'
+      - 'Step 5: Combine the ''p'' terms: $(5\mathbf{p} - 2\mathbf{p}) = 3\mathbf{p}$.'
+      - 'Step 6: The final simplified expression is $3\mathbf{p} + 7\mathbf{q}$.'
+      id: q8-5
+      questionGroup: q8
+- id: vectors-node-9
+  nodeNumber: 9
+  title: Converting Between Vector Forms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: componentForm
+    preWrittenQuestions:
+    - problemText: A programmer defines a displacement vector $\mathbf{p}$ to move a cursor 4 units right and 6 units up.
+        This is represented using unit vectors as $\mathbf{p} = 4\mathbf{i} + 6\mathbf{j}$. Write this vector in column form
+        $(x, y)$.
+      avatarIntro: Welcome! Understanding how to switch between vector notation forms is key to vector algebra. Let's practice
+        conversions.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 4
+          vectorY: 6
+          label: p
+          showIJ: true
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $$(4, 6)$$
+      stepByStepGuideline:
+      - Identify the coefficients of the unit vectors $\mathbf{i}$ and $\mathbf{j}$. In the vector $\mathbf{p} = 4\mathbf{i}
+        + 6\mathbf{j}$, the coefficient of $\mathbf{i}$ is 4 and the coefficient of $\mathbf{j}$ is 6.
+      - Recall that the column form $(x, y)$ corresponds directly to the coefficients, where $x$ is the component along $\mathbf{i}$
+        and $y$ is the component along $\mathbf{j}$.
+      - Therefore, the vector $\mathbf{p}$ in column form is $(4, 6)$.
+      id: q9-1
+      questionGroup: q9
+    - problemText: An architectural blueprint uses the column vector $\mathbf{A}$ to represent the placement of a structural
+        beam relative to the origin, defined as $\mathbf{A} = (-3, -5)$. Express the vector $\mathbf{A}$ using $\mathbf{i},
+        \mathbf{j}$ notation.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: -3
+          vectorY: -5
+          label: A
+          showIJ: true
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $$\mathbf{A} = -3\mathbf{i} - 5\mathbf{j}$$
+      stepByStepGuideline:
+      - Identify the components of the column vector $(x, y)$. Here, $x = -3$ and $y = -5$.
+      - Recall that the $\mathbf{i}, \mathbf{j}$ notation is written as $x\mathbf{i} + y\mathbf{j}$.
+      - 'Substitute the components: $\mathbf{A} = -3\mathbf{i} + (-5)\mathbf{j}$.'
+      - 'Simplify the expression: $\mathbf{A} = -3\mathbf{i} - 5\mathbf{j}$.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: A remote sensor records a movement vector $\mathbf{s}$. The sensor moved 2 meters East and 3 meters South
+        from its starting point. If the unit vector $\mathbf{i}$ represents 1 meter East and $\mathbf{j}$ represents 1 meter
+        North, write the vector $\mathbf{s}$ first in column form $(x, y)$ and then in $\mathbf{i}, \mathbf{j}$ notation.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 2
+          vectorY: -3
+          label: s
+          showIJ: true
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $$(2, -3) \text{ or } 2\mathbf{i} - 3\mathbf{j}$$
+      stepByStepGuideline:
+      - 'Define the axes based on the unit vectors: East corresponds to positive $x$ (i), and North corresponds to positive
+        $y$ (j). South corresponds to negative $y$.'
+      - The movement is 2 meters East, so the $x$-component is 2.
+      - The movement is 3 meters South, so the $y$-component is $-3$.
+      - The column form is $(x, y) = (2, -3)$.
+      - The $\mathbf{i}, \mathbf{j}$ notation is $x\mathbf{i} + y\mathbf{j} = 2\mathbf{i} - 3\mathbf{j}$.
+      id: q9-3
+      questionGroup: q9
+    - problemText: A CAD (Computer-Aided Design) system defines a large structural vector $\mathbf{L}$ using $\mathbf{i},
+        \mathbf{j}$ notation as $\mathbf{L} = 8\mathbf{i} + 8\mathbf{j}$. Given that $\mathbf{i} = (1, 0)$ and $\mathbf{j}
+        = (0, 1)$, demonstrate how to calculate the equivalent column vector $(x, y)$ by summing the component parts.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 8
+          vectorY: 8
+          label: L
+          showIJ: true
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $$(8, 8)$$
+      stepByStepGuideline:
+      - 'Start with the vector definition: $\mathbf{L} = 8\mathbf{i} + 8\mathbf{j}$.'
+      - 'Substitute the unit vector definitions: $\mathbf{L} = 8(1, 0) + 8(0, 1)$.'
+      - 'Perform scalar multiplication: $\mathbf{L} = (8, 0) + (0, 8)$.'
+      - 'Perform vector addition by adding corresponding components: $\mathbf{L} = (8 + 0, 0 + 8) = (8, 8)$.'
+      - The equivalent column vector is $(8, 8)$.
+      id: q9-4
+      questionGroup: q9
+    - problemText: A velocity vector $\mathbf{v}$ for a train moving purely horizontally is given in column form as $\mathbf{v}
+        = (7, 0)$. Explain what the zero component signifies in terms of vertical movement and express $\mathbf{v}$ using
+        $\mathbf{i}, \mathbf{j}$ notation.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 7
+          vectorY: 0
+          label: v
+          showIJ: true
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: The zero component signifies zero movement in the vertical direction (the direction of $\mathbf{j}$). $\mathbf{v}
+        = 7\mathbf{i}$.
+      stepByStepGuideline:
+      - The column vector $(x, y)$ is equivalent to $x\mathbf{i} + y\mathbf{j}$.
+      - For $\mathbf{v} = (7, 0)$, we have $x=7$ and $y=0$.
+      - 'Substitute these values into the notation: $\mathbf{v} = 7\mathbf{i} + 0\mathbf{j}$.'
+      - Since $0\mathbf{j}$ is the zero vector, this simplifies to $\mathbf{v} = 7\mathbf{i}$.
+      - The $y$-component corresponds to the vertical direction (the $\mathbf{j}$ direction). A value of 0 means there is
+        no displacement or velocity component in that direction.
+      id: q9-5
+      questionGroup: q9
+- id: vectors-node-10
+  nodeNumber: 10
+  title: Component Operations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: componentForm
+    preWrittenQuestions:
+    - problemText: 'A warehouse manages stock using vectors, where the $\mathbf{i}$ component represents the quantity of Item
+        A and the $\mathbf{j}$ component represents the quantity of Item B. The initial stock vector is $\mathbf{S}_1 = 5\mathbf{i}
+        + 2\mathbf{j}$. A large shipment arrives, represented by vector $\mathbf{S}_2 = -3\mathbf{i} + 6\mathbf{j}$ (indicating
+        a return of 3 units of Item A and an addition of 6 units of Item B).
+
+
+        Calculate the resulting total stock vector $\mathbf{S}_T = \mathbf{S}_1 + \mathbf{S}_2$. Express your answer in $\mathbf{i},
+        \mathbf{j}$ notation.'
+      avatarIntro: Great job on tackling vector operations! Remember that when adding vectors, you simply add the corresponding
+        components together.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 2
+          vectorY: 8
+          label: S_T
+          showIJ: true
+          showColumn: true
+          showGrid: true
+          highlightComponent: both
+      finalAnswer: 2\mathbf{i} + 8\mathbf{j}
+      stepByStepGuideline:
+      - 'Identify the components of the two vectors: $\mathbf{S}_1 = (5, 2)$ and $\mathbf{S}_2 = (-3, 6)$.'
+      - 'Add the corresponding components: $x$-component: $5 + (-3) = 2$. $y$-component: $2 + 6 = 8$.'
+      - 'Write the resulting vector in $\mathbf{i}, \mathbf{j}$ notation: $\mathbf{S}_T = 2\mathbf{i} + 8\mathbf{j}$.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: 'A financial model uses vector $\mathbf{D}$ to track quarterly liabilities, where $\mathbf{D} = \begin{pmatrix}
+        2 \\ 7 \end{pmatrix}$ represents 2 thousand dollars in short-term debt and 7 thousand dollars in long-term debt.
+
+
+        Due to rapid expansion, the model projects that liabilities will scale negatively by a factor of $-2$. Calculate the
+        resulting liability vector, $-2\mathbf{D}$, and express the answer in column form.'
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: -4
+          vectorY: -14
+          label: -2D
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: both
+      finalAnswer: $$\begin{pmatrix} -4 \\ -14 \end{pmatrix}$$
+      stepByStepGuideline:
+      - 'Apply the scalar multiplication to the vector $\mathbf{D} = \begin{pmatrix} 2 \\ 7 \end{pmatrix}$: $-2\mathbf{D}
+        = -2 \begin{pmatrix} 2 \\ 7 \end{pmatrix}$.'
+      - 'Multiply the scalar by each component: $x$-component: $-2 \times 2 = -4$. $y$-component: $-2 \times 7 = -14$.'
+      - The resulting vector is $\begin{pmatrix} -4 \\ -14 \end{pmatrix}$.
+      id: q10-2
+      questionGroup: q10
+    - problemText: 'In a 2D game environment, a character''s starting movement is defined by vector $\mathbf{p} = \begin{pmatrix}
+        3 \\ 4 \end{pmatrix}$. A second movement segment is defined by vector $\mathbf{q} = \begin{pmatrix} 1 \\ -2 \end{pmatrix}$.
+
+
+        Find the net displacement vector resulting from the operation $\mathbf{p} - \mathbf{q}$. Express your final answer
+        using $\mathbf{i}, \mathbf{j}$ notation.'
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 2
+          vectorY: 6
+          label: p-q
+          showIJ: true
+          showColumn: true
+          showGrid: true
+          highlightComponent: both
+      finalAnswer: 2\mathbf{i} + 6\mathbf{j}
+      stepByStepGuideline:
+      - 'Write the subtraction operation using components: $\mathbf{p} - \mathbf{q} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}
+        - \begin{pmatrix} 1 \\ -2 \end{pmatrix}$.'
+      - 'Subtract the $x$-components: $3 - 1 = 2$.'
+      - 'Subtract the $y$-components, watching the signs: $4 - (-2) = 4 + 2 = 6$.'
+      - 'The resulting vector in component form is $(2, 6)$. Convert this to $\mathbf{i}, \mathbf{j}$ notation: $2\mathbf{i}
+        + 6\mathbf{j}$.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'Two chemical compounds have property vectors $\mathbf{A} = -\mathbf{i} + 3\mathbf{j}$ and $\mathbf{B}
+        = 5\mathbf{i} - 4\mathbf{j}$. A laboratory process requires combining 3 units of Compound A and 2 units of Compound
+        B.
+
+
+        Calculate the resultant property vector $\mathbf{R} = 3\mathbf{A} + 2\mathbf{B}$.'
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 7
+          vectorY: 1
+          label: R
+          showIJ: true
+          showColumn: true
+          showGrid: true
+          highlightComponent: both
+      finalAnswer: 7\mathbf{i} + \mathbf{j}
+      stepByStepGuideline:
+      - 'Substitute the vectors into the expression: $\mathbf{R} = 3(-\mathbf{i} + 3\mathbf{j}) + 2(5\mathbf{i} - 4\mathbf{j})$.'
+      - 'Perform scalar multiplication on each vector: $3\mathbf{A} = -3\mathbf{i} + 9\mathbf{j}$ and $2\mathbf{B} = 10\mathbf{i}
+        - 8\mathbf{j}$.'
+      - 'Add the resulting vectors component-wise: $x$-component: $-3 + 10 = 7$. $y$-component: $9 + (-8) = 1$.'
+      - The resultant vector is $7\mathbf{i} + 1\mathbf{j}$, or $7\mathbf{i} + \mathbf{j}$.
+      id: q10-4
+      questionGroup: q10
+    - problemText: 'A logistics company uses vectors to map resource allocation, where $\mathbf{x} = \begin{pmatrix} 2 \\
+        7 \end{pmatrix}$ represents the standard allocation and $\mathbf{y} = \begin{pmatrix} 4 \\ -1 \end{pmatrix}$ represents
+        an alternative supply route.
+
+
+        Calculate the required resource adjustment vector $0.5\mathbf{x} - 3\mathbf{y}$. Express your answer in column form.'
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: -11
+          vectorY: 6.5
+          label: 0.5x-3y
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: both
+      finalAnswer: $$\begin{pmatrix} -11 \\ 6.5 \end{pmatrix}$$
+      stepByStepGuideline:
+      - 'Perform scalar multiplication on $\mathbf{x}$: $0.5\mathbf{x} = 0.5\begin{pmatrix} 2 \\ 7 \end{pmatrix} = \begin{pmatrix}
+        1 \\ 3.5 \end{pmatrix}$.'
+      - 'Perform scalar multiplication on $\mathbf{y}$: $3\mathbf{y} = 3\begin{pmatrix} 4 \\ -1 \end{pmatrix} = \begin{pmatrix}
+        12 \\ -3 \end{pmatrix}$.'
+      - 'Perform the subtraction $0.5\mathbf{x} - 3\mathbf{y}$: $\begin{pmatrix} 1 \\ 3.5 \end{pmatrix} - \begin{pmatrix}
+        12 \\ -3 \end{pmatrix}$.'
+      - 'Subtract the components: $x$-component: $1 - 12 = -11$. $y$-component: $3.5 - (-3) = 3.5 + 3 = 6.5$.'
+      - The resulting vector is $\begin{pmatrix} -11 \\ 6.5 \end{pmatrix}$.
+      id: q10-5
+      questionGroup: q10
+- id: vectors-node-11
+  nodeNumber: 11
+  title: Position and Displacement Vectors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: componentForm
+    preWrittenQuestions:
+    - problemText: In an architectural plan, the reference point (origin O) is the main entrance. A column footing is located
+        at point A(3, -2). Write the position vector $\mathbf{a}$ of point A using $\mathbf{i}$ and $\mathbf{j}$ unit vector
+        notation.
+      avatarIntro: Position vectors define a location relative to the origin. Remember that a position vector $\mathbf{p}$
+        for a point P(x, y) is written as $\mathbf{p} = x\mathbf{i} + y\mathbf{j}$.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 3
+          vectorY: -2
+          label: a
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $$\mathbf{a} = 3\mathbf{i} - 2\mathbf{j}$$
+      stepByStepGuideline:
+      - The position vector $\mathbf{a}$ corresponds to the coordinates of point A, measured from the origin O(0, 0).
+      - If A is at $(x, y)$, the position vector is $\mathbf{a} = x\mathbf{i} + y\mathbf{j}$.
+      - Given A(3, -2), the position vector is $\mathbf{a} = 3\mathbf{i} + (-2)\mathbf{j}$.
+      - Therefore, $\mathbf{a} = 3\mathbf{i} - 2\mathbf{j}$.
+      id: q11-1
+      questionGroup: q11
+    - problemText: A drone starts its flight path at position A(2, 3) and lands at position B(5, 7). Find the displacement
+        vector $\vec{AB}$ that represents the drone's movement in component form.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 3
+          vectorY: 4
+          label: AB
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $$\vec{AB} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$$
+      stepByStepGuideline:
+      - 'The displacement vector $\vec{AB}$ is calculated by subtracting the initial position vector $\mathbf{a}$ from the
+        final position vector $\mathbf{b}$: $\vec{AB} = \mathbf{b} - \mathbf{a}$.'
+      - The position vectors are $\mathbf{a} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix} 5 \\
+        7 \end{pmatrix}$.
+      - 'Calculate the difference: $$\vec{AB} = \begin{pmatrix} 5 \\ 7 \end{pmatrix} - \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+        = \begin{pmatrix} 5 - 2 \\ 7 - 3 \end{pmatrix}$$.'
+      - The resulting displacement vector is $$\vec{AB} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$$.
+      id: q11-2
+      questionGroup: q11
+    - problemText: A deep-sea submersible starts its dive at point A, corresponding to position vector $\mathbf{a} = \begin{pmatrix}
+        1 \\ 4 \end{pmatrix}$, and reaches maximum depth at point B, corresponding to position vector $\mathbf{b} = \begin{pmatrix}
+        -2 \\ 1 \end{pmatrix}$. Find the vector representing the displacement from B back to A, denoted by $\vec{BA}$.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 3
+          vectorY: 3
+          label: BA
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $$\vec{BA} = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$$
+      stepByStepGuideline:
+      - The displacement vector $\vec{BA}$ means displacement from initial point B to final point A. This is calculated as
+        $\vec{BA} = \mathbf{a} - \mathbf{b}$.
+      - 'Substitute the given position vectors: $$\vec{BA} = \begin{pmatrix} 1 \\ 4 \end{pmatrix} - \begin{pmatrix} -2 \\
+        1 \end{pmatrix}$$.'
+      - 'Perform the vector subtraction component-wise: $$\vec{BA} = \begin{pmatrix} 1 - (-2) \\ 4 - 1 \end{pmatrix}$$.'
+      - The resulting displacement vector is $$\vec{BA} = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$$.
+      id: q11-3
+      questionGroup: q11
+    - problemText: A robotic arm is initially positioned at point A(-3, -1). It then performs a movement defined by the displacement
+        vector $\vec{AB} = \begin{pmatrix} 7 \\ 6 \end{pmatrix}$. Determine the final coordinates of point B.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 7
+          vectorY: 6
+          label: AB
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: B(4, 5)
+      stepByStepGuideline:
+      - The displacement formula relates the initial position $\mathbf{a}$, the displacement $\vec{AB}$, and the final position
+        $\mathbf{b}$ by the equation $\mathbf{b} = \mathbf{a} + \vec{AB}$.
+      - 'Write the position vector $\mathbf{a}$ for A(-3, -1): $\mathbf{a} = \begin{pmatrix} -3 \\ -1 \end{pmatrix}$.'
+      - 'Add the displacement vector: $$\mathbf{b} = \begin{pmatrix} -3 \\ -1 \end{pmatrix} + \begin{pmatrix} 7 \\ 6 \end{pmatrix}$$.'
+      - 'Calculate the final components: $$\mathbf{b} = \begin{pmatrix} -3 + 7 \\ -1 + 6 \end{pmatrix} = \begin{pmatrix} 4
+        \\ 5 \end{pmatrix}$$.'
+      - The final coordinates of point B are (4, 5).
+      id: q11-4
+      questionGroup: q11
+    - problemText: A surveyor marks a final reference point B(3, 5). They know the displacement vector used to reach B from
+        the starting point A was $\vec{AB} = \begin{pmatrix} 0 \\ 7 \end{pmatrix}$. Find the coordinates of the initial starting
+        point A.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 0
+          vectorY: 7
+          label: AB
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: A(3, -2)
+      stepByStepGuideline:
+      - 'We use the relationship $\vec{AB} = \mathbf{b} - \mathbf{a}$. To find the starting position $\mathbf{a}$, we rearrange
+        the formula: $\mathbf{a} = \mathbf{b} - \vec{AB}$.'
+      - 'Write the position vector $\mathbf{b}$ for B(3, 5): $\mathbf{b} = \begin{pmatrix} 3 \\ 5 \end{pmatrix}$.'
+      - 'Subtract the displacement vector $\vec{AB}$: $$\mathbf{a} = \begin{pmatrix} 3 \\ 5 \end{pmatrix} - \begin{pmatrix}
+        0 \\ 7 \end{pmatrix}$$.'
+      - 'Calculate the components: $$\mathbf{a} = \begin{pmatrix} 3 - 0 \\ 5 - 7 \end{pmatrix} = \begin{pmatrix} 3 \\ -2 \end{pmatrix}$$.'
+      - The initial coordinates of point A are (3, -2).
+      id: q11-5
+      questionGroup: q11
+- id: vectors-node-12
+  nodeNumber: 12
+  title: Midpoint and Section Formula
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: componentForm
+    preWrittenQuestions:
+    - problemText: A city planner is designing a new transit line. The start station is located at the origin O (0, 0), and
+        the end depot is located at point D, with position vector $\mathbf{d} = \begin{pmatrix} 10 \\ 12 \end{pmatrix}$. The
+        maintenance hub M must be built exactly halfway between O and D. Find the position vector $\mathbf{m}$ of the maintenance
+        hub.
+      avatarIntro: The midpoint and section formulas are powerful tools for locating specific points along a line segment.
+        Give this first question a try!
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 5
+          vectorY: 6
+          label: m
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $\mathbf{m} = \begin{pmatrix} 5 \\ 6 \end{pmatrix}$
+      stepByStepGuideline:
+      - 'Identify the position vectors: $\mathbf{o} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$ and $\mathbf{d} = \begin{pmatrix}
+        10 \\ 12 \end{pmatrix}$.'
+      - 'Use the midpoint formula: $\mathbf{m} = (\mathbf{o} + \mathbf{d})/2$.'
+      - 'Substitute the values: $\mathbf{m} = \left( \begin{pmatrix} 0 \\ 0 \end{pmatrix} + \begin{pmatrix} 10 \\ 12 \end{pmatrix}
+        \right) / 2$.'
+      - 'Calculate the result: $\mathbf{m} = \begin{pmatrix} 10 \\ 12 \end{pmatrix} / 2 = \begin{pmatrix} 5 \\ 6 \end{pmatrix}$.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: A robotic arm moves from position A, where $\mathbf{a} = \mathbf{i} + \mathbf{j}$, to position B, where
+        $\mathbf{b} = 7\mathbf{i} + 4\mathbf{j}$. The control system requires a stop point P that divides the segment AB such
+        that the ratio AP:PB is 2:1. Find the position vector $\mathbf{p}$ of the stop point.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 5
+          vectorY: 3
+          label: p
+          showIJ: true
+          showColumn: false
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $p = 5\mathbf{i} + 3\mathbf{j}$
+      stepByStepGuideline:
+      - 'Identify the vectors and ratio: $\mathbf{a} = (1, 1)$, $\mathbf{b} = (7, 4)$. Ratio $m:n = 2:1$.'
+      - 'Use the section formula: $\mathbf{p} = (n\mathbf{a} + m\mathbf{b})/(m+n)$.'
+      - 'Substitute the values ($m=2, n=1$): $\mathbf{p} = (1\mathbf{a} + 2\mathbf{b})/(2+1) = (\mathbf{a} + 2\mathbf{b})/3$.'
+      - 'Calculate: $\mathbf{p} = \left( \begin{pmatrix} 1 \\ 1 \end{pmatrix} + 2\begin{pmatrix} 7 \\ 4 \end{pmatrix} \right)
+        / 3 = \left( \begin{pmatrix} 1 \\ 1 \end{pmatrix} + \begin{pmatrix} 14 \\ 8 \end{pmatrix} \right) / 3$.'
+      - 'Simplify: $\mathbf{p} = \begin{pmatrix} 15 \\ 9 \end{pmatrix} / 3 = \begin{pmatrix} 5 \\ 3 \end{pmatrix}$, which
+        is $5\mathbf{i} + 3\mathbf{j}$.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: An aircraft takes off from point A(-4, 2) and flies straight towards point B. The air traffic control tower
+        M, located at position vector $\mathbf{m} = \mathbf{i} - 3\mathbf{j}$, is exactly the midpoint of the intended flight
+        path AB. Determine the coordinates of the destination point B.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 6
+          vectorY: -8
+          label: B
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: B(6, -8)
+      stepByStepGuideline:
+      - 'Identify the given information: Point $A = (-4, 2)$ and Midpoint $M = (1, -3)$. We are finding point B.'
+      - 'Use the midpoint formula in the form $M = (A + B)/2$. Rearrange to solve for $B$: $B = 2M - A$.'
+      - 'Substitute the coordinates: $B = 2(1, -3) - (-4, 2)$.'
+      - 'Calculate the components: $B = (2(1) - (-4), 2(-3) - 2)$.'
+      - 'Simplify: $B = (2 + 4, -6 - 2) = (6, -8)$. The coordinates of B are (6, -8).'
+      id: q12-3
+      questionGroup: q12
+    - problemText: Two chemical compounds, Compound A and Compound B, are represented by position vectors $\mathbf{a} = \mathbf{i}
+        + \mathbf{j}$ and $\mathbf{b} = 6\mathbf{i} + 11\mathbf{j}$ respectively. A chemist creates a blend P such that P
+        divides the line segment AB in the ratio 2:3. Find the position vector $\mathbf{p}$ of the resulting blend.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 3
+          vectorY: 5
+          label: p
+          showIJ: true
+          showColumn: false
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $p = 3\mathbf{i} + 5\mathbf{j}$
+      stepByStepGuideline:
+      - 'Identify the vectors and ratio: $\mathbf{a} = (1, 1)$, $\mathbf{b} = (6, 11)$. Ratio $m:n = 2:3$.'
+      - 'Use the section formula: $\mathbf{p} = (n\mathbf{a} + m\mathbf{b})/(m+n)$.'
+      - 'Substitute the values ($m=2, n=3$): $\mathbf{p} = (3\mathbf{a} + 2\mathbf{b})/(2+3) = (3\mathbf{a} + 2\mathbf{b})/5$.'
+      - 'Calculate the components: $\mathbf{p} = \left( 3\begin{pmatrix} 1 \\ 1 \end{pmatrix} + 2\begin{pmatrix} 6 \\ 11 \end{pmatrix}
+        \right) / 5 = \left( \begin{pmatrix} 3 \\ 3 \end{pmatrix} + \begin{pmatrix} 12 \\ 22 \end{pmatrix} \right) / 5$.'
+      - 'Simplify: $\mathbf{p} = \begin{pmatrix} 15 \\ 25 \end{pmatrix} / 5 = \begin{pmatrix} 3 \\ 5 \end{pmatrix}$, or $3\mathbf{i}
+        + 5\mathbf{j}$.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: 'Three points are given: A(1, 1), B(9, 5), and C(7, 4). Show that points A, B, and C are collinear by demonstrating
+        that C divides the line segment AB in a specific ratio $m:n$, and state this ratio.'
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 7
+          vectorY: 4
+          label: C
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: The points are collinear. C divides AB in the ratio 3:1.
+      stepByStepGuideline:
+      - 'Assume C divides AB in the ratio $k:1$. The position vector $\mathbf{c}$ is given by the formula: $\mathbf{c} = (1\mathbf{a}
+        + k\mathbf{b})/(1+k)$.'
+      - 'Use the x-components: $C_x = (A_x + k B_x) / (1+k)$. Substitute values: $7 = (1 + 9k) / (1+k)$.'
+      - 'Solve for k: $7(1+k) = 1 + 9k \implies 7 + 7k = 1 + 9k \implies 6 = 2k \implies k = 3$.'
+      - 'Verify the result using the y-components: $C_y = (A_y + k B_y) / (1+k)$. Substitute values and $k=3$: $4 = (1 + 3(5))
+        / (1+3)$.'
+      - 'Check: $4 = (1 + 15) / 4 = 16/4 = 4$. Since the value of k is consistent for both components, C lies on AB. The ratio
+        $m:n$ is $k:1$, which is 3:1. Therefore, A, B, and C are collinear.'
+      id: q12-5
+      questionGroup: q12
+- id: vectors-node-13
+  nodeNumber: 13
+  title: Calculating Magnitude
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: componentForm
+    preWrittenQuestions:
+    - problemText: A physics experiment involves applying a resultant force $\mathbf{F}$ to an object. The force vector is
+        given by the column vector $\mathbf{F} = \begin{pmatrix} -3 \\ 4 \end{pmatrix}$ Newtons, where the components represent
+        the force in the horizontal and vertical directions respectively. Calculate the overall magnitude of the force applied.
+      avatarIntro: Calculating the magnitude of a vector tells us its length or size. Remember that magnitude is always positive!
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: -3
+          vectorY: 4
+          label: F
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $|\mathbf{F}| = 5$ N
+      stepByStepGuideline:
+      - 'Identify the components of the force vector: $x = -3$ and $y = 4$.'
+      - 'Use the magnitude formula for a 2D vector: $|\mathbf{F}| = \sqrt{x^2 + y^2}$.'
+      - 'Substitute the values: $|\mathbf{F}| = \sqrt{(-3)^2 + 4^2}$.'
+      - 'Calculate the squares: $|\mathbf{F}| = \sqrt{9 + 16}$.'
+      - 'Simplify the radical: $|\mathbf{F}| = \sqrt{25}$.'
+      - 'State the final magnitude: $|\mathbf{F}| = 5$ N.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: An explorer follows a route defined by the displacement vector $\mathbf{r} = 7\mathbf{i} - 24\mathbf{j}$
+        kilometers. Find the total straight-line distance (magnitude) covered by the explorer in kilometers.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 7
+          vectorY: -24
+          label: r
+          showIJ: true
+          showColumn: false
+          showGrid: false
+          highlightComponent: none
+      finalAnswer: $|\mathbf{r}| = 25$ km
+      stepByStepGuideline:
+      - 'Identify the components of the displacement vector: $x = 7$ and $y = -24$.'
+      - 'Use the magnitude formula for a 2D vector: $|\mathbf{r}| = \sqrt{x^2 + y^2}$.'
+      - 'Substitute the values: $|\mathbf{r}| = \sqrt{7^2 + (-24)^2}$.'
+      - 'Calculate the squares: $|\mathbf{r}| = \sqrt{49 + 576}$.'
+      - 'Simplify the radical: $|\mathbf{r}| = \sqrt{625}$.'
+      - 'State the final magnitude: $|\mathbf{r}| = 25$ km.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: A satellite launch trajectory is modeled by the 3D vector $\mathbf{T} = 2\mathbf{i} + 6\mathbf{j} + 9\mathbf{k}$,
+        where the units are in thousands of kilometers. Determine the total distance (magnitude) of the initial trajectory
+        segment.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 2
+          vectorY: 6
+          label: T
+          showIJ: true
+          showColumn: false
+          showGrid: false
+          highlightComponent: none
+      finalAnswer: $|\mathbf{T}| = 11$ thousand km
+      stepByStepGuideline:
+      - 'Identify the components of the 3D vector: $x = 2$, $y = 6$, and $z = 9$.'
+      - 'Use the magnitude formula for a 3D vector: $|\mathbf{T}| = \sqrt{x^2 + y^2 + z^2}$.'
+      - 'Substitute the values: $|\mathbf{T}| = \sqrt{2^2 + 6^2 + 9^2}$.'
+      - 'Calculate the squares: $|\mathbf{T}| = \sqrt{4 + 36 + 81}$.'
+      - 'Sum the values under the radical: $|\mathbf{T}| = \sqrt{121}$.'
+      - 'State the final magnitude: $|\mathbf{T}| = 11$ thousand km.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: A geological survey maps the relative position of a mineral deposit using the 3D column vector $\mathbf{P}
+        = \begin{pmatrix} 1 \\ 4 \\ 8 \end{pmatrix}$ meters from the main access point (the origin). Calculate the straight-line
+        distance from the access point to the mineral deposit.
+      mathTool: null
+      finalAnswer: $|\mathbf{P}| = 9$ meters
+      stepByStepGuideline:
+      - 'Identify the components of the 3D vector: $x = 1$, $y = 4$, and $z = 8$.'
+      - 'Use the magnitude formula for a 3D vector: $|\mathbf{P}| = \sqrt{x^2 + y^2 + z^2}$.'
+      - 'Substitute the values: $|\mathbf{P}| = \sqrt{1^2 + 4^2 + 8^2}$.'
+      - 'Calculate the squares: $|\mathbf{P}| = \sqrt{1 + 16 + 64}$.'
+      - 'Sum the values under the radical: $|\mathbf{P}| = \sqrt{81}$.'
+      - 'State the final magnitude: $|\mathbf{P}| = 9$ meters.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: 'In a laboratory slide, a microorganism moves from initial position $A(1, 1)$ to final position $B(9, 16)$,
+        where coordinates are measured in micrometers ($\mu m$).
+
+        (a) Find the displacement vector $\vec{AB}$.
+
+        (b) Calculate the total distance the microorganism traveled, which is the magnitude of $\vec{AB}$.'
+      mathTool: null
+      finalAnswer: (a) $\vec{AB} = \begin{pmatrix} 8 \\ 15 \end{pmatrix}$ (b) 17 $\mu m$
+      stepByStepGuideline:
+      - 'Part (a): Calculate the displacement vector $\vec{AB}$ by subtracting the initial coordinates from the final coordinates:
+        $\vec{AB} = B - A = (9-1, 16-1)$.'
+      - 'Find the components: $\vec{AB} = \begin{pmatrix} 8 \\ 15 \end{pmatrix}$.'
+      - 'Part (b): Calculate the magnitude of $\vec{AB}$ using the distance formula (which is the magnitude formula): $|\vec{AB}|
+        = \sqrt{x^2 + y^2}$.'
+      - 'Substitute the components: $|\vec{AB}| = \sqrt{8^2 + 15^2}$.'
+      - 'Calculate the squares: $|\vec{AB}| = \sqrt{64 + 225}$.'
+      - 'Simplify the radical: $|\vec{AB}| = \sqrt{289}$.'
+      - 'State the final distance: $|\vec{AB}| = 17 \mu m$.'
+      id: q13-5
+      questionGroup: q13
+- id: vectors-node-14
+  nodeNumber: 14
+  title: Unit Vectors and Distance
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: componentForm
+    preWrittenQuestions:
+    - problemText: A weather station records the current wind velocity vector as $\mathbf{v} = 3\mathbf{i} + 4\mathbf{j}$
+        (measured in knots). The unit vector is needed to standardize the direction irrespective of the speed. Find the unit
+        vector $\hat{\mathbf{v}}$ in the direction of $\mathbf{v}$.
+      avatarIntro: Welcome! Unit vectors are essential for defining direction without reference to magnitude. Let's practice
+        normalizing this vector.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 3
+          vectorY: 4
+          label: v
+          showIJ: true
+          showColumn: false
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: \hat{\mathbf{v}} = \frac{3}{5}\mathbf{i} + \frac{4}{5}\mathbf{j}$ or $0.6\mathbf{i} + 0.8\mathbf{j}
+      stepByStepGuideline:
+      - 'Calculate the magnitude of vector $\mathbf{v}$: $|\mathbf{v}| = \sqrt{x^2 + y^2}$.'
+      - 'Substitute the components: $|\mathbf{v}| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$.'
+      - 'Find the unit vector $\hat{\mathbf{v}}$ by dividing the vector by its magnitude: $\hat{\mathbf{v}} = \frac{\mathbf{v}}{|\mathbf{v}|}$.'
+      - $\hat{\mathbf{v}} = \frac{3\mathbf{i} + 4\mathbf{j}}{5} = \frac{3}{5}\mathbf{i} + \frac{4}{5}\mathbf{j}$.
+      id: q14-1
+      questionGroup: q14
+    - problemText: A delivery company uses a coordinate system where distances are measured in kilometers. A package needs
+        to be delivered from Point A(1, 2) to Point B(4, 6). Calculate the straight-line distance (in kilometers) between
+        the two points.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: 5 km
+      stepByStepGuideline:
+      - 'Determine the difference in x-coordinates and y-coordinates: $\Delta x = 4 - 1 = 3$ and $\Delta y = 6 - 2 = 4$.'
+      - 'Use the distance formula derived from the magnitude of the displacement vector: $D = \sqrt{(\Delta x)^2 + (\Delta
+        y)^2}$.'
+      - 'Substitute the values: $D = \sqrt{(3)^2 + (4)^2} = \sqrt{9 + 16}$.'
+      - 'Calculate the final distance: $D = \sqrt{25} = 5$ km.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: In an engineering calculation for stress analysis, a force is applied along the direction of vector $\mathbf{u}
+        = \begin{pmatrix} 5 \\ 12 \end{pmatrix}$ kN. Determine the unit vector $\hat{\mathbf{u}}$ that defines this direction.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: \hat{\mathbf{u}} = \begin{pmatrix} 5/13 \\ 12/13 \end{pmatrix}
+      stepByStepGuideline:
+      - 'Calculate the magnitude of vector $\mathbf{u}$: $|\mathbf{u}| = \sqrt{5^2 + 12^2}$.'
+      - 'Calculate the magnitude: $|\mathbf{u}| = \sqrt{25 + 144} = \sqrt{169} = 13$.'
+      - 'Divide the vector $\mathbf{u}$ by its magnitude to find the unit vector $\hat{\mathbf{u}}$:'
+      - $$\hat{\mathbf{u}} = \frac{1}{13} \begin{pmatrix} 5 \\ 12 \end{pmatrix} = \begin{pmatrix} 5/13 \\ 12/13 \end{pmatrix}$$
+      id: q14-3
+      questionGroup: q14
+    - problemText: In computer graphics, vectors are often normalized to ensure they represent direction only. A normalized
+        direction vector is given as $\mathbf{w} = 0.6\mathbf{i} + 0.8\mathbf{j}$. Show mathematically that $\mathbf{w}$ is
+        indeed a unit vector by calculating its magnitude.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: $|\mathbf{w}| = 1$. Since the magnitude is 1, $\mathbf{w}$ is a unit vector.
+      stepByStepGuideline:
+      - To show that $\mathbf{w}$ is a unit vector, calculate its magnitude using $|\mathbf{w}| = \sqrt{x^2 + y^2}$.
+      - 'Substitute the components: $|\mathbf{w}| = \sqrt{(0.6)^2 + (0.8)^2}$.'
+      - 'Calculate the squares: $|\mathbf{w}| = \sqrt{0.36 + 0.64}$.'
+      - 'Sum the components: $|\mathbf{w}| = \sqrt{1}$.'
+      - 'Conclude the magnitude: $|\mathbf{w}| = 1$. Since the magnitude is 1, $\mathbf{w}$ is a unit vector.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: "A geological team is tracking a tunneling path. The entry point is A(-1, 3) and the final target is B(4,\
+        \ 15). \n(a) Find the displacement vector $\\vec{AB}$. \n(b) Find the unit vector that defines the exact direction\
+        \ of the tunneling path from A to B."
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: (a) $\vec{AB} = (5, 12)$; (b) $\hat{\mathbf{u}} = (5/13, 12/13)$
+      stepByStepGuideline:
+      - 'Part (a): Calculate the displacement vector $\vec{AB} = \mathbf{b} - \mathbf{a}$.'
+      - $\vec{AB} = (4 - (-1), 15 - 3) = (5, 12)$.
+      - 'Part (b): Find the magnitude of the displacement vector $|\vec{AB}|$.'
+      - $|\vec{AB}| = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13$.
+      - 'Find the unit vector by dividing the displacement vector by its magnitude:'
+      - $$\hat{\mathbf{u}} = \frac{\vec{AB}}{|\vec{AB}|} = \frac{(5, 12)}{13} = (5/13, 12/13)$$
+      id: q14-5
+      questionGroup: q14
+- id: vectors-node-15
+  nodeNumber: 15
+  title: Solving Vector Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A financial analyst models the change in value of a stock portfolio using vectors. The final target change
+        $\mathbf{b}$ is $11\mathbf{i} + 17\mathbf{j}$. The current change $\mathbf{a}$ is $3\mathbf{i} + 5\mathbf{j}$. If
+        the necessary corrective investment $\mathbf{x}$ must satisfy the equation $2\mathbf{x} + \mathbf{a} = \mathbf{b}$,
+        find the required vector $\mathbf{x}$.
+      avatarIntro: Vector equations are just like normal algebraic equations! Remember to isolate the unknown vector by moving
+        known vectors and scalars across the equals sign.
+      mathTool: null
+      finalAnswer: $4\mathbf{i} + 6\mathbf{j}$
+      stepByStepGuideline:
+      - 'Start with the equation: $2\mathbf{x} + \mathbf{a} = \mathbf{b}$.'
+      - 'Substitute the known vectors: $2\mathbf{x} + (3\mathbf{i} + 5\mathbf{j}) = 11\mathbf{i} + 17\mathbf{j}$.'
+      - 'Isolate $2\mathbf{x}$ by subtracting $\mathbf{a}$ from both sides: $2\mathbf{x} = (11\mathbf{i} + 17\mathbf{j}) -
+        (3\mathbf{i} + 5\mathbf{j})$.'
+      - 'Perform the vector subtraction component-wise: $2\mathbf{x} = (11-3)\mathbf{i} + (17-5)\mathbf{j} = 8\mathbf{i} +
+        12\mathbf{j}$.'
+      - 'Divide the resulting vector by the scalar 2 to solve for $\mathbf{x}$: $\mathbf{x} = \frac{1}{2}(8\mathbf{i} + 12\mathbf{j})
+        = 4\mathbf{i} + 6\mathbf{j}$.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: A robotic arm's movement is determined by the equation $\mathbf{x} - \mathbf{a} = -3\mathbf{b}$, where
+        $\mathbf{a} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix} 7 \\ 1 \end{pmatrix}$ represent
+        reference positions. Find the unknown displacement vector $\mathbf{x}$.
+      mathTool: null
+      finalAnswer: $ \begin{pmatrix} -19 \\ 0 \end{pmatrix}$
+      stepByStepGuideline:
+      - 'Start with the equation: $\mathbf{x} - \mathbf{a} = -3\mathbf{b}$.'
+      - 'Isolate $\mathbf{x}$: $\mathbf{x} = \mathbf{a} - 3\mathbf{b}$.'
+      - 'Substitute the given vectors: $\mathbf{x} = \begin{pmatrix} 2 \\ 3 \end{pmatrix} - 3 \begin{pmatrix} 7 \\ 1 \end{pmatrix}$.'
+      - 'Calculate the scalar multiplication: $3 \begin{pmatrix} 7 \\ 1 \end{pmatrix} = \begin{pmatrix} 21 \\ 3 \end{pmatrix}$.'
+      - 'Perform the vector subtraction: $\mathbf{x} = \begin{pmatrix} 2 \\ 3 \end{pmatrix} - \begin{pmatrix} 21 \\ 3 \end{pmatrix}
+        = \begin{pmatrix} 2 - 21 \\ 3 - 3 \end{pmatrix}$.'
+      - 'The result is: $\mathbf{x} = \begin{pmatrix} -19 \\ 0 \end{pmatrix}$.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: In a chemical mixture experiment, the required final concentration vector $\mathbf{c}$ must satisfy the
+        relationship $3\mathbf{a} - 2\mathbf{b} = \mathbf{c}$. Given the concentration vectors $\mathbf{a} = \begin{pmatrix}
+        4 \\ 2 \end{pmatrix}$ and $\mathbf{c} = \begin{pmatrix} 10 \\ 8 \end{pmatrix}$, determine the required concentration
+        vector $\mathbf{b}$.
+      mathTool: null
+      finalAnswer: $ \begin{pmatrix} 1 \\ -1 \end{pmatrix}$
+      stepByStepGuideline:
+      - 'Start with the equation: $3\mathbf{a} - 2\mathbf{b} = \mathbf{c}$.'
+      - 'Rearrange the equation to isolate the term containing $\mathbf{b}$: $3\mathbf{a} - \mathbf{c} = 2\mathbf{b}$.'
+      - 'Substitute the known vectors: $2\mathbf{b} = 3\begin{pmatrix} 4 \\ 2 \end{pmatrix} - \begin{pmatrix} 10 \\ 8 \end{pmatrix}$.'
+      - 'Perform scalar multiplication: $2\mathbf{b} = \begin{pmatrix} 12 \\ 6 \end{pmatrix} - \begin{pmatrix} 10 \\ 8 \end{pmatrix}$.'
+      - 'Perform vector subtraction: $2\mathbf{b} = \begin{pmatrix} 12 - 10 \\ 6 - 8 \end{pmatrix} = \begin{pmatrix} 2 \\
+        -2 \end{pmatrix}$.'
+      - 'Divide by the scalar 2 to find $\mathbf{b}$: $\mathbf{b} = \frac{1}{2} \begin{pmatrix} 2 \\ -2 \end{pmatrix} = \begin{pmatrix}
+        1 \\ -1 \end{pmatrix}$.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: 'Two velocity vectors, $\mathbf{x}$ and $\mathbf{y}$, satisfy the following system of equations:
+
+        (I) $\mathbf{x} + \mathbf{y} = 5\mathbf{i} + 7\mathbf{j}$
+
+        (II) $\mathbf{x} - 2\mathbf{y} = 2\mathbf{i} + 1\mathbf{j}$
+
+        Find the vector $\mathbf{x}$.'
+      mathTool: null
+      finalAnswer: $4\mathbf{i} + 5\mathbf{j}$
+      stepByStepGuideline:
+      - 'Subtract Equation (II) from Equation (I) to eliminate $\mathbf{x}$: $(\mathbf{x} + \mathbf{y}) - (\mathbf{x} - 2\mathbf{y})
+        = (5\mathbf{i} + 7\mathbf{j}) - (2\mathbf{i} + 1\mathbf{j})$.'
+      - 'Simplify the left side: $\mathbf{y} - (-2\mathbf{y}) = 3\mathbf{y}$.'
+      - 'Simplify the right side: $(5-2)\mathbf{i} + (7-1)\mathbf{j} = 3\mathbf{i} + 6\mathbf{j}$.'
+      - 'Solve for $\mathbf{y}$: $3\mathbf{y} = 3\mathbf{i} + 6\mathbf{j}$, so $\mathbf{y} = \mathbf{i} + 2\mathbf{j}$.'
+      - 'Substitute the value of $\mathbf{y}$ back into Equation (I): $\mathbf{x} + (\mathbf{i} + 2\mathbf{j}) = 5\mathbf{i}
+        + 7\mathbf{j}$.'
+      - 'Isolate $\mathbf{x}$: $\mathbf{x} = (5\mathbf{i} + 7\mathbf{j}) - (\mathbf{i} + 2\mathbf{j})$.'
+      - 'Calculate $\mathbf{x}$: $\mathbf{x} = (5-1)\mathbf{i} + (7-2)\mathbf{j} = 4\mathbf{i} + 5\mathbf{j}$.'
+      id: q15-4
+      questionGroup: q15
+    - problemText: An aircraft navigates based on a complex trajectory equation $0.5\mathbf{x} + \mathbf{a} = \mathbf{b}$.
+        Given the position vectors $\mathbf{a} = \begin{pmatrix} 11 \\ 17 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix}
+        3 \\ 5 \end{pmatrix}$, find the required vector $\mathbf{x}$.
+      mathTool: null
+      finalAnswer: $ \begin{pmatrix} -16 \\ -24 \end{pmatrix}$
+      stepByStepGuideline:
+      - 'Start with the equation: $0.5\mathbf{x} + \mathbf{a} = \mathbf{b}$.'
+      - 'Isolate $0.5\mathbf{x}$: $0.5\mathbf{x} = \mathbf{b} - \mathbf{a}$.'
+      - 'Substitute the known vectors: $0.5\mathbf{x} = \begin{pmatrix} 3 \\ 5 \end{pmatrix} - \begin{pmatrix} 11 \\ 17 \end{pmatrix}$.'
+      - 'Perform vector subtraction: $0.5\mathbf{x} = \begin{pmatrix} 3 - 11 \\ 5 - 17 \end{pmatrix} = \begin{pmatrix} -8
+        \\ -12 \end{pmatrix}$.'
+      - 'To solve for $\mathbf{x}$, multiply both sides by 2 (since $0.5 = 1/2$): $\mathbf{x} = 2 \times \begin{pmatrix} -8
+        \\ -12 \end{pmatrix}$.'
+      - 'Perform the scalar multiplication: $\mathbf{x} = \begin{pmatrix} 2 \times -8 \\ 2 \times -12 \end{pmatrix} = \begin{pmatrix}
+        -16 \\ -24 \end{pmatrix}$.'
+      id: q15-5
+      questionGroup: q15
+- id: vectors-node-16
+  nodeNumber: 16
+  title: Complex Vector Expression Simplification
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the following vector expression, expressing the result as a linear combination of vectors $\mathbf{a}$
+        and $\mathbf{b}$:
+
+        $$3(\mathbf{a} + 4\mathbf{b}) + 2(2\mathbf{a} - \mathbf{b})$$'
+      avatarIntro: Mastering vector simplification is crucial. Remember to use the distributive property first and then combine
+        the like terms.
+      mathTool: null
+      finalAnswer: 7\mathbf{a} + 10\mathbf{b}
+      stepByStepGuideline:
+      - 'Step 1: Apply the distributive property to the first term: $3(\mathbf{a} + 4\mathbf{b}) = 3\mathbf{a} + 12\mathbf{b}$.'
+      - 'Step 2: Apply the distributive property to the second term: $2(2\mathbf{a} - \mathbf{b}) = 4\mathbf{a} - 2\mathbf{b}$.'
+      - 'Step 3: Write out the expanded expression: $3\mathbf{a} + 12\mathbf{b} + 4\mathbf{a} - 2\mathbf{b}$.'
+      - 'Step 4: Group and combine the like terms (vectors $\mathbf{a}$ and $\mathbf{b}$ separately): $(3\mathbf{a} + 4\mathbf{a})
+        + (12\mathbf{b} - 2\mathbf{b})$.'
+      - 'Step 5: Simplify to find the final answer: $7\mathbf{a} + 10\mathbf{b}$.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: 'Express the following vector expression in terms of $\mathbf{p}$ and $\mathbf{q}$:
+
+        $$4(2\mathbf{p} - \mathbf{q}) - (\mathbf{p} + 3\mathbf{q}) + 5\mathbf{q}$$'
+      mathTool: null
+      finalAnswer: 7\mathbf{p} - 2\mathbf{q}
+      stepByStepGuideline:
+      - 'Step 1: Apply the scalar multiplication to the first parenthesis: $4(2\mathbf{p} - \mathbf{q}) = 8\mathbf{p} - 4\mathbf{q}$.'
+      - 'Step 2: Distribute the negative sign to the second parenthesis: $-(\mathbf{p} + 3\mathbf{q}) = -\mathbf{p} - 3\mathbf{q}$.'
+      - 'Step 3: Write the full expanded expression: $8\mathbf{p} - 4\mathbf{q} - \mathbf{p} - 3\mathbf{q} + 5\mathbf{q}$.'
+      - 'Step 4: Group the $\mathbf{p}$ terms and $\mathbf{q}$ terms: $(8\mathbf{p} - \mathbf{p}) + (-4\mathbf{q} - 3\mathbf{q}
+        + 5\mathbf{q})$.'
+      - 'Step 5: Combine the coefficients: $(8-1)\mathbf{p} + (-4-3+5)\mathbf{q} = 7\mathbf{p} - 2\mathbf{q}$.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: 'Simplify the vector expression involving subtraction of scaled terms:
+
+        $$2(\mathbf{x} - 5\mathbf{y}) - 3(\mathbf{y} - 2\mathbf{x})$$'
+      mathTool: null
+      finalAnswer: 8\mathbf{x} - 13\mathbf{y}
+      stepByStepGuideline:
+      - 'Step 1: Apply the scalar 2 to the first parenthesis: $2(\mathbf{x} - 5\mathbf{y}) = 2\mathbf{x} - 10\mathbf{y}$.'
+      - 'Step 2: Apply the scalar -3 to the second parenthesis. Be careful with the signs: $-3(\mathbf{y} - 2\mathbf{x}) =
+        -3\mathbf{y} + 6\mathbf{x}$.'
+      - 'Step 3: Write the full expression: $2\mathbf{x} - 10\mathbf{y} - 3\mathbf{y} + 6\mathbf{x}$.'
+      - 'Step 4: Group the $\mathbf{x}$ terms and $\mathbf{y}$ terms: $(2\mathbf{x} + 6\mathbf{x}) + (-10\mathbf{y} - 3\mathbf{y})$.'
+      - 'Step 5: Combine the like terms: $8\mathbf{x} - 13\mathbf{y}$.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: 'Simplify the following expression involving four terms and negative scalar multiplication, expressing
+        the result in terms of $\mathbf{u}$ and $\mathbf{v}$:
+
+        $$-2(3\mathbf{u} + \mathbf{v}) + 4(\mathbf{u} - 2\mathbf{v}) + 3\mathbf{u} + 5\mathbf{v}$$'
+      mathTool: null
+      finalAnswer: \mathbf{u} - 5\mathbf{v}
+      stepByStepGuideline:
+      - 'Step 1: Expand the first term: $-2(3\mathbf{u} + \mathbf{v}) = -6\mathbf{u} - 2\mathbf{v}$.'
+      - 'Step 2: Expand the second term: $4(\mathbf{u} - 2\mathbf{v}) = 4\mathbf{u} - 8\mathbf{v}$.'
+      - 'Step 3: Write the complete expression: $-6\mathbf{u} - 2\mathbf{v} + 4\mathbf{u} - 8\mathbf{v} + 3\mathbf{u} + 5\mathbf{v}$.'
+      - 'Step 4: Group the $\mathbf{u}$ terms: $(-6\mathbf{u} + 4\mathbf{u} + 3\mathbf{u}) = ( -6 + 4 + 3)\mathbf{u} = 1\mathbf{u}$
+        or $\mathbf{u}$.'
+      - 'Step 5: Group the $\mathbf{v}$ terms: $(-2\mathbf{v} - 8\mathbf{v} + 5\mathbf{v}) = (-2 - 8 + 5)\mathbf{v} = -5\mathbf{v}$.'
+      - 'Step 6: Combine the results: $\mathbf{u} - 5\mathbf{v}$.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: 'Simplify the complex vector expression involving nested parentheses:
+
+        $$5[\mathbf{a} + 2(\mathbf{b} - 3\mathbf{a})] - 3\mathbf{b}$$'
+      mathTool: null
+      finalAnswer: -25\mathbf{a} + 7\mathbf{b}
+      stepByStepGuideline:
+      - 'Step 1: Simplify the innermost parenthesis first: $2(\mathbf{b} - 3\mathbf{a}) = 2\mathbf{b} - 6\mathbf{a}$.'
+      - 'Step 2: Substitute this back into the square brackets: $5[\mathbf{a} + (2\mathbf{b} - 6\mathbf{a})] - 3\mathbf{b}$.'
+      - 'Step 3: Combine the terms inside the square brackets: $5[(\mathbf{a} - 6\mathbf{a}) + 2\mathbf{b}] - 3\mathbf{b}
+        = 5[-5\mathbf{a} + 2\mathbf{b}] - 3\mathbf{b}$.'
+      - 'Step 4: Apply the outer scalar 5 to the terms inside the brackets: $5(-5\mathbf{a}) + 5(2\mathbf{b}) = -25\mathbf{a}
+        + 10\mathbf{b}$.'
+      - 'Step 5: Complete the expression and combine the $\mathbf{b}$ terms: $-25\mathbf{a} + 10\mathbf{b} - 3\mathbf{b}$.'
+      - 'Step 6: Final simplification: $-25\mathbf{a} + 7\mathbf{b}$.'
+      id: q16-5
+      questionGroup: q16
+- id: vectors-node-17
+  nodeNumber: 17
+  title: Testing for Parallelism
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vectorDiagram
+    preWrittenQuestions:
+    - problemText: 'An architect is designing two structural beams, represented by vectors $\mathbf{a} = \begin{pmatrix} 6
+        \\ 9 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix} 4 \\ 6 \end{pmatrix}$. For structural stability, the beams must
+        be parallel.
+
+
+        (a) Determine if vector $\mathbf{a}$ and vector $\mathbf{b}$ are parallel.
+
+        (b) If they are parallel, find the scalar $k$ such that $\mathbf{a} = k\mathbf{b}$.'
+      avatarIntro: This set of problems will help you master how to determine if two vectors are running in the same direction
+        or opposite directions. Remember, parallelism relies on a constant scalar multiple.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"a","x":6,"y":9},{"label":"b","x":4,"y":6}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: (a) Yes, they are parallel. (b) k = 1.5
+      stepByStepGuideline:
+      - 'To check for parallelism, compare the ratios of the corresponding components: $k = a_1/b_1$ and $k = a_2/b_2$.'
+      - 'Calculate the ratio for the first components: $k_x = 6/4 = 1.5$.'
+      - 'Calculate the ratio for the second components: $k_y = 9/6 = 1.5$.'
+      - Since $k_x = k_y = 1.5$, the vectors are parallel. Thus, $k=1.5$.
+      - Since $k > 0$, the vectors point in the same direction.
+      id: q17-1
+      questionGroup: q17
+    - problemText: A traffic control system models two potential routes using the vectors $\mathbf{u} = 3\mathbf{i} + 4\mathbf{j}$
+        and $\mathbf{v} = 2\mathbf{i} + 5\mathbf{j}$. Determine if these two routes are parallel.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"u","x":3,"y":4},{"label":"v","x":2,"y":5}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: The vectors are not parallel.
+      stepByStepGuideline:
+      - 'Write the vectors in component form: $\mathbf{u} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ and $\mathbf{v} = \begin{pmatrix}
+        2 \\ 5 \end{pmatrix}$.'
+      - Calculate the ratio of the corresponding components.
+      - 'Ratio for i-components: $3/2 = 1.5$.'
+      - 'Ratio for j-components: $4/5 = 0.8$.'
+      - Since the ratios are not equal ($1.5 \neq 0.8$), there is no scalar $k$ such that $\mathbf{u} = k\mathbf{v}$. Therefore,
+        the vectors are not parallel.
+      id: q17-2
+      questionGroup: q17
+    - problemText: 'In a video game, movement path $\mathbf{P}$ is defined by $\mathbf{P} = 8\mathbf{i} + 12\mathbf{j}$. A
+        reverse path $\mathbf{R}$ is defined by $\mathbf{R} = -4\mathbf{i} - 6\mathbf{j}$.
+
+
+        Show that $\mathbf{P}$ and $\mathbf{R}$ are parallel. Find the scalar $k$ such that $\mathbf{P} = k\mathbf{R}$. State
+        whether they point in the same or opposite directions.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"P","x":8,"y":12},{"label":"R","x":-4,"y":-6}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: k = -2. The vectors are parallel and point in opposite directions.
+      stepByStepGuideline:
+      - 'To find $k$ such that $\mathbf{P} = k\mathbf{R}$, we compare components: $k = P_x / R_x$ and $k = P_y / R_y$.'
+      - 'Calculate $k$ using the i-components: $k = 8 / (-4) = -2$.'
+      - 'Calculate $k$ using the j-components: $k = 12 / (-6) = -2$.'
+      - Since the ratio is constant ($k=-2$), the vectors are parallel.
+      - Since $k$ is negative ($k < 0$), the vectors point in opposite directions.
+      id: q17-3
+      questionGroup: q17
+    - problemText: 'A cartographer is scaling down a large blueprint. The original dimension vector is $\mathbf{a} = \begin{pmatrix}
+        3 \\ 6 \end{pmatrix}$ units, and the scaled dimension vector is $\mathbf{b} = \begin{pmatrix} 5 \\ 10 \end{pmatrix}$
+        units.
+
+
+        By calculating the component ratios, determine if the vectors $\mathbf{a}$ and $\mathbf{b}$ are parallel.'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"a","x":3,"y":6},{"label":"b","x":5,"y":10}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: Yes, they are parallel.
+      stepByStepGuideline:
+      - 'Calculate the ratio of the first components ($a_1/b_1$): $3/5 = 0.6$.'
+      - 'Calculate the ratio of the second components ($a_2/b_2$): $6/10 = 0.6$.'
+      - Since the ratios are equal ($0.6 = 0.6$), the vectors $\mathbf{a}$ and $\mathbf{b}$ are parallel. This means $\mathbf{a}
+        = 0.6\mathbf{b}$.
+      id: q17-4
+      questionGroup: q17
+    - problemText: 'A market analyst models the change in value of two different assets, A and B, over a week using vectors.
+        Asset A''s change is modeled by $\mathbf{a} = \mathbf{i} + 2\mathbf{j}$ and Asset B''s change is modeled by $\mathbf{b}
+        = 3\mathbf{i} + 5\mathbf{j}$. If the vectors are parallel, the asset changes are perfectly correlated.
+
+
+        Are the vectors $\mathbf{a}$ and $\mathbf{b}$ parallel?'
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"a","x":1,"y":2},{"label":"b","x":3,"y":5}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: No, the vectors are not parallel.
+      stepByStepGuideline:
+      - 'Express the vectors in component form: $\mathbf{a} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix}
+        3 \\ 5 \end{pmatrix}$.'
+      - 'Check the ratio of the i-components ($a_1/b_1$): $1/3$.'
+      - 'Check the ratio of the j-components ($a_2/b_2$): $2/5 = 0.4$.'
+      - Since $1/3 \approx 0.333$ and $2/5 = 0.4$, the ratios are not equal ($1/3 \neq 2/5$).
+      - Therefore, there is no single scalar $k$ relating the two vectors, and they are not parallel.
+      id: q17-5
+      questionGroup: q17
+- id: vectors-node-18
+  nodeNumber: 18
+  title: Geometric Proofs Using Parallelism
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: componentForm
+    preWrittenQuestions:
+    - problemText: A land surveyor maps a new parcel of land defined by the coordinates A(1, 2), B(4, 5), C(7, 3), and D(10,
+        6). The surveyor needs to confirm if the boundary line AB is parallel to the boundary line CD. Use vector methods
+        to determine if $\vec{AB}$ is parallel to $\vec{CD}$.
+      avatarIntro: Welcome! Using direction vectors is a powerful way to prove geometric properties like parallelism. Let's
+        find the component forms of the required vectors.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 3
+          vectorY: 3
+          label: AB
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $\vec{AB} = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$ and $\vec{CD} = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$.
+        Since $\vec{AB} = 1 \cdot \vec{CD}$, the lines AB and CD are parallel.
+      stepByStepGuideline:
+      - 'Calculate the direction vector $\vec{AB}$: $\vec{AB} = B - A = (4-1, 5-2) = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$.'
+      - 'Calculate the direction vector $\vec{CD}$: $\vec{CD} = D - C = (10-7, 6-3) = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$.'
+      - Compare the two vectors. Since $\vec{AB} = 1 \cdot \vec{CD}$, one vector is a scalar multiple of the other (where
+        the scalar is 1).
+      - Conclude that AB is parallel to CD.
+      id: q18-1
+      questionGroup: q18
+    - problemText: 'In vector geometry, O is the origin. M is the midpoint of the line segment OA, and N is the midpoint of
+        the line segment OB. Using position vectors $\mathbf{a}$ and $\mathbf{b}$ for A and B respectively, prove the Midpoint
+        Theorem using vectors: that the line segment MN is parallel to the line segment AB.'
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 6
+          vectorY: 8
+          label: AB
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: The direction vector $\vec{MN} = \frac{1}{2}(\mathbf{b} - \mathbf{a})$ and the direction vector $\vec{AB}
+        = \mathbf{b} - \mathbf{a}$. Since $\vec{MN} = \frac{1}{2}\vec{AB}$, MN is parallel to AB.
+      stepByStepGuideline:
+      - 'Express the position vectors of the midpoints M and N: $\vec{OM} = \mathbf{m} = \frac{1}{2}\mathbf{a}$ and $\vec{ON}
+        = \mathbf{n} = \frac{1}{2}\mathbf{b}$.'
+      - 'Find the direction vector $\vec{MN}$: $\vec{MN} = \mathbf{n} - \mathbf{m} = \frac{1}{2}\mathbf{b} - \frac{1}{2}\mathbf{a}
+        = \frac{1}{2}(\mathbf{b} - \mathbf{a})$.'
+      - 'Find the direction vector $\vec{AB}$: $\vec{AB} = \mathbf{b} - \mathbf{a}$.'
+      - 'Show the scalar relationship: Since $\vec{MN} = \frac{1}{2}\vec{AB}$, $\vec{MN}$ is a scalar multiple of $\vec{AB}$,
+        proving that MN is parallel to AB.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: Points O(0, 0), A(6, 4), and B(3, 8) form triangle OAB. Points P and Q are placed such that $\vec{OP} =
+        2\vec{OA}$ and $\vec{OQ} = 2\vec{OB}$. Prove that the line segment AB is parallel to the line segment PQ, demonstrating
+        the relationship between the two similar triangles OAB and OPQ.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: -3
+          vectorY: 4
+          label: AB
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $\vec{AB} = \begin{pmatrix} -3 \\ 4 \end{pmatrix}$ and $\vec{PQ} = \begin{pmatrix} -6 \\ 8 \end{pmatrix}$.
+        Since $\vec{PQ} = 2\vec{AB}$, the lines AB and PQ are parallel.
+      stepByStepGuideline:
+      - 'Determine the coordinates of P and Q: $P = 2A = (12, 8)$ and $Q = 2B = (6, 16)$.'
+      - 'Calculate the direction vector $\vec{AB}$: $\vec{AB} = B - A = (3-6, 8-4) = \begin{pmatrix} -3 \\ 4 \end{pmatrix}$.'
+      - 'Calculate the direction vector $\vec{PQ}$: $\vec{PQ} = Q - P = (6-12, 16-8) = \begin{pmatrix} -6 \\ 8 \end{pmatrix}$.'
+      - 'Show that $\vec{PQ}$ is a scalar multiple of $\vec{AB}$: $\vec{PQ} = 2 \cdot \begin{pmatrix} -3 \\ 4 \end{pmatrix}
+        = 2\vec{AB}$.'
+      - Conclude that AB is parallel to PQ.
+      id: q18-3
+      questionGroup: q18
+    - problemText: An architect models a cross-section of a structure as a quadrilateral ABCD with vertices A(1, 2), B(4,
+        5), C(7, 3), and D(10, 6). To ensure stability, the structure must be a trapezoid, meaning at least one pair of opposite
+        sides must be parallel. Show using vectors that the side AB is parallel to the side DC.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: -3
+          vectorY: -3
+          label: DC
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $\vec{AB} = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$ and $\vec{DC} = \begin{pmatrix} -3 \\ -3 \end{pmatrix}$.
+        Since $\vec{AB} = -1 \cdot \vec{DC}$, AB is parallel to DC, confirming the figure is a trapezoid.
+      stepByStepGuideline:
+      - 'Calculate the direction vector $\vec{AB}$: $\vec{AB} = B - A = (4-1, 5-2) = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$.'
+      - 'Calculate the direction vector $\vec{DC}$: $\vec{DC} = C - D = (7-10, 3-6) = \begin{pmatrix} -3 \\ -3 \end{pmatrix}$.'
+      - Compare the two vectors. Note that $\vec{AB} = -1 \cdot \begin{pmatrix} -3 \\ -3 \end{pmatrix} = -1 \cdot \vec{DC}$.
+      - Since $\vec{AB}$ is a scalar multiple of $\vec{DC}$, the sides AB and DC are parallel.
+      id: q18-4
+      questionGroup: q18
+    - problemText: Consider a quadrilateral defined by the points A(0, 0), B(6, 4), C(3, 8), and D(9, 12). Prove using vectors
+        that the side AB is parallel to the side DC.
+      mathTool:
+        toolName: componentForm
+        parameters:
+          vectorX: 6
+          vectorY: 4
+          label: AB
+          showIJ: false
+          showColumn: true
+          showGrid: true
+          highlightComponent: none
+      finalAnswer: $\vec{AB} = \begin{pmatrix} 6 \\ 4 \end{pmatrix}$ and $\vec{DC} = \begin{pmatrix} -6 \\ -4 \end{pmatrix}$.
+        Since $\vec{AB} = -1 \cdot \vec{DC}$, AB is parallel to DC.
+      stepByStepGuideline:
+      - 'Calculate the direction vector $\vec{AB}$: $\vec{AB} = B - A = (6-0, 4-0) = \begin{pmatrix} 6 \\ 4 \end{pmatrix}$.'
+      - 'Calculate the direction vector $\vec{DC}$: $\vec{DC} = C - D = (3-9, 8-12) = \begin{pmatrix} -6 \\ -4 \end{pmatrix}$.'
+      - 'Check for scalar multiplication: $\vec{AB} = -1 \cdot \begin{pmatrix} -6 \\ -4 \end{pmatrix} = -1 \cdot \vec{DC}$.'
+      - Since $\vec{AB}$ is a scalar multiple of $\vec{DC}$, the lines AB and DC are parallel.
+      id: q18-5
+      questionGroup: q18
+- id: vectors-node-19
+  nodeNumber: 19
+  title: Calculating Dot Product
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: dotProduct
+    preWrittenQuestions:
+    - problemText: A robot arm's movement is directed by vector $\mathbf{a} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ and its
+        required effort is modeled by vector $\mathbf{b} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$. Calculate the scalar quantity
+        $\mathbf{a} \cdot \mathbf{b}$.
+      avatarIntro: Welcome! Let's start by calculating the dot product of two simple 2D vectors. Remember, the dot product
+        is the sum of the products of corresponding components.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 3
+          vector1Y: 4
+          vector2X: 1
+          vector2Y: 2
+          label1: a
+          label2: b
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: '11'
+      stepByStepGuideline:
+      - 'Identify the components of the vectors: $\mathbf{a} = (3, 4)$ and $\mathbf{b} = (1, 2)$.'
+      - 'Apply the dot product formula: $\mathbf{a} \cdot \mathbf{b} = a_1b_1 + a_2b_2$.'
+      - 'Substitute the values: $\mathbf{a} \cdot \mathbf{b} = 3(1) + 4(2)$.'
+      - 'Calculate the result: $3 + 8 = 11$.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: A structural support beam is represented by the vector $\mathbf{v} = 5\mathbf{i} + 12\mathbf{j}$. Calculate
+        the value of the dot product $\mathbf{v} \cdot \mathbf{v}$. Then, find the square of the magnitude, $|\mathbf{v}|^2$,
+        and verify that $\mathbf{v} \cdot \mathbf{v} = |\mathbf{v}|^2$.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 5
+          vector1Y: 12
+          vector2X: 5
+          vector2Y: 12
+          label1: v
+          label2: v
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: v \cdot v = 169. |v|^2 = 169. Verified.
+      stepByStepGuideline:
+      - 'Calculate $\mathbf{v} \cdot \mathbf{v}$: $\mathbf{v} \cdot \mathbf{v} = 5(5) + 12(12) = 25 + 144 = 169$.'
+      - 'Calculate the magnitude $|\mathbf{v}|$: $|\mathbf{v}| = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13$.'
+      - 'Calculate the square of the magnitude: $|\mathbf{v}|^2 = 13^2 = 169$.'
+      - Since $169 = 169$, the property $\mathbf{v} \cdot \mathbf{v} = |\mathbf{v}|^2$ is verified.
+      id: q19-2
+      questionGroup: q19
+    - problemText: In a 3D simulation environment, two displacement vectors are defined as $\mathbf{u} = \mathbf{i} + 2\mathbf{j}
+        + 3\mathbf{k}$ and $\mathbf{v} = 4\mathbf{i} + 5\mathbf{j} + 6\mathbf{k}$. Calculate the dot product $\mathbf{u} \cdot
+        \mathbf{v}$.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 1
+          vector1Y: 2
+          vector1Z: 3
+          vector2X: 4
+          vector2Y: 5
+          vector2Z: 6
+          label1: u
+          label2: v
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: '32'
+      stepByStepGuideline:
+      - 'Identify the components: $\mathbf{u} = (1, 2, 3)$ and $\mathbf{v} = (4, 5, 6)$.'
+      - 'Apply the 3D dot product formula: $\mathbf{u} \cdot \mathbf{v} = u_1v_1 + u_2v_2 + u_3v_3$.'
+      - 'Substitute the values: $\mathbf{u} \cdot \mathbf{v} = 1(4) + 2(5) + 3(6)$.'
+      - 'Calculate the result: $4 + 10 + 18 = 32$.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: A force vector is given by $\mathbf{p} = 6\mathbf{i} + 8\mathbf{j}$ newtons, and the displacement vector
+        is $\mathbf{q} = -8\mathbf{i} + 6\mathbf{j}$ meters. The work done is calculated by the dot product $\mathbf{p} \cdot
+        \mathbf{q}$. Calculate the work done.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 6
+          vector1Y: 8
+          vector2X: -8
+          vector2Y: 6
+          label1: p
+          label2: q
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: '0'
+      stepByStepGuideline:
+      - 'Identify the components: $\mathbf{p} = (6, 8)$ and $\mathbf{q} = (-8, 6)$.'
+      - 'Apply the dot product formula: $\mathbf{p} \cdot \mathbf{q} = p_1q_1 + p_2q_2$.'
+      - 'Substitute the values: $\mathbf{p} \cdot \mathbf{q} = 6(-8) + 8(6)$.'
+      - 'Calculate the result: $-48 + 48 = 0$. (A dot product of zero indicates the force is perpendicular to the displacement,
+        meaning zero work is done).'
+      id: q19-4
+      questionGroup: q19
+    - problemText: Given vectors $\mathbf{a} = 2\mathbf{i} + 5\mathbf{j}$ and $\mathbf{b} = 3\mathbf{i} - \mathbf{j}$, calculate
+        the value of $(2\mathbf{a}) \cdot \mathbf{b}$.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 4
+          vector1Y: 10
+          vector2X: 3
+          vector2Y: -1
+          label1: 2a
+          label2: b
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: '2'
+      stepByStepGuideline:
+      - 'First, calculate the scalar multiple $2\mathbf{a}$: $2\mathbf{a} = 2(2\mathbf{i} + 5\mathbf{j}) = 4\mathbf{i} + 10\mathbf{j}$.'
+      - 'Identify the components of the resulting vectors: $2\mathbf{a} = (4, 10)$ and $\mathbf{b} = (3, -1)$.'
+      - 'Apply the dot product formula: $(2\mathbf{a}) \cdot \mathbf{b} = (4)(3) + (10)(-1)$.'
+      - 'Calculate the result: $12 - 10 = 2$.'
+      id: q19-5
+      questionGroup: q19
+- id: vectors-node-20
+  nodeNumber: 20
+  title: Testing Perpendicularity
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: dotProduct
+    preWrittenQuestions:
+    - problemText: An engineering team is testing two support struts for a bridge design, represented by vectors $\mathbf{a}
+        = \begin{pmatrix} 5 \\ 12 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix} -12 \\ 5 \end{pmatrix}$. Determine if these
+        two struts are aligned perpendicularly.
+      avatarIntro: Great job reaching this section! Remember that two vectors are perpendicular if and only if their dot product
+        is zero.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 5
+          vector1Y: 12
+          vector2X: -12
+          vector2Y: 5
+          label1: a
+          label2: b
+          showAngle: true
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: Yes, they are perpendicular.
+      stepByStepGuideline:
+      - Recall that two vectors $\mathbf{a}$ and $\mathbf{b}$ are perpendicular if their dot product $\mathbf{a} \cdot \mathbf{b}
+        = 0$.
+      - 'Calculate the dot product of $\mathbf{a}$ and $\mathbf{b}$: $\mathbf{a} \cdot \mathbf{b} = (5)(-12) + (12)(5)$.'
+      - 'Simplify the calculation: $-60 + 60 = 0$.'
+      - Since the dot product is zero, the vectors are perpendicular.
+      id: q20-1
+      questionGroup: q20
+    - problemText: Two forces, $\mathbf{F}_1 = 2\mathbf{i} + k\mathbf{j}$ and $\mathbf{F}_2 = 3\mathbf{i} - 2\mathbf{j}$,
+        are applied to an object. If these two forces must be perpendicular to ensure structural stability, find the value
+        of the scalar $k$.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 2
+          vector1Y: 3
+          vector2X: 3
+          vector2Y: -2
+          label1: F1
+          label2: F2
+          showAngle: true
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: k = 3
+      stepByStepGuideline:
+      - 'Set the dot product of the two vectors equal to zero since they are perpendicular: $\mathbf{F}_1 \cdot \mathbf{F}_2
+        = 0$.'
+      - 'Write out the dot product equation: $(2)(3) + (k)(-2) = 0$.'
+      - 'Simplify the equation: $6 - 2k = 0$.'
+      - 'Solve for $k$: $2k = 6$, so $k = 3$.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: A surveyor maps a corner of a property defined by two adjacent boundary lines, represented by vectors $\mathbf{u}
+        = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ and $\mathbf{v} = \begin{pmatrix} -2 \\ 1 \end{pmatrix}$. Calculate the dot
+        product $\mathbf{u} \cdot \mathbf{v}$ and state the angle between the two boundary lines.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 1
+          vector1Y: 2
+          vector2X: -2
+          vector2Y: 1
+          label1: u
+          label2: v
+          showAngle: true
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: The dot product is 0. The angle between the lines is 90° (or $\frac{\pi}{2}$ radians).
+      stepByStepGuideline:
+      - 'Calculate the dot product of the vectors $\mathbf{u}$ and $\mathbf{v}$: $\mathbf{u} \cdot \mathbf{v} = (1)(-2) +
+        (2)(1)$.'
+      - 'Simplify the result: $-2 + 2 = 0$.'
+      - Since the dot product is zero, the vectors are perpendicular.
+      - Therefore, the angle between the two boundary lines is 90°.
+      id: q20-3
+      questionGroup: q20
+    - problemText: A robotic arm is programmed to execute movement $\mathbf{R}_1 = x\mathbf{i} + 4\mathbf{j}$. For a critical
+        safety stop, the subsequent movement $\mathbf{R}_2 = 2\mathbf{i} + 3\mathbf{j}$ must be perpendicular to $\mathbf{R}_1$.
+        Determine the required value of $x$.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: -6
+          vector1Y: 4
+          vector2X: 2
+          vector2Y: 3
+          label1: R1
+          label2: R2
+          showAngle: true
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: x = -6
+      stepByStepGuideline:
+      - 'Set the dot product of $\mathbf{R}_1$ and $\mathbf{R}_2$ to zero for perpendicularity: $\mathbf{R}_1 \cdot \mathbf{R}_2
+        = 0$.'
+      - 'Substitute the components into the dot product formula: $(x)(2) + (4)(3) = 0$.'
+      - 'Simplify the equation: $2x + 12 = 0$.'
+      - 'Solve for $x$: $2x = -12$, which gives $x = -6$.'
+      id: q20-4
+      questionGroup: q20
+    - problemText: Let $\mathbf{a} = 6\mathbf{i} + 8\mathbf{j}$. A vector $\mathbf{b}$ is constructed by swapping the components
+        of $\mathbf{a}$ and negating the first component, such that $\mathbf{b} = -8\mathbf{i} + 6\mathbf{j}$. Show, using
+        the dot product, that $\mathbf{a}$ and $\mathbf{b}$ are perpendicular.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 6
+          vector1Y: 8
+          vector2X: -8
+          vector2Y: 6
+          label1: a
+          label2: b
+          showAngle: true
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: Since $\mathbf{a} \cdot \mathbf{b} = 0$, the vectors are perpendicular.
+      stepByStepGuideline:
+      - 'Identify the components of the vectors: $\mathbf{a} = (6, 8)$ and $\mathbf{b} = (-8, 6)$.'
+      - 'Calculate the dot product $\mathbf{a} \cdot \mathbf{b}$. Multiply the corresponding components and sum the results:
+        $(6)(-8) + (8)(6)$.'
+      - 'Evaluate the expression: $-48 + 48$.'
+      - The result is 0. Since the dot product is zero, the vectors $\mathbf{a}$ and $\mathbf{b}$ are perpendicular by definition.
+      id: q20-5
+      questionGroup: q20
+- id: vectors-node-21
+  nodeNumber: 21
+  title: Finding Angles Between Vectors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: dotProduct
+    preWrittenQuestions:
+    - problemText: A small drone is performing two consecutive maneuvers. The first maneuver is represented by the vector
+        $\mathbf{a} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ and the second by vector $\mathbf{b} = \begin{pmatrix} 4 \\ 3
+        \end{pmatrix}$. Calculate the angle $\theta$ between the direction of these two maneuvers.
+      avatarIntro: Ready to master finding angles between vectors? Remember to calculate the dot product and the magnitudes
+        before applying the cosine formula!
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 3
+          vector1Y: 4
+          vector2X: 4
+          vector2Y: 3
+          label1: a
+          label2: b
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: 16.3°
+      stepByStepGuideline:
+      - 'Calculate the dot product: $\mathbf{a} \cdot \mathbf{b} = (3)(4) + (4)(3) = 12 + 12 = 24$.'
+      - 'Calculate the magnitude of vector $\mathbf{a}$: $|\mathbf{a}| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$.'
+      - 'Calculate the magnitude of vector $\mathbf{b}$: $|\mathbf{b}| = \sqrt{4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = 5$.'
+      - 'Apply the cosine formula: $\cos \theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}||\mathbf{b}|} = \frac{24}{5
+        \cdot 5} = \frac{24}{25} = 0.96$.'
+      - 'Calculate the angle: $\theta = \arccos(0.96) \approx 16.260^{\circ}$. Rounding to 1 decimal place gives $16.3^{\circ}$.'
+      id: q21-1
+      questionGroup: q21
+    - problemText: Given the vectors $\mathbf{p} = \mathbf{i} + \mathbf{j}$ and $\mathbf{q} = \mathbf{i} - \mathbf{j}$. Show,
+        using the dot product formula, that these two vectors are perpendicular, and state the exact angle between them.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 1
+          vector1Y: 1
+          vector2X: 1
+          vector2Y: -1
+          label1: p
+          label2: q
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: 90°
+      stepByStepGuideline:
+      - 'Identify the components of the vectors: $\mathbf{p} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$ and $\mathbf{q} = \begin{pmatrix}
+        1 \\ -1 \end{pmatrix}$.'
+      - 'Calculate the dot product: $\mathbf{p} \cdot \mathbf{q} = (1)(1) + (1)(-1) = 1 - 1 = 0$.'
+      - Since the dot product is zero, the vectors are perpendicular (orthogonal).
+      - Therefore, the angle between the vectors is $\theta = 90^{\circ}$.
+      id: q21-2
+      questionGroup: q21
+    - problemText: In a coordinate system, vector $\mathbf{u}$ lies along the positive x-axis and is given by $\mathbf{u}
+        = \begin{pmatrix} 3 \\ 0 \end{pmatrix}$. Vector $\mathbf{v} = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$ represents a diagonal
+        line segment originating from the origin. Find the angle between $\mathbf{u}$ and $\mathbf{v}$.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 3
+          vector1Y: 0
+          vector2X: 3
+          vector2Y: 3
+          label1: u
+          label2: v
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: 45°
+      stepByStepGuideline:
+      - 'Calculate the dot product: $\mathbf{u} \cdot \mathbf{v} = (3)(3) + (0)(3) = 9$.'
+      - 'Calculate the magnitude of $\mathbf{u}$: $|\mathbf{u}| = \sqrt{3^2 + 0^2} = 3$.'
+      - 'Calculate the magnitude of $\mathbf{v}$: $|\mathbf{v}| = \sqrt{3^2 + 3^2} = \sqrt{18} = 3\sqrt{2}$.'
+      - 'Apply the cosine formula: $\cos \theta = \frac{9}{3 \cdot 3\sqrt{2}} = \frac{9}{9\sqrt{2}} = \frac{1}{\sqrt{2}}$.'
+      - 'Calculate the angle: $\theta = \arccos\left(\frac{1}{\sqrt{2}}\right) = 45^{\circ}$.'
+      id: q21-3
+      questionGroup: q21
+    - problemText: A tennis player hits a ball whose initial trajectory is modeled by the vector $\mathbf{a} = \begin{pmatrix}
+        1 \\ 2 \end{pmatrix}$. Due to external factors, the adjusted trajectory is modeled by $\mathbf{b} = \begin{pmatrix}
+        -3 \\ 1 \end{pmatrix}$. Calculate the angle between the initial and adjusted trajectories, rounding your answer to
+        one decimal place.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 1
+          vector1Y: 2
+          vector2X: -3
+          vector2Y: 1
+          label1: a
+          label2: b
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: 98.1°
+      stepByStepGuideline:
+      - 'Calculate the dot product: $\mathbf{a} \cdot \mathbf{b} = (1)(-3) + (2)(1) = -3 + 2 = -1$.'
+      - 'Calculate the magnitude of $\mathbf{a}$: $|\mathbf{a}| = \sqrt{1^2 + 2^2} = \sqrt{5}$.'
+      - 'Calculate the magnitude of $\mathbf{b}$: $|\mathbf{b}| = \sqrt{(-3)^2 + 1^2} = \sqrt{9 + 1} = \sqrt{10}$.'
+      - 'Apply the cosine formula: $\cos \theta = \frac{-1}{\sqrt{5}\sqrt{10}} = \frac{-1}{\sqrt{50}} \approx -0.1414$. (Note:
+        The negative sign indicates an obtuse angle.)'
+      - 'Calculate the angle: $\theta = \arccos(-0.1414) \approx 98.130^{\circ}$. Rounding to 1 decimal place gives $98.1^{\circ}$.'
+      id: q21-4
+      questionGroup: q21
+    - problemText: A financial index movement is tracked using vector $\mathbf{c} = 2\mathbf{i} + 5\mathbf{j}$. A related
+        security moves in the exact opposite direction, modeled by vector $\mathbf{d} = -4\mathbf{i} - 10\mathbf{j}$. Determine
+        the angle between the movement vectors $\mathbf{c}$ and $\mathbf{d}$.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 2
+          vector1Y: 5
+          vector2X: -4
+          vector2Y: -10
+          label1: c
+          label2: d
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: 180°
+      stepByStepGuideline:
+      - 'Calculate the dot product: $\mathbf{c} \cdot \mathbf{d} = (2)(-4) + (5)(-10) = -8 - 50 = -58$.'
+      - 'Calculate the magnitude of $\mathbf{c}$: $|\mathbf{c}| = \sqrt{2^2 + 5^2} = \sqrt{29}$.'
+      - 'Calculate the magnitude of $\mathbf{d}$: $|\mathbf{d}| = \sqrt{(-4)^2 + (-10)^2} = \sqrt{16 + 100} = \sqrt{116} =
+        2\sqrt{29}$.'
+      - 'Apply the cosine formula: $\cos \theta = \frac{-58}{\sqrt{29} \cdot 2\sqrt{29}} = \frac{-58}{2 \cdot 29} = \frac{-58}{58}
+        = -1$.'
+      - 'Calculate the angle: $\theta = \arccos(-1) = 180^{\circ}$. (The vectors are anti-parallel).'
+      id: q21-5
+      questionGroup: q21
+- id: vectors-node-22
+  nodeNumber: 22
+  title: Classifying Angles Between Vectors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: dotProduct
+    preWrittenQuestions:
+    - problemText: A scientist models the interaction of two sound waves using vectors $\mathbf{a} = \begin{pmatrix} 5 \\
+        2 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix} 1 \\ 4 \end{pmatrix}$. Determine if the angle $\theta$ between
+        these two vectors is acute, obtuse, or right, based only on the sign of their dot product.
+      avatarIntro: Welcome! Understanding how the dot product relates to the angle classification is key to vector analysis.
+        Let's start with this classification problem.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 5
+          vector1Y: 2
+          vector2X: 1
+          vector2Y: 4
+          label1: a
+          label2: b
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: The angle is acute (0° < θ < 90°).
+      stepByStepGuideline:
+      - 'Calculate the dot product $\mathbf{a} \cdot \mathbf{b}$. For $\mathbf{a} = (5, 2)$ and $\mathbf{b} = (1, 4)$, the
+        dot product is: $\mathbf{a} \cdot \mathbf{b} = (5)(1) + (2)(4) = 5 + 8 = 13$.'
+      - Analyze the sign of the dot product.
+      - Since $\mathbf{a} \cdot \mathbf{b} = 13$, which is positive (13 > 0), the angle $\theta$ between the vectors is acute
+        (0° < $\theta$ < 90°).
+      id: q22-1
+      questionGroup: q22
+    - problemText: Two magnetic field vectors are measured as $\mathbf{p} = 3\mathbf{i} + 1\mathbf{j}$ and $\mathbf{q} = -2\mathbf{i}
+        + 4\mathbf{j}$. Classify the angle between $\mathbf{p}$ and $\mathbf{q}$ as acute, obtuse, or right.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 3
+          vector1Y: 1
+          vector2X: -2
+          vector2Y: 4
+          label1: p
+          label2: q
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: The angle is obtuse (90° < θ < 180°).
+      stepByStepGuideline:
+      - 'Identify the components of the vectors: $\mathbf{p} = (3, 1)$ and $\mathbf{q} = (-2, 4)$.'
+      - 'Calculate the dot product $\mathbf{p} \cdot \mathbf{q}$: $\mathbf{p} \cdot \mathbf{q} = (3)(-2) + (1)(4) = -6 + 4
+        = -2$.'
+      - Since the dot product is negative ($-2 < 0$), the angle between the vectors is obtuse (90° < $\theta$ < 180°).
+      id: q22-2
+      questionGroup: q22
+    - problemText: In a structural design, two support vectors are defined as $\mathbf{u} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$
+        and $\mathbf{v} = \begin{pmatrix} -4 \\ 2 \end{pmatrix}$. Prove that these two support beams are perpendicular to
+        each other.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 1
+          vector1Y: 2
+          vector2X: -4
+          vector2Y: 2
+          label1: u
+          label2: v
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: Since $\mathbf{u} \cdot \mathbf{v} = 0$, the angle between the vectors is 90°, proving they are perpendicular.
+      stepByStepGuideline:
+      - To prove that two vectors are perpendicular, their dot product must equal zero ($\mathbf{u} \cdot \mathbf{v} = 0$).
+      - 'Calculate the dot product: $\mathbf{u} \cdot \mathbf{v} = (1)(-4) + (2)(2)$.'
+      - 'Simplify the calculation: $-4 + 4 = 0$.'
+      - Since the dot product is 0, the angle between the vectors is a right angle ($\theta = 90°$), confirming they are perpendicular.
+      id: q22-3
+      questionGroup: q22
+    - problemText: Two velocity vectors are measured as $\mathbf{v} = (2, 3)$ and $\mathbf{w} = (-6, 4)$. A technician claims
+        that the angle between these vectors is obtuse. Determine if the technician’s claim is correct, justifying your answer
+        using the dot product.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 2
+          vector1Y: 3
+          vector2X: -6
+          vector2Y: 4
+          label1: v
+          label2: w
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: The technician's claim is incorrect. The angle is a right angle (θ = 90°).
+      stepByStepGuideline:
+      - 'Calculate the dot product of the vectors $\mathbf{v}$ and $\mathbf{w}$: $\mathbf{v} \cdot \mathbf{w} = (2)(-6) +
+        (3)(4)$.'
+      - 'Simplify the calculation: $-12 + 12 = 0$.'
+      - 'Analyze the result: If the dot product is 0, the angle is a right angle (90°). If the angle were obtuse, the dot
+        product would have to be negative ($< 0$).'
+      - 'Conclusion: Since $\mathbf{v} \cdot \mathbf{w} = 0$, the angle is a right angle, not an obtuse angle. The technician''s
+        claim is incorrect.'
+      id: q22-4
+      questionGroup: q22
+    - problemText: Two momentum vectors in a physics experiment are defined as $\mathbf{a} = \mathbf{i} + \mathbf{j}$ and
+        $\mathbf{b} = 2\mathbf{i} + \mathbf{j}$. Calculate the dot product $\mathbf{a} \cdot \mathbf{b}$ and use the result
+        to classify the angle between them.
+      mathTool:
+        toolName: dotProduct
+        parameters:
+          vector1X: 1
+          vector1Y: 1
+          vector2X: 2
+          vector2Y: 1
+          label1: a
+          label2: b
+          showAngle: false
+          showDotProduct: false
+          showMagnitudes: false
+      finalAnswer: The dot product is 3. Since 3 > 0, the angle is acute (0° < θ < 90°).
+      stepByStepGuideline:
+      - 'Convert the vectors to component form: $\mathbf{a} = (1, 1)$ and $\mathbf{b} = (2, 1)$.'
+      - 'Calculate the dot product $\mathbf{a} \cdot \mathbf{b}$: $\mathbf{a} \cdot \mathbf{b} = (1)(2) + (1)(1)$.'
+      - 'Simplify the calculation: $2 + 1 = 3$.'
+      - Since the dot product (3) is positive ($> 0$), the angle between the vectors is classified as acute.
+      id: q22-5
+      questionGroup: q22
+- id: vectors-node-6
+  nodeNumber: 22
+  title: Relative Motion and Difference Vectors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: vectorDiagram
+    preWrittenQuestions:
+    - problemText: Car A is traveling due East at 60 km/h. Car B is also traveling due East, following Car A at 40 km/h. Calculate
+        the velocity of Car A relative to Car B, $v_{A/B}$.
+      avatarIntro: Relative motion is all about perspective! Remember that the velocity of A relative to B is found by subtracting
+        the velocity of B from the velocity of A.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"v_A","x":60,"y":0},{"label":"v_B","x":40,"y":0}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: 20 km/h East
+      stepByStepGuideline:
+      - 'Define the velocities using a coordinate system (East is positive x-direction): $v_A = +60 \text{ km/h}$ and $v_B
+        = +40 \text{ km/h}$.'
+      - 'Use the relative velocity formula: $v_{A/B} = v_A - v_B$.'
+      - 'Substitute the values: $v_{A/B} = 60 \text{ km/h} - 40 \text{ km/h} = 20 \text{ km/h}$.'
+      - Since the result is positive, the direction is the positive direction (East).
+      id: q22-1
+      questionGroup: q22
+    - problemText: Train A is moving East at 100 km/h. Train B is moving West, directly toward Train A, at 150 km/h. Determine
+        the magnitude and direction of the velocity of Train A relative to Train B ($v_{A/B}$).
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"v_A","x":100,"y":0},{"label":"v_B","x":-150,"y":0}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: 250 km/h East
+      stepByStepGuideline:
+      - 'Define the velocities using a coordinate system (East is positive): $v_A = +100 \text{ km/h}$. Since Train B moves
+        West (opposite direction), $v_B = -150 \text{ km/h}$.'
+      - 'Apply the relative velocity formula: $v_{A/B} = v_A - v_B$.'
+      - 'Substitute the values: $v_{A/B} = 100 \text{ km/h} - (-150 \text{ km/h})$.'
+      - 'Calculate the result: $v_{A/B} = 100 + 150 = 250 \text{ km/h}$. The positive sign indicates the East direction.'
+      id: q22-2
+      questionGroup: q22
+    - problemText: A boat pilot attempts to travel directly North across a river. The boat's velocity relative to the water
+        is $v_{B/W} = 30 \text{ m/s}$ North. The river current has a velocity relative to the ground of $v_{W/G} = 40 \text{
+        m/s}$ West. Calculate the magnitude of the boat's resultant velocity relative to the ground ($v_{B/G}$). (This is
+        a vector addition problem to find the resultant velocity, $v_{B/G} = v_{B/W} + v_{W/G}$)
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"v_{B/W}","x":0,"y":30},{"label":"v_{W/G}","x":-40,"y":0}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: 50 m/s
+      stepByStepGuideline:
+      - 'Represent the velocities as perpendicular vectors: $v_{B/W}$ is North (y-component) and $v_{W/G}$ is West (negative
+        x-component). $v_{B/G} = (-40, 30)$.'
+      - 'Calculate the magnitude of the resultant velocity using the Pythagorean theorem: $|v_{B/G}| = \sqrt{v_x^2 + v_y^2}$.'
+      - 'Substitute the component magnitudes: $|v_{B/G}| = \sqrt{(-40)^2 + (30)^2}$.'
+      - 'Calculate: $|v_{B/G}| = \sqrt{1600 + 900} = \sqrt{2500} = 50 \text{ m/s}.'
+      id: q22-3
+      questionGroup: q22
+    - problemText: A plane is flying due East with an airspeed of 200 km/h ($v_P$). A strong wind is blowing due South at
+        50 km/h ($v_W$). Determine the direction (angle) of the plane's resultant velocity relative to the ground. Give the
+        angle rounded to one decimal place.
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"v_P","x":200,"y":0},{"label":"v_W","x":0,"y":-50}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: 14.0° South of East
+      stepByStepGuideline:
+      - 'Identify the perpendicular components of the resultant velocity $v_R = v_P + v_W$: $v_x = 200 \text{ km/h}$ (East)
+        and $v_y = -50 \text{ km/h}$ (South).'
+      - 'The resultant velocity forms a right-angled triangle. The angle $\theta$ relative to the East direction is found
+        using the tangent function: $\tan(\theta) = \frac{\text{Opposite}}{\text{Adjacent}} = \frac{|v_y|}{|v_x|}$.'
+      - 'Calculate the angle: $\theta = \tan^{-1}(\frac{50}{200}) = \tan^{-1}(0.25)$.'
+      - $\theta \approx 14.036\degree$. Rounded to one decimal place, the angle is $14.0\degree$.
+      - The direction is in the quadrant where x is positive and y is negative, which is South of East.
+      id: q22-4
+      questionGroup: q22
+    - problemText: Boat A travels North at 50 km/h. Boat B travels Northeast (45° East of North) also at 50 km/h. Calculate
+        the magnitude of the velocity of Boat A relative to Boat B ($|v_{A/B}|$).
+      mathTool:
+        toolName: vectorDiagram
+        parameters:
+          vectors: '[{"label":"v_A","x":0,"y":50},{"label":"v_B","x":35.36,"y":35.36}]'
+          operation: none
+          resultant: false
+          showComponents: false
+      finalAnswer: 38.3 km/h
+      stepByStepGuideline:
+      - 'Express the velocities in component form (North = y, East = x): $v_A = (0, 50)$.'
+      - 'For $v_B$: $v_x = 50 \sin(45\degree) \approx 35.36$ and $v_y = 50 \cos(45\degree) \approx 35.36$. So $v_B = (35.36,
+        35.36)$.'
+      - 'Calculate the difference vector $v_{A/B} = v_A - v_B$: $v_{A/B} = (0 - 35.36, 50 - 35.36) = (-35.36, 14.64)$.'
+      - 'Calculate the magnitude of the difference vector: $|v_{A/B}| = \sqrt{(-35.36)^2 + (14.64)^2}$.'
+      - $|v_{A/B}| = \sqrt{1250.3 + 214.3} = \sqrt{1464.6} \approx 38.27 \text{ km/h}$. Rounding to one decimal place gives
+        38.3 km/h.
+      id: q22-5
+      questionGroup: q22

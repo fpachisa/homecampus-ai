@@ -9,7 +9,8 @@
 
 import { useState } from 'react';
 import { INITIAL_GREETINGS_CACHE, getCachedTopicIds } from '../data/initialGreetingsCache';
-import { INITIAL_GREETINGS_AI_GENERATED, getAIGeneratedTopicIds } from '../data/initialGreetingsCache-ai-generated';
+// AI-generated file removed after copying to main cache
+// import { INITIAL_GREETINGS_AI_GENERATED, getAIGeneratedTopicIds } from '../data/initialGreetingsCache-ai-generated';
 import { marked } from 'marked';
 import 'katex/dist/katex.min.css';
 import katex from 'katex';
@@ -35,7 +36,7 @@ export default function GreetingsViewer() {
   const [topicFilter, setTopicFilter] = useState<string>('all');
 
   const handcraftedTopics = getCachedTopicIds();
-  const aiGeneratedTopics = getAIGeneratedTopicIds();
+  const aiGeneratedTopics: string[] = []; // AI-generated file removed
   const allTopics = Array.from(new Set([...handcraftedTopics, ...aiGeneratedTopics])).sort();
 
   // Extract unique topic prefixes (e.g., s3-math-trigonometry)
@@ -164,7 +165,7 @@ export default function GreetingsViewer() {
         ) : viewMode === 'handcrafted' ? (
           <SingleView topics={filteredHandcraftedTopics} cache={INITIAL_GREETINGS_CACHE} title="Handcrafted Greetings" color="blue" />
         ) : (
-          <SingleView topics={filteredAIGeneratedTopics} cache={INITIAL_GREETINGS_AI_GENERATED} title="AI-Generated Greetings" color="purple" />
+          <SingleView topics={filteredAIGeneratedTopics} cache={{}} title="AI-Generated Greetings (Removed)" color="purple" />
         )}
       </div>
     </div>
@@ -199,7 +200,7 @@ function ComparisonView({ topics }: { topics: string[] }) {
     <div className="space-y-8">
       {topics.map((topicId) => {
         const handcrafted = INITIAL_GREETINGS_CACHE[topicId];
-        const aiGenerated = INITIAL_GREETINGS_AI_GENERATED[topicId];
+        const aiGenerated = undefined; // AI-generated file removed
 
         if (!handcrafted && !aiGenerated) return null;
 

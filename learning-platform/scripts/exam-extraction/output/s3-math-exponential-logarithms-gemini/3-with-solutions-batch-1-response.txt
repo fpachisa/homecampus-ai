@@ -1,0 +1,240 @@
+```json
+{
+  "questions": [
+    {
+      "question": "Let $f(x)=\\ln(2x+4)+3$ for $-2<x<3$.",
+      "title": "Logarithmic Function Intercepts",
+      "parts": [
+        {
+          "label": "a-i",
+          "text": "For the graph of f, find the x- intercept",
+          "answer": "$x = -1.98$",
+          "avatarIntro": "Hello! Let's find the x-intercept of this logarithmic function. Remember, the x-intercept is where the graph crosses the x-axis, meaning the function's value is zero.",
+          "stepByStepGuideline": [
+            "To find the x-intercept, set $f(x) = 0$. So, $0 = \\ln(2x+4)+3$.",
+            "Rearrange the equation to isolate the logarithmic term: $\\ln(2x+4) = -3$.",
+            "Convert the logarithmic equation to an exponential equation using the definition $\\ln(a)=b \\implies a=e^b$. This gives $2x+4 = e^{-3}$.",
+            "Solve for x: $2x = e^{-3}-4$.",
+            "Divide by 2: $x = \\frac{e^{-3}-4}{2}$.",
+            "Calculate the numerical value: $x \\approx \\frac{0.049787 - 4}{2} = \\frac{-3.950213}{2} \\approx -1.9751065$.",
+            "Round to two decimal places, the x-intercept is approximately $x = -1.98$."
+          ]
+        },
+        {
+          "label": "a-ii",
+          "text": "For the graph of f, find the y- intercept",
+          "answer": "$y = 4.39$",
+          "avatarIntro": "Great job on the x-intercept! Now, let's find the y-intercept. This occurs when the x-value is zero.",
+          "stepByStepGuideline": [
+            "To find the y-intercept, set $x = 0$ in the function $f(x)=\\ln(2x+4)+3$.",
+            "Substitute $x=0$ into the function: $f(0) = \\ln(2(0)+4)+3$.",
+            "Simplify the expression inside the logarithm: $f(0) = \\ln(4)+3$.",
+            "Calculate the numerical value of $\\ln(4)$: $\\ln(4) \\approx 1.38629$.",
+            "Add the constant: $f(0) \\approx 1.38629 + 3 = 4.38629$.",
+            "Round to two decimal places, the y-intercept is approximately $y = 4.39$."
+          ]
+        }
+      ]
+    },
+    {
+      "question": "A hot chemical was left to cool in the science laboratory. Its temperature, T is given by the formulae $T = 50+16e^{-kt}$ where k is a constant and t is the number of hours after the chemical has been placed there.",
+      "title": "Exponential Decay Temperature Model",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Given that the temperature of the chemical is 60° after 1 hour, find the value of k.",
+          "answer": "k=0.470 (3sf)",
+          "avatarIntro": "Let's work through this exponential decay problem together! We're given the temperature formula and some initial conditions. We'll use these to find the decay constant, k.",
+          "stepByStepGuideline": [
+            "Identify the given information: The temperature formula is $T = 50+16e^{-kt}$. We are given that $T = 60$° when $t = 1$ hour.",
+            "Substitute the given values into the formula: $60 = 50+16e^{-k(1)}$.",
+            "Rearrange the equation to isolate the exponential term: Subtract 50 from both sides: $10 = 16e^{-k}$.",
+            "Divide by 16: $e^{-k} = \\frac{10}{16} = \\frac{5}{8}$.",
+            "Take the natural logarithm (ln) of both sides to solve for -k: $\\ln(e^{-k}) = \\ln(\\frac{5}{8})$, which simplifies to $-k = \\ln(\\frac{5}{8})$.",
+            "Solve for k: $k = -\\ln(\\frac{5}{8})$. Using the logarithm property $\\ln(\\frac{a}{b}) = -\\ln(\\frac{b}{a})$, we can write $k = \\ln(\\frac{8}{5}) = \\ln(1.6)$.",
+            "Calculate the value of k: $k \\approx 0.4700036$. Rounding to 3 significant figures, $k = 0.470$."
+          ]
+        },
+        {
+          "label": "b",
+          "text": "Using your value of k, find the number of hours needed for the chemical to cool to at least 54°. Give your answer to the nearest hour.",
+          "answer": "t-2.95-3 hours",
+          "avatarIntro": "Excellent work finding k! Now we'll use that value to determine how long it takes for the chemical to cool down to a specific temperature.",
+          "stepByStepGuideline": [
+            "Identify the given information: Use the value of $k \\approx 0.470$ from part (a). The temperature formula is $T = 50+16e^{-0.470t}$. We want to find t when $T = 54$° (or less).",
+            "Substitute $T = 54$ into the formula: $54 = 50+16e^{-0.470t}$.",
+            "Rearrange the equation to isolate the exponential term: Subtract 50 from both sides: $4 = 16e^{-0.470t}$.",
+            "Divide by 16: $e^{-0.470t} = \\frac{4}{16} = \\frac{1}{4}$.",
+            "Take the natural logarithm (ln) of both sides: $\\ln(e^{-0.470t}) = \\ln(\\frac{1}{4})$, which simplifies to $-0.470t = \\ln(\\frac{1}{4})$.",
+            "Solve for t: $t = \\frac{\\ln(\\frac{1}{4})}{-0.470}$. Recall that $\\ln(\\frac{1}{4}) = -\\ln(4)$, so $t = \\frac{-\\ln(4)}{-0.470} = \\frac{\\ln(4)}{0.470}$.",
+            "Calculate the value of t: $t \\approx \\frac{1.38629}{0.470} \\approx 2.9495$ hours. Since we need the chemical to cool to *at least* 54°, and the temperature decreases with time, we need at least 2.95 hours. Rounding to the nearest hour, the time needed is 3 hours."
+          ]
+        }
+      ]
+    },
+    {
+      "question": "A man buys a new car. After t months, its value, $V$ is given by $V = 125000e^{-pt}$, where p is a real constant.",
+      "title": "Exponential Decay Car Value",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Find the value of the car when the man first bought it.",
+          "answer": "$125 000",
+          "avatarIntro": "Let's begin by determining the initial value of the car. Remember, 'initial' means at the very beginning, which corresponds to time t=0.",
+          "stepByStepGuideline": [
+            "Identify what 'when the man first bought it' means in terms of time. This corresponds to $t=0$ months.",
+            "Substitute $t=0$ into the given formula for the car's value: $V = 125000e^{-p(0)}$.",
+            "Simplify the exponent: $-p(0) = 0$. So, $V = 125000e^0$.",
+            "Recall that any non-zero number raised to the power of 0 is 1: $e^0 = 1$.",
+            "Calculate the value of V: $V = 125000 \\times 1 = 125000$.",
+            "State the final answer: The value of the car when the man first bought it was $125 000."
+          ]
+        },
+        {
+          "label": "b-i",
+          "text": "The value of the car after 1 year is expected to be $80 000. Show that the value of p is $\\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)$.",
+          "answer": "",
+          "avatarIntro": "Great! Now let's use the information about the car's value after one year to show the given expression for 'p'. Remember to pay attention to the units of time.",
+          "stepByStepGuideline": [
+            "Identify the given information: The value of the car is $80 000$ after 1 year. The formula uses 't' in months, so convert 1 year to 12 months, meaning $t=12$.",
+            "Substitute these values into the formula: $80000 = 125000e^{-p(12)}$.",
+            "Isolate the exponential term: Divide both sides by 125000: $\\frac{80000}{125000} = e^{-12p}$.",
+            "Simplify the fraction: $\\frac{80}{125} = \\frac{16}{25}$, so $e^{-12p} = \\frac{16}{25}$.",
+            "Take the natural logarithm (ln) of both sides: $\\ln(e^{-12p}) = \\ln\\left(\\frac{16}{25}\\right)$. This simplifies to $-12p = \\ln\\left(\\frac{16}{25}\\right)$.",
+            "Solve for p: $p = -\\frac{1}{12}\\ln\\left(\\frac{16}{25}\\right)$.",
+            "Use the logarithm property $\\ln(\\frac{a}{b}) = -\\ln(\\frac{b}{a})$: $p = \\frac{1}{12}\\ln\\left(\\frac{25}{16}\\right)$.",
+            "Recognize that $\\frac{25}{16} = (\\frac{5}{4})^2$. Substitute this into the equation: $p = \\frac{1}{12}\\ln\\left(\\left(\\frac{5}{4}\\right)^2\\right)$.",
+            "Apply the logarithm property $\\ln(a^b) = b\\ln(a)$: $p = \\frac{1}{12} \\times 2 \\ln\\left(\\frac{5}{4}\\right)$.",
+            "Simplify the fraction: $p = \\frac{2}{12}\\ln\\left(\\frac{5}{4}\\right) = \\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)$. This matches the value we needed to show."
+          ]
+        },
+        {
+          "label": "b-ii",
+          "text": "The value of the car after 1 year is expected to be $80 000. Find the expected value of the car after 2 years.",
+          "answer": "$51200",
+          "avatarIntro": "You've successfully shown the value of 'p'! Now let's use that to predict the car's value after two years. This is a great application of our exponential decay model.",
+          "stepByStepGuideline": [
+            "Identify the time period: We need to find the value after 2 years. Since 't' is in months, $t = 2 \\text{ years} \\times 12 \\text{ months/year} = 24$ months.",
+            "Use the derived value of $p = \\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)$ from part (b-i) in the formula $V = 125000e^{-pt}$.",
+            "Substitute t=24 and the expression for p: $V = 125000e^{-\\left(\\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)\\right)(24)}$.",
+            "Simplify the exponent: $-\\left(\\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)\\right)(24) = -4\\ln\\left(\\frac{5}{4}\\right)$.",
+            "Use the logarithm property $b\\ln(a) = \\ln(a^b)$: $V = 125000e^{\\ln\\left(\\left(\\frac{5}{4}\\right)^{-4}\\right)}$.",
+            "Apply the property $e^{\\ln(x)} = x$: $V = 125000\\left(\\frac{5}{4}\\right)^{-4}$.",
+            "Rewrite the negative exponent: $V = 125000\\left(\\frac{4}{5}\\right)^4$.",
+            "Calculate the value: $V = 125000 \\times \\frac{4^4}{5^4} = 125000 \\times \\frac{256}{625}$.",
+            "Perform the multiplication: $V = \\frac{125000}{625} \\times 256 = 200 \\times 256 = 51200$.",
+            "The expected value of the car after 2 years is $51200."
+          ]
+        },
+        {
+          "label": "c",
+          "text": "Find the age of the car, correct to the nearest month, when its expected value becomes $10 000.",
+          "answer": "68 months",
+          "avatarIntro": "Fantastic! You're doing great with these calculations. Our final challenge for this problem is to find out how many months it takes for the car's value to drop to $10,000.",
+          "stepByStepGuideline": [
+            "Identify the target value and the formula: We want to find t when $V = 10000$. The formula is $V = 125000e^{-pt}$ with $p = \\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)$.",
+            "Substitute $V=10000$ into the formula: $10000 = 125000e^{-pt}$.",
+            "Isolate the exponential term: Divide both sides by 125000: $e^{-pt} = \\frac{10000}{125000} = \\frac{1}{12.5} = \\frac{2}{25}$.",
+            "Take the natural logarithm (ln) of both sides: $\\ln(e^{-pt}) = \\ln\\left(\\frac{2}{25}\\right)$, which simplifies to $-pt = \\ln\\left(\\frac{2}{25}\\right)$.",
+            "Solve for t: $t = \\frac{\\ln\\left(\\frac{2}{25}\\right)}{-p}$. Use $p = \\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)$.",
+            "Substitute the value of p: $t = \\frac{\\ln\\left(\\frac{2}{25}\\right)}{-\\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)}$. Use $\\ln(\\frac{a}{b}) = -\\ln(\\frac{b}{a})$ to simplify signs: $t = \\frac{-\\ln\\left(\\frac{25}{2}\\right)}{-\\frac{1}{6}\\ln\\left(\\frac{5}{4}\\right)} = \\frac{6\\ln(12.5)}{\\ln(1.25)}$.",
+            "Calculate the numerical values: $\\ln(12.5) \\approx 2.525729$ and $\\ln(1.25) \\approx 0.223143$.",
+            "Compute t: $t \\approx \\frac{6 \\times 2.525729}{0.223143} = \\frac{15.154374}{0.223143} \\approx 67.906$ months.",
+            "Round to the nearest month: The age of the car is approximately 68 months."
+          ]
+        }
+      ]
+    },
+    {
+      "question": "The amount of radioactive substance in an experiment after t hours is given by $R = 50e^{-2t}$ grams.",
+      "title": "Radioactive Decay Amount",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Find the amount of radioactive substance at the start of the experiment.",
+          "answer": "50 grams",
+          "avatarIntro": "Let's kick off this problem by figuring out how much radioactive substance we started with. Remember, 'at the start' means before any time has passed.",
+          "stepByStepGuideline": [
+            "Identify what 'at the start of the experiment' means in terms of time. This corresponds to $t=0$ hours.",
+            "Substitute $t=0$ into the given formula for the amount of radioactive substance: $R = 50e^{-2(0)}$.",
+            "Simplify the exponent: $-2(0) = 0$. So, $R = 50e^0$.",
+            "Recall that any non-zero number raised to the power of 0 is 1: $e^0 = 1$.",
+            "Calculate the amount of substance: $R = 50 \\times 1 = 50$.",
+            "State the final answer with units: The amount of radioactive substance at the start of the experiment was 50 grams."
+          ]
+        },
+        {
+          "label": "b",
+          "text": "Find the exact time where half of the substance is left.",
+          "answer": "ln$\\sqrt{2}$",
+          "avatarIntro": "That's a great start! Now, let's determine the 'half-life' of this substance, which is the exact time when half of the initial amount remains.",
+          "stepByStepGuideline": [
+            "Identify the initial amount of substance. From part (a), the initial amount is 50 grams.",
+            "Calculate half of the initial amount: Half of 50 grams is 25 grams.",
+            "Set the formula for R equal to this half amount: $25 = 50e^{-2t}$.",
+            "Isolate the exponential term: Divide both sides by 50: $\\frac{25}{50} = e^{-2t}$, which simplifies to $0.5 = e^{-2t}$ or $\\frac{1}{2} = e^{-2t}$.",
+            "Take the natural logarithm (ln) of both sides to solve for -2t: $\\ln\\left(\\frac{1}{2}\\right) = \\ln(e^{-2t})$. This simplifies to $\\ln\\left(\\frac{1}{2}\\right) = -2t$.",
+            "Use the logarithm property $\\ln(\\frac{1}{a}) = -\\ln(a)$: $-\\ln(2) = -2t$.",
+            "Solve for t: Divide both sides by -2: $t = \\frac{-\\ln(2)}{-2} = \\frac{\\ln(2)}{2}$.",
+            "Express the answer in the requested exact form: Using the logarithm property $b\\ln(a) = \\ln(a^b)$, we have $\\frac{1}{2}\\ln(2) = \\ln(2^{1/2}) = \\ln(\\sqrt{2})$.",
+            "The exact time when half of the substance is left is $\\ln\\sqrt{2}$ hours."
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Let $f(x) = \\log_2(x+3)+2$ where $-2.9\\leq x \\leq 10$.",
+      "title": "Logarithmic Function Analysis",
+      "parts": [
+        {
+          "label": "a",
+          "text": "Write down the coordinates of the x and y intercepts of the graph of f.",
+          "answer": "x-intercept is (-2.75,0), y-intercept is (0, 3.58)",
+          "avatarIntro": "Let's find the intercepts for this logarithmic function. Remember, x-intercepts occur when y=0, and y-intercepts occur when x=0.",
+          "stepByStepGuideline": [
+            "To find the x-intercept, set $f(x)=0$: $0 = \\log_2(x+3)+2$.",
+            "Isolate the logarithm: $\\log_2(x+3) = -2$.",
+            "Convert to exponential form ($\\log_b a = c \\implies b^c = a$): $x+3 = 2^{-2}$.",
+            "Calculate $2^{-2}$: $x+3 = \\frac{1}{4}$.",
+            "Solve for x: $x = \\frac{1}{4} - 3 = \\frac{1}{4} - \\frac{12}{4} = -\\frac{11}{4} = -2.75$. The x-intercept is $(-2.75, 0)$.",
+            "To find the y-intercept, set $x=0$: $f(0) = \\log_2(0+3)+2 = \\log_2(3)+2$.",
+            "Calculate $\\log_2(3)$: $\\log_2(3) = \\frac{\\ln(3)}{\\ln(2)} \\approx \\frac{1.0986}{0.6931} \\approx 1.58496$.",
+            "Add the constant: $f(0) \\approx 1.58496 + 2 = 3.58496$. Rounding to two decimal places, the y-intercept is $(0, 3.58)$."
+          ]
+        },
+        {
+          "label": "b",
+          "text": "Find the range of f.",
+          "answer": "{y | -1.32 \\leq y \\leq 5.70}",
+          "avatarIntro": "Great job finding the intercepts! Now let's determine the range of the function. Remember, the range depends on the function's behavior over its given domain.",
+          "stepByStepGuideline": [
+            "Identify the given domain for $f(x)$: $-2.9 \\leq x \\leq 10$.",
+            "Recognize that $f(x) = \\log_2(x+3)+2$ is an increasing function because the base of the logarithm (2) is greater than 1. This means the minimum value of $f(x)$ will occur at the minimum x-value in the domain, and the maximum value will occur at the maximum x-value.",
+            "Calculate the minimum value of $f(x)$ at $x=-2.9$: $f(-2.9) = \\log_2(-2.9+3)+2 = \\log_2(0.1)+2$.",
+            "Compute $\\log_2(0.1) = \\frac{\\ln(0.1)}{\\ln(2)} \\approx \\frac{-2.302585}{0.693147} \\approx -3.3219$. So, $f(-2.9) \\approx -3.3219 + 2 = -1.3219$.",
+            "Calculate the maximum value of $f(x)$ at $x=10$: $f(10) = \\log_2(10+3)+2 = \\log_2(13)+2$.",
+            "Compute $\\log_2(13) = \\frac{\\ln(13)}{\\ln(2)} \\approx \\frac{2.564949}{0.693147} \\approx 3.7004$. So, $f(10) \\approx 3.7004 + 2 = 5.7004$.",
+            "State the range using the calculated minimum and maximum values: The range of f is $\{y \\mid -1.32 \\leq y \\leq 5.70\}$."
+          ]
+        },
+        {
+          "label": "c",
+          "text": "Express f(x) as $\\log_2 k(x+3)$ where k is a constant to be found.",
+          "answer": "k=4",
+          "avatarIntro": "You're doing great so far! For our last part, let's rewrite the function in a specific logarithmic form. We'll use logarithm properties to combine the terms.",
+          "stepByStepGuideline": [
+            "Start with the given function: $f(x) = \\log_2(x+3)+2$.",
+            "The goal is to express $f(x)$ as a single logarithm of base 2. To do this, we need to express the constant '2' as a logarithm of base 2.",
+            "Use the property $c = \\log_b(b^c)$: So, $2 = \\log_2(2^2)$.",
+            "Calculate $2^2$: $2 = \\log_2(4)$.",
+            "Substitute this back into the function: $f(x) = \\log_2(x+3) + \\log_2(4)$.",
+            "Apply the logarithm property $\\log_b A + \\log_b B = \\log_b (AB)$ to combine the two logarithmic terms: $f(x) = \\log_2(4(x+3))$.",
+            "Compare this to the desired form $\\log_2 k(x+3)$. By direct comparison, we can see that $k=4$.",
+            "Therefore, the constant $k$ is 4."
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

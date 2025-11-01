@@ -3268,7 +3268,93 @@ Given vectors **u** = \$\\langle 5, 2 \\rangle\$ and **v** = \$\\langle -1, 3 \\
 Calculate the dot product **u** \$\\cdot\$ **v**.`,
       showAfterSpeech: true
     }
-  }  
+  },
+
+  /**
+   * ========================================
+   * S1 MATHEMATICS - FACTORS & MULTIPLES
+   * ========================================
+   */
+  's1-math-factors-multiples-introduction': {
+    speech: {
+      text: `Hello, and welcome to the foundation of number theory! Factors are like the essential building blocks of numbers. Understanding them helps us break down and analyze almost every mathematical problem. Let's start by identifying the numbers that divide evenly into a specific value.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-factors-multiples-introduction.mp3'
+    },
+    display: {
+      content: `### Understanding Factors
+
+**Question:** List all the factors of 24. (Remember, factors must divide 24 exactly, leaving no remainder.)`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-factors-multiples-prime-factorisation': {
+    speech: {
+      text: `Hey there! Get ready to explore the secret life of numbers. Did you know some numbers are truly unique and can only be divided by themselves and one? These are the fascinating prime numbers! Let's begin by figuring out how to identify them.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-factors-multiples-prime-factorisation.mp3'
+    },
+    display: {
+      content: `### Prime and Composite Numbers
+
+**Question:** Determine if the number 29 is a prime number or a composite number. Explain your reasoning.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-factors-multiples-hcf': {
+    speech: {
+      text: `Welcome! Today we are mastering the Highest Common Factor, or H C F. This important skill is all about finding the biggest number that fits perfectly into two or more different numbers. Let's start by simply listing the factors we need to compare.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-factors-multiples-hcf.mp3'
+    },
+    display: {
+      content: `### Finding HCF by Listing Factors
+
+**Question:**
+
+1. List all the factors of 15.
+2. List all the factors of 25.
+3. What is the Highest Common Factor (HCF) of 15 and 25?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-factors-multiples-lcm': {
+    speech: {
+      text: `Greetings! Get ready to tackle the Lowest Common Multiple! Think of L C M as the mathematical moment when two repeating cycles finally line up again, like two buses leaving the station at different intervals. We find this point by listing out the multiples.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-factors-multiples-lcm.mp3'
+    },
+    display: {
+      content: `### Finding LCM by Listing Multiples
+
+**Question:**
+
+1. List the first six multiples of 3.
+2. List the first six multiples of 5.
+3. What is the Lowest Common Multiple (LCM) of 3 and 5?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-factors-multiples-square-cube-roots': {
+    speech: {
+      text: `Hi! We're stepping into the world of geometry and numbers by looking at perfect squares. These are numbers that result from multiplying an integer by itself, forming a neat, equal-sided shape! Let's confirm our understanding of the basic operation first.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-factors-multiples-square-cube-roots.mp3'
+    },
+    display: {
+      content: `### Perfect Squares and Square Roots
+
+**Question:**
+
+1. Calculate the value of 9².
+2. Is 49 a perfect square? If so, what is its square root?`,
+      showAfterSpeech: true
+    }
+  }
 
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,

@@ -11,6 +11,8 @@ import type { PathNode, RelatedQuestionContext } from '../types/practice';
 import { parseJSON } from '../services/utils/responseParser';
 import { getFilteredTools } from '../components/math-tools/mathToolsRegistry';
 import { FORMATTING_DECISION_TREE } from '../prompt-library';
+// import { FORMATTING_RULES } from '../prompt-library/core/protocols/formatting'; // Unused
+
 /**
  * Generate practice problems based on node descriptor
  */
@@ -143,7 +145,7 @@ Result: ${q.isCorrect ? '✓ Correct' : '✗ Incorrect'}`
   const solutionContext = solutionSteps && solutionSteps.length > 0 ?
     `**INTENDED SOLUTION METHOD:**
 The problem should be solved using the following approach:
-${solutionSteps.map((step, i) => `${i + 1}. ${step}`).join('\n')}
+${solutionSteps.map((step, i) => `${i + 1}. ${step.replace(/\\/g, '\\\\')}`).join('\n')}
 
 **IMPORTANT:** Base your hints on THIS solution method. Do not suggest alternative methods.
 ` : '';
@@ -212,15 +214,15 @@ ${studentAnswer}
 - Never give away the answer directly
 - Consider their previous attempts and adapt your guidance
 
-**FORMATTING RULES:**
+**FORMATTING DECISION TREE:**
 ${FORMATTING_DECISION_TREE}
 
-**Critical Rules:**
-1. Unicode First: Use θ, °, ², × instead of LaTeX for simple symbols
-2. LaTeX for complex: Use $\\frac{x+1}{2x-3}$ for fractions and complex expressions
-3. JSON escaping: ONE backslash in JSON (e.g., {"content": "$\\frac{1}{2}$"})
-4. Speech text: Plain text only - no markdown, no Unicode symbols, no LaTeX
-5. Display content: Unicode first, then LaTeX when needed, markdown for structure
+** CRITICAL FORMATTING RULES:**
+  - All LaTeX must be wrapped in $...$ delimiters
+  - In JSON, backslashes must be doubled for proper escaping, Use TWO backslashes.
+  - Wrong: {"text": "$\\frac{1}{2}$"}  ← will break
+  - Correct: {"text": "$\\\\frac{1}{2}$"} ← parses to $\\frac{1}{2}$
+
 
 **CRITICAL: Return ONLY valid JSON. Use the correct format based on whether the answer is correct or incorrect:**
 
@@ -267,25 +269,6 @@ ${correctAnswer}
 6. Keep each step concise (1-2 sentences)
 7. Include 3-5 steps total
 
-**LATEX FORMATTING (CRITICAL):**
-- Wrap ALL mathematical expressions in $...$ delimiters
-- Examples: $\sin(\theta)$, $\frac{3}{5}$, $x = 10$, $38^\circ$, $26\sqrt{3}$ cm²
-- Use single backslashes: \sin, \frac, \theta, \sqrt{} (NOT \\sin, \\frac, \\theta)
-- Variables, formulas, numbers with units: ALL need $ delimiters
-- Common commands: \sin, \cos, \tan, \frac{num}{denom}, \sqrt{value}, ^\circ
-- WRONG: 26\tsqrt3 or 26sqrt{3} (missing backslash or wrong syntax)
-
-**CRITICAL: Return ONLY valid JSON in this exact format:**
-Example with proper LaTeX formatting:
-{
-  "steps": [
-    "Step 1: We need to find the missing side using the given angle $\theta = 35^\circ$ and hypotenuse $h = 10$ m",
-    "Step 2: Use the sine ratio: $\sin(\theta) = \frac{\text{Opposite}}{\text{Hypotenuse}}$",
-    "Step 3: Substitute values: $\sin(35^\circ) = \frac{x}{10}$",
-    "Step 4: Solve for $x$: $x = 10 \times \sin(35^\circ) = 5.74$ m",
-    "Step 5: Final answer: $x = 5.74$ m (3 significant figures)"
-  ]
-}
 
 Generate the JSON now:`;
 };

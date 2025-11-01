@@ -240,7 +240,6 @@ export const FORMATTING_DECISION_TREE = `
               │
               └─→ Is it a complex expression? (custom fractions, nested operations)
                   └─→ YES: Use LaTeX with $...$ delimiters
-                  └─→ Example: $\\frac{x+1}{2x-3}$
 `;
 
 /**

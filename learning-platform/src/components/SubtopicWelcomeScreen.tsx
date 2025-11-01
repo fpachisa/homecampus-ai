@@ -32,6 +32,8 @@ import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subje
 import type { AdvancedTrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import { S4_VECTORS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import type { S4VectorsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
+import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
+import type { FactorsMultiplesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -52,7 +54,9 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
 
   // Get topic config based on category
   let topicConfig: any;
-  if (category === 's3-math-trigonometry') {
+  if (category === 's1-math-factors-multiples') {
+    topicConfig = S1_MATH_FACTORS_MULTIPLES_SUBTOPICS[topicId as FactorsMultiplesTopicId];
+  } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {
     topicConfig = S3_MATH_CIRCLE_GEOMETRY[topicId as CircleGeometryTopicId];
