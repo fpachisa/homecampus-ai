@@ -3354,6 +3354,99 @@ Calculate the dot product **u** \$\\cdot\$ **v**.`,
 2. Is 49 a perfect square? If so, what is its square root?`,
       showAfterSpeech: true
     }
+  },
+
+  /**
+   * ========================================
+   * S1 MATHEMATICS - REAL NUMBERS
+   * ========================================
+   */
+  's1-math-real-numbers-negative-numbers-number-line': {
+    speech: {
+      text: `Hello! Have you ever wondered what happens when we go below zero? We are starting our journey into the world of negative numbers today, which are essential for understanding temperature, elevation, and debt. Let us start by mapping where these numbers live.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-real-numbers-negative-numbers-number-line.mp3'
+    },
+    display: {
+      content: `### Understanding Negative Numbers
+
+**Problem:** Locate the integer **-4** on the number line provided below. How many units is it to the left of zero?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+      "toolName": "numberLine",
+      "parameters": {
+        "min": -5,
+        "max": 5,
+        "step": 1,
+        "highlightPoints": [-4]
+      },
+      "caption": "A number line spanning from -5 to 5."
+    }
+  },
+
+  's1-math-real-numbers-addition-subtraction-integers': {
+    speech: {
+      text: `Welcome! Today we are tackling integer operations. Think of positive numbers as money you have, and negative numbers as debt. When we add them, we use 'zero pairs' to cancel out the debt. Let us see how this balancing act works.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-real-numbers-addition-subtraction-integers.mp3'
+    },
+    display: {
+      content: `### Zero Pairs and Adding Integers
+
+If you have 5 positive tiles (+) and 3 negative tiles (-), what is the result when you form as many zero pairs as possible?
+
+**Solve:** 5 + (-3) = ?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-real-numbers-multiplication-division-integers': {
+    speech: {
+      text: `Hey there! Get ready to unlock one of the biggest mysteries in early algebra: the rules of signs! Multiplying integers is straightforward once you know the pattern. Let us jump right into the core concept of multiplying a positive number by a negative number.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-real-numbers-multiplication-division-integers.mp3'
+    },
+    display: {
+      content: `### Multiplication of Integers
+
+Multiplication can be thought of as repeated addition. If you owe $2 to four different people, what is your total debt?
+
+**Calculate:** 4 × (-2)`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-real-numbers-rational-irrational-numbers': {
+    speech: {
+      text: `Greetings. Our focus now shifts to classifying numbers based on their form. We begin with rational numbers—those that can be perfectly expressed as a ratio of two integers. This is a foundational concept for all future math. Let us test your understanding of the definition.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-real-numbers-rational-irrational-numbers.mp3'
+    },
+    display: {
+      content: `### Rational Numbers
+
+A rational number is any number that can be written in the form $\\frac{p}{q}$, where $p$ and $q$ are integers and $q \\neq 0$.
+
+**Question:** Can the decimal $0.75$ be written as a fraction of two integers? If so, what is that fraction?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-real-numbers-operations-real-numbers': {
+    speech: {
+      text: `Hi! We are moving on to combining all the number types we have learned, starting with mastering operations involving fractions. Fractions are crucial building blocks, so let us make sure we have that addition skill locked down before we proceed.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-real-numbers-operations-real-numbers.mp3'
+    },
+    display: {
+      content: `### Operations with Fractions
+
+To add fractions, you must find a common denominator. What is the sum of the following fractions?
+
+**Solve:** $\\frac{1}{3} + \\frac{1}{6}$`,
+      showAfterSpeech: true
+    }
   }
 
   // Add more topics as needed following the same pattern

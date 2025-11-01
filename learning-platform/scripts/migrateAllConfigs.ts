@@ -432,8 +432,112 @@ const S1_FACTORS_MULTIPLES_CONFIGS = [
   }
 ];
 
+/**
+ * S1 Real Numbers configs (5 configs)
+ */
+const S1_REAL_NUMBERS_CONFIGS = [
+  // ============================================
+  // S1 REAL NUMBERS (5 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Negative Numbers & the Number Line
+  {
+    id: 's1-math-real-numbers-negative-numbers-number-line',
+    displayName: 'Negative Numbers & the Number Line',
+    grade: 's1',
+    subject: 'math',
+    topic: 'real-numbers',
+    subtopic: 'negative-numbers-number-line',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 45,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/real-numbers/NegativeNumbersAndNumberLine',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Addition & Subtraction of Integers
+  {
+    id: 's1-math-real-numbers-addition-subtraction-integers',
+    displayName: 'Addition & Subtraction of Integers',
+    grade: 's1',
+    subject: 'math',
+    topic: 'real-numbers',
+    subtopic: 'addition-subtraction-integers',
+    metadata: {
+      difficulty: 'foundational-to-intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-real-numbers-negative-numbers-number-line']
+    },
+    notesComponent: 's1/math/real-numbers/AdditionSubtractionIntegers',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Multiplication & Division of Integers
+  {
+    id: 's1-math-real-numbers-multiplication-division-integers',
+    displayName: 'Multiplication & Division of Integers',
+    grade: 's1',
+    subject: 'math',
+    topic: 'real-numbers',
+    subtopic: 'multiplication-division-integers',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-real-numbers-addition-subtraction-integers']
+    },
+    notesComponent: 's1/math/real-numbers/MultiplicationDivisionIntegers',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Rational & Irrational Numbers
+  {
+    id: 's1-math-real-numbers-rational-irrational-numbers',
+    displayName: 'Rational & Irrational Numbers',
+    grade: 's1',
+    subject: 'math',
+    topic: 'real-numbers',
+    subtopic: 'rational-irrational-numbers',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 45,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/real-numbers/RationalIrrationalNumbers',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 5: Operations on Real Numbers
+  {
+    id: 's1-math-real-numbers-operations-real-numbers',
+    displayName: 'Operations on Real Numbers',
+    grade: 's1',
+    subject: 'math',
+    topic: 'real-numbers',
+    subtopic: 'operations-real-numbers',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-real-numbers-rational-irrational-numbers']
+    },
+    notesComponent: 's1/math/real-numbers/OperationsRealNumbers',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
 // Combine old configs + S1 + S4 configs
-const ALL_CONFIGS = [...oldConfigs, ...S1_FACTORS_MULTIPLES_CONFIGS, ...DIFFERENTIAL_CALCULUS_CONFIGS, ...ADVANCED_TRIGONOMETRY_CONFIGS, ...S4_VECTORS_CONFIGS];
+const ALL_CONFIGS = [...oldConfigs, ...S1_FACTORS_MULTIPLES_CONFIGS, ...S1_REAL_NUMBERS_CONFIGS, ...DIFFERENTIAL_CALCULUS_CONFIGS, ...ADVANCED_TRIGONOMETRY_CONFIGS, ...S4_VECTORS_CONFIGS];
 
 /**
  * Migrate all configs to Firestore

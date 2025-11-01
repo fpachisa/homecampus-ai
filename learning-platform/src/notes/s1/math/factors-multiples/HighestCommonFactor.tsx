@@ -239,7 +239,7 @@ export default function HighestCommonFactor() {
                 Application 1: Simplifying Fractions
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-3">
-                <MathText>We use HCF to express fractions in their simplest form. To simplify $\frac{18}{24}$:</MathText>
+                <MathText>{`We use HCF to express fractions in their simplest form. To simplify $\\frac{18}{24}$:`}</MathText>
               </p>
               <div className="bg-white dark:bg-gray-800 p-4 rounded border border-blue-200 dark:border-blue-700 space-y-2">
                 <p className="text-gray-700 dark:text-gray-300">
@@ -254,7 +254,7 @@ export default function HighestCommonFactor() {
                   </p>
                 </div>
                 <p className="text-gray-700 dark:text-gray-300">
-                  <MathText>{`$\\frac{3}{4}$`} is the simplest form because HCF(3, 4) = 1</MathText>
+                  <MathText>{`$\\frac{3}{4}$ is the simplest form because HCF(3, 4) = 1`}</MathText>
                 </p>
               </div>
             </div>

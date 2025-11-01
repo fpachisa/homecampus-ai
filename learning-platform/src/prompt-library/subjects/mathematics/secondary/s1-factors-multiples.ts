@@ -36,13 +36,12 @@ Teaching Approach:
 
   visualToolsGuidance: `Use pre-built visual tools when they genuinely help understanding.
 IMPORTANT: Use the technical name (e.g., "numberLine", "primeFactorTree") in the toolName field, NOT the display name.
-Available tools for this topic: numberLine, vennDiagram for HCF/LCM visualization.`
+Available tools for this topic: numberLine.`
 };
 
 // Available math tools for this topic
 export const S1_FACTORS_MULTIPLES_MATH_TOOLS = [
-  "numberLine",
-  "vennDiagram"
+  "numberLine"
 ];
 
 // ==========================
@@ -279,7 +278,7 @@ export const S1_MATH_FACTORS_MULTIPLES_SUBTOPICS = {
             "Common factors: factors that appear in both numbers' factor lists",
             "Common multiples: multiples that appear in both numbers' multiple lists"
           ],
-          availableTools: ["vennDiagram"]
+          availableTools: []
         }
       ]
     },
@@ -552,7 +551,7 @@ export const S1_MATH_FACTORS_MULTIPLES_SUBTOPICS = {
             "HCF = Highest Common Factor (also called GCD - Greatest Common Divisor)",
             "Method: List all factors → Find common factors → Select highest"
           ],
-          availableTools: ["vennDiagram"]
+          availableTools: []
         },
         {
           id: "hcf-prime-factorisation",
@@ -752,7 +751,7 @@ export const S1_MATH_FACTORS_MULTIPLES_SUBTOPICS = {
             "LCM = Lowest Common Multiple (smallest number divisible by all given numbers)",
             "Method: List multiples → Find common multiples → Select lowest"
           ],
-          availableTools: ["numberLine", "vennDiagram"]
+          availableTools: ["numberLine"]
         },
         {
           id: "lcm-prime-factorisation",

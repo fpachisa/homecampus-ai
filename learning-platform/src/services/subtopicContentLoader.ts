@@ -21,6 +21,7 @@ import { S4_MATH_PROBABILITY_SUBTOPICS } from '../prompt-library/subjects/mathem
 import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import { S4_VECTORS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
+import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 
 export interface SubtopicContent {
   displayName: string;
@@ -40,6 +41,7 @@ class SubtopicContentLoader {
     this.topicConfigs = {
       // S1 Math topics
       ...S1_MATH_FACTORS_MULTIPLES_SUBTOPICS,
+      ...S1_MATH_REAL_NUMBERS_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

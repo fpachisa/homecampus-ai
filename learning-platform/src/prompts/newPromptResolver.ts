@@ -38,6 +38,7 @@ import { S4_MATH_QUADRATIC_FUNCTIONS_SUBTOPICS } from '../prompt-library/subject
 import { S4_MATH_ADVANCED_TRIGONOMETRY_SUBTOPICS, S4_ADVANCED_TRIGONOMETRY_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-advanced-trigonometry';
 import { S4_VECTORS_SUBTOPICS, S4_VECTORS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS, S1_FACTORS_MULTIPLES_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
+import { S1_MATH_REAL_NUMBERS_SUBTOPICS, S1_REAL_NUMBERS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -79,6 +80,7 @@ function registerBrowserTopics() {
 
   // Register S1 topics
   registerTopics(S1_MATH_FACTORS_MULTIPLES_SUBTOPICS, S1_FACTORS_MULTIPLES_CONFIG);
+  registerTopics(S1_MATH_REAL_NUMBERS_SUBTOPICS, S1_REAL_NUMBERS_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);

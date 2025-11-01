@@ -193,14 +193,14 @@ export default function PrimeNumbersAndFactorisation() {
 
               <div className="mt-4 p-3 bg-purple-100 dark:bg-purple-900/30 rounded border border-purple-300 dark:border-purple-600">
                 <p className="text-gray-800 dark:text-gray-200">
-                  <MathText><strong>Prime factorisation of 30:</strong> $30 = 2 \times 3 \times 5$</MathText>
+                  <MathText>{`**Prime factorisation of 30:** $30 = 2 \\times 3 \\times 5$`}</MathText>
                 </p>
               </div>
             </div>
 
             <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded mb-6">
               <p className="text-gray-700 dark:text-gray-300">
-                <MathText><strong className="text-gray-900 dark:text-gray-100">Important Note:</strong> There are multiple ways to create a factor tree for the same number, but the final prime factorisation will always be the same! For example, we could have started with $30 = 5 \times 6$ instead, but we'd still end up with $2 \times 3 \times 5$.</MathText>
+                <MathText>{`**Important Note:** There are multiple ways to create a factor tree for the same number, but the final prime factorisation will always be the same! For example, we could have started with $30 = 5 \\times 6$ instead, but we'd still end up with $2 \\times 3 \\times 5$.`}</MathText>
               </p>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default function PrimeNumbersAndFactorisation() {
                   </div>
                 </div>
                 <p className="text-gray-700 dark:text-gray-300 mb-2">
-                  <MathText><strong>Prime factorisation:</strong> $54 = 2 \times 3 \times 3 \times 3$</MathText>
+                  <MathText>{`**Prime factorisation:** $54 = 2 \\times 3 \\times 3 \\times 3$`}</MathText>
                 </p>
                 <p className="text-gray-700 dark:text-gray-300">
                   <MathText>Or using index notation (which we'll learn next): $54 = 2 \times 3^3$</MathText>
@@ -332,7 +332,7 @@ export default function PrimeNumbersAndFactorisation() {
               </div>
               <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded border border-purple-300 dark:border-purple-600">
                 <p className="text-gray-800 dark:text-gray-200 font-semibold">
-                  <MathText><strong>Answer:</strong> $720 = 2^4 \times 3^2 \times 5$</MathText>
+                  <MathText>{`**Answer:** $720 = 2^4 \\times 3^2 \\times 5$`}</MathText>
                 </p>
               </div>
             </div>
@@ -364,7 +364,7 @@ export default function PrimeNumbersAndFactorisation() {
                   <p><MathText>$39 = 3 \times 13$</MathText></p>
                   <p className="mt-3"><MathText>So: $702 = 2 \times 3 \times 3 \times 3 \times 13$</MathText></p>
                   <p className="font-semibold text-purple-700 dark:text-purple-400 mt-2">
-                    <MathText><strong>Answer:</strong> $702 = 2 \times 3^3 \times 13$</MathText>
+                    <MathText>{`**Answer:** $702 = 2 \\times 3^3 \\times 13$`}</MathText>
                   </p>
                 </div>
               </div>
@@ -424,7 +424,7 @@ export default function PrimeNumbersAndFactorisation() {
               </p>
               <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded border border-purple-300 dark:border-purple-600">
                 <p className="text-gray-800 dark:text-gray-200 font-semibold">
-                  <MathText><strong>Answer:</strong> $360 = 2 \times 2 \times 2 \times 3 \times 3 \times 5 = 2^3 \times 3^2 \times 5$</MathText>
+                  <MathText>{`**Answer:** $360 = 2 \\times 2 \\times 2 \\times 3 \\times 3 \\times 5 = 2^3 \\times 3^2 \\times 5$`}</MathText>
                 </p>
               </div>
             </div>
@@ -489,7 +489,7 @@ export default function PrimeNumbersAndFactorisation() {
                   <MathText>Prime factors: $2, 2, 3, 3, 5$</MathText>
                 </p>
                 <p className="font-semibold text-purple-700 dark:text-purple-400">
-                  <MathText><strong>Answer:</strong> $180 = 2^2 \times 3^2 \times 5$</MathText>
+                  <MathText>{`**Answer:** $180 = 2^2 \\times 3^2 \\times 5$`}</MathText>
                 </p>
               </div>
             )}
@@ -539,13 +539,13 @@ export default function PrimeNumbersAndFactorisation() {
               <strong>Factor trees</strong> and <strong>successive short division</strong> are two methods to find prime factors
             </li>
             <li>
-              <MathText><strong>Index notation</strong> uses powers to show repeated factors: $2 \times 2 \times 2 = 2^3$</MathText>
+              <MathText>{`**Index notation** uses powers to show repeated factors: $2 \\times 2 \\times 2 = 2^3$`}</MathText>
             </li>
             <li>
               The prime factorisation of a number is unique - it's always the same regardless of the method used
             </li>
             <li>
-              <MathText>In index notation like $2^3$: 2 is the <strong>base</strong>, 3 is the <strong>index/power</strong></MathText>
+              <MathText>{`In index notation like $2^3$: 2 is the **base**, 3 is the **index/power**`}</MathText>
             </li>
           </ul>
         </div>

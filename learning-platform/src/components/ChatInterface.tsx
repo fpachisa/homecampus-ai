@@ -47,6 +47,8 @@ import { S4_VECTORS_SUBTOPICS } from '../prompt-library/subjects/mathematics/sec
 import type { S4VectorsTopicId } from '../prompt-library/subjects/mathematics/secondary/s4-vectors';
 import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import type { FactorsMultiplesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
+import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
+import type { RealNumbersTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -64,6 +66,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S1 factors & multiples topic
   if (topicId.startsWith('s1-math-factors-multiples-')) {
     return S1_MATH_FACTORS_MULTIPLES_SUBTOPICS[topicId as FactorsMultiplesTopicId];
+  }
+  // Check if it's an S1 real numbers topic
+  if (topicId.startsWith('s1-math-real-numbers-')) {
+    return S1_MATH_REAL_NUMBERS_SUBTOPICS[topicId as RealNumbersTopicId];
   }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {

@@ -1583,6 +1583,73 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     ]
   },
 
+  algebraDiscSimulator: {
+    name: "Algebra Disc Simulator",
+    technicalName: "algebraDiscSimulator",
+    component: "AlgebraDiscSimulator",
+    category: "general",
+    description: "Interactive visualizer for integer operations using algebra discs (counters). Blue discs represent positive numbers (+1), red discs represent negative numbers (-1). Zero pairs (one blue + one red = 0) are highlighted and can be removed. Teaches addition, subtraction, and multiplication of integers through concrete visual models.",
+    whenToUse: "Use for teaching integer operations (positive and negative numbers), explaining why adding a negative is like subtracting, showing zero pairs concept, visualizing multiplication as repeated addition, and helping students understand sign rules through concrete models. Perfect for S1/S2 Real Numbers topics.",
+
+    parameters: {
+      operation: "'add' | 'subtract' | 'multiply' - which operation to visualize",
+      firstNumber: "number - first operand (can be positive or negative)",
+      secondNumber: "number - second operand (can be positive or negative)",
+      showSteps: "boolean (optional, default: false) - display step-by-step breakdown of the operation",
+      highlightZeroPairs: "boolean (optional, default: true) - highlight zero pairs with dashed yellow circles",
+      title: "string (optional) - title above the simulator",
+      caption: "string (optional) - explanation text below the visualization"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Adding positive and negative: 5 + (-3)",
+        caption: "Adding 5 and -3: Combine 5 blue discs and 3 red discs, then remove 3 zero pairs to get 2",
+        parameters: {
+          operation: "add",
+          firstNumber: 5,
+          secondNumber: -3,
+          showSteps: true,
+          highlightZeroPairs: true
+        }
+      },
+      {
+        scenario: "Subtracting integers: 4 - 7",
+        caption: "Subtracting 7 from 4: Add 7 red discs (negative), creating zero pairs. Result: -3",
+        parameters: {
+          operation: "subtract",
+          firstNumber: 4,
+          secondNumber: 7,
+          showSteps: true,
+          highlightZeroPairs: true
+        }
+      },
+      {
+        scenario: "Multiplying with negative: (-2) × 3",
+        caption: "Negative 2 times 3: Create 2 groups of 3, but negative multiplier flips signs to get -6",
+        parameters: {
+          operation: "multiply",
+          firstNumber: -2,
+          secondNumber: 3,
+          showSteps: true,
+          highlightZeroPairs: false
+        }
+      },
+      {
+        scenario: "Zero pairs concept: 3 + (-3)",
+        caption: "Adding opposites: 3 blue discs and 3 red discs form 3 zero pairs, result is 0",
+        parameters: {
+          operation: "add",
+          firstNumber: 3,
+          secondNumber: -3,
+          showSteps: true,
+          highlightZeroPairs: true,
+          title: "Understanding Zero Pairs"
+        }
+      }
+    ]
+  },
+
   // ============================================
   // STATISTICS TOOLS
   // ============================================

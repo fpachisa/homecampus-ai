@@ -65,6 +65,10 @@ import AreaApproximationVisualizer from '../math-tools/AreaApproximationVisualiz
 import DefiniteIntegralVisualizer from '../math-tools/DefiniteIntegralVisualizer';
 import RiemannSumVisualizer from '../math-tools/RiemannSumVisualizer';
 
+//Secondary 1
+import AlgebraDiscSimulator from '../math-tools/AlgebraDiscSimulator';
+
+
 interface MathToolRendererProps {
   toolName: string | null | undefined;
   parameters: Record<string, any>;
@@ -153,6 +157,9 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   areaApproximation: AreaApproximationVisualizer,
   definiteIntegralVisualizer: DefiniteIntegralVisualizer,
   riemannSumVisualizer: RiemannSumVisualizer,
+
+  //Secondary 1 Algebra Discs
+  algebraDiscSimulator: AlgebraDiscSimulator,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

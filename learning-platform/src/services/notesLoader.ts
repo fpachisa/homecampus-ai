@@ -17,6 +17,12 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's1/math/factors-multiples/HighestCommonFactor': () => import('../notes/s1/math/factors-multiples/HighestCommonFactor'),
   's1/math/factors-multiples/LowestCommonMultiple': () => import('../notes/s1/math/factors-multiples/LowestCommonMultiple'),
   's1/math/factors-multiples/SquareAndCubeRoots': () => import('../notes/s1/math/factors-multiples/SquareAndCubeRoots'),
+  // S1 Real Numbers notes
+  's1/math/real-numbers/NegativeNumbersAndNumberLine': () => import('../notes/s1/math/real-numbers/NegativeNumbersAndNumberLine'),
+  's1/math/real-numbers/AdditionSubtractionIntegers': () => import('../notes/s1/math/real-numbers/AdditionSubtractionIntegers'),
+  's1/math/real-numbers/MultiplicationDivisionIntegers': () => import('../notes/s1/math/real-numbers/MultiplicationDivisionIntegers'),
+  's1/math/real-numbers/RationalIrrationalNumbers': () => import('../notes/s1/math/real-numbers/RationalIrrationalNumbers'),
+  's1/math/real-numbers/OperationsRealNumbers': () => import('../notes/s1/math/real-numbers/OperationsRealNumbers'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),
