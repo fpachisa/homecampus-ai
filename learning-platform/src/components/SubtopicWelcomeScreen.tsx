@@ -36,6 +36,8 @@ import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/
 import type { FactorsMultiplesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 import type { RealNumbersTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
+import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
+import type { ApproximationEstimationTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -60,6 +62,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S1_MATH_FACTORS_MULTIPLES_SUBTOPICS[topicId as FactorsMultiplesTopicId];
   } else if (category === 's1-math-real-numbers') {
     topicConfig = S1_MATH_REAL_NUMBERS_SUBTOPICS[topicId as RealNumbersTopicId];
+  } else if (category === 's1-math-approximation-estimation') {
+    topicConfig = S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS[topicId as ApproximationEstimationTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {

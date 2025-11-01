@@ -49,6 +49,8 @@ import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/
 import type { FactorsMultiplesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 import type { RealNumbersTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
+import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
+import type { ApproximationEstimationTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -70,6 +72,11 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S1 real numbers topic
   if (topicId.startsWith('s1-math-real-numbers-')) {
     return S1_MATH_REAL_NUMBERS_SUBTOPICS[topicId as RealNumbersTopicId];
+  }
+
+  // Check if it's an S1 approximation & estimation topic
+  if (topicId.startsWith('s1-math-approximation-estimation-')) {
+    return S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS[topicId as ApproximationEstimationTopicId];
   }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {

@@ -73,6 +73,11 @@ function getTopicIcon(topicId: string): string {
   if (topicId.includes('rational-irrational-numbers')) return '√';
   if (topicId.includes('operations-real-numbers')) return '🧮';
 
+  // S1 Approximation & Estimation icons
+  if (topicId.includes('rounding-decimal-places')) return '🔄';
+  if (topicId.includes('significant-figures')) return '🔢';
+  if (topicId.includes('techniques')) return '🎯';
+
   // S3 Trigonometry icons
   if (topicId.includes('basic-ratios')) return '📐';
   if (topicId.includes('problem-solving')) return '🧮';

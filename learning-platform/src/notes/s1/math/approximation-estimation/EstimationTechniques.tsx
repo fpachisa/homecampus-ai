@@ -518,8 +518,8 @@ export default function EstimationTechniques() {
                   <p className="ml-4">Spent: $86 ≈ $100</p>
                   <p className="ml-4">Spent: $405 ≈ $400</p>
                   <p className="ml-4">Spent: $299 ≈ $300</p>
-                  <p className="mt-3">Total spent: <MathText>{'$\\$400 + \\$100 + \\$400 + \\$300 = \\$1,200$'}</MathText></p>
-                  <p className="mt-2">Money left: <MathText>{'$\\$3,400 - \\$1,200 = \\$2,200$'}</MathText></p>
+                  <p className="mt-3">Total spent: $400 + $100 + $400 + $300 = $1,200$</p>
+                  <p className="mt-2">Money left: $3,400 - $1,200 = $2,200</p>
                   <p className="mt-3 text-sm italic text-gray-600 dark:text-gray-400">
                     Actual amount left: $2,307 - our estimate is quite close!
                   </p>

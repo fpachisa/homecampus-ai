@@ -3447,6 +3447,53 @@ To add fractions, you must find a common denominator. What is the sum of the fol
 **Solve:** $\\frac{1}{3} + \\frac{1}{6}$`,
       showAfterSpeech: true
     }
+  },
+
+  /**
+   * ========================================
+   * S1 MATHEMATICS - APPROXIMATION & ESTIMATION
+   * ========================================
+   */
+  's1-math-approximation-estimation-rounding-decimal-places': {
+    speech: {
+      text: `Hi there! Welcome to the world of precision. Rounding to decimal places is like aiming for a specific target—we want to get as close as possible without being overly complicated. Let's start by making sure we understand exactly where the cutoff point is.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-approximation-estimation-rounding-decimal-places.mp3'
+    },
+    display: {
+      content: `### Understanding Rounding and the Midpoint Concept
+
+**Problem:** Round the number 47.3852 to two decimal places.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-approximation-estimation-significant-figures': {
+    speech: {
+      text: `Hey! Ready to uncover the most important digits in any number? Significant figures tell us which parts of a measurement really matter. It's a foundational skill for all scientific calculations. Let's test your initial understanding of how we count them, especially when zeros are involved.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-approximation-estimation-significant-figures.mp3'
+    },
+    display: {
+      content: `### Understanding Significant Figures
+
+**Problem:** How many significant figures are in the number 0.00750?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-approximation-estimation-techniques': {
+    speech: {
+      text: `Greetings! Estimation is one of the most practical math superpowers you can develop. It lets you quickly check answers or calculate rough totals in your head. We'll start with estimation by rounding, which simplifies complex numbers so we can work with them easily. Try this quick calculation.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-approximation-estimation-techniques.mp3'
+    },
+    display: {
+      content: `### Estimation by Rounding
+
+**Problem:** Estimate the value of 18.7 × 4.2 by first rounding each number to one significant figure.`,
+      showAfterSpeech: true
+    }
   }
 
   // Add more topics as needed following the same pattern

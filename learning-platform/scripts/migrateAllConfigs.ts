@@ -1,8 +1,12 @@
 /**
- * Complete Migration Script: All Subtopic Configs to Firestore
+ * Migration Script: S1 Approximation & Estimation Configs to Firestore
  *
- * This script migrates ALL subtopic configurations to Firestore.
- * Since this is a new app with no users, we can migrate everything at once.
+ * This script migrates the S1 Approximation & Estimation subtopic configurations to Firestore.
+ *
+ * Subtopics:
+ *   1. Rounding to Decimal Places
+ *   2. Significant Figures
+ *   3. Estimation Techniques
  *
  * Usage:
  *   npx ts-node scripts/migrateAllConfigs.ts
@@ -18,7 +22,6 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
-import { S4_VECTORS_CONFIGS } from './s4-vectors-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -83,467 +86,79 @@ const STANDARD_MODULES = {
 };
 
 /**
- * Load all subtopic configurations from extracted JSON + Differential Calculus configs
+ * S1 Approximation & Estimation configs (3 configs)
  */
-
-// Import old configs from JSON (96 configs)
-let oldConfigs: any[] = [];
-try {
-  const oldConfigsJson = readFileSync(path.join(__dirname, '../tmp-all-configs.json'), 'utf-8');
-  oldConfigs = JSON.parse(oldConfigsJson);
-  console.log(`📦 Loaded ${oldConfigs.length} configs from extracted JSON`);
-} catch (error) {
-  console.log('ℹ️  No old configs JSON found, will only migrate Differential Calculus');
-}
-
-/**
- * New Differential Calculus configs (7 configs)
- */
-const DIFFERENTIAL_CALCULUS_CONFIGS = [
+const S1_APPROXIMATION_ESTIMATION_CONFIGS = [
   // ============================================
-  // S4 DIFFERENTIAL CALCULUS (7 NEW CONFIGS)
-  // ============================================
-  {
-    id: 's4-math-differential-calculus-limits',
-    displayName: 'Limits',
-    grade: 's4',
-    subject: 'math',
-    topic: 'differential-calculus',
-    subtopic: 'limits',
-    metadata: {
-      difficulty: 'foundational' as const,
-      estimatedMinutes: 60,
-      prerequisites: []
-    },
-    notesComponent: 's4/math/differential-calculus/Limits',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-  {
-    id: 's4-math-differential-calculus-gradient-tangent',
-    displayName: 'Gradient of a Tangent',
-    grade: 's4',
-    subject: 'math',
-    topic: 'differential-calculus',
-    subtopic: 'gradient-tangent',
-    metadata: {
-      difficulty: 'foundational-to-intermediate' as const,
-      estimatedMinutes: 50,
-      prerequisites: ['s4-math-differential-calculus-limits']
-    },
-    notesComponent: 's4/math/differential-calculus/GradientOfTangent',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-  {
-    id: 's4-math-differential-calculus-derivative-function',
-    displayName: 'The Derivative Function',
-    grade: 's4',
-    subject: 'math',
-    topic: 'differential-calculus',
-    subtopic: 'derivative-function',
-    metadata: {
-      difficulty: 'intermediate' as const,
-      estimatedMinutes: 55,
-      prerequisites: ['s4-math-differential-calculus-gradient-tangent']
-    },
-    notesComponent: 's4/math/differential-calculus/DerivativeFunction',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-  {
-    id: 's4-math-differential-calculus-first-principles',
-    displayName: 'Differentiation from First Principles',
-    grade: 's4',
-    subject: 'math',
-    topic: 'differential-calculus',
-    subtopic: 'first-principles',
-    metadata: {
-      difficulty: 'intermediate' as const,
-      estimatedMinutes: 60,
-      prerequisites: ['s4-math-differential-calculus-derivative-function']
-    },
-    notesComponent: 's4/math/differential-calculus/FirstPrinciples',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-  {
-    id: 's4-math-differential-calculus-differentiation-rules',
-    displayName: 'Rules for Differentiation',
-    grade: 's4',
-    subject: 'math',
-    topic: 'differential-calculus',
-    subtopic: 'differentiation-rules',
-    metadata: {
-      difficulty: 'intermediate-to-advanced' as const,
-      estimatedMinutes: 70,
-      prerequisites: ['s4-math-differential-calculus-first-principles']
-    },
-    notesComponent: 's4/math/differential-calculus/DifferentiationRules',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-  {
-    id: 's4-math-differential-calculus-tangent-equations',
-    displayName: 'Finding the Equation of a Tangent',
-    grade: 's4',
-    subject: 'math',
-    topic: 'differential-calculus',
-    subtopic: 'tangent-equations',
-    metadata: {
-      difficulty: 'intermediate-to-advanced' as const,
-      estimatedMinutes: 55,
-      prerequisites: ['s4-math-differential-calculus-differentiation-rules']
-    },
-    notesComponent: 's4/math/differential-calculus/TangentEquations',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-  {
-    id: 's4-math-differential-calculus-stationary-points',
-    displayName: 'Stationary Points',
-    grade: 's4',
-    subject: 'math',
-    topic: 'differential-calculus',
-    subtopic: 'stationary-points',
-    metadata: {
-      difficulty: 'advanced' as const,
-      estimatedMinutes: 65,
-      prerequisites: ['s4-math-differential-calculus-tangent-equations']
-    },
-    notesComponent: 's4/math/differential-calculus/StationaryPoints',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  }
-];
-
-/**
- * S4 Advanced Trigonometry configs (5 configs)
- */
-const ADVANCED_TRIGONOMETRY_CONFIGS = [
-  // ============================================
-  // S4 ADVANCED TRIGONOMETRY (5 NEW CONFIGS)
+  // S1 APPROXIMATION & ESTIMATION (3 NEW CONFIGS)
   // ============================================
 
-  // Subtopic 1: Unit Circle & Special Angles
+  // Subtopic 1: Rounding to Decimal Places
   {
-    id: 's4-math-advanced-trig-unit-circle',
-    displayName: 'Unit Circle & Special Angles',
-    grade: 's4',
-    subject: 'math',
-    topic: 'advanced-trigonometry',
-    subtopic: 'unit-circle',
-    metadata: {
-      difficulty: 'intermediate' as const,
-      estimatedMinutes: 50,
-      prerequisites: ['s3-math-trigonometry-basic-ratios', 's3-math-trigonometry-obtuse-angles']
-    },
-    notesComponent: 's4/math/advanced-trigonometry/UnitCircleSpecialAngles',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 2: Trigonometric Functions & Graphs
-  {
-    id: 's4-math-advanced-trig-functions-graphs',
-    displayName: 'Trigonometric Functions & Graphs',
-    grade: 's4',
-    subject: 'math',
-    topic: 'advanced-trigonometry',
-    subtopic: 'functions-graphs',
-    metadata: {
-      difficulty: 'intermediate-to-advanced' as const,
-      estimatedMinutes: 55,
-      prerequisites: ['s4-math-advanced-trig-unit-circle']
-    },
-    notesComponent: 's4/math/advanced-trigonometry/TrigonometricFunctionsGraphs',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 3: Transformations
-  {
-    id: 's4-math-advanced-trig-transformations',
-    displayName: 'Transformations of Trigonometric Functions',
-    grade: 's4',
-    subject: 'math',
-    topic: 'advanced-trigonometry',
-    subtopic: 'transformations',
-    metadata: {
-      difficulty: 'advanced' as const,
-      estimatedMinutes: 60,
-      prerequisites: ['s4-math-advanced-trig-functions-graphs']
-    },
-    notesComponent: 's4/math/advanced-trigonometry/Transformations',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 4: Trigonometric Equations & Identities
-  {
-    id: 's4-math-advanced-trig-equations-identities',
-    displayName: 'Trigonometric Equations & Identities',
-    grade: 's4',
-    subject: 'math',
-    topic: 'advanced-trigonometry',
-    subtopic: 'equations-identities',
-    metadata: {
-      difficulty: 'advanced' as const,
-      estimatedMinutes: 65,
-      prerequisites: ['s4-math-advanced-trig-unit-circle', 's4-math-advanced-trig-functions-graphs']
-    },
-    notesComponent: 's4/math/advanced-trigonometry/EquationsIdentities',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 5: Radian Measure
-  {
-    id: 's4-math-advanced-trig-radians',
-    displayName: 'Radian Measure',
-    grade: 's4',
-    subject: 'math',
-    topic: 'advanced-trigonometry',
-    subtopic: 'radians',
-    metadata: {
-      difficulty: 'advanced' as const,
-      estimatedMinutes: 50,
-      prerequisites: ['s4-math-advanced-trig-unit-circle']
-    },
-    notesComponent: 's4/math/advanced-trigonometry/RadianMeasure',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  }
-];
-
-/**
- * S1 Factors & Multiples configs (5 configs)
- */
-const S1_FACTORS_MULTIPLES_CONFIGS = [
-  // ============================================
-  // S1 FACTORS & MULTIPLES (5 NEW CONFIGS)
-  // ============================================
-
-  // Subtopic 1: Introduction to Factors & Multiples
-  {
-    id: 's1-math-factors-multiples-introduction',
-    displayName: 'Introduction to Factors & Multiples',
+    id: 's1-math-approximation-estimation-rounding-decimal-places',
+    displayName: 'Rounding to Decimal Places',
     grade: 's1',
     subject: 'math',
-    topic: 'factors-multiples',
-    subtopic: 'introduction',
-    metadata: {
-      difficulty: 'foundational' as const,
-      estimatedMinutes: 50,
-      prerequisites: []
-    },
-    notesComponent: 's1/math/factors-multiples/IntroductionToFactorsMultiples',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 2: Prime Numbers and Factorisation
-  {
-    id: 's1-math-factors-multiples-prime-factorisation',
-    displayName: 'Prime Numbers and Factorisation',
-    grade: 's1',
-    subject: 'math',
-    topic: 'factors-multiples',
-    subtopic: 'prime-factorisation',
-    metadata: {
-      difficulty: 'foundational-to-intermediate' as const,
-      estimatedMinutes: 55,
-      prerequisites: ['s1-math-factors-multiples-introduction']
-    },
-    notesComponent: 's1/math/factors-multiples/PrimeNumbersAndFactorisation',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 3: Highest Common Factor (HCF)
-  {
-    id: 's1-math-factors-multiples-hcf',
-    displayName: 'Highest Common Factor (HCF)',
-    grade: 's1',
-    subject: 'math',
-    topic: 'factors-multiples',
-    subtopic: 'hcf',
-    metadata: {
-      difficulty: 'intermediate' as const,
-      estimatedMinutes: 60,
-      prerequisites: ['s1-math-factors-multiples-prime-factorisation']
-    },
-    notesComponent: 's1/math/factors-multiples/HighestCommonFactor',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 4: Lowest Common Multiple (LCM)
-  {
-    id: 's1-math-factors-multiples-lcm',
-    displayName: 'Lowest Common Multiple (LCM)',
-    grade: 's1',
-    subject: 'math',
-    topic: 'factors-multiples',
-    subtopic: 'lcm',
-    metadata: {
-      difficulty: 'intermediate' as const,
-      estimatedMinutes: 60,
-      prerequisites: ['s1-math-factors-multiples-hcf']
-    },
-    notesComponent: 's1/math/factors-multiples/LowestCommonMultiple',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 5: Square and Cube Roots
-  {
-    id: 's1-math-factors-multiples-square-cube-roots',
-    displayName: 'Square and Cube Roots',
-    grade: 's1',
-    subject: 'math',
-    topic: 'factors-multiples',
-    subtopic: 'square-cube-roots',
-    metadata: {
-      difficulty: 'intermediate-to-advanced' as const,
-      estimatedMinutes: 55,
-      prerequisites: ['s1-math-factors-multiples-prime-factorisation']
-    },
-    notesComponent: 's1/math/factors-multiples/SquareAndCubeRoots',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  }
-];
-
-/**
- * S1 Real Numbers configs (5 configs)
- */
-const S1_REAL_NUMBERS_CONFIGS = [
-  // ============================================
-  // S1 REAL NUMBERS (5 NEW CONFIGS)
-  // ============================================
-
-  // Subtopic 1: Negative Numbers & the Number Line
-  {
-    id: 's1-math-real-numbers-negative-numbers-number-line',
-    displayName: 'Negative Numbers & the Number Line',
-    grade: 's1',
-    subject: 'math',
-    topic: 'real-numbers',
-    subtopic: 'negative-numbers-number-line',
+    topic: 'approximation-estimation',
+    subtopic: 'rounding-decimal-places',
     metadata: {
       difficulty: 'foundational' as const,
       estimatedMinutes: 45,
       prerequisites: []
     },
-    notesComponent: 's1/math/real-numbers/NegativeNumbersAndNumberLine',
+    notesComponent: 's1/math/approximation-estimation/RoundingDecimalPlaces',
     teachingTemplate: '',
     scoring: STANDARD_SCORING,
     modules: STANDARD_MODULES
   },
 
-  // Subtopic 2: Addition & Subtraction of Integers
+  // Subtopic 2: Significant Figures
   {
-    id: 's1-math-real-numbers-addition-subtraction-integers',
-    displayName: 'Addition & Subtraction of Integers',
+    id: 's1-math-approximation-estimation-significant-figures',
+    displayName: 'Significant Figures',
     grade: 's1',
     subject: 'math',
-    topic: 'real-numbers',
-    subtopic: 'addition-subtraction-integers',
+    topic: 'approximation-estimation',
+    subtopic: 'significant-figures',
     metadata: {
       difficulty: 'foundational-to-intermediate' as const,
       estimatedMinutes: 50,
-      prerequisites: ['s1-math-real-numbers-negative-numbers-number-line']
+      prerequisites: ['s1-math-approximation-estimation-rounding-decimal-places']
     },
-    notesComponent: 's1/math/real-numbers/AdditionSubtractionIntegers',
+    notesComponent: 's1/math/approximation-estimation/SignificantFigures',
     teachingTemplate: '',
     scoring: STANDARD_SCORING,
     modules: STANDARD_MODULES
   },
 
-  // Subtopic 3: Multiplication & Division of Integers
+  // Subtopic 3: Estimation Techniques
   {
-    id: 's1-math-real-numbers-multiplication-division-integers',
-    displayName: 'Multiplication & Division of Integers',
+    id: 's1-math-approximation-estimation-techniques',
+    displayName: 'Estimation Techniques',
     grade: 's1',
     subject: 'math',
-    topic: 'real-numbers',
-    subtopic: 'multiplication-division-integers',
+    topic: 'approximation-estimation',
+    subtopic: 'techniques',
     metadata: {
       difficulty: 'intermediate' as const,
-      estimatedMinutes: 50,
-      prerequisites: ['s1-math-real-numbers-addition-subtraction-integers']
-    },
-    notesComponent: 's1/math/real-numbers/MultiplicationDivisionIntegers',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 4: Rational & Irrational Numbers
-  {
-    id: 's1-math-real-numbers-rational-irrational-numbers',
-    displayName: 'Rational & Irrational Numbers',
-    grade: 's1',
-    subject: 'math',
-    topic: 'real-numbers',
-    subtopic: 'rational-irrational-numbers',
-    metadata: {
-      difficulty: 'intermediate' as const,
-      estimatedMinutes: 45,
-      prerequisites: []
-    },
-    notesComponent: 's1/math/real-numbers/RationalIrrationalNumbers',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 5: Operations on Real Numbers
-  {
-    id: 's1-math-real-numbers-operations-real-numbers',
-    displayName: 'Operations on Real Numbers',
-    grade: 's1',
-    subject: 'math',
-    topic: 'real-numbers',
-    subtopic: 'operations-real-numbers',
-    metadata: {
-      difficulty: 'intermediate-to-advanced' as const,
       estimatedMinutes: 55,
-      prerequisites: ['s1-math-real-numbers-rational-irrational-numbers']
+      prerequisites: ['s1-math-approximation-estimation-rounding-decimal-places', 's1-math-approximation-estimation-significant-figures']
     },
-    notesComponent: 's1/math/real-numbers/OperationsRealNumbers',
+    notesComponent: 's1/math/approximation-estimation/EstimationTechniques',
     teachingTemplate: '',
     scoring: STANDARD_SCORING,
     modules: STANDARD_MODULES
   }
 ];
 
-// Combine old configs + S1 + S4 configs
-const ALL_CONFIGS = [...oldConfigs, ...S1_FACTORS_MULTIPLES_CONFIGS, ...S1_REAL_NUMBERS_CONFIGS, ...DIFFERENTIAL_CALCULUS_CONFIGS, ...ADVANCED_TRIGONOMETRY_CONFIGS, ...S4_VECTORS_CONFIGS];
+// Only migrate S1 Approximation & Estimation configs
+const ALL_CONFIGS = [...S1_APPROXIMATION_ESTIMATION_CONFIGS];
 
 /**
- * Migrate all configs to Firestore
+ * Migrate S1 Approximation & Estimation configs to Firestore
  */
 async function migrateAll() {
-  console.log('🚀 Starting complete migration to Firestore...\n');
+  console.log('🚀 Starting S1 Approximation & Estimation migration to Firestore...\n');
   console.log(`Total configs to migrate: ${ALL_CONFIGS.length}\n`);
 
   let successCount = 0;
@@ -604,28 +219,13 @@ async function verify() {
   const snapshot = await db.collection('subtopics').get();
   console.log(`Total documents in Firestore: ${snapshot.size}`);
 
-  // Check for Differential Calculus configs
-  console.log('\n📋 Differential Calculus configs:');
-  const diffCalcIds = ALL_CONFIGS
-    .filter(c => c.id.startsWith('s4-math-differential-calculus'))
+  // Check for S1 Approximation & Estimation configs
+  console.log('\n📋 S1 Approximation & Estimation configs:');
+  const approxEstIds = ALL_CONFIGS
+    .filter(c => c.id.startsWith('s1-math-approximation-estimation'))
     .map(c => c.id);
 
-  for (const id of diffCalcIds) {
-    const doc = await db.collection('subtopics').doc(id).get();
-    if (doc.exists) {
-      console.log(`  ✓ ${id}`);
-    } else {
-      console.log(`  ✗ MISSING: ${id}`);
-    }
-  }
-
-  // Check for Advanced Trigonometry configs
-  console.log('\n📋 Advanced Trigonometry configs:');
-  const advTrigIds = ALL_CONFIGS
-    .filter(c => c.id.startsWith('s4-math-advanced-trig'))
-    .map(c => c.id);
-
-  for (const id of advTrigIds) {
+  for (const id of approxEstIds) {
     const doc = await db.collection('subtopics').doc(id).get();
     if (doc.exists) {
       console.log(`  ✓ ${id}`);
@@ -642,9 +242,8 @@ migrateAll()
     console.log('\n✨ All done!');
     console.log('\n📝 Next steps:');
     console.log('1. Verify configs in Firebase Console');
-    console.log('2. Add remaining configs to this script (optional)');
-    console.log('3. Commit and push to trigger CI/CD deployment');
-    console.log('4. After deployment, remove mockConfigs from configLoader.ts');
+    console.log('2. Test the S1 Approximation & Estimation module in the app');
+    console.log('3. Commit and push to deploy to production');
     process.exit(0);
   })
   .catch((error) => {

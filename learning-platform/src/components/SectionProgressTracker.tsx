@@ -37,6 +37,8 @@ import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/
 import type { FactorsMultiplesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 import type { RealNumbersTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
+import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
+import type { ApproximationEstimationTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -64,6 +66,10 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s1-math-real-numbers-')) {
       const subtopic = S1_MATH_REAL_NUMBERS_SUBTOPICS[topicId as RealNumbersTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s1-math-approximation-estimation-')) {
+      const subtopic = S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS[topicId as ApproximationEstimationTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {
