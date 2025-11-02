@@ -2,8 +2,8 @@
  * AI-Generated Initial Greetings Cache (BATCH MODE with VARIATION)
  *
  * Generated using BATCH generation via scripts/generateAISamples.ts
- * Generated on: 2025-11-01T12:11:53.363Z
- * Topic filter: s1-math-approximation-estimation (3 subtopics)
+ * Generated on: 2025-11-02T10:50:57.861Z
+ * Topic filter: s1-math-angles (6 subtopics)
  * Generation method: Batch (with variation control)
  *
  * Features:
@@ -22,54 +22,92 @@ import type { InitialGreetingResponse } from '../types/types';
 export interface CachedGreeting extends Omit<InitialGreetingResponse, 'speech'> {
   speech: {
     text: string;
-    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm';
-    /**
-     * Relative path to pre-generated TTS audio file from public directory
-     * Example: '/assets/audio/initial-greetings/s1-math-approximation-estimation-rounding-decimal-places.mp3'
-     */
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
     preGeneratedAudioUrl?: string;
   };
 }
 
 export const INITIAL_GREETINGS_AI_GENERATED: Record<string, CachedGreeting> = {
-  's1-math-approximation-estimation-rounding-decimal-places': {
+  's1-math-angles-parallel-lines-introduction': {
     speech: {
-      text: `Hi there! Welcome to the world of precision. Rounding to decimal places is like aiming for a specific target—we want to get as close as possible without being overly complicated. Let's start by making sure we understand exactly where the cutoff point is.`,
+      text: `Greetings! Geometry starts with angles, the building blocks of shapes. Let's make sure we understand the fundamental vocabulary and how we label them before we start measuring.`,
       emotion: 'encouraging',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-approximation-estimation-rounding-decimal-places.mp3'
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-introduction.mp3'
     },
     display: {
-      content: `### Understanding Rounding and the Midpoint Concept
+      content: `### Angle Basics, Notation, and Types
 
-**Problem:** Round the number 47.3852 to two decimal places.`,
+**Question:** An angle measures exactly 90°. What is the classification of this angle?`,
       showAfterSpeech: true
     }
   },
 
-  's1-math-approximation-estimation-significant-figures': {
+  's1-math-angles-parallel-lines-angles-at-point': {
     speech: {
-      text: `Hey! Ready to uncover the most important digits in any number? Significant figures tell us which parts of a measurement really matter. It's a foundational skill for all scientific calculations. Let's test your initial understanding of how we count them, especially when zeros are involved.`,
+      text: `Hi there! Have you ever thought about what happens when you turn completely around? That's a full circle, and in geometry, we call that 'angles at a point'. It is a powerful rule that always adds up the same way.`,
       emotion: 'encouraging',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-approximation-estimation-significant-figures.mp3'
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-angles-at-point.mp3'
     },
     display: {
-      content: `### Understanding Significant Figures
+      content: `### Angles at a Point - Basic Property
 
-**Problem:** How many significant figures are in the number 0.00750?`,
+**Question:** Three angles meet at a point: 110°, 150°, and x. What is the value of x in degrees (°)?`,
       showAfterSpeech: true
     }
   },
 
-  's1-math-approximation-estimation-techniques': {
+  's1-math-angles-parallel-lines-angles-on-line': {
     speech: {
-      text: `Greetings! Estimation is one of the most practical math superpowers you can develop. It lets you quickly check answers or calculate rough totals in your head. We'll start with estimation by rounding, which simplifies complex numbers so we can work with them easily. Try this quick calculation.`,
+      text: `Welcome! A straight line looks simple, but it holds one of the most important angle rules in geometry. When angles sit side by side on a straight edge, they form a perfect half turn. Let's practice using this straight line property.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-angles-on-line.mp3'
+    },
+    display: {
+      content: `### Angles on a Straight Line - Basic Property
+
+**Question:** Angle A and Angle B are adjacent angles on a straight line. If Angle A measures 58°, what is the measure of Angle B?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-angles-parallel-lines-vertically-opposite': {
+    speech: {
+      text: `Hey! Get ready for one of the coolest visual shortcuts in geometry: vertically opposite angles! When two lines cross, they create mirror images of each other. It is instant equality!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-vertically-opposite.mp3'
+    },
+    display: {
+      content: `### Vertically Opposite Angles - Basic Property
+
+**Question:** Two straight lines intersect, forming four angles. If one angle measures 142°, what is the measure of the angle directly opposite it?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-angles-parallel-lines-basic-parallel': {
+    speech: {
+      text: `Hello there! We are stepping into the world of parallel lines, where angles suddenly start matching up in predictable patterns. We will start with corresponding angles, often called the F pattern. Can you spot the match?`,
       emotion: 'warm',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-approximation-estimation-techniques.mp3'
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-basic-parallel.mp3'
     },
     display: {
-      content: `### Estimation by Rounding
+      content: `### Corresponding Angles (F-Pattern)
 
-**Problem:** Estimate the value of 18.7 × 4.2 by first rounding each number to one significant figure.`,
+Given two parallel lines cut by a transversal, if the upper angle in the pair measures 75°, what is the measure of its corresponding angle?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-angles-parallel-lines-advanced-parallel': {
+    speech: {
+      text: `Greetings, geometry expert! You have mastered the basics, and now it is time to put those angle rules together. Advanced parallel line problems require chaining multiple steps. Think of it as a geometric puzzle!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-advanced-parallel.mp3'
+    },
+    display: {
+      content: `### Multi-Step Parallel Lines Problems
+
+**Question:** Lines L₁ and L₂ are parallel. Angle A and Angle B are corresponding angles. Angle B and Angle C are supplementary (on a straight line). If Angle A = 110°, what is the measure of Angle C?`,
       showAfterSpeech: true
     }
   }

@@ -891,6 +891,47 @@ Before moving to Step 3:
 
 **Output**: New tools ready to be referenced in config file's `availableTools` arrays
 
+#### 2.5.6 Math Tool Registration Checklist (CRITICAL)
+
+**⚠️ IMPORTANT**: Every new math tool MUST be registered in ALL THREE locations or it won't work.
+
+For each new tool you create, verify you've completed:
+
+- [ ] **mathToolsRegistry.ts** (Location: `src/components/math-tools/mathToolsRegistry.ts`, around line 1650)
+  - Add tool metadata entry with:
+    - `id`: Technical name used in code (e.g., `'fractionCircle'`)
+    - `displayName`: Human-readable name
+    - `component`: Reference to your component
+    - `description`: Brief explanation
+    - `category`: Topic category
+    - `parameters`: Full parameter schema with types
+
+- [ ] **MathToolRenderer.tsx** (Location: `src/components/practice/MathToolRenderer.tsx`)
+  - **Import**: Add component import at top of file (around line 12-46)
+    ```typescript
+    import FractionCircleVisualizer from '../math-tools/FractionCircleVisualizer';
+    ```
+  - **Component Map**: Add mapping in `COMPONENT_MAP` object (around line 165-170)
+    ```typescript
+    fractionCircle: FractionCircleVisualizer,
+    ```
+
+- [ ] **Config file** (Your topic config: `src/prompt-library/subjects/mathematics/secondary/[topic-name].ts`)
+  - Add tool ID to relevant section's `availableTools` array
+  - Use the exact technical name from registry (e.g., `'fractionCircle'`, NOT `'Fraction Circle'`)
+
+**Verification**:
+```bash
+# Test the tool renders
+npm run dev
+# Try generating a question that uses the tool
+# Check browser console for "Tool 'xyz' not found" errors
+```
+
+**Common Mistake**: Using display name instead of technical ID in config file
+- ❌ Wrong: `availableTools: ['Fraction Circle Visualizer']`
+- ✅ Correct: `availableTools: ['fractionCircle']`
+
 ---
 
 ### Step 3: Configuration File Creation (SUPER CRITICAL)
@@ -1197,18 +1238,10 @@ Create a custom script similar to `migrateAllConfigs.ts` for your specific topic
 
 Every subtopic needs an initial greeting that welcomes the student and introduces the first concept. These greetings are played as TTS audio when students first access a subtopic.
 
-#### 5.1 What Are Initial Greetings?
 
-Initial greetings:
-- **Welcome students** to the subtopic with warm, encouraging tone
-- **Introduce the topic** briefly
-- **Set expectations** for what they'll learn
-- **Include first problem/question** (optional)
-- **Play as audio** using TTS on first visit
+#### 5.1 Batch Generation Process
 
-#### 5.2 Batch Generation Process
-
-Use the existing batch generation script to create greetings for all subtopics at once:
+Use the existing batch generation script to create greetings for all subtopics at once. You DON'T have to generate it by yourself.
 
 **Step 1: Generate Greetings**
 
@@ -1221,12 +1254,6 @@ npm run generate-ai-samples -- --topic=s1-math-fractions
 # This creates: src/data/initialGreetingsCache-ai-generated.ts
 # Processing time: ~2-3 minutes for 5-8 subtopics
 ```
-
-**What the script does**:
-- Uses batch AI generation (20 topics at once - faster than individual calls)
-- Creates varied greetings (anti-repetition instructions)
-- Auto-populates audio URLs
-- Generates both speech (plain text) and display (can use markdown/LaTeX) versions
 
 **Step 2: Review Generated Greetings**
 
@@ -1284,7 +1311,7 @@ export const INITIAL_GREETINGS_CACHE: Record<string, CachedGreeting> = {
 };
 ```
 
-#### 5.3 Audio Generation (Optional But Recommended)
+#### 5.3 Audio Generation (mandatory)
 
 Generate pre-recorded audio files so greetings load instantly:
 

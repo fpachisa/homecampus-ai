@@ -39,6 +39,12 @@ import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../prompt-library/subjects/mathe
 import type { RealNumbersTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
 import type { ApproximationEstimationTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
+import { S1_MATH_BASIC_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-basic-algebra';
+import type { BasicAlgebraTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-basic-algebra';
+import { S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
+import type { SimpleLinearEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
+import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
+import type { AnglesParallelLinesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -70,6 +76,18 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s1-math-approximation-estimation-')) {
       const subtopic = S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS[topicId as ApproximationEstimationTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s1-math-basic-algebra-')) {
+      const subtopic = S1_MATH_BASIC_ALGEBRA_SUBTOPICS[topicId as BasicAlgebraTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s1-math-simple-linear-equations-')) {
+      const subtopic = S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS[topicId as SimpleLinearEquationsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s1-math-angles-parallel-lines-')) {
+      const subtopic = S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS[topicId as AnglesParallelLinesTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {

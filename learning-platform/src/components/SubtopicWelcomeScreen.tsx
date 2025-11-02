@@ -38,6 +38,12 @@ import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../prompt-library/subjects/mathe
 import type { RealNumbersTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
 import type { ApproximationEstimationTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
+import { S1_MATH_BASIC_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-basic-algebra';
+import type { BasicAlgebraTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-basic-algebra';
+import { S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
+import type { SimpleLinearEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
+import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
+import type { AnglesParallelLinesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -64,6 +70,12 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S1_MATH_REAL_NUMBERS_SUBTOPICS[topicId as RealNumbersTopicId];
   } else if (category === 's1-math-approximation-estimation') {
     topicConfig = S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS[topicId as ApproximationEstimationTopicId];
+  } else if (category === 's1-math-basic-algebra') {
+    topicConfig = S1_MATH_BASIC_ALGEBRA_SUBTOPICS[topicId as BasicAlgebraTopicId];
+  } else if (category === 's1-math-simple-linear-equations') {
+    topicConfig = S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS[topicId as SimpleLinearEquationsTopicId];
+  } else if (category === 's1-math-angles-parallel-lines') {
+    topicConfig = S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS[topicId as AnglesParallelLinesTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {

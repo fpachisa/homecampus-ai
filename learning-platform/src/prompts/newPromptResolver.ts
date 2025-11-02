@@ -40,6 +40,9 @@ import { S4_VECTORS_SUBTOPICS, S4_VECTORS_CONFIG } from '../prompt-library/subje
 import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS, S1_FACTORS_MULTIPLES_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import { S1_MATH_REAL_NUMBERS_SUBTOPICS, S1_REAL_NUMBERS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS, S1_APPROXIMATION_ESTIMATION_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
+import { S1_MATH_BASIC_ALGEBRA_SUBTOPICS, S1_BASIC_ALGEBRA_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-basic-algebra';
+import { S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS, S1_SIMPLE_LINEAR_EQUATIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
+import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS, S1_ANGLES_PARALLEL_LINES_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -83,6 +86,9 @@ function registerBrowserTopics() {
   registerTopics(S1_MATH_FACTORS_MULTIPLES_SUBTOPICS, S1_FACTORS_MULTIPLES_CONFIG);
   registerTopics(S1_MATH_REAL_NUMBERS_SUBTOPICS, S1_REAL_NUMBERS_CONFIG);
   registerTopics(S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS, S1_APPROXIMATION_ESTIMATION_CONFIG);
+  registerTopics(S1_MATH_BASIC_ALGEBRA_SUBTOPICS, S1_BASIC_ALGEBRA_CONFIG);
+  registerTopics(S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS, S1_SIMPLE_LINEAR_EQUATIONS_CONFIG);
+  registerTopics(S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS, S1_ANGLES_PARALLEL_LINES_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);
@@ -260,7 +266,7 @@ export class NewPromptResolver {
       return {
         description: `Pre-built visual tools (Section-scoped to: ${currentSection})`,
         tools: filteredTools,
-        usageGuidelines: "Use visual tools to help clarify concepts. Choose tools based on the section's learning objectives."
+        usageGuidelines: "Use visual tools to help clarify concepts. Choose tools based on the section's learning objectives. CRITICAL: Use exact techinalName of the tool. DO NOT create names of your own."
       };
     }
 
@@ -322,7 +328,7 @@ export class NewPromptResolver {
     const scopedMathTools = this.getScopedMathTools(contextWithFirstSection, subtopic, global);
 
     const builder = this.promptLibrary.createBuilder()
-      .addRole("You are a warm and friendly math tutor")
+      .addRole("You are a warm and friendly math tutor who generates initial greetings and introductory problem on the given topic")
       .addContext({
         topic: subtopic.displayName,
         topicName: subtopic.topicName
@@ -350,8 +356,10 @@ export class NewPromptResolver {
           }
 
       })
+      .addSection("IMPORTANT 1:", "Use visual tools from the available Visual Tools list when appropriate.")
       .addSection("CRITICAL", "Return ONLY valid JSON exactly as per OUTPUT SCHEMA even if no mathTool used still provide all fields and keep it blank.")
-      .addSection("CRITICAL", "Ask only one question unless the second part is using the answer from the first part.");
+      .addSection("VERY CRITICAL", "DO NOT refer to any diagrams/images that do not exist. DO NOT hallucinate toolName. Use only from the Available Visual Tools")
+      .addSection("IMPORTANT 2:", "Ask only one question unless the second part is using the answer from the first part.");
 
     return builder.build();
   }

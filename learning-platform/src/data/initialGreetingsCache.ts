@@ -3494,8 +3494,275 @@ To add fractions, you must find a common denominator. What is the sum of the fol
 **Problem:** Estimate the value of 18.7 × 4.2 by first rounding each number to one significant figure.`,
       showAfterSpeech: true
     }
-  }
+  },
+  /**
+   * ========================================
+   * S1 MATHEMATICS - BASIC ALGEBRA
+   * ========================================
+   */  
+  's1-math-basic-algebra-notation': {
+    speech: {
+      text: `Welcome to the world of algebra! Think of variables as mystery boxes holding numbers. We use notation to clearly describe what is in those boxes. Let us start by translating a common phrase into an algebraic expression.`,
+      emotion: 'warm'
+    },
+    display: {
+      content: `### Introduction to Variables
 
+Write the algebraic expression for the phrase:
+
+**"Five less than a number n."**`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-basic-algebra-simplifying': {
+    speech: {
+      text: `Hey there! Get ready to clean up some math messes. Simplifying expressions is like sorting laundry; we group the shirts with the shirts and the socks with the socks. Let us practice collecting terms that match.`,
+      emotion: 'encouraging'
+    },
+    display: {
+      content: `### Collecting Like Terms - Basics
+
+Simplify the following expression by collecting like terms:
+
+\$\$4x + 7y - x + 2y\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-basic-algebra-expanding': {
+    speech: {
+      text: `Greetings! Ready to unlock some brackets? The distributive law is a powerful tool that helps us spread a number across everything inside the parentheses. Take your time and make sure every term gets multiplied.`,
+      emotion: 'encouraging'
+    },
+    display: {
+      content: `### Distributive Law - Single Bracket
+
+Use the distributive law to expand the expression:
+
+\$\$3(2a + 5)\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-basic-algebra-factorization': {
+    speech: {
+      text: `Hi! We are starting our journey into factorization, which is essentially reverse multiplication. Can you spot the greatest common factor hiding within an expression? This skill is crucial for all higher algebra.`,
+      emotion: 'supportive'
+    },
+    display: {
+      content: `### Common Factor Extraction
+
+Identify the greatest common factor and factorize the expression:
+
+\$\$6x + 9\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-basic-algebra-equations': {
+    speech: {
+      text: `Hello and welcome to solving equations! Remember, an equation is like a balanced scale. Whatever you do to one side, you must do to the other to keep it level. Let us solve our first one-step problem.`,
+      emotion: 'supportive'
+    },
+    display: {
+      content: `### One-Step Equations
+
+Solve for the unknown variable x:
+
+\$\$x + 12 = 20\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-basic-algebra-changing-subject': {
+    speech: {
+      text: `Ever needed to rearrange a formula to find a different value? That is what changing the subject is all about. It gives you flexibility when working with real-world relationships. Let us practice isolating a variable.`,
+      emotion: 'warm'
+    },
+    display: {
+      content: `### Simple Formula Rearrangement
+
+The area of a rectangle is given by the formula A = L × W.
+
+Rearrange this formula to make **W** the subject.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-basic-algebra-word-problems': {
+    speech: {
+      text: `Awesome! Let us put on our translator hats. Word problems challenge us to convert everyday language into the precise language of mathematics. If we can write the equation, solving it is easy.`,
+      emotion: 'encouraging'
+    },
+    display: {
+      content: `### Translating Word Problems to Equations
+
+A taxi ride costs a fixed fee of \$3 plus \$2 per mile (m).
+
+Write an equation for the total cost (C) of the ride.`,
+      showAfterSpeech: true
+    }
+  },
+  
+  /**
+   * ========================================
+   * S1 MATHEMATICS - SIMPLE LINEAR EQUATIONS
+   * ========================================
+   */ 
+  's1-math-simple-linear-equations-introduction': {
+    speech: {
+      text: `Welcome! Think of an equation like a perfectly balanced scale. Whatever operation you perform on one side, you must perform on the other to keep things level. We are starting with the simplest moves: one-step equations. Ready to find the missing number?`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-simple-linear-equations-introduction.mp3'
+    },
+    display: {
+      content: `### One-Step Equations
+
+We need to isolate the variable \$x\$. What operation should you use to solve for \$x\$ in the equation below?
+
+\$\$x + 7 = 15\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-simple-linear-equations-both-sides': {
+    speech: {
+      text: `Hi there! Sometimes our variables get scattered across both sides of the equal sign. This section is all about strategy: collecting those like terms first so we can solve efficiently. Don't worry, we'll take the process step by step, focusing on moving terms strategically.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-simple-linear-equations-both-sides.mp3'
+    },
+    display: {
+      content: `### Collecting Like Terms - Variables on Both Sides
+
+Your first task is to gather the variable terms on one side of the equation. Which operation will help you move the variable term \$2x\$ to the left side?
+
+\$\$5x - 3 = 2x + 9\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-simple-linear-equations-fractional': {
+    speech: {
+      text: `Greetings! Dealing with fractions in equations can feel messy, but we have a powerful tool: the Least Common Multiple method. This trick lets us clear all the denominators right away, transforming the equation into something much simpler to handle. Let's practice that clearing step first.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-simple-linear-equations-fractional.mp3'
+    },
+    display: {
+      content: `### Equations with Fractions (LCM Method)
+
+Before solving, we want to eliminate the fraction. What is the Least Common Multiple (LCM) of the denominators in the equation below, and how would you use it to clear the fraction?
+
+\$\$\\frac{x}{2} + 1 = 5\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-simple-linear-equations-word-problems': {
+    speech: {
+      text: `Hey! Equations are often hidden inside everyday situations. The key skill here is translating English phrases into mathematical expressions. Think of yourself as a decoder, turning words into symbols. Let's start by setting up the equation for a simple scenario.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-simple-linear-equations-word-problems.mp3'
+    },
+    display: {
+      content: `### Translating Word Problems to Equations
+
+Let \$n\$ represent the unknown number. Translate the following sentence into a mathematical equation:
+
+**"Five less than three times a number is 16."**`,
+      showAfterSpeech: true
+    }
+  },  
+  
+  /**
+   * ========================================
+   * S1 MATHEMATICS - ANGLES AND PARALLEL LINES
+   * ========================================
+   */ 
+
+  's1-math-angles-parallel-lines-introduction': {
+    speech: {
+      text: `Greetings! Geometry starts with angles, the building blocks of shapes. Let's make sure we understand the fundamental vocabulary and how we label them before we start measuring.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-introduction.mp3'
+    },
+    display: {
+      content: `### Angle Basics, Notation, and Types
+
+**Question:** An angle measures exactly 90°. What is the classification of this angle?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-angles-parallel-lines-angles-at-point': {
+    speech: {
+      text: `Hi there! Have you ever thought about what happens when you turn completely around? That's a full circle, and in geometry, we call that 'angles at a point'. It is a powerful rule that always adds up the same way.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-angles-at-point.mp3'
+    },
+    display: {
+      content: `### Angles at a Point - Basic Property
+
+**Question:** Three angles meet at a point: 110°, 150°, and x. What is the value of x in degrees (°)?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-angles-parallel-lines-angles-on-line': {
+    speech: {
+      text: `Welcome! A straight line looks simple, but it holds one of the most important angle rules in geometry. When angles sit side by side on a straight edge, they form a perfect half turn. Let's practice using this straight line property.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-angles-on-line.mp3'
+    },
+    display: {
+      content: `### Angles on a Straight Line - Basic Property
+
+**Question:** Angle A and Angle B are adjacent angles on a straight line. If Angle A measures 58°, what is the measure of Angle B?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-angles-parallel-lines-vertically-opposite': {
+    speech: {
+      text: `Hey! Get ready for one of the coolest visual shortcuts in geometry: vertically opposite angles! When two lines cross, they create mirror images of each other. It is instant equality!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-vertically-opposite.mp3'
+    },
+    display: {
+      content: `### Vertically Opposite Angles - Basic Property
+
+**Question:** Two straight lines intersect, forming four angles. If one angle measures 142°, what is the measure of the angle directly opposite it?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-angles-parallel-lines-basic-parallel': {
+    speech: {
+      text: `Hello there! We are stepping into the world of parallel lines, where angles suddenly start matching up in predictable patterns. We will start with corresponding angles, often called the F pattern. Can you spot the match?`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-basic-parallel.mp3'
+    },
+    display: {
+      content: `### Corresponding Angles (F-Pattern)
+
+Given two parallel lines cut by a transversal, if the upper angle in the pair measures 75°, what is the measure of its corresponding angle?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-angles-parallel-lines-advanced-parallel': {
+    speech: {
+      text: `Greetings, geometry expert! You have mastered the basics, and now it is time to put those angle rules together. Advanced parallel line problems require chaining multiple steps. Think of it as a geometric puzzle!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-angles-parallel-lines-advanced-parallel.mp3'
+    },
+    display: {
+      content: `### Multi-Step Parallel Lines Problems
+
+**Question:** Lines L₁ and L₂ are parallel. Angle A and Angle B are corresponding angles. Angle B and Angle C are supplementary (on a straight line). If Angle A = 110°, what is the measure of Angle C?`,
+      showAfterSpeech: true
+    }
+  }
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

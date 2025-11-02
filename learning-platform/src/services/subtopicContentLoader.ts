@@ -23,6 +23,9 @@ import { S4_VECTORS_SUBTOPICS } from '../prompt-library/subjects/mathematics/sec
 import { S1_MATH_FACTORS_MULTIPLES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-factors-multiples';
 import { S1_MATH_REAL_NUMBERS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-real-numbers';
 import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-approximation-estimation';
+import { S1_MATH_BASIC_ALGEBRA_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-basic-algebra';
+import { S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
+import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
 
 export interface SubtopicContent {
   displayName: string;
@@ -44,6 +47,9 @@ class SubtopicContentLoader {
       ...S1_MATH_FACTORS_MULTIPLES_SUBTOPICS,
       ...S1_MATH_REAL_NUMBERS_SUBTOPICS,
       ...S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS,
+      ...S1_MATH_BASIC_ALGEBRA_SUBTOPICS,
+      ...S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS,
+      ...S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

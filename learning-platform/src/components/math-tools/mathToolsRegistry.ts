@@ -36,7 +36,7 @@ export interface MathToolDefinition {
   name: string;                    // Display name
   technicalName: string;           // Key used in code
   component: string;               // React component name
-  category: 'trigonometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'sets' | 'statistics' | 'general' | 'coordinate-geometry' | 'calculus' | 'probability';
+  category: 'trigonometry' | 'geometry' | 'geometry-3d' | 'circle' | 'quadratic' | 'exponential-logarithm' | 'sets' | 'statistics' | 'general' | 'coordinate-geometry' | 'calculus' | 'probability';
 
   // Documentation
   description: string;             // What this tool does
@@ -1650,6 +1650,232 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     ]
   },
 
+  algebraExpression: {
+    name: "Algebra Expression Visualizer",
+    technicalName: "algebraExpression",
+    component: "AlgebraExpressionVisualizer",
+    category: "general",
+    description: "Visual breakdown of algebraic expressions showing terms, coefficients, variables, and powers. Identifies and groups like terms with color-coding. Perfect for teaching expression structure, term identification, and simplification concepts.",
+    whenToUse: "Use when teaching: term identification, coefficient recognition, like terms grouping, expression structure analysis, or preparing students to simplify expressions. Ideal for S1 Basic Algebra topics on notation, simplifying, and collecting like terms.",
+
+    parameters: {
+      expression: "string - the algebraic expression to analyze (e.g., '3x + 2y - 5x + 7')",
+      highlightLikeTerms: "boolean (optional, default: true) - color-code groups of like terms",
+      showCoefficients: "boolean (optional, default: true) - display coefficient information and explanations",
+      showBreakdown: "boolean (optional, default: true) - show individual term breakdown with details",
+      caption: "string (optional) - additional explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Identifying like terms in an expression",
+        caption: "Expression with multiple variables - notice which terms can be combined",
+        parameters: {
+          expression: "5x + 3y - 2x + 7",
+          highlightLikeTerms: true,
+          showCoefficients: true,
+          showBreakdown: true
+        }
+      },
+      {
+        scenario: "Analyzing term structure",
+        caption: "Break down each term to see coefficients and variables",
+        parameters: {
+          expression: "4a + 2b - 3a + 5",
+          highlightLikeTerms: true,
+          showCoefficients: true,
+          showBreakdown: true
+        }
+      }
+    ]
+  },
+
+  distributiveVisualizer: {
+    name: "Distributive Law Visualizer",
+    technicalName: "distributiveVisualizer",
+    component: "DistributiveVisualizer",
+    category: "general",
+    description: "Interactive visualization of the distributive law showing how a(b+c) = ab + ac. Displays multiplication connections with color-coded lines and step-by-step expansion process. Perfect for teaching bracket expansion and factorization concepts.",
+    whenToUse: "Use when teaching: expanding brackets with distributive law, factorization (reverse distribution), single bracket expansion, understanding why we multiply each term, or showing the connection between expansion and factoring. Ideal for S1 Basic Algebra expanding and factorization topics.",
+
+    parameters: {
+      multiplier: "string or number - the term outside brackets (e.g., '3', 'x', '-2')",
+      terms: "array of strings - terms inside the brackets (e.g., ['x', '5'] for (x+5))",
+      operation: "'+' or '-' (optional, default: '+') - operation between terms in brackets",
+      showSteps: "boolean (optional, default: true) - display step-by-step expansion",
+      showAnimation: "boolean (optional, default: true) - enable step animation controls",
+      caption: "string (optional) - additional explanation"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Expanding 3(x + 5)",
+        caption: "Multiply 3 by each term inside the brackets",
+        parameters: {
+          multiplier: "3",
+          terms: ["x", "5"],
+          operation: "+",
+          showSteps: true,
+          showAnimation: true
+        }
+      },
+      {
+        scenario: "Expanding with negative: -2(a - 4)",
+        caption: "Watch the signs when multiplying by a negative",
+        parameters: {
+          multiplier: "-2",
+          terms: ["a", "4"],
+          operation: "-",
+          showSteps: true,
+          showAnimation: true
+        }
+      },
+      {
+        scenario: "Variable multiplier: x(2x + 7)",
+        caption: "Expanding when the outside term is a variable",
+        parameters: {
+          multiplier: "x",
+          terms: ["2x", "7"],
+          operation: "+",
+          showSteps: true,
+          showAnimation: true
+        }
+      }
+    ]
+  },
+
+  balanceScale: {
+    name: "Balance Scale Visualizer",
+    technicalName: "balanceScale",
+    component: "BalanceScaleVisualizer",
+    category: "general",
+    description: "Visual representation of equations as balanced scales. Shows both sides of an equation on scale pans, demonstrating that operations must be applied to both sides to maintain balance. Includes inverse operations guide. Perfect for teaching equation solving concepts.",
+    whenToUse: "Use when teaching: solving linear equations, understanding equation balance, inverse operations, why we do the same to both sides, isolating variables, or multi-step equation solving. Ideal for S1 Basic Algebra linear equations and changing subject topics.",
+
+    parameters: {
+      leftSide: "string - left side of equation (e.g., '3x + 7', 'x')",
+      rightSide: "string - right side of equation (e.g., '19', '2x + 5')",
+      operation: "string (optional) - operation to apply: 'add', 'subtract', 'multiply', 'divide'",
+      operationValue: "string (optional) - value for the operation (e.g., '7', '3')",
+      step: "number (optional, default: 0) - which step of solving we're at",
+      showInverse: "boolean (optional, default: true) - display inverse operations guide",
+      caption: "string (optional) - additional explanation"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Showing initial equation: 3x + 7 = 19",
+        caption: "Both sides are equal - the scale is balanced",
+        parameters: {
+          leftSide: "3x + 7",
+          rightSide: "19",
+          step: 0,
+          showInverse: true
+        }
+      },
+      {
+        scenario: "Subtracting from both sides: 3x + 7 - 7 = 19 - 7",
+        caption: "Subtract 7 from both sides to maintain balance",
+        parameters: {
+          leftSide: "3x + 7",
+          rightSide: "19",
+          operation: "subtract",
+          operationValue: "7",
+          step: 1,
+          showInverse: true
+        }
+      },
+      {
+        scenario: "After simplification: 3x = 12",
+        caption: "The equation is still balanced after simplifying",
+        parameters: {
+          leftSide: "3x",
+          rightSide: "12",
+          step: 2,
+          showInverse: true
+        }
+      },
+      {
+        scenario: "Variables on both sides: 5x - 3 = 2x + 9",
+        caption: "More complex equation with variables on both sides",
+        parameters: {
+          leftSide: "5x - 3",
+          rightSide: "2x + 9",
+          step: 0,
+          showInverse: true
+        }
+      }
+    ]
+  },
+
+  fractionBar: {
+    name: "Fraction Bar Visualizer",
+    technicalName: "fractionBar",
+    component: "FractionBarVisualizer",
+    category: "general",
+    description: "Visual representation of fractions using horizontal bars divided into segments. Shows fractions as shaded portions of bars, compares multiple fractions, demonstrates addition/subtraction with common denominators, and visualizes equivalent fractions. Perfect for teaching fraction concepts visually.",
+    whenToUse: "Use when teaching: understanding fractions, comparing fractions, adding/subtracting fractions, finding LCD (Least Common Denominator), equivalent fractions, or visualizing fractional parts. Ideal for S1 Simple Linear Equations fractional equations topic and fraction-related concepts.",
+
+    parameters: {
+      fraction1: "string - first fraction in 'numerator/denominator' format (e.g., '3/4', '5/8')",
+      fraction2: "string (optional) - second fraction for comparison or operations (e.g., '1/2', '3/8')",
+      operation: "string (optional) - operation type: 'add', 'subtract', 'compare', or 'equivalent'",
+      showLCM: "boolean (optional, default: false) - show LCD (Least Common Denominator) calculation",
+      showSteps: "boolean (optional, default: false) - show step-by-step breakdown of operations",
+      caption: "string (optional) - additional explanation or context"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Showing a single fraction: 3/4",
+        caption: "Three-quarters of the bar is shaded",
+        parameters: {
+          fraction1: "3/4"
+        }
+      },
+      {
+        scenario: "Comparing two fractions: 1/2 and 3/4",
+        caption: "Compare which fraction is larger",
+        parameters: {
+          fraction1: "1/2",
+          fraction2: "3/4",
+          operation: "compare",
+          showSteps: true
+        }
+      },
+      {
+        scenario: "Adding fractions: 1/4 + 1/2",
+        caption: "Adding fractions with different denominators",
+        parameters: {
+          fraction1: "1/4",
+          fraction2: "1/2",
+          operation: "add",
+          showLCM: true,
+          showSteps: true
+        }
+      },
+      {
+        scenario: "Subtracting fractions: 5/6 - 1/3",
+        caption: "Subtract fractions by finding common denominator",
+        parameters: {
+          fraction1: "5/6",
+          fraction2: "1/3",
+          operation: "subtract",
+          showLCM: true
+        }
+      },
+      {
+        scenario: "Equivalent fractions: 2/4 = 1/2",
+        caption: "These fractions represent the same value",
+        parameters: {
+          fraction1: "2/4",
+          fraction2: "1/2",
+          operation: "equivalent"
+        }
+      }
+    ]
+  },
+
   // ============================================
   // STATISTICS TOOLS
   // ============================================
@@ -2860,6 +3086,214 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
           showAngle: true,
           showDotProduct: true,
           showMagnitudes: false
+        }
+      }
+    ]
+  },
+
+  // ============================================
+  // GEOMETRY TOOLS (Angles)
+  // ============================================
+
+  anglesAtPoint: {
+    name: "Angles at a Point",
+    technicalName: "anglesAtPoint",
+    component: "AnglesAtPointVisualizer",
+    category: "geometry",
+
+    description: "Visualizes 2-6 angles meeting at a central point in a pie-chart style. Perfect for teaching that angles at a point sum to 360°.",
+
+    whenToUse: "Use when angles meet at a single point. Great for problems finding unknown angles when others are given. Automatically calculates missing angles if some are null.",
+
+    parameters: {
+      angles: "(number | null)[] - Array of 2-6 angle values. Use null for unknown angles. Required. Example: [90, 120, null, null]",
+      labels: "string[] (optional) - Labels for each angle. Default: ['a', 'b', 'c', 'd', 'e', 'f']. Example: ['x', '2x', '90°', '3x']",
+      highlight: "number (optional) - Index of angle to highlight (0-indexed). Example: 1 highlights the second angle",
+      showSum: "boolean (optional, default: true) - Show equation 'a + b + c + ... = 360°' below diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Find two unknown angles at a point",
+        caption: "Angles at point O sum to 360°. Find angles a and b.",
+        parameters: {
+          angles: [90, 120, null, null],
+          labels: ['90°', '120°', 'a', 'b'],
+          highlight: 2,
+          showSum: true
+        }
+      },
+      {
+        scenario: "Angles with algebraic expressions",
+        caption: "Find the value of x when angles are x, 2x, 3x, and 4x.",
+        parameters: {
+          angles: [36, 72, 108, 144],  // x=36, so angles are 36, 72, 108, 144
+          labels: ['x', '2x', '3x', '4x'],
+          showSum: true
+        }
+      },
+      {
+        scenario: "Three equal angles",
+        caption: "Three angles at a point. Two are equal (x each), and one is 150°. Find x.",
+        parameters: {
+          angles: [105, 105, 150],
+          labels: ['x', 'x', '150°'],
+          highlight: 2,
+          showSum: true
+        }
+      }
+    ]
+  },
+
+  anglesOnLine: {
+    name: "Angles on a Straight Line",
+    technicalName: "anglesOnLine",
+    component: "AnglesOnLineVisualizer",
+    category: "geometry",
+
+    description: "Visualizes 2-4 angles on a straight line. Perfect for teaching that adjacent angles on a straight line sum to 180° (supplementary angles).",
+
+    whenToUse: "Use when angles are adjacent on a straight line. Great for supplementary angle problems. Automatically calculates missing angles if some are null.",
+
+    parameters: {
+      angles: "(number | null)[] - Array of 2-4 angle values. Use null for unknown angles. Required. Example: [110, null]",
+      labels: "string[] (optional) - Labels for each angle. Default: ['a', 'b', 'c', 'd']. Example: ['110°', 'x']",
+      highlight: "number (optional) - Index of angle to highlight (0-indexed)",
+      showSum: "boolean (optional, default: true) - Show equation 'a + b + c = 180°' below diagram"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Find supplementary angle",
+        caption: "Angles on line AB sum to 180°. Find angle x.",
+        parameters: {
+          angles: [110, null],
+          labels: ['110°', 'x'],
+          highlight: 1,
+          showSum: true
+        }
+      },
+      {
+        scenario: "Three angles on a line",
+        caption: "Three angles on a straight line: 60°, 50°, and x. Find x.",
+        parameters: {
+          angles: [60, 50, null],
+          labels: ['60°', '50°', 'x'],
+          highlight: 2,
+          showSum: true
+        }
+      },
+      {
+        scenario: "Algebraic expressions",
+        caption: "Two angles on a line are 2x and 3x. Find x.",
+        parameters: {
+          angles: [72, 108],  // 2x=72, 3x=108, so x=36
+          labels: ['2x', '3x'],
+          showSum: true
+        }
+      }
+    ]
+  },
+
+  verticallyOppositeAngles: {
+    name: "Vertically Opposite Angles",
+    technicalName: "verticallyOppositeAngles",
+    component: "VerticallyOppositeAnglesVisualizer",
+    category: "geometry",
+
+    description: "Visualizes two intersecting lines forming 4 angles. Perfect for teaching that vertically opposite angles are equal.",
+
+    whenToUse: "Use when two lines intersect. Shows that opposite angles are equal. Automatically calculates all angles if any one is provided.",
+
+    parameters: {
+      angles: "[number | null, number | null, number | null, number | null] - Exactly 4 angles clockwise from top. Positions: 0=top, 1=right, 2=bottom, 3=left. Opposite pairs: 0↔2, 1↔3. Required. Example: [65, null, 65, null]",
+      labels: "[string, string, string, string] (optional) - Labels for 4 angles clockwise from top. Default: ['a', 'b', 'c', 'd']. Example: ['65°', 'a', '65°', 'b']",
+      highlightPair: "'first' | 'second' | 'none' (optional, default: 'none') - Highlight opposite pair. 'first' highlights angles 0&2, 'second' highlights angles 1&3",
+      lineLabels: "{line1?: string, line2?: string} (optional) - Labels for the two lines. Example: {line1: 'AB', line2: 'CD'}"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Find vertically opposite angles",
+        caption: "Lines AB and CD intersect. Angle a = 65°. Find angle c.",
+        parameters: {
+          angles: [65, null, 65, null],
+          labels: ['65°', 'b', 'c', 'd'],
+          highlightPair: 'first',
+          lineLabels: { line1: 'AB', line2: 'CD' }
+        }
+      },
+      {
+        scenario: "Find all angles given one",
+        caption: "Two lines intersect at point O. One angle is 130°. Find angles a, b, and c.",
+        parameters: {
+          angles: [null, 130, null, null],
+          labels: ['a', '130°', 'b', 'c'],
+          highlightPair: 'second'
+        }
+      },
+      {
+        scenario: "Verify vertical angles property",
+        caption: "Verify that angles p and r are equal (vertically opposite).",
+        parameters: {
+          angles: [72, 108, 72, 108],
+          labels: ['p', 'q', 'r', 's'],
+          highlightPair: 'first'
+        }
+      }
+    ]
+  },
+
+  parallelLinesTransversal: {
+    name: "Parallel Lines and Transversal",
+    technicalName: "parallelLinesTransversal",
+    component: "ParallelLinesTransversalVisualizer",
+    category: "geometry",
+
+    description: "Shows two parallel lines cut by a transversal, creating 8 angles. Perfect for teaching corresponding (F-pattern), alternate (Z-pattern), and co-interior angles (C-pattern). CRITICAL: Only ONE angle value needed - tool automatically calculates all 8 angles.\n\nANGLE NAMING: Position 0=a, 1=b, 2=c, 3=d, 4=e, 5=f, 6=g, 7=h\n\nPOSITION LAYOUT (MEMORIZE THIS):\nTop intersection (AB):    Bottom intersection (CD):\n     2(c) 0(a)                6(g) 4(e)\n  ----•----                ----•----\n     3(d) 1(b)                7(h) 5(f)\n\nIMPORTANT: Line labels 'AB' and 'CD' are HARDCODED. Do NOT try to label lines - they are already labeled!",
+
+    whenToUse: "Use for ANY parallel lines problem. Just provide one known angle and its position (0-7) - tool calculates all 8 angles automatically. Perfect for corresponding angles, alternate angles, and co-interior angles problems. Position 0=a (top-right-above), 1=b (top-right-below), 2=c (top-left-above), 3=d (top-left-below), 4=e (bottom-right-above), 5=f (bottom-right-below), 6=g (bottom-left-above), 7=h (bottom-left-below).",
+
+    parameters: {
+      knownAngle: "number - the value of one known angle (e.g., 65 for 65°). Required.",
+      knownPosition: "number (0-7) - which angle position is known. CRITICAL: 0=a, 1=b, 2=c, 3=d, 4=e, 5=f, 6=g, 7=h. Positions [0,1,2,3]=top intersection, [4,5,6,7]=bottom intersection. Required. Position 0=a (top-RIGHT-above), 1=b (top-RIGHT-below), 2=c (top-LEFT-above), 3=d (top-LEFT-below), 4=e (bottom-RIGHT-above), 5=f (bottom-RIGHT-below), 6=g (bottom-LEFT-above), 7=h (bottom-LEFT-below).",
+      labels: "string[] (optional) - custom labels for all 8 angles. Default: ['a','b','c','d','e','f','g','h']. If you want to show the angle value, provide it in the label. Example: ['a', 'b', 'c=65°', 'd', 'e', 'f', 'g', 'h'] will show 'c=65°' at position 2. labels[i] replaces the default label at position i. REMEMBER: Position 0=a, 1=b, 2=c, 3=d, 4=e, 5=f, 6=g, 7=h. DO NOT provide line labels (AB/CD are hardcoded).",
+      highlightPattern: "'corresponding' | 'alternate' | 'cointerior' | 'none' (optional, default: 'none') - which angle relationship pattern to highlight and explain",
+      highlightAngles: "number[] (optional) - specific angle positions to highlight (e.g., [2, 6] to highlight c and g). Overrides highlightPattern if provided. ANGLE RELATIONSHIPS: Corresponding (equal): a=e (0↔4), b=f (1↔5), c=g (2↔6), d=h (3↔7) | Alternate interior (equal): b=g (1↔6), d=e (3↔4) | Alternate exterior (equal): a=h (0↔7), c=f (2↔5) | Co-interior (sum=180°): b+e (1+4), d+g (3+6) | Vertically opposite (equal): a=d (0=3), b=c (1=2), e=h (4=7), f=g (5=6)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Finding corresponding angles (F-pattern)",
+        caption: "Given angle c = 65°, find angle g using corresponding angles. Corresponding angles are equal when lines are parallel.",
+        parameters: {
+          knownAngle: 65,
+          knownPosition: 2,  // Position 2 = c
+          labels: ['a', 'b', 'c=65°', 'd', 'e', 'f', 'g', 'h'],  // Show value at position 2 (c)
+          highlightPattern: 'corresponding',
+          highlightAngles: [2, 6]  // Highlight c and g (positions 2 and 6)
+        }
+      },
+      {
+        scenario: "Finding alternate interior angles (Z-pattern)",
+        caption: "Angle b = 55°. Find angle g using alternate interior angles (Z-pattern). Alternate interior angles are equal.",
+        parameters: {
+          knownAngle: 55,
+          knownPosition: 1,  // Position 1 = b
+          labels: ['a', 'b=55°', 'c', 'd', 'e', 'f', 'g', 'h'],  // Show value at position 1 (b)
+          highlightPattern: 'alternate',
+          highlightAngles: [1, 6]  // Highlight b and g (positions 1 and 6 - alternate interior)
+        }
+      },
+      {
+        scenario: "Co-interior angles sum to 180°",
+        caption: "Given angle d = 70°, find angle g (co-interior). Co-interior angles sum to 180° when lines are parallel.",
+        parameters: {
+          knownAngle: 70,
+          knownPosition: 3,  // Position 3 = d
+          labels: ['a', 'b', 'c', 'd=70°', 'e', 'f', 'g', 'h'],  // Show value at position 3 (d)
+          highlightPattern: 'cointerior',
+          highlightAngles: [3, 6]  // Highlight d and g (positions 3 and 6 - co-interior sum to 180°)
         }
       }
     ]

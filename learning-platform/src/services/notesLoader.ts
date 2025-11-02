@@ -27,6 +27,27 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's1/math/approximation-estimation/RoundingDecimalPlaces': () => import('../notes/s1/math/approximation-estimation/RoundingDecimalPlaces'),
   's1/math/approximation-estimation/SignificantFigures': () => import('../notes/s1/math/approximation-estimation/SignificantFigures'),
   's1/math/approximation-estimation/EstimationTechniques': () => import('../notes/s1/math/approximation-estimation/EstimationTechniques'),
+
+  // S1 Basic Algebra notes
+  's1/math/basic-algebra/AlgebraicNotation': () => import('../notes/s1/math/basic-algebra/AlgebraicNotation'),
+  's1/math/basic-algebra/SimplifyingExpressions': () => import('../notes/s1/math/basic-algebra/SimplifyingExpressions'),
+  's1/math/basic-algebra/ExpandingBrackets': () => import('../notes/s1/math/basic-algebra/ExpandingBrackets'),
+  's1/math/basic-algebra/Factorization': () => import('../notes/s1/math/basic-algebra/Factorization'),
+  's1/math/basic-algebra/LinearEquations': () => import('../notes/s1/math/basic-algebra/LinearEquations'),
+  's1/math/basic-algebra/ChangingTheSubject': () => import('../notes/s1/math/basic-algebra/ChangingTheSubject'),
+  's1/math/basic-algebra/WordProblems': () => import('../notes/s1/math/basic-algebra/WordProblems'),
+  // S1 Simple Linear Equations notes
+  's1/math/simple-linear-equations/IntroductionToLinearEquations': () => import('../notes/s1/math/simple-linear-equations/IntroductionToLinearEquations'),
+  's1/math/simple-linear-equations/VariablesOnBothSides': () => import('../notes/s1/math/simple-linear-equations/VariablesOnBothSides'),
+  's1/math/simple-linear-equations/FractionalEquations': () => import('../notes/s1/math/simple-linear-equations/FractionalEquations'),
+  's1/math/simple-linear-equations/WordProblemsApplications': () => import('../notes/s1/math/simple-linear-equations/WordProblemsApplications'),
+  // S1 Angles and Parallel Lines notes
+  's1/math/angles-parallel-lines/IntroductionToAngles': () => import('../notes/s1/math/angles-parallel-lines/IntroductionToAngles'),
+  's1/math/angles-parallel-lines/AnglesAtPoint': () => import('../notes/s1/math/angles-parallel-lines/AnglesAtPoint'),
+  's1/math/angles-parallel-lines/AnglesOnStraightLine': () => import('../notes/s1/math/angles-parallel-lines/AnglesOnStraightLine'),
+  's1/math/angles-parallel-lines/VerticallyOppositeAngles': () => import('../notes/s1/math/angles-parallel-lines/VerticallyOppositeAngles'),
+  's1/math/angles-parallel-lines/ParallelLinesBasic': () => import('../notes/s1/math/angles-parallel-lines/ParallelLinesBasic'),
+  's1/math/angles-parallel-lines/ParallelLinesAdvanced': () => import('../notes/s1/math/angles-parallel-lines/ParallelLinesAdvanced'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

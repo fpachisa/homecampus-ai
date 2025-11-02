@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import AvatarTest from '../components/AvatarTest';
 import QuestionPreviewPage from '../components/QuestionPreviewPage';
 import VisualizerTestPage from '../pages/VisualizerTestPage';
+import NotesViewerPage from '../pages/NotesViewerPage';
 // Import other dev components as needed
 
 /**
@@ -42,12 +43,18 @@ const QuestionPreview = () => {
   return <QuestionPreviewPage />;
 };
 
+// Notes Viewer - view and test all notes components
+const NotesViewer = () => {
+  return <NotesViewerPage />;
+};
+
 // Dev home - lists all dev tools
 const DevHome = () => {
   const devTools = [
     { path: '/dev/tts', name: 'TTS Testing', description: 'Test text-to-speech functionality' },
     { path: '/dev/avatar', name: 'Avatar Testing', description: 'Test avatar animations and interactions' },
     { path: '/dev/visualizers', name: 'Math Visualizer Testing Lab', description: 'Test all math visualizers with AI-generated questions' },
+    { path: '/dev/notes', name: 'Notes Viewer', description: 'View and test all notes components' },
     { path: '/dev/preview', name: 'Question Preview', description: 'Preview and test question generation' },
   ];
 
@@ -90,6 +97,7 @@ export default function DevRouter() {
       <Route path="tts" element={<TTSTestPage />} />
       <Route path="avatar" element={<AvatarTestPage />} />
       <Route path="visualizers" element={<VisualizerGallery />} />
+      <Route path="notes" element={<NotesViewer />} />
       <Route path="preview" element={<QuestionPreview />} />
       <Route path="*" element={<Navigate to="/dev" replace />} />
     </Routes>

@@ -67,6 +67,16 @@ import RiemannSumVisualizer from '../math-tools/RiemannSumVisualizer';
 
 //Secondary 1
 import AlgebraDiscSimulator from '../math-tools/AlgebraDiscSimulator';
+import AlgebraExpressionVisualizer from '../math-tools/AlgebraExpressionVisualizer';
+import DistributiveVisualizer from '../math-tools/DistributiveVisualizer';
+import BalanceScaleVisualizer from '../math-tools/BalanceScaleVisualizer';
+import FractionBarVisualizer from '../math-tools/FractionBarVisualizer';
+
+// Geometry - Angles
+import ParallelLinesTransversalVisualizer from '../math-tools/ParallelLinesTransversalVisualizer';
+import AnglesAtPointVisualizer from '../math-tools/AnglesAtPointVisualizer';
+import AnglesOnLineVisualizer from '../math-tools/AnglesOnLineVisualizer';
+import VerticallyOppositeAnglesVisualizer from '../math-tools/VerticallyOppositeAnglesVisualizer';
 
 
 interface MathToolRendererProps {
@@ -160,6 +170,18 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
 
   //Secondary 1 Algebra Discs
   algebraDiscSimulator: AlgebraDiscSimulator,
+
+  // Secondary 1 Basic Algebra Tools
+  algebraExpression: AlgebraExpressionVisualizer,
+  distributiveVisualizer: DistributiveVisualizer,
+  balanceScale: BalanceScaleVisualizer,
+  fractionBar: FractionBarVisualizer,
+
+  // Geometry - Angles Tools
+  parallelLinesTransversal: ParallelLinesTransversalVisualizer,
+  anglesAtPoint: AnglesAtPointVisualizer,
+  anglesOnLine: AnglesOnLineVisualizer,
+  verticallyOppositeAngles: VerticallyOppositeAnglesVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

@@ -1,12 +1,13 @@
 /**
- * Migration Script: S1 Approximation & Estimation Configs to Firestore
+ * Migration Script: S1 Math Subtopic Configs to Firestore
  *
- * This script migrates the S1 Approximation & Estimation subtopic configurations to Firestore.
+ * This script migrates S1 Math subtopic configurations to Firestore.
  *
- * Subtopics:
- *   1. Rounding to Decimal Places
- *   2. Significant Figures
- *   3. Estimation Techniques
+ * Topics:
+ *   1. Approximation & Estimation (3 subtopics)
+ *   2. Simple Linear Equations (4 subtopics)
+ *   3. Basic Algebra (7 subtopics)
+ *   4. Angles and Parallel Lines (6 subtopics)
  *
  * Usage:
  *   npx ts-node scripts/migrateAllConfigs.ts
@@ -151,14 +152,369 @@ const S1_APPROXIMATION_ESTIMATION_CONFIGS = [
   }
 ];
 
-// Only migrate S1 Approximation & Estimation configs
-const ALL_CONFIGS = [...S1_APPROXIMATION_ESTIMATION_CONFIGS];
+/**
+ * S1 Simple Linear Equations configs (4 configs)
+ */
+const S1_SIMPLE_LINEAR_EQUATIONS_CONFIGS = [
+  // ============================================
+  // S1 SIMPLE LINEAR EQUATIONS (4 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Introduction to Linear Equations
+  {
+    id: 's1-math-simple-linear-equations-introduction',
+    displayName: 'Introduction to Linear Equations',
+    grade: 's1',
+    subject: 'math',
+    topic: 'simple-linear-equations',
+    subtopic: 'introduction',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 50,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/simple-linear-equations/Introduction',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Equations with Variables on Both Sides
+  {
+    id: 's1-math-simple-linear-equations-both-sides',
+    displayName: 'Equations with Variables on Both Sides',
+    grade: 's1',
+    subject: 'math',
+    topic: 'simple-linear-equations',
+    subtopic: 'both-sides',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-simple-linear-equations-introduction']
+    },
+    notesComponent: 's1/math/simple-linear-equations/BothSides',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Fractional Equations
+  {
+    id: 's1-math-simple-linear-equations-fractional',
+    displayName: 'Fractional Equations',
+    grade: 's1',
+    subject: 'math',
+    topic: 'simple-linear-equations',
+    subtopic: 'fractional',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-simple-linear-equations-both-sides']
+    },
+    notesComponent: 's1/math/simple-linear-equations/Fractional',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Word Problems & Applications
+  {
+    id: 's1-math-simple-linear-equations-word-problems',
+    displayName: 'Word Problems & Applications',
+    grade: 's1',
+    subject: 'math',
+    topic: 'simple-linear-equations',
+    subtopic: 'word-problems',
+    metadata: {
+      difficulty: 'advanced' as const,
+      estimatedMinutes: 65,
+      prerequisites: ['s1-math-simple-linear-equations-fractional']
+    },
+    notesComponent: 's1/math/simple-linear-equations/WordProblems',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
 
 /**
- * Migrate S1 Approximation & Estimation configs to Firestore
+ * S1 Basic Algebra configs (7 configs)
+ */
+const S1_BASIC_ALGEBRA_CONFIGS = [
+  // ============================================
+  // S1 BASIC ALGEBRA (7 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Algebraic Notation & Expressions
+  {
+    id: 's1-math-basic-algebra-notation',
+    displayName: 'Algebraic Notation & Expressions',
+    grade: 's1',
+    subject: 'math',
+    topic: 'basic-algebra',
+    subtopic: 'notation',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 45,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/basic-algebra/AlgebraicNotation',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Simplifying Expressions
+  {
+    id: 's1-math-basic-algebra-simplifying',
+    displayName: 'Simplifying Algebraic Expressions',
+    grade: 's1',
+    subject: 'math',
+    topic: 'basic-algebra',
+    subtopic: 'simplifying',
+    metadata: {
+      difficulty: 'foundational-to-intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-basic-algebra-notation']
+    },
+    notesComponent: 's1/math/basic-algebra/SimplifyingExpressions',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Expanding Brackets
+  {
+    id: 's1-math-basic-algebra-expanding',
+    displayName: 'Expanding Brackets',
+    grade: 's1',
+    subject: 'math',
+    topic: 'basic-algebra',
+    subtopic: 'expanding',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-basic-algebra-simplifying']
+    },
+    notesComponent: 's1/math/basic-algebra/ExpandingBrackets',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Factorization
+  {
+    id: 's1-math-basic-algebra-factorization',
+    displayName: 'Factorization',
+    grade: 's1',
+    subject: 'math',
+    topic: 'basic-algebra',
+    subtopic: 'factorization',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-basic-algebra-expanding']
+    },
+    notesComponent: 's1/math/basic-algebra/Factorization',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 5: Linear Equations
+  {
+    id: 's1-math-basic-algebra-equations',
+    displayName: 'Solving Linear Equations',
+    grade: 's1',
+    subject: 'math',
+    topic: 'basic-algebra',
+    subtopic: 'equations',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-basic-algebra-simplifying']
+    },
+    notesComponent: 's1/math/basic-algebra/LinearEquations',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 6: Changing the Subject
+  {
+    id: 's1-math-basic-algebra-changing-subject',
+    displayName: 'Changing the Subject of a Formula',
+    grade: 's1',
+    subject: 'math',
+    topic: 'basic-algebra',
+    subtopic: 'changing-subject',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-basic-algebra-equations']
+    },
+    notesComponent: 's1/math/basic-algebra/ChangingTheSubject',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 7: Word Problems & Applications
+  {
+    id: 's1-math-basic-algebra-word-problems',
+    displayName: 'Word Problems & Applications',
+    grade: 's1',
+    subject: 'math',
+    topic: 'basic-algebra',
+    subtopic: 'word-problems',
+    metadata: {
+      difficulty: 'advanced' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-basic-algebra-equations']
+    },
+    notesComponent: 's1/math/basic-algebra/WordProblems',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
+/**
+ * S1 Angles and Parallel Lines configs (6 configs)
+ */
+const S1_ANGLES_PARALLEL_LINES_CONFIGS = [
+  // ============================================
+  // S1 ANGLES AND PARALLEL LINES (6 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Introduction to Angles
+  {
+    id: 's1-math-angles-parallel-lines-introduction',
+    displayName: 'Introduction to Angles',
+    grade: 's1',
+    subject: 'math',
+    topic: 'angles-parallel-lines',
+    subtopic: 'introduction',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 40,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/angles-parallel-lines/IntroductionToAngles',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Angles at a Point
+  {
+    id: 's1-math-angles-parallel-lines-angles-at-point',
+    displayName: 'Angles at a Point',
+    grade: 's1',
+    subject: 'math',
+    topic: 'angles-parallel-lines',
+    subtopic: 'angles-at-point',
+    metadata: {
+      difficulty: 'foundational-to-intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-angles-parallel-lines-introduction']
+    },
+    notesComponent: 's1/math/angles-parallel-lines/AnglesAtPoint',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Angles on a Straight Line
+  {
+    id: 's1-math-angles-parallel-lines-angles-on-line',
+    displayName: 'Angles on a Straight Line',
+    grade: 's1',
+    subject: 'math',
+    topic: 'angles-parallel-lines',
+    subtopic: 'angles-on-line',
+    metadata: {
+      difficulty: 'foundational-to-intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-angles-parallel-lines-angles-at-point']
+    },
+    notesComponent: 's1/math/angles-parallel-lines/AnglesOnStraightLine',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Vertically Opposite Angles
+  {
+    id: 's1-math-angles-parallel-lines-vertically-opposite',
+    displayName: 'Vertically Opposite Angles',
+    grade: 's1',
+    subject: 'math',
+    topic: 'angles-parallel-lines',
+    subtopic: 'vertically-opposite',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-angles-parallel-lines-angles-on-line']
+    },
+    notesComponent: 's1/math/angles-parallel-lines/VerticallyOppositeAngles',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 5: Parallel Lines - Basic
+  {
+    id: 's1-math-angles-parallel-lines-basic-parallel',
+    displayName: 'Parallel Lines - Basic',
+    grade: 's1',
+    subject: 'math',
+    topic: 'angles-parallel-lines',
+    subtopic: 'basic-parallel',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-angles-parallel-lines-vertically-opposite']
+    },
+    notesComponent: 's1/math/angles-parallel-lines/ParallelLinesBasic',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 6: Parallel Lines - Advanced
+  {
+    id: 's1-math-angles-parallel-lines-advanced-parallel',
+    displayName: 'Parallel Lines - Advanced',
+    grade: 's1',
+    subject: 'math',
+    topic: 'angles-parallel-lines',
+    subtopic: 'advanced-parallel',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 65,
+      prerequisites: ['s1-math-angles-parallel-lines-basic-parallel']
+    },
+    notesComponent: 's1/math/angles-parallel-lines/ParallelLinesAdvanced',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
+// Migrate all S1 topics
+const ALL_CONFIGS = [
+  ...S1_APPROXIMATION_ESTIMATION_CONFIGS,
+  ...S1_SIMPLE_LINEAR_EQUATIONS_CONFIGS,
+  ...S1_BASIC_ALGEBRA_CONFIGS,
+  ...S1_ANGLES_PARALLEL_LINES_CONFIGS
+];
+
+/**
+ * Migrate all S1 Math configs to Firestore
  */
 async function migrateAll() {
-  console.log('🚀 Starting S1 Approximation & Estimation migration to Firestore...\n');
+  console.log('🚀 Starting S1 Math subtopic migration to Firestore...\n');
   console.log(`Total configs to migrate: ${ALL_CONFIGS.length}\n`);
 
   let successCount = 0;
@@ -233,6 +589,51 @@ async function verify() {
       console.log(`  ✗ MISSING: ${id}`);
     }
   }
+
+  // Check for S1 Simple Linear Equations configs
+  console.log('\n📋 S1 Simple Linear Equations configs:');
+  const simpleLinearEqIds = ALL_CONFIGS
+    .filter(c => c.id.startsWith('s1-math-simple-linear-equations'))
+    .map(c => c.id);
+
+  for (const id of simpleLinearEqIds) {
+    const doc = await db.collection('subtopics').doc(id).get();
+    if (doc.exists) {
+      console.log(`  ✓ ${id}`);
+    } else {
+      console.log(`  ✗ MISSING: ${id}`);
+    }
+  }
+
+  // Check for S1 Basic Algebra configs
+  console.log('\n📋 S1 Basic Algebra configs:');
+  const basicAlgebraIds = ALL_CONFIGS
+    .filter(c => c.id.startsWith('s1-math-basic-algebra'))
+    .map(c => c.id);
+
+  for (const id of basicAlgebraIds) {
+    const doc = await db.collection('subtopics').doc(id).get();
+    if (doc.exists) {
+      console.log(`  ✓ ${id}`);
+    } else {
+      console.log(`  ✗ MISSING: ${id}`);
+    }
+  }
+
+  // Check for S1 Angles and Parallel Lines configs
+  console.log('\n📋 S1 Angles and Parallel Lines configs:');
+  const anglesParallelLinesIds = ALL_CONFIGS
+    .filter(c => c.id.startsWith('s1-math-angles-parallel-lines'))
+    .map(c => c.id);
+
+  for (const id of anglesParallelLinesIds) {
+    const doc = await db.collection('subtopics').doc(id).get();
+    if (doc.exists) {
+      console.log(`  ✓ ${id}`);
+    } else {
+      console.log(`  ✗ MISSING: ${id}`);
+    }
+  }
 }
 
 // Run migration
@@ -242,7 +643,11 @@ migrateAll()
     console.log('\n✨ All done!');
     console.log('\n📝 Next steps:');
     console.log('1. Verify configs in Firebase Console');
-    console.log('2. Test the S1 Approximation & Estimation module in the app');
+    console.log('2. Test the S1 Math modules in the app:');
+    console.log('   - Approximation & Estimation (3 subtopics)');
+    console.log('   - Simple Linear Equations (4 subtopics)');
+    console.log('   - Basic Algebra (7 subtopics)');
+    console.log('   - Angles and Parallel Lines (6 subtopics)');
     console.log('3. Commit and push to deploy to production');
     process.exit(0);
   })
