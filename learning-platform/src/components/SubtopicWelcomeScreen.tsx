@@ -44,6 +44,8 @@ import { S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS } from '../prompt-library/subjects
 import type { SimpleLinearEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
 import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
 import type { AnglesParallelLinesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
+import { S1_MATH_RATIO_RATE_SPEED_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
+import type { RatioRateSpeedTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -76,6 +78,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS[topicId as SimpleLinearEquationsTopicId];
   } else if (category === 's1-math-angles-parallel-lines') {
     topicConfig = S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS[topicId as AnglesParallelLinesTopicId];
+  } else if (category === 's1-math-ratio-rate-speed') {
+    topicConfig = S1_MATH_RATIO_RATE_SPEED_SUBTOPICS[topicId as RatioRateSpeedTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {

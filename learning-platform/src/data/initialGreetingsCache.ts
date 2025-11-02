@@ -3762,6 +3762,72 @@ Given two parallel lines cut by a transversal, if the upper angle in the pair me
 **Question:** Lines L₁ and L₂ are parallel. Angle A and Angle B are corresponding angles. Angle B and Angle C are supplementary (on a straight line). If Angle A = 110°, what is the measure of Angle C?`,
       showAfterSpeech: true
     }
+  },
+
+  's1-math-ratio-rate-speed-understanding-ratios': {
+    speech: {
+      text: `Welcome! Ratios are the fundamental language we use to compare quantities. Think of them as mathematical recipes. Mastering the notation is the first step to success. Let's start with a simple comparison.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-ratio-rate-speed-understanding-ratios.mp3'
+    },
+    display: {
+      content: `### Ratio Notation and Basics
+
+In a basket, there are 12 red apples and 8 green apples.
+
+**Write the ratio of green apples to red apples in three different ways (using a colon, the word 'to', and as a fraction).**`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-ratio-rate-speed-proportions': {
+    speech: {
+      text: `Hey there! Get ready to explore proportions. Proportions are everywhere, from baking cookies to building skyscrapers! They show us how two ratios are equal, allowing us to scale things up or down perfectly. Ready to see proportionality in action?`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-ratio-rate-speed-proportions.mp3'
+    },
+    display: {
+      content: `### Understanding Proportional Relationships
+
+Ratio A compares 3 shirts to 9 dollars. Ratio B compares 5 shirts to 15 dollars.
+
+**Do these two ratios form a proportion? Explain your reasoning.**`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-ratio-rate-speed-rate-speed': {
+    speech: {
+      text: `Greetings! We are moving into the exciting world of rates and speeds. A rate is simply a special type of ratio that compares two quantities with different units, like miles per hour or cost per item. Understanding how to express rate is key for everything that moves or changes.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-ratio-rate-speed-rate-speed.mp3'
+    },
+    display: {
+      content: `### Understanding Rate
+
+A factory produces 420 widgets in 6 hours.
+
+**What is the unit rate of production in widgets per hour?**`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-ratio-rate-speed-unit-conversion': {
+    speech: {
+      text: `Hi! If you have ever traveled internationally or tried to compare different systems of measurement, you know how crucial unit conversion is. We are starting by tackling speed conversions, which require careful use of conversion factors. Let's practice setting up our conversion ratios correctly.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-ratio-rate-speed-unit-conversion.mp3'
+    },
+    display: {
+      content: `### Converting Speed Units
+
+A cyclist is traveling at a speed of 18 kilometers per hour (km/h).
+
+**Convert this speed to meters per hour (m/h).**
+
+*(Hint: 1 km = 1,000 m)*`,
+      showAfterSpeech: true
+    }
   }
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,

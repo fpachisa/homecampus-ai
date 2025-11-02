@@ -50,6 +50,8 @@ import { S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS } from '../../prompt-library/subje
 import type { SimpleLinearEquationsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
 import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
 import type { AnglesParallelLinesTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
+import { S1_MATH_RATIO_RATE_SPEED_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
+import type { RatioRateSpeedTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -106,6 +108,12 @@ function getTopicIcon(topicId: string): string {
   if (topicId === 's1-math-angles-parallel-lines-vertically-opposite') return '✖️';
   if (topicId === 's1-math-angles-parallel-lines-basic-parallel') return '🔀';
   if (topicId === 's1-math-angles-parallel-lines-advanced-parallel') return '🔁';
+
+  // S1 Ratio, Rate, and Speed icons
+  if (topicId === 's1-math-ratio-rate-speed-understanding-ratios') return '⚖️';
+  if (topicId === 's1-math-ratio-rate-speed-proportions') return '📊';
+  if (topicId === 's1-math-ratio-rate-speed-rate-speed') return '⚡';
+  if (topicId === 's1-math-ratio-rate-speed-unit-conversion') return '🔄';
 
   // S3 Trigonometry icons
   if (topicId.includes('basic-ratios')) return '📐';
@@ -255,6 +263,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's1-math-basic-algebra') return 'Basic Algebra';
   if (category === 's1-math-simple-linear-equations') return 'Simple Linear Equations';
   if (category === 's1-math-angles-parallel-lines') return 'Angles & Parallel Lines';
+  if (category === 's1-math-ratio-rate-speed') return 'Ratio, Rate, and Speed';
   if (category === 's3-math-trigonometry') return 'Trigonometry';
   if (category === 's3-math-circle-geometry') return 'Circle Geometry';
   if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
@@ -285,7 +294,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   // Import helper to check if it's a valid path
   const knownPaths = [
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
-    's1-math-simple-linear-equations', 's1-math-angles-parallel-lines',
+    's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed',
     's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
@@ -374,6 +383,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 's1-math-angles-parallel-lines') {
       return Object.entries(S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as AnglesParallelLinesTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's1-math-ratio-rate-speed') {
+      return Object.entries(S1_MATH_RATIO_RATE_SPEED_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as RatioRateSpeedTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
@@ -660,6 +677,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
               style={{ backgroundColor: theme.colors.brand }}
             >
               {selectedCategory === 'fractions' ? '➗' :
+               selectedCategory === 's1-math-ratio-rate-speed' ? '⚡' :
                selectedCategory === 's3-math-trigonometry' ? '📐' :
                selectedCategory === 's3-math-circle-geometry' ? '⭕' :
                selectedCategory === 's3-math-quadratic-equations' ? '📈' :

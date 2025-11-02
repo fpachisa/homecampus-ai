@@ -43,6 +43,7 @@ import { S1_MATH_APPROXIMATION_ESTIMATION_SUBTOPICS, S1_APPROXIMATION_ESTIMATION
 import { S1_MATH_BASIC_ALGEBRA_SUBTOPICS, S1_BASIC_ALGEBRA_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-basic-algebra';
 import { S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS, S1_SIMPLE_LINEAR_EQUATIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
 import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS, S1_ANGLES_PARALLEL_LINES_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
+import { S1_MATH_RATIO_RATE_SPEED_SUBTOPICS, S1_RATIO_RATE_SPEED_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -89,6 +90,7 @@ function registerBrowserTopics() {
   registerTopics(S1_MATH_BASIC_ALGEBRA_SUBTOPICS, S1_BASIC_ALGEBRA_CONFIG);
   registerTopics(S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS, S1_SIMPLE_LINEAR_EQUATIONS_CONFIG);
   registerTopics(S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS, S1_ANGLES_PARALLEL_LINES_CONFIG);
+  registerTopics(S1_MATH_RATIO_RATE_SPEED_SUBTOPICS, S1_RATIO_RATE_SPEED_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);

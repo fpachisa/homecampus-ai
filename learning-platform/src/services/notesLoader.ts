@@ -48,6 +48,11 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's1/math/angles-parallel-lines/VerticallyOppositeAngles': () => import('../notes/s1/math/angles-parallel-lines/VerticallyOppositeAngles'),
   's1/math/angles-parallel-lines/ParallelLinesBasic': () => import('../notes/s1/math/angles-parallel-lines/ParallelLinesBasic'),
   's1/math/angles-parallel-lines/ParallelLinesAdvanced': () => import('../notes/s1/math/angles-parallel-lines/ParallelLinesAdvanced'),
+  // S1 Ratio, Rate, and Speed notes
+  's1/math/ratio-rate-speed/UnderstandingRatios': () => import('../notes/s1/math/ratio-rate-speed/UnderstandingRatios'),
+  's1/math/ratio-rate-speed/RatiosAndProportions': () => import('../notes/s1/math/ratio-rate-speed/RatiosAndProportions'),
+  's1/math/ratio-rate-speed/RateAndSpeed': () => import('../notes/s1/math/ratio-rate-speed/RateAndSpeed'),
+  's1/math/ratio-rate-speed/AdvancedApplications': () => import('../notes/s1/math/ratio-rate-speed/AdvancedApplications'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

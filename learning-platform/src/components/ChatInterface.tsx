@@ -57,6 +57,8 @@ import { S1_SIMPLE_LINEAR_EQUATIONS_SUBTOPICS } from '../prompt-library/subjects
 import type { SimpleLinearEquationsTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-simple-linear-equations';
 import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
 import type { AnglesParallelLinesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
+import { S1_MATH_RATIO_RATE_SPEED_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
+import type { RatioRateSpeedTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -95,6 +97,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S1 angles parallel lines topic
   if (topicId.startsWith('s1-math-angles-parallel-lines-')) {
     return S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS[topicId as AnglesParallelLinesTopicId];
+  }
+  // Check if it's an S1 ratio, rate, and speed topic
+  if (topicId.startsWith('s1-math-ratio-rate-speed-')) {
+    return S1_MATH_RATIO_RATE_SPEED_SUBTOPICS[topicId as RatioRateSpeedTopicId];
   }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {

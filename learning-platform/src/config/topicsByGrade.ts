@@ -93,6 +93,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       subject: 'Mathematics',
     },
     {
+      id: 's1-ratio-rate-speed',
+      name: 'Ratio, Rate, and Speed',
+      icon: '⚡',
+      description: 'Master ratios, proportions, rates, and speed calculations',
+      subtopicCount: 4,
+      isActive: true,
+      category: 's1-math-ratio-rate-speed',
+      grade: 'Secondary 1',
+      subject: 'Mathematics',
+    },
+    {
       id: 's1-geometry-basics',
       name: 'Geometry Basics',
       icon: '📐',

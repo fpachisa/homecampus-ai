@@ -502,12 +502,98 @@ const S1_ANGLES_PARALLEL_LINES_CONFIGS = [
   }
 ];
 
+/**
+ * S1 Ratio, Rate, and Speed configs (4 configs)
+ */
+const S1_RATIO_RATE_SPEED_CONFIGS = [
+  // ============================================
+  // S1 RATIO, RATE, AND SPEED (4 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Understanding Ratios
+  {
+    id: 's1-math-ratio-rate-speed-understanding-ratios',
+    displayName: 'Understanding Ratios',
+    grade: 's1',
+    subject: 'math',
+    topic: 'ratio-rate-speed',
+    subtopic: 'understanding-ratios',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 50,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/ratio-rate-speed/UnderstandingRatios',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Ratios and Proportions
+  {
+    id: 's1-math-ratio-rate-speed-proportions',
+    displayName: 'Ratios and Proportions',
+    grade: 's1',
+    subject: 'math',
+    topic: 'ratio-rate-speed',
+    subtopic: 'proportions',
+    metadata: {
+      difficulty: 'foundational-to-intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-ratio-rate-speed-understanding-ratios']
+    },
+    notesComponent: 's1/math/ratio-rate-speed/RatiosAndProportions',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Rate and Speed
+  {
+    id: 's1-math-ratio-rate-speed-rate-speed',
+    displayName: 'Rate and Speed',
+    grade: 's1',
+    subject: 'math',
+    topic: 'ratio-rate-speed',
+    subtopic: 'rate-speed',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-ratio-rate-speed-proportions']
+    },
+    notesComponent: 's1/math/ratio-rate-speed/RateAndSpeed',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Advanced Applications (Unit Conversion)
+  {
+    id: 's1-math-ratio-rate-speed-unit-conversion',
+    displayName: 'Advanced Applications',
+    grade: 's1',
+    subject: 'math',
+    topic: 'ratio-rate-speed',
+    subtopic: 'unit-conversion',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 65,
+      prerequisites: ['s1-math-ratio-rate-speed-rate-speed']
+    },
+    notesComponent: 's1/math/ratio-rate-speed/AdvancedApplications',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
 // Migrate all S1 topics
 const ALL_CONFIGS = [
   ...S1_APPROXIMATION_ESTIMATION_CONFIGS,
   ...S1_SIMPLE_LINEAR_EQUATIONS_CONFIGS,
   ...S1_BASIC_ALGEBRA_CONFIGS,
-  ...S1_ANGLES_PARALLEL_LINES_CONFIGS
+  ...S1_ANGLES_PARALLEL_LINES_CONFIGS,
+  ...S1_RATIO_RATE_SPEED_CONFIGS
 ];
 
 /**
