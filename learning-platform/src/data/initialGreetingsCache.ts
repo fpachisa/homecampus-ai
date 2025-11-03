@@ -4009,7 +4009,71 @@ The gradient (m) of a line measures its steepness. It is calculated by the ratio
 If a line passes through two points, \$(x₁, y₁)\$ and \$(x₂, y₂)\$, write the formula used to calculate the gradient (m).`,
       showAfterSpeech: true
     }
-  }  
+  },
+  /**
+   * ========================================
+   * S1 PERIMETER, AREA
+   * ========================================
+   */
+  's1-math-perimeter-area-parallelograms': {
+    speech: {
+      text: `Welcome! Before we tackle the slanting sides of parallelograms, let us quickly warm up by reviewing the basics: rectangles and squares. These shapes are the essential building blocks for everything we will calculate next. Let's start with a quick area calculation.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-perimeter-area-parallelograms.mp3'
+    },
+    display: {
+      content: `### Review: Rectangles and Squares
+
+Welcome! Let's start with a quick review of the fundamentals.
+
+A square has a side length of 7.5 cm.
+
+What is the area of the square? (Remember to include the correct units.)`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-perimeter-area-trapeziums': {
+    speech: {
+      text: `Hey there! Are you ready to explore one of the most interesting and often misunderstood quadrilaterals? Trapeziums are unique because they only require one pair of parallel sides. Understanding their properties is the first step to mastering their area formulas.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-perimeter-area-trapeziums.mp3'
+    },
+    display: {
+      content: `### Trapezium Properties and Identification
+
+Let's start by confirming the defining feature of a trapezium (also known as a trapezoid).
+
+Which of the following statements correctly describes a trapezium?
+
+A) It has two pairs of parallel sides.
+B) It has exactly one pair of parallel sides.
+C) All four sides are equal in length.
+D) All angles are 90°.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-perimeter-area-composite': {
+    speech: {
+      text: `Greetings! When facing a complex problem, the best strategy is often to break it down into smaller, manageable pieces. That is exactly what we do with composite figures! We take big, unusual shapes and decompose them into familiar shapes like rectangles and triangles.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-perimeter-area-composite.mp3'
+    },
+    display: {
+      content: `### Breaking Down Composite Shapes
+
+The key to working with composite figures is decomposition.
+
+Imagine an L-shaped figure. If you wanted to calculate its area, which two basic shapes would you most likely break it down into?
+
+A) A circle and a square
+B) Two rectangles
+C) A trapezium and a triangle
+D) A parallelogram and a rhombus`,
+      showAfterSpeech: true
+    }
+  }
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

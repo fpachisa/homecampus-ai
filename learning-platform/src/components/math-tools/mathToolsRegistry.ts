@@ -3384,6 +3384,353 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       }
     ]
+  },
+
+  // ============================================
+  // GEOMETRY TOOLS (Shapes - Perimeter & Area)
+  // ============================================
+
+  rectangle: {
+    name: "Rectangle Visualizer",
+    technicalName: "rectangle",
+    component: "RectangleVisualizer",
+    category: "geometry",
+
+    description: "Interactive rectangle for teaching perimeter and area concepts. Shows dimensions, optional grid overlay for counting squares, and formulas.",
+
+    whenToUse: "Use for basic rectangle perimeter and area problems. Perfect for introducing the concepts of P = 2(l + w) and A = l × w.",
+
+    parameters: {
+      length: "string - length label (e.g., 'l', '12cm', '15'). Default: 'l'",
+      width: "string - width label (e.g., 'w', '8cm', '10'). Default: 'w'",
+      highlightMode: "'perimeter' | 'area' | 'both' | 'none' - what to highlight. Default: 'none'",
+      showFormula: "boolean - show perimeter or area formula. Default: false",
+      showGrid: "boolean - show grid overlay for area counting. Default: false",
+      gridSize: "number - number of grid divisions. Default: 10",
+      vertexLabels: "[string, string, string, string] - labels for corners [topLeft, topRight, bottomRight, bottomLeft]. Example: ['A','B','C','D']",
+      caption: "string - optional caption"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Find area of rectangle",
+        caption: "A rectangle has length 12 cm and width 8 cm. Find its area.",
+        parameters: {
+          length: "12cm",
+          width: "8cm",
+          highlightMode: "area",
+          showFormula: true
+        }
+      },
+      {
+        scenario: "Find perimeter with grid",
+        caption: "Find the perimeter of this rectangle. Each square represents 1 cm.",
+        parameters: {
+          length: "10",
+          width: "6",
+          highlightMode: "perimeter",
+          showGrid: true,
+          gridSize: 10
+        }
+      }
+    ]
+  },
+
+  square: {
+    name: "Square Visualizer",
+    technicalName: "square",
+    component: "SquareVisualizer",
+    category: "geometry",
+
+    description: "Interactive square for teaching perimeter and area. Shows equal sides with tick marks, optional grid, and formulas P = 4s and A = s².",
+
+    whenToUse: "Use for square-specific problems. Emphasizes that all four sides are equal. Perfect for introducing squared notation (s²).",
+
+    parameters: {
+      side: "string - side length label (e.g., 's', '10cm', '15'). Default: 's'",
+      highlightMode: "'perimeter' | 'area' | 'both' | 'none' - what to highlight. Default: 'none'",
+      showFormula: "boolean - show perimeter or area formula. Default: false",
+      showGrid: "boolean - show grid overlay for area counting. Default: false",
+      gridSize: "number - number of grid divisions. Default: 10",
+      showEqualMarks: "boolean - show tick marks indicating equal sides. Default: true",
+      vertexLabels: "[string, string, string, string] - labels for corners. Example: ['A','B','C','D']",
+      caption: "string - optional caption"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Find area of square",
+        caption: "A square has side length 10 cm. Find its area.",
+        parameters: {
+          side: "10cm",
+          highlightMode: "area",
+          showFormula: true,
+          showEqualMarks: true
+        }
+      },
+      {
+        scenario: "Perimeter with grid counting",
+        caption: "Count the squares to find the area of this square with side 8 units.",
+        parameters: {
+          side: "8",
+          highlightMode: "area",
+          showGrid: true,
+          showEqualMarks: true,
+          gridSize: 8
+        }
+      }
+    ]
+  },
+
+  semicircle: {
+    name: "Semicircle Visualizer",
+    technicalName: "semicircle",
+    component: "SemicircleVisualizer",
+    category: "geometry",
+
+    description: "Semicircle visualizer with adjustable orientation (top/bottom/left/right). Shows radius, diameter, arc length (πr), and area (½πr²). Essential for composite shapes.",
+
+    whenToUse: "Use for semicircle perimeter/area problems or as part of composite shapes (e.g., stadium shape, arch shape). Shows curved edge clearly.",
+
+    parameters: {
+      radius: "string - radius label (e.g., 'r', '5cm', '10'). Default: 'r'",
+      orientation: "'top' | 'bottom' | 'left' | 'right' - which direction the arc faces. Default: 'top'",
+      showDimensions: "boolean - show radius line and label. Default: true",
+      showArcLength: "boolean - show arc length measurement (πr). Default: false",
+      showArea: "boolean - shade the semicircle area and show formula. Default: false",
+      showDiameter: "boolean - show diameter line (base). Default: false",
+      highlightElement: "'radius' | 'arc' | 'diameter' | 'area' | 'none' - what to highlight. Default: 'none'",
+      caption: "string - optional caption"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Find semicircle area",
+        caption: "A semicircle has radius 7 cm. Find its area.",
+        parameters: {
+          radius: "7cm",
+          orientation: "top",
+          showDimensions: true,
+          showArea: true,
+          highlightElement: "area"
+        }
+      },
+      {
+        scenario: "Arc length calculation",
+        caption: "Find the arc length of a semicircle with radius 5 m.",
+        parameters: {
+          radius: "5m",
+          orientation: "top",
+          showArcLength: true,
+          highlightElement: "arc"
+        }
+      }
+    ]
+  },
+
+  parallelogram: {
+    name: "Parallelogram Visualizer",
+    technicalName: "parallelogram",
+    component: "ParallelogramVisualizer",
+    category: "geometry",
+
+    description: "CRITICAL PEDAGOGICAL TOOL: Interactive parallelogram showing the distinction between slant side and perpendicular height. Includes transformation animation to rectangle. Essential for teaching that area = base × height (NOT base × slant side).",
+
+    whenToUse: "Use whenever teaching parallelogram area or perimeter. CRITICAL for teaching perpendicular height concept. Use showPerpendicular=true to emphasize height vs slant side. Use showTransformation=true to demonstrate area relationship to rectangles.",
+
+    parameters: {
+      base: "string - base length label (e.g., 'b', '12cm'). Default: 'b'",
+      height: "string - perpendicular height label (e.g., 'h', '8cm'). Default: 'h'",
+      slantSide: "string - slant side label (e.g., 's', '10cm'). Default: 's'",
+      showPerpendicular: "boolean - show perpendicular height line (dashed). Default: true. IMPORTANT: Use true to teach height concept",
+      highlightMode: "'perimeter' | 'area' | 'both' | 'height' | 'none' - what to highlight. Default: 'none'",
+      showFormula: "boolean - show area or perimeter formula. Default: false",
+      showRightAngle: "boolean - show right angle symbol at height base. Default: true",
+      vertexLabels: "[string, string, string, string] - labels [bottomLeft, bottomRight, topRight, topLeft]",
+      skewAngle: "number - angle of parallelogram skew in degrees (15-75). Default: 30",
+      showTransformation: "boolean - show animation button to transform to rectangle. Default: false. Use true to demonstrate area equivalence",
+      caption: "string - optional caption"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Teaching perpendicular height concept",
+        caption: "A parallelogram has base 12 cm and perpendicular height 8 cm. Find its area. Note: the slant side is NOT used in area calculation.",
+        parameters: {
+          base: "12cm",
+          height: "8cm",
+          slantSide: "10cm",
+          showPerpendicular: true,
+          highlightMode: "height",
+          showFormula: true,
+          showRightAngle: true
+        }
+      },
+      {
+        scenario: "Transformation to show area relationship",
+        caption: "This parallelogram can be transformed into a rectangle with the same area. Click to see the transformation.",
+        parameters: {
+          base: "15cm",
+          height: "10cm",
+          slantSide: "12cm",
+          showPerpendicular: true,
+          highlightMode: "area",
+          showTransformation: true
+        }
+      },
+      {
+        scenario: "Find perimeter (all sides needed)",
+        caption: "A parallelogram has base 14 cm and slant sides 9 cm. Find its perimeter.",
+        parameters: {
+          base: "14cm",
+          slantSide: "9cm",
+          height: "7cm",
+          showPerpendicular: false,
+          highlightMode: "perimeter",
+          showFormula: true
+        }
+      }
+    ]
+  },
+
+  trapezium: {
+    name: "Trapezium Visualizer",
+    technicalName: "trapezium",
+    component: "TrapeziumVisualizer",
+    category: "geometry",
+
+    description: "CRITICAL PEDAGOGICAL TOOL: Trapezium (trapezoid) with parallel sides highlighted and perpendicular height shown. Essential for teaching that area = ½(a + b) × h where a and b are parallel sides. Shows parallel side indicators (arrows).",
+
+    whenToUse: "Use for trapezium area and perimeter problems. CRITICAL for teaching height identification (perpendicular to parallel sides). Use highlightParallel=true to emphasize which sides are parallel.",
+
+    parameters: {
+      parallelSide1: "string - top parallel side label (e.g., 'a', '6cm'). Default: 'a'",
+      parallelSide2: "string - bottom parallel side label (e.g., 'b', '10cm'). Default: 'b'",
+      height: "string - perpendicular height label (e.g., 'h', '8cm'). Default: 'h'",
+      leftSlant: "string - left slant side label (e.g., 'c', '9cm'). Default: 'c'",
+      rightSlant: "string - right slant side label (e.g., 'd', '9cm'). Default: 'd'",
+      showHeight: "boolean - show perpendicular height line (dashed). Default: true",
+      highlightParallel: "boolean - highlight parallel sides in green with tick marks. Default: true. IMPORTANT: Use true to teach parallel concept",
+      highlightMode: "'perimeter' | 'area' | 'height' | 'none' - what to highlight. Default: 'none'",
+      showRightAngles: "boolean - show right angle symbols at height endpoints. Default: true",
+      vertexLabels: "[string, string, string, string] - labels [bottomLeft, bottomRight, topRight, topLeft]",
+      topSideRatio: "number - ratio of top to bottom side (0.4-0.8). Default: 0.6",
+      caption: "string - optional caption"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Teaching trapezium area formula",
+        caption: "A trapezium has parallel sides 6 cm and 10 cm, with height 8 cm. Find its area using the formula A = ½(a + b) × h.",
+        parameters: {
+          parallelSide1: "6cm",
+          parallelSide2: "10cm",
+          height: "8cm",
+          leftSlant: "9cm",
+          rightSlant: "9cm",
+          showHeight: true,
+          highlightParallel: true,
+          highlightMode: "area",
+          showRightAngles: true
+        }
+      },
+      {
+        scenario: "Identify parallel sides and height",
+        caption: "In this trapezium, identify which sides are parallel and where the perpendicular height is measured.",
+        parameters: {
+          parallelSide1: "a",
+          parallelSide2: "b",
+          height: "h",
+          leftSlant: "c",
+          rightSlant: "d",
+          showHeight: true,
+          highlightParallel: true,
+          showRightAngles: true,
+          vertexLabels: ["A", "B", "C", "D"]
+        }
+      },
+      {
+        scenario: "Find perimeter (all four sides)",
+        caption: "A trapezium has sides 6 cm, 10 cm, 7 cm, and 7 cm. Find its perimeter.",
+        parameters: {
+          parallelSide1: "6cm",
+          parallelSide2: "10cm",
+          height: "5cm",
+          leftSlant: "7cm",
+          rightSlant: "7cm",
+          showHeight: false,
+          highlightParallel: false,
+          highlightMode: "perimeter"
+        }
+      }
+    ]
+  },
+
+  compositeShape: {
+    name: "Composite Shape Visualizer",
+    technicalName: "compositeShape",
+    component: "CompositeShapeVisualizer",
+    category: "geometry",
+
+    description: "ADVANCED TOOL: Visualizes complex composite shapes made from combining basic shapes. Supports 8 common presets: L-shape, Stadium, Arch, T-shape, U-shape, Parallelogram+Semicircle, Rectangle-Circle (cutout), and Stepped (staircase). Color-codes regions and shows calculation methods (sum or difference of areas).",
+
+    whenToUse: "Use for composite figure problems where students must break down complex shapes into basic components. Essential for teaching decomposition strategy and area addition/subtraction methods.",
+
+    parameters: {
+      preset: "'l-shape' | 'stadium' | 'arch' | 't-shape' | 'u-shape' | 'parallelogram-semicircle' | 'rectangle-circle' | 'stepped' - which preset template to use. Required.",
+      dimensions: "number[] - array of dimensions specific to each preset. Dimensions are automatically scaled for visibility. Required.",
+      colorRegions: "boolean - color-code different regions. Default: true",
+      showCalculation: "boolean - show dimension labels on the shapes. Default: false",
+      operation: "'sum' | 'difference' - whether adding or subtracting areas. Default: 'sum'",
+      caption: "string - optional caption"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "L-shape composite (addition method)",
+        caption: "This L-shape is made of two rectangles. Find the total area by adding the areas of both rectangles.",
+        parameters: {
+          preset: "l-shape",
+          dimensions: [100, 150, 150, 80],
+          colorRegions: true,
+          showCalculation: true,
+          operation: "sum"
+        }
+      },
+      {
+        scenario: "Stadium shape (rectangle + 2 semicircles)",
+        caption: "A running track has a straight section 200 m long and semicircular ends with radius 60 m. Find the total area.",
+        parameters: {
+          preset: "stadium",
+          dimensions: [200, 60],
+          colorRegions: true,
+          showCalculation: true,
+          operation: "sum"
+        }
+      },
+      {
+        scenario: "Rectangle with circular cutout (subtraction method)",
+        caption: "A rectangular metal sheet 220 mm × 180 mm has a circular hole of radius 50 mm cut from its center. Find the remaining area.",
+        parameters: {
+          preset: "rectangle-circle",
+          dimensions: [150, 120, 35],
+          colorRegions: true,
+          showCalculation: true,
+          operation: "difference"
+        }
+      },
+      {
+        scenario: "Arch shape (door)",
+        caption: "A doorway consists of a rectangle 150 cm wide and 120 cm tall, with a semicircular arch on top (radius 75 cm). Find the total area.",
+        parameters: {
+          preset: "arch",
+          dimensions: [150, 120, 75],
+          colorRegions: true,
+          showCalculation: true,
+          operation: "sum"
+        }
+      }
+    ]
   }
 };
 

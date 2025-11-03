@@ -46,6 +46,7 @@ import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS, S1_ANGLES_PARALLEL_LINES_CONFI
 import { S1_MATH_RATIO_RATE_SPEED_SUBTOPICS, S1_RATIO_RATE_SPEED_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
 import { S1_PERCENTAGE_SUBTOPICS, S1_PERCENTAGE_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-percentage';
 import { S1_LINEAR_FUNCTIONS_SUBTOPICS, S1_LINEAR_FUNCTIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
+import { S1_MATH_PERIMETER_AREA_SUBTOPICS, S1_PERIMETER_AREA_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -95,6 +96,7 @@ function registerBrowserTopics() {
   registerTopics(S1_MATH_RATIO_RATE_SPEED_SUBTOPICS, S1_RATIO_RATE_SPEED_CONFIG);
   registerTopics(S1_PERCENTAGE_SUBTOPICS, S1_PERCENTAGE_CONFIG);
   registerTopics(S1_LINEAR_FUNCTIONS_SUBTOPICS, S1_LINEAR_FUNCTIONS_CONFIG);
+  registerTopics(S1_MATH_PERIMETER_AREA_SUBTOPICS, S1_PERIMETER_AREA_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);

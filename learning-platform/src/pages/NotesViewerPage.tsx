@@ -12,6 +12,11 @@ import { useTheme } from '../hooks/useTheme';
 
 // Notes registry - extracted from notesLoader.ts
 const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType<any> }>> = {
+
+  //S1 Perimeters & Areas notes
+  's1/math/perimeter-area/Parallelograms': () => import('../notes/s1/math/perimeter-area/Parallelograms'),
+  's1/math/perimeter-area/Trapeziums': () => import('../notes/s1/math/perimeter-area/Trapeziums'),
+  's1/math/perimeter-area/CompositeFigures': () => import('../notes/s1/math/perimeter-area/CompositeFigures'),
   // S1 Factors & Multiples notes
   's1/math/factors-multiples/IntroductionToFactorsMultiples': () => import('../notes/s1/math/factors-multiples/IntroductionToFactorsMultiples'),
   's1/math/factors-multiples/PrimeNumbersAndFactorisation': () => import('../notes/s1/math/factors-multiples/PrimeNumbersAndFactorisation'),

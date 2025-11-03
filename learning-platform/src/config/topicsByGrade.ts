@@ -125,6 +125,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Secondary 1',
       subject: 'Mathematics',
     },
+    {
+      id: 's1-perimeter-area',
+      name: 'Perimeter & Area',
+      icon: '📐',
+      description: 'Master perimeter and area of parallelograms, trapeziums, and composite shapes',
+      subtopicCount: 3,
+      isActive: true,
+      category: 's1-math-perimeter-area',
+      grade: 'Secondary 1',
+      subject: 'Mathematics',
+    },
   ],
 
   'Secondary 2': [

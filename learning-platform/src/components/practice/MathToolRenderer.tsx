@@ -79,6 +79,14 @@ import AnglesAtPointVisualizer from '../math-tools/AnglesAtPointVisualizer';
 import AnglesOnLineVisualizer from '../math-tools/AnglesOnLineVisualizer';
 import VerticallyOppositeAnglesVisualizer from '../math-tools/VerticallyOppositeAnglesVisualizer';
 
+// Geometry - Shapes (Perimeter & Area)
+import RectangleVisualizer from '../math-tools/RectangleVisualizer';
+import SquareVisualizer from '../math-tools/SquareVisualizer';
+import SemicircleVisualizer from '../math-tools/SemicircleVisualizer';
+import ParallelogramVisualizer from '../math-tools/ParallelogramVisualizer';
+import TrapeziumVisualizer from '../math-tools/TrapeziumVisualizer';
+import CompositeShapeVisualizer from '../math-tools/CompositeShapeVisualizer';
+
 
 interface MathToolRendererProps {
   toolName: string | null | undefined;
@@ -184,6 +192,14 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   anglesAtPoint: AnglesAtPointVisualizer,
   anglesOnLine: AnglesOnLineVisualizer,
   verticallyOppositeAngles: VerticallyOppositeAnglesVisualizer,
+
+  // Geometry - Shapes (Perimeter & Area) Tools
+  rectangle: RectangleVisualizer,
+  square: SquareVisualizer,
+  semicircle: SemicircleVisualizer,
+  parallelogram: ParallelogramVisualizer,
+  trapezium: TrapeziumVisualizer,
+  compositeShape: CompositeShapeVisualizer,
 };
 
 export const MathToolRenderer: React.FC<MathToolRendererProps> = ({

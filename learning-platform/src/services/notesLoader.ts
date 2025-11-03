@@ -66,6 +66,10 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's1/math/linear-functions-graphs/FunctionConcept': () => import('../notes/s1/math/linear-functions-graphs/FunctionConcept'),
   's1/math/linear-functions-graphs/LinearGraphs': () => import('../notes/s1/math/linear-functions-graphs/LinearGraphs'),
   's1/math/linear-functions-graphs/Gradient': () => import('../notes/s1/math/linear-functions-graphs/Gradient'),
+  // S1 Perimeter & Area notes
+  's1/math/perimeter-area/Parallelograms': () => import('../notes/s1/math/perimeter-area/Parallelograms'),
+  's1/math/perimeter-area/Trapeziums': () => import('../notes/s1/math/perimeter-area/Trapeziums'),
+  's1/math/perimeter-area/CompositeFigures': () => import('../notes/s1/math/perimeter-area/CompositeFigures'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

@@ -50,6 +50,8 @@ import { S1_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/
 import type { PercentageTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-percentage';
 import { S1_LINEAR_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
 import type { LinearFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
+import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
+import type { PerimeterAreaTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -88,6 +90,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S1_PERCENTAGE_SUBTOPICS[topicId as PercentageTopicId];
   } else if (category === 's1-math-linear-functions-graphs') {
     topicConfig = S1_LINEAR_FUNCTIONS_SUBTOPICS[topicId as LinearFunctionsTopicId];
+  } else if (category === 's1-math-perimeter-area') {
+    topicConfig = S1_MATH_PERIMETER_AREA_SUBTOPICS[topicId as PerimeterAreaTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {

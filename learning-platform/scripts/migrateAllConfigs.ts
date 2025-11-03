@@ -8,6 +8,10 @@
  *   2. Simple Linear Equations (4 subtopics)
  *   3. Basic Algebra (7 subtopics)
  *   4. Angles and Parallel Lines (6 subtopics)
+ *   5. Ratio, Rate, and Speed (4 subtopics)
+ *   6. Percentage (7 subtopics)
+ *   7. Linear Functions & Graphs (4 subtopics)
+ *   8. Perimeter and Area (3 subtopics)
  *
  * Usage:
  *   npx ts-node scripts/migrateAllConfigs.ts
@@ -811,6 +815,72 @@ const S1_LINEAR_FUNCTIONS_CONFIGS = [
   }
 ];
 
+/**
+ * S1 Perimeter and Area configs (3 configs)
+ */
+const S1_PERIMETER_AREA_CONFIGS = [
+  // ============================================
+  // S1 PERIMETER AND AREA (3 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Parallelograms
+  {
+    id: 's1-math-perimeter-area-parallelograms',
+    displayName: 'Parallelograms',
+    grade: 's1',
+    subject: 'math',
+    topic: 'perimeter-area',
+    subtopic: 'parallelograms',
+    metadata: {
+      difficulty: 'foundational-to-intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/perimeter-area/Parallelograms',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Trapeziums
+  {
+    id: 's1-math-perimeter-area-trapeziums',
+    displayName: 'Trapeziums',
+    grade: 's1',
+    subject: 'math',
+    topic: 'perimeter-area',
+    subtopic: 'trapeziums',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-perimeter-area-parallelograms']
+    },
+    notesComponent: 's1/math/perimeter-area/Trapeziums',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Composite Figures
+  {
+    id: 's1-math-perimeter-area-composite',
+    displayName: 'Composite Figures',
+    grade: 's1',
+    subject: 'math',
+    topic: 'perimeter-area',
+    subtopic: 'composite',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 65,
+      prerequisites: ['s1-math-perimeter-area-trapeziums']
+    },
+    notesComponent: 's1/math/perimeter-area/CompositeFigures',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
 // Migrate all S1 topics
 const ALL_CONFIGS = [
   ...S1_APPROXIMATION_ESTIMATION_CONFIGS,
@@ -819,7 +889,8 @@ const ALL_CONFIGS = [
   ...S1_ANGLES_PARALLEL_LINES_CONFIGS,
   ...S1_RATIO_RATE_SPEED_CONFIGS,
   ...S1_PERCENTAGE_CONFIGS,
-  ...S1_LINEAR_FUNCTIONS_CONFIGS
+  ...S1_LINEAR_FUNCTIONS_CONFIGS,
+  ...S1_PERIMETER_AREA_CONFIGS
 ];
 
 /**
