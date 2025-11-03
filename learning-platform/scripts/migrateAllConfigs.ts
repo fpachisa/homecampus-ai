@@ -587,13 +587,239 @@ const S1_RATIO_RATE_SPEED_CONFIGS = [
   }
 ];
 
+/**
+ * S1 Percentage configs (7 configs)
+ */
+const S1_PERCENTAGE_CONFIGS = [
+  // ============================================
+  // S1 PERCENTAGE (7 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Introduction to Percentage
+  {
+    id: 's1-math-percentage-introduction',
+    displayName: 'Introduction to Percentage',
+    grade: 's1',
+    subject: 'math',
+    topic: 'percentage',
+    subtopic: 'introduction',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 45,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/percentage/Introduction',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Percentage, Fraction, and Decimal Conversions
+  {
+    id: 's1-math-percentage-conversions',
+    displayName: 'Percentage, Fraction, and Decimal Conversions',
+    grade: 's1',
+    subject: 'math',
+    topic: 'percentage',
+    subtopic: 'conversions',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-percentage-introduction']
+    },
+    notesComponent: 's1/math/percentage/Conversions',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Expressing One Quantity as a Percentage of Another
+  {
+    id: 's1-math-percentage-expressing',
+    displayName: 'Expressing One Quantity as a Percentage of Another',
+    grade: 's1',
+    subject: 'math',
+    topic: 'percentage',
+    subtopic: 'expressing',
+    metadata: {
+      difficulty: 'foundational-to-intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-percentage-conversions']
+    },
+    notesComponent: 's1/math/percentage/Expressing',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Comparing Two Quantities by Percentage
+  {
+    id: 's1-math-percentage-comparing',
+    displayName: 'Comparing Two Quantities by Percentage',
+    grade: 's1',
+    subject: 'math',
+    topic: 'percentage',
+    subtopic: 'comparing',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-percentage-expressing']
+    },
+    notesComponent: 's1/math/percentage/Comparing',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 5: Percentage Increase and Decrease
+  {
+    id: 's1-math-percentage-change',
+    displayName: 'Percentage Increase and Decrease',
+    grade: 's1',
+    subject: 'math',
+    topic: 'percentage',
+    subtopic: 'change',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-percentage-expressing']
+    },
+    notesComponent: 's1/math/percentage/PercentageChange',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 6: Reverse Percentage Problems
+  {
+    id: 's1-math-percentage-reverse',
+    displayName: 'Reverse Percentage Problems',
+    grade: 's1',
+    subject: 'math',
+    topic: 'percentage',
+    subtopic: 'reverse',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-percentage-change']
+    },
+    notesComponent: 's1/math/percentage/ReversePercentage',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 7: Real-World Percentage Applications
+  {
+    id: 's1-math-percentage-applications',
+    displayName: 'Real-World Percentage Applications',
+    grade: 's1',
+    subject: 'math',
+    topic: 'percentage',
+    subtopic: 'applications',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 70,
+      prerequisites: ['s1-math-percentage-change', 's1-math-percentage-reverse']
+    },
+    notesComponent: 's1/math/percentage/Applications',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
+const S1_LINEAR_FUNCTIONS_CONFIGS = [
+  // ============================================
+  // S1 LINEAR FUNCTIONS & GRAPHS (4 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Cartesian Coordinates
+  {
+    id: 's1-math-linear-functions-cartesian-coordinates',
+    displayName: 'Cartesian Coordinates',
+    grade: 's1',
+    subject: 'math',
+    topic: 'linear-functions-graphs',
+    subtopic: 'cartesian-coordinates',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 50,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/linear-functions-graphs/CartesianCoordinates',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Concept of a Function
+  {
+    id: 's1-math-linear-functions-function-concept',
+    displayName: 'Concept of a Function',
+    grade: 's1',
+    subject: 'math',
+    topic: 'linear-functions-graphs',
+    subtopic: 'function-concept',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-linear-functions-cartesian-coordinates']
+    },
+    notesComponent: 's1/math/linear-functions-graphs/FunctionConcept',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Linear Functions and Linear Graphs
+  {
+    id: 's1-math-linear-functions-linear-graphs',
+    displayName: 'Linear Functions and Linear Graphs',
+    grade: 's1',
+    subject: 'math',
+    topic: 'linear-functions-graphs',
+    subtopic: 'linear-graphs',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-linear-functions-function-concept']
+    },
+    notesComponent: 's1/math/linear-functions-graphs/LinearGraphs',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Gradient of Linear Graphs
+  {
+    id: 's1-math-linear-functions-gradient',
+    displayName: 'Gradient of Linear Graphs',
+    grade: 's1',
+    subject: 'math',
+    topic: 'linear-functions-graphs',
+    subtopic: 'gradient',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-linear-functions-linear-graphs']
+    },
+    notesComponent: 's1/math/linear-functions-graphs/Gradient',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
 // Migrate all S1 topics
 const ALL_CONFIGS = [
   ...S1_APPROXIMATION_ESTIMATION_CONFIGS,
   ...S1_SIMPLE_LINEAR_EQUATIONS_CONFIGS,
   ...S1_BASIC_ALGEBRA_CONFIGS,
   ...S1_ANGLES_PARALLEL_LINES_CONFIGS,
-  ...S1_RATIO_RATE_SPEED_CONFIGS
+  ...S1_RATIO_RATE_SPEED_CONFIGS,
+  ...S1_PERCENTAGE_CONFIGS,
+  ...S1_LINEAR_FUNCTIONS_CONFIGS
 ];
 
 /**

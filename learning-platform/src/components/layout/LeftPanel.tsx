@@ -52,6 +52,10 @@ import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS } from '../../prompt-library/su
 import type { AnglesParallelLinesTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
 import { S1_MATH_RATIO_RATE_SPEED_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
 import type { RatioRateSpeedTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
+import { S1_PERCENTAGE_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-percentage';
+import type { PercentageTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-percentage';
+import { S1_LINEAR_FUNCTIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
+import type { LinearFunctionsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -114,6 +118,20 @@ function getTopicIcon(topicId: string): string {
   if (topicId === 's1-math-ratio-rate-speed-proportions') return '📊';
   if (topicId === 's1-math-ratio-rate-speed-rate-speed') return '⚡';
   if (topicId === 's1-math-ratio-rate-speed-unit-conversion') return '🔄';
+
+  // S1 Percentage icons
+  if (topicId.startsWith('s1-math-percentage-')) {
+    const icons = ['%', '🔄', '📊', '⚖️', '📈', '🔙', '💰'];
+    const index = Object.keys(S1_PERCENTAGE_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+
+  // S1 Linear Functions & Graphs icons
+  if (topicId.startsWith('s1-math-linear-functions-')) {
+    const icons = ['📍', '🔗', '📈', '📐'];
+    const index = Object.keys(S1_LINEAR_FUNCTIONS_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
 
   // S3 Trigonometry icons
   if (topicId.includes('basic-ratios')) return '📐';
@@ -264,6 +282,8 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's1-math-simple-linear-equations') return 'Simple Linear Equations';
   if (category === 's1-math-angles-parallel-lines') return 'Angles & Parallel Lines';
   if (category === 's1-math-ratio-rate-speed') return 'Ratio, Rate, and Speed';
+  if (category === 's1-math-percentage') return 'Percentage';
+  if (category === 's1-math-linear-functions-graphs') return 'Linear Functions & Graphs';
   if (category === 's3-math-trigonometry') return 'Trigonometry';
   if (category === 's3-math-circle-geometry') return 'Circle Geometry';
   if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
@@ -294,8 +314,8 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   // Import helper to check if it's a valid path
   const knownPaths = [
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
-    's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed',
-    's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
+    's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
+    's1-math-linear-functions-graphs', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
     's3-math-coordinate-geometry', 's4-math-differential-calculus', 's4-math-integration',
@@ -391,6 +411,22 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 's1-math-ratio-rate-speed') {
       return Object.entries(S1_MATH_RATIO_RATE_SPEED_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as RatioRateSpeedTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's1-math-percentage') {
+      return Object.entries(S1_PERCENTAGE_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as PercentageTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's1-math-linear-functions-graphs') {
+      return Object.entries(S1_LINEAR_FUNCTIONS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as LinearFunctionsTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

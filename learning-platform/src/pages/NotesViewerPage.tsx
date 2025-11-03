@@ -48,6 +48,19 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   's1/math/angles-parallel-lines/VerticallyOppositeAngles': () => import('../notes/s1/math/angles-parallel-lines/VerticallyOppositeAngles'),
   's1/math/angles-parallel-lines/ParallelLinesBasic': () => import('../notes/s1/math/angles-parallel-lines/ParallelLinesBasic'),
   's1/math/angles-parallel-lines/ParallelLinesAdvanced': () => import('../notes/s1/math/angles-parallel-lines/ParallelLinesAdvanced'),
+  // S1 Percentage notes
+  's1/math/percentage/Introduction': () => import('../notes/s1/math/percentage/Introduction'),
+  's1/math/percentage/Conversions': () => import('../notes/s1/math/percentage/Conversions'),
+  's1/math/percentage/Expressing': () => import('../notes/s1/math/percentage/Expressing'),
+  's1/math/percentage/Comparing': () => import('../notes/s1/math/percentage/Comparing'),
+  's1/math/percentage/PercentageChange': () => import('../notes/s1/math/percentage/PercentageChange'),
+  's1/math/percentage/ReversePercentage': () => import('../notes/s1/math/percentage/ReversePercentage'),
+  's1/math/percentage/Applications': () => import('../notes/s1/math/percentage/Applications'),
+  // S1 Linear Functions & Graphs notes
+  's1/math/linear-functions-graphs/CartesianCoordinates': () => import('../notes/s1/math/linear-functions-graphs/CartesianCoordinates'),
+  's1/math/linear-functions-graphs/FunctionConcept': () => import('../notes/s1/math/linear-functions-graphs/FunctionConcept'),
+  's1/math/linear-functions-graphs/LinearGraphs': () => import('../notes/s1/math/linear-functions-graphs/LinearGraphs'),
+  's1/math/linear-functions-graphs/Gradient': () => import('../notes/s1/math/linear-functions-graphs/Gradient'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

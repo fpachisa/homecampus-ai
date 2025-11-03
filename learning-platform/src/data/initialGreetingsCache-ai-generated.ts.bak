@@ -1,0 +1,119 @@
+/**
+ * AI-Generated Initial Greetings Cache (BATCH MODE with VARIATION)
+ *
+ * Generated using BATCH generation via scripts/generateAISamples.ts
+ * Generated on: 2025-11-03T03:56:28.089Z
+ * Topic filter: s1-math-linear (4 subtopics)
+ * Generation method: Batch (with variation control)
+ *
+ * Features:
+ * - Varied greetings: Anti-repetition instructions prevent formulaic patterns
+ * - Auto-populated audio URLs: Ready for audio file generation
+ * - Complete structure: Matches initialGreetingsCache.ts format exactly
+ *
+ * Next steps:
+ * 1. Review greetings for quality and variety
+ * 2. Copy desired greetings to initialGreetingsCache.ts
+ * 3. Run 'npm run generate-initial-audio' to create audio files
+ */
+
+import type { InitialGreetingResponse } from '../types/types';
+
+export interface CachedGreeting extends Omit<InitialGreetingResponse, 'speech'> {
+  speech: {
+    text: string;
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm';
+  };
+}
+
+export const INITIAL_GREETINGS_AI_GENERATED: Record<string, CachedGreeting> = {
+  's1-math-linear-functions-cartesian-coordinates': {
+    speech: {
+      text: `Welcome aboard! Think of the Cartesian plane as a mathematical map, helping us pinpoint exact locations. Mastering coordinates is the first step to navigating the world of linear functions. Let us start by making sure we know our directions.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-linear-functions-cartesian-coordinates.mp3'
+    },
+    display: {
+      content: `### Understanding the Coordinate System
+
+In the Cartesian coordinate system, which axis represents the horizontal position, and which letter is conventionally used to label it?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-linear-functions-function-concept': {
+    speech: {
+      text: `Hello! Today we are exploring the concept of a function. A function is essentially a reliable rule or a machine: you put in one input, and you get exactly one specific output. It is all about consistency. Let us check your foundational understanding of this relationship.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-linear-functions-function-concept.mp3'
+    },
+    display: {
+      content: `### Understanding Functions
+
+A relation is considered a function if every input (x-value) corresponds to exactly one output (y-value).
+
+Which of the following sets of ordered pairs represents a relation that is **NOT** a function?
+
+A) (1, 5), (2, 6), (3, 7)
+B) (4, 8), (4, 9), (5, 10)
+C) (–1, 1), (0, 0), (1, 1)`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-linear-functions-linear-graphs': {
+    speech: {
+      text: `Greetings! We are moving into the visual side of algebra now, focusing on linear graphs. Why are they called linear? Because when you plot them, they form a straight line. This section is about recognizing the defining characteristics of these functions. What makes an equation straight?`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-linear-functions-linear-graphs.mp3'
+    },
+    display: {
+      content: `### Identifying Linear Functions
+
+Which of the following equations represents a linear function?
+
+A) y = x² + 3
+B) y = 5x - 2
+C) y = \$\\frac{4}{x}\$
+D) y = \$\\sqrt{x}\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-linear-functions-gradient': {
+    speech: {
+      text: `Hey there! Ready to tackle the concept of gradient? Gradient, or slope, tells us exactly how steep a line is and in what direction it is moving. It is the rate of change. Think of it as the rise over the run. Let us start with the fundamental definition.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-linear-functions-gradient.mp3'
+    },
+    display: {
+      content: `### Understanding Gradient
+
+The gradient (m) of a line measures its steepness. It is calculated by the ratio of the change in the vertical distance (rise) to the change in the horizontal distance (run).
+
+If a line passes through two points, \$(x₁, y₁)\$ and \$(x₂, y₂)\$, write the formula used to calculate the gradient (m).`,
+      showAfterSpeech: true
+    }
+  }
+};
+
+/**
+ * Helper function to get AI-generated greeting for a topic
+ */
+export function getAIGeneratedGreeting(topicId: string): CachedGreeting | undefined {
+  return INITIAL_GREETINGS_AI_GENERATED[topicId];
+}
+
+/**
+ * Check if a topic has an AI-generated greeting
+ */
+export function hasAIGeneratedGreeting(topicId: string): boolean {
+  return topicId in INITIAL_GREETINGS_AI_GENERATED;
+}
+
+/**
+ * Get list of all topics with AI-generated greetings
+ */
+export function getAIGeneratedTopicIds(): string[] {
+  return Object.keys(INITIAL_GREETINGS_AI_GENERATED);
+}

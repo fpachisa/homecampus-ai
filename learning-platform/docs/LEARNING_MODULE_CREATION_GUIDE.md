@@ -280,17 +280,18 @@ bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700
 - ❌ Using pure white/black without alternatives
 - ❌ Not testing in dark mode before finishing
 
-#### 2.4 LaTeX Formatting in Notes (CRITICAL)
+#### 2.4 LaTeX Formatting in Notes (VERY VERY VERY CRITICAL)
+
+**⚠️ DO NOT, I repeat DO NOT use LaTeX if it can be done through unicode. DO NOT use LaTeX for text formtting or currency ($) sign. **
+** ONLY Use LaTeX if it's ABSOLUTELY mandatory life complex fractions
 
 **⚠️ IMPORTANT: Always Use the Shared MathText Component**
 
 All notes files MUST use the shared `MathText` component from `src/components/MathText.tsx`. This component:
 - Properly handles LaTeX rendering with KaTeX
-- Supports markdown formatting alongside math
-- Works correctly in both light and dark modes
-- Has been thoroughly tested and debugged
 
-**❌ NEVER create custom LaTeX parsers** - This leads to buggy, unmaintainable code. The original SquareAndCubeRoots.tsx had 93 lines of broken custom parsing logic that was completely replaced by using the shared component.
+
+**❌ NEVER create custom LaTeX parsers** - This leads to buggy, unmaintainable code.
 
 ---
 
@@ -303,74 +304,32 @@ import MathText from '../../../../components/MathText';
 
 **LaTeX Escaping Rules (CRITICAL)**:
 
-**Rule 1: Use ONE backslash in JSX** (not two)
-```tsx
-✅ Correct: <MathText>$\frac{1}{2}$</MathText>
-❌ Wrong:   <MathText>$\\frac{1}{2}$</MathText>  // Double backslash is wrong
-```
+**Rule 1: Wrap in string literals when LaTeX contains curly braces `{}`**
 
-**Rule 2: Wrap in string literals when LaTeX contains curly braces `{}`**
-
-This is THE most common mistake! JSX tries to parse `{}` as JavaScript expressions.
-
-```tsx
-// ❌ WRONG - JSX parsing error when curly braces present
-<MathText>$\sqrt{144}$</MathText>        // Error: JSX tries to parse {144}
-<MathText>$\frac{1}{2}$</MathText>       // Error: JSX tries to parse {1} and {2}
-
-// ✅ CORRECT - Wrap in string literal with single quotes
+✅ CORRECT - Wrap in string literal with single quotes
 <MathText>{'$\\sqrt{144}$'}</MathText>
 <MathText>{'$\\frac{1}{2}$'}</MathText>
-
-// ✅ ALSO CORRECT - Simple expressions without braces don't need wrapping
-<MathText>$x^2 + 3x - 5$</MathText>      // No braces, no wrapping needed
-<MathText>$2 \times 3 = 6$</MathText>    // No braces, works fine
-```
-
-**Key Pattern to Remember**:
-- Has `{}` in LaTeX? → Wrap in `{'...'}`
-- No `{}`? → Can use directly as children
-
----
-
-**Common Patterns Reference**:
-
-```tsx
-// Simple Expressions (no braces - no wrapping needed)
-<MathText>$x^2$</MathText>
-<MathText>$2 \times 3 = 6$</MathText>
-<MathText>$\theta = 45^{\circ}$</MathText>  // Wait - this has braces!
-
-// Square Roots and Cube Roots (has braces - MUST wrap)
-<MathText>{'$\\sqrt{144}$'}</MathText>
-<MathText>{'$\\sqrt{324}$'}</MathText>
-<MathText>{'$\\sqrt[3]{216}$'}</MathText>
-<MathText>{'$\\sqrt[3]{1728}$'}</MathText>
-
-// Fractions (has braces - MUST wrap)
-<MathText>{'$\\frac{1}{2}$'}</MathText>
-<MathText>{'$\\frac{numerator}{denominator}$'}</MathText>
-
-// Complex Expressions (has braces - MUST wrap)
-<MathText>{'$\\sqrt{144} = \\sqrt{(2^2 \\times 3)^2} = 2^2 \\times 3 = 12$'}</MathText>
-<MathText>{'$324 = 2^2 \\times 3^4 = (2 \\times 3^2) \\times (2 \\times 3^2)$'}</MathText>
-
-// Superscripts with Braces (has braces - MUST wrap)
 <MathText>{'$x^{2n}$'}</MathText>
 <MathText>{'$2^{10}$'}</MathText>
 
-// KaTeX-compatible Functions
-<MathText>$\sin(x)$</MathText>          // No braces, fine
-<MathText>{'$\\log_{2}(x)$'}</MathText>  // Has braces, wrap it
-<MathText>$\ln(x)$</MathText>            // No braces, fine
-```
+❌ Wrong:   
+<MathText>$\\frac{1}{2}$</MathText>  // without braces is WRONG
 
----
+**Rule 2: Use LaTeX if ABSOLUTELY necessary**
 
-**Escape Dollar Signs Outside Math**:
+❌ WRONG:
+<MathText>$x + 3y - 5 = 0$</MathText>      \\simple text doesn't need LaTeX
+<MathText>$2 \times 3 = 6$</MathText>  \\Use unicode symbols wherever available
+
+✅  Correct: 
+x + 3y - 5 = 0
+2 × 3 = 6
+
+
+**Rule 3: Use currency Dollar Signs Outside Math**:
 ```tsx
-✅ Correct: <p>The cost is \$150</p>
-❌ Wrong:   <p>The cost is $150</p>  // Triggers LaTeX rendering
+✅ Correct: <p>The cost is $150</p>
+❌ Wrong:   <p><MathText>$The cost is \$150$</MathText></p> 
 ```
 
 ---
@@ -383,115 +342,7 @@ This is THE most common mistake! JSX tries to parse `{}` as JavaScript expressio
 - [ ] Test all expandable solutions
 - [ ] Verify math renders correctly (not raw LaTeX code)
 
----
 
-**Common LaTeX Pitfalls (Real Examples from SquareAndCubeRoots.tsx)**:
-
-These are actual mistakes found in production code. Learn from them!
-
-**Pitfall 1: Creating Custom LaTeX Parsers**
-```tsx
-// ❌ WRONG - Custom parser (93 lines of buggy code)
-useEffect(() => {
-  if (!containerRef.current) return;
-
-  const renderLatex = (element: HTMLElement) => {
-    // Complex manual parsing logic...
-    // Breaks on nested braces, edge cases
-    // Unmaintainable and error-prone
-  };
-
-  renderLatex(containerRef.current);
-}, [showSolution1, showSolution2]);
-
-// ✅ CORRECT - Use shared MathText component
-import MathText from '../../../../components/MathText';
-
-<MathText>{'$\\sqrt{144}$'}</MathText>  // Simple, works perfectly
-```
-
-**Why custom parsers fail**:
-- Nested braces cause parsing errors
-- Edge cases with special characters
-- Dark mode compatibility issues
-- Difficult to debug and maintain
-- Already solved problem - don't reinvent the wheel
-
----
-
-**Pitfall 2: Forgetting String Wrapping for Braces**
-```tsx
-// ❌ WRONG - TypeScript error: "Invalid character" / "Unexpected token"
-<MathText>$\sqrt{144}$</MathText>
-<MathText>$\frac{1}{2}$</MathText>
-<MathText>Worked Example: Find $\sqrt{144}$</MathText>
-
-// ✅ CORRECT - Wrapped in string literal
-<MathText>{'$\\sqrt{144}$'}</MathText>
-<MathText>{'$\\frac{1}{2}$'}</MathText>
-<MathText>{'Worked Example: Find $\\sqrt{144}$'}</MathText>
-```
-
-**Error messages you'll see**:
-- `Invalid character. [1127] (ts)`
-- `Unexpected token. Did you mean '{'}'}' or '&rbrace;'? [1381] (ts)`
-- `Type 'number' is not assignable to type 'string'. [2322] (ts)`
-
-These errors mean: **JSX is trying to parse `{...}` as JavaScript!**
-
----
-
-**Pitfall 3: Using `text` Prop Instead of `children`**
-```tsx
-// ❌ WRONG - Some old notes used a `text` prop that doesn't exist
-<MathText text="$\sqrt{144}$" />
-
-// ✅ CORRECT - MathText uses children prop
-<MathText>{'$\\sqrt{144}$'}</MathText>
-
-// Alternative (also correct) - wrap in braces for consistency
-<MathText>$x^2$</MathText>  // Works if no braces in LaTeX
-```
-
----
-
-**Pitfall 4: Double Backslashes**
-```tsx
-// ❌ WRONG - Double backslash
-<MathText>{'$\\\\sqrt{144}$'}</MathText>    // Renders as "\\sqrt{144}" (raw LaTeX)
-
-// ✅ CORRECT - Single backslash in JSX
-<MathText>{'$\\sqrt{144}$'}</MathText>      // Renders as √144
-```
-
-**When this happens**:
-- You see the raw LaTeX command instead of rendered math
-- Example: Page shows `\sqrt{144}` instead of √144
-
----
-
-**Pitfall 5: Mixing Patterns Inconsistently**
-```tsx
-// ❌ INCONSISTENT - Hard to maintain
-<MathText>$x^2$</MathText>
-<MathText>{'$\\sqrt{144}$'}</MathText>
-<MathText>$y = 3$</MathText>
-<MathText>{'$\\frac{1}{2}$'}</MathText>
-
-// ✅ CONSISTENT - Easier to maintain (wrap everything)
-<MathText>{'$x^2$'}</MathText>
-<MathText>{'$\\sqrt{144}$'}</MathText>
-<MathText>{'$y = 3$'}</MathText>
-<MathText>{'$\\frac{1}{2}$'}</MathText>
-
-// ✅ ALSO ACCEPTABLE - Only wrap when needed (requires careful review)
-<MathText>$x^2$</MathText>           // No braces, no wrap
-<MathText>{'$\\sqrt{144}$'}</MathText>  // Has braces, wrapped
-<MathText>$y = 3$</MathText>          // No braces, no wrap
-<MathText>{'$\\frac{1}{2}$'}</MathText>  // Has braces, wrapped
-```
-
-**Recommendation**: When in doubt, always wrap in `{'...'}` - it works in all cases.
 
 ---
 

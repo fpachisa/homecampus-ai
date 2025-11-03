@@ -2320,6 +2320,93 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     ]
   },
 
+  gradientVisualizer: {
+    name: "Gradient Visualizer",
+    technicalName: "gradientVisualizer",
+    component: "GradientVisualizer",
+    category: "coordinate-geometry",
+    description: "Interactive tool for teaching gradient (slope) of a line through two points. Shows right-triangle method with rise/run visualization, step-by-step gradient calculation, and handles all cases (positive, negative, zero, undefined gradients).",
+    whenToUse: "Use for teaching gradient/slope concepts: calculating gradient from two points, visualizing rise over run, understanding positive/negative/zero/undefined gradients, showing the right-triangle method, or explaining gradient as rate of change.",
+
+    parameters: {
+      point1: "{x: number, y: number} - First point on the line (e.g., {x: 1, y: 2})",
+      point2: "{x: number, y: number} - Second point on the line (e.g., {x: 4, y: 8})",
+      showCalculation: "boolean (optional, default: false) - Use only if explaining gradient. Do not use if asking the student to calculate themselves.",
+      showTriangle: "boolean (optional, default: true) - Show right-triangle with rise and run visualization",
+      highlightRise: "boolean (optional, default: false) - Highlight the vertical change (rise) in red with arrow",
+      highlightRun: "boolean (optional, default: false) - Highlight the horizontal change (run) in blue with arrow",
+      caption: "string (optional) - Explanation text below visualization (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Teaching gradient with positive slope",
+        caption: "Calculate the gradient of the line passing through (1, 2) and (4, 8)",
+        parameters: {
+          point1: { x: 1, y: 2 },
+          point2: { x: 4, y: 8 },
+          showCalculation: false,
+          showTriangle: true,
+          highlightRise: false,
+          highlightRun: false
+        }
+      },
+      {
+        scenario: "Highlighting rise and run for gradient calculation",
+        caption: "The gradient is rise divided by run",
+        parameters: {
+          point1: { x: 2, y: 3 },
+          point2: { x: 6, y: 7 },
+          showCalculation: true,
+          showTriangle: true,
+          highlightRise: true,
+          highlightRun: true
+        }
+      },
+      {
+        scenario: "Negative gradient example",
+        caption: "Find the gradient of the line through (-1, 5) and (3, -3)",
+        parameters: {
+          point1: { x: -1, y: 5 },
+          point2: { x: 3, y: -3 },
+          showCalculation: false,
+          showTriangle: true
+        }
+      },
+      {
+        scenario: "Horizontal line (gradient = 0)",
+        caption: "What is the gradient of a horizontal line?",
+        parameters: {
+          point1: { x: -2, y: 3 },
+          point2: { x: 4, y: 3 },
+          showCalculation: false,
+          showTriangle: true
+        }
+      },
+      {
+        scenario: "Vertical line (undefined gradient)",
+        caption: "What is the gradient of a vertical line?",
+        parameters: {
+          point1: { x: 2, y: -3 },
+          point2: { x: 2, y: 5 },
+          showCalculation: false,
+          showTriangle: false
+        }
+      },
+      {
+        scenario: "Real-world context: speed from distance-time graph",
+        caption: "The gradient represents speed (change in distance ÷ change in time)",
+        parameters: {
+          point1: { x: 0, y: 0 },
+          point2: { x: 4, y: 200 },
+          showCalculation: true,
+          showTriangle: true,
+          caption: "Gradient = 50 km/h (speed)"
+        }
+      }
+    ]
+  },
+
   // ============================================
   // DIFFERENTIAL CALCULUS TOOLS
   // ============================================

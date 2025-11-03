@@ -172,7 +172,7 @@ export const FORMATTING_RULES: FormattingRules = {
   // RULE 2: LaTeX Only When ABSOLUTELY Necessary and for fractions
   latex: {
     mathExpressions: {
-      rule: "Use $...$ LaTeX ONLY when Unicode or Markdown cannot represent the expression and is ABSOLUTELY ESSENTIAL",
+      rule: "Use $...$ LaTeX ONLY when Unicode or Markdown cannot represent the expression and is ABSOLUTELY ESSENTIAL. NEVER use LaTeX for plain text or unicode symbols.",
       examples: {
         correct: [
           "All fractions: $\\frac{1}{2}$, $\\frac{13}{27}$ or $\\frac{x+1}{2x-3}$",

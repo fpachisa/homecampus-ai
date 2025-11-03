@@ -44,6 +44,7 @@ import BoxPlotVisualizer from '../math-tools/BoxPlotVisualizer';
 import ScatterPlotVisualizer from '../math-tools/ScatterPlotVisualizer';
 import CartesianPlaneVisualizer from '../math-tools/CartesianPlaneVisualizer';
 import Coordinate3DPlaneVisualizer from '../math-tools/Coordinate3DPlaneVisualizer';
+import GradientVisualizer from '../math-tools/GradientVisualizer';
 
 // Vector visualizers
 import VectorDiagramTool from '../math-tools/VectorDiagramTool';
@@ -145,6 +146,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   // Coordinate geometry tools
   cartesianPlane: CartesianPlaneVisualizer,
   coordinate3DPlane: Coordinate3DPlaneVisualizer,
+  gradientVisualizer: GradientVisualizer,
 
   // Vector tools
   vectorDiagram: VectorDiagramTool,

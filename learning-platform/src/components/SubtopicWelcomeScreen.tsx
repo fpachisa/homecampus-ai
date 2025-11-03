@@ -46,6 +46,10 @@ import { S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS } from '../prompt-library/subje
 import type { AnglesParallelLinesTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-angles-parallel-lines';
 import { S1_MATH_RATIO_RATE_SPEED_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
 import type { RatioRateSpeedTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-ratio-rate-speed';
+import { S1_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-percentage';
+import type { PercentageTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-percentage';
+import { S1_LINEAR_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
+import type { LinearFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -80,6 +84,10 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S1_MATH_ANGLES_PARALLEL_LINES_SUBTOPICS[topicId as AnglesParallelLinesTopicId];
   } else if (category === 's1-math-ratio-rate-speed') {
     topicConfig = S1_MATH_RATIO_RATE_SPEED_SUBTOPICS[topicId as RatioRateSpeedTopicId];
+  } else if (category === 's1-math-percentage') {
+    topicConfig = S1_PERCENTAGE_SUBTOPICS[topicId as PercentageTopicId];
+  } else if (category === 's1-math-linear-functions-graphs') {
+    topicConfig = S1_LINEAR_FUNCTIONS_SUBTOPICS[topicId as LinearFunctionsTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {

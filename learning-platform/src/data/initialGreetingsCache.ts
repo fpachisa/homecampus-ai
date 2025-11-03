@@ -3763,6 +3763,11 @@ Given two parallel lines cut by a transversal, if the upper angle in the pair me
       showAfterSpeech: true
     }
   },
+  /**
+   * ========================================
+   * S1 MATHEMATICS - RATIOS, RATE & SPEED
+   * ========================================
+   */ 
 
   's1-math-ratio-rate-speed-understanding-ratios': {
     speech: {
@@ -3828,7 +3833,183 @@ A cyclist is traveling at a speed of 18 kilometers per hour (km/h).
 *(Hint: 1 km = 1,000 m)*`,
       showAfterSpeech: true
     }
-  }
+  },
+  /**
+   * ========================================
+   * S1 MATHEMATICS - PERCENTAGES
+   * ========================================
+   */ 
+  's1-math-percentage-introduction': {
+    speech: {
+      text: `Welcome! Percentages are everywhere, from shopping to statistics. They give us a universal way to talk about parts of a whole, standardizing comparison to a base of one hundred. Let's start by understanding exactly what the percent symbol means.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-percentage-introduction.mp3'
+    },
+    display: {
+      content: `### Meaning of Percentage
+
+If 100 students were surveyed, and 45% said they preferred math, how many students preferred math?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-percentage-conversions': {
+    speech: {
+      text: `Hey there! Ready to become a math translator? Percentages, fractions, and decimals are just three different ways of saying the same thing. Mastering conversions gives you incredible flexibility in solving problems. Let's start by translating from percent to fraction and decimal.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-percentage-conversions.mp3'
+    },
+    display: {
+      content: `### Converting Percentage to Fraction and Decimal
+
+Convert 75% into both a simplified fraction and a decimal.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-percentage-expressing': {
+    speech: {
+      text: `Greetings! Have you ever wondered how grades are calculated or how well a sports team is performing relative to their total games? This topic is all about turning a ratio into a standard percentage score. Let's find out how one number measures up against another.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-percentage-expressing.mp3'
+    },
+    display: {
+      content: `### Basic Percentage Calculation (x as % of y)
+
+A student scored 38 marks out of a possible 50 on a test. What percentage score did the student achieve?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-percentage-comparing': {
+    speech: {
+      text: `Hi! We often need to compare apples and oranges, mathematically speaking. When two quantities are based on different totals, converting them to percentages is the only fair way to compare performance. Let's practice standardizing our comparison base to one hundred.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-percentage-comparing.mp3'
+    },
+    display: {
+      content: `### Comparing Using Percentage (Different Bases)
+
+Which statement represents a greater proportion: 12 successful shots out of 40, or 7 successful shots out of 25? Express both as percentages to compare.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-percentage-change': {
+    speech: {
+      text: `Good morning! The world is constantly changing, and math helps us quantify that change. Whether it's population growth or price inflation, percentage increase is a crucial tool. We'll start by calculating the new value after a positive change.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-percentage-change.mp3'
+    },
+    display: {
+      content: `### Percentage Increase
+
+A shirt costs \$40. If the price increases by 15%, what is the new price of the shirt?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-percentage-reverse': {
+    speech: {
+      text: `Welcome back! Today, we're putting on our detective hats. Reverse percentage problems challenge us to work backward from a final value to find the original starting amount. This skill is essential for calculating pre-tax prices or original populations.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-percentage-reverse.mp3'
+    },
+    display: {
+      content: `### Finding Original Value from Percentage
+
+After a 20% price increase, a bicycle now costs \$360. What was the original price of the bicycle before the increase?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-percentage-applications': {
+    speech: {
+      text: `Hey, savvy shopper! Ever seen a forty percent off sign and immediately calculated the savings? Percentage applications, especially discounts, are some of the most useful math skills you can learn. Let's make sure you always know the real final price.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-percentage-applications.mp3'
+    },
+    display: {
+      content: `### Discount Calculations
+
+A pair of sneakers is priced at \$85. If a store offers a 30% discount, what is the final price the customer pays?`,
+      showAfterSpeech: true
+    }
+  },
+  /**
+   * ========================================
+   * S1 LINEAR FUNCTIONS & GRAPHS
+   * ========================================
+   */
+
+  's1-math-linear-functions-cartesian-coordinates': {
+    speech: {
+      text: `Welcome aboard! Think of the Cartesian plane as a mathematical map, helping us pinpoint exact locations. Mastering coordinates is the first step to navigating the world of linear functions. Let us start by making sure we know our directions.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-linear-functions-cartesian-coordinates.mp3'
+    },
+    display: {
+      content: `### Understanding the Coordinate System
+
+In the Cartesian coordinate system, which axis represents the horizontal position, and which letter is conventionally used to label it?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-linear-functions-function-concept': {
+    speech: {
+      text: `Hello! Today we are exploring the concept of a function. A function is essentially a reliable rule or a machine: you put in one input, and you get exactly one specific output. It is all about consistency. Let us check your foundational understanding of this relationship.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-linear-functions-function-concept.mp3'
+    },
+    display: {
+      content: `### Understanding Functions
+
+A relation is considered a function if every input (x-value) corresponds to exactly one output (y-value).
+
+Which of the following sets of ordered pairs represents a relation that is **NOT** a function?
+
+A) (1, 5), (2, 6), (3, 7)
+B) (4, 8), (4, 9), (5, 10)
+C) (–1, 1), (0, 0), (1, 1)`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-linear-functions-linear-graphs': {
+    speech: {
+      text: `Greetings! We are moving into the visual side of algebra now, focusing on linear graphs. Why are they called linear? Because when you plot them, they form a straight line. This section is about recognizing the defining characteristics of these functions. What makes an equation straight?`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-linear-functions-linear-graphs.mp3'
+    },
+    display: {
+      content: `### Identifying Linear Functions
+
+Which of the following equations represents a linear function?
+
+A) y = x² + 3
+B) y = 5x - 2
+C) y = \$\\frac{4}{x}\$
+D) y = \$\\sqrt{x}\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-linear-functions-gradient': {
+    speech: {
+      text: `Hey there! Ready to tackle the concept of gradient? Gradient, or slope, tells us exactly how steep a line is and in what direction it is moving. It is the rate of change. Think of it as the rise over the run. Let us start with the fundamental definition.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-linear-functions-gradient.mp3'
+    },
+    display: {
+      content: `### Understanding Gradient
+
+The gradient (m) of a line measures its steepness. It is calculated by the ratio of the change in the vertical distance (rise) to the change in the horizontal distance (run).
+
+If a line passes through two points, \$(x₁, y₁)\$ and \$(x₂, y₂)\$, write the formula used to calculate the gradient (m).`,
+      showAfterSpeech: true
+    }
+  }  
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

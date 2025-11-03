@@ -445,7 +445,7 @@ const HomePage: React.FC = () => {
       <footer className="relative z-10 px-8 py-4 border-t" style={{ borderColor: theme.colors.border }}>
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm" style={{ color: theme.colors.textMuted }}>
-            AI-powered Socratic learning for Secondary 3 students
+            AI-powered Socratic learning
           </p>
         </div>
       </footer>
