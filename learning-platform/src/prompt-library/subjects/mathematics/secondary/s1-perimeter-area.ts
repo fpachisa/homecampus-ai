@@ -528,7 +528,7 @@ export const S1_MATH_PERIMETER_AREA_SUBTOPICS = {
         {
           id: "decomposition-strategy",
           title: "Breaking Down Composite Shapes",
-          difficulty: "intermediate",
+          difficulty: "basic",
           prerequisites: ["trapezium-area"],
           masterySignals: "Student correctly identifies how to break composite shapes into basic shapes in 3+ problems",
           estimatedQuestions: "4-5 questions",
@@ -599,7 +599,7 @@ export const S1_MATH_PERIMETER_AREA_SUBTOPICS = {
         {
           id: "addition-method",
           title: "Composite Shapes - Addition Method",
-          difficulty: "intermediate-to-advanced",
+          difficulty: "basic-to-intermediate",
           prerequisites: ["decomposition-strategy"],
           masterySignals: "Student correctly calculates area of composite shapes by adding component areas in 3+ problems",
           estimatedQuestions: "5-6 questions",
@@ -676,7 +676,7 @@ export const S1_MATH_PERIMETER_AREA_SUBTOPICS = {
         {
           id: "subtraction-method",
           title: "Composite Shapes - Subtraction Method",
-          difficulty: "intermediate-to-advanced",
+          difficulty: "basic-to-intermediate",
           prerequisites: ["addition-method"],
           masterySignals: "Student correctly calculates area of shapes with cutouts using subtraction method in 3+ problems",
           estimatedQuestions: "4-5 questions",
@@ -756,7 +756,7 @@ export const S1_MATH_PERIMETER_AREA_SUBTOPICS = {
         {
           id: "complex-composites",
           title: "Advanced Composite Shape Problems",
-          difficulty: "advanced",
+          difficulty: "intermediate-to-advanced",
           prerequisites: ["subtraction-method"],
           masterySignals: "Student solves complex composite problems combining addition and subtraction methods, with multiple components and curved edges",
           estimatedQuestions: "4-5 questions",
@@ -838,10 +838,10 @@ export const S1_MATH_PERIMETER_AREA_SUBTOPICS = {
 
     learningObjectives: [
       "Students will progress through 4 sections:",
-      "1. Decomposition Strategy (intermediate) - Break composite shapes into basic components",
-      "2. Addition Method (intermediate→advanced) - Calculate area by adding components (L, T, U shapes, stadium, arch)",
-      "3. Subtraction Method (intermediate→advanced) - Calculate area with cutouts (holes, windows)",
-      "4. Complex Composites (advanced) - Combine methods, handle irregular shapes, find missing dimensions"
+      "1. Decomposition Strategy (basic) - Break composite shapes into basic components",
+      "2. Addition Method (basic→intermediate) - Calculate area by adding components (L, T, U shapes, stadium, arch)",
+      "3. Subtraction Method (basic→intermediate) - Calculate area with cutouts (holes, windows)",
+      "4. Complex Composites (intermediate→advanced) - Combine methods, handle irregular shapes, find missing dimensions"
     ],
 
     keyFormulas: `• Decomposition: Break complex shapes into basic shapes
@@ -852,7 +852,11 @@ export const S1_MATH_PERIMETER_AREA_SUBTOPICS = {
                   • Stadium: Rectangle + Circle (or Rectangle + 2 semicircles)
                   • Arch: Rectangle + Semicircle
                   • With cutouts: Calculate outer shape, subtract cutout(s)
-                  • π ≈ 3.14 or 22/7`
+                  • π ≈ 3.14 or 22/7`,
+
+    // Use pre-generated question bank for this subtopic
+    // Composite figures are difficult to generate accurately with AI
+    usePreGeneratedQuestions: true
   }
 };
 

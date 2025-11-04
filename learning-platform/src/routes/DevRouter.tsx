@@ -3,6 +3,7 @@ import AvatarTest from '../components/AvatarTest';
 import QuestionPreviewPage from '../components/QuestionPreviewPage';
 import VisualizerTestPage from '../pages/VisualizerTestPage';
 import NotesViewerPage from '../pages/NotesViewerPage';
+import QuestionBankViewer from '../components/QuestionBankViewer';
 // Import other dev components as needed
 
 /**
@@ -56,6 +57,7 @@ const DevHome = () => {
     { path: '/dev/visualizers', name: 'Math Visualizer Testing Lab', description: 'Test all math visualizers with AI-generated questions' },
     { path: '/dev/notes', name: 'Notes Viewer', description: 'View and test all notes components' },
     { path: '/dev/preview', name: 'Question Preview', description: 'Preview and test question generation' },
+    { path: '/dev/question-bank', name: 'Question Bank Viewer', description: 'View pre-generated question banks with SVG diagrams' },
   ];
 
   return (
@@ -99,6 +101,7 @@ export default function DevRouter() {
       <Route path="visualizers" element={<VisualizerGallery />} />
       <Route path="notes" element={<NotesViewer />} />
       <Route path="preview" element={<QuestionPreview />} />
+      <Route path="question-bank" element={<QuestionBankViewer />} />
       <Route path="*" element={<Navigate to="/dev" replace />} />
     </Routes>
   );

@@ -70,7 +70,9 @@ import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
 import NotesViewer from './NotesViewer';
 import SectionProgressTracker from './SectionProgressTracker';
-import { getCachedGreeting } from '../data/initialGreetingsCache';
+import { getCachedGreeting, type CachedGreeting } from '../data/initialGreetingsCache';
+import { preGeneratedQuestionsService } from '../services/preGeneratedQuestionsService';
+import type { PreGeneratedQuestion } from '../data/learn/question-banks/types';
 
 interface ChatInterfaceProps {
   topicId?: string;
@@ -209,6 +211,59 @@ const validateMathTool = (mathTool: any): import('../types/types').MathTool | un
   }
 
   return mathTool;
+};
+
+/**
+ * Check if a topic uses pre-generated questions
+ * Returns true if the topic has usePreGeneratedQuestions flag set to true
+ */
+const usesPreGeneratedQuestions = (topicId: string): boolean => {
+  const topicConfig = getTopicConfig(topicId);
+  if (!topicConfig) return false;
+  return (topicConfig as any).usePreGeneratedQuestions === true;
+};
+
+/**
+ * Get the section index (0-based) from a section ID
+ * Returns the index of the section in the progressionStructure, or 0 if not found
+ */
+const getSectionIndex = (topicId: string, sectionId: string): number => {
+  const topicConfig = getTopicConfig(topicId);
+  if (!topicConfig) return 0;
+
+  const sections = (topicConfig as any).progressionStructure?.sections;
+  if (!sections || !Array.isArray(sections)) return 0;
+
+  const index = sections.findIndex((section: any) => section.id === sectionId);
+  return index >= 0 ? index : 0;
+};
+
+/**
+ * Create an initial greeting response with a pre-generated question
+ * Used for topics with pre-generated question banks
+ */
+const createGreetingWithPreGeneratedQuestion = (
+  question: PreGeneratedQuestion,
+  topicConfig: any
+): InitialGreetingResponse => {
+  const topicName = topicConfig.displayName || 'this topic';
+
+  // Include image only if imagePath is provided
+  const displayContent = question.imagePath
+    ? `${question.problemStatement}\n\n![Problem Diagram](${question.imagePath})`
+    : question.problemStatement;
+
+  return {
+    speech: {
+      text: `Let's start learning about ${topicName}! I've prepared a problem for you.`,
+      emotion: 'encouraging'
+    },
+    display: {
+      content: displayContent,
+      showAfterSpeech: true
+    },
+    mathTool: undefined  // Pre-generated questions include images instead of interactive tools
+  };
 };
 
 // Loading message mapping with contextual, emoji-enriched feedback
@@ -587,7 +642,8 @@ const initializeConversation = async () => {
             masteredAt: null,
             questionsAttempted: 0,
             questionsCorrect: 0,
-            hintsUsed: 0
+            hintsUsed: 0,
+            currentQuestionIndex: -1  // Initialize for pre-generated question topics
           }]
         };
         setSectionProgress(initialSectionProgress);
@@ -595,16 +651,89 @@ const initializeConversation = async () => {
       }
 
       // Get initial greeting and first problem
-      // Check cache first for instant load, fall back to AI generation
       let response: InitialGreetingResponse;
-      const cachedGreeting = getCachedGreeting(topicId);
+      let cachedGreeting: CachedGreeting | undefined = undefined;
+      const usePreGenerated = usesPreGeneratedQuestions(topicId);
 
-      if (cachedGreeting) {
-        console.log('⚡ Using cached initial greeting (instant load)');
-        response = cachedGreeting;
+      if (usePreGenerated) {
+        // Load first question from pre-generated question bank
+        console.log('🏦 Using PRE-GENERATED question bank flow');
+
+        // Check if there's an intro section (sectionIndex: -1)
+        const introQuestion = preGeneratedQuestionsService.getQuestionByIndex(
+          topicId,
+          -1,  // Intro section
+          0    // First intro question
+        );
+
+        let targetSectionIndex: number;
+
+        if (introQuestion) {
+          // Use intro question and cached greeting
+          console.log('📚 Found intro section (sectionIndex: -1), loading intro question first');
+          targetSectionIndex = -1;
+
+          // Try to get cached greeting for better intro experience
+          const greetingCache = getCachedGreeting(topicId);
+          if (greetingCache) {
+            console.log('⚡ Using cached greeting with intro question');
+            cachedGreeting = greetingCache;
+            // Combine cached greeting speech with intro question display
+            response = {
+              speech: greetingCache.speech,
+              display: {
+                content: introQuestion.problemStatement,
+                showAfterSpeech: true
+              },
+              mathTool: undefined
+            };
+          } else {
+            // Fallback to generic greeting if no cached greeting
+            response = createGreetingWithPreGeneratedQuestion(introQuestion, topicConfig);
+          }
+        } else {
+          // No intro section, load Section 1 as usual
+          console.log('📖 No intro section found, loading Section 1 directly');
+          const sectionIndex = getSectionIndex(topicId, firstSection.id);
+          const section1Question = preGeneratedQuestionsService.getQuestionByIndex(
+            topicId,
+            sectionIndex,
+            0  // First question
+          );
+
+          if (!section1Question) {
+            throw new Error(`No pre-generated questions found for topic ${topicId}, section ${sectionIndex}`);
+          }
+
+          targetSectionIndex = sectionIndex;
+          response = createGreetingWithPreGeneratedQuestion(section1Question, topicConfig);
+        }
+
+        // Update section progress to set currentQuestionIndex
+        // For intro section, we use sectionIndex -1 and questionIndex 0
+        // For Section 1, we use the actual sectionIndex and questionIndex 0
+        setSectionProgress(prev => ({
+          ...prev,
+          sectionHistory: prev.sectionHistory.map(entry =>
+            entry.sectionId === firstSection.id
+              ? {
+                  ...entry,
+                  currentQuestionIndex: targetSectionIndex === -1 ? -1 : 0  // -1 for intro, 0 for Section 1
+                }
+              : entry
+          )
+        }));
       } else {
-        console.log('🤖 No cached greeting found, generating with AI...');
-        response = await aiService.current.generateInitialGreetingWithProblem(topicId);
+        // Check cache first for instant load, fall back to AI generation
+        cachedGreeting = getCachedGreeting(topicId);
+
+        if (cachedGreeting) {
+          console.log('⚡ Using cached initial greeting (instant load)');
+          response = cachedGreeting;
+        } else {
+          console.log('🤖 No cached greeting found, generating with AI...');
+          response = await aiService.current.generateInitialGreetingWithProblem(topicId);
+        }
       }
 
       // Check if topic hasn't changed while we were waiting
@@ -756,12 +885,41 @@ const initializeConversation = async () => {
 
       setLoadingState({ active: true, stage: 'loading_section' });
       try {
+        // Check if using pre-generated questions
+        const usePreGenerated = usesPreGeneratedQuestions(topicId);
+        let preGeneratedQuestion: PreGeneratedQuestion | undefined;
+
+        if (usePreGenerated) {
+          // Load current question from question bank
+          const sectionIndex = getSectionIndex(topicId, sectionId);
+          const currentQuestionIndex = sectionStats.currentQuestionIndex ?? 0;
+
+          console.log(`🏦 Loading pre-generated question at index ${currentQuestionIndex} for resume`);
+
+          preGeneratedQuestion = preGeneratedQuestionsService.getQuestionByIndex(
+            topicId,
+            sectionIndex,
+            currentQuestionIndex
+          ) || undefined;
+
+          if (!preGeneratedQuestion) {
+            console.warn(`No question found at index ${currentQuestionIndex}, using index 0`);
+            preGeneratedQuestion = preGeneratedQuestionsService.getQuestionByIndex(
+              topicId,
+              sectionIndex,
+              0
+            ) || undefined;
+          }
+        }
+
         // Generate resume with summary and next question
+        // Pass pre-generated question if available (AI will generate speech only)
         const resumeResponse = await aiService.current.generateSectionResume(
           topicId,
           sectionId,
           sectionMessages.slice(-6),  // Last 6 messages for context
-          sectionStats
+          sectionStats,
+          preGeneratedQuestion
         );
 
         // Speak the resume/summary
@@ -802,7 +960,8 @@ const initializeConversation = async () => {
             masteredAt: null,
             questionsAttempted: 0,
             questionsCorrect: 0,
-            hintsUsed: 0
+            hintsUsed: 0,
+            currentQuestionIndex: -1  // Initialize for pre-generated question topics
           }
         ]
       }));
@@ -811,7 +970,48 @@ const initializeConversation = async () => {
     // Generate first question for this section
     setLoadingState({ active: true, stage: 'loading_section' });
     try {
-      const response = await aiService.current.generateSectionStartQuestion(topicId, sectionId);
+      const usePreGenerated = usesPreGeneratedQuestions(topicId);
+      let preGeneratedQuestion: PreGeneratedQuestion | undefined;
+
+      if (usePreGenerated) {
+        // Load first question from pre-generated question bank for this section
+        console.log(`🏦 Loading first pre-generated question for section: ${sectionId}`);
+        const sectionIndex = getSectionIndex(topicId, sectionId);
+        console.log(`📊 Section index for ${sectionId}:`, sectionIndex);
+
+        const firstQuestion = preGeneratedQuestionsService.getQuestionByIndex(
+          topicId,
+          sectionIndex,
+          0  // First question
+        );
+
+        if (!firstQuestion) {
+          throw new Error(`No pre-generated questions found for topic ${topicId}, section ${sectionIndex}`);
+        }
+
+        preGeneratedQuestion = firstQuestion;
+        console.log(`✅ Pre-generated question loaded:`, preGeneratedQuestion.questionId);
+
+        // Update section progress to set currentQuestionIndex to 0 for this section
+        setSectionProgress(prev => ({
+          ...prev,
+          sectionHistory: prev.sectionHistory.map(entry =>
+            entry.sectionId === sectionId
+              ? { ...entry, currentQuestionIndex: 0 }
+              : entry
+          )
+        }));
+      }
+
+      console.log(`📤 Calling generateSectionStartQuestion with preGenQ:`, preGeneratedQuestion ? `YES (${preGeneratedQuestion.questionId})` : 'NO');
+
+      // Generate section start question (with or without pre-generated question)
+      // If pre-generated question is provided, AI generates speech only
+      const response = await aiService.current.generateSectionStartQuestion(
+        topicId,
+        sectionId,
+        preGeneratedQuestion
+      );
 
       // Speak the greeting/transition
       const emotion = response.speech.emotion || 'encouraging';
@@ -893,6 +1093,355 @@ const handleStudentSubmit = async (input: string) => {
 
       // Update state immediately so subsequent code sees the incremented count
       setProblemState(updatedProblemState);
+
+      // ========================================
+      // BRANCH: Check if topic uses pre-generated questions
+      // ========================================
+      const usePreGenerated = usesPreGeneratedQuestions(topicId);
+
+      if (usePreGenerated) {
+        // PRE-GENERATED QUESTION FLOW
+        console.log('🏦 Using PRE-GENERATED question bank flow');
+
+        // Get current section stats to find current question index
+        const currentSectionStats = sectionProgress.sectionHistory.find(
+          entry => entry.sectionId === sectionProgress.currentSection
+        );
+
+        if (!currentSectionStats) {
+          console.error('No section stats found for current section');
+          throw new Error('Section stats not initialized');
+        }
+
+        const currentQuestionIndex = currentSectionStats.currentQuestionIndex ?? -1;
+
+        // Get topic config to extract section index
+        const topicConfig = getTopicConfig(topicId);
+        if (!topicConfig || !('progressionStructure' in topicConfig)) {
+          throw new Error(`No progression structure found for topic: ${topicId}`);
+        }
+
+        const sections = (topicConfig as any).progressionStructure.sections;
+
+        // Determine which section index to use for question bank
+        // If currentQuestionIndex is -1, we're in the intro section
+        let sectionIndex: number;
+        if (currentQuestionIndex === -1) {
+          // We're in intro section, use special sectionIndex -1
+          console.log('📚 Currently in intro section (sectionIndex: -1)');
+          sectionIndex = -1;
+        } else {
+          // Normal section, find index in progression structure
+          sectionIndex = sections.findIndex((s: any) => s.id === sectionProgress.currentSection);
+
+          if (sectionIndex === -1) {
+            throw new Error(`Current section not found in progression structure: ${sectionProgress.currentSection}`);
+          }
+        }
+
+        // Get current question from question bank
+        const currentQuestion = preGeneratedQuestionsService.getQuestionByIndex(
+          topicId,
+          sectionIndex,
+          sectionIndex === -1 ? 0 : currentQuestionIndex  // Intro uses question 0, others use tracked index
+        );
+
+        if (!currentQuestion) {
+          console.error(`No question found at index ${currentQuestionIndex} for section ${sectionIndex}`);
+          throw new Error('Current question not found in bank');
+        }
+
+        console.log(`📖 Using question ${currentQuestionIndex} from bank:`, currentQuestion.questionId);
+
+        // Peek at next question for intelligent transition speech
+        let nextQuestion: PreGeneratedQuestion | null = null;
+        let isLastQuestionInSection = false;
+
+        if (sectionIndex === -1) {
+          // In intro section, peek at first question of Section 1 (sectionIndex 0)
+          console.log('📚 Intro section: Peeking at Section 1, Question 1');
+          nextQuestion = preGeneratedQuestionsService.getQuestionByIndex(topicId, 0, 0);
+          isLastQuestionInSection = false; // Intro transitions to Section 1
+        } else {
+          // In regular section, peek at next question in same section
+          nextQuestion = preGeneratedQuestionsService.getNextQuestion(
+            topicId,
+            sectionIndex,
+            currentQuestionIndex
+          );
+
+          // Calculate if this is the last question in the section
+          const totalQuestions = preGeneratedQuestionsService.getTotalQuestions(topicId, sectionIndex);
+          isLastQuestionInSection = (currentQuestionIndex === totalQuestions - 1);
+        }
+
+        console.log(`📊 Next question preview: ${nextQuestion?.questionId || 'none'}, isLast: ${isLastQuestionInSection}`);
+
+        // STEP 1: Pre-Generated Learn Evaluator - Evaluate with solution context
+        const preGenEvaluatorOutput = await aiService.current.evaluateAnswerPreGenerated(
+          input,
+          recentHistory,
+          updatedProblemState,
+          topicId,
+          sectionProgress,
+          currentQuestion,
+          nextQuestion ?? undefined,  // Pass next question for context (convert null to undefined)
+          isLastQuestionInSection  // Pass last question flag
+        );
+
+        console.log('Pre-Gen Evaluator output:', preGenEvaluatorOutput);
+        console.log('Action:', preGenEvaluatorOutput.action);
+
+        // Update loading stage based on evaluator's decision
+        const stageMap: Record<string, LoadingStage> = {
+          'GIVE_HINT': 'generating_hint',
+          'GIVE_SOLUTION': 'generating_solution',
+          'NEW_PROBLEM': 'generating_question'
+        };
+        setLoadingState({ active: true, stage: preGenEvaluatorOutput.action ? stageMap[preGenEvaluatorOutput.action] : 'celebrating' });
+
+        // STEP 2: Update problem state (hints tracking)
+        if (preGenEvaluatorOutput.action === "GIVE_HINT") {
+          setProblemState(prev => prev ? ({
+            ...prev,
+            hintsGivenForCurrentProblem: prev.hintsGivenForCurrentProblem + 1
+          }) : prev);
+        }
+
+        // Calculate time spent on current problem (for analytics)
+        const timeSpentOnProblem = updatedProblemState.problemStartTime
+          ? Math.round((Date.now() - updatedProblemState.problemStartTime.getTime()) / 1000)
+          : 0;
+
+        // Track problems completed (when evaluator decides to give new problem after correct answer)
+        if (preGenEvaluatorOutput.answerCorrect && preGenEvaluatorOutput.action === "NEW_PROBLEM") {
+          const newProblemsCompleted = problemsCompleted + 1;
+          setProblemsCompleted(newProblemsCompleted);
+
+          setState(prev => ({
+            ...prev,
+            sessionStats: {
+              ...prev.sessionStats,
+              correctAnswers: newProblemsCompleted
+            }
+          }));
+
+          console.log(`⏱️ Problem completed in ${timeSpentOnProblem}s with ${updatedProblemState.attemptsForCurrentProblem} attempt(s) and ${updatedProblemState.hintsGivenForCurrentProblem} hint(s)`);
+        }
+
+        // Log timing for solution requests
+        if (preGenEvaluatorOutput.action === "GIVE_SOLUTION") {
+          console.log(`⏱️ Solution requested after ${timeSpentOnProblem}s with ${updatedProblemState.attemptsForCurrentProblem} attempt(s) and ${updatedProblemState.hintsGivenForCurrentProblem} hint(s)`);
+        }
+
+        // STEP 2.4: Update section stats for current section
+        const currentSectionId = sectionProgress.currentSection;
+        if (currentSectionId) {
+          setSectionProgress(prev => ({
+            ...prev,
+            sectionHistory: prev.sectionHistory.map(entry => {
+              if (entry.sectionId === currentSectionId) {
+                return {
+                  ...entry,
+                  questionsAttempted: preGenEvaluatorOutput.action === "NEW_PROBLEM"
+                    ? entry.questionsAttempted + 1
+                    : entry.questionsAttempted,
+                  questionsCorrect: preGenEvaluatorOutput.answerCorrect
+                    ? entry.questionsCorrect + 1
+                    : entry.questionsCorrect,
+                  hintsUsed: preGenEvaluatorOutput.action === "GIVE_HINT"
+                    ? entry.hintsUsed + 1
+                    : entry.hintsUsed
+                };
+              }
+              return entry;
+            })
+          }));
+          console.log(`📊 Updated section stats for ${currentSectionId}: attempted ${preGenEvaluatorOutput.action === "NEW_PROBLEM" ? '+1' : '0'}, correct: ${preGenEvaluatorOutput.answerCorrect ? '+1' : '0'}, hints: ${preGenEvaluatorOutput.action === "GIVE_HINT" ? '+1' : '0'}`);
+        }
+
+        // STEP 2.4.1: Update session-wide stats for hints
+        if (preGenEvaluatorOutput.action === "GIVE_HINT") {
+          setState(prev => ({
+            ...prev,
+            sessionStats: {
+              ...prev.sessionStats,
+              hintsProvided: prev.sessionStats.hintsProvided + 1
+            }
+          }));
+          console.log('📊 Session-wide hints provided incremented');
+        }
+
+        // STEP 2.5: Section progression
+        // NOTE: For pre-generated questions, section completion is determined by the system
+        // based on isLastQuestionInSection, not by AI mastery decisions.
+        // User manually advances to next section by clicking section pills.
+
+        // STEP 3: Handle actions based on evaluator output
+        // Note: action is always present (GIVE_HINT, GIVE_SOLUTION, or NEW_PROBLEM)
+        let problemTypeForExecution = state.currentProblemType;
+
+        if (preGenEvaluatorOutput.action === "NEW_PROBLEM") {
+          // SPECIAL CASE: Last question in section
+          // Play celebration speech but don't load another question
+          if (isLastQuestionInSection) {
+            console.log('🎉 SECTION COMPLETE! Last question answered correctly.');
+
+            const celebrationText = preGenEvaluatorOutput.speech.text;
+            const emotion = preGenEvaluatorOutput.speech.emotion || 'celebratory';
+
+            speakText(celebrationText, emotion);
+
+            console.log('=== SECTION COMPLETE - USER CAN ADVANCE VIA SECTION PILLS ===');
+            return; // Don't load another question
+          }
+
+          // NORMAL CASE: Load next question
+          console.log('🎯 Getting next question from question bank');
+
+          // Special handling: Transition from intro section (-1) to Section 1 (0)
+          let targetSectionIndex = sectionIndex;
+          let targetQuestionIndex = currentQuestionIndex;
+
+          if (sectionIndex === -1) {
+            // We're in the intro section, transition to Section 1
+            console.log('🎓 Transitioning from intro section to Section 1');
+            targetSectionIndex = 0;  // Section 1
+            targetQuestionIndex = -1;  // Will become 0 after calculation
+          }
+
+          const nextQuestion = preGeneratedQuestionsService.getNextQuestion(
+            topicId,
+            targetSectionIndex,
+            targetQuestionIndex
+          );
+
+          if (!nextQuestion) {
+            console.error(`Failed to get next question from question bank`);
+            throw new Error('Failed to load next question from bank');
+          }
+
+          // Calculate the next index (cycles through questions)
+          const totalQuestions = preGeneratedQuestionsService.getTotalQuestions(topicId, targetSectionIndex);
+          const nextQuestionIndex = targetQuestionIndex === -1 ? 0 : (targetQuestionIndex + 1) % totalQuestions;
+
+          console.log(`📖 Next question: ${nextQuestion.questionId} (section ${targetSectionIndex}, index ${nextQuestionIndex})`);
+
+          // Update currentQuestionIndex in section progress
+          setSectionProgress(prev => ({
+            ...prev,
+            sectionHistory: prev.sectionHistory.map(entry =>
+              entry.sectionId === currentSectionId
+                ? { ...entry, currentQuestionIndex: nextQuestionIndex }
+                : entry
+            )
+          }));
+
+          // Create celebration speech from evaluator or default
+          const celebrationText = preGenEvaluatorOutput.speech?.text || "Great work! Let's try another one.";
+          const emotion = preGenEvaluatorOutput.speech?.emotion || 'celebratory';
+
+          // Speak the celebration, then show the problem
+          speakText(celebrationText, emotion, () => {
+            // After speech, show the problem (with image if available)
+            const problemDisplay = nextQuestion.imagePath
+              ? `${nextQuestion.problemStatement}\n\n![Problem Diagram](${nextQuestion.imagePath})`
+              : nextQuestion.problemStatement;
+
+            addMessage('tutor', problemDisplay, {
+              problemType: problemTypeForExecution
+            });
+
+            resetProblemState(nextQuestion.problemStatement, problemTypeForExecution, undefined);
+
+            setState(prev => ({
+              ...prev,
+              sessionStats: {
+                ...prev.sessionStats,
+                problemsAttempted: prev.sessionStats.problemsAttempted + 1
+              }
+            }));
+
+            // Auto-focus input after new problem is displayed
+            setTimeout(() => {
+              inputAreaRef.current?.focus();
+            }, 300);
+          });
+
+        } else if (preGenEvaluatorOutput.action === "GIVE_HINT") {
+          // Use speech/display directly from evaluator (no Tutor agent)
+          console.log('💭 Using direct hint from Pre-Gen Evaluator');
+
+          if (!preGenEvaluatorOutput.speech || !preGenEvaluatorOutput.display) {
+            console.error('Missing speech or display in Pre-Gen Evaluator output');
+            throw new Error('Incomplete evaluator output');
+          }
+
+          const emotion = preGenEvaluatorOutput.speech.emotion || 'neutral';
+
+          // Speak with callback to show display content after speech completes
+          speakText(preGenEvaluatorOutput.speech.text, emotion, async () => {
+            // After speech, show display content
+            if (preGenEvaluatorOutput.display!.content) {
+              addMessage('tutor', preGenEvaluatorOutput.display!.content, {
+                problemType: problemTypeForExecution
+              });
+
+              // Auto-focus input after displaying hint
+              setTimeout(() => {
+                inputAreaRef.current?.focus();
+              }, 300);
+            }
+          });
+
+        } else if (preGenEvaluatorOutput.action === "GIVE_SOLUTION") {
+          // Use speech/display directly from evaluator (no Solution agent, no nested solution object)
+          console.log('📝 Using direct solution from Pre-Gen Evaluator');
+
+          if (!preGenEvaluatorOutput.speech || !preGenEvaluatorOutput.display) {
+            console.error('Missing speech or display in Pre-Gen Evaluator output');
+            throw new Error('Incomplete evaluator output for GIVE_SOLUTION');
+          }
+
+          const speechText = preGenEvaluatorOutput.speech.text;
+          const emotion = preGenEvaluatorOutput.speech.emotion || 'supportive';
+
+          // Speak the intro speech, then show the solution
+          speakText(speechText, emotion, () => {
+            // Display the step-by-step solution
+            addMessage('tutor', preGenEvaluatorOutput.display!.content, {
+              problemType: problemTypeForExecution,
+              messageType: 'solution'
+            });
+          });
+
+          // Store pending new problem details (for "Next Problem" button)
+          const { formatConversationHistory } = await import('../services/utils/responseParser');
+          const formattedHistory = formatConversationHistory(
+            state.messages
+              .filter(m => m.sectionId === sectionProgress.currentSection)
+              .slice(-6)
+          );
+
+          pendingNewProblemRef.current = {
+            problemType: problemTypeForExecution,
+            topicId,
+            recentHistory: formattedHistory
+          };
+        }
+
+        console.log('=== PRE-GENERATED QUESTION FLOW COMPLETE ===');
+        console.log('Final state - Problems completed:', problemsCompleted);
+        console.log('Action taken:', preGenEvaluatorOutput.action);
+
+        // Exit early - pre-generated flow complete
+        return;
+      }
+
+      // ========================================
+      // REGULAR FLOW (AI-Generated Questions)
+      // ========================================
+      console.log('🤖 Using REGULAR AI-generated question flow');
 
       // STEP 1: Evaluator Agent - Evaluate answer and decide action
       const evaluatorOutput = await aiService.current.evaluateAnswer(
@@ -1026,7 +1575,8 @@ const handleStudentSubmit = async (input: string) => {
               masteredAt: null,
               questionsAttempted: 0,
               questionsCorrect: 0,
-              hintsUsed: 0
+              hintsUsed: 0,
+              currentQuestionIndex: -1  // Initialize for consistency (used by pre-generated topics)
             };
             updatedSectionHistory = [...updatedSectionHistory, newSectionEntry];
             console.log(`📊 Initialized stats for new section: ${newCurrentSection}`);

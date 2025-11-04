@@ -186,9 +186,13 @@ class FallbackAIService implements AIService {
     );
   }
 
-  async generateSectionStartQuestion(topicId: string, sectionId: string): Promise<InitialGreetingResponse> {
+  async generateSectionStartQuestion(
+    topicId: string,
+    sectionId: string,
+    preGeneratedQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion
+  ): Promise<InitialGreetingResponse> {
     return this.executeWithFallback(
-      (service) => service.generateSectionStartQuestion(topicId, sectionId),
+      (service) => service.generateSectionStartQuestion(topicId, sectionId, preGeneratedQuestion),
       'generateSectionStartQuestion'
     );
   }
@@ -197,10 +201,11 @@ class FallbackAIService implements AIService {
     topicId: string,
     sectionId: string,
     sectionMessages: Message[],
-    sectionStats: import('../types/types').SectionProgressEntry
+    sectionStats: import('../types/types').SectionProgressEntry,
+    preGeneratedQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion
   ): Promise<InitialGreetingResponse> {
     return this.executeWithFallback(
-      (service) => service.generateSectionResume(topicId, sectionId, sectionMessages, sectionStats),
+      (service) => service.generateSectionResume(topicId, sectionId, sectionMessages, sectionStats, preGeneratedQuestion),
       'generateSectionResume'
     );
   }
@@ -279,6 +284,34 @@ class FallbackAIService implements AIService {
         reasoning: "Fallback response due to all AI services being unavailable. Please try again."
       };
     }
+  }
+
+  /**
+   * PRE-GENERATED QUESTIONS: Evaluate answer for pre-generated question banks
+   */
+  async evaluateAnswerPreGenerated(
+    studentResponse: string,
+    recentHistory: Message[],
+    problemState: ProblemState,
+    topicId: string,
+    sectionProgress: import('../types/types').SectionProgressState,
+    preGeneratedQuestion: import('../data/learn/question-banks/types').PreGeneratedQuestion,
+    nextQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion,
+    isLastQuestionInSection?: boolean
+  ): Promise<import('../prompt-library/types/agents').PreGeneratedLearnEvaluatorOutput> {
+    return await this.executeWithFallback(
+      (service) => service.evaluateAnswerPreGenerated(
+        studentResponse,
+        recentHistory,
+        problemState,
+        topicId,
+        sectionProgress,
+        preGeneratedQuestion,
+        nextQuestion,
+        isLastQuestionInSection
+      ),
+      'evaluateAnswerPreGenerated'
+    );
   }
 
   /**

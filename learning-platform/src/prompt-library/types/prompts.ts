@@ -136,6 +136,7 @@ export interface TopicConfig {
   learningObjectives?: string[];
   keyFormulas?: string[];
   visualTools?: string[];
+  usePreGeneratedQuestions?: boolean;  // If true, use pre-generated question bank instead of AI generation
 }
 
 export interface TopicAgentConfig {

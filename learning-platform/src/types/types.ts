@@ -161,6 +161,7 @@ export interface SectionProgressEntry {
   questionsAttempted: number;          // total questions in this section
   questionsCorrect: number;            // correct answers in this section
   hintsUsed: number;                   // hints used in this section
+  currentQuestionIndex?: number;       // For pre-generated questions: current position in question bank (0-based)
 }
 
 export interface SectionProgressState {

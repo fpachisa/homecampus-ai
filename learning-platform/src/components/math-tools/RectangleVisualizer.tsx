@@ -28,7 +28,6 @@ const RectangleVisualizer: React.FC<RectangleVisualizerProps> = ({
   // SVG dimensions
   const svgWidth = 500;
   const svgHeight = 400;
-  const padding = 60;
 
   // Rectangle dimensions (scaled to fit nicely in SVG)
   const rectWidth = 280;

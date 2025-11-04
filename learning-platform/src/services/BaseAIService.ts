@@ -171,8 +171,78 @@ class BaseAIService implements AIService {
     return allResults;
   }
 
-  async generateSectionStartQuestion(topicId: string, sectionId: string): Promise<InitialGreetingResponse> {
+  async generateSectionStartQuestion(
+    topicId: string,
+    sectionId: string,
+    preGeneratedQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion
+  ): Promise<InitialGreetingResponse> {
+    console.log(`📥 BaseAIService.generateSectionStartQuestion called with:`, {
+      topicId,
+      sectionId,
+      hasPreGenQ: !!preGeneratedQuestion,
+      preGenQId: preGeneratedQuestion?.questionId
+    });
+
     try {
+      // If pre-generated question provided, generate speech only
+      if (preGeneratedQuestion) {
+        console.log(`🏦 Generating speech for pre-generated question in section ${sectionId}`);
+
+        const prompt = `You are an encouraging math tutor. Generate a warm, contextual transition greeting for a student starting a new section.
+
+Section: ${sectionId}
+Topic: ${topicId}
+
+The student is about to work on this problem:
+${preGeneratedQuestion.problemStatement}
+
+Generate ONLY a brief (1-2 sentences) spoken greeting that:
+- Acknowledges the section transition
+- Encourages the student
+- Is conversational and warm
+
+Return ONLY a JSON object with this structure:
+{
+  "speech": {
+    "text": "your greeting here (plain text, no markdown)",
+    "emotion": "encouraging"
+  }
+}`;
+
+        const text = await this.provider.generateContent(prompt);
+
+        if (!text) {
+          throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty speech response from AI');
+        }
+
+        const parsedResponse = safeParseJSON<{ speech: { text: string; emotion: string } }>(
+          text,
+          ['speech'],
+          {
+            speech: {
+              text: "Great! Let's work on this new section together!",
+              emotion: 'encouraging'
+            }
+          }
+        );
+
+        // Construct full response with pre-generated question
+        return {
+          speech: {
+            text: parsedResponse.speech.text,
+            emotion: (parsedResponse.speech.emotion as any) || 'encouraging'
+          },
+          display: {
+            content: preGeneratedQuestion.imagePath
+              ? `${preGeneratedQuestion.problemStatement}\n\n![Problem Diagram](${preGeneratedQuestion.imagePath})`
+              : preGeneratedQuestion.problemStatement,
+            showAfterSpeech: true
+          },
+          mathTool: undefined
+        };
+      }
+
+      // Standard AI-generated flow (no pre-generated question)
       const prompt = promptResolver.resolveSectionStartQuestion({
         topicId: topicId as any,
         sectionId
@@ -219,9 +289,75 @@ class BaseAIService implements AIService {
     topicId: string,
     sectionId: string,
     sectionMessages: Message[],
-    sectionStats: import('../types/types').SectionProgressEntry
+    sectionStats: import('../types/types').SectionProgressEntry,
+    preGeneratedQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion
   ): Promise<InitialGreetingResponse> {
     try {
+      // If pre-generated question provided, generate speech only
+      if (preGeneratedQuestion) {
+        console.log(`🏦 Generating resume speech for pre-generated question in section ${sectionId}`);
+
+        const prompt = `You are an encouraging math tutor. Generate a warm, contextual resume greeting for a student returning to a section.
+
+Section: ${sectionId}
+Topic: ${topicId}
+
+Student Progress:
+- Questions attempted: ${sectionStats.questionsAttempted}
+- Questions correct: ${sectionStats.questionsCorrect}
+- Hints used: ${sectionStats.hintsUsed}
+
+The student will continue with this problem:
+${preGeneratedQuestion.problemStatement}
+
+Generate ONLY a brief (1-2 sentences) spoken greeting that:
+- Welcomes the student back
+- Acknowledges their progress (if any)
+- Encourages them to continue
+- Is conversational and warm
+
+Return ONLY a JSON object with this structure:
+{
+  "speech": {
+    "text": "your greeting here (plain text, no markdown)",
+    "emotion": "encouraging"
+  }
+}`;
+
+        const text = await this.provider.generateContent(prompt);
+
+        if (!text) {
+          throw new AIServiceError(AIErrorType.UNKNOWN, null, false, 'Empty speech response from AI');
+        }
+
+        const parsedResponse = safeParseJSON<{ speech: { text: string; emotion: string } }>(
+          text,
+          ['speech'],
+          {
+            speech: {
+              text: "Welcome back! Let's continue where we left off.",
+              emotion: 'encouraging'
+            }
+          }
+        );
+
+        // Construct full response with pre-generated question
+        return {
+          speech: {
+            text: parsedResponse.speech.text,
+            emotion: (parsedResponse.speech.emotion as any) || 'encouraging'
+          },
+          display: {
+            content: preGeneratedQuestion.imagePath
+              ? `${preGeneratedQuestion.problemStatement}\n\n![Problem Diagram](${preGeneratedQuestion.imagePath})`
+              : preGeneratedQuestion.problemStatement,
+            showAfterSpeech: true
+          },
+          mathTool: undefined
+        };
+      }
+
+      // Standard AI-generated flow (no pre-generated question)
       const prompt = promptResolver.resolveSectionResume({
         topicId: topicId as any,
         sectionId,
@@ -496,6 +632,93 @@ class BaseAIService implements AIService {
       return evaluation;
     } catch (error) {
       console.error('Evaluator error:', error);
+      throw AIServiceError.fromHttpError(error);
+    }
+  }
+
+  /**
+   * Evaluate student answer using pre-generated question with step-by-step solution
+   * Used for topics where AI-generated questions are unreliable
+   * Returns evaluation + direct hint/solution content (no separate Tutor agent needed)
+   */
+  async evaluateAnswerPreGenerated(
+    studentResponse: string,
+    _recentHistory: Message[],
+    problemState: ProblemState,
+    _topicId: string,
+    sectionProgress: import('../types/types').SectionProgressState,
+    preGeneratedQuestion: import('../data/learn/question-banks/types').PreGeneratedQuestion,
+    nextQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion,
+    isLastQuestionInSection: boolean = false
+  ): Promise<import('../prompt-library/types/agents').PreGeneratedLearnEvaluatorOutput> {
+
+    // Extract current section's detailed stats
+    const currentSectionStats = sectionProgress.sectionHistory.find(
+      entry => entry.sectionId === sectionProgress.currentSection
+    );
+
+    if (!currentSectionStats) {
+      throw new Error(`No section stats found for section: ${sectionProgress.currentSection}`);
+    }
+
+    // Build the prompt using the pre-generated learn evaluator builder
+    // Note: masterySignals removed - AI should not make mastery decisions for pre-generated questions
+    // All questions in the section are shown; completion is based on isLastQuestionInSection flag only
+    const { buildPreGeneratedLearnEvaluatorPrompt } = await import(
+      '../prompt-library/core/agents/preGeneratedLearnEvaluator'
+    );
+
+
+    const prompt = buildPreGeneratedLearnEvaluatorPrompt({
+      stepByStepSolution: preGeneratedQuestion.stepByStepSolution,
+      correctAnswer: preGeneratedQuestion.correctAnswer,
+      currentProblem: problemState.currentProblemText,
+      studentAnswer: studentResponse,
+      currentSection: sectionProgress.currentSection,
+      sectionProgress: `Attempted: ${currentSectionStats.questionsAttempted}, Correct: ${currentSectionStats.questionsCorrect}, Hints: ${currentSectionStats.hintsUsed}`,
+      hintsGiven: problemState.hintsGivenForCurrentProblem,
+      attemptsMade: problemState.attemptsForCurrentProblem,
+      nextQuestion: nextQuestion ? {
+        questionId: nextQuestion.questionId,
+        problemStatement: {
+          display: nextQuestion.problemStatement,
+          speech: nextQuestion.problemStatement
+        }
+      } : undefined,
+      isLastQuestionInSection
+    });
+
+    console.log('=== PRE-GENERATED LEARN EVALUATOR DEBUG ===');
+    console.log('Prompt for pre-generated learn evaluator:', prompt);
+    console.log('Student Response:', studentResponse);
+    console.log('Correct Answer:', preGeneratedQuestion.correctAnswer);
+    console.log('Current Section:', sectionProgress.currentSection);
+    console.log('Full Prompt length:', prompt.length);
+    console.log('====================================');
+
+    try {
+      const responseText = await this.provider.generateContent(prompt);
+
+      console.log('Pre-generated evaluator raw response:', responseText);
+
+      // Parse the evaluator output
+      const evaluation = safeParseJSON<import('../prompt-library/types/agents').PreGeneratedLearnEvaluatorOutput>(
+        responseText,
+        ['answerCorrect', 'progression']  // action is optional (omitted when section complete)
+      );
+
+      console.log('Parsed pre-generated evaluator output:', evaluation);
+
+      // Validate required fields
+      validateRequiredKeys(
+        evaluation,
+        ['answerCorrect', 'action', 'speech', 'display'],
+        'Invalid pre-generated evaluator output'
+      );
+
+      return evaluation;
+    } catch (error) {
+      console.error('Pre-generated evaluator error:', error);
       throw AIServiceError.fromHttpError(error);
     }
   }

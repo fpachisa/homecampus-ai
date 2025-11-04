@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" style="background-color: #f8f9fa;">
+  <!-- Define gradient fills -->
+  <defs>
+    <linearGradient id="gradient-0" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <rect x="110" y="80" width="280" height="280"
+        fill="url(#gradient-0)"
+        stroke="#047857"
+        stroke-width="3"
+        rx="2"/>
+
+  <path d="M 110,360 A 140,140 0 0,1 390,360 Z"
+        fill="url(#gradient-1)"
+        stroke="#dc2626"
+        stroke-width="3"/>
+
+  <!-- Dimension: 14 cm -->
+  <line x1="110" y1="60" x2="390" y2="60" stroke="#06b6d4" stroke-width="2"/>
+  <line x1="110" y1="55" x2="110" y2="65" stroke="#06b6d4" stroke-width="2"/>
+  <line x1="390" y1="55" x2="390" y2="65" stroke="#06b6d4" stroke-width="2"/>
+  <text x="250" y="52" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#06b6d4" text-anchor="middle">
+    14 cm
+  </text>
+
+  <!-- Dimension: 14 cm -->
+  <line x1="80" y1="80" x2="80" y2="360" stroke="#10b981" stroke-width="2"/>
+  <line x1="75" y1="80" x2="85" y2="80" stroke="#10b981" stroke-width="2"/>
+  <line x1="75" y1="360" x2="85" y2="360" stroke="#10b981" stroke-width="2"/>
+  <text x="65" y="220" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle" transform="rotate(-90 65 220)">
+    14 cm
+  </text>
+
+  <!-- Dimension: 14 cm (diameter) -->
+  <line x1="110" y1="385" x2="390" y2="385" stroke="#f97316" stroke-width="2"/>
+  <line x1="110" y1="380" x2="110" y2="390" stroke="#f97316" stroke-width="2"/>
+  <line x1="390" y1="380" x2="390" y2="390" stroke="#f97316" stroke-width="2"/>
+  <text x="250" y="377" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f97316" text-anchor="middle">
+    14 cm (diameter)
+  </text>
+
+</svg>

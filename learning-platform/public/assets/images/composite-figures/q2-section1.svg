@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" style="background-color: #f8f9fa;">
+  <!-- Define gradient fills -->
+  <defs>
+    <linearGradient id="gradient-0" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <rect x="100" y="50" width="300" height="60"
+        fill="url(#gradient-0)"
+        stroke="#4338ca"
+        stroke-width="3"
+        rx="2"/>
+
+  <rect x="220" y="110" width="60" height="180"
+        fill="url(#gradient-1)"
+        stroke="#047857"
+        stroke-width="3"
+        rx="2"/>
+
+  <!-- Dimension: 10 cm -->
+  <line x1="100" y1="30" x2="400" y2="30" stroke="#6366f1" stroke-width="2"/>
+  <line x1="100" y1="25" x2="100" y2="35" stroke="#6366f1" stroke-width="2"/>
+  <line x1="400" y1="25" x2="400" y2="35" stroke="#6366f1" stroke-width="2"/>
+  <text x="250" y="22" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6366f1" text-anchor="middle">
+    10 cm
+  </text>
+
+  <!-- Dimension: 2 cm -->
+  <line x1="420" y1="50" x2="420" y2="110" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="415" y1="50" x2="425" y2="50" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="415" y1="110" x2="425" y2="110" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="445" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b5cf6">
+    2 cm
+  </text>
+
+  <!-- Dimension: 6 cm -->
+  <line x1="300" y1="110" x2="300" y2="290" stroke="#10b981" stroke-width="2"/>
+  <line x1="295" y1="110" x2="305" y2="110" stroke="#10b981" stroke-width="2"/>
+  <line x1="295" y1="290" x2="305" y2="290" stroke="#10b981" stroke-width="2"/>
+  <text x="325" y="205" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">
+    6 cm
+  </text>
+
+  <!-- Dimension: 8 cm total -->
+  <line x1="70" y1="50" x2="70" y2="290" stroke="#e74c3c" stroke-width="2"/>
+  <line x1="65" y1="50" x2="75" y2="50" stroke="#e74c3c" stroke-width="2"/>
+  <line x1="65" y1="290" x2="75" y2="290" stroke="#e74c3c" stroke-width="2"/>
+  <text x="55" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e74c3c" text-anchor="middle" transform="rotate(-90 55 170)">
+    8 cm total
+  </text>
+
+</svg>

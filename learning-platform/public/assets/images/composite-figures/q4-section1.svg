@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" style="background-color: #f8f9fa;">
+  <!-- Define gradient fills -->
+  <defs>
+    <linearGradient id="gradient-0" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <rect x="60" y="120" width="300" height="120"
+        fill="url(#gradient-0)"
+        stroke="#047857"
+        stroke-width="3"
+        rx="2"/>
+
+  <path d="M 360,120 A 60,60 0 0,1 360,240 Z"
+        fill="url(#gradient-1)"
+        stroke="#dc2626"
+        stroke-width="3"/>
+
+  <!-- Dimension: 15 m -->
+  <line x1="60" y1="100" x2="360" y2="100" stroke="#06b6d4" stroke-width="2"/>
+  <line x1="60" y1="95" x2="60" y2="105" stroke="#06b6d4" stroke-width="2"/>
+  <line x1="360" y1="95" x2="360" y2="105" stroke="#06b6d4" stroke-width="2"/>
+  <text x="210" y="92" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#06b6d4" text-anchor="middle">
+    15 m
+  </text>
+
+  <!-- Dimension: 6 m -->
+  <line x1="35" y1="120" x2="35" y2="240" stroke="#10b981" stroke-width="2"/>
+  <line x1="30" y1="120" x2="40" y2="120" stroke="#10b981" stroke-width="2"/>
+  <line x1="30" y1="240" x2="40" y2="240" stroke="#10b981" stroke-width="2"/>
+  <text x="20" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle" transform="rotate(-90 20 180)">
+    6 m
+  </text>
+
+  <!-- Dimension: 3 m (radius) -->
+  <line x1="440" y1="120" x2="440" y2="180" stroke="#f97316" stroke-width="2"/>
+  <line x1="435" y1="120" x2="445" y2="120" stroke="#f97316" stroke-width="2"/>
+  <line x1="435" y1="180" x2="445" y2="180" stroke="#f97316" stroke-width="2"/>
+  <text x="465" y="155" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f97316">
+    ? cm
+  </text>
+
+</svg>

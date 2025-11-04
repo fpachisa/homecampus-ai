@@ -45,6 +45,64 @@ export interface EvaluatorOutput {
 }
 
 // ============================================
+// Pre-Generated Learn Evaluator Agent Types
+// ============================================
+
+/**
+ * Pre-Generated Learn Evaluator Input
+ * Includes step-by-step solution from question bank
+ */
+export interface PreGeneratedLearnEvaluatorInput {
+  studentResponse: string;
+  currentProblem: string;
+  problemId: string;
+  hintsGiven: number;
+  attempts: number;
+  currentSection: string;
+  sectionStats: {
+    questionsAttempted: number;
+    questionsCorrect: number;
+    hintsUsed: number;
+  };
+  // Pre-generated question data
+  stepByStepSolution: Array<{
+    stepNumber: number;
+    text: string;
+  }>;
+  correctAnswer: string | number;
+  masterySignals: string;
+  // Next question context (for intelligent transition speech)
+  nextQuestion?: {
+    questionId: string;
+    problemStatement: string;
+  };
+  isLastQuestionInSection: boolean;
+}
+
+/**
+ * Pre-Generated Learn Evaluator Output
+ * Simplified output - AI only evaluates and provides content, system determines progression
+ */
+export interface PreGeneratedLearnEvaluatorOutput {
+  // Core assessment
+  answerCorrect: boolean;
+
+  // Action (always required - system determines section completion)
+  action: 'GIVE_HINT' | 'GIVE_SOLUTION' | 'NEW_PROBLEM';
+  hintLevel?: 1 | 2 | 3;
+
+  // Content generation (always required)
+  speech: {
+    text: string;
+    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
+  };
+  display: {
+    content: string;
+    showAfterSpeech: boolean;
+  };
+}
+
+// ============================================
 // Tutor Agent Types
 // ============================================
 

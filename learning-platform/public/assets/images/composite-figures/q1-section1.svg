@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" style="background-color: #f8f9fa;">
+  <!-- Title -->
+  <text x="250" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Composite Figure (L-Shape)
+  </text>
+  
+  <!-- Define gradient fills -->
+  <defs>
+    <linearGradient id="topRect" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="bottomRect" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Bottom Rectangle (10cm × 4cm) -->
+  <rect x="80" y="200" width="300" height="120" 
+        fill="url(#bottomRect)" 
+        stroke="#047857" 
+        stroke-width="3" 
+        rx="2"/>
+  
+  <!-- Top Rectangle (3cm × 3cm) - positioned on left side -->
+  <rect x="80" y="110" width="90" height="90" 
+        fill="url(#topRect)" 
+        stroke="#4338ca" 
+        stroke-width="3" 
+        rx="2"/>
+  
+  <!-- Labels for rectangles -->
+  <text x="125" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Top
+  </text>
+  <text x="125" y="178" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">
+    Rectangle
+  </text>
+  
+  <text x="230" y="255" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Bottom Rectangle
+  </text>
+  
+  <!-- Dimension lines and labels -->
+  
+  <!-- Total height (7 cm) - Left side -->
+  <line x1="50" y1="110" x2="50" y2="320" stroke="#e74c3c" stroke-width="2"/>
+  <line x1="50" y1="320" x2="50" y2="110" stroke="#e74c3c" stroke-width="2"/>
+  <line x1="45" y1="110" x2="55" y2="110" stroke="#e74c3c" stroke-width="2"/>
+  <line x1="45" y1="320" x2="55" y2="320" stroke="#e74c3c" stroke-width="2"/>
+  <text x="35" y="220" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e74c3c" text-anchor="middle" transform="rotate(-90 35 220)">
+    7 cm
+  </text>
+  
+  <!-- Top rectangle height (3 cm) - with question mark -->
+  <line x1="420" y1="110" x2="420" y2="200" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="420" y1="200" x2="420" y2="110" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="415" y1="110" x2="425" y2="110" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="415" y1="200" x2="425" y2="200" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="445" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b5cf6">
+    ? cm
+  </text>
+  
+  <!-- Bottom rectangle height (4 cm) -->
+  <line x1="420" y1="200" x2="420" y2="320" stroke="#10b981" stroke-width="2"/>
+  <line x1="420" y1="320" x2="420" y2="200" stroke="#10b981" stroke-width="2"/>
+  <line x1="415" y1="200" x2="425" y2="200" stroke="#10b981" stroke-width="2"/>
+  <line x1="415" y1="320" x2="425" y2="320" stroke="#10b981" stroke-width="2"/>
+  <text x="445" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">
+    4 cm
+  </text>
+  
+  <!-- Bottom rectangle width (10 cm) -->
+  <line x1="80" y1="350" x2="380" y2="350" stroke="#06b6d4" stroke-width="2"/>
+  <line x1="380" y1="350" x2="80" y2="350" stroke="#06b6d4" stroke-width="2"/>
+  <line x1="80" y1="345" x2="80" y2="355" stroke="#06b6d4" stroke-width="2"/>
+  <line x1="380" y1="345" x2="380" y2="355" stroke="#06b6d4" stroke-width="2"/>
+  <text x="230" y="372" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#06b6d4" text-anchor="middle">
+    10 cm
+  </text>
+  
+  <!-- Top rectangle width (3 cm) -->
+  <line x1="80" y1="80" x2="170" y2="80" stroke="#6366f1" stroke-width="2"/>
+  <line x1="170" y1="80" x2="80" y2="80" stroke="#6366f1" stroke-width="2"/>
+  <line x1="80" y1="75" x2="80" y2="85" stroke="#6366f1" stroke-width="2"/>
+  <line x1="170" y1="75" x2="170" y2="85" stroke="#6366f1" stroke-width="2"/>
+  <text x="125" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6366f1" text-anchor="middle">
+    3 cm
+  </text>
+  
+  <!-- Separation line (dashed) -->
+  <line x1="80" y1="200" x2="380" y2="200" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="235" y="193" font-family="Arial, sans-serif" font-size="11" font-style="italic" fill="#ff6b6b">
+    separation line
+  </text>
+</svg>

@@ -40,17 +40,24 @@ export interface AIService {
 
   /**
    * Generate section-specific start question when jumping to a new section
+   * @param preGeneratedQuestion - Optional pre-generated question to use instead of AI-generating one
    */
-  generateSectionStartQuestion(topicId: string, sectionId: string): Promise<InitialGreetingResponse>;
+  generateSectionStartQuestion(
+    topicId: string,
+    sectionId: string,
+    preGeneratedQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion
+  ): Promise<InitialGreetingResponse>;
 
   /**
    * Generate section resume message when returning to a section that was already started
+   * @param preGeneratedQuestion - Optional pre-generated question to use instead of AI-generating one
    */
   generateSectionResume(
     topicId: string,
     sectionId: string,
     sectionMessages: Message[],
-    sectionStats: import('../types/types').SectionProgressEntry
+    sectionStats: import('../types/types').SectionProgressEntry,
+    preGeneratedQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion
   ): Promise<InitialGreetingResponse>;
 
   /**
@@ -94,6 +101,21 @@ export interface AIService {
     topicId: string,
     sectionProgress?: SectionProgressState
   ): Promise<EvaluatorOutput>;
+
+  /**
+   * PRE-GENERATED QUESTIONS: Evaluator for topics with pre-generated question banks
+   * Evaluates student answer against the correct answer in the question bank
+   */
+  evaluateAnswerPreGenerated(
+    studentResponse: string,
+    recentHistory: Message[],
+    problemState: ProblemState,
+    topicId: string,
+    sectionProgress: SectionProgressState,
+    preGeneratedQuestion: import('../data/learn/question-banks/types').PreGeneratedQuestion,
+    nextQuestion?: import('../data/learn/question-banks/types').PreGeneratedQuestion,
+    isLastQuestionInSection?: boolean
+  ): Promise<import('../prompt-library/types/agents').PreGeneratedLearnEvaluatorOutput>;
 
   /**
    * NEW ARCHITECTURE: Tutor Agent - Generate hints and celebrations

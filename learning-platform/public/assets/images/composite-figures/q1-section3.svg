@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" style="background-color: #f8f9fa;">
+  <!-- Define gradient fills -->
+  <defs>
+    <linearGradient id="gradient-0" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <rect x="60" y="100" width="360" height="200"
+        fill="url(#gradient-0)"
+        stroke="#047857"
+        stroke-width="3"
+        rx="2"/>
+
+  <rect x="162" y="150" width="144" height="80"
+        fill="url(#gradient-1)"
+        stroke="#9333ea"
+        stroke-width="3"
+        rx="2"/>
+
+  <!-- Dimension: 15 cm -->
+  <line x1="60" y1="80" x2="420" y2="80" stroke="#06b6d4" stroke-width="2"/>
+  <line x1="60" y1="75" x2="60" y2="85" stroke="#06b6d4" stroke-width="2"/>
+  <line x1="420" y1="75" x2="420" y2="85" stroke="#06b6d4" stroke-width="2"/>
+  <text x="240" y="72" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#06b6d4" text-anchor="middle">
+    15 cm
+  </text>
+
+  <!-- Dimension: 10 cm -->
+  <line x1="30" y1="100" x2="30" y2="300" stroke="#10b981" stroke-width="2"/>
+  <line x1="25" y1="100" x2="35" y2="100" stroke="#10b981" stroke-width="2"/>
+  <line x1="25" y1="300" x2="35" y2="300" stroke="#10b981" stroke-width="2"/>
+  <text x="15" y="200" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle" transform="rotate(-90 15 200)">
+    10 cm
+  </text>
+
+  <!-- Dimension: 6 cm (hole) -->
+  <line x1="162" y1="130" x2="306" y2="130" stroke="#ec4899" stroke-width="2"/>
+  <line x1="162" y1="125" x2="162" y2="135" stroke="#ec4899" stroke-width="2"/>
+  <line x1="306" y1="125" x2="306" y2="135" stroke="#ec4899" stroke-width="2"/>
+  <text x="234" y="122" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    6 cm (hole)
+  </text>
+
+  <!-- Dimension: 4 cm (hole) -->
+  <line x1="450" y1="150" x2="450" y2="230" stroke="#a855f7" stroke-width="2"/>
+  <line x1="445" y1="150" x2="455" y2="150" stroke="#a855f7" stroke-width="2"/>
+  <line x1="445" y1="230" x2="455" y2="230" stroke="#a855f7" stroke-width="2"/>
+  <text x="475" y="195" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#a855f7">
+    4 cm (hole)
+  </text>
+
+</svg>

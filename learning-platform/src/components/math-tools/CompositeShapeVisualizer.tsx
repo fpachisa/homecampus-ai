@@ -38,13 +38,6 @@ const CompositeShapeVisualizer: React.FC<CompositeShapeVisualizerProps> = ({
   const centerX = svgWidth / 2;
   const centerY = svgHeight / 2;
 
-  // Helper function to ensure LaTeX expressions are properly wrapped
-  const ensureLatexWrapped = (text: string | undefined): string => {
-    if (!text) return '';
-    if (text.startsWith('$') && text.endsWith('$')) return text;
-    if (text.includes('\\')) return `$${text}$`;
-    return text;
-  };
 
   // Colors for different regions
   const colors = {
@@ -480,7 +473,7 @@ const CompositeShapeVisualizer: React.FC<CompositeShapeVisualizerProps> = ({
           cx={centerX}
           cy={centerY}
           r={circleR}
-          fill={operation === 'difference' ? theme.colors.background : colors.region4}
+          fill={operation === 'difference' ? theme.colors.primary : colors.region4}
           stroke={colors.strokeColor}
           strokeWidth="2"
           strokeDasharray={operation === 'difference' ? '5,5' : '0'}

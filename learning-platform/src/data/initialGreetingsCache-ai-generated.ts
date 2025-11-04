@@ -19,10 +19,13 @@
 
 import type { InitialGreetingResponse } from '../types/types';
 
-export interface CachedGreeting extends Omit<InitialGreetingResponse, 'speech'> {
-  speech: {
-    text: string;
-    emotion: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm';
+export interface CachedGreeting extends InitialGreetingResponse {
+  speech: InitialGreetingResponse['speech'] & {
+    /**
+     * Relative path to pre-generated TTS audio file from public directory
+     * Example: '/assets/audio/initial-greetings/s1-math-perimeter-area-parallelograms.mp3'
+     */
+    preGeneratedAudioUrl?: string;
   };
 }
 
