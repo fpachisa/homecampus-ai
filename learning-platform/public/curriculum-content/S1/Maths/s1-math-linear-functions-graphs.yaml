@@ -1,0 +1,1958 @@
+# S1 Math Linear Functions Graphs - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: linear-node-01
+  nodeNumber: 1
+  title: Understanding Quadrants and Ordered Pairs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: The point P is plotted on the Cartesian plane shown below. Identify the coordinates of P and determine
+        which quadrant it lies in.
+      avatarIntro: Welcome! Understanding the coordinate system is crucial. Remember how the quadrants are numbered and what
+        the signs of the coordinates mean.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: 5
+            y: -4
+            label: P
+            color: blue
+          caption: Coordinate plane showing point P
+      finalAnswer: The coordinates are (5, -4). The point lies in Quadrant IV.
+      stepByStepGuideline:
+      - 'Step 1: Determine the coordinates of point P. Move 5 units right (positive x-direction) and 4 units down (negative
+        y-direction). The coordinates are (5, -4).'
+      - 'Step 2: Analyze the signs. The x-coordinate is positive (+) and the y-coordinate is negative (-).'
+      - 'Step 3: Recall the quadrant rules: (+, +) is Q I, (-, +) is Q II, (-, -) is Q III, and (+, -) is Q IV. Since P is
+        (+, -), it lies in Quadrant IV.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: Consider two points, A located at (1, 5) and B located at (5, 1). Examine the graph provided. Are these
+        two points the same location on the coordinate plane? Explain your answer.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: 1
+            y: 5
+            label: A (1, 5)
+            color: blue
+          - x: 5
+            y: 1
+            label: B (5, 1)
+            color: red
+          caption: Points A and B plotted on the coordinate plane
+      finalAnswer: No, they are different points. Order matters in ordered pairs; (1, 5) means 1 unit right and 5 units up,
+        while (5, 1) means 5 units right and 1 unit up.
+      stepByStepGuideline:
+      - 'Step 1: Locate Point A (1, 5). Start at the origin, move 1 unit along the x-axis, then 5 units up the y-axis.'
+      - 'Step 2: Locate Point B (5, 1). Start at the origin, move 5 units along the x-axis, then 1 unit up the y-axis.'
+      - 'Step 3: Compare the locations. Since the points occupy distinct positions and are plotted in different places, they
+        are not the same. This illustrates that the order of coordinates (x, y) is critical.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: A point Q has a negative x-coordinate and a positive y-coordinate. Which quadrant must point Q lie in?
+        Use the provided coordinate system for reference.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: -3
+            y: 4
+            label: Q (-x, +y)
+            color: blue
+          caption: Visualization of a point with negative x and positive y coordinates
+      finalAnswer: Quadrant II
+      stepByStepGuideline:
+      - 'Step 1: Determine the signs of the coordinates: x is negative (-) and y is positive (+).'
+      - 'Step 2: Recall the numbering of the quadrants, starting from the top right and moving counterclockwise (I, II, III,
+        IV).'
+      - 'Step 3: Quadrant I has (+, +). Quadrant II has (-, +). Quadrant III has (-, -). Quadrant IV has (+, -).'
+      - 'Step 4: Since the point is (-, +), it must lie in Quadrant II.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: Point Z is located at (−2, 0). Identify the location of this point. Does point Z belong to Quadrant I,
+        II, III, or IV? Explain your reasoning.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: -2
+            y: 0
+            label: Z
+            color: blue
+          caption: Point Z plotted on the x-axis
+      finalAnswer: Point Z is located on the x-axis. Points that lie directly on the x-axis or the y-axis do not belong to
+        any of the four quadrants.
+      stepByStepGuideline:
+      - 'Step 1: Locate the point Z (−2, 0). This means moving 2 units left from the origin and 0 units vertically.'
+      - 'Step 2: Recognize that the point lies directly on the horizontal axis (the x-axis).'
+      - 'Step 3: Recall the definition of quadrants: Quadrants are the four regions bounded by the axes, but they do not include
+        the axes themselves. Therefore, Z does not belong to any quadrant.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: Determine the quadrant in which the point R (−3, −4) is located. Use the plotted point on the graph to
+        confirm your answer.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: -3
+            y: -4
+            label: R
+            color: blue
+          caption: Coordinate plane showing point R
+      finalAnswer: Quadrant III
+      stepByStepGuideline:
+      - 'Step 1: Analyze the signs of the coordinates for point R (−3, −4). The x-coordinate is negative, and the y-coordinate
+        is negative.'
+      - 'Step 2: Locate the region where both the x and y values are negative.'
+      - 'Step 3: This region is Quadrant III (bottom left). Quadrant III is defined by the sign convention (-, -).'
+      id: q1-5
+      questionGroup: q1
+- id: linear-node-02
+  nodeNumber: 2
+  title: Plotting Points on the Coordinate Plane
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Plot the point A(−4, 5) on a coordinate plane. Write down the precise steps required to plot this point
+        accurately, starting from the origin (0, 0).
+      avatarIntro: 'Mastering the coordinate plane starts with knowing the rules! Remember: always move horizontally (x) before
+        moving vertically (y).'
+      mathTool: null
+      finalAnswer: Plotting A(-4, 5) requires starting at (0, 0), moving 4 units left along the x-axis, and then 5 units up
+        parallel to the y-axis. The point should be marked and labelled.
+      stepByStepGuideline:
+      - Start at the origin (0, 0).
+      - Look at the x-coordinate, which is -4. Move 4 units to the left along the x-axis.
+      - Look at the y-coordinate, which is 5. Move 5 units up, parallel to the y-axis.
+      - Mark and label the final position as point A.
+      id: q2-1
+      questionGroup: q2
+    - problemText: 'Plot the following set of points on the same coordinate plane: B(−2, 5), C(4, −3), and D(0, 2). Identify
+        the special location of point D.'
+      mathTool: null
+      finalAnswer: Point B is 2 left, 5 up (Quadrant II); Point C is 4 right, 3 down (Quadrant IV); Point D lies directly
+        on the y-axis, 2 units above the origin.
+      stepByStepGuideline:
+      - 'Plot B: Start at the origin, move 2 units left, then 5 units up.'
+      - 'Plot C: Start at the origin, move 4 units right, then 3 units down.'
+      - 'Plot D: Start at the origin, move 0 units horizontally, then 2 units up. Since the x-coordinate is zero, point D
+        lies on the y-axis.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: A robot navigating a grid starts at the origin (0, 0). It is programmed to move 2 units left and then 5
+        units down. What are the coordinates of the robot's final location?
+      mathTool: null
+      finalAnswer: (−2, −5)
+      stepByStepGuideline:
+      - Movement along the coordinate plane is represented by ordered pairs (x, y).
+      - Movement left corresponds to a negative change in the x-coordinate. Moving 2 units left means x = −2.
+      - Movement down corresponds to a negative change in the y-coordinate. Moving 5 units down means y = −5.
+      - The final coordinates are (−2, −5).
+      id: q2-3
+      questionGroup: q2
+    - problemText: Describe the movement required, starting from the origin (0, 0), to accurately plot the point E(5, 0).
+        Explain why only one movement direction is needed.
+      mathTool: null
+      finalAnswer: Start at (0, 0). Move 5 units right along the x-axis. No vertical movement is needed because the y-coordinate
+        is zero.
+      stepByStepGuideline:
+      - 'Identify the coordinates: x = 5 and y = 0.'
+      - The x-coordinate (5, positive) dictates movement 5 units to the right.
+      - The y-coordinate (0) dictates zero movement in the vertical direction (up or down).
+      - The point E(5, 0) lies directly on the positive x-axis, requiring only horizontal movement.
+      id: q2-4
+      questionGroup: q2
+    - problemText: Plot the point F(−3, −4). Explain the difference between plotting F(−3, −4) and plotting G(3, 4) in terms
+        of the direction of movement from the origin.
+      mathTool: null
+      finalAnswer: F(−3, −4) requires movement 3 units left (negative x) and 4 units down (negative y). G(3, 4) requires movement
+        3 units right (positive x) and 4 units up (positive y). The directions are completely opposite.
+      stepByStepGuideline:
+      - 'To plot F(−3, −4): Start at (0, 0), move 3 units left (negative x) and 4 units down (negative y).'
+      - 'To plot G(3, 4): Start at (0, 0), move 3 units right (positive x) and 4 units up (positive y).'
+      - The negative signs in F indicate movement in the negative directions (left and down), placing F in Quadrant III, while
+        the positive signs in G indicate movement in the positive directions (right and up), placing G in Quadrant I.
+      id: q2-5
+      questionGroup: q2
+- id: linear-node-03
+  nodeNumber: 3
+  title: Reading Coordinates from Plotted Points
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: Observe the plotted point A on the coordinate grid below. Assuming a standard scale where each grid line
+        represents 1 unit, what are the coordinates (x, y) of point A?
+      avatarIntro: Welcome! Reading coordinates accurately is fundamental to understanding graphs. Let's start with a standard
+        grid.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          points:
+          - x: 3
+            y: 4
+            label: A
+            color: red
+          caption: 'Standard scale: 1 unit per grid line.'
+      finalAnswer: (3, 4)
+      stepByStepGuideline:
+      - Start at the origin (0, 0).
+      - Move horizontally along the x-axis to align vertically with point A. This movement is 3 units to the right, so the
+        x-coordinate is 3.
+      - Move vertically along the y-axis (or trace from the x-position) to align horizontally with point A. This movement
+        is 4 units up, so the y-coordinate is 4.
+      - The coordinates of point A are written as (x, y), which is (3, 4).
+      id: q3-1
+      questionGroup: q3
+    - problemText: In this geological survey map, each grid line represents 2 kilometers. Point B marks the location of a
+        mineral deposit. Based on the grid lines, determine the actual coordinates (x, y) of point B in kilometers.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -10
+          xMax: 10
+          yMin: -10
+          yMax: 10
+          showGrid: true
+          points:
+          - x: -4
+            y: 8
+            label: B
+            color: blue
+          caption: 'Custom scale: 1 grid line = 2 units.'
+      finalAnswer: (-4, 8)
+      stepByStepGuideline:
+      - 'Identify the scale: Each grid line represents 2 units.'
+      - 'Find the x-coordinate: Point B is 2 grid lines to the left of the y-axis. Calculate the value: 2 lines * 2 units/line
+        = 4 units. Since it is left, the x-coordinate is -4.'
+      - 'Find the y-coordinate: Point B is 4 grid lines above the x-axis. Calculate the value: 4 lines * 2 units/line = 8
+        units. Since it is up, the y-coordinate is 8.'
+      - The coordinates of point B are (-4, 8).
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'The graph shows velocity (x-axis) versus temperature (y-axis). Note that the axes have different scales:
+        The x-axis scale is 2 units per grid line, and the y-axis scale is 5 units per grid line. What are the coordinates
+        of point C?'
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -8
+          xMax: 8
+          yMin: -15
+          yMax: 15
+          showGrid: true
+          points:
+          - x: 6
+            y: 10
+            label: C
+            color: green
+          caption: 'Mixed scale: X-axis = 2 units/grid; Y-axis = 5 units/grid.'
+      finalAnswer: (6, 10)
+      stepByStepGuideline:
+      - 'Identify the scales: X scale = 2 units/grid; Y scale = 5 units/grid.'
+      - 'Find the x-coordinate: Point C is 3 grid lines to the right. Calculate: 3 * 2 = 6. The x-coordinate is 6.'
+      - 'Find the y-coordinate: Point C is 2 grid lines up. Calculate: 2 * 5 = 10. The y-coordinate is 10.'
+      - The coordinates of point C are (6, 10).
+      id: q3-3
+      questionGroup: q3
+    - problemText: Point D is plotted directly on the y-axis of a standard coordinate plane (1 unit per grid). What are the
+        exact coordinates of point D?
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -8
+          xMax: 8
+          yMin: -8
+          yMax: 8
+          showGrid: true
+          points:
+          - x: 0
+            y: -6
+            label: D
+            color: purple
+          caption: 'Standard scale: 1 unit per grid line.'
+      finalAnswer: (0, -6)
+      stepByStepGuideline:
+      - Observe the position of point D. It lies on the vertical axis (y-axis).
+      - Any point lying on the y-axis has an x-coordinate of 0.
+      - Count the units down from the origin (0, 0) along the y-axis. Point D is 6 units down.
+      - The y-coordinate is therefore -6.
+      - The coordinates of point D are (0, -6).
+      id: q3-4
+      questionGroup: q3
+    - problemText: A weather balloon tracking device records its final position as point E, plotted on the standard coordinate
+        grid (1 unit per grid line). Read the coordinates (x, y) of point E.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          points:
+          - x: -3
+            y: -2
+            label: E
+            color: orange
+          caption: 'Standard scale: 1 unit per grid line.'
+      finalAnswer: (-3, -2)
+      stepByStepGuideline:
+      - Start at the origin (0, 0).
+      - To find the x-coordinate, move horizontally to the left along the x-axis. Point E aligns with -3.
+      - To find the y-coordinate, move vertically down along the y-axis. Point E aligns with -2.
+      - Since the point is 3 units left and 2 units down, both coordinates are negative.
+      - The coordinates of point E are (-3, -2).
+      id: q3-5
+      questionGroup: q3
+- id: linear-node-04
+  nodeNumber: 4
+  title: Horizontal and Vertical Translations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: An athlete is standing at position M(−2, 3) on a training grid. If the athlete sprints 5 units to the right,
+        what are the new coordinates of their position?
+      avatarIntro: Translations are fundamental! Remember that moving right only affects the x-coordinate, increasing its
+        value.
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: (3, 3)
+      stepByStepGuideline:
+      - 'Identify the starting coordinates: M(−2, 3).'
+      - 'Identify the translation: 5 units to the right. This means we add 5 to the x-coordinate (horizontal movement). The
+        y-coordinate remains unchanged.'
+      - 'Calculate the new x-coordinate: x'' = −2 + 5 = 3.'
+      - The new coordinates are (3, 3).
+      id: q4-1
+      questionGroup: q4
+    - problemText: A miniature submarine is located at the surface position S(−2, 4). The submarine then dives 6 units straight
+        down. What are the coordinates of the submarine's final position?
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: (-2, -2)
+      stepByStepGuideline:
+      - 'Identify the starting coordinates: S(−2, 4).'
+      - 'Identify the translation: 6 units down. This affects the y-coordinate (vertical movement), meaning we subtract 6.
+        The x-coordinate remains unchanged.'
+      - 'Calculate the new y-coordinate: y'' = 4 − 6 = −2.'
+      - The new coordinates are (−2, −2).
+      id: q4-2
+      questionGroup: q4
+    - problemText: A pawn on a coordinate board game starts at location P(5, 2). The player moves the pawn 3 units directly
+        to the left. Determine the pawn's resulting coordinates.
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: (2, 2)
+      stepByStepGuideline:
+      - 'Identify the starting coordinates: P(5, 2).'
+      - 'Identify the translation: 3 units to the left. This means we subtract 3 from the x-coordinate. The y-coordinate remains
+        unchanged.'
+      - 'Calculate the new x-coordinate: x'' = 5 − 3 = 2.'
+      - The resulting coordinates are (2, 2).
+      id: q4-3
+      questionGroup: q4
+    - problemText: An elevator is currently stopped at floor E(3, −2), representing its position relative to the ground floor
+        (y=0). If the elevator travels 5 units upward, what are the new coordinates of its position?
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: (3, 3)
+      stepByStepGuideline:
+      - 'Identify the starting coordinates: E(3, −2).'
+      - 'Identify the translation: 5 units upward. This means we add 5 to the y-coordinate. The x-coordinate remains unchanged.'
+      - 'Calculate the new y-coordinate: y'' = −2 + 5 = 3.'
+      - The new coordinates of the elevator's position are (3, 3).
+      id: q4-4
+      questionGroup: q4
+    - problemText: A delivery drone begins its flight at the origin O(0, 0). It is programmed to fly 4 units left and then
+        3 units down to reach its drop-off point. Calculate the final coordinates of the drop-off point.
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: (-4, -3)
+      stepByStepGuideline:
+      - 'Identify the starting coordinates: O(0, 0).'
+      - 'Apply the horizontal translation: 4 units left means subtracting 4 from the x-coordinate. New x = 0 − 4 = −4.'
+      - 'Apply the vertical translation: 3 units down means subtracting 3 from the y-coordinate. New y = 0 − 3 = −3.'
+      - The final coordinates of the drop-off point are (−4, −3).
+      id: q4-5
+      questionGroup: q4
+- id: linear-node-05
+  nodeNumber: 5
+  title: Reflections in Axes and Origin
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: An architect is designing a symmetrical facade. A key structural point P is located at (–2, 5). If the
+        central line of symmetry runs along the x-axis, what are the coordinates of the reflected point P'?
+      avatarIntro: Reflections are fundamental transformations. Remember which coordinate changes sign depending on the axis
+        of reflection!
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: -2
+            y: 5
+            label: P(-2, 5)
+            color: blue
+          - x: -2
+            y: -5
+            label: P'
+            color: red
+            style: open
+          caption: Original point P and its reflection P' in the x-axis
+      finalAnswer: (−2, −5)
+      stepByStepGuideline:
+      - 'Identify the coordinates of the original point P: (x, y) = (–2, 5).'
+      - 'Determine the rule for reflection in the x-axis: The x-coordinate remains the same, and the y-coordinate changes
+        its sign. The transformation is (x, y) → (x, –y).'
+      - 'Apply the rule to P(–2, 5): x = –2, y'' = –5.'
+      - The coordinates of the reflected point P' are (–2, –5).
+      id: q5-1
+      questionGroup: q5
+    - problemText: A satellite trajectory planner defines a maneuver where the current position T(4, −3) must be reflected
+        across the y-axis (the equatorial plane marker). Determine the coordinates of the new target position T'.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: 4
+            y: -3
+            label: T(4, −3)
+            color: blue
+          - x: -4
+            y: -3
+            label: T'
+            color: red
+            style: open
+          caption: Original point T and its reflection T' in the y-axis
+      finalAnswer: (−4, −3)
+      stepByStepGuideline:
+      - 'Identify the coordinates of the original point T: (x, y) = (4, –3).'
+      - 'Determine the rule for reflection in the y-axis: The y-coordinate remains the same, and the x-coordinate changes
+        its sign. The transformation is (x, y) → (–x, y).'
+      - 'Apply the rule to T(4, –3): x'' = –4, y = –3.'
+      - The coordinates of the reflected point T' are (–4, –3).
+      id: q5-2
+      questionGroup: q5
+    - problemText: A robotic arm is currently at position R(−1, −2). The programmer wants the arm to execute a complete point
+        inversion, reflecting its current position through the origin. What are the resulting coordinates of the arm?
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: -1
+            y: -2
+            label: R(−1, −2)
+            color: blue
+          - x: 1
+            y: 2
+            label: R'
+            color: red
+            style: open
+          caption: Original point R and its reflection R' in the origin
+      finalAnswer: (1, 2)
+      stepByStepGuideline:
+      - 'Identify the coordinates of the original point R: (x, y) = (–1, –2).'
+      - 'Determine the rule for reflection in the origin: Both the x-coordinate and the y-coordinate change their signs. The
+        transformation is (x, y) → (–x, –y).'
+      - 'Apply the rule to R(–1, –2): x'' = –(–1) = 1, y'' = –(–2) = 2.'
+      - The coordinates of the reflected position are (1, 2).
+      id: q5-3
+      questionGroup: q5
+    - problemText: In a physics simulation, a light source L is placed at (4, −3). If a mirror is aligned precisely with the
+        x-axis, find the coordinates of the virtual image L' created by the reflection.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: 4
+            y: -3
+            label: L(4, −3)
+            color: blue
+          - x: 4
+            y: 3
+            label: L'
+            color: red
+            style: open
+          caption: Original point L and its reflection L' in the x-axis
+      finalAnswer: (4, 3)
+      stepByStepGuideline:
+      - 'Identify the coordinates of the original point L: (x, y) = (4, –3).'
+      - Reflection across the x-axis means that the x-coordinate stays the same, and the y-coordinate is negated.
+      - The transformation rule is (x, y) → (x, –y).
+      - 'Apply the rule to L(4, –3): x = 4, y'' = –(–3) = 3.'
+      - The coordinates of the virtual image L' are (4, 3).
+      id: q5-4
+      questionGroup: q5
+    - problemText: A surveying marker M is placed at (3, 4). The team needs to place a backup marker M' such that M' is the
+        reflection of M across the y-axis. Calculate the coordinates of M'.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          points:
+          - x: 3
+            y: 4
+            label: M(3, 4)
+            color: blue
+          - x: -3
+            y: 4
+            label: M'
+            color: red
+            style: open
+          caption: Original point M and its reflection M' in the y-axis
+      finalAnswer: (−3, 4)
+      stepByStepGuideline:
+      - 'Identify the coordinates of the original point M: (x, y) = (3, 4).'
+      - 'Determine the rule for reflection across the y-axis: The y-coordinate remains the same, and the x-coordinate changes
+        its sign.'
+      - The transformation rule is (x, y) → (–x, y).
+      - 'Apply the rule to M(3, 4): x'' = –3, y = 4.'
+      - The coordinates of the backup marker M' are (–3, 4).
+      id: q5-5
+      questionGroup: q5
+- id: linear-node-06
+  nodeNumber: 6
+  title: Understanding Functions - Input-Output Relationships
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A mathematical process follows the rule: ''square the input, then add 1''. If the input fed into this
+        function machine is 6, what is the resulting output?'
+      avatarIntro: Welcome! Let's start by defining our function rules. Remember, a function machine takes an input, applies
+        a rule, and produces exactly one output.
+      mathTool: null
+      finalAnswer: '37'
+      stepByStepGuideline:
+      - 'Step 1: Start with the given input, which is 6.'
+      - 'Step 2: Apply the first part of the rule: square the input. $6^2 = 36$.'
+      - 'Step 3: Apply the second part of the rule: add 1 to the result. $36 + 1 = 37$.'
+      - 'Step 4: The resulting output is 37.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: 'Determine whether the following set of input-output pairs represents a function: (4, 10), (5, 12), (4,
+        15), (6, 13). Explain your reasoning using the definition of a function.'
+      mathTool: null
+      finalAnswer: No, it is not a function because the input 4 maps to two different outputs (10 and 15).
+      stepByStepGuideline:
+      - 'Step 1: Recall the definition of a function: Each input (x-value) must have exactly one output (y-value).'
+      - 'Step 2: Analyze the given ordered pairs to identify the inputs.'
+      - 'Step 3: Observe the input 4. It appears twice, once mapping to 10 and once mapping to 15.'
+      - 'Step 4: Since one input (4) yields two different outputs (10 and 15), the relationship violates the function definition,
+        and therefore, it is not a function.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: 'A plumber charges a total cost (C) calculated by adding a base service fee to an amount determined by
+        the number of hours worked (H) at a set rate. The formula is: Total Cost = Base Fee + (Hours × Rate). Identify the
+        independent variable and the dependent variable in this relationship.'
+      mathTool: null
+      finalAnswer: 'Independent variable: Hours worked (H); Dependent variable: Total Cost (C)'
+      stepByStepGuideline:
+      - 'Step 1: Identify the variable whose value determines the other. This is the independent variable (input). In this
+        case, the hours worked (H) determines the final cost.'
+      - 'Step 2: Identify the variable whose value relies on the input. This is the dependent variable (output). The Total
+        Cost (C) depends on the hours worked.'
+      - 'Step 3: The independent variable is H (Hours worked) and the dependent variable is C (Total Cost).'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Consider the relationship where the input is a specific book and the output is its International Standard
+        Book Number (ISBN). Does this relationship represent a function? Justify your answer based on the mathematical definition
+        of a function.
+      mathTool: null
+      finalAnswer: Yes, this represents a function. According to the definition, each input (book) must have exactly one output
+        (ISBN). Since every book is assigned only one unique ISBN, the condition is satisfied.
+      stepByStepGuideline:
+      - 'Step 1: Identify the input (the book) and the output (the ISBN).'
+      - 'Step 2: Apply the function test: Check if it is possible for one specific input (one book) to have multiple different
+        outputs (two different ISBNs).'
+      - 'Step 3: Since standard practice requires that each physical book title has exactly one unique ISBN assigned to it,
+        the relationship satisfies the condition that each input yields exactly one output.'
+      - 'Step 4: Conclude that the relationship is a function.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: 'A function machine processes inputs by following the steps: ''subtract 1, then divide the result by 2''.
+        If you input the number 15 into this machine, what output value will you receive?'
+      mathTool: null
+      finalAnswer: '7'
+      stepByStepGuideline:
+      - 'Step 1: Start with the input, 15.'
+      - 'Step 2: Apply the first operation: subtract 1. $15 - 1 = 14$.'
+      - 'Step 3: Apply the second operation: divide the result by 2. $14 / 2 = 7$.'
+      - 'Step 4: The final output is 7.'
+      id: q6-5
+      questionGroup: q6
+- id: linear-node-07
+  nodeNumber: 7
+  title: Representations of Functions - Tables and Ordered Pairs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A factory produces components where the number of finished parts ($y$) produced after $x$ hours follows
+        the function rule $y = 2x + 1$. Complete the value table for the time intervals $x = 0, 1, 2,$ and $3$ hours.
+      avatarIntro: Welcome! Functions are essential tools for modeling relationships. Let's practice creating value tables
+        from algebraic rules.
+      mathTool: null
+      finalAnswer: 'x: 0, 1, 2, 3; y: 1, 3, 5, 7'
+      stepByStepGuideline:
+      - The function rule is y = 2x + 1.
+      - 'Substitute x = 0: y = 2(0) + 1 = 1.'
+      - 'Substitute x = 1: y = 2(1) + 1 = 3.'
+      - 'Substitute x = 2: y = 2(2) + 1 = 5.'
+      - 'Substitute x = 3: y = 2(3) + 1 = 7.'
+      - 'The completed table is x: 0, 1, 2, 3 and y: 1, 3, 5, 7.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: A water tank starts with 5 liters of water. If water is removed at a rate of 1 liter per minute, the amount
+        of water remaining ($y$, in liters) after $x$ minutes is given by the function $y = 5 - x$. Write the ordered pairs
+        $(x, y)$ for $x = 0, 1, 2,$ and $3$.
+      mathTool: null
+      finalAnswer: (0, 5), (1, 4), (2, 3), (3, 2)
+      stepByStepGuideline:
+      - The function rule is y = 5 - x.
+      - 'For x = 0: y = 5 - 0 = 5. The pair is (0, 5).'
+      - 'For x = 1: y = 5 - 1 = 4. The pair is (1, 4).'
+      - 'For x = 2: y = 5 - 2 = 3. The pair is (2, 3).'
+      - 'For x = 3: y = 5 - 3 = 2. The pair is (3, 2).'
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'The cost ($y$) of a fitness membership based on the number of months ($x$) is shown in the table below.
+        Analyze the relationship to determine the algebraic rule ($y = mx + c$) that represents this linear function.
+
+        | x (Months) | 0 | 1 | 2 | 3 |
+
+        |---|---|---|---|---|
+
+        | y (Cost) | 5 | 8 | 11 | 14 |'
+      mathTool: null
+      finalAnswer: y = 3x + 5
+      stepByStepGuideline:
+      - Find the constant difference in the y-values (the rate of change, m). The y-values increase by 3 (8 - 5 = 3, 11 -
+        8 = 3). So, m = 3.
+      - Find the y-intercept (c), which is the value of y when x = 0.
+      - From the table, when x = 0, y = 5. So, c = 5.
+      - 'Write the rule in the form y = mx + c: y = 3x + 5.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: A car travels at a constant speed, covering a distance ($y$, in km) in $x$ hours according to the function
+        $y = 3x$. Create a value table showing the distance traveled for $x = 0, 1, 2,$ and $3$ hours.
+      mathTool: null
+      finalAnswer: 'x: 0, 1, 2, 3; y: 0, 3, 6, 9'
+      stepByStepGuideline:
+      - The function rule is y = 3x.
+      - 'Substitute x = 0: y = 3(0) = 0.'
+      - 'Substitute x = 1: y = 3(1) = 3.'
+      - 'Substitute x = 2: y = 3(2) = 6.'
+      - 'Substitute x = 3: y = 3(3) = 9.'
+      - 'The completed table is x: 0, 1, 2, 3 and y: 0, 3, 6, 9.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: 'A student tracks their savings balance ($y$) over several weeks ($x$). The data is recorded as ordered
+        pairs: $(1, 7), (2, 9), (3, 11), (4, 13)$. Determine the function rule ($y$) that defines this relationship based
+        on the week number ($x$).'
+      mathTool: null
+      finalAnswer: y = 2x + 5
+      stepByStepGuideline:
+      - Determine the rate of change (slope, m) by observing how y changes for every unit increase in x. The y-values increase
+        by 2 (9 - 7 = 2, 11 - 9 = 2). Thus, m = 2.
+      - The rule is in the form y = 2x + c.
+      - 'Use one ordered pair, such as (1, 7), to solve for c (the y-intercept): 7 = 2(1) + c.'
+      - 7 = 2 + c.
+      - c = 5.
+      - The function rule is y = 2x + 5.
+      id: q7-5
+      questionGroup: q7
+- id: linear-node-08
+  nodeNumber: 8
+  title: Graphing Functions and Converting Representations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A function rule describes a relationship where the output ($y$) is 3 more than double the input ($x$).
+        Write the algebraic equation that represents this verbal description.
+      avatarIntro: 'Functions can be described in many ways: words, equations, tables, or graphs. Let''s practice moving fluently
+        between these representations, starting with converting words to an equation.'
+      mathTool: null
+      finalAnswer: y = 2x + 3
+      stepByStepGuideline:
+      - Identify the input variable ($x$) and the output variable ($y$).
+      - 'Translate ''double the input'' into an algebraic expression: $2x$.'
+      - Translate '3 more than' into adding 3 to the expression.
+      - 'Combine these parts to form the final equation: $y = 2x + 3$.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: A function is defined by the equation $y = x + 4$. Complete a table for the input values $x = 0, 1, 2$.
+        List the resulting ordered pairs $(x, y)$ and use the graphing tool to plot these points. Describe the geometric shape
+        formed by the points.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: x + 4
+          xMin: -1
+          xMax: 3
+          yMin: 0
+          yMax: 7
+          label: y = x + 4
+          showPoints:
+          - x: 0
+            label: (0, 4)
+          - x: 1
+            label: (1, 5)
+          - x: 2
+            label: (2, 6)
+      finalAnswer: 'Ordered pairs: (0, 4), (1, 5), (2, 6). The points form a straight line.'
+      stepByStepGuideline:
+      - 'Calculate the output ($y$) for each given input ($x$): For $x=0, y = 0 + 4 = 4$. For $x=1, y = 1 + 4 = 5$. For $x=2,
+        y = 2 + 4 = 6$.'
+      - 'List the ordered pairs: (0, 4), (1, 5), (2, 6).'
+      - Plot these points on the coordinate plane using the graphing tool.
+      - Observe that the plotted points lie on a straight line, indicating a linear relationship.
+      id: q8-2
+      questionGroup: q8
+    - problemText: Write the algebraic equation for a function where the output ($y$) is found by subtracting 5 from the input
+        ($x$).
+      mathTool: null
+      finalAnswer: y = x - 5
+      stepByStepGuideline:
+      - Identify the input ($x$) and the output ($y$).
+      - The phrase 'subtracting 5 from the input' means $x$ is the starting quantity and 5 is taken away.
+      - 'Form the equation: $y = x - 5$.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: Consider the function $y = 2x - 1$. Calculate the output values for inputs $x = 0, 1, 2, 3$. List the resulting
+        ordered pairs $(x, y)$ and plot the corresponding points using the graphing tool.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 2*x - 1
+          xMin: -1
+          xMax: 4
+          yMin: -2
+          yMax: 6
+          label: y = 2x - 1
+          showPoints:
+          - x: 0
+            label: (0, -1)
+          - x: 1
+            label: (1, 1)
+          - x: 2
+            label: (2, 3)
+          - x: 3
+            label: (3, 5)
+      finalAnswer: 'Ordered pairs: (0, -1), (1, 1), (2, 3), (3, 5).'
+      stepByStepGuideline:
+      - 'Calculate $y$ for $x=0$: $y = 2(0) - 1 = -1$. Pair: (0, -1).'
+      - 'Calculate $y$ for $x=1$: $y = 2(1) - 1 = 1$. Pair: (1, 1).'
+      - 'Calculate $y$ for $x=2$: $y = 2(2) - 1 = 3$. Pair: (2, 3).'
+      - 'Calculate $y$ for $x=3$: $y = 2(3) - 1 = 5$. Pair: (3, 5).'
+      - Plot the resulting ordered pairs on the graph.
+      id: q8-4
+      questionGroup: q8
+    - problemText: A baker starts with 5 kilograms of flour and uses 1 kilogram per cake made. If $x$ is the number of cakes
+        made and $y$ is the remaining flour, the relationship is modeled by the equation $y = 5 - x$. Determine the ordered
+        pairs for $x = 0, 1, 2, 3$. Plot these points and identify the y-intercept of the function.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 5 - x
+          xMin: -1
+          xMax: 4
+          yMin: 0
+          yMax: 6
+          label: y = 5 - x
+          showPoints:
+          - x: 0
+            label: (0, 5)
+          - x: 1
+            label: (1, 4)
+          - x: 2
+            label: (2, 3)
+          - x: 3
+            label: (3, 2)
+      finalAnswer: 'Ordered pairs: (0, 5), (1, 4), (2, 3), (3, 2). The y-intercept is (0, 5).'
+      stepByStepGuideline:
+      - 'Calculate $y$ for inputs $x=0, 1, 2, 3$: (0, 5), (1, 4), (2, 3), (3, 2).'
+      - Plot the calculated ordered pairs.
+      - Recall that the y-intercept is the point where the graph crosses the y-axis (i.e., where $x=0$).
+      - Identify the y-intercept from the table or graph, which is (0, 5).
+      id: q8-5
+      questionGroup: q8
+- id: linear-node-09
+  nodeNumber: 9
+  title: Function Evaluation - Forward (x → y)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: If a function is defined by f(x) = 2x + 5, calculate the output when the input x is 3. Show your substitution
+        and calculation clearly.
+      avatarIntro: Functions allow us to model relationships between input and output. Remember to substitute the input value
+        correctly and follow the order of operations!
+      mathTool: null
+      finalAnswer: '11'
+      stepByStepGuideline:
+      - 'Write the function: f(x) = 2x + 5.'
+      - 'Substitute x = 3 into the function: f(3) = 2(3) + 5.'
+      - 'Perform the multiplication first: f(3) = 6 + 5.'
+      - 'Perform the addition to find the final output: f(3) = 11.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: The formula for converting temperature from Fahrenheit (F) to Celsius (C) is C = 5(F − 32)/9. Find the
+        Celsius temperature reading when the Fahrenheit temperature is 68°F.
+      mathTool: null
+      finalAnswer: 20°C
+      stepByStepGuideline:
+      - 'Write the function: C = 5(F − 32)/9.'
+      - 'Substitute F = 68 into the conversion formula: C = 5(68 − 32)/9.'
+      - 'Calculate the value inside the parentheses first: C = 5(36)/9.'
+      - 'Perform the multiplication in the numerator: C = 180/9.'
+      - 'Perform the division to find the Celsius temperature: C = 20°C.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: Evaluate the function f(x) = x/2 + 3 when the input value x is 8. Show your step-by-step working.
+      mathTool: null
+      finalAnswer: '7'
+      stepByStepGuideline:
+      - 'Write the function: f(x) = x/2 + 3.'
+      - 'Substitute x = 8 into the function: f(8) = 8/2 + 3.'
+      - 'Perform the division first: f(8) = 4 + 3.'
+      - 'Perform the addition to find the final output: f(8) = 7.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: In a tall building, the floor number (F) reached by a special lift is modeled by the function F = 3n +
+        2, where n is the sequence number of the button pressed. If the lift operator presses the button corresponding to
+        n = 5, what floor (F) will the lift stop at?
+      mathTool: null
+      finalAnswer: 17 floors
+      stepByStepGuideline:
+      - 'Write the function relating the sequence number (n) to the floor (F): F = 3n + 2.'
+      - 'Substitute the input n = 5 into the function: F = 3(5) + 2.'
+      - 'Perform the multiplication: F = 15 + 2.'
+      - 'Perform the addition to find the final floor number: F = 17 floors.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: The perimeter (P) of a square is calculated using the formula P = 4s, where s is the length of one side.
+        Calculate the perimeter of a square if the side length (s) is 7 cm.
+      mathTool: null
+      finalAnswer: 28 cm
+      stepByStepGuideline:
+      - 'Write the formula for the perimeter: P = 4s.'
+      - 'Substitute the side length s = 7 cm into the formula: P = 4(7).'
+      - 'Perform the multiplication to find the perimeter: P = 28 cm.'
+      id: q9-5
+      questionGroup: q9
+- id: linear-node-10
+  nodeNumber: 10
+  title: Function Evaluation - Backward (y → x)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: If the function is defined by $f(x) = 3x - 2$ and the resulting output value $f(x)$ is 13, determine the
+        input value $x$.
+      avatarIntro: Solving backward problems requires you to reverse the operations. Remember to use inverse operations to
+        isolate the variable!
+      mathTool: null
+      finalAnswer: x = 5
+      stepByStepGuideline:
+      - 'Set the function output equal to the expression: $13 = 3x - 2$.'
+      - 'Use the inverse operation of subtraction by adding 2 to both sides: $13 + 2 = 3x$, which simplifies to $15 = 3x$.'
+      - 'Use the inverse operation of multiplication by dividing both sides by 3: $x = 15 / 3$.'
+      - 'Solve for x: $x = 5$.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: For the function $y = 10 - x$, find the value of $x$ when the output $y$ is 3.
+      mathTool: null
+      finalAnswer: x = 7
+      stepByStepGuideline:
+      - 'Set the output y equal to the function: $3 = 10 - x$.'
+      - 'To isolate x, first add x to both sides: $x + 3 = 10$.'
+      - 'Subtract 3 from both sides: $x = 10 - 3$.'
+      - 'Solve for x: $x = 7$.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: A machine processes tokens. The final score ($F$) is calculated based on the number of steps ($n$) using
+        the formula $F = 3n + 2$. If a player achieved a final score of 17, how many steps ($n$) did they complete?
+      mathTool: null
+      finalAnswer: n = 5 steps
+      stepByStepGuideline:
+      - 'Set the final score equal to the function: $17 = 3n + 2$.'
+      - 'Subtract 2 from both sides: $15 = 3n$.'
+      - 'Divide both sides by 3: $n = 15 / 3$.'
+      - 'Solve for n: $n = 5$. The player completed 5 steps.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: The formula for converting Celsius ($C$) temperature to Fahrenheit ($F$) is $F = \frac{9C}{5} + 32$. If
+        a temperature reading is 77°F, what is the corresponding temperature in Celsius ($C$)?
+      mathTool: null
+      finalAnswer: C = 25°C
+      stepByStepGuideline:
+      - 'Substitute the Fahrenheit temperature into the formula: $77 = \frac{9C}{5} + 32$.'
+      - 'Subtract 32 from both sides: $77 - 32 = \frac{9C}{5}$, which simplifies to $45 = \frac{9C}{5}$.'
+      - 'Multiply both sides by 5: $45 \times 5 = 9C$, so $225 = 9C$.'
+      - 'Divide both sides by 9: $C = 225 / 9$.'
+      - 'Solve for C: $C = 25$. The temperature is 25°C.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: A function is defined by $f(x) = x + 7$. If the resulting output $f(x)$ is 12, what input value $x$ was
+        used?
+      mathTool: null
+      finalAnswer: x = 5
+      stepByStepGuideline:
+      - 'Set the function equal to the output: $12 = x + 7$.'
+      - 'Use the inverse operation of addition by subtracting 7 from both sides: $x = 12 - 7$.'
+      - 'Solve for x: $x = 5$.'
+      id: q10-5
+      questionGroup: q10
+- id: linear-node-11
+  nodeNumber: 11
+  title: Identifying Linear Functions in Form y = mx + c
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Determine if the equation $y = 2x - 1$ represents a linear function. If it is linear, state the values
+        of the gradient ($m$) and the y-intercept ($c$).
+      avatarIntro: Welcome! Understanding the standard form y = mx + c is crucial for recognizing linear relationships. Let's
+        start by identifying the key components of this equation.
+      mathTool: null
+      finalAnswer: Yes, it is linear. m = 2, c = -1
+      stepByStepGuideline:
+      - Compare the given equation $y = 2x - 1$ to the standard linear form $y = mx + c$.
+      - Since the equation fits the form $y = mx + c$, it is a linear function.
+      - 'Identify $m$, the coefficient of $x$: $m = 2$.'
+      - 'Identify $c$, the constant term: $c = -1$.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: The equation $y = 5x$ describes a proportional relationship. Is this equation considered a linear function?
+        If yes, identify the values of $m$ and $c$.
+      mathTool: null
+      finalAnswer: Yes, it is linear. m = 5, c = 0
+      stepByStepGuideline:
+      - A linear function is defined by the form $y = mx + c$. The equation $y = 5x$ can be rewritten as $y = 5x + 0$.
+      - Since it matches the standard form, it is a linear function.
+      - 'Identify $m$ (the coefficient of $x$): $m = 5$.'
+      - 'Identify $c$ (the constant term): $c = 0$.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: 'Examine the following equations and determine which one is NOT a linear function: (i) $y = -x + 4$, (ii)
+        $y = 7$, (iii) $y = 1/x$. Explain your reasoning for the non-linear equation.'
+      mathTool: null
+      finalAnswer: (iii) y = 1/x is not linear because the variable x is in the denominator (or, it contains x raised to the
+        power of -1).
+      stepByStepGuideline:
+      - A linear function must fit the form $y = mx + c$, where the highest power of $x$ is 1.
+      - 'Check (i): $y = -x + 4$ is linear ($m=-1, c=4$).'
+      - 'Check (ii): $y = 7$ is linear ($m=0, c=7$).'
+      - 'Check (iii): $y = 1/x$. This equation involves division by the variable $x$, which means it cannot be written in
+        the form $y = mx + c$.'
+      - State that $y = 1/x$ is non-linear and provide the reason (x in the denominator).
+      id: q11-3
+      questionGroup: q11
+    - problemText: Rewrite the equation $y = 5 - x$ into the standard linear form $y = mx + c$. Then, identify the values
+        of the gradient ($m$) and the y-intercept ($c$).
+      mathTool: null
+      finalAnswer: y = -x + 5, so m = -1, c = 5
+      stepByStepGuideline:
+      - Rearrange the terms of $y = 5 - x$ so that the $x$ term comes first.
+      - 'Ensure the negative sign stays with the $x$ term: $y = -x + 5$.'
+      - Compare the rearranged equation to $y = mx + c$.
+      - 'Identify $m$ (the coefficient of $x$): $m = -1$.'
+      - 'Identify $c$ (the constant term): $c = 5$.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: The relationship between two variables is given by $2y = 4x + 6$. Convert this equation into the standard
+        linear function form $y = mx + c$ and specify the values of $m$ and $c$.
+      mathTool: null
+      finalAnswer: y = 2x + 3, so m = 2, c = 3
+      stepByStepGuideline:
+      - The goal is to isolate $y$ on one side of the equation.
+      - Divide every term in the equation $2y = 4x + 6$ by 2.
+      - 'Simplify to obtain the standard form: $y = 2x + 3$.'
+      - 'Identify the value of $m$ (the coefficient of $x$): $m = 2$.'
+      - 'Identify the value of $c$ (the constant term): $c = 3$.'
+      id: q11-5
+      questionGroup: q11
+- id: linear-node-12
+  nodeNumber: 12
+  title: Graphing Linear Functions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: A tool rental company charges a $1 base fee plus $2 per hour ($x$). The total cost ($y$) is given by the
+        linear equation $y = 2x + 1$. Create a table of values for $x = 0, 1, 2$. Plot these points on a coordinate plane
+        and draw the graph of the function.
+      avatarIntro: Graphing linear functions is a fundamental skill! Remember to calculate your points carefully and use a
+        ruler to connect them.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 2*x + 1
+          xMin: -1
+          xMax: 3
+          yMin: 0
+          yMax: 6
+          label: y = 2x + 1
+          showGrid: true
+      finalAnswer: 'Table of values: (0, 1), (1, 3), (2, 5). Plot these three points and draw a continuous straight line through
+        them.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the output $y$ for the given input values $x=0, 1, 2$ using the equation $y = 2x + 1$. The resulting
+        ordered pairs are (0, 1), (1, 3), and (2, 5).'
+      - 'Step 2: Plot the ordered pairs (0, 1), (1, 3), and (2, 5) accurately on the coordinate plane.'
+      - 'Step 3: Use a ruler to draw a straight line that passes through all three plotted points. Label the line $y = 2x
+        + 1$.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: An underwater drone starts 5 meters below a reference point (represented by $y = 5$) and descends 2 meters
+        every minute ($x$). The depth is modeled by the function $y = 5 - 2x$. Graph this function by creating a table using
+        input values $x = 0, 1, 2, 3$.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 5 - 2*x
+          xMin: -1
+          xMax: 4
+          yMin: -2
+          yMax: 6
+          label: y = 5 - 2x
+          showGrid: true
+      finalAnswer: 'Table of values: (0, 5), (1, 3), (2, 1), (3, -1). Plot these four points and connect them with a straight
+        line.'
+      stepByStepGuideline:
+      - 'Step 1: Substitute $x=0, 1, 2, 3$ into the equation $y = 5 - 2x$. The corresponding $y$ values are $5, 3, 1, -1$.'
+      - 'Step 2: List the ordered pairs: (0, 5), (1, 3), (2, 1), and (3, -1).'
+      - 'Step 3: Plot the four points accurately on the coordinate plane.'
+      - 'Step 4: Draw a continuous straight line passing through all four points.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: Graph the linear function $y = 3x - 2$. To ensure accuracy across quadrants, create a table of values using
+        the inputs $x = -1, 0, 1, 2$. Plot these points and draw the corresponding straight line.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 3*x - 2
+          xMin: -2
+          xMax: 3
+          yMin: -6
+          yMax: 5
+          label: y = 3x - 2
+          showGrid: true
+      finalAnswer: 'Table of values: (-1, -5), (0, -2), (1, 1), (2, 4). Plot these points and draw a straight line.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the $y$ values for $x = -1, 0, 1, 2$. The resulting ordered pairs are $(-1, -5), (0, -2), (1, 1),
+        (2, 4).'
+      - 'Step 2: Plot the four ordered pairs on the coordinate plane, ensuring negative coordinates are placed in the correct
+        quadrants.'
+      - 'Step 3: Use a ruler to draw a straight line that connects all the points.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: Graph the function defined by $y = x + 4$. Start by completing a table for the inputs $x = -2, -1, 0, 1$.
+        Plot the resulting coordinates and connect them to form the line.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: x + 4
+          xMin: -3
+          xMax: 2
+          yMin: 1
+          yMax: 6
+          label: y = x + 4
+          showGrid: true
+      finalAnswer: 'Table of values: (-2, 2), (-1, 3), (0, 4), (1, 5). Plot these points and draw a straight line.'
+      stepByStepGuideline:
+      - 'Step 1: Substitute $x = -2, -1, 0, 1$ into $y = x + 4$. The output values are $y = 2, 3, 4, 5$.'
+      - 'Step 2: List the resulting coordinates: $(-2, 2), (-1, 3), (0, 4), (1, 5)$.'
+      - 'Step 3: Plot the four points on the coordinate plane.'
+      - 'Step 4: Draw a continuous straight line that passes through all four points.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: Graph the function $y = -x + 3$ by creating a table using $x = 0, 1, 2, 3$. Plot the first two points,
+        (0, 3) and (1, 2), and draw a line segment connecting them. Then, plot the third point, (2, 1). Explain the significance
+        of the third point in verifying the accuracy of your graph.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: -x + 3
+          xMin: -1
+          xMax: 4
+          yMin: -1
+          yMax: 4
+          label: y = -x + 3
+          showGrid: true
+      finalAnswer: Points are (0, 3), (1, 2), (2, 1), (3, 0). Plotting the third point (2, 1) verifies the graph because two
+        points are sufficient to define a unique straight line, but the third point checks for calculation or plotting errors.
+        If all three points are collinear (lie on the same line), the graph is accurate.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the points for $x = 0, 1, 2, 3$. The points are (0, 3), (1, 2), (2, 1), and (3, 0).'
+      - 'Step 2: Plot all four points on the coordinate plane.'
+      - 'Step 3: Draw the straight line defined by the points.'
+      - 'Step 4: Explain the significance: Two points are enough to define a unique line. The third point acts as a verification
+        point. If the third point lies on the line determined by the first two, it confirms that the points were calculated
+        and plotted correctly, minimizing error.'
+      id: q12-5
+      questionGroup: q12
+- id: linear-node-13
+  nodeNumber: 13
+  title: Reading and Interpreting Linear Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: 'The graph below shows the linear function $y = 2x + 3$.
+
+
+        Use the graph to determine:
+
+        (a) The value of the y-intercept.
+
+        (b) The value of $y$ when $x = 1$.'
+      avatarIntro: Linear graphs are powerful tools! Let's practice reading important values directly from the visual representation.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 2x + 3
+          xMin: -3
+          xMax: 3
+          yMin: -1
+          yMax: 8
+          label: y = 2x + 3
+          showGrid: true
+          showPoints:
+          - x: 0
+            label: y-intercept
+            color: red
+      finalAnswer: (a) The y-intercept is 3. (b) When x = 1, y = 5.
+      stepByStepGuideline:
+      - 'Step 1: Identify the y-intercept. This is the point where the line crosses the vertical y-axis (where x=0). Reading
+        from the graph, the line crosses at y = 3.'
+      - 'Step 2: Find the value of y when x = 1. Locate x = 1 on the horizontal axis. Move vertically up until you intersect
+        the line.'
+      - 'Step 3: From the point of intersection, move horizontally to the left to read the corresponding y-value, which is
+        5.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: 'The linear function is given by the equation $y = -x + 4$.
+
+
+        Find the x-intercept of this function algebraically.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: -x + 4
+          xMin: -1
+          xMax: 6
+          yMin: -1
+          yMax: 6
+          label: y = -x + 4
+          showGrid: true
+          showPoints:
+          - x: 0
+            label: y-intercept
+            color: red
+      finalAnswer: x = 4. The x-intercept is (4, 0).
+      stepByStepGuideline:
+      - 'Step 1: Recall that the x-intercept is the point where the line crosses the x-axis, meaning the y-coordinate must
+        be 0.'
+      - 'Step 2: Substitute y = 0 into the equation: $0 = -x + 4$.'
+      - 'Step 3: Solve for x. Add x to both sides: $x = 4$.'
+      - 'Step 4: State the x-intercept coordinate: (4, 0).'
+      id: q13-2
+      questionGroup: q13
+    - problemText: 'A local taxi service uses the cost function $C = 5 + 2d$, where $C$ is the total cost in dollars and $d$
+        is the distance traveled in kilometers.
+
+
+        Explain what the y-intercept of this graph represents in the context of the taxi service.'
+      mathTool: null
+      finalAnswer: The y-intercept is 5. It represents the $5 base fare (the initial cost charged for the ride before any
+        distance is traveled, i.e., when d = 0).
+      stepByStepGuideline:
+      - 'Step 1: Identify the y-intercept (c) in the linear equation $C = 2d + 5$. The y-intercept is 5.'
+      - 'Step 2: Understand that the y-intercept occurs when the independent variable (d, distance) is zero.'
+      - 'Step 3: Interpret $C=5$ when $d=0$ in the given context. This means the cost is $5 when the distance traveled is
+        0 km.'
+      - 'Step 4: Conclude that the y-intercept represents the initial base charge or fixed fare of $5.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: 'The graph below displays the linear function $y = 3x - 6$.
+
+
+        Using the graph, determine:
+
+        (a) The value of the x-intercept.
+
+        (b) The value of $x$ when $y = 3$.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 3x - 6
+          xMin: -1
+          xMax: 4
+          yMin: -8
+          yMax: 4
+          label: y = 3x - 6
+          showGrid: true
+          showPoints:
+          - x: 0
+            label: y-intercept
+            color: red
+      finalAnswer: (a) The x-intercept is 2. (b) When y = 3, x = 3.
+      stepByStepGuideline:
+      - 'Step 1: Identify the x-intercept. This is the point where the line crosses the horizontal x-axis (where y=0). Reading
+        from the graph, the line crosses the x-axis at x = 2.'
+      - 'Step 2: Find the value of x when y = 3. Locate y = 3 on the vertical axis.'
+      - 'Step 3: Move horizontally right until you intersect the line.'
+      - 'Step 4: From the point of intersection, move vertically down to read the corresponding x-value, which is 3.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: 'A linear function is defined by the equation $y = 4x - 8$.
+
+
+        Calculate both the y-intercept and the x-intercept for this function.'
+      mathTool: null
+      finalAnswer: 'y-intercept: (0, -8); x-intercept: (2, 0).'
+      stepByStepGuideline:
+      - 'Step 1: To find the y-intercept, set x = 0 in the equation: $y = 4(0) - 8$.'
+      - 'Step 2: Calculate y: $y = -8$. The y-intercept is (0, -8).'
+      - 'Step 3: To find the x-intercept, set y = 0 in the equation: $0 = 4x - 8$.'
+      - 'Step 4: Solve for x: Add 8 to both sides ($8 = 4x$). Divide by 4 ($x = 2$). The x-intercept is (2, 0).'
+      id: q13-5
+      questionGroup: q13
+- id: linear-node-14
+  nodeNumber: 14
+  title: Understanding and Calculating Gradient
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: gradientVisualizer
+    preWrittenQuestions:
+    - problemText: A hiker walks along a straight section of a trail. The path starts at Point A (1 km horizontal distance,
+        200 m altitude) and ends at Point B (3 km horizontal distance, 800 m altitude). If we use coordinates (x, y) measured
+        in hundreds of meters, the points are A(1, 2) and B(3, 8). Calculate the gradient of this section of the trail.
+      avatarIntro: Welcome! Let's start by calculating the steepness of a line. Remember, the gradient formula helps us measure
+        rise over run.
+      mathTool:
+        toolName: gradientVisualizer
+        parameters:
+          point1:
+            x: 1
+            y: 2
+          point2:
+            x: 3
+            y: 8
+          showTriangle: true
+          highlightRise: false
+          highlightRun: false
+          showCalculation: false
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Identify the coordinates: (x₁, y₁) = (1, 2) and (x₂, y₂) = (3, 8).'
+      - 'Calculate the rise (change in y): Rise = y₂ − y₁ = 8 − 2 = 6.'
+      - 'Calculate the run (change in x): Run = x₂ − x₁ = 3 − 1 = 2.'
+      - 'Calculate the gradient: m = Rise / Run = 6 / 2 = 3.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: A submarine begins a controlled descent. Its starting position is P(−1, 5) and it moves along a straight
+        path to position Q(2, −1). Determine the gradient of the submarine's path.
+      mathTool:
+        toolName: gradientVisualizer
+        parameters:
+          point1:
+            x: -1
+            y: 5
+          point2:
+            x: 2
+            y: -1
+          showTriangle: true
+          highlightRise: false
+          highlightRun: false
+          showCalculation: false
+      finalAnswer: '-2'
+      stepByStepGuideline:
+      - 'Identify the coordinates: (x₁, y₁) = (-1, 5) and (x₂, y₂) = (2, -1).'
+      - 'Calculate the rise (change in y): Rise = y₂ − y₁ = -1 − 5 = -6.'
+      - 'Calculate the run (change in x): Run = x₂ − x₁ = 2 − (-1) = 3.'
+      - 'Calculate the gradient: m = Rise / Run = -6 / 3 = -2.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: An engineer is designing an accessibility ramp. The ramp starts at the origin (0, 0) and reaches a height
+        of 2 meters at a horizontal distance of 4 meters away. Calculate the gradient of the ramp. Express your answer as
+        a simplified fraction.
+      mathTool:
+        toolName: gradientVisualizer
+        parameters:
+          point1:
+            x: 0
+            y: 0
+          point2:
+            x: 4
+            y: 2
+          showTriangle: true
+          highlightRise: false
+          highlightRun: false
+          showCalculation: false
+      finalAnswer: 1/2
+      stepByStepGuideline:
+      - 'Identify the coordinates: (x₁, y₁) = (0, 0) and (x₂, y₂) = (4, 2).'
+      - 'Calculate the rise (change in y): Rise = 2 − 0 = 2.'
+      - 'Calculate the run (change in x): Run = 4 − 0 = 4.'
+      - 'Calculate the gradient: m = Rise / Run = 2 / 4.'
+      - 'Simplify the fraction: m = 1/2.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: 'A specific roof design requires a steep pitch modeled by a line segment passing through the points (0,
+        5) and (1, 0).
+
+        (a) Calculate the gradient of this roof line.
+
+        (b) Based on the value of the gradient, describe whether the line slopes upward or downward from left to right, and
+        comment on its steepness.'
+      mathTool:
+        toolName: gradientVisualizer
+        parameters:
+          point1:
+            x: 0
+            y: 5
+          point2:
+            x: 1
+            y: 0
+          showTriangle: true
+          highlightRise: false
+          highlightRun: false
+          showCalculation: false
+      finalAnswer: (a) m = -5. (b) The line slopes downward from left to right and is very steep.
+      stepByStepGuideline:
+      - 'Part (a) Calculate the gradient: m = (0 − 5) / (1 − 0) = -5 / 1 = -5.'
+      - Part (b) Interpret the result. Since the gradient is negative (m < 0), the line slopes downward from left to right.
+      - Since the absolute value of the gradient is large (|-5| = 5), the line is considered very steep.
+      id: q14-4
+      questionGroup: q14
+    - problemText: A landscape architect is laying a pipeline that must maintain a fixed gradient of $m = -2$ to ensure proper
+        water flow. The pipeline starts at Point X(1, 7) and must end at Point Y(4, k). Find the missing vertical coordinate,
+        $k$, for the endpoint.
+      mathTool:
+        toolName: gradientVisualizer
+        parameters:
+          point1:
+            x: 1
+            y: 7
+          point2:
+            x: 4
+            y: 1
+          showTriangle: true
+          highlightRise: false
+          highlightRun: false
+          showCalculation: false
+      finalAnswer: k = 1
+      stepByStepGuideline:
+      - 'Use the gradient formula: m = (y₂ − y₁)/(x₂ − x₁). We are given m = -2, (x₁, y₁) = (1, 7), and (x₂, y₂) = (4, k).'
+      - 'Substitute the known values: -2 = (k − 7) / (4 − 1).'
+      - 'Simplify the denominator: -2 = (k − 7) / 3.'
+      - 'Multiply both sides by 3: -6 = k − 7.'
+      - 'Solve for k: k = -6 + 7 = 1.'
+      id: q14-5
+      questionGroup: q14
+- id: linear-node-15
+  nodeNumber: 15
+  title: Special Gradients - Horizontal and Vertical Lines
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: An underground utility cable is laid along a path defined by the equation $y = -2$. This line is plotted
+        on the Cartesian plane below, where $y$ represents depth relative to ground level ($y=0$). What is the gradient of
+        this cable's path?
+      avatarIntro: Special lines like these represent unique gradients. Remember the HOY-VUX rules to quickly determine if
+        the gradient is zero or undefined!
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          lines:
+          - type: horizontal
+            yValue: -2
+            equation: y = -2
+            color: blue
+      finalAnswer: Gradient = 0
+      stepByStepGuideline:
+      - The equation $y = -2$ is of the form $y = c$, where $c$ is a constant.
+      - Any equation of the form $y = c$ represents a horizontal line.
+      - Horizontal lines have zero rise (change in y) for any run (change in x).
+      - Therefore, the gradient (m = rise/run) is 0.
+      id: q15-1
+      questionGroup: q15
+    - problemText: A surveyor marks a vertical boundary line that corresponds to the Y-axis on a map. Write the equation of
+        this boundary line and determine its gradient.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          lines:
+          - type: vertical
+            xValue: 0
+            equation: x = 0
+            color: blue
+      finalAnswer: 'Equation: $x = 0$; Gradient: Undefined'
+      stepByStepGuideline:
+      - The Y-axis is the line where all x-coordinates are 0. Thus, its equation is $x = 0$.
+      - Any line of the form $x = c$ is a vertical line.
+      - The gradient formula is $m = \frac{\text{rise}}{\text{run}}$. For a vertical line, the run (change in x) is zero.
+      - Division by zero is undefined, so the gradient of the line $x = 0$ is undefined (VUX rule).
+      id: q15-2
+      questionGroup: q15
+    - problemText: An architect specifies that a decorative beam must be installed perfectly level (horizontal) across a wall.
+        If the beam passes through the coordinates (2, 5), write the equation that describes the line of the beam.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          lines:
+          - type: horizontal
+            yValue: 5
+            equation: y = 5
+            color: blue
+          points:
+          - x: 2
+            y: 5
+            color: red
+      finalAnswer: $y = 5$
+      stepByStepGuideline:
+      - The line must be horizontal.
+      - According to the HOY rule (Horizontal, 0 gradient, Y=constant), the equation of a horizontal line uses the y-coordinate.
+      - Since the line passes through (2, 5), the constant y-value for all points on the line must be 5.
+      - The equation is $y = 5$.
+      id: q15-3
+      questionGroup: q15
+    - problemText: A construction worker drives a guide stake into the ground at the location defined by $x = -3$. This stake
+        represents a vertical retaining wall alignment. If the stake height corresponds to the point (−3, 4), what is the
+        equation of the line representing this vertical alignment?
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          lines:
+          - type: vertical
+            xValue: -3
+            equation: x = -3
+            color: blue
+          points:
+          - x: -3
+            y: 4
+            color: red
+      finalAnswer: $x = -3$
+      stepByStepGuideline:
+      - The line is vertical, meaning all points on the line share the same x-coordinate.
+      - We use the VUX rule (Vertical, Undefined gradient, X=constant).
+      - Since the line passes through (−3, 4), the constant x-value for all points on the line must be −3.
+      - The equation is $x = -3$.
+      id: q15-4
+      questionGroup: q15
+    - problemText: A robot is programmed to travel along a straight line connecting Point A (3, 0) and Point B (5, 0). Determine
+        both the gradient and the equation of the robot's path.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -6
+          xMax: 6
+          yMin: -6
+          yMax: 6
+          showGrid: true
+          lines:
+          - type: horizontal
+            yValue: 0
+            equation: y = 0
+            color: blue
+          points:
+          - x: 3
+            y: 0
+            color: red
+          - x: 5
+            y: 0
+            color: red
+      finalAnswer: 'Gradient: 0; Equation: $y = 0$'
+      stepByStepGuideline:
+      - 'Calculate the gradient using the points (3, 0) and (5, 0): $m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{0 - 0}{5 - 3}
+        = \frac{0}{2} = 0$.'
+      - Since the gradient is 0, the path is a horizontal line (the X-axis).
+      - A horizontal line passing through the origin has the equation $y = c$, where $c$ is the constant y-coordinate.
+      - Since both points have a y-coordinate of 0, the equation is $y = 0$.
+      id: q15-5
+      questionGroup: q15
+- id: linear-node-16
+  nodeNumber: 16
+  title: Gradient as Rate of Change in Real Contexts
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: 'A high-speed train’s distance $d$ (in km) traveled after time $t$ (in hours) is modeled by the linear
+        equation $d = 80t$.
+
+
+        Use the graph provided to determine the gradient of the line. What does this gradient represent in the context of
+        the train''s travel?'
+      avatarIntro: Ready to tackle some real-world linear functions? Remember, the gradient shows the rate at which one quantity
+        changes relative to another.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 80x
+          xMin: 0
+          xMax: 5
+          yMin: 0
+          yMax: 400
+          label: d = 80t
+          xLabel: Time (h)
+          yLabel: Distance (km)
+      finalAnswer: Gradient = 80 km/h. This represents the constant speed of the train. For every hour that passes, the train
+        travels an additional 80 km.
+      stepByStepGuideline:
+      - 'Identify the equation provided: $d = 80t$. This is in the form $y = mx + c$, where $m$ is the gradient and $c = 0$.'
+      - Determine the value of the gradient $m$. Here, $m = 80$.
+      - Interpret the gradient in context. Since the vertical axis (y) is Distance (km) and the horizontal axis (x) is Time
+        (h), the gradient represents the change in distance over the change in time, which is speed.
+      - 'State the gradient with appropriate units: 80 km/h.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: 'A store sells coffee beans based on a fixed setup fee plus a cost per kilogram. The total cost $C$ (in
+        dollars) of buying $n$ kg of coffee beans is given by $C = 3 + 0.5n$.
+
+
+        Explain the real-world meaning of both the gradient (m) and the y-intercept (c) in this cost function.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 3 + 0.5x
+          xMin: 0
+          xMax: 20
+          yMin: 0
+          yMax: 15
+          label: C = 3 + 0.5n
+          xLabel: Mass of Beans (kg)
+          yLabel: Total Cost ($)
+      finalAnswer: 'Gradient (m = 0.5): Represents the cost per kilogram of coffee beans, which is $0.50 per kg.
+
+        Y-intercept (c = 3): Represents the fixed/base cost or setup fee of $3, charged even when 0 kg of beans are purchased.'
+      stepByStepGuideline:
+      - Identify the equation $C = 3 + 0.5n$ in the form $y = mx + c$.
+      - The gradient $m$ is the coefficient of the variable $n$ (0.5). This represents the rate of change of cost per unit
+        of mass, or the cost per kg ($0.50/kg).
+      - The y-intercept $c$ is the constant term (3). This represents the starting cost when $n=0$, or the fixed base fee
+        ($3).
+      id: q16-2
+      questionGroup: q16
+    - problemText: 'An object is placed in a cool room, and its temperature $T$ (in °C) begins to drop. Its temperature after
+        $h$ hours is given by the function $T = 20 - 2h$.
+
+
+        What is the rate of change of the object’s temperature? Is the temperature increasing or decreasing?'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 20 - 2x
+          xMin: 0
+          xMax: 10
+          yMin: 0
+          yMax: 20
+          label: T = 20 - 2h
+          xLabel: Time (h)
+          yLabel: Temperature (°C)
+      finalAnswer: The rate of change is -2 °C per hour. Since the gradient is negative (-2), the temperature is decreasing.
+      stepByStepGuideline:
+      - Identify the gradient (rate of change) from the equation $T = 20 - 2h$. The gradient $m$ is -2.
+      - 'The rate of change is the absolute value of the gradient, coupled with the units: 2 °C per hour.'
+      - Determine the direction of change. Since the gradient is negative ($m < 0$), the quantity (Temperature $T$) is decreasing.
+      id: q16-3
+      questionGroup: q16
+    - problemText: 'During a sprint training session, the distance $s$ (in meters) an athlete covers is related to the time
+        $t$ (in seconds) by the equation $s = 15t$.
+
+
+        Calculate the gradient of this function. What physical quantity does this gradient represent, and what are its standard
+        units?'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 15x
+          xMin: 0
+          xMax: 10
+          yMin: 0
+          yMax: 150
+          label: s = 15t
+          xLabel: Time (s)
+          yLabel: Distance (m)
+      finalAnswer: Gradient = 15. The gradient represents the athlete's speed (rate of change of distance). The units are
+        meters per second (m/s).
+      stepByStepGuideline:
+      - 'Identify the equation: $s = 15t$. This is in the form $y = mx + c$.'
+      - The gradient $m$ is the coefficient of $t$, so $m = 15$.
+      - The gradient represents the rate of change of $s$ (distance in meters) with respect to $t$ (time in seconds). This
+        physical quantity is speed.
+      - 'State the units: meters/second (m/s).'
+      id: q16-4
+      questionGroup: q16
+    - problemText: 'A local delivery service charges a fixed booking fee plus a variable charge based on distance. The total
+        cost $C$ (in dollars) for a delivery over a distance $d$ (in km) is $C = 5 + 2d$.
+
+
+        If the delivery distance increases by 4 km, how much does the total cost increase? Explain how the gradient helps
+        determine this increase.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 5 + 2x
+          xMin: 0
+          xMax: 10
+          yMin: 0
+          yMax: 25
+          label: C = 5 + 2d
+          xLabel: Distance (km)
+          yLabel: Total Cost ($)
+      finalAnswer: The gradient of the function is $m = 2, which means the cost increases by $2 for every 1 km increase in
+        distance. Therefore, if the distance increases by 4 km, the total cost increases by $2 \times 4 = $8.
+      stepByStepGuideline:
+      - Identify the gradient $m$ from the equation $C = 5 + 2d$. The gradient is $m = 2$.
+      - "The gradient represents the rate of change of cost ($) per unit of distance (km). $m = 2 \text{ dollars/km}$."
+      - 'Calculate the cost increase: Change in Cost = Gradient $\times$ Change in Distance.'
+      - 'Substitute the values: Increase = $2/km \times 4 km = $8.'
+      - The gradient provides the constant multiplier needed to find the change in $C$ based on the change in $d$.
+      id: q16-5
+      questionGroup: q16
+- id: linear-node-17
+  nodeNumber: 17
+  title: Parallel Lines and Finding Equations from Points
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: A town is planning a new cable car route that must follow a straight line path connecting Station A at
+        coordinates (2, 7) and Station B at coordinates (4, 11). Find the equation of the line representing this cable car
+        route in the form $y = mx + c$. The coordinates are plotted on the Cartesian plane below.
+      avatarIntro: Understanding how to find a linear equation from two specific points is crucial for modeling real-world
+        straight line paths. Let's find the gradient first!
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -1
+          xMax: 5
+          yMin: 0
+          yMax: 12
+          showGrid: true
+          lines:
+          - type: linear
+            slope: 2
+            yIntercept: 3
+            color: blue
+            equation: y = 2x + 3
+          points:
+          - x: 2
+            y: 7
+            label: A(2, 7)
+            color: red
+          - x: 4
+            y: 11
+            label: B(4, 11)
+            color: red
+      finalAnswer: y = 2x + 3
+      stepByStepGuideline:
+      - 'Step 1: Calculate the gradient (m) using the two points (2, 7) and (4, 11). m = (y₂ - y₁) / (x₂ - x₁) = (11 - 7)
+        / (4 - 2) = 4 / 2 = 2.'
+      - 'Step 2: Substitute the gradient (m = 2) and one point (e.g., (2, 7)) into the equation y = mx + c. 7 = 2(2) + c.'
+      - 'Step 3: Solve for the y-intercept (c). 7 = 4 + c, so c = 3.'
+      - 'Step 4: Write the final equation: y = 2x + 3.'
+      id: q17-1
+      questionGroup: q17
+    - problemText: 'An air traffic controller is monitoring two different flight paths, modeled by Line L1: $y = 3x + 2$ and
+        Line L2: $y = 3x - 5$. Are these two flight paths parallel? Explain your answer using the concept of gradients. The
+        lines are plotted below.'
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -2
+          xMax: 4
+          yMin: -6
+          yMax: 10
+          showGrid: true
+          lines:
+          - type: linear
+            slope: 3
+            yIntercept: 2
+            equation: y = 3x + 2
+            color: blue
+          - type: linear
+            slope: 3
+            yIntercept: -5
+            equation: y = 3x - 5
+            color: red
+          points: []
+      finalAnswer: Yes, they are parallel because both lines have the same gradient, m = 3.
+      stepByStepGuideline:
+      - 'Step 1: Identify the gradient of Line L1 ($y = 3x + 2$). The gradient $m_1 = 3.'
+      - 'Step 2: Identify the gradient of Line L2 ($y = 3x - 5$). The gradient $m_2 = 3.'
+      - 'Step 3: Compare the gradients. Since $m_1 = m_2 = 3$, the lines are parallel.'
+      id: q17-2
+      questionGroup: q17
+    - problemText: In a building floor plan, a diagonal structural beam runs from point P(1, 5) to point Q(3, 11). A partition
+        wall must be constructed parallel to this beam and pass through a specific location R(5, 1). Find the equation of
+        the line representing this partition wall.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 0
+          xMax: 6
+          yMin: -15
+          yMax: 12
+          showGrid: true
+          lines:
+          - type: linear
+            slope: 3
+            yIntercept: 2
+            color: blue
+            equation: y = 3x + 2
+          - type: linear
+            slope: 3
+            yIntercept: -14
+            color: green
+            equation: y = 3x - 14
+          points:
+          - x: 1
+            y: 5
+            label: P
+            color: red
+          - x: 3
+            y: 11
+            label: Q
+            color: red
+          - x: 5
+            y: 1
+            label: R
+            color: red
+      finalAnswer: y = 3x - 14
+      stepByStepGuideline:
+      - 'Step 1: Find the gradient of the structural beam PQ. m = (11 - 5) / (3 - 1) = 6 / 2 = 3.'
+      - 'Step 2: Since the partition wall is parallel to the beam, its gradient is also m = 3.'
+      - 'Step 3: Use the gradient m = 3 and the point R(5, 1) to find the y-intercept (c) using y = mx + c. 1 = 3(5) + c.'
+      - 'Step 4: Solve for c: 1 = 15 + c, so c = -14.'
+      - 'Step 5: Write the final equation for the partition wall: y = 3x - 14.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: 'Two ski slopes are modeled by the lines Slope 1: $y = 2x + 1$ and Slope 2: $y = -2x + 1$. Are these two
+        slopes parallel? Justify your answer mathematically. The lines are shown on the coordinate plane below.'
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -3
+          xMax: 3
+          yMin: -5
+          yMax: 7
+          showGrid: true
+          lines:
+          - type: linear
+            slope: 2
+            yIntercept: 1
+            equation: y = 2x + 1
+            color: blue
+          - type: linear
+            slope: -2
+            yIntercept: 1
+            equation: y = -2x + 1
+            color: red
+          points: []
+      finalAnswer: No, they are not parallel because their gradients are different (2 and -2).
+      stepByStepGuideline:
+      - 'Step 1: Identify the gradient of Slope 1 ($y = 2x + 1$). $m_1 = 2$.'
+      - 'Step 2: Identify the gradient of Slope 2 ($y = -2x + 1$). $m_2 = -2$.'
+      - 'Step 3: Compare the gradients. Since $m_1 \neq m_2$ (2 is not equal to -2), the lines are not parallel.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: A scientist is tracking the linear growth of a culture. At Time 0 (x=0), the size is 2 units (y=2). After
+        2 hours (x=2), the size is 8 units (y=8). Find the equation that models this growth in the form $y = mx + c$. The
+        data points are plotted below.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: -1
+          xMax: 3
+          yMin: 0
+          yMax: 10
+          showGrid: true
+          lines:
+          - type: linear
+            slope: 3
+            yIntercept: 2
+            color: blue
+            equation: y = 3x + 2
+          points:
+          - x: 0
+            y: 2
+            label: (0, 2)
+            color: red
+          - x: 2
+            y: 8
+            label: (2, 8)
+            color: red
+      finalAnswer: y = 3x + 2
+      stepByStepGuideline:
+      - 'Step 1: Calculate the gradient (m) using the two points (0, 2) and (2, 8). m = (8 - 2) / (2 - 0) = 6 / 2 = 3.'
+      - 'Step 2: Since the point (0, 2) is the y-intercept, c = 2.'
+      - 'Step 3: Substitute m = 3 and c = 2 into the equation y = mx + c.'
+      - 'Step 4: Write the final equation: y = 3x + 2.'
+      id: q17-5
+      questionGroup: q17

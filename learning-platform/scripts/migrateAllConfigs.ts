@@ -882,6 +882,129 @@ const S1_PERIMETER_AREA_CONFIGS = [
 ];
 
 // Migrate all S1 topics
+/**
+ * S1 Data Handling configs (6 configs)
+ */
+const S1_DATA_HANDLING_CONFIGS = [
+  // ============================================
+  // S1 DATA HANDLING (6 NEW CONFIGS)
+  // ============================================
+
+  // Subtopic 1: Introduction to Data & Collection
+  {
+    id: 's1-math-data-intro',
+    displayName: 'Introduction to Data & Collection',
+    grade: 's1',
+    subject: 'math',
+    topic: 'data-handling',
+    subtopic: 'intro',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 45,
+      prerequisites: []
+    },
+    notesComponent: 's1/math/data-handling/Introduction',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Organizing Data with Frequency Tables
+  {
+    id: 's1-math-data-frequency',
+    displayName: 'Organizing Data with Frequency Tables',
+    grade: 's1',
+    subject: 'math',
+    topic: 'data-handling',
+    subtopic: 'frequency',
+    metadata: {
+      difficulty: 'foundational-to-intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-data-intro']
+    },
+    notesComponent: 's1/math/data-handling/FrequencyTables',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Grouped Data & Class Intervals
+  {
+    id: 's1-math-data-grouped',
+    displayName: 'Grouped Data & Class Intervals',
+    grade: 's1',
+    subject: 'math',
+    topic: 'data-handling',
+    subtopic: 'grouped',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-data-frequency']
+    },
+    notesComponent: 's1/math/data-handling/GroupedData',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Visual Representations - Pictograms & Bar Graphs
+  {
+    id: 's1-math-data-visual-1',
+    displayName: 'Pictograms & Bar Graphs',
+    grade: 's1',
+    subject: 'math',
+    topic: 'data-handling',
+    subtopic: 'visual-1',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s1-math-data-frequency']
+    },
+    notesComponent: 's1/math/data-handling/PictogramsBarGraphs',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 5: Visual Representations - Pie Charts & Line Graphs
+  {
+    id: 's1-math-data-visual-2',
+    displayName: 'Pie Charts & Line Graphs',
+    grade: 's1',
+    subject: 'math',
+    topic: 'data-handling',
+    subtopic: 'visual-2',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s1-math-data-frequency']
+    },
+    notesComponent: 's1/math/data-handling/PieChartsLineGraphs',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 6: Comparing & Critiquing Statistical Diagrams
+  {
+    id: 's1-math-data-critique',
+    displayName: 'Comparing & Critiquing Diagrams',
+    grade: 's1',
+    subject: 'math',
+    topic: 'data-handling',
+    subtopic: 'critique',
+    metadata: {
+      difficulty: 'advanced' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s1-math-data-visual-1', 's1-math-data-visual-2']
+    },
+    notesComponent: 's1/math/data-handling/ComparingCritiquing',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
 const ALL_CONFIGS = [
   ...S1_APPROXIMATION_ESTIMATION_CONFIGS,
   ...S1_SIMPLE_LINEAR_EQUATIONS_CONFIGS,
@@ -890,7 +1013,8 @@ const ALL_CONFIGS = [
   ...S1_RATIO_RATE_SPEED_CONFIGS,
   ...S1_PERCENTAGE_CONFIGS,
   ...S1_LINEAR_FUNCTIONS_CONFIGS,
-  ...S1_PERIMETER_AREA_CONFIGS
+  ...S1_PERIMETER_AREA_CONFIGS,
+  ...S1_DATA_HANDLING_CONFIGS
 ];
 
 /**

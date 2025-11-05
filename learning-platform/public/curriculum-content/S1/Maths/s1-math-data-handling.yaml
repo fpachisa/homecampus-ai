@@ -1,0 +1,2810 @@
+# S1 Math Data Handling - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: data-node-01
+  nodeNumber: 1
+  title: What is Statistics? Understanding the Four Processes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Statistics is the methodology of making sense of data. What are the four fundamental processes involved
+        in a complete statistical investigation, and what is the correct order they generally follow?
+      avatarIntro: Welcome! Let's start with the basics of statistics. Understanding these four steps is crucial for any data
+        analysis project.
+      mathTool: null
+      finalAnswer: 'The four processes involved in statistics, in their correct sequence, are: (1) Collecting data (gathering
+        information), (2) Organizing data (structuring and summarizing), (3) Representing data (creating graphs and charts),
+        and (4) Analyzing data (interpreting results and drawing conclusions).'
+      stepByStepGuideline:
+      - Recall the definition of statistics as a method for processing information.
+      - 'Identify the initial action: gathering the information (Collecting).'
+      - Identify the step needed to make the information usable (Organizing).
+      - Identify the step needed to communicate the information visually (Representing).
+      - Identify the final step of interpretation and conclusion drawing (Analyzing).
+      id: q1-1
+      questionGroup: q1
+    - problemText: 'A teacher recorded the time (in minutes) it took for each student in a class to complete a puzzle: 12,
+        8, 15, 12, 9, 11, 14, 15, 8, 10. This list is currently unorganized. Is this collection of times classified as raw
+        data or organized data? Justify your classification.'
+      mathTool: null
+      finalAnswer: This collection of times is classified as raw data. It is raw data because the numbers are simply listed
+        in the order they were collected and have not been sorted, grouped, or summarized (e.g., in a frequency table), making
+        it difficult to quickly identify patterns or summaries.
+      stepByStepGuideline:
+      - 'Define raw data: Data that is unprocessed, unorganized, and in the state it was first collected.'
+      - Examine the provided list of times. Since it is just an unsorted list, it fits the definition of raw data.
+      - Provide justification by explaining why its current state makes interpretation difficult or incomplete.
+      id: q1-2
+      questionGroup: q1
+    - problemText: You have collected hundreds of survey responses detailing student preferences for lunchtime meals. Why
+        is the 'Organizing' step considered essential—not optional—before you attempt to represent or analyze this large dataset?
+      mathTool: null
+      finalAnswer: The Organizing step is essential because raw data is often messy, complex, and unmanageable. Organizing
+        data (e.g., sorting, tallying frequencies, or grouping into categories) transforms the data into a usable format.
+        This structure simplifies interpretation, makes patterns visible, and ensures the accuracy of any visual representations
+        or final analysis drawn from the data.
+      stepByStepGuideline:
+      - Identify the main drawback of working directly with large amounts of raw data.
+      - Explain the primary function of the organizing step (e.g., sorting, counting, grouping).
+      - State the benefit of this organized structure in preparation for the later stages (Representing and Analyzing).
+      id: q1-3
+      questionGroup: q1
+    - problemText: The final two processes in statistics are Representing and Analyzing. Explain the key conceptual difference
+        between these two steps, focusing on the primary purpose of each one.
+      mathTool: null
+      finalAnswer: Representing data is the process of creating visuals (like graphs or charts) to clearly communicate the
+        data findings. Its purpose is visual communication. Analyzing data, conversely, is the intellectual step of interpreting
+        those visuals or summaries, identifying trends, making comparisons, calculating measures (like averages), and drawing
+        meaningful conclusions to answer the initial research question. Its purpose is interpretation and decision-making.
+      stepByStepGuideline:
+      - Define 'Representing' as the visualization stage.
+      - Define 'Analyzing' as the interpretation and conclusion-drawing stage.
+      - 'Contrast their purposes: one is for clear presentation, and the other is for deriving meaning.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: A government agency has completed a bar chart showing the percentage breakdown of monthly average temperatures
+        in a city over the last decade. Is this visual classified as raw data or organized data? Based on the four statistical
+        processes, what must the agency do as the final step after completing this chart?
+      mathTool: null
+      finalAnswer: This bar chart is classified as organized data (specifically, represented data). The four processes are
+        Collecting → Organizing → Representing → Analyzing. Since the agency has already completed the representation step
+        (the bar chart), the final logical step they must perform is Analyzing data. This involves interpreting the chart
+        to identify trends (e.g., warming patterns, seasonal variations) and drawing conclusions to inform long-term policy.
+      stepByStepGuideline:
+      - 'Classify the bar chart: It is a structured visual display, thus it is organized data.'
+      - Determine where the bar chart fits in the four processes (it is the Representing step).
+      - 'Identify the final step in the sequence that follows Representing: Analyzing.'
+      - Explain what the Analyzing step entails in this context (interpreting temperature patterns and drawing conclusions).
+      id: q1-5
+      questionGroup: q1
+- id: data-node-02
+  nodeNumber: 2
+  title: Four Methods of Data Collection
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Identify and briefly describe the four fundamental methods used to collect data in statistical investigations.
+      avatarIntro: Understanding how data is gathered is the first crucial step in statistics. Let's start by recalling the
+        main techniques.
+      mathTool: null
+      finalAnswer: 'The four fundamental methods are: 1) Conducting Experiments (testing cause and effect under controlled
+        conditions), 2) Conducting Surveys (asking questions to gather opinions or facts from people), 3) Observing Outcomes
+        (watching and recording events or behaviors in their natural setting), and 4) Searching Statistical Data (obtaining
+        data already collected and published by others).'
+      stepByStepGuideline:
+      - Recall the four recognized methods of collecting data.
+      - 'Method 1: Conducting Experiments, which involves manipulating variables to test a hypothesis.'
+      - 'Method 2: Conducting Surveys, which involves asking questions to respondents.'
+      - 'Method 3: Observing Outcomes, which involves passively recording events or behaviors.'
+      - 'Method 4: Searching Statistical Data, which involves accessing existing, published data sources.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: A municipal government needs to decide if they should invest in building more public bicycle lanes. To
+        gauge public support and potential usage, which data collection method is most appropriate?
+      mathTool: null
+      finalAnswer: The most appropriate method is Conducting a Survey. This method is necessary because the government needs
+        to gather the opinions, preferences, and intentions (whether residents would use the lanes) directly from the population.
+      stepByStepGuideline:
+      - 'Determine the goal: The goal is to measure public opinion and intention.'
+      - 'Evaluate methods: Experiments test cause/effect; Observation tracks natural behavior; Searching Data uses existing
+        information. None of these capture current public opinion directly.'
+      - 'Select the appropriate method: Since the data required is subjective (opinions and preferences), Conducting a Survey
+        is the correct choice.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: An agricultural scientist wants to determine if playing classical music near tomato plants actually increases
+        their yield compared to plants grown in silence. What is the most appropriate data collection method for this study?
+      mathTool: null
+      finalAnswer: The most appropriate method is Conducting an Experiment. An experiment is required because the scientist
+        must test a specific hypothesis (music causes increased yield) under controlled conditions, manipulating one variable
+        (music exposure) while measuring the resulting outcome (yield).
+      stepByStepGuideline:
+      - 'Determine the goal: The goal is to test a cause-and-effect relationship (Music → Yield).'
+      - 'Evaluate methods: Testing a hypothesis by manipulating conditions requires a controlled setup.'
+      - 'Select the appropriate method: Conducting an Experiment is the only method that allows for controlled manipulation
+        of variables (like music exposure) to rigorously measure the resulting effect.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: A traffic analyst wants to measure the average speed of vehicles traveling on a highway stretch during
+        rush hour without interfering with the flow of traffic or alerting drivers that they are being studied. Which data
+        collection method should they use?
+      mathTool: null
+      finalAnswer: The most appropriate method is Observing Outcomes (or Direct Observation). Observation is appropriate as
+        the analyst needs to passively watch and record the natural behavior (speed) of the subjects (drivers) in a real-world
+        setting without influencing the data being collected.
+      stepByStepGuideline:
+      - 'Determine the goal: The goal is to track natural, ongoing behavior (vehicle speed) without intervention.'
+      - 'Evaluate methods: Surveys require interaction; Experiments require manipulation; Searching Data requires published
+        records. None fit the need for non-intrusive, real-time tracking.'
+      - 'Select the appropriate method: Since the analyst must passively watch and record natural occurrences, Observation
+        is the necessary method.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: You are preparing a school report on the historical unemployment rate in your country over the last fifty
+        years. You need precise, macro-level figures compiled by the national statistical office. What is the most efficient
+        way to collect this type of data?
+      mathTool: null
+      finalAnswer: The most appropriate method is Searching Statistical Data. This method is the most efficient because the
+        necessary data is historical, official, and has already been systematically collected, processed, and published by
+        a reliable authoritative source (the national statistical office).
+      stepByStepGuideline:
+      - 'Determine the goal: The goal is to obtain previously compiled, historical, large-scale data.'
+      - 'Evaluate methods: Since the data already exists and has been officially published, there is no need to conduct a
+        new survey, observation, or experiment.'
+      - 'Select the appropriate method: Searching Statistical Data allows the researcher to quickly access reliable secondary
+        sources.'
+      id: q2-5
+      questionGroup: q2
+- id: data-node-03
+  nodeNumber: 3
+  title: Choosing the Best Data Collection Method
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A large supermarket chain wants to redesign its layout to maximize sales of high-profit items. They need
+        to understand exactly how customers navigate the aisles and which displays capture their attention naturally. They
+        are considering three options: (A) Surveying customers as they exit the store about their path, (B) Installing hidden
+        cameras to observe customer movement patterns (path tracking), or (C) Analyzing past sales transaction data to see
+        which items are bought together.'
+      avatarIntro: Choosing the right method depends heavily on what kind of data you need. Let's practice analyzing scenarios
+        to find the best fit!
+      mathTool: null
+      finalAnswer: 'Option (B): Installing hidden cameras to observe customer movement patterns (Observation).'
+      stepByStepGuideline:
+      - 'Analyze the goal: The supermarket needs accurate behavioral data on *how* customers move, not what they *say* they
+        do or what they *bought* previously.'
+      - 'Evaluate Method A (Survey): Surveys rely on customer memory, which is often inaccurate regarding habitual movements.
+        This provides low accuracy for path tracking.'
+      - 'Evaluate Method C (Sales Data): Sales data shows correlation (what was bought) but not causation or movement (how
+        they got there).'
+      - 'Evaluate Method B (Observation): Observation provides the highest accuracy because it captures natural, unfiltered
+        behavior in real-time. Although higher in initial setup cost and time than a survey, the reliability of the spatial
+        data is superior for layout design.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: 'A local political campaign needs to gauge the current approval rating of their candidate nationwide. They
+        have only one week to collect data from a sample of at least 5,000 respondents, and they have a very limited budget
+        for hiring staff. Which data collection method is the most practical choice given the constraints of time, required
+        sample size, and cost: (A) Hiring a team for face-to-face interviews, (B) Sending out physical mail surveys to registered
+        voters, or (C) Conducting an automated telephone polling campaign (robo-calls)?'
+      mathTool: null
+      finalAnswer: 'Option (C): Conducting an automated telephone polling campaign (robo-calls).'
+      stepByStepGuideline:
+      - 'Identify constraints: The primary constraints are extreme time pressure (one week), large sample size (5,000+), and
+        low budget.'
+      - 'Analyze Method A (Face-to-face): This is extremely high cost and time-intensive, making it impossible to meet the
+        5,000 respondent target within one week.'
+      - 'Analyze Method B (Mail Surveys): Mail surveys are slow, relying on postal delivery and response time. They would
+        not meet the one-week deadline.'
+      - 'Analyze Method C (Automated Polling): While it may suffer from lower response quality than face-to-face interviews,
+        automated telephone polling provides the fastest and lowest-cost way to reach a vast, geographically diverse sample
+        required to meet both the time and budget constraints.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: A major fast-food restaurant is developing a new vegetarian burger and needs to determine which of three
+        potential recipes (V1, V2, or V3) customers prefer. The goal is to isolate the taste preference while minimizing external
+        influences like marketing or presentation. They are considering a survey, an observation study, or a controlled experiment.
+      mathTool: null
+      finalAnswer: A controlled experiment (blind taste test).
+      stepByStepGuideline:
+      - 'Determine the goal: The goal is to establish a cause-and-effect relationship (Recipe A vs. Preference) while controlling
+        variables.'
+      - 'Evaluate alternatives: A general survey about vegetarian preferences is too vague. Observation doesn''t capture taste
+        preference directly.'
+      - 'Choose the best method: A controlled experiment, such as a blind taste test (where participants don''t know which
+        recipe they are trying), is the only way to isolate the variable (recipe type) and accurately measure immediate preference
+        without bias. Although high in cost and time compared to a simple survey, it offers the highest internal validity
+        (accuracy) regarding the core question.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: A social researcher is investigating the correlation between the number of public parks in a city and the
+        reported mental health scores of its residents. The researcher has a reasonable budget and several months to complete
+        the project, but requires data from over 50 major cities across the country.
+      mathTool: null
+      finalAnswer: Combining Secondary Data Collection (for park counts) and Surveys (for mental health scores).
+      stepByStepGuideline:
+      - 'Deconstruct the data need: The research requires two distinct data sets: (1) Objective, quantifiable data (number
+        of parks per city) and (2) Subjective, personalized data (mental health scores).'
+      - 'Determine Park Data method: Counting parks in 50 major cities using primary methods (observation or census) is highly
+        impractical and costly. Official government/municipal records (Secondary Data) are the quickest, cheapest, and most
+        accurate source for this objective information.'
+      - 'Determine Mental Health Data method: Mental health scores require input from the residents themselves. This sensitive,
+        subjective information must be collected directly, making a standardized questionnaire (Survey) the most practical
+        and scalable primary collection method.'
+      - 'Conclusion: A combination (Hybrid Approach) is necessary. Secondary data provides the necessary breadth and efficiency
+        for the objective variable, while a tailored survey provides the necessary primary data for the subjective variable.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: A university librarian wants to understand why the usage of the physical library printing services has
+        dropped significantly over the last two years. They are deciding between (A) Accessing historical usage logs (Secondary
+        Data), (B) Interviewing 10 students about their printing habits (Primary Data), or (C) Conducting a formal, in-depth
+        audit of competitor university library printing policies (Secondary Data). Which option would be the most efficient
+        and relevant starting point for solving the problem?
+      mathTool: null
+      finalAnswer: 'Option (A): Accessing historical usage logs (Secondary Data).'
+      stepByStepGuideline:
+      - 'Analyze the problem: The core issue is a change over time (a drop in usage). The starting point should be confirming
+        the trend and identifying potential variables within the library system itself.'
+      - 'Evaluate Method B (Interviews): While useful, interviewing only 10 students provides a very small sample size and
+        may not represent the general user population. It is good for ''why'' but not for confirming the magnitude of the
+        ''what''.'
+      - 'Evaluate Method C (Competitor Audit): Auditing competitors is valuable for strategic changes, but it does not directly
+        explain why *this* specific library’s usage has dropped.'
+      - 'Evaluate Method A (Usage Logs): The internal usage logs provide cheap, accurate, and readily available data (Secondary
+        Data) on *when* the drop occurred, *who* was using the service before, and *what* resources were accessed. This is
+        the most efficient starting point to define the scope of the problem before investing in time-consuming primary data
+        collection like interviews.'
+      id: q3-5
+      questionGroup: q3
+- id: data-node-04
+  nodeNumber: 4
+  title: Using Tally Marks to Count Data
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A sports journalist is recording the total number of goals scored throughout a major soccer tournament.
+        If the final count is 31 goals, draw the correct tally marks to represent this number, ensuring accurate grouping
+        in sets of five.
+      avatarIntro: Welcome! Tally marks are a fast and reliable way to record data as you collect it. Let's practice drawing
+        them accurately.
+      mathTool: null
+      finalAnswer: '||||/ ||||/ ||||/ ||||/ ||||/ ||||/ |'
+      stepByStepGuideline:
+      - 'Determine how many full groups of 5 are needed: 31 divided by 5 equals 6 with a remainder of 1.'
+      - Draw six complete groups of 5. Remember that the 5th mark must cross the previous four (e.g., ||||/).
+      - Draw the remaining 1 mark as a single vertical stroke.
+      - 'The final representation is: ||||/ ||||/ ||||/ ||||/ ||||/ ||||/ |'
+      id: q4-1
+      questionGroup: q4
+    - problemText: 'During a traffic study, an analyst recorded the number of heavy trucks passing a specific checkpoint.
+        The tally marks recorded were: ||||/ ||||/ ||||/ ||||/ ||||/ ||. How many heavy trucks passed the checkpoint in total?'
+      mathTool: null
+      finalAnswer: '27'
+      stepByStepGuideline:
+      - Identify the number of full groups of five. There are 5 full groups shown.
+      - 'Calculate the total from the full groups: 5 groups × 5 items/group = 25.'
+      - 'Count the remaining individual tally marks: There are 2 remaining marks.'
+      - 'Add the totals: 25 + 2 = 27. A total of 27 heavy trucks passed the checkpoint.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'A student attempted to tally 19 responses for ''Favorite Color: Blue'' and wrote the following: |||||
+        ||||| ||||| ||||. Identify the two main errors in standard tally notation present in this recording and state the
+        correct way to represent the number 19.'
+      mathTool: null
+      finalAnswer: 'The student used five vertical strokes (|||||) instead of using four vertical strokes and the fifth stroke
+        diagonally crossing them (||||/). The correct tally for 19 is: ||||/ ||||/ ||||/ ||||'
+      stepByStepGuideline:
+      - 'Analyze the provided flawed tally: ||||| ||||| ||||| ||||. The first three groups use 5 vertical strokes, which is
+        incorrect notation.'
+      - The correct rule states that the 5th mark must be a diagonal cross stroke to group the first four.
+      - 'Determine the correct grouping for 19: 19 divided by 5 equals 3 with a remainder of 4.'
+      - Draw three correct groups of 5 (||||/ ||||/ ||||/).
+      - Draw the remaining 4 marks (||||). The correct total representation is ||||/ ||||/ ||||/ ||||.
+      id: q4-3
+      questionGroup: q4
+    - problemText: A school librarian needs to track the number of books checked out during the first hour of the day. If
+        14 books were borrowed, draw the tally marks that accurately represent this total.
+      mathTool: null
+      finalAnswer: '||||/ ||||/ ||||'
+      stepByStepGuideline:
+      - 'Determine how many full groups of 5 are needed: 14 divided by 5 equals 2 with a remainder of 4.'
+      - Draw two complete groups of 5, ensuring the 5th mark is the diagonal cross stroke.
+      - Draw the remaining 4 marks as single vertical strokes.
+      - 'The final representation is: ||||/ ||||/ ||||'
+      id: q4-4
+      questionGroup: q4
+    - problemText: 'A local bakery tracked the sales of croissants over a weekend, recording the data using the following
+        tally marks: ||||/ ||||/ ||. What is the total number of croissants sold?'
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - Identify the number of full groups of five. There are 2 full groups shown.
+      - 'Calculate the total from the full groups: 2 groups × 5 items/group = 10.'
+      - 'Count the remaining individual tally marks: There are 2 remaining marks.'
+      - 'Add the totals: 10 + 2 = 12. A total of 12 croissants were sold.'
+      id: q4-5
+      questionGroup: q4
+- id: data-node-05
+  nodeNumber: 5
+  title: Constructing Frequency Tables from Raw Data
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A primary school teacher asked 10 students for their favorite color to plan classroom decorations. The
+        responses were recorded as follows: Red, Blue, Red, Green, Blue, Red, Yellow, Blue, Red, Blue. Construct a complete
+        frequency table, including the Class, Tally, and Frequency columns, along with a total row.'
+      avatarIntro: Frequency tables help us quickly organize raw data into a clear summary. Remember to count every data point
+        and group your tallies correctly!
+      mathTool: null
+      finalAnswer: 'Class: Red, Blue, Green, Yellow | Tally: ||||, ||||, |, | | Frequency: 4, 4, 1, 1 | Total: 10'
+      stepByStepGuideline:
+      - 'Identify the distinct categories (Classes): Red, Blue, Green, and Yellow.'
+      - Set up a three-column table labeled 'Class', 'Tally', and 'Frequency'.
+      - 'Go through the 10 data points and record tally marks for each category: Red (4), Blue (4), Green (1), Yellow (1).'
+      - 'Convert the tally marks into numerical frequencies: 4, 4, 1, 1.'
+      - Calculate the total frequency (4 + 4 + 1 + 1 = 10) and confirm it matches the total number of students surveyed (10).
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'A physical education instructor tracked the preferred sport activity for eight students during an optional
+        session. The recorded preferences were: Soccer, Basketball, Soccer, Tennis, Soccer, Basketball, Soccer, Tennis. Organize
+        this raw data into a frequency table, ensuring all categories are listed and the total frequency is verified.'
+      mathTool: null
+      finalAnswer: 'Class: Soccer, Basketball, Tennis | Tally: ||||, ||, || | Frequency: 4, 2, 2 | Total: 8'
+      stepByStepGuideline:
+      - 'Identify the distinct categories (Classes): Soccer, Basketball, and Tennis.'
+      - Set up a three-column table labeled 'Class', 'Tally', and 'Frequency'.
+      - 'Go through the 8 data points and record tally marks for each category: Soccer (4), Basketball (2), Tennis (2).'
+      - 'Convert the tally marks into numerical frequencies: 4, 2, 2.'
+      - Calculate the total frequency (4 + 2 + 2 = 8) and confirm it matches the total number of preferences recorded (8).
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'A research group surveyed a small cohort of students about their favorite core academic subject. The results
+        from the 9 students surveyed are: Math, Science, Math, English, Math, Science, English, Math, Science. Create a frequency
+        table from this data set, correctly using tally marks and numerical frequencies.'
+      mathTool: null
+      finalAnswer: 'Class: Math, Science, English | Tally: ||||, |||, || | Frequency: 4, 3, 2 | Total: 9'
+      stepByStepGuideline:
+      - 'Identify the distinct categories (Classes): Math, Science, and English.'
+      - Set up a three-column table labeled 'Class', 'Tally', and 'Frequency'.
+      - 'Go through the 9 data points and record tally marks for each category: Math (4), Science (3), English (2).'
+      - 'Convert the tally marks into numerical frequencies: 4, 3, 2.'
+      - Calculate the total frequency (4 + 3 + 2 = 9) and confirm it matches the total number of students surveyed (9).
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'An art supply store tallied the recent sales of 10 tubes of paint by color code: Red, Blue, Red, Green,
+        Blue, Red, Yellow, Blue, Red, Blue. Use this raw sales data to construct a frequency table that shows the distribution
+        of paint colors sold.'
+      mathTool: null
+      finalAnswer: 'Class: Red, Blue, Green, Yellow | Tally: ||||, ||||, |, | | Frequency: 4, 4, 1, 1 | Total: 10'
+      stepByStepGuideline:
+      - 'Identify the distinct categories (Classes): Red, Blue, Green, and Yellow.'
+      - Set up a three-column table labeled 'Class', 'Tally', and 'Frequency'.
+      - 'Go through the 10 sales records and assign tally marks: Red (4), Blue (4), Green (1), Yellow (1).'
+      - 'Convert the tally marks into numerical frequencies: 4, 4, 1, 1.'
+      - Calculate the total frequency (4 + 4 + 1 + 1 = 10) and ensure it matches the total tubes sold (10).
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'During a week, a community center recorded the type of equipment borrowed for team sports 8 times. The
+        recorded usage log was: Soccer, Basketball, Soccer, Tennis, Soccer, Basketball, Soccer, Tennis. Convert this log into
+        a frequency table suitable for analysis.'
+      mathTool: null
+      finalAnswer: 'Class: Soccer, Basketball, Tennis | Tally: ||||, ||, || | Frequency: 4, 2, 2 | Total: 8'
+      stepByStepGuideline:
+      - 'Identify the distinct categories (Classes): Soccer, Basketball, and Tennis.'
+      - Set up a three-column table labeled 'Class', 'Tally', and 'Frequency'.
+      - 'Go through the 8 usage records and assign tally marks: Soccer (4), Basketball (2), Tennis (2).'
+      - 'Convert the tally marks into numerical frequencies: 4, 2, 2.'
+      - Calculate the total frequency (4 + 2 + 2 = 8) and confirm it matches the total number of equipment borrowings (8).
+      id: q5-5
+      questionGroup: q5
+- id: data-node-06
+  nodeNumber: 6
+  title: Interpreting and Analyzing Frequency Tables
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A local restaurant tracked the delivery times (in minutes) for several orders. The results were categorized
+        into three classes: Under 15 minutes (12 deliveries), 15 to 25 minutes (18 deliveries), and Over 25 minutes (10 deliveries).
+        Based on this frequency table, determine:
+
+        (a) The total number of deliveries recorded.
+
+        (b) The modal class for delivery time.
+
+        (c) The percentage of deliveries that took between 15 and 25 minutes.'
+      avatarIntro: Frequency tables help us quickly summarize large amounts of data. Let's practice calculating key measures
+        like totals, modes, and percentages.
+      mathTool: null
+      finalAnswer: (a) 40 deliveries; (b) 15 to 25 minutes; (c) 45%
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total frequency by summing all class frequencies: Total = 12 + 18 + 10 = 40.'
+      - 'Step 2: Identify the mode (the class with the highest frequency). The highest frequency is 18, corresponding to the
+        class 15 to 25 minutes.'
+      - 'Step 3: Calculate the percentage for the 15 to 25 minute class using the formula: Percentage = (Frequency / Total)
+        × 100%. Percentage = (18 / 40) × 100% = 45%.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: 'A cinema surveyed audience members about their favorite movie genre. The results were: Action (15 viewers),
+        Comedy (22 viewers), and Drama (8 viewers). Calculate:
+
+        (a) The total number of people surveyed.
+
+        (b) The ratio of Action movie fans to Drama movie fans, expressed in its simplest form.
+
+        (c) The percentage of the audience whose favorite genre was Comedy.'
+      mathTool: null
+      finalAnswer: (a) 45 viewers; (b) 15:8; (c) 48.89%
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total frequency: Total = 15 + 22 + 8 = 45.'
+      - 'Step 2: Determine the ratio of Action fans (15) to Drama fans (8). Ratio = 15:8. Since 15 and 8 share no common factors
+        other than 1, the ratio is already in its simplest form.'
+      - 'Step 3: Calculate the percentage for Comedy: Percentage = (22 / 45) × 100%. Percentage ≈ 48.888...%, rounded to 48.89%.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: 'Sixty employees at a multinational company reported their primary method of commuting to work. The frequency
+        table showed: Car (20 employees), Bus (15 employees), and Train (25 employees). Calculate:
+
+        (a) The total number of employees surveyed.
+
+        (b) The modal class of transport.
+
+        (c) The percentage of employees who commute by Train.'
+      mathTool: null
+      finalAnswer: (a) 60 employees; (b) Train; (c) 41.67%
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total frequency: Total = 20 + 15 + 25 = 60.'
+      - 'Step 2: Identify the mode (highest frequency). The highest frequency is 25, corresponding to Train.'
+      - 'Step 3: Calculate the percentage for Train: Percentage = (25 / 60) × 100%. Percentage ≈ 41.666...%, rounded to 41.67%.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: 'A farmer recorded the sales (in kg) of three types of fruit sold last week: Apples (12 kg), Bananas (18
+        kg), and Oranges (10 kg). Using this data, find:
+
+        (a) The total mass of fruit sold.
+
+        (b) The ratio of Bananas sold to Apples sold, simplified to its lowest terms.
+
+        (c) The percentage of total sales represented by Oranges.'
+      mathTool: null
+      finalAnswer: (a) 40 kg; (b) 3:2; (c) 25%
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total mass of fruit sold: Total = 12 + 18 + 10 = 40 kg.'
+      - 'Step 2: Find the ratio of Bananas (18) to Apples (12). Ratio = 18:12. Simplify by dividing both sides by the greatest
+        common divisor (6): 18 ÷ 6 : 12 ÷ 6 = 3:2.'
+      - 'Step 3: Calculate the percentage for Oranges: Percentage = (10 / 40) × 100% = 25%.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: 'A web administrator analyzed visitor traffic based on the device used to access the site. The data showed:
+        Desktop (20 visitors), Mobile (15 visitors), and Tablet (25 visitors).
+
+        (a) Determine the total number of visitors analyzed.
+
+        (b) Find the ratio of Desktop users to Mobile users, simplified to its lowest terms.
+
+        (c) Calculate the percentage of visitors who accessed the website using a Desktop.'
+      mathTool: null
+      finalAnswer: (a) 60 visitors; (b) 4:3; (c) 33.33%
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total number of visitors: Total = 20 + 15 + 25 = 60.'
+      - 'Step 2: Find the ratio of Desktop users (20) to Mobile users (15). Ratio = 20:15. Simplify by dividing both sides
+        by the greatest common divisor (5): 20 ÷ 5 : 15 ÷ 5 = 4:3.'
+      - 'Step 3: Calculate the percentage for Desktop users: Percentage = (20 / 60) × 100%. Percentage ≈ 33.333...%, rounded
+        to 33.33%.'
+      id: q6-5
+      questionGroup: q6
+- id: data-node-07
+  nodeNumber: 7
+  title: Real-World Applications of Frequency Tables
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A public library tracked 300 new book requests received last month by genre to inform its purchasing strategy.
+        The data collected was: Fiction (120 requests), Non-Fiction (80 requests), Reference (30 requests), and Graphic Novels
+        (70 requests). The library has a $10,000 monthly purchasing budget.
+
+
+        Calculate the percentage demand (relative frequency) for each genre. Based on demand, determine the exact dollar amount
+        that should be allocated to the two most requested genres combined, and state your final recommendation to the acquisition
+        committee.'
+      avatarIntro: Welcome! Let's apply our knowledge of frequency tables to a real-world decision-making scenario. Remember
+        to justify your recommendations with solid data.
+      mathTool: null
+      finalAnswer: 'Total requests: 300. Genre demand percentages: Fiction = 40%, Non-Fiction ≈ 26.67%, Reference = 10%, Graphic
+        Novels ≈ 23.33%. The two most requested genres are Fiction and Non-Fiction, totaling 40% + 26.67% = 66.67% of demand.
+        The allocated dollar amount should be 66.67% of $10,000, which equals $6,667. Recommendation: Allocate $6,667 to Fiction
+        and Non-Fiction purchases, as they account for two-thirds of all user requests.'
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of requests (Total = 120 + 80 + 30 + 70 = 300).'
+      - 'Step 2: Calculate the relative frequency (percentage demand) for each genre: Fiction (120/300 = 40%), Non-Fiction
+        (80/300 ≈ 26.67%), Reference (30/300 = 10%), Graphic Novels (70/300 ≈ 23.33%).'
+      - 'Step 3: Identify the two genres with the highest percentage demand (Fiction and Non-Fiction). Calculate their combined
+        percentage (40% + 26.67% = 66.67%).'
+      - 'Step 4: Calculate the budget allocation based on this combined percentage: 66.67% of $10,000 = $6,667.'
+      - 'Step 5: State the final recommendation, justifying the $6,667 allocation based on the combined 66.67% demand.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: 'A high school cafeteria surveyed 400 students regarding their preferred lunch option to optimize the weekly
+        menu and reduce food waste. The results were: Pizza (150 students), Burgers (90 students), Salad Bar (60 students),
+        and Pasta (100 students).
+
+
+        Identify the modal lunch choice. If the cafeteria decides to eliminate the least popular option, calculate the percentage
+        of total students who prefer the remaining top three options. What recommendation should be made to the catering manager
+        regarding menu efficiency?'
+      mathTool: null
+      finalAnswer: 'The modal lunch choice is Pizza (150 students). The least popular option is Salad Bar (60 students). If
+        Salad Bar is eliminated, the remaining preferred options account for 150 + 90 + 100 = 340 students. This represents
+        (340 / 400) * 100% = 85% of the students. Recommendation: Eliminate the Salad Bar to focus resources on Pizza, Pasta,
+        and Burgers, which satisfy 85% of student preferences.'
+      stepByStepGuideline:
+      - 'Step 1: Identify the mode (the option with the highest frequency), which is Pizza (150 students).'
+      - 'Step 2: Identify the least popular option (the lowest frequency), which is Salad Bar (60 students).'
+      - 'Step 3: Calculate the total frequency of the remaining options (Pizza + Burgers + Pasta = 150 + 90 + 100 = 340 students).'
+      - 'Step 4: Calculate the percentage of students who prefer the remaining options relative to the total surveyed population:
+        (340 / 400) * 100% = 85%.'
+      - 'Step 5: Provide a recommendation based on the high percentage satisfaction (85%) achieved by focusing on the top
+        three items.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'A basketball coach analyzed 30 field goal attempts made by the team''s star forward in a recent game to
+        refine their offensive strategy. The analysis showed:
+
+
+        *   10 attempts were 3-Pointers (4 successful shots)
+
+        *   15 attempts were Mid-Range shots (8 successful shots)
+
+        *   5 attempts were Layups (4 successful shots)
+
+
+        Construct a frequency table showing the success rate (shooting percentage) for each shot type. Based solely on this
+        success rate data, recommend which shot type the player should prioritize in the final quarter of a close game to
+        maximize scoring efficiency.'
+      mathTool: null
+      finalAnswer: 'Success Rates:
+
+        3-Pointers: 4/10 = 40%
+
+        Mid-Range: 8/15 ≈ 53.33%
+
+        Layups: 4/5 = 80%
+
+        Recommendation: The player should prioritize Layups in the final quarter, as this shot type has the highest success
+        rate (80%), followed by Mid-Range shots (53.33%). The 3-Pointer success rate (40%) is significantly lower.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the success rate (shooting percentage) for 3-Pointers: (4 successful / 10 attempted) * 100% = 40%.'
+      - 'Step 2: Calculate the success rate for Mid-Range shots: (8 successful / 15 attempted) * 100% ≈ 53.33%.'
+      - 'Step 3: Calculate the success rate for Layups: (4 successful / 5 attempted) * 100% = 80%.'
+      - 'Step 4: Compare the success rates to identify the most efficient shot type (Layups at 80%).'
+      - 'Step 5: Formulate the recommendation to prioritize the shot type with the highest frequency of success.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: 'An electronics store tracked 360 customer inquiries over a month to prepare for stock adjustments for
+        the upcoming quarter. The inquiries were categorized as: Smartwatches (180 inquiries), Smart Speakers (120 inquiries),
+        and Home Hubs (60 inquiries).
+
+
+        Calculate the percentage of inquiries for Smartwatches compared to the total. The store manager proposes allocating
+        60% of the quarterly purchasing budget to Smart Speakers and Home Hubs combined. Use frequency analysis to determine
+        if this proposed 60% budget allocation is justified by current customer demand.'
+      mathTool: null
+      finalAnswer: 'Total inquiries: 360. Smartwatch demand: 180/360 = 50%. Smart Speaker demand: 120/360 ≈ 33.33%. Home Hub
+        demand: 60/360 ≈ 16.67%. The combined customer demand for Smart Speakers and Home Hubs is 33.33% + 16.67% = 50%. The
+        proposed 60% budget allocation for these two categories is NOT justified by current demand, as the demand frequency
+        only accounts for 50% of inquiries. The remaining 50% of the budget should be allocated to Smartwatches.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total number of inquiries (360).'
+      - 'Step 2: Calculate the relative frequency (percentage demand) for each product category (Smartwatch: 50%; Smart Speakers:
+        33.33%; Home Hubs: 16.67%).'
+      - 'Step 3: Calculate the combined demand percentage for Smart Speakers and Home Hubs (33.33% + 16.67% = 50%).'
+      - 'Step 4: Compare the calculated demand (50%) to the proposed budget allocation (60%).'
+      - 'Step 5: Conclude whether the proposed allocation is justified based on the frequency data.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: 'A city transit authority surveyed 1,000 daily bus commuters to optimize route scheduling based on preferred
+        travel time windows. The results were:
+
+
+        *   Morning Rush (6 am - 9 am): 450 commuters
+
+        *   Midday (9 am - 4 pm): 250 commuters
+
+        *   Evening Rush (4 pm - 7 pm): 300 commuters
+
+
+        Calculate the ratio of Morning Rush commuters to Evening Rush commuters in its simplest form. If the authority can
+        only afford to run "peak service" (high frequency buses) for the time window that represents the highest frequency,
+        identify this window and determine how many times more frequent this modal period is compared to the Midday period.'
+      mathTool: null
+      finalAnswer: 'Ratio of Morning Rush to Evening Rush: 450 : 300. Simplified (dividing by 150) is 3:2. The modal period
+        (highest frequency) is the Morning Rush (450 commuters). The Morning Rush is 450 / 250 = 1.8 times more frequent than
+        the Midday period. Recommendation: Peak service must be prioritized during the Morning Rush (6 am - 9 am).'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the ratio of Morning Rush commuters (450) to Evening Rush commuters (300). Simplify the ratio 450:300
+        by finding the greatest common divisor (150) to get 3:2.'
+      - 'Step 2: Identify the time window with the highest frequency (the mode), which is Morning Rush (450).'
+      - 'Step 3: Calculate how many times more frequent the modal period (450) is compared to the Midday period (250) by division:
+        450 / 250 = 1.8.'
+      - 'Step 4: State the final recommendation for peak service based on the modal frequency.'
+      id: q7-5
+      questionGroup: q7
+- id: data-node-08
+  nodeNumber: 8
+  title: When and Why to Group Data
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A fitness app developer collects the daily step counts from 500 users. The counts range widely, from 2,500
+        steps to 18,000 steps, resulting in hundreds of different recorded values. Should the developer use a simple frequency
+        table listing every single step count (e.g., 5001, 5002, 5003, etc.) or should the data be grouped into classes? Explain
+        your reasoning.
+      avatarIntro: Understanding when to group data is key to making large datasets manageable and insightful. Let's start
+        with this scenario about fitness data.
+      mathTool: null
+      finalAnswer: Group the data. A simple frequency table would be hundreds of lines long, making it impossible to identify
+        any clear distribution or pattern. Grouping the data (e.g., 2,000-3,999 steps, 4,000-5,999 steps, etc.) compresses
+        the information and reveals important trends about user activity.
+      stepByStepGuideline:
+      - 'Analyze the data characteristics: The data spans a very large range (2,500 to 18,000) and consists of hundreds of
+        distinct, individual values.'
+      - 'Determine the purpose of the table: The goal is likely to find patterns in user activity, not the frequency of a
+        specific single step count.'
+      - 'Evaluate the options: A simple frequency table would be too long and confusing due to the high number of distinct
+        values.'
+      - 'Conclude the best action: Grouping the data into intervals (classes) is necessary to summarize the distribution effectively
+        and make patterns visible.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: A social researcher surveys 150 residents about their age to understand the demographic distribution of
+        a retirement community and its surrounding suburb. The collected ages range widely, from 18 years old to 95 years
+        old. Should the researcher use a simple frequency table or group the data? Justify your choice.
+      mathTool: null
+      finalAnswer: Group the data. The data spans a very large range (77 years difference). Listing the frequency for every
+        single age (e.g., 18, 19, 20, 21...) would result in a very long table, potentially with many ages having a frequency
+        of zero or one, obscuring the underlying population structure. Grouping into ranges (e.g., 18-29, 30-39, 40-49, etc.)
+        provides a clear summary of the age distribution.
+      stepByStepGuideline:
+      - 'Analyze the data characteristics: The data (age) spans a massive range (18 to 95).'
+      - 'Evaluate the options: Using a simple frequency table would generate too many rows, making the data hard to interpret.'
+      - 'Conclude the best action: Grouping the data into age intervals is essential because the large range necessitates
+        compression to reveal demographic patterns.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'A quality control specialist tracks defects on a production line. Defects are categorized into 5 specific
+        types: Scratch, Dent, Misalignment, Discoloration, and Other. Over the course of the day, 85 defects are recorded.
+        Should the specialist group this data or use a simple frequency table? Explain why.'
+      mathTool: null
+      finalAnswer: Do not group the data; use a simple frequency table. The data is already categorical and consists of only
+        5 distinct types (categories). A simple frequency table listing the count for each of the 5 categories will be short,
+        clear, and ensures no loss of critical information about the specific defect type.
+      stepByStepGuideline:
+      - 'Analyze the data characteristics: The data is categorical (defect type) and involves a small number of distinct categories
+        (only 5).'
+      - 'Determine the purpose: The specific frequency of each named defect type is important.'
+      - 'Evaluate the options: Grouping categorical data with few options is unnecessary and often confusing, as the data
+        is already summarized by category.'
+      - 'Conclude the best action: A simple frequency table provides the clearest and most accurate representation.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: A medical researcher collects the precise body mass index (BMI) measurements from 400 patients. BMI is
+        a continuous measurement often recorded to one or two decimal places (e.g., 22.15, 23.01, 28.50). Should the researcher
+        use a simple frequency table or group the data into classes? Provide a justification.
+      mathTool: null
+      finalAnswer: Group the data. Since BMI is a continuous measurement recorded with high precision, there will be hundreds
+        of unique decimal values, even if the overall range is moderate. Listing every unique measurement in a simple frequency
+        table would be ineffective. Grouping the data (e.g., BMI < 18.5, 18.5–24.9, 25.0–29.9, etc.) is necessary to analyze
+        clinical categories and distribution patterns.
+      stepByStepGuideline:
+      - 'Analyze the data characteristics: The data (BMI) is continuous and measured precisely (using decimals), resulting
+        in a very high number of unique values.'
+      - 'Determine the implication of continuous data: Continuous data almost always requires grouping because exact measurements
+        rarely repeat frequently enough to form a useful simple frequency table.'
+      - 'Conclude the best action: Grouping the data into classes is mandatory for displaying the distribution of continuous
+        measurements effectively.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: A payroll manager records the precise hourly wage (in dollars and cents) for 120 temporary workers. The
+        wages range from a minimum of $14.50 to a maximum of $28.00. Should the manager group the wages or use a simple frequency
+        table? What advantage is gained by the chosen method?
+      mathTool: null
+      finalAnswer: Group the data. Although the numerical range is only $13.50, recording wages to the nearest cent means
+        there are potentially hundreds of distinct values (e.g., $14.50, $14.51, $14.52...). A simple frequency table would
+        be too long. The advantage of grouping (e.g., $14.00 - $15.99, $16.00 - $17.99) is that it summarizes the data, making
+        it easy to identify the modal wage range and see the overall distribution of pay scales.
+      stepByStepGuideline:
+      - 'Analyze the data characteristics: The data consists of many distinct numerical values due to the precision (cents)
+        used in recording hourly wages.'
+      - 'Evaluate the options: A simple frequency table listing every unique wage would be unwieldy and hide patterns.'
+      - 'Conclude the best action and advantage: Grouping the data is necessary. The advantage is summarizing the data to
+        reveal patterns and distribution trends efficiently.'
+      id: q8-5
+      questionGroup: q8
+- id: data-node-09
+  nodeNumber: 9
+  title: Creating Non-Overlapping Class Intervals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: "A large retail company tracks the value of inventory items in thousands of dollars ($k). The values range\
+        \ from a minimum of $140k to a maximum of $179k. You need to create 4 class intervals, each with a width of $10k,\
+        \ using discrete whole numbers (e.g., 100-109). \n\nList the four class intervals and explain how they meet the requirements\
+        \ of being non-overlapping and covering the full range."
+      avatarIntro: Ready to practice setting up class intervals? Remember, every single data point must fit into exactly one
+        box.
+      mathTool: null
+      finalAnswer: 'The four required class intervals are: 140-149, 150-159, 160-169, and 170-179. This setup ensures that
+        values like 149 and 150 fall into separate, non-overlapping classes. The minimum value (140) starts the first interval,
+        and the maximum value (179) ends the last interval, covering the full range exactly.'
+      stepByStepGuideline:
+      - Identify the minimum value (140) and maximum value (179).
+      - Determine the required width (10). For discrete intervals, the width of 10 means the difference between the lower
+        limit of consecutive classes must be 10 (e.g., 140 to 150).
+      - 'Construct the first interval: Starting at 140, the upper limit is 140 + 10 - 1 = 149. Interval: 140-149.'
+      - 'Construct subsequent intervals by adding 10 to the limits of the previous interval: 150-159, 160-169, and 170-179.'
+      - Verify that the four intervals cover the full range (140 to 179) and that there are no overlaps (e.g., 149 ends the
+        first class, 150 starts the second).
+      id: q9-1
+      questionGroup: q9
+    - problemText: A marathon organizer recorded the finish times (in minutes) for a cohort of runners. The times ranged from
+        50 minutes up to 99 minutes. Create 5 non-overlapping class intervals, each with a width of 10 minutes, using continuous
+        inequality notation (e.g., $L \le x < U$). Ensure the full range is covered.
+      mathTool: null
+      finalAnswer: 'The five required class intervals using continuous notation are:
+
+
+        $50 \le x < 60$
+
+        $60 \le x < 70$
+
+        $70 \le x < 80$
+
+        $80 \le x < 90$
+
+        $90 \le x < 100$
+
+
+        This method ensures that the upper limit of one interval (e.g., 60) is the exclusive boundary, making it the inclusive
+        lower limit of the next interval, eliminating overlaps and covering the range 50 up to (but not including) 100, which
+        accommodates the maximum value of 99.'
+      stepByStepGuideline:
+      - Identify the minimum value (50), required width (10), and number of classes (5).
+      - Use continuous notation ($L \le x < U$) to prevent overlap, where the upper boundary U is not included in the class.
+      - 'Construct the first interval: Start at 50, end at 50 + 10 = 60. Interval: $50 \le x < 60$.'
+      - 'Continue constructing the remaining intervals, ensuring the upper limit of one class becomes the lower limit of the
+        next: $60 \le x < 70$, $70 \le x < 80$, $80 \le x < 90$, and $90 \le x < 100$.'
+      - Verify that the minimum (50) is included and the maximum value (99) falls within the final interval ($90 \le x < 100$).
+        The final upper limit (100) ensures the full range is covered.
+      id: q9-2
+      questionGroup: q9
+    - problemText: 'A meteorologist attempted to classify daily rainfall amounts (in mm), which range from 0 mm to 49 mm,
+        into five classes of width 10. They proposed the following intervals:
+
+
+        Class A: 0-10
+
+        Class B: 10-20
+
+        Class C: 20-30
+
+        Class D: 30-40
+
+        Class E: 40-50
+
+
+        Identify the critical error in this classification system and provide the corrected set of intervals using discrete
+        whole numbers.'
+      mathTool: null
+      finalAnswer: 'Critical Error: The intervals overlap. Values 10, 20, 30, and 40 appear in two different classes (e.g.,
+        10 is in both 0-10 and 10-20), violating the rule that each data point must belong to exactly one interval.
+
+
+        Corrected Intervals (using discrete whole numbers for the range 0-49):
+
+        0-9
+
+        10-19
+
+        20-29
+
+        30-39
+
+        40-49'
+      stepByStepGuideline:
+      - Analyze the given intervals (0-10, 10-20, etc.) to identify where data points might fall into two categories.
+      - Recognize that when the upper limit of one class equals the lower limit of the next class (e.g., 10), an overlap occurs.
+      - Determine the correct boundary setting for discrete whole number data. The upper limit must be one unit less than
+        the lower limit of the subsequent class.
+      - 'Reconstruct the classes starting at 0 with a width of 10: 0-9 (width 10), 10-19, 20-29, 30-39, and 40-49.'
+      - Verify that the corrected intervals cover the range 0 to 49 exactly without any overlaps or gaps.
+      id: q9-3
+      questionGroup: q9
+    - problemText: 'A shipping company categorized incoming package weights (in grams) ranging from 140g to 179g. A clerk
+        created the following intervals:
+
+
+        Class 1: 140-149
+
+        Class 2: 151-160
+
+        Class 3: 162-171
+
+        Class 4: 173-179
+
+
+        Identify the critical error in this classification system and describe how to correct the intervals while maintaining
+        the required number of classes (4) and covering the full range.'
+      mathTool: null
+      finalAnswer: 'Critical Error: The classification system contains gaps. Specifically, the values 150, 161, and 172 are
+        not included in any class, violating the requirement that the full data range must be covered.
+
+
+        Correction Method: Adjust the class boundaries so that the lower limit of each subsequent class is exactly one unit
+        greater than the upper limit of the preceding class.
+
+
+        Corrected Intervals (width 10):
+
+        140-149
+
+        150-159
+
+        160-169
+
+        170-179'
+      stepByStepGuideline:
+      - Examine the boundaries between consecutive classes (e.g., 149 and 151).
+      - Identify the values missing from the classification (150, 161, 172), confirming the existence of gaps.
+      - Recall that for discrete data, the new class must start immediately after the previous one ends (L₂ = U₁ + 1).
+      - 'Reconstruct the intervals ensuring a consistent width of 10 and continuity: 140-149, 150-159, 160-169, 170-179.'
+      - Verify that the corrected set covers the range 140 to 179 without gaps or overlaps.
+      id: q9-4
+      questionGroup: q9
+    - problemText: A network administrator collected data on website loading speeds (in seconds), ranging from 0 seconds (instantaneous)
+        to 49 seconds. Construct 5 non-overlapping class intervals, each with a width of 10 seconds, suitable for this discrete
+        data (e.g., 0-9).
+      mathTool: null
+      finalAnswer: 'The five required class intervals are:
+
+        0-9
+
+        10-19
+
+        20-29
+
+        30-39
+
+        40-49
+
+
+        These intervals are non-overlapping because the end point of one class (e.g., 9) is immediately followed by the start
+        point of the next class (10). They successfully group the data from the minimum (0) to the maximum (49).'
+      stepByStepGuideline:
+      - Identify the range (0 to 49) and the required width (10).
+      - Start the first class at the minimum value, 0.
+      - 'Calculate the upper limit of the first class: 0 + 10 - 1 = 9. Interval: 0-9.'
+      - Construct the subsequent classes by ensuring the lower limit of the next class is 1 unit higher than the upper limit
+        of the previous class, maintaining a width of 10.
+      - 'List the full set of 5 classes: 0-9, 10-19, 20-29, 30-39, 40-49.'
+      - Confirm that the final interval (40-49) includes the maximum value (49).
+      id: q9-5
+      questionGroup: q9
+- id: data-node-10
+  nodeNumber: 10
+  title: Class Width and Uniform Intervals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: histogram
+    preWrittenQuestions:
+    - problemText: 'A teacher recorded the results of a recent mathematics test, grouping the scores (out of 40) into the
+        following classes:
+
+
+        10–19
+
+        20–29
+
+        30–39
+
+
+        (a) Calculate the class width for the interval 10–19.
+
+        (b) Are these class intervals uniform? Explain the importance of using uniform intervals in data representation.'
+      avatarIntro: Histograms are great for visualizing grouped data! Let's make sure our groups, or classes, are set up correctly
+        before we plot.
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals:
+          - start: 10
+            end: 20
+            frequency: 5
+          - start: 20
+            end: 30
+            frequency: 12
+          - start: 30
+            end: 40
+            frequency: 8
+          xLabel: Test Score Range
+          yLabel: Number of Students
+          caption: Distribution of Math Test Scores (Uniform Intervals)
+      finalAnswer: (a) The class width is 10. (b) Yes, they are uniform. Uniformity is crucial because it prevents misleading
+        visual interpretations and allows for fair comparison of frequency density across different groups.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the class width for the interval 10–19 using the formula: Upper Limit - Lower Limit + 1. Width
+        = 19 - 10 + 1 = 10.'
+      - 'Step 2: Calculate the class widths for the remaining intervals: 20–29 (29 - 20 + 1 = 10) and 30–39 (39 - 30 + 1 =
+        10).'
+      - 'Step 3: Since all class widths are equal (10), the intervals are uniform.'
+      - 'Step 4: Explain the importance: Uniform intervals ensure that the height of the bar in the histogram accurately reflects
+        the frequency or density of data in that range, allowing for an unbiased comparison across the dataset.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: 'A manufacturer tracked the lifespan (in years) of a specific appliance model. They grouped the data as
+        follows:
+
+
+        0–9 years
+
+        10–19 years
+
+        20–34 years
+
+
+        (a) Calculate the class width for each of the three intervals.
+
+        (b) Are these intervals uniform? What is the statistical disadvantage of using non-uniform intervals like these?'
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals:
+          - start: 0
+            end: 10
+            frequency: 8
+          - start: 10
+            end: 20
+            frequency: 10
+          - start: 20
+            end: 35
+            frequency: 15
+          xLabel: Appliance Lifespan (Years)
+          yLabel: Frequency
+          caption: Appliance Lifespan Data (Non-Uniform Intervals)
+      finalAnswer: '(a) Widths are: 10 (0-9), 10 (10-19), and 15 (20-34). (b) No, they are NOT uniform. The third interval
+        is 15 years wide, while the others are 10 years wide. The disadvantage is that the third interval covers a larger
+        range, potentially exaggerating or distorting the frequency when compared visually to the narrower intervals.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the width for 0–9: 9 - 0 + 1 = 10.'
+      - 'Step 2: Calculate the width for 10–19: 19 - 10 + 1 = 10.'
+      - 'Step 3: Calculate the width for 20–34: 34 - 20 + 1 = 15.'
+      - 'Step 4: Compare the widths. Since 10 ≠ 15, the intervals are not uniform.'
+      - 'Step 5: Explain the disadvantage: Non-uniform intervals make it impossible to use simple frequency counts for comparison
+        in a standard histogram, potentially leading to inaccurate conclusions about data distribution.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: 'A public transport company monitored the daily travel time (in minutes) for commuters on a specific route,
+        grouping the data into the following classes:
+
+
+        0–9 minutes
+
+        10–19 minutes
+
+        20–29 minutes
+
+
+        (a) Determine the class width for the interval 20–29 minutes.
+
+        (b) Confirm if the entire set of intervals is uniform. Why is uniformity considered standard statistical practice?'
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals:
+          - start: 0
+            end: 10
+            frequency: 10
+          - start: 10
+            end: 20
+            frequency: 20
+          - start: 20
+            end: 30
+            frequency: 5
+          xLabel: Travel Time (Minutes)
+          yLabel: Frequency
+          caption: Commuter Travel Times (Uniform Intervals)
+      finalAnswer: (a) The class width for 20–29 is 10 minutes. (b) Yes, the set is uniform (all widths are 10). Uniformity
+        is standard practice because it simplifies data processing, ensures all groups cover the same range, and makes the
+        resulting histogram visually proportional to the underlying data distribution.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the class width for 20–29: Width = 29 - 20 + 1 = 10.'
+      - 'Step 2: Check the other widths: 0–9 (10) and 10–19 (10).'
+      - 'Step 3: Confirm that all widths are equal (10), establishing uniformity.'
+      - 'Step 4: Explain the importance: Uniformity ensures that statistical measures and visual representations (like histograms)
+        are fair, standardized, and easily comparable across different datasets or studies.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'A researcher collecting data on book lengths created the following class intervals for page count:
+
+
+        Class A: 40–49 pages
+
+        Class B: 50–74 pages
+
+        Class C: 75–84 pages
+
+
+        Calculate the class width for Class B (50–74 pages) and determine if this set of intervals is appropriate for creating
+        a simple frequency histogram.'
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals:
+          - start: 40
+            end: 50
+            frequency: 6
+          - start: 50
+            end: 75
+            frequency: 18
+          - start: 75
+            end: 85
+            frequency: 4
+          xLabel: Page Count
+          yLabel: Frequency
+          caption: Book Length Distribution (Non-Uniform Intervals)
+      finalAnswer: 'The class width for Class B (50–74) is 25 pages. This set is NOT appropriate for a simple frequency histogram
+        because the intervals are not uniform (Widths: 10, 25, 10). Using non-uniform intervals requires calculating frequency
+        density, making simple frequency plotting misleading.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the class width for Class B (50–74): Width = 74 - 50 + 1 = 25.'
+      - 'Step 2: Calculate the widths for the other classes: Class A (40–49) width is 10. Class C (75–84) width is 10.'
+      - 'Step 3: Compare widths (10, 25, 10). Since the widths are not equal, the set is non-uniform.'
+      - 'Step 4: Conclude that non-uniform intervals are generally inappropriate for simple frequency histograms as they visually
+        misrepresent the data distribution; the bar for Class B will be disproportionately wide.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: 'An auditor tracked monthly household energy consumption (in kWh) and created the following grouping scheme:
+
+
+        Class 1: 0–9 kWh
+
+        Class 2: 10–19 kWh
+
+        Class 3: 20–34 kWh
+
+
+        Identify the class intervals that break the uniformity rule. If the total range of data is 0 to 34, propose a revision
+        to the grouping scheme using a single, uniform class width.'
+      mathTool:
+        toolName: histogram
+        parameters:
+          intervals:
+          - start: 0
+            end: 10
+            frequency: 15
+          - start: 10
+            end: 20
+            frequency: 10
+          - start: 20
+            end: 35
+            frequency: 5
+          xLabel: Consumption (kWh)
+          yLabel: Frequency
+          caption: Household Energy Consumption (Non-Uniform Intervals)
+      finalAnswer: "Class 3 (20–34 kWh) breaks the uniformity rule. Its width is 15 (34 - 20 + 1 = 15), while Classes 1 and\
+        \ 2 have a width of 10. \n\nProposed Uniform Revision (using width 10):\n0–9 kWh\n10–19 kWh\n20–29 kWh\n30–39 kWh\
+        \ (This covers the required range up to 34)."
+      stepByStepGuideline:
+      - 'Step 1: Calculate the width for Class 1 (0–9): 10. Calculate the width for Class 2 (10–19): 10.'
+      - 'Step 2: Calculate the width for Class 3 (20–34): 34 - 20 + 1 = 15.'
+      - 'Step 3: Identify the break: Class 3 is non-uniform compared to Classes 1 and 2.'
+      - 'Step 4: To propose a uniform revision covering the range 0 to 34 using a width of 10, extend the sequence: 0–9, 10–19,
+        20–29, 30–39.'
+      id: q10-5
+      questionGroup: q10
+- id: data-node-11
+  nodeNumber: 11
+  title: Reading and Interpreting Pictograms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A museum used a pictogram to track daily tourist attendance. The key states that one symbol (⭐) represents
+        10 tourists. If Tuesday's attendance is shown by 4 full symbols and one half symbol (4.5 symbols total), calculate
+        the total number of tourists who visited that day.
+      avatarIntro: This set of problems will help you master reading pictograms. Remember to always check the key first to
+        understand the scale!
+      mathTool: null
+      finalAnswer: 4.5 × 10 = 45 tourists
+      stepByStepGuideline:
+      - 'Identify the scale from the key: 1 symbol (⭐) = 10 tourists.'
+      - 'Determine the total number of symbols shown: 4 full symbols + 0.5 symbol = 4.5 symbols.'
+      - 'Calculate the total attendance using the formula: Total = Symbols × Scale.'
+      - 'Calculation: 4.5 × 10 = 45 tourists.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A vending machine owner tracked the sales of bottled water over four days using a pictogram. If the key
+        defines 📚 = 20 bottles sold, and Friday's sales are represented by 3 and a half symbols (3.5 symbols), determine the
+        total number of bottles sold on Friday.
+      mathTool: null
+      finalAnswer: 3.5 × 20 = 70 bottles
+      stepByStepGuideline:
+      - 'Identify the scale from the key: 1 symbol (📚) = 20 bottles.'
+      - 'Determine the total number of symbols shown: 3.5 symbols.'
+      - 'Calculate the total sales using the formula: Total = Symbols × Scale.'
+      - 'Calculation: 3.5 × 20 = 70 bottles.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: An animal shelter recorded the number of animals rescued weekly. The pictogram key is 🚗 = 5 animals rescued.
+        If Week 3 showed exactly 6 full symbols, calculate the total number of animals rescued that week.
+      mathTool: null
+      finalAnswer: 6 × 5 = 30 animals
+      stepByStepGuideline:
+      - 'Identify the scale from the key: 1 symbol (🚗) = 5 animals.'
+      - 'Determine the total number of symbols shown: 6 full symbols.'
+      - 'Calculate the total animals rescued using the formula: Total = Symbols × Scale.'
+      - 'Calculation: 6 × 5 = 30 animals.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: A pizzeria monitored the usage of a specific topping (measured in standard slices). The key is ⭐ = 10 slices.
+        If the total usage on Saturday required 4 full symbols and one half symbol (4.5 symbols), how many slices of topping
+        were used?
+      mathTool: null
+      finalAnswer: 4.5 × 10 = 45 slices
+      stepByStepGuideline:
+      - 'Identify the scale from the key: 1 symbol (⭐) = 10 slices.'
+      - 'Determine the total number of symbols shown: 4.5 symbols.'
+      - 'Calculate the total slices used using the formula: Total = Symbols × Scale.'
+      - 'Calculation: 4.5 × 10 = 45 slices.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: The community centre tracks volunteer effort. The pictogram key states that 📚 = 20 volunteer hours. If
+        the month of June is represented by 3 full symbols and one half symbol (3.5 symbols), what was the total number of
+        volunteer hours recorded in June?
+      mathTool: null
+      finalAnswer: 3.5 × 20 = 70 hours
+      stepByStepGuideline:
+      - 'Identify the scale from the key: 1 symbol (📚) = 20 hours.'
+      - 'Determine the total number of symbols shown: 3.5 symbols.'
+      - 'Calculate the total volunteer hours using the formula: Total = Symbols × Scale.'
+      - 'Calculation: 3.5 × 20 = 70 hours.'
+      id: q11-5
+      questionGroup: q11
+- id: data-node-12
+  nodeNumber: 12
+  title: Creating Pictograms with Appropriate Keys
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A startup recorded the monthly revenue (in thousands of dollars, $k$) generated by its three primary products
+        during July:
+
+
+        Product X: $35k
+
+        Product Y: $25k
+
+        Product Z: $40k
+
+
+        Create a pictogram to represent this data. You must choose an appropriate key value such that the number of symbols
+        required for each category is between 3 and 10. Show your calculations for the number of symbols needed for each product
+        and list all the essential elements your pictogram must include.'
+      avatarIntro: Creating pictograms requires careful planning, especially when choosing the key! Remember, an effective
+        key makes the chart easy to read without too many symbols.
+      mathTool: null
+      finalAnswer: "Appropriate Key: 1 symbol (e.g., a dollar sign) = 10 thousand dollars ($10k). \n\nCalculations:\nProduct\
+        \ X: 35 ÷ 10 = 3.5 symbols\nProduct Y: 25 ÷ 10 = 2.5 symbols\nProduct Z: 40 ÷ 10 = 4 symbols\n\nEssential Elements:\
+        \ Title (e.g., July Product Revenue), Key (Symbol = $10k), Category labels (Product X, Product Y, Product Z), Consistent\
+        \ symbol sizing."
+      stepByStepGuideline:
+      - 'Step 1: Determine the appropriate key value. The values (25, 35, 40) suggest a key of 10, as 10 results in symbol
+        counts between 2.5 and 4, which is acceptable (3-10 range is desired).'
+      - 'Step 2: Calculate the number of symbols needed for each category by dividing the data value by the chosen key value
+        (10).'
+      - 'Step 3: Calculate: Product X: 35/10 = 3.5 symbols. Product Y: 25/10 = 2.5 symbols. Product Z: 40/10 = 4 symbols.'
+      - 'Step 4: List the essential elements required for a complete pictogram: Title (What the chart shows), Key (What the
+        symbol represents), Category labels (Product X, Y, Z), and consistent use of symbols (including halves).'
+      id: q12-1
+      questionGroup: q12
+    - problemText: 'A bakery tracks the number of large batches of bread baked during three shifts last week:
+
+
+        Morning Shift: 60 batches
+
+        Afternoon Shift: 80 batches
+
+        Night Shift: 50 batches
+
+
+        Create a pictogram to represent this production data. You must choose an appropriate key value such that the number
+        of symbols required for each shift is between 3 and 10. Show your calculations for the number of symbols needed for
+        each shift and list all the essential elements your pictogram must include.'
+      mathTool: null
+      finalAnswer: 'Appropriate Key: 1 symbol (e.g., a loaf icon) = 20 batches.
+
+
+        Calculations:
+
+        Morning Shift: 60 ÷ 20 = 3 symbols
+
+        Afternoon Shift: 80 ÷ 20 = 4 symbols
+
+        Night Shift: 50 ÷ 20 = 2.5 symbols
+
+
+        Essential Elements: Title (e.g., Weekly Bread Production by Shift), Key (Symbol = 20 batches), Category labels (Morning,
+        Afternoon, Night), Consistent symbol sizing.'
+      stepByStepGuideline:
+      - 'Step 1: Determine the appropriate key value. Given the values (50, 60, 80), a key of 20 ensures the symbol counts
+        fall mostly within the desired 3-10 range (3, 4, 2.5).'
+      - 'Step 2: Calculate the number of symbols needed for each shift by dividing the data value by the chosen key value
+        (20).'
+      - 'Step 3: Calculate: Morning: 60/20 = 3 symbols. Afternoon: 80/20 = 4 symbols. Night: 50/20 = 2.5 symbols.'
+      - 'Step 4: List the essential elements required for a complete pictogram: Title, Key, Category labels, and consistent
+        symbol usage.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: 'A primary school library recorded the number of books borrowed in thousands of pages (k pages) across
+        three main age groups during the summer:
+
+
+        Primary Group (P): 45k pages
+
+        Junior Group (J): 30k pages
+
+        Senior Group (S): 55k pages
+
+
+        Create a pictogram to represent this data. You must choose an appropriate key value such that the number of symbols
+        required for each group is between 3 and 10. Show your calculations for the number of symbols needed for each group
+        and list all the essential elements your pictogram must include.'
+      mathTool: null
+      finalAnswer: 'Appropriate Key: 1 symbol (e.g., an open book) = 10 thousand pages (10k pages).
+
+
+        Calculations:
+
+        Primary Group (P): 45 ÷ 10 = 4.5 symbols
+
+        Junior Group (J): 30 ÷ 10 = 3 symbols
+
+        Senior Group (S): 55 ÷ 10 = 5.5 symbols
+
+
+        Essential Elements: Title (e.g., Summer Borrowing by Age Group), Key (Symbol = 10k pages), Category labels (P, J,
+        S), Consistent symbol sizing.'
+      stepByStepGuideline:
+      - 'Step 1: Determine the appropriate key value. The values (30, 45, 55) are multiples of 5, but 10 is the best choice
+        to keep the number of symbols manageable (3 to 5.5).'
+      - 'Step 2: Calculate the number of symbols needed for each group by dividing the data value by the chosen key value
+        (10).'
+      - 'Step 3: Calculate: Primary: 45/10 = 4.5 symbols. Junior: 30/10 = 3 symbols. Senior: 55/10 = 5.5 symbols.'
+      - 'Step 4: List the essential elements required for a complete pictogram: Title, Key, Category labels, and consistent
+        symbol usage.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: 'Three professional race car drivers recorded their total career pole positions (Poles) achieved:
+
+
+        Driver A: 35 Poles
+
+        Driver B: 25 Poles
+
+        Driver C: 40 Poles
+
+
+        Create a pictogram to represent this data. You must choose an appropriate key value such that the number of symbols
+        required for each driver is between 3 and 10. Show your calculations for the number of symbols needed for each driver
+        and list all the essential elements your pictogram must include.'
+      mathTool: null
+      finalAnswer: 'Appropriate Key: 1 symbol (e.g., a checkered flag) = 10 Poles.
+
+
+        Calculations:
+
+        Driver A: 35 ÷ 10 = 3.5 symbols
+
+        Driver B: 25 ÷ 10 = 2.5 symbols
+
+        Driver C: 40 ÷ 10 = 4 symbols
+
+
+        Essential Elements: Title (e.g., Career Pole Positions), Key (Symbol = 10 Poles), Category labels (Driver A, Driver
+        B, Driver C), Consistent symbol sizing.'
+      stepByStepGuideline:
+      - 'Step 1: Determine the appropriate key value. The data values (25, 35, 40) are handled well by a key of 10, resulting
+        in 2.5 to 4 symbols.'
+      - 'Step 2: Calculate the number of symbols needed for each driver by dividing the data value by the chosen key value
+        (10).'
+      - 'Step 3: Calculate: Driver A: 35/10 = 3.5 symbols. Driver B: 25/10 = 2.5 symbols. Driver C: 40/10 = 4 symbols.'
+      - 'Step 4: List the essential elements required for a complete pictogram: Title, Key, Category labels, and consistent
+        symbol usage.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: 'A survey tracked the number of hours spent playing video games per month across three different consoles
+        among a group of users:
+
+
+        Console X: 60 hours
+
+        Console Y: 80 hours
+
+        Console Z: 50 hours
+
+
+        Create a pictogram to represent this data. You must choose an appropriate key value such that the number of symbols
+        required for each console category is between 3 and 10. Show your calculations for the number of symbols needed for
+        each console and list all the essential elements your pictogram must include.'
+      mathTool: null
+      finalAnswer: 'Appropriate Key: 1 symbol (e.g., a controller icon) = 20 hours.
+
+
+        Calculations:
+
+        Console X: 60 ÷ 20 = 3 symbols
+
+        Console Y: 80 ÷ 20 = 4 symbols
+
+        Console Z: 50 ÷ 20 = 2.5 symbols
+
+
+        Essential Elements: Title (e.g., Monthly Gaming Hours by Console), Key (Symbol = 20 hours), Category labels (Console
+        X, Console Y, Console Z), Consistent symbol sizing.'
+      stepByStepGuideline:
+      - 'Step 1: Determine the appropriate key value. Given the large values (50, 60, 80), a key of 20 is suitable, yielding
+        symbol counts between 2.5 and 4.'
+      - 'Step 2: Calculate the number of symbols needed for each console by dividing the data value by the chosen key value
+        (20).'
+      - 'Step 3: Calculate: Console X: 60/20 = 3 symbols. Console Y: 80/20 = 4 symbols. Console Z: 50/20 = 2.5 symbols.'
+      - 'Step 4: List the essential elements required for a complete pictogram: Title, Key, Category labels, and consistent
+        symbol usage.'
+      id: q12-5
+      questionGroup: q12
+- id: data-node-13
+  nodeNumber: 13
+  title: Reading and Creating Bar Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: 'A survey was conducted among primary school students regarding their favorite primary colors. The results,
+        when plotted on a bar graph, showed the following frequencies:
+
+
+        Red: 12 students
+
+        Blue: 18 students
+
+        Green: 8 students
+
+
+        Based on the bar graph representing this data, identify the most popular color and calculate the difference in frequency
+        between the most popular and the least popular color.'
+      avatarIntro: Bar graphs are excellent tools for comparing categorical data. Let's practice reading the values accurately
+        from the bar heights!
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Red
+          - Blue
+          - Green
+          values:
+          - 12
+          - 18
+          - 8
+          xLabel: Favorite Color
+          yLabel: Frequency (Number of Students)
+          title: Student Color Preferences
+          orientation: vertical
+      finalAnswer: Blue is the most popular color (18 students). The difference between the most popular and the least popular
+        (Green, 8 students) is 18 - 8 = 10 students.
+      stepByStepGuideline:
+      - 'Step 1: Identify the highest bar (most popular category). The highest value is Blue (18).'
+      - 'Step 2: Identify the lowest bar (least popular category). The lowest value is Green (8).'
+      - 'Step 3: Calculate the difference between the highest and lowest frequencies: 18 - 8 = 10.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: 'A high school tracked student participation in three extracurricular sports activities over a semester.
+        A bar graph was created showing the following participation counts:
+
+
+        Soccer: 18 students
+
+        Basketball: 25 students
+
+        Tennis: 12 students
+
+
+        If the bar graph accurately represents all respondents, calculate the total number of students surveyed.'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Soccer
+          - Basketball
+          - Tennis
+          values:
+          - 18
+          - 25
+          - 12
+          xLabel: Sport Activity
+          yLabel: Frequency (Participants)
+          title: Extracurricular Sports Participation
+          orientation: vertical
+      finalAnswer: The total number of students surveyed is 55.
+      stepByStepGuideline:
+      - 'Step 1: Read the frequency value for each category from the bar heights: Soccer = 18, Basketball = 25, Tennis = 12.'
+      - 'Step 2: Sum the frequencies of all categories to find the total number of respondents: 18 + 25 + 12.'
+      - 'Step 3: Calculate the total: 18 + 25 + 12 = 55.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: 'A college department collected data on student enrollment figures for three core subjects:
+
+
+        Mathematics: 22 students
+
+        Science: 15 students
+
+        English: 20 students
+
+
+        If you are required to construct a vertical bar graph to display this data, what would be the most appropriate maximum
+        value for the Y-axis and an appropriate interval step size (tick mark spacing) to ensure readability and accuracy?'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Math
+          - Science
+          - English
+          values:
+          - 22
+          - 15
+          - 20
+          xLabel: Subject
+          yLabel: Frequency (Enrollment)
+          title: Semester Enrollment Figures
+          orientation: vertical
+      finalAnswer: The maximum value is 22. An appropriate maximum Y-axis value would be 25 or 30. An appropriate interval
+        step size would be 5 (e.g., 0, 5, 10, 15, 20, 25).
+      stepByStepGuideline:
+      - 'Step 1: Determine the maximum value in the dataset. Max enrollment is 22.'
+      - 'Step 2: Choose a Y-axis maximum that is slightly above the maximum data value and ends on an easy-to-read number.
+        25 or 30 are suitable.'
+      - 'Step 3: Choose an interval step size (scale) that allows easy plotting of the data points and clear reading. Since
+        the values are multiples of 5 (15, 20) or close to them (22), an interval of 5 is appropriate (0, 5, 10, 15, 20, 25,
+        ...).'
+      id: q13-3
+      questionGroup: q13
+    - problemText: "A student drew a bar graph showing the following counts for 'Favorite Colors': Red (12), Blue (18), Green\
+        \ (8). However, when reviewing the graph, an error was noticed: the bar representing Red was 1 cm wide, the bar for\
+        \ Blue was 1 cm wide, but the bar for Green was 2 cm wide. \n\nWhich fundamental requirement for constructing a standard\
+        \ bar graph did the student violate?"
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Red
+          - Blue
+          - Green
+          values:
+          - 12
+          - 18
+          - 8
+          xLabel: Color
+          yLabel: Frequency
+          title: Graph Analysis Example
+          orientation: vertical
+      finalAnswer: The student violated the requirement that all bars must have equal width.
+      stepByStepGuideline:
+      - 'Step 1: Recall the fundamental requirements for a bar graph.'
+      - 'Step 2: Analyze the error described: Red and Blue bars have 1 cm width, but Green has 2 cm width.'
+      - 'Step 3: Conclude that varying the width of the bars violates the convention that bar graphs must use bars of equal
+        width to ensure that the visual representation (height) accurately reflects the frequency.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: 'Suppose you are preparing a visual presentation using a bar graph to display the following data on student
+        participation in three sports: Soccer (18), Basketball (25), and Tennis (12). Before plotting the bars, you must ensure
+        the graph is properly labeled and structured.
+
+
+        List four essential labeling or structural components (excluding the bars themselves) required for a complete and
+        standard vertical bar graph.'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Soccer
+          - Basketball
+          - Tennis
+          values:
+          - 18
+          - 25
+          - 12
+          xLabel: Activity
+          yLabel: Frequency
+          title: Presentation Data Checklist
+          orientation: vertical
+      finalAnswer: 'The four essential components are: 1. A clear Title describing the data. 2. A label for the X-axis (categories).
+        3. A label for the Y-axis (frequency/values). 4. Uniform gaps between bars (or appropriate Y-axis scale starting at
+        zero).'
+      stepByStepGuideline:
+      - 'Step 1: Identify the crucial elements needed to interpret a graph without ambiguity.'
+      - 'Step 2: The graph needs context (Title).'
+      - 'Step 3: The axes need definition (X-axis label and Y-axis label).'
+      - 'Step 4: The visualization must follow structural rules: Ensure the Y-axis scale is appropriate and starts at zero,
+        and that gaps between bars are uniform.'
+      id: q13-5
+      questionGroup: q13
+- id: data-node-14
+  nodeNumber: 14
+  title: Vertical vs Horizontal Bar Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: 'You are tracking the volume (in tons) of four common recyclable materials collected weekly: Paper, Plastic,
+        Glass, and Metal. These four categories are listed along the X-axis.
+
+
+        Which orientation should you choose for the bar graph (vertical or horizontal)? Why?'
+      avatarIntro: Understanding how to choose the right graph orientation is key to making your data easy for others to read.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Paper
+          - Plastic
+          - Glass
+          - Metal
+          values:
+          - 20
+          - 35
+          - 15
+          - 10
+          orientation: vertical
+          caption: Same data, different orientation
+      finalAnswer: Vertical bars. The category names are short (1-2 words) and there are few categories (only four), allowing
+        the labels to fit easily and clearly along the horizontal X-axis.
+      stepByStepGuideline:
+      - 'Analyze the category labels: ''Paper'', ''Plastic'', ''Glass'', ''Metal''. These are short (1-2 words).'
+      - 'Analyze the category count: There are only four categories (a small number).'
+      - 'Recall the readability rule: Short labels and few categories are best suited for vertical bar graphs, where labels
+        fit comfortably on the X-axis.'
+      - 'Conclusion: Choose vertical orientation.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: 'A company needs to graph the frequency of its primary customer service issues. The categories are:
+
+
+        ''Billing Inquiry''
+
+        ''Technical Support Request''
+
+        ''Account Management Update''
+
+        ''Product Return Status Check''
+
+
+        Which bar graph orientation is best suited for this data visualization? Why?'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Billing Inquiry
+          - Tech Support Request
+          - Account Update
+          - Product Status Check
+          values:
+          - 150
+          - 90
+          - 75
+          - 50
+          orientation: horizontal
+          caption: Same data, different orientation
+      finalAnswer: Horizontal bars. The category labels are long (3 or more words each). Placing these long labels on the
+        vertical Y-axis provides adequate space, preventing overlap and making the labels easy to read.
+      stepByStepGuideline:
+      - 'Analyze the category labels: The labels are very long (e.g., ''Technical Support Request'').'
+      - 'Determine the fit for vertical bars: Long labels placed horizontally beneath vertical bars often overlap or require
+        severe rotation, harming readability.'
+      - 'Determine the fit for horizontal bars: Placing long labels on the vertical Y-axis (where they are read horizontally)
+        ensures maximum clarity and space.'
+      - 'Conclusion: Choose horizontal orientation.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: 'A trade analyst must display the value of exports to the top 12 destination countries (e.g., US, UK, Japan,
+        Brazil). Although the country names are short, there are 12 distinct categories to plot.
+
+
+        Should the resulting bar graph be vertical or horizontal? Why?'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - US
+          - UK
+          - Japan
+          - Brazil
+          values:
+          - 50
+          - 45
+          - 40
+          - 35
+          orientation: horizontal
+          caption: Same data, different orientation
+      finalAnswer: Horizontal bars. When there are many categories (10 or more), displaying them vertically on the Y-axis
+        is generally preferred because it prevents the horizontal axis (X-axis) from becoming too congested, which would make
+        individual bars difficult to distinguish.
+      stepByStepGuideline:
+      - 'Analyze the category count: There are 12 categories (a large number).'
+      - 'Evaluate vertical orientation suitability: Plotting 12 categories side-by-side on a horizontal axis results in narrow
+        bars and crowded labels.'
+      - 'Evaluate horizontal orientation suitability: Plotting 12 categories vertically (one above the other) provides better
+        visual separation and uses vertical space more effectively.'
+      - 'Conclusion: Choose horizontal orientation due to the high category count.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: 'A streaming platform wants to compare the popularity of four primary genres: Pop Music, Rock Music, Classical,
+        and Jazz. Since there are only four categories and the labels are relatively concise (1-2 words), which bar graph
+        orientation is typically preferred?'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Pop Music
+          - Rock Music
+          - Classical
+          - Jazz
+          values:
+          - 60
+          - 40
+          - 25
+          - 15
+          orientation: vertical
+          caption: Same data, different orientation
+      finalAnswer: Vertical bars. With a small number of categories and concise labels, the traditional vertical format is
+        the standard and most efficient choice, maintaining clarity without requiring extra space.
+      stepByStepGuideline:
+      - 'Analyze the category labels: Labels like ''Pop Music'' or ''Classical'' are concise (medium/short length).'
+      - 'Analyze the category count: There are only four categories (a small number).'
+      - 'Apply the principle: The standard vertical bar graph works best when there is no risk of label overlap or congestion.'
+      - 'Conclusion: Choose vertical orientation.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: 'A project manager needs to visualize the budget allocated to three specific initiatives:
+
+
+        ''Development of New Software Interface''
+
+        ''Infrastructure Upgrade and Security Audit''
+
+        ''Marketing Campaign Launch and Analysis''
+
+
+        Given the extensive length of these category names, what is the optimal bar graph orientation?'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - New Software Interface
+          - Security Audit
+          - Marketing Campaign
+          values:
+          - 120
+          - 80
+          - 50
+          orientation: horizontal
+          caption: Same data, different orientation
+      finalAnswer: Horizontal bars. These extremely long category names must be placed on the vertical Y-axis (where they
+        read left-to-right) to ensure the full name can be displayed clearly without truncation or overlapping, which is impossible
+        to achieve efficiently with vertical bars.
+      stepByStepGuideline:
+      - 'Analyze the category labels: The labels are exceptionally long (4+ words).'
+      - 'Evaluate vertical bar suitability: If used, the labels on the X-axis would require drastic rotation or shrinking,
+        making them unreadable.'
+      - 'Evaluate horizontal bar suitability: Horizontal bars place the labels on the Y-axis, providing ample horizontal space
+        for long descriptive titles.'
+      - 'Conclusion: Choose horizontal orientation to maximize space for long labels.'
+      id: q14-5
+      questionGroup: q14
+- id: data-node-15
+  nodeNumber: 15
+  title: Understanding Pie Charts and Proportions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: pieChart
+    preWrittenQuestions:
+    - problemText: 'A farmer recorded the yield (in tonnes) from his three main crops last season, represented in the pie
+        chart below. The total yield was 30 tonnes.
+
+
+        Calculate the percentage of the total yield that came from Wheat.'
+      avatarIntro: Pie charts are excellent tools for visualizing how parts relate to the whole. Remember, the entire circle
+        always represents 100%!
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Wheat
+          - Corn
+          - Soybeans
+          frequencies:
+          - 15
+          - 10
+          - 5
+          showAngles: false
+          showPercentages: true
+          showCalculations: false
+          caption: Pie chart showing crop yield proportions (tonnes)
+      finalAnswer: 50%
+      stepByStepGuideline:
+      - 'Step 1: Determine the total frequency (Total yield) and the frequency of the target category (Wheat). Total = 15
+        + 10 + 5 = 30. Wheat frequency = 15.'
+      - 'Step 2: Apply the percentage formula: Percentage = (Frequency ÷ Total) × 100%.'
+      - 'Step 3: Calculate the percentage for Wheat: (15 ÷ 30) × 100% = 0.5 × 100% = 50%.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: 'A retail store tracked the number of heavy winter clothing items remaining in their inventory at the end
+        of the season. The inventory consisted of Shirts (12), Pants (8), and Jackets (4). The data is shown in the pie chart.
+
+
+        What percentage of the remaining inventory were Jackets?'
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Shirts
+          - Pants
+          - Jackets
+          frequencies:
+          - 12
+          - 8
+          - 4
+          showAngles: false
+          showPercentages: true
+          showCalculations: false
+          caption: Pie chart showing remaining clothing inventory
+      finalAnswer: 16.67% (or 16 2/3%)
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total inventory count: Total = 12 + 8 + 4 = 24.'
+      - 'Step 2: Identify the frequency of Jackets, which is 4.'
+      - 'Step 3: Calculate the percentage: (Frequency ÷ Total) × 100% = (4 ÷ 24) × 100%.'
+      - 'Step 4: (1/6) × 100% ≈ 16.67% (or 16 2/3%).'
+      id: q15-2
+      questionGroup: q15
+    - problemText: 'A city transportation department surveyed 50 commuters about their primary method of using public transport,
+        resulting in four categories: Bus (20), Train (15), Subway (10), and Ferry (5). This data is displayed in the pie
+        chart.
+
+
+        What percentage of commuters primarily use the Train?'
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Bus
+          - Train
+          - Subway
+          - Ferry
+          frequencies:
+          - 20
+          - 15
+          - 10
+          - 5
+          showAngles: false
+          showPercentages: true
+          showCalculations: false
+          caption: Pie chart showing commuter transport preferences
+      finalAnswer: 30%
+      stepByStepGuideline:
+      - 'Step 1: The total number of commuters surveyed is given as 50. (20 + 15 + 10 + 5 = 50).'
+      - 'Step 2: The frequency for Train usage is 15.'
+      - 'Step 3: Calculate the percentage: Percentage = (Frequency ÷ Total) × 100%.'
+      - 'Step 4: (15 ÷ 50) × 100% = 0.30 × 100% = 30%.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: 'A household tracked its monthly usage of three utilities measured in standardized units, totaling 30 units:
+        Electricity (15 units), Water (10 units), and Gas (5 units). The pie chart visualizes these proportions.
+
+
+        Calculate the percentage of the total utility usage attributed to Water.'
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Electricity
+          - Water
+          - Gas
+          frequencies:
+          - 15
+          - 10
+          - 5
+          showAngles: false
+          showPercentages: true
+          showCalculations: false
+          caption: Pie chart showing monthly utility usage
+      finalAnswer: 33.33% (or 33 1/3%)
+      stepByStepGuideline:
+      - 'Step 1: Identify the total usage (30 units) and the usage for Water (10 units).'
+      - 'Step 2: Apply the percentage formula: Percentage = (Frequency ÷ Total) × 100%.'
+      - 'Step 3: Calculate the percentage for Water: (10 ÷ 30) × 100%.'
+      - 'Step 4: (1/3) × 100% ≈ 33.33%.'
+      id: q15-4
+      questionGroup: q15
+    - problemText: 'A book club recorded the types of books members read over a quarter, totaling 24 books: Fiction (12),
+        Non-Fiction (8), and Poetry (4). This distribution is shown in the pie chart.
+
+
+        Determine the percentage of books read that were Non-Fiction.'
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Fiction
+          - Non-Fiction
+          - Poetry
+          frequencies:
+          - 12
+          - 8
+          - 4
+          showAngles: false
+          showPercentages: true
+          showCalculations: false
+          caption: Pie chart showing book club reading habits
+      finalAnswer: 33.33% (or 33 1/3%)
+      stepByStepGuideline:
+      - 'Step 1: Identify the total number of books read (24) and the number of Non-Fiction books (8).'
+      - 'Step 2: Use the percentage formula: Percentage = (Frequency ÷ Total) × 100%.'
+      - 'Step 3: Calculate the percentage for Non-Fiction: (8 ÷ 24) × 100%.'
+      - 'Step 4: (1/3) × 100% ≈ 33.33%.'
+      id: q15-5
+      questionGroup: q15
+- id: data-node-16
+  nodeNumber: 16
+  title: Calculating Pie Chart Sector Angles
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: pieChart
+    preWrittenQuestions:
+    - problemText: 'A school canteen tracked the number of main meals sold during lunchtime, totaling 24 meals. The sales
+        data is categorized as follows:
+
+
+        Chicken Dish: 12 meals
+
+        Fish Dish: 8 meals
+
+        Vegetarian Dish: 4 meals
+
+
+        Calculate the sector angle required for each category if this data were presented in a pie chart. Ensure you verify
+        that the sum of the angles is 360°.'
+      avatarIntro: Calculating sector angles is essential for accurately visualizing data in a pie chart. Remember that a
+        full circle is 360 degrees!
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Chicken Dish
+          - Fish Dish
+          - Vegetarian Dish
+          frequencies:
+          - 12
+          - 8
+          - 4
+          showAngles: true
+          showPercentages: false
+          showCalculations: true
+          caption: 'Formula: Angle = (Frequency ÷ Total) × 360°'
+      finalAnswer: 'Total frequency = 24. Chicken Dish: (12÷24)×360°=180°; Fish Dish: (8÷24)×360°=120°; Vegetarian Dish: (4÷24)×360°=60°.
+        Check: 180° + 120° + 60° = 360° ✓'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total frequency (Total = 12 + 8 + 4 = 24).'
+      - 'Step 2: Calculate the angle for the Chicken Dish: (12 ÷ 24) × 360° = 180°.'
+      - 'Step 3: Calculate the angle for the Fish Dish: (8 ÷ 24) × 360° = 120°.'
+      - 'Step 4: Calculate the angle for the Vegetarian Dish: (4 ÷ 24) × 360° = 60°.'
+      - 'Step 5: Verify that the sum of all calculated angles equals 360° (180° + 120° + 60° = 360°).'
+      id: q16-1
+      questionGroup: q16
+    - problemText: 'An investor allocates a total of $30,000 across three different asset classes. The allocation is as follows
+        (in thousands of dollars):
+
+
+        Stocks: $15k
+
+        Bonds: $10k
+
+        Cash: $5k
+
+
+        Calculate the sector angle required for each asset class if this portfolio allocation were displayed in a pie chart.
+        Show all calculations and confirm the total angle.'
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Stocks
+          - Bonds
+          - Cash
+          frequencies:
+          - 15
+          - 10
+          - 5
+          showAngles: true
+          showPercentages: false
+          showCalculations: true
+          caption: 'Formula: Angle = (Frequency ÷ Total) × 360°'
+      finalAnswer: 'Total frequency = 30. Stocks: (15÷30)×360°=180°; Bonds: (10÷30)×360°=120°; Cash: (5÷30)×360°=60°. Check:
+        180° + 120° + 60° = 360° ✓'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total allocation (Total = 15 + 10 + 5 = 30).'
+      - 'Step 2: Calculate the angle for Stocks: (15 ÷ 30) × 360° = 180°.'
+      - 'Step 3: Calculate the angle for Bonds: (10 ÷ 30) × 360° = 120°.'
+      - 'Step 4: Calculate the angle for Cash: (5 ÷ 30) × 360° = 60°.'
+      - 'Step 5: Verify the sum of the angles equals 360° (180° + 120° + 60° = 360°).'
+      id: q16-2
+      questionGroup: q16
+    - problemText: 'A marketing team analyzed 40,000 website visits and categorized the source of traffic (in thousands of
+        visits):
+
+
+        Search Engine: 20k
+
+        Direct URL Entry: 10k
+
+        Social Media: 6k
+
+        Referral Links: 4k
+
+
+        Determine the sector angle corresponding to each traffic source for a pie chart visualization. Ensure your final answer
+        confirms the sum of all angles.'
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Search Engine
+          - Direct URL Entry
+          - Social Media
+          - Referral Links
+          frequencies:
+          - 20
+          - 10
+          - 6
+          - 4
+          showAngles: true
+          showPercentages: false
+          showCalculations: true
+          caption: 'Formula: Angle = (Frequency ÷ Total) × 360°'
+      finalAnswer: 'Total frequency = 40. Search Engine: (20÷40)×360°=180°; Direct URL Entry: (10÷40)×360°=90°; Social Media:
+        (6÷40)×360°=54°; Referral Links: (4÷40)×360°=36°. Check: 180° + 90° + 54° + 36° = 360° ✓'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total number of visits (Total = 20 + 10 + 6 + 4 = 40).'
+      - 'Step 2: Calculate the angle for Search Engine: (20 ÷ 40) × 360° = 180°.'
+      - 'Step 3: Calculate the angle for Direct URL Entry: (10 ÷ 40) × 360° = 90°.'
+      - 'Step 4: Calculate the angle for Social Media: (6 ÷ 40) × 360° = 54°.'
+      - 'Step 5: Calculate the angle for Referral Links: (4 ÷ 40) × 360° = 36°.'
+      - 'Step 6: Verify the sum of the angles equals 360° (180° + 90° + 54° + 36° = 360°).'
+      id: q16-3
+      questionGroup: q16
+    - problemText: 'A quality control manager analyzed 24 defective items produced in a batch and categorized the type of
+        defect:
+
+
+        Defect Type A: 12 occurrences
+
+        Defect Type B: 8 occurrences
+
+        Defect Type C: 4 occurrences
+
+
+        If you were to construct a pie chart to visualize the distribution of defect types, what would be the corresponding
+        central angle for each sector? Use the formula Angle = (Frequency ÷ Total) × 360° and check your total.'
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Defect Type A
+          - Defect Type B
+          - Defect Type C
+          frequencies:
+          - 12
+          - 8
+          - 4
+          showAngles: true
+          showPercentages: false
+          showCalculations: true
+          caption: 'Formula: Angle = (Frequency ÷ Total) × 360°'
+      finalAnswer: 'Total frequency = 24. Defect Type A: (12÷24)×360°=180°; Defect Type B: (8÷24)×360°=120°; Defect Type C:
+        (4÷24)×360°=60°. Check: 180° + 120° + 60° = 360° ✓'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total number of defective items (Total = 12 + 8 + 4 = 24).'
+      - 'Step 2: Calculate the angle for Defect Type A: (12 ÷ 24) × 360° = 180°.'
+      - 'Step 3: Calculate the angle for Defect Type B: (8 ÷ 24) × 360° = 120°.'
+      - 'Step 4: Calculate the angle for Defect Type C: (4 ÷ 24) × 360° = 60°.'
+      - 'Step 5: Verify that the sum of all calculated angles equals 360° (180° + 120° + 60° = 360°).'
+      id: q16-4
+      questionGroup: q16
+    - problemText: 'A student tracked the 30 minutes required for their commute to school and broke down the time into three
+        components:
+
+
+        Walking Time: 15 minutes
+
+        Bus Ride Time: 10 minutes
+
+        Waiting Time for Bus: 5 minutes
+
+
+        Calculate the sector angle for each component if this data were drawn as a pie chart, representing the full 360° journey
+        time.'
+      mathTool:
+        toolName: pieChart
+        parameters:
+          categories:
+          - Walking Time
+          - Bus Ride Time
+          - Waiting Time for Bus
+          frequencies:
+          - 15
+          - 10
+          - 5
+          showAngles: true
+          showPercentages: false
+          showCalculations: true
+          caption: 'Formula: Angle = (Frequency ÷ Total) × 360°'
+      finalAnswer: 'Total frequency = 30. Walking Time: (15÷30)×360°=180°; Bus Ride Time: (10÷30)×360°=120°; Waiting Time
+        for Bus: (5÷30)×360°=60°. Check: 180° + 120° + 60° = 360° ✓'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total time (Total = 15 + 10 + 5 = 30 minutes).'
+      - 'Step 2: Calculate the angle for Walking Time: (15 ÷ 30) × 360° = 180°.'
+      - 'Step 3: Calculate the angle for Bus Ride Time: (10 ÷ 30) × 360° = 120°.'
+      - 'Step 4: Calculate the angle for Waiting Time for Bus: (5 ÷ 30) × 360° = 60°.'
+      - 'Step 5: Verify the sum of the angles equals 360° (180° + 120° + 60° = 360°).'
+      id: q16-5
+      questionGroup: q16
+- id: data-node-17
+  nodeNumber: 17
+  title: Reading Line Graphs and Identifying Trends
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: lineChart
+    preWrittenQuestions:
+    - problemText: A biologist recorded the growth of a sunflower seedling over four weeks. Analyze the provided line graph
+        data and describe the trend observed in the height of the seedling.
+      avatarIntro: Line graphs are excellent tools for visualizing how quantities change over time. Read the axis labels carefully
+        to understand the relationship!
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - Week 1
+          - Week 2
+          - Week 3
+          - Week 4
+          yValues:
+          - 5
+          - 12
+          - 20
+          - 30
+          xAxisLabel: Time (Weeks)
+          yAxisLabel: Height (cm)
+          title: Sunflower Seedling Growth
+          showPoints: true
+          trendLine: false
+      finalAnswer: The graph shows a clear increasing trend. The height of the seedling grew steadily from 5 cm in Week 1
+        to 30 cm in Week 4, indicating rapid growth, especially between Week 3 and Week 4 where it increased by 10 cm.
+      stepByStepGuideline:
+      - Examine the Y-values corresponding to the X-axis points (5, 12, 20, 30).
+      - Determine if the values are generally rising, falling, or staying the same.
+      - The values consistently increase, identifying this as an increasing trend.
+      - Describe the pattern by stating the starting and ending values and quantifying the total change (30 cm - 5 cm = 25
+        cm increase).
+      id: q17-1
+      questionGroup: q17
+    - problemText: A city monitored the volume of water in its primary reservoir during a four-month dry season. Based on
+        the line graph, describe the trend in the water volume.
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - Jan
+          - Feb
+          - Mar
+          - Apr
+          yValues:
+          - 50
+          - 45
+          - 35
+          - 20
+          xAxisLabel: Month
+          yAxisLabel: Water Volume (Million Litres)
+          title: City Reservoir Volume
+          showPoints: true
+          trendLine: false
+      finalAnswer: The graph shows a sharp decreasing trend. The reservoir volume dropped significantly from 50 Million Litres
+        in January to only 20 Million Litres by April. The largest monthly drop occurred between February (45 ML) and March
+        (35 ML), a decrease of 10 Million Litres.
+      stepByStepGuideline:
+      - Read the starting value (January = 50 ML) and the ending value (April = 20 ML).
+      - Observe that the line slopes downward across the entire duration, indicating a decreasing trend.
+      - Calculate the total reduction in volume (50 - 20 = 30 ML).
+      - Identify specific intervals to support the description of the decreasing pattern.
+      id: q17-2
+      questionGroup: q17
+    - problemText: The chart below shows the daily closing price of a new tech stock (Stock XYZ) over five trading days. Analyze
+        the graph and describe the overall trend and volatility of the stock price.
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - Day 1
+          - Day 2
+          - Day 3
+          - Day 4
+          - Day 5
+          yValues:
+          - 10
+          - 15
+          - 12
+          - 18
+          - 16
+          xAxisLabel: Trading Day
+          yAxisLabel: Price ($)
+          title: Stock XYZ Daily Closing Price
+          showPoints: true
+          trendLine: false
+      finalAnswer: The stock price shows a fluctuating trend. While the overall movement is slightly increasing (from $10
+        on Day 1 to $16 on Day 5), the price experienced significant volatility, rising $5 between Day 1 and 2, dropping $3
+        on Day 3, and hitting its peak of $18 on Day 4 before closing lower on Day 5.
+      stepByStepGuideline:
+      - Look at the direction of the line segment by segment. Does it constantly rise or fall?
+      - Since the line goes up and down repeatedly (10→15→12→18→16), the trend is fluctuating.
+      - Note the highest value ($18 on Day 4) and the lowest value ($10 on Day 1) to define the range of fluctuation.
+      - Describe the overall direction (in this case, a net increase) while highlighting the daily changes.
+      id: q17-3
+      questionGroup: q17
+    - problemText: A driver is testing a vehicle's cruise control system on a flat highway. The line graph shows the recorded
+        speed over five minutes. Describe the trend in the vehicle's speed.
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - 1 min
+          - 2 min
+          - 3 min
+          - 4 min
+          - 5 min
+          yValues:
+          - 80
+          - 80
+          - 80
+          - 80
+          - 80
+          xAxisLabel: Time Elapsed (Minutes)
+          yAxisLabel: Speed (km/h)
+          title: Vehicle Speed Test
+          showPoints: true
+          trendLine: false
+      finalAnswer: The graph displays a constant trend. The speed remained exactly 80 km/h throughout the entire five-minute
+        observation period, resulting in a perfectly horizontal line.
+      stepByStepGuideline:
+      - Read the Y-value for each time point on the X-axis.
+      - Since all points align at the same value (80 km/h), the trend is constant.
+      - Verify that there is no change or variation in the measured quantity over the given time period.
+      id: q17-4
+      questionGroup: q17
+    - problemText: The local environmental agency tracked the hourly Air Quality Index (AQI) during the morning. Use the line
+        graph to determine the period during which the AQI remained constant and calculate the total increase in AQI observed
+        between 9 AM and 11 AM.
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - 9 AM
+          - 10 AM
+          - 11 AM
+          - 12 PM
+          - 1 PM
+          yValues:
+          - 70
+          - 75
+          - 90
+          - 90
+          - 85
+          xAxisLabel: Time of Day
+          yAxisLabel: AQI Value
+          title: Hourly Air Quality Index
+          showPoints: true
+          trendLine: false
+      finalAnswer: The AQI remained constant between 11 AM and 12 PM, holding steady at an index value of 90. The total increase
+        between 9 AM (70) and 11 AM (90) was 20 index units (90 - 70).
+      stepByStepGuideline:
+      - Identify the segment where the line is perfectly horizontal to find the constant period. This occurs between 11 AM
+        and 12 PM (AQI = 90).
+      - Locate the AQI value at 9 AM (70) and 11 AM (90).
+      - 'Calculate the difference: 90 - 70 = 20.'
+      - State both the constant period and the calculated increase.
+      id: q17-5
+      questionGroup: q17
+- id: data-node-18
+  nodeNumber: 18
+  title: Making Predictions from Line Graph Trends
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: lineChart
+    preWrittenQuestions:
+    - problemText: A new fitness studio tracked the number of members enrolled in their advanced yoga class over four consecutive
+        months, as shown in the line graph. Based on the observed pattern, predict the enrollment for Month 5 and justify
+        your answer, including a statement about the confidence in your prediction.
+      avatarIntro: Line graphs are powerful tools for seeing trends over time! Use the data points to identify the consistent
+        rate of change before making your prediction.
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - Month 1
+          - Month 2
+          - Month 3
+          - Month 4
+          yValues:
+          - 20
+          - 25
+          - 30
+          - 35
+          trendLine: true
+          caption: Monthly Enrollment in Advanced Yoga Class
+      finalAnswer: 'Predicted Enrollment: 40 members. Justification: The data shows a consistent linear increase of 5 members
+        per month (25-20=5, 30-25=5, 35-30=5). Assuming this trend continues, Month 5 enrollment = 35 + 5 = 40. Uncertainty:
+        Confidence is medium, as the trend is clear, but unexpected events (e.g., season change, competitor opening) could
+        disrupt the growth rate.'
+      stepByStepGuideline:
+      - 'Step 1: Analyze the data points to calculate the rate of change between consecutive months (25-20=5, 30-25=5, 35-30=5).'
+      - 'Step 2: Identify the pattern: a steady linear increase of 5 members per month.'
+      - 'Step 3: Apply the identified rate of change to the last data point (Month 4: 35) to predict Month 5 (35 + 5 = 40).'
+      - 'Step 4: Justify the prediction based on the observed trend and acknowledge that predictions are only estimates and
+        may be subject to external factors.'
+      id: q18-1
+      questionGroup: q18
+    - problemText: A scientist recorded the amount of a certain medication (in mg) remaining in a patient's bloodstream over
+        four hours after administration. Analyze the steady decline shown in the graph and predict the amount remaining at
+        Hour 5. Explain your method and discuss the certainty of this prediction.
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - Hour 1
+          - Hour 2
+          - Hour 3
+          - Hour 4
+          yValues:
+          - 200
+          - 160
+          - 120
+          - 80
+          trendLine: true
+          caption: Medication Remaining in Bloodstream (mg)
+      finalAnswer: 'Predicted Amount Remaining: 40 mg. Justification: The medication level is showing a steady decline (elimination)
+        rate of 40 mg per hour (200-160=40, 160-120=40, 120-80=40). Continuing this linear trend, the amount at Hour 5 will
+        be 80 mg - 40 mg = 40 mg. Uncertainty: Confidence is medium/high if the biological elimination rate is known to be
+        constant over this short period, but individual patient metabolism or unforeseen interactions could slightly alter
+        the rate.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the hourly rate of change (decline) by subtracting consecutive data points (200-160=40, etc.).
+        The steady decline is 40 mg/hour.'
+      - 'Step 2: Use the steady rate to project the value for Hour 5: 80 mg (Hour 4) - 40 mg = 40 mg.'
+      - 'Step 3: State the prediction and reasoning, noting that biological processes often follow predictable patterns over
+        short periods, lending medium confidence, but acknowledging potential physiological variability.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: The line chart displays the closing price (in dollars) of a volatile cryptocurrency over four consecutive
+        days. Since the movement is highly erratic, make a justified prediction for the closing price on Day 5 and specifically
+        discuss the low confidence associated with this forecast.
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - Day 1
+          - Day 2
+          - Day 3
+          - Day 4
+          yValues:
+          - 180
+          - 220
+          - 190
+          - 230
+          trendLine: true
+          caption: Cryptocurrency Closing Price ($)
+      finalAnswer: 'Predicted Closing Price: $200 (Example prediction based on recent average or reversal). Justification:
+        There is no clear linear or cyclical trend (180 to 220 (+40), then 220 to 190 (-30), then 190 to 230 (+40)). Given
+        the wild fluctuation, a prediction of $200 is chosen arbitrarily as a value near the average ($205) or assuming a
+        reversal after the large spike. Uncertainty: Confidence is low. Erratic data means past performance is a poor indicator
+        of future results. Price movements are likely driven by external market news and investor sentiment, making short-term
+        forecasts highly unreliable.'
+      stepByStepGuideline:
+      - 'Step 1: Analyze the data for a consistent trend or rate of change. Note that the fluctuations (+40, -30, +40) show
+        high volatility and no reliable linear pattern.'
+      - 'Step 2: Choose a prediction value, acknowledging that any choice is speculative. For highly erratic data, one might
+        predict a return to the mean, or simply state that the price will likely remain within the observed range.'
+      - 'Step 3: Justify the prediction by emphasizing the lack of a clear trend.'
+      - 'Step 4: State that confidence is low because erratic data means the prediction is essentially guesswork, and market
+        factors are unpredictable.'
+      id: q18-3
+      questionGroup: q18
+    - problemText: A factory implemented a new training regime, and the production manager tracked the average number of units
+        produced per hour over four weeks. Assuming the steady improvement trend continues, calculate the predicted hourly
+        production rate for Week 5. State the prediction method and the potential limitations.
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - Week 1
+          - Week 2
+          - Week 3
+          - Week 4
+          yValues:
+          - 50
+          - 60
+          - 70
+          - 80
+          trendLine: true
+          caption: Hourly Production Rate (Units)
+      finalAnswer: 'Predicted Production Rate: 90 units/hour. Justification: The data shows a consistent linear increase of
+        10 units per week (60-50=10, 70-60=10, 80-70=10). We use the Linear Prediction Method. Week 5 production = 80 + 10
+        = 90 units. Limitations: Confidence is medium. While the trend is strong, production growth may slow down (saturation
+        point) or unexpected equipment failure could halt the improvement.'
+      stepByStepGuideline:
+      - 'Step 1: Determine the constant rate of improvement over the four weeks (Rate = +10 units per week).'
+      - 'Step 2: Use the linear prediction method to extrapolate the trend to Week 5: 80 units + 10 units = 90 units.'
+      - 'Step 3: Acknowledge the limitations, such as reaching peak efficiency or external factors (e.g., resource availability)
+        that might prevent the linear increase from continuing indefinitely.'
+      id: q18-4
+      questionGroup: q18
+    - problemText: A student tracked the remaining charge (in percentage) of their laptop battery during continuous use over
+        four hours, starting from a full charge (Hour 0). Analyze the graph showing the steady rate of discharge and predict
+        the remaining charge at Hour 4. Justify your prediction based on the trend.
+      mathTool:
+        toolName: lineChart
+        parameters:
+          xLabels:
+          - H 0
+          - H 1
+          - H 2
+          - H 3
+          yValues:
+          - 100
+          - 82
+          - 64
+          - 46
+          trendLine: true
+          caption: Laptop Battery Charge (%)
+      finalAnswer: 'Predicted Remaining Charge: 28%. Justification: The battery is discharging at a steady decline rate of
+        18 percentage points per hour (100-82=18, 82-64=18, 64-46=18). Applying this linear decline to the reading at Hour
+        3 (46%), the charge at Hour 4 will be 46 - 18 = 28%. Uncertainty: Confidence is medium. Battery discharge tends to
+        be linear in the middle range, but performance can drop sharply near 0% or slightly stabilize near 100%. The prediction
+        assumes the constant rate holds for the next hour.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the rate of decline (discharge) by finding the difference between consecutive hourly readings.
+        Rate = 18% per hour.'
+      - 'Step 2: Apply the calculated rate of steady decline to the final data point (Hour 3: 46%) to estimate the charge
+        at Hour 4: 46 - 18 = 28%.'
+      - 'Step 3: Confirm the prediction, reason based on the linear decline pattern, and state that confidence is medium,
+        recognizing that battery performance can vary slightly outside the measured range.'
+      id: q18-5
+      questionGroup: q18
+- id: data-node-19
+  nodeNumber: 19
+  title: Comparing Diagram Types - Advantages and Disadvantages
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Discuss the merits and limitations of using a pie chart to display categorical data representing proportions,
+        such as how a fixed budget is allocated across different departments.
+      avatarIntro: Understanding how to choose the right visualization is key to communicating data effectively! Let's examine
+        the strengths and weaknesses of pie charts.
+      mathTool: null
+      finalAnswer: 'Advantages: Shows proportions clearly (part-to-whole relationship); Effective for illustrating the breakdown
+        of a total; Compact visual representation.
+
+        Disadvantages: Difficult to estimate precise differences between slices; Not suitable for many categories (typically
+        >7); Cannot show trends or change over time.
+
+        Use Case: Ideal for showing how a fixed total (like budget, survey responses, or resources) is distributed among a
+        small number of components.'
+      stepByStepGuideline:
+      - Identify the core purpose of a pie chart (showing parts of a whole).
+      - List 2-3 key benefits, such as visual clarity for proportions.
+      - List 2-3 key drawbacks, focusing on limitations with precision and category count.
+      - Conclude by stating the specific type of data and scenario where a pie chart is the optimal choice.
+      id: q19-1
+      questionGroup: q19
+    - problemText: When analyzing continuous changes, such as hourly temperature fluctuations or the growth rate of a plant,
+        why is a line chart typically preferred over a bar chart? Include a discussion of its main advantages and disadvantages.
+      mathTool: null
+      finalAnswer: 'Advantages: Clearly shows trends and patterns over time (increase, decrease, volatility); Excellent for
+        illustrating continuous or sequential data; Highlights the rate of change (slope) between data points.
+
+        Disadvantages: Requires time-based or sequential independent variable; Less effective for comparing non-sequential,
+        discrete categories; Can falsely suggest continuity if data points are sparse.
+
+        Use Case: Tracking performance, growth, or decline over a continuous period, especially when the relationship between
+        successive points is important.'
+      stepByStepGuideline:
+      - Define the primary function of a line chart (showing change over time).
+      - Explain why continuous data benefits from being connected by a line (to illustrate sequence and trend).
+      - List 2-3 advantages, focusing on trends and rate of change.
+      - List 2-3 disadvantages, focusing on its requirement for sequential data.
+      - State the appropriate scenario for its use (time series analysis).
+      id: q19-2
+      questionGroup: q19
+    - problemText: A marketing analyst needs to compare the sales figures (in absolute dollars) across five different product
+        lines. Outline the key advantages and disadvantages of using a bar chart for this comparison.
+      mathTool: null
+      finalAnswer: 'Advantages: Excellent for comparing the magnitudes of different distinct categories; Easy to read and
+        compare precise numerical values; Handles a moderate number of categories effectively.
+
+        Disadvantages: Less effective for showing the proportion of a total (part-to-whole); Can sometimes lack visual appeal
+        compared to other charts; Not suitable for illustrating continuous trends over time.
+
+        Use Case: Ideal for ranking items (e.g., top sellers, highest scores) or comparing discrete performance metrics across
+        different groups or categories.'
+      stepByStepGuideline:
+      - Identify the purpose of the bar chart in this context (comparing discrete magnitudes).
+      - List 2-3 advantages, emphasizing precision and comparison ability.
+      - List 2-3 disadvantages, noting what it fails to communicate (proportions, continuity).
+      - Provide a clear use case focusing on ranking and discrete comparison.
+      id: q19-3
+      questionGroup: q19
+    - problemText: A public health organization wants to create a simple, engaging infographic for general citizens showing
+        the number of reported flu cases per region. Evaluate the suitability of using a pictogram, detailing its key advantages
+        and disadvantages for public communication.
+      mathTool: null
+      finalAnswer: 'Advantages: Highly visual, engaging, and accessible to a broad, non-technical audience; Provides an immediate,
+        intuitive sense of scale or magnitude; Symbols reinforce the subject matter (e.g., using a person icon for flu cases).
+
+        Disadvantages: Less precise, especially when dealing with fractions or partial units; Can be time-consuming to create
+        accurately if symbols need to be carefully sized or counted; Can become cluttered or confusing if the range of data
+        is too wide.
+
+        Use Case: Simple counts for general audience infographics where engagement and rapid interpretation of basic magnitude
+        differences are prioritized over exact precision.'
+      stepByStepGuideline:
+      - Determine the primary characteristic of a pictogram (visual representation using symbols).
+      - List 2-3 advantages, focusing on visual appeal and accessibility.
+      - List 2-3 disadvantages, focusing on precision and complexity.
+      - Explain its suitability for simple, high-level public communication.
+      id: q19-4
+      questionGroup: q19
+    - problemText: When displaying the distribution of student majors at a university (proportional data), explain why a Bar
+        Chart might be a better choice than a Pie Chart if the goal is accurately comparing the sizes of the top three majors
+        which are very similar in size (e.g., 28%, 27%, 26%).
+      mathTool: null
+      finalAnswer: 'Advantage of Bar Chart (in this context): Provides significantly easier and more precise visual comparison
+        when category sizes are similar; Allows viewers to distinguish small differences in magnitude that would be indistinguishable
+        in a pie chart.
+
+        Disadvantage of Pie Chart (in this context): Comparing adjacent slices of similar size is extremely difficult for
+        the human eye; Requires the viewer to rely on labels/percentages rather than visual size for comparison.
+
+        Use Case: Choose the Bar Chart when precise comparison of category size (even proportional size) is paramount, especially
+        when categories have similar values. Choose the Pie Chart only when emphasizing the contribution of each part to the
+        whole total is the single most important goal.'
+      stepByStepGuideline:
+      - Acknowledge that both charts can display proportional data.
+      - Focus the comparison on the weakness of the Pie Chart (comparing similar sizes).
+      - List 1-2 advantages of the Bar Chart specifically for comparison precision.
+      - List 1-2 disadvantages of the Pie Chart related to visual distortion/difficulty.
+      - Explain the rationale for choosing the Bar Chart when precision in comparison is needed.
+      id: q19-5
+      questionGroup: q19
+- id: data-node-20
+  nodeNumber: 20
+  title: Choosing the Most Appropriate Diagram
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A climate scientist recorded the average daily temperature (in Celsius) in a desert region over 30 consecutive
+        days during the summer. The goal is to analyze the temperature fluctuations and identify any overall warming or cooling
+        trends throughout the month for a research paper.
+      avatarIntro: Choosing the right diagram is essential for effective data communication. Think about what kind of data
+        you have and what story you want to tell.
+      mathTool: null
+      finalAnswer: Line Chart (Line Graph) is the most appropriate diagram. This is because the data is time-series, meaning
+        the sequence of observations over time is crucial. The purpose is to show trends and continuous change (fluctuations)
+        over the 30-day period. A line chart excels at visualizing how one variable (temperature) changes smoothly in relation
+        to another continuous variable (time). A Bar Chart would treat each day as a separate category, breaking the continuity
+        of the trend. A Histogram is inappropriate as the data is not being grouped into frequency ranges, but tracked sequentially.
+      stepByStepGuideline:
+      - 'Step 1: Analyze the data type. The data consists of temperatures tracked sequentially over 30 days, making it time-series
+        data.'
+      - 'Step 2: Determine the purpose. The goal is to show fluctuations and identify overall trends (warming/cooling) across
+        the duration.'
+      - 'Step 3: Select the best diagram. The Line Chart is specifically designed for visualizing trends and continuous change
+        in time-series data.'
+      - 'Step 4: Justify the choice. The Line Chart shows the relationship between Day (X-axis) and Temperature (Y-axis),
+        clearly highlighting continuous movement and overall trends, which is superior to a Bar Chart for this purpose.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: 'A community organizing committee raised $50,000 for local improvements. They need to create a simple,
+        visually appealing graphic for residents illustrating how this total fund was divided among four distinct project
+        areas: Park Maintenance ($20,000), Library Resources ($15,000), Safety Programs ($10,000), and Community Events ($5,000).
+        Which diagram is BEST to emphasize the relative size or proportion of funds allocated to each area?'
+      mathTool: null
+      finalAnswer: Pie Chart is the most appropriate diagram. This data represents parts of a single whole ($50,000 total),
+        making it proportional data. The purpose is to show how the whole is distributed among categories and emphasize the
+        relative magnitude of each component. A Pie Chart visually represents the fractions or percentages clearly, allowing
+        the audience to immediately see, for example, that Park Maintenance received the largest share. While a Bar Chart
+        could show the absolute values, the Pie Chart is superior for illustrating proportions of a fixed total.
+      stepByStepGuideline:
+      - 'Step 1: Analyze the data type. The data represents four parts that sum up to a fixed total ($50,000), which is proportional
+        data.'
+      - 'Step 2: Determine the purpose. The goal is to show the division of the whole and emphasize the relative proportion
+        of each category.'
+      - 'Step 3: Select the best diagram. The Pie Chart is designed to display proportions and the composition of a whole.'
+      - 'Step 4: Justify the choice. It clearly communicates the relative size of the allocations, which is the primary objective
+        of the presentation.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: A university registrar needs to compare the total number of students enrolled in five distinct, unrelated
+        faculties (Arts, Science, Engineering, Medicine, Law) for the current academic year. The absolute enrollment numbers
+        are large and the goal is to quickly assess which faculty has the highest and lowest enrollment figures.
+      mathTool: null
+      finalAnswer: Bar Chart is the most appropriate diagram. The data is categorical (distinct faculties) and the purpose
+        is to compare absolute magnitudes between these independent groups. A Bar Chart provides clear visual anchors (the
+        end of the bars) that make direct comparison of lengths (enrollment figures) accurate and efficient, allowing the
+        registrar to easily identify the highest and lowest enrollment figures. A Pie Chart would be less effective because
+        the categories are not parts of a meaningful total population (students often enroll in multiple faculties over time,
+        or the comparison is between separate departments, not a fixed pool). A Line Chart is unsuitable as there is no sequential
+        order or trend.
+      stepByStepGuideline:
+      - 'Step 1: Analyze the data type. The data involves distinct, non-continuous categories (Faculties).'
+      - 'Step 2: Determine the purpose. The goal is to compare the absolute magnitude (total enrollment) across these categories.'
+      - 'Step 3: Select the best diagram. The Bar Chart is the standard and most effective method for comparing discrete,
+        categorical values.'
+      - 'Step 4: Justify the choice. Bar charts allow for precise, easy comparison of lengths, making it simple to rank the
+        faculties by enrollment size.'
+      id: q20-3
+      questionGroup: q20
+    - problemText: A quality control engineer measured the weight (in grams) of 400 newly manufactured components. The weight
+        measurements are continuous and vary slightly. The engineer wants to understand the distribution of these weights—specifically,
+        how frequently weights fall into predefined ranges (e.g., 9.8g-9.9g, 9.9g-10.0g, 10.0g-10.1g, etc.).
+      mathTool: null
+      finalAnswer: Histogram is the most appropriate diagram. The data consists of continuous numerical measurements (weights)
+        grouped into defined ranges or 'bins'. The purpose is to visualize the frequency distribution—to see the shape, spread,
+        and central tendency of the data. Unlike a Bar Chart (which handles discrete categories), a Histogram uses adjacent
+        bars to show the continuity of the data and how frequencies change across the ranges. Neither a Pie Chart nor a Line
+        Chart is suitable for showing the frequency distribution of continuous data.
+      stepByStepGuideline:
+      - 'Step 1: Analyze the data type. The data involves continuous numerical measurements (weight) that are organized into
+        frequency ranges.'
+      - 'Step 2: Determine the purpose. The goal is to visualize the distribution of frequencies across these continuous ranges.'
+      - 'Step 3: Select the best diagram. The Histogram is the specialized tool for displaying the frequency distribution
+        of continuous data.'
+      - 'Step 4: Justify the choice. Histograms use adjacent bars to emphasize the continuity and show the shape of the distribution
+        (e.g., bell curve, skewed).'
+      id: q20-4
+      questionGroup: q20
+    - problemText: A logistics manager tracks the number of parcels processed each day at a shipping hub for a full week (Monday
+        through Sunday). They want to present this data to the operations team to pinpoint the exact days that require the
+        most staffing, requiring a clear day-by-day comparison.
+      mathTool: null
+      finalAnswer: Bar Chart is the most appropriate diagram. Although the days follow a sequence (Monday to Sunday), the
+        data points (parcels processed) represent distinct, independent totals for each day. The primary purpose is direct
+        comparison of magnitude (which day handled the most parcels). A Bar Chart is superior for comparing these discrete
+        totals clearly. While a Line Chart could be used because the data is ordered by time, it implies a continuous trend
+        that doesn't truly exist between daily totals (the transition from Sunday to Monday is a break). The Bar Chart provides
+        a clearer visual comparison of the daily volumes.
+      stepByStepGuideline:
+      - 'Step 1: Analyze the data type. The data consists of separate counts associated with distinct, labeled categories
+        (days of the week).'
+      - 'Step 2: Determine the purpose. The goal is direct comparison of volumes across these categories to identify peaks
+        and troughs.'
+      - 'Step 3: Select the best diagram. The Bar Chart is optimized for comparing the absolute sizes of discrete categories.'
+      - 'Step 4: Justify the choice. It allows the operations team to easily compare the height of the bars to see which specific
+        days require maximum staffing, fulfilling the goal of direct comparison.'
+      id: q20-5
+      questionGroup: q20
+- id: data-node-21
+  nodeNumber: 21
+  title: Identifying Misleading Statistical Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A local news channel published a bar graph comparing the public approval ratings for the City Council
+        across three different districts (District A: 92%, District B: 90%, District C: 94%). The vertical (Y) axis of the
+        graph starts at 85% instead of 0%. Identify the primary misleading element in this graph presentation and explain
+        the impact it has on the viewer''s interpretation.'
+      avatarIntro: Welcome! Understanding how data is presented is crucial in statistics. Let's start by analyzing common
+        misleading techniques used in statistical graphs.
+      mathTool: null
+      finalAnswer: The primary misleading element is the manipulation of the Y-axis scale, which starts at 85% instead of
+        zero. This technique exaggerates the differences between the districts, making the 4 percentage point difference between
+        District B (90%) and District C (94%) appear dramatically large and significant. To fix this, the Y-axis must start
+        at 0%, or a clear break must be used to show that a large portion of the scale has been omitted, thereby accurately
+        reflecting the small absolute differences in approval rating.
+      stepByStepGuideline:
+      - 'Step 1: Examine the axes, specifically the Y-axis (the vertical axis). Determine if it starts at zero.'
+      - 'Step 2: Note that the Y-axis starts at 85%. This is the misleading technique (Y-axis manipulation).'
+      - 'Step 3: Explain the consequence: Starting above zero truncates the scale, making minor variations (like 4 percentage
+        points) appear highly significant and visually exaggerated.'
+      - 'Step 4: Suggest the appropriate fix: The axis must start at 0% to provide a true visual representation of the data,
+        showing that the differences are relatively small compared to the total possible approval rating.'
+      id: q21-1
+      questionGroup: q21
+    - problemText: A global beverage company used a pictogram to compare the annual per capita coffee consumption of Country
+        X (10 kg) versus Country Y (20 kg). They represented Country Y’s consumption using a coffee cup icon that was exactly
+        twice the height and twice the width of the cup used for Country X. Analyze how this presentation misleads the audience.
+      mathTool: null
+      finalAnswer: The graph uses inconsistent symbols (pictograms) where the height and width of the icon are both doubled.
+        Since the volume/area of a symbol is determined by height times width, doubling both dimensions makes the icon for
+        Country Y appear four times larger (2 x 2 = 4) than the icon for Country X. This visually exaggerates the consumption
+        difference, making Country Y seem to consume four times as much coffee, when the actual numerical consumption is only
+        twice as high. The fix requires using icons of the exact same size, where the number of icons (or the height/length
+        of identical icons) represents the quantity.
+      stepByStepGuideline:
+      - 'Step 1: Identify the type of graph element: Pictograms with varying sizes.'
+      - 'Step 2: Determine the numerical ratio: Country Y (20 kg) consumes 2 times more than Country X (10 kg).'
+      - 'Step 3: Analyze the visual distortion: The symbol''s area/volume scales quadratically or cubically. Doubling both
+        height and width results in an icon that appears 4 times larger (Area = 2H * 2W = 4 * HW).'
+      - 'Step 4: Conclude how it misleads: The visual representation (4x) far exceeds the actual data ratio (2x).'
+      - 'Step 5: Suggest the fix: Use symbols of consistent size throughout the graph.'
+      id: q21-2
+      questionGroup: q21
+    - problemText: A new technology startup, 'DataFlow,' is seeking investment. They present a line graph showing their monthly
+        active users (MAUs). The graph starts in January 2024 and ends in March 2024, illustrating a rapid 15% increase in
+        MAUs during this three-month period. However, the company has been operating since January 2022, and for the 24 months
+        prior to 2024, user growth was completely flat. What is the misleading technique employed, and how should the data
+        presentation be corrected?
+      mathTool: null
+      finalAnswer: The misleading technique is cherry-picking the time range. By only showing the final three months (Jan-Mar
+        2024), the graph highlights a temporary spike while hiding the preceding 24 months of flat, stagnant growth. This
+        suggests a continuous positive trend that does not exist in the overall company history. The correction requires displaying
+        the complete dataset from January 2022 to March 2024 to provide an honest representation of the startup's growth trajectory.
+      stepByStepGuideline:
+      - 'Step 1: Analyze the time frame presented (3 months) versus the actual operational history (27 months).'
+      - 'Step 2: Identify the discrepancy: Only the most favorable recent data is shown, omitting the long period of poor
+        performance.'
+      - 'Step 3: Name the technique: Cherry-picked data range.'
+      - 'Step 4: Explain the effect: It creates a false impression of rapid and sustained success.'
+      - 'Step 5: Detail the fix: The graph must be extended to include the entire relevant time period (Jan 2022 onwards).'
+      id: q21-3
+      questionGroup: q21
+    - problemText: 'A student created a 3D ''exploded'' pie chart to illustrate how they spend their 168 hours per week: Sleeping
+        (35%), Studying (30%), Working (20%), and Leisure (15%). The 3D perspective causes the Leisure section, placed near
+        the bottom front of the chart, to look significantly larger than the Studying section, placed near the top back, even
+        though Studying is numerically twice as large. Explain why 3D pie charts can be misleading.'
+      mathTool: null
+      finalAnswer: The misleading element is the use of 3D distortion (perspective effects). In a 3D chart, the angles and
+        proportions are visually warped. Sections that are closer to the 'viewer' (like the Leisure segment) appear artificially
+        magnified, making them look larger than they actually are. Conversely, sections placed further away (like the Studying
+        segment) appear compressed. This makes accurate comparison of proportions impossible. The graph must be fixed by using
+        a standard flat 2D pie chart or a bar chart.
+      stepByStepGuideline:
+      - 'Step 1: Identify the visualization element: 3D pie chart with perspective.'
+      - 'Step 2: Recognize the numerical relationship (Studying > Leisure) versus the visual relationship (Leisure appears
+        > Studying).'
+      - 'Step 3: Explain the cause: 3D perspective alters perceived size based on placement within the chart (depth and angle).'
+      - 'Step 4: Conclude the misleading nature: The distortion prevents accurate assessment of the proportional sizes.'
+      - 'Step 5: Suggest the fix: Use a standard, flat 2D diagram where angles accurately represent proportions.'
+      id: q21-4
+      questionGroup: q21
+    - problemText: 'A municipal budget report uses a bar graph to compare funding allocated to three infrastructure areas:
+        Area A ($50M), Area B ($70M), and Area C ($30M). The designer intentionally made the bar for Area C twice as wide
+        as the bars for Area A and Area B, even though Area C received the lowest funding amount. How does this structural
+        difference mislead the public?'
+      mathTool: null
+      finalAnswer: The misleading element is the use of unequal bar widths. Although the height of the bar for Area C correctly
+        reflects its $30M funding (the lowest), its doubled width causes the total area of the bar to be disproportionately
+        large compared to Areas A and B. Since viewers tend to perceive magnitude based on the area of the bar, Area C appears
+        visually dominant or more significant than the other, more heavily funded areas. The fix requires ensuring all bars
+        in the bar graph have identical widths.
+      stepByStepGuideline:
+      - 'Step 1: Identify the element being manipulated: Bar width.'
+      - 'Step 2: Note the manipulation: Area C''s bar is wider despite having the smallest numerical value.'
+      - 'Step 3: Explain the viewer perception: People instinctively associate the total area (Width x Height) of a bar with
+        the value it represents.'
+      - 'Step 4: Conclude the misleading effect: The wider bar artificially inflates the visual importance or magnitude of
+        Area C.'
+      - 'Step 5: Detail the fix: All categories in a bar chart must be represented by bars of equal width.'
+      id: q21-5
+      questionGroup: q21

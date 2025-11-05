@@ -13,6 +13,14 @@ import { useTheme } from '../hooks/useTheme';
 // Notes registry - extracted from notesLoader.ts
 const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType<any> }>> = {
 
+  //S1 Data Handling notes
+  's1/math/data-handling/Introduction': () => import('../notes/s1/math/data-handling/Introduction'),
+  's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),
+  's1/math/data-handling/GroupedData': () => import('../notes/s1/math/data-handling/GroupedData'),
+  's1/math/data-handling/FrequencyTables': () => import('../notes/s1/math/data-handling/FrequencyTables'),
+  's1/math/data-handling/PictogramsBarGraphs': () => import('../notes/s1/math/data-handling/PictogramsBarGraphs'),
+  's1/math/data-handling/PieChartsLineGraphs': () => import('../notes/s1/math/data-handling/PieChartsLineGraphs'),
+
   //S1 Perimeters & Areas notes
   's1/math/perimeter-area/Parallelograms': () => import('../notes/s1/math/perimeter-area/Parallelograms'),
   's1/math/perimeter-area/Trapeziums': () => import('../notes/s1/math/perimeter-area/Trapeziums'),

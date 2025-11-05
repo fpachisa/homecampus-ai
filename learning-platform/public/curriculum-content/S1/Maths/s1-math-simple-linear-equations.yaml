@@ -1,0 +1,1847 @@
+# S1 Math Simple Linear Equations - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: s1-linear-eq-node-1
+  nodeNumber: 1
+  title: Addition and Subtraction Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: balanceScale
+    preWrittenQuestions:
+    - problemText: 'Solve the following equation for x: x + 9 = 20'
+      avatarIntro: Welcome! Let's start with balancing equations. Remember, whatever you do to one side, you must do to the
+        other to keep the equation true.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: x + 9
+          rightSide: '20'
+          operation: subtract
+          operationValue: '9'
+          showInverse: true
+      finalAnswer: x = 11
+      stepByStepGuideline:
+      - Identify the operation being performed on the variable x (addition of 9).
+      - 'To isolate x, perform the inverse operation: subtraction.'
+      - 'Subtract 9 from both sides of the equation: (x + 9) - 9 = 20 - 9.'
+      - 'Simplify to find the solution: x = 11.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: 'Find the value of y that satisfies the equation: y - 5 = 30'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: y - 5
+          rightSide: '30'
+          operation: add
+          operationValue: '5'
+          showInverse: true
+      finalAnswer: y = 35
+      stepByStepGuideline:
+      - Identify the operation being performed on the variable y (subtraction of 5).
+      - 'To isolate y, perform the inverse operation: addition.'
+      - 'Add 5 to both sides of the equation: (y - 5) + 5 = 30 + 5.'
+      - 'Simplify to find the solution: y = 35.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: 'Solve for m: m + 12 = 45'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: m + 12
+          rightSide: '45'
+          operation: subtract
+          operationValue: '12'
+          showInverse: true
+      finalAnswer: m = 33
+      stepByStepGuideline:
+      - The variable m is being added by 12.
+      - Use the inverse operation, subtraction, to isolate m.
+      - 'Subtract 12 from both sides: m + 12 - 12 = 45 - 12.'
+      - 'Calculate the result: m = 33.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: 'Determine the value of n in the equation: n - 10 = 18'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: n - 10
+          rightSide: '18'
+          operation: add
+          operationValue: '10'
+          showInverse: true
+      finalAnswer: n = 28
+      stepByStepGuideline:
+      - The equation shows n minus 10 equals 18.
+      - 'To undo the subtraction of 10, use the inverse operation: addition.'
+      - 'Add 10 to both sides: n - 10 + 10 = 18 + 10.'
+      - 'Simplify to find the solution: n = 28.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: 'Solve the equation for the variable a: a + 24 = 50'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: a + 24
+          rightSide: '50'
+          operation: subtract
+          operationValue: '24'
+          showInverse: true
+      finalAnswer: a = 26
+      stepByStepGuideline:
+      - To solve for 'a', we must eliminate the constant 24 from the left side.
+      - Perform the inverse operation of adding 24, which is subtracting 24.
+      - 'Subtract 24 from both sides of the equation: a + 24 - 24 = 50 - 24.'
+      - 'Calculate the result: a = 26.'
+      id: q1-5
+      questionGroup: q1
+- id: s1-linear-eq-node-2
+  nodeNumber: 2
+  title: Multiplication and Division Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: balanceScale
+    preWrittenQuestions:
+    - problemText: 'Solve the following multiplication equation for the variable x:'
+      avatarIntro: Solving one-step equations requires using inverse operations to maintain balance. Remember, what you do
+        to one side, you must do to the other!
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 4x
+          rightSide: '24'
+          operation: divide
+          operationValue: '4'
+          showInverse: true
+      finalAnswer: x = 6
+      stepByStepGuideline:
+      - The equation is 4x = 24.
+      - To isolate x, we must use the inverse operation of multiplication, which is division.
+      - 'Divide both sides of the equation by the coefficient 4: 4x / 4 = 24 / 4.'
+      - 'Simplify the equation to find the solution: x = 6.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: 'Determine the value of y that satisfies the division equation:'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: \frac{y}{5}
+          rightSide: '7'
+          operation: multiply
+          operationValue: '5'
+          showInverse: true
+      finalAnswer: y = 35
+      stepByStepGuideline:
+      - The equation is y/5 = 7.
+      - To isolate y, we must use the inverse operation of division, which is multiplication.
+      - 'Multiply both sides of the equation by the divisor 5: (y/5) * 5 = 7 * 5.'
+      - 'Simplify the equation to find the solution: y = 35.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: 'Solve for m in the following equation:'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 6m
+          rightSide: '30'
+          operation: divide
+          operationValue: '6'
+          showInverse: true
+      finalAnswer: m = 5
+      stepByStepGuideline:
+      - The equation is 6m = 30.
+      - To isolate m, divide both sides by the coefficient 6.
+      - 6m / 6 = 30 / 6.
+      - The value of m is 5.
+      id: q2-3
+      questionGroup: q2
+    - problemText: 'Find the value of n that makes the equation true:'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: \frac{n}{8}
+          rightSide: '4'
+          operation: multiply
+          operationValue: '8'
+          showInverse: true
+      finalAnswer: n = 32
+      stepByStepGuideline:
+      - The equation is n/8 = 4.
+      - To isolate n, multiply both sides by the divisor 8.
+      - (n/8) * 8 = 4 * 8.
+      - The value of n is 32.
+      id: q2-4
+      questionGroup: q2
+    - problemText: Solve the equation 3p = 18 for the variable p.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 3p
+          rightSide: '18'
+          operation: divide
+          operationValue: '3'
+          showInverse: true
+      finalAnswer: p = 6
+      stepByStepGuideline:
+      - The equation is 3p = 18.
+      - To isolate p, divide both sides by the coefficient 3.
+      - 3p / 3 = 18 / 3.
+      - The solution is p = 6.
+      id: q2-5
+      questionGroup: q2
+- id: s1-linear-eq-node-3
+  nodeNumber: 3
+  title: Mixed One-Step Equations Review
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: balanceScale
+    preWrittenQuestions:
+    - problemText: A baker started the day with some flour (y grams). He added 7 grams of sugar to the mix, and the total
+        weight of the ingredients is now 18 grams. Write and solve the equation to find the initial amount of flour, y.
+      avatarIntro: Welcome back! Now that we've covered all four types of one-step equations, let's mix them up. Remember,
+        always identify the operation being applied to the variable first, then use the inverse operation to isolate it.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: y + 7
+          rightSide: '18'
+          operation: Addition
+          operationValue: '7'
+          showInverse: true
+      finalAnswer: y = 11
+      stepByStepGuideline:
+      - The equation is y + 7 = 18.
+      - The operation being applied to y is addition of 7.
+      - 'Use the inverse operation, subtraction of 7, on both sides of the equation: y + 7 - 7 = 18 - 7.'
+      - 'Simplify to find the value of y: y = 11.'
+      - 'Verify the solution: 11 + 7 = 18.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: A construction worker needs to lay 24 tiles in total. If he lays 4 tiles every minute (m), how many minutes
+        (m) will it take him to complete the job? Solve the equation 4m = 24.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 4m
+          rightSide: '24'
+          operation: Multiplication
+          operationValue: '4'
+          showInverse: true
+      finalAnswer: m = 6
+      stepByStepGuideline:
+      - The equation is 4m = 24.
+      - The operation being applied to m is multiplication by 4.
+      - 'Use the inverse operation, division by 4, on both sides of the equation: 4m / 4 = 24 / 4.'
+      - 'Simplify to find the value of m: m = 6.'
+      - 'Verify the solution: 4 * 6 = 24.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: A large supply of pens (p) was divided equally among 5 classrooms. Each classroom received 7 pens. Determine
+        the total number of pens (p) originally in the supply. Solve the equation p/5 = 7.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: p / 5
+          rightSide: '7'
+          operation: Division
+          operationValue: '5'
+          showInverse: true
+      finalAnswer: p = 35
+      stepByStepGuideline:
+      - The equation is p / 5 = 7.
+      - The operation being applied to p is division by 5.
+      - 'Use the inverse operation, multiplication by 5, on both sides of the equation: (p / 5) * 5 = 7 * 5.'
+      - 'Simplify to find the value of p: p = 35.'
+      - 'Verify the solution: 35 / 5 = 7.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: A hiker started with a certain number of energy bars (a). After eating 10 bars during the trek, she had
+        15 bars left. How many energy bars (a) did she start with? Solve the equation a - 10 = 15.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: a - 10
+          rightSide: '15'
+          operation: Subtraction
+          operationValue: '10'
+          showInverse: true
+      finalAnswer: a = 25
+      stepByStepGuideline:
+      - The equation is a - 10 = 15.
+      - The operation being applied to a is subtraction of 10.
+      - 'Use the inverse operation, addition of 10, on both sides of the equation: a - 10 + 10 = 15 + 10.'
+      - 'Simplify to find the value of a: a = 25.'
+      - 'Verify the solution: 25 - 10 = 15.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: A factory produces 30 toys in one hour. If each machine (n) produces 6 toys per hour, how many machines
+        (n) are running? Solve the equation 6n = 30.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 6n
+          rightSide: '30'
+          operation: Multiplication
+          operationValue: '6'
+          showInverse: true
+      finalAnswer: n = 5
+      stepByStepGuideline:
+      - The equation is 6n = 30.
+      - The operation being applied to n is multiplication by 6.
+      - 'Use the inverse operation, division by 6, on both sides of the equation: 6n / 6 = 30 / 6.'
+      - 'Simplify to find the value of n: n = 5.'
+      - 'Verify the solution: 6 * 5 = 30.'
+      id: q3-5
+      questionGroup: q3
+- id: s1-linear-eq-node-4
+  nodeNumber: 4
+  title: Two-Step Equations with Positive Constants
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: balanceScale
+    preWrittenQuestions:
+    - problemText: Ethan saved $x$ dollars each week for 3 weeks. He also had an initial $5 savings bonus. If the total amount
+        he saved is $20, how much money ($x$) did he save per week? Write and solve the equation.
+      avatarIntro: Solving two-step equations requires careful organization. Remember to use inverse operations, starting
+        by isolating the term with the variable.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 3x + 5
+          rightSide: '20'
+          step: 0
+          showInverse: true
+      finalAnswer: x = 5
+      stepByStepGuideline:
+      - The equation is 3x + 5 = 20.
+      - 'Step 1 (Remove the constant): Subtract 5 from both sides of the equation: 3x + 5 - 5 = 20 - 5, which simplifies to
+        3x = 15.'
+      - 'Step 2 (Remove the coefficient): Divide both sides by 3: 3x / 3 = 15 / 3.'
+      - The solution is x = 5.
+      id: q4-1
+      questionGroup: q4
+    - problemText: 'A train travels at a constant speed of 4 kilometers per minute ($y$). During the trip, it stopped for
+        a total delay equivalent to 6 kilometers of travel time. If the total distance covered, accounting for the delay,
+        was 22 kilometers, what was the total time spent traveling in minutes ($y$)? Solve the equation: 4y - 6 = 22.'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 4y - 6
+          rightSide: '22'
+          step: 0
+          showInverse: true
+      finalAnswer: y = 7
+      stepByStepGuideline:
+      - The equation is 4y - 6 = 22.
+      - 'Step 1 (Remove the constant): Add 6 to both sides of the equation: 4y - 6 + 6 = 22 + 6, which simplifies to 4y =
+        28.'
+      - 'Step 2 (Remove the coefficient): Divide both sides by 4: 4y / 4 = 28 / 4.'
+      - The solution is y = 7.
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'A personal trainer uses weight plates to load a barbell. The barbell itself weighs 8 pounds. If he puts
+        6 identical plates ($m$) on the bar, and the total weight is 38 pounds, what is the weight of one plate ($m$)? Solve
+        the equation: 6m + 8 = 38.'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 6m + 8
+          rightSide: '38'
+          step: 0
+          showInverse: true
+      finalAnswer: m = 5
+      stepByStepGuideline:
+      - The equation is 6m + 8 = 38.
+      - 'Step 1 (Remove the constant): Subtract 8 from both sides of the equation: 6m + 8 - 8 = 38 - 8, which simplifies to
+        6m = 30.'
+      - 'Step 2 (Remove the coefficient): Divide both sides by 6: 6m / 6 = 30 / 6.'
+      - The solution is m = 5.
+      id: q4-3
+      questionGroup: q4
+    - problemText: 'A movie theater sold 5 times the number of adult tickets ($n$) compared to the previous showing. However,
+        10 tickets were cancelled due to a technical issue. If the theater ended up with 30 valid adult tickets, how many
+        adult tickets ($n$) did they sell during the previous showing? Solve the equation: 5n - 10 = 30.'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 5n - 10
+          rightSide: '30'
+          step: 0
+          showInverse: true
+      finalAnswer: n = 8
+      stepByStepGuideline:
+      - The equation is 5n - 10 = 30.
+      - 'Step 1 (Remove the constant): Add 10 to both sides of the equation: 5n - 10 + 10 = 30 + 10, which simplifies to 5n
+        = 40.'
+      - 'Step 2 (Remove the coefficient): Divide both sides by 5: 5n / 5 = 40 / 5.'
+      - The solution is n = 8.
+      id: q4-4
+      questionGroup: q4
+    - problemText: 'A charity organization collected donations for $p$ days. They collected $2 per day, plus a fixed lump
+        sum donation of $2. If the total amount collected was $20, for how many days ($p$) did the organization collect donations?
+        Solve the equation: 2p + 2 = 20.'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 2p + 2
+          rightSide: '20'
+          step: 0
+          showInverse: true
+      finalAnswer: p = 9
+      stepByStepGuideline:
+      - The equation is 2p + 2 = 20.
+      - 'Step 1 (Remove the constant): Subtract 2 from both sides of the equation: 2p + 2 - 2 = 20 - 2, which simplifies to
+        2p = 18.'
+      - 'Step 2 (Remove the coefficient): Divide both sides by 2: 2p / 2 = 18 / 2.'
+      - The solution is p = 9.
+      id: q4-5
+      questionGroup: q4
+- id: s1-linear-eq-node-5
+  nodeNumber: 5
+  title: Two-Step Equations with Negative Terms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: balanceScale
+    preWrittenQuestions:
+    - problemText: The current temperature in a laboratory experiment is $n$ degrees Celsius. The temperature was raised by
+        a factor of 4, and then decreased by 11 degrees. If the final temperature recorded was -3 degrees Celsius, write and
+        solve the equation to find the temperature change factor ($n$).
+      avatarIntro: Solving two-step equations requires careful use of inverse operations. Pay special attention to how negative
+        signs change when you move terms across the equals sign!
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: variable
+          rightSide: variable
+          step: 0
+          showInverse: true
+      finalAnswer: n = 2
+      stepByStepGuideline:
+      - 'The equation representing the situation is: $4n - 11 = -3$.'
+      - 'Step 1: Isolate the term containing the variable (4n) by using the inverse operation of subtraction. Add 11 to both
+        sides of the equation: $4n - 11 + 11 = -3 + 11$.'
+      - 'Calculate the right side: $4n = 8$.'
+      - 'Step 2: Isolate the variable (n) by using the inverse operation of multiplication. Divide both sides by 4: $\frac{4n}{4}
+        = \frac{8}{4}$.'
+      - The solution is $n = 2$.
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'A submersible starts at a certain depth. It descended 3 times that depth, represented by $3x$, and then
+        ascended 9 meters, resulting in a final elevation of 3 meters above sea level. Determine the value of $x$ (which represents
+        the base depth change unit). Solve: $3x + 9 = 3$'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: variable
+          rightSide: variable
+          step: 0
+          showInverse: true
+      finalAnswer: x = -2
+      stepByStepGuideline:
+      - 'Start with the equation: $3x + 9 = 3$.'
+      - 'Step 1: Isolate the term containing the variable (3x). Subtract 9 from both sides: $3x + 9 - 9 = 3 - 9$.'
+      - 'Calculate the right side, ensuring correct subtraction of the larger positive number: $3x = -6$.'
+      - 'Step 2: Isolate the variable (x). Divide both sides by 3: $\frac{3x}{3} = \frac{-6}{3}$.'
+      - The solution is $x = -2$.
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'A shipping company tracks potential damage costs. For a batch of 6 items, the base repair cost is determined
+        by $6p$. Due to an expected penalty of $15, the final calculated deficit was $-9$ million dollars. Find the base cost
+        unit, $p$, by solving the equation: $6p - 15 = -9$.'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: variable
+          rightSide: variable
+          step: 0
+          showInverse: true
+      finalAnswer: p = 1
+      stepByStepGuideline:
+      - 'Start with the equation: $6p - 15 = -9$.'
+      - 'Step 1: Isolate the term containing the variable (6p). Add 15 to both sides of the equation: $6p - 15 + 15 = -9 +
+        15$.'
+      - 'Calculate the right side: $6p = 6$.'
+      - 'Step 2: Isolate the variable (p). Divide both sides by 6: $\frac{6p}{6} = \frac{6}{6}$.'
+      - The solution is $p = 1$.
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'A small business calculates its net profit ($m$) over a two-month period. Twice the monthly profit ($2m$)
+        plus a fixed initial investment of $12 thousand dollars resulted in a total net income of $8 thousand dollars. Determine
+        the average monthly profit ($m$) by solving: $2m + 12 = 8$.'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: variable
+          rightSide: variable
+          step: 0
+          showInverse: true
+      finalAnswer: m = -2
+      stepByStepGuideline:
+      - 'Start with the equation: $2m + 12 = 8$.'
+      - 'Step 1: Isolate the term containing the variable (2m). Subtract 12 from both sides: $2m + 12 - 12 = 8 - 12$.'
+      - 'Calculate the right side, resulting in a negative total: $2m = -4$.'
+      - 'Step 2: Isolate the variable (m). Divide both sides by 2: $\frac{2m}{2} = \frac{-4}{2}$.'
+      - The solution is $m = -2$.
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'In a video game, a player earns points ($y$) for completing tasks. They completed 5 tasks, earning $5y$.
+        They also received a penalty deduction of 7 points. If their final score was -7, find the average points earned per
+        task ($y$). Solve: $5y - 7 = -7$.'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: variable
+          rightSide: variable
+          step: 0
+          showInverse: true
+      finalAnswer: y = 0
+      stepByStepGuideline:
+      - 'Start with the equation: $5y - 7 = -7$.'
+      - 'Step 1: Isolate the term containing the variable (5y). Add 7 to both sides: $5y - 7 + 7 = -7 + 7$.'
+      - 'Calculate the right side: $5y = 0$.'
+      - 'Step 2: Isolate the variable (y). Divide both sides by 5: $\frac{5y}{5} = \frac{0}{5}$.'
+      - The solution is $y = 0$.
+      id: q5-5
+      questionGroup: q5
+- id: s1-linear-eq-node-6
+  nodeNumber: 6
+  title: Verifying Solutions by Substitution
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Check if x = 6 is the solution to 4x + 7 = 31
+      avatarIntro: Great job on solving equations! Now, let's practice verifying those solutions by substituting the value
+        back into the original equation.
+      mathTool: null
+      finalAnswer: Yes, because LHS = 4(6) + 7 = 24 + 7 = 31 = RHS
+      stepByStepGuideline:
+      - 'Substitute the proposed solution x = 6 into the left-hand side (LHS) of the equation: 4x + 7.'
+      - 'Evaluate the expression: 4(6) + 7 = 24 + 7.'
+      - 'Calculate the final value of the LHS: 31.'
+      - Compare the LHS (31) with the right-hand side (RHS) (31). Since LHS = RHS, the solution is correct.
+      id: q6-1
+      questionGroup: q6
+    - problemText: Check if x = -5 is the solution to 5x - 10 = -35
+      mathTool: null
+      finalAnswer: Yes, because LHS = 5(-5) - 10 = -25 - 10 = -35 = RHS
+      stepByStepGuideline:
+      - 'Substitute the proposed solution x = -5 into the left-hand side (LHS) of the equation: 5x - 10.'
+      - 'Evaluate the expression: 5(-5) - 10 = -25 - 10.'
+      - 'Calculate the final value of the LHS: -35.'
+      - Compare the LHS (-35) with the right-hand side (RHS) (-35). Since LHS = RHS, the solution is correct.
+      id: q6-2
+      questionGroup: q6
+    - problemText: Check if y = -2 is the solution to 2y + 12 = 8
+      mathTool: null
+      finalAnswer: Yes, because LHS = 2(-2) + 12 = -4 + 12 = 8 = RHS
+      stepByStepGuideline:
+      - 'Substitute the proposed solution y = -2 into the left-hand side (LHS) of the equation: 2y + 12.'
+      - 'Evaluate the expression: 2(-2) + 12 = -4 + 12.'
+      - 'Calculate the final value of the LHS: 8.'
+      - Compare the LHS (8) with the right-hand side (RHS) (8). Since LHS = RHS, the solution is correct.
+      id: q6-3
+      questionGroup: q6
+    - problemText: Check if p = 8 is the solution to 3p - 5 = 19
+      mathTool: null
+      finalAnswer: Yes, because LHS = 3(8) - 5 = 24 - 5 = 19 = RHS
+      stepByStepGuideline:
+      - 'Substitute the proposed solution p = 8 into the left-hand side (LHS) of the equation: 3p - 5.'
+      - 'Evaluate the expression: 3(8) - 5 = 24 - 5.'
+      - 'Calculate the final value of the LHS: 19.'
+      - Compare the LHS (19) with the right-hand side (RHS) (19). Since LHS = RHS, the solution is correct.
+      id: q6-4
+      questionGroup: q6
+    - problemText: Check if m = 4 is the solution to 6m = 24
+      mathTool: null
+      finalAnswer: Yes, because LHS = 6(4) = 24 = RHS
+      stepByStepGuideline:
+      - 'Substitute the proposed solution m = 4 into the left-hand side (LHS) of the equation: 6m.'
+      - 'Evaluate the expression: 6(4).'
+      - 'Calculate the final value of the LHS: 24.'
+      - Compare the LHS (24) with the right-hand side (RHS) (24). Since LHS = RHS, the solution is correct.
+      id: q6-5
+      questionGroup: q6
+- id: s1-linear-eq-node-7
+  nodeNumber: 7
+  title: Identifying Invalid Solutions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Explain why x = 6 is NOT a solution to the equation 3x + 5 = 26.
+      avatarIntro: Checking a solution is crucial to verify your work. Let's practice proving why a proposed answer is incorrect.
+      mathTool: null
+      finalAnswer: x = 6 is not a solution.
+      stepByStepGuideline:
+      - 'Substitute x = 6 into the Left Hand Side (LHS): LHS = 3(6) + 5.'
+      - 'Calculate the value of the LHS: LHS = 18 + 5 = 23.'
+      - 'Identify the value of the Right Hand Side (RHS): RHS = 26.'
+      - 'Compare the results: Since 23 ≠ 26, the Left Hand Side does not equal the Right Hand Side.'
+      - 'Conclusion: Therefore, x = 6 is NOT a solution to the equation 3x + 5 = 26.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Is y = 5 a solution to the equation 4y - 7 = 17? Explain your reasoning and show your calculation.
+      mathTool: null
+      finalAnswer: No, y = 5 is not a solution.
+      stepByStepGuideline:
+      - 'Substitute y = 5 into the Left Hand Side (LHS): LHS = 4(5) - 7.'
+      - 'Calculate the value of the LHS: LHS = 20 - 7 = 13.'
+      - 'Identify the value of the Right Hand Side (RHS): RHS = 17.'
+      - 'Compare the results: Since 13 ≠ 17, the Left Hand Side does not equal the Right Hand Side.'
+      - 'Conclusion: No, y = 5 is not a solution to 4y - 7 = 17.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: A student claims that m = 4 solves the equation 6m + 3 = 33. Prove whether their claim is correct using
+        the balance method check.
+      mathTool: null
+      finalAnswer: The claim is incorrect; m = 4 is not a solution.
+      stepByStepGuideline:
+      - 'Substitute m = 4 into the Left Hand Side (LHS): LHS = 6(4) + 3.'
+      - 'Calculate the value of the LHS: LHS = 24 + 3 = 27.'
+      - 'Identify the value of the Right Hand Side (RHS): RHS = 33.'
+      - 'Compare the results: Since 27 ≠ 33, the Left Hand Side is not balanced with the Right Hand Side.'
+      - 'Conclusion: The student''s claim is incorrect; m = 4 is not a solution to 6m + 3 = 33.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: Explain why p = 8 is NOT the solution to 2p - 10 = 4.
+      mathTool: null
+      finalAnswer: p = 8 is not a solution.
+      stepByStepGuideline:
+      - 'Substitute p = 8 into the Left Hand Side (LHS): LHS = 2(8) - 10.'
+      - 'Calculate the value of the LHS: LHS = 16 - 10 = 6.'
+      - 'Identify the value of the Right Hand Side (RHS): RHS = 4.'
+      - 'Compare the results: Since 6 ≠ 4, the Left Hand Side does not equal the Right Hand Side.'
+      - 'Conclusion: Therefore, p = 8 is NOT the solution to 2p - 10 = 4.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: Is w = 3 a valid solution for the equation 5w + 8 = 28? Justify your answer by calculating the value of
+        the Left Hand Side (LHS).
+      mathTool: null
+      finalAnswer: No, w = 3 is not a valid solution.
+      stepByStepGuideline:
+      - 'Substitute w = 3 into the Left Hand Side (LHS): LHS = 5(3) + 8.'
+      - 'Calculate the value of the LHS: LHS = 15 + 8 = 23.'
+      - 'Identify the value of the Right Hand Side (RHS): RHS = 28.'
+      - 'Compare the results: Since 23 ≠ 28, the proposed solution does not satisfy the equation.'
+      - 'Conclusion: No, w = 3 is not a valid solution for 5w + 8 = 28.'
+      id: q7-5
+      questionGroup: q7
+- id: s1-linear-eq-node-8
+  nodeNumber: 8
+  title: Collecting Variables on Both Sides - Basic
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: algebraExpression
+    preWrittenQuestions:
+    - problemText: 'Two competing cell phone plans charge based on gigabytes ($x$) used. Plan A charges $7 per gigabyte but
+        offers a $3 immediate rebate. Plan B charges $3 per gigabyte plus a fixed $9 service fee. Find the number of gigabytes
+        ($x$) that makes the total cost of both plans equal.
+
+
+        Solve the resulting equation: $7x - 3 = 3x + 9$'
+      avatarIntro: Great job setting up equations! Now we need to practice solving when the variable appears on both sides.
+        Remember to collect the variable terms together first.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 7x - 3 = 3x + 9
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: x = 3
+      stepByStepGuideline:
+      - 'Start with the equation: $7x - 3 = 3x + 9$.'
+      - 'Subtract the smaller variable term ($3x$) from both sides to collect variables on the left: $7x - 3x - 3 = 3x - 3x
+        + 9$, which simplifies to $4x - 3 = 9$.'
+      - 'Add 3 to both sides to isolate the variable term: $4x - 3 + 3 = 9 + 3$, which simplifies to $4x = 12$.'
+      - 'Divide both sides by 4 to solve for x: $x = 12 / 4$.'
+      - The solution is $x = 3$.
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'Two geometric figures have perimeters defined by algebraic expressions. Figure 1 has a perimeter of $9y
+        + 5$ units, and Figure 2 has a perimeter of $4y + 15$ units. If the perimeters are equal, find the value of $y$.
+
+
+        Solve the equation: $9y + 5 = 4y + 15$'
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 9y + 5 = 4y + 15
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: y = 2
+      stepByStepGuideline:
+      - 'Start with the equation: $9y + 5 = 4y + 15$.'
+      - 'Subtract $4y$ from both sides: $9y - 4y + 5 = 15$, which simplifies to $5y + 5 = 15$.'
+      - 'Subtract 5 from both sides: $5y = 15 - 5$, which simplifies to $5y = 10$.'
+      - 'Divide both sides by 5: $y = 10 / 5$.'
+      - The solution is $y = 2$.
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'A manager is tracking stock in two locations. Warehouse Alpha initially held $6m$ units but then sold
+        5 units. Warehouse Beta initially held $2m$ units and received 15 new units. If both warehouses now hold the same
+        number of units, find the base unit quantity $m$.
+
+
+        Solve the equation: $6m - 5 = 2m + 15$'
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 6m - 5 = 2m + 15
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: m = 5
+      stepByStepGuideline:
+      - 'Start with the equation: $6m - 5 = 2m + 15$.'
+      - 'Subtract $2m$ from both sides: $6m - 2m - 5 = 15$, which simplifies to $4m - 5 = 15$.'
+      - 'Add 5 to both sides: $4m = 15 + 5$, which simplifies to $4m = 20$.'
+      - 'Divide both sides by 4: $m = 20 / 4$.'
+      - The solution is $m = 5$.
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'Liam and Mia are comparing their ages. Liam''s age is calculated as 8 times a constant value $n$, plus
+        2 years. Mia''s age is calculated as 5 times the same constant $n$, plus 17 years. Assuming they are the same age,
+        determine the value of $n$.
+
+
+        Solve the equation: $8n + 2 = 5n + 17$'
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 8n + 2 = 5n + 17
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: n = 5
+      stepByStepGuideline:
+      - 'Start with the equation: $8n + 2 = 5n + 17$.'
+      - 'Subtract $5n$ from both sides: $8n - 5n + 2 = 17$, which simplifies to $3n + 2 = 17$.'
+      - 'Subtract 2 from both sides: $3n = 17 - 2$, which simplifies to $3n = 15$.'
+      - 'Divide both sides by 3: $n = 15 / 3$.'
+      - The solution is $n = 5$.
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'Two runners cover the same total distance. Runner P completed 10 laps, each of length $a$ meters, plus
+        an additional 3 meters. Runner Q completed 4 laps of length $a$ meters, plus an additional 9 meters. Find the length
+        of one lap, $a$.
+
+
+        Solve the equation: $10a + 3 = 4a + 9$'
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 10a + 3 = 4a + 9
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: a = 1
+      stepByStepGuideline:
+      - 'Start with the equation: $10a + 3 = 4a + 9$.'
+      - 'Subtract $4a$ from both sides: $10a - 4a + 3 = 9$, which simplifies to $6a + 3 = 9$.'
+      - 'Subtract 3 from both sides: $6a = 9 - 3$, which simplifies to $6a = 6$.'
+      - 'Divide both sides by 6: $a = 6 / 6$.'
+      - The solution is $a = 1$.
+      id: q8-5
+      questionGroup: q8
+- id: s1-linear-eq-node-9
+  nodeNumber: 9
+  title: Collecting Terms with Negative Coefficients
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: algebraExpression
+    preWrittenQuestions:
+    - problemText: A financial analyst is tracking two investment funds, Alpha and Beta. Fund Alpha's current value is calculated
+        as 6 times the base risk factor, $n$, plus an initial deposit of $1 thousand. Fund Beta's current value is 2 times
+        the same base risk factor, $n$, minus $11 thousand (representing a significant loss). If the current values of Fund
+        Alpha and Fund Beta are equal, determine the value of $n$.
+      avatarIntro: Solving equations where variables appear on both sides requires careful organization, especially when dealing
+        with negative constants. Focus on moving the smaller variable term first!
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 6n + 1 = 2n - 11
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: n = -3
+      stepByStepGuideline:
+      - 'Start with the equation: $6n + 1 = 2n - 11$.'
+      - 'Collect the variable terms on the left side by subtracting $2n$ from both sides: $(6n - 2n) + 1 = -11$. This simplifies
+        to $4n + 1 = -11$.'
+      - 'Isolate the variable term by subtracting 1 from both sides: $4n = -11 - 1$. This simplifies to $4n = -12$.'
+      - 'Solve for $n$ by dividing both sides by 4: $n = \frac{-12}{4}$.'
+      - The solution is $n = -3$.
+      id: q9-1
+      questionGroup: q9
+    - problemText: A cyclist tracks the distance of two routes, Route M1 and Route M2, based on a base speed $m$. Route M1
+        takes 5 times the base speed minus 3 kilometers of deceleration zone. Route M2 takes the base speed, $m$, plus 5 kilometers
+        of acceleration zone. If both routes cover the same total distance, find the value of $m$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 5m - 3 = m + 5
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: m = 2
+      stepByStepGuideline:
+      - 'Start with the equation: $5m - 3 = m + 5$.'
+      - 'Collect the variable terms on the left side by subtracting $m$ from both sides: $(5m - m) - 3 = 5$. This simplifies
+        to $4m - 3 = 5$.'
+      - 'Isolate the variable term by adding 3 to both sides: $4m = 5 + 3$. This simplifies to $4m = 8$.'
+      - 'Solve for $m$ by dividing both sides by 4: $m = \frac{8}{4}$.'
+      - The solution is $m = 2$.
+      id: q9-2
+      questionGroup: q9
+    - problemText: Two chemical solutions, X and Y, have concentrations defined by a base factor, $x$. Solution X's concentration
+        is $7x + 5$ units, and Solution Y's concentration is $3x - 7$ units (where the negative indicates a lower baseline
+        concentration). If the two concentrations are measured to be equal, determine the value of $x$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 7x + 5 = 3x - 7
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: x = -3
+      stepByStepGuideline:
+      - 'Start with the equation: $7x + 5 = 3x - 7$.'
+      - 'Collect the variable terms on the left side by subtracting $3x$ from both sides: $(7x - 3x) + 5 = -7$. This simplifies
+        to $4x + 5 = -7$.'
+      - 'Isolate the variable term by subtracting 5 from both sides: $4x = -7 - 5$. This simplifies to $4x = -12$.'
+      - 'Solve for $x$ by dividing both sides by 4: $x = \frac{-12}{4}$.'
+      - The solution is $x = -3$.
+      id: q9-3
+      questionGroup: q9
+    - problemText: In a competitive video game, two players, P1 and P2, finish with the same score. P1's score is calculated
+        as 8 times the success multiplier, $p$, minus 5 starting penalty points. P2's score is calculated as 3 times the success
+        multiplier, $p$, plus 5 bonus points. Find the value of the success multiplier, $p$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 8p - 5 = 3p + 5
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: p = 2
+      stepByStepGuideline:
+      - 'Start with the equation: $8p - 5 = 3p + 5$.'
+      - 'Collect the variable terms on the left side by subtracting $3p$ from both sides: $(8p - 3p) - 5 = 5$. This simplifies
+        to $5p - 5 = 5$.'
+      - 'Isolate the variable term by adding 5 to both sides: $5p = 5 + 5$. This simplifies to $5p = 10$.'
+      - 'Solve for $p$ by dividing both sides by 5: $p = \frac{10}{5}$.'
+      - The solution is $p = 2$.
+      id: q9-4
+      questionGroup: q9
+    - problemText: A construction crew is calculating the required length of two beams, Beam A and Beam B, based on a standard
+        unit length $y$. Beam A requires a length of $4y + 3$ meters. Beam B requires a length of $2y - 9$ meters (where the
+        negative constant indicates a severe adjustment needed due to material overlap). If the required functional lengths
+        of the two beams must be equal, what is the value of $y$?
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 4y + 3 = 2y - 9
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: y = -6
+      stepByStepGuideline:
+      - 'Start with the equation: $4y + 3 = 2y - 9$.'
+      - 'Collect the variable terms on the left side by subtracting $2y$ from both sides: $(4y - 2y) + 3 = -9$. This simplifies
+        to $2y + 3 = -9$.'
+      - 'Isolate the variable term by subtracting 3 from both sides: $2y = -9 - 3$. This simplifies to $2y = -12$.'
+      - 'Solve for $y$ by dividing both sides by 2: $y = \frac{-12}{2}$.'
+      - The solution is $y = -6$.
+      id: q9-5
+      questionGroup: q9
+- id: s1-linear-eq-node-10
+  nodeNumber: 10
+  title: Equations with Brackets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: distributiveVisualizer
+    preWrittenQuestions:
+    - problemText: A warehouse manager is tracking inventory based on a base unit quantity, $x$. In Section A, the inventory
+        is represented by $3(x + 4)$. In Section B, the inventory is calculated as $5x + 6$. If the inventory in both sections
+        is equal, find the value of $x$.
+      avatarIntro: Solving equations with brackets requires careful application of the distributive law first. Remember to
+        expand the brackets before collecting like terms!
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: 3
+          terms:
+          - x
+          - '4'
+          operation: +
+          showSteps: true
+          showAnimation: true
+      finalAnswer: x = 3
+      stepByStepGuideline:
+      - 'Start with the equation: $3(x + 4) = 5x + 6$.'
+      - 'Step 1: Expand the bracket on the left side using the distributive law: $3 \times x + 3 \times 4 = 3x + 12$.'
+      - 'The equation becomes: $3x + 12 = 5x + 6$.'
+      - 'Step 2: Collect the variable terms on one side (e.g., the right side to keep the coefficient positive) and constant
+        terms on the other side: $12 - 6 = 5x - 3x$.'
+      - 'Step 3: Simplify both sides: $6 = 2x$.'
+      - 'Step 4: Divide both sides by 2 to solve for $x$: $x = 3$.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: A marketing team set two different sales targets for the month, based on a base performance factor, $m$.
+        Target 1 is represented by the expression $3(m - 2)$ and Target 2 is represented by $2(m + 1)$. If the two targets
+        are numerically equivalent, determine the value of $m$.
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: 3
+          terms:
+          - m
+          - '2'
+          operation: '-'
+          showSteps: true
+          showAnimation: true
+      finalAnswer: m = 8
+      stepByStepGuideline:
+      - 'Start with the equation: $3(m - 2) = 2(m + 1)$.'
+      - 'Step 1: Expand the brackets on both sides using the distributive law. Left side: $3m - 6$. Right side: $2m + 2$.'
+      - 'The equation becomes: $3m - 6 = 2m + 2$.'
+      - 'Step 2: Collect the variable terms on the left side and constant terms on the right side: $3m - 2m = 2 + 6$.'
+      - 'Step 3: Simplify both sides: $m = 8$.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: In a laboratory experiment involving mass distribution, the mass of Object A is calculated using the formula
+        $5(y + 6)$ grams, and the mass of Object B is calculated as $2y + 42$ grams. If the masses of Object A and Object
+        B are equal, find the value of the base unit $y$.
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: 5
+          terms:
+          - y
+          - '6'
+          operation: +
+          showSteps: true
+          showAnimation: true
+      finalAnswer: y = 4
+      stepByStepGuideline:
+      - 'Start with the equation: $5(y + 6) = 2y + 42$.'
+      - 'Step 1: Expand the bracket on the left side: $5 \times y + 5 \times 6 = 5y + 30$.'
+      - 'The equation becomes: $5y + 30 = 2y + 42$.'
+      - 'Step 2: Collect the variable terms on the left side: $5y - 2y = 42 - 30$.'
+      - 'Step 3: Simplify both sides: $3y = 12$.'
+      - 'Step 4: Divide both sides by 3 to solve for $y$: $y = 4$.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: Two temperature scales, N1 and N2, relate to a base temperature variable $n$. Scale N1 reads $4(n + 1)$
+        degrees Celsius, and Scale N2 reads $3(n + 7)$ degrees Celsius. If the two scales give the same reading, calculate
+        the value of $n$.
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: 4
+          terms:
+          - n
+          - '1'
+          operation: +
+          showSteps: true
+          showAnimation: true
+      finalAnswer: n = 17
+      stepByStepGuideline:
+      - 'Start with the equation: $4(n + 1) = 3(n + 7)$.'
+      - 'Step 1: Expand the brackets on both sides. Left side: $4n + 4$. Right side: $3n + 21$.'
+      - 'The equation becomes: $4n + 4 = 3n + 21$.'
+      - 'Step 2: Collect the variable terms on the left side and constants on the right side: $4n - 3n = 21 - 4$.'
+      - 'Step 3: Simplify both sides: $n = 17$.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: A runner calculates the effective time taken for two segments of a race, based on a speed factor $p$. Segment
+        1 time is given by $2(p - 4)$ minutes. Segment 2 time is given by $p - 3$ minutes. If the time taken for both segments
+        is the same, find the value of the speed factor $p$.
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: 2
+          terms:
+          - p
+          - '4'
+          operation: '-'
+          showSteps: true
+          showAnimation: true
+      finalAnswer: p = 5
+      stepByStepGuideline:
+      - 'Start with the equation: $2(p - 4) = p - 3$.'
+      - 'Step 1: Expand the bracket on the left side using the distributive law: $2 \times p - 2 \times 4 = 2p - 8$.'
+      - 'The equation becomes: $2p - 8 = p - 3$.'
+      - 'Step 2: Collect the variable terms on the left side: $2p - p = -3 + 8$.'
+      - 'Step 3: Simplify both sides: $p = 5$.'
+      id: q10-5
+      questionGroup: q10
+- id: s1-linear-eq-node-11
+  nodeNumber: 11
+  title: Multi-Step Equations - Complex
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: algebraExpression
+    preWrittenQuestions:
+    - problemText: Two engineers, A and B, are calculating the required length of steel cable for two different support systems,
+        based on a variable tension factor, $x$. Engineer A calculates the length using the expression $4(x + 2) + 7$ meters.
+        Engineer B calculates the length using the expression $3(x + 1) - 5$ meters. If the required lengths are equal, solve
+        for the tension factor, $x$.
+      avatarIntro: Solving complex equations requires careful organization. Remember to expand the brackets first, simplify
+        each side, and then collect terms before solving!
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 4x + 8 + 7 = 3x + 3 - 5
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: x = -17
+      stepByStepGuideline:
+      - 'Step 1 (Expand): Distribute the multipliers on both sides: $4x + 8 + 7 = 3x + 3 - 5$'
+      - 'Step 2 (Simplify): Combine the constant terms on each side: $4x + 15 = 3x - 2$'
+      - 'Step 3 (Collect): Subtract $3x$ from both sides and subtract 15 from both sides: $4x - 3x = -2 - 15$'
+      - 'Step 4 (Solve): Simplify the result: $x = -17$'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A factory is monitoring the output rate, $y$, of two production lines, Line P and Line Q. Line P's output
+        is modeled by $2(y + 3) + 3y$ units per hour. Line Q's output is modeled by $4(y + 2) - 7$ units per hour. If the
+        output rates are found to be equal, determine the value of $y$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 2y + 6 + 3y = 4y + 8 - 7
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: y = -5
+      stepByStepGuideline:
+      - 'Step 1 (Expand): Distribute the multipliers: $2y + 6 + 3y = 4y + 8 - 7$'
+      - 'Step 2 (Simplify): Combine like terms on the LHS ($2y + 3y$) and constants on the RHS ($8 - 7$): $5y + 6 = 4y + 1$'
+      - 'Step 3 (Collect): Subtract $4y$ from both sides and subtract 6 from both sides: $5y - 4y = 1 - 6$'
+      - 'Step 4 (Solve): Simplify the result: $y = -5$'
+      id: q11-2
+      questionGroup: q11
+    - problemText: A business consultant is comparing two pricing models, Model A and Model B, based on a base service hour
+        rate, $m$. Model A's total charge is $4(m + 4) - 3$. Model B's total charge is $5(m + 1) - 5$. If a client is charged
+        the same amount under both models, find the base service hour rate, $m$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 4m + 16 - 3 = 5m + 5 - 5
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: m = 13
+      stepByStepGuideline:
+      - 'Step 1 (Expand): Distribute the multipliers: $4m + 16 - 3 = 5m + 5 - 5$'
+      - 'Step 2 (Simplify): Combine the constant terms on each side: $4m + 13 = 5m$'
+      - 'Step 3 (Collect): Subtract $4m$ from both sides to collect the variable term on the right: $13 = 5m - 4m$'
+      - 'Step 4 (Solve): Simplify the result: $m = 13$'
+      id: q11-3
+      questionGroup: q11
+    - problemText: An environmental scientist is tracking the concentration of a pollutant, measured by variable $n$, in two
+        distinct zones. Zone 1 concentration is given by $3(n + 2) + 7$. Zone 2 concentration is given by $2(n + 3) + 2n +
+        3$. If the concentrations are equal, calculate the value of $n$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 3n + 6 + 7 = 2n + 6 + 2n + 3
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: n = 4
+      stepByStepGuideline:
+      - 'Step 1 (Expand): Distribute the multipliers: $3n + 6 + 7 = 2n + 6 + 2n + 3$'
+      - 'Step 2 (Simplify): Combine like terms on the LHS ($6 + 7$) and combine variable terms ($2n + 2n$) and constants ($6
+        + 3$) on the RHS: $3n + 13 = 4n + 9$'
+      - 'Step 3 (Collect): Subtract $3n$ from both sides and subtract 9 from both sides: $13 - 9 = 4n - 3n$'
+      - 'Step 4 (Solve): Simplify the result: $4 = n$'
+      id: q11-4
+      questionGroup: q11
+    - problemText: Two investment accounts, Growth (G) and Stability (S), are measured by their return factor, $x$. Account
+        G's current value is $3(x + 4) - 5$ thousand dollars. Account S's current value is $2(x + 1) + 7$ thousand dollars.
+        If both accounts hold the same value, determine the return factor, $x$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 3x + 12 - 5 = 2x + 2 + 7
+          highlightLikeTerms: true
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: x = 2
+      stepByStepGuideline:
+      - 'Step 1 (Expand): Distribute the multipliers: $3x + 12 - 5 = 2x + 2 + 7$'
+      - 'Step 2 (Simplify): Combine the constant terms on each side: $3x + 7 = 2x + 9$'
+      - 'Step 3 (Collect): Subtract $2x$ from both sides and subtract 7 from both sides: $3x - 2x = 9 - 7$'
+      - 'Step 4 (Solve): Simplify the result: $x = 2$'
+      id: q11-5
+      questionGroup: q11
+- id: s1-linear-eq-node-12
+  nodeNumber: 12
+  title: Simple Fractional Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: fractionBar
+    preWrittenQuestions:
+    - problemText: Two similar rectangles, R1 and R2, have sides defined by a variable $x$. The ratio of the area of R1 to
+        a standard reference area is $\frac{x}{3}$. The ratio of the area of R2 to the same reference area is $\frac{x+2}{5}$.
+        If these two area ratios are equal, find the value of $x$.
+      avatarIntro: Learning to solve equations with fractions is essential! Remember to find the Least Common Multiple of
+        the denominators first to clear the fractions.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: x/3
+          fraction2: (x+2)/5
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: x = 3
+      stepByStepGuideline:
+      - Identify the denominators in the equation $\frac{x}{3} = \frac{x+2}{5}$, which are 3 and 5. The Least Common Multiple
+        (LCM) of 3 and 5 is 15.
+      - 'Multiply both sides of the equation by the LCM (15): $15 \times \frac{x}{3} = 15 \times \frac{x+2}{5}$.'
+      - 'Simplify the fractions: $5x = 3(x+2)$.'
+      - 'Distribute the 3 on the right side: $5x = 3x + 6$.'
+      - 'Subtract $3x$ from both sides: $2x = 6$.'
+      - 'Divide by 2 to solve for $x$: $x = 3$.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: A runner compares two training routes based on a base speed $y$ (in km/h). The time taken for Route A is
+        proportional to $\frac{y}{2}$ hours. The time taken for Route B is proportional to $\frac{y-4}{3}$ hours. If the time
+        taken for both routes is equal, determine the value of $y$.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: y/2
+          fraction2: (y-4)/3
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: y = -8
+      stepByStepGuideline:
+      - Identify the denominators 2 and 3. The LCM of 2 and 3 is 6.
+      - 'Multiply both sides of the equation $\frac{y}{2} = \frac{y-4}{3}$ by 6: $6 \times \frac{y}{2} = 6 \times \frac{y-4}{3}$.'
+      - 'Simplify the fractions: $3y = 2(y-4)$.'
+      - 'Distribute the 2 on the right side: $3y = 2y - 8$.'
+      - 'Subtract $2y$ from both sides to solve for $y$: $y = -8$.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: In a chemistry experiment, two solutions, M1 and M2, have concentrations dependent on a base factor $m$.
+        The standardized concentration ratio for M1 is $\frac{m}{2}$. The standardized concentration ratio for M2 is $\frac{m+1}{5}$.
+        If the two standardized ratios are the same, solve for $m$.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: m/2
+          fraction2: (m+1)/5
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: m = 2/3
+      stepByStepGuideline:
+      - Identify the denominators 2 and 5. The LCM of 2 and 5 is 10.
+      - 'Multiply both sides of the equation $\frac{m}{2} = \frac{m+1}{5}$ by 10: $10 \times \frac{m}{2} = 10 \times \frac{m+1}{5}$.'
+      - 'Simplify the fractions: $5m = 2(m+1)$.'
+      - 'Distribute the 2 on the right side: $5m = 2m + 2$.'
+      - 'Subtract $2m$ from both sides: $3m = 2$.'
+      - 'Divide by 3 to solve for $m$: $m = \frac{2}{3}$.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: A financial analyst tracks two investment funds, N1 and N2, based on a risk factor $n$. Fund N1's growth
+        rate is proportional to $\frac{n}{3}$. Fund N2's growth rate is proportional to $\frac{n-5}{4}$. If the growth rates
+        are equal, determine the value of $n$.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: n/3
+          fraction2: (n-5)/4
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: n = -15
+      stepByStepGuideline:
+      - Identify the denominators 3 and 4. The LCM of 3 and 4 is 12.
+      - 'Multiply both sides of the equation $\frac{n}{3} = \frac{n-5}{4}$ by 12: $12 \times \frac{n}{3} = 12 \times \frac{n-5}{4}$.'
+      - 'Simplify the fractions: $4n = 3(n-5)$.'
+      - 'Distribute the 3 on the right side: $4n = 3n - 15$.'
+      - 'Subtract $3n$ from both sides to solve for $n$: $n = -15$.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: A biologist is modeling the population increase of two microbial colonies, P1 and P2, based on a nutrient
+        score $p$. The growth fraction for P1 is $\frac{p}{4}$. The growth fraction for P2 is $\frac{p+3}{6}$. If the two
+        growth fractions are equivalent, solve for $p$.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: p/4
+          fraction2: (p+3)/6
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: p = 6
+      stepByStepGuideline:
+      - Identify the denominators 4 and 6. The LCM of 4 and 6 is 12.
+      - 'Multiply both sides of the equation $\frac{p}{4} = \frac{p+3}{6}$ by 12: $12 \times \frac{p}{4} = 12 \times \frac{p+3}{6}$.'
+      - 'Simplify the fractions: $3p = 2(p+3)$.'
+      - 'Distribute the 2 on the right side: $3p = 2p + 6$.'
+      - 'Subtract $2p$ from both sides to solve for $p$: $p = 6$.'
+      id: q12-5
+      questionGroup: q12
+- id: s1-linear-eq-node-13
+  nodeNumber: 13
+  title: Fractional Equations with Complex Numerators
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: fractionBar
+    preWrittenQuestions:
+    - problemText: "A theatre manager is comparing the estimated revenue generated from two seating sections, based on the\
+        \ number of tickets sold, $x$. The estimated revenue function for Section A is $3x + 2$, and this section accounts\
+        \ for $\\frac{1}{4}$ of the total capacity. The estimated revenue function for Section B is $5x + 1$, and this section\
+        \ accounts for $\\frac{1}{3}$ of the total capacity. If the revenue ratio for Section A is equal to the revenue ratio\
+        \ for Section B, solve the equation to find $x$: \n\n$$\\frac{3x+2}{4} = \\frac{5x+1}{3}$$"
+      avatarIntro: Solving equations with fractions requires finding the Least Common Multiple (LCM) of the denominators.
+        Focus on distributing that LCM correctly to every term!
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: (3x+2)/4
+          fraction2: (5x+1)/3
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: x = 2/11
+      stepByStepGuideline:
+      - Identify the denominators (4 and 3) and find the Least Common Multiple (LCM), which is 12.
+      - 'Multiply every term in the equation by the LCM (12): $12 \times \frac{3x+2}{4} = 12 \times \frac{5x+1}{3}$.'
+      - 'Simplify the fractions: $3(3x+2) = 4(5x+1)$.'
+      - 'Expand both sides of the equation: $9x + 6 = 20x + 4$.'
+      - 'Collect the variable terms on one side and the constant terms on the other side: $6 - 4 = 20x - 9x$.'
+      - 'Simplify the equation: $2 = 11x$.'
+      - 'Solve for $x$: $x = 2/11$.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: "Two geometric shapes, P and Q, have perimeters defined by the variable $y$. The ratio of Perimeter P to\
+        \ a standard length is $\\frac{5y-1}{4}$. The ratio of Perimeter Q to the same standard length is $\\frac{3y-5}{6}$.\
+        \ If these ratios are equal, find the value of $y$: \n\n$$\\frac{5y-1}{4} = \\frac{3y-5}{6}$$"
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: (5y-1)/4
+          fraction2: (3y-5)/6
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: y = -7/9
+      stepByStepGuideline:
+      - Identify the denominators (4 and 6) and find the Least Common Multiple (LCM), which is 12.
+      - 'Multiply every term in the equation by the LCM (12): $12 \times \frac{5y-1}{4} = 12 \times \frac{3y-5}{6}$.'
+      - 'Simplify the fractions: $3(5y-1) = 2(3y-5)$.'
+      - 'Expand both sides of the equation: $15y - 3 = 6y - 10$.'
+      - 'Collect the variable terms on the left side and constant terms on the right: $15y - 6y = -10 + 3$.'
+      - 'Simplify: $9y = -7$.'
+      - 'Solve for $y$: $y = -7/9$.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: "A population model compares the growth rate of two species, based on a resource factor $m$. The standardized\
+        \ growth measurement for Species X is represented by $\\frac{5m+3}{5}$. The measurement for Species Y is represented\
+        \ by $\\frac{6m-5}{4}$. If the two standardized measurements are equivalent, determine the value of $m$: \n\n$$\\\
+        frac{5m+3}{5} = \\frac{6m-5}{4}$$"
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: (5m+3)/5
+          fraction2: (6m-5)/4
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: m = 37/10 or m = 3.7
+      stepByStepGuideline:
+      - Identify the denominators (5 and 4) and find the Least Common Multiple (LCM), which is 20.
+      - 'Multiply both sides of the equation by the LCM (20): $20 \times \frac{5m+3}{5} = 20 \times \frac{6m-5}{4}$.'
+      - 'Simplify the fractions: $4(5m+3) = 5(6m-5)$.'
+      - 'Expand both sides of the equation: $20m + 12 = 30m - 25$.'
+      - 'Collect the variable terms on the right side and constant terms on the left: $12 + 25 = 30m - 20m$.'
+      - 'Simplify: $37 = 10m$.'
+      - 'Solve for $m$: $m = 37/10$ or $m = 3.7$.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: "In a physics experiment, the calculated Force A is related to variable $n$ by the expression $2n-2$. This\
+        \ force is applied over 5 units of area. The calculated Force B is $4n+7$ and is applied over 6 units of area. If\
+        \ the pressure (Force/Area) generated by Force A equals the pressure generated by Force B, solve for $n$: \n\n$$\\\
+        frac{2n-2}{5} = \\frac{4n+7}{6}$$"
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: (2n-2)/5
+          fraction2: (4n+7)/6
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: n = -47/8 or n = -5.875
+      stepByStepGuideline:
+      - Identify the denominators (5 and 6) and find the Least Common Multiple (LCM), which is 30.
+      - 'Multiply both sides of the equation by the LCM (30): $30 \times \frac{2n-2}{5} = 30 \times \frac{4n+7}{6}$.'
+      - 'Simplify the fractions: $6(2n-2) = 5(4n+7)$.'
+      - 'Expand both sides of the equation: $12n - 12 = 20n + 35$.'
+      - 'Collect the variable terms on the right side and constant terms on the left: $-12 - 35 = 20n - 12n$.'
+      - 'Simplify: $-47 = 8n$.'
+      - 'Solve for $n$: $n = -47/8$ or $n = -5.875$.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: "A chef is preparing two batches of sauce, Batch X and Batch Y, where the amount of seasoning required\
+        \ depends on a flavor index $x$. The ratio of seasoning to total volume for Batch X is $\\frac{4x+1}{3}$. The ratio\
+        \ for Batch Y is $\\frac{3x-3}{5}$. If the required seasoning ratios are set to be equal for quality control, find\
+        \ the value of $x$: \n\n$$\\frac{4x+1}{3} = \\frac{3x-3}{5}$$"
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: (4x+1)/3
+          fraction2: (3x-3)/5
+          operation: compare
+          showLCM: true
+          showSteps: true
+      finalAnswer: x = -14/11
+      stepByStepGuideline:
+      - Identify the denominators (3 and 5) and find the Least Common Multiple (LCM), which is 15.
+      - 'Multiply both sides of the equation by the LCM (15): $15 \times \frac{4x+1}{3} = 15 \times \frac{3x-3}{5}$.'
+      - 'Simplify the fractions: $5(4x+1) = 3(3x-3)$.'
+      - 'Expand both sides of the equation: $20x + 5 = 9x - 9$.'
+      - 'Collect the variable terms on the left side and constant terms on the right: $20x - 9x = -9 - 5$.'
+      - 'Simplify: $11x = -14$.'
+      - 'Solve for $x$: $x = -14/11$.'
+      id: q13-5
+      questionGroup: q13
+- id: s1-linear-eq-node-14
+  nodeNumber: 14
+  title: Variable in Denominator
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A delivery service calculates the average time, $T$, required for a route based on the number of stops,
+        $x$. The relationship is modeled by the equation $\frac{10}{x + 5} = 2$, where the result is measured in hours. Solve
+        the equation for $x$ and state any restrictions on the value of $x$.
+      avatarIntro: Solving fractional equations requires careful attention to the denominator. Remember, division by zero
+        is undefined, so we must always identify restricted values first!
+      mathTool: null
+      finalAnswer: 'x = 0 (restriction: x ≠ -5)'
+      stepByStepGuideline:
+      - 'Identify the restriction by setting the denominator to zero: $x + 5 = 0$, so $x \neq -5$.'
+      - 'Multiply both sides of the equation by the denominator $(x + 5)$: $10 = 2(x + 5)$.'
+      - 'Distribute the 2 on the right side: $10 = 2x + 10$.'
+      - 'Subtract 10 from both sides: $0 = 2x$.'
+      - 'Divide by 2: $x = 0$.'
+      - 'Check the solution against the restriction: $0 \neq -5$. The solution is valid.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: A chemist is determining the concentration factor, $y$, of a solution. The experimental relationship yields
+        the equation $\frac{15}{y - 3} = 5$. Solve for $y$ and state the restriction on $y$.
+      mathTool: null
+      finalAnswer: 'y = 6 (restriction: y ≠ 3)'
+      stepByStepGuideline:
+      - 'Identify the restriction by setting the denominator to zero: $y - 3 = 0$, so $y \neq 3$.'
+      - 'Multiply both sides by $(y - 3)$: $15 = 5(y - 3)$.'
+      - 'Distribute the 5: $15 = 5y - 15$.'
+      - 'Add 15 to both sides: $30 = 5y$.'
+      - 'Divide by 5: $y = 6$.'
+      - 'Check the solution against the restriction: $6 \neq 3$. The solution is valid.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: An industrial machine's operational efficiency, $m$, is related to its output by the formula $\frac{18}{m
+        + 1} = 3$. Determine the value of $m$ and state any restriction that applies to $m$.
+      mathTool: null
+      finalAnswer: 'm = 5 (restriction: m ≠ -1)'
+      stepByStepGuideline:
+      - 'Identify the restriction by setting the denominator to zero: $m + 1 = 0$, so $m \neq -1$.'
+      - 'Multiply both sides by $(m + 1)$: $18 = 3(m + 1)$.'
+      - 'Distribute the 3: $18 = 3m + 3$.'
+      - 'Subtract 3 from both sides: $15 = 3m$.'
+      - 'Divide by 3: $m = 5$.'
+      - 'Check the solution against the restriction: $5 \neq -1$. The solution is valid.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: A financial model uses the equation $\frac{12}{n - 2} = 4$ to calculate the expected return ratio, $n$.
+        Solve this equation for $n$ and state the restricted value.
+      mathTool: null
+      finalAnswer: 'n = 5 (restriction: n ≠ 2)'
+      stepByStepGuideline:
+      - 'Identify the restriction by setting the denominator to zero: $n - 2 = 0$, so $n \neq 2$.'
+      - 'Multiply both sides by $(n - 2)$: $12 = 4(n - 2)$.'
+      - 'Distribute the 4: $12 = 4n - 8$.'
+      - 'Add 8 to both sides: $20 = 4n$.'
+      - 'Divide by 4: $n = 5$.'
+      - 'Check the solution against the restriction: $5 \neq 2$. The solution is valid.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: The capacity utilization factor, $x$, of a water pipe is determined by the formula $\frac{8}{x + 2} = 4$.
+        Solve for $x$ and state any restriction on the value of $x$.
+      mathTool: null
+      finalAnswer: 'x = 0 (restriction: x ≠ -2)'
+      stepByStepGuideline:
+      - 'Identify the restriction by setting the denominator to zero: $x + 2 = 0$, so $x \neq -2$.'
+      - 'Multiply both sides by $(x + 2)$: $8 = 4(x + 2)$.'
+      - 'Distribute the 4: $8 = 4x + 8$.'
+      - 'Subtract 8 from both sides: $0 = 4x$.'
+      - 'Divide by 4: $x = 0$.'
+      - 'Check the solution against the restriction: $0 \neq -2$. The solution is valid.'
+      id: q14-5
+      questionGroup: q14
+- id: s1-linear-eq-node-15
+  nodeNumber: 15
+  title: Identifying Extraneous Solutions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A transport analyst is modeling the required travel speed, $x$ (in km/h), for two segments of a highway
+        route, based on a specific restriction factor. The relationship between the segments is given by the equation: $\frac{x+1}{x-4}
+        = \frac{5}{x-4}$. Solve for $x$. Identify and explain any extraneous solutions, and state the final solution set.'
+      avatarIntro: These problems require careful checking of your algebraic solutions. Remember, a solution is extraneous
+        if it makes the denominator of the original equation zero.
+      finalAnswer: 'Algebraic solution: x = 4. When x = 4 is substituted into the original equation, the denominator (x -
+        4) becomes 4 - 4 = 0, which is undefined. Therefore, x = 4 is an extraneous solution. Since this is the only algebraic
+        solution and it is extraneous, the equation has NO SOLUTION.'
+      stepByStepGuideline:
+      - 'Identify the restriction on the variable by setting the denominator equal to zero: $x - 4 = 0$, so $x \neq 4$.'
+      - 'Solve the rational equation by multiplying both sides by the common denominator $(x-4)$: $x + 1 = 5$.'
+      - 'Solve the resulting linear equation: $x = 5 - 1$, so $x = 4$.'
+      - Check the solution $x=4$ against the restriction. Since $x=4$ makes the denominator zero, it is an extraneous solution.
+      - Conclude that since the only algebraic solution is extraneous, the equation has NO SOLUTION.
+      id: q15-1
+      questionGroup: q15
+    - problemText: 'In a fluid dynamics experiment, the ratio of Volume A to a container size, $y$, is compared to the ratio
+        of Volume B to the same size. This yields the equation: $\frac{y+5}{y+2} = \frac{3y+1}{y+2}$. Determine the value
+        of $y$ and check if the solution is extraneous.'
+      finalAnswer: 'Algebraic solution: y = 2. The restriction is y \neq -2. When y = 2 is substituted into the original equation,
+        the denominator (y + 2) becomes 2 + 2 = 4, which is non-zero. Therefore, y = 2 is a valid solution (not extraneous).'
+      stepByStepGuideline:
+      - 'Identify the restriction on the variable: $y + 2 = 0$, so $y \neq -2$.'
+      - 'Solve the equation by multiplying both sides by the common denominator $(y+2)$: $y + 5 = 3y + 1$.'
+      - 'Rearrange and solve for $y$: $5 - 1 = 3y - y$, resulting in $4 = 2y$, so $y = 2$.'
+      - Check the solution $y=2$ against the restriction. Since $2 \neq -2$, the solution is valid.
+      - Conclude that $y=2$ is the valid solution.
+      id: q15-2
+      questionGroup: q15
+    - problemText: 'A financial model compares the growth ratio of two assets, A1 and A2, based on a market volatility index,
+        $m$. The relationship is modeled by the equation: $\frac{4}{m-2} - \frac{m}{m+2} = \frac{16}{m^2 - 4}$. Solve for
+        $m$, identifying all restrictions and determining which solutions are extraneous.'
+      finalAnswer: "Algebraic solutions: m = 4 and m = 2. Restrictions: m \\neq 2 and m \\neq -2. \nCheck m = 4: Denominators\
+        \ are non-zero (4-2=2, 4+2=6, 4^2-4=12). Valid solution. \nCheck m = 2: Denominators (m-2) and (m^2 - 4) become zero\
+        \ (2-2=0). Therefore, m = 2 is an extraneous solution. The final valid solution is m = 4."
+      stepByStepGuideline:
+      - 'Identify the restrictions on $m$ by factoring the denominators: $m^2 - 4 = (m-2)(m+2)$. Restrictions are $m \neq
+        2$ and $m \neq -2$.'
+      - 'Multiply the entire equation by the LCD, $(m-2)(m+2)$: $4(m+2) - m(m-2) = 16$.'
+      - 'Simplify and solve the resulting quadratic equation: $4m + 8 - m^2 + 2m = 16$. This simplifies to $-m^2 + 6m - 8
+        = 0$, or $m^2 - 6m + 8 = 0$.'
+      - 'Factor the quadratic: $(m-4)(m-2) = 0$. The algebraic solutions are $m = 4$ and $m = 2$.'
+      - Check the solutions against the restrictions. $m=4$ is valid. $m=2$ makes the original denominators zero, so $m=2$
+        is an extraneous solution.
+      - 'State the final valid solution: $m=4$.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: 'A thermodynamic calculation requires finding the temperature factor, $n$, based on the relationship between
+        thermal resistance and efficiency: $\frac{2}{n} + \frac{1}{4} = \frac{5}{4n}$. Solve the equation for $n$ and determine
+        if the solution is extraneous.'
+      finalAnswer: 'Algebraic solution: n = -3. Restrictions: n \neq 0. When n = -3 is substituted into the original equation,
+        the denominators (-3 and -12) are non-zero. Therefore, n = -3 is a valid solution (not extraneous).'
+      stepByStepGuideline:
+      - 'Identify the restriction on the variable: $n \neq 0$.'
+      - Determine the Least Common Denominator (LCD), which is $4n$.
+      - 'Multiply the entire equation by $4n$: $4n \left( \frac{2}{n} \right) + 4n \left( \frac{1}{4} \right) = 4n \left(
+        \frac{5}{4n} \right)$.'
+      - 'Simplify: $8 + n = 5$.'
+      - 'Solve for $n$: $n = 5 - 8$, so $n = -3$.'
+      - Check the solution $n=-3$ against the restriction. Since $-3 \neq 0$, the solution is valid.
+      id: q15-4
+      questionGroup: q15
+    - problemText: 'A construction engineer is comparing two load-bearing ratios, $y$, for a new structural component. The
+        comparison leads to the equation: $\frac{y+3}{y+1} = \frac{2}{y+1}$. Solve for $y$ and explain why the result is or
+        is not an extraneous solution.'
+      finalAnswer: 'Algebraic solution: y = -1. The restriction is y \neq -1. When y = -1 is substituted into the original
+        equation, the denominator (y + 1) becomes -1 + 1 = 0. Since substitution results in division by zero, y = -1 is an
+        extraneous solution. The equation has NO SOLUTION.'
+      stepByStepGuideline:
+      - 'Identify the restriction on the variable: $y + 1 = 0$, so $y \neq -1$.'
+      - 'Solve the equation by multiplying both sides by the common denominator $(y+1)$: $y + 3 = 2$.'
+      - 'Solve the resulting linear equation: $y = 2 - 3$, so $y = -1$.'
+      - Check the solution $y=-1$ against the restriction. Since $y=-1$ violates the restriction, it is an extraneous solution.
+      - Explain that the solution is invalid because it makes the denominator zero (undefined).
+      id: q15-5
+      questionGroup: q15
+- id: s1-linear-eq-node-16
+  nodeNumber: 16
+  title: Translating Number Relationships
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Seven more than double a number is 17. Find the number.
+      avatarIntro: Translating word problems into algebra requires careful reading. Identify the operation and the variable
+        first.
+      mathTool: null
+      finalAnswer: The number is 5.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = the number.'
+      - 'Translate the relationship into an equation: Double a number is 2x. Seven more than double a number is 2x + 7. The
+        equation is 2x + 7 = 17.'
+      - 'Solve the equation: Subtract 7 from both sides: 2x = 10. Divide by 2: x = 5.'
+      - 'State the answer in context: The number is 5.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: When 9 is subtracted from triple a number, the result is 15. What is the number?
+      mathTool: null
+      finalAnswer: The number is 8.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = the number.'
+      - 'Translate the relationship into an equation: Triple a number is 3x. When 9 is subtracted from 3x, it is written as
+        3x - 9. The equation is 3x - 9 = 15.'
+      - 'Solve the equation: Add 9 to both sides: 3x = 24. Divide by 3: x = 8.'
+      - 'State the answer in context: The number is 8.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: Four times a number decreased by 5 equals 23. Determine the number.
+      mathTool: null
+      finalAnswer: The number is 7.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = the number.'
+      - 'Translate the relationship into an equation: Four times a number is 4x. Decreased by 5 means subtracting 5. The equation
+        is 4x - 5 = 23.'
+      - 'Solve the equation: Add 5 to both sides: 4x = 28. Divide by 4: x = 7.'
+      - 'State the answer in context: The number is 7.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: The sum of a number and three times that number is 20. Find the value of the number.
+      mathTool: null
+      finalAnswer: The number is 5.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = the number.'
+      - 'Translate the relationship into an equation: Three times the number is 3x. The sum of the number (x) and three times
+        the number (3x) is x + 3x. The equation is x + 3x = 20.'
+      - 'Solve the equation: Combine like terms: 4x = 20. Divide by 4: x = 5.'
+      - 'State the answer in context: The number is 5.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: Five less than four times a number is 19. What is the number?
+      mathTool: null
+      finalAnswer: The number is 6.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = the number.'
+      - 'Translate the relationship into an equation: Four times a number is 4x. Five less than 4x is written as 4x - 5. The
+        equation is 4x - 5 = 19.'
+      - 'Solve the equation: Add 5 to both sides: 4x = 24. Divide by 4: x = 6.'
+      - 'State the answer in context: The number is 6.'
+      id: q16-5
+      questionGroup: q16
+- id: s1-linear-eq-node-18
+  nodeNumber: 18
+  title: Consecutive Integer Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A company tracked its total sales (in thousands of dollars) over three consecutive years. The total sales
+        for the three years combined was 60 thousand dollars. Find the sales figure (in thousands of dollars) for each year.
+      avatarIntro: Consecutive integer problems require careful algebraic representation. Remember that consecutive integers
+        increase by one.
+      mathTool: null
+      finalAnswer: The sales figures are 19, 20, and 21 (thousand dollars).
+      stepByStepGuideline:
+      - Let n, n+1, and n+2 be the three consecutive sales figures.
+      - 'Set up the equation based on the sum: n + (n+1) + (n+2) = 60.'
+      - 'Simplify the equation: 3n + 3 = 60.'
+      - 'Solve for n: 3n = 57, so n = 19.'
+      - 'Determine all three integers: 19, 19+1 = 20, and 19+2 = 21.'
+      id: q18-1
+      questionGroup: q18
+    - problemText: Three storage boxes are labeled with consecutive even identification numbers. The sum of these three identification
+        numbers is 42. Determine the identification number on each box.
+      mathTool: null
+      finalAnswer: The identification numbers are 12, 14, and 16.
+      stepByStepGuideline:
+      - Let n, n+2, and n+4 be the three consecutive even identification numbers.
+      - 'Set up the equation based on the sum: n + (n+2) + (n+4) = 42.'
+      - 'Simplify the equation: 3n + 6 = 42.'
+      - 'Solve for n: 3n = 36, so n = 12.'
+      - 'Determine all three integers: 12, 12+2 = 14, and 12+4 = 16.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: Three students were assigned three consecutive odd-numbered pages to read in a textbook. If the sum of
+        these three page numbers is 69, what are the three page numbers?
+      mathTool: null
+      finalAnswer: The page numbers are 21, 23, and 25.
+      stepByStepGuideline:
+      - Let n, n+2, and n+4 be the three consecutive odd page numbers.
+      - 'Set up the equation based on the sum: n + (n+2) + (n+4) = 69.'
+      - 'Simplify the equation: 3n + 6 = 69.'
+      - 'Solve for n: 3n = 63, so n = 21.'
+      - 'Determine all three integers: 21, 21+2 = 23, and 21+4 = 25.'
+      id: q18-3
+      questionGroup: q18
+    - problemText: Four siblings were born in four consecutive years. The sum of their current ages is 58. Find the age of
+        the youngest sibling and the age of the oldest sibling.
+      mathTool: null
+      finalAnswer: The ages are 13, 14, 15, and 16.
+      stepByStepGuideline:
+      - Let n, n+1, n+2, and n+3 be the four consecutive ages.
+      - 'Set up the equation based on the sum: n + (n+1) + (n+2) + (n+3) = 58.'
+      - 'Simplify the equation: 4n + 6 = 58.'
+      - 'Solve for n: 4n = 52, thus n = 13.'
+      - 'Determine all four integers: 13, 13+1 = 14, 13+2 = 15, and 13+3 = 16.'
+      id: q18-4
+      questionGroup: q18
+    - problemText: A basketball team's scoring totals were consecutive integers for two recent games. The total score across
+        both games was 35 points. Find the score of each game.
+      mathTool: null
+      finalAnswer: The scores are 17 and 18 points.
+      stepByStepGuideline:
+      - Let n and n+1 be the two consecutive scores.
+      - 'Set up the equation based on the sum: n + (n+1) = 35.'
+      - 'Simplify the equation: 2n + 1 = 35.'
+      - 'Solve for n: 2n = 34, thus n = 17.'
+      - 'Determine both integers: 17 and 17+1 = 18.'
+      id: q18-5
+      questionGroup: q18
+- id: s1-linear-eq-node-19
+  nodeNumber: 19
+  title: Age Relationship Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Alex is 10 years older than Ben. In 5 years, Alex will be twice as old as Ben will be then. Find their
+        current ages.
+      avatarIntro: Ready to practice setting up age relationship equations? Remember that time affects everyone equally!
+      mathTool: null
+      finalAnswer: Ben is 5 years old and Alex is 15 years old.
+      stepByStepGuideline:
+      - Let x = Ben's current age.
+      - 'Express Alex''s current age: Alex = x + 10.'
+      - 'Express their ages in 5 years: Ben = x + 5, Alex = x + 10 + 5 = x + 15.'
+      - 'Form the equation based on the future relationship: Alex''s future age is twice Ben''s future age, so x + 15 = 2(x
+        + 5).'
+      - 'Solve the equation: x + 15 = 2x + 10. Subtract x from both sides: 15 = x + 10. Subtract 10 from both sides: x = 5.'
+      - 'State the current ages: Ben is 5 years old, and Alex is 5 + 10 = 15 years old.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: Eliza is currently 15 years older than Fiona. 5 years ago, Eliza was four times as old as Fiona was then.
+        Determine their current ages.
+      mathTool: null
+      finalAnswer: Fiona is 10 years old and Eliza is 25 years old.
+      stepByStepGuideline:
+      - Let x = Fiona's current age.
+      - 'Express Eliza''s current age: Eliza = x + 15.'
+      - 'Express their ages 5 years ago: Fiona = x - 5, Eliza = x + 15 - 5 = x + 10.'
+      - 'Form the equation based on the past relationship: Eliza''s age 5 years ago was four times Fiona''s age 5 years ago,
+        so x + 10 = 4(x - 5).'
+      - 'Solve the equation: x + 10 = 4x - 20. Add 20 to both sides and subtract x from both sides: 30 = 3x. Therefore, x
+        = 10.'
+      - 'State the current ages: Fiona is 10 years old, and Eliza is 10 + 15 = 25 years old.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: John is 20 years older than his son, Michael. In 10 years, Michael's age will be half of John's age. Find
+        their current ages.
+      mathTool: null
+      finalAnswer: Michael is 10 years old and John is 30 years old.
+      stepByStepGuideline:
+      - Let x = Michael's current age.
+      - 'Express John''s current age: John = x + 20.'
+      - 'Express their ages in 10 years: Michael = x + 10, John = x + 20 + 10 = x + 30.'
+      - 'Form the equation based on the future relationship: Michael''s future age is half of John''s future age, so x + 10
+        = 0.5(x + 30).'
+      - 'Solve the equation (multiply by 2 to clear the fraction): 2(x + 10) = x + 30. This simplifies to 2x + 20 = x + 30.
+        Subtract x and 20 from both sides: x = 10.'
+      - 'State the current ages: Michael is 10 years old, and John is 10 + 20 = 30 years old.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: Alice is 7 years older than Ben. Alice's current age is three times the age Ben was 5 years ago. What are
+        their current ages?
+      mathTool: null
+      finalAnswer: Ben is 11 years old and Alice is 18 years old.
+      stepByStepGuideline:
+      - Let x = Ben's current age.
+      - 'Express Alice''s current age: Alice = x + 7.'
+      - 'Express Ben''s age 5 years ago: Ben''s past age = x - 5.'
+      - 'Form the equation based on the mixed time relationship: Alice''s current age is three times Ben''s past age, so x
+        + 7 = 3(x - 5).'
+      - 'Solve the equation: x + 7 = 3x - 15. Add 15 to both sides and subtract x from both sides: 22 = 2x. Therefore, x =
+        11.'
+      - 'State the current ages: Ben is 11 years old, and Alice is 11 + 7 = 18 years old.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: In 10 years, Chris will be 10 years older than David. 10 years ago, Chris was three times as old as David
+        was then. Find their current ages.
+      mathTool: null
+      finalAnswer: David is 15 years old and Chris is 25 years old.
+      stepByStepGuideline:
+      - 'Use the future information to define the current age relationship: If Chris will be 10 years older than David in
+        10 years, Chris is currently 10 years older than David.'
+      - Let x = David's current age.
+      - 'Express Chris''s current age: Chris = x + 10.'
+      - 'Express their ages 10 years ago: David = x - 10, Chris = (x + 10) - 10 = x.'
+      - 'Form the equation based on the past relationship: Chris''s age 10 years ago was three times David''s age 10 years
+        ago, so x = 3(x - 10).'
+      - 'Solve the equation: x = 3x - 30. Subtract x from both sides and add 30 to both sides: 30 = 2x. Therefore, x = 15.'
+      - 'State the current ages: David is 15 years old, and Chris is 15 + 10 = 25 years old.'
+      id: q19-5
+      questionGroup: q19
+- id: s1-linear-eq-node-20
+  nodeNumber: 20
+  title: Geometric and Real-World Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A rectangular garden plot has a perimeter of 30 meters. If the length of the plot is four times its width,
+        find the dimensions (length and width) of the garden.
+      avatarIntro: These problems require setting up equations based on geometric formulas or real-world constraints. Think
+        carefully about how to define your variables!
+      mathTool: null
+      finalAnswer: Width is 3 m and length is 12 m.
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Let w be the width in meters (m). Since the length is four times the width, the length
+        (l) is 4w.'
+      - 'Step 2: Use the perimeter formula for a rectangle: P = 2l + 2w. Substitute the given perimeter (30 m) and the expressions
+        for l and w: 2(4w) + 2w = 30.'
+      - 'Step 3: Solve the equation for w: 8w + 2w = 30, so 10w = 30. Thus, w = 3.'
+      - 'Step 4: Calculate the length: l = 4w = 4(3) = 12.'
+      - 'Step 5: State the final dimensions. Width is 3 m and length is 12 m.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: Two angles are supplementary. The larger angle measures 20° more than the smaller angle. Find the measure
+        of both angles.
+      mathTool: null
+      finalAnswer: The angles are 80° and 100°.
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Let x be the measure of the smaller angle in degrees (°). The larger angle is x + 20.'
+      - 'Step 2: Apply the supplementary angle relationship (angles sum to 180°): x + (x + 20) = 180.'
+      - 'Step 3: Solve the equation: 2x + 20 = 180.'
+      - 'Step 4: Isolate x: 2x = 160, so x = 80.'
+      - 'Step 5: Calculate the second angle: 80 + 20 = 100. The angles are 80° and 100°.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: A student bought a total of 10 school supplies, consisting of notebooks and erasers. Notebooks cost \$3.00
+        each, and erasers cost \$0.50 each. If the student spent a total of \$15.00, how many notebooks and how many erasers
+        were purchased?
+      mathTool: null
+      finalAnswer: Bought 4 notebooks and 6 erasers.
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Let N be the number of notebooks. Since the total number of items is 10, the number
+        of erasers is 10 - N.'
+      - 'Step 2: Set up the cost equation: (Cost of notebooks) + (Cost of erasers) = Total Cost. 3N + 0.50(10 - N) = 15.'
+      - 'Step 3: Solve the equation: 3N + 5 - 0.5N = 15.'
+      - 'Step 4: Combine terms: 2.5N + 5 = 15, so 2.5N = 10.'
+      - 'Step 5: Solve for N: N = 10 / 2.5 = 4. The student bought 4 notebooks.'
+      - 'Step 6: Calculate the number of erasers: 10 - 4 = 6. The student bought 4 notebooks and 6 erasers.'
+      id: q20-3
+      questionGroup: q20
+    - problemText: The perimeter of a rectangular swimming pool is 40 meters. The length of the pool is 6 meters longer than
+        its width. Determine the length and width of the pool.
+      mathTool: null
+      finalAnswer: Width is 7 m and length is 13 m.
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Let w be the width in meters (m). Since the length is 6 meters longer than the width,
+        the length (l) is w + 6.'
+      - 'Step 2: Use the perimeter formula P = 2l + 2w. Substitute P = 40: 2(w + 6) + 2w = 40.'
+      - 'Step 3: Solve the equation: 2w + 12 + 2w = 40.'
+      - 'Step 4: Combine terms: 4w + 12 = 40. Subtract 12 from both sides: 4w = 28.'
+      - 'Step 5: Calculate w: w = 7. Calculate l: l = 7 + 6 = 13.'
+      - 'Step 6: State the final dimensions. Width is 7 m and length is 13 m.'
+      id: q20-4
+      questionGroup: q20
+    - problemText: Two angles are complementary. If the difference between the two angles is 25°, find the measure of both
+        angles.
+      mathTool: null
+      finalAnswer: The angles are 32.5° and 57.5°.
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Let x be the measure of the smaller angle in degrees (°). The larger angle is x + 25.'
+      - 'Step 2: Apply the complementary angle relationship (angles sum to 90°): x + (x + 25) = 90.'
+      - 'Step 3: Solve the equation: 2x + 25 = 90.'
+      - 'Step 4: Isolate x: 2x = 90 - 25, so 2x = 65.'
+      - 'Step 5: Calculate x: x = 65 / 2 = 32.5.'
+      - 'Step 6: Calculate the second angle: 32.5 + 25 = 57.5. The angles are 32.5° and 57.5°.'
+      id: q20-5
+      questionGroup: q20

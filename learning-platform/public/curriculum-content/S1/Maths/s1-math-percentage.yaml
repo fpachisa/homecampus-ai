@@ -1,0 +1,2305 @@
+# S1 Math Percentage - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: percentage-node-01
+  nodeNumber: 1
+  title: Understanding Percentage - What Does % Mean?
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: A store advertises a '40% Off Sale'. What does the percentage symbol (%) mean in general, and specifically
+        what does 40% represent in this sale?
+      avatarIntro: Welcome! Understanding percentages starts with knowing what the symbol actually means. Think about how
+        percentages relate to the number 100.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: 40
+            label: 40%
+            color: blue
+            size: 8
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: false
+      finalAnswer: The percentage symbol (%) means 'out of 100' or 'per hundred'. 40% means that 40 out of every 100 parts
+        of the original price are being removed as a discount.
+      stepByStepGuideline:
+      - Recall the fundamental definition of the percentage symbol (%). It means 'per hundred'.
+      - 'Apply this definition to the specific value: 40% means 40 per hundred.'
+      - Explain what 40 per hundred means in the context of a sale (40 units of discount for every 100 units of cost).
+      id: q1-1
+      questionGroup: q1
+    - problemText: Your tablet screen shows the battery icon with the number 75%. Explain what this reading means about the
+        tablet's battery life, focusing on the proportion.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: 75
+            label: 75%
+            color: blue
+            size: 8
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: false
+      finalAnswer: The 75% reading means that 75 out of every 100 parts of the tablet's total battery capacity are currently
+        charged and available for use.
+      stepByStepGuideline:
+      - Identify the percentage value (75%).
+      - Recognize that the total battery capacity represents 100%.
+      - 'Formulate the explanation using the ''out of 100'' concept applied to the context: 75 out of 100 parts are charged.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: The morning weather forecast states there is a '30% chance of rain'. Identify the percentage and explain
+        what it communicates to the public about the likelihood of precipitation.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: 30
+            label: 30%
+            color: blue
+            size: 8
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: false
+      finalAnswer: The percentage is 30%. It communicates that if the current weather conditions were repeated 100 times,
+        rain would be expected to fall in 30 of those instances. It represents 30 possibilities of rain out of 100 total possibilities.
+      stepByStepGuideline:
+      - Identify the specific percentage value (30%).
+      - Understand that 'chance of rain' is a probability based on 100 possible scenarios.
+      - 'Translate the percentage into a proportion: 30 out of 100.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: A football team has a 65% win rate this season. Explain what this statistic means in terms of proportion
+        and the team's performance relative to 100 games.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: 65
+            label: 65%
+            color: blue
+            size: 8
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: false
+      finalAnswer: A 65% win rate means that for every 100 games the team plays, they win 65 of them. It represents the proportion
+        of games won compared to the total number of games played.
+      stepByStepGuideline:
+      - Identify the percentage (65%).
+      - Determine what the total reference amount is (100 games).
+      - 'Explain the proportion: 65 wins out of 100 games played.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: A demographic report states that 80% of the country's population resides in urban areas. Explain the meaning
+        of 80% in this context using the phrase 'out of 100'.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: 80
+            label: 80%
+            color: blue
+            size: 8
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: false
+      finalAnswer: 80% means that 80 out of every 100 people in that country live in urban areas. It is the proportion of
+        the population living in cities compared to the total population.
+      stepByStepGuideline:
+      - State the definition of the percentage 80% (80 per hundred).
+      - Relate 'per hundred' to the context of population.
+      - Conclude that it means 80 people (or units of population) out of every 100 total people reside in urban areas.
+      id: q1-5
+      questionGroup: q1
+- id: percentage-node-02
+  nodeNumber: 2
+  title: Percentage as Proportion - Understanding 100% as the Whole
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: A student takes a short quiz that is graded out of a maximum of 100 marks. If the student scores 85 marks,
+        what percentage score did they achieve?
+      avatarIntro: Welcome! Understanding how percentages relate to a whole of 100 is crucial for everyday math. Let's start
+        with a simple calculation.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Score
+          - Remaining
+          values:
+          - 85
+          - 15
+          xLabel: Marks
+          yLabel: Count
+          title: Quiz Results (Total = 100 Marks)
+          showValues: true
+          highlightIndex: 0
+          orientation: vertical
+      finalAnswer: 85%
+      stepByStepGuideline:
+      - When the whole amount is 100, the part taken directly represents the percentage.
+      - The student scored 85 marks out of 100.
+      - Therefore, the percentage score is 85/100, which equals 85%.
+      id: q2-1
+      questionGroup: q2
+    - problemText: A manufacturer produces a batch of 100 computer chips. During quality control, it is found that 20% of
+        the chips are defective. If 100% represents the entire batch, what percentage of the chips are good (not defective)?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Defective
+          - Good
+          values:
+          - 20
+          - 80
+          xLabel: Quality Status
+          yLabel: Number of Items
+          title: Batch Quality (Total = 100 Chips)
+          showValues: true
+          highlightIndex: 1
+          orientation: vertical
+      finalAnswer: 80%
+      stepByStepGuideline:
+      - The total batch represents the whole, which is 100%.
+      - The good chips and the defective chips must sum up to the whole (100%).
+      - Percentage of Good Chips = 100% - Percentage of Defective Chips.
+      - Percentage of Good Chips = 100% - 20% = 80%.
+      id: q2-2
+      questionGroup: q2
+    - problemText: A class consists of 100 students. The bar chart below shows the distribution of boys and girls in the class.
+        What percentage of the students in the class are boys?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Girls
+          - Boys
+          values:
+          - 40
+          - 60
+          xLabel: Category
+          yLabel: Number of Students
+          title: Class Composition (Total = 100 Students)
+          showValues: true
+          highlightIndex: 1
+          orientation: vertical
+      finalAnswer: 60%
+      stepByStepGuideline:
+      - Identify the total number of students, which is 100 (representing 100%).
+      - Read the number of boys from the bar chart, which is 60.
+      - Since the total is 100, the number of boys directly translates to the percentage.
+      - Percentage of boys = (60 / 100) * 100% = 60%.
+      id: q2-3
+      questionGroup: q2
+    - problemText: A survey asked 100 people about their favourite hobby. 70 respondents stated that reading was their favourite
+        hobby. What percentage of the survey respondents chose reading?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Reading
+          - Others
+          values:
+          - 70
+          - 30
+          xLabel: Hobby Choice
+          yLabel: Respondents
+          title: Survey Results (Total = 100 Respondents)
+          showValues: true
+          highlightIndex: 0
+          orientation: vertical
+      finalAnswer: 70%
+      stepByStepGuideline:
+      - The total number of respondents is 100, which represents the whole (100%).
+      - The number of people who chose reading is 70.
+      - To find the percentage, calculate (Part / Whole) x 100%.
+      - (70 / 100) x 100% = 70%.
+      id: q2-4
+      questionGroup: q2
+    - problemText: A large industrial container has a maximum capacity of 100 liters. The bar chart shows the current volume
+        of liquid in the container compared to its empty space. What percentage of the container's capacity is currently empty?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Filled
+          - Empty
+          values:
+          - 35
+          - 65
+          xLabel: State
+          yLabel: Volume (Liters)
+          title: Container Status (Total = 100 Liters)
+          showValues: true
+          highlightIndex: 1
+          orientation: vertical
+      finalAnswer: 65%
+      stepByStepGuideline:
+      - The total capacity of the container is 100 liters, representing 100%.
+      - Look at the bar chart to find the volume of the empty space, which is 65 liters.
+      - Since the total capacity is 100, 65 liters out of 100 liters is 65/100.
+      - This proportion corresponds to 65%.
+      id: q2-5
+      questionGroup: q2
+- id: percentage-node-03
+  nodeNumber: 3
+  title: Percentages Greater Than 100% and Less Than 1%
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: A factory reported that its production output for the third quarter reached 175% of the output from the
+        first quarter. Explain what this percentage means in terms of the factory's growth relative to the first quarter.
+      avatarIntro: It's important to know that percentages can go beyond 100%. Let's look at what big growth numbers mean
+        in real life.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 200
+          step: 25
+          points:
+          - value: 100
+            label: Original (100%)
+            color: blue
+            size: 8
+          - value: 175
+            label: New Output (175%)
+            color: red
+            size: 8
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+      finalAnswer: The new output is 1.75 times the amount produced in the first quarter, or the factory produced 75% more
+        than the first quarter's amount.
+      stepByStepGuideline:
+      - Understand that 100% represents the baseline (the first quarter's output).
+      - 'Subtract the baseline from the new percentage: 175% - 100% = 75%. This is the amount of growth.'
+      - 'Convert the percentage to a multiplier: 175% = 1.75.'
+      - The interpretation is that the factory produced 75% more, or 1.75 times, the original output.
+      id: q3-1
+      questionGroup: q3
+    - problemText: A scientific measurement system requires an extremely high degree of precision. The acceptable error margin
+        for the experiment is 0.4%. Explain why 0.4% is a valid percentage and describe what it means in terms of parts per
+        100.
+      mathTool: null
+      finalAnswer: 0.4% is a valid percentage because percentages can be less than 1. It means that the error is 0.4 parts
+        for every 100 parts measured, indicating a very small proportion of error.
+      stepByStepGuideline:
+      - Recall that percentage means 'out of 100'.
+      - Recognize that percentages do not have to be whole numbers or greater than 1.
+      - Interpret 0.4% as 0.4/100.
+      - Conclude that 0.4% represents a fraction of one whole unit within a base of 100.
+      id: q3-2
+      questionGroup: q3
+    - problemText: The population of Townsville has doubled over the last decade, reaching 200% of its original size. If the
+        original population was 50,000 people, how many people live there now?
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 250
+          step: 50
+          points:
+          - value: 100
+            label: Original (100%)
+            color: blue
+            size: 8
+          - value: 200
+            label: New Population (200%)
+            color: red
+            size: 8
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+      finalAnswer: 100,000 people
+      stepByStepGuideline:
+      - 'Identify the percentage increase: 200%.'
+      - 'Convert the percentage to a decimal multiplier: 200% = 2.0.'
+      - 'Multiply the original population by the multiplier: 50,000 * 2.0.'
+      - 'Calculate the final population: 100,000.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: A savings account offers a high-yield monthly interest rate of 0.75%. If someone mistakenly wrote this
+        as 75%, how would the true rate (0.75%) compare to the mistaken rate (75%)?
+      mathTool: null
+      finalAnswer: 0.75% is significantly smaller than 75%. 0.75% means 0.75 cents earned per $100 saved, while 75% would
+        mean $75 earned per $100 saved, which is 100 times larger.
+      stepByStepGuideline:
+      - Define 0.75% as 0.0075 in decimal form.
+      - Define 75% as 0.75 in decimal form.
+      - Compare the two values (0.0075 vs 0.75) to demonstrate that the decimal placement is critical.
+      - Explain that percentages less than 1% represent very small proportional amounts.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Due to changing supply chain costs, the price of a specialized chemical increased to 120% of its price
+        last year. If the price last year was $250, calculate the new price.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 150
+          step: 25
+          points:
+          - value: 100
+            label: Baseline (100%)
+            color: blue
+            size: 8
+          - value: 120
+            label: New Price (120%)
+            color: red
+            size: 8
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+      finalAnswer: $300
+      stepByStepGuideline:
+      - 'Convert the new percentage (120%) to a decimal multiplier: 120% = 1.2.'
+      - 'Multiply the original price by the multiplier: $250 * 1.2.'
+      - Alternatively, find the increase amount (20% of $250 = $50).
+      - 'Add the increase amount to the original price: $250 + $50 = $300.'
+      id: q3-5
+      questionGroup: q3
+- id: percentage-node-04
+  nodeNumber: 4
+  title: Converting Percentage to Fraction (Simplified)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A chef needs 60% of a mixture to consist of flour. Convert 60% to a fraction in its simplest form.
+      avatarIntro: Converting percentages to fractions is a fundamental skill in math! Remember, percentage means 'out of
+        100'.
+      mathTool: null
+      finalAnswer: 3/5
+      stepByStepGuideline:
+      - 'Write the percentage as a fraction over 100: 60% = 60/100.'
+      - Simplify the fraction by finding the greatest common divisor (GCD) of 60 and 100, which is 20.
+      - 'Divide the numerator and the denominator by 20: 60 ÷ 20 = 3 and 100 ÷ 20 = 5.'
+      - The simplified fraction is 3/5.
+      id: q4-1
+      questionGroup: q4
+    - problemText: An investor calculated that a stock yielded a 37.5% return over five years. Express 37.5% as a simplified
+        fraction.
+      mathTool: null
+      finalAnswer: 3/8
+      stepByStepGuideline:
+      - 'Write the decimal percentage as a fraction over 100: 37.5/100.'
+      - 'To eliminate the decimal, multiply the numerator and denominator by 10: 375/1000.'
+      - Simplify the fraction by dividing the numerator and denominator by their greatest common divisor, which is 125.
+      - 375 ÷ 125 = 3 and 1000 ÷ 125 = 8.
+      - The simplified fraction is 3/8.
+      id: q4-2
+      questionGroup: q4
+    - problemText: In a recent poll regarding environmental policy, 70% of respondents agreed with the new regulations. Write
+        70% as a fraction in lowest terms.
+      mathTool: null
+      finalAnswer: 7/10
+      stepByStepGuideline:
+      - 'Write the percentage as a fraction over 100: 70% = 70/100.'
+      - Simplify the fraction by dividing the numerator and the denominator by 10.
+      - 70 ÷ 10 = 7 and 100 ÷ 10 = 10.
+      - The simplified fraction is 7/10.
+      id: q4-3
+      questionGroup: q4
+    - problemText: A student allocates approximately 33.33% of their study time to Mathematics. Convert this percentage (which
+        represents a recurring decimal) to a fraction in simplest form.
+      mathTool: null
+      finalAnswer: 1/3
+      stepByStepGuideline:
+      - Recognize that 33.33% is a common approximation for the recurring decimal 33 1/3 %.
+      - 'Convert the mixed fraction percentage to an improper fraction percentage: 33 1/3 % = (100/3)%.'
+      - 'To convert this to a fraction, divide by 100: (100/3) / 100.'
+      - 'Simplify the expression: (100/3) * (1/100) = 1/3.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: A chemical analysis shows that a sample is 62.5% pure carbon. Express 62.5% as a simplified fraction.
+      mathTool: null
+      finalAnswer: 5/8
+      stepByStepGuideline:
+      - 'Write the percentage as a fraction over 100: 62.5/100.'
+      - 'Multiply the numerator and denominator by 10 to clear the decimal: 625/1000.'
+      - Simplify the fraction by dividing the numerator and denominator by their greatest common divisor, which is 125.
+      - 625 ÷ 125 = 5 and 1000 ÷ 125 = 8.
+      - The simplified fraction is 5/8.
+      id: q4-5
+      questionGroup: q4
+- id: percentage-node-05
+  nodeNumber: 5
+  title: Converting Percentage to Decimal
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A highly precise engineering schematic specifies that the acceptable margin of error for the diameter of
+        a certain component is 8%. Convert 8% into a decimal value.
+      avatarIntro: Converting percentages to decimals is essential for calculations. Remember, the key is understanding how
+        the decimal point moves when you divide by 100.
+      mathTool: null
+      finalAnswer: '0.08'
+      stepByStepGuideline:
+      - To convert a percentage to a decimal, divide the percentage value by 100.
+      - 'Calculate: 8 ÷ 100.'
+      - 'Alternatively, move the decimal point two places to the left: 8.0 → 0.08.'
+      - The decimal equivalent of 8% is 0.08.
+      id: q5-1
+      questionGroup: q5
+    - problemText: A new business report indicates that Company X currently holds 50% of the regional market share for specialized
+        widgets. Express 50% as a decimal.
+      mathTool: null
+      finalAnswer: '0.5'
+      stepByStepGuideline:
+      - To convert 50% to a decimal, divide 50 by 100.
+      - 50 ÷ 100 = 0.5.
+      - The decimal equivalent is 0.5.
+      id: q5-2
+      questionGroup: q5
+    - problemText: To prepare a larger batch for a catering event, a chef decides to increase all ingredient quantities by
+        150% of the original recipe size. Write 150% as a decimal.
+      mathTool: null
+      finalAnswer: '1.5'
+      stepByStepGuideline:
+      - To convert 150% to a decimal, divide the percentage by 100.
+      - 150 ÷ 100 = 1.5.
+      - The decimal equivalent of 150% is 1.5.
+      id: q5-3
+      questionGroup: q5
+    - problemText: A laboratory solution needs to maintain a concentration of 12.5% saline. Convert this percentage concentration,
+        12.5%, into its corresponding decimal form.
+      mathTool: null
+      finalAnswer: '0.125'
+      stepByStepGuideline:
+      - To convert 12.5% to a decimal, divide 12.5 by 100.
+      - 12.5 ÷ 100 = 0.125.
+      - The decimal equivalent is 0.125.
+      id: q5-4
+      questionGroup: q5
+    - problemText: Over the last year, a specific technology stock experienced an appreciation equal to 200% of its initial
+        value. Convert 200% to a decimal.
+      mathTool: null
+      finalAnswer: '2.0'
+      stepByStepGuideline:
+      - To convert 200% to a decimal, divide the percentage value by 100.
+      - 200 ÷ 100 = 2.
+      - The decimal equivalent of 200% is 2 or 2.0.
+      id: q5-5
+      questionGroup: q5
+- id: percentage-node-06
+  nodeNumber: 6
+  title: Converting Fraction to Percentage
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A baker used $3/4$ of a bag of sugar for a large cake batch. Convert the fraction $3/4$ to a percentage.
+      avatarIntro: Mastering conversions is key in mathematics! Let's start by changing this common fraction into a percentage.
+      finalAnswer: 75%
+      stepByStepGuideline:
+      - To convert the fraction $3/4$ to a percentage, multiply the fraction by $100\%$.
+      - 'Calculation: $(3/4) \times 100\%$.'
+      - $(3 \times 100) / 4 = 300 / 4 = 75$.
+      - The percentage is $75\%$.
+      - 'Final Answer: 75%'
+      id: q6-1
+      questionGroup: q6
+    - problemText: Due to unexpected demand, a construction project required $5/4$ times the originally estimated amount of
+        cement. Express this fraction, $5/4$, as a percentage.
+      finalAnswer: 125%
+      stepByStepGuideline:
+      - To convert the improper fraction $5/4$ to a percentage, multiply the fraction by $100\%$.
+      - 'Calculation: $(5/4) \times 100\%$.'
+      - $(5 \times 100) / 4 = 500 / 4 = 125$.
+      - Since the fraction is improper (greater than 1), the percentage is greater than $100\%$.
+      - 'Final Answer: 125%'
+      id: q6-2
+      questionGroup: q6
+    - problemText: In a local football league, Team A won $7/20$ of their matches this season. What percentage of matches
+        did Team A win?
+      finalAnswer: 35%
+      stepByStepGuideline:
+      - To convert the fraction $7/20$ to a percentage, multiply the fraction by $100\%$.
+      - 'Calculation: $(7/20) \times 100\%$.'
+      - 'Simplify the calculation: $100 / 20 = 5$.'
+      - Multiply $7 \times 5 = 35$.
+      - The percentage is $35\%$.
+      - 'Final Answer: 35%'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Three colleagues agreed to split a bonus equally. If one colleague receives $1/3$ of the total bonus, what
+        percentage of the bonus did they receive? Express your answer rounded to two decimal places.
+      finalAnswer: 33.33%
+      stepByStepGuideline:
+      - To convert the fraction $1/3$ to a percentage, multiply the fraction by $100\%$.
+      - 'Calculation: $(1/3) \times 100\%$.'
+      - 'Dividing $100$ by $3$ gives a recurring decimal: $33.3333...$'
+      - Rounding to two decimal places, the percentage is $33.33\%$.
+      - 'Final Answer: 33.33%'
+      id: q6-4
+      questionGroup: q6
+    - problemText: An antique collector determined that the current market value of a rare coin is $1/8$ of its value five
+        years ago. Convert the fraction $1/8$ to a percentage.
+      finalAnswer: 12.5%
+      stepByStepGuideline:
+      - To convert the fraction $1/8$ to a percentage, multiply the fraction by $100\%$.
+      - 'Calculation: $(1/8) \times 100\%$.'
+      - Divide $100$ by $8$. $100 / 8 = 12.5$.
+      - The percentage is $12.5\%$.
+      - 'Final Answer: 12.5%'
+      id: q6-5
+      questionGroup: q6
+- id: percentage-node-07
+  nodeNumber: 7
+  title: Converting Decimal to Percentage
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A quality control report for a packaging plant showed that the defect rate was 0.05 of the total units
+        produced. Convert this decimal value, 0.05, into a percentage.
+      avatarIntro: It's time to practice converting decimals! Remember, percentages are just decimals multiplied by 100, showing
+        a value out of a hundred.
+      mathTool: null
+      finalAnswer: 5%
+      stepByStepGuideline:
+      - To convert a decimal to a percentage, multiply the decimal by 100.
+      - 'Calculation: 0.05 × 100 = 5.'
+      - 'Ensure the percentage symbol is included in the final answer: 5%.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: In a recent assessment, a student achieved a score equivalent to 0.75 of the maximum possible points. Express
+        this student's score as a percentage.
+      mathTool: null
+      finalAnswer: 75%
+      stepByStepGuideline:
+      - To convert the decimal score 0.75 to a percentage, multiply the decimal by 100.
+      - 'Calculation: 0.75 × 100 = 75.'
+      - The percentage score is 75%.
+      id: q7-2
+      questionGroup: q7
+    - problemText: Due to a strong economic forecast, the projected annual capital expenditure budget for next year is 1.5
+        times the budget from the previous year. Convert the multiplier 1.5 to a percentage.
+      mathTool: null
+      finalAnswer: 150%
+      stepByStepGuideline:
+      - To convert the decimal 1.5 to a percentage, multiply by 100 (or move the decimal point two places to the right).
+      - 'Calculation: 1.5 × 100 = 150.'
+      - The result is 150%.
+      id: q7-3
+      questionGroup: q7
+    - problemText: A specialized nutrient solution requires Ingredient Z to make up 0.125 of the total volume. Convert the
+        decimal 0.125 to a percentage.
+      mathTool: null
+      finalAnswer: 12.5%
+      stepByStepGuideline:
+      - To convert the decimal 0.125 to a percentage, multiply by 100.
+      - 'Calculation: 0.125 × 100 = 12.5.'
+      - The percentage volume is 12.5%.
+      id: q7-4
+      questionGroup: q7
+    - problemText: During an inventory check, a warehouse confirmed that the current stock level of Product A is exactly 1.0
+        times the safety minimum requirement. Convert the decimal 1.0 to a percentage.
+      mathTool: null
+      finalAnswer: 100%
+      stepByStepGuideline:
+      - To convert the decimal 1.0 to a percentage, multiply by 100.
+      - 'Calculation: 1.0 × 100 = 100.'
+      - The percentage value is 100%.
+      id: q7-5
+      questionGroup: q7
+- id: percentage-node-08
+  nodeNumber: 8
+  title: Comparing Quantities Using Percentages
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: A company is reviewing sales performance across three regions. Region A achieved 0.7 of its quarterly goal,
+        Region B achieved 3/5 of its goal, and Region C achieved 65% of its goal. Arrange these performance measures in ascending
+        order.
+      avatarIntro: It's important to convert all measures to a common format, like percentages, before you start comparing
+        them.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: variable
+            label: variable
+            color: blue
+            size: 7
+          - value: variable
+            label: variable
+            color: green
+            size: 7
+          - value: variable
+            label: variable
+            color: red
+            size: 7
+          showTickMarks: true
+          showTickLabels: true
+      finalAnswer: 3/5, 65%, 0.7
+      stepByStepGuideline:
+      - 'Convert all values to percentages:'
+      - 0.7 = 70%
+      - 3/5 = 60%
+      - 65% = 65%
+      - 'Compare the percentages: 60% < 65% < 70%.'
+      - 'Arrange the original quantities in ascending order: 3/5, 65%, 0.7.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'Three competing stores offer different discounts on the same product: Discount X is 0.85 off the original
+        price, Discount Y is 4/5 off the original price, and Discount Z is 82% off the original price. Arrange these discounts
+        in descending order (largest discount first).'
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: variable
+            label: variable
+            color: blue
+            size: 7
+          - value: variable
+            label: variable
+            color: green
+            size: 7
+          - value: variable
+            label: variable
+            color: red
+            size: 7
+          showTickMarks: true
+          showTickLabels: true
+      finalAnswer: 0.85, 82%, 4/5
+      stepByStepGuideline:
+      - 'Convert all values to percentages:'
+      - 0.85 = 85%
+      - 4/5 = 80%
+      - 82% = 82%
+      - 'Compare the percentages: 85% > 82% > 80%.'
+      - 'Arrange the original quantities in descending order: 0.85, 82%, 4/5.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: A nutritionist compares the protein content of three different food sources. Source A has 0.6 protein by
+        weight, Source B has 5/8 protein by weight, and Source C has 58% protein by weight. Which source has the smallest
+        protein content?
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: variable
+            label: variable
+            color: blue
+            size: 7
+          - value: variable
+            label: variable
+            color: green
+            size: 7
+          - value: variable
+            label: variable
+            color: red
+            size: 7
+          showTickMarks: true
+          showTickLabels: true
+      finalAnswer: 58%
+      stepByStepGuideline:
+      - 'Convert all values to percentages:'
+      - 0.6 = 60%
+      - 5/8 = 62.5%
+      - 58% = 58%
+      - The percentages are 60%, 62.5%, and 58%.
+      - The smallest percentage is 58%, corresponding to the original value 58%.
+      id: q8-3
+      questionGroup: q8
+    - problemText: A regional energy grid relies on three sources of electricity generation. Solar accounts for 1/4 of total
+        power, Wind accounts for 0.3 of total power, and Hydro accounts for 28% of total power. Which source contributes the
+        largest proportion of total power?
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: variable
+            label: variable
+            color: blue
+            size: 7
+          - value: variable
+            label: variable
+            color: green
+            size: 7
+          - value: variable
+            label: variable
+            color: red
+            size: 7
+          showTickMarks: true
+          showTickLabels: true
+      finalAnswer: '0.3'
+      stepByStepGuideline:
+      - 'Convert all values to percentages:'
+      - 1/4 = 25%
+      - 0.3 = 30%
+      - 28% = 28%
+      - 'Compare the percentages: 30% is the largest.'
+      - The largest original quantity is 0.3.
+      id: q8-4
+      questionGroup: q8
+    - problemText: A public opinion poll reported the results of three different questions regarding local policy. Policy
+        A received 0.45 agreement, Policy B received 9/20 agreement, and Policy C received 44% agreement. Based on these results,
+        are any of the agreement levels exactly equal?
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 100
+          step: 10
+          points:
+          - value: variable
+            label: variable
+            color: blue
+            size: 7
+          - value: variable
+            label: variable
+            color: green
+            size: 7
+          - value: variable
+            label: variable
+            color: red
+            size: 7
+          showTickMarks: true
+          showTickLabels: true
+      finalAnswer: 0.45 and 9/20
+      stepByStepGuideline:
+      - 'Convert all values to percentages:'
+      - 0.45 = 45%
+      - 9/20 = 45%
+      - 44% = 44%
+      - 'Compare the percentages: 45% and 45% are equal.'
+      - The original quantities 0.45 and 9/20 are equal.
+      id: q8-5
+      questionGroup: q8
+- id: percentage-node-09
+  nodeNumber: 9
+  title: Basic Percentage Calculation - Expressing x as % of y
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A telemarketer contacted 50 potential customers and successfully made 30 sales. What percentage of customers
+        contacted resulted in a sale?
+      avatarIntro: Great job focusing on application problems! Remember to identify the part (numerator) and the whole (denominator)
+        before calculating the percentage.
+      finalAnswer: 60%
+      stepByStepGuideline:
+      - 'Identify the part (successful sales) and the whole (total customers contacted): Part = 30, Whole = 50.'
+      - 'Set up the calculation as a fraction: (30 / 50).'
+      - 'Multiply the fraction by 100% to express the result as a percentage: (30 / 50) × 100%.'
+      - 'Calculate the final percentage: 0.6 × 100% = 60%.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: During a history quiz, Liam earned 72 marks out of a possible total of 80 marks. What percentage score
+        did Liam achieve?
+      finalAnswer: 90%
+      stepByStepGuideline:
+      - 'Identify the score achieved (part) and the maximum possible score (whole): Part = 72, Whole = 80.'
+      - 'Set up the calculation: (Part / Whole) × 100%.'
+      - 'Substitute the values: (72 / 80) × 100%.'
+      - 'Calculate the final percentage: 0.9 × 100% = 90%.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: A factory produced 240 circuit boards in one shift. Quality control found that 156 of these boards were
+        defect-free. What percentage of the circuit boards were defect-free?
+      finalAnswer: 65%
+      stepByStepGuideline:
+      - 'Identify the number of defect-free boards (part) and the total number produced (whole): Part = 156, Whole = 240.'
+      - 'Form the fraction and multiply by 100%: (156 / 240) × 100%.'
+      - 'Calculate the decimal value of the fraction: 156 ÷ 240 = 0.65.'
+      - 'Convert the decimal to a percentage: 0.65 × 100% = 65%.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: A mandatory training session was scheduled for 140 employees. If only 35 employees attended the session,
+        what percentage of employees were present?
+      finalAnswer: 25%
+      stepByStepGuideline:
+      - 'Identify the number present (part) and the total scheduled (whole): Part = 35, Whole = 140.'
+      - 'Use the percentage formula: (Part / Whole) × 100%.'
+      - 'Substitute the numbers: (35 / 140) × 100%.'
+      - 'Calculate the final percentage: 0.25 × 100% = 25%.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: In a survey of 120 residents regarding local infrastructure, 45 residents indicated they were satisfied
+        with the current road conditions. What percentage of residents surveyed were satisfied?
+      finalAnswer: 37.5%
+      stepByStepGuideline:
+      - 'Identify the number satisfied (part) and the total surveyed (whole): Part = 45, Whole = 120.'
+      - 'Set up the calculation: (45 / 120) × 100%.'
+      - 'Calculate the decimal: 45 ÷ 120 = 0.375.'
+      - 'Convert the decimal to a percentage: 0.375 × 100% = 37.5%.'
+      id: q9-5
+      questionGroup: q9
+- id: percentage-node-10
+  nodeNumber: 10
+  title: Multi-Part Percentage Problems and Complements
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: In a secondary school class of 160 students, 90 are girls. What percentage of the students are boys?
+      avatarIntro: This type of problem requires you to find the complementary part first in terms of count, and then convert
+        that count into a percentage of the total.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Girls
+          - Boys
+          values:
+          - 56.25
+          - 43.75
+          xLabel: Student Group
+          yLabel: Percentage (%)
+          title: Class Gender Breakdown
+          showValues: true
+          highlightIndex: 1
+      finalAnswer: 43.75%
+      stepByStepGuideline:
+      - 'Step 1: Calculate the number of boys. Total students (160) - Girls (90) = 70 boys.'
+      - 'Step 2: Calculate the percentage of boys. (Number of boys / Total students) × 100%.'
+      - 'Step 3: (70 / 160) × 100% = 0.4375 × 100% = 43.75%.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: A large corporate training session was mandatory for 180 employees. If 153 employees attended the session,
+        what percentage of the employees were absent?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Present
+          - Absent
+          values:
+          - 85
+          - 15
+          xLabel: Attendance Status
+          yLabel: Percentage (%)
+          title: Employee Attendance Breakdown
+          showValues: true
+          highlightIndex: 1
+      finalAnswer: 15.00%
+      stepByStepGuideline:
+      - 'Step 1: Calculate the number of absent employees. Total employees (180) - Present employees (153) = 27 absent employees.'
+      - 'Step 2: Calculate the percentage of absent employees. (Number absent / Total employees) × 100%.'
+      - 'Step 3: (27 / 180) × 100% = 0.15 × 100% = 15.00%.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: A digital hard drive shows that 65% of its total capacity is currently used for files. What percentage
+        of the hard drive capacity remains free?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Storage Used
+          - Storage Free
+          values:
+          - 65
+          - 35
+          xLabel: Capacity Status
+          yLabel: Percentage (%)
+          title: Hard Drive Capacity Composition
+          showValues: true
+          highlightIndex: 1
+      finalAnswer: 35%
+      stepByStepGuideline:
+      - 'Step 1: Recognize that the total capacity represents 100%.'
+      - 'Step 2: Calculate the complementary percentage (free space) by subtracting the used percentage from 100%.'
+      - 'Step 3: 100% - 65% = 35%.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: In a public opinion poll regarding a new city regulation, 42% of respondents said they agreed with the
+        regulation, 28% said they disagreed, and the remainder were undecided. What percentage of respondents were undecided?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Said Yes
+          - Said No
+          - Undecided
+          values:
+          - 42
+          - 28
+          - 30
+          xLabel: Response Category
+          yLabel: Percentage (%)
+          title: Regulation Poll Results
+          showValues: true
+          highlightIndex: 2
+      finalAnswer: 30%
+      stepByStepGuideline:
+      - 'Step 1: Sum the known percentages (Agreed + Disagreed). 42% + 28% = 70%.'
+      - 'Step 2: Recognize that all parts must sum to 100%.'
+      - 'Step 3: Calculate the percentage undecided by subtracting the summed percentage from 100%. 100% - 70% = 30%.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: In a recent student council election, Candidate A received 35% of the total votes and Candidate B received
+        40% of the total votes. The remaining voters abstained. What percentage of voters abstained?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Candidate A
+          - Candidate B
+          - Abstained
+          values:
+          - 35
+          - 40
+          - 25
+          xLabel: Voting Outcome
+          yLabel: Percentage (%)
+          title: Student Council Election Results
+          showValues: true
+          highlightIndex: 2
+      finalAnswer: 25%
+      stepByStepGuideline:
+      - 'Step 1: Sum the percentages received by the candidates. 35% (A) + 40% (B) = 75%.'
+      - 'Step 2: The percentage of abstained votes is the remainder needed to reach 100%.'
+      - 'Step 3: Calculate the abstained percentage: 100% - 75% = 25%.'
+      id: q10-5
+      questionGroup: q10
+- id: percentage-node-11
+  nodeNumber: 11
+  title: Unit Conversion Before Percentage Calculation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A package has a total weight of 2.5 kg. If the packaging material itself weighs 500 g, what percentage
+        of the total package weight is the packaging material? (Use 1 kg = 1000 g)
+      avatarIntro: Welcome! Remember that to calculate a percentage accurately, the quantities you are comparing must be in
+        the same unit. Start by converting the heavier unit to the lighter unit.
+      mathTool: null
+      finalAnswer: 20%
+      stepByStepGuideline:
+      - 'Identify the quantities: Part = 500 g, Whole = 2.5 kg. Since the units are different (g and kg), conversion is required.'
+      - 'Convert the whole quantity (2.5 kg) to grams: 2.5 kg × 1000 g/kg = 2500 g.'
+      - 'Calculate the percentage: (Part / Whole) × 100% = (500 g / 2500 g) × 100%.'
+      - 'Simplify the calculation: 0.2 × 100% = 20%.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A carpenter buys a wooden plank that is 2 meters long. During a project, 25 cm of the plank is wasted due
+        to incorrect cuts. What percentage of the original plank length was wasted? (Use 1 m = 100 cm)
+      mathTool: null
+      finalAnswer: 12.5%
+      stepByStepGuideline:
+      - 'Identify the quantities: Part = 25 cm, Whole = 2 m. Convert the whole quantity (2 m) to centimeters.'
+      - 'Convert 2 m to cm: 2 m × 100 cm/m = 200 cm.'
+      - 'Calculate the percentage: (Wasted length / Original length) × 100% = (25 cm / 200 cm) × 100%.'
+      - 'Simplify the calculation: 0.125 × 100% = 12.5%.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: A factory mandates a total machine maintenance duration of 3 hours. If the team takes 45 minutes longer
+        than this duration, what percentage of the mandated duration was the extra time taken? (Use 1 hour = 60 minutes)
+      mathTool: null
+      finalAnswer: 25%
+      stepByStepGuideline:
+      - 'Identify the quantities: Extra time (Part) = 45 minutes, Mandated duration (Whole) = 3 hours. Convert the mandated
+        duration to minutes.'
+      - 'Convert 3 hours to minutes: 3 hours × 60 minutes/hour = 180 minutes.'
+      - 'Calculate the percentage: (Extra time / Mandated duration) × 100% = (45 minutes / 180 minutes) × 100%.'
+      - 'Simplify the calculation: 0.25 × 100% = 25%.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: A chef prepares a large batch of stew using 4 kg of meat in total. If 1200 g of the meat used is beef,
+        what percentage of the total meat is beef? (Use 1 kg = 1000 g)
+      mathTool: null
+      finalAnswer: 30%
+      stepByStepGuideline:
+      - 'Identify the quantities: Part = 1200 g, Whole = 4 kg. Convert the whole quantity (4 kg) to grams.'
+      - 'Convert 4 kg to grams: 4 kg × 1000 g/kg = 4000 g.'
+      - 'Calculate the percentage: (Weight of beef / Total weight) × 100% = (1200 g / 4000 g) × 100%.'
+      - 'Simplify the calculation: 0.3 × 100% = 30%.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: An electronics store receives a spool of network cable 4 meters long. A customer requests 80 cm of this
+        cable. What percentage of the entire spool of cable did the customer purchase? (Use 1 m = 100 cm)
+      mathTool: null
+      finalAnswer: 20%
+      stepByStepGuideline:
+      - 'Identify the quantities: Part = 80 cm, Whole = 4 meters. Convert the whole quantity (4 meters) to centimeters.'
+      - 'Convert 4 m to cm: 4 m × 100 cm/m = 400 cm.'
+      - 'Calculate the percentage: (Purchased length / Total length) × 100% = (80 cm / 400 cm) × 100%.'
+      - 'Simplify the calculation: 0.2 × 100% = 20%.'
+      id: q11-5
+      questionGroup: q11
+- id: percentage-node-12
+  nodeNumber: 12
+  title: Comparing Using Percentage - Different Bases Method
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: In a marksmanship competition, Shooter A hit the target 18 times out of 25 shots. Shooter B hit the target
+        15 times out of 20 shots. Calculate the accuracy percentage for both shooters and determine who performed better.
+      avatarIntro: Comparing performances when the total number of attempts is different requires using percentages. Let's
+        find out who had the better accuracy!
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Shooter A Accuracy
+          - Shooter B Accuracy
+          values:
+          - 72
+          - 75
+          xLabel: Comparison
+          yLabel: Percentage (%)
+          title: Percentage Comparison
+          showValues: true
+          highlightIndex: -1
+      finalAnswer: Shooter B performed better (75% vs 72%)
+      stepByStepGuideline:
+      - 'Calculate the accuracy percentage for Shooter A: (18 hits / 25 shots) × 100% = 72%.'
+      - 'Calculate the accuracy percentage for Shooter B: (15 hits / 20 shots) × 100% = 75%.'
+      - Compare the resulting percentages. Since 75% > 72%, Shooter B has better accuracy.
+      id: q12-1
+      questionGroup: q12
+    - problemText: Quality control results show that Machine X produced 3 defective items out of a batch of 30. Machine Y
+        produced 2 defective items out of a batch of 21. Which machine has the lower defect rate?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Machine X Defect Rate
+          - Machine Y Defect Rate
+          values:
+          - 10.0
+          - 9.52
+          xLabel: Comparison
+          yLabel: Percentage (%)
+          title: Percentage Comparison
+          showValues: true
+          highlightIndex: -1
+      finalAnswer: Machine Y has the lower defect rate (9.52% vs 10%)
+      stepByStepGuideline:
+      - 'Calculate the defect rate percentage for Machine X: (3 defective items / 30 total items) × 100% = 10%.'
+      - 'Calculate the defect rate percentage for Machine Y: (2 defective items / 21 total items) × 100% ≈ 9.52%.'
+      - Compare the resulting percentages. Since 9.52% < 10%, Machine Y has the lower defect rate.
+      id: q12-2
+      questionGroup: q12
+    - problemText: During the first half of a season, Team Alpha won 12 games out of 18 played. Team Beta won 14 games out
+        of 21 played. Compare the win rates of the two teams.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Team Alpha Win Rate
+          - Team Beta Win Rate
+          values:
+          - 66.67
+          - 66.67
+          xLabel: Comparison
+          yLabel: Percentage (%)
+          title: Percentage Comparison
+          showValues: true
+          highlightIndex: -1
+      finalAnswer: They have equal win rates (66.67% vs 66.67%)
+      stepByStepGuideline:
+      - 'Calculate the win rate percentage for Team Alpha: (12 wins / 18 games) × 100% ≈ 66.67%.'
+      - 'Calculate the win rate percentage for Team Beta: (14 wins / 21 games) × 100% ≈ 66.67%.'
+      - Compare the resulting percentages. Both teams have the same win rate.
+      id: q12-3
+      questionGroup: q12
+    - problemText: Two different tutorials took the same test. In Tutorial Group P, 24 students passed out of 30 total students.
+        In Tutorial Group Q, 28 students passed out of 35 total students. Which group had a higher pass percentage?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Group P Pass Rate
+          - Group Q Pass Rate
+          values:
+          - 80
+          - 80
+          xLabel: Comparison
+          yLabel: Percentage (%)
+          title: Percentage Comparison
+          showValues: true
+          highlightIndex: -1
+      finalAnswer: Both groups have the same pass percentage (80% vs 80%)
+      stepByStepGuideline:
+      - 'Calculate the pass percentage for Tutorial Group P: (24 passes / 30 students) × 100% = 80%.'
+      - 'Calculate the pass percentage for Tutorial Group Q: (28 passes / 35 students) × 100% = 80%.'
+      - Compare the resulting percentages. Both groups achieved an 80% pass rate.
+      id: q12-4
+      questionGroup: q12
+    - problemText: Two engineers are tracking their project progress. Engineer R completed 45 tasks out of 50 assigned tasks.
+        Engineer S completed 54 tasks out of 60 assigned tasks. Compare their task completion rates.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Engineer R Completion
+          - Engineer S Completion
+          values:
+          - 90
+          - 90
+          xLabel: Comparison
+          yLabel: Percentage (%)
+          title: Percentage Comparison
+          showValues: true
+          highlightIndex: -1
+      finalAnswer: Their task completion rates are equal (90% vs 90%)
+      stepByStepGuideline:
+      - 'Calculate the task completion rate for Engineer R: (45 completed tasks / 50 total tasks) × 100% = 90%.'
+      - 'Calculate the task completion rate for Engineer S: (54 completed tasks / 60 total tasks) × 100% = 90%.'
+      - Compare the resulting percentages. Both engineers have a 90% completion rate.
+      id: q12-5
+      questionGroup: q12
+- id: percentage-node-13
+  nodeNumber: 13
+  title: Real-World Percentage Comparisons
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: A nutritionist is comparing the water content of two fruits, both weighing 250g. A peach contains 220g
+        of water, while a pear contains 210g of water. Which fruit has a higher water content percentage by weight?
+      avatarIntro: Real-world percentage comparison requires you to correctly identify the part and the whole before calculating
+        the rate. Let's start with comparing these fruits!
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Peach
+          - Pear
+          values:
+          - 88.0
+          - 84.0
+          xLabel: Fruit Type
+          yLabel: Water Content Percentage (%)
+          title: Water Content Comparison
+          showValues: true
+          highlightIndex: 0
+      finalAnswer: The Peach has a higher water content percentage (88% vs 84%)
+      stepByStepGuideline:
+      - 'Calculate the water content percentage for the Peach: (220g / 250g) × 100% = 88%.'
+      - 'Calculate the water content percentage for the Pear: (210g / 250g) × 100% = 84%.'
+      - 'Compare the percentages: 88% is greater than 84%.'
+      - 'Conclusion: The Peach has a higher water content percentage.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: Two secondary schools held their annual final examinations. In School A, 135 out of 150 students passed
+        the exam. In School B, 144 out of 160 students passed the exam. Which school achieved a better pass rate?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - School A
+          - School B
+          values:
+          - 90.0
+          - 90.0
+          xLabel: School
+          yLabel: Pass Rate (%)
+          title: Exam Pass Rate Comparison
+          showValues: true
+          highlightIndex: -1
+      finalAnswer: Both schools achieved the same pass rate (90% vs 90%)
+      stepByStepGuideline:
+      - 'Calculate the pass rate percentage for School A: (135 / 150) × 100% = 90%.'
+      - 'Calculate the pass rate percentage for School B: (144 / 160) × 100% = 90%.'
+      - 'Compare the percentages: 90% is equal to 90%.'
+      - 'Conclusion: Both schools achieved the same pass rate.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: A consumer is reviewing the nutritional information for two different fruit drinks. Drink X contains 15g
+        of sugar in a 200ml serving. Drink Y contains 18g of sugar in a 240ml serving. Which drink has a higher sugar concentration
+        percentage by volume?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Drink X
+          - Drink Y
+          values:
+          - 7.5
+          - 7.5
+          xLabel: Drink Type
+          yLabel: Sugar Concentration (%)
+          title: Sugar Concentration Comparison
+          showValues: true
+          highlightIndex: -1
+      finalAnswer: Both drinks have the same sugar concentration percentage (7.5% vs 7.5%)
+      stepByStepGuideline:
+      - 'Calculate the sugar concentration percentage for Drink X: (15g / 200ml) × 100% = 7.5%.'
+      - 'Calculate the sugar concentration percentage for Drink Y: (18g / 240ml) × 100% = 7.5%.'
+      - 'Compare the percentages: 7.5% is equal to 7.5%.'
+      - 'Conclusion: Both drinks have the same sugar concentration percentage.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: Two different brands of energy bars, Alpha and Beta, are being compared for their protein content. Bar
+        Alpha contains 12g of protein in a 100g serving. Bar Beta contains 15g of protein in a 120g serving. Which energy
+        bar has a higher percentage of protein by mass?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Bar Alpha
+          - Bar Beta
+          values:
+          - 12.0
+          - 12.5
+          xLabel: Energy Bar
+          yLabel: Protein Content (%)
+          title: Protein Content Comparison
+          showValues: true
+          highlightIndex: 1
+      finalAnswer: Bar Beta has a higher percentage of protein (12.5% vs 12.0%)
+      stepByStepGuideline:
+      - 'Calculate the protein percentage for Bar Alpha: (12g / 100g) × 100% = 12.0%.'
+      - 'Calculate the protein percentage for Bar Beta: (15g / 120g) × 100% = 12.5%.'
+      - 'Compare the percentages: 12.5% is greater than 12.0%.'
+      - 'Conclusion: Bar Beta has a higher percentage of protein.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A shopper is comparing discounts offered at two different stores. At Shop A, a customer saved $40 on an
+        item that originally cost $200. At Shop B, a customer saved $60 on an item that originally cost $300. Which shop offered
+        a higher percentage discount?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Shop A
+          - Shop B
+          values:
+          - 20.0
+          - 20.0
+          xLabel: Shop
+          yLabel: Discount Percentage (%)
+          title: Discount Comparison
+          showValues: true
+          highlightIndex: -1
+      finalAnswer: Both shops offered the same percentage discount (20% vs 20%)
+      stepByStepGuideline:
+      - 'Calculate the discount percentage for Shop A: ($40 saved / $200 original price) × 100% = 20%.'
+      - 'Calculate the discount percentage for Shop B: ($60 saved / $300 original price) × 100% = 20%.'
+      - 'Compare the percentages: 20% is equal to 20%.'
+      - 'Conclusion: Both shops offered the same percentage discount.'
+      id: q13-5
+      questionGroup: q13
+- id: percentage-node-14
+  nodeNumber: 14
+  title: Percentage Increase - Finding Increase %
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A worker's monthly income increased from $3600 to $3888. Calculate the percentage increase in income.
+      avatarIntro: Calculating percentage increase is a crucial skill in finance and economics! Remember to always divide
+        the increase by the original amount.
+      mathTool: null
+      finalAnswer: 8%
+      stepByStepGuideline:
+      - 'Calculate the absolute increase in income: $3888 - $3600 = $288.'
+      - 'Calculate the percentage increase by dividing the increase by the original income and multiplying by 100: ($288 /
+        $3600) × 100%.'
+      - The percentage increase is 8%.
+      id: q14-1
+      questionGroup: q14
+    - problemText: Last month, a company sold 450 units of a product. This month, sales increased to 540 units. What is the
+        percentage increase in sales?
+      mathTool: null
+      finalAnswer: 20%
+      stepByStepGuideline:
+      - 'Calculate the absolute increase in units sold: 540 - 450 = 90 units.'
+      - 'Calculate the percentage increase using the formula: (Increase / Original) × 100%. (90 / 450) × 100%.'
+      - The percentage increase is 20%.
+      id: q14-2
+      questionGroup: q14
+    - problemText: The cost of a specific raw material used in manufacturing rose from $800 per ton to $880 per ton. Determine
+        the percentage increase in the cost.
+      mathTool: null
+      finalAnswer: 10%
+      stepByStepGuideline:
+      - 'Calculate the absolute increase in cost: $880 - $800 = $80.'
+      - 'Calculate the percentage increase: ($80 / $800) × 100%.'
+      - The percentage increase is 10%.
+      id: q14-3
+      questionGroup: q14
+    - problemText: The annual operating cost for a small business increased from $4000 in 2022 to $4600 in 2023. Find the
+        percentage increase in the operating cost.
+      mathTool: null
+      finalAnswer: 15%
+      stepByStepGuideline:
+      - 'Calculate the absolute increase in operating cost: $4600 - $4000 = $600.'
+      - 'Calculate the percentage increase: ($600 / $4000) × 100%.'
+      - The percentage increase is 15%.
+      id: q14-4
+      questionGroup: q14
+    - problemText: A wildlife park recorded a population of 500 protected birds last year. This year, the population grew
+        to 625 birds. Calculate the percentage increase in the bird population.
+      mathTool: null
+      finalAnswer: 25%
+      stepByStepGuideline:
+      - 'Calculate the absolute increase in population: 625 - 500 = 125 birds.'
+      - 'Calculate the percentage increase: (125 / 500) × 100%.'
+      - The percentage increase is 25%.
+      id: q14-5
+      questionGroup: q14
+- id: percentage-node-15
+  nodeNumber: 15
+  title: Percentage Increase - Finding New Value
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A university plans to increase its student intake capacity, which is currently 25,000 students, by 12%
+        next year. What will be the new student intake capacity?
+      avatarIntro: Great job reaching this section! Remember, calculating a percentage increase requires using the multiplier
+        (1 + percentage as a decimal).
+      mathTool: null
+      finalAnswer: 28,000
+      stepByStepGuideline:
+      - Identify the original capacity (25,000) and the percentage increase (12%).
+      - 'Convert the percentage increase into a multiplier: $1 + 0.12 = 1.12$.'
+      - 'Calculate the new capacity by multiplying the original capacity by the multiplier: $25,000 \times 1.12$.'
+      - The new student intake capacity is 28,000 students.
+      id: q15-1
+      questionGroup: q15
+    - problemText: After a logistics company added 10% more cargo to a shipment container, the total weight reached 2,750
+        kg. What was the original weight of the cargo before the increase?
+      mathTool: null
+      finalAnswer: 2,500
+      stepByStepGuideline:
+      - Identify the new weight (2,750 kg) and the percentage increase (10%).
+      - 'Determine the multiplier used for the increase: $100\% + 10\% = 110\%$, or 1.10.'
+      - 'To find the original weight, divide the new weight by the multiplier: Original Weight = $2,750 \div 1.10$.'
+      - The original weight of the cargo was 2,500 kg.
+      id: q15-2
+      questionGroup: q15
+    - problemText: A construction project requires increasing the footprint of a building site, currently 2,500 m², by 10%.
+        Calculate the new required area of the building site.
+      mathTool: null
+      finalAnswer: 2,750
+      stepByStepGuideline:
+      - Identify the original area (2,500 m²) and the percentage increase (10%).
+      - 'Convert the percentage increase into a multiplier: $1 + 0.10 = 1.10$.'
+      - 'Calculate the new area by multiplying the original area by the multiplier: $2,500 \times 1.10$.'
+      - The new required area is 2,750 m².
+      id: q15-3
+      questionGroup: q15
+    - problemText: Due to increased maintenance costs, a landlord raised the monthly rent of an apartment by 8%. If the new
+        monthly rent is $3,888, what was the original rent before the increase?
+      mathTool: null
+      finalAnswer: \$3,600
+      stepByStepGuideline:
+      - Identify the new rent (\$3,888) and the percentage increase (8%).
+      - 'Determine the multiplier used for the increase: $100\% + 8\% = 108\%$, or 1.08.'
+      - 'To find the original rent, divide the new rent by the multiplier: Original Rent = \$3,888 \div 1.08$.'
+      - The original monthly rent was \$3,600.
+      id: q15-4
+      questionGroup: q15
+    - problemText: A factory aims to increase its production output of electronic components, currently 1,200 units per day,
+        by 15%. What is the new target production output per day?
+      mathTool: null
+      finalAnswer: 1,380
+      stepByStepGuideline:
+      - Identify the original output (1,200 units) and the percentage increase (15%).
+      - 'Convert the percentage increase into a multiplier: $1 + 0.15 = 1.15$.'
+      - 'Calculate the new output by multiplying the original output by the multiplier: $1,200 \times 1.15$.'
+      - The new target production output is 1,380 units.
+      id: q15-5
+      questionGroup: q15
+- id: percentage-node-16
+  nodeNumber: 16
+  title: Percentage Decrease and Asymmetry
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A warehouse recorded that its physical inventory of a specific component dropped from 850 units at the
+        start of the quarter to 680 units by the end of the quarter. Calculate the percentage decrease in the inventory level.
+      avatarIntro: Welcome! Let's practice calculating percentage decrease, which is crucial for tracking real-world changes
+        in inventory or prices.
+      mathTool: null
+      finalAnswer: 20%
+      stepByStepGuideline:
+      - 'Calculate the actual decrease in inventory: Decrease = Original Value - New Value. $850 - 680 = 170$ units.'
+      - 'Calculate the percentage decrease using the formula: (% Decrease = (Decrease / Original Value) × 100%).'
+      - 'Substitute the values: (170 / 850) × 100%.'
+      - 'Calculate the result: $0.2 \times 100\% = 20\%$. The inventory decreased by 20%.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: An investment fund started the year with a value of $200,000. In the first half of the year, the value
+        increased by 20%. In the second half, the value decreased by 20%. What is the final value of the investment fund at
+        the end of the year?
+      mathTool: null
+      finalAnswer: $192,000
+      stepByStepGuideline:
+      - 'Calculate the value after the 20% increase: $200,000 \times 1.20 = \$240,000$.'
+      - Calculate the value after the subsequent 20% decrease. Note that the 20% decrease is applied to the new value ($240,000$),
+        not the original value.
+      - 'Value after decrease: $240,000 \times (1 - 0.20) = 240,000 \times 0.80$.'
+      - The final value is $192,000$.
+      id: q16-2
+      questionGroup: q16
+    - problemText: A television is advertised with a clearance sale price of $2310. If this price reflects a 35% discount
+        off the usual retail price, what was the original retail price of the television?
+      mathTool: null
+      finalAnswer: $3553.85
+      stepByStepGuideline:
+      - 'Determine the percentage of the original price represented by the sale price: $100\% - 35\% = 65\%$.'
+      - Let $O$ be the original price. We know that $O \times 0.65 = \$2310$.
+      - 'To find the original price, divide the sale price by the multiplier: $O = \$2310 \div 0.65$.'
+      - 'Calculate the original price: $O \approx \$3553.85$ (rounded to two decimal places).'
+      id: q16-3
+      questionGroup: q16
+    - problemText: A large commercial water reservoir currently holds 320 million liters of water. Due to conservation efforts,
+        the municipality decides to enforce a 15% reduction in the total volume stored. What is the new maximum volume of
+        water the reservoir will hold?
+      mathTool: null
+      finalAnswer: 272 million liters
+      stepByStepGuideline:
+      - 'Determine the percentage remaining after the 15% reduction: $100\% - 15\% = 85\%$.'
+      - 'Convert the remaining percentage to a decimal multiplier: 0.85.'
+      - 'Calculate the new volume by multiplying the original volume by the multiplier: $320 \text{ million liters} \times
+        0.85$.'
+      - The new volume is $272$ million liters.
+      id: q16-4
+      questionGroup: q16
+    - problemText: A student claims that if a number increases by 50% and then decreases by 50%, the final result will be
+        the same as the original number. Use mathematical reasoning and an example (e.g., starting with 400) to explain whether
+        this claim is correct.
+      mathTool: null
+      finalAnswer: The student's claim is incorrect. The final value is lower than the original value because the 50% decrease
+        is calculated on a larger base (the increased value).
+      stepByStepGuideline:
+      - Start with the original number (400).
+      - 'Calculate the value after the 50% increase: $400 \times 1.50 = 600$.'
+      - 'Calculate the value after the subsequent 50% decrease. This percentage is applied to the new base (600): $600 \times
+        (1 - 0.50) = 600 \times 0.50 = 300$.'
+      - Compare the final value (300) to the original value (400). Since $300 \neq 400$, the claim is incorrect.
+      - 'Explain the asymmetry: The absolute amount of the decrease ($300$, which is 50% of 600) is larger than the absolute
+        amount of the increase ($200$, which is 50% of 400).'
+      id: q16-5
+      questionGroup: q16
+- id: percentage-node-17
+  nodeNumber: 17
+  title: Sequential Percentage Changes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A certain stock opened the trading day at a price of $150 per share. By midday, the price had increased
+        by 20%. Before closing, the price dropped by 15% of the midday value. What was the closing price of the stock?
+      avatarIntro: Sequential changes are common in finance. Remember, the second change always applies to the new, altered
+        value, not the original starting value.
+      mathTool: null
+      finalAnswer: $153
+      stepByStepGuideline:
+      - 'Calculate the price after the 20% increase: $150 \times (1 + 0.20) = $150 \times 1.20 = $180.'
+      - 'Calculate the price after the 15% decrease (applied to the midday price of $180): $180 \times (1 - 0.15) = $180 \times
+        0.85 = $153.'
+      - The closing price of the stock is $153.
+      id: q17-1
+      questionGroup: q17
+    - problemText: A vehicle achieved a mileage of 200 km on a full tank of fuel during its first test drive. Due to engine
+        tuning, the mileage increased by 15% for the second test drive. However, heavy traffic during the third drive caused
+        the mileage to decrease by 10% compared to the second drive. What was the mileage achieved during the third test drive?
+      mathTool: null
+      finalAnswer: 207 km
+      stepByStepGuideline:
+      - 'Calculate the mileage after the 15% increase: 200 km \times (1 + 0.15) = 200 \times 1.15 = 230 km.'
+      - 'Calculate the mileage after the 10% decrease (applied to 230 km): 230 km \times (1 - 0.10) = 230 \times 0.90 = 207
+        km.'
+      - The mileage during the third test drive was 207 km.
+      id: q17-2
+      questionGroup: q17
+    - problemText: A scientist observes a culture containing 300,000 bacteria. After introducing an antibiotic, the population
+        decreased by 20%. The scientist then introduced a nutrient solution, causing the remaining population to increase
+        by 25%. What is the final population count of the bacteria?
+      mathTool: null
+      finalAnswer: 300,000
+      stepByStepGuideline:
+      - 'Calculate the population after the 20% decrease: 300,000 \times (1 - 0.20) = 300,000 \times 0.80 = 240,000.'
+      - 'Calculate the population after the 25% increase (applied to 240,000): 240,000 \times (1 + 0.25) = 240,000 \times
+        1.25 = 300,000.'
+      - The final population count is 300,000 bacteria.
+      id: q17-3
+      questionGroup: q17
+    - problemText: 'A special metal rod is initially 50 mm long. When heated, its length expands sequentially: first by 7%,
+        then by 6.5%, and finally by 5%. What is the final length of the rod after all three expansions? (Round your answer
+        to 2 decimal places)'
+      mathTool: null
+      finalAnswer: 59.83 mm
+      stepByStepGuideline:
+      - 'Determine the multiplier for the first increase: $1 + 0.07 = 1.07$.'
+      - 'Determine the multiplier for the second increase: $1 + 0.065 = 1.065$.'
+      - 'Determine the multiplier for the third increase: $1 + 0.05 = 1.05$.'
+      - 'Calculate the final length by multiplying the original length by the cumulative multipliers: $50 \times 1.07 \times
+        1.065 \times 1.05$.'
+      - Final Length = $59.831625$ mm. Rounding to 2 decimal places gives 59.83 mm.
+      id: q17-4
+      questionGroup: q17
+    - problemText: A retailer offered a double discount on a specific backpack. First, a general discount of 20% was applied,
+        followed by a special promotional discount of 50% off the discounted price. If the final price paid by the customer
+        was $40, what was the original price of the backpack?
+      mathTool: null
+      finalAnswer: $100
+      stepByStepGuideline:
+      - 'Determine the multiplier for the first discount (20% off): $1 - 0.20 = 0.80$.'
+      - 'Determine the multiplier for the second discount (50% off the remaining price): $1 - 0.50 = 0.50$.'
+      - 'Calculate the total combined multiplier: $0.80 \times 0.50 = 0.40$.'
+      - Let O be the original price. We know O \times 0.40 = $40.
+      - 'Calculate the original price: O = $40 / 0.40 = $100.'
+      id: q17-5
+      questionGroup: q17
+- id: percentage-node-18
+  nodeNumber: 18
+  title: Percentage Points vs Percentage Change
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A recent political poll showed that Candidate X had an approval rating of 25%. After a major televised
+        debate, the rating increased to 28%. What is the increase in percentage points, and what is the percentage change
+        in the approval rating?
+      avatarIntro: Understanding the difference between percentage points and percentage change is crucial for interpreting
+        statistics accurately. Let's tackle this problem!
+      mathTool: null
+      finalAnswer: 3 percentage points; 12% increase
+      stepByStepGuideline:
+      - 'To find the increase in percentage points, subtract the initial percentage from the new percentage: $28\% - 25\%
+        = 3$ percentage points.'
+      - 'To find the percentage change, use the formula: (Change / Original Value) $\times 100$. The change is 3 percentage
+        points, and the original value is 25%.'
+      - 'Calculate the percentage change: $(3 / 25) \times 100\% = 12\%$.'
+      - The result is an increase of 3 percentage points, which corresponds to a 12% increase in the approval rating.
+      id: q18-1
+      questionGroup: q18
+    - problemText: Company Z held 25% of the regional market share at the beginning of the fiscal year. By the end of the
+        year, aggressive marketing boosted their market share to 30%. Calculate the increase in percentage points and the
+        overall percentage change in market share.
+      mathTool: null
+      finalAnswer: 5 percentage points; 20% increase
+      stepByStepGuideline:
+      - 'Calculate the increase in percentage points by finding the difference: $30\% - 25\% = 5$ percentage points.'
+      - 'Calculate the percentage change using the formula: $(\text{New} - \text{Old}) / \text{Old}$. Change is 5 percentage
+        points, original is 25%.'
+      - 'Percentage change: $(5 / 25) \times 100\% = 20\%$.'
+      - The market share increased by 5 percentage points, representing a 20% proportional increase.
+      id: q18-2
+      questionGroup: q18
+    - problemText: Following a successful public health campaign, the infection rate for a specific virus dropped from 8%
+        of the population to 6%. Determine the decrease in percentage points and the percentage decrease in the infection
+        rate.
+      mathTool: null
+      finalAnswer: 2 percentage points decrease; 25% decrease
+      stepByStepGuideline:
+      - 'Calculate the decrease in percentage points: $8\% - 6\% = 2$ percentage points decrease.'
+      - 'Calculate the percentage change (decrease) using the formula: $(\text{Change} / \text{Original Value}) \times 100$.
+        The absolute change is 2, and the original value is 8.'
+      - 'Percentage decrease: $(2 / 8) \times 100\% = 25\%$.'
+      - The infection rate dropped by 2 percentage points, which is equivalent to a 25% decrease.
+      id: q18-3
+      questionGroup: q18
+    - problemText: In the semester one exams, 40% of students achieved a passing grade in Mathematics. After implementing
+        a new tutoring programme, the pass rate increased to 50% in the semester two exams. What is the increase in percentage
+        points and the percentage increase in the pass rate?
+      mathTool: null
+      finalAnswer: 10 percentage points; 25% increase
+      stepByStepGuideline:
+      - 'Calculate the increase in percentage points: $50\% - 40\% = 10$ percentage points.'
+      - 'Calculate the percentage change (increase) using the formula: $(\text{Change} / \text{Original Value}) \times 100$.
+        Change is 10, original value is 40.'
+      - 'Percentage increase: $(10 / 40) \times 100\% = 25\%$.'
+      - The pass rate increased by 10 percentage points, which is a 25% proportional increase.
+      id: q18-4
+      questionGroup: q18
+    - problemText: A municipal report showed that the city's recycling rate was 15% five years ago. Due to recent infrastructure
+        improvements, the recycling rate has now reached 18%. Calculate the change in percentage points and the percentage
+        increase in the recycling rate.
+      mathTool: null
+      finalAnswer: 3 percentage points; 20% increase
+      stepByStepGuideline:
+      - 'Calculate the change in percentage points: $18\% - 15\% = 3$ percentage points.'
+      - 'Calculate the percentage change: $(\text{Change} / \text{Original Value}) \times 100$. Change is 3, original value
+        is 15.'
+      - 'Percentage increase: $(3 / 15) \times 100\% = 20\%$.'
+      - The recycling rate increased by 3 percentage points, representing a 20% growth.
+      id: q18-5
+      questionGroup: q18
+- id: percentage-node-19
+  nodeNumber: 19
+  title: Finding Original Value from Percentage Portion
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: On Monday, 140 students were reported absent from a high school. If this number represents 35% of the total
+        student enrollment, what is the total enrollment of the school?
+      avatarIntro: Reverse percentage problems require you to work backward from a given part to find the whole. Use division
+        to find 100%.
+      mathTool: null
+      finalAnswer: 400 students
+      stepByStepGuideline:
+      - Identify the percentage (P = 35%) and the corresponding portion (y = 140). We are looking for the total enrollment
+        (x).
+      - 'Method 1 (Algebraic): Use the formula x = y ÷ (P/100). Convert the percentage to a decimal: 35% = 0.35.'
+      - 'Calculate: x = 140 ÷ 0.35.'
+      - x = 400. The total enrollment is 400 students.
+      - 'Method 2 (Unitary Method): If 35% corresponds to 140 students, find 1%: 140 ÷ 35 = 4 students.'
+      - 'Find 100%: 4 × 100 = 400 students.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: Sarah paid a library fine of $60 for a lost book. The fine amount was calculated as 25% of the original
+        purchase price of the book. What was the original purchase price of the book?
+      mathTool: null
+      finalAnswer: $240
+      stepByStepGuideline:
+      - Identify that the fine ($60) represents 25% of the original price (x).
+      - 'Convert the percentage to a decimal: 25% = 0.25.'
+      - 'Calculate the original price (x) by dividing the portion by the decimal percentage: x = $60 ÷ 0.25.'
+      - x = $240. The original purchase price of the book was $240.
+      - 'Verification: 25% of $240 = 0.25 × 240 = $60.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: A computer reported that 180 GB of hard drive space is currently being used for applications. If this usage
+        accounts for 40% of the drive's total capacity, what is the total capacity of the hard drive in GB?
+      mathTool: null
+      finalAnswer: 450 GB
+      stepByStepGuideline:
+      - The used space (180 GB) is 40% of the total capacity (x).
+      - 'Method 1 (Algebraic): Set up the equation: 0.40 × x = 180.'
+      - 'Solve for x: x = 180 ÷ 0.40.'
+      - x = 450. The total capacity is 450 GB.
+      - 'Method 2 (Unitary Method): If 40% = 180 GB, then 1% = 180 ÷ 40 = 4.5 GB.'
+      - Total capacity (100%) = 4.5 × 100 = 450 GB.
+      id: q19-3
+      questionGroup: q19
+    - problemText: Liam saved $45 from his monthly allowance. This amount represents 15% of his total allowance for the month.
+        What is Liam's total monthly allowance?
+      mathTool: null
+      finalAnswer: $300
+      stepByStepGuideline:
+      - The saved amount ($45) corresponds to 15% of the total allowance (x).
+      - 'Convert the percentage to a decimal: 15% = 0.15.'
+      - 'Calculate the total allowance (x): x = $45 ÷ 0.15.'
+      - x = $300. Liam's total monthly allowance is $300.
+      - 'Verification: Calculate 15% of $300: 0.15 × 300 = $45.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: During a holiday sale, a jacket received a discount. The monetary value of the discount was $100, which
+        is equal to 20% of the jacket's original price. Calculate the original price of the jacket.
+      mathTool: null
+      finalAnswer: $500
+      stepByStepGuideline:
+      - The discount amount ($100) is the portion (y), and 20% is the percentage (P). We need to find the original price (x).
+      - Use the formula x = y ÷ (P/100).
+      - 'Convert 20% to a decimal: 0.20.'
+      - 'Calculate: x = $100 ÷ 0.20.'
+      - x = $500. The original price of the jacket was $500.
+      id: q19-5
+      questionGroup: q19
+- id: percentage-node-20
+  nodeNumber: 20
+  title: Finding Original After Percentage Increase
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A technician received an 8% raise. His new monthly salary is $3888. What was his original salary before
+        the raise?
+      avatarIntro: Welcome to our practice session! Finding the original amount after a percentage increase requires dividing
+        by the correct multiplier.
+      mathTool: null
+      finalAnswer: $3600
+      stepByStepGuideline:
+      - 'Determine the multiplier for an 8% increase: 100% + 8% = 108%, or 1.08.'
+      - Divide the new salary ($3888) by the multiplier (1.08) to find the original salary.
+      - 'Calculation: $3888 \div 1.08 = $3600.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: The population of Townsville increased by 12% over the last decade, reaching 28,000 residents. What was
+        the population 10 years ago?
+      mathTool: null
+      finalAnswer: 25,000 residents
+      stepByStepGuideline:
+      - Recognize that 28,000 represents 112% (100% + 12%) of the original population.
+      - 'Convert the percentage increase to a decimal multiplier: 1.12.'
+      - 'Divide the current population (28,000) by the multiplier (1.12) to find the original population: $28,000 \div 1.12
+        = 25,000$.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: Due to increased material costs, the price of a commercial oven increased by 15%. If the new price is $1380,
+        what was the price before the increase?
+      mathTool: null
+      finalAnswer: $1200
+      stepByStepGuideline:
+      - Identify the percentage increase (15%) and the resulting multiplier (1 + 0.15 = 1.15).
+      - 'Set up the reverse calculation: Original Price = New Price $\div$ Multiplier.'
+      - 'Calculate: $1380 \div 1.15 = $1200.'
+      id: q20-3
+      questionGroup: q20
+    - problemText: The monthly rent for an apartment was increased by 10%. The tenant now pays $2750 per month. Calculate
+        the original monthly rent.
+      mathTool: null
+      finalAnswer: $2500
+      stepByStepGuideline:
+      - The new rent ($2750) corresponds to 100% + 10% = 110% of the original rent.
+      - Convert 110% to the decimal multiplier 1.10.
+      - 'Divide the current rent by the multiplier: $2750 \div 1.10 = $2500.'
+      id: q20-4
+      questionGroup: q20
+    - problemText: A rare stamp collection appreciated in value by 20% this year. If the collection is currently valued at
+        $1440, what was its value last year?
+      mathTool: null
+      finalAnswer: $1200
+      stepByStepGuideline:
+      - Determine that the current value ($1440) represents 120% (1 + 0.20 = 1.20) of the previous year's value.
+      - Divide the current value by the multiplier (1.20).
+      - 'Calculation: $1440 \div 1.20 = $1200.'
+      id: q20-5
+      questionGroup: q20
+- id: percentage-node-21
+  nodeNumber: 21
+  title: Finding Original After Percentage Decrease
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A television set is sold during a clearance sale at a 30% discount. If the final sale price paid by the
+        customer is $2380, what was the original retail price of the television?
+      avatarIntro: Finding the original price after a percentage decrease requires careful reverse calculation. Remember that
+        the new price represents the remaining percentage.
+      mathTool: null
+      finalAnswer: $3400
+      stepByStepGuideline:
+      - 'Determine the remaining percentage: Since the price was decreased by 30%, the final price represents 100% - 30% =
+        70% (or 0.7) of the original price.'
+      - 'Set up the reverse equation: Original Price = New Price / Remaining Percentage.'
+      - 'Calculate the original price: Original Price = $2380 / 0.7.'
+      - The original retail price was $3400.
+      id: q21-1
+      questionGroup: q21
+    - problemText: After one year of use, a company vehicle depreciated in value by 15%. If its current market value is assessed
+        at $17,000, what was the original purchase price of the vehicle?
+      mathTool: null
+      finalAnswer: $20,000
+      stepByStepGuideline:
+      - 'Determine the remaining value percentage: The value decreased by 15%, so the current value is 100% - 15% = 85% (or
+        0.85) of the original price.'
+      - 'Use the reverse formula: Original Price = Current Value / Remaining Percentage.'
+      - 'Calculate the original price: Original Price = $17,000 / 0.85.'
+      - The original purchase price was $20,000.
+      id: q21-2
+      questionGroup: q21
+    - problemText: Due to increased competition, a large bookstore experienced a 20% drop in monthly revenue. If the bookstore’s
+        current monthly revenue averages $16,000, what was the average monthly revenue before the drop?
+      mathTool: null
+      finalAnswer: $20,000
+      stepByStepGuideline:
+      - 'Determine the remaining revenue percentage: A 20% drop means the current revenue is 100% - 20% = 80% (or 0.80) of
+        the original revenue.'
+      - 'Use the reverse formula: Original Revenue = Current Revenue / Remaining Percentage.'
+      - 'Calculate the original revenue: Original Revenue = $16,000 / 0.80.'
+      - The average monthly revenue before the drop was $20,000.
+      id: q21-3
+      questionGroup: q21
+    - problemText: An antique seller reduced the asking price of a rare sculpture by 16% during a weekend sale. If the sculpture
+        is now listed for $1050, what was the original asking price?
+      mathTool: null
+      finalAnswer: $1250
+      stepByStepGuideline:
+      - 'Determine the remaining percentage: The price was decreased by 16%, meaning the final price represents 100% - 16%
+        = 84% (or 0.84) of the original price.'
+      - 'Use the reverse formula: Original Price = New Price / Remaining Percentage.'
+      - 'Calculate the original price: Original Price = $1050 / 0.84.'
+      - The original asking price was $1250.
+      id: q21-4
+      questionGroup: q21
+    - problemText: A factory implemented new insulation technology which resulted in a 20% reduction in its monthly heating
+        cost. If the factory now pays $680 per month for heating, what was the previous monthly heating cost before the efficiency
+        measures were implemented?
+      mathTool: null
+      finalAnswer: $850
+      stepByStepGuideline:
+      - 'Determine the remaining percentage: The 20% reduction means the new cost is 100% - 20% = 80% (or 0.80) of the previous
+        cost.'
+      - 'Use the reverse formula: Previous Cost = New Cost / Remaining Percentage.'
+      - 'Calculate the previous cost: Previous Cost = $680 / 0.80.'
+      - The previous monthly heating cost was $850.
+      id: q21-5
+      questionGroup: q21
+- id: percentage-node-22
+  nodeNumber: 22
+  title: Sequential Reverse Percentage
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: An investor tracked the value of a small portfolio. In January, the value increased by 20%. In February,
+        the value decreased by 15%. If the final value at the end of February was $153, what was the original value of the
+        portfolio at the start of January?
+      avatarIntro: These problems require you to reverse multiple percentage changes. Remember to undo the changes in the
+        reverse order of how they were applied.
+      mathTool: null
+      finalAnswer: $150
+      stepByStepGuideline:
+      - 'Identify the sequence of changes: +20% then -15%. The final value is $153.'
+      - 'Step 1: Undo the last change (-15%). Calculate the value before the 15% decrease: $153 \div (1 - 0.15) = 153 \div
+        0.85 = $180.'
+      - 'Step 2: Undo the first change (+20%). Calculate the original value: $180 \div (1 + 0.20) = 180 \div 1.20 = $150.'
+      - The original value of the portfolio was $150.
+      id: q22-1
+      questionGroup: q22
+    - problemText: A factory's monthly production yield first increased by 15% compared to the baseline month. In the following
+        month, the yield dropped by 10% due to equipment failure. If the final yield was 207 units, what was the original
+        baseline yield?
+      mathTool: null
+      finalAnswer: 200 units
+      stepByStepGuideline:
+      - 'Identify the sequence of changes: +15% then -10%. The final yield is 207 units.'
+      - 'Step 1: Undo the last change (-10%). Calculate the yield before the 10% drop: $207 \div (1 - 0.10) = 207 \div 0.90
+        = 230$ units.'
+      - 'Step 2: Undo the first change (+15%). Calculate the original baseline yield: $230 \div (1 + 0.15) = 230 \div 1.15
+        = 200$ units.'
+      - The original baseline yield was 200 units.
+      id: q22-2
+      questionGroup: q22
+    - problemText: A large water storage tank was partially drained, reducing its volume by 20%. Later, the volume was increased
+        by 25%. If the final volume of water in the tank is exactly 300 litres, what was the original volume of water before
+        the drainage?
+      mathTool: null
+      finalAnswer: 300 litres
+      stepByStepGuideline:
+      - 'Identify the sequence of changes: -20% then +25%. The final volume is 300 litres.'
+      - 'Step 1: Undo the last change (+25%). Calculate the volume before the 25% increase: $300 \div (1 + 0.25) = 300 \div
+        1.25 = 240$ litres.'
+      - 'Step 2: Undo the first change (-20%). Calculate the original volume: $240 \div (1 - 0.20) = 240 \div 0.80 = 300$
+        litres.'
+      - The original volume of water was 300 litres.
+      id: q22-3
+      questionGroup: q22
+    - problemText: 'The price of a specific raw material used in manufacturing changed three times over a quarter: it increased
+        by 10% in month 1, increased by 8% in month 2, and finally decreased by 5% in month 3. If the price at the end of
+        month 3 was $1128.60 per tonne, what was the original price per tonne at the start of the quarter?'
+      mathTool: null
+      finalAnswer: $1000
+      stepByStepGuideline:
+      - 'Identify the sequence of changes: +10%, +8%, then -5%. The final price is $1128.60.'
+      - 'Step 1: Undo the last change (-5%). Calculate the price before the 5% decrease: $1128.60 \div (1 - 0.05) = 1128.60
+        \div 0.95 = $1188.'
+      - 'Step 2: Undo the second change (+8%). Calculate the price before the 8% increase: $1188 \div (1 + 0.08) = 1188 \div
+        1.08 = $1100.'
+      - 'Step 3: Undo the first change (+10%). Calculate the original price: $1100 \div (1 + 0.10) = 1100 \div 1.10 = $1000.'
+      - The original price per tonne was $1000.
+      id: q22-4
+      questionGroup: q22
+    - problemText: Due to temporary road closures, a commuter's daily travel distance first decreased by 10%. When a new bypass
+        opened, the distance subsequently increased by 50% compared to the distance after the closure. If the final daily
+        travel distance is 540 km, what was the original daily travel distance?
+      mathTool: null
+      finalAnswer: 400 km
+      stepByStepGuideline:
+      - 'Identify the sequence of changes: -10% then +50%. The final distance is 540 km.'
+      - 'Step 1: Undo the last change (+50%). Calculate the distance before the 50% increase: $540 \div (1 + 0.50) = 540 \div
+        1.50 = 360$ km.'
+      - 'Step 2: Undo the first change (-10%). Calculate the original distance: $360 \div (1 - 0.10) = 360 \div 0.90 = 400$
+        km.'
+      - The original daily travel distance was 400 km.
+      id: q22-5
+      questionGroup: q22
+- id: percentage-node-23
+  nodeNumber: 23
+  title: Discount Calculations - Single and Successive
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A high-end racing bicycle is marked at $1500. During a summer clearance, it is offered at a 20% discount.
+        What is the selling price of the bicycle?
+      avatarIntro: Mastering discount calculations is crucial for smart shopping! Let's start with a straightforward single
+        discount problem.
+      mathTool: null
+      finalAnswer: $1200
+      stepByStepGuideline:
+      - 'Determine the remaining percentage after the discount: 100% - 20% = 80%.'
+      - 'Convert the remaining percentage to a decimal: 0.80.'
+      - 'Multiply the marked price by the decimal rate to find the selling price: $1500 \times 0.80 = $1200.'
+      id: q23-1
+      questionGroup: q23
+    - problemText: A professional camera lens is marked at $500. A store first applies a 30% promotional discount, and then
+        offers an additional 20% off the discounted price for members. Calculate the final price paid by a member.
+      mathTool: null
+      finalAnswer: $280
+      stepByStepGuideline:
+      - 'Calculate the price after the first 30% discount: $500 \times (1 - 0.30) = $350.'
+      - 'Calculate the price after the second 20% discount, applied to the sale price: $350 \times (1 - 0.20) = $280.'
+      - The final price paid by the member is $280.
+      id: q23-2
+      questionGroup: q23
+    - problemText: A guitar originally priced at $250 is subject to successive discounts of 20% followed by 15%. What single
+        percentage discount is equivalent to these two successive discounts?
+      mathTool: null
+      finalAnswer: 32%
+      stepByStepGuideline:
+      - 'Determine the percentage remaining after the first discount: 100% - 20% = 80% (0.80).'
+      - 'Determine the percentage remaining after the second discount: 100% - 15% = 85% (0.85).'
+      - 'Calculate the final price factor by multiplying the remaining percentages: $0.80 \times 0.85 = 0.68$.'
+      - 'Subtract this factor from 1 to find the equivalent single discount rate: $1 - 0.68 = 0.32$.'
+      - 'Convert the decimal back to a percentage: 32%.'
+      id: q23-3
+      questionGroup: q23
+    - problemText: A set of four dining chairs is listed for $850. If the store offers a single discount of 15% during a weekend
+        sale, how much money does the customer save (what is the discount amount)?
+      mathTool: null
+      finalAnswer: $127.50
+      stepByStepGuideline:
+      - 'Convert the percentage discount to a decimal: 15% = 0.15.'
+      - 'Multiply the original price by the discount rate to find the discount amount: $850 \times 0.15 = $127.50.'
+      - The customer saves $127.50.
+      id: q23-4
+      questionGroup: q23
+    - problemText: A rare book collector is offered two discount options on a $100 purchase. Option A is a single discount
+        of 60%. Option B is successive discounts of 20% followed by 50%. Which option results in a lower final price?
+      mathTool: null
+      finalAnswer: The final price is the same for both options ($40)
+      stepByStepGuideline:
+      - 'Calculate the final price for Option A (Single 60% discount): $100 \times (1 - 0.60) = $40.'
+      - 'Calculate the price after the first discount in Option B (20%): $100 \times 0.80 = $80.'
+      - 'Calculate the final price after the second discount in Option B (50%): $80 \times 0.50 = $40.'
+      - 'Compare the results: Both Option A and Option B result in a final price of $40, meaning they are equal.'
+      id: q23-5
+      questionGroup: q23
+- id: percentage-node-24
+  nodeNumber: 24
+  title: GST Calculations - Adding and Removing
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A customer buys a high-end watch priced at \$1500 before GST. If the GST rate is 9%, calculate the total
+        price the customer pays.
+      avatarIntro: GST calculations are crucial for everyday spending! Let's start by calculating the total price when GST
+        is added.
+      mathTool: null
+      finalAnswer: \$1635.00
+      stepByStepGuideline:
+      - The price before GST (100%) is \$1500.
+      - The total price including 9% GST is equivalent to 100% + 9% = 109% of the original price.
+      - 'Calculate the total price: \$1500 × 1.09.'
+      - The total price paid is \$1635.00.
+      id: q24-1
+      questionGroup: q24
+    - problemText: A restaurant bill totals \$350 before the inclusion of GST. Calculate the exact GST amount added to this
+        bill, given the rate is 9%.
+      mathTool: null
+      finalAnswer: \$31.50
+      stepByStepGuideline:
+      - The GST rate is 9%, or 0.09 as a decimal.
+      - 'Calculate the GST amount by multiplying the pre-tax price by the GST rate: \$350 × 0.09.'
+      - The GST amount is \$31.50.
+      id: q24-2
+      questionGroup: q24
+    - problemText: Janice paid \$381.50 for a professional laptop repair service, which included 9% GST. What was the original
+        cost of the repair service before GST was applied?
+      mathTool: null
+      finalAnswer: \$350.00
+      stepByStepGuideline:
+      - The total price \$381.50 represents 100% (original cost) + 9% (GST), which is 109% or 1.09.
+      - To find the price before GST, divide the total cost by 1.09.
+      - Price before GST = \$381.50 ÷ 1.09.
+      - The original cost of the repair service before GST was \$350.00.
+      id: q24-3
+      questionGroup: q24
+    - problemText: A yearly subscription fee costs \$218, inclusive of 9% GST. How much of this total payment goes towards
+        the GST component?
+      mathTool: null
+      finalAnswer: \$18.00
+      stepByStepGuideline:
+      - 'First, find the price before GST by dividing the total price by 1.09: \$218 ÷ 1.09 = \$200.'
+      - The price before GST is \$200.
+      - 'Calculate the GST amount by subtracting the pre-GST price from the total price: \$218 - \$200.'
+      - The GST component is \$18.00.
+      id: q24-4
+      questionGroup: q24
+    - problemText: A small household appliance is listed at \$200 excluding GST. If the GST rate is 9%, what is the final
+        price paid by the consumer?
+      mathTool: null
+      finalAnswer: \$218.00
+      stepByStepGuideline:
+      - The price before GST is \$200.
+      - To find the total price including 9% GST, multiply the original price by 1.09.
+      - Total price = \$200 × 1.09.
+      - The final price paid is \$218.00.
+      id: q24-5
+      questionGroup: q24
+- id: percentage-node-25
+  nodeNumber: 25
+  title: Simple Interest Calculations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A student deposited $3600 into a high-yield savings account that offers a simple interest rate of 1.5%
+        per annum. Calculate the total simple interest earned after 3 years.
+      avatarIntro: Simple interest is calculated using the principal, rate, and time. Remember to express the rate as a decimal!
+      mathTool: null
+      finalAnswer: $162
+      stepByStepGuideline:
+      - Identify the Principal (P) = $3600, Rate (R) = 1.5% = 0.015, and Time (T) = 3 years.
+      - 'Apply the simple interest formula: I = P × R × T.'
+      - 'Calculate: I = 3600 × 0.015 × 3.'
+      - The simple interest earned is $162.
+      id: q25-1
+      questionGroup: q25
+    - problemText: An individual borrowed $2500. If the loan accrued $166 in simple interest at an annual rate of 1.66%, how
+        long, in years, was the money borrowed?
+      mathTool: null
+      finalAnswer: 4 years
+      stepByStepGuideline:
+      - Identify the Interest (I) = $166, Principal (P) = $2500, and Rate (R) = 1.66% = 0.0166.
+      - 'Rearrange the simple interest formula to solve for Time: T = I / (P × R).'
+      - 'Calculate the denominator: P × R = 2500 × 0.0166 = 41.5.'
+      - 'Calculate the Time: T = 166 / 41.5.'
+      - The duration of the loan was 4 years.
+      id: q25-2
+      questionGroup: q25
+    - problemText: A financial institution paid $180 in simple interest on an investment bond worth $3000 held for 2 years.
+        What was the annual simple interest rate (expressed as a percentage)?
+      mathTool: null
+      finalAnswer: 3%
+      stepByStepGuideline:
+      - Identify the Interest (I) = $180, Principal (P) = $3000, and Time (T) = 2 years.
+      - 'Rearrange the simple interest formula to solve for Rate: R = I / (P × T).'
+      - 'Calculate the denominator: P × T = 3000 × 2 = 6000.'
+      - 'Calculate the Rate (as a decimal): R = 180 / 6000 = 0.03.'
+      - 'Convert the decimal rate to a percentage: 0.03 × 100% = 3%.'
+      id: q25-3
+      questionGroup: q25
+    - problemText: A company placed $5000 in a fixed deposit account offering 2.5% simple interest per annum. Calculate the
+        total amount of money in the account after 2 years.
+      mathTool: null
+      finalAnswer: $5250
+      stepByStepGuideline:
+      - Identify the Principal (P) = $5000, Rate (R) = 2.5% = 0.025, and Time (T) = 2 years.
+      - 'Calculate the simple interest (I): I = P × R × T = 5000 × 0.025 × 2.'
+      - 'Calculate the interest earned: I = $250.'
+      - 'Calculate the total amount (A) by adding the Principal and Interest: A = P + I.'
+      - Total Amount = $5000 + $250 = $5250.
+      id: q25-4
+      questionGroup: q25
+    - problemText: Calculate the simple interest charged on a short-term cash advance of $4000 borrowed at an annual rate
+        of 3% for a duration of 6 months.
+      mathTool: null
+      finalAnswer: $60
+      stepByStepGuideline:
+      - Identify the Principal (P) = $4000 and Rate (R) = 3% = 0.03.
+      - 'Convert the time from months to years: T = 6 months / 12 months = 0.5 years.'
+      - 'Apply the simple interest formula: I = P × R × T.'
+      - 'Calculate: I = 4000 × 0.03 × 0.5.'
+      - The simple interest charged is $60.
+      id: q25-5
+      questionGroup: q25
+- id: percentage-node-26
+  nodeNumber: 26
+  title: Instalments and Down Payments
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A new energy-efficient refrigerator is priced at $2750. The customer pays a 30% down payment, and the remaining
+        balance is subject to a 6% interest rate. The total outstanding amount (plus interest) is then paid over 12 equal
+        monthly instalments. Calculate the required amount for each monthly instalment.
+      avatarIntro: Instalment plans make big purchases manageable. Let's calculate the exact monthly payment needed for this
+        refrigerator.
+      mathTool: null
+      finalAnswer: $170.04
+      stepByStepGuideline:
+      - 'Calculate the down payment: $2750 \times 0.30 = \$825.00.'
+      - 'Calculate the outstanding balance: $2750 - \$825.00 = \$1925.00.'
+      - 'Calculate the interest charged on the outstanding balance: $1925.00 \times 0.06 = \$115.50.'
+      - 'Calculate the total amount to be paid in instalments: $1925.00 + \$115.50 = \$2040.50.'
+      - 'Calculate the monthly instalment amount by dividing the total instalment amount by the number of months: $2040.50
+        \div 12 = \$170.04 (rounded to two decimal places).'
+      id: q26-1
+      questionGroup: q26
+    - problemText: 'Referencing the energy-efficient refrigerator purchase (Price: $2750, 30% down, 6% interest over 12 months),
+        what is the total cost of the refrigerator paid by the customer (down payment + all instalments)?'
+      mathTool: null
+      finalAnswer: $2865.50
+      stepByStepGuideline:
+      - 'Calculate the down payment: $2750 \times 0.30 = \$825.00.'
+      - 'Calculate the outstanding balance: $2750 - \$825.00 = \$1925.00.'
+      - 'Calculate the interest charged: $1925.00 \times 0.06 = \$115.50.'
+      - 'Calculate the total amount paid in instalments: $1925.00 + \$115.50 = \$2040.50.'
+      - 'Calculate the total cost by adding the down payment and the total instalments: $825.00 + \$2040.50 = \$2865.50.'
+      id: q26-2
+      questionGroup: q26
+    - problemText: A customer purchases a motorcycle valued at $5000 using an instalment plan. They provide a 20% down payment.
+        The remaining balance attracts a 5% interest charge, and the total amount is settled through 24 equal monthly payments.
+        What is the amount of each monthly payment?
+      mathTool: null
+      finalAnswer: $175.00
+      stepByStepGuideline:
+      - 'Calculate the down payment: $5000 \times 0.20 = \$1000.00.'
+      - 'Calculate the outstanding balance: $5000 - \$1000.00 = \$4000.00.'
+      - 'Calculate the interest charged on the outstanding balance: $4000.00 \times 0.05 = \$200.00.'
+      - 'Calculate the total amount to be paid in instalments: $4000.00 + \$200.00 = \$4200.00.'
+      - 'Calculate the monthly instalment amount: $4200.00 \div 24 = \$175.00.'
+      id: q26-3
+      questionGroup: q26
+    - problemText: A new sofa set is priced at $1800. The buyer pays a 25% down payment and finances the remaining amount.
+        If the financing scheme includes an 8% interest charge on the outstanding balance, what is the total interest amount
+        the buyer pays?
+      mathTool: null
+      finalAnswer: $108.00
+      stepByStepGuideline:
+      - 'Calculate the down payment: $1800 \times 0.25 = \$450.00.'
+      - 'Calculate the outstanding balance (the principal amount to be financed): $1800 - \$450.00 = \$1350.00.'
+      - 'Calculate the total interest charged on the outstanding balance: $1350.00 \times 0.08 = \$108.00.'
+      id: q26-4
+      questionGroup: q26
+    - problemText: A $5000 electronic scooter is bought on an instalment plan requiring a 20% down payment. Calculate the
+        outstanding balance that must be financed after the down payment is made.
+      mathTool: null
+      finalAnswer: $4000.00
+      stepByStepGuideline:
+      - 'Calculate the down payment amount: $5000 \times 0.20 = \$1000.00.'
+      - 'Calculate the outstanding balance by subtracting the down payment from the total price: $5000 - \$1000.00 = \$4000.00.'
+      id: q26-5
+      questionGroup: q26

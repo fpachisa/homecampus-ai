@@ -1,0 +1,1974 @@
+# S1 Math Ratio Rate Speed - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: s1-ratio-node-1
+  nodeNumber: 1
+  title: Ratio Notation and Order
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: In a Secondary 3 class, there are 16 girls and 20 boys. Write the ratio of the number of boys to the number
+        of girls using colon notation (a:b).
+      avatarIntro: Welcome! Remember that the order in which quantities are listed is crucial when writing a ratio. Pay close
+        attention to which quantity comes first!
+      mathTool: null
+      finalAnswer: 20:16 (boys to girls, in that order)
+      stepByStepGuideline:
+      - 'Identify the two quantities being compared: the number of boys (20) and the number of girls (16).'
+      - 'Determine the required order: boys first, then girls.'
+      - 'Write the ratio using colon notation based on the specified order: 20:16.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: A fruit stand owner notes that for every 3 apples sold, 5 oranges are sold. Express the ratio of apples
+        to oranges using the word 'to' notation.
+      mathTool: null
+      finalAnswer: 3 to 5 (apples to oranges, in that order)
+      stepByStepGuideline:
+      - 'Identify the quantities and their values: apples (3) and oranges (5).'
+      - 'Determine the required order: apples first, then oranges.'
+      - 'Express the relationship using the word ''to'' notation: 3 to 5.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: A jar contains 4 red marbles and 7 blue marbles. Write the ratio of the number of blue marbles to the number
+        of red marbles using fraction notation (a/b).
+      mathTool: null
+      finalAnswer: 7/4 (blue marbles to red marbles, in that order)
+      stepByStepGuideline:
+      - 'Identify the quantities: red marbles (4) and blue marbles (7).'
+      - 'Determine the required order: blue marbles first (numerator), then red marbles (denominator).'
+      - 'Form the fraction ratio: 7/4.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: A library shelf holds 12 fiction books and 15 non-fiction books. Express the ratio of the number of fiction
+        books to the number of non-fiction books using fraction notation (a/b).
+      mathTool: null
+      finalAnswer: 12/15 (fiction books to non-fiction books, in that order)
+      stepByStepGuideline:
+      - 'Identify the quantities: fiction books (12) and non-fiction books (15).'
+      - The order required is fiction (numerator) to non-fiction (denominator).
+      - 'Write the ratio as a fraction: 12/15.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: The ratio of the number of students to the number of teachers in a small school is given as the fraction
+        3/2. Express this exact ratio using colon notation (a:b).
+      mathTool: null
+      finalAnswer: 3:2 (students to teachers, in that order)
+      stepByStepGuideline:
+      - Recall that in fraction notation (a/b), 'a' corresponds to the first quantity mentioned (students) and 'b' corresponds
+        to the second quantity mentioned (teachers).
+      - The value for students is 3 and the value for teachers is 2.
+      - 'Convert the fraction 3/2 to colon notation, maintaining the same order: 3:2.'
+      id: q1-5
+      questionGroup: q1
+- id: s1-ratio-node-2
+  nodeNumber: 2
+  title: Finding Equivalent Ratios
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: fractionBar
+    preWrittenQuestions:
+    - problemText: A construction crew is mixing concrete. The required ratio of sand to cement is 2:3. Generate three ratios
+        that are equivalent to this requirement.
+      avatarIntro: Equivalent ratios are essential for scaling recipes or construction materials accurately. Remember to multiply
+        or divide both parts of the ratio by the same non-zero number!
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 2/3
+          fraction2: 4/6
+          operation: equivalent
+          showSteps: true
+      finalAnswer: 4:6, 6:9, 8:12 (or any three ratios where the second term is 1.5 times the first)
+      stepByStepGuideline:
+      - To find equivalent ratios, multiply both terms of the original ratio (2:3) by the same integer.
+      - 'Multiply by 2: (2 × 2) : (3 × 2) = 4:6'
+      - 'Multiply by 3: (2 × 3) : (3 × 3) = 6:9'
+      - 'Multiply by 4: (2 × 4) : (3 × 4) = 8:12'
+      id: q2-1
+      questionGroup: q2
+    - problemText: A financial analyst observes that for every $3 saved in Account A, $5 is saved in Account B. If a client
+        saves $9 in Account A and $15 in Account B, are the ratios of savings (A:B) equivalent? Show your working.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 3/5
+          fraction2: 9/15
+          operation: equivalent
+          showSteps: true
+      finalAnswer: Yes, the ratios 3:5 and 9:15 are equivalent.
+      stepByStepGuideline:
+      - We compare the original ratio 3:5 with the new ratio 9:15.
+      - 'Determine the factor needed to convert the first term: 3 × ? = 9. The factor is 3.'
+      - 'Apply the same factor to the second term: 5 × 3 = 15.'
+      - Since 3 × 3 = 9 and 5 × 3 = 15, the ratios are equivalent.
+      id: q2-2
+      questionGroup: q2
+    - problemText: 'A baking recipe requires flour and sugar in the ratio 1:4. If a baker uses 5 cups of flour, how much sugar
+        (X) must be used to maintain the correct proportions? Complete the equivalent ratio: 1:4 = 5:X.'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 1/4
+          fraction2: 5/20
+          operation: equivalent
+          showSteps: true
+      finalAnswer: X = 20
+      stepByStepGuideline:
+      - 'Identify the relationship between the known first terms: 1 to 5.'
+      - To go from 1 to 5, we multiply by 5.
+      - To maintain the equivalent ratio, we must multiply the second term (4) by the same number (5).
+      - X = 4 × 5 = 20.
+      - The completed equivalent ratio is 1:4 = 5:20.
+      id: q2-3
+      questionGroup: q2
+    - problemText: A decorator mixed 4 litres of red paint with 10 litres of white paint (4:10). Later, they mixed 2 litres
+        of red paint with 5 litres of white paint (2:5). Are these two paint mixtures equivalent in color proportion? Show
+        how the ratios relate.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 4/10
+          fraction2: 2/5
+          operation: equivalent
+          showSteps: true
+      finalAnswer: Yes, they are equivalent.
+      stepByStepGuideline:
+      - We need to check if the ratio 4:10 simplifies to 2:5.
+      - Find the greatest common divisor (GCD) of 4 and 10, which is 2.
+      - 'Divide both terms in 4:10 by 2: (4 ÷ 2) : (10 ÷ 2) = 2:5.'
+      - Since 4:10 simplifies to 2:5, the two ratios are equivalent.
+      id: q2-4
+      questionGroup: q2
+    - problemText: 'The ratio of time spent cycling to time spent walking during a workout is 3:4. If a student spent 24 minutes
+        walking, how many minutes (Y) did they spend cycling? Complete the equivalent ratio: 3:4 = Y:24.'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 3/4
+          fraction2: 18/24
+          operation: equivalent
+          showSteps: true
+      finalAnswer: Y = 18
+      stepByStepGuideline:
+      - 'Identify the relationship between the known second terms: 4 to 24.'
+      - To go from 4 to 24, we must multiply by 6 (since 4 × 6 = 24).
+      - To maintain the equivalent ratio, we must multiply the first term (3) by the same number (6).
+      - Y = 3 × 6 = 18.
+      - The completed equivalent ratio is 3:4 = 18:24.
+      id: q2-5
+      questionGroup: q2
+- id: s1-ratio-node-3
+  nodeNumber: 3
+  title: Simplifying Ratios - Same Units
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: fractionBar
+    preWrittenQuestions:
+    - problemText: A factory produced 12 acceptable components and 18 rejected components during a test run. Express the ratio
+        of acceptable components to rejected components (12:18) in its simplest form.
+      avatarIntro: Simplifying ratios helps us understand the relationship between quantities clearly. Remember, always find
+        the Highest Common Factor (HCF) first!
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 12/18
+          fraction2: 2/3
+          operation: equivalent
+          showSteps: true
+      finalAnswer: '2:3'
+      stepByStepGuideline:
+      - 'Identify the terms of the ratio: 12 and 18.'
+      - Find the Highest Common Factor (HCF) of 12 and 18. The factors of 12 are {1, 2, 3, 4, 6, 12}. The factors of 18 are
+        {1, 2, 3, 6, 9, 18}. The HCF is 6.
+      - 'Divide both terms of the ratio by the HCF: 12 ÷ 6 and 18 ÷ 6.'
+      - The simplified ratio is 2:3.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Two internet providers, A and B, record their average download speeds in Mbps. Provider A achieves 24 Mbps
+        and Provider B achieves 36 Mbps. Simplify the ratio of their speeds (A:B) to its lowest terms.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 24/36
+          fraction2: 2/3
+          operation: equivalent
+          showSteps: true
+      finalAnswer: '2:3'
+      stepByStepGuideline:
+      - 'Identify the terms: 24 and 36.'
+      - Find the HCF of 24 and 36. The HCF is 12.
+      - 'Divide both terms by the HCF: 24 ÷ 12 : 36 ÷ 12.'
+      - The simplest form of the ratio is 2:3.
+      id: q3-2
+      questionGroup: q3
+    - problemText: A chef prepares a special marinade using 15 grams of salt and 25 grams of black pepper. Write the ratio
+        of the weight of salt to the weight of pepper (15:25) in its simplest form.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 15/25
+          fraction2: 3/5
+          operation: equivalent
+          showSteps: true
+      finalAnswer: '3:5'
+      stepByStepGuideline:
+      - 'Identify the terms: 15 and 25.'
+      - Find the HCF of 15 and 25. The HCF is 5.
+      - 'Divide both terms by the HCF: 15 ÷ 5 : 25 ÷ 5.'
+      - The simplified ratio is 3:5.
+      id: q3-3
+      questionGroup: q3
+    - problemText: In an inter-house competition, Team A scored 18 points, Team B scored 24 points, and Team C scored 6 points.
+        Simplify the ratio of their scores (A:B:C) to its lowest terms.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 18/24
+          fraction2: 3/4
+          operation: equivalent
+          showSteps: true
+      finalAnswer: '3:4:1'
+      stepByStepGuideline:
+      - 'Identify the three terms of the ratio: 18, 24, and 6.'
+      - Find the HCF of all three numbers (18, 24, and 6). The HCF is 6.
+      - 'Divide all three terms by the HCF: 18 ÷ 6 : 24 ÷ 6 : 6 ÷ 6.'
+      - The simplified ratio is 3:4:1.
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'A rectangular block has dimensions measured in centimetres: Length = 15 cm, Width = 25 cm, and Height
+        = 35 cm. Express the ratio of Length:Width:Height (15:25:35) in simplest integer form.'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 15/25
+          fraction2: 3/5
+          operation: equivalent
+          showSteps: true
+      finalAnswer: '3:5:7'
+      stepByStepGuideline:
+      - 'Identify the three terms of the ratio: 15, 25, and 35.'
+      - Find the HCF of 15, 25, and 35. The HCF is 5.
+      - 'Divide all three terms by the HCF: 15 ÷ 5 : 25 ÷ 5 : 35 ÷ 5.'
+      - The simplified ratio is 3:5:7.
+      id: q3-5
+      questionGroup: q3
+- id: s1-ratio-node-4
+  nodeNumber: 4
+  title: Simplifying with Unit Conversion
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A factory bottles two types of fruit juice. The Orange Juice container holds 1.5 L, and the Apple Juice
+        container holds 300 mL. Find the ratio of the volume of Orange Juice to the volume of Apple Juice in simplest form.
+      avatarIntro: Ratios require consistent units! Before you simplify, make sure both quantities are measured using the
+        same standard unit.
+      mathTool: null
+      finalAnswer: '5:1'
+      stepByStepGuideline:
+      - 'Identify the quantities and units: Orange Juice = 1.5 L, Apple Juice = 300 mL.'
+      - 'Convert the larger unit (L) to the smaller unit (mL): 1 L = 1000 mL. So, 1.5 L = 1.5 × 1000 = 1500 mL.'
+      - 'Write the ratio of Orange Juice to Apple Juice using the same units: 1500 mL : 300 mL (or 1500:300).'
+      - Simplify the ratio by dividing both sides by the Highest Common Factor (HCF), which is 300.
+      - '1500 ÷ 300 : 300 ÷ 300 = 5:1.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: A pet store sells dog food in different sizes. The large bag weighs 2.4 kg, and a sample portion weighs
+        400 g. Find the ratio of the mass of the large bag to the mass of the sample portion in simplest form.
+      mathTool: null
+      finalAnswer: '6:1'
+      stepByStepGuideline:
+      - 'Identify the quantities and units: Large Bag = 2.4 kg, Sample Portion = 400 g.'
+      - 'Convert the larger unit (kg) to the smaller unit (g): 1 kg = 1000 g. So, 2.4 kg = 2.4 × 1000 = 2400 g.'
+      - 'Write the ratio of the large bag mass to the sample portion mass: 2400 g : 400 g (or 2400:400).'
+      - Simplify the ratio by dividing both sides by the HCF, which is 400.
+      - '2400 ÷ 400 : 400 ÷ 400 = 6:1.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: A plumber needs two pieces of piping. Pipe A measures 3.2 m in length, and Pipe B measures 80 cm in length.
+        What is the ratio of the length of Pipe A to the length of Pipe B in simplest form?
+      mathTool: null
+      finalAnswer: '4:1'
+      stepByStepGuideline:
+      - 'Identify the quantities and units: Pipe A = 3.2 m, Pipe B = 80 cm.'
+      - 'Convert the larger unit (m) to the smaller unit (cm): 1 m = 100 cm. So, 3.2 m = 3.2 × 100 = 320 cm.'
+      - 'Write the ratio of Pipe A length to Pipe B length: 320 cm : 80 cm (or 320:80).'
+      - Simplify the ratio by dividing both sides by the HCF, which is 80.
+      - '320 ÷ 80 : 80 ÷ 80 = 4:1.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: During a cross-country race, Runner X covers a distance of 1.5 km, while Runner Y covers 250 m. Find the
+        ratio of the distance covered by Runner X to the distance covered by Runner Y in simplest form.
+      mathTool: null
+      finalAnswer: '6:1'
+      stepByStepGuideline:
+      - 'Identify the quantities and units: Runner X = 1.5 km, Runner Y = 250 m.'
+      - 'Convert the larger unit (km) to the smaller unit (m): 1 km = 1000 m. So, 1.5 km = 1.5 × 1000 = 1500 m.'
+      - 'Write the ratio of X''s distance to Y''s distance: 1500 m : 250 m (or 1500:250).'
+      - Simplify the ratio by dividing both sides by the HCF, which is 250.
+      - '1500 ÷ 250 : 250 ÷ 250 = 6:1.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: In a laboratory experiment, Compound P requires 0.5 kg of material, and Compound Q requires 125 g of material.
+        Calculate the ratio of the mass of Compound P to the mass of Compound Q in simplest form.
+      mathTool: null
+      finalAnswer: '4:1'
+      stepByStepGuideline:
+      - 'Identify the quantities and units: Compound P = 0.5 kg, Compound Q = 125 g.'
+      - 'Convert the larger unit (kg) to the smaller unit (g): 1 kg = 1000 g. So, 0.5 kg = 0.5 × 1000 = 500 g.'
+      - 'Write the ratio of Compound P mass to Compound Q mass: 500 g : 125 g (or 500:125).'
+      - Simplify the ratio by dividing both sides by the HCF, which is 125.
+      - '500 ÷ 125 : 125 ÷ 125 = 4:1.'
+      id: q4-5
+      questionGroup: q4
+- id: s1-ratio-node-5
+  nodeNumber: 5
+  title: Three-Term Ratios and Extraction
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: 'A pastry chef is mixing a sweet glaze using Maple Syrup (M), Sugar (S), and Water (W). The volumes used
+        are in the ratio M:S:W = 18:12:8.
+
+
+        Find the ratio of:
+
+        (a) Maple Syrup to Sugar (M:S)
+
+        (b) Sugar to Water (S:W)
+
+        (c) Maple Syrup to Water (M:W)
+
+
+        Express all answers in their simplest integer form.'
+      avatarIntro: Ratios help us keep proportions consistent, whether we're baking or solving math problems! Let's practice
+        extracting and simplifying two-term ratios.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Maple Syrup (M)
+          - Sugar (S)
+          - Water (W)
+          values:
+          - 9
+          - 6
+          - 4
+          yLabel: Parts
+          showValues: true
+      finalAnswer: (a) 3:2, (b) 3:2, (c) 9:4
+      stepByStepGuideline:
+      - The starting ratio is M:S:W = 18:12:8.
+      - 'To find M:S, consider the first two terms: 18:12. The Highest Common Factor (HCF) is 6. Dividing both terms by 6
+        gives 3:2.'
+      - 'To find S:W, consider the last two terms: 12:8. The HCF is 4. Dividing both terms by 4 gives 3:2.'
+      - 'To find M:W, consider the first and third terms: 18:8. The HCF is 2. Dividing both terms by 2 gives 9:4.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'In a regional tournament, three teams, X, Y, and Z, scored points in the proportion 10:15:20.
+
+
+        Simplify the three-term ratio of their scores (X:Y:Z) to its simplest integer form.'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Team X
+          - Team Y
+          - Team Z
+          values:
+          - 2
+          - 3
+          - 4
+          yLabel: Parts
+          showValues: true
+      finalAnswer: '2:3:4'
+      stepByStepGuideline:
+      - The ratio is 10:15:20.
+      - Identify the Highest Common Factor (HCF) of 10, 15, and 20. The HCF is 5.
+      - 'Divide all three terms by the HCF: (10 ÷ 5) : (15 ÷ 5) : (20 ÷ 5).'
+      - The simplest form of the ratio is 2:3:4.
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'Three partners, Amy (A), Ben (B), and Chloe (C), share the company profits in the ratio 6:9:12.
+
+
+        Find the ratio of Ben''s share to Chloe''s share (B:C) in its simplest integer form.'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Amy
+          - Ben
+          - Chloe
+          values:
+          - 2
+          - 3
+          - 4
+          yLabel: Parts
+          showValues: true
+      finalAnswer: '3:4'
+      stepByStepGuideline:
+      - The three-term ratio is A:B:C = 6:9:12.
+      - 'We need to extract the ratio B:C, which corresponds to the last two terms: 9:12.'
+      - Find the Highest Common Factor (HCF) of 9 and 12. The HCF is 3.
+      - 'Divide both terms by the HCF: (9 ÷ 3) : (12 ÷ 3).'
+      - The simplest ratio B:C is 3:4.
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'A manufacturing plant records the yield rate of three production lines, X, Y, and Z, during a trial run,
+        measured as 0.6:1.2:0.9.
+
+
+        Simplify the ratio X:Y:Z to its simplest integer form.'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Line X
+          - Line Y
+          - Line Z
+          values:
+          - 2
+          - 4
+          - 3
+          yLabel: Parts
+          showValues: true
+      finalAnswer: '2:4:3'
+      stepByStepGuideline:
+      - The ratio is 0.6:1.2:0.9.
+      - 'Multiply all terms by 10 to eliminate the decimals: (0.6 × 10) : (1.2 × 10) : (0.9 × 10), which gives 6:12:9.'
+      - Find the Highest Common Factor (HCF) of 6, 12, and 9. The HCF is 3.
+      - 'Divide all terms by 3: (6 ÷ 3) : (12 ÷ 3) : (9 ÷ 3).'
+      - The simplest integer ratio is 2:4:3.
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'A retailer is tracking the inventory levels of three product categories, D, E, and F, recorded in hundreds
+        of units. The stock levels are in the ratio 1.5:0.5:2.
+
+
+        Simplify the ratio D:E:F to its simplest integer form.'
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Category D
+          - Category E
+          - Category F
+          values:
+          - 3
+          - 1
+          - 4
+          yLabel: Parts
+          showValues: true
+      finalAnswer: '3:1:4'
+      stepByStepGuideline:
+      - 'The ratio is 1.5:0.5:2. (Note: 2 is 2.0).'
+      - 'Multiply all terms by 10 to convert them into integers: (1.5 × 10) : (0.5 × 10) : (2 × 10), which gives 15:5:20.'
+      - Find the Highest Common Factor (HCF) of 15, 5, and 20. The HCF is 5.
+      - 'Divide all terms by 5: (15 ÷ 5) : (5 ÷ 5) : (20 ÷ 5).'
+      - The simplest integer ratio is 3:1:4.
+      id: q5-5
+      questionGroup: q5
+- id: s1-ratio-node-6
+  nodeNumber: 6
+  title: Recognizing Proportional Relationships
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Are the four numbers 4, 6, 8, and 12 in proportion when paired such that the ratio of the first two (4:6)
+        is compared to the ratio of the last two (8:12)? Verify your answer using cross-multiplication.
+      avatarIntro: Verifying proportionality is essential in mathematics! Remember that quantities are proportional if their
+        ratios are equal, meaning they have a constant relationship.
+      mathTool: null
+      finalAnswer: 'Yes, the numbers are proportional. Verification using cross-multiplication: 4 × 12 = 48 and 6 × 8 = 48.
+        Since the cross products are equal (48 = 48), the ratios 4:6 and 8:12 form a proportion.'
+      stepByStepGuideline:
+      - 'Set up the ratios for comparison: 4/6 = 8/12.'
+      - 'Apply the cross-multiplication method: Multiply the outer terms (4 × 12) and the inner terms (6 × 8).'
+      - 'Calculate the products: 4 × 12 = 48 and 6 × 8 = 48.'
+      - Compare the products. Since 48 = 48, the ratios are equal.
+      - Conclude that the numbers are proportional because the cross-products are equal.
+      id: q6-1
+      questionGroup: q6
+    - problemText: A motorcycle covers 100 km in 2 hours and later covers 150 km in 3 hours. Is the distance traveled proportional
+        to the time taken? Explain using the constant ratio method.
+      mathTool: null
+      finalAnswer: 'Yes, the distance traveled is proportional to the time taken. Verification using constant ratio: Calculate
+        the ratio of distance to time (speed) for both instances. First instance: 100 km / 2 h = 50 km/h. Second instance:
+        150 km / 3 h = 50 km/h. Since the ratio is constant (50 km/h), the relationship is proportional.'
+      stepByStepGuideline:
+      - 'Define the ratios of Distance:Time for both scenarios: 100:2 and 150:3.'
+      - 'Calculate the unit rate (constant speed) for the first ratio: 100 ÷ 2 = 50.'
+      - 'Calculate the unit rate (constant speed) for the second ratio: 150 ÷ 3 = 50.'
+      - Compare the unit rates. Since both ratios equal 50, the relationship is proportional.
+      id: q6-2
+      questionGroup: q6
+    - problemText: Determine if the four numbers 5, 10, 15, and 25 form a proportion when comparing the ratio 5:10 to the
+        ratio 15:25. Verify your answer by simplifying both ratios.
+      mathTool: null
+      finalAnswer: 'No, the ratios do not form a proportion. Verification using ratio simplification: The first ratio 5:10
+        simplifies to 1:2. The second ratio 15:25 simplifies to 3:5. Since 1:2 ≠ 3:5, the relationship is not proportional.'
+      stepByStepGuideline:
+      - 'Identify the two ratios: 5:10 and 15:25.'
+      - Simplify the first ratio (5:10) by dividing both terms by their greatest common divisor (5), resulting in 1:2.
+      - Simplify the second ratio (15:25) by dividing both terms by their greatest common divisor (5), resulting in 3:5.
+      - Compare the simplified ratios. Since 1:2 is not equal to 3:5, conclude that the numbers are not proportional.
+      id: q6-3
+      questionGroup: q6
+    - problemText: A vendor sells 3 items for $5. If they later sell 6 items for $10, is the cost proportional to the quantity
+        sold? Use cross-multiplication to verify.
+      mathTool: null
+      finalAnswer: 'Yes, the cost is proportional to the quantity sold. Verification using cross-multiplication: Set up the
+        proportion 3 items / $5 = 6 items / $10. Check the cross products: 3 × 10 = 30 and 5 × 6 = 30. Since the cross products
+        are equal (30 = 30), the relationship is proportional (the price per item is constant).'
+      stepByStepGuideline:
+      - 'Set up the ratios comparing quantity to cost: 3:5 and 6:10.'
+      - 'Check for proportionality using cross-multiplication: 3 × 10 compared to 5 × 6.'
+      - 'Calculate the products: 3 × 10 = 30 and 5 × 6 = 30.'
+      - Since 30 = 30, the ratios are equal.
+      - Conclude that the cost is proportional to the quantity.
+      id: q6-4
+      questionGroup: q6
+    - problemText: A recipe requires a ratio of 2 parts oil to 3 parts water. If a cook attempts to scale the recipe using
+        4 parts oil and 7 parts water, are the ingredients mixed proportionally? Explain using the constant ratio method.
+      mathTool: null
+      finalAnswer: 'No, the ingredients are not mixed proportionally. Verification using constant ratio: Original ratio (Oil:Water)
+        is 2:3 (Ratio value ≈ 0.667). Scaled ratio is 4:7 (Ratio value ≈ 0.571). Since 2/3 ≠ 4/7, the ratios are not constant,
+        and the recipe scaling is not proportional.'
+      stepByStepGuideline:
+      - 'Identify the ratios: Original recipe (2:3) and Scaled recipe (4:7).'
+      - 'Calculate the ratio value (constant of proportionality) for the original mix: 2 ÷ 3 ≈ 0.667.'
+      - 'Calculate the ratio value for the scaled mix: 4 ÷ 7 ≈ 0.571.'
+      - Compare the ratio values. Since 0.667 ≠ 0.571, the ingredients were not scaled proportionally.
+      id: q6-5
+      questionGroup: q6
+- id: s1-ratio-node-7
+  nodeNumber: 7
+  title: Unitary Method - Basic
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: If 3 books cost \$6.00, find the cost of 7 books.
+      avatarIntro: The unitary method is a crucial skill in real life! Let's start by calculating the cost of a single book
+        first.
+      mathTool: null
+      finalAnswer: 'Step 1: 1 book = \$6.00 ÷ 3 = \$2.00. Step 2: 7 books = \$2.00 × 7 = \$14.00.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the cost of 1 book by dividing the total cost by the number of books.'
+      - 'Step 2: Calculate the cost of 7 books by multiplying the unit cost by 7.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: A typist completes 15 pages in 5 hours. How many pages can the typist complete in 10 hours, assuming a
+        constant rate?
+      mathTool: null
+      finalAnswer: 'Step 1: Pages completed in 1 hour = 15 pages ÷ 5 hours = 3 pages/hour. Step 2: Pages completed in 10 hours
+        = 3 pages/hour × 10 = 30 pages.'
+      stepByStepGuideline:
+      - 'Step 1: Determine the number of pages completed in 1 hour (the unit rate) by dividing the total pages by the total
+        time.'
+      - 'Step 2: Calculate the number of pages completed in 10 hours by multiplying the unit rate by 10.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: A recipe requires 12 ml of vanilla extract to make 4 cakes. How much vanilla extract is required to make
+        8 cakes?
+      mathTool: null
+      finalAnswer: 'Step 1: Extract required for 1 cake = 12 ml ÷ 4 cakes = 3 ml/cake. Step 2: Extract required for 8 cakes
+        = 3 ml/cake × 8 = 24 ml.'
+      stepByStepGuideline:
+      - 'Step 1: Find the amount of vanilla extract required for 1 cake by dividing the total extract by the number of cakes.'
+      - 'Step 2: Calculate the extract required for 8 cakes by multiplying the unit amount by 8.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: A high-speed train travels 180 km in 6 hours. How far will it travel in 12 hours, assuming constant speed?
+      mathTool: null
+      finalAnswer: 'Step 1: Distance traveled in 1 hour = 180 km ÷ 6 hours = 30 km/hour. Step 2: Distance traveled in 12 hours
+        = 30 km/hour × 12 = 360 km.'
+      stepByStepGuideline:
+      - 'Step 1: Determine the distance traveled in 1 hour (speed/unit distance) by dividing the total distance by the total
+        time.'
+      - 'Step 2: Calculate the distance traveled in 12 hours by multiplying the unit distance by 12.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: If 4 kg of potatoes cost \$10.52, calculate the cost of 7 kg of potatoes.
+      mathTool: null
+      finalAnswer: 'Step 1: 1 kg of potatoes = \$10.52 ÷ 4 = \$2.63. Step 2: 7 kg of potatoes = \$2.63 × 7 = \$18.41.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the cost of 1 kg of potatoes by dividing the total cost by the weight.'
+      - 'Step 2: Calculate the cost of 7 kg of potatoes by multiplying the unit cost by 7.'
+      id: q7-5
+      questionGroup: q7
+- id: s1-ratio-node-8
+  nodeNumber: 8
+  title: Unitary Method - Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A small truck travels 120 km using 8 liters of diesel. If the truck maintains the same fuel efficiency,
+        calculate the amount of diesel, in liters, required for a journey of 270 km.
+      avatarIntro: The unitary method is incredibly useful for solving problems involving rates, like calculating fuel consumption.
+        Remember to first find the rate for a single unit.
+      mathTool: null
+      finalAnswer: 18 liters of diesel
+      stepByStepGuideline:
+      - 'Step 1: Calculate the distance traveled per unit of fuel (1 liter). Unitary value = 120 km ÷ 8 L = 15 km per liter.'
+      - 'Step 2: Calculate the required fuel volume for 270 km. Required fuel = 270 km ÷ 15 km/L = 18 L.'
+      - 'Step 3: State the answer with units. The truck requires 18 liters of diesel.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: A specialized 3D printer can produce 15 plastic components in 5 hours. Assuming the printer works continuously
+        at a constant rate, how many components can it produce in 12 hours?
+      mathTool: null
+      finalAnswer: 36 components
+      stepByStepGuideline:
+      - 'Step 1: Calculate the production rate per hour. Unitary value = 15 components ÷ 5 hours = 3 components per hour.'
+      - 'Step 2: Calculate the number of components produced in 12 hours. Total production = 3 components/hour × 12 hours
+        = 36 components.'
+      - 'Step 3: State the answer with units. The printer can produce 36 components.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: A chef's recipe for a dessert serves 10 people and requires 250 grams of caster sugar. If the chef needs
+        to prepare the dessert for 24 people, how many grams of caster sugar must be used?
+      mathTool: null
+      finalAnswer: 600 grams of caster sugar
+      stepByStepGuideline:
+      - 'Step 1: Calculate the amount of sugar required per serving. Unitary value = 250 grams ÷ 10 servings = 25 grams of
+        caster sugar per serving.'
+      - 'Step 2: Calculate the sugar required for 24 servings. Required sugar = 25 g/serving × 24 servings = 600 grams.'
+      - 'Step 3: State the answer with units. 600 grams of caster sugar must be used.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: An experienced technician can install 9 standard windows in 3 working days. Maintaining this constant rate,
+        calculate the number of days required for the technician to install 21 standard windows.
+      mathTool: null
+      finalAnswer: 7 days
+      stepByStepGuideline:
+      - 'Step 1: Calculate the installation rate per day. Unitary value = 9 windows ÷ 3 days = 3 windows per day.'
+      - 'Step 2: Calculate the number of days needed to install 21 windows. Required time = 21 windows ÷ 3 windows/day = 7
+        days.'
+      - 'Step 3: State the answer with units. It will take 7 days.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: A fabrication plant consumes 140 kg of specialized raw material to manufacture a batch of 350 electronic
+        gadgets. If the plant needs to fulfill an order for 550 electronic gadgets, how many kilograms of the raw material
+        will be consumed?
+      mathTool: null
+      finalAnswer: 220 kilograms of raw material
+      stepByStepGuideline:
+      - 'Step 1: Calculate the raw material consumed per electronic gadget. Unitary value = 140 kg ÷ 350 gadgets = 0.4 kg
+        per gadget.'
+      - 'Step 2: Calculate the total material required for 550 gadgets. Required material = 0.4 kg/gadget × 550 gadgets =
+        220 kg.'
+      - 'Step 3: State the answer with units. 220 kilograms of the raw material will be consumed.'
+      id: q8-5
+      questionGroup: q8
+- id: s1-ratio-node-9
+  nodeNumber: 9
+  title: Ratio Word Problems - Setup
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A map uses a scale where 1 cm represents 25,000 cm in reality. If the measured distance between two towns
+        on the map is 8.5 cm, calculate the actual distance between the towns in kilometers.
+      avatarIntro: Ratio problems help us scale quantities accurately, whether we are reading maps or mixing ingredients.
+        Let's start with a problem involving geographical scaling.
+      mathTool: null
+      finalAnswer: 2.125 km
+      stepByStepGuideline:
+      - 'Identify the ratio relationship: Map distance : Actual distance = 1 : 25,000.'
+      - 'Determine what is given and required: Given map distance = 8.5 cm. Required actual distance (A) in km.'
+      - 'Choose method: Use the unitary method or proportion setup: $\frac{1}{25,000} = \frac{8.5}{A}$.'
+      - 'Calculate the actual distance in centimeters: $A = 8.5 \times 25,000 = 212,500$ cm.'
+      - 'Convert the actual distance from cm to km (1 km = 100,000 cm): Actual distance = $212,500 \div 100,000 = 2.125$ km.'
+      - 'State the answer with units: The actual distance is 2.125 km.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: A mural artist needs to mix specific shades of green paint using yellow and blue paint in the ratio 7:4.
+        If the artist requires a total of 55 liters of the green mix, how many liters of blue paint must be used?
+      mathTool: null
+      finalAnswer: 20 liters
+      stepByStepGuideline:
+      - 'Identify the ratio relationship: Yellow : Blue = 7 : 4. The total parts in the ratio is $7 + 4 = 11$ parts.'
+      - 'Determine what is given and required: Given total volume = 55 liters (11 parts). Required volume of blue paint (4
+        parts).'
+      - 'Choose method: Use the unitary method to find the volume per part.'
+      - 'Calculate the volume represented by one part: $55 \text{ liters} \div 11 \text{ parts} = 5$ liters per part.'
+      - 'Calculate the volume of blue paint (4 parts): $4 \times 5 \text{ liters} = 20$ liters.'
+      - 'State the answer with units: 20 liters of blue paint must be used.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: A custom soil mixture requires peat moss (P) and sand (S) in the ratio 5:2 by mass. If a gardener uses
+        35 kg of peat moss, calculate the mass of sand required for the mixture.
+      mathTool: null
+      finalAnswer: 14 kg
+      stepByStepGuideline:
+      - 'Identify the ratio relationship: Peat moss (P) : Sand (S) = 5 : 2.'
+      - 'Determine what is given and required: Given P = 35 kg (5 parts). Required mass of sand (S) (2 parts).'
+      - 'Choose method: Use the unitary method based on the mass of peat moss.'
+      - 'Calculate the mass represented by one part: $35 \text{ kg} \div 5 \text{ parts} = 7$ kg per part.'
+      - 'Calculate the mass of sand required (2 parts): $2 \times 7 \text{ kg} = 14$ kg.'
+      - 'State the answer with units: The mass of sand required is 14 kg.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: The current exchange rate dictates that 1 Singapore Dollar (SGD) is equivalent to 0.74 US Dollars (USD).
+        If a company receives a payment of 8,880 USD, calculate the equivalent amount in SGD.
+      mathTool: null
+      finalAnswer: 12,000 SGD
+      stepByStepGuideline:
+      - 'Identify the ratio relationship: SGD : USD = 1 : 0.74.'
+      - 'Determine what is given and required: Given USD amount = 8,880. Required SGD amount (X).'
+      - 'Choose method: Use the unitary method to find how many SGD equal 1 USD, or set up a proportion: $\frac{1}{0.74} =
+        \frac{X}{8,880}$.'
+      - 'Calculate the SGD amount (X): $X = 8,880 \div 0.74$.'
+      - 'Perform the calculation: $X = 12,000$.'
+      - 'State the answer with units: The equivalent amount is 12,000 SGD.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: A manufacturer determines that 3 meters of specialized cabling weighs 1.8 kg. Assuming the cable density
+        is uniform, find the weight, in kilograms, of 11 meters of the same cabling.
+      mathTool: null
+      finalAnswer: 6.6 kg
+      stepByStepGuideline:
+      - 'Identify the ratio relationship: Length (m) : Weight (kg) = 3 : 1.8.'
+      - 'Determine what is given and required: Given original length = 3m, weight = 1.8 kg. Required weight for 11m.'
+      - 'Choose method: Use the unitary method to find the weight per meter.'
+      - 'Calculate the weight of 1 meter of cabling: Weight per meter = $1.8 \text{ kg} \div 3 \text{ m} = 0.6$ kg/m.'
+      - 'Calculate the weight of 11 meters: $11 \times 0.6 \text{ kg} = 6.6$ kg.'
+      - 'State the answer with units: The weight of 11 meters of cabling is 6.6 kg.'
+      id: q9-5
+      questionGroup: q9
+- id: s1-ratio-node-10
+  nodeNumber: 10
+  title: Dividing in Ratios - Two Terms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: A sum of $150 is to be split between Alice and Ben in the ratio 2:3. Calculate the amount each person receives.
+      avatarIntro: This problem requires you to distribute a total quantity based on a given ratio. Remember to find the total
+        number of parts first!
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Alice
+          - Ben
+          values:
+          - 60
+          - 90
+          yLabel: Amount ($)
+          showValues: true
+      finalAnswer: Alice receives $60 and Ben receives $90.
+      stepByStepGuideline:
+      - Total parts = 2 + 3 = 5
+      - Value of 1 part = $150 ÷ 5 = $30
+      - Alice's share (2 parts) = $30 × 2 = $60
+      - Ben's share (3 parts) = $30 × 3 = $90
+      - 'Check: $60 + $90 = $150 ✓'
+      id: q10-1
+      questionGroup: q10
+    - problemText: A piece of land measuring 240 hectares is divided between two farmers, Farmer X and Farmer Y, in the ratio
+        3:5. How many hectares does each farmer receive?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Farmer X
+          - Farmer Y
+          values:
+          - 90
+          - 150
+          yLabel: Area (ha)
+          showValues: true
+      finalAnswer: Farmer X receives 90 hectares and Farmer Y receives 150 hectares.
+      stepByStepGuideline:
+      - Total parts = 3 + 5 = 8
+      - Value of 1 part = 240 ha ÷ 8 = 30 ha
+      - Farmer X's share (3 parts) = 30 ha × 3 = 90 ha
+      - Farmer Y's share (5 parts) = 30 ha × 5 = 150 ha
+      - 'Check: 90 ha + 150 ha = 240 ha ✓'
+      id: q10-2
+      questionGroup: q10
+    - problemText: A chemist needs to mix 300 ml of a liquid concentrate. The mixture requires Chemical A and Chemical B in
+        the ratio 3:7. Calculate the volume, in ml, of each chemical required.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Chemical A
+          - Chemical B
+          values:
+          - 90
+          - 210
+          yLabel: Volume (ml)
+          showValues: true
+      finalAnswer: 90 ml of Chemical A and 210 ml of Chemical B are required.
+      stepByStepGuideline:
+      - Total parts = 3 + 7 = 10
+      - Value of 1 part = 300 ml ÷ 10 = 30 ml
+      - Chemical A (3 parts) = 30 ml × 3 = 90 ml
+      - Chemical B (7 parts) = 30 ml × 7 = 210 ml
+      - 'Check: 90 ml + 210 ml = 300 ml ✓'
+      id: q10-3
+      questionGroup: q10
+    - problemText: A project requires 450 minutes of development time, which is split into Phase I and Phase II in the ratio
+        4:5. Calculate the time allocated, in minutes, for each phase.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Phase I
+          - Phase II
+          values:
+          - 200
+          - 250
+          yLabel: Time (min)
+          showValues: true
+      finalAnswer: Phase I requires 200 minutes and Phase II requires 250 minutes.
+      stepByStepGuideline:
+      - Total parts = 4 + 5 = 9
+      - Value of 1 part = 450 minutes ÷ 9 = 50 minutes
+      - Phase I allocation (4 parts) = 50 minutes × 4 = 200 minutes
+      - Phase II allocation (5 parts) = 50 minutes × 5 = 250 minutes
+      - 'Check: 200 minutes + 250 minutes = 450 minutes ✓'
+      id: q10-4
+      questionGroup: q10
+    - problemText: A rectangular plot of 180 m² is divided into two sections, Plot P and Plot Q, in the ratio 2:5. Determine
+        the area of each plot, rounding your answers to two decimal places.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Plot P
+          - Plot Q
+          values:
+          - 51.43
+          - 128.57
+          yLabel: Area (m²)
+          showValues: true
+      finalAnswer: Plot P has an area of 51.43 m² and Plot Q has an area of 128.57 m².
+      stepByStepGuideline:
+      - Total parts = 2 + 5 = 7
+      - Value of 1 part = 180 m² ÷ 7 ≈ 25.7143 m²
+      - Plot P's area (2 parts) = 25.7143 m² × 2 ≈ 51.43 m²
+      - Plot Q's area (5 parts) = 25.7143 m² × 5 ≈ 128.57 m²
+      - 'Check: 51.43 m² + 128.57 m² = 180.00 m² ✓ (Note: Due to rounding, the sum is exact)'
+      id: q10-5
+      questionGroup: q10
+- id: s1-ratio-node-11
+  nodeNumber: 11
+  title: Dividing in Three-Term Ratios
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: Three children, A, B, and C, share 120 pieces of candy in the ratio 1:2:3. Calculate the number of candy
+        pieces each child receives.
+      avatarIntro: Dividing quantities into three shares is a common application of ratios. Remember to find the total number
+        of parts first!
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - A
+          - B
+          - C
+          values:
+          - 20
+          - 40
+          - 60
+          yLabel: Amount
+          showValues: true
+      finalAnswer: 'Total parts = 1+2+3 = 6. 1 part = 120÷6 = 20. A gets 1×20 = 20, B gets 2×20 = 40, C gets 3×20 = 60. Check:
+        20+40+60 = 120 ✓'
+      stepByStepGuideline:
+      - 'Find the total number of parts in the ratio: 1 + 2 + 3 = 6 parts.'
+      - 'Calculate the value of one part by dividing the total quantity by the total parts: 120 ÷ 6 = 20.'
+      - 'Calculate the share for A: 1 part × 20 = 20 pieces.'
+      - 'Calculate the share for B: 2 parts × 20 = 40 pieces.'
+      - 'Calculate the share for C: 3 parts × 20 = 60 pieces.'
+      - 'Verify the result by summing the shares: 20 + 40 + 60 = 120.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A total of $180 is distributed among three employees, Person P, Person Q, and Person R, based on their
+        seniority in the ratio 2:3:4. Determine the amount of money each person receives.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Person P
+          - Person Q
+          - Person R
+          values:
+          - 40
+          - 60
+          - 80
+          yLabel: Amount
+          showValues: true
+      finalAnswer: 'Total parts = 2+3+4 = 9. 1 part = 180÷9 = 20. P gets 2×20 = 40, Q gets 3×20 = 60, R gets 4×20 = 80. Check:
+        40+60+80 = 180 ✓'
+      stepByStepGuideline:
+      - 'Find the total number of parts in the ratio: 2 + 3 + 4 = 9 parts.'
+      - 'Calculate the value of one part: $180 ÷ 9 = $20.'
+      - 'Calculate the share for P: 2 parts × $20 = $40.'
+      - 'Calculate the share for Q: 3 parts × $20 = $60.'
+      - 'Calculate the share for R: 4 parts × $20 = $80.'
+      - 'Verify the result by summing the shares: $40 + $60 + $80 = $180.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: A chemical manufacturer needs to divide 210 liters of a base liquid into three components, Component X,
+        Component Y, and Component Z, in the ratio 2:5:3 for use in different processes. How many liters of the base liquid
+        are allocated to each component?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Component X
+          - Component Y
+          - Component Z
+          values:
+          - 42
+          - 105
+          - 63
+          yLabel: Amount
+          showValues: true
+      finalAnswer: 'Total parts = 2+5+3 = 10. 1 part = 210÷10 = 21. Component X gets 2×21 = 42 L, Component Y gets 5×21 =
+        105 L, Component Z gets 3×21 = 63 L. Check: 42+105+63 = 210 ✓'
+      stepByStepGuideline:
+      - 'Find the total number of parts in the ratio: 2 + 5 + 3 = 10 parts.'
+      - 'Calculate the value of one part: 210 liters ÷ 10 = 21 liters.'
+      - 'Calculate the allocation for Component X: 2 parts × 21 L = 42 L.'
+      - 'Calculate the allocation for Component Y: 5 parts × 21 L = 105 L.'
+      - 'Calculate the allocation for Component Z: 3 parts × 21 L = 63 L.'
+      - 'Verify the result by summing the allocations: 42 + 105 + 63 = 210 liters.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: A total prize fund of $240 is allocated to the top three winners (1st, 2nd, and 3rd place) in a competition
+        in the ratio 3:4:5. Calculate the specific amount of prize money each winner receives.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - 1st Place
+          - 2nd Place
+          - 3rd Place
+          values:
+          - 60
+          - 80
+          - 100
+          yLabel: Amount
+          showValues: true
+      finalAnswer: 'Total parts = 3+4+5 = 12. 1 part = 240÷12 = 20. 1st Place (3 parts) gets 3×20 = $60, 2nd Place (4 parts)
+        gets 4×20 = $80, 3rd Place (5 parts) gets 5×20 = $100. Check: 60+80+100 = 240 ✓'
+      stepByStepGuideline:
+      - 'Find the total number of parts in the ratio: 3 + 4 + 5 = 12 parts.'
+      - 'Calculate the value of one part: $240 ÷ 12 = $20.'
+      - 'Calculate the prize money for 1st Place: 3 parts × $20 = $60.'
+      - 'Calculate the prize money for 2nd Place: 4 parts × $20 = $80.'
+      - 'Calculate the prize money for 3rd Place: 5 parts × $20 = $100.'
+      - 'Verify the result by summing the shares: $60 + $80 + $100 = $240.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: Three founders, X, Y, and Z, agree to split the initial profit of $165 from their new venture in the ratio
+        5:6:11, based on their capital investment. Calculate the amount of profit received by each founder.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Founder X
+          - Founder Y
+          - Founder Z
+          values:
+          - 37.5
+          - 45.0
+          - 82.5
+          yLabel: Amount
+          showValues: true
+      finalAnswer: 'Total parts = 5+6+11 = 22. 1 part = 165÷22 = 7.5. Founder X gets 5×7.5 = $37.50, Founder Y gets 6×7.5
+        = $45.00, Founder Z gets 11×7.5 = $82.50. Check: 37.50+45.00+82.50 = 165 ✓'
+      stepByStepGuideline:
+      - 'Find the total number of parts in the ratio: 5 + 6 + 11 = 22 parts.'
+      - 'Calculate the value of one part: $165 ÷ 22 = $7.50.'
+      - 'Calculate the profit for Founder X: 5 parts × $7.50 = $37.50.'
+      - 'Calculate the profit for Founder Y: 6 parts × $7.50 = $45.00.'
+      - 'Calculate the profit for Founder Z: 11 parts × $7.50 = $82.50.'
+      - 'Verify the result by summing the profits: $37.50 + $45.00 + $82.50 = $165.'
+      id: q11-5
+      questionGroup: q11
+- id: s1-ratio-node-12
+  nodeNumber: 12
+  title: Understanding Rate vs Ratio
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A data entry clerk manages to type 450 words correctly in 6 minutes. Calculate the clerk's average typing
+        rate in words per minute.
+      avatarIntro: Rates help us understand efficiency and speed by comparing two different measurements. Let's calculate
+        this typing rate!
+      mathTool: null
+      finalAnswer: Rate = 450 words ÷ 6 minutes = 75 words/min
+      stepByStepGuideline:
+      - 'Identify the two quantities being compared: total words (450) and time taken (6 minutes).'
+      - Calculate the rate by dividing the total number of words by the time taken.
+      - Rate = 450 ÷ 6 = 75.
+      - State the final answer with the correct combined units (words/min).
+      id: q12-1
+      questionGroup: q12
+    - problemText: A supermarket sells 2.5 kg of premium coffee beans for $45.00. Find the unit price of the coffee beans
+        in dollars per kilogram.
+      mathTool: null
+      finalAnswer: Rate = $45.00 ÷ 2.5 kg = $18.00/kg
+      stepByStepGuideline:
+      - 'Identify the two quantities being compared: total cost ($45.00) and mass (2.5 kg).'
+      - Calculate the unit price (rate) by dividing the total cost by the total mass.
+      - Rate = 45.00 ÷ 2.5 = 18.00.
+      - State the final answer with the correct combined units ($/kg).
+      id: q12-2
+      questionGroup: q12
+    - problemText: A long-distance runner completed a 42-kilometer marathon in 3.5 hours. Calculate the runner's average speed
+        in kilometers per hour.
+      mathTool: null
+      finalAnswer: Rate = 42 km ÷ 3.5 hours = 12 km/h
+      stepByStepGuideline:
+      - 'Identify the two quantities being compared: distance traveled (42 km) and time taken (3.5 hours).'
+      - Calculate the average speed (rate) by dividing the distance by the time.
+      - Rate = 42 ÷ 3.5 = 12.
+      - State the final answer with the correct combined units (km/h).
+      id: q12-3
+      questionGroup: q12
+    - problemText: During a test run, a newly installed water pump filled a construction reservoir with 9,600 liters of water
+        over a period of 40 minutes. Determine the flow rate of the pump in liters per minute.
+      mathTool: null
+      finalAnswer: Rate = 9600 L ÷ 40 minutes = 240 L/min
+      stepByStepGuideline:
+      - 'Identify the two quantities being compared: volume (9,600 L) and time taken (40 minutes).'
+      - Calculate the flow rate by dividing the volume of water by the time taken.
+      - Rate = 9600 ÷ 40 = 240.
+      - State the final answer with the correct combined units (L/min).
+      id: q12-4
+      questionGroup: q12
+    - problemText: A student aims to complete 280 pages of required reading for a history course. If the student plans to
+        spend 8 hours reading, what is the required reading rate in pages per hour?
+      mathTool: null
+      finalAnswer: Rate = 280 pages ÷ 8 hours = 35 pages/hour
+      stepByStepGuideline:
+      - 'Identify the two quantities being compared: number of pages (280) and time allocated (8 hours).'
+      - Calculate the reading rate by dividing the number of pages by the time allocated.
+      - Rate = 280 ÷ 8 = 35.
+      - State the final answer with the correct combined units (pages/hour).
+      id: q12-5
+      questionGroup: q12
+- id: s1-ratio-node-13
+  nodeNumber: 13
+  title: Speed = Distance ÷ Time
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A car completes a 100 km journey between two cities in 2 hours. Calculate the average speed of the car
+        in kilometers per hour (km/h).
+      avatarIntro: Ready to tackle some speed calculations? Remember that speed is found by dividing the distance traveled
+        by the time taken.
+      mathTool: null
+      finalAnswer: Speed = Distance ÷ Time = 100 km ÷ 2 hours = 50 km/h
+      stepByStepGuideline:
+      - 'Identify the known values: Distance (D) = 100 km, Time (T) = 2 hours.'
+      - 'Identify the required formula: Speed = Distance ÷ Time.'
+      - 'Substitute the values into the formula: Speed = 100 km ÷ 2 hours.'
+      - 'Calculate the result: Speed = 50 km/h.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: A motorbike travels at a constant speed of 80 km/h. How far, in kilometers, will the motorbike travel in
+        30 minutes?
+      mathTool: null
+      finalAnswer: Time = 30 min = 0.5 hours. Distance = Speed × Time = 80 km/h × 0.5 hours = 40 km
+      stepByStepGuideline:
+      - 'Ensure units are consistent. Convert the time from minutes to hours: 30 minutes = 0.5 hours.'
+      - 'Identify the known values: Speed (S) = 80 km/h, Time (T) = 0.5 hours.'
+      - 'Identify the required formula: Distance = Speed × Time.'
+      - 'Substitute the values into the formula: Distance = 80 km/h × 0.5 hours.'
+      - 'Calculate the result: Distance = 40 km.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: An airplane needs to cover a distance of 150 km. If it maintains an average speed of 60 km/h, calculate
+        the time taken for the flight in hours.
+      mathTool: null
+      finalAnswer: Time = Distance ÷ Speed = 150 km ÷ 60 km/h = 2.5 hours
+      stepByStepGuideline:
+      - 'Identify the known values: Distance (D) = 150 km, Speed (S) = 60 km/h.'
+      - 'Identify the required formula: Time = Distance ÷ Speed.'
+      - 'Substitute the values into the formula: Time = 150 km ÷ 60 km/h.'
+      - 'Calculate the result: Time = 2.5 hours.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: A long-distance runner covers a distance of 5 km in 15 minutes. Determine the runner's average speed in
+        kilometers per minute (km/min).
+      mathTool: null
+      finalAnswer: Speed = Distance ÷ Time = 5 km ÷ 15 min = 0.33 km/min (or 1/3 km/min)
+      stepByStepGuideline:
+      - 'Identify the known values: Distance (D) = 5 km, Time (T) = 15 min.'
+      - 'Identify the required formula: Speed = Distance ÷ Time.'
+      - Since the required speed unit is km/min, no unit conversion is necessary.
+      - 'Substitute the values into the formula: Speed = 5 km ÷ 15 min.'
+      - 'Calculate the result: Speed ≈ 0.33 km/min (or exactly 1/3 km/min).'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A high-speed train travels at 100 km/h. Calculate the total distance, in kilometers, the train covers if
+        it travels for 1.5 hours.
+      mathTool: null
+      finalAnswer: Distance = Speed × Time = 100 km/h × 1.5 hours = 150 km
+      stepByStepGuideline:
+      - 'Identify the known values: Speed (S) = 100 km/h, Time (T) = 1.5 hours.'
+      - Ensure units are consistent (km/h and hours).
+      - 'Identify the required formula: Distance = Speed × Time.'
+      - 'Substitute the values into the formula: Distance = 100 km/h × 1.5 hours.'
+      - 'Calculate the result: Distance = 150 km.'
+      id: q13-5
+      questionGroup: q13
+- id: s1-ratio-node-14
+  nodeNumber: 14
+  title: Reading Distance-Time Graphs
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: The distance-time graph below illustrates the journey of a delivery van. The journey consists of two stages
+        with different constant speeds. Determine the speed, in km/h, during the fastest stage of the van's journey.
+      avatarIntro: Distance-time graphs are powerful tools! Remember that the steeper the slope, the faster the speed. Look
+        carefully at the graph segments.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 0
+          xMax: 2
+          yMin: 0
+          yMax: 100
+          xLabel: Time (hours)
+          yLabel: Distance (km)
+          points:
+          - x: 0
+            y: 0
+          - x: 0.5
+            y: 40
+          - x: 2
+            y: 100
+          lines:
+          - type: linear
+            slope: 80
+            yIntercept: 0
+            color: '#3B82F6'
+          - type: linear
+            slope: 40
+            yIntercept: 20
+            color: '#3B82F6'
+          title: Distance-Time Graph of a Delivery Van
+      finalAnswer: 80 km/h
+      stepByStepGuideline:
+      - Identify the two stages and calculate the speed (gradient) for each.
+      - 'Stage 1 (0 to 0.5 hours): Speed = Change in Distance / Change in Time = (40 km - 0 km) / (0.5 h - 0 h) = 40 / 0.5
+        = 80 km/h.'
+      - 'Stage 2 (0.5 to 2 hours): Speed = Change in Distance / Change in Time = (100 km - 40 km) / (2 h - 0.5 h) = 60 / 1.5
+        = 40 km/h.'
+      - 'Compare the speeds: 80 km/h is greater than 40 km/h. The fastest speed is 80 km/h.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: The graph below tracks a hiker's distance from their starting point during a morning trek. Based on the
+        graph, determine the total duration, in minutes, that the hiker spent resting.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 0
+          xMax: 90
+          yMin: 0
+          yMax: 1500
+          xLabel: Time (min)
+          yLabel: Distance (m)
+          points:
+          - x: 0
+            y: 0
+          - x: 30
+            y: 900
+          - x: 60
+            y: 900
+          - x: 90
+            y: 1500
+          lines:
+          - type: linear
+            slope: 30
+            yIntercept: 0
+            color: '#3B82F6'
+          - type: linear
+            slope: 0
+            yIntercept: 900
+            color: '#3B82F6'
+          - type: linear
+            slope: 20
+            yIntercept: -300
+            color: '#3B82F6'
+          title: Distance-Time Graph of a Hiker
+      finalAnswer: 30 minutes
+      stepByStepGuideline:
+      - Identify the section of the graph where the hiker was resting. This corresponds to the horizontal line segment, where
+        distance does not change over time.
+      - The rest period starts at time t₁ = 30 minutes and ends at time t₂ = 60 minutes.
+      - 'Calculate the duration of the rest period: Duration = t₂ - t₁ = 60 minutes - 30 minutes = 30 minutes.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: The distance-time graph shows a small aircraft travelling at a constant speed from the airport (origin).
+        Calculate the constant speed of the aircraft in km/h and state the total distance covered.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 0
+          xMax: 3
+          yMin: 0
+          yMax: 500
+          xLabel: Time (hours)
+          yLabel: Distance (km)
+          points:
+          - x: 0
+            y: 0
+          - x: 2.5
+            y: 450
+          lines:
+          - type: linear
+            slope: 180
+            yIntercept: 0
+            color: '#3B82F6'
+          title: Distance-Time Graph of an Aircraft Flight
+      finalAnswer: 'Speed: 180 km/h, Distance: 450 km'
+      stepByStepGuideline:
+      - 'Identify the total distance covered and the total time taken from the final point on the graph: (2.5 hours, 450 km).'
+      - The total distance covered is 450 km.
+      - 'Calculate the constant speed using the formula: Speed = Total Distance / Total Time.'
+      - Speed = 450 km / 2.5 hours = 180 km/h.
+      id: q14-3
+      questionGroup: q14
+    - problemText: A cyclist completes a training ride involving two stages shown in the distance-time graph. Calculate the
+        average speed of the cyclist for the entire 4-hour journey, expressing your answer in km/h.
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 0
+          xMax: 4
+          yMin: 0
+          yMax: 70
+          xLabel: Time (hours)
+          yLabel: Distance (km)
+          points:
+          - x: 0
+            y: 0
+          - x: 1.5
+            y: 30
+          - x: 4
+            y: 70
+          lines:
+          - type: linear
+            slope: 20
+            yIntercept: 0
+            color: '#3B82F6'
+          - type: linear
+            slope: 16
+            yIntercept: 6
+            color: '#3B82F6'
+          title: Distance-Time Graph of a Cyclist
+      finalAnswer: 17.5 km/h
+      stepByStepGuideline:
+      - Determine the total distance covered during the entire journey. The final distance reached is 70 km.
+      - Determine the total time taken for the journey, which is 4 hours.
+      - 'Calculate the average speed using the formula: Average Speed = Total Distance / Total Time.'
+      - Average Speed = 70 km / 4 hours = 17.5 km/h.
+      id: q14-4
+      questionGroup: q14
+    - problemText: The graph shows the journey of a train which stops briefly at a station. Compare the train's speed in Stage
+        1 (0 to 10 min) and Stage 3 (25 to 40 min). Which stage was faster, and by how much (in km/min)?
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          xMin: 0
+          xMax: 40
+          yMin: 0
+          yMax: 50
+          xLabel: Time (min)
+          yLabel: Distance (km)
+          points:
+          - x: 0
+            y: 0
+          - x: 10
+            y: 15
+          - x: 25
+            y: 15
+          - x: 40
+            y: 45
+          lines:
+          - type: linear
+            slope: 1.5
+            yIntercept: 0
+            color: '#3B82F6'
+          - type: linear
+            slope: 0
+            yIntercept: 15
+            color: '#3B82F6'
+          - type: linear
+            slope: 2
+            yIntercept: -35
+            color: '#3B82F6'
+          title: Distance-Time Graph of a Train Journey
+      finalAnswer: Stage 3 was faster by 0.5 km/min
+      stepByStepGuideline:
+      - 'Calculate the speed for Stage 1 (0 to 10 min): Speed₁ = (15 km - 0 km) / (10 min - 0 min) = 15 / 10 = 1.5 km/min.'
+      - 'Calculate the speed for Stage 3 (25 to 40 min): Speed₃ = (45 km - 15 km) / (40 min - 25 min) = 30 km / 15 min = 2
+        km/min.'
+      - 'Compare the speeds: 2 km/min (Stage 3) is greater than 1.5 km/min (Stage 1).'
+      - 'Find the difference in speed: 2.0 km/min - 1.5 km/min = 0.5 km/min. Stage 3 was faster by 0.5 km/min.'
+      id: q14-5
+      questionGroup: q14
+- id: s1-ratio-node-15
+  nodeNumber: 15
+  title: Average Speed - NOT Average of Speeds
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A high-speed train travels the first part of its route for 2 hours at a speed of 50 km/h. It then increases
+        its speed, traveling for another 3 hours at 70 km/h. Calculate the average speed of the train for the entire journey.
+      avatarIntro: Remember, average speed isn't just the average of the two speeds! You must calculate the total distance
+        and divide it by the total time taken.
+      mathTool: null
+      finalAnswer: 62 km/h
+      stepByStepGuideline:
+      - 'Calculate the distance covered in Stage 1: Distance₁ = 50 km/h × 2 h = 100 km.'
+      - 'Calculate the distance covered in Stage 2: Distance₂ = 70 km/h × 3 h = 210 km.'
+      - 'Calculate the Total Distance: 100 km + 210 km = 310 km.'
+      - 'Calculate the Total Time: 2 h + 3 h = 5 h.'
+      - 'Calculate the Average Speed: Total Distance ÷ Total Time = 310 km ÷ 5 h = 62 km/h.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: A cargo ship sails across the sea in two legs. The first leg lasts 1.5 hours at a speed of 40 km/h. The
+        second leg lasts 2.5 hours at a higher speed of 80 km/h. What is the average speed of the cargo ship for the 4-hour
+        voyage?
+      mathTool: null
+      finalAnswer: 65 km/h
+      stepByStepGuideline:
+      - 'Calculate the distance covered in Stage 1: Distance₁ = 40 km/h × 1.5 h = 60 km.'
+      - 'Calculate the distance covered in Stage 2: Distance₂ = 80 km/h × 2.5 h = 200 km.'
+      - 'Calculate the Total Distance: 60 km + 200 km = 260 km.'
+      - 'Calculate the Total Time: 1.5 h + 2.5 h = 4 h.'
+      - 'Calculate the Average Speed: Total Distance ÷ Total Time = 260 km ÷ 4 h = 65 km/h.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: A cross-country delivery driver begins their shift by driving for 1 hour at 60 km/h. They stop for a required
+        rest break lasting 0.5 hours, and then continue driving for 2 hours at 50 km/h. Determine the average speed of the
+        driver for the entire duration, including the rest break.
+      mathTool: null
+      finalAnswer: 45.71 km/h (or 320/7 km/h)
+      stepByStepGuideline:
+      - 'Calculate the distance covered in Stage 1: Distance₁ = 60 km/h × 1 h = 60 km.'
+      - 'Calculate the distance covered in Stage 2: During the rest break (0.5 h), distance covered is 0 km.'
+      - 'Calculate the distance covered in Stage 3: Distance₃ = 50 km/h × 2 h = 100 km.'
+      - 'Calculate the Total Distance: 60 km + 0 km + 100 km = 160 km.'
+      - 'Calculate the Total Time (including rest): 1 h + 0.5 h + 2 h = 3.5 h.'
+      - 'Calculate the Average Speed: Total Distance ÷ Total Time = 160 km ÷ 3.5 h = 320/7 km/h ≈ 45.71 km/h (to 2 decimal
+        places).'
+      id: q15-3
+      questionGroup: q15
+    - problemText: A long-distance cyclist completes a race in three distinct stages. Stage 1 takes 1 hour at 40 km/h. Stage
+        2 takes 2 hours at 60 km/h. Stage 3 takes 3 hours at 80 km/h. Calculate the average speed of the cyclist over the
+        total 6-hour duration.
+      mathTool: null
+      finalAnswer: 66.67 km/h (or 200/3 km/h)
+      stepByStepGuideline:
+      - 'Calculate the distance covered in Stage 1: Distance₁ = 40 km/h × 1 h = 40 km.'
+      - 'Calculate the distance covered in Stage 2: Distance₂ = 60 km/h × 2 h = 120 km.'
+      - 'Calculate the distance covered in Stage 3: Distance₃ = 80 km/h × 3 h = 240 km.'
+      - 'Calculate the Total Distance: 40 km + 120 km + 240 km = 400 km.'
+      - 'Calculate the Total Time: 1 h + 2 h + 3 h = 6 h.'
+      - 'Calculate the Average Speed: Total Distance ÷ Total Time = 400 km ÷ 6 h = 200/3 km/h ≈ 66.67 km/h (to 2 decimal places).'
+      id: q15-4
+      questionGroup: q15
+    - problemText: An airplane completes a short flight consisting of two legs. The first leg takes 2.5 hours at an average
+        speed of 70 km/h. The second leg takes 1.5 hours at 50 km/h due to slower air traffic control clearance. Find the
+        average speed of the airplane for the full flight.
+      mathTool: null
+      finalAnswer: 62.5 km/h
+      stepByStepGuideline:
+      - 'Calculate the distance covered in Leg 1: Distance₁ = 70 km/h × 2.5 h = 175 km.'
+      - 'Calculate the distance covered in Leg 2: Distance₂ = 50 km/h × 1.5 h = 75 km.'
+      - 'Calculate the Total Distance: 175 km + 75 km = 250 km.'
+      - 'Calculate the Total Time: 2.5 h + 1.5 h = 4 h.'
+      - 'Calculate the Average Speed: Total Distance ÷ Total Time = 250 km ÷ 4 h = 62.5 km/h.'
+      id: q15-5
+      questionGroup: q15
+- id: s1-ratio-node-16
+  nodeNumber: 16
+  title: Converting km/h to m/s
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: A scientist measures the top running speed of a cheetah to be 36 km/h. Convert this speed to meters per
+        second (m/s).
+      avatarIntro: Unit conversions are essential for comparing speeds measured in different systems. Let's make sure we show
+        all the steps clearly!
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 20
+          step: 5
+          points:
+          - 10
+          showTickLabels: true
+          title: Speed Conversion (m/s scale)
+      finalAnswer: 10 m/s
+      stepByStepGuideline:
+      - To convert speed from km/h to m/s, we use the relationship 1 km = 1000 m and 1 h = 3600 s.
+      - 'Method 1 (Using 3.6): Divide the speed in km/h by 3.6.'
+      - 36 km/h = 36 ÷ 3.6 = 10 m/s.
+      - 'Method 2 (First Principles): Multiply by 1000 and divide by 3600.'
+      - 36 km/h = 36 × (1000 / 3600) m/s = 36000 ÷ 3600 m/s = 10 m/s.
+      id: q16-1
+      questionGroup: q16
+    - problemText: A competition speed boat achieves a velocity of 15 m/s. Express this speed in kilometers per hour (km/h).
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 90
+          step: 15
+          points:
+          - 54
+          showTickLabels: true
+          title: Speed Conversion (km/h scale)
+      finalAnswer: 54 km/h
+      stepByStepGuideline:
+      - To convert speed from m/s to km/h, we use the relationship 1 m = 1/1000 km and 1 s = 1/3600 h.
+      - 'Method 1 (Using 3.6): Multiply the speed in m/s by 3.6.'
+      - 15 m/s = 15 × 3.6 = 54 km/h.
+      - 'Method 2 (First Principles): Multiply by 3600 and divide by 1000.'
+      - 15 m/s = 15 × (3600 / 1000) km/h = 15 × 3.6 km/h = 54 km/h.
+      id: q16-2
+      questionGroup: q16
+    - problemText: A new generation high-speed rail prototype is tested at 72 km/h. Convert this test speed into meters per
+        second (m/s).
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 30
+          step: 5
+          points:
+          - 20
+          showTickLabels: true
+          title: Speed Conversion (m/s scale)
+      finalAnswer: 20 m/s
+      stepByStepGuideline:
+      - To convert speed from km/h to m/s, we divide by 3.6 or use first principles (× 1000 ÷ 3600).
+      - 'Method 1 (Using 3.6): Divide the speed in km/h by 3.6.'
+      - 72 km/h = 72 ÷ 3.6 = 20 m/s.
+      - 'Method 2 (First Principles): Multiply by 1000 and divide by 3600.'
+      - 72 km/h = 72 × (1000 / 3600) m/s = 72000 ÷ 3600 m/s = 20 m/s.
+      id: q16-3
+      questionGroup: q16
+    - problemText: During a severe weather event, wind speeds are recorded at 25 m/s. What is this wind speed in kilometers
+        per hour (km/h)?
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 120
+          step: 30
+          points:
+          - 90
+          showTickLabels: true
+          title: Speed Conversion (km/h scale)
+      finalAnswer: 90 km/h
+      stepByStepGuideline:
+      - To convert speed from m/s to km/h, we multiply by 3.6 or use first principles (× 3600 ÷ 1000).
+      - 'Method 1 (Using 3.6): Multiply the speed in m/s by 3.6.'
+      - 25 m/s = 25 × 3.6 = 90 km/h.
+      - 'Method 2 (First Principles): Multiply by 3600 and divide by 1000.'
+      - 25 m/s = 25 × (3600 / 1000) km/h = 25 × 3.6 km/h = 90 km/h.
+      id: q16-4
+      questionGroup: q16
+    - problemText: A Formula 1 race car is measured maintaining a constant speed of 108 km/h on a tight curve. Determine this
+        speed in meters per second (m/s).
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 40
+          step: 10
+          points:
+          - 30
+          showTickLabels: true
+          title: Speed Conversion (m/s scale)
+      finalAnswer: 30 m/s
+      stepByStepGuideline:
+      - To convert speed from km/h to m/s, we divide by 3.6 or use first principles (× 1000 ÷ 3600).
+      - 'Method 1 (Using 3.6): Divide the speed in km/h by 3.6.'
+      - 108 km/h = 108 ÷ 3.6 = 30 m/s.
+      - 'Method 2 (First Principles): Multiply by 1000 and divide by 3600.'
+      - 108 km/h = 108 × (1000 / 3600) m/s = 108000 ÷ 3600 m/s = 30 m/s.
+      id: q16-5
+      questionGroup: q16
+- id: s1-ratio-node-17
+  nodeNumber: 17
+  title: Comparing Rates with Different Units
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: barChart
+    preWrittenQuestions:
+    - problemText: A shopper is comparing two brands of liquid laundry detergent. Brand A is priced at $12.50 for a 2.5 L
+        container. Brand B is priced at $4.50 for an 800 mL container. Which brand offers the better value (cheaper per unit
+        volume)?
+      avatarIntro: Comparing rates is essential for making smart purchasing decisions! Let's figure out which detergent brand
+        gives you more bang for your buck.
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Brand A
+          - Brand B
+          values:
+          - 5.0
+          - 5.63
+          yLabel: $/L
+          showValues: true
+      finalAnswer: Brand A is the better value, costing $5.00 per litre compared to $5.63 per litre for Brand B.
+      stepByStepGuideline:
+      - 'Step 1: Convert the volume of Brand B to Litres (1 L = 1000 mL). Volume B = 800 mL = 0.8 L.'
+      - 'Step 2: Calculate the unit rate for Brand A ($/L). Rate A = $12.50 ÷ 2.5 L = $5.00/L.'
+      - 'Step 3: Calculate the unit rate for Brand B ($/L). Rate B = $4.50 ÷ 0.8 L = $5.625/L (approximately $5.63/L).'
+      - 'Step 4: Compare the rates: $5.00/L < $5.63/L.'
+      - 'Step 5: Conclude that Brand A offers the better value as it is cheaper per litre.'
+      id: q17-1
+      questionGroup: q17
+    - problemText: Compare the average migration speeds of two animals. The Albatross covers 1000 km in 5 days. The Leatherback
+        Sea Turtle covers 1500 m in 2 hours. Which animal is migrating faster?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Albatross
+          - Sea Turtle
+          values:
+          - 8.33
+          - 0.75
+          yLabel: km/h
+          showValues: true
+      finalAnswer: The Albatross is migrating faster at approximately 8.33 km/h, compared to the Sea Turtle's speed of 0.75
+        km/h.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the speed of the Albatross in km/h. Convert 5 days to hours: 5 days * 24 hours/day = 120 hours.
+        Speed A = 1000 km ÷ 120 h ≈ 8.33 km/h.'
+      - 'Step 2: Calculate the speed of the Sea Turtle in km/h. Convert 1500 m to km: 1500 m = 1.5 km. Speed T = 1.5 km ÷
+        2 h = 0.75 km/h.'
+      - 'Step 3: Compare the speeds: 8.33 km/h > 0.75 km/h.'
+      - 'Step 4: Conclude that the Albatross is migrating faster.'
+      id: q17-2
+      questionGroup: q17
+    - problemText: Two automated machines, X and Y, assemble components in a factory. Machine X produces 45 items in 3 minutes.
+        Machine Y produces 800 items in 1 hour. Which machine has the faster production rate?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Machine X
+          - Machine Y
+          values:
+          - 900
+          - 800
+          yLabel: items/hour
+          showValues: true
+      finalAnswer: Machine X has the faster production rate, producing 900 items per hour compared to Machine Y's 800 items
+        per hour.
+      stepByStepGuideline:
+      - 'Step 1: Convert Machine X''s rate to items per hour (1 hour = 60 minutes). Calculate items per minute first: 45 items
+        ÷ 3 min = 15 items/minute.'
+      - 'Step 2: Convert Machine X''s rate to items/hour: 15 items/minute * 60 minutes/hour = 900 items/hour.'
+      - 'Step 3: Machine Y''s rate is already 800 items/hour.'
+      - 'Step 4: Compare the rates: 900 items/hour > 800 items/hour.'
+      - 'Step 5: Conclude that Machine X is faster.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: A baker is sourcing bulk sugar from two suppliers. Supplier P sells a 1.5 kg bag for $3.80. Supplier Q
+        sells 250 g packets for $0.75 each. Which supplier offers the cheaper price per kilogram?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Supplier P
+          - Supplier Q
+          values:
+          - 2.53
+          - 3.0
+          yLabel: $/kg
+          showValues: true
+      finalAnswer: Supplier P is cheaper, costing approximately $2.53 per kg, compared to Supplier Q's $3.00 per kg.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the unit rate for Supplier P ($/kg). Rate P = $3.80 ÷ 1.5 kg ≈ $2.53/kg (rounded to 2 decimal places).'
+      - 'Step 2: Convert the mass of Supplier Q''s packet to kg (1 kg = 1000 g). Mass Q = 250 g = 0.25 kg.'
+      - 'Step 3: Calculate the unit rate for Supplier Q ($/kg). Rate Q = $0.75 ÷ 0.25 kg = $3.00/kg.'
+      - 'Step 4: Compare the rates: $2.53/kg < $3.00/kg.'
+      - 'Step 5: Conclude that Supplier P is cheaper.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: A user is comparing two internet connections based on their data transfer rate. Connection A downloads
+        at a rate of 50 MB per second (MB/s). Connection B downloads 4 GB in 1 minute. Assuming 1 GB = 1000 MB, which connection
+        is faster?
+      mathTool:
+        toolName: barChart
+        parameters:
+          categories:
+          - Connection A
+          - Connection B
+          values:
+          - 50
+          - 66.67
+          yLabel: MB/s
+          showValues: true
+      finalAnswer: Connection B is faster, transferring data at approximately 66.67 MB/s, compared to Connection A's 50 MB/s.
+      stepByStepGuideline:
+      - 'Step 1: Connection A''s rate is 50 MB/s.'
+      - 'Step 2: Convert Connection B''s rate to MB/s. Convert volume (GB to MB): 4 GB * 1000 MB/GB = 4000 MB.'
+      - 'Step 3: Convert time (minutes to seconds): 1 minute = 60 seconds.'
+      - 'Step 4: Calculate Connection B''s rate in MB/s: 4000 MB ÷ 60 s ≈ 66.67 MB/s.'
+      - 'Step 5: Compare the rates: 66.67 MB/s > 50 MB/s.'
+      - 'Step 6: Conclude that Connection B is faster.'
+      id: q17-5
+      questionGroup: q17
+- id: s1-ratio-node-18
+  nodeNumber: 18
+  title: Multi-Step Rate and Ratio Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A long freight train is travelling at a constant speed. It completely passes a 400 m bridge in 30 seconds.
+        It then passes a much longer 640 m bridge completely in 42 seconds, maintaining the same constant speed. Find the
+        length of the freight train in meters.
+      avatarIntro: This problem requires careful use of the distance formula where the train's length must be added to the
+        tunnel's length. Set up two equations and solve algebraically!
+      mathTool: null
+      finalAnswer: 200 m
+      stepByStepGuideline:
+      - Let L be the length of the train in meters (m) and S be the constant speed of the train in meters per second (m/s).
+      - When a train passes a bridge completely, the total distance covered is the length of the bridge plus the length of
+        the train.
+      - 'For the first bridge (400 m): Distance = L + 400 m, Time = 30 s. Speed S = (L + 400) / 30.'
+      - 'For the second bridge (640 m): Distance = L + 640 m, Time = 42 s. Speed S = (L + 640) / 42.'
+      - 'Since the speed S is constant, set the two expressions equal: (L + 400) / 30 = (L + 640) / 42.'
+      - 'Simplify the fractions by dividing 30 and 42 by their common factor, 6: (L + 400) / 5 = (L + 640) / 7.'
+      - 'Cross-multiply: 7(L + 400) = 5(L + 640).'
+      - 'Expand the equation: 7L + 2800 = 5L + 3200.'
+      - 'Isolate L: 2L = 3200 - 2800. 2L = 400.'
+      - 'Solve for L: L = 200 m.'
+      id: q18-1
+      questionGroup: q18
+    - problemText: Two hikers, Alice and Ben, start 24.3 km apart and walk directly toward each other. Alice walks at a constant
+        speed of 4.5 km/h. Ben walks at a constant speed of 1 m/s. How long, in minutes, will it take for them to meet?
+      mathTool: null
+      finalAnswer: 180 minutes
+      stepByStepGuideline:
+      - Define speeds in the same unit. Alice's speed (R_A) = 4.5 km/h.
+      - 'Convert Ben''s speed (R_B) from m/s to km/h: R_B = 1 m/s * (3600 s / 1 h) * (1 km / 1000 m). R_B = 3600 / 1000 km/h
+        = 3.6 km/h.'
+      - 'Since they are walking toward each other, their relative speed (R_Rel) is the sum of their individual speeds: R_Rel
+        = R_A + R_B = 4.5 km/h + 3.6 km/h = 8.1 km/h.'
+      - 'The time (T) taken to meet is the total distance (D) divided by the relative speed: T = D / R_Rel.'
+      - T = 24.3 km / 8.1 km/h.
+      - 'Calculate time T: T = 3 hours.'
+      - 'Convert the time from hours to minutes: Time in minutes = 3 hours * 60 minutes/hour = 180 minutes.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: A large industrial tank with a capacity of 10,000 L is being filled by Pipe A and simultaneously drained
+        by Pipe B. Pipe A fills the tank at a rate of 15 L per minute. Pipe B drains the tank at a rate of 0.75 m³ per hour.
+        If the tank starts empty and both pipes run, how long (in hours) will it take to fill the tank completely?
+      mathTool: null
+      finalAnswer: 66 2/3 hours
+      stepByStepGuideline:
+      - Standardize all rates to Liters per Hour (L/h). Capacity is 10,000 L.
+      - 'Calculate the filling rate of Pipe A (R_A): R_A = 15 L/min * 60 min/h = 900 L/h.'
+      - 'Calculate the draining rate of Pipe B (R_B). Use the conversion 1 m³ = 1000 L: R_B = 0.75 m³/h * 1000 L/m³ = 750
+        L/h.'
+      - 'Determine the net filling rate (R_net): R_net = R_A - R_B = 900 L/h - 750 L/h = 150 L/h.'
+      - 'Calculate the time (T) required to fill the tank: T = Capacity / R_net.'
+      - T = 10,000 L / 150 L/h.
+      - 'Simplify the fraction: T = 1000 / 15 h = 200 / 3 h.'
+      - 'Express the answer as a mixed number: T = 66 and 2/3 hours.'
+      id: q18-3
+      questionGroup: q18
+    - problemText: A specialized fertilizer mix requires three components, Nitrogen (N), Phosphate (P), and Potassium (K),
+        in a mass ratio of 5:3:2. Nitrogen costs $1.50 per kg. Phosphate costs $0.75 per 250 g. Potassium costs $1.20 per
+        500 g. If a farmer needs a total of 500 kg of the final fertilizer mix, calculate the total cost required to produce
+        this amount.
+      mathTool: null
+      finalAnswer: $850.00
+      stepByStepGuideline:
+      - 'Determine the total number of ratio parts: 5 + 3 + 2 = 10 parts.'
+      - 'Calculate the mass required for each component out of 500 kg total:'
+      - 'N: (5/10) * 500 kg = 250 kg. P: (3/10) * 500 kg = 150 kg. K: (2/10) * 500 kg = 100 kg.'
+      - 'Determine the cost per kilogram for each component, handling unit conversions (1 kg = 1000 g):'
+      - 'N Cost: $1.50 / kg (Given).'
+      - 'P Cost: $0.75 per 250 g = $0.75 / 0.25 kg = $3.00 / kg.'
+      - 'K Cost: $1.20 per 500 g = $1.20 / 0.5 kg = $2.40 / kg.'
+      - 'Calculate the total cost for each component:'
+      - Cost N = 250 kg * $1.50/kg = $375.00.
+      - Cost P = 150 kg * $3.00/kg = $450.00.
+      - Cost K = 100 kg * $2.40/kg = $240.00.
+      - 'Calculate the total cost: Total Cost = $375.00 + $450.00 + $240.00 = $1065.00.'
+      id: q18-4
+      questionGroup: q18
+    - problemText: Two construction workers, Fiona and Gary, are tasked with painting a large wall. Fiona works 25% faster
+        than Gary. If they work together, they can complete the entire wall in 6 hours. How long, in hours and minutes, would
+        it take Gary to paint the wall alone?
+      mathTool: null
+      finalAnswer: 13 hours 30 minutes
+      stepByStepGuideline:
+      - Let R_G be Gary's rate (fraction of wall painted per hour) and R_F be Fiona's rate.
+      - Fiona works 25% faster than Gary, so R_F = 1.25 * R_G = (5/4) * R_G.
+      - When working together, their combined rate (R_C) completes the job (1 wall) in 6 hours. R_C = 1/6 wall/hour.
+      - 'Set up the combined rate equation: R_F + R_G = R_C.'
+      - (5/4)R_G + R_G = 1/6.
+      - 'Combine the terms for R_G: (5/4 + 4/4)R_G = 1/6. (9/4)R_G = 1/6.'
+      - 'Solve for Gary''s rate (R_G): R_G = (1/6) * (4/9) = 4/54 = 2/27 wall/hour.'
+      - 'The time T_G required for Gary to paint the wall alone is 1 / R_G: T_G = 1 / (2/27) = 27/2 hours.'
+      - 'Convert the time to hours and minutes: 27/2 hours = 13.5 hours.'
+      - 13.5 hours is 13 hours and (0.5 * 60) minutes, which is 13 hours 30 minutes.
+      id: q18-5
+      questionGroup: q18
+- id: s1-ratio-node-19
+  nodeNumber: 19
+  title: Complex Applications and Integration
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'City A and City B are 5 km apart along a straight road. Mr. Smith starts walking from A towards B at 6:00
+        AM at a constant speed of 6 km/h. Ms. Jones starts walking from B towards A at 6:30 AM at a constant speed of 4 km/h.
+
+        (a) At what time do they meet?
+
+        (b) How far (in meters) is their meeting point from City A?'
+      avatarIntro: Ready to tackle a multi-step motion problem? Remember to account for the time difference before calculating
+        the combined rate.
+      mathTool: null
+      finalAnswer: (a) 7:06 AM (b) 4260 m
+      stepByStepGuideline:
+      - 'Given: Total Distance = 5 km, Smith''s speed = 6 km/h, Jones'' speed = 4 km/h, Smith starts 30 minutes (0.5 h) earlier.'
+      - 'Step 1: Calculate the distance Smith covers before Jones starts (6:00 AM to 6:30 AM). Distance = Speed × Time = 6
+        km/h × 0.5 h = 3 km.'
+      - 'Step 2: Calculate the remaining distance between them at 6:30 AM. Remaining Distance = 5 km - 3 km = 2 km.'
+      - 'Step 3: Calculate their combined speed after 6:30 AM. Combined Speed = 6 km/h + 4 km/h = 10 km/h.'
+      - 'Step 4: Calculate the time taken to meet after 6:30 AM. Time = Distance / Speed = 2 km / 10 km/h = 0.2 hours.'
+      - 'Step 5: Convert the time to minutes and determine the meeting time. 0.2 hours × 60 min/h = 12 minutes. Meeting Time
+        = 6:30 AM + 12 minutes = 7:06 AM.'
+      - 'Step 6: Calculate the total distance Smith traveled from 6:00 AM until the meeting time. Total Time traveled by Smith
+        = 0.5 h + 0.2 h = 0.7 h. Distance from A = 6 km/h × 0.7 h = 4.2 km.'
+      - 'Step 7: Convert the distance to meters. Distance = 4.2 km × 1000 m/km = 4200 m.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: 'A commercial parking structure uses tiered pricing based on zone and duration. The first 2 hours must
+        be parked in Zone A (Premium) at a rate of $3.50 per hour. If parking exceeds 2 hours, the remaining time is split
+        between Zone A and Zone B (Standard, $2.00 per hour) in a duration ratio of 1:2 (A:B).
+
+        A customer parks for a total of 5 hours.
+
+        (a) Calculate the total duration (in hours) the customer spent in Zone B.
+
+        (b) Determine the customer''s total parking fee.'
+      mathTool: null
+      finalAnswer: (a) 2 hours (b) $16.00
+      stepByStepGuideline:
+      - 'Given: Total duration = 5 hours. Initial Zone A = 2 hours @ $3.50/h. Remaining time split A:B = 1:2. Zone B rate
+        = $2.00/h.'
+      - 'Step 1: Calculate the remaining time after the mandatory Zone A period. Remaining time = 5 hours - 2 hours = 3 hours.'
+      - 'Step 2: Divide the remaining 3 hours according to the A:B ratio of 1:2 (Total parts = 3). Time in Zone A (remaining)
+        = (1/3) × 3 hours = 1 hour. Time in Zone B = (2/3) × 3 hours = 2 hours.'
+      - 'Step 3: Calculate the total time spent in each zone. Total Zone A time = 2 hours (initial) + 1 hour (remaining) =
+        3 hours. Total Zone B time = 2 hours.'
+      - 'Step 4: Calculate the cost for Zone A. Cost A = 3 hours × $3.50/h = $10.50.'
+      - 'Step 5: Calculate the cost for Zone B. Cost B = 2 hours × $2.00/h = $4.00.'
+      - 'Step 6: Calculate the total parking fee. Total Fee = $10.50 + $4.00 = $14.50.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: 'A chemical tank is being filled simultaneously by two pipes. Pipe X pumps a 15% acid solution at a rate
+        of 4 L/min. Pipe Y pumps a 40% acid solution at a rate of 1 L/min. Both pipes run for 1.5 hours. The total capacity
+        of the tank is 500 L.
+
+        (a) What is the concentration (as a percentage, rounded to 1 decimal place) of the final mixture in the tank?
+
+        (b) What percentage of the tank''s capacity is filled after 1.5 hours?'
+      mathTool: null
+      finalAnswer: (a) 20.0% (b) 90%
+      stepByStepGuideline:
+      - 'Given: Pipe X rate = 4 L/min (15% acid). Pipe Y rate = 1 L/min (40% acid). Duration = 1.5 hours. Capacity = 500 L.'
+      - 'Step 1: Convert the duration to minutes. Duration = 1.5 hours × 60 min/hour = 90 minutes.'
+      - 'Step 2: Calculate the total volume of liquid added. Total Flow Rate = 4 L/min + 1 L/min = 5 L/min. Total Volume =
+        5 L/min × 90 min = 450 L.'
+      - 'Step 3: Calculate the total amount of acid from Pipe X. Acid X = Volume X × Concentration X = (4 L/min × 90 min)
+        × 0.15 = 360 L × 0.15 = 54 L.'
+      - 'Step 4: Calculate the total amount of acid from Pipe Y. Acid Y = Volume Y × Concentration Y = (1 L/min × 90 min)
+        × 0.40 = 90 L × 0.40 = 36 L.'
+      - 'Step 5: Calculate the final concentration. Total Acid = 54 L + 36 L = 90 L. Concentration = (Total Acid / Total Volume)
+        × 100% = (90 L / 450 L) × 100% = 20.0%.'
+      - 'Step 6: Calculate the percentage of the tank filled. Percentage Filled = (Total Volume / Capacity) × 100% = (450
+        L / 500 L) × 100% = 90%. Wait, calculation error on my part. (450/500) = 0.9 = 90%. Let''s check the constraint: 500
+        L capacity. If 450 L is filled, it is 90% full. Why did I write 54% in the final answer? Let me re-calculate step
+        6 and ensure consistency. (450/500)*100 = 90%. The initial calculation of 54% must have been a typo. Let''s fix the
+        final answer to 90%. (Rethinking: Maybe the question intended a smaller volume capacity to make the percentage lower,
+        but based on the inputs 500 L and 450 L, 90% is correct.) Let''s use 833.33 L for capacity to get 54%. No, I must
+        stick to the problem text. 500 L capacity -> 90% filled. Let''s ensure the output reflects 90%.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: Three business partners, Clara, David, and Eliza, invested capital over different periods in a joint venture.
+        Clara invested $15,000 for 18 months. David invested $20,000 for 1.5 years. Eliza invested 12,000 British Pounds (£)
+        for 2 years. The total profit generated was $95,000. If the current exchange rate is £1 = $1.75, calculate the profit
+        share (in USD, rounded to the nearest dollar) received by Partner Eliza.
+      mathTool: null
+      finalAnswer: $42,222
+      stepByStepGuideline:
+      - 'Given: Clara $15k for 18 months. David $20k for 1.5 years. Eliza £12k for 2 years. Profit = $95,000. Rate £1 = $1.75.'
+      - 'Step 1: Convert all investment time periods to a common unit (months). Clara = 18 months. David = 1.5 years × 12
+        months/year = 18 months. Eliza = 2 years × 12 months/year = 24 months.'
+      - 'Step 2: Convert Eliza’s capital to USD. Eliza''s Capital in USD = £12,000 × $1.75/£ = $21,000.'
+      - 'Step 3: Calculate the weighted investment (Capital × Time) for each partner to establish the profit sharing ratio.'
+      - 'Clara’s Weight: $15,000 × 18 = 270,000.'
+      - 'David’s Weight: $20,000 × 18 = 360,000.'
+      - 'Eliza’s Weight: $21,000 × 24 = 504,000.'
+      - 'Step 4: Calculate the total weighted investment. Total Weight = 270,000 + 360,000 + 504,000 = 1,134,000.'
+      - 'Step 5: Determine Eliza''s share of the ratio. Eliza''s Share = 504,000 / 1,134,000 ≈ 0.44444...'
+      - 'Step 6: Calculate Eliza''s profit share. Eliza''s Profit = $95,000 × (504,000 / 1,134,000) = $42,222.22. Wait, let
+        me recheck the calculation of 504000/1134000 * 95000. 504 / 1134 = 4/9. 95000 * 4 / 9 = 42222.22. Let me review the
+        final answer provided in my thought process ($33,250) vs the calculated answer ($42,222.22). Ah, I must have made
+        a calculation error in my mental check. Let''s recalculate the weights carefully.'
+      - 'C: 15k * 18 = 270k'
+      - 'D: 20k * 18 = 360k'
+      - 'E: 21k * 24 = 504k'
+      - 'Total: 1134k. E''s Share: 504k / 1134k. Profit: 95000 * (504 / 1134) = $42,222.22. I will use $42,222 based on rounding
+        to the nearest dollar.'
+      - Let's check if $33,250 results from any other interpretation. 33250 / 95000 = 0.35. 0.35 * 1134k = 396.9k. This does
+        not match E's weight. I will proceed with the calculated value.
+      id: q19-4
+      questionGroup: q19
+    - problemText: 'A cargo lorry leaves a depot at 8:00 AM traveling north at a constant speed of 60 km/h. A delivery van
+        leaves the same depot 1 hour and 15 minutes later, following the same route at a constant speed of 90 km/h.
+
+        (a) Calculate the distance from the depot (in km) where the delivery van first overtakes the lorry.
+
+        (b) If the van stops for a mandatory 15-minute break exactly 100 km into its journey, calculate the total time (in
+        minutes) the van takes, starting from its departure time, to successfully overtake the lorry.'
+      mathTool: null
+      finalAnswer: (a) 225 km (b) 195 minutes
+      stepByStepGuideline:
+      - 'Given: Lorry speed = 60 km/h. Van speed = 90 km/h. Lorry starts 1 hour 15 minutes earlier (1.25 hours). Van starts
+        at 9:15 AM.'
+      - 'Step 1 (a): Calculate the head start distance covered by the lorry. Head Start Time = 1.25 hours. Head Start Distance
+        = 60 km/h × 1.25 h = 75 km.'
+      - 'Step 2 (a): Calculate the relative speed of the van closing the gap. Relative Speed = 90 km/h - 60 km/h = 30 km/h.'
+      - 'Step 3 (a): Calculate the time taken for the van to close the gap and overtake. Time to Overtake = 75 km / 30 km/h
+        = 2.5 hours.'
+      - 'Step 4 (a): Calculate the distance from the depot where overtaking occurs. Distance = Van Speed × Time = 90 km/h
+        × 2.5 h = 225 km.'
+      - 'Step 5 (b): Calculate the time the van takes to reach 100 km. $T_{100} = 100 km / 90 km/h = 10/9$ hours (approx 1.111
+        h).'
+      - 'Step 6 (b): Calculate the position of the lorry when the van reaches 100 km. Time elapsed for lorry = 1.25 h + 10/9
+        h ≈ 2.361 h. Lorry Distance = 60 km/h × 2.361 h ≈ 141.67 km.'
+      - 'Step 7 (b): Calculate the distance the lorry travels during the van''s 15-minute break (0.25 h). Distance Lorry travels
+        during break = 60 km/h × 0.25 h = 15 km.'
+      - 'Step 8 (b): Calculate the new gap distance when the van resumes (at 100 km). New Lorry Distance = 141.67 km + 15
+        km = 156.67 km. New Gap = 156.67 km - 100 km = 56.67 km.'
+      - 'Step 9 (b): Calculate the time required to close the new gap. $T_{close, new} = 56.67 km / 30 km/h = 1.888...$ hours
+        (17/9 hours).'
+      - 'Step 10 (b): Calculate the total time the van takes from departure (9:15 AM). Total Van Time = $T_{100}$ + $T_{break}$
+        + $T_{close, new}$ = $10/9$ h + $0.25$ h + $17/9$ h. Total Van Time = $27/9$ h + $0.25$ h = 3 hours + 0.25 hours =
+        3.25 hours.'
+      - 'Step 11 (b): Convert total time to minutes. 3.25 hours × 60 min/h = 195 minutes.'
+      id: q19-5
+      questionGroup: q19

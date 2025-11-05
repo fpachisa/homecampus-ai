@@ -77,7 +77,7 @@ const BarChartVisualizer: React.FC<BarChartVisualizerProps> = ({
   // SVG dimensions
   const width = 500;
   const height = 400;
-  const padding = 60;
+  const padding = orientation === 'horizontal' ? 120 : 60; // More padding for horizontal labels
   const topPadding = title ? 80 : 60;
 
   // Calculate max value for scaling
@@ -158,9 +158,11 @@ const BarChartVisualizer: React.FC<BarChartVisualizerProps> = ({
 
   // Render horizontal bar chart
   const renderHorizontalBars = () => {
+    const barThickness = (chartHeight / numBars) * 0.7; // Fixed thickness for horizontal bars
+
     return values.map((value, index) => {
       const barY = topPadding + (chartHeight / numBars) * index + barGap;
-      const barWidth = (value / yMax) * chartWidth;
+      const barLength = (value / yMax) * chartWidth; // Length based on value
       const barX = padding;
       const isHighlighted = index === highlightIndex;
 
@@ -170,8 +172,8 @@ const BarChartVisualizer: React.FC<BarChartVisualizerProps> = ({
           <rect
             x={barX}
             y={barY}
-            width={barWidth}
-            height={barWidth}
+            width={barLength}
+            height={barThickness}
             fill={isHighlighted ? highlightColor : barColor}
             opacity={isHighlighted ? 1 : 0.8}
             stroke={isHighlighted ? highlightColor : 'none'}
@@ -181,8 +183,8 @@ const BarChartVisualizer: React.FC<BarChartVisualizerProps> = ({
           {/* Value label at end */}
           {showValues && (
             <text
-              x={barX + barWidth + 5}
-              y={barY + barWidth / 2 + 4}
+              x={barX + barLength + 5}
+              y={barY + barThickness / 2 + 4}
               fontSize="12"
               fontWeight="bold"
               fill={textColor}
@@ -194,7 +196,7 @@ const BarChartVisualizer: React.FC<BarChartVisualizerProps> = ({
           {/* Category label on left */}
           <text
             x={barX - 10}
-            y={barY + barWidth / 2 + 4}
+            y={barY + barThickness / 2 + 4}
             fontSize="12"
             textAnchor="end"
             fill={mutedColor}

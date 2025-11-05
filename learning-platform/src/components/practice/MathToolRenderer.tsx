@@ -42,6 +42,8 @@ import BarChartVisualizer from '../math-tools/BarChartVisualizer';
 import HistogramVisualizer from '../math-tools/HistogramVisualizer';
 import BoxPlotVisualizer from '../math-tools/BoxPlotVisualizer';
 import ScatterPlotVisualizer from '../math-tools/ScatterPlotVisualizer';
+import PieChartVisualizer from '../math-tools/PieChartVisualizer';
+import LineChartVisualizer from '../math-tools/LineChartVisualizer';
 import CartesianPlaneVisualizer from '../math-tools/CartesianPlaneVisualizer';
 import Coordinate3DPlaneVisualizer from '../math-tools/Coordinate3DPlaneVisualizer';
 import GradientVisualizer from '../math-tools/GradientVisualizer';
@@ -147,6 +149,8 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   histogram: HistogramVisualizer,
   boxPlot: BoxPlotVisualizer,
   scatterPlot: ScatterPlotVisualizer,
+  pieChart: PieChartVisualizer,
+  lineChart: LineChartVisualizer,
 
   // Probability tools
   // NOT ADDED FOR A REASON....CHECK BEFORE ADDING

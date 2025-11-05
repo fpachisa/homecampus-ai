@@ -2101,6 +2101,130 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     ]
   },
 
+  pieChart: {
+    name: "Pie Chart Visualizer",
+    technicalName: "pieChart",
+    component: "PieChartVisualizer",
+    category: "statistics",
+    description: "Displays categorical data as sectors in a circular chart, showing proportions and relative sizes. Calculates sector angles using the formula (frequency ÷ total) × 360°. Essential for teaching proportional relationships, percentages, and angle calculations.",
+    whenToUse: "Use for showing how data is divided into parts of a whole. Perfect for survey results, budget breakdowns, market shares, or any data where you want to emphasize proportions and percentages. Ideal for teaching angle calculations in data handling.",
+
+    parameters: {
+      categories: "string[] - Category labels (e.g., ['Red', 'Blue', 'Green'])",
+      frequencies: "number[] - Counts for each category (must match categories length)",
+      title: "string (optional) - Chart title displayed at top",
+      showAngles: "boolean (optional, default: true) - Show sector angles in degrees",
+      showPercentages: "boolean (optional, default: true) - Show percentages for each sector",
+      highlightSector: "number (optional, default: -1) - Index of sector to highlight (0-based, -1 for none)",
+      showCalculations: "boolean (optional, default: false) - Show angle calculation steps below chart",
+      caption: "string (optional) - Explanation text below chart (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Favorite ice cream flavors survey",
+        caption: "Pie chart showing student preferences. Chocolate: (8÷20)×360° = 144°",
+        parameters: {
+          categories: ["Chocolate", "Vanilla", "Strawberry", "Mint"],
+          frequencies: [8, 5, 4, 3],
+          title: "Favorite Ice Cream Flavors",
+          showAngles: true,
+          showPercentages: true,
+          showCalculations: false
+        }
+      },
+      {
+        scenario: "Budget breakdown with calculations",
+        caption: "Family budget allocation. Showing how to calculate sector angles from frequencies.",
+        parameters: {
+          categories: ["Housing", "Food", "Transport", "Entertainment"],
+          frequencies: [1200, 600, 400, 300],
+          title: "Monthly Budget ($2500)",
+          showAngles: true,
+          showPercentages: true,
+          showCalculations: true,
+          highlightSector: 0
+        }
+      },
+      {
+        scenario: "Simple proportions",
+        caption: "Three categories with equal representation",
+        parameters: {
+          categories: ["A", "B", "C"],
+          frequencies: [10, 10, 10],
+          showAngles: true,
+          showPercentages: false
+        }
+      }
+    ]
+  },
+
+  lineChart: {
+    name: "Line Chart Visualizer",
+    technicalName: "lineChart",
+    component: "LineChartVisualizer",
+    category: "statistics",
+    description: "Displays time-series or sequential data as connected points showing trends over time. Perfect for showing changes, patterns, and making predictions. Supports trend lines for linear regression analysis.",
+    whenToUse: "Use for time-series data (temperature over months, sales over years), sequential data (growth over time), or any data where you want to show trends, patterns, or changes. Essential for teaching trend analysis, predictions, and data interpretation.",
+
+    parameters: {
+      xLabels: "string[] - X-axis labels in order (e.g., ['Jan', 'Feb', 'Mar'] or ['2020', '2021', '2022'])",
+      yValues: "number[] - Y-axis values corresponding to each x label (must match xLabels length)",
+      xAxisLabel: "string (optional) - X-axis label (e.g., 'Month', 'Year')",
+      yAxisLabel: "string (optional) - Y-axis label (e.g., 'Temperature (°C)', 'Sales')",
+      title: "string (optional) - Chart title displayed at top",
+      showPoints: "boolean (optional, default: true) - Show data point markers",
+      showGrid: "boolean (optional, default: true) - Show gridlines for easier reading",
+      highlightPoint: "number (optional, default: -1) - Index of point to highlight with value label (0-based, -1 for none)",
+      trendLine: "boolean (optional, default: false) - Show linear trend line (regression)",
+      caption: "string (optional) - Explanation text below chart (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Monthly temperature trend",
+        caption: "Temperature changes throughout the year, showing seasonal pattern",
+        parameters: {
+          xLabels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          yValues: [15, 16, 19, 23, 27, 31, 33, 32, 29, 25, 20, 16],
+          xAxisLabel: "Month",
+          yAxisLabel: "Temperature (°C)",
+          title: "Average Monthly Temperature",
+          showPoints: true,
+          showGrid: true,
+          trendLine: false
+        }
+      },
+      {
+        scenario: "Sales growth with trend line",
+        caption: "Company sales from 2018 to 2024 with upward trend line showing consistent growth",
+        parameters: {
+          xLabels: ["2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+          yValues: [120, 145, 155, 180, 210, 240, 270],
+          xAxisLabel: "Year",
+          yAxisLabel: "Sales (thousands)",
+          title: "Annual Sales Growth",
+          showPoints: true,
+          showGrid: true,
+          trendLine: true,
+          highlightPoint: 6
+        }
+      },
+      {
+        scenario: "Population change over time",
+        caption: "Town population showing decline in 2020 (pandemic) then recovery",
+        parameters: {
+          xLabels: ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+          yValues: [45000, 47000, 49000, 51000, 53000, 50000, 52000, 55000],
+          yAxisLabel: "Population",
+          title: "Town Population (2015-2022)",
+          showGrid: true,
+          highlightPoint: 5
+        }
+      }
+    ]
+  },
+
   // ============================================
   // COORDINATE GEOMETRY TOOLS
   // ============================================

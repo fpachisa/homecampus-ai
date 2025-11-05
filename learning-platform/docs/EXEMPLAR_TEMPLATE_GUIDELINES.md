@@ -203,6 +203,12 @@ For each question, ensure:
 
 The exemplar must be **completely self-sufficient** because the AI generation script only receives this file and a prompt.
 
+### Guidelines on usage of LaTeX ####
+
+Use LaTeX if absolutely necessary. Use unicode wherever possible. Never use $ (currency sign) with LaTeX code. Just Use simple $ signs.
+
+All LaTeX should be written like $\\frac{5}{6}$
+
 #### Complete Annotated Template
 
 ```json
@@ -354,23 +360,6 @@ This is a fundamental technical constraint of the application. You cannot show m
 - "DO NOT include mathTool - would reveal answer on first load"
 - "Curve provides context without revealing exact numeric answer"
 
-#### Decision Rules:
-
-```
-If mathTool shows on first load, would it:
-
-├─ Show what student should calculate/create?
-│  └─ YES → ❌ OMIT mathTool
-│
-├─ Show the exact numeric answer?
-│  └─ YES → ❌ OMIT mathTool
-│
-├─ Provide context without revealing answer?
-│  └─ YES → ✅ INCLUDE mathTool
-│
-└─ Help understand concept visually?
-   └─ YES → ✅ INCLUDE mathTool + change question to "From the graph/diagram shown..."
-```
 
 #### Examples:
 
@@ -421,11 +410,7 @@ If mathTool shows on first load, would it:
 }
 ```
 
-#### When In Doubt:
 
-**Default Rule:** When uncertain whether mathTool reveals too much, **OMIT it**. Better to have no visualization than to give away the answer.
-
----
 
 ## Quality Assurance Checklist
 

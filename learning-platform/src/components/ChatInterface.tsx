@@ -65,6 +65,8 @@ import { S1_LINEAR_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathem
 import type { LinearFunctionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
 import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
 import type { PerimeterAreaTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
+import { S1_MATH_DATA_HANDLING_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
+import type { DataHandlingTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -121,6 +123,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S1 perimeter area topic
   if (topicId.startsWith('s1-math-perimeter-area-')) {
     return S1_MATH_PERIMETER_AREA_SUBTOPICS[topicId as PerimeterAreaTopicId];
+  }
+  // Check if it's an S1 data handling topic
+  if (topicId.startsWith('s1-math-data-')) {
+    return S1_MATH_DATA_HANDLING_SUBTOPICS[topicId as DataHandlingTopicId];
   }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {

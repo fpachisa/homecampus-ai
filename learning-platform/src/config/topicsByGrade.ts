@@ -136,6 +136,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Secondary 1',
       subject: 'Mathematics',
     },
+    {
+      id: 's1-data-handling',
+      name: 'Data Handling',
+      icon: '📊',
+      description: 'Master data collection, frequency tables, grouped data, statistical diagrams (bar, pie, line), and critical analysis',
+      subtopicCount: 6,
+      isActive: true,
+      category: 's1-math-data-handling',
+      grade: 'Secondary 1',
+      subject: 'Mathematics',
+    },
   ],
 
   'Secondary 2': [

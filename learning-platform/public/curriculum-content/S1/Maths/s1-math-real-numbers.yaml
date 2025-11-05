@@ -1,0 +1,1371 @@
+# S1 Math Real Numbers - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: rn-neg-1
+  nodeNumber: 1
+  title: Understanding Negative Numbers in Context
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: The weather forecast states the temperature will drop to $\text{-12}^{\circ}\text{C}$ overnight. Explain
+        what the value $\text{-12}^{\circ}\text{C}$ represents in terms of temperature.
+      avatarIntro: 'Welcome! Understanding negative numbers in context is essential. Let''s start with a common real-world
+        example: temperature.'
+      mathTool: null
+      finalAnswer: The temperature is 12 degrees Celsius below the freezing point (0°C), or 12 degrees below zero.
+      stepByStepGuideline:
+      - 'Identify the reference point: $0^{\circ}\text{C}$ (freezing point).'
+      - Recognize that the negative sign indicates a direction opposite to positive.
+      - 'Interpret the magnitude: 12.'
+      - Conclude that $\text{-12}^{\circ}\text{C}$ means 12 degrees below zero.
+      id: q1-1
+      questionGroup: q1
+    - problemText: A deep-sea research vessel records its depth as $\text{-400}$ meters. Interpret what this negative altitude
+        means in relation to the ocean surface.
+      mathTool: null
+      finalAnswer: The vessel is 400 meters below sea level (where sea level is 0 meters altitude).
+      stepByStepGuideline:
+      - Identify the zero reference point, which is sea level.
+      - Understand that altitude measurements use positive numbers for heights above the reference point and negative numbers
+        for depths below it.
+      - 'Combine the magnitude and direction: $\text{-400}$ meters means 400 meters in the downward direction from sea level.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: "After a difficult month, a small business reports a net profit of $\\text{-}\\\text{150}$. Describe what\
+        \ this negative value tells us about the business's financial situation."
+      mathTool: null
+      finalAnswer: The business did not make a profit; instead, it incurred a loss of $\$150$ (its expenses exceeded its revenue
+        by $\$150$).
+      stepByStepGuideline:
+      - Understand that in financial contexts, profit is positive and loss is negative.
+      - The zero point is breaking even (where revenue equals expenses).
+      - "A value of $\\text{-}\\\text{150}$ indicates that the result is $\\$150$ below the break-even point, signifying a\
+        \ loss."
+      id: q1-3
+      questionGroup: q1
+    - problemText: In international timekeeping, a location's time zone is sometimes expressed as $\text{-5}$ hours relative
+        to GMT (Greenwich Mean Time). Explain what the negative sign indicates when describing the time difference.
+      mathTool: null
+      finalAnswer: The negative sign indicates that the city's time is 5 hours behind GMT (meaning it reaches a certain time
+        5 hours later than GMT).
+      stepByStepGuideline:
+      - 'Identify the reference point: GMT (0 hours).'
+      - Recognize that positive hours indicate 'ahead' of GMT (eastward) and negative hours indicate 'behind' GMT (westward).
+      - The value $\text{-5}$ hours means the time zone is 5 hours in the direction opposite to 'ahead'.
+      id: q1-4
+      questionGroup: q1
+    - problemText: A parking structure labels the ground floor as 0. The levels beneath the ground floor are labeled using
+        negative integers. If a sign directs you to level $\text{-3}$, how should you describe your location?
+      mathTool: null
+      finalAnswer: The location is 3 levels below the ground floor.
+      stepByStepGuideline:
+      - 'Identify the zero point: The ground floor.'
+      - Understand that the negative integers represent levels in the direction opposite to the positive integers (which would
+        be floors above ground).
+      - Level $\text{-3}$ indicates a location 3 units down from the ground floor.
+      id: q1-5
+      questionGroup: q1
+- id: rn-neg-2
+  nodeNumber: 2
+  title: Plotting Integers on Number Line
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Plot the integer $-3$ on a horizontal number line that ranges from $-5$ to $5$. Describe the position relative
+        to zero.
+      avatarIntro: Learning how to plot integers correctly is fundamental. Remember, the negative sign tells you which direction
+        to move from zero!
+      mathTool: null
+      finalAnswer: Mark a point 3 units to the left of zero.
+      stepByStepGuideline:
+      - Identify the origin (0) on the number line.
+      - Since the integer is $-3$ (negative), movement must be to the left of zero.
+      - Count 3 units away from zero in the negative direction.
+      - The position is 3 units to the left of 0.
+      id: q2-1
+      questionGroup: q2
+    - problemText: On a horizontal number line, a point is located $8$ units to the right of the origin (zero). What integer
+        does this point represent?
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - The origin is 0.
+      - Movement to the right corresponds to positive integers.
+      - The distance from zero is 8 units.
+      - Therefore, the integer represented is $+8$ or $8$.
+      id: q2-2
+      questionGroup: q2
+    - problemText: Describe the location of the integer $12$ on a number line that spans from $-15$ to $15$. Mention its relation
+        to $0$ and explain why it is placed far to the right.
+      mathTool: null
+      finalAnswer: $12$ is located $12$ units to the right of zero. It is placed far to the right because positive integers
+        increase in value as you move right along the number line, and $12$ is a relatively large positive value within this
+        range.
+      stepByStepGuideline:
+      - Determine the distance and direction of $12$ from the origin (0). $12$ is positive, so it is 12 units to the right.
+      - 'Recall the rule for number lines: values increase as you move from left to right.'
+      - Since $12$ is a large positive number in the range $[-15, 15]$, it will be positioned far away from zero in the positive
+        direction (to the right).
+      id: q2-3
+      questionGroup: q2
+    - problemText: When plotting integers on a standard horizontal number line, what special role does the number $0$ play,
+        and how does it relate to the order of positive and negative numbers?
+      mathTool: null
+      finalAnswer: Zero ($0$) is the origin or center point of the number line. It serves as the boundary, separating all
+        positive numbers (which lie to its right) from all negative numbers (which lie to its left). Zero is neither positive
+        nor negative.
+      stepByStepGuideline:
+      - Identify the name given to the position of $0$ on the number line (the origin/center).
+      - Explain how $0$ differentiates between positive and negative numbers (positive to the right, negative to the left).
+      - State the nature of $0$ itself (neither positive nor negative).
+      id: q2-4
+      questionGroup: q2
+    - problemText: Consider a number line running from $-10$ to $10$. If an integer $X$ has an absolute value of $7$, and
+        $X$ is located on the side of the negative integers, what is the value of $X$?
+      mathTool: null
+      finalAnswer: '-7'
+      stepByStepGuideline:
+      - 'Understand the term ''absolute value'': $|X|=7$ means $X$ is $7$ units away from zero.'
+      - 'Identify the possible values for $X$ based on the absolute value: $X$ could be $7$ or $-7$.'
+      - 'Use the second condition: $X$ is located on the side of the negative integers (to the left of zero).'
+      - Therefore, the value of $X$ must be $-7$.
+      id: q2-5
+      questionGroup: q2
+- id: rn-comp-1
+  nodeNumber: 3
+  title: Comparing Two Integers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Which integer is greater: $-15$ or $-20$? Use the correct inequality symbol in your answer and explain
+        your reasoning based on their position relative to zero.'
+      avatarIntro: Comparing negative numbers can be tricky! Remember that on the number line, numbers increase as you move
+        to the right, and the number closer to zero is greater.
+      mathTool: null
+      finalAnswer:
+        speech.text: negative fifteen is greater than negative twenty
+        display.content: $-15 > -20$
+      stepByStepGuideline:
+      - 'Identify the two integers: $-15$ and $-20$. Both are negative.'
+      - 'Recall the rule for comparing negative integers: the integer closer to zero is greater.'
+      - Since 15 is smaller than 20, $-15$ is closer to zero than $-20$ is.
+      - Therefore, $-15$ is greater than $-20$. The correct inequality is $-15 > -20$.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Compare the integers $8$ and $-12$ using the correct inequality symbol.
+      mathTool: null
+      finalAnswer:
+        speech.text: eight is greater than negative twelve
+        display.content: $8 > -12$
+      stepByStepGuideline:
+      - 'Identify the two integers: $8$ (positive) and $-12$ (negative).'
+      - Recall the rule that any positive number is always greater than any negative number.
+      - Since $8$ is positive and $-12$ is negative, $8$ must be greater than $-12$.
+      - The comparison is $8 > -12$ (or $-12 < 8$).
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'Determine if the following statement is True or False: $0 > -10$. Justify your answer.'
+      mathTool: null
+      finalAnswer:
+        speech.text: 'True'
+        display.content: 'True'
+      stepByStepGuideline:
+      - 'Analyze the statement: $0 > -10$. This asks if zero is greater than negative ten.'
+      - On a standard number line, all negative numbers are located to the left of zero.
+      - Since numbers increase as you move to the right, any number to the left of zero is less than zero.
+      - Therefore, $0$ is greater than $-10$. The statement is True.
+      id: q3-3
+      questionGroup: q3
+    - problemText: 'Which number is smaller: $10$ or $15$?'
+      mathTool: null
+      finalAnswer:
+        speech.text: ten
+        display.content: $10$
+      stepByStepGuideline:
+      - 'Identify the two integers: $10$ and $15$. Both are positive.'
+      - Since $10$ is located to the left of $15$ on the number line, $10$ has a smaller value.
+      - Therefore, $10$ is the smaller number.
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'Fill in the blank with the appropriate symbol (< or >): $-12$ __ $-5$.'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative twelve is less than negative five
+        display.content: $<$
+      stepByStepGuideline:
+      - 'Identify the integers: $-12$ and $-5$. Both are negative.'
+      - To compare negative numbers, determine which is closer to zero. $-5$ is closer to zero than $-12$ is.
+      - This means $-5$ has a greater value than $-12$.
+      - Since $-12$ is less than $-5$, the appropriate symbol is the less than sign ($<$). Thus, $-12 < -5$.
+      id: q3-5
+      questionGroup: q3
+- id: rn-comp-2
+  nodeNumber: 4
+  title: Ordering Lists of Integers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A manager tracked the change in bank account balances across six different branches over a month: $-12$
+        thousand, $6$ thousand, $-4$ thousand, $2$ thousand, $-8$ thousand, and $10$ thousand. Arrange these integers in ascending
+        order (least to greatest): $-12, 6, -4, 2, -8, 10$.'
+      avatarIntro: Ordering lists of integers requires careful attention to those negative numbers! Remember, the further
+        a negative number is from zero, the smaller its value.
+      mathTool: null
+      finalAnswer: -12, -8, -4, 2, 6, 10
+      stepByStepGuideline:
+      - 'Identify all negative numbers: -12, -4, -8.'
+      - 'Identify all positive numbers and zero: 6, 2, 10.'
+      - 'Order the negative numbers from smallest (furthest from zero) to largest (closest to zero): -12, -8, -4.'
+      - 'Order the positive numbers from smallest to largest: 2, 6, 10.'
+      - 'Combine the lists in ascending order: -12, -8, -4, 2, 6, 10.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: 'In a round of golf, five players recorded scores relative to par: $-15, -8, -20, -3, -12$. (Note: Lower
+        scores are better in golf, but mathematically we are identifying the largest integer value here.) Find the largest
+        value in this set.'
+      mathTool: null
+      finalAnswer: '-3'
+      stepByStepGuideline:
+      - The set of integers is $\{-15, -8, -20, -3, -12\}$.
+      - The largest value in a set of negative integers is the number closest to zero.
+      - Comparing the absolute values (15, 8, 20, 3, 12), the smallest absolute value corresponds to the largest number.
+      - The smallest absolute value is 3, which corresponds to the integer -3.
+      - Therefore, -3 is the largest value in the set.
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'A historian is organizing a timeline based on the years $0$ (Common Era start), $-5$ (5 BC), $8$ (8 AD),
+        $-3$ (3 BC), $12$ (12 AD), and $-10$ (10 BC). Order these years from greatest to least (descending), mathematically:
+        $0, -5, 8, -3, 12, -10$.'
+      mathTool: null
+      finalAnswer: 12, 8, 0, -3, -5, -10
+      stepByStepGuideline:
+      - Descending order means arranging the numbers from largest to smallest.
+      - 'Identify positive numbers: 12, 8. Order them: 12, 8.'
+      - 'Identify zero: 0.'
+      - 'Identify negative numbers: -5, -3, -10. Order them from largest (closest to zero) to smallest (furthest from zero):
+        -3, -5, -10.'
+      - 'Combine the ordered groups: 12, 8, 0, -3, -5, -10.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: 'A store tracks inventory changes, where negative numbers indicate shortages and positive numbers indicate
+        overstock. The recorded changes over seven days were: $4, -6, 0, -2, 9, -9, 1$. What is the smallest number in this
+        list?'
+      mathTool: null
+      finalAnswer: '-9'
+      stepByStepGuideline:
+      - The set of integers is $\{4, -6, 0, -2, 9, -9, 1\}$.
+      - The smallest number will be the negative integer furthest to the left on the number line.
+      - 'Compare the negative integers: -6, -2, -9.'
+      - Since 9 is the largest absolute value among these negative numbers, -9 is the number furthest from zero in the negative
+        direction.
+      - Therefore, -9 is the smallest number in the list.
+      id: q4-4
+      questionGroup: q4
+    - problemText: 'A team of geologists recorded five measurements of elevation relative to a baseline in a cave system (in
+        meters): $-25, -10, -5, -30, -1$. Sort these numbers from smallest to largest.'
+      mathTool: null
+      finalAnswer: -30, -25, -10, -5, -1
+      stepByStepGuideline:
+      - Sorting from smallest to largest means ascending order.
+      - When ordering negative numbers, the number with the largest absolute value is the smallest number.
+      - 'List the absolute values: 25, 10, 5, 30, 1.'
+      - 'Order the absolute values from largest to smallest: 30, 25, 10, 5, 1.'
+      - 'Apply the negative sign back to get the ascending order of the integers: -30, -25, -10, -5, -1.'
+      id: q4-5
+      questionGroup: q4
+- id: rn-add-1
+  nodeNumber: 5
+  title: Zero Pairs and Integer Addition Concept
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: algebraDiscSimulator
+    preWrittenQuestions:
+    - problemText: Explain the fundamental concept of a “zero pair” in the context of integer discs. Use the provided visualization
+        of (+4) + (-4) to support your explanation of why the total value is zero.
+      avatarIntro: Understanding how opposites cancel out is the key to integer addition! Let’s start by defining the zero
+        pair concept.
+      mathTool:
+        toolName: algebraDiscSimulator
+        parameters:
+          operation: add
+          firstNumber: 4
+          secondNumber: -4
+          showSteps: true
+          highlightZeroPairs: true
+      finalAnswer: A zero pair is a set containing exactly one positive disc (+1) and one negative disc (-1). When these two
+        opposites are combined, they cancel each other out because their sum is zero. In the case of (+4) + (-4), four zero
+        pairs are formed, and since each pair has a value of zero, the total result is zero.
+      stepByStepGuideline:
+      - 'Define a zero pair: one positive disc and one negative disc.'
+      - Explain that the value of any zero pair is 0.
+      - Identify how many zero pairs are formed when combining 4 positive and 4 negative discs (4 pairs).
+      - Conclude that since all discs form zero pairs, the remaining value is 0.
+      id: q5-1
+      questionGroup: q5
+    - problemText: A student starts with 10 positive discs and 7 negative discs. If they pair up as many positive and negative
+        discs as possible to form zero pairs, how many zero pairs will they create?
+      mathTool: null
+      finalAnswer: 7 zero pairs.
+      stepByStepGuideline:
+      - Identify the number of positive discs (10) and negative discs (7).
+      - Recall that the number of zero pairs formed is limited by the lesser quantity of discs.
+      - Since there are only 7 negative discs, only 7 positive discs can pair up with them.
+      - Therefore, 7 zero pairs are created.
+      id: q5-2
+      questionGroup: q5
+    - problemText: You combine 3 positive discs and 7 negative discs. Use the provided visualization to determine what remains
+        after removing all the zero pairs, and state the final value represented by the remaining discs.
+      mathTool:
+        toolName: algebraDiscSimulator
+        parameters:
+          operation: add
+          firstNumber: 3
+          secondNumber: -7
+          showSteps: true
+          highlightZeroPairs: true
+      finalAnswer: 4 negative discs remain, representing a total value of -4.
+      stepByStepGuideline:
+      - Combine the 3 positive discs and 7 negative discs.
+      - Identify the number of zero pairs that can be formed (3 zero pairs, since 3 is the lesser quantity).
+      - Visualize or calculate the discs remaining after the 3 zero pairs are removed.
+      - Since 7 - 3 = 4 negative discs remain, the final value is -4.
+      id: q5-3
+      questionGroup: q5
+    - problemText: If you combine 6 positive discs and 2 negative discs, how many zero pairs are formed, and what is the final
+        number of unpaired discs remaining? (State both answers.)
+      mathTool: null
+      finalAnswer: 2 zero pairs are formed, and 4 positive discs remain unpaired.
+      stepByStepGuideline:
+      - 'Identify the quantities: 6 positive and 2 negative.'
+      - Determine the number of zero pairs (limited by the smaller quantity, 2).
+      - 'Calculate the remaining positive discs: 6 - 2 = 4.'
+      - 'State the result: 2 zero pairs formed, 4 positive discs remaining.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: The identity property states that (+A) + (-A) = 0. Use the algebra discs visualization for (+5) + (-5)
+        to demonstrate why this identity holds true based on the concept of opposites canceling out.
+      mathTool:
+        toolName: algebraDiscSimulator
+        parameters:
+          operation: add
+          firstNumber: 5
+          secondNumber: -5
+          showSteps: true
+          highlightZeroPairs: true
+      finalAnswer: The combination of 5 positive discs (+5) and 5 negative discs (-5) allows exactly 5 zero pairs to be formed.
+        Since every disc is part of a zero pair, and each zero pair has a value of 0, the entire set cancels out, leaving
+        a total value of 0.
+      stepByStepGuideline:
+      - Represent (+5) as 5 positive discs and (-5) as 5 negative discs.
+      - Show that because the counts are equal, every positive disc can be paired with a negative disc.
+      - Confirm that 5 zero pairs are formed.
+      - Conclude that since zero pairs have a value of 0, the sum of (+5) and (-5) is 0.
+      id: q5-5
+      questionGroup: q5
+- id: rn-add-2
+  nodeNumber: 6
+  title: Adding Integers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: 'Calculate: positive twelve plus positive four'
+        display: 'Calculate: $(+12) + (+4)$'
+      avatarIntro: Remember the rules for adding integers! If the signs are the same, you add the absolute values and keep
+        the common sign.
+      mathTool: null
+      finalAnswer: '16'
+      stepByStepGuideline:
+      - 'Identify the signs: Both integers are positive.'
+      - 'Rule for same signs: Add the absolute values: $12 + 4 = 16$.'
+      - Keep the common sign (positive).
+      - The final sum is $+16$.
+      id: q6-1
+      questionGroup: q6
+    - problemText:
+        speech: 'Find the sum: negative ten plus negative five'
+        display: 'Find the sum: $(-10) + (-5)$'
+      mathTool: null
+      finalAnswer: '-15'
+      stepByStepGuideline:
+      - 'Identify the signs: Both integers are negative.'
+      - 'Rule for same signs: Add the absolute values: $10 + 5 = 15$.'
+      - Keep the common sign (negative).
+      - The final sum is $-15$.
+      id: q6-2
+      questionGroup: q6
+    - problemText:
+        speech: 'Add: positive fifteen plus negative seven'
+        display: 'Add: $(+15) + (-7)$'
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Identify the signs: The integers have different signs (positive and negative).'
+      - 'Rule for different signs: Subtract the smaller absolute value from the larger absolute value: $15 - 7 = 8$.'
+      - 'Determine the sign of the result: Since $|+15|$ is greater than $|-7|$, the result is positive.'
+      - The final sum is $+8$.
+      id: q6-3
+      questionGroup: q6
+    - problemText:
+        speech: What is negative twelve plus positive four?
+        display: What is $(-12) + (+4)$?
+      mathTool: null
+      finalAnswer: '-8'
+      stepByStepGuideline:
+      - 'Identify the signs: The integers have different signs (negative and positive).'
+      - 'Rule for different signs: Subtract the smaller absolute value from the larger absolute value: $12 - 4 = 8$.'
+      - 'Determine the sign of the result: Since $|-12|$ is greater than $|+4|$, the result takes the negative sign.'
+      - The final sum is $-8$.
+      id: q6-4
+      questionGroup: q6
+    - problemText:
+        speech: 'Evaluate: positive fifteen plus negative fifteen'
+        display: 'Evaluate: $(+15) + (-15)$'
+      mathTool: null
+      finalAnswer: '0'
+      stepByStepGuideline:
+      - 'Identify the relationship: The integers $+15$ and $-15$ are opposites.'
+      - Opposites form a zero pair.
+      - The sum of any zero pair is always 0.
+      - The final result is $0$.
+      id: q6-5
+      questionGroup: q6
+- id: rn-sub-1
+  nodeNumber: 7
+  title: Subtracting Integers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: 'Calculate: twelve minus positive seven. First convert the subtraction problem to an addition problem, then
+          solve.'
+        display: 'Calculate: $12 - (+7)$. First convert the subtraction problem to an addition problem, then solve.'
+      avatarIntro: Subtracting integers requires understanding that it is the same as adding the opposite. Let's practice
+        converting subtraction problems into addition problems first!
+      finalAnswer: '5'
+      stepByStepGuideline:
+      - 'Apply the subtraction rule: $a - b = a + (-b)$. Change subtracting positive 7 to adding negative 7.'
+      - 'The expression becomes: $12 + (-7)$.'
+      - 'Use addition rules for integers with different signs: Subtract the absolute values ($12 - 7 = 5$) and keep the sign
+        of the larger absolute value (which is positive).'
+      - The result is 5.
+      id: q7-1
+      questionGroup: q7
+    - problemText:
+        speech: 'Convert to addition form then solve: ten minus negative seven.'
+        display: 'Convert to addition form then solve: $10 - (-7)$'
+      finalAnswer: '17'
+      stepByStepGuideline:
+      - Recognize that subtracting a negative number is equivalent to adding its opposite (a positive number).
+      - 'Convert the expression to addition form: $10 - (-7) = 10 + (+7)$.'
+      - 'Perform the addition: $10 + 7 = 17$.'
+      id: q7-2
+      questionGroup: q7
+    - problemText:
+        speech: 'Evaluate: negative twelve minus seven.'
+        display: 'Evaluate: $(-12) - (7)$'
+      finalAnswer: '-19'
+      stepByStepGuideline:
+      - 'Convert the subtraction of a positive number into the addition of a negative number: $(-12) - (7)$ becomes $(-12)
+        + (-7)$.'
+      - When adding integers with the same sign, add their absolute values ($12 + 7 = 19$).
+      - Keep the common sign (negative). The result is $-19$.
+      id: q7-3
+      questionGroup: q7
+    - problemText:
+        speech: 'Find: negative four minus negative seven.'
+        display: 'Find: $(-4) - (-7)$'
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Convert the subtraction of a negative number into the addition of a positive number: $(-4) - (-7) = (-4) + (+7)$.'
+      - When adding integers with different signs, subtract the smaller absolute value from the larger absolute value ($7
+        - 4 = 3$).
+      - The result takes the sign of the number with the larger absolute value (7 is positive).
+      - The answer is 3.
+      id: q7-4
+      questionGroup: q7
+    - problemText:
+        speech: What is three minus negative eight?
+        display: What is $3 - (-8)$?
+      finalAnswer: '11'
+      stepByStepGuideline:
+      - 'Rewrite the subtraction as addition of the opposite: $3 - (-8)$ becomes $3 + (+8)$.'
+      - 'Add the positive integers: $3 + 8 = 11$.'
+      id: q7-5
+      questionGroup: q7
+- id: rn-mult-1
+  nodeNumber: 9
+  title: Multiplication of Integers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: What is positive eight times positive five?
+        display: What is $(+8) \times (+5)$?
+      avatarIntro: 'Welcome back! Remember the rule: when multiplying integers with the same sign, the result is always positive.'
+      mathTool: null
+      finalAnswer: +40 or 40
+      stepByStepGuideline:
+      - 'Step 1: Determine the sign of the product. Since both factors (+8) and (+5) have the same sign (positive), the result
+        is positive.'
+      - 'Step 2: Multiply the magnitudes: $8 \times 5 = 40$.'
+      - 'Step 3: Combine the sign and magnitude: $+40$.'
+      id: q9-1
+      questionGroup: q9
+    - problemText:
+        speech: Without calculating, determine if negative six times negative seven is positive or negative. Then find the
+          answer.
+        display: Without calculating, determine if $(-6) \times (-7)$ is positive or negative. Then find the answer.
+      mathTool: null
+      finalAnswer: 'Positive (same signs). Answer: +42 or 42'
+      stepByStepGuideline:
+      - 'Step 1: Determine the sign of the product. Since both factors ($-6$ and $-7$) have the same sign (negative), the
+        result is positive.'
+      - 'Step 2: Calculate the magnitude: $6 \times 7 = 42$.'
+      - 'Step 3: The final answer is $+42$.'
+      id: q9-2
+      questionGroup: q9
+    - problemText:
+        speech: 'Calculate: positive nine times negative six'
+        display: 'Calculate: $(+9) \times (-6)$'
+      mathTool: null
+      finalAnswer: '-54'
+      stepByStepGuideline:
+      - 'Step 1: Determine the sign of the product. Since the factors (+9) and (-6) have different signs, the result is negative.'
+      - 'Step 2: Multiply the magnitudes: $9 \times 6 = 54$.'
+      - 'Step 3: Combine the sign and magnitude: $-54$.'
+      id: q9-3
+      questionGroup: q9
+    - problemText:
+        speech: 'Multiply: negative twelve times four'
+        display: 'Multiply: $-12 \times 4$'
+      mathTool: null
+      finalAnswer: '-48'
+      stepByStepGuideline:
+      - 'Step 1: Determine the sign of the product. The factors are $-12$ (negative) and $4$ (positive). Since they have different
+        signs, the result is negative.'
+      - 'Step 2: Multiply the absolute values: $12 \times 4 = 48$.'
+      - 'Step 3: The final answer is $-48$.'
+      id: q9-4
+      questionGroup: q9
+    - problemText:
+        speech: 'Find: ten times negative three'
+        display: 'Find: $10 \times (-3)$'
+      mathTool: null
+      finalAnswer: '-30'
+      stepByStepGuideline:
+      - 'Step 1: Identify the signs of the integers being multiplied: $10$ is positive, and $-3$ is negative.'
+      - 'Step 2: Apply the multiplication rule: Different signs yield a negative result.'
+      - 'Step 3: Multiply the absolute values: $10 \times 3 = 30$.'
+      - 'Step 4: The product is $-30$.'
+      id: q9-5
+      questionGroup: q9
+- id: rn-div-1
+  nodeNumber: 10
+  title: Division of Integers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: 'Calculate: positive twenty divided by positive four'
+        display: 'Calculate: $(+20) \div (+4)$'
+      avatarIntro: Remember, the sign rules for division are exactly the same as they are for multiplication. Let's start
+        with a positive divided by a positive.
+      mathTool: null
+      finalAnswer: '+5'
+      stepByStepGuideline:
+      - Identify the signs of the dividend (+20) and the divisor (+4). They are the same (both positive).
+      - When dividing integers with the same sign, the quotient is always positive.
+      - 'Divide the absolute values: $20 \div 4 = 5$.'
+      - The final answer is +5.
+      id: q10-1
+      questionGroup: q10
+    - problemText:
+        speech: 'Find: negative thirty divided by negative five'
+        display: 'Find: $-30 \div (-5)$'
+      mathTool: null
+      finalAnswer: '+6'
+      stepByStepGuideline:
+      - Determine the sign rule. Negative divided by Negative results in a Positive quotient (same signs).
+      - 'Divide the absolute values: $30 \div 5 = 6$.'
+      - The result is positive 6.
+      id: q10-2
+      questionGroup: q10
+    - problemText:
+        speech: What is positive thirty-six divided by negative twelve?
+        display: What is $(+36) \div (-12)$?
+      mathTool: null
+      finalAnswer: '-3'
+      stepByStepGuideline:
+      - 'Identify the signs: Positive divided by Negative.'
+      - Since the signs are different, the quotient must be Negative.
+      - 'Divide the absolute values: $36 \div 12 = 3$.'
+      - The final answer is -3.
+      id: q10-3
+      questionGroup: q10
+    - problemText:
+        speech: 'Divide: negative forty divided by eight'
+        display: 'Divide: $-40 \div 8$'
+      mathTool: null
+      finalAnswer: '-5'
+      stepByStepGuideline:
+      - 'Identify the signs: Negative divided by Positive.'
+      - Since the signs are different, the quotient must be Negative.
+      - 'Divide the absolute values: $40 \div 8 = 5$.'
+      - The final answer is -5.
+      id: q10-4
+      questionGroup: q10
+    - problemText:
+        speech: 'Evaluate: negative thirty-six divided by negative nine'
+        display: 'Evaluate: $-36$ divided by $-9$'
+      mathTool: null
+      finalAnswer: '+4'
+      stepByStepGuideline:
+      - Determine the sign rule. Negative divided by Negative results in a Positive quotient (same signs).
+      - 'Divide the absolute values: $36 \div 9 = 4$.'
+      - The result is +4.
+      id: q10-5
+      questionGroup: q10
+- id: rn-bodmas-1
+  nodeNumber: 11
+  title: Order of Operations with Integers (BODMAS)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: 'Evaluate: negative three times five plus fifteen divided by negative five'
+        display: 'Evaluate: $(-3) \times 5 + 15 \div (-5)$'
+      avatarIntro: Order of operations is crucial here. Remember to perform multiplication and division before addition, working
+        from left to right.
+      mathTool: null
+      finalAnswer: '-18'
+      stepByStepGuideline:
+      - Perform multiplication and division operations first, working from left to right.
+      - 'Multiplication: $(-3) \times 5 = -15$.'
+      - 'Division: $15 \div (-5) = -3$.'
+      - 'The expression simplifies to: $-15 + (-3)$.'
+      - 'Perform the final addition: $-15 + (-3) = -18$.'
+      id: q11-1
+      questionGroup: q11
+    - problemText:
+        speech: 'Calculate the value of: open brackets ten minus twelve close brackets times negative four plus six'
+        display: 'Calculate the value of: $(10 - 12) \times (-4) + 6$'
+      mathTool: null
+      finalAnswer: '14'
+      stepByStepGuideline:
+      - 'Evaluate the operation inside the brackets first: $10 - 12 = -2$.'
+      - 'The expression is now: $(-2) \times (-4) + 6$.'
+      - 'Perform multiplication: $(-2) \times (-4) = 8$.'
+      - 'Perform addition: $8 + 6 = 14$.'
+      id: q11-2
+      questionGroup: q11
+    - problemText:
+        speech: 'Find the value of the expression: negative eighteen divided by three plus negative five times four'
+        display: 'Find the value of the expression: $(-18) \div 3 + (-5) \times 4$'
+      mathTool: null
+      finalAnswer: '-26'
+      stepByStepGuideline:
+      - Perform division and multiplication operations first, working from left to right.
+      - 'Division: $(-18) \div 3 = -6$.'
+      - 'Multiplication: $(-5) \times 4 = -20$.'
+      - 'The expression simplifies to: $-6 + (-20)$.'
+      - 'Perform addition: $-6 + (-20) = -26$.'
+      id: q11-3
+      questionGroup: q11
+    - problemText:
+        speech: 'Evaluate: open brackets eight plus negative two close brackets times three minus twelve divided by four'
+        display: 'Evaluate: $(8 + (-2)) \times 3 - 12 \div 4$'
+      mathTool: null
+      finalAnswer: '15'
+      stepByStepGuideline:
+      - 'Calculate the operation within the brackets first: $8 + (-2) = 6$.'
+      - 'The expression is now: $6 \times 3 - 12 \div 4$.'
+      - 'Perform multiplication and division (left to right). Multiplication: $6 \times 3 = 18$. Division: $12 \div 4 = 3$.'
+      - 'The expression simplifies to: $18 - 3$.'
+      - 'Perform subtraction: $18 - 3 = 15$.'
+      id: q11-4
+      questionGroup: q11
+    - problemText:
+        speech: 'Calculate: four times negative two minus open brackets five minus ten close brackets plus one'
+        display: 'Calculate: $4 \times (-2) - (5 - 10) + 1$'
+      mathTool: null
+      finalAnswer: '-2'
+      stepByStepGuideline:
+      - 'Evaluate the operation inside the brackets first: $5 - 10 = -5$.'
+      - 'The expression is now: $4 \times (-2) - (-5) + 1$.'
+      - 'Perform multiplication: $4 \times (-2) = -8$.'
+      - 'The expression is now: $-8 - (-5) + 1$.'
+      - 'Simplify the subtraction of a negative number: $-8 + 5 + 1$.'
+      - 'Work left to right: $-8 + 5 = -3$.'
+      - 'Complete the addition: $-3 + 1 = -2$.'
+      id: q11-5
+      questionGroup: q11
+- id: rn-rational-1
+  nodeNumber: 12
+  title: Understanding Rational Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: Is one point five a rational number? If yes, express it as a fraction a over b where a and b are integers.
+        display: Is $1.5$ a rational number? If yes, express it as a fraction $a/b$ where $a$ and $b$ are integers.
+      avatarIntro: Welcome! Let's test your understanding of rational numbers. Remember, a rational number can be written
+        as a fraction.
+      mathTool: null
+      finalAnswer: Yes. 1.5 is rational. It can be expressed as 3/2 (or 15/10, etc.).
+      stepByStepGuideline:
+      - Determine if the decimal $1.5$ can be expressed as a fraction $a/b$ where $a$ and $b$ are integers and $b \neq 0$.
+      - Since $1.5$ is a terminating decimal, it is rational.
+      - 'Convert the decimal to a fraction: $1.5 = 15/10$.'
+      - 'Simplify the fraction (optional but recommended): $15/10 = 3/2$.'
+      id: q12-1
+      questionGroup: q12
+    - problemText:
+        speech: Explain why the integer negative ten is considered a rational number.
+        display: Explain why the integer $-10$ is considered a rational number.
+      mathTool: null
+      finalAnswer: The integer -10 is rational because it can be written in the form a/b, specifically as -10/1, where both
+        -10 and 1 are integers and the denominator is not zero.
+      stepByStepGuideline:
+      - 'Recall the definition of a rational number: any number that can be written as $a/b$, where $a$ and $b$ are integers
+        and $b \neq 0$.'
+      - Identify how the integer $-10$ can be written in fractional form.
+      - $-10$ can be written as $-10/1$.
+      - Since $-10$ and $1$ are both integers, $-10$ is confirmed as a rational number.
+      id: q12-2
+      questionGroup: q12
+    - problemText:
+        speech: Consider the decimal zero point one six six six repeating. Is this number rational? Justify your answer.
+        display: Consider the decimal $0.1666...$. Is this number rational? Justify your answer.
+      mathTool: null
+      finalAnswer: Yes. The recurring decimal $0.1666...$ is rational because all recurring decimals can be expressed exactly
+        as a fraction a/b. In this case, $0.1666... = 1/6$.
+      stepByStepGuideline:
+      - 'Identify the type of decimal: $0.1666...$ is a recurring (repeating) decimal.'
+      - Determine if recurring decimals fit the definition of a rational number.
+      - All recurring decimals can be converted into a fraction $a/b$ (where $a, b$ are integers).
+      - Therefore, $0.1666...$ is rational (it equals $1/6$).
+      - Justify the answer by stating that recurring decimals are convertible to fractions.
+      id: q12-3
+      questionGroup: q12
+    - problemText:
+        speech: Convert the decimal zero point one two five to a fraction in its simplest form.
+        display: Convert the decimal $0.125$ to a fraction in its simplest form.
+      mathTool: null
+      finalAnswer: 1/8
+      stepByStepGuideline:
+      - Write the decimal as a fraction based on its place value. $0.125$ has three decimal places, so the denominator is
+        $1000$.
+      - 'Fraction form: $125/1000$.'
+      - Simplify the fraction by finding the greatest common divisor (GCD). The GCD of 125 and 1000 is 125.
+      - 'Divide the numerator and denominator by 125: $125 \div 125 = 1$ and $1000 \div 125 = 8$.'
+      - The simplest form is $1/8$.
+      id: q12-4
+      questionGroup: q12
+    - problemText:
+        speech: 'Identify all the rational numbers from the following list: eight, two fifths, two point four, and zero point
+          six six six repeating.'
+        display: 'Identify all the rational numbers from the following list: $8, \frac{2}{5}, 2.4, 0.666...$'
+      mathTool: null
+      finalAnswer: 'All four numbers are rational: 8, 2/5, 2.4, and 0.666...'
+      stepByStepGuideline:
+      - 'Check $8$: It is an integer ($8/1$), so it is rational.'
+      - 'Check $2/5$: It is already in the fraction form $a/b$, so it is rational.'
+      - 'Check $2.4$: It is a terminating decimal ($24/10$), so it is rational.'
+      - 'Check $0.666...$: It is a recurring decimal ($2/3$), so it is rational.'
+      - Conclude that all numbers in the list are rational.
+      id: q12-5
+      questionGroup: q12
+- id: rn-irrational-1
+  nodeNumber: 13
+  title: Understanding Irrational Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Is $\sqrt{7}$ a rational or irrational number? Explain your reasoning.
+      avatarIntro: Let's test your knowledge of number classifications! Remember the definition of an irrational number.
+      mathTool: null
+      finalAnswer: Irrational.
+      stepByStepGuideline:
+      - 'Recall the definition of a rational number: it can be expressed as a fraction $a/b$ where $a$ and $b$ are integers
+        and $b \neq 0$. Its decimal representation must terminate or repeat.'
+      - Determine if 7 is a perfect square. Since $2^2 = 4$ and $3^2 = 9$, 7 is not a perfect square.
+      - The square root of a non-perfect square is irrational.
+      - Therefore, $\sqrt{7}$ is irrational because it cannot be written as a fraction $a/b$. Its decimal form (approximately
+        2.6457...) is non-terminating and non-repeating.
+      id: q13-1
+      questionGroup: q13
+    - problemText: Is the number $\pi$ (pi) rational or irrational? Justify your answer based on its decimal representation.
+      mathTool: null
+      finalAnswer: Irrational.
+      stepByStepGuideline:
+      - Recall the properties of the constant $\pi$.
+      - $\pi$ is approximately $3.14159...$
+      - A number is irrational if its decimal representation is non-terminating (goes on forever) AND non-repeating (has no
+        pattern).
+      - Since $\pi$ satisfies both these conditions, it is an irrational number. It cannot be expressed as a simple fraction
+        $a/b$.
+      id: q13-2
+      questionGroup: q13
+    - problemText: Explain the fundamental difference that makes $\sqrt{36}$ a rational number but $\sqrt{12}$ an irrational
+        number.
+      mathTool: null
+      finalAnswer: $\sqrt{36}$ is rational because 36 is a perfect square ($\sqrt{36}=6$, which is $6/1$). $\sqrt{12}$ is
+        irrational because 12 is not a perfect square, resulting in a non-terminating, non-repeating decimal.
+      stepByStepGuideline:
+      - Evaluate $\sqrt{36}$. Since $6 \times 6 = 36$, $\sqrt{36} = 6$. Since 6 can be written as $6/1$, it is rational.
+      - Evaluate $\sqrt{12}$. Since 12 is not a perfect square, $\sqrt{12}$ results in a decimal that goes on forever without
+        repeating (approximately 3.464...).
+      - A non-terminating and non-repeating decimal cannot be written as a fraction $a/b$. Thus, $\sqrt{12}$ is irrational.
+      id: q13-3
+      questionGroup: q13
+    - problemText: 'Identify the irrational number from the pair: $\sqrt{25}$ and $\sqrt{5}$. Provide a brief explanation
+        of why the chosen number is irrational.'
+      mathTool: null
+      finalAnswer: $\sqrt{5}$ is the irrational number.
+      stepByStepGuideline:
+      - Calculate or simplify $\sqrt{25}$. Since $5 \times 5 = 25$, $\sqrt{25} = 5$. This is rational ($5/1$).
+      - Analyze $\sqrt{5}$. Since 5 is not a perfect square, $\sqrt{5}$ cannot be simplified to an integer or a terminating/repeating
+        decimal.
+      - The decimal value of $\sqrt{5}$ (approximately 2.236...) is non-terminating and non-repeating.
+      - Therefore, $\sqrt{5}$ is the irrational number because it cannot be written in the form $a/b$.
+      id: q13-4
+      questionGroup: q13
+    - problemText: A rational number can be expressed as a fraction $a/b$. Why is it impossible to express the number $\sqrt{3}$
+        in this fractional form?
+      mathTool: null
+      finalAnswer: It is impossible because $\sqrt{3}$ is an irrational number. Its decimal representation (approximately
+        1.732...) is non-terminating AND non-repeating, which means it fundamentally violates the definition of a rational
+        number.
+      stepByStepGuideline:
+      - 'Recall the definition of an irrational number: a number that cannot be written as a fraction $a/b$.'
+      - Identify the nature of $\sqrt{3}$. Since 3 is not a perfect square, $\sqrt{3}$ is irrational.
+      - Irrational numbers have decimal representations that are non-terminating and non-repeating.
+      - Since $\sqrt{3}$ has a non-terminating, non-repeating decimal, there are no integers $a$ and $b$ that can form a fraction
+        equal to $\sqrt{3}$.
+      id: q13-5
+      questionGroup: q13
+- id: rn-system-1
+  nodeNumber: 14
+  title: Real Number System Hierarchy
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: State the hierarchy of the standard number sets from Natural numbers to Real numbers, using the subset
+        notation ($\subset$).
+      avatarIntro: Welcome! Understanding the structure of the number system is key. Let's start with the big picture of how
+        all the number sets relate to each other.
+      mathTool: null
+      finalAnswer: 'The hierarchy is: Natural numbers (\u2115) \u2282 Whole numbers (W) \u2282 Integers (\u2124) \u2282 Rational
+        numbers (\u211a) \u2282 Real numbers (\u211d).'
+      stepByStepGuideline:
+      - 'Identify the smallest set: Natural numbers (\u2115).'
+      - 'Identify the next set that includes \u2115 plus zero: Whole numbers (W).'
+      - 'Identify the next set that includes W plus negative whole numbers: Integers (\u2124).'
+      - 'Identify the next set that includes \u2124 plus all fractions and terminating/repeating decimals: Rational numbers
+        (\u211a).'
+      - 'Identify the largest set which includes \u211a and all Irrational numbers: Real numbers (\u211d).'
+      - 'Combine these using the subset symbol: \u2115 \u2282 W \u2282 \u2124 \u2282 \u211a \u2282 \u211d.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: Describe the relationship between Rational numbers (\u211a) and Irrational numbers within the context of
+        the Real number system (\u211d).
+      mathTool: null
+      finalAnswer: Rational numbers and Irrational numbers are mutually exclusive sets; a number cannot be both. Together,
+        they form the complete set of Real numbers (\u211d = \u211a \u222a Irrational).
+      stepByStepGuideline:
+      - Define Rational numbers (numbers expressible as a/b) and Irrational numbers (numbers not expressible as a/b).
+      - Determine if they overlap. Since the definitions are mutually exclusive, they are disjoint sets.
+      - 'State how they relate to the Real numbers: Real numbers consist of everything that is Rational OR Irrational.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: 'True or False: Every Whole number (W) is also a Natural number (\u2115). Justify your answer by referencing
+        the definition of the sets.'
+      mathTool: null
+      finalAnswer: False. Natural numbers (\u2115) are counting numbers starting at 1 ({1, 2, 3, ...}), whereas Whole numbers
+        (W) include 0 ({0, 1, 2, 3, ...}). The element 0 is in W but not in \u2115, meaning W is not a subset of \u2115.
+      stepByStepGuideline:
+      - 'Recall the definition of Natural numbers (\u2115): positive counting numbers.'
+      - 'Recall the definition of Whole numbers (W): Natural numbers plus zero.'
+      - Determine if every element in W is also in \u2115.
+      - 'Identify the counterexample: Zero (0) is a Whole number but not a Natural number.'
+      - Conclude that the statement is False.
+      id: q14-3
+      questionGroup: q14
+    - problemText: Explain the meaning of the mathematical statement $\mathbb{Z} \subset \mathbb{Q}$. Provide a conceptual
+        explanation rather than just listing elements.
+      mathTool: null
+      finalAnswer: The statement $\mathbb{Z} \subset \mathbb{Q}$ means that the set of Integers (\u2124) is a subset of the
+        set of Rational numbers (\u211a). Conceptually, this means that every single integer can be written in the form $a/b$,
+        where $a$ and $b$ are integers and $b \neq 0$. For example, the integer -3 can be written as $-3/1$.
+      stepByStepGuideline:
+      - 'Identify the symbol \u2282 (subset) and its meaning: ''is contained within'' or ''is a subset of''.'
+      - 'Identify the sets: \u2124 (Integers) and \u211a (Rational numbers).'
+      - 'Translate the meaning: All integers are rational numbers.'
+      - 'Explain the underlying justification: Rational numbers are defined by their ability to be written as a fraction;
+        any integer $n$ satisfies this definition because it can be written as $n/1$.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: Explain the difference in the criteria used to define the set of Integers (\u2124) versus the set of Whole
+        numbers (W).
+      mathTool: null
+      finalAnswer: Whole numbers (W) include zero and all positive counting numbers. Integers (\u2124) include all Whole numbers
+        AND incorporate the criterion of including all negative whole numbers (or opposites of the natural numbers). The key
+        defining criterion for \u2124 is the inclusion of these negative values.
+      stepByStepGuideline:
+      - 'Define Whole numbers (W): {0, 1, 2, 3, ...}.'
+      - 'Define Integers (\u2124): {..., -2, -1, 0, 1, 2, ...}.'
+      - Compare the elements of the two sets.
+      - The set of Integers includes all elements of Whole numbers but adds the requirement for negative values, which is
+        the primary difference.
+      id: q14-5
+      questionGroup: q14
+- id: rn-system-2
+  nodeNumber: 15
+  title: Classifying Numbers in the Real Number System
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: To which number sets does zero belong?
+        display: To which number sets does $0$ belong?
+      avatarIntro: Understanding where zero fits in the number system is a key part of classifying real numbers. Give this
+        one a try!
+      finalAnswer: '0 belongs to the sets: Whole (W), Integer (ℤ), Rational (ℚ), and Real (ℝ).'
+      stepByStepGuideline:
+      - 'Determine if 0 is a Natural Number (ℕ): No, Natural numbers start at 1.'
+      - 'Determine if 0 is a Whole Number (W): Yes, Whole numbers are 0 and the Natural numbers.'
+      - 'Determine if 0 is an Integer (ℤ): Yes, Integers include all whole numbers and their negatives.'
+      - 'Determine if 0 is Rational (ℚ): Yes, 0 can be written as a fraction (e.g., 0/1).'
+      - 'Determine if 0 is Irrational: No, since it is Rational.'
+      - 'Determine if 0 is Real (ℝ): Yes, all numbers discussed in this section are Real.'
+      id: q15-1
+      questionGroup: q15
+    - problemText:
+        speech: Which number sets does zero point five belong to? Explain why for each set you identify.
+        display: Which number sets does $0.5$ belong to? Explain why for each set you identify.
+      finalAnswer: 0.5 belongs to Rational (ℚ) and Real (ℝ). It is Rational because it can be expressed as the fraction 1/2.
+        It is Real because it exists on the number line. It is not Natural, Whole, or Integer because it is not a whole number.
+        It is not Irrational because it is Rational.
+      stepByStepGuideline:
+      - 'Analyze the number 0.5: It is a terminating decimal.'
+      - 'Determine if it is Natural, Whole, or Integer: Since it is not a counting number or a negative whole number, it is
+        not in ℕ, W, or ℤ.'
+      - 'Determine if it is Rational (ℚ): Yes, because terminating decimals can always be written as a ratio of two integers
+        (0.5 = 1/2).'
+      - 'Determine if it is Irrational: No, because Rational and Irrational sets are mutually exclusive.'
+      - 'Determine if it is Real (ℝ): Yes, all rational numbers are Real.'
+      id: q15-2
+      questionGroup: q15
+    - problemText:
+        speech: 'Classify the number negative ten. Which sets does it belong to: Natural, Whole, Integer, Rational, Irrational,
+          Real?'
+        display: 'Classify $-10$. Which sets: $\mathbb{N}, \mathbb{W}, \mathbb{Z}, \mathbb{Q}$, Irrational, $\mathbb{R}$?'
+      finalAnswer: -10 belongs to Integer (ℤ), Rational (ℚ), and Real (ℝ).
+      stepByStepGuideline:
+      - 'Check ℕ and W: -10 is negative, so it is not a Natural or Whole number.'
+      - 'Check ℤ: -10 is a negative whole number, so it is an Integer.'
+      - 'Check ℚ: Since -10 is an Integer, it can be written as -10/1, making it Rational.'
+      - 'Check Irrational: Since it is Rational, it is not Irrational.'
+      - 'Check ℝ: All numbers classified so far are Real.'
+      id: q15-3
+      questionGroup: q15
+    - problemText:
+        speech: 'True or False: The number square root five is a Rational number. Justify your answer.'
+        display: 'True or False: The number $\sqrt{5}$ is a Rational number ($\mathbb{Q}$). Justify your answer.'
+      finalAnswer: False. $\sqrt{5}$ is an Irrational number. When calculated, its decimal representation is non-terminating
+        and non-repeating, meaning it cannot be written as a simple fraction $a/b$ where $a$ and $b$ are integers.
+      stepByStepGuideline:
+      - 'Recall the definition of a Rational number (ℚ): It can be expressed as a fraction $a/b$ where $a$ and $b$ are integers.'
+      - 'Recall the definition of an Irrational number: Its decimal representation is non-terminating and non-repeating.'
+      - 'Analyze $\sqrt{5}$: Since 5 is not a perfect square, $\sqrt{5}$ is an irrational root.'
+      - 'Conclusion: Because $\sqrt{5}$ is Irrational, the statement that it is Rational must be False.'
+      id: q15-4
+      questionGroup: q15
+    - problemText:
+        speech: Is the number twelve a member of the set of Integers? Justify your classification.
+        display: Is the number $12$ a member of the set of Integers ($\mathbb{Z}$)? Justify your classification.
+      finalAnswer: Yes. 12 is a member of the set of Integers (ℤ). Integers include all positive and negative whole numbers
+        and zero. Since 12 is a positive whole number, it is included in ℤ.
+      stepByStepGuideline:
+      - 'Define the set of Integers (ℤ): The set includes {..., -3, -2, -1, 0, 1, 2, 3, ...}.'
+      - 'Locate 12 within the defined set: 12 is a positive whole number.'
+      - 'Conclusion: Since 12 fits the definition of a positive whole number, it is an Integer.'
+      id: q15-5
+      questionGroup: q15
+- id: rn-frac-1
+  nodeNumber: 16
+  title: Operations with Fractions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: Calculate the sum of one-fourth and one-sixth.
+        display: 'Calculate: $\frac{1}{4} + \frac{1}{6}$'
+      avatarIntro: Mastering fraction operations is key to success in algebra. Let's start with addition!
+      mathTool: null
+      finalAnswer: 5/12
+      stepByStepGuideline:
+      - Find the Lowest Common Denominator (LCD) for 4 and 6, which is 12.
+      - 'Convert the fractions to equivalent fractions using the LCD: $\frac{1}{4} = \frac{3}{12}$ and $\frac{1}{6} = \frac{2}{12}$.'
+      - 'Add the new numerators: $3 + 2 = 5$. Keep the denominator 12.'
+      - The result is $\frac{5}{12}$. Since 5 and 12 share no common factors other than 1, the fraction is in its lowest terms.
+      id: q16-1
+      questionGroup: q16
+    - problemText:
+        speech: Find the difference between five-sixths and one-third.
+        display: 'Find the difference: $\frac{5}{6} - \frac{1}{3}$'
+      mathTool: null
+      finalAnswer: 1/2
+      stepByStepGuideline:
+      - Find the Lowest Common Denominator (LCD) for 6 and 3, which is 6.
+      - 'Convert the fractions to equivalent fractions using the LCD: $\frac{1}{3} = \frac{2}{6}$. The first fraction $\frac{5}{6}$
+        remains the same.'
+      - 'Subtract the numerators: $5 - 2 = 3$. Keep the denominator 6.'
+      - 'The result is $\frac{3}{6}$. Simplify the fraction by dividing the numerator and denominator by the GCF (3): $\frac{3}{6}
+        = \frac{1}{2}$.'
+      id: q16-2
+      questionGroup: q16
+    - problemText:
+        speech: Multiply three-fifths by five-sixths. Ensure your answer is in lowest terms.
+        display: 'Multiply: $\frac{3}{5} \times \frac{5}{6}$'
+      mathTool: null
+      finalAnswer: 1/2
+      stepByStepGuideline:
+      - 'Multiply the numerators together: $3 \times 5 = 15$.'
+      - 'Multiply the denominators together: $5 \times 6 = 30$.'
+      - The product is $\frac{15}{30}$.
+      - Simplify the resulting fraction by dividing the numerator and denominator by the Greatest Common Factor (GCF), which
+        is 15. $\frac{15}{30} = \frac{1}{2}$.
+      id: q16-3
+      questionGroup: q16
+    - problemText:
+        speech: Divide five-sixths by one-third. Give your answer as a simplified improper fraction or a mixed number.
+        display: 'Divide: $\frac{5}{6} \div \frac{1}{3}$'
+      mathTool: null
+      finalAnswer: 5/2
+      stepByStepGuideline:
+      - 'To divide fractions, multiply the first fraction by the reciprocal of the second fraction: $\frac{5}{6} \div \frac{1}{3}
+        = \frac{5}{6} \times \frac{3}{1}$.'
+      - 'Multiply the numerators: $5 \times 3 = 15$.'
+      - 'Multiply the denominators: $6 \times 1 = 6$. The result is $\frac{15}{6}$.'
+      - 'Simplify the fraction by dividing both numerator and denominator by their GCF (3): $\frac{15}{6} = \frac{5}{2}$.
+        (This is equivalent to the mixed number $2 \frac{1}{2}$).'
+      id: q16-4
+      questionGroup: q16
+    - problemText:
+        speech: Simplify the fraction eighteen twenty-fourths to its lowest terms.
+        display: Simplify $\frac{18}{24}$ to its lowest terms.
+      mathTool: null
+      finalAnswer: 3/4
+      stepByStepGuideline:
+      - Find the Greatest Common Factor (GCF) of the numerator (18) and the denominator (24).
+      - The GCF of 18 and 24 is 6.
+      - 'Divide the numerator by the GCF: $18 \div 6 = 3$.'
+      - 'Divide the denominator by the GCF: $24 \div 6 = 4$.'
+      - The simplified fraction is $\frac{3}{4}$.
+      id: q16-5
+      questionGroup: q16
+- id: rn-dec-1
+  nodeNumber: 17
+  title: Operations with Decimals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: Calculate the sum of twelve point five and four point two five.
+        display: 'Calculate: $12.5 + 4.25$'
+      avatarIntro: Let's start by reviewing how to add decimals correctly. Remember to always align the decimal points first!
+      mathTool: null
+      finalAnswer: '16.75'
+      stepByStepGuideline:
+      - Align the decimal points vertically. You may write 12.5 as 12.50 to ensure proper alignment and calculation.
+      - Add the numbers column by column from right to left.
+      - Place the decimal point in the answer directly below the aligned decimal points.
+      - The result is 16.75.
+      id: q17-1
+      questionGroup: q17
+    - problemText:
+        speech: Determine the difference between fifteen point two and seven point six five.
+        display: 'Determine the difference: $15.2 - 7.65$'
+      mathTool: null
+      finalAnswer: '7.55'
+      stepByStepGuideline:
+      - Align the decimal points and rewrite 15.2 as 15.20 to facilitate subtraction.
+      - Subtract the numbers column by column, remembering to borrow when necessary.
+      - Place the decimal point in the answer directly below the aligned decimal points.
+      - The final difference is 7.55.
+      id: q17-2
+      questionGroup: q17
+    - problemText:
+        speech: Multiply two point four by one point five.
+        display: 'Multiply: $2.4 \times 1.5$'
+      mathTool: null
+      finalAnswer: '3.6'
+      stepByStepGuideline:
+      - 'Multiply the numbers as if they were whole numbers: $24 \times 15 = 360$.'
+      - Count the total number of decimal places in the factors. (2.4 has 1 place, 1.5 has 1 place, totaling 2 places).
+      - Place the decimal point in the product 360 two places from the right, resulting in 3.60.
+      - Simplify the answer to 3.6.
+      id: q17-3
+      questionGroup: q17
+    - problemText:
+        speech: Divide fifteen point zero by zero point five.
+        display: 'Divide: $15.0 \div 0.5$'
+      mathTool: null
+      finalAnswer: '30'
+      stepByStepGuideline:
+      - To make the divisor (0.5) a whole number, move the decimal point one place to the right (resulting in 5).
+      - Move the decimal point in the dividend (15.0) the same number of places to the right (resulting in 150).
+      - 'Perform the division: $150 \div 5$.'
+      - The quotient is 30.
+      id: q17-4
+      questionGroup: q17
+    - problemText:
+        speech: Find the total of ten point five and six point seven five.
+        display: 'Find the total: $10.5 + 6.75$'
+      mathTool: null
+      finalAnswer: '17.25'
+      stepByStepGuideline:
+      - Align the decimal points vertically, treating 10.5 as 10.50.
+      - Add the numbers column by column, carrying over when necessary.
+      - Place the decimal point in the answer directly below the aligned decimal points.
+      - The total is 17.25.
+      id: q17-5
+      questionGroup: q17
+- id: rn-convert-1
+  nodeNumber: 18
+  title: Converting Between Fractions and Decimals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: Convert one-fifth to a decimal.
+        display: Convert $\frac{1}{5}$ to a decimal.
+      avatarIntro: Mastering conversions is key to working efficiently with numbers! Let's start with a basic fraction to
+        decimal conversion.
+      mathTool: null
+      finalAnswer: '0.2'
+      stepByStepGuideline:
+      - To convert a fraction to a decimal, divide the numerator by the denominator.
+      - Calculate $1 \div 5$.
+      - The result is $0.2$.
+      id: q18-1
+      questionGroup: q18
+    - problemText:
+        speech: Express zero point eight as a fraction in simplest form.
+        display: Express $0.8$ as a fraction in simplest form.
+      mathTool: null
+      finalAnswer: 4/5
+      stepByStepGuideline:
+      - Identify the place value of the last digit. $0.8$ is eight tenths.
+      - 'Write the decimal as a fraction: $\frac{8}{10}$.'
+      - Simplify the fraction by dividing the numerator and denominator by their greatest common factor, which is 2.
+      - $\frac{8 \div 2}{10 \div 2} = \frac{4}{5}$.
+      id: q18-2
+      questionGroup: q18
+    - problemText:
+        speech: Change five-eighths to decimal form.
+        display: Change $\frac{5}{8}$ to decimal form.
+      mathTool: null
+      finalAnswer: '0.625'
+      stepByStepGuideline:
+      - 'To convert the fraction to a decimal, perform the division: $5 \div 8$.'
+      - The result of the division is $0.625$.
+      id: q18-3
+      questionGroup: q18
+    - problemText:
+        speech: Write zero point seven five as a fraction in lowest terms.
+        display: Write $0.75$ as a fraction in lowest terms.
+      mathTool: null
+      finalAnswer: 3/4
+      stepByStepGuideline:
+      - Identify the place value. $0.75$ is 75 hundredths.
+      - 'Write the decimal as a fraction: $\frac{75}{100}$.'
+      - Simplify the fraction by dividing the numerator and denominator by their greatest common factor, which is 25.
+      - $\frac{75 \div 25}{100 \div 25} = \frac{3}{4}$.
+      id: q18-4
+      questionGroup: q18
+    - problemText:
+        speech: Express zero point three seven five as a fraction in simplest form.
+        display: Express $0.375$ as a fraction in simplest form.
+      mathTool: null
+      finalAnswer: 3/8
+      stepByStepGuideline:
+      - Identify the place value. $0.375$ is 375 thousandths.
+      - 'Write the decimal as a fraction: $\frac{375}{1000}$.'
+      - Simplify the fraction. The greatest common factor for 375 and 1000 is 125.
+      - Divide both the numerator and the denominator by 125.
+      - $\frac{375 \div 125}{1000 \div 125} = \frac{3}{8}$.
+      id: q18-5
+      questionGroup: q18
+- id: rn-mixed-1
+  nodeNumber: 19
+  title: Mixed Operations with Fractions and Decimals
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech: 'Calculate: one-fourth plus zero point five. Choose the conversion method that seems easiest for this problem.'
+        display: 'Calculate: $\frac{1}{4} + 0.5$'
+      avatarIntro: Let's practice solving problems that mix fractions and decimals. Remember to convert all numbers to the
+        same form before calculating!
+      mathTool: null
+      finalAnswer: 3/4 or 0.75
+      stepByStepGuideline:
+      - 'Step 1: Choose a common format. Converting to decimals is straightforward here since $1/4 = 0.25$.'
+      - 'Step 2: Convert the fraction to a decimal: $\frac{1}{4} = 0.25$.'
+      - 'Step 3: Perform the addition: $0.25 + 0.5 = 0.75$.'
+      - 'Step 4: (Alternatively, convert to fractions: $0.5 = 1/2$. $\frac{1}{4} + \frac{1}{2} = \frac{1}{4} + \frac{2}{4}
+        = \frac{3}{4}$). The answer is $\frac{3}{4}$ or $0.75$.'
+      id: q19-1
+      questionGroup: q19
+    - problemText:
+        speech: 'Calculate: one-half minus zero point two. Decide whether to use fractions or decimals for the calculation.'
+        display: 'Calculate: $\frac{1}{2} - 0.2$'
+      mathTool: null
+      finalAnswer: 3/10 or 0.3
+      stepByStepGuideline:
+      - 'Step 1: Choose a common format. Converting to fractions is effective since $0.2 = \frac{2}{10} = \frac{1}{5}$.'
+      - 'Step 2: Convert $0.2$ to a fraction: $\frac{1}{5}$.'
+      - 'Step 3: Find the difference: $\frac{1}{2} - \frac{1}{5}$. The common denominator is 10.'
+      - 'Step 4: $\frac{5}{10} - \frac{2}{10} = \frac{3}{10}$. (Alternatively, $0.5 - 0.2 = 0.3$). The answer is $\frac{3}{10}$
+        or $0.3$.'
+      id: q19-2
+      questionGroup: q19
+    - problemText:
+        speech: Leo spent three-fourths of a dollar on a drink and zero point one zero dollars on a candy bar. How much did
+          he spend in total?
+        display: Leo spent $\frac{3}{4}$ of a dollar on a drink and $0.10$ dollars on a candy bar. How much did he spend in
+          total?
+      mathTool: null
+      finalAnswer: $0.85$ or $17/20$ dollar
+      stepByStepGuideline:
+      - 'Step 1: Identify the operation needed: Addition (total amount spent).'
+      - 'Step 2: Convert both amounts to the same form. Since this involves money, decimals are usually easiest: $\frac{3}{4}
+        = 0.75$.'
+      - 'Step 3: Add the amounts: $0.75 + 0.10 = 0.85$.'
+      - 'Step 4: Leo spent $0.85.'
+      id: q19-3
+      questionGroup: q19
+    - problemText:
+        speech: A piece of copper tubing measures four-fifths meters in length. If zero point four meters is cut off, what
+          length remains?
+        display: A piece of copper tubing measures $\frac{4}{5}$ meters in length. If $0.4$ meters is cut off, what length
+          remains?
+      mathTool: null
+      finalAnswer: 2/5 meters or 0.4 meters
+      stepByStepGuideline:
+      - 'Step 1: Identify the operation needed: Subtraction (length remaining).'
+      - 'Step 2: Convert both measurements to the same form. Converting to fractions simplifies the calculation: $0.4 = \frac{4}{10}
+        = \frac{2}{5}$.'
+      - 'Step 3: Subtract the cut length from the original length: $\frac{4}{5} - \frac{2}{5}$.'
+      - 'Step 4: $\frac{4}{5} - \frac{2}{5} = \frac{2}{5}$ meters. (Alternatively, $0.8 - 0.4 = 0.4$ meters).'
+      id: q19-4
+      questionGroup: q19
+    - problemText:
+        speech: A baker mixes zero point eight kilograms of flour with one-tenth kilogram of sugar. What is the total weight
+          of the dry mixture?
+        display: A baker mixes $0.8$ kg of flour with $\frac{1}{10}$ kg of sugar. What is the total weight of the dry mixture?
+      mathTool: null
+      finalAnswer: 0.9 kg or 9/10 kg
+      stepByStepGuideline:
+      - 'Step 1: Identify the operation needed: Addition (total weight).'
+      - 'Step 2: Convert both weights to the same form. Since both can be easily expressed in tenths, converting to decimals
+        or fractions works well. Let''s use decimals: $\frac{1}{10} = 0.1$.'
+      - 'Step 3: Add the weights: $0.8 + 0.1 = 0.9$ kg.'
+      - 'Step 4: (Alternatively, using fractions: $\frac{8}{10} + \frac{1}{10} = \frac{9}{10}$ kg). The total weight is $0.9$
+        kg or $\frac{9}{10}$ kg.'
+      id: q19-5
+      questionGroup: q19

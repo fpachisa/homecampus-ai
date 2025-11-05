@@ -58,6 +58,8 @@ import { S1_LINEAR_FUNCTIONS_SUBTOPICS } from '../../prompt-library/subjects/mat
 import type { LinearFunctionsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
 import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
 import type { PerimeterAreaTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
+import { S1_MATH_DATA_HANDLING_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s1-data-handling';
+import type { DataHandlingTopicId } from '../../prompt-library/subjects/mathematics/secondary/s1-data-handling';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -139,6 +141,13 @@ function getTopicIcon(topicId: string): string {
   if (topicId.startsWith('s1-math-perimeter-area-')) {
     const icons = ['▭', '🔷', '🧩'];
     const index = Object.keys(S1_MATH_PERIMETER_AREA_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+
+  // S1 Data Handling icons
+  if (topicId.startsWith('s1-math-data-')) {
+    const icons = ['📋', '📊', '📈', '🎨', '📉', '🔍'];
+    const index = Object.keys(S1_MATH_DATA_HANDLING_SUBTOPICS).indexOf(topicId);
     return icons[index >= 0 ? index : 0];
   }
 
@@ -294,6 +303,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's1-math-percentage') return 'Percentage';
   if (category === 's1-math-linear-functions-graphs') return 'Linear Functions & Graphs';
   if (category === 's1-math-perimeter-area') return 'Perimeter & Area';
+  if (category === 's1-math-data-handling') return 'Data Handling';
   if (category === 's3-math-trigonometry') return 'Trigonometry';
   if (category === 's3-math-circle-geometry') return 'Circle Geometry';
   if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
@@ -325,7 +335,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   const knownPaths = [
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
-    's1-math-linear-functions-graphs', 's1-math-perimeter-area', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
+    's1-math-linear-functions-graphs', 's1-math-perimeter-area', 's1-math-data-handling', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
     's3-math-coordinate-geometry', 's4-math-differential-calculus', 's4-math-integration',
@@ -445,6 +455,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 's1-math-perimeter-area') {
       return Object.entries(S1_MATH_PERIMETER_AREA_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as PerimeterAreaTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's1-math-data-handling') {
+      return Object.entries(S1_MATH_DATA_HANDLING_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as DataHandlingTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,

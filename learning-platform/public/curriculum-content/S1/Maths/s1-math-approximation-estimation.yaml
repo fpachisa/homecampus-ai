@@ -1,0 +1,1336 @@
+# S1 Math Approximation Estimation - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: approx-round-1
+  nodeNumber: 1
+  title: Understanding Rounding and the Midpoint Concept
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: A concert recorded an attendance of 23,645 people. If this figure must be rounded to the nearest 10 for
+        official reporting, what are the two nearest multiples of 10? Which multiple should the final rounded number be, and
+        why?
+      avatarIntro: Hello! Rounding helps simplify large numbers, but we need a consistent rule for numbers exactly in the
+        middle. Let's practice identifying that midpoint.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 23640
+          max: 23650
+          step: 1
+          intervals:
+          - start: 23640
+            end: 23645
+            startInclusive: true
+            endInclusive: false
+            color: '#fbbf24'
+            label: Rounds DOWN
+          - start: 23645
+            end: 23650
+            startInclusive: true
+            endInclusive: true
+            color: '#10b981'
+            label: Rounds UP
+          points:
+          - value: 23645
+            label: Midpoint (5)
+            style: closed
+            color: '#ef4444'
+          showTickMarks: true
+          showTickLabels: true
+          title: Rounding 23,645 to Nearest 10
+          caption: Numbers at or above the midpoint (5) round UP by convention
+      finalAnswer: The two nearest multiples of 10 are 23,640 and 23,650. Since 23,645 is exactly the midpoint, the convention
+        is to round UP to 23,650.
+      stepByStepGuideline:
+      - 'Identify the place value required: nearest 10.'
+      - 'Identify the two boundary multiples: 23,640 (lower) and 23,650 (upper).'
+      - Identify the critical digit (the ones digit), which is 5.
+      - Since 5 is the midpoint, the established convention is always to round up.
+      - Therefore, 23,645 rounds to 23,650.
+      id: q1-1
+      questionGroup: q1
+    - problemText: A geographic measurement of a distance is recorded as 1,832 kilometers. Using the number line concept,
+        explain why 1,832 rounds DOWN to 1,800 when rounding to the nearest 100.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 1800
+          max: 1900
+          step: 10
+          intervals:
+          - start: 1800
+            end: 1850
+            startInclusive: true
+            endInclusive: false
+            color: '#fbbf24'
+            label: Rounds DOWN
+          - start: 1850
+            end: 1900
+            startInclusive: true
+            endInclusive: true
+            color: '#10b981'
+            label: Rounds UP
+          points:
+          - value: 1850
+            label: Midpoint (50)
+            style: closed
+            color: '#ef4444'
+          showTickMarks: true
+          showTickLabels: true
+          title: Rounding to Nearest 100
+          caption: Numbers below the midpoint (50) round DOWN
+      finalAnswer: When rounding 1,832 to the nearest 100, we look at the tens digit (3). Since 3 is less than 5 (the midpoint),
+        1,832 is visually closer to 1,800 than it is to 1,900 on a number line, so we round DOWN.
+      stepByStepGuideline:
+      - 'Identify the place value required: nearest 100.'
+      - Identify the critical digit (the tens digit), which is 3.
+      - The midpoint between 1,800 and 1,900 is 1,850.
+      - Since 1,832 is less than the midpoint 1,850, it falls into the 'rounds down' range.
+      - Visualization on the number line confirms that the distance to 1,800 (32 units) is shorter than the distance to 1,900
+        (68 units).
+      id: q1-2
+      questionGroup: q1
+    - problemText: A census recorded the population of a large district as 891,234. If this figure is rounded to the nearest
+        1,000, what are the two nearest multiples of 1,000 to this number? Which is 891,234 closer to?
+      mathTool: null
+      finalAnswer: The two nearest multiples of 1,000 are 891,000 and 892,000. The number 891,234 is closer to 891,000.
+      stepByStepGuideline:
+      - 'Identify the target place value: nearest 1,000.'
+      - 'Identify the two boundaries: The thousand that comes before 891,234 is 891,000. The thousand that comes after is
+        892,000.'
+      - Identify the critical digit (the hundreds digit), which is 2.
+      - Since 2 is below the midpoint (5), the number rounds down.
+      - Therefore, 891,234 is closer to 891,000.
+      id: q1-3
+      questionGroup: q1
+    - problemText: A warehouse inventory count shows 65,432 items in stock. If the management requires this count to be rounded
+        to the nearest 10,000, which digit must you examine to determine the rounding direction? Is this digit above, below,
+        or exactly at the midpoint (5)? How should you round 65,432?
+      mathTool: null
+      finalAnswer: To round to the nearest 10,000, you must examine the thousands digit, which is 5. This digit is exactly
+        at the midpoint. By convention, 65,432 rounds UP to 70,000.
+      stepByStepGuideline:
+      - 'Determine the rounding target: nearest 10,000.'
+      - 'Identify the critical digit position: one place to the right of the target (the thousands place).'
+      - The thousands digit in 65,432 is 5.
+      - Compare the critical digit (5) to the midpoint (5). It is exactly at the midpoint.
+      - 'Apply the rounding convention: 5 or greater rounds up. The upper multiple of 10,000 is 70,000.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: A business is creating a monthly budget and must round all costs to the nearest $10. If an expense is $837,
+        explain the fundamental trade-off between simplicity and accuracy that determines why this amount rounds to $840 instead
+        of $830.
+      mathTool: null
+      finalAnswer: Rounding involves a trade-off where we sacrifice a small amount of accuracy for simplicity. The number
+        $837 rounds to $840 because 7 is greater than the midpoint (5). This means $840 is the NEAREST multiple of $10 to
+        the original value, making it the most accurate simple representation.
+      stepByStepGuideline:
+      - 'Identify the target place value: nearest 10.'
+      - Identify the critical digit (ones digit), which is 7.
+      - The two nearest multiples of 10 are 830 and 840.
+      - 'Calculate the distance: 837 is 7 units away from 830, and 3 units away from 840.'
+      - Since the goal of rounding is to find the closest (nearest) value, 840 is chosen because it minimizes the loss of
+        accuracy.
+      id: q1-5
+      questionGroup: q1
+- id: approx-round-2
+  nodeNumber: 2
+  title: Rounding Whole Numbers to Nearest 10, 100, 1000
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A library has 45,678 books. Round to the nearest 1000 for a report. Explain your reasoning.
+      avatarIntro: Rounding is essential for quick estimates and reports. Let's start by determining the thousands place value
+        in this large number.
+      mathTool: null
+      finalAnswer: 46,000
+      stepByStepGuideline:
+      - 'Identify the target place value: the Thousands place (the digit 5).'
+      - Identify the digit immediately to the right, which is the Hundreds place (the digit 6). This digit determines the
+        rounding direction.
+      - 'Apply the rounding rule: Since 6 is 5 or greater, we round up the Thousands digit.'
+      - The 5 in the Thousands place becomes 6, and all digits to the right (6, 7, 8) become zero placeholders.
+      - 'The result is 46,000. Reasoning: We look at the hundreds digit (6). Since 6 is greater than 5, we increase the thousands
+        digit (5) by 1.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: A school has 789,123 students. Round to the nearest 10. Which digit did you look at to make the rounding
+        decision?
+      mathTool: null
+      finalAnswer: 789,120. We looked at the Ones digit (3).
+      stepByStepGuideline:
+      - 'Identify the target place value: the Tens place (the digit 2).'
+      - Identify the digit immediately to the right, which is the Ones place (the digit 3). This is the digit we examine.
+      - 'Apply the rounding rule: Since 3 is less than 5, we round down (keep the Tens digit the same).'
+      - The Tens digit (2) remains 2, and the Ones digit (3) becomes a zero placeholder.
+      - The rounded number is 789,120.
+      id: q2-2
+      questionGroup: q2
+    - problemText: Round 678 to the nearest 100.
+      mathTool: null
+      finalAnswer: '700'
+      stepByStepGuideline:
+      - 'Identify the target place value: the Hundreds place (the digit 6).'
+      - 'Identify the digit immediately to the right: the Tens place (the digit 7).'
+      - 'Apply the rounding rule: Since 7 is 5 or greater, round up the Hundreds digit.'
+      - The Hundreds digit (6) increases to 7. The digits to the right (7 and 8) become zero placeholders.
+      - The result is 700.
+      id: q2-3
+      questionGroup: q2
+    - problemText: 'Annual visitors to a museum: 3,456,789. What is this number rounded to the nearest 1000?'
+      mathTool: null
+      finalAnswer: 3,457,000
+      stepByStepGuideline:
+      - 'Identify the target place value: the Thousands place (the digit 6).'
+      - 'Identify the digit immediately to the right: the Hundreds place (the digit 7).'
+      - 'Apply the rounding rule: Since 7 is 5 or greater, we round up the Thousands digit.'
+      - The Thousands digit (6) increases to 7. All digits to the right (7, 8, 9) become zero placeholders.
+      - The rounded number is 3,457,000.
+      id: q2-4
+      questionGroup: q2
+    - problemText: Company revenue was $654,321. Round to the nearest 100 for presentation.
+      mathTool: null
+      finalAnswer: $654,300
+      stepByStepGuideline:
+      - 'Identify the target place value: the Hundreds place (the digit 3).'
+      - 'Identify the digit immediately to the right: the Tens place (the digit 2).'
+      - 'Apply the rounding rule: Since 2 is less than 5, we round down (keep the Hundreds digit the same).'
+      - The Hundreds digit (3) remains 3. The digits to the right (2 and 1) become zero placeholders.
+      - The rounded revenue is $654,300.
+      id: q2-5
+      questionGroup: q2
+- id: approx-round-3
+  nodeNumber: 3
+  title: Rounding Large Numbers to Millions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: The number of registered internet users in a developing region reached 5,610,475 this year. Round this
+        figure to the nearest million for a global statistics report.
+      avatarIntro: Rounding to the nearest million helps us manage and communicate extremely large datasets efficiently. Let's
+        practice finding that critical hundred thousands digit!
+      mathTool: null
+      finalAnswer: 6,000,000
+      stepByStepGuideline:
+      - Identify the millions digit (5) and the rounding digit, which is the hundred thousands digit (6).
+      - Since the hundred thousands digit (6) is 5 or greater, we round the millions digit up.
+      - The 5 in the millions place becomes 6. All subsequent digits are replaced by zeros.
+      - The rounded figure is 6,000,000.
+      id: q3-1
+      questionGroup: q3
+    - problemText: 'A nation''s annual expenditure on infrastructure was $123,456,789. Which rounding provides a more accurate
+        representation of this figure: rounding to the nearest million or rounding to the nearest hundred thousand? Explain
+        the difference.'
+      mathTool: null
+      finalAnswer: Rounding to the nearest hundred thousand ($123,500,000) is more accurate because it retains more significant
+        figures, resulting in a smaller difference from the original number.
+      stepByStepGuideline:
+      - 'Calculate rounding to the nearest million: Examine the hundred thousands digit (4). Since 4 < 5, round down. Result:
+        $123,000,000.'
+      - 'Calculate rounding to the nearest hundred thousand: Examine the ten thousands digit (5). Since 5 >= 5, round up.
+        Result: $123,500,000.'
+      - 'Compare the results: $123,500,000 is closer to the original $123,456,789 than $123,000,000 is.'
+      - 'Conclusion: Rounding to a smaller place value (hundred thousand) reduces the potential rounding error, thus providing
+        a more accurate representation.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: The total yearly output of a major oil field was 45,678,901 barrels. Round this production figure to the
+        nearest million barrels. Calculate the exact quantity of precision lost by this rounding process.
+      mathTool: null
+      finalAnswer: The rounded figure is 46,000,000 barrels. The precision lost is 321,099 barrels.
+      stepByStepGuideline:
+      - 'Round 45,678,901 to the nearest million: The hundred thousands digit is 6. Round up. The result is 46,000,000.'
+      - Precision lost is the difference between the rounded figure and the original figure.
+      - 'Calculation: 46,000,000 - 45,678,901.'
+      - The quantity of precision lost is 321,099.
+      id: q3-3
+      questionGroup: q3
+    - problemText: The population of Country Z is estimated at 7,823,456. Compare the result of rounding this figure to the
+        nearest ten thousand versus rounding it to the nearest million. What difference does the target precision level make
+        to the final resulting number?
+      mathTool: null
+      finalAnswer: Rounding to the nearest million yields 8,000,000. Rounding to the nearest ten thousand yields 7,820,000.
+        The difference is 180,000, demonstrating that rounding to a larger place value (million) results in a much larger
+        approximation and loss of detail.
+      stepByStepGuideline:
+      - 'Round to the nearest million: Examine the hundred thousands digit (8). Since 8 >= 5, round up. Result: 8,000,000.'
+      - 'Round to the nearest ten thousand: Examine the thousands digit (3). Since 3 < 5, round down. Result: 7,820,000.'
+      - 'Calculate the difference between the two rounded figures: 8,000,000 - 7,820,000 = 180,000.'
+      - The target precision level significantly impacts the result; nearest million rounding simplifies the number drastically,
+        while nearest ten thousand keeps the number much closer to the original value.
+      id: q3-4
+      questionGroup: q3
+    - problemText: A newly discovered asteroid is estimated to be 23,456,789 kilometers away. To determine the rounding direction
+        to the nearest million, which specific digit must be examined, and what is the final rounded distance?
+      mathTool: null
+      finalAnswer: The digit to be examined is the hundred thousands digit (4). The final rounded distance is 23,000,000 kilometers.
+      stepByStepGuideline:
+      - To round to the nearest million, you must always examine the digit immediately to the right, which is the hundred
+        thousands digit.
+      - In 23,456,789, the hundred thousands digit is 4.
+      - Since 4 is less than 5, the millions digit (3) stays the same (round down).
+      - Replace all digits to the right of the millions place with zeros. The final answer is 23,000,000.
+      id: q3-5
+      questionGroup: q3
+- id: approx-round-4
+  nodeNumber: 4
+  title: Rounding to 1 Decimal Place
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A scientist measures a solution volume as 7.0415 liters. Round this measurement to the nearest tenth of
+        a liter.
+      avatarIntro: Welcome! Rounding decimals is crucial in science and everyday measurements. Remember, rounding to the nearest
+        tenth means rounding to 1 decimal place.
+      finalAnswer: 7.0 liters
+      stepByStepGuideline:
+      - To round to the nearest tenth (1 decimal place), we must examine the digit in the hundredths place.
+      - In 7.0415, the hundredths digit is 4.
+      - Since 4 is less than 5, we keep the tenths digit (0) the same (round down).
+      - The result, expressed to 1 decimal place, is 7.0.
+      id: q4-1
+      questionGroup: q4
+    - problemText: A financial calculation results in $9.95. Express this value rounded to 1 d.p.
+      finalAnswer: $10.0
+      stepByStepGuideline:
+      - To round 9.95 to 1 decimal place, look at the hundredths digit, which is 5.
+      - Since the hundredths digit is 5, we must round up the tenths digit (9).
+      - Rounding 9 up results in 10. We write 0 in the tenths place and carry 1 over to the units place (9+1=10).
+      - The final answer, showing 1 decimal place to maintain the required precision, is 10.0.
+      id: q4-2
+      questionGroup: q4
+    - problemText: A package weighs 3.218 kg. Round the weight to 1 d.p. Which digit did you examine, and what reasoning did
+        you apply to determine the rounding direction?
+      finalAnswer: 3.2 kg. The digit examined was 1 (the hundredths place). Since 1 is less than 5, the tenths digit (2) is
+        kept the same (rounding down).
+      stepByStepGuideline:
+      - Identify the digit in the hundredths place (the second decimal place) of 3.218. This digit is 1.
+      - The hundredths digit (1) determines the rounding direction for the tenths place.
+      - Since 1 is less than 5, we round down, meaning the tenths digit (2) remains unchanged.
+      - The rounded weight is 3.2 kg.
+      id: q4-3
+      questionGroup: q4
+    - problemText: A height measurement is 5.96 meters. Round this measurement to 1 d.p. What is the result, and what place
+        value does the rounding digit (the one that controls the decision) hold?
+      finalAnswer: 6.0 meters. The rounding digit (6) holds the hundredths place value (the 2nd decimal place).
+      stepByStepGuideline:
+      - The digit controlling the rounding decision is the hundredths digit, which is 6.
+      - Since 6 is 5 or greater, we round up the tenths digit (9).
+      - Rounding 9 up results in 10, carrying over 1 to the units place (5+1=6).
+      - The result, showing exactly 1 decimal place, is 6.0 meters.
+      id: q4-4
+      questionGroup: q4
+    - problemText: An athlete's race time is 12.03 seconds. Round this time to 1 d.p. What is the rounded time, and explain
+        why writing '12.0' is preferred over just writing '12'?
+      finalAnswer: 12.0 seconds. Writing '12.0' is essential because it explicitly shows that the measurement has been rounded
+        to the tenths place (1 decimal place), communicating the required level of precision.
+      stepByStepGuideline:
+      - Examine the hundredths digit in 12.03, which is 3.
+      - Since 3 is less than 5, the tenths digit (0) remains the same.
+      - The rounded time is 12.0 seconds.
+      - The trailing zero is crucial because the instruction was to round to 1 d.p.; showing 12.0 confirms that the precision
+        achieved is to the nearest tenth, whereas '12' implies precision only to the nearest whole number.
+      id: q4-5
+      questionGroup: q4
+- id: approx-round-5
+  nodeNumber: 5
+  title: Rounding to 2 and 3 Decimal Places
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A bank calculates an annual interest rate as 9.9975%. Round this interest rate figure to 2 decimal places.
+        Ensure you show all necessary trailing zeros.
+      avatarIntro: Mastering decimal rounding is essential for precision in science and finance. Let's start with a challenging
+        carrying problem.
+      mathTool: null
+      finalAnswer: 10.00%
+      stepByStepGuideline:
+      - To round to 2 decimal places (d.p.), we examine the third decimal place (thousandths).
+      - In 9.9975, the third decimal place is 7.
+      - Since 7 is 5 or greater, we must round up the preceding digit (the hundredths digit).
+      - 'Rounding up the hundredths (9) causes a carry-over: 9.99 rounds up to 10.00.'
+      - The final answer must be written as 10.00 to explicitly show that the accuracy is precise to 2 decimal places.
+      id: q5-1
+      questionGroup: q5
+    - problemText: In a laboratory, the concentration of a trace chemical is measured as 0.004503 moles per liter (mol/L).
+        Round this measurement to 2 decimal places. Explain why the trailing zeros in your answer are significant.
+      mathTool: null
+      finalAnswer: 0.00 mol/L
+      stepByStepGuideline:
+      - To round 0.004503 to 2 decimal places, we look at the third decimal place (thousandths).
+      - The third decimal place is 4.
+      - Since 4 is less than 5, we round down (keep the second decimal place as it is).
+      - The result is 0.00.
+      - The trailing zeros are significant because they indicate the precision of the measurement. Writing 0.00 (2 d.p.) shows
+        the measurement was accurate to the nearest hundredth (0.01), confirming that the value was measured and determined
+        to be approximately zero, not simply unmeasured or unknown.
+      id: q5-2
+      questionGroup: q5
+    - problemText: An engineer specifies a precise mechanical tolerance measurement of 7.04152 mm. Round this measurement
+        to 3 decimal places.
+      mathTool: null
+      finalAnswer: 7.042 mm
+      stepByStepGuideline:
+      - To round to 3 decimal places (d.p.), we must look at the fourth decimal place (ten-thousandths).
+      - In 7.04152, the fourth decimal place is 5.
+      - Since 5 is 5 or greater, we round up the preceding digit (the third decimal place).
+      - Rounding up 1 gives 2. The rounded number is 7.042.
+      id: q5-3
+      questionGroup: q5
+    - problemText: A statistician records a calculated probability as 6.7545. Compare the accuracy of rounding this figure
+        to 2 decimal places versus rounding it to 3 decimal places. Explain which result is more accurate and why.
+      mathTool: null
+      finalAnswer: Rounding to 3 d.p. (6.755) is more accurate.
+      stepByStepGuideline:
+      - 'Step 1: Round 6.7545 to 2 d.p. (Look at 4): Result is 6.75.'
+      - 'Step 2: Round 6.7545 to 3 d.p. (Look at 5): Result is 6.755.'
+      - 'Step 3: Compare accuracy. Accuracy increases with the number of decimal places.'
+      - 'Step 4: 6.75 (2 d.p.) is accurate to the nearest hundredth (0.01). 6.755 (3 d.p.) is accurate to the nearest thousandth
+        (0.001).'
+      - 'Conclusion: Rounding to 3 decimal places (6.755) is more accurate because it retains more precision and information
+        about the original number.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'A calculator displays a result of 7.0505. Perform the following progressive rounding steps: (a) Round
+        7.0505 to 3 decimal places. (b) Round the resulting number from part (a) to 2 decimal places.'
+      mathTool: null
+      finalAnswer: (a) 7.051; (b) 7.05
+      stepByStepGuideline:
+      - '(a) Round 7.0505 to 3 d.p.: Look at the 4th decimal place (5). Since 5 is 5 or greater, round up the 3rd decimal
+        place (0). Result: 7.051.'
+      - '(b) Round 7.051 (the result from part a) to 2 d.p.: Look at the 3rd decimal place (1). Since 1 is less than 5, round
+        down (keep the 2nd decimal place as it is). Result: 7.05.'
+      id: q5-5
+      questionGroup: q5
+- id: approx-sf-1
+  nodeNumber: 6
+  title: Understanding What Significant Figures Are
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Explain the fundamental difference between a measurement having 4 decimal places and a measurement having
+        4 significant figures. Are these terms interchangeable in engineering specifications?
+      avatarIntro: Welcome! Understanding significant figures is crucial because they tell us how precise a measurement really
+        is. Let's start with a key distinction.
+      mathTool: null
+      finalAnswer: No, they are not interchangeable. 4 decimal places (d.p.) refers only to the number of digits appearing
+        after the decimal point (e.g., 12.3456). 4 significant figures (s.f.) refers to the total number of meaningful digits
+        in the entire number, regardless of where the decimal point falls (e.g., 0.005678 has 4 s.f. but 6 d.p.).
+      stepByStepGuideline:
+      - 'Define Decimal Places: Decimal places count only the digits appearing to the right of the decimal marker.'
+      - 'Define Significant Figures: Significant figures count all the meaningful, measured digits in a number, starting from
+        the first non-zero digit.'
+      - 'Contrast the Concepts: Use an example to show that the counts are often different. For example, 543.2 has 1 d.p.
+        but 4 s.f. whereas 0.0005432 has 4 s.f. but 7 d.p.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: In a laboratory setting, a student records a mass as zero point zero zero zero seven zero grams (0.00070
+        g). Why does this value convey more measurement precision than if they had simply recorded zero point zero zero zero
+        seven grams (0.0007 g)?
+      mathTool: null
+      finalAnswer: The trailing zero in 0.00070 is significant because it is a zero that comes after a non-zero digit AND
+        after the decimal point. This zero indicates that the instrument used was precise enough to measure the value exactly
+        down to the hundred-thousandths place (0.00001 g). 0.0007 (1 s.f.) only guarantees precision down to the ten-thousandths
+        place (0.0001 g). The extra significant zero demonstrates higher measurement accuracy.
+      stepByStepGuideline:
+      - 'Identify the significant figures count for both: 0.00070 has 2 s.f.; 0.0007 has 1 s.f.'
+      - 'Explain the role of the trailing zero: The trailing zero in 0.00070 is a measured digit, confirming that the value
+        in that smallest place value column is zero, not just an estimate.'
+      - 'Relate s.f. count to precision: A higher number of significant figures, especially those indicated by trailing zeros
+        after a decimal point, communicates a more precise and reliable measurement.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: A manufacturing specification requires a cable length of 2000 meters. Without using scientific notation,
+        does the number 2000 clearly indicate 1, 2, 3, or 4 significant figures? Explain why this ambiguity exists when dealing
+        with large whole numbers.
+      mathTool: null
+      finalAnswer: The number 2000 is ambiguous. It could represent 1 significant figure (if the length was rounded to the
+        nearest thousand), 2 significant figures (rounded to the nearest hundred), 3 significant figures (rounded to the nearest
+        ten), or 4 significant figures (if the measurement was exactly 2000). The trailing zeros in a whole number without
+        a decimal point act as placeholders and may or may not be measured digits, leading to uncertainty about precision.
+      stepByStepGuideline:
+      - 'State the ambiguity: Trailing zeros in integers (like 2000) are placeholders and their significance is not explicitly
+        defined.'
+      - 'Provide scenarios: Explain that 2000 could represent a measurement precise to the thousands place (1 s.f.) or the
+        ones place (4 s.f.).'
+      - 'Conclude why this is problematic: This lack of clarity means the measurement precision is unknown, which is why scientists
+        and engineers often use scientific notation (e.g., 2.00 x 10³ for 3 s.f.) to resolve such ambiguities.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Significant figures are used to reflect the quality of a measurement. Explain the key conceptual difference
+        between the terms 'accuracy' and 'precision' when discussing the quality of scientific measurements.
+      mathTool: null
+      finalAnswer: Accuracy refers to how close a measurement is to the true or accepted value. Precision refers to how close
+        repeated measurements are to each other (reproducibility) OR the level of detail/specificity of a single measurement
+        (which is indicated by the number of significant figures). Significant figures primarily communicate precision.
+      stepByStepGuideline:
+      - 'Define Accuracy: Accuracy is about correctness—closeness to the target or true value.'
+      - 'Define Precision: Precision is about consistency and detail—closeness of measurements to one another, or the resolution
+        of the measuring instrument.'
+      - 'Relate s.f.: Significant figures are a direct indicator of the precision of the measuring tool used.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: An astronomer reports an orbital distance as 7.895 astronomical units (A.U.). If the astronomer had only
+        reported 7.89 A.U., how would the communication about the reliability and precision of the survey data change?
+      mathTool: null
+      finalAnswer: The measurement 7.895 A.U. (4 significant figures) indicates a higher level of precision. It means the
+        measurement instrument was precise enough to determine the distance to the thousandths place (±0.001 A.U.). By contrast,
+        7.89 A.U. (3 significant figures) indicates precision only to the hundredths place (±0.01 A.U.). The additional significant
+        figure in 7.895 communicates that the survey data is more refined and less estimated.
+      stepByStepGuideline:
+      - 'Count the s.f. for both values: 7.895 has 4 s.f.; 7.89 has 3 s.f.'
+      - 'Identify the level of precision: 4 s.f. means precision to the nearest 0.001 unit; 3 s.f. means precision to the
+        nearest 0.01 unit.'
+      - 'Explain the communication difference: Because significant figures show the degree of certainty in a measurement,
+        dropping a significant figure implies the measurement tool or process was less refined or the final digit was estimated/rounded,
+        thus lowering the communicated precision.'
+      id: q6-5
+      questionGroup: q6
+- id: approx-sf-2
+  nodeNumber: 7
+  title: The Five Rules for Identifying Significant Figures - Part 1
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A scientist records the density of an unknown solid as 67894 kg/m³. How many significant figures does this
+        measurement contain, and which primary rule governs this count?
+      avatarIntro: Welcome! Let's start by reviewing the fundamental rules for determining which digits in a number are significant.
+      mathTool: null
+      finalAnswer: '5 significant figures. Rule 1: All non-zero digits are significant.'
+      stepByStepGuideline:
+      - Identify the digits in the number 67894. They are 6, 7, 8, 9, and 4.
+      - 'Apply Rule 1: All non-zero digits are significant.'
+      - Since every digit in this number is non-zero, all 5 digits are significant.
+      id: q7-1
+      questionGroup: q7
+    - problemText: Explain why the measurement 0.000123 meters, representing a very small distance, has only 3 significant
+        figures using the relevant rules.
+      mathTool: null
+      finalAnswer: The number 0.000123 has 3 significant figures (1, 2, and 3). Rule 4 states that zeros BEFORE the first
+        non-zero digit (leading zeros) are NOT significant. The '0.000' zeros are merely placeholders showing the decimal
+        position and are therefore ignored. Only the non-zero digits 1, 2, and 3 count (Rule 1).
+      stepByStepGuideline:
+      - Identify the first non-zero digit, which is 1.
+      - 'Apply Rule 4: Zeros that come before the first non-zero digit are not significant. This means the four leading zeros
+        (0.000) are not counted.'
+      - 'Apply Rule 1: All non-zero digits (1, 2, and 3) are significant.'
+      - 'Count the significant digits: 1, 2, and 3. Total significant figures = 3.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: A long-range radar system calculates a distance of 700006 kilometers. Which significant figure rule(s)
+        apply when determining the count for this number?
+      mathTool: null
+      finalAnswer: Rule 1 (All non-zero digits are significant) and Rule 2 (All zeros BETWEEN non-zero digits are significant).
+      stepByStepGuideline:
+      - 'Identify the non-zero digits: 7 and 6. Rule 1 confirms these are significant.'
+      - 'Identify the zeros: There are five zeros between 7 and 6.'
+      - 'Apply Rule 2: Zeros located between significant (non-zero) digits are always significant. Therefore, all five zeros
+        count.'
+      - Both Rule 1 and Rule 2 must be used to count the total of 6 significant figures.
+      id: q7-3
+      questionGroup: q7
+    - problemText: A chemical analysis reports a molarity of 0.04005 M. How many significant figures does this measurement
+        have? List all rules (1, 2, or 4) that are required to arrive at the correct count.
+      mathTool: null
+      finalAnswer: 4 significant figures. Rules 1, 2, and 4 are required.
+      stepByStepGuideline:
+      - 'Analyze the leading zeros: Apply Rule 4. The zeros before the 4 (0.0) are leading zeros and are NOT significant.'
+      - 'Identify the non-zero digits: Apply Rule 1. The digits 4 and 5 are significant.'
+      - 'Analyze the zeros between non-zero digits: Apply Rule 2. The two zeros between 4 and 5 are significant.'
+      - 'Count the significant digits: 4, 0, 0, 5. Total significant figures = 4.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: A temperature sensor reading is 9876 °C, while a pressure reading is 0.0456 Pa. Explain why the temperature
+        reading has 4 significant figures but the pressure reading has only 3 significant figures, referencing Rules 1 and
+        4.
+      mathTool: null
+      finalAnswer: 'The temperature reading (9876) has 4 significant figures because Rule 1 dictates that ALL non-zero digits
+        are significant. All four digits (9, 8, 7, 6) count.
+
+
+        The pressure reading (0.0456) has only 3 significant figures because Rule 4 dictates that leading zeros (zeros before
+        the first non-zero digit) are NOT significant. The ''0.0'' zeros are ignored, leaving only the non-zero digits 4,
+        5, and 6 to count.'
+      stepByStepGuideline:
+      - 'Analyze 9876: Since all digits are non-zero, Rule 1 applies, giving 4 significant figures.'
+      - 'Analyze 0.0456: Identify the first non-zero digit, which is 4.'
+      - 'Apply Rule 4: The zeros before the 4 (0.0) are leading zeros and are not significant.'
+      - 'Apply Rule 1: The remaining non-zero digits (4, 5, 6) are significant, resulting in 3 significant figures.'
+      id: q7-5
+      questionGroup: q7
+- id: approx-sf-3
+  nodeNumber: 8
+  title: The Five Rules for Identifying Significant Figures - Part 2
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A laboratory measurement for trace element concentration is recorded as 0.07000 M. How many significant
+        figures does this measurement contain, and which two primary rules are essential for determining the count?
+      avatarIntro: Understanding how zeros affect precision is crucial in science. Let's analyze this measurement using the
+        significant figure rules.
+      mathTool: null
+      finalAnswer: 4 significant figures.
+      stepByStepGuideline:
+      - 'Identify non-zero digits (Rule 1): The digit 7 is significant.'
+      - 'Identify leading zeros (Rule 4): The zeros before the 7 (0.0) are leading zeros and are NOT significant. They only
+        serve as place holders.'
+      - 'Identify trailing zeros in decimals (Rule 5): The zeros that come after the non-zero digit 7 (000) are trailing zeros
+        in a decimal number. According to Rule 5, these zeros ARE significant because they indicate measurement precision.'
+      - 'Count the significant digits: 7, 0, 0, 0. Total count is 4 significant figures. The essential rules used are Rule
+        4 (Leading Zeros) and Rule 5 (Trailing Zeros in Decimals).'
+      id: q8-1
+      questionGroup: q8
+    - problemText: A town's population is officially reported as 30000 people. Explain the ambiguity involved in determining
+        the number of significant figures for this integer value according to Rule 3. Provide the scientific notation for
+        30000 if it were known to have exactly 2 significant figures.
+      mathTool: null
+      finalAnswer: The number of significant figures is ambiguous (could be 1, 2, 3, 4, or 5). If it has 2 significant figures,
+        the scientific notation is 3.0 × 10⁴.
+      stepByStepGuideline:
+      - Rule 3 applies to trailing zeros in integers without a written decimal point. These zeros (0000) may or may not be
+        significant depending on whether the number is exact or was rounded.
+      - If 30000 was rounded to the nearest ten thousand, it has 1 significant figure (3). If it was rounded to the nearest
+        thousand, it has 2 significant figures (3 and 0). If it was an exact count, it has 5 significant figures.
+      - Because the trailing zeros are context-dependent, the value is ambiguous (1 to 5 s.f.).
+      - 'Scientific notation removes this ambiguity. To show exactly 2 significant figures (3 and 0), we write 3.0, and adjust
+        the power of 10 to maintain the magnitude: 3.0 × 10⁴.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: Compare the number of significant figures in the measurements 5.00 meters and 500 meters. Explain why the
+        presence or absence of the decimal point drastically changes the certainty regarding the significance of the trailing
+        zeros.
+      mathTool: null
+      finalAnswer: 5.00 m has 3 significant figures. 500 m is ambiguous, likely having 1 or 2 significant figures without
+        context. The decimal point in 5.00 m invokes Rule 5, ensuring trailing zeros are significant.
+      stepByStepGuideline:
+      - 'Analyze 5.00: This is a decimal number. Rule 5 states that zeros following a non-zero digit in a decimal ARE significant.
+        Therefore, 5.00 has 3 significant figures (5, 0, 0). The trailing zeros show precision to the hundredths place.'
+      - 'Analyze 500: This is an integer without a decimal point. Rule 3 states that trailing zeros may or may not be significant.
+        Without context, we assume the least precision (1 s.f.), or we acknowledge the ambiguity (1, 2, or 3 s.f.).'
+      - 'Conclusion: The decimal point in 5.00 guarantees the significance of the zeros (Rule 5). The lack of a decimal point
+        in 500 makes the significance of the zeros uncertain (Rule 3).'
+      id: q8-3
+      questionGroup: q8
+    - problemText: An engineer specifies a critical dimension as 9.80 cm. Why does this measurement have exactly 3 significant
+        figures, and what specific information does the final trailing zero convey about the precision of the measuring instrument?
+      mathTool: null
+      finalAnswer: 3 significant figures. The final trailing zero indicates that the measurement precision extends exactly
+        to the hundredths place (0.01 cm).
+      stepByStepGuideline:
+      - 'Identify non-zero digits (Rule 1): 9 and 8 are significant.'
+      - 'Identify the trailing zero: The zero is after the decimal point and follows a non-zero digit.'
+      - 'Apply Rule 5: Zeros that are to the right of the decimal point AND follow a non-zero digit are significant.'
+      - 'Count the significant digits: 9, 8, and 0. Total count is 3 significant figures.'
+      - 'Interpretation: If the value were 9.8 cm (2 s.f.), the measurement would be precise only to the tenths place (0.1
+        cm). Since it is written as 9.80 cm, the precision is guaranteed to the hundredths place (0.01 cm).'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'A company inventory count results in 1500 items. Determine the number of significant figures for this
+        value under the following two scenarios, justifying your answer based on the rules of ambiguity and precision:'
+      mathTool: null
+      finalAnswer: (a) 2 significant figures. (b) 4 significant figures.
+      stepByStepGuideline:
+      - 'Scenario (a): The count was estimated and rounded to the nearest hundred. This means the last two zeros are only
+        placeholders, reflecting that the precision only goes up to the hundreds place. Thus, only the 1 and 5 are significant
+        (2 s.f.). This is an application of Rule 3 where context determines the zeros are NOT significant.'
+      - 'Scenario (b): The count was precisely measured and is accurate to the nearest unit (i.e., 1500.). Writing 1500. (with
+        an explicit decimal point) or stating ''accurate to the nearest unit'' removes the ambiguity of Rule 3. The decimal
+        point or context implies all digits, including trailing zeros, are significant. Thus, 1, 5, 0, and 0 are significant
+        (4 s.f.).'
+      id: q8-5
+      questionGroup: q8
+- id: approx-sf-4
+  nodeNumber: 9
+  title: Rounding to Specified Significant Figures
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A calculation for the unit cost of a specialized part resulted in $99.95. Round this cost to 3 significant
+        figures (3 s.f.).
+      avatarIntro: Rounding to significant figures is a crucial skill for ensuring that numerical results reflect the appropriate
+        level of precision required by the context.
+      mathTool: null
+      finalAnswer: '100.0'
+      stepByStepGuideline:
+      - 'Identify the 3rd significant figure (s.f.). Counting from the left: 9 (1st), 9 (2nd), 9 (3rd).'
+      - Look at the next digit, which is 5.
+      - Since 5 is greater than or equal to 5, round the 3rd s.f. (9) up. Rounding 9 up results in a carry-over.
+      - The number rounds up from 99.9 to 100.0. You must include the trailing zero after the decimal point (100.0) to explicitly
+        show 3 significant figures.
+      id: q9-1
+      questionGroup: q9
+    - problemText: A chemist measured a trace element weight as 0.07185 grams. Round this measurement to 2 significant figures
+        (2 s.f.). Which digit determined whether you rounded up or down?
+      mathTool: null
+      finalAnswer: 0.072. The digit 8 determined the rounding decision.
+      stepByStepGuideline:
+      - Identify the 2nd s.f. Counting starts from the first non-zero digit (7). The 1st s.f. is 7, and the 2nd s.f. is 1.
+      - The digit immediately following the 2nd s.f. is 8. This digit determines the rounding decision.
+      - Since 8 is greater than or equal to 5, round the 2nd s.f. (1) up to 2.
+      - The rounded number is 0.072.
+      id: q9-2
+      questionGroup: q9
+    - problemText: An official census reported a regional population count of 456789 people. Round this population figure
+        to 3 significant figures (3 s.f.). Explain why placeholder zeros are needed in your final answer.
+      mathTool: null
+      finalAnswer: 457000. Placeholder zeros are needed to maintain the magnitude of the number, ensuring the value remains
+        close to 457,000 and not 457.
+      stepByStepGuideline:
+      - 'Identify the 3rd s.f. Counting from the left: 4 (1st), 5 (2nd), 6 (3rd).'
+      - The next digit is 7. Since 7 is greater than or equal to 5, round the 3rd s.f. (6) up to 7.
+      - Replace all digits following the 3rd s.f. with zeros to maintain the place value.
+      - The rounded number is 457000. Placeholder zeros are essential because rounding 456789 without them would yield 457,
+        which drastically changes the value and magnitude.
+      id: q9-3
+      questionGroup: q9
+    - problemText: A calculated scientific index is 1.2345. Round this index to 4 significant figures (4 s.f.). Verify that
+        your final rounded answer contains exactly the correct number of significant figures.
+      mathTool: null
+      finalAnswer: '1.235'
+      stepByStepGuideline:
+      - 'Identify the 4th s.f. Counting from the left: 1 (1st), 2 (2nd), 3 (3rd), 4 (4th).'
+      - The next digit is 5.
+      - Since 5 is greater than or equal to 5, round the 4th s.f. (4) up to 5.
+      - 'The rounded number is 1.235. Verification: All digits (1, 2, 3, 5) are non-zero, confirming that the answer has exactly
+        4 significant figures.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: A factory has an inventory count of 9995 items. Round this total inventory count to 2 significant figures
+        (2 s.f.).
+      mathTool: null
+      finalAnswer: '10000'
+      stepByStepGuideline:
+      - 'Identify the 2nd s.f. Counting from the left: 9 (1st), 9 (2nd).'
+      - The next digit is 9. Since 9 is greater than or equal to 5, round the 2nd s.f. (9) up.
+      - Rounding the second 9 up causes a carry-over, resulting in 10000.
+      - The final answer is 10000. The magnitude is maintained using placeholder zeros. The first two digits (1 and the first
+        0) are the required significant figures.
+      id: q9-5
+      questionGroup: q9
+- id: approx-sf-5
+  nodeNumber: 10
+  title: Follow-through Errors and Significant Figures in Calculations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A square garden has a side length of $\sqrt{2}$ meters. Calculate the perimeter of the garden, ensuring
+        your final answer is accurate to 3 significant figures. Compare the result obtained using two methods:
+
+
+        (a) Round the side length ($\sqrt{2}$) to 2 significant figures (s.f.) first, then multiply by 4.
+
+        (b) Use the full precision of your calculator for $\sqrt{2}$, and round only the final calculated perimeter to 3 s.f.'
+      avatarIntro: Understanding how and when to round is crucial for accuracy. Let’s practice preventing follow-through errors
+        in multi-step calculations.
+      mathTool: null
+      finalAnswer: (a) 5.6 m; (b) 5.66 m. Method (b) is more accurate because early rounding in (a) introduces a follow-through
+        error.
+      stepByStepGuideline:
+      - 'Determine the true value of the perimeter: $P = 4 \times \sqrt{2} \approx 5.65685$ m.'
+      - 'Calculate method (a): $\sqrt{2}$ rounded to 2 s.f. is $1.4$. $P_a = 4 \times 1.4 = 5.6$ m.'
+      - 'Calculate method (b): Use full precision $5.65685...$ and round the final result to 3 s.f. $P_b = 5.66$ m.'
+      - Compare the results. $5.66$ m is the correct answer to 3 s.f., showing that the early rounding in method (a) resulted
+        in a less accurate value of $5.6$ m (a difference of approximately 0.06 m).
+      id: q10-1
+      questionGroup: q10
+    - problemText: If a complex, multi-step calculation requires the final answer to be reported to 2 significant figures,
+        what is the minimum number of significant figures you should keep during all intermediate calculation steps? Explain
+        the mathematical reasoning for this rule.
+      mathTool: null
+      finalAnswer: Keep at least 3 significant figures (s.f.) during intermediate steps. This is based on the (n+1) rule.
+      stepByStepGuideline:
+      - Identify the required precision for the final answer, $n=2$ s.f.
+      - Apply the (n+1) rule, which states that intermediate calculations should retain at least $n+1$ significant figures.
+        Therefore, $2+1=3$ s.f.
+      - 'Explain the reasoning: Keeping one extra digit (the guard digit) minimizes the accumulation of rounding errors (follow-through
+        errors) that occur when multiple intermediate values are rounded sequentially. Rounding should be performed only once,
+        at the very end.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: "Demonstrate the follow-through error that occurs when calculating the value of $\\frac{2}{3} \\times 6$.\
+        \ \n\n(a) Calculate the exact answer.\n(b) Calculate the result if you first round $\\frac{2}{3}$ to 1 significant\
+        \ figure, and then multiply by 6. \n(c) Calculate the percentage error introduced by the early rounding."
+      mathTool: null
+      finalAnswer: '(a) Exact Answer: 4. (b) Rounded Answer: 4.2. (c) Percentage Error: 5%.'
+      stepByStepGuideline:
+      - 'Calculate the exact answer: $\frac{2}{3} \times 6 = \frac{12}{3} = 4$.'
+      - 'Calculate the result using early rounding: $\frac{2}{3} \approx 0.666...$ which rounds to $0.7$ (1 s.f.). $0.7 \times
+        6 = 4.2$.'
+      - 'Calculate the error: $|4.2 - 4| = 0.2$.'
+      - 'Calculate the percentage error: $\frac{\text{Error}}{\text{True Value}} \times 100\% = \frac{0.2}{4} \times 100\%
+        = 5\%$. This substantial error demonstrates why intermediate steps must not be rounded prematurely.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: You are calculating the volume of a cylinder using the formula $V = \pi r^2 h$, where the dimensions lead
+        to a final result of $5 \times \pi$. Explain why rounding the value of $\pi$ to $3.14$ before performing the multiplication
+        step reduces the overall accuracy, even if the final answer is only required to 3 significant figures.
+      mathTool: null
+      finalAnswer: Rounding $\pi$ (an intermediate value) before multiplication introduces a systematic error of approximately
+        0.00159 per unit of $\pi$. This error is carried forward (a follow-through error) and results in a less accurate final
+        answer when compared to using full calculator precision until the final rounding step.
+      stepByStepGuideline:
+      - 'Determine the true value (rounded to 3 s.f.): $5 \times \pi \approx 15.7079... \rightarrow 15.7$ (3 s.f.).'
+      - 'Determine the result using the early rounded value: $5 \times 3.14 = 15.70$.'
+      - 'Note that in this specific calculation, the results seem identical to 3 s.f. (15.7). However, explain the principle:
+        Early rounding of $\pi$ (3.14) means losing the precision of the remaining digits (0.00159...).'
+      - This loss of precision means that $15.70$ is the calculated value, whereas $15.7079...$ is the true value. While both
+        round to $15.7$, the method using full precision ($15.7079...$) is mathematically closer to the truth, and in multi-step
+        calculations, this small difference would accumulate and compound, leading to a larger final error.
+      id: q10-4
+      questionGroup: q10
+    - problemText: 'A multi-step physics calculation involves summing three fractional components: $C = \frac{5}{6} + \frac{1}{4}
+        - \frac{1}{3}$. The final result must be reported to 4 significant figures (s.f.).
+
+
+        (a) Calculate $C$ using full precision and round the final result to 4 s.f.
+
+        (b) Calculate $C$ by rounding each fraction to exactly 3 s.f. before summing them.'
+      mathTool: null
+      finalAnswer: (a) 0.7500; (b) 0.750
+      stepByStepGuideline:
+      - 'Determine the exact value of $C$ using fractions: $C = \frac{10}{12} + \frac{3}{12} - \frac{4}{12} = \frac{9}{12}
+        = 0.75$.'
+      - 'Calculate (a) using full precision: $0.75$. Rounding to 4 s.f. gives $0.7500$.'
+      - 'Calculate (b) using intermediate rounding to 3 s.f.: $\frac{5}{6} \approx 0.833$; $\frac{1}{4} = 0.250$; $\frac{1}{3}
+        \approx 0.333$.'
+      - 'Sum the rounded values: $0.833 + 0.250 - 0.333 = 0.750$.'
+      - Compare the results. The early rounding in (b) forced the answer to only 3 s.f. ($0.750$) when 4 s.f. ($0.7500$) was
+        required, demonstrating that rounding intermediate steps violates the precision required for the final answer.
+      id: q10-5
+      questionGroup: q10
+- id: approx-est-1
+  nodeNumber: 11
+  title: Estimation by Rounding - Addition and Subtraction
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: David has \$35.00 available for shopping. He wants to buy a shirt priced at \$15.75, a belt for \$8.20,
+        and a pair of socks costing \$12.95. Estimate whether he has enough money by rounding the price of each item to the
+        nearest dollar before adding.
+      avatarIntro: Estimation is crucial for quick budgeting decisions in real life. Let's practice rounding money values
+        to the nearest dollar.
+      mathTool: null
+      finalAnswer: No, he does not have enough money. The estimated total is \$37.00, which exceeds his budget of \$35.00.
+      stepByStepGuideline:
+      - 'Step 1: Round each price to the nearest dollar: \$15.75 rounds to \$16, \$8.20 rounds to \$8, and \$12.95 rounds
+        to \$13.'
+      - 'Step 2: Add the rounded values: 16 + 8 + 13 = 37.'
+      - 'Step 3: The estimated total cost is \$37.00. Since \$37.00 is greater than David''s budget of \$35.00, he cannot
+        afford all three items.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A delivery driver planned a route covering three segments with distances of 456 km, 789 km, and 234 km.
+        Estimate the total distance traveled by rounding each distance to the nearest 100 km.
+      mathTool: null
+      finalAnswer: 1500 km
+      stepByStepGuideline:
+      - 'Step 1: Round each distance to the nearest 100 km: 456 km rounds to 500 km, 789 km rounds to 800 km, and 234 km rounds
+        to 200 km.'
+      - 'Step 2: Perform the addition mentally using the rounded numbers: 500 + 800 + 200.'
+      - 'Step 3: The estimated total distance is 1500 km.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: A city's population decreased from 891,000 residents to 234,000 residents over a decade. Estimate the population
+        decrease (891,000 - 234,000) by rounding each number to 1 significant figure.
+      mathTool: null
+      finalAnswer: 700,000 people
+      stepByStepGuideline:
+      - 'Step 1: Round the initial population (891,000) to 1 significant figure, which is 900,000.'
+      - 'Step 2: Round the final population (234,000) to 1 significant figure, which is 200,000.'
+      - 'Step 3: Perform the subtraction mentally: 900,000 - 200,000 = 700,000.'
+      - 'Step 4: The estimated population decrease is 700,000 people.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: 'The attendance figures for two consecutive events were 523 and 347. Calculate the estimated total attendance
+        using two different rounding levels: (a) rounding to the nearest 10, and (b) rounding to 1 significant figure. Given
+        the exact total is 870, which rounding level provided a more accurate estimate?'
+      mathTool: null
+      finalAnswer: 'Rounding to the nearest 10 (Estimate: 870) is more accurate than rounding to 1 significant figure (Estimate:
+        800).'
+      stepByStepGuideline:
+      - 'Step 1: Estimate using Nearest 10: 523 rounds to 520, 347 rounds to 350. Estimate = 520 + 350 = 870.'
+      - 'Step 2: Estimate using 1 Significant Figure (Nearest 100): 523 rounds to 500, 347 rounds to 300. Estimate = 500 +
+        300 = 800.'
+      - 'Step 3: Compare both estimates to the exact total (870). The nearest 10 estimate (870) is exactly equal to the actual
+        total, making it the more accurate estimate.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: A warehouse started the month with 845 items in inventory. They shipped out 267 items. Estimate the remaining
+        inventory (845 - 267) by rounding both numbers to 1 significant figure. If the exact remaining inventory is 578, is
+        your estimate reasonable?
+      mathTool: null
+      finalAnswer: The estimate is 500. Yes, the estimate is reasonable because 500 is close to the exact value of 578.
+      stepByStepGuideline:
+      - 'Step 1: Round the starting inventory (845) to 1 significant figure, resulting in 800.'
+      - 'Step 2: Round the shipped inventory (267) to 1 significant figure, resulting in 300.'
+      - 'Step 3: Perform the subtraction mentally: 800 - 300 = 500.'
+      - 'Step 4: The estimated remaining inventory is 500. Since 500 is within 100 units of the exact answer (578), the estimate
+        is considered reasonable.'
+      id: q11-5
+      questionGroup: q11
+- id: approx-est-2
+  nodeNumber: 12
+  title: Estimation by Rounding - Multiplication and Division
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A chef needs to scale up a recipe. The original recipe calls for 19.3 grams of a specialty spice, and the
+        chef needs to prepare 6.8 times the original quantity. Estimate the total amount of spice needed by rounding each
+        factor to 1 significant figure.
+      avatarIntro: Estimation is a powerful skill! By rounding numbers, we can quickly check calculations and determine the
+        order of magnitude of an answer.
+      mathTool: null
+      finalAnswer: 140 grams
+      stepByStepGuideline:
+      - 'Round the first factor, 19.3, to 1 significant figure: 20.'
+      - 'Round the second factor, 6.8, to 1 significant figure: 7.'
+      - 'Multiply the rounded values mentally: 20 × 7 = 140.'
+      - The estimated amount of spice needed is 140 grams.
+      id: q12-1
+      questionGroup: q12
+    - problemText: A community fundraising event collected $623. This money needs to be split equally among 31 local charities.
+        Estimate the amount each charity receives by using compatible numbers for the division.
+      mathTool: null
+      finalAnswer: $21
+      stepByStepGuideline:
+      - 'Identify the division: 623 divided by 31.'
+      - Choose compatible numbers that are close to the original values and divide easily. Round 31 to 30.
+      - Round 623 to 630 (since 63 is divisible by 3).
+      - 'Perform the division: 630 ÷ 30. This simplifies to 63 ÷ 3.'
+      - The estimate is 21. Each charity receives approximately $21.
+      id: q12-2
+      questionGroup: q12
+    - problemText: Estimate the value of the expression 89.5 - 12.3 × 4.7 by rounding all numbers to 1 significant figure.
+        Show your rounding steps and ensure you follow the correct order of operations.
+      mathTool: null
+      finalAnswer: '40'
+      stepByStepGuideline:
+      - 'Round each number to 1 significant figure: 89.5 rounds to 90, 12.3 rounds to 10, and 4.7 rounds to 5.'
+      - The estimated expression is 90 - 10 × 5.
+      - 'Following the order of operations (BIDMAS/PEMDAS), perform multiplication first: 10 × 5 = 50.'
+      - 'Perform the subtraction: 90 - 50 = 40.'
+      - The estimated value is 40.
+      id: q12-3
+      questionGroup: q12
+    - problemText: Estimate the product of 47.6 and 11.2 by rounding both factors to 1 significant figure. Is your estimate
+        reasonable if the exact product is 533.12?
+      mathTool: null
+      finalAnswer: 500. Yes, the estimate is reasonable.
+      stepByStepGuideline:
+      - 'Round 47.6 to 1 significant figure: 50.'
+      - 'Round 11.2 to 1 significant figure: 10.'
+      - 'Calculate the estimated product: 50 × 10 = 500.'
+      - Compare the estimate (500) to the exact value (533.12). Since the estimate is close to the exact value and correctly
+        identifies the order of magnitude (hundreds), the estimate is reasonable.
+      id: q12-4
+      questionGroup: q12
+    - problemText: A cyclist needs to cover a distance of 456 km. If the cyclist travels at an average speed of 19 km/h, estimate
+        the time taken for the journey by rounding both the distance and the speed to 1 significant figure.
+      mathTool: null
+      finalAnswer: 25 hours
+      stepByStepGuideline:
+      - The time taken is calculated by Distance divided by Speed (456 ÷ 19).
+      - 'Round the distance (456 km) to 1 significant figure: 500 km.'
+      - 'Round the speed (19 km/h) to 1 significant figure: 20 km/h.'
+      - 'Estimate the time taken by dividing the rounded values: 500 ÷ 20.'
+      - 'Perform the mental division (50 ÷ 2): 25.'
+      - The estimated time taken for the journey is 25 hours.
+      id: q12-5
+      questionGroup: q12
+- id: approx-est-3
+  nodeNumber: 13
+  title: Cluster Values and Compatible Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Four senior managers earn annual bonuses of \$4,850, \$5,120, \$4,980, and \$5,050. Estimate the total
+        amount paid in bonuses using the cluster value method.
+      avatarIntro: Let's practice estimation techniques. Remember, the cluster value method works best when the numbers are
+        close together.
+      mathTool: null
+      finalAnswer: 'The values cluster around \$5,000. Estimated total: 4 × \$5,000 = \$20,000.'
+      stepByStepGuideline:
+      - 'Analyze the given values: \$4,850, \$5,120, \$4,980, and \$5,050. Determine that they are all close to \$5,000.'
+      - Select \$5,000 as the cluster value.
+      - Count the number of values (N=4).
+      - 'Calculate the estimate by multiplying the cluster value by the count: \$5,000 × 4.'
+      - The estimated total is \$20,000.
+      id: q13-1
+      questionGroup: q13
+    - problemText: A factory produced 892 small components that need to be packaged into boxes holding 22 components each.
+        Estimate the number of boxes required using compatible numbers for the division.
+      mathTool: null
+      finalAnswer: 'The division is 892 ÷ 22. Use the compatible numbers 880 ÷ 22 = 40. Estimate: 40 boxes.'
+      stepByStepGuideline:
+      - 'Identify the required calculation: 892 ÷ 22.'
+      - Look for compatible numbers near 892 and 22 that are easy to divide mentally.
+      - Adjust the dividend (892) slightly to a multiple of 22. Since 88 is 4 × 22, 880 is 40 × 22.
+      - 'Use the compatible numbers: 880 ÷ 22.'
+      - 'Calculate the estimate: 880 ÷ 22 = 40. The estimated number of boxes is 40.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: 'A track athlete recorded four long jump distances (in meters): 12.3, 12.7, 12.5, and 12.4. Choose the
+        most appropriate cluster value to represent these distances. Explain why this value is suitable.'
+      mathTool: null
+      finalAnswer: An appropriate cluster value is 12.5 meters. This value is suitable because it is the central value of
+        the set, and all four measurements are within 0.2 meters of 12.5.
+      stepByStepGuideline:
+      - 'Examine the range of the data set: the measurements span from 12.3 m to 12.7 m.'
+      - Identify a central, easy-to-use number within this narrow range.
+      - Choose 12.5 as the cluster value, as it is exactly in the middle of 12.3 and 12.7.
+      - 'Explain the suitability: Since the numbers are tightly grouped and 12.5 is the midpoint, using it as the cluster
+        value ensures the estimate will be very accurate and requires simple mental multiplication (if estimating the total).'
+      id: q13-3
+      questionGroup: q13
+    - problemText: A school is buying 4 similar textbooks priced at \$22.50, \$23.80, \$22.90, and \$23.20. Estimate the total
+        cost of the textbooks using the cluster value method.
+      mathTool: null
+      finalAnswer: 'The prices cluster around \$23.00. Estimated total: 4 × \$23.00 = \$92.00.'
+      stepByStepGuideline:
+      - 'Review the prices: \$22.50, \$23.80, \$22.90, and \$23.20. Recognize that they are all very close to \$23.00.'
+      - Select \$23.00 as the cluster value.
+      - Count the number of items (N=4).
+      - 'Calculate the estimated total cost by multiplying the cluster value by the number of items: \$23.00 × 4.'
+      - The estimated total cost is \$92.00.
+      id: q13-4
+      questionGroup: q13
+    - problemText: Explain the primary advantage of using the cluster value estimation method over rounding and adding each
+        number individually. Provide a condition under which the cluster method is most effective.
+      mathTool: null
+      finalAnswer: The primary advantage is efficiency. Instead of performing multiple rounding operations and subsequent
+        additions, the cluster value method simplifies the process to a single multiplication (Cluster Value × Count). The
+        cluster method is most effective when the values being summed are very close to each other (i.e., when they genuinely
+        cluster around a single representative number).
+      stepByStepGuideline:
+      - Identify the operations involved in the cluster method (one multiplication) versus individual rounding (multiple rounding
+        operations and additions).
+      - 'State the primary benefit: Cluster value method is much faster and requires less mental effort (efficiency).'
+      - 'Define the condition for effectiveness: The cluster method must only be used when the numbers are tightly grouped
+        or ''clustered'' around a clear central value.'
+      id: q13-5
+      questionGroup: q13
+- id: approx-est-4
+  nodeNumber: 14
+  title: Estimation Using Benchmarks
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A student estimates the thickness of their mathematics textbook by comparing it to their finger width.
+        If the thickness is approximately 4 finger widths, and a typical finger width is 1.5 cm, what is the estimated thickness
+        of the textbook in centimeters?
+      avatarIntro: Welcome to the practice set on estimation! Benchmarks help us quickly estimate distances when we do not
+        have a ruler or measuring tape.
+      mathTool: null
+      finalAnswer: 6 cm
+      stepByStepGuideline:
+      - 'Identify the benchmark value: Finger width ≈ 1.5 cm.'
+      - 'Identify the estimated count: The thickness is 4 finger widths.'
+      - 'Calculate the estimated length by multiplying the count by the benchmark value: 4 × 1.5 cm.'
+      - The estimated thickness is 6 cm.
+      id: q14-1
+      questionGroup: q14
+    - problemText: You need to estimate the length of a long school corridor but have no measuring tape. Describe a practical
+        method using your natural stride as a benchmark (assume an average adult stride is 70 cm). Explain the steps you would
+        take.
+      mathTool: null
+      finalAnswer: A practical method is to pace the corridor length, counting the number of strides taken. The total length
+        is estimated by multiplying the counted number of strides by the average stride length (70 cm). For example, if you
+        count 50 strides, the estimated length is 50 × 70 cm = 3500 cm, or 35 meters.
+      stepByStepGuideline:
+      - 'Select the appropriate benchmark: Stride (≈ 70 cm), as it is scaled appropriately for large distances like a corridor.'
+      - Walk the length of the corridor using your normal stride, counting the total number of strides taken.
+      - Multiply the total count of strides by the benchmark value (70 cm) to get the estimated length in centimeters.
+      - Convert the final result to meters for a practical measurement (divide by 100).
+      id: q14-2
+      questionGroup: q14
+    - problemText: A standard student desk is typically 60 to 80 cm long. Explain why using a cubit (elbow to fingertip, approximately
+        45 cm) is a more appropriate benchmark than using hand width (approximately 10 cm) to estimate the desk's length.
+      mathTool: null
+      finalAnswer: The cubit (45 cm) is a more appropriate benchmark because its scale is comparable to the length of the
+        desk (60-80 cm). This means the estimation would require only 1 to 2 cubits, making the process quick and minimizing
+        counting errors. Using hand width (10 cm) would require counting 6 to 8 hand widths, which is more tedious and increases
+        the likelihood of error, demonstrating that the cubit is scaled better for medium-sized measurements.
+      stepByStepGuideline:
+      - 'Identify the measurement scale: The desk length is medium (60-80 cm).'
+      - 'Analyze the benchmarks: Hand width (10 cm) is small; Cubit (45 cm) is medium.'
+      - 'Determine the practicality: Using the cubit requires fewer repetitions (1-2 times), making it faster and more practical
+        for this scale.'
+      - 'Determine the impracticality: Using hand width requires many repetitions (6-8 times), increasing the time taken and
+        potential estimation error.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: A worker needs to estimate the width of a standard industrial whiteboard. They measure the width and find
+        it is approximately 4 forearms long. If the worker's forearm (elbow to wrist) measures 25 cm, estimate the width of
+        the whiteboard in meters.
+      mathTool: null
+      finalAnswer: 1.0 m
+      stepByStepGuideline:
+      - 'Identify the benchmark value: Forearm ≈ 25 cm.'
+      - 'Identify the estimated count: The whiteboard is 4 forearms long.'
+      - 'Calculate the estimated length in centimeters: 4 × 25 cm = 100 cm.'
+      - 'Convert the estimated length to meters: 100 cm = 1 meter. The estimated width is 1.0 m.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: The benchmark rule that 'a person's arm span is approximately equal to their height' is often used to estimate
+        heights. Explain why this relationship provides only an approximate value and name one potential limitation of using
+        this method to estimate the height of a specific person.
+      mathTool: null
+      finalAnswer: The value is approximate because while this relationship (often called the 'ape index') holds true on average
+        across large populations, individual body proportions vary significantly. Not every person has an exact height-to-arm-span
+        ratio of 1:1. A potential limitation is that the person being measured might have unusually long or short limbs, leading
+        to a substantial error in the estimated height.
+      stepByStepGuideline:
+      - 'State the reason for approximation: Benchmarks rely on averages and generalizations; individual body dimensions vary.'
+      - 'Explain why the relationship is not exact: Biological variation means the 1:1 ratio (arm span to height) does not
+        hold precisely for everyone.'
+      - 'Identify a specific limitation: The estimation accuracy is compromised if the person being measured has body proportions
+        that deviate significantly from the average (e.g., disproportionately long arms).'
+      id: q14-5
+      questionGroup: q14
+- id: approx-est-5
+  nodeNumber: 15
+  title: Decomposition-Recomposition Strategy
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A shipment consists of 12 identical standard storage boxes. If each box is estimated to weigh approximately
+        2.6 kilograms, use the decomposition-recomposition strategy to estimate the total weight of the entire shipment. Explain
+        your steps.
+      avatarIntro: Decomposition is a powerful strategy! Let us practice breaking down multiplication problems into easier
+        parts.
+      mathTool: null
+      finalAnswer: The estimated total weight is 30 kg.
+      stepByStepGuideline:
+      - 'Step 1: Decompose the problem. The total weight is the weight of 12 individual boxes.'
+      - 'Step 2: Estimate the weight of one part. Round the weight of each box (2.6 kg) to a friendly number, 2.5 kg or 3
+        kg. Using 2.5 kg makes the multiplication easier: 12 × 2.5 kg.'
+      - 'Step 3: Recompose the total. Calculate 12 × 2.5 kg. (12 × 2 = 24, 12 × 0.5 = 6. 24 + 6 = 30).'
+      - 'Step 4: State the estimate. The estimated total weight is 30 kilograms.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: 'A student receives the following scores on five recent mathematics tests: 87, 92, 89, 91, and 86. Explain
+        how you would use the decomposition strategy, specifically utilizing a cluster value, to estimate the total combined
+        score.'
+      mathTool: null
+      finalAnswer: The estimated total score is 450.
+      stepByStepGuideline:
+      - 'Step 1: Decompose the problem. The total score is the sum of the five individual test scores.'
+      - 'Step 2: Estimate the parts using the cluster value method. Observe that all five scores cluster closely around the
+        value 90.'
+      - 'Step 3: Recompose the total. Multiply the number of scores (5) by the cluster value (90). Calculation: 5 × 90 = 450.'
+      - 'Step 4: State the estimate. The estimated total combined score is 450.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: How would you estimate the perimeter of a large square auditorium floor using the decomposition-recomposition
+        strategy? Assume you must first estimate the length of one side using a benchmark measurement like pacing (where one
+        pace equals approximately 0.8 meters).
+      mathTool: null
+      finalAnswer: 'The perimeter is estimated by finding the length of one side (L) and calculating 4 × L. (Example: If L
+        ≈ 30 m, Perimeter ≈ 120 m).'
+      stepByStepGuideline:
+      - 'Step 1: Decompose the perimeter. The perimeter of a square is the sum of its four equal sides (Perimeter = 4 × Side
+        Length).'
+      - 'Step 2: Estimate one part. Use the pacing benchmark (0.8 m per pace) to estimate the length (L) of one side of the
+        auditorium. If you pace 38 steps, L ≈ 38 × 0.8 m. Rounding 38 to 40 and 0.8 to 1, L ≈ 40 m. Or, using 38 × 0.8 ≈ 30.4
+        m. Let L ≈ 30 meters.'
+      - 'Step 3: Recompose the total. Multiply the estimated side length by 4: 4 × L.'
+      - 'Step 4: State the estimate. If L = 30 m, the perimeter is 4 × 30 m = 120 meters.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: 'A traveler needs to calculate the total duration of a road trip consisting of three distinct segments:
+        Segment A takes 2 hours and 48 minutes, Segment B takes 1 hour and 12 minutes, and Segment C takes 3 hours and 55
+        minutes. Decompose the journey time and estimate the total duration in hours.'
+      mathTool: null
+      finalAnswer: The estimated total duration is 8 hours.
+      stepByStepGuideline:
+      - 'Step 1: Decompose the problem. Separate the journey into the three distinct time segments: A, B, and C.'
+      - 'Step 2: Estimate each part separately. Round each segment to the nearest half or whole hour:
+
+        Segment A (2 hours 48 minutes) ≈ 3 hours.
+
+        Segment B (1 hour 12 minutes) ≈ 1 hour.
+
+        Segment C (3 hours 55 minutes) ≈ 4 hours.'
+      - 'Step 3: Recompose the total. Add the estimated segment times together: 3 hours + 1 hour + 4 hours.'
+      - 'Step 4: State the estimate. The estimated total duration is 8 hours.'
+      id: q15-4
+      questionGroup: q15
+    - problemText: Estimate the total volume of 8 identical boxes of cereal, where each box has dimensions of 20 cm (length),
+        10 cm (width), and 31 cm (height). Explain how decomposing the volume calculation helps you find the total.
+      mathTool: null
+      finalAnswer: The estimated total volume is 48,000 cubic centimeters (or 48 L).
+      stepByStepGuideline:
+      - 'Step 1: Decompose the problem. Break the total volume into the volume of one box multiplied by the number of boxes
+        (8).'
+      - 'Step 2: Estimate the volume of one box (V). Round the dimensions to friendly numbers: 20 cm, 10 cm, and 30 cm (from
+        31 cm).
+
+        Estimate V ≈ 20 cm × 10 cm × 30 cm = 6,000 cm³.'
+      - 'Step 3: Recompose the total volume. Multiply the estimated volume of one box by 8: 8 × 6,000 cm³.'
+      - 'Step 4: State the estimate. The estimated total volume is 48,000 cubic centimeters.'
+      id: q15-5
+      questionGroup: q15
+- id: approx-est-6
+  nodeNumber: 16
+  title: Estimating to Check Calculation Reasonableness
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A manager is calculating the total cost of a shipment involving bulk items and individual packages. She
+        inputs the cost calculation as $125.8 + 3.91 \times 27.48$ into her calculator and gets a result of $3559.132$. Use
+        estimation based on rounding to 1 significant figure to check if this result is reasonable, ensuring you follow the
+        correct order of operations.
+      avatarIntro: It's important to catch calculator mistakes before relying on the final number. Let's practice using estimation
+        as a reality check!
+      mathTool: null
+      finalAnswer: The result 3559.132 is highly unreasonable. The estimate is approximately 250.
+      stepByStepGuideline:
+      - 'Round the numbers in the expression: $125.8 \approx 130$, $3.91 \approx 4$, and $27.48 \approx 30$.'
+      - 'Formulate the estimated expression: $130 + 4 \times 30$.'
+      - 'Apply the Order of Operations (BIDMAS/PEMDAS). Multiplication must be done first: $4 \times 30 = 120$.'
+      - 'Perform the addition: $130 + 120 = 250$.'
+      - Compare the estimate (250) to the calculator result (3559.132). Since the calculator result is more than ten times
+        larger than the estimate, it is highly unreasonable. The manager likely forgot the order of operations and added $125.8
+        + 3.91$ before multiplying.
+      id: q16-1
+      questionGroup: q16
+    - problemText: A landscaper measures a small rectangular garden plot as $12.5$ meters long and $3.4$ meters wide. He uses
+        his calculator to find the area ($12.5 \times 3.4$) and gets a result of $4.25 \text{ m}^2$. Estimate the area by
+        rounding to the nearest whole number and determine if the calculated result is plausible.
+      mathTool: null
+      finalAnswer: The result $4.25 \text{ m}^2$ is unreasonable. The estimate is approximately 36, meaning the actual area
+        is $42.5 \text{ m}^2$. The calculator result has a decimal place error.
+      stepByStepGuideline:
+      - 'Round the dimensions for estimation: $12.5 \approx 12$ and $3.4 \approx 3$.'
+      - 'Calculate the estimated area: $12 \times 3 = 36 \text{ m}^2$.'
+      - Compare the estimate (36) to the calculator result (4.25). The estimated area is about 10 times larger than the calculated
+        result.
+      - 'Conclusion: The result of $4.25 \text{ m}^2$ is unreasonable, indicating a decimal point error (the correct answer
+        is $42.5 \text{ m}^2$).'
+      id: q16-2
+      questionGroup: q16
+    - problemText: 'An engineering student calculates the ratio of two physical constants: $\sqrt{83} \div \sqrt[3]{130}$.
+        Her calculator displays the result as $1.79842...$. Show your estimation process using suitable compatible numbers
+        to verify if this result is reasonable.'
+      mathTool: null
+      finalAnswer: The result $1.79842...$ is reasonable.
+      stepByStepGuideline:
+      - Choose compatible numbers close to 83 that are perfect squares, and close to 130 that are perfect cubes.
+      - 'Estimate the numerator: $\sqrt{83} \approx \sqrt{81} = 9$.'
+      - 'Estimate the denominator: $\sqrt[3]{130} \approx \sqrt[3]{125} = 5$.'
+      - 'Calculate the estimated ratio: $9 \div 5 = 1.8$.'
+      - Compare the estimate (1.8) to the calculator result (1.79842...). Since the values are very close, the calculator
+        result is reasonable.
+      id: q16-3
+      questionGroup: q16
+    - problemText: A group of 12 coworkers shares a catering bill of $456. One coworker calculates the individual share ($456
+        \div 12$) and reports that the cost is $3.80 per person. Use compatible numbers to estimate the cost per person and
+        determine if the reported result is reasonable.
+      mathTool: null
+      finalAnswer: The result $3.80 is unreasonable. The estimate is approximately 40, indicating a decimal error in the calculation.
+      stepByStepGuideline:
+      - Choose compatible numbers for division. Round the bill amount (456) to a number easily divisible by 12, such as 480.
+      - 'Calculate the estimated share: $480 \div 12 = 40$.'
+      - The expected cost is around $40 per person.
+      - Compare the estimate ($40) to the reported result ($3.80). Since $3.80 is off by a factor of 10, the result is highly
+        unreasonable, suggesting a keying error or a decimal placement error in the division.
+      id: q16-4
+      questionGroup: q16
+    - problemText: Explain how estimation can detect the two most common types of errors (decimal errors and order of operation
+        errors) that occur when students rely solely on a calculator for complex mathematical computations.
+      mathTool: null
+      finalAnswer: Estimation provides a reality check for the magnitude and expected sign of the answer. If the calculator
+        result is off by a factor of 10, 100, or has the wrong sign compared to the estimate, it signals an error.
+      stepByStepGuideline:
+      - 'Explain the role of estimation: Estimation establishes an expected order of magnitude (the ''ballpark'') for the
+        final answer BEFORE the calculation is performed.'
+      - 'Explain detection of Decimal Errors: If the calculated result is 10 times too big or too small compared to the estimate
+        (e.g., estimate is 40, result is 4), estimation immediately flags a decimal error.'
+      - 'Explain detection of Order of Operation Errors: For expressions like A + B \times C, estimation (A + B \times C)
+        forces the user to multiply first. If the calculator returns a result matching (A + B) \times C, the estimate (A +
+        (B \times C)) will be significantly different, detecting the order of operations mistake.'
+      id: q16-5
+      questionGroup: q16

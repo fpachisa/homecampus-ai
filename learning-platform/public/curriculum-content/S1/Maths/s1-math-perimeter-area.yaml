@@ -1,0 +1,1439 @@
+# S1 Math Perimeter Area - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: perimeter-area-node-01
+  nodeNumber: 1
+  title: Rectangle Perimeter and Area Review
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rectangle
+    preWrittenQuestions:
+    - problemText: 'A rectangular plot of land has a length of 15 meters and a width of 8 meters. Calculate the following:
+
+        (a) The perimeter of the plot (the distance around it).
+
+        (b) The area of the plot (the space inside).'
+      avatarIntro: Let's start by reviewing the difference between perimeter and area. Remember to use the correct formulas
+        and units!
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 15
+          width: 8
+          highlightMode: both
+          showFormula: false
+          caption: Rectangle with length and width labeled
+      finalAnswer: (a) Perimeter = 46 m; (b) Area = 120 m²
+      stepByStepGuideline:
+      - 'To find the perimeter (P), use the formula P = 2(l + w). Substitute the given dimensions: P = 2(15 + 8).'
+      - Calculate P = 2(23) = 46 m.
+      - 'To find the area (A), use the formula A = l × w. Substitute the given dimensions: A = 15 × 8.'
+      - Calculate A = 120 m².
+      id: q1-1
+      questionGroup: q1
+    - problemText: A construction worker needs to tile a rectangular floor that measures 12 meters long and 7 meters wide.
+        How much area must be covered by the tiles?
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 12
+          width: 7
+          highlightMode: area
+          showFormula: false
+          caption: Rectangle with length and width labeled
+      finalAnswer: 84 m²
+      stepByStepGuideline:
+      - The space covered by tiles represents the area (A) of the floor.
+      - Use the area formula A = l × w.
+      - 'Substitute the dimensions: A = 12 m × 7 m.'
+      - 'Calculate the area: A = 84 m². Remember to include square units.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: A rectangular sports field is 25 meters long and 10 meters wide. A coach wants to mark a running track
+        exactly around the edge of the field. What total length of track marking material is needed?
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 25
+          width: 10
+          highlightMode: perimeter
+          showFormula: false
+          caption: Rectangle with length and width labeled
+      finalAnswer: 70 m
+      stepByStepGuideline:
+      - Marking the track around the edge requires calculating the perimeter (P).
+      - Use the perimeter formula P = 2(l + w).
+      - 'Substitute the dimensions: P = 2(25 + 10).'
+      - Calculate P = 2(35) = 70 m.
+      id: q1-3
+      questionGroup: q1
+    - problemText: A standard presentation whiteboard measures 120 cm by 90 cm. Determine the surface area of the whiteboard
+        in square centimeters.
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 120
+          width: 90
+          highlightMode: area
+          showFormula: false
+          caption: Rectangle with length and width labeled
+      finalAnswer: 10,800 cm²
+      stepByStepGuideline:
+      - The surface area is calculated using the area formula A = l × w.
+      - 'Substitute the dimensions: A = 120 cm × 90 cm.'
+      - 'Calculate the area: A = 10,800 cm².'
+      id: q1-4
+      questionGroup: q1
+    - problemText: "A small decorative window frame is rectangular, with a length of 18 cm and a width of 9 cm. \n(a) What\
+        \ length of material is needed to create the frame border?\n(b) What is the total glass area required for the window?"
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 18
+          width: 9
+          highlightMode: both
+          showFormula: false
+          caption: Rectangle with length and width labeled
+      finalAnswer: (a) Perimeter = 54 cm; (b) Area = 162 cm²
+      stepByStepGuideline:
+      - Part (a) asks for the border material, which is the perimeter (P). Use P = 2(l + w).
+      - P = 2(18 + 9) = 2(27) = 54 cm.
+      - Part (b) asks for the glass area (A). Use A = l × w.
+      - A = 18 cm × 9 cm = 162 cm². Ensure the area unit is squared.
+      id: q1-5
+      questionGroup: q1
+- id: perimeter-area-node-02
+  nodeNumber: 2
+  title: Square Properties and Calculations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: square
+    preWrittenQuestions:
+    - problemText: A square photo frame has a side length of 15 cm. Calculate both the perimeter (the length of the frame
+        border) and the area (the space covered by the photo).
+      avatarIntro: Welcome! Understanding squares is vital because they simplify geometric calculations. Let's start by applying
+        the two key formulas for perimeter and area.
+      mathTool:
+        toolName: square
+        parameters:
+          side: 15
+          highlightMode: all
+          showEqualMarks: true
+          showFormula: false
+          caption: Square photo frame with all sides equal
+      finalAnswer: Perimeter = 60 cm; Area = 225 cm²
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Perimeter (P). The formula for the perimeter of a square is P = 4s, where s is the side length.'
+      - 'Step 2: Substitute the side length: P = 4 × 15 cm = 60 cm.'
+      - 'Step 3: Calculate the Area (A). The formula for the area of a square is A = s².'
+      - 'Step 4: Substitute the side length: A = 15² cm² = 225 cm².'
+      id: q2-1
+      questionGroup: q2
+    - problemText: A landscape architect is designing a square garden plot. If 80 meters of fencing is required to enclose
+        the entire plot, what is the length of one side of the garden?
+      mathTool:
+        toolName: square
+        parameters:
+          side: s
+          highlightMode: perimeter
+          showEqualMarks: true
+          showFormula: false
+          caption: Square garden plot with perimeter 80 m
+      finalAnswer: 20 m
+      stepByStepGuideline:
+      - 'Step 1: Identify the formula relating perimeter (P) and side length (s) for a square: P = 4s.'
+      - 'Step 2: Substitute the given perimeter: 80 = 4s.'
+      - 'Step 3: Solve for the side length (s) by dividing the perimeter by 4: s = 80 ÷ 4.'
+      - 'Step 4: Calculate the result: s = 20 m.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: A manufacturer makes square adhesive labels that must cover exactly 225 cm² of surface area. What is the
+        precise side length required for each label?
+      mathTool:
+        toolName: square
+        parameters:
+          side: s
+          highlightMode: area
+          showEqualMarks: true
+          showFormula: false
+          caption: Square label with Area 225 cm²
+      finalAnswer: 15 cm
+      stepByStepGuideline:
+      - 'Step 1: Identify the formula relating area (A) and side length (s) for a square: A = s².'
+      - 'Step 2: Substitute the given area: 225 = s².'
+      - 'Step 3: Solve for the side length (s) by taking the square root of the area: s = √225.'
+      - 'Step 4: Calculate the result: s = 15 cm.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: A geological survey maps a new district that is shaped perfectly like a square. If the side length of the
+        district is 12 km, calculate the total area of the district in square kilometers.
+      mathTool:
+        toolName: square
+        parameters:
+          side: 12
+          highlightMode: area
+          showEqualMarks: true
+          showFormula: false
+          caption: Square district with side 12 km
+      finalAnswer: 144 km²
+      stepByStepGuideline:
+      - 'Step 1: Use the area formula for a square: A = s².'
+      - 'Step 2: Substitute the side length (s = 12 km) into the formula.'
+      - 'Step 3: Calculate the area: A = 12² km².'
+      - 'Step 4: A = 144 km².'
+      id: q2-4
+      questionGroup: q2
+    - problemText: An engineer is designing a small square metal component for a circuit board. The side length of the component
+        is 25 mm. What is the total length of the component's outer edge (perimeter)?
+      mathTool:
+        toolName: square
+        parameters:
+          side: 25
+          highlightMode: perimeter
+          showEqualMarks: true
+          showFormula: false
+          caption: Square component with side 25 mm
+      finalAnswer: 100 mm
+      stepByStepGuideline:
+      - 'Step 1: Use the perimeter formula for a square: P = 4s.'
+      - 'Step 2: Substitute the side length (s = 25 mm) into the formula.'
+      - 'Step 3: Calculate the perimeter: P = 4 × 25 mm.'
+      - 'Step 4: P = 100 mm.'
+      id: q2-5
+      questionGroup: q2
+- id: perimeter-area-node-03
+  nodeNumber: 3
+  title: Parallelogram Properties and Identifying Opposite Sides
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelogram
+    preWrittenQuestions:
+    - problemText: A designer is creating a large decorative sign shaped like a parallelogram. If the top edge measures 12
+        cm and the adjacent slanted edge measures 7 cm, what are the lengths of all four sides of the sign?
+      avatarIntro: Great job starting this unit! Remember that parallelograms have special relationships between their sides
+        and angles.
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 12
+          slantSide: 7
+          showPerpendicular: false
+          highlightMode: none
+          caption: Parallelogram showing opposite sides are equal
+      finalAnswer: The four side lengths are 12 cm, 7 cm, 12 cm, and 7 cm.
+      stepByStepGuideline:
+      - 'Identify the two given side lengths: 12 cm and 7 cm.'
+      - 'Recall the property of parallelograms: opposite sides are equal in length.'
+      - The side opposite the 12 cm side must also be 12 cm.
+      - The side opposite the 7 cm side must also be 7 cm.
+      - 'List the four side lengths: 12 cm, 7 cm, 12 cm, 7 cm.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: In parallelogram PQRS, the measure of angle P is 75°. Determine the measures of the other three interior
+        angles (Q, R, and S).
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 10
+          slantSide: 6
+          showPerpendicular: false
+          highlightMode: angle
+          caption: Parallelogram with angle P = 75°
+      finalAnswer: Angle R = 75°, Angle Q = 105°, Angle S = 105°.
+      stepByStepGuideline:
+      - Identify the angle opposite to P, which is R. Opposite angles in a parallelogram are equal, so Angle R = 75°.
+      - Identify the angles adjacent to P, which are Q and S. Adjacent angles in a parallelogram are supplementary (add up
+        to 180°).
+      - 'Calculate the measure of the adjacent angles: 180° - 75° = 105°.'
+      - Therefore, Angle Q = 105° and Angle S = 105°.
+      - The four angles are 75°, 105°, 75°, 105°.
+      id: q3-2
+      questionGroup: q3
+    - problemText: Consider a parallelogram ABCD. If side AB is adjacent to side BC, what side is opposite to side AB, and
+        how is its length related to AB?
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 12
+          slantSide: 7
+          showPerpendicular: false
+          highlightMode: none
+          caption: Parallelogram ABCD
+      finalAnswer: The side opposite to AB is side DC (or CD). Its length is equal to the length of AB (AB = DC).
+      stepByStepGuideline:
+      - Visualize or sketch the parallelogram ABCD.
+      - Identify the location of side AB.
+      - Identify the side that does not share a vertex with AB, which is DC.
+      - 'Recall the parallelogram property: Opposite sides are equal in length.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: An engineering blueprint shows a component shaped like a parallelogram with side lengths 10 mm and 6 mm,
+        and one interior angle measuring 110°. Calculate the perimeter of the component and state the measure of the smallest
+        interior angle.
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 10
+          slantSide: 6
+          showPerpendicular: false
+          highlightMode: none
+          caption: Parallelogram with sides 10 mm and 6 mm
+      finalAnswer: Perimeter = 32 mm. Smallest interior angle = 70°.
+      stepByStepGuideline:
+      - Calculate the perimeter (P). P = 2 * (side1 + side2). P = 2 * (10 mm + 6 mm) = 2 * 16 mm = 32 mm.
+      - Identify the given angle (110°). Since this is obtuse (> 90°), it is the largest angle.
+      - The smallest interior angle will be the adjacent angle, which is supplementary to 110°.
+      - 'Calculate the smallest angle: 180° - 110° = 70°.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'State whether the following statement is True or False, and provide a geometric justification: "A rhombus
+        is a quadrilateral where opposite sides are parallel, but it is not considered a parallelogram."'
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 9
+          slantSide: 9
+          showPerpendicular: false
+          highlightMode: none
+          caption: Definition check for quadrilaterals
+      finalAnswer: False. A rhombus is defined as a quadrilateral with four equal sides. Since a parallelogram is any quadrilateral
+        with two pairs of parallel sides (which implies opposite sides are equal), a rhombus satisfies the definition of a
+        parallelogram. It is a special type of parallelogram.
+      stepByStepGuideline:
+      - 'Define a parallelogram: A quadrilateral with opposite sides parallel.'
+      - 'Define a rhombus: A quadrilateral with all four sides equal.'
+      - 'Analyze the relationship: If all four sides are equal (rhombus), then opposite sides must be equal, which is a key
+        property derived from the definition of a parallelogram.'
+      - Conclude that a rhombus satisfies the requirements to be classified as a parallelogram.
+      id: q3-5
+      questionGroup: q3
+- id: perimeter-area-node-04
+  nodeNumber: 4
+  title: Parallelogram Perimeter Calculations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelogram
+    preWrittenQuestions:
+    - problemText: An artist is designing a stylized logo shaped like a parallelogram. The two different adjacent side lengths
+        required for the logo frame are 15 cm and 10 cm. Calculate the total length of material needed to construct the perimeter
+        of the frame.
+      avatarIntro: Perimeter calculations are essential in design and construction. Remember that opposite sides of a parallelogram
+        are equal in length.
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: variable
+          slantSide: variable
+          showPerpendicular: false
+          highlightMode: perimeter
+          showFormula: false
+          caption: Find the perimeter by adding all four sides
+      finalAnswer: 50 cm
+      stepByStepGuideline:
+      - 'Identify the two different adjacent side lengths: a = 15 cm and b = 10 cm.'
+      - 'Use the perimeter formula for a parallelogram: P = 2(a + b).'
+      - 'Substitute the values: P = 2(15 + 10).'
+      - 'Calculate the sum inside the parentheses: P = 2(25).'
+      - 'Multiply to find the total perimeter: P = 50 cm.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: A security company is installing a decorative barrier shaped like a parallelogram around a sensitive area.
+        The total perimeter of the barrier must be 60 meters. If the longer side measures 18 meters, what is the length of
+        the adjacent shorter side?
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: variable
+          slantSide: variable
+          showPerpendicular: false
+          highlightMode: perimeter
+          showFormula: false
+          caption: Find the perimeter by adding all four sides
+      finalAnswer: 12 meters
+      stepByStepGuideline:
+      - 'Identify the given information: Perimeter P = 60 m, and one side length a = 18 m.'
+      - 'Use the perimeter formula: P = 2(a + b).'
+      - 'Substitute the known values: 60 = 2(18 + b).'
+      - 'Divide the perimeter by 2: 60 / 2 = 18 + b, which simplifies to 30 = 18 + b.'
+      - 'Solve for the unknown side length b: b = 30 - 18.'
+      - The length of the adjacent side is 12 meters.
+      id: q4-2
+      questionGroup: q4
+    - problemText: A landscaper is ordering custom border stones for a garden bed shaped like a parallelogram. The lengths
+        of the adjacent sides must be in the ratio 5:3. If the total perimeter of the garden bed is 80 cm, find the actual
+        lengths of the two different sides.
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: variable
+          slantSide: variable
+          showPerpendicular: false
+          highlightMode: perimeter
+          showFormula: false
+          caption: Find the perimeter by adding all four sides
+      finalAnswer: 25 cm and 15 cm
+      stepByStepGuideline:
+      - Represent the sides using the ratio 5:3. Let the sides be 5x and 3x.
+      - 'Write the perimeter formula using x: P = 2(5x + 3x).'
+      - 'Simplify the expression: P = 2(8x) = 16x.'
+      - 'Set the formula equal to the given perimeter: 16x = 80.'
+      - 'Solve for x: x = 80 / 16 = 5.'
+      - 'Calculate the actual side lengths: Side 1 = 5x = 5(5) = 25 cm. Side 2 = 3x = 3(5) = 15 cm.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: A construction company is fabricating a large structural support beam for a bridge. The cross-section of
+        the beam is a parallelogram with adjacent side lengths of 20 meters and 12 meters. What is the total length of the
+        outer edge (perimeter) of this cross-section?
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: variable
+          slantSide: variable
+          showPerpendicular: false
+          highlightMode: perimeter
+          showFormula: false
+          caption: Find the perimeter by adding all four sides
+      finalAnswer: 64 meters
+      stepByStepGuideline:
+      - 'Identify the two different side lengths: a = 20 m and b = 12 m.'
+      - The perimeter (P) is calculated by adding all four sides, or P = 2(a + b).
+      - 'Substitute the values: P = 2(20 + 12).'
+      - 'Calculate the sum: P = 2(32).'
+      - 'Determine the total perimeter: P = 64 meters.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: A quilter is sewing a border onto a parallelogram-shaped fabric patch. The perimeter of the patch is 44
+        cm. If one pair of opposite sides measures 12 cm each, what is the length of the other pair of opposite sides?
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: variable
+          slantSide: variable
+          showPerpendicular: false
+          highlightMode: perimeter
+          showFormula: false
+          caption: Find the perimeter by adding all four sides
+      finalAnswer: 10 cm
+      stepByStepGuideline:
+      - 'Identify the given information: Perimeter P = 44 cm, and one side length a = 12 cm.'
+      - 'Use the perimeter formula: P = 2(a + b), where b is the unknown side length.'
+      - 'Substitute the known values: 44 = 2(12 + b).'
+      - 'Divide the perimeter by 2: 44 / 2 = 12 + b, which simplifies to 22 = 12 + b.'
+      - 'Solve for b by subtracting 12 from 22: b = 22 - 12.'
+      - The length of the other pair of opposite sides is 10 cm.
+      id: q4-5
+      questionGroup: q4
+- id: perimeter-area-node-05
+  nodeNumber: 5
+  title: Understanding Perpendicular Height vs Slant Side
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelogram
+    preWrittenQuestions:
+    - problemText: 'A parallelogram-shaped road sign structure has a base length of 15 cm. The diagram shows two related measurements:
+        the length of the slanted edge ($s$) is 10 cm, and the vertical drop distance ($h$), marked with a small square symbol,
+        is 8 cm.
+
+
+        Which measurement, 10 cm or 8 cm, represents the perpendicular height ($h$) used for calculating the area of the sign?
+        Justify your choice by referring to the geometric symbol used.'
+      avatarIntro: Distinguishing between height and slant side is crucial for calculating the area of parallelograms. Pay
+        close attention to the symbols in the diagram!
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 15
+          height: 8
+          slantSide: 10
+          showPerpendicular: true
+          highlightMode: height
+          showRightAngle: true
+          caption: Perpendicular height (h) is at 90° to the base, NOT the slant side (s)
+      finalAnswer: The perpendicular height (h) is 8 cm. This is because the small square symbol indicates a 90° angle (perpendicularity)
+        between the height line and the base. The 10 cm measurement is the slant side, which is not perpendicular to the base.
+      stepByStepGuideline:
+      - 'Recall the definition: Perpendicular height is the distance measured at a 90° angle to the base.'
+      - 'Identify the symbol: The small square in the diagram marks the right angle (90°) relationship.'
+      - 'Match the symbol to the measurement: The 8 cm line is marked with the right angle symbol, confirming it is the perpendicular
+        height.'
+      - 'Conclusion: The 10 cm measurement is the slant side, which cannot be used for the area calculation.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'The parallelogram below has a base of 20 units. Its perpendicular height ($h$) is 12 units, and its slant
+        side ($s$) is 15 units.
+
+
+        Explain, using concepts related to right-angled triangles, why the perpendicular height is always shorter than the
+        slant side in any non-rectangular parallelogram.'
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 20
+          height: 12
+          slantSide: 15
+          showPerpendicular: true
+          highlightMode: height
+          showRightAngle: true
+          caption: Perpendicular height (h) is at 90° to the base, NOT the slant side (s)
+      finalAnswer: The perpendicular height forms one leg (a side adjacent to the right angle) of a right-angled triangle,
+        where the slant side acts as the hypotenuse. Since the hypotenuse is defined as the side opposite the right angle,
+        it is always the longest side in a right-angled triangle. Therefore, the perpendicular height (leg) must be shorter
+        than the slant side (hypotenuse).
+      stepByStepGuideline:
+      - 'Visualize the right triangle: The perpendicular height, the slant side, and a segment of the base form a right-angled
+        triangle.'
+      - 'Identify the roles: In this triangle, the perpendicular height is one of the two legs, and the slant side is the
+        hypotenuse.'
+      - 'Apply Pythagorean Theorem concept: The hypotenuse is geometrically defined as the longest side of a right triangle.'
+      - 'Conclude the relationship: Since the slant side is the hypotenuse and the perpendicular height is a leg, the height
+        must be shorter than the slant side.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'A painter needs to calculate the area of a parallelogram-shaped section of a wall with a base of 18 meters.
+        The diagram provides the slant side length ($s$) as 13 meters. The painter knows the area formula is $A = b \times
+        h$.
+
+
+        Can the area be calculated immediately using only the base and the slant side? If not, what specific piece of information
+        is missing and why is it necessary?'
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 18
+          height: 10
+          slantSide: 13
+          showPerpendicular: true
+          highlightMode: slant
+          showRightAngle: true
+          caption: Perpendicular height (h) is at 90° to the base, NOT the slant side (s)
+      finalAnswer: No, the area cannot be calculated immediately. The missing piece of information is the perpendicular height
+        ($h$). The area formula requires the perpendicular height because it measures the true vertical separation between
+        the base and the opposite side (at 90°), whereas the slant side (13 m) measures only the edge length.
+      stepByStepGuideline:
+      - 'State the formula: Area of a parallelogram requires base multiplied by perpendicular height ($A = b \times h$).'
+      - 'Analyze given information: We have the base (18 m) and the slant side (13 m).'
+      - 'Identify the necessity of height: The slant side is not the height unless the figure is a rectangle.'
+      - 'Conclusion: We need the perpendicular height ($h$), which is the measurement taken at a 90° angle to the base, to
+        correctly calculate the area.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'An architect''s blueprint for a decorative panel shows a parallelogram with a base of 15 cm. Measurement
+        $h = 8$ cm is shown with a right-angle marker, and measurement $s = 10$ cm is shown along the slanted side.
+
+
+        Explain the fundamental difference between the perpendicular height ($h$) and the slant side ($s$). Why must the calculation
+        of the panel’s area use the $h = 8$ cm measurement?'
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 15
+          height: 8
+          slantSide: 10
+          showPerpendicular: true
+          highlightMode: height
+          showRightAngle: true
+          caption: Perpendicular height (h) is at 90° to the base, NOT the slant side (s)
+      finalAnswer: The slant side ($s=10$ cm) is the actual length of the side of the parallelogram. The perpendicular height
+        ($h=8$ cm) is the shortest distance between the base and the opposite side, defined by being measured at a 90° angle
+        (perpendicular) to the base. We must use $h=8$ cm for the area because the area formula, $A = b \times h$, relies
+        on the vertical separation (height) that is aligned perpendicularly with the base, not the length of the slanted boundary.
+      stepByStepGuideline:
+      - 'Define Perpendicular Height (h): It is the measurement taken at a 90° angle to the base.'
+      - 'Define Slant Side (s): It is the length of the boundary edge.'
+      - 'Explain the difference: $h$ measures separation/distance; $s$ measures boundary length.'
+      - 'Relate to Area: The area formula is fundamentally derived from transforming the parallelogram into an equivalent
+        rectangle. The height of that equivalent rectangle is the perpendicular height ($h$), hence $A = b \times h$.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'A building casts a parallelogram-shaped shadow on the ground with a base length of 20 feet. The diagram
+        indicates the physical side length (slant side, $s$) is 15 feet, and the true vertical drop (perpendicular height,
+        $h$) is 12 feet.
+
+
+        If we want to find the area of the shadow, state the correct measurement to use for the height and set up the final
+        calculation. Explain why the 15 feet measurement is irrelevant for calculating the area.'
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 20
+          height: 12
+          slantSide: 15
+          showPerpendicular: true
+          highlightMode: height
+          showRightAngle: true
+          caption: Perpendicular height (h) is at 90° to the base, NOT the slant side (s)
+      finalAnswer: 'The correct measurement for the height is 12 feet, as this is the perpendicular height (h). The area calculation
+        is: Area = Base × Perpendicular Height = 20 ft × 12 ft = 240 square feet. The 15 feet measurement (slant side) is
+        irrelevant because it is not perpendicular to the base and therefore does not represent the effective height required
+        by the area formula.'
+      stepByStepGuideline:
+      - 'Identify the correct formula: Area = base × perpendicular height ($A = b \times h$).'
+      - 'Select the perpendicular height: The perpendicular height is $h = 12$ feet (identified by the 90° symbol).'
+      - 'Identify the base: $b = 20$ feet.'
+      - 'Set up the calculation: $A = 20 \times 12$.'
+      - 'Explain irrelevance: The slant side ($s=15$ ft) is only the length of the diagonal side, not the vertical separation
+        necessary for calculating the total enclosed space (area).'
+      id: q5-5
+      questionGroup: q5
+- id: perimeter-area-node-06
+  nodeNumber: 6
+  title: Calculating Parallelogram Area
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelogram
+    preWrittenQuestions:
+    - problemText: A craftsman is designing a tabletop shaped like a parallelogram. The base of the design measures 12 cm,
+        and the required perpendicular height is 7 cm. Calculate the total area of the tabletop surface.
+      avatarIntro: Calculating the area of a parallelogram is simple, but remember to always use the perpendicular height,
+        not the slanted side!
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 12
+          height: 7
+          showPerpendicular: true
+          showRightAngle: true
+          highlightMode: area
+          showFormula: false
+          caption: Calculate area using base and perpendicular height
+      finalAnswer: 84 cm²
+      stepByStepGuideline:
+      - 'Recall the formula for the area of a parallelogram: A = base × height (A = b × h).'
+      - 'Identify the given values: base (b) = 12 cm, perpendicular height (h) = 7 cm.'
+      - 'Substitute the values into the formula: A = 12 cm × 7 cm.'
+      - 'Calculate the area: A = 84 cm².'
+      id: q6-1
+      questionGroup: q6
+    - problemText: A construction worker is estimating the surface area of a slanted roof section shaped like a parallelogram.
+        The base of the section is 14 meters. The diagram shows the perpendicular height (h) is 10 meters, and the slanted
+        side length (s) is 12 meters. Calculate the area of the roof section.
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 14
+          height: 10
+          slantSide: 12
+          showPerpendicular: true
+          showRightAngle: true
+          highlightMode: area
+          showFormula: false
+          caption: Calculate area using base and perpendicular height
+      finalAnswer: 140 m²
+      stepByStepGuideline:
+      - 'The area of a parallelogram is calculated using the perpendicular height, not the slant side: A = b × h.'
+      - 'Identify the correct values: base (b) = 14 m, perpendicular height (h) = 10 m. (Ignore the slant side, 12 m).'
+      - 'Substitute the values: A = 14 m × 10 m.'
+      - 'Calculate the area: A = 140 m².'
+      id: q6-2
+      questionGroup: q6
+    - problemText: An engineer is designing a computer chip layout shaped like a parallelogram that must have a total area
+        of 180 cm². If the base of the layout is fixed at 15 cm, what perpendicular height (h) is required?
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 15
+          height: 12
+          showPerpendicular: true
+          showRightAngle: true
+          highlightMode: area
+          showFormula: false
+          caption: Calculate area using base and perpendicular height
+      finalAnswer: 12 cm
+      stepByStepGuideline:
+      - 'Start with the area formula: A = b × h.'
+      - 'Rearrange the formula to solve for height: h = A ÷ b.'
+      - 'Substitute the given area (A = 180 cm²) and base (b = 15 cm): h = 180 ÷ 15.'
+      - 'Calculate the required perpendicular height: h = 12 cm.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: A groundskeeper needs to mark an athletic field section shaped like a parallelogram. The section must cover
+        an area of 120 m². If the perpendicular height of the section is 8 meters, what length must the base (b) be?
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 15
+          height: 8
+          showPerpendicular: true
+          showRightAngle: true
+          highlightMode: area
+          showFormula: false
+          caption: Calculate area using base and perpendicular height
+      finalAnswer: 15 m
+      stepByStepGuideline:
+      - 'Start with the area formula: A = b × h.'
+      - 'Rearrange the formula to solve for the base: b = A ÷ h.'
+      - 'Substitute the given area (A = 120 m²) and height (h = 8 m): b = 120 ÷ 8.'
+      - 'Calculate the required base length: b = 15 m.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: A jeweler is analyzing a diamond cutting face that is shaped like a small parallelogram. The base of the
+        face measures 18 mm, and the perpendicular height is 6 mm. Determine the area of the cutting face.
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 18
+          height: 6
+          showPerpendicular: true
+          showRightAngle: true
+          highlightMode: area
+          showFormula: false
+          caption: Calculate area using base and perpendicular height
+      finalAnswer: 108 mm²
+      stepByStepGuideline:
+      - 'Use the area formula: A = base × height (A = b × h).'
+      - 'Identify the given values: base (b) = 18 mm, perpendicular height (h) = 6 mm.'
+      - 'Substitute the values: A = 18 mm × 6 mm.'
+      - 'Calculate the area, ensuring squared units: A = 108 mm².'
+      id: q6-5
+      questionGroup: q6
+- id: perimeter-area-node-07
+  nodeNumber: 7
+  title: Parallelogram Transformation to Rectangle
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelogram
+    preWrittenQuestions:
+    - problemText: A geometry student models the transformation of a parallelogram with a base of 10 cm and a perpendicular
+        height of 6 cm. If the parallelogram is cut along the height and the resulting triangular piece is moved to the opposite
+        side to form a rectangle, what would be the length and width of the resulting rectangle?
+      avatarIntro: This problem explores the fundamental concept of how parallelograms relate to rectangles. Visualizing this
+        transformation is key to understanding the area formula!
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 10
+          height: 6
+          showPerpendicular: true
+          showTransformation: true
+          highlightMode: area
+          caption: Click to see transformation from parallelogram to rectangle
+      finalAnswer: The resulting rectangle will have a length of 10 cm and a width (height) of 6 cm.
+      stepByStepGuideline:
+      - 'Identify the base and height of the original parallelogram: Base = 10 cm, Height = 6 cm.'
+      - Recall that transforming a parallelogram into a rectangle involves cutting off the right-angled triangle formed by
+        the height and moving it to the other side.
+      - The base of the parallelogram remains the length of the rectangle (10 cm).
+      - The perpendicular height of the parallelogram becomes the width or height of the rectangle (6 cm).
+      - 'State the dimensions of the resulting rectangle: Length 10 cm, Width 6 cm.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: A clothing manufacturer uses a parallelogram-shaped scrap of fabric with a base of 14 inches and a height
+        of 8 inches. They plan to cut and rearrange the scrap into a rectangular piece to minimize waste. Explain, using the
+        concept of geometric transformation, why the parallelogram scrap and the resulting rectangle will have the exact same
+        area.
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 14
+          height: 8
+          showPerpendicular: true
+          showTransformation: true
+          highlightMode: area
+          caption: Click to see transformation from parallelogram to rectangle
+      finalAnswer: The areas are equal because the transformation process is merely a rearrangement of the existing shape.
+        The process involves cutting a right-angled triangular section from one side and translating it to the opposite side
+        to form a rectangle. No area (material) is added or removed, thus the total area is conserved.
+      stepByStepGuideline:
+      - 'Define the transformation: The parallelogram is cut along its height to create a triangle and a trapezoid.'
+      - 'Describe the movement: The triangle is moved to the adjacent side.'
+      - 'Explain the conservation principle: Since the transformation only rearranges the parts without overlap or loss, the
+        total area must remain unchanged.'
+      - Conclude that because the area of the rectangle is equal to the area of the original parallelogram, they both share
+        the formula A = base × height.
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'A graphic designer is comparing two shapes for a repeating pattern: a parallelogram (Shape P) with a base
+        of 12 units and a height of 9 units, and a standard rectangle (Shape R) with a length of 12 units and a width of 9
+        units. Calculate the area of both shapes and determine which shape, if any, has a larger area.'
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 12
+          height: 9
+          showPerpendicular: true
+          showTransformation: true
+          highlightMode: area
+          caption: Click to see transformation from parallelogram to rectangle
+      finalAnswer: Both Shape P (parallelogram) and Shape R (rectangle) have an area of 108 square units. They have the same
+        area.
+      stepByStepGuideline:
+      - 'Calculate the area of the parallelogram (Shape P): Area = base × height = 12 × 9 = 108 square units.'
+      - 'Calculate the area of the rectangle (Shape R): Area = length × width = 12 × 9 = 108 square units.'
+      - Compare the calculated areas (108 sq units = 108 sq units).
+      - Conclude that they have the same area, reinforcing the understanding that a parallelogram shares the same area formula
+        as a rectangle when their bases and heights match.
+      id: q7-3
+      questionGroup: q7
+    - problemText: A land surveyor models reshaping a parallelogram-shaped plot of land (base 16 meters, height 7 meters)
+        into an equivalent rectangular plot by cutting and moving a section. During this transformation, identify two specific
+        geometric properties that change and one property that remains exactly the same.
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 16
+          height: 7
+          showPerpendicular: true
+          showTransformation: true
+          highlightMode: area
+          caption: Click to see transformation from parallelogram to rectangle
+      finalAnswer: 'Properties that change (select two): 1. The measures of the interior angles (acute/obtuse angles change
+        to 90° angles). 2. The perimeter (the slanted side is replaced by a shorter vertical side). Properties that stay the
+        same (select one): 1. The area. 2. The base length (16 meters). 3. The perpendicular height (7 meters).'
+      stepByStepGuideline:
+      - Analyze the transformation process shown by the tool (cutting and rearranging).
+      - 'Identify properties that are physically altered: The slanted sides are removed/replaced, which changes the perimeter
+        and the interior angles.'
+      - 'Identify properties that are preserved: The total surface area is conserved because it is just a rearrangement.'
+      - 'Identify the core measurements used for area: The base and perpendicular height remain the same dimensions in the
+        resulting rectangle.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: The area formula for a rectangle is $A = L \times W$. Explain how the geometric transformation of a parallelogram
+        (base 10 cm, height 6 cm) into a rectangle justifies the use of the formula $A = \text{base} \times \text{height}$
+        for the parallelogram.
+      mathTool:
+        toolName: parallelogram
+        parameters:
+          base: 10
+          height: 6
+          showPerpendicular: true
+          showTransformation: true
+          highlightMode: area
+          caption: Click to see transformation from parallelogram to rectangle
+      finalAnswer: 'The transformation shows that the parallelogram is exactly equivalent in area to a rectangle whose length
+        (L) equals the parallelogram''s base (b=10 cm) and whose width (W) equals the parallelogram''s height (h=6 cm). Since
+        the area is conserved, the parallelogram must share the rectangle''s formula: $A_{\text{parallelogram}} = A_{\text{rectangle}}
+        = L \times W = b \times h$.'
+      stepByStepGuideline:
+      - 'Establish the geometric link: The parallelogram transforms into a rectangle.'
+      - 'Relate dimensions: The parallelogram''s base becomes the rectangle''s length, and the parallelogram''s height becomes
+        the rectangle''s width.'
+      - 'Apply the principle of conservation of area: The area does not change during the cut-and-rearrange process.'
+      - 'Conclude the formula derivation: Because $A_{\text{rectangle}} = L \times W$, and $L=b$ and $W=h$, it follows that
+        $A_{\text{parallelogram}} = b \times h$.'
+      id: q7-5
+      questionGroup: q7
+- id: perimeter-area-node-08
+  nodeNumber: 8
+  title: Trapezium Properties and Parallel Sides
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: trapezium
+    preWrittenQuestions:
+    - problemText: A student is studying quadrilaterals for a geometry quiz. Explain the fundamental difference between a
+        trapezium and a parallelogram based solely on the property of parallel sides.
+      avatarIntro: Welcome to the geometry challenge! Understanding definitions is the first step to mastering shapes, so
+        let's start with the basics of the trapezium.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 6
+          parallelSide2: 10
+          highlightParallel: true
+          showHeight: false
+          caption: Trapezium with one pair of parallel sides (bases) marked
+      finalAnswer: A trapezium is defined as a quadrilateral having exactly one pair of parallel sides. A parallelogram, however,
+        must have two pairs of parallel sides (opposite sides are parallel).
+      stepByStepGuideline:
+      - 'Recall the definition of a trapezium: A quadrilateral with exactly one pair of parallel sides.'
+      - 'Recall the definition of a parallelogram: A quadrilateral with two pairs of parallel sides.'
+      - 'State the difference: The number of parallel pairs (one for trapezium, two for parallelogram) is the key differentiator.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: An engineer is examining the cross-section of a drainage ditch shaped like the trapezium shown below, where
+        the top side is 8 meters and the bottom is 12 meters. If the parallel sides are identified by the arrows, what geometric
+        term is used specifically for these two sides?
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 8
+          parallelSide2: 12
+          highlightParallel: true
+          showHeight: false
+          caption: Trapezium with parallel sides 8m and 12m marked.
+      finalAnswer: The parallel sides of a trapezium are called the bases.
+      stepByStepGuideline:
+      - Identify the parallel sides in the trapezium (the top and bottom sides marked with arrows).
+      - Recall the specific terminology for the parallel sides of a trapezium.
+      - The parallel sides are defined as the bases (often labeled 'a' and 'b').
+      id: q8-2
+      questionGroup: q8
+    - problemText: A carpenter is constructing a decorative shelf bracket shaped like the trapezium shown. The two parallel
+        sides measure 5 inches and 11 inches. The other two sides are not parallel. What specific geometric term describes
+        the two non-parallel sides?
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 5
+          parallelSide2: 11
+          highlightParallel: true
+          showHeight: false
+          caption: Trapezium with parallel bases 5in and 11in.
+      finalAnswer: The two non-parallel sides are called the legs of the trapezium.
+      stepByStepGuideline:
+      - Identify the parallel sides (bases) which are 5 inches and 11 inches.
+      - Identify the remaining two sides, which are the non-parallel sides.
+      - 'Recall the term used for the non-parallel sides in a trapezium: legs.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: When reading architectural plans, geometric diagrams must clearly indicate parallel lines. Observe the
+        trapezium shown (with parallel sides measuring 7 cm and 15 cm). What specific visual markers are typically used on
+        diagrams to indicate that a pair of sides are parallel and thus identify them as the bases?
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 7
+          parallelSide2: 15
+          highlightParallel: true
+          showHeight: false
+          caption: Trapezium showing parallel sides 7cm and 15cm
+      finalAnswer: Parallel sides are typically marked using small matching arrows (e.g., single arrows or double arrows)
+        placed in the middle of the line segments.
+      stepByStepGuideline:
+      - Observe the diagram and note how the parallel sides are visually distinguished.
+      - Recall standard geometric conventions for denoting parallel lines.
+      - The standard marker is the use of matching arrowheads on the parallel segments.
+      id: q8-4
+      questionGroup: q8
+    - problemText: A quadrilateral Q has four sides. If it is known that Side A is parallel to Side C, but Side B is NOT parallel
+        to Side D, how must Quadrilateral Q be classified? Justify your answer based on the definition of a trapezium.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 6
+          parallelSide2: 10
+          highlightParallel: true
+          showHeight: false
+          caption: Trapezium illustration
+      finalAnswer: Quadrilateral Q must be classified as a trapezium (or trapezoid). This classification is required because
+        it has exactly one pair of parallel sides (A and C) and one pair of non-parallel sides (B and D).
+      stepByStepGuideline:
+      - Determine the number of parallel pairs based on the given information (Side A || Side C = one pair; Side B is NOT
+        || Side D = zero pairs).
+      - Conclude that the shape has exactly one pair of parallel sides.
+      - 'Apply the definition: A quadrilateral with exactly one pair of parallel sides is a trapezium.'
+      id: q8-5
+      questionGroup: q8
+- id: perimeter-area-node-09
+  nodeNumber: 9
+  title: Trapezium Perimeter
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: trapezium
+    preWrittenQuestions:
+    - problemText: A landscape designer is planning a small garden bed shaped like an isosceles trapezium. The two parallel
+        sides measure 10 cm and 6 cm. The two non-parallel legs are both 5 cm long. Calculate the total length of fencing
+        required to border the garden bed (the perimeter).
+      avatarIntro: Perimeter calculations are essential in real-world applications like construction and design. Remember,
+        the perimeter is the total distance around the shape!
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 10
+          parallelSide2: 6
+          leftSlant: 5
+          rightSlant: 5
+          highlightMode: perimeter
+          highlightParallel: false
+          showHeight: false
+          caption: Add all four sides to find perimeter
+      finalAnswer: P = 26 cm
+      stepByStepGuideline:
+      - 'Identify the lengths of the four sides of the trapezium: a = 10 cm, b = 6 cm, c = 5 cm, and d = 5 cm.'
+      - 'The perimeter (P) is the sum of all four sides: P = a + b + c + d.'
+      - 'Substitute the given values: P = 10 + 6 + 5 + 5.'
+      - 'Calculate the total perimeter: P = 26 cm.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: A piece of sheet metal is cut into the shape of a trapezium. The two parallel bases measure 14 meters and
+        10 meters. The two non-parallel sides measure 6 meters and 8 meters, respectively. Determine the total perimeter of
+        the sheet metal.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 14
+          parallelSide2: 10
+          leftSlant: 6
+          rightSlant: 8
+          highlightMode: perimeter
+          highlightParallel: false
+          showHeight: false
+          caption: Add all four sides to find perimeter
+      finalAnswer: P = 38 m
+      stepByStepGuideline:
+      - 'Identify the lengths of the four sides: 14 m, 10 m, 6 m, and 8 m.'
+      - 'Calculate the perimeter (P) by summing all four sides: P = 14 + 10 + 6 + 8.'
+      - 'Perform the addition: P = 38 m.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: A designer is calculating the amount of binding tape needed for the edge of a large kite panel shaped like
+        an isosceles trapezium. The parallel bases are 20 inches and 12 inches long. The two equal non-parallel sides are
+        each 9 inches long. What is the total length of binding tape required (the perimeter)?
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 20
+          parallelSide2: 12
+          leftSlant: 9
+          rightSlant: 9
+          highlightMode: perimeter
+          highlightParallel: false
+          showHeight: false
+          caption: Add all four sides to find perimeter
+      finalAnswer: P = 50 inches
+      stepByStepGuideline:
+      - 'List the four side lengths: 20 inches, 12 inches, 9 inches, and 9 inches.'
+      - 'Sum the lengths to find the perimeter (P): P = 20 + 12 + 9 + 9.'
+      - 'Calculate the total: P = 50 inches.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: A carpenter is cutting a piece of picture frame molding shaped like an isosceles trapezium. The parallel
+        top and bottom sides are 15 cm and 9 cm, respectively. If the total required perimeter of the molding is 40 cm, what
+        must be the length of each of the two equal non-parallel legs?
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 15
+          parallelSide2: 9
+          leftSlant: 8
+          rightSlant: 8
+          highlightMode: perimeter
+          highlightParallel: false
+          showHeight: false
+          caption: Add all four sides to find perimeter
+      finalAnswer: 8 cm
+      stepByStepGuideline:
+      - Let 'x' represent the unknown length of each equal leg.
+      - 'Set up the perimeter equation: Perimeter = (Base 1) + (Base 2) + (Leg) + (Leg).'
+      - 'Substitute the known values: 40 = 15 + 9 + x + x.'
+      - 'Simplify the equation: 40 = 24 + 2x.'
+      - 'Subtract 24 from both sides: 40 - 24 = 2x, so 16 = 2x.'
+      - 'Divide by 2 to find x: x = 8 cm.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: A structural engineer is reviewing the cross-section of an isosceles support beam, which is shaped like
+        a trapezium. The two parallel sides are 18 meters and 10 meters long. If the required perimeter for the beam profile
+        is 50 meters, calculate the length of one of the non-parallel legs.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 18
+          parallelSide2: 10
+          leftSlant: 11
+          rightSlant: 11
+          highlightMode: perimeter
+          highlightParallel: false
+          showHeight: false
+          caption: Add all four sides to find perimeter
+      finalAnswer: 11 m
+      stepByStepGuideline:
+      - Define 'x' as the length of the unknown equal leg.
+      - 'Write the perimeter formula: P = Side 1 + Side 2 + 2x.'
+      - 'Substitute the given perimeter and base lengths: 50 = 18 + 10 + 2x.'
+      - 'Simplify the equation: 50 = 28 + 2x.'
+      - 'Isolate the term ''2x'' by subtracting 28 from 50: 50 - 28 = 2x, so 22 = 2x.'
+      - 'Solve for x: x = 11 m.'
+      id: q9-5
+      questionGroup: q9
+- id: perimeter-area-node-10
+  nodeNumber: 10
+  title: Trapezium Area Formula
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: trapezium
+    preWrittenQuestions:
+    - problemText: A safety road sign is manufactured in the shape of a trapezium. The two parallel sides (bases) measure
+        10 cm and 6 cm, respectively. The perpendicular height between these bases is 8 cm. Calculate the area of the road
+        sign.
+      avatarIntro: Welcome! Remember that calculating the area of a trapezium involves averaging the parallel bases before
+        multiplying by the height.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 10
+          parallelSide2: 6
+          height: 8
+          showHeight: true
+          showRightAngles: true
+          highlightParallel: true
+          highlightMode: area
+          caption: Area = ½(a + b) × h
+      finalAnswer: 64 cm²
+      stepByStepGuideline:
+      - 'Identify the lengths of the parallel sides (a and b) and the perpendicular height (h): a = 10 cm, b = 6 cm, h = 8
+        cm.'
+      - 'Apply the trapezium area formula: A = ½(a + b) × h.'
+      - 'Substitute the values: A = ½(10 + 6) × 8.'
+      - 'Calculate the sum of the parallel sides: A = ½(16) × 8.'
+      - 'Complete the calculation: A = 8 × 8 = 64 cm².'
+      id: q10-1
+      questionGroup: q10
+    - problemText: A civil engineer is calculating the volume of material needed for a small earthen dam. The cross-section
+        of the dam is a trapezium. The top parallel base is 12 meters, the bottom parallel base is 8 meters, and the perpendicular
+        height is 7 meters. Determine the area of this cross-section.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 12
+          parallelSide2: 8
+          height: 7
+          showHeight: true
+          showRightAngles: true
+          highlightParallel: true
+          highlightMode: area
+          caption: Area = ½(a + b) × h
+      finalAnswer: 70 m²
+      stepByStepGuideline:
+      - Identify the parallel sides (a = 12 m, b = 8 m) and the height (h = 7 m).
+      - Use the formula A = ½(a + b) × h.
+      - 'Substitute the values: A = ½(12 + 8) × 7.'
+      - 'Calculate the average of the bases: A = ½(20) × 7.'
+      - 'Simplify to find the area: A = 10 × 7 = 70 m².'
+      id: q10-2
+      questionGroup: q10
+    - problemText: A tailor is sewing a decorative quilt patch shaped like a trapezium. The parallel edges measure 15 inches
+        and 9 inches. The perpendicular distance between these edges is 6 inches. Calculate the total surface area of the
+        fabric required for the patch.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 15
+          parallelSide2: 9
+          height: 6
+          showHeight: true
+          showRightAngles: true
+          highlightParallel: true
+          highlightMode: area
+          caption: Area = ½(a + b) × h
+      finalAnswer: 72 inches²
+      stepByStepGuideline:
+      - 'State the formula for the area of a trapezium: A = ½(a + b) × h.'
+      - 'Substitute the given dimensions: a = 15 inches, b = 9 inches, h = 6 inches. A = ½(15 + 9) × 6.'
+      - 'Sum the parallel bases: A = ½(24) × 6.'
+      - 'Calculate the result: A = 12 × 6 = 72 inches².'
+      id: q10-3
+      questionGroup: q10
+    - problemText: A glazier is cutting a custom window pane shaped like a trapezium for an attic window. The parallel top
+        and bottom edges are 14 cm and 10 cm, respectively. The perpendicular height of the window pane is 9 cm. What is the
+        area of the glass required?
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 14
+          parallelSide2: 10
+          height: 9
+          showHeight: true
+          showRightAngles: true
+          highlightParallel: true
+          highlightMode: area
+          caption: Area = ½(a + b) × h
+      finalAnswer: 108 cm²
+      stepByStepGuideline:
+      - Identify a = 14 cm, b = 10 cm, and h = 9 cm.
+      - 'Use the area formula: A = ½(a + b) × h.'
+      - 'Substitute the values: A = ½(14 + 10) × 9.'
+      - 'Calculate the sum of the bases: A = ½(24) × 9.'
+      - 'Multiply the average base (12) by the height (9): A = 12 × 9 = 108 cm².'
+      id: q10-4
+      questionGroup: q10
+    - problemText: A stage designer is preparing a large backdrop panel shaped like a trapezium. The panel has parallel edges
+        of 20 meters and 12 meters. The perpendicular distance separating these parallel edges is 8 meters. Determine the
+        total painted area of the backdrop.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 20
+          parallelSide2: 12
+          height: 8
+          showHeight: true
+          showRightAngles: true
+          highlightParallel: true
+          highlightMode: area
+          caption: Area = ½(a + b) × h
+      finalAnswer: 128 m²
+      stepByStepGuideline:
+      - 'Recall the formula for the area of a trapezium: A = ½(a + b) × h.'
+      - 'Substitute the parallel sides (a=20, b=12) and height (h=8): A = ½(20 + 12) × 8.'
+      - 'Sum the parallel sides: A = ½(32) × 8.'
+      - 'Calculate the area: A = 16 × 8 = 128 m².'
+      id: q10-5
+      questionGroup: q10
+- id: perimeter-area-node-11
+  nodeNumber: 11
+  title: Finding Missing Dimensions in Trapeziums
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: trapezium
+    preWrittenQuestions:
+    - problemText: A machine operator is reviewing a technical drawing of a specialized component shaped like a trapezium.
+        The area of the component is required to be exactly $72 \text{ cm}^2$. The parallel sides measure $10 \text{ cm}$
+        and $8 \text{ cm}$. Find the perpendicular height ($h$) of the component.
+      avatarIntro: Solving for missing dimensions requires you to apply the area formula and use your algebraic skills to
+        rearrange it. You can do it!
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 10
+          parallelSide2: 8
+          height: h
+          showHeight: true
+          highlightParallel: true
+          caption: Find the missing dimension using the area formula
+      finalAnswer: $h = 8 \text{ cm}$
+      stepByStepGuideline:
+      - 'Start with the area formula for a trapezium: $A = \frac{1}{2}(a + b)h$.'
+      - 'Substitute the known values: $72 = \frac{1}{2}(10 + 8)h$.'
+      - 'Simplify the sum of the parallel bases: $72 = \frac{1}{2}(18)h$.'
+      - 'Simplify the equation: $72 = 9h$.'
+      - 'Solve for the height ($h$): $h = 72 \div 9 = 8 \text{ cm}$.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A construction crew is laying a floor section shaped like a trapezium, which covers an area of $60 \text{
+        m}^2$. The height ($h$) of this section is $6 \text{ m}$. If one parallel side is $12 \text{ m}$, calculate the length
+        of the other parallel side ($b$).
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 12
+          parallelSide2: b
+          height: 6
+          showHeight: true
+          highlightParallel: true
+          caption: Find the missing dimension using the area formula
+      finalAnswer: $b = 8 \text{ m}$
+      stepByStepGuideline:
+      - 'Start with the area formula for a trapezium: $A = \frac{1}{2}(a + b)h$.'
+      - 'Substitute the known values: $60 = \frac{1}{2}(12 + b) \times 6$.'
+      - 'Simplify the right side: $60 = 3(12 + b)$.'
+      - 'Divide both sides by 3: $60 \div 3 = 12 + b$, so $20 = 12 + b$.'
+      - 'Solve for the unknown base ($b$): $b = 20 - 12 = 8 \text{ m}$.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: A civil engineer is designing concrete formwork shaped like a trapezium with an area of $84 \text{ m}^2$.
+        The parallel sides are set at $14 \text{ m}$ and $10 \text{ m}$. Calculate the required perpendicular depth (height,
+        $h$) of the formwork.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 14
+          parallelSide2: 10
+          height: h
+          showHeight: true
+          highlightParallel: true
+          caption: Find the missing dimension using the area formula
+      finalAnswer: $h = 7 \text{ m}$
+      stepByStepGuideline:
+      - 'Use the rearranged formula to find the height: $h = \frac{2A}{a + b}$.'
+      - 'Substitute the known values: $h = \frac{2(84)}{14 + 10}$.'
+      - 'Calculate the numerator and the sum of the bases: $h = \frac{168}{24}$.'
+      - 'Solve for $h$: $h = 7 \text{ m}$.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: A graphic designer is creating a logo based on a trapezoidal shape that must cover $80$ square units. If
+        the perpendicular height is $8$ units and one parallel side is $14$ units, what must be the length of the second parallel
+        side ($b$)?
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 14
+          parallelSide2: b
+          height: 8
+          showHeight: true
+          highlightParallel: true
+          caption: Find the missing dimension using the area formula
+      finalAnswer: $b = 6 \text{ units}$
+      stepByStepGuideline:
+      - 'Use the formula for the sum of the parallel bases: $a + b = \frac{2A}{h}$.'
+      - 'Substitute the known values: $14 + b = \frac{2(80)}{8}$.'
+      - 'Calculate the right side: $14 + b = \frac{160}{8}$, so $14 + b = 20$.'
+      - 'Solve for the unknown base ($b$): $b = 20 - 14 = 6 \text{ units}$.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: A structural beam has a cross-section shaped like a trapezium with an area of $90 \text{ mm}^2$. The parallel
+        edges measure $15 \text{ mm}$ and $12 \text{ mm}$. Determine the perpendicular height ($h$) of the beam's cross-section.
+        Express your answer as a fraction or rounded to two decimal places.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 15
+          parallelSide2: 12
+          height: h
+          showHeight: true
+          highlightParallel: true
+          caption: Find the missing dimension using the area formula
+      finalAnswer: $h = 6.67 \text{ mm}$ (or $20/3 \text{ mm}$)
+      stepByStepGuideline:
+      - 'Start with the area formula: $A = \frac{1}{2}(a + b)h$.'
+      - 'Substitute the known values: $90 = \frac{1}{2}(15 + 12)h$.'
+      - 'Simplify the sum of the bases: $90 = \frac{1}{2}(27)h$.'
+      - 'Multiply both sides by 2 to clear the fraction: $180 = 27h$.'
+      - 'Solve for $h$: $h = 180 \div 27$.'
+      - Simplify the fraction $180/27 = 20/3 \approx 6.67 \text{ mm}$.
+      id: q11-5
+      questionGroup: q11
+- id: perimeter-area-node-12
+  nodeNumber: 12
+  title: Trapezium Real-World Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: trapezium
+    preWrittenQuestions:
+    - problemText: A commercial swimming pool is being designed with a trapezoidal deep end. The bottom surface of this section
+        needs tiling. The parallel edges of the trapezium measure 15 m and 10 m, and the perpendicular length (height) is
+        30 m. If specialized anti-slip tiles cost $20 per square meter, calculate the total cost to tile the bottom surface.
+      avatarIntro: Real-world geometry often involves calculating area to determine costs or material needs. Let's practice
+        applying the trapezium area formula to solve multi-step problems.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 15
+          parallelSide2: 10
+          height: 30
+          showHeight: true
+          highlightMode: area
+          caption: Trapezoidal deep end of a swimming pool
+      finalAnswer: $7,500
+      stepByStepGuideline:
+      - 'Identify the dimensions: parallel sides a = 15 m, b = 10 m, height h = 30 m.'
+      - 'Calculate the area of the trapezoidal section using the formula A = ½(a + b)h: A = ½(15 + 10) × 30 = ½(25) × 30 =
+        375 m².'
+      - 'Calculate the total cost by multiplying the area by the cost per square meter: Cost = 375 m² × $20/m².'
+      - Total cost is $7,500.
+      id: q12-1
+      questionGroup: q12
+    - problemText: A farmer owns a large field shaped like a trapezium. The two parallel boundaries measure 120 meters and
+        90 meters, respectively. The perpendicular distance between these boundaries is 80 meters. The farmer wants to report
+        the size of the field in hectares. Calculate the area of the field in hectares, given that 1 hectare = 10,000 m².
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 120
+          parallelSide2: 90
+          height: 80
+          showHeight: true
+          highlightMode: area
+          caption: Trapezoidal farmer's field
+      finalAnswer: 0.84 hectares
+      stepByStepGuideline:
+      - 'Identify the dimensions: parallel sides a = 120 m, b = 90 m, height h = 80 m.'
+      - 'Calculate the area in square meters: A = ½(a + b)h = ½(120 + 90) × 80 = ½(210) × 80 = 8,400 m².'
+      - 'Convert the area from square meters to hectares using the conversion factor (1 ha = 10,000 m²): Hectares = 8,400
+        ÷ 10,000.'
+      - The area of the field is 0.84 hectares.
+      id: q12-2
+      questionGroup: q12
+    - problemText: A decorator is painting a unique wall section designed as a trapezium. The parallel top and bottom edges
+        of the section measure 6 meters and 4 meters, and the perpendicular height is 2.5 meters. If the paint required for
+        this wall costs $12 per square meter, what is the total painting cost?
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 6
+          parallelSide2: 4
+          height: 2.5
+          showHeight: true
+          highlightMode: area
+          caption: Trapezoidal wall section
+      finalAnswer: $150
+      stepByStepGuideline:
+      - 'Identify the dimensions: parallel sides a = 6 m, b = 4 m, height h = 2.5 m.'
+      - 'Calculate the area of the wall section: A = ½(a + b)h = ½(6 + 4) × 2.5 = ½(10) × 2.5 = 5 × 2.5 = 12.5 m².'
+      - 'Calculate the total cost by multiplying the area by the cost per square meter: Cost = 12.5 m² × $12/m².'
+      - The total painting cost is $150.
+      id: q12-3
+      questionGroup: q12
+    - problemText: A gardener is preparing a trapezoidal garden bed for mulching. The parallel sides measure 4 meters and
+        2.8 meters, and the perpendicular distance between them is 1.5 meters. Mulch is sold in bags that cover 2 m² each
+        and cost $8 per bag. How much will it cost to completely mulch the garden bed? (Assume whole bags must be purchased).
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 4
+          parallelSide2: 2.8
+          height: 1.5
+          showHeight: true
+          highlightMode: area
+          caption: Trapezoidal garden bed
+      finalAnswer: $24
+      stepByStepGuideline:
+      - 'Identify the dimensions: parallel sides a = 4 m, b = 2.8 m, height h = 1.5 m.'
+      - 'Calculate the area of the garden bed: A = ½(a + b)h = ½(4 + 2.8) × 1.5 = ½(6.8) × 1.5 = 3.4 × 1.5 = 5.1 m².'
+      - 'Determine the number of bags needed by dividing the total area by the coverage rate per bag (2 m²): Bags = 5.1 ÷
+        2 = 2.55 bags.'
+      - Since whole bags must be purchased, round up to 3 bags.
+      - 'Calculate the total cost: Cost = 3 bags × $8/bag.'
+      - The total cost is $24.
+      id: q12-4
+      questionGroup: q12
+    - problemText: A civil engineer is calculating the area of the cross-section of a drainage canal that needs protective
+        lining. The cross-section is a trapezium with parallel sides of 200 cm (top) and 150 cm (bottom), and a perpendicular
+        depth (height) of 100 cm. If the lining material costs $500 per square meter, calculate the cost to line this single
+        cross-section.
+      mathTool:
+        toolName: trapezium
+        parameters:
+          parallelSide1: 2
+          parallelSide2: 1.5
+          height: 1
+          showHeight: true
+          highlightMode: area
+          caption: Trapezoidal cross-section of a canal (dimensions shown in meters)
+      finalAnswer: $875
+      stepByStepGuideline:
+      - 'Identify the dimensions (a=200 cm, b=150 cm, h=100 cm). Since the cost is given per square meter, convert the dimensions
+        to meters: a=2 m, b=1.5 m, h=1 m.'
+      - 'Calculate the area of the cross-section in square meters: A = ½(a + b)h = ½(2 + 1.5) × 1 = ½(3.5) × 1 = 1.75 m².'
+      - 'Calculate the total cost by multiplying the area by the cost per square meter: Cost = 1.75 m² × $500/m².'
+      - The total cost to line the cross-section is $875.
+      id: q12-5
+      questionGroup: q12

@@ -1,0 +1,2075 @@
+# S1 Math Basic Algebra - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: ba-intro-var-1
+  nodeNumber: 1
+  title: Understanding Variables as Placeholders
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: A shop sells notebooks for p dollars each. What does the expression three p represent?
+        display.content: A shop sells notebooks for $p$ dollars each. What does the expression $3p$ represent?
+      avatarIntro: Great job reaching this section! Let's start by thinking about how letters help us describe real-world
+        situations.
+      mathTool: null
+      finalAnswer: The total cost, in dollars, of buying 3 notebooks.
+      stepByStepGuideline:
+      - 'Identify the variable: $p$ represents the price of one notebook.'
+      - 'Identify the operation: $3p$ means 3 multiplied by $p$.'
+      - 'Interpret the expression: Multiplying the price of one item by 3 gives the total cost of three of those items.'
+      id: q1-1
+      questionGroup: q1
+    - problemText:
+        speech.text: If a represents the current age of Alex, what does the expression a minus seven mean in this context?
+        display.content: If $a$ represents the current age of Alex, what does the expression $a - 7$ mean in this context?
+      mathTool: null
+      finalAnswer: Alex's age 7 years ago.
+      stepByStepGuideline:
+      - 'Identify the variable: $a$ is Alex''s current age.'
+      - 'Identify the operation: Subtracting 7 from the age.'
+      - 'Interpret the expression: $a - 7$ represents the age that Alex was when 7 years have passed backwards from the current
+        time.'
+      id: q1-2
+      questionGroup: q1
+    - problemText:
+        speech.text: A car covers a total distance of d kilometers by driving through 4 equally sized segments. Explain what
+          the expression d divided by 4 represents.
+        display.content: A car covers a total distance of $d$ kilometers by driving through 4 equally sized segments. Explain
+          what the expression $d/4$ represents.
+      mathTool: null
+      finalAnswer: The distance, in kilometers, covered in one single segment of the journey.
+      stepByStepGuideline:
+      - 'Identify the variable: $d$ is the total distance.'
+      - 'Identify the operation: Division by 4 means splitting the total into four equal parts.'
+      - 'Interpret the expression: Dividing the total distance by the number of segments gives the length of one segment.'
+      id: q1-3
+      questionGroup: q1
+    - problemText:
+        speech.text: If t represents the current outdoor temperature in degrees Celsius, what does the expression t plus 6
+          mean?
+        display.content: If $t$ represents the current outdoor temperature in degrees Celsius, what does the expression $t
+          + 6$ mean?
+      mathTool: null
+      finalAnswer: A temperature that is 6 degrees Celsius warmer than the current temperature.
+      stepByStepGuideline:
+      - 'Identify the variable: $t$ is the current temperature.'
+      - 'Identify the operation: Adding 6 to the temperature.'
+      - 'Interpret the expression: $t + 6$ represents a new temperature that is 6 units higher than the starting temperature
+        $t$.'
+      id: q1-4
+      questionGroup: q1
+    - problemText:
+        speech.text: The expression five n plus twelve is used to calculate the total number of chairs needed for n classrooms,
+          assuming 5 chairs per class plus 12 extra chairs for the office. What specifically does the variable n represent?
+        display.content: The expression $5n + 12$ is used to calculate the total number of chairs needed for $n$ classrooms,
+          assuming 5 chairs per class plus 12 extra chairs for the office. What specifically does the variable $n$ represent?
+      mathTool: null
+      finalAnswer: The number of classrooms (or the number of units/groups being multiplied by 5).
+      stepByStepGuideline:
+      - 'Analyze the context: The calculation determines the total number of chairs.'
+      - 'Analyze the expression structure: $5n$ represents the chairs needed for the classrooms.'
+      - 'Determine the meaning of $n$: Since 5 is the number of chairs per class, $n$ must represent the quantity of classes.'
+      id: q1-5
+      questionGroup: q1
+- id: ba-terms-coef-1
+  nodeNumber: 2
+  title: Identifying Terms, Coefficients, and Like Terms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: In the expression five x minus three y plus eight, identify all terms and state the coefficient for the
+          variables x and y.
+        display.content: In the expression $5x - 3y + 8$, identify all terms and state the coefficient for the variables $x$
+          and $y$.
+      avatarIntro: Welcome to our practice session! Understanding the building blocks of algebra—terms and coefficients—is
+        essential for the next steps.
+      mathTool: null
+      finalAnswer: 'Terms: $5x$, $-3y$, $8$. Coefficient of $x$ is $5$. Coefficient of $y$ is $-3$.'
+      stepByStepGuideline:
+      - 'Identify the parts of the expression separated by addition or subtraction signs. These are the terms: $5x$, $-3y$,
+        and $8$.'
+      - The coefficient is the numerical factor of a term with a variable.
+      - For the term $5x$, the coefficient is $5$.
+      - For the term $-3y$, the coefficient is $-3$. Ensure you include the sign.
+      id: q2-1
+      questionGroup: q2
+    - problemText:
+        speech.text: Which terms are like terms in the expression seven a plus two b minus four c minus twelve a minus one?
+        display.content: Which terms are like terms in the expression $7a + 2b - 4c - 12a - 1$?
+      mathTool: null
+      finalAnswer: $7a$ and $-12a$ are like terms.
+      stepByStepGuideline:
+      - Recall that like terms must have the exact same variable(s) raised to the exact same power.
+      - 'Examine the terms: $7a$, $2b$, $-4c$, $-12a$, and $-1$.'
+      - Compare the terms based on their variables.
+      - The terms $7a$ and $-12a$ both contain the variable $a$. Therefore, they are like terms.
+      id: q2-2
+      questionGroup: q2
+    - problemText:
+        speech.text: Explain why the terms four x squared and four x are NOT like terms, even though they have the same coefficient.
+        display.content: Explain why the terms $4x^2$ and $4x$ are NOT like terms, even though they have the same coefficient.
+      mathTool: null
+      finalAnswer: They are not like terms because they have different powers. $4x^2$ has the variable $x$ raised to the power
+        of 2, while $4x$ has $x$ raised to the power of 1. Like terms must have the same variable AND the same power.
+      stepByStepGuideline:
+      - 'Define like terms: they must have identical variables and identical powers.'
+      - 'Identify the variables and powers in the first term, $4x^2$: variable $x$, power 2.'
+      - 'Identify the variables and powers in the second term, $4x$: variable $x$, power 1.'
+      - Conclude that since the powers ($2$ and $1$) are different, the terms are not like terms.
+      id: q2-3
+      questionGroup: q2
+    - problemText:
+        speech.text: Consider the expression nine y squared minus y plus ten. What is the constant term, and what is the coefficient
+          of the term containing only y?
+        display.content: Consider the expression $9y^2 - y + 10$. What is the constant term, and what is the coefficient of
+          the term containing only $y$?
+      mathTool: null
+      finalAnswer: The constant term is $10$. The coefficient of the term containing only $y$ (which is $-y$) is $-1$.
+      stepByStepGuideline:
+      - 'Identify the constant term: this is the term that does not have any variable attached. In $9y^2 - y + 10$, the constant
+        term is $10$.'
+      - 'Identify the term containing only $y$: this is $-y$.'
+      - Recall that if a variable appears without an explicit number, the coefficient is 1 or $-1$. Since the term is $-y$,
+        the coefficient is $-1$.
+      id: q2-4
+      questionGroup: q2
+    - problemText:
+        speech.text: How many terms are present in the expression three m plus eleven n minus six m minus two n plus five?
+          List all the terms that contain the variable n.
+        display.content: How many terms are present in the expression $3m + 11n - 6m - 2n + 5$? List all the terms that contain
+          the variable $n$.
+      mathTool: null
+      finalAnswer: There are 5 terms. The terms containing the variable $n$ are $11n$ and $-2n$.
+      stepByStepGuideline:
+      - Count the parts of the expression separated by addition or subtraction signs. The terms are $3m$, $11n$, $-6m$, $-2n$,
+        and $5$. There are 5 terms.
+      - Identify which of these terms specifically includes the variable $n$.
+      - The terms containing $n$ are $11n$ and $-2n$.
+      id: q2-5
+      questionGroup: q2
+- id: ba-write-expr-1
+  nodeNumber: 3
+  title: Translating Word Phrases to Algebraic Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Write an algebraic expression for: The quotient of a number $y$ and 8.'
+      avatarIntro: Translating words into math symbols is a fundamental skill in algebra. Let's practice writing some expressions!
+      mathTool: null
+      finalAnswer: $ \frac{y}{8} $ or $ y \div 8 $ (where $y$ represents the number)
+      stepByStepGuideline:
+      - 'Identify the operation: ''Quotient'' means division.'
+      - The phrase 'the quotient of A and B' translates to A divided by B.
+      - Therefore, the expression is $y$ divided by 8, written as $\frac{y}{8}$.
+      id: q3-1
+      questionGroup: q3
+    - problemText: 'Write an algebraic expression for: 6 less than a number $n$.'
+      mathTool: null
+      finalAnswer: $n - 6$ (NOT $6 - n$, because '6 less than' means subtract 6 from $n$)
+      stepByStepGuideline:
+      - 'Identify the operation: ''Less than'' indicates subtraction.'
+      - The phrase 'A less than B' means B - A. We start with the number ($n$) and subtract 6.
+      - The expression is $n - 6$.
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'Write an algebraic expression for: The sum of four times a number $x$ and 15.'
+      mathTool: null
+      finalAnswer: $4x + 15$
+      stepByStepGuideline:
+      - 'Break down the phrase: ''four times a number $x$'' translates to $4x$.'
+      - '''The sum of A and B'' means addition. We are adding $4x$ and 15.'
+      - The final expression is $4x + 15$.
+      id: q3-3
+      questionGroup: q3
+    - problemText: 'Write an algebraic expression for: Triple the sum of a number $t$ and 7.'
+      mathTool: null
+      finalAnswer: $3(t + 7)$
+      stepByStepGuideline:
+      - 'Identify the grouping: ''The sum of a number $t$ and 7'' must be calculated first, so it is grouped: $(t + 7)$.'
+      - 'Identify the outside operation: ''Triple'' means multiply by 3.'
+      - 'The expression is 3 multiplied by the entire sum: $3(t + 7)$.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'Write an algebraic expression for: The quotient of a number $a$ and 10, decreased by 2.'
+      mathTool: null
+      finalAnswer: $ \frac{a}{10} - 2 $ or $ a \div 10 - 2 $
+      stepByStepGuideline:
+      - 'First part: ''The quotient of a number $a$ and 10'' translates to $a/10$.'
+      - 'Second part: ''Decreased by 2'' means subtract 2 from the result of the first step.'
+      - The final expression is $\frac{a}{10} - 2$.
+      id: q3-5
+      questionGroup: q3
+- id: ba-like-terms-1
+  nodeNumber: 4
+  title: Collecting Like Terms - Basics (2-3 Terms)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Simplify: eleven x plus seven x'
+        display.content: 'Simplify: $11x + 7x$'
+      avatarIntro: Algebra is all about making things simpler! Let's start with combining these basic like terms.
+      mathTool: null
+      finalAnswer:
+        speech.text: eighteen x
+        display.content: $18x$
+      stepByStepGuideline:
+      - The terms $11x$ and $7x$ are like terms because they share the same variable, $x$.
+      - 'To simplify, add the coefficients: $11 + 7 = 18$.'
+      - Keep the variable unchanged.
+      - The simplified expression is $18x$.
+      id: q4-1
+      questionGroup: q4
+    - problemText:
+        speech.text: 'Collect like terms: twenty y minus seven y'
+        display.content: 'Collect like terms: $20y - 7y$'
+      mathTool: null
+      finalAnswer:
+        speech.text: thirteen y
+        display.content: $13y$
+      stepByStepGuideline:
+      - The terms $20y$ and $7y$ are like terms.
+      - 'To collect the terms, subtract the coefficients: $20 - 7 = 13$.'
+      - Keep the variable $y$.
+      - The simplified expression is $13y$.
+      id: q4-2
+      questionGroup: q4
+    - problemText:
+        speech.text: 'Simplify the expression: three m plus five m plus twelve m'
+        display.content: 'Simplify the expression: $3m + 5m + 12m$'
+      mathTool: null
+      finalAnswer:
+        speech.text: twenty m
+        display.content: $20m$
+      stepByStepGuideline:
+      - All three terms ($3m$, $5m$, and $12m$) are like terms.
+      - 'Add the coefficients together: $3 + 5 + 12$.'
+      - $3 + 5 = 8$.
+      - $8 + 12 = 20$.
+      - The simplified expression is $20m$.
+      id: q4-3
+      questionGroup: q4
+    - problemText:
+        speech.text: Write nine t plus six t minus four t in its simplest form
+        display.content: Write $9t + 6t - 4t$ in its simplest form
+      mathTool: null
+      finalAnswer:
+        speech.text: eleven t
+        display.content: $11t$
+      stepByStepGuideline:
+      - All terms are like terms involving the variable $t$.
+      - 'Combine the coefficients: $9 + 6 - 4$.'
+      - 'First, perform the addition: $9 + 6 = 15$.'
+      - 'Then, perform the subtraction: $15 - 4 = 11$.'
+      - The simplest form of the expression is $11t$.
+      id: q4-4
+      questionGroup: q4
+    - problemText:
+        speech.text: 'Simplify: fifteen p minus eight p plus five p'
+        display.content: 'Simplify: $15p - 8p + 5p$'
+      mathTool: null
+      finalAnswer:
+        speech.text: twelve p
+        display.content: $12p$
+      stepByStepGuideline:
+      - All terms are like terms involving the variable $p$.
+      - 'Combine the coefficients from left to right: $15 - 8 + 5$.'
+      - 'First, subtract: $15 - 8 = 7$.'
+      - 'Next, add: $7 + 5 = 12$.'
+      - The simplified expression is $12p$.
+      id: q4-5
+      questionGroup: q4
+- id: ba-like-terms-2
+  nodeNumber: 5
+  title: Collecting Like Terms - With Negatives (3-4 Terms)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Simplify: negative three m plus seven m minus m'
+        display.content: 'Simplify: $-3m + 7m - m$'
+      avatarIntro: Great work on understanding terms! Now let's practice combining them, especially when negative signs are
+        involved.
+      mathTool: null
+      finalAnswer:
+        speech.text: three m
+        display.content: $3m$
+      stepByStepGuideline:
+      - 'Identify the coefficients: -3, +7, and -1 (since $-m$ means $-1m$).'
+      - 'Combine the coefficients: $-3 + 7 = 4$.'
+      - 'Subtract the last coefficient: $4 - 1 = 3$.'
+      - The simplified expression is $3m$.
+      id: q5-1
+      questionGroup: q5
+    - problemText:
+        speech.text: 'Collect like terms: four x minus nine x plus two x'
+        display.content: 'Collect like terms: $4x - 9x + 2x$'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative three x
+        display.content: $-3x$
+      stepByStepGuideline:
+      - 'Identify the coefficients: 4, -9, and +2.'
+      - 'Combine the first two coefficients: $4 - 9 = -5$.'
+      - 'Add the last coefficient to the result: $-5 + 2 = -3$.'
+      - The simplified expression is $-3x$.
+      id: q5-2
+      questionGroup: q5
+    - problemText:
+        speech.text: 'Simplify the expression: ten p plus five p minus three p minus four p'
+        display.content: 'Simplify the expression: $10p + 5p - 3p - 4p$'
+      mathTool: null
+      finalAnswer:
+        speech.text: eight p
+        display.content: $8p$
+      stepByStepGuideline:
+      - 'Group the positive coefficients: $10 + 5 = 15$.'
+      - 'Group the negative coefficients: $-3 - 4 = -7$.'
+      - 'Combine the results: $15p - 7p = 8p$.'
+      - The simplified expression is $8p$.
+      id: q5-3
+      questionGroup: q5
+    - problemText:
+        speech.text: 'Simplify: six n minus twelve n plus three n minus n'
+        display.content: 'Simplify: $6n - 12n + 3n - n$'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative four n
+        display.content: $-4n$
+      stepByStepGuideline:
+      - 'Identify the coefficients: 6, -12, +3, and -1.'
+      - 'Combine the positive coefficients: $6 + 3 = 9$.'
+      - 'Combine the negative coefficients: $-12 - 1 = -13$.'
+      - 'Calculate the final result: $9 - 13 = -4$.'
+      - The simplified expression is $-4n$.
+      id: q5-4
+      questionGroup: q5
+    - problemText:
+        speech.text: 'Collect like terms: negative seven y plus two y minus five y'
+        display.content: 'Collect like terms: $-7y + 2y - 5y$'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative ten y
+        display.content: $-10y$
+      stepByStepGuideline:
+      - 'Identify the coefficients: -7, +2, and -5.'
+      - 'Combine the first two coefficients: $-7 + 2 = -5$.'
+      - 'Subtract the last coefficient: $-5 - 5 = -10$.'
+      - The simplified expression is $-10y$.
+      id: q5-5
+      questionGroup: q5
+- id: ba-multi-var-1
+  nodeNumber: 6
+  title: Simplifying Expressions with Multiple Variables
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Simplify the expression: seven x plus three why plus two x minus five why plus ten'
+        display.content: 'Simplify the expression: $7x + 3y + 2x - 5y + 10$'
+      avatarIntro: Simplifying expressions with multiple variables requires careful grouping of like terms. Remember to pay
+        close attention to the signs!
+      mathTool: null
+      finalAnswer:
+        speech.text: nine ex minus two why plus ten
+        display.content: $9x - 2y + 10$
+      stepByStepGuideline:
+      - 'Identify and group the like terms together: $(7x + 2x) + (3y - 5y) + 10$.'
+      - 'Simplify the $x$ terms: $7x + 2x = 9x$.'
+      - 'Simplify the $y$ terms: $3y - 5y = -2y$.'
+      - 'Combine the simplified terms and the constant term, ensuring variables are in alphabetical order: $9x - 2y + 10$.'
+      id: q6-1
+      questionGroup: q6
+    - problemText:
+        speech.text: 'Collect like terms: four a plus six b plus three c minus a minus eight b plus five'
+        display.content: 'Collect like terms: $4a + 6b + 3c - a - 8b + 5$'
+      mathTool: null
+      finalAnswer:
+        speech.text: three a minus two b plus three c plus five
+        display.content: $3a - 2b + 3c + 5$
+      stepByStepGuideline:
+      - 'Group the $a$ terms: $4a - a = 3a$.'
+      - 'Group the $b$ terms: $6b - 8b = -2b$.'
+      - The $c$ term is $3c$.
+      - The constant term is $5$.
+      - 'Write the final expression in standard form (alphabetical variable order, constant last): $3a - 2b + 3c + 5$.'
+      id: q6-2
+      questionGroup: q6
+    - problemText:
+        speech.text: Write nine m plus fifteen minus two n plus three plus four m minus seven in its simplest form
+        display.content: Write $9m + 15 - 2n + 3 + 4m - 7$ in its simplest form
+      mathTool: null
+      finalAnswer:
+        speech.text: thirteen m minus two n plus eleven
+        display.content: $13m - 2n + 11$
+      stepByStepGuideline:
+      - 'Group the $m$ terms: $9m + 4m = 13m$.'
+      - 'Group the $n$ terms: $-2n$.'
+      - 'Group and simplify the constant terms: $15 + 3 - 7 = 18 - 7 = 11$.'
+      - 'Combine the results in standard form: $13m - 2n + 11$.'
+      id: q6-3
+      questionGroup: q6
+    - problemText:
+        speech.text: 'Simplify: five m plus four n plus ten p minus eight m minus two n plus three p plus twenty'
+        display.content: 'Simplify: $5m + 4n + 10p - 8m - 2n + 3p + 20$'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative three m plus two n plus thirteen p plus twenty
+        display.content: $-3m + 2n + 13p + 20$
+      stepByStepGuideline:
+      - 'Group and simplify the $m$ terms: $5m - 8m = -3m$.'
+      - 'Group and simplify the $n$ terms: $4n - 2n = 2n$.'
+      - 'Group and simplify the $p$ terms: $10p + 3p = 13p$.'
+      - The constant term is $20$.
+      - 'Combine the simplified terms in alphabetical order: $-3m + 2n + 13p + 20$.'
+      id: q6-4
+      questionGroup: q6
+    - problemText:
+        speech.text: 'Simplify the expression: six p plus three q minus five p minus four q plus nine'
+        display.content: 'Simplify the expression: $6p + 3q - 5p - 4q + 9$'
+      mathTool: null
+      finalAnswer:
+        speech.text: p minus q plus nine
+        display.content: $p - q + 9$
+      stepByStepGuideline:
+      - 'Group the $p$ terms: $6p - 5p = 1p$. Write this as $p$.'
+      - 'Group the $q$ terms: $3q - 4q = -1q$. Write this as $-q$.'
+      - The constant term is $9$.
+      - 'Combine the results: $p - q + 9$.'
+      id: q6-5
+      questionGroup: q6
+- id: ba-complex-simp-1
+  nodeNumber: 7
+  title: Complex Simplification with Fractions and Negatives
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify: $\frac{1}{2}a + \frac{1}{3}a$'
+      avatarIntro: Time to practice combining terms with fractional coefficients. Remember to find a common denominator first!
+      mathTool: null
+      finalAnswer: $\frac{5}{6}a$
+      stepByStepGuideline:
+      - 'Identify the like terms: both terms contain the variable $a$.'
+      - Find the Lowest Common Denominator (LCD) for the coefficients $\frac{1}{2}$ and $\frac{1}{3}$. The LCD of 2 and 3
+        is 6.
+      - 'Convert the coefficients to equivalent fractions with the denominator 6: $\frac{1}{2} = \frac{3}{6}$ and $\frac{1}{3}
+        = \frac{2}{6}$.'
+      - 'Combine the like terms: $\frac{3}{6}a + \frac{2}{6}a = \frac{3+2}{6}a$.'
+      - The simplified expression is $\frac{5}{6}a$.
+      id: q7-1
+      questionGroup: q7
+    - problemText: 'Simplify the expression: $\frac{2}{3}x + \frac{1}{4}y - \frac{1}{6}x + \frac{1}{2}y$'
+      mathTool: null
+      finalAnswer: $\frac{1}{2}x + \frac{3}{4}y$
+      stepByStepGuideline:
+      - 'Group the like terms: $( \frac{2}{3}x - \frac{1}{6}x ) + ( \frac{1}{4}y + \frac{1}{2}y ).$'
+      - Simplify the $x$ terms. The LCD for 3 and 6 is 6. Convert $\frac{2}{3}$ to $\frac{4}{6}$. $( \frac{4}{6}x - \frac{1}{6}x
+        ) = \frac{3}{6}x = \frac{1}{2}x$.
+      - Simplify the $y$ terms. The LCD for 4 and 2 is 4. Convert $\frac{1}{2}$ to $\frac{2}{4}$. $( \frac{1}{4}y + \frac{2}{4}y
+        ) = \frac{3}{4}y$.
+      - 'Combine the simplified terms: $\frac{1}{2}x + \frac{3}{4}y$.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: Write $4m - \frac{3}{4}m + 2m$ in simplest form
+      mathTool: null
+      finalAnswer: $\frac{21}{4}m$ or $5\frac{1}{4}m$
+      stepByStepGuideline:
+      - 'Group the integer terms first: $4m + 2m = 6m$.'
+      - The expression becomes $6m - \frac{3}{4}m$.
+      - 'Convert the integer coefficient 6 into a fraction with the denominator 4: $6 = \frac{6 \times 4}{4} = \frac{24}{4}$.'
+      - 'Subtract the coefficients: $\frac{24}{4}m - \frac{3}{4}m = \frac{24 - 3}{4}m$.'
+      - The simplified expression is $\frac{21}{4}m$. (This can also be written as the mixed number $5\frac{1}{4}m$.)
+      id: q7-3
+      questionGroup: q7
+    - problemText: 'Simplify: $-5a + 3b - 2a + 7 - 6b - 1$'
+      mathTool: null
+      finalAnswer: $ -7a - 3b + 6$
+      stepByStepGuideline:
+      - 'Identify and group the like terms, ensuring to keep the preceding signs:'
+      - 'Group $a$ terms: $-5a - 2a$.'
+      - 'Group $b$ terms: $+3b - 6b$.'
+      - 'Group constant terms: $+7 - 1$.'
+      - 'Combine the $a$ terms: $-5a - 2a = -7a$.'
+      - 'Combine the $b$ terms: $3b - 6b = -3b$.'
+      - 'Combine the constant terms: $7 - 1 = 6$.'
+      - The simplified expression is $-7a - 3b + 6$.
+      id: q7-4
+      questionGroup: q7
+    - problemText: 'Collect like terms: $\frac{7}{8}y - \frac{3}{8}y + 2y - \frac{1}{8}y$'
+      mathTool: null
+      finalAnswer: $\frac{19}{8}y$ or $2\frac{3}{8}y$
+      stepByStepGuideline:
+      - 'Group the terms with the common denominator 8: $(\frac{7}{8}y - \frac{3}{8}y - \frac{1}{8}y) + 2y$.'
+      - 'Perform the subtraction on the fractional coefficients: $\frac{7 - 3 - 1}{8}y = \frac{3}{8}y$.'
+      - The expression simplifies to $\frac{3}{8}y + 2y$.
+      - 'Convert the integer coefficient 2 into a fraction with the denominator 8: $2 = \frac{16}{8}$.'
+      - 'Add the coefficients: $\frac{3}{8}y + \frac{16}{8}y = \frac{19}{8}y$.'
+      - The simplified expression is $\frac{19}{8}y$ (or $2\frac{3}{8}y$).
+      id: q7-5
+      questionGroup: q7
+- id: ba-distrib-pos-1
+  nodeNumber: 8
+  title: Distributive Law - Positive Multipliers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Expand the brackets: four times the quantity ex plus seven'
+        display.content: 'Expand the brackets: $4(x + 7)$'
+      avatarIntro: Mastering the distributive law is crucial for algebra. Remember to multiply the term outside by EVERY term
+        inside the brackets!
+      finalAnswer:
+        speech.text: four ex plus twenty eight
+        display.content: $4x + 28$
+      stepByStepGuideline:
+      - The distributive law states that $a(b + c) = ab + ac$.
+      - 'Multiply 4 by the first term, $x$: $4 \times x = 4x$.'
+      - 'Multiply 4 by the second term, $7$: $4 \times 7 = 28$.'
+      - 'Combine the results: $4x + 28$.'
+      id: q8-1
+      questionGroup: q8
+    - problemText:
+        speech.text: 'Use the distributive law to expand: eight times the quantity three why minus five'
+        display.content: 'Use the distributive law to expand: $8(3y - 5)$'
+      finalAnswer:
+        speech.text: twenty four why minus forty
+        display.content: $24y - 40$
+      stepByStepGuideline:
+      - 'Multiply 8 by the first term, $3y$: $8 \times 3y = 24y$.'
+      - 'Multiply 8 by the second term, which is $-5$: $8 \times (-5) = -40$.'
+      - 'Combine the results: $24y - 40$.'
+      id: q8-2
+      questionGroup: q8
+    - problemText:
+        speech.text: 'Expand: x times the quantity two ex plus nine'
+        display.content: 'Expand: $x(2x + 9)$'
+      finalAnswer:
+        speech.text: two ex squared plus nine ex
+        display.content: $2x^2 + 9x$
+      stepByStepGuideline:
+      - 'Multiply $x$ by the first term, $2x$: $x \times 2x = 2x^2$.'
+      - 'Multiply $x$ by the second term, $9$: $x \times 9 = 9x$.'
+      - 'Combine the results: $2x^2 + 9x$.'
+      id: q8-3
+      questionGroup: q8
+    - problemText:
+        speech.text: 'Multiply out: ten times the quantity five p plus six'
+        display.content: 'Multiply out: $10(5p + 6)$'
+      finalAnswer:
+        speech.text: fifty p plus sixty
+        display.content: $50p + 60$
+      stepByStepGuideline:
+      - 'Multiply 10 by the first term, $5p$: $10 \times 5p = 50p$.'
+      - 'Multiply 10 by the second term, $6$: $10 \times 6 = 60$.'
+      - 'Combine the results: $50p + 60$.'
+      id: q8-4
+      questionGroup: q8
+    - problemText:
+        speech.text: 'Expand the brackets: why times the quantity why minus twelve'
+        display.content: 'Expand the brackets: $y(y - 12)$'
+      finalAnswer:
+        speech.text: why squared minus twelve why
+        display.content: $y^2 - 12y$
+      stepByStepGuideline:
+      - 'Multiply $y$ by the first term, $y$: $y \times y = y^2$.'
+      - 'Multiply $y$ by the second term, which is $-12$: $y \times (-12) = -12y$.'
+      - 'Combine the results: $y^2 - 12y$.'
+      id: q8-5
+      questionGroup: q8
+- id: ba-distrib-neg-1
+  nodeNumber: 9
+  title: Expanding with Negative Multipliers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Expand: negative three times the quantity ex plus five'
+        display.content: 'Expand: $-3(x + 5)$'
+      avatarIntro: Expanding expressions with a negative multiplier requires careful attention to the rules of signs. Remember,
+        negative times positive is negative!
+      mathTool: null
+      finalAnswer:
+        speech.text: negative three ex minus fifteen
+        display.content: $-3x - 15$
+      stepByStepGuideline:
+      - Apply the distributive law by multiplying the term outside the bracket, $-3$, by each term inside the bracket.
+      - 'First term: $(-3) \times x = -3x$. (Negative multiplied by positive gives negative).'
+      - 'Second term: $(-3) \times 5 = -15$. (Negative multiplied by positive gives negative).'
+      - 'Combine the results: $-3x - 15$.'
+      id: q9-1
+      questionGroup: q9
+    - problemText:
+        speech.text: 'Use the distributive law to expand: negative seven times the quantity two why minus three'
+        display.content: 'Use the distributive law to expand: $-7(2y - 3)$'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative fourteen why plus twenty one
+        display.content: $-14y + 21$
+      stepByStepGuideline:
+      - 'Apply the distributive law: $-7$ multiplies $2y$ and $-3$.'
+      - 'First term: $(-7) \times 2y = -14y$.'
+      - 'Second term: $(-7) \times (-3)$. Remember that negative multiplied by negative gives positive, so $(-7) \times (-3)
+        = +21$.'
+      - The expanded expression is $-14y + 21$.
+      id: q9-2
+      questionGroup: q9
+    - problemText:
+        speech.text: 'Expand the brackets: negative of the quantity four m minus five n plus nine'
+        display.content: 'Expand the brackets: $-(4m - 5n + 9)$'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative four m plus five n minus nine
+        display.content: $-4m + 5n - 9$
+      stepByStepGuideline:
+      - The negative sign outside the bracket implies multiplication by $-1$. This means every term inside the bracket changes
+        its sign.
+      - $-1 \times 4m = -4m$
+      - $-1 \times (-5n) = +5n$ (Negative $\times$ Negative = Positive)
+      - $-1 \times 9 = -9$ (Negative $\times$ Positive = Negative)
+      - The expanded expression is $-4m + 5n - 9$.
+      id: q9-3
+      questionGroup: q9
+    - problemText:
+        speech.text: 'Expand: negative four times the quantity two ex plus three why minus one'
+        display.content: 'Expand: $-4(2x + 3y - 1)$'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative eight ex minus twelve why plus four
+        display.content: $-8x - 12y + 4$
+      stepByStepGuideline:
+      - Apply the distributive law by multiplying $-4$ by each of the three terms inside the bracket.
+      - 'First term: $(-4) \times 2x = -8x$.'
+      - 'Second term: $(-4) \times 3y = -12y$.'
+      - 'Third term: $(-4) \times (-1)$. Since negative times negative is positive, $(-4) \times (-1) = +4$.'
+      - The expanded expression is $-8x - 12y + 4$.
+      id: q9-4
+      questionGroup: q9
+    - problemText:
+        speech.text: 'Use the distributive law to expand: negative six times the quantity three a plus two'
+        display.content: 'Use the distributive law to expand: $-6(3a + 2)$'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative eighteen a minus twelve
+        display.content: $-18a - 12$
+      stepByStepGuideline:
+      - Apply the distributive law by multiplying $-6$ by $3a$ and by $2$.
+      - 'Multiply the first term: $(-6) \times 3a = -18a$.'
+      - 'Multiply the second term: $(-6) \times 2 = -12$.'
+      - The expanded form is $-18a - 12$.
+      id: q9-5
+      questionGroup: q9
+- id: ba-double-brack-1
+  nodeNumber: 10
+  title: Expanding Double Brackets (FOIL Method)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Expand: the quantity em plus four, times the quantity em plus nine'
+        display.content: 'Expand: $(m + 4)(m + 9)$'
+      avatarIntro: Mastering algebraic expansion is crucial. Remember to use the FOIL method to ensure you multiply every
+        term correctly.
+      mathTool: null
+      finalAnswer: $m^2 + 13m + 36$
+      stepByStepGuideline:
+      - Apply the FOIL method (First, Outer, Inner, Last) to expand the double brackets.
+      - 'First: Multiply the first terms: $m \times m = m^2$.'
+      - 'Outer: Multiply the outer terms: $m \times 9 = 9m$.'
+      - 'Inner: Multiply the inner terms: $4 \times m = 4m$.'
+      - 'Last: Multiply the last terms: $4 \times 9 = 36$.'
+      - 'Combine the four terms: $m^2 + 9m + 4m + 36$.'
+      - 'Simplify by combining the like terms ($9m$ and $4m$): $m^2 + 13m + 36$.'
+      id: q10-1
+      questionGroup: q10
+    - problemText:
+        speech.text: 'Expand and simplify: the quantity ex minus five, times the quantity ex plus twelve'
+        display.content: 'Expand and simplify: $(x - 5)(x + 12)$'
+      mathTool: null
+      finalAnswer: $x^2 + 7x - 60$
+      stepByStepGuideline:
+      - Apply the FOIL method, ensuring you handle the negative sign correctly.
+      - 'First: $x \times x = x^2$.'
+      - 'Outer: $x \times 12 = 12x$.'
+      - 'Inner: $-5 \times x = -5x$.'
+      - 'Last: $-5 \times 12 = -60$.'
+      - 'Combine the four terms: $x^2 + 12x - 5x - 60$.'
+      - 'Simplify by combining the like terms ($12x$ and $-5x$): $x^2 + 7x - 60$.'
+      id: q10-2
+      questionGroup: q10
+    - problemText:
+        speech.text: 'Multiply out: the quantity a minus three, times the quantity a minus seven'
+        display.content: 'Multiply out: $(a - 3)(a - 7)$'
+      mathTool: null
+      finalAnswer: $a^2 - 10a + 21$
+      stepByStepGuideline:
+      - Apply the FOIL method, paying attention to how two negative constants multiply.
+      - 'First: $a \times a = a^2$.'
+      - 'Outer: $a \times (-7) = -7a$.'
+      - 'Inner: $(-3) \times a = -3a$.'
+      - 'Last: $(-3) \times (-7) = +21$.'
+      - 'Combine the four terms: $a^2 - 7a - 3a + 21$.'
+      - 'Simplify by combining the like terms ($-7a$ and $-3a$): $a^2 - 10a + 21$.'
+      id: q10-3
+      questionGroup: q10
+    - problemText:
+        speech.text: 'Use FOIL to expand: the quantity three why plus one, times the quantity two why plus four'
+        display.content: 'Use FOIL to expand: $(3y + 1)(2y + 4)$'
+      mathTool: null
+      finalAnswer: $6y^2 + 14y + 4$
+      stepByStepGuideline:
+      - Apply the FOIL method, remembering to multiply the coefficients.
+      - 'First: $3y \times 2y = 6y^2$.'
+      - 'Outer: $3y \times 4 = 12y$.'
+      - 'Inner: $1 \times 2y = 2y$.'
+      - 'Last: $1 \times 4 = 4$.'
+      - 'Combine the four terms: $6y^2 + 12y + 2y + 4$.'
+      - 'Simplify by combining the like terms ($12y$ and $2y$): $6y^2 + 14y + 4$.'
+      id: q10-4
+      questionGroup: q10
+    - problemText:
+        speech.text: 'Expand and simplify: the quantity four en plus two, times the quantity five en minus six'
+        display.content: 'Expand and simplify: $(4n + 2)(5n - 6)$'
+      mathTool: null
+      finalAnswer: $20n^2 - 14n - 12$
+      stepByStepGuideline:
+      - Apply the FOIL method, handling coefficients and negative signs.
+      - 'First: $4n \times 5n = 20n^2$.'
+      - 'Outer: $4n \times (-6) = -24n$.'
+      - 'Inner: $2 \times 5n = 10n$.'
+      - 'Last: $2 \times (-6) = -12$.'
+      - 'Combine the four terms: $20n^2 - 24n + 10n - 12$.'
+      - 'Simplify by combining the like terms ($-24n$ and $10n$): $20n^2 - 14n - 12$.'
+      id: q10-5
+      questionGroup: q10
+- id: ba-expand-simp-1
+  nodeNumber: 11
+  title: Expanding and Simplifying Multiple Brackets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Expand and simplify: three times the quantity em plus five, plus four times the quantity em plus two'
+        display.content: 'Expand and simplify: $3(m + 5) + 4(m + 2)$'
+      avatarIntro: Mastering algebraic simplification often starts with careful expansion. Take your time and distribute correctly
+        before combining terms.
+      mathTool: null
+      finalAnswer:
+        speech.text: seven em plus twenty-three
+        display.content: $7m + 23$
+      stepByStepGuideline:
+      - 'Expand the first bracket: $3(m + 5) = 3m + 15$.'
+      - 'Expand the second bracket: $4(m + 2) = 4m + 8$.'
+      - 'Combine the expanded terms: $3m + 15 + 4m + 8$.'
+      - 'Collect the like terms (m terms and constant terms): $(3m + 4m) + (15 + 8)$.'
+      - 'Simplify to get the final answer: $7m + 23$.'
+      id: q11-1
+      questionGroup: q11
+    - problemText:
+        speech.text: 'Simplify: two times the quantity three why plus six, plus five times the quantity two why minus one'
+        display.content: 'Simplify: $2(3y + 6) + 5(2y - 1)$'
+      mathTool: null
+      finalAnswer:
+        speech.text: sixteen why plus seven
+        display.content: $16y + 7$
+      stepByStepGuideline:
+      - 'Expand the first bracket: $2(3y + 6) = 6y + 12$.'
+      - 'Expand the second bracket: $5(2y - 1) = 10y - 5$.'
+      - 'Combine the expanded terms: $6y + 12 + 10y - 5$.'
+      - 'Collect the like terms: $(6y + 10y) + (12 - 5)$.'
+      - 'Simplify to get the final answer: $16y + 7$.'
+      id: q11-2
+      questionGroup: q11
+    - problemText:
+        speech.text: 'Expand the brackets and simplify: six times the quantity ex plus four, minus three times the quantity
+          ex plus seven'
+        display.content: 'Expand the brackets and simplify: $6(x + 4) - 3(x + 7)$'
+      mathTool: null
+      finalAnswer:
+        speech.text: three ex plus three
+        display.content: $3x + 3$
+      stepByStepGuideline:
+      - 'Expand the first bracket: $6(x + 4) = 6x + 24$.'
+      - 'Expand the second bracket by distributing $-3$: $-3(x + 7) = -3x - 21$.'
+      - 'Combine the expanded terms: $6x + 24 - 3x - 21$.'
+      - 'Collect the like terms: $(6x - 3x) + (24 - 21)$.'
+      - 'Simplify to get the final answer: $3x + 3$.'
+      id: q11-3
+      questionGroup: q11
+    - problemText:
+        speech.text: 'Expand and simplify: four times the quantity five a minus three, minus two times the quantity a plus
+          ten'
+        display.content: 'Expand and simplify: $4(5a - 3) - 2(a + 10)$'
+      mathTool: null
+      finalAnswer:
+        speech.text: eighteen a minus thirty-two
+        display.content: $18a - 32$
+      stepByStepGuideline:
+      - 'Expand the first bracket: $4(5a - 3) = 20a - 12$.'
+      - 'Expand the second bracket by distributing $-2$: $-2(a + 10) = -2a - 20$.'
+      - 'Combine the expanded terms: $20a - 12 - 2a - 20$.'
+      - 'Collect the like terms: $(20a - 2a) + (-12 - 20)$.'
+      - 'Simplify to get the final answer: $18a - 32$.'
+      id: q11-4
+      questionGroup: q11
+    - problemText:
+        speech.text: 'Simplify: five times the quantity en plus one, minus three times the quantity two en minus four, plus
+          nine'
+        display.content: 'Simplify: $5(n + 1) - 3(2n - 4) + 9$'
+      mathTool: null
+      finalAnswer:
+        speech.text: negative en plus twenty-six
+        display.content: $-n + 26$
+      stepByStepGuideline:
+      - 'Expand the first bracket: $5(n + 1) = 5n + 5$.'
+      - 'Expand the second bracket by distributing $-3$. Remember that $-3 \times -4 = +12$: $-3(2n - 4) = -6n + 12$.'
+      - 'Combine all terms: $5n + 5 - 6n + 12 + 9$.'
+      - 'Collect the like terms (n terms and constant terms): $(5n - 6n) + (5 + 12 + 9)$.'
+      - 'Simplify to get the final answer: $-n + 26$.'
+      id: q11-5
+      questionGroup: q11
+- id: ba-factor-hcf-1
+  nodeNumber: 12
+  title: Factorization by Common Factor Extraction
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Factorize: twenty four ex plus sixty'
+        display.content: 'Factorize: $24x + 60$'
+      avatarIntro: Factorization is the reverse of expansion. Remember to look for the largest number and any variables that
+        divide into every term.
+      mathTool: null
+      finalAnswer:
+        speech.text: twelve times the quantity two ex plus five
+        display.content: $12(2x + 5)$
+      stepByStepGuideline:
+      - Identify the highest common factor (HCF) of the coefficients 24 and 60. The HCF is 12.
+      - There is no common variable shared by both terms.
+      - The overall HCF is 12.
+      - 'Divide each term by the HCF: $24x \div 12 = 2x$ and $60 \div 12 = 5$.'
+      - 'Write the factored expression: $12(2x + 5)$.'
+      id: q12-1
+      questionGroup: q12
+    - problemText:
+        speech.text: 'Factorize completely: seven why squared minus three why'
+        display.content: 'Factorize completely: $7y^2 - 3y$'
+      mathTool: null
+      finalAnswer:
+        speech.text: why times the quantity seven why minus three
+        display.content: $y(7y - 3)$
+      stepByStepGuideline:
+      - Identify the highest common factor (HCF). The coefficients 7 and 3 have an HCF of 1.
+      - The common variable factor is $y$ (since $y^2$ contains $y$ and $3y$ contains $y$).
+      - The overall HCF is $y$.
+      - 'Divide each term by the HCF: $7y^2 \div y = 7y$ and $-3y \div y = -3$.'
+      - 'Write the factored expression: $y(7y - 3)$.'
+      id: q12-2
+      questionGroup: q12
+    - problemText:
+        speech.text: 'Express as a product: twelve em en plus twenty eight em'
+        display.content: 'Express as a product: $12mn + 28m$'
+      mathTool: null
+      finalAnswer:
+        speech.text: four em times the quantity three en plus seven
+        display.content: $4m(3n + 7)$
+      stepByStepGuideline:
+      - Find the HCF of the coefficients 12 and 28, which is 4.
+      - Find the common variable factor. Both terms contain $m$, but only the first term contains $n$. The common variable
+        factor is $m$.
+      - The overall HCF is $4m$.
+      - 'Divide each term by the HCF: $12mn \div 4m = 3n$ and $28m \div 4m = 7$.'
+      - 'Write the factored expression: $4m(3n + 7)$.'
+      id: q12-3
+      questionGroup: q12
+    - problemText:
+        speech.text: 'Take out the common factor: thirty p q minus twelve p'
+        display.content: 'Take out the common factor: $30pq - 12p$'
+      mathTool: null
+      finalAnswer:
+        speech.text: six p times the quantity five q minus two
+        display.content: $6p(5q - 2)$
+      stepByStepGuideline:
+      - Find the HCF of the coefficients 30 and 12, which is 6.
+      - Find the common variable factor. Both terms contain $p$. The common variable factor is $p$.
+      - The overall HCF is $6p$.
+      - 'Divide each term by the HCF: $30pq \div 6p = 5q$ and $-12p \div 6p = -2$.'
+      - 'Write the factored expression: $6p(5q - 2)$.'
+      id: q12-4
+      questionGroup: q12
+    - problemText:
+        speech.text: 'Factorize completely: fifteen k squared plus twelve k minus six k em'
+        display.content: 'Factorize completely: $15k^2 + 12k - 6km$'
+      mathTool: null
+      finalAnswer:
+        speech.text: three k times the quantity five k plus four minus two em
+        display.content: $3k(5k + 4 - 2m)$
+      stepByStepGuideline:
+      - This expression has three terms. Find the HCF for all three terms.
+      - HCF of coefficients (15, 12, 6) is 3.
+      - 'Common variable factor: All terms contain $k$ (lowest power is $k^1$). The variable $m$ is only in the third term.'
+      - The overall HCF is $3k$.
+      - 'Divide each term by $3k$: $15k^2 \div 3k = 5k$, $12k \div 3k = 4$, and $-6km \div 3k = -2m$.'
+      - 'Write the factored expression: $3k(5k + 4 - 2m)$.'
+      id: q12-5
+      questionGroup: q12
+- id: ba-factor-group-1
+  nodeNumber: 13
+  title: Factorization by Grouping
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Factorize by grouping: ay pee plus ay cue plus bee pee plus bee cue'
+        display.content: 'Factorize by grouping: $ap + aq + bp + bq$'
+      avatarIntro: Factorization by grouping requires you to find a common binomial factor after grouping terms in pairs.
+        Give it a try!
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity pee plus cue, times the quantity ay plus bee
+        display.content: $(p + q)(a + b)$
+      stepByStepGuideline:
+      - 'Group the four terms into two pairs: $(ap + aq) + (bp + bq)$.'
+      - 'Factor out the Highest Common Factor (HCF) from the first pair: $a(p + q)$.'
+      - 'Factor out the HCF from the second pair: $b(p + q)$.'
+      - The expression is now $a(p + q) + b(p + q)$.
+      - 'Factor out the common binomial factor $(p + q)$: $(p + q)(a + b)$.'
+      id: q13-1
+      questionGroup: q13
+    - problemText:
+        speech.text: 'Factorize: four ex plus twelve plus ex why plus three why'
+        display.content: 'Factorize: $4x + 12 + xy + 3y$'
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity ex plus three, times the quantity four plus why
+        display.content: $(x + 3)(4 + y)$
+      stepByStepGuideline:
+      - 'Group the terms: $(4x + 12) + (xy + 3y)$.'
+      - 'Factor out the HCF from the first pair: $4(x + 3)$.'
+      - 'Factor out the HCF from the second pair: $y(x + 3)$.'
+      - The expression is now $4(x + 3) + y(x + 3)$.
+      - 'Factor out the common binomial factor $(x + 3)$: $(x + 3)(4 + y)$.'
+      id: q13-2
+      questionGroup: q13
+    - problemText:
+        speech.text: 'Factorize by grouping: pee em plus pee en plus cue em plus cue en'
+        display.content: 'Factorize by grouping: $pm + pn + qm + qn$'
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity em plus en, times the quantity pee plus cue
+        display.content: $(m + n)(p + q)$
+      stepByStepGuideline:
+      - 'Group the terms: $(pm + pn) + (qm + qn)$.'
+      - 'Factor out the HCF from the first pair: $p(m + n)$.'
+      - 'Factor out the HCF from the second pair: $q(m + n)$.'
+      - The expression is now $p(m + n) + q(m + n)$.
+      - 'Factor out the common binomial factor $(m + n)$: $(m + n)(p + q)$.'
+      id: q13-3
+      questionGroup: q13
+    - problemText:
+        speech.text: 'Use grouping to factorize: four ay plus eight plus ay bee plus two bee'
+        display.content: 'Use grouping to factorize: $4a + 8 + ab + 2b$'
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity ay plus two, times the quantity four plus bee
+        display.content: $(a + 2)(4 + b)$
+      stepByStepGuideline:
+      - 'Group the terms: $(4a + 8) + (ab + 2b)$.'
+      - 'Factor out the HCF from the first pair: $4(a + 2)$.'
+      - 'Factor out the HCF from the second pair: $b(a + 2)$.'
+      - The expression is now $4(a + 2) + b(a + 2)$.
+      - 'Factor out the common binomial factor $(a + 2)$: $(a + 2)(4 + b)$.'
+      id: q13-4
+      questionGroup: q13
+    - problemText:
+        speech.text: 'Factorize: three pee plus fifteen plus pee cue plus five cue'
+        display.content: 'Factorize: $3p + 15 + pq + 5q$'
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity pee plus five, times the quantity three plus cue
+        display.content: $(p + 5)(3 + q)$
+      stepByStepGuideline:
+      - 'Group the terms: $(3p + 15) + (pq + 5q)$.'
+      - 'Factor out the HCF from the first pair: $3(p + 5)$.'
+      - 'Factor out the HCF from the second pair: $q(p + 5)$.'
+      - The expression is now $3(p + 5) + q(p + 5)$.
+      - 'Factor out the common binomial factor $(p + 5)$: $(p + 5)(3 + q)$.'
+      id: q13-5
+      questionGroup: q13
+- id: ba-diff-squares-1
+  nodeNumber: 14
+  title: Difference of Squares
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Factorize using difference of squares: em squared minus one hundred'
+        display.content: 'Factorize using difference of squares: $m^2 - 100$'
+      avatarIntro: The difference of squares is a powerful pattern! Remember the formula $a^2 - b^2$ equals $(a + b)(a - b)$.
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity em plus ten, times the quantity em minus ten
+        display.content: $(m + 10)(m - 10)$
+      stepByStepGuideline:
+      - Identify the expression as a difference of squares, $a^2 - b^2$.
+      - 'Determine the value of $a$ by finding the square root of the first term: $a = \sqrt{m^2} = m$.'
+      - 'Determine the value of $b$ by finding the square root of the second term: $b = \sqrt{100} = 10$.'
+      - Apply the difference of squares formula, $a^2 - b^2 = (a + b)(a - b)$.
+      - The factorization is $(m + 10)(m - 10)$.
+      id: q14-1
+      questionGroup: q14
+    - problemText:
+        speech.text: 'Express as a product: nine why squared minus sixteen'
+        display.content: 'Express as a product: $9y^2 - 16$'
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity three why plus four, times the quantity three why minus four
+        display.content: $(3y + 4)(3y - 4)$
+      stepByStepGuideline:
+      - Recognize that both terms are perfect squares and are separated by subtraction, fitting the $a^2 - b^2$ pattern.
+      - 'Find the square root of the first term ($a$): $a = \sqrt{9y^2} = 3y$.'
+      - 'Find the square root of the second term ($b$): $b = \sqrt{16} = 4$.'
+      - 'Apply the difference of squares formula: $(a + b)(a - b)$.'
+      - The factored form is $(3y + 4)(3y - 4)$.
+      id: q14-2
+      questionGroup: q14
+    - problemText:
+        speech.text: 'Factorize: twenty five a squared minus forty nine b squared'
+        display.content: 'Factorize: $25a^2 - 49b^2$'
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity five a plus seven bee, times the quantity five a minus seven bee
+        display.content: $(5a + 7b)(5a - 7b)$
+      stepByStepGuideline:
+      - This is a difference of squares involving two variables.
+      - 'Find the square root of the first term ($a$): $a = \sqrt{25a^2} = 5a$.'
+      - 'Find the square root of the second term ($b$): $b = \sqrt{49b^2} = 7b$.'
+      - Use the formula $a^2 - b^2 = (a + b)(a - b)$.
+      - The factorization is $(5a + 7b)(5a - 7b)$.
+      id: q14-3
+      questionGroup: q14
+    - problemText:
+        speech.text: 'Factorize: four ex squared minus eighty one'
+        display.content: 'Factorize: $4x^2 - 81$'
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity two ex plus nine, times the quantity two ex minus nine
+        display.content: $(2x + 9)(2x - 9)$
+      stepByStepGuideline:
+      - Confirm the expression is a difference of squares.
+      - 'Identify $a$: $a^2 = 4x^2$, so $a = \sqrt{4x^2} = 2x$.'
+      - 'Identify $b$: $b^2 = 81$, so $b = \sqrt{81} = 9$.'
+      - Write the factors using the pattern $(a + b)(a - b)$.
+      - The result is $(2x + 9)(2x - 9)$.
+      id: q14-4
+      questionGroup: q14
+    - problemText:
+        speech.text: 'Factorize using difference of squares: en squared minus forty nine'
+        display.content: 'Factorize using difference of squares: $n^2 - 49$'
+      mathTool: null
+      finalAnswer:
+        speech.text: the quantity en plus seven, times the quantity en minus seven
+        display.content: $(n + 7)(n - 7)$
+      stepByStepGuideline:
+      - Check that $n^2$ and $49$ are perfect squares.
+      - 'Find the square root of the first term ($a$): $a = n$.'
+      - 'Find the square root of the second term ($b$): $b = 7$.'
+      - Apply the difference of squares formula $(a + b)(a - b)$.
+      - The factored form is $(n + 7)(n - 7)$.
+      id: q14-5
+      questionGroup: q14
+- id: ba-one-step-1
+  nodeNumber: 15
+  title: One-Step Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: balanceScale
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Solve: nine plus em equals twenty'
+        display.content: 'Solve: $9 + m = 20$'
+      avatarIntro: We are focusing on one-step equations today. Remember, to solve for the variable, use the inverse operation
+        to keep the equation balanced.
+      mathTool:
+        toolName: balanceScale
+        parameters: {}
+      finalAnswer:
+        speech.text: em equals eleven
+        display.content: $m = 11$
+      stepByStepGuideline:
+      - The equation is $9 + m = 20$.
+      - To isolate the variable $m$, we must undo the addition of 9. We use the inverse operation, which is subtraction.
+      - 'Subtract 9 from both sides of the equation: $9 + m - 9 = 20 - 9$.'
+      - 'Simplify the equation to find the value of $m$: $m = 11$.'
+      id: q15-1
+      questionGroup: q15
+    - problemText:
+        speech.text: 'Find the value of ex: ex minus seven equals eighteen'
+        display.content: 'Find the value of $x$: $x - 7 = 18$'
+      mathTool:
+        toolName: balanceScale
+        parameters: {}
+      finalAnswer:
+        speech.text: ex equals twenty five
+        display.content: $x = 25$
+      stepByStepGuideline:
+      - The equation is $x - 7 = 18$.
+      - To isolate the variable $x$, we must undo the subtraction of 7. We use the inverse operation, which is addition.
+      - 'Add 7 to both sides of the equation: $x - 7 + 7 = 18 + 7$.'
+      - 'Simplify the equation to find the value of $x$: $x = 25$.'
+      id: q15-2
+      questionGroup: q15
+    - problemText:
+        speech.text: 'Solve for why: six why equals thirty'
+        display.content: 'Solve for $y$: $6y = 30$'
+      mathTool:
+        toolName: balanceScale
+        parameters: {}
+      finalAnswer:
+        speech.text: why equals five
+        display.content: $y = 5$
+      stepByStepGuideline:
+      - The equation is $6y = 30$. This means 6 multiplied by $y$ equals 30.
+      - To isolate the variable $y$, we must undo the multiplication by 6. We use the inverse operation, which is division.
+      - 'Divide both sides of the equation by 6: $6y / 6 = 30 / 6$.'
+      - 'Simplify the equation to find the value of $y$: $y = 5$.'
+      id: q15-3
+      questionGroup: q15
+    - problemText:
+        speech.text: 'Solve: ex divided by four equals eight'
+        display.content: 'Solve: $\frac{x}{4} = 8$'
+      mathTool:
+        toolName: balanceScale
+        parameters: {}
+      finalAnswer:
+        speech.text: ex equals thirty two
+        display.content: $x = 32$
+      stepByStepGuideline:
+      - The equation is $x/4 = 8$.
+      - To isolate the variable $x$, we must undo the division by 4. We use the inverse operation, which is multiplication.
+      - 'Multiply both sides of the equation by 4: $4 \times \frac{x}{4} = 8 \times 4$.'
+      - 'Simplify the equation to find the value of $x$: $x = 32$.'
+      id: q15-4
+      questionGroup: q15
+    - problemText:
+        speech.text: 'Find the value of pee: thirty minus pee equals twelve'
+        display.content: 'Find the value of $p$: $30 - p = 12$'
+      mathTool:
+        toolName: balanceScale
+        parameters: {}
+      finalAnswer:
+        speech.text: pee equals eighteen
+        display.content: $p = 18$
+      stepByStepGuideline:
+      - The equation is $30 - p = 12$.
+      - 'We want to isolate $p$. We can first add $p$ to both sides: $30 = 12 + p$.'
+      - 'Now, subtract 12 from both sides to isolate $p$: $30 - 12 = p$.'
+      - 'Simplify the equation to find the value of $p$: $p = 18$.'
+      id: q15-5
+      questionGroup: q15
+- id: ba-two-step-1
+  nodeNumber: 16
+  title: Two-Step Equations (ax + b = c)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Solve: three ex plus five equals seventeen'
+        display.content: 'Solve: $3x + 5 = 17$'
+      avatarIntro: Ready to tackle two-step equations? Remember to deal with the constant term before the coefficient.
+      mathTool: null
+      finalAnswer:
+        speech.text: ex equals four
+        display.content: $x = 4$
+      stepByStepGuideline:
+      - 'To solve $3x + 5 = 17$, first isolate the term with the variable by removing the constant. Subtract 5 from both sides
+        of the equation:'
+      - $3x + 5 - 5 = 17 - 5$
+      - $3x = 12$
+      - 'Next, remove the coefficient by dividing both sides by 3:'
+      - $3x \div 3 = 12 \div 3$
+      - $x = 4$
+      id: q16-1
+      questionGroup: q16
+    - problemText:
+        speech.text: 'Solve for why: four why minus nine equals eleven'
+        display.content: 'Solve for $y$: $4y - 9 = 11$'
+      mathTool: null
+      finalAnswer:
+        speech.text: why equals five
+        display.content: $y = 5$
+      stepByStepGuideline:
+      - 'To solve $4y - 9 = 11$, first isolate the term with the variable. Add 9 to both sides of the equation:'
+      - $4y - 9 + 9 = 11 + 9$
+      - $4y = 20$
+      - 'Next, divide both sides by the coefficient 4:'
+      - $4y \div 4 = 20 \div 4$
+      - $y = 5$
+      id: q16-2
+      questionGroup: q16
+    - problemText:
+        speech.text: 'Find a: six a plus fifteen equals three'
+        display.content: 'Find $a$: $6a + 15 = 3$'
+      mathTool: null
+      finalAnswer:
+        speech.text: a equals minus two
+        display.content: $a = -2$
+      stepByStepGuideline:
+      - 'To solve $6a + 15 = 3$, first isolate the term with the variable. Subtract 15 from both sides of the equation:'
+      - $6a + 15 - 15 = 3 - 15$
+      - $6a = -12$
+      - 'Next, divide both sides by the coefficient 6:'
+      - $6a \div 6 = -12 \div 6$
+      - $a = -2$
+      id: q16-3
+      questionGroup: q16
+    - problemText:
+        speech.text: 'Solve: seven pee minus four equals twenty four'
+        display.content: 'Solve: $7p - 4 = 24$'
+      mathTool: null
+      finalAnswer:
+        speech.text: pee equals four
+        display.content: $p = 4$
+      stepByStepGuideline:
+      - 'To solve $7p - 4 = 24$, first remove the constant term. Add 4 to both sides of the equation:'
+      - $7p - 4 + 4 = 24 + 4$
+      - $7p = 28$
+      - 'Next, divide both sides by the coefficient 7:'
+      - $7p \div 7 = 28 \div 7$
+      - $p = 4$
+      id: q16-4
+      questionGroup: q16
+    - problemText:
+        speech.text: 'Solve for bee: two bee plus eight equals eighteen'
+        display.content: 'Solve for $b$: $2b + 8 = 18$'
+      mathTool: null
+      finalAnswer:
+        speech.text: bee equals five
+        display.content: $b = 5$
+      stepByStepGuideline:
+      - 'To solve $2b + 8 = 18$, first subtract 8 from both sides of the equation:'
+      - $2b + 8 - 8 = 18 - 8$
+      - $2b = 10$
+      - 'Next, divide both sides by 2:'
+      - $2b \div 2 = 10 \div 2$
+      - $b = 5$
+      id: q16-5
+      questionGroup: q16
+- id: ba-two-step-2
+  nodeNumber: 17
+  title: Two-Step Equations (Variations)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: EquationSolver
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Solve: twenty equals three ex plus five'
+        display.content: 'Solve: $20 = 3x + 5$'
+      avatarIntro: These problems require you to apply two steps to find the variable, even when the equation looks a little
+        different. Keep practicing your isolation skills!
+      mathTool:
+        toolName: EquationSolver
+        parameters: {}
+      finalAnswer: $x = 5$
+      stepByStepGuideline:
+      - 'To isolate the variable term ($3x$), subtract 5 from both sides: $20 - 5 = 3x$. This simplifies to $15 = 3x$.'
+      - Divide both sides by the coefficient 3.
+      - The solution is $x = 5$.
+      id: q17-1
+      questionGroup: q17
+    - problemText:
+        speech.text: 'Solve for why: nine minus four why equals one'
+        display.content: 'Solve for $y$: $9 - 4y = 1$'
+      mathTool:
+        toolName: EquationSolver
+        parameters: {}
+      finalAnswer: $y = 2$
+      stepByStepGuideline:
+      - 'Subtract 9 from both sides: $-4y = 1 - 9$. This gives $-4y = -8$.'
+      - Divide both sides by the coefficient -4.
+      - The solution is $y = 2$.
+      id: q17-2
+      questionGroup: q17
+    - problemText:
+        speech.text: 'Find em: em over five plus two equals five'
+        display.content: 'Find $m$: $\frac{m}{5} + 2 = 5$'
+      mathTool:
+        toolName: EquationSolver
+        parameters: {}
+      finalAnswer: $m = 15$
+      stepByStepGuideline:
+      - 'Subtract 2 from both sides to isolate the fraction term: $\frac{m}{5} = 5 - 2$, so $\frac{m}{5} = 3$.'
+      - Multiply both sides by the denominator 5.
+      - The solution is $m = 15$.
+      id: q17-3
+      questionGroup: q17
+    - problemText:
+        speech.text: 'Solve: fourteen equals two a minus four'
+        display.content: 'Solve: $14 = 2a - 4$'
+      mathTool:
+        toolName: EquationSolver
+        parameters: {}
+      finalAnswer: $a = 9$
+      stepByStepGuideline:
+      - 'Add 4 to both sides to isolate the variable term: $14 + 4 = 2a$. This simplifies to $18 = 2a$.'
+      - Divide both sides by the coefficient 2.
+      - The solution is $a = 9$.
+      id: q17-4
+      questionGroup: q17
+    - problemText:
+        speech.text: 'Find pee: three plus six pee equals fifteen'
+        display.content: 'Find $p$: $3 + 6p = 15$'
+      mathTool:
+        toolName: EquationSolver
+        parameters: {}
+      finalAnswer: $p = 2$
+      stepByStepGuideline:
+      - 'Subtract 3 from both sides: $6p = 15 - 3$. This simplifies to $6p = 12$.'
+      - Divide both sides by the coefficient 6.
+      - The solution is $p = 2$.
+      id: q17-5
+      questionGroup: q17
+- id: ba-eq-brackets-1
+  nodeNumber: 18
+  title: Equations with Brackets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Solve: three times the quantity ex plus five equals twenty four'
+        display.content: 'Solve: $3(x + 5) = 24$'
+      avatarIntro: Remember to use the distributive law first to expand the bracket before solving the equation!
+      mathTool: null
+      finalAnswer: $x = 3$
+      stepByStepGuideline:
+      - 'Expand the bracket using the distributive law: $3(x) + 3(5) = 24$, which simplifies to $3x + 15 = 24$.'
+      - 'Subtract 15 from both sides of the equation: $3x = 24 - 15$.'
+      - 'Simplify: $3x = 9$.'
+      - 'Divide both sides by 3 to find the value of $x$: $x = 3$.'
+      id: q18-1
+      questionGroup: q18
+    - problemText:
+        speech.text: 'Solve for why: four times the quantity why minus two, minus six equals ten'
+        display.content: 'Solve for $y$: $4(y - 2) - 6 = 10$'
+      mathTool: null
+      finalAnswer: $y = 6$
+      stepByStepGuideline:
+      - 'Expand the bracket: $4y - 8 - 6 = 10$.'
+      - 'Simplify the left side by combining the constants: $4y - 14 = 10$.'
+      - 'Add 14 to both sides: $4y = 10 + 14$.'
+      - 'Simplify: $4y = 24$.'
+      - 'Divide both sides by 4: $y = 6$.'
+      id: q18-2
+      questionGroup: q18
+    - problemText:
+        speech.text: 'Find a: two times the quantity three a plus four equals twenty'
+        display.content: 'Find $a$: $2(3a + 4) = 20$'
+      mathTool: null
+      finalAnswer: $a = 2$
+      stepByStepGuideline:
+      - 'Expand the bracket: $2(3a) + 2(4) = 20$, which results in $6a + 8 = 20$.'
+      - 'Subtract 8 from both sides: $6a = 20 - 8$.'
+      - 'Simplify: $6a = 12$.'
+      - 'Divide both sides by 6: $a = 2$.'
+      id: q18-3
+      questionGroup: q18
+    - problemText:
+        speech.text: 'Solve: minus the quantity em minus seven equals two'
+        display.content: 'Solve: $-(m - 7) = 2$'
+      mathTool: null
+      finalAnswer: $m = 5$
+      stepByStepGuideline:
+      - 'Expand the bracket. Multiplying by -1 (or the negative sign) reverses the sign of each term inside: $-m + 7 = 2$.'
+      - 'Subtract 7 from both sides: $-m = 2 - 7$.'
+      - 'Simplify: $-m = -5$.'
+      - 'Multiply both sides by -1 to find $m$: $m = 5$.'
+      id: q18-4
+      questionGroup: q18
+    - problemText:
+        speech.text: 'Solve for en: five times the quantity en plus one, plus eight equals eighteen'
+        display.content: 'Solve for $n$: $5(n + 1) + 8 = 18$'
+      mathTool: null
+      finalAnswer: $n = 1$
+      stepByStepGuideline:
+      - 'Expand the bracket: $5n + 5 + 8 = 18$.'
+      - 'Simplify the left side by combining constants: $5n + 13 = 18$.'
+      - 'Subtract 13 from both sides: $5n = 18 - 13$.'
+      - 'Simplify: $5n = 5$.'
+      - 'Divide both sides by 5: $n = 1$.'
+      id: q18-5
+      questionGroup: q18
+- id: ba-var-both-1
+  nodeNumber: 19
+  title: Variables on Both Sides
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: 'Solve: seven ex plus four equals three ex plus twelve'
+        display.content: 'Solve: $7x + 4 = 3x + 12$'
+      avatarIntro: Great job mastering those one-step and two-step equations! Now we'll tackle equations where the variable
+        appears on both sides.
+      mathTool: null
+      finalAnswer: $x = 2$
+      stepByStepGuideline:
+      - 'Subtract $3x$ from both sides of the equation to gather the variable terms on the left: $7x - 3x + 4 = 12$, which
+        simplifies to $4x + 4 = 12$.'
+      - 'Subtract 4 from both sides to isolate the variable term: $4x = 12 - 4$, which simplifies to $4x = 8$.'
+      - 'Divide both sides by 4 to solve for $x$: $x = 2$.'
+      id: q19-1
+      questionGroup: q19
+    - problemText:
+        speech.text: 'Solve for a: six a plus three equals two a minus nine'
+        display.content: 'Solve for $a$: $6a + 3 = 2a - 9$'
+      mathTool: null
+      finalAnswer: $a = -3$
+      stepByStepGuideline:
+      - 'Subtract $2a$ from both sides to gather the variable terms on the left: $6a - 2a + 3 = -9$, which simplifies to $4a
+        + 3 = -9$.'
+      - 'Subtract 3 from both sides to isolate the variable term: $4a = -9 - 3$, which simplifies to $4a = -12$.'
+      - 'Divide both sides by 4 to solve for $a$: $a = -3$.'
+      id: q19-2
+      questionGroup: q19
+    - problemText:
+        speech.text: 'Find em: nine em minus ten equals four em minus five'
+        display.content: 'Find $m$: $9m - 10 = 4m - 5$'
+      mathTool: null
+      finalAnswer: $m = 1$
+      stepByStepGuideline:
+      - 'Subtract $4m$ from both sides to gather the variable terms on the left: $9m - 4m - 10 = -5$, which simplifies to
+        $5m - 10 = -5$.'
+      - 'Add 10 to both sides to isolate the variable term: $5m = -5 + 10$, which simplifies to $5m = 5$.'
+      - 'Divide both sides by 5 to solve for $m$: $m = 1$.'
+      id: q19-3
+      questionGroup: q19
+    - problemText:
+        speech.text: 'Solve: eight en minus twelve equals five en plus six'
+        display.content: 'Solve: $8n - 12 = 5n + 6$'
+      mathTool: null
+      finalAnswer: $n = 6$
+      stepByStepGuideline:
+      - 'Subtract $5n$ from both sides: $8n - 5n - 12 = 6$, resulting in $3n - 12 = 6$.'
+      - 'Add 12 to both sides to isolate the variable term: $3n = 6 + 12$, resulting in $3n = 18$.'
+      - 'Divide both sides by 3 to find $n$: $n = 6$.'
+      id: q19-4
+      questionGroup: q19
+    - problemText:
+        speech.text: 'Solve for bee: three bee plus nine equals ten bee plus two'
+        display.content: 'Solve for $b$: $3b + 9 = 10b + 2$'
+      mathTool: null
+      finalAnswer: $b = 1$
+      stepByStepGuideline:
+      - 'Since $10b$ is larger than $3b$, subtract $3b$ from both sides to keep the variable coefficient positive: $9 = 10b
+        - 3b + 2$, resulting in $9 = 7b + 2$.'
+      - 'Subtract 2 from both sides to isolate the variable term: $9 - 2 = 7b$, resulting in $7 = 7b$.'
+      - 'Divide both sides by 7 to solve for $b$: $b = 1$.'
+      id: q19-5
+      questionGroup: q19
+- id: ba-rearrange-1
+  nodeNumber: 20
+  title: Simple Formula Rearrangement
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: Rearrange dee equals ess tee to make ess the subject
+        display.content: Rearrange $d = st$ to make $s$ the subject.
+      avatarIntro: It's time to practice rearranging formulas! Remember to use inverse operations to isolate the variable
+        you want to make the subject.
+      mathTool: null
+      finalAnswer:
+        speech.text: ess equals dee over tee
+        display.content: $s = \frac{d}{t}$
+      stepByStepGuideline:
+      - The formula is $d = st$. We want to isolate $s$.
+      - Since $s$ is multiplied by $t$, divide both sides of the equation by $t$.
+      - This gives $s = \frac{d}{t}$.
+      id: q20-1
+      questionGroup: q20
+    - problemText:
+        speech.text: Make ex the subject of why equals ex plus aich
+        display.content: Make $x$ the subject of $y = x + h$.
+      mathTool: null
+      finalAnswer:
+        speech.text: ex equals why minus aich
+        display.content: $x = y - h$
+      stepByStepGuideline:
+      - The formula is $y = x + h$. We want to isolate $x$.
+      - Since $h$ is added to $x$, subtract $h$ from both sides of the equation.
+      - This gives $x = y - h$.
+      id: q20-2
+      questionGroup: q20
+    - problemText:
+        speech.text: Express dee in terms of see and pi, given the formula see equals pi dee
+        display.content: Express $d$ in terms of $C$ and $\pi$, given the formula $C = \pi d$.
+      mathTool: null
+      finalAnswer:
+        speech.text: dee equals see over pi
+        display.content: $d = \frac{C}{\pi}$
+      stepByStepGuideline:
+      - The formula is $C = \pi d$. We want to isolate $d$.
+      - Since $d$ is multiplied by $\pi$, divide both sides of the equation by $\pi$.
+      - This gives $d = \frac{C}{\pi}$.
+      id: q20-3
+      questionGroup: q20
+    - problemText:
+        speech.text: Rearrange ay equals one half bee aich to make bee the subject
+        display.content: Rearrange $A = \frac{1}{2}bh$ to make $b$ the subject.
+      mathTool: null
+      finalAnswer:
+        speech.text: bee equals two ay over aich
+        display.content: $b = \frac{2A}{h}$
+      stepByStepGuideline:
+      - The formula is $A = \frac{1}{2}bh$. We want to isolate $b$.
+      - 'First, multiply both sides by 2 to eliminate the fraction: $2A = bh$.'
+      - Next, divide both sides by $h$ to isolate $b$.
+      - This gives $b = \frac{2A}{h}$.
+      id: q20-4
+      questionGroup: q20
+    - problemText:
+        speech.text: Make a the subject of ess equals a plus bee plus see
+        display.content: Make $a$ the subject of $S = a + b + c$.
+      mathTool: null
+      finalAnswer:
+        speech.text: a equals ess minus bee minus see
+        display.content: $a = S - b - c$
+      stepByStepGuideline:
+      - The formula is $S = a + b + c$. We want to isolate $a$.
+      - 'Subtract $b$ from both sides: $S - b = a + c$.'
+      - 'Subtract $c$ from both sides: $S - b - c = a$.'
+      - This gives $a = S - b - c$.
+      id: q20-5
+      questionGroup: q20
+- id: ba-rearrange-2
+  nodeNumber: 21
+  title: Rearranging with Multiple Operations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: Rearrange vee equals you plus ay tee to make tee the subject
+        display.content: Rearrange $v = u + at$ to make $t$ the subject.
+      avatarIntro: Rearranging formulas is crucial in physics and mathematics. Remember to undo the operations in the reverse
+        order of calculation!
+      finalAnswer: $t = \frac{v - u}{a}$
+      stepByStepGuideline:
+      - 'Identify the order of operations performed on $t$: first multiplied by $a$, then $u$ is added.'
+      - 'Undo the addition first by subtracting $u$ from both sides: $v - u = at$.'
+      - 'Undo the multiplication by dividing both sides by $a$: $t = \frac{v - u}{a}$.'
+      id: q21-1
+      questionGroup: q21
+    - problemText:
+        speech.text: Make ex the subject of why equals em ex plus cee
+        display.content: Make $x$ the subject of $y = mx + c$.
+      finalAnswer: $x = \frac{y - c}{m}$
+      stepByStepGuideline:
+      - Identify the variable to be isolated, $x$. The operations are multiplication by $m$, then addition of $c$.
+      - 'Undo the addition first by subtracting $c$ from both sides: $y - c = mx$.'
+      - 'Undo the multiplication by dividing both sides by $m$: $x = \frac{y - c}{m}$.'
+      id: q21-2
+      questionGroup: q21
+    - problemText:
+        speech.text: Express bee in terms of pee, ay, and tee, given the formula pee equals ay plus bee tee
+        display.content: Express $b$ in terms of $P$, $a$, and $t$, given the formula $P = a + bt$.
+      finalAnswer: $b = \frac{P - a}{t}$
+      stepByStepGuideline:
+      - The operations on $b$ are multiplication by $t$, then addition of $a$.
+      - 'Undo the addition first by subtracting $a$ from both sides: $P - a = bt$.'
+      - 'Undo the multiplication by dividing both sides by $t$: $b = \frac{P - a}{t}$.'
+      id: q21-3
+      questionGroup: q21
+    - problemText:
+        speech.text: Rearrange the formula Ay equals Pee times the quantity one plus ar tee to make ar the subject
+        display.content: Rearrange the formula $A = P(1 + rt)$ to make $r$ the subject.
+      finalAnswer: $r = \frac{A - P}{Pt}$
+      stepByStepGuideline:
+      - 'First, expand the bracket: $A = P + Prt$.'
+      - 'The term containing $r$ is $Prt$. To isolate this term, subtract $P$ from both sides: $A - P = Prt$.'
+      - 'To isolate $r$, divide both sides by the combined coefficient $Pt$: $r = \frac{A - P}{Pt}$.'
+      id: q21-4
+      questionGroup: q21
+    - problemText:
+        speech.text: Make why the subject of Zee equals Kay minus Dee why
+        display.content: Make $y$ the subject of $Z = K - Dy$.
+      finalAnswer: $y = \frac{K - Z}{D}$
+      stepByStepGuideline:
+      - The operations on $y$ are multiplication by $-D$, then addition of $K$.
+      - 'Subtract $K$ from both sides: $Z - K = -Dy$.'
+      - 'Divide both sides by the coefficient of $y$, which is $-D$: $y = \frac{Z - K}{-D}$.'
+      - 'Simplify the expression by multiplying the numerator and denominator by $-1$: $y = \frac{-(Z - K)}{-(-D)} = \frac{K
+        - Z}{D}$.'
+      id: q21-5
+      questionGroup: q21
+- id: ba-rearrange-3
+  nodeNumber: 22
+  title: Complex Formula Rearrangement
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText:
+        speech.text: Rearrange the formula for the area of a trapezium, Ay equals one half times the quantity ay plus bee
+          times aitch, to make aitch the subject.
+        display.content: Rearrange $A = \frac{1}{2}(a + b)h$ to make $h$ the subject.
+      avatarIntro: Mastering formula rearrangement requires precision. Focus on isolating the target variable step by step,
+        starting by clearing any fractions.
+      finalAnswer: $h = \frac{2A}{a + b}$
+      stepByStepGuideline:
+      - 'Multiply both sides by 2 to clear the fraction: $2A = (a + b)h$.'
+      - Since $h$ is multiplied by the bracket $(a + b)$, divide both sides by $(a + b)$ to isolate $h$.
+      - The rearranged formula is $h = \frac{2A}{a + b}$.
+      id: q22-1
+      questionGroup: q22
+    - problemText:
+        speech.text: Make l the subject of the perimeter formula Pee equals two times the quantity el plus double-u.
+        display.content: Make $l$ the subject of $P = 2(l + w)$.
+      finalAnswer: $l = \frac{P}{2} - w$
+      stepByStepGuideline:
+      - 'Divide both sides by 2 to remove the multiplication factor: $\frac{P}{2} = l + w$.'
+      - Subtract $w$ from both sides to isolate $l$.
+      - The rearranged formula is $l = \frac{P}{2} - w$.
+      id: q22-2
+      questionGroup: q22
+    - problemText:
+        speech.text: Express u in terms of vee and ex, given the formula vee equals the quantity u plus ex, all divided by
+          two.
+        display.content: Express $u$ in terms of $v$ and $x$, given the formula $v = \frac{u + x}{2}$.
+      finalAnswer: $u = 2v - x$
+      stepByStepGuideline:
+      - 'Multiply both sides by 2 to clear the fraction: $2v = u + x$.'
+      - Subtract $x$ from both sides to isolate $u$.
+      - The rearranged formula is $u = 2v - x$.
+      id: q22-3
+      questionGroup: q22
+    - problemText:
+        speech.text: Rearrange the formula for the volume of a cone, Vee equals one third pi ar squared aitch, to make ar
+          the subject. Assume ar is positive.
+        display.content: Rearrange $V = \frac{1}{3}\pi r^2 h$ to make $r$ the subject. Assume $r > 0$.
+      finalAnswer: $r = \sqrt{\frac{3V}{\pi h}}$
+      stepByStepGuideline:
+      - 'Multiply both sides by 3 to clear the fraction: $3V = \pi r^2 h$.'
+      - 'Divide both sides by $\pi h$ to isolate $r^2$: $r^2 = \frac{3V}{\pi h}$.'
+      - 'Take the square root of both sides to find $r$: $r = \sqrt{\frac{3V}{\pi h}}$.'
+      id: q22-4
+      questionGroup: q22
+    - problemText:
+        speech.text: Make I the subject of the formula Ar equals Vee divided by I.
+        display.content: Make $I$ the subject of $R = \frac{V}{I}$.
+      finalAnswer: $I = \frac{V}{R}$
+      stepByStepGuideline:
+      - 'Multiply both sides by $I$ to move the subject variable out of the denominator: $RI = V$.'
+      - Divide both sides by $R$ to isolate $I$.
+      - The rearranged formula is $I = \frac{V}{R}$.
+      id: q22-5
+      questionGroup: q22
+- id: ba-translate-1
+  nodeNumber: 23
+  title: Translating Simple Word Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Four times a number decreased by 5 is 35. Find the number.
+      avatarIntro: Welcome! Remember that translating words into algebraic equations is the first and most important step
+        in solving these problems. Define your variable clearly!
+      mathTool: null
+      finalAnswer: The number is 10.
+      stepByStepGuideline:
+      - 'Define the unknown: Let $x$ be the number.'
+      - 'Translate the phrase ''Four times a number decreased by 5 is 35'' into an equation: $4x - 5 = 35$.'
+      - 'Solve the equation. Add 5 to both sides: $4x = 40$.'
+      - 'Divide by 4: $x = 10$.'
+      - State the final answer in a sentence.
+      id: q23-1
+      questionGroup: q23
+    - problemText: The sum of two consecutive integers is 45. What are the two integers?
+      mathTool: null
+      finalAnswer: The integers are 22 and 23.
+      stepByStepGuideline:
+      - 'Define the variables for the consecutive integers: Let $x$ be the first integer, and $x + 1$ be the second integer.'
+      - 'Write the equation based on the sum being 45: $x + (x + 1) = 45$.'
+      - 'Simplify and solve for $x$: $2x + 1 = 45$. Subtract 1 from both sides: $2x = 44$.'
+      - 'Divide by 2: $x = 22$.'
+      - 'Find the second integer: $x + 1 = 23$.'
+      - State the final answer.
+      id: q23-2
+      questionGroup: q23
+    - problemText: Sarah is 6 years older than Ben. If their combined age is 30, what is Ben's age?
+      mathTool: null
+      finalAnswer: Ben's age is 12 years old.
+      stepByStepGuideline:
+      - 'Define the variable: Let $B$ represent Ben''s age.'
+      - 'Express Sarah''s age in terms of $B$: Sarah''s age is $B + 6$.'
+      - 'Set up the equation using their combined age: $B + (B + 6) = 30$.'
+      - 'Simplify and solve for $B$: $2B + 6 = 30$. Subtract 6 from both sides: $2B = 24$.'
+      - 'Divide by 2: $B = 12$.'
+      - State the final answer, ensuring it answers the specific question (Ben's age).
+      id: q23-3
+      questionGroup: q23
+    - problemText: Maria has 4 more stamps than Alex. If they have 40 stamps together, how many stamps does Alex have?
+      mathTool: null
+      finalAnswer: Alex has 18 stamps.
+      stepByStepGuideline:
+      - 'Define the variable: Let $A$ be the number of stamps Alex has.'
+      - 'Express Maria''s stamps in terms of $A$: Maria has $A + 4$ stamps.'
+      - 'Set up the equation for the total number of stamps: $A + (A + 4) = 40$.'
+      - 'Simplify and solve for $A$: $2A + 4 = 40$. Subtract 4: $2A = 36$.'
+      - 'Divide by 2: $A = 18$.'
+      - State the final answer.
+      id: q23-4
+      questionGroup: q23
+    - problemText: A rectangle's length is 5 cm more than its width. If the perimeter is 50 cm, find the width of the rectangle.
+      mathTool: null
+      finalAnswer: The width of the rectangle is 10 cm.
+      stepByStepGuideline:
+      - 'Define the unknown: Let $w$ be the width (in cm).'
+      - 'Express the length $(l)$ in terms of $w$: $l = w + 5$.'
+      - 'Recall the perimeter formula for a rectangle: $P = 2(l + w)$.'
+      - 'Substitute the expressions and the given perimeter into the formula: $50 = 2((w + 5) + w)$.'
+      - 'Simplify and solve the equation: $50 = 2(2w + 5)$, which means $50 = 4w + 10$.'
+      - 'Subtract 10 from both sides: $40 = 4w$.'
+      - 'Divide by 4: $w = 10$.'
+      - State the final answer with units.
+      id: q23-5
+      questionGroup: q23
+- id: ba-translate-2
+  nodeNumber: 24
+  title: Contextual Word Problems (Age, Distance, Money)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: David's age is 3 times Lily's age. Their combined age is 40 years. How old is David?
+      avatarIntro: Contextual word problems require us to translate everyday situations into precise algebraic equations.
+        Let's start with this age problem!
+      mathTool: null
+      finalAnswer: David is 30 years old.
+      stepByStepGuideline:
+      - 'Define the variables: Let $L$ be Lily''s age. Since David is 3 times older, David''s age is $3L$.'
+      - 'Form the equation using the combined age: $L + 3L = 40$.'
+      - 'Simplify and solve for $L$: $4L = 40$, so $L = 10$. Lily is 10 years old.'
+      - 'Calculate David''s age: David''s age = $3 \times 10 = 30$ years old.'
+      id: q24-1
+      questionGroup: q24
+    - problemText: A high-speed train travels 240 km in 3 hours at a constant speed. What is the speed of the train in km/h?
+      mathTool: null
+      finalAnswer: 80 km/h.
+      stepByStepGuideline:
+      - 'Identify the knowns: Distance ($d$) = 240 km, Time ($t$) = 3 hours.'
+      - 'Use the distance formula $d = st$ (where $s$ is speed), rearranged to find speed: $s = \frac{d}{t}$.'
+      - 'Substitute the values into the formula: $s = \frac{240}{3}$.'
+      - 'Calculate the speed: $s = 80$. The speed is 80 km/h.'
+      id: q24-2
+      questionGroup: q24
+    - problemText: Jason bought 5 books and 2 markers for a total of $33. If each marker cost $4, what was the cost of one
+        book?
+      mathTool: null
+      finalAnswer: Each book costs $5.
+      stepByStepGuideline:
+      - 'Define the variable: Let $x$ be the cost of one book.'
+      - 'Set up the total cost equation: (Cost of 5 books) + (Cost of 2 markers) = Total cost. $5x + 2(4) = 33$.'
+      - 'Simplify the equation: $5x + 8 = 33$.'
+      - 'Solve for $x$: Subtract 8 from both sides: $5x = 25$. Divide by 5: $x = 5$. Each book costs $5.'
+      id: q24-3
+      questionGroup: q24
+    - problemText: In 5 years, Michael will be 20 years old. How old is Michael currently?
+      mathTool: null
+      finalAnswer: Michael is 15 years old.
+      stepByStepGuideline:
+      - 'Define the variable: Let $M$ be Michael''s current age.'
+      - 'Form the equation based on his future age: Current age plus 5 years equals 20, so $M + 5 = 20$.'
+      - 'Solve for $M$: Subtract 5 from both sides: $M = 20 - 5$.'
+      - 'Calculate the current age: $M = 15$. Michael is 15 years old.'
+      id: q24-4
+      questionGroup: q24
+    - problemText: A cyclist maintains a constant speed of 60 km/h for 4 hours. What total distance does the cyclist travel?
+      mathTool: null
+      finalAnswer: The distance traveled is 240 km.
+      stepByStepGuideline:
+      - 'Identify the knowns: Speed ($s$) = 60 km/h, Time ($t$) = 4 hours.'
+      - 'Use the distance formula: $d = st$.'
+      - 'Substitute the values into the formula: $d = 60 \times 4$.'
+      - 'Calculate the distance: $d = 240$. The distance traveled is 240 km.'
+      id: q24-5
+      questionGroup: q24
+- id: ba-multi-word-1
+  nodeNumber: 25
+  title: Multi-Step Word Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: One number is three times another number. If the sum of the two numbers is 60, find the value of both numbers.
+      avatarIntro: These problems require careful definition of variables. Remember to express all unknown values using a
+        single variable first!
+      mathTool: null
+      finalAnswer: The numbers are 15 and 45.
+      stepByStepGuideline:
+      - Let $x$ represent the smaller number.
+      - Since the larger number is three times the smaller number, the larger number is $3x$.
+      - 'Set up the equation based on the sum: $x + 3x = 60$.'
+      - 'Combine like terms: $4x = 60$.'
+      - 'Solve for $x$: $x = 60 / 4 = 15$.'
+      - 'Calculate the second number: $3x = 3(15) = 45$.'
+      - 'Verify the answer: $15 + 45 = 60$. The numbers are 15 and 45.'
+      id: q25-1
+      questionGroup: q25
+    - problemText: The sides of a triangle are represented by three consecutive integers. If the perimeter of the triangle
+        is 48 cm, what are the lengths of the three sides?
+      mathTool: null
+      finalAnswer: The side lengths are 15 cm, 16 cm, and 17 cm.
+      stepByStepGuideline:
+      - Let $x$ represent the length of the shortest side.
+      - Since the sides are consecutive integers, the other two sides are $x + 1$ and $x + 2$.
+      - 'The perimeter is the sum of the sides: $x + (x + 1) + (x + 2) = 48$.'
+      - 'Simplify the equation: $3x + 3 = 48$.'
+      - 'Subtract 3 from both sides: $3x = 45$.'
+      - 'Solve for $x$: $x = 15$.'
+      - 'Determine the lengths of all three sides: 15 cm, 15 + 1 = 16 cm, and 15 + 2 = 17 cm.'
+      id: q25-2
+      questionGroup: q25
+    - problemText: Alice is currently 7 years older than Ben. In 4 years, the sum of their ages will be 41. How old are Alice
+        and Ben now?
+      mathTool: null
+      finalAnswer: Ben is 13 years old, and Alice is 20 years old.
+      stepByStepGuideline:
+      - Let $B$ represent Ben's current age.
+      - Since Alice is 7 years older, Alice's current age is $B + 7$.
+      - In 4 years, Ben's age will be $B + 4$, and Alice's age will be $(B + 7) + 4 = B + 11$.
+      - 'Set up the equation for the sum of their future ages: $(B + 4) + (B + 11) = 41$.'
+      - 'Simplify the equation: $2B + 15 = 41$.'
+      - 'Subtract 15 from both sides: $2B = 26$.'
+      - 'Solve for $B$: $B = 13$. (Ben''s current age).'
+      - 'Calculate Alice''s current age: $A = 13 + 7 = 20$.'
+      id: q25-3
+      questionGroup: q25
+    - problemText: Two positive numbers have a difference of 10. If the sum of these two numbers is 72, find the value of
+        both numbers.
+      mathTool: null
+      finalAnswer: The numbers are 31 and 41.
+      stepByStepGuideline:
+      - Let $x$ represent the smaller number.
+      - Since the numbers differ by 10, the larger number is $x + 10$.
+      - 'Set up the equation based on their sum: $x + (x + 10) = 72$.'
+      - 'Simplify the equation: $2x + 10 = 72$.'
+      - 'Subtract 10 from both sides: $2x = 62$.'
+      - 'Solve for $x$: $x = 31$ (the smaller number).'
+      - 'Calculate the larger number: $31 + 10 = 41$.'
+      - 'Verify the answer: $41 - 31 = 10$ and $41 + 31 = 72$. The numbers are 31 and 41.'
+      id: q25-4
+      questionGroup: q25
+    - problemText: The length of a rectangular garden is 4 cm more than its width. If the perimeter of the garden is 60 cm,
+        determine the width and the length of the garden.
+      mathTool: null
+      finalAnswer: The width is 13 cm and the length is 17 cm.
+      stepByStepGuideline:
+      - Let $w$ represent the width of the garden in cm.
+      - Since the length is 4 cm more than the width, the length is $w + 4$.
+      - 'Use the perimeter formula $P = 2(l + w)$. Substitute the known values: $60 = 2((w + 4) + w)$.'
+      - 'Simplify the equation inside the parentheses: $60 = 2(2w + 4)$.'
+      - 'Distribute the 2: $60 = 4w + 8$.'
+      - 'Subtract 8 from both sides: $52 = 4w$.'
+      - 'Solve for $w$: $w = 52 / 4 = 13$. (Width is 13 cm).'
+      - 'Calculate the length: $l = 13 + 4 = 17$. (Length is 17 cm).'
+      id: q25-5
+      questionGroup: q25
+- id: ba-real-world-1
+  nodeNumber: 26
+  title: Real-World Application Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Lisa bought 4 kilograms of shrimp for $3.00 per kg and some fish fillets for $2.00 per fillet. If she spent
+        a total of $20.00, how many fish fillets did she buy?
+      avatarIntro: These problems require you to translate real-world situations into algebraic equations using known formulas
+        for cost, distance, or averages. Take your time to set up the variables correctly!
+      mathTool: null
+      finalAnswer: 4 fish fillets
+      stepByStepGuideline:
+      - Let F be the number of fish fillets Lisa bought.
+      - 'Set up the cost equation: (Cost of shrimp) + (Cost of fish fillets) = Total Cost.'
+      - 4($3.00) + F($2.00) = $20.00.
+      - 'Simplify the equation: 12 + 2F = 20.'
+      - 'Subtract 12 from both sides: 2F = 8.'
+      - 'Solve for F: F = 8 / 2 = 4.'
+      - Lisa bought 4 fish fillets.
+      id: q26-1
+      questionGroup: q26
+    - problemText: A student wants to achieve an average score of 85 across four science tests. If the scores on the first
+        three tests were 78, 88, and 80, what minimum score must the student get on the fourth test to meet the goal?
+      mathTool: null
+      finalAnswer: '94'
+      stepByStepGuideline:
+      - 'Recall the average formula: Average = Sum of scores / Number of tests.'
+      - 'The required total sum of scores for four tests is: Sum = Average × Count = 85 × 4 = 340.'
+      - 'Calculate the sum of the first three scores: 78 + 88 + 80 = 246.'
+      - 'Let x be the score needed on the fourth test. Set up the equation: 246 + x = 340.'
+      - 'Solve for x: x = 340 - 246.'
+      - x = 94. The student must score 94 on the fourth test.
+      id: q26-2
+      questionGroup: q26
+    - problemText: A lorry driver completes a two-part delivery journey. First, they drive 180 km at an average speed of 60
+        km/h. Then, they drive the remaining 100 km at an average speed of 50 km/h. What is the total time, in hours, spent
+        driving?
+      mathTool: null
+      finalAnswer: 5 hours
+      stepByStepGuideline:
+      - Use the formula Time = Distance / Speed (t = d/s) for each part of the journey.
+      - 'Calculate the time for the first part (t₁): t₁ = 180 km / 60 km/h = 3 hours.'
+      - 'Calculate the time for the second part (t₂): t₂ = 100 km / 50 km/h = 2 hours.'
+      - 'Calculate the total time: Total Time = t₁ + t₂ = 3 hours + 2 hours.'
+      - The total time spent driving is 5 hours.
+      id: q26-3
+      questionGroup: q26
+    - problemText: Ken starts his day with $40.00. He buys 6 comic books, each costing $4.50. Write an equation to represent
+        the amount of money, M, Ken has left, and calculate the final amount.
+      mathTool: null
+      finalAnswer: $13.00
+      stepByStepGuideline:
+      - 'Determine the total cost of the comic books: Total Cost = Quantity × Price = 6 × $4.50 = $27.00.'
+      - 'Set up the equation for the remaining money, M: M = Starting Money - Total Cost.'
+      - M = $40.00 - $27.00.
+      - 'Calculate the final amount: M = $13.00.'
+      - Ken has $13.00 left.
+      id: q26-4
+      questionGroup: q26
+    - problemText: Three students in a study group have an average height of 160 cm. Five other students in a second group
+        have an average height of 176 cm. If the two groups combine, what is the average height of all eight students?
+      mathTool: null
+      finalAnswer: 170 cm
+      stepByStepGuideline:
+      - 'Calculate the total sum of heights for the first group: Sum₁ = Average × Count = 160 cm × 3 = 480 cm.'
+      - 'Calculate the total sum of heights for the second group: Sum₂ = Average × Count = 176 cm × 5 = 880 cm.'
+      - 'Calculate the total sum of heights for all students: Total Sum = 480 cm + 880 cm = 1360 cm.'
+      - The total number of students is 3 + 5 = 8.
+      - 'Calculate the overall average height: Overall Average = Total Sum / Total Count = 1360 / 8.'
+      - The average height of all eight students is 170 cm.
+      id: q26-5
+      questionGroup: q26

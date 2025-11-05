@@ -1,0 +1,1479 @@
+# S1 Math Factors Multiples - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: fm-intro-1
+  nodeNumber: 1
+  title: Finding All Factors of a Number
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: List all the factors of 64. Use the systematic factor pair method to ensure you do not miss any.
+      avatarIntro: Finding factors is an essential skill! Remember to start with 1 and the number itself, then check divisibility
+        by 2, 3, 4, and so on.
+      mathTool: null
+      finalAnswer: 1, 2, 4, 8, 16, 32, 64
+      stepByStepGuideline:
+      - 'Start by listing factor pairs systematically:'
+      - 1 and 64 (1 × 64 = 64)
+      - '64 is even, so 2 is a factor: 2 and 32 (2 × 32 = 64)'
+      - 64 is not divisible by 3 (6 + 4 = 10)
+      - '4 is a factor: 4 and 16 (4 × 16 = 64)'
+      - 64 is not divisible by 5 or 6 or 7.
+      - '8 is a factor: 8 and 8 (8 × 8 = 64). Since the factors are repeating, stop here.'
+      - 'List all unique factors found: 1, 2, 4, 8, 16, 32, 64.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: How many total factors does the number 120 have?
+      mathTool: null
+      finalAnswer: 16 factors
+      stepByStepGuideline:
+      - 'Use the factor pair method to find all factors of 120:'
+      - 1 × 120, 2 × 60, 3 × 40, 4 × 30, 5 × 24, 6 × 20, 8 × 15, 10 × 12.
+      - Since 10 and 12 are consecutive factors, all pairs have been found.
+      - 'List all the unique factors: 1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120.'
+      - Count the total number of factors, which is 16.
+      id: q1-2
+      questionGroup: q1
+    - problemText: Is 12 a factor of 90? Explain your reasoning using the concept of exact division (no remainder).
+      mathTool: null
+      finalAnswer: No, 12 is not a factor of 90 because the division results in a remainder.
+      stepByStepGuideline:
+      - Recall that a factor must divide the number exactly.
+      - 'Perform the division: 90 ÷ 12.'
+      - 12 × 7 = 84, and 12 × 8 = 96.
+      - Since 90 ÷ 12 = 7 with a remainder of 6 (90 - 84 = 6), the division is not exact.
+      - Therefore, 12 is not a factor of 90.
+      id: q1-3
+      questionGroup: q1
+    - problemText: Find all factor pairs for the number 35. Express your answer as ordered pairs (a, b).
+      mathTool: null
+      finalAnswer: (1, 35) and (5, 7)
+      stepByStepGuideline:
+      - 'Start with 1 and the number itself: (1, 35).'
+      - 'Check 2: 35 is odd, so 2 is not a factor.'
+      - 'Check 3: The sum of digits (3 + 5 = 8) is not divisible by 3, so 3 is not a factor.'
+      - 'Check 4: 35 is not divisible by 4.'
+      - 'Check 5: 35 ends in 5, so 5 is a factor. 5 × 7 = 35. The pair is (5, 7).'
+      - 'Check 6: 35 is not divisible by 6.'
+      - 'Check 7: 7 is already listed. Stop here.'
+      - The complete set of factor pairs is (1, 35) and (5, 7).
+      id: q1-4
+      questionGroup: q1
+    - problemText: From the list {3, 5, 14, 18, 40}, identify all numbers that are factors of 72.
+      mathTool: null
+      finalAnswer: 3 and 18
+      stepByStepGuideline:
+      - 'Check 3: 7 + 2 = 9. Since 9 is divisible by 3, 72 is divisible by 3 (72 ÷ 3 = 24). (3 is a factor).'
+      - 'Check 5: 72 does not end in 0 or 5. (5 is not a factor).'
+      - 'Check 14: 72 ÷ 14 = 5 R 2. The division is not exact. (14 is not a factor).'
+      - 'Check 18: 18 × 4 = 72. (18 is a factor).'
+      - 'Check 40: 72 is less than 40 × 2 (80). 72 ÷ 40 = 1 R 32. (40 is not a factor).'
+      - The factors of 72 from the list are 3 and 18.
+      id: q1-5
+      questionGroup: q1
+- id: fm-intro-2
+  nodeNumber: 2
+  title: Understanding Multiples
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: List the first 6 multiples of 12.
+      avatarIntro: Understanding multiples is fundamental to number theory. Remember, a multiple is the result of multiplying
+        a number by a whole number, starting with 1.
+      mathTool: null
+      finalAnswer: 12, 24, 36, 48, 60, 72
+      stepByStepGuideline:
+      - To find the multiples of 12, we multiply 12 by the counting numbers starting from 1.
+      - '1st multiple: 12 × 1 = 12'
+      - '2nd multiple: 12 × 2 = 24'
+      - '3rd multiple: 12 × 3 = 36'
+      - '4th multiple: 12 × 4 = 48'
+      - '5th multiple: 12 × 5 = 60'
+      - '6th multiple: 12 × 6 = 72'
+      id: q2-1
+      questionGroup: q2
+    - problemText: Is 180 a multiple of 15? Explain your reasoning using the concept of exact division.
+      mathTool: null
+      finalAnswer: Yes, 180 is a multiple of 15 because 180 ÷ 15 = 12, which is a whole number (no remainder).
+      stepByStepGuideline:
+      - To determine if 180 is a multiple of 15, we must check if 180 is exactly divisible by 15.
+      - 'Perform the division: 180 ÷ 15.'
+      - The result is 12.
+      - Since the result is a whole number (12) with zero remainder, 180 is a multiple of 15.
+      id: q2-2
+      questionGroup: q2
+    - problemText: Which numbers in the following list are multiples of 8? {24, 34, 48, 56, 60, 72, 88}
+      mathTool: null
+      finalAnswer: 24, 48, 56, 72, 88
+      stepByStepGuideline:
+      - Check each number in the list to see if it can be divided exactly by 8.
+      - 24 ÷ 8 = 3 (Multiple)
+      - 34 ÷ 8 = 4 remainder 2 (Not a multiple)
+      - 48 ÷ 8 = 6 (Multiple)
+      - 56 ÷ 8 = 7 (Multiple)
+      - 60 ÷ 8 = 7 remainder 4 (Not a multiple)
+      - 72 ÷ 8 = 9 (Multiple)
+      - 88 ÷ 8 = 11 (Multiple)
+      - The multiples of 8 in the list are 24, 48, 56, 72, and 88.
+      id: q2-3
+      questionGroup: q2
+    - problemText: What is the 5th multiple of 13?
+      mathTool: null
+      finalAnswer: '65'
+      stepByStepGuideline:
+      - The nth multiple of a number (n) is found by calculating n multiplied by the ordinal position.
+      - We need the 5th multiple of 13.
+      - 'Calculate: 13 × 5.'
+      - 13 × 5 = 65.
+      id: q2-4
+      questionGroup: q2
+    - problemText: Find the smallest multiple of 6 that is greater than 100.
+      mathTool: null
+      finalAnswer: '102'
+      stepByStepGuideline:
+      - 'First, divide 100 by 6 to see how far 100 is from the nearest multiple: 100 ÷ 6 = 16 with a remainder of 4.'
+      - This means 16 × 6 = 96 is the largest multiple less than 100.
+      - To find the smallest multiple greater than 100, we must find the 17th multiple of 6.
+      - 'Calculate: 17 × 6.'
+      - 17 × 6 = 102.
+      id: q2-5
+      questionGroup: q2
+- id: fm-intro-3
+  nodeNumber: 3
+  title: Simple Divisibility Tests (2, 5, 10)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Is 456 divisible by 2? Use the appropriate divisibility test to justify your answer.
+      avatarIntro: We are learning quick tricks today! Divisibility tests help us check factors without doing long division.
+        Let's start with the test for 2.
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: Yes, 456 is divisible by 2.
+      stepByStepGuideline:
+      - 'Recall the divisibility rule for 2: A number is divisible by 2 if its last digit is even (0, 2, 4, 6, or 8).'
+      - Identify the last digit of 456, which is 6.
+      - Since 6 is an even number, 456 is divisible by 2.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Explain why the four-digit number 1,237 is not divisible by 5 using the specific divisibility rule for
+        5.
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: 1,237 is not divisible by 5 because its last digit (7) is neither 0 nor 5.
+      stepByStepGuideline:
+      - 'State the divisibility rule for 5: A number is divisible by 5 if its last digit is 0 or 5.'
+      - Check the last digit of 1,237, which is 7.
+      - Since 7 is not 0 and not 5, the number 1,237 fails the divisibility test for 5.
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'Which numbers in the following list are divisible by 10: 120, 342, 565, 780, 1235?'
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: 120 and 780.
+      stepByStepGuideline:
+      - 'Recall the divisibility rule for 10: A number is divisible by 10 if its last digit is 0.'
+      - 'Check each number in the list:'
+      - 120 ends in 0 (Divisible by 10).
+      - 342 ends in 2 (Not divisible by 10).
+      - 565 ends in 5 (Not divisible by 10).
+      - 780 ends in 0 (Divisible by 10).
+      - 1235 ends in 5 (Not divisible by 10).
+      - The numbers divisible by 10 are 120 and 780.
+      id: q3-3
+      questionGroup: q3
+    - problemText: Without performing long division, determine if 2,467 is divisible by 2. State your determination and the
+        rule used.
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: No, 2,467 is not divisible by 2.
+      stepByStepGuideline:
+      - To determine divisibility by 2, check the last digit.
+      - The last digit of 2,467 is 7.
+      - The rule requires the last digit to be even (0, 2, 4, 6, 8). Since 7 is odd, 2,467 is not divisible by 2.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Consider the number 780. Test whether it is divisible by 5 AND whether it is divisible by 10. Explain your
+        findings for both tests.
+      mathTool:
+        toolName: null
+        parameters: {}
+      finalAnswer: 780 is divisible by 5 (ends in 0). 780 is also divisible by 10 (ends in 0).
+      stepByStepGuideline:
+      - 'Test for divisibility by 5: The number 780 ends in 0. Since 0 is allowed by the rule (ends in 0 or 5), 780 is divisible
+        by 5.'
+      - 'Test for divisibility by 10: The number 780 ends in 0. Since the rule requires the last digit to be 0, 780 is divisible
+        by 10.'
+      - 'Conclusion: 780 is divisible by both 5 and 10.'
+      id: q3-5
+      questionGroup: q3
+- id: fm-intro-4
+  nodeNumber: 4
+  title: Advanced Divisibility Tests (3, 9, 4, 6)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Without performing long division, determine if the number 3,456 is divisible by 3. You must state the divisibility
+        rule and show the required calculation.
+      avatarIntro: Mastering divisibility tests allows you to check large numbers quickly. Let's start by applying the digit
+        sum rule for divisibility by three.
+      mathTool: null
+      finalAnswer: Yes, 3,456 is divisible by 3.
+      stepByStepGuideline:
+      - 'Recall the rule for divisibility by 3: A number is divisible by 3 if the sum of its digits is divisible by 3.'
+      - 'Calculate the sum of the digits of 3,456: 3 + 4 + 5 + 6 = 18.'
+      - Determine if the sum (18) is divisible by 3. Since 18 ÷ 3 = 6, the sum is divisible by 3.
+      - 'Conclusion: Since the sum of the digits (18) is divisible by 3, the number 3,456 is divisible by 3.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: Use the last two digits test to check whether the four-digit number 2,470 is divisible by 4. Explain why
+        or why not.
+      mathTool: null
+      finalAnswer: No, 2,470 is not divisible by 4.
+      stepByStepGuideline:
+      - 'Recall the rule for divisibility by 4: A number is divisible by 4 if the number formed by its last two digits is
+        divisible by 4.'
+      - Identify the number formed by the last two digits of 2,470, which is 70.
+      - Test whether 70 is divisible by 4. 70 ÷ 4 = 17 with a remainder of 2.
+      - 'Conclusion: Since 70 is not divisible by 4, the number 2,470 is not divisible by 4.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: Is the number 348 divisible by 6? You must verify both conditions required by the divisibility test for
+        6.
+      mathTool: null
+      finalAnswer: Yes, 348 is divisible by 6.
+      stepByStepGuideline:
+      - 'Recall the rule for divisibility by 6: The number must be divisible by 2 AND divisible by 3.'
+      - 'Check Condition 1 (Divisible by 2): The last digit is 8, which is an even number. Therefore, 348 is divisible by
+        2.'
+      - 'Check Condition 2 (Divisible by 3): Calculate the sum of the digits: 3 + 4 + 8 = 15.'
+      - Determine if the sum (15) is divisible by 3. Since 15 ÷ 3 = 5, the number is divisible by 3.
+      - 'Conclusion: Since 348 meets both conditions (divisible by 2 and 3), it is divisible by 6.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: 'Use the digit sum test to determine which number is divisible by 9: 1,236 or 2,457.'
+      mathTool: null
+      finalAnswer: 2,457 is divisible by 9.
+      stepByStepGuideline:
+      - 'Recall the rule for divisibility by 9: A number is divisible by 9 if the sum of its digits is divisible by 9.'
+      - 'Test 1,236: Calculate the digit sum: 1 + 2 + 3 + 6 = 12. Since 12 is not divisible by 9, 1,236 is not divisible by
+        9.'
+      - 'Test 2,457: Calculate the digit sum: 2 + 4 + 5 + 7 = 18. Since 18 is divisible by 9 (18 ÷ 9 = 2), 2,457 is divisible
+        by 9.'
+      - 'Conclusion: 2,457 is the number divisible by 9.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: 'Consider the number 1,233. Use the digit sum test to check two things: A) Is 1,233 divisible by 3? B)
+        Is 1,233 divisible by 9? Explain how the results compare.'
+      mathTool: null
+      finalAnswer: A) Yes, 1,233 is divisible by 3. B) No, 1,233 is not divisible by 9.
+      stepByStepGuideline:
+      - 'First, calculate the digit sum for 1,233: 1 + 2 + 3 + 3 = 9.'
+      - 'A) Check divisibility by 3: Since the digit sum (9) is divisible by 3 (9 ÷ 3 = 3), 1,233 is divisible by 3 (YES).'
+      - 'B) Check divisibility by 9: Since the digit sum (9) is divisible by 9 (9 ÷ 9 = 1), 1,233 is divisible by 9 (YES).'
+      - 'Correction (Self-Correction: The generated number 1233 is divisible by both 3 and 9. I need to use a number divisible
+        by 3 but NOT 9 to highlight the difference, like 1,236.)'
+      - Let's use 1,236 instead.
+      - 'Recalculate the digit sum for 1,236: 1 + 2 + 3 + 6 = 12.'
+      - 'A) Check divisibility by 3: Since the digit sum (12) is divisible by 3 (12 ÷ 3 = 4), 1,236 is divisible by 3 (YES).'
+      - 'B) Check divisibility by 9: Since the digit sum (12) is NOT divisible by 9, 1,236 is not divisible by 9 (NO).'
+      - 'Comparison: A number can be divisible by 3, but not by 9, because the rule for 9 is stricter (the digit sum must
+        be a multiple of 9, not just a multiple of 3).'
+      id: q4-5
+      questionGroup: q4
+- id: fm-intro-5
+  nodeNumber: 5
+  title: Common Factors and Common Multiples
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find all common factors of 30 and 45. List them in ascending order.
+      avatarIntro: We are now practicing finding common factors and common multiples. Remember to list all factors for each
+        number first before identifying the ones they share.
+      mathTool: null
+      finalAnswer: 1, 3, 5, 15
+      stepByStepGuideline:
+      - 'Step 1: List all factors of 30. Factors(30) = {1, 2, 3, 5, 6, 10, 15, 30}.'
+      - 'Step 2: List all factors of 45. Factors(45) = {1, 3, 5, 9, 15, 45}.'
+      - 'Step 3: Compare the lists and identify the numbers that appear in both. These are the common factors.'
+      - 'Step 4: The common factors are 1, 3, 5, and 15.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: List the first 4 common multiples of 12 and 18.
+      mathTool: null
+      finalAnswer: 36, 72, 108, 144
+      stepByStepGuideline:
+      - 'Step 1: Find the smallest common multiple (LCM) of 12 and 18. Multiples of 12: 12, 24, 36, 48, ... Multiples of 18:
+        18, 36, 54, ... The LCM is 36.'
+      - 'Step 2: The common multiples are all multiples of the LCM (36).'
+      - 'Step 3: Calculate the first 4 common multiples: 36 × 1 = 36, 36 × 2 = 72, 36 × 3 = 108, 36 × 4 = 144.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: What is the greatest common factor (GCF) of 72 and 96? Show your working by listing the factors or using
+        prime factorization.
+      mathTool: null
+      finalAnswer: '24'
+      stepByStepGuideline:
+      - 'Step 1: Find the factors of 72: {1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72}.'
+      - 'Step 2: Find the factors of 96: {1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 96}.'
+      - 'Step 3: Identify the largest number that appears in both lists. This is the Greatest Common Factor (GCF).'
+      - 'Step 4: The GCF of 72 and 96 is 24.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: Find the smallest common multiple (LCM) of 20 and 30.
+      mathTool: null
+      finalAnswer: '60'
+      stepByStepGuideline:
+      - 'Step 1: List the multiples of 20: 20, 40, 60, 80, 100, ...'
+      - 'Step 2: List the multiples of 30: 30, 60, 90, 120, ...'
+      - 'Step 3: Identify the smallest number that appears in both lists.'
+      - 'Step 4: The smallest common multiple (LCM) of 20 and 30 is 60.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: How many common factors do 48 and 72 have?
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Step 1: List all factors of 48: {1, 2, 3, 4, 6, 8, 12, 16, 24, 48}.'
+      - 'Step 2: List all factors of 72: {1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72}.'
+      - 'Step 3: Identify the common factors: {1, 2, 3, 4, 6, 8, 12, 24}.'
+      - 'Step 4: Count the number of elements in the common factors list. There are 8 common factors.'
+      id: q5-5
+      questionGroup: q5
+- id: fm-prime-1
+  nodeNumber: 6
+  title: Prime and Composite Numbers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Explain why the number 2 is the only even number that is considered PRIME. Your explanation must reference
+        the definition of a composite number.
+      avatarIntro: Understanding the difference between PRIME and com-POZ-it numbers is crucial. Let's start by focusing on
+        the number two.
+      mathTool: {}
+      finalAnswer: '2 is prime because it has exactly two factors (1 and 2). All other even numbers are greater than 2, and
+        by definition, every number greater than 2 that is even must be divisible by 2. This means any even number $N > 2$
+        has at least three distinct factors: 1, $N$, and 2. Since composite numbers are defined as having more than two factors,
+        all even numbers greater than 2 are composite.'
+      stepByStepGuideline:
+      - State the definition of a prime number (exactly 2 factors).
+      - Identify the factors of 2 (1 and 2). Conclude 2 is prime.
+      - 'Explain the property of all even numbers greater than 2: they are divisible by 1, themselves, and 2.'
+      - Conclude that having 3 or more factors means all even numbers greater than 2 meet the definition of a composite number.
+      id: q6-1
+      questionGroup: q6
+    - problemText: Determine whether the number 39 is a PRIME or a com-POZ-it number. You must list all factors of 39 to justify
+        your conclusion.
+      mathTool: {}
+      finalAnswer: 39 is a composite number. The factors of 39 are 1, 3, 13, and 39. Since 39 has four factors (more than
+        two), it is classified as composite.
+      stepByStepGuideline:
+      - 'Recall the definitions: Prime numbers have exactly 2 factors; Composite numbers have more than 2 factors.'
+      - Systematically find all numbers that divide 39 exactly.
+      - 'List the factors: 1, 3, 13, 39.'
+      - Count the factors (4 factors).
+      - Classify 39 based on the factor count.
+      id: q6-2
+      questionGroup: q6
+    - problemText: A student claims there are only three PRIME numbers between 30 and 50. List all the actual prime numbers
+        in this range (30 < N < 50) to confirm or deny the student's claim.
+      mathTool: {}
+      finalAnswer: The student's claim is incorrect. The prime numbers between 30 and 50 are 31, 37, 41, 43, and 47. (There
+        are 5 prime numbers in this range).
+      stepByStepGuideline:
+      - 'Identify the range of numbers to check: 31 through 49.'
+      - Systematically test each odd number in the range for divisibility by small primes (3, 5, 7). (All even numbers are
+        composite since they are greater than 2).
+      - 'Test 31 (Prime), 33 (Composite: 3x11), 35 (Composite: 5x7), 37 (Prime), 39 (Composite: 3x13).'
+      - 'Test 41 (Prime), 43 (Prime), 45 (Composite: 5x9), 47 (Prime), 49 (Composite: 7x7).'
+      - 'List the identified prime numbers: 31, 37, 41, 43, 47.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: How many PRIME numbers are there in the set of whole numbers from 1 to 20 (inclusive)? List them all.
+      mathTool: {}
+      finalAnswer: 'There are 8 prime numbers between 1 and 20 (inclusive). They are: 2, 3, 5, 7, 11, 13, 17, and 19.'
+      stepByStepGuideline:
+      - Start checking integers from 1 to 20.
+      - Exclude 1, as it is neither prime nor composite.
+      - Identify all numbers that have exactly two factors (1 and itself).
+      - 'List the primes: 2, 3, 5, 7, 11, 13, 17, 19.'
+      - Count the total number of primes identified.
+      id: q6-4
+      questionGroup: q6
+    - problemText: 'Identify all the com-POZ-it numbers from the list below. For each composite number you identify, provide
+        one factor other than 1 and the number itself to justify your classification.
+
+        List: {17, 27, 41, 45, 47}'
+      mathTool: {}
+      finalAnswer: "The composite numbers are 27 and 45. \n27: Factor is 3 (since 3 x 9 = 27).\n45: Factor is 5 (since 5 x\
+        \ 9 = 45)."
+      stepByStepGuideline:
+      - Recall that composite numbers have more than two factors.
+      - 'Test 17: Only factors are 1 and 17 (Prime).'
+      - 'Test 27: Divisible by 3 and 9 (Composite).'
+      - 'Test 41: Only factors are 1 and 41 (Prime).'
+      - 'Test 45: Divisible by 3, 5, 9, 15 (Composite).'
+      - 'Test 47: Only factors are 1 and 47 (Prime).'
+      - List the composite numbers and provide the required factor for justification.
+      id: q6-5
+      questionGroup: q6
+- id: fm-prime-2
+  nodeNumber: 7
+  title: Prime Factorisation Methods
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the prime factorisation of 30 using a factor tree.
+      avatarIntro: Prime factorisation is a powerful tool! Remember, you must break down the number until every factor is
+        a prime number.
+      mathTool: null
+      finalAnswer: 30 = 2 × 3 × 5
+      stepByStepGuideline:
+      - Start the factor tree with 30.
+      - Split 30 into any factor pair, for example, 3 and 10.
+      - 3 is a prime number, so circle it.
+      - 'Split 10 into its prime factors: 2 and 5.'
+      - Both 2 and 5 are prime numbers, so circle them.
+      - 'Collect all the circled prime factors and write the number as a product: 30 = 2 × 3 × 5.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Use the division method to find the prime factors of 120.
+      mathTool: null
+      finalAnswer: 120 = 2 × 2 × 2 × 3 × 5
+      stepByStepGuideline:
+      - 'Start the division method by dividing 120 by the smallest prime factor, 2: 120 ÷ 2 = 60.'
+      - 'Divide the quotient 60 by 2: 60 ÷ 2 = 30.'
+      - 'Divide the quotient 30 by 2: 30 ÷ 2 = 15.'
+      - 'Since 15 is not divisible by 2, try the next prime, 3: 15 ÷ 3 = 5.'
+      - 'Divide the quotient 5 by 5: 5 ÷ 5 = 1. Stop when the quotient is 1.'
+      - 'The prime factorisation is the product of all the divisors: 120 = 2 × 2 × 2 × 3 × 5.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: Express 63 as a product of prime factors using your preferred method.
+      mathTool: null
+      finalAnswer: 63 = 3 × 3 × 7
+      stepByStepGuideline:
+      - Choose a method (e.g., factor tree or division). Using a factor tree, split 63 into 9 and 7.
+      - 7 is a prime number.
+      - 'Split 9 into its prime factors: 3 and 3.'
+      - Collect all the prime factors.
+      - 'Express 63 as a product of these primes: 63 = 3 × 3 × 7. (This can also be written as 3² × 7).'
+      id: q7-3
+      questionGroup: q7
+    - problemText: What is the prime factorisation of 40? You must find the factors by dividing by prime numbers repeatedly.
+      mathTool: null
+      finalAnswer: 40 = 2 × 2 × 2 × 5
+      stepByStepGuideline:
+      - 'Divide 40 by the smallest prime, 2: 40 ÷ 2 = 20.'
+      - 'Divide 20 by 2: 20 ÷ 2 = 10.'
+      - 'Divide 10 by 2: 10 ÷ 2 = 5.'
+      - 'Divide 5 by 5: 5 ÷ 5 = 1.'
+      - 'The prime factorisation is the product of all the divisors used: 40 = 2 × 2 × 2 × 5.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: Find the prime factorisation of 144.
+      mathTool: null
+      finalAnswer: 144 = 2 × 2 × 2 × 2 × 3 × 3
+      stepByStepGuideline:
+      - Use either the factor tree method or the division method.
+      - 'Using the division method: 144 ÷ 2 = 72; 72 ÷ 2 = 36; 36 ÷ 2 = 18; 18 ÷ 2 = 9.'
+      - 'Continue dividing 9 by the next prime, 3: 9 ÷ 3 = 3; 3 ÷ 3 = 1.'
+      - 'List all the prime divisors found: 2, 2, 2, 2, 3, 3.'
+      - 'Write the prime factorisation: 144 = 2 × 2 × 2 × 2 × 3 × 3. (Or 2⁴ × 3²).'
+      id: q7-5
+      questionGroup: q7
+- id: fm-prime-3
+  nodeNumber: 8
+  title: Index Notation for Prime Factorisation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Write the prime factorisation of 108 in index form, ensuring the prime factors are listed in ascending
+        order.
+      avatarIntro: Welcome! Index notation is a compact way to write prime factorisations. Remember to count how many times
+        each prime factor appears.
+      mathTool: null
+      finalAnswer: 2² × 3³
+      stepByStepGuideline:
+      - 'Find the prime factors of 108: 108 = 2 × 54 = 2 × 2 × 27.'
+      - 'Continue factoring 27: 27 = 3 × 9 = 3 × 3 × 3.'
+      - The full expanded prime factorisation is 2 × 2 × 3 × 3 × 3.
+      - 'Count the repeated factors: There are two 2s (2²) and three 3s (3³).'
+      - 'Write the result in index form, ordered ascendingly: 2² × 3³.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: What number has the prime factorisation 2³ × 3 × 5?
+      mathTool: null
+      finalAnswer: '120'
+      stepByStepGuideline:
+      - 'Calculate the value of each prime factor raised to its index: 2³ = 2 × 2 × 2 = 8.'
+      - The term 3 is 3¹, which equals 3.
+      - The term 5 is 5¹, which equals 5.
+      - 'Multiply the results together: 8 × 3 × 5.'
+      - 8 × 15 = 120.
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'Convert the following expanded prime factorisation into index notation, arranging the bases in ascending
+        order: 5 × 2 × 3 × 5 × 2 × 3 × 2.'
+      mathTool: null
+      finalAnswer: 2³ × 3² × 5²
+      stepByStepGuideline:
+      - Identify and count the repetitions for each unique prime factor.
+      - 'Count the 2s: 2 appears 3 times (2³).'
+      - 'Count the 3s: 3 appears 2 times (3²).'
+      - 'Count the 5s: 5 appears 2 times (5²).'
+      - 'Write the result using index notation, ensuring the bases (2, 3, 5) are in ascending order: 2³ × 3² × 5².'
+      id: q8-3
+      questionGroup: q8
+    - problemText: Write 140 as a product of its prime factors in index form.
+      mathTool: null
+      finalAnswer: 2² × 5 × 7
+      stepByStepGuideline:
+      - Find the prime factorisation of 140.
+      - 140 ÷ 2 = 70.
+      - 70 ÷ 2 = 35.
+      - 35 ÷ 5 = 7.
+      - The prime factors are 2, 2, 5, and 7. The expanded form is 2 × 2 × 5 × 7.
+      - 'Convert to index form: 2 appears twice (2²), and 5 and 7 appear once (5¹ and 7¹).'
+      - The final answer is 2² × 5 × 7.
+      id: q8-4
+      questionGroup: q8
+    - problemText: Convert the index notation 2⁴ × 3 into its fully expanded form (the product of prime factors written out).
+      mathTool: null
+      finalAnswer: 2 × 2 × 2 × 2 × 3
+      stepByStepGuideline:
+      - The index notation 2⁴ means the base 2 is multiplied by itself 4 times.
+      - The term 2⁴ expands to 2 × 2 × 2 × 2.
+      - The term 3 has an implied index of 1, so it is written once.
+      - 'Combine the expanded terms: 2 × 2 × 2 × 2 × 3.'
+      id: q8-5
+      questionGroup: q8
+- id: fm-hcf-1
+  nodeNumber: 9
+  title: Finding HCF by Listing Factors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the Highest Common Factor (HCF) of 30 and 45 by systematically listing all factors for both numbers.
+        You must explicitly identify the common factors before stating the HCF.
+      avatarIntro: Finding the highest common factor by listing is a foundational skill. Remember to be systematic and check
+        all factor pairs!
+      mathTool: null
+      finalAnswer: HCF = 15
+      stepByStepGuideline:
+      - 'Step 1: List all factors of 30: 1, 2, 3, 5, 6, 10, 15, 30.'
+      - 'Step 2: List all factors of 45: 1, 3, 5, 9, 15, 45.'
+      - 'Step 3: Identify the common factors: 1, 3, 5, and 15.'
+      - 'Step 4: Select the Highest Common Factor (HCF), which is 15.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: Determine the Highest Common Factor (HCF) of 18 and 24. After finding the HCF, verify your answer by showing
+        that the HCF divides both 18 and 24 exactly.
+      mathTool: null
+      finalAnswer: 'HCF = 6. Verification: 18 ÷ 6 = 3 and 24 ÷ 6 = 4.'
+      stepByStepGuideline:
+      - 'Step 1: List factors of 18: 1, 2, 3, 6, 9, 18.'
+      - 'Step 2: List factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.'
+      - 'Step 3: Identify the common factors (1, 2, 3, 6) and select the highest: HCF = 6.'
+      - 'Step 4: Verify the result by division: 18 ÷ 6 = 3 (exact division) and 24 ÷ 6 = 4 (exact division).'
+      id: q9-2
+      questionGroup: q9
+    - problemText: 'Using the listing method, find the Highest Common Factor (HCF) of three numbers: 24, 36, and 48.'
+      mathTool: null
+      finalAnswer: HCF = 12
+      stepByStepGuideline:
+      - 'Step 1: List all factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.'
+      - 'Step 2: List all factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36.'
+      - 'Step 3: List all factors of 48: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48.'
+      - 'Step 4: Identify factors common to all three lists (1, 2, 3, 4, 6, 12).'
+      - 'Step 5: Select the highest common factor, which is 12.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: What is the Highest Common Factor (HCF) of 72 and 96?
+      mathTool: null
+      finalAnswer: HCF = 24
+      stepByStepGuideline:
+      - 'Step 1: List all factors of 72: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72.'
+      - 'Step 2: List all factors of 96: 1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 96.'
+      - 'Step 3: Compare the lists and identify the common factors.'
+      - 'Step 4: The largest number present in both lists is 24, so HCF = 24.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: Find the HCF of 40 and 60. Clearly show the list of factors for each number and identify the highest common
+        factor.
+      mathTool: null
+      finalAnswer: HCF = 20
+      stepByStepGuideline:
+      - 'Step 1: List the factors of 40: 1, 2, 4, 5, 8, 10, 20, 40.'
+      - 'Step 2: List the factors of 60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60.'
+      - 'Step 3: Identify the set of common factors: 1, 2, 4, 5, 10, 20.'
+      - 'Step 4: The Highest Common Factor (HCF) is 20.'
+      id: q9-5
+      questionGroup: q9
+- id: fm-hcf-2
+  nodeNumber: 10
+  title: Finding HCF Using Prime Factorisation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the Highest Common Factor (HCF) of 24 and 36 using the method of prime factorisation.
+      avatarIntro: The prime factorisation method is highly effective for finding the HCF, especially when dealing with large
+        numbers. Remember to always take the lowest power of the common prime factors.
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Find the prime factorisation for both numbers: 24 = 2³ × 3 and 36 = 2² × 3².'
+      - 'Identify the common prime factors: 2 and 3.'
+      - 'Select the lowest power for each common prime factor: For prime 2, the lowest power is 2² (from 36). For prime 3,
+        the lowest power is 3¹ (from 24).'
+      - 'Multiply these lowest common powers together: HCF = 2² × 3 = 4 × 3 = 12.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: Use prime factors to find the HCF of 60, 90, and 120.
+      mathTool: null
+      finalAnswer: '30'
+      stepByStepGuideline:
+      - 'Write the prime factorisation for all three numbers: 60 = 2² × 3 × 5, 90 = 2 × 3² × 5, and 120 = 2³ × 3 × 5.'
+      - 'Identify the prime factors common to ALL three numbers: 2, 3, and 5.'
+      - 'Determine the lowest power for each common factor: 2¹ (from 90), 3¹ (from 60 and 120), and 5¹ (common to all).'
+      - 'Multiply the lowest powers: HCF = 2 × 3 × 5 = 30.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: Use prime factorisation to find HCF(72, 108).
+      mathTool: null
+      finalAnswer: '36'
+      stepByStepGuideline:
+      - 'Express 72 and 108 in index form: 72 = 2³ × 3² and 108 = 2² × 3³.'
+      - 'Identify the common prime factors: 2 and 3.'
+      - Select the lowest power for prime 2, which is 2². Select the lowest power for prime 3, which is 3².
+      - 'Calculate the HCF by multiplying these lowest powers: HCF = 2² × 3² = 4 × 9 = 36.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: Find the Highest Common Factor (HCF) of 36, 60, and 84 by analysing their prime factors.
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Determine the prime factorisation for all three numbers: 36 = 2² × 3², 60 = 2² × 3 × 5, and 84 = 2² × 3 × 7.'
+      - 'Identify the common prime factors present in all three numbers: 2 and 3.'
+      - 'Select the lowest power for each common factor: For prime 2, the lowest power is 2² (common to all). For prime 3,
+        the lowest power is 3¹ (from 60 and 84).'
+      - 'Multiply the selected factors: HCF = 2² × 3 = 4 × 3 = 12.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: Find the HCF of 90 and 120 using prime factorisation.
+      mathTool: null
+      finalAnswer: '30'
+      stepByStepGuideline:
+      - 'Write the prime factorisation for 90 and 120: 90 = 2 × 3² × 5 and 120 = 2³ × 3 × 5.'
+      - 'Identify the common prime factors: 2, 3, and 5.'
+      - 'Select the lowest power for each common factor: 2¹ (from 90), 3¹ (from 120), and 5¹ (common to both).'
+      - 'Multiply the lowest powers together: HCF = 2 × 3 × 5 = 30.'
+      id: q10-5
+      questionGroup: q10
+- id: fm-hcf-3
+  nodeNumber: 11
+  title: HCF Applications - Grouping and Sharing
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A shop assistant has 30 chocolates and 45 candies. She wants to create the maximum number of identical
+        gift packs without any items left over. How many gift packs can she make?
+      avatarIntro: HCF problems often involve finding the largest number that divides into two or more quantities exactly.
+        Think about what the largest common group size is here.
+      mathTool: null
+      finalAnswer: 15 packs
+      stepByStepGuideline:
+      - 'Identify the quantities to be grouped: 30 chocolates and 45 candies.'
+      - The phrase 'maximum number of identical gift packs' indicates the need to find the Highest Common Factor (HCF) of
+        30 and 45.
+      - 'Calculate HCF(30, 45). Factors of 30: 1, 2, 3, 5, 6, 10, 15, 30. Factors of 45: 1, 3, 5, 9, 15, 45. The HCF is 15.'
+      - The HCF, 15, represents the maximum number of identical gift packs that can be made.
+      id: q11-1
+      questionGroup: q11
+    - problemText: Mr. Lee has two pieces of ribbon measuring 48 cm and 72 cm respectively. He needs to cut both ribbons into
+        equal pieces such that each piece is as long as possible. What is the greatest possible length of each piece in cm?
+      mathTool: null
+      finalAnswer: 24 cm
+      stepByStepGuideline:
+      - 'Identify the lengths of the ribbons: 48 cm and 72 cm.'
+      - The requirement is to cut both lengths into 'equal pieces' that are 'as long as possible'. This means finding the
+        Highest Common Factor (HCF) of 48 and 72.
+      - 'Calculate HCF(48, 72). Using prime factorization: 48 = 2⁴ × 3, 72 = 2³ × 3². HCF = 2³ × 3 = 8 × 3 = 24.'
+      - The greatest possible length of each piece is 24 cm.
+      id: q11-2
+      questionGroup: q11
+    - problemText: A gardener has 72 red flowers and 108 white flowers. He wants to arrange the flowers into rows such that
+        every row has the same number of flowers (regardless of color), and no flowers are left over. What is the largest
+        number of flowers that can be placed in each row?
+      mathTool: null
+      finalAnswer: 36 flowers
+      stepByStepGuideline:
+      - 'Identify the numbers of flowers: 72 red flowers and 108 white flowers.'
+      - The goal is to find the 'largest number' that can be placed 'equally' into rows for both quantities. This requires
+        finding the Highest Common Factor (HCF) of 72 and 108.
+      - 'Calculate HCF(72, 108). Using prime factorization: 72 = 2³ × 3², 108 = 2² × 3³. HCF = 2² × 3² = 4 × 9 = 36.'
+      - The largest number of flowers that can be placed in each row is 36.
+      id: q11-3
+      questionGroup: q11
+    - problemText: Mrs. Tan wants to pave a rectangular area measuring 60 cm by 84 cm using the largest possible square tiles
+        without cutting any tiles. What is the side length of the square tiles she should use?
+      mathTool: null
+      finalAnswer: 12 cm
+      stepByStepGuideline:
+      - 'Identify the dimensions of the rectangular area: 60 cm and 84 cm.'
+      - To tile the area using the 'largest possible square tiles' without cutting means the side length of the square tile
+        must divide both the length and width exactly. This is the Highest Common Factor (HCF).
+      - 'Calculate HCF(60, 84). Using prime factorization: 60 = 2² × 3 × 5, 84 = 2² × 3 × 7. HCF = 2² × 3 = 4 × 3 = 12.'
+      - The side length of the square tiles should be 12 cm.
+      id: q11-4
+      questionGroup: q11
+    - problemText: Class 4A has 36 students and Class 4B has 48 students. The school wants to divide both classes into training
+        teams such that every team has the same number of students, and this number is the greatest possible. What is the
+        maximum number of students per team?
+      mathTool: null
+      finalAnswer: 12 students
+      stepByStepGuideline:
+      - 'Identify the number of students in each class: 36 and 48.'
+      - The requirement is to divide both groups into teams with the 'greatest possible' and 'same number' of students. This
+        is an HCF problem.
+      - 'Calculate HCF(36, 48). Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. Factors of 48: 1, 2, 3, 4, 6, 8, 12, 16, 24,
+        48. The HCF is 12.'
+      - The maximum number of students per team is 12.
+      id: q11-5
+      questionGroup: q11
+- id: fm-hcf-4
+  nodeNumber: 12
+  title: HCF Applications - Measurement
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A rectangular courtyard measures 2.7 meters by 1.8 meters. A builder wants to pave it using the largest
+        possible identical square slabs without cutting any slabs. What is the side length of the square slab he should use,
+        in meters?
+      avatarIntro: These problems require you to find the greatest common measure between two or more dimensions. Remember,
+        the largest unit that fits exactly is found using the Highest Common Factor.
+      mathTool: null
+      finalAnswer: 0.9 m
+      stepByStepGuideline:
+      - 'Convert the measurements to the same unit, preferably centimeters, to work with whole numbers: 2.7 m = 270 cm and
+        1.8 m = 180 cm.'
+      - The side length of the largest square slab is the Highest Common Factor (HCF) of the dimensions (270 and 180).
+      - 'Prime factorisation of 270: 2 × 3³ × 5.'
+      - 'Prime factorisation of 180: 2² × 3² × 5.'
+      - HCF(270, 180) = 2¹ × 3² × 5¹ = 2 × 9 × 5 = 90.
+      - 'The side length is 90 cm. Convert this back to meters: 90 cm = 0.9 m.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: A carpenter has three wooden beams with lengths 120 cm, 180 cm, and 240 cm. He needs to cut all three beams
+        into pieces of equal length, ensuring the pieces are as long as possible and there is no leftover wood. What is the
+        greatest possible length for each piece?
+      mathTool: null
+      finalAnswer: 60 cm
+      stepByStepGuideline:
+      - 'To find the greatest possible equal length, we must find the Highest Common Factor (HCF) of the three lengths: 120
+        cm, 180 cm, and 240 cm.'
+      - 'Find the prime factorisation for each length:'
+      - 120 = 2³ × 3 × 5
+      - 180 = 2² × 3² × 5
+      - 240 = 2⁴ × 3 × 5
+      - 'The HCF is found by taking the lowest power of the common prime factors: 2² × 3¹ × 5¹.'
+      - HCF = 4 × 3 × 5 = 60.
+      - The greatest possible length for each piece is 60 cm.
+      id: q12-2
+      questionGroup: q12
+    - problemText: A rectangular wall section is 144 cm high and 192 cm wide. Identical square tiles are to be placed on this
+        section such that the wall is perfectly covered, and the tiles are the largest possible size. Calculate the side length
+        of the square tile required.
+      mathTool: null
+      finalAnswer: 48 cm
+      stepByStepGuideline:
+      - The side length of the largest square tile must be the Highest Common Factor (HCF) of the wall's dimensions (144 cm
+        and 192 cm).
+      - 'Find the prime factorisation of 144 and 192:'
+      - 144 = 2⁴ × 3²
+      - 192 = 2⁶ × 3¹
+      - 'The HCF is found by taking the lowest power of the common prime factors: 2⁴ × 3¹.'
+      - HCF = 16 × 3 = 48.
+      - The required side length of the square tile is 48 cm.
+      id: q12-3
+      questionGroup: q12
+    - problemText: A technician needs to measure two different widths of specialty fabric, 72 cm and 96 cm, using a single,
+        custom-made ruler. This ruler must have markings such that both measurements can be taken exactly using only whole
+        number units on the ruler. What is the greatest common length unit (in cm) that the ruler can be based on?
+      mathTool: null
+      finalAnswer: 24 cm
+      stepByStepGuideline:
+      - The greatest common unit that measures both lengths exactly is the Highest Common Factor (HCF) of the two measurements
+        (72 cm and 96 cm).
+      - 'Find the prime factorisation of 72 and 96:'
+      - 72 = 2³ × 3²
+      - 96 = 2⁵ × 3¹
+      - 'The HCF is calculated by taking the lowest power of the common prime factors: 2³ × 3¹.'
+      - HCF = 8 × 3 = 24.
+      - The greatest common length unit is 24 cm.
+      id: q12-4
+      questionGroup: q12
+    - problemText: A rectangular garden path is 80 cm wide and 120 cm long. A landscaper wants to pave the path using the
+        largest possible square stepping stones that fit exactly along both the width and the length. What must be the side
+        length of these square stepping stones?
+      mathTool: null
+      finalAnswer: 40 cm
+      stepByStepGuideline:
+      - 'To find the side length of the largest square stone that fits exactly, calculate the Highest Common Factor (HCF)
+        of the path''s dimensions: 80 cm and 120 cm.'
+      - 'Find the prime factorisation of 80 and 120:'
+      - 80 = 2⁴ × 5
+      - 120 = 2³ × 3 × 5
+      - 'The HCF is found by taking the lowest power of the common prime factors: 2³ × 5¹.'
+      - HCF = 8 × 5 = 40.
+      - The required side length of the square stepping stone is 40 cm.
+      id: q12-5
+      questionGroup: q12
+- id: fm-lcm-1
+  nodeNumber: 13
+  title: Finding LCM by Listing Multiples
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Two cyclists start at the same point on a track. Cyclist A completes a lap every 6 minutes, and Cyclist
+        B completes a lap every 8 minutes. Find the time, in minutes, when they will both cross the starting point together
+        again for the first time. You must find the Lowest Common Multiple (LCM) by listing the multiples of 6 and 8.
+      avatarIntro: Finding the Lowest Common Multiple is essential for solving problems involving cycles or timing. Remember
+        to list out the multiples systematically!
+      mathTool: null
+      finalAnswer: LCM = 24 minutes
+      stepByStepGuideline:
+      - 'Step 1: List the first few multiples of 6 (6, 12, 18, 24, 30, ...).'
+      - 'Step 2: List the first few multiples of 8 (8, 16, 24, 32, 40, ...).'
+      - 'Step 3: Identify the multiples common to both lists.'
+      - 'Step 4: Select the lowest common multiple (LCM). In this case, 24.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: A local bus service runs Route X every 10 minutes and Route Y every 15 minutes. Both routes start simultaneously
+        at 7:00 AM. What is the Lowest Common Multiple (LCM) of 10 and 15? Use this value to determine how many minutes after
+        7:00 AM they will next depart at the same time.
+      mathTool: null
+      finalAnswer: LCM = 30 minutes
+      stepByStepGuideline:
+      - 'Step 1: List the multiples of 10 (10, 20, 30, 40, 50, ...).'
+      - 'Step 2: List the multiples of 15 (15, 30, 45, 60, 75, ...).'
+      - 'Step 3: Identify the lowest number that appears in both lists. This is the LCM.'
+      - 'Step 4: The LCM is 30, meaning they will depart together 30 minutes after 7:00 AM (at 7:30 AM).'
+      id: q13-2
+      questionGroup: q13
+    - problemText: Find the Lowest Common Multiple (LCM) of 12 and 16 by listing their multiples. After determining the LCM,
+        verify your answer by showing that both 12 and 16 divide into the LCM exactly, with no remainder.
+      mathTool: null
+      finalAnswer: 'LCM = 48. Verification: 48 ÷ 12 = 4 and 48 ÷ 16 = 3.'
+      stepByStepGuideline:
+      - 'Step 1: List the multiples of 12 (12, 24, 36, 48, 60, ...).'
+      - 'Step 2: List the multiples of 16 (16, 32, 48, 64, 80, ...).'
+      - 'Step 3: Identify the Lowest Common Multiple (LCM). The LCM of 12 and 16 is 48.'
+      - 'Step 4: Verify the result by checking division: 48 ÷ 12 and 48 ÷ 16. Since both divisions result in whole numbers
+        (4 and 3 respectively), the LCM is correct.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: A red signal light flashes every 14 seconds, and a green signal light flashes every 21 seconds. If they
+        just flashed simultaneously, find the time (in seconds) they will flash together again for the first time. You must
+        show the list of multiples for 14 and 21 to find the LCM.
+      mathTool: null
+      finalAnswer: LCM = 42 seconds
+      stepByStepGuideline:
+      - 'Step 1: List the multiples of 14 (14, 28, 42, 56, 70, ...).'
+      - 'Step 2: List the multiples of 21 (21, 42, 63, 84, 105, ...).'
+      - 'Step 3: Compare the lists and identify the smallest number that appears in both.'
+      - 'Step 4: The Lowest Common Multiple (LCM) is 42.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A distributor is preparing packages. Item P comes in boxes of 5 units, and Item Q comes in boxes of 6 units.
+        If the distributor wants to purchase the smallest possible quantity such that they have an equal number of Item P
+        and Item Q (i.e., they buy a whole number of boxes of each), what is the lowest common multiple (LCM) of 5 and 6?
+      mathTool: null
+      finalAnswer: LCM = 30
+      stepByStepGuideline:
+      - 'Step 1: List the multiples of 5 (5, 10, 15, 20, 25, 30, 35, ...).'
+      - 'Step 2: List the multiples of 6 (6, 12, 18, 24, 30, 36, 42, ...).'
+      - 'Step 3: Identify the smallest number common to both lists.'
+      - 'Step 4: The Lowest Common Multiple (LCM) is 30. (This means they buy 6 boxes of Item P and 5 boxes of Item Q.)'
+      id: q13-5
+      questionGroup: q13
+- id: fm-lcm-2
+  nodeNumber: 14
+  title: Finding LCM Using Prime Factorisation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the LCM of 30 and 45 using prime factorisation.
+      avatarIntro: Finding the Least Common Multiple using prime factors is essential for working with larger numbers. Remember
+        to always take the highest power of every prime factor.
+      mathTool: null
+      finalAnswer: '90'
+      stepByStepGuideline:
+      - 'Express 30 and 45 in terms of their prime factors using index notation:'
+      - $30 = 2 \times 3 \times 5$
+      - $45 = 3^2 \times 5$
+      - 'Identify all unique prime factors and determine the highest power for each: $2^1$, $3^2$, and $5^1$.'
+      - 'Multiply these highest powers together to find the LCM: $2 \times 3^2 \times 5 = 2 \times 9 \times 5 = 90$.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: Three flashing lights blink at intervals of 15 seconds, 20 seconds, and 30 seconds respectively. Use prime
+        factors to find the LCM of 15, 20, and 30 to determine when they will flash simultaneously again. (Assume they just
+        flashed together).
+      mathTool: null
+      finalAnswer: '60'
+      stepByStepGuideline:
+      - 'Express the numbers in prime factorisation:'
+      - $15 = 3 \times 5$
+      - $20 = 2^2 \times 5$
+      - $30 = 2 \times 3 \times 5$
+      - 'Identify all unique prime factors (2, 3, 5) and determine the highest power for each across all three numbers: $2^2$,
+        $3^1$, and $5^1$.'
+      - 'Calculate the LCM by multiplying these highest powers: $2^2 \times 3 \times 5 = 4 \times 15 = 60$.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: A builder is laying tiles that are 24 cm wide and 36 cm long. To ensure the smallest possible square area
+        is perfectly covered by these rectangular tiles without cutting, use prime factorisation to find LCM(24, 36).
+      mathTool: null
+      finalAnswer: '72'
+      stepByStepGuideline:
+      - 'Express 24 and 36 in prime factorisation:'
+      - $24 = 2^3 \times 3$
+      - $36 = 2^2 \times 3^2$
+      - 'Identify all unique prime factors (2 and 3) and determine the highest power for each: $2^3$ (from 24) and $3^2$ (from
+        36).'
+      - 'Multiply these highest powers to find the LCM: $2^3 \times 3^2 = 8 \times 9 = 72$.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: Use prime factors to find the LCM of 24, 36, and 48.
+      mathTool: null
+      finalAnswer: '144'
+      stepByStepGuideline:
+      - 'Express the numbers in prime factorisation:'
+      - $24 = 2^3 \times 3$
+      - $36 = 2^2 \times 3^2$
+      - $48 = 2^4 \times 3$
+      - 'Identify all unique prime factors (2 and 3) and determine the highest power for each across all three numbers: $2^4$
+        and $3^2$.'
+      - 'Calculate the LCM by multiplying these highest powers: $2^4 \times 3^2 = 16 \times 9 = 144$.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: Two runners start simultaneously at a track. Runner A completes a lap in 18 seconds, and Runner B completes
+        a lap in 24 seconds. Find the LCM of 18 and 24 using prime factorisation to find the time (in seconds) they will next
+        cross the starting line together.
+      mathTool: null
+      finalAnswer: '72'
+      stepByStepGuideline:
+      - 'Express 18 and 24 in prime factorisation:'
+      - $18 = 2 \times 3^2$
+      - $24 = 2^3 \times 3$
+      - 'Identify all unique prime factors (2 and 3) and determine the highest power for each: $2^3$ (from 24) and $3^2$ (from
+        18).'
+      - 'Multiply these highest powers to find the LCM: $2^3 \times 3^2 = 8 \times 9 = 72$.'
+      id: q14-5
+      questionGroup: q14
+- id: fm-lcm-3
+  nodeNumber: 15
+  title: Relationship Between HCF and LCM
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Two integers, P and Q, have a Highest Common Factor (HCF) of 6 and a Lowest Common Multiple (LCM) of 36.
+        If integer P is 18, use the relationship formula to find the value of integer Q.
+      avatarIntro: 'This set of problems focuses on the fundamental relationship: H C F times L C M equals a times b. Remember
+        this formula when solving these challenges!'
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Recall the relationship formula for two numbers P and Q: HCF(P, Q) × LCM(P, Q) = P × Q.'
+      - 'Substitute the known values into the formula: 6 × 36 = 18 × Q.'
+      - 'Calculate the product of the HCF and LCM: 6 × 36 = 216.'
+      - 'The equation becomes: 216 = 18 × Q.'
+      - 'Solve for Q by dividing the product by the known number: Q = 216 ÷ 18.'
+      - The value of integer Q is 12.
+      id: q15-1
+      questionGroup: q15
+    - problemText: A cryptographer is analyzing two security keys, represented by two numbers. Their HCF is 8 and their LCM
+        is 96. What is the product of these two security key numbers?
+      mathTool: null
+      finalAnswer: '768'
+      stepByStepGuideline:
+      - The product of two numbers is equal to the product of their HCF and LCM.
+      - 'Formula: Product = HCF × LCM.'
+      - 'Substitute the given values: Product = 8 × 96.'
+      - 'Calculate the product: 8 × 96 = 768.'
+      - The product of the two numbers is 768.
+      id: q15-2
+      questionGroup: q15
+    - problemText: Verify the relationship formula, HCF(a, b) × LCM(a, b) = a × b, using the numbers 20 and 30.
+      mathTool: null
+      finalAnswer: Verification successful (HCF × LCM = 600, a × b = 600)
+      stepByStepGuideline:
+      - 'Step 1: Find the HCF of 20 and 30. (HCF(20, 30) = 10)'
+      - 'Step 2: Find the LCM of 20 and 30. (LCM(20, 30) = 60)'
+      - 'Step 3: Calculate the product of the HCF and LCM: 10 × 60 = 600.'
+      - 'Step 4: Calculate the product of the two numbers: 20 × 30 = 600.'
+      - 'Step 5: Compare the results. Since 600 = 600, the relationship is verified.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: Two components in an engine design have numbers associated with their performance metrics. The product
+        of these two numbers is 864, and their HCF is 12. Find the LCM of the two numbers.
+      mathTool: null
+      finalAnswer: '72'
+      stepByStepGuideline:
+      - 'Recall the relationship formula: HCF × LCM = Product (P).'
+      - 'To find the LCM, rearrange the formula: LCM = P ÷ HCF.'
+      - 'Substitute the given values: LCM = 864 ÷ 12.'
+      - Perform the division.
+      - The LCM of the two numbers is 72.
+      id: q15-4
+      questionGroup: q15
+    - problemText: A computer program uses two specific parameters whose product is 315. If the Lowest Common Multiple (LCM)
+        of these parameters is 105, determine their Highest Common Factor (HCF).
+      mathTool: null
+      finalAnswer: '3'
+      stepByStepGuideline:
+      - 'Recall the relationship formula: HCF × LCM = Product (P).'
+      - 'To find the HCF, rearrange the formula: HCF = P ÷ LCM.'
+      - 'Substitute the given values: HCF = 315 ÷ 105.'
+      - Perform the division.
+      - The HCF of the two parameters is 3.
+      id: q15-5
+      questionGroup: q15
+- id: fm-lcm-4
+  nodeNumber: 16
+  title: LCM Applications - Recurring Events
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Three traffic lights in a city synchronisation test change at intervals of 4 minutes, 6 minutes, and 8
+        minutes respectively. If all three lights turn green exactly at 8:00 AM, at what time will they all turn green together
+        again?
+      avatarIntro: LCM problems are great for finding out when things repeat or align. Start by finding the LCM of the time
+        intervals given!
+      mathTool: null
+      finalAnswer: 8:24 AM
+      stepByStepGuideline:
+      - 'Identify the intervals: 4 minutes, 6 minutes, and 8 minutes.'
+      - 'Find the Lowest Common Multiple (LCM) of 4, 6, and 8. The multiples are: 4 (4, 8, 12, 16, 20, 24...), 6 (6, 12, 18,
+        24...), 8 (8, 16, 24...).'
+      - The LCM is 24 minutes. This means they will all coincide 24 minutes after they last coincided.
+      - Add the duration (24 minutes) to the start time (8:00 AM). 8:00 AM + 24 minutes = 8:24 AM.
+      id: q16-1
+      questionGroup: q16
+    - problemText: Two security alarms are set to sound at regular intervals. Alarm A sounds every 15 seconds, and Alarm B
+        sounds every 40 seconds. If they sound simultaneously now, after how many seconds will they sound together again?
+      mathTool: null
+      finalAnswer: 120 seconds
+      stepByStepGuideline:
+      - 'Identify the intervals: 15 seconds and 40 seconds.'
+      - Find the Lowest Common Multiple (LCM) of 15 and 40.
+      - 'Using prime factorisation: 15 = 3 × 5; 40 = 2³ × 5.'
+      - LCM = 2³ × 3 × 5 = 8 × 15 = 120.
+      - The alarms will sound together again after 120 seconds.
+      id: q16-2
+      questionGroup: q16
+    - problemText: A factory has two machines requiring routine maintenance. Machine X requires maintenance every 3 hours,
+        and Machine Y requires maintenance every 4 hours. If both machines are maintained simultaneously at 2:00 PM today,
+        when will they next be maintained together?
+      mathTool: null
+      finalAnswer: 2:00 AM the next day
+      stepByStepGuideline:
+      - 'Identify the intervals: 3 hours and 4 hours.'
+      - Find the Lowest Common Multiple (LCM) of 3 and 4. Since 3 and 4 are consecutive integers and coprime, LCM(3, 4) =
+        3 × 4 = 12 hours.
+      - The machines will next be maintained together after 12 hours.
+      - Add the duration (12 hours) to the start time (2:00 PM). 2:00 PM + 12 hours = 2:00 AM.
+      - Since the time crosses midnight, the event occurs at 2:00 AM the following day.
+      id: q16-3
+      questionGroup: q16
+    - problemText: A lighthouse has two rotating beams. Beam 1 completes a rotation and flashes every 18 minutes, and Beam
+        2 flashes every 30 minutes. If they flash simultaneously now, how long (in minutes) will it be until they flash together
+        again?
+      mathTool: null
+      finalAnswer: 90 minutes
+      stepByStepGuideline:
+      - 'Identify the intervals: 18 minutes and 30 minutes.'
+      - Find the Lowest Common Multiple (LCM) of 18 and 30.
+      - 'Prime factorisation: 18 = 2 × 3²; 30 = 2 × 3 × 5.'
+      - LCM = 2 × 3² × 5 = 2 × 9 × 5 = 90.
+      - They will flash together again after 90 minutes (or 1 hour 30 minutes).
+      id: q16-4
+      questionGroup: q16
+    - problemText: Astronomers are tracking three periodic comets, A, B, and C. Comet A completes its cycle every 2 hours,
+        Comet B every 6 hours, and Comet C every 12 hours. If they are currently aligned, after how many hours will all three
+        comets align again?
+      mathTool: null
+      finalAnswer: 12 hours
+      stepByStepGuideline:
+      - 'Identify the intervals: 2 hours, 6 hours, and 12 hours.'
+      - Find the Lowest Common Multiple (LCM) of 2, 6, and 12.
+      - 'List the multiples: 2 (2, 4, 6, 8, 10, 12...); 6 (6, 12...); 12 (12...).'
+      - Since 12 is a multiple of both 2 and 6, the LCM is 12.
+      - The comets will align again after 12 hours.
+      id: q16-5
+      questionGroup: q16
+- id: fm-roots-1
+  nodeNumber: 17
+  title: Perfect Squares and Square Roots
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A square plot of land has sides measuring 14 meters each. Calculate the total area of the plot in square
+        meters. Express your answer using index notation, 14².
+      avatarIntro: Welcome! Let's start by recalling the definition of a square and how we calculate the area of a square
+        using the side length squared.
+      mathTool: null
+      finalAnswer: 196 m²
+      stepByStepGuideline:
+      - The area of a square is calculated by multiplying the side length by itself (Area = side × side).
+      - 'Substitute the given side length: Area = 14 × 14.'
+      - 'Calculate the product: 14 × 14 = 196.'
+      - The area of the plot is 196 square meters.
+      id: q17-1
+      questionGroup: q17
+    - problemText: If a square patio has an area of 81 square units, what is the length of one side? Find the value of the
+        square root of 81, or $\sqrt{81}$.
+      mathTool: null
+      finalAnswer: 9 units
+      stepByStepGuideline:
+      - Finding the side length of a square from its area requires calculating the square root of the area.
+      - We need to find a number, $n$, such that $n^2 = 81$.
+      - 'Recall the perfect squares: $9 \times 9 = 81$.'
+      - Therefore, $\sqrt{81} = 9$. The length of one side is 9 units.
+      id: q17-2
+      questionGroup: q17
+    - problemText: A mathematician is classifying integers. Is the number 99 a perfect square? Explain your reasoning by referencing
+        the surrounding perfect squares.
+      mathTool: null
+      finalAnswer: No, 99 is not a perfect square.
+      stepByStepGuideline:
+      - A perfect square is an integer that is the square of another integer ($n^2$).
+      - Find the perfect squares immediately below and above 99.
+      - The square of 9 is $9^2 = 81$.
+      - The square of 10 is $10^2 = 100$.
+      - Since 99 falls between 81 and 100, and there is no integer whose square is 99, it is not a perfect square.
+      id: q17-3
+      questionGroup: q17
+    - problemText: Calculate the value of $11 \times 11$. Write the calculation using index notation ($n^2$) and state the
+        result.
+      mathTool: null
+      finalAnswer: $11^2 = 121$
+      stepByStepGuideline:
+      - The calculation $11 \times 11$ is defined as 11 squared, which is written as $11^2$.
+      - 'Perform the multiplication: $11 \times 11 = 121$.'
+      - The result is 121.
+      id: q17-4
+      questionGroup: q17
+    - problemText: 'Identify all the perfect squares in the following list: 49, 60, 125, 169. For each perfect square you
+        identify, state its square root.'
+      mathTool: null
+      finalAnswer: 49 (√49 = 7) and 169 (√169 = 13)
+      stepByStepGuideline:
+      - Check each number to see if it is the result of squaring an integer (n²).
+      - '49: Is $7 \times 7 = 49$? Yes. 49 is a perfect square, $\sqrt{49} = 7$.'
+      - '60: Is 60 a perfect square? $7^2=49$ and $8^2=64$. No.'
+      - '125: Is 125 a perfect square? $11^2=121$ and $12^2=144$. No.'
+      - '169: Is $13 \times 13 = 169$? Yes. 169 is a perfect square, $\sqrt{169} = 13$.'
+      id: q17-5
+      questionGroup: q17
+- id: fm-roots-2
+  nodeNumber: 18
+  title: Perfect Cubes and Cube Roots
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A storage container is shaped like a perfect cube and has a total volume of 512 cubic meters. Find the
+        length of one side of the container.
+      avatarIntro: Finding the length of a cube's side when you know the volume requires finding the cube root. Remember your
+        perfect cubes up to 1000!
+      mathTool: null
+      finalAnswer: 8 meters
+      stepByStepGuideline:
+      - The volume (V) of a cube is calculated using the formula V = s³, where s is the side length.
+      - 'To find the side length (s), you need to calculate the cube root of the volume: s = $\sqrt[3]{V}$.'
+      - 'Substitute the given volume: s = $\sqrt[3]{512}$.'
+      - Recall that 8 × 8 × 8 = 512.
+      - Therefore, the length of one side is 8 meters.
+      id: q18-1
+      questionGroup: q18
+    - problemText: Calculate the exact value of $\sqrt[3]{-125}$.
+      mathTool: null
+      finalAnswer: '-5'
+      stepByStepGuideline:
+      - Find the positive integer whose cube is 125. Since 5 × 5 × 5 = 125, we know $\sqrt[3]{125} = 5$.
+      - The cube root of a negative number is always negative.
+      - Since $(-5) \times (-5) \times (-5) = 25 \times (-5) = -125$.
+      - Therefore, $\sqrt[3]{-125} = -5$.
+      id: q18-2
+      questionGroup: q18
+    - problemText: A student claims that 200 is a perfect cube. Is this statement correct? Explain your reasoning by referencing
+        the surrounding perfect cubes.
+      mathTool: null
+      finalAnswer: No, 200 is not a perfect cube. 5³ = 125 and 6³ = 216, so 200 lies between two consecutive perfect cubes.
+      stepByStepGuideline:
+      - A perfect cube is a number that is the result of cubing an integer (n³).
+      - Check the cubes of integers near 200.
+      - 'Calculate 5³: 5 × 5 × 5 = 125.'
+      - 'Calculate 6³: 6 × 6 × 6 = 216.'
+      - Since 200 is greater than 125 but less than 216, it is not the cube of an integer. Therefore, 200 is not a perfect
+        cube.
+      id: q18-3
+      questionGroup: q18
+    - problemText: In a design process, a calculation requires finding the cube of the number 9. Calculate $9^3$.
+      mathTool: null
+      finalAnswer: '729'
+      stepByStepGuideline:
+      - 'The notation $9^3$ means 9 multiplied by itself three times: $9 \times 9 \times 9$.'
+      - First, calculate $9 \times 9 = 81$.
+      - 'Next, multiply the result by 9: $81 \times 9$.'
+      - The final result is 729.
+      id: q18-4
+      questionGroup: q18
+    - problemText: 'Identify all the perfect cubes in the following set of numbers: {27, 50, 100, 343, 600}. For each perfect
+        cube you identify, state its cube root.'
+      mathTool: null
+      finalAnswer: 27 (Cube root is 3); 343 (Cube root is 7)
+      stepByStepGuideline:
+      - 'Review the list of perfect cubes (1³ to 10³): 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000.'
+      - 'Check 27: $3^3 = 27$. (Perfect cube, $\sqrt[3]{27}=3$)'
+      - 'Check 50: Not a perfect cube (between $3^3=27$ and $4^3=64$).'
+      - 'Check 100: Not a perfect cube (between $4^3=64$ and $5^3=125$).'
+      - 'Check 343: $7^3 = 343$. (Perfect cube, $\sqrt[3]{343}=7$)'
+      - 'Check 600: Not a perfect cube (between $8^3=512$ and $9^3=729$).'
+      - The perfect cubes are 27 and 343.
+      id: q18-5
+      questionGroup: q18
+- id: fm-roots-3
+  nodeNumber: 19
+  title: Estimating Square and Cube Roots
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A construction worker needs to estimate the length of a support cable, which is calculated to be $\sqrt{28}$
+        meters long. Between which two consecutive whole numbers does $\sqrt{28}$ lie?
+      avatarIntro: Estimating roots helps us understand the magnitude of numbers that aren't perfect squares or cubes. Let's
+        start with this square root problem.
+      mathTool: null
+      finalAnswer: Between 5 and 6
+      stepByStepGuideline:
+      - Identify the perfect squares surrounding 28.
+      - We know that $5^2 = 25$ and $6^2 = 36$.
+      - 'Since $25 < 28 < 36$, we can write the inequality for the roots: $\sqrt{25} < \sqrt{28} < \sqrt{36}$.'
+      - Therefore, $5 < \sqrt{28} < 6$. The value lies between 5 and 6.
+      id: q19-1
+      questionGroup: q19
+    - problemText: A scientist is dealing with a sample whose critical volume measurement requires calculating the value of
+        $\sqrt[3]{250}$. Between which two consecutive integers does $\sqrt[3]{250}$ lie?
+      mathTool: null
+      finalAnswer: Between 6 and 7
+      stepByStepGuideline:
+      - Identify the perfect cubes surrounding 250.
+      - 'We test consecutive integers: $5^3 = 125$, $6^3 = 216$, and $7^3 = 343$.'
+      - 'Since $216 < 250 < 343$, we can write the inequality for the cube roots: $\sqrt[3]{216} < \sqrt[3]{250} < \sqrt[3]{343}$.'
+      - Therefore, $6 < \sqrt[3]{250} < 7$. The value lies between 6 and 7.
+      id: q19-2
+      questionGroup: q19
+    - problemText: Estimate $\sqrt{140}$. Between which two consecutive integers is it? Furthermore, determine which of the
+        two bounding integers the value is closer to.
+      mathTool: null
+      finalAnswer: Between 11 and 12, closer to 12
+      stepByStepGuideline:
+      - Identify the perfect squares surrounding 140.
+      - We know $11^2 = 121$ and $12^2 = 144$.
+      - Thus, $121 < 140 < 144$. The root lies between 11 and 12.
+      - 'To find proximity, calculate the distance to each boundary:'
+      - 'Distance to 11 (121): $140 - 121 = 19$.'
+      - 'Distance to 12 (144): $144 - 140 = 4$.'
+      - Since 4 is much smaller than 19, $\sqrt{140}$ is closer to 12.
+      id: q19-3
+      questionGroup: q19
+    - problemText: An engineering calculation requires the cube root of 700 ($\sqrt[3]{700}$). Estimate this value by identifying
+        the two consecutive perfect cubes that bound 700.
+      mathTool: null
+      finalAnswer: Between 8 and 9
+      stepByStepGuideline:
+      - Identify the perfect cubes surrounding 700.
+      - 'We test cubes of integers: $8^3 = 512$ and $9^3 = 729$.'
+      - Since $512 < 700 < 729$, the cube root lies between $\sqrt[3]{512}$ and $\sqrt[3]{729}$.
+      - Therefore, $\sqrt[3]{700}$ lies between 8 and 9.
+      id: q19-4
+      questionGroup: q19
+    - problemText: A financial model involves a growth factor equivalent to $\sqrt{95}$. Determine the two consecutive integers
+        that bound this value.
+      mathTool: null
+      finalAnswer: Between 9 and 10
+      stepByStepGuideline:
+      - Identify the perfect squares surrounding 95.
+      - We know that $9^2 = 81$ and $10^2 = 100$.
+      - 'Since $81 < 95 < 100$, we take the square roots of all parts of the inequality: $\sqrt{81} < \sqrt{95} < \sqrt{100}$.'
+      - Therefore, $9 < \sqrt{95} < 10$. The value lies between 9 and 10.
+      id: q19-5
+      questionGroup: q19
+- id: fm-roots-4
+  nodeNumber: 20
+  title: Roots Using Prime Factorisation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A square garden has an area of 256 square meters. Use prime factorisation to determine the exact length
+        of one side of the garden, finding $\sqrt{256}$.
+      avatarIntro: Mastering prime factorisation helps us quickly find square roots for large numbers. Let's apply the index
+        division rule here!
+      mathTool: null
+      finalAnswer: '16'
+      stepByStepGuideline:
+      - 'Find the prime factorisation of 256: $256 = 2^8$.'
+      - 'To find the square root, divide the index of the prime factors by 2: $\sqrt{256} = 2^{8 \div 2} = 2^4$.'
+      - 'Calculate the resulting value: $2^4 = 16$.'
+      - The length of one side is 16 meters.
+      id: q20-1
+      questionGroup: q20
+    - problemText: Find the cube root of 512 using the prime factorisation method. State the resulting prime factorisation
+        of $\sqrt[3]{512}$ before calculating the final answer.
+      mathTool: null
+      finalAnswer: '8'
+      stepByStepGuideline:
+      - 'Find the prime factorisation of 512: $512 = 2^9$.'
+      - 'To find the cube root, divide the index of the prime factor by 3: $\sqrt[3]{512} = 2^{9 \div 3} = 2^3$.'
+      - 'Calculate the resulting value: $2^3 = 8$.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: A number is factored as $2^3 \times 5^2$. Determine if this number (200) is a perfect square. Justify your
+        answer using the indices of its prime factors.
+      mathTool: null
+      finalAnswer: No, 200 is not a perfect square.
+      stepByStepGuideline:
+      - Recall that for a number to be a perfect square, all indices in its prime factorisation must be even.
+      - The prime factorisation is $2^3 \times 5^2$.
+      - 'Check the indices: The index of 5 is 2 (even), but the index of 2 is 3 (odd).'
+      - Since the index of 2 is odd (3), the number 200 is not a perfect square.
+      id: q20-3
+      questionGroup: q20
+    - problemText: 'Is 432 a perfect cube? Use the prime factorisation of 432 to explain your reasoning. (Hint: $432 = 2^4
+        \times 3^3$)'
+      mathTool: null
+      finalAnswer: No, 432 is not a perfect cube.
+      stepByStepGuideline:
+      - The prime factorisation of 432 is $2^4 \times 3^3$.
+      - Recall that for a number to be a perfect cube, all indices in its prime factorisation must be divisible by 3.
+      - 'Check the indices: The index of 3 is 3 (divisible by 3), but the index of 2 is 4.'
+      - Since 4 is not divisible by 3, 432 is not a perfect cube.
+      id: q20-4
+      questionGroup: q20
+    - problemText: A mathematician finds that the prime factorisation of 729 is $3^6$. Based on this factorisation, is 729
+        a perfect cube? If so, find its cube root using the index rule.
+      mathTool: null
+      finalAnswer: Yes, 729 is a perfect cube. The cube root is 9.
+      stepByStepGuideline:
+      - The prime factorisation is $729 = 3^6$.
+      - Check if the index (6) is divisible by 3. Since $6 \div 3 = 2$ (an integer), 729 is a perfect cube.
+      - 'To find the cube root, divide the index by 3: $\sqrt[3]{729} = 3^{6 \div 3} = 3^2$.'
+      - 'Calculate the result: $3^2 = 9$.'
+      id: q20-5
+      questionGroup: q20

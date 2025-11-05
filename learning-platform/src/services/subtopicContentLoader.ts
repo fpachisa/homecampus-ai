@@ -30,6 +30,7 @@ import { S1_MATH_RATIO_RATE_SPEED_SUBTOPICS } from '../prompt-library/subjects/m
 import { S1_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-percentage';
 import { S1_LINEAR_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
 import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
+import { S1_MATH_DATA_HANDLING_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
 
 export interface SubtopicContent {
   displayName: string;
@@ -58,6 +59,7 @@ class SubtopicContentLoader {
       ...S1_PERCENTAGE_SUBTOPICS,
       ...S1_LINEAR_FUNCTIONS_SUBTOPICS,
       ...S1_MATH_PERIMETER_AREA_SUBTOPICS,
+      ...S1_MATH_DATA_HANDLING_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

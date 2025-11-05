@@ -2,8 +2,8 @@
  * AI-Generated Initial Greetings Cache (BATCH MODE with VARIATION)
  *
  * Generated using BATCH generation via scripts/generateAISamples.ts
- * Generated on: 2025-11-03T07:35:49.134Z
- * Topic filter: s1-math-perimeter (3 subtopics)
+ * Generated on: 2025-11-04T08:28:37.994Z
+ * Topic filter: s1-math-data (6 subtopics)
  * Generation method: Batch (with variation control)
  *
  * Features:
@@ -21,71 +21,102 @@ import type { InitialGreetingResponse } from '../types/types';
 
 export interface CachedGreeting extends InitialGreetingResponse {
   speech: InitialGreetingResponse['speech'] & {
-    /**
-     * Relative path to pre-generated TTS audio file from public directory
-     * Example: '/assets/audio/initial-greetings/s1-math-perimeter-area-parallelograms.mp3'
-     */
     preGeneratedAudioUrl?: string;
   };
 }
 
 export const INITIAL_GREETINGS_AI_GENERATED: Record<string, CachedGreeting> = {
-  's1-math-perimeter-area-parallelograms': {
+  's1-math-data-intro': {
     speech: {
-      text: `Welcome! Before we tackle the slanting sides of parallelograms, let us quickly warm up by reviewing the basics: rectangles and squares. These shapes are the essential building blocks for everything we will calculate next. Let's start with a quick area calculation.`,
+      text: `Welcome aboard! Statistics is like being a detective. It helps us find patterns and meaning in the world around us. Before we start collecting, what is the fundamental difference between data and information?`,
       emotion: 'encouraging',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-perimeter-area-parallelograms.mp3'
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-data-intro.mp3'
     },
     display: {
-      content: `### Review: Rectangles and Squares
+      content: `### What is Statistics and Data?
 
-Welcome! Let's start with a quick review of the fundamentals.
+Explain the distinction between the following two terms in the context of a statistical study:
 
-A square has a side length of 7.5 cm.
-
-What is the area of the square? (Remember to include the correct units.)`,
+1. **Data**
+2. **Information**`,
       showAfterSpeech: true
     }
   },
 
-  's1-math-perimeter-area-trapeziums': {
+  's1-math-data-frequency': {
     speech: {
-      text: `Hey there! Are you ready to explore one of the most interesting and often misunderstood quadrilaterals? Trapeziums are unique because they only require one pair of parallel sides. Understanding their properties is the first step to mastering their area formulas.`,
-      emotion: 'excited',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-perimeter-area-trapeziums.mp3'
+      text: `Hey there! Ready to get organized? Tally marks are the simplest, most effective way to keep track of counts in real time. If you see the marks four vertical lines with one diagonal line across them, what frequency does that represent?`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-data-frequency.mp3'
     },
     display: {
-      content: `### Trapezium Properties and Identification
+      content: `### Using Tally Marks to Count
 
-Let's start by confirming the defining feature of a trapezium (also known as a trapezoid).
+In a frequency count, the standard tally mark group for five items is represented as \$\\cancel{||||}\$.
 
-Which of the following statements correctly describes a trapezium?
-
-A) It has two pairs of parallel sides.
-B) It has exactly one pair of parallel sides.
-C) All four sides are equal in length.
-D) All angles are 90°.`,
+What numerical frequency does this specific group represent?`,
       showAfterSpeech: true
     }
   },
 
-  's1-math-perimeter-area-composite': {
+  's1-math-data-grouped': {
     speech: {
-      text: `Greetings! When facing a complex problem, the best strategy is often to break it down into smaller, manageable pieces. That is exactly what we do with composite figures! We take big, unusual shapes and decompose them into familiar shapes like rectangles and triangles.`,
+      text: `Greetings! As data sets grow larger, they can become overwhelming. Today, we learn the essential skill of grouping data to make it manageable. Imagine you collected the heights of 500 students. Why would using a frequency table with individual heights be ineffective?`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-data-grouped.mp3'
+    },
+    display: {
+      content: `### When and Why to Group Data
+
+Suppose you collected 500 individual data points, such as the exact height of every student in a large school (e.g., 155 cm, 161 cm, 170 cm, etc.).
+
+Why is it necessary to use **grouped data** (class intervals) instead of a simple frequency table listing every unique height?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-data-visual-1': {
+    speech: {
+      text: `Hi! Let's explore how pictures tell a story about numbers. Pictograms use symbols to represent quantities, but we always need to check the key! If one apple symbol represents 5 apples, how many apples are represented by 3 apple symbols?`,
       emotion: 'warm',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-perimeter-area-composite.mp3'
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-data-visual-1.mp3'
     },
     display: {
-      content: `### Breaking Down Composite Shapes
+      content: `### Reading and Interpreting Pictograms
 
-The key to working with composite figures is decomposition.
+A pictogram uses a key where one symbol (🍎) represents 5 units.
 
-Imagine an L-shaped figure. If you wanted to calculate its area, which two basic shapes would you most likely break it down into?
+If a row displays 3 🍎 symbols, what is the total quantity represented?`,
+      showAfterSpeech: true
+    }
+  },
 
-A) A circle and a square
-B) Two rectangles
-C) A trapezium and a triangle
-D) A parallelogram and a rhombus`,
+  's1-math-data-visual-2': {
+    speech: {
+      text: `Hello! Today we slice up the whole! Pie charts are fantastic for showing proportions. Since a full circle is 360 degrees, if a category represents one quarter of the total data, how many degrees should that sector occupy?`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-data-visual-2.mp3'
+    },
+    display: {
+      content: `### Understanding Pie Charts and Proportions
+
+A pie chart represents 100% of the data using a full circle (360°).
+
+If a specific data category accounts for \$\\frac{1}{4}\$ of the total observations, calculate the angle (in degrees) that the corresponding sector should occupy.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's1-math-data-critique': {
+    speech: {
+      text: `A warm welcome to you! Data visualization is not just about drawing, it's about making smart choices. We need to evaluate which chart works best for the data we have. What is the main advantage of a line graph over a bar chart when showing trends over time?`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s1-math-data-critique.mp3'
+    },
+    display: {
+      content: `### Advantages and Disadvantages of Each Diagram Type
+
+When visualizing data that changes continuously over a period (e.g., stock prices, temperature readings), why is a **line graph** generally a more effective choice than a **bar chart**?`,
       showAfterSpeech: true
     }
   }

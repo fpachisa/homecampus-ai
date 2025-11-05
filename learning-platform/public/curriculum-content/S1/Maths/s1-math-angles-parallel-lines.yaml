@@ -1,0 +1,1874 @@
+# S1 Math Angles Parallel Lines Exemplar - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: s1-angles-node-1
+  nodeNumber: 1
+  title: Angle Types and Classification
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Classify the following angle measurement: 60°'
+      avatarIntro: Understanding angle classification is fundamental in geometry. Let's start by identifying the type of angle
+        based on its measure.
+      mathTool: null
+      finalAnswer: Acute angle (because 0° < 60° < 90°)
+      stepByStepGuideline:
+      - Recall the definitions for angle types based on their measure.
+      - An acute angle measures between 0° and 90°.
+      - Since 60° is greater than 0° but less than 90°, it is an acute angle.
+      id: q1-1
+      questionGroup: q1
+    - problemText: What type of angle is exactly 90°?
+      mathTool: null
+      finalAnswer: Right angle (because θ = 90°)
+      stepByStepGuideline:
+      - Identify the angle measure given, which is 90°.
+      - Recall that an angle measuring exactly 90° is defined as a right angle.
+      - The classification is Right angle.
+      id: q1-2
+      questionGroup: q1
+    - problemText: If ∠ABC = 135°, what type of angle is it?
+      mathTool: null
+      finalAnswer: Obtuse angle (because 90° < 135° < 180°)
+      stepByStepGuideline:
+      - The given angle measure is 135°.
+      - An obtuse angle measures between 90° and 180°.
+      - Since 135° falls within this range (it is greater than 90° but less than 180°), it is an obtuse angle.
+      id: q1-3
+      questionGroup: q1
+    - problemText: Classify the angle measuring 180°.
+      mathTool: null
+      finalAnswer: Straight angle (because θ = 180°)
+      stepByStepGuideline:
+      - The angle measure is 180°.
+      - Recall that an angle measuring exactly 180° forms a straight line.
+      - Therefore, it is classified as a straight angle.
+      id: q1-4
+      questionGroup: q1
+    - problemText: What type of angle is 300°?
+      mathTool: null
+      finalAnswer: Reflex angle (because 180° < 300° < 360°)
+      stepByStepGuideline:
+      - The given angle measure is 300°.
+      - A reflex angle measures between 180° and 360°.
+      - Since 300° is greater than 180° but less than 360°, it is classified as a reflex angle.
+      id: q1-5
+      questionGroup: q1
+- id: s1-angles-node-2
+  nodeNumber: 2
+  title: Angle Notation and Measurement
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: In the angle notation $\angle RSQ$, which letter represents the vertex of the angle?
+      avatarIntro: Understanding angle notation is key to geometry! Remember that the vertex always has a special place in
+        the naming convention.
+      mathTool: null
+      finalAnswer: S
+      stepByStepGuideline:
+      - 'Recall the standard three-point notation for angles: $\angle ABC$.'
+      - The middle letter (B) always identifies the vertex of the angle.
+      - In the notation $\angle RSQ$, the middle letter is S.
+      - Therefore, S represents the vertex.
+      id: q2-1
+      questionGroup: q2
+    - problemText: Write the two correct standard notations for the angle at vertex N formed by rays NA and NT.
+      mathTool: null
+      finalAnswer: $\angle ANT$ or $\angle TNA$
+      stepByStepGuideline:
+      - Identify the vertex, which is N.
+      - In standard angle notation, the vertex must always be the middle letter.
+      - 'The two possible correct notations are formed by placing N in the middle and using A and T as the outer points: $\angle
+        ANT$ and $\angle TNA$.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: An angle has its vertex at point D, and its sides pass through points C and E. Is $\angle CDE$ a correct
+        way to denote this angle? Explain your reasoning.
+      mathTool: null
+      finalAnswer: Yes.
+      stepByStepGuideline:
+      - Determine the location of the vertex. The problem states the vertex is at D.
+      - 'Examine the given notation: $\angle CDE$.'
+      - Check if the vertex D is in the middle position.
+      - Since D is the middle letter, the notation $\angle CDE$ is correct because the vertex must always be specified by
+        the central letter in the three-point notation.
+      id: q2-3
+      questionGroup: q2
+    - problemText: Identify the vertex in the angle denoted as $\angle M P L$.
+      mathTool: null
+      finalAnswer: P
+      stepByStepGuideline:
+      - The three-point notation for an angle places the vertex in the middle position.
+      - In $\angle M P L$, the letter in the middle is P.
+      - Therefore, P is the vertex of the angle.
+      id: q2-4
+      questionGroup: q2
+    - problemText: A student writes $\angle FGX$ to denote the angle whose vertex is at point X, formed by rays XF and XG.
+        Is this notation correct? Explain why or why not.
+      mathTool: null
+      finalAnswer: No.
+      stepByStepGuideline:
+      - Identify the specified vertex, which is X.
+      - Recall that the vertex must always be the middle letter in the angle notation.
+      - Examine the student's notation $\angle FGX$. In this notation, G is the middle letter, implying the vertex is G.
+      - Since the required vertex X is not the middle letter, the notation $\angle FGX$ is incorrect. The correct notations
+        would be $\angle FXG$ or $\angle GXF$.
+      id: q2-5
+      questionGroup: q2
+- id: s1-angles-node-3
+  nodeNumber: 3
+  title: Angles at a Point - Numerical
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: anglesAtPoint
+    preWrittenQuestions:
+    - problemText: Three angles, P, Q, and R, meet at a central point O. If $\angle P = 100^\circ$ and $\angle Q = 130^\circ$,
+        find the measure of the third angle, $\angle R$.
+      avatarIntro: Remember, the sum of all angles that meet at a single point must equal 360 degrees. Use this fundamental
+        rule to solve for the missing angle!
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - 100
+          - 130
+          - null
+          showSum: true
+      finalAnswer: R = 130° (because 360° - 230° = 130°)
+      stepByStepGuideline:
+      - The sum of angles at a point is 360°.
+      - 'Calculate the sum of the known angles: $100^\circ + 130^\circ = 230^\circ$.'
+      - 'Subtract the sum of known angles from 360° to find the missing angle R: $360^\circ - 230^\circ = 130^\circ$.'
+      - The measure of angle R is $130^\circ$.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Four angles meet at a common vertex. Three of the angles measure $60^\circ$, $70^\circ$, and $90^\circ$.
+        Calculate the measure of the fourth angle, $x$.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - 60
+          - 70
+          - 90
+          - null
+          showSum: true
+      finalAnswer: x = 140° (because 360° - 220° = 140°)
+      stepByStepGuideline:
+      - Identify that the four angles sum to $360^\circ$.
+      - 'Calculate the sum of the three known angles: $60^\circ + 70^\circ + 90^\circ = 220^\circ$.'
+      - 'Subtract this total from $360^\circ$ to find x: $x = 360^\circ - 220^\circ$.'
+      - The value of $x$ is $140^\circ$.
+      id: q3-2
+      questionGroup: q3
+    - problemText: A full turn around a point O is divided into five angles. Four of these angles are $30^\circ$, $40^\circ$,
+        $50^\circ$, and $60^\circ$. Find the measure of the fifth angle, $y$.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - 30
+          - 40
+          - 50
+          - 60
+          - null
+          showSum: true
+      finalAnswer: y = 180° (because 360° - 180° = 180°)
+      stepByStepGuideline:
+      - 'Sum the four known angles: $30^\circ + 40^\circ + 50^\circ + 60^\circ = 180^\circ$.'
+      - Since all five angles form a complete turn ($360^\circ$), subtract the known sum from $360^\circ$.
+      - $y = 360^\circ - 180^\circ$.
+      - The missing angle $y$ is $180^\circ$.
+      id: q3-3
+      questionGroup: q3
+    - problemText: Three angles, measuring $45^\circ$, $150^\circ$, and $k$, combine to form a complete circle around a central
+        point. Determine the value of $k$.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - 45
+          - 150
+          - null
+          showSum: true
+      finalAnswer: k = 165° (because 360° - 195° = 165°)
+      stepByStepGuideline:
+      - The sum of the three angles must be $360^\circ$.
+      - 'Add the two given angles: $45^\circ + 150^\circ = 195^\circ$.'
+      - 'Calculate $k$ by subtracting the sum from $360^\circ$: $k = 360^\circ - 195^\circ$.'
+      - The value of $k$ is $165^\circ$.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Calculate the unknown angle $z$ if four angles meeting at a point are $80^\circ$, $110^\circ$, $50^\circ$,
+        and $z$.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - 80
+          - 110
+          - 50
+          - null
+          showSum: true
+      finalAnswer: z = 120° (because 360° - 240° = 120°)
+      stepByStepGuideline:
+      - The four angles sum to $360^\circ$.
+      - 'Find the total of the known angles: $80^\circ + 110^\circ + 50^\circ = 240^\circ$.'
+      - 'Subtract the total from $360^\circ$ to find $z$: $z = 360^\circ - 240^\circ$.'
+      - The measure of angle $z$ is $120^\circ$.
+      id: q3-5
+      questionGroup: q3
+- id: s1-angles-node-4
+  nodeNumber: 4
+  title: Angles at a Point - Multiple Unknowns
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: anglesAtPoint
+    preWrittenQuestions:
+    - problemText: Three angles, $A$, $B$, and $C$, meet at a point. These angles are in the ratio $1:2:3$. Find the measure
+        of each angle.
+      avatarIntro: Solving problems with angles around a point requires remembering that they always sum up to 360 degrees.
+        Use algebra to handle these ratios!
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - null
+          - null
+          - null
+          labels:
+          - x
+          - 2x
+          - 3x
+          showSum: true
+      finalAnswer: The angles are 60°, 120°, and 180°.
+      stepByStepGuideline:
+      - Let the angles be represented by $x$, $2x$, and $3x$ based on the ratio $1:2:3$.
+      - 'Since the angles meet at a point, their sum must be $360^{\circ}$: $x + 2x + 3x = 360^{\circ}$.'
+      - 'Combine the terms: $6x = 360^{\circ}$.'
+      - 'Solve for $x$: $x = 360^{\circ} \div 6 = 60^{\circ}$.'
+      - 'Calculate the measure of each angle: Angle A = $x = 60^{\circ}$; Angle B = $2x = 2(60^{\circ}) = 120^{\circ}$; Angle
+        C = $3x = 3(60^{\circ}) = 180^{\circ}$.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: Four angles meet at a central point. Two of the angles measure $80^{\circ}$ and $100^{\circ}$. The remaining
+        two angles, labeled $a$ and $b$, are equal in measure. Find the value of $a$ and $b$.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - 80
+          - 100
+          - null
+          - null
+          labels:
+          - 80°
+          - 100°
+          - a
+          - a
+          showSum: true
+      finalAnswer: $a = 90^{\circ}$ and $b = 90^{\circ}$.
+      stepByStepGuideline:
+      - 'The sum of all four angles must be $360^{\circ}$. Set up the equation: $80^{\circ} + 100^{\circ} + a + b = 360^{\circ}$.'
+      - 'Calculate the sum of the known angles: $80^{\circ} + 100^{\circ} = 180^{\circ}$.'
+      - 'Find the remaining total for $a$ and $b$: $360^{\circ} - 180^{\circ} = 180^{\circ}$. Thus, $a + b = 180^{\circ}$.'
+      - Since $a = b$, we can write $2a = 180^{\circ}$.
+      - 'Solve for $a$: $a = 180^{\circ} \div 2 = 90^{\circ}$. Since $a = b$, then $b = 90^{\circ}$.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'Four angles meet at a point: $60^{\circ}$, $90^{\circ}$, $x$, and $y$. If angle $y$ is twice the measure
+        of angle $x$ (i.e., $y = 2x$), calculate the measures of $x$ and $y$.'
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - 60
+          - 90
+          - null
+          - null
+          labels:
+          - 60°
+          - 90°
+          - x
+          - 2x
+          showSum: true
+      finalAnswer: $x = 70^{\circ}$ and $y = 140^{\circ}$.
+      stepByStepGuideline:
+      - 'The sum of the angles around a point is $360^{\circ}$. Set up the equation: $60^{\circ} + 90^{\circ} + x + y = 360^{\circ}$.'
+      - 'Substitute $y = 2x$ into the equation: $60^{\circ} + 90^{\circ} + x + 2x = 360^{\circ}$.'
+      - 'Simplify the equation: $150^{\circ} + 3x = 360^{\circ}$.'
+      - 'Subtract the known angles from $360^{\circ}$: $3x = 360^{\circ} - 150^{\circ} = 210^{\circ}$.'
+      - 'Solve for $x$: $x = 210^{\circ} \div 3 = 70^{\circ}$.'
+      - 'Calculate $y$: $y = 2x = 2(70^{\circ}) = 140^{\circ}$.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: Five angles meet at a point. Two of the angles measure $40^{\circ}$ and $80^{\circ}$. The remaining three
+        angles are in the ratio $3:4:5$. Find the measure of these three unknown angles.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - 40
+          - 80
+          - null
+          - null
+          - null
+          labels:
+          - 40°
+          - 80°
+          - 3x
+          - 4x
+          - 5x
+          showSum: true
+      finalAnswer: The three unknown angles are 60°, 80°, and 100°.
+      stepByStepGuideline:
+      - 'First, find the sum of the unknown angles by subtracting the known angles from $360^{\circ}$: $360^{\circ} - (40^{\circ}
+        + 80^{\circ}) = 360^{\circ} - 120^{\circ} = 240^{\circ}$.'
+      - Let the three unknown angles be $3x$, $4x$, and $5x$. Their sum is $240^{\circ}$.
+      - 'Set up the equation for the ratio: $3x + 4x + 5x = 240^{\circ}$.'
+      - 'Combine the terms: $12x = 240^{\circ}$.'
+      - 'Solve for $x$: $x = 240^{\circ} \div 12 = 20^{\circ}$.'
+      - 'Calculate the measure of the unknown angles: $3x = 3(20^{\circ}) = 60^{\circ}$; $4x = 4(20^{\circ}) = 80^{\circ}$;
+        $5x = 5(20^{\circ}) = 100^{\circ}$.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: Four angles meet at a point. One angle is a right angle ($90^{\circ}$), and the other three angles ($P$,
+        $Q$, and $R$) are in the ratio $2:3:4$. Determine the measure of angles $P$, $Q$, and $R$.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - 90
+          - null
+          - null
+          - null
+          labels:
+          - 90°
+          - 2x
+          - 3x
+          - 4x
+          showSum: true
+      finalAnswer: P = 60°, Q = 90°, and R = 120°.
+      stepByStepGuideline:
+      - 'Find the total measure allocated to the unknown angles (P, Q, R) by subtracting the known angle from $360^{\circ}$:
+        $360^{\circ} - 90^{\circ} = 270^{\circ}$.'
+      - Let the unknown angles be $2x$, $3x$, and $4x$. Their sum is $270^{\circ}$.
+      - 'Set up the equation: $2x + 3x + 4x = 270^{\circ}$.'
+      - 'Combine the terms: $9x = 270^{\circ}$.'
+      - 'Solve for $x$: $x = 270^{\circ} \div 9 = 30^{\circ}$.'
+      - 'Calculate the measure of P, Q, and R: P = $2x = 2(30^{\circ}) = 60^{\circ}$; Q = $3x = 3(30^{\circ}) = 90^{\circ}$;
+        R = $4x = 4(30^{\circ}) = 120^{\circ}$.'
+      id: q4-5
+      questionGroup: q4
+- id: s1-angles-node-6
+  nodeNumber: 6
+  title: Angles on a Line - Numerical
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: anglesOnLine
+    preWrittenQuestions:
+    - problemText: A straight line is divided into two adjacent angles. If one angle measures $130^{\circ}$, what is the measure
+        of the other angle, $x$?
+      avatarIntro: Welcome to the world of angles! Remember that angles forming a straight line always add up to 180 degrees.
+        Let's use subtraction to find the missing angle.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - 130
+          - null
+          showSum: true
+      finalAnswer: x = 50° (because 180° - 130° = 50°)
+      stepByStepGuideline:
+      - 'Identify the property: Angles on a straight line are supplementary and sum to $180^{\circ}$.'
+      - 'Set up the equation: $130^{\circ} + x = 180^{\circ}$.'
+      - 'Calculate the missing angle: Subtract the known angle from $180^{\circ}$. $x = 180^{\circ} - 130^{\circ}$.'
+      - The result is $x = 50^{\circ}$.
+      id: q6-1
+      questionGroup: q6
+    - problemText: Three angles lie on a straight line. Two of the angles measure $40^{\circ}$ and $70^{\circ}$. Find the
+        measure of the third angle, $x$.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - 40
+          - 70
+          - null
+          showSum: true
+      finalAnswer: x = 70° (because 180° - 110° = 70°)
+      stepByStepGuideline:
+      - Recall that angles on a straight line sum to $180^{\circ}$.
+      - 'Sum the known angles: $40^{\circ} + 70^{\circ} = 110^{\circ}$.'
+      - 'Subtract the total of the known angles from $180^{\circ}$ to find $x$: $x = 180^{\circ} - 110^{\circ}$.'
+      - The missing angle $x$ is $70^{\circ}$.
+      id: q6-2
+      questionGroup: q6
+    - problemText: Four angles are situated adjacent to each other on a straight line. Their measures are $20^{\circ}$, $50^{\circ}$,
+        $60^{\circ}$, and $x$. Determine the value of $x$.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - 20
+          - 50
+          - 60
+          - null
+          showSum: true
+      finalAnswer: x = 50° (because 180° - 130° = 50°)
+      stepByStepGuideline:
+      - The sum of the four angles must be $180^{\circ}$.
+      - 'Add the known angles together: $20^{\circ} + 50^{\circ} + 60^{\circ} = 130^{\circ}$.'
+      - 'Subtract this sum from $180^{\circ}$: $x = 180^{\circ} - 130^{\circ}$.'
+      - The value of $x$ is $50^{\circ}$.
+      id: q6-3
+      questionGroup: q6
+    - problemText: An angle of $90^{\circ}$ (a right angle) and an angle of $30^{\circ}$ are two parts of a straight angle.
+        What is the measure of the third angle, labeled $x$?
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - 90
+          - 30
+          - null
+          showSum: true
+      finalAnswer: x = 60° (because 180° - 120° = 60°)
+      stepByStepGuideline:
+      - The angles form a straight line, so their total sum is $180^{\circ}$.
+      - 'Sum the known angles (the right angle and $30^{\circ}$): $90^{\circ} + 30^{\circ} = 120^{\circ}$.'
+      - 'Calculate $x$ by subtracting the sum from $180^{\circ}$: $x = 180^{\circ} - 120^{\circ}$.'
+      - The missing angle $x$ is $60^{\circ}$.
+      id: q6-4
+      questionGroup: q6
+    - problemText: Two angles, $80^{\circ}$ and $x$, are supplementary because they form a straight line. Calculate the value
+        of $x$.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - 80
+          - null
+          showSum: true
+      finalAnswer: x = 100° (because 180° - 80° = 100°)
+      stepByStepGuideline:
+      - Since the angles form a straight line, they are supplementary, meaning they add up to $180^{\circ}$.
+      - 'Set up the relationship: $80^{\circ} + x = 180^{\circ}$.'
+      - 'Solve for $x$: $x = 180^{\circ} - 80^{\circ}$.'
+      - The value of $x$ is $100^{\circ}$.
+      id: q6-5
+      questionGroup: q6
+- id: s1-angles-node-7
+  nodeNumber: 7
+  title: Angles on a Line - Simple Algebraic
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: anglesOnLine
+    preWrittenQuestions:
+    - problemText: Two adjacent angles, measuring $x$ and $2x$, lie on a straight line. Determine the value of $x$ and the
+        measure of both angles.
+      avatarIntro: Remember that angles forming a straight line are supplementary, meaning their sum must equal 180 degrees.
+        Set up your equation carefully!
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles: null
+          labels:
+          - x
+          - 2x
+          showSum: true
+      finalAnswer: x + 2x = 180°, 3x = 180°, x = 60°. Angles are 60° and 120°.
+      stepByStepGuideline:
+      - 'Since the angles are on a straight line, their sum is 180°. Write the equation: x + 2x = 180°.'
+      - 'Combine the like terms: 3x = 180°.'
+      - 'Solve for x by dividing 180° by 3: x = 60°.'
+      - 'Calculate the measure of each angle: x = 60° and 2x = 2(60°) = 120°.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: A straight line is divided into two angles with measures $x$ and $3x$. Find the measure of the smaller
+        angle and the value of $x$.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles: null
+          labels:
+          - x
+          - 3x
+          showSum: true
+      finalAnswer: x + 3x = 180°, 4x = 180°, x = 45°. Angles are 45° and 135°.
+      stepByStepGuideline:
+      - 'Set the sum of the angles equal to 180°: x + 3x = 180°.'
+      - 'Simplify the equation: 4x = 180°.'
+      - 'Solve for x: x = 180° / 4 = 45°.'
+      - 'Determine the measure of the angles: x = 45° and 3x = 3(45°) = 135°.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: Two supplementary angles have measures of $2x$ and $3x$. Calculate the value of $x$ and the measure of
+        each angle.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles: null
+          labels:
+          - 2x
+          - 3x
+          showSum: true
+      finalAnswer: 2x + 3x = 180°, 5x = 180°, x = 36°. Angles are 72° and 108°.
+      stepByStepGuideline:
+      - 'Since the angles are supplementary (form a straight line), set their sum to 180°: 2x + 3x = 180°.'
+      - 'Combine the terms: 5x = 180°.'
+      - 'Solve for x: x = 180° / 5 = 36°.'
+      - 'Calculate the angle measures: 2x = 2(36°) = 72° and 3x = 3(36°) = 108°.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: A straight angle is partitioned into three adjacent angles measuring $x$, $2x$, and $3x$. Find the value
+        of $x$ and the measure of all three angles.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles: null
+          labels:
+          - x
+          - 2x
+          - 3x
+          showSum: true
+      finalAnswer: x + 2x + 3x = 180°, 6x = 180°, x = 30°. Angles are 30°, 60°, and 90°.
+      stepByStepGuideline:
+      - 'The sum of angles on a straight line is 180°. Write the equation: x + 2x + 3x = 180°.'
+      - 'Combine the variables: 6x = 180°.'
+      - 'Solve for x: x = 180° / 6 = 30°.'
+      - 'Calculate the measure of the three angles: x = 30°, 2x = 60°, and 3x = 90°.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: An angle of $2x$ and an angle of $4x$ form a linear pair. What is the measure of the larger angle?
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles: null
+          labels:
+          - 2x
+          - 4x
+          showSum: true
+      finalAnswer: 2x + 4x = 180°, 6x = 180°, x = 30°. Angles are 60° and 120°.
+      stepByStepGuideline:
+      - 'Since the angles form a linear pair (a straight line), their sum is 180°: 2x + 4x = 180°.'
+      - 'Simplify the equation: 6x = 180°.'
+      - 'Solve for x: x = 180° / 6 = 30°.'
+      - 'Calculate the measure of the two angles: 2x = 2(30°) = 60° and 4x = 4(30°) = 120°.'
+      - The larger angle is 120°.
+      id: q7-5
+      questionGroup: q7
+- id: s1-angles-node-8
+  nodeNumber: 8
+  title: Angles on a Line - Word Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: anglesOnLine
+    preWrittenQuestions:
+    - problemText: Two adjacent angles form a straight line. The larger angle measures 40° more than the smaller angle. Determine
+        the measure of both angles.
+      avatarIntro: Great job tackling these word problems! Remember that angles on a straight line always add up to 180 degrees.
+        Start by defining your variable.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - variable
+          - variable
+          labels:
+          - x
+          - x+40°
+          showSum: true
+      finalAnswer: The angles are 70° and 110°.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = smaller angle.'
+      - 'Express the other angle: Then the larger angle = x + 40°.'
+      - 'Set up the equation using the straight angle property (180°): x + (x + 40°) = 180°.'
+      - 'Solve for x: 2x + 40° = 180°, 2x = 140°, x = 70°.'
+      - 'State both angles: The smaller angle is 70°. The larger angle is 70° + 40° = 110°.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: A straight angle is split into two angles, Angle R and Angle S. Angle S is 20° smaller than Angle R. Calculate
+        the measure of both Angle R and Angle S.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - variable
+          - variable
+          labels:
+          - x
+          - x+20°
+          showSum: true
+      finalAnswer: Angle S is 80° and Angle R is 100°.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = Angle S (the smaller angle).'
+      - 'Express the other angle: Since Angle S is 20° smaller than Angle R, Angle R = x + 20°.'
+      - 'Set up the equation: x + (x + 20°) = 180°.'
+      - 'Solve for x: 2x + 20° = 180°, 2x = 160°, x = 80°.'
+      - 'State both angles: Angle S is 80°. Angle R is 80° + 20° = 100°.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: Two angles, M and N, are supplementary. Angle M is three times the measure of Angle N. What are the measures
+        of M and N?
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - variable
+          - variable
+          labels:
+          - x
+          - 3x
+          showSum: true
+      finalAnswer: Angle N is 45° and Angle M is 135°.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = Angle N (the smaller angle).'
+      - 'Express the other angle: Since Angle M is three times Angle N, Angle M = 3x.'
+      - 'Set up the equation (supplementary angles sum to 180°): x + 3x = 180°.'
+      - 'Solve for x: 4x = 180°, x = 45°.'
+      - 'State both angles: Angle N is 45°. Angle M is 3 * 45° = 135°.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: A linear pair consists of two angles where one angle is half the measure of the other angle. Find the measure
+        of the larger angle.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - variable
+          - variable
+          labels:
+          - x
+          - 0.5x
+          showSum: true
+      finalAnswer: The larger angle is 120°.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = the larger angle.'
+      - 'Express the other angle: The smaller angle is half the measure of the larger angle, so smaller angle = 0.5x.'
+      - 'Set up the equation: x + 0.5x = 180°.'
+      - 'Solve for x: 1.5x = 180°, x = 180 / 1.5, x = 120°.'
+      - 'State both angles: The larger angle is 120°. The smaller angle is 0.5 * 120° = 60°. The required measure is the larger
+        angle, 120°.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: Two angles, P and Q, lie on a straight line. Angle P is 30° less than twice the measure of Angle Q. Calculate
+        the measures of P and Q.
+      mathTool:
+        toolName: anglesOnLine
+        parameters:
+          angles:
+          - variable
+          - variable
+          labels:
+          - x
+          - 2x-30°
+          showSum: true
+      finalAnswer: Angle Q is 70° and Angle P is 110°.
+      stepByStepGuideline:
+      - 'Define the variable: Let x = Angle Q.'
+      - 'Express the other angle: Angle P is 30° less than twice Angle Q, so Angle P = 2x - 30°.'
+      - 'Set up the equation: x + (2x - 30°) = 180°.'
+      - 'Solve for x: 3x - 30° = 180°, 3x = 210°, x = 70°.'
+      - 'State both angles: Angle Q is 70°. Angle P is 2(70°) - 30° = 140° - 30° = 110°.'
+      id: q8-5
+      questionGroup: q8
+- id: s1-angles-node-9
+  nodeNumber: 9
+  title: Vertically Opposite Angles - Basic
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: verticallyOppositeAngles
+    preWrittenQuestions:
+    - problemText: Two straight lines, Line L and Line M, intersect at Point P. If the angle in the top quadrant measures
+        50°, find the measure of all four angles formed by the intersection.
+      avatarIntro: Understanding vertically opposite angles is fundamental in geometry. Remember that angles opposite each
+        other when two lines cross are always equal!
+      mathTool:
+        toolName: verticallyOppositeAngles
+        parameters:
+          angles:
+          - 50
+          - null
+          - null
+          - null
+      finalAnswer: The four angles are 50°, 130°, 50°, 130°.
+      stepByStepGuideline:
+      - 'Identify the angle vertically opposite to the given angle: Opposite angle = 50° (vertically opposite).'
+      - 'Calculate the measure of the adjacent angles using the straight line property: Adjacent angles = 180° - 50° = 130°
+        (angles on a line).'
+      - 'List all four angle measures in order: 50°, 130°, 50°, 130°.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: When a pair of scissors is opened, two lines intersect. If the angle inside the blades (Angle A) measures
+        130°, what is the measure of the angle vertically opposite to Angle A?
+      mathTool:
+        toolName: verticallyOppositeAngles
+        parameters:
+          angles:
+          - 130
+          - null
+          - null
+          - null
+      finalAnswer: The angle vertically opposite to Angle A measures 130°.
+      stepByStepGuideline:
+      - 'Identify the angle vertically opposite to the given angle: Opposite angle = 130° (vertically opposite).'
+      - 'Calculate the measure of the adjacent angles: Adjacent angles = 180° - 130° = 50° (angles on a line).'
+      - 'State the required value: The angle vertically opposite is 130°.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: In a standard X-shaped diagram formed by two intersecting lines, the angle in the lower section measures
+        75°. Calculate the measure of the two angles adjacent to it.
+      mathTool:
+        toolName: verticallyOppositeAngles
+        parameters:
+          angles:
+          - null
+          - null
+          - 75
+          - null
+      finalAnswer: The two adjacent angles both measure 105°.
+      stepByStepGuideline:
+      - 'Identify the angle vertically opposite to the given angle: Opposite angle = 75° (vertically opposite).'
+      - 'Calculate the measure of the adjacent angles using the straight line property (supplementary angles): Adjacent angles
+        = 180° - 75° = 105° (angles on a line).'
+      - 'State the required value: The two adjacent angles both measure 105°.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: Two roads cross each other at an intersection. If one of the obtuse angles formed by the intersection measures
+        110°, determine the measures of all four angles at that intersection.
+      mathTool:
+        toolName: verticallyOppositeAngles
+        parameters:
+          angles:
+          - 110
+          - null
+          - null
+          - null
+      finalAnswer: The four angles are 110°, 70°, 110°, 70°.
+      stepByStepGuideline:
+      - 'Identify the angle vertically opposite to the given angle: Opposite angle = 110° (vertically opposite).'
+      - 'Calculate the measure of the adjacent angles using the straight line property: Adjacent angles = 180° - 110° = 70°
+        (angles on a line).'
+      - 'List all four angle measures: 110°, 70°, 110°, 70°.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: Two straight line segments intersect. If Angle X measures 60°, find the measure of the angle vertically
+        opposite to X, and the measure of the two adjacent angles.
+      mathTool:
+        toolName: verticallyOppositeAngles
+        parameters:
+          angles:
+          - 60
+          - null
+          - null
+          - null
+      finalAnswer: The opposite angle is 60°, and the two adjacent angles are 120° each.
+      stepByStepGuideline:
+      - 'Find the angle vertically opposite to X: Opposite angle = 60° (vertically opposite).'
+      - 'Calculate the measure of the angles adjacent to X: Adjacent angles = 180° - 60° = 120° (angles on a line).'
+      - 'State the required measures: The opposite angle is 60° and the adjacent angles are 120°.'
+      id: q9-5
+      questionGroup: q9
+- id: s1-angles-node-10
+  nodeNumber: 10
+  title: Combined Angle Properties
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: anglesAtPoint
+    preWrittenQuestions:
+    - problemText: Two flight paths intersect over a control tower. The intersecting lines form four angles. Two vertically
+        opposite angles are represented by the expressions $3x$ and $x + 80^{\circ}$. Find the value of $x$ and the measures
+        of all four angles formed at the intersection point.
+      avatarIntro: Ready to tackle combined angle properties? Remember to start by setting the vertically opposite angles
+        equal to each other!
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - variable
+          labels:
+          - 3x
+          - '60'
+          - x + 80
+          - '60'
+          showSum: true
+      finalAnswer: x = 40. The four angles are 120°, 60°, 120°, and 60°.
+      stepByStepGuideline:
+      - 'Set the vertically opposite angles equal: 3x = x + 80°.'
+      - 'Solve for x: 2x = 80°, so x = 40°.'
+      - 'Calculate the measure of the first pair of angles: 3(40°) = 120°. (Check: 40° + 80° = 120°).'
+      - Use the 'angles at a point sum to 360°' property. The sum of the calculated pair is 2 * 120° = 240°.
+      - 'Find the remaining two angles: (360° - 240°) / 2 = 120° / 2 = 60°.'
+      - 'State all four angle measures: 120°, 60°, 120°, 60°.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: Surveying markers are placed at a central point where two lines intersect. The vertically opposite angles
+        are given by $4x$ and $2x + 40^{\circ}$. Determine the value of $x$ and the measures of all four angles created by
+        the intersecting lines.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - variable
+          labels:
+          - 4x
+          - '100'
+          - 2x + 40
+          - '100'
+          showSum: true
+      finalAnswer: x = 20. The four angles are 80°, 100°, 80°, and 100°.
+      stepByStepGuideline:
+      - 'Set the vertically opposite angles equal: 4x = 2x + 40°.'
+      - 'Solve for x: 2x = 40°, so x = 20°.'
+      - 'Calculate the measure of the first pair of angles: 4(20°) = 80°. (Check: 2(20°) + 40° = 80°).'
+      - The sum of the calculated pair is 2 * 80° = 160°.
+      - 'Find the remaining two angles using 360°: (360° - 160°) / 2 = 200° / 2 = 100°.'
+      - 'State all four angle measures: 80°, 100°, 80°, 100°.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: A design for a bridge support involves two intersecting straight beams. The four angles formed include
+        two adjacent angles, $A$ and $B$, which form a straight line. Angle A is represented by $3x$, and Angle B is represented
+        by $2x + 10^{\circ}$. Find the value of $x$ and the measures of all four angles at the intersection.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - variable
+          labels:
+          - 3x
+          - 2x + 10
+          - 3x
+          - 2x + 10
+          showSum: true
+      finalAnswer: x = 34. The four angles are 102°, 78°, 102°, and 78°.
+      stepByStepGuideline:
+      - 'Use the straight line property: Adjacent angles forming a straight line sum to 180°. 3x + (2x + 10°) = 180°.'
+      - 'Solve for x: 5x + 10° = 180°, so 5x = 170°, which means x = 34°.'
+      - 'Calculate Angle A: 3(34°) = 102°. Calculate Angle B: 2(34°) + 10° = 68° + 10° = 78°.'
+      - Since the lines intersect, the angles are in vertically opposite pairs. The four angles are A, B, A, B.
+      - 'State all four angle measures: 102°, 78°, 102°, 78°.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: Two intersecting beams in a complex roof structure form four angles. One pair of vertically opposite angles
+        is defined by $4x - 60^{\circ}$ and $2x + 20^{\circ}$. Calculate the value of $x$ and list the measure of all four
+        angles in the structure.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - variable
+          labels:
+          - 4x - 60
+          - '80'
+          - 2x + 20
+          - '80'
+          showSum: true
+      finalAnswer: x = 40. The four angles are 100°, 80°, 100°, and 80°.
+      stepByStepGuideline:
+      - 'Set the vertically opposite angles equal: 4x - 60° = 2x + 20°.'
+      - 'Solve for x: Subtract 2x from both sides and add 60° to both sides: 2x = 80°. Thus, x = 40°.'
+      - 'Calculate the measure of the first pair of angles: 4(40°) - 60° = 160° - 60° = 100°.'
+      - The sum of the calculated pair is 2 * 100° = 200°.
+      - 'Find the remaining two angles using the 360° sum property: (360° - 200°) / 2 = 160° / 2 = 80°.'
+      - 'State all four angle measures: 100°, 80°, 100°, 80°.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: On a circular map, two intersecting radii create four sectors. The vertically opposite angles of the intersection
+        are defined by $3x - 20^{\circ}$ and $x + 100^{\circ}$. Find $x$ and the measures of all four angles.
+      mathTool:
+        toolName: anglesAtPoint
+        parameters:
+          angles:
+          - variable
+          labels:
+          - 3x - 20
+          - '20'
+          - x + 100
+          - '20'
+          showSum: true
+      finalAnswer: x = 60. The four angles are 160°, 20°, 160°, and 20°.
+      stepByStepGuideline:
+      - 'Set the vertically opposite angles equal: 3x - 20° = x + 100°.'
+      - 'Solve for x: Subtract x from both sides and add 20° to both sides: 2x = 120°. Thus, x = 60°.'
+      - 'Calculate the measure of the first pair of angles: 3(60°) - 20° = 180° - 20° = 160°.'
+      - The sum of the calculated pair is 2 * 160° = 320°.
+      - 'Find the remaining two angles using the 360° sum property: (360° - 320°) / 2 = 40° / 2 = 20°.'
+      - 'State all four angle measures: 160°, 20°, 160°, 20°.'
+      id: q10-5
+      questionGroup: q10
+- id: s1-angles-node-11
+  nodeNumber: 11
+  title: Corresponding Angles (F-Pattern)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelLinesTransversal
+    preWrittenQuestions:
+    - problemText: Two parallel streets (L1 and L2) are intersected by a transversal road. An acute angle (Angle A) formed
+        at the top intersection measures 70°. Find the measure of the angle corresponding to Angle A. (L1 || L2)
+      avatarIntro: Geometry is everywhere! Look closely at the diagram showing parallel lines cut by a transversal. Remember
+        the F-pattern rule for corresponding angles.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: 0
+          highlightPattern: corresponding
+      finalAnswer: 70° (corresponding angles are equal when lines parallel)
+      stepByStepGuideline:
+      - Identify the corresponding angle pair using the F-pattern. Corresponding angles occupy the same relative position
+        at each intersection.
+      - Since the lines L1 and L2 are parallel, corresponding angles are equal.
+      - Therefore, the corresponding angle also measures 70°.
+      id: q11-1
+      questionGroup: q11
+    - problemText: In the design for a set of roof trusses, two parallel beams are crossed by a support strut. One of the
+        angles formed (Angle X, located bottom right) measures 115°. Determine the measure of the angle that corresponds to
+        Angle X (located top right).
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 115
+          knownPosition: 5
+          highlightPattern: corresponding
+      finalAnswer: 115° (corresponding angles are equal when lines parallel)
+      stepByStepGuideline:
+      - 'Locate Angle X (Position 5: bottom intersection, right side of transversal, outside the parallel lines).'
+      - 'Identify its corresponding angle, which is in the same relative position at the top intersection (Position 1: top
+        intersection, right side of transversal, outside the parallel lines).'
+      - Because the beams are parallel, the corresponding angle must be equal to Angle X.
+      - The measure of the corresponding angle is 115°.
+      id: q11-2
+      questionGroup: q11
+    - problemText: Two parallel rail tracks are cut by a crossing line. The angle formed at one intersection is represented
+        by $2x$. Its corresponding angle at the second intersection is represented by $3x - 40^{\circ}$. Find the value of
+        $x$ and the measure of the angle.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 80
+          knownPosition: 2
+          highlightPattern: corresponding
+      finalAnswer: $x = 40^{\circ}$. Both angles measure 80°.
+      stepByStepGuideline:
+      - 'Since the rail tracks are parallel, the corresponding angles are equal. Set the expressions equal to each other:
+        $2x = 3x - 40$.'
+      - 'Solve the equation for $x$: Subtract $2x$ from both sides: $0 = x - 40$. Add 40 to both sides: $x = 40$.'
+      - Substitute the value of $x$ back into the expressions to find the angle measure. Angle = $2(40^{\circ}) = 80^{\circ}$.
+      - 'Check: $3(40^{\circ}) - 40^{\circ} = 120^{\circ} - 40^{\circ} = 80^{\circ}$.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: A ski lift cable runs parallel to the ground (Line G). A support tower (Transversal T) creates an angle
+        of 120° where it meets the ground (Angle B, bottom left). What is the measure of the angle corresponding to Angle
+        B, located where the support tower meets the cable?
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 120
+          knownPosition: 7
+          highlightPattern: corresponding
+      finalAnswer: 120° (corresponding angles are equal when lines parallel)
+      stepByStepGuideline:
+      - 'Identify Angle B (Position 7: bottom intersection, left side of transversal, outside the parallel lines).'
+      - The corresponding angle occupies the same position relative to the transversal and the parallel line at the top intersection
+        (Position 3).
+      - Since the cable is parallel to the ground, corresponding angles are equal.
+      - The corresponding angle measures 120°.
+      id: q11-4
+      questionGroup: q11
+    - problemText: In an industrial ventilation system, two parallel ducts are connected by a diagonal pipe. The angle formed
+        by the pipe and the lower duct is given by the expression $5x + 10^{\circ}$. Its corresponding angle, formed by the
+        pipe and the upper duct, is $2x + 70^{\circ}$. Calculate the value of $x$ and the measure of these angles.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 110
+          knownPosition: 4
+          highlightPattern: corresponding
+      finalAnswer: $x = 20^{\circ}$. Both angles measure 110°.
+      stepByStepGuideline:
+      - 'Set the two corresponding angle expressions equal to each other, as the ducts are parallel: $5x + 10 = 2x + 70$.'
+      - 'Solve for $x$: Subtract $2x$ from both sides: $3x + 10 = 70$.'
+      - 'Subtract 10 from both sides: $3x = 60$.'
+      - 'Divide by 3: $x = 20$.'
+      - 'Calculate the angle measure by substituting $x = 20^{\circ}$ into either expression: $5(20) + 10 = 100 + 10 = 110^{\circ}$.'
+      id: q11-5
+      questionGroup: q11
+- id: s1-angles-node-12
+  nodeNumber: 12
+  title: Alternate Angles (Z-Pattern)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelLinesTransversal
+    preWrittenQuestions:
+    - problemText: An architect is drawing parallel structural walls (L1 and L2) cut by a diagonal support beam (T). If the
+        interior angle formed by the beam and wall L1 (Angle A) is 70°, find the measure of its alternate interior angle (Angle
+        B) formed with wall L2.
+      avatarIntro: Welcome! Remember, when lines are parallel, we can use the Z-pattern to easily find the measure of alternate
+        interior angles.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: top_left
+          highlightPattern: alternate
+      finalAnswer: 70° (alternate angles are equal when lines parallel)
+      stepByStepGuideline:
+      - Identify the parallel lines (L1 and L2) and the transversal (T).
+      - Locate the given interior angle (Angle A = 70°).
+      - Identify the alternate interior angle (Angle B) by looking for the angle on the opposite side of the transversal and
+        between the parallel lines (the Z-pattern).
+      - Since the walls are parallel, alternate interior angles are equal. Therefore, Angle B = 70°.
+      id: q12-1
+      questionGroup: q12
+    - problemText: Two parallel electrical conduits are crossed by a wire. The alternate interior angles formed are represented
+        by the expressions $5x + 10^{\circ}$ and $2x + 55^{\circ}$. Determine the value of $x$ and the measure of these angles.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 85
+          knownPosition: top_right
+          highlightPattern: alternate
+      finalAnswer: 'Alternate angles are equal: 5x + 10 = 2x + 55. Solving gives 3x = 45, so x = 15. Both angles measure 5(15)
+        + 10 = 85°.'
+      stepByStepGuideline:
+      - 'Since the conduits are parallel, the alternate interior angles must be equal: $5x + 10 = 2x + 55$.'
+      - 'Subtract 2x from both sides: $3x + 10 = 55$.'
+      - 'Subtract 10 from both sides: $3x = 45$.'
+      - 'Solve for x: $x = 15$.'
+      - 'Substitute x back into either expression to find the angle measure: $5(15) + 10 = 75 + 10 = 85^{\circ}$.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: In an origami pattern, two fold lines (P and Q) are parallel. A third fold line (R) acts as a transversal.
+        If the obtuse interior angle formed between P and R measures 115°, what is the measure of the alternate interior angle
+        formed between Q and R?
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 115
+          knownPosition: bottom_left
+          highlightPattern: alternate
+      finalAnswer: 115° (alternate angles are equal when lines parallel)
+      stepByStepGuideline:
+      - Identify the given interior angle (115°).
+      - Recognize that the two fold lines (P and Q) are parallel.
+      - The alternate interior angle is the angle on the opposite side of the transversal (R) and is also between the parallel
+        lines.
+      - By the alternate interior angles theorem, the alternate angle must also be 115°.
+      id: q12-3
+      questionGroup: q12
+    - problemText: During a land survey, two parallel boundary lines are crossed by a path. The measures of the alternate
+        interior angles formed by the path are defined by the expressions $2x + 25^{\circ}$ and $3x - 5^{\circ}$. Find the
+        value of $x$ and the measure of the angles.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 85
+          knownPosition: top_left
+          highlightPattern: alternate
+      finalAnswer: 'Alternate angles are equal: 2x + 25 = 3x - 5. Solving gives x = 30. Both angles measure 2(30) + 25 = 85°.'
+      stepByStepGuideline:
+      - 'Set the expressions for the alternate interior angles equal to each other: $2x + 25 = 3x - 5$.'
+      - 'Rearrange the equation to solve for x. Subtract 2x from both sides: $25 = x - 5$.'
+      - 'Add 5 to both sides: $x = 30$.'
+      - 'Substitute $x = 30$ back into the expression $2x + 25$: $2(30) + 25 = 60 + 25 = 85^{\circ}$.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: In a geometric design, parallel lines M and N are cut by a transversal T. An interior angle P measures
+        65°. Angle Q is the alternate interior angle to Angle P. Angle R is the corresponding angle to Angle P. What is the
+        measure of Angle Q?
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 65
+          knownPosition: top_right
+          highlightPattern: alternate
+      finalAnswer: 65° (Angle Q is the alternate interior angle to P, and alternate angles are equal when lines parallel)
+      stepByStepGuideline:
+      - Identify Angle P (65°), which is an interior angle.
+      - Identify Angle Q, the alternate interior angle. This angle must be on the opposite side of the transversal T and also
+        between the parallel lines M and N (forming the Z-pattern).
+      - Since lines M and N are parallel, alternate interior angles are equal.
+      - Therefore, Angle Q = 65°.
+      id: q12-5
+      questionGroup: q12
+- id: s1-angles-node-13
+  nodeNumber: 13
+  title: Co-Interior Angles (C-Pattern)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelLinesTransversal
+    preWrittenQuestions:
+    - problemText: A construction worker is building a ramp structure. Two parallel supports are held by a diagonal brace,
+        forming a C-pattern. If the obtuse interior angle (Angle A) measures 110°, what is the measure of its co-interior
+        angle (Angle B)?
+      avatarIntro: Great job moving on to co-interior angles! Remember these angles are supplementary, meaning they add up
+        to 180 degrees when the lines are parallel.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 110
+          knownPosition: topRight
+          highlightPattern: cointerior
+      finalAnswer: 70° (because 180° - 110° = 70°; co-interior angles sum to 180° when lines parallel)
+      stepByStepGuideline:
+      - 'Identify the relationship: The angles are co-interior, forming a C-pattern, and the lines are parallel.'
+      - 'Recall the property: Co-interior angles are supplementary, meaning their sum is 180°.'
+      - 'Subtract the known angle from 180°: 180° - 110° = 70°.'
+      - The co-interior angle measures 70°.
+      id: q13-1
+      questionGroup: q13
+    - problemText: In a plumbing layout, two parallel pipes are connected by a diagonal fitting. The two co-interior angles
+        created are represented by the expressions $(2x + 15)^{\circ}$ and $(3x + 10)^{\circ}$. Find the value of $x$ and
+        the measure of both angles.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: variable
+          highlightPattern: cointerior
+      finalAnswer: x = 31°. Angles are 77° and 103°.
+      stepByStepGuideline:
+      - 'Set up the equation based on the co-interior angle property: The sum of the angles must equal 180°. (2x + 15) + (3x
+        + 10) = 180.'
+      - 'Combine like terms: 5x + 25 = 180.'
+      - 'Isolate the variable term: Subtract 25 from both sides: 5x = 155.'
+      - 'Solve for x: Divide by 5: x = 31°.'
+      - 'Calculate the measure of the first angle: 2(31) + 15 = 62 + 15 = 77°.'
+      - 'Calculate the measure of the second angle: 3(31) + 10 = 93 + 10 = 103° (Check: 77° + 103° = 180°).'
+      id: q13-2
+      questionGroup: q13
+    - problemText: A large textbook is opened slightly, resting on a table. The spine and the edges of the pages form parallel
+        lines, and the corner of the table acts as a transversal. If the acute co-interior angle measures 70°, what is the
+        measure of the obtuse co-interior angle?
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: bottomLeft
+          highlightPattern: cointerior
+      finalAnswer: 110° (because 180° - 70° = 110°; co-interior angles sum to 180° when lines parallel)
+      stepByStepGuideline:
+      - Recognize that the angles are co-interior (C-pattern) and the lines are parallel.
+      - The property of co-interior angles states they must sum to 180°.
+      - 'Subtract the given angle from 180° to find the missing angle: 180° - 70°.'
+      - The obtuse co-interior angle is 110°.
+      id: q13-3
+      questionGroup: q13
+    - problemText: In a geometric logo design, two parallel horizontal lines are crossed by a diagonal element. The two co-interior
+        angles formed are represented by $x$ and $(2x + 30)^{\circ}$. Calculate the value of $x$ and the measure of both angles.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: variable
+          highlightPattern: cointerior
+      finalAnswer: x = 50°. Angles are 50° and 130°.
+      stepByStepGuideline:
+      - 'Since the lines are parallel, the co-interior angles must sum to 180°. Set up the equation: x + (2x + 30) = 180.'
+      - 'Combine the x terms: 3x + 30 = 180.'
+      - 'Subtract 30 from both sides: 3x = 150.'
+      - 'Solve for x: Divide by 3: x = 50°.'
+      - 'Calculate the measure of the first angle: x = 50°.'
+      - 'Calculate the measure of the second angle: 2(50) + 30 = 100 + 30 = 130° (Check: 50° + 130° = 180°).'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A support bracket for a staircase railing creates a reverse C-pattern with the parallel top rail and bottom
+        rail. If the large interior angle formed by the bracket and the top rail measures 135°, find the measure of the angle
+        formed by the bracket and the bottom rail (its co-interior angle).
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 135
+          knownPosition: topLeft
+          highlightPattern: cointerior
+      finalAnswer: 45° (because 180° - 135° = 45°; co-interior angles sum to 180° when lines parallel)
+      stepByStepGuideline:
+      - 'Identify the relationship: The angles are co-interior and the rails are parallel, forming a reverse C-shape.'
+      - 'Apply the co-interior angle rule: Angles must be supplementary (sum to 180°).'
+      - 'Calculate the missing angle: 180° - 135°.'
+      - The co-interior angle measures 45°.
+      id: q13-5
+      questionGroup: q13
+- id: s1-angles-node-14
+  nodeNumber: 14
+  title: Multi-Step Parallel Lines - Finding All Angles
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelLinesTransversal
+    preWrittenQuestions:
+    - problemText: A civil engineer is analyzing traffic flow where two parallel lanes are cut by an exit ramp. If the acute
+        angle formed at the top left intersection (Position 0) measures 70°, find the measure of all 8 angles formed by the
+        intersection and state the geometric property used to determine each measure.
+      avatarIntro: This problem requires systematic application of angle properties like corresponding, alternate, and vertically
+        opposite angles, along with angles on a straight line. Remember to state your reasons clearly!
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: 0
+          highlightPattern: none
+      finalAnswer: 'The angles are 70° and 110°. Specifically: P0=70° (Given), P1=110°, P2=110°, P3=70°, P4=70°, P5=110°,
+        P6=110°, P7=70°.'
+      stepByStepGuideline:
+      - 'Identify the given angle: Angle P0 = 70°.'
+      - 'Calculate the supplementary angle: 180° - 70° = 110°.'
+      - 'Find the angles in the upper intersection: P3 = 70° (Vertically opposite to P0). P1 = 110° (Angles on a straight
+        line with P0). P2 = 110° (Vertically opposite to P1).'
+      - 'Find the corresponding angles in the lower intersection: P4 = 70° (Corresponding to P0). P5 = 110° (Corresponding
+        to P1). P6 = 110° (Corresponding to P2). P7 = 70° (Corresponding to P3).'
+      - 'List all 8 angles, ensuring all are justified by one of the properties: corresponding angles, alternate angles, vertically
+        opposite angles, or angles on a straight line.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: A double-track roller coaster design features two parallel tracks connected by a diagonal strut. If the
+        angle formed at Position 3 (upper right acute position) measures 110°, determine the measure of all 8 angles and provide
+        the geometric reason for each step.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 110
+          knownPosition: 3
+          highlightPattern: none
+      finalAnswer: 'The angles are 110° and 70°. Specifically: P0=70°, P1=70°, P2=110°, P3=110° (Given), P4=70°, P5=70°, P6=110°,
+        P7=110°.'
+      stepByStepGuideline:
+      - 'Identify the given angle: Angle P3 = 110°.'
+      - 'Calculate the supplementary angle: 180° - 110° = 70°.'
+      - 'Find the angles in the upper intersection: P2 = 70° (Angles on a straight line with P3). P0 = 70° (Alternate interior
+        angle to P2 OR Angles on a straight line with P3, depending on diagram interpretation, use straight line with P2).
+        P1 = 110° (Vertically opposite to P3).'
+      - 'Find the corresponding angles in the lower intersection: P7 = 110° (Corresponding to P3). P4 = 70° (Corresponding
+        to P0). P5 = 70° (Corresponding to P1). P6 = 110° (Corresponding to P2).'
+      - List all 8 angles, justifying each using corresponding angles, vertically opposite angles, or angles on a straight
+        line.
+      id: q14-2
+      questionGroup: q14
+    - problemText: In a sophisticated textile machine, two parallel threads are guided by a diagonal spindle. If the angle
+        formed at Position 6 (lower left obtuse position) measures 60°, find the measure of all 8 angles and state the geometric
+        property used for each calculation.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 60
+          knownPosition: 6
+          highlightPattern: none
+      finalAnswer: 'The angles are 60° and 120°. Specifically: P0=120°, P1=60°, P2=60°, P3=120°, P4=120°, P5=60°, P6=60° (Given),
+        P7=120°.'
+      stepByStepGuideline:
+      - 'Identify the given angle: Angle P6 = 60°.'
+      - 'Calculate the supplementary angle: 180° - 60° = 120°.'
+      - 'Find the angles in the lower intersection: P5 = 60° (Vertically opposite to P6). P4 = 120° (Angles on a straight
+        line with P6). P7 = 120° (Vertically opposite to P4).'
+      - 'Find the corresponding angles in the upper intersection: P2 = 60° (Corresponding to P6). P1 = 60° (Corresponding
+        to P5). P0 = 120° (Corresponding to P4). P3 = 120° (Corresponding to P7).'
+      - List all 8 angles, providing the property used (e.g., corresponding angles, vertically opposite angles, angles on
+        a straight line).
+      id: q14-3
+      questionGroup: q14
+    - problemText: A technician is installing solar panel arrays on two parallel roof ridges. A diagonal connector forms an
+        angle of 95° at Position 1 (upper right obtuse position). Determine the measure of all 8 angles created by the connector
+        and state the geometric reason for each angle.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 95
+          knownPosition: 1
+          highlightPattern: none
+      finalAnswer: 'The angles are 95° and 85°. Specifically: P0=85°, P1=95° (Given), P2=85°, P3=95°, P4=85°, P5=95°, P6=85°,
+        P7=95°.'
+      stepByStepGuideline:
+      - 'Identify the given angle: Angle P1 = 95°.'
+      - 'Calculate the supplementary angle: 180° - 95° = 85°.'
+      - 'Find the angles in the upper intersection: P0 = 85° (Angles on a straight line with P1). P3 = 95° (Vertically opposite
+        to P1). P2 = 85° (Vertically opposite to P0).'
+      - 'Find the corresponding angles in the lower intersection: P5 = 95° (Corresponding to P1). P4 = 85° (Corresponding
+        to P0). P7 = 95° (Corresponding to P3). P6 = 85° (Corresponding to P2).'
+      - Ensure all 8 angles are listed and justified by properties such as vertically opposite, corresponding, or angles on
+        a straight line.
+      id: q14-4
+      questionGroup: q14
+    - problemText: In an irrigation setup, a main feed pipe crosses two parallel rows of planting trenches. If the angle measured
+        at Position 5 (lower right obtuse position) is 80°, find the measure of all 8 angles formed by the intersection and
+        state the geometric property used for each result.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 80
+          knownPosition: 5
+          highlightPattern: none
+      finalAnswer: 'The angles are 80° and 100°. Specifically: P0=100°, P1=80°, P2=100°, P3=80°, P4=100°, P5=80° (Given),
+        P6=100°, P7=80°.'
+      stepByStepGuideline:
+      - 'Identify the given angle: Angle P5 = 80°.'
+      - 'Calculate the supplementary angle: 180° - 80° = 100°.'
+      - 'Find the angles in the lower intersection: P7 = 80° (Vertically opposite to P5). P4 = 100° (Angles on a straight
+        line with P5). P6 = 100° (Vertically opposite to P4).'
+      - 'Find the corresponding angles in the upper intersection: P1 = 80° (Corresponding to P5). P3 = 80° (Corresponding
+        to P7). P0 = 100° (Corresponding to P4). P2 = 100° (Corresponding to P6).'
+      - List all 8 angles, ensuring clear justification using angle properties (e.g., corresponding angles, alternate exterior
+        angles, angles on a straight line).
+      id: q14-5
+      questionGroup: q14
+- id: s1-angles-node-15
+  nodeNumber: 15
+  title: Multi-Step with Algebra
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelLinesTransversal
+    preWrittenQuestions:
+    - problemText: A cartographer is mapping parallel property lines (L1 and L2) crossed by a river (T). The corresponding
+        angles formed by the intersection are measured algebraically. Angle A is represented by $(5x + 10)^{\circ}$ and Angle
+        B is represented by $(3x + 30)^{\circ}$. Find the value of x and the measure of all 8 angles formed by the intersection.
+      avatarIntro: Ready to tackle a multi-step geometry problem? Remember that setting up the correct equation based on the
+        relationship is the key first step!
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: 0
+          highlightPattern: corresponding
+      finalAnswer: 'Corresponding angles equal: 5x + 10 = 3x + 30, so 2x = 20, x = 10. Angle = 5(10) + 10 = 60°. All angles:
+        four 60°, four 120°.'
+      stepByStepGuideline:
+      - Identify that Angle A and Angle B are corresponding angles, meaning they are equal.
+      - 'Set up the equation: $5x + 10 = 3x + 30$.'
+      - 'Solve for x: Subtract $3x$ from both sides ($2x + 10 = 30$). Subtract 10 from both sides ($2x = 20$). Divide by 2
+        ($x = 10$).'
+      - 'Calculate the measure of the angle using the value of x: $5(10) + 10 = 60^{\circ}$.'
+      - 'Determine the supplementary angle: $180^{\circ} - 60^{\circ} = 120^{\circ}$.'
+      - State the measures of all 8 angles (four $60^{\circ}$ and four $120^{\circ}$). The final answer is $x=10$ and the
+        angles are $60^{\circ}$ and $120^{\circ}$.
+      id: q15-1
+      questionGroup: q15
+    - problemText: In a stage lighting setup, two parallel support bars are crossed by a laser beam. The alternate interior
+        angles formed are represented by Angle C = $(4x - 10)^{\circ}$ and Angle D = $(2x + 30)^{\circ}$. Find the value of
+        x and the measure of all 8 angles formed.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: 0
+          highlightPattern: alternate
+      finalAnswer: 'Alternate interior angles equal: 4x - 10 = 2x + 30, so 2x = 40, x = 20. Angle = 4(20) - 10 = 70°. All
+        angles: four 70°, four 110°.'
+      stepByStepGuideline:
+      - Identify that Angle C and Angle D are alternate interior angles, meaning they are equal.
+      - 'Set up the equation: $4x - 10 = 2x + 30$.'
+      - 'Solve for x: Subtract $2x$ from both sides ($2x - 10 = 30$). Add 10 to both sides ($2x = 40$). Divide by 2 ($x =
+        20$).'
+      - 'Calculate the measure of the angle using the value of x: $4(20) - 10 = 80 - 10 = 70^{\circ}$.'
+      - 'Determine the supplementary angle: $180^{\circ} - 70^{\circ} = 110^{\circ}$.'
+      - State the measures of all 8 angles (four $70^{\circ}$ and four $110^{\circ}$). The final answer is $x=20$ and the
+        angles are $70^{\circ}$ and $110^{\circ}$.
+      id: q15-2
+      questionGroup: q15
+    - problemText: A metal framework for parallel gymnastics bars is stabilized by a diagonal strut. The two co-interior angles
+        formed by the strut and the bars are Angle E = $(3x + 15)^{\circ}$ and Angle F = $(2x + 25)^{\circ}$. Find the value
+        of x and the measure of all 8 angles formed by the intersection.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: 0
+          highlightPattern: cointerior
+      finalAnswer: 'Co-interior angles are supplementary: (3x + 15) + (2x + 25) = 180. 5x + 40 = 180, 5x = 140, x = 28. Angles
+        are 3(28) + 15 = 99° and 2(28) + 25 = 81°. All angles: four 99°, four 81°.'
+      stepByStepGuideline:
+      - Identify that Angle E and Angle F are co-interior angles, meaning their sum is $180^{\circ}$.
+      - 'Set up the equation: $(3x + 15) + (2x + 25) = 180$.'
+      - 'Simplify and solve for x: Combine terms ($5x + 40 = 180$). Subtract 40 ($5x = 140$). Divide by 5 ($x = 28$).'
+      - 'Calculate the measure of Angle E: $3(28) + 15 = 84 + 15 = 99^{\circ}$.'
+      - 'Calculate the measure of Angle F (check): $2(28) + 25 = 56 + 25 = 81^{\circ}$. Check: $99 + 81 = 180^{\circ}$.'
+      - State the measures of all 8 angles (four $99^{\circ}$ and four $81^{\circ}$). The final answer is $x=28$ and the angles
+        are $99^{\circ}$ and $81^{\circ}$.
+      id: q15-3
+      questionGroup: q15
+    - problemText: A student uses a T-square (transversal) across two parallel lines drawn on a drafting board. The upper
+        corresponding angle is given by the expression $(4x - 40)^{\circ}$ and the lower corresponding angle is given by $(2x
+        + 20)^{\circ}$. Determine the value of x and the measure of all 8 angles.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: 0
+          highlightPattern: corresponding
+      finalAnswer: 'Corresponding angles equal: 4x - 40 = 2x + 20, so 2x = 60, x = 30. Angle = 4(30) - 40 = 80°. All angles:
+        four 80°, four 100°.'
+      stepByStepGuideline:
+      - Identify that the angles are corresponding, meaning they are equal.
+      - 'Set up the equation: $4x - 40 = 2x + 20$.'
+      - 'Solve for x: Subtract $2x$ from both sides ($2x - 40 = 20$). Add 40 to both sides ($2x = 60$). Divide by 2 ($x =
+        30$).'
+      - 'Calculate the measure of the angle: $4(30) - 40 = 120 - 40 = 80^{\circ}$.'
+      - 'Determine the supplementary angle: $180^{\circ} - 80^{\circ} = 100^{\circ}$.'
+      - State the measures of all 8 angles (four $80^{\circ}$ and four $100^{\circ}$). The final answer is $x=30$ and the
+        angles are $80^{\circ}$ and $100^{\circ}$.
+      id: q15-4
+      questionGroup: q15
+    - problemText: In a robotic arm mechanism, two parallel tracks guide a sliding component. A cross-brace creates alternate
+        interior angles defined by the expressions $(5x + 15)^{\circ}$ and $(4x + 30)^{\circ}$. Find the value of x and calculate
+        the measure of all 8 angles formed by the brace.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: 0
+          highlightPattern: alternate
+      finalAnswer: 'Alternate interior angles equal: 5x + 15 = 4x + 30, so x = 15. Angle = 5(15) + 15 = 90°. All angles: eight
+        90°.'
+      stepByStepGuideline:
+      - Identify that the angles are alternate interior angles, meaning they are equal.
+      - 'Set up the equation: $5x + 15 = 4x + 30$.'
+      - 'Solve for x: Subtract $4x$ from both sides ($x + 15 = 30$). Subtract 15 from both sides ($x = 15$).'
+      - 'Calculate the measure of the angle: $5(15) + 15 = 75 + 15 = 90^{\circ}$.'
+      - 'Determine the supplementary angle: Since the angle is $90^{\circ}$, the supplementary angle is also $90^{\circ}$.'
+      - State the measures of all 8 angles (all $90^{\circ}$). The final answer is $x=15$ and all angles are $90^{\circ}$.
+      id: q15-5
+      questionGroup: q15
+- id: s1-angles-node-16
+  nodeNumber: 16
+  title: Complex Multi-Step Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelLinesTransversal
+    preWrittenQuestions:
+    - problemText: A complex laser security grid uses two parallel beams (L1 and L2) crossed by a diagonal sensor wire (T).
+        Angle P (upper left interior) is defined by $2x + 10^{\circ}$, and Angle Q (lower right interior) is defined by $x
+        + 40^{\circ}$. Angle R is co-interior to Angle P, and Angle S is corresponding to Angle P. Determine the value of
+        $x$, and the measures of Angle P, Angle R, and Angle S.
+      avatarIntro: These complex diagrams require careful identification of parallel line properties. Work systematically
+        through the steps to find the unknown variable first.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: variable
+          highlightPattern: none
+      finalAnswer: x = 30°; Angle P = 70°; Angle R = 110°; Angle S = 70°
+      stepByStepGuideline:
+      - 'Step 1: Use Alternate Interior Angles (P and Q) to find x. Alternate angles are equal: $2x + 10 = x + 40$.'
+      - 'Step 2: Solve the equation: $2x - x = 40 - 10$, so $x = 30$.'
+      - 'Step 3: Calculate Angle P: $P = 2(30) + 10 = 60 + 10 = 70^{\circ}$.'
+      - 'Step 4: Use Co-interior Angles property to find Angle R. Angle R is supplementary to Angle P: $R = 180^{\circ} -
+        P = 180^{\circ} - 70^{\circ} = 110^{\circ}$.'
+      - 'Step 5: Use Corresponding Angles property to find Angle S. Corresponding angles are equal: $S = P = 70^{\circ}$.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: A highway sign post structure uses two parallel horizontal supports (L1 and L2) cut by a diagonal brace
+        (T). Angle A (upper left interior) is defined by $3x + 15^{\circ}$, and Angle B (lower left interior) is defined by
+        $x + 45^{\circ}$. Angle C is vertically opposite to Angle A, and Angle D is supplementary to Angle C (angles on a
+        straight line). Find the value of $x$, and the measures of Angle A, Angle C, and Angle D.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: variable
+          highlightPattern: none
+      finalAnswer: x = 15°; Angle A = 60°; Angle C = 60°; Angle D = 120°
+      stepByStepGuideline:
+      - 'Step 1: Use Corresponding Angles (A and B) to find x. Corresponding angles are equal: $3x + 15 = x + 45$.'
+      - 'Step 2: Solve the equation: $2x = 30$, so $x = 15$.'
+      - 'Step 3: Calculate Angle A: $A = 3(15) + 15 = 45 + 15 = 60^{\circ}$.'
+      - 'Step 4: Use Vertically Opposite Angles property to find Angle C. Vertically opposite angles are equal: $C = A = 60^{\circ}$.'
+      - 'Step 5: Use Angles on a Straight Line property to find Angle D. Angle D is supplementary to Angle C: $D = 180^{\circ}
+        - C = 180^{\circ} - 60^{\circ} = 120^{\circ}$.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: In an automated assembly line, two parallel conveyor belts (L1 and L2) are monitored by a diagonal sensor
+        beam (T). Angle M (upper right interior) is defined by $5x - 20^{\circ}$, and Angle N (lower left interior) is defined
+        by $2x + 40^{\circ}$. Angle K is adjacent to Angle M, forming a straight line. Determine the value of $x$, and the
+        measures of Angle M and Angle K.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: variable
+          highlightPattern: none
+      finalAnswer: x = 20°; Angle M = 80°; Angle K = 100°
+      stepByStepGuideline:
+      - 'Step 1: Use Alternate Interior Angles (M and N) to find x. Alternate angles are equal: $5x - 20 = 2x + 40$.'
+      - 'Step 2: Solve the equation: $3x = 60$, so $x = 20$.'
+      - 'Step 3: Calculate Angle M: $M = 5(20) - 20 = 100 - 20 = 80^{\circ}$.'
+      - 'Step 4: Use Angles on a Straight Line property to find Angle K. Angle K is supplementary to Angle M: $K = 180^{\circ}
+        - M = 180^{\circ} - 80^{\circ} = 100^{\circ}$.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: A diagram modeling a complex chemical structure shows two parallel bonds (L1 and L2) intersected by a cross-link
+        (T). Angle F (upper right interior) is $3x + 20^{\circ}$, and Angle G (lower right interior) is $2x + 45^{\circ}$.
+        Angle H is corresponding to Angle F, and Angle J is vertically opposite to Angle G. Find the value of $x$, and the
+        measures of Angle F, Angle H, and Angle J.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: variable
+          highlightPattern: none
+      finalAnswer: x = 23°; Angle F = 89°; Angle H = 89°; Angle J = 91°
+      stepByStepGuideline:
+      - 'Step 1: Use Co-interior Angles (F and G) to find x. Co-interior angles are supplementary (sum to $180^{\circ}$):
+        $(3x + 20) + (2x + 45) = 180$.'
+      - 'Step 2: Solve the equation: $5x + 65 = 180$. $5x = 115$. $x = 23$.'
+      - 'Step 3: Calculate Angle F: $F = 3(23) + 20 = 69 + 20 = 89^{\circ}$.'
+      - 'Step 4: Use Corresponding Angles property to find Angle H. Corresponding angles are equal: $H = F = 89^{\circ}$.'
+      - 'Step 5: Calculate Angle G, then use Vertically Opposite Angles property to find Angle J. $G = 2(23) + 45 = 46 + 45
+        = 91^{\circ}$. Thus, $J = G = 91^{\circ}$.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: Wire rigging for a museum display involves two parallel suspension cables (L1 and L2) crossed by a bracing
+        wire (T). Angle A (upper right exterior) is defined by $6x - 5^{\circ}$, and Angle B (lower right exterior) is defined
+        by $3x + 40^{\circ}$. Angle C is adjacent to Angle A, forming a straight line. Find the value of $x$, and the measures
+        of Angle A and Angle C.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: variable
+          knownPosition: variable
+          highlightPattern: none
+      finalAnswer: x = 15°; Angle A = 85°; Angle C = 95°
+      stepByStepGuideline:
+      - 'Step 1: Use Corresponding Angles (A and B) to find x. Corresponding angles are equal: $6x - 5 = 3x + 40$.'
+      - 'Step 2: Solve the equation: $3x = 45$, so $x = 15$.'
+      - 'Step 3: Calculate Angle A: $A = 6(15) - 5 = 90 - 5 = 85^{\circ}$.'
+      - 'Step 4: Use Angles on a Straight Line property to find Angle C. Angle C is supplementary to Angle A: $C = 180^{\circ}
+        - A = 180^{\circ} - 85^{\circ} = 95^{\circ}$.'
+      id: q16-5
+      questionGroup: q16
+- id: s1-angles-node-17
+  nodeNumber: 17
+  title: Geometric Reasoning - Writing Reasons
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelLinesTransversal
+    preWrittenQuestions:
+    - problemText: In a schematic for a rail tracks layout, two parallel tracks (L1 and L2) are crossed by a switch track
+        (T). Given that Angle A (Upper Right Exterior) is 70°, find the measure of Angle B (Lower Right Exterior). Write complete
+        geometric reasoning to justify your answer.
+      avatarIntro: This task requires you to clearly communicate the geometrical principle you are using. Remember to state
+        the reason fully when solving problems involving parallel lines.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: 1
+          highlightPattern: corresponding
+      finalAnswer: 'Given: Angle A = 70° on parallel lines L1 and L2 with transversal T.
+
+        To find: Angle B.
+
+        Working: Angle B = 70° (corresponding angles are equal when lines are parallel).
+
+        Therefore: Angle B = 70°.'
+      stepByStepGuideline:
+      - Identify the relationship between Angle A and Angle B.
+      - Angle A and Angle B are corresponding angles.
+      - 'State the property: Corresponding angles are equal when lines are parallel.'
+      - Conclude that Angle B equals 70°.
+      id: q17-1
+      questionGroup: q17
+    - problemText: An architectural blueprint shows two parallel horizontal beams supported by a diagonal brace, forming a
+        C-shape. If the interior Angle C (Top Right Interior) measures 110°, determine the measure of Angle D (Bottom Left
+        Interior). Show your full reasoning.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 110
+          knownPosition: 2
+          highlightPattern: co-interior
+      finalAnswer: 'Given: Angle C = 110° on parallel beams.
+
+        To find: Angle D.
+
+        Working: Angle D = 180° - 110° = 70° (co-interior angles sum to 180° when lines are parallel).
+
+        Therefore: Angle D = 70°.'
+      stepByStepGuideline:
+      - Identify the relationship between Angle C and Angle D as co-interior angles.
+      - 'State the property: Co-interior angles are supplementary (sum to 180°) when lines are parallel.'
+      - Calculate Angle D by subtracting Angle C from 180°.
+      - Conclude the final measure of Angle D.
+      id: q17-2
+      questionGroup: q17
+    - problemText: A diagram modeling electrical wiring conduit shows two parallel runs (L1 and L2) connected by a diagonal
+        wire (T). If Angle E (Top Left Interior) is 50°, calculate the measure of Angle F (Bottom Right Interior). Provide
+        clear, step-by-step geometric justification.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 50
+          knownPosition: 3
+          highlightPattern: alternate_interior
+      finalAnswer: 'Given: Angle E = 50° on parallel conduit runs.
+
+        To find: Angle F.
+
+        Working: Angle F = 50° (alternate angles are equal when lines are parallel).
+
+        Therefore: Angle F = 50°.'
+      stepByStepGuideline:
+      - Identify that Angle E and Angle F are alternate interior angles (forming a Z-pattern).
+      - 'State the property: Alternate angles are equal when lines are parallel.'
+      - Conclude that Angle F must equal Angle E (50°).
+      id: q17-3
+      questionGroup: q17
+    - problemText: A park fencing design involves two parallel sections cut by a diagonal path. Given that the exterior Angle
+        X (Top Left Exterior) measures 85°, find the measure of Angle Y (Bottom Right Interior). Write complete geometric
+        reasoning, justifying each step.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 85
+          knownPosition: 0
+          highlightPattern: multi_step
+      finalAnswer: 'Given: Angle X = 85° on parallel fencing sections.
+
+        To find: Angle Y.
+
+        Working:
+
+        1. Let Z be the angle adjacent to X (Top Left Interior). Z = 180° - 85° = 95° (angles on a straight line sum to 180°).
+
+        2. Angle Y = 95° (alternate angles are equal when lines are parallel).
+
+        Therefore: Angle Y = 95°.'
+      stepByStepGuideline:
+      - Determine the measure of the angle adjacent to Angle X on the straight transversal line (let this be Z), using the
+        property of angles on a straight line.
+      - State the value of Z and the justification ('angles on a straight line sum to 180°').
+      - Determine the relationship between Angle Z and Angle Y (alternate interior angles).
+      - 'State the property: Alternate angles are equal when lines are parallel.'
+      - Conclude the final measure of Angle Y.
+      id: q17-4
+      questionGroup: q17
+    - problemText: A complex mechanical diagram for a textile loom shows two parallel guides (L1 and L2) crossed by a control
+        rod (T). If Angle P (Top Right Exterior) measures 60°, determine the measure of Angle Q (Bottom Left Interior). Show
+        all steps and justifications clearly.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 60
+          knownPosition: 1
+          highlightPattern: multi_step
+      finalAnswer: 'Given: Angle P = 60° on parallel guides L1 and L2.
+
+        To find: Angle Q.
+
+        Working:
+
+        1. Let R be the angle vertically opposite to P (Top Left Interior). Angle R = 60° (vertically opposite angles are
+        equal).
+
+        2. Angle Q = 180° - 60° = 120° (co-interior angles sum to 180° when lines are parallel).
+
+        Therefore: Angle Q = 120°.'
+      stepByStepGuideline:
+      - Determine the measure of the angle vertically opposite to Angle P (let this be R).
+      - State the value of R and the justification ('vertically opposite angles are equal').
+      - Determine the relationship between Angle R and Angle Q (co-interior angles).
+      - 'State the property: Co-interior angles sum to 180° when lines are parallel.'
+      - Calculate Angle Q.
+      - Conclude the final measure of Angle Q.
+      id: q17-5
+      questionGroup: q17
+- id: s1-angles-node-18
+  nodeNumber: 18
+  title: Simple Proofs - Why Properties Work
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parallelLinesTransversal
+    preWrittenQuestions:
+    - problemText: In the design of a railway track layout, two parallel rails (L1 and L2) are crossed by a switch track (T).
+        Prove that the alternate interior angles formed (e.g., Angle 3 and Angle 6 in a standard diagram) must be equal. You
+        must use the properties of corresponding angles and vertically opposite angles in your proof.
+      avatarIntro: Ready to move beyond applying angle properties? Let's dive into reasoning and proofs to understand the
+        fundamental logic behind geometry rules.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: 0
+          highlightPattern: none
+      finalAnswer: 'Alternate interior angles are equal because they connect the properties of corresponding angles and vertically
+        opposite angles. If we label the alternate interior angles A (top left interior) and B (bottom right interior), and
+        C as the angle corresponding to B (top right exterior), and D as the angle vertically opposite to A (top right interior).
+        Wait, this is confusing. Let''s use the standard numerical positions: Angle 3 (top right interior) and Angle 6 (bottom
+        left interior). Let Angle 2 be corresponding to Angle 6. Angle 2 and Angle 3 are vertically opposite. Since Angle
+        2 = Angle 6 (corresponding angles) and Angle 2 = Angle 3 (vertically opposite angles), it logically follows that Angle
+        3 = Angle 6.'
+      stepByStepGuideline:
+      - 'Step 1: Identify the two alternate interior angles to be proven equal (let them be Angle A and Angle B).'
+      - 'Step 2: Choose a third angle, Angle C, that is vertically opposite to Angle A. State the known property: Angle A
+        = Angle C (Vertically Opposite Angles are equal).'
+      - 'Step 3: State the relationship between Angle C and Angle B. Angle C is the corresponding angle to Angle B (or vice
+        versa, depending on configuration). State the known property: Angle C = Angle B (Corresponding Angles are equal since
+        lines are parallel).'
+      - 'Step 4: Use transitive reasoning (if A=C and C=B, then A=B) to conclude that the alternate interior angles are equal.'
+      id: q18-1
+      questionGroup: q18
+    - problemText: A structural engineer is designing beam bracing where two parallel horizontal beams are cut by a diagonal
+        support. Prove why the co-interior angles (angles on the same side between the parallel lines) must sum to 180°. Your
+        proof must rely on the property that corresponding angles are equal and the property of angles on a straight line.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: 0
+          highlightPattern: none
+      finalAnswer: Let Angle X and Angle Y be the two co-interior angles. Angle X is on the top line, and Angle Y is below
+        it on the bottom line. Let Angle Z be the corresponding angle to Angle X, positioned outside the parallel lines on
+        the bottom line. Since the lines are parallel, Angle X = Angle Z (Corresponding Angles are equal). Angle Z and Angle
+        Y form a straight line, so Angle Z + Angle Y = 180° (Angles on a straight line sum to 180°). By substitution, Angle
+        X + Angle Y = 180°. Therefore, co-interior angles sum to 180°.
+      stepByStepGuideline:
+      - 'Step 1: Define two co-interior angles, Angle A and Angle B, where A is on the top line and B is on the bottom line.'
+      - 'Step 2: Define a corresponding angle, Angle C, to Angle A. State the known property: Angle A = Angle C (Corresponding
+        Angles are equal).'
+      - 'Step 3: Observe the relationship between Angle C and Angle B. They form a linear pair (angles on a straight line).
+        State the known property: Angle C + Angle B = 180°.'
+      - 'Step 4: Substitute Angle A for Angle C in the linear pair equation: Angle A + Angle B = 180°. Conclude that co-interior
+        angles sum to 180°.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: In an optical reflection system, two light paths intersect sharply (like the transversal intersecting the
+        parallel line). Prove why vertically opposite angles formed by the intersection must always be equal. Your proof should
+        only rely on the fundamental property that angles on a straight line sum to 180°.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: 0
+          highlightPattern: none
+      finalAnswer: 'Consider the two intersecting lines forming four angles: A, B, C, and D arranged sequentially around the
+        intersection. Let A and C be vertically opposite. Angle A and Angle B are on a straight line, so A + B = 180°. Angle
+        C and Angle B are also on a straight line, so C + B = 180°. Since both A + B and C + B equal 180°, we can equate them:
+        A + B = C + B. Subtracting Angle B from both sides leaves A = C. Therefore, vertically opposite angles are equal.'
+      stepByStepGuideline:
+      - 'Step 1: Label the four angles formed by the intersecting lines sequentially as A, B, C, and D. Identify the vertically
+        opposite pair to be proven equal (e.g., A and C).'
+      - 'Step 2: Use the property of angles on a straight line for the pair (A, B): A + B = 180°.'
+      - 'Step 3: Use the property of angles on a straight line for the adjacent pair involving C: C + B = 180°.'
+      - 'Step 4: Since both sums equal 180°, equate the expressions: A + B = C + B.'
+      - 'Step 5: Subtract the common angle (B) from both sides to conclude that A = C, proving that vertically opposite angles
+        are equal.'
+      id: q18-3
+      questionGroup: q18
+    - problemText: A radial engineering design uses spokes that meet at a central point. Explain logically why the sum of
+        all angles formed around any single intersection point in a plane must equal $360^{\circ}$. Assume the intersecting
+        lines are straight.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: 0
+          highlightPattern: none
+      finalAnswer: 'When two straight lines intersect, they form four angles (A, B, C, D) around a central point. These angles
+        can be grouped into two pairs that lie on straight lines. For example, A and B form a straight line, summing to 180°.
+        C and D form another straight line, also summing to 180°. Since the four angles (A+B+C+D) completely surround the
+        point, their total sum is the sum of these two straight lines: 180° + 180° = 360°. Thus, angles at a point sum to
+        360°.'
+      stepByStepGuideline:
+      - 'Step 1: Consider the four angles (A, B, C, D) formed by two intersecting straight lines at a point.'
+      - 'Step 2: Identify that two adjacent angles (e.g., A and B) form a straight line. State the known property: A + B =
+        180°.'
+      - 'Step 3: Identify that the remaining two adjacent angles (e.g., C and D) also form a straight line. State the known
+        property: C + D = 180°.'
+      - 'Step 4: The total sum of angles around the point is A + B + C + D. Sum the two straight line equations: 180° + 180°
+        = 360°.'
+      - 'Step 5: Conclude that the sum of angles around a point is 360°.'
+      id: q18-4
+      questionGroup: q18
+    - problemText: In a structural engineering lattice, two parallel members are crossed by a diagonal brace. Prove that the
+        sum of the four interior angles (Angles 3, 4, 5, and 6 in a standard parallel line diagram) must equal $360^{\circ}$.
+        Base your proof solely on the established property that co-interior angles sum to $180^{\circ}$.
+      mathTool:
+        toolName: parallelLinesTransversal
+        parameters:
+          knownAngle: 70
+          knownPosition: 0
+          highlightPattern: none
+      finalAnswer: 'The four interior angles can be split into two distinct pairs of co-interior angles. Let the interior
+        angles be A, B, C, and D. Pair 1 (A and B) are on the left side of the transversal. Since the lines are parallel,
+        A + B = 180° (Co-interior angles). Pair 2 (C and D) are on the right side of the transversal. Similarly, C + D = 180°
+        (Co-interior angles). The total sum of all four interior angles is the sum of these two pairs: (A + B) + (C + D) =
+        180° + 180° = 360°. Thus, the sum of the four interior angles is 360°.'
+      stepByStepGuideline:
+      - 'Step 1: Identify the four interior angles formed by the parallel lines and the transversal (A, B, C, D).'
+      - 'Step 2: Group the angles into the two pairs of co-interior angles.'
+      - 'Step 3: Apply the known property to the first pair (A and B): A + B = 180°.'
+      - 'Step 4: Apply the known property to the second pair (C and D): C + D = 180°.'
+      - 'Step 5: Sum the results of the two pairs to find the total sum of all interior angles: (A + B) + (C + D) = 180° +
+        180° = 360°.'
+      id: q18-5
+      questionGroup: q18
