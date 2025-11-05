@@ -491,20 +491,27 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
           // Check if this was a first-try success (attemptCount = 1 means first try)
           const isFirstTry = updatedProblemSession.attemptCount === 1;
-          pathProgressService.recordUnifiedAttempt(pathProgress, node.id, result.isCorrect, allNodes, isFirstTry);
+          pathProgressService.recordUnifiedAttempt(
+            pathProgress,
+            node.id,
+            result.isCorrect,
+            allNodes,
+            isFirstTry,
+            user?.uid,
+            category
+          );
 
           // Check if node is complete and mark it
           const nodeProgress = pathProgress.nodes[node.id];
           if (nodeProgress && nodeProgress.problemsAttempted >= node.problemsRequired) {
-            pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes);
+            pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes, user?.uid, category);
             console.log(`✅ Node completed! (${nodeProgress.problemsAttempted}/${node.problemsRequired})`);
           }
 
           pathProgressService.saveUnifiedProgress(category, pathProgress);
           console.log(`📊 Updated unified progress: ${nodeProgress?.problemsAttempted || 0}/${node.problemsRequired} problems`);
 
-          // Also save to Firestore
-          await saveProgressToFirestore(pathProgress, allNodes, user?.uid);
+          // Firestore save is now automatic via pathProgressService auto-save
         }
       } else {
         // For incorrect attempts that can retry, also save the session state
@@ -697,7 +704,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
         // Only complete the node if it's not already marked as completed
         if (nodeProgress.status !== 'completed') {
-          pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes);
+          pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes, user?.uid, category);
         } else {
           console.log('  Node already marked as completed');
         }

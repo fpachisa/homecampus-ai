@@ -89,6 +89,16 @@ export interface UserProfile {
     [pathId: string]: PathProgressData;
   };
 
+  // Gamification stats (aggregated from practice progress)
+  gamification?: {
+    totalXP: number;
+    currentLevel: number;
+    currentStreak: number;
+    longestStreak: number;
+    totalAchievements: number;
+    lastUpdated?: string; // ISO timestamp
+  };
+
   settings: {
     ttsSpeaker: string;
     theme: 'light' | 'dark';

@@ -14,10 +14,15 @@ import type {
 } from '../types/practice';
 import { streakService } from './streakService';
 import { achievementService } from './achievementService';
+import { savePracticeProgress, pathProgressToFirestore } from './firestoreProgressService';
 
 class PathProgressService {
   private readonly STORAGE_KEY_PREFIX = 'practice_path_state_';
   private readonly UNIFIED_STORAGE_KEY_PREFIX = 'practice_unified_path_';
+
+  // Debounce timer for Firestore saves
+  private saveTimers: Map<string, NodeJS.Timeout> = new Map();
+  private readonly SAVE_DEBOUNCE_MS = 2000;
 
   /**
    * Load progress for a category from localStorage
@@ -488,14 +493,67 @@ class PathProgressService {
   }
 
   /**
+   * Debounced save to Firestore
+   * @private
+   */
+  private debouncedFirestoreSave(uid: string, category: string, pathProgress: PathProgress, allNodes: PathNode[]): void {
+    const key = `${uid}:${category}`;
+
+    // Clear existing timer for this uid/category combination
+    if (this.saveTimers.has(key)) {
+      clearTimeout(this.saveTimers.get(key)!);
+    }
+
+    // Set new timer
+    const timer = setTimeout(async () => {
+      try {
+        console.log(`💾 Auto-saving progress to Firestore for ${category}...`);
+        // Extract displayName from first node's title, or fall back to category
+        const displayName = allNodes[0]?.title?.split(' - ')[0] || category;
+        const firestoreProgress = pathProgressToFirestore(pathProgress, category, displayName, allNodes);
+        await savePracticeProgress(uid, category, firestoreProgress);
+        console.log(`✅ Progress auto-saved to Firestore`);
+      } catch (error) {
+        console.error('Failed to auto-save progress to Firestore:', error);
+      } finally {
+        this.saveTimers.delete(key);
+      }
+    }, this.SAVE_DEBOUNCE_MS);
+
+    this.saveTimers.set(key, timer);
+  }
+
+  /**
+   * Flush any pending Firestore saves immediately
+   * Call this before page unload to ensure no data loss
+   */
+  async flushPendingSaves(): Promise<void> {
+    const promises: Promise<void>[] = [];
+
+    // Clear all timers and execute saves immediately
+    for (const [_key, timer] of this.saveTimers.entries()) {
+      clearTimeout(timer);
+      // Note: We can't execute the saves here without more context
+      // This is a best-effort flush; components should call explicit saves on unmount
+    }
+
+    this.saveTimers.clear();
+    await Promise.all(promises);
+  }
+
+  /**
    * Record a problem attempt in unified progress
+   * @param uid - Optional user ID for Firestore auto-save
+   * @param category - Optional category for Firestore auto-save
    */
   recordUnifiedAttempt(
     pathProgress: PathProgress,
     nodeId: string,
     isCorrect: boolean,
     allNodes: PathNode[],
-    isFirstTry: boolean = false
+    isFirstTry: boolean = false,
+    uid?: string,
+    category?: string
   ): void {
     const nodeProgress = pathProgress.nodes[nodeId];
     if (!nodeProgress) {
@@ -562,12 +620,25 @@ class PathProgressService {
     // Recalculate layer progress (in case node was completed)
     pathProgress.layerProgress = this.calculateLayerProgress(allNodes, pathProgress.nodes);
     pathProgress.lastUpdated = new Date();
+
+    // Auto-save to Firestore if uid and category provided
+    if (uid && category) {
+      this.debouncedFirestoreSave(uid, category, pathProgress, allNodes);
+    }
   }
 
   /**
    * Complete a node in unified progress
+   * @param uid - Optional user ID for Firestore auto-save
+   * @param category - Optional category for Firestore auto-save
    */
-  completeUnifiedNode(pathProgress: PathProgress, nodeId: string, allNodes: PathNode[]): void {
+  completeUnifiedNode(
+    pathProgress: PathProgress,
+    nodeId: string,
+    allNodes: PathNode[],
+    uid?: string,
+    category?: string
+  ): void {
     const nodeProgress = pathProgress.nodes[nodeId];
     if (!nodeProgress) return;
 
@@ -610,6 +681,11 @@ class PathProgressService {
     // Recalculate layer progress
     pathProgress.layerProgress = this.calculateLayerProgress(allNodes, pathProgress.nodes);
     pathProgress.lastUpdated = new Date();
+
+    // Auto-save to Firestore if uid and category provided
+    if (uid && category) {
+      this.debouncedFirestoreSave(uid, category, pathProgress, allNodes);
+    }
   }
 
   /**

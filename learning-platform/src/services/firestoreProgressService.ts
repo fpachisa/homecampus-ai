@@ -380,6 +380,21 @@ export async function savePracticeProgress(
     const cleanedSummaryUpdate = stripUndefined(summaryUpdate);
     batch.set(summaryRef, cleanedSummaryUpdate, { merge: true });
 
+    // 3. Update user profile with global gamification stats
+    const userProfileRef = doc(firestore, 'users', uid);
+    const gamificationUpdate = {
+      gamification: {
+        totalXP: progress.totalXP,
+        currentLevel: progress.currentLevel,
+        currentStreak: progress.streak?.currentStreak || 0,
+        longestStreak: progress.streak?.longestStreak || 0,
+        totalAchievements: progress.achievements?.length || 0,
+        lastUpdated: new Date().toISOString()
+      }
+    };
+
+    batch.set(userProfileRef, gamificationUpdate, { merge: true });
+
     await batch.commit();
   } catch (error) {
     // Simple retry logic (3 attempts)

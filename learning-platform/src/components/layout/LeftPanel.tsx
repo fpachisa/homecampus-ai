@@ -326,7 +326,7 @@ function getCategoryDisplayName(category: string): string {
 const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions }) => {
   const { theme } = useTheme();
   const { pathId } = useParams<{ pathId: string }>();
-  const { goToLearn, goToHome } = useAppNavigation();
+  const { goToLearn, goToHome, goToPractice } = useAppNavigation();
   const [searchTerm, setSearchTerm] = useState('');
 
   // Derive category from pathId
@@ -786,6 +786,32 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
             </svg>
+          </button>
+        </div>
+
+        {/* Practice Mode Button */}
+        <div className="px-4 pb-3">
+          <button
+            onClick={() => goToPractice(selectedCategory)}
+            className="w-full px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 flex items-center justify-center space-x-2"
+            style={{
+              backgroundColor: theme.colors.brand,
+              color: 'white',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.opacity = '0.9';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.opacity = '1';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
+            title="Switch to Practice Mode for this topic"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Practice Mode</span>
           </button>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
+import { useAppNavigation } from '../hooks/useAppNavigation';
 import { S3_MATH_TRIGONOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import type { TrigonometryTopicId } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
 import { S3_MATH_CIRCLE_GEOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-circle-geometry';
@@ -70,6 +71,7 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
   onBack,
 }) => {
   const { theme } = useTheme();
+  const { goToPractice } = useAppNavigation();
   const [enableVoice, setEnableVoice] = useState(true);
 
   // Get topic config based on category
@@ -220,8 +222,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
               {topicConfig.displayName}
             </h1>
 
-            <div className ="flex justify-center">
-              {/* Start Button at Top */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              {/* Start Learning Button */}
               <button
                 onClick={() => onStartLearning(enableVoice)}
                 className="w-48 py-4 rounded-xl font-semibold text-lg transition-all duration-200 hover:scale-105"
@@ -232,6 +234,22 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
                 }}
               >
                 Start Learning
+              </button>
+
+              {/* Go to Practice Mode Button */}
+              <button
+                onClick={() => goToPractice(category)}
+                className="w-48 py-4 rounded-xl font-semibold text-lg transition-all duration-200 hover:scale-105 flex items-center justify-center space-x-2"
+                style={{
+                  background: theme.gradients.brand,
+                  color: '#ffffff',
+                  boxShadow: theme.shadows.glow,
+                }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Practice Mode</span>
               </button>
             </div>
           </div>

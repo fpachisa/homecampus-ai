@@ -8,6 +8,7 @@ import { OnboardingWizard } from '../components/onboarding/OnboardingWizard';
 // Lazy load components for code splitting
 const LandingPage = lazy(() => import('../components/LandingPage'));
 const HomePage = lazy(() => import('../components/HomePage'));
+const SettingsPage = lazy(() => import('../pages/SettingsPage'));
 const ParentDashboard = lazy(() => import('../components/parent/ParentDashboard'));
 const ErrorBoundary = lazy(() => import('../components/ErrorBoundary'));
 const GreetingsViewer = lazy(() => import('../pages/GreetingsViewer'));
@@ -170,6 +171,16 @@ export const router = createBrowserRouter([
       <RootLayout>
         <ProtectedRoute>
           <HomePage />
+        </ProtectedRoute>
+      </RootLayout>
+    ),
+  },
+  {
+    path: '/settings',
+    element: (
+      <RootLayout>
+        <ProtectedRoute>
+          <SettingsPage />
         </ProtectedRoute>
       </RootLayout>
     ),

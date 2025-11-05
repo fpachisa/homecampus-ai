@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme } from '../../hooks/useTheme';
 import { useActiveProfile } from '../../contexts/ActiveProfileContext';
@@ -9,6 +10,7 @@ interface ProfileMenuProps {
 }
 
 export const ProfileMenu: React.FC<ProfileMenuProps> = ({ onOpenAuth }) => {
+  const navigate = useNavigate();
   const { user, userProfile, logout, loading } = useAuth();
   const { theme } = useTheme();
   const { switchToSelf } = useActiveProfile();
@@ -205,7 +207,7 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({ onOpenAuth }) => {
             <button
               onClick={() => {
                 setIsOpen(false);
-                // TODO: Navigate to settings
+                navigate('/settings');
               }}
               className="w-full px-4 py-2 text-left text-sm transition-colors flex items-center gap-2"
               style={{ color: theme.colors.textSecondary }}
