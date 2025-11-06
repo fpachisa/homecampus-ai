@@ -77,6 +77,21 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's1/math/data-handling/PictogramsBarGraphs': () => import('../notes/s1/math/data-handling/PictogramsBarGraphs'),
   's1/math/data-handling/PieChartsLineGraphs': () => import('../notes/s1/math/data-handling/PieChartsLineGraphs'),
   's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),
+  // S2 Linear Graphs notes
+  's2/math/linear-graph/IntroToLinearGraphs': () => import('../notes/s2/math/linear-graph/IntroToLinearGraphs'),
+  's2/math/linear-graph/GradientAndIntercept': () => import('../notes/s2/math/linear-graph/GradientAndIntercept'),
+  's2/math/linear-graph/EquationOfLine': () => import('../notes/s2/math/linear-graph/EquationOfLine'),
+  's2/math/linear-graph/EquationsFromTwoPoints': () => import('../notes/s2/math/linear-graph/EquationsFromTwoPoints'),
+  's2/math/linear-graph/GraphingLinearEquations': () => import('../notes/s2/math/linear-graph/GraphingLinearEquations'),
+  's2/math/linear-graph/SimultaneousEquationsIntro': () => import('../notes/s2/math/linear-graph/SimultaneousEquationsIntro'),
+  's2/math/linear-graph/SimultaneousEquationsAlgebraic': () => import('../notes/s2/math/linear-graph/SimultaneousEquationsAlgebraic'),
+  // S2 Linear Inequalities notes
+  's2/math/linear-inequalities/IntroductionToInequalities': () => import('../notes/s2/math/linear-inequalities/IntroductionToInequalities'),
+  's2/math/linear-inequalities/SolvingLinearInequalities': () => import('../notes/s2/math/linear-inequalities/SolvingLinearInequalities'),
+  's2/math/linear-inequalities/RepresentingSolutions': () => import('../notes/s2/math/linear-inequalities/RepresentingSolutions'),
+  's2/math/linear-inequalities/GraphingTwoVariableInequalities': () => import('../notes/s2/math/linear-inequalities/GraphingTwoVariableInequalities'),
+  's2/math/linear-inequalities/SystemsOfInequalities': () => import('../notes/s2/math/linear-inequalities/SystemsOfInequalities'),
+  's2/math/linear-inequalities/ApplicationsAndOptimization': () => import('../notes/s2/math/linear-inequalities/ApplicationsAndOptimization'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

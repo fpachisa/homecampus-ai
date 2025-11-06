@@ -55,6 +55,10 @@ import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../prompt-library/subjects/mat
 import type { PerimeterAreaTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
 import { S1_MATH_DATA_HANDLING_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
 import type { DataHandlingTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
+import { LINEAR_GRAPHS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
+import type { LinearGraphsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
+import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
+import type { LinearInequalitiesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -98,6 +102,10 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S1_MATH_PERIMETER_AREA_SUBTOPICS[topicId as PerimeterAreaTopicId];
   } else if (category === 's1-math-data-handling') {
     topicConfig = S1_MATH_DATA_HANDLING_SUBTOPICS[topicId as DataHandlingTopicId];
+  } else if (category === 's2-math-linear-graphs') {
+    topicConfig = LINEAR_GRAPHS_SUBTOPICS[topicId as LinearGraphsTopicId];
+  } else if (category === 's2-math-linear-inequalities') {
+    topicConfig = LINEAR_INEQUALITIES_SUBTOPICS[topicId as LinearInequalitiesTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {

@@ -48,6 +48,8 @@ import { S1_PERCENTAGE_SUBTOPICS, S1_PERCENTAGE_CONFIG } from '../prompt-library
 import { S1_LINEAR_FUNCTIONS_SUBTOPICS, S1_LINEAR_FUNCTIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
 import { S1_MATH_PERIMETER_AREA_SUBTOPICS, S1_PERIMETER_AREA_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
 import { S1_MATH_DATA_HANDLING_SUBTOPICS, S1_DATA_HANDLING_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
+import { LINEAR_GRAPHS_SUBTOPICS, S2_LINEAR_GRAPHS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
+import { LINEAR_INEQUALITIES_SUBTOPICS, S2_LINEAR_INEQUALITIES_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -99,6 +101,10 @@ function registerBrowserTopics() {
   registerTopics(S1_LINEAR_FUNCTIONS_SUBTOPICS, S1_LINEAR_FUNCTIONS_CONFIG);
   registerTopics(S1_MATH_PERIMETER_AREA_SUBTOPICS, S1_PERIMETER_AREA_CONFIG);
   registerTopics(S1_MATH_DATA_HANDLING_SUBTOPICS, S1_DATA_HANDLING_CONFIG);
+
+  // Register S2 topics
+  registerTopics(LINEAR_GRAPHS_SUBTOPICS, S2_LINEAR_GRAPHS_CONFIG);
+  registerTopics(LINEAR_INEQUALITIES_SUBTOPICS, S2_LINEAR_INEQUALITIES_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);

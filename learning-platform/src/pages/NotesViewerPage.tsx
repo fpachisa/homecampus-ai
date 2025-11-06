@@ -13,6 +13,23 @@ import { useTheme } from '../hooks/useTheme';
 // Notes registry - extracted from notesLoader.ts
 const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType<any> }>> = {
 
+  // S2 Line Graphs notes
+  's2/math/linear-graph/IntroToLineGraphs': () => import('../notes/s2/math/linear-graph/IntroToLinearGraphs'),
+  's2/math/linear-graph/EquationOfLine': () => import('../notes/s2/math/linear-graph/EquationOfLine'),
+  's2/math/linear-graph/EquationsFromTwoPoints': () => import('../notes/s2/math/linear-graph/EquationsFromTwoPoints'),
+  's2/math/linear-graph/GradientAndIntercept': () => import('../notes/s2/math/linear-graph/GradientAndIntercept'),
+  's2/math/linear-graph/GraphingLinearEquations': () => import('../notes/s2/math/linear-graph/GraphingLinearEquations'),
+  's2/math/linear-graph/SimultaneousEquationsAlgebraic': () => import('../notes/s2/math/linear-graph/SimultaneousEquationsAlgebraic'),
+  's2/math/linear-graph/SimultaneousEquationsIntro': () => import('../notes/s2/math/linear-graph/SimultaneousEquationsIntro'),
+
+  // S2 Linear Inequalities notes
+  's2/math/linear-inequalities/IntroductionToInequalities': () => import('../notes/s2/math/linear-inequalities/IntroductionToInequalities'),
+  's2/math/linear-inequalities/SolvingLinearInequalities': () => import('../notes/s2/math/linear-inequalities/SolvingLinearInequalities'),
+  's2/math/linear-inequalities/RepresentingSolutions': () => import('../notes/s2/math/linear-inequalities/RepresentingSolutions'),
+  's2/math/linear-inequalities/GraphingTwoVariableInequalities': () => import('../notes/s2/math/linear-inequalities/GraphingTwoVariableInequalities'),
+  's2/math/linear-inequalities/SystemsOfInequalities': () => import('../notes/s2/math/linear-inequalities/SystemsOfInequalities'),
+  's2/math/linear-inequalities/ApplicationsAndOptimization': () => import('../notes/s2/math/linear-inequalities/ApplicationsAndOptimization'),
+
   //S1 Data Handling notes
   's1/math/data-handling/Introduction': () => import('../notes/s1/math/data-handling/Introduction'),
   's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),
@@ -222,6 +239,7 @@ function organizeNotesByHierarchy(): NotesHierarchy {
 // Friendly names
 const gradeName = (grade: string) => {
   return grade.replace('s1', 'Secondary 1')
+    .replace('s2', 'Secondary 2')
     .replace('s3', 'Secondary 3')
     .replace('s4', 'Secondary 4');
 };

@@ -151,16 +151,28 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
 
   'Secondary 2': [
     {
-      id: 's2-linear-equations',
-      name: 'Linear Equations',
-      icon: '📏',
-      description: 'Solve and graph linear equations and inequalities',
-      subtopicCount: 8,
-      isActive: false,
-      category: 's2-math-linear-equations',
+      id: 's2-linear-graphs',
+      name: 'Linear Graphs & Equations',
+      icon: '📈',
+      description: 'Master linear graphs, gradients, y-intercepts, equations, and simultaneous equations',
+      subtopicCount: 7,
+      isActive: true,
+      category: 's2-math-linear-graphs',
       grade: 'Secondary 2',
       subject: 'Mathematics',
     },
+    {
+      id: 's2-linear-inequalities',
+      name: 'Linear Inequalities',
+      icon: '≤',
+      description: 'Master inequalities, solving, graphing, systems, and optimization with linear programming',
+      subtopicCount: 6,
+      isActive: true,
+      category: 's2-math-linear-inequalities',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
+
   ],
 
   'Secondary 3': [

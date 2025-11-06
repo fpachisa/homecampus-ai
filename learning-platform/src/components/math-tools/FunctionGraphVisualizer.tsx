@@ -4,13 +4,13 @@ import { useTheme } from '../../hooks/useTheme';
 import { calculateSafeYRange } from './utils/safeRangeCalculator';
 
 interface FunctionGraphVisualizerProps {
-  expression: string; // Function expression like "x^2", "sin(x)", "2*x + 3"
+  expression?: string; // Function expression like "x^2", "sin(x)", "2*x + 3" (optional for plotting points only)
   xMin?: number;
   xMax?: number;
   yMin?: number;
   yMax?: number;
   showGrid?: boolean;
-  showPoints?: Array<{ x: number; label?: string; color?: string }>; // Points to mark
+  showPoints?: Array<{ x: number; y?: number; label?: string; color?: string }>; // Points to mark (y optional - if not provided, calculated from expression)
   color?: string; // Curve color
   label?: string; // Function label
   caption?: string;
@@ -35,6 +35,7 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
 
   // Safe expression evaluator
   const evaluateExpression = (x: number): number | null => {
+    if (!expression) return null;
     try {
       // Replace common math notation with JavaScript
       let expr = expression
@@ -84,13 +85,28 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
     }
 
     const yValues: number[] = [];
-    const step = (xMax - xMin) / 100;
 
-    for (let x = xMin; x <= xMax; x += step) {
-      const y = evaluateExpression(x);
-      if (y !== null) {
-        yValues.push(y);
+    // Include y-values from expression if provided
+    if (expression) {
+      const step = (xMax - xMin) / 100;
+      for (let x = xMin; x <= xMax; x += step) {
+        const y = evaluateExpression(x);
+        if (y !== null) {
+          yValues.push(y);
+        }
       }
+    }
+
+    // Include explicit y-values from showPoints
+    showPoints.forEach(point => {
+      if (point.y !== undefined) {
+        yValues.push(point.y);
+      }
+    });
+
+    // If no y-values found, use default range
+    if (yValues.length === 0) {
+      return [yMin ?? -5, yMax ?? 5];
     }
 
     // Use safe range calculator to prevent crashes from extreme values
@@ -121,6 +137,8 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
 
   // Generate function path
   const generatePath = (): string => {
+    if (!expression) return ''; // No expression, no path
+
     const points: [number, number][] = [];
     const step = (xMax - xMin) / 300; // smooth curve
 
@@ -159,9 +177,9 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
           y1={padding}
           x2={svgX}
           y2={height - padding}
-          stroke={theme.colors.interactive}
+          stroke="#d1d5db"
           strokeWidth="1"
-          opacity="0.2"
+          opacity="0.5"
         />
       );
     }
@@ -177,9 +195,9 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
           y1={svgY}
           x2={width - padding}
           y2={svgY}
-          stroke={theme.colors.interactive}
+          stroke="#d1d5db"
           strokeWidth="1"
-          opacity="0.2"
+          opacity="0.5"
         />
       );
     }
@@ -227,7 +245,16 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
 
         {/* Marked points */}
         {showPoints.map((point, idx) => {
-          const y = evaluateExpression(point.x);
+          // Use explicit y if provided, otherwise calculate from expression
+          let y: number | null;
+          if (point.y !== undefined) {
+            y = point.y;
+          } else if (expression) {
+            y = evaluateExpression(point.x);
+          } else {
+            return null; // No y-value and no expression to calculate from
+          }
+
           if (y === null) return null;
 
           const [svgX, svgY] = mathToSVG(point.x, y);
@@ -267,6 +294,18 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
             }
           }
 
+          // Calculate label background dimensions
+          const labelWidth = point.label ? point.label.length * 8 + 8 : 0;
+          const labelHeight = 20;
+
+          // Calculate rectangle x position based on text anchor
+          let rectX = labelX - 4;
+          if (point.label) {
+            if (textAnchor === 'end') {
+              rectX = labelX - labelWidth + 4;
+            }
+          }
+
           return (
             <g key={idx}>
               <circle
@@ -281,13 +320,15 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
                 <>
                   {/* Label background for better readability */}
                   <rect
-                    x={textAnchor === 'end' ? labelX - 45 : labelX - 2}
+                    x={rectX}
                     y={labelY - 16}
-                    width={point.label.length * 8 + 8}
-                    height={20}
-                    fill="white"
-                    opacity="0.85"
+                    width={labelWidth}
+                    height={labelHeight}
+                    fill={theme.colors.surface}
+                    opacity="0.95"
                     rx="3"
+                    stroke={theme.colors.border}
+                    strokeWidth="1"
                   />
                   <text
                     x={labelX}

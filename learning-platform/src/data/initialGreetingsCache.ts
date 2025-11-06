@@ -4172,6 +4172,226 @@ If a specific data category accounts for \$\\frac{1}{4}\$ of the total observati
 When visualizing data that changes continuously over a period (e.g., stock prices, temperature readings), why is a **line graph** generally a more effective choice than a **bar chart**?`,
       showAfterSpeech: true
     }
+  },
+  /**
+   * ========================================
+   * S2 LINEAR GRAPHS & EQUATIONS
+   * ========================================
+   */
+  's2-math-linear-graphs-intro': {
+    speech: {
+      text: `Welcome to the world of linear graphs! Every great journey starts with a map, and in algebra, our map is the Cartesian Plane. Let's make sure we know exactly where we are starting.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-graphs-intro.mp3'
+    },
+    display: {
+      content: `### The Cartesian Plane
+
+What are the coordinates of the point that is 3 units right of the origin and 5 units down?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-graphs-gradient-intercept': {
+    speech: {
+      text: `Hey there! Ready to tackle steepness? Gradient is the core concept of how fast a line rises or falls. Think of it as calculating the slope of a hill. Let's jump right into the formula!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-graphs-gradient-intercept.mp3'
+    },
+    display: {
+      content: `### The Gradient Formula
+
+Calculate the gradient (\$m\$) of the line passing through the points \$(1, 8)\$ and \$(3, 14)\$.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-graphs-equation-of-line': {
+    speech: {
+      text: `Greetings! Today we unlock the standard language of straight lines: the gradient-intercept form, y equals m x plus c. This equation is incredibly powerful because it tells us everything we need to know about the line's direction and starting point.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-graphs-equation-of-line.mp3'
+    },
+    display: {
+      content: `### The Gradient-Intercept Form: \$y = mx + c\$
+
+Identify the gradient (\$m\$) and the \$y\$-intercept (\$c\$) for the equation \$y = 5x - 7\$.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-graphs-equations-from-points': {
+    speech: {
+      text: `Hi! Imagine you only have two tiny clues, two points, but you need the entire equation of the line. That's what the Two-Point Method is for! It's a systematic way to build the equation from minimal information. Let's start by recalling the first crucial step.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-graphs-equations-from-points.mp3'
+    },
+    display: {
+      content: `### The Two-Point Method
+
+When finding the equation of a line passing through \$(2, 1)\$ and \$(4, 9)\$, what is the first step, and what value do you get for the gradient (\$m\$)?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-graphs-graphing': {
+    speech: {
+      text: `Ever wonder how an algebraic equation turns into a beautiful, straight line on a graph? The Table of Values method is our bridge! It allows us to systematically generate coordinates that satisfy the equation. Let's practice creating our first set of points.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-graphs-graphing.mp3'
+    },
+    display: {
+      content: `### Table of Values Method
+
+Complete the table of values for the equation \$y = 3x - 1\$.
+
+| \$x\$ | \$-1\$ | \$0\$ | \$1\$ |
+| :---: | :---: | :---: | :---: |
+| \$y\$ | ? | ? | ? |`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-graphs-simultaneous-intro': {
+    speech: {
+      text: `Hello! Get ready for a fascinating topic! Simultaneous equations are like two separate paths, and our job is to find the exact point where they cross. This intersection point solves both equations at the same time. What does it mean for a single point to satisfy two different equations?`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-graphs-simultaneous-intro.mp3'
+    },
+    display: {
+      content: `### What are Simultaneous Equations?
+
+Does the point \$(3, 1)\$ satisfy *both* equations in the following system?
+
+Equation 1: \$x + y = 4\$
+
+Equation 2: \$2x - y = 5\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-graphs-simultaneous-algebraic': {
+    speech: {
+      text: `Time to master an essential skill: the Substitution Method! When solving simultaneous equations algebraically, substitution is often the cleanest way to isolate a variable and reduce the system down to a single equation. Let's practice setting up the first step correctly.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-graphs-simultaneous-algebraic.mp3'
+    },
+    display: {
+      content: `### The Substitution Method
+
+Given the system:
+
+1. \$y = 2x + 1\$
+
+2. \$3x + y = 11\$
+
+Substitute Equation 1 into Equation 2, and write down the resulting equation in terms of \$x\$ only.`,
+      showAfterSpeech: true
+    }
+  },
+  /**
+   * ========================================
+   * S2 LINEAR INEQUALITIES
+   * ========================================
+   */
+  's2-math-linear-inequalities-intro': {
+    speech: {
+      text: `Greetings! We are starting a fascinating journey into Linear Inequalities. Unlike equations that demand a single answer, inequalities describe entire ranges of possibilities. Lets make sure we speak the same language first.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-inequalities-intro.mp3'
+    },
+    display: {
+      content: `### Understanding Inequality Symbols
+
+Which symbol correctly represents the phrase: "x is less than or equal to 5"?
+
+(A) x < 5
+(B) x > 5
+(C) x ≥ 5
+(D) x ≤ 5`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-inequalities-solving': {
+    speech: {
+      text: `Hi there! Solving inequalities is just like solving equations, with one crucial twist we need to remember. Think of the inequality sign as a balance scale that needs to stay tilted correctly. Ready to tackle your first one-step problem?`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-inequalities-solving.mp3'
+    },
+    display: {
+      content: `### One-Step Inequalities
+
+Solve the following inequality for the variable n:
+
+n + 7 > 15`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-inequalities-representing': {
+    speech: {
+      text: `Welcome aboard! Math isnt always about numbers; sometimes its about visualization. How do we clearly show an infinite set of solutions? We use the number line! Lets practice translating algebraic language into a visual map.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-inequalities-representing.mp3'
+    },
+    display: {
+      content: `### Number Line Representation
+
+Describe the graph of the solution set for the inequality x < -3.
+
+Specifically, should the circle at -3 be open or closed, and should the shading go left or right?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-inequalities-graphing': {
+    speech: {
+      text: `Hey, lets level up! Weve mastered inequalities with one variable, just x, but now we introduce the y-axis. When we move from a single line to a coordinate plane, the solution becomes an entire shaded region. This is where things get exciting!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-inequalities-graphing.mp3'
+    },
+    display: {
+      content: `### From One to Two Variables
+
+When graphing the inequality 2x + 3y ≥ 6, should the boundary line be **solid** or **dashed**? Explain your reasoning.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-inequalities-systems': {
+    speech: {
+      text: `Greetings, mathematical strategist! Systems of inequalities are like overlapping Venn diagrams—we are looking for the sweet spot where all conditions are met simultaneously. Finding that common ground is the key to solving complex problems.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-inequalities-systems.mp3'
+    },
+    display: {
+      content: `### Graphing Systems of Inequalities
+
+If you graph the system:
+
+1. y > x
+2. y < -x + 4
+
+Which quadrant (I, II, III, or IV) contains the solution region?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-linear-inequalities-applications': {
+    speech: {
+      text: `Did you know inequalities govern everything from budget constraints to speed limits? Today, we are putting on our translator hats to convert real-world rules into mathematical models. Lets start with a simple constraint.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-linear-inequalities-applications.mp3'
+    },
+    display: {
+      content: `### Modeling Real-World Constraints
+
+A delivery driver needs to drive **at least** 50 miles per day. Let \$m\$ represent the number of miles driven.
+
+Write an inequality that models this constraint.`,
+      showAfterSpeech: true
+    }
   }
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,

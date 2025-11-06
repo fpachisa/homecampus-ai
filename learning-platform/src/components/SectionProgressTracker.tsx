@@ -55,6 +55,10 @@ import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../prompt-library/subjects/mat
 import type { PerimeterAreaTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
 import { S1_MATH_DATA_HANDLING_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
 import type { DataHandlingTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
+import { LINEAR_GRAPHS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
+import type { LinearGraphsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
+import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
+import type { LinearInequalitiesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -118,6 +122,14 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s1-math-data-')) {
       const subtopic = S1_MATH_DATA_HANDLING_SUBTOPICS[topicId as DataHandlingTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s2-math-linear-graphs-')) {
+      const subtopic = LINEAR_GRAPHS_SUBTOPICS[topicId as LinearGraphsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s2-math-linear-inequalities-')) {
+      const subtopic = LINEAR_INEQUALITIES_SUBTOPICS[topicId as LinearInequalitiesTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {

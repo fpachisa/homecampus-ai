@@ -31,6 +31,8 @@ import { S1_PERCENTAGE_SUBTOPICS } from '../prompt-library/subjects/mathematics/
 import { S1_LINEAR_FUNCTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-linear-functions-graphs';
 import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
 import { S1_MATH_DATA_HANDLING_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
+import { LINEAR_GRAPHS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
+import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 
 export interface SubtopicContent {
   displayName: string;
@@ -60,6 +62,9 @@ class SubtopicContentLoader {
       ...S1_LINEAR_FUNCTIONS_SUBTOPICS,
       ...S1_MATH_PERIMETER_AREA_SUBTOPICS,
       ...S1_MATH_DATA_HANDLING_SUBTOPICS,
+      // S2 Math topics
+      ...LINEAR_GRAPHS_SUBTOPICS,
+      ...LINEAR_INEQUALITIES_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

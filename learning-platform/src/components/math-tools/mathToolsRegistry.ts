@@ -3855,6 +3855,192 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
         }
       }
     ]
+  },
+
+  simultaneousEquationsSolver: {
+    name: "Simultaneous Equations Solver",
+    technicalName: "simultaneousEquationsSolver",
+    component: "SimultaneousEquationsSolver",
+    category: "coordinate-geometry",
+    description: "Interactive visualizer for solving simultaneous linear equations. Displays both equations graphically on a coordinate plane, highlights the intersection point (solution), and can show step-by-step algebraic solutions using substitution or elimination methods. Handles special cases: parallel lines (no solution) and coincident lines (infinite solutions).",
+    whenToUse: "Use for teaching systems of linear equations: graphical solution method (finding intersection), substitution method (step-by-step), elimination method (step-by-step), verifying solutions, understanding why intersection = solution, or identifying special cases (parallel/coincident lines). Essential for S2 Linear Graphs and Simultaneous Equations topics.",
+
+    parameters: {
+      equation1: "{a: number, b: number, c: number} - First equation in standard form ax + by = c. Example: {a: 2, b: 3, c: 12} represents 2x + 3y = 12",
+      equation2: "{a: number, b: number, c: number} - Second equation in standard form ax + by = c. Example: {a: 1, b: -1, c: 3} represents x - y = 3",
+      method: "string (optional, default: 'graphical') - Solution method to display: 'graphical' (graph only), 'substitution' (show substitution steps), 'elimination' (show elimination steps)",
+      showSteps: "boolean (optional, default: false) - Show step-by-step algebraic solution. Only works when method is 'substitution' or 'elimination'",
+      highlightIntersection: "boolean (optional, default: true) - Highlight the intersection point with a red dot and coordinates label",
+      caption: "string (optional) - Explanation text below visualization (supports LaTeX)"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Graphical solution - lines intersecting at one point",
+        caption: "Find where the two lines intersect. This point satisfies both equations.",
+        parameters: {
+          equation1: { a: 2, b: 1, c: 10 },
+          equation2: { a: 1, b: -1, c: 2 },
+          method: "graphical",
+          highlightIntersection: true
+        }
+      },
+      {
+        scenario: "Substitution method with steps",
+        caption: "Solving using substitution: express one variable in terms of the other, then substitute.",
+        parameters: {
+          equation1: { a: 1, b: 1, c: 8 },
+          equation2: { a: 2, b: -1, c: 1 },
+          method: "substitution",
+          showSteps: true,
+          highlightIntersection: true
+        }
+      },
+      {
+        scenario: "Elimination method with steps",
+        caption: "Solving using elimination: make coefficients equal, then add or subtract equations.",
+        parameters: {
+          equation1: { a: 3, b: 2, c: 16 },
+          equation2: { a: 2, b: 3, c: 17 },
+          method: "elimination",
+          showSteps: true,
+          highlightIntersection: true
+        }
+      },
+      {
+        scenario: "Parallel lines (no solution)",
+        caption: "These lines are parallel (same gradient) - they never intersect, so there's no solution.",
+        parameters: {
+          equation1: { a: 2, b: 1, c: 5 },
+          equation2: { a: 2, b: 1, c: 10 },
+          method: "graphical",
+          highlightIntersection: false
+        }
+      },
+      {
+        scenario: "Simple system for beginners",
+        caption: "A basic system where one equation is already solved for a variable.",
+        parameters: {
+          equation1: { a: 1, b: 0, c: 3 },
+          equation2: { a: 0, b: 1, c: 5 },
+          method: "graphical",
+          highlightIntersection: true
+        }
+      }
+    ]
+  },
+
+  linearInequalityGrapher: {
+    name: "Linear Inequality Grapher",
+    technicalName: "linearInequalityGrapher",
+    component: "LinearInequalityGrapher",
+    category: "coordinate-geometry",
+    description: "Interactive visualizer for linear inequalities in two variables. Displays boundary lines (solid for ≤/≥, dashed for </>), shaded half-plane regions showing solution sets, optional test point verification, and supports systems of inequalities with overlapping regions. Essential for teaching inequality graphing, feasible regions, and linear programming foundations.",
+    whenToUse: "Use for graphing inequalities like y < 2x + 3 or 2x + 3y ≥ 6, showing which side of the boundary line satisfies the inequality, verifying test points, visualizing systems of inequalities (multiple constraints), identifying feasible regions, or introducing linear programming concepts. Perfect for S2 Linear Inequalities and S3/S4 Linear Programming topics.",
+
+    parameters: {
+      coefficientX: "number - Coefficient of x in standard form ax + by ≤ c. Example: 2 in '2x + 3y ≤ 6'",
+      coefficientY: "number - Coefficient of y in standard form ax + by ≤ c. Example: 3 in '2x + 3y ≤ 6'",
+      constant: "number - Right-hand side constant in ax + by ≤ c. Example: 6 in '2x + 3y ≤ 6'",
+      inequalityType: "string - Type of inequality: '<' | '>' | '<=' | '>='. Use '<=' or '>=' for inclusive (solid line), '<' or '>' for exclusive (dashed line)",
+      xMin: "number (optional, default: -5) - Minimum x-axis value",
+      xMax: "number (optional, default: 5) - Maximum x-axis value",
+      yMin: "number (optional, default: -5) - Minimum y-axis value",
+      yMax: "number (optional, default: 5) - Maximum y-axis value",
+      showGrid: "boolean (optional, default: true) - Show grid lines",
+      testPoint: "{x: number, y: number, label?: string} (optional) - Test point to verify. Point will be green if it satisfies the inequality, red if not",
+      showTestPoint: "boolean (optional, default: false) - Display the test point on the graph",
+      shadeOpacity: "number (optional, default: 0.3) - Opacity of shaded region (0-1)",
+      title: "string (optional) - Title displayed at top, CRITICAL: NEVER use LaTeX here",
+      caption: "string (optional) - Explanation text below graph (NEVER use LaTeX here)",
+      label: "string (optional) - Label for the inequality (e.g., 'y ≤ 2x + 3') CRITICAL: NEVER use LaTeX here",
+      color: "string (optional) - Custom color for boundary line and shading"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Simple inequality y < 2x + 1",
+        caption: "The dashed line shows y = 2x + 1 (boundary). The shaded region below shows all points where y < 2x + 1.",
+        parameters: {
+          coefficientX: -2,
+          coefficientY: 1,
+          constant: 1,
+          inequalityType: "<",
+          xMin: -3,
+          xMax: 3,
+          yMin: -5,
+          yMax: 7,
+          label: "y < 2x + 1",
+          title: "Graph of y < 2x + 1"
+        }
+      },
+      {
+        scenario: "Inequality with test point: 2x + 3y ≤ 6",
+        caption: "Testing point (1, 1): Does 2(1) + 3(1) ≤ 6? Yes! 5 ≤ 6, so (1,1) is in the shaded region.",
+        parameters: {
+          coefficientX: 2,
+          coefficientY: 3,
+          constant: 6,
+          inequalityType: "<=",
+          xMin: -1,
+          xMax: 5,
+          yMin: -1,
+          yMax: 4,
+          testPoint: { x: 1, y: 1, label: "(1,1)" },
+          showTestPoint: true,
+          label: "2x + 3y ≤ 6",
+          title: "Testing a Point"
+        }
+      },
+      {
+        scenario: "Vertical boundary: x ≥ 2",
+        caption: "A vertical line at x = 2 (solid). Shade to the right for x ≥ 2.",
+        parameters: {
+          coefficientX: 1,
+          coefficientY: 0,
+          constant: 2,
+          inequalityType: ">=",
+          xMin: -1,
+          xMax: 5,
+          yMin: -3,
+          yMax: 3,
+          label: "x ≥ 2",
+          title: "Vertical Boundary"
+        }
+      },
+      {
+        scenario: "Horizontal boundary: y < 3",
+        caption: "A horizontal dashed line at y = 3. Shade below for y < 3.",
+        parameters: {
+          coefficientX: 0,
+          coefficientY: 1,
+          constant: 3,
+          inequalityType: "<",
+          xMin: -4,
+          xMax: 4,
+          yMin: -1,
+          yMax: 5,
+          label: "y < 3",
+          title: "Horizontal Boundary"
+        }
+      },
+      {
+        scenario: "Strict inequality with negative gradient: y > -x + 4",
+        caption: "Dashed boundary line (strict inequality). Shade above the line.",
+        parameters: {
+          coefficientX: 1,
+          coefficientY: 1,
+          constant: 4,
+          inequalityType: ">",
+          xMin: -2,
+          xMax: 6,
+          yMin: -2,
+          yMax: 6,
+          label: "y > -x + 4",
+          title: "Strict Inequality"
+        }
+      }
+    ]
   }
 };
 

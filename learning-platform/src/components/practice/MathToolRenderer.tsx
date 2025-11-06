@@ -47,6 +47,8 @@ import LineChartVisualizer from '../math-tools/LineChartVisualizer';
 import CartesianPlaneVisualizer from '../math-tools/CartesianPlaneVisualizer';
 import Coordinate3DPlaneVisualizer from '../math-tools/Coordinate3DPlaneVisualizer';
 import GradientVisualizer from '../math-tools/GradientVisualizer';
+import SimultaneousEquationsSolver from '../math-tools/SimultaneousEquationsSolver';
+import LinearInequalityGrapher from '../math-tools/LinearInequalityGrapher';
 
 // Vector visualizers
 import VectorDiagramTool from '../math-tools/VectorDiagramTool';
@@ -159,6 +161,8 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   cartesianPlane: CartesianPlaneVisualizer,
   coordinate3DPlane: Coordinate3DPlaneVisualizer,
   gradientVisualizer: GradientVisualizer,
+  simultaneousEquationsSolver: SimultaneousEquationsSolver,
+  linearInequalityGrapher: LinearInequalityGrapher,
 
   // Vector tools
   vectorDiagram: VectorDiagramTool,

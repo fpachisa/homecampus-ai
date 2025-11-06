@@ -67,6 +67,10 @@ import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../prompt-library/subjects/mat
 import type { PerimeterAreaTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
 import { S1_MATH_DATA_HANDLING_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
 import type { DataHandlingTopicId } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
+import { LINEAR_GRAPHS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
+import type { LinearGraphsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
+import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
+import type { LinearInequalitiesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -127,6 +131,14 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S1 data handling topic
   if (topicId.startsWith('s1-math-data-')) {
     return S1_MATH_DATA_HANDLING_SUBTOPICS[topicId as DataHandlingTopicId];
+  }
+  // Check if it's an S2 linear graphs topic
+  if (topicId.startsWith('s2-math-linear-graphs-')) {
+    return LINEAR_GRAPHS_SUBTOPICS[topicId as LinearGraphsTopicId];
+  }
+  // Check if it's an S2 linear inequalities topic
+  if (topicId.startsWith('s2-math-linear-inequalities-')) {
+    return LINEAR_INEQUALITIES_SUBTOPICS[topicId as LinearInequalitiesTopicId];
   }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {

@@ -85,7 +85,6 @@ Math Tools Plan:
 
 **3. Notes Strategy**:
 - **Full notes**: Detailed explanations, examples, practice (recommended)
-- **Minimal notes**: Quick reference only (faster, less comprehensive)
 
 #### Output of Step 0
 - [ ] Topic metadata documented
@@ -400,6 +399,9 @@ const [showAdvanced, setShowAdvanced] = useState(false);
   )}
 </div>
 ```
+#### 2.5.1  VISUAL AIDS (CRITICAL):
+
+Use as many visual aids, graphs, to make the notes readable and help learning experience.
 
 #### 2.6 Content Quality Guidelines
 
