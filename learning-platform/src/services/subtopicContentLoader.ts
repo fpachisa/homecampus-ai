@@ -33,6 +33,7 @@ import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../prompt-library/subjects/mat
 import { S1_MATH_DATA_HANDLING_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
 import { LINEAR_GRAPHS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
 import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
+import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 
 export interface SubtopicContent {
   displayName: string;
@@ -65,6 +66,7 @@ class SubtopicContentLoader {
       // S2 Math topics
       ...LINEAR_GRAPHS_SUBTOPICS,
       ...LINEAR_INEQUALITIES_SUBTOPICS,
+      ...S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

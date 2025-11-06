@@ -59,6 +59,8 @@ import { LINEAR_GRAPHS_SUBTOPICS } from '../prompt-library/subjects/mathematics/
 import type { LinearGraphsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
 import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 import type { LinearInequalitiesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
+import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
+import type { ExpansionFactorisationTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -130,6 +132,10 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s2-math-linear-inequalities-')) {
       const subtopic = LINEAR_INEQUALITIES_SUBTOPICS[topicId as LinearInequalitiesTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s2-math-expansion-factorisation-')) {
+      const subtopic = S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS[topicId as ExpansionFactorisationTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {

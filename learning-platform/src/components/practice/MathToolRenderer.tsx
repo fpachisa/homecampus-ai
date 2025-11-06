@@ -77,6 +77,9 @@ import DistributiveVisualizer from '../math-tools/DistributiveVisualizer';
 import BalanceScaleVisualizer from '../math-tools/BalanceScaleVisualizer';
 import FractionBarVisualizer from '../math-tools/FractionBarVisualizer';
 
+// Secondary 2 Algebra Expansion & Factorisation
+import MultiplicationGridVisualizer from '../math-tools/MultiplicationGridVisualizer';
+
 // Geometry - Angles
 import ParallelLinesTransversalVisualizer from '../math-tools/ParallelLinesTransversalVisualizer';
 import AnglesAtPointVisualizer from '../math-tools/AnglesAtPointVisualizer';
@@ -194,6 +197,9 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   distributiveVisualizer: DistributiveVisualizer,
   balanceScale: BalanceScaleVisualizer,
   fractionBar: FractionBarVisualizer,
+
+  // Secondary 2 Algebra Expansion & Factorisation Tools
+  multiplicationGrid: MultiplicationGridVisualizer,
 
   // Geometry - Angles Tools
   parallelLinesTransversal: ParallelLinesTransversalVisualizer,

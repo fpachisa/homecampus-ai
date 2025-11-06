@@ -228,9 +228,246 @@ const S2_LINEAR_GRAPHS_CONFIGS = [
   }
 ];
 
-const ALL_CONFIGS = [
+/**
+ * S2 Expansion and Factorisation of Algebraic Expressions configs (8 configs)
+ */
+const S2_EXPANSION_FACTORISATION_CONFIGS = [
+  // ============================================
+  // S2 EXPANSION & FACTORISATION (8 CONFIGS)
+  // ============================================
 
-  ...S2_LINEAR_GRAPHS_CONFIGS
+  // Subtopic 1: Understanding Quadratic Expressions
+  {
+    id: 's2-math-expansion-factorisation-quadratic-intro',
+    displayName: 'Understanding Quadratic Expressions',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'quadratic-intro',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 45,
+      prerequisites: []
+    },
+    notesComponent: 's2/math/expansion-factorisation/QuadraticIntro',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 2: Single Bracket Expansion
+  {
+    id: 's2-math-expansion-factorisation-single-bracket-basic',
+    displayName: 'Single Bracket Expansion',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'single-bracket-basic',
+    metadata: {
+      difficulty: 'foundational' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s2-math-expansion-factorisation-quadratic-intro']
+    },
+    notesComponent: 's2/math/expansion-factorisation/DistributiveLaw',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 3: Double Bracket Expansion
+  {
+    id: 's2-math-expansion-factorisation-double-bracket-intro',
+    displayName: 'Double Bracket Expansion',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'double-bracket-intro',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s2-math-expansion-factorisation-single-bracket-basic']
+    },
+    notesComponent: 's2/math/expansion-factorisation/DoubleBracketExpansion',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 4: Expanding to Quadratic Expressions
+  {
+    id: 's2-math-expansion-factorisation-expand-linear-to-quadratic',
+    displayName: 'Expanding to Quadratic Expressions',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'expand-linear-to-quadratic',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s2-math-expansion-factorisation-double-bracket-intro']
+    },
+    notesComponent: 's2/math/expansion-factorisation/QuadraticExpansion',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 5: Factorising by Common Factors
+  {
+    id: 's2-math-expansion-factorisation-common-factor-basic',
+    displayName: 'Factorising by Common Factors',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'common-factor-basic',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s2-math-expansion-factorisation-single-bracket-basic']
+    },
+    notesComponent: 's2/math/expansion-factorisation/CommonFactorExtraction',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 6: Understanding Quadratic Factorisation
+  {
+    id: 's2-math-expansion-factorisation-factorisation-conceptual',
+    displayName: 'Understanding Quadratic Factorisation',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'factorisation-conceptual',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s2-math-expansion-factorisation-expand-linear-to-quadratic', 's2-math-expansion-factorisation-common-factor-basic']
+    },
+    notesComponent: 's2/math/expansion-factorisation/FactorisationPositive',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 7: Factorising with Negative x-Coefficient
+  {
+    id: 's2-math-expansion-factorisation-negative-b-positive-c',
+    displayName: 'Factorising with Negative x-Coefficient',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'negative-b-positive-c',
+    metadata: {
+      difficulty: 'intermediate-to-advanced' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s2-math-expansion-factorisation-factorisation-conceptual']
+    },
+    notesComponent: 's2/math/expansion-factorisation/FactorisationNegative',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 8: Factorising with Negative Constant
+  {
+    id: 's2-math-expansion-factorisation-negative-c-factorisation',
+    displayName: 'Factorising with Negative Constant',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'negative-c-factorisation',
+    metadata: {
+      difficulty: 'advanced' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s2-math-expansion-factorisation-negative-b-positive-c']
+    },
+    notesComponent: 's2/math/expansion-factorisation/FactorisationNegativeConstant',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 9: Factorising with Leading Coefficient
+  {
+    id: 's2-math-expansion-factorisation-leading-coefficient-concept',
+    displayName: 'Factorising with Leading Coefficient',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'leading-coefficient-concept',
+    metadata: {
+      difficulty: 'advanced' as const,
+      estimatedMinutes: 70,
+      prerequisites: ['s2-math-expansion-factorisation-negative-b-positive-c']
+    },
+    notesComponent: 's2/math/expansion-factorisation/FactorisationLeadingCoefficient',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 9: Factorisation by Grouping
+  {
+    id: 's2-math-expansion-factorisation-grouping-multiplication-frame',
+    displayName: 'Factorisation by Grouping',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'grouping-multiplication-frame',
+    metadata: {
+      difficulty: 'advanced' as const,
+      estimatedMinutes: 60,
+      prerequisites: ['s2-math-expansion-factorisation-leading-coefficient-concept']
+    },
+    notesComponent: 's2/math/expansion-factorisation/FactorisationGrouping',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 10: Perfect Square Identities
+  {
+    id: 's2-math-expansion-factorisation-perfect-square-identities',
+    displayName: 'Perfect Square Identities',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'perfect-square-identities',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 55,
+      prerequisites: ['s2-math-expansion-factorisation-double-bracket-intro']
+    },
+    notesComponent: 's2/math/expansion-factorisation/PerfectSquareIdentities',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  },
+
+  // Subtopic 11: Difference of Squares Identity
+  {
+    id: 's2-math-expansion-factorisation-difference-squares',
+    displayName: 'Difference of Squares Identity',
+    grade: 's2',
+    subject: 'math',
+    topic: 'expansion-factorisation',
+    subtopic: 'difference-squares',
+    metadata: {
+      difficulty: 'intermediate' as const,
+      estimatedMinutes: 50,
+      prerequisites: ['s2-math-expansion-factorisation-double-bracket-intro', 's2-math-expansion-factorisation-perfect-square-identities']
+    },
+    notesComponent: 's2/math/expansion-factorisation/DifferenceOfSquares',
+    teachingTemplate: '',
+    scoring: STANDARD_SCORING,
+    modules: STANDARD_MODULES
+  }
+];
+
+const ALL_CONFIGS = [
+  ...S2_LINEAR_GRAPHS_CONFIGS,
+  ...S2_EXPANSION_FACTORISATION_CONFIGS
 ];
 
 /**

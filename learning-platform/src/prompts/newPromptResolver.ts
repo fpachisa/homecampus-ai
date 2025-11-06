@@ -50,6 +50,7 @@ import { S1_MATH_PERIMETER_AREA_SUBTOPICS, S1_PERIMETER_AREA_CONFIG } from '../p
 import { S1_MATH_DATA_HANDLING_SUBTOPICS, S1_DATA_HANDLING_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s1-data-handling';
 import { LINEAR_GRAPHS_SUBTOPICS, S2_LINEAR_GRAPHS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
 import { LINEAR_INEQUALITIES_SUBTOPICS, S2_LINEAR_INEQUALITIES_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
+import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS, S2_EXPANSION_FACTORISATION_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -105,6 +106,7 @@ function registerBrowserTopics() {
   // Register S2 topics
   registerTopics(LINEAR_GRAPHS_SUBTOPICS, S2_LINEAR_GRAPHS_CONFIG);
   registerTopics(LINEAR_INEQUALITIES_SUBTOPICS, S2_LINEAR_INEQUALITIES_CONFIG);
+  registerTopics(S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS, S2_EXPANSION_FACTORISATION_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);

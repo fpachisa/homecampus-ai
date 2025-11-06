@@ -172,6 +172,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Secondary 2',
       subject: 'Mathematics',
     },
+    {
+      id: 's2-expansion-factorisation',
+      name: 'Expansion & Factorisation',
+      icon: '🔧',
+      description: 'Master algebraic expansion, distributive law, double brackets, and factorising quadratic expressions',
+      subtopicCount: 10,
+      isActive: true,
+      category: 's2-math-expansion-factorisation',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
 
   ],
 

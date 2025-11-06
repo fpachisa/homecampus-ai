@@ -1876,6 +1876,72 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     ]
   },
 
+  multiplicationGrid: {
+    name: "Multiplication Grid Visualizer",
+    technicalName: "multiplicationGrid",
+    component: "MultiplicationGridVisualizer",
+    category: "general",
+    description: "Interactive multiplication grid (also known as multiplication frame or algebra discs grid) for expanding and factorising quadratic expressions. Shows step-by-step expansion of (px+q)(rx+s) type expressions using a visual grid with color-coded cells for x², x, and constant terms. Essential for S2 Expansion & Factorisation topics.",
+    whenToUse: "Use when teaching: expanding binomial products like (x+2)(x+3), factorising quadratics x²+bx+c or ax²+bx+c, visualising the distributive law with two brackets, understanding where terms come from in expansion, reverse-engineering factorisation from expanded form. Perfect for S2 Algebra expansion and factorisation topics.",
+
+    parameters: {
+      expression1: "string - first binomial expression (e.g., 'x+2', '2x-3', '3x+1')",
+      expression2: "string - second binomial expression (e.g., 'x+3', 'x-4', '2x+5')",
+      mode: "'expand' | 'factorise' (optional, default: 'expand') - whether expanding or factorising",
+      showDiscs: "boolean (optional, default: false) - show colored algebra discs representation",
+      showGrid: "boolean (optional, default: true) - display the multiplication grid/frame",
+      highlightCell: "string (optional) - highlight specific cell by row,col (e.g., '0,0' for top-left)",
+      stepByStep: "boolean (optional, default: true) - reveal grid cells step-by-step with animation",
+      caption: "string (optional) - additional explanation text"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Expanding (x+2)(x+3) - basic binomial expansion",
+        caption: "Use the grid to multiply each term systematically: x² + 3x + 2x + 6 = x² + 5x + 6",
+        parameters: {
+          expression1: "x+2",
+          expression2: "x+3",
+          mode: "expand",
+          showGrid: true,
+          stepByStep: true
+        }
+      },
+      {
+        scenario: "Expanding (2x-1)(x+4) - with negative and coefficients",
+        caption: "Grid method works with negative terms and coefficients too",
+        parameters: {
+          expression1: "2x-1",
+          expression2: "x+4",
+          mode: "expand",
+          showGrid: true,
+          stepByStep: true
+        }
+      },
+      {
+        scenario: "Factorising x² + 7x + 12 using grid method",
+        caption: "Work backwards to find factors (x+3)(x+4)",
+        parameters: {
+          expression1: "x+3",
+          expression2: "x+4",
+          mode: "factorise",
+          showGrid: true
+        }
+      },
+      {
+        scenario: "Visual with algebra discs - (x+1)(x+2)",
+        caption: "See the colored discs representing x² (green), x (blue), and constants (orange)",
+        parameters: {
+          expression1: "x+1",
+          expression2: "x+2",
+          mode: "expand",
+          showDiscs: true,
+          showGrid: true
+        }
+      }
+    ]
+  },
+
   // ============================================
   // STATISTICS TOOLS
   // ============================================

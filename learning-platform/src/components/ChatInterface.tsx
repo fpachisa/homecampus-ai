@@ -71,6 +71,8 @@ import { LINEAR_GRAPHS_SUBTOPICS } from '../prompt-library/subjects/mathematics/
 import type { LinearGraphsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
 import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 import type { LinearInequalitiesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
+import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
+import type { ExpansionFactorisationTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -139,6 +141,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S2 linear inequalities topic
   if (topicId.startsWith('s2-math-linear-inequalities-')) {
     return LINEAR_INEQUALITIES_SUBTOPICS[topicId as LinearInequalitiesTopicId];
+  }
+  // Check if it's an S2 expansion factorisation topic
+  if (topicId.startsWith('s2-math-expansion-factorisation-')) {
+    return S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS[topicId as ExpansionFactorisationTopicId];
   }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {

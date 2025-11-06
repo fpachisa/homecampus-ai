@@ -64,6 +64,8 @@ import { LINEAR_GRAPHS_SUBTOPICS } from '../../prompt-library/subjects/mathemati
 import type { LinearGraphsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
 import { LINEAR_INEQUALITIES_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 import type { LinearInequalitiesTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
+import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
+import type { ExpansionFactorisationTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -166,6 +168,13 @@ function getTopicIcon(topicId: string): string {
   if (topicId.startsWith('s2-math-linear-inequalities-')) {
     const icons = ['≤', '🔢', '📊', '📈', '🎯', '📐'];
     const index = Object.keys(LINEAR_INEQUALITIES_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+
+  // S2 Expansion & Factorisation icons
+  if (topicId.startsWith('s2-math-expansion-factorisation-')) {
+    const icons = ['🔢', '📦', '✖️', '📈', '✂️', '🎯', '➖', '➕', '🔧', '🧩', '💠', '⬜'];
+    const index = Object.keys(S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS).indexOf(topicId);
     return icons[index >= 0 ? index : 0];
   }
 
@@ -324,6 +333,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's1-math-data-handling') return 'Data Handling';
   if (category === 's2-math-linear-graphs') return 'Linear Graphs & Equations';
   if (category === 's2-math-linear-inequalities') return 'Linear Inequalities';
+  if (category === 's2-math-expansion-factorisation') return 'Expansion & Factorisation';
   if (category === 's3-math-trigonometry') return 'Trigonometry';
   if (category === 's3-math-circle-geometry') return 'Circle Geometry';
   if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
@@ -355,7 +365,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   const knownPaths = [
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
-    's1-math-linear-functions-graphs', 's1-math-perimeter-area', 's1-math-data-handling', 's2-math-linear-graphs', 's2-math-linear-inequalities', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
+    's1-math-linear-functions-graphs', 's1-math-perimeter-area', 's1-math-data-handling', 's2-math-linear-graphs', 's2-math-linear-inequalities', 's2-math-expansion-factorisation', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
     's3-math-coordinate-geometry', 's4-math-differential-calculus', 's4-math-integration',
@@ -499,6 +509,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 's2-math-linear-inequalities') {
       return Object.entries(LINEAR_INEQUALITIES_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as LinearInequalitiesTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's2-math-expansion-factorisation') {
+      return Object.entries(S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as ExpansionFactorisationTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
@@ -788,6 +806,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
                selectedCategory === 's1-math-ratio-rate-speed' ? '⚡' :
                selectedCategory === 's2-math-linear-graphs' ? '📈' :
                selectedCategory === 's2-math-linear-inequalities' ? '≤' :
+               selectedCategory === 's2-math-expansion-factorisation' ? '🔧' :
                selectedCategory === 's3-math-trigonometry' ? '📐' :
                selectedCategory === 's3-math-circle-geometry' ? '⭕' :
                selectedCategory === 's3-math-quadratic-equations' ? '📈' :

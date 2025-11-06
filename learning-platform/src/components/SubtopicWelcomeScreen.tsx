@@ -59,6 +59,8 @@ import { LINEAR_GRAPHS_SUBTOPICS } from '../prompt-library/subjects/mathematics/
 import type { LinearGraphsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
 import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 import type { LinearInequalitiesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
+import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
+import type { ExpansionFactorisationTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -106,6 +108,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = LINEAR_GRAPHS_SUBTOPICS[topicId as LinearGraphsTopicId];
   } else if (category === 's2-math-linear-inequalities') {
     topicConfig = LINEAR_INEQUALITIES_SUBTOPICS[topicId as LinearInequalitiesTopicId];
+  } else if (category === 's2-math-expansion-factorisation') {
+    topicConfig = S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS[topicId as ExpansionFactorisationTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {

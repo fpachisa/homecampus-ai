@@ -4392,7 +4392,205 @@ A delivery driver needs to drive **at least** 50 miles per day. Let \$m\$ repres
 Write an inequality that models this constraint.`,
       showAfterSpeech: true
     }
-  }
+  },
+  /**
+   * ========================================
+   * S2 EXPANSION & FACTORING OF ALGEBRAIC EXPRESSIONS
+   * ========================================
+   */
+  's2-math-expansion-factorisation-quadratic-intro': {
+    speech: {
+      text: `Hello! We are starting a crucial journey into quadratic expressions. These are the building blocks for parabolas and many real-world models. Let's make sure we recognize them right away by identifying the highest power.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-quadratic-intro.mp3'
+    },
+    display: {
+      content: `### Understanding Quadratic Expressions
+
+Which of the following expressions is a quadratic expression?
+
+1. x³ + 2x - 1
+2. 4x + 5
+3. 2x² - 3x + 1
+4. x⁴`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-single-bracket-basic': {
+    speech: {
+      text: `Hi there! Get ready to distribute! Expanding single brackets is like delivering mail—every term inside gets multiplied by the term outside. It's a fundamental skill we'll master instantly.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-single-bracket-basic.mp3'
+    },
+    display: {
+      content: `### Single Bracket Expansion - a(b+c)
+
+Expand the following expression:
+
+\$\$3(x + 5)\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-double-bracket-intro': {
+    speech: {
+      text: `Greetings! Think of double bracket expansion as building a four-room house. Every term in the first bracket must interact with every term in the second. Let's lay the foundation for multiplying binomials.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-double-bracket-intro.mp3'
+    },
+    display: {
+      content: `### Double Bracket Expansion - (a+b)(c+d)
+
+Expand the expression:
+
+\$\$(x + 2)(y + 3)\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-expand-linear-to-quadratic': {
+    speech: {
+      text: `Hey, have you ever wondered how two simple linear expressions multiply together to create a powerful quadratic curve? Today, we unlock that transformation. Let's practice moving from two brackets straight into the standard quadratic form.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-expand-linear-to-quadratic.mp3'
+    },
+    display: {
+      content: `### Expanding (px+q)(rx+s) to Quadratics
+
+Expand and simplify the expression:
+
+\$\$(2x + 1)(x - 3)\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-common-factor-basic': {
+    speech: {
+      text: `Welcome to the world of factorization! If expansion is multiplication, factorization is division. We are learning to reverse the process of distribution by pulling out the greatest common factor. Ready to spot what is shared?`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-common-factor-basic.mp3'
+    },
+    display: {
+      content: `### Factorising by Common Factor Extraction
+
+Factorise the expression completely:
+
+\$\$6x + 18\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-factorisation-conceptual': {
+    speech: {
+      text: `Why do we factor quadratics? Because the numbers in the middle and the end—the b and the c terms—hold the secret to finding the two numbers that multiply and add up correctly. This conceptual understanding is key. Let's start by identifying those target numbers.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-factorisation-conceptual.mp3'
+    },
+    display: {
+      content: `### Understanding the Factorisation Process
+
+Find two integers that satisfy both conditions:
+
+1. They multiply to give 10.
+2. They add up to give 7.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-negative-b-positive-c': {
+    speech: {
+      text: `Time to put on our math detective hats! When the constant term is positive but the x coefficient is negative, we know exactly what signs our factors must have. This pattern is a great shortcut. Let's apply it to our first problem.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-negative-b-positive-c.mp3'
+    },
+    display: {
+      content: `### Factorising x²+bx+c where b<0, c>0
+
+Factorise the expression:
+
+\$\$x² - 8x + 12\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-negative-c-factorisation': {
+    speech: {
+      text: `Hello, math enthusiasts! Dealing with a negative constant term, c, means we need factors that subtract or find the difference to equal the middle term, b. This adds a fun layer of complexity! Let's tackle our first one.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-negative-c-factorisation.mp3'
+    },
+    display: {
+      content: `### Factorising x²+bx+c where c<0
+
+When the constant term is negative, the factors must have opposite signs. Factorise the following expression:
+
+\$\$x² + 2x - 15\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-leading-coefficient-concept': {
+    speech: {
+      text: `Good day. We are now transitioning to factorizing quadratics where the leading coefficient, a, is not equal to one. This requires a more structured approach than the simple x squared case. Understanding the structure is the first step.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-leading-coefficient-concept.mp3'
+    },
+    display: {
+      content: `### Understanding Factorisation with a≠1
+
+In the general quadratic form ax² + bx + c, what are the values of a, b, and c for the expression **3x² - 5x + 7**?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-grouping-multiplication-frame': {
+    speech: {
+      text: `Welcome! When factorizing complex quadratics, visual tools like the multiplication frame can make the grouping process incredibly clear. We will use this frame to organize our terms and find the common factors efficiently. Let us set up the frame for our first problem.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-grouping-multiplication-frame.mp3'
+    },
+    display: {
+      content: `### Grouping Using Multiplication Frame
+
+To factorise 2x² + 7x + 3 using the grouping method, we first need to split the middle term (7x).
+
+What two numbers multiply to (2 × 3) = 6 and add up to 7?`,
+      showAfterSpeech: true
+    }
+  },
+  's2-math-expansion-factorisation-perfect-square-identities': {
+    speech: {
+      text: `Wow! Get ready to discover some amazing algebraic shortcuts! We are diving into perfect square trinomials today. These are special cases that follow a beautiful, predictable pattern. Let us expand this perfect square to see the pattern emerge.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-perfect-square-identities.mp3'
+    },
+    display: {
+      content: `### Discovering (a + b)²
+
+Expand and fully simplify the expression:
+
+\$\$(x + 5)²\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-expansion-factorisation-difference-squares': {
+    speech: {
+      text: `Have you ever noticed how some expansions result in terms cancelling out completely? That is exactly what happens with the Difference of Squares identity, one of the cleanest algebraic patterns out there! Expand this pair of brackets and see what happens to the middle term.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-expansion-factorisation-difference-squares.mp3'
+    },
+    display: {
+      content: `### Discovering (a + b)(a - b)
+
+Expand and simplify the expression:
+
+\$\$(2x + 3)(2x - 3)\$\$`,
+      showAfterSpeech: true
+    }
+  }  
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

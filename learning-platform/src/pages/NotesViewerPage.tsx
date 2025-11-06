@@ -30,6 +30,18 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   's2/math/linear-inequalities/SystemsOfInequalities': () => import('../notes/s2/math/linear-inequalities/SystemsOfInequalities'),
   's2/math/linear-inequalities/ApplicationsAndOptimization': () => import('../notes/s2/math/linear-inequalities/ApplicationsAndOptimization'),
 
+  // S2 Expansion & Factorisation notes (10 files)
+  's2/math/expansion-factorisation/QuadraticIntro': () => import('../notes/s2/math/expansion-factorisation/QuadraticIntro'),
+  's2/math/expansion-factorisation/DistributiveLaw': () => import('../notes/s2/math/expansion-factorisation/DistributiveLaw'),
+  's2/math/expansion-factorisation/DoubleBracketExpansion': () => import('../notes/s2/math/expansion-factorisation/DoubleBracketExpansion'),
+  's2/math/expansion-factorisation/QuadraticExpansion': () => import('../notes/s2/math/expansion-factorisation/QuadraticExpansion'),
+  's2/math/expansion-factorisation/CommonFactorExtraction': () => import('../notes/s2/math/expansion-factorisation/CommonFactorExtraction'),
+  's2/math/expansion-factorisation/FactorisationPositive': () => import('../notes/s2/math/expansion-factorisation/FactorisationPositive'),
+  's2/math/expansion-factorisation/FactorisationNegative': () => import('../notes/s2/math/expansion-factorisation/FactorisationNegative'),
+  's2/math/expansion-factorisation/FactorisationNegativeConstant': () => import('../notes/s2/math/expansion-factorisation/FactorisationNegativeConstant'),
+  's2/math/expansion-factorisation/FactorisationLeadingCoefficient': () => import('../notes/s2/math/expansion-factorisation/FactorisationLeadingCoefficient'),
+  's2/math/expansion-factorisation/FactorisationGrouping': () => import('../notes/s2/math/expansion-factorisation/FactorisationGrouping'),
+
   //S1 Data Handling notes
   's1/math/data-handling/Introduction': () => import('../notes/s1/math/data-handling/Introduction'),
   's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),
