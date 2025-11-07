@@ -138,9 +138,11 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
 
     for (let x = xRange[0]; x <= xRange[1]; x += step) {
       const y = parabolaY(x);
-      // Clamp y-values to visible range for continuous path
-      const clampedY = Math.max(yRange[0], Math.min(yRange[1], y));
-      points.push(mathToSVG(x, clampedY));
+      // Only include points within visible y range
+      // This prevents flat horizontal lines at boundaries
+      if (y >= yRange[0] && y <= yRange[1]) {
+        points.push(mathToSVG(x, y));
+      }
     }
 
     if (points.length === 0) return '';

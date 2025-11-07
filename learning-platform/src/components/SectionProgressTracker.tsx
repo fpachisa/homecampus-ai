@@ -61,6 +61,10 @@ import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathem
 import type { LinearInequalitiesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 import type { ExpansionFactorisationTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
+import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
+import type { QuadraticTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
+import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
+import type { AlgebraicFractionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -136,6 +140,14 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s2-math-expansion-factorisation-')) {
       const subtopic = S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS[topicId as ExpansionFactorisationTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s2-math-quadratics-')) {
+      const subtopic = S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS[topicId as QuadraticTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s2-math-algebraic-fractions-')) {
+      const subtopic = S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS[topicId as AlgebraicFractionsTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {

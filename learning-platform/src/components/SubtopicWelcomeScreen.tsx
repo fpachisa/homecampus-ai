@@ -61,6 +61,10 @@ import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathem
 import type { LinearInequalitiesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 import type { ExpansionFactorisationTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
+import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
+import type { QuadraticTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
+import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
+import type { AlgebraicFractionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -110,6 +114,10 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = LINEAR_INEQUALITIES_SUBTOPICS[topicId as LinearInequalitiesTopicId];
   } else if (category === 's2-math-expansion-factorisation') {
     topicConfig = S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS[topicId as ExpansionFactorisationTopicId];
+  } else if (category === 's2-math-quadratic-equations-graphs') {
+    topicConfig = S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS[topicId as QuadraticTopicId];
+  } else if (category === 's2-math-algebraic-fractions-formulae') {
+    topicConfig = S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS[topicId as AlgebraicFractionsTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {

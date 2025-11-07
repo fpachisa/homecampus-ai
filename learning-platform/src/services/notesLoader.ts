@@ -105,6 +105,19 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's2/math/expansion-factorisation/FactorisationGrouping': () => import('../notes/s2/math/expansion-factorisation/FactorisationGrouping'),
   's2/math/expansion-factorisation/PerfectSquareIdentities': () => import('../notes/s2/math/expansion-factorisation/PerfectSquareIdentities'),
   's2/math/expansion-factorisation/DifferenceOfSquares': () => import('../notes/s2/math/expansion-factorisation/DifferenceOfSquares'),
+  // S2 Quadratic Equations & Graphs notes
+  's2/math/quadratic-equations-graphs/UnderstandingQuadratics': () => import('../notes/s2/math/quadratic-equations-graphs/UnderstandingQuadratics'),
+  's2/math/quadratic-equations-graphs/SolvingBySquareRoot': () => import('../notes/s2/math/quadratic-equations-graphs/SolvingBySquareRoot'),
+  's2/math/quadratic-equations-graphs/SolvingByFactorization': () => import('../notes/s2/math/quadratic-equations-graphs/SolvingByFactorization'),
+  's2/math/quadratic-equations-graphs/IntroductionToGraphs': () => import('../notes/s2/math/quadratic-equations-graphs/IntroductionToGraphs'),
+  's2/math/quadratic-equations-graphs/RootsAndIntercepts': () => import('../notes/s2/math/quadratic-equations-graphs/RootsAndIntercepts'),
+  's2/math/quadratic-equations-graphs/ApplicationsWordProblems': () => import('../notes/s2/math/quadratic-equations-graphs/ApplicationsWordProblems'),
+  // S2 Algebraic Fractions & Formulae notes
+  's2/math/algebraic-fractions-formulae/Introduction': () => import('../notes/s2/math/algebraic-fractions-formulae/Introduction'),
+  's2/math/algebraic-fractions-formulae/Factorization': () => import('../notes/s2/math/algebraic-fractions-formulae/Factorization'),
+  's2/math/algebraic-fractions-formulae/MultiplicationDivision': () => import('../notes/s2/math/algebraic-fractions-formulae/MultiplicationDivision'),
+  's2/math/algebraic-fractions-formulae/AdditionSubtraction': () => import('../notes/s2/math/algebraic-fractions-formulae/AdditionSubtraction'),
+  's2/math/algebraic-fractions-formulae/EquationsFormulae': () => import('../notes/s2/math/algebraic-fractions-formulae/EquationsFormulae'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

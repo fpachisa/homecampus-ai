@@ -42,6 +42,21 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   's2/math/expansion-factorisation/FactorisationLeadingCoefficient': () => import('../notes/s2/math/expansion-factorisation/FactorisationLeadingCoefficient'),
   's2/math/expansion-factorisation/FactorisationGrouping': () => import('../notes/s2/math/expansion-factorisation/FactorisationGrouping'),
 
+  // S2 Quadratic Equations & Graphs notes
+  's2/math/quadratic-equations-graphs/UnderstandingQuadratics': () => import('../notes/s2/math/quadratic-equations-graphs/UnderstandingQuadratics'),
+  's2/math/quadratic-equations-graphs/SolvingBySquareRoot': () => import('../notes/s2/math/quadratic-equations-graphs/SolvingBySquareRoot'),
+  's2/math/quadratic-equations-graphs/SolvingByFactorization': () => import('../notes/s2/math/quadratic-equations-graphs/SolvingByFactorization'),
+  's2/math/quadratic-equations-graphs/IntroductionToGraphs': () => import('../notes/s2/math/quadratic-equations-graphs/IntroductionToGraphs'),
+  's2/math/quadratic-equations-graphs/RootsAndIntercepts': () => import('../notes/s2/math/quadratic-equations-graphs/RootsAndIntercepts'),
+  's2/math/quadratic-equations-graphs/ApplicationsWordProblems': () => import('../notes/s2/math/quadratic-equations-graphs/ApplicationsWordProblems'),
+
+  // S2 Algebraic Fractions & Formulae notes
+  's2/math/algebraic-fractions-formulae/Introduction': () => import('../notes/s2/math/algebraic-fractions-formulae/Introduction'),
+  's2/math/algebraic-fractions-formulae/Factorization': () => import('../notes/s2/math/algebraic-fractions-formulae/Factorization'),
+  's2/math/algebraic-fractions-formulae/MultiplicationDivision': () => import('../notes/s2/math/algebraic-fractions-formulae/MultiplicationDivision'),
+  's2/math/algebraic-fractions-formulae/AdditionSubtraction': () => import('../notes/s2/math/algebraic-fractions-formulae/AdditionSubtraction'),
+  's2/math/algebraic-fractions-formulae/EquationsFormulae': () => import('../notes/s2/math/algebraic-fractions-formulae/EquationsFormulae'),
+
   //S1 Data Handling notes
   's1/math/data-handling/Introduction': () => import('../notes/s1/math/data-handling/Introduction'),
   's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),

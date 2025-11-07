@@ -34,6 +34,8 @@ import { S1_MATH_DATA_HANDLING_SUBTOPICS } from '../prompt-library/subjects/math
 import { LINEAR_GRAPHS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
 import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
+import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
+import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
 
 export interface SubtopicContent {
   displayName: string;
@@ -67,6 +69,8 @@ class SubtopicContentLoader {
       ...LINEAR_GRAPHS_SUBTOPICS,
       ...LINEAR_INEQUALITIES_SUBTOPICS,
       ...S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS,
+      ...S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS,
+      ...S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

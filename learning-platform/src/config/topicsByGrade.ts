@@ -183,6 +183,28 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Secondary 2',
       subject: 'Mathematics',
     },
+    {
+      id: 's2-quadratic-equations-graphs',
+      name: 'Quadratic Equations & Graphs',
+      icon: '📊',
+      description: 'Master solving quadratic equations, graphing parabolas, roots, intercepts, and real-world applications',
+      subtopicCount: 6,
+      isActive: true,
+      category: 's2-math-quadratic-equations-graphs',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
+    {
+      id: 's2-algebraic-fractions-formulae',
+      name: 'Algebraic Fractions & Formulae',
+      icon: '🧮',
+      description: 'Master algebraic fractions, operations, formula manipulation, and changing the subject',
+      subtopicCount: 5,
+      isActive: true,
+      category: 's2-math-algebraic-fractions-formulae',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
 
   ],
 

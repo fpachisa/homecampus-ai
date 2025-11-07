@@ -4589,8 +4589,192 @@ Expand and simplify the expression:
 \$\$(2x + 3)(2x - 3)\$\$`,
       showAfterSpeech: true
     }
-  }  
+  },
+  /**
+   * ========================================
+   * S2 QUADRATIC EQUATIONS & GRAPHS
+   * ========================================
+   */  
+  's2-math-quadratics-definition': {
+    speech: {
+      text: `Welcome back to our math journey! Before we start solving complex problems, we need to master the building blocks. Let us ensure we can recognize a quadratic equation when we see one.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-quadratics-definition.mp3'
+    },
+    display: {
+      content: `### Recognizing Quadratic Equations
 
+Which of the following equations is a quadratic equation?
+
+A) \$2x + 5 = 0\$
+B) \$x³ - 4x² + 1 = 0\$
+C) \$3x² - 7x + 2 = 0\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-quadratics-pure-square-root': {
+    speech: {
+      text: `Hey there! Let us jump straight into solving equations where the variable is already isolated. When we have a pure square equation, taking the square root is the fastest way to find the answer. Remember to consider both positive and negative results!`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-quadratics-pure-square-root.mp3'
+    },
+    display: {
+      content: `### Solving \$x² = k\$
+
+Find all real solutions for the equation:
+
+\$\$x² = 49\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-quadratics-solving-factorization': {
+    speech: {
+      text: `Greetings, future math detective! Today, we unlock the power of factorization. This skill allows us to break down complex expressions into simpler parts, which is essential for solving quadratics. Let us start by factoring a basic trinomial.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-quadratics-solving-factorization.mp3'
+    },
+    display: {
+      content: `### Factorizing Quadratic Expressions
+
+To begin our journey into solving quadratics by factoring, first factor the following expression completely:
+
+\$\$x² + 5x + 6\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-quadratics-parabola-shape': {
+    speech: {
+      text: `Hi! Imagine throwing a ball. That curve it traces in the air is a parabola, which is the visual representation of a quadratic function. The first thing we need to know is how the leading coefficient determines the shape of that curve.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-quadratics-parabola-shape.mp3'
+    },
+    display: {
+      content: `### Understanding Parabola Shape
+
+Consider the quadratic function:
+
+\$\$y = -2x² + 3x - 1\$\$
+
+Does the graph of this function (the parabola) open upward or downward?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-quadratics-roots-x-intercepts': {
+    speech: {
+      text: `Hello! We are about to explore the most important points on a quadratic graph: the roots. Graphically, the roots are where the parabola crosses the horizontal axis. What does this mean for the solutions to the equation?`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-quadratics-roots-x-intercepts.mp3'
+    },
+    display: {
+      content: `### Understanding Roots Graphically
+
+If the graph of a quadratic function crosses the x-axis at the points \$(-3, 0)\$ and \$(5, 0)\$, what are the two real roots (solutions) of the corresponding quadratic equation?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-quadratics-area-problems': {
+    speech: {
+      text: `What a great day to apply mathematics! We are tackling real-world optimization challenges, starting with area and perimeter problems. Often, the constraints of a physical space lead directly to a quadratic equation.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-quadratics-area-problems.mp3'
+    },
+    display: {
+      content: `### Area and Perimeter Optimization
+
+A rectangular garden has a width of \$x\$ meters and a length that is 4 meters longer than the width. If the total area of the garden is \$21\$ square meters, write the quadratic equation that models this situation.`,
+      showAfterSpeech: true
+    }
+  },
+  /**
+   * ========================================
+   * S2 ALGEBRAIC FRACTIONS and FORMULAE
+   * ========================================
+   */
+  's2-math-algebraic-fractions-introduction': {
+    speech: {
+      text: `Welcome to the world of algebraic fractions! Just like regular fractions use numbers, these use algebraic expressions. Let us start by identifying the basic components of this new structure.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-algebraic-fractions-introduction.mp3'
+    },
+    display: {
+      content: `### Understanding Algebraic Fractions
+
+Consider the algebraic fraction: \$\\frac{x^2 + 3}{x - 5}\$
+
+1. Identify the **numerator** of the fraction.
+2. Identify the **denominator** of the fraction.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-algebraic-fractions-factorization': {
+    speech: {
+      text: `Hey there! Ready to unlock the power of factorization? Simplifying algebraic fractions is like finding hidden shortcuts to make complex expressions neat and manageable. We will begin by factoring linear expressions.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-algebraic-fractions-factorization.mp3'
+    },
+    display: {
+      content: `### Factorization with Linear Expressions
+
+Simplify the following algebraic fraction by factoring the numerator:
+
+\$\$\\frac{2x + 6}{x + 3}\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-algebraic-fractions-mult-div': {
+    speech: {
+      text: `Greetings! Today we tackle multiplying algebraic fractions. Remember, multiplication is often the easiest operation—we just multiply straight across the top and straight across the bottom. Let us try a basic example involving monomials.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-algebraic-fractions-mult-div.mp3'
+    },
+    display: {
+      content: `### Multiplying Algebraic Fractions
+
+Multiply the following fractions and express your answer in its simplest form:
+
+\$\$\\frac{5}{2x} \\times \\frac{4x^2}{15}\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-algebraic-fractions-add-subtract': {
+    speech: {
+      text: `Hi! Ever wonder how we combine fractions with messy denominators? The secret is the Lowest Common Denominator, or L C D. Finding the L C D is the crucial first step before we can add or subtract.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-algebraic-fractions-add-subtract.mp3'
+    },
+    display: {
+      content: `### Finding LCD for Algebraic Expressions
+
+Find the Least Common Denominator (LCD) for the following pair of algebraic fractions:
+
+\$\$\\frac{3}{x+1} \\quad \\text{and} \\quad \\frac{5}{x}\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-algebraic-fractions-equations-formulae': {
+    speech: {
+      text: `Hello! Our journey with algebraic fractions culminates in solving complex equations. This skill is essential for applying algebra to real-world problems. Let us start by clearing the fractions in a simple linear equation.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-algebraic-fractions-equations-formulae.mp3'
+    },
+    display: {
+      content: `### Solving Equations with Fractions
+
+Solve the following equation for \$x\$:
+
+\$\$\\frac{x}{3} + \\frac{1}{2} = 4\$\$`,
+      showAfterSpeech: true
+    }
+  }
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

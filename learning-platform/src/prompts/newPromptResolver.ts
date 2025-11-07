@@ -51,6 +51,8 @@ import { S1_MATH_DATA_HANDLING_SUBTOPICS, S1_DATA_HANDLING_CONFIG } from '../pro
 import { LINEAR_GRAPHS_SUBTOPICS, S2_LINEAR_GRAPHS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-linear-graphs';
 import { LINEAR_INEQUALITIES_SUBTOPICS, S2_LINEAR_INEQUALITIES_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-linear-inequalities';
 import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS, S2_EXPANSION_FACTORISATION_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
+import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS, QUADRATIC_EQUATIONS_TUTOR_CUSTOMIZATION, QUADRATIC_EQUATIONS_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
+import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS, ALGEBRAIC_FRACTIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -107,6 +109,8 @@ function registerBrowserTopics() {
   registerTopics(LINEAR_GRAPHS_SUBTOPICS, S2_LINEAR_GRAPHS_CONFIG);
   registerTopics(LINEAR_INEQUALITIES_SUBTOPICS, S2_LINEAR_INEQUALITIES_CONFIG);
   registerTopics(S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS, S2_EXPANSION_FACTORISATION_CONFIG);
+  registerTopics(S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS, { tutorCustomization: QUADRATIC_EQUATIONS_TUTOR_CUSTOMIZATION, availableTools: QUADRATIC_EQUATIONS_MATH_TOOLS });
+  registerTopics(S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS, ALGEBRAIC_FRACTIONS_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);
