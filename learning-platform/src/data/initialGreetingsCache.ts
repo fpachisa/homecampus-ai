@@ -4774,7 +4774,267 @@ Solve the following equation for \$x\$:
 \$\$\\frac{x}{3} + \\frac{1}{2} = 4\$\$`,
       showAfterSpeech: true
     }
+  },
+  /**
+   * ========================================
+   * S2 Direct and Inverse Proportions
+   * ========================================
+   */
+  's2-math-proportion-direct-intro': {
+    speech: {
+      text: `Welcome! Have you ever noticed how ingredients scale up perfectly when you double a recipe? That steady, predictable relationship is the core of direct proportion. Let's start by recognizing it in data.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-proportion-direct-intro.mp3'
+    },
+    display: {
+      content: `### Recognizing Direct Proportion
+
+A baker uses the following amounts of sugar (S) and flour (F) cups:
+
+| Flour (F) cups | Sugar (S) cups |
+| :---: | :---: |
+| 2 | 0.5 |
+| 8 | 2.0 |
+| 10 | 2.5 |
+
+Is the amount of sugar directly proportional to the amount of flour? Explain your reasoning.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-proportion-direct-algebraic': {
+    speech: {
+      text: `Hey there! We are moving beyond just recognizing proportion and learning the algebraic language that makes predictions possible: the powerful y equals kx. Finding that constant k is our first step.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-proportion-direct-algebraic.mp3'
+    },
+    display: {
+      content: `### Writing and Using y = kx
+
+If y is directly proportional to x, and we know that y = 15 when x = 3:
+
+1. Calculate the constant of proportionality, k.
+2. Write the equation relating y and x.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-proportion-direct-forms': {
+    speech: {
+      text: `Greetings! Not all growth is linear. Sometimes, one quantity grows much faster than the other, perhaps proportional to the square of the input. Let's explore these accelerated relationships, like y is proportional to x squared.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-proportion-direct-forms.mp3'
+    },
+    display: {
+      content: `### y ∝ x² Relationships
+
+The area (A) of a circle is proportional to the square of its radius (r²). This is written as A ∝ r².
+
+If a circle with a radius of 4 cm has an area of 50.24 cm², find the constant of proportionality (k) such that A = kr².`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-proportion-inverse-intro': {
+    speech: {
+      text: `Hello and welcome! Think about teamwork: if you have more people working on a job, the time it takes goes down. This balancing act, where one quantity increases as the other decreases, is what inverse proportion is all about.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-proportion-inverse-intro.mp3'
+    },
+    display: {
+      content: `### Recognizing Inverse Proportion
+
+Consider the relationship between the speed (S) of a car and the time (T) it takes to travel a fixed distance.
+
+| Speed (S) mph | Time (T) hours |
+| :---: | :---: |
+| 30 | 4 |
+| 60 | 2 |
+| 120 | 1 |
+
+Is the time (T) inversely proportional to the speed (S)? How can you tell?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-proportion-inverse-algebraic': {
+    speech: {
+      text: `Hi! When quantities vary inversely, their product remains constant. We use the form y equals k over x to capture this relationship, where k is our crucial constant that links the two variables.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-proportion-inverse-algebraic.mp3'
+    },
+    display: {
+      content: `### Writing and Using y = k/x
+
+Suppose y is inversely proportional to x. If we know that the point (4, 12) lies on the graph of this relationship:
+
+1. Determine the constant of proportionality, k.
+2. Write the equation relating y and x.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-proportion-inverse-forms': {
+    speech: {
+      text: `Step right up! We are tackling the Inverse Square Law, a fundamental concept governing things like light intensity and gravity. These relationships weaken rapidly as distance increases, proportional to one over x squared.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-proportion-inverse-forms.mp3'
+    },
+    display: {
+      content: `### Inverse Square Law (y ∝ 1/x²)
+
+The intensity of light (I) from a source is inversely proportional to the square of the distance (d) from the source. This is written as I ∝ \$\\frac{1}{d^2}\$.
+
+If the intensity is 50 units when the distance is 3 meters, find the constant of proportionality (k) such that I = \$\\frac{k}{d^2}\$.`,
+      showAfterSpeech: true
+    }
+  },
+  /**
+   * ========================================
+   * S2 PYTHAGORAS THEOREM
+   * ========================================
+   */
+  's2-math-pythagoras-introduction': {
+    speech: {
+      text: `Welcome! We are about to unlock one of geometry's greatest secrets: Pythagoras' Theorem. Think of right triangles as the fundamental building blocks of many shapes. Before we start calculating, we need to make sure we know the names of the sides. Can you identify the longest side of a right triangle?`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-pythagoras-introduction.mp3'
+    },
+    display: {
+      content: `### Introduction to Pythagoras' Theorem
+
+Every right-angled triangle has three sides. The two shorter sides are called **legs** (or adjacent/opposite sides), and the longest side is the **hypotenuse**.
+
+In the triangle below, which side is the hypotenuse?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "rightTriangle",
+          "parameters": {
+                "angle": null,
+                "angleLabel": "",
+                "hypotenuse": "C",
+                "opposite": "A",
+                "adjacent": "B",
+                "highlightSide": "none",
+                "showAngleMark": false,
+                "showRightAngle": true,
+                "showSideTypeLabels": false
+          },
+          "caption": "A right triangle with sides labeled A, B, and C."
+    }
+  },
+
+  's2-math-pythagoras-finding-hypotenuse': {
+    speech: {
+      text: `Hey there! Ready to put the Pythagorean Theorem into action? When we know the length of the two shorter sides, finding the hypotenuse, the longest side, is just a few steps away. Let's start with a classic example. What is the length of side x in this right triangle?`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-pythagoras-finding-hypotenuse.mp3'
+    },
+    display: {
+      content: `### Finding the Hypotenuse
+
+Remember the formula: \$a^2 + b^2 = c^2\$. We use this to find the hypotenuse (c) when the two legs (a and b) are known.
+
+**Problem:** Calculate the length of the hypotenuse, x, rounding your answer to one decimal place.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "rightTriangle",
+          "parameters": {
+                "angle": null,
+                "angleLabel": "",
+                "hypotenuse": "x",
+                "opposite": "5 cm",
+                "adjacent": "12 cm",
+                "highlightSide": "hypotenuse",
+                "showAngleMark": false,
+                "showRightAngle": true,
+                "showSideTypeLabels": false
+          },
+          "caption": "A right triangle with legs 5 cm and 12 cm, and hypotenuse x."
+    }
+  },
+
+  's2-math-pythagoras-finding-shorter-sides': {
+    speech: {
+      text: `Greetings! We've mastered finding the hypotenuse. Now, what if we know the hypotenuse and one leg, but need to find the other shorter side? It just means we need to rearrange the formula a little. Let's tackle this challenge. Find the missing side length, y.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-pythagoras-finding-shorter-sides.mp3'
+    },
+    display: {
+      content: `### Finding Shorter Sides (Legs)
+
+When finding a shorter side (a or b), we must subtract the square of the known leg from the square of the hypotenuse: \$a^2 = c^2 - b^2\$.
+
+**Problem:** Find the length of the missing side, y, in the triangle below. Give your answer to the nearest whole number.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "rightTriangle",
+          "parameters": {
+                "angle": null,
+                "angleLabel": "",
+                "hypotenuse": "13 m",
+                "opposite": "y",
+                "adjacent": "10 m",
+                "highlightSide": "opposite",
+                "showAngleMark": false,
+                "showRightAngle": true,
+                "showSideTypeLabels": false
+          },
+          "caption": "A right triangle with hypotenuse 13 m, one leg 10 m, and the unknown leg y."
+    }
+  },
+
+  's2-math-pythagoras-real-world-applications': {
+    speech: {
+      text: `Hello! Did you know Pythagoras' Theorem is used every day by builders and navigators? It's the perfect tool for calculating distances we can't measure directly, like the height a ladder reaches on a wall. Let's solve a practical problem right now. How high up the wall does this ladder reach?`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-pythagoras-real-world-applications.mp3'
+    },
+    display: {
+      content: `### Real-World Applications
+
+Many real-world situations form a right triangle, allowing us to use \$a^2 + b^2 = c^2\$.
+
+**Problem:** A 6-meter ladder is placed against a wall. The base of the ladder is 2 meters away from the wall. How high up the wall (h) does the ladder reach? Round your answer to two decimal places.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "rightTriangle",
+          "parameters": {
+                "angle": null,
+                "angleLabel": "",
+                "hypotenuse": "6 m (Ladder)",
+                "opposite": "h (Wall)",
+                "adjacent": "2 m (Ground)",
+                "highlightSide": "opposite",
+                "showAngleMark": false,
+                "showRightAngle": true,
+                "showSideTypeLabels": false
+          },
+          "caption": "A ladder forming a right triangle with the wall and the ground."
+    }
+  },
+
+  's2-math-pythagoras-converse': {
+    speech: {
+      text: `Good day! We've used Pythagoras to find missing sides, but now we're turning the theorem around. The Converse of Pythagoras helps us verify if a triangle is truly a right triangle when we only know its three side lengths. Let's investigate this triangle. Is it a right triangle?`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-pythagoras-converse.mp3'
+    },
+    display: {
+      content: `### Converse of Pythagoras' Theorem
+
+The converse states: If \$a^2 + b^2 = c^2\$ for a triangle with sides a, b, and c (where c is the longest side), then the triangle is a right-angled triangle.
+
+**Problem:** Determine whether a triangle with side lengths 9 cm, 12 cm, and 15 cm is a right-angled triangle.`,
+      showAfterSpeech: true
+    }
   }
+
+
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

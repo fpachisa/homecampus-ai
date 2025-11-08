@@ -70,6 +70,10 @@ import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS } from '../../prompt-library/subj
 import type { QuadraticTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
 import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
 import type { AlgebraicFractionsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
+import { S2_MATH_PROPORTION_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
+import type { ProportionTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
+import { S2_MATH_PYTHAGORAS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
+import type { PythagorasTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -193,6 +197,20 @@ function getTopicIcon(topicId: string): string {
   if (topicId.startsWith('s2-math-algebraic-fractions-')) {
     const icons = ['🧮', '🔧', '✖️', '➕', '⚖️'];
     const index = Object.keys(S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+
+  // S2 Direct and Inverse Proportion icons
+  if (topicId.startsWith('s2-math-proportion-')) {
+    const icons = ['⚖️', '📈', '📊', '🔄', '📉', '💫'];
+    const index = Object.keys(S2_MATH_PROPORTION_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+
+  // S2 Pythagoras' Theorem icons
+  if (topicId.startsWith('s2-math-pythagoras-')) {
+    const icons = ['△', '📐', '📏', '🏗️', '✅'];
+    const index = Object.keys(S2_MATH_PYTHAGORAS_SUBTOPICS).indexOf(topicId);
     return icons[index >= 0 ? index : 0];
   }
 
@@ -354,6 +372,8 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's2-math-expansion-factorisation') return 'Expansion & Factorisation';
   if (category === 's2-math-quadratic-equations-graphs') return 'Quadratic Equations & Graphs';
   if (category === 's2-math-algebraic-fractions-formulae') return 'Algebraic Fractions & Formulae';
+  if (category === 's2-math-direct-inverse-proportion') return 'Direct & Inverse Proportion';
+  if (category === 's2-math-pythagoras') return 'Pythagoras\' Theorem';
   if (category === 's3-math-trigonometry') return 'Trigonometry';
   if (category === 's3-math-circle-geometry') return 'Circle Geometry';
   if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
@@ -385,7 +405,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   const knownPaths = [
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
-    's1-math-linear-functions-graphs', 's1-math-perimeter-area', 's1-math-data-handling', 's2-math-linear-graphs', 's2-math-linear-inequalities', 's2-math-expansion-factorisation', 's2-math-quadratic-equations-graphs', 's2-math-algebraic-fractions-formulae', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
+    's1-math-linear-functions-graphs', 's1-math-perimeter-area', 's1-math-data-handling', 's2-math-linear-graphs', 's2-math-linear-inequalities', 's2-math-expansion-factorisation', 's2-math-quadratic-equations-graphs', 's2-math-algebraic-fractions-formulae', 's2-math-direct-inverse-proportion', 's2-math-pythagoras', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
     's3-math-coordinate-geometry', 's4-math-differential-calculus', 's4-math-integration',
@@ -553,6 +573,22 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 's2-math-algebraic-fractions-formulae') {
       return Object.entries(S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as AlgebraicFractionsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's2-math-direct-inverse-proportion') {
+      return Object.entries(S2_MATH_PROPORTION_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as ProportionTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's2-math-pythagoras') {
+      return Object.entries(S2_MATH_PYTHAGORAS_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as PythagorasTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
@@ -795,6 +831,10 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
       topicConfig = S3_MATH_CIRCLE_GEOMETRY[topicId as CircleGeometryTopicId];
     } else if (selectedCategory === 's3-math-quadratic-equations') {
       topicConfig = S3_MATH_QUADRATIC_EQUATIONS[topicId as QuadraticEquationsTopicId];
+    } else if (selectedCategory === 's2-math-direct-inverse-proportion') {
+      topicConfig = S2_MATH_PROPORTION_SUBTOPICS[topicId as ProportionTopicId];
+    } else if (selectedCategory === 's2-math-pythagoras') {
+      topicConfig = S2_MATH_PYTHAGORAS_SUBTOPICS[topicId as PythagorasTopicId];
     } else if (selectedCategory === 's3-math-exponential-logarithms') {
       topicConfig = S3_MATH_EXPONENTIAL_LOGARITHMS_SUBTOPICS[topicId as ExponentialLogarithmsTopicId];
     } else if (selectedCategory === 's3-math-sets-venn-diagrams') {
@@ -845,6 +885,8 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
                selectedCategory === 's2-math-expansion-factorisation' ? '🔧' :
                selectedCategory === 's2-math-quadratic-equations-graphs' ? '📊' :
                selectedCategory === 's2-math-algebraic-fractions-formulae' ? '🧮' :
+               selectedCategory === 's2-math-direct-inverse-proportion' ? '⚖️' :
+               selectedCategory === 's2-math-pythagoras' ? '△' :
                selectedCategory === 's3-math-trigonometry' ? '📐' :
                selectedCategory === 's3-math-circle-geometry' ? '⭕' :
                selectedCategory === 's3-math-quadratic-equations' ? '📈' :

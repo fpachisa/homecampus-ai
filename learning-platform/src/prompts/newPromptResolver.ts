@@ -53,6 +53,8 @@ import { LINEAR_INEQUALITIES_SUBTOPICS, S2_LINEAR_INEQUALITIES_CONFIG } from '..
 import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS, S2_EXPANSION_FACTORISATION_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS, QUADRATIC_EQUATIONS_TUTOR_CUSTOMIZATION, QUADRATIC_EQUATIONS_MATH_TOOLS } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
 import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS, ALGEBRAIC_FRACTIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
+import { S2_MATH_PROPORTION_SUBTOPICS, S2_MATH_PROPORTION_METADATA } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
+import { S2_MATH_PYTHAGORAS_SUBTOPICS, S2_PYTHAGORAS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -111,6 +113,8 @@ function registerBrowserTopics() {
   registerTopics(S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS, S2_EXPANSION_FACTORISATION_CONFIG);
   registerTopics(S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS, { tutorCustomization: QUADRATIC_EQUATIONS_TUTOR_CUSTOMIZATION, availableTools: QUADRATIC_EQUATIONS_MATH_TOOLS });
   registerTopics(S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS, ALGEBRAIC_FRACTIONS_CONFIG);
+  registerTopics(S2_MATH_PROPORTION_SUBTOPICS, S2_MATH_PROPORTION_METADATA);
+  registerTopics(S2_MATH_PYTHAGORAS_SUBTOPICS, S2_PYTHAGORAS_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);
@@ -429,6 +433,45 @@ export class NewPromptResolver {
       'Keep greetings professional and aligned with the tutoring brand'
     ].filter(Boolean);
 
+    // Collect all math tools needed across all subtopics in batch
+    const allToolsMap = new Map<string, any>();
+    for (const topic of topics) {
+      try {
+        const { subtopic, global } = this.getTopicConfig(topic.topicId);
+        const firstSection = topic.firstSection || subtopic.progressionStructure?.sections?.[0];
+
+        if (firstSection) {
+          const contextWithFirstSection = {
+            topicId: topic.topicId,
+            currentSection: firstSection.id || firstSection
+          } as PromptContext;
+
+          const scopedTools = this.getScopedMathTools(contextWithFirstSection, subtopic, global);
+
+          // Merge tools - handle both object and string responses from getScopedMathTools
+          if (typeof scopedTools === 'object' && scopedTools !== null && scopedTools.tools) {
+            // Section-scoped tools with metadata structure
+            Object.entries(scopedTools.tools).forEach(([toolName, toolDef]) => {
+              allToolsMap.set(toolName, toolDef);
+            });
+          } else if (typeof scopedTools === 'object' && scopedTools !== null) {
+            // Direct tools object (from getFilteredTools)
+            Object.entries(scopedTools).forEach(([toolName, toolDef]) => {
+              if (toolName !== 'description' && toolName !== 'usageGuidelines') {
+                allToolsMap.set(toolName, toolDef);
+              }
+            });
+          }
+        }
+      } catch (error) {
+        console.warn(`Failed to get tools for topic ${topic.topicId}:`, error);
+        // Continue with other topics
+      }
+    }
+
+    // Convert map to object for addVisualTools
+    const mergedTools = Object.fromEntries(allToolsMap);
+
     const builder = this.promptLibrary.createBuilder()
       .addRole("You are creating VARIED initial greetings for a math tutoring platform")
       .addSection('TASK', `Generate ${topics.length} UNIQUE initial greetings with first problems for the following subtopics:
@@ -445,6 +488,7 @@ Each greeting should:
         goal: 'Create greetings that feel fresh and unique, NOT repetitive or formulaic'
       })
       .addSection('FORMATTING RULES', FORMATTING_RULES)
+      .addVisualTools(mergedTools)
       .addSection('OUTPUT SCHEMA', {
         description: 'Return a JSON object with greetings keyed by topicId',
         structure: {

@@ -65,6 +65,10 @@ import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS } from '../prompt-library/subject
 import type { QuadraticTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
 import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
 import type { AlgebraicFractionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
+import { S2_MATH_PROPORTION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
+import type { ProportionTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
+import { S2_MATH_PYTHAGORAS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
+import type { PythagorasTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -148,6 +152,14 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s2-math-algebraic-fractions-')) {
       const subtopic = S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS[topicId as AlgebraicFractionsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s2-math-proportion-')) {
+      const subtopic = S2_MATH_PROPORTION_SUBTOPICS[topicId as ProportionTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s2-math-pythagoras-')) {
+      const subtopic = S2_MATH_PYTHAGORAS_SUBTOPICS[topicId as PythagorasTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {

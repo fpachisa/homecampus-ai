@@ -57,6 +57,21 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   's2/math/algebraic-fractions-formulae/AdditionSubtraction': () => import('../notes/s2/math/algebraic-fractions-formulae/AdditionSubtraction'),
   's2/math/algebraic-fractions-formulae/EquationsFormulae': () => import('../notes/s2/math/algebraic-fractions-formulae/EquationsFormulae'),
 
+  // S2 Direct and Inverse Proportion notes
+  's2/math/proportion/DirectProportionIntro': () => import('../notes/s2/math/proportion/DirectProportionIntro'),
+  's2/math/proportion/DirectProportionAlgebraic': () => import('../notes/s2/math/proportion/DirectProportionAlgebraic'),
+  's2/math/proportion/DirectProportionForms': () => import('../notes/s2/math/proportion/DirectProportionForms'),
+  's2/math/proportion/InverseProportionIntro': () => import('../notes/s2/math/proportion/InverseProportionIntro'),
+  's2/math/proportion/InverseProportionAlgebraic': () => import('../notes/s2/math/proportion/InverseProportionAlgebraic'),
+  's2/math/proportion/InverseProportionForms': () => import('../notes/s2/math/proportion/InverseProportionForms'),
+
+  // S2 Pythagoras' Theorem notes
+  's2/math/pythagoras/Introduction': () => import('../notes/s2/math/pythagoras/Introduction'),
+  's2/math/pythagoras/FindingHypotenuse': () => import('../notes/s2/math/pythagoras/FindingHypotenuse'),
+  's2/math/pythagoras/FindingShorterSides': () => import('../notes/s2/math/pythagoras/FindingShorterSides'),
+  's2/math/pythagoras/RealWorldApplications': () => import('../notes/s2/math/pythagoras/RealWorldApplications'),
+  's2/math/pythagoras/Converse': () => import('../notes/s2/math/pythagoras/Converse'),
+
   //S1 Data Handling notes
   's1/math/data-handling/Introduction': () => import('../notes/s1/math/data-handling/Introduction'),
   's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),

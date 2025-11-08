@@ -205,6 +205,28 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Secondary 2',
       subject: 'Mathematics',
     },
+    {
+      id: 's2-direct-inverse-proportion',
+      name: 'Direct & Inverse Proportion',
+      icon: '⚖️',
+      description: 'Master direct proportion (y ∝ x, y ∝ x²), inverse proportion (y ∝ 1/x, y ∝ 1/x²), and real-world applications',
+      subtopicCount: 6,
+      isActive: true,
+      category: 's2-math-direct-inverse-proportion',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
+    {
+      id: 's2-pythagoras',
+      name: 'Pythagoras\' Theorem',
+      icon: '△',
+      description: 'Master Pythagoras\' Theorem: finding sides, real-world applications, and the converse theorem',
+      subtopicCount: 5,
+      isActive: true,
+      category: 's2-math-pythagoras',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
 
   ],
 

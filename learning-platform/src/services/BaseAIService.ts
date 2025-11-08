@@ -45,6 +45,7 @@ class BaseAIService implements AIService {
         topicId: topicId as any
       });
 
+      console.log('Prompt for initial greeting with problem:', prompt);
       const text = await this.provider.generateContent(prompt);
 
       if (!text) {

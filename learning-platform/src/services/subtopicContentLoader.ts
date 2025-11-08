@@ -36,6 +36,7 @@ import { LINEAR_INEQUALITIES_SUBTOPICS } from '../prompt-library/subjects/mathem
 import { S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-expansion-factorisation';
 import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
 import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
+import { S2_MATH_PROPORTION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
 
 export interface SubtopicContent {
   displayName: string;
@@ -71,6 +72,7 @@ class SubtopicContentLoader {
       ...S2_MATH_EXPANSION_FACTORISATION_SUBTOPICS,
       ...S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS,
       ...S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS,
+      ...S2_MATH_PROPORTION_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

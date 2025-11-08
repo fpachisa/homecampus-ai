@@ -17,6 +17,7 @@ interface Point {
   label?: string;           // e.g., "(2, 3)", "A"
   color?: string;
   style?: 'open' | 'closed'; // Default: closed
+  labelPosition?: 'top' | 'bottom' | 'left' | 'right' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'; // Default: top-right
 }
 
 interface Line {
@@ -35,6 +36,8 @@ interface Line {
 
   color?: string;
   style?: 'solid' | 'dashed';
+  labelPosition?: 'start' | 'middle' | 'end' | 'auto'; // Default: auto (intelligent placement)
+  labelOffset?: { dx?: number; dy?: number }; // Manual offset adjustment
 }
 
 interface Curve {
@@ -43,6 +46,8 @@ interface Curve {
   points: Array<{x: number, y: number}>; // Pre-calculated points to connect
   color?: string;
   style?: 'solid' | 'dashed';
+  labelPosition?: 'start' | 'middle' | 'end' | 'auto'; // Default: auto
+  labelOffset?: { dx?: number; dy?: number }; // Manual offset adjustment
 }
 
 interface HighlightRegion {
@@ -340,9 +345,9 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
   }, [curves]);
 
   // SVG dimensions
-  const width = 500;
+  const width = 600;
   const height = 500;
-  const padding = 60;
+  const padding = 70;
   const topPadding = title ? 80 : 60;
   const chartWidth = width - 2 * padding;
   const chartHeight = height - padding - topPadding;
@@ -581,6 +586,84 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
     return null;
   };
 
+  // Calculate intelligent label position for a line
+  const calculateLineLabelPosition = (
+    x1: number, y1: number, x2: number, y2: number,
+    position: 'start' | 'middle' | 'end' | 'auto' = 'auto',
+    slope: number = 0
+  ) => {
+    // Estimate label dimensions
+    const labelWidth = 100; // approximate width for equations like "Line A: D = 2T"
+    const labelHeight = 20;
+    const padding = 10;
+
+    let labelX: number, labelY: number;
+    let textAnchor: 'start' | 'middle' | 'end' = 'start';
+
+    // Choose position along the line
+    let t = 0.5; // default to middle
+    if (position === 'start') t = 0.2;
+    else if (position === 'end') t = 0.8;
+    else if (position === 'middle') t = 0.5;
+    else if (position === 'auto') {
+      // Intelligent placement: avoid edges where labels might overflow
+      // For positive slopes, place label in middle-left area
+      // For negative slopes, place label in middle-right area
+      if (slope > 0) {
+        t = 0.4; // Place at 40% along the line for positive slopes
+      } else if (slope < 0) {
+        t = 0.6; // Place at 60% along the line for negative slopes
+      } else {
+        t = 0.5; // Middle for horizontal lines
+      }
+    }
+
+    // Calculate point along the line
+    const lineX = x1 + t * (x2 - x1);
+    const lineY = y1 + t * (y2 - y1);
+    const svgX = toSVGX(lineX);
+    const svgY = toSVGY(lineY);
+
+    // Determine label offset based on slope
+    if (Math.abs(slope) < 0.1) {
+      // Nearly horizontal line - place label above
+      labelX = svgX;
+      labelY = svgY - 15;
+      textAnchor = 'middle';
+    } else if (Math.abs(slope) > 10) {
+      // Nearly vertical line - place label to the right
+      labelX = svgX + 10;
+      labelY = svgY;
+      textAnchor = 'start';
+    } else if (slope > 0) {
+      // Positive slope - place label above and to the left
+      labelX = svgX - 5;
+      labelY = svgY - 10;
+      textAnchor = 'end';
+    } else {
+      // Negative slope - place label above and to the right
+      labelX = svgX + 5;
+      labelY = svgY - 10;
+      textAnchor = 'start';
+    }
+
+    // Boundary check and adjustment
+    const minX = padding + 5;
+    const maxX = width - padding - labelWidth;
+    const minY = topPadding + labelHeight;
+    const maxY = height - padding - 5;
+
+    if (labelX < minX) labelX = minX;
+    if (labelX > maxX) {
+      labelX = maxX;
+      textAnchor = 'end';
+    }
+    if (labelY < minY) labelY = minY;
+    if (labelY > maxY) labelY = maxY;
+
+    return { labelX, labelY, textAnchor };
+  };
+
   // Render lines
   const renderLines = () => {
     return normalizedLines.map((line, index) => {
@@ -593,6 +676,16 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
         const y1 = line.slope * x1 + line.yIntercept;
         const x2 = xMax;
         const y2 = line.slope * x2 + line.yIntercept;
+
+        // Calculate intelligent label position
+        const position = line.labelPosition || 'auto';
+        const { labelX, labelY, textAnchor } = calculateLineLabelPosition(
+          x1, y1, x2, y2, position, line.slope
+        );
+
+        // Apply manual offset if provided
+        const finalLabelX = labelX + (line.labelOffset?.dx || 0);
+        const finalLabelY = labelY + (line.labelOffset?.dy || 0);
 
         return (
           <g key={`line-${index}`}>
@@ -607,11 +700,12 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
             />
             {line.equation && (
               <text
-                x={toSVGX(x2) - 10}
-                y={toSVGY(y2) - 10}
+                x={finalLabelX}
+                y={finalLabelY}
                 fontSize="11"
                 fill={lineColorFinal}
                 fontWeight="bold"
+                textAnchor={textAnchor}
               >
                 {line.equation}
               </text>
@@ -623,6 +717,17 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
       if (line.type === 'vertical' && line.xValue !== undefined) {
         // Vertical: x = k
         const svgX = toSVGX(line.xValue);
+
+        // Position label in the middle of the visible line
+        const position = line.labelPosition || 'auto';
+        let labelY = topPadding + chartHeight / 2;
+        if (position === 'start') labelY = topPadding + 30;
+        else if (position === 'end') labelY = topPadding + chartHeight - 20;
+
+        // Apply manual offset if provided
+        const finalLabelX = svgX + 5 + (line.labelOffset?.dx || 0);
+        const finalLabelY = labelY + (line.labelOffset?.dy || 0);
+
         return (
           <g key={`line-${index}`}>
             <line
@@ -636,8 +741,8 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
             />
             {line.equation && (
               <text
-                x={svgX + 5}
-                y={topPadding + 20}
+                x={finalLabelX}
+                y={finalLabelY}
                 fontSize="11"
                 fill={lineColorFinal}
                 fontWeight="bold"
@@ -652,6 +757,17 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
       if (line.type === 'horizontal' && line.yValue !== undefined) {
         // Horizontal: y = k
         const svgY = toSVGY(line.yValue);
+
+        // Position label in the middle of the visible line
+        const position = line.labelPosition || 'auto';
+        let labelX = padding + chartWidth / 2;
+        if (position === 'start') labelX = padding + 10;
+        else if (position === 'end') labelX = width - padding - 100;
+
+        // Apply manual offset if provided
+        const finalLabelX = labelX + (line.labelOffset?.dx || 0);
+        const finalLabelY = svgY - 5 + (line.labelOffset?.dy || 0);
+
         return (
           <g key={`line-${index}`}>
             <line
@@ -665,8 +781,8 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
             />
             {line.equation && (
               <text
-                x={padding + 10}
-                y={svgY - 5}
+                x={finalLabelX}
+                y={finalLabelY}
                 fontSize="11"
                 fill={lineColorFinal}
                 fontWeight="bold"
@@ -699,6 +815,32 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
         })
         .join(' ');
 
+      // Calculate label position
+      const position = curve.labelPosition || 'auto';
+      let labelPointIndex = Math.floor(curve.points.length / 2); // default to middle
+      if (position === 'start') labelPointIndex = Math.min(2, curve.points.length - 1);
+      else if (position === 'end') labelPointIndex = Math.max(curve.points.length - 3, 0);
+      else if (position === 'middle') labelPointIndex = Math.floor(curve.points.length / 2);
+
+      const labelPoint = curve.points[labelPointIndex];
+      let labelX = toSVGX(labelPoint.x);
+      let labelY = toSVGY(labelPoint.y) - 15; // Place above the curve
+
+      // Boundary check
+      const minX = padding + 10;
+      const maxX = width - padding - 100;
+      const minY = topPadding + 20;
+      const maxY = height - padding - 10;
+
+      if (labelX < minX) labelX = minX;
+      if (labelX > maxX) labelX = maxX;
+      if (labelY < minY) labelY = minY;
+      if (labelY > maxY) labelY = maxY;
+
+      // Apply manual offset if provided
+      const finalLabelX = labelX + (curve.labelOffset?.dx || 0);
+      const finalLabelY = labelY + (curve.labelOffset?.dy || 0);
+
       return (
         <g key={`curve-${index}`}>
           <path
@@ -710,8 +852,8 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
           />
           {curve.equation && (
             <text
-              x={toSVGX(curve.points[curve.points.length - 1].x) - 10}
-              y={toSVGY(curve.points[curve.points.length - 1].y) - 10}
+              x={finalLabelX}
+              y={finalLabelY}
               fontSize="11"
               fill={curveColor}
               fontWeight="bold"
@@ -732,6 +874,55 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
       const pColor = point.color || pointColor;
       const isClosed = point.style !== 'open';
 
+      // Calculate label position based on labelPosition property
+      const position = point.labelPosition || 'top-right';
+      let labelX = svgX;
+      let labelY = svgY;
+      let textAnchor: 'start' | 'middle' | 'end' = 'start';
+
+      switch (position) {
+        case 'top':
+          labelX = svgX;
+          labelY = svgY - 15;
+          textAnchor = 'middle';
+          break;
+        case 'bottom':
+          labelX = svgX;
+          labelY = svgY + 20;
+          textAnchor = 'middle';
+          break;
+        case 'left':
+          labelX = svgX - 10;
+          labelY = svgY + 4;
+          textAnchor = 'end';
+          break;
+        case 'right':
+          labelX = svgX + 10;
+          labelY = svgY + 4;
+          textAnchor = 'start';
+          break;
+        case 'top-left':
+          labelX = svgX - 10;
+          labelY = svgY - 10;
+          textAnchor = 'end';
+          break;
+        case 'top-right':
+          labelX = svgX + 10;
+          labelY = svgY - 10;
+          textAnchor = 'start';
+          break;
+        case 'bottom-left':
+          labelX = svgX - 10;
+          labelY = svgY + 15;
+          textAnchor = 'end';
+          break;
+        case 'bottom-right':
+          labelX = svgX + 10;
+          labelY = svgY + 15;
+          textAnchor = 'start';
+          break;
+      }
+
       return (
         <g key={`point-${index}`}>
           <circle
@@ -744,11 +935,12 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
           />
           {point.label && (
             <text
-              x={svgX + 10}
-              y={svgY - 10}
+              x={labelX}
+              y={labelY}
               fontSize="11"
               fontWeight="bold"
               fill={pColor}
+              textAnchor={textAnchor}
             >
               {point.label}
             </text>
@@ -843,11 +1035,12 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
 
         {/* Axis labels */}
         <text
-          x={width - padding + 15}
-          y={(yMin <= 0 && yMax >= 0) ? toSVGY(0) + 20 : toSVGY(yMin) + 20}
+          x={width - padding - 10}
+          y={(yMin <= 0 && yMax >= 0) ? toSVGY(0) + 45 : toSVGY(yMin) + 45}
           fontSize="14"
           fontWeight="bold"
           fill={axisColor}
+          textAnchor="end"
         >
           {xLabel}
         </text>
@@ -864,7 +1057,7 @@ const CartesianPlaneVisualizer: React.FC<CartesianPlaneVisualizerProps> = ({
 
       {/* Caption */}
       {caption && (
-        <div className="text-sm mt-2" style={{ color: mutedColor, maxWidth: '500px', textAlign: 'center' }}>
+        <div className="text-sm mt-2" style={{ color: mutedColor, maxWidth: '600px', textAlign: 'center' }}>
           <MathText>{caption}</MathText>
         </div>
       )}

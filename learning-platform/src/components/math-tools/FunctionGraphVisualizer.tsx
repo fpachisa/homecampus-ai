@@ -45,13 +45,11 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
         // Handle unary minus before exponentiation (e.g., -x^2 -> -(x**2))
         .replace(/-([a-z]+)\*\*(\w+)/gi, '-($1**$2)');
 
-      // Convert degrees to radians for trig functions if needed
-      const xValue = xAxisMode === 'degrees' ? (x * Math.PI / 180) : x;
-
-      // Create safe evaluation context
-      const Math_sin = Math.sin;
-      const Math_cos = Math.cos;
-      const Math_tan = Math.tan;
+      // Create wrapper functions for trig that handle degree-to-radian conversion
+      // This ensures only trig functions are affected by xAxisMode, not polynomial expressions
+      const Math_sin = (angle: number) => Math.sin(xAxisMode === 'degrees' ? angle * Math.PI / 180 : angle);
+      const Math_cos = (angle: number) => Math.cos(xAxisMode === 'degrees' ? angle * Math.PI / 180 : angle);
+      const Math_tan = (angle: number) => Math.tan(xAxisMode === 'degrees' ? angle * Math.PI / 180 : angle);
       const Math_sqrt = Math.sqrt;
       const Math_abs = Math.abs;
       const Math_log = Math.log;
@@ -67,9 +65,9 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
       expr = expr.replace(/log\(/g, 'Math_log(');
       expr = expr.replace(/exp\(/g, 'Math_exp(');
 
-      // Evaluate with context - use converted xValue for trig functions
+      // Evaluate with context - use raw x value; trig functions handle conversion internally
       const result = Function('x', 'Math_sin', 'Math_cos', 'Math_tan', 'Math_sqrt', 'Math_abs', 'Math_log', 'Math_exp', `return ${expr}`)(
-        xValue, Math_sin, Math_cos, Math_tan, Math_sqrt, Math_abs, Math_log, Math_exp
+        x, Math_sin, Math_cos, Math_tan, Math_sqrt, Math_abs, Math_log, Math_exp
       );
 
       return isFinite(result) ? result : null;
@@ -139,25 +137,42 @@ const FunctionGraphVisualizer: React.FC<FunctionGraphVisualizerProps> = ({
   const generatePath = (): string => {
     if (!expression) return ''; // No expression, no path
 
-    const points: [number, number][] = [];
+    const segments: [number, number][][] = [];
+    let currentSegment: [number, number][] = [];
     const step = (xMax - xMin) / 300; // smooth curve
 
     for (let x = xMin; x <= xMax; x += step) {
       const y = evaluateExpression(x);
 
-      if (y !== null && y >= yRangeMin - 10 && y <= yRangeMax + 10) {
-        const clampedY = Math.max(yRangeMin, Math.min(yRangeMax, y));
-        const svgPoint = mathToSVG(x, clampedY);
+      // Only include points that are within the visible range
+      if (y !== null && y >= yRangeMin && y <= yRangeMax) {
+        const svgPoint = mathToSVG(x, y);
 
         if (isFinite(svgPoint[0]) && isFinite(svgPoint[1])) {
-          points.push(svgPoint);
+          currentSegment.push(svgPoint);
+        }
+      } else {
+        // Point is out of range, start a new segment
+        if (currentSegment.length > 0) {
+          segments.push(currentSegment);
+          currentSegment = [];
         }
       }
     }
 
-    if (points.length === 0) return '';
+    // Add the last segment if it has points
+    if (currentSegment.length > 0) {
+      segments.push(currentSegment);
+    }
 
-    return points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0]},${p[1]}`).join(' ');
+    if (segments.length === 0) return '';
+
+    // Convert all segments to SVG path commands
+    return segments
+      .map(segment =>
+        segment.map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0]},${p[1]}`).join(' ')
+      )
+      .join(' ');
   };
 
   // Draw axes

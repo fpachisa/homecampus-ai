@@ -65,6 +65,10 @@ import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS } from '../prompt-library/subject
 import type { QuadraticTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-quadratic-equations-graphs';
 import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
 import type { AlgebraicFractionsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
+import { S2_MATH_PROPORTION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
+import type { ProportionTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
+import { S2_MATH_PYTHAGORAS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
+import type { PythagorasTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -118,6 +122,10 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS[topicId as QuadraticTopicId];
   } else if (category === 's2-math-algebraic-fractions-formulae') {
     topicConfig = S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS[topicId as AlgebraicFractionsTopicId];
+  } else if (category === 's2-math-direct-inverse-proportion') {
+    topicConfig = S2_MATH_PROPORTION_SUBTOPICS[topicId as ProportionTopicId];
+  } else if (category === 's2-math-pythagoras') {
+    topicConfig = S2_MATH_PYTHAGORAS_SUBTOPICS[topicId as PythagorasTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {
