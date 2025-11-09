@@ -260,6 +260,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Secondary 2',
       subject: 'Mathematics',
     },
+    {
+      id: 's2-averages-statistical-data',
+      name: 'Averages of Statistical Data',
+      icon: '📊',
+      description: 'Master calculating mean, median, and mode, and choosing the right measure of central tendency',
+      subtopicCount: 5,
+      isActive: true,
+      category: 's2-math-averages-statistical-data',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
 
   ],
 

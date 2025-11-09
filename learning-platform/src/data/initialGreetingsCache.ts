@@ -5376,7 +5376,144 @@ When grouping continuous data, a **class interval** is a range of values. The **
 Calculate the class width for the interval \$150 \\le x < 160\$.`,
       showAfterSpeech: true
     }
-  }  // Add more topics as needed following the same pattern
+  },
+  /**
+   * ========================================
+   * S2 STATISTICAL DIAGRAM
+   * ========================================
+   */
+  's2-math-averages-introduction': {
+    speech: {
+      text: `Welcome to the world of averages! Data can often look like a confusing jumble of numbers, but central tendency helps us find one single value that best represents the whole group. Think of it as finding the typical or summary value. Let us start with a simple conceptual question to set the stage.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-averages-introduction.mp3'
+    },
+    display: {
+      content: `### Understanding Central Tendency
+
+Imagine you have collected the daily high temperature for a month. If you wanted to report the "typical" temperature for that month using just one number, which concept would you be applying?
+
+A) Data Range
+B) Central Tendency
+C) Data Spread
+D) Frequency Distribution`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-averages-mean': {
+    speech: {
+      text: `Hey there! Ready to calculate the most common type of average, the mean? The mean is often called the arithmetic average, and it is all about finding the perfect 'fair share.' If we added up all the values and divided them equally, what would each share be? Let us calculate the mean of the following small dataset.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-averages-mean.mp3'
+    },
+    display: {
+      content: `### Mean of Raw Data
+
+A small bakery sold the following number of loaves of bread over four days: 10, 15, 20, and 5.
+
+What is the mean number of loaves sold per day?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "dotDiagram",
+          "parameters": {
+                "values": [
+                      10,
+                      15,
+                      20,
+                      5
+                ],
+                "xLabel": "Loaves Sold",
+                "title": "Daily Loaf Sales",
+                "showTickLabels": true
+          },
+          "caption": "A dot diagram showing the number of loaves sold each day."
+    }
+  },
+
+  's2-math-averages-median': {
+    speech: {
+      text: `Greetings! Today we are focusing on the median, which is all about finding the exact middle value in a dataset. Remember, the first critical step is always to put the numbers in order! Since we have an odd number of values here, the median will be one of the data points itself.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-averages-median.mp3'
+    },
+    display: {
+      content: `### Finding Median When Number of Values is Odd
+
+Five students reported the number of hours they spent studying last week: 12, 5, 8, 15, 10.
+
+What is the median number of hours studied?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "dotDiagram",
+          "parameters": {
+                "values": [
+                      12,
+                      5,
+                      8,
+                      15,
+                      10
+                ],
+                "xLabel": "Hours Studied",
+                "title": "Study Hours Per Week",
+                "showTickLabels": true
+          },
+          "caption": "A dot diagram showing the raw data points for study hours."
+    }
+  },
+
+  's2-math-averages-mode': {
+    speech: {
+      text: `Hi! Are you prepared to find the most popular number in a data set? That is exactly what the mode is—the value that appears most often. Unlike the mean or median, the mode is the easiest average to spot just by looking at the frequencies! Let us identify the mode in this set of test scores.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-averages-mode.mp3'
+    },
+    display: {
+      content: `### Finding Mode from Raw Data
+
+Seven students took a short quiz and earned the following scores (out of 10): 7, 8, 9, 7, 10, 6, 7.
+
+What is the mode of this data set?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "dotDiagram",
+          "parameters": {
+                "values": [
+                      7,
+                      8,
+                      9,
+                      7,
+                      10,
+                      6,
+                      7
+                ],
+                "xLabel": "Quiz Score",
+                "title": "Student Quiz Scores",
+                "showMode": true,
+                "showFrequencies": true
+          },
+          "caption": "A dot diagram showing the frequency of each quiz score, with the mode highlighted."
+    }
+  },
+
+  's2-math-averages-choosing': {
+    speech: {
+      text: `Hello! We are moving beyond calculation and into critical thinking. We know how to find the mean, median, and mode, but when should we actually use the mean over the others? It is important to consider the structure and shape of the data before choosing the best representative average.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-averages-choosing.mp3'
+    },
+    display: {
+      content: `### When to Use the Mean
+
+When analyzing a dataset, what is the primary characteristic of the data distribution that makes the **mean** the most appropriate measure of central tendency?`,
+      showAfterSpeech: true
+    }
+  }  
+  
+  // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool
 };

@@ -92,6 +92,13 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   's2/math/statistical-diagrams/StemAndLeaf': () => import('../notes/s2/math/statistical-diagrams/StemAndLeaf'),
   's2/math/statistical-diagrams/HistogramsGrouped': () => import('../notes/s2/math/statistical-diagrams/HistogramsGrouped'),
 
+  // S2 Averages of Statistical Data notes
+  's2/math/averages-statistical-data/IntroductionToAverages': () => import('../notes/s2/math/averages-statistical-data/IntroductionToAverages'),
+  's2/math/averages-statistical-data/Mean': () => import('../notes/s2/math/averages-statistical-data/Mean'),
+  's2/math/averages-statistical-data/Median': () => import('../notes/s2/math/averages-statistical-data/Median'),
+  's2/math/averages-statistical-data/Mode': () => import('../notes/s2/math/averages-statistical-data/Mode'),
+  's2/math/averages-statistical-data/ChoosingTheRightMeasure': () => import('../notes/s2/math/averages-statistical-data/ChoosingTheRightMeasure'),
+
   //S1 Data Handling notes
   's1/math/data-handling/Introduction': () => import('../notes/s1/math/data-handling/Introduction'),
   's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),

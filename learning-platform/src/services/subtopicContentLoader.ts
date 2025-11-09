@@ -41,6 +41,7 @@ import { S2_MATH_PYTHAGORAS_SUBTOPICS } from '../prompt-library/subjects/mathema
 import { S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
 import { S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-probability-single-event';
 import { STATISTICAL_DIAGRAMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
+import { S2_MATH_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
 
 export interface SubtopicContent {
   displayName: string;
@@ -81,6 +82,7 @@ class SubtopicContentLoader {
       ...S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS,
       ...S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS,
       ...STATISTICAL_DIAGRAMS_SUBTOPICS,
+      ...S2_MATH_AVERAGES_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

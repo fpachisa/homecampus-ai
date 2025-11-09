@@ -142,6 +142,12 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's2/math/statistical-diagrams/HistogramsUngrouped': () => import('../notes/s2/math/statistical-diagrams/HistogramsUngrouped'),
   's2/math/statistical-diagrams/StemAndLeaf': () => import('../notes/s2/math/statistical-diagrams/StemAndLeaf'),
   's2/math/statistical-diagrams/HistogramsGrouped': () => import('../notes/s2/math/statistical-diagrams/HistogramsGrouped'),
+  // S2 Averages of Statistical Data notes
+  's2/math/averages-statistical-data/IntroductionToAverages': () => import('../notes/s2/math/averages-statistical-data/IntroductionToAverages'),
+  's2/math/averages-statistical-data/Mean': () => import('../notes/s2/math/averages-statistical-data/Mean'),
+  's2/math/averages-statistical-data/Median': () => import('../notes/s2/math/averages-statistical-data/Median'),
+  's2/math/averages-statistical-data/Mode': () => import('../notes/s2/math/averages-statistical-data/Mode'),
+  's2/math/averages-statistical-data/ChoosingTheRightMeasure': () => import('../notes/s2/math/averages-statistical-data/ChoosingTheRightMeasure'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

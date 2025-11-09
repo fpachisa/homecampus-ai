@@ -75,6 +75,8 @@ import { S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS } from '../prompt-library/subject
 import type { ProbabilitySingleEventTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-probability-single-event';
 import { STATISTICAL_DIAGRAMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
 import type { StatisticalDiagramsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
+import { S2_MATH_AVERAGES_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
+import type { AveragesTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -178,6 +180,10 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s2-math-statistical-diagrams-')) {
       const subtopic = STATISTICAL_DIAGRAMS_SUBTOPICS[topicId as StatisticalDiagramsTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s2-math-averages-')) {
+      const subtopic = S2_MATH_AVERAGES_SUBTOPICS[topicId as AveragesTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {

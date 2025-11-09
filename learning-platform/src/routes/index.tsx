@@ -217,6 +217,7 @@ export const router = createBrowserRouter([
       </RootLayout>
     ),
   },
+  
   {
     path: '/invite/:type/:token',
     element: (

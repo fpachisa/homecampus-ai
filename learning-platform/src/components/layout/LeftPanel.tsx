@@ -80,6 +80,8 @@ import { S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS } from '../../prompt-library/subj
 import type { ProbabilitySingleEventTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-probability-single-event';
 import { STATISTICAL_DIAGRAMS_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
 import type { StatisticalDiagramsTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
+import { S2_MATH_AVERAGES_SUBTOPICS } from '../../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
+import type { AveragesTopicId } from '../../prompt-library/subjects/mathematics/secondary/s2-averages-statistical-data';
 import type { LayoutActions } from './MainLayout';
 
 interface LeftPanelProps {
@@ -238,6 +240,13 @@ function getTopicIcon(topicId: string): string {
   if (topicId.startsWith('s2-math-statistical-diagrams-')) {
     const icons = ['📊', '•', '📊', '📋', '📈'];
     const index = Object.keys(STATISTICAL_DIAGRAMS_SUBTOPICS).indexOf(topicId);
+    return icons[index >= 0 ? index : 0];
+  }
+
+  // S2 Averages of Statistical Data icons
+  if (topicId.startsWith('s2-math-averages-')) {
+    const icons = ['📊', '➗', '📏', '🔢', '⚖️'];
+    const index = Object.keys(S2_MATH_AVERAGES_SUBTOPICS).indexOf(topicId);
     return icons[index >= 0 ? index : 0];
   }
 
@@ -404,6 +413,7 @@ function getCategoryDisplayName(category: string): string {
   if (category === 's2-math-trigonometric-ratios') return 'Trigonometric Ratios';
   if (category === 's2-math-probability-single-event') return 'Probability of Single Events';
   if (category === 's2-math-statistical-diagrams') return 'Statistical Diagrams';
+  if (category === 's2-math-averages-statistical-data') return 'Averages of Statistical Data';
   if (category === 's3-math-trigonometry') return 'Trigonometry';
   if (category === 's3-math-circle-geometry') return 'Circle Geometry';
   if (category === 's3-math-quadratic-equations') return 'Quadratic Equations';
@@ -435,7 +445,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
   const knownPaths = [
     's1-math-factors-multiples', 's1-math-real-numbers', 's1-math-approximation-estimation', 's1-math-basic-algebra',
     's1-math-simple-linear-equations', 's1-math-angles-parallel-lines', 's1-math-ratio-rate-speed', 's1-math-percentage',
-    's1-math-linear-functions-graphs', 's1-math-perimeter-area', 's1-math-data-handling', 's2-math-linear-graphs', 's2-math-linear-inequalities', 's2-math-expansion-factorisation', 's2-math-quadratic-equations-graphs', 's2-math-algebraic-fractions-formulae', 's2-math-direct-inverse-proportion', 's2-math-pythagoras', 's2-math-trigonometric-ratios', 's2-math-probability-single-event', 's2-math-statistical-diagrams', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
+    's1-math-linear-functions-graphs', 's1-math-perimeter-area', 's1-math-data-handling', 's2-math-linear-graphs', 's2-math-linear-inequalities', 's2-math-expansion-factorisation', 's2-math-quadratic-equations-graphs', 's2-math-algebraic-fractions-formulae', 's2-math-direct-inverse-proportion', 's2-math-pythagoras', 's2-math-trigonometric-ratios', 's2-math-probability-single-event', 's2-math-statistical-diagrams', 's2-math-averages-statistical-data', 's3-math-trigonometry', 's3-math-circle-geometry', 's3-math-quadratic-equations',
     's3-math-exponential-logarithms', 's3-math-sets-venn-diagrams', 's3-math-exponents',
     's3-math-surds-radicals', 's3-math-statistics', 's3-math-relations-functions',
     's3-math-coordinate-geometry', 's4-math-differential-calculus', 's4-math-integration',
@@ -643,6 +653,14 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     } else if (selectedCategory === 's2-math-statistical-diagrams') {
       return Object.entries(STATISTICAL_DIAGRAMS_SUBTOPICS).map(([topicId, config]) => ({
         id: topicId as StatisticalDiagramsTopicId,
+        name: config.displayName,
+        icon: getTopicIcon(topicId),
+        status: 'active' as const,
+        description: config.topicName,
+      }));
+    } else if (selectedCategory === 's2-math-averages-statistical-data') {
+      return Object.entries(S2_MATH_AVERAGES_SUBTOPICS).map(([topicId, config]) => ({
+        id: topicId as AveragesTopicId,
         name: config.displayName,
         icon: getTopicIcon(topicId),
         status: 'active' as const,
