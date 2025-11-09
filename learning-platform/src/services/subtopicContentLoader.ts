@@ -39,6 +39,7 @@ import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS } from '../prompt-library/subject
 import { S2_MATH_PROPORTION_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
 import { S2_MATH_PYTHAGORAS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
 import { S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
+import { S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-probability-single-event';
 
 export interface SubtopicContent {
   displayName: string;
@@ -77,6 +78,7 @@ class SubtopicContentLoader {
       ...S2_MATH_PROPORTION_SUBTOPICS,
       ...S2_MATH_PYTHAGORAS_SUBTOPICS,
       ...S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS,
+      ...S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS,
       // S3 Math topics
       ...S3_MATH_TRIGONOMETRY_SUBTOPICS,
       ...S3_MATH_CIRCLE_GEOMETRY,

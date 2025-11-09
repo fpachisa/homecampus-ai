@@ -120,12 +120,31 @@ const NumberLineVisualizer: React.FC<NumberLineVisualizerProps> = ({
     return padding + normalized * lineLength;
   };
 
+  // Format number with appropriate precision based on step size
+  const formatNumber = (value: number): number => {
+    // Determine decimal places based on step size
+    let decimalPlaces = 0;
+    if (step < 1) {
+      const stepStr = step.toString();
+      const decimalPart = stepStr.split('.')[1];
+      decimalPlaces = decimalPart ? decimalPart.length : 0;
+    }
+
+    // Round to remove floating-point errors
+    const multiplier = Math.pow(10, decimalPlaces);
+    return Math.round(value * multiplier) / multiplier;
+  };
+
   // Generate tick marks
   const generateTicks = (): number[] => {
     const ticks: number[] = [];
-    for (let i = min; i <= max; i += step) {
-      ticks.push(i);
+    const numTicks = Math.round((max - min) / step) + 1;
+
+    for (let i = 0; i < numTicks; i++) {
+      const value = min + (i * step);
+      ticks.push(formatNumber(value));
     }
+
     return ticks;
   };
 
@@ -133,12 +152,13 @@ const NumberLineVisualizer: React.FC<NumberLineVisualizerProps> = ({
 
   // Get context label for a value
   const getContextLabel = (value: number): string => {
+    const formattedValue = formatNumber(value);
     if (context === 'temperature') {
-      return `${value}°C`;
+      return `${formattedValue}°C`;
     } else if (context === 'altitude') {
-      return value >= 0 ? `${value}m above` : `${Math.abs(value)}m below`;
+      return formattedValue >= 0 ? `${formattedValue}m above` : `${Math.abs(formattedValue)}m below`;
     }
-    return String(value);
+    return String(formattedValue);
   };
 
   // Render context overlay
@@ -403,7 +423,7 @@ const NumberLineVisualizer: React.FC<NumberLineVisualizerProps> = ({
         {point.label && (
           <text
             x={x}
-            y={lineY + 25}
+            y={lineY - 10}
             fontSize="12"
             fontWeight="bold"
             fill={pointColor}

@@ -71,6 +71,8 @@ import { S2_MATH_PYTHAGORAS_SUBTOPICS } from '../prompt-library/subjects/mathema
 import type { PythagorasTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
 import { S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
 import type { TrigonometricRatiosTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
+import { S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-probability-single-event';
+import type { ProbabilitySingleEventTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-probability-single-event';
 
 interface SubtopicWelcomeScreenProps {
   topicId: string;
@@ -130,6 +132,8 @@ const SubtopicWelcomeScreen: React.FC<SubtopicWelcomeScreenProps> = ({
     topicConfig = S2_MATH_PYTHAGORAS_SUBTOPICS[topicId as PythagorasTopicId];
   } else if (category === 's2-math-trigonometric-ratios') {
     topicConfig = S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS[topicId as TrigonometricRatiosTopicId];
+  } else if (category === 's2-math-probability-single-event') {
+    topicConfig = S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS[topicId as ProbabilitySingleEventTopicId];
   } else if (category === 's3-math-trigonometry') {
     topicConfig = S3_MATH_TRIGONOMETRY[topicId as TrigonometryTopicId];
   } else if (category === 's3-math-circle-geometry') {

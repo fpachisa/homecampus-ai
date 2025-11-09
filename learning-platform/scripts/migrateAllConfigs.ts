@@ -90,22 +90,25 @@ const STANDARD_MODULES = {
 };
 
 
-export const S2_ALGEBRAIC_FRACTIONS_FIRESTORE_CONFIGS = [
+export const S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS = [
+  // ========================================
+  // SUBTOPIC 1: Probability Experiments and Sample Space
+  // ========================================
   {
-    id: "s2-math-algebraic-fractions-introduction",
-    displayName: "Introduction to Algebraic Fractions",
+    id: "s2-math-probability-experiments-sample-space",
+    displayName: "Probability Experiments and Sample Space",
     grade: "s2",
     subject: "math",
-    topic: "algebraic-fractions-formulae",
-    subtopic: "introduction",
+    topic: "probability-single-event",
+    subtopic: "experiments-sample-space",
 
     metadata: {
       difficulty: "foundational",
       estimatedMinutes: 50,
-      prerequisites: ["s1-math-fractions-operations"] // From S1 if exists
+      prerequisites: [] // No prerequisites - this is the foundation
     },
 
-    notesComponent: "s2/math/algebraic-fractions-formulae/Introduction",
+    notesComponent: "s2/math/probability-single-event/ProbabilityExperimentsAndSampleSpace",
     teachingTemplate: "", // Auto-populated by AI system
 
     scoring: {
@@ -121,21 +124,24 @@ export const S2_ALGEBRAIC_FRACTIONS_FIRESTORE_CONFIGS = [
     }
   },
 
+  // ========================================
+  // SUBTOPIC 2: Basic Probability Calculation
+  // ========================================
   {
-    id: "s2-math-algebraic-fractions-factorization",
-    displayName: "Simplifying by Factorization",
+    id: "s2-math-probability-basic-calculation",
+    displayName: "Basic Probability Calculation",
     grade: "s2",
     subject: "math",
-    topic: "algebraic-fractions-formulae",
-    subtopic: "factorization",
+    topic: "probability-single-event",
+    subtopic: "basic-calculation",
 
     metadata: {
       difficulty: "intermediate",
-      estimatedMinutes: 65,
-      prerequisites: ["s2-math-algebraic-fractions-introduction"]
+      estimatedMinutes: 60,
+      prerequisites: ["s2-math-probability-experiments-sample-space"]
     },
 
-    notesComponent: "s2/math/algebraic-fractions-formulae/Factorization",
+    notesComponent: "s2/math/probability-single-event/BasicProbabilityCalculation",
     teachingTemplate: "",
 
     scoring: {
@@ -151,21 +157,24 @@ export const S2_ALGEBRAIC_FRACTIONS_FIRESTORE_CONFIGS = [
     }
   },
 
+  // ========================================
+  // SUBTOPIC 3: Experimental Probability
+  // ========================================
   {
-    id: "s2-math-algebraic-fractions-mult-div",
-    displayName: "Multiplying and Dividing Algebraic Fractions",
+    id: "s2-math-probability-experimental",
+    displayName: "Experimental Probability",
     grade: "s2",
     subject: "math",
-    topic: "algebraic-fractions-formulae",
-    subtopic: "multiplication-division",
+    topic: "probability-single-event",
+    subtopic: "experimental",
 
     metadata: {
       difficulty: "intermediate",
       estimatedMinutes: 55,
-      prerequisites: ["s2-math-algebraic-fractions-factorization"]
+      prerequisites: ["s2-math-probability-basic-calculation"]
     },
 
-    notesComponent: "s2/math/algebraic-fractions-formulae/MultiplicationDivision",
+    notesComponent: "s2/math/probability-single-event/ExperimentalProbability",
     teachingTemplate: "",
 
     scoring: {
@@ -181,51 +190,27 @@ export const S2_ALGEBRAIC_FRACTIONS_FIRESTORE_CONFIGS = [
     }
   },
 
+  // ========================================
+  // SUBTOPIC 4: Advanced Single Event Probability
+  // ========================================
   {
-    id: "s2-math-algebraic-fractions-add-subtract",
-    displayName: "Adding and Subtracting Algebraic Fractions",
+    id: "s2-math-probability-advanced-single-event",
+    displayName: "Advanced Single Event Probability",
     grade: "s2",
     subject: "math",
-    topic: "algebraic-fractions-formulae",
-    subtopic: "addition-subtraction",
-
-    metadata: {
-      difficulty: "intermediate-to-advanced",
-      estimatedMinutes: 70,
-      prerequisites: ["s2-math-algebraic-fractions-mult-div"]
-    },
-
-    notesComponent: "s2/math/algebraic-fractions-formulae/AdditionSubtraction",
-    teachingTemplate: "",
-
-    scoring: {
-      easy: { basePoints: 0.10, hintPenalties: [0.02, 0.04, 0.06] },
-      medium: { basePoints: 0.20, hintPenalties: [0.04, 0.08, 0.12] },
-      hard: { basePoints: 0.30, hintPenalties: [0.06, 0.12, 0.20] }
-    },
-
-    modules: {
-      learn: true,
-      practice: true,
-      visualizations: true
-    }
-  },
-
-  {
-    id: "s2-math-algebraic-fractions-equations-formulae",
-    displayName: "Solving Equations and Manipulating Formulae",
-    grade: "s2",
-    subject: "math",
-    topic: "algebraic-fractions-formulae",
-    subtopic: "equations-formulae",
+    topic: "probability-single-event",
+    subtopic: "advanced",
 
     metadata: {
       difficulty: "advanced",
-      estimatedMinutes: 75,
-      prerequisites: ["s2-math-algebraic-fractions-add-subtract"]
+      estimatedMinutes: 65,
+      prerequisites: [
+        "s2-math-probability-basic-calculation",
+        "s2-math-probability-experimental"
+      ]
     },
 
-    notesComponent: "s2/math/algebraic-fractions-formulae/EquationsFormulae",
+    notesComponent: "s2/math/probability-single-event/AdvancedSingleEventProbability",
     teachingTemplate: "",
 
     scoring: {
@@ -239,190 +224,11 @@ export const S2_ALGEBRAIC_FRACTIONS_FIRESTORE_CONFIGS = [
       practice: true,
       visualizations: true
     }
-  }
-];
-
-export const S2_PYTHAGORAS_CONFIGS = [
-  // ============================================
-  // S2 PYTHAGORAS' THEOREM (5 NEW CONFIGS)
-  // ============================================
-
-  // Subtopic 1: Introduction to Pythagoras' Theorem
-  {
-    id: 's2-math-pythagoras-introduction',
-    displayName: 'Introduction to Pythagoras\' Theorem',
-    grade: 's2',
-    subject: 'math',
-    topic: 'pythagoras',
-    subtopic: 'introduction',
-    metadata: {
-      difficulty: 'foundational' as const,
-      estimatedMinutes: 45,
-      prerequisites: ['Basic knowledge of right-angled triangles', 'Squares and square roots'],
-      keywords: [
-        'pythagoras',
-        'hypotenuse',
-        'right-angled triangle',
-        'pythagorean triple',
-        'a squared plus b squared equals c squared'
-      ],
-      learningObjectives: [
-        'Identify the hypotenuse and legs of a right-angled triangle',
-        'State Pythagoras\' Theorem: a² + b² = c²',
-        'Understand that c is the hypotenuse (longest side)',
-        'Recognize common Pythagorean triples (3-4-5, 5-12-13, 8-15-17, 7-24-25)',
-        'Verify the theorem with given side lengths'
-      ]
-    },
-    notesComponent: 's2/math/pythagoras/Introduction',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 2: Finding the Hypotenuse
-  {
-    id: 's2-math-pythagoras-finding-hypotenuse',
-    displayName: 'Finding the Hypotenuse',
-    grade: 's2',
-    subject: 'math',
-    topic: 'pythagoras',
-    subtopic: 'finding-hypotenuse',
-    metadata: {
-      difficulty: 'foundational' as const,
-      estimatedMinutes: 60,
-      prerequisites: ['s2-math-pythagoras-introduction'],
-      keywords: [
-        'hypotenuse',
-        'finding longest side',
-        'c equals square root',
-        'pythagorean triples',
-        'rounding decimals',
-        'ladder problems'
-      ],
-      learningObjectives: [
-        'Apply c = √(a² + b²) to find hypotenuse',
-        'Square numbers and add squares correctly',
-        'Find square roots using calculator',
-        'Round answers to specified precision',
-        'Solve word problems involving hypotenuse'
-      ]
-    },
-    notesComponent: 's2/math/pythagoras/FindingHypotenuse',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 3: Finding Shorter Sides (Legs)
-  {
-    id: 's2-math-pythagoras-finding-shorter-sides',
-    displayName: 'Finding Shorter Sides',
-    grade: 's2',
-    subject: 'math',
-    topic: 'pythagoras',
-    subtopic: 'finding-shorter-sides',
-    metadata: {
-      difficulty: 'intermediate' as const,
-      estimatedMinutes: 60,
-      prerequisites: ['s2-math-pythagoras-introduction', 's2-math-pythagoras-finding-hypotenuse'],
-      keywords: [
-        'finding leg',
-        'rearranging formula',
-        'subtract from hypotenuse',
-        'a squared equals c squared minus b squared',
-        'ladder height problems'
-      ],
-      learningObjectives: [
-        'Rearrange a² + b² = c² to find a leg: a² = c² - b²',
-        'Apply a = √(c² - b²) correctly',
-        'Distinguish finding hypotenuse from finding leg',
-        'Solve word problems where hypotenuse is given',
-        'Verify answers using the original theorem'
-      ]
-    },
-    notesComponent: 's2/math/pythagoras/FindingShorterSides',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 4: Real-World Applications
-  {
-    id: 's2-math-pythagoras-real-world-applications',
-    displayName: 'Real-World Applications',
-    grade: 's2',
-    subject: 'math',
-    topic: 'pythagoras',
-    subtopic: 'real-world-applications',
-    metadata: {
-      difficulty: 'intermediate' as const,
-      estimatedMinutes: 75,
-      prerequisites: ['s2-math-pythagoras-finding-hypotenuse', 's2-math-pythagoras-finding-shorter-sides'],
-      keywords: [
-        'ladder problems',
-        'navigation distance',
-        'rectangle diagonal',
-        'space diagonal',
-        '3D pythagoras',
-        'TV screen size',
-        'construction applications'
-      ],
-      learningObjectives: [
-        'Identify right-angled triangles in real contexts',
-        'Solve ladder problems (wall-ground-ladder)',
-        'Calculate navigation distances (perpendicular directions)',
-        'Find rectangle diagonals',
-        'Apply Pythagoras twice for 3D space diagonals',
-        'Interpret answers in context with correct units'
-      ]
-    },
-    notesComponent: 's2/math/pythagoras/RealWorldApplications',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
-  },
-
-  // Subtopic 5: Converse of Pythagoras' Theorem
-  {
-    id: 's2-math-pythagoras-converse',
-    displayName: 'Converse of Pythagoras\' Theorem',
-    grade: 's2',
-    subject: 'math',
-    topic: 'pythagoras',
-    subtopic: 'converse',
-    metadata: {
-      difficulty: 'intermediate' as const,
-      estimatedMinutes: 50,
-      prerequisites: ['s2-math-pythagoras-finding-hypotenuse', 's2-math-pythagoras-finding-shorter-sides'],
-      keywords: [
-        'converse theorem',
-        'testing right angle',
-        'checking if right-angled',
-        'construction checking',
-        '3-4-5 method',
-        'carpenter square',
-        'if and only if'
-      ],
-      learningObjectives: [
-        'State the converse of Pythagoras\' Theorem',
-        'Test if a triangle is right-angled using side lengths',
-        'Identify the longest side as potential hypotenuse',
-        'Apply to construction checking (3-4-5 method)',
-        'Explain the difference between theorem and converse'
-      ]
-    },
-    notesComponent: 's2/math/pythagoras/Converse',
-    teachingTemplate: '',
-    scoring: STANDARD_SCORING,
-    modules: STANDARD_MODULES
   }
 ];
 
 const ALL_CONFIGS = [
-  ...S2_ALGEBRAIC_FRACTIONS_FIRESTORE_CONFIGS,
-  ...S2_PYTHAGORAS_CONFIGS,
-  ...S2_TRIGONOMETRIC_RATIOS_CONFIGS
+  ...S2_PROBABILITY_SINGLE_EVENT_FIRESTORE_CONFIGS
 ];
 
 /**

@@ -238,6 +238,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Secondary 2',
       subject: 'Mathematics',
     },
+    {
+      id: 's2-probability-single-event',
+      name: 'Probability of Single Events',
+      icon: '🎲',
+      description: 'Master probability experiments, sample spaces, theoretical & experimental probability, and real-world applications',
+      subtopicCount: 4,
+      isActive: true,
+      category: 's2-math-probability-single-event',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
 
   ],
 

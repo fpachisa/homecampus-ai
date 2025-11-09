@@ -5032,8 +5032,7 @@ The converse states: If \$a^2 + b^2 = c^2\$ for a triangle with sides a, b, and 
 **Problem:** Determine whether a triangle with side lengths 9 cm, 12 cm, and 15 cm is a right-angled triangle.`,
       showAfterSpeech: true
     }
-  }
-,
+  },
   /**
    * ========================================
    * S2 TRIGONOMETRIC RATIOS
@@ -5199,8 +5198,76 @@ What term describes this 25° angle?
           },
           "caption": "A visual representation of a person looking up at a lighthouse, showing the angle of elevation."
     }
-  }
+  },
+  /**
+   * ========================================
+   * S2 TRIGONOMETRIC RATIOS
+   * ========================================
+   */
 
+  's2-math-probability-experiments-sample-space': {
+    speech: {
+      text: `Hey there! Ready to unlock the secrets of chance? Probability starts with understanding the boundaries of what can happen. We begin by defining the sample space for different experiments.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-probability-experiments-sample-space.mp3'
+    },
+    display: {
+      content: `### Understanding Probability Experiments
+
+Probability experiments are processes that lead to well-defined outcomes. The **sample space** is the set of all possible outcomes.
+
+**Problem:** If you roll a standard six-sided die once, what is the sample space (S) for this experiment? List all elements.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-probability-basic-calculation': {
+    speech: {
+      text: `Welcome! Today, we are starting with the foundation of probability: calculating the chance of an event when all outcomes are equally likely. Think of flipping a fair coin—the math is straightforward once you know the rules.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-probability-basic-calculation.mp3'
+    },
+    display: {
+      content: `### Equally Likely Outcomes and Fair Experiments
+
+When outcomes are equally likely, the probability of an event (E) is calculated as \$P(E) = \\frac{\\text{Number of Favorable Outcomes}}{\\text{Total Number of Outcomes}}\$.
+
+**Problem:** A standard deck contains 52 cards. If you draw one card randomly, what is the probability of drawing a red Queen? (Express your answer as a simplified fraction.)`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-probability-experimental': {
+    speech: {
+      text: `Greetings, math explorer! We are moving beyond perfect theory and into the messy, fascinating world of real data. What happens when we actually run the experiment? This section compares the ideal probability with what we observe in practice.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-probability-experimental.mp3'
+    },
+    display: {
+      content: `### Experimental vs Theoretical Probability
+
+**Theoretical Probability** is what *should* happen (like P(Heads) = \$\\frac{1}{2}\$). **Experimental Probability** is what *actually* happens based on trials.
+
+**Problem:** A student flips a coin 50 times. It lands on heads 28 times. Based on this data, what is the experimental probability of flipping heads? (Express your answer as a simplified fraction.)`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-probability-advanced-single-event': {
+    speech: {
+      text: `Hi there! We are tackling a specialized area of probability now: situations where outcomes are not equally likely, but depend on geometric measures like angles or area. This requires us to use ratios of measures rather than just counting items.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-probability-advanced-single-event.mp3'
+    },
+    display: {
+      content: `### Probability with Non-Equally Likely Outcomes (Angles and Sectors)
+
+For spinners and sectors, probability is determined by the ratio of the favorable angle to the total angle (360°).
+
+**Problem:** A spinner is divided into three sectors: Red (90°), Blue (120°), and Green (150°). If the spinner is spun once, what is the probability that it lands on the Blue sector? (Express your answer as a simplified fraction.)`,
+      showAfterSpeech: true
+    }
+  }  
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool

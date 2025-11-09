@@ -131,6 +131,11 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's2/math/pythagoras/FindingShorterSides': () => import('../notes/s2/math/pythagoras/FindingShorterSides'),
   's2/math/pythagoras/RealWorldApplications': () => import('../notes/s2/math/pythagoras/RealWorldApplications'),
   's2/math/pythagoras/Converse': () => import('../notes/s2/math/pythagoras/Converse'),
+  // S2 Probability of Single Events notes
+  's2/math/probability-single-event/ProbabilityExperimentsAndSampleSpace': () => import('../notes/s2/math/probability-single-event/ProbabilityExperimentsAndSampleSpace'),
+  's2/math/probability-single-event/BasicProbabilityCalculation': () => import('../notes/s2/math/probability-single-event/BasicProbabilityCalculation'),
+  's2/math/probability-single-event/ExperimentalProbability': () => import('../notes/s2/math/probability-single-event/ExperimentalProbability'),
+  's2/math/probability-single-event/AdvancedSingleEventProbability': () => import('../notes/s2/math/probability-single-event/AdvancedSingleEventProbability'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

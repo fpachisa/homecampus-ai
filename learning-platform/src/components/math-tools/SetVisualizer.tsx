@@ -96,7 +96,7 @@ const SetVisualizer: React.FC<SetVisualizerProps> = ({
             strokeWidth="3"
             rx="8"
           />
-          <text x="35" y="45" fontSize="18" fontWeight="bold" fill={color}>
+          <text x="35" y="45" fontSize="16" fontWeight="bold" fill={color}>
             {setName}
           </text>
 
@@ -109,7 +109,7 @@ const SetVisualizer: React.FC<SetVisualizerProps> = ({
                 <text
                   key={idx}
                   x={80 + col * 65}
-                  y={55 + row * 25}
+                  y={80 + row * 25}
                   fontSize="14"
                   fill="#1f2937"
                   textAnchor="middle"

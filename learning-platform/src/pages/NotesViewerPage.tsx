@@ -79,6 +79,12 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   's2/math/trigonometric-ratios/FindingUnknownAngles': () => import('../notes/s2/math/trigonometric-ratios/FindingUnknownAngles'),
   's2/math/trigonometric-ratios/RealWorldApplications': () => import('../notes/s2/math/trigonometric-ratios/RealWorldApplications'),
 
+  // S2 Probability of Single Events notes
+  's2/math/probability-single-event/ProbabilityExperimentsAndSampleSpace': () => import('../notes/s2/math/probability-single-event/ProbabilityExperimentsAndSampleSpace'),
+  's2/math/probability-single-event/BasicProbabilityCalculation': () => import('../notes/s2/math/probability-single-event/BasicProbabilityCalculation'),
+  's2/math/probability-single-event/AdvancedSingleEventProbability': () => import('../notes/s2/math/probability-single-event/AdvancedSingleEventProbability'),
+  's2/math/probability-single-event/ExperimentalProbability': () => import('../notes/s2/math/probability-single-event/ExperimentalProbability'),
+
   //S1 Data Handling notes
   's1/math/data-handling/Introduction': () => import('../notes/s1/math/data-handling/Introduction'),
   's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),
