@@ -5267,8 +5267,116 @@ For spinners and sectors, probability is determined by the ratio of the favorabl
 **Problem:** A spinner is divided into three sectors: Red (90°), Blue (120°), and Green (150°). If the spinner is spun once, what is the probability that it lands on the Blue sector? (Express your answer as a simplified fraction.)`,
       showAfterSpeech: true
     }
-  }  
-  // Add more topics as needed following the same pattern
+  },
+  /**
+   * ========================================
+   * S2 STATISTICAL DIAGRAM
+   * ========================================
+   */
+  's2-math-statistical-diagrams-introduction': {
+    speech: {
+      text: `Welcome! Before we draw beautiful charts, we need to understand the raw material: data. Data comes in different types, and knowing the type tells us which diagram to use. Let us start by classifying a common type of data.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-statistical-diagrams-introduction.mp3'
+    },
+    display: {
+      content: `### Understanding Data Types
+
+Data can generally be classified as **Qualitative (Categorical)** or **Quantitative (Numerical)**.
+
+Which category does the data collected from asking students their **favorite type of music** fall into?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-statistical-diagrams-dot-diagrams': {
+    speech: {
+      text: `Hey there! Dot diagrams are fantastic because they let us see every single piece of data while still showing the frequency. Each dot represents one observation. Look at the diagram we have created and tell me what the most common result is.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-statistical-diagrams-dot-diagrams.mp3'
+    },
+    display: {
+      content: `### Understanding Dot Diagrams
+
+The dot diagram below shows the number of pets owned by students in a class.
+
+What is the **mode** (the most frequent number of pets owned) shown in the diagram?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "dotDiagram",
+          "parameters": {
+                "values": [
+                      1,
+                      2,
+                      0,
+                      1,
+                      3,
+                      2,
+                      1,
+                      1,
+                      2,
+                      0,
+                      4,
+                      1
+                ],
+                "xLabel": "Number of Pets",
+                "title": "Pets Owned Per Student",
+                "showMode": true
+          },
+          "caption": "Dot diagram showing the frequency of pets owned by students."
+    }
+  },
+
+  's2-math-statistical-diagrams-histograms-ungrouped': {
+    speech: {
+      text: `Greetings, future statistician! When you have a lot of individual numbers, the first step to making sense of them is organizing them into a frequency table. This step is crucial for building our first histogram. Take this small set of raw scores and calculate the frequency for the score of 4.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-statistical-diagrams-histograms-ungrouped.mp3'
+    },
+    display: {
+      content: `### Creating Frequency Tables
+
+We have the following raw data representing the scores (out of 5) achieved by 15 students in a quick quiz:
+
+\$\$3, 4, 1, 5, 2, 4, 3, 4, 5, 1, 4, 2, 3, 4, 4\$\$
+
+What is the **frequency** of the score **4** in this dataset?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-statistical-diagrams-stem-and-leaf': {
+    speech: {
+      text: `Hi! Stem and leaf plots are one of the cleverest ways to display data because they organize it while still preserving the original values. It is like having a sorted list and a graph all in one! To begin, we need to know how to separate a data point into its stem and its leaf.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-statistical-diagrams-stem-and-leaf.mp3'
+    },
+    display: {
+      content: `### Basic Stem-and-Leaf Construction
+
+In a stem-and-leaf diagram, each data point is split into two parts: the **stem** (the leading digit(s)) and the **leaf** (the last digit).
+
+If the data value is **37**, what number represents the **stem** and what number represents the **leaf**?`,
+      showAfterSpeech: true
+    }
+  },
+
+  's2-math-statistical-diagrams-histograms-grouped': {
+    speech: {
+      text: `Hello, and great to see you! When dealing with continuous data or data spread over a very wide range, we cannot count every single number. We have to group them. This means creating class intervals. If we are measuring heights, what is the width of the interval 150 centimeters to 160 centimeters?`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-statistical-diagrams-histograms-grouped.mp3'
+    },
+    display: {
+      content: `### Understanding Class Intervals
+
+When grouping continuous data, a **class interval** is a range of values. The **class width** is the difference between the upper and lower boundaries of the interval.
+
+Calculate the class width for the interval \$150 \\le x < 160\$.`,
+      showAfterSpeech: true
+    }
+  }  // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,
   // display.content, display.showAfterSpeech, and optional mathTool
 };

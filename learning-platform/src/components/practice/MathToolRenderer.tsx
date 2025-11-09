@@ -40,6 +40,7 @@ import SetVisualizer from '../math-tools/SetVisualizer';
 import NumberLineVisualizer from '../math-tools/NumberLineVisualizer';
 import BarChartVisualizer from '../math-tools/BarChartVisualizer';
 import HistogramVisualizer from '../math-tools/HistogramVisualizer';
+import DotDiagramVisualizer from '../math-tools/DotDiagramVisualizer';
 import BoxPlotVisualizer from '../math-tools/BoxPlotVisualizer';
 import ScatterPlotVisualizer from '../math-tools/ScatterPlotVisualizer';
 import PieChartVisualizer from '../math-tools/PieChartVisualizer';
@@ -152,6 +153,7 @@ const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   // Statistics tools
   barChart: BarChartVisualizer,
   histogram: HistogramVisualizer,
+  dotDiagram: DotDiagramVisualizer,
   boxPlot: BoxPlotVisualizer,
   scatterPlot: ScatterPlotVisualizer,
   pieChart: PieChartVisualizer,

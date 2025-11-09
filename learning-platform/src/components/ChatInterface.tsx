@@ -85,6 +85,8 @@ import { S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS } from '../prompt-library/subjec
 import type { TrigonometricRatiosTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
 import { S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-probability-single-event';
 import type { ProbabilitySingleEventTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-probability-single-event';
+import { STATISTICAL_DIAGRAMS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
+import type { StatisticalDiagramsTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-statistical-diagrams';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -181,6 +183,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S2 probability single event topic
   if (topicId.startsWith('s2-math-probability-')) {
     return S2_PROBABILITY_SINGLE_EVENT_SUBTOPICS[topicId as ProbabilitySingleEventTopicId];
+  }
+  // Check if it's an S2 statistical diagrams topic
+  if (topicId.startsWith('s2-math-statistical-diagrams-')) {
+    return STATISTICAL_DIAGRAMS_SUBTOPICS[topicId as StatisticalDiagramsTopicId];
   }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {

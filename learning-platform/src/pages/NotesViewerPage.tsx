@@ -85,6 +85,13 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   's2/math/probability-single-event/AdvancedSingleEventProbability': () => import('../notes/s2/math/probability-single-event/AdvancedSingleEventProbability'),
   's2/math/probability-single-event/ExperimentalProbability': () => import('../notes/s2/math/probability-single-event/ExperimentalProbability'),
 
+  // S2 Statistical Diagrams notes
+  's2/math/statistical-diagrams/Introduction': () => import('../notes/s2/math/statistical-diagrams/Introduction'),
+  's2/math/statistical-diagrams/DotDiagrams': () => import('../notes/s2/math/statistical-diagrams/DotDiagrams'),
+  's2/math/statistical-diagrams/HistogramsUngrouped': () => import('../notes/s2/math/statistical-diagrams/HistogramsUngrouped'),
+  's2/math/statistical-diagrams/StemAndLeaf': () => import('../notes/s2/math/statistical-diagrams/StemAndLeaf'),
+  's2/math/statistical-diagrams/HistogramsGrouped': () => import('../notes/s2/math/statistical-diagrams/HistogramsGrouped'),
+
   //S1 Data Handling notes
   's1/math/data-handling/Introduction': () => import('../notes/s1/math/data-handling/Introduction'),
   's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),

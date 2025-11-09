@@ -136,6 +136,12 @@ const notesComponents: Record<string, () => Promise<{ default: ComponentType<any
   's2/math/probability-single-event/BasicProbabilityCalculation': () => import('../notes/s2/math/probability-single-event/BasicProbabilityCalculation'),
   's2/math/probability-single-event/ExperimentalProbability': () => import('../notes/s2/math/probability-single-event/ExperimentalProbability'),
   's2/math/probability-single-event/AdvancedSingleEventProbability': () => import('../notes/s2/math/probability-single-event/AdvancedSingleEventProbability'),
+  // S2 Statistical Diagrams notes
+  's2/math/statistical-diagrams/Introduction': () => import('../notes/s2/math/statistical-diagrams/Introduction'),
+  's2/math/statistical-diagrams/DotDiagrams': () => import('../notes/s2/math/statistical-diagrams/DotDiagrams'),
+  's2/math/statistical-diagrams/HistogramsUngrouped': () => import('../notes/s2/math/statistical-diagrams/HistogramsUngrouped'),
+  's2/math/statistical-diagrams/StemAndLeaf': () => import('../notes/s2/math/statistical-diagrams/StemAndLeaf'),
+  's2/math/statistical-diagrams/HistogramsGrouped': () => import('../notes/s2/math/statistical-diagrams/HistogramsGrouped'),
   // S3 Trigonometry notes
   's3/math/trigonometry/BasicRatios': () => import('../notes/s3/math/trigonometry/BasicRatios'),
   's3/math/trigonometry/ProblemSolving': () => import('../notes/s3/math/trigonometry/ProblemSolving'),

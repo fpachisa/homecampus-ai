@@ -2051,6 +2051,81 @@ export const MATH_TOOLS_REGISTRY: Record<string, MathToolDefinition> = {
     ]
   },
 
+  dotDiagram: {
+    name: "Dot Diagram Visualizer",
+    technicalName: "dotDiagram",
+    component: "DotDiagramVisualizer",
+    category: "statistics",
+    description: "Displays small numerical datasets with individual dots stacked vertically above a number line. Each dot represents one data value. Shows frequency patterns for discrete data where exact values and individual observations matter.",
+    whenToUse: "Use for small datasets (10-30 values) when you want to show individual data points and frequency patterns. Best for discrete numerical data where exact values matter (e.g., goals scored, test scores, number of siblings). NOT suitable for large datasets or wide value ranges. Choose this over histogram when you want students to see every individual value.",
+
+    parameters: {
+      values: "number[] - Raw data values to plot (e.g., [1,2,2,3,1,0,2,3,1,2]). Use this for most cases.",
+      data: "Array<{value: number, frequency: number}> (optional) - Pre-tallied frequency data. Use either 'values' or 'data', not both.",
+      min: "number (optional) - Force minimum value on number line (auto-calculated from data if omitted)",
+      max: "number (optional) - Force maximum value on number line (auto-calculated from data if omitted)",
+      xLabel: "string (optional) - X-axis label (e.g., 'Number of Goals', 'Test Score', 'Number of Siblings')",
+      title: "string (optional) - Chart title displayed above diagram",
+      caption: "string (optional) - Caption below diagram (supports markdown/LaTeX via MathText)",
+      showTickLabels: "boolean (optional, default: true) - Show values on number line",
+      showFrequencies: "boolean (optional, default: false) - Show frequency count above each stack of dots",
+      highlightValue: "number (optional, default: -1) - Highlight dots for specific value with different color",
+      showMode: "boolean (optional, default: false) - Highlight the mode (most frequent value) with amber color",
+      dotColor: "string (optional) - Override default dot color (uses theme brand color by default)",
+      highlightColor: "string (optional) - Color for highlighted value (uses theme success color by default)",
+      dotRadius: "number (optional, default: 5) - Dot size in pixels",
+      dotSpacing: "number (optional, default: 18) - Vertical spacing between stacked dots in pixels"
+    },
+
+    exampleUsage: [
+      {
+        scenario: "Basic dot diagram from raw data",
+        caption: "Goals scored by a soccer team over 10 matches",
+        parameters: {
+          values: [1, 2, 2, 3, 1, 0, 2, 3, 1, 2],
+          xLabel: "Number of Goals",
+          title: "Goals Scored Per Match",
+          showTickLabels: true
+        }
+      },
+      {
+        scenario: "Dot diagram with mode highlighted and frequencies shown",
+        caption: "Travel times to school with mode highlighted. The mode is 21 minutes (appears most frequently).",
+        parameters: {
+          values: [20, 22, 21, 21, 18, 18, 22, 20, 30, 23],
+          xLabel: "Time (minutes)",
+          title: "Travel Times to School",
+          showMode: true,
+          showFrequencies: true
+        }
+      },
+      {
+        scenario: "Using pre-tallied frequency data",
+        caption: "Number of siblings in a class, using frequency counts",
+        parameters: {
+          data: [
+            { value: 0, frequency: 1 },
+            { value: 1, frequency: 3 },
+            { value: 2, frequency: 4 },
+            { value: 3, frequency: 2 }
+          ],
+          xLabel: "Number of Siblings",
+          title: "Class Survey Results"
+        }
+      },
+      {
+        scenario: "Highlighting a specific value for discussion",
+        caption: "Test scores with score of 7 highlighted. Notice that 7 appears 5 times.",
+        parameters: {
+          values: [5, 6, 7, 7, 7, 8, 7, 9, 6, 7],
+          xLabel: "Test Score (out of 10)",
+          highlightValue: 7,
+          showFrequencies: true
+        }
+      }
+    ]
+  },
+
   boxPlot: {
     name: "Box Plot Visualizer",
     technicalName: "boxPlot",

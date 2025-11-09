@@ -249,6 +249,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Secondary 2',
       subject: 'Mathematics',
     },
+    {
+      id: 's2-statistical-diagrams',
+      name: 'Statistical Diagrams',
+      icon: '📊',
+      description: 'Master visualizing data with dot diagrams, histograms (ungrouped & grouped), and stem-and-leaf diagrams',
+      subtopicCount: 5,
+      isActive: true,
+      category: 's2-math-statistical-diagrams',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
 
   ],
 
