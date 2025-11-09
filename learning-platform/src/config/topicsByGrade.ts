@@ -227,6 +227,17 @@ export const topicsByGrade: Record<GradeLevel, Topic[]> = {
       grade: 'Secondary 2',
       subject: 'Mathematics',
     },
+    {
+      id: 's2-trigonometric-ratios',
+      name: 'Trigonometric Ratios',
+      icon: '📐',
+      description: 'Master sine, cosine, and tangent ratios (SOH-CAH-TOA) to find sides and angles in right-angled triangles',
+      subtopicCount: 5,
+      isActive: true,
+      category: 's2-math-trigonometric-ratios',
+      grade: 'Secondary 2',
+      subject: 'Mathematics',
+    },
 
   ],
 

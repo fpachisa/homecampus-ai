@@ -25,6 +25,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
 import { S2_QUADRATIC_EQUATIONS_GRAPHS_CONFIGS } from './s2-quadratic-equations-graphs-firestore-configs.js';
+import { S2_TRIGONOMETRIC_RATIOS_CONFIGS } from './s2-trigonometric-ratios-firestore-configs.js';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -420,7 +421,8 @@ export const S2_PYTHAGORAS_CONFIGS = [
 
 const ALL_CONFIGS = [
   ...S2_ALGEBRAIC_FRACTIONS_FIRESTORE_CONFIGS,
-  ...S2_PYTHAGORAS_CONFIGS
+  ...S2_PYTHAGORAS_CONFIGS,
+  ...S2_TRIGONOMETRIC_RATIOS_CONFIGS
 ];
 
 /**

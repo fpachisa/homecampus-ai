@@ -5033,7 +5033,173 @@ The converse states: If \$a^2 + b^2 = c^2\$ for a triangle with sides a, b, and 
       showAfterSpeech: true
     }
   }
+,
+  /**
+   * ========================================
+   * S2 TRIGONOMETRIC RATIOS
+   * ========================================
+   */
 
+  's2-math-trig-ratios-introduction': {
+    speech: {
+      text: `Welcome! Have you ever wondered how we measure things we cannot physically reach? Trigonometry is the answer, and it all starts with recognizing the relationships between sides in a right triangle. Let us start by mastering the language of trigonometry.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-trig-ratios-introduction.mp3'
+    },
+    display: {
+      content: `### Introduction to Trigonometric Ratios
+
+For the right triangle shown below, if we focus on angle \$A\$, which side is the **Opposite** side?
+
+*   a) Side x
+*   b) Side y
+*   c) Side z`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "rightTriangle",
+          "parameters": {
+                "angle": null,
+                "angleLabel": "A",
+                "hypotenuse": "z",
+                "opposite": "x",
+                "adjacent": "y",
+                "highlightSide": "none",
+                "showAngleMark": true,
+                "showRightAngle": true,
+                "showSideTypeLabels": false
+          },
+          "caption": "A right triangle with sides x, y, z and angle A."
+    }
+  },
+
+  's2-math-trig-ratios-finding-sides-sine': {
+    speech: {
+      text: `Hey there! Ready to put the Sine ratio into action? Sine is our first major tool for calculating unknown lengths. When you know the angle and the hypotenuse, Sine is the key to unlocking the opposite side. Let us calculate our first unknown length!`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-trig-ratios-finding-sides-sine.mp3'
+    },
+    display: {
+      content: `### Finding Sides Using Sine
+
+Use the Sine ratio to find the length of the opposite side, \$x\$. Round your answer to two decimal places.
+
+(Given: \$\\sin(40°) \\approx 0.6428\$)`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "rightTriangle",
+          "parameters": {
+                "angle": 40,
+                "angleLabel": "40°",
+                "hypotenuse": "15",
+                "opposite": "x",
+                "adjacent": "",
+                "highlightSide": "opposite",
+                "showAngleMark": true,
+                "showRightAngle": true,
+                "showSideTypeLabels": false
+          },
+          "caption": "A right triangle with angle 40°, hypotenuse 15, and opposite side x."
+    }
+  },
+
+  's2-math-trig-ratios-finding-sides-cos-tan': {
+    speech: {
+      text: `Greetings! We have already mastered Sine, and now we are expanding our toolkit. If Sine deals with the opposite side, what about the adjacent side? That is where Cosine comes in! It is just as straightforward, focusing on the relationship between the adjacent side and the hypotenuse.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-trig-ratios-finding-sides-cos-tan.mp3'
+    },
+    display: {
+      content: `### Finding Sides Using Cosine
+
+In the triangle below, calculate the length of the adjacent side, \$y\$. Round your final answer to one decimal place.
+
+(Use \$\\cos(55°) \\approx 0.5736\$)`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "rightTriangle",
+          "parameters": {
+                "angle": 55,
+                "angleLabel": "55°",
+                "hypotenuse": "20 cm",
+                "opposite": "",
+                "adjacent": "y",
+                "highlightSide": "adjacent",
+                "showAngleMark": true,
+                "showRightAngle": true,
+                "showSideTypeLabels": false
+          },
+          "caption": "A right triangle with angle 55°, hypotenuse 20 cm, and adjacent side y."
+    }
+  },
+
+  's2-math-trig-ratios-finding-angles': {
+    speech: {
+      text: `Hello! Up until now, we have used angles to find sides. But what if the angle itself is the mystery? We need a mathematical key to unlock that angle! This is where inverse trigonometric functions become essential. Let us try finding our first unknown angle.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-trig-ratios-finding-angles.mp3'
+    },
+    display: {
+      content: `### Finding Unknown Angles
+
+Find the measure of angle \$\\theta\$ in the right triangle shown below. Round your answer to the nearest whole degree.
+
+(Hint: Which ratio relates the Opposite and Adjacent sides?)`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "rightTriangle",
+          "parameters": {
+                "angle": null,
+                "angleLabel": "θ",
+                "hypotenuse": "",
+                "opposite": "12 ft",
+                "adjacent": "15 ft",
+                "highlightSide": "none",
+                "showAngleMark": true,
+                "showRightAngle": true,
+                "showSideTypeLabels": false
+          },
+          "caption": "A right triangle with opposite side 12 ft and adjacent side 15 ft relative to angle θ."
+    }
+  },
+
+  's2-math-trig-ratios-real-world-applications': {
+    speech: {
+      text: `Hi! It is time to take trigonometry out of the textbook and into the real world! Trigonometry is incredibly useful for navigation, architecture, and surveying. We start by understanding how we measure angles when looking up, elevation, or looking down, depression. This concept is fundamental to solving complex application problems.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s2-math-trig-ratios-real-world-applications.mp3'
+    },
+    display: {
+      content: `### Angles of Elevation and Depression
+
+A person standing 50 meters away from a lighthouse looks up at the light at the top. The angle formed between the horizontal line of sight and the line of sight up to the light is 25°.
+
+What term describes this 25° angle?
+
+*   a) Angle of Depression
+*   b) Angle of Incidence
+*   c) Angle of Elevation`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "elevationDepression",
+          "parameters": {
+                "type": "elevation",
+                "angle": 25,
+                "height": "h",
+                "distance": "50 m",
+                "observerLabel": "Person",
+                "targetLabel": "Light",
+                "showTriangle": true,
+                "showRightAngle": true,
+                "highlightSide": "none"
+          },
+          "caption": "A visual representation of a person looking up at a lighthouse, showing the angle of elevation."
+    }
+  }
 
   // Add more topics as needed following the same pattern
   // Each topic should have: speech.text, speech.emotion, speech.preGeneratedAudioUrl,

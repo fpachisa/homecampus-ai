@@ -55,6 +55,7 @@ import { S2_MATH_QUADRATIC_EQUATIONS_SUBTOPICS, QUADRATIC_EQUATIONS_TUTOR_CUSTOM
 import { S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS, ALGEBRAIC_FRACTIONS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-algebraic-fractions-formulae';
 import { S2_MATH_PROPORTION_SUBTOPICS, S2_MATH_PROPORTION_METADATA } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
 import { S2_MATH_PYTHAGORAS_SUBTOPICS, S2_PYTHAGORAS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
+import { S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS, S2_TRIGONOMETRIC_RATIOS_CONFIG } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
 
 /**
  * Register all imported topics with the PromptRegistry
@@ -115,6 +116,7 @@ function registerBrowserTopics() {
   registerTopics(S2_MATH_ALGEBRAIC_FRACTIONS_SUBTOPICS, ALGEBRAIC_FRACTIONS_CONFIG);
   registerTopics(S2_MATH_PROPORTION_SUBTOPICS, S2_MATH_PROPORTION_METADATA);
   registerTopics(S2_MATH_PYTHAGORAS_SUBTOPICS, S2_PYTHAGORAS_CONFIG);
+  registerTopics(S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS, S2_TRIGONOMETRIC_RATIOS_CONFIG);
 
   // Register all S3 topics
   registerTopics(S3_MATH_TRIGONOMETRY_SUBTOPICS, S3_MATH_TRIGONOMETRY_CONFIG);

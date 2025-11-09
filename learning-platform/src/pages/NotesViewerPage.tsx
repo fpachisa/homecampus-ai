@@ -72,6 +72,13 @@ const notesRegistry: Record<string, () => Promise<{ default: React.ComponentType
   's2/math/pythagoras/RealWorldApplications': () => import('../notes/s2/math/pythagoras/RealWorldApplications'),
   's2/math/pythagoras/Converse': () => import('../notes/s2/math/pythagoras/Converse'),
 
+  // S2 Trigonometric Ratios notes
+  's2/math/trigonometric-ratios/IntroductionToTrigRatios': () => import('../notes/s2/math/trigonometric-ratios/IntroductionToTrigRatios'),
+  's2/math/trigonometric-ratios/FindingSidesUsingSine': () => import('../notes/s2/math/trigonometric-ratios/FindingSidesUsingSine'),
+  's2/math/trigonometric-ratios/FindingSidesCosAndTan': () => import('../notes/s2/math/trigonometric-ratios/FindingSidesCosAndTan'),
+  's2/math/trigonometric-ratios/FindingUnknownAngles': () => import('../notes/s2/math/trigonometric-ratios/FindingUnknownAngles'),
+  's2/math/trigonometric-ratios/RealWorldApplications': () => import('../notes/s2/math/trigonometric-ratios/RealWorldApplications'),
+
   //S1 Data Handling notes
   's1/math/data-handling/Introduction': () => import('../notes/s1/math/data-handling/Introduction'),
   's1/math/data-handling/ComparingCritiquing': () => import('../notes/s1/math/data-handling/ComparingCritiquing'),

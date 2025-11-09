@@ -272,25 +272,55 @@ const RightTriangleVisualizer: React.FC<RightTriangleVisualizerProps> = ({
           </foreignObject>
         )}
 
-        {/* Hypotenuse label (middle of diagonal) */}
-        {hypotenuse && (
-          <foreignObject
-            x={x1 + (adjacentLength / 2) - 60}
-            y={y1 - (oppositeLength / 2) - 50}
-            width={120}
-            height={30}
-            xmlns="http://www.w3.org/1999/xhtml"
-          >
-            <div className="flex items-center justify-center h-full">
-              <div
-                className="text-base font-semibold whitespace-nowrap"
-                style={{ color: highlightSide === 'hypotenuse' ? highlightColor : defaultColor }}
-              >
-                <MathText>{`$${hypotenuse}$`}</MathText>
+        {/* Hypotenuse label (middle of diagonal) - DYNAMIC POSITIONING */}
+        {hypotenuse && (() => {
+          // Calculate hypotenuse midpoint and geometry
+          const hypMidX = (x1 + x3) / 2;
+          const hypMidY = (y1 + y3) / 2;
+
+          // Calculate hypotenuse angle and perpendicular direction
+          const hypAngle = Math.atan2(y3 - y1, x3 - x1);
+          const perpAngle = hypAngle - Math.PI / 2;  // 90° clockwise (outward from triangle)
+
+          // Estimate label width (simple heuristic based on content length)
+          const estimatedWidth = Math.max(80, Math.min(hypotenuse.length * 15, 150));
+
+          // Adaptive offset: base distance + extra for longer labels
+          const baseOffset = calculatedAngle < 20 ? 28 :
+                            calculatedAngle < 45 ? 24 :
+                            calculatedAngle < 70 ? 22 :
+                            20;
+          // Add extra offset for labels wider than 80px (half the width scaled down)
+          const extraOffset = Math.max(0, (estimatedWidth - 80) / 3);
+          const offsetDistance = baseOffset + extraOffset;
+
+          // Position label perpendicular to hypotenuse
+          const labelX = hypMidX + offsetDistance * Math.cos(perpAngle);
+          const labelY = hypMidY + offsetDistance * Math.sin(perpAngle);
+
+          // Center foreignObject on calculated position
+          const foreignObjectX = labelX - estimatedWidth / 2;
+          const foreignObjectY = labelY - 15;  // Half of height
+
+          return (
+            <foreignObject
+              x={foreignObjectX}
+              y={foreignObjectY}
+              width={estimatedWidth}
+              height={30}
+              xmlns="http://www.w3.org/1999/xhtml"
+            >
+              <div className="flex items-center justify-center h-full">
+                <div
+                  className="text-base font-semibold whitespace-nowrap"
+                  style={{ color: highlightSide === 'hypotenuse' ? highlightColor : defaultColor }}
+                >
+                  <MathText>{`$${hypotenuse}$`}</MathText>
+                </div>
               </div>
-            </div>
-          </foreignObject>
-        )}
+            </foreignObject>
+          );
+        })()}
 
         {/* Side type labels (O, A, H) in small text */}
         {showSideTypeLabels && (

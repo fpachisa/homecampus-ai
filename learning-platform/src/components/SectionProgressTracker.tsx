@@ -69,6 +69,8 @@ import { S2_MATH_PROPORTION_SUBTOPICS } from '../prompt-library/subjects/mathema
 import type { ProportionTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
 import { S2_MATH_PYTHAGORAS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
 import type { PythagorasTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
+import { S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
+import type { TrigonometricRatiosTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
 
 interface SectionProgressTrackerProps {
   topicId: string;
@@ -160,6 +162,10 @@ const SectionProgressTracker: React.FC<SectionProgressTrackerProps> = ({
     }
     if (topicId.startsWith('s2-math-pythagoras-')) {
       const subtopic = S2_MATH_PYTHAGORAS_SUBTOPICS[topicId as PythagorasTopicId];
+      return (subtopic as any)?.progressionStructure?.sections || [];
+    }
+    if (topicId.startsWith('s2-math-trig-ratios-')) {
+      const subtopic = S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS[topicId as TrigonometricRatiosTopicId];
       return (subtopic as any)?.progressionStructure?.sections || [];
     }
     if (topicId.startsWith('s3-math-trigonometry-')) {

@@ -81,6 +81,8 @@ import { S2_MATH_PROPORTION_SUBTOPICS } from '../prompt-library/subjects/mathema
 import type { ProportionTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-direct-inverse-proportion';
 import { S2_MATH_PYTHAGORAS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
 import type { PythagorasTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-pythagoras';
+import { S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
+import type { TrigonometricRatiosTopicId } from '../prompt-library/subjects/mathematics/secondary/s2-trigonometric-ratios';
 import type { ConversationState, Message, ProblemState, SectionProgressState, SectionProgressEntry, InitialGreetingResponse } from '../types/types';
 import type { EvaluatorOutput } from '../prompt-library/types/agents';
 import { notesLoader } from '../services/notesLoader';
@@ -169,6 +171,10 @@ const getTopicConfig = (topicId: string) => {
   // Check if it's an S2 pythagoras topic
   if (topicId.startsWith('s2-math-pythagoras-')) {
     return S2_MATH_PYTHAGORAS_SUBTOPICS[topicId as PythagorasTopicId];
+  }
+  // Check if it's an S2 trigonometric ratios topic
+  if (topicId.startsWith('s2-math-trig-ratios-')) {
+    return S2_MATH_TRIGONOMETRIC_RATIOS_SUBTOPICS[topicId as TrigonometricRatiosTopicId];
   }
   // Check if it's an S3 trigonometry topic
   if (topicId.startsWith('s3-math-trigonometry-')) {
