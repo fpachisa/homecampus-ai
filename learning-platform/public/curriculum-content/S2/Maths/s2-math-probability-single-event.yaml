@@ -1,0 +1,1678 @@
+# S2 Math Probability Single Event - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: prob-node-1
+  nodeNumber: 1
+  title: Identifying Probability Experiments
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Which of the following actions is a probability experiment?
+
+        (A) Calculating the product of 12 and 8.
+
+        (B) Selecting a random student from a class roster to answer a question.'
+      avatarIntro: Welcome! Let's start by making sure we understand the difference between experiments that rely on chance
+        and those that are certain.
+      mathTool: null
+      finalAnswer: (B) Selecting a random student from a class roster to answer a question.
+      stepByStepGuideline:
+      - A probability experiment is a process where the outcome depends on chance and cannot be predicted with certainty.
+      - Option (A) Calculating the product of 12 and 8 always results in 96. This is a deterministic process because the outcome
+        is fixed and certain.
+      - Option (B) Selecting a random student means the outcome (which student is chosen) is uncertain and depends entirely
+        on chance.
+      - Therefore, (B) is the probability experiment.
+      id: q1-1
+      questionGroup: q1
+    - problemText: Explain why spinning a spinner that is divided into four equal colored sections (Red, Blue, Green, Yellow)
+        is considered a probability experiment.
+      mathTool: null
+      finalAnswer: Spinning the spinner is a probability experiment because the outcome (which color the pointer lands on)
+        depends entirely on chance and cannot be predicted with certainty before the spin.
+      stepByStepGuideline:
+      - 'Recall the definition: A probability experiment must have an outcome that is uncertain and depends on chance.'
+      - When spinning a physical spinner, the force applied and the stopping point cannot be perfectly controlled or predicted.
+      - Therefore, the resulting color is determined randomly, making it an outcome based on chance rather than a fixed rule.
+      id: q1-2
+      questionGroup: q1
+    - problemText: 'Are the following processes probability experiments? Explain your reasoning for each.
+
+        (i) Predicting whether it will rain tomorrow.
+
+        (ii) Finding the exact area of a rectangle with known dimensions (length = 10 cm, width = 5 cm).'
+      mathTool: null
+      finalAnswer: (i) is a probability experiment. (ii) is not a probability experiment.
+      stepByStepGuideline:
+      - 'Evaluate (i): Predicting tomorrow''s weather involves uncertainty. Even with advanced models, the outcome (rain or
+        no rain) is not certain until it happens; it depends on chance factors. Therefore, (i) is a probability experiment.'
+      - 'Evaluate (ii): Finding the area of a rectangle uses a fixed formula (Area = Length × Width). Since the dimensions
+        are known, the area (50 cm²) is fixed and certain. This is a deterministic process, not a probability experiment.'
+      - 'Conclusion: (i) involves chance, but (ii) does not.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: Explain why determining if 15 is an odd or even number is not considered a probability experiment.
+      mathTool: null
+      finalAnswer: Determining if 15 is odd or even is not a probability experiment because the outcome is fixed and certain.
+        15 is always an odd number; the result does not depend on chance or randomness.
+      stepByStepGuideline:
+      - 'Identify the process: We are checking a fundamental mathematical property of the number 15.'
+      - 'Analyze the outcome: 15 is an integer not divisible by 2, meaning it is definitively odd.'
+      - 'Conclusion: Since the outcome is certain and fixed (deterministic) and does not rely on chance or uncertainty, it
+        cannot be classified as a probability experiment.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: 'Which of the following activities involves a probability experiment?
+
+        (A) Drawing a single ball from a bag containing 3 red, 4 blue, and 5 green balls.
+
+        (B) Measuring the exact height of a tree that was cut down yesterday.'
+      mathTool: null
+      finalAnswer: (A) Drawing a single ball from a bag containing 3 red, 4 blue, and 5 green balls.
+      stepByStepGuideline:
+      - 'Analyze option (A): When drawing a ball randomly, the outcome (the color of the ball) is uncertain and depends on
+        chance. This fits the definition of a probability experiment.'
+      - 'Analyze option (B): Measuring the height of a fixed object (the tree) results in a specific, measurable value. While
+        measurement error exists, the actual height is a fixed quantity. This is a deterministic process, not dependent on
+        chance for its inherent value.'
+      - Thus, only (A) is a probability experiment.
+      id: q1-5
+      questionGroup: q1
+- id: prob-node-2
+  nodeNumber: 2
+  title: Listing Simple Sample Spaces
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A fair coin is tossed once. Write down the sample space, S, using correct set notation, and state the total
+        number of possible outcomes, n(S).
+      avatarIntro: Welcome! Understanding sample spaces is the foundation of probability. Remember to list all possible outcomes
+        using curly braces.
+      mathTool: null
+      finalAnswer: S = {Head, Tail}, n(S) = 2
+      stepByStepGuideline:
+      - 'Identify the experiment: Tossing a fair coin once.'
+      - 'Determine all possible results (outcomes) of the experiment: Head (H) or Tail (T).'
+      - 'List the sample space (S) using set notation (curly braces): S = {Head, Tail}.'
+      - 'Count the total number of outcomes to find n(S): n(S) = 2.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: A standard six-sided die, numbered 1 to 6, is rolled one time. List the sample space S, using set notation,
+        and determine the total number of possible outcomes, n(S).
+      mathTool: null
+      finalAnswer: S = {1, 2, 3, 4, 5, 6}, n(S) = 6
+      stepByStepGuideline:
+      - 'Identify the experiment: Rolling a standard six-sided die once.'
+      - 'Determine all possible results (outcomes) that can appear on the top face: 1, 2, 3, 4, 5, or 6.'
+      - 'List the sample space (S) using set notation: S = {1, 2, 3, 4, 5, 6}.'
+      - 'Count the total number of outcomes: n(S) = 6.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: A spinner is divided into five equally sized sections labeled Alpha, Beta, Gamma, Delta, and Epsilon. If
+        the spinner is spun once, write the sample space S and state n(S).
+      mathTool: null
+      finalAnswer: S = {Alpha, Beta, Gamma, Delta, Epsilon}, n(S) = 5
+      stepByStepGuideline:
+      - 'Identify the experiment: Spinning a spinner with five distinct labels.'
+      - 'Determine the complete set of outcomes: Alpha, Beta, Gamma, Delta, Epsilon.'
+      - 'Write the sample space (S) using set notation: S = {Alpha, Beta, Gamma, Delta, Epsilon}.'
+      - 'State the total number of outcomes, n(S): n(S) = 5.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: A circular target is divided into four equal quadrants painted Pink, Teal, Gold, and Silver. If an arrow
+        hits the target randomly, list the sample space S for the color hit, and find n(S).
+      mathTool: null
+      finalAnswer: S = {Pink, Teal, Gold, Silver}, n(S) = 4
+      stepByStepGuideline:
+      - 'Identify the experiment: Randomly hitting a target divided into four colored sections.'
+      - 'Determine the possible outcomes, which are the names of the colors: Pink, Teal, Gold, Silver.'
+      - 'List the sample space (S) using set notation: S = {Pink, Teal, Gold, Silver}.'
+      - 'Determine the count of outcomes: n(S) = 4.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: Four distinct marbles are placed in a bag, labeled P1, P2, P3, and P4. A single marble is drawn randomly
+        from the bag. Identify the sample space S and calculate the number of outcomes n(S).
+      mathTool: null
+      finalAnswer: S = {P1, P2, P3, P4}, n(S) = 4
+      stepByStepGuideline:
+      - 'Identify the experiment: Drawing one marble from a bag containing four unique labels.'
+      - 'Determine the possible outcomes, which are the labels on the marbles: P1, P2, P3, P4.'
+      - 'List the sample space (S) using set notation: S = {P1, P2, P3, P4}.'
+      - 'Calculate the number of outcomes: n(S) = 4.'
+      id: q2-5
+      questionGroup: q2
+- id: prob-node-3
+  nodeNumber: 3
+  title: Listing Sample Spaces with Distinct Objects
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A box contains two identical black pens and three identical white pens. One pen is chosen at random. Write
+        down the sample space S using subscripts to distinguish the individual pens (e.g., B₁, B₂), and state the total number
+        of possible outcomes, n(S).
+      avatarIntro: This lesson focuses on identifying all possible outcomes in an experiment, even when objects look the same.
+        Remember, identical objects are still distinct outcomes!
+      mathTool: null
+      finalAnswer: S = {B₁, B₂, W₁, W₂, W₃}, n(S) = 5
+      stepByStepGuideline:
+      - 'Identify the number of distinct objects for each type: 2 black pens (B) and 3 white pens (W).'
+      - 'Assign subscripts to each identical-looking object to treat them as distinct outcomes: B₁, B₂ for black; W₁, W₂,
+        W₃ for white.'
+      - 'List the sample space S by including all these distinct outcomes: S = {B₁, B₂, W₁, W₂, W₃}.'
+      - Count the total number of outcomes to find n(S). n(S) = 2 + 3 = 5.
+      id: q3-1
+      questionGroup: q3
+    - problemText: A jar holds three identical green beads and two identical yellow beads. If one bead is selected at random,
+        what is the total number of possible outcomes, n(S)? Explain briefly why this number is greater than the number of
+        colors available.
+      mathTool: null
+      finalAnswer: n(S) = 5. The total number of outcomes is 5 because each individual bead is a distinct physical object,
+        even though all green beads look alike (G₁ ≠ G₂).
+      stepByStepGuideline:
+      - 'Determine the total number of individual objects in the jar: 3 green beads + 2 yellow beads = 5 objects.'
+      - Recognize that in probability, identical-looking objects are treated as distinct outcomes. If G represents a green
+        bead, the outcomes are G₁, G₂, G₃.
+      - The total number of possible outcomes, n(S), is the count of all distinct physical objects, which is 5.
+      - The number is greater than the number of colors (2) because the individual beads (e.g., G₁, G₂, G₃) are considered
+        separate outcomes.
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'Seven identical socks are placed in a drawer: four are red and three are blue. If one sock is pulled out
+        randomly, what is the total number of possible outcomes, n(S)?'
+      mathTool: null
+      finalAnswer: n(S) = 7
+      stepByStepGuideline:
+      - 'Identify the number of distinct objects for each color: 4 red socks and 3 blue socks.'
+      - Since each sock, regardless of color, is a distinct object (R₁, R₂, R₃, R₄, B₁, B₂, B₃), the total number of outcomes
+        n(S) is the total number of socks.
+      - 'Calculate the total: 4 + 3 = 7.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: A container holds five identical blue keys and four identical red keys. If one key is drawn, list the complete
+        set of outcomes corresponding only to the blue keys using subscript notation (Bl₁, Bl₂, etc.). Then, state the total
+        number of possible outcomes, n(S), for drawing any key.
+      mathTool: null
+      finalAnswer: 'Outcomes for Blue keys: {Bl₁, Bl₂, Bl₃, Bl₄, Bl₅}. Total n(S) = 9.'
+      stepByStepGuideline:
+      - 'List the outcomes for the 5 identical blue keys using subscripts: {Bl₁, Bl₂, Bl₃, Bl₄, Bl₅}.'
+      - Identify the outcomes for the red keys (R₁ through R₄).
+      - 'Calculate the total number of distinct objects by summing the counts: 5 blue keys + 4 red keys = 9.'
+      - The total number of possible outcomes, n(S), is 9.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Three identical purple tokens and three identical orange tokens are mixed in a hat. If one token is selected,
+        list the complete sample space S using subscripts (P₁, P₂, O₁, etc.) and determine the total number of possible outcomes,
+        n(S).
+      mathTool: null
+      finalAnswer: S = {P₁, P₂, P₃, O₁, O₂, O₃}, n(S) = 6
+      stepByStepGuideline:
+      - 'Identify the number of distinct purple tokens (P): 3. Assign subscripts: P₁, P₂, P₃.'
+      - 'Identify the number of distinct orange tokens (O): 3. Assign subscripts: O₁, O₂, O₃.'
+      - 'Combine all individual outcomes to form the sample space S: S = {P₁, P₂, P₃, O₁, O₂, O₃}.'
+      - 'Count the elements in S to find n(S): n(S) = 3 + 3 = 6.'
+      id: q3-5
+      questionGroup: q3
+- id: prob-node-4
+  nodeNumber: 4
+  title: Listing Large Sample Spaces with Ellipsis
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A school has 90 lockers numbered sequentially starting from 10 up to 99. A student is randomly assigned
+        a locker number. Write down the sample space, S, using ellipsis notation, and state the total number of possible outcomes,
+        n(S).
+      avatarIntro: Understanding how to represent large sets efficiently is crucial in probability. Use the ellipsis notation
+        for this problem.
+      mathTool: null
+      finalAnswer: S = {10, 11, 12, ..., 99}, n(S) = 90
+      stepByStepGuideline:
+      - The sample space S consists of all possible locker numbers, which are consecutive integers from 10 to 99.
+      - 'List the first few outcomes and the last outcome, separated by an ellipsis: S = {10, 11, 12, ..., 99}.'
+      - 'To find the total number of outcomes, n(S), use the formula for consecutive integers: Last number - First number
+        + 1.'
+      - n(S) = 99 - 10 + 1 = 90.
+      id: q4-1
+      questionGroup: q4
+    - problemText: A raffle uses tickets numbered consecutively from 11 to 20. One ticket is drawn at random. Write down the
+        sample space, S, using ellipsis notation, and determine the total number of possible outcomes, n(S).
+      mathTool: null
+      finalAnswer: S = {11, 12, 13, ..., 20}, n(S) = 10
+      stepByStepGuideline:
+      - The sample space S includes all the ticket numbers, which range from 11 to 20.
+      - 'Represent the sample space using ellipsis: S = {11, 12, 13, ..., 20}.'
+      - Calculate the total number of outcomes n(S) using the formula (Last number - First number + 1).
+      - n(S) = 20 - 11 + 1 = 10.
+      id: q4-2
+      questionGroup: q4
+    - problemText: An auditor is reviewing a batch of sequential invoices. The invoice numbers start at 357 and end at 389.
+        If one invoice is selected randomly, write the sample space S using ellipsis notation, and calculate the total number
+        of possible outcomes, n(S).
+      mathTool: null
+      finalAnswer: S = {357, 358, 359, ..., 389}, n(S) = 33
+      stepByStepGuideline:
+      - The sample space S consists of the consecutive invoice numbers, from 357 up to 389.
+      - 'List the sample space using ellipsis: S = {357, 358, 359, ..., 389}.'
+      - Calculate n(S) by subtracting the starting number from the ending number and adding 1.
+      - n(S) = 389 - 357 + 1 = 32 + 1 = 33.
+      id: q4-3
+      questionGroup: q4
+    - problemText: A short story collection has pages numbered consecutively from page 10 to page 24. If a reader flips to
+        a random page within this range, write the sample space S using ellipsis notation, and determine the total number
+        of possible outcomes, n(S).
+      mathTool: null
+      finalAnswer: S = {10, 11, 12, ..., 24}, n(S) = 15
+      stepByStepGuideline:
+      - 'Identify the range of page numbers: 10 to 24.'
+      - 'Write the sample space S using ellipsis notation: S = {10, 11, 12, ..., 24}.'
+      - 'Calculate the total number of outcomes n(S) using the arithmetic calculation: 24 - 10 + 1.'
+      - n(S) = 14 + 1 = 15.
+      id: q4-4
+      questionGroup: q4
+    - problemText: A factory produces a batch of 51 items, assigned consecutive serial numbers starting from 100 up to 150.
+        If one item is selected at random for quality control, write the sample space S using ellipsis notation, and state
+        the total number of possible outcomes, n(S).
+      mathTool: null
+      finalAnswer: S = {100, 101, 102, ..., 150}, n(S) = 51
+      stepByStepGuideline:
+      - The sample space S includes all consecutive serial numbers from 100 to 150.
+      - 'Represent the sample space using ellipsis notation: S = {100, 101, 102, ..., 150}.'
+      - Calculate the total number of outcomes n(S) by finding the difference between the largest and smallest numbers and
+        adding one.
+      - n(S) = 150 - 100 + 1 = 50 + 1 = 51.
+      id: q4-5
+      questionGroup: q4
+- id: prob-node-5
+  nodeNumber: 5
+  title: Understanding Equally Likely Outcomes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'When you toss a fair, standard coin once, there are two possible outcomes: Heads (H) or Tails (T). Are
+        these two outcomes equally likely? Explain the reason based on the definition of a fair experiment.'
+      avatarIntro: 'Ready to explore the fundamentals of probability? Let''s start with one of the most classic examples:
+        the coin toss!'
+      mathTool: null
+      finalAnswer: Yes, the outcomes Heads and Tails are equally likely. This is because a fair coin is designed so that each
+        outcome has exactly the same chance (probability) of occurring, which is 0.5 or 50%. The experiment is unbiased.
+      stepByStepGuideline:
+      - 'Recall the definition of equally likely outcomes: Outcomes are equally likely if they have the exact same chance
+        of occurring.'
+      - 'Identify the nature of the experiment: Tossing a fair coin implies there is no bias toward one side or the other.'
+      - Conclude that since the coin is fair, the probability of Heads equals the probability of Tails (P(H) = P(T) = 1/2),
+        meaning they are equally likely.
+      id: q5-1
+      questionGroup: q5
+    - problemText: A weather forecaster claims that the probability of rain tomorrow is 1.5. Based on the rules of probability,
+        why must this claim be incorrect?
+      mathTool: null
+      finalAnswer: The claim is incorrect because a probability value P(E) must always fall within the range 0 \u2264 P(E)
+        \u2264 1. A value of 1.5 is greater than 1, which represents certainty. It is impossible for an event to have a probability
+        greater than certainty.
+      stepByStepGuideline:
+      - 'State the fundamental range for all probability values: 0 \u2264 P(E) \u2264 1.'
+      - Identify the given probability value (1.5) and compare it to the upper limit (1).
+      - Explain that since 1.5 > 1, the value is mathematically invalid as a probability, as 1 represents the probability
+        of a certain event.
+      id: q5-2
+      questionGroup: q5
+    - problemText: A standard six-sided die is rolled once. The possible outcomes are {1, 2, 3, 4, 5, 6}. Are these six individual
+        numerical outcomes equally likely? State the condition that must be met for these outcomes to be considered equally
+        likely.
+      mathTool: null
+      finalAnswer: Yes, the six individual outcomes {1, 2, 3, 4, 5, 6} are equally likely. The condition required is that
+        the die must be fair (unbiased), meaning that every side of the die has the same surface area, mass distribution,
+        and therefore the same probability (1/6) of landing face up.
+      stepByStepGuideline:
+      - 'Define the experiment: Rolling a standard, fair, six-sided die.'
+      - 'Identify the outcomes: 1, 2, 3, 4, 5, 6.'
+      - Determine if the outcomes share the same chance. For a fair die, each outcome has P = 1/6.
+      - Conclude that because the probabilities are identical, the outcomes are equally likely.
+      id: q5-3
+      questionGroup: q5
+    - problemText: A researcher is studying the failure rate of a machine part and calculates the probability of failure as
+        P(Failure) = -0.2. Why is this value impossible based on the probability scale?
+      mathTool: null
+      finalAnswer: This value is impossible because probability must be a non-negative number. The probability scale dictates
+        that P(E) must be greater than or equal to 0 (0 \u2264 P(E) \u2264 1). A negative probability, like -0.2, has no physical
+        or mathematical interpretation in this context.
+      stepByStepGuideline:
+      - Recall the lower boundary of the probability scale, which is 0 (representing an impossible event).
+      - State the rule that probability values must be greater than or equal to 0.
+      - Explain that since -0.2 is less than 0, it violates the fundamental rule of probability and is therefore an invalid
+        measurement.
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'A circular spinner is divided into three sections: Red (50% of the area), Blue (30% of the area), and
+        Green (20% of the area). If you spin the spinner once, are the three outcomes (Red, Blue, Green) equally likely? Explain
+        your reasoning.'
+      mathTool: null
+      finalAnswer: No, the outcomes are not equally likely. For outcomes to be equally likely, they must all have the same
+        probability. In this case, P(Red) = 0.5, P(Blue) = 0.3, and P(Green) = 0.2. Since 0.5 \u2260 0.3 \u2260 0.2, the outcomes
+        have different chances of occurring, making the experiment biased.
+      stepByStepGuideline:
+      - 'Identify the proportion (probability) associated with each outcome: P(R)=0.5, P(B)=0.3, P(G)=0.2.'
+      - 'Apply the definition of equally likely outcomes: all probabilities must be identical.'
+      - Compare the probabilities. Since 0.5, 0.3, and 0.2 are all different, the outcomes are not equally likely.
+      id: q5-5
+      questionGroup: q5
+- id: prob-node-6
+  nodeNumber: 6
+  title: Calculating Simple Probabilities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A standard six-sided die is rolled once. Find the probability of the following events:
+
+        (i) Rolling a number greater than 4.
+
+        (ii) Rolling a prime number.'
+      avatarIntro: Calculating probabilities requires us to carefully count the favorable outcomes and divide by the total
+        possible outcomes. Let's practice this skill with some standard experiments.
+      mathTool: null
+      finalAnswer: (i) 1/3, (ii) 1/2
+      stepByStepGuideline:
+      - Identify the sample space (S) and the total number of outcomes, n(S). For a standard die, S = {1, 2, 3, 4, 5, 6},
+        so n(S) = 6.
+      - 'For (i): Identify the event E1 = rolling a number greater than 4. Favorable outcomes are {5, 6}. n(E1) = 2.'
+      - 'Calculate P(E1): P(E1) = n(E1) / n(S) = 2/6. Simplify the fraction: 1/3.'
+      - 'For (ii): Identify the event E2 = rolling a prime number. Prime numbers on a die are {2, 3, 5}. n(E2) = 3.'
+      - 'Calculate P(E2): P(E2) = n(E2) / n(S) = 3/6. Simplify the fraction: 1/2.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: 'A box contains 12 cards numbered 1, 2, 3, ..., 12. A card is drawn at random. Find the probability of
+        drawing:
+
+        (i) A perfect square.
+
+        (ii) A prime number.'
+      mathTool: null
+      finalAnswer: (i) 1/4, (ii) 5/12
+      stepByStepGuideline:
+      - Identify the total number of outcomes, n(S). Since there are 12 cards, n(S) = 12.
+      - 'For (i): Identify the perfect squares between 1 and 12. These are {1, 4, 9}. n(E1) = 3.'
+      - 'Calculate P(perfect square): P(E1) = n(E1) / n(S) = 3/12. Simplify the fraction: 1/4.'
+      - 'For (ii): Identify the prime numbers between 1 and 12. These are {2, 3, 5, 7, 11}. n(E2) = 5.'
+      - 'Calculate P(prime number): P(E2) = n(E2) / n(S) = 5/12. This fraction cannot be simplified.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: A set of slips are numbered consecutively from 1 to 15. If one slip is drawn randomly, what is the probability
+        that the number drawn is a multiple of 3?
+      mathTool: null
+      finalAnswer: 1/3
+      stepByStepGuideline:
+      - Determine the total number of outcomes, n(S). The slips are numbered 1 to 15, so n(S) = 15.
+      - 'Identify the favorable outcomes (E): numbers that are multiples of 3 within the range 1 to 15. These are {3, 6, 9,
+        12, 15}.'
+      - Count the favorable outcomes, n(E) = 5.
+      - Calculate the probability P(E) = n(E) / n(S) = 5/15.
+      - 'Simplify the fraction: 1/3.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: A bag contains 18 tiles numbered 1 to 18. If a tile is selected at random, what is the probability that
+        the number on the tile is greater than 15 or less than 4?
+      mathTool: null
+      finalAnswer: 1/3
+      stepByStepGuideline:
+      - Determine the total number of outcomes, n(S). Since there are 18 tiles, n(S) = 18.
+      - 'Identify the outcomes greater than 15: {16, 17, 18}. (3 outcomes).'
+      - 'Identify the outcomes less than 4: {1, 2, 3}. (3 outcomes).'
+      - 'Since these two sets of outcomes are mutually exclusive (no overlap), the total number of favorable outcomes n(E)
+        is the sum: 3 + 3 = 6.'
+      - Calculate the probability P(E) = n(E) / n(S) = 6/18.
+      - 'Simplify the fraction: 1/3.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: 'A fair 10-sided die (D10), numbered 1 to 10, is rolled once. Find the probability of:
+
+        (i) Rolling an odd number.
+
+        (ii) Rolling a perfect square.'
+      mathTool: null
+      finalAnswer: (i) 1/2, (ii) 3/10
+      stepByStepGuideline:
+      - Identify the sample space (S) and the total number of outcomes, n(S). For a 10-sided die, n(S) = 10.
+      - 'For (i): Identify the odd numbers between 1 and 10. These are {1, 3, 5, 7, 9}. n(E1) = 5.'
+      - 'Calculate P(odd number): P(E1) = n(E1) / n(S) = 5/10. Simplify the fraction: 1/2.'
+      - 'For (ii): Identify the perfect squares between 1 and 10. These are {1, 4, 9}. n(E2) = 3.'
+      - 'Calculate P(perfect square): P(E2) = n(E2) / n(S) = 3/10. This fraction cannot be simplified.'
+      id: q6-5
+      questionGroup: q6
+- id: prob-node-7
+  nodeNumber: 7
+  title: Probability with Numbered Balls
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A vending machine uses tokens numbered consecutively from 10 to 24. If one token is randomly selected,
+        find the probability of drawing:
+
+        (i) The number 14.
+
+        (ii) An odd number.
+
+        (iii) A prime number.'
+      avatarIntro: Ready to test your probability skills? Remember that finding the total number of outcomes is the crucial
+        first step when dealing with numbered objects.
+      mathTool: null
+      finalAnswer: (i) 1/15, (ii) 7/15, (iii) 1/3
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of outcomes, n(S). The range is 10 to 24 inclusive. n(S) = 24 - 10 + 1 = 15.'
+      - 'Step 2: Calculate P(14). Only one token is numbered 14. P(14) = 1/15.'
+      - 'Step 3: Calculate P(odd number). The odd numbers in the range are {11, 13, 15, 17, 19, 21, 23}. There are 7 odd numbers.
+        P(odd) = 7/15.'
+      - 'Step 4: Calculate P(prime number). The prime numbers in the range are {11, 13, 17, 19, 23}. There are 5 prime numbers.
+        P(prime) = 5/15 = 1/3.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: 'A batch of lottery balls is numbered consecutively from 15 to 30. If one ball is drawn at random, find
+        the probability of drawing a ball that is:
+
+        (i) An even number.
+
+        (ii) A multiple of 3.'
+      mathTool: null
+      finalAnswer: (i) 1/2, (ii) 3/8
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of outcomes, n(S). The range is 15 to 30 inclusive. n(S) = 30 - 15 + 1 = 16.'
+      - 'Step 2: Calculate P(even number). The even numbers are {16, 18, 20, 22, 24, 26, 28, 30}. There are 8 even numbers.
+        P(even) = 8/16 = 1/2.'
+      - 'Step 3: Calculate P(multiple of 3). The multiples of 3 are {15, 18, 21, 24, 27, 30}. There are 6 multiples of 3.
+        P(multiple of 3) = 6/16 = 3/8.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'A quality control specialist inspects a box of items identified by serial numbers ranging from 20 to 35.
+        If one item is selected randomly, calculate the probability that its serial number is:
+
+        (i) A multiple of 3.
+
+        (ii) A perfect cube.'
+      mathTool: null
+      finalAnswer: (i) 5/16, (ii) 1/16
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of outcomes, n(S). The range is 20 to 35 inclusive. n(S) = 35 - 20 + 1 = 16.'
+      - 'Step 2: Calculate P(multiple of 3). The multiples of 3 in the range are {21, 24, 27, 30, 33}. There are 5 favorable
+        outcomes. P(multiple of 3) = 5/16.'
+      - 'Step 3: Calculate P(perfect cube). The perfect cubes are 1³=1, 2³=8, 3³=27, 4³=64. Only 27 falls within the range
+        20 to 35. There is 1 favorable outcome. P(perfect cube) = 1/16.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: 'A library uses call slips numbered consecutively from 15 to 30. If a slip is chosen at random, find the
+        probability that the number on the slip is:
+
+        (i) A prime number.
+
+        (ii) A perfect square.'
+      mathTool: null
+      finalAnswer: (i) 1/4, (ii) 1/16
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of outcomes, n(S). The range is 15 to 30 inclusive. n(S) = 30 - 15 + 1 = 16.'
+      - 'Step 2: Calculate P(prime number). The prime numbers in the range are {17, 19, 23, 29}. There are 4 prime numbers.
+        P(prime) = 4/16 = 1/4.'
+      - 'Step 3: Calculate P(perfect square). The perfect squares are $1^2=1, 2^2=4, 3^2=9, 4^2=16, 5^2=25, 6^2=36$. The perfect
+        squares in the range 15 to 30 are {16, 25}. There are 2 favorable outcomes. P(perfect square) = 2/16 = 1/8. (Wait,
+        I used ''perfect cube'' in planning, but ''perfect square'' in the question text. I must use the event ''perfect cube''
+        if I want to stick to the available options list F, or ensure ''perfect square'' is an acceptable implicit variation.)
+        Let''s re-read the options: ''perfect cube''. I must correct the question/answer to use Perfect Cube or correct the
+        calculation to use Perfect Square.'
+      - 'Correction: I must use only the listed events. Let''s change the event to ''perfect cube'' as per the plan for Q4.'
+      - 'Recalculating Q4 (15-30, n=16): (i) Prime: {17, 19, 23, 29} -> 4/16 = 1/4. (ii) Perfect Cube: {27} -> 1/16.'
+      - 'Step 3 (Corrected): Calculate P(perfect cube). The perfect cubes are $1^3=1, 2^3=8, 3^3=27$. Only 27 falls within
+        the range 15 to 30. There is 1 favorable outcome. P(perfect cube) = 1/16.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: 'A stack of index cards is numbered consecutively from 20 to 35. If one card is selected randomly, find
+        the probability of selecting:
+
+        (i) An odd number.
+
+        (ii) The number 20.
+
+        (iii) An even number.'
+      mathTool: null
+      finalAnswer: (i) 1/2, (ii) 1/16, (iii) 1/2
+      stepByStepGuideline:
+      - 'Step 1: Determine the total number of outcomes, n(S). The range is 20 to 35 inclusive. n(S) = 35 - 20 + 1 = 16.'
+      - 'Step 2: Calculate P(odd number). The odd numbers in the range are {21, 23, 25, 27, 29, 31, 33, 35}. There are 8 odd
+        numbers. P(odd) = 8/16 = 1/2.'
+      - 'Step 3: Calculate P(20). Only one card is numbered 20. P(20) = 1/16.'
+      - 'Step 4: Calculate P(even number). The even numbers in the range are {20, 22, 24, 26, 28, 30, 32, 34}. There are 8
+        even numbers. P(even) = 8/16 = 1/2.'
+      id: q7-5
+      questionGroup: q7
+- id: prob-node-8
+  nodeNumber: 8
+  title: Playing Cards - Basic Probabilities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A single card is drawn randomly from a standard deck of 52 playing cards. Calculate the probability of
+        drawing:
+
+        (i) a black card
+
+        (ii) a diamond'
+      avatarIntro: Understanding the structure of a standard 52-card deck is the first step to mastering card probability.
+        Remember how many cards are in each suit and color!
+      mathTool: null
+      finalAnswer: (i) 1/2, (ii) 1/4
+      stepByStepGuideline:
+      - Identify the total number of outcomes, N(S). For a standard deck, N(S) = 52.
+      - For part (i), identify the number of black cards. There are 2 suits that are black (Clubs and Spades), totaling 13
+        + 13 = 26 cards. P(Black) = 26/52.
+      - 'Simplify the fraction: P(Black) = 1/2.'
+      - For part (ii), identify the number of diamonds. There are 13 cards in the diamond suit. P(Diamond) = 13/52.
+      - 'Simplify the fraction: P(Diamond) = 1/4.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'Suppose a card is chosen at random from a standard 52-card deck. Determine the probability of the following
+        events:
+
+        (i) The card is red
+
+        (ii) The card is a club'
+      mathTool: null
+      finalAnswer: (i) 1/2, (ii) 1/4
+      stepByStepGuideline:
+      - The total number of possible outcomes is 52.
+      - For part (i), there are 26 red cards (Hearts and Diamonds). P(Red) = 26/52.
+      - 'Simplify the fraction: P(Red) = 1/2.'
+      - For part (ii), there are 13 cards in the club suit. P(Club) = 13/52.
+      - 'Simplify the fraction: P(Club) = 1/4.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'A gambler shuffles a standard 52-card deck and asks a friend to select one card. Find the probability
+        that the card drawn is:
+
+        (i) a heart
+
+        (ii) a spade'
+      mathTool: null
+      finalAnswer: (i) 1/4, (ii) 1/4
+      stepByStepGuideline:
+      - The total number of possible outcomes is N(S) = 52.
+      - For part (i), the number of hearts is 13. P(Heart) = 13/52.
+      - 'Simplify the fraction: P(Heart) = 1/4.'
+      - For part (ii), the number of spades is 13. P(Spade) = 13/52.
+      - 'Simplify the fraction: P(Spade) = 1/4.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'Consider drawing one card from a standard deck of 52 playing cards. Calculate the probability of selecting:
+
+        (i) a black card
+
+        (ii) a heart
+
+        (iii) a club'
+      mathTool: null
+      finalAnswer: (i) 1/2, (ii) 1/4, (iii) 1/4
+      stepByStepGuideline:
+      - The total number of possible outcomes is 52.
+      - For part (i), there are 26 black cards. P(Black) = 26/52 = 1/2.
+      - For part (ii), there are 13 cards in the heart suit. P(Heart) = 13/52 = 1/4.
+      - For part (iii), there are 13 cards in the club suit. P(Club) = 13/52 = 1/4.
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'If a single card is pulled randomly from a well-shuffled deck of 52 playing cards, what is the probability
+        of obtaining:
+
+        (i) a red card
+
+        (ii) a spade'
+      mathTool: null
+      finalAnswer: (i) 1/2, (ii) 1/4
+      stepByStepGuideline:
+      - The total sample space N(S) is 52.
+      - For part (i), there are 26 red cards (Hearts and Diamonds). P(Red) = 26/52.
+      - 'Simplify the fraction: P(Red) = 1/2.'
+      - For part (ii), there are 13 cards in the spade suit. P(Spade) = 13/52.
+      - 'Simplify the fraction: P(Spade) = 1/4.'
+      id: q8-5
+      questionGroup: q8
+- id: prob-node-9
+  nodeNumber: 9
+  title: Playing Cards - Composite Events
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A single card is drawn randomly from a standard deck of 52 playing cards. Find the probability of drawing:
+
+        (i) A red Ace
+
+        (ii) A picture card (Jack, Queen, or King)
+
+        (iii) A card which is not a Diamond'
+      avatarIntro: Let's test your understanding of composite events in probability using a standard deck of cards. Remember
+        to count the number of favourable outcomes carefully!
+      finalAnswer: (i) 1/26, (ii) 3/13, (iii) 3/4
+      stepByStepGuideline:
+      - The total number of possible outcomes is 52.
+      - 'For (i) A red Ace: There are 2 red Aces (Ace of Hearts, Ace of Diamonds). P(red Ace) = 2/52 = 1/26.'
+      - 'For (ii) A picture card: Picture cards are Jack (J), Queen (Q), and King (K). There are 3 picture cards in each of
+        the 4 suits, so 3 * 4 = 12 picture cards. P(picture card) = 12/52 = 3/13.'
+      - 'For (iii) A card which is not a Diamond: There are 13 cards in the Diamond suit. The remaining cards belong to Hearts,
+        Clubs, and Spades (13 + 13 + 13 = 39 cards). P(not a Diamond) = 39/52 = 3/4.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: 'If one card is selected at random from a standard 52-card deck, calculate the probability of the following
+        events:
+
+        (i) Drawing a black King
+
+        (ii) Drawing a card that is not a nine'
+      finalAnswer: (i) 1/26, (ii) 12/13
+      stepByStepGuideline:
+      - The total number of possible outcomes is 52.
+      - 'For (i) A black King: There are 2 black Kings (King of Clubs, King of Spades). P(black King) = 2/52 = 1/26.'
+      - 'For (ii) A card that is not a nine: There are 4 nines in the deck (one in each suit). Thus, the number of cards that
+        are NOT nines is 52 - 4 = 48. P(not a nine) = 48/52 = 12/13.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: 'A card is drawn from a well-shuffled standard deck of 52 cards. Determine the probability of obtaining:
+
+        (i) A red Ace
+
+        (ii) A black King
+
+        (iii) A picture card (J, Q, K)'
+      finalAnswer: (i) 1/26, (ii) 1/26, (iii) 3/13
+      stepByStepGuideline:
+      - The total number of outcomes is 52.
+      - 'For (i) A red Ace: There are 2 red Aces (Ace of Hearts, Ace of Diamonds). P(red Ace) = 2/52 = 1/26.'
+      - 'For (ii) A black King: There are 2 black Kings (King of Clubs, King of Spades). P(black King) = 2/52 = 1/26.'
+      - 'For (iii) A picture card: There are 12 picture cards in total (3 per suit). P(picture card) = 12/52 = 3/13.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: 'Consider drawing one card randomly from a standard pack of 52 cards. Calculate the probability that the
+        card is:
+
+        (i) Not a Diamond
+
+        (ii) Not a nine'
+      finalAnswer: (i) 3/4, (ii) 12/13
+      stepByStepGuideline:
+      - The sample space consists of 52 cards.
+      - 'For (i) Not a Diamond: There are 13 Diamonds. The cards that are not Diamonds are Hearts, Clubs, and Spades (39 cards).
+        P(Not a Diamond) = 39/52 = 3/4.'
+      - 'For (ii) Not a nine: There are 4 nines in the deck. The number of cards that are not nines is 52 - 4 = 48. P(Not
+        a nine) = 48/52 = 12/13.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: 'A standard deck of 52 cards is used to draw a single card at random. Calculate the probability of the
+        following events:
+
+        (i) The card is a picture card (J, Q, or K)
+
+        (ii) The card is a red Ace
+
+        (iii) The card is not a nine'
+      finalAnswer: (i) 3/13, (ii) 1/26, (iii) 12/13
+      stepByStepGuideline:
+      - The total number of outcomes is 52.
+      - 'For (i) Picture card: There are 12 picture cards (J, Q, K in 4 suits). P(picture card) = 12/52 = 3/13.'
+      - 'For (ii) Red Ace: There are 2 red Aces (Heart and Diamond). P(red Ace) = 2/52 = 1/26.'
+      - 'For (iii) Not a nine: Since there are 4 nines, there are 52 - 4 = 48 cards that are not nines. P(not a nine) = 48/52
+        = 12/13.'
+      id: q9-5
+      questionGroup: q9
+- id: prob-node-10
+  nodeNumber: 10
+  title: Impossible and Certain Events
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A standard six-sided die is rolled once. Calculate the probability of rolling a number between 1 and 6,
+        inclusive. What type of event is this?
+      avatarIntro: Remember, probability measures how likely an event is to occur. Pay attention to whether all outcomes satisfy
+        the condition or none do!
+      mathTool: null
+      finalAnswer: The probability is 6/6 = 1. This is a certain event.
+      stepByStepGuideline:
+      - Identify the sample space (S). When rolling a standard six-sided die, S = {1, 2, 3, 4, 5, 6}. Thus, the total number
+        of outcomes, n(S), is 6.
+      - 'Identify the event (E): Rolling a number between 1 and 6, inclusive. The favorable outcomes are {1, 2, 3, 4, 5, 6}.
+        Thus, the number of favorable outcomes, n(E), is 6.'
+      - Calculate the probability P(E) = n(E) / n(S) = 6/6 = 1.
+      - Since P(E) = 1, the event is a certain event, meaning it must happen.
+      id: q10-1
+      questionGroup: q10
+    - problemText: A box contains 12 cards numbered 1, 2, 3, ..., 12. If a card is drawn randomly, find the probability of
+        drawing a negative number. Classify the event.
+      mathTool: null
+      finalAnswer: The probability is 0/12 = 0. This is an impossible event.
+      stepByStepGuideline:
+      - Identify the sample space (S). There are 12 cards numbered 1 through 12, so n(S) = 12.
+      - 'Identify the event (E): Drawing a negative number. Since all numbers in the set {1, 2, ..., 12} are positive, there
+        are no favorable outcomes. Thus, n(E) = 0.'
+      - Calculate the probability P(E) = n(E) / n(S) = 0/12 = 0.
+      - Since P(E) = 0, the event is an impossible event, meaning it cannot happen.
+      id: q10-2
+      questionGroup: q10
+    - problemText: A fair coin is tossed into the air. Determine the probability that the coin lands perfectly on its edge
+        (sideways). Identify the type of event.
+      mathTool: null
+      finalAnswer: The probability is 0. This is an impossible event.
+      stepByStepGuideline:
+      - Identify the sample space (S) for a standard coin toss. The outcomes are Head (H) or Tail (T). n(S) = 2.
+      - 'Identify the event (E): The coin lands on its edge. In the standard theoretical model of probability, landing on
+        the edge is not considered a possible outcome (n(E) = 0).'
+      - Calculate the probability P(E) = n(E) / n(S) = 0/2 = 0.
+      - Since P(E) = 0, the event is an impossible event.
+      id: q10-3
+      questionGroup: q10
+    - problemText: There are 12 slips of paper, numbered consecutively from 1 to 12, placed in a hat. If one slip is drawn
+        at random, find the probability that the number drawn is less than 20. Classify the event.
+      mathTool: null
+      finalAnswer: The probability is 12/12 = 1. This is a certain event.
+      stepByStepGuideline:
+      - Identify the sample space (S). The numbers are {1, 2, ..., 12}, so n(S) = 12.
+      - 'Identify the event (E): Drawing a number less than 20. Check which outcomes satisfy this condition. Since all numbers
+        from 1 to 12 are less than 20, the favorable outcomes are {1, 2, ..., 12}. Thus, n(E) = 12.'
+      - Calculate the probability P(E) = n(E) / n(S) = 12/12 = 1.
+      - Since P(E) = 1, the event is a certain event.
+      id: q10-4
+      questionGroup: q10
+    - problemText: A standard six-sided die is rolled once. Calculate the probability of rolling a 7. What type of event is
+        this?
+      mathTool: null
+      finalAnswer: The probability is 0/6 = 0. This is an impossible event.
+      stepByStepGuideline:
+      - Identify the sample space (S). A standard six-sided die has outcomes {1, 2, 3, 4, 5, 6}. Thus, n(S) = 6.
+      - 'Identify the event (E): Rolling a 7. Since 7 is not a possible outcome on a standard six-sided die, the number of
+        favorable outcomes is 0. Thus, n(E) = 0.'
+      - Calculate the probability P(E) = n(E) / n(S) = 0/6 = 0.
+      - Since P(E) = 0, the event is an impossible event.
+      id: q10-5
+      questionGroup: q10
+- id: prob-node-11
+  nodeNumber: 11
+  title: Understanding Experimental vs Theoretical
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A mathematics class conducts an experiment by rolling a standard, fair six-sided die 60 times.
+
+        i) What is the theoretical probability of rolling a ''6''?
+
+        ii) During the experiment, the number ''6'' appeared 8 times. Calculate the experimental probability of rolling a
+        ''6''. Express your answer as a fraction and a decimal rounded to three significant figures.
+
+        iii) Explain why the theoretical and experimental probabilities calculated in parts (i) and (ii) are different.'
+      avatarIntro: Understanding the difference between what we expect to happen (theoretical) and what actually happens (experimental)
+        is a key concept in probability.
+      mathTool: null
+      finalAnswer: i) Theoretical P(6) = 1/6. ii) Experimental P(6) = 8/60 = 2/15 ≈ 0.133. iii) The probabilities differ because
+        experimental probability is subject to random variation, especially in small samples (60 trials). We do not expect
+        perfect alignment with the theoretical probability unless the number of trials is extremely large.
+      stepByStepGuideline:
+      - 'Step 1 (Theoretical): For a fair six-sided die, there is 1 favorable outcome (rolling a 6) out of 6 possible outcomes.
+        Theoretical P(6) = 1/6.'
+      - 'Step 2 (Experimental): Experimental probability is calculated as (Number of successes) / (Total number of trials).
+        Experimental P(6) = 8 / 60 = 2/15 ≈ 0.133.'
+      - 'Step 3 (Explanation): Theoretical probability is calculated based on ideal conditions, while experimental probability
+        is based on actual observations. Due to the inherent randomness of chance experiments, experimental results in a limited
+        number of trials (60) will often deviate from the theoretical expectation.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: 'Sarah is testing a coin for fairness. She flips the coin 20 times and records the results. She observes
+        12 Heads and 8 Tails.
+
+        i) What is the theoretical probability of getting a Tail when tossing a fair coin?
+
+        ii) Based on Sarah''s trials, what is the experimental probability of getting a Tail? Express your answer as a decimal.
+
+        iii) If the coin is truly fair, why did the experimental probability not match the theoretical probability exactly?'
+      mathTool: null
+      finalAnswer: i) Theoretical P(Tail) = 1/2 or 0.5. ii) Experimental P(Tail) = 8/20 = 0.4. iii) The difference is due
+        to chance variation in a small sample size (20 trials). Experimental results only approach the theoretical probability
+        over a very large number of trials (Law of Large Numbers).
+      stepByStepGuideline:
+      - 'Step 1 (Theoretical): The theoretical probability for a fair coin landing on Tails is 1/2 or 0.5.'
+      - 'Step 2 (Experimental): Use the observed results: 8 Tails in 20 trials. Experimental P(Tail) = 8 / 20 = 0.4.'
+      - 'Step 3 (Explanation): A small number of trials (20) is insufficient to guarantee that the outcomes will perfectly
+        reflect the theoretical probability (which predicts 10 Tails). Randomness ensures that deviations are likely in short
+        runs.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: 'A research team simulates a binary event (like success/failure) 50 times. The theoretical probability
+        of Success is 0.5.
+
+        i) State the theoretical probability of Success, P(S), as a fraction.
+
+        ii) If 28 successes were recorded in the 50 trials, calculate the experimental probability of Success.
+
+        iii) If the team runs the simulation 5000 times instead of 50, how would the experimental probability likely compare
+        to the theoretical probability?'
+      mathTool: null
+      finalAnswer: i) Theoretical P(S) = 1/2. ii) Experimental P(S) = 28/50 = 0.56. iii) If the team runs 5000 trials, the
+        experimental probability would be expected to be much closer to the theoretical probability (0.5) because the effect
+        of random fluctuation diminishes as the sample size increases.
+      stepByStepGuideline:
+      - 'Step 1 (Theoretical): The theoretical probability is given as 0.5, which is equivalent to 1/2.'
+      - 'Step 2 (Experimental): Calculate the relative frequency: Experimental P(S) = (Number of successes) / (Total trials)
+        = 28 / 50 = 0.56.'
+      - 'Step 3 (Explanation): Increasing the number of trials leads to the Law of Large Numbers taking effect. The experimental
+        probability stabilizes and converges towards the theoretical probability as the sample size grows.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: 'A game designer claims their six-sided die is perfectly balanced. To test this, a player rolls the die
+        60 times, specifically tracking the result ''1''.
+
+        i) Calculate the theoretical probability of rolling a ''1''.
+
+        ii) Assume that the result ''1'' occurred 8 times during the 60 rolls. What is the experimental probability of rolling
+        a ''1''? Express your answer as a fraction.
+
+        iii) The player is disappointed because the experimental probability is lower than expected. Explain why this difference
+        is common and does not necessarily mean the die is faulty.'
+      mathTool: null
+      finalAnswer: i) Theoretical P(1) = 1/6. ii) Experimental P(1) = 8/60 = 2/15. iii) The difference is expected due to
+        chance. Theoretical probability defines the long-term average, but in a small number of trials (60), the outcomes
+        are highly variable due to randomness, leading to a deviation from 1/6.
+      stepByStepGuideline:
+      - 'Step 1 (Theoretical): Since the die is fair, the probability of rolling any specific number, including ''1'', is
+        1 out of 6 possibilities. Theoretical P(1) = 1/6.'
+      - 'Step 2 (Experimental): Experimental P(1) = (Number of times ''1'' appeared) / (Total rolls) = 8 / 60. Simplify the
+        fraction: 2/15.'
+      - 'Step 3 (Explanation): Experimental probability reflects actual results, which are influenced by chance and random
+        fluctuation in small samples. A deviation of a few rolls (8 instead of the expected 10) is normal and does not prove
+        the die is unfair; a much larger test sample would be needed to draw that conclusion.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: 'A spinner is divided equally into two colored sections: Blue and Yellow. It is designed so that the theoretical
+        probability of landing on Blue is 1/2.
+
+        i) State the theoretical probability of landing on Blue as a percentage.
+
+        ii) An analyst spins the device 20 times. It lands on Blue 12 times. Calculate the experimental probability of landing
+        on Blue.
+
+        iii) If the theoretical probability represents the long-run outcome, explain why 20 trials provide an unreliable estimate
+        of the true probability.'
+      mathTool: null
+      finalAnswer: i) Theoretical P(Blue) = 50%. ii) Experimental P(Blue) = 12/20 = 0.6 or 60%. iii) 20 trials constitute
+        a small sample size. Experimental probability is only a good approximation of the theoretical probability when the
+        number of trials is very large. In short runs, random chance plays a significant role, causing the experimental results
+        to fluctuate widely and be unreliable estimators.
+      stepByStepGuideline:
+      - 'Step 1 (Theoretical): Convert the given probability 1/2 to a percentage: 1/2 * 100% = 50%.'
+      - 'Step 2 (Experimental): Calculate the ratio of successes to trials: Experimental P(Blue) = 12 / 20 = 0.6.'
+      - 'Step 3 (Explanation): Experimental probability converges to theoretical probability over many trials. With only 20
+        trials, the sample size is small, and the observed relative frequency (0.6) is subject to high variability due to
+        random chance, making it an unreliable estimate of the true theoretical probability (0.5).'
+      id: q11-5
+      questionGroup: q11
+- id: prob-node-12
+  nodeNumber: 12
+  title: Calculating Relative Frequency
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Maya tosses a standard coin 50 times to see how often it lands on Heads. She records 28 Heads. Calculate
+        the relative frequency of getting Heads. Express your answer as a simplified fraction and a decimal, then compare
+        it to the theoretical probability.
+      avatarIntro: Hello! Calculating relative frequency helps us understand how experimental results relate to mathematical
+        theory. Let's see how Maya's coin flips compare to the expected outcome.
+      mathTool: null
+      finalAnswer: Relative Frequency = 14/25 or 0.56. The experimental frequency (0.56) is slightly higher than the theoretical
+        probability (0.5), indicating a small deviation in this short experiment.
+      stepByStepGuideline:
+      - 'Step 1: Identify the number of occurrences (Heads) and the total number of trials. Occurrences = 28, Total Trials
+        = 50.'
+      - 'Step 2: Calculate the relative frequency as a fraction: Relative Frequency = Occurrences / Total Trials = 28/50.
+        Simplify the fraction: 14/25.'
+      - 'Step 3: Convert the fraction to a decimal: 14 ÷ 25 = 0.56.'
+      - 'Step 4: Determine the theoretical probability of getting Heads on a fair coin: P(Head) = 1/2 = 0.5.'
+      - 'Step 5: Compare the relative frequency (0.56) with the theoretical probability (0.5). The relative frequency is close
+        to the theoretical probability, suggesting the coin is likely fair, though the experimental value is slightly higher.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: A researcher conducts 100 trials of a binary experiment, where the desired outcome (Event A) is analogous
+        to getting Heads on a fair coin. If Event A occurred 48 times, calculate the relative frequency of Event A. Express
+        the result as a simplified fraction and a decimal, and compare it to the theoretical probability of 0.5.
+      mathTool: null
+      finalAnswer: Relative Frequency = 12/25 or 0.48. The experimental frequency (0.48) is very close to the theoretical
+        probability (0.5), suggesting the results align well with the theoretical expectation.
+      stepByStepGuideline:
+      - 'Step 1: Identify the number of occurrences (Event A) and the total number of trials. Occurrences = 48, Total Trials
+        = 100.'
+      - 'Step 2: Calculate the relative frequency as a fraction: Relative Frequency = 48/100. Simplify the fraction by dividing
+        the numerator and denominator by 4: 12/25.'
+      - 'Step 3: Convert the fraction to a decimal: 12 ÷ 25 = 0.48.'
+      - 'Step 4: The theoretical probability is given as 0.5.'
+      - 'Step 5: Compare the relative frequency (0.48) with the theoretical probability (0.5). The results are very close,
+        indicating consistency between the experimental outcome and the theoretical probability.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: During a school fair game, a coin is flipped 80 times. The outcome 'Heads' occurred 44 times. Determine
+        the relative frequency of Heads. Provide the answer as a simplified fraction and a decimal, and discuss how this experimental
+        frequency compares to the expected theoretical probability.
+      mathTool: null
+      finalAnswer: Relative Frequency = 11/20 or 0.55. The experimental frequency (0.55) is marginally higher than the theoretical
+        probability (0.5).
+      stepByStepGuideline:
+      - 'Step 1: State the experimental results: Occurrences (Heads) = 44, Total Trials = 80.'
+      - 'Step 2: Calculate the relative frequency as a fraction: Relative Frequency = 44/80. Simplify the fraction by dividing
+        the numerator and denominator by 4: 11/20.'
+      - 'Step 3: Convert the fraction to a decimal: 11 ÷ 20 = 0.55.'
+      - 'Step 4: State the theoretical probability for Heads: P(Head) = 1/2 = 0.5.'
+      - 'Step 5: Compare the relative frequency (0.55) with the theoretical probability (0.5). The relative frequency is slightly
+        above the theoretical value, but still reasonably close.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: Liam tests his standard six-sided die for fairness by rolling it 60 times. He records the number of times
+        the outcome '6' appears, observing it 8 times. Calculate the relative frequency of rolling a '6'. Express the result
+        as a simplified fraction and a decimal (rounded to three decimal places), and compare it to the theoretical probability
+        of rolling a '6'.
+      mathTool: null
+      finalAnswer: Relative Frequency = 2/15 ≈ 0.133. The experimental frequency (0.133) is lower than the theoretical probability
+        (1/6 ≈ 0.167).
+      stepByStepGuideline:
+      - 'Step 1: State the experimental results: Occurrences (''6'') = 8, Total Trials = 60.'
+      - 'Step 2: Calculate the relative frequency as a fraction: Relative Frequency = 8/60. Simplify the fraction by dividing
+        the numerator and denominator by 4: 2/15.'
+      - 'Step 3: Convert the fraction to a decimal and round to three decimal places: 2 ÷ 15 ≈ 0.133.'
+      - 'Step 4: Determine the theoretical probability of rolling a ''6'' on a fair die: P(6) = 1/6 ≈ 0.167.'
+      - 'Step 5: Compare the relative frequency (0.133) with the theoretical probability (0.167). The relative frequency is
+        noticeably lower than the theoretical probability, suggesting the number ''6'' occurred less often than expected in
+        this experiment.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: To study long-run probability, a group rolls a standard six-sided die 100 times. They are specifically
+        tracking the occurrence of the number '6', which appeared 18 times. Calculate the relative frequency of rolling a
+        '6'. Give the answer as a simplified fraction and a decimal, and compare this experimental result to the theoretical
+        probability.
+      mathTool: null
+      finalAnswer: Relative Frequency = 9/50 or 0.18. The experimental frequency (0.18) is slightly higher than the theoretical
+        probability (1/6 ≈ 0.167).
+      stepByStepGuideline:
+      - 'Step 1: State the experimental results: Occurrences (''6'') = 18, Total Trials = 100.'
+      - 'Step 2: Calculate the relative frequency as a fraction: Relative Frequency = 18/100. Simplify the fraction by dividing
+        the numerator and denominator by 2: 9/50.'
+      - 'Step 3: Convert the fraction to a decimal: 9 ÷ 50 = 0.18.'
+      - 'Step 4: Determine the theoretical probability of rolling a ''6'': P(6) = 1/6.'
+      - 'Step 5: Compare the relative frequency (0.18) with the theoretical probability (1/6 ≈ 0.1667). The experimental frequency
+        is slightly higher than the theoretical expectation.'
+      id: q12-5
+      questionGroup: q12
+- id: prob-node-13
+  nodeNumber: 13
+  title: Law of Large Numbers Intuition
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A scientist conducts a probability experiment using a fair coin. She compares the experimental probability
+        of getting Heads calculated from 10 tosses versus 100 tosses. Which result is expected to be closer to the theoretical
+        probability of 0.5? Explain your reasoning using the Law of Large Numbers.
+      avatarIntro: Understanding probability isn't just about calculation, it's about understanding how experimental results
+        behave in the long run. Let's explore the Law of Large Numbers!
+      mathTool: null
+      finalAnswer: The result from 100 tosses is expected to be closer to the theoretical probability (0.5). The Law of Large
+        Numbers states that as the number of trials increases, the experimental probability tends to approach the theoretical
+        probability. Small samples (like 10 tosses) are highly susceptible to random chance and variation, making their results
+        less reliable than those from a larger sample (100 tosses).
+      stepByStepGuideline:
+      - Identify the theoretical probability for a fair coin (P(Heads) = 0.5).
+      - 'Compare the two sample sizes: 10 trials (small sample) vs. 100 trials (large sample).'
+      - 'Apply the Law of Large Numbers principle: A larger number of trials leads to a more stable and representative experimental
+        probability.'
+      - Explain that the result from 100 trials is more reliable because increased trials dilute the effect of random short-term
+        variations.
+      id: q13-1
+      questionGroup: q13
+    - problemText: David rolls a standard six-sided die 20 times and observes that the number '3' appears 8 times. Since the
+        theoretical probability of rolling a '3' is $1/6$ (approximately 0.167), David suspects the die is unfair because
+        his experimental probability ($8/20 = 0.40$) is much higher. Evaluate David's conclusion. What recommendation would
+        you give him?
+      mathTool: null
+      finalAnswer: David's conclusion is premature. 20 trials is a very small sample size, and high variation is common in
+        small samples due to random chance. It is normal for the experimental probability to deviate significantly from the
+        theoretical probability when the sample size is small. To properly test the fairness of the die, David must conduct
+        a much larger number of trials (e.g., 200 or more). If the experimental probability remains near 0.40 after hundreds
+        of rolls, then he would have strong evidence to conclude the die is weighted.
+      stepByStepGuideline:
+      - Analyze the sample size (20 trials) and the observed deviation.
+      - Explain the concept of high random variation in small samples.
+      - State that a small sample size is insufficient evidence to conclude the die is unfair.
+      - Recommend conducting many more trials (hundreds or thousands) to allow the experimental probability to stabilize and
+        converge toward the true theoretical probability, according to the Law of Large Numbers.
+      id: q13-2
+      questionGroup: q13
+    - problemText: A spinner is divided into three equal sectors (Red, Green, Blue). Two different groups conduct experiments.
+        Group A spins the spinner 50 times, and Group B spins it 500 times. Both groups calculate the experimental probability
+        of landing on Red. Which group's result is likely to provide a more accurate estimate of the theoretical probability
+        ($1/3$)? Justify your choice.
+      mathTool: null
+      finalAnswer: Group B’s result (500 spins) is likely to be more accurate. Accuracy in estimating probability improves
+        as the number of trials increases. Group A's smaller sample (50 trials) is more susceptible to short-term random fluctuations,
+        meaning their observed frequency might be far from 1/3. Group B’s large sample size ensures that random variations
+        are averaged out over many trials, causing their experimental probability to converge closer to the theoretical probability
+        ($1/3$).
+      stepByStepGuideline:
+      - Identify the theoretical probability ($1/3$).
+      - Compare the sample sizes (50 vs. 500).
+      - 'Explain the role of sample size in accuracy: larger samples minimize the impact of chance variation.'
+      - Conclude that Group B’s larger sample size (500) yields a more reliable and accurate estimate due to the Law of Large
+        Numbers.
+      id: q13-3
+      questionGroup: q13
+    - problemText: Explain the fundamental difference between the behavior of experimental probability in the short run (few
+        trials) versus the long run (many trials). Why is the long run considered superior for estimating probability?
+      mathTool: null
+      finalAnswer: In the short run (few trials), experimental probability is highly unstable, unpredictable, and subject
+        to significant random variation, often resulting in large deviations from the theoretical probability. In the long
+        run (many trials), the experimental probability becomes much more stable and predictable. The Law of Large Numbers
+        dictates that as the number of trials increases, the calculated experimental probability will converge, or get arbitrarily
+        close, to the theoretical probability. The long run is superior because increased trials average out the noise and
+        randomness inherent in small samples, providing a robust and reliable estimate.
+      stepByStepGuideline:
+      - 'Describe short-run behavior: High variation, instability, and unpredictability.'
+      - 'Describe long-run behavior: Stability, convergence, and approaching the theoretical value.'
+      - 'Explain the ''why'': Large numbers of trials minimize the influence of random chance and short-term fluctuations.'
+      - Conclude that the long run is superior because it provides a reliable estimate based on the principle of convergence
+        (Law of Large Numbers).
+      id: q13-4
+      questionGroup: q13
+    - problemText: The Law of Large Numbers states that experimental probability approaches theoretical probability as the
+        number of trials increases. If a student performs 10,000 coin tosses, why is it still highly unlikely that the experimental
+        probability of Heads will be *exactly* 0.5 (i.e., exactly 5,000 heads)?
+      mathTool: null
+      finalAnswer: While the Law of Large Numbers guarantees that the experimental probability will get extremely close to
+        the theoretical probability (0.5) as the number of trials increases (10,000 is a large sample), it does not guarantee
+        exact equality. Probability experiments are inherently random. Even a tiny amount of remaining random variation or
+        chance fluctuation means that the number of heads might be 4,998 or 5,001, resulting in a probability slightly above
+        or below 0.5. 'Approaching' the theoretical value means getting arbitrarily close, but achieving the exact theoretical
+        ratio is possible but extremely improbable.
+      stepByStepGuideline:
+      - Acknowledge that 10,000 trials is a large sample, ensuring the result is close to 0.5.
+      - Distinguish between 'approaching' and 'equaling' the theoretical probability.
+      - Explain that true randomness ensures that slight chance variations will almost always prevent the outcome from hitting
+        the exact theoretical ratio (5000/10000).
+      - Conclude that while the expected outcome is 5000, the high number of possible outcomes means achieving the precise
+        count is statistically unlikely.
+      id: q13-5
+      questionGroup: q13
+- id: prob-node-14
+  nodeNumber: 14
+  title: Probability Using Angles - Spinners
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A spinner used in a board game has four sectors with the following angle measurements: Red (90°), Blue
+        (45°), Green (180°), and Pink (45°). Since the sectors are of unequal size, the outcomes are not equally likely.
+
+
+        i) Find the probability that the spinner lands on Red.
+
+        ii) Find the probability that the spinner lands on Red or Pink.
+
+        iii) Is landing on Green twice as likely as landing on Red? Justify your answer.'
+      avatarIntro: Welcome! Understanding how sector angles relate to probability is key. Remember, probability is calculated
+        by dividing the sector angle by the total angle of 360 degrees.
+      finalAnswer: (i) 1/4, (ii) 3/8, (iii) Yes, because P(Green) = 1/2 and P(Red) = 1/4, and 1/2 is twice 1/4.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the probability of landing on Red. P(Red) = Angle of Red / 360° = 90° / 360°. Simplify the fraction:
+        1/4.'
+      - 'Step 2: Calculate the probability of landing on Red or Pink. This involves summing the angles for both sectors: P(Red
+        or Pink) = (90° + 45°) / 360° = 135° / 360°. Simplify the fraction: 3/8.'
+      - 'Step 3: Calculate P(Green) = 180° / 360° = 1/2. Compare P(Green) to P(Red) (1/4). Since 1/2 = 2 * (1/4), landing
+        on Green is twice as likely as landing on Red.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: 'A carnival prize wheel is divided into three sections: Win A Ticket (120°), Win A Toy (150°), and Try
+        Again (90°).
+
+
+        i) Calculate the probability of winning a toy.
+
+        ii) Calculate the probability of NOT landing on the ''Win A Ticket'' sector.'
+      finalAnswer: (i) 5/12, (ii) 2/3
+      stepByStepGuideline:
+      - 'Step 1: Calculate the probability of winning a toy. P(Toy) = Angle of Toy / 360° = 150° / 360°. Simplify the fraction
+        by dividing the numerator and denominator by 30: 5/12.'
+      - 'Step 2: Calculate the probability of winning a ticket: P(Ticket) = 120° / 360° = 1/3.'
+      - 'Step 3: Use the complement rule to find P(NOT Ticket): P(NOT Ticket) = 1 - P(Ticket) = 1 - 1/3 = 2/3. (Alternatively,
+        P(Toy or Try Again) = (150° + 90°) / 360° = 240° / 360° = 2/3).'
+      id: q14-2
+      questionGroup: q14
+    - problemText: 'A weather forecaster uses a visualization tool represented by a spinner to show rainfall likelihood, divided
+        into four sectors: Heavy Rain (180°), Light Rain (90°), Cloudy (45°), and Sunny (45°).
+
+
+        i) Which weather outcome is the least likely? State its probability.
+
+        ii) What is the probability that the day will be Cloudy or Sunny?'
+      finalAnswer: (i) Cloudy or Sunny (both 1/8), (ii) 1/4
+      stepByStepGuideline:
+      - 'Step 1: Identify the smallest sector angle(s). Both Cloudy (45°) and Sunny (45°) are the smallest.'
+      - 'Step 2: Calculate the probability for the least likely outcomes: P(Cloudy) = 45° / 360° = 1/8. P(Sunny) = 45° / 360°
+        = 1/8.'
+      - 'Step 3: Calculate P(Cloudy or Sunny). Sum the angles and divide by 360°: P(Cloudy or Sunny) = (45° + 45°) / 360°
+        = 90° / 360°. Simplify the fraction: 1/4.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: 'A student constructs a spinner for a project with four regions representing academic subjects: Math (60°),
+        Science (150°), English (90°), and History (H°).
+
+
+        i) Determine the angle H for the History sector.
+
+        ii) Find the probability that the spinner lands on History.
+
+        iii) Find the probability that the spinner lands on Science or Math.'
+      finalAnswer: (i) 60°, (ii) 1/6, (iii) 7/12
+      stepByStepGuideline:
+      - 'Step 1: Determine the missing angle H. Since the total angle is 360°, H = 360° - (60° + 150° + 90°) = 360° - 300°
+        = 60°.'
+      - 'Step 2: Calculate P(History): P(History) = 60° / 360°. Simplify the fraction: 1/6.'
+      - 'Step 3: Calculate P(Science or Math). Sum the angles: P(Science or Math) = (150° + 60°) / 360° = 210° / 360°. Simplify
+        the fraction by dividing the numerator and denominator by 30: 7/12.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: 'A promotional spinner is divided into three sectors: Prize A (120°), Prize B (150°), and No Prize (90°).
+
+
+        i) Calculate the probability of receiving Prize A.
+
+        ii) Calculate the probability of receiving a prize (Prize A or Prize B).
+
+        iii) If the spinner is spun, is it more likely to receive Prize B or receive No Prize? Justify your answer.'
+      finalAnswer: (i) 1/3, (ii) 3/4, (iii) It is more likely to receive Prize B, because P(Prize B) = 150/360 (5/12) which
+        is greater than P(No Prize) = 90/360 (1/4).
+      stepByStepGuideline:
+      - 'Step 1: Calculate P(Prize A): P(Prize A) = 120° / 360°. Simplify the fraction: 1/3.'
+      - 'Step 2: Calculate P(A or B). Sum the angles: P(A or B) = (120° + 150°) / 360° = 270° / 360°. Simplify the fraction:
+        3/4. (Alternatively, use the complement rule: 1 - P(No Prize) = 1 - 90/360 = 1 - 1/4 = 3/4).'
+      - 'Step 3: Calculate the individual probabilities: P(Prize B) = 150/360 = 5/12. P(No Prize) = 90/360 = 3/12 (or 1/4).
+        Since 5/12 > 3/12, it is more likely to receive Prize B.'
+      id: q14-5
+      questionGroup: q14
+- id: prob-node-15
+  nodeNumber: 15
+  title: Complementary Events
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A standard deck contains 52 cards. Let Event E be the event of drawing an Ace. The probability of drawing
+        an Ace is given as P(E) = 1/13.
+
+
+        Calculate P(not E), the probability of NOT drawing an Ace, using two different methods:
+
+
+        (i) The complementary probability formula.
+
+        (ii) Direct counting of non-Ace cards in the deck.'
+      avatarIntro: Understanding complementary events is key to probability. Remember that the probability of an event happening
+        plus the probability of it not happening must always equal one!
+      mathTool: null
+      finalAnswer: P(not E) = 12/13. Both methods verify this result.
+      stepByStepGuideline:
+      - 'Identify the given probability: P(E) = 1/13 (Drawing an Ace).'
+      - 'Calculate P(not E) using the complementary formula: P(not E) = 1 - P(E) = 1 - 1/13 = 12/13.'
+      - 'Calculate P(not E) using direct counting: A standard deck has 52 cards. There are 4 Aces. The number of cards that
+        are NOT Aces is 52 - 4 = 48.'
+      - The probability of not drawing an Ace by counting is P(not E) = (Number of non-Aces) / (Total cards) = 48/52.
+      - 'Simplify the fraction 48/52 by dividing the numerator and denominator by 4: 48 ÷ 4 = 12 and 52 ÷ 4 = 13. So, P(not
+        E) = 12/13.'
+      - Verify that both methods yield the same result (12/13) and that P(E) + P(not E) = 1/13 + 12/13 = 1.
+      id: q15-1
+      questionGroup: q15
+    - problemText: 'A fair six-sided die is rolled. Let Event E be the outcome of rolling a ''6''. The probability of rolling
+        a ''6'' is given as P(E) = 1/6.
+
+
+        Find P(not E), the probability of NOT rolling a ''6'', using:
+
+
+        (i) The complementary probability formula.
+
+        (ii) Direct counting of favorable outcomes.'
+      mathTool: null
+      finalAnswer: P(not E) = 5/6. Both methods verify this result.
+      stepByStepGuideline:
+      - 'Identify the given probability: P(E) = 1/6 (Rolling a 6).'
+      - 'Calculate P(not E) using the complementary formula: P(not E) = 1 - P(E) = 1 - 1/6 = 5/6.'
+      - 'Calculate P(not E) using direct counting: A six-sided die has 6 possible outcomes (1, 2, 3, 4, 5, 6). The outcomes
+        that are NOT a ''6'' are 1, 2, 3, 4, and 5 (5 outcomes).'
+      - The probability of not rolling a 6 by counting is P(not E) = (Number of non-6 outcomes) / (Total outcomes) = 5/6.
+      - Verify that both methods yield the same result (5/6) and that P(E) + P(not E) = 1/6 + 5/6 = 1.
+      id: q15-2
+      questionGroup: q15
+    - problemText: 'A bag contains 20 marbles in total: 8 blue marbles and 12 red marbles. Let Event E be the event of drawing
+        a blue marble. The probability of drawing a blue marble is P(E) = 8/20, which simplifies to 2/5.
+
+
+        Determine P(not E), the probability of NOT drawing a blue marble, using:
+
+
+        (i) The complementary probability formula.
+
+        (ii) Direct counting of marbles that are not blue.'
+      mathTool: null
+      finalAnswer: P(not E) = 3/5. Both methods verify this result.
+      stepByStepGuideline:
+      - 'Identify the given probability: P(E) = 2/5 (Drawing a blue marble).'
+      - 'Calculate P(not E) using the complementary formula: P(not E) = 1 - P(E) = 1 - 2/5 = 3/5.'
+      - 'Calculate P(not E) using direct counting: The marbles that are NOT blue are the red marbles. There are 12 red marbles
+        in the bag.'
+      - The probability of not drawing a blue marble by counting is P(not E) = (Number of red marbles) / (Total marbles) =
+        12/20.
+      - 'Simplify the fraction 12/20 by dividing the numerator and denominator by 4: 12 ÷ 4 = 3 and 20 ÷ 4 = 5. So, P(not
+        E) = 3/5.'
+      - Verify that both methods yield the same result (3/5) and that P(E) + P(not E) = 2/5 + 3/5 = 1.
+      id: q15-3
+      questionGroup: q15
+    - problemText: 'A standard deck of 52 cards is shuffled. Let Event E be the event of drawing a black card (Clubs or Spades).
+        The probability of drawing a black card is P(E) = 26/52, which simplifies to 1/2.
+
+
+        Calculate P(not E), the probability of NOT drawing a black card, using:
+
+
+        (i) The complementary probability formula.
+
+        (ii) Direct counting of non-black cards in the deck.'
+      mathTool: null
+      finalAnswer: P(not E) = 1/2. Both methods verify this result.
+      stepByStepGuideline:
+      - 'Identify the given probability: P(E) = 1/2 (Drawing a black card).'
+      - 'Calculate P(not E) using the complementary formula: P(not E) = 1 - P(E) = 1 - 1/2 = 1/2.'
+      - 'Calculate P(not E) using direct counting: The cards that are NOT black are the red cards (Hearts or Diamonds). There
+        are 26 red cards in the deck.'
+      - The probability of not drawing a black card by counting is P(not E) = (Number of red cards) / (Total cards) = 26/52.
+      - 'Simplify the fraction 26/52: P(not E) = 1/2.'
+      - Verify that both methods yield the same result (1/2) and that P(E) + P(not E) = 1/2 + 1/2 = 1.
+      id: q15-4
+      questionGroup: q15
+    - problemText: 'A spinner is divided into 4 equal sectors labeled: Green, Green, Blue, and Red. Let Event E be the outcome
+        of landing on Red. The probability of landing on Red is P(E) = 1/4.
+
+
+        Find P(not E), the probability of NOT landing on Red, using:
+
+
+        (i) The complementary probability formula.
+
+        (ii) Direct counting of the non-Red sectors.'
+      mathTool: null
+      finalAnswer: P(not E) = 3/4. Both methods verify this result.
+      stepByStepGuideline:
+      - 'Identify the given probability: P(E) = 1/4 (Landing on Red).'
+      - 'Calculate P(not E) using the complementary formula: P(not E) = 1 - P(E) = 1 - 1/4 = 3/4.'
+      - 'Calculate P(not E) using direct counting: The spinner has 4 total sectors. The sectors that are NOT Red are Green,
+        Green, and Blue (3 sectors).'
+      - The probability of not landing on Red by counting is P(not E) = (Number of non-Red sectors) / (Total sectors) = 3/4.
+      - Verify that both methods yield the same result (3/4) and that P(E) + P(not E) = 1/4 + 3/4 = 1.
+      id: q15-5
+      questionGroup: q15
+- id: prob-node-16
+  nodeNumber: 16
+  title: When to Use Complement Method
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A quality control engineer inspects a batch of electronic components. Based on historical data, the probability
+        that a randomly chosen component is defective (Event D) is P(D) = 0.015. Using the complement method, find the probability
+        that a randomly chosen component is NOT defective (P(not D)). Express your answer as a decimal.
+      avatarIntro: Welcome! Understanding the complement method is key to solving many real-world probability problems efficiently.
+        Let's start with quality control.
+      mathTool: null
+      finalAnswer: '0.985'
+      stepByStepGuideline:
+      - 'Identify the event E for which the probability is known: Event D (defective component), P(D) = 0.015.'
+      - 'Identify the event we need to find: P(not D), the probability that the component is not defective.'
+      - 'Apply the complement rule: P(not D) = 1 - P(D).'
+      - 'Calculate the result: P(not D) = 1 - 0.015 = 0.985.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: In a large metropolitan area, research shows that the probability of a randomly selected resident owning
+        a pet dog is P(Dog) = 0.45, and the probability of owning a pet cat is P(Cat) = 0.30. Assuming these two types of
+        pet ownership are mutually exclusive for this specific survey (a resident owns either a dog, a cat, or neither), calculate
+        the probability that a randomly selected resident owns NEITHER a dog nor a cat. Should you use the complement method
+        or direct calculation, and why?
+      mathTool: null
+      finalAnswer: 0.25. The complement method is more efficient because P(E) = P(Dog or Cat) is easy to find, and P(not E)
+        is the required outcome.
+      stepByStepGuideline:
+      - Define the event E as owning a pet (Dog or Cat). Since Dog and Cat ownership are mutually exclusive, P(E) = P(Dog)
+        + P(Cat).
+      - 'Calculate P(E): P(E) = 0.45 + 0.30 = 0.75.'
+      - The goal is to find the probability of owning neither, which is P(not E).
+      - 'Apply the complement rule: P(not E) = 1 - P(E).'
+      - 'Calculate the result: P(not E) = 1 - 0.75 = 0.25.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: 'A basket contains 18 items: 5 oranges, 7 apples, 4 bananas, and 2 kiwi fruits. If one fruit is selected
+        randomly, find the probability that the selected fruit is NOT an apple. Calculate the result using both the direct
+        counting method and the complement method. Which method do you find slightly quicker in this instance?'
+      mathTool: null
+      finalAnswer: 11/18 (or 0.611 recurring). Both methods are efficient, but the complement method often involves fewer
+        additions (1 subtraction vs 3 additions).
+      stepByStepGuideline:
+      - 'Determine the total number of outcomes: 18 fruits.'
+      - 'Method 1: Direct Counting (P(not Apple)). P(not Apple) = P(Orange) + P(Banana) + P(Kiwi) = (5 + 4 + 2) / 18 = 11/18.'
+      - 'Method 2: Complement Method. First, find P(Apple) = 7/18.'
+      - 'Apply the complement rule: P(not Apple) = 1 - P(Apple) = 1 - 7/18 = 18/18 - 7/18 = 11/18.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: 'A manager is tracking the probability of different sales outcomes for the quarter, categorized by size:
+        Small (S), Medium (M), and Large (L). The established probabilities are P(S) = 0.45, P(M) = 0.35, and P(L) = 0.20.
+        Calculate the probability that the next sale is NOT a small sale (P(not S)).'
+      mathTool: null
+      finalAnswer: '0.55'
+      stepByStepGuideline:
+      - 'Identify the probability of the event E: P(S) = 0.45.'
+      - 'Identify the required probability: P(not S).'
+      - 'Apply the complement method: P(not S) = 1 - P(S).'
+      - 'Calculate the result: P(not S) = 1 - 0.45 = 0.55. (Alternatively, P(not S) = P(M) + P(L) = 0.35 + 0.20 = 0.55).'
+      id: q16-4
+      questionGroup: q16
+    - problemText: A student is randomly selecting an integer from 1 to 60, inclusive. Let Event E be the outcome of selecting
+        a multiple of 10. List the outcomes in E and calculate P(not E).
+      mathTool: null
+      finalAnswer: 54/60 or 9/10
+      stepByStepGuideline:
+      - 'Determine the total number of outcomes: N = 60.'
+      - 'Identify the favorable outcomes for Event E (Multiples of 10): E = {10, 20, 30, 40, 50, 60}. There are 6 outcomes
+        in E.'
+      - 'Calculate P(E): P(E) = (Number of outcomes in E) / N = 6/60 = 1/10.'
+      - 'Use the complement method to find P(not E): P(not E) = 1 - P(E).'
+      - 'Calculate the result: P(not E) = 1 - 6/60 = 54/60. This simplifies to 9/10.'
+      id: q16-5
+      questionGroup: q16
+- id: prob-node-17
+  nodeNumber: 17
+  title: Real-World Probability - Prize Wheels
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A supermarket runs a promotional game where customers spin a wheel divided into 6 equal sectors. The prizes
+        are: $30 Gift Card, $50 Gift Card, $60 Gift Card, Coffee Mug, $40 Gift Card, and a Gourmet Cake.
+
+
+        (i) Calculate the probability that a customer wins a physical item (Coffee Mug or Gourmet Cake).
+
+        (ii) If a customer needs cash urgently, what is the probability they win a cash voucher (Gift Card)?'
+      avatarIntro: Welcome! Understanding probability helps us calculate our chances of winning real-world prizes. Let's start
+        with a promotional prize wheel problem.
+      mathTool: null
+      finalAnswer: (i) 1/3; (ii) 2/3
+      stepByStepGuideline:
+      - Identify the total number of equally likely outcomes (sectors), which is 6.
+      - 'For part (i), identify the number of favorable outcomes (physical items): Coffee Mug and Gourmet Cake (2 outcomes).
+        Calculate the probability: P(Physical Item) = 2/6 = 1/3.'
+      - 'For part (ii), identify the number of favorable outcomes (cash vouchers/Gift Cards): $30, $50, $60, $40 (4 outcomes).
+        Calculate the probability: P(Cash Voucher) = 4/6 = 2/3.'
+      id: q17-1
+      questionGroup: q17
+    - problemText: 'The movement spinner for the board game "Galactic Trek" is divided into 8 equal sectors labeled: Move
+        1, Move 1, Move 1, Move 1, Move 2, Move 2, Move 3, and Go Back 1.
+
+
+        (i) What is the probability that a player moves exactly 1 space forward?
+
+        (ii) What is the probability that a player moves 2 or more spaces forward?'
+      mathTool: null
+      finalAnswer: (i) 1/2; (ii) 3/8
+      stepByStepGuideline:
+      - Identify the total number of equally likely outcomes (sectors), which is 8.
+      - 'For part (i), count the sectors labeled ''Move 1''. There are 4 such sectors. Calculate the probability: P(Move 1)
+        = 4/8 = 1/2.'
+      - 'For part (ii), count the sectors that result in moving 2 or more spaces forward (Move 2 or Move 3). There are 2 sectors
+        for Move 2 and 1 sector for Move 3, totaling 3 favorable outcomes. Calculate the probability: P(Move 2 or More) =
+        3/8.'
+      id: q17-2
+      questionGroup: q17
+    - problemText: 'An arcade center uses a large prize spinner where the outcomes are determined by sectors of unequal size.
+        The sectors are defined by angles: Big Prize (150°), Medium Prize (90°), and Try Again (120°).
+
+
+        (i) Determine the theoretical probability of winning the Big Prize.
+
+        (ii) If a player spins 60 times, how many times would you expect them to land on ''Try Again''?'
+      mathTool: null
+      finalAnswer: (i) 5/12; (ii) 20 times
+      stepByStepGuideline:
+      - Recall that probability with unequal sectors is calculated as (Sector Angle / 360°).
+      - 'For part (i), P(Big Prize) = 150° / 360°. Simplify the fraction: 15/36, which reduces to 5/12.'
+      - 'For part (ii), first calculate P(Try Again): 120° / 360° = 1/3.'
+      - 'Calculate the expected number of times by multiplying the probability by the number of trials: Expected = 60 * (1/3)
+        = 20 times.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: 'A local community center holds a raffle with 150 tickets sold. The tickets are color-coded: 75 Red, 50
+        Blue, and 25 Green. The Grand Prize is reserved only for tickets that are Blue or Green.
+
+
+        (i) What is the probability that a randomly drawn ticket is Red?
+
+        (ii) What is the probability that the winning ticket is eligible for the Grand Prize?'
+      mathTool: null
+      finalAnswer: (i) 1/2; (ii) 1/2
+      stepByStepGuideline:
+      - Identify the total number of tickets sold, which is 150.
+      - 'For part (i), the number of Red tickets is 75. Calculate the probability: P(Red) = 75/150 = 1/2.'
+      - 'For part (ii), the Grand Prize is eligible for Blue or Green tickets. Calculate the total number of eligible tickets:
+        50 (Blue) + 25 (Green) = 75 tickets.'
+      - 'Calculate the probability of eligibility: P(Eligible) = 75/150 = 1/2.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: 'A specialty vending machine contains 40 mystery boxes. The contents are distributed as follows: 5 boxes
+        contain a Golden Ticket (major prize), 15 boxes contain a Silver Ticket (minor prize), and 20 boxes contain a Consolation
+        Item.
+
+
+        (i) What is the probability of winning a Golden Ticket?
+
+        (ii) If a student buys a box only if the chance of winning a Silver or Golden Ticket combined is greater than 50%,
+        should they buy a box? Justify your answer using probability.'
+      mathTool: null
+      finalAnswer: (i) 1/8; (ii) No, because the probability is exactly 50% (1/2), not greater than 50%.
+      stepByStepGuideline:
+      - Identify the total number of outcomes (boxes), which is 40.
+      - 'For part (i), the number of Golden Tickets is 5. Calculate the probability: P(Golden Ticket) = 5/40 = 1/8.'
+      - 'For part (ii), calculate the total number of favorable outcomes (Golden or Silver): 5 + 15 = 20.'
+      - 'Calculate the combined probability: P(Golden or Silver) = 20/40 = 1/2, or 50%.'
+      - Since the condition requires the probability to be *greater* than 50%, and 50% is not greater than 50%, the student
+        should not buy the box.
+      id: q17-5
+      questionGroup: q17
+- id: prob-node-18
+  nodeNumber: 18
+  title: Real-World - Biased Experiments
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A manufacturer creates a six-sided die that is weighted (biased) to favor certain outcomes. The known
+        probabilities of rolling numbers 1 through 5 are given below:
+
+        P(1) = 0.1
+
+        P(2) = 0.15
+
+        P(3) = 0.2
+
+        P(4) = 0.25
+
+        P(5) = 0.2
+
+
+        Calculate the probability of rolling a 6, P(6).'
+      avatarIntro: Understanding biased experiments is key in real-world probability. Remember that the probabilities of all
+        possible outcomes must always add up to 1.
+      mathTool: null
+      finalAnswer: '0.1'
+      stepByStepGuideline:
+      - 'Recall that the sum of all probabilities for all possible outcomes must equal 1: P(1) + P(2) + P(3) + P(4) + P(5)
+        + P(6) = 1.'
+      - 'Sum the known probabilities: 0.1 + 0.15 + 0.2 + 0.25 + 0.2 = 0.9.'
+      - 'Subtract this sum from 1 to find the missing probability P(6): P(6) = 1 - 0.9.'
+      - The probability of rolling a 6 is 0.1.
+      id: q18-1
+      questionGroup: q18
+    - problemText: 'A carnival game uses a weighted spinner that can land on Red, Blue, or Green. The outcomes are not equally
+        likely. The probability of landing on Red is 0.4, and the probability of landing on Blue is 0.35.
+
+
+        Find the probability of the spinner landing on Green.'
+      mathTool: null
+      finalAnswer: '0.25'
+      stepByStepGuideline:
+      - 'Identify the possible outcomes: Red, Blue, and Green. Their probabilities must sum to 1.'
+      - 'Sum the given probabilities: P(Red) + P(Blue) = 0.4 + 0.35 = 0.75.'
+      - 'Subtract this total from 1 to find the probability of landing on Green: P(Green) = 1 - 0.75.'
+      - The probability of landing on Green is 0.25.
+      id: q18-2
+      questionGroup: q18
+    - problemText: 'A laboratory experiment involves a heavily biased six-sided die. The probabilities of rolling numbers
+        1 through 5 are recorded as:
+
+        P(1) = 0.05
+
+        P(2) = 0.1
+
+        P(3) = 0.15
+
+        P(4) = 0.2
+
+        P(5) = 0.3
+
+
+        Determine the probability of rolling a 6, P(6).'
+      mathTool: null
+      finalAnswer: '0.2'
+      stepByStepGuideline:
+      - The sum of all probabilities P(1) through P(6) must be 1.
+      - 'Calculate the sum of the known probabilities: 0.05 + 0.1 + 0.15 + 0.2 + 0.3 = 0.8.'
+      - 'Subtract the sum from 1 to find P(6): P(6) = 1 - 0.8.'
+      - The probability P(6) is 0.2.
+      id: q18-3
+      questionGroup: q18
+    - problemText: 'A digital lottery uses a simulated weighted wheel with three outcomes: Red, Yellow, and Blue. The wheel
+        is designed such that the probability of landing on Red is 0.5 and the probability of landing on Yellow is 0.2.
+
+
+        Calculate the probability of the wheel landing on Blue.'
+      mathTool: null
+      finalAnswer: '0.3'
+      stepByStepGuideline:
+      - The probabilities for all outcomes (Red, Yellow, Blue) must sum to 1.
+      - 'Sum the known probabilities: P(Red) + P(Yellow) = 0.5 + 0.2 = 0.7.'
+      - 'Subtract this total from 1 to find the probability of Blue: P(Blue) = 1 - 0.7.'
+      - The probability of landing on Blue is 0.3.
+      id: q18-4
+      questionGroup: q18
+    - problemText: 'In a town planning survey, researchers recorded the primary mode of transport used by residents to commute
+        to work. The four possible outcomes are Car, Bus, Bike, or Walk. The probabilities determined from the survey are:
+
+
+        P(Car) = 0.55
+
+        P(Bus) = 0.15
+
+        P(Bike) = 0.1
+
+
+        Assuming these four modes cover all possibilities, what is the probability that a randomly selected resident walks
+        to work, P(Walk)?'
+      mathTool: null
+      finalAnswer: '0.2'
+      stepByStepGuideline:
+      - The sum of the probabilities for all four commuting methods must equal 1.
+      - 'Sum the known probabilities: P(Car) + P(Bus) + P(Bike) = 0.55 + 0.15 + 0.1 = 0.8.'
+      - 'Subtract this sum from 1 to find P(Walk): P(Walk) = 1 - 0.8.'
+      - The probability that a resident walks to work is 0.2.
+      id: q18-5
+      questionGroup: q18

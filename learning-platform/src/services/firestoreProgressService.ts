@@ -388,6 +388,7 @@ export async function savePracticeProgress(
         currentLevel: progress.currentLevel,
         currentStreak: progress.streak?.currentStreak || 0,
         longestStreak: progress.streak?.longestStreak || 0,
+        lastActivityDate: progress.streak?.lastActivityDate || '',
         totalAchievements: progress.achievements?.length || 0,
         lastUpdated: new Date().toISOString()
       }

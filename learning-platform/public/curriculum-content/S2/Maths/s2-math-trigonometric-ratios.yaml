@@ -1,0 +1,2129 @@
+# S2 Math Trigonometric Ratios - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: trig-node-1
+  nodeNumber: 1
+  title: Identifying Triangle Parts Relative to an Angle
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: 'In the right triangle ABC, with the right angle located at vertex C, list all three sides: the hypotenuse,
+        the side opposite to angle A, and the side adjacent to angle A.'
+      avatarIntro: Identifying the sides of a right triangle is the first crucial step in trigonometry. Remember that opposite
+        and adjacent sides depend entirely on the angle you are focusing on!
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: BC
+          adjacent: AC
+          hypotenuse: AB
+          angle: 0
+          angleLabel: A
+          showRightAngle: true
+          showAngleMark: true
+          caption: Identify sides with reference to angle A
+      finalAnswer: 'Hypotenuse: AB, Opposite side: BC, Adjacent side: AC'
+      stepByStepGuideline:
+      - The hypotenuse is the side opposite the right angle (C), which is AB.
+      - The side opposite angle A is the side that does not touch angle A, which is BC.
+      - The side adjacent to angle A is the side that forms angle A (excluding the hypotenuse), which is AC.
+      id: q1-1
+      questionGroup: q1
+    - problemText: Triangle PQR has a right angle at R. With reference to angle P, which side is the opposite side?
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: QR
+          adjacent: PR
+          hypotenuse: PQ
+          angle: 0
+          angleLabel: P
+          showRightAngle: true
+          showAngleMark: true
+          caption: Identify sides with reference to angle P
+      finalAnswer: QR
+      stepByStepGuideline:
+      - Locate the reference angle P.
+      - The opposite side is the side directly across from angle P.
+      - The side opposite to angle P is QR.
+      id: q1-2
+      questionGroup: q1
+    - problemText: Identify the adjacent side to angle X in the right-angled triangle XYZ, where the right angle is at Z.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: YZ
+          adjacent: XZ
+          hypotenuse: XY
+          angle: 0
+          angleLabel: X
+          showRightAngle: true
+          showAngleMark: true
+          caption: Identify sides with reference to angle X
+      finalAnswer: XZ
+      stepByStepGuideline:
+      - Locate the reference angle X.
+      - Identify the hypotenuse (XY) and the opposite side (YZ).
+      - The adjacent side is the leg connected to angle X that is not the hypotenuse. This side is XZ.
+      id: q1-3
+      questionGroup: q1
+    - problemText: In triangle LMN, the right angle is at N. Name the hypotenuse.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: MN
+          adjacent: LN
+          hypotenuse: LM
+          angle: 0
+          angleLabel: L
+          showRightAngle: true
+          showAngleMark: true
+          caption: Identify sides with reference to angle L
+      finalAnswer: LM
+      stepByStepGuideline:
+      - The hypotenuse is defined as the side opposite the right angle.
+      - The right angle is located at vertex N.
+      - The side opposite vertex N is LM.
+      id: q1-4
+      questionGroup: q1
+    - problemText: Consider the right triangle ABC (right angle at C). With reference to angle B, which side is the opposite
+        side?
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: AC
+          adjacent: BC
+          hypotenuse: AB
+          angle: 0
+          angleLabel: B
+          showRightAngle: true
+          showAngleMark: true
+          caption: Identify sides with reference to angle B
+      finalAnswer: AC
+      stepByStepGuideline:
+      - Locate the reference angle B.
+      - The opposite side is the side that does not form angle B.
+      - 'The side opposite to angle B is AC. (Note: This is the adjacent side if referencing angle A.)'
+      id: q1-5
+      questionGroup: q1
+- id: trig-node-2
+  nodeNumber: 2
+  title: Stating the Three Trigonometric Ratios
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: State the formula for the tangent ratio (tan θ) using the terms Opposite, Adjacent, and Hypotenuse.
+      avatarIntro: Welcome! We are starting with the foundational definitions of trigonometry. Let's make sure you remember
+        all parts of SOH-CAH-TOA.
+      mathTool: null
+      finalAnswer: tan θ = Opposite/Adjacent or opp/adj
+      stepByStepGuideline:
+      - Recall the SOH-CAH-TOA mnemonic.
+      - The 'TOA' part stands for Tangent = Opposite / Adjacent.
+      - Therefore, the formula is tan θ = Opposite/Adjacent.
+      id: q2-1
+      questionGroup: q2
+    - problemText: 'Complete the trigonometric ratio definition: cos θ = ?/?'
+      mathTool: null
+      finalAnswer: adj/hyp or Adjacent/Hypotenuse
+      stepByStepGuideline:
+      - Recall the SOH-CAH-TOA mnemonic.
+      - The 'CAH' part stands for Cosine = Adjacent / Hypotenuse.
+      - 'Complete the ratio: cos θ = Adjacent/Hypotenuse.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: What does the sine ratio (sin θ) equal in terms of the sides opposite, adjacent, and hypotenuse?
+      mathTool: null
+      finalAnswer: Opposite/Hypotenuse or opp/hyp
+      stepByStepGuideline:
+      - Recall the SOH-CAH-TOA mnemonic.
+      - The 'SOH' part stands for Sine = Opposite / Hypotenuse.
+      - The sine ratio equals Opposite divided by Hypotenuse.
+      id: q2-3
+      questionGroup: q2
+    - problemText: In the SOH-CAH-TOA mnemonic, what does the 'SOH' stand for?
+      mathTool: null
+      finalAnswer: Sine = Opposite / Hypotenuse
+      stepByStepGuideline:
+      - SOH-CAH-TOA is a mnemonic device used to remember the trigonometric ratios.
+      - SOH stands for Sine equals Opposite divided by Hypotenuse.
+      id: q2-4
+      questionGroup: q2
+    - problemText: Write down an expression for the tangent of angle θ using the abbreviations 'opp' for opposite, 'adj' for
+        adjacent, and 'hyp' for hypotenuse.
+      mathTool: null
+      finalAnswer: tan θ = opp/adj
+      stepByStepGuideline:
+      - 'Identify the trigonometric ratio requested: Tangent (tan θ).'
+      - 'Recall the ratio definition: TOA (Tangent = Opposite / Adjacent).'
+      - 'Write the expression using abbreviations: tan θ = opp/adj.'
+      id: q2-5
+      questionGroup: q2
+- id: trig-node-3
+  nodeNumber: 3
+  title: Calculating Exact Ratio Values from Diagrams
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: Given the right triangle below, where the side opposite angle $\theta$ is 3 units and the adjacent side
+        is 4 units, calculate the exact value of $\sin \theta$. Express your answer as a fraction or decimal.
+      avatarIntro: Welcome! Understanding trigonometric ratios starts with correctly identifying the sides of a right triangle.
+        Let's find the sine ratio for this angle.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 3
+          adjacent: 4
+          hypotenuse: 5
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 3/5 or 0.6
+      stepByStepGuideline:
+      - 'Identify the sides relative to angle $\theta$: Opposite (O) = 3, Adjacent (A) = 4, Hypotenuse (H) = 5.'
+      - 'Recall the formula for sine: $\sin \theta = \text{Opposite} / \text{Hypotenuse}$.'
+      - 'Substitute the values: $\sin \theta = 3 / 5$.'
+      - The exact value is $3/5$ or $0.6$.
+      id: q3-1
+      questionGroup: q3
+    - problemText: A right-angled triangle has side lengths of 5, 12, and 13. If the angle $\theta$ is opposite the side of
+        length 5, find the exact value of $\cos \theta$.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 5
+          adjacent: 12
+          hypotenuse: 13
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 12/13
+      stepByStepGuideline:
+      - 'Identify the sides relative to angle $\theta$: Opposite (O) = 5, Adjacent (A) = 12, Hypotenuse (H) = 13.'
+      - 'Recall the formula for cosine: $\cos \theta = \text{Adjacent} / \text{Hypotenuse}$.'
+      - 'Substitute the values: $\cos \theta = 12 / 13$.'
+      - The exact value is $12/13$.
+      id: q3-2
+      questionGroup: q3
+    - problemText: Based on the dimensions shown in the diagram, where the side lengths are 8, 15, and 17, determine the value
+        of $\tan \theta$. Express your answer as a simplified fraction.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 8
+          adjacent: 15
+          hypotenuse: 17
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 8/15
+      stepByStepGuideline:
+      - 'Identify the sides relative to angle $\theta$: Opposite (O) = 8, Adjacent (A) = 15, Hypotenuse (H) = 17.'
+      - 'Recall the formula for tangent: $\tan \theta = \text{Opposite} / \text{Adjacent}$.'
+      - 'Substitute the values: $\tan \theta = 8 / 15$.'
+      - The fraction $8/15$ is already simplified.
+      id: q3-3
+      questionGroup: q3
+    - problemText: In the right triangle shown, the side lengths are 6, 8, and 10. Calculate $\cos \theta$ where the side
+        adjacent to $\theta$ is 8.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 6
+          adjacent: 8
+          hypotenuse: 10
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 8/10 or 4/5 or 0.8
+      stepByStepGuideline:
+      - 'Identify the sides relative to angle $\theta$: Opposite (O) = 6, Adjacent (A) = 8, Hypotenuse (H) = 10.'
+      - 'Recall the formula for cosine: $\cos \theta = \text{Adjacent} / \text{Hypotenuse}$.'
+      - 'Substitute the values: $\cos \theta = 8 / 10$.'
+      - 'Simplify the fraction: $8/10 = 4/5$. The value is $4/5$ or $0.8$.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: Using the right triangle provided, with sides 3, 4, and 5, find the exact value of the tangent ratio, $\tan
+        \theta$.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 3
+          adjacent: 4
+          hypotenuse: 5
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 3/4 or 0.75
+      stepByStepGuideline:
+      - 'Identify the sides relative to angle $\theta$: Opposite (O) = 3, Adjacent (A) = 4.'
+      - 'Recall the formula for tangent: $\tan \theta = \text{Opposite} / \text{Adjacent}$.'
+      - 'Substitute the values: $\tan \theta = 3 / 4$.'
+      - The exact value is $3/4$ or $0.75$.
+      id: q3-5
+      questionGroup: q3
+- id: trig-node-4
+  nodeNumber: 4
+  title: Finding Opposite Side Using Sine
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: In the right-angled triangle ABC shown, the hypotenuse AB measures 20 cm and angle A is 35°. Calculate
+        the length of the side opposite angle A (side BC). Give your answer to 1 decimal place.
+      avatarIntro: Trigonometry is essential for solving real-world height and distance problems. Remember to use the sine
+        ratio when you know the hypotenuse and the angle opposite the side you need to find!
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: variable
+          hypotenuse: 20
+          angle: 35
+          showRightAngle: true
+          showAngleMark: true
+          unit: cm
+      finalAnswer: 11.5 cm
+      stepByStepGuideline:
+      - 'Identify the known values: Hypotenuse (H) = 20 cm, Angle (θ) = 35°. We need to find the Opposite side (O).'
+      - 'Use the sine formula: sin θ = Opposite / Hypotenuse.'
+      - 'Rearrange the formula to solve for the Opposite side: Opposite = Hypotenuse × sin θ.'
+      - 'Substitute the values: Opposite = 20 × sin(35°).'
+      - 'Calculate the result: 20 × 0.57357... ≈ 11.4715 cm.'
+      - 'Round the answer to 1 decimal place: 11.5 cm.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: A ladder 12 m long leans against a vertical wall, making an angle of 52° with the ground. Calculate the
+        vertical height (h) reached by the top of the ladder on the wall. Round your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: variable
+          hypotenuse: 12
+          angle: 52
+          showRightAngle: true
+          showAngleMark: true
+          unit: m
+      finalAnswer: 9.46 m
+      stepByStepGuideline:
+      - The length of the ladder is the hypotenuse (H = 12 m). The height (h) is the side opposite the angle (θ = 52°).
+      - 'Use the sine relationship: Opposite = Hypotenuse × sin θ.'
+      - 'Substitute the values: h = 12 × sin(52°).'
+      - 'Calculate the value: h ≈ 12 × 0.78801... ≈ 9.4561 m.'
+      - 'Round the answer to 2 decimal places: 9.46 m.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: A kite string is 30 mm long. If the string makes an angle of 60° with the ground, find the altitude (height)
+        of the kite above the ground. Give your answer correct to 3 significant figures.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: variable
+          hypotenuse: 30
+          angle: 60
+          showRightAngle: true
+          showAngleMark: true
+          unit: mm
+      finalAnswer: 26.0 mm
+      stepByStepGuideline:
+      - The length of the string is the hypotenuse (H = 30 mm). The altitude is the side opposite the angle (θ = 60°).
+      - 'Use the formula: Opposite = Hypotenuse × sin θ.'
+      - 'Substitute the values: Altitude = 30 × sin(60°).'
+      - 'Calculate the result: Altitude ≈ 30 × 0.86602... ≈ 25.9807 mm.'
+      - 'Round the answer to 3 significant figures: 26.0 mm.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: A wheelchair ramp is 18 cm long. If the angle of elevation of the ramp is 40°, calculate the vertical height
+        (h) reached by the end of the ramp. Express your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: variable
+          hypotenuse: 18
+          angle: 40
+          showRightAngle: true
+          showAngleMark: true
+          unit: cm
+      finalAnswer: 11.57 cm
+      stepByStepGuideline:
+      - The length of the ramp is the hypotenuse (H = 18 cm). The vertical height (h) is the side opposite the angle (θ =
+        40°).
+      - 'Apply the sine ratio: Opposite = Hypotenuse × sin θ.'
+      - 'Calculation: h = 18 × sin(40°).'
+      - 'Calculate the value: h ≈ 18 × 0.64278... ≈ 11.5701 cm.'
+      - 'Round the answer to 2 decimal places: 11.57 cm.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: In right triangle PQR, the right angle is at Q. Given that the hypotenuse PR is 25 m and angle P is 25°,
+        find the length of the side opposite angle P (side QR). Round your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: variable
+          hypotenuse: 25
+          angle: 25
+          showRightAngle: true
+          showAngleMark: true
+          unit: m
+      finalAnswer: 10.6 m
+      stepByStepGuideline:
+      - 'Identify the knowns: Hypotenuse (H) = 25 m, Angle (θ) = 25°. We need the Opposite side (QR).'
+      - 'Use the sine formula: QR = PR × sin(P).'
+      - 'Substitute the values: QR = 25 × sin(25°).'
+      - 'Calculate the result: 25 × 0.42261... ≈ 10.5653 m.'
+      - 'Round the answer to 1 decimal place: 10.6 m.'
+      id: q4-5
+      questionGroup: q4
+- id: trig-node-5
+  nodeNumber: 5
+  title: Finding Hypotenuse Using Sine
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: An engineer is designing a supporting cable for a small bridge tower. The vertical height (opposite side)
+        from the anchor point to the top of the tower is 7 meters. If the cable must make an angle of 42° with the ground,
+        calculate the required length of the cable (the hypotenuse). Give your answer to 1 decimal place.
+      avatarIntro: Remember, when finding the hypotenuse using sine, you must divide the opposite side length by the sine
+        of the angle. This is a common point of error!
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 7
+          adjacent: variable
+          angle: 42
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 10.5 m
+      stepByStepGuideline:
+      - 'Identify the known values: Opposite side (O) = 7 m, Angle (θ) = 42°.'
+      - 'Identify the unknown: Hypotenuse (H).'
+      - 'Use the sine ratio: $\sin \theta = O / H$.'
+      - 'Rearrange the formula to solve for the hypotenuse: $H = O / \sin \theta$.'
+      - 'Substitute the values: $H = 7 / \sin(42^\circ)$.'
+      - 'Calculate: $H \approx 7 / 0.6691 \approx 10.4616$ m.'
+      - 'Round the answer to 1 decimal place: 10.5 m.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: In right-angled triangle XYZ, the right angle is at Y. If the side opposite angle Z (side XY) is 15 cm
+        and angle Z measures 67°, find the length of the hypotenuse XZ. Give your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 15
+          adjacent: variable
+          angle: 67
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 16.30 cm
+      stepByStepGuideline:
+      - 'Identify the known values relative to angle Z: Opposite side (XY) = 15 cm, Angle Z (θ) = 67°.'
+      - 'Identify the unknown: Hypotenuse (XZ).'
+      - 'Use the formula derived from the sine ratio: $Hypotenuse = Opposite / \sin \theta$.'
+      - 'Substitute the values: $XZ = 15 / \sin(67^\circ)$.'
+      - 'Calculate: $XZ \approx 15 / 0.9205 \approx 16.2976$ cm.'
+      - 'Round the answer to 2 decimal places: 16.30 cm.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: A surveyor needs to find the length of a planned ski slope (the hypotenuse). The vertical elevation gain
+        required is 10 meters. If the slope must maintain an angle of elevation of 32°, what is the total length of the slope?
+        Round your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 10
+          adjacent: variable
+          angle: 32
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 18.9 m
+      stepByStepGuideline:
+      - 'Identify the known values: Opposite side (vertical height) = 10 m, Angle of elevation (θ) = 32°.'
+      - The length of the slope is the hypotenuse (H).
+      - 'Use the sine ratio rearranged: $H = Opposite / \sin \theta$.'
+      - 'Substitute the values: $H = 10 / \sin(32^\circ)$.'
+      - 'Calculate: $H \approx 10 / 0.5299 \approx 18.8707$ m.'
+      - 'Round the answer to 1 decimal place: 18.9 m.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: A construction worker is installing a diagonal support beam inside a rectangular tunnel framework. The
+        vertical distance (opposite) from the base to the attachment point is 8 cm. If the beam must make an angle of 58°
+        with the floor, determine the required length of the support beam. Round your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 8
+          adjacent: variable
+          angle: 58
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 9.43 cm
+      stepByStepGuideline:
+      - 'Identify the known values: Opposite side (vertical height) = 8 cm, Angle (θ) = 58°.'
+      - The support beam is the hypotenuse (H).
+      - 'Use the formula: $H = Opposite / \sin \theta$.'
+      - 'Substitute the values: $H = 8 / \sin(58^\circ)$.'
+      - 'Calculate: $H \approx 8 / 0.8480 \approx 9.4340$ cm.'
+      - 'Round the answer to 2 decimal places: 9.43 cm.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: A triangular sail on a ship has a height (opposite side) of 5 meters. If the top edge of the sail (the
+        hypotenuse) makes an angle of 28° with the bottom edge, find the length of the top edge of the sail. Round your answer
+        to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 5
+          adjacent: variable
+          angle: 28
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 10.6 m
+      stepByStepGuideline:
+      - 'Identify the known values: Opposite side (O) = 5 m, Angle (θ) = 28°.'
+      - 'Identify the unknown: Hypotenuse (H).'
+      - 'Use the rearranged sine formula: $H = O / \sin \theta$.'
+      - 'Substitute the values: $H = 5 / \sin(28^\circ)$.'
+      - 'Calculate: $H \approx 5 / 0.4694 \approx 10.6472$ m.'
+      - 'Round the answer to 1 decimal place: 10.6 m.'
+      id: q5-5
+      questionGroup: q5
+- id: trig-node-6
+  nodeNumber: 6
+  title: Finding Adjacent Side Using Cosine
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: A steel support strut, 20 cm long, is installed connecting a vertical pillar to a horizontal base. The
+        strut makes an angle of 40° with the base (the adjacent side, labeled 'x'). Use the diagram provided to find the length
+        of x, rounded to 1 decimal place.
+      avatarIntro: Welcome! Remember that cosine relates the adjacent side and the hypotenuse. Carefully set up your equation
+        before calculating.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: variable
+          hypotenuse: 20
+          angle: 40
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 15.3 cm
+      stepByStepGuideline:
+      - 'Identify the relationship: We know the angle (40°), the hypotenuse (20 cm), and we need to find the adjacent side
+        (x). The ratio connecting these is Cosine: cos θ = Adjacent / Hypotenuse.'
+      - 'Set up the equation: cos 40° = x / 20.'
+      - 'Rearrange and calculate: x = 20 × cos 40°.'
+      - 'Calculate the value: x ≈ 15.3208 cm.'
+      - 'Round to 1 decimal place: x = 15.3 cm.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: In a miniaturized engineering schematic for a pipe junction, the diagonal connection (hypotenuse) is 12
+        mm long. This connection forms an angle of 62° with the horizontal run (x). Calculate the length of the horizontal
+        run (x) to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: variable
+          hypotenuse: 12
+          angle: 62
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 5.63 mm
+      stepByStepGuideline:
+      - 'Identify the relationship: We are given the hypotenuse (12 mm) and the angle (62°) adjacent to the required side
+        (x). Use the cosine ratio: Adjacent = Hypotenuse × cos θ.'
+      - 'Substitute values: x = 12 × cos 62°.'
+      - 'Calculate the value: x ≈ 5.6335 mm.'
+      - 'Round to 2 decimal places: x = 5.63 mm.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: A temporary bridge structure uses a diagonal member 28 m long. This diagonal creates an angle of 35° with
+        the ground (the adjacent side, D). Determine the horizontal distance D spanned by this section of the diagonal, rounding
+        your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: variable
+          hypotenuse: 28
+          angle: 35
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 22.9 m
+      stepByStepGuideline:
+      - 'Recognize the appropriate ratio: Since we have the hypotenuse (28 m) and the angle (35°) adjacent to the side D,
+        we use cosine.'
+      - 'Formulate the equation: D = Hypotenuse × cos (Angle).'
+      - 'Substitute and calculate: D = 28 × cos 35°.'
+      - 'Calculate the value: D ≈ 22.936 m.'
+      - 'Round to 1 decimal place: D = 22.9 m.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: An aircraft is descending along a path (hypotenuse) of 15 cm on a scale drawing. The angle of descent is
+        50° relative to the ground. Find the horizontal distance (x) covered during this descent path segment on the drawing.
+        Give your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: variable
+          hypotenuse: 15
+          angle: 50
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 9.64 cm
+      stepByStepGuideline:
+      - 'Determine knowns and unknown: Hypotenuse = 15 cm, Angle = 50°, Unknown = Adjacent side (x).'
+      - 'Apply the cosine formula: cos 50° = x / 15.'
+      - 'Solve for x: x = 15 × cos 50°.'
+      - 'Calculate: x ≈ 9.6418 cm.'
+      - 'Round to 2 decimal places: x = 9.64 cm.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: A roof truss has a top chord (hypotenuse) measuring 24 m. This chord forms an angle of 58° with the horizontal
+        ceiling line (adjacent side, L). Calculate the length of the horizontal projection L to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: variable
+          hypotenuse: 24
+          angle: 58
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 12.72 m
+      stepByStepGuideline:
+      - 'Use the Cosine relationship: The adjacent side (L) is found by multiplying the hypotenuse by the cosine of the angle.'
+      - 'Set up the calculation: L = 24 × cos 58°.'
+      - 'Perform the calculation: L ≈ 12.7179 m.'
+      - 'Round to 2 decimal places: L = 12.72 m.'
+      id: q6-5
+      questionGroup: q6
+- id: trig-node-7
+  nodeNumber: 7
+  title: Finding Hypotenuse Using Cosine
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: A construction crew is installing a diagonal support beam (H) for a small bridge. The beam must span a
+        horizontal distance of 15 m and form an angle of 50° with the ground, as shown in the diagram. Calculate the required
+        length of the support beam (H). Give your answer to 1 decimal place.
+      avatarIntro: Great job reaching this section! Remember, when you know the adjacent side and the angle, you use cosine
+        to find the hypotenuse.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 15 m
+          opposite: variable
+          angle: '50'
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 23.3 m
+      stepByStepGuideline:
+      - 'Identify the known values: Adjacent side (A) = 15 m, Angle (θ) = 50°. We need to find the Hypotenuse (H).'
+      - 'Select the appropriate trigonometric ratio: cos θ = Adjacent / Hypotenuse.'
+      - 'Rearrange the formula to solve for the hypotenuse: Hypotenuse = Adjacent / cos θ.'
+      - 'Substitute the values: H = 15 / cos(50°).'
+      - 'Calculate the result: H ≈ 23.3416...'
+      - 'Round the answer to 1 decimal place: 23.3 m.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: A designer is planning a diagonal brace for a piece of custom packaging. The horizontal length (adjacent
+        side) of the package is 10 cm, and the brace must make an angle of 32° with this side. Calculate the required length
+        of the diagonal brace (H). Round your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 10 cm
+          opposite: variable
+          angle: '32'
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 11.80 cm
+      stepByStepGuideline:
+      - 'Identify the known values: Adjacent side (A) = 10 cm, Angle (θ) = 32°. We are finding the Hypotenuse (H).'
+      - 'Use the cosine ratio rearranged: H = A / cos θ.'
+      - 'Substitute the values: H = 10 / cos(32°).'
+      - 'Calculate the result: H ≈ 11.7997...'
+      - 'Round the answer to 2 decimal places: 11.80 cm.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: In a mining operation, a new conveyor belt (H) is being installed to move material up an incline. The horizontal
+        distance covered by the conveyor section is 20 m, and the angle of inclination is 64°. Find the total length of the
+        conveyor belt (H). Round your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 20 m
+          opposite: variable
+          angle: '64'
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 45.6 m
+      stepByStepGuideline:
+      - 'Identify the known values: Adjacent side (A) = 20 m, Angle (θ) = 64°. We are finding the Hypotenuse (H).'
+      - 'Use the formula: Hypotenuse = Adjacent / cos θ.'
+      - 'Substitute the values: H = 20 / cos(64°).'
+      - 'Calculate the result: H ≈ 45.6247...'
+      - 'Round the answer to 1 decimal place: 45.6 m.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: An architectural plan shows a diagonal support member (H). The base of the support (adjacent side) is 8
+        cm long, and it forms an angle of 44° with the base. Calculate the precise length of the support member (H) required
+        for the model. Round your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 8 cm
+          opposite: variable
+          angle: '44'
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 11.12 cm
+      stepByStepGuideline:
+      - 'Identify the known values: Adjacent side (A) = 8 cm, Angle (θ) = 44°. We are finding the Hypotenuse (H).'
+      - 'Use the cosine relationship: H = A / cos θ.'
+      - 'Substitute the values: H = 8 / cos(44°).'
+      - 'Calculate the result: H ≈ 11.1217...'
+      - 'Round the answer to 2 decimal places: 11.12 cm.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: A forestry worker is securing a young tree using a guy wire (H). The wire needs to be anchored 18 m away
+        from the base of the tree (adjacent side) and must make an angle of 38° with the ground. Determine the minimum length
+        of the guy wire (H) needed. Round your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 18 m
+          opposite: variable
+          angle: '38'
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 22.8 m
+      stepByStepGuideline:
+      - 'Identify the known values: Adjacent side (A) = 18 m, Angle (θ) = 38°. We are finding the Hypotenuse (H).'
+      - 'Use the formula derived from the cosine ratio: H = Adjacent / cos θ.'
+      - 'Substitute the values: H = 18 / cos(38°).'
+      - 'Calculate the result: H ≈ 22.8447...'
+      - 'Round the answer to 1 decimal place: 22.8 m.'
+      id: q7-5
+      questionGroup: q7
+- id: trig-node-8
+  nodeNumber: 8
+  title: Finding Opposite Side Using Tangent
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: A landscape architect uses trigonometry to estimate the height of a flagpole (H). The measurement device
+        is placed 10 cm horizontally away from the base (adjacent side). The angle of elevation to the top of the pole is
+        35°. Calculate the height (H) of the pole to 1 decimal place.
+      avatarIntro: Remember, when you know the angle and the adjacent side, and you need to find the opposite side, the tangent
+        ratio is the tool you need!
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 10
+          angle: 35
+          unit: cm
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 7.0 cm
+      stepByStepGuideline:
+      - 'Identify the knowns: Angle $\theta = 35°$, Adjacent side = 10 cm. We need to find the Opposite side (H).'
+      - 'Choose the appropriate trigonometric ratio: Since we have Adjacent and want Opposite, we use Tangent: $\tan \theta
+        = \text{Opposite} / \text{Adjacent}$.'
+      - 'Rearrange the formula to solve for the Opposite side: $\text{Opposite} = \text{Adjacent} \times \tan \theta$.'
+      - 'Substitute the values: $H = 10 \times \tan(35°)$.'
+      - 'Calculate the result: $H \approx 7.0020$ cm.'
+      - 'Round the answer to 1 decimal place: 7.0 cm.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: A section of a new road covers a horizontal distance (run) of 24 m. If the road must maintain an uphill
+        gradient of 48°, calculate the total vertical rise (opposite side) of this section. Give your answer to 2 decimal
+        places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 24
+          angle: 48
+          unit: m
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 26.66 m
+      stepByStepGuideline:
+      - 'Identify the knowns: Angle $\theta = 48°$, Adjacent side = 24 m. We need to find the Opposite side (Vertical Rise).'
+      - 'Use the Tangent ratio: $\text{Opposite} = \text{Adjacent} \times \tan \theta$.'
+      - 'Substitute the values: $\text{Vertical Rise} = 24 \times \tan(48°)$.'
+      - 'Calculate the result: $\text{Vertical Rise} \approx 26.6554$ m.'
+      - 'Round the answer to 2 decimal places: 26.66 m.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: A robotic manipulator arm is extended such that its horizontal reach (adjacent side) is 15 mm. If the arm
+        makes an angle of 60° with the horizontal base, determine the vertical distance (opposite side) reached by the tip
+        of the arm. Round the result to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 15
+          angle: 60
+          unit: mm
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 26.0 mm
+      stepByStepGuideline:
+      - 'Identify the known values: Angle $\theta = 60°$, Adjacent side = 15 mm. We are solving for the Opposite side.'
+      - 'Apply the tangent formula: $\text{Opposite} = \text{Adjacent} \times \tan \theta$.'
+      - 'Substitute the numbers: $\text{Opposite} = 15 \times \tan(60°)$.'
+      - 'Calculate the value: $\text{Opposite} \approx 25.9807$ mm.'
+      - 'Round the answer to 1 decimal place: 26.0 mm.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: In a stage lighting setup, a light fixture is aimed such that the beam creates a right triangle. The horizontal
+        distance covered by the beam (adjacent) is 12 cm. If the angle of depression from the fixture is 52°, calculate the
+        vertical drop (opposite side) of the beam path. Express your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 12
+          angle: 52
+          unit: cm
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 15.36 cm
+      stepByStepGuideline:
+      - 'Identify the knowns: Angle $\theta = 52°$, Adjacent side = 12 cm. We need to find the Opposite side (Vertical Drop).'
+      - 'Use the Tangent ratio: $\tan \theta = \text{Opposite} / \text{Adjacent}$.'
+      - 'Rearrange: $\text{Opposite} = 12 \times \tan(52°)$.'
+      - 'Calculate the result: $\text{Opposite} \approx 15.3592$ cm.'
+      - 'Round the answer to 2 decimal places: 15.36 cm.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: A surveyor is mapping a triangular plot boundary (ABC, right angle at B). The side adjacent to angle C
+        (BC) measures 20 m. If angle C is 38°, find the length of the side opposite angle C (AB). Round your answer to 1 decimal
+        place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 20
+          angle: 38
+          unit: m
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 15.6 m
+      stepByStepGuideline:
+      - 'Identify the known values: Angle $C = 38°$, Adjacent side (BC) = 20 m. We are calculating the Opposite side (AB).'
+      - 'Set up the Tangent ratio: $\tan(C) = \text{Opposite} / \text{Adjacent}$.'
+      - 'Calculate the length of AB: $AB = 20 \times \tan(38°)$.'
+      - 'Find the numerical value: $AB \approx 15.6256$ m.'
+      - 'Round the answer to 1 decimal place: 15.6 m.'
+      id: q8-5
+      questionGroup: q8
+- id: trig-node-9
+  nodeNumber: 9
+  title: Finding Adjacent Side Using Tangent
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: A lamppost casts a shadow on the ground. The height of the lamppost (opposite side) is 10 meters. If the
+        angle of elevation from the tip of the shadow to the top of the lamppost is 40°, calculate the length of the shadow
+        (adjacent side, x). Give your answer to 1 decimal place.
+      avatarIntro: Great job reaching this section! Remember, when you need to find the adjacent side and you know the opposite
+        side and the angle, you must use the tangent ratio and rearrange the formula.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 10
+          angle: 40
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 11.9 m
+      stepByStepGuideline:
+      - 'Identify the known values: Opposite side (O) = 10 m, Angle (θ) = 40°. We need to find the Adjacent side (x).'
+      - 'Use the tangent ratio: tan θ = Opposite / Adjacent.'
+      - 'Rearrange the formula to solve for Adjacent: Adjacent = Opposite / tan θ.'
+      - 'Substitute the values: x = 10 / tan 40°.'
+      - 'Calculate the result: x ≈ 10 / 0.8391 ≈ 11.9175 m.'
+      - 'Round the answer to 1 decimal place: 11.9 m.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: A civil engineer is designing a ramp for accessibility. The required vertical rise (opposite side) is 15
+        cm. If the angle of inclination of the ramp must be 28°, calculate the required horizontal length (adjacent side,
+        L) of the ramp base. Round your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 15
+          angle: 28
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 28.21 cm
+      stepByStepGuideline:
+      - 'Identify the known values: Opposite side (O) = 15 cm, Angle (θ) = 28°. We need to find the Adjacent side (L).'
+      - 'Use the tangent ratio: tan θ = O / A.'
+      - 'Rearrange for Adjacent: A = O / tan θ.'
+      - 'Substitute the values: L = 15 / tan 28°.'
+      - 'Calculate the result: L ≈ 15 / 0.5317 ≈ 28.2113 cm.'
+      - 'Round the answer to 2 decimal places: 28.21 cm.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: A child is flying a kite. The kite is 8 meters vertically above the child's hands (opposite side). If the
+        angle of elevation from the ground anchor point (directly below the kite string reel) to the kite is 55°, how far
+        horizontally (adjacent side) is the kite from the anchor point? Round your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 8
+          angle: 55
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 5.6 m
+      stepByStepGuideline:
+      - 'Identify the known values: Opposite side (O) = 8 m, Angle (θ) = 55°. We need to find the Adjacent side (x).'
+      - 'Use the tangent relationship: Adjacent = Opposite / tan θ.'
+      - 'Substitute the values: x = 8 / tan 55°.'
+      - 'Calculate the result: x ≈ 8 / 1.4281 ≈ 5.6016 m.'
+      - 'Round the answer to 1 decimal place: 5.6 m.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: A scale model of a drilling rig requires a stabilizing wire attached to a vertical point 18 cm above the
+        base (opposite side). If the stabilizing wire must make an angle of 33° with the ground, what horizontal distance
+        (adjacent side, d) must the ground anchor be placed from the base of the rig? Express your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 18
+          angle: 33
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 27.72 cm
+      stepByStepGuideline:
+      - 'Identify the known values: Opposite side (O) = 18 cm, Angle (θ) = 33°. We need to find the Adjacent side (d).'
+      - 'Use the tangent formula: tan θ = O / A.'
+      - 'Rearrange the formula: A = O / tan θ.'
+      - 'Substitute the values: d = 18 / tan 33°.'
+      - 'Calculate the result: d ≈ 18 / 0.6494 ≈ 27.7186 cm.'
+      - 'Round the answer to 2 decimal places: 27.72 cm.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: An isosceles triangle has an altitude of 12 meters (which acts as the opposite side when considering half
+        the triangle). If the altitude meets the base at a right angle, and the angle at the top vertex of the resulting right
+        triangle is 50°, calculate the length of half the base (adjacent side, b). Round your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 12
+          angle: 50
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 10.1 m
+      stepByStepGuideline:
+      - 'Identify the known values: Opposite side (O) = 12 m, Angle (θ) = 50°. We need to find the Adjacent side (b).'
+      - 'Use the rearranged tangent formula: Adjacent = Opposite / tan θ.'
+      - 'Substitute the values: b = 12 / tan 50°.'
+      - 'Calculate the result: b ≈ 12 / 1.1918 ≈ 10.0691 m.'
+      - 'Round the answer to 1 decimal place: 10.1 m.'
+      id: q9-5
+      questionGroup: q9
+- id: trig-node-10
+  nodeNumber: 10
+  title: Choosing the Correct Ratio
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A geologist is measuring the depth of a fault line. The vertical depth (opposite side) is known to be 500
+        meters. The angle of depression observed from the surface point is 35°. Determine the trigonometric ratio required
+        to find the horizontal distance (adjacent side, x) from the surface point to the fault line, and set up the equation.
+      avatarIntro: Choosing the correct ratio is the first crucial step in solving any trigonometry problem. Remember SOH
+        CAH TOA!
+      mathTool: null
+      finalAnswer: 'Use the Tangent ratio. Equation setup: tan 35° = 500 / x, which rearranges to x = 500 / tan 35°.'
+      stepByStepGuideline:
+      - 'Identify the given information relative to the angle (35°): Opposite side (500m) is known.'
+      - 'Identify the unknown side: Adjacent side (x).'
+      - 'Determine the ratio that relates Opposite and Adjacent: Tangent (TOA).'
+      - 'Set up the equation: tan 35° = Opposite / Adjacent.'
+      - 'Substitute values: tan 35° = 500 / x.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: A stage crew is installing a cable (hypotenuse, H) to stabilize a backdrop. The cable is anchored 8 meters
+        away horizontally (adjacent side) from the base of the backdrop. If the desired angle the cable makes with the floor
+        is 65°, state the correct trigonometric ratio and the resulting equation needed to find the length of the cable (H).
+      mathTool: null
+      finalAnswer: 'Use the Cosine ratio. Equation setup: cos 65° = 8 / H, which rearranges to H = 8 / cos 65°.'
+      stepByStepGuideline:
+      - 'Identify the given information relative to the angle (65°): Adjacent side (8m) is known.'
+      - 'Identify the unknown side: Hypotenuse (H).'
+      - 'Determine the ratio that relates Adjacent and Hypotenuse: Cosine (CAH).'
+      - 'Set up the equation: cos 65° = Adjacent / Hypotenuse.'
+      - 'Substitute values: cos 65° = 8 / H.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: A boat travels 15 km along a diagonal path (hypotenuse). This path creates an angle of 70° with the local
+        horizontal axis. If you need to find the total northward displacement (opposite side, y), which trigonometric ratio
+        should be used? Write down the correct equation setup.
+      mathTool: null
+      finalAnswer: 'Use the Sine ratio. Equation setup: sin 70° = y / 15, which rearranges to y = 15 × sin 70°.'
+      stepByStepGuideline:
+      - 'Identify the given information relative to the angle (70°): Hypotenuse (15 km) is known.'
+      - 'Identify the unknown side: Opposite side (y).'
+      - 'Determine the ratio that relates Opposite and Hypotenuse: Sine (SOH).'
+      - 'Set up the equation: sin 70° = Opposite / Hypotenuse.'
+      - 'Substitute values: sin 70° = y / 15.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: A cable car system must achieve a vertical rise (opposite side) of 300 meters. If the cable path (hypotenuse,
+        C) must maintain an angle of inclination of 25° relative to the ground, which trigonometric ratio is needed to determine
+        the total length of the cable (C)? Set up the equation.
+      mathTool: null
+      finalAnswer: 'Use the Sine ratio. Equation setup: sin 25° = 300 / C, which rearranges to C = 300 / sin 25°.'
+      stepByStepGuideline:
+      - 'Identify the given information relative to the angle (25°): Opposite side (300m) is known.'
+      - 'Identify the unknown side: Hypotenuse (C).'
+      - 'Determine the ratio that relates Opposite and Hypotenuse: Sine (SOH).'
+      - 'Set up the equation: sin 25° = Opposite / Hypotenuse.'
+      - 'Substitute values: sin 25° = 300 / C.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: In a blueprint for a geometric pattern, you have a right triangle where the reference angle is 55° and
+        the side adjacent to this angle measures 12 cm. To find the length of the side opposite the 55° angle (x), identify
+        the required trigonometric ratio and write the setup equation.
+      mathTool: null
+      finalAnswer: 'Use the Tangent ratio. Equation setup: tan 55° = x / 12, which rearranges to x = 12 × tan 55°.'
+      stepByStepGuideline:
+      - 'Identify the given information relative to the angle (55°): Adjacent side (12 cm) is known.'
+      - 'Identify the unknown side: Opposite side (x).'
+      - 'Determine the ratio that relates Opposite and Adjacent: Tangent (TOA).'
+      - 'Set up the equation: tan 55° = Opposite / Adjacent.'
+      - 'Substitute values: tan 55° = x / 12.'
+      id: q10-5
+      questionGroup: q10
+- id: trig-node-11
+  nodeNumber: 11
+  title: Finding Angles Using Inverse Sine
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: A graphic designer is creating a logo based on a right triangle shape. The side opposite the main angle
+        ($\theta$) is 3 cm, and the hypotenuse is 5 cm. Find the measure of angle $\theta$ to the nearest degree.
+      avatarIntro: Great job reaching this section! Remember, when you know the opposite side and the hypotenuse, you use
+        the inverse sine function to find the angle.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 3
+          hypotenuse: 5
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 37°
+      stepByStepGuideline:
+      - 'Identify the known sides relative to angle $\theta$: Opposite = 3 cm, Hypotenuse = 5 cm.'
+      - 'Set up the sine ratio: $\sin(\theta) = \frac{\text{Opposite}}{\text{Hypotenuse}} = \frac{3}{5} = 0.6$.'
+      - 'Use the inverse sine function to find the angle: $\theta = \sin^{-1}(0.6)$.'
+      - 'Calculate the value: $\theta \approx 36.869...^°$.'
+      - 'Round the result to the nearest degree: $37^°$.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A rock climber is traversing a section of a vertical climbing wall. A safety rope (hypotenuse) is attached
+        12 m above the anchor point. The vertical height (opposite) of the section being traversed is 7 m. What angle ($\theta$)
+        does the rope make with the horizontal ground? Give your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 7
+          hypotenuse: 12
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 35.7°
+      stepByStepGuideline:
+      - 'Identify the known sides: Opposite = 7 m, Hypotenuse = 12 m.'
+      - 'Calculate the sine ratio: $\sin(\theta) = \frac{7}{12}$.'
+      - 'Apply the inverse sine function: $\theta = \sin^{-1}(\frac{7}{12})$.'
+      - 'Calculate the value: $\theta \approx 35.685...^°$.'
+      - 'Round the result to 1 decimal place: $35.7^°$.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: In a mechanical design for a sliding drawer, the diagonal support rod (hypotenuse) is 13 cm long. When
+        the drawer is partially open, the vertical displacement (opposite side) is 5 cm. Find the angle ($\theta$) the rod
+        makes with the base of the cabinet, rounded to the nearest degree.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 5
+          hypotenuse: 13
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 23°
+      stepByStepGuideline:
+      - 'Identify the known sides: Opposite = 5 cm, Hypotenuse = 13 cm.'
+      - 'Calculate the sine ratio: $\sin(\theta) = \frac{5}{13}$.'
+      - 'Apply the inverse sine function: $\theta = \sin^{-1}(\frac{5}{13})$.'
+      - 'Calculate the value: $\theta \approx 22.619...^°$.'
+      - 'Round the result to the nearest degree: $23^°$.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: A support cable for a large tent structure measures 14 m (hypotenuse). The vertical anchor point where
+        the cable attaches is 9 m above the ground (opposite side). Calculate the angle ($\theta$) the cable makes with the
+        ground, rounding your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 9
+          hypotenuse: 14
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 40.0°
+      stepByStepGuideline:
+      - 'Identify the known sides: Opposite = 9 m, Hypotenuse = 14 m.'
+      - 'Calculate the sine ratio: $\sin(\theta) = \frac{9}{14}$.'
+      - 'Apply the inverse sine function: $\theta = \sin^{-1}(\frac{9}{14})$.'
+      - 'Calculate the value: $\theta \approx 39.996...^°$.'
+      - 'Round the result to 1 decimal place: $40.0^°$.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: A piston rod in a machine moves along a diagonal path (hypotenuse) that is 15 cm long. The maximum vertical
+        distance (opposite side) achieved during the stroke is 8 cm. Determine the angle ($\theta$) of the stroke relative
+        to the horizontal base, rounded to the nearest degree.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 8
+          hypotenuse: 15
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 32°
+      stepByStepGuideline:
+      - 'Identify the known sides: Opposite = 8 cm, Hypotenuse = 15 cm.'
+      - 'Calculate the sine ratio: $\sin(\theta) = \frac{8}{15}$.'
+      - 'Apply the inverse sine function: $\theta = \sin^{-1}(\frac{8}{15})$.'
+      - 'Calculate the value: $\theta \approx 32.230...^°$.'
+      - 'Round the result to the nearest degree: $32^°$.'
+      id: q11-5
+      questionGroup: q11
+- id: trig-node-12
+  nodeNumber: 12
+  title: Finding Angles Using Inverse Cosine
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: "A designer is planning a roof structure. The rafter (hypotenuse) is 13 cm long, and the horizontal span\
+        \ (adjacent side) it covers is 5 cm. Calculate the angle ($\theta$) the rafter makes with the horizontal, rounding\
+        \ your answer to 1 decimal place."
+      avatarIntro: Trigonometry is essential in architecture and construction. Remember that when you know the adjacent side
+        and the hypotenuse, you use the inverse cosine function.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 5
+          hypotenuse: 13
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+          unit: cm
+      finalAnswer: 67.4°
+      stepByStepGuideline:
+      - 'Identify the known sides relative to the angle $\theta$: Adjacent = 5 cm, Hypotenuse = 13 cm.'
+      - 'Since Adjacent and Hypotenuse are known, use the cosine ratio: $\cos(\theta) = \text{Adjacent} / \text{Hypotenuse}$.'
+      - 'Substitute the values: $\cos(\theta) = 5/13$.'
+      - 'Use the inverse cosine function to find the angle: $\theta = \cos^{-1}(5/13)$.'
+      - 'Calculate the value: $\theta \approx 67.3801...^{\circ}$.'
+      - 'Round the answer to 1 decimal place: $67.4^{\circ}$.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: "An aircraft is on a final approach (glide path). Over a specific segment, the plane travels 15 m diagonally\
+        \ (hypotenuse) while covering 8 m of horizontal distance (adjacent). What is the angle of descent ($\theta$) of the\
+        \ aircraft during this segment? Round your answer to the nearest degree."
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 8
+          hypotenuse: 15
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+          unit: m
+      finalAnswer: 58°
+      stepByStepGuideline:
+      - 'Identify the known sides relative to the angle $\theta$: Adjacent = 8 m, Hypotenuse = 15 m.'
+      - 'Use the cosine ratio: $\cos(\theta) = \text{Adjacent} / \text{Hypotenuse}$.'
+      - 'Substitute the values: $\cos(\theta) = 8/15$.'
+      - 'Calculate the angle using the inverse cosine function: $\theta = \cos^{-1}(8/15)$.'
+      - 'Calculate the value: $\theta \approx 57.7699...^{\circ}$.'
+      - 'Round the answer to the nearest degree: $58^{\circ}$.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: "A carpenter installs a diagonal brace (hypotenuse) measuring 12 cm to support a rectangular frame. The\
+        \ brace attaches 9 cm horizontally (adjacent side) away from the vertical post. Determine the angle ($\theta$) the\
+        \ brace makes with the horizontal base, rounding to 1 decimal place."
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 9
+          hypotenuse: 12
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+          unit: cm
+      finalAnswer: 41.4°
+      stepByStepGuideline:
+      - 'Identify the known sides: Adjacent = 9 cm, Hypotenuse = 12 cm.'
+      - 'Apply the inverse cosine ratio: $\theta = \cos^{-1}(\text{Adjacent} / \text{Hypotenuse})$.'
+      - 'Substitute the values: $\theta = \cos^{-1}(9/12)$.'
+      - 'Simplify the fraction and calculate: $\theta = \cos^{-1}(0.75) \approx 41.4096...^{\circ}$.'
+      - 'Round the answer to 1 decimal place: $41.4^{\circ}$.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: "A geologist is analyzing a rock layer that forms a slope. The layer covers a straight slope distance (hypotenuse)\
+        \ of 11 meters, corresponding to a horizontal displacement (adjacent) of 7 meters. Find the angle of inclination ($\t\
+        heta$) of the slope to the nearest degree."
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 7
+          hypotenuse: 11
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+          unit: m
+      finalAnswer: 50°
+      stepByStepGuideline:
+      - 'Identify the known sides: Adjacent = 7 m, Hypotenuse = 11 m.'
+      - 'Use the inverse cosine function: $\theta = \cos^{-1}(\text{Adjacent} / \text{Hypotenuse})$.'
+      - 'Substitute the values: $\theta = \cos^{-1}(7/11)$.'
+      - 'Calculate the value: $\theta \approx 50.4788...^{\circ}$.'
+      - 'Round the answer to the nearest degree: $50^{\circ}$.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: "A firefighter leans a 13 m ladder (hypotenuse) against a building. For stability, the base of the ladder\
+        \ rests 5 m horizontally (adjacent side) away from the wall. Calculate the angle ($\theta$) the ladder makes with\
+        \ the ground, rounding your answer to 1 decimal place."
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          adjacent: 5
+          hypotenuse: 13
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+          unit: m
+      finalAnswer: 67.4°
+      stepByStepGuideline:
+      - 'Identify the known sides: Adjacent = 5 m, Hypotenuse = 13 m.'
+      - 'Use the cosine ratio: $\cos(\theta) = \text{Adjacent} / \text{Hypotenuse}$.'
+      - 'Substitute the values: $\cos(\theta) = 5/13$.'
+      - 'Calculate the angle using the inverse cosine function: $\theta = \cos^{-1}(5/13)$.'
+      - 'Calculate the value: $\theta \approx 67.3801...^{\circ}$.'
+      - 'Round the answer to 1 decimal place: $67.4^{\circ}$.'
+      id: q12-5
+      questionGroup: q12
+- id: trig-node-13
+  nodeNumber: 13
+  title: Finding Angles Using Inverse Tangent
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: A civil engineer is designing a ski slope. The vertical drop (opposite side) is 3 cm for every 4 cm of
+        horizontal distance (adjacent side). Calculate the angle of depression, $\theta$, of the slope to the nearest degree.
+      avatarIntro: Great job reaching this section! We are going to practice finding angles using the inverse tangent function.
+        Remember, tangent is opposite over adjacent.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 3
+          adjacent: 4
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 37°
+      stepByStepGuideline:
+      - 'Identify the given sides: Opposite side (O) = 3 cm, Adjacent side (A) = 4 cm.'
+      - 'Use the tangent ratio: $\tan(\theta) = \frac{\text{Opposite}}{\text{Adjacent}} = \frac{3}{4}$.'
+      - 'Calculate the angle using the inverse tangent function: $\theta = \tan^{-1}\left(\frac{3}{4}\right)$.'
+      - $\theta \approx 36.869...^{\circ}$.
+      - 'Round the result to the nearest degree: $37^{\circ}$.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: A surveyor is calculating the angle of elevation ($\,\theta$) from a ground marker to the top of a newly
+        constructed wall. The wall is 5 m high (opposite side), and the marker is placed 12 m horizontally away from the base
+        (adjacent side). Find the angle $\theta$, giving your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 5
+          adjacent: 12
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 22.6°
+      stepByStepGuideline:
+      - 'Identify the given sides: Opposite side (O) = 5 m, Adjacent side (A) = 12 m.'
+      - 'Set up the tangent ratio: $\tan(\theta) = \frac{O}{A} = \frac{5}{12}$.'
+      - 'Calculate the angle: $\theta = \tan^{-1}\left(\frac{5}{12}\right)$.'
+      - $\theta \approx 22.619...^{\circ}$.
+      - 'Round the result to 1 decimal place: $22.6^{\circ}$.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: A factory uses a conveyor belt to move items to a higher level. The vertical lift achieved (opposite side)
+        is 8 cm over a horizontal distance (adjacent side) of 6 cm. Determine the angle of inclination, $\theta$, of the conveyor
+        belt to the nearest degree.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 8
+          adjacent: 6
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 53°
+      stepByStepGuideline:
+      - 'Identify the given sides: Opposite side (O) = 8 cm, Adjacent side (A) = 6 cm.'
+      - 'Use the tangent ratio: $\tan(\theta) = \frac{8}{6}$.'
+      - 'Calculate the angle using inverse tangent: $\theta = \tan^{-1}\left(\frac{8}{6}\right)$.'
+      - $\theta \approx 53.130...^{\circ}$.
+      - 'Round the result to the nearest degree: $53^{\circ}$.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: An architect is calculating the pitch ($\,\theta$) of a roof. The roof has a vertical rise (opposite side)
+        of 12 meters over a horizontal run (adjacent side) of 9 meters. Calculate the angle $\theta$ to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 12
+          adjacent: 9
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 53.1°
+      stepByStepGuideline:
+      - 'Identify the given sides: Opposite side (O) = 12 m, Adjacent side (A) = 9 m.'
+      - 'Set up the tangent ratio: $\tan(\theta) = \frac{O}{A} = \frac{12}{9}$.'
+      - 'Calculate the angle: $\theta = \tan^{-1}\left(\frac{12}{9}\right)$.'
+      - $\theta \approx 53.130...^{\circ}$.
+      - 'Round the result to 1 decimal place: $53.1^{\circ}$.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A robotic arm moves an object 15 cm vertically (opposite side) and 10 cm horizontally (adjacent side) from
+        its starting point. Find the angle, $\theta$, of the arm's trajectory relative to the horizontal plane. Round your
+        answer to the nearest degree.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 15
+          adjacent: 10
+          angle: 0
+          angleLabel: \theta
+          showRightAngle: true
+          showAngleMark: true
+      finalAnswer: 56°
+      stepByStepGuideline:
+      - 'Identify the given sides: Opposite side (O) = 15 cm, Adjacent side (A) = 10 cm.'
+      - 'Set up the tangent ratio: $\tan(\theta) = \frac{15}{10} = 1.5$.'
+      - 'Calculate the angle using the inverse tangent function: $\theta = \tan^{-1}(1.5)$.'
+      - $\theta \approx 56.309...^{\circ}$.
+      - 'Round the result to the nearest degree: $56^{\circ}$.'
+      id: q13-5
+      questionGroup: q13
+- id: trig-node-14
+  nodeNumber: 14
+  title: Angle of Elevation - Finding Height
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: elevationDepression
+    preWrittenQuestions:
+    - problemText: A surveyor stands 50 meters away from the base of a new building. Using a transit, the surveyor measures
+        the angle of elevation to the top of the building as 35°. Calculate the height of the building, rounding your answer
+        to 1 decimal place.
+      avatarIntro: Trigonometry is essential for calculating distances and heights without needing to measure them directly.
+        Remember that the angle of elevation forms the angle inside the right triangle at the ground level.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 35
+          distance: 50
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 35.0 m
+      stepByStepGuideline:
+      - 'Identify the given information: Angle of elevation (opposite the height) = 35°, Horizontal distance (adjacent side)
+        = 50 m.'
+      - 'Since we know the adjacent side and need to find the opposite side, we use the tangent function: tan(angle) = Opposite
+        / Adjacent.'
+      - 'Set up the equation: tan(35°) = Height / 50.'
+      - 'Solve for Height: Height = 50 × tan(35°).'
+      - 'Calculate the value: Height ≈ 50 × 0.7002 ≈ 35.009 meters.'
+      - 'Round to 1 decimal place: 35.0 m.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: An observer is measuring the height of a communication tower. The observer walks 38 meters back from the
+        base of the tower on level ground. The angle of elevation measured to the top of the tower is 33°. Determine the height
+        of the tower, expressing your answer to 3 significant figures.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 33
+          distance: 38
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 24.7 m
+      stepByStepGuideline:
+      - 'Identify the sides: Opposite side (Height) is unknown, Adjacent side (Distance) = 38 m, Angle = 33°.'
+      - 'Use the tangent ratio: tan(33°) = Height / 38.'
+      - 'Calculate Height: Height = 38 × tan(33°).'
+      - Height ≈ 38 × 0.6494 ≈ 24.675 meters.
+      - 'Round the result to 3 significant figures: 24.7 m.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: A forest ranger needs to estimate the height of a very large tree. She stands 60 meters horizontally from
+        the base of the tree and measures the angle of elevation to the highest point as 40°. Find the height of the tree,
+        rounding your answer to the nearest tenth of a meter.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 40
+          distance: 60
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 50.3 m
+      stepByStepGuideline:
+      - 'Identify the trigonometric relationship: We use tangent because we have the adjacent side (60 m) and need the opposite
+        side (Height).'
+      - 'Formula: Height = Distance × tan(Angle).'
+      - 'Substitute values: Height = 60 × tan(40°).'
+      - 'Calculate: Height ≈ 60 × 0.8391 ≈ 50.345 meters.'
+      - 'Round to the nearest tenth (1 decimal place): 50.3 m.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: A student is performing a trigonometry experiment to find the height of a flagpole. They measure the horizontal
+        distance from the base of the flagpole to their observation point as 45 meters. If the angle of elevation to the top
+        of the flagpole is 42°, what is the height of the flagpole, rounded to the nearest meter?
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 42
+          distance: 45
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 41 m
+      stepByStepGuideline:
+      - Determine the appropriate trigonometric ratio. Since we have the adjacent side (45 m) and need the opposite side (Height),
+        use tangent.
+      - 'Set up the equation: Height = 45 × tan(42°).'
+      - 'Calculate the result: Height ≈ 45 × 0.9004 ≈ 40.518 meters.'
+      - 'Round the height to the nearest whole meter: 41 m.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: A hiker wants to determine the height of a vertical cliff face. They stand 30 meters away from the base
+        of the cliff. Using an inclinometer, they measure the angle of elevation to the top edge of the cliff as 48°. Calculate
+        the height of the cliff to 2 decimal places.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 48
+          distance: 30
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 33.32 m
+      stepByStepGuideline:
+      - 'The height (Opposite side) is calculated using the formula: Height = Distance × tan(Angle).'
+      - 'Substitute the given values: Height = 30 × tan(48°).'
+      - 'Calculate tan(48°): tan(48°) ≈ 1.1106.'
+      - 'Multiply: Height ≈ 30 × 1.1106 ≈ 33.317 meters.'
+      - 'Round the final answer to 2 decimal places: 33.32 m.'
+      id: q14-5
+      questionGroup: q14
+- id: trig-node-15
+  nodeNumber: 15
+  title: Angle of Elevation - Finding Distance
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: elevationDepression
+    preWrittenQuestions:
+    - problemText: A lighthouse keeper observes a fishing trawler. The light source is 40 m above sea level. The angle of
+        elevation measured from the trawler to the light is 37°. Calculate the horizontal distance between the trawler and
+        the base of the lighthouse, rounding your answer to 1 decimal place.
+      avatarIntro: This problem requires you to find the adjacent side (distance) when given the opposite side (height) and
+        the angle of elevation. Remember to use the tangent ratio!
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 37
+          height: 40
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 53.1 m
+      stepByStepGuideline:
+      - 'Identify the knowns: Opposite side (height) = 40 m, Angle of Elevation = 37°. We need to find the Adjacent side (distance,
+        d).'
+      - 'Since we relate the Opposite side, Adjacent side, and the angle, we use the tangent ratio: tan(angle) = Opposite
+        / Adjacent.'
+      - 'Substitute the known values: tan(37°) = 40 / d.'
+      - 'Rearrange the formula to solve for d: d = 40 / tan(37°).'
+      - 'Calculate the value: d ≈ 53.063 m.'
+      - 'Round the answer to 1 decimal place: 53.1 m.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: A surveillance drone hovers 30 m directly above its landing pad. An operator standing on level ground measures
+        the angle of elevation to the drone as 42°. How far horizontally is the operator standing from the landing pad? Give
+        your answer to 1 decimal place.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 42
+          height: 30
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 33.3 m
+      stepByStepGuideline:
+      - 'Identify the knowns: Opposite side (height) = 30 m, Angle of Elevation = 42°. We need to find the Adjacent side (distance,
+        d).'
+      - 'Use the tangent ratio: tan(angle) = Opposite / Adjacent.'
+      - 'Substitute the known values: tan(42°) = 30 / d.'
+      - 'Rearrange the formula: d = 30 / tan(42°).'
+      - 'Calculate the value: d ≈ 33.317 m.'
+      - 'Round the answer to 1 decimal place: 33.3 m.'
+      id: q15-2
+      questionGroup: q15
+    - problemText: An observer is viewing the top of a 25 m tall historical monument. If the angle of elevation from the observer's
+        eye level (assumed to be ground level for simplification) to the top of the monument is 35°, determine the horizontal
+        distance from the observer to the base of the monument. Round your answer to 1 decimal place.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 35
+          height: 25
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 35.7 m
+      stepByStepGuideline:
+      - 'Identify the knowns: Opposite side (height) = 25 m, Angle of Elevation = 35°. We need to find the Adjacent side (distance,
+        d).'
+      - 'Use the tangent ratio: tan(angle) = Opposite / Adjacent.'
+      - 'Substitute the known values: tan(35°) = 25 / d.'
+      - 'Rearrange the formula: d = 25 / tan(35°).'
+      - 'Calculate the value: d ≈ 35.703 m.'
+      - 'Round the answer to 1 decimal place: 35.7 m.'
+      id: q15-3
+      questionGroup: q15
+    - problemText: A worker inspects a main suspension cable anchor point which is 50 m above the ground. From a specific
+        location on the ground, the angle of elevation to this anchor point is exactly 45°. Find the horizontal distance from
+        the observation location to the point directly below the anchor. Round your answer to 1 decimal place.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 45
+          height: 50
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 50.0 m
+      stepByStepGuideline:
+      - 'Identify the knowns: Opposite side (height) = 50 m, Angle of Elevation = 45°. We need to find the Adjacent side (distance,
+        d).'
+      - 'Use the tangent ratio: tan(angle) = Opposite / Adjacent.'
+      - 'Substitute the known values: tan(45°) = 50 / d.'
+      - 'Since tan(45°) = 1, the equation simplifies to: 1 = 50 / d.'
+      - 'Solve for d: d = 50 m.'
+      - 'Round the answer to 1 decimal place: 50.0 m.'
+      id: q15-4
+      questionGroup: q15
+    - problemText: During a test launch, a small rocket reaches a maximum vertical height of 40 m before exploding. A safety
+        observer measures the angle of elevation to the explosion point as 37°. What is the horizontal separation distance
+        between the observer and the launch site? Give your answer to 1 decimal place.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: elevation
+          angle: 37
+          height: 40
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 53.1 m
+      stepByStepGuideline:
+      - 'Identify the knowns: Opposite side (height) = 40 m, Angle of Elevation = 37°. We need to find the Adjacent side (distance,
+        d).'
+      - 'Use the tangent ratio: tan(angle) = Opposite / Adjacent.'
+      - 'Substitute the known values: tan(37°) = 40 / d.'
+      - 'Rearrange the formula: d = 40 / tan(37°).'
+      - 'Calculate the value: d ≈ 53.063 m.'
+      - 'Round the answer to 1 decimal place: 53.1 m.'
+      id: q15-5
+      questionGroup: q15
+- id: trig-node-16
+  nodeNumber: 16
+  title: Angle of Depression - Understanding
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: elevationDepression
+    preWrittenQuestions:
+    - problemText: A coast guard stands on top of a vertical cliff 80 meters high. The angle of depression measured from the
+        top of the cliff to a distressed boat out at sea is 28°. Calculate the horizontal distance from the base of the cliff
+        to the boat. Round your answer to 1 decimal place.
+      avatarIntro: Angle of depression problems require careful setup. Remember that the angle inside the right triangle is
+        equal to the angle of depression due to alternate interior angles.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: depression
+          angle: 28
+          height: 80
+          observerLabel: Cliff Top
+          targetLabel: Boat
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 150.5 m
+      stepByStepGuideline:
+      - "Identify the given values: Height (Opposite) = 80 m, Angle of Depression ($\theta$) = 28°."
+      - Recognize that the angle of elevation from the boat to the cliff top is equal to the angle of depression (28°).
+      - 'Set up the trigonometric ratio to find the horizontal distance (Adjacent, D): $\tan(\theta) = \frac{\text{Opposite}}{\text{Adjacent}}$.'
+      - 'Substitute the values: $\tan(28^{\circ}) = \frac{80}{D}$.'
+      - 'Solve for D: $D = \frac{80}{\tan(28^{\circ})}$.'
+      - 'Calculate the result: $D \approx 150.485$ m.'
+      - 'Round the distance to 1 decimal place: 150.5 m.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: An observer stands at the top of a lighthouse, 45 meters above sea level. The observer spots a ship at
+        sea with an angle of depression of 15°. What is the horizontal distance between the base of the lighthouse and the
+        ship? Round your answer to the nearest metre.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: depression
+          angle: 15
+          height: 45
+          observerLabel: Lighthouse Top
+          targetLabel: Ship
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 168 m
+      stepByStepGuideline:
+      - "Identify the given values: Height (Opposite) = 45 m, Angle of Depression ($\theta$) = 15°."
+      - Use the alternate interior angle theorem, the angle inside the right triangle at the ship's position is 15°.
+      - 'Set up the tangent ratio: $\tan(15^{\circ}) = \frac{45}{\text{Distance (D)}}$.'
+      - 'Solve for D: $D = \frac{45}{\tan(15^{\circ})}$.'
+      - 'Calculate the result: $D \approx 167.942$ m.'
+      - 'Round the distance to the nearest metre: 168 m.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: From the top of a communication tower 60 meters tall, a security camera focuses on a car parked on the
+        ground below. If the angle of depression to the car is 20°, calculate the horizontal distance from the base of the
+        tower to the car. Round your answer to 2 decimal places.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: depression
+          angle: 20
+          height: 60
+          observerLabel: Tower Top
+          targetLabel: Car
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 164.85 m
+      stepByStepGuideline:
+      - "The vertical height (Opposite) is 60 m, and the angle of depression ($\theta$) is 20°."
+      - The angle of elevation from the car to the tower top is 20°.
+      - 'Use the tangent ratio to find the horizontal distance (D): $\tan(20^{\circ}) = \frac{60}{D}$.'
+      - 'Rearrange the formula: $D = \frac{60}{\tan(20^{\circ})}$.'
+      - 'Calculate the value: $D \approx 164.8485$ m.'
+      - 'Round the distance to 2 decimal places: 164.85 m.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: An engineer observes a person walking on the street from the top of a 100-meter-tall building. If the angle
+        of depression from the engineer to the person is 32°, determine the horizontal separation between the base of the
+        building and the person. Give your answer correct to 3 significant figures.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: depression
+          angle: 32
+          height: 100
+          observerLabel: Building Top
+          targetLabel: Person
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 160 m
+      stepByStepGuideline:
+      - Identify the height (Opposite) = 100 m and the angle of depression = 32°.
+      - The angle used in the right triangle (at the person's location) is 32°.
+      - Use the formula $D = \frac{\text{Height}}{\tan(\theta)}$.
+      - 'Substitute the values: $D = \frac{100}{\tan(32^{\circ})}$.'
+      - 'Calculate the result: $D \approx 160.048$ m.'
+      - 'Round the distance to 3 significant figures: 160 m.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: A wildlife observer is positioned on a lookout point 50 meters vertically above the ground. The observer
+        spots a deer grazing in a field with an angle of depression of 25°. Find the horizontal distance between the point
+        directly below the observer and the deer. Round your answer to 1 decimal place.
+      mathTool:
+        toolName: elevationDepression
+        parameters:
+          type: depression
+          angle: 25
+          height: 50
+          observerLabel: Lookout Point
+          targetLabel: Deer
+          showTriangle: true
+          showRightAngle: true
+      finalAnswer: 107.2 m
+      stepByStepGuideline:
+      - The height (Opposite) is 50 m. The angle inside the triangle (elevation from the deer) is 25°.
+      - We need to find the horizontal distance (Adjacent, D).
+      - 'Use the tangent ratio: $\tan(25^{\circ}) = \frac{50}{D}$.'
+      - 'Isolate D: $D = \frac{50}{\tan(25^{\circ})}$.'
+      - 'Calculate the value: $D \approx 107.225$ m.'
+      - 'Round the distance to 1 decimal place: 107.2 m.'
+      id: q16-5
+      questionGroup: q16
+- id: trig-node-17
+  nodeNumber: 17
+  title: Ladder Problems - Real-World Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A professional painter uses an 8-meter ladder leaning against a wall. If the ladder makes an angle of 70°
+        with the level ground, how high up the wall does the top of the ladder reach? Give your answer to two decimal places.
+      avatarIntro: Ladder problems are a classic application of trigonometry! Remember to visualize the right triangle formed
+        by the ladder, the wall, and the ground.
+      mathTool: null
+      finalAnswer: 7.52 m
+      stepByStepGuideline:
+      - 'Identify the components: The ladder length (8 m) is the hypotenuse (H). The height reached (h) is the side opposite
+        (O) the 70° angle.'
+      - 'Choose the appropriate trigonometric ratio: Since we know H and need O, use the Sine ratio: sin(θ) = O/H.'
+      - 'Set up the equation: sin(70°) = h / 8.'
+      - 'Solve for h: h = 8 × sin(70°).'
+      - 'Calculate the result: h ≈ 7.5175... m.'
+      - 'Round to two decimal places: 7.52 m.'
+      id: q17-1
+      questionGroup: q17
+    - problemText: A construction worker places a ladder 1.5 meters away from the base of a vertical scaffold structure. If
+        the ladder reaches exactly 6 meters up the scaffold, what is the angle, to the nearest degree, that the ladder makes
+        with the ground?
+      mathTool: null
+      finalAnswer: 76°
+      stepByStepGuideline:
+      - 'Identify the components: The height reached (6 m) is the opposite side (O). The distance from the wall (1.5 m) is
+        the adjacent side (A). We need to find the angle (θ).'
+      - 'Choose the appropriate trigonometric ratio: Since we know O and A, use the Tangent ratio: tan(θ) = O/A.'
+      - 'Set up the equation: tan(θ) = 6 / 1.5.'
+      - 'Solve for θ: θ = tan⁻¹(6 / 1.5) = tan⁻¹(4).'
+      - 'Calculate the angle: θ ≈ 75.963...°.'
+      - 'Round to the nearest degree: 76°.'
+      id: q17-2
+      questionGroup: q17
+    - problemText: A roofer needs to access a section of the roof which is 10 meters above the ground. If safety regulations
+        require the ladder to be set up at an angle of 72° with the ground, calculate the minimum length of the ladder required.
+        Give your answer to one decimal place.
+      mathTool: null
+      finalAnswer: 10.5 m
+      stepByStepGuideline:
+      - 'Identify the components: The height (10 m) is the opposite side (O). The ladder length (L) is the hypotenuse (H).
+        The angle is 72°.'
+      - 'Choose the appropriate trigonometric ratio: Since we know O and need H, use the Sine ratio: sin(θ) = O/H.'
+      - 'Set up the equation: sin(72°) = 10 / L.'
+      - 'Solve for L: L = 10 / sin(72°).'
+      - 'Calculate the result: L ≈ 10.5146... m.'
+      - 'Round to one decimal place: 10.5 m.'
+      id: q17-3
+      questionGroup: q17
+    - problemText: A 15-meter rescue ladder is extended from a fire truck and reaches a window sill exactly 12 meters above
+        the ground. Assuming the ground is level, how far horizontally is the base of the ladder from the wall? Give your
+        answer to one decimal place.
+      mathTool: null
+      finalAnswer: 9.0 m
+      stepByStepGuideline:
+      - 'Identify the components: The ladder length (15 m) is the hypotenuse (c). The height (12 m) is one leg (a). We need
+        to find the base distance (b), the adjacent side.'
+      - 'Choose the appropriate method: Since we know two sides of a right triangle, use the Pythagorean theorem: a² + b²
+        = c².'
+      - 'Set up the equation: 12² + b² = 15².'
+      - 'Solve for b: 144 + b² = 225. Therefore, b² = 225 - 144 = 81.'
+      - 'Calculate the distance: b = √81 = 9 m.'
+      - 'Round to one decimal place: 9.0 m.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: An office cleaning crew uses a 4.5-meter folding ladder to reach high ceilings. When the ladder is set
+        up, it makes an angle of 65° with the floor. What is the maximum vertical height the top of the ladder reaches against
+        the wall? Round your answer to two decimal places.
+      mathTool: null
+      finalAnswer: 4.08 m
+      stepByStepGuideline:
+      - 'Identify the components: The ladder length (4.5 m) is the hypotenuse (H). The height reached (h) is the side opposite
+        (O) the 65° angle.'
+      - 'Choose the appropriate trigonometric ratio: Use the Sine ratio: sin(θ) = O/H.'
+      - 'Set up the equation: sin(65°) = h / 4.5.'
+      - 'Solve for h: h = 4.5 × sin(65°).'
+      - 'Calculate the result: h ≈ 4.0784... m.'
+      - 'Round to two decimal places: 4.08 m.'
+      id: q17-5
+      questionGroup: q17
+- id: trig-node-18
+  nodeNumber: 18
+  title: Kite and Flagpole Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: During a competition, a student flies a kite attached to a string 85 meters long. The angle of elevation
+        measured from the ground to the kite is 42°. Assuming the string is straight, what is the vertical height of the kite
+        above the ground? Round your answer to 1 decimal place.
+      avatarIntro: These real-world problems require you to visualize the scenario as a right-angled triangle. Remember to
+        choose the correct trigonometric ratio based on the sides you know!
+      finalAnswer: 56.9 m
+      stepByStepGuideline:
+      - 'Identify the known variables: the length of the string (hypotenuse, H) = 85 m, and the angle of elevation (θ) = 42°.'
+      - 'Identify the required unknown: the vertical height of the kite (opposite side, O).'
+      - 'Since we know H and need O, use the Sine ratio: sin(θ) = O / H.'
+      - 'Substitute the values: sin(42°) = Height / 85.'
+      - 'Solve for Height: Height = 85 × sin(42°).'
+      - 'Calculate the value: Height ≈ 56.875 m.'
+      - 'Round the answer to 1 decimal place: 56.9 m.'
+      id: q18-1
+      questionGroup: q18
+    - problemText: An amateur radio enthusiast observes the shadow cast by a large vertical antenna. The shadow measures 24
+        meters long on level ground. If the angle of elevation of the sun at that moment is 58°, calculate the height of the
+        antenna. Round your answer to 1 decimal place.
+      finalAnswer: 38.4 m
+      stepByStepGuideline:
+      - 'Identify the known variables: the shadow length (adjacent side, A) = 24 m, and the angle of elevation (θ) = 58°.'
+      - 'Identify the required unknown: the height of the antenna (opposite side, O).'
+      - 'Since we know A and need O, use the Tangent ratio: tan(θ) = O / A.'
+      - 'Substitute the values: tan(58°) = Height / 24.'
+      - 'Solve for Height: Height = 24 × tan(58°).'
+      - 'Calculate the value: Height ≈ 38.409 m.'
+      - 'Round the answer to 1 decimal place: 38.4 m.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: A team launches a small weather balloon tethered by a straight cable 60 meters long. The cable makes an
+        angle of 35° with the horizontal ground. Determine the altitude (vertical height) of the balloon. Round your answer
+        to 1 decimal place.
+      finalAnswer: 34.4 m
+      stepByStepGuideline:
+      - 'Identify the known variables: the length of the cable (hypotenuse, H) = 60 m, and the angle of elevation (θ) = 35°.'
+      - 'Identify the required unknown: the vertical altitude (opposite side, O).'
+      - 'Since we know H and need O, use the Sine ratio: sin(θ) = O / H.'
+      - 'Substitute the values: sin(35°) = Altitude / 60.'
+      - 'Solve for Altitude: Altitude = 60 × sin(35°).'
+      - 'Calculate the value: Altitude ≈ 34.414 m.'
+      - 'Round the answer to 1 decimal place: 34.4 m.'
+      id: q18-3
+      questionGroup: q18
+    - problemText: A large outdoor sculpture casts a shadow 15 meters long on the ground. A trigonometry student measures
+        the sun's angle of elevation to be 52°. Calculate the height of the sculpture. Round your answer to 1 decimal place.
+      finalAnswer: 19.2 m
+      stepByStepGuideline:
+      - 'Identify the known variables: the shadow length (adjacent side, A) = 15 m, and the angle of elevation (θ) = 52°.'
+      - 'Identify the required unknown: the height of the sculpture (opposite side, O).'
+      - 'Since we know A and need O, use the Tangent ratio: tan(θ) = O / A.'
+      - 'Substitute the values: tan(52°) = Height / 15.'
+      - 'Solve for Height: Height = 15 × tan(52°).'
+      - 'Calculate the value: Height ≈ 19.199 m.'
+      - 'Round the answer to 1 decimal place: 19.2 m.'
+      id: q18-4
+      questionGroup: q18
+    - problemText: A straight support cable runs from an anchor point on the ground to the top of a utility pole. The cable
+        is 75 meters long and makes an angle of 48° with the level ground. How tall is the utility pole? Round your answer
+        to 1 decimal place.
+      finalAnswer: 55.7 m
+      stepByStepGuideline:
+      - 'Identify the known variables: the length of the cable (hypotenuse, H) = 75 m, and the angle it makes with the ground
+        (θ) = 48°.'
+      - 'Identify the required unknown: the height of the utility pole (opposite side, O).'
+      - 'Since we know H and need O, use the Sine ratio: sin(θ) = O / H.'
+      - 'Substitute the values: sin(48°) = Height / 75.'
+      - 'Solve for Height: Height = 75 × sin(48°).'
+      - 'Calculate the value: Height ≈ 55.742 m.'
+      - 'Round the answer to 1 decimal place: 55.7 m.'
+      id: q18-5
+      questionGroup: q18
+- id: trig-node-19
+  nodeNumber: 19
+  title: Ramp and Slope Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A new highway section requires a gradual incline. The civil engineers determine that the road must rise
+        50 meters vertically over a horizontal distance (run) of 800 meters. Calculate the angle of incline of the highway
+        to the nearest tenth of a degree.
+      avatarIntro: Time to practice applying trigonometry to real-world slopes and ramps. Remember that the tangent function
+        relates the vertical rise to the horizontal run.
+      mathTool: null
+      finalAnswer: 3.6°
+      stepByStepGuideline:
+      - 'Identify the known values: Rise (opposite side) = 50 m, Run (adjacent side) = 800 m.'
+      - 'Use the tangent ratio: tan(θ) = Rise / Run.'
+      - 'Substitute the values: tan(θ) = 50 / 800 = 0.0625.'
+      - 'Calculate the angle using the inverse tangent function: θ = tan⁻¹(0.0625).'
+      - 'Calculate the value: θ ≈ 3.576°.'
+      - 'Round the angle to the nearest tenth of a degree: 3.6°.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: A new accessibility standard requires a wheelchair ramp to have a maximum angle of incline of 4.8°. If
+        the ramp must achieve a total vertical rise of 0.6 meters, what is the minimum required horizontal length (run)? Give
+        your answer to two decimal places.
+      mathTool: null
+      finalAnswer: 7.15 m
+      stepByStepGuideline:
+      - 'Identify the known values: Angle (θ) = 4.8°, Rise (opposite side) = 0.6 m. We need to find the minimum Run (adjacent
+        side).'
+      - 'Use the tangent ratio: tan(θ) = Rise / Run.'
+      - 'Rearrange the formula to solve for Run: Run = Rise / tan(θ).'
+      - 'Substitute the values: Run = 0.6 / tan(4.8°).'
+      - 'Calculate the value: Run ≈ 7.1493 m.'
+      - 'Round the distance to two decimal places: 7.15 m.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: An industrial conveyor belt is designed to lift materials 3.5 meters vertically (rise) over a horizontal
+        distance (run) of 10 meters. What is the angle of incline of the conveyor belt to the nearest whole degree?
+      mathTool: null
+      finalAnswer: 19°
+      stepByStepGuideline:
+      - 'Identify the known values: Rise = 3.5 m, Run = 10 m.'
+      - 'Use the tangent ratio: tan(θ) = Rise / Run.'
+      - 'Substitute the values: tan(θ) = 3.5 / 10 = 0.35.'
+      - 'Calculate the angle using the inverse tangent function: θ = tan⁻¹(0.35).'
+      - 'Calculate the value: θ ≈ 19.29°.'
+      - 'Round the angle to the nearest whole degree: 19°.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: A section of a ski slope maintains a consistent angle of 22° with the horizontal ground. If a skier travels
+        a horizontal distance (run) of 150 meters along this section, how much vertical distance (rise) has the skier descended?
+        Give your answer to one decimal place.
+      mathTool: null
+      finalAnswer: 60.6 m
+      stepByStepGuideline:
+      - 'Identify the known values: Angle (θ) = 22°, Run (adjacent side) = 150 m. We need to find the Rise (opposite side).'
+      - 'Use the tangent ratio: tan(θ) = Rise / Run.'
+      - 'Rearrange the formula to solve for Rise: Rise = Run × tan(θ).'
+      - 'Substitute the values: Rise = 150 × tan(22°).'
+      - 'Calculate the value: Rise ≈ 150 × 0.40404 ≈ 60.606 m.'
+      - 'Round the distance to one decimal place: 60.6 m.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: An architect is designing a roof structure. The roof must rise 3.2 meters vertically from the edge to the
+        peak over a horizontal span (run) of 5.5 meters. Calculate the pitch angle (angle of incline) of the roof to the nearest
+        tenth of a degree.
+      mathTool: null
+      finalAnswer: 30.2°
+      stepByStepGuideline:
+      - 'Identify the known values: Rise (opposite side) = 3.2 m, Run (adjacent side) = 5.5 m.'
+      - 'Use the tangent ratio: tan(θ) = Rise / Run.'
+      - 'Substitute the values: tan(θ) = 3.2 / 5.5.'
+      - 'Calculate the ratio: tan(θ) ≈ 0.5818.'
+      - 'Calculate the angle using the inverse tangent function: θ = tan⁻¹(0.5818...).'
+      - 'Calculate the value: θ ≈ 30.174°.'
+      - 'Round the angle to the nearest tenth of a degree: 30.2°.'
+      id: q19-5
+      questionGroup: q19
+- id: trig-node-20
+  nodeNumber: 20
+  title: Mixed Real-World Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A surveyor needs to determine the width of a river. They place a marker (M) directly across the bank from
+        a point (P). They walk 50 meters downstream along the bank to point (Q) and measure the angle ∠MQP to be 35°. Assuming
+        the river banks are parallel, calculate the width of the river (PM). Round your answer to one decimal place and include
+        units.
+      avatarIntro: These problems require you to apply your knowledge of trigonometric ratios to solve real-world distance
+        and measurement challenges. Remember to choose the correct ratio!
+      mathTool: null
+      finalAnswer: 35.0 m
+      stepByStepGuideline:
+      - 'Identify the given information: The distance along the bank (Adjacent side) is 50 m, and the angle of elevation (or
+        angle of sight) is 35°. The unknown is the width of the river (Opposite side).'
+      - 'Select the appropriate trigonometric ratio: Since we have the Opposite side and the Adjacent side, use the Tangent
+        ratio: tan(θ) = Opposite / Adjacent.'
+      - 'Set up the equation: tan(35°) = Width / 50.'
+      - 'Solve for the Width: Width = 50 × tan(35°).'
+      - 'Calculate the result: Width ≈ 35.009 meters.'
+      - 'Round the answer to one decimal place and include units: 35.0 m.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: An airplane is flying at an altitude of 5000 meters. The pilot observes the runway of the destination airport
+        with an angle of depression of 12°. Assuming the ground is level, calculate the horizontal distance the plane must
+        cover before it is directly above the airport. Round your answer to the nearest meter and include units.
+      mathTool: null
+      finalAnswer: 23524 m
+      stepByStepGuideline:
+      - 'Identify the given information: The altitude (Opposite side) is 5000 m, and the angle of depression is 12°. Due to
+        parallel lines (horizontal path and ground), the angle of elevation from the airport to the plane is also 12°. The
+        unknown is the horizontal distance (Adjacent side).'
+      - 'Select the appropriate trigonometric ratio: Use the Tangent ratio: tan(θ) = Opposite / Adjacent.'
+      - 'Set up the equation: tan(12°) = 5000 / Distance.'
+      - 'Solve for the Distance: Distance = 5000 / tan(12°).'
+      - 'Calculate the result: Distance ≈ 23523.5 meters.'
+      - 'Round the answer to the nearest meter and include units: 23524 m.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: A mountain climber is resting on a vertical cliff face 150 meters directly above their base camp. They
+        look down at the camp, measuring the angle of depression to be 40°. What is the direct line-of-sight distance (the
+        length of the hypotenuse) from the climber to the camp? Round your answer to the nearest meter and include units.
+      mathTool: null
+      finalAnswer: 233 m
+      stepByStepGuideline:
+      - 'Identify the given information: The vertical height of the cliff (Opposite side relative to the angle of elevation
+        from the camp) is 150 m. The angle of depression from the climber is 40°, which means the angle of elevation from
+        the camp is also 40°. The unknown is the line-of-sight distance (Hypotenuse).'
+      - 'Select the appropriate trigonometric ratio: Since we have the Opposite side and the Hypotenuse, use the Sine ratio:
+        sin(θ) = Opposite / Hypotenuse.'
+      - 'Set up the equation: sin(40°) = 150 / Distance.'
+      - 'Solve for the Distance: Distance = 150 / sin(40°).'
+      - 'Calculate the result: Distance ≈ 233.35 meters.'
+      - 'Round the answer to the nearest meter and include units: 233 m.'
+      id: q20-3
+      questionGroup: q20
+    - problemText: A vertical flagpole stands 12 meters tall. At a certain time of day, it casts a shadow 18 meters long on
+        the level ground. Calculate the angle of elevation of the sun (the angle the sun's rays make with the ground). Round
+        your answer to the nearest whole degree and include units.
+      mathTool: null
+      finalAnswer: 34°
+      stepByStepGuideline:
+      - 'Identify the given information: The height of the flagpole (Opposite side) is 12 m, and the length of the shadow
+        (Adjacent side) is 18 m. The unknown is the angle of elevation (θ).'
+      - 'Select the appropriate trigonometric ratio: Since we have the Opposite side and the Adjacent side, use the Tangent
+        ratio: tan(θ) = Opposite / Adjacent.'
+      - 'Set up the equation: tan(θ) = 12 / 18.'
+      - 'Solve for the angle using the inverse tangent function: θ = arctan(12 / 18).'
+      - 'Calculate the result: θ ≈ 33.69 degrees.'
+      - 'Round the answer to the nearest whole degree and include units: 34°.'
+      id: q20-4
+      questionGroup: q20
+    - problemText: A ground anchor for a telecommunication mast is placed 8 meters away from the base of the mast. A straight
+        tension cable connects the anchor point to a point high up on the mast. If the cable makes an angle of 65° with the
+        level ground, what is the length of the tension cable? Round your answer to two decimal places and include units.
+      mathTool: null
+      finalAnswer: 18.93 m
+      stepByStepGuideline:
+      - 'Identify the given information: The horizontal distance from the base to the anchor (Adjacent side) is 8 m. The angle
+        the cable makes with the ground (θ) is 65°. The unknown is the length of the cable (Hypotenuse).'
+      - 'Select the appropriate trigonometric ratio: Since we have the Adjacent side and the Hypotenuse, use the Cosine ratio:
+        cos(θ) = Adjacent / Hypotenuse.'
+      - 'Set up the equation: cos(65°) = 8 / Length.'
+      - 'Solve for the Length: Length = 8 / cos(65°).'
+      - 'Calculate the result: Length ≈ 18.9295 meters.'
+      - 'Round the answer to two decimal places and include units: 18.93 m.'
+      id: q20-5
+      questionGroup: q20

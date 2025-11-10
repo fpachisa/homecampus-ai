@@ -1,0 +1,3412 @@
+# S2 Math Expansion Factorisation - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: expansion-factorisation-node-1
+  nodeNumber: 1
+  title: Identifying Quadratic Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Is the expression $4x^2 - 3x + 5$ a quadratic expression? If yes, identify the values of the coefficients
+        a, b, and c.
+      avatarIntro: Understanding the definition of a quadratic expression is the first step in solving them. Remember the
+        standard form!
+      mathTool: null
+      finalAnswer: Yes. a = 4, b = -3, c = 5
+      stepByStepGuideline:
+      - 'Recall the standard form of a quadratic expression: $ax^2 + bx + c$, where $a \neq 0$.'
+      - Compare the given expression, $4x^2 - 3x + 5$, to the standard form.
+      - Since the highest power of x is 2 (the $x^2$ term exists), it is a quadratic expression.
+      - Identify the coefficient of the $x^2$ term (a = 4), the coefficient of the x term (b = -3), and the constant term
+        (c = 5).
+      id: q1-1
+      questionGroup: q1
+    - problemText: Consider the expression $-2x^2$. Is it quadratic? If so, what are the values of the coefficients a, b,
+        and c?
+      mathTool: null
+      finalAnswer: Yes. a = -2, b = 0, c = 0
+      stepByStepGuideline:
+      - A quadratic expression must contain an $x^2$ term (meaning $a \neq 0$). The expression $-2x^2$ meets this criterion.
+      - 'Rewrite the expression in standard form: $-2x^2 + 0x + 0$.'
+      - 'Identify the coefficients: a (coefficient of $x^2$) is -2.'
+      - Identify the coefficient of x (b) which is 0.
+      - Identify the constant term (c) which is 0.
+      id: q1-2
+      questionGroup: q1
+    - problemText: The expression $6x - 4$ is linear. Explain why it does not qualify as a quadratic expression based on the
+        definition $ax^2 + bx + c$.
+      mathTool: null
+      finalAnswer: It is not a quadratic expression because the coefficient of the $x^2$ term (a) is zero. A quadratic expression
+        requires $a \neq 0$, meaning the highest power must be $x^2$.
+      stepByStepGuideline:
+      - Recall that the defining characteristic of a quadratic expression is the presence of an $x^2$ term, meaning $a \neq
+        0$.
+      - 'Rewrite $6x - 4$ in the form $ax^2 + bx + c$: $0x^2 + 6x - 4$.'
+      - Since the coefficient 'a' is 0, the expression is not quadratic.
+      id: q1-3
+      questionGroup: q1
+    - problemText: 'True or False: The expression $x^2 + 7x$ is a quadratic expression. If True, identify the coefficients
+        a, b, and c.'
+      mathTool: null
+      finalAnswer: True. a = 1, b = 7, c = 0
+      stepByStepGuideline:
+      - Check if the expression contains an $x^2$ term. Since $x^2$ is present, the statement is True.
+      - 'Rewrite $x^2 + 7x$ in the standard form $ax^2 + bx + c$: $1x^2 + 7x + 0$.'
+      - Identify the coefficient 'a'. When no number is written, $a=1$.
+      - Identify the coefficient 'b' as 7.
+      - Identify the constant term 'c'. Since there is no constant term written, $c=0$.
+      id: q1-4
+      questionGroup: q1
+    - problemText: Is the expression $3x^3 + 5x^2 - 1$ a quadratic expression? State the defining characteristic that determines
+        whether an expression is quadratic.
+      mathTool: null
+      finalAnswer: No. The defining characteristic of a quadratic expression is that the highest power of the variable must
+        be 2 (the $x^2$ term must be present and $a \neq 0$). This expression is cubic because its highest power is 3.
+      stepByStepGuideline:
+      - A quadratic expression must have 2 as the highest power of the variable (degree 2).
+      - Examine the highest power in the expression $3x^3 + 5x^2 - 1$. The highest power is 3 ($x^3$).
+      - Since the highest power is 3, the expression is cubic, not quadratic.
+      - Therefore, the answer is No.
+      id: q1-5
+      questionGroup: q1
+- id: expansion-factorisation-node-2
+  nodeNumber: 2
+  title: Adding and Subtracting Quadratic Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the following quadratic expression by combining like terms:
+
+        $$(4x^2 - 3x + 8) + (2x^2 + 5x - 6)$$'
+      avatarIntro: Combining quadratic expressions requires careful attention to matching the powers of x. Remember to group
+        the x squared terms, the x terms, and the constant terms separately.
+      mathTool: null
+      finalAnswer: 6x² + 2x + 2
+      stepByStepGuideline:
+      - 'Identify the like terms in the expression: terms involving $x^2$, terms involving $x$, and constant terms.'
+      - 'Combine the $x^2$ terms: $4x^2 + 2x^2 = 6x^2$.'
+      - 'Combine the $x$ terms: $-3x + 5x = 2x$.'
+      - 'Combine the constant terms: $8 - 6 = 2$.'
+      - 'Write the simplified expression in standard form: $6x^2 + 2x + 2$.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: 'Subtract the second expression from the first and simplify the result:
+
+        $$(-x^2 + 6x - 1) - (3x^2 - 4x + 5)$$'
+      mathTool: null
+      finalAnswer: -4x² + 10x - 6
+      stepByStepGuideline:
+      - 'Distribute the negative sign to all terms in the second parenthesis: $-(3x^2 - 4x + 5) = -3x^2 + 4x - 5$.'
+      - 'Rewrite the expression: $-x^2 + 6x - 1 - 3x^2 + 4x - 5$.'
+      - 'Combine the $x^2$ terms: $-x^2 - 3x^2 = -4x^2$.'
+      - 'Combine the $x$ terms: $6x + 4x = 10x$.'
+      - 'Combine the constant terms: $-1 - 5 = -6$.'
+      - The simplified expression is $-4x^2 + 10x - 6$.
+      id: q2-2
+      questionGroup: q2
+    - problemText: 'Simplify the following mixed operation involving three quadratic expressions:
+
+        $$(-2x^2 + x - 3) - (5x^2 - 7x + 2) + (3x^2 - 2x - 4)$$'
+      mathTool: null
+      finalAnswer: -4x² + 6x - 9
+      stepByStepGuideline:
+      - 'First, distribute the negative sign into the second expression: $-(5x^2 - 7x + 2) = -5x^2 + 7x - 2$.'
+      - 'Rewrite the entire expression: $-2x^2 + x - 3 - 5x^2 + 7x - 2 + 3x^2 - 2x - 4$.'
+      - 'Combine the $x^2$ terms: $-2x^2 - 5x^2 + 3x^2 = -4x^2$.'
+      - 'Combine the $x$ terms: $x + 7x - 2x = 6x$.'
+      - 'Combine the constant terms: $-3 - 2 - 4 = -9$.'
+      - The simplified result is $-4x^2 + 6x - 9$.
+      id: q2-3
+      questionGroup: q2
+    - problemText: 'Simplify the expression:
+
+        $$(5x^2 + 7x - 4) - (6x^2 + 7x - 1)$$'
+      mathTool: null
+      finalAnswer: -x² - 3
+      stepByStepGuideline:
+      - 'Distribute the negative sign to the second expression: $-(6x^2 + 7x - 1) = -6x^2 - 7x + 1$.'
+      - 'Rewrite the expression: $5x^2 + 7x - 4 - 6x^2 - 7x + 1$.'
+      - 'Combine the $x^2$ terms: $5x^2 - 6x^2 = -x^2$.'
+      - 'Combine the $x$ terms: $7x - 7x = 0x$.'
+      - 'Combine the constant terms: $-4 + 1 = -3$.'
+      - 'The simplified expression is $-x^2 - 3$. (Note: We omit the $0x$ term.)'
+      id: q2-4
+      questionGroup: q2
+    - problemText: 'Determine the simplified form of the following expression:
+
+        $$(6x^2 - 5x + 8) + (-3x^2 + 2x - 1) - (x^2 + 4x - 6)$$'
+      mathTool: null
+      finalAnswer: 2x² - 7x + 13
+      stepByStepGuideline:
+      - 'Apply the operations, paying close attention to the signs. Distribute the negative sign before the third expression:
+        $-(x^2 + 4x - 6) = -x^2 - 4x + 6$.'
+      - 'Rewrite the entire expression: $6x^2 - 5x + 8 - 3x^2 + 2x - 1 - x^2 - 4x + 6$.'
+      - 'Combine the $x^2$ terms: $6x^2 - 3x^2 - x^2 = (6 - 3 - 1)x^2 = 2x^2$.'
+      - 'Combine the $x$ terms: $-5x + 2x - 4x = (-5 + 2 - 4)x = -7x$.'
+      - 'Combine the constant terms: $8 - 1 + 6 = 13$.'
+      - The final simplified expression is $2x^2 - 7x + 13$.
+      id: q2-5
+      questionGroup: q2
+- id: expansion-factorisation-node-3
+  nodeNumber: 3
+  title: Simplifying Multi-Variable Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the following multi-variable expression by combining all like terms:
+
+        $$4x^2y - 5xy^2 + 2y^2x + 7yx^2 - 3xy^2$$'
+      avatarIntro: Simplifying expressions with multiple variables requires careful attention to powers and variable order.
+        Remember that $xy$ is the same as $yx$, but $x^2y$ is different from $xy^2$. Good luck!
+      finalAnswer: 11x²y - 6xy²
+      stepByStepGuideline:
+      - Identify the distinct types of terms. We have terms involving $x^2y$ (which includes $yx^2$) and terms involving $xy^2$
+        (which includes $y^2x$).
+      - 'Group the $x^2y$ terms: $4x^2y + 7yx^2$. Since $yx^2 = x^2y$, combining these yields $(4 + 7)x^2y = 11x^2y$.'
+      - 'Group the $xy^2$ terms: $-5xy^2 + 2y^2x - 3xy^2$. Since $y^2x = xy^2$, combining these yields $(-5 + 2 - 3)xy^2 =
+        -6xy^2$.'
+      - 'Combine the simplified groups to get the final expression: $11x^2y - 6xy^2$.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: 'Simplify the expression:
+
+        $$-2a^2b + 6ab - 3ab^2 + 4ba + a^2b$$'
+      finalAnswer: -a²b + 10ab - 3ab²
+      stepByStepGuideline:
+      - 'Identify like terms. The terms are grouped by their variable combination: $a^2b$, $ab$ (or $ba$), and $ab^2$.'
+      - 'Combine the $a^2b$ terms: $-2a^2b + a^2b = (-2 + 1)a^2b = -a^2b$.'
+      - 'Combine the $ab$ terms (remember $ba = ab$): $6ab + 4ba = 6ab + 4ab = 10ab$.'
+      - The term $-3ab^2$ has no like terms.
+      - 'Write the simplified expression: $-a^2b + 10ab - 3ab^2$.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'Simplify the expression:
+
+        $$5p^2q^2 + 3p^2q - 8qp^2 + 2p^2q^2 - pq$$'
+      finalAnswer: 7p²q² - 5p²q - pq
+      stepByStepGuideline:
+      - 'Identify the three types of terms present: $p^2q^2$, $p^2q$ (which includes $qp^2$), and $pq$.'
+      - 'Combine the $p^2q^2$ terms: $5p^2q^2 + 2p^2q^2 = 7p^2q^2$.'
+      - 'Combine the $p^2q$ terms: $3p^2q - 8qp^2$. Since $qp^2 = p^2q$, we have $(3 - 8)p^2q = -5p^2q$.'
+      - The term $-pq$ has no like terms.
+      - 'Write the simplified expression: $7p^2q^2 - 5p^2q - pq$.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: 'Simplify the following expression:
+
+        $$-m^2n + 4mn^2 - 2nm + 5m^2n - 6mn^2 - 3mn$$'
+      finalAnswer: 4m²n - 2mn² - 5mn
+      stepByStepGuideline:
+      - 'Group the terms based on their variable parts: $m^2n$, $mn^2$, and $mn$ (or $nm$).'
+      - 'Combine the $m^2n$ terms: $-m^2n + 5m^2n = (-1 + 5)m^2n = 4m^2n$.'
+      - 'Combine the $mn^2$ terms: $4mn^2 - 6mn^2 = (4 - 6)mn^2 = -2mn^2$.'
+      - 'Combine the $mn$ terms (remember $nm = mn$): $-2nm - 3mn = -2mn - 3mn = -5mn$.'
+      - The final simplified expression is $4m^2n - 2mn^2 - 5mn$.
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'Combine the like terms in the expression:
+
+        $$2r^2s - rs^2 + 5sr^2 - 3r^2s + 4s^2r$$'
+      finalAnswer: 4r²s + 3rs²
+      stepByStepGuideline:
+      - 'Identify the two distinct types of terms: $r^2s$ (which includes $sr^2$) and $rs^2$ (which includes $s^2r$).'
+      - 'Group and combine the $r^2s$ terms: $2r^2s + 5sr^2 - 3r^2s$. Since $sr^2 = r^2s$, we have $(2 + 5 - 3)r^2s = 4r^2s$.'
+      - 'Group and combine the $rs^2$ terms: $-rs^2 + 4s^2r$. Since $s^2r = rs^2$, we have $(-1 + 4)rs^2 = 3rs^2$.'
+      - 'Write the final simplified expression: $4r^2s + 3rs^2$.'
+      id: q3-5
+      questionGroup: q3
+- id: expansion-factorisation-node-4
+  nodeNumber: 4
+  title: Single Bracket Expansion with Distributive Law
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: distributiveVisualizer
+    preWrittenQuestions:
+    - problemText: 'Expand the expression using the distributive law: $$3(4x + 5y)$$'
+      avatarIntro: The distributive law is essential for expanding brackets. Remember to multiply the outside term by every
+        single term inside the bracket!
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: '3'
+          terms:
+          - 4x
+          - 5y
+          operation: +
+          showSteps: true
+          showAnimation: false
+      finalAnswer: 12x + 15y
+      stepByStepGuideline:
+      - 'Multiply the outside term (3) by the first term inside (4x): $3 \times 4x = 12x$.'
+      - 'Multiply the outside term (3) by the second term inside (5y): $3 \times 5y = 15y$.'
+      - 'Combine the results: $12x + 15y$.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: 'Expand the following expression, paying close attention to the signs: $$-4(p - 2q)$$'
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: '-4'
+          terms:
+          - p
+          - -2q
+          operation: +
+          showSteps: true
+          showAnimation: false
+      finalAnswer: -4p + 8q
+      stepByStepGuideline:
+      - 'Multiply the outside term (-4) by the first term inside (p): $-4 \times p = -4p$.'
+      - 'Multiply the outside term (-4) by the second term inside (-2q): $-4 \times (-2q)$. Remember that negative multiplied
+        by negative gives a positive result: $+8q$.'
+      - 'Combine the terms: $-4p + 8q$.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'Expand and simplify the expression: $$-(-m - 7)$$'
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: '-1'
+          terms:
+          - -m
+          - '-7'
+          operation: +
+          showSteps: true
+          showAnimation: false
+      finalAnswer: m + 7
+      stepByStepGuideline:
+      - Recognize that the negative sign outside the bracket is equivalent to multiplying by -1.
+      - 'Multiply -1 by the first term (-m): $-1 \times (-m) = m$. (Negative times negative is positive)'
+      - 'Multiply -1 by the second term (-7): $-1 \times (-7) = 7$. (Negative times negative is positive)'
+      - 'Combine the terms: $m + 7$.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: 'Use the distributive law to expand the expression with three terms: $$5(2a - b + 3c)$$'
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: '5'
+          terms:
+          - 2a
+          - -b
+          - 3c
+          operation: +
+          showSteps: true
+          showAnimation: false
+      finalAnswer: 10a - 5b + 15c
+      stepByStepGuideline:
+      - 'Distribute 5 to the first term: $5 \times 2a = 10a$.'
+      - "Distribute 5 to the second term: $5 \times (-b) = -5b$."
+      - 'Distribute 5 to the third term: $5 \times 3c = 15c$.'
+      - 'Combine the results: $10a - 5b + 15c$.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: 'Expand the following expression fully: $$-2(-x + 3y - 4z)$$'
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: '-2'
+          terms:
+          - -x
+          - 3y
+          - -4z
+          operation: +
+          showSteps: true
+          showAnimation: false
+      finalAnswer: 2x - 6y + 8z
+      stepByStepGuideline:
+      - 'Multiply -2 by the first term (-x): $-2 \times (-x) = 2x$.'
+      - 'Multiply -2 by the second term (3y): $-2 \times 3y = -6y$.'
+      - 'Multiply -2 by the third term (-4z): $-2 \times (-4z) = 8z$.'
+      - 'Combine the results: $2x - 6y + 8z$.'
+      id: q4-5
+      questionGroup: q4
+- id: expansion-factorisation-node-5
+  nodeNumber: 5
+  title: Expanding and Simplifying Multiple Single Brackets
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Expand and simplify the expression: $4(3x - 5) + 2(x + 10)$'
+      avatarIntro: Let's start by practicing the distributive law. Remember to multiply the outside term by every term inside
+        the bracket, and then combine the like terms.
+      mathTool: null
+      finalAnswer: 14x
+      stepByStepGuideline:
+      - 'Expand the first bracket: $4(3x - 5) = 12x - 20$.'
+      - 'Expand the second bracket: $2(x + 10) = 2x + 20$.'
+      - 'Write the fully expanded expression: $12x - 20 + 2x + 20$.'
+      - 'Combine the like terms (x terms and constant terms): $(12x + 2x) + (-20 + 20)$.'
+      - 'Simplify to the final answer: $14x$.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'Expand and simplify: $5(2y + 3) - 3(y - 1) - 4(y + 2)$'
+      mathTool: null
+      finalAnswer: 3y + 10
+      stepByStepGuideline:
+      - 'Expand the three brackets, paying close attention to negative multipliers:'
+      - 'First bracket: $5(2y + 3) = 10y + 15$.'
+      - 'Second bracket: $-3(y - 1) = -3y + 3$.'
+      - 'Third bracket: $-4(y + 2) = -4y - 8$.'
+      - 'Write the fully expanded expression: $10y + 15 - 3y + 3 - 4y - 8$.'
+      - 'Combine the ''y'' terms: $10y - 3y - 4y = 3y$.'
+      - 'Combine the constant terms: $15 + 3 - 8 = 10$.'
+      - The simplified expression is $3y + 10$.
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'Expand and simplify the expression involving quadratic terms: $2x(x - 3) - 5(x^2 + x)$'
+      mathTool: null
+      finalAnswer: -3x² - 11x
+      stepByStepGuideline:
+      - 'Expand the first bracket: $2x(x - 3) = 2x^2 - 6x$.'
+      - 'Expand the second bracket, using the multiplier $-5$: $-5(x^2 + x) = -5x^2 - 5x$.'
+      - 'Write the fully expanded expression: $2x^2 - 6x - 5x^2 - 5x$.'
+      - 'Combine the $x^2$ terms: $2x^2 - 5x^2 = -3x^2$.'
+      - 'Combine the $x$ terms: $-6x - 5x = -11x$.'
+      - The simplified expression is $-3x^2 - 11x$.
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'Expand and simplify the multi-variable expression: $a(3a + b) + 2b(a - c) - 3c(a - b)$'
+      mathTool: null
+      finalAnswer: 3a² + 3ab + bc - 3ac
+      stepByStepGuideline:
+      - 'Expand the first bracket: $a(3a + b) = 3a^2 + ab$.'
+      - 'Expand the second bracket: $2b(a - c) = 2ab - 2bc$.'
+      - 'Expand the third bracket, using the multiplier $-3c$: $-3c(a - b) = -3ac + 3bc$.'
+      - 'Write the fully expanded expression: $3a^2 + ab + 2ab - 2bc - 3ac + 3bc$.'
+      - 'Combine the like terms: $ab$ terms ($ab + 2ab = 3ab$) and $bc$ terms ($-2bc + 3bc = bc$).'
+      - The final simplified expression is $3a^2 + 3ab + bc - 3ac$.
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'Expand and simplify: $3m(2m + n) - n(m - 5n)$'
+      mathTool: null
+      finalAnswer: 6m² + 2mn + 5n²
+      stepByStepGuideline:
+      - 'Expand the first bracket: $3m(2m + n) = 6m^2 + 3mn$.'
+      - "Expand the second bracket, using the multiplier $-n$: $-n(m - 5n) = -mn + 5n^2$. (Note the sign change: $-n \times\
+        \ -5n = +5n^2$)."
+      - 'Write the fully expanded expression: $6m^2 + 3mn - mn + 5n^2$.'
+      - 'Combine the like terms ($mn$ terms): $3mn - mn = 2mn$.'
+      - The final simplified expression is $6m^2 + 2mn + 5n^2$.
+      id: q5-5
+      questionGroup: q5
+- id: expansion-factorisation-node-6
+  nodeNumber: 6
+  title: Double Bracket Expansion (FOIL Method)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: 'Expand and simplify the following binomial product using the FOIL method:
+
+        $$(x+4)(x+7)$$'
+      avatarIntro: The FOIL method helps us systematically multiply two binomials. Remember to multiply the First, Outer,
+        Inner, and Last terms, and then simplify by combining the like terms.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: x+4
+          expression2: x+7
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: x² + 11x + 28
+      stepByStepGuideline:
+      - 'Apply the FOIL method: First (x * x = x²), Outer (x * 7 = 7x), Inner (4 * x = 4x), Last (4 * 7 = 28).'
+      - 'Write out the four terms: x² + 7x + 4x + 28.'
+      - 'Combine the like terms (the Outer and Inner terms): 7x + 4x = 11x.'
+      - The simplified expansion is x² + 11x + 28.
+      id: q6-1
+      questionGroup: q6
+    - problemText: 'Expand and simplify the expression:
+
+        $$(2m+1)(3m+5)$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2m+1
+          expression2: 3m+5
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: 6m² + 13m + 5
+      stepByStepGuideline:
+      - 'Apply FOIL: First (2m * 3m = 6m²), Outer (2m * 5 = 10m), Inner (1 * 3m = 3m), Last (1 * 5 = 5).'
+      - 'Write out the four terms: 6m² + 10m + 3m + 5.'
+      - 'Combine the like terms: 10m + 3m = 13m.'
+      - The simplified expansion is 6m² + 13m + 5.
+      id: q6-2
+      questionGroup: q6
+    - problemText: 'Determine the expanded and simplified form of the following product:
+
+        $$(3y+2)(3y+4)$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 3y+2
+          expression2: 3y+4
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: 9y² + 18y + 8
+      stepByStepGuideline:
+      - 'Apply FOIL: First (3y * 3y = 9y²), Outer (3y * 4 = 12y), Inner (2 * 3y = 6y), Last (2 * 4 = 8).'
+      - 'Write out the four terms: 9y² + 12y + 6y + 8.'
+      - 'Combine the like terms: 12y + 6y = 18y.'
+      - The simplified expansion is 9y² + 18y + 8.
+      id: q6-3
+      questionGroup: q6
+    - problemText: 'Expand the expression using the multiplication grid method. Note that the variables are different, so
+        you may not be able to combine any terms:
+
+        $$(p+6)(q+1)$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: p+6
+          expression2: q+1
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: pq + p + 6q + 6
+      stepByStepGuideline:
+      - 'Apply FOIL: First (p * q = pq), Outer (p * 1 = p), Inner (6 * q = 6q), Last (6 * 1 = 6).'
+      - 'Write out the four terms: pq + p + 6q + 6.'
+      - Check for like terms. Since p, q, pq, and the constant 6 are all different types of terms, no further simplification
+        is possible.
+      - The expanded form is pq + p + 6q + 6.
+      id: q6-4
+      questionGroup: q6
+    - problemText: 'Expand and simplify the following product:
+
+        $$(a+8)(2a+3)$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: a+8
+          expression2: 2a+3
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: 2a² + 19a + 24
+      stepByStepGuideline:
+      - 'Apply FOIL: First (a * 2a = 2a²), Outer (a * 3 = 3a), Inner (8 * 2a = 16a), Last (8 * 3 = 24).'
+      - 'Write out the four terms: 2a² + 3a + 16a + 24.'
+      - 'Combine the like terms: 3a + 16a = 19a.'
+      - The simplified expansion is 2a² + 19a + 24.
+      id: q6-5
+      questionGroup: q6
+- id: expansion-factorisation-node-7
+  nodeNumber: 7
+  title: Double Brackets with Negative Terms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: Expand and simplify the following binomial product. Remember that multiplying two negative terms results
+        in a positive term.
+      avatarIntro: Mastering double brackets with negative terms is crucial. Use the multiplication grid to visualize how
+        the signs change in each step!
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: x-7
+          expression2: x-3
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: x² - 10x + 21
+      stepByStepGuideline:
+      - 'Multiply the terms in the first bracket by the terms in the second bracket: $x(x-3) - 7(x-3)$.'
+      - 'Distribute the multiplication: $x^2 - 3x - 7x + 21$. (Note that $(-7)(-3) = +21$)'
+      - 'Combine the like terms (the middle terms): $x^2 - 10x + 21$.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Expand the expression $(3y-2)(2y+5)$ and simplify the result.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 3y-2
+          expression2: 2y+5
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: 6y² + 11y - 10
+      stepByStepGuideline:
+      - 'Multiply the terms: $3y(2y+5) - 2(2y+5)$.'
+      - 'Distribute the multiplication, paying attention to signs: $6y^2 + 15y - 4y - 10$.'
+      - 'Combine the like terms ($15y - 4y$): $6y^2 + 11y - 10$.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: Expand the multi-variable expression $(4a+b)(a-5b)$ fully.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 4a+b
+          expression2: a-5b
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: 4a² - 19ab - 5b²
+      stepByStepGuideline:
+      - 'Multiply the terms: $4a(a-5b) + b(a-5b)$.'
+      - 'Distribute the multiplication: $4a^2 - 20ab + ab - 5b^2$.'
+      - 'Combine the like terms ($-20ab + ab$): $4a^2 - 19ab - 5b^2$.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: Expand and simplify the product $(-2m-4)(m+3)$. Be careful when multiplying the negative terms in the first
+        bracket by the positive terms in the second.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: -2m-4
+          expression2: m+3
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: -2m² - 10m - 12
+      stepByStepGuideline:
+      - 'Multiply the terms: $-2m(m+3) - 4(m+3)$.'
+      - 'Distribute the multiplication: $-2m^2 - 6m - 4m - 12$.'
+      - 'Combine the like terms ($-6m - 4m$): $-2m^2 - 10m - 12$.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: Determine the expanded and simplified form of the expression $(-p-1)(-p-6)$.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: -p-1
+          expression2: -p-6
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: p² + 7p + 6
+      stepByStepGuideline:
+      - 'Multiply the terms: $-p(-p-6) - 1(-p-6)$.'
+      - 'Distribute the multiplication. Remember that negative times negative equals positive: $p^2 + 6p + p + 6$.'
+      - 'Combine the like terms ($6p + p$): $p^2 + 7p + 6$.'
+      id: q7-5
+      questionGroup: q7
+- id: expansion-factorisation-node-8
+  nodeNumber: 8
+  title: Expanding (px+q)(rx+s) to Quadratic Form
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: 'Expand and simplify the following binomial product: $$(x+2)(x-3)$$ Use the multiplication grid method
+        to ensure all terms are accounted for.'
+      avatarIntro: Expanding binomials like this is a fundamental skill. Remember to multiply every term in the first bracket
+        by every term in the second bracket, and then combine any like terms.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: x+2
+          expression2: x-3
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: x² - x - 6
+      stepByStepGuideline:
+      - 'Multiply the first terms (x * x) to get the $x^2$ term: $x^2$.'
+      - 'Multiply the outer terms (x * -3) and the inner terms (2 * x): $-3x + 2x$.'
+      - 'Multiply the last terms (2 * -3): $-6$.'
+      - 'Combine the middle terms: $-3x + 2x = -x$.'
+      - The fully expanded and simplified form is $x^2 - x - 6$.
+      id: q8-1
+      questionGroup: q8
+    - problemText: Expand the expression $(2x-1)(x+4)$ and simplify the result.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2x-1
+          expression2: x+4
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: 2x² + 7x - 4
+      stepByStepGuideline:
+      - 'Multiply the first terms: $(2x)(x) = 2x^2$.'
+      - 'Calculate the middle terms: Outer product $(2x)(4) = 8x$. Inner product $(-1)(x) = -x$.'
+      - 'Multiply the last terms: $(-1)(4) = -4$.'
+      - 'Combine the middle terms: $8x - x = 7x$.'
+      - The final simplified expression is $2x^2 + 7x - 4$.
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'Determine the expanded and simplified form of the following product, paying close attention to how the
+        two negative constants interact: $$(2x-2)(3x-3)$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2x-2
+          expression2: 3x-3
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: 6x² - 12x + 6
+      stepByStepGuideline:
+      - 'Calculate the $x^2$ term: $(2x)(3x) = 6x^2$.'
+      - 'Calculate the middle terms: Outer product $(2x)(-3) = -6x$. Inner product $(-2)(3x) = -6x$.'
+      - 'Calculate the constant term: $(-2)(-3) = 6$.'
+      - 'Combine the middle terms: $-6x - 6x = -12x$.'
+      - The final expression is $6x^2 - 12x + 6$.
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'Expand and simplify the expression: $$(3x+4)(2x+1)$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 3x+4
+          expression2: 2x+1
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: 6x² + 11x + 4
+      stepByStepGuideline:
+      - 'Calculate the $x^2$ term: $(3x)(2x) = 6x^2$.'
+      - 'Calculate the middle terms: Outer product $(3x)(1) = 3x$. Inner product $(4)(2x) = 8x$.'
+      - 'Calculate the constant term: $(4)(1) = 4$.'
+      - 'Combine the middle terms: $3x + 8x = 11x$.'
+      - The final expression is $6x^2 + 11x + 4$.
+      id: q8-4
+      questionGroup: q8
+    - problemText: Expand the product of the two binomials $(2x+5)(2x-1)$ fully.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2x+5
+          expression2: 2x-1
+          mode: expand
+          showGrid: true
+          stepByStep: false
+      finalAnswer: 4x² + 8x - 5
+      stepByStepGuideline:
+      - 'Calculate the $x^2$ term: $(2x)(2x) = 4x^2$.'
+      - 'Calculate the middle terms: Outer product $(2x)(-1) = -2x$. Inner product $(5)(2x) = 10x$.'
+      - 'Calculate the constant term: $(5)(-1) = -5$.'
+      - 'Combine the middle terms: $-2x + 10x = 8x$.'
+      - The final simplified expression is $4x^2 + 8x - 5$.
+      id: q8-5
+      questionGroup: q8
+- id: expansion-factorisation-node-9
+  nodeNumber: 9
+  title: Recognizing Rectangular Array Patterns
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: Use the multiplication grid method to expand the binomial product $(x+6)(x+2)$. After completing the grid,
+        identify which region (top-left, middle two, or bottom-right) corresponds to the Green $x^2$ term, the combined Blue
+        $x$ terms, and the Orange constant term.
+      avatarIntro: The multiplication grid is a fantastic visual tool for ensuring you multiply every term correctly when
+        expanding binomials. Let's practice identifying the resulting terms in their specific regions.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: x+6
+          expression2: x+2
+          mode: expand
+          showGrid: true
+          stepByStep: true
+      finalAnswer: x² + 8x + 12
+      stepByStepGuideline:
+      - Set up the grid by placing $(x+6)$ along the top and $(x+2)$ along the side.
+      - 'Multiply the terms in the top-left box (Green): $x \cdot x = x^2$. This is the $x^2$ term.'
+      - 'Multiply the terms for the two middle boxes (Blue): $x \cdot 2 = 2x$ and $6 \cdot x = 6x$. These are the $x$ terms.'
+      - 'Multiply the terms in the bottom-right box (Orange): $6 \cdot 2 = 12$. This is the constant term.'
+      - 'Combine the like terms: $x^2 + (2x + 6x) + 12 = x^2 + 8x + 12$.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: Expand the expression $(3x+2)(x+5)$ using the multiplication grid structure. Pay attention to how the leading
+        coefficient of $3x$ affects the size of the Green $x^2$ box and the resulting Blue $x$ terms.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 3x+2
+          expression2: x+5
+          mode: expand
+          showGrid: true
+          stepByStep: true
+      finalAnswer: 3x² + 17x + 10
+      stepByStepGuideline:
+      - Set up the grid with $(3x+2)$ and $(x+5)$.
+      - 'Calculate the top-left (Green $x^2$ term): $3x \cdot x = 3x^2$.'
+      - 'Calculate the off-diagonal terms (Blue $x$ terms): $3x \cdot 5 = 15x$ and $2 \cdot x = 2x$.'
+      - 'Calculate the bottom-right (Orange constant term): $2 \cdot 5 = 10$.'
+      - 'Sum all four terms and simplify by combining the $x$ terms: $3x^2 + 15x + 2x + 10 = 3x^2 + 17x + 10$.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: When expanding $(4x+1)(2x+3)$ using the grid, both binomials have coefficients greater than one. Use the
+        grid method to determine the final simplified polynomial and note how the $x^2$ term is formed by multiplying the
+        coefficients of the $x$ terms.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 4x+1
+          expression2: 2x+3
+          mode: expand
+          showGrid: true
+          stepByStep: true
+      finalAnswer: 8x² + 14x + 3
+      stepByStepGuideline:
+      - Set up the grid with $(4x+1)$ and $(2x+3)$.
+      - 'Calculate the top-left (Green $x^2$ term): $4x \cdot 2x = 8x^2$.'
+      - 'Calculate the off-diagonal terms (Blue $x$ terms): $4x \cdot 3 = 12x$ and $1 \cdot 2x = 2x$.'
+      - 'Calculate the bottom-right (Orange constant term): $1 \cdot 3 = 3$.'
+      - 'Sum the terms and combine the $x$ terms: $8x^2 + 12x + 2x + 3 = 8x^2 + 14x + 3$.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: Expand the product $(x-3)(x+5)$ using the rectangular array pattern. Explain how the negative sign on the
+        constant term $-3$ affects the calculation of the Blue $x$ terms and the Orange constant term.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: x-3
+          expression2: x+5
+          mode: expand
+          showGrid: true
+          stepByStep: true
+      finalAnswer: x² + 2x - 15
+      stepByStepGuideline:
+      - Set up the grid using $x-3$ and $x+5$.
+      - 'Calculate the top-left (Green $x^2$ term): $x \cdot x = x^2$.'
+      - 'Calculate the off-diagonal terms (Blue $x$ terms): $x \cdot 5 = 5x$ and $-3 \cdot x = -3x$.'
+      - 'Calculate the bottom-right (Orange constant term): $-3 \cdot 5 = -15$.'
+      - 'Sum the terms. Note that the $x$ terms subtract: $x^2 + 5x - 3x - 15 = x^2 + 2x - 15$.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: Use the multiplication grid structure to expand $(2x-3)(x-4)$. Ensure you correctly handle the multiplication
+        of the two negative constants when finding the Orange constant term.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2x-3
+          expression2: x-4
+          mode: expand
+          showGrid: true
+          stepByStep: true
+      finalAnswer: 2x² - 11x + 12
+      stepByStepGuideline:
+      - Set up the grid using $2x-3$ and $x-4$.
+      - 'Calculate the top-left (Green $x^2$ term): $2x \cdot x = 2x^2$.'
+      - 'Calculate the off-diagonal terms (Blue $x$ terms): $2x \cdot (-4) = -8x$ and $-3 \cdot x = -3x$.'
+      - 'Calculate the bottom-right (Orange constant term): $(-3) \cdot (-4) = 12$. Remember, negative times negative is positive.'
+      - 'Sum the terms and combine the $x$ terms: $2x^2 - 8x - 3x + 12 = 2x^2 - 11x + 12$.'
+      id: q9-5
+      questionGroup: q9
+- id: expansion-factorisation-node-10
+  nodeNumber: 10
+  title: Expanding with Higher Powers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Expand and simplify the following expression:
+
+        $$2x(x^2 - 3x + 5) - x^3$$'
+      avatarIntro: This problem tests your understanding of the exponent rule $x$ times $x$ squared equals $x$ cubed. Remember
+        to combine like terms at the end.
+      mathTool: null
+      finalAnswer: x³ - 6x² + 10x
+      stepByStepGuideline:
+      - 'Distribute $2x$ into the parentheses:'
+      - $$2x(x^2) = 2x^{1+2} = 2x^3$$
+      - $$2x(-3x) = -6x^{1+1} = -6x^2$$
+      - $$2x(5) = 10x$$
+      - 'The expanded expression is: $$2x^3 - 6x^2 + 10x - x^3$$'
+      - 'Combine the like terms ($2x^3$ and $-x^3$): $$(2x^3 - x^3) - 6x^2 + 10x = x^3 - 6x^2 + 10x$$'
+      id: q10-1
+      questionGroup: q10
+    - problemText: 'Expand the expression fully. Note that the resulting terms are unlike and cannot be combined:
+
+        $$4a^2b(3a + 2b^2)$$'
+      mathTool: null
+      finalAnswer: 12a³b + 8a²b³
+      stepByStepGuideline:
+      - 'Multiply the monomial $4a^2b$ by the first term $3a$:'
+      - $$4a^2b \times 3a = (4 \times 3) a^{2+1} b = 12a^3b$$
+      - 'Multiply the monomial $4a^2b$ by the second term $2b^2$:'
+      - $$4a^2b \times 2b^2 = (4 \times 2) a^2 b^{1+2} = 8a^2b^3$$
+      - The expanded expression is $12a^3b + 8a^2b^3$. Since the powers of $a$ and $b$ are different in each term, they are
+        unlike terms and cannot be simplified further.
+      id: q10-2
+      questionGroup: q10
+    - problemText: 'Expand and simplify the following algebraic expression:
+
+        $$3y(5y + 2) - 2(y^2 + 3y)$$'
+      mathTool: null
+      finalAnswer: 13y²
+      stepByStepGuideline:
+      - 'Expand the first part, $3y(5y + 2)$:'
+      - $$3y(5y) + 3y(2) = 15y^2 + 6y$$
+      - 'Expand the second part, $-2(y^2 + 3y)$. Remember to distribute the negative sign:'
+      - $$-2(y^2) - 2(3y) = -2y^2 - 6y$$
+      - 'Combine the expanded parts: $$15y^2 + 6y - 2y^2 - 6y$$'
+      - 'Group and combine like terms:'
+      - 'Terms involving $y^2$: $15y^2 - 2y^2 = 13y^2$'
+      - 'Terms involving $y$: $6y - 6y = 0$'
+      - The simplified answer is $13y^2$.
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'Expand and simplify:
+
+        $$p^2(p^2q + 5q) - q(p^4 + 3p^2)$$'
+      mathTool: null
+      finalAnswer: 2p²q
+      stepByStepGuideline:
+      - 'Expand the first term, $p^2(p^2q + 5q)$:'
+      - $$p^2(p^2q) + p^2(5q) = p^{2+2}q + 5p^2q = p^4q + 5p^2q$$
+      - 'Expand the second term, $-q(p^4 + 3p^2)$. Distribute the negative sign:'
+      - $$-q(p^4) - q(3p^2) = -p^4q - 3p^2q$$
+      - 'Combine the expanded expressions: $$p^4q + 5p^2q - p^4q - 3p^2q$$'
+      - 'Group like terms:'
+      - 'Terms involving $p^4q$: $p^4q - p^4q = 0$'
+      - 'Terms involving $p^2q$: $5p^2q - 3p^2q = 2p^2q$'
+      - The simplified result is $2p^2q$.
+      id: q10-4
+      questionGroup: q10
+    - problemText: 'Expand and simplify the expression:
+
+        $$-3m^2n(mn^2 - 4) + m^3n^3$$'
+      mathTool: null
+      finalAnswer: -2m³n³ + 12m²n
+      stepByStepGuideline:
+      - 'Distribute the monomial $-3m^2n$ into the parentheses:'
+      - 'Multiply by the first term $mn^2$: $$-3m^2n \times mn^2 = -3m^{2+1}n^{1+2} = -3m^3n^3$$'
+      - 'Multiply by the second term $-4$: $$-3m^2n \times (-4) = +12m^2n$$'
+      - 'The expression after expansion is: $$-3m^3n^3 + 12m^2n + m^3n^3$$'
+      - 'Combine the like terms (those involving $m^3n^3$): $$-3m^3n^3 + m^3n^3 = -2m^3n^3$$'
+      - The simplified final expression is $-2m^3n^3 + 12m^2n$.
+      id: q10-5
+      questionGroup: q10
+- id: expansion-factorisation-node-11
+  nodeNumber: 11
+  title: Complex Multi-Bracket Expansion
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Expand the following complex expression fully: $$(x+2)(x-1)(x+4)$$ Ensure you expand the first two brackets
+        completely before multiplying the result by the third bracket.'
+      avatarIntro: This type of problem requires you to break down the expansion into manageable steps. Remember to expand
+        a pair of brackets first, simplify the result, and then multiply that polynomial by the remaining bracket.
+      mathTool: null
+      finalAnswer: x³ + 5x² + 2x - 8
+      stepByStepGuideline:
+      - 'Step 1: Expand the first pair of brackets: $(x+2)(x-1)$. Using FOIL, this gives $x^2 - x + 2x - 2$, which simplifies
+        to $x^2 + x - 2$.'
+      - 'Step 2: Multiply the resulting quadratic expression $(x^2 + x - 2)$ by the third bracket $(x+4)$.'
+      - 'Step 3: Distribute the terms: $x(x^2 + x - 2) + 4(x^2 + x - 2)$.'
+      - 'Step 4: Expand the products: $(x^3 + x^2 - 2x) + (4x^2 + 4x - 8)$.'
+      - 'Step 5: Combine like terms ($x^2$ terms and $x$ terms) to get the final simplified polynomial: $x^3 + 5x^2 + 2x -
+        8$.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: 'Expand and simplify the following expression, applying the constant coefficient last: $$3(2x-1)(x+5)$$'
+      mathTool: null
+      finalAnswer: 6x² + 27x - 15
+      stepByStepGuideline:
+      - 'Step 1: Expand the double bracket product $(2x-1)(x+5)$. Using FOIL, this yields $2x^2 + 10x - x - 5$, which simplifies
+        to $2x^2 + 9x - 5$.'
+      - 'Step 2: Multiply the entire resulting expression by the external coefficient 3: $3(2x^2 + 9x - 5)$.'
+      - 'Step 3: Distribute the 3 to all terms inside the brackets: $3(2x^2) + 3(9x) - 3(5)$.'
+      - 'Step 4: Simplify the expression: $6x^2 + 27x - 15$.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: 'Expand and simplify the sum of the two separate binomial products: $$(x+3)(x+2) + (x-4)(x+1)$$'
+      mathTool: null
+      finalAnswer: 2x² + 2x + 2
+      stepByStepGuideline:
+      - 'Step 1: Expand the first product, $(x+3)(x+2)$: $x^2 + 2x + 3x + 6 = x^2 + 5x + 6$.'
+      - 'Step 2: Expand the second product, $(x-4)(x+1)$: $x^2 + x - 4x - 4 = x^2 - 3x - 4$.'
+      - 'Step 3: Add the two resulting expressions together: $(x^2 + 5x + 6) + (x^2 - 3x - 4)$.'
+      - 'Step 4: Combine like terms. $x^2 + x^2 = 2x^2$. $5x - 3x = 2x$. $6 - 4 = 2$.'
+      - 'Step 5: The final simplified expression is $2x^2 + 2x + 2$.'
+      id: q11-3
+      questionGroup: q11
+    - problemText: 'Determine the expanded and simplified form of the triple bracket product: $$(2x+1)(x-2)(x+3)$$'
+      mathTool: null
+      finalAnswer: 2x³ + 3x² - 11x - 6
+      stepByStepGuideline:
+      - 'Step 1: Expand the last two brackets first: $(x-2)(x+3)$. Using FOIL, this results in $x^2 + 3x - 2x - 6$, which
+        simplifies to $x^2 + x - 6$.'
+      - 'Step 2: Multiply the first bracket $(2x+1)$ by the resulting quadratic expression $(x^2 + x - 6)$.'
+      - 'Step 3: Distribute the terms from the first bracket: $2x(x^2 + x - 6) + 1(x^2 + x - 6)$.'
+      - 'Step 4: Expand the products: $(2x^3 + 2x^2 - 12x) + (x^2 + x - 6)$.'
+      - 'Step 5: Combine like terms ($x^2$ terms and $x$ terms): $2x^3 + (2x^2 + x^2) + (-12x + x) - 6$.'
+      - 'Step 6: The final simplified expression is $2x^3 + 3x^2 - 11x - 6$.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: 'Expand and simplify the following expression involving subtraction and external coefficients: $$5(x-1)(x+1)
+        - 2(x+3)(x-2)$$ Pay close attention to distributing the negative sign associated with the second term.'
+      mathTool: null
+      finalAnswer: 3x² - 2x + 7
+      stepByStepGuideline:
+      - 'Step 1: Expand the first product, $(x-1)(x+1)$. This is a difference of squares: $x^2 - 1$. Apply the coefficient
+        5: $5(x^2 - 1) = 5x^2 - 5$.'
+      - 'Step 2: Expand the second product, $(x+3)(x-2)$: $x^2 - 2x + 3x - 6 = x^2 + x - 6$.'
+      - 'Step 3: Apply the coefficient 2 to the second product: $2(x^2 + x - 6) = 2x^2 + 2x - 12$.'
+      - 'Step 4: Substitute the expanded forms back into the original expression, remembering the subtraction: $(5x^2 - 5)
+        - (2x^2 + 2x - 12)$.'
+      - 'Step 5: Distribute the negative sign to all terms in the second set of parentheses: $5x^2 - 5 - 2x^2 - 2x + 12$.'
+      - 'Step 6: Combine like terms: $(5x^2 - 2x^2) - 2x + (-5 + 12)$.'
+      - 'Step 7: The final simplified expression is $3x^2 - 2x + 7$.'
+      id: q11-5
+      questionGroup: q11
+- id: expansion-factorisation-node-12
+  nodeNumber: 12
+  title: Factorising by Extracting Common Factors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Factorise the expression $4x + 12$ completely by extracting the Highest Common Factor (HCF).
+      avatarIntro: Welcome! Remember that factorisation is the reverse of expansion. Start by finding the largest number that
+        divides into both terms.
+      mathTool: null
+      finalAnswer: 4(x + 3)
+      stepByStepGuideline:
+      - 'Identify the terms: $4x$ and $12$.'
+      - Find the Highest Common Factor (HCF) of the numerical coefficients (4 and 12). The HCF is 4.
+      - 'Divide each term by the HCF: $4x / 4 = x$ and $12 / 4 = 3$.'
+      - 'Write the factorised form: $4(x + 3)$.'
+      - 'Verification: Expand $4(x + 3) = 4x + 12$. This matches the original expression.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: 'Factorise completely: $18m - 6$.'
+      mathTool: null
+      finalAnswer: 6(3m - 1)
+      stepByStepGuideline:
+      - 'Identify the terms: $18m$ and $-6$.'
+      - Find the Highest Common Factor (HCF) of 18 and 6. The HCF is 6.
+      - 'Factor out 6 from both terms: $18m / 6 = 3m$ and $-6 / 6 = -1$.'
+      - 'Write the factorised expression: $6(3m - 1)$.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: Factorise completely the expression $9pq + 15p$. Ensure that you extract any common variables along with
+        the numerical HCF.
+      mathTool: null
+      finalAnswer: 3p(3q + 5)
+      stepByStepGuideline:
+      - Identify the numerical coefficients (9 and 15) and the variables ($pq$ and $p$).
+      - Find the HCF of 9 and 15, which is 3.
+      - Find the common variable factor. Both terms contain $p$, so the common variable factor is $p$.
+      - The overall HCF is $3p$.
+      - 'Divide $9pq$ by $3p$: $3q$.'
+      - 'Divide $15p$ by $3p$: $5$.'
+      - 'Write the factorised expression: $3p(3q + 5)$.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: 'Factorise completely: $10k^2 - 5k$.'
+      mathTool: null
+      finalAnswer: 5k(2k - 1)
+      stepByStepGuideline:
+      - 'Identify the terms: $10k^2$ and $-5k$.'
+      - Find the HCF of the numerical coefficients (10 and 5), which is 5.
+      - Find the common variable factor. $k^2$ and $k$ share $k$ as the highest common factor.
+      - The overall HCF is $5k$.
+      - 'Divide $10k^2$ by $5k$: $2k$.'
+      - 'Divide $-5k$ by $5k$: $-1$.'
+      - 'Write the factorised expression: $5k(2k - 1)$.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: 'Factorise the following three-term expression completely: $4x^2y + 2xy - 6y$.'
+      mathTool: null
+      finalAnswer: 2y(2x² + x - 3)
+      stepByStepGuideline:
+      - Identify the numerical coefficients (4, 2, and -6). The HCF is 2.
+      - Identify the common variables. All terms contain $y$, and the smallest power of $x$ is 0 (in the last term), so the
+        only common variable is $y$.
+      - The overall HCF is $2y$.
+      - 'Divide $4x^2y$ by $2y$: $2x^2$.'
+      - 'Divide $2xy$ by $2y$: $x$.'
+      - 'Divide $-6y$ by $2y$: $-3$.'
+      - 'Write the factorised expression: $2y(2x^2 + x - 3)$.'
+      id: q12-5
+      questionGroup: q12
+- id: expansion-factorisation-node-13
+  nodeNumber: 13
+  title: Factorising with Negative Common Factors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Factorise completely: $$-10x - 15$$'
+      avatarIntro: Remember, when both terms are negative, extracting a negative common factor helps simplify the expression
+        and leaves positive terms inside the bracket. Pay close attention to the sign changes!
+      finalAnswer: -5(2x + 3)
+      stepByStepGuideline:
+      - Identify the Highest Common Factor (HCF) of the numerical coefficients 10 and 15, which is 5.
+      - Since both terms are negative, extract the negative HCF, -5.
+      - 'Divide each term by -5: $(-10x) \div (-5) = 2x$ and $(-15) \div (-5) = 3$.'
+      - 'Write the factorised form: $-5(2x + 3)$.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: 'Factorise completely: $$-6y + 18$$'
+      finalAnswer: -6(y - 3)
+      stepByStepGuideline:
+      - Identify the HCF of 6 and 18, which is 6.
+      - Extract the negative HCF, -6, because the leading term is negative.
+      - 'Divide the first term by -6: $(-6y) \div (-6) = y$.'
+      - 'Divide the second term by -6: $(+18) \div (-6) = -3$.'
+      - 'Write the factorised form: $-6(y - 3)$.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: 'Factorise completely by extracting a negative common factor (i.e., ensure the factor outside the bracket
+        is negative): $$4m - 12n$$'
+      finalAnswer: -4(-m + 3n)
+      stepByStepGuideline:
+      - Identify the HCF of 4 and 12, which is 4.
+      - To satisfy the requirement of extracting a negative factor, use -4.
+      - 'Divide the first term by -4: $(4m) \div (-4) = -m$.'
+      - 'Divide the second term by -4: $(-12n) \div (-4) = +3n$.'
+      - 'Write the factorised form: $-4(-m + 3n)$.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: 'Factorise completely: $$-p^2 - p$$'
+      finalAnswer: -p(p + 1)
+      stepByStepGuideline:
+      - Identify the Highest Common Factor (HCF) of $p^2$ and $p$, which is $p$.
+      - Since both terms are negative, extract $-p$.
+      - 'Divide the first term by $-p$: $(-p^2) \div (-p) = p$.'
+      - 'Divide the second term by $-p$: $(-p) \div (-p) = 1$.'
+      - 'Write the factorised form: $-p(p + 1)$.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: 'Factorise completely: $$-14k^2 + 7k$$'
+      finalAnswer: -7k(2k - 1)
+      stepByStepGuideline:
+      - Identify the Highest Common Factor (HCF) of $14k^2$ and $7k$, which is $7k$.
+      - Since the leading term is negative, extract $-7k$.
+      - 'Divide the first term by $-7k$: $(-14k^2) \div (-7k) = 2k$.'
+      - 'Divide the second term by $-7k$: $(+7k) \div (-7k) = -1$.'
+      - 'Write the factorised form: $-7k(2k - 1)$.'
+      id: q13-5
+      questionGroup: q13
+- id: expansion-factorisation-node-14
+  nodeNumber: 14
+  title: Factorising with Squares and Cubes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Factorise completely: $$12x^3 + 18x^2$$'
+      avatarIntro: We are practising factorisation today. Remember, when terms contain variables with different powers, you
+        must extract the lowest power common to all terms.
+      mathTool: null
+      finalAnswer: 6x²(2x + 3)
+      stepByStepGuideline:
+      - Identify the Highest Common Factor (HCF) of the numerical coefficients (12 and 18). HCF(12, 18) = 6.
+      - Identify the HCF of the algebraic parts ($x^3$ and $x^2$). The lowest common power is $x^2$.
+      - The overall HCF is $6x^2$.
+      - 'Divide each term by the HCF: $12x^3 / 6x^2 = 2x$ and $18x^2 / 6x^2 = 3$.'
+      - 'Write the factored expression: $6x^2(2x + 3)$. The factorisation is complete.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: 'Factorise completely: $$10a^3b + 35a^2b^2$$'
+      mathTool: null
+      finalAnswer: 5a²b(2a + 7b)
+      stepByStepGuideline:
+      - Determine the Highest Common Factor (HCF) of the numerical coefficients (10 and 35). HCF(10, 35) = 5.
+      - Determine the HCF for variable 'a'. The lowest power is $a^2$.
+      - Determine the HCF for variable 'b'. The lowest power is $b$.
+      - The overall HCF is $5a^2b$.
+      - 'Divide each term by the HCF: $10a^3b / 5a^2b = 2a$ and $35a^2b^2 / 5a^2b = 7b$.'
+      - 'Write the fully factored expression: $5a^2b(2a + 7b)$.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: 'Factorise completely by extracting a negative Highest Common Factor (HCF): $$-24y^2 + 16y$$'
+      mathTool: null
+      finalAnswer: -8y(3y - 2)
+      stepByStepGuideline:
+      - Identify the numerical HCF of 24 and 16, which is 8.
+      - Identify the algebraic HCF of $y^2$ and $y$, which is $y$.
+      - Since we must extract a negative HCF, the overall HCF is $-8y$.
+      - 'Divide the first term by $-8y$: $-24y^2 / (-8y) = 3y$.'
+      - 'Divide the second term by $-8y$: $16y / (-8y) = -2$.'
+      - The factored expression is $-8y(3y - 2)$.
+      id: q14-3
+      questionGroup: q14
+    - problemText: 'Factorise completely: $$7k^3 - 14k^2 + 21k$$'
+      mathTool: null
+      finalAnswer: 7k(k² - 2k + 3)
+      stepByStepGuideline:
+      - Identify the Highest Common Factor (HCF) of the numerical coefficients (7, 14, and 21). HCF = 7.
+      - Identify the HCF of the algebraic parts ($k^3, k^2, k$). The lowest common power is $k$.
+      - The overall HCF is $7k$.
+      - 'Divide each of the three terms by $7k$: $7k^3 / 7k = k^2$, $-14k^2 / 7k = -2k$, and $21k / 7k = 3$.'
+      - 'Write the factored expression: $7k(k^2 - 2k + 3)$.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: 'Factorise completely: $$40p^5q^3 + 24p^3q^4$$'
+      mathTool: null
+      finalAnswer: 8p³q³(5p² + 3q)
+      stepByStepGuideline:
+      - Determine the HCF of the numerical coefficients (40 and 24). HCF(40, 24) = 8.
+      - Determine the HCF for variable 'p'. Lowest power is $p^3$.
+      - Determine the HCF for variable 'q'. Lowest power is $q^3$.
+      - The overall HCF is $8p^3q^3$.
+      - 'Divide the first term by the HCF: $40p^5q^3 / 8p^3q^3 = 5p^2$.'
+      - 'Divide the second term by the HCF: $24p^3q^4 / 8p^3q^3 = 3q$.'
+      - 'Write the fully factored expression: $8p^3q^3(5p^2 + 3q)$.'
+      id: q14-5
+      questionGroup: q14
+- id: expansion-factorisation-node-15
+  nodeNumber: 15
+  title: Understanding Quadratic Factorisation Process
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: Factorise the quadratic expression $x^2 + 5x + 6$. Explain how this process reverses the multiplication
+        grid expansion. Specifically, identify the two numbers that multiply to 6 and sum to 5.
+      avatarIntro: Welcome! Understanding factorisation as the reverse of expansion is crucial. Let's start by finding the
+        factor pairs for the constant term.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 5
+          c: 6
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: The factors of 6 are (1, 6) and (2, 3). Since 2 + 3 = 5, the correct factors are (x+2) and (x+3). Thus,
+        $x^2 + 5x + 6 = (x+2)(x+3)$.
+      stepByStepGuideline:
+      - Identify the constant term, c=6, and the coefficient of the x term, b=5.
+      - 'List all positive integer factor pairs of c=6: (1, 6) and (2, 3).'
+      - 'Check the sum of each pair to find which one equals b=5: 1 + 6 = 7 (Incorrect); 2 + 3 = 5 (Correct).'
+      - The required numbers are 2 and 3.
+      - 'Write the factorised form: $(x+2)(x+3)$.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: To factorise $x^2 + 9x + 8$, we need to find the specific factor pair of the constant term (8) whose sum
+        equals the coefficient of the $x$ term (9). List all positive factor pairs of 8 and clearly state which pair satisfies
+        the sum requirement.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 9
+          c: 8
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: The positive factor pairs of 8 are (1, 8) and (2, 4). The pair (1, 8) satisfies the sum requirement because
+        1 + 8 = 9. Therefore, $x^2 + 9x + 8 = (x+1)(x+8)$.
+      stepByStepGuideline:
+      - Identify c=8 and b=9.
+      - 'List factor pairs of 8: (1, 8) and (2, 4).'
+      - 'Calculate the sum for each pair: 1 + 8 = 9; 2 + 4 = 6.'
+      - The pair (1, 8) gives the required sum of 9.
+      - The factorised form is $(x+1)(x+8)$.
+      id: q15-2
+      questionGroup: q15
+    - problemText: Explain the core logic of factoring $x^2 + 11x + 10$. If the factored form is $(x+p)(x+q)$, what two conditions
+        must $p$ and $q$ satisfy regarding the numbers 11 and 10? Use factor pairs to find $p$ and $q$.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 11
+          c: 10
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: 'The conditions are: $p \cdot q = 10$ (the constant term) and $p + q = 11$ (the coefficient of x). The
+        factor pairs of 10 are (1, 10) and (2, 5). The pair (1, 10) sums to 11. Thus, $x^2 + 11x + 10 = (x+1)(x+10)$.'
+      stepByStepGuideline:
+      - The numbers p and q must satisfy $p \cdot q = c$ (10) and $p + q = b$ (11).
+      - 'List factor pairs of 10: (1, 10) and (2, 5).'
+      - 'Check sums: 1 + 10 = 11; 2 + 5 = 7.'
+      - The required pair is 1 and 10.
+      - The factorised expression is $(x+1)(x+10)$.
+      id: q15-3
+      questionGroup: q15
+    - problemText: Consider the quadratic expression $x^2 + 13x + 12$. Describe the full systematic process of determining
+        the binomial factors. Start by listing all factor pairs of 12 and evaluating their sums until the correct coefficient
+        is found.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 13
+          c: 12
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: To factorise $x^2 + 13x + 12$, we look for two numbers that multiply to 12 and add up to 13. Factor pairs
+        of 12 are (1, 12), (2, 6), and (3, 4). Their sums are 13, 8, and 7 respectively. The correct pair is (1, 12). Therefore,
+        the factors are $(x+1)(x+12)$.
+      stepByStepGuideline:
+      - Identify the constant term c=12 and the middle coefficient b=13.
+      - 'Systematically list factor pairs of 12:'
+      - 'Pair (1, 12): Sum = 1 + 12 = 13.'
+      - 'Pair (2, 6): Sum = 2 + 6 = 8.'
+      - 'Pair (3, 4): Sum = 3 + 4 = 7.'
+      - The pair (1, 12) satisfies the condition (sum = 13).
+      - The factorised form is $(x+1)(x+12)$.
+      id: q15-4
+      questionGroup: q15
+    - problemText: You are trying to factorise $x^2 + 8x + 15$. If you used a multiplication grid to expand $(x+p)(x+q)$,
+        which two cells contributed to the $8x$ term, and which cell provided the constant term 15? Use this understanding
+        to find the required factor pair of 15.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 8
+          c: 15
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: The constant term 15 comes from the product of the two constants, $p \cdot q$. The $8x$ term comes from
+        the sum of the cross-products, $px + qx = (p+q)x$. We need factors of 15 that sum to 8. Factors of 15 are (1, 15)
+        and (3, 5). Since 3 + 5 = 8, the factors are $(x+3)(x+5)$.
+      stepByStepGuideline:
+      - The constant term (15) is the product of the two numbers (p and q). The coefficient of x (8) is the sum of the two
+        numbers (p + q).
+      - 'List factor pairs of 15: (1, 15) and (3, 5).'
+      - 'Check the sum of the pairs: 1 + 15 = 16; 3 + 5 = 8.'
+      - The pair (3, 5) is correct.
+      - The factorised expression is $(x+3)(x+5)$.
+      id: q15-5
+      questionGroup: q15
+- id: expansion-factorisation-node-16
+  nodeNumber: 16
+  title: Factorising Simple Quadratics
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: 'Factorise the simple quadratic expression completely: $$x^2 + 7x + 6$$'
+      avatarIntro: Great job moving onto factorising quadratics! Remember, we are looking for two numbers that multiply to
+        the constant term (c) and add up to the coefficient of the x term (b).
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 7
+          c: 6
+          method: factor-pairs
+          showSteps: false
+      finalAnswer: (x + 1)(x + 6)
+      stepByStepGuideline:
+      - Identify the constant term, c = 6, and the coefficient of the x term, b = 7.
+      - 'List the positive factor pairs of 6: (1, 6) and (2, 3).'
+      - 'Test the sums of these pairs: 1 + 6 = 7, and 2 + 3 = 5.'
+      - The pair (1, 6) sums to 7.
+      - 'Write the factorised form: (x + 1)(x + 6).'
+      id: q16-1
+      questionGroup: q16
+    - problemText: 'Factorise the following quadratic expression: $$x^2 + 8x + 12$$'
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 8
+          c: 12
+          method: factor-pairs
+          showSteps: false
+      finalAnswer: (x + 2)(x + 6)
+      stepByStepGuideline:
+      - Identify c = 12 and b = 8.
+      - 'List the positive factor pairs of 12: (1, 12), (2, 6), and (3, 4).'
+      - 'Test the sums of these pairs: 1 + 12 = 13, 2 + 6 = 8, and 3 + 4 = 7.'
+      - The pair (2, 6) sums to 8.
+      - 'Write the factorised form: (x + 2)(x + 6).'
+      id: q16-2
+      questionGroup: q16
+    - problemText: Factorise $x^2 + 16x + 15$ completely.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 16
+          c: 15
+          method: factor-pairs
+          showSteps: false
+      finalAnswer: (x + 1)(x + 15)
+      stepByStepGuideline:
+      - Identify c = 15 and b = 16.
+      - 'List the positive factor pairs of 15: (1, 15) and (3, 5).'
+      - 'Test the sums of these pairs: 1 + 15 = 16, and 3 + 5 = 8.'
+      - The pair (1, 15) sums to 16.
+      - 'Write the factorised form: (x + 1)(x + 15).'
+      id: q16-3
+      questionGroup: q16
+    - problemText: 'Factorise the quadratic expression: $$x^2 + 11x + 18$$'
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 11
+          c: 18
+          method: factor-pairs
+          showSteps: false
+      finalAnswer: (x + 2)(x + 9)
+      stepByStepGuideline:
+      - Identify c = 18 and b = 11.
+      - 'List the positive factor pairs of 18: (1, 18), (2, 9), and (3, 6).'
+      - 'Test the sums of these pairs: 1 + 18 = 19, 2 + 9 = 11, and 3 + 6 = 9.'
+      - The pair (2, 9) sums to 11.
+      - 'Write the factorised form: (x + 2)(x + 9).'
+      id: q16-4
+      questionGroup: q16
+    - problemText: Factorise the expression $x^2 + 9x + 20$.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 9
+          c: 20
+          method: factor-pairs
+          showSteps: false
+      finalAnswer: (x + 4)(x + 5)
+      stepByStepGuideline:
+      - Identify c = 20 and b = 9.
+      - 'List the positive factor pairs of 20: (1, 20), (2, 10), and (4, 5).'
+      - 'Test the sums of these pairs: 1 + 20 = 21, 2 + 10 = 12, and 4 + 5 = 9.'
+      - The pair (4, 5) sums to 9.
+      - 'Write the factorised form: (x + 4)(x + 5).'
+      id: q16-5
+      questionGroup: q16
+- id: expansion-factorisation-node-17
+  nodeNumber: 17
+  title: Systematic Factorisation with Reasoning
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: Factorise the expression $x^2 + 10x + 24$. Systematically list the positive factor pairs of 24 and their
+        sums. Explain why you immediately eliminate the pairs (1, 24) and (2, 12) when looking for factors that sum to 10.
+      avatarIntro: Great job reaching this section! We are focusing on systematic factoring. Remember, efficiency means eliminating
+        impossible factor pairs early in the process.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 10
+          c: 24
+          method: factor-pairs
+          showSteps: true
+          highlightFactors: true
+      finalAnswer: $$(x+4)(x+6)$$
+      stepByStepGuideline:
+      - Identify the target sum (b=10) and target product (c=24).
+      - 'List the factor pairs of 24: (1, 24), (2, 12), (3, 8), (4, 6).'
+      - 'Calculate the sum for each pair: (1, 24) $\to 25$, (2, 12) $\to 14$, (3, 8) $\to 11$, (4, 6) $\to 10$.'
+      - 'Elimination Reasoning: We eliminate (1, 24) because the sum 25 is too large (Sum too large: eliminate). We eliminate
+        (2, 12) because the sum 14 is also too large.'
+      - Select the pair (4, 6) as it sums exactly to 10, giving the factored form $(x+4)(x+6)$.
+      id: q17-1
+      questionGroup: q17
+    - problemText: Factorise $x^2 + 29x + 28$. Given that the coefficient of $x$ (29) is very close to the constant term (28),
+        what does this suggest about the needed factor pair? List the factor pairs of 28 and use elimination reasoning to
+        justify why pairs like (2, 14) and (4, 7) are not viable.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 29
+          c: 28
+          method: factor-pairs
+          showSteps: true
+          highlightFactors: true
+      finalAnswer: $$(x+1)(x+28)$$
+      stepByStepGuideline:
+      - Identify the target sum (b=29) and target product (c=28). Since $b=c+1$, the factors must be 1 and 28.
+      - 'List the factor pairs of 28: (1, 28), (2, 14), (4, 7).'
+      - 'Calculate the sum for each pair: (1, 28) $\to 29$, (2, 14) $\to 16$, (4, 7) $\to 11$.'
+      - 'Elimination Reasoning: The required sum is 29. The sums for (2, 14) and (4, 7) (16 and 11, respectively) are far
+        too small compared to the target sum (Sum too small: eliminate).'
+      - Select the pair (1, 28) as it sums exactly to 29, resulting in $(x+1)(x+28)$.
+      id: q17-2
+      questionGroup: q17
+    - problemText: 'A student is factoring $x^2 + 17x + 30$. They start by listing the factors of 30: (1, 30), (2, 15), (3,
+        10), (5, 6). Explain the systematic process of testing these pairs. Which pair do you select, and what is your specific
+        reasoning for eliminating the pair (3, 10)?'
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 17
+          c: 30
+          method: factor-pairs
+          showSteps: true
+          highlightFactors: true
+      finalAnswer: $$(x+2)(x+15)$$
+      stepByStepGuideline:
+      - The target sum is 17 and the target product is 30.
+      - 'Systematically test the sums of the factor pairs of 30:'
+      - 'Test (1, 30): Sum = 31. Eliminate (Sum too large).'
+      - 'Test (2, 15): Sum = 17. Select this pair (Close to target: test).'
+      - 'The pair (3, 10) is eliminated because its sum is 13, which is too small to reach the required sum of 17 (Sum too
+        small: eliminate).'
+      - The factored expression is $(x+2)(x+15)$.
+      id: q17-3
+      questionGroup: q17
+    - problemText: Factorise $x^2 + 12x + 36$. This quadratic is a perfect square trinomial. Explain how knowing that the
+        target sum (12) is the minimum possible positive sum for the factors of 36 guides you directly to the correct factor
+        pair, eliminating pairs like (2, 18) and (3, 12).
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 12
+          c: 36
+          method: factor-pairs
+          showSteps: true
+          highlightFactors: true
+      finalAnswer: $$(x+6)^2$$
+      stepByStepGuideline:
+      - The target product is 36 and the target sum is 12.
+      - For a fixed product, the sum of two positive factors is minimized when the factors are as close together as possible,
+        ideally equal (near the square root of 36).
+      - Calculate $\sqrt{36} = 6$. The pair $(6, 6)$ gives a sum of $6+6=12$. This is the minimum possible sum, so it must
+        be the correct pair.
+      - 'List other pairs and their sums: (1, 36) $\to 37$, (2, 18) $\to 20$, (3, 12) $\to 15$, (4, 9) $\to 13$.'
+      - 'Elimination Reasoning: Pairs like (2, 18) and (3, 12) are eliminated because their sums (20 and 15) significantly
+        exceed the target minimum sum of 12 (Sum too large: eliminate).'
+      - The factored expression is $(x+6)(x+6)$ or $(x+6)^2$.
+      id: q17-4
+      questionGroup: q17
+    - problemText: Factorise the expression $x^2 + 19x + 18$. Describe how the size of the $b$-coefficient (19) relative to
+        the constant (18) helps you efficiently select the factors (1 and 18) without explicitly testing the factor pairs
+        (2, 9) or (3, 6).
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 19
+          c: 18
+          method: factor-pairs
+          showSteps: true
+          highlightFactors: true
+      finalAnswer: $$(x+1)(x+18)$$
+      stepByStepGuideline:
+      - Identify the target sum (b=19) and target product (c=18).
+      - Since $b=19$ and $c=18$, we observe that $b = c + 1$. This structural relationship immediately implies the factors
+        must be 1 and 18.
+      - 'List all factor pairs of 18: (1, 18), (2, 9), (3, 6).'
+      - 'Calculate the sums for the non-selected pairs: (2, 9) $\to 11$, (3, 6) $\to 9$.'
+      - 'Efficiency Reasoning: We eliminate (2, 9) and (3, 6) because their sums (11 and 9) are far below the required sum
+        of 19 (Sum too small: eliminate). This confirms (1, 18) is the correct pair.'
+      - The factored expression is $(x+1)(x+18)$.
+      id: q17-5
+      questionGroup: q17
+- id: expansion-factorisation-node-18
+  nodeNumber: 18
+  title: Factorising with Large Constant Terms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: Factorise the quadratic expression $x^2 + 16x + 60$. Systematically list the positive factor pairs of 60,
+        starting from 1, and show which pair sums to 16.
+      avatarIntro: Welcome! Factorising expressions with large constant terms requires excellent organization. Remember to
+        list your factor pairs systematically to guarantee you find the correct match quickly.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 16
+          c: 60
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 6)(x + 10)
+      stepByStepGuideline:
+      - Identify the constant term C = 60 and the coefficient B = 16.
+      - 'List the positive factor pairs of 60 and calculate their sums: (1, 60) Sum=61; (2, 30) Sum=32; (3, 20) Sum=23; (4,
+        15) Sum=19; (5, 12) Sum=17; (6, 10) Sum=16.'
+      - The pair (6, 10) sums to 16.
+      - 'Write the factorised form: (x + 6)(x + 10).'
+      id: q18-1
+      questionGroup: q18
+    - problemText: Factorise $x^2 + 22x + 72$. Before listing all pairs, use the prime factorisation of 72 ($2^3 \times 3^2$)
+        to mentally check divisibility by 1, 2, 3, 4, 6, and 8, pairing each divisor with its quotient, until you find the
+        pair that sums to 22.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 22
+          c: 72
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 4)(x + 18)
+      stepByStepGuideline:
+      - Identify C = 72 and B = 22.
+      - 'Systematically list factors of 72 and check their sums:'
+      - 1 $\times$ 72 (Sum=73)
+      - 2 $\times$ 36 (Sum=38)
+      - 3 $\times$ 24 (Sum=27)
+      - 4 $\times$ 18 (Sum=22)
+      - The required factor pair is (4, 18).
+      - 'Write the factorised form: (x + 4)(x + 18).'
+      id: q18-2
+      questionGroup: q18
+    - problemText: Factorise the expression $x^2 + 25x + 84$. Describe your strategy for systematically testing factor pairs
+        of 84. Why is it efficient to test factors close to the square root of 84 (approx. 9.16) and factors far from it?
+        Identify the pair that sums to 25.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 25
+          c: 84
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 4)(x + 21)
+      stepByStepGuideline:
+      - Identify C = 84 and B = 25.
+      - 'Systematic Strategy: Begin listing divisors D starting from 1 upwards, checking D / 84. Stop when D exceeds $\sqrt{84}
+        \approx 9.16$.'
+      - 'Factor Pairs of 84: (1, 84) S=85; (2, 42) S=44; (3, 28) S=31; (4, 21) S=25.'
+      - The pair (4, 21) sums to 25.
+      - 'Write the factorised form: (x + 4)(x + 21).'
+      id: q18-3
+      questionGroup: q18
+    - problemText: Factorise $x^2 + 23x + 90$. Demonstrate the systematic search process by checking divisibility for $d=1,
+        2, 3, 4, 5, 6, 7, 8, 9$. Stop listing pairs once you find the two numbers that multiply to 90 and add up to 23.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 23
+          c: 90
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 5)(x + 18)
+      stepByStepGuideline:
+      - Identify C = 90 and B = 23.
+      - 'Check divisors (d) and their corresponding quotients (90/d) systematically:'
+      - 'd=1: (1, 90), Sum=91'
+      - 'd=2: (2, 45), Sum=47'
+      - 'd=3: (3, 30), Sum=33'
+      - 'd=4: Not a factor.'
+      - 'd=5: (5, 18), Sum=23'
+      - The required factor pair is (5, 18).
+      - 'Write the factorised form: (x + 5)(x + 18).'
+      id: q18-4
+      questionGroup: q18
+    - problemText: Factorise the quadratic $x^2 + 26x + 120$. Because 120 has many factors, efficiency is crucial. Systematically
+        list the factor pairs of 120 until you find the pair whose sum is 26. Explain why checking factors up to $\sqrt{120}
+        \approx 10.95$ guarantees you find all pairs.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 26
+          c: 120
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 6)(x + 20)
+      stepByStepGuideline:
+      - Identify C = 120 and B = 26.
+      - We check factors (d) up to 10.95 because any factor larger than this will be paired with a factor smaller than 10.95,
+        which would have already been found.
+      - 'List factor pairs of 120 and their sums:'
+      - (1, 120) S=121; (2, 60) S=62; (3, 40) S=43; (4, 30) S=34; (5, 24) S=29; (6, 20) S=26.
+      - The pair (6, 20) sums to 26.
+      - 'Write the factorised form: (x + 6)(x + 20).'
+      id: q18-5
+      questionGroup: q18
+- id: expansion-factorisation-node-19
+  nodeNumber: 19
+  title: Factorising with Both Factors Negative
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: When factorising $x^2 - 7x + 6$, the constant term is positive (6) but the coefficient of $x$ is negative
+        (-7). Explain why this combination ($c>0$ and $b<0$) forces both terms in the binomial factors to be negative, and
+        then factorise the expression completely.
+      avatarIntro: Great job reaching this section! Remember that a positive constant term means the factors have the same
+        sign, and a negative middle term tells us exactly what that sign is.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -7
+          c: 6
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 1)(x - 6)
+      stepByStepGuideline:
+      - 'Identify the required sign pattern: Since $c=6$ is positive, both factors must have the same sign. Since $b=-7$ is
+        negative, both factors must be negative.'
+      - Find two negative numbers that multiply to 6 and sum to -7.
+      - 'List factor pairs of 6: (1, 6) and (2, 3).'
+      - 'Test the sums of the negative pairs: $-1 + (-6) = -7$. This is the correct pair.'
+      - 'Write the factored form: $(x - 1)(x - 6)$.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: Factorise the quadratic expression $x^2 - 7x + 10$. Given that $\sqrt{10} \approx 3.16$, search for integer
+        factors of 10 close to 3 that multiply to 10 and sum to -7.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -7
+          c: 10
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 2)(x - 5)
+      stepByStepGuideline:
+      - We need two negative numbers that multiply to $c=10$ and sum to $b=-7$.
+      - 'List factor pairs of 10: (1, 10) and (2, 5).'
+      - Test the negative pairs. Since 2 and 5 are closer to 3.16 than 1 and 10, test them first.
+      - 'Check the sum: $-2 + (-5) = -7$. This matches the coefficient of $x$.'
+      - The factored form is $(x - 2)(x - 5)$.
+      id: q19-2
+      questionGroup: q19
+    - problemText: Factorise $x^2 - 8x + 12$. Systematically list all negative factor pairs of 12 and their sums until you
+        find the pair that sums to -8.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -8
+          c: 12
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 2)(x - 6)
+      stepByStepGuideline:
+      - We are looking for two negative factors $p$ and $q$ such that $pq=12$ and $p+q=-8$.
+      - 'Systematically list negative factor pairs of 12 and their sums:'
+      - 'Pair 1: (-1, -12), Sum = -13'
+      - 'Pair 2: (-2, -6), Sum = -8 (This is the correct sum)'
+      - The factors are -2 and -6. The final factored expression is $(x - 2)(x - 6)$.
+      id: q19-3
+      questionGroup: q19
+    - problemText: Factorise $x^2 - 16x + 15$. Since the magnitude of the coefficient of $x$ (|-16|) is only 1 greater than
+        the constant term (15), what does this immediately tell you about the required pair of negative factors?
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -16
+          c: 15
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 1)(x - 15)
+      stepByStepGuideline:
+      - When $|b| = c + 1$, the required factors must be 1 and $c$. Since $b$ is negative, the required factors are -1 and
+        $-c$, which means -1 and -15.
+      - 'Check the multiplication: $(-1) \times (-15) = 15$.'
+      - 'Check the addition: $(-1) + (-15) = -16$.'
+      - The factored expression is $(x - 1)(x - 15)$.
+      id: q19-4
+      questionGroup: q19
+    - problemText: A student suggests that the factors of $x^2 - 9x + 18$ are $(x-3)(x-6)$. Use the FOIL method (or multiplication
+        grid expansion) to verify if this solution is correct. Then, confirm the initial factorisation process.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -9
+          c: 18
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 3)(x - 6)
+      stepByStepGuideline:
+      - 'Verify the student''s suggestion using FOIL: $(x-3)(x-6) = x^2 - 6x - 3x + 18$.'
+      - 'Combine like terms: $x^2 - 9x + 18$. The student''s solution is correct.'
+      - 'Confirm the factorisation logic: We need two negative factors of 18 that sum to -9.'
+      - Factor pairs of 18 are (1, 18), (2, 9), (3, 6).
+      - The negative pair $(-3, -6)$ sums to $-9$.
+      - The factors are $(x - 3)(x - 6)$.
+      id: q19-5
+      questionGroup: q19
+- id: expansion-factorisation-node-20
+  nodeNumber: 20
+  title: Factorising with One Negative Factor
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: Factorise the expression $x^2 + x - 6$ completely. Since the constant term is negative, determine the two
+        factors of -6 that have opposite signs but sum to the coefficient of $x$.
+      avatarIntro: We are now working on factorising quadratics where the constant term is negative. This means one factor
+        must be positive and the other must be negative. Pay close attention to which number gets the positive sign!
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 1
+          c: -6
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 3)(x - 2)
+      stepByStepGuideline:
+      - 'Identify the coefficients: $a=1, b=1, c=-6$.'
+      - Since $c$ is negative, the factors must have opposite signs. We look for factors of -6 that differ by 1 (the coefficient
+        $b$).
+      - The potential pairs are (1, 6), (2, 3). The pair (2, 3) has a difference of 1.
+      - Since $b$ is positive (1), the larger factor (3) must be positive, and the smaller factor (2) must be negative. The
+        correct factors are 3 and -2.
+      - 'Write the factored form: $(x + 3)(x - 2)$.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: Factorise $x^2 - 9x - 10$. Remember that since the constant term is negative, the factors must have opposite
+        signs, and the factor with the larger absolute value takes the sign of the middle term.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -9
+          c: -10
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 10)(x + 1)
+      stepByStepGuideline:
+      - 'Identify the coefficients: $a=1, b=-9, c=-10$.'
+      - Look for factors of -10 that sum to -9. Since $c<0$, the factors have opposite signs.
+      - The pairs of factors of 10 are (1, 10) and (2, 5). The pair (1, 10) has a difference of 9.
+      - Since $b$ is negative (-9), the factor with the larger magnitude (10) must be negative. The correct factors are -10
+        and 1.
+      - 'Write the factored form: $(x - 10)(x + 1)$.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: When factorising $x^2 + x - 12$, identify the factor pair of -12 whose difference results in a sum of 1.
+        Ensure the signs are placed correctly based on the positive coefficient of $x$.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 1
+          c: -12
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 4)(x - 3)
+      stepByStepGuideline:
+      - 'Identify the coefficients: $a=1, b=1, c=-12$.'
+      - We need two numbers that multiply to -12 and add up to 1.
+      - 'List factor pairs of 12: (1, 12), (2, 6), (3, 4). The pair (3, 4) has a difference of 1.'
+      - Since $b$ is positive (1), the larger factor (4) must be positive, and the smaller factor (3) must be negative. The
+        factors are 4 and -3.
+      - 'Write the factored form: $(x + 4)(x - 3)$.'
+      id: q20-3
+      questionGroup: q20
+    - problemText: Factorise the quadratic expression $x^2 - 2x - 15$. Show clearly how the negative sign of the $b$ coefficient
+        (-2) dictates the sign of the larger factor pair of -15.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -2
+          c: -15
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 5)(x + 3)
+      stepByStepGuideline:
+      - 'Identify the coefficients: $a=1, b=-2, c=-15$.'
+      - We need two numbers that multiply to -15 and sum to -2. Since $c<0$, the signs are opposite.
+      - 'List factor pairs of 15: (1, 15), (3, 5). The pair (3, 5) has a difference of 2.'
+      - Since $b$ is negative (-2), the factor with the larger magnitude (5) must be negative. The correct factors are -5
+        and 3.
+      - 'Write the factored form: $(x - 5)(x + 3)$.'
+      id: q20-4
+      questionGroup: q20
+    - problemText: 'Factorise the simple quadratic expression: $x^2 + 7x - 18$.'
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 7
+          c: -18
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 9)(x - 2)
+      stepByStepGuideline:
+      - 'Identify the coefficients: $a=1, b=7, c=-18$.'
+      - We need two numbers that multiply to -18 and add up to 7.
+      - 'List factor pairs of 18: (1, 18), (2, 9), (3, 6). The pair (2, 9) has a difference of 7.'
+      - Since $b$ is positive (7), the factor with the larger magnitude (9) must be positive, and the smaller factor (2) must
+        be negative. The factors are 9 and -2.
+      - 'Write the factored form: $(x + 9)(x - 2)$.'
+      id: q20-5
+      questionGroup: q20
+- id: expansion-factorisation-node-21
+  nodeNumber: 21
+  title: Sign Combination Strategy
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Determine the required signs first by examining the positive coefficients $b=11$ and $c=28$. Then, factorise
+        the expression $x^2 + 11x + 28$.
+      avatarIntro: Mastering sign combinations is key to factoring efficiently. Let's practice quickly identifying the correct
+        scenario based on b and c.
+      mathTool: null
+      finalAnswer: 'Both positive (c>0, b>0): (x + 4)(x + 7)'
+      stepByStepGuideline:
+      - 'Analyze the signs: Since the constant term ($c=28$) is positive and the middle term coefficient ($b=11$) is positive,
+        both factors must be positive (Scenario: + +).'
+      - Find two positive factors of 28 that sum to 11. The factor pairs of 28 are (1, 28), (2, 14), and (4, 7).
+      - The pair 4 and 7 sums to 11.
+      - 'Factorise the expression: $x^2 + 11x + 28 = (x + 4)(x + 7)$.'
+      id: q21-1
+      questionGroup: q21
+    - problemText: The quadratic $x^2 - 13x + 30$ has a positive constant term ($c=30$) and a negative middle term ($b=-13$).
+        Based on these signs, determine the signs of the binomial factors, and then factorise the expression.
+      mathTool: null
+      finalAnswer: 'Both negative (c>0, b<0): (x - 3)(x - 10)'
+      stepByStepGuideline:
+      - 'Analyze the signs: Since $c=30 > 0$ and $b=-13 < 0$, both factors must be negative (Scenario: - -).'
+      - 'Find two factors of 30 that sum to -13. Since both must be negative, we look for positive factors that sum to 13:
+        3 and 10.'
+      - The required factors are -3 and -10.
+      - 'Factorise the expression: $x^2 - 13x + 30 = (x - 3)(x - 10)$.'
+      id: q21-2
+      questionGroup: q21
+    - problemText: In the expression $x^2 + 5x - 36$, the constant term ($c$) is negative. Determine the sign requirement
+        for the two factors of -36, specifying which factor must have the larger absolute value. Then, complete the factorisation.
+      mathTool: null
+      finalAnswer: 'One each (c<0), larger positive (b>0): (x + 9)(x - 4)'
+      stepByStepGuideline:
+      - 'Analyze the signs: Since $c=-36 < 0$, the factors must have opposite signs. Since $b=5 > 0$, the factor with the
+        larger absolute value must be positive (Scenario: larger +).'
+      - Find factors of 36 that differ by 5. The pair (9, 4) has a difference of 5.
+      - 'Apply the sign rule: The larger factor (9) must be positive, and the smaller factor (4) must be negative. $9 + (-4)
+        = 5$.'
+      - 'Factorise the expression: $x^2 + 5x - 36 = (x + 9)(x - 4)$.'
+      id: q21-3
+      questionGroup: q21
+    - problemText: Consider the quadratic $x^2 - 4x - 21$. Since $c < 0$ and $b < 0$, describe the sign rule for the required
+        factors of -21. Use this strategy to factorise the expression.
+      mathTool: null
+      finalAnswer: 'One each (c<0), larger negative (b<0): (x - 7)(x + 3)'
+      stepByStepGuideline:
+      - 'Analyze the signs: Since $c=-21 < 0$, the factors must have opposite signs. Since $b=-4 < 0$, the factor with the
+        larger absolute value must be negative (Scenario: larger -).'
+      - Find factors of 21 that differ by 4. The pair (7, 3) has a difference of 4.
+      - 'Apply the sign rule: The larger factor (7) must be negative, and the smaller factor (3) must be positive. $(-7) +
+        3 = -4$.'
+      - 'Factorise the expression: $x^2 - 4x - 21 = (x - 7)(x + 3)$.'
+      id: q21-4
+      questionGroup: q21
+    - problemText: Determine the sign strategy required for factoring $x^2 + 8x - 48$. Specifically, identify the two integers
+        that multiply to -48 and sum to 8, ensuring the larger magnitude factor carries the correct sign.
+      mathTool: null
+      finalAnswer: 'One each (c<0), larger positive (b>0): (x + 12)(x - 4)'
+      stepByStepGuideline:
+      - 'Determine the sign strategy: Since $c=-48$ is negative, the factors must have opposite signs. Since $b=8$ is positive,
+        the factor with the larger absolute value must be positive.'
+      - Find two factors of 48 whose difference is 8. The factor pairs of 48 include (1, 48), (2, 24), (3, 16), (4, 12), and
+        (6, 8).
+      - The pair (12, 4) has a difference of 8.
+      - 'Apply the sign rule: 12 must be positive and 4 must be negative. $12 + (-4) = 8$.'
+      - 'Factorise the expression: $x^2 + 8x - 48 = (x + 12)(x - 4)$.'
+      id: q21-5
+      questionGroup: q21
+- id: expansion-factorisation-node-22
+  nodeNumber: 22
+  title: Understanding Factorisation with a≠1
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: Consider the quadratic expression $2x^2 + 11x + 12$. Explain why attempting to factorise this expression
+        by first searching for a Greatest Common Factor (GCF) across all three terms will fail. Furthermore, describe the
+        necessary relationship between the coefficients $p$ and $r$ in the factorised form $(px+q)(rx+s)$ that must hold true
+        for this specific expression.
+      avatarIntro: Great job reaching this stage! When the leading coefficient isn't 1, we need a smarter strategy than just
+        looking for common factors.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression: 2x^2 + 11x + 12
+          mode: factorise
+          showGrid: true
+      finalAnswer: (2x+3)(x+4)
+      stepByStepGuideline:
+      - 'Step 1: Identify the coefficients. $a=2, b=11, c=12$.'
+      - 'Step 2: Note that the GCF of 2, 11, and 12 is 1. Since the GCF is 1, factoring out a common term does not simplify
+        the quadratic, confirming why that method fails.'
+      - 'Step 3: Recognize that the factorisation must take the form $(px+q)(rx+s)$. For the coefficient of $x^2$ (a=2), the
+        product $p \cdot r$ must equal 2.'
+      - 'Step 4: Since 2 is a prime number, the only integer factor pairs for $p$ and $r$ are (1 and 2) or (2 and 1), meaning
+        the binomial factors must be of the form $(2x+q)(x+s)$.'
+      - 'Step 5: Find factors of $c=12$ (q and s) such that $ps + qr = 11$. Testing $p=2, r=1$: $2s + 1q = 11$. Using $q=3,
+        s=4$ gives $2(4) + 1(3) = 8+3 = 11$.'
+      - 'Step 6: The factorisation is $(2x+3)(x+4)$.'
+      id: q22-1
+      questionGroup: q22
+    - problemText: The expression is $3x^2 - 10x + 8$. Unlike $x^2 + bx + c$ problems, here $a=3$. Explain the combined constraints
+        placed on the values of $p, r, q,$ and $s$ in the factorised form $(px+q)(rx+s)$ by the coefficients $a=3$ and $c=8$.
+        Why must you consider both $p \cdot r$ and $q \cdot s$ simultaneously to determine the middle term $b=-10$?
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression: 3x^2 - 10x + 8
+          mode: factorise
+          showGrid: true
+      finalAnswer: (3x-4)(x-2)
+      stepByStepGuideline:
+      - 'Step 1: Constraints related to $a=3$: Since $a=p \cdot r$, and 3 is prime, the pair $(p, r)$ must be (3, 1) or (1,
+        3). The factors are structured as $(3x+q)(x+s)$.'
+      - 'Step 2: Constraints related to $c=8$: Since $c=q \cdot s$, the pair $(q, s)$ must multiply to 8. Since $b=-10$ (negative)
+        and $c=8$ (positive), both $q$ and $s$ must be negative.'
+      - 'Step 3: The middle term $b=-10$ requires $p s + q r = -10$. We must test combinations of negative factors of 8 (e.g.,
+        -1/-8, -2/-4) with $p=3, r=1$.'
+      - 'Step 4: Test $q=-4, s=-2$: $p s + q r = 3(-2) + (-4)(1) = -6 - 4 = -10$. This combination works.'
+      - 'Step 5: The factorisation is $(3x-4)(x-2)$.'
+      id: q22-2
+      questionGroup: q22
+    - problemText: Factorising $4x^2 - 4x - 15$ involves finding factors $(px+q)(rx+s)$ where $p \cdot r = 4$. Unlike when
+        $a$ is prime, $a=4$ allows for two distinct structural possibilities for the binomial factors. Identify these two
+        structural possibilities based on the values of $p$ and $r$, and explain which pair leads to the correct factorisation.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression: 4x^2 - 4x - 15
+          mode: factorise
+          showGrid: true
+      finalAnswer: (2x-5)(2x+3)
+      stepByStepGuideline:
+      - 'Step 1: Identify the two structural possibilities for $p$ and $r$ where $p \cdot r = 4$: Possibility A: $p=4, r=1$,
+        leading to $(4x+q)(x+s)$. Possibility B: $p=2, r=2$, leading to $(2x+q)(2x+s)$.'
+      - 'Step 2: The constant term $c=-15$ means $q$ and $s$ must have opposite signs. We need $ps + qr = -4$.'
+      - 'Step 3: Test Possibility A ($(4x+q)(x+s)$): Try factors of -15 (e.g., 5 and -3). If $q=-5, s=3$: $4(3) + (-5)(1)
+        = 12 - 5 = 7$. This does not equal -4.'
+      - 'Step 4: Test Possibility B ($(2x+q)(2x+s)$): Try factors of -15 (e.g., -5 and 3). If $q=-5, s=3$: $2(3) + (-5)(2)
+        = 6 - 10 = -4$. This combination works.'
+      - 'Step 5: The correct factorisation arises from Possibility B: $(2x-5)(2x+3)$.'
+      id: q22-3
+      questionGroup: q22
+    - problemText: When factorising $5x^2 + 13x + 6$, the leading coefficient $a=5$ is a prime number. How does the primality
+        of $a$ simplify the initial setup compared to an expression where $a=4$ or $a=6$? Use this simplification to determine
+        the required structure for the binomial factors $(px+q)(rx+s)$ before testing any factors of $c=6$.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression: 5x^2 + 13x + 6
+          mode: factorise
+          showGrid: true
+      finalAnswer: (5x+3)(x+2)
+      stepByStepGuideline:
+      - 'Step 1: Recognize that $a=5$ is prime. This means the only integer factors for $p$ and $r$ are 5 and 1 (or 1 and
+        5).'
+      - 'Step 2: The structural setup is immediately fixed as $(5x+q)(x+s)$. This bypasses the need to check multiple structural
+        forms (like $4x$ vs $2x$ for $a=4$).'
+      - 'Step 3: Find factors of $c=6$ such that $ps + qr = 13$. Since $b$ and $c$ are positive, $q$ and $s$ must both be
+        positive.'
+      - 'Step 4: Test factor pairs of 6 (1 and 6, 2 and 3). Test $q=3, s=2$: $p s + q r = 5(2) + 3(1) = 10 + 3 = 13$. This
+        works.'
+      - 'Step 5: The factorisation is $(5x+3)(x+2)$.'
+      id: q22-4
+      questionGroup: q22
+    - problemText: Analyze the expression $6x^2 + 7x - 3$. If a student mistakenly tried to factorise this as if $a=1$ (i.e.,
+        finding two numbers that multiply to $6 \times -3 = -18$ and sum to 7), they would find 9 and -2. Explain mathematically
+        why this 'a times c' shortcut only works when $a=1$ or when you can divide the entire expression by $a$. How does
+        the structure $(px+q)(rx+s)$ correctly account for $a=6$ and $c=-3$ simultaneously?
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression: 6x^2 + 7x - 3
+          mode: factorise
+          showGrid: true
+      finalAnswer: (3x-1)(2x+3)
+      stepByStepGuideline:
+      - 'Step 1: The ''a times c'' method (decomposition) splits $bx$ into $rx + sx$ where $r \cdot s = ac$. This method works
+        but requires subsequent grouping, not simply writing $(x+r)(x+s)$. The simple binomial shortcut only applies when
+        $a=1$.'
+      - 'Step 2: When $a \neq 1$, the structure $(px+q)(rx+s)$ correctly ensures $p \cdot r = a$ and $q \cdot s = c$. The
+        middle term $b$ is formed by the cross-product sum $ps + qr$.'
+      - 'Step 3: For $6x^2 + 7x - 3$, we must test factor pairs for $a=6$ (1/6 or 2/3) and $c=-3$ (e.g., -1/3 or 1/-3).'
+      - 'Step 4: We test factors $p=3, r=2$ and factors $q=-1, s=3$. The middle term $b=ps + qr = 3(3) + (-1)(2) = 9 - 2 =
+        7$.'
+      - 'Step 5: This structure correctly ensures $6x^2$ and $-3$ are generated, and the cross terms sum to $7x$.'
+      - 'Step 6: The factorisation is $(3x-1)(2x+3)$.'
+      id: q22-5
+      questionGroup: q22
+- id: expansion-factorisation-node-23
+  nodeNumber: 23
+  title: Guess-and-Check Method for a≠1
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: Factorise the quadratic expression $2x^2 - 5x + 3$. Since the constant term is positive (3) but the middle
+        coefficient is negative (-5), explain how this dictates the signs of the constants in your binomial factors, and then
+        use the guess-and-check method to find the correct factors.
+      avatarIntro: Factoring quadratics where the leading coefficient isn't 1 requires careful organization. Let's practice
+        the guess-and-check method using the multiplication grid.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2x - 3
+          expression2: x - 1
+          mode: factorise
+          showGrid: true
+      finalAnswer: (2x - 3)(x - 1)
+      stepByStepGuideline:
+      - 'Identify factors of $a=2$: (1, 2). Set up the binomial structure as $(2x + q)(x + s)$.'
+      - 'Identify factors of $c=3$. Since $c$ is positive and $b=-5$ is negative, both $q$ and $s$ must be negative: (-1,
+        -3).'
+      - 'Test combination 1: $(2x - 1)(x - 3)$. Check middle term: $2x(-3) + (-1)(x) = -6x - x = -7x$. (Incorrect)'
+      - 'Test combination 2: $(2x - 3)(x - 1)$. Check middle term: $2x(-1) + (-3)(x) = -2x - 3x = -5x$. (Correct)'
+      - The factorised form is $(2x - 3)(x - 1)$.
+      id: q23-1
+      questionGroup: q23
+    - problemText: Use the guess-and-check method to factorise $3x^2 + 7x + 4$. Note that the coefficient of $x^2$ is prime
+        (3) and the constant term (4) has multiple factor pairs, requiring careful combination testing.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 3x + 4
+          expression2: x + 1
+          mode: factorise
+          showGrid: true
+      finalAnswer: (3x + 4)(x + 1)
+      stepByStepGuideline:
+      - 'Identify factors of $a=3$: (1, 3). Set up the binomial structure as $(3x + q)(x + s)$.'
+      - 'Identify factors of $c=4$: (1, 4) or (2, 2). Since $b=7$ is positive, use positive factors.'
+      - 'Test combination 1: Using (4, 1). $(3x + 4)(x + 1)$. Check middle term: $3x(1) + 4(x) = 3x + 4x = 7x$. (Correct)'
+      - The factorised form is $(3x + 4)(x + 1)$.
+      id: q23-2
+      questionGroup: q23
+    - problemText: Factorise $2x^2 - 9x - 5$. Since the constant term is negative (-5), determine the factor pairs of -5 that,
+        when combined with the factors of 2, result in the middle term $-9x$.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2x + 1
+          expression2: x - 5
+          mode: factorise
+          showGrid: true
+      finalAnswer: (2x + 1)(x - 5)
+      stepByStepGuideline:
+      - 'Identify factors of $a=2$: (1, 2). Set up the binomial structure as $(2x + q)(x + s)$.'
+      - 'Identify factor pairs of $c=-5$: (1, -5) or (-1, 5). The signs must be opposite.'
+      - 'Test combination 1: Using (1, -5). $(2x + 1)(x - 5)$. Check middle term: $2x(-5) + 1(x) = -10x + x = -9x$. (Correct)'
+      - The factorised form is $(2x + 1)(x - 5)$.
+      id: q23-3
+      questionGroup: q23
+    - problemText: Factorise the quadratic $3x^2 + 11x + 6$. List the possible factor pairs for $a=3$ and $c=6$. Systematically
+        test arrangements until the middle term $11x$ is achieved.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 3x + 2
+          expression2: x + 3
+          mode: factorise
+          showGrid: true
+      finalAnswer: (3x + 2)(x + 3)
+      stepByStepGuideline:
+      - 'Identify factors of $a=3$: (1, 3). Set up the structure $(3x + q)(x + s)$.'
+      - 'Identify factors of $c=6$: (1, 6) or (2, 3). Since $b=11$ and $c=6$ are positive, use positive factors.'
+      - 'Test using (1, 6): $(3x + 1)(x + 6)$. Middle term: $3x(6) + 1(x) = 18x + x = 19x$. (Incorrect)'
+      - 'Test using (6, 1): $(3x + 6)(x + 1)$. This has a GCF (3) in the first factor, but check middle term: $3x(1) + 6(x)
+        = 9x$. (Incorrect)'
+      - 'Test using (2, 3): $(3x + 2)(x + 3)$. Middle term: $3x(3) + 2(x) = 9x + 2x = 11x$. (Correct)'
+      - The factorised form is $(3x + 2)(x + 3)$.
+      id: q23-4
+      questionGroup: q23
+    - problemText: Factorise $2x^2 + 17x + 8$. When the coefficient $b$ is large relative to $a$ and $c$, it often suggests
+        that the largest factor of $c$ must be multiplied by $a$'s factor (2). Test the combinations that yield $17x$.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2x + 1
+          expression2: x + 8
+          mode: factorise
+          showGrid: true
+      finalAnswer: (2x + 1)(x + 8)
+      stepByStepGuideline:
+      - 'Identify factors of $a=2$: (1, 2). Structure: $(2x + q)(x + s)$.'
+      - 'Identify factors of $c=8$: (1, 8) or (2, 4). Use positive factors since $b=17$ is positive.'
+      - We need a large middle term (17). Try multiplying 2 by the largest factor of 8 (which is 8).
+      - 'Test combination 1: Using (1, 8). $(2x + 1)(x + 8)$. Check middle term: $2x(8) + 1(x) = 16x + x = 17x$. (Correct)'
+      - The factorised form is $(2x + 1)(x + 8)$.
+      id: q23-5
+      questionGroup: q23
+- id: expansion-factorisation-node-24
+  nodeNumber: 24
+  title: Reasoning Method (AC Method)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: Factorise the quadratic expression $7x^2 + 13x - 2$ by calculating the product $a \times c$ and finding
+        the factor pair that sums to $b=13$.
+      avatarIntro: The AC method is essential for factoring quadratics where the leading coefficient is not 1. Remember to
+        find two numbers that multiply to AC and add up to B.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 7
+          b: 13
+          c: -2
+          method: split-middle
+          showSteps: true
+      finalAnswer: (7x-1)(x+2)
+      stepByStepGuideline:
+      - 'Calculate the product $a \times c$: $7 \times (-2) = -14$.'
+      - Find factors of $-14$ that sum to $b=13$. The factors are $14$ and $-1$.
+      - 'Split the middle term $13x$ into $14x - 1x$: $7x^2 + 14x - 1x - 2$.'
+      - 'Group the terms: $(7x^2 + 14x) + (-1x - 2)$.'
+      - 'Factor out the Greatest Common Factor (GCF) from each group: $7x(x + 2) - 1(x + 2)$.'
+      - 'Factor out the common binomial factor $(x+2)$: $(7x - 1)(x + 2)$.'
+      id: q24-1
+      questionGroup: q24
+    - problemText: Use the AC method to factorise $4x^2 - 12x + 5$. Since $a \times c$ is positive and $b$ is negative, ensure
+        both factors used to split the middle term are negative.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 4
+          b: -12
+          c: 5
+          method: split-middle
+          showSteps: true
+      finalAnswer: (2x-1)(2x-5)
+      stepByStepGuideline:
+      - 'Calculate $a \times c$: $4 \times 5 = 20$.'
+      - Find factors of $20$ that sum to $b=-12$. The factors are $-10$ and $-2$.
+      - 'Split the middle term: $4x^2 - 10x - 2x + 5$.'
+      - 'Group the terms: $(4x^2 - 10x) + (-2x + 5)$.'
+      - 'Factor out GCF from each group: $2x(2x - 5) - 1(2x - 5)$.'
+      - 'Factor out the common binomial factor: $(2x - 1)(2x - 5)$.'
+      id: q24-2
+      questionGroup: q24
+    - problemText: Factorise the quadratic expression $6x^2 - 7x - 5$ using the split-the-middle term technique.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 6
+          b: -7
+          c: -5
+          method: split-middle
+          showSteps: true
+      finalAnswer: (3x-5)(2x+1)
+      stepByStepGuideline:
+      - 'Calculate $a \times c$: $6 \times (-5) = -30$.'
+      - Find factors of $-30$ that sum to $b=-7$. The factors are $3$ and $-10$.
+      - 'Split the middle term: $6x^2 + 3x - 10x - 5$.'
+      - 'Group the terms: $(6x^2 + 3x) + (-10x - 5)$.'
+      - 'Factor out GCF from each group: $3x(2x + 1) - 5(2x + 1)$.'
+      - 'Factor out the common binomial factor: $(3x - 5)(2x + 1)$.'
+      id: q24-3
+      questionGroup: q24
+    - problemText: Determine the factors of $5x^2 + 21x + 4$. Note that the coefficient $b=21$ is quite large, requiring one
+        of the factor pairs of $a \times c$ to be large itself.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 5
+          b: 21
+          c: 4
+          method: split-middle
+          showSteps: true
+      finalAnswer: (x+4)(5x+1)
+      stepByStepGuideline:
+      - 'Calculate $a \times c$: $5 \times 4 = 20$.'
+      - Find factors of $20$ that sum to $b=21$. The factors are $1$ and $20$.
+      - 'Split the middle term: $5x^2 + 1x + 20x + 4$.'
+      - 'Group the terms: $(5x^2 + 1x) + (20x + 4)$.'
+      - 'Factor out GCF from each group: $x(5x + 1) + 4(5x + 1)$.'
+      - 'Factor out the common binomial factor: $(x + 4)(5x + 1)$.'
+      id: q24-4
+      questionGroup: q24
+    - problemText: Factorise the quadratic expression $8x^2 + 10x - 3$. Pay attention to the grouping step, ensuring the signs
+        are handled correctly when factoring out common terms.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 8
+          b: 10
+          c: -3
+          method: split-middle
+          showSteps: true
+      finalAnswer: (4x-1)(2x+3)
+      stepByStepGuideline:
+      - 'Calculate $a \times c$: $8 \times (-3) = -24$.'
+      - Find factors of $-24$ that sum to $b=10$. The factors are $-2$ and $12$.
+      - 'Split the middle term: $8x^2 - 2x + 12x - 3$.'
+      - 'Group the terms: $(8x^2 - 2x) + (12x - 3)$.'
+      - 'Factor out GCF from each group: $2x(4x - 1) + 3(4x - 1)$.'
+      - 'Factor out the common binomial factor: $(2x + 3)(4x - 1)$.'
+      id: q24-5
+      questionGroup: q24
+- id: expansion-factorisation-node-25
+  nodeNumber: 25
+  title: Negative Leading Coefficient
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Factorise the expression $-2x^2 - 5x - 3$ completely, ensuring you extract the negative leading coefficient
+        first. Provide the answer in two equivalent forms.
+      avatarIntro: Whenever you encounter a quadratic expression starting with a negative term, your first step should always
+        be to factor out that negative sign to make the factoring process much easier!
+      mathTool: null
+      finalAnswer: $-(2x^2 + 5x + 3) = -(2x + 3)(x + 1)$ or $(-2x - 3)(x + 1)
+      stepByStepGuideline:
+      - 'Extract the negative sign from the expression: $-(2x^2 + 5x + 3)$.'
+      - Factor the resulting positive quadratic $2x^2 + 5x + 3$. We look for factors of $2\times3=6$ that sum to 5 (which
+        are 2 and 3). Grouping yields $(2x^2 + 2x) + (3x + 3) = 2x(x+1) + 3(x+1) = (2x + 3)(x + 1)$.
+      - 'Combine the negative sign with the factors: $-(2x + 3)(x + 1)$.'
+      - 'To show the alternative representation, distribute the negative sign into the first binomial factor: $(-2x - 3)(x
+        + 1)$.'
+      id: q25-1
+      questionGroup: q25
+    - problemText: Factorise the quadratic $-3x^2 + 10x - 7$. Show the factorized form with the negative sign outside, and
+        an equivalent form where the negative sign is distributed into one factor.
+      mathTool: null
+      finalAnswer: $-(3x^2 - 10x + 7) = -(3x - 7)(x - 1)$ or $(7 - 3x)(x - 1)
+      stepByStepGuideline:
+      - 'Extract the negative sign: $-3x^2 + 10x - 7 = -(3x^2 - 10x + 7)$.'
+      - Factor the resulting positive quadratic $3x^2 - 10x + 7$. Since $c$ is positive and $b$ is negative, both constant
+        terms in the factors must be negative. $3x^2 - 10x + 7 = (3x - 7)(x - 1)$.
+      - 'Write the first factored form: $-(3x - 7)(x - 1)$.'
+      - 'Distribute the negative sign into the first factor $(3x - 7)$ to find the alternative form: $(-3x + 7)(x - 1)$, which
+        can be written as $(7 - 3x)(x - 1)$.'
+      id: q25-2
+      questionGroup: q25
+    - problemText: Factorise $-4x^2 - 8x + 5$. Use the resulting positive quadratic to determine the binomial factors and
+        present the two required representations of the final answer.
+      mathTool: null
+      finalAnswer: $-(4x^2 + 8x - 5) = -(2x + 5)(2x - 1)$ or $(2x + 5)(1 - 2x)
+      stepByStepGuideline:
+      - 'Extract the negative sign: $-4x^2 - 8x + 5 = -(4x^2 + 8x - 5)$.'
+      - Factor the positive quadratic $4x^2 + 8x - 5$. We look for factors that multiply to $4\times(-5)=-20$ and sum to 8
+        (which are 10 and -2). Grouping yields $(4x^2 + 10x) - (2x + 5) = 2x(2x+5) - 1(2x+5) = (2x - 1)(2x + 5)$.
+      - 'The first factored form is: $-(2x + 5)(2x - 1)$.'
+      - 'Distribute the negative sign into the factor $(2x - 1)$ to find the alternative form: $(2x + 5)(-(2x - 1)) = (2x
+        + 5)(-2x + 1)$, or $(2x + 5)(1 - 2x)$.'
+      id: q25-3
+      questionGroup: q25
+    - problemText: A student encountered the expression $-2x^2 + 5x + 12$. Factorise this expression completely by first extracting
+        the negative sign, and then provide the final answer showing both forms.
+      mathTool: null
+      finalAnswer: $-(2x^2 - 5x - 12) = -(2x + 3)(x - 4)$ or $(-2x - 3)(x - 4)
+      stepByStepGuideline:
+      - 'Extract the negative sign: $-2x^2 + 5x + 12 = -(2x^2 - 5x - 12)$.'
+      - Factor the positive quadratic $2x^2 - 5x - 12$. We need factors of $2\times(-12)=-24$ that sum to -5 (which are -8
+        and 3). Grouping yields $(2x^2 - 8x) + (3x - 12) = 2x(x-4) + 3(x-4) = (2x + 3)(x - 4)$.
+      - 'The first factored form is: $-(2x + 3)(x - 4)$.'
+      - 'Distribute the negative sign into the first factor $(2x + 3)$ to find the alternative form: $(-2x - 3)(x - 4)$.'
+      id: q25-4
+      questionGroup: q25
+    - problemText: 'Factorise $-3x^2 - 14x - 8$. Ensure your final answer presents both forms: one with the negative sign
+        outside the factors, and one where the sign has been distributed into one of the factors.'
+      mathTool: null
+      finalAnswer: $-(3x^2 + 14x + 8) = -(3x + 2)(x + 4)$ or $(-3x - 2)(x + 4)
+      stepByStepGuideline:
+      - 'Extract the negative sign: $-3x^2 - 14x - 8 = -(3x^2 + 14x + 8)$.'
+      - Factor the positive quadratic $3x^2 + 14x + 8$. We need factors of $3\times8=24$ that sum to 14 (which are 2 and 12).
+        Grouping yields $(3x^2 + 12x) + (2x + 8) = 3x(x+4) + 2(x+4) = (3x + 2)(x + 4)$.
+      - 'The first factored form is: $-(3x + 2)(x + 4)$.'
+      - 'Distribute the negative sign into the first factor $(3x + 2)$ to find the alternative form: $(-3x - 2)(x + 4)$.'
+      id: q25-5
+      questionGroup: q25
+- id: expansion-factorisation-node-26
+  nodeNumber: 26
+  title: Grouping Using Multiplication Frame
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: 'Factorise the following four-term polynomial completely using the multiplication frame method:
+
+        $$xy + 3x + 4y + 12$$'
+      avatarIntro: The grouping method is excellent for factorising polynomials with four terms. Set up your 2x2 grid and
+        look for common factors!
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: variable
+          expression2: variable
+          mode: factorise
+          showGrid: true
+      finalAnswer: (x + 4)(y + 3)
+      stepByStepGuideline:
+      - 'Step 1: Arrange the four terms in a 2x2 grid. For example, Row 1: xy, 3x; Row 2: 4y, 12.'
+      - 'Step 2: Find the greatest common factor (GCF) for each row. GCF of Row 1 (xy, 3x) is x. GCF of Row 2 (4y, 12) is
+        4.'
+      - 'Step 3: Find the GCF for each column. GCF of Column 1 (xy, 4y) is y. GCF of Column 2 (3x, 12) is 3.'
+      - 'Step 4: The factors are read from the resulting row and column headers: (x + 4) and (y + 3).'
+      - 'Step 5: Write the factorised expression: (x + 4)(y + 3).'
+      id: q26-1
+      questionGroup: q26
+    - problemText: 'Factorise the following expression by grouping using the frame method. Pay careful attention to the coefficients:
+
+        $$2pr + 4pq + 3r + 6q$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: variable
+          expression2: variable
+          mode: factorise
+          showGrid: true
+      finalAnswer: (r + 2q)(2p + 3)
+      stepByStepGuideline:
+      - 'Step 1: Group the terms: $(2pr + 3r) + (4pq + 6q)$.'
+      - 'Step 2: Factor out the GCF from the first group: $r(2p + 3)$.'
+      - 'Step 3: Factor out the GCF from the second group: $2q(2p + 3)$.'
+      - 'Step 4: Since the binomial factor $(2p + 3)$ is common, factor it out: $(r + 2q)(2p + 3)$.'
+      - 'Step 5: Verify using the frame method by placing the terms in the grid and reading the row/column GCFs.'
+      id: q26-2
+      questionGroup: q26
+    - problemText: 'Factorise the four-term expression below using the grouping frame method. Ensure the negative signs are
+        handled correctly when identifying common factors:
+
+        $$ab - 5a + 2b - 10$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: variable
+          expression2: variable
+          mode: factorise
+          showGrid: true
+      finalAnswer: (a + 2)(b - 5)
+      stepByStepGuideline:
+      - 'Step 1: Arrange the terms in the grouping frame/grid: Row 1: ab, -5a; Row 2: 2b, -10.'
+      - 'Step 2: Find the GCF of Row 1 (ab, -5a) which is a. Divide the row by a to get factors b and -5.'
+      - 'Step 3: Find the GCF of Row 2 (2b, -10) which is 2. Divide the row by 2 to get factors b and -5.'
+      - 'Step 4: The column factors must be b and -5. The row factors are a and +2.'
+      - 'Step 5: The factorised form is (a + 2)(b - 5).'
+      id: q26-3
+      questionGroup: q26
+    - problemText: 'Using the multiplication frame method, factorise the following expression:
+
+        $$mn - 5m + 6n - 30$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: variable
+          expression2: variable
+          mode: factorise
+          showGrid: true
+      finalAnswer: (m + 6)(n - 5)
+      stepByStepGuideline:
+      - 'Step 1: Group terms: $(mn + 6n) + (-5m - 30)$.'
+      - 'Step 2: Factor out GCF from the first group: $n(m + 6)$.'
+      - 'Step 3: Factor out GCF from the second group. Since the leading term is negative, factor out -5: $-5(m + 6)$.'
+      - 'Step 4: Factor out the common binomial factor $(m + 6)$: $(n - 5)(m + 6)$.'
+      - 'Step 5: The factorised expression is $(m + 6)(n - 5)$.'
+      id: q26-4
+      questionGroup: q26
+    - problemText: 'Factorise the following four-term expression using the frame method:
+
+        $$3xm - 2ym + 12x - 8y$$'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: variable
+          expression2: variable
+          mode: factorise
+          showGrid: true
+      finalAnswer: (m + 4)(3x - 2y)
+      stepByStepGuideline:
+      - 'Step 1: Arrange the terms in the grouping frame. Row 1: 3xm, -2ym; Row 2: 12x, -8y.'
+      - 'Step 2: Find the GCF for Row 1 (3xm, -2ym) which is m. The remaining factors are 3x and -2y.'
+      - 'Step 3: Find the GCF for Row 2 (12x, -8y) which is 4. The remaining factors are 3x and -2y.'
+      - 'Step 4: The factors are derived from the row headers (m and 4) and the common column factors (3x and -2y).'
+      - 'Step 5: The factorised expression is $(m + 4)(3x - 2y)$.'
+      id: q26-5
+      questionGroup: q26
+- id: expansion-factorisation-node-27
+  nodeNumber: 27
+  title: Grouping by Pairs Method
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Factorise the following four-term polynomial completely by grouping the terms in pairs: $$5p + 5q + rp
+        + rq$$'
+      avatarIntro: Factorisation by grouping is essential when dealing with four terms. Remember, the goal is to make the
+        binomial factor in both pairs identical!
+      mathTool: null
+      finalAnswer: (5 + r)(p + q)
+      stepByStepGuideline:
+      - 'Group the four terms into two pairs: $(5p + 5q) + (rp + rq)$.'
+      - 'Factor out the common monomial from the first pair: $5(p + q)$.'
+      - 'Factor out the common monomial from the second pair: $r(p + q)$.'
+      - 'Extract the common binomial factor $(p + q)$ to complete the factorisation: $(5 + r)(p + q)$.'
+      id: q27-1
+      questionGroup: q27
+    - problemText: 'Factorise the expression below using the grouping method. Pay careful attention to the signs when extracting
+        the common factors: $$3kx - 6k + xy - 2y$$'
+      mathTool: null
+      finalAnswer: (3k + y)(x - 2)
+      stepByStepGuideline:
+      - 'Group the four terms into two pairs: $(3kx - 6k) + (xy - 2y)$.'
+      - 'Factor out the common monomial from the first pair: $3k(x - 2)$.'
+      - 'Factor out the common monomial from the second pair: $y(x - 2)$.'
+      - 'Extract the common binomial factor $(x - 2)$: $(3k + y)(x - 2)$.'
+      id: q27-2
+      questionGroup: q27
+    - problemText: 'Factorise the algebraic expression: $$mn + pn + qm + qp$$'
+      mathTool: null
+      finalAnswer: (n + q)(m + p)
+      stepByStepGuideline:
+      - 'Group the four terms into two pairs: $(mn + pn) + (qm + qp)$.'
+      - 'Factor out the common monomial from the first pair: $n(m + p)$.'
+      - 'Factor out the common monomial from the second pair: $q(m + p)$.'
+      - 'Extract the common binomial factor $(m + p)$: $(n + q)(m + p)$.'
+      id: q27-3
+      questionGroup: q27
+    - problemText: 'Factorise the following expression by grouping. Note the presence of the squared term and the need to
+        factor out a negative common factor from the second pair: $$10a^2 + 15a - 4ab - 6b$$'
+      mathTool: null
+      finalAnswer: (5a - 2b)(2a + 3)
+      stepByStepGuideline:
+      - 'Group the four terms into two pairs: $(10a^2 + 15a) + (-4ab - 6b)$.'
+      - 'Factor out the greatest common monomial from the first pair: $5a(2a + 3)$.'
+      - 'Factor out the greatest common monomial (including the negative sign) from the second pair: $-2b(2a + 3)$.'
+      - 'Extract the common binomial factor $(2a + 3)$: $(5a - 2b)(2a + 3)$.'
+      id: q27-4
+      questionGroup: q27
+    - problemText: 'Factorise the polynomial expression completely by grouping: $$12st + 8s + 9t + 6$$'
+      mathTool: null
+      finalAnswer: (4s + 3)(3t + 2)
+      stepByStepGuideline:
+      - 'Group the four terms into two pairs: $(12st + 8s) + (9t + 6)$.'
+      - 'Factor out the greatest common monomial from the first pair: $4s(3t + 2)$.'
+      - 'Factor out the greatest common monomial from the second pair: $3(3t + 2)$.'
+      - 'Extract the common binomial factor $(3t + 2)$: $(4s + 3)(3t + 2)$.'
+      id: q27-5
+      questionGroup: q27
+- id: expansion-factorisation-node-28
+  nodeNumber: 28
+  title: Choosing Correct Term Arrangement
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Factorise the following polynomial completely by grouping. You must first rearrange the terms strategically,
+        as the initial pairing will not yield a common binomial factor: $$x^2 + 5y + xy + 5x$$'
+      avatarIntro: Factoring by grouping can sometimes be tricky! If your first attempt at pairing terms doesn't work, don't
+        worry—just rearrange them strategically until a common factor emerges.
+      mathTool: null
+      finalAnswer: (x + 5)(x + y)
+      stepByStepGuideline:
+      - Attempting to group the terms as given, $(x^2 + 5y) + (xy + 5x)$, fails because the pairs do not share a common factor
+        or resulting binomial.
+      - 'Rearrange the terms to group those sharing variables: $x^2 + xy + 5x + 5y$.'
+      - 'Group the pairs: $(x^2 + xy) + (5x + 5y)$.'
+      - 'Factor out the Greatest Common Factor (GCF) from each pair: $x(x + y) + 5(x + y)$.'
+      - 'Factor out the common binomial $(x + y)$: $(x + 5)(x + y)$.'
+      id: q28-1
+      questionGroup: q28
+    - problemText: The expression $ax - 5y + 5x - ay$ is not arranged for successful grouping. Determine the correct strategic
+        arrangement and factorise the polynomial completely.
+      mathTool: null
+      finalAnswer: (a + 5)(x - y)
+      stepByStepGuideline:
+      - The initial grouping $(ax - 5y) + (5x - ay)$ fails.
+      - 'Rearrange the terms to group factors that share the same coefficient or variable: $ax - ay + 5x - 5y$.'
+      - 'Group the pairs: $(ax - ay) + (5x - 5y)$.'
+      - 'Factor out the GCF from the first pair ($a$) and the second pair ($5$): $a(x - y) + 5(x - y)$.'
+      - 'Factor out the common binomial $(x - y)$: $(a + 5)(x - y)$.'
+      id: q28-2
+      questionGroup: q28
+    - problemText: Factorise the four-term expression $14ab + 6c + 21a + 4bc$. You must first rearrange the terms, as the
+        provided order does not allow for successful grouping.
+      mathTool: null
+      finalAnswer: (7a + 2c)(2b + 3)
+      stepByStepGuideline:
+      - The initial grouping $(14ab + 6c) + (21a + 4bc)$ fails.
+      - 'Rearrange the terms to find common factors. Group terms involving ''a'' and terms involving ''c'' together: $14ab
+        + 21a + 4bc + 6c$.'
+      - 'Group the pairs: $(14ab + 21a) + (4bc + 6c)$.'
+      - 'Factor out the GCF from the first pair ($7a$) and the second pair ($2c$): $7a(2b + 3) + 2c(2b + 3)$.'
+      - 'Factor out the common binomial $(2b + 3)$: $(7a + 2c)(2b + 3)$.'
+      id: q28-3
+      questionGroup: q28
+    - problemText: Factorise the expression $2p^2 + 3q + 6p + pq$ completely. Since the terms are not strategically arranged,
+        try alternative pairings to achieve grouping.
+      mathTool: null
+      finalAnswer: (2p + q)(p + 3)
+      stepByStepGuideline:
+      - The initial grouping $(2p^2 + 3q) + (6p + pq)$ fails to produce a common binomial.
+      - 'Rearrange the terms to pair the $p^2$ term with a term containing $p$, and the remaining terms together: $2p^2 +
+        6p + pq + 3q$.'
+      - 'Group the pairs: $(2p^2 + 6p) + (pq + 3q)$.'
+      - 'Factor out the GCF from the first pair ($2p$) and the second pair ($q$): $2p(p + 3) + q(p + 3)$.'
+      - 'Factor out the common binomial $(p + 3)$: $(2p + q)(p + 3)$.'
+      id: q28-4
+      questionGroup: q28
+    - problemText: Determine the correct arrangement required to factorise the polynomial $15uv + 35w + 21u + 25vw$ by grouping.
+      mathTool: null
+      finalAnswer: (3u + 5w)(5v + 7)
+      stepByStepGuideline:
+      - The initial grouping $(15uv + 35w) + (21u + 25vw)$ fails.
+      - Rearrange the terms to pair those sharing 'u' or those sharing 'v' or 'w'. A successful arrangement is $15uv + 21u
+        + 25vw + 35w$.
+      - 'Group the pairs: $(15uv + 21u) + (25vw + 35w)$.'
+      - 'Factor out the GCF from the first pair ($3u$) and the second pair ($5w$): $3u(5v + 7) + 5w(5v + 7)$.'
+      - 'Factor out the common binomial $(5v + 7)$: $(3u + 5w)(5v + 7)$.'
+      id: q28-5
+      questionGroup: q28
+- id: expansion-factorisation-node-29
+  nodeNumber: 29
+  title: Combined Extraction and Grouping
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Factorise the following polynomial expression completely: $$6x^2 + 9xy + 12x + 18y$$'
+      avatarIntro: This expression looks complicated, but always start by checking for a Greatest Common Factor across all
+        four terms before attempting grouping.
+      finalAnswer: 3(2x+3y)(x+2)
+      stepByStepGuideline:
+      - 'Step 1: Identify the Greatest Common Factor (GCF) of all four terms (6, 9, 12, 18). The GCF is 3. Extract 3 from
+        the expression: $3(2x^2 + 3xy + 4x + 6y)$.'
+      - 'Step 2: Factor the remaining four-term expression by grouping the terms inside the bracket: $3[(2x^2 + 3xy) + (4x
+        + 6y)]$.'
+      - 'Step 3: Factor out the common factor from the first pair (x) and the second pair (2): $3[x(2x + 3y) + 2(2x + 3y)]$.'
+      - 'Step 4: Factor out the common binomial factor $(2x + 3y)$: $3(x + 2)(2x + 3y)$.'
+      - 'Step 5: Verify that no further factorisation is possible.'
+      id: q29-1
+      questionGroup: q29
+    - problemText: 'Factorise the following expression completely by first extracting the GCF and then applying grouping:
+        $$2x^3y + 4x^2y + 6xy^2 + 12y^2$$'
+      finalAnswer: 2y(x+2)(x^2+3y)
+      stepByStepGuideline:
+      - 'Step 1: Identify the Greatest Common Factor (GCF) of all four terms. The GCF is $2y$. Extract $2y$: $2y(x^3 + 2x^2
+        + 3xy + 6y)$.'
+      - 'Step 2: Group the remaining terms inside the bracket: $2y[(x^3 + 2x^2) + (3xy + 6y)]$.'
+      - 'Step 3: Factor out the common factor from each pair: $2y[x^2(x + 2) + 3y(x + 2)]$.'
+      - 'Step 4: Factor out the common binomial factor $(x + 2)$: $2y(x + 2)(x^2 + 3y)$.'
+      - 'Step 5: Verify that the factorisation is complete.'
+      id: q29-2
+      questionGroup: q29
+    - problemText: 'Factorise the expression completely by extracting a negative common factor first, followed by grouping:
+        $$-2pq - 8p - 6q - 24$$'
+      finalAnswer: -2(p+3)(q+4)
+      stepByStepGuideline:
+      - 'Step 1: Extract the Greatest Common Factor, which is -2: $-2(pq + 4p + 3q + 12)$.'
+      - 'Step 2: Group the remaining terms inside the bracket: $-2[(pq + 4p) + (3q + 12)]$.'
+      - 'Step 3: Factor out the common factor from each pair: $-2[p(q + 4) + 3(q + 4)]$.'
+      - 'Step 4: Factor out the common binomial factor $(q + 4)$: $-2(p + 3)(q + 4)$.'
+      - 'Step 5: Verify that the factorisation is complete.'
+      id: q29-3
+      questionGroup: q29
+    - problemText: 'Factorise completely: $$100c^2d + 200c^2 + 150cd + 300c$$'
+      finalAnswer: 50c(2c+3)(d+2)
+      stepByStepGuideline:
+      - 'Step 1: Determine the GCF of all four terms. The numerical GCF is 50 and the variable GCF is c. Extract $50c$: $50c(2cd
+        + 4c + 3d + 6)$.'
+      - 'Step 2: Group the remaining terms inside the bracket: $50c[(2cd + 4c) + (3d + 6)]$.'
+      - 'Step 3: Factor out the common factor from each pair: $50c[2c(d + 2) + 3(d + 2)]$.'
+      - 'Step 4: Factor out the common binomial factor $(d + 2)$: $50c(2c + 3)(d + 2)$.'
+      - 'Step 5: Verify that no further factorisation is possible.'
+      id: q29-4
+      questionGroup: q29
+    - problemText: 'Factorise the following polynomial expression completely, ensuring that all resulting factors are fully
+        simplified: $$3a^2x - 3b^2x + 6a^2y - 6b^2y$$'
+      finalAnswer: 3(x+2y)(a-b)(a+b)
+      stepByStepGuideline:
+      - 'Step 1: Identify the GCF of all four terms. The GCF is 3. Extract 3: $3(a^2x - b^2x + 2a^2y - 2b^2y)$.'
+      - 'Step 2: Group the remaining terms inside the bracket: $3[(a^2x - b^2x) + (2a^2y - 2b^2y)]$.'
+      - 'Step 3: Factor out the common factor from each pair: $3[x(a^2 - b^2) + 2y(a^2 - b^2)]$.'
+      - 'Step 4: Factor out the common binomial factor $(a^2 - b^2)$: $3(x + 2y)(a^2 - b^2)$.'
+      - 'Step 5: Note that $(a^2 - b^2)$ is a Difference of Squares. Factor it further into $(a - b)(a + b)$.'
+      - 'Step 6: The complete factorisation is $3(x + 2y)(a - b)(a + b)$.'
+      id: q29-5
+      questionGroup: q29
+- id: expansion-factorisation-node-30
+  nodeNumber: 30
+  title: Perfect Square Sum Pattern
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: Expand the expression $(x + 4)^2$ completely. Use the provided multiplication grid to visualize how the
+        four resulting terms combine into the perfect square trinomial form $a^2 + 2ab + b^2$. Specifically, identify which
+        term represents $2ab$.
+      avatarIntro: We are exploring perfect squares today! Remember, squaring a binomial means multiplying it by itself. This
+        exercise will help you master the crucial middle term.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: x+4
+          expression2: x+4
+          mode: expand
+          showGrid: true
+      finalAnswer: $x^2 + 8x + 16$
+      stepByStepGuideline:
+      - 'Step 1: Write the expansion as a product of two identical binomials: $(x + 4)(x + 4)$.'
+      - 'Step 2: Use the Distributive Law (or FOIL) to multiply the terms: $x(x) + x(4) + 4(x) + 4(4)$.'
+      - 'Step 3: Calculate the resulting terms: $x^2 + 4x + 4x + 16$.'
+      - 'Step 4: Combine the like terms ($4x$ and $4x$) to get the middle term $2ab$: $x^2 + 8x + 16$.'
+      - 'Step 5: Verify that $8x$ is indeed $2ab$, where $a=x$ and $b=4$. $2(x)(4) = 8x$.'
+      id: q30-1
+      questionGroup: q30
+    - problemText: Expand $(x + 5)^2$ completely. If a student incorrectly stated the answer was $x^2 + 25$, explain clearly
+        why they missed the middle term and what the correct middle term should be, referencing the $2ab$ structure.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: x+5
+          expression2: x+5
+          mode: expand
+          showGrid: true
+      finalAnswer: $x^2 + 10x + 25$
+      stepByStepGuideline:
+      - 'Step 1: Identify $a=x$ and $b=5$. Use the formula $(a+b)^2 = a^2 + 2ab + b^2$.'
+      - 'Step 2: Calculate $a^2$: $x^2$.'
+      - 'Step 3: Calculate $b^2$: $5^2 = 25$.'
+      - 'Step 4: Calculate the middle term $2ab$: $2(x)(5) = 10x$.'
+      - 'Step 5: The complete expansion is $x^2 + 10x + 25$. The incorrect answer $x^2 + 25$ misses the $10x$ term, which
+        arises from multiplying the inner and outer terms ($5x + 5x$).'
+      id: q30-2
+      questionGroup: q30
+    - problemText: Expand the perfect square $(2x + 3)^2$. Pay special attention to how the leading coefficient affects the
+        first term ($a^2$) and the middle term ($2ab$).
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2x+3
+          expression2: 2x+3
+          mode: expand
+          showGrid: true
+      finalAnswer: $4x^2 + 12x + 9$
+      stepByStepGuideline:
+      - 'Step 1: Identify $a = 2x$ and $b = 3$.'
+      - 'Step 2: Calculate $a^2$: $(2x)^2 = 4x^2$.'
+      - 'Step 3: Calculate $b^2$: $3^2 = 9$.'
+      - 'Step 4: Calculate the middle term $2ab$: $2(2x)(3) = 12x$.'
+      - 'Step 5: Combine the terms: $4x^2 + 12x + 9$.'
+      id: q30-3
+      questionGroup: q30
+    - problemText: A square garden plot has sides of length $(3y + 1)$ metres. Calculate the total area of the garden by expanding
+        the expression for the area, $(3y + 1)^2$. Show clearly how the $2ab$ term contributes to the final area expression.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 3y+1
+          expression2: 3y+1
+          mode: expand
+          showGrid: true
+      finalAnswer: $9y^2 + 6y + 1$
+      stepByStepGuideline:
+      - 'Step 1: The area is given by $(3y + 1)^2$. Identify $a=3y$ and $b=1$.'
+      - 'Step 2: Calculate the square of the first term ($a^2$): $(3y)^2 = 9y^2$.'
+      - 'Step 3: Calculate the square of the second term ($b^2$): $1^2 = 1$.'
+      - 'Step 4: Calculate twice the product of the terms ($2ab$): $2(3y)(1) = 6y$.'
+      - 'Step 5: Combine these results to get the total area expression: $9y^2 + 6y + 1$ square metres.'
+      id: q30-4
+      questionGroup: q30
+    - problemText: Expand the binomial $(2m + 5)^2$ using the Perfect Square Sum identity. Use the multiplication grid provided
+        to confirm that the four individual products (obtained from FOIL) correctly sum up to the final trinomial expression.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2m+5
+          expression2: 2m+5
+          mode: expand
+          showGrid: true
+      finalAnswer: $4m^2 + 20m + 25$
+      stepByStepGuideline:
+      - 'Step 1: Recognize the form $(a+b)^2$, where $a=2m$ and $b=5$.'
+      - 'Step 2: Calculate $a^2$: $(2m)^2 = 4m^2$.'
+      - 'Step 3: Calculate $2ab$: $2(2m)(5) = 20m$.'
+      - 'Step 4: Calculate $b^2$: $5^2 = 25$.'
+      - 'Step 5: Write the final expanded form: $4m^2 + 20m + 25$. The grid confirms the terms $4m^2$, $10m$, $10m$, and $25$,
+        which sum to the final answer.'
+      id: q30-5
+      questionGroup: q30
+- id: expansion-factorisation-node-31
+  nodeNumber: 31
+  title: Perfect Square Difference Pattern
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: Expand the perfect square binomial $(x - 6)^2$ completely using the distributive law. After finding the
+        result, describe how the expansion of $(x - 6)^2$ differs from the expansion of $(x + 6)^2$.
+      avatarIntro: Expanding binomials like (a minus b) squared is crucial. Remember that squaring a negative number results
+        in a positive number, which affects the last term!
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: x-6
+          expression2: x-6
+          mode: expand
+          showGrid: true
+      finalAnswer: $x^2 - 12x + 36$. The only difference between $(x-6)^2$ and $(x+6)^2 = x^2 + 12x + 36$ is the sign of the
+        middle term.
+      stepByStepGuideline:
+      - 'Write the expression as a product of two binomials: $(x - 6)(x - 6)$.'
+      - 'Apply the distributive law (or FOIL): $x(x) + x(-6) + (-6)(x) + (-6)(-6)$.'
+      - 'Calculate the four terms: $x^2 - 6x - 6x + 36$.'
+      - 'Combine the like terms (the middle terms): $x^2 - 12x + 36$.'
+      - Compare this result with $(x+6)^2 = x^2 + 12x + 36$. The first and last terms are identical, but the middle term sign
+        is negative for $(x-6)^2$ and positive for $(x+6)^2$.
+      id: q31-1
+      questionGroup: q31
+    - problemText: A student incorrectly claims that $(y - 2)^2 = y^2 - 4$. Expand $(y - 2)^2$ completely using the perfect
+        square identity $(a-b)^2 = a^2 - 2ab + b^2$. Then, clearly explain the algebraic reason why the student's answer is
+        wrong, specifically addressing the missing term and the final constant term sign.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: y-2
+          expression2: y-2
+          mode: expand
+          showGrid: true
+      finalAnswer: $y^2 - 4y + 4$. The student incorrectly squared $y$ and $2$ separately and subtracted the results, failing
+        to account for the cross-products (the middle term $-4y$) and failing to recognize that $(-2)^2$ is positive $4$.
+      stepByStepGuideline:
+      - Identify $a=y$ and $b=2$.
+      - 'Apply the identity $(a-b)^2 = a^2 - 2ab + b^2$: $(y)^2 - 2(y)(2) + (2)^2$.'
+      - 'Simplify the terms: $y^2 - 4y + 4$.'
+      - The student's error ($y^2 - 4$) resulted from calculating $y^2 - 2^2$, which ignores the necessary cross-multiplication
+        terms ($-2y$ and $-2y$) that form the middle term $-4y$.
+      id: q31-2
+      questionGroup: q31
+    - problemText: 'Expand the expression $(2x - 1)^2$ completely. Demonstrate the calculation of the three resulting terms:
+        the squared term ($a^2$), the middle term ($-2ab$), and the positive constant term ($b^2$).'
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2x-1
+          expression2: 2x-1
+          mode: expand
+          showGrid: true
+      finalAnswer: $4x^2 - 4x + 1$
+      stepByStepGuideline:
+      - Identify $a=2x$ and $b=1$.
+      - 'Calculate the first term ($a^2$): $(2x)^2 = 4x^2$.'
+      - 'Calculate the middle term ($-2ab$): $-2(2x)(1) = -4x$.'
+      - 'Calculate the last term ($b^2$): $(-1)^2 = 1$.'
+      - 'Combine the results to form the perfect square trinomial: $4x^2 - 4x + 1$.'
+      id: q31-3
+      questionGroup: q31
+    - problemText: An artisan is designing a square tile pattern where the side length is represented by $(3y - 4)$ cm. Calculate
+        the area of the tile by expanding $(3y - 4)^2$. Show your work using the multiplication grid visualization to ensure
+        all four products contribute correctly to the final perfect square trinomial.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 3y-4
+          expression2: 3y-4
+          mode: expand
+          showGrid: true
+      finalAnswer: $9y^2 - 24y + 16$ cm$^2$
+      stepByStepGuideline:
+      - 'The area is found by squaring the side length: Area $=(3y - 4)^2$.'
+      - Identify $a=3y$ and $b=4$.
+      - 'Calculate $a^2$: $(3y)^2 = 9y^2$.'
+      - 'Calculate the middle term ($-2ab$): $-2(3y)(4) = -24y$.'
+      - 'Calculate the last term ($b^2$): $(-4)^2 = 16$.'
+      - 'Combine the terms: $9y^2 - 24y + 16$.'
+      id: q31-4
+      questionGroup: q31
+    - problemText: Expand the binomial $(5a - 2b)^2$ completely. Ensure you correctly handle the negative signs when calculating
+        the middle term and verify that the final term is positive.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 5a-2b
+          expression2: 5a-2b
+          mode: expand
+          showGrid: true
+      finalAnswer: $25a^2 - 20ab + 4b^2$
+      stepByStepGuideline:
+      - Identify $a=5a$ and $b=2b$.
+      - 'Calculate the first term ($a^2$): $(5a)^2 = 25a^2$.'
+      - 'Calculate the middle term ($-2ab$): $-2(5a)(2b) = -20ab$.'
+      - 'Calculate the last term ($b^2$): $(-2b)^2$. Since $(-2b)(-2b) = +4b^2$, the final term is positive.'
+      - 'Combine the results: $25a^2 - 20ab + 4b^2$.'
+      id: q31-5
+      questionGroup: q31
+- id: expansion-factorisation-node-32
+  nodeNumber: 32
+  title: Expanding Using Perfect Square Identities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Expand the binomial expression $(3x + 4)^2$ completely using the perfect square identity. Ensure you calculate
+        the coefficient of the $x^2$ term correctly.
+      avatarIntro: 'Mastering perfect square expansion is crucial for algebraic manipulation. Remember the identity: square
+        the first term, double the product, then square the last term.'
+      finalAnswer: 9x² + 24x + 16
+      stepByStepGuideline:
+      - Identify $a = 3x$ and $b = 4$. Apply the identity $(a+b)^2 = a^2 + 2ab + b^2$.
+      - 'Calculate the first term, $a^2$: $(3x)^2 = 9x^2$.'
+      - 'Calculate the middle term, $2ab$: $2(3x)(4) = 24x$.'
+      - 'Calculate the last term, $b^2$: $4^2 = 16$.'
+      - 'Combine the terms to get the final expanded form: $9x^2 + 24x + 16$.'
+      id: q32-1
+      questionGroup: q32
+    - problemText: An engineer is calculating the maximum stress deviation, which is modeled by the expansion of $(5x - 6)^2$.
+        Expand this expression completely, ensuring the negative sign is handled correctly for the middle term.
+      finalAnswer: 25x² - 60x + 36
+      stepByStepGuideline:
+      - Identify $a = 5x$ and $b = 6$. Apply the identity $(a-b)^2 = a^2 - 2ab + b^2$.
+      - 'Calculate the first term, $a^2$: $(5x)^2 = 25x^2$.'
+      - 'Calculate the middle term, $-2ab$: $-2(5x)(6) = -60x$.'
+      - 'Calculate the last term, $b^2$: $(-6)^2 = 36$.'
+      - 'Combine the terms: $25x^2 - 60x + 36$.'
+      id: q32-2
+      questionGroup: q32
+    - problemText: A chemist is determining the concentration factor of a solution, represented by the expression $(2x - 3b)^2$.
+        Expand this perfect square binomial completely, noting that both terms involve variables.
+      finalAnswer: 4x² - 12xb + 9b²
+      stepByStepGuideline:
+      - Identify $a = 2x$ and $b = 3b$. Apply the identity $(a-b)^2 = a^2 - 2ab + b^2$.
+      - 'Calculate the first term, $a^2$: $(2x)^2 = 4x^2$.'
+      - 'Calculate the middle term, $-2ab$: $-2(2x)(3b) = -12xb$.'
+      - 'Calculate the last term, $b^2$: $(-3b)^2 = 9b^2$.'
+      - 'Combine the terms: $4x^2 - 12xb + 9b^2$.'
+      id: q32-3
+      questionGroup: q32
+    - problemText: In calculating how a material expands based on two different growth variables, $a$ and $c$, the formula
+        involves expanding $(2a + 4c)^2$. Determine the fully expanded expression.
+      finalAnswer: 4a² + 16ac + 16c²
+      stepByStepGuideline:
+      - Identify $a = 2a$ and $b = 4c$. Apply the identity $(a+b)^2 = a^2 + 2ab + b^2$.
+      - 'Calculate the first term, $a^2$: $(2a)^2 = 4a^2$.'
+      - 'Calculate the middle term, $2ab$: $2(2a)(4c) = 16ac$.'
+      - 'Calculate the last term, $b^2$: $(4c)^2 = 16c^2$.'
+      - 'Combine the terms: $4a^2 + 16ac + 16c^2$.'
+      id: q32-4
+      questionGroup: q32
+    - problemText: Expand the expression $(3b + 2y)^2$. Ensure you correctly calculate the coefficient for the middle term
+        ($2ab$) and square the coefficients for the outer terms ($a^2$ and $b^2$).
+      finalAnswer: 9b² + 12by + 4y²
+      stepByStepGuideline:
+      - Identify $a = 3b$ and $b = 2y$. Apply the identity $(a+b)^2 = a^2 + 2ab + b^2$.
+      - 'Calculate the first term, $a^2$: $(3b)^2 = 9b^2$.'
+      - 'Calculate the middle term, $2ab$: $2(3b)(2y) = 12by$.'
+      - 'Calculate the last term, $b^2$: $(2y)^2 = 4y^2$.'
+      - 'Combine the terms: $9b^2 + 12by + 4y^2$.'
+      id: q32-5
+      questionGroup: q32
+- id: expansion-factorisation-node-33
+  nodeNumber: 33
+  title: Factorising Perfect Square Trinomials
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: A computer science student is optimizing memory allocation. An expression representing the required memory
+        size is given by $x^2 + 10x + 25$. Factorise this perfect square trinomial completely.
+      avatarIntro: Welcome! Identifying and factorising perfect square trinomials is a key skill. Remember to check if the
+        middle term is exactly twice the product of the square roots of the first and last terms.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 10
+          c: 25
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 5)²
+      stepByStepGuideline:
+      - 'Identify the first term ($A$) and the last term ($C$): $A=x^2$ and $C=25$.'
+      - 'Find the square roots of $A$ and $C$: $\sqrt{x^2} = x$ and $\sqrt{25} = 5$.'
+      - 'Verify the middle term ($B$): Check if $B = 2 \times (\sqrt{A}) \times (\sqrt{C})$. Here, $2(x)(5) = 10x$, which
+        matches the middle term.'
+      - Since the condition is met, the expression is a perfect square trinomial of the form $(a+b)^2$.
+      - 'Factorise the expression: $(x + 5)^2$'
+      id: q33-1
+      questionGroup: q33
+    - problemText: An optical engineer is designing a lens surface whose area is modelled by the expression $25x^2 - 40xy
+        + 16y^2$. Factorise this expression completely.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 25
+          b: -40
+          c: 16
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (5x - 4y)²
+      stepByStepGuideline:
+      - 'Identify the first and last terms: $25x^2$ and $16y^2$. Both are perfect squares.'
+      - 'Find the square roots: $\sqrt{25x^2} = 5x$ and $\sqrt{16y^2} = 4y$.'
+      - 'Verify the middle term: Check if the middle term equals $-2 \times (5x) \times (4y)$.'
+      - 'Calculation: $-2(5x)(4y) = -40xy$. This matches the middle term.'
+      - 'Since the expression is of the form $a^2 - 2ab + b^2$, factorise it as $(a-b)^2$: $(5x - 4y)^2$.'
+      id: q33-2
+      questionGroup: q33
+    - problemText: A student claimed that the expression $16y^2 + 20y + 25$ is a perfect square trinomial and can be factored.
+        Check if this is correct. If it is not a perfect square, explain clearly which condition is failed.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 16
+          b: 20
+          c: 25
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: Not a perfect square. \u221a16y\u00b2 = 4y, \u221a25 = 5, but 2(4y)(5) = 40y \u2260 20y. Cannot factorise
+        as perfect square
+      stepByStepGuideline:
+      - 'Check if the first and last terms are perfect squares: $\sqrt{16y^2} = 4y$ and $\sqrt{25} = 5$. (Condition 1 passed).'
+      - 'Verify the required middle term ($2ab$): Calculate $2 \times (4y) \times (5)$.'
+      - Required middle term is $40y$.
+      - Compare the required middle term ($40y$) with the given middle term ($20y$). Since $40y \ne 20y$, the expression is
+        not a perfect square trinomial.
+      - 'Conclusion: The expression cannot be factored using the perfect square formula.'
+      id: q33-3
+      questionGroup: q33
+    - problemText: In a biological model describing population dynamics, the interaction term is represented by $4a^2 + 12ab
+        + 9b^2$. Factorise this expression completely.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 4
+          b: 12
+          c: 9
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (2a + 3b)²
+      stepByStepGuideline:
+      - 'Identify the first term ($a^2$) and the last term ($b^2$): $4a^2$ and $9b^2$.'
+      - 'Find the square roots: $\sqrt{4a^2} = 2a$ and $\sqrt{9b^2} = 3b$.'
+      - 'Verify the middle term ($2ab$): Calculate $2 \times (2a) \times (3b)$.'
+      - 'Calculation: $2(2a)(3b) = 12ab$. This matches the middle term.'
+      - 'Since the expression is of the form $a^2 + 2ab + b^2$, factorise it as $(a+b)^2$: $(2a + 3b)^2$.'
+      id: q33-4
+      questionGroup: q33
+    - problemText: 'Factorise the following algebraic expression completely: $x^2 - 14x + 49$'
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -14
+          c: 49
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 7)²
+      stepByStepGuideline:
+      - Identify the first term ($x^2$) and the last term ($49$). Both are perfect squares.
+      - 'Find the square roots: $\sqrt{x^2} = x$ and $\sqrt{49} = 7$.'
+      - 'Verify the middle term: Check if the middle term equals $-2 \times (x) \times (7)$.'
+      - 'Calculation: $-2(x)(7) = -14x$. This matches the given middle term.'
+      - 'Since the expression matches the $a^2 - 2ab + b^2$ pattern, factorise it as $(a-b)^2$: $(x - 7)^2$.'
+      id: q33-5
+      questionGroup: q33
+- id: expansion-factorisation-node-34
+  nodeNumber: 34
+  title: Discovering Middle Term Cancellation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: multiplicationGrid
+    preWrittenQuestions:
+    - problemText: An architectural firm is calculating the area difference between two components. Expand the expression
+        $(x + 4)(x - 4)$ completely, showing all four terms resulting from the multiplication. Use the provided multiplication
+        grid to visualize how the middle terms cancel out, leaving only two terms in the simplified answer.
+      avatarIntro: Welcome! Today we are discovering a powerful shortcut in algebra called the Difference of Squares. Pay
+        close attention to how the middle terms disappear when the signs are opposite!
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: x+4
+          expression2: x-4
+          mode: expand
+          showGrid: true
+      finalAnswer: x² - 16
+      stepByStepGuideline:
+      - 'Expand the binomials using the distributive property (FOIL): (x)(x) + (x)(-4) + (4)(x) + (4)(-4).'
+      - 'This yields the four terms: x² - 4x + 4x - 16.'
+      - 'Identify the middle terms: -4x and +4x. Since they are opposites, they cancel out (sum to zero).'
+      - 'Simplify the expression by combining like terms: x² - 16.'
+      id: q34-1
+      questionGroup: q34
+    - problemText: In a financial model, the net change factor is calculated by expanding $(y + 7)(y - 7)$. Expand this expression
+        completely. Then, explain in detail why the expanded form results in only two terms (a binomial) rather than three
+        terms (a trinomial).
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: y+7
+          expression2: y-7
+          mode: expand
+          showGrid: true
+      finalAnswer: y² - 49. The expansion is y² + 7y - 7y - 49. The middle terms (+7y and -7y) are additive inverses (opposites)
+        and their sum is zero, causing them to cancel out.
+      stepByStepGuideline:
+      - 'Expand the expression: y² + 7y - 7y - 49.'
+      - 'Identify the middle terms: +7y and -7y.'
+      - 'Combine the middle terms: 7y - 7y = 0.'
+      - The simplified expression is y² - 49. The cancellation occurs because the inner and outer products are equal in magnitude
+        but opposite in sign.
+      id: q34-2
+      questionGroup: q34
+    - problemText: A geometric shape's area is determined by the product $(2a + 5)(2a - 5)$. Expand this expression completely,
+        ensuring you correctly calculate the coefficient for the $a^2$ term. Use the multiplication grid to confirm that the
+        middle terms cancel.
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 2a+5
+          expression2: 2a-5
+          mode: expand
+          showGrid: true
+      finalAnswer: 4a² - 25
+      stepByStepGuideline:
+      - 'Apply the FOIL method: First terms: (2a)(2a) = 4a².'
+      - 'Outer terms: (2a)(-5) = -10a.'
+      - 'Inner terms: (5)(2a) = +10a.'
+      - 'Last terms: (5)(-5) = -25.'
+      - The full expansion is 4a² - 10a + 10a - 25.
+      - The middle terms (-10a + 10a) cancel to zero. The simplified result is 4a² - 25.
+      id: q34-3
+      questionGroup: q34
+    - problemText: When calculating a variance factor in statistics, the expression $(m + 8)(m - 8)$ frequently appears. Expand
+        this expression fully and simplify. Based on your result, state the general algebraic rule (identity) that describes
+        the product of two binomials that are conjugates (differ only by the sign between terms).
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: m+8
+          expression2: m-8
+          mode: expand
+          showGrid: true
+      finalAnswer: 'm² - 64. The general algebraic rule is the Difference of Squares identity: (a+b)(a-b) = a² - b².'
+      stepByStepGuideline:
+      - 'Expand the expression: m² - 8m + 8m - 64.'
+      - Cancel the middle terms (-8m + 8m = 0).
+      - The simplified answer is m² - 64.
+      - 'Observe that the result is the square of the first term minus the square of the second term, which defines the Difference
+        of Squares identity: (a+b)(a-b) = a² - b².'
+      id: q34-4
+      questionGroup: q34
+    - problemText: A physics student is modeling a velocity calculation involving the expansion $(3y + 7)(3y - 7)$. Expand
+        this expression completely and simplify it to two terms. Compare your result to the expansion of a perfect square,
+        $(3y + 7)^2$. What is the crucial algebraic difference that determines the presence or absence of a middle term?
+      mathTool:
+        toolName: multiplicationGrid
+        parameters:
+          expression1: 3y+7
+          expression2: 3y-7
+          mode: expand
+          showGrid: true
+      finalAnswer: 9y² - 49. The crucial difference is that in (3y+7)(3y-7), the inner term (+21y) and outer term (-21y) are
+        opposites and cancel. In (3y+7)², both the inner and outer terms are positive (+21y), resulting in a middle term of
+        +42y.
+      stepByStepGuideline:
+      - 'Expand the expression: (3y)(3y) + (3y)(-7) + (7)(3y) + (7)(-7).'
+      - 'The four terms are: 9y² - 21y + 21y - 49.'
+      - 'Simplify by cancelling the middle terms: 9y² - 49.'
+      - The difference lies in the signs of the binomials. When signs are opposite, the middle terms cancel. When signs are
+        the same (as in a perfect square), the middle terms reinforce each other, creating the $2ab$ term.
+      id: q34-5
+      questionGroup: q34
+- id: expansion-factorisation-node-35
+  nodeNumber: 35
+  title: Expanding Using Difference of Squares
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'In processing survey data, a correction factor requires expanding the product of two related terms: $(x
+        + 9)(x - 9)$. Expand this expression completely using the difference of squares identity, resulting in exactly two
+        terms.'
+      avatarIntro: Great job recognizing the patterns in binomial expansions! Remember that when you multiply two conjugates,
+        the middle terms always cancel out.
+      mathTool: null
+      finalAnswer: x² - 81
+      stepByStepGuideline:
+      - 'Identify the pattern as the Difference of Squares: $(a + b)(a - b)$, where $a = x$ and $b = 9$.'
+      - 'Apply the identity: $(a + b)(a - b) = a^2 - b^2$.'
+      - 'Substitute the terms: $x^2 - 9^2$.'
+      - 'Calculate the final result: $x^2 - 81$.'
+      id: q35-1
+      questionGroup: q35
+    - problemText: A hydraulic engineer is calculating the net cross-sectional area of flow through a pipe, which involves
+        simplifying the expression $(3x + 5)(3x - 5)$. Expand this expression completely using the difference of squares identity.
+      mathTool: null
+      finalAnswer: 9x² - 25
+      stepByStepGuideline:
+      - Identify $a$ and $b$ in the expression $(3x + 5)(3x - 5)$. Here, $a = 3x$ and $b = 5$.
+      - 'Apply the difference of squares identity: $a^2 - b^2$.'
+      - 'Square the first term, $a$: $(3x)^2 = 9x^2$.'
+      - 'Square the second term, $b$: $5^2 = 25$.'
+      - 'Combine the results: $9x^2 - 25$.'
+      id: q35-2
+      questionGroup: q35
+    - problemText: A cartographer is determining a map scaling factor by simplifying the product $(5y - 4)(5y + 4)$. Expand
+        this expression completely, ensuring you correctly square the coefficient of the variable term.
+      mathTool: null
+      finalAnswer: 25y² - 16
+      stepByStepGuideline:
+      - Recognize the Difference of Squares pattern $(a - b)(a + b)$, where $a = 5y$ and $b = 4$.
+      - The result is $a^2 - b^2$.
+      - 'Calculate $a^2$: $(5y)^2 = 25y^2$.'
+      - 'Calculate $b^2$: $4^2 = 16$.'
+      - The final expanded form is $25y^2 - 16$.
+      id: q35-3
+      questionGroup: q35
+    - problemText: In an economic model analyzing the interaction of two market variables, $x$ and $y$, the interaction term
+        is given by $(2x + 3y)(2x - 3y)$. Expand this multi-variable expression completely.
+      mathTool: null
+      finalAnswer: 4x² - 9y²
+      stepByStepGuideline:
+      - Identify the terms $a$ and $b$ in the expression $(2x + 3y)(2x - 3y)$. Here, $a = 2x$ and $b = 3y$.
+      - 'Apply the identity: $a^2 - b^2$.'
+      - 'Calculate $a^2$: $(2x)^2 = 4x^2$.'
+      - 'Calculate $b^2$: $(3y)^2 = 9y^2$.'
+      - The expanded expression is $4x^2 - 9y^2$.
+      id: q35-4
+      questionGroup: q35
+    - problemText: An astrophysicist is calculating a perturbation factor in an orbit, which involves simplifying the term
+        $(6 - 4p)(6 + 4p)$. Expand this expression completely, noting that the constant term comes first in this binomial.
+      mathTool: null
+      finalAnswer: 36 - 16p²
+      stepByStepGuideline:
+      - Identify the terms $a$ and $b$. Even though the constant is first, $a = 6$ and $b = 4p$.
+      - 'Apply the difference of squares identity: $a^2 - b^2$.'
+      - 'Square the first term, $a$: $6^2 = 36$.'
+      - 'Square the second term, $b$: $(4p)^2 = 16p^2$.'
+      - 'Subtract the squared terms: $36 - 16p^2$.'
+      id: q35-5
+      questionGroup: q35
+- id: expansion-factorisation-node-36
+  nodeNumber: 36
+  title: Factorising Difference of Squares
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: A geologist is analyzing a rock formation whose cross-sectional shape is determined by the expression $x^2
+        - 100$. Factorise this expression completely using the difference of squares identity.
+      avatarIntro: 'Great job recognizing the structure of difference of squares. Remember the pattern: $a^2 - b^2 = (a+b)(a-b)$.'
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: x
+          b: 0
+          c: -100
+          method: difference-squares
+          showSteps: true
+      finalAnswer: (x + 10)(x - 10)
+      stepByStepGuideline:
+      - 'Identify the expression as a difference of squares: $x^2 - 100$.'
+      - 'Find the square roots of each term: $\sqrt{x^2} = x$ (this is $a$) and $\sqrt{100} = 10$ (this is $b$).'
+      - Apply the difference of squares formula, $a^2 - b^2 = (a+b)(a-b)$.
+      - 'Substitute the values: $(x + 10)(x - 10)$.'
+      id: q36-1
+      questionGroup: q36
+    - problemText: A manufacturer needs to determine the dimensions of a cutout area described by the algebraic expression
+        $9y^2 - 16$. Factorise this expression completely.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: y
+          b: 0
+          c: -16
+          method: difference-squares
+          showSteps: true
+      finalAnswer: (3y + 4)(3y - 4)
+      stepByStepGuideline:
+      - Recognize that $9y^2$ and $16$ are perfect squares and they are separated by subtraction.
+      - 'Find the square root of the first term, $9y^2$: $\sqrt{9y^2} = 3y$. (This is $a$).'
+      - 'Find the square root of the second term, $16$: $\sqrt{16} = 4$. (This is $b$).'
+      - 'Apply the difference of squares formula $(a+b)(a-b)$: $(3y + 4)(3y - 4)$.'
+      id: q36-2
+      questionGroup: q36
+    - problemText: A market analyst needs to quickly calculate the product $52 \times 48$ without using a calculator. Use
+        the difference of squares identity ($a^2 - b^2 = (a+b)(a-b)$) to find the exact result.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: variable
+          b: 0
+          c: variable
+          method: difference-squares
+          showSteps: true
+      finalAnswer: '2496'
+      stepByStepGuideline:
+      - Rewrite the product $52 \times 48$ as a product of a sum and a difference centered around the mean (50).
+      - 'Identify $a$ and $b$: $52 = 50 + 2$ and $48 = 50 - 2$. Thus, $a=50$ and $b=2$.'
+      - 'Apply the identity $(a+b)(a-b) = a^2 - b^2$: $50^2 - 2^2$.'
+      - 'Calculate the squares: $50^2 = 2500$ and $2^2 = 4$.'
+      - 'Subtract: $2500 - 4 = 2496$.'
+      id: q36-3
+      questionGroup: q36
+    - problemText: A mathematician is exploring the properties of consecutive integers. Calculate the exact value of $100^2
+        - 99^2$ using the difference of squares identity.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: variable
+          b: 0
+          c: variable
+          method: difference-squares
+          showSteps: true
+      finalAnswer: '199'
+      stepByStepGuideline:
+      - Identify $a=100$ and $b=99$.
+      - 'Apply the difference of squares identity: $a^2 - b^2 = (a+b)(a-b)$.'
+      - 'Substitute the values: $(100 + 99)(100 - 99)$.'
+      - 'Simplify the factors: $(199)(1)$.'
+      - 'Calculate the final result: $199$.'
+      id: q36-4
+      questionGroup: q36
+    - problemText: A mathematics student attempted to factor the expression $25x^2 + 16$ using the difference of squares identity.
+        Explain clearly why this attempt would fail.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: variable
+          b: 0
+          c: variable
+          method: difference-squares
+          showSteps: true
+      finalAnswer: The difference of squares identity requires the subtraction of two perfect squares, following the form
+        $a^2 - b^2$. The expression $25x^2 + 16$ involves the SUM (+) of two perfect squares. The sum of squares ($a^2 + b^2$)
+        cannot be factorised into real linear factors.
+      stepByStepGuideline:
+      - 'State the required structure for the difference of squares: $a^2 - b^2$.'
+      - Analyze the given expression $25x^2 + 16$. Note that it involves addition (+).
+      - Conclude that because the operation is addition (sum) and not subtraction (difference), the difference of squares
+        identity cannot be applied to factor the expression over real numbers.
+      id: q36-5
+      questionGroup: q36

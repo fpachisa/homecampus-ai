@@ -95,6 +95,7 @@ export interface UserProfile {
     currentLevel: number;
     currentStreak: number;
     longestStreak: number;
+    lastActivityDate: string; // YYYY-MM-DD format for streak validation
     totalAchievements: number;
     lastUpdated?: string; // ISO timestamp
   };

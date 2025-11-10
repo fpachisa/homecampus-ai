@@ -1,11 +1,18 @@
 /**
  * Hook for accessing gamification stats
  *
- * Provides easy access to user's gamification data (XP, level, streak, achievements)
- * from the UserProfile loaded in AuthContext.
+ * Provides easy access to user's gamification data (XP, level, streak, achievements).
+ *
+ * PRIORITY:
+ * 1. If pathProgress is provided (practice mode), read real-time data from it
+ * 2. Otherwise, fall back to userProfile.gamification (non-practice mode)
+ *
+ * This ensures stats update in real-time during practice sessions while maintaining
+ * backward compatibility for components outside practice mode.
  */
 
 import { useAuth } from '../contexts/AuthContext';
+import type { PathProgress } from '../types/practice';
 
 export interface GamificationStats {
   totalXP: number;
@@ -20,19 +27,33 @@ export interface GamificationStats {
 /**
  * Custom hook to access gamification stats
  *
+ * @param pathProgress - Optional PathProgress from practice mode for real-time updates
  * @returns Gamification stats with loading state
  *
  * @example
  * ```tsx
- * const { totalXP, currentLevel, isLoading } = useGamificationStats();
+ * // In practice mode (real-time updates)
+ * const { totalXP, currentLevel } = useGamificationStats(pathProgress);
  *
- * if (isLoading) return <LoadingSpinner />;
- *
- * return <div>Level {currentLevel} - {totalXP} XP</div>;
+ * // Outside practice mode (fallback to userProfile)
+ * const { totalXP, currentLevel } = useGamificationStats();
  * ```
  */
-export function useGamificationStats(): GamificationStats {
+export function useGamificationStats(pathProgress?: PathProgress | null): GamificationStats {
   const { userProfile, loading } = useAuth();
+
+  // PRIORITY 1: Use PathProgress if provided (real-time data in practice mode)
+  if (pathProgress) {
+    return {
+      totalXP: pathProgress.totalXP || 0,
+      currentLevel: pathProgress.currentLevel || 1,
+      currentStreak: pathProgress.streak?.currentStreak || 0,
+      longestStreak: pathProgress.streak?.longestStreak || 0,
+      totalAchievements: pathProgress.achievements?.length || 0,
+      lastUpdated: pathProgress.lastUpdated?.toISOString(),
+      isLoading: false,
+    };
+  }
 
   // Return default stats if still loading or no profile
   if (loading || !userProfile) {
@@ -46,7 +67,7 @@ export function useGamificationStats(): GamificationStats {
     };
   }
 
-  // Return stats from userProfile.gamification if available
+  // PRIORITY 2: Fall back to userProfile.gamification (non-practice mode)
   if (userProfile.gamification) {
     return {
       totalXP: userProfile.gamification.totalXP,

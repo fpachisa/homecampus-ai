@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "filename": "S2/Maths/s2-math-linear-graphs.yaml",
+      "displayName": "S2 - Linear Graphs",
+      "category": "s2-math-linear-graphs"
+    },
+    {
       "filename": "S4/Maths/s4-math-vectors.yaml",
       "displayName": "S4 - Vectors",
       "category": "s4-math-vectors"

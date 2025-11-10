@@ -198,10 +198,11 @@ ${historyContext}
 ${studentAnswer}
 
 **EVALUATION INSTRUCTIONS:**
-1. Determine if the answer is correct (accept equivalent forms)
-2. If you think there the error is due to rounding, say so
-3. If correct: Celebrate their success!
-4. If incorrect (Attempt ${attemptNumber} of 3):
+1. Determine if the answer is correct (accept equivalent forms). 
+2. Check answers from all previous attempts too. If together it forms the complete answer then it's correct. User need not repeat the previous partially correct answers.
+3. If you think there the error is due to rounding, say so
+4. If correct: Celebrate their success!
+5. If incorrect (Attempt ${attemptNumber} of 3):
    - Provide ${guidance.level} level feedback
    - ${guidance.instructions}
    - Use student answer to tailor your hint and Do NOT claim or assume the student said/identified/mentioned something they didn't 

@@ -1,0 +1,1113 @@
+# S2 Math Algebraic Fractions Formulae - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: algebraic-fractions-node-1
+  nodeNumber: 1
+  title: Understanding Algebraic Fractions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Determine if the following expressions are algebraic fractions. Explain why or why not based on the definition
+        that an algebraic fraction must have a variable in the numerator and/or the denominator.
+
+
+        a) $\frac{7}{12}$
+
+        b) $\frac{4x}{9}$
+
+        c) $\frac{1}{a^2+5}$'
+      avatarIntro: Welcome! Let's start by defining what makes a fraction algebraic. Remember, the presence of a variable
+        is key to identifying these expressions.
+      mathTool: null
+      finalAnswer: a) No. (Neither numerator nor denominator contains a variable.) b) Yes. (The numerator contains the variable
+        x.) c) Yes. (The denominator contains the variable a.)
+      stepByStepGuideline:
+      - 'Recall the definition: an expression $\frac{A}{B}$ is an algebraic fraction if $A$ and/or $B$ contain variables.'
+      - 'Analyze (a) $\frac{7}{12}$: Both 7 and 12 are numbers, so it is not an algebraic fraction.'
+      - 'Analyze (b) $\frac{4x}{9}$: The numerator $4x$ contains the variable $x$, so it is an algebraic fraction.'
+      - 'Analyze (c) $\frac{1}{a^2+5}$: The denominator $a^2+5$ contains the variable $a$, so it is an algebraic fraction.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: An algebraic fraction is undefined when its denominator equals zero. Find the value of the variable $y$
+        that makes the fraction $\frac{10}{y-5}$ undefined.
+      mathTool: null
+      finalAnswer: $y = 5$
+      stepByStepGuideline:
+      - 'Set the denominator equal to zero to find the undefined condition: $y - 5 = 0$.'
+      - Solve the equation for $y$.
+      - 'Add 5 to both sides: $y = 5$.'
+      - Therefore, the fraction is undefined when $y=5$.
+      id: q1-2
+      questionGroup: q1
+    - problemText: Apply the equivalent fractions rule, $\frac{A}{B} = \frac{A \times C}{B \times C}$, to show that $\frac{5}{2b}$
+        and $\frac{20}{8b}$ are equivalent. State the factor $C$ used in this transformation.
+      mathTool: null
+      finalAnswer: The factor C is 4. Since $\frac{5 \times 4}{2b \times 4} = \frac{20}{8b}$, the fractions are equivalent.
+      stepByStepGuideline:
+      - 'Compare the numerators: $5$ must be multiplied by some factor $C$ to get $20$. $5 \times C = 20$.'
+      - 'Determine the factor $C$: $C = 20 \div 5 = 4$.'
+      - Check if multiplying the denominator $2b$ by $C=4$ yields $8b$. $2b \times 4 = 8b$.
+      - 'Since both numerator and denominator are multiplied by the same non-zero factor (4), the fractions are equivalent:
+        $\frac{5}{2b} = \frac{5 \times 4}{2b \times 4} = \frac{20}{8b}$.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: Determine the specific value of $t$ that makes the algebraic fraction $\frac{t+3}{3t+6}$ undefined.
+      mathTool: null
+      finalAnswer: $t = -2$
+      stepByStepGuideline:
+      - 'The fraction is undefined when the denominator is zero. Set the denominator equal to zero: $3t + 6 = 0$.'
+      - 'Subtract 6 from both sides: $3t = -6$.'
+      - 'Divide both sides by 3: $t = \frac{-6}{3}$.'
+      - 'Calculate the result: $t = -2$. The fraction is undefined when $t=-2$.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: Show that the algebraic fraction $\frac{12p^3}{36p}$ is equivalent to $\frac{p^2}{3}$ by applying the equivalent
+        fractions rule using division (i.e., dividing the numerator and the denominator by a common factor $C$). Identify
+        the common factor $C$.
+      mathTool: null
+      finalAnswer: The common factor $C$ is $12p$. Since $\frac{12p^3 \div 12p}{36p \div 12p} = \frac{p^2}{3}$, the fractions
+        are equivalent.
+      stepByStepGuideline:
+      - Identify the highest common factor (HCF) of the numerator ($12p^3$) and the denominator ($36p$).
+      - The HCF of 12 and 36 is 12. The HCF of $p^3$ and $p$ is $p$. Thus, $C = 12p$.
+      - 'Divide the numerator by $C$: $12p^3 \div 12p = p^2$.'
+      - 'Divide the denominator by $C$: $36p \div 12p = 3$.'
+      - Since $\frac{12p^3}{36p} = \frac{p^2}{3}$, the fractions are equivalent.
+      id: q1-5
+      questionGroup: q1
+- id: algebraic-fractions-node-2
+  nodeNumber: 2
+  title: Simplifying by Canceling Common Factors
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: algebraExpression
+    preWrittenQuestions:
+    - problemText: Simplify the algebraic fraction $\frac{8x^5 y^2}{12x^2 y^4}$.
+      avatarIntro: Welcome to simplifying algebraic fractions! Remember to find the greatest common factor for the coefficients
+        and apply the exponent rules for the variables.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 8x^5 y^2
+          highlightLikeTerms: false
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: \frac{2x^3}{3y^2}
+      stepByStepGuideline:
+      - 'Simplify the numerical coefficients: The greatest common divisor of 8 and 12 is 4. Dividing both numerator and denominator
+        by 4 gives $\frac{2}{3}$.'
+      - 'Simplify the variable $x$: Apply the rule $\frac{x^m}{x^n} = x^{m-n}$. $\frac{x^5}{x^2} = x^{5-2} = x^3$. Since the
+        higher power was in the numerator, $x^3$ stays in the numerator.'
+      - 'Simplify the variable $y$: $\frac{y^2}{y^4} = \frac{1}{y^{4-2}} = \frac{1}{y^2}$. Since the higher power was in the
+        denominator, $y^2$ stays in the denominator.'
+      - 'Combine the simplified parts: $\frac{2x^3}{3y^2}$.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: 'Simplify the following expression completely: $\frac{27p^4}{9p}$.'
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 9p
+          highlightLikeTerms: false
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: 3p^3
+      stepByStepGuideline:
+      - 'Simplify the numerical coefficients: $\frac{27}{9} = 3$.'
+      - 'Simplify the variable $p$: Recall that $p$ is $p^1$. Apply the rule $\frac{p^4}{p^1} = p^{4-1} = p^3$.'
+      - 'Combine the results: $3p^3$.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: Find the simplest form of $\frac{15a^3 b}{10a^3 b^2}$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 15a^3 b
+          highlightLikeTerms: false
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: \frac{3}{2b}
+      stepByStepGuideline:
+      - 'Simplify the numerical coefficients: The greatest common divisor of 15 and 10 is 5. $\frac{15}{10} = \frac{3}{2}$.'
+      - 'Simplify the variable $a$: $\frac{a^3}{a^3} = 1$. This variable cancels out completely.'
+      - 'Simplify the variable $b$: $\frac{b}{b^2} = \frac{1}{b^{2-1}} = \frac{1}{b}$. The remaining $b$ factor is in the
+        denominator.'
+      - 'Combine the simplified parts: $\frac{3}{2b}$.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: Simplify $\frac{28m^7 n^4}{63m^4 n^7}$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 28m^7 n^4
+          highlightLikeTerms: false
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: \frac{4m^3}{9n^3}
+      stepByStepGuideline:
+      - 'Simplify the numerical coefficients: The greatest common divisor of 28 and 63 is 7. $\frac{28}{63} = \frac{4}{9}$.'
+      - 'Simplify the variable $m$: $\frac{m^7}{m^4} = m^{7-4} = m^3$. This remains in the numerator.'
+      - 'Simplify the variable $n$: $\frac{n^4}{n^7} = \frac{1}{n^{7-4}} = \frac{1}{n^3}$. This remains in the denominator.'
+      - 'Combine the simplified parts: $\frac{4m^3}{9n^3}$.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: Simplify the expression $\frac{6q^2}{9q^5}$.
+      mathTool:
+        toolName: algebraExpression
+        parameters:
+          expression: 9q^5
+          highlightLikeTerms: false
+          showCoefficients: true
+          showBreakdown: true
+      finalAnswer: \frac{2}{3q^3}
+      stepByStepGuideline:
+      - 'Simplify the numerical coefficients: The greatest common divisor of 6 and 9 is 3. $\frac{6}{9} = \frac{2}{3}$.'
+      - 'Simplify the variable $q$: Since the exponent in the denominator (5) is larger than the exponent in the numerator
+        (2), the remaining factor will be in the denominator. $\frac{q^2}{q^5} = \frac{1}{q^{5-2}} = \frac{1}{q^3}$.'
+      - 'Combine the simplified parts: $\frac{2}{3q^3}$.'
+      id: q2-5
+      questionGroup: q2
+- id: algebraic-fractions-node-3
+  nodeNumber: 3
+  title: Factorization with Linear Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: Simplify the algebraic fraction $\frac{2pq + 4p}{6p}$ completely. State the restriction(s) on the variable(s).
+      avatarIntro: Simplifying algebraic fractions often requires finding the greatest common factor in both the numerator
+        and the denominator before canceling.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: variable
+          c: variable
+          method: factor-pairs
+          showSteps: false
+          highlightFactors: true
+      finalAnswer: $ \frac{q + 2}{3} $, where $ p \neq 0 $.
+      stepByStepGuideline:
+      - 'Step 1: Factor the numerator by finding the Greatest Common Factor (GCF). $2pq + 4p = 2p(q + 2)$.'
+      - 'Step 2: Factor the denominator. The GCF of $6p$ is $6p$ itself.'
+      - 'Step 3: Rewrite the fraction in factored form: $ \frac{2p(q + 2)}{6p} $.'
+      - 'Step 4: Cancel the common monomial factor $2p$ from the numerator and denominator.'
+      - 'Step 5: Simplify the remaining numerical coefficients: $ \frac{1(q + 2)}{3} = \frac{q + 2}{3} $.'
+      - 'Step 6: State the restriction based on the original denominator, $6p \neq 0$, so $p \neq 0$.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: Simplify the algebraic fraction $\frac{x^2 + 5x}{4x + 20}$.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: variable
+          c: variable
+          method: factor-pairs
+          showSteps: false
+          highlightFactors: true
+      finalAnswer: $ \frac{x}{4} $, where $ x \neq -5 $.
+      stepByStepGuideline:
+      - 'Step 1: Factor the numerator: $x^2 + 5x = x(x+5)$.'
+      - 'Step 2: Factor the denominator by finding the GCF: $4x + 20 = 4(x+5)$.'
+      - 'Step 3: Rewrite the fraction in factored form: $ \frac{x(x+5)}{4(x+5)} $.'
+      - 'Step 4: Cancel the common binomial factor $(x+5)$.'
+      - 'Step 5: The simplified expression is $ \frac{x}{4} $.'
+      - 'Step 6: State the restriction: $4x + 20 \neq 0$, so $x \neq -5$.'
+      id: q3-2
+      questionGroup: q3
+    - problemText: Simplify the algebraic fraction $\frac{10m^2 + 15m}{12m + 18}$.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: variable
+          c: variable
+          method: factor-pairs
+          showSteps: false
+          highlightFactors: true
+      finalAnswer: $ \frac{5m}{6} $, where $ m \neq -\frac{3}{2} $.
+      stepByStepGuideline:
+      - 'Step 1: Factor the numerator: $10m^2 + 15m = 5m(2m+3)$.'
+      - 'Step 2: Factor the denominator: $12m + 18 = 6(2m+3)$.'
+      - 'Step 3: Rewrite the fraction in factored form: $ \frac{5m(2m+3)}{6(2m+3)} $.'
+      - 'Step 4: Cancel the common binomial factor $(2m+3)$.'
+      - 'Step 5: The simplified expression is $ \frac{5m}{6} $.'
+      - 'Step 6: State the restriction: $12m + 18 \neq 0$, so $2m+3 \neq 0$, meaning $m \neq -3/2$.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: Simplify the algebraic fraction $\frac{4a^3b^2 - 8a^2b^3}{2a^2b^2}$. State the restrictions on the variables.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: variable
+          c: variable
+          method: factor-pairs
+          showSteps: false
+          highlightFactors: true
+      finalAnswer: $ 2a - 4b $, where $ a \neq 0 $ and $ b \neq 0 $.
+      stepByStepGuideline:
+      - 'Step 1: Find the Greatest Common Factor (GCF) of the numerator terms. GCF is $4a^2b^2$.'
+      - 'Step 2: Factor the numerator: $4a^3b^2 - 8a^2b^3 = 4a^2b^2(a - 2b)$.'
+      - 'Step 3: Rewrite the fraction: $ \frac{4a^2b^2(a - 2b)}{2a^2b^2} $.'
+      - 'Step 4: Cancel the common factors $a^2b^2$.'
+      - 'Step 5: Simplify the remaining numerical coefficients: $ \frac{4(a - 2b)}{2} = 2(a - 2b) $.'
+      - 'Step 6: Distribute the 2 to get $2a - 4b$.'
+      - 'Step 7: State the restrictions: $2a^2b^2 \neq 0$, so $a \neq 0$ and $b \neq 0$.'
+      id: q3-4
+      questionGroup: q3
+    - problemText: Simplify the algebraic fraction $\frac{3t^2 - 6t}{9t - 18}$.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: variable
+          c: variable
+          method: factor-pairs
+          showSteps: false
+          highlightFactors: true
+      finalAnswer: $ \frac{t}{3} $, where $ t \neq 2 $.
+      stepByStepGuideline:
+      - 'Step 1: Factor the numerator: $3t^2 - 6t = 3t(t-2)$.'
+      - 'Step 2: Factor the denominator: $9t - 18 = 9(t-2)$.'
+      - 'Step 3: Rewrite the fraction in factored form: $ \frac{3t(t-2)}{9(t-2)} $.'
+      - 'Step 4: Cancel the common binomial factor $(t-2)$.'
+      - 'Step 5: Simplify the remaining monomial expression: $ \frac{3t}{9} = \frac{t}{3} $.'
+      - 'Step 6: State the restriction: $9t - 18 \neq 0$, so $t \neq 2$.'
+      id: q3-5
+      questionGroup: q3
+- id: algebraic-fractions-node-4
+  nodeNumber: 4
+  title: Factorization with Quadratic Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Simplify the algebraic fraction $\frac{a^2 - 9}{2a - 6}$ completely.
+      avatarIntro: Remember to look for common factors and apply the difference of squares rule where applicable. Factor both
+        the numerator and the denominator before simplifying.
+      mathTool: null
+      finalAnswer: $$\frac{a+3}{2}$$
+      stepByStepGuideline:
+      - 'Factor the numerator using the difference of squares formula, $a^2 - b^2 = (a+b)(a-b)$: $a^2 - 9 = (a+3)(a-3)$.'
+      - 'Factor the denominator by taking out the greatest common factor (GCF) of 2: $2a - 6 = 2(a-3)$.'
+      - 'Rewrite the fraction using the factored expressions: $\frac{(a+3)(a-3)}{2(a-3)}$.'
+      - Cancel the common factor $(a-3)$ from the numerator and the denominator.
+      - The simplified expression is $\frac{a+3}{2}$.
+      id: q4-1
+      questionGroup: q4
+    - problemText: Simplify the algebraic fraction $\frac{x^2 + 5x + 6}{4x + 12}$ completely.
+      mathTool: null
+      finalAnswer: $$\frac{x+2}{4}$$
+      stepByStepGuideline:
+      - Factor the numerator $x^2 + 5x + 6$ into two binomials. Look for two numbers that multiply to 6 and add up to 5. These
+        numbers are 2 and 3. Thus, $x^2 + 5x + 6 = (x+2)(x+3)$.
+      - 'Factor the denominator by taking out the greatest common factor (GCF) of 4: $4x + 12 = 4(x+3)$.'
+      - 'Rewrite the fraction using the factored expressions: $\frac{(x+2)(x+3)}{4(x+3)}$.'
+      - Cancel the common factor $(x+3)$ from the numerator and the denominator.
+      - The simplified expression is $\frac{x+2}{4}$.
+      id: q4-2
+      questionGroup: q4
+    - problemText: Simplify the algebraic fraction $\frac{5p - 20}{p^2 - 16}$ completely.
+      mathTool: null
+      finalAnswer: $$\frac{5}{p+4}$$
+      stepByStepGuideline:
+      - 'Factor the numerator by taking out the greatest common factor (GCF) of 5: $5p - 20 = 5(p-4)$.'
+      - Factor the denominator using the difference of squares formula, $p^2 - 16 = (p+4)(p-4)$.
+      - 'Rewrite the fraction using the factored expressions: $\frac{5(p-4)}{(p+4)(p-4)}$.'
+      - Cancel the common factor $(p-4)$ from the numerator and the denominator.
+      - The simplified expression is $\frac{5}{p+4}$.
+      id: q4-3
+      questionGroup: q4
+    - problemText: Simplify the algebraic fraction $\frac{x^2 - 7x + 12}{x^2 - 9}$ completely.
+      mathTool: null
+      finalAnswer: $$\frac{x-4}{x+3}$$
+      stepByStepGuideline:
+      - Factor the numerator $x^2 - 7x + 12$ into two binomials. Look for two numbers that multiply to 12 and add up to -7.
+        These numbers are -3 and -4. Thus, $x^2 - 7x + 12 = (x-3)(x-4)$.
+      - 'Factor the denominator $x^2 - 9$ using the difference of squares formula: $x^2 - 9 = (x+3)(x-3)$.'
+      - 'Rewrite the fraction using the factored expressions: $\frac{(x-3)(x-4)}{(x+3)(x-3)}$.'
+      - Cancel the common factor $(x-3)$ from the numerator and the denominator.
+      - The simplified expression is $\frac{x-4}{x+3}$.
+      id: q4-4
+      questionGroup: q4
+    - problemText: Simplify the algebraic fraction $\frac{x^2 - 3x - 10}{10 - 2x}$ completely. Note the sign difference between
+        the factors.
+      mathTool: null
+      finalAnswer: $$-\frac{x+2}{2}$$
+      stepByStepGuideline:
+      - Factor the numerator $x^2 - 3x - 10$. Look for two numbers that multiply to -10 and add up to -3. These numbers are
+        -5 and 2. Thus, $x^2 - 3x - 10 = (x-5)(x+2)$.
+      - 'Factor the denominator $10 - 2x$ by taking out the greatest common factor of 2: $10 - 2x = 2(5 - x)$.'
+      - Recognize that $(5 - x)$ is the negative of $(x - 5)$. Use the property $(a-b) = -(b-a)$ to rewrite $2(5 - x)$ as
+        $-2(x - 5)$.
+      - 'Rewrite the fraction using the factored expressions: $\frac{(x-5)(x+2)}{-2(x-5)}$.'
+      - Cancel the common factor $(x-5)$ from the numerator and the denominator.
+      - The simplified expression is $\frac{x+2}{-2}$, which is written as $-\frac{x+2}{2}$.
+      id: q4-5
+      questionGroup: q4
+- id: algebraic-fractions-node-5
+  nodeNumber: 5
+  title: Multiplying Algebraic Fractions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'Simplify the following expression completely: $\frac{4x}{5y} \times \frac{10y}{3x}$.'
+      avatarIntro: Multiplying algebraic fractions requires careful attention to common factors. Look for opportunities to
+        cancel terms diagonally across the multiplication sign to make your job easier!
+      mathTool: null
+      finalAnswer: \frac{8}{3}
+      stepByStepGuideline:
+      - 'Multiply the numerators and the denominators together: $\frac{4x \times 10y}{5y \times 3x}$.'
+      - 'Group the coefficients and variables: $\frac{(4 \times 10)xy}{(5 \times 3)yx} = \frac{40xy}{15xy}$.'
+      - Cancel the common factor $xy$ from the numerator and denominator.
+      - 'Simplify the resulting numerical fraction: $\frac{40}{15}$.'
+      - 'Divide the numerator and denominator by the greatest common divisor, 5, to get the final simplified answer: $\frac{8}{3}$.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'Simplify the algebraic product: $\frac{6p^2}{8} \times \frac{4}{3p}$.'
+      mathTool: null
+      finalAnswer: p
+      stepByStepGuideline:
+      - 'Group the coefficients and variables together: $\frac{(6 \times 4)p^2}{(8 \times 3)p}$.'
+      - 'Calculate the product of the coefficients in the numerator and denominator: $\frac{24p^2}{24p}$.'
+      - 'Simplify the numerical coefficient ratio: $24/24 = 1$.'
+      - 'Simplify the powers of $p$ using the rule $p^a / p^b = p^{a-b}$: $p^2/p = p$.'
+      - The final simplified expression is $p$.
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'Simplify the expression by factoring and multiplying the remaining terms: $\frac{m^2}{5} \times \frac{5p+5q}{m}$.'
+      mathTool:
+        toolName: distributiveVisualizer
+        parameters:
+          multiplier: m
+          terms:
+          - p
+          - q
+          operation: +
+          showSteps: false
+          showAnimation: false
+      finalAnswer: mp+mq
+      stepByStepGuideline:
+      - 'Factor the greatest common factor (GCF) from the numerator of the second fraction: $5p+5q = 5(p+q)$.'
+      - 'Rewrite the expression: $\frac{m^2}{5} \times \frac{5(p+q)}{m}$.'
+      - Cancel common factors diagonally. Cancel 5 from the numerator and denominator.
+      - Cancel $m$ from $m^2$ (leaving $m$) and $m$ from the denominator.
+      - The remaining expression is $m \times (p+q)$.
+      - 'Apply the distributive property to find the final simplified answer: $mp+mq$.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'Simplify the following expression: $\frac{a^2-16}{a-2} \times \frac{a-2}{a+4}$.'
+      mathTool: null
+      finalAnswer: a-4
+      stepByStepGuideline:
+      - 'Factor the numerator of the first fraction using the difference of squares formula, $a^2-b^2 = (a-b)(a+b)$: $a^2-16
+        = (a-4)(a+4)$.'
+      - 'Rewrite the expression: $\frac{(a-4)(a+4)}{a-2} \times \frac{a-2}{a+4}$.'
+      - Cancel the common factor $(a-2)$ diagonally.
+      - Cancel the common factor $(a+4)$ vertically.
+      - The only factor remaining in the numerator is $(a-4)$, and the denominator is 1. The simplified answer is $a-4$.
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'Simplify the expression by factoring and cancelling common terms: $\frac{10a - 5b}{3a^2} \times \frac{9a^3}{4a
+        - 2b}$.'
+      mathTool: null
+      finalAnswer: \frac{15a}{2}
+      stepByStepGuideline:
+      - 'Factor the numerator of the first fraction: $10a - 5b = 5(2a - b)$.'
+      - 'Factor the denominator of the second fraction: $4a - 2b = 2(2a - b)$.'
+      - 'Rewrite the expression using factored forms: $\frac{5(2a - b)}{3a^2} \times \frac{9a^3}{2(2a - b)}$.'
+      - Cancel the common binomial factor $(2a - b)$ from the numerator and denominator.
+      - 'Cancel the numerical coefficients: $9/3 = 3$.'
+      - 'Cancel the powers of $a$: $a^3/a^2 = a$.'
+      - 'Multiply the remaining terms: $\frac{5}{1} \times \frac{3a}{2}$.'
+      - The final simplified answer is $\frac{15a}{2}$.
+      id: q5-5
+      questionGroup: q5
+- id: algebraic-fractions-node-6
+  nodeNumber: 6
+  title: Dividing Algebraic Fractions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: fractionBar
+    preWrittenQuestions:
+    - problemText: What is the reciprocal of the algebraic fraction $\frac{4m-5}{2m}$? Explain how finding the reciprocal
+        is the first step in the Keep-Change-Flip (KCF) method for division.
+      avatarIntro: Dividing algebraic fractions requires transforming the problem into multiplication. Remember, the key step
+        is finding the reciprocal of the divisor before multiplying.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 3/5
+          fraction2: 5/3
+          operation: compare
+      finalAnswer: $\frac{2m}{4m-5}$
+      stepByStepGuideline:
+      - The reciprocal of a fraction $\frac{A}{B}$ is $\frac{B}{A}$.
+      - Identify the numerator ($A = 4m-5$) and the denominator ($B = 2m$).
+      - To find the reciprocal, simply swap the numerator and the denominator.
+      - The reciprocal is $\frac{2m}{4m-5}$.
+      id: q6-1
+      questionGroup: q6
+    - problemText: 'Simplify the following expression completely using the KCF method: $\frac{p^2}{q} \div \frac{p}{q^2}$.'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 1/2
+          fraction2: 2/1
+          operation: compare
+      finalAnswer: pq
+      stepByStepGuideline:
+      - 'Step 1 (KCF): Keep the first fraction, Change division to multiplication, and Flip the second fraction (reciprocal):
+        $\frac{p^2}{q} \times \frac{q^2}{p}$.'
+      - 'Step 2: Multiply the numerators and denominators: $\frac{p^2 q^2}{pq}$.'
+      - 'Step 3: Simplify by cancelling common factors. $p^2/p = p$ and $q^2/q = q$.'
+      - The simplified expression is $pq$.
+      id: q6-2
+      questionGroup: q6
+    - problemText: 'Simplify the division of the monomial fractions: $\frac{6x}{5} \div \frac{3x^2}{10}$.'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 4/7
+          fraction2: 2/3
+          operation: compare
+      finalAnswer: $\frac{4}{x}$
+      stepByStepGuideline:
+      - 'Apply the KCF method: $\frac{6x}{5} \times \frac{10}{3x^2}$.'
+      - Look for opportunities to cancel factors before multiplication. Numerically, $6/3 = 2$ and $10/5 = 2$. Algebraically,
+        $x/x^2 = 1/x$.
+      - 'Multiply the remaining terms: $(\frac{6}{3}) \times (\frac{10}{5}) \times (\frac{x}{x^2}) = 2 \times 2 \times \frac{1}{x}$.'
+      - The final simplified answer is $\frac{4}{x}$.
+      id: q6-3
+      questionGroup: q6
+    - problemText: Simplify the expression $\frac{a+3}{4} \div \frac{(a+3)^2}{8}$ completely.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 5/6
+          fraction2: 1/3
+          operation: compare
+      finalAnswer: $\frac{2}{a+3}$
+      stepByStepGuideline:
+      - 'Apply the KCF method: Keep $\frac{a+3}{4}$, Change division to multiplication, and Flip $\frac{(a+3)^2}{8}$ to $\frac{8}{(a+3)^2}$.'
+      - 'The expression becomes: $\frac{a+3}{4} \times \frac{8}{(a+3)^2}$.'
+      - 'Cancel common factors: $(a+3)$ in the numerator cancels one factor of $(a+3)$ in the denominator. Numerically, $8/4
+        = 2$.'
+      - The simplified result is $\frac{2}{a+3}$.
+      id: q6-4
+      questionGroup: q6
+    - problemText: Determine the reciprocal of the algebraic expression $y^2 - 9$.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 1/5
+          fraction2: 1/10
+          operation: compare
+      finalAnswer: $\frac{1}{y^2-9}$
+      stepByStepGuideline:
+      - Any expression $E$ can be written as a fraction $\frac{E}{1}$. In this case, $y^2 - 9 = \frac{y^2-9}{1}$.
+      - The reciprocal of $\frac{A}{B}$ is $\frac{B}{A}$.
+      - Therefore, the reciprocal of $\frac{y^2-9}{1}$ is $\frac{1}{y^2-9}$.
+      id: q6-5
+      questionGroup: q6
+- id: algebraic-fractions-node-7
+  nodeNumber: 7
+  title: Finding LCD for Algebraic Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Find the Least Common Denominator (LCD) of the fractions $\frac{1}{4m}$ and $\frac{5}{6m}$.
+      avatarIntro: Finding the LCD is essential for adding or subtracting algebraic fractions. Start by finding the LCM of
+        the numerical coefficients.
+      mathTool: null
+      finalAnswer: 12m
+      stepByStepGuideline:
+      - 'Identify the denominators: $4m$ and $6m$.'
+      - 'Identify the numerical coefficients: 4 and 6. The Least Common Multiple (LCM) of 4 and 6 is 12.'
+      - 'Identify the variable factors: both denominators have $m$ raised to the power of 1.'
+      - 'Multiply the LCM of the coefficients by the highest power of the variable factor: $12 \times m = 12m$.'
+      - The LCD is $12m$.
+      id: q7-1
+      questionGroup: q7
+    - problemText: Determine the LCD required to add the fractions $\frac{4}{2x+2}$ and $\frac{7}{3x+3}$.
+      mathTool: null
+      finalAnswer: 6(x+1)
+      stepByStepGuideline:
+      - 'Factor the first denominator: $2x+2 = 2(x+1)$.'
+      - 'Factor the second denominator: $3x+3 = 3(x+1)$.'
+      - 'Identify all different factors: 2, 3, and $(x+1)$.'
+      - 'Determine the LCD by multiplying the highest power of each factor: LCM(2, 3) $\times (x+1)$.'
+      - The LCD is $6(x+1)$.
+      id: q7-2
+      questionGroup: q7
+    - problemText: Find the LCD of the denominators $5a^2$ and $10a^3$.
+      mathTool: null
+      finalAnswer: 10a^3
+      stepByStepGuideline:
+      - 'Identify the numerical coefficients: 5 and 10. The LCM of 5 and 10 is 10.'
+      - 'Identify the variable factors and their powers: $a^2$ and $a^3$.'
+      - 'Select the highest power of the variable factor: $a^3$.'
+      - 'Multiply the LCM of the coefficients by the highest power of the variable: $10 \times a^3$.'
+      - The LCD is $10a^3$.
+      id: q7-3
+      questionGroup: q7
+    - problemText: What is the LCD for two algebraic fractions whose denominators are $y^2$ and $y^5$?
+      mathTool: null
+      finalAnswer: y^5
+      stepByStepGuideline:
+      - 'Identify the denominators: $y^2$ and $y^5$.'
+      - The variable factor is $y$.
+      - 'Compare the powers of $y$: 2 and 5.'
+      - The LCD must include the highest power of the variable factor.
+      - The LCD is $y^5$.
+      id: q7-4
+      questionGroup: q7
+    - problemText: Identify the LCD for the expressions $\frac{3}{4a-4b}$ and $\frac{a}{6a-6b}$.
+      mathTool: null
+      finalAnswer: 12(a-b)
+      stepByStepGuideline:
+      - 'Factor the first denominator: $4a-4b = 4(a-b)$.'
+      - 'Factor the second denominator: $6a-6b = 6(a-b)$.'
+      - 'Identify the numerical coefficients: 4 and 6. LCM(4, 6) = 12.'
+      - 'Identify the algebraic factor: $(a-b)$.'
+      - 'Multiply the LCM of the coefficients by the algebraic factor: $12(a-b)$.'
+      - The LCD is $12(a-b)$.
+      id: q7-5
+      questionGroup: q7
+- id: algebraic-fractions-node-8
+  nodeNumber: 8
+  title: Adding and Subtracting - Same Denominator
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: fractionBar
+    preWrittenQuestions:
+    - problemText: 'Express the following sum as a single fraction and simplify the result completely:
+
+        $$\frac{2}{5x} + \frac{3}{5x}$$'
+      avatarIntro: Welcome! Remember that when adding fractions with the same denominator, you only add the numerators. The
+        denominator stays the same. Let's practice this fundamental skill.
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 2/5
+          fraction2: 3/5
+          operation: add
+          showSteps: true
+      finalAnswer: \frac{1}{x}
+      stepByStepGuideline:
+      - 'Combine the numerators over the common denominator: $\frac{2+3}{5x}$.'
+      - 'Simplify the numerator: $\frac{5}{5x}$.'
+      - 'Cancel the common factor of 5 in the numerator and denominator: $\frac{1}{x}$.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'Express the following difference as a single fraction:
+
+        $$\frac{7}{m+4} - \frac{4}{m+4}$$'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 2/5
+          fraction2: 3/5
+          operation: add
+          showSteps: true
+      finalAnswer: \frac{3}{m+4}
+      stepByStepGuideline:
+      - 'Combine the numerators over the common denominator: $\frac{7-4}{m+4}$.'
+      - 'Perform the subtraction in the numerator: $\frac{3}{m+4}$.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'Simplify the following expression by combining the terms:
+
+        $$\frac{3y+5}{2y} + \frac{y-2}{2y}$$'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 2/5
+          fraction2: 3/5
+          operation: add
+          showSteps: true
+      finalAnswer: \frac{4y+3}{2y}
+      stepByStepGuideline:
+      - 'Combine the numerators over the common denominator, ensuring parentheses are used initially for clarity: $\frac{(3y+5)
+        + (y-2)}{2y}$.'
+      - 'Remove parentheses and combine like terms in the numerator (3y + y) and (5 - 2): $\frac{4y+3}{2y}$.'
+      - Since 4y+3 cannot be factored, the expression cannot be simplified further.
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'Express the following subtraction as a single fraction. Pay close attention to the negative signs:
+
+        $$\frac{4x}{x-3} - \frac{-x+7}{x-3}$$'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 2/5
+          fraction2: 3/5
+          operation: add
+          showSteps: true
+      finalAnswer: \frac{5x-7}{x-3}
+      stepByStepGuideline:
+      - 'Combine the numerators over the common denominator, ensuring the entire second numerator is subtracted: $\frac{4x
+        - (-x+7)}{x-3}$.'
+      - 'Distribute the negative sign to all terms in the second numerator: $4x - (-x) - (7) = 4x + x - 7$.'
+      - 'Write the combined numerator: $\frac{4x + x - 7}{x-3}$.'
+      - 'Combine like terms in the numerator: $\frac{5x-7}{x-3}$.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'Simplify the following expression completely:
+
+        $$\frac{3n+1}{n+2} + \frac{n+7}{n+2}$$'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 2/5
+          fraction2: 3/5
+          operation: add
+          showSteps: true
+      finalAnswer: '4'
+      stepByStepGuideline:
+      - 'Combine the numerators over the common denominator: $\frac{(3n+1) + (n+7)}{n+2}$.'
+      - 'Combine like terms in the numerator: $\frac{4n+8}{n+2}$.'
+      - 'Factor the numerator by taking out the greatest common factor (4): $\frac{4(n+2)}{n+2}$.'
+      - 'Cancel the common factor $(n+2)$: $4$.'
+      id: q8-5
+      questionGroup: q8
+- id: algebraic-fractions-node-9
+  nodeNumber: 9
+  title: Adding and Subtracting - Different Denominators
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: fractionBar
+    preWrittenQuestions:
+    - problemText: 'Express the following sum as a single fraction in simplest form: $\frac{3}{4m} + \frac{5}{6m}$.'
+      avatarIntro: Working with different denominators requires finding the Least Common Denominator (LCD). This is the key
+        skill for combining algebraic fractions!
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 1/4
+          fraction2: 1/6
+          operation: add
+          showLCM: true
+          showSteps: true
+      finalAnswer: \frac{19}{12m}
+      stepByStepGuideline:
+      - Find the Least Common Denominator (LCD) of $4m$ and $6m$. The LCD is $12m$.
+      - 'Convert the first fraction: $\frac{3}{4m} = \frac{3 \times 3}{4m \times 3} = \frac{9}{12m}$.'
+      - 'Convert the second fraction: $\frac{5}{6m} = \frac{5 \times 2}{6m \times 2} = \frac{10}{12m}$.'
+      - 'Add the equivalent fractions: $\frac{9}{12m} + \frac{10}{12m} = \frac{19}{12m}$.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: 'Express as a single fraction in simplest form: $\frac{2}{5a-15} - \frac{1}{10a-30}$.'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 2/(5a-15)
+          fraction2: 1/(10a-30)
+          operation: subtract
+          showLCM: false
+          showSteps: false
+      finalAnswer: \frac{3}{10(a-3)}
+      stepByStepGuideline:
+      - 'Factor the denominators: $5a-15 = 5(a-3)$ and $10a-30 = 10(a-3)$.'
+      - Determine the LCD, which is $10(a-3)$.
+      - 'Convert the first fraction: $\frac{2}{5(a-3)} = \frac{2 \times 2}{5(a-3) \times 2} = \frac{4}{10(a-3)}$. The second
+        fraction already has the LCD.'
+      - 'Subtract the numerators: $\frac{4 - 1}{10(a-3)} = \frac{3}{10(a-3)}$.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: 'Simplify the following expression completely: $\frac{6}{x-y} - \frac{4}{y-x}$.'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 6/(x-y)
+          fraction2: 4/(y-x)
+          operation: subtract
+          showLCM: false
+          showSteps: false
+      finalAnswer: \frac{10}{x-y}
+      stepByStepGuideline:
+      - 'Recognize that the denominators are opposites: $y-x = -1(x-y)$.'
+      - 'Rewrite the second fraction by factoring out $-1$ in the denominator. This changes the operation from subtraction
+        to addition: $\frac{6}{x-y} - \frac{4}{-(x-y)} = \frac{6}{x-y} + \frac{4}{x-y}$.'
+      - 'Combine the numerators since the denominators are now the same: $\frac{6+4}{x-y}$.'
+      - 'Simplify the result: $\frac{10}{x-y}$.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: 'Combine the following algebraic fractions into a single simplified fraction: $\frac{5}{2x} + \frac{3}{x^2+2x}$.'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 5/(2x)
+          fraction2: 3/(x^2+2x)
+          operation: add
+          showLCM: false
+          showSteps: false
+      finalAnswer: \frac{5x+16}{2x(x+2)}
+      stepByStepGuideline:
+      - 'Factor the second denominator: $x^2+2x = x(x+2)$.'
+      - Determine the LCD of $2x$ and $x(x+2)$, which is $2x(x+2)$.
+      - 'Convert the first fraction: $\frac{5}{2x} = \frac{5(x+2)}{2x(x+2)} = \frac{5x+10}{2x(x+2)}$.'
+      - 'Convert the second fraction: $\frac{3}{x(x+2)} = \frac{3(2)}{2x(x+2)} = \frac{6}{2x(x+2)}$.'
+      - 'Add the numerators: $\frac{5x+10 + 6}{2x(x+2)} = \frac{5x+16}{2x(x+2)}$.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: 'Perform the subtraction and express the result as a single fraction: $\frac{4}{x+1} - \frac{3}{x+2}$.'
+      mathTool:
+        toolName: fractionBar
+        parameters:
+          fraction1: 4/(x+1)
+          fraction2: 3/(x+2)
+          operation: subtract
+          showLCM: false
+          showSteps: false
+      finalAnswer: \frac{x+5}{(x+1)(x+2)}
+      stepByStepGuideline:
+      - 'The denominators $(x+1)$ and $(x+2)$ have no common factors, so the LCD is their product: $(x+1)(x+2)$.'
+      - 'Convert the first fraction: $\frac{4}{x+1} = \frac{4(x+2)}{(x+1)(x+2)}$.'
+      - 'Convert the second fraction: $\frac{3}{x+2} = \frac{3(x+1)}{(x+1)(x+2)}$.'
+      - 'Subtract the numerators, ensuring you distribute the negative sign carefully: $\frac{4(x+2) - 3(x+1)}{(x+1)(x+2)}$.'
+      - 'Expand the numerator: $\frac{4x+8 - 3x - 3}{(x+1)(x+2)}$.'
+      - 'Simplify the numerator by combining like terms: $\frac{x+5}{(x+1)(x+2)}$.'
+      id: q9-5
+      questionGroup: q9
+- id: algebraic-fractions-node-10
+  nodeNumber: 10
+  title: Solving Equations with Fractions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: balanceScale
+    preWrittenQuestions:
+    - problemText: "Solve the following equation for $x$: \n$$\\frac{x+5}{2} + \\frac{x-1}{3} = 4$$"
+      avatarIntro: Ready to practice solving equations with fractions? Remember, the key is finding the Least Common Denominator
+        (LCD) to eliminate those pesky fractions!
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: (x+5)/2 + (x-1)/3
+          rightSide: '4'
+          operation: multiply
+          operationValue: '6'
+          showInverse: true
+      finalAnswer: x = 11/5
+      stepByStepGuideline:
+      - Identify the LCD of the denominators 2 and 3, which is 6.
+      - 'Multiply every term on both sides of the equation by the LCD (6): $6 \left( \frac{x+5}{2} \right) + 6 \left( \frac{x-1}{3}
+        \right) = 6(4)$.'
+      - 'Simplify to clear the fractions: $3(x+5) + 2(x-1) = 24$.'
+      - 'Expand and combine like terms: $3x + 15 + 2x - 2 = 24$, which simplifies to $5x + 13 = 24$.'
+      - 'Isolate x: $5x = 24 - 13$, so $5x = 11$.'
+      - 'Solve for x: $x = 11/5$.'
+      - 'Check: The denominators are constants, so $x = 11/5$ is a valid solution.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: "Find the value of $a$ that satisfies the equation: \n$$\\frac{a-3}{5} + \\frac{a+7}{10} = 1$$"
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: (a-3)/5 + (a+7)/10
+          rightSide: '1'
+          operation: multiply
+          operationValue: '10'
+          showInverse: true
+      finalAnswer: a = 3
+      stepByStepGuideline:
+      - Identify the LCD of the denominators 5 and 10, which is 10.
+      - 'Multiply every term by 10: $10 \left( \frac{a-3}{5} \right) + 10 \left( \frac{a+7}{10} \right) = 10(1)$.'
+      - 'Simplify: $2(a-3) + (a+7) = 10$.'
+      - 'Expand and combine terms: $2a - 6 + a + 7 = 10$, which simplifies to $3a + 1 = 10$.'
+      - 'Solve for a: $3a = 9$, so $a = 3$.'
+      - 'Check: The denominators are constants, so $a = 3$ is a valid solution.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: "Solve the equation involving variable denominators: \n$$\\frac{5}{2a-1} + \\frac{3}{a+2} = 0$$"
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 5/(2a-1) + 3/(a+2)
+          rightSide: '0'
+          operation: multiply
+          operationValue: (2a-1)(a+2)
+          showInverse: true
+      finalAnswer: a = -7/11
+      stepByStepGuideline:
+      - 'Identify the LCD: $(2a-1)(a+2)$. State domain restrictions: $a \neq 1/2$ and $a \neq -2$.'
+      - 'Multiply both sides by the LCD: $5(a+2) + 3(2a-1) = 0$.'
+      - 'Expand the terms: $5a + 10 + 6a - 3 = 0$.'
+      - 'Combine like terms: $11a + 7 = 0$.'
+      - 'Solve for a: $11a = -7$, so $a = -7/11$.'
+      - 'Check: The solution $a = -7/11$ does not violate the domain restrictions.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: "Determine the value of $x$ for the equation: \n$$\\frac{9}{x+2} - \\frac{3}{x-2} = 0$$"
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 9/(x+2) - 3/(x-2)
+          rightSide: '0'
+          operation: multiply
+          operationValue: (x+2)(x-2)
+          showInverse: true
+      finalAnswer: x = 4
+      stepByStepGuideline:
+      - 'Identify the LCD: $(x+2)(x-2)$. State domain restrictions: $x \neq 2$ and $x \neq -2$.'
+      - 'Multiply the equation by the LCD: $9(x-2) - 3(x+2) = 0$.'
+      - 'Expand the terms: $9x - 18 - 3x - 6 = 0$.'
+      - 'Combine like terms: $6x - 24 = 0$.'
+      - 'Solve for x: $6x = 24$, so $x = 4$.'
+      - 'Check: The solution $x = 4$ does not violate the domain restrictions.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: "Solve the equation: \n$$\\frac{x+1}{4} + \\frac{x-5}{6} = -1$$"
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: (x+1)/4 + (x-5)/6
+          rightSide: '-1'
+          operation: multiply
+          operationValue: '12'
+          showInverse: true
+      finalAnswer: x = -1
+      stepByStepGuideline:
+      - Identify the LCD of the denominators 4 and 6, which is 12.
+      - 'Multiply every term by 12: $12 \left( \frac{x+1}{4} \right) + 12 \left( \frac{x-5}{6} \right) = 12(-1)$.'
+      - 'Simplify to clear the fractions: $3(x+1) + 2(x-5) = -12$.'
+      - 'Expand and combine like terms: $3x + 3 + 2x - 10 = -12$, which simplifies to $5x - 7 = -12$.'
+      - 'Isolate x: $5x = -12 + 7$, so $5x = -5$.'
+      - 'Solve for x: $x = -1$.'
+      - 'Check: The denominators are constants, so $x = -1$ is a valid solution.'
+      id: q10-5
+      questionGroup: q10
+- id: algebraic-fractions-node-11
+  nodeNumber: 11
+  title: Changing the Subject of a Formula
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: balanceScale
+    preWrittenQuestions:
+    - problemText: The formula for resistors connected in parallel is given by $\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2}$.
+        Rearrange the formula to make $R_1$ the subject.
+      avatarIntro: Rearranging formulas is crucial in physics and engineering. Remember to use inverse operations and handle
+        fractions carefully to isolate the required variable.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 1/R
+          rightSide: 1/R1 + 1/R2
+          showInverse: true
+      finalAnswer: $R_1 = \frac{R R_2}{R_2 - R}$
+      stepByStepGuideline:
+      - 'Isolate the term containing $R_1$: $\frac{1}{R_1} = \frac{1}{R} - \frac{1}{R_2}$'
+      - 'Combine the fractions on the Right Hand Side (RHS) using the common denominator $R R_2$: $\frac{1}{R_1} = \frac{R_2}{R
+        R_2} - \frac{R}{R R_2}$'
+      - 'Simplify the RHS: $\frac{1}{R_1} = \frac{R_2 - R}{R R_2}$'
+      - 'Take the reciprocal of both sides to find $R_1$: $R_1 = \frac{R R_2}{R_2 - R}$'
+      id: q11-1
+      questionGroup: q11
+    - problemText: The equation for displacement ($s$) in kinematics is $s = ut + \frac{1}{2}at^2$, where $u$ is initial velocity,
+        $t$ is time, and $a$ is acceleration. Make $a$ the subject of the formula.
+      mathTool: null
+      finalAnswer: $a = \frac{2(s - ut)}{t^2}$
+      stepByStepGuideline:
+      - 'Isolate the term containing $a$ by subtracting $ut$ from both sides: $s - ut = \frac{1}{2}at^2$'
+      - 'Multiply both sides by 2 to clear the fraction: $2(s - ut) = at^2$'
+      - 'Divide both sides by $t^2$ to isolate $a$: $a = \frac{2(s - ut)}{t^2}$'
+      id: q11-2
+      questionGroup: q11
+    - problemText: The formula for the volume ($V$) of a sphere is $V = \frac{4}{3}\pi r^3$. Rearrange the formula to express
+        the radius ($r$) in terms of $V$ and $\pi$.
+      mathTool: null
+      finalAnswer: $r = \sqrt[3]{\frac{3V}{4\pi}}$
+      stepByStepGuideline:
+      - 'Multiply both sides by 3 to clear the denominator: $3V = 4\pi r^3$'
+      - 'Divide both sides by $4\pi$ to isolate $r^3$: $r^3 = \frac{3V}{4\pi}$'
+      - 'Take the cube root of both sides to solve for $r$: $r = \sqrt[3]{\frac{3V}{4\pi}}$'
+      id: q11-3
+      questionGroup: q11
+    - problemText: The formula relating acceleration ($a$), final velocity ($v$), initial velocity ($u$), and displacement
+        ($s$) is given by $a = \frac{v^2-u^2}{2s}$. Assuming all variables are positive, make $v$ the subject of the formula.
+      mathTool: null
+      finalAnswer: $v = \sqrt{u^2 + 2as}$
+      stepByStepGuideline:
+      - 'Multiply both sides by $2s$ to clear the denominator: $2as = v^2 - u^2$'
+      - 'Isolate $v^2$ by adding $u^2$ to both sides: $v^2 = u^2 + 2as$'
+      - 'Take the square root of both sides to solve for $v$: $v = \sqrt{u^2 + 2as}$ (Since $v$ is assumed positive)'
+      id: q11-4
+      questionGroup: q11
+    - problemText: The formula for converting temperature from Celsius ($C$) to Fahrenheit ($F$) is $F = \frac{9}{5}C + 32$.
+        Rearrange this formula to make $C$ the subject.
+      mathTool: null
+      finalAnswer: $C = \frac{5}{9}(F - 32)$
+      stepByStepGuideline:
+      - 'Subtract 32 from both sides to isolate the term containing $C$: $F - 32 = \frac{9}{5}C$'
+      - 'Multiply both sides by the reciprocal of $\frac{9}{5}$, which is $\frac{5}{9}$, to isolate $C$: $C = \frac{5}{9}(F
+        - 32)$'
+      id: q11-5
+      questionGroup: q11
+- id: algebraic-fractions-node-12
+  nodeNumber: 12
+  title: Finding Unknowns in Formulae
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: balanceScale
+    preWrittenQuestions:
+    - problemText: The formula relating the frequency of oscillation (y) to a specific circuit component (x) is given by $y
+        = \sqrt{\frac{64}{3x+1}}$. Find the value of x when y = 4.
+      avatarIntro: Solving equations involving variables under square roots requires careful manipulation to isolate the unknown.
+        Remember to check your final answer against the original formula's domain restrictions!
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: '4'
+          rightSide: \sqrt{64/(3x+1)}
+          operation: multiply
+          operationValue: variable
+          showInverse: true
+      finalAnswer: x=1
+      stepByStepGuideline:
+      - 'Substitute the known value y=4 into the formula: $4 = \sqrt{\frac{64}{3x+1}}$'
+      - 'Square both sides of the equation to eliminate the square root: $16 = \frac{64}{3x+1}$'
+      - 'Multiply both sides by the denominator $(3x+1)$: $16(3x+1) = 64$'
+      - 'Divide both sides by 16: $3x+1 = 4$'
+      - 'Solve for x: $3x = 3$, so $x=1$.'
+      - 'Check domain validity: $3x+1 = 3(1)+1 = 4$. Since $4 \neq 0$ and $64/4 > 0$, the solution is valid.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: A car accelerates uniformly. Its final velocity $v$ (in m/s) is related to its initial velocity $u$ (in
+        m/s), acceleration $a$ (in m/s$^2$), and displacement $s$ (in m) by the formula $v = \sqrt{u^2 + 2as}$. If $v=15$
+        m/s, $u=5$ m/s, and $a=4$ m/s$^2$, find the displacement $s$.
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: v
+          rightSide: \sqrt{u^2 + 2as}
+          operation: subtract
+          operationValue: u^2
+          showInverse: true
+      finalAnswer: s=25 m
+      stepByStepGuideline:
+      - 'Substitute the given values into the formula: $15 = \sqrt{5^2 + 2(4)s}$'
+      - 'Square both sides: $15^2 = 5^2 + 8s$, which simplifies to $225 = 25 + 8s$'
+      - 'Isolate the term with s: $8s = 225 - 25$'
+      - 'Calculate the difference: $8s = 200$'
+      - 'Solve for s: $s = 200 / 8 = 25$.'
+      - 'Check domain: Displacement must be positive in this context, $s=25 > 0$. The value under the square root is $25 +
+        8(25) = 225$, which is positive. The solution is valid.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: The distance $s$ (in meters) travelled by an object is given by the formula $s = ut + \frac{1}{2}at^2$,
+        where $u$ is the initial velocity, $t$ is the time, and $a$ is the acceleration. If the distance travelled $s=40$
+        m, the initial velocity $u=2$ m/s, and the time taken $t=4$ s, find the acceleration $a$ (in m/s$^2$).
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: s - ut
+          rightSide: (1/2)at^2
+          operation: multiply
+          operationValue: 2/t^2
+          showInverse: true
+      finalAnswer: a=4 m/s^2
+      stepByStepGuideline:
+      - 'Substitute the known values into the formula: $40 = (2)(4) + \frac{1}{2}a(4^2)$'
+      - 'Simplify the equation: $40 = 8 + \frac{1}{2}a(16)$, so $40 = 8 + 8a$'
+      - 'Isolate the term with a: $8a = 40 - 8$'
+      - 'Calculate the difference: $8a = 32$'
+      - 'Solve for a: $a = 32 / 8 = 4$.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: 'The thin lens formula relates the focal length $f$, the object distance $u$, and the image distance $v$:
+        $\frac{1}{f} = \frac{1}{u} + \frac{1}{v}$. If the focal length $f=6$ cm and the object distance $u=10$ cm, calculate
+        the image distance $v$ (in cm).'
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: 1/f - 1/u
+          rightSide: 1/v
+          operation: reciprocal
+          operationValue: variable
+          showInverse: true
+      finalAnswer: v=15 cm
+      stepByStepGuideline:
+      - 'Rearrange the formula to isolate the reciprocal of v: $\frac{1}{v} = \frac{1}{f} - \frac{1}{u}$'
+      - 'Substitute the known values: $\frac{1}{v} = \frac{1}{6} - \frac{1}{10}$'
+      - 'Find a common denominator (30): $\frac{1}{v} = \frac{5}{30} - \frac{3}{30}$'
+      - 'Perform the subtraction: $\frac{1}{v} = \frac{2}{30} = \frac{1}{15}$'
+      - 'Take the reciprocal of both sides to find v: $v = 15$.'
+      - 'Check domain: $v=15 \neq 0$. The solution is valid.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: The formula for constant acceleration $a$ (in m/s$^2$) is given by $a = \frac{v^2-u^2}{2s}$, where $v$
+        is the final velocity, $u$ is the initial velocity, and $s$ is the displacement. If $a=8$ m/s$^2$, $v=20$ m/s, and
+        $u=12$ m/s, find the displacement $s$ (in meters).
+      mathTool:
+        toolName: balanceScale
+        parameters:
+          leftSide: a
+          rightSide: (v^2-u^2)/(2s)
+          operation: multiply
+          operationValue: 2s
+          showInverse: true
+      finalAnswer: s=16 m
+      stepByStepGuideline:
+      - 'Rearrange the formula to make $s$ the subject: $s = \frac{v^2-u^2}{2a}$'
+      - 'Substitute the known values: $s = \frac{20^2 - 12^2}{2(8)}$'
+      - 'Calculate the squares: $s = \frac{400 - 144}{16}$'
+      - 'Calculate the numerator: $s = \frac{256}{16}$'
+      - 'Solve for s: $s = 16$.'
+      - 'Check domain: $2s = 32 \neq 0$. Displacement $s=16$ is positive. The solution is valid.'
+      id: q12-5
+      questionGroup: q12

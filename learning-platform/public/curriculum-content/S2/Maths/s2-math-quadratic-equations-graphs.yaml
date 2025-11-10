@@ -1,0 +1,1710 @@
+# S2 Math Quadratic Equations Graphs - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: quadratic-equations-node-1
+  nodeNumber: 1
+  title: Recognizing Quadratic Equations
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: "Which of the following equations is a quadratic equation? Explain your choice based on the standard form\
+        \ $ax^2 + bx + c = 0$. \n\nA) $x^3 - 4x + 1 = 0$\nB) $5x^2 + 2x = 0$\nC) $10x - 5 = 0$"
+      avatarIntro: Welcome! Understanding the definition of a quadratic equation is the first step to mastering this topic.
+        Let's start with identification!
+      mathTool: null
+      finalAnswer: B) $5x^2 + 2x = 0$
+      stepByStepGuideline:
+      - 'Recall the definition: A quadratic equation must have a highest degree term of $x^2$, meaning the coefficient $a$
+        cannot be zero.'
+      - 'Analyze Option A: $x^3 - 4x + 1 = 0$. The highest power is 3, so this is a cubic equation.'
+      - 'Analyze Option B: $5x^2 + 2x = 0$. This can be written as $5x^2 + 2x + 0 = 0$. The highest power is 2, and $a=5$
+        (which is not zero). This is a quadratic equation.'
+      - 'Analyze Option C: $10x - 5 = 0$. The highest power is 1, so this is a linear equation.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: 'Identify the values of the coefficients $a$, $b$, and $c$ for the quadratic equation: $-2x^2 + 9 = 0$.'
+      mathTool: null
+      finalAnswer: $a = -2, b = 0, c = 9$
+      stepByStepGuideline:
+      - 'Rewrite the equation in the standard form $ax^2 + bx + c = 0$. Since the linear term ($bx$) is missing, $b$ must
+        be 0: $-2x^2 + 0x + 9 = 0$.'
+      - 'Identify the coefficient of the $x^2$ term (a): $a = -2$.'
+      - 'Identify the coefficient of the $x$ term (b): $b = 0$.'
+      - 'Identify the constant term (c): $c = 9$.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: 'State whether the following statement is True or False: The equation $x(x - 3) = x^2 + 5$ is a quadratic
+        equation. Justify your answer by simplifying the equation.'
+      mathTool: null
+      finalAnswer: 'False'
+      stepByStepGuideline:
+      - 'Simplify the left side of the equation: $x(x - 3) = x^2 - 3x$.'
+      - 'The equation becomes: $x^2 - 3x = x^2 + 5$.'
+      - 'Move all terms to one side to achieve the standard form $ax^2 + bx + c = 0$: $x^2 - x^2 - 3x - 5 = 0$.'
+      - The $x^2$ terms cancel out, resulting in $-3x - 5 = 0$.
+      - Since the highest power of $x$ is 1 (the quadratic coefficient $a=0$), the equation is linear, not quadratic. Therefore,
+        the statement is False.
+      id: q1-3
+      questionGroup: q1
+    - problemText: 'Determine the coefficients $a$, $b$, and $c$ for the following quadratic equation. Pay close attention
+        to signs and coefficients that are not integers:
+
+        $$\frac{1}{2}x^2 - x + 7 = 0$$'
+      mathTool: null
+      finalAnswer: $a = 1/2, b = -1, c = 7$
+      stepByStepGuideline:
+      - The equation is already in the standard form $ax^2 + bx + c = 0$.
+      - 'Identify the coefficient $a$ (of $x^2$): $a = 1/2$.'
+      - Identify the coefficient $b$ (of $x$). Note that $-x$ is the same as $-1x$, so $b = -1$.
+      - 'Identify the constant term $c$: $c = 7$.'
+      id: q1-4
+      questionGroup: q1
+    - problemText: 'Analyze the three equations below and classify each one as Linear, Quadratic, or Cubic based on its highest
+        degree term.
+
+
+        I) $x^3 + 2x^2 - 1 = 0$
+
+        II) $x^2 + x + 1 = 0$
+
+        III) $3x + 5 = 0$'
+      mathTool: null
+      finalAnswer: I) Cubic, II) Quadratic, III) Linear
+      stepByStepGuideline:
+      - Classification is based on the highest power (degree) of the variable $x$.
+      - 'Equation I: The highest power is $x^3$. This is a Cubic equation.'
+      - 'Equation II: The highest power is $x^2$. This is a Quadratic equation.'
+      - 'Equation III: The highest power is $x^1$. This is a Linear equation.'
+      id: q1-5
+      questionGroup: q1
+- id: quadratic-equations-node-2
+  nodeNumber: 2
+  title: Writing Quadratics in Standard Form
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Rearrange the equation $3x^2 + 4x = 5$ into the standard form $ax^2 + bx + c = 0$.
+      avatarIntro: Let's start by focusing on the standard form ax² + bx + c = 0. Remember, we need zero on the right-hand
+        side! Pay attention to the signs when you move terms across the equals sign.
+      mathTool: null
+      finalAnswer: 3x² + 4x - 5 = 0
+      stepByStepGuideline:
+      - The goal is to set the right-hand side of the equation equal to zero.
+      - Move the constant term (5) from the RHS to the LHS by subtracting 5 from both sides.
+      - The rearranged equation is 3x² + 4x - 5 = 0.
+      id: q2-1
+      questionGroup: q2
+    - problemText: 'Write the following equation in standard form: $4x^2 - 2x = 5x + 9$. This requires moving terms from both
+        sides and combining like terms.'
+      mathTool: null
+      finalAnswer: 4x² - 7x - 9 = 0
+      stepByStepGuideline:
+      - 'Move all terms from the RHS ($5x$ and $9$) to the LHS, changing their signs: $4x^2 - 2x - 5x - 9 = 0$.'
+      - 'Combine the like terms (the $x$ terms): $-2x - 5x = -7x$.'
+      - The resulting standard form equation is $4x^2 - 7x - 9 = 0$.
+      id: q2-2
+      questionGroup: q2
+    - problemText: Rearrange the equation $x(x + 7) = 18$ into the standard form $ax^2 + bx + c = 0$.
+      mathTool: null
+      finalAnswer: x² + 7x - 18 = 0
+      stepByStepGuideline:
+      - 'First, expand the expression on the left-hand side (LHS) using the distributive property: $x^2 + 7x = 18$.'
+      - Next, move the constant term (18) from the RHS to the LHS by subtracting 18 from both sides.
+      - The standard form equation is $x^2 + 7x - 18 = 0$.
+      id: q2-3
+      questionGroup: q2
+    - problemText: Convert the equation $5x^2 + 2x - 3x^2 = x + 10$ into the standard quadratic form $ax^2 + bx + c = 0$.
+      mathTool: null
+      finalAnswer: 2x² + x - 10 = 0
+      stepByStepGuideline:
+      - 'First, combine the like terms on the LHS: $5x^2 - 3x^2 = 2x^2$. The equation becomes $2x^2 + 2x = x + 10$.'
+      - 'Move the terms from the RHS ($x$ and $10$) to the LHS, changing their signs: $2x^2 + 2x - x - 10 = 0$.'
+      - 'Combine the $x$ terms: $2x - x = x$.'
+      - The final standard form is $2x^2 + x - 10 = 0$.
+      id: q2-4
+      questionGroup: q2
+    - problemText: The equation $\frac{1}{3}x^2 = 2x - 1$ is a quadratic equation. Rearrange it into the standard form $ax^2
+        + bx + c = 0$. (You do not need to eliminate the fraction.)
+      mathTool: null
+      finalAnswer: \frac{1}{3}x^2 - 2x + 1 = 0
+      stepByStepGuideline:
+      - 'Identify the terms on the RHS that need to be moved: $2x$ and $-1$.'
+      - 'Move $2x$ to the LHS by subtracting it: $\frac{1}{3}x^2 - 2x = -1$.'
+      - 'Move $-1$ to the LHS by adding 1: $\frac{1}{3}x^2 - 2x + 1 = 0$.'
+      - The equation is now in standard form.
+      id: q2-5
+      questionGroup: q2
+- id: quadratic-equations-node-3
+  nodeNumber: 3
+  title: Solving x² = k
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabolaGraph
+    preWrittenQuestions:
+    - problemText: Solve the equation $x^2 = 36$. Use the provided graph to verify that your solutions correspond to the x-intercepts
+        of the function $y = x^2 - 36$.
+      avatarIntro: Ready to tackle pure quadratic equations? Remember that taking the square root often gives you two possible
+        answers!
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: 0
+          c: -36
+      finalAnswer: $x = \pm 6$, so $x = 6$ or $x = -6$
+      stepByStepGuideline:
+      - The equation is $x^2 = 36$.
+      - 'Take the square root of both sides, remembering to include both the positive and negative roots: $x = \pm\sqrt{36}$.'
+      - 'Simplify the square root: $x = \pm 6$.'
+      - Verify that the graph of $y = x^2 - 36$ crosses the x-axis at $x = 6$ and $x = -6$.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Consider the equation $x^2 = -16$. Explain why this equation has no real solutions. Use the provided graph
+        of $y = x^2 + 16$ to support your explanation.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: 0
+          c: 16
+      finalAnswer: No real solution exists.
+      stepByStepGuideline:
+      - 'Attempt to solve the equation $x^2 = -16$ by taking the square root: $x = \pm\sqrt{-16}$.'
+      - Since the square root of a negative number is undefined in the set of real numbers, there is no real solution.
+      - 'Explain the reason: The square of any real number ($x^2$) must always be greater than or equal to zero. Therefore,
+        $x^2$ can never equal a negative number like $-16$.'
+      - The graph of $y = x^2 + 16$ confirms this, as the parabola lies entirely above the x-axis and never intercepts it.
+      id: q3-2
+      questionGroup: q3
+    - problemText: Solve the equation $x^2 = 11$. Express your answer in exact form.
+      mathTool: null
+      finalAnswer: $x = \pm\sqrt{11}$
+      stepByStepGuideline:
+      - The equation is $x^2 = 11$.
+      - 'Take the square root of both sides to solve for $x$: $x = \pm\sqrt{11}$.'
+      - Since 11 is not a perfect square, leave the answer in exact radical form.
+      id: q3-3
+      questionGroup: q3
+    - problemText: Determine the solution(s) for the equation $x^2 = 0$. How many distinct real solutions does this equation
+        have?
+      mathTool: null
+      finalAnswer: $x = 0$. It has exactly one distinct real solution.
+      stepByStepGuideline:
+      - The equation is $x^2 = 0$.
+      - 'Take the square root of both sides: $x = \pm\sqrt{0}$.'
+      - Since $\sqrt{0} = 0$, the only solution is $x = 0$.
+      - This equation has exactly one distinct real solution.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Find all possible values of $x$ that satisfy the equation $x^2 = 81$.
+      mathTool: null
+      finalAnswer: $x = \pm 9$
+      stepByStepGuideline:
+      - The equation is $x^2 = 81$.
+      - 'Take the square root of both sides: $x = \pm\sqrt{81}$.'
+      - 'Simplify the square root: $x = \pm 9$.'
+      - The two possible values for $x$ are $9$ and $-9$.
+      id: q3-5
+      questionGroup: q3
+- id: quadratic-equations-node-4
+  nodeNumber: 4
+  title: Solving ax² = k
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Solve the equation $5x^2 = 45$, showing all steps. Ensure your final answer includes both the positive
+        and negative roots.
+      avatarIntro: Solving quadratic equations of the form $ax^2 = k$ requires isolating the $x^2$ term first. Remember to
+        apply the square root principle carefully!
+      mathTool: null
+      finalAnswer: x² = 9, so x = ±3
+      stepByStepGuideline:
+      - 'Divide both sides of the equation by the coefficient of x² (which is 5): 5x² / 5 = 45 / 5.'
+      - 'Simplify to isolate x²: x² = 9.'
+      - 'Apply the square root principle to both sides, remembering to include both the positive and negative roots: x = ±√9.'
+      - 'Calculate the final value: x = ±3.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: Find all real solutions for the equation $2x^2 - 72 = 0$. Show the necessary steps to isolate $x^2$ before
+        taking the square root.
+      mathTool: null
+      finalAnswer: 2x² = 72, x² = 36, x = ±6
+      stepByStepGuideline:
+      - 'Rearrange the equation by adding 72 to both sides to isolate the term with x²: 2x² = 72.'
+      - 'Divide both sides by 2 to isolate x²: x² = 72 / 2, which simplifies to x² = 36.'
+      - 'Apply the square root principle: x = ±√36.'
+      - 'Calculate the final value: x = ±6.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: Solve the equation $\frac{1}{2}x^2 = 32$. Provide the intermediate step where $x^2$ is isolated.
+      mathTool: null
+      finalAnswer: x² = 64, so x = ±8
+      stepByStepGuideline:
+      - 'To isolate x², multiply both sides by the reciprocal of the coefficient (which is 2): 2 * (1/2)x² = 32 * 2.'
+      - 'Simplify to isolate x²: x² = 64.'
+      - 'Apply the square root principle: x = ±√64.'
+      - 'Calculate the final value: x = ±8.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: Determine the values of $x$ that satisfy the equation $0.5x^2 = 50$. Show your work.
+      mathTool: null
+      finalAnswer: x² = 100, so x = ±10
+      stepByStepGuideline:
+      - 'Divide both sides by the decimal coefficient 0.5 (or multiply by 2): 0.5x² / 0.5 = 50 / 0.5.'
+      - 'Simplify to isolate x²: x² = 100.'
+      - 'Apply the square root principle: x = ±√100.'
+      - 'Calculate the final value: x = ±10.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: Solve the equation $1.5x^2 - 4 = 20$. Show all steps for rearrangement and isolation. Check your positive
+        solution by substituting it back into the original equation.
+      mathTool: null
+      finalAnswer: 1.5x² = 24, x² = 16, x = ±4
+      stepByStepGuideline:
+      - 'Add 4 to both sides to begin isolating the x² term: 1.5x² = 20 + 4, resulting in 1.5x² = 24.'
+      - 'Divide both sides by 1.5 to isolate x²: x² = 24 / 1.5.'
+      - 'Calculate the value of x²: x² = 16.'
+      - 'Apply the square root principle: x = ±√16, so x = ±4.'
+      - 'Check the positive solution (x=4): 1.5(4)² - 4 = 1.5(16) - 4 = 24 - 4 = 20. (The check confirms the solution is correct.)'
+      id: q4-5
+      questionGroup: q4
+- id: quadratic-equations-node-5
+  nodeNumber: 5
+  title: Factorizing Quadratic Expressions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: 'Factorise the following quadratic expression completely:
+
+        $$x^2 + 10x + 24$$'
+      avatarIntro: We are now mastering how to factor simple quadratic expressions. Remember, you are looking for two numbers
+        that multiply to give the constant term (c) and add up to give the coefficient of the x term (b).
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 10
+          c: 24
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 4)(x + 6)
+      stepByStepGuideline:
+      - We need to find two numbers, p and q, such that $p \times q = 24$ and $p + q = 10$.
+      - Since the constant term (24) is positive and the middle term (10x) is positive, both factors must be positive.
+      - 'List the positive factor pairs of 24: (1, 24), (2, 12), (3, 8), (4, 6).'
+      - 'Check the sums: $1+24=25$, $2+12=14$, $3+8=11$, $4+6=10$.'
+      - The correct pair is 4 and 6.
+      - Therefore, the factorised form is $(x + 4)(x + 6)$.
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'Factorise the quadratic expression:
+
+        $$x^2 - 8x + 15$$'
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -8
+          c: 15
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 5)(x - 3)
+      stepByStepGuideline:
+      - We need to find two numbers, p and q, such that $p \times q = 15$ and $p + q = -8$.
+      - Since the constant term (15) is positive and the middle term (-8x) is negative, both factors must be negative.
+      - 'List the negative factor pairs of 15: (-1, -15), (-3, -5).'
+      - 'Check the sums: $(-1) + (-15) = -16$, $(-3) + (-5) = -8$.'
+      - The correct pair is -3 and -5.
+      - Therefore, the factorised form is $(x - 3)(x - 5)$.
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'Factorise the following quadratic expression, ensuring the signs of your factors satisfy the conditions
+        for the coefficient of $x$ and the constant term:
+
+        $$x^2 + 3x - 18$$'
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 3
+          c: -18
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x + 6)(x - 3)
+      stepByStepGuideline:
+      - We need two numbers, p and q, such that $p \times q = -18$ and $p + q = 3$.
+      - Since the product (c = -18) is negative, one factor must be positive and the other must be negative. Since the sum
+        (b = 3) is positive, the larger absolute factor must be positive.
+      - 'List factor pairs of 18 (ignoring signs initially): (1, 18), (2, 9), (3, 6).'
+      - 'Apply signs such that the sum is +3. This means the smaller number is negative:'
+      - $6 + (-3) = 3$.
+      - The correct factors are 6 and -3.
+      - Therefore, the factorised form is $(x + 6)(x - 3)$.
+      id: q5-3
+      questionGroup: q5
+    - problemText: Factorise the expression $x^2 - 5x - 6$.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: -5
+          c: -6
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 6)(x + 1)
+      stepByStepGuideline:
+      - We need two numbers, p and q, such that $p \times q = -6$ and $p + q = -5$.
+      - Since the product (c = -6) is negative, one factor must be positive and the other must be negative. Since the sum
+        (b = -5) is negative, the larger absolute factor must be negative.
+      - 'List factor pairs of 6: (1, 6), (2, 3).'
+      - 'Apply signs such that the sum is -5. This means the larger number is negative:'
+      - $-6 + 1 = -5$.
+      - The correct factors are -6 and 1.
+      - Therefore, the factorised form is $(x - 6)(x + 1)$.
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'Factorise the following quadratic expression. Note that this is a special case known as the Difference
+        of Two Squares.
+
+        $$x^2 - 49$$'
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          a: 1
+          b: 0
+          c: -49
+          method: factor-pairs
+          showSteps: true
+      finalAnswer: (x - 7)(x + 7)
+      stepByStepGuideline:
+      - The expression $x^2 - 49$ can be written as $x^2 + 0x - 49$. We need two numbers, p and q, such that $p \times q =
+        -49$ and $p + q = 0$.
+      - When the sum is 0, the two numbers must be additive inverses (the same number with opposite signs).
+      - Since $49 = 7^2$, the two numbers are 7 and -7.
+      - 'Check: $7 \times (-7) = -49$ and $7 + (-7) = 0$.'
+      - Using the difference of squares formula, $a^2 - b^2 = (a - b)(a + b)$, where $a=x$ and $b=7$.
+      - The factorised form is $(x - 7)(x + 7)$.
+      id: q5-5
+      questionGroup: q5
+- id: quadratic-equations-node-6
+  nodeNumber: 6
+  title: Using Zero Product Property
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabolaGraph
+    preWrittenQuestions:
+    - problemText: Solve the equation $(x - 5)^2 = 0$. State the solution(s) and note that this results in a single, repeated
+        root.
+      avatarIntro: 'The Zero Product Property is crucial here: if $A \cdot B = 0$, then $A$ or $B$ must be zero. Let''s apply
+        this concept even when the factors are identical.'
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: -10
+          c: 25
+          showIntercepts: true
+      finalAnswer: x = 5
+      stepByStepGuideline:
+      - 'Identify the factors: $(x - 5)$ and $(x - 5)$.'
+      - 'Apply the Zero Product Property: Set each factor equal to zero. $x - 5 = 0$ or $x - 5 = 0$.'
+      - 'Solve for x: $x = 5$.'
+      - Since both factors yield the same result, the equation has one real solution, $x = 5$ (a repeated root).
+      id: q6-1
+      questionGroup: q6
+    - problemText: Find the solutions for the equation $(x + 3)(x - 3) = 0$.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: 0
+          c: -9
+          showIntercepts: true
+      finalAnswer: x = 3 or x = -3
+      stepByStepGuideline:
+      - 'Apply the Zero Product Property: Set the first factor equal to zero: $x + 3 = 0$.'
+      - 'Solve for the first root: $x = -3$.'
+      - 'Set the second factor equal to zero: $x - 3 = 0$.'
+      - 'Solve for the second root: $x = 3$.'
+      - The solutions are $x = 3$ and $x = -3$.
+      id: q6-2
+      questionGroup: q6
+    - problemText: Use the Zero Product Property to solve the equation $(4x - 3)(x + 1) = 0$. Ensure your answer includes
+        any fractional roots in exact form.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 4
+          b: 1
+          c: -3
+          showIntercepts: true
+      finalAnswer: x = ⅔ or x = -1
+      stepByStepGuideline:
+      - 'Apply the Zero Product Property: Set the first factor equal to zero: $4x - 3 = 0$.'
+      - 'Solve for the first root: $4x = 3$, so $x = \frac{3}{4}$.'
+      - 'Set the second factor equal to zero: $x + 1 = 0$.'
+      - 'Solve for the second root: $x = -1$.'
+      - The solutions are $x = \frac{3}{4}$ and $x = -1$.
+      id: q6-3
+      questionGroup: q6
+    - problemText: Solve the quadratic equation $(x + 3)(x + 5) = 0$. Pay close attention to the signs when finding the roots.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: 8
+          c: 15
+          showIntercepts: true
+      finalAnswer: x = -3 or x = -5
+      stepByStepGuideline:
+      - 'Apply the Zero Product Property: Set the first factor equal to zero: $x + 3 = 0$.'
+      - 'Solve for the first root: $x = -3$.'
+      - 'Set the second factor equal to zero: $x + 5 = 0$.'
+      - 'Solve for the second root: $x = -5$.'
+      - The solutions are $x = -3$ and $x = -5$.
+      id: q6-4
+      questionGroup: q6
+    - problemText: Determine the values of $x$ that satisfy the equation $(x - 8)(x - 1) = 0$.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: -9
+          c: 8
+          showIntercepts: true
+      finalAnswer: x = 8 or x = 1
+      stepByStepGuideline:
+      - 'Apply the Zero Product Property: Set the first factor equal to zero: $x - 8 = 0$.'
+      - 'Solve for the first root: $x = 8$.'
+      - 'Set the second factor equal to zero: $x - 1 = 0$.'
+      - 'Solve for the second root: $x = 1$.'
+      - The solutions are $x = 8$ and $x = 1$.
+      id: q6-5
+      questionGroup: q6
+- id: quadratic-equations-node-7
+  nodeNumber: 7
+  title: Complete Solution Process
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: factoringVisualizer
+    preWrittenQuestions:
+    - problemText: Solve the quadratic equation $x^2 + 3x = 10$. Show the complete process, including rearrangement to standard
+        form, factorization, and application of the Zero Product Property (ZPP). Verify your solution(s).
+      avatarIntro: This problem requires you to use the full factorization process. Remember, the first step is always setting
+        the equation equal to zero!
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          method: factor-pairs
+          a: 1
+          b: 3
+          c: -10
+      finalAnswer: x = -5 or x = 2
+      stepByStepGuideline:
+      - 'Rearrange the equation into the standard form $ax^2 + bx + c = 0$: $x^2 + 3x - 10 = 0$.'
+      - 'Factor the quadratic expression: $(x + 5)(x - 2) = 0$.'
+      - 'Apply the Zero Product Property (ZPP): Set each factor equal to zero.'
+      - 'Solve for $x$: $x + 5 = 0 \implies x = -5$ OR $x - 2 = 0 \implies x = 2$.'
+      - 'Verify the solutions by substituting them back into the original equation $x^2 + 3x = 10$. For $x=2$: $(2)^2 + 3(2)
+        = 4 + 6 = 10$. For $x=-5$: $(-5)^2 + 3(-5) = 25 - 15 = 10$. The solutions are verified.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: Find all solutions for the equation $x^2 = 8x$. Be careful not to divide by the variable $x$, as this may
+        cause you to lose a solution. Ensure you extract the common factor.
+      mathTool: null
+      finalAnswer: x = 0 or x = 8
+      stepByStepGuideline:
+      - 'Rearrange the equation to the standard form $ax^2 + bx + c = 0$: $x^2 - 8x = 0$.'
+      - 'Factor by extracting the common factor $x$: $x(x - 8) = 0$.'
+      - 'Apply the Zero Product Property (ZPP): Set each factor equal to zero.'
+      - 'Solve for $x$: $x = 0$ OR $x - 8 = 0 \implies x = 8$.'
+      - 'Verify the solutions. For $x=0$: $(0)^2 = 8(0) \implies 0 = 0$. For $x=8$: $(8)^2 = 8(8) \implies 64 = 64$. The solutions
+        are $x=0$ and $x=8$.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: The area of a rectangle is 6 square units. Its length is represented by $(x + 5)$ and its width is represented
+        by $x$. Write the equation for the area and solve for $x$ by factorization. Start by expanding the expression.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          method: factor-pairs
+          a: 1
+          b: 5
+          c: -6
+      finalAnswer: x = 1 (Since x must be positive for length/width)
+      stepByStepGuideline:
+      - 'Write the equation based on the area formula (Area = length × width): $x(x + 5) = 6$.'
+      - 'Expand the left side: $x^2 + 5x = 6$.'
+      - 'Rearrange to standard form: $x^2 + 5x - 6 = 0$.'
+      - 'Factor the quadratic expression: $(x + 6)(x - 1) = 0$.'
+      - 'Apply ZPP to find potential solutions: $x + 6 = 0 \implies x = -6$ OR $x - 1 = 0 \implies x = 1$.'
+      - 'Since $x$ represents a physical dimension (width), it must be positive. Therefore, the only valid solution is $x
+        = 1$. (Verification: Width = 1, Length = 1+5 = 6. Area = 1 * 6 = 6).'
+      id: q7-3
+      questionGroup: q7
+    - problemText: Solve the quadratic equation $2x^2 + 8x = 3x + 3$. This problem requires both rearrangement and factorization
+        where the leading coefficient $a$ is not 1.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          method: factor-pairs
+          a: 2
+          b: 5
+          c: -3
+      finalAnswer: x = 1/2 or x = -3
+      stepByStepGuideline:
+      - 'Rearrange all terms to the left side to achieve standard form $ax^2 + bx + c = 0$: $2x^2 + 8x - 3x - 3 = 0$.'
+      - 'Combine like terms: $2x^2 + 5x - 3 = 0$.'
+      - 'Factor the resulting trinomial (using grouping or trial and error): $(2x - 1)(x + 3) = 0$.'
+      - 'Apply ZPP: $2x - 1 = 0$ OR $x + 3 = 0$.'
+      - 'Solve for $x$: $2x = 1 \implies x = 1/2$ OR $x = -3$.'
+      - Verify solutions by substitution into $2x^2 + 8x = 3x + 3$. Solutions are $x = 1/2$ and $x = -3$.
+      id: q7-4
+      questionGroup: q7
+    - problemText: Determine the values of $x$ that satisfy the equation $3x^2 + 8x = -5$. Ensure your final answer includes
+        any fractional roots in exact form.
+      mathTool:
+        toolName: factoringVisualizer
+        parameters:
+          method: factor-pairs
+          a: 3
+          b: 8
+          c: 5
+      finalAnswer: x = -1 or x = -5/3
+      stepByStepGuideline:
+      - 'Rearrange the equation to the standard form $ax^2 + bx + c = 0$: $3x^2 + 8x + 5 = 0$.'
+      - 'Factor the quadratic expression (where $a=3$): $(3x + 5)(x + 1) = 0$.'
+      - 'Apply the Zero Product Property (ZPP): Set each factor equal to zero.'
+      - 'Solve for $x$: $3x + 5 = 0 \implies 3x = -5 \implies x = -5/3$ OR $x + 1 = 0 \implies x = -1$.'
+      - The solutions are $x = -5/3$ and $x = -1$.
+      id: q7-5
+      questionGroup: q7
+- id: quadratic-equations-node-8
+  nodeNumber: 8
+  title: Understanding Parabola Shape
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: Consider the quadratic function $y = 3x^2$. Describe the direction in which the parabola opens and explain
+        how its width compares to the parent function $y = x^2$.
+      avatarIntro: Let's start by analyzing how the coefficient 'a' affects the look of a quadratic function. Remember, the
+        sign tells you direction, and the magnitude tells you width!
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: 3*x^2
+          yMin: -1
+          yMax: 10
+      finalAnswer: The parabola opens upward (because a = 3 > 0), and it is narrower than y = x² (because |a| = 3 > 1).
+      stepByStepGuideline:
+      - 'Identify the coefficient $a$: $a = 3$.'
+      - 'Determine the opening direction: Since $a$ is positive ($3 > 0$), the parabola opens upward.'
+      - 'Determine the width comparison: Calculate the absolute value of $a$, $|a| = 3$. Since $|a| > 1$, the parabola is
+        vertically stretched, making it narrower than the parent function $y = x^2$.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: For the quadratic function $y = -0.5x^2$, determine only the direction in which the corresponding parabola
+        opens.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: -0.5*x^2
+          yMin: -10
+          yMax: 1
+      finalAnswer: The parabola opens downward.
+      stepByStepGuideline:
+      - 'Identify the coefficient $a$: $a = -0.5$.'
+      - Determine the opening direction based on the sign of $a$. Since $a$ is negative ($-0.5 < 0$), the parabola opens downward.
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'You are given three quadratic functions: $f(x) = 0.25x^2$, $g(x) = 4x^2$, and $h(x) = -x^2$. Which of
+        these functions produces a parabola that is wider than the parent function $y = x^2$?'
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          form: standard
+          a: 0.25
+          b: 0
+          c: 0
+          yMin: -1
+          yMax: 5
+      finalAnswer: $f(x) = 0.25x^2$
+      stepByStepGuideline:
+      - Recall that a parabola is wider than $y=x^2$ if the absolute value of the coefficient $a$ is between 0 and 1 ($0 <
+        |a| < 1$).
+      - 'Analyze $f(x) = 0.25x^2$: $|a| = 0.25$. Since $0 < 0.25 < 1$, this parabola is wider.'
+      - 'Analyze $g(x) = 4x^2$: $|a| = 4$. Since $4 > 1$, this parabola is narrower.'
+      - 'Analyze $h(x) = -x^2$: $|a| = 1$. Since $|a| = 1$, this parabola has the same width as $y=x^2$ (just opening downward).'
+      id: q8-3
+      questionGroup: q8
+    - problemText: The graph of $y = -2x^2$ is shown. Based on the graph and the equation, describe both the opening direction
+        and how the width compares to the parent function $y = x^2$.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          form: standard
+          a: -2
+          b: 0
+          c: 0
+          yMin: -10
+          yMax: 1
+      finalAnswer: The parabola opens downward and is narrower than y = x².
+      stepByStepGuideline:
+      - Analyze the coefficient $a$ from the equation $y = -2x^2$. $a = -2$.
+      - 'Determine the opening direction: Since $a$ is negative, the parabola opens downward.'
+      - 'Determine the width comparison: Calculate $|a| = |-2| = 2$. Since $2 > 1$, the parabola is narrower than the parent
+        function $y = x^2$.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'State whether the following statement about the parabola defined by $y = -3x^2$ is True or False: "The
+        parabola opens upward and is wider than $y = x^2$."'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          expression: -3*x^2
+          yMin: -15
+          yMax: 1
+      finalAnswer: 'False'
+      stepByStepGuideline:
+      - 'Identify the coefficient $a$: $a = -3$.'
+      - 'Check the opening direction: Since $a = -3$ (negative), the parabola opens downward, contradicting the statement
+        ''opens upward''.'
+      - 'Check the width comparison: Calculate $|a| = 3$. Since $3 > 1$, the parabola is narrower, contradicting the statement
+        ''is wider''.'
+      - Since both parts of the combined statement are incorrect, the statement is False.
+      id: q8-5
+      questionGroup: q8
+- id: quadratic-equations-node-9
+  nodeNumber: 9
+  title: Plotting Points to Draw Parabolas
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabolaGraph
+    preWrittenQuestions:
+    - problemText: A student wants to plot the quadratic function $y = x^2 - 4$. Complete the table of values below for $x$
+        ranging from $-3$ to $3$. Based on your table, describe the key features of the parabola (direction of opening, vertex
+        coordinates, and x-intercepts) and explain why these points help you draw a smooth curve.
+      avatarIntro: Learning to plot parabolas by creating a table of values is essential! Remember to look for symmetry in
+        your y-values to confirm your vertex location.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = x^2 - 4
+          xMin: -3
+          xMax: 3
+          showVertex: true
+          showIntercepts: true
+      finalAnswer: 'Table:
+
+        x: -3, -2, -1, 0, 1, 2, 3
+
+        y: 5, 0, -3, -4, -3, 0, 5
+
+        Description: The parabola opens upward. The vertex is at (0, -4). The x-intercepts are at x = -2 and x = 2. The symmetry
+        of the y-values around the vertex confirms the shape.'
+      stepByStepGuideline:
+      - 'Step 1: Substitute each x-value into the equation $y = x^2 - 4$.'
+      - 'Step 2: Calculate the corresponding y-values: For x = -3, y = (-3)^2 - 4 = 5. For x = 0, y = 0^2 - 4 = -4. For x
+        = 3, y = 3^2 - 4 = 5.'
+      - 'Step 3: Complete the table: (-3, 5), (-2, 0), (-1, -3), (0, -4), (1, -3), (2, 0), (3, 5).'
+      - 'Step 4: Identify the vertex as the minimum point (0, -4) and the x-intercepts as the points where y=0, which are
+        (-2, 0) and (2, 0). The positive coefficient of $x^2$ indicates it opens upward.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: Create a table of values for the quadratic function $y = x^2 - 2x - 3$ using integer x-values from $-1$
+        to $5$. Plot these points and describe the shape of the resulting parabola, specifically noting the coordinates of
+        the vertex and the direction of opening.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = x^2 - 2x - 3
+          xMin: -1
+          xMax: 5
+          showVertex: true
+          showIntercepts: true
+      finalAnswer: 'Table:
+
+        x: -1, 0, 1, 2, 3, 4, 5
+
+        y: 0, -3, -4, -3, 0, 5, 12
+
+        Description: The parabola opens upward. The vertex is the minimum point at (1, -4). The x-intercepts are at x = -1
+        and x = 3.'
+      stepByStepGuideline:
+      - 'Step 1: Identify the x-values required: -1, 0, 1, 2, 3, 4, 5.'
+      - 'Step 2: Substitute these values into the equation $y = x^2 - 2x - 3$.'
+      - 'Step 3: Calculate the corresponding y-values. For x=1, y = (1)^2 - 2(1) - 3 = 1 - 2 - 3 = -4. For x=4, y = (4)^2
+        - 2(4) - 3 = 16 - 8 - 3 = 5.'
+      - 'Step 4: The completed table confirms the vertex is at (1, -4) and the curve opens upward.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: Determine the table of values for the function $y = -x^2 + 4x$ using integer x-values from $-2$ to $2$.
+        Since this is a narrow range that may not include all key features, identify the maximum y-value found in your table
+        and state the direction the parabola opens.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = -x^2 + 4x
+          xMin: -2
+          xMax: 2
+          showVertex: true
+          showIntercepts: true
+      finalAnswer: 'Table:
+
+        x: -2, -1, 0, 1, 2
+
+        y: -12, -5, 0, 3, 4
+
+        Description: The parabola opens downward (due to the negative coefficient of $x^2$). The maximum y-value in this range
+        is 4, occurring at x = 2.'
+      stepByStepGuideline:
+      - 'Step 1: Substitute the required x-values (-2, -1, 0, 1, 2) into $y = -x^2 + 4x$.'
+      - 'Step 2: Calculate the y-values. For x = -2, y = -(-2)^2 + 4(-2) = -4 - 8 = -12. For x = 2, y = -(2)^2 + 4(2) = -4
+        + 8 = 4.'
+      - 'Step 3: Since the coefficient of $x^2$ is negative (-1), the parabola opens downward.'
+      - 'Step 4: The maximum y-value in the table is 4. (Note: The actual vertex is slightly outside this range at (2, 4).
+        Wait, the vertex is exactly at x=2. The step is correct.)'
+      id: q9-3
+      questionGroup: q9
+    - problemText: The function $y = 2x^2 - 8x + 6$ has a coefficient $a=2$, making the parabola narrow. Complete a table
+        of values for $x$ from $-1$ to $5$. How does the steepness (width) of this parabola compare to $y=x^2$ based on the
+        calculated y-values?
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = 2x^2 - 8x + 6
+          xMin: -1
+          xMax: 5
+          showVertex: true
+          showIntercepts: true
+      finalAnswer: 'Table:
+
+        x: -1, 0, 1, 2, 3, 4, 5
+
+        y: 16, 6, 0, -2, 0, 6, 16
+
+        Comparison: Since the y-values increase very rapidly away from the vertex (e.g., reaching 16 just 3 units away from
+        the vertex x=2), the parabola is narrower (steeper) than $y=x^2$. The vertex is (2, -2).'
+      stepByStepGuideline:
+      - 'Step 1: Substitute integer x-values from -1 to 5 into $y = 2x^2 - 8x + 6$.'
+      - 'Step 2: Calculate y-values. For x=0, y = 6. For x=2, y = 2(4) - 8(2) + 6 = 8 - 16 + 6 = -2. For x=5, y = 2(25) -
+        8(5) + 6 = 50 - 40 + 6 = 16.'
+      - 'Step 3: The rapid change in y-values (especially the large values at the endpoints 16) compared to a standard parabola
+        confirms that the coefficient $a=2$ makes the graph narrower.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: To visualize the central features of the simple quadratic function $y = x^2 - 4$, generate a table of values
+        using the narrow range of integer x-values from $-2$ to $2$. Identify the coordinates of the vertex and the x-intercepts
+        based only on these 5 calculated points.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = x^2 - 4
+          xMin: -2
+          xMax: 2
+          showVertex: true
+          showIntercepts: true
+      finalAnswer: 'Table:
+
+        x: -2, -1, 0, 1, 2
+
+        y: 0, -3, -4, -3, 0
+
+        Key Features: The vertex (minimum point) is at (0, -4). The x-intercepts (where y=0) are at x = -2 and x = 2.'
+      stepByStepGuideline:
+      - 'Step 1: Substitute the required x-values (-2, -1, 0, 1, 2) into the equation $y = x^2 - 4$.'
+      - 'Step 2: Calculate the y-values: $y(-2) = 0$, $y(-1) = -3$, $y(0) = -4$, $y(1) = -3$, $y(2) = 0$.'
+      - 'Step 3: The vertex is the point where the direction changes and is the lowest point in this upward-opening parabola,
+        (0, -4).'
+      - 'Step 4: The x-intercepts are the points where y=0, which are (-2, 0) and (2, 0).'
+      id: q9-5
+      questionGroup: q9
+- id: quadratic-equations-node-10
+  nodeNumber: 10
+  title: Vertex, Axis of Symmetry, and Intercepts
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabolaGraph
+    preWrittenQuestions:
+    - problemText: 'For the quadratic function $y = 2x^2 - 8x + 6$, determine:
+
+        (a) The equation of the axis of symmetry.
+
+        (b) The coordinates of the vertex. State whether the vertex is a minimum or a maximum point.'
+      avatarIntro: Welcome! Understanding how to find the vertex and axis of symmetry is crucial for graphing and analyzing
+        parabolas. Let's start with this calculation.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = 2x^2 - 8x + 6
+          showVertex: true
+          showAxisOfSymmetry: true
+          showIntercepts: false
+      finalAnswer: '(a) Axis of symmetry: $x = 2$
+
+        (b) Vertex: $(2, -2)$. Since $a=2 > 0$, the parabola opens upward, so the vertex is a minimum point.'
+      stepByStepGuideline:
+      - 'Identify the coefficients $a, b, c$: $a=2$, $b=-8$, $c=6$.'
+      - 'Calculate the axis of symmetry using the formula $x = -b/(2a)$: $x = -(-8) / (2 \times 2) = 8 / 4 = 2$.'
+      - 'Substitute the x-coordinate of the axis of symmetry ($x=2$) back into the equation to find the y-coordinate of the
+        vertex: $y = 2(2)^2 - 8(2) + 6 = 8 - 16 + 6 = -2$. The vertex is $(2, -2)$.'
+      - 'Determine if the vertex is a minimum or maximum: Since $a=2$ is positive, the parabola opens upward, meaning the
+        vertex is a minimum point.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: Find all key features for the parabola defined by $y = x^2 + 2x + 5$. This includes the axis of symmetry,
+        the vertex, the y-intercept, and any x-intercepts.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = x^2 + 2x + 5
+          showVertex: true
+          showAxisOfSymmetry: true
+          showIntercepts: true
+      finalAnswer: 'Axis of Symmetry: $x = -1$
+
+        Vertex: $(-1, 4)$
+
+        y-intercept: $(0, 5)$
+
+        x-intercepts: None (No real roots)'
+      stepByStepGuideline:
+      - 'Identify coefficients: $a=1, b=2, c=5$.'
+      - 'Calculate the axis of symmetry: $x = -b/(2a) = -2 / (2 \times 1) = -1$.'
+      - 'Calculate the vertex by substituting $x=-1$: $y = (-1)^2 + 2(-1) + 5 = 1 - 2 + 5 = 4$. Vertex is $(-1, 4)$.'
+      - 'Find the y-intercept by setting $x=0$: $y = 5$. The y-intercept is $(0, 5)$.'
+      - Find the x-intercepts by solving $x^2 + 2x + 5 = 0$. Calculate the discriminant $D = b^2 - 4ac = 2^2 - 4(1)(5) = 4
+        - 20 = -16$. Since the discriminant is negative, there are no real x-intercepts.
+      id: q10-2
+      questionGroup: q10
+    - problemText: Determine all intercepts (x-intercepts and y-intercept) for the downward-opening parabola defined by the
+        equation $y = -x^2 + 2x + 3$.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = -x^2 + 2x + 3
+          showVertex: false
+          showAxisOfSymmetry: false
+          showIntercepts: true
+      finalAnswer: 'y-intercept: $(0, 3)$
+
+        x-intercepts: $(-1, 0)$ and $(3, 0)$'
+      stepByStepGuideline:
+      - 'Find the y-intercept by setting $x=0$: $y = -(0)^2 + 2(0) + 3 = 3$. The y-intercept is $(0, 3)$.'
+      - 'Find the x-intercepts by setting $y=0$: $-x^2 + 2x + 3 = 0$.'
+      - 'Multiply by -1 to simplify factoring: $x^2 - 2x - 3 = 0$.'
+      - 'Factor the quadratic equation: $(x - 3)(x + 1) = 0$.'
+      - 'Apply the Zero Product Property: $x = 3$ or $x = -1$. The x-intercepts are $(3, 0)$ and $(-1, 0)$.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'The function $y = x^2 - 4x + 4$ results in a parabola that touches the x-axis at exactly one point.
+
+        (a) Find the equation of the axis of symmetry.
+
+        (b) Calculate the coordinates of the vertex.'
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = x^2 - 4x + 4
+          showVertex: true
+          showAxisOfSymmetry: true
+          showIntercepts: false
+      finalAnswer: '(a) Axis of symmetry: $x = 2$
+
+        (b) Vertex: $(2, 0)$'
+      stepByStepGuideline:
+      - Identify coefficients $a=1, b=-4, c=4$.
+      - 'Calculate the axis of symmetry using $x = -b/(2a)$: $x = -(-4) / (2 \times 1) = 4 / 2 = 2$.'
+      - 'Calculate the y-coordinate of the vertex by substituting $x=2$: $y = (2)^2 - 4(2) + 4 = 4 - 8 + 4 = 0$.'
+      - 'State the vertex coordinates: $(2, 0)$.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: 'Analyze the parabola defined by $y = x^2 - 4x + 3$. Identify the following four key features:
+
+        (a) Axis of symmetry equation.
+
+        (b) Vertex coordinates.
+
+        (c) y-intercept coordinates.
+
+        (d) x-intercept coordinates.'
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = x^2 - 4x + 3
+          showVertex: true
+          showAxisOfSymmetry: true
+          showIntercepts: true
+      finalAnswer: '(a) $x = 2$
+
+        (b) $(2, -1)$
+
+        (c) $(0, 3)$
+
+        (d) $(1, 0)$ and $(3, 0)$'
+      stepByStepGuideline:
+      - Identify coefficients $a=1, b=-4, c=3$.
+      - '(a) Calculate the axis of symmetry: $x = -b/(2a) = -(-4) / (2 \times 1) = 2$.'
+      - '(b) Calculate the vertex: Substitute $x=2$ into the equation: $y = (2)^2 - 4(2) + 3 = 4 - 8 + 3 = -1$. Vertex is
+        $(2, -1)$.'
+      - '(c) Find the y-intercept: Set $x=0$. $y = 0^2 - 4(0) + 3 = 3$. y-intercept is $(0, 3)$.'
+      - '(d) Find the x-intercepts: Set $y=0$. Solve $x^2 - 4x + 3 = 0$. Factor: $(x - 3)(x - 1) = 0$. The x-intercepts are
+        $(3, 0)$ and $(1, 0)$.'
+      id: q10-5
+      questionGroup: q10
+- id: quadratic-equations-node-11
+  nodeNumber: 11
+  title: Understanding Roots Graphically
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabolaGraph
+    preWrittenQuestions:
+    - problemText: The function $y = x^2 + 5x + 4$ is graphed below. The roots of the quadratic equation are the values of
+        $x$ when $y=0$. Find the roots algebraically by factoring the equation $x^2 + 5x + 4 = 0$, and state the coordinates
+        of the corresponding x-intercepts.
+      avatarIntro: Understanding how algebraic solutions translate to graphical features is key. Let's practice connecting
+        factoring to finding x-intercepts!
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: 5
+          c: 4
+          showIntercepts: true
+          showRoots: true
+      finalAnswer: The roots are $x = -4$ and $x = -1$. These correspond to the x-intercepts at $(-4, 0)$ and $(-1, 0)$.
+      stepByStepGuideline:
+      - 'Set the function equal to zero: $x^2 + 5x + 4 = 0$.'
+      - 'Factor the quadratic expression: $(x + 4)(x + 1) = 0$.'
+      - 'Apply the Zero Product Property (ZPP) to find the roots: $x + 4 = 0$ or $x + 1 = 0$.'
+      - 'Solve for $x$: $x = -4$ or $x = -1$.'
+      - The roots are the x-coordinates of the x-intercepts, so the points are $(-4, 0)$ and $(-1, 0)$.
+      id: q11-1
+      questionGroup: q11
+    - problemText: Analyze the graph of the function $y = x^2 - 3x + 4$. Based on the position of the parabola relative to
+        the x-axis, determine how many real roots the equation $x^2 - 3x + 4 = 0$ has. Explain your reasoning.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: -3
+          c: 4
+          showIntercepts: false
+          showRoots: false
+      finalAnswer: Zero real roots. The parabola opens upward and its vertex is above the x-axis (at (1.5, 1.75)). Since the
+        parabola never intersects or touches the x-axis, there are no x-intercepts, meaning there are no real solutions (roots)
+        to the equation $x^2 - 3x + 4 = 0$.
+      stepByStepGuideline:
+      - Recall that real roots correspond to the x-intercepts (where $y=0$).
+      - 'Examine the graph: Note the direction the parabola opens (upward, since $a > 0$).'
+      - Observe the position of the vertex (the minimum point). The vertex is clearly above the x-axis.
+      - 'Conclude: Because the entire parabola lies above the x-axis, it never crosses $y=0$. Therefore, there are zero real
+        roots.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: The parabola defined by $y = -x^2 - 4x - 4$ touches the x-axis at exactly one point. This point is also
+        the vertex. What is the coordinate of this single x-intercept? What is the corresponding algebraic root (solution)
+        of the equation $-x^2 - 4x - 4 = 0$?
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: -1
+          b: -4
+          c: -4
+          showIntercepts: true
+          showRoots: true
+      finalAnswer: The single x-intercept is $(-2, 0)$. The corresponding algebraic root is $x = -2$.
+      stepByStepGuideline:
+      - 'Set the equation to zero: $-x^2 - 4x - 4 = 0$.'
+      - 'Multiply by -1 to simplify factoring: $x^2 + 4x + 4 = 0$.'
+      - 'Factor the perfect square trinomial: $(x + 2)(x + 2) = 0$ or $(x + 2)^2 = 0$.'
+      - 'Solve for $x$: $x + 2 = 0$, so $x = -2$. This is a repeated root.'
+      - Since there is only one distinct root, the parabola touches the x-axis at a single point, which is the vertex. The
+        coordinate is $(-2, 0)$.
+      id: q11-3
+      questionGroup: q11
+    - problemText: The graph of $y = -x^2 + x + 2$ clearly shows two x-intercepts. Algebraically find the two roots of the
+        equation $-x^2 + x + 2 = 0$. Explain how these roots relate to the x-intercepts shown on the graph.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: -1
+          b: 1
+          c: 2
+          showIntercepts: true
+          showRoots: true
+      finalAnswer: The roots are $x = -1$ and $x = 2$. These roots are the x-coordinates of the points where the graph crosses
+        the x-axis, specifically at the intercepts $(-1, 0)$ and $(2, 0)$.
+      stepByStepGuideline:
+      - 'Set the function to zero: $-x^2 + x + 2 = 0$.'
+      - 'Multiply by -1 to make the leading term positive: $x^2 - x - 2 = 0$.'
+      - 'Factor the quadratic expression: $(x - 2)(x + 1) = 0$.'
+      - 'Apply ZPP: $x - 2 = 0$ or $x + 1 = 0$.'
+      - The roots are $x = 2$ and $x = -1$.
+      - 'The roots are the values of $x$ for which $y=0$. Graphically, these correspond exactly to the coordinates of the
+        x-intercepts: $(-1, 0)$ and $(2, 0)$.'
+      id: q11-4
+      questionGroup: q11
+    - problemText: Consider the quadratic function $y = -x^2 - 4$. If you were to solve the equation $-x^2 - 4 = 0$ algebraically,
+        you would find no real solutions. Explain how the graph visually confirms that the equation has zero real roots, focusing
+        on the direction of opening and the position of the vertex.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: -1
+          b: 0
+          c: -4
+          showIntercepts: false
+          showRoots: false
+      finalAnswer: Zero real roots. The parabola opens downward (because $a=-1$). Its vertex is at $(0, -4)$, which is below
+        the x-axis. Since the parabola opens downward from a point already below the x-axis, it will never rise high enough
+        to cross or touch the x-axis ($y=0$). Thus, there are no x-intercepts, confirming zero real roots.
+      stepByStepGuideline:
+      - 'Identify the key features from the equation: $a=-1$ means the parabola opens downward. The vertex is $(0, -4)$.'
+      - 'Recall the relationship: Real roots only exist where the graph crosses the x-axis ($y=0$).'
+      - 'Analyze the graph''s position: Since the maximum point (vertex) is at $y=-4$, and the rest of the parabola goes further
+        down, the graph remains entirely in the negative y-region.'
+      - 'Conclusion: Because the graph never reaches $y=0$, there are no x-intercepts, and thus zero real roots.'
+      id: q11-5
+      questionGroup: q11
+- id: quadratic-equations-node-12
+  nodeNumber: 12
+  title: Estimating and Verifying Solutions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabolaGraph
+    preWrittenQuestions:
+    - problemText: The graph of the quadratic function $y = x^2 + 2x - 8$ is shown below. Estimate the solutions to the equation
+        $x^2 + 2x - 8 = 0$ based on the graph, and then verify your estimate algebraically.
+      avatarIntro: Mastering quadratic functions means connecting graphs and algebra! Use the visual aid to estimate the roots
+        first, then confirm them precisely.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: 2
+          c: -8
+          showIntercepts: true
+          minX: -6
+          maxX: 4
+      finalAnswer: 'Graphical estimate: x = -4 and x = 2. Verification: (x + 4)(x - 2) = 0, giving exact solutions x = -4
+        or x = 2.'
+      stepByStepGuideline:
+      - 'Step 1: Locate the x-intercepts on the graph. These are the points where the parabola crosses the x-axis, representing
+        the solutions when y = 0.'
+      - 'Step 2: Estimate the coordinates of these intercepts. The graph clearly shows intercepts at x = -4 and x = 2.'
+      - 'Step 3: Verify the solutions algebraically by solving $x^2 + 2x - 8 = 0$. Factor the expression: $(x + 4)(x - 2)
+        = 0$.'
+      - 'Step 4: Set each factor equal to zero to find the exact solutions: $x + 4 = 0 \implies x = -4$ and $x - 2 = 0 \implies
+        x = 2$. The algebraic solutions match the graphical estimate.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: Using the graph of the function $y = 2x^2 - 8x$, determine the range of $x$ values for which the inequality
+        $y < 0$ is true.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 2
+          b: -8
+          c: 0
+          showIntercepts: true
+          minX: -1
+          maxX: 5
+      finalAnswer: $0 < x < 4$
+      stepByStepGuideline:
+      - 'Step 1: Identify the roots (x-intercepts) of the function $y = 2x^2 - 8x$. Algebraically, $2x(x - 4) = 0$, so the
+        roots are $x = 0$ and $x = 4$. This is confirmed by the graph.'
+      - 'Step 2: The inequality $y < 0$ asks for the region where the graph lies strictly below the x-axis.'
+      - 'Step 3: Since the parabola opens upward (a=2 > 0), the section below the x-axis is found between the two roots.'
+      - 'Step 4: Write the inequality based on the roots: $y < 0$ when $0 < x < 4$.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: The function $y = -x^2 + 4$ is graphed below. Determine the interval of $x$ values for which $y > 0$.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: -1
+          b: 0
+          c: 4
+          showIntercepts: true
+          minX: -4
+          maxX: 4
+      finalAnswer: $-2 < x < 2$
+      stepByStepGuideline:
+      - 'Step 1: Determine the roots of the equation $-x^2 + 4 = 0$. This gives $x^2 = 4$, so $x = -2$ and $x = 2$. These
+        are the x-intercepts.'
+      - 'Step 2: The inequality $y > 0$ asks for the region where the graph lies strictly above the x-axis.'
+      - 'Step 3: Since the parabola opens downward (a = -1 < 0), the region above the x-axis is found between the two roots.'
+      - 'Step 4: The interval is defined by the roots: $y > 0$ when $-2 < x < 2$.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: A student estimates the roots of $x^2 - 9 = 0$ by looking at the graph of $y = x^2 - 9$. If the student
+        estimates the roots are $x = -3.1$ and $x = 2.9$, compare the accuracy of this graphical estimate to the exact algebraic
+        solution.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: 1
+          b: 0
+          c: -9
+          showIntercepts: true
+          minX: -5
+          maxX: 5
+      finalAnswer: Algebraic solutions are $x = -3$ and $x = 3$. The graphical estimate is close but not exact. Graphical
+        methods provide reasonable approximations, while algebraic methods provide exact solutions.
+      stepByStepGuideline:
+      - 'Step 1: Algebraically solve the equation $x^2 - 9 = 0$. Factoring gives $(x - 3)(x + 3) = 0$.'
+      - 'Step 2: Determine the exact solutions: $x = 3$ and $x = -3$.'
+      - 'Step 3: Compare the student''s graphical estimate ($x = -3.1$ and $x = 2.9$) to the exact solutions.'
+      - 'Step 4: Conclude that the graphical estimate is an approximation. While graphs are useful for visualizing solutions
+        and finding approximate answers quickly, algebraic methods are required to find the exact values.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: Consider the function $y = -x^2 - 5x - 6$. Based on the provided graph, state the values of $x$ for which
+        $y < 0$.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          a: -1
+          b: -5
+          c: -6
+          showIntercepts: true
+          minX: -6
+          maxX: 1
+      finalAnswer: $x < -3$ or $x > -2$
+      stepByStepGuideline:
+      - 'Step 1: Find the x-intercepts (roots) where $y = 0$. Solve $-x^2 - 5x - 6 = 0$, or $x^2 + 5x + 6 = 0$. Factoring
+        gives $(x + 3)(x + 2) = 0$. The roots are $x = -3$ and $x = -2$.'
+      - 'Step 2: The inequality $y < 0$ asks for the regions where the graph is below the x-axis.'
+      - 'Step 3: Since the parabola opens downward (a = -1 < 0), the graph goes below the x-axis outside of the roots.'
+      - 'Step 4: Define the regions outside the roots: $x < -3$ or $x > -2$.'
+      id: q12-5
+      questionGroup: q12
+- id: quadratic-equations-node-13
+  nodeNumber: 13
+  title: Maximum and Minimum Values
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabolaGraph
+    preWrittenQuestions:
+    - problemText: Find the minimum value of the function $y = x^2 + 8x + 10$. At what value of $x$ does this minimum occur?
+        Provide the coordinates $(x, y)$ of the vertex.
+      avatarIntro: Understanding optimization is key in mathematics. Use the vertex formula to efficiently find the lowest
+        point of this parabola.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = x^2 + 8x + 10
+          showVertex: true
+          highlightVertex: true
+          xMin: -8
+          xMax: 0
+          yMin: -8
+          yMax: 10
+      finalAnswer: The minimum value is -6, occurring at x = -4. The vertex coordinates are (-4, -6).
+      stepByStepGuideline:
+      - 'Identify the coefficients: a = 1, b = 8, c = 10. Since a > 0, the function has a minimum value.'
+      - 'Calculate the x-coordinate of the vertex using the formula $x = \frac{-b}{2a}$: $x = \frac{-8}{2(1)} = -4$.'
+      - 'Substitute the x-coordinate back into the function to find the minimum value (the y-coordinate): $y = (-4)^2 + 8(-4)
+        + 10 = 16 - 32 + 10 = -6$.'
+      - The minimum value is -6, and it occurs at x = -4.
+      id: q13-1
+      questionGroup: q13
+    - problemText: A fireworks display launches a mortar shell. Its height $h$ (in meters) above the ground $t$ seconds after
+        launch is modeled by the equation $h(t) = -5t^2 + 20t + 1$. What is the maximum height reached by the mortar shell,
+        and how long does it take to reach this height?
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = -5x^2 + 20x + 1
+          showVertex: true
+          highlightVertex: true
+          xLabel: Time (t)
+          yLabel: Height (h)
+          xMin: 0
+          xMax: 5
+          yMin: 0
+          yMax: 25
+      finalAnswer: The maximum height reached is 21 meters, occurring 2 seconds after launch.
+      stepByStepGuideline:
+      - 'Identify the coefficients: a = -5, b = 20, c = 1. Since a < 0, the function has a maximum value.'
+      - 'Calculate the time (t) at which the maximum occurs using $t = \frac{-b}{2a}$: $t = \frac{-20}{2(-5)} = \frac{-20}{-10}
+        = 2$ seconds.'
+      - 'Substitute $t=2$ into the height function to find the maximum height (h): $h(2) = -5(2)^2 + 20(2) + 1 = -5(4) + 40
+        + 1 = -20 + 41 = 21$ meters.'
+      - The maximum height is 21 meters.
+      id: q13-2
+      questionGroup: q13
+    - problemText: A factory determines that the production cost $C$ (in thousands of dollars) for manufacturing $q$ units
+        of a product is given by the function $C(q) = 0.5q^2 - 10q + 70$. Find the minimum production cost and the number
+        of units that must be produced to achieve this minimum cost.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = 0.5x^2 - 10x + 70
+          showVertex: true
+          highlightVertex: true
+          xLabel: Units (q)
+          yLabel: Cost (C)
+          xMin: 0
+          xMax: 20
+          yMin: 10
+          yMax: 80
+      finalAnswer: The minimum cost is 20 thousand dollars, achieved when 10 units are produced.
+      stepByStepGuideline:
+      - 'Identify the coefficients: a = 0.5, b = -10, c = 70. Since a > 0, the function has a minimum cost.'
+      - 'Calculate the quantity (q) that yields the minimum cost using $q = \frac{-b}{2a}$: $q = \frac{-(-10)}{2(0.5)} = \frac{10}{1}
+        = 10$ units.'
+      - 'Substitute $q=10$ into the cost function to find the minimum cost (C): $C(10) = 0.5(10)^2 - 10(10) + 70 = 0.5(100)
+        - 100 + 70 = 50 - 100 + 70 = 20$.'
+      - The minimum cost is 20 (thousand dollars).
+      id: q13-3
+      questionGroup: q13
+    - problemText: Determine the exact maximum value of the quadratic function $f(x) = -2x^2 - 6x + 5$.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = -2x^2 - 6x + 5
+          showVertex: true
+          highlightVertex: true
+          xMin: -4
+          xMax: 2
+          yMin: 0
+          yMax: 12
+      finalAnswer: The maximum value is 9.5 (or 19/2).
+      stepByStepGuideline:
+      - 'Identify the coefficients: a = -2, b = -6, c = 5. Since a < 0, the function has a maximum value.'
+      - 'Calculate the x-coordinate of the vertex: $x = \frac{-b}{2a} = \frac{-(-6)}{2(-2)} = \frac{6}{-4} = -1.5$ (or $-3/2$).'
+      - 'Substitute $x=-1.5$ back into the function to find the maximum value: $f(-1.5) = -2(-1.5)^2 - 6(-1.5) + 5$.'
+      - 'Calculate the result: $f(-1.5) = -2(2.25) + 9 + 5 = -4.5 + 14 = 9.5$.'
+      - The maximum value is 9.5.
+      id: q13-4
+      questionGroup: q13
+    - problemText: A rectangular area is to be fenced off along the side of a large barn. If 60 meters of fencing material
+        are available for the three sides (two widths, one length), the area $A$ (in square meters) as a function of the width
+        $w$ (in meters) is given by $A(w) = -2w^2 + 60w$. What is the greatest possible area that can be enclosed?
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          equation: y = -2x^2 + 60x
+          showVertex: true
+          highlightVertex: true
+          xLabel: Width (w)
+          yLabel: Area (A)
+          xMin: 0
+          xMax: 30
+          yMin: 0
+          yMax: 500
+      finalAnswer: The greatest possible area is 450 square meters.
+      stepByStepGuideline:
+      - 'Identify the coefficients: a = -2, b = 60, c = 0. Since a < 0, the function has a maximum area.'
+      - 'Calculate the width ($w$) that maximizes the area using $w = \frac{-b}{2a}$: $w = \frac{-60}{2(-2)} = \frac{-60}{-4}
+        = 15$ meters.'
+      - 'Substitute $w=15$ into the area function to find the maximum area ($A$): $A(15) = -2(15)^2 + 60(15)$.'
+      - 'Calculate the result: $A(15) = -2(225) + 900 = -450 + 900 = 450$.'
+      - The maximum area is 450 square meters.
+      id: q13-5
+      questionGroup: q13
+- id: quadratic-equations-node-14
+  nodeNumber: 14
+  title: Area and Perimeter Optimization
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A builder is designing a rectangular patio that must have an area of 60 square meters. The design requires
+        the length of the patio to be 4 meters greater than its width. Find the exact dimensions (length and width) of the
+        patio.
+      avatarIntro: These problems require careful translation of geometric constraints into quadratic equations. Remember
+        to reject any solutions that result in negative dimensions!
+      mathTool: null
+      finalAnswer: Width = 6 m, Length = 10 m
+      stepByStepGuideline:
+      - 'Step 1: Define variables. Let W be the width and L be the length. Since L is 4 meters greater than W, L = W + 4.'
+      - 'Step 2: Set up the area equation. Area = L * W. We are given Area = 60. So, W(W + 4) = 60.'
+      - 'Step 3: Translate to a standard quadratic equation: W² + 4W - 60 = 0.'
+      - 'Step 4: Factor the quadratic equation: (W + 10)(W - 6) = 0.'
+      - 'Step 5: Solve for W. W = -10 or W = 6. Since width must be positive, reject W = -10.'
+      - 'Step 6: Determine the dimensions. Width (W) = 6 m. Length (L) = 6 + 4 = 10 m.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: A community garden plot is to be enclosed using 80 meters of flexible fencing material. If the plot must
+        be rectangular, what dimensions will maximize the area of the garden? What is the maximum possible area?
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          function: y = -x^2 + 40x
+          minX: 0
+          maxX: 40
+          minY: 0
+          maxY: 450
+      finalAnswer: 'Dimensions: 20 m by 20 m. Maximum Area: 400 m²'
+      stepByStepGuideline:
+      - 'Step 1: Set up the perimeter constraint. Perimeter P = 80 m. Let the width be W and the length be L. 2(L + W) = 80,
+        so L + W = 40, or L = 40 - W.'
+      - 'Step 2: Express Area (A) as a function of the width (W). A(W) = W * L = W(40 - W) = -W² + 40W.'
+      - 'Step 3: Find the width that maximizes the area using the vertex formula W = -b / (2a). For A(W) = -1W² + 40W, a =
+        -1 and b = 40.'
+      - 'Step 4: Calculate W: W = -40 / (2 * -1) = 20 meters.'
+      - 'Step 5: Calculate L: L = 40 - 20 = 20 meters.'
+      - 'Step 6: Calculate the maximum area: A = 20 * 20 = 400 m².'
+      id: q14-2
+      questionGroup: q14
+    - problemText: A photograph measuring 8 cm by 10 cm is mounted onto a rectangular cardboard backing. The cardboard creates
+        a uniform border of width $x$ around the photo. If the total area of the cardboard (including the photo) is 120 cm²,
+        what is the width $x$ of the border?
+      mathTool: null
+      finalAnswer: The border width is 1 cm.
+      stepByStepGuideline:
+      - 'Step 1: Determine the total dimensions of the cardboard. If the border width is $x$, the total width is 8 + 2x, and
+        the total length is 10 + 2x.'
+      - 'Step 2: Set up the total area equation. Total Area = (8 + 2x)(10 + 2x). We are given Total Area = 120.'
+      - 'Step 3: Expand the equation: (8 + 2x)(10 + 2x) = 80 + 20x + 16x + 4x² = 120.'
+      - 'Step 4: Simplify and rearrange into a standard quadratic form: 4x² + 36x + 80 = 120. This simplifies to 4x² + 36x
+        - 40 = 0.'
+      - 'Step 5: Divide the equation by 4 to simplify coefficients: x² + 9x - 10 = 0.'
+      - 'Step 6: Factor the equation: (x + 10)(x - 1) = 0.'
+      - 'Step 7: Solve for x. x = -10 or x = 1. Since the border width must be positive, reject x = -10. The width of the
+        border is 1 cm.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: A construction crew is pouring a rectangular concrete deck around a swimming pool. The area of the deck
+        must be 96 square meters. If the length of the deck is 4 meters longer than the width, calculate the width and length
+        of the deck.
+      mathTool: null
+      finalAnswer: Width = 8 m, Length = 12 m
+      stepByStepGuideline:
+      - 'Step 1: Define variables. Let W be the width. The length L = W + 4.'
+      - 'Step 2: Use the area formula: W * L = 96. Substitute L: W(W + 4) = 96.'
+      - 'Step 3: Form the quadratic equation: W² + 4W - 96 = 0.'
+      - 'Step 4: Factor the quadratic equation. Look for factors of 96 that differ by 4 (12 and 8): (W + 12)(W - 8) = 0.'
+      - 'Step 5: Solve for W. W = -12 or W = 8. Reject the negative solution.'
+      - 'Step 6: State the dimensions. Width (W) = 8 m. Length (L) = 8 + 4 = 12 m.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: A farmer has 120 meters of fencing available to create a large rectangular pasture and divide it into two
+        equal adjacent sections using a fence parallel to the width. Find the dimensions (overall length and overall width)
+        that maximize the total area of the pasture.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          function: y = -1.5x^2 + 60x
+          minX: 0
+          maxX: 40
+          minY: 0
+          maxY: 650
+      finalAnswer: Overall Width = 20 m, Overall Length = 30 m
+      stepByStepGuideline:
+      - 'Step 1: Define variables and total fencing used. Let W be the width and L be the length. The setup requires 3 segments
+        of width (W) and 2 segments of length (L). Total Fence: 3W + 2L = 120.'
+      - 'Step 2: Express Length (L) in terms of Width (W): 2L = 120 - 3W, so L = 60 - 1.5W.'
+      - 'Step 3: Express Area (A) as a function of W: A(W) = W * L = W(60 - 1.5W) = -1.5W² + 60W.'
+      - 'Step 4: Find the width (W) that maximizes the area using the vertex formula W = -b / (2a). Here, a = -1.5 and b =
+        60.'
+      - 'Step 5: Calculate W: W = -60 / (2 * -1.5) = -60 / -3 = 20 meters.'
+      - 'Step 6: Calculate L: L = 60 - 1.5(20) = 60 - 30 = 30 meters. (Overall Width = 20 m, Overall Length = 30 m).'
+      id: q14-5
+      questionGroup: q14
+- id: quadratic-equations-node-15
+  nodeNumber: 15
+  title: Projectile Motion and Height-Time
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: parabolaGraph
+    preWrittenQuestions:
+    - problemText: "A ball is thrown upward from a height of 5 meters with an initial velocity of 20 m/s. The height $h$ (in\
+        \ meters) of the ball after $t$ seconds is modeled by the function $h(t) = -5t^2 + 20t + 5$. \n\n(a) Determine the\
+        \ maximum height the ball reaches.\n(b) Calculate the time it takes for the ball to hit the ground, rounding your\
+        \ answer to two decimal places."
+      avatarIntro: Ready to tackle projectile motion? Remember that the maximum height is found at the vertex of the parabolic
+        path.
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          function: -5*x^2 + 20*x + 5
+          xMin: 0
+          xMax: 5
+          yMin: 0
+          yMax: 30
+      finalAnswer: (a) 25 meters (b) 4.24 seconds
+      stepByStepGuideline:
+      - 'Part (a): The maximum height occurs at the vertex $t = -v/(2a)$. Given $h(t) = -5t^2 + 20t + 5$, we have $a=-5$ and
+        $v=20$.'
+      - 'Calculate the time to reach maximum height: $t = -20 / (2 \times -5) = 2$ seconds.'
+      - 'Substitute $t=2$ back into the height function: $h(2) = -5(2^2) + 20(2) + 5 = -20 + 40 + 5 = 25$ meters.'
+      - 'Part (b): The ball hits the ground when $h(t) = 0$. Solve the equation $-5t^2 + 20t + 5 = 0$. Divide by -5 to simplify:
+        $t^2 - 4t - 1 = 0$.'
+      - 'Use the quadratic formula $t = [-b \pm \sqrt{b^2 - 4ac}] / 2a$: $t = [4 \pm \sqrt{(-4)^2 - 4(1)(-1)}] / 2(1) = [4
+        \pm \sqrt{16 + 4}] / 2 = (4 \pm \sqrt{20}) / 2$.'
+      - 'Calculate the positive root: $t \approx (4 + 4.472) / 2 = 8.472 / 2 \approx 4.236$ seconds.'
+      - Rounding to two decimal places, the landing time is 4.24 seconds (rejecting the negative time root).
+      id: q15-1
+      questionGroup: q15
+    - problemText: 'A professional diver jumps upward from a platform 10 meters high. Her initial upward velocity is 15 m/s.
+        The height $h$ (in meters) of the diver above the water is given by $h(t) = -4.9t^2 + 15t + 10$.
+
+
+        (a) What is the maximum height the diver reaches above the water?
+
+        (b) How long does it take (in seconds) for the diver to hit the water? Round your answers to two decimal places.'
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          function: -4.9*x^2 + 15*x + 10
+          xMin: 0
+          xMax: 4
+          yMin: 0
+          yMax: 25
+      finalAnswer: (a) 21.48 meters (b) 3.62 seconds
+      stepByStepGuideline:
+      - 'Part (a): Find the time at the vertex: $t = -v/(2a)$. Here $a = -4.9$ and $v = 15$. $t = -15 / (2 \times -4.9) \approx
+        1.5306$ seconds.'
+      - 'Calculate the maximum height by substituting this time: $h(1.5306) = -4.9(1.5306)^2 + 15(1.5306) + 10 \approx 21.48$
+        meters.'
+      - 'Part (b): Set $h(t) = 0$ to find the landing time: $-4.9t^2 + 15t + 10 = 0$.'
+      - 'Use the quadratic formula: $t = [-15 \pm \sqrt{15^2 - 4(-4.9)(10)}] / (2 \times -4.9) = [-15 \pm \sqrt{225 + 196}]
+        / -9.8 = [-15 \pm \sqrt{421}] / -9.8$.'
+      - 'Calculate the positive time root: $t \approx (-15 - 20.518) / -9.8 \approx 3.624$ seconds.'
+      - Rounding to two decimal places, the diver hits the water after 3.62 seconds (reject negative time).
+      id: q15-2
+      questionGroup: q15
+    - problemText: 'A model rocket is launched vertically from the ground ($h_0 = 0$) with an initial velocity of 30 m/s.
+        Its height $h$ (in meters) after $t$ seconds is modeled by $h(t) = -5t^2 + 30t$.
+
+
+        (a) Determine the maximum height the rocket achieves during its flight.
+
+        (b) How long is the rocket in the air before it returns to the ground?'
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          function: -5*x^2 + 30*x
+          xMin: 0
+          xMax: 7
+          yMin: 0
+          yMax: 50
+      finalAnswer: (a) 45 meters (b) 6 seconds
+      stepByStepGuideline:
+      - 'Part (a): Find the time at the vertex: $t = -v/(2a)$. Here $a = -5$ and $v = 30$. $t = -30 / (2 \times -5) = 3$ seconds.'
+      - 'Calculate the maximum height by substituting this time: $h(3) = -5(3^2) + 30(3) = -45 + 90 = 45$ meters.'
+      - 'Part (b): The rocket returns to the ground when $h(t) = 0$. Solve $-5t^2 + 30t = 0$.'
+      - 'Factor the equation: $-5t(t - 6) = 0$.'
+      - The solutions are $t = 0$ (launch time) and $t = 6$. The time the rocket is in the air before returning to the ground
+        is 6 seconds.
+      id: q15-3
+      questionGroup: q15
+    - problemText: 'An object is dropped from the top of a cliff 50 meters high. Since the object is dropped (not thrown),
+        the initial velocity ($v$) is 0. Using a gravitational factor $a=10$, the height is modeled by $h(t) = -10t^2 + 50$.
+
+
+        (a) What is the maximum height of the object?
+
+        (b) Determine the time it takes for the object to land at the base of the cliff. Round your answer to two decimal
+        places.'
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          function: -10*x^2 + 50
+          xMin: 0
+          xMax: 3
+          yMin: 0
+          yMax: 60
+      finalAnswer: (a) 50 meters (b) 2.24 seconds
+      stepByStepGuideline:
+      - 'Part (a): Since the object is dropped and not thrown upward ($v=0$), the height decreases immediately. The maximum
+        height reached is the initial height, $h(0) = 50$ meters.'
+      - 'Part (b): The object lands when $h(t) = 0$. Solve $-10t^2 + 50 = 0$.'
+      - 'Rearrange the equation: $10t^2 = 50$.'
+      - 'Divide by 10: $t^2 = 5$.'
+      - 'Take the square root and reject the negative solution: $t = \sqrt{5} \approx 2.236$ seconds.'
+      - Rounding to two decimal places, the landing time is 2.24 seconds.
+      id: q15-4
+      questionGroup: q15
+    - problemText: 'A stone is thrown upward from the top of a building 20 meters tall with an initial velocity of 25 m/s.
+        The height $h$ (in meters) of the stone is modeled by $h(t) = -4.9t^2 + 25t + 20$.
+
+
+        (a) Find the maximum height the stone reaches above the ground.
+
+        (b) Find the time $t$ (in seconds) when the stone hits the ground. Round your answers to two decimal places.'
+      mathTool:
+        toolName: parabolaGraph
+        parameters:
+          function: -4.9*x^2 + 25*x + 20
+          xMin: 0
+          xMax: 6
+          yMin: 0
+          yMax: 60
+      finalAnswer: (a) 51.89 meters (b) 5.81 seconds
+      stepByStepGuideline:
+      - 'Part (a): Calculate the time to reach maximum height using $t = -v/(2a)$. Here $a = -4.9$ and $v = 25$. $t = -25
+        / (2 \times -4.9) \approx 2.551$ seconds.'
+      - 'Substitute this time into the height function: $h(2.551) = -4.9(2.551)^2 + 25(2.551) + 20 \approx 51.887$ meters.'
+      - Rounding to two decimal places, the maximum height is 51.89 meters.
+      - 'Part (b): Set $h(t) = 0$: $-4.9t^2 + 25t + 20 = 0$.'
+      - 'Use the quadratic formula: $t = [-25 \pm \sqrt{25^2 - 4(-4.9)(20)}] / (2 \times -4.9) = [-25 \pm \sqrt{625 + 392}]
+        / -9.8 = [-25 \pm \sqrt{1017}] / -9.8$.'
+      - 'Calculate the positive time root: $t \approx (-25 - 31.906) / -9.8 \approx 5.8067$ seconds.'
+      - Rounding to two decimal places, the landing time is 5.81 seconds.
+      id: q15-5
+      questionGroup: q15
+- id: quadratic-equations-node-16
+  nodeNumber: 16
+  title: Number Relationships and Patterns
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: The product of the ages of two siblings, whose ages are consecutive positive integers, is 132. Find the
+        age of the older sibling.
+      avatarIntro: These problems require careful algebraic setup. Start by defining your variables clearly for the consecutive
+        numbers.
+      mathTool: null
+      finalAnswer: '12'
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Let the age of the younger sibling be $n$. Then the age of the older sibling is $n
+        + 1$. Since ages must be positive, $n > 0$.'
+      - 'Step 2: Set up the equation based on the product: $n(n + 1) = 132$.'
+      - 'Step 3: Rearrange the equation into the standard quadratic form: $n^2 + n - 132 = 0$.'
+      - 'Step 4: Factor the quadratic equation: $(n + 12)(n - 11) = 0$.'
+      - 'Step 5: Solve for n: $n = -12$ or $n = 11$.'
+      - 'Step 6: Apply the constraint. Since age must be a positive integer, reject $n = -12$. Thus, $n = 11$.'
+      - 'Step 7: Find the age of the older sibling, which is $n + 1 = 11 + 1 = 12$.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: Find two consecutive even integers such that the sum of their squares is 164. List all possible pairs of
+        integers.
+      mathTool: null
+      finalAnswer: The pairs are (8, 10) and (-10, -8).
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Let the first even integer be $n$. The next consecutive even integer is $n + 2$.'
+      - 'Step 2: Set up the equation based on the sum of squares: $n^2 + (n + 2)^2 = 164$.'
+      - 'Step 3: Expand and simplify the equation: $n^2 + (n^2 + 4n + 4) = 164$, which simplifies to $2n^2 + 4n - 160 = 0$.'
+      - 'Step 4: Divide by 2 to simplify: $n^2 + 2n - 80 = 0$.'
+      - 'Step 5: Factor the quadratic equation: $(n + 10)(n - 8) = 0$.'
+      - 'Step 6: Solve for n: $n = -10$ or $n = 8$. (Since the problem does not specify positive integers, both solutions
+        are valid if they result in even numbers, which they do.)'
+      - 'Step 7: Determine the pairs of integers: If $n = 8$, the pair is (8, 10). If $n = -10$, the pair is (-10, -8).'
+      id: q16-2
+      questionGroup: q16
+    - problemText: Find two consecutive positive odd integers such that the sum of the smaller integer and the square of the
+        larger integer is 88.
+      mathTool: null
+      finalAnswer: 7 and 9
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Let the smaller positive odd integer be $n$. The larger is $n + 2$. Since they are
+        odd, we expect $n$ to be an odd positive integer.'
+      - 'Step 2: Set up the equation: (Smaller integer) + (Square of larger integer) = 88. This gives $n + (n + 2)^2 = 88$.'
+      - 'Step 3: Expand and simplify the equation: $n + (n^2 + 4n + 4) = 88$. This simplifies to $n^2 + 5n + 4 = 88$.'
+      - 'Step 4: Rearrange into standard quadratic form: $n^2 + 5n - 84 = 0$.'
+      - 'Step 5: Factor the quadratic equation. Factors of -84 that sum to 5 are 12 and -7: $(n + 12)(n - 7) = 0$.'
+      - 'Step 6: Solve for n: $n = -12$ or $n = 7$.'
+      - 'Step 7: Apply the constraint. Since the integers must be positive and odd, reject $n = -12$. Thus, $n = 7$.'
+      - 'Step 8: The integers are $n=7$ and $n+2=9$. (Check: $7 + 9^2 = 7 + 81 = 88$).'
+      id: q16-3
+      questionGroup: q16
+    - problemText: Three consecutive positive integers are arranged such that the sum of the squares of the smallest and the
+        largest integer is 130. Determine the three integers.
+      mathTool: null
+      finalAnswer: 7, 8, and 9
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Let the three consecutive integers be $n$, $n + 1$, and $n + 2$. Since they are positive,
+        $n > 0$.'
+      - 'Step 2: Identify the smallest ($n$) and largest ($n + 2$) integers.'
+      - 'Step 3: Set up the equation: Sum of squares of the smallest and largest is 130. $n^2 + (n + 2)^2 = 130$.'
+      - 'Step 4: Expand and simplify: $n^2 + (n^2 + 4n + 4) = 130$. This simplifies to $2n^2 + 4n + 4 = 130$, or $2n^2 + 4n
+        - 126 = 0$.'
+      - 'Step 5: Divide by 2: $n^2 + 2n - 63 = 0$.'
+      - 'Step 6: Factor the quadratic equation. Factors of -63 that sum to 2 are 9 and -7: $(n + 9)(n - 7) = 0$.'
+      - 'Step 7: Solve for n: $n = -9$ or $n = 7$.'
+      - 'Step 8: Apply the constraint. Since the integers must be positive, reject $n = -9$. Thus, $n = 7$.'
+      - 'Step 9: The three integers are $n=7$, $n+1=8$, and $n+2=9$.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: A team leader notes that the number of members in Group A ($n$) and Group B ($n+1$) are consecutive positive
+        integers. The square of Group A's size is exactly 7 more than three times Group B's size. Find the size of Group A.
+      mathTool: null
+      finalAnswer: 5 members
+      stepByStepGuideline:
+      - 'Step 1: Define the variables. Group A size is $n$, and Group B size is $n + 1$. Both must be positive integers.'
+      - 'Step 2: Translate the relationship into an equation: (Square of Group A size) = 3 * (Group B size) + 7. This is $n^2
+        = 3(n + 1) + 7$.'
+      - 'Step 3: Simplify the equation: $n^2 = 3n + 3 + 7$, or $n^2 = 3n + 10$.'
+      - 'Step 4: Rearrange into standard quadratic form: $n^2 - 3n - 10 = 0$.'
+      - 'Step 5: Factor the quadratic equation. Factors of -10 that sum to -3 are -5 and 2: $(n - 5)(n + 2) = 0$.'
+      - 'Step 6: Solve for n: $n = 5$ or $n = -2$.'
+      - 'Step 7: Apply the constraint. Since group size must be a positive integer, reject $n = -2$. Thus, $n = 5$.'
+      - 'Step 8: The size of Group A is $n = 5$.'
+      id: q16-5
+      questionGroup: q16

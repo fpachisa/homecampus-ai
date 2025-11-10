@@ -22,7 +22,7 @@ class PathProgressService {
 
   // Debounce timer for Firestore saves
   private saveTimers: Map<string, NodeJS.Timeout> = new Map();
-  private readonly SAVE_DEBOUNCE_MS = 2000;
+  private readonly SAVE_DEBOUNCE_MS = 500; // Reduced from 2000ms for faster persistence
 
   /**
    * Load progress for a category from localStorage

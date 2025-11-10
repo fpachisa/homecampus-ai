@@ -60,6 +60,20 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
+  // Flush pending saves before page unload to prevent data loss
+  useEffect(() => {
+    const handleBeforeUnload = async () => {
+      try {
+        await pathProgressService.flushPendingSaves();
+      } catch (error) {
+        console.error('Failed to flush pending saves:', error);
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, []);
+
   const loadPathData = async () => {
     try {
       setLoading(true);

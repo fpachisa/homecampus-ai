@@ -1,0 +1,2546 @@
+# S2 Math Averages Statistical Data - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: avg-node-1
+  nodeNumber: 1
+  title: Understanding Measures of Central Tendency
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: When a weather report states the "average temperature" for the week was 22°C, this single value is summarizing
+        many daily temperatures. What statistical concept is this 'average' attempting to measure, and why is it useful to
+        have a single figure that acts as a "Representative value"?
+      avatarIntro: This is a great chance to review the basic definition of an average. Remember, statistics often tries to
+        simplify large amounts of data into a single, meaningful number.
+      mathTool: null
+      finalAnswer: The average is measuring the 'Central tendency' of the data. It is useful because it provides a single,
+        typical value that summarizes the entire distribution, making it easier to compare different datasets or understand
+        the overall condition.
+      stepByStepGuideline:
+      - Identify the purpose of summarizing a large dataset (like all daily temperatures) into one number (the average).
+      - Recall the statistical term used to describe where the data points tend to cluster (Central tendency or Measure of
+        centre).
+      - Explain that this single value acts as a representative statistic, allowing for quick comprehension of the entire
+        data set.
+      id: q1-1
+      questionGroup: q1
+    - problemText: Explain the fundamental idea behind why an average is often called a "Measure of centre." What does the
+        calculated average value tell us about the location of the rest of the data points?
+      mathTool: null
+      finalAnswer: An average is called a 'Measure of centre' because it identifies the location in the distribution around
+        which most of the data is gathered or balanced. It provides the typical location for a data point, indicating where
+        the 'middle' of the dataset lies.
+      stepByStepGuideline:
+      - Define what 'centre' implies in a statistical distribution.
+      - Relate the concept of the average back to the clustering or balancing of the data points.
+      - Conclude that the average value indicates the typical location of the data.
+      id: q1-2
+      questionGroup: q1
+    - problemText: 'Statisticians use three primary types of averages: the Mean, the Median, and the Mode. Why is it crucial
+        to have these three distinct methods for finding a "Typical value," instead of relying on just one calculation?'
+      mathTool: null
+      finalAnswer: It is crucial because different types of averages measure different aspects of the data and are affected
+        differently by the data's structure. For example, the Mean is sensitive to extreme outliers, while the Median is not.
+        Using all three allows statisticians to select the most appropriate 'Typical value' based on the specific context
+        and distribution of the dataset.
+      stepByStepGuideline:
+      - 'List the three types of averages: Mean, Median, and Mode.'
+      - Consider the main difference between these types (e.g., calculation method, sensitivity to outliers).
+      - Explain that having three options allows the statistician to choose the one that most accurately reflects the 'typical'
+        nature of the data, depending on its spread or skew.
+      id: q1-3
+      questionGroup: q1
+    - problemText: 'Match the following definitions to the correct statistical term (Mean, Median, or Mode):
+
+
+        (1) The value that appears most frequently in a dataset.
+
+        (2) The arithmetic average, calculated by summing all values and dividing by the number of values.
+
+        (3) The middle value when the data points are arranged in ascending order.'
+      mathTool: null
+      finalAnswer: (1) Mode, (2) Mean, (3) Median.
+      stepByStepGuideline:
+      - Review the definition associated with the 'most frequent' value.
+      - Review the definition associated with the 'arithmetic average' or 'balance point'.
+      - Review the definition associated with the 'middle value' in an ordered list.
+      id: q1-4
+      questionGroup: q1
+    - problemText: The average household size in a certain city is reported as 3.2 people. Explain why this single number,
+        3.2, is considered a representative measure of central tendency for the entire population, even though it is impossible
+        for any single household to have exactly 3.2 people.
+      mathTool: null
+      finalAnswer: The number 3.2 acts as a Representative value because it summarizes the complex distribution of all household
+        sizes (1, 2, 3, 4, etc.) into a single figure. It represents the calculated balance point or expected value for the
+        dataset, allowing for easy comparison with other cities or tracking changes over time, thus capturing the central
+        trend of the data.
+      stepByStepGuideline:
+      - Acknowledge that an average is a theoretical value that summarizes many discrete inputs.
+      - Explain that the purpose of the average is not to describe a single data point, but to describe the overall centre
+        of the entire dataset.
+      - State that this single value (3.2) provides a succinct summary (central tendency) of the population structure.
+      id: q1-5
+      questionGroup: q1
+- id: avg-node-2
+  nodeNumber: 2
+  title: Why Different Types of Averages
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A survey of 10 houses sold in a luxury neighborhood shows that most prices cluster around $300,000. However,
+        two sales were extremely large mansions priced at $5 million each. If a realtor reports the Mean house price, why
+        might potential buyers interested in typical homes feel misled? Which average (Mean, Median, or Mode) would provide
+        a more realistic representation of the typical house price in that neighborhood?
+      avatarIntro: Choosing the right average is essential for fair representation. Let's explore situations where extreme
+        values can be misleading!
+      mathTool: null
+      finalAnswer: The Mean house price would be heavily inflated by the two extremely high mansion prices ($5 million each).
+        This high Mean would suggest houses are generally much more expensive than they typically are in that neighborhood,
+        misleading buyers looking at standard homes. The Median would provide a more realistic representation because it only
+        relies on the position of the middle value and is not affected by extreme outliers.
+      stepByStepGuideline:
+      - Identify the extreme values (outliers) in the dataset (the two $5 million mansions).
+      - Explain how these outliers affect the calculation of the Mean (they pull the Mean upwards, skewing the result).
+      - Determine which measure of central tendency is resistant to outliers (the Median).
+      - Conclude that the Median is the better measure because it accurately reflects the central or typical value when extreme
+        values are present.
+      id: q2-1
+      questionGroup: q2
+    - problemText: A major shoe store collects data on all shoe sizes sold last month. The manager needs to decide which size
+        to order the largest quantity of for the next shipment to maximize sales. The sales data is non-numerical (e.g., Size
+        6, Size 7, Size 8, Size 9, etc.). Which type of average (Mean, Median, or Mode) must the manager use for this inventory
+        decision, and explain why the other two averages are unsuitable.
+      mathTool: null
+      finalAnswer: The manager must use the Mode. The Mode identifies the value that occurs most frequently (the most popular
+        size). This is essential for inventory management to ensure the store stocks enough of the best-selling item. The
+        Mean and Median are unsuitable because shoe sizes are often categorical (though they use numbers) and calculating
+        an arithmetic average (Mean) or a middle position (Median) would likely result in a fractional or non-existent size
+        that cannot be ordered.
+      stepByStepGuideline:
+      - 'Identify the goal: finding the most popular item (highest frequency).'
+      - Recall the definition of the Mode (most frequent value).
+      - 'Explain why Mean and Median are inappropriate: Mean requires addition/division and the result might not be a valid
+        shoe size. Median simply finds the middle value, which might not be the size they sell the most of.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: 'A small group of seven students reports the number of hours they spent studying last week: 4, 5, 5, 6,
+        6, 6, and one highly motivated student who studied 40 hours. If the group reports their ''average'' study time using
+        the Mean, what specific consequence does the 40-hour outlier have on the reported average, and why would the Median
+        be a more honest indicator of the typical student''s effort?'
+      mathTool: null
+      finalAnswer: The 40-hour outlier drastically inflates the Mean study time. Calculating the Mean would suggest that the
+        typical student studied much longer than they actually did (the Mean would be around 9.7 hours). This misrepresents
+        the effort of the majority of the students. The Median study time is 6 hours, which is a much more accurate representation
+        of the effort put in by the typical student because the Median is not affected by extreme values.
+      stepByStepGuideline:
+      - Identify the outlier (40 hours).
+      - Describe the effect of the outlier on the Mean (pulls it away from the cluster of data).
+      - Determine the Median value (6 hours).
+      - 'Explain why the Median is better: it represents the center of the data without being distorted by the single extreme
+        value.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: A factory produces 5,000 light bulbs. They are interested in the bulbs’ lifespan to calculate warranty
+        costs and overall expected energy savings for their customers. They measure the lifespan of a sample batch. While
+        the Median lifespan might tell them the lifetime of the middle bulb, why is the Mean lifespan the most crucial measure
+        for calculating the *total* expected operating hours of all 5,000 bulbs combined?
+      mathTool: null
+      finalAnswer: The Mean is directly related to the sum of all data points. By definition, the Mean is the total sum divided
+        by the count. Therefore, if the factory knows the Mean lifespan of the sample, they can multiply that Mean by the
+        total number of bulbs (5,000) to quickly estimate the aggregate total operating hours for the entire batch. This total
+        sum is necessary for accurate financial planning, warranty projections, and customer benefit calculations. Neither
+        the Median nor the Mode provides a direct mathematical link to the sum of the data.
+      stepByStepGuideline:
+      - 'State the mathematical relationship of the Mean: Mean = Sum / Count.'
+      - Explain that this relationship allows them to calculate the total sum (Total Hours = Mean * 5,000).
+      - Justify why the total sum is necessary (warranty costs, energy savings, financial projection).
+      - Conclude that the Mean is the only measure that enables this necessary calculation.
+      id: q2-4
+      questionGroup: q2
+    - problemText: A film studio holds a focus group to discuss a new movie trailer aimed at young adults (ages 18-30). The
+        participants consist of five young adults (ages 20, 22, 24, 25, 29) and one senior film critic aged 78. If the studio
+        reports the Mean age of the focus group to advertisers, how does this misrepresent the intended target audience, and
+        which measure of central tendency should they use instead?
+      mathTool: null
+      finalAnswer: The 78-year-old critic is an outlier that significantly increases the Mean age of the group. The Mean would
+        suggest the typical participant is older than the intended 18-30 demographic. This misrepresents the composition of
+        the group to advertisers. The Median (24.5 years) is a much better measure, as it accurately reflects the center of
+        the primary target group without being skewed by the single older participant.
+      stepByStepGuideline:
+      - Identify the data cluster (20-29) and the outlier (78).
+      - Explain that the Mean is pulled towards the outlier, moving it out of the target demographic range.
+      - Identify the Median as the middle value that is resistant to the outlier.
+      - Conclude that the Median provides a more accurate representation of the typical age of the target audience.
+      id: q2-5
+      questionGroup: q2
+- id: avg-node-3
+  nodeNumber: 3
+  title: Calculating Mean of Raw Data
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'The librarian recorded the number of overdue books returned by five students last week: 3, 5, 8, 4, and
+        7 books. Calculate the mean number of overdue books returned per student.'
+      avatarIntro: Calculating the mean helps us find a typical value for a set of data. Remember to sum all the values and
+        divide by the total count!
+      finalAnswer: 5.4 books
+      stepByStepGuideline:
+      - 'Identify the number of data values (n): n = 5.'
+      - 'Calculate the sum of the data values: Sum = 3 + 5 + 8 + 4 + 7 = 27.'
+      - 'Apply the formula for the mean: Mean = Sum / n.'
+      - Mean = 27 / 5 = 5.4.
+      - The mean number of overdue books returned is 5.4.
+      id: q3-1
+      questionGroup: q3
+    - problemText: Six students took a vocabulary test. Their scores (out of 100) were 65, 78, 82, 70, 90, and 68. Determine
+        the mean test score for this group, showing all calculation steps.
+      finalAnswer: '75.5'
+      stepByStepGuideline:
+      - 'Identify the number of data values (n): n = 6.'
+      - 'Calculate the sum of the test scores: Sum = 65 + 78 + 82 + 70 + 90 + 68 = 453.'
+      - 'Apply the formula for the mean: Mean = Sum / n.'
+      - Mean = 453 / 6 = 75.5.
+      - The mean test score is 75.5.
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'To monitor growth, the heights (in meters) of seven children were measured: 1.48, 1.55, 1.61, 1.72, 1.75,
+        1.58, and 1.60. Calculate the mean height of the children, rounding your answer to 3 significant figures.'
+      finalAnswer: 1.61 m
+      stepByStepGuideline:
+      - 'Identify the number of data values (n): n = 7.'
+      - 'Calculate the sum of the heights: Sum = 1.48 + 1.55 + 1.61 + 1.72 + 1.75 + 1.58 + 1.60 = 11.29 m.'
+      - 'Apply the formula for the mean: Mean = Sum / n.'
+      - Mean = 11.29 / 7 ≈ 1.612857... m.
+      - Rounding to 3 significant figures, the mean height is 1.61 m.
+      id: q3-3
+      questionGroup: q3
+    - problemText: 'A survey recorded the ages (in years) of five participants in a focus group: 10, 11, 13, 14, and 16. Calculate
+        the mean age of the participants.'
+      finalAnswer: 12.8 years
+      stepByStepGuideline:
+      - 'Identify the number of data values (n): n = 5.'
+      - 'Calculate the sum of the ages: Sum = 10 + 11 + 13 + 14 + 16 = 64 years.'
+      - 'Apply the formula for the mean: Mean = Sum / n.'
+      - Mean = 64 / 5 = 12.8.
+      - The mean age of the participants is 12.8 years.
+      id: q3-4
+      questionGroup: q3
+    - problemText: Mr. Lee tracked the performance of six students in a recent physics quiz. Their scores were 72, 85, 60,
+        88, 78, and 80. What is the arithmetic mean score for this set of students? Round your answer to two decimal places.
+      finalAnswer: '77.17'
+      stepByStepGuideline:
+      - 'Identify the number of data values (n): n = 6.'
+      - 'Calculate the sum of the scores: Sum = 72 + 85 + 60 + 88 + 78 + 80 = 463.'
+      - 'Apply the formula for the mean: Mean = Sum / n.'
+      - Mean = 463 / 6 ≈ 77.1666...
+      - Rounding to two decimal places, the arithmetic mean score is 77.17.
+      id: q3-5
+      questionGroup: q3
+- id: avg-node-4
+  nodeNumber: 4
+  title: Finding Unknown Given Mean
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A small bookstore aims for an average monthly revenue of $15,000 over five months. The revenue for the
+        first four months was $12,000, $16,000, $14,500, and $17,000. Calculate the minimum revenue, $x$, required in the
+        fifth month to meet the target mean.
+      avatarIntro: Finding an unknown value when the mean is given is a great application of algebra! Remember that the mean
+        times the number of items equals the total sum.
+      mathTool: null
+      finalAnswer: $15,500
+      stepByStepGuideline:
+      - 'Calculate the required total revenue for the five months: Total Sum = Mean × Number of months = $15,000 × 5 = $75,000.'
+      - 'Calculate the sum of the known revenue for the first four months: Known Sum = $12,000 + $16,000 + $14,500 + $17,000
+        = $59,500.'
+      - 'Set up the equation: Known Sum + x = Total Sum, so $59,500 + x = $75,000.'
+      - 'Solve for x: x = $75,000 - $59,500 = $15,500. The required minimum revenue in the fifth month is $15,500.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: A six-person relay team achieved an overall mean running time of 55 seconds per runner. The times recorded
+        for the first four runners were 52 s, 58 s, 51 s, and 56 s. The remaining two runners recorded identical times. Find
+        the time recorded by each of the two remaining runners.
+      mathTool: null
+      finalAnswer: 56.5 s
+      stepByStepGuideline:
+      - 'Calculate the total required running time for all six runners: Total Time = Mean × Number of runners = 55 s × 6 =
+        330 s.'
+      - 'Calculate the sum of the known times for the first four runners: Known Sum = 52 + 58 + 51 + 56 = 217 s.'
+      - 'Calculate the time remaining for the two unknown runners: Remaining Time = 330 s - 217 s = 113 s.'
+      - 'Since the two remaining runners recorded identical times (let the time be x), set up the equation: 2x = 113 s.'
+      - 'Solve for x: x = 113 / 2 = 56.5 s. Each of the remaining runners recorded 56.5 seconds.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: Seven packages were weighed for shipping. The mean weight of all packages was 4.5 kg. Six of the packages
+        had weights of 4.1 kg, 4.3 kg, 4.6 kg, 4.8 kg, 4.4 kg, and 4.7 kg. Determine the weight of the seventh package.
+      mathTool: null
+      finalAnswer: 4.6 kg
+      stepByStepGuideline:
+      - 'Calculate the total combined weight of the seven packages: Total Weight = Mean × Number of packages = 4.5 kg × 7
+        = 31.5 kg.'
+      - 'Calculate the sum of the weights of the six known packages: Known Sum = 4.1 + 4.3 + 4.6 + 4.8 + 4.4 + 4.7 = 26.9
+        kg.'
+      - 'Find the weight of the seventh package (x) by subtracting the known sum from the total weight: x = 31.5 kg - 26.9
+        kg.'
+      - The weight of the seventh package is 4.6 kg.
+      id: q4-3
+      questionGroup: q4
+    - problemText: The daily maximum temperatures recorded over four days were $x$ °C, $(x+2)$ °C, $(x+5)$ °C, and $(x-1)$
+        °C. If the mean maximum temperature over these four days was 18 °C, find the value of $x$.
+      mathTool: null
+      finalAnswer: '16.5'
+      stepByStepGuideline:
+      - 'Calculate the required total sum of the temperatures: Total Sum = Mean × Number of days = 18 × 4 = 72.'
+      - 'Write an expression for the sum of the four temperatures: Sum = x + (x + 2) + (x + 5) + (x - 1).'
+      - 'Simplify the sum expression: Sum = 4x + 6.'
+      - 'Set the sum equal to the total calculated sum: 4x + 6 = 72.'
+      - 'Solve the equation for x: 4x = 72 - 6, so 4x = 66.'
+      - x = 66 / 4 = 16.5.
+      id: q4-4
+      questionGroup: q4
+    - problemText: A restaurant recorded the number of customers served over five days. The mean number of customers served
+        was 40. On the first three days, 35, 42, and 38 customers were served. On the remaining two days, Thursday and Friday,
+        Friday served 5 more customers than Thursday. Let $T$ be the number of customers on Thursday. Find the value of $T$.
+      mathTool: null
+      finalAnswer: '40'
+      stepByStepGuideline:
+      - 'Calculate the total number of customers served over five days: Total Sum = Mean × Number of days = 40 × 5 = 200 customers.'
+      - 'Calculate the sum of customers served during the first three days: Known Sum = 35 + 42 + 38 = 115 customers.'
+      - 'Determine the combined number of customers served on Thursday and Friday: Remaining Sum = 200 - 115 = 85 customers.'
+      - Let $T$ be the number of customers on Thursday. Since Friday served 5 more than Thursday, Friday's customers are represented
+        by $(T + 5)$.
+      - 'Set up the equation for the remaining sum: $T + (T + 5) = 85$.'
+      - 'Solve the equation: $2T + 5 = 85$. $2T = 80$. $T = 40$. The number of customers served on Thursday was 40.'
+      id: q4-5
+      questionGroup: q4
+- id: avg-node-5
+  nodeNumber: 5
+  title: Mean from Frequency Table
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A survey of 40 factory workers recorded their weekly salaries. Use the frequency table below to calculate
+        the mean weekly salary, rounded to the nearest cent.
+
+
+        | Weekly Salary ($x) | Frequency (f) |
+
+        | :---: | :---: |
+
+        | 800 | 5 |
+
+        | 900 | 10 |
+
+        | 1000 | 15 |
+
+        | 1100 | 8 |
+
+        | 1200 | 2 |'
+      avatarIntro: Calculating the mean from a frequency table is essential for summarizing large datasets. Remember, the
+        total sum of data values is found by multiplying each value by its frequency!
+      finalAnswer: $980.00
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total frequency (Σf). Σf = 5 + 10 + 15 + 8 + 2 = 40.'
+      - 'Step 2: Calculate the sum of the products (Σfx). This represents the total salary paid out. Σfx = (800 × 5) + (900
+        × 10) + (1000 × 15) + (1100 × 8) + (1200 × 2).'
+      - 'Step 3: Calculate the individual products: 4000 + 9000 + 15000 + 8800 + 2400 = 39200.'
+      - 'Step 4: Calculate the mean using the formula Mean = Σfx / Σf. Mean = 39200 / 40.'
+      - 'Step 5: The mean weekly salary is $980.00.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'Fifty students took a mathematics test. The results are summarized in the frequency table below.
+
+
+        Calculate the mean test score for the students.
+
+
+        | Test Score (x marks) | Number of Students (f) |
+
+        | :---: | :---: |
+
+        | 60 | 4 |
+
+        | 70 | 12 |
+
+        | 80 | 18 |
+
+        | 90 | 10 |
+
+        | 100 | 6 |'
+      finalAnswer: 80.4 marks
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total frequency (Σf). Σf = 4 + 12 + 18 + 10 + 6 = 50.'
+      - 'Step 2: Calculate the sum of the products (Σfx). Σfx = (60 × 4) + (70 × 12) + (80 × 18) + (90 × 10) + (100 × 6).'
+      - 'Step 3: Calculate the individual products and sum them: 240 + 840 + 1440 + 900 + 600 = 4020.'
+      - 'Step 4: Calculate the mean using the formula Mean = Σfx / Σf. Mean = 4020 / 50.'
+      - 'Step 5: The mean test score is 80.4 marks.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'A class of 35 students was surveyed regarding the number of siblings they have.
+
+
+        Calculate the mean number of siblings per student, rounding your answer to three significant figures.
+
+
+        | Number of Siblings (x) | Frequency (f) |
+
+        | :---: | :---: |
+
+        | 0 | 3 |
+
+        | 1 | 15 |
+
+        | 2 | 10 |
+
+        | 3 | 5 |
+
+        | 4 | 2 |'
+      finalAnswer: 1.66 siblings
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total frequency (Σf). Σf = 3 + 15 + 10 + 5 + 2 = 35.'
+      - 'Step 2: Calculate the sum of the products (Σfx). Σfx = (0 × 3) + (1 × 15) + (2 × 10) + (3 × 5) + (4 × 2).'
+      - 'Step 3: Calculate the individual products and sum them: 0 + 15 + 20 + 15 + 8 = 58.'
+      - 'Step 4: Calculate the mean using the formula Mean = Σfx / Σf. Mean = 58 / 35.'
+      - 'Step 5: Mean ≈ 1.65714... Rounding to three significant figures gives 1.66 siblings.'
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'The ages of 40 participants in a youth club are recorded in the table below.
+
+
+        Calculate the mean age of the participants.
+
+
+        | Age (x years) | Frequency (f) |
+
+        | :---: | :---: |
+
+        | 12 | 8 |
+
+        | 13 | 15 |
+
+        | 14 | 10 |
+
+        | 15 | 7 |'
+      finalAnswer: 13.4 years
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total frequency (Σf). Σf = 8 + 15 + 10 + 7 = 40.'
+      - 'Step 2: Calculate the sum of the products (Σfx). Σfx = (12 × 8) + (13 × 15) + (14 × 10) + (15 × 7).'
+      - 'Step 3: Calculate the individual products and sum them: 96 + 195 + 140 + 105 = 536.'
+      - 'Step 4: Calculate the mean using the formula Mean = Σfx / Σf. Mean = 536 / 40.'
+      - 'Step 5: The mean age is 13.4 years.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'A small retailer tracked the number of units sold per day over a period of 40 days. The data is presented
+        in the frequency table.
+
+
+        Determine the mean number of units sold per day.
+
+
+        | Units Sold (x) | Frequency (f) |
+
+        | :---: | :---: |
+
+        | 25 | 2 |
+
+        | 30 | 5 |
+
+        | 35 | 12 |
+
+        | 40 | 10 |
+
+        | 45 | 8 |
+
+        | 50 | 3 |'
+      finalAnswer: 38.25 units
+      stepByStepGuideline:
+      - 'Step 1: Calculate the total frequency (Σf). Σf = 2 + 5 + 12 + 10 + 8 + 3 = 40.'
+      - 'Step 2: Calculate the sum of the products (Σfx). Σfx = (25 × 2) + (30 × 5) + (35 × 12) + (40 × 10) + (45 × 8) + (50
+        × 3).'
+      - 'Step 3: Calculate the individual products and sum them: 50 + 150 + 420 + 400 + 360 + 150 = 1530.'
+      - 'Step 4: Calculate the mean using the formula Mean = Σfx / Σf. Mean = 1530 / 40.'
+      - 'Step 5: The mean number of units sold per day is 38.25 units.'
+      id: q5-5
+      questionGroup: q5
+- id: avg-node-6
+  nodeNumber: 6
+  title: Understanding 'Even Out' Concept
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Four students in a reading group, Alice, Ben, Chloe, and David, have 2, 5, 8, and 9 books respectively.
+        The mean number of books is 6. Explain the concept of 'leveling out' these values using the mean. Specifically, what
+        happens to the total number of books when the distribution is 'evened out'?
+      avatarIntro: This problem asks you to visualize the mean as a fair share. Think about how the total value stays the
+        same even when the distribution changes.
+      mathTool: null
+      finalAnswer: The mean of 6 represents the value each student would have if the books were redistributed equally. The
+        total number of books (2 + 5 + 8 + 9 = 24) must remain the same, because 4 students multiplied by the mean (4 × 6)
+        equals 24. 'Leveling out' means taking the excess books from those above the mean (Chloe and David) and giving them
+        to those below the mean (Alice and Ben) until everyone holds exactly 6 books.
+      stepByStepGuideline:
+      - 'Identify the total amount before leveling: 2 + 5 + 8 + 9 = 24 books.'
+      - 'Identify the mean value: 6 books.'
+      - 'Explain the concept of ''leveling out'': This means redistributing the total books so that every student receives
+        the same amount, which is the mean (6 books).'
+      - 'State the relationship between the mean and the total: The total number of books must remain 24 (4 students × 6 books/student)
+        because the mean simply reallocates the existing total, it does not change the overall quantity.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: A group of five friends calculated that the mean number of sweets they had was 12. Vani had 7 sweets originally,
+        while others had varying amounts. If they decide to 'even out' their sweets based on the mean, what does the mean
+        represent in terms of fair distribution, and why is the total number of sweets unchanged?
+      mathTool: null
+      finalAnswer: The mean of 12 represents the 'fair share' or the amount each of the five friends would receive if the
+        total quantity of sweets was pooled together and divided equally. The total number of sweets remains unchanged because
+        the process of calculating the mean involves summing the original amounts and then dividing by the count (5). Redistributing
+        the total (5 × 12 = 60 sweets) equally ensures the total quantity is conserved, even though Vani now receives 5 more
+        sweets (12 instead of 7).
+      stepByStepGuideline:
+      - 'Define the mean in the context of sharing: The mean (12 sweets) is the equal share that every person would get.'
+      - 'Calculate the total number of sweets: 5 friends × 12 sweets = 60 sweets.'
+      - 'Explain why the total is unchanged: The mean is derived directly from the original total amount. Leveling out the
+        amounts is just a redistribution of the fixed total (60 sweets), hence the total must remain constant.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: A factory employs six workers whose daily wages vary significantly. If the mean daily wage is calculated
+        to be $85, explain what this mean value represents in terms of equal distribution and the factory's total daily payroll.
+      mathTool: null
+      finalAnswer: The mean daily wage of $85 represents the amount each of the six workers would earn if the factory decided
+        to divide its total daily payroll equally among all employees. This means that if every worker earned exactly $85,
+        the factory's total payroll (6 workers × $85 = $510) would be identical to the total amount originally paid out when
+        the wages were uneven.
+      stepByStepGuideline:
+      - 'Identify the mean wage: $85.'
+      - 'Explain the ''equal distribution'': If wages were ''leveled out'', $85 is the wage every worker would receive.'
+      - 'Connect the mean to the total payroll: The mean ensures that the total factory expenditure (Total Payroll) is preserved.
+        The total payroll is the mean multiplied by the number of workers (6 × $85).'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Three sports classes received 10, 14, and 18 basketballs, respectively. The sports director calculates
+        the mean number of basketballs per class as 14. Describe the physical process of 'leveling out' the distribution of
+        basketballs to match the mean value (14), and explain why this demonstrates the concept of the mean.
+      mathTool: null
+      finalAnswer: To 'level out' the distribution to the mean (14), we must move items from those above the mean to those
+        below the mean. The class with 18 basketballs has 4 excess (18 - 14 = 4). The class with 10 basketballs needs 4 more
+        (14 - 10 = 4). By physically taking the 4 excess basketballs from the class with 18 and giving them to the class with
+        10, all three classes end up with 14 basketballs. This demonstrates the mean because it visually confirms that the
+        mean acts as the balance point, where the total deficit (4) equals the total surplus (4).
+      stepByStepGuideline:
+      - 'Identify the mean: 14 basketballs.'
+      - 'Calculate the surplus/deficit: Class 1 (10) needs 4. Class 3 (18) has 4 excess. Class 2 (14) is balanced.'
+      - 'Describe the leveling action: Take the surplus (4) from Class 3 and give it to the deficit (Class 1).'
+      - 'Explain the result: All classes now have 14. This process shows that the mean is the value reached when the total
+        quantity is equally distributed.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: A marathon team consists of four runners with individual running times of 150 minutes, 160 minutes, 170
+        minutes, and 180 minutes. The mean running time is 165 minutes. If we state that 165 minutes 'levels out' the performance,
+        what does this imply about the team's total effort, and why is this concept useful for evaluating team performance?
+      mathTool: null
+      finalAnswer: If 165 minutes 'levels out' the performance, it implies that if every runner had contributed exactly 165
+        minutes, the team's total running time (4 runners × 165 minutes = 660 minutes) would be exactly the same as the actual
+        total time (150 + 160 + 170 + 180 = 660 minutes). This concept is useful because the mean provides a single, fair
+        measure of central tendency, allowing the coach to evaluate the team's overall collective effort without being misled
+        by individual variations.
+      stepByStepGuideline:
+      - 'Calculate the total effort (time): 150 + 160 + 170 + 180 = 660 minutes.'
+      - 'Explain ''leveling out'' the performance: If everyone ran the mean time (165 minutes), the new total time would be
+        4 × 165 = 660 minutes.'
+      - 'Conclusion on total effort: This proves that the mean preserves the total collective effort, representing what everyone
+        would achieve if they contributed equally.'
+      - 'Explain usefulness: The mean simplifies complex data into a single representative figure for easy evaluation and
+        comparison.'
+      id: q6-5
+      questionGroup: q6
+- id: avg-node-7
+  nodeNumber: 7
+  title: Why Not to Average Averages
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: In a recent math competition, Class A, consisting of 20 students, achieved a mean score of 70 marks. Class
+        B, consisting of 30 students, achieved a mean score of 80 marks. Calculate the overall mean score for all 50 students
+        combined. Explain clearly why simply calculating the average of the two means (70 + 80) / 2 is incorrect.
+      avatarIntro: This question tests your understanding of weighted averages. Remember, when combining groups, the size
+        of each group matters!
+      mathTool: null
+      finalAnswer: The overall mean score is 76 marks.
+      stepByStepGuideline:
+      - 'Explain the error: Simply averaging the means (75) is incorrect because the groups (bases) are of different sizes
+        (20 students vs 30 students). The larger group (Class B) must have a greater impact on the overall mean.'
+      - 'Calculate the total score for Class A: Total Score A = Number of students × Mean Score = 20 × 70 = 1400.'
+      - 'Calculate the total score for Class B: Total Score B = Number of students × Mean Score = 30 × 80 = 2400.'
+      - 'Calculate the overall total score and total number of students: Overall Total Score = 1400 + 2400 = 3800. Total students
+        = 20 + 30 = 50.'
+      - 'Calculate the overall mean score: Overall Mean = Total Score / Total Students = 3800 / 50 = 76 marks.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: A small company divides its staff into two groups for salary analysis. The Junior staff group consists
+        of 15 employees with a mean monthly salary of $2000. The Senior staff group consists of 5 employees with a mean monthly
+        salary of $3000. Determine the overall mean monthly salary for all 20 employees. Justify why the overall mean is not
+        $2500.
+      mathTool: null
+      finalAnswer: The overall mean monthly salary is $2250.
+      stepByStepGuideline:
+      - Averaging the means ($2500) is incorrect because the bases (15 employees vs 5 employees) are unequal. The larger group
+        (Junior staff) pulls the overall mean closer to its salary ($2000).
+      - 'Calculate the total salary paid to Junior staff: Total Salary A = 15 × $2000 = $30,000.'
+      - 'Calculate the total salary paid to Senior staff: Total Salary B = 5 × $3000 = $15,000.'
+      - 'Calculate the combined total salary and total number of employees: Combined Total Salary = $30,000 + $15,000 = $45,000.
+        Total Employees = 15 + 5 = 20.'
+      - 'Calculate the overall mean salary: Overall Mean = $45,000 / 20 = $2250.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: A running club analyzed the performance of its members during a long-distance training session. Group X,
+        consisting of 25 runners, had a mean finishing time of 45 minutes. Group Y, consisting of 10 runners, had a mean finishing
+        time of 60 minutes. Calculate the weighted mean finishing time for all 35 runners. Explain why the simple average
+        of the times would overestimate the true mean.
+      mathTool: null
+      finalAnswer: The weighted mean finishing time is approximately 49.29 minutes (or 49 and 4/7 minutes).
+      stepByStepGuideline:
+      - The simple average ((45+60)/2 = 52.5 minutes) would be incorrect because it fails to account for the base sizes (25
+        runners in Group X vs 10 runners in Group Y). Since the faster group (Group X, 45 min) is much larger, the true overall
+        mean must be closer to 45 minutes, meaning the simple average overestimates the time.
+      - 'Calculate the total running time for Group X: Total Time X = 25 runners × 45 minutes = 1125 minutes.'
+      - 'Calculate the total running time for Group Y: Total Time Y = 10 runners × 60 minutes = 600 minutes.'
+      - 'Calculate the overall total time and total number of runners: Overall Total Time = 1125 + 600 = 1725 minutes. Total
+        Runners = 25 + 10 = 35.'
+      - 'Calculate the weighted mean time: Overall Mean = 1725 / 35 ≈ 49.29 minutes (rounded to 2 decimal places).'
+      id: q7-3
+      questionGroup: q7
+    - problemText: A quality control department analyzed the defect rates of two large production batches of electronic components.
+        Batch 1 consisted of 100 units and had a mean defect rate of 3%. Batch 2 consisted of 400 units and had a mean defect
+        rate of 1%. Calculate the overall mean defect rate for the combined 500 units. Why is calculating (3% + 1%) / 2 an
+        inappropriate method here?
+      mathTool: null
+      finalAnswer: The overall mean defect rate is 1.4%.
+      stepByStepGuideline:
+      - The simple average (2%) is inappropriate because the bases (100 units vs 400 units) are highly unequal. Batch 2, which
+        has a much lower defect rate (1%) and is four times larger, heavily influences the overall result, pulling the combined
+        rate down significantly.
+      - 'Calculate the total number of defects in Batch 1: Defects 1 = 100 units × 0.03 = 3 defects.'
+      - 'Calculate the total number of defects in Batch 2: Defects 2 = 400 units × 0.01 = 4 defects.'
+      - 'Calculate the overall total defects and total units: Overall Total Defects = 3 + 4 = 7 defects. Total Units = 100
+        + 400 = 500.'
+      - 'Calculate the overall mean defect rate: Overall Mean Rate = 7 / 500 = 0.014. Convert to percentage: 1.4%.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: A retail chain compares the profitability of two stores, P and Q, based on a single type of item sold.
+        Store P sold 12 items with a mean profit of $50 per item. Store Q sold 18 items with a mean profit of $40 per item.
+        Determine the overall mean profit per item across both stores combined. Explain why the overall mean profit is closer
+        to $40 than $50.
+      mathTool: null
+      finalAnswer: The overall mean profit per item is $44.
+      stepByStepGuideline:
+      - The overall mean is closer to $40 because Store Q (mean $40) sold 18 items, which is a larger base (weight) than the
+        12 items sold by Store P (mean $50). The larger sales volume at Store Q pulls the combined average toward its mean
+        profit.
+      - 'Calculate the total profit generated by Store P: Total Profit P = 12 items × $50 = $600.'
+      - 'Calculate the total profit generated by Store Q: Total Profit Q = 18 items × $40 = $720.'
+      - 'Calculate the combined total profit and total items sold: Combined Total Profit = $600 + $720 = $1320. Total Items
+        Sold = 12 + 18 = 30.'
+      - 'Calculate the overall mean profit: Overall Mean Profit = $1320 / 30 = $44.'
+      id: q7-5
+      questionGroup: q7
+- id: avg-node-8
+  nodeNumber: 8
+  title: Estimating Mean from Grouped Data
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: "A survey tracked the daily commute time (in minutes) for 60 employees. The data is grouped into the following\
+        \ frequency distribution table. \n\n| Time (t minutes) | Frequency (f) |\n| :---: | :---: |\n| 10 ≤ t < 15 | 8 |\n\
+        | 15 ≤ t < 20 | 15 |\n| 20 ≤ t < 25 | 22 |\n| 25 ≤ t < 30 | 10 |\n| 30 ≤ t < 35 | 5 |\n\nEstimate the mean commute\
+        \ time, giving your answer correct to one decimal place. Remember that since this data is grouped, the result is an\
+        \ estimate, not the exact mean."
+      avatarIntro: Estimating the mean from grouped data requires us to use the midpoint of each class interval. This allows
+        us to calculate a representative average.
+      mathTool: null
+      finalAnswer: 21.6 minutes
+      stepByStepGuideline:
+      - Determine the mid-value (x) for each class interval using the formula (lower boundary + upper boundary) / 2. The mid-values
+        are 12.5, 17.5, 22.5, 27.5, and 32.5.
+      - 'Calculate the product of the mid-value and frequency (fx) for each class: (8 × 12.5) = 100.0, (15 × 17.5) = 262.5,
+        (22 × 22.5) = 495.0, (10 × 27.5) = 275.0, (5 × 32.5) = 162.5.'
+      - 'Calculate the total sum of fx (Σfx): 100.0 + 262.5 + 495.0 + 275.0 + 162.5 = 1295.0.'
+      - 'Calculate the total frequency (Σf): 8 + 15 + 22 + 10 + 5 = 60.'
+      - 'Estimate the mean using the formula Mean ≈ Σfx / Σf: 1295.0 / 60 ≈ 21.5833...'
+      - 'Round the estimated mean to one decimal place: 21.6 minutes.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: 'A logistics company recorded the mass (m, in kg) of 70 parcels shipped in a week. The results are summarized
+        in the table below.
+
+
+        | Mass (m kg) | Frequency (f) |
+
+        | :---: | :---: |
+
+        | 20 ≤ m < 25 | 12 |
+
+        | 25 ≤ m < 30 | 30 |
+
+        | 30 ≤ m < 35 | 18 |
+
+        | 35 ≤ m < 40 | 10 |
+
+
+        By calculating the mid-value for each interval, estimate the mean mass of the parcels. Give your answer correct to
+        one decimal place.'
+      mathTool: null
+      finalAnswer: 29.4 kg
+      stepByStepGuideline:
+      - 'Determine the mid-value (x) for each class interval: 22.5, 27.5, 32.5, and 37.5 kg.'
+      - 'Calculate the product of frequency and mid-value (fx): (12 × 22.5) = 270.0, (30 × 27.5) = 825.0, (18 × 32.5) = 585.0,
+        (10 × 37.5) = 375.0.'
+      - 'Calculate the total sum of fx (Σfx): 270.0 + 825.0 + 585.0 + 375.0 = 2055.0.'
+      - 'Calculate the total frequency (Σf): 12 + 30 + 18 + 10 = 70.'
+      - 'Estimate the mean: Mean ≈ Σfx / Σf = 2055.0 / 70 ≈ 29.357...'
+      - 'Round the estimated mean to one decimal place: 29.4 kg.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: 'A museum conducted a survey of 120 visitors regarding their age (a, in years). The ages were grouped into
+        class intervals of 10 years.
+
+
+        | Age (a years) | Frequency (f) |
+
+        | :---: | :---: |
+
+        | 0 ≤ a < 10 | 15 |
+
+        | 10 ≤ a < 20 | 25 |
+
+        | 20 ≤ a < 30 | 40 |
+
+        | 30 ≤ a < 40 | 30 |
+
+        | 40 ≤ a < 50 | 10 |
+
+
+        Calculate the estimated mean age of the visitors, rounding your answer to one decimal place.'
+      mathTool: null
+      finalAnswer: 24.6 years
+      stepByStepGuideline:
+      - 'Determine the mid-value (x) for each class interval: 5, 15, 25, 35, and 45 years.'
+      - 'Calculate the product of frequency and mid-value (fx): (15 × 5) = 75, (25 × 15) = 375, (40 × 25) = 1000, (30 × 35)
+        = 1050, (10 × 45) = 450.'
+      - 'Calculate the total sum of fx (Σfx): 75 + 375 + 1000 + 1050 + 450 = 2950.'
+      - 'Calculate the total frequency (Σf): 15 + 25 + 40 + 30 + 10 = 120.'
+      - 'Estimate the mean: Mean ≈ Σfx / Σf = 2950 / 120 ≈ 24.5833...'
+      - 'Round the estimated mean to one decimal place: 24.6 years.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: 'Ninety candidates took a professional training module, and their scores (s) were recorded as grouped data.
+
+
+        | Score (s marks) | Frequency (f) |
+
+        | :---: | :---: |
+
+        | 40 ≤ s < 50 | 6 |
+
+        | 50 ≤ s < 60 | 14 |
+
+        | 60 ≤ s < 70 | 25 |
+
+        | 70 ≤ s < 80 | 30 |
+
+        | 80 ≤ s < 90 | 15 |
+
+
+        Estimate the mean score achieved by the candidates. Provide your answer correct to one decimal place.'
+      mathTool: null
+      finalAnswer: 68.8 marks
+      stepByStepGuideline:
+      - 'Determine the mid-value (x) for each class interval: 45, 55, 65, 75, and 85 marks.'
+      - 'Calculate the product of frequency and mid-value (fx): (6 × 45) = 270, (14 × 55) = 770, (25 × 65) = 1625, (30 × 75)
+        = 2250, (15 × 85) = 1275.'
+      - 'Calculate the total sum of fx (Σfx): 270 + 770 + 1625 + 2250 + 1275 = 6190.'
+      - 'Calculate the total frequency (Σf): 6 + 14 + 25 + 30 + 15 = 90.'
+      - 'Estimate the mean: Mean ≈ Σfx / Σf = 6190 / 90 ≈ 68.777...'
+      - 'Round the estimated mean to one decimal place: 68.8 marks.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: 'A call center monitored 80 incoming calls and recorded the duration (t, in minutes) of each call. The
+        data is presented in the frequency table below:
+
+
+        | Duration (t minutes) | Frequency (f) |
+
+        | :---: | :---: |
+
+        | 0 ≤ t < 5 | 40 |
+
+        | 5 ≤ t < 10 | 25 |
+
+        | 10 ≤ t < 15 | 10 |
+
+        | 15 ≤ t < 20 | 5 |
+
+
+        Estimate the mean call duration. Since the frequencies are heavily skewed towards shorter calls, state your final
+        answer accurate to two decimal places.'
+      mathTool: null
+      finalAnswer: 6.25 minutes
+      stepByStepGuideline:
+      - 'Determine the mid-value (x) for each class interval: 2.5, 7.5, 12.5, and 17.5 minutes.'
+      - 'Calculate the product of frequency and mid-value (fx): (40 × 2.5) = 100.0, (25 × 7.5) = 187.5, (10 × 12.5) = 125.0,
+        (5 × 17.5) = 87.5.'
+      - 'Calculate the total sum of fx (Σfx): 100.0 + 187.5 + 125.0 + 87.5 = 500.0.'
+      - 'Calculate the total frequency (Σf): 40 + 25 + 10 + 5 = 80.'
+      - 'Estimate the mean: Mean ≈ Σfx / Σf = 500.0 / 80 = 6.25.'
+      - The estimated mean call duration is 6.25 minutes.
+      id: q8-5
+      questionGroup: q8
+- id: avg-node-9
+  nodeNumber: 9
+  title: Position of Median - Odd Number
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A survey recorded the ages (in years) of nine employees in a small department: 18, 15, 20, 12, 14, 13,
+        16, 19, 17. Calculate the median age of the employees.'
+      avatarIntro: Remember that the median is the middle value in a data set. Since we have an odd number of data points
+        here, calculating the position will give us exactly one middle number.
+      mathTool: null
+      finalAnswer: 16 years
+      stepByStepGuideline:
+      - 'Step 1: Arrange the data in ascending order: 12, 13, 14, 15, 16, 17, 18, 19, 20.'
+      - 'Step 2: Determine the total number of values, n. Here, n = 9 (odd). Calculate the position of the median using the
+        formula: Position = (n+1)/2 = (9+1)/2 = 5.'
+      - 'Step 3: Identify the value at the 5th position in the ordered list. The 5th value is 16. Therefore, the median age
+        is 16 years.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: 'The travel times (in minutes) for seven students commuting to school were recorded as follows: 35, 10,
+        20, 40, 15, 30, 25. Find the median travel time.'
+      mathTool: null
+      finalAnswer: 25 minutes
+      stepByStepGuideline:
+      - 'Step 1: Arrange the travel times in ascending order: 10, 15, 20, 25, 30, 35, 40.'
+      - 'Step 2: Determine the total number of values, n. Here, n = 7 (odd). Calculate the position of the median using the
+        formula: Position = (n+1)/2 = (7+1)/2 = 4.'
+      - 'Step 3: Identify the value at the 4th position in the ordered list. The 4th value is 25. Therefore, the median travel
+        time is 25 minutes.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: 'A shopper noted the prices ($) of five different items: 105, 98, 110, 100, 102. Determine the median price.'
+      mathTool: null
+      finalAnswer: $102
+      stepByStepGuideline:
+      - 'Step 1: Arrange the prices in ascending order: 98, 100, 102, 105, 110.'
+      - 'Step 2: Determine the total number of values, n. Here, n = 5 (odd). Calculate the position of the median using the
+        formula: Position = (n+1)/2 = (5+1)/2 = 3.'
+      - 'Step 3: Identify the value at the 3rd position in the ordered list. The 3rd value is 102. Therefore, the median price
+        is $102.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: 'Eleven students achieved the following test scores in a recent history examination: 75, 92, 60, 80, 85,
+        95, 70, 65, 90, 82, 88. Calculate the median test score.'
+      mathTool: null
+      finalAnswer: 82 marks
+      stepByStepGuideline:
+      - 'Step 1: Arrange the test scores in ascending order: 60, 65, 70, 75, 80, 82, 85, 88, 90, 92, 95.'
+      - 'Step 2: Determine the total number of values, n. Here, n = 11 (odd). Calculate the position of the median using the
+        formula: Position = (n+1)/2 = (11+1)/2 = 6.'
+      - 'Step 3: Identify the value at the 6th position in the ordered list. The 6th value is 82. Therefore, the median test
+        score is 82 marks.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: 'The heights (in cm) of nine basketball players are recorded as: 175, 160, 180, 155, 170, 185, 168, 172,
+        165. What is the median height?'
+      mathTool: null
+      finalAnswer: 170 cm
+      stepByStepGuideline:
+      - 'Step 1: Arrange the heights in ascending order: 155, 160, 165, 168, 170, 172, 175, 180, 185.'
+      - 'Step 2: Determine the total number of values, n. Here, n = 9 (odd). Calculate the position of the median using the
+        formula: Position = (n+1)/2 = (9+1)/2 = 5.'
+      - 'Step 3: Identify the value at the 5th position in the ordered list. The 5th value is 170. Therefore, the median height
+        is 170 cm.'
+      id: q9-5
+      questionGroup: q9
+- id: avg-node-10
+  nodeNumber: 10
+  title: Position of Median - Even Number
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A weather station recorded the maximum daily temperature (in degrees Celsius) over 8 consecutive days:
+        21, 15, 25, 18, 23, 19, 16, 22. Calculate the median temperature for this period.'
+      avatarIntro: Finding the median when you have an even number of data points requires a specific calculation. Remember
+        to always sort your data first!
+      mathTool: null
+      finalAnswer: 20 °C
+      stepByStepGuideline:
+      - 'Step 1: Arrange the data in ascending order: 15, 16, 18, 19, 21, 22, 23, 25.'
+      - 'Step 2: Determine the number of values, n. Here, n = 8 (even).'
+      - 'Step 3: Calculate the position of the median using the formula (n+1)/2. Position = (8+1)/2 = 4.5.'
+      - 'Step 4: Since the position is 4.5, the median lies exactly between the 4th value and the 5th value.'
+      - 'Step 5: Identify the 4th value (19) and the 5th value (21).'
+      - 'Step 6: Calculate the median by finding the mean (average) of these two middle values: Median = (19 + 21) / 2 = 40
+        / 2 = 20.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: 'A local football team recorded the number of goals they scored in their last 6 matches: 3, 0, 5, 1, 4,
+        2. Determine the median number of goals scored.'
+      mathTool: null
+      finalAnswer: 2.5 goals
+      stepByStepGuideline:
+      - 'Step 1: Arrange the data in ascending order: 0, 1, 2, 3, 4, 5.'
+      - 'Step 2: Determine the number of values, n. Here, n = 6 (even).'
+      - 'Step 3: Calculate the position of the median: Position = (6+1)/2 = 3.5.'
+      - 'Step 4: The median lies between the 3rd value and the 4th value.'
+      - 'Step 5: Identify the 3rd value (2) and the 4th value (3).'
+      - 'Step 6: Calculate the median by finding the mean of the two middle values: Median = (2 + 3) / 2 = 5 / 2 = 2.5.'
+      id: q10-2
+      questionGroup: q10
+    - problemText: 'A customer service center recorded the wait times (in minutes) for 10 randomly selected calls: 7.5, 3.0,
+        10.0, 5.5, 4.0, 8.5, 6.0, 9.0, 5.0, 4.5. Find the median wait time.'
+      mathTool: null
+      finalAnswer: 5.75 minutes
+      stepByStepGuideline:
+      - 'Step 1: Arrange the data in ascending order: 3.0, 4.0, 4.5, 5.0, 5.5, 6.0, 7.5, 8.5, 9.0, 10.0.'
+      - 'Step 2: Determine the number of values, n. Here, n = 10 (even).'
+      - 'Step 3: Calculate the position of the median: Position = (10+1)/2 = 5.5.'
+      - 'Step 4: The median lies between the 5th value and the 6th value.'
+      - 'Step 5: Identify the 5th value (5.5) and the 6th value (6.0).'
+      - 'Step 6: Calculate the median by finding the mean of the two middle values: Median = (5.5 + 6.0) / 2 = 11.5 / 2 =
+        5.75.'
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'The amount of rainfall (in mm) measured over 8 days in a city was recorded as: 12, 5, 20, 15, 8, 10, 18,
+        7. Calculate the median rainfall.'
+      mathTool: null
+      finalAnswer: 11 mm
+      stepByStepGuideline:
+      - 'Step 1: Arrange the data in ascending order: 5, 7, 8, 10, 12, 15, 18, 20.'
+      - 'Step 2: Determine the number of values, n. Here, n = 8 (even).'
+      - 'Step 3: Calculate the position of the median: Position = (8+1)/2 = 4.5.'
+      - 'Step 4: The median lies between the 4th value and the 5th value.'
+      - 'Step 5: Identify the 4th value (10) and the 5th value (12).'
+      - 'Step 6: Calculate the median by finding the mean of the two middle values: Median = (10 + 12) / 2 = 22 / 2 = 11.'
+      id: q10-4
+      questionGroup: q10
+    - problemText: 'A warehouse weighed 6 small packaged goods (in kg) for shipment preparation: 1.2, 0.8, 1.5, 1.0, 0.9,
+        1.4. Determine the median weight of the goods.'
+      mathTool: null
+      finalAnswer: 1.1 kg
+      stepByStepGuideline:
+      - 'Step 1: Arrange the data in ascending order: 0.8, 0.9, 1.0, 1.2, 1.4, 1.5.'
+      - 'Step 2: Determine the number of values, n. Here, n = 6 (even).'
+      - 'Step 3: Calculate the position of the median: Position = (6+1)/2 = 3.5.'
+      - 'Step 4: The median lies between the 3rd value and the 4th value.'
+      - 'Step 5: Identify the 3rd value (1.0) and the 4th value (1.2).'
+      - 'Step 6: Calculate the median by finding the mean of the two middle values: Median = (1.0 + 1.2) / 2 = 2.2 / 2 = 1.1.'
+      id: q10-5
+      questionGroup: q10
+- id: avg-node-11
+  nodeNumber: 11
+  title: Finding Unknown Given Median
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: The number of customers served daily by a sales agent over six days were 8, 12, 5, 15, 10, and 7. If the
+        number of customers served on the seventh day was $x$, and the median number of customers served over the seven days
+        is 10, find a possible value of $x$.
+      avatarIntro: Finding an unknown value when you know the median can be tricky! Remember to always sort your data first
+        to determine the position of the middle number.
+      mathTool: null
+      finalAnswer: 11 (or any integer x ≥ 10)
+      stepByStepGuideline:
+      - Determine the total number of data points (N). N = 6 + 1 = 7 (Odd).
+      - 'Calculate the position of the median: (N + 1) / 2 = (7 + 1) / 2 = 4th value.'
+      - 'Sort the known six values: 5, 7, 8, 10, 12, 15.'
+      - Since the median must be 10, the 4th value in the list of seven must be 10.
+      - If we insert x, we need the first three values to be ≤ 10 and the last three values to be ≥ 10.
+      - The known values surrounding the 4th position are 8 (3rd position) and 10 (4th position).
+      - If x is placed after 10 (e.g., x=11), the order is 5, 7, 8, 10, 11, 12, 15. The 4th value is 10. This works.
+      - Any value of x such that x ≥ 10 will ensure 10 remains the 4th value in the sorted list. A possible value is x = 11.
+      id: q11-1
+      questionGroup: q11
+    - problemText: 'Seven laboratory samples recorded the following masses (in grams): 3.5, 6.0, 4.2, 7.1, 5.0, 4.8, 6.5.
+        If an eighth sample with mass $x$ grams is added, the median mass of all eight samples becomes 5.4 g. Find the value
+        of $x$.'
+      mathTool: null
+      finalAnswer: '5.8'
+      stepByStepGuideline:
+      - Determine the total number of data points (N). N = 7 + 1 = 8 (Even).
+      - Calculate the position of the median. The median is the mean of the N/2 and (N/2 + 1) values, which are the 4th and
+        5th values.
+      - Since the median is 5.4 g, the sum of the 4th and 5th values must be 5.4 × 2 = 10.8.
+      - 'Sort the known seven values: 3.5, 4.2, 4.8, 5.0, 6.0, 6.5, 7.1.'
+      - We need to insert x such that the 4th value (V4) and 5th value (V5) sum to 10.8.
+      - 'If x is inserted between 5.0 (the known 4th value) and 6.0 (the known 5th value): V4 remains 5.0, and V5 becomes
+        x.'
+      - 'Set up the equation: V4 + V5 = 10.8 => 5.0 + x = 10.8.'
+      - 'Solve for x: x = 10.8 - 5.0 = 5.8.'
+      - 'Check: 3.5, 4.2, 4.8, 5.0, 5.8, 6.0, 6.5, 7.1. Median = (5.0 + 5.8) / 2 = 10.8 / 2 = 5.4. Thus, x = 5.8 is correct.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: 'A small business recorded its daily sales revenue (in dollars) over five days: 120, 150, 100, 180, 130.
+        If the revenue on the sixth day was $x$, and the median daily revenue for all six days is $140, find a possible value
+        of $x$.'
+      mathTool: null
+      finalAnswer: 145 (or any value x such that 130 ≤ x ≤ 150)
+      stepByStepGuideline:
+      - Determine the total number of data points (N). N = 5 + 1 = 6 (Even).
+      - The median is the average of the 3rd and 4th values (V3 and V4).
+      - Since the median is 140, V3 + V4 = 140 × 2 = 280.
+      - 'Sort the known five values: 100, 120, 130, 150, 180.'
+      - The current middle values are 130 (3rd) and 150 (4th). Their sum is 280.
+      - For 130 and 150 to remain V3 and V4 respectively when x is included, x must be placed between 130 and 150 (inclusive).
+      - If x = 130, the order is 100, 120, 130, 130, 150, 180. V3=130, V4=130. Sum=260. (Incorrect)
+      - If x is placed such that V3=130 and V4=150, then x must be greater than 130 but less than 150. Wait, we need V3 +
+        V4 = 280.
+      - 'Let''s re-examine the positions: If V3=130 and V4=150, the median is 140. This means x must be placed such that 130
+        remains the 3rd value and 150 remains the 4th value.'
+      - For 130 to be V3, x must be greater than or equal to 130 (x ≥ 130).
+      - For 150 to be V4, x must be less than or equal to 150 (x ≤ 150).
+      - Therefore, 130 ≤ x ≤ 150. A possible integer value is x = 145.
+      id: q11-3
+      questionGroup: q11
+    - problemText: 'Eight students achieved the following scores on a history quiz: 78, 85, 92, 60, 88, 70, 95, 80. If a ninth
+        student scored $x$ marks, and the median score for all nine students is 81, determine the value of $x$.'
+      mathTool: null
+      finalAnswer: '81'
+      stepByStepGuideline:
+      - Determine the total number of data points (N). N = 8 + 1 = 9 (Odd).
+      - 'Calculate the position of the median: (N + 1) / 2 = (9 + 1) / 2 = 5th value.'
+      - Since the median is 81, the 5th value (V5) in the sorted list must be 81.
+      - 'Sort the known eight values: 60, 70, 78, 80, 85, 88, 92, 95.'
+      - Currently, the 4th value is 80 and the 5th value is 85.
+      - For the new 5th value to be exactly 81, the unknown value x must take this position.
+      - 'If x = 81, the new sorted list is: 60, 70, 78, 80, 81(x), 85, 88, 92, 95.'
+      - The 5th value is 81. Therefore, x must be 81.
+      id: q11-4
+      questionGroup: q11
+    - problemText: 'Nine lengths of metal rods (in cm) were measured: 50, 62, 58, 70, 55, 65, 60, 75, 52. If a tenth rod of
+        length $x$ cm is added, the median length of all ten rods becomes 61 cm. Assuming $x$ is an integer, find a possible
+        value of $x$.'
+      mathTool: null
+      finalAnswer: 63 (or any integer x ≥ 62)
+      stepByStepGuideline:
+      - Determine the total number of data points (N). N = 9 + 1 = 10 (Even).
+      - The median is the average of the 5th and 6th values (V5 and V6).
+      - Since the median is 61 cm, V5 + V6 = 61 × 2 = 122.
+      - 'Sort the known nine values: 50, 52, 55, 58, 60, 62, 65, 70, 75.'
+      - The current 5th value is 60, and the 6th value is 62. Their sum is 122.
+      - For V5 + V6 = 122, we must ensure that V5 remains 60 and V6 remains 62.
+      - If V5=60 and V6=62, the value x must be placed such that it does not displace the 5th value (60) or the 6th value
+        (62).
+      - If x is less than or equal to 60, V5 will be x or less than 60, changing the sum.
+      - If x is greater than or equal to 62, the list maintains 60 as V5 and 62 as V6.
+      - 'If x = 62, the order is: 50, 52, 55, 58, 60, 62, 62, 65, 70, 75. V5=60, V6=62. Sum=122. (Works)'
+      - 'If x = 63, the order is: 50, 52, 55, 58, 60, 62, 63, 65, 70, 75. V5=60, V6=62. Sum=122. (Works)'
+      - Thus, any integer value x ≥ 62 is a possible answer. We choose x = 63.
+      id: q11-5
+      questionGroup: q11
+- id: avg-node-12
+  nodeNumber: 12
+  title: Median from Dot Diagram
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: dotDiagram
+    preWrittenQuestions:
+    - problemText: A class survey recorded the number of siblings each student had. The results are displayed in the dot diagram
+        below. Find the median number of siblings.
+      avatarIntro: Ready to practice finding the median? Remember, the median is the middle value when the data is ordered,
+        and for dot diagrams, counting the dots helps us find that exact position!
+      mathTool:
+        toolName: dotDiagram
+        parameters:
+          data:
+            '0': 1
+            '1': 4
+            '2': 3
+            '3': 2
+            '4': 1
+          xLabel: Number of Siblings
+      finalAnswer: 2 siblings
+      stepByStepGuideline:
+      - 'Count the total number of data values (dots): $N = 1 + 4 + 3 + 2 + 1 = 11$.'
+      - 'Determine the position of the median value using the formula for an odd number of data points: Position = $(N+1)/2
+        = (11+1)/2 = 6$th value.'
+      - Count the dots starting from the left (smallest value) until the 6th position is reached.
+      - The 1st dot is at 0. The 2nd through 5th dots are at 1. The 6th dot is the first dot located at 2.
+      - Therefore, the median number of siblings is 2.
+      id: q12-1
+      questionGroup: q12
+    - problemText: The dot diagram illustrates how many magazines 13 people bought in a given month. Determine the median
+        number of magazines bought.
+      mathTool:
+        toolName: dotDiagram
+        parameters:
+          data:
+            '1': 2
+            '2': 3
+            '3': 4
+            '4': 3
+            '5': 1
+          xLabel: Magazines Bought
+      finalAnswer: 3 magazines
+      stepByStepGuideline:
+      - 'Count the total number of data values (dots): $N = 2 + 3 + 4 + 3 + 1 = 13$.'
+      - 'Determine the position of the median: Position = $(N+1)/2 = (13+1)/2 = 7$th value.'
+      - Count the dots sequentially from the smallest value (1) to find the 7th value.
+      - The 1st and 2nd dots are at 1. The 3rd, 4th, and 5th dots are at 2. The 6th, 7th, 8th, and 9th dots are at 3.
+      - The 7th data value falls within the group labeled 3.
+      - The median number of magazines bought is 3.
+      id: q12-2
+      questionGroup: q12
+    - problemText: Twelve students tracked the number of books they read over the school holiday. The data is presented in
+        the dot diagram. Calculate the median number of books read.
+      mathTool:
+        toolName: dotDiagram
+        parameters:
+          data:
+            '0': 1
+            '1': 5
+            '2': 4
+            '3': 2
+          xLabel: Books Read
+      finalAnswer: 1.5 books
+      stepByStepGuideline:
+      - 'Count the total number of data values (dots): $N = 1 + 5 + 4 + 2 = 12$.'
+      - 'Since N is even, the median is the average of the two middle values: the $N/2 = 6$th value and the $(N/2) + 1 = 7$th
+        value.'
+      - Locate the 6th value by counting from the left. 1 dot is at 0. 5 dots are at 1. The 6th value is the last dot at 1.
+      - Locate the 7th value. The 7th value is the first dot located at 2.
+      - 'Calculate the median by averaging these two middle values: Median = $(1 + 2) / 2 = 1.5$.'
+      id: q12-3
+      questionGroup: q12
+    - problemText: A soccer team recorded the number of goals scored in their last 10 training matches, as shown in the dot
+        diagram. Find the median number of goals scored per match.
+      mathTool:
+        toolName: dotDiagram
+        parameters:
+          data:
+            '0': 2
+            '1': 3
+            '2': 2
+            '3': 2
+            '4': 1
+          xLabel: Goals Scored per Match
+      finalAnswer: 1.5 goals
+      stepByStepGuideline:
+      - 'Count the total number of data values (matches): $N = 2 + 3 + 2 + 2 + 1 = 10$.'
+      - Since N is even, the median is the average of the $N/2 = 5$th value and the $(N/2) + 1 = 6$th value.
+      - Locate the 5th value by counting from the left. 2 dots are at 0. 3 dots are at 1. The 5th value is the last dot at
+        1.
+      - Locate the 6th value. 2 dots are at 2. The 6th value is the first dot at 2.
+      - 'Calculate the median: Median = (5th value + 6th value) / 2 = $(1 + 2) / 2 = 1.5$.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: Fifteen families were surveyed regarding the number of pets they owned. The results are summarized in the
+        dot diagram below. Calculate the median number of pets owned.
+      mathTool:
+        toolName: dotDiagram
+        parameters:
+          data:
+            '1': 4
+            '2': 3
+            '3': 2
+            '4': 4
+            '5': 2
+          xLabel: Number of Pets Owned
+      finalAnswer: 3 pets
+      stepByStepGuideline:
+      - 'Count the total number of data values (dots): $N = 4 + 3 + 2 + 4 + 2 = 15$.'
+      - 'Determine the position of the median: Position = $(N+1)/2 = (15+1)/2 = 8$th value.'
+      - Count the dots starting from the left (smallest value 1) until the 8th position is reached.
+      - The 1st through 4th dots are at 1. The 5th through 7th dots are at 2.
+      - The 8th dot is the first dot located at 3.
+      - The median number of pets owned is 3.
+      id: q12-5
+      questionGroup: q12
+- id: avg-node-13
+  nodeNumber: 13
+  title: Median from Stem-and-Leaf
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A research lab conducted an analysis of 15 different water samples and recorded their pH values. The results
+        are displayed in the stem-and-leaf diagram below.
+
+
+        $$ \text{Stem} \quad | \quad \text{Leaf} $$
+
+        $$ 1 \quad | \quad 4 \ 5 \ 6 \ 8 $$
+
+        $$ 2 \quad | \quad 0 \ 1 \ 1 \ 3 \ 5 \ 7 $$
+
+        $$ 3 \quad | \quad 0 \ 2 \ 4 \ 4 \ 6 $$
+
+
+        Key: 1|4 means 1.4
+
+
+        Find the median pH value.'
+      avatarIntro: Stem-and-leaf diagrams are a great way to organize data. To find the median, remember to count every leaf
+        to determine the total number of data points.
+      mathTool: null
+      finalAnswer: '2.3'
+      stepByStepGuideline:
+      - 'Step 1: Count the total number of data values (leaves). There are 4 + 6 + 5 = 15 values (N=15).'
+      - 'Step 2: Determine the position of the median. Since N is odd, the median position is (N + 1) / 2 = (15 + 1) / 2 =
+        8th value.'
+      - 'Step 3: Count through the leaves systematically to locate the 8th value. The first stem (1) contains 4 values. The
+        second stem (2) starts at the 5th value.'
+      - 'Step 4: Counting in the second stem: 5th (2.0), 6th (2.1), 7th (2.1), 8th (2.3).'
+      - 'Step 5: The median pH value is 2.3.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: 'The points scored by 16 finalists in a major video game tournament are recorded in the following stem-and-leaf
+        plot.
+
+
+        $$ \text{Stem} \quad | \quad \text{Leaf} $$
+
+        $$ 13 \quad | \quad 5 \ 8 $$
+
+        $$ 14 \quad | \quad 0 \ 1 \ 2 \ 5 \ 7 \ 9 $$
+
+        $$ 15 \quad | \quad 0 \ 3 \ 4 \ 6 \ 6 \ 8 $$
+
+        $$ 16 \quad | \quad 1 \ 1 $$
+
+
+        Key: 14|2 means 142 points
+
+
+        Calculate the median score.'
+      mathTool: null
+      finalAnswer: 149.5 points
+      stepByStepGuideline:
+      - 'Step 1: Count the total number of data values (leaves). There are 2 + 6 + 6 + 2 = 16 values (N=16).'
+      - 'Step 2: Determine the positions of the median. Since N is even, the median is the average of the N/2 and (N/2) +
+        1 values. Positions are 16/2 = 8th and 9th values.'
+      - 'Step 3: Count through the leaves systematically. Stem 13 contains 2 values (1st to 2nd). Stem 14 contains 6 values
+        (3rd to 8th).'
+      - 'Step 4: The 8th value is the last leaf in Stem 14: 14|9 = 149 points.'
+      - 'Step 5: The 9th value is the first leaf in Stem 15: 15|0 = 150 points.'
+      - 'Step 6: Calculate the median by averaging these two values: Median = (149 + 150) / 2 = 149.5 points.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: 'A company measured the lengths of 13 fiber optic cables (in km) prepared for installation. The measurements
+        are shown in the stem-and-leaf diagram.
+
+
+        $$ \text{Stem} \quad | \quad \text{Leaf} $$
+
+        $$ 2 \quad | \quad 1 \ 4 \ 7 $$
+
+        $$ 3 \quad | \quad 0 \ 2 \ 5 \ 8 \ 9 $$
+
+        $$ 4 \quad | \quad 1 \ 3 \ 5 \ 6 \ 6 $$
+
+
+        Key: 3|5 means 3.5 km
+
+
+        Determine the median cable length.'
+      mathTool: null
+      finalAnswer: 3.5 km
+      stepByStepGuideline:
+      - 'Step 1: Count the total number of data values (leaves). There are 3 + 5 + 5 = 13 values (N=13).'
+      - 'Step 2: Determine the position of the median. Since N is odd, the median position is (N + 1) / 2 = (13 + 1) / 2 =
+        7th value.'
+      - 'Step 3: Count through the leaves systematically. Stem 2 contains 3 values (1st to 3rd). Stem 3 contains 5 values
+        (4th to 8th).'
+      - 'Step 4: The 7th value is the 4th leaf in Stem 3: 3|5 = 3.5 km.'
+      - 'Step 5: The median cable length is 3.5 km.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: 'A retailer tracked the number of items sold per hour over 14 randomly selected hours during peak operating
+        times. The data is presented below.
+
+
+        $$ \text{Stem} \quad | \quad \text{Leaf} $$
+
+        $$ 1 \quad | \quad 0 \ 2 \ 5 \ 8 $$
+
+        $$ 2 \quad | \quad 1 \ 3 \ 3 \ 7 $$
+
+        $$ 3 \quad | \quad 0 \ 4 \ 5 $$
+
+        $$ 4 \quad | \quad 1 \ 2 \ 5 $$
+
+
+        Key: 2|5 means 25 items
+
+
+        Find the median number of items sold.'
+      mathTool: null
+      finalAnswer: 25 items
+      stepByStepGuideline:
+      - 'Step 1: Count the total number of data values (leaves). There are 4 + 4 + 3 + 3 = 14 values (N=14).'
+      - 'Step 2: Determine the positions of the median. Since N is even, the median is the average of the N/2 and (N/2) +
+        1 values. Positions are 14/2 = 7th and 8th values.'
+      - 'Step 3: Count through the leaves systematically. Stem 1 contains 4 values (1st to 4th). Stem 2 contains 4 values
+        (5th to 8th).'
+      - 'Step 4: The 7th value is the 3rd leaf in Stem 2: 2|3 = 23 items.'
+      - 'Step 5: The 8th value is the 4th leaf in Stem 2: 2|7 = 27 items.'
+      - 'Step 6: Calculate the median by averaging these two values: Median = (23 + 27) / 2 = 25 items.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: 'The daily profit (in tens of dollars) recorded by a small market vendor over 17 days is summarized in
+        the stem-and-leaf diagram.
+
+
+        $$ \text{Stem} \quad | \quad \text{Leaf} $$
+
+        $$ 0 \quad | \quad 5 \ 8 \ 9 $$
+
+        $$ 1 \quad | \quad 0 \ 1 \ 2 \ 4 \ 5 \ 7 \ 9 $$
+
+        $$ 2 \quad | \quad 0 \ 2 \ 3 \ 5 \ 6 \ 8 $$
+
+        $$ 3 \quad | \quad 1 $$
+
+
+        Key: 1|5 means $150
+
+
+        Calculate the median daily profit.'
+      mathTool: null
+      finalAnswer: $170
+      stepByStepGuideline:
+      - 'Step 1: Count the total number of data values (leaves). There are 3 + 7 + 6 + 1 = 17 values (N=17).'
+      - 'Step 2: Determine the position of the median. Since N is odd, the median position is (N + 1) / 2 = (17 + 1) / 2 =
+        9th value.'
+      - 'Step 3: Count through the leaves systematically. Stem 0 contains 3 values (1st to 3rd). Stem 1 contains 7 values
+        (4th to 10th).'
+      - 'Step 4: The 9th value is the 6th leaf in Stem 1: 1|7. Using the key (1|5 means $150), this represents $170.'
+      - 'Step 5: The median daily profit is $170.'
+      id: q13-5
+      questionGroup: q13
+- id: avg-node-14
+  nodeNumber: 14
+  title: Understanding Median vs Mean with Outliers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: "A small tech startup recorded the monthly salaries (in dollars) of its 9 employees: $2500, $2800, $3000,\
+        \ $2700, $2600, $2900, $2700, $2500, and $50,000 (for the CEO). \n(a) Calculate the mean and the median salary for\
+        \ these employees.\n(b) Which measure, the mean or the median, gives a better representation of the typical salary\
+        \ at this startup? Explain your reasoning."
+      avatarIntro: Welcome! Understanding how an extreme value affects data is essential in statistics. Let's practice calculating
+        averages when outliers are present.
+      mathTool: null
+      finalAnswer: '(a) Mean: $7633.33; Median: $2700. (b) The median ($2700) is the better measure because the single extremely
+        high salary of $50,000 (the outlier) significantly inflates the mean, making it $7633.33, which is much higher than
+        what most employees actually earn.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the salaries and divide by the number of employees (9). Sum = $2500 + $2800 + $3000
+        + $2700 + $2600 + $2900 + $2700 + $2500 + $50000 = $68700. Mean = $68700 / 9 ≈ $7633.33.'
+      - 'Step 2: Calculate the Median. Arrange the data in ascending order: $2500, $2500, $2600, $2700, $2700, $2800, $2900,
+        $3000, $50000. Since there are 9 values, the median is the 5th value. Median = $2700.'
+      - 'Step 3: Compare and Explain. The mean ($7633.33) is heavily influenced by the extreme outlier ($50,000), pulling
+        the average far above the typical salary range ($2500 - $3000). The median ($2700) is unaffected by the extreme value
+        and accurately represents the center of the earning distribution for the typical employee.'
+      id: q14-1
+      questionGroup: q14
+    - problemText: 'A history teacher recorded the scores (out of 100) for 8 students on a challenging quiz: 85, 92, 88, 75,
+        90, 89, 86, and 12. The score of 12 was due to a student failing to complete the quiz.
+
+        (a) Calculate the mean and the median quiz score.
+
+        (b) Which measure, the mean or the median, should the teacher use to describe the central performance of the class?
+        Justify your choice.'
+      mathTool: null
+      finalAnswer: '(a) Mean: 77.125; Median: 87. (b) The median (87) is the better measure. The extremely low score of 12
+        is an outlier that pulls the mean down significantly (to 77.125). The median better reflects the performance of the
+        majority of the students, who scored between 75 and 92.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the scores: 85 + 92 + 88 + 75 + 90 + 89 + 86 + 12 = 617. Mean = 617 / 8 = 77.125.'
+      - 'Step 2: Calculate the Median. Arrange the data: 12, 75, 85, 86, 88, 89, 90, 92. Since there are 8 values (even number),
+        the median is the average of the 4th and 5th values: (86 + 88) / 2 = 87.'
+      - 'Step 3: Compare and Explain. The low outlier (12) drags the mean down by nearly 10 points compared to the median.
+        Since the median is less sensitive to extreme values, 87 provides a more accurate representation of the typical student
+        performance on the quiz.'
+      id: q14-2
+      questionGroup: q14
+    - problemText: 'A real estate agent listed the selling prices (in thousands of dollars) for 7 houses in a suburban neighbourhood
+        last month: 350, 420, 380, 400, 360, 390, and 2500 (this last price corresponds to a single luxury estate).
+
+        (a) Calculate the mean and the median selling price.
+
+        (b) If a journalist wants to report the ''typical'' house price in the neighbourhood, which measure should they quote?
+        Explain why.'
+      mathTool: null
+      finalAnswer: '(a) Mean: $685,714 (or 685.71 thousand); Median: $390,000 (or 390 thousand). (b) The median ($390,000)
+        is the appropriate measure. The $2.5 million estate is a high outlier that drastically inflates the mean, making it
+        suggest a price ($685,714) that is far higher than what most properties sold for.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the prices (in thousands): 350 + 420 + 380 + 400 + 360 + 390 + 2500 = 4800. Mean
+        = 4800 / 7 ≈ 685.71 (thousand dollars).'
+      - 'Step 2: Calculate the Median. Arrange the data: 350, 360, 380, 390, 400, 420, 2500. Since there are 7 values, the
+        median is the 4th value. Median = 390 (thousand dollars).'
+      - 'Step 3: Compare and Explain. The median is the best measure of central tendency when outliers are present. The outlier
+        of 2500 pulls the mean far above the price range of the majority of the houses, making the median of 390 thousand
+        dollars a much better indicator of the typical house price.'
+      id: q14-3
+      questionGroup: q14
+    - problemText: 'The ages of 10 members attending a local community group meeting were recorded: 25, 32, 28, 40, 35, 30,
+        29, 31, 33, and 98 (representing one very active senior member).
+
+        (a) Determine the mean age and the median age of the members.
+
+        (b) Which measure is the best indicator of the age of a typical group member? State the reason.'
+      mathTool: null
+      finalAnswer: '(a) Mean: 38.1 years; Median: 31.5 years. (b) The median (31.5 years) is the better indicator. The age
+        of 98 years is a significant outlier that pulls the mean up (to 38.1 years), suggesting the group is older than the
+        majority of its members, who are typically in their late 20s and early 30s.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the ages: 25 + 32 + 28 + 40 + 35 + 30 + 29 + 31 + 33 + 98 = 381. Mean = 381 / 10
+        = 38.1 years.'
+      - 'Step 2: Calculate the Median. Arrange the data: 25, 28, 29, 30, 31, 32, 33, 35, 40, 98. Since there are 10 values,
+        the median is the average of the 5th and 6th values: (31 + 32) / 2 = 31.5 years.'
+      - 'Step 3: Compare and Explain. The extreme outlier (98) inflates the mean significantly. Since the median (31.5) is
+        resistant to outliers, it provides a much more representative average age for the typical member of the group, which
+        is centered around 30-35 years old.'
+      id: q14-4
+      questionGroup: q14
+    - problemText: 'A commuter tracked their daily drive time (in minutes) over seven working days: 15, 22, 18, 20, 19, 17,
+        and 120 (the 120 minutes was due to a major traffic incident).
+
+        (a) Calculate the mean and the median daily commute time.
+
+        (b) If the commuter wanted to describe their normal travel time, should they use the mean or the median? Explain your
+        reasoning.'
+      mathTool: null
+      finalAnswer: '(a) Mean: 33 minutes; Median: 19 minutes. (b) The median (19 minutes) should be used. The extreme outlier
+        (120 minutes) significantly increased the mean (to 33 minutes), suggesting a typical commute much longer than what
+        usually occurs (15 to 22 minutes).'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the times: 15 + 22 + 18 + 20 + 19 + 17 + 120 = 231 minutes. Mean = 231 / 7 = 33 minutes.'
+      - 'Step 2: Calculate the Median. Arrange the data: 15, 17, 18, 19, 20, 22, 120. Since there are 7 values, the median
+        is the 4th value. Median = 19 minutes.'
+      - 'Step 3: Compare and Explain. The mean (33 minutes) is pulled far above the cluster of typical commute times due to
+        the 120-minute outlier. The median (19 minutes) is robust against this outlier and therefore better represents the
+        typical, normal travel time.'
+      id: q14-5
+      questionGroup: q14
+- id: avg-node-15
+  nodeNumber: 15
+  title: Finding Mode from Raw Data
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: "A shoe retailer recorded the sizes of the first 11 pairs of running shoes sold on Saturday: 7, 7.5, 8,\
+        \ 7, 9, 6, 7.5, 7, 10, 7, 8. \n(a) Determine the mode of the shoe sizes sold.\n(b) Explain how the mode is useful\
+        \ to the retailer."
+      avatarIntro: Welcome! Remember that the mode is simply the data value that occurs most often. Focus on counting how
+        many times each size appears.
+      mathTool: null
+      finalAnswer: (a) Mode = Size 7. (b) The mode tells the retailer which size is the most popular, allowing them to ensure
+        they stock sufficient inventory of Size 7.
+      stepByStepGuideline:
+      - 'List the frequency of each shoe size: Size 6 (1 time), Size 7 (4 times), Size 7.5 (2 times), Size 8 (2 times), Size
+        9 (1 time), Size 10 (1 time).'
+      - Identify the size with the highest frequency. Size 7 appears 4 times.
+      - 'State the mode: Mode = Size 7.'
+      - 'Explain the practical use: The mode indicates the most popular item, which helps the retailer manage stock efficiently.'
+      id: q15-1
+      questionGroup: q15
+    - problemText: 'During a class icebreaker activity, 10 students were asked to state their favorite single-digit whole
+        number (excluding 0). Their responses were: 3, 5, 8, 3, 9, 7, 3, 1, 5, 6. Find the mode of the favorite numbers.'
+      mathTool: null
+      finalAnswer: Mode = 3
+      stepByStepGuideline:
+      - 'List the frequency of each number reported:'
+      - '1: 1 time'
+      - '3: 3 times'
+      - '5: 2 times'
+      - '6: 1 time'
+      - '7: 1 time'
+      - '8: 1 time'
+      - '9: 1 time'
+      - Identify the number that appears most frequently. The number 3 appears 3 times.
+      - The mode is 3.
+      id: q15-2
+      questionGroup: q15
+    - problemText: 'A fashion boutique tracked the sizes of 12 blouses sold during a special promotion. The sizes recorded
+        were: S, M, L, S, XL, M, S, S, L, M, XL, XS. Find the modal blouse size.'
+      mathTool: null
+      finalAnswer: Mode = S
+      stepByStepGuideline:
+      - 'Count the occurrences of each size:'
+      - 'XS: 1 time'
+      - 'S: 4 times'
+      - 'M: 3 times'
+      - 'L: 2 times'
+      - 'XL: 2 times'
+      - Identify the size with the highest frequency. Size S appears 4 times.
+      - The modal size is S.
+      id: q15-3
+      questionGroup: q15
+    - problemText: 'A football team recorded the number of goals scored in their last 10 league matches: 1, 3, 0, 2, 3, 1,
+        3, 4, 3, 2. What is the modal number of goals scored per match?'
+      mathTool: null
+      finalAnswer: Mode = 3 goals
+      stepByStepGuideline:
+      - 'Organize the data to count the frequency of each score:'
+      - '0 goals: 1 time'
+      - '1 goal: 2 times'
+      - '2 goals: 2 times'
+      - '3 goals: 4 times'
+      - '4 goals: 1 time'
+      - Identify the score that occurred most frequently. The score of 3 goals occurred 4 times.
+      - The mode is 3.
+      id: q15-4
+      questionGroup: q15
+    - problemText: 'A survey of 11 students recorded the number of siblings each student had: 1, 2, 0, 3, 2, 1, 2, 2, 4, 1,
+        0. Find the mode of the number of siblings.'
+      mathTool: null
+      finalAnswer: Mode = 2 siblings
+      stepByStepGuideline:
+      - 'Tally the frequency of each reported number of siblings:'
+      - '0 siblings: 2 times'
+      - '1 sibling: 3 times'
+      - '2 siblings: 4 times'
+      - '3 siblings: 1 time'
+      - '4 siblings: 1 time'
+      - The value 2 appears most frequently (4 times).
+      - The mode is 2 siblings.
+      id: q15-5
+      questionGroup: q15
+- id: avg-node-16
+  nodeNumber: 16
+  title: Mode from Frequency Table
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A sales manager tracked the weekly commission earned by agents last month, summarized in the frequency
+        table below.
+
+
+        | Commission ($) | 150 | 200 | 250 | 300 |
+
+        |---|---|---|---|---|
+
+        | Number of agents | 4 | 7 | 3 | 1 |
+
+
+        State the mode of the weekly commission distribution.'
+      avatarIntro: Finding the mode from a frequency table is easy! Just remember that the mode is the data value, not the
+        count, corresponding to the highest frequency.
+      mathTool: null
+      finalAnswer: $200
+      stepByStepGuideline:
+      - Identify the frequency column (Number of agents).
+      - Find the highest frequency in this column. The highest frequency is 7.
+      - Identify the corresponding data value (Commission $) associated with this highest frequency. The commission corresponding
+        to 7 agents is $200.
+      - The mode is the data value with the highest frequency. Mode = $200.
+      id: q16-1
+      questionGroup: q16
+    - problemText: 'The following table shows the distribution of monthly salaries for employees at a small company.
+
+
+        | Monthly Salary ($) | 3000 | 3500 | 4000 | 4500 | 5000 |
+
+        |---|---|---|---|---|---|
+
+        | Number of employees | 12 | 15 | 8 | 4 | 1 |
+
+
+        Determine the modal monthly salary.'
+      mathTool: null
+      finalAnswer: $3500
+      stepByStepGuideline:
+      - Examine the frequency row (Number of employees).
+      - Locate the largest frequency, which is 15.
+      - Identify the Monthly Salary ($) that corresponds to this highest frequency (15 employees). The corresponding salary
+        is $3500.
+      - The mode of the distribution is $3500.
+      id: q16-2
+      questionGroup: q16
+    - problemText: 'A teacher recorded the results of a Science test for a class. The distribution of Test scores (in marks)
+        is shown below.
+
+
+        | Test Score (marks) | 60 | 70 | 80 | 90 | 100 |
+
+        |---|---|---|---|---|---|
+
+        | Number of students | 5 | 11 | 9 | 6 | 2 |
+
+
+        What is the modal test score?'
+      mathTool: null
+      finalAnswer: 70 marks
+      stepByStepGuideline:
+      - Identify the frequency (Number of students) column.
+      - The highest frequency observed is 11.
+      - The Test Score (data value) associated with 11 students is 70 marks.
+      - The mode is the data value with the highest frequency, which is 70 marks.
+      id: q16-3
+      questionGroup: q16
+    - problemText: 'A library tracked the number of books borrowed per day over several weeks. The results are summarized
+        in the frequency table.
+
+
+        | Number of books borrowed | 0 | 1 | 2 | 3 | 4 |
+
+        |---|---|---|---|---|---|
+
+        | Number of days | 3 | 10 | 14 | 8 | 5 |
+
+
+        Find the mode of the number of books borrowed.'
+      mathTool: null
+      finalAnswer: 2 books
+      stepByStepGuideline:
+      - Review the frequencies (Number of days).
+      - The maximum frequency is 14.
+      - Find the corresponding data value (Number of books borrowed) for the frequency 14. This value is 2.
+      - Therefore, the mode is 2 books.
+      id: q16-4
+      questionGroup: q16
+    - problemText: 'The table shows the distribution of scores achieved by a group of students on a Mathematics assignment.
+
+
+        | Test Score (marks) | 50 | 65 | 75 | 85 |
+
+        |---|---|---|---|---|
+
+        | Number of students | 2 | 5 | 13 | 8 |
+
+
+        State the mode of the scores.'
+      mathTool: null
+      finalAnswer: 75 marks
+      stepByStepGuideline:
+      - Scan the frequency row (Number of students) to find the largest value.
+      - The largest frequency is 13.
+      - Determine the Test Score (data value) that corresponds to the frequency 13. This score is 75 marks.
+      - The mode of the scores is 75 marks.
+      id: q16-5
+      questionGroup: q16
+- id: avg-node-17
+  nodeNumber: 17
+  title: Bimodal and No Mode
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A bank tracked the waiting time (in minutes) for 8 customers during the lunch rush: 4, 8, 5, 4, 10, 8,
+        6, 7.
+
+        (a) Find the mode(s) of this dataset.
+
+        (b) What term is used to describe a distribution that has exactly two modes?'
+      avatarIntro: Mode can sometimes be tricky! Remember that the mode is the value that appears most often. Pay attention
+        if there's a tie for the highest frequency.
+      mathTool: null
+      finalAnswer: (a) The modes are 4 and 8. (b) Bimodal.
+      stepByStepGuideline:
+      - 'Step 1: List the data values and count their frequencies: 4 (2 times), 5 (1 time), 6 (1 time), 7 (1 time), 8 (2 times),
+        10 (1 time).'
+      - 'Step 2: Identify the value(s) with the highest frequency. Both 4 and 8 appear twice, and this is the highest frequency.'
+      - 'Step 3: State the modes: 4 and 8.'
+      - 'Step 4: Recall the terminology: A distribution with exactly two modes is called bimodal.'
+      id: q17-1
+      questionGroup: q17
+    - problemText: 'Five students reported the number of hours they spent exercising last week: 1, 3, 5, 2, 4. Determine the
+        mode of this dataset.'
+      mathTool: null
+      finalAnswer: There is no mode.
+      stepByStepGuideline:
+      - 'Step 1: List the data values and count their frequencies: 1 (1 time), 2 (1 time), 3 (1 time), 4 (1 time), 5 (1 time).'
+      - 'Step 2: Since every value appears exactly once (all frequencies are the same), there is no value that occurs most
+        frequently.'
+      - 'Step 3: Conclude that the dataset has no mode.'
+      id: q17-2
+      questionGroup: q17
+    - problemText: 'In a design survey, 11 participants were asked to choose a primary color for a new company logo. The choices
+        were: Red, Blue, Green, Red, Yellow, Blue, Green, Orange, Red, Blue, Green. Find the mode(s) of the color choices.'
+      mathTool: null
+      finalAnswer: Red, Blue, and Green.
+      stepByStepGuideline:
+      - 'Step 1: Tally the frequency of each color choice:'
+      - 'Red: 3 times'
+      - 'Blue: 3 times'
+      - 'Green: 3 times'
+      - 'Yellow: 1 time'
+      - 'Orange: 1 time'
+      - 'Step 2: Identify the value(s) with the highest frequency. Red, Blue, and Green all occur 3 times, which is the highest
+        frequency.'
+      - 'Step 3: State all modes: Red, Blue, and Green. (This is a multimodal distribution.)'
+      id: q17-3
+      questionGroup: q17
+    - problemText: 'A shipping clerk weighed 7 outgoing packages (in kg): 1.5, 2.0, 1.5, 3.1, 4.0, 2.0, 1.5. Find the mode
+        of the package weights.'
+      mathTool: null
+      finalAnswer: 1.5 kg.
+      stepByStepGuideline:
+      - 'Step 1: Arrange the data for easier counting: 1.5, 1.5, 1.5, 2.0, 2.0, 3.1, 4.0.'
+      - 'Step 2: Count the frequency of each weight:'
+      - '1.5 kg: 3 times'
+      - '2.0 kg: 2 times'
+      - '3.1 kg: 1 time'
+      - '4.0 kg: 1 time'
+      - 'Step 3: Identify the value that appears most often. 1.5 kg appears 3 times, which is the highest frequency.'
+      - 'Step 4: The mode is 1.5 kg.'
+      id: q17-4
+      questionGroup: q17
+    - problemText: The following table summarizes the number of pets owned by students in a class. Determine the modal number
+        of pets owned.
+      mathTool: null
+      finalAnswer: 2 pets.
+      stepByStepGuideline:
+      - 'Step 1: Understand that in a frequency table, the mode corresponds to the data value (Number of Pets) that has the
+        highest frequency (Number of Students).'
+      - 'Step 2: Examine the ''Number of Students'' row to find the highest frequency. The frequencies are 5, 8, 12, 6, and
+        3.'
+      - 'Step 3: The highest frequency is 12.'
+      - 'Step 4: Look at the corresponding ''Number of Pets'' value for the frequency 12. This value is 2.'
+      - 'Step 5: The modal number of pets owned is 2.'
+      id: q17-5
+      questionGroup: q17
+- id: avg-node-18
+  nodeNumber: 18
+  title: Understanding Mode Changes
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A scientist recorded the daily maximum temperatures (°C) over 8 consecutive days: 15, 17, 16, 15, 18,
+        17, 15, 19.
+
+
+        (i) Determine the mode(s) of the temperature readings.
+
+        (ii) If the scientist later realizes that one of the 15°C readings was recorded incorrectly and must be removed from
+        the dataset, what will the new mode(s) of the remaining 7 readings be?'
+      avatarIntro: Mode is the value that appears most often in a dataset. Let's practice how adding or removing data points
+        can change this central tendency measure.
+      mathTool: null
+      finalAnswer: (i) Mode = 15°C. (ii) New Modes = 15°C and 17°C (Bimodal).
+      stepByStepGuideline:
+      - 'Step 1: List the frequencies for the initial dataset (15, 17, 16, 15, 18, 17, 15, 19). Frequencies: 15 (3 times),
+        17 (2 times), 16 (1 time), 18 (1 time), 19 (1 time).'
+      - 'Step 2: Identify the initial mode(s). Since 15 appears 3 times, which is the highest frequency, the initial Mode
+        is 15°C.'
+      - 'Step 3: Analyze the change: Remove one reading of 15°C. The new frequencies are: 15 (2 times), 17 (2 times), 16 (1
+        time), 18 (1 time), 19 (1 time).'
+      - 'Step 4: Identify the new mode(s). Since 15 and 17 both appear 2 times (the highest frequency), the new modes are
+        15°C and 17°C (the dataset is now bimodal).'
+      id: q18-1
+      questionGroup: q18
+    - problemText: 'A therapist tracked the time (in minutes) taken by 7 patients to complete a cognitive puzzle: 20, 25,
+        22, 20, 24, 25, 23.
+
+
+        (i) Find the mode(s) of the completion times.
+
+        (ii) Three new patients complete the puzzle, and they all take 23 minutes. If these three new times are added to the
+        dataset, what is the new mode of the combined dataset?'
+      mathTool: null
+      finalAnswer: (i) Modes = 20 minutes and 25 minutes (Bimodal). (ii) New Mode = 23 minutes.
+      stepByStepGuideline:
+      - 'Step 1: List the frequencies for the initial dataset (20, 25, 22, 20, 24, 25, 23). Frequencies: 20 (2 times), 25
+        (2 times), 22 (1 time), 24 (1 time), 23 (1 time).'
+      - 'Step 2: Identify the initial mode(s). Since 20 and 25 both appear 2 times, the initial Modes are 20 minutes and 25
+        minutes (Bimodal).'
+      - 'Step 3: Analyze the change: Three values of 23 minutes are added. The new frequencies are: 20 (2 times), 25 (2 times),
+        22 (1 time), 24 (1 time), 23 (1 + 3 = 4 times).'
+      - 'Step 4: Identify the new mode(s). Since 23 appears 4 times, which is the highest frequency, the new Mode is 23 minutes.'
+      id: q18-2
+      questionGroup: q18
+    - problemText: 'The heights (in cm) of 8 sunflowers in a garden were measured: 5.5, 6.0, 5.5, 6.5, 7.0, 6.0, 7.5, 8.0.
+
+
+        (i) State the modal height(s) of the sunflowers.
+
+        (ii) If a new sunflower, measuring 6.0 cm, is added to the group, what is the new modal height?'
+      mathTool: null
+      finalAnswer: (i) Modes = 5.5 cm and 6.0 cm (Bimodal). (ii) New Mode = 6.0 cm.
+      stepByStepGuideline:
+      - 'Step 1: List the frequencies for the initial dataset (5.5, 6.0, 5.5, 6.5, 7.0, 6.0, 7.5, 8.0). Frequencies: 5.5 (2
+        times), 6.0 (2 times), all others (1 time).'
+      - 'Step 2: Identify the initial mode(s). Since 5.5 cm and 6.0 cm both appear 2 times, the initial Modes are 5.5 cm and
+        6.0 cm (Bimodal).'
+      - 'Step 3: Analyze the change: One value of 6.0 cm is added. The new frequencies are: 5.5 (2 times), 6.0 (2 + 1 = 3
+        times).'
+      - 'Step 4: Identify the new mode(s). Since 6.0 appears 3 times, which is the highest frequency, the new Mode is 6.0
+        cm.'
+      id: q18-3
+      questionGroup: q18
+    - problemText: 'A store tracked the number of items purchased in 9 random transactions: 7, 8, 9, 8, 7, 10, 7, 9, 11.
+
+
+        (i) What is the modal number of items sold per transaction?
+
+        (ii) If the transaction involving the purchase of 7 items (the modal value) is identified as fraudulent and removed
+        from the list, what are the mode(s) of the remaining 8 transactions?'
+      mathTool: null
+      finalAnswer: (i) Mode = 7 items. (ii) New Modes = 7, 8, and 9 items (Trimodal).
+      stepByStepGuideline:
+      - 'Step 1: List the frequencies for the initial dataset (7, 8, 9, 8, 7, 10, 7, 9, 11). Frequencies: 7 (3 times), 8 (2
+        times), 9 (2 times), 10 (1 time), 11 (1 time).'
+      - 'Step 2: Identify the initial mode(s). Since 7 appears 3 times, the initial Mode is 7 items.'
+      - 'Step 3: Analyze the change: Remove one transaction of 7 items. The new frequencies are: 7 (3 - 1 = 2 times), 8 (2
+        times), 9 (2 times), 10 (1 time), 11 (1 time).'
+      - 'Step 4: Identify the new mode(s). Since 7, 8, and 9 all appear 2 times (the highest frequency), the new Modes are
+        7, 8, and 9 items (Trimodal).'
+      id: q18-4
+      questionGroup: q18
+    - problemText: 'A manufacturer tested the talk time (in minutes) of 6 prototype smartphone batteries: 40, 42, 45, 40,
+        43, 42.
+
+
+        (i) State the mode(s) of the battery talk times.
+
+        (ii) If three new batteries are tested, and all three record a talk time of 48 minutes, what is the mode of the resulting
+        9 data points?'
+      mathTool: null
+      finalAnswer: (i) Modes = 40 minutes and 42 minutes (Bimodal). (ii) New Mode = 48 minutes.
+      stepByStepGuideline:
+      - 'Step 1: List the frequencies for the initial dataset (40, 42, 45, 40, 43, 42). Frequencies: 40 (2 times), 42 (2 times),
+        45 (1 time), 43 (1 time).'
+      - 'Step 2: Identify the initial mode(s). Since 40 and 42 both appear 2 times, the initial Modes are 40 minutes and 42
+        minutes (Bimodal).'
+      - 'Step 3: Analyze the change: Three values of 48 minutes are added. The new frequencies are: 40 (2 times), 42 (2 times),
+        45 (1 time), 43 (1 time), 48 (3 times).'
+      - 'Step 4: Identify the new mode(s). Since 48 appears 3 times, which is the highest frequency, the new Mode is 48 minutes.'
+      id: q18-5
+      questionGroup: q18
+- id: avg-node-19
+  nodeNumber: 19
+  title: When to Use Mean
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A teacher recorded the scores (out of 20) achieved by 7 students on a short Mathematics quiz: 16, 18,
+        17, 19, 16, 17, 18. Which measure of central tendency (mean, median, or mode) should the teacher use to best represent
+        the typical performance of the class? Justify your choice.'
+      avatarIntro: Understanding how to choose the right average is crucial in statistics. Let's analyze this dataset to see
+        which measure best reflects the typical student performance.
+      mathTool: null
+      finalAnswer: Mean is the most appropriate measure of central tendency.
+      stepByStepGuideline:
+      - 'Analyze the dataset: The scores are 16, 18, 17, 19, 16, 17, 18. All values are relatively close together, ranging
+        only from 16 to 19.'
+      - 'Identify the presence of outliers: Since there are no extreme high or low values (outliers), the mean will not be
+        skewed or distorted.'
+      - 'Select the appropriate measure: The mean is the best choice because it takes into account the exact value of every
+        single score in the calculation. When data is closely grouped and lacks outliers, the mean provides the most accurate
+        and robust representation of the center.'
+      id: q19-1
+      questionGroup: q19
+    - problemText: 'A medical researcher measured the heights (in cm) of 7 randomly selected 15-year-old boys: 172, 175, 170,
+        173, 176, 174, 171. If the researcher needs to report a single value representing the typical height for this group,
+        which measure (mean, median, or mode) should be used? Explain your reasoning.'
+      mathTool: null
+      finalAnswer: Mean is the most appropriate measure of central tendency.
+      stepByStepGuideline:
+      - 'Examine the nature of the data: The data represents the heights of similar individuals (15-year-old boys), and the
+        values (170 cm to 176 cm) are continuous and clustered together.'
+      - 'Evaluate the impact of outliers: There are no outliers present in this dataset that would disproportionately affect
+        the calculation of the mean.'
+      - 'Justify the choice: Since the data is well-behaved and uniform, the mean is preferred. The mean utilizes all 7 data
+        points, providing a precise summary of the typical height, which is particularly useful for reporting scientific or
+        medical findings.'
+      id: q19-2
+      questionGroup: q19
+    - problemText: 'The maximum daily temperatures (°C) recorded over six consecutive days in early June were: 28.5, 29.1,
+        28.8, 29.5, 28.9, 29.0. Determine which measure of central tendency (mean, median, or mode) is the best choice to
+        summarize the typical heat experienced during this period. Provide a clear justification.'
+      mathTool: null
+      finalAnswer: Mean is the most appropriate measure of central tendency.
+      stepByStepGuideline:
+      - 'Assess the temperature readings: The temperatures are continuous numerical data points that are tightly grouped (between
+        28.5°C and 29.5°C).'
+      - 'Check for skewness or outliers: The data distribution is relatively symmetric and contains no extreme values that
+        would skew the mean.'
+      - 'Conclusion on measure choice: Because there are no outliers, the mean accurately reflects the center of the distribution
+        by incorporating all temperature recordings. This makes the mean the standard and most representative measure for
+        summarizing typical daily environmental conditions.'
+      id: q19-3
+      questionGroup: q19
+    - problemText: 'A consumer watchdog group monitored the price ($) of the same brand of air fryer across 6 different retail
+        stores: $125.90, $127.50, $126.00, $128.10, $127.00, $126.50. Which measure of central tendency (mean, median, or
+        mode) should be used to report the typical market price of the air fryer? Explain why this measure is superior in
+        this case.'
+      mathTool: null
+      finalAnswer: Mean is the most appropriate measure of central tendency.
+      stepByStepGuideline:
+      - 'Review the price data: The prices are numerical and show very little variation (ranging from $125.90 to $128.10).'
+      - 'Determine suitability: Since the prices are consistent and there are no instances of deeply discounted prices or
+        excessively high mark-ups (no outliers), the mean is the most suitable average.'
+      - 'Explanation: The mean accurately represents the center of the pricing data because it accounts for every price recorded,
+        providing a fair and precise representation of the typical market cost.'
+      id: q19-4
+      questionGroup: q19
+    - problemText: 'An automotive magazine tested the fuel efficiency (in km/L) of 6 compact sedan models: 15.1, 15.5, 15.3,
+        15.0, 15.4, 15.2. To summarize the average fuel efficiency performance of this class of cars, should the magazine
+        use the mean, median, or mode? Justify your decision based on the characteristics of the dataset.'
+      mathTool: null
+      finalAnswer: Mean is the most appropriate measure of central tendency.
+      stepByStepGuideline:
+      - 'Analyze the fuel efficiency data: The measurements are continuous and closely clustered (15.0 km/L to 15.5 km/L),
+        indicating a uniform performance level among the models.'
+      - 'Check for distorting factors: The dataset does not contain any extreme values or outliers that would improperly shift
+        the mean.'
+      - 'Select the measure: The mean is the preferred measure because it uses the exact efficiency rating of all 6 models,
+        yielding the most comprehensive representation of the overall typical fuel efficiency for the group. It is the most
+        commonly accepted average for reporting continuous, non-skewed numerical data.'
+      id: q19-5
+      questionGroup: q19
+- id: avg-node-20
+  nodeNumber: 20
+  title: When to Use Median
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A startup company has 5 employees. Their annual salaries (in thousands of dollars) are: 45, 50, 48, 47,
+        and 500 (for the founder). If the company wants to report the ''typical'' salary to potential investors, should they
+        use the mean or the median? Justify your choice by explaining the effect of the outlier.'
+      avatarIntro: Choosing the right average is crucial! Let's analyze how extreme values can skew our perception of the
+        data's center.
+      mathTool: null
+      finalAnswer: Median is more appropriate.
+      stepByStepGuideline:
+      - 'Identify the outlier in the dataset: The salary of $500,000 (500 thousand) is significantly higher than the other
+        four salaries, making it an extreme value.'
+      - 'Explain the effect of the outlier on the Mean: The extreme outlier pulls the mean salary much higher than what the
+        majority of employees earn. The mean would be misleading as it does not represent the typical salary for most staff
+        members.'
+      - 'Explain why the Median is preferred: The median is resistant to extreme values (outliers). It focuses on the middle
+        value of the ordered set, providing a more accurate representation of the central tendency for the majority of the
+        staff, making it the better choice for describing the ''typical'' salary.'
+      id: q20-1
+      questionGroup: q20
+    - problemText: 'A real estate agent records the selling prices of 6 recent homes (in thousands of dollars) in a small
+        rural area: 280, 295, 305, 275, 310, and 4500 (a newly built luxury estate). Which measure, the mean or the median,
+        should the agent use to describe the typical home price in this area? Explain why your chosen measure gives a better
+        picture.'
+      mathTool: null
+      finalAnswer: Median is more appropriate.
+      stepByStepGuideline:
+      - 'Identify the outlier: The price of $4,500,000 (4500 thousand) is an extreme outlier compared to the prices of the
+        other 5 homes.'
+      - 'Analyze the impact of the outlier: This single high value would severely inflate the mean price, making the calculated
+        mean much higher than the actual cost of almost all homes in the area.'
+      - 'Conclude why the Median is best: The median is not influenced by the magnitude of the outlier. It will provide a
+        value that accurately reflects the price range of the majority of typical homes, thereby giving a more representative
+        measure of central tendency.'
+      id: q20-2
+      questionGroup: q20
+    - problemText: 'A small tutoring class of 7 students took a challenging diagnostic quiz (out of 50). The scores were:
+        42, 45, 38, 40, 41, 44, and 5. Due to one student having a very difficult day, their score was extremely low. Which
+        measure of central tendency (mean or median) best describes the typical performance of the class? Provide a full explanation.'
+      mathTool: null
+      finalAnswer: Median is most appropriate.
+      stepByStepGuideline:
+      - 'Identify the performance cluster and the outlier: Six students scored high (between 38 and 45), but one student scored
+        5, which is a clear low outlier.'
+      - 'Evaluate the Mean: The mean score would be pulled down drastically by the single score of 5, giving the impression
+        that the class as a whole performed poorly.'
+      - 'Evaluate the Median: The median is unaffected by the extreme score. Since most scores are clustered high, the median
+        will fall within that cluster, accurately reflecting the typical, successful performance of the majority of the students
+        in the class.'
+      id: q20-3
+      questionGroup: q20
+    - problemText: 'A market research group surveyed 8 individuals shopping at a specific boutique. Their ages were recorded
+        as: 31, 29, 35, 32, 30, 33, 34, and 95. One individual was significantly older than the target demographic. To summarize
+        the typical age of shoppers, should the researcher rely on the mean or the median? Explain your reasoning.'
+      mathTool: null
+      finalAnswer: Median is most appropriate.
+      stepByStepGuideline:
+      - 'Identify the data structure: The majority of ages are clustered tightly between 29 and 35, while 95 is an extreme
+        outlier.'
+      - 'Explain the distortion of the Mean: If the mean is calculated, the age of 95 will significantly inflate the average,
+        suggesting the typical shopper is older than what the data for the other seven shoppers shows.'
+      - 'Justify using the Median: The median is the middle value and is not sensitive to the magnitude of the outlier 95.
+        It will accurately reflect the central age of the primary demographic group, providing a better representation of
+        the typical shopper.'
+      id: q20-4
+      questionGroup: q20
+    - problemText: 'A data analyst recorded the duration (in seconds) that 9 users spent interacting with a new website feature:
+        15, 18, 16, 20, 17, 19, 14, 17, and 3600. The 3600 seconds (1 hour) duration was likely due to the user walking away
+        or a technical error. If the analyst needs to report the typical interaction time, which measure of central tendency
+        is most appropriate, and why?'
+      mathTool: null
+      finalAnswer: Median is most appropriate.
+      stepByStepGuideline:
+      - 'Identify the outlier: The value 3600 seconds is an extreme outlier, representing an interaction time vastly longer
+        than all other recorded times (14 to 20 seconds).'
+      - 'Explain the Mean''s deficiency: The mean interaction time would be severely inflated by the 3600-second outlier,
+        suggesting that users typically spend hundreds of seconds on the feature, which is factually incorrect for the majority
+        of users.'
+      - 'Explain the Median''s stability: The median represents the middle value of the true distribution of interaction times
+        (clustered around 17 seconds). Because the median is not affected by the extreme size of the outlier, it provides
+        a stable and accurate measure of the typical interaction duration.'
+      id: q20-5
+      questionGroup: q20
+- id: avg-node-21
+  nodeNumber: 21
+  title: When to Use Mode
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A shoe wholesaler reviewed the orders placed by retailers last month: Size 7, Size 8, Size 9, Size 7,
+        Size 7, Size 8, Size 10, Size 7. The wholesaler wants to maximize sales by stocking the most popular size heavily.
+        Which measure of central tendency (mean, median, or mode) should they use, and why?'
+      avatarIntro: Choosing the right average is key to making good decisions. Think about what kind of data you are dealing
+        with here.
+      mathTool: null
+      finalAnswer: Mode. The mode is Size 7 (appears 4 times). The wholesaler needs to know the most common specific size
+        to stock inventory effectively. Calculating the mean or median would result in a non-existent size (e.g., size 7.8)
+        which is useless for ordering products.
+      stepByStepGuideline:
+      - 'Identify the goal: The wholesaler needs to find the most frequently occurring size to stock heavily.'
+      - 'Analyze the data type: Shoe sizes are discrete numerical data, but the goal is to find the most popular *instance*
+        (frequency).'
+      - 'Evaluate measures: The mean and median would produce an average size that might not correspond to an actual shoe
+        size, making it impractical for inventory.'
+      - 'Conclusion: Mode is the appropriate measure as it identifies the value that occurs most often (Size 7), directly
+        solving the inventory problem.'
+      id: q21-1
+      questionGroup: q21
+    - problemText: 'A restaurant tracked the favorite pizza toppings requested by 10 customers: Mushroom, Pepperoni, Cheese,
+        Pineapple, Pepperoni, Mushroom, Pepperoni, Veggie, Cheese, Pepperoni. Which measure of central tendency can be used
+        to determine the most popular topping? Calculate it and explain why other measures are unsuitable.'
+      mathTool: null
+      finalAnswer: Only the mode can be used. The mode is Pepperoni (appears 4 times). Pizza toppings are categorical data
+        (non-numerical labels). Mean and median require numerical values that can be added or ordered, which is impossible
+        with categories like 'Mushroom' or 'Pepperoni'.
+      stepByStepGuideline:
+      - 'Identify the data type: Pizza toppings are categorical data.'
+      - 'Determine suitability: Since the data consists of non-numerical categories, the mean and median cannot be calculated.'
+      - 'Identify the appropriate measure: Only the mode can be used to find the most frequent category.'
+      - 'Calculate the mode: Count the frequency of each topping. Pepperoni occurs 4 times, making it the mode.'
+      id: q21-2
+      questionGroup: q21
+    - problemText: 'A social researcher surveyed 9 families in a housing block regarding the number of children they have.
+        The responses were: 2, 1, 3, 2, 0, 2, 1, 4, 2. If the researcher wants to report the single most common family structure
+        (by child count), which measure of central tendency should be used? Justify your choice.'
+      mathTool: null
+      finalAnswer: 'Mode. The modal number of children is 2 (appears 4 times). Although mean and median can be calculated,
+        the mode provides the clearest answer to the researcher''s specific goal: identifying the actual count of children
+        that occurs most frequently in the sample, representing the most common family structure.'
+      stepByStepGuideline:
+      - 'Identify the goal: Find the single most common (most frequent) count.'
+      - 'Analyze the data: The data is discrete numerical (counts).'
+      - 'Calculate frequencies: Count how many times each value appears (0: 1, 1: 2, 2: 4, 3: 1, 4: 1).'
+      - 'Determine the mode: The value 2 appears most frequently.'
+      - 'Justify the choice: The mode is the best measure when the goal is specifically to highlight the most common or popular
+        discrete value in a set.'
+      id: q21-3
+      questionGroup: q21
+    - problemText: 'An electronics factory analyzed the failure reports for 7 returned products: Screen Damage, Battery Issue,
+        Software Glitch, Screen Damage, Battery Issue, Screen Damage, Screen Damage. The management needs to prioritize fixing
+        the most frequent cause of return to reduce costs. Which measure of central tendency should they rely on, and what
+        is the result?'
+      mathTool: null
+      finalAnswer: Mode. The result is Screen Damage. The reasons for failure are categories that cannot be averaged numerically.
+        Management needs the mode to identify the failure type that occurs most often so they can allocate resources to fix
+        the primary defect source.
+      stepByStepGuideline:
+      - 'Identify the data: The data consists of reasons for failure, which are categories.'
+      - 'Determine the required measure: To find the ''most frequent cause,'' the mode must be used.'
+      - 'Calculate the mode: Count the occurrences of each category (Screen Damage: 4, Battery Issue: 2, Software Glitch:
+        1).'
+      - 'State the result: The mode is Screen Damage.'
+      id: q21-4
+      questionGroup: q21
+    - problemText: '12 students were surveyed about their favorite subject in school. The results were: History, Math, Science,
+        Math, English, History, Math, Science, Math, Art, Math, History. Determine the modal favorite subject and explain
+        why calculating the mean of this data is impossible.'
+      mathTool: null
+      finalAnswer: The modal favorite subject is Math (appears 5 times). Calculating the mean is impossible because favorite
+        subjects are categorical data. They are non-numerical labels that cannot be added together and divided to find an
+        average.
+      stepByStepGuideline:
+      - 'Analyze the data type: Favorite subjects are categories, not numbers.'
+      - 'Determine the appropriate measure: Only the mode can be used for categorical data.'
+      - 'Calculate the mode: List the frequencies (Math: 5, History: 3, Science: 2, English: 1, Art: 1). The highest frequency
+        is Math.'
+      - 'Explain the limitation: Mean calculation requires numerical values; since subjects cannot be added or divided, the
+        mean cannot be found.'
+      id: q21-5
+      questionGroup: q21
+- id: avg-node-22
+  nodeNumber: 22
+  title: Comparing All Three Measures
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A quality control manager tracked the number of defects found in 9 production batches. The counts were
+        recorded as: 3, 4, 4, 5, 5, 5, 6, 6, and 90.
+
+
+        (a) Calculate the mean number of defects, rounded to two decimal places.
+
+        (b) Determine the median number of defects.
+
+        (c) State the mode of the defect counts.
+
+        (d) Explain which measure of central tendency best describes the typical number of defects, and why the other measures
+        are misleading in this context.'
+      avatarIntro: Understanding how extreme values influence different averages is crucial in data analysis. Let's calculate
+        all three measures for this dataset and see the impact of that large outlier!
+      mathTool: null
+      finalAnswer: (a) Mean ≈ 14.22; (b) Median = 5; (c) Mode = 5; (d) The Median (5) or the Mode (5) best describes the typical
+        number of defects. The Mean (14.22) is highly misleading because the extreme outlier value of 90 inflates the total
+        sum significantly, pulling the mean far above the vast majority of the data.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the values: 3 + 4 + 4 + 5 + 5 + 5 + 6 + 6 + 90 = 128. Divide the sum by the number
+        of data points (9): Mean = 128 / 9 ≈ 14.22.'
+      - 'Step 2: Determine the Median. First, arrange the data in ascending order: 3, 4, 4, 5, 5, 5, 6, 6, 90. Since there
+        are 9 values (n=9), the median is the 5th value. Median = 5.'
+      - 'Step 3: State the Mode. Identify the value that appears most frequently. The value 5 appears 3 times. Mode = 5.'
+      - 'Step 4: Compare the measures and explain the suitability. The mean (14.22) is significantly higher than the median
+        (5) and mode (5). This discrepancy is caused by the outlier (90). Since 8 out of 9 batches had 6 or fewer defects,
+        the median or mode provides a much better representation of the central tendency or ''typical'' value, while the mean
+        is inflated and misleading.'
+      id: q22-1
+      questionGroup: q22
+    - problemText: 'A company monitored the duration (in minutes) of 8 recent customer service calls. The times recorded were:
+        2.0, 2.5, 2.5, 3.0, 3.5, 4.0, 4.0, and 25.0.
+
+
+        (a) Calculate the mean call duration, rounded to 2 decimal places.
+
+        (b) Determine the median call duration.
+
+        (c) State the mode(s) of the call duration.
+
+        (d) If the value 25.0 minutes is considered an error or an extreme outlier, calculate the new mean call duration if
+        this outlier is removed.'
+      mathTool: null
+      finalAnswer: (a) Mean ≈ 5.81 minutes; (b) Median = 3.25 minutes; (c) Modes = 2.5 minutes and 4.0 minutes (Bimodal);
+        (d) New Mean ≈ 3.07 minutes.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the values: 2.0 + 2.5 + 2.5 + 3.0 + 3.5 + 4.0 + 4.0 + 25.0 = 46.5. Divide by 8: Mean
+        = 46.5 / 8 = 5.8125 ≈ 5.81 minutes.'
+      - 'Step 2: Determine the Median. The data is already sorted. Since n=8 (even), the median is the average of the 4th
+        and 5th values (3.0 and 3.5). Median = (3.0 + 3.5) / 2 = 3.25 minutes.'
+      - 'Step 3: State the Mode(s). The values 2.5 and 4.0 both appear twice, which is the maximum frequency. Modes = 2.5
+        minutes and 4.0 minutes.'
+      - 'Step 4: Calculate the new mean without the outlier (25.0). The new sum is 46.5 - 25.0 = 21.5. The new number of data
+        points is 7. New Mean = 21.5 / 7 ≈ 3.07 minutes.'
+      id: q22-2
+      questionGroup: q22
+    - problemText: 'The points scored by a basketball team in their last 10 games were recorded: 12, 15, 15, 18, 19, 20, 21,
+        22, 23, and 150. The score of 150 occurred during an exhibition match against a much weaker opponent.
+
+
+        (a) Calculate the mean, median, and mode for this dataset.
+
+        (b) Based on your calculations, which measure (mean, median, or mode) is the largest, and which is the smallest?
+
+        (c) Explain why the mean is significantly higher than the median and the mode in this specific scenario.'
+      mathTool: null
+      finalAnswer: '(a) Mean = 30.5, Median = 19.5, Mode = 15; (b) Largest: Mean (30.5), Smallest: Mode (15); (c) The score
+        of 150 is an extreme outlier. The mean is calculated using the sum of all values, so the outlier pulls the mean upwards
+        dramatically. The median (which only depends on the position of the middle values) and the mode (most frequent value)
+        are resistant to this extreme score.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the values: 12 + 15 + 15 + 18 + 19 + 20 + 21 + 22 + 23 + 150 = 305. Divide by 10:
+        Mean = 305 / 10 = 30.5.'
+      - 'Step 2: Determine the Median. Arrange the data: 12, 15, 15, 18, 19, 20, 21, 22, 23, 150. Since n=10 (even), the median
+        is the average of the 5th (19) and 6th (20) values. Median = (19 + 20) / 2 = 19.5.'
+      - 'Step 3: State the Mode. The value 15 appears twice, which is the highest frequency. Mode = 15.'
+      - 'Step 4: Compare measures. Mean (30.5) is the largest, and Mode (15) is the smallest. The mean is pulled up by the
+        extreme outlier of 150, demonstrating that the mean is sensitive to extreme values, unlike the median and mode.'
+      id: q22-3
+      questionGroup: q22
+    - problemText: 'A logistic company weighed 9 identical boxes (in kg) before shipping: 8, 9, 10, 10, 11, 12, 12, 13, 14.
+
+
+        (a) Calculate the mean weight.
+
+        (b) Determine the median weight.
+
+        (c) State the mode(s) of the weights.
+
+        (d) Given that the data distribution is quite symmetrical, comment on the relationship between the mean and the median
+        based on your results.'
+      mathTool: null
+      finalAnswer: (a) Mean = 11 kg; (b) Median = 11 kg; (c) Modes = 10 kg and 12 kg (Bimodal); (d) When data is symmetrical
+        (or nearly symmetrical), the mean and the median are typically very close or identical. In this case, both the mean
+        and the median equal 11 kg.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the values: 8 + 9 + 10 + 10 + 11 + 12 + 12 + 13 + 14 = 99. Divide by 9: Mean = 99
+        / 9 = 11 kg.'
+      - 'Step 2: Determine the Median. The data is already sorted. Since n=9, the median is the 5th value (11). Median = 11
+        kg.'
+      - 'Step 3: State the Mode(s). Both 10 and 12 appear twice. Modes = 10 kg and 12 kg.'
+      - 'Step 4: Comment on the relationship. Since the distribution is symmetrical, the center point defined by calculation
+        (Mean = 11) and the center point defined by position (Median = 11) are the same.'
+      id: q22-4
+      questionGroup: q22
+    - problemText: 'A survey asked 10 residents how many years they have lived in their current neighborhood. The responses
+        (in years) were: 0, 1, 1, 1, 2, 2, 3, 3, 4, 5.
+
+
+        (a) Calculate the mean number of years.
+
+        (b) Determine the median number of years.
+
+        (c) State the mode number of years.
+
+        (d) This data is skewed right (towards higher values). Based on your results, explain the relationship between the
+        mean and the median for a right-skewed distribution.'
+      mathTool: null
+      finalAnswer: (a) Mean = 2.2 years; (b) Median = 2 years; (c) Mode = 1 year; (d) In a right-skewed distribution, the
+        mean (2.2) is typically greater than the median (2). This happens because the higher values (4 and 5) pull the calculated
+        mean average up, while the median remains positioned closer to the cluster of lower values.
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the values: 0 + 1 + 1 + 1 + 2 + 2 + 3 + 3 + 4 + 5 = 22. Divide by 10: Mean = 22 /
+        10 = 2.2 years.'
+      - 'Step 2: Determine the Median. The data is already sorted. Since n=10 (even), the median is the average of the 5th
+        (2) and 6th (2) values. Median = (2 + 2) / 2 = 2 years.'
+      - 'Step 3: State the Mode. The value 1 appears three times, which is the highest frequency. Mode = 1 year.'
+      - 'Step 4: Explain the skew. Since the distribution is right-skewed (meaning the tail extends to the higher values),
+        the mean (2.2) is pulled slightly higher than the median (2).'
+      id: q22-5
+      questionGroup: q22
+- id: avg-node-24
+  nodeNumber: 24
+  title: Real-World Applications and Decision Making
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A property developer is marketing a new apartment complex in a previously low-cost neighborhood. To make
+        the area seem more upscale, the developer advertises the ''average selling price'' of homes in the immediate vicinity
+        based on the following recent sales (prices in thousands of dollars): 300, 310, 320, 305, 315, 330, 300, 315, 950
+        (The developer''s new luxury penthouse sale).
+
+
+        (a) Calculate the mean and median selling price.
+
+        (b) Which average is the developer likely using for marketing purposes? Justify your choice.
+
+        (c) If you were a prospective buyer looking for a typical home price in the neighborhood, which measure should you
+        rely on? Explain the implication of using the wrong measure.'
+      avatarIntro: Choosing the right average is crucial in finance and real estate! Let's analyze this scenario to see how
+        statistics can influence perception and decisions.
+      mathTool: null
+      finalAnswer: '(a) Mean: $382,777.78; Median: $315,000. (b) The developer is likely using the Mean ($382,777.78) because
+        the extreme outlier ($950K) inflates the value, making the neighborhood appear more expensive and desirable for high-end
+        sales. (c) A prospective buyer should rely on the Median ($315,000). The median is resistant to the outlier and represents
+        the typical central value of the housing market in that area. Relying on the mean would mislead the buyer into believing
+        typical homes are significantly more expensive than they actually are.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the values (300+310+320+305+315+330+300+315+950 = 3445) and divide by N=9. Mean =
+        3445 / 9 ≈ 382.78 (or $382,777.78).'
+      - 'Step 2: Calculate the Median. Arrange the data in ascending order: 300, 300, 305, 310, 315, 315, 320, 330, 950. The
+        middle value (5th position) is the Median: 315 (or $315,000).'
+      - 'Step 3: Determine the developer''s choice. Since the mean is significantly higher than most values due to the outlier,
+        the developer will use the Mean for marketing purposes.'
+      - 'Step 4: Justify the buyer''s choice. The buyer should use the Median because it accurately reflects the central tendency
+        of the non-luxury homes and is not skewed by the single high outlier.'
+      id: q24-1
+      questionGroup: q24
+    - problemText: 'During a contract negotiation, a company CEO reports the ''average employee annual salary'' to be $61,000.
+        The union, representing the majority of the workers, collects the actual salaries (in thousands of dollars) of 10
+        employees: 30, 32, 30, 35, 31, 33, 34, 32, 180 (CEO), 173 (CFO).
+
+
+        (a) Verify the CEO''s reported average by calculating the mean salary.
+
+        (b) Calculate the median salary.
+
+        (c) Explain why the company chose to use the mean average in negotiations. Which average should the union use to argue
+        for a pay raise for the typical worker, and why?'
+      mathTool: null
+      finalAnswer: '(a) Mean: The sum is 610. 610/10 = 61 (or $61,000). The CEO''s figure is correct for the mean. (b) Median:
+        Sorted data: 30, 30, 31, 32, 32, 33, 34, 35, 173, 180. Median is the average of the 5th and 6th values: (32+33)/2
+        = 32.5 (or $32,500). (c) The company chose the Mean because the two high executive salaries (180 and 173) significantly
+        inflate the mean, making overall compensation appear much higher than what most employees earn. The union should use
+        the Median ($32,500). The median accurately reflects the typical wage earned by the majority of employees and provides
+        a stronger basis for arguing that the standard pay scale is too low.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the salaries (610) and divide by N=10. Mean = 61. This verifies the CEO''s claim.'
+      - 'Step 2: Calculate the Median. Order the data and find the middle value. Median = (32 + 33) / 2 = 32.5.'
+      - 'Step 3: Analyze the implications. The Mean is heavily skewed by the outliers (CEO/CFO salaries).'
+      - 'Step 4: Determine the union''s best average. The union should use the Median because it is robust against outliers
+        and represents the typical salary of the non-executive staff they represent.'
+      id: q24-2
+      questionGroup: q24
+    - problemText: 'A hospital administrator reports that the ''average wait time'' in the Emergency Room is 49 minutes, claiming
+        efficient service. However, a patient advocacy group finds that while most patients are treated quickly, a few critical
+        cases cause extreme delays. The wait times (in minutes) for 11 recent patients were: 5, 8, 10, 12, 15, 18, 20, 25,
+        30, 40, 360 (critical case).
+
+
+        (a) Calculate the Mean wait time (rounded to the nearest minute).
+
+        (b) Calculate the Median wait time.
+
+        (c) The administrator is using one measure to reflect efficiency, while the patient advocacy group wants to show the
+        typical patient experience. Which measure is most misleading in this context, and how does the choice affect public
+        perception of the hospital?'
+      mathTool: null
+      finalAnswer: '(a) Mean: 543 / 11 ≈ 49 minutes. (b) Median: 18 minutes. (c) The Mean (49 minutes) is misleading regarding
+        the typical experience. The large outlier (360 minutes) heavily skews the mean upwards. The administrator uses the
+        mean because it is mathematically correct, but the Median (18 minutes) better reflects the wait time experienced by
+        the majority of patients. Public perception is damaged if they rely on the misleadingly high mean, but the true typical
+        experience is better reflected by the median.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the times (543) and divide by N=11. Mean ≈ 49.36 minutes (49 minutes rounded).'
+      - 'Step 2: Calculate the Median. Order the data: 5, 8, 10, 12, 15, 18, 20, 25, 30, 40, 360. The 6th value is 18 minutes.'
+      - 'Step 3: Compare the measures. The mean is heavily influenced by the 360-minute outlier.'
+      - 'Step 4: Determine misleading nature. The Mean is misleading because the vast majority of patients waited far less
+        than 49 minutes. The Median provides a better measure of the typical wait time.'
+      id: q24-3
+      questionGroup: q24
+    - problemText: "A retailer sells 12 units of a specialized electronic product during a month. Due to various promotions\
+        \ and sales, the actual selling prices ($) were highly variable:\n\n$50, $50, $50, $50 (Full Price)\n$40, $40, $40,\
+        \ $40 (20% Discount Sale)\n$25, $25, $25, $25 (50% Clearance)\n\n(a) Calculate the mean, median, and mode(s) of the\
+        \ selling price.\n(b) Management needs to determine a single value to use for calculating the 'average revenue per\
+        \ unit' for future financial projections. Which measure of central tendency would be least reliable for this projection,\
+        \ and why? \n(c) Which measure provides the most realistic basis for calculating future revenue, given the three distinct\
+        \ price points?"
+      mathTool: null
+      finalAnswer: '(a) Mean: $38.33. Median: $40.00. Modes: $25, $40, and $50 (Trimodal). (b) The Mean ($38.33) might be
+        considered least reliable because, while mathematically correct, it does not correspond to any price point actually
+        paid by a customer, as the data is perfectly grouped into three distinct modes. (c) The Median ($40.00) is the most
+        realistic measure, especially if the retailer intends to rely heavily on the 20% discount range (the center of the
+        data) for most sales, as it reflects the price point where the central cluster of sales occurred. The modes are also
+        highly relevant but are too numerous for a single ''average revenue'' figure.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the prices (460) and divide by N=12. Mean ≈ $38.33.'
+      - 'Step 2: Calculate the Median. Order the data (25, 25, 25, 25, 40, 40, 40, 40, 50, 50, 50, 50). Median is the average
+        of the 6th and 7th values: (40+40)/2 = $40.00.'
+      - 'Step 3: Identify the Modes. $25, $40, and $50 are equally frequent (4 times each).'
+      - 'Step 4: Analyze reliability. Since the data is multimodal, the mean is a calculated value that doesn''t exist in
+        the dataset, making it less representative of actual revenue points. The Median, reflecting the center of the distribution,
+        provides a stronger central revenue expectation.'
+      id: q24-4
+      questionGroup: q24
+    - problemText: 'A school district administered a difficult standardized test (scored out of 100) to 8 students. The scores
+        were: 65, 70, 72, 75, 78, 80, 100, 100. The district wants to report a representative ''average class score'' to compare
+        themselves to other districts.
+
+
+        (a) Calculate the mean and median score.
+
+        (b) If the district uses the Mean, how could this potentially mislead the public about the performance of the ''typical''
+        student?
+
+        (c) Which average should the district use to provide the most honest assessment of typical performance? Justify your
+        decision.'
+      mathTool: null
+      finalAnswer: '(a) Mean: 80. Median: 76.5. (b) Using the Mean (80) potentially misleads the public because the two perfect
+        scores (100) are high outliers which significantly inflate the average. Five out of eight students scored below the
+        mean. (c) The district should use the Median (76.5). The median is less affected by the high outliers and provides
+        a more accurate representation of the score achieved by the student in the middle of the performance range, giving
+        an honest assessment of typical performance.'
+      stepByStepGuideline:
+      - 'Step 1: Calculate the Mean. Sum the scores (640) and divide by N=8. Mean = 80.'
+      - 'Step 2: Calculate the Median. Order the data: 65, 70, 72, 75, 78, 80, 100, 100. Median = (75 + 78) / 2 = 76.5.'
+      - 'Step 3: Explain the misleading nature of the Mean. The mean is higher than 5 of the 8 scores, indicating skew due
+        to the perfect scores.'
+      - 'Step 4: Justify the choice of Median. The Median provides a better measure of central tendency when outliers are
+        present, ensuring the reported score truly reflects the typical student performance.'
+      id: q24-5
+      questionGroup: q24
+- id: avg-node-25
+  nodeNumber: 25
+  title: Effect of Systematic Measurement Error
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: 'A sports scientist used an older electronic timing device to record the finishing times of 10 athletes
+        in a 100-meter sprint. The recorded times were summarized as follows: Mean time = 12.8 seconds, Median time = 12.6
+        seconds, and Modal time = 12.5 seconds. Upon calibration, it was discovered that the timing device consistently recorded
+        times that were 0.5 seconds TOO LOW due to a delayed start mechanism. Calculate the correct mean, median, and modal
+        finishing times.'
+      avatarIntro: Systematic errors affect every measurement equally. If you know the constant error, correcting the measures
+        of central tendency is straightforward!
+      mathTool: null
+      finalAnswer: Correct Mean = 13.3 s, Correct Median = 13.1 s, Correct Mode = 13.0 s.
+      stepByStepGuideline:
+      - 'Identify the systematic error: The recorded times were 0.5 seconds too low.'
+      - Since every single recorded value is affected by the same constant error, all measures of central tendency (mean,
+        median, and mode) must be corrected by adding the constant error.
+      - 'Correct the Mean: 12.8 s + 0.5 s = 13.3 s.'
+      - 'Correct the Median: 12.6 s + 0.5 s = 13.1 s.'
+      - 'Correct the Mode: 12.5 s + 0.5 s = 13.0 s.'
+      id: q25-1
+      questionGroup: q25
+    - problemText: 'A technician measured the boiling point of 8 different chemical solutions in a laboratory experiment.
+        The faulty thermometer yielded these incorrect results: Mean temperature = 78.2°C, Median temperature = 77.0°C, and
+        Modal temperature = 76.5°C. Subsequent calibration showed the thermometer consistently read 2.5°C TOO HIGH across
+        its entire range. Determine the true mean, median, and modal boiling points.'
+      mathTool: null
+      finalAnswer: Correct Mean = 75.7°C, Correct Median = 74.5°C, Correct Mode = 74.0°C.
+      stepByStepGuideline:
+      - 'Identify the systematic error: The recorded temperatures were 2.5°C too high.'
+      - To find the true values, we must subtract the error from the recorded averages.
+      - 'Correct the Mean: 78.2°C - 2.5°C = 75.7°C.'
+      - 'Correct the Median: 77.0°C - 2.5°C = 74.5°C.'
+      - 'Correct the Mode: 76.5°C - 2.5°C = 74.0°C.'
+      id: q25-2
+      questionGroup: q25
+    - problemText: 'A baker weighed several individual portions of flour for a large batch of bread dough. The electronic
+        scale used was found to be improperly tared, starting every measurement at -15.0 g. The recorded weights (g) produced
+        the following statistics: Mean weight = 453.0 g, Median weight = 451.5 g, and Modal weight = 450.0 g. Find the actual
+        mean, median, and modal weights of the flour portions.'
+      mathTool: null
+      finalAnswer: Correct Mean = 468.0 g, Correct Median = 466.5 g, Correct Mode = 465.0 g.
+      stepByStepGuideline:
+      - 'Identify the systematic error: Since the scale started at -15.0 g, all recorded weights were 15.0 g TOO LOW.'
+      - Since this is a constant, systematic error affecting all data points, we must add 15.0 g to each measure of central
+        tendency.
+      - 'Correct the Mean: 453.0 g + 15.0 g = 468.0 g.'
+      - 'Correct the Median: 451.5 g + 15.0 g = 466.5 g.'
+      - 'Correct the Mode: 450.0 g + 15.0 g = 465.0 g.'
+      id: q25-3
+      questionGroup: q25
+    - problemText: 'An engineer measured the lengths of 12 metal rods. Due to an issue with the placement of the zero mark
+        on the ruler, every single measurement was recorded 0.8 cm TOO LONG. The recorded statistics for the rod lengths were:
+        Mean length = 32.4 cm, Median length = 32.0 cm, and Modal length = 32.8 cm. Determine the true mean, median, and modal
+        lengths of the metal rods.'
+      mathTool: null
+      finalAnswer: Correct Mean = 31.6 cm, Correct Median = 31.2 cm, Correct Mode = 32.0 cm.
+      stepByStepGuideline:
+      - 'Identify the systematic error: All recorded lengths were 0.8 cm too long.'
+      - To correct for this constant systematic error, subtract 0.8 cm from all given averages.
+      - 'Correct the Mean: 32.4 cm - 0.8 cm = 31.6 cm.'
+      - 'Correct the Median: 32.0 cm - 0.8 cm = 31.2 cm.'
+      - 'Correct the Mode: 32.8 cm - 0.8 cm = 32.0 cm.'
+      id: q25-4
+      questionGroup: q25
+    - problemText: 'A student used an improperly calibrated measuring beaker to determine the volume of 15 samples of liquid.
+        The faulty beaker consistently measured the volume 3.0 mL less than the actual volume. The student calculated the
+        following averages based on the incorrect measurements: Mean volume = 215.5 mL, Median volume = 214.0 mL, and Modal
+        volume = 210.0 mL. Calculate the accurate mean, median, and modal volumes.'
+      mathTool: null
+      finalAnswer: Correct Mean = 218.5 mL, Correct Median = 217.0 mL, Correct Mode = 213.0 mL.
+      stepByStepGuideline:
+      - 'Identify the systematic error: The measured volumes were consistently 3.0 mL too low.'
+      - Since every observation is understated by a constant amount, we correct all three measures of central tendency by
+        adding 3.0 mL.
+      - 'Correct the Mean: 215.5 mL + 3.0 mL = 218.5 mL.'
+      - 'Correct the Median: 214.0 mL + 3.0 mL = 217.0 mL.'
+      - 'Correct the Mode: 210.0 mL + 3.0 mL = 213.0 mL.'
+      id: q25-5
+      questionGroup: q25

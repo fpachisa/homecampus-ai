@@ -1,0 +1,1571 @@
+# S2 Direct Inverse Proportion - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: proportion-node-1
+  nodeNumber: 1
+  title: Recognizing Direct Proportion
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: scatterPlot
+    preWrittenQuestions:
+    - problemText: A car travels at a constant speed. The table shows the distance traveled (y, in km) over time (x, in hours):<br><br><table><thead><tr><th>Time
+        (x hours)</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td>Distance (y km)</td><td>20</td><td>40</td><td>60</td></tr></tbody></table><br>Is
+        the distance (y) directly proportional to the time (x)? Verify your answer by calculating the ratio y/x for all three
+        pairs.
+      avatarIntro: Welcome! Understanding direct proportion is key to many real-world relationships. Let's start by checking
+        if the ratio between two quantities stays constant.
+      mathTool:
+        toolName: scatterPlot
+        parameters:
+          points:
+          - x: 1
+            y: 20
+          - x: 2
+            y: 40
+          - x: 3
+            y: 60
+          xLabel: Time (x hours)
+          yLabel: Distance (y km)
+          title: Distance vs. Time
+      finalAnswer: Yes, y is directly proportional to x. The ratio y/x is constant (k=20).
+      stepByStepGuideline:
+      - 'Calculate the ratio y/x for the first pair: 20/1 = 20.'
+      - 'Calculate the ratio y/x for the second pair: 40/2 = 20.'
+      - 'Calculate the ratio y/x for the third pair: 60/3 = 20.'
+      - Since the ratio y/x is constant (20) for all pairs, the distance is directly proportional to the time.
+      id: q1-1
+      questionGroup: q1
+    - problemText: A supermarket sells organic honey. If 3 kg of honey costs $15, and 7 kg of honey costs $35, use the method
+        $y_1/x_1 = y_2/x_2$ to show that the cost (y) is directly proportional to the mass (x).
+      mathTool:
+        toolName: none
+      finalAnswer: The cost is directly proportional to the mass because 15/3 = 5 and 35/7 = 5. Since the ratios are equal,
+        the relationship is proportional.
+      stepByStepGuideline:
+      - 'Identify the first ratio ($y_1/x_1$): 15/3.'
+      - 'Identify the second ratio ($y_2/x_2$): 35/7.'
+      - 'Calculate the first ratio: 15 ÷ 3 = 5.'
+      - 'Calculate the second ratio: 35 ÷ 7 = 5.'
+      - Since $y_1/x_1 = y_2/x_2 = 5$, the cost is directly proportional to the mass.
+      id: q1-2
+      questionGroup: q1
+    - problemText: A hose fills a large tank at a constant rate. If 4 minutes of water flow yields 40 Liters, what must happen
+        to the volume of water (y) if the time (x) is tripled to 12 minutes, assuming the relationship is one of direct proportion?
+      mathTool:
+        toolName: none
+      finalAnswer: The volume of water (y) must also triple, resulting in 120 Liters.
+      stepByStepGuideline:
+      - 'Recall the property of direct proportion: if the independent variable (x) is multiplied by a factor (in this case,
+        3), the dependent variable (y) must also be multiplied by the same factor.'
+      - The initial time (x) is 4 minutes, and the initial volume (y) is 40 Liters.
+      - 'The time is tripled: 4 * 3 = 12 minutes.'
+      - 'Therefore, the volume must triple: 40 * 3 = 120 Liters.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: A library charges fines (y, in cents) that are directly proportional to the number of overdue days (x).
+        Explain why the graph of this relationship MUST pass through the point (0, 0).
+      mathTool:
+        toolName: none
+      finalAnswer: The graph must pass through (0, 0) because 0 days overdue (x=0) results in 0 fine cents (y=0). For any
+        direct proportion relationship defined by y = kx, when x=0, y must equal 0.
+      stepByStepGuideline:
+      - 'Define direct proportionality: y = kx, where k is a constant.'
+      - 'Analyze the meaning of the coordinates: x represents overdue days, and y represents the fine.'
+      - Consider the case where x = 0 (0 days overdue).
+      - If x=0, then y = k * 0 = 0.
+      - Since 0 days overdue results in 0 fine, the relationship must pass through the origin (0, 0).
+      id: q1-4
+      questionGroup: q1
+    - problemText: A delivery service charges a fee based on the number of packages (x) delivered, plus a fixed service charge.
+        The total cost (y) is shown in the table:<br><br><table><thead><tr><th>Packages (x)</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td>Total
+        Cost (y $)</td><td>25</td><td>40</td><td>55</td></tr></tbody></table><br>Is the Total Cost (y) directly proportional
+        to the Number of Packages (x)? Verify by checking if the ratio y/x is constant.
+      mathTool:
+        toolName: none
+      finalAnswer: No, the Total Cost (y) is not directly proportional to the Number of Packages (x). The ratio y/x is not
+        constant (25 ≠ 20 ≠ 18.33...).
+      stepByStepGuideline:
+      - 'Calculate the ratio y/x for the first pair: 25/1 = 25.'
+      - 'Calculate the ratio y/x for the second pair: 40/2 = 20.'
+      - 'Calculate the ratio y/x for the third pair: 55/3 ≈ 18.33.'
+      - Since 25 ≠ 20 ≠ 18.33..., the ratio y/x is not constant. Therefore, the relationship is not directly proportional.
+      id: q1-5
+      questionGroup: q1
+- id: proportion-node-2
+  nodeNumber: 2
+  title: Solving Problems Using Unitary Method
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A factory uses the unitary method to calculate production targets. If 8 workers can assemble 200 electronic
+        components in one day, how many components can 13 workers assemble, assuming they all work at the same constant rate?
+      avatarIntro: The unitary method is a crucial skill. Remember, always find the rate for a single unit first before scaling
+        up to the required amount!
+      mathTool: null
+      finalAnswer: 325 components
+      stepByStepGuideline:
+      - 'Find the rate of production for 1 worker: 200 components ÷ 8 workers = 25 components per worker.'
+      - 'Scale up this rate to find the production for 13 workers: 25 components/worker × 13 workers = 325 components.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: A tailor buys 15 meters of premium silk fabric for a total cost of $52.50. Using the unitary method, calculate
+        the cost required to purchase 75 meters of the same fabric.
+      mathTool: null
+      finalAnswer: $262.50
+      stepByStepGuideline:
+      - 'Find the cost of 1 meter of fabric: $52.50 ÷ 15 meters = $3.50 per meter.'
+      - 'Calculate the cost for 75 meters: $3.50/meter × 75 meters = $262.50.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: A contractor finds that 6 liters of specialized outdoor paint are required to cover an area of 25 square
+        meters (m²). If the contractor needs to paint a large wall that measures 100 square meters, how many liters of paint
+        will be needed?
+      mathTool: null
+      finalAnswer: 24 liters
+      stepByStepGuideline:
+      - 'Find the rate of paint usage per square meter: 6 liters ÷ 25 m² = 0.24 liters per m².'
+      - 'Scale up the usage for the required area: 0.24 liters/m² × 100 m² = 24 liters.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: A retailer sells high-quality herbal tea. If 50 g of the tea costs $13.50, calculate the cost of 75 g of
+        the same tea. Express your answer to the nearest cent.
+      mathTool: null
+      finalAnswer: $20.25
+      stepByStepGuideline:
+      - 'Find the cost of 1 gram of tea: $13.50 ÷ 50 g = $0.27 per gram.'
+      - 'Calculate the cost for 75 grams: $0.27/g × 75 g = $20.25.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: A packaging machine operates at a constant speed. It takes 20 minutes to package 8 kg of flour. Calculate
+        the time required (in minutes and seconds) for the machine to package 13 kg of flour.
+      mathTool: null
+      finalAnswer: 32 minutes 30 seconds
+      stepByStepGuideline:
+      - 'Find the time taken to package 1 kg of flour: 20 minutes ÷ 8 kg = 2.5 minutes per kg.'
+      - 'Calculate the total time required for 13 kg: 2.5 minutes/kg × 13 kg = 32.5 minutes. (0.5 minutes is equivalent to
+        30 seconds, so the final answer is 32 minutes 30 seconds).'
+      id: q2-5
+      questionGroup: q2
+- id: proportion-node-3
+  nodeNumber: 3
+  title: Writing and Using y = kx
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cartesianPlane
+    preWrittenQuestions:
+    - problemText: 'The electrical resistance ($R$, measured in Ohms) of a wire is directly proportional to its length ($L$,
+        measured in meters). A wire that is 4 meters long has a resistance of 10 Ohms.
+
+
+        (i) Find the equation connecting $R$ and $L$.
+
+        (ii) Calculate the resistance of a similar wire that is 12 meters long.'
+      avatarIntro: Direct proportionality describes many real-world relationships, like how resistance depends on the length
+        of a wire. Let's find the constant of proportionality first!
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          points:
+          - x: 0
+            y: 0
+          - x: 4
+            y: 10
+          - x: 8
+            y: 20
+          showGrid: true
+          showAxes: true
+          xLabel: Length L (m)
+          yLabel: Resistance R (Ohms)
+      finalAnswer: (i) R = 2.5L (ii) 30 Ohms
+      stepByStepGuideline:
+      - Since R is directly proportional to L, the relationship is R = kL.
+      - 'Use the given values (L=4, R=10) to find k: k = R / L = 10 / 4 = 2.5.'
+      - The equation connecting R and L is R = 2.5L.
+      - 'To find the resistance when L = 12 meters, substitute L = 12 into the equation: R = 2.5 × 12.'
+      - 'Calculate the final resistance: R = 30 Ohms.'
+      id: q3-1
+      questionGroup: q3
+    - problemText: 'The exchange rate between the Euro ($E$) and the US Dollar ($D$) is directly proportional. If 10 Euros
+        can be exchanged for 15 US Dollars:
+
+
+        (i) Determine the equation connecting $D$ and $E$.
+
+        (ii) How many US Dollars would you receive for 25 Euros?'
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          points:
+          - x: 0
+            y: 0
+          - x: 10
+            y: 15
+          - x: 20
+            y: 30
+          showGrid: true
+          showAxes: true
+          xLabel: Euros (E)
+          yLabel: Dollars (D)
+      finalAnswer: (i) D = 1.5E (ii) 37.50 US Dollars
+      stepByStepGuideline:
+      - The relationship is D = kE.
+      - 'Calculate the constant of proportionality k: k = D / E = 15 / 10 = 1.5.'
+      - The equation connecting D and E is D = 1.5E.
+      - 'Substitute E = 25 into the equation: D = 1.5 × 25.'
+      - The value received is 37.50 US Dollars.
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'On a regional map, the actual ground distance ($A$, in km) is directly proportional to the distance measured
+        on the map ($M$, in cm). A measured distance of 5 cm on the map corresponds to an actual distance of 20 km.
+
+
+        (i) Find the scale factor ($k$) and write the equation relating $A$ and $M$.
+
+        (ii) If a road is 48 km long in reality, what distance should it measure on the map?'
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          points:
+          - x: 0
+            y: 0
+          - x: 5
+            y: 20
+          - x: 10
+            y: 40
+          showGrid: true
+          showAxes: true
+          xLabel: Map Distance M (cm)
+          yLabel: Actual Distance A (km)
+      finalAnswer: (i) A = 4M (ii) 12 cm
+      stepByStepGuideline:
+      - The direct proportionality relationship is A = kM.
+      - 'Calculate k using the known pair (M=5, A=20): k = A / M = 20 / 5 = 4.'
+      - The equation is A = 4M. (The scale factor k=4 means 1 cm on the map represents 4 km in reality).
+      - 'To find the map distance (M) for an actual distance A = 48 km, substitute 48 into the equation: 48 = 4M.'
+      - 'Solve for M: M = 48 / 4 = 12 cm.'
+      id: q3-3
+      questionGroup: q3
+    - problemText: 'The distance ($D$, in meters) a bicycle travels is directly proportional to the number of revolutions
+        ($R$) its wheels make. When the wheel completes 2 revolutions, the bicycle travels 12 meters.
+
+
+        (i) Write down the equation that connects $D$ and $R$.
+
+        (ii) Calculate the distance the bicycle travels if the wheel completes 7 revolutions.'
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          points:
+          - x: 0
+            y: 0
+          - x: 2
+            y: 12
+          - x: 4
+            y: 24
+          showGrid: true
+          showAxes: true
+          xLabel: Revolutions R
+          yLabel: Distance D (m)
+      finalAnswer: (i) D = 6R (ii) 42 meters
+      stepByStepGuideline:
+      - The relationship is D = kR.
+      - 'Calculate the constant of proportionality k: k = D / R = 12 / 2 = 6.'
+      - The equation is D = 6R. (This implies the circumference of the wheel is 6 meters).
+      - 'Substitute R = 7 into the equation: D = 6 × 7.'
+      - The distance traveled is 42 meters.
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'In a medical application, the required dosage ($D$, in ml) of a certain medication is directly proportional
+        to the patient''s weight ($W$, in kg). A patient weighing 20 kg requires a dosage of 10 ml.
+
+
+        (i) Determine the constant of proportionality, $k$.
+
+        (ii) Calculate the required dosage for a patient weighing 15 kg.'
+      mathTool:
+        toolName: cartesianPlane
+        parameters:
+          points:
+          - x: 0
+            y: 0
+          - x: 20
+            y: 10
+          - x: 40
+            y: 20
+          showGrid: true
+          showAxes: true
+          xLabel: Weight W (kg)
+          yLabel: Dosage D (ml)
+      finalAnswer: (i) k = 0.5 (ii) 7.5 ml
+      stepByStepGuideline:
+      - The relationship is D = kW.
+      - 'Calculate k using the known pair (W=20, D=10): k = D / W = 10 / 20 = 0.5.'
+      - The equation is D = 0.5W.
+      - 'To find the dosage for W = 15 kg, substitute W = 15 into the equation: D = 0.5 × 15.'
+      - The required dosage is 7.5 ml.
+      id: q3-5
+      questionGroup: q3
+- id: proportion-node-4
+  nodeNumber: 4
+  title: Graphs of Direct Proportion
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: 'The relationship between an employee''s hourly pay $y$ (in dollars) and the hours worked $x$ is given
+        by the equation $y = 10x$. Analyze the graph generated by this equation:
+
+
+        (a) Does the graph pass through the origin (0, 0)?
+
+        (b) What is the gradient of the line?
+
+        (c) Is $y$ directly proportional to $x$?'
+      avatarIntro: Graphs are powerful tools! Let's examine how the visual representation confirms a direct proportional relationship.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 10*x
+            label: y = 10x
+            color: '#3b82f6'
+          xMin: 0
+          xMax: 10
+          yMin: 0
+          yMax: 100
+          showGrid: true
+      finalAnswer: (a) Yes, when x = 0, y = 10(0) = 0. (b) Gradient = 10. (c) Yes, because the equation is of the form y =
+        kx and the graph is a straight line passing through the origin.
+      stepByStepGuideline:
+      - 'To check if the graph passes through the origin (0, 0), substitute x = 0 into the equation: y = 10(0) = 0. Since
+        (0, 0) satisfies the equation, the graph passes through the origin.'
+      - For an equation in the form y = kx, the gradient is k. Here, k = 10.
+      - Direct proportionality requires the relationship to be a straight line passing through the origin. Since y = 10x meets
+        both criteria (y = kx form), y is directly proportional to x.
+      id: q4-1
+      questionGroup: q4
+    - problemText: 'Two utility companies model their daily electricity cost (C, in dollars) based on usage (n, in kWh). Company
+        A uses the formula $C = 5n$ and Company B uses $C = 2n + 3$ (where $3 is a fixed daily service fee).
+
+
+        (a) Which company''s charging structure represents direct proportion?
+
+        (b) Explain why the graph of the other company''s cost equation does not represent direct proportion.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 5*x
+            label: 'Company A: C = 5n'
+            color: '#3b82f6'
+          - expression: 2*x + 3
+            label: 'Company B: C = 2n + 3'
+            color: '#ef4444'
+          xMin: 0
+          xMax: 10
+          yMin: 0
+          yMax: 50
+          showGrid: true
+      finalAnswer: (a) Company A (C = 5n) represents direct proportion. (b) Company B's equation (C = 2n + 3) is not direct
+        proportion because it has the form y = kx + c, where c = 3 (the y-intercept). Since the y-intercept is not zero, the
+        graph does not pass through the origin.
+      stepByStepGuideline:
+      - Direct proportion must be represented by an equation of the form y = kx, which means the graph must pass through the
+        origin (0, 0).
+      - Company A's equation, C = 5n, fits the y = kx form (k=5).
+      - Company B's equation, C = 2n + 3, includes a constant term c = 3. This means that even if n = 0, C = 3. The graph
+        intersects the y-axis at (0, 3) and thus does not pass through the origin. Therefore, it is not direct proportion.
+      id: q4-2
+      questionGroup: q4
+    - problemText: 'The cost of laying tiles $C$ (in dollars) is directly proportional to the area tiled $n$ (in square meters).
+        The relationship is modeled by the equation $C = 2.5n$.
+
+
+        (a) What is the gradient of the graph representing this relationship?
+
+        (b) What does the gradient represent in this specific context?'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 2.5*x
+            label: C = 2.5n
+            color: '#10b981'
+          xMin: 0
+          xMax: 10
+          yMin: 0
+          yMax: 30
+          showGrid: true
+      finalAnswer: (a) The gradient is 2.5. (b) The gradient (k = 2.5) represents the cost per unit area, specifically, the
+        cost per square meter ($2.50 per m²).
+      stepByStepGuideline:
+      - For a direct proportion equation $y = kx$, the gradient is the constant of proportionality, $k$. In $C = 2.5n$, the
+        gradient is 2.5.
+      - In a contextual problem, the constant of proportionality $k = y/x$. Here, $k = C/n$.
+      - Since C is cost and n is area, the gradient represents the rate of change of cost with respect to area, which is the
+        cost per square meter.
+      id: q4-3
+      questionGroup: q4
+    - problemText: 'The mass $M$ (in grams) of a pure substance is directly proportional to its volume $V$ (in cm³). The graph
+        of this relationship is a straight line passing through the origin and the point $(4, 20)$.
+
+
+        (a) Find the constant of proportionality, $k$.
+
+        (b) Write down the equation connecting $M$ and $V$.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 5*x
+            label: M = 5V
+            color: '#f97316'
+          xMin: 0
+          xMax: 8
+          yMin: 0
+          yMax: 40
+          showGrid: true
+          points:
+          - x: 4
+            y: 20
+            label: (4, 20)
+      finalAnswer: (a) k = 5. (b) M = 5V.
+      stepByStepGuideline:
+      - Since M is directly proportional to V, the relationship is of the form M = kV, where k is the constant of proportionality
+        (or gradient).
+      - 'Use the given point (V=4, M=20) to find k. Substitute these values into the equation: 20 = k(4).'
+      - 'Solve for k: k = 20 / 4 = 5.'
+      - 'Substitute k back into the general form M = kV to write the specific equation: M = 5V.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: 'Consider the two linear relationships:
+
+
+        (I) $y = 0.5x$
+
+        (II) $y = -3x + 5$
+
+
+        (a) Which equation represents $y$ being directly proportional to $x$?
+
+        (b) For the equation that is NOT direct proportion, state the y-intercept and explain why this confirms it is not
+        a direct proportion.'
+      mathTool: null
+      finalAnswer: (a) Equation (I), y = 0.5x, represents direct proportion. (b) Equation (II) is not direct proportion. The
+        y-intercept is 5 (since c = 5). Direct proportion requires the graph to pass through the origin (0, 0), meaning the
+        y-intercept must be zero.
+      stepByStepGuideline:
+      - Identify the form of the equations. Direct proportion requires the form y = kx, meaning there is no constant term
+        (c = 0).
+      - Equation (I), y = 0.5x, fits the form y = kx (k=0.5).
+      - Equation (II), y = -3x + 5, is of the form y = kx + c, where c = 5.
+      - Since c ≠ 0, the graph of Equation (II) crosses the y-axis at (0, 5) instead of the origin (0, 0). Therefore, it cannot
+        represent direct proportionality.
+      id: q4-5
+      questionGroup: q4
+- id: proportion-node-5
+  nodeNumber: 5
+  title: y ∝ x² Relationships
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: 'The kinetic energy, $E$ (measured in Joules), of a moving object is directly proportional to the square
+        of its velocity, $v$ (measured in m/s). When the velocity $v = 2$ m/s, the kinetic energy $E = 12$ J.
+
+
+        (i) Find the equation connecting $E$ and $v$.
+
+        (ii) Calculate the kinetic energy $E$ when the velocity is $v = 5$ m/s.'
+      avatarIntro: Ready to explore non-linear relationships? Direct proportionality to the square means rapid growth!
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 3*x^2
+            label: E = 3v²
+            color: '#8b5cf6'
+          xMin: 0
+          xMax: 5
+          yMin: 0
+          yMax: 80
+          showGrid: true
+      finalAnswer: (i) E = 3v² (ii) E = 75 J
+      stepByStepGuideline:
+      - 'Step 1: Write the proportional relationship as an equation: E = kv².'
+      - 'Step 2: Use the given values (E=12, v=2) to find the constant k. $k = E / v^2 = 12 / 2^2 = 12 / 4 = 3$.'
+      - 'Step 3: Write the equation connecting E and v: E = 3v².'
+      - 'Step 4: Substitute the new velocity v=5 into the equation: E = 3(5^2).'
+      - 'Step 5: Calculate the final energy: E = 3(25) = 75 J.'
+      id: q5-1
+      questionGroup: q5
+    - problemText: 'The braking distance $D$ (in meters) required for a train to stop is directly proportional to the square
+        of its speed $S$ (in m/s). A train traveling at $S = 10$ m/s has a braking distance of $D = 25$ meters.
+
+
+        If the train operator doubles the speed to $S = 20$ m/s, calculate the new braking distance. By what factor did the
+        braking distance increase?'
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: New braking distance is 100 meters. The distance increased by a factor of 4.
+      stepByStepGuideline:
+      - 'Step 1: Write the proportional relationship: $D = kS^2$.'
+      - 'Step 2: Find the constant k using the initial data (D=25, S=10). $k = D / S^2 = 25 / 10^2 = 25 / 100 = 0.25$.'
+      - 'Step 3: Write the equation: $D = 0.25S^2$.'
+      - 'Step 4: Calculate D when S = 20 m/s: $D = 0.25 \times (20)^2 = 0.25 \times 400 = 100$ meters.'
+      - 'Step 5: Determine the factor of increase. Since $S$ doubled, $D$ increases by $2^2 = 4$ times. $100 / 25 = 4$.'
+      id: q5-2
+      questionGroup: q5
+    - problemText: 'The cost $C$ (in dollars) of a custom-designed circular window is directly proportional to the square
+        of its radius $r$ (in meters). A window with a radius of $r = 3$ meters costs $C = 450$ dollars.
+
+
+        Determine the radius $r$ of a larger window that costs $C = 1800$ dollars.'
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: r = 6 meters
+      stepByStepGuideline:
+      - 'Step 1: Write the proportional relationship: $C = kr^2$.'
+      - 'Step 2: Find the constant k using the initial data (C=450, r=3). $k = C / r^2 = 450 / 3^2 = 450 / 9 = 50$.'
+      - 'Step 3: Write the equation: $C = 50r^2$.'
+      - 'Step 4: Substitute the target cost C=1800 into the equation: $1800 = 50r^2$.'
+      - 'Step 5: Solve for $r^2$: $r^2 = 1800 / 50 = 36$.'
+      - 'Step 6: Solve for $r$: $r = \sqrt{36} = 6$ meters (since radius must be positive).'
+      id: q5-3
+      questionGroup: q5
+    - problemText: 'The power $P$ (in watts) generated by a small turbine is directly proportional to the square of the wind
+        speed $W$ (in m/s). When the wind speed is $W = 4$ m/s, the turbine generates $P = 8$ W of power.
+
+
+        Calculate the power $P$ generated when the wind speed increases to $W = 6$ m/s.'
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: P = 18 W
+      stepByStepGuideline:
+      - 'Step 1: Write the proportional relationship: $P = kW^2$.'
+      - 'Step 2: Find the constant k using the initial data (P=8, W=4). $k = P / W^2 = 8 / 4^2 = 8 / 16 = 0.5$.'
+      - 'Step 3: Write the equation: $P = 0.5W^2$.'
+      - 'Step 4: Calculate P when W = 6 m/s: $P = 0.5 \times (6)^2$.'
+      - 'Step 5: Calculate the final power: $P = 0.5 \times 36 = 18$ W.'
+      id: q5-4
+      questionGroup: q5
+    - problemText: 'The variable $y$ is directly proportional to the square of $x$. If $y_1$ is the initial value of $y$ corresponding
+        to $x_1$, and the value of $x$ is increased by a factor of 3 (i.e., $x_2 = 3x_1$):
+
+
+        (i) Express the new value $y_2$ in terms of $y_1$.
+
+        (ii) By what factor does $y$ increase when $x$ triples?'
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: (i) y₂ = 9y₁ (ii) The factor is 9.
+      stepByStepGuideline:
+      - 'Step 1: Define the initial relationship: $y_1 = kx_1^2$.'
+      - 'Step 2: Define the new relationship where $x_2 = 3x_1$: $y_2 = kx_2^2 = k(3x_1)^2$.'
+      - 'Step 3: Simplify the expression: $y_2 = k(9x_1^2) = 9(kx_1^2)$.'
+      - 'Step 4: Since $y_1 = kx_1^2$, substitute $y_1$ back into the expression for $y_2$: $y_2 = 9y_1$.'
+      - 'Step 5: The factor by which y increases is the multiplier connecting $y_1$ and $y_2$, which is 9.'
+      id: q5-5
+      questionGroup: q5
+- id: proportion-node-6
+  nodeNumber: 6
+  title: y ∝ √x and Other Forms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: 'The maximum height $H$ (in cm) a certain species of plant grows is directly proportional to the square
+        root of the nutrient concentration $N$ (in arbitrary units) in the soil. When the nutrient concentration is $N = 9$
+        units, the plant reaches a maximum height of $H = 9$ cm.
+
+
+        (i) Find the equation connecting $H$ and $N$.
+
+        (ii) Calculate the maximum height the plant will reach if the nutrient concentration is $N = 25$ units.'
+      avatarIntro: Welcome! Today we are exploring how different powers affect proportionality, starting with the square root
+        relationship found in plant growth.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 3*sqrt(x)
+            label: H = 3√N
+            color: '#10b981'
+          xMin: 0
+          xMax: 30
+          yMin: 0
+          yMax: 17
+          showGrid: true
+      finalAnswer: (i) H = 3√N (ii) 15 cm
+      stepByStepGuideline:
+      - 'Step 1: Write down the proportionality relationship: $H \propto \sqrt{N}$. Convert this to an equation: $H = k\sqrt{N}$.'
+      - 'Step 2: Use the given values ($H=9, N=9$) to find the constant $k$: $9 = k\sqrt{9} \implies 9 = 3k$. Therefore, $k
+        = 3$.'
+      - 'Step 3: State the equation connecting $H$ and $N$: $H = 3\sqrt{N}.'
+      - 'Step 4: Use the equation to find $H$ when $N=25$: $H = 3\sqrt{25} = 3 \times 5 = 15$.'
+      - 'Step 5: The maximum height is 15 cm.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: 'The volume $V$ (in cm³) of a specialized crystalline structure is directly proportional to the cube of
+        its side length $S$ (in cm). A structure with a side length of $S = 3$ cm has a volume of $V = 54$ cm³.
+
+
+        (i) Find the equation connecting $V$ and $S$.
+
+        (ii) Determine the side length $S$ required for the structure to have a volume of $V = 128$ cm³.'
+      mathTool: null
+      finalAnswer: (i) V = 2S³ (ii) 4 cm
+      stepByStepGuideline:
+      - 'Step 1: Write the proportionality relationship: $V \propto S^3$. Convert to an equation: $V = kS^3$.'
+      - 'Step 2: Use the given values ($V=54, S=3$) to find $k$: $54 = k(3^3) \implies 54 = 27k$. Therefore, $k = 54/27 =
+        2$.'
+      - 'Step 3: State the equation: $V = 2S^3$.'
+      - 'Step 4: Set $V=128$ and solve for $S$: $128 = 2S^3$.'
+      - 'Step 5: Divide by 2: $S^3 = 64$. Take the cube root: $S = \sqrt[3]{64} = 4$.'
+      - 'Step 6: The required side length is 4 cm.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: 'Kepler''s simplified Third Law relates the orbital period $T$ (in Earth years) of a planet around a star
+        to the radius $R$ (in AU) of its orbit. $T$ is directly proportional to $R^{3/2}$. When the orbital radius is $R =
+        4$ AU, the period is $T = 8$ years.
+
+
+        Calculate the orbital period $T$ for a planet orbiting at a radius of $R = 9$ AU.'
+      mathTool: null
+      finalAnswer: 27 years
+      stepByStepGuideline:
+      - 'Step 1: Write the proportionality relationship: $T \propto R^{3/2}$. Convert to an equation: $T = kR^{3/2}$.'
+      - 'Step 2: Use the given values ($T=8, R=4$) to find $k$: $8 = k(4^{3/2})$. Note that $4^{3/2} = (\sqrt{4})^3 = 2^3
+        = 8$.'
+      - 'Step 3: $8 = k(8)$. Therefore, $k = 1$.'
+      - 'Step 4: The equation is $T = R^{3/2}$.'
+      - 'Step 5: Calculate $T$ when $R=9$: $T = 9^{3/2} = (\sqrt{9})^3 = 3^3 = 27$.'
+      - 'Step 6: The orbital period is 27 years.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: 'The frequency $F$ (in Hz) of a vibrating string under certain conditions is directly proportional to the
+        square root of the tension $T$ (in Newtons) applied to the string. When the tension is $T = 16$ N, the frequency produced
+        is $F = 20$ Hz.
+
+
+        (i) Find the equation connecting $F$ and $T$.
+
+        (ii) What tension $T$ must be applied to achieve a frequency of $F = 30$ Hz?'
+      mathTool: null
+      finalAnswer: (i) F = 5√T (ii) 36 N
+      stepByStepGuideline:
+      - 'Step 1: Establish the relationship: $F \propto \sqrt{T}$, so $F = k\sqrt{T}$.'
+      - 'Step 2: Use the given values ($F=20, T=16$) to find $k$: $20 = k\sqrt{16} \implies 20 = 4k$. Therefore, $k = 5$.'
+      - 'Step 3: State the equation: $F = 5\sqrt{T}$.'
+      - 'Step 4: Set $F=30$ and solve for $T$: $30 = 5\sqrt{T}$.'
+      - 'Step 5: Divide by 5: $\sqrt{T} = 6$.'
+      - 'Step 6: Square both sides to find $T$: $T = 6^2 = 36$. The required tension is 36 N.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: 'The cost $C$ (in dollars) of producing a specialized 3D-printed metal component is directly proportional
+        to the cube of its complexity rating $R$. When the complexity rating is $R = 5$, the production cost is $C = 500$
+        dollars.
+
+
+        Calculate the cost $C$ of a component with a complexity rating of $R = 2.'
+      mathTool: null
+      finalAnswer: 32 dollars
+      stepByStepGuideline:
+      - 'Step 1: Write the proportionality relationship: $C \propto R^3$. Convert to an equation: $C = kR^3$.'
+      - 'Step 2: Use the given values ($C=500, R=5$) to find $k$: $500 = k(5^3) \implies 500 = 125k$.'
+      - 'Step 3: Solve for $k$: $k = 500 / 125 = 4$.'
+      - 'Step 4: The equation is $C = 4R^3$.'
+      - 'Step 5: Calculate $C$ when $R=2$: $C = 4(2^3) = 4(8) = 32$.'
+      - 'Step 6: The cost is 32 dollars.'
+      id: q6-5
+      questionGroup: q6
+- id: proportion-node-7
+  nodeNumber: 7
+  title: Recognizing Inverse Proportion
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: scatterPlot
+    preWrittenQuestions:
+    - problemText: 'The time $T$ (in hours) required to fill a large water tank depends on the number of identical taps $N$
+        used simultaneously. The table below shows several observations.
+
+
+        | Number of Taps (N) | 10 | 20 | 30 | 60 |
+
+        |---|---|---|---|---|
+
+        | Time to Fill (T hours) | 12 | 6 | 4 | 2 |
+
+
+        Is the time $T$ inversely proportional to the number of taps $N$? Verify your answer by calculating the product $N
+        \times T$ for all pairs.'
+      avatarIntro: Welcome! Understanding inverse proportion means recognizing that when one quantity increases, the other
+        decreases proportionally, keeping their product constant.
+      mathTool:
+        toolName: scatterPlot
+        parameters:
+          points:
+          - x: 10
+            y: 12
+          - x: 20
+            y: 6
+          - x: 30
+            y: 4
+          - x: 60
+            y: 2
+          xLabel: Number of Taps (N)
+          yLabel: Time to Fill (T hours)
+          title: Taps vs. Time to Fill Tank
+      finalAnswer: 'Yes, T is inversely proportional to N. Verification: 10 \times 12 = 120; 20 \times 6 = 120; 30 \times
+        4 = 120; 60 \times 2 = 120. Since the product N \times T is constant (k=120), the relationship is inverse proportion.'
+      stepByStepGuideline:
+      - To check for inverse proportionality, calculate the product of the corresponding variables (N \times T) for each pair.
+      - 'Calculate: $10 \times 12 = 120$.'
+      - 'Calculate: $20 \times 6 = 120$.'
+      - 'Calculate: $30 \times 4 = 120$.'
+      - 'Calculate: $60 \times 2 = 120$.'
+      - Since the product $N \times T$ is constant (120) for all pairs, $T$ is inversely proportional to $N$.
+      id: q7-1
+      questionGroup: q7
+    - problemText: The number of days $D$ required to build a road is inversely proportional to the number of workers $W$
+        employed. If 16 workers take 15 days to complete the road, how many days would 20 workers take? Verify the relationship
+        using the principle that the constant product $W_1D_1 = W_2D_2$.
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: '20 workers would take 12 days. Verification: $16 \times 15 = 240$ and $20 \times 12 = 240$. $W_1D_1 =
+        W_2D_2 = 240$.'
+      stepByStepGuideline:
+      - 'Identify the initial condition: $W_1 = 16$ workers, $D_1 = 15$ days.'
+      - 'Calculate the constant of proportionality (k): $k = W_1D_1 = 16 \times 15 = 240$.'
+      - 'Use the new condition: $W_2 = 20$ workers. We need to find $D_2$.'
+      - 'Apply the inverse proportion rule: $W_2D_2 = k$. So, $20 \times D_2 = 240$.'
+      - 'Solve for $D_2$: $D_2 = 240 / 20 = 12$ days.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: 'A delivery truck travels a fixed distance of 300 km. The relationship between its average speed $S$ (km/h)
+        and the time $T$ (hours) taken is modeled in the table below.
+
+
+        | Speed (S km/h) | 50 | 100 | 150 |
+
+        |---|---|---|---|
+
+        | Time (T hours) | 6 | 3 | 2 |
+
+
+        Use the data to explain the relationship between $S$ and $T$. Specifically, what happens to the time $T$ when the
+        speed $S$ doubles from 50 km/h to 100 km/h? Does this pattern confirm inverse proportionality?'
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: When the speed S doubles from 50 km/h to 100 km/h, the time T halves from 6 hours to 3 hours. This pattern
+        (doubling one variable halves the other) confirms that time T is inversely proportional to speed S (since S \times
+        T = 300 is constant).
+      stepByStepGuideline:
+      - 'Analyze the change in speed (S) between the first two data points: $100 / 50 = 2$. Speed doubles.'
+      - 'Analyze the corresponding change in time (T): $3 / 6 = 1/2$. Time halves.'
+      - In inverse proportion, when one variable is multiplied by a factor, the other variable is multiplied by the reciprocal
+        of that factor.
+      - 'Since doubling $S$ results in $T$ being halved, this confirms the relationship is inverse proportionality. (Check
+        $S \times T$: $50 \times 6 = 300$, $100 \times 3 = 300$, $150 \times 2 = 300$).'
+      id: q7-3
+      questionGroup: q7
+    - problemText: 'A fixed painting job requires a total of 60 man-hours. The number of men $M$ hired and the time $H$ (in
+        hours) they take to complete the job are inversely proportional.
+
+
+        (a) Complete the following table:
+
+
+        | Men (M) | 4 | 12 | 20 |
+
+        |---|---|---|---|
+
+        | Hours (H) | 15 | ? | 3 |
+
+
+        (b) If the number of men triples from 4 to 12, what happens to the number of hours required?'
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: '(a) When M=12, H=5. Completed table: 4, 15; 12, 5; 20, 3. (b) When the number of men triples (4 \to 12),
+        the number of hours required becomes one-third of the original time (15 \to 5).'
+      stepByStepGuideline:
+      - 'Determine the constant of proportionality (k). Since $M$ and $H$ are inversely proportional, $M \times H = k$. Using
+        the first pair: $k = 4 \times 15 = 60$.'
+      - 'Calculate the missing value for $M=12$: $12 \times H = 60$. $H = 60 / 12 = 5$ hours.'
+      - For part (b), compare the relationship between $M=4$ and $M=12$. $12$ is 3 times $4$.
+      - 'Compare the corresponding hours: $H$ goes from $15$ to $5$. $5 = 15 / 3$.'
+      - 'Conclusion for (b): If $M$ triples, $H$ becomes one-third.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: 'A production line must manufacture 360 units. The production rate $R$ (units per hour) and the time $T$
+        (hours) taken to complete the batch are inversely proportional.
+
+
+        The relationship is summarized below:
+
+
+        | Rate (R units/hr) | 40 | 60 | 90 |
+
+        |---|---|---|---|
+
+        | Time (T hours) | 9 | 6 | 4 |
+
+
+        Show that the relationship is one of inverse proportionality by demonstrating that the product $R \times T$ remains
+        constant throughout the table. State the constant value $k$.'
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: 'The relationship is inverse proportionality because the product $R \times T$ is constant (k=360). Verification:
+        $40 \times 9 = 360$; $60 \times 6 = 360$; $90 \times 4 = 360$.'
+      stepByStepGuideline:
+      - To demonstrate inverse proportionality, calculate the product of the rate ($R$) and time ($T$) for all corresponding
+        pairs.
+      - 'Calculate the product for the first pair: $40 \times 9 = 360$.'
+      - 'Calculate the product for the second pair: $60 \times 6 = 360$.'
+      - 'Calculate the product for the third pair: $90 \times 4 = 360$.'
+      - Since $R \times T$ is consistently equal to 360, the variables are inversely proportional, and the constant $k$ is
+        360.
+      id: q7-5
+      questionGroup: q7
+- id: proportion-node-8
+  nodeNumber: 8
+  title: Solving Inverse Proportion Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A large reservoir needs to be drained. It is known that the time taken ($T$, in hours) is inversely proportional
+        to the number of pumps ($P$) operating simultaneously, assuming all pumps work at the same rate. If 5 pumps can drain
+        the reservoir in 60 hours, how long would it take 6 pumps to drain the same reservoir?
+      avatarIntro: Inverse proportion problems are common in physics and engineering. Remember that when variables are inversely
+        proportional, their product remains constant.
+      mathTool: null
+      finalAnswer: 50 hours
+      stepByStepGuideline:
+      - 'Identify the relationship: Time (T) is inversely proportional to the number of pumps (P), so P × T = k (constant
+        work done).'
+      - 'Calculate the constant k using the initial values: k = 5 pumps × 60 hours = 300 pump-hours.'
+      - 'Use the constant k and the new number of pumps (P₂ = 6) to find the new time (T₂): 6 × T₂ = 300.'
+      - 'Solve for T₂: T₂ = 300 / 6 = 50.'
+      - The time taken is 50 hours.
+      id: q8-1
+      questionGroup: q8
+    - problemText: A factory has a fixed order of components to produce. The time ($T$, in hours) taken to complete the order
+        is inversely proportional to the number of identical machines ($M$) used. If 10 machines can complete the order in
+        30 hours, calculate the time required if the factory uses 15 machines instead, assuming all machines operate at the
+        same rate.
+      mathTool: null
+      finalAnswer: 20 hours
+      stepByStepGuideline:
+      - The relationship is M × T = k.
+      - 'Calculate the constant k using the initial condition: k = 10 machines × 30 hours = 300 machine-hours.'
+      - 'Set up the equation for the new condition (M₂ = 15): 15 × T₂ = 300.'
+      - 'Solve for T₂: T₂ = 300 / 15 = 20.'
+      - The time required is 20 hours.
+      id: q8-2
+      questionGroup: q8
+    - problemText: A construction crew needs to dig a standard length of trench. The number of men ($W$) required is inversely
+        proportional to the number of days ($D$) they take to complete the job. If 12 men can dig the trench in 5 days, how
+        many men would be needed to complete the same trench in only 4 days?
+      mathTool: null
+      finalAnswer: 15 men
+      stepByStepGuideline:
+      - The relationship is W × D = k.
+      - 'Calculate the constant k using the initial condition: k = 12 men × 5 days = 60 man-days.'
+      - 'Set up the equation for the new condition (D₂ = 4 days): W₂ × 4 = 60.'
+      - 'Solve for W₂: W₂ = 60 / 4 = 15.'
+      - 15 men would be needed to complete the trench in 4 days.
+      id: q8-3
+      questionGroup: q8
+    - problemText: A team of painters is hired to paint a large commercial building. The time ($T$, in hours) taken to complete
+        the job is inversely proportional to the number of painters ($W$) assigned. If 6 painters can complete the job in
+        20 hours, find the time taken if only 5 painters are available, assuming they all work at the same rate.
+      mathTool: null
+      finalAnswer: 24 hours
+      stepByStepGuideline:
+      - The relationship is W × T = k.
+      - 'Calculate the constant k: k = 6 painters × 20 hours = 120 painter-hours.'
+      - 'Set up the equation for the new condition (W₂ = 5): 5 × T₂ = 120.'
+      - 'Solve for T₂: T₂ = 120 / 5 = 24.'
+      - The time taken would be 24 hours.
+      id: q8-4
+      questionGroup: q8
+    - problemText: A company must produce a batch of specialized glass ornaments. The time ($T$, in minutes) required is inversely
+        proportional to the number of glassblowers ($G$) working on the batch. If 8 glassblowers can finish the batch in 15
+        minutes, how many glassblowers are required to finish the same batch in 6 minutes?
+      mathTool: null
+      finalAnswer: 20 glassblowers
+      stepByStepGuideline:
+      - The relationship is G × T = k.
+      - 'Calculate the constant k: k = 8 glassblowers × 15 minutes = 120 glassblower-minutes.'
+      - 'Set up the equation for the new condition (T₂ = 6 minutes): G₂ × 6 = 120.'
+      - 'Solve for G₂: G₂ = 120 / 6 = 20.'
+      - 20 glassblowers are required.
+      id: q8-5
+      questionGroup: q8
+- id: proportion-node-9
+  nodeNumber: 9
+  title: Combined Direct and Inverse Proportion
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Four identical taps, running simultaneously, can fill three standard water tanks in 12 hours. Assuming
+        all taps maintain the same constant flow rate, how long will it take six such taps to fill five identical tanks?
+      avatarIntro: Combined proportion problems test your ability to juggle multiple variables at once. Remember to identify
+        which relationships are direct and which are inverse!
+      mathTool: null
+      finalAnswer: 13 1/3 hours or 13 hours 20 minutes
+      stepByStepGuideline:
+      - 'Identify the relationship: The volume of water (V) is directly proportional to the number of taps (N) and the time
+        taken (T). $V \propto N T$, or $V = k N T$.'
+      - 'Calculate the constant of proportionality (k) using the initial data: $V_1=3, N_1=4, T_1=12$. $k = V_1 / (N_1 T_1)
+        = 3 / (4 \times 12) = 3/48 = 1/16$.'
+      - 'Apply the constant k to the new scenario: $V_2=5, N_2=6, T_2=?$. $5 = (1/16) \times 6 \times T_2$.'
+      - 'Solve for $T_2$: $T_2 = (5 \times 16) / 6 = 80/6 = 40/3$ hours.'
+      - 'Convert the fraction to a mixed number or decimal: $T_2 = 13 \frac{1}{3}$ hours (or 13 hours and 20 minutes).'
+      id: q9-1
+      questionGroup: q9
+    - problemText: A team of 8 assembly workers produces 400 components when working for 5 hours a day. Assuming all workers
+        operate at the same rate, how many hours per day must 10 workers work to produce 750 components?
+      mathTool: null
+      finalAnswer: 7.5 hours
+      stepByStepGuideline:
+      - 'Identify the relationship: Items produced (I) is directly proportional to the number of workers (W) and the hours
+        worked (H). $I \propto W H$, or $I = k W H$.'
+      - 'Calculate the constant of proportionality (k) using the initial data: $I_1=400, W_1=8, H_1=5$. $k = 400 / (8 \times
+        5) = 400 / 40 = 10$.'
+      - 'Apply the constant k to the new scenario: $I_2=750, W_2=10, H_2=?$. $750 = 10 \times 10 \times H_2$.'
+      - 'Solve for $H_2$: $H_2 = 750 / 100 = 7.5$ hours.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: Five identical industrial 3D printers can manufacture 120 specialized parts working continuously for 6
+        days. How many such specialized parts can nine similar 3D printers manufacture if they operate continuously for 4
+        days?
+      mathTool: null
+      finalAnswer: 144 parts
+      stepByStepGuideline:
+      - 'Identify the relationship: Products manufactured (P) is directly proportional to the number of machines (M) and the
+        days worked (D). $P \propto M D$, or $P = k M D$.'
+      - 'Calculate the constant of proportionality (k) using the initial data: $P_1=120, M_1=5, D_1=6$. $k = 120 / (5 \times
+        6) = 120 / 30 = 4$.'
+      - 'Apply the constant k to the new scenario: $M_2=9, D_2=4, P_2=?$. $P_2 = 4 \times 9 \times 4$.'
+      - 'Solve for $P_2$: $P_2 = 144$ parts.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: Ten construction workers can lay the foundation for 4 identical small houses in 8 days. Assuming all workers
+        maintain the same work rate, how many construction workers are needed to lay the foundation for 7 houses in 5 days?
+      mathTool: null
+      finalAnswer: 28 workers
+      stepByStepGuideline:
+      - 'Identify the relationship: The number of houses built (H) is directly proportional to the number of men (M) and the
+        days worked (D). $H \propto M D$, or $H = k M D$.'
+      - 'Calculate the constant of proportionality (k) using the initial data: $H_1=4, M_1=10, D_1=8$. $k = 4 / (10 \times
+        8) = 4 / 80 = 1/20$.'
+      - 'Apply the constant k to the new scenario: $H_2=7, M_2=?, D_2=5$. $7 = (1/20) \times M_2 \times 5$.'
+      - 'Simplify the equation: $7 = M_2 \times (5/20) = M_2 / 4$.'
+      - 'Solve for $M_2$: $M_2 = 7 \times 4 = 28$ workers.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: The length of road built (L) is directly proportional to the number of workers (W) and the number of days
+        (D), but inversely proportional to the soil hardness rating (H). If 20 workers build a 5 km road in 15 days when the
+        hardness rating is 3, how many days will it take 30 workers to build a 9 km road if the hardness rating is 4?
+      mathTool: null
+      finalAnswer: 24 days
+      stepByStepGuideline:
+      - 'Establish the combined proportion relationship: $L \propto \frac{W D}{H}$, or $L = k \frac{W D}{H}$.'
+      - 'Calculate the constant of proportionality (k) using the initial data: $L_1=5, W_1=20, D_1=15, H_1=3$. $k = \frac{L_1
+        H_1}{W_1 D_1} = \frac{5 \times 3}{20 \times 15} = \frac{15}{300} = \frac{1}{20}$.'
+      - 'Apply the constant k to the new scenario: $L_2=9, W_2=30, D_2=?, H_2=4$. $9 = \frac{1}{20} \times \frac{30 \times
+        D_2}{4}$.'
+      - 'Simplify the right side: $9 = \frac{30 D_2}{80} = \frac{3 D_2}{8}$.'
+      - 'Solve for $D_2$: $D_2 = \frac{9 \times 8}{3} = 3 \times 8 = 24$ days.'
+      id: q9-5
+      questionGroup: q9
+- id: proportion-node-10
+  nodeNumber: 10
+  title: Writing and Using y = k/x
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: 'In a simple gear system, the rotational speed ($R$, measured in revolutions per minute, RPM) of a gear
+        is inversely proportional to the number of teeth ($T$) it has. A gear with 10 teeth rotates at 6 RPM.
+
+
+        Calculate the rotational speed of a larger gear that has 15 teeth.'
+      avatarIntro: Inverse proportion problems are common in physics and engineering. Remember that if two quantities are
+        inversely proportional, their product is constant!
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 60/x
+            label: R = 60/T
+            color: '#ec4899'
+          xMin: 1
+          xMax: 20
+          yMin: 0
+          yMax: 15
+          showGrid: true
+      finalAnswer: 4 RPM
+      stepByStepGuideline:
+      - 'Identify the relationship: $R$ is inversely proportional to $T$, so $R = k/T$ or $RT = k$.'
+      - Use the given values ($T=10, R=6$) to find the constant $k$. $k = 10 \times 6 = 60$.
+      - 'Write the equation connecting $R$ and $T$: $R = 60/T$.'
+      - Substitute the new value $T=15$ into the equation to find $R$. $R = 60/15 = 4$.
+      - The rotational speed of the larger gear is 4 RPM.
+      id: q10-1
+      questionGroup: q10
+    - problemText: 'The intensity of illumination ($I$, measured in Lux) provided by a light source is inversely proportional
+        to the distance ($D$, measured in meters) from the source. At a distance of 12 m, the intensity is 20 Lux.
+
+
+        What is the distance from the source when the intensity of illumination is 16 Lux?'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 240/x
+            label: I = 240/D
+            color: '#ec4899'
+          xMin: 5
+          xMax: 30
+          yMin: 0
+          yMax: 50
+          showGrid: true
+      finalAnswer: 15 m
+      stepByStepGuideline:
+      - 'Establish the inverse proportion relationship: $I = k/D$, so $ID = k$.'
+      - 'Calculate the constant $k$ using the initial pair ($D=12, I=20$): $k = 12 \times 20 = 240$.'
+      - The equation is $I = 240/D$.
+      - 'Substitute the required intensity $I=16$ into the equation: $16 = 240/D$.'
+      - 'Rearrange the equation to solve for $D$: $D = 240 / 16 = 15$.'
+      - The distance is 15 m.
+      id: q10-2
+      questionGroup: q10
+    - problemText: 'Boyle''s Law states that for a fixed mass of gas at constant temperature, the absolute pressure ($P$,
+        measured in kPa) is inversely proportional to the volume ($V$, measured in cm³).
+
+
+        When the volume is 4 cm³, the pressure is 9 kPa.
+
+
+        (i) Find an equation connecting $P$ and $V$.
+
+        (ii) Find the pressure when the volume is 6 cm³.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 36/x
+            label: P = 36/V
+            color: '#ec4899'
+          xMin: 1
+          xMax: 15
+          yMin: 0
+          yMax: 20
+          showGrid: true
+      finalAnswer: (i) P = 36/V (or PV = 36) (ii) 6 kPa
+      stepByStepGuideline:
+      - 'Identify the relationship: $P$ is inversely proportional to $V$, so $P = k/V$.'
+      - Use the given values ($V=4, P=9$) to find the constant $k$. $k = 4 \times 9 = 36$.
+      - '(i) Write the equation: $P = 36/V$.'
+      - '(ii) Substitute the new volume $V=6$ into the equation: $P = 36/6 = 6$.'
+      - The pressure is 6 kPa.
+      id: q10-3
+      questionGroup: q10
+    - problemText: 'The frequency ($F$, in Hz) of a specific type of wave is inversely proportional to its wavelength ($\lambda$,
+        in cm). When the wavelength is 6 cm, the frequency is 8 Hz.
+
+
+        Determine the wavelength of the wave when its frequency is 12 Hz.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 48/x
+            label: F = 48/λ
+            color: '#ec4899'
+          xMin: 1
+          xMax: 20
+          yMin: 0
+          yMax: 20
+          showGrid: true
+      finalAnswer: 4 cm
+      stepByStepGuideline:
+      - 'Establish the inverse proportion relationship: $F = k/\lambda$, so $F\lambda = k$.'
+      - 'Calculate the constant $k$ using the initial pair (\lambda=6, F=8$): $k = 6 \times 8 = 48$.'
+      - The equation is $F = 48/\lambda$.
+      - 'Substitute the required frequency $F=12$ into the equation: $12 = 48/\lambda$.'
+      - 'Rearrange the equation to solve for $\lambda$: $\lambda = 48 / 12 = 4$.'
+      - The wavelength is 4 cm.
+      id: q10-4
+      questionGroup: q10
+    - problemText: 'The electrical resistance ($R$, in Ohms) of a uniform wire of fixed length is inversely proportional to
+        its cross-sectional area ($A$, in mm²). A wire with a cross-sectional area of 10 mm² has a resistance of 12 Ohms.
+
+
+        Find the resistance of a similar wire if its cross-sectional area is increased to 16 mm².'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 120/x
+            label: R = 120/A
+            color: '#ec4899'
+          xMin: 5
+          xMax: 25
+          yMin: 0
+          yMax: 30
+          showGrid: true
+      finalAnswer: 7.5 Ohms
+      stepByStepGuideline:
+      - 'Identify the inverse relationship: $R$ is inversely proportional to $A$, so $R = k/A$ or $RA = k$.'
+      - 'Calculate the constant $k$ using the initial values ($A=10, R=12$): $k = 10 \times 12 = 120$.'
+      - 'Write the equation: $R = 120/A$.'
+      - 'Substitute the new area $A=16$ into the equation: $R = 120/16$.'
+      - 'Calculate the resistance: $R = 7.5$.'
+      - The resistance is 7.5 Ohms.
+      id: q10-5
+      questionGroup: q10
+- id: proportion-node-11
+  nodeNumber: 11
+  title: Graphs of Inverse Proportion (Hyperbolas)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: 'The relationship between two variables $x$ and $y$ is modeled by the equation $y = 120/x$. Analyze the
+        graph provided below.
+
+
+        What are the equations of the two lines that the curve approaches infinitely closely but never touches or crosses?'
+      avatarIntro: Graphs of inverse proportion show us fascinating relationships where one variable decreases as the other
+        increases. Let's analyze the key features of this rectangular hyperbola!
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 120/x
+            label: y = 120/x
+            color: '#f59e0b'
+          xMin: 0
+          xMax: 60
+          yMin: 0
+          yMax: 30
+          showGrid: true
+          showAsymptotes: true
+      finalAnswer: The asymptotes are x = 0 (the y-axis) and y = 0 (the x-axis).
+      stepByStepGuideline:
+      - 'Identify the standard form of the inverse proportion graph: y = k/x.'
+      - Recall that in the standard inverse proportion graph, the curve gets closer and closer to the horizontal axis (x-axis)
+        and the vertical axis (y-axis).
+      - The equation for the x-axis is y = 0.
+      - The equation for the y-axis is x = 0.
+      - Therefore, the asymptotes are x = 0 and y = 0.
+      id: q11-1
+      questionGroup: q11
+    - problemText: The dimensions of a rectangular plot, Length $L$ and Width $W$, are inversely proportional to maintain
+        a constant Area $A$. If the rectangle has a length of 10 meters when the width is 12 meters, find the constant of
+        proportionality $k$ and write the specific equation relating $L$ and $W$.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 120/x
+            label: L = 120/W
+            color: '#f59e0b'
+          xMin: 0
+          xMax: 20
+          yMin: 0
+          yMax: 20
+          showGrid: true
+          showAsymptotes: true
+      finalAnswer: The constant of proportionality k = 120. The equation is L = 120/W (or W = 120/L).
+      stepByStepGuideline:
+      - Since L is inversely proportional to W, the relationship is $L = k/W$, or $LW = k$.
+      - 'Substitute the given values $L = 10$ and $W = 12$ into the formula to find the constant $k$: $k = 10 \times 12$.'
+      - 'Calculate $k$: $k = 120$.'
+      - 'Write the specific equation relating L and W using the calculated value of k: $L = 120/W$.'
+      id: q11-2
+      questionGroup: q11
+    - problemText: 'The graph below shows the inverse relationship $y = k/x$. A specific point (20, 12) is marked on the curve.
+
+
+        Use this point to determine the value of the constant of proportionality, $k$.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 240/x
+            label: y = k/x
+            color: '#10b981'
+          xMin: 0
+          xMax: 40
+          yMin: 0
+          yMax: 20
+          showGrid: true
+          showAsymptotes: true
+      finalAnswer: k = 240.
+      stepByStepGuideline:
+      - For inverse proportion, the product of the coordinates of any point on the curve equals the constant of proportionality,
+        $k$ (i.e., $k = xy$).
+      - Use the given point $(x, y) = (20, 12)$.
+      - 'Calculate $k$: $k = 20 \times 12$.'
+      - The value of the constant of proportionality is $k = 240$.
+      id: q11-3
+      questionGroup: q11
+    - problemText: "Consider the graph of the inverse relationship $y = 60/x$ shown below. \n\nDescribe the behavior of the\
+        \ value of $y$ as the value of $x$ becomes extremely large (tends towards positive infinity). Can $y$ ever equal zero?"
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 60/x
+            label: y = 60/x
+            color: '#3b82f6'
+          xMin: 0
+          xMax: 100
+          yMin: 0
+          yMax: 15
+          showGrid: true
+          showAsymptotes: true
+      finalAnswer: As x approaches infinity, y approaches 0 (but never reaches 0). No, y can never equal zero because the
+        x-axis is an asymptote.
+      stepByStepGuideline:
+      - 'Examine the equation: $y = 60/x$. If $x$ is a very large number (e.g., 60,000), $y$ will be very small (e.g., 0.001).'
+      - As $x$ increases indefinitely, the fraction $60/x$ approaches zero.
+      - However, for $y$ to equal zero, $60/x$ must equal zero, which is mathematically impossible for any finite value of
+        $x$.
+      - Therefore, $y$ approaches the x-axis ($y=0$), but never touches it. The x-axis is an asymptote.
+      id: q11-4
+      questionGroup: q11
+    - problemText: 'The graph shows the relationship between the concentration $C$ of a chemical solution (y-axis) and its
+        volume $V$ (x-axis) for a fixed amount of solute. This forms an inverse proportion curve.
+
+
+        (a) What is the specific name given to this type of curve?
+
+        (b) If the equation modeling this relationship is $C = 180/V$, verify whether the point $(V, C) = (30, 6)$ lies on
+        the curve.'
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 180/x
+            label: C = 180/V
+            color: '#ef4444'
+          xMin: 0
+          xMax: 50
+          yMin: 0
+          yMax: 20
+          showGrid: true
+          showAsymptotes: true
+      finalAnswer: (a) Rectangular hyperbola. (b) Yes, the point (30, 6) lies on the curve because $30 \times 6 = 180$.
+      stepByStepGuideline:
+      - 'Identify the shape: The graph of inverse proportion ($y = k/x$) is a rectangular hyperbola.'
+      - To verify if the point $(30, 6)$ lies on the curve $C = 180/V$, substitute $V=30$ and $C=6$ into the equation.
+      - Check if $V \times C = 180$.
+      - 'Calculation: $30 \times 6 = 180$.'
+      - Since the product equals the constant $k$, the point $(30, 6)$ satisfies the equation and lies on the curve.
+      id: q11-5
+      questionGroup: q11
+- id: proportion-node-12
+  nodeNumber: 12
+  title: Inverse Square Law (y ∝ 1/x²)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: The intensity of illumination ($I$, measured in Lux) provided by a spotlight is inversely proportional
+        to the square of the distance ($d$, measured in meters) from the source. When a measuring device is placed 2 m away,
+        the intensity is 20 Lux. Find the intensity when the device is moved to a distance of 5 m.
+      avatarIntro: Welcome! Today we are exploring the Inverse Square Law, a crucial concept in physics and math. Remember
+        how quickly intensity drops off as distance increases!
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 80/(x^2)
+            label: y = 80/x²
+            color: '#06b6d4'
+          xMin: 1
+          xMax: 15
+          yMin: 0
+          yMax: 25
+          showGrid: true
+      finalAnswer: 3.2 Lux
+      stepByStepGuideline:
+      - 'Define the relationship: $I \propto 1/d^2$, so $I = k/d^2$.'
+      - Use the initial data ($I=20, d=2$) to find the constant $k$. $k = I d^2 = 20 \times 2^2 = 20 \times 4 = 80$.
+      - The equation is $I = 80/d^2$.
+      - 'Substitute the new distance $d=5$ into the equation: $I = 80 / 5^2 = 80 / 25$.'
+      - 'Calculate the final intensity: $I = 3.2$ Lux.'
+      id: q12-1
+      questionGroup: q12
+    - problemText: The gravitational force ($F$) exerted by a planet on an object is inversely proportional to the square
+        of the distance ($d$) between the object and the planet's center. At a distance of 3 units, the force is 16 units.
+        Calculate the distance at which the force drops to 4 units.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 144/(x^2)
+            label: F = 144/d²
+            color: '#06b6d4'
+          xMin: 1
+          xMax: 10
+          yMin: 0
+          yMax: 20
+          showGrid: true
+      finalAnswer: 6 units
+      stepByStepGuideline:
+      - 'Define the relationship: $F = k/d^2$.'
+      - Use the initial data ($F=16, d=3$) to find $k$. $k = F d^2 = 16 \times 3^2 = 16 \times 9 = 144$.
+      - The governing equation is $F = 144/d^2$.
+      - 'Substitute the target force $F=4$ and solve for $d$: $4 = 144/d^2$.'
+      - 'Rearrange the equation: $d^2 = 144 / 4 = 36$.'
+      - 'Find the distance $d$: $d = \sqrt{36} = 6$ units.'
+      id: q12-2
+      questionGroup: q12
+    - problemText: The perceived volume ($V$) of sound from a point source is inversely proportional to the square of the
+        listener's distance ($d$) from the source. A person standing 5 m away measures the volume as 4 arbitrary units. If
+        the person moves back to 10 m away, what is the new perceived volume? By what factor has the volume decreased?
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 100/(x^2)
+            label: V = 100/d²
+            color: '#06b6d4'
+          xMin: 1
+          xMax: 12
+          yMin: 0
+          yMax: 15
+          showGrid: true
+      finalAnswer: New volume is 1 unit. The volume decreased by a factor of 4.
+      stepByStepGuideline:
+      - 'Define the relationship: $V = k/d^2$.'
+      - Use the initial data ($V=4, d=5$) to find $k$. $k = V d^2 = 4 \times 5^2 = 4 \times 25 = 100$.
+      - The equation is $V = 100/d^2$.
+      - 'Substitute the new distance $d=10$ into the equation: $V_{new} = 100 / 10^2 = 100 / 100 = 1$ unit.'
+      - 'Calculate the factor of decrease: Factor = $V_{initial} / V_{new} = 4 / 1 = 4$. (Since the distance doubled, the
+        volume decreased by a factor of $2^2 = 4$).'
+      id: q12-3
+      questionGroup: q12
+    - problemText: The repulsive electric force ($F$) between two charged particles is inversely proportional to the square
+        of the distance ($d$) separating them. When the distance is 4 cm, the force is 3 N. Calculate the force when the distance
+        is increased to 6 cm.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 48/(x^2)
+            label: F = 48/d²
+            color: '#06b6d4'
+          xMin: 1
+          xMax: 8
+          yMin: 0
+          yMax: 10
+          showGrid: true
+      finalAnswer: 4/3 N or 1.33 N (to 3 s.f.)
+      stepByStepGuideline:
+      - 'Define the relationship: $F = k/d^2$.'
+      - Use the initial data ($F=3, d=4$) to find $k$. $k = F d^2 = 3 \times 4^2 = 3 \times 16 = 48$.
+      - The equation is $F = 48/d^2$.
+      - 'Substitute the new distance $d=6$ into the equation: $F = 48 / 6^2 = 48 / 36$.'
+      - 'Simplify the fraction: $F = 4/3$ N.'
+      id: q12-4
+      questionGroup: q12
+    - problemText: A variable $y$ is inversely proportional to the square of a variable $x$. Given that $y = 4$ when $x =
+        3$. If $x$ is halved, what is the resulting value of $y$?
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 36/(x^2)
+            label: y = 36/x²
+            color: '#06b6d4'
+          xMin: 0.5
+          xMax: 5
+          yMin: 0
+          yMax: 25
+          showGrid: true
+      finalAnswer: '16'
+      stepByStepGuideline:
+      - 'Define the relationship: $y = k/x^2$.'
+      - Use the initial data ($y=4, x=3$) to find $k$. $k = y x^2 = 4 \times 3^2 = 4 \times 9 = 36$.
+      - The equation is $y = 36/x^2$.
+      - Determine the new value of $x$. If $x$ is halved, the new value is $x_{new} = 3 / 2 = 1.5$.
+      - 'Substitute $x_{new} = 1.5$ into the equation: $y_{new} = 36 / (1.5)^2 = 36 / 2.25$.'
+      - 'Calculate the final value: $y_{new} = 16$. (Note that halving $x$ resulted in $y$ multiplying by $2^2 = 4$).'
+      id: q12-5
+      questionGroup: q12
+- id: proportion-node-13
+  nodeNumber: 13
+  title: Other Inverse Proportion Forms
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: functionGraph
+    preWrittenQuestions:
+    - problemText: "The rate of flow $R$ (in L/min) of a liquid through a specific nozzle is inversely proportional to the\
+        \ square root of the fluid's viscosity index $V$. \n\nWhen the viscosity index is 4, the flow rate is 6 L/min.\n\n\
+        (i) Find the equation connecting $R$ and $V$.\n(ii) Calculate the flow rate when the viscosity index is 16."
+      avatarIntro: Ready to tackle some advanced inverse proportion problems? Remember that an inverse square root relationship
+        means that as one variable quadruples, the other halves.
+      mathTool:
+        toolName: functionGraph
+        parameters:
+          functions:
+          - expression: 12/sqrt(x)
+            label: y = 12/\sqrt{x}
+            color: '#10b981'
+          xMin: 1
+          xMax: 25
+          yMin: 0
+          yMax: 12
+          showGrid: true
+      finalAnswer: (i) R = 12/\sqrt{V} (ii) 3 L/min
+      stepByStepGuideline:
+      - The relationship is $R \propto 1/\sqrt{V}$, so $R = k/\sqrt{V}$.
+      - 'Substitute the initial values $R=6$ and $V=4$ to find $k$: $6 = k/\sqrt{4}$. $k = 6 \times 2 = 12$.'
+      - The equation connecting $R$ and $V$ is $R = 12/\sqrt{V}$.
+      - 'To find $R$ when $V=16$, substitute $V=16$ into the equation: $R = 12/\sqrt{16}$.'
+      - 'Calculate the final flow rate: $R = 12/4 = 3$ L/min.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: 'The speed of a specific catalytic reaction, $R$ (in units/s), is inversely proportional to the cube of
+        the concentration of the inhibitor, $C$ (in mol/L).
+
+
+        If the reaction speed $R$ is 3 units/s when the inhibitor concentration $C$ is 2 mol/L, determine the reaction speed
+        when the inhibitor concentration is increased to 4 mol/L.'
+      mathTool:
+        toolName: none
+      finalAnswer: 0.375 units/s
+      stepByStepGuideline:
+      - The relationship is $R \propto 1/C^3$, so $R = k/C^3$.
+      - 'Substitute the initial values $R=3$ and $C=2$ to find $k$: $3 = k/2^3$. $k = 3 \times 8 = 24$.'
+      - The specific equation is $R = 24/C^3$.
+      - 'Substitute the new concentration $C=4$ into the equation: $R = 24/4^3$.'
+      - 'Calculate the reaction speed: $R = 24/64 = 3/8 = 0.375$ units/s.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: 'The concentration of a specialized airborne contaminant, $P$ (measured in ppm), is found to be inversely
+        proportional to the power of 3/2 of the time elapsed, $T$ (in days), since remediation began.
+
+
+        Given that $P = 2$ ppm when $T = 9$ days, calculate the concentration $P$ after $T = 4$ days.'
+      mathTool:
+        toolName: none
+      finalAnswer: 6.75 ppm
+      stepByStepGuideline:
+      - The relationship is $P \propto 1/T^{3/2}$, so $P = k/T^{3/2}$.
+      - 'Substitute the initial values $P=2$ and $T=9$ to find $k$: $2 = k/9^{3/2}$.'
+      - Calculate $9^{3/2} = (\sqrt{9})^3 = 3^3 = 27$.
+      - 'Solve for $k$: $k = 2 \times 27 = 54$. The specific equation is $P = 54/T^{3/2}$.'
+      - 'To find $P$ when $T=4$, substitute $T=4$: $P = 54/4^{3/2}$.'
+      - Calculate $4^{3/2} = (\sqrt{4})^3 = 2^3 = 8$.
+      - 'Calculate the final concentration: $P = 54/8 = 6.75$ ppm.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: 'In a quality control process, the observed defect rate $D$ (per 1000 units) is inversely proportional
+        to the square root of the number of weekly inspections $N$.
+
+
+        If 9 inspections per week result in a defect rate of 4, how many weekly inspections are required to reduce the defect
+        rate to 1.5?'
+      mathTool:
+        toolName: none
+      finalAnswer: 64 inspections
+      stepByStepGuideline:
+      - The relationship is $D \propto 1/\sqrt{N}$, so $D = k/\sqrt{N}$.
+      - 'Substitute the initial values $D=4$ and $N=9$ to find $k$: $4 = k/\sqrt{9}$. $k = 4 \times 3 = 12$.'
+      - The specific equation is $D = 12/\sqrt{N}$.
+      - 'We need to find $N$ when $D=1.5$: $1.5 = 12/\sqrt{N}$.'
+      - 'Rearrange the equation to solve for $\sqrt{N}$: $\sqrt{N} = 12 / 1.5 = 8$.'
+      - 'Square the result to find $N$: $N = 8^2 = 64$ weekly inspections.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: 'The time $T$ (in minutes) required for an industrial reactor to cool down is inversely proportional to
+        the cube of the radius $R$ (in cm) of its emergency ventilation ducts.
+
+
+        If it takes 240 minutes for the reactor to cool when the duct radius is 3 cm, calculate the cooling time (in minutes)
+        if the duct radius is doubled to 6 cm.'
+      mathTool:
+        toolName: none
+      finalAnswer: 30 minutes
+      stepByStepGuideline:
+      - The relationship is $T \propto 1/R^3$, so $T = k/R^3$.
+      - 'Substitute the initial values $T=240$ and $R=3$ to find $k$: $240 = k/3^3$.'
+      - 'Calculate $k$: $k = 240 \times 27 = 6480$. The specific equation is $T = 6480/R^3$.'
+      - The new duct radius is $R=6$ cm.
+      - 'Substitute $R=6$ into the equation: $T = 6480/6^3$.'
+      - 'Calculate the final cooling time: $T = 6480/216 = 30$ minutes.'
+      id: q13-5
+      questionGroup: q13

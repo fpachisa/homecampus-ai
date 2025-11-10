@@ -1,0 +1,1224 @@
+# S2 Math Pythagoras - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: pythagoras-node-1
+  nodeNumber: 1
+  title: Identifying the Hypotenuse
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: In the right-angled triangle ABC shown below, the right angle is located at vertex A. Which side is the
+        hypotenuse?
+      avatarIntro: 'Welcome! Understanding the parts of a right triangle is essential. Let''s start by identifying the most
+        important side: the hypotenuse.'
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 5
+          adjacent: 12
+          hypotenuse: 13
+          showRightAngle: true
+          showAngleMark: false
+          caption: Right triangle ABC with right angle at A
+      finalAnswer: BC
+      stepByStepGuideline:
+      - 'Recall the definition: The hypotenuse is the side of a right-angled triangle that is opposite the right angle.'
+      - Identify the vertex where the right angle is located. In this case, it is vertex A.
+      - The side opposite vertex A is side BC. Therefore, BC is the hypotenuse.
+      id: q1-1
+      questionGroup: q1
+    - problemText: Triangle PQR is shown. Given that the angle P is the right angle (90°), identify the hypotenuse in this
+        triangle.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 8
+          adjacent: 15
+          hypotenuse: 17
+          showRightAngle: true
+          showAngleMark: false
+          caption: Right triangle PQR with right angle at P
+      finalAnswer: QR
+      stepByStepGuideline:
+      - Locate the right angle at vertex P.
+      - The hypotenuse is the side that connects the other two vertices (Q and R) and is opposite the right angle.
+      - The side opposite angle P is QR.
+      id: q1-2
+      questionGroup: q1
+    - problemText: Triangle XYZ has a right angle at Z. Name the longest side of this right-angled triangle.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 7
+          adjacent: 24
+          hypotenuse: 25
+          showRightAngle: true
+          showAngleMark: false
+          caption: Right triangle XYZ with right angle at Z
+      finalAnswer: XY
+      stepByStepGuideline:
+      - The hypotenuse is defined as the side opposite the right angle, and it is also the longest side of any right-angled
+        triangle.
+      - The right angle is at Z.
+      - The side opposite Z is XY, which must be the longest side (the hypotenuse).
+      id: q1-3
+      questionGroup: q1
+    - problemText: Consider the right-angled triangle DEF, where angle E is the right angle. Which side is the hypotenuse?
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 9
+          adjacent: 40
+          hypotenuse: 41
+          showRightAngle: true
+          showAngleMark: false
+          caption: Right triangle DEF with right angle at E
+      finalAnswer: DF
+      stepByStepGuideline:
+      - The hypotenuse is always opposite the 90-degree angle.
+      - The right angle is specified at vertex E.
+      - The side opposite vertex E is the segment connecting D and F, which is DF.
+      id: q1-4
+      questionGroup: q1
+    - problemText: Look at the triangle LMN. If the angle at M is 90 degrees, identify the hypotenuse in this triangle.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 20
+          adjacent: 21
+          hypotenuse: 29
+          showRightAngle: true
+          showAngleMark: false
+          caption: Right triangle LMN with right angle at M
+      finalAnswer: LN
+      stepByStepGuideline:
+      - Identify the location of the right angle (vertex M).
+      - The hypotenuse is the side that does not form the right angle.
+      - The side opposite M is LN, making it the hypotenuse.
+      id: q1-5
+      questionGroup: q1
+- id: pythagoras-node-2
+  nodeNumber: 2
+  title: Verifying Pythagorean Triples
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: Do the numbers 17, 8, and 15 form a Pythagorean triple? Show your calculation to verify.
+      avatarIntro: Welcome! Today we are testing if sets of numbers can represent the sides of a right-angled triangle using
+        Pythagoras' Theorem.
+      mathTool: null
+      finalAnswer: Yes, they form a Pythagorean triple.
+      stepByStepGuideline:
+      - Identify the largest number, c=17, which must be the potential hypotenuse.
+      - 'Calculate the sum of the squares of the two smaller numbers (a² + b²): 8² + 15² = 64 + 225 = 289.'
+      - 'Calculate the square of the largest number (c²): 17² = 289.'
+      - 'Compare the results: Since 8² + 15² = 17² (289 = 289), the numbers form a Pythagorean triple.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: A triangle has sides measuring 5 cm, 11 cm, and 13 cm. Check if a² + b² = c² is satisfied.
+      mathTool: null
+      finalAnswer: No, a² + b² ≠ c².
+      stepByStepGuideline:
+      - Identify the largest side, c = 13 cm.
+      - 'Calculate the sum of the squares of the two shorter sides: 5² + 11² = 25 + 121 = 146.'
+      - 'Calculate the square of the longest side: 13² = 169.'
+      - 'Compare the results: Since 146 ≠ 169, the sides do not satisfy Pythagoras'' Theorem.'
+      id: q2-2
+      questionGroup: q2
+    - problemText: Does the set {12, 16, 20} satisfy a² + b² = c²?
+      mathTool: null
+      finalAnswer: Yes, the set satisfies a² + b² = c².
+      stepByStepGuideline:
+      - Identify the largest number, c=20.
+      - 'Calculate the sum of the squares of the two smaller numbers: 12² + 16² = 144 + 256 = 400.'
+      - 'Calculate the square of the largest number: 20² = 400.'
+      - Since 400 = 400, the set satisfies the theorem.
+      id: q2-3
+      questionGroup: q2
+    - problemText: 'A construction crew measures three distances: 24 m, 7 m, and 25 m. Verify whether these numbers satisfy
+        Pythagoras'' Theorem.'
+      mathTool: null
+      finalAnswer: Yes, they satisfy Pythagoras' Theorem.
+      stepByStepGuideline:
+      - Identify the longest distance, c = 25 m.
+      - 'Calculate the sum of the squares of the two shorter distances: 7² + 24² = 49 + 576 = 625.'
+      - 'Calculate the square of the longest distance: 25² = 625.'
+      - Since 625 = 625, the numbers satisfy Pythagoras' Theorem.
+      id: q2-4
+      questionGroup: q2
+    - problemText: Do the numbers 4, 6, and 3 form a Pythagorean triple? Justify your answer.
+      mathTool: null
+      finalAnswer: No, they do not form a Pythagorean triple.
+      stepByStepGuideline:
+      - Identify the largest number, c=6.
+      - 'Calculate the sum of the squares of the two smaller numbers: 3² + 4² = 9 + 16 = 25.'
+      - 'Calculate the square of the largest number: 6² = 36.'
+      - 'Compare the results: Since 25 ≠ 36, the numbers do not form a Pythagorean triple.'
+      id: q2-5
+      questionGroup: q2
+- id: pythagoras-node-3
+  nodeNumber: 3
+  title: Finding the Hypotenuse - Exact Answers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: Triangle PQR is a right-angled triangle with the right angle at Q. If the lengths of the two legs are PQ
+        = 9 cm and QR = 12 cm, calculate the length of the hypotenuse, PR.
+      avatarIntro: Remember that the hypotenuse is always the longest side in a right-angled triangle. Use Pythagoras' theorem
+        to find its exact length.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 9
+          adjacent: 12
+          showRightAngle: true
+          showAngleMark: false
+          caption: Right triangle PQR, right angle at Q.
+      finalAnswer: 15 cm
+      stepByStepGuideline:
+      - 'Identify the lengths of the legs: a = 9 cm and b = 12 cm.'
+      - 'Apply Pythagoras'' Theorem: $c^2 = a^2 + b^2$.'
+      - 'Substitute the values: $c^2 = 9^2 + 12^2 = 81 + 144$.'
+      - 'Calculate the sum: $c^2 = 225$.'
+      - 'Find the hypotenuse (c) by taking the square root: $c = \sqrt{225} = 15$.'
+      - The length of the hypotenuse PR is 15 cm.
+      id: q3-1
+      questionGroup: q3
+    - problemText: A right-angled triangle XYZ has legs measuring 10 m and 24 m. Find the exact length of the hypotenuse,
+        side XY.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 10
+          adjacent: 24
+          showRightAngle: true
+          showAngleMark: false
+          caption: Right triangle XYZ showing leg lengths.
+      finalAnswer: 26 m
+      stepByStepGuideline:
+      - 'Identify the leg lengths: a = 10 m and b = 24 m.'
+      - 'Use the Pythagorean relationship: $c^2 = a^2 + b^2$.'
+      - 'Substitute the values: $c^2 = 10^2 + 24^2 = 100 + 576$.'
+      - 'Calculate the sum: $c^2 = 676$.'
+      - 'Determine the hypotenuse: $c = \sqrt{676} = 26$.'
+      - The length of the hypotenuse is 26 m.
+      id: q3-2
+      questionGroup: q3
+    - problemText: The two shorter sides (legs) of a right-angled triangle ABC are 8 mm and 15 mm. Calculate the exact length
+        of the longest side.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 8
+          adjacent: 15
+          showRightAngle: true
+          showAngleMark: false
+          caption: Triangle with legs 8 mm and 15 mm.
+      finalAnswer: 17 mm
+      stepByStepGuideline:
+      - The legs are a = 8 mm and b = 15 mm. The longest side is the hypotenuse, c.
+      - 'Use Pythagoras'' Theorem: $c^2 = a^2 + b^2$.'
+      - 'Substitute: $c^2 = 8^2 + 15^2 = 64 + 225$.'
+      - 'Calculate: $c^2 = 289$.'
+      - 'Find c: $c = \sqrt{289} = 17$.'
+      - The length of the longest side is 17 mm.
+      id: q3-3
+      questionGroup: q3
+    - problemText: An access ramp needs to be built. The vertical height (rise) of the ramp is 7 m, and the horizontal distance
+        (run) it covers is 24 m. Find the exact length of the sloping surface of the ramp.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 7
+          adjacent: 24
+          showRightAngle: true
+          showAngleMark: false
+          caption: 'Ramp dimensions: 7 m rise and 24 m run.'
+      finalAnswer: 25 m
+      stepByStepGuideline:
+      - The rise (7 m) and run (24 m) form the two legs of a right triangle. The sloping surface is the hypotenuse (c).
+      - 'Use Pythagoras'' Theorem: $c^2 = 7^2 + 24^2$.'
+      - 'Calculate the squares: $c^2 = 49 + 576$.'
+      - 'Sum the results: $c^2 = 625$.'
+      - 'Take the square root to find c: $c = \sqrt{625} = 25$.'
+      - The length of the sloping surface is 25 m.
+      id: q3-4
+      questionGroup: q3
+    - problemText: A rectangle measures 16 cm by 12 cm. If the rectangle is cut across its diagonal, the diagonal forms the
+        hypotenuse of two identical right-angled triangles. What is the exact length of this diagonal?
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 12
+          adjacent: 16
+          showRightAngle: true
+          showAngleMark: false
+          caption: Triangle formed by the sides and diagonal of a 16 cm by 12 cm rectangle.
+      finalAnswer: 20 cm
+      stepByStepGuideline:
+      - The sides of the rectangle (12 cm and 16 cm) act as the legs (a and b) of the right triangle. The diagonal is the
+        hypotenuse (c).
+      - 'Apply Pythagoras'' Theorem: $c^2 = 12^2 + 16^2$.'
+      - 'Calculate the squares: $c^2 = 144 + 256$.'
+      - 'Sum the results: $c^2 = 400$.'
+      - 'Find the hypotenuse: $c = \sqrt{400} = 20$.'
+      - The exact length of the diagonal is 20 cm.
+      id: q3-5
+      questionGroup: q3
+- id: pythagoras-node-4
+  nodeNumber: 4
+  title: Finding the Hypotenuse - Decimal Answers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: A right-angled triangle has two legs measuring 7 cm and 9 cm, as shown in the diagram. Calculate the length
+        of the hypotenuse, giving your answer to 1 decimal place.
+      avatarIntro: You've got this! Remember to use Pythagoras' Theorem and your calculator to find the square root, then
+        round carefully.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 7
+          adjacent: 9
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 11.4 cm
+      stepByStepGuideline:
+      - 'Identify the lengths of the legs: a = 7 cm, b = 9 cm.'
+      - 'Apply Pythagoras'' Theorem: c² = a² + b².'
+      - c² = 7² + 9² = 49 + 81 = 130.
+      - 'Calculate c by taking the square root: c = √130 ≈ 11.4017... cm.'
+      - 'Round the answer to 1 decimal place: 11.4 cm.'
+      id: q4-1
+      questionGroup: q4
+    - problemText: A structural engineer is designing a triangular frame for a pedestrian bridge support. The two perpendicular
+        sides of the frame are 11 m and 8 m long. Find the length of the hypotenuse (the third side) of the frame. Give your
+        answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 11
+          adjacent: 8
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 13.60 m
+      stepByStepGuideline:
+      - 'Use Pythagoras'' Theorem: c² = 11² + 8².'
+      - 'Calculate the sum of the squares: c² = 121 + 64 = 185.'
+      - 'Find the hypotenuse: c = √185 ≈ 13.60147... m.'
+      - 'Round the answer to 2 decimal places: 13.60 m.'
+      id: q4-2
+      questionGroup: q4
+    - problemText: An engineering bracket has two sides meeting at a right angle, measuring 10 mm and 15 mm. Calculate the
+        length of the diagonal brace connecting the ends of these two sides. Express your final answer to 3 significant figures.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 10
+          adjacent: 15
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 18.0 mm
+      stepByStepGuideline:
+      - 'Use Pythagoras'' Theorem: c² = 10² + 15².'
+      - 'Calculate the sum of the squares: c² = 100 + 225 = 325.'
+      - 'Find the length c: c = √325 ≈ 18.0277... mm.'
+      - 'Round the answer to 3 significant figures (the first three non-zero digits): 18.0 mm.'
+      id: q4-3
+      questionGroup: q4
+    - problemText: A hiker walks 6 km east and then 10 km north. If she were to walk directly from her starting point back
+        to her final position, how far would she travel? Calculate this distance to 3 significant figures.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 10
+          adjacent: 6
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 11.7 km
+      stepByStepGuideline:
+      - The path forms a right-angled triangle with legs a = 6 km and b = 10 km.
+      - 'Apply Pythagoras'' Theorem: c² = 6² + 10².'
+      - c² = 36 + 100 = 136.
+      - 'Calculate c: c = √136 ≈ 11.6619... km.'
+      - 'Round the answer to 3 significant figures: 11.7 km.'
+      id: q4-4
+      questionGroup: q4
+    - problemText: A ladder is placed against a vertical wall. The base of the ladder is 7 m away from the wall, and the ladder
+        reaches 13 m up the wall. Calculate the length of the ladder (the hypotenuse). Give your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          opposite: 13
+          adjacent: 7
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 14.76 m
+      stepByStepGuideline:
+      - The height (13 m) and distance from the wall (7 m) are the two legs (a and b).
+      - 'Use Pythagoras'' Theorem: c² = 13² + 7².'
+      - 'Calculate the sum of the squares: c² = 169 + 49 = 218.'
+      - 'Find the length of the ladder: c = √218 ≈ 14.7648... m.'
+      - 'Round the answer to 2 decimal places: 14.76 m.'
+      id: q4-5
+      questionGroup: q4
+- id: pythagoras-node-5
+  nodeNumber: 5
+  title: Finding the Hypotenuse - Word Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A kite is flying with 40 m of string out horizontally and has risen 30 m vertically into the air. Assuming
+        the string is taut, find the total length of string from the person holding it to the kite.
+      avatarIntro: Remember that the horizontal distance, the vertical height, and the string length form a right-angled triangle.
+        Identify the hypotenuse first!
+      mathTool: null
+      finalAnswer: 50 m
+      stepByStepGuideline:
+      - 'Identify the components of the right-angled triangle: The horizontal distance (40 m) and the vertical height (30
+        m) are the two legs (a and b). The length of the string (c) is the hypotenuse.'
+      - 'Apply Pythagoras'' Theorem: a² + b² = c².'
+      - 'Substitute the values: 40² + 30² = c².'
+      - 'Calculate the squares: 1600 + 900 = c².'
+      - 'Sum the results: 2500 = c².'
+      - 'Find the square root: c = √2500 = 50.'
+      - The total length of the string is 50 m.
+      id: q5-1
+      questionGroup: q5
+    - problemText: A modern television screen has a width of 80 cm and a height of 60 cm. Manufacturers specify screen size
+        by the length of the diagonal. What is the screen size of this television?
+      mathTool: null
+      finalAnswer: 100 cm
+      stepByStepGuideline:
+      - 'Identify the components of the right-angled triangle: The width (80 cm) and the height (60 cm) are the two legs (a
+        and b). The diagonal (c) is the hypotenuse.'
+      - 'Apply Pythagoras'' Theorem: a² + b² = c².'
+      - 'Substitute the values: 80² + 60² = c².'
+      - 'Calculate the squares: 6400 + 3600 = c².'
+      - 'Sum the results: 10000 = c².'
+      - 'Find the square root: c = √10000 = 100.'
+      - The screen size (diagonal length) is 100 cm.
+      id: q5-2
+      questionGroup: q5
+    - problemText: A construction worker places a ladder against a vertical wall. The base of the ladder is 5 m away from
+        the wall, and the ladder reaches 12 m up the wall. Calculate the length of the ladder.
+      mathTool: null
+      finalAnswer: 13 m
+      stepByStepGuideline:
+      - 'Identify the components of the right-angled triangle: The distance from the wall (5 m) and the height reached up
+        the wall (12 m) are the two legs (a and b). The length of the ladder (c) is the hypotenuse.'
+      - 'Apply Pythagoras'' Theorem: a² + b² = c².'
+      - 'Substitute the values: 5² + 12² = c².'
+      - 'Calculate the squares: 25 + 144 = c².'
+      - 'Sum the results: 169 = c².'
+      - 'Find the square root: c = √169 = 13.'
+      - The length of the ladder is 13 m.
+      id: q5-3
+      questionGroup: q5
+    - problemText: A ship sails 24 km due East from port, then changes course and sails 18 km due South. If the ship were
+        to sail directly back to port from its final position, how far would that direct journey be?
+      mathTool: null
+      finalAnswer: 30 km
+      stepByStepGuideline:
+      - 'Identify the components of the right-angled triangle: The Eastward distance (24 km) and the Southward distance (18
+        km) are the two perpendicular legs (a and b). The direct return path (c) is the hypotenuse.'
+      - 'Apply Pythagoras'' Theorem: a² + b² = c².'
+      - 'Substitute the values: 24² + 18² = c².'
+      - 'Calculate the squares: 576 + 324 = c².'
+      - 'Sum the results: 900 = c².'
+      - 'Find the square root: c = √900 = 30.'
+      - The direct journey distance is 30 km.
+      id: q5-4
+      questionGroup: q5
+    - problemText: A tall communication tower needs stabilization. A guy wire is attached to the tower 15 m above the ground
+        and is anchored to the ground 8 m away from the base of the tower. Calculate the required length of the guy wire.
+      mathTool: null
+      finalAnswer: 17 m
+      stepByStepGuideline:
+      - 'Identify the components of the right-angled triangle: The height on the tower (15 m) and the distance from the base
+        (8 m) are the two legs (a and b). The length of the guy wire (c) is the hypotenuse.'
+      - 'Apply Pythagoras'' Theorem: a² + b² = c².'
+      - 'Substitute the values: 8² + 15² = c².'
+      - 'Calculate the squares: 64 + 225 = c².'
+      - 'Sum the results: 289 = c².'
+      - 'Find the square root: c = √289 = 17.'
+      - The required length of the guy wire is 17 m.
+      id: q5-5
+      questionGroup: q5
+- id: pythagoras-node-6
+  nodeNumber: 6
+  title: Finding a Shorter Side - Using c² - b²
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: In a right-angled triangle, the hypotenuse is 5 cm and one leg measures 4 cm. Find the length of the other
+        leg.
+      avatarIntro: Great job reaching this section! Remember, when finding a shorter side (a leg) of a right triangle, you
+        must subtract the square of the known leg from the square of the hypotenuse.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 5
+          adjacent: 4
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 3 cm
+      stepByStepGuideline:
+      - Identify the hypotenuse (c) and the known leg (b). c = 5 cm, b = 4 cm.
+      - 'Use the rearranged Pythagorean theorem: a² = c² - b².'
+      - 'Calculate the squares: a² = 5² - 4² = 25 - 16.'
+      - 'Subtract: a² = 9.'
+      - 'Find the square root: a = √9 = 3.'
+      - The length of the other leg is 3 cm.
+      id: q6-1
+      questionGroup: q6
+    - problemText: Triangle PQR has a right angle at Q. The hypotenuse PR measures 17 m, and the leg PQ measures 15 m. Find
+        the length of the leg QR.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 17
+          adjacent: 15
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 8 m
+      stepByStepGuideline:
+      - Identify the hypotenuse (PR = c) and the known leg (PQ = b). c = 17 m, b = 15 m.
+      - 'Use the formula for finding a leg: QR² = PR² - PQ².'
+      - 'Calculate the squares: QR² = 17² - 15² = 289 - 225.'
+      - 'Subtract: QR² = 64.'
+      - 'Find the square root: QR = √64 = 8.'
+      - The length of QR is 8 m.
+      id: q6-2
+      questionGroup: q6
+    - problemText: A jewelry piece is shaped like a right triangle. The longest side (hypotenuse) is 25 mm and one perpendicular
+        side is 7 mm. Calculate the length of the remaining perpendicular side.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 25
+          adjacent: 7
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 24 mm
+      stepByStepGuideline:
+      - Identify the hypotenuse (c) and the known leg (b). c = 25 mm, b = 7 mm.
+      - Use the formula a² = c² - b².
+      - 'Calculate the squares: a² = 25² - 7² = 625 - 49.'
+      - 'Subtract: a² = 576.'
+      - 'Find the square root: a = √576 = 24.'
+      - The length of the remaining perpendicular side is 24 mm.
+      id: q6-3
+      questionGroup: q6
+    - problemText: On a technical drawing map, coordinates form a right triangle XYZ, with the right angle at Y. If the distance
+        XZ (hypotenuse) is 10 cm and the distance XY is 6 cm, what is the length of YZ?
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 10
+          adjacent: 6
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 8 cm
+      stepByStepGuideline:
+      - Identify the hypotenuse (XZ = c) and the known leg (XY = b). c = 10 cm, b = 6 cm.
+      - Use the formula YZ² = XZ² - XY².
+      - 'Calculate the squares: YZ² = 10² - 6² = 100 - 36.'
+      - 'Subtract: YZ² = 64.'
+      - 'Find the square root: YZ = √64 = 8.'
+      - The length of YZ is 8 cm.
+      id: q6-4
+      questionGroup: q6
+    - problemText: A tent pole is held taut by a support rope 15 m long, which acts as the hypotenuse. The rope is anchored
+        12 m away from the base of the pole horizontally. Determine the exact vertical height of the tent pole.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 15
+          adjacent: 12
+          showRightAngle: true
+          showAngleMark: false
+      finalAnswer: 9 m
+      stepByStepGuideline:
+      - The rope length is the hypotenuse (c = 15 m), and the horizontal distance is the known leg (b = 12 m). We need to
+        find the vertical height (a).
+      - Use the formula a² = c² - b².
+      - 'Calculate the squares: a² = 15² - 12² = 225 - 144.'
+      - 'Subtract: a² = 81.'
+      - 'Find the square root: a = √81 = 9.'
+      - The vertical height of the tent pole is 9 m.
+      id: q6-5
+      questionGroup: q6
+- id: pythagoras-node-7
+  nodeNumber: 7
+  title: Finding a Leg - Decimal Answers
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rightTriangle
+    preWrittenQuestions:
+    - problemText: A construction company is installing a triangular brace to support a load-bearing wall. The length of the
+        support cable (the hypotenuse) is 20 cm, and the vertical distance it spans is 11 cm. Calculate the required horizontal
+        length of the brace (the remaining leg). Give your answer to 1 decimal place.
+      avatarIntro: It looks like we are finding a missing leg of a right triangle. Remember, when you know the hypotenuse,
+        you must subtract the square of the known leg from the square of the hypotenuse.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 20
+          adjacent: 11
+          showRightAngle: true
+      finalAnswer: 16.7 cm
+      stepByStepGuideline:
+      - Identify the hypotenuse (c = 20 cm) and the known leg (b = 11 cm). We need to find the missing leg, a.
+      - 'Apply the Pythagorean theorem modification: a = √(c² - b²).'
+      - 'Calculate: a = √(20² - 11²) = √(400 - 121) = √279.'
+      - 'Calculate the value: a ≈ 16.70327...'
+      - 'Round the result to 1 decimal place: 16.7 cm.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: A surveyor needs to determine the width of a swamp (distance $a$). She sets up a right triangle where the
+        distance across the dry land (known leg $b$) is 10 m, and the hypotenuse distance measured diagonally from point A
+        to point C is 18 m. Find the length of the swamp, $a$, to 3 significant figures.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 18
+          adjacent: 10
+          showRightAngle: true
+      finalAnswer: 15.0 m
+      stepByStepGuideline:
+      - Identify the hypotenuse (c = 18 m) and the known leg (b = 10 m).
+      - 'Use the formula for finding a leg: a = √(c² - b²).'
+      - 'Calculate: a = √(18² - 10²) = √(324 - 100) = √224.'
+      - 'Calculate the value: a ≈ 14.9666...'
+      - 'Round the result to 3 significant figures: 15.0 m.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: A craftsman is designing a triangular shelf bracket. The longest edge (hypotenuse) must be 22 cm, and one
+        perpendicular edge must be 14 cm. Calculate the length of the third edge (the remaining leg) required for the bracket.
+        Round your answer to 2 decimal places.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 22
+          adjacent: 14
+          showRightAngle: true
+      finalAnswer: 16.91 cm
+      stepByStepGuideline:
+      - The hypotenuse c = 22 cm and the known leg b = 14 cm.
+      - 'Use the Pythagorean theorem to find the missing leg: a = √(c² - b²).'
+      - 'Substitute the values: a = √(22² - 14²) = √(484 - 196) = √288.'
+      - 'Calculate the value: a ≈ 16.9116...'
+      - 'Round the result to 2 decimal places: 16.91 cm.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: A football field manager measures a right-angled section of the pitch boundary. The diagonal measurement
+        (hypotenuse) is 30 m, and one side length is 18 m. Calculate the length of the remaining perpendicular side. Give
+        your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 30
+          adjacent: 18
+          showRightAngle: true
+      finalAnswer: 24.0 m
+      stepByStepGuideline:
+      - Identify the hypotenuse (c = 30 m) and the known leg (b = 18 m).
+      - Use the formula a = √(c² - b²).
+      - 'Calculate: a = √(30² - 18²) = √(900 - 324) = √576.'
+      - The exact length is 24 m.
+      - 'Round the result to 1 decimal place: 24.0 m.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: In a mechanical assembly, a piston linkage forms a right triangle. The length of the connecting rod (hypotenuse)
+        is 25 mm, and the vertical displacement is 20 mm. Determine the horizontal travel distance (the remaining leg) of
+        the piston head. Express your answer to 1 decimal place.
+      mathTool:
+        toolName: rightTriangle
+        parameters:
+          hypotenuse: 25
+          adjacent: 20
+          showRightAngle: true
+      finalAnswer: 15.0 mm
+      stepByStepGuideline:
+      - Identify the hypotenuse c = 25 mm and the known leg b = 20 mm.
+      - 'Use the formula to find the missing leg: a = √(c² - b²).'
+      - 'Calculate: a = √(25² - 20²) = √(625 - 400) = √225.'
+      - The exact length is 15 mm.
+      - 'Round the result to 1 decimal place: 15.0 mm.'
+      id: q7-5
+      questionGroup: q7
+- id: pythagoras-node-8
+  nodeNumber: 8
+  title: Finding a Leg - Word Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A 13 m extension ladder is fully extended and placed against a building. The top of the ladder reaches
+        12 m up the wall. How far, in meters, is the base of the ladder situated from the wall?
+      avatarIntro: Remember, when solving word problems involving right triangles, the first step is always identifying which
+        side is the hypotenuse.
+      mathTool: null
+      finalAnswer: 5 m
+      stepByStepGuideline:
+      - 'Identify the sides: The ladder (13 m) is the hypotenuse (c), and the height up the wall (12 m) is one leg (a). We
+        need to find the distance from the wall (leg b).'
+      - 'Apply the Pythagorean theorem rearranged to find a leg: $b^2 = c^2 - a^2$.'
+      - 'Substitute the values: $b^2 = 13^2 - 12^2 = 169 - 144$.'
+      - 'Calculate the difference: $b^2 = 25$.'
+      - 'Find the square root: $b = \sqrt{25} = 5$. The base is 5 m from the wall.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: A rectangular swimming pool cover has a diagonal measurement of 25 m. If the length of the pool cover is
+        24 m, calculate the width of the pool cover.
+      mathTool: null
+      finalAnswer: 7 m
+      stepByStepGuideline:
+      - 'Identify the sides: The diagonal (25 m) is the hypotenuse (c), and the length (24 m) is one leg (a). We need to find
+        the width (leg b).'
+      - 'Apply the formula: $b^2 = c^2 - a^2$.'
+      - 'Substitute the values: $b^2 = 25^2 - 24^2 = 625 - 576$.'
+      - 'Calculate the difference: $b^2 = 49$.'
+      - 'Find the square root: $b = \sqrt{49} = 7$. The width is 7 m.'
+      id: q8-2
+      questionGroup: q8
+    - problemText: A temporary wheelchair ramp is constructed such that the sloping length is 5 meters. If the ramp covers
+        a horizontal distance of 3 meters along the ground, what is the vertical height that the ramp reaches?
+      mathTool: null
+      finalAnswer: 4 m
+      stepByStepGuideline:
+      - 'Identify the sides: The sloping length (5 m) is the hypotenuse (c). The horizontal distance (3 m) is one leg (a).
+        We need to find the vertical height (leg b).'
+      - 'Apply the formula: $b^2 = c^2 - a^2$.'
+      - 'Substitute the values: $b^2 = 5^2 - 3^2 = 25 - 9$.'
+      - 'Calculate the difference: $b^2 = 16$.'
+      - 'Find the square root: $b = \sqrt{16} = 4$. The vertical height is 4 m.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: A remote sensing drone flies from its takeoff point to a target location. The direct path distance (hypotenuse)
+        measured by GPS is 10 km. If the drone reached a maximum altitude (vertical displacement) of 8 km during the flight,
+        what was the net horizontal distance covered from takeoff to landing?
+      mathTool: null
+      finalAnswer: 6 km
+      stepByStepGuideline:
+      - 'Identify the sides: The direct path (10 km) is the hypotenuse (c). The vertical displacement (8 km) is one leg (a).
+        We need the horizontal distance (leg b).'
+      - 'Apply the formula: $b^2 = c^2 - a^2$.'
+      - 'Substitute the values: $b^2 = 10^2 - 8^2 = 100 - 64$.'
+      - 'Calculate the difference: $b^2 = 36$.'
+      - 'Find the square root: $b = \sqrt{36} = 6$. The net horizontal distance is 6 km.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: An awning is supported by a diagonal tension rod that is 17 feet long. The bottom anchor point for the
+        rod is 8 feet away from the side of the house horizontally. Calculate the vertical height up the house wall where
+        the rod is attached.
+      mathTool: null
+      finalAnswer: 15 ft
+      stepByStepGuideline:
+      - 'Identify the sides: The tension rod (17 ft) is the hypotenuse (c). The horizontal distance (8 ft) is one leg (a).
+        We need the vertical height (leg b).'
+      - 'Apply the formula: $b^2 = c^2 - a^2$.'
+      - 'Substitute the values: $b^2 = 17^2 - 8^2 = 289 - 64$.'
+      - 'Calculate the difference: $b^2 = 225$.'
+      - 'Find the square root: $b = \sqrt{225} = 15$. The vertical height is 15 ft.'
+      id: q8-5
+      questionGroup: q8
+- id: pythagoras-node-9
+  nodeNumber: 9
+  title: Ladder and Navigation Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A park designer is planning a large water slide. The slide structure needs a horizontal footprint of 20
+        meters and reaches a vertical height of 15 meters. Calculate the exact length of the sliding surface (the hypotenuse).
+      avatarIntro: These application problems are perfect for applying Pythagoras! Visualize the scenario as a right-angled
+        triangle to solve for the unknown side.
+      mathTool: null
+      finalAnswer: 25 m
+      stepByStepGuideline:
+      - 'Identify the components: The horizontal footprint (20 m) and the vertical height (15 m) are the two legs (a and b)
+        of the right-angled triangle.'
+      - The length of the sliding surface is the hypotenuse (c).
+      - 'Apply the Pythagorean theorem: a² + b² = c².'
+      - 'Substitute the values: 15² + 20² = c².'
+      - 'Calculate: 225 + 400 = 625. So, c² = 625.'
+      - 'Find the length c by taking the square root: c = √625 = 25 m.'
+      id: q9-1
+      questionGroup: q9
+    - problemText: A scout troop begins a hike. They walk 12 km due South, and then turn due East and walk 5 km. What is the
+        straight-line distance, in kilometers, from their final stopping point back to their starting location?
+      mathTool: null
+      finalAnswer: 13 km
+      stepByStepGuideline:
+      - The path forms a right-angled triangle where the North-South distance (12 km) and the East-West distance (5 km) are
+        the perpendicular legs (a and b).
+      - The straight-line distance back to the start is the hypotenuse (c).
+      - 'Apply the Pythagorean theorem: a² + b² = c².'
+      - 'Substitute the distances: 12² + 5² = c².'
+      - 'Calculate: 144 + 25 = 169. So, c² = 169.'
+      - 'Find the distance c by taking the square root: c = √169 = 13 km.'
+      id: q9-2
+      questionGroup: q9
+    - problemText: A maintenance worker uses a 15 m long safety platform ladder to access a high window. If the ladder reaches
+        12 m up the side of the building, how far away from the base of the building is the foot of the ladder placed?
+      mathTool: null
+      finalAnswer: 9 m
+      stepByStepGuideline:
+      - 'Identify the sides: The ladder (15 m) is the hypotenuse (c). The height reached (12 m) is one leg (a). The distance
+        from the base (b) is the unknown leg.'
+      - 'Apply the Pythagorean theorem: a² + b² = c².'
+      - 'Rearrange to solve for the unknown leg: b² = c² - a².'
+      - 'Substitute the values: b² = 15² - 12².'
+      - 'Calculate: b² = 225 - 144 = 81.'
+      - 'Find the distance b by taking the square root: b = √81 = 9 m.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: A search and rescue team tracks a missing beacon. The direct distance (hypotenuse) from the base camp to
+        the beacon is 25 km. If the beacon is known to be 24 km due South of the base camp's latitude, how far due West must
+        the team travel to reach the beacon?
+      mathTool: null
+      finalAnswer: 7 km
+      stepByStepGuideline:
+      - The direct distance (25 km) is the hypotenuse (c). The Southward distance (24 km) is one perpendicular leg (a). The
+        Westward distance (b) is the unknown leg.
+      - 'Apply the Pythagorean theorem: a² + b² = c².'
+      - 'Rearrange to find the unknown leg: b² = c² - a².'
+      - 'Substitute the distances: b² = 25² - 24².'
+      - 'Calculate: b² = 625 - 576 = 49.'
+      - 'Find the distance b by taking the square root: b = √49 = 7 km.'
+      id: q9-4
+      questionGroup: q9
+    - problemText: A firefighter extends a 17 m ladder up against a burning building. To ensure stability, the ladder must
+        rest exactly 15 m up the wall. Determine the required distance, in meters, that the base of the ladder must be placed
+        away from the building.
+      mathTool: null
+      finalAnswer: 8 m
+      stepByStepGuideline:
+      - 'Identify the sides: The ladder (17 m) is the hypotenuse (c). The height on the wall (15 m) is one leg (a). The distance
+        from the base (b) is the unknown leg.'
+      - 'Apply the Pythagorean theorem: a² + b² = c².'
+      - 'Rearrange to solve for the unknown leg: b² = c² - a².'
+      - 'Substitute the values: b² = 17² - 15².'
+      - 'Calculate: b² = 289 - 225 = 64.'
+      - 'Find the distance b by taking the square root: b = √64 = 8 m.'
+      id: q9-5
+      questionGroup: q9
+- id: pythagoras-node-10
+  nodeNumber: 10
+  title: Rectangle Diagonal Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: rectangle
+    preWrittenQuestions:
+    - problemText: A flat-screen monitor has a rectangular viewing area that is 80 cm wide and 45 cm high. Calculate the length
+        of the diagonal of the screen, rounding your answer to one decimal place.
+      avatarIntro: Welcome! Remember that the diagonal of a rectangle forms the hypotenuse of a right-angled triangle, allowing
+        us to use the Pythagorean theorem.
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 80 cm
+          width: 45 cm
+          highlightMode: none
+          showFormula: false
+      finalAnswer: 91.8 cm
+      stepByStepGuideline:
+      - Identify the length (l = 80 cm) and width (w = 45 cm) of the rectangle.
+      - 'Apply the Pythagorean theorem to find the diagonal (d): $d^2 = l^2 + w^2$.'
+      - 'Substitute the values: $d^2 = 80^2 + 45^2$.'
+      - 'Calculate the squares: $d^2 = 6400 + 2025 = 8425$.'
+      - 'Find the square root: $d = \sqrt{8425} \approx 91.787...$ cm.'
+      - 'Round the answer to one decimal place: 91.8 cm.'
+      id: q10-1
+      questionGroup: q10
+    - problemText: A rectangular community garden measures 12 meters in length and 5 meters in width. A direct path is constructed
+        diagonally across the garden. What is the exact length of this diagonal path?
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 12 m
+          width: 5 m
+          highlightMode: none
+          showFormula: false
+      finalAnswer: 13 m
+      stepByStepGuideline:
+      - Identify the length (l = 12 m) and width (w = 5 m).
+      - Use the formula $d^2 = l^2 + w^2$.
+      - 'Substitute the values: $d^2 = 12^2 + 5^2$.'
+      - 'Calculate the squares: $d^2 = 144 + 25 = 169$.'
+      - 'Find the square root: $d = \sqrt{169}$.'
+      - The exact length of the diagonal path is 13 m.
+      id: q10-2
+      questionGroup: q10
+    - problemText: A rectangular sports field is 40 meters long and 30 meters wide. A runner crosses the field from one corner
+        to the opposite corner. Calculate the total distance covered by the runner along the diagonal.
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 40 m
+          width: 30 m
+          highlightMode: none
+          showFormula: false
+      finalAnswer: 50 m
+      stepByStepGuideline:
+      - Identify the length (l = 40 m) and width (w = 30 m).
+      - Use the formula $d^2 = l^2 + w^2$.
+      - 'Substitute the values: $d^2 = 40^2 + 30^2$.'
+      - 'Calculate the squares: $d^2 = 1600 + 900 = 2500$.'
+      - 'Find the square root: $d = \sqrt{2500}$.'
+      - The diagonal distance is 50 m.
+      id: q10-3
+      questionGroup: q10
+    - problemText: An antique dining table has a rectangular surface that measures 120 cm by 90 cm. Determine the exact length
+        of the longest straight line that can be drawn across the table surface (the diagonal).
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 120 cm
+          width: 90 cm
+          highlightMode: none
+          showFormula: false
+      finalAnswer: 150 cm
+      stepByStepGuideline:
+      - Identify the length (l = 120 cm) and width (w = 90 cm).
+      - Use the formula $d^2 = l^2 + w^2$.
+      - 'Substitute the values: $d^2 = 120^2 + 90^2$.'
+      - 'Calculate the squares: $d^2 = 14400 + 8100 = 22500$.'
+      - 'Find the square root: $d = \sqrt{22500}$.'
+      - The exact length of the diagonal is 150 cm.
+      id: q10-4
+      questionGroup: q10
+    - problemText: A large projection screen used for presentations is rectangular with dimensions 60 cm by 32 cm. Find the
+        exact length of the screen's diagonal measurement.
+      mathTool:
+        toolName: rectangle
+        parameters:
+          length: 60 cm
+          width: 32 cm
+          highlightMode: none
+          showFormula: false
+      finalAnswer: 68 cm
+      stepByStepGuideline:
+      - Identify the length (l = 60 cm) and width (w = 32 cm).
+      - Use the formula $d^2 = l^2 + w^2$.
+      - 'Substitute the values: $d^2 = 60^2 + 32^2$.'
+      - 'Calculate the squares: $d^2 = 3600 + 1024 = 4624$.'
+      - 'Find the square root: $d = \sqrt{4624}$.'
+      - The exact length of the diagonal is 68 cm.
+      id: q10-5
+      questionGroup: q10
+- id: pythagoras-node-11
+  nodeNumber: 11
+  title: 3D Space Diagonals - Cuboids
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: cuboid
+    preWrittenQuestions:
+    - problemText: A shipping box measures 12 cm in length, 9 cm in width, and 8 cm in height. Calculate the exact length
+        of the longest straight rod that can fit inside the box, spanning from one bottom corner to the opposite top corner.
+      avatarIntro: Calculating distances in 3D space is a common application of Pythagoras' theorem. Remember you need to
+        use the theorem twice!
+      mathTool:
+        toolName: cuboid
+        parameters:
+          length: 12 cm
+          width: 9 cm
+          height: 8 cm
+          showSpaceDiagonal: false
+          showVertexLabels: true
+      finalAnswer: 17 cm
+      stepByStepGuideline:
+      - 'Identify the dimensions: Length (l) = 12 cm, Width (w) = 9 cm, Height (h) = 8 cm.'
+      - 'Step 1: Calculate the diagonal of the base (d_base) using Pythagoras'' theorem: $d_{base}^2 = l^2 + w^2$.'
+      - $d_{base}^2 = 12^2 + 9^2 = 144 + 81 = 225$.
+      - $d_{base} = \sqrt{225} = 15$ cm.
+      - 'Step 2: Calculate the space diagonal (D) using the base diagonal and the height: $D^2 = d_{base}^2 + h^2$.'
+      - $D^2 = 15^2 + 8^2 = 225 + 64 = 289$.
+      - 'Calculate the final length: $D = \sqrt{289} = 17$ cm.'
+      id: q11-1
+      questionGroup: q11
+    - problemText: A geometric cuboid has dimensions of 6 cm by 6 cm by 7 cm. Determine the exact length of the space diagonal,
+        connecting two vertices that are furthest apart.
+      mathTool:
+        toolName: cuboid
+        parameters:
+          length: 6 cm
+          width: 6 cm
+          height: 7 cm
+          showSpaceDiagonal: false
+          showVertexLabels: true
+      finalAnswer: 11 cm
+      stepByStepGuideline:
+      - 'Identify the dimensions: l = 6 cm, w = 6 cm, h = 7 cm.'
+      - 'Alternatively, use the 3D space diagonal formula: $D = \sqrt{l^2 + w^2 + h^2}$.'
+      - $D = \sqrt{6^2 + 6^2 + 7^2}$.
+      - $D = \sqrt{36 + 36 + 49}$.
+      - $D = \sqrt{121}$.
+      - The exact length of the space diagonal is 11 cm.
+      id: q11-2
+      questionGroup: q11
+    - problemText: A storage room is 5 meters long, 4 meters wide, and 3 meters high. Calculate the straight-line distance
+        from the corner of the floor to the opposite corner of the ceiling, rounding your answer to one decimal place.
+      mathTool:
+        toolName: cuboid
+        parameters:
+          length: 5 m
+          width: 4 m
+          height: 3 m
+          showSpaceDiagonal: false
+          showVertexLabels: true
+      finalAnswer: 7.1 m
+      stepByStepGuideline:
+      - 'Identify the dimensions: l = 5 m, w = 4 m, h = 3 m.'
+      - 'Calculate the square of the base diagonal: $d_{base}^2 = 5^2 + 4^2 = 25 + 16 = 41$.'
+      - 'Calculate the square of the space diagonal (D): $D^2 = d_{base}^2 + h^2 = 41 + 3^2 = 41 + 9 = 50$.'
+      - 'Find the space diagonal: $D = \sqrt{50}$.'
+      - $D \approx 7.071$ m.
+      - Rounding to one decimal place gives 7.1 m.
+      id: q11-3
+      questionGroup: q11
+    - problemText: A large rectangular shipping container is 8 meters long, 6 meters wide, and 4 meters high. Find the maximum
+        length of a steel beam that can be placed inside the container diagonally (the space diagonal). Round your answer
+        to the nearest tenth of a meter.
+      mathTool:
+        toolName: cuboid
+        parameters:
+          length: 8 m
+          width: 6 m
+          height: 4 m
+          showSpaceDiagonal: false
+          showVertexLabels: true
+      finalAnswer: 10.8 m
+      stepByStepGuideline:
+      - 'Identify the dimensions: l = 8 m, w = 6 m, h = 4 m.'
+      - Use the formula $D^2 = l^2 + w^2 + h^2$.
+      - $D^2 = 8^2 + 6^2 + 4^2$.
+      - $D^2 = 64 + 36 + 16$.
+      - $D^2 = 116$.
+      - 'Calculate D: $D = \sqrt{116} \approx 10.7703$ m.'
+      - Rounding to the nearest tenth (one decimal place) gives 10.8 m.
+      id: q11-4
+      questionGroup: q11
+    - problemText: A rectangular steel frame supporting machinery has a length of 12 cm, a width of 9 cm, and a height of
+        8 cm. Calculate the exact length of a stabilizing strut that runs diagonally through the interior of the frame.
+      mathTool:
+        toolName: cuboid
+        parameters:
+          length: 12 cm
+          width: 9 cm
+          height: 8 cm
+          showSpaceDiagonal: false
+          showVertexLabels: true
+      finalAnswer: 17 cm
+      stepByStepGuideline:
+      - 'Identify the dimensions: l = 12 cm, w = 9 cm, h = 8 cm.'
+      - 'First, find the square of the base diagonal: $d_{base}^2 = 12^2 + 9^2 = 144 + 81 = 225$.'
+      - 'Next, find the square of the space diagonal (D): $D^2 = d_{base}^2 + h^2$.'
+      - $D^2 = 225 + 8^2 = 225 + 64 = 289$.
+      - 'Calculate the exact length: $D = \sqrt{289} = 17$ cm.'
+      id: q11-5
+      questionGroup: q11
+- id: pythagoras-node-12
+  nodeNumber: 12
+  title: Testing for Right Triangles - Converse
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A builder is checking the accuracy of a large triangular section of pavement. The side lengths measured
+        are 12 cm, 15 cm, and 9 cm. Is this a right-angled triangle? Show your working.
+      avatarIntro: The converse of Pythagoras' Theorem is essential for checking if angles are truly 90 degrees. Remember
+        to identify the longest side first!
+      mathTool: null
+      finalAnswer: Yes. The triangle is right-angled because 9² + 12² = 81 + 144 = 225, and 15² = 225. Since a² + b² = c²,
+        it is a right triangle.
+      stepByStepGuideline:
+      - Identify the longest side (c). Here, c = 15 cm.
+      - 'Calculate the sum of the squares of the two shorter sides (a² + b²): 9² + 12² = 81 + 144 = 225.'
+      - 'Calculate the square of the longest side (c²): 15² = 225.'
+      - Compare the results. Since 225 = 225, the converse of Pythagoras' Theorem confirms that the triangle is right-angled.
+      id: q12-1
+      questionGroup: q12
+    - problemText: A designer is sketching a sculpture and uses side lengths 9 m, 5 m, and 7 m. Does this triangle contain
+        a right angle?
+      mathTool: null
+      finalAnswer: No. The triangle does not contain a right angle because 5² + 7² = 74, which is not equal to 9² = 81.
+      stepByStepGuideline:
+      - Identify the longest side (c). Here, c = 9 m.
+      - 'Calculate the sum of the squares of the two shorter sides (a² + b²): 5² + 7² = 25 + 49 = 74.'
+      - 'Calculate the square of the longest side (c²): 9² = 81.'
+      - Compare the results. Since 74 ≠ 81, the triangle is not a right-angled triangle.
+      id: q12-2
+      questionGroup: q12
+    - problemText: A precision component has three edge lengths measuring 21 mm, 20 mm, and 29 mm. Determine whether this
+        is a right-angled triangle.
+      mathTool: null
+      finalAnswer: Yes. The triangle is right-angled because 20² + 21² = 400 + 441 = 841, and 29² = 841.
+      stepByStepGuideline:
+      - Identify the longest side (c). Here, c = 29 mm.
+      - 'Calculate the sum of the squares of the two shorter sides (a² + b²): 20² + 21² = 400 + 441 = 841.'
+      - 'Calculate the square of the longest side (c²): 29² = 841.'
+      - Compare the results. Since 841 = 841, the triangle is right-angled.
+      id: q12-3
+      questionGroup: q12
+    - problemText: Three lengths used to construct a triangular frame are 7 units, 10 units, and 6 units. Use the converse
+        of Pythagoras' Theorem to check if the frame has a right angle.
+      mathTool: null
+      finalAnswer: No. The frame does not form a right angle because 6² + 7² = 36 + 49 = 85, which is not equal to 10² = 100.
+      stepByStepGuideline:
+      - Identify the longest side (c). Here, c = 10 units.
+      - 'Calculate the sum of the squares of the two shorter sides (a² + b²): 6² + 7² = 36 + 49 = 85.'
+      - 'Calculate the square of the longest side (c²): 10² = 100.'
+      - Compare the results. Since 85 ≠ 100, the converse shows that the frame does not form a right-angled triangle.
+      id: q12-4
+      questionGroup: q12
+    - problemText: A navigation map shows three points connected by straight lines measuring 15 km, 17 km, and 8 km. Is this
+        a right-angled triangle? Show your working.
+      mathTool: null
+      finalAnswer: Yes. The path forms a right-angled triangle because 8² + 15² = 64 + 225 = 289, and 17² = 289.
+      stepByStepGuideline:
+      - Identify the longest side (c). Here, c = 17 km.
+      - 'Calculate the sum of the squares of the two shorter sides (a² + b²): 8² + 15² = 64 + 225 = 289.'
+      - 'Calculate the square of the longest side (c²): 17² = 289.'
+      - Compare the results. Since 289 = 289, the triangle is right-angled.
+      id: q12-5
+      questionGroup: q12
+- id: pythagoras-node-13
+  nodeNumber: 13
+  title: Construction Checking - 3-4-5 Method
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A carpenter is constructing a rectangular door frame. To ensure the corner is perfectly square, they measure
+        90 cm along one side and 120 cm along the adjacent side. If the diagonal measurement across this corner is 150 cm,
+        use the converse of Pythagoras' Theorem to verify if the corner is 90°.
+      avatarIntro: Verifying right angles is crucial in construction. Let's practice applying the converse of Pythagoras'
+        Theorem to check if this frame is square!
+      mathTool: null
+      finalAnswer: Yes. Since 90² + 120² = 8100 + 14400 = 22500, and 150² = 22500, the corner is square (90°).
+      stepByStepGuideline:
+      - Identify the two shorter sides (a and b) and the longest side (c). Here, a = 90 cm, b = 120 cm, and c = 150 cm.
+      - 'Calculate the sum of the squares of the two shorter sides: a² + b² = 90² + 120².'
+      - Calculate 8100 + 14400 = 22500.
+      - 'Calculate the square of the longest side: c² = 150² = 22500.'
+      - Since a² + b² = c² (22500 = 22500), the converse of Pythagoras' Theorem proves the corner is a right angle.
+      id: q13-1
+      questionGroup: q13
+    - problemText: A builder needs to verify that a load-bearing wall is perfectly perpendicular to the foundation. They mark
+        points 6 m along the foundation and 8 m up the wall. If the diagonal distance measured between these two points is
+        exactly 10 m, is the wall corner square?
+      mathTool: null
+      finalAnswer: Yes. 6² + 8² = 36 + 64 = 100, and 10² = 100. Since 6² + 8² = 10², the corner is square (90°).
+      stepByStepGuideline:
+      - 'Identify the side lengths: a = 6 m, b = 8 m, c = 10 m.'
+      - 'Check if the sum of the squares of the two shorter sides equals the square of the longest side: 6² + 8².'
+      - Calculate 36 + 64 = 100.
+      - 'Calculate the square of the longest side: 10² = 100.'
+      - Since 100 = 100, the corner angle must be 90° by the converse of Pythagoras' Theorem.
+      id: q13-2
+      questionGroup: q13
+    - problemText: A gardener is laying out a large rectangular flower bed. To ensure one corner is a true right angle, they
+        use measurements of 1.5 m along one side and 2 m along the adjacent side. If the diagonal measurement is 2.5 m, confirm
+        if the corner is 90°.
+      mathTool: null
+      finalAnswer: Yes. 1.5² + 2² = 2.25 + 4 = 6.25, and 2.5² = 6.25. The corner is right-angled.
+      stepByStepGuideline:
+      - 'Define the side lengths: a = 1.5 m, b = 2 m, c = 2.5 m.'
+      - 'Calculate a² + b²: 1.5² + 2² = 2.25 + 4 = 6.25.'
+      - 'Calculate c²: 2.5² = 6.25.'
+      - Since 6.25 = 6.25, the measurements satisfy the Pythagorean relationship, confirming the corner is a right angle.
+      id: q13-3
+      questionGroup: q13
+    - problemText: In ancient times, Egyptians used ropes marked with knots to create right angles for construction. They
+        sometimes used a rope configuration to form a triangle with sides measuring 60 cm, 80 cm, and 100 cm. Explain, using
+        the converse of Pythagoras' Theorem, why this arrangement guarantees a square corner.
+      mathTool: null
+      finalAnswer: The arrangement guarantees a square corner because 60² + 80² = 3600 + 6400 = 10000. Since 100² also equals
+        10000, the condition a² + b² = c² is met. By the converse of Pythagoras' Theorem, the angle opposite the 100 cm side
+        is 90°.
+      stepByStepGuideline:
+      - 'State the converse of Pythagoras'' Theorem: If a² + b² = c², then the triangle is right-angled.'
+      - 'Identify the sides: a = 60 cm, b = 80 cm, c = 100 cm.'
+      - 'Calculate the sum of the squares of the two shorter sides: 60² + 80² = 3600 + 6400 = 10000.'
+      - 'Calculate the square of the longest side: 100² = 10000.'
+      - Since 10000 = 10000, the relationship holds true, proving the angle formed by the 60 cm and 80 cm sides is a 90° angle.
+      id: q13-4
+      questionGroup: q13
+    - problemText: A surveyor on a construction site is marking out a property boundary. To check if a specific boundary corner
+        (A) is right-angled, they measure 9 m along the first boundary line and 12 m along the second. If the distance measured
+        diagonally between the end points is 15 m, confirm whether Corner A is 90°.
+      mathTool: null
+      finalAnswer: Yes. 9² + 12² = 81 + 144 = 225, and 15² = 225. Since the sides satisfy the Pythagorean relationship, Corner
+        A is 90°.
+      stepByStepGuideline:
+      - 'Identify the three measurements: 9 m, 12 m, and 15 m.'
+      - 'Apply the converse theorem by checking if the sum of the squares of the two shorter sides equals the square of the
+        longest side: 9² + 12².'
+      - Calculate 81 + 144 = 225.
+      - 'Calculate the square of the longest side: 15² = 225.'
+      - Since 225 = 225, the boundary corner is a right angle.
+      id: q13-5
+      questionGroup: q13

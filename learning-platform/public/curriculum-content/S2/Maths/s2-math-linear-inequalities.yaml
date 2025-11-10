@@ -1,0 +1,2187 @@
+# S2 Math Linear Inequalities - Unified Practice Path
+# Generated using exemplar-based AI question generation
+# All nodes are accessible (no locks), with smart prerequisite suggestions
+
+nodes:
+- id: linear-inequalities-node-1
+  nodeNumber: 1
+  title: Understanding Inequality Symbols
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A driver in a residential area must maintain a speed, $s$ km/h, that is **at most** 50 km/h. Write the
+        inequality for $s$. If the driver travels at 50 km/h, are they obeying the speed limit? If they travel at 50.1 km/h,
+        are they obeying the limit?
+      avatarIntro: Welcome! Understanding inequalities is crucial for many real-world rules, like speed limits. Let's start
+        with a problem about 'at most'.
+      mathTool: null
+      finalAnswer: $s \le 50$. Yes, they are obeying (50 \le 50). No, they are not obeying (50.1 \le 50 is false).
+      stepByStepGuideline:
+      - 'Identify the key phrase: ''at most 50 km/h''. This means 50 is the maximum allowed speed, and the speed can be equal
+        to 50.'
+      - 'Translate ''at most'' into the inequality symbol: $\le$ (less than or equal to).'
+      - 'Write the inequality: $s \le 50$.'
+      - 'Check the value $s = 50$: $50 \le 50$ is true. They are obeying the limit.'
+      - 'Check the value $s = 50.1$: $50.1 \le 50$ is false. They are not obeying the limit.'
+      id: q1-1
+      questionGroup: q1
+    - problemText: In Singapore, the minimum age, $a$ years, required to vote in a General Election is 21. Write the inequality
+        that $a$ must satisfy. Explain why the boundary value (21) is included in the solution set.
+      mathTool: null
+      finalAnswer: $a \ge 21$. The boundary value 21 is included because the phrase 'minimum age' or 'at least' means that
+        21 years old is the lowest acceptable age, making it a valid requirement.
+      stepByStepGuideline:
+      - 'Identify the key phrase: ''minimum age is 21'' or ''at least 21''.'
+      - 'Translate ''minimum'' into the inequality symbol: $\ge$ (greater than or equal to).'
+      - 'Write the inequality: $a \ge 21$.'
+      - 'Explain the inclusive boundary: Since it is the minimum, 21 itself is acceptable, hence the ''equal to'' part of
+        the symbol.'
+      id: q1-2
+      questionGroup: q1
+    - problemText: Water remains a liquid if its temperature, $T$ degrees Celsius, is **more than** 0°C but **less than**
+        100°C. Write a compound inequality describing the possible values of $T$.
+      mathTool: null
+      finalAnswer: $0 < T < 100$
+      stepByStepGuideline:
+      - 'Translate ''more than 0°C'': This is a strict inequality, $T > 0$.'
+      - 'Translate ''less than 100°C'': This is a strict inequality, $T < 100$.'
+      - 'Combine the two strict inequalities into a single compound inequality, ensuring the variable $T$ is between the two
+        bounds: $0 < T < 100$.'
+      id: q1-3
+      questionGroup: q1
+    - problemText: To ride the 'Sky-High Drop' attraction, a person's height, $h$ (in meters), must be **strictly greater
+        than** 1.4 meters. Write the inequality for $h$. If a person measures exactly 1.4 meters, can they ride? Which symbol
+        ($>$ or $\ge$) correctly represents 'strictly greater than'?
+      mathTool: null
+      finalAnswer: $h > 1.4$. No, they cannot ride because 1.4 is not strictly greater than 1.4. The symbol $>$ correctly
+        represents 'strictly greater than'.
+      stepByStepGuideline:
+      - 'Identify the key phrase: ''strictly greater than 1.4 meters''. This excludes the boundary value.'
+      - 'Translate ''strictly greater than'' into the inequality symbol: $>$ (greater than).'
+      - 'Write the inequality: $h > 1.4$.'
+      - 'Determine if $h=1.4$ satisfies the condition: $1.4 > 1.4$ is false, so they cannot ride.'
+      - 'Identify the correct symbol: The word ''strictly'' means the boundary value is excluded, requiring the non-inclusive
+        symbol $>$. '
+      id: q1-4
+      questionGroup: q1
+    - problemText: A new smartphone model is expected to cost **at least** $750, but the manufacturer set a **maximum** price
+        of $999. Let $C$ represent the cost of the phone. Write the compound inequality that represents the possible cost
+        $C$.
+      mathTool: null
+      finalAnswer: $750 \le C \le 999$
+      stepByStepGuideline:
+      - 'Translate ''at least $750'' into an inequality: $C \ge 750$.'
+      - 'Translate ''maximum price of $999'' into an inequality: $C \le 999$.'
+      - Combine the two inclusive inequalities. Since $C$ must be greater than or equal to 750 AND less than or equal to 999,
+        the compound inequality is $750 \le C \le 999$.
+      id: q1-5
+      questionGroup: q1
+- id: linear-inequalities-node-2
+  nodeNumber: 2
+  title: Inequalities Have Infinite Solutions
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: 'In a running competition, participants whose time, $t$ (in minutes), is strictly **more than** 3 minutes
+        must attend a remedial training session. This is represented by the inequality $t > 3$. State whether each given time
+        is a solution to the inequality (meaning the participant must attend training):
+
+        (a) $t = 4$
+
+        (b) $t = 3$
+
+        (c) $t = 3.1$'
+      avatarIntro: Inequalities help us define a range of values that satisfy a certain condition. Let's practice checking
+        specific points to see if they fall within the solution set.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 6
+          intervals:
+          - start: 3
+            end: null
+            startInclusive: false
+            color: '#fbbf24'
+            label: t > 3
+          points:
+          - value: 4
+            style: closed
+            label: 4 ✓
+            color: '#10b981'
+          - value: 3
+            style: open
+            label: 3 ✗
+            color: '#ef4444'
+          - value: 3.1
+            style: closed
+            label: 3.1 ✓
+            color: '#10b981'
+          showTickMarks: true
+          showTickLabels: true
+          caption: The solution set for t > 3
+      finalAnswer: (a) Yes, 4 > 3 is true. (b) No, 3 > 3 is false. (c) Yes, 3.1 > 3 is true.
+      stepByStepGuideline:
+      - 'Step 1: Substitute the value into the inequality $t > 3$ to check if the statement holds true.'
+      - 'Step 2: For $t=4$: $4 > 3$. This is true, so 4 is a solution.'
+      - 'Step 3: For $t=3$: $3 > 3$. This is false, because 3 is equal to 3, not strictly greater than 3. The open circle
+        on the number line indicates 3 is not included.'
+      - 'Step 4: For $t=3.1$: $3.1 > 3$. This is true, so 3.1 is a solution.'
+      id: q2-1
+      questionGroup: q2
+    - problemText: 'A deep-sea research submarine is designed to operate at an elevation, $E$ (in km relative to sea level),
+        that is **at most** -1 km. This condition is described by the inequality $E \leq -1$.
+
+
+        (a) How many possible elevations satisfy this condition?
+
+        (b) List three different examples of elevations that satisfy $E \leq -1$.'
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -5
+          max: 1
+          intervals:
+          - start: null
+            end: -1
+            endInclusive: true
+            color: '#fbbf24'
+            label: E ≤ -1
+          points:
+          - value: -1
+            style: closed
+            label: '-1'
+            color: '#10b981'
+          - value: -3
+            style: closed
+            label: '-3'
+            color: '#10b981'
+          - value: -1.5
+            style: closed
+            label: '-1.5'
+            color: '#10b981'
+          showTickMarks: true
+          showTickLabels: true
+          caption: The solution set for E ≤ -1
+      finalAnswer: '(a) Infinitely many solutions. (b) Examples include: -1, -2, -100, -1.5 (Any value less than or equal
+        to -1)'
+      stepByStepGuideline:
+      - 'Step 1: Analyze the inequality $E \leq -1$. This means the elevation must be equal to -1 or any value smaller than
+        -1.'
+      - 'Step 2: Since there is no limit on how low the elevation can go (e.g., -1000 km is a possible solution), and real
+        numbers include fractions and decimals between any two numbers, there are infinitely many solutions.'
+      - 'Step 3: To list examples, choose values on the number line that fall within the shaded region (including the closed
+        point at -1). Examples: -1 (boundary), -2 (an integer solution), -1.5 (a non-integer solution).'
+      id: q2-2
+      questionGroup: q2
+    - problemText: 'The mass, $M$ (in kilograms), of any physical item produced by a factory must be non-negative. This condition
+        is represented by the inequality $M \geq 0$.
+
+
+        (a) From the following list, identify all values that are **not** solutions to the inequality: {5, 0, -0.5, -5}
+
+        (b) Explain why an inequality like $M \geq 0$ has an infinite number of non-solutions.'
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -5
+          max: 5
+          intervals:
+          - start: 0
+            end: null
+            startInclusive: true
+            color: '#fbbf24'
+            label: M ≥ 0
+          points:
+          - value: 5
+            style: closed
+            label: 5 ✓
+            color: '#10b981'
+          - value: 0
+            style: closed
+            label: 0 ✓
+            color: '#10b981'
+          - value: -0.5
+            style: closed
+            label: -0.5 ✗
+            color: '#ef4444'
+          showTickMarks: true
+          showTickLabels: true
+          caption: The solution set for M ≥ 0
+      finalAnswer: '(a) Non-solutions are: -0.5 and -5. (b) The non-solutions are all values $M < 0$. Since the numbers less
+        than zero extend infinitely in the negative direction, and include all decimals and fractions, there are infinitely
+        many values that do not satisfy $M \geq 0$.'
+      stepByStepGuideline:
+      - 'Step 1: A solution must satisfy $M \geq 0$. This means M must be zero or positive.'
+      - 'Step 2: Check the list: 5 (Solution), 0 (Solution), -0.5 (Non-solution because $-0.5 < 0$), -5 (Non-solution because
+        $-5 < 0$).'
+      - 'Step 3: Identify the range of non-solutions: $M < 0$. Since this range is unbounded to the left (negative infinity),
+        there are infinitely many values that do not satisfy the original inequality.'
+      id: q2-3
+      questionGroup: q2
+    - problemText: 'A technology company tracks its quarterly profits, $P$ (in millions of dollars). Management defines a
+        "major loss event" as any profit strictly less than -2 million dollars. The condition is $P < -2$.
+
+
+        Explain why $P < -2$ has infinitely many solutions, unlike an equation such as $P = -2$, which has only one solution.
+        Give one non-integer solution example.'
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -5
+          max: 0
+          intervals:
+          - start: null
+            end: -2
+            endInclusive: false
+            color: '#fbbf24'
+            label: P < -2
+          points:
+          - value: -3
+            style: closed
+            label: '-3'
+            color: '#10b981'
+          - value: -2.5
+            style: closed
+            label: '-2.5'
+            color: '#10b981'
+          - value: -2
+            style: open
+            label: -2 ✗
+            color: '#ef4444'
+          showTickMarks: true
+          showTickLabels: true
+          caption: The solution set for P < -2
+      finalAnswer: 'An equation ($P=-2$) describes a single point on the number line. An inequality ($P < -2$) describes an
+        entire range or interval. Since there are limitless real numbers (including decimals and fractions) between any two
+        points, and the range extends indefinitely towards negative infinity, there are infinitely many values less than -2.
+        Non-integer example: -2.01 or -2.5.'
+      stepByStepGuideline:
+      - 'Step 1: Understand the difference between equations and inequalities. Equations yield specific values (points), while
+        inequalities yield ranges (intervals).'
+      - 'Step 2: Identify the solution set for $P < -2$. This includes all numbers to the left of -2 on the number line.'
+      - 'Step 3: Since the number line is continuous and extends infinitely in the negative direction, the shaded region contains
+        an infinite quantity of real numbers.'
+      - 'Step 4: Provide a non-integer example, such as $-2.5$ or $-10.7$, which clearly satisfies the condition $-2.5 < -2$.'
+      id: q2-4
+      questionGroup: q2
+    - problemText: 'A construction company requires wooden beams to have a length, $L$ (in meters), that is **strictly greater
+        than** 3 meters ($L > 3$).
+
+
+        (a) Explain why $L=3$ is not an acceptable length.
+
+        (b) Is $L=3.0001$ an acceptable length? Why or why not?'
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 2.5
+          max: 3.5
+          intervals:
+          - start: 3
+            end: null
+            startInclusive: false
+            color: '#fbbf24'
+            label: L > 3
+          points:
+          - value: 3.0001
+            style: closed
+            label: 3.0001 ✓
+            color: '#10b981'
+          - value: 3
+            style: open
+            label: 3 ✗
+            color: '#ef4444'
+          - value: 3.2
+            style: closed
+            label: 3.2 ✓
+            color: '#10b981'
+          showTickMarks: true
+          showTickLabels: true
+          caption: Visualizing the strict inequality L > 3
+      finalAnswer: (a) $L=3$ is not acceptable because the inequality $L > 3$ requires the length to be strictly greater than
+        3. The boundary value itself is excluded. (b) Yes, $L=3.0001$ is acceptable because $3.0001$ is greater than 3. Even
+        a tiny difference satisfies a strict inequality.
+      stepByStepGuideline:
+      - 'Step 1: Interpret the strict inequality symbol (>). It means ''greater than'' but not ''equal to''.'
+      - 'Step 2: For $L=3$, substitute the value: $3 > 3$. This is false. Therefore, 3 is not a solution, represented by the
+        open circle on the number line.'
+      - 'Step 3: For $L=3.0001$, substitute the value: $3.0001 > 3$. This is true. Even though it is very close to the boundary,
+        it falls within the required range (the shaded area).'
+      id: q2-5
+      questionGroup: q2
+- id: linear-inequalities-node-3
+  nodeNumber: 3
+  title: Solving One-Step Inequalities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: 'A student needs to spend less than 12 hours reading this week to catch up on other subjects. She has already
+        spent 5 hours reading. Let $R$ be the remaining hours she can spend reading. Write and solve the inequality for $R$,
+        and represent your solution on the number line provided.
+
+        $$R + 5 < 12$$'
+      avatarIntro: Welcome to the world of inequalities! We are going to solve these problems by using inverse operations,
+        just like solving equations.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 10
+          intervals:
+          - start: null
+            end: 7
+            endInclusive: false
+            color: '#fbbf24'
+            label: R < 7
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: 'Solution: R < 7'
+      finalAnswer: R < 7
+      stepByStepGuideline:
+      - The inequality is $R + 5 < 12$.
+      - To isolate $R$, subtract 5 from both sides of the inequality.
+      - $R + 5 - 5 < 12 - 5$
+      - $R < 7$
+      - The solution is $R < 7$. On a number line, this is represented by an open circle at 7 and shading to the left.
+      id: q3-1
+      questionGroup: q3
+    - problemText: 'A basketball player needs a total score, $S$, of at least 7 points in the next game to break a personal
+        record. He has already lost 3 points due to fouls. Write and solve the inequality to find the score he must achieve
+        before penalties are applied, and represent the solution on the number line.
+
+        $$S - 3 \geq 7$$'
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 5
+          max: 15
+          intervals:
+          - start: 10
+            end: null
+            startInclusive: true
+            color: '#fbbf24'
+            label: S ≥ 10
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: 'Solution: S ≥ 10'
+      finalAnswer: S ≥ 10
+      stepByStepGuideline:
+      - The inequality is $S - 3 \geq 7$.
+      - To isolate $S$, add 3 to both sides of the inequality.
+      - $S - 3 + 3 \geq 7 + 3$
+      - $S \geq 10$
+      - The solution is $S \geq 10$. On a number line, this is represented by a closed circle at 10 and shading to the right.
+      id: q3-2
+      questionGroup: q3
+    - problemText: 'A delivery vehicle has a maximum load capacity of 27 kg. If 3 identical boxes are loaded, let $w$ represent
+        the weight of each box in kilograms. Write and solve the inequality for $w$, and display the solution on the number
+        line provided.
+
+        $$3w \leq 27$$'
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 12
+          intervals:
+          - start: null
+            end: 9
+            endInclusive: true
+            color: '#fbbf24'
+            label: w ≤ 9
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: 'Solution: w ≤ 9'
+      finalAnswer: w ≤ 9
+      stepByStepGuideline:
+      - The inequality is $3w \leq 27$.
+      - To isolate $w$, divide both sides by the positive coefficient 3.
+      - $$\frac{3w}{3} \leq \frac{27}{3}$$
+      - $$w \leq 9$$
+      - The solution is $w \leq 9$. Since we divided by a positive number, the inequality sign remains the same. On a number
+        line, this is represented by a closed circle at 9 and shading to the left.
+      id: q3-3
+      questionGroup: q3
+    - problemText: 'A government agency is allocating a total annual fund, $F$ (in millions of dollars), which is to be divided
+        equally among 5 research teams. If each team must receive strictly more than 6 million dollars, write and solve the
+        inequality for $F$, and represent the solution on the number line.
+
+        $$\frac{F}{5} > 6$$'
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 25
+          max: 35
+          intervals:
+          - start: 30
+            end: null
+            startInclusive: false
+            color: '#fbbf24'
+            label: F > 30
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: 'Solution: F > 30'
+      finalAnswer: F > 30
+      stepByStepGuideline:
+      - The inequality is $F/5 > 6$.
+      - To isolate $F$, multiply both sides by the positive divisor 5.
+      - $$5 \times \frac{F}{5} > 6 \times 5$$
+      - $$F > 30$$
+      - The solution is $F > 30$. Since we multiplied by a positive number, the inequality sign remains the same. On a number
+        line, this is represented by an open circle at 30 and shading to the right.
+      id: q3-4
+      questionGroup: q3
+    - problemText: 'The current altitude of a drone is $A$ meters relative to sea level. After rising 2 meters, its new altitude
+        must be strictly greater than -1 meter. Solve the inequality for $A$ and sketch the solution on your own number line.
+
+        $$A + 2 > -1$$'
+      finalAnswer: A > -3
+      stepByStepGuideline:
+      - The inequality is $A + 2 > -1$.
+      - To isolate $A$, subtract 2 from both sides of the inequality.
+      - $A + 2 - 2 > -1 - 2$
+      - $A > -3$
+      - The solution is $A > -3$. Students should sketch a number line showing an open circle at -3, with the line shaded
+        to the right.
+      id: q3-5
+      questionGroup: q3
+- id: linear-inequalities-node-5
+  nodeNumber: 5
+  title: The Sign Reversal Rule
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: "A submersible explores deep water, where the external temperature change, $T$ (in °C), is tracked. If\
+        \ three times the negative temperature change must be at least 12 degrees, this relationship is modeled by the inequality\
+        \ $-3T \\ge 12$. \n\nSolve for $T$ and display the solution on a number line. \n\nIn one sentence, explain **why**\
+        \ the inequality sign must flip when solving this problem."
+      avatarIntro: 'Solving inequalities with negative coefficients is tricky! Remember the critical rule: multiplying or
+        dividing by a negative number flips the direction of the inequality sign.'
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -10
+          max: 0
+          intervals:
+          - start: null
+            end: -4
+            startInclusive: false
+            endInclusive: true
+            color: '#fbbf24'
+            label: T ≤ -4
+          showTickMarks: true
+          showTickLabels: true
+          caption: 'CRITICAL: When dividing -3T ≥ 12 by -3, the sign flips from ≥ to ≤'
+      finalAnswer: 'T ≤ -4. Explanation: The sign must flip because dividing (or multiplying) both sides of the inequality
+        by a negative number reverses the relative order of the numbers on the number line.'
+      stepByStepGuideline:
+      - 'Start with the inequality: $-3T \ge 12$.'
+      - To isolate $T$, divide both sides by -3.
+      - 'CRITICAL STEP: Since you are dividing by a negative number (-3), you must flip the inequality sign from $\ge$ to
+        $\le$.'
+      - The solution is $T \le -4$.
+      id: q5-1
+      questionGroup: q5
+    - problemText: "A video game character starts with 5 health points. They incur a penalty $x$. The resulting score, $5\
+        \ - x$, must be strictly greater than 8, indicating a major error in the game's scoring mechanism. Solve the inequality\
+        \ $5 - x > 8$ to find the range of the penalty $x$. \n\n(Note: You must isolate $-x$ before multiplying or dividing\
+        \ by $-1$.)"
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: x < -3
+      stepByStepGuideline:
+      - 'Start with the inequality: $5 - x > 8$.'
+      - 'Subtract 5 from both sides: $-x > 8 - 5$, which simplifies to $-x > 3$.'
+      - To solve for $x$, multiply or divide both sides by -1.
+      - 'CRITICAL STEP: Multiply by -1 and FLIP the inequality sign from $>$ to $<$.'
+      - The solution is $x < -3$.
+      id: q5-2
+      questionGroup: q5
+    - problemText: "An engineer calculates the stress, $S$, on a bridge cable using the formula involving the variable $x$.\
+        \ The required condition is modeled by the two-step inequality: $-3x + 7 \\ge 16$. \n\nSolve the inequality for $x$,\
+        \ ensuring you correctly apply the sign reversal rule."
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: x ≤ -3
+      stepByStepGuideline:
+      - 'Start with the inequality: $-3x + 7 \ge 16$.'
+      - 'First, subtract 7 from both sides: $-3x \ge 16 - 7$.'
+      - 'Simplify: $-3x \ge 9$.'
+      - To isolate $x$, divide both sides by -3.
+      - 'CRITICAL STEP: Since you are dividing by a negative number (-3), FLIP the inequality sign from $\ge$ to $\le$.'
+      - The solution is $x \le -3$.
+      id: q5-3
+      questionGroup: q5
+    - problemText: "In a laboratory experiment, a substance's concentration, $x$, is measured. Half the negative value of\
+        \ the concentration, $-\\frac{x}{2}$, must be strictly greater than 4. \n\nSolve the inequality $-\\frac{x}{2} > 4$.\
+        \ \n\n(Remember: To eliminate the fraction, you must multiply by the denominator, 2. To isolate $x$, you must multiply\
+        \ by -2, which requires a sign flip.)"
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: x < -8
+      stepByStepGuideline:
+      - 'Start with the inequality: $-\frac{x}{2} > 4$.'
+      - To isolate $x$, multiply both sides by -2.
+      - 'CRITICAL STEP: Since you are multiplying by a negative number (-2), FLIP the inequality sign from $>$ to $<$.'
+      - The solution is $x < -8$.
+      id: q5-4
+      questionGroup: q5
+    - problemText: "A construction crew has 10 days scheduled to complete a task. Due to delays, they must subtract $2x$ days\
+        \ from the schedule, where $x$ is a variable representing efficiency. The remaining time, $10 - 2x$, must be less\
+        \ than or equal to 4 days to meet the deadline. \n\nSolve the inequality $10 - 2x \\le 4$. Show the step where the\
+        \ sign reversal occurs."
+      mathTool:
+        toolName: none
+        parameters: {}
+      finalAnswer: x ≥ 3
+      stepByStepGuideline:
+      - 'Start with the inequality: $10 - 2x \le 4$.'
+      - 'Subtract 10 from both sides: $-2x \le 4 - 10$.'
+      - 'Simplify: $-2x \le -6$.'
+      - To isolate $x$, divide both sides by -2.
+      - 'CRITICAL STEP: Divide by -2 and FLIP the inequality sign from $\le$ to $\ge$.'
+      - The solution is $x \ge 3$.
+      id: q5-5
+      questionGroup: q5
+- id: linear-inequalities-node-6
+  nodeNumber: 6
+  title: Special Cases and Word Problems
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A family sets aside a maximum budget of \$50 for a movie outing. If they purchase 3 movie tickets at \$12
+        each, and the remaining money is spent only on popcorn combos costing \$8 each, find the maximum number of popcorn
+        combos ($P$) they can buy.
+      avatarIntro: Word problems often require you to translate real-world constraints into mathematical inequalities. Remember
+        to identify what 'maximum' means for the inequality sign!
+      mathTool: null
+      finalAnswer: The maximum number of popcorn combos is 1.
+      stepByStepGuideline:
+      - 'Step 1: Define the inequality based on the budget constraint. The total cost must be less than or equal to \$50.
+        Cost = (3 tickets * \$12) + (P combos * \$8). Thus, $3(12) + 8P \le 50$.'
+      - 'Step 2: Simplify the equation: $36 + 8P \le 50$.'
+      - 'Step 3: Subtract 36 from both sides: $8P \le 14$.'
+      - 'Step 4: Divide by 8: $P \le 14/8$ or $P \le 1.75$.'
+      - 'Step 5: Since the number of combos must be a whole number, the maximum integer value for $P$ is 1.'
+      id: q6-1
+      questionGroup: q6
+    - problemText: A school is organizing a field trip for 180 students. If each bus has a maximum capacity of 40 students,
+        determine the minimum number of buses ($B$) that must be chartered to transport all students.
+      mathTool: null
+      finalAnswer: The minimum number of buses required is 5.
+      stepByStepGuideline:
+      - 'Step 1: Formulate the inequality. The total capacity (40 students per bus * B buses) must be greater than or equal
+        to the total number of students (180). $40B \ge 180$.'
+      - 'Step 2: Divide both sides by 40: $B \ge 180/40$.'
+      - 'Step 3: Simplify the fraction: $B \ge 4.5$.'
+      - 'Step 4: Since the number of buses must be a whole number, and we need enough capacity for all students, we must round
+        up to the next integer. The minimum number of buses required is 5.'
+      id: q6-2
+      questionGroup: q6
+    - problemText: Solve the inequality $2x + 5 < 2x + 1$. Clearly state the resulting statement when the variable $x$ cancels
+        out, and determine if the solution is 'No solution' or 'All real numbers'.
+      mathTool: null
+      finalAnswer: 'Resulting statement: $5 < 1$. This statement is false. The solution is No solution.'
+      stepByStepGuideline:
+      - 'Step 1: Simplify the inequality by attempting to isolate $x$. Subtract $2x$ from both sides: $2x + 5 - 2x < 2x +
+        1 - 2x$.'
+      - 'Step 2: The $x$ terms cancel out, leaving a numerical comparison: $5 < 1$.'
+      - 'Step 3: Evaluate the resulting statement. Since 5 is not less than 1, the statement is false.'
+      - 'Step 4: Conclude the solution set. Because the inequality simplifies to a false statement, there is no value of $x$
+        that can satisfy the original inequality. The solution is ''No solution''.'
+      id: q6-3
+      questionGroup: q6
+    - problemText: Solve the inequality $2x - 3 \ge 2x - 7$. Explain what the final resulting true statement indicates about
+        the possible values of $x$.
+      mathTool: null
+      finalAnswer: 'Resulting statement: $-3 \ge -7$. This statement is true. The solution is All real numbers.'
+      stepByStepGuideline:
+      - 'Step 1: Simplify the inequality by attempting to isolate $x$. Subtract $2x$ from both sides: $2x - 3 - 2x \ge 2x
+        - 7 - 2x$.'
+      - 'Step 2: The $x$ terms cancel out, leaving a numerical comparison: $-3 \ge -7$.'
+      - 'Step 3: Evaluate the resulting statement. Since -3 is indeed greater than or equal to -7, the statement is true.'
+      - 'Step 4: Conclude the solution set. Because the inequality simplifies to a true statement, the original inequality
+        is true for all possible values of $x$. The solution is ''All real numbers''.'
+      id: q6-4
+      questionGroup: q6
+    - problemText: To achieve an overall passing average of **at least** 75 marks, a student must perform well across 4 tests.
+        If their scores on the first three tests were 68, 82, and 70, write and solve an inequality to find the minimum score
+        ($S$) needed on the fourth test.
+      mathTool: null
+      finalAnswer: Minimum score needed is $S \ge 80$.
+      stepByStepGuideline:
+      - 'Step 1: Define the required average. The sum of the four scores divided by 4 must be greater than or equal to 75.
+        $\frac{68 + 82 + 70 + S}{4} \ge 75$.'
+      - 'Step 2: Simplify the sum of the known scores: $68 + 82 + 70 = 220$. The inequality becomes $\frac{220 + S}{4} \ge
+        75$.'
+      - 'Step 3: Multiply both sides by 4 to clear the denominator: $220 + S \ge 75 \times 4$.'
+      - 'Step 4: Calculate the required total points: $220 + S \ge 300$.'
+      - 'Step 5: Subtract 220 from both sides to solve for $S$: $S \ge 300 - 220$.'
+      - 'Step 6: $S \ge 80$. The minimum score needed is 80.'
+      id: q6-5
+      questionGroup: q6
+- id: linear-inequalities-node-7
+  nodeNumber: 7
+  title: Number Line Representation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A highway lane requires vehicles to maintain a speed, $s$ (in km/h), that is strictly greater than 40 km/h.
+        This condition is represented by the inequality $s > 40$. Describe how you would represent this solution on a standard
+        number line, focusing on the type of circle and the direction of shading.
+      avatarIntro: 'Hello! We are working on visualizing inequalities. Remember: open circle means not included, closed circle
+        means included.'
+      mathTool: null
+      finalAnswer: Open circle (○) at 40, shading to the right (representing all numbers greater than 40).
+      stepByStepGuideline:
+      - 'Identify the inequality symbol: $s > 40$. Since this is a strict ''greater than'' symbol (>), the boundary value
+        (40) is not included.'
+      - 'Determine the circle type: Use an open circle (○) at 40.'
+      - 'Determine the shading direction: Since the solution includes values greater than 40, shade the number line to the
+        right of 40.'
+      id: q7-1
+      questionGroup: q7
+    - problemText: The diagram below shows the required temperature range, $T$ (in °C), for storing a specific vaccine batch.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -6
+          max: 6
+          intervals:
+          - start: null
+            end: -3
+            startInclusive: false
+            endInclusive: true
+            color: '#fbbf24'
+            label: T ≤ -3
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: Closed circle at -3, shading left
+      finalAnswer: $T \leq -3$
+      stepByStepGuideline:
+      - Observe the number line representation provided by the tool.
+      - 'Identify the boundary value: The graph changes at -3.'
+      - 'Identify the circle type: There is a closed circle (●) at -3, meaning the value -3 is included in the solution.'
+      - 'Identify the shading direction: The shading is to the left, indicating values less than the boundary.'
+      - 'Combine these observations to write the inclusive inequality: $T \leq -3$.'
+      id: q7-2
+      questionGroup: q7
+    - problemText: A bank requires a customer's minimum daily account balance, $B$ (in dollars), to be at least -1 dollar
+        to avoid penalty fees. Write the inequality for this condition and describe the necessary number line representation.
+      mathTool: null
+      finalAnswer: 'Inequality: $B \geq -1$. Representation: Closed circle (●) at -1, shading to the right.'
+      stepByStepGuideline:
+      - 'Translate the phrase ''at least -1 dollar'' into an inequality. ''At least'' means greater than or equal to (\geq).
+        Inequality: $B \geq -1$.'
+      - 'Determine the circle type: Since the inequality is inclusive (\geq), the boundary value -1 is included. Use a closed
+        circle (●).'
+      - 'Determine the shading direction: Since the solution includes values greater than or equal to -1, shade the number
+        line to the right of -1.'
+      id: q7-3
+      questionGroup: q7
+    - problemText: A geological survey measures the elevation, $E$ (in meters), relative to sea level. The diagram below represents
+        a region where the elevation is strictly below sea level.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -6
+          max: 6
+          intervals:
+          - start: null
+            end: 0
+            startInclusive: false
+            endInclusive: false
+            color: '#fbbf24'
+            label: E < 0
+          showTickMarks: true
+          showTickLabels: true
+          showArrows: true
+          caption: Open circle at 0, shading left
+      finalAnswer: $E < 0$
+      stepByStepGuideline:
+      - Observe the number line provided.
+      - 'Identify the boundary value: The critical point is 0.'
+      - 'Identify the circle type: There is an open circle (○) at 0, meaning 0 is not included (strict inequality).'
+      - 'Identify the shading direction: The shading goes to the left, indicating values less than the boundary.'
+      - 'Combine these observations to write the strict inequality: $E < 0$.'
+      id: q7-4
+      questionGroup: q7
+    - problemText: During prototype testing, a lithium battery's charge level, $C$ (as a percentage), must not exceed 5% to
+        prevent overheating during initial calibration. This condition is described by the inequality $C \leq 5$. Sketch the
+        representation of this inequality on a number line.
+      mathTool: null
+      finalAnswer: Closed circle (●) at 5, shading to the left.
+      stepByStepGuideline:
+      - 'Identify the inequality: $C \leq 5$. This means the charge level is less than or equal to 5.'
+      - 'Determine the circle type: Since the inequality is inclusive (\leq), the boundary value 5 must be included. Use a
+        closed circle (●) at 5.'
+      - 'Determine the shading direction: Since the solution includes values less than 5, shade the number line to the left
+        of 5.'
+      id: q7-5
+      questionGroup: q7
+- id: linear-inequalities-node-8
+  nodeNumber: 8
+  title: Interval Notation
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: A chemical reaction requires the temperature, $T$ (in degrees Celsius), to be strictly less than 5°C to
+        prevent degradation. Write the inequality $T < 5$ in interval notation.
+      avatarIntro: Mastering interval notation is crucial for describing ranges of solutions. Remember, brackets mean inclusion,
+        and parentheses mean exclusion!
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -5
+          max: 7
+          intervals:
+          - start: -4
+            end: 5
+            startInclusive: false
+            endInclusive: false
+            color: '#fbbf24'
+            label: $T < 5$
+          showTickMarks: true
+          showTickLabels: true
+          caption: Interval notation $(-\infty, 5)$ means $T < 5$. The parenthesis indicates that the boundary value 5 is
+            excluded. Negative infinity $(-\infty)$ always uses a parenthesis.
+      finalAnswer: $$(-\infty, 5)$$
+      stepByStepGuideline:
+      - 'Identify the inequality: $T < 5$. This means all numbers less than 5, extending infinitely negatively.'
+      - Since the value 5 is *strictly less than* (exclusive), we use a parenthesis ( ).
+      - Since the range extends to negative infinity, we write $-\infty$ first.
+      - Negative infinity always uses a parenthesis.
+      - 'Combine the parts: $(-\infty, 5)$. The interval notation is $(-\infty, 5)$.'
+      id: q8-1
+      questionGroup: q8
+    - problemText: A surveyor notes that the required elevation $E$ (in meters) for a building foundation must be represented
+        by the interval $[0, \infty)$. Write the corresponding inequality for $E$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -2
+          max: 8
+          intervals:
+          - start: 0
+            end: 7
+            startInclusive: true
+            endInclusive: false
+            color: '#fbbf24'
+            label: $[0, \infty)$
+          showTickMarks: true
+          showTickLabels: true
+          caption: The interval $[0, \infty)$ represents all numbers greater than or equal to 0. The bracket [ indicates 0
+            is included. $\infty$ always uses a parenthesis.
+      finalAnswer: $$E \ge 0$$
+      stepByStepGuideline:
+      - Analyze the interval notation $[0, \infty)$.
+      - The bracket [ on the left side of 0 means 0 is included in the solution set, corresponding to the 'greater than or
+        equal to' symbol ($\ge$).
+      - The $\infty$ indicates the values extend indefinitely upwards.
+      - The inequality is $E \ge 0$.
+      id: q8-2
+      questionGroup: q8
+    - problemText: A packaging machine is calibrated to handle item weights, $W$ (in kilograms), that fall within the range
+        $0 \le W < 5$. Convert this bounded inequality into interval notation.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -2
+          max: 7
+          intervals:
+          - start: 0
+            end: 5
+            startInclusive: true
+            endInclusive: false
+            color: '#fbbf24'
+            label: $0 \le W < 5$
+          showTickMarks: true
+          showTickLabels: true
+          caption: Interval notation $[0, 5)$ means $0 \le W < 5$. The bracket [ means 0 is included (solid circle), and the
+            parenthesis ) means 5 is excluded (open circle).
+      finalAnswer: $$[0, 5)$$
+      stepByStepGuideline:
+      - 'Identify the lower and upper bounds of the inequality: 0 and 5.'
+      - At the lower bound, $W \ge 0$ (inclusive), so use a bracket [0.
+      - At the upper bound, $W < 5$ (exclusive), so use a parenthesis 5).
+      - 'Combine the notation: $[0, 5)$.'
+      id: q8-3
+      questionGroup: q8
+    - problemText: The permitted time window, $t$ (in hours), for an experiment is defined by the interval $[-1, 4]$. Write
+        the corresponding compound inequality for $t$.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -3
+          max: 6
+          intervals:
+          - start: -1
+            end: 4
+            startInclusive: true
+            endInclusive: true
+            color: '#fbbf24'
+            label: $[-1, 4]$
+          showTickMarks: true
+          showTickLabels: true
+          caption: The interval $[-1, 4]$ represents all numbers $t$ such that $-1 \le t \le 4$. Both brackets [ ] indicate
+            that both boundary values are included.
+      finalAnswer: $$-1 \le t \le 4$$
+      stepByStepGuideline:
+      - Analyze the interval notation $[-1, 4]$.
+      - The bracket on the left side of -1 means -1 is included, corresponding to the $\le$ symbol.
+      - The bracket on the right side of 4 means 4 is included, corresponding to the $\le$ symbol.
+      - 'Combine these conditions into a compound inequality: $-1 \le t \le 4$.'
+      id: q8-4
+      questionGroup: q8
+    - problemText: In a competitive game, a player must achieve a score, $S$, strictly greater than -2 points to qualify for
+        the next round. Write the inequality $S > -2$ in interval notation.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -5
+          max: 5
+          intervals:
+          - start: -2
+            end: 4
+            startInclusive: false
+            endInclusive: false
+            color: '#fbbf24'
+            label: $S > -2$
+          showTickMarks: true
+          showTickLabels: true
+          caption: Interval notation $(-2, \infty)$ means $S > -2$. The parenthesis indicates that the boundary value -2 is
+            excluded. Positive infinity $(\infty)$ always uses a parenthesis.
+      finalAnswer: $$(-2, \infty)$$
+      stepByStepGuideline:
+      - 'Identify the inequality: $S > -2$. This means all numbers greater than -2, extending infinitely positively.'
+      - Since the value -2 is *strictly greater than* (exclusive), we use a parenthesis ( on the left side.
+      - Since the range extends to positive infinity, we write $\infty$ on the right side.
+      - Positive infinity always uses a parenthesis ).
+      - 'Combine the parts: $(-2, \infty)$. The interval notation is $(-2, \infty)$.'
+      id: q8-5
+      questionGroup: q8
+- id: linear-inequalities-node-9
+  nodeNumber: 9
+  title: Compound Inequalities (AND)
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: numberLine
+    preWrittenQuestions:
+    - problemText: A factory mandates that the acceptable thickness $T$ (in millimeters) of a manufactured part must satisfy
+        the compound inequality $-3 \le 2T + 1 < 9$. Solve this compound inequality for $T$. Provide the solution in both
+        inequality form and interval notation.
+      avatarIntro: Compound inequalities using 'AND' represent the intersection, or overlap, of two conditions. Remember to
+        apply operations to all three parts simultaneously or split the inequality into two parts.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -4
+          max: 6
+          intervals:
+          - start: -2
+            end: 4
+            startInclusive: true
+            endInclusive: false
+            color: '#fbbf24'
+            label: -2 \le T < 4
+          showTickMarks: true
+          showTickLabels: true
+          caption: 'AND inequality: shaded region is the OVERLAP where both conditions are satisfied'
+      finalAnswer: 'Inequality form: $-2 \le T < 4$. Interval notation: [-2, 4)'
+      stepByStepGuideline:
+      - The compound inequality is $-3 \le 2T + 1 < 9$.
+      - 'Step 1: Isolate the term with the variable by subtracting 1 from all three parts: $-3 - 1 \le 2T + 1 - 1 < 9 - 1$.'
+      - This simplifies to $-4 \le 2T < 8$.
+      - 'Step 2: Isolate the variable $T$ by dividing all three parts by 2: $\frac{-4}{2} \le \frac{2T}{2} < \frac{8}{2}$.'
+      - The solution in inequality form is $-2 \le T < 4$.
+      - The solution in interval notation is [-2, 4).
+      id: q9-1
+      questionGroup: q9
+    - problemText: An investment portfolio requires the return rate, $R$, to be strictly greater than -1% AND strictly less
+        than 4% to maintain balanced risk. Write the inequality $R > -1 \text{ AND } R < 4$ in compact form and interval notation.
+        Graph the solution set.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -3
+          max: 6
+          intervals:
+          - start: -1
+            end: 4
+            startInclusive: false
+            endInclusive: false
+            color: '#fbbf24'
+            label: -1 < R < 4
+          showTickMarks: true
+          showTickLabels: true
+          caption: 'AND inequality: shaded region is the OVERLAP where both conditions are satisfied'
+      finalAnswer: 'Compact form: $-1 < R < 4$. Interval notation: (-1, 4)'
+      stepByStepGuideline:
+      - The conditions are $R > -1$ and $R < 4$. Since both conditions must be true (AND), we look for the overlap.
+      - 'Step 1: When combining two separate inequalities into compact form $a < x < b$, the smaller bound ($a$) is placed
+        on the left, and the larger bound ($b$) is placed on the right.'
+      - 'Compact form: $-1 < R < 4$.'
+      - 'Step 2: Convert to interval notation. Since both inequalities use strict inequality signs (>, <), the interval uses
+        parentheses for both bounds.'
+      - 'Interval notation: (-1, 4).'
+      id: q9-2
+      questionGroup: q9
+    - problemText: A scientist measures the horizontal distance, $D$ (in meters), traveled by a projectile. The acceptable
+        range for $D$ is represented by the interval $[0, 8]$. Write this range using both the compact compound inequality
+        form and as two separate inequalities connected by AND. Graph the solution set.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -2
+          max: 10
+          intervals:
+          - start: 0
+            end: 8
+            startInclusive: true
+            endInclusive: true
+            color: '#fbbf24'
+            label: 0 \le D \le 8
+          showTickMarks: true
+          showTickLabels: true
+          caption: 'AND inequality: shaded region is the OVERLAP where both conditions are satisfied'
+      finalAnswer: 'Compact form: $0 \le D \le 8$. Separate inequalities: $D \ge 0 \text{ AND } D \le 8$.'
+      stepByStepGuideline:
+      - The interval notation $[0, 8]$ means that 0 is included (closed bracket) and 8 is included (closed bracket).
+      - 'Step 1: Write the compact form. Since the bounds are inclusive, we use $\le$ signs.'
+      - 'Compact form: $0 \le D \le 8$.'
+      - 'Step 2: Write the separate inequalities. This compact form represents all numbers $D$ that are greater than or equal
+        to 0 AND less than or equal to 8.'
+      - 'Separate inequalities: $D \ge 0 \text{ AND } D \le 8$.'
+      id: q9-3
+      questionGroup: q9
+    - problemText: A special collection of books in a library is only accessible to patrons whose age, $A$, satisfies the
+        condition $1 < 3A - 2 \le 10$. Determine the range of acceptable ages, $A$. Write your solution in inequality form
+        and graph the result.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: 0
+          max: 6
+          intervals:
+          - start: 1
+            end: 4
+            startInclusive: false
+            endInclusive: true
+            color: '#fbbf24'
+            label: 1 < A \le 4
+          showTickMarks: true
+          showTickLabels: true
+          caption: 'AND inequality: shaded region is the OVERLAP where both conditions are satisfied'
+      finalAnswer: 'Inequality form: $1 < A \le 4$'
+      stepByStepGuideline:
+      - The compound inequality is $1 < 3A - 2 \le 10$.
+      - 'Step 1: Add 2 to all three parts to isolate the term with the variable: $1 + 2 < 3A - 2 + 2 \le 10 + 2$.'
+      - This simplifies to $3 < 3A \le 12$.
+      - 'Step 2: Divide all three parts by 3 to isolate $A$: $\frac{3}{3} < \frac{3A}{3} \le \frac{12}{3}$.'
+      - The solution in inequality form is $1 < A \le 4$.
+      - This means patrons must be older than 1 year old and 4 years old or younger to access the collection.
+      id: q9-4
+      questionGroup: q9
+    - problemText: A recipe requires the oven temperature setting, $S$ (in degrees Celsius), to be adjusted such that the
+        actual temperature, $S+2$, remains strictly between -6°C and 3°C. Solve the inequality $-6 < S + 2 < 3$ for $S$. Express
+        the final solution in inequality form, interval notation, and graph the result.
+      mathTool:
+        toolName: numberLine
+        parameters:
+          min: -10
+          max: 3
+          intervals:
+          - start: -8
+            end: 1
+            startInclusive: false
+            endInclusive: false
+            color: '#fbbf24'
+            label: -8 < S < 1
+          showTickMarks: true
+          showTickLabels: true
+          caption: 'AND inequality: shaded region is the OVERLAP where both conditions are satisfied'
+      finalAnswer: 'Inequality form: $-8 < S < 1$. Interval notation: (-8, 1)'
+      stepByStepGuideline:
+      - The compound inequality is $-6 < S + 2 < 3$.
+      - 'Step 1: To isolate the variable $S$, subtract 2 from all three parts of the inequality: $-6 - 2 < S + 2 - 2 < 3 -
+        2$.'
+      - 'Step 2: Simplify the expression.'
+      - The solution in inequality form is $-8 < S < 1$.
+      - 'Step 3: Convert the strict inequality to interval notation, using parentheses for both bounds.'
+      - 'Interval notation: (-8, 1).'
+      id: q9-5
+      questionGroup: q9
+- id: linear-inequalities-node-11
+  nodeNumber: 11
+  title: Graphing Boundary Lines
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: linearInequalityGrapher
+    preWrittenQuestions:
+    - problemText: A delivery service is tracking the relationship between distance traveled ($x$, in miles) and fuel consumed
+        ($y$, in gallons). The inequality modeling their maximum efficiency is $y < 2x + 3$. Identify the boundary line equation
+        and determine whether the line used to graph this boundary should be solid or dashed.
+      avatarIntro: Understanding how to translate an inequality into a boundary line is the first critical step in graphing.
+        Pay close attention to the inequality symbol!
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: -2
+          coefficientY: 1
+          constant: 3
+          inequalityType: <
+          xMin: -2
+          xMax: 4
+          yMin: -1
+          yMax: 10
+          showGrid: true
+          shadeOpacity: 0
+          label: y < 2x + 3
+          caption: 'Boundary: y = 2x + 3'
+      finalAnswer: 'Boundary: y = 2x + 3. Line Type: Dashed.'
+      stepByStepGuideline:
+      - To find the boundary line equation, replace the inequality symbol ($<$) with an equality sign (=).
+      - The boundary equation is $y = 2x + 3$.
+      - Determine the line type based on the inequality symbol. Since the symbol is $<$, which means the boundary points are
+        strictly excluded, the line must be dashed.
+      id: q11-1
+      questionGroup: q11
+    - problemText: A company requires that the total production output, $y$, must meet or exceed a target defined by the relationship
+        $y \geq -2x + 5$, where $x$ represents the input cost. State the equation for the boundary line and specify if the
+        line should be solid or dashed when graphed.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: 2
+          coefficientY: 1
+          constant: 5
+          inequalityType: '>='
+          xMin: -3
+          xMax: 5
+          yMin: -3
+          yMax: 10
+          showGrid: true
+          shadeOpacity: 0
+          label: y \geq -2x + 5
+          caption: 'Boundary: y = -2x + 5'
+      finalAnswer: 'Boundary: y = -2x + 5. Line Type: Solid.'
+      stepByStepGuideline:
+      - The boundary line equation is found by changing $\geq$ to $=$, resulting in $y = -2x + 5$.
+      - The inequality symbol $\geq$ (greater than or equal to) indicates that the boundary points are included in the solution
+        set.
+      - Therefore, the line used to graph the boundary must be solid.
+      id: q11-2
+      questionGroup: q11
+    - problemText: A chef is mixing two ingredients, A ($x$ grams) and B ($y$ grams). Due to container size limits, the total
+        weight must be strictly less than 6 grams, represented by the inequality $2x + y < 6$. What is the boundary line equation
+        for this constraint, and should the line be solid or dashed?
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: 2
+          coefficientY: 1
+          constant: 6
+          inequalityType: <
+          xMin: -1
+          xMax: 7
+          yMin: -2
+          yMax: 8
+          showGrid: true
+          shadeOpacity: 0
+          label: 2x + y < 6
+          caption: 'Boundary: 2x + y = 6'
+      finalAnswer: 'Boundary: 2x + y = 6. Line Type: Dashed.'
+      stepByStepGuideline:
+      - Convert the inequality $2x + y < 6$ into a boundary equation by replacing $<$ with $=$. The boundary equation is $2x
+        + y = 6$.
+      - The symbol $<$ (less than) is a strict inequality, meaning points lying exactly on the boundary are not included in
+        the solution.
+      - This exclusion requires the boundary line to be dashed.
+      id: q11-3
+      questionGroup: q11
+    - problemText: A drone's altitude ($y$, in feet) over time ($x$, in minutes) must not exceed a maximum flight path defined
+        by the inequality $y \leq 3x - 2$. Determine the equation of the boundary line and its corresponding line type.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: -3
+          coefficientY: 1
+          constant: -2
+          inequalityType: <=
+          xMin: -1
+          xMax: 5
+          yMin: -5
+          yMax: 10
+          showGrid: true
+          shadeOpacity: 0
+          label: y \leq 3x - 2
+          caption: 'Boundary: y = 3x - 2'
+      finalAnswer: 'Boundary: y = 3x - 2. Line Type: Solid.'
+      stepByStepGuideline:
+      - To find the boundary line, substitute the inequality symbol $\leq$ with an equals sign (=). The boundary equation
+        is $y = 3x - 2$.
+      - The symbol $\leq$ (less than or equal to) signifies that points on the boundary are part of the acceptable region.
+      - Any inequality that includes equality ($\leq$ or $\geq$) is graphed using a solid line.
+      id: q11-4
+      questionGroup: q11
+    - problemText: In managing stock levels, a store must ensure that the current quantity $y$ of Item A is always strictly
+        greater than the quantity defined by the formula $y = -x + 1$, where $x$ is the quantity of Item B. The requirement
+        is $y > -x + 1$. State the boundary line equation and indicate whether the line should be solid or dashed.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: 1
+          coefficientY: 1
+          constant: 1
+          inequalityType: '>'
+          xMin: -3
+          xMax: 5
+          yMin: -3
+          yMax: 6
+          showGrid: true
+          shadeOpacity: 0
+          label: y > -x + 1
+          caption: 'Boundary: y = -x + 1'
+      finalAnswer: 'Boundary: y = -x + 1. Line Type: Dashed.'
+      stepByStepGuideline:
+      - 'The boundary line is found by converting $y > -x + 1$ to an equation: $y = -x + 1$.'
+      - The inequality symbol is $>$ (greater than). This is a strict inequality, meaning the boundary itself is not included.
+      - Therefore, the boundary line must be dashed.
+      id: q11-5
+      questionGroup: q11
+- id: linear-inequalities-node-13
+  nodeNumber: 13
+  title: Complete Inequality Graphing
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: linearInequalityGrapher
+    preWrittenQuestions:
+    - problemText: A manufacturer calculates that the profit margin ($y$) depends on the unit cost ($x$). The minimum acceptable
+        profit path is modeled by the inequality $y \le 3x - 2$. Graph this inequality completely, ensuring you show the correct
+        boundary line type and the shaded region representing all possible solutions.
+      avatarIntro: You're doing great! Let's practice graphing linear inequalities. Remember to check if the boundary line
+        is solid or dashed, and use a test point to determine the correct shading.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: -3
+          coefficientY: 1
+          constant: -2
+          inequalityType: <=
+          xMin: -2
+          xMax: 4
+          yMin: -8
+          yMax: 6
+          showGrid: true
+          shadeOpacity: 0.4
+          label: y ≤ 3x - 2
+          caption: 'Complete graph: solid boundary y = 3x - 2, shaded region below shows all solutions'
+      finalAnswer: 'Boundary: y = 3x - 2 (solid line). Test (0,0): 0 ≤ -2 FALSE. Shade opposite side (below line).'
+      stepByStepGuideline:
+      - 'Identify the boundary equation: y = 3x - 2.'
+      - 'Determine the boundary line type: Since the inequality is $\le$ (less than or equal to), the line must be solid.'
+      - Graph the boundary line using the y-intercept (0, -2) and the slope (3).
+      - 'Choose a test point not on the line, such as (0, 0). Substitute into the inequality: $0 \le 3(0) - 2$, which simplifies
+        to $0 \le -2$.'
+      - Since the test point (0, 0) yields a false statement, shade the region that does not contain (0, 0). This is the region
+        below the line.
+      id: q13-1
+      questionGroup: q13
+    - problemText: A quality control engineer sets a standard where the output quantity ($y$) must strictly exceed a threshold
+        based on the input material ($x$), described by the inequality $y > -x + 5$. Graph this inequality completely.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: 1
+          coefficientY: 1
+          constant: 5
+          inequalityType: '>'
+          xMin: -2
+          xMax: 4
+          yMin: -8
+          yMax: 6
+          showGrid: true
+          shadeOpacity: 0.4
+          label: y > -x + 5
+          caption: 'Complete graph: dashed boundary y = -x + 5, shaded region above shows all solutions'
+      finalAnswer: 'Boundary: y = -x + 5 (dashed line). Test (0,0): 0 > 5 FALSE. Shade opposite side (above line).'
+      stepByStepGuideline:
+      - 'Identify the boundary equation: y = -x + 5.'
+      - 'Determine the boundary line type: Since the inequality is $>$ (strictly greater than), the line must be dashed.'
+      - Graph the boundary line using the y-intercept (0, 5) and the slope (-1).
+      - 'Choose a test point not on the line, such as (0, 0). Substitute into the inequality: $0 > -(0) + 5$, which simplifies
+        to $0 > 5$.'
+      - Since the test point (0, 0) yields a false statement, shade the region that does not contain (0, 0). This is the region
+        above the line.
+      id: q13-2
+      questionGroup: q13
+    - problemText: A project manager allocates time for two tasks, A ($x$ hours) and B ($y$ hours). The total weighted time
+        must strictly exceed 4 units, modeled by the inequality $2x + y > 4$. Graph this inequality completely.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: 2
+          coefficientY: 1
+          constant: 4
+          inequalityType: '>'
+          xMin: -2
+          xMax: 4
+          yMin: -8
+          yMax: 6
+          showGrid: true
+          shadeOpacity: 0.4
+          label: 2x + y > 4
+          caption: 'Complete graph: dashed boundary y = -2x + 4, shaded region above shows all solutions'
+      finalAnswer: 'Rearrange: y > -2x + 4. Boundary: y = -2x + 4 (dashed). Test (0,0): 0 > 4 FALSE. Shade opposite side (above
+        line).'
+      stepByStepGuideline:
+      - 'Rearrange the inequality into slope-intercept form: $y > -2x + 4$.'
+      - 'Identify the boundary equation: y = -2x + 4.'
+      - 'Determine the boundary line type: Since the inequality is $>$ (strictly greater than), the line must be dashed.'
+      - Graph the boundary line.
+      - 'Choose a test point, such as (0, 0). Substitute into the original inequality: $2(0) + 0 > 4$, which simplifies to
+        $0 > 4$.'
+      - Since the test point (0, 0) yields a false statement, shade the region that does not contain (0, 0). This is the region
+        above the line.
+      id: q13-3
+      questionGroup: q13
+    - problemText: A farmer is calculating the required fertilizer mixture. The relationship between chemical X ($x$) and
+        chemical Y ($y$) must satisfy the condition $3x - y \le 6$. Graph this inequality completely.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: 3
+          coefficientY: -1
+          constant: 6
+          inequalityType: <=
+          xMin: -2
+          xMax: 4
+          yMin: -8
+          yMax: 6
+          showGrid: true
+          shadeOpacity: 0.4
+          label: 3x - y ≤ 6
+          caption: 'Complete graph: solid boundary y = 3x - 6, shaded region above shows all solutions'
+      finalAnswer: 'Rearrange: $y \ge 3x - 6$. Boundary: y = 3x - 6 (solid). Test (0,0): 0 \le 6 TRUE. Shade the side containing
+        (0,0) (above line).'
+      stepByStepGuideline:
+      - 'Rearrange the inequality into slope-intercept form. Subtract $3x$ from both sides: $-y \le -3x + 6$. Divide by -1
+        and reverse the inequality sign: $y \ge 3x - 6$.'
+      - 'Identify the boundary equation: y = 3x - 6.'
+      - 'Determine the boundary line type: Since the inequality is $\ge$ (greater than or equal to), the line must be solid.'
+      - Graph the boundary line using the y-intercept (0, -6) and the slope (3).
+      - 'Choose a test point, such as (0, 0). Substitute into the original inequality: $3(0) - 0 \le 6$, which simplifies
+        to $0 \le 6$.'
+      - Since the test point (0, 0) yields a true statement, shade the region that contains (0, 0). This is the region above
+        the line.
+      id: q13-4
+      questionGroup: q13
+    - problemText: A shipping company limits the dimensions of packages based on the combined length ($x$ inches) and twice
+        the width ($y$ inches). This combined measure must be strictly less than 8 inches, modeled by the inequality $x +
+        2y < 8$. Graph this inequality completely.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: 1
+          coefficientY: 2
+          constant: 8
+          inequalityType: <
+          xMin: -2
+          xMax: 4
+          yMin: -8
+          yMax: 6
+          showGrid: true
+          shadeOpacity: 0.4
+          label: x + 2y < 8
+          caption: 'Complete graph: dashed boundary y = -0.5x + 4, shaded region below shows all solutions'
+      finalAnswer: 'Rearrange: y < -0.5x + 4. Boundary: y = -0.5x + 4 (dashed). Test (0,0): 0 < 8 TRUE. Shade the side containing
+        (0,0) (below line).'
+      stepByStepGuideline:
+      - 'Rearrange the inequality into slope-intercept form: $2y < -x + 8$. Divide by 2: $y < -0.5x + 4$.'
+      - 'Identify the boundary equation: y = -0.5x + 4.'
+      - 'Determine the boundary line type: Since the inequality is $<$ (strictly less than), the line must be dashed.'
+      - Graph the boundary line using the y-intercept (0, 4) and the slope (-1/2).
+      - 'Choose a test point, such as (0, 0). Substitute into the original inequality: $0 + 2(0) < 8$, which simplifies to
+        $0 < 8$.'
+      - Since the test point (0, 0) yields a true statement, shade the region that contains (0, 0). This is the region below
+        the line.
+      id: q13-5
+      questionGroup: q13
+- id: linear-inequalities-node-14
+  nodeNumber: 14
+  title: Systems of Inequalities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: linearInequalityGrapher
+    preWrittenQuestions:
+    - problemText: 'A parking garage sets its fees based on two conditions: the total fee, $y$ (in dollars), must be less
+        than or equal to the base rate plus $1 per hour, represented by $y \le x + 2$; and the fee must be greater than or
+        equal to the minimum operating cost, represented by $y \ge -x$. Graph the system of inequalities below and clearly
+        identify the feasible region where both conditions are satisfied.'
+      avatarIntro: Systems of inequalities are used to model real-world constraints where multiple conditions must be met
+        simultaneously. Let's find the overlapping region for these parking requirements!
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          inequalities:
+          - coefficientX: -1
+            coefficientY: 1
+            constant: 2
+            inequalityType: <=
+            color: '#3b82f6'
+            label: $y \le x + 2$
+          - coefficientX: 1
+            coefficientY: 1
+            constant: 0
+            inequalityType: '>='
+            color: '#10b981'
+            label: $y \ge -x$
+          xMin: -3
+          xMax: 5
+          yMin: -3
+          yMax: 6
+          showGrid: true
+          shadeOpacity: 0.3
+          caption: Graph the system to find the feasible region where both inequalities overlap.
+      finalAnswer: The feasible region is the area where the blue and green shaded regions overlap (the intersection of the
+        half-planes defined by $y \le x + 2$ and $y \ge -x$). Both boundary lines are solid.
+      stepByStepGuideline:
+      - 'Graph the boundary line $y = x + 2$. Since the inequality is $y \le x + 2$, draw a solid line and shade below the
+        line (or test a point like (0,0): $0 \le 0 + 2$, True).'
+      - 'Graph the boundary line $y = -x$. Since the inequality is $y \ge -x$, draw a solid line and shade above the line
+        (or test a point like (1,1): $1 \ge -1$, True).'
+      - The feasible region is the area that is shaded by both inequalities (the intersection or overlap).
+      id: q14-1
+      questionGroup: q14
+    - problemText: A small manufacturing company uses wood ($x$ units) and steel ($y$ units). Due to supply limits, the quantity
+        of wood and steel must be non-negative ($x \ge 0$ and $y \ge 0$), and the total weight constraint is modeled by $2x
+        + y \le 6$. Graph this system of three inequalities and identify the triangular feasible region.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          inequalities:
+          - coefficientX: 1
+            coefficientY: 0
+            constant: 0
+            inequalityType: '>='
+            color: '#ef4444'
+            label: $x \ge 0$
+          - coefficientX: 0
+            coefficientY: 1
+            constant: 0
+            inequalityType: '>='
+            color: '#f97316'
+            label: $y \ge 0$
+          - coefficientX: 2
+            coefficientY: 1
+            constant: 6
+            inequalityType: <=
+            color: '#3b82f6'
+            label: $2x + y \le 6$
+          xMin: -1
+          xMax: 7
+          yMin: -1
+          yMax: 7
+          showGrid: true
+          shadeOpacity: 0.3
+          caption: Graph the three inequalities to find the bounded triangular region.
+      finalAnswer: The feasible region is the triangle bounded by the x-axis ($y=0$), the y-axis ($x=0$), and the line $2x
+        + y = 6$. All boundary lines are solid.
+      stepByStepGuideline:
+      - Graph the boundary line $x = 0$ (the y-axis) and shade to the right, satisfying $x \ge 0$.
+      - Graph the boundary line $y = 0$ (the x-axis) and shade above, satisfying $y \ge 0$.
+      - Graph the boundary line $2x + y = 6$. This line passes through (3, 0) and (0, 6). Since $2x + y \le 6$, use a solid
+        line and shade towards the origin (0, 0).
+      - The feasible region is the triangular area in the first quadrant where all three shaded regions overlap.
+      id: q14-2
+      questionGroup: q14
+    - problemText: 'A concert venue models its ticket sales constraints using the system: the quantity of general admission
+        tickets ($y$) must be strictly less than twice the VIP tickets ($x$) plus 1, ($y < 2x + 1$); and the quantity of general
+        admission tickets ($y$) must be strictly greater than the VIP tickets ($x$) minus 2, ($y > x - 2$). Determine whether
+        the sales point (2, 4) (2 VIP tickets, 4 General tickets) lies within the feasible region.'
+      mathTool: null
+      finalAnswer: Yes, the point (2, 4) lies in the feasible region.
+      stepByStepGuideline:
+      - 'Check the first inequality: $y < 2x + 1$. Substitute $x=2$ and $y=4$: $4 < 2(2) + 1$. $4 < 5$. This is TRUE.'
+      - 'Check the second inequality: $y > x - 2$. Substitute $x=2$ and $y=4$: $4 > 2 - 2$. $4 > 0$. This is TRUE.'
+      - Since the point (2, 4) satisfies both inequalities simultaneously, it lies within the feasible region.
+      id: q14-3
+      questionGroup: q14
+    - problemText: A nutritionist sets a diet plan requiring that the intake of protein ($x$ grams) and carbohydrates ($y$
+        grams) must be non-negative ($x \ge 0$, $y \ge 0$) and their combined weight must not exceed 4 grams ($x + y \le 4$).
+        Does a meal consisting of 3 grams of protein and 2 grams of carbohydrates, represented by the point (3, 2), satisfy
+        all these dietary constraints?
+      mathTool: null
+      finalAnswer: No, the point (3, 2) does not lie in the feasible region.
+      stepByStepGuideline:
+      - 'Check the first constraint: $x \ge 0$. Substitute $x=3$: $3 \ge 0$. This is TRUE.'
+      - 'Check the second constraint: $y \ge 0$. Substitute $y=2$: $2 \ge 0$. This is TRUE.'
+      - 'Check the third constraint: $x + y \le 4$. Substitute $x=3$ and $y=2$: $3 + 2 \le 4$. $5 \le 4$. This is FALSE.'
+      - Since the point (3, 2) does not satisfy the third inequality, it is outside the feasible region defined by the system.
+      id: q14-4
+      questionGroup: q14
+    - problemText: A farmer is modeling the required resources for growing two crops, Corn ($x$) and Wheat ($y$). The optimal
+        yield requires that the Wheat output must be strictly less than $2x + 1$ ($y < 2x + 1$) AND strictly greater than
+        $x - 2$ ($y > x - 2$). Graph this system of strict inequalities and identify the feasible region.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          inequalities:
+          - coefficientX: -2
+            coefficientY: 1
+            constant: 1
+            inequalityType: <
+            color: '#3b82f6'
+            label: $y < 2x + 1$
+          - coefficientX: -1
+            coefficientY: 1
+            constant: -2
+            inequalityType: '>'
+            color: '#10b981'
+            label: $y > x - 2$
+          xMin: -3
+          xMax: 5
+          yMin: -4
+          yMax: 6
+          showGrid: true
+          shadeOpacity: 0.3
+          caption: Feasible region is the band between the two dashed lines.
+      finalAnswer: The feasible region is the area between the two boundary lines $y = 2x + 1$ and $y = x - 2$. Both boundary
+        lines must be dashed because the inequalities are strict ($<$, $>$).
+      stepByStepGuideline:
+      - Graph the boundary line $y = 2x + 1$. Since the inequality is $y < 2x + 1$, draw a dashed line and shade below the
+        line.
+      - Graph the boundary line $y = x - 2$. Since the inequality is $y > x - 2$, draw a dashed line and shade above the line.
+      - The feasible region is the band where the shading overlaps, located between the two parallel dashed lines.
+      id: q14-5
+      questionGroup: q14
+- id: linear-inequalities-node-15
+  nodeNumber: 15
+  title: Feasible Regions and Vertices
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: linearInequalityGrapher
+    preWrittenQuestions:
+    - problemText: A marketing team sets constraints for allocating funds to digital advertising ($x$, in thousands of dollars)
+        and print advertising ($y$, in thousands of dollars). Both allocations must be non-negative ($x \ge 0, y \ge 0$).
+        The total budget available is $4000, modeled by the constraint $x + y \le 4$. Identify all the vertices (corner points)
+        of this bounded feasible region.
+      avatarIntro: Identifying the vertices of a feasible region is crucial, as optimal solutions always occur at these corner
+        points. Let's find where the boundaries intersect!
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          inequalities:
+          - coefficientX: 1
+            coefficientY: 0
+            constant: 0
+            inequalityType: '>='
+            color: '#3b82f6'
+            label: x ≥ 0
+          - coefficientX: 0
+            coefficientY: 1
+            constant: 0
+            inequalityType: '>='
+            color: '#10b981'
+            label: y ≥ 0
+          - coefficientX: 1
+            coefficientY: 1
+            constant: 4
+            inequalityType: <=
+            color: '#f59e0b'
+            label: x + y ≤ 4
+          testPoint:
+            x: 1
+            y: 1
+            label: (1,1)
+          showTestPoint: false
+          xMin: -1
+          xMax: 5
+          yMin: -1
+          yMax: 5
+          showGrid: true
+          shadeOpacity: 0.25
+          caption: Bounded triangular feasible region defined by budget constraints.
+      finalAnswer: The vertices are (0, 0), (4, 0), and (0, 4).
+      stepByStepGuideline:
+      - 'Identify the boundary lines: x = 0 (y-axis), y = 0 (x-axis), and x + y = 4.'
+      - 'Find the intersection of x = 0 and y = 0: (0, 0).'
+      - 'Find the intersection of x + y = 4 and y = 0: Substitute y=0 into the equation: x + 0 = 4, so x = 4. Vertex: (4,
+        0).'
+      - 'Find the intersection of x + y = 4 and x = 0: Substitute x=0 into the equation: 0 + y = 4, so y = 4. Vertex: (0,
+        4).'
+      id: q15-1
+      questionGroup: q15
+    - problemText: 'A landscaper is designing a rectangular garden plot. The length ($x$) and width ($y$) must both be non-negative.
+        The length cannot exceed 3 meters ($x \le 3$) and the width cannot exceed 2 meters ($y \le 2$). Determine all vertices
+        of the feasible region defined by the system: $x \ge 0, y \ge 0, x \le 3, y \le 2$.'
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          inequalities:
+          - coefficientX: 1
+            coefficientY: 0
+            constant: 0
+            inequalityType: '>='
+            color: '#3b82f6'
+            label: x ≥ 0
+          - coefficientX: 0
+            coefficientY: 1
+            constant: 0
+            inequalityType: '>='
+            color: '#10b981'
+            label: y ≥ 0
+          - coefficientX: 1
+            coefficientY: 0
+            constant: 3
+            inequalityType: <=
+            color: '#f59e0b'
+            label: x ≤ 3
+          - coefficientX: 0
+            coefficientY: 1
+            constant: 2
+            inequalityType: <=
+            color: '#ef4444'
+            label: y ≤ 2
+          testPoint:
+            x: 1.5
+            y: 1
+            label: (1.5,1)
+          showTestPoint: false
+          xMin: -1
+          xMax: 4
+          yMin: -1
+          yMax: 3
+          showGrid: true
+          shadeOpacity: 0.25
+          caption: Bounded rectangular feasible region.
+      finalAnswer: The vertices are (0, 0), (3, 0), (3, 2), and (0, 2).
+      stepByStepGuideline:
+      - 'Identify the boundary lines: x = 0, y = 0, x = 3, and y = 2.'
+      - 'Find the intersections of these lines:'
+      - x=0 and y=0 meet at (0, 0).
+      - x=3 and y=0 meet at (3, 0).
+      - x=3 and y=2 meet at (3, 2).
+      - x=0 and y=2 meet at (0, 2).
+      id: q15-2
+      questionGroup: q15
+    - problemText: A student aims to achieve specific academic goals based on hours spent reading ($x$) and hours spent practicing
+        ($y$). The constraints are $x \ge 1$ and $y \ge x + 1$. Is the resulting feasible region bounded or unbounded? Identify
+        the single vertex of this region.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          inequalities:
+          - coefficientX: 1
+            coefficientY: 0
+            constant: 1
+            inequalityType: '>='
+            color: '#3b82f6'
+            label: x ≥ 1
+          - coefficientX: 1
+            coefficientY: -1
+            constant: -1
+            inequalityType: <=
+            color: '#10b981'
+            label: y ≥ x + 1
+          testPoint:
+            x: 2
+            y: 4
+            label: (2,4)
+          showTestPoint: false
+          xMin: 0
+          xMax: 5
+          yMin: 0
+          yMax: 7
+          showGrid: true
+          shadeOpacity: 0.25
+          caption: Unbounded feasible region.
+      finalAnswer: The region is unbounded. The single vertex is (1, 2).
+      stepByStepGuideline:
+      - 'Examine the inequalities: Since $x$ and $y$ are constrained to be greater than or equal to certain values and the
+        region extends infinitely upward and to the right, the feasible region is unbounded.'
+      - 'Identify the boundary lines: $x = 1$ and $y = x + 1$.'
+      - 'Find the intersection point (vertex) by substituting $x=1$ into the second equation: $y = (1) + 1 = 2$.'
+      - The vertex is (1, 2).
+      id: q15-3
+      questionGroup: q15
+    - problemText: A startup company defines its required capital ($y$, in thousands of dollars) relative to the time elapsed
+        ($x$, in years). The financial model dictates $x \ge 0$ and $y \ge 2x + 1$. Classify the feasible region as bounded
+        or unbounded, and find the coordinates of the only vertex.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          inequalities:
+          - coefficientX: 1
+            coefficientY: 0
+            constant: 0
+            inequalityType: '>='
+            color: '#3b82f6'
+            label: x ≥ 0
+          - coefficientX: 2
+            coefficientY: -1
+            constant: -1
+            inequalityType: <=
+            color: '#10b981'
+            label: y ≥ 2x + 1
+          testPoint:
+            x: 1
+            y: 4
+            label: (1,4)
+          showTestPoint: false
+          xMin: -1
+          xMax: 4
+          yMin: -1
+          yMax: 10
+          showGrid: true
+          shadeOpacity: 0.25
+          caption: Unbounded feasible region starting at the y-axis.
+      finalAnswer: The region is unbounded. The vertex is (0, 1).
+      stepByStepGuideline:
+      - The feasible region extends infinitely upward and to the right, meeting the definition of an unbounded region.
+      - 'Identify the boundary lines: $x = 0$ (the y-axis) and $y = 2x + 1$.'
+      - The vertex is the intersection of these two lines. Substitute $x=0$ into the equation $y = 2x + 1$.
+      - y = 2(0) + 1 = 1.
+      - The vertex is (0, 1).
+      id: q15-4
+      questionGroup: q15
+    - problemText: 'A producer combines two raw materials, A ($x$ units) and B ($y$ units). Constraints require $x \ge 0$
+        and $y \ge 0$. Constraint 1 limits the total volume: $x + y \le 6$. Constraint 2 limits the cost: $2x + y \le 8$.
+        Identify all four vertices of this bounded feasible region, paying special attention to the intersection point of
+        the two primary boundary lines.'
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          inequalities:
+          - coefficientX: 1
+            coefficientY: 0
+            constant: 0
+            inequalityType: '>='
+            color: '#3b82f6'
+            label: x ≥ 0
+          - coefficientX: 0
+            coefficientY: 1
+            constant: 0
+            inequalityType: '>='
+            color: '#10b981'
+            label: y ≥ 0
+          - coefficientX: 1
+            coefficientY: 1
+            constant: 6
+            inequalityType: <=
+            color: '#f59e0b'
+            label: x + y ≤ 6
+          - coefficientX: 2
+            coefficientY: 1
+            constant: 8
+            inequalityType: <=
+            color: '#ef4444'
+            label: 2x + y ≤ 8
+          testPoint:
+            x: 1
+            y: 1
+            label: (1,1)
+          showTestPoint: false
+          xMin: -1
+          xMax: 7
+          yMin: -1
+          yMax: 7
+          showGrid: true
+          shadeOpacity: 0.25
+          caption: Bounded feasible region defined by four constraints.
+      finalAnswer: The vertices are (0, 0), (4, 0), (2, 4), and (0, 6).
+      stepByStepGuideline:
+      - 'Identify intersections with the axes (x=0, y=0): (0, 0).'
+      - 'Find intersections with the x-axis (y=0): For x + y = 6, x = 6 (Invalid, as 2(6) + 0 = 12 > 8). For 2x + y = 8, 2x
+        = 8, so x = 4. Vertex: (4, 0).'
+      - 'Find intersections with the y-axis (x=0): For x + y = 6, y = 6. Vertex: (0, 6). For 2x + y = 8, y = 8 (Invalid, as
+        0 + 8 = 8, but 0 + 8 = 8, which satisfies 8 <= 8 and 8 is not <= 6. Wait, check (0, 8) against x+y<=6. 0+8=8. 8 is
+        not <= 6. So (0, 8) is excluded. (0, 6) is the correct y-intercept for the region).'
+      - 'Find the intersection of the two main constraints: x + y = 6 (Eq 1) and 2x + y = 8 (Eq 2).'
+      - 'Subtract (Eq 1) from (Eq 2): (2x + y) - (x + y) = 8 - 6, which simplifies to x = 2.'
+      - 'Substitute x = 2 into (Eq 1): 2 + y = 6, so y = 4. Vertex: (2, 4).'
+      - The four vertices are (0, 0), (4, 0), (2, 4), and (0, 6).
+      id: q15-5
+      questionGroup: q15
+- id: linear-inequalities-node-4
+  nodeNumber: 13
+  title: Solving Multi-Step Inequalities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A student is saving money. They start with $4 in their piggy bank and commit to saving $4 per week ($w$)
+        plus an additional $4 bonus for starting early. The total amount saved is modeled by the expression $4(w + 1)$. They
+        want the total amount saved to be less than or equal to $24. Solve the inequality $4(w + 1) \le 24$ to determine the
+        maximum number of weeks ($w$) they can save.
+      avatarIntro: Solving multi-step inequalities requires careful use of algebraic properties, especially the distributive
+        property. Remember to isolate the variable!
+      mathTool: null
+      finalAnswer: w \le 5
+      stepByStepGuideline:
+      - 'Apply the distributive property to the left side: $4w + 4 \le 24$.'
+      - 'Subtract 4 from both sides of the inequality: $4w \le 20$.'
+      - 'Divide both sides by 4: $w \le 5$.'
+      id: q13-1
+      questionGroup: q13
+    - problemText: Two competing service providers, A and B, offer different package rates based on usage units ($k$). Provider
+        A's cost is modeled by $5k - 10$, and Provider B's cost is modeled by $2k + 8$. Find the range of usage units ($k$)
+        for which Provider A's cost is strictly greater than Provider B's cost. Solve the inequality $5k - 10 > 2k + 8$.
+      mathTool: null
+      finalAnswer: k > 6
+      stepByStepGuideline:
+      - 'Subtract $2k$ from both sides to gather variables: $3k - 10 > 8$.'
+      - 'Add 10 to both sides to isolate the term with the variable: $3k > 18$.'
+      - 'Divide both sides by 3: $k > 6$.'
+      id: q13-2
+      questionGroup: q13
+    - problemText: A research vessel is modeling depth changes. The current level is 18 units (relative to a fixed reference
+        point). If the vessel descends at a rate of 2 units per minute ($m$), the final depth must be at most -6 units (i.e.,
+        6 units below the reference point). Solve the inequality $18 - 2m \le -6$ to find the minimum time ($m$) the vessel
+        must descend.
+      mathTool: null
+      finalAnswer: m \ge 12
+      stepByStepGuideline:
+      - 'Subtract 18 from both sides of the inequality: $-2m \le -24$.'
+      - 'Divide both sides by -2. Remember to reverse the inequality sign when dividing by a negative number: $m \ge 12$.'
+      id: q13-3
+      questionGroup: q13
+    - problemText: Subscription Plan X charges a base fee of $15 plus $3 per month ($p$). This can be written as $3(p + 5)$.
+        Subscription Plan Y charges a base fee of $5 plus $5 per month, written as $5p + 5$. For what number of months ($p$)
+        is Plan X strictly cheaper than Plan Y? Solve the inequality $3(p + 5) < 5p + 5$.
+      mathTool: null
+      finalAnswer: p > 5
+      stepByStepGuideline:
+      - 'Apply the distributive property to the left side: $3p + 15 < 5p + 5$.'
+      - 'Subtract $3p$ from both sides: $15 < 2p + 5$.'
+      - 'Subtract 5 from both sides: $10 < 2p$.'
+      - 'Divide both sides by 2: $5 < p$ or $p > 5$.'
+      id: q13-4
+      questionGroup: q13
+    - problemText: A small factory starts the day with 10 units of raw material. During the day, they use 2 batches of material,
+        where each batch requires $x + 5$ units. The factory must ensure that the remaining raw material is at most 16 units.
+        Solve the inequality $10 - 2(x + 5) \le 16$.
+      mathTool: null
+      finalAnswer: x \ge -8
+      stepByStepGuideline:
+      - 'Apply the distributive property on the left side: $10 - 2x - 10 \le 16$.'
+      - 'Combine like terms ($10 - 10$): $-2x \le 16$.'
+      - 'Divide both sides by -2 and reverse the inequality sign: $x \ge -8$.'
+      id: q13-5
+      questionGroup: q13
+- id: linear-inequalities-node-10
+  nodeNumber: 14
+  title: Understanding Two-Variable Inequalities
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A sports coach models the target score difference ($y$) based on practice time ($x$) using the inequality
+        $y < 2x + 1$. If a team achieves a practice time of $x=2$ hours and a score difference of $y=3$ points, does this
+        performance satisfy the required goal? Explain your answer by checking the coordinates.
+      avatarIntro: We are exploring two-variable inequalities today. Remember, unlike equations which describe a line, inequalities
+        describe an entire region or half-plane.
+      mathTool: null
+      finalAnswer: Yes, the performance satisfies the goal.
+      stepByStepGuideline:
+      - 'Identify the inequality: $y < 2x + 1$.'
+      - 'Identify the point to check: $(x, y) = (2, 3)$.'
+      - 'Substitute $x=2$ and $y=3$ into the inequality: $3 < 2(2) + 1$.'
+      - 'Simplify the expression: $3 < 4 + 1$, which results in $3 < 5$.'
+      - Since $3 < 5$ is a TRUE statement, the point $(2, 3)$ satisfies the inequality. This performance falls within the
+        acceptable region.
+      id: q14-1
+      questionGroup: q14
+    - problemText: A baker requires that the amount of flour ($y$) relative to sugar ($x$) must satisfy the condition $y \ge
+        -x + 3$. If a batch uses 2 cups of sugar ($x=2$) and 0 cups of flour ($y=0$), does this recipe mixture fall within
+        the acceptable region defined by the inequality?
+      mathTool: null
+      finalAnswer: No, the recipe mixture does NOT satisfy the condition.
+      stepByStepGuideline:
+      - 'Identify the inequality: $y \ge -x + 3$.'
+      - 'Identify the point to check: $(x, y) = (2, 0)$.'
+      - 'Substitute $x=2$ and $y=0$ into the inequality: $0 \ge -(2) + 3$.'
+      - 'Simplify the expression: $0 \ge 1$.'
+      - Since $0 \ge 1$ is a FALSE statement, the point $(2, 0)$ does not satisfy the inequality. This recipe uses too little
+        flour relative to the sugar requirement.
+      id: q14-2
+      questionGroup: q14
+    - problemText: A librarian sets a rule that the total weighted volume of new books, $2x + y$, cannot exceed 6 cubic units,
+        where $x$ is the volume of hardcovers and $y$ is the volume of paperbacks. If a delivery contains 3 cubic units of
+        hardcovers ($x=3$) and 4 cubic units of paperbacks ($y=4$), does this delivery satisfy the volume constraint $2x +
+        y \le 6$?
+      mathTool: null
+      finalAnswer: No, the delivery does NOT satisfy the volume constraint.
+      stepByStepGuideline:
+      - 'Identify the inequality: $2x + y \le 6$.'
+      - 'Identify the point to check: $(x, y) = (3, 4)$.'
+      - 'Substitute $x=3$ and $y=4$ into the inequality: $2(3) + 4 \le 6$.'
+      - 'Simplify the expression: $6 + 4 \le 6$, which results in $10 \le 6$.'
+      - Since $10 \le 6$ is a FALSE statement, the point $(3, 4)$ does not satisfy the inequality. The delivery exceeds the
+        maximum allowed volume.
+      id: q14-3
+      questionGroup: q14
+    - problemText: During a road trip, the required safety distance ($y$) must be strictly less than twice the current speed
+        ($x$) plus 1, represented by $y < 2x + 1$. If a driver is stopped (speed $x=0$) and the safety distance is also zero
+        ($y=0$), verify whether the coordinates $(0, 0)$ satisfy this crucial safety inequality.
+      mathTool: null
+      finalAnswer: Yes, the coordinates $(0, 0)$ satisfy the safety inequality.
+      stepByStepGuideline:
+      - 'Identify the inequality: $y < 2x + 1$.'
+      - 'Identify the point to check: $(x, y) = (0, 0)$.'
+      - 'Substitute $x=0$ and $y=0$ into the inequality: $0 < 2(0) + 1$.'
+      - 'Simplify the expression: $0 < 0 + 1$, which results in $0 < 1$.'
+      - Since $0 < 1$ is a TRUE statement, the point $(0, 0)$ satisfies the inequality. This confirms that the origin lies
+        within the solution region (half-plane).
+      id: q14-4
+      questionGroup: q14
+    - problemText: Local architecture codes dictate that the building height ($y$) and setback distance ($x$) must satisfy
+        the inequality $y \ge -x + 3$. If a design proposes a zero setback ($x=0$) and a height of 5 meters ($y=5$), does
+        this design meet the required code? Remember that the inequality describes an entire region of acceptable designs.
+      mathTool: null
+      finalAnswer: Yes, the design meets the required code.
+      stepByStepGuideline:
+      - 'Identify the inequality: $y \ge -x + 3$.'
+      - 'Identify the point to check: $(x, y) = (0, 5)$.'
+      - 'Substitute $x=0$ and $y=5$ into the inequality: $5 \ge -(0) + 3$.'
+      - 'Simplify the expression: $5 \ge 3$.'
+      - Since $5 \ge 3$ is a TRUE statement, the point $(0, 5)$ satisfies the inequality. The design falls within the acceptable
+        region defined by the code.
+      id: q14-5
+      questionGroup: q14
+- id: linear-inequalities-node-12
+  nodeNumber: 15
+  title: Determining Shading Direction
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: linearInequalityGrapher
+    preWrittenQuestions:
+    - problemText: A delivery service charges a base rate of $3 plus $2 per mile ($x$). The total cost ($y$) must remain strictly
+        less than this formula, modeled by the inequality $y < 2x + 3$. Use the origin (0, 0) as a test point to determine
+        which side of the boundary line should be shaded to represent the solution region.
+      avatarIntro: Understanding how to use a test point is crucial for solving linear inequalities. Let's practice determining
+        the correct shading direction!
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: -2
+          coefficientY: 1
+          constant: 3
+          inequalityType: <
+          xMin: -3
+          xMax: 5
+          yMin: -3
+          yMax: 10
+          showGrid: true
+          testPoint:
+            x: 0
+            y: 0
+            label: (0,0)
+          showTestPoint: true
+          shadeOpacity: 0.4
+          label: y < 2x + 3
+          caption: 'Test point (0,0): 0 < 3 ✓ TRUE, so shade the side containing (0,0)'
+      finalAnswer: Shade the region containing the origin (0, 0), which is below the boundary line.
+      stepByStepGuideline:
+      - The inequality is $y < 2x + 3$.
+      - 'Substitute the test point (0, 0) into the inequality: $0 < 2(0) + 3$.'
+      - 'Simplify: $0 < 3$.'
+      - Since the statement $0 < 3$ is TRUE, the shaded region must include the test point (0, 0).
+      id: q15-1
+      questionGroup: q15
+    - problemText: A quality control check requires that the number of units produced ($y$) must meet or exceed a requirement
+        defined by $y \ge -x + 2$, where $x$ is the time spent on preparation. Use the origin (0, 0) as a test point to determine
+        which side of the boundary line $y = -x + 2$ should be shaded.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: 1
+          coefficientY: 1
+          constant: 2
+          inequalityType: '>='
+          xMin: -3
+          xMax: 5
+          yMin: -3
+          yMax: 5
+          showGrid: true
+          testPoint:
+            x: 0
+            y: 0
+            label: (0,0)
+          showTestPoint: true
+          shadeOpacity: 0.4
+          label: y ≥ -x + 2
+          caption: 'Test point (0,0): 0 ≥ 2 ✗ FALSE, so shade the side opposite (0,0)'
+      finalAnswer: Shade the region opposite the origin (0, 0), which is above the boundary line.
+      stepByStepGuideline:
+      - The inequality is $y \ge -x + 2$.
+      - 'Substitute the test point (0, 0) into the inequality: $0 \ge -(0) + 2$.'
+      - 'Simplify: $0 \ge 2$.'
+      - Since the statement $0 \ge 2$ is FALSE, the shaded region must NOT include the test point (0, 0). Shade the opposite
+        side.
+      id: q15-2
+      questionGroup: q15
+    - problemText: A climate model predicts that the temperature ($y$) must be strictly greater than the altitude ($x$) minus
+        1 degree Celsius, modeled by $y > x - 1$. Use the test point (0, 0) to determine the shading direction for the feasible
+        region.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: -1
+          coefficientY: 1
+          constant: -1
+          inequalityType: '>'
+          xMin: -3
+          xMax: 5
+          yMin: -3
+          yMax: 5
+          showGrid: true
+          testPoint:
+            x: 0
+            y: 0
+            label: (0,0)
+          showTestPoint: true
+          shadeOpacity: 0.4
+          label: y > x - 1
+          caption: 'Test point (0,0): 0 > -1 ✓ TRUE, so shade the side containing (0,0)'
+      finalAnswer: Shade the region containing the origin (0, 0), which is above the boundary line.
+      stepByStepGuideline:
+      - The inequality is $y > x - 1$.
+      - 'Substitute the test point (0, 0) into the inequality: $0 > 0 - 1$.'
+      - 'Simplify: $0 > -1$.'
+      - Since the statement $0 > -1$ is TRUE, the shaded region must include the test point (0, 0).
+      id: q15-3
+      questionGroup: q15
+    - problemText: A driver sets a constraint where the speed ($y$) must be strictly less than twice the fuel efficiency rate
+        ($x$), modeled by $y < 2x$. Since the boundary line passes through the origin, we cannot use (0, 0). Use the alternate
+        test point (1, 0) to determine the shading direction.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: -2
+          coefficientY: 1
+          constant: 0
+          inequalityType: <
+          xMin: -3
+          xMax: 5
+          yMin: -3
+          yMax: 5
+          showGrid: true
+          testPoint:
+            x: 1
+            y: 0
+            label: (1,0)
+          showTestPoint: true
+          shadeOpacity: 0.4
+          label: y < 2x
+          caption: 'Test point (1,0): 0 < 2(1) → 0 < 2 ✓ TRUE. Shade the side containing (1, 0).'
+      finalAnswer: Shade the region containing the test point (1, 0), which is below the boundary line.
+      stepByStepGuideline:
+      - The inequality is $y < 2x$.
+      - 'Substitute the alternate test point (1, 0) into the inequality: $0 < 2(1)$.'
+      - 'Simplify: $0 < 2$.'
+      - Since the statement $0 < 2$ is TRUE, the shaded region must include the test point (1, 0).
+      id: q15-4
+      questionGroup: q15
+    - problemText: An investment analyst models potential profit ($y$) versus potential loss ($x$). The requirement is that
+        the profit must strictly exceed the negative value of the loss, $y > -x$. Since the boundary line passes through the
+        origin, use the alternate test point (0, 1) to determine the shading direction.
+      mathTool:
+        toolName: linearInequalityGrapher
+        parameters:
+          coefficientX: 1
+          coefficientY: 1
+          constant: 0
+          inequalityType: '>'
+          xMin: -5
+          xMax: 5
+          yMin: -5
+          yMax: 5
+          showGrid: true
+          testPoint:
+            x: 0
+            y: 1
+            label: (0,1)
+          showTestPoint: true
+          shadeOpacity: 0.4
+          label: y > -x
+          caption: 'Test point (0,1): 1 > -(0) → 1 > 0 ✓ TRUE. Shade the side containing (0, 1).'
+      finalAnswer: Shade the region containing the test point (0, 1), which is above the boundary line.
+      stepByStepGuideline:
+      - The inequality is $y > -x$.
+      - 'Substitute the alternate test point (0, 1) into the inequality: $1 > -(0)$.'
+      - 'Simplify: $1 > 0$.'
+      - Since the statement $1 > 0$ is TRUE, the shaded region must include the test point (0, 1).
+      id: q15-5
+      questionGroup: q15
+- id: linear-inequalities-node-16
+  nodeNumber: 16
+  title: Real-World Inequality Applications
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A school needs to accommodate 310 students for an overnight trip. Each dormitory room can hold a maximum
+        of 24 students. Determine the minimum number of rooms ($r$) that must be booked. Form the inequality, solve for $r$,
+        and interpret the solution in context.
+      avatarIntro: These real-world problems require you to translate constraints like maximum and minimum into mathematical
+        inequalities. Pay close attention to how you round your answers!
+      mathTool: null
+      finalAnswer: The inequality is $24r \ge 310$. Solving gives $r \ge 12.916...$ Since you cannot book a partial room,
+        the minimum number of rooms required is 13.
+      stepByStepGuideline:
+      - 'Define the variable: Let $r$ be the number of rooms.'
+      - 'Form the inequality: Since the total capacity (24 students per room multiplied by the number of rooms, $24r$) must
+        be able to hold at least 310 students, the inequality is $24r \ge 310$.'
+      - 'Solve the inequality: Divide both sides by 24: $r \ge 310 / 24$, which simplifies to $r \ge 12.916...$'
+      - 'Interpret the solution: Since the number of rooms must be a whole number, and $r$ must be greater than or equal to
+        12.916, we must round up to the next whole number. The minimum number of rooms required is 13.'
+      id: q16-1
+      questionGroup: q16
+    - problemText: A florist has a budget limit of \$150 for buying roses. A fixed delivery charge is \$12, and each rose
+        bouquet ($b$) costs \$18. Calculate the maximum number of bouquets the florist can purchase without exceeding the
+        budget. Form the inequality, solve for $b$, and interpret the solution in context.
+      mathTool: null
+      finalAnswer: The inequality is $18b + 12 \le 150$. Solving gives $b \le 7.666...$ Since the florist cannot buy a partial
+        bouquet, the maximum number of bouquets they can purchase is 7.
+      stepByStepGuideline:
+      - 'Define the variable: Let $b$ be the number of bouquets.'
+      - 'Form the inequality: The total cost (cost of bouquets plus fixed delivery charge) must be less than or equal to the
+        budget of \$150. The inequality is $18b + 12 \le 150$.'
+      - 'Solve the inequality: Subtract 12 from both sides: $18b \le 138$. Divide by 18: $b \le 138 / 18$, which simplifies
+        to $b \le 7.666...$'
+      - 'Interpret the solution: Since the number of bouquets must be a whole number, and $b$ must be less than or equal to
+        7.666, we round down. The maximum number of bouquets the florist can purchase is 7.'
+      id: q16-2
+      questionGroup: q16
+    - problemText: An electric scooter has a fully charged battery of 900 Watt-hours (Wh). It consumes energy at an average
+        rate of 35 Wh per hour ($h$). The user must ensure that the remaining charge is at least 50 Wh for the safety reserve.
+        Determine the maximum number of full hours ($h$) the scooter can be used before hitting the safety reserve. Form the
+        inequality, solve for $h$, and interpret the solution in context.
+      mathTool: null
+      finalAnswer: The inequality is $900 - 35h \ge 50$. Solving gives $h \le 24.285...$ The maximum number of full hours
+        the scooter can be used is 24 hours.
+      stepByStepGuideline:
+      - 'Define the variable: Let $h$ be the number of hours the scooter is used.'
+      - 'Form the inequality: The initial charge (900 Wh) minus the consumed charge ($35h$) must be greater than or equal
+        to the safety reserve (50 Wh). The inequality is $900 - 35h \ge 50$.'
+      - 'Solve the inequality: Subtract 900 from both sides: $-35h \ge -850$. Divide by -35 and reverse the inequality sign:
+        $h \le -850 / -35$, which simplifies to $h \le 24.285...$'
+      - 'Interpret the solution: The question asks for the maximum number of *full* hours. Since $h$ must be less than or
+        equal to 24.285, the maximum number of full hours of use is 24 hours.'
+      id: q16-3
+      questionGroup: q16
+    - problemText: Sarah needs an average score of at least 90 across four exams to earn a scholarship. Her scores on the
+        first three exams were 85, 93, and 88. What is the minimum integer score ($x$) she must achieve on the fourth exam
+        to meet the scholarship requirement? Form the inequality, solve for $x$, and interpret the solution in context.
+      mathTool: null
+      finalAnswer: The inequality is $(85 + 93 + 88 + x) / 4 \ge 90$. Solving gives $x \ge 94$. The minimum integer score
+        Sarah must achieve is 94 points.
+      stepByStepGuideline:
+      - 'Define the variable: Let $x$ be the score on the fourth exam.'
+      - 'Form the inequality: The sum of all four scores divided by 4 must be greater than or equal to 90. The inequality
+        is $(85 + 93 + 88 + x) / 4 \ge 90$.'
+      - 'Simplify and solve: Calculate the sum of the known scores: $85 + 93 + 88 = 266$. The inequality is $(266 + x) / 4
+        \ge 90$.'
+      - 'Multiply both sides by 4: $266 + x \ge 360$.'
+      - 'Subtract 266 from both sides: $x \ge 360 - 266$, so $x \ge 94$.'
+      - 'Interpret the solution: Since the score must be at least 94, the minimum integer score Sarah must achieve is 94 points.'
+      id: q16-4
+      questionGroup: q16
+    - problemText: To qualify for a junior training program, applicants must be strictly older than 14 years old. Liam is
+        currently 13 years and 9 months old. Calculate the minimum number of full months ($m$) he must wait until he qualifies
+        for the program. Form the inequality, solve for $m$, and interpret the solution in context.
+      mathTool: null
+      finalAnswer: Liam's current age is 165 months. The required age is 168 months. The inequality is $165 + m > 168$. Solving
+        gives $m > 3$. The minimum number of full months Liam must wait is 4 months.
+      stepByStepGuideline:
+      - 'Convert ages to a common unit (months): Liam''s current age is $13 \times 12 + 9 = 165$ months. The minimum required
+        age is $14 \times 12 = 168$ months.'
+      - 'Define the variable: Let $m$ be the number of months Liam waits.'
+      - 'Form the inequality: Liam''s current age plus the waiting time must be strictly greater than the minimum required
+        age. $165 + m > 168$.'
+      - 'Solve the inequality: Subtract 165 from both sides: $m > 3$.'
+      - 'Interpret the solution: Since $m$ must be strictly greater than 3, and $m$ represents full months, the minimum integer
+        value for $m$ is 4. Liam must wait a minimum of 4 full months.'
+      id: q16-5
+      questionGroup: q16
