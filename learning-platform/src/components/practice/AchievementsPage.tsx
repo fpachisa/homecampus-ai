@@ -6,17 +6,19 @@
  */
 
 import { useMemo } from 'react';
-import type { Achievement, PathProgress } from '../../types/practice';
+import type { Achievement, PathProgress, DailyStreak } from '../../types/practice';
 import { achievementService } from '../../services/achievementService';
+import { initializeStreak } from '../../services/streakService';
 import { useTheme } from '../../hooks/useTheme';
 import { BackButton } from '../BackButton';
 
 interface AchievementsPageProps {
   progress: PathProgress;
+  globalStreak?: DailyStreak; // Optional - if not provided, streak achievements won't be checkable
   onBack: () => void;
 }
 
-export const AchievementsPage: React.FC<AchievementsPageProps> = ({ progress, onBack }) => {
+export const AchievementsPage: React.FC<AchievementsPageProps> = ({ progress, globalStreak, onBack }) => {
   const { theme } = useTheme();
 
   // Get all achievement definitions
@@ -132,7 +134,7 @@ export const AchievementsPage: React.FC<AchievementsPageProps> = ({ progress, on
                 {defs.map(def => {
                   const earned = earnedMap.get(def.id);
                   const isEarned = !!earned;
-                  const canEarn = !isEarned && def.check(progress);
+                  const canEarn = !isEarned && def.check(progress, globalStreak || initializeStreak());
 
                   return (
                     <div

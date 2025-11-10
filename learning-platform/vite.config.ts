@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
 
   build: {
-    // Target modern browsers for smaller bundles
-    target: 'es2020',
+    // Target broader browser support including older iPads
+    target: 'es2015',
 
     // Source maps for production debugging (disabled for smaller bundles)
     sourcemap: false,

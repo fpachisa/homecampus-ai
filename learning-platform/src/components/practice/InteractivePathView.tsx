@@ -10,7 +10,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
 import { useAuth } from '../../contexts/AuthContext';
-import type { PathNode, PathLayer, PathProgress } from '../../types/practice';
+import type { PathNode, PathLayer, PathProgress, DailyStreak } from '../../types/practice';
 import { yamlPathLoader } from '../../services/yamlPathLoader';
 import { pathProgressService } from '../../services/pathProgressService';
 import {
@@ -18,6 +18,8 @@ import {
   savePracticeProgress,
   pathProgressToFirestore
 } from '../../services/firestoreProgressService';
+import { loadGlobalStreak } from '../../services/globalStreakService';
+import { initializeStreak } from '../../services/streakService';
 import { generateMeanderingPath } from '../../utils/pathGeometryUtils';
 import { CircularPathNode } from './CircularPathNode';
 import { StatsPanel } from './StatsPanel';
@@ -38,6 +40,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   const { theme } = useTheme();
   const [nodes, setNodes] = useState<PathNode[]>([]);
   const [progress, setProgress] = useState<PathProgress | null>(null);
+  const [globalStreak, setGlobalStreak] = useState<DailyStreak>(initializeStreak());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const centerPanelRef = useRef<HTMLDivElement>(null);
@@ -46,6 +49,39 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   useEffect(() => {
     loadPathData();
   }, [category]);
+
+  // Reload global streak when returning to this view (e.g., after practice session)
+  useEffect(() => {
+    const handleVisibilityChange = async () => {
+      if (!document.hidden && user?.uid) {
+        try {
+          const streak = await loadGlobalStreak(user.uid);
+          setGlobalStreak(streak);
+        } catch (error) {
+          console.error('Failed to reload global streak:', error);
+        }
+      }
+    };
+
+    const handleFocus = async () => {
+      if (user?.uid) {
+        try {
+          const streak = await loadGlobalStreak(user.uid);
+          setGlobalStreak(streak);
+        } catch (error) {
+          console.error('Failed to reload global streak:', error);
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('focus', handleFocus);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleFocus);
+    };
+  }, [user?.uid]);
 
   // Measure center panel width for path generation
   useEffect(() => {
@@ -104,7 +140,6 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
               lastUpdated: firestoreProgress.pathStartedAt.toDate(),
               totalXP: firestoreProgress.totalXP,
               currentLevel: firestoreProgress.currentLevel,
-              streak: firestoreProgress.streak,
               // Convert achievements: Timestamp -> Date
               achievements: firestoreProgress.achievements.map(a => ({
                 ...a,
@@ -162,6 +197,20 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
         console.log('💾 Saved progress to both localStorage and Firestore');
       } else {
         console.log('💾 Saved progress to localStorage only (not authenticated)');
+      }
+
+      // Load global streak (separate from per-topic progress)
+      if (user?.uid) {
+        try {
+          const streak = await loadGlobalStreak(user.uid);
+          setGlobalStreak(streak);
+          console.log('🔥 Loaded global streak');
+        } catch (streakErr) {
+          console.warn('Failed to load global streak, using default:', streakErr);
+          setGlobalStreak(initializeStreak());
+        }
+      } else {
+        setGlobalStreak(initializeStreak());
       }
 
       setProgress(pathProgress);
@@ -272,7 +321,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
           <BackButton onClick={goToHome} />
         </div>
         <div className="flex-1 overflow-y-auto">
-          <StatsPanel progress={progress} />
+          <StatsPanel progress={progress} globalStreak={globalStreak} />
         </div>
       </div>
 
@@ -379,7 +428,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
           </h2>
         </div>
         <div className="flex-1 overflow-y-auto">
-          <LeaderboardPanel progress={progress} allNodes={nodes} />
+          <LeaderboardPanel progress={progress} globalStreak={globalStreak} allNodes={nodes} />
         </div>
       </div>
     </div>

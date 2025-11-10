@@ -344,12 +344,6 @@ class PathProgressService {
         }
       });
 
-      // Initialize streak if it doesn't exist (for backward compatibility)
-      if (!progress.streak) {
-        progress.streak = streakService.initializeStreak();
-        console.log('🔄 Initialized streak for existing progress');
-      }
-
       // Initialize other gamification fields if missing
       if (progress.totalXP === undefined) progress.totalXP = 0;
       if (progress.currentLevel === undefined) progress.currentLevel = 0;
@@ -443,7 +437,6 @@ class PathProgressService {
       // Gamification features
       totalXP: 0,
       currentLevel: 0,
-      streak: streakService.initializeStreak(),
       achievements: [],
       sessionHistory: [],
       totalTimeSpentSeconds: 0,
@@ -590,14 +583,12 @@ class PathProgressService {
       this.updateTodaySessionStats(pathProgress, xpEarned);
     }
 
-    // Update streak when a correct answer is recorded
-    if (isCorrect && pathProgress.streak) {
-      pathProgress.streak = streakService.updateStreak(pathProgress.streak);
-      console.log(`🔥 Streak updated: ${pathProgress.streak.currentStreak} days`);
-    }
-
     // Check for newly earned achievements
-    const newAchievements = achievementService.checkAndAwardAchievements(pathProgress);
+    // NOTE: Passing empty streak - streak achievements are checked separately in firestoreProgressService
+    const newAchievements = achievementService.checkAndAwardAchievements(
+      pathProgress,
+      streakService.initializeStreak()
+    );
     if (newAchievements.length > 0) {
       // Add achievements and their XP rewards
       pathProgress.achievements.push(...newAchievements);
@@ -659,7 +650,11 @@ class PathProgressService {
     }
 
     // Check for newly earned achievements (may unlock layer completion achievements)
-    const newAchievements = achievementService.checkAndAwardAchievements(pathProgress);
+    // NOTE: Passing empty streak - streak achievements are checked separately in firestoreProgressService
+    const newAchievements = achievementService.checkAndAwardAchievements(
+      pathProgress,
+      streakService.initializeStreak()
+    );
     if (newAchievements.length > 0) {
       pathProgress.achievements.push(...newAchievements);
       const achievementXP = newAchievements.reduce((sum, a) => sum + a.xpReward, 0);

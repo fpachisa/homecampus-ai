@@ -43,6 +43,9 @@ import {
   calculateProgress as calcProgress
 } from '../types/firestore';
 
+// Import global streak service
+import { updateGlobalStreak } from './globalStreakService';
+
 /**
  * Recursively remove undefined values from an object
  * Firestore doesn't allow undefined values - they must be null or omitted
@@ -380,15 +383,12 @@ export async function savePracticeProgress(
     const cleanedSummaryUpdate = stripUndefined(summaryUpdate);
     batch.set(summaryRef, cleanedSummaryUpdate, { merge: true });
 
-    // 3. Update user profile with global gamification stats
+    // 3. Update user profile with global gamification stats (excluding streak)
     const userProfileRef = doc(firestore, 'users', uid);
     const gamificationUpdate = {
       gamification: {
         totalXP: progress.totalXP,
         currentLevel: progress.currentLevel,
-        currentStreak: progress.streak?.currentStreak || 0,
-        longestStreak: progress.streak?.longestStreak || 0,
-        lastActivityDate: progress.streak?.lastActivityDate || '',
         totalAchievements: progress.achievements?.length || 0,
         lastUpdated: new Date().toISOString()
       }
@@ -397,6 +397,15 @@ export async function savePracticeProgress(
     batch.set(userProfileRef, gamificationUpdate, { merge: true });
 
     await batch.commit();
+
+    // 4. Update global streak (separate from batch, happens after commit)
+    try {
+      await updateGlobalStreak(uid);
+      console.log('🔥 Global streak updated after practice');
+    } catch (streakError) {
+      console.error('Error updating global streak:', streakError);
+      // Don't throw - streak update failure shouldn't break progress save
+    }
   } catch (error) {
     // Simple retry logic (3 attempts)
     if (retryCount < 3) {
@@ -513,7 +522,6 @@ export function pathProgressToFirestore(
     layerProgress,
     totalXP: pathProgress.totalXP,
     currentLevel: pathProgress.currentLevel,
-    streak: pathProgress.streak,
     achievements: pathProgress.achievements.map(a => {
       // Convert earnedAt to Date if it's not already
       let earnedAtDate: Date;

@@ -3,9 +3,12 @@
  *
  * Manages achievement definitions, checking, and awarding.
  * Gamification system with streaks, badges, and XP rewards.
+ *
+ * NOTE: Streak tracking is now global across all topics. Streak achievements
+ * check the global streak passed as a parameter, not per-topic streaks.
  */
 
-import type { Achievement, PathProgress } from '../types/practice';
+import type { Achievement, PathProgress, DailyStreak } from '../types/practice';
 
 // ============================================
 // ACHIEVEMENT DEFINITIONS
@@ -17,7 +20,7 @@ interface AchievementDefinition {
   description: string;
   icon: string;
   xpReward: number;
-  check: (progress: PathProgress) => boolean;
+  check: (progress: PathProgress, globalStreak: DailyStreak) => boolean;
 }
 
 const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
@@ -28,7 +31,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Complete your first problem',
     icon: '🎯',
     xpReward: 10,
-    check: (p) => p.totalProblemsCorrect >= 1,
+    check: (p, _streak) => p.totalProblemsCorrect >= 1,
   },
   {
     id: 'first-node',
@@ -36,17 +39,17 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Complete your first node',
     icon: '⭐',
     xpReward: 25,
-    check: (p) => Object.values(p.nodes).some(n => n.status === 'completed'),
+    check: (p, _streak) => Object.values(p.nodes).some(n => n.status === 'completed'),
   },
 
-  // Consistency
+  // Consistency (Global Streak - across all topics)
   {
     id: 'streak-3',
     title: '3-Day Streak',
     description: 'Practice for 3 days in a row',
     icon: '🔥',
     xpReward: 30,
-    check: (p) => p.streak.currentStreak >= 3,
+    check: (_p, streak) => streak.currentStreak >= 3,
   },
   {
     id: 'streak-7',
@@ -54,7 +57,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Practice for 7 days in a row',
     icon: '💪',
     xpReward: 75,
-    check: (p) => p.streak.currentStreak >= 7,
+    check: (_p, streak) => streak.currentStreak >= 7,
   },
   {
     id: 'streak-30',
@@ -62,7 +65,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Practice for 30 days in a row',
     icon: '👑',
     xpReward: 300,
-    check: (p) => p.streak.currentStreak >= 30,
+    check: (_p, streak) => streak.currentStreak >= 30,
   },
 
   // Accuracy
@@ -72,7 +75,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Get 10 problems correct in a row',
     icon: '💎',
     xpReward: 50,
-    check: (p) => {
+    check: (p, _streak) => {
       // Check recent session history for perfect accuracy
       const recent = p.sessionHistory.slice(-5);
       return recent.some(s => s.problemsSolved >= 10 && s.accuracy === 100);
@@ -84,7 +87,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Maintain 90%+ accuracy for 20 problems',
     icon: '🎖️',
     xpReward: 100,
-    check: (p) => {
+    check: (p, _streak) => {
       const accuracy = p.totalProblemsAttempted > 0
         ? (p.totalProblemsCorrect / p.totalProblemsAttempted) * 100
         : 0;
@@ -99,7 +102,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Solve 10 problems',
     icon: '🧮',
     xpReward: 20,
-    check: (p) => p.totalProblemsCorrect >= 10,
+    check: (p, _streak) => p.totalProblemsCorrect >= 10,
   },
   {
     id: 'problem-solver-50',
@@ -107,7 +110,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Solve 50 problems',
     icon: '📊',
     xpReward: 100,
-    check: (p) => p.totalProblemsCorrect >= 50,
+    check: (p, _streak) => p.totalProblemsCorrect >= 50,
   },
   {
     id: 'problem-solver-100',
@@ -115,7 +118,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Solve 100 problems',
     icon: '💯',
     xpReward: 200,
-    check: (p) => p.totalProblemsCorrect >= 100,
+    check: (p, _streak) => p.totalProblemsCorrect >= 100,
   },
 
   // Layer Completion
@@ -125,7 +128,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Complete all Foundation nodes',
     icon: '🏗️',
     xpReward: 150,
-    check: (p) => p.layerProgress.foundation.completed === p.layerProgress.foundation.total && p.layerProgress.foundation.total > 0,
+    check: (p, _streak) => p.layerProgress.foundation.completed === p.layerProgress.foundation.total && p.layerProgress.foundation.total > 0,
   },
   {
     id: 'integration-complete',
@@ -133,7 +136,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Complete all Integration nodes',
     icon: '🔗',
     xpReward: 200,
-    check: (p) => p.layerProgress.integration.completed === p.layerProgress.integration.total && p.layerProgress.integration.total > 0,
+    check: (p, _streak) => p.layerProgress.integration.completed === p.layerProgress.integration.total && p.layerProgress.integration.total > 0,
   },
   {
     id: 'application-complete',
@@ -141,7 +144,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Complete all Application nodes',
     icon: '🎯',
     xpReward: 250,
-    check: (p) => p.layerProgress.application.completed === p.layerProgress.application.total && p.layerProgress.application.total > 0,
+    check: (p, _streak) => p.layerProgress.application.completed === p.layerProgress.application.total && p.layerProgress.application.total > 0,
   },
   {
     id: 'path-complete',
@@ -149,7 +152,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Complete the entire path',
     icon: '🏆',
     xpReward: 500,
-    check: (p) => {
+    check: (p, _streak) => {
       const totalNodes = p.layerProgress.foundation.total + p.layerProgress.integration.total + p.layerProgress.application.total;
       const completedNodes = p.layerProgress.foundation.completed + p.layerProgress.integration.completed + p.layerProgress.application.completed;
       return totalNodes > 0 && completedNodes === totalNodes;
@@ -163,7 +166,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Complete 5 problems in under 10 minutes',
     icon: '⚡',
     xpReward: 75,
-    check: (p) => {
+    check: (p, _streak) => {
       return p.sessionHistory.some(s => s.problemsSolved >= 5 && s.timeSpentSeconds <= 600);
     },
   },
@@ -175,7 +178,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Spend 1 hour learning',
     icon: '📚',
     xpReward: 50,
-    check: (p) => p.totalTimeSpentSeconds >= 3600,
+    check: (p, _streak) => p.totalTimeSpentSeconds >= 3600,
   },
   {
     id: 'marathon-runner',
@@ -183,7 +186,7 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
     description: 'Spend 5 hours learning',
     icon: '🏃',
     xpReward: 200,
-    check: (p) => p.totalTimeSpentSeconds >= 18000,
+    check: (p, _streak) => p.totalTimeSpentSeconds >= 18000,
   },
 ];
 
@@ -221,7 +224,10 @@ export const getXPProgress = (totalXP: number): { current: number; needed: numbe
 // ACHIEVEMENT CHECKING
 // ============================================
 
-export const checkAndAwardAchievements = (progress: PathProgress): Achievement[] => {
+export const checkAndAwardAchievements = (
+  progress: PathProgress,
+  globalStreak: DailyStreak
+): Achievement[] => {
   const newlyEarned: Achievement[] = [];
   const earnedIds = new Set(progress.achievements.map(a => a.id));
 
@@ -229,8 +235,8 @@ export const checkAndAwardAchievements = (progress: PathProgress): Achievement[]
     // Skip if already earned
     if (earnedIds.has(def.id)) continue;
 
-    // Check if condition is met
-    if (def.check(progress)) {
+    // Check if condition is met (passing both progress and global streak)
+    if (def.check(progress, globalStreak)) {
       const achievement: Achievement = {
         id: def.id,
         title: def.title,

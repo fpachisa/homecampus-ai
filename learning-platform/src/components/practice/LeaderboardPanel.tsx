@@ -5,15 +5,16 @@
  */
 
 import React from 'react';
-import type { PathProgress, PathNode } from '../../types/practice';
+import type { PathProgress, PathNode, DailyStreak } from '../../types/practice';
 import { useTheme } from '../../hooks/useTheme';
 
 interface LeaderboardPanelProps {
   progress: PathProgress;
+  globalStreak: DailyStreak;
   allNodes: PathNode[];
 }
 
-export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({ progress, allNodes }) => {
+export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({ progress, globalStreak, allNodes }) => {
   const { theme } = useTheme();
 
   // Layer color scheme (matching CircularPathNode)
@@ -150,14 +151,14 @@ export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({ progress, al
         </div>
 
         <div className="space-y-2">
-          {/* Best Streak */}
+          {/* Best Streak (Global) */}
           <div className="flex items-center justify-between p-2 rounded" style={{ backgroundColor: theme.colors.interactive }}>
             <div className="flex items-center space-x-2">
               <span className="text-lg">🔥</span>
               <span className="text-xs" style={{ color: theme.colors.textSecondary }}>Best Streak</span>
             </div>
             <span className="text-xs font-bold" style={{ color: theme.colors.textPrimary }}>
-              {progress.streak ? progress.streak.longestStreak : 0} days
+              {globalStreak.longestStreak} days
             </span>
           </div>
 

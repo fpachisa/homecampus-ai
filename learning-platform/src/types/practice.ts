@@ -169,7 +169,6 @@ export interface PathProgress {
   // NEW: Gamification features
   totalXP: number;                          // Total experience points earned
   currentLevel: number;                     // Current level (calculated from XP)
-  streak: DailyStreak;                      // Daily streak tracking
   achievements: Achievement[];              // Earned achievements
   sessionHistory: SessionStats[];           // Last 30 days of sessions
   totalTimeSpentSeconds: number;            // Total time spent on this path

@@ -205,7 +205,6 @@ export interface PracticeProgress {
   // Gamification
   totalXP: number;
   currentLevel: number;
-  streak: DailyStreak;
   achievements: Achievement[];
   sessionHistory: SessionHistoryEntry[];
 

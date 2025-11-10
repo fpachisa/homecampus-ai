@@ -4,8 +4,9 @@
  * Provides easy access to user's gamification data (XP, level, streak, achievements).
  *
  * PRIORITY:
- * 1. If pathProgress is provided (practice mode), read real-time data from it
- * 2. Otherwise, fall back to userProfile.gamification (non-practice mode)
+ * 1. If pathProgress is provided (practice mode), read XP/level/achievements from it
+ * 2. Streak is ALWAYS read from userProfile.gamification (global across all topics)
+ * 3. Fall back to userProfile.gamification for all stats (non-practice mode)
  *
  * This ensures stats update in real-time during practice sessions while maintaining
  * backward compatibility for components outside practice mode.
@@ -43,12 +44,13 @@ export function useGamificationStats(pathProgress?: PathProgress | null): Gamifi
   const { userProfile, loading } = useAuth();
 
   // PRIORITY 1: Use PathProgress if provided (real-time data in practice mode)
+  // NOTE: Streak is ALWAYS read from userProfile.gamification (global across all topics)
   if (pathProgress) {
     return {
       totalXP: pathProgress.totalXP || 0,
       currentLevel: pathProgress.currentLevel || 1,
-      currentStreak: pathProgress.streak?.currentStreak || 0,
-      longestStreak: pathProgress.streak?.longestStreak || 0,
+      currentStreak: userProfile?.gamification?.currentStreak || 0,
+      longestStreak: userProfile?.gamification?.longestStreak || 0,
       totalAchievements: pathProgress.achievements?.length || 0,
       lastUpdated: pathProgress.lastUpdated?.toISOString(),
       isLoading: false,

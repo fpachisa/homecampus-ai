@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import type { PathProgress } from '../../types/practice';
+import type { PathProgress, DailyStreak } from '../../types/practice';
 import { achievementService } from '../../services/achievementService';
 import { StreakCounter } from './StreakCounter';
 import { AchievementBadge } from './AchievementBadge';
@@ -13,10 +13,11 @@ import { useTheme } from '../../hooks/useTheme';
 
 interface StatsPanelProps {
   progress: PathProgress;
+  globalStreak: DailyStreak;
   onShowAchievements?: () => void;
 }
 
-export const StatsPanel: React.FC<StatsPanelProps> = ({ progress, onShowAchievements }) => {
+export const StatsPanel: React.FC<StatsPanelProps> = ({ progress, globalStreak, onShowAchievements }) => {
   const { theme } = useTheme();
 
   // Calculate XP and level info (with safety checks for new fields)
@@ -83,8 +84,8 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({ progress, onShowAchievem
         </div>
       </div>
 
-      {/* Streak Counter */}
-      {progress.streak && <StreakCounter streak={progress.streak} />}
+      {/* Streak Counter (Global across all topics) */}
+      <StreakCounter streak={globalStreak} />
 
       {/* Quick Stats */}
       <div
