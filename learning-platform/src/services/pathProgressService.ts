@@ -363,6 +363,13 @@ class PathProgressService {
       // Recalculate from session history on load
       this.updateWeeklyStats(progress);
 
+      console.log('📊 Loaded progress with session history:', {
+        category,
+        sessionCount: progress.sessionHistory?.length || 0,
+        sessions: progress.sessionHistory?.map(s => ({ date: s.date, problems: s.problemsSolved })) || [],
+        weeklyProblems: progress.weeklyStats?.problemsSolved || 0,
+      });
+
       return progress;
     } catch (error) {
       console.error('Failed to load unified progress:', error);
@@ -501,9 +508,11 @@ class PathProgressService {
     const timer = setTimeout(async () => {
       try {
         console.log(`💾 Auto-saving progress to Firestore for ${category}...`);
+        console.log('📊 SessionHistory being saved:', pathProgress.sessionHistory);
         // Extract displayName from first node's title, or fall back to category
         const displayName = allNodes[0]?.title?.split(' - ')[0] || category;
         const firestoreProgress = pathProgressToFirestore(pathProgress, category, displayName, allNodes);
+        console.log('📊 Firestore sessionHistory:', firestoreProgress.sessionHistory);
         await savePracticeProgress(uid, category, firestoreProgress);
         console.log(`✅ Progress auto-saved to Firestore`);
       } catch (error) {
@@ -684,10 +693,21 @@ class PathProgressService {
   }
 
   /**
+   * Helper to get local date string without timezone conversion
+   */
+  private getLocalDateString(date: Date = new Date()): string {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  /**
    * Update today's session stats for daily goal tracking
    */
   private updateTodaySessionStats(pathProgress: PathProgress, xpEarned: number): void {
-    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    // Use local timezone to avoid UTC date shift issues
+    const today = this.getLocalDateString();
 
     // Initialize sessionHistory if it doesn't exist
     if (!pathProgress.sessionHistory) {
@@ -737,10 +757,10 @@ class PathProgressService {
       return;
     }
 
-    // Get date 7 days ago
+    // Get date 7 days ago using local timezone
     const weekAgo = new Date();
     weekAgo.setDate(weekAgo.getDate() - 7);
-    const weekAgoStr = weekAgo.toISOString().split('T')[0];
+    const weekAgoStr = this.getLocalDateString(weekAgo);
 
     // Filter sessions from the last 7 days
     const thisWeekSessions = pathProgress.sessionHistory.filter(s => s.date >= weekAgoStr);
@@ -786,4 +806,14 @@ class PathProgressService {
   }
 }
 
-export const pathProgressService = new PathProgressService();
+// Lazy initialization using Proxy to avoid circular dependency TDZ errors
+let _instance: PathProgressService | null = null;
+
+export const pathProgressService = new Proxy({} as PathProgressService, {
+  get(_, prop) {
+    if (!_instance) {
+      _instance = new PathProgressService();
+    }
+    return (_instance as any)[prop];
+  }
+});
