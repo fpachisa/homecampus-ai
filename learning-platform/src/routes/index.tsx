@@ -13,10 +13,10 @@ const ParentDashboard = lazy(() => import('../components/parent/ParentDashboard'
 const ErrorBoundary = lazy(() => import('../components/ErrorBoundary'));
 const GreetingsViewer = lazy(() => import('../pages/GreetingsViewer'));
 
-// Sub-routers (to be created)
-import LearnRouter from './LearnRouter';
-import PracticeRouter from './PracticeRouter';
-import DevRouter from './DevRouter';
+// Lazy load sub-routers for better code splitting
+const LearnRouter = lazy(() => import('./LearnRouter'));
+const PracticeRouter = lazy(() => import('./PracticeRouter'));
+const DevRouter = lazy(() => import('./DevRouter'));
 
 // Loading component for lazy-loaded routes
 const PageLoader = () => (

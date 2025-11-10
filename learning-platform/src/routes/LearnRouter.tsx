@@ -1,5 +1,8 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route, useParams, Navigate } from 'react-router-dom';
-import MainLayout from '../components/layout/MainLayout';
+
+// Lazy load MainLayout (contains all Socratic learning logic)
+const MainLayout = lazy(() => import('../components/layout/MainLayout'));
 
 /**
  * LearnRouter handles all /learn/* routes
@@ -41,7 +44,15 @@ const SocraticSession = () => {
     return <Navigate to="/home" replace />;
   }
 
-  return <MainLayout />;
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+        <p>Loading...</p>
+      </div>
+    }>
+      <MainLayout />
+    </Suspense>
+  );
 };
 
 export default function LearnRouter() {

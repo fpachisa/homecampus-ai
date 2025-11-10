@@ -1,10 +1,12 @@
+import { lazy, Suspense, useState, useEffect } from 'react';
 import { Routes, Route, useParams, Navigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import { useAppNavigation } from '../hooks/useAppNavigation';
 import { pathConfigLoader } from '../services/pathConfigLoader';
-import InteractivePathView from '../components/practice/InteractivePathView';
-import PracticeSessionView from '../components/practice/PracticeSessionView';
 import type { PathNode } from '../types/practice';
+
+// Lazy load heavy practice components
+const InteractivePathView = lazy(() => import('../components/practice/InteractivePathView'));
+const PracticeSessionView = lazy(() => import('../components/practice/PracticeSessionView'));
 
 /**
  * PracticeRouter handles all /practice/* routes
@@ -31,7 +33,15 @@ const PathMapView = () => {
   }
 
   // InteractivePathView now reads pathId from URL params internally
-  return <InteractivePathView />;
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+        <p>Loading...</p>
+      </div>
+    }>
+      <InteractivePathView />
+    </Suspense>
+  );
 };
 
 // Active practice session on a specific node
@@ -72,13 +82,19 @@ const PracticeSession = () => {
   }
 
   return (
-    <PracticeSessionView
-      category={pathId}
-      difficulty="easy"
-      node={node}
-      onComplete={() => goToPractice(pathId)}
-      onBack={() => goToPractice(pathId)}
-    />
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+        <p>Loading...</p>
+      </div>
+    }>
+      <PracticeSessionView
+        category={pathId}
+        difficulty="easy"
+        node={node}
+        onComplete={() => goToPractice(pathId)}
+        onBack={() => goToPractice(pathId)}
+      />
+    </Suspense>
   );
 };
 

@@ -1,10 +1,12 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import AvatarTest from '../components/AvatarTest';
-import QuestionPreviewPage from '../components/QuestionPreviewPage';
-import VisualizerTestPage from '../pages/VisualizerTestPage';
-import NotesViewerPage from '../pages/NotesViewerPage';
-import QuestionBankViewer from '../components/QuestionBankViewer';
-// Import other dev components as needed
+
+// Lazy load dev components (not needed in production)
+const AvatarTest = lazy(() => import('../components/AvatarTest'));
+const QuestionPreviewPage = lazy(() => import('../components/QuestionPreviewPage'));
+const VisualizerTestPage = lazy(() => import('../pages/VisualizerTestPage'));
+const NotesViewerPage = lazy(() => import('../pages/NotesViewerPage'));
+const QuestionBankViewer = lazy(() => import('../components/QuestionBankViewer'));
 
 /**
  * DevRouter handles all /dev/* routes
@@ -29,24 +31,56 @@ const TTSTestPage = () => {
   );
 };
 
+// Loading fallback for dev tools
+const DevLoader = () => (
+  <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+    <p>Loading dev tool...</p>
+  </div>
+);
+
 // Avatar Testing Page
 const AvatarTestPage = () => {
-  return <AvatarTest />;
+  return (
+    <Suspense fallback={<DevLoader />}>
+      <AvatarTest />
+    </Suspense>
+  );
 };
 
 // Math Visualizer Testing Lab
 const VisualizerGallery = () => {
-  return <VisualizerTestPage />;
+  return (
+    <Suspense fallback={<DevLoader />}>
+      <VisualizerTestPage />
+    </Suspense>
+  );
 };
 
 // Question Preview Tool - uses QuestionPreviewPage component
 const QuestionPreview = () => {
-  return <QuestionPreviewPage />;
+  return (
+    <Suspense fallback={<DevLoader />}>
+      <QuestionPreviewPage />
+    </Suspense>
+  );
 };
 
 // Notes Viewer - view and test all notes components
 const NotesViewer = () => {
-  return <NotesViewerPage />;
+  return (
+    <Suspense fallback={<DevLoader />}>
+      <NotesViewerPage />
+    </Suspense>
+  );
+};
+
+// Question Bank Viewer
+const QuestionBankView = () => {
+  return (
+    <Suspense fallback={<DevLoader />}>
+      <QuestionBankViewer />
+    </Suspense>
+  );
 };
 
 // Dev home - lists all dev tools
@@ -101,7 +135,7 @@ export default function DevRouter() {
       <Route path="visualizers" element={<VisualizerGallery />} />
       <Route path="notes" element={<NotesViewer />} />
       <Route path="preview" element={<QuestionPreview />} />
-      <Route path="question-bank" element={<QuestionBankViewer />} />
+      <Route path="question-bank" element={<QuestionBankView />} />
       <Route path="*" element={<Navigate to="/dev" replace />} />
     </Routes>
   );

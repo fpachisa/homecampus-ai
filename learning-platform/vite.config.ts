@@ -24,31 +24,59 @@ export default defineConfig({
       ],
 
       output: {
-        // Manual chunking for better caching
-        manualChunks: {
-          // React vendor bundle
-          'react-vendor': [
-            'react',
-            'react-dom',
-            'react-router-dom'
-          ],
-          // Firebase vendor bundle
-          'firebase-vendor': [
-            'firebase/app',
-            'firebase/auth',
-            'firebase/firestore',
-            'firebase/storage'
-          ],
-          // AI vendor bundle (largest dependencies)
-          'ai-vendor': [
-            '@google/generative-ai',
-            '@anthropic-ai/sdk'
-          ],
-          // Math rendering vendor
-          'math-vendor': [
-            'katex',
-            'marked'
-          ]
+        // Manual chunking for better caching and code splitting
+        manualChunks: (id) => {
+          // Vendor chunks for third-party libraries
+          if (id.includes('node_modules')) {
+            // React and routing
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'react-vendor';
+            }
+            // Firebase
+            if (id.includes('firebase')) {
+              return 'firebase-vendor';
+            }
+            // AI SDKs
+            if (id.includes('@google/generative-ai') || id.includes('@anthropic-ai/sdk')) {
+              return 'ai-vendor';
+            }
+            // Math rendering
+            if (id.includes('katex') || id.includes('marked')) {
+              return 'math-vendor';
+            }
+            // Lucide icons
+            if (id.includes('lucide-react')) {
+              return 'icons-vendor';
+            }
+            // Other node_modules
+            return 'vendor';
+          }
+
+          // App code chunking by feature
+          // Practice mode components
+          if (id.includes('/components/practice/')) {
+            return 'practice';
+          }
+          // Learning/Socratic mode components
+          if (id.includes('/components/layout/') || id.includes('/components/ChatPanel')) {
+            return 'learn';
+          }
+          // Math tools/visualizers
+          if (id.includes('/components/math-tools/')) {
+            return 'math-tools';
+          }
+          // Parent dashboard
+          if (id.includes('/components/parent/')) {
+            return 'parent';
+          }
+          // Dev tools (won't be in production build anyway)
+          if (id.includes('/components/AvatarTest') || id.includes('/components/QuestionPreview') || id.includes('/pages/VisualizerTest')) {
+            return 'dev-tools';
+          }
+          // Onboarding
+          if (id.includes('/components/onboarding/')) {
+            return 'onboarding';
+          }
         },
 
         // Asset naming for cache busting
