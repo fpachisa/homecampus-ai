@@ -588,7 +588,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   }, [state.messages]);
 
 const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -1531,6 +1531,7 @@ const handleStudentSubmit = async (input: string) => {
 
       // Stage 2: Update loading stage based on evaluator's decision
       const stageMap: Record<string, LoadingStage> = {
+        'CLARIFY_CONCEPT': 'generating_hint', // Use same loading stage as hint
         'GIVE_HINT': 'generating_hint',
         'GIVE_SOLUTION': 'generating_solution',
         'NEW_PROBLEM': 'generating_question',
@@ -1764,16 +1765,63 @@ const handleStudentSubmit = async (input: string) => {
           console.error('Failed to generate new problem:', error);
           throw error;
         }
-      } else {
-        // GIVE_HINT, CELEBRATE: Use Tutor Agent (returns speech + display)
-        console.log('📝 Using Tutor Agent for:', evaluatorOutput.action);
+      } else if (evaluatorOutput.action === "CLARIFY_CONCEPT") {
+        // CLARIFY_CONCEPT: Use Concept Clarifier Agent (direct explanations)
+        console.log('💡 Using Concept Clarifier Agent for CLARIFY_CONCEPT');
 
         if (!problemState?.currentProblemText) {
-          console.error('No current problem text for tutor agent');
+          console.error('No current problem text for concept clarifier agent');
           throw new Error('No current problem available');
         }
 
-        const tutorResponse = await aiService.current.generateTutorResponse(
+        const clarificationResponse = await aiService.current.generateConceptClarification(
+          problemState.currentProblemText,
+          input,
+          recentHistory,
+          problemTypeForExecution,
+          topicId,
+          evaluatorOutput.reasoning,
+          sectionProgress.currentSection
+        );
+
+        console.log('Concept Clarifier response:', clarificationResponse);
+
+        // Extract and validate mathTool if present
+        const mathTool = validateMathTool(clarificationResponse.mathTool);
+
+        // STEP 5a: Speak the response via avatar
+        if (clarificationResponse.speech && clarificationResponse.speech.text) {
+          const emotion = clarificationResponse.speech.emotion || 'warm';
+
+          // Speak with callback to show display content after speech completes
+          speakText(clarificationResponse.speech.text, emotion, async () => {
+            // STEP 5b: After speech, show display content
+            if (clarificationResponse.display && clarificationResponse.display.content &&
+                clarificationResponse.display.content !== "none" &&
+                clarificationResponse.display.content !== null) {
+              addMessage('tutor', clarificationResponse.display.content, {
+                problemType: problemTypeForExecution,
+                mathTool: mathTool,
+                messageType: 'clarification' // Tag as clarification
+              });
+
+              // Auto-focus input after displaying clarification
+              setTimeout(() => {
+                inputAreaRef.current?.focus();
+              }, 300);
+            }
+          });
+        }
+      } else if (evaluatorOutput.action === "GIVE_HINT") {
+        // GIVE_HINT: Use Hint Agent (Socratic scaffolding)
+        console.log('🎯 Using Hint Agent for GIVE_HINT');
+
+        if (!problemState?.currentProblemText) {
+          console.error('No current problem text for hint agent');
+          throw new Error('No current problem available');
+        }
+
+        const hintResponse = await aiService.current.generateHint(
           evaluatorOutput,
           problemState.currentProblemText,
           input,
@@ -1783,36 +1831,92 @@ const handleStudentSubmit = async (input: string) => {
           sectionProgress.currentSection
         );
 
-        console.log('Tutor response:', tutorResponse);
+        console.log('Hint Agent response:', hintResponse);
 
         // Extract and validate mathTool if present
-        const mathTool = validateMathTool(tutorResponse.mathTool);
+        const mathTool = validateMathTool(hintResponse.mathTool);
 
         // STEP 5a: Speak the response via avatar
-        if (tutorResponse.speech && tutorResponse.speech.text) {
-          const emotion = tutorResponse.speech.emotion || 'neutral';
+        if (hintResponse.speech && hintResponse.speech.text) {
+          const emotion = hintResponse.speech.emotion || 'encouraging';
 
           // Speak with callback to show display content after speech completes
-          speakText(tutorResponse.speech.text, emotion, async () => {
-            // STEP 5b: After speech, show display content (if any)
-            // Skip if content is "none" or null (speech-only response)
-            if (tutorResponse.display && tutorResponse.display.content &&
-                tutorResponse.display.content !== "none" &&
-                tutorResponse.display.content !== null) {
-              addMessage('tutor', tutorResponse.display.content, {
+          speakText(hintResponse.speech.text, emotion, async () => {
+            // STEP 5b: After speech, show display content
+            if (hintResponse.display && hintResponse.display.content &&
+                hintResponse.display.content !== "none" &&
+                hintResponse.display.content !== null) {
+              addMessage('tutor', hintResponse.display.content, {
                 problemType: problemTypeForExecution,
-                mathTool: mathTool // Include mathTool if present
+                mathTool: mathTool,
+                messageType: 'hint' // Tag as hint
               });
 
               // Auto-focus input after displaying hint
-              if (tutorResponse.display.type === 'hint') {
-                setTimeout(() => {
-                  inputAreaRef.current?.focus();
-                }, 300); // Small delay for smooth UX
-              }
+              setTimeout(() => {
+                inputAreaRef.current?.focus();
+              }, 300);
             }
           });
         }
+      } else if (evaluatorOutput.action === "CELEBRATE") {
+        // CELEBRATE: Use Celebration Agent (with stats and learning summary)
+        console.log('🎉 Using Celebration Agent for CELEBRATE');
+
+        // Calculate session statistics for celebration
+        const sessionStartTime = new Date(state.sessionStats.startTime);
+        const sessionDuration = Math.round((Date.now() - sessionStartTime.getTime()) / 1000);
+        const totalCorrect = Object.values(sectionProgress.sectionHistory || {})
+          .reduce((sum, entry) => sum + (entry.questionsCorrect || 0), 0);
+        const totalAttempted = Object.values(sectionProgress.sectionHistory || {})
+          .reduce((sum, entry) => sum + (entry.questionsAttempted || 0), 0);
+        const accuracyRate = totalAttempted > 0
+          ? Math.round((totalCorrect / totalAttempted) * 100)
+          : 0;
+
+        // Format time spent
+        const hours = Math.floor(sessionDuration / 3600);
+        const minutes = Math.floor((sessionDuration % 3600) / 60);
+        const timeSpentFormatted = hours > 0
+          ? `${hours}h ${minutes}m`
+          : `${minutes} minutes`;
+
+        const celebrationStats = {
+          timeSpent: timeSpentFormatted,
+          problemsSolved: problemsCompleted,
+          sectionsCompleted: sectionProgress.masteredSections?.length || 0,
+          accuracy: `${accuracyRate}%`,
+          sectionDetails: sectionProgress.masteredSections?.join(', ') || ''
+        };
+
+        const celebrationResponse = await aiService.current.generateCelebration(
+          topicId,
+          recentHistory,
+          evaluatorOutput.reasoning,
+          celebrationStats
+        );
+
+        console.log('Celebration Agent response:', celebrationResponse);
+
+        // STEP 5a: Speak the celebration via avatar
+        if (celebrationResponse.speech && celebrationResponse.speech.text) {
+          const emotion = celebrationResponse.speech.emotion || 'celebratory';
+
+          // Speak with callback to show display content after speech completes
+          speakText(celebrationResponse.speech.text, emotion, async () => {
+            // STEP 5b: After speech, show display content with stats
+            if (celebrationResponse.display && celebrationResponse.display.content) {
+              addMessage('tutor', celebrationResponse.display.content, {
+                problemType: problemTypeForExecution,
+                messageType: 'celebration' // Tag as celebration
+              });
+            }
+          });
+        }
+      } else {
+        // Fallback for any other actions (shouldn't happen)
+        console.warn('Unknown evaluator action:', evaluatorOutput.action);
+        throw new Error(`Unknown evaluator action: ${evaluatorOutput.action}`);
       }
 
       // STEP 5: Handle GIVE_SOLUTION display
@@ -2139,7 +2243,7 @@ const handleStudentSubmit = async (input: string) => {
               />
             </div>
           )}
-          {state.messages.map(message => {
+          {state.messages.map((message, index) => {
             // Only pass the callback to messages that have step-by-step visualization OR plain text solution
             const hasStepByStepVisualization = message.visualization &&
               typeof message.visualization === 'object' &&
@@ -2150,14 +2254,17 @@ const handleStudentSubmit = async (input: string) => {
               typeof message.visualization === 'object' &&
               message.visualization.isPlainTextSolution === true;
 
+            const isLastMessage = index === state.messages.length - 1;
+
             return (
-              <MessageBubble
-                key={message.id}
-                message={message}
-                problemText={problemState?.currentProblemText}
-                topicId={topicId}
-                onContinue={(hasStepByStepVisualization || hasPlainTextSolution) ? () => handleStudentSubmit("continue learning") : undefined}
-              />
+              <div key={message.id} ref={isLastMessage ? messagesEndRef : null}>
+                <MessageBubble
+                  message={message}
+                  problemText={problemState?.currentProblemText}
+                  topicId={topicId}
+                  onContinue={(hasStepByStepVisualization || hasPlainTextSolution) ? () => handleStudentSubmit("continue learning") : undefined}
+                />
+              </div>
             );
           })}
           {isLoading && (
@@ -2205,7 +2312,6 @@ const handleStudentSubmit = async (input: string) => {
               </div>
             </div>
           )}
-          <div ref={messagesEndRef} />
         </div>
       </div>
 

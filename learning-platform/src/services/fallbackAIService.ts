@@ -210,25 +210,6 @@ class FallbackAIService implements AIService {
     );
   }
 
-  async generateCelebration(
-    finalScore: number,
-    problemsCompleted: number,
-    sessionDuration: number,
-    topicId: string = 'fraction-division-by-whole-numbers'
-  ): Promise<string> {
-    try {
-      return await this.executeWithFallback(
-        (service) => service.generateCelebration(finalScore, problemsCompleted, sessionDuration, topicId),
-        'generateCelebration'
-      );
-    } catch (error) {
-      console.error('All celebration services failed, providing fallback message:', error);
-
-      // Final safety fallback when both Gemini and Claude fail
-      return `🎉 Amazing work! You've completed the fraction division subtopic with a score of ${finalScore.toFixed(2)}/1.00! You solved ${problemsCompleted} problems and demonstrated excellent understanding. Keep up the great work! 🌟`;
-    }
-  }
-
   async generateQuestion(
     problemType: number,
     topicId: string = 'fraction-division-by-whole-numbers',
@@ -352,6 +333,126 @@ class FallbackAIService implements AIService {
         }
       };
     }
+  }
+
+  /**
+   * NEW 5-AGENT ARCHITECTURE: Concept Clarifier Agent
+   * Provides direct concept explanations without counting as hints
+   */
+  async generateConceptClarification(
+    currentProblem: string,
+    studentResponse: string,
+    recentHistory: Message[],
+    problemType: number,
+    topicId: string,
+    evaluatorReasoning: string,
+    currentSection?: string
+  ): Promise<import('../prompt-library/types/agents').ConceptClarifierOutput> {
+    try {
+      return await this.executeWithFallback(
+        (service) => service.generateConceptClarification(currentProblem, studentResponse, recentHistory, problemType, topicId, evaluatorReasoning, currentSection),
+        'generateConceptClarification'
+      );
+    } catch (error) {
+      console.error('All concept clarifier services failed, providing fallback response:', error);
+
+      return {
+        speech: {
+          text: "That's a great question! Let me explain: " + evaluatorReasoning,
+          emotion: 'warm'
+        },
+        display: {
+          content: evaluatorReasoning || "I apologize, but I'm having trouble providing a detailed explanation right now. Let's try to work through the problem together.",
+          showAfterSpeech: true,
+          type: 'clarification'
+        }
+      };
+    }
+  }
+
+  /**
+   * NEW 5-AGENT ARCHITECTURE: Hint Agent
+   * Provides Socratic scaffolding for problem-solving
+   */
+  async generateHint(
+    evaluatorOutput: EvaluatorOutput,
+    currentProblem: string,
+    studentResponse: string,
+    recentHistory: Message[],
+    problemType: number,
+    topicId: string,
+    currentSection?: string
+  ): Promise<import('../prompt-library/types/agents').HintOutput> {
+    try {
+      return await this.executeWithFallback(
+        (service) => service.generateHint(evaluatorOutput, currentProblem, studentResponse, recentHistory, problemType, topicId, currentSection),
+        'generateHint'
+      );
+    } catch (error) {
+      console.error('All hint services failed, providing fallback response:', error);
+
+      return {
+        speech: {
+          text: "Let me give you a hint to help you solve this problem.",
+          emotion: 'encouraging'
+        },
+        display: {
+          content: evaluatorOutput.reasoning || "Think about the steps you need to solve this problem. Can you try again?",
+          showAfterSpeech: true,
+          type: 'hint'
+        }
+      };
+    }
+  }
+
+  /**
+   * NEW 5-AGENT ARCHITECTURE: Celebration Agent
+   * Overload 1: Legacy signature (deprecated)
+   * Overload 2: NEW 5-agent architecture with stats
+   */
+  async generateCelebration(finalScore: number, problemsCompleted: number, sessionDuration: number, topicId: string): Promise<string>;
+  async generateCelebration(
+    topicId: string,
+    recentHistory: Message[],
+    evaluatorReasoning: string,
+    stats: { timeSpent: string; problemsSolved: number; sectionsCompleted: number; accuracy: string; sectionDetails?: string }
+  ): Promise<import('../prompt-library/types/agents').CelebrationOutput>;
+  async generateCelebration(
+    topicIdOrFinalScore: string | number,
+    recentHistoryOrProblemsCompleted: Message[] | number,
+    evaluatorReasoningOrSessionDuration: string | number,
+    statsOrTopicId?: { timeSpent: string; problemsSolved: number; sectionsCompleted: number; accuracy: string; sectionDetails?: string } | string
+  ): Promise<import('../prompt-library/types/agents').CelebrationOutput | string> {
+    // NEW signature (5-agent architecture)
+    if (typeof topicIdOrFinalScore === 'string' && Array.isArray(recentHistoryOrProblemsCompleted) && typeof evaluatorReasoningOrSessionDuration === 'string' && statsOrTopicId && typeof statsOrTopicId === 'object') {
+      try {
+        return await this.executeWithFallback(
+          (service) => (service as any).generateCelebration(topicIdOrFinalScore, recentHistoryOrProblemsCompleted, evaluatorReasoningOrSessionDuration, statsOrTopicId),
+          'generateCelebration (new)'
+        );
+      } catch (error) {
+        console.error('All celebration services failed, providing fallback response:', error);
+
+        return {
+          speech: {
+            text: "Congratulations on completing this topic! You've done amazing work!",
+            emotion: 'celebratory'
+          },
+          display: {
+            content: `## 🎉 Topic Completed!\n\nYou've mastered this topic! Great work!\n\n**Your Stats:**\n- Time spent: ${statsOrTopicId.timeSpent}\n- Problems solved: ${statsOrTopicId.problemsSolved}\n- Accuracy: ${statsOrTopicId.accuracy}`,
+            showAfterSpeech: true,
+            type: 'celebration'
+          },
+          stats: statsOrTopicId
+        };
+      }
+    }
+
+    // OLD signature (legacy - for backward compatibility)
+    return this.executeWithFallback(
+      (service) => service.generateCelebration(topicIdOrFinalScore as number, recentHistoryOrProblemsCompleted as number, evaluatorReasoningOrSessionDuration as number, statsOrTopicId as string),
+      'generateCelebration (legacy)'
+    );
   }
 
   async extractVisualizationData(

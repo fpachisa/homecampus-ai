@@ -16,6 +16,7 @@ export const EMOTION_PROMPTS: Record<EmotionType, string> = {
   neutral: 'Say the following in a clear, friendly, and conversational way:',
   warm: 'Say the following in a warm, welcoming, and friendly way:',
   excited: 'Say the following with high energy, enthusiasm, and excitement:',
+  proud: 'Say the following with a sense of pride, accomplishment, and satisfaction:',
 };
 
 /**

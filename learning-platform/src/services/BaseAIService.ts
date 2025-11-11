@@ -403,7 +403,10 @@ Return ONLY a JSON object with this structure:
     }
   }
 
-  async generateCelebration(finalScore: number, problemsCompleted: number, sessionDuration: number, topicId: string = 'fraction-division-by-whole-numbers'): Promise<string> {
+  /**
+   * LEGACY: Generate celebration message (deprecated - use new overload with stats)
+   */
+  async generateCelebrationLegacy(finalScore: number, problemsCompleted: number, sessionDuration: number, topicId: string = 'fraction-division-by-whole-numbers'): Promise<string> {
     const prompt = promptResolver.resolveCelebration({
       topicId: topicId as any,
       finalScore,
@@ -415,7 +418,7 @@ Return ONLY a JSON object with this structure:
       const text = await this.provider.generateContent(prompt);
 
       if (!text) {
-        return `🎉 Congratulations! You've mastered fraction division with a score of ${finalScore.toFixed(2)}/1.00! You completed ${problemsCompleted} problems and showed excellent understanding. Great job - you're ready for more advanced math topics! 🌟`;
+        return `🎉 Congratulations! You've mastered the topic with a score of ${finalScore.toFixed(2)}/1.00! You completed ${problemsCompleted} problems and showed excellent understanding. Great job - you're ready for more advanced topics! 🌟`;
       }
 
       return text;
@@ -803,6 +806,252 @@ Return ONLY a JSON object with this structure:
       console.error('Error in Tutor Agent:', error);
       throw AIServiceError.fromHttpError(error);
     }
+  }
+
+  /**
+   * Generate concept clarification response (NEW - for CLARIFY_CONCEPT action)
+   * Provides direct explanations to conceptual questions without counting as hints
+   */
+  async generateConceptClarification(
+    currentProblem: string,
+    studentResponse: string,
+    recentHistory: Message[],
+    problemType: number,
+    topicId: string,
+    evaluatorReasoning: string,
+    currentSection?: string
+  ): Promise<import('../prompt-library/types/agents').ConceptClarifierOutput> {
+    try {
+      console.log('=== CONCEPT CLARIFIER AGENT START ===');
+      console.log('Student question:', studentResponse);
+      console.log('Evaluator reasoning:', evaluatorReasoning);
+
+      // Format history for prompt
+      const historyText = formatConversationHistory(recentHistory);
+
+      // Get the prompt for the concept clarifier agent
+      const prompt = promptResolver.resolveConceptClarifierAgent({
+        topicId: topicId as any,
+        currentProblemType: problemType,
+        recentHistory: historyText,
+        studentResponse,
+        currentProblemText: currentProblem,
+        evaluatorReasoning,
+        currentSection
+      });
+
+      console.log('Calling AI with Concept Clarifier Agent prompt...');
+      console.log('Full concept clarification prompt:', prompt);
+
+      const responseText = await this.provider.generateContent(prompt);
+
+      console.log('Concept Clarifier Agent raw response:', responseText);
+
+      // Parse JSON response using safeParseJSON
+      const parsedResponse = safeParseJSON<import('../prompt-library/types/agents').ConceptClarifierOutput>(
+        responseText,
+        ['speech', 'display'],
+        {
+          speech: {
+            text: "Let me explain that concept.",
+            emotion: 'warm'
+          },
+          display: {
+            content: "Here's an explanation of the concept.",
+            showAfterSpeech: false,
+            type: 'clarification'
+          }
+        }
+      );
+
+      console.log('Parsed concept clarification response:', parsedResponse);
+
+      // Validate required fields
+      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid concept clarification response');
+      validateRequiredKeys(parsedResponse.speech, ['text', 'emotion'], 'Invalid speech structure');
+
+      console.log('=== CONCEPT CLARIFIER AGENT COMPLETE ===');
+      return parsedResponse;
+
+    } catch (error) {
+      console.error('Error in Concept Clarifier Agent:', error);
+      throw AIServiceError.fromHttpError(error);
+    }
+  }
+
+  /**
+   * Generate hint response (NEW - for GIVE_HINT action only)
+   * Provides Socratic scaffolding for problem-solving
+   */
+  async generateHint(
+    evaluatorOutput: EvaluatorOutput,
+    currentProblem: string,
+    studentResponse: string,
+    recentHistory: Message[],
+    problemType: number,
+    topicId: string,
+    currentSection?: string
+  ): Promise<import('../prompt-library/types/agents').HintOutput> {
+    try {
+      console.log('=== HINT AGENT START ===');
+      console.log('Hint level:', evaluatorOutput.hintLevel);
+      console.log('Evaluator reasoning:', evaluatorOutput.reasoning);
+
+      // Format history for prompt
+      const historyText = formatConversationHistory(recentHistory);
+
+      // Get the prompt for the hint agent
+      const prompt = promptResolver.resolveHintAgent({
+        topicId: topicId as any,
+        currentProblemType: problemType,
+        recentHistory: historyText,
+        studentResponse,
+        currentProblemText: currentProblem,
+        evaluatorAssessment: {
+          answerCorrect: evaluatorOutput.answerCorrect,
+          understanding: evaluatorOutput.understanding,
+          conceptGaps: evaluatorOutput.conceptGaps
+        },
+        evaluatorReasoning: evaluatorOutput.reasoning,
+        hintLevel: evaluatorOutput.hintLevel || 1,
+        currentSection
+      });
+
+      console.log('Calling AI with Hint Agent prompt...');
+      console.log('Full hint prompt:', prompt);
+
+      const responseText = await this.provider.generateContent(prompt);
+
+      console.log('Hint Agent raw response:', responseText);
+
+      // Parse JSON response using safeParseJSON
+      const parsedResponse = safeParseJSON<import('../prompt-library/types/agents').HintOutput>(
+        responseText,
+        ['speech', 'display'],
+        {
+          speech: {
+            text: "Let me give you a hint.",
+            emotion: 'encouraging'
+          },
+          display: {
+            content: "Here's a hint to help you.",
+            showAfterSpeech: false,
+            type: 'hint'
+          }
+        }
+      );
+
+      console.log('Parsed hint response:', parsedResponse);
+
+      // Validate required fields
+      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid hint response');
+      validateRequiredKeys(parsedResponse.speech, ['text', 'emotion'], 'Invalid speech structure');
+
+      console.log('=== HINT AGENT COMPLETE ===');
+      return parsedResponse;
+
+    } catch (error) {
+      console.error('Error in Hint Agent:', error);
+      throw AIServiceError.fromHttpError(error);
+    }
+  }
+
+  /**
+   * Generate celebration response
+   * Overload 1: Legacy signature (deprecated)
+   * Overload 2: NEW 5-agent architecture with stats
+   */
+  async generateCelebration(finalScore: number, problemsCompleted: number, sessionDuration: number, topicId: string): Promise<string>;
+  async generateCelebration(
+    topicId: string,
+    recentHistory: Message[],
+    evaluatorReasoning: string,
+    stats: {
+      timeSpent: string;
+      problemsSolved: number;
+      sectionsCompleted: number;
+      accuracy: string;
+      sectionDetails?: string;
+    }
+  ): Promise<import('../prompt-library/types/agents').CelebrationOutput>;
+  async generateCelebration(
+    topicIdOrFinalScore: string | number,
+    recentHistoryOrProblemsCompleted: Message[] | number,
+    evaluatorReasoningOrSessionDuration: string | number,
+    statsOrTopicId?: { timeSpent: string; problemsSolved: number; sectionsCompleted: number; accuracy: string; sectionDetails?: string } | string
+  ): Promise<import('../prompt-library/types/agents').CelebrationOutput | string> {
+    // NEW signature (5-agent architecture)
+    if (typeof topicIdOrFinalScore === 'string' && Array.isArray(recentHistoryOrProblemsCompleted) && typeof evaluatorReasoningOrSessionDuration === 'string' && statsOrTopicId && typeof statsOrTopicId === 'object') {
+      const topicId = topicIdOrFinalScore;
+      const recentHistory = recentHistoryOrProblemsCompleted;
+      const evaluatorReasoning = evaluatorReasoningOrSessionDuration;
+      const stats = statsOrTopicId;
+    try {
+      console.log('=== CELEBRATION AGENT START ===');
+      console.log('Topic completed:', topicId);
+      console.log('Stats:', stats);
+
+      // Format history for prompt
+      const historyText = formatConversationHistory(recentHistory);
+
+      // Get the prompt for the celebration agent
+      const prompt = promptResolver.resolveCelebrationAgent({
+        topicId: topicId as any,
+        recentHistory: historyText,
+        evaluatorReasoning,
+        timeSpent: stats.timeSpent,
+        problemsSolved: stats.problemsSolved,
+        sectionsCompleted: stats.sectionsCompleted,
+        accuracy: stats.accuracy,
+        sectionDetails: stats.sectionDetails || ''
+      });
+
+      console.log('Calling AI with Celebration Agent prompt...');
+
+      const responseText = await this.provider.generateContent(prompt);
+
+      console.log('Celebration Agent raw response:', responseText);
+
+      // Parse JSON response using safeParseJSON
+      const parsedResponse = safeParseJSON<import('../prompt-library/types/agents').CelebrationOutput>(
+        responseText,
+        ['speech', 'display'],
+        {
+          speech: {
+            text: "Congratulations on completing this topic!",
+            emotion: 'celebratory'
+          },
+          display: {
+            content: "You've completed all sections! Great work!",
+            showAfterSpeech: false,
+            type: 'celebration'
+          },
+          stats: stats
+        }
+      );
+
+      console.log('Parsed celebration response:', parsedResponse);
+
+      // Validate required fields
+      validateRequiredKeys(parsedResponse, ['speech', 'display'], 'Invalid celebration response');
+      validateRequiredKeys(parsedResponse.speech, ['text', 'emotion'], 'Invalid speech structure');
+
+      console.log('=== CELEBRATION AGENT COMPLETE ===');
+      return parsedResponse;
+
+    } catch (error) {
+      console.error('Error in Celebration Agent:', error);
+      throw AIServiceError.fromHttpError(error);
+    }
+    }
+
+    // OLD signature (legacy - for backward compatibility)
+    const finalScore = topicIdOrFinalScore as number;
+    const problemsCompleted = recentHistoryOrProblemsCompleted as number;
+    const sessionDuration = evaluatorReasoningOrSessionDuration as number;
+    const topicId = statsOrTopicId as string;
+
+    return this.generateCelebrationLegacy(finalScore, problemsCompleted, sessionDuration, topicId);
   }
 
   async extractStepByStepVisualizations(

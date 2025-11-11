@@ -15,6 +15,11 @@ import {
   SOLUTION_BASE
 } from '../prompt-library';
 
+// Import new specialized agents
+import { CONCEPT_CLARIFIER_BASE, CLARIFICATION_STRATEGIES } from '../prompt-library/core/agents/conceptClarifier';
+import { HINT_AGENT_BASE } from '../prompt-library/core/agents/hintAgent';
+import { CELEBRATION_AGENT_BASE, CELEBRATION_STRATEGIES } from '../prompt-library/core/agents/celebrationAgent';
+
 import { formatConversationHistory } from '../services/utils/responseParser';
 import { getFilteredTools } from '../components/math-tools/mathToolsRegistry';
 import { PromptRegistry } from '../prompt-library/registry/prompt-registry';
@@ -196,6 +201,13 @@ export interface PromptContext {
   userPreferences?: string[];
   excludeContexts?: string[];
   recentProblems?: string[];
+
+  // Celebration stats (NEW for 5-agent architecture)
+  timeSpent?: string;
+  problemsSolved?: number;
+  sectionsCompleted?: number;
+  accuracy?: string;
+  sectionDetails?: string;
 }
 
 export class NewPromptResolver {
@@ -594,7 +606,7 @@ Each greeting should:
       })
 
       .addTask(`Evaluate the student's response against the question asked.
-Determine if the answer is correct and if it answers the main question or is just an intermediate step or answer to a tutor hint.
+First determine if the student is asking a conceptual question, or is trying to answer the main question or is responding to a tutor hint.
 Use the DECISION MATRIX to select the appropriate action.
 Use QUANTITATIVE DATA and masteryRubic of the CURRECT SECTION to determine if section is mastered.
 Provide detailed reasoning that other agents can use to generate appropriate content.
@@ -607,8 +619,8 @@ Return ONLY a JSON object exactly matching the output schema below.`)
         conceptGaps: "string[] - specific concepts student needs to work on",
         sectionMastered: "boolean - true if understanding is mastery",
         advanceToNextSection: "boolean - true if sectionMastered is true",
-        action: "GIVE_HINT | GIVE_SOLUTION | NEW_PROBLEM | CELEBRATE - next action",
-        hintLevel: "1 | 2 | 3 (optional) - hint level if action is GIVE_HINT",
+        action: "CLARIFY_CONCEPT | GIVE_HINT | GIVE_SOLUTION | NEW_PROBLEM | CELEBRATE - next action",
+        hintLevel: "1 | 2 | 3 ....(optional) - hint level if action is GIVE_HINT",
         reasoning: "string - detailed explanation for other agents (plain text, NO LaTeX)"
       });
     return builder.build();
@@ -673,6 +685,172 @@ For CELEBRATE action:
 
 CRITICAL: Return JSON only and in the exact format as OUTPUT SCHEMA. Even if no mathTool used still provide all fields and keep it blank.`)
 .addSection("CRITICAL", "Ask only one question unless the second part is using the answer from the first part.");
+
+    return builder.build();
+  }
+
+  /**
+   * Resolve Concept Clarifier Agent prompt
+   * Handles CLARIFY_CONCEPT action - direct explanatory responses to conceptual questions
+   */
+  resolveConceptClarifierAgent(context: PromptContext): string {
+    const { subtopic, global } = this.getTopicConfig(context.topicId);
+    const scopedMathTools = this.getScopedMathTools(context, subtopic, global);
+    const currentSectionDetail = this.getCurrentSectionDetail(context, subtopic);
+
+    const builder = new PromptBuilder()
+      .addRole(CONCEPT_CLARIFIER_BASE.role)
+      .addSection('RESPONSIBILITIES', CONCEPT_CLARIFIER_BASE.responsibilities)
+      .addSection('CONSTRAINTS', CONCEPT_CLARIFIER_BASE.constraints)
+      .addSection('CLARIFICATION STRATEGIES', CLARIFICATION_STRATEGIES)
+
+      .addFormattingRules(FORMATTING_RULES)
+      .addVisualTools(scopedMathTools)
+
+      // Current problem context
+      .addSection('CURRENT PROBLEM', context.currentProblemText || 'No problem available')
+
+      // Section formulas and objectives (for concept context)
+      .addIf(!!currentSectionDetail?.formulas, (b) => {
+        b.addSection('RELEVANT FORMULAS', currentSectionDetail.formulas);
+      })
+      .addIf(!!currentSectionDetail?.objectives, (b) => {
+        b.addSection('SECTION LEARNING OBJECTIVES', currentSectionDetail.objectives);
+      })
+
+      // Evaluator's reasoning (why this is a conceptual question)
+      .addSection("EVALUATOR'S REASONING", context.evaluatorReasoning || 'Student has a conceptual question')
+
+      // Current context
+      .addSection('CURRENT CONTEXT', {
+        studentQuestion: context.studentResponse || '',
+        currentSection: context.currentSection || ''
+      })
+
+      // Recent history
+      .addSection('RECENT HISTORY', context.recentHistory || '')
+      .addOutputSchema(CONCEPT_CLARIFIER_BASE.outputSchema!)
+
+      .addTask(`Answer the student's conceptual question directly and clearly.
+
+Your approach:
+  - Provide direct explanations (NOT Socratic questions)
+  - Use examples and analogies when helpful
+  - Connect the concept to the current problem
+  - End by tying back to the problem and asking if they're ready to solve the problem
+
+CRITICAL: Return JSON only in the exact format as OUTPUT SCHEMA.`);
+
+    return builder.build();
+  }
+
+  /**
+   * Resolve Hint Agent prompt
+   * Handles GIVE_HINT action - Socratic scaffolding for problem-solving
+   */
+  resolveHintAgent(context: PromptContext): string {
+    const { subtopic, global } = this.getTopicConfig(context.topicId);
+    const scopedMathTools = this.getScopedMathTools(context, subtopic, global);
+    const currentSectionDetail = this.getCurrentSectionDetail(context, subtopic);
+
+    const builder = new PromptBuilder()
+      .addRole(HINT_AGENT_BASE.role)
+      .addSection('RESPONSIBILITIES', HINT_AGENT_BASE.responsibilities)
+      .addSection('CONSTRAINTS', HINT_AGENT_BASE.constraints)
+
+      .addFormattingRules(FORMATTING_RULES)
+      .addVisualTools(scopedMathTools)
+
+      // Current problem (was missing!)
+      .addSection('PROBLEM TO SOLVE', context.currentProblemText || 'No problem available')
+
+      // Section formulas
+      .addIf(!!currentSectionDetail?.formulas, (b) => {
+        b.addSection('RELEVANT FORMULAS', currentSectionDetail.formulas);
+      })
+
+      // Evaluator's assessment and reasoning (primary guidance)
+      .addSection("EVALUATOR'S ASSESSMENT", context.evaluatorAssessment || 'No assessment provided')
+      .addSection("EVALUATOR'S REASONING", context.evaluatorReasoning || 'No reasoning provided')
+
+      // Current context
+      .addSection('CURRENT CONTEXT', {
+        studentResponse: context.studentResponse || '',
+        hintLevel: context.hintLevel || 1,
+        currentSection: context.currentSection || ''
+      })
+
+      // Recent history
+      .addSection('RECENT HISTORY', context.recentHistory || '')
+      .addOutputSchema(HINT_AGENT_BASE.outputSchema!)
+
+      .addTask(`Generate a progressive Socratic hint at level ${context.hintLevel || 1}.
+
+Your approach based on hint level:
+  - Level 1 (Gentle Nudge): Ask what information they have and what they need to find
+  - Level 2 (Specific Guidance): Point to specific formula or concept they should use
+  - Level 3 (Detailed Setup): Show equation setup or first steps without solving
+  - Level 4+ (Near Solution): Highlight final steps or common pitfalls
+
+Use evaluator's reasoning to understand what student missed.
+Guide discovery through questions - don't give the answer directly.
+End with a guiding question.
+
+CRITICAL: Return JSON only in the exact format as OUTPUT SCHEMA.`);
+
+    return builder.build();
+  }
+
+  /**
+   * Resolve Celebration Agent prompt
+   * Handles CELEBRATE action - enthusiastic celebration with learning summary and stats
+   */
+  resolveCelebrationAgent(context: PromptContext): string {
+    const { subtopic } = this.getTopicConfig(context.topicId);
+
+    const builder = new PromptBuilder()
+      .addRole(CELEBRATION_AGENT_BASE.role)
+      .addSection('RESPONSIBILITIES', CELEBRATION_AGENT_BASE.responsibilities)
+      .addSection('CONSTRAINTS', CELEBRATION_AGENT_BASE.constraints)
+      .addSection('CELEBRATION STRATEGIES', CELEBRATION_STRATEGIES)
+
+      .addFormattingRules(FORMATTING_RULES)
+
+      // Topic and sections completed
+      .addSection('TOPIC COMPLETED', {
+        topicName: subtopic.displayName || '',
+        sectionsCompleted: context.sectionsCompleted || 0
+      })
+
+      // Learning statistics
+      .addSection('LEARNING STATISTICS', {
+        timeSpent: context.timeSpent || 'Unknown',
+        problemsSolved: context.problemsSolved || 0,
+        accuracy: context.accuracy || 'Unknown',
+        sectionDetails: context.sectionDetails || ''
+      })
+
+      // Evaluator's reasoning
+      .addSection("EVALUATOR'S REASONING", context.evaluatorReasoning || 'All sections mastered!')
+
+      // Recent history (for context)
+      .addSection('RECENT HISTORY', context.recentHistory || '')
+      .addOutputSchema(CELEBRATION_AGENT_BASE.outputSchema!)
+
+      .addTask(`Create an enthusiastic celebration for completing the entire topic!
+
+Your celebration should:
+  1. Congratulate the student warmly and enthusiastically
+  2. Summarize key concepts learned across all sections
+  3. Present the statistics in an encouraging, meaningful way
+  4. Reflect on their growth and perseverance
+  5. Connect learning to real-world applications or broader mathematical ideas
+  6. Encourage continued learning
+
+Tone: Enthusiastic, proud, reflective (not just "good job")
+Include the stats in your display content in a visually appealing format.
+
+CRITICAL: Return JSON only in the exact format as OUTPUT SCHEMA, including the stats field.`);
 
     return builder.build();
   }

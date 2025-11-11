@@ -3,7 +3,7 @@
  * Defines the contract for TTS providers (Gemini TTS, Google Cloud TTS, etc.)
  */
 
-export type EmotionType = 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
+export type EmotionType = 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited' | 'proud';
 
 export interface TTSProviderConfig {
   apiKey: string;

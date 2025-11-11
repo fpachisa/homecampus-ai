@@ -61,7 +61,8 @@ export interface AIService {
   ): Promise<InitialGreetingResponse>;
 
   /**
-   * Generate celebration message for topic completion
+   * Generate celebration message for topic completion (LEGACY - deprecated)
+   * Use the new generateCelebration method with stats instead
    */
   generateCelebration(
     finalScore: number,
@@ -69,6 +70,52 @@ export interface AIService {
     sessionDuration: number,
     topicId: string
   ): Promise<string>;
+
+  /**
+   * NEW 5-AGENT ARCHITECTURE: Concept Clarifier Agent - Provide direct concept explanations
+   * Handles CLARIFY_CONCEPT action - NOT counted as hints
+   */
+  generateConceptClarification(
+    currentProblem: string,
+    studentResponse: string,
+    recentHistory: import('../types/types').Message[],
+    problemType: number,
+    topicId: string,
+    evaluatorReasoning: string,
+    currentSection?: string
+  ): Promise<import('../prompt-library/types/agents').ConceptClarifierOutput>;
+
+  /**
+   * NEW 5-AGENT ARCHITECTURE: Hint Agent - Provide Socratic hints only
+   * Handles GIVE_HINT action - Socratic scaffolding
+   */
+  generateHint(
+    evaluatorOutput: EvaluatorOutput,
+    currentProblem: string,
+    studentResponse: string,
+    recentHistory: import('../types/types').Message[],
+    problemType: number,
+    topicId: string,
+    currentSection?: string
+  ): Promise<import('../prompt-library/types/agents').HintOutput>;
+
+  /**
+   * NEW 5-AGENT ARCHITECTURE: Celebration Agent - Celebrate with stats and learning summary
+   * Handles CELEBRATE action - Topic completion only
+   * @overload for new stats-based celebration
+   */
+  generateCelebration(
+    topicId: string,
+    recentHistory: import('../types/types').Message[],
+    evaluatorReasoning: string,
+    stats: {
+      timeSpent: string;
+      problemsSolved: number;
+      sectionsCompleted: number;
+      accuracy: string;
+      sectionDetails?: string;
+    }
+  ): Promise<import('../prompt-library/types/agents').CelebrationOutput>;
 
   /**
    * Generate a new question at specified problem type with optional context

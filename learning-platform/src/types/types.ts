@@ -8,7 +8,7 @@ export interface Message {
   // NEW: Speech and display content separation for AI avatar
   speechContent?: {
     text: string;                    // What the avatar speaks
-    emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
+    emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited' | 'proud';
     audioUrl?: string;               // Cached TTS audio URL (blob URL)
     duration?: number;               // Audio duration in milliseconds
   };
@@ -23,7 +23,7 @@ export interface Message {
     problemType?: number;
     isCorrect?: boolean;
     conceptsCovered?: string[];
-    messageType?: 'greeting' | 'problem' | 'hint' | 'solution' | 'celebration' | 'feedback';
+    messageType?: 'greeting' | 'problem' | 'hint' | 'solution' | 'celebration' | 'feedback' | 'clarification';
     mathTool?: MathTool;  // Optional math tool to render (e.g., rightTriangle)
   };
 }

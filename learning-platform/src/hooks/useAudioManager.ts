@@ -10,7 +10,7 @@ const SPEAKER_STORAGE_KEY = 'tts_speaker_preference';
 
 interface AudioQueueItem {
   text: string;
-  emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited';
+  emotion?: 'encouraging' | 'celebratory' | 'supportive' | 'neutral' | 'warm' | 'excited' | 'proud';
   onComplete?: () => void;
 }
 

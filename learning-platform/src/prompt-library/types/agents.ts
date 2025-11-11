@@ -37,7 +37,7 @@ export interface EvaluatorOutput {
   advanceToNextSection: boolean;
 
   // Action decision (from decision matrix)
-  action: 'GIVE_HINT' | 'GIVE_SOLUTION' | 'NEW_PROBLEM' | 'CELEBRATE';
+  action: 'CLARIFY_CONCEPT' | 'GIVE_HINT' | 'GIVE_SOLUTION' | 'NEW_PROBLEM' | 'CELEBRATE';
   hintLevel?: 1 | 2 | 3;
 
   // Detailed reasoning for other agents to use
@@ -103,7 +103,7 @@ export interface PreGeneratedLearnEvaluatorOutput {
 }
 
 // ============================================
-// Tutor Agent Types
+// Tutor Agent Types (Legacy - being split into specialized agents)
 // ============================================
 
 export interface TutorOutput {
@@ -116,6 +116,82 @@ export interface TutorOutput {
     content: string | null;
     showAfterSpeech: boolean;
     type?: 'hint' | 'celebration' | 'feedback';
+  };
+
+  mathTool?: {
+    toolName: string;
+    parameters: Record<string, any>;
+    caption: string;
+  };
+}
+
+// ============================================
+// Concept Clarifier Agent Types
+// ============================================
+
+export interface ConceptClarifierOutput {
+  speech: {
+    text: string;
+    emotion: 'warm' | 'supportive' | 'neutral';
+  };
+
+  display: {
+    content: string;
+    showAfterSpeech: boolean;
+    type: 'clarification';
+  };
+
+  mathTool?: {
+    toolName: string;
+    parameters: Record<string, any>;
+    caption: string;
+  };
+}
+
+// ============================================
+// Hint Agent Types
+// ============================================
+
+export interface HintOutput {
+  speech: {
+    text: string;
+    emotion: 'encouraging' | 'supportive' | 'warm';
+  };
+
+  display: {
+    content: string;
+    showAfterSpeech: boolean;
+    type: 'hint';
+  };
+
+  mathTool?: {
+    toolName: string;
+    parameters: Record<string, any>;
+    caption: string;
+  };
+}
+
+// ============================================
+// Celebration Agent Types
+// ============================================
+
+export interface CelebrationOutput {
+  speech: {
+    text: string;
+    emotion: 'celebratory' | 'excited' | 'proud';
+  };
+
+  display: {
+    content: string;
+    showAfterSpeech: boolean;
+    type: 'celebration';
+  };
+
+  stats?: {
+    timeSpent: string;
+    problemsSolved: number;
+    sectionsCompleted: number;
+    accuracy: string;
   };
 
   mathTool?: {

@@ -17,27 +17,31 @@ export const EVALUATOR_BASE: AgentPrompt = {
         You do NOT generate UI content - that's the job of UI agents.`,
 
   responsibilities: [
+    "Detect if student is asking a conceptual question (highest priority)",
     "Evaluate student answers for mathematical and conceptual correctness",
-    "Assess understanding level (master, developing, struggling)",
+    "Assess understanding level (strong, developing, struggling)",
     "Identify specific concept gaps and misconceptions",
     "Track progression through curriculum sections",
     "Determine mastery based on masteryRubric",
-    "Decide pedagogical next action",
-    "Distinguish between intermediate and final answers"
+    "Decide pedagogical next action from 5 options",
+    "Distinguish between concept question, intermediate answer and final answers",
+    "Allow conceptual questions even after correct answers"
   ],
 
   capabilities: {
     assessment: [
+      "Conceptual question detection",
       "Answer correctness validation",
       "Understanding level determination",
       "Misconception identification",
       "Progress tracking"
     ],
     decisions: [
-      "GIVE_HINT - provide scaffolded support",
+      "CLARIFY_CONCEPT - answer conceptual questions directly (highest priority)",
+      "GIVE_HINT - provide Socratic scaffolded support",
       "GIVE_SOLUTION - show complete walkthrough",
       "NEW_PROBLEM - advance to next question",
-      "CELEBRATE - acknowledge mastery"
+      "CELEBRATE - acknowledge topic mastery"
     ],
     tracking: [
       "Section progression",
@@ -48,12 +52,14 @@ export const EVALUATOR_BASE: AgentPrompt = {
   },
 
   constraints: [
+    "MUST prioritize CLARIFY_CONCEPT if student asks conceptual questions",
+    "MUST allow conceptual questions even after correct answers",
     "MUST provide reasoning for all decisions",
     "MUST track forward-only progression",
     "MUST validate against original problem (if mathTool provided)",
     "MUST distinguish intermediate vs final answers",
     "MUST use section's masterySignals for advancement decisions",
-    "MUST generate appropriate instruction objects for UI agents"
+    "MUST NOT count CLARIFY_CONCEPT as hints"
   ],
 
   outputSchema: {
@@ -73,14 +79,10 @@ export const EVALUATOR_BASE: AgentPrompt = {
       nextSection: "string | null"
     },
 
-    action: "GIVE_HINT | GIVE_SOLUTION | NEW_PROBLEM | CELEBRATE",
-    hintLevel: "1 | 2 | 3 (optional)",
+    action: "CLARIFY_CONCEPT | GIVE_HINT | GIVE_SOLUTION | NEW_PROBLEM | CELEBRATE",
+    hintLevel: "1 | 2 | 3 (optional, for GIVE_HINT only)",
 
-    tutorInstruction: "object (optional)",
-    questionInstruction: "object (optional)",
-    solutionInstruction: "object (optional)",
-
-    reasoning: "string (plain text, no LaTeX)"
+    reasoning: "string (plain text explanation for UI agents, no LaTeX)"
   }
 };
 
@@ -140,32 +142,45 @@ Evaluate the student's response, assess their understanding, track progression, 
  * Decision rules for the evaluator
  */
 export const EVALUATOR_DECISION_MATRIX = {
+  CLARIFY_CONCEPT: {
+    priority: "HIGHEST - Check this FIRST before any other action",
+    conditions: [
+      "Student asks 'why', 'what', 'how' questions about concepts",
+      "Student asks for explanation of formulas, theorems, or principles",
+      "Student requests conceptual clarification on the topic",
+      "Student asks questions like 'Why does this work?', 'What is...?', 'How do you know...?'",
+      "Allowed EVEN IF the student just answered correctly",
+      "Allowed at ANY point in the learning flow"
+    ],
+    note: "CRITICAL: CLARIFY_CONCEPT is NOT counted as a hint. Students can ask unlimited conceptual questions."
+  },
   GIVE_HINT: {
     conditions: [
-      "Final answer is incorrect",
-      "Hints given < 3"
+      "Student is trying to answer the question and the final answer is incorrect",
+      "We give as many hints as needed"
     ]
   },
-
   GIVE_SOLUTION: {
     conditions: [
-      "Final Answer is incorrect AND hints given > 2",
-      "Never show solution for hints given < 2 even if student asks for it explicitly"
+      "Final Answer is incorrect AND hints given > 3 AND student explicitly asks for solution",
+      "Never show solution for hints given < 3 even if student asks for it explicitly"
     ]
   },
 
   NEW_PROBLEM: {
     conditions: [
-      "Answer is correct",
+      "Final answer is correct",
       "Solution was just shown"
     ]
   },
 
   CELEBRATE: {
     conditions: [
-      "All sections mastered",
-      "Final problem of topic completed"
-    ]
+      "ALL sections of the topic are mastered",
+      "Final problem of topic completed",
+      "Full topic mastery achieved"
+    ],
+    note: "CELEBRATE is for topic completion only, not per-problem success"
   }
 };
 
