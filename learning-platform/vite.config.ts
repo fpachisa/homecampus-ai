@@ -53,13 +53,16 @@ export default defineConfig({
           }
 
           // App code chunking by feature
-          // Core services (prevent circular dependencies)
-          if (id.includes('/services/pathProgressService') ||
-              id.includes('/services/streakService') ||
+          // Core services (pathProgressService excluded to prevent circular dependencies)
+          if (id.includes('/services/streakService') ||
               id.includes('/services/achievementService') ||
               id.includes('/services/firestoreProgressService') ||
               id.includes('/services/globalStreakService')) {
             return 'services';
+          }
+          // pathProgressService gets its own chunk to avoid TDZ errors
+          if (id.includes('/services/pathProgressService')) {
+            return 'progress-service';
           }
           // Practice mode components
           if (id.includes('/components/practice/')) {

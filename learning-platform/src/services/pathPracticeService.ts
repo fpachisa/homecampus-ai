@@ -397,4 +397,24 @@ class PathPracticeService {
   }
 }
 
-export const pathPracticeService = new PathPracticeService();
+// Lazy singleton using Proxy to avoid circular dependency TDZ errors
+// Instance is created on first method access, not at module load time
+let _instance: PathPracticeService | null = null;
+
+export const pathPracticeService = new Proxy({} as PathPracticeService, {
+  get(_target, prop: string | symbol) {
+    // Create instance lazily on first access
+    if (!_instance) {
+      _instance = new PathPracticeService();
+    }
+
+    const value = (_instance as any)[prop];
+
+    // Bind methods to preserve 'this' context
+    if (typeof value === 'function') {
+      return value.bind(_instance);
+    }
+
+    return value;
+  }
+});

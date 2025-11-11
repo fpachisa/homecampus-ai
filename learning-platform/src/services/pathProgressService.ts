@@ -601,11 +601,11 @@ class PathProgressService {
     if (newAchievements.length > 0) {
       // Add achievements and their XP rewards
       pathProgress.achievements.push(...newAchievements);
-      const achievementXP = newAchievements.reduce((sum, a) => sum + a.xpReward, 0);
+      const achievementXP = newAchievements.reduce((sum: number, a: any) => sum + a.xpReward, 0);
       pathProgress.totalXP += achievementXP;
 
       console.log(`🏆 ${newAchievements.length} new achievement(s) earned!`);
-      newAchievements.forEach(a => {
+      newAchievements.forEach((a: any) => {
         console.log(`  - ${a.icon} ${a.title}: +${a.xpReward} XP`);
       });
 
@@ -666,11 +666,11 @@ class PathProgressService {
     );
     if (newAchievements.length > 0) {
       pathProgress.achievements.push(...newAchievements);
-      const achievementXP = newAchievements.reduce((sum, a) => sum + a.xpReward, 0);
+      const achievementXP = newAchievements.reduce((sum: number, a: any) => sum + a.xpReward, 0);
       pathProgress.totalXP += achievementXP;
 
       console.log(`🏆 ${newAchievements.length} new achievement(s) earned!`);
-      newAchievements.forEach(a => {
+      newAchievements.forEach((a: any) => {
         console.log(`  - ${a.icon} ${a.title}: +${a.xpReward} XP`);
       });
 
@@ -812,9 +812,18 @@ let _instance: PathProgressService | null = null;
 
 export const pathProgressService = new Proxy({} as PathProgressService, {
   get(_target, prop: string | symbol) {
+    // Create instance lazily on first access
     if (!_instance) {
       _instance = new PathProgressService();
     }
-    return (_instance as any)[prop];
+
+    const value = (_instance as any)[prop];
+
+    // Bind methods to preserve 'this' context
+    if (typeof value === 'function') {
+      return value.bind(_instance);
+    }
+
+    return value;
   }
 });
