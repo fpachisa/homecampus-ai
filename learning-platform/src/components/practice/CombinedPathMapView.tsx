@@ -8,11 +8,8 @@
 import { useEffect, useState } from 'react';
 import type { PathNode, PathLayer, PathProgress } from '../../types/practice';
 import { yamlPathLoader } from '../../services/yamlPathLoader';
-import { getPathProgressService } from '../../services/pathProgressService';
+import { pathProgressService } from '../../services/pathProgressService';
 import { useTheme } from '../../hooks/useTheme';
-
-// Get service instance (lazy initialized on first call)
-const pathProgressService = getPathProgressService();
 
 interface CombinedPathMapViewProps {
   category: string;

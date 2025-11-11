@@ -12,15 +12,12 @@ import { useAppNavigation } from '../../hooks/useAppNavigation';
 import { useAuth } from '../../contexts/AuthContext';
 import type { PathNode, PathLayer, PathProgress, DailyStreak } from '../../types/practice';
 import { yamlPathLoader } from '../../services/yamlPathLoader';
-import { getPathProgressService } from '../../services/pathProgressService';
+import { pathProgressService } from '../../services/pathProgressService';
 import {
   loadPracticeProgress,
   savePracticeProgress,
   pathProgressToFirestore
 } from '../../services/firestoreProgressService';
-
-// Get service instance (lazy initialized on first call)
-const pathProgressService = getPathProgressService();
 import { loadGlobalStreak } from '../../services/globalStreakService';
 import { initializeStreak } from '../../services/streakService';
 import { generateMeanderingPath } from '../../utils/pathGeometryUtils';

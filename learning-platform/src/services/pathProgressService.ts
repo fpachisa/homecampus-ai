@@ -12,7 +12,6 @@ import type {
   PathNode,
   PathDifficulty,
 } from '../types/practice';
-
 import { streakService } from './streakService';
 import { achievementService } from './achievementService';
 import { savePracticeProgress, pathProgressToFirestore } from './firestoreProgressService';
@@ -807,22 +806,15 @@ class PathProgressService {
   }
 }
 
-// Lazy singleton to avoid circular dependency TDZ errors
-// Instance is created on first access, not at module load time
+// Lazy singleton using Proxy to avoid circular dependency TDZ errors
+// Instance is created on first method access, not at module load time
 let _instance: PathProgressService | null = null;
 
-export function getPathProgressService(): PathProgressService {
-  if (!_instance) {
-    _instance = new PathProgressService();
-  }
-  return _instance;
-}
-
-// Deprecated: Use getPathProgressService() instead
-// Kept for backward compatibility during transition
 export const pathProgressService = new Proxy({} as PathProgressService, {
-  get(_target, prop) {
-    console.warn('[DEPRECATED] Direct pathProgressService access. Use getPathProgressService() instead.');
-    return (getPathProgressService() as any)[prop];
+  get(_target, prop: string | symbol) {
+    if (!_instance) {
+      _instance = new PathProgressService();
+    }
+    return (_instance as any)[prop];
   }
 });
