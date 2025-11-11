@@ -12,6 +12,7 @@ import type {
   PathNode,
   PathDifficulty,
 } from '../types/practice';
+
 import { streakService } from './streakService';
 import { achievementService } from './achievementService';
 import { savePracticeProgress, pathProgressToFirestore } from './firestoreProgressService';
@@ -806,14 +807,6 @@ class PathProgressService {
   }
 }
 
-// Lazy initialization using Proxy to avoid circular dependency TDZ errors
-let _instance: PathProgressService | null = null;
-
-export const pathProgressService = new Proxy({} as PathProgressService, {
-  get(_target: any, prop: string | symbol) {
-    if (!_instance) {
-      _instance = new PathProgressService();
-    }
-    return (_instance as any)[prop];
-  }
-});
+// Export singleton instance
+// Now safe from circular dependencies as services are in a separate chunk
+export const pathProgressService = new PathProgressService();
