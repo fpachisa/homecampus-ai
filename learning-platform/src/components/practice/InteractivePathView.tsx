@@ -190,7 +190,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       // Save to both localStorage and Firestore
       pathProgressService.saveUnifiedProgress(category, pathProgress);
 
-      if (user?.uid) {
+      if (user?.uid && pathProgress) {
         const displayName = category.replace(/^s\d+-math-/i, '');
         const firestoreProgress = pathProgressToFirestore(pathProgress, category, displayName, loadedNodes);
         await savePracticeProgress(user.uid, category, firestoreProgress);

@@ -1,42 +1,32 @@
+/**
+ * HomePage - Main landing page for authenticated users
+ *
+ * Routes to:
+ * - StudentDashboard (for students)
+ * - ParentDashboard (for parents)
+ *
+ * Includes shared header with theme toggle, profile menu, and profile switcher
+ */
+
 import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useThemeContext } from '../contexts/ThemeContext';
-import { useAppNavigation } from '../hooks/useAppNavigation';
 import { ProfileMenu, AuthModal } from './auth';
 import { ProfileSwitcher } from './ProfileSwitcher';
 import { ParentDashboard } from './parent/ParentDashboard';
+import { StudentDashboard } from './dashboard/StudentDashboard';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
-import { GradeSelector } from './GradeSelector';
-import { getTopicsByGrade, GRADE_LEVELS, type GradeLevel } from '../config/topicsByGrade';
 import logoLight from '/logo.png?url';
 import logoDark from '/logo-dark.png?url';
 
 const HomePage: React.FC = () => {
-  const { goToLearn, goToPractice } = useAppNavigation();
   const { theme } = useTheme();
   const { toggleTheme, isDark } = useThemeContext();
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const { isViewingAsParent, activeProfile, canSwitchProfiles } = useActiveProfile();
-
-  // State for exploring other grades
-  const [selectedGrade, setSelectedGrade] = useState<GradeLevel | null>(null);
-  const [showOtherGrades, setShowOtherGrades] = useState(false);
-
-  // State for Learn/Practice mode
-  const [selectedMode, setSelectedMode] = useState<'learn' | 'practice'>('learn');
+  const { isViewingAsParent, canSwitchProfiles } = useActiveProfile();
 
   // Theme-aware logo
   const logoSrc = isDark ? logoDark : logoLight;
-
-  // Only calculate grade/topic info for students (not when viewing as parent)
-  const currentGrade = !isViewingAsParent ? ((activeProfile?.gradeLevel as GradeLevel) || 'Secondary 3') : 'Secondary 3';
-  const displayGrade = selectedGrade || currentGrade;
-
-  // Get topics for the display grade (only used for students)
-  const displayTopics = getTopicsByGrade(displayGrade);
-
-  // Other grades to explore (excluding current grade)
-  const otherGrades = GRADE_LEVELS.filter(grade => grade !== currentGrade);
 
   return (
     <div
@@ -120,324 +110,14 @@ const HomePage: React.FC = () => {
         onClose={() => setAuthModalOpen(false)}
       />
 
-      {/* Main Content */}
-      <main className="relative z-10 flex-1 px-8 py-6">
+      {/* Main Content - Route to appropriate dashboard */}
+      <main className="relative z-10 flex-1">
         {isViewingAsParent ? (
-          <ParentDashboard />
-        ) : (
-          <div className="max-w-7xl mx-auto">
-            {/* Welcome Section */}
-            <div className="mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h2 className="text-2xl font-semibold" style={{ color: theme.colors.textPrimary }}>
-                    {activeProfile
-                      ? `${displayGrade} Mathematics`
-                      : 'Choose a topic to begin your learning journey'}
-                  </h2>
-                </div>
-                <div className="flex items-center gap-4">
-                  {/* Mode Toggle */}
-                  {activeProfile && (
-                    <div
-                      className="flex items-center rounded-lg p-1"
-                      style={{
-                        background: theme.colors.interactive,
-                        border: `1px solid ${theme.glass.border}`,
-                      }}
-                    >
-                      <button
-                        onClick={() => setSelectedMode('learn')}
-                        className="px-4 py-2 rounded-md font-medium transition-all duration-200 text-sm"
-                        style={{
-                          backgroundColor: selectedMode === 'learn' ? theme.colors.brand : 'transparent',
-                          color: selectedMode === 'learn' ? '#ffffff' : theme.colors.textSecondary,
-                        }}
-                      >
-                        Learn Mode
-                      </button>
-                      <button
-                        onClick={() => setSelectedMode('practice')}
-                        className="px-4 py-2 rounded-md font-medium transition-all duration-200 text-sm"
-                        style={{
-                          backgroundColor: selectedMode === 'practice' ? theme.colors.brand : 'transparent',
-                          color: selectedMode === 'practice' ? '#ffffff' : theme.colors.textSecondary,
-                        }}
-                      >
-                        Practice Mode
-                      </button>
-                    </div>
-                  )}
-                  {activeProfile && (
-                    <GradeSelector
-                      currentGrade={displayGrade}
-                      onGradeChange={(grade) => {
-                        setSelectedGrade(grade);
-                        setShowOtherGrades(false);
-                      }}
-                    />
-                  )}
-                </div>
-              </div>
-
-              {/* Info banner when viewing different grade */}
-              {selectedGrade && selectedGrade !== currentGrade && (
-                <div
-                  className="p-4 rounded-xl flex items-center justify-between mb-6"
-                  style={{
-                    backgroundColor: theme.colors.info + '20',
-                    border: `1px solid ${theme.colors.info}`,
-                  }}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">👀</span>
-                    <div>
-                      <p className="font-medium" style={{ color: theme.colors.textPrimary }}>
-                        Exploring {selectedGrade} topics
-                      </p>
-                      <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
-                        Your grade is {currentGrade}
-                      </p>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => setSelectedGrade(null)}
-                    className="px-4 py-2 rounded-lg font-medium transition-all"
-                    style={{
-                      backgroundColor: theme.colors.brand,
-                      color: '#ffffff',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'scale(1.05)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'scale(1)';
-                    }}
-                  >
-                    Back to My Topics
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {/* Main Topics Grid */}
-            <div className="mb-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {displayTopics.map((topic) => {
-                  const isActive = topic.isActive;
-
-                    return (
-                      <button
-                        key={topic.id}
-                        onClick={() =>
-                          isActive &&
-                          (selectedMode === 'learn'
-                            ? goToLearn(topic.category!, undefined, true)
-                            : goToPractice(topic.category!))
-                        }
-                        disabled={!isActive}
-                        className="group relative p-6 rounded-2xl transition-all duration-300 text-left w-full"
-                        style={{
-                          background: isActive ? theme.glass.background : theme.colors.interactive,
-                          border: `1px solid ${theme.glass.border}`,
-                          backdropFilter: isActive ? theme.glass.backdrop : 'none',
-                          opacity: isActive ? 1 : 0.5,
-                          boxShadow: theme.shadows.md,
-                          cursor: isActive ? 'pointer' : 'default',
-                        }}
-                        onMouseEnter={(e) => {
-                          if (isActive) {
-                            e.currentTarget.style.transform = 'translateY(-4px)';
-                            e.currentTarget.style.boxShadow = theme.shadows.glow;
-                          }
-                        }}
-                        onMouseLeave={(e) => {
-                          if (isActive) {
-                            e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = theme.shadows.md;
-                          }
-                        }}
-                      >
-                        {/* Icon */}
-                        <div
-                          className="w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4"
-                          style={{
-                            backgroundColor: isActive ? theme.colors.brand : theme.colors.interactive,
-                            color: isActive ? '#ffffff' : theme.colors.textMuted,
-                          }}
-                        >
-                          {topic.icon}
-                        </div>
-
-                        {/* Title */}
-                        <h3
-                          className="text-lg font-semibold mb-2"
-                          style={{ color: isActive ? theme.colors.textPrimary : theme.colors.textMuted }}
-                        >
-                          {topic.name}
-                        </h3>
-
-                        {/* Description */}
-                        <p
-                          className="text-sm mb-4 line-clamp-2"
-                          style={{ color: isActive ? theme.colors.textSecondary : theme.colors.textMuted }}
-                        >
-                          {topic.description}
-                        </p>
-
-                        {/* Status indicator */}
-                        {!isActive && (
-                          <div
-                            className="text-sm font-medium mt-4"
-                            style={{ color: theme.colors.textMuted }}
-                          >
-                            Coming Soon
-                          </div>
-                        )}
-
-                        {/* Active indicator */}
-                        {isActive && (
-                          <div
-                            className="absolute top-4 right-4 w-3 h-3 rounded-full"
-                            style={{ backgroundColor: theme.colors.success }}
-                          />
-                        )}
-
-                        {/* Footer with subtopic count and action hint */}
-                        {isActive && (
-                          <div className="mt-4 pt-3 border-t flex items-center justify-between" style={{ borderColor: theme.colors.border }}>
-                            <div className="text-xs" style={{ color: theme.colors.textMuted }}>
-                              {topic.subtopicCount} subtopics
-                            </div>
-                            <div className="flex items-center gap-1 text-xs font-medium" style={{ color: theme.colors.brand }}>
-                              <span className="opacity-0 group-hover:opacity-100 transition-opacity">
-                                {selectedMode === 'learn' ? 'Start Learning' : 'Start Practice'}
-                              </span>
-                              <svg
-                                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                              </svg>
-                            </div>
-                          </div>
-                        )}
-                      </button>
-                    );
-                  })}
-              </div>
-            </div>
-
-            {/* Explore Other Grades Section */}
-            {!selectedGrade && otherGrades.length > 0 && (
-              <div className="mt-12">
-                <button
-                  onClick={() => setShowOtherGrades(!showOtherGrades)}
-                  className="w-full flex items-center justify-between p-6 rounded-xl transition-all"
-                  style={{
-                    background: theme.glass.background,
-                    border: `1px solid ${theme.glass.border}`,
-                    backdropFilter: theme.glass.backdrop,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = theme.shadows.md;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">🔍</span>
-                    <div className="text-left">
-                      <h3 className="text-lg font-semibold" style={{ color: theme.colors.textPrimary }}>
-                        Explore Other Grades
-                      </h3>
-                      <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
-                        Preview topics from other grade levels
-                      </p>
-                    </div>
-                  </div>
-                  <svg
-                    className={`w-6 h-6 transition-transform ${showOtherGrades ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: theme.colors.textSecondary }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-
-                {showOtherGrades && (
-                  <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {otherGrades.map((grade) => {
-                      const gradeTopics = getTopicsByGrade(grade);
-                      const activeCount = gradeTopics.filter(t => t.isActive).length;
-                      const totalCount = gradeTopics.length;
-
-                      return (
-                        <button
-                          key={grade}
-                          onClick={() => setSelectedGrade(grade)}
-                          className="p-6 rounded-xl text-left transition-all"
-                          style={{
-                            background: theme.glass.background,
-                            border: `1px solid ${theme.glass.border}`,
-                            backdropFilter: theme.glass.backdrop,
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-4px)';
-                            e.currentTarget.style.boxShadow = theme.shadows.glow;
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = 'none';
-                          }}
-                        >
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="w-12 h-12 flex items-center justify-center">
-                              <img src={logoSrc} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
-                            </div>
-                            <h4 className="text-lg font-semibold" style={{ color: theme.colors.textPrimary }}>
-                              {grade}
-                            </h4>
-                          </div>
-                          <p className="text-sm mb-3" style={{ color: theme.colors.textSecondary }}>
-                            {totalCount} topics in Mathematics
-                          </p>
-                          <div className="flex items-center gap-2">
-                            {activeCount > 0 ? (
-                              <>
-                                <div
-                                  className="w-2 h-2 rounded-full"
-                                  style={{ backgroundColor: theme.colors.success }}
-                                />
-                                <span className="text-xs font-medium" style={{ color: theme.colors.success }}>
-                                  {activeCount} Available
-                                </span>
-                              </>
-                            ) : (
-                              <>
-                                <div
-                                  className="w-2 h-2 rounded-full"
-                                  style={{ backgroundColor: theme.colors.textMuted }}
-                                />
-                                <span className="text-xs" style={{ color: theme.colors.textMuted }}>
-                                  Coming Soon
-                                </span>
-                              </>
-                            )}
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            )}
+          <div className="px-8 py-6">
+            <ParentDashboard />
           </div>
+        ) : (
+          <StudentDashboard />
         )}
       </main>
 

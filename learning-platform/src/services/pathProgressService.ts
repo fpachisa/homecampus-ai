@@ -810,7 +810,7 @@ class PathProgressService {
 let _instance: PathProgressService | null = null;
 
 export const pathProgressService = new Proxy({} as PathProgressService, {
-  get(_, prop) {
+  get(_target: any, prop: string | symbol) {
     if (!_instance) {
       _instance = new PathProgressService();
     }

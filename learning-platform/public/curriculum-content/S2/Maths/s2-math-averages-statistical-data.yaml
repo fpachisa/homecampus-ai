@@ -2544,3 +2544,104 @@ nodes:
       - 'Correct the Mode: 210.0 mL + 3.0 mL = 213.0 mL.'
       id: q25-5
       questionGroup: q25
+- id: avg-node-23
+  nodeNumber: 25
+  title: Finding Dataset Given Averages
+  layer: foundation
+  problemsRequired: 5
+  prerequisites: []
+  descriptor:
+    aiGeneratedQuestions: false
+    difficulty: easy
+    mathTool: null
+    preWrittenQuestions:
+    - problemText: A weather researcher collected temperature data (°C) recorded at noon over five consecutive days. The dataset,
+        when arranged in ascending order, has a Mean of 15°C, a Median of 16°C, and a Mode of 18°C. If the largest recorded
+        temperature was exactly 7 degrees higher than the smallest recorded temperature, determine the temperature readings
+        for all five days.
+      avatarIntro: This challenge requires you to work backwards from the statistical summaries. Use the definitions of mean,
+        median, and mode carefully to reconstruct the original data set.
+      mathTool: null
+      finalAnswer: 11, 12, 16, 18, 18
+      stepByStepGuideline:
+      - Let the five temperatures in ascending order be A, B, C, D, E. Since N=5, the sum is Mean × 5 = 15 × 5 = 75.
+      - The Median is C = 16.
+      - The Mode is 18. Since C=16, the mode must occur in D and E. Thus, D=18 and E=18.
+      - The sum of the remaining values (A + B) = 75 - 16 - 18 - 18 = 23.
+      - The constraint is that the largest temperature (E=18) is 7 more than the smallest temperature (A). So, 18 = A + 7,
+        which means A = 11.
+      - Substitute A=11 into the sum of A + B = 23. B = 23 - 11 = 12.
+      - 'Verify the ordered dataset: 11, 12, 16, 18, 18. Check if A <= B <= C is satisfied (11 <= 12 <= 16). All conditions
+        are met.'
+      id: q25-1
+      questionGroup: q25
+    - problemText: A book club tracked the number of whole novels read by its six members over the course of a month. The
+        set of six readings has a Mean of 5, a Median of 5.5, and is Bimodal with modes of 5 and 6. If the Range of the dataset
+        is 6, what are the six numbers of novels read?
+      mathTool: null
+      finalAnswer: 1, 5, 5, 6, 6, 7
+      stepByStepGuideline:
+      - Let the six numbers be A, B, C, D, E, F. Since N=6, the sum is Mean × 6 = 5 × 6 = 30.
+      - The Median is (C + D) / 2 = 5.5, so C + D = 11. Since the data are whole numbers, C=5 and D=6.
+      - The data is Bimodal with modes 5 and 6. This means 5 must appear at least twice, and 6 must appear at least twice.
+        Since C=5 and D=6, we must have B=5 and E=6.
+      - The dataset structure is A, 5, 5, 6, 6, F. The remaining sum A + F = 30 - (5 + 5 + 6 + 6) = 8.
+      - The Range is F - A = 6, so F = A + 6.
+      - 'Substitute F into the sum equation: A + (A + 6) = 8. 2A + 6 = 8. 2A = 2. A = 1.'
+      - 'Calculate F: F = 1 + 6 = 7. (The dataset is 1, 5, 5, 6, 6, 7).'
+      id: q25-2
+      questionGroup: q25
+    - problemText: Seven students recorded their high scores on a new video game level. The scores, arranged in ascending
+        order, yield a Mean of 15, a Median of 14, and a Mode of 18. The additional constraint is that the three smallest
+        scores in the dataset are consecutive even numbers. Determine the seven scores.
+      mathTool: null
+      finalAnswer: 8, 10, 12, 14, 18, 18, 25
+      stepByStepGuideline:
+      - Let the seven scores be A, B, C, D, E, F, G. Since N=7, the sum is Mean × 7 = 15 × 7 = 105.
+      - The Median is D = 14.
+      - The Mode is 18. Since D=14, 18 must appear at least twice in E, F, G. To ensure 18 is the only mode, let E=18, F=18
+        (appearing twice). G must be greater than 18.
+      - The sum of A + B + C + G = 105 - 14 - 18 - 18 = 55.
+      - The three smallest scores (A, B, C) are consecutive even numbers. Let A = x, B = x + 2, C = x + 4.
+      - 'Substitute into the sum: (x) + (x + 2) + (x + 4) + G = 55. 3x + 6 + G = 55. 3x + G = 49.'
+      - Since C = x + 4 must be less than D = 14, x + 4 < 14, so x < 10. Since G > 18, G must be large.
+      - 'If we try the largest possible even number for x (x=8): A=8, B=10, C=12. Sum(A, B, C) = 30.'
+      - 30 + G = 55, so G = 25. Since G=25 > 18, this works.
+      - The dataset is 8, 10, 12, 14, 18, 18, 25.
+      id: q25-3
+      questionGroup: q25
+    - problemText: A fitness tracker recorded the weekly hours spent exercising by four individuals. The dataset has a Mean
+        of 5 hours, a Median of 4.5 hours, and a Mode of 4 hours. If the largest number of hours recorded was 1 less than
+        twice the smallest number of hours recorded, find the four data values.
+      mathTool: null
+      finalAnswer: 4, 4, 5, 7
+      stepByStepGuideline:
+      - Let the four values be A, B, C, D. The sum is Mean × 4 = 5 × 4 = 20.
+      - The Median is (B + C) / 2 = 4.5, so B + C = 9.
+      - The Mode is 4. Since N=4, 4 must appear twice. Since A <= B <= C, B must be 4. If B=4, then A must also be 4 (A <=
+        B).
+      - Substitute B=4 into B + C = 9. 4 + C = 9, so C = 5.
+      - The sum of A + B + C + D = 20. 4 + 4 + 5 + D = 20. 13 + D = 20. D = 7.
+      - The dataset is 4, 4, 5, 7.
+      - 'Verify the constraint: Largest (D=7) is 1 less than twice the smallest (A=4). 2A - 1 = 2(4) - 1 = 8 - 1 = 7. This
+        matches D=7. All conditions are satisfied.'
+      id: q25-4
+      questionGroup: q25
+    - problemText: Five students reported their monthly savings (in dollars). The resulting dataset has a Mean of $55, a Median
+        of $50, and a Mode of $50. If the largest saving amount was exactly $10 more than the sum of the two smallest saving
+        amounts, find the five monthly savings figures.
+      mathTool: null
+      finalAnswer: 30, 50, 50, 55, 90
+      stepByStepGuideline:
+      - Let the five savings amounts be A, B, C, D, E. Since N=5, the total sum is Mean × 5 = 55 × 5 = 275.
+      - The Median is C = 50.
+      - The Mode is 50. Since C=50, 50 must appear at least twice. Since A <= B <= C, we must have B = 50.
+      - The dataset structure is A, 50, 50, D, E. The remaining sum A + D + E = 275 - 50 - 50 = 175.
+      - The constraint states E = (A + B) + 10. Since B=50, E = A + 50 + 10, or E = A + 60.
+      - 'Substitute E into the sum A + D + E = 175: A + D + (A + 60) = 175. This simplifies to 2A + D = 115.'
+      - We also require A <= 50 and D >= 50 (since D must be greater than or equal to the median 50). Also, D <= E = A + 60.
+      - 'If we test A=30 (A <= 50): 2(30) + D = 115. 60 + D = 115. D = 55. (D >= 50 is satisfied).'
+      - 'Calculate E: E = A + 60 = 30 + 60 = 90. (D <= E is satisfied since 55 <= 90).'
+      - The dataset is 30, 50, 50, 55, 90.
+      id: q25-5
+      questionGroup: q25
