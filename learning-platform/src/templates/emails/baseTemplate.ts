@@ -61,7 +61,7 @@ export function baseEmailTemplate({ title, preheader, content }: BaseEmailProps)
                 AI-Powered Home Learning Platform
               </p>
               <div style="margin-top: 20px;">
-                <a href="mailto:support@homecampus.com" style="color: #D97757; text-decoration: none; font-size: 12px;">Contact Support</a>
+                <a href="mailto:aitutor@homecampus.ai" style="color: #D97757; text-decoration: none; font-size: 12px;">Contact Support</a>
               </div>
             </td>
           </tr>

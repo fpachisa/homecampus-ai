@@ -38,6 +38,7 @@ interface OnboardingWizardProps {
   onCancel: () => void;
   inviteToken?: string | null;
   inviteInfo?: any;
+  inviteType?: 'parent-to-child' | 'student-to-parent' | null;
   accountTypeFromUrl?: 'student' | 'parent' | null;
 }
 
@@ -46,6 +47,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
   onCancel,
   inviteToken,
   inviteInfo,
+  inviteType,
   accountTypeFromUrl
 }) => {
   const { theme } = useTheme();
@@ -75,7 +77,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
   const [data, setData] = useState<OnboardingData>({
     // Prioritize: invite > sessionStorage > URL param > userProfile > null
     accountType: inviteToken
-      ? 'parent'
+      ? (inviteType === 'parent-to-child' ? 'student' : 'parent')
       : (sessionStorage.getItem('onboarding_accountType') as 'student' | 'parent' | null)
       || accountTypeFromUrl
       || userProfile?.accountType
@@ -146,13 +148,45 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
       // User is now authenticated, move to profile setup
       updateData({ email: user.email || '' });
 
+      // Auto-complete profile for child invites (parent already provided name and grade)
+      if (data.accountType === 'student' && inviteToken && inviteType === 'parent-to-child' && inviteInfo?.childInfo) {
+        console.log('[OnboardingWizard] Auto-completing child profile from invite data:', inviteInfo.childInfo);
+
+        // Async function to handle profile completion
+        const autoCompleteProfile = async () => {
+          try {
+            await handleStudentProfileComplete(
+              inviteInfo.childInfo.displayName,
+              inviteInfo.childInfo.gradeLevel
+            );
+          } catch (error) {
+            console.error('[OnboardingWizard] Failed to auto-complete profile, falling back to manual entry:', error);
+            // Fallback to normal flow if auto-complete fails
+            setStep('student-profile');
+          }
+        };
+
+        autoCompleteProfile();
+        return; // Skip normal flow
+      }
+
+      // Normal flow
       if (data.accountType === 'student') {
         setStep('student-profile');
       } else {
         setStep('parent-profile');
       }
     }
-  }, [user, step, data.accountType]);
+  }, [user, step, data.accountType, inviteToken, inviteType, inviteInfo]);
+
+  // Handle invite token loading after component mount
+  // If invite loads while still on account-type step, jump to auth
+  useEffect(() => {
+    if (inviteToken && step === 'account-type') {
+      console.log('[OnboardingWizard] Invite detected, jumping to auth step');
+      setStep('auth');
+    }
+  }, [inviteToken, step]);
 
   // Handle authenticated users returning from email verification
   // This catches cases where user lands on 'account-type' step but is already authenticated
@@ -186,13 +220,35 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
           gradeLevel,
           accountType: 'student',
           isParent: false,
+          profileCompleted: true,
         });
+
+        // If accepting a child invite (parent-to-child), link child to parent
+        if (inviteToken && inviteType === 'parent-to-child') {
+          console.log('[OnboardingWizard] Attempting to accept child invite with token:', inviteToken);
+          try {
+            await authService.acceptChildInvite(inviteToken, user.uid);
+            console.log('✅ Child linked to parent via invite!');
+          } catch (inviteError) {
+            console.error('❌ Failed to accept child invite:', inviteError);
+            // Still skip parent-invite step - parent already exists
+          }
+          // Go directly to complete, skip parent-invite step (even if invite acceptance failed)
+          setStep('complete');
+          return;
+        }
       }
+      // Normal flow: go to parent-invite step
       setStep('parent-invite');
     } catch (error) {
       console.error('Error saving student profile:', error);
       // Continue to next step anyway - don't block onboarding
-      setStep('parent-invite');
+      // For child invites, skip parent-invite step since parent already exists
+      if (inviteToken && inviteType === 'parent-to-child') {
+        setStep('complete');
+      } else {
+        setStep('parent-invite');
+      }
     } finally {
       setIsProcessing(false);
     }

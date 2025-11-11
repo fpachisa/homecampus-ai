@@ -276,6 +276,36 @@ class AuthService {
   }
 
   /**
+   * Get linked children from subcollection
+   * @param parentUid - Parent's UID
+   * @returns Array of linked children with their details
+   */
+  async getLinkedChildren(parentUid: string): Promise<Array<{uid: string; email: string; displayName: string; grade: string; lastActivityAt?: string}>> {
+    try {
+      const childrenRef = collection(firestore, `users/${parentUid}/children`);
+      const snapshot = await getDocs(childrenRef);
+
+      const children: Array<{uid: string; email: string; displayName: string; grade: string; lastActivityAt?: string}> = [];
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        children.push({
+          uid: data.childUid,
+          email: data.email,
+          displayName: data.displayName,
+          grade: data.gradeLevel,
+          lastActivityAt: data.linkedAt?.toDate?.()?.toISOString(),
+        });
+      });
+
+      console.log(`[AuthService] Fetched ${children.length} linked children from subcollection`);
+      return children;
+    } catch (error) {
+      console.error('Error fetching linked children:', error);
+      return [];
+    }
+  }
+
+  /**
    * Update user profile
    */
   async updateUserProfile(uid: string, updates: Partial<UserProfile>): Promise<void> {
@@ -444,14 +474,13 @@ class AuthService {
       // Send invite email
       const inviteUrl = `${window.location.origin}?parentInvite=${token}`;
 
-      await emailService.sendInviteEmail(
+      await emailService.sendParentInviteEmail(
         parentEmail,
         inviteUrl,
         {
           displayName: studentProfile.displayName,
           gradeLevel: studentProfile.gradeLevel,
-        },
-        'Student' // Parent name placeholder since we don't have it yet
+        }
       );
 
       console.log('Parent invite email sent successfully to:', parentEmail);
@@ -541,7 +570,7 @@ class AuthService {
       const inviteUrl = `${window.location.origin}?childInvite=${token}`;
 
       try {
-        await emailService.sendInviteEmail(
+        await emailService.sendChildInviteEmail(
           childEmail,
           inviteUrl,
           childInfo,
@@ -686,15 +715,17 @@ class AuthService {
    */
   async acceptChildInvite(token: string, childUid: string): Promise<void> {
     try {
-      // Find invite by token
+      // Find invite by token field (same pattern as acceptParentInvite)
       const invitesRef = collection(firestore, 'invites');
-      const inviteQuery = await getDoc(doc(invitesRef, token));
+      const inviteQuery = query(invitesRef, where('token', '==', token));
+      const inviteSnapshot = await getDocs(inviteQuery);
 
-      if (!inviteQuery.exists()) {
+      if (inviteSnapshot.empty) {
         throw new Error('Invite not found or expired');
       }
 
-      const inviteData = inviteQuery.data();
+      const inviteDoc = inviteSnapshot.docs[0];
+      const inviteData = inviteDoc.data();
 
       if (inviteData.type !== 'parent-to-child') {
         throw new Error('Invalid invite type');
@@ -711,36 +742,56 @@ class AuthService {
 
       const parentUid = inviteData.fromUid;
 
-      // Update child profile - link to parent
-      await this.updateUserProfile(childUid, {
+      console.log('[AuthService] Linking child:', childUid, 'to parent:', parentUid);
+
+      // Create subcollection documents for parent-child relationship (same pattern as acceptParentInvite)
+      // 1. Add parent to child's parents subcollection
+      const childParentsRef = doc(firestore, `users/${childUid}/parents/${parentUid}`);
+      await setDoc(childParentsRef, {
         parentUid: parentUid,
-        parentLinked: true,
+        linkedAt: serverTimestamp(),
+        inviteToken: token,
+      });
+      console.log('[AuthService] Created child/parents subcollection document');
+
+      // 2. Add child to parent's children subcollection
+      const parentChildrenRef = doc(firestore, `users/${parentUid}/children/${childUid}`);
+      await setDoc(parentChildrenRef, {
+        childUid: childUid,
         displayName: inviteData.childInfo.displayName,
         gradeLevel: inviteData.childInfo.gradeLevel,
-        accountType: 'student',
-      });
-
-      // Update parent profile - add linked child
-      const parentProfile = await this.getUserProfile(parentUid);
-      const linkedChildren = parentProfile?.linkedChildren || [];
-
-      linkedChildren.push({
-        uid: childUid,
         email: inviteData.toEmail,
-        displayName: inviteData.childInfo.displayName,
-        grade: inviteData.childInfo.gradeLevel,
+        linkedAt: serverTimestamp(),
+        inviteToken: token,
       });
+      console.log('[AuthService] Created parent/children subcollection document');
 
-      await this.updateUserProfile(parentUid, {
-        linkedChildren,
-      });
+      // Update child's own profile (child has permission to update their own profile)
+      try {
+        await this.updateUserProfile(childUid, {
+          parentUid: parentUid,
+          parentLinked: true,
+          displayName: inviteData.childInfo.displayName,
+          gradeLevel: inviteData.childInfo.gradeLevel,
+          accountType: 'student',
+          profileCompleted: true,
+        });
+        console.log('[AuthService] Updated child profile with parent link');
+      } catch (error) {
+        console.warn('[AuthService] Could not update child profile fields (non-critical):', error);
+      }
+
+      // Note: Parent profile fields (linkedChildren) cannot be updated by child
+      // due to Firestore security rules. The subcollections are sufficient for linking.
 
       // Mark invite as accepted
-      await updateDoc(doc(invitesRef, token), {
+      await updateDoc(inviteDoc.ref, {
         accepted: true,
         acceptedAt: serverTimestamp(),
         acceptedByUid: childUid,
       });
+
+      console.log('[AuthService] ✅ Child invite accepted successfully');
 
     } catch (error) {
       console.error('Error accepting child invite:', error);

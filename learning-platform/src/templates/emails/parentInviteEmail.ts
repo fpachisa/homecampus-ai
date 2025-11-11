@@ -1,19 +1,20 @@
 /**
- * Parent-to-Child Invite Email Template
+ * Child-to-Parent Invite Email Template
+ * Used when a student invites their parent to monitor their learning
  */
 
 import { baseEmailTemplate } from './baseTemplate';
 
-export interface InviteEmailData {
-  parentName: string;
-  childName: string;
-  childGrade: string;
+export interface ParentInviteEmailData {
+  studentName: string;
+  studentGrade: string;
+  parentEmail: string;
   inviteUrl: string;
   expiryDays: number;
 }
 
-export function generateInviteEmail(data: InviteEmailData): string {
-  const { parentName, childName, childGrade, inviteUrl, expiryDays } = data;
+export function generateParentInviteEmail(data: ParentInviteEmailData): string {
+  const { studentName, studentGrade, inviteUrl, expiryDays } = data;
 
   const content = `
     <!-- Greeting -->
@@ -23,23 +24,27 @@ export function generateInviteEmail(data: InviteEmailData): string {
 
     <!-- Message -->
     <p style="margin: 0 0 16px; color: #4b5563; font-size: 16px; line-height: 1.6;">
-      Hi <strong>${childName}</strong>,
+      Hi there,
     </p>
 
     <p style="margin: 0 0 16px; color: #4b5563; font-size: 16px; line-height: 1.6;">
-      <strong>${parentName}</strong> has invited you to join <strong>Home Campus</strong>, an AI-powered learning platform designed to help you excel in your studies!
+      <strong>${studentName}</strong> has invited you to join <strong>Home Campus</strong> so you can support and monitor their learning journey!
     </p>
 
-    <!-- Account Details Box -->
+    <p style="margin: 0 0 16px; color: #4b5563; font-size: 16px; line-height: 1.6;">
+      Home Campus is an AI-powered learning platform that provides personalized tutoring across multiple subjects. By creating a parent account, you'll be able to stay involved in ${studentName}'s educational progress.
+    </p>
+
+    <!-- Student Details Box -->
     <div style="background-color: #FFF8F5; border-left: 4px solid #D97757; padding: 20px; margin: 24px 0; border-radius: 4px;">
       <p style="margin: 0 0 12px; color: #374151; font-size: 14px; font-weight: 600;">
-        Your Account Details:
+        Student Information:
       </p>
       <p style="margin: 0 0 8px; color: #6b7280; font-size: 14px;">
-        <strong>Name:</strong> ${childName}
+        <strong>Name:</strong> ${studentName}
       </p>
       <p style="margin: 0; color: #6b7280; font-size: 14px;">
-        <strong>Grade Level:</strong> ${childGrade}
+        <strong>Grade Level:</strong> ${studentGrade}
       </p>
     </div>
 
@@ -48,7 +53,7 @@ export function generateInviteEmail(data: InviteEmailData): string {
       <tr>
         <td style="border-radius: 6px; background: linear-gradient(135deg, #D97757 0%, #C46649 100%);">
           <a href="${inviteUrl}" style="display: inline-block; padding: 16px 40px; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 6px;">
-            Accept Invite & Create Account
+            Accept Invite & Create Parent Account
           </a>
         </td>
       </tr>
@@ -62,16 +67,16 @@ export function generateInviteEmail(data: InviteEmailData): string {
       ${inviteUrl}
     </p>
 
-    <!-- What You'll Get -->
+    <!-- What You'll Get as a Parent -->
     <div style="margin: 32px 0;">
       <p style="margin: 0 0 16px; color: #1f2937; font-size: 16px; font-weight: 600;">
-        What you'll get with Home Campus:
+        What you'll get with your parent account:
       </p>
       <ul style="margin: 0; padding-left: 20px; color: #4b5563; font-size: 14px; line-height: 1.8;">
-        <li>Personalized AI tutoring in Mathematics and more subjects</li>
-        <li>Interactive problem-solving with step-by-step guidance</li>
-        <li>Visual learning tools and practice exercises</li>
-        <li>Track your progress and achievements</li>
+        <li><strong>Progress Monitoring:</strong> Track ${studentName}'s learning progress, completed topics, and mastery levels</li>
+        <li><strong>Learning Insights:</strong> Understand their strengths and identify areas where they might need extra support</li>
+        <li><strong>Support & Engagement:</strong> Stay involved in their education, celebrate achievements, and provide encouragement</li>
+        <li><strong>Safe Environment:</strong> Rest assured with age-appropriate content and parental oversight features</li>
       </ul>
     </div>
 
@@ -89,8 +94,8 @@ export function generateInviteEmail(data: InviteEmailData): string {
   `;
 
   return baseEmailTemplate({
-    title: `You're invited to Home Campus!`,
-    preheader: `${parentName} has invited you to join Home Campus. Accept your invite to start learning!`,
+    title: `${studentName} has invited you to Home Campus!`,
+    preheader: `${studentName} wants you to support their learning on Home Campus. Accept your invite to create a parent account.`,
     content,
   });
 }

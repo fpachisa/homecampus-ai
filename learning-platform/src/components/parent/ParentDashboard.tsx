@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 import { ChildCard } from './ChildCard';
 import { authService } from '../../services/authService';
+import type { LinkedChild } from '../../types/user';
 
 export const ParentDashboard: React.FC = () => {
   const { theme } = useTheme();
@@ -15,6 +16,7 @@ export const ParentDashboard: React.FC = () => {
     gradeLevel: string;
     sentAt: string;
   }>>([]);
+  const [linkedChildren, setLinkedChildren] = useState<LinkedChild[]>([]);
 
   // Fetch pending invites
   useEffect(() => {
@@ -27,12 +29,22 @@ export const ParentDashboard: React.FC = () => {
     loadPendingInvites();
   }, [user]);
 
+  // Fetch linked children from subcollection
+  useEffect(() => {
+    async function loadLinkedChildren() {
+      if (user) {
+        const children = await authService.getLinkedChildren(user.uid);
+        setLinkedChildren(children);
+      }
+    }
+    loadLinkedChildren();
+  }, [user]);
+
   if (!userProfile) {
     return null;
   }
 
   const childProfiles = userProfile.childProfiles || [];
-  const linkedChildren = userProfile.linkedChildren || [];
   const totalChildren = childProfiles.length + linkedChildren.length + pendingInvites.length;
 
   return (

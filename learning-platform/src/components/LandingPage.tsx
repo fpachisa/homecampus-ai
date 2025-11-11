@@ -20,6 +20,7 @@ export const LandingPage: React.FC = () => {
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [inviteToken, setInviteToken] = useState<string | null>(null);
   const [inviteInfo, setInviteInfo] = useState<any>(null);
+  const [inviteType, setInviteType] = useState<'parent-to-child' | 'student-to-parent' | null>(null);
   const [loadingInvite, setLoadingInvite] = useState(false);
 
   // Theme-aware logo
@@ -34,7 +35,9 @@ export const LandingPage: React.FC = () => {
   // Check for invite token in URL and route changes
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
-    const token = urlParams.get('parentInvite');
+    const parentInviteToken = urlParams.get('parentInvite');
+    const childInviteToken = urlParams.get('childInvite');
+    const token = parentInviteToken || childInviteToken;
 
     // Distinguish between login (existing users) and signup (new users)
     // Only update state if it needs to change to prevent infinite loops
@@ -52,10 +55,14 @@ export const LandingPage: React.FC = () => {
 
     if (token) {
       console.log('[LandingPage] Invite token detected in URL:', token);
+      const detectedInviteType = parentInviteToken ? 'student-to-parent' : 'parent-to-child';
+      console.log('[LandingPage] Invite type:', detectedInviteType);
       setInviteToken(token);
+      setInviteType(detectedInviteType);
       setLoadingInvite(true); // Show loading immediately
       // Store in localStorage in case user refreshes
       localStorage.setItem('pendingInviteToken', token);
+      localStorage.setItem('pendingInviteType', detectedInviteType);
 
       // Fetch invite info to show student name
       authService.getInviteByToken(token).then(invite => {
@@ -77,9 +84,11 @@ export const LandingPage: React.FC = () => {
       // Check localStorage for pending invite (only on initial mount at root path)
       if (location.pathname === '/') {
         const storedToken = localStorage.getItem('pendingInviteToken');
+        const storedInviteType = localStorage.getItem('pendingInviteType') as 'parent-to-child' | 'student-to-parent' | null;
         if (storedToken) {
           console.log('[LandingPage] Restoring invite token from localStorage:', storedToken);
           setInviteToken(storedToken);
+          setInviteType(storedInviteType);
           setLoadingInvite(true);
           authService.getInviteByToken(storedToken).then(invite => {
             if (invite) {
@@ -127,6 +136,7 @@ export const LandingPage: React.FC = () => {
           setShowOnboarding(false);
           // Clear invite token from localStorage
           localStorage.removeItem('pendingInviteToken');
+          localStorage.removeItem('pendingInviteType');
           goToHome(); // Navigate to home after onboarding
         }}
         onCancel={() => {
@@ -135,6 +145,7 @@ export const LandingPage: React.FC = () => {
         }}
         inviteToken={inviteToken}
         inviteInfo={inviteInfo}
+        inviteType={inviteType}
       />
     );
   }
