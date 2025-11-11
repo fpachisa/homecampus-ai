@@ -8,8 +8,11 @@
 import { useState, useEffect, useRef } from 'react';
 import type { PathNode, PathProblem, PathDifficulty, ProblemAttempt, AttemptHistory, ProblemSessionState, RelatedQuestionContext, ScratchPadData } from '../../types/practice';
 import { pathPracticeService } from '../../services/pathPracticeService';
-import { pathProgressService } from '../../services/pathProgressService';
+import { getPathProgressService } from '../../services/pathProgressService';
 import { pathConfigLoader } from '../../services/pathConfigLoader';
+
+// Get service instance (lazy initialized on first call)
+const pathProgressService = getPathProgressService();
 import {
   savePracticeProgress,
   pathProgressToFirestore

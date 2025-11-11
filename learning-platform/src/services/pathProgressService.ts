@@ -807,6 +807,22 @@ class PathProgressService {
   }
 }
 
-// Export singleton instance
-// Now safe from circular dependencies as services are in a separate chunk
-export const pathProgressService = new PathProgressService();
+// Lazy singleton to avoid circular dependency TDZ errors
+// Instance is created on first access, not at module load time
+let _instance: PathProgressService | null = null;
+
+export function getPathProgressService(): PathProgressService {
+  if (!_instance) {
+    _instance = new PathProgressService();
+  }
+  return _instance;
+}
+
+// Deprecated: Use getPathProgressService() instead
+// Kept for backward compatibility during transition
+export const pathProgressService = new Proxy({} as PathProgressService, {
+  get(_target, prop) {
+    console.warn('[DEPRECATED] Direct pathProgressService access. Use getPathProgressService() instead.');
+    return (getPathProgressService() as any)[prop];
+  }
+});

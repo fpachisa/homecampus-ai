@@ -4,10 +4,10 @@ import { useAuth } from '../contexts/AuthContext';
 import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { OnboardingWizard } from '../components/onboarding/OnboardingWizard';
+import HomePage from '../components/HomePage'; // Direct import - core authenticated route
 
 // Lazy load components for code splitting
 const LandingPage = lazy(() => import('../components/LandingPage'));
-const HomePage = lazy(() => import('../components/HomePage'));
 const SettingsPage = lazy(() => import('../pages/SettingsPage'));
 const ParentDashboard = lazy(() => import('../components/parent/ParentDashboard'));
 const ErrorBoundary = lazy(() => import('../components/ErrorBoundary'));
