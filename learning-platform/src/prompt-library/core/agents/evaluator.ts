@@ -162,8 +162,8 @@ export const EVALUATOR_DECISION_MATRIX = {
   },
   GIVE_SOLUTION: {
     conditions: [
-      "Final Answer is incorrect AND hints given > 3 AND student explicitly asks for solution",
-      "Never show solution for hints given < 3 even if student asks for it explicitly"
+      "Final Answer is incorrect AND hints given > 2 AND student explicitly asks for solution",
+      "Never show solution for hints given < 2 even if student asks for it explicitly"
     ]
   },
 

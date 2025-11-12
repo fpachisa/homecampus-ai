@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import MessageBubble from './MessageBubble';
 import InputArea, { type InputAreaHandle } from './InputArea';
 import Avatar from './Avatar';
+import SolutionPrompt from './SolutionPrompt';
 import FallbackAIService from '../services/fallbackAIService';
 import type { AIService } from '../services/aiService';
 import { useAuth } from '../contexts/AuthContext';
@@ -340,11 +341,11 @@ const createGreetingWithPreGeneratedQuestion = (
 
 // Loading message mapping with contextual, emoji-enriched feedback
 const LOADING_MESSAGES: Record<string, string> = {
-  evaluating: '🤔 Analyzing your answer...',
+  evaluating: '🤔 Analyzing your response...',
   generating_hint: '💭 Crafting a helpful hint...',
   generating_solution: '📝 Preparing step-by-step solution...',
   generating_question: '✨ Creating a new problem...',
-  celebrating: '🎉 Great work! Preparing celebration...',
+  celebrating: '🎉 Great work!!...',
   initializing: '📚 Starting your learning session...',
   loading_section: '📖 Loading section...'
 };
@@ -2314,6 +2315,17 @@ const handleStudentSubmit = async (input: string) => {
           )}
         </div>
       </div>
+
+      {/* Solution Prompt - shown when hints >= 3 and no solution given yet */}
+      {problemState &&
+       problemState.hintsGivenForCurrentProblem >= 3 &&
+       !isLoading &&
+       state.messages[state.messages.length - 1]?.metadata?.messageType !== 'solution' && (
+        <SolutionPrompt
+          onRequestSolution={() => handleStudentSubmit("Please show me the step-by-step solution")}
+          isLoading={isLoading}
+        />
+      )}
 
       {/* Input Area */}
       <InputArea ref={inputAreaRef} onSubmit={handleStudentSubmit} disabled={isLoading} topicId={topicId} />

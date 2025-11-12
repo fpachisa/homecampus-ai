@@ -164,7 +164,7 @@ const MessageBubble: React.FC<Props> = ({ message, onContinue }) => {
             color: isTutor ? theme.colors.textAccent : 'rgba(255,255,255,0.8)',
           }}
         >
-          {isTutor ? 'Math Tutor' : 'You'}
+          
         </div>
 
         {/* Render visualization or regular message */}
