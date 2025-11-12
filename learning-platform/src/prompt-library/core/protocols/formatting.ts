@@ -152,7 +152,7 @@ export const FORMATTING_RULES: FormattingRules = {
   
   //RULE 1: Unicode First - Simple Examples
   unicode: {
-    rule: "ALWAYS use Unicode characters when available ONLY exception is ratios see section on LaTex below.",
+    rule: "ALWAYS use Unicode characters when available. DO NOT use LaTeX where unicode is available.",
     examples: {
       correct: [
         "The angle θ = 30°",

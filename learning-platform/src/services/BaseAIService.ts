@@ -130,7 +130,8 @@ class BaseAIService implements AIService {
           variationStyle,
           avoidPatterns
         });
-
+        console.log('Batch prompt generated, calling AI provider...');
+        console.log('Prompt length (chars):', prompt.length);
         // Call AI provider with larger token limit for batch
         const text = await this.provider.generateContent(prompt, 8192);
 

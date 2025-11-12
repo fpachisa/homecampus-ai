@@ -27,11 +27,11 @@ export class GeminiProvider implements AIProvider {
 
   async generateContent(prompt: string, _maxTokens?: number): Promise<string> {
     try {
-      // Add 30-second timeout to prevent hanging requests
+      // Add 2-minute timeout (increased for batch generation with theory content)
       const result = await this.withTimeout(
         this.model.generateContent(prompt),
-        30000, // 30 seconds
-        'Gemini API request timed out after 30 seconds'
+        120000, // 120 seconds (2 minutes)
+        'Gemini API request timed out after 120 seconds'
       ) as any;
 
       const text = result.response.text().trim();

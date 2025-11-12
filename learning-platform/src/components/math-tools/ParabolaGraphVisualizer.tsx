@@ -174,6 +174,37 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
     return Math.abs(x1 - x2) < tolerance && Math.abs(y1 - y2) < tolerance;
   };
 
+  // Helper: Format number for display (rounds to avoid long decimals)
+  const formatNumber = (num: number, maxDecimals: number = 2): string => {
+    // Check if it's very close to an integer
+    if (Math.abs(num - Math.round(num)) < 0.001) {
+      return Math.round(num).toString();
+    }
+
+    // Check for common fractions (1/2, 1/3, 1/4, 1/6, etc.)
+    const commonFractions = [
+      { value: 1/2, text: '1/2' },
+      { value: 1/3, text: '1/3' },
+      { value: 2/3, text: '2/3' },
+      { value: 1/4, text: '1/4' },
+      { value: 3/4, text: '3/4' },
+      { value: 1/6, text: '1/6' },
+      { value: 5/6, text: '5/6' },
+      { value: 1/8, text: '1/8' },
+      { value: 3/8, text: '3/8' },
+      { value: 5/8, text: '5/8' },
+      { value: 7/8, text: '7/8' },
+    ];
+
+    for (const frac of commonFractions) {
+      if (Math.abs(num - frac.value) < 0.001) return frac.text;
+      if (Math.abs(num + frac.value) < 0.001) return `-${frac.text}`;
+    }
+
+    // Otherwise, round to specified decimal places
+    return num.toFixed(maxDecimals);
+  };
+
   // Colors
   const gridColor = theme.colors.border || '#e5e7eb';
   const axisColor = theme.colors.textSecondary || '#6b7280';
@@ -184,17 +215,21 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
   // Generate equation string
   const getEquation = (): string => {
     if (form === 'vertex') {
-      const aStr = a === 1 ? '' : a === -1 ? '-' : `${a}`;
-      const hStr = h === 0 ? 'x' : h > 0 ? `(x - ${h})` : `(x + ${Math.abs(h)})`;
-      const kStr = k === 0 ? '' : k > 0 ? ` + ${k}` : ` - ${Math.abs(k)}`;
+      const aStr = a === 1 ? '' : a === -1 ? '-' : `${formatNumber(a)}`;
+      const hFormatted = formatNumber(h);
+      const hStr = h === 0 ? 'x' : h > 0 ? `(x - ${hFormatted})` : `(x + ${formatNumber(Math.abs(h))})`;
+      const kFormatted = formatNumber(Math.abs(k));
+      const kStr = k === 0 ? '' : k > 0 ? ` + ${kFormatted}` : ` - ${kFormatted}`;
       return `f(x) = ${aStr}${hStr}^2${kStr}`;
     }
     // Standard form: f(x) = ax² + bx + c
     const b = -2 * a * h;
     const c = a * h * h + k;
-    const bStr = b === 0 ? '' : b > 0 ? ` + ${b}x` : ` - ${Math.abs(b)}x`;
-    const cStr = c === 0 ? '' : c > 0 ? ` + ${c}` : ` - ${Math.abs(c)}`;
-    return `f(x) = ${a}x^2${bStr}${cStr}`;
+    const bFormatted = formatNumber(Math.abs(b));
+    const cFormatted = formatNumber(Math.abs(c));
+    const bStr = b === 0 ? '' : b > 0 ? ` + ${bFormatted}x` : ` - ${bFormatted}x`;
+    const cStr = c === 0 ? '' : c > 0 ? ` + ${cFormatted}` : ` - ${cFormatted}`;
+    return `f(x) = ${formatNumber(a)}x^2${bStr}${cStr}`;
   };
 
   return (
@@ -284,7 +319,7 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
               fill={parabolaColor}
               textAnchor="middle"
             >
-              x = {h}
+              x = {formatNumber(h)}
             </text>
           </>
         )}
@@ -313,7 +348,7 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
               fill={vertexColor}
               textAnchor="middle"
             >
-              ({h}, {k})
+              ({formatNumber(h)}, {formatNumber(k)})
             </text>
           </>
         )}
@@ -339,7 +374,7 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
                   fill={interceptColor}
                   textAnchor="middle"
                 >
-                  ({xInt.toFixed(1)}, 0)
+                  ({formatNumber(xInt)}, 0)
                 </text>
               </g>
             ))}
@@ -360,7 +395,7 @@ const ParabolaGraphVisualizer: React.FC<ParabolaGraphVisualizerProps> = ({
                   className="text-xs"
                   fill={interceptColor}
                 >
-                  (0, {yIntercept.toFixed(1)})
+                  (0, {formatNumber(yIntercept)})
                 </text>
               </g>
             )}

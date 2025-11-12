@@ -373,39 +373,73 @@ export class NewPromptResolver {
     };
     const scopedMathTools = this.getScopedMathTools(contextWithFirstSection, subtopic, global);
 
+    // Extract teaching template for theory content (fallback to learning objectives if not available)
+    const theoryContent = (subtopic as any).teachingTemplate ||
+      `Learning objectives: ${subtopic.learningObjectives || 'Master the fundamental concepts'}`;
+
     const builder = this.promptLibrary.createBuilder()
-      .addRole("You are a warm and friendly math tutor who generates initial greetings and introductory problem on the given topic")
+      .addRole("You are a warm and friendly math tutor who introduces new topics with clear, engaging theory before presenting practice problems")
       .addContext({
         topic: subtopic.displayName,
-        topicName: subtopic.topicName
+        topicName: subtopic.topicName,
+        theoryReference: theoryContent
       })
       .addObjectives(subtopic.learningObjectives ? [subtopic.learningObjectives] : [])
       .addFormattingRules(FORMATTING_RULES)
       .addVisualTools(scopedMathTools)
-      .addTask(`Greet the student encouragingly and introduce ${subtopic.topicName}` + ` Then generate the first intoductory problem on ${firstSection.title}`)
+      .addTask(`
+1. Start with a friendly greeting
+2. Provide a BRIEF theory introduction (2-3 paragraphs maximum) covering:
+   - What ${subtopic.topicName} is (clear definition/concept)
+   - Why it matters (real-world applications or importance)
+   - Key formulas, rules, or relationships (if applicable)
+   - Core concepts students will learn in this topic
+3. Use the provided theory reference as your guide, but condense it to be concise and engaging
+4. Transition smoothly from theory to practice
+5. Present the first introductory problem on ${firstSection.title}
+
+The theory should be motivating and build confidence, not overwhelming. Keep it brief but informative.
+`)
       .addOutputSchema({
           speech: {
-            text: "string - plain text for avatar speech, no LaTeX, no markdown, no HTML, no special characters.",
-            emotion: "excited"
+            text: "string - plain text for avatar speech including greeting + very brief 1-2 sentences introduction of the topic (no LaTeX, no markdown, no HTML)",
+            emotion: "warm | encouraging | excited"
           },
 
           display: {
-            content: "string - first introductory problem text",
-            showAfterSpeech: "boolean",
+            content: `string - formatted as markdown:
+
+# Introduction to {Topic Name}
+
+Provide a brief theory introduction. 2-3 paragraphs max that covers what the topic is, why it matters, key formulas/rules, and core concepts).
+
+Based on the above theory, present the first intoductory problem:
+
+{Problem statement with proper formatting}
+`,
+            showAfterSpeech: "boolean - true",
             type: "initial_problem"
           },
 
           mathTool: {
-            toolName: "string - technical key",
+            toolName: "string - technical key from Available Visual Tools",
             parameters: "object - tool parameters",
-            caption: "string - explanation"
+            caption: "string - explanation of the visualization"
           }
 
       })
-      .addSection("IMPORTANT 1:", "Use visual tools from the available Visual Tools list when appropriate.")
-      .addSection("CRITICAL", "Return ONLY valid JSON exactly as per OUTPUT SCHEMA even if no mathTool used still provide all fields and keep it blank.")
-      .addSection("VERY CRITICAL", "DO NOT refer to any diagrams/images that do not exist. DO NOT hallucinate toolName. Use only from the Available Visual Tools")
-      .addSection("IMPORTANT 2:", "Ask only one question unless the second part is using the answer from the first part.");
+      .addSection("CRITICAL - BREVITY:", `
+Theory introduction MUST be:
+- Maximum 2-3 paragraphs (not 5, not 10, just 2-3!)
+- Focus on KEY concepts only, not exhaustive coverage
+- Engaging and motivating, not textbook-dry
+- Include essential formulas/rules with proper LaTeX
+- Smooth natural transition to the first problem
+`)
+      .addSection("IMPORTANT - VISUAL TOOLS:", "Use visual tools from the available Visual Tools list when appropriate for the first problem.")
+      .addSection("CRITICAL - JSON FORMAT:", "Return ONLY valid JSON exactly as per OUTPUT SCHEMA. Even if no mathTool is used, provide all fields (use empty object {} for mathTool if not needed).")
+      .addSection("VERY CRITICAL - NO HALLUCINATION:", "DO NOT refer to any diagrams/images that do not exist. DO NOT hallucinate toolName. Use only tools from the Available Visual Tools list.")
+      .addSection("IMPORTANT - PROBLEM SCOPE:", "Ask only one question unless the second part uses the answer from the first part (e.g., multi-step problems).");
 
     return builder.build();
   }
@@ -430,26 +464,38 @@ export class NewPromptResolver {
     variationStyle: 'diverse' | 'consistent';
     avoidPatterns: string[];
   }): string {
-    const { topics, variationStyle, avoidPatterns } = context;
+    const { topics, variationStyle } = context;
 
-    // Build topic list for prompt
-    const topicsList = topics.map((t, i) =>
-      `${i + 1}. **${t.topicId}**: ${t.displayName} (First section: "${t.firstSection?.title || 'Introduction'}")`
-    ).join('\n');
+    // Build topic list with theory references for prompt
+    const topicsList = topics.map((t, i) => {
+      // Get topic config to access teaching template
+      let theoryRef = 'Use the learning objectives as guidance.';
+      try {
+        const { subtopic } = this.getTopicConfig(t.topicId);
+        const teachingTemplate = (subtopic as any).teachingTemplate;
+        if (teachingTemplate) {
+          theoryRef = `Theory reference (condense to 2-3 paragraphs): ${teachingTemplate.substring(0, 500)}...`;
+        } else if (t.learningObjectives) {
+          theoryRef = `Learning objectives: ${t.learningObjectives}`;
+        }
+      } catch (error) {
+        console.warn(`Failed to get theory for ${t.topicId}`);
+      }
+
+      return `${i + 1}. **${t.topicId}**: ${t.displayName}
+   First section: "${t.firstSection?.title || 'Introduction'}"
+   ${theoryRef}`;
+    }).join('\n\n');
 
     // Build variation instructions based on style
     const variationInstructions = variationStyle === 'diverse' ? [
-      'Each greeting must have a UNIQUE opening style and sentence structure',
+      'Each greeting must have a different opening style and sentence structure',
       'Vary greeting words: use different combinations of Hello/Hi/Hey/Welcome/Greetings',
       'Vary enthusiasm levels across greetings (some warm, some excited, some encouraging)',
       'Use different approaches to introduce topics (metaphors, real-world connections, curiosity hooks)',
-      'Avoid ANY repetitive phrases or patterns across greetings',
-      avoidPatterns.length > 0 ? `NEVER use these overused phrases: ${avoidPatterns.map(p => `"${p}"`).join(', ')}` : null,
-      'Each greeting should feel distinctly different while maintaining a warm, supportive teaching voice'
     ].filter(Boolean) : [
       'Maintain a consistent warm and friendly tone across all greetings',
       'Use similar teaching approaches but vary specific wording',
-      avoidPatterns.length > 0 ? `Avoid these phrases: ${avoidPatterns.map(p => `"${p}"`).join(', ')}` : null,
       'Keep greetings professional and aligned with the tutoring brand'
     ].filter(Boolean);
 
@@ -493,15 +539,24 @@ export class NewPromptResolver {
     const mergedTools = Object.fromEntries(allToolsMap);
 
     const builder = this.promptLibrary.createBuilder()
-      .addRole("You are creating VARIED initial greetings for a math tutoring platform")
-      .addSection('TASK', `Generate ${topics.length} UNIQUE initial greetings with first problems for the following subtopics:
+      .addRole("You are creating VARIED initial greetings with theory introductions for a math tutoring platform")
+      .addSection('TASK', `Generate ${topics.length} UNIQUE initial greetings with theory introductions and first problems for the following subtopics:
 
 ${topicsList}
 
 Each greeting should:
-1. Warmly introduce the specific subtopic with a UNIQUE style
-2. Present an introductory problem from the first section
-3. Follow all formatting rules and output schema requirements`)
+1. Start with a warm, different style greeting (vary the style across all greetings!)
+2. Provide a BRIEF theory introduction (2-3 paragraphs maximum) covering:
+   - What the topic is (definition/concept)
+   - Why it matters (real-world applications)
+   - Key formulas or rules (if applicable)
+   - Core concepts students will learn
+3. Use the theory reference provided for each topic as your guide, but condense it to be engaging
+4. Transition smoothly from theory to practice
+5. Present an introductory problem from the first section
+6. Follow all formatting rules and output schema requirements
+
+CRITICAL: Theory must be brief (2-3 paragraphs max), engaging, and motivating - not exhaustive!`)
       .addSection('VARIATION REQUIREMENTS', {
         style: variationStyle,
         instructions: variationInstructions,
@@ -515,11 +570,17 @@ Each greeting should:
           greetings: {
             '[topicId]': {
               speech: {
-                text: 'string - plain text for TTS, NO LaTeX, NO markdown, NO hyphens in acronyms (e.g., "S O H C A H T O A" not "SOH-CAH-TOA")',
+                text: 'string - plain text for TTS including greeting + a very brief introduction of the topic. (NO LaTeX, NO markdown, NO hyphens in acronyms like "S O H C A H T O A")',
                 emotion: 'string - vary emotions: "encouraging", "excited", "warm", "supportive"'
               },
               display: {
-                content: 'string - first problem with markdown/LaTeX formatting, section header, clear question',
+                content: `string - formatted as markdown:
+
+# Introduction to {Topic Name}
+
+Provide a brief theory introduction. 2-3 paragraphs max that covers what the topic is, why it matters, key formulas/rules, and core concepts).
+
+Based on the above theory, present the first intoductory problem.`,
                 showAfterSpeech: 'boolean - always true',
                 type: '"initial_problem"'
               },
@@ -537,8 +598,9 @@ Each greeting should:
         'Return ONLY valid JSON matching the output schema exactly',
         'Include ALL topic IDs in the greetings object',
         `Ensure MAXIMUM variation - no two greetings should start or sound similar`,
-        'speech.text must be plain text suitable for text-to-speech (no special characters)',
-        'display.content can use markdown and LaTeX with proper escaping',
+        'Theory introduction: MAXIMUM 2-3 paragraphs, focus on KEY concepts only',
+        'Theory must be engaging and motivating, not textbook-dry or exhaustive',
+        'Include smooth transition from theory to first problem',
         'Use ONE backslash in LaTeX (e.g., "$\\\\theta$" not "$\\\\\\\\theta$")',
         'mathTool is optional - include only when it genuinely helps understanding',
         'Ask only one question per greeting unless multi-part questions share context'

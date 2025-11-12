@@ -29,12 +29,24 @@ export const INITIAL_GREETINGS_CACHE: Record<string, CachedGreeting> = {
    */
   's3-math-trigonometry-basic-ratios': {
     speech: {
-      text: "Hey there! I'm excited to start our journey into trigonometry today. We're going to learn about trigonometric ratios—sine, cosine, and tangent—which are essential tools for relating the angles and sides of right triangles. Before we can use these ratios, we need to make sure we know how to label the sides correctly based on the angle we are focusing on. Let's start with the basics of labeling.",
-      emotion: 'encouraging',
+      text: `Welcome to the exciting world of trigonometry! At its core, this topic is about unlocking the hidden relationships between the sides and angles of right triangles. Why do we care? Because these simple ratios are the foundation used by engineers, architects, and physicists to calculate heights and distances that are impossible to measure directly. Before we jump into the famous S O H C A H T O A ratios, we must first master the language of the right triangle. Let's start by identifying the three essential sides.`,
+      emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-trigonometry-basic-ratios.mp3'
     },
     display: {
-      content: '### Section 1: Triangle Labeling\n\nIn trigonometry, the names of the sides of a right triangle—**Opposite**, **Adjacent**, and **Hypotenuse**—depend entirely on which acute angle (θ) you are looking at.\n\nTake a look at the triangle below. Relative to the angle θ, which side is the **Hypotenuse**?',
+      content: `# Introduction to Trigonometric Ratios
+
+Trigonometry is the study of how the angles and side lengths of triangles relate to each other. Specifically, we begin with **right-angled triangles**.
+
+The key insight is that for a specific angle, the ratio of any two sides (like the opposite side divided by the hypotenuse) remains constant, regardless of the triangle's size. This constancy allows us to set up equations to solve for unknown lengths or angles.
+
+Before we can use the sine, cosine, and tangent ratios, we must correctly identify the three sides relative to the angle of interest: the **Hypotenuse** (always opposite the right angle), the **Opposite** side (opposite the angle θ), and the **Adjacent** side (next to the angle θ).
+
+---
+
+### First Problem: Triangle Labeling
+
+Based on the angle \$\\theta\$ shown in the triangle below, which side is the **Hypotenuse**?`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -50,41 +62,73 @@ export const INITIAL_GREETINGS_CACHE: Record<string, CachedGreeting> = {
                 "showRightAngle": true,
                 "showSideTypeLabels": false
           },
-          "caption": "A right triangle labeled with sides A, B, and C, relative to angle θ."
+          "caption": "A right triangle with sides A, B, and C, and angle θ."
     }
   },
 
   's3-math-trigonometry-problem-solving': {
     speech: {
-      text: `Great to see you! Now that you understand the basic trigonometric ratios, we will apply them to solve real-world problems. These problems will help you see how trigonometry works in practical situations. Let me give you your first challenge.`,
+      text: `Hello! You've mastered the basic trigonometric ratios; now it's time to put that knowledge to work solving real-world puzzles. Trigonometry is the mathematical tool used to measure the height of buildings and the distance across rivers. A crucial step in solving these problems is correctly interpreting the scenario and drawing the diagram. This often involves understanding the concepts of the angle of elevation and the angle of depression. These angles are always measured relative to a horizontal line of sight. Let's start by defining these essential terms.`,
       emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-trigonometry-problem-solving.mp3'
     },
     display: {
-      content: 'A ladder 5 meters long leans against a wall. The ladder makes an angle of 60° with the ground. How high up the wall does the ladder reach? Give your answer to 2 decimal places.',
+      content: `# Introduction to Problem Solving Using Trigonometry
+
+Solving real-world trigonometry problems requires translating a written description into a geometric diagram, usually involving a right triangle. The most common challenge is correctly identifying the position of the angle.
+
+We use two key terms:
+1. **Angle of Elevation:** The angle measured **up** from the horizontal line of sight to an object above.
+2. **Angle of Depression:** The angle measured **down** from the horizontal line of sight to an object below.
+
+Both angles are always formed between the line of sight and the **horizontal line** (not the vertical side of the object!).
+
+---
+
+### First Problem: Understanding Angles of Elevation and Depression
+
+If a person standing on the ground looks up at the top of a tower, what type of angle is formed between their line of sight and the horizontal ground?`,
       showAfterSpeech: true
     },
     mathTool: {
-      toolName: 'rightTriangle',
-      parameters: {
-        angle: 60,
-        hypotenuse: 5,
-        labelAngle: 'θ',
-        showOpposite: false,  // Student needs to find this
-        showLabels: true
-      },
-      caption: 'Ladder leaning against wall at 60° angle'
+          "toolName": "elevationDepression",
+          "parameters": {
+                "type": "elevation",
+                "angle": null,
+                "height": "h",
+                "distance": "d",
+                "observerLabel": "Person",
+                "targetLabel": "Top of Tower",
+                "showTriangle": true,
+                "showRightAngle": true,
+                "highlightSide": "none"
+          },
+          "caption": "Visualization of a person looking up at a tower."
     }
   },
 
   's3-math-trigonometry-true-bearings': {
     speech: {
-      text: "Welcome to bearings! Bearings are a way to describe direction using angles measured clockwise from North. This is essential for navigation, whether you're sailing a ship or flying a plane. They help us describe direction accurately using a standard system. Let's start with the fundamentals of how they work.",
-      emotion: 'encouraging',
+      text: `Greetings, future navigators! Today, we embark on a journey into true bearings, the precise language of direction used by pilots, sailors, and surveyors worldwide. True bearings provide an unambiguous, three-digit number representing the angle measured clockwise from the North line, which is always zero zero zero degrees. This standardized system is essential for plotting courses and ensuring accurate travel across long distances. Mastering bearings requires visualizing the North line at every point. Let's start by defining the standard format.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-trigonometry-true-bearings.mp3'
     },
     display: {
-      content: '### 1. Bearing Fundamentals\n\nTrue bearings are always measured **clockwise** from the North line (000°) and must always be written using **three digits**.\n\nLook at the diagram showing the path from point A to point B.\n\n**Question:** What is the true bearing of B from A?',
+      content: `# Introduction to True Bearings
+
+True bearings are a fundamental concept in navigation and surveying, providing a precise direction from one point to another. They are defined by three key rules:
+
+1. **Measured from North:** Bearings always start from the North line (000°).
+2. **Clockwise Direction:** The angle is measured in a clockwise direction.
+3. **Three Digits:** Bearings must always be written using three digits (e.g., 45° is written as 045°).
+
+Understanding these fundamentals is the first step to drawing accurate navigation diagrams and solving complex path problems.
+
+---
+
+### First Problem: Understanding True Bearings
+
+What is the true bearing for traveling due East?`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -93,115 +137,109 @@ export const INITIAL_GREETINGS_CACHE: Record<string, CachedGreeting> = {
                 "points": [
                       {
                             "label": "A",
-                            "bearing": 45
-                      },
-                      {
-                            "label": "B"
+                            "bearing": 90
                       }
                 ],
-                "legs": [
-                      {
-                            "fromPoint": 0,
-                            "toPoint": 1,
-                            "distance": "5 km"
-                      }
-                ],
-                "showCompassRose": false,
-                "showNorthLines": true,
-                "highlightPoint": 0
+                "legs": [],
+                "showInteriorAngles": false,
+                "showCompassRose": true,
+                "showNorthLines": true
           },
-          "caption": "Find the true bearing from A to B."
+          "caption": "A compass rose showing the North line (000°)."
     }
   },
 
   's3-math-trigonometry-obtuse-angles': {
     speech: {
-      text: "Hi there! Let's learn about a really fascinating part of trigonometry today: working with obtuse angles. So far, you've probably only dealt with acute angles, those less than 90 degrees, usually inside a right-angled triangle. But what happens when an angle is bigger than 90 degrees? That's what we're going to explore! We'll start by making sure we all agree on what an obtuse angle looks like in a trigonometric context.",
+      text: `Hi there! Up until now, trigonometry has been confined to the ninety degree limit of the right triangle. But what happens when we encounter angles greater than ninety degrees, or obtuse angles? Does sine, cosine, or tangent still work? Absolutely! This topic expands our trigonometric world by introducing supplementary angle relationships. We learn how the trigonometric ratios for an obtuse angle relate directly to the ratios for its supplementary angle, which is one hundred eighty degrees minus theta. Let's start by clarifying what an obtuse angle means in this context.`,
       emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-trigonometry-obtuse-angles.mp3'
     },
     display: {
-      content: '### Section 1: Obtuse Angle Definition\n\nIn geometry, an angle (θ) is classified as **obtuse** if it falls within a certain range.\n\nWhich inequality correctly defines an obtuse angle?\n\nA) 0° < θ < 90°\nB) 90° < θ < 180°\nC) 180° < θ < 360°\nD) θ = 90°',
+      content: `# Introduction to Trigonometry with Obtuse Angles
+
+When we first learned trigonometry, we focused solely on acute angles (less than 90°) within right triangles. However, many real-world triangles (and those solved using the Sine and Cosine Rules) contain **obtuse angles** (angles between 90° and 180°).
+
+To handle these larger angles, we extend the definitions of sine, cosine, and tangent using the concept of the unit circle. The key idea is that the trigonometric ratios for an obtuse angle are mathematically linked to the ratios of its corresponding acute angle in the first quadrant.
+
+This relationship, known as the supplementary angle relationship, is crucial: for example, \$\\sin(\\theta) = \\sin(180° - \\theta)\$. We will explore how this affects the signs (positive or negative) of the trig ratios.
+
+---
+
+### First Problem: Obtuse Angle Definition
+
+In the context of solving a general triangle, what is the range of possible angle measures for an obtuse angle?`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "generalTriangle",
-          "parameters": {
-                "angleA": 115,
-                "angleB": 35,
-                "angleC": 30,
-                "angleA_label": "θ",
-                "highlightAngle": "A",
-                "triangleType": "obtuse",
-                "showAngles": true,
-                "showSides": false
-          },
-          "caption": "Here is an example of a triangle containing an obtuse angle, θ."
     }
   },
 
   's3-math-trigonometry-area-of-triangle': {
     speech: {
-      text: "Hi there! We are starting a really exciting topic today: finding the area of a triangle using trigonometry. This method is incredibly powerful because it works for any triangle—acute, obtuse, or even right-angled—even when we don't know the vertical height. We're going to start by understanding the formula: Area equals one half of a times b times sine C. Let's first look at how the basics work.",
-      emotion: 'encouraging',
+      text: `Welcome back! For years, you've calculated the area of a triangle using the formula: Area equals one half base times height. But what if you don't know the perpendicular height, or it's simply too difficult to measure? This is where trigonometry steps in to offer a far more versatile and elegant solution. The trigonometric area formula allows us to find the area of any triangle, provided we know the lengths of two sides and the measure of the angle included between them. Let's look at this powerful formula.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-trigonometry-area-of-triangle.mp3'
     },
     display: {
-      content: "Understanding the Area Formula\n\nThe standard formula for the area of a triangle using trigonometry is:\n\n$Area = \\frac{1}{2} \\times a \\times b \\times sin(C)$\n\nThis formula relies on knowing two sides and the angle between them (the included angle).\n\nLook at the triangle below. If we want to calculate the area using the sides labeled b and c, which angle must we know?",
+      content: `# Introduction to Area of a Triangle (Trigonometric Formula)
+
+While the traditional formula, Area = \$\\frac{1}{2}bh\$, works well for simple cases, it requires knowing the perpendicular height (\$h\$), which is often unavailable in surveying or design problems.
+
+The trigonometric area formula generalizes this concept: **Area = \$\\frac{1}{2}ab \\sin C\$**.
+
+This formula requires knowing two sides (\$a\$ and \$b\$) and the angle *included* between them (\$C\$). This is a powerful tool because it allows us to calculate the area of *any* triangle, regardless of whether it is a right triangle or not, using only easily measurable side lengths and angles.
+
+---
+
+### First Problem: Understanding the Area Formula
+
+In triangle PQR shown below, which angle must be used in the formula Area = \$\\frac{1}{2}pq \\sin R\$?`,
       showAfterSpeech: true
     },
     mathTool: {
-      toolName: 'generalTriangle',
-      parameters: {
-        "sideA": "a",
-        "sideB": "b",
-        "sideC": "c",
-        "angleA": 70,
-        "angleB": 60,
-        "angleC": 50,
-        "showSides": true,
-        "showAngles": true
-      },
-      caption: 'Triangle with two sides and included angle'
+          "toolName": "generalTriangle",
+          "parameters": {
+                "sideA": "q",
+                "sideB": "r",
+                "sideC": "p",
+                "angleA": 65,
+                "angleB": 45,
+                "angleC": 70,
+                "angleA_label": "Q",
+                "angleB_label": "R",
+                "angleC_label": "P",
+                "vertexA_label": "Q",
+                "vertexB_label": "R",
+                "vertexC_label": "P",
+                "highlightSide": "none",
+                "highlightAngle": "none",
+                "showAngles": true,
+                "showSides": true,
+                "triangleType": "acute"
+          },
+          "caption": "Triangle PQR with sides p, q, and r, and angles P, Q, and R."
     }
   },
 
   's3-math-trigonometry-sine-rule': {
     speech: {
-      text: "Hi there! The Sine Rule is a powerful tool that helps us find unknown sides and angles in any triangle, not just right triangles. It relates the sides of a triangle to the sines of their opposite angles. Let's start by discovering the relationship itself.",
-      emotion: 'encouraging',
+      text: `Hey! Get ready for a major upgrade in your geometry toolkit! Until now, if a triangle wasn't a right triangle, we were stuck. The Sine Rule changes everything, allowing us to solve any triangle, provided we have enough information. This powerful formula provides a proportional relationship between the sides of any triangle and the sines of their opposite angles. This rule is indispensable when you know a side and its opposite angle. Let's discover the rule now!`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-trigonometry-sine-rule.mp3'
     },
     display: {
-      content: '### Discovering the Sine Rule\n\nTake a look at the triangle below. We are going to calculate the ratio of a side length to the sine of its opposite angle.\n\nCalculate the value of the following two ratios, rounding your answers to two decimal places:\n\n $1. \\frac{a}{\\sin A}$\n $2. \\frac{b}{\\sin B}$',
-      showAfterSpeech: true
-    },
-    mathTool: {
-      toolName: 'generalTriangle',
-      parameters: {
-              "sideA": "6.43",
-              "sideB": "8.66",
-              "sideC": "9.85",
-              "angleA": 40,
-              "angleB": 60,
-              "angleC": 80,
-              "highlightSide": "none",
-              "showAngles": true,
-              "showSides": true,
-              "triangleType": "acute"
-      },
-      caption: 'Triangle ABC with given angles and side'
-    }
-  },
+      content: `# Introduction to the Sine Rule
 
-  's3-math-trigonometry-cosine-rule': {
-    speech: {
-      text: "Hey there! I'm excited to start working on trigonometry with you today. We're moving beyond right-angled triangles and diving into the Cosine Rule. This rule is a fantastic tool for solving triangles that don't have a 90-degree angle. It actually has a very close relationship with the Pythagorean theorem. Let's start by exploring that connection!",
-      emotion: 'warm',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-trigonometry-cosine-rule.mp3'
-    },
-    display: {
-      content: '### Understanding the Cosine Rule\n\nThe Cosine Rule is essential for solving non-right triangles. The standard form for finding side *c* is:\n\n$c² = a² + b² - 2ab \\cos C$\n\n1.  If angle C were 90° (a right angle), what is the value of $\\cos 90°$?\n2.  Using this value, explain how the Cosine Rule simplifies to the Pythagorean theorem ($c² = a² + b²$) when applied to a right triangle.',
+The Sine Rule is a crucial tool used to solve non-right-angled triangles. It establishes a simple, elegant relationship: the ratio of a side length to the sine of its opposite angle is constant throughout the triangle.
+
+**The Sine Rule:** \$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}\$
+
+We use the Sine Rule primarily when we have a 'matching pair'—a known side and its opposite angle. This allows us to solve triangles given Angle-Angle-Side (AAS) or Angle-Side-Angle (ASA) information. It is foundational for complex calculations in surveying and navigation.
+
+---
+
+### First Problem: Discovering the Sine Rule
+
+If we are given a triangle with side \$a = 10\$ and angle \$A = 40°\$, and we need to find side \$b\$, which ratio must we also know to apply the Sine Rule?`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -210,14 +248,58 @@ export const INITIAL_GREETINGS_CACHE: Record<string, CachedGreeting> = {
                 "sideA": "a",
                 "sideB": "b",
                 "sideC": "c",
-                "angleA": 60,
-                "angleB": 40,
+                "angleA": 40,
+                "angleB": 60,
                 "angleC": 80,
+                "highlightSide": "b",
                 "showAngles": true,
                 "showSides": true,
                 "triangleType": "acute"
           },
-          "caption": "A general triangle labeled for the Cosine Rule, where side *c* is opposite angle C."
+          "caption": "A general triangle labeled for the Sine Rule."
+    }
+  },
+
+  's3-math-trigonometry-cosine-rule': {
+    speech: {
+      text: `Hello again! While the Sine Rule is fantastic for solving triangles with matching angle and side pairs, it can't solve every triangle. If you know all three sides, or two sides and the included angle, you need a different tool: the Cosine Rule. This rule is essentially an extension of the Pythagorean theorem, adding a correction factor to account for non-right angles. Mastering the Cosine Rule completes your ability to solve any triangle, no matter how complex its shape. Let's look at when we need to use this specialized formula.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-trigonometry-cosine-rule.mp3'
+    },
+    display: {
+      content: `# Introduction to the Cosine Rule
+
+The Cosine Rule is the second major tool for solving non-right-angled triangles. It is a powerful generalization of the Pythagorean theorem (\$c² = a² + b²\$), adding the term \$-2ab \\cos C\$ to adjust for angles that are not 90°.
+
+**The Cosine Rule (Finding a Side):** \$c² = a² + b² - 2ab \\cos C\$
+
+We use the Cosine Rule in two specific scenarios where the Sine Rule won't work:
+1. **SAS (Side-Angle-Side):** When two sides and the angle *included* between them are known, to find the third side.
+2. **SSS (Side-Side-Side):** When all three sides are known, to find any angle.
+
+---
+
+### First Problem: Understanding the Cosine Rule
+
+In the triangle below, we know sides \$a\$ and \$c\$, and the included angle \$B\$. Which side can we calculate directly using the Cosine Rule?`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "generalTriangle",
+          "parameters": {
+                "sideA": "a",
+                "sideB": "b",
+                "sideC": "c",
+                "angleA": 50,
+                "angleB": 70,
+                "angleC": 60,
+                "highlightSide": "b",
+                "highlightAngle": "B",
+                "showAngles": true,
+                "showSides": true,
+                "triangleType": "acute"
+          },
+          "caption": "Triangle ABC showing two known sides (a and c) and the included angle B."
     }
   },
 
@@ -228,61 +310,87 @@ export const INITIAL_GREETINGS_CACHE: Record<string, CachedGreeting> = {
    */
   's3-math-exponents-laws': {
     speech: {
-      text: `Welcome! Let's explore a super important topic today: Exponent Laws and integer exponents. This is the foundation for a lot of higher math, but don't worry, we're going to build it up step by step, starting with the very basics of what an exponent even means. Let's get started with our first section on notation!`,
+      text: `Hey there, ready to unlock some mathematical superpowers? Exponents are the ultimate shortcut in math. They let us simplify huge, repetitive calculations into neat, compact expressions. We are starting today by mastering the fundamental language of exponents: knowing what the base is, what the exponent is, and what they mean together.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-exponents-laws.mp3'
     },
     display: {
-      content: `### Section 1: Basic Notation
+      content: `# Introduction to Exponent Laws
 
-Let's start with the expression 3⁵.
+Welcome! Exponents are one of the most powerful tools in mathematics, acting as a shorthand for repeated multiplication. Instead of writing \$2 \\times 2 \\times 2 \\times 2\$, we can simply write \$2^4\$. This concise notation is crucial for simplifying complex expressions and handling large numbers efficiently.
 
-**Question:**
-1. What number is the **base**?
-2. Write 3⁵ in **expanded form** (as repeated multiplication).`,
+Understanding exponents is foundational. You will learn five core laws, starting with the basic notation \$a^n\$. Here, 'a' is the **base** (the number being multiplied), and 'n' is the **exponent** (how many times the base is multiplied by itself). Over the next few sections, you will master how to multiply, divide, and raise powers to powers, ultimately allowing you to simplify any exponential expression.
+
+Let's begin by ensuring we are fluent in the basic language of exponents.
+
+---
+
+**First Problem: Basic Exponent Notation and Terminology**
+
+Write the following expression using exponent notation:
+
+\$ 5 \\times 5 \\times 5 \\times 5 \\times 5 \\times 5 \$`,
       showAfterSpeech: true
     }
   },
 
   's3-math-exponents-rational': {
     speech: {
-      text: `Hello! I'm thrilled to explore a fascinating topic today: rational exponents and roots! This is where we learn how fractions in the exponent connect directly to radicals, like square roots and cube roots. It's a powerful concept that makes solving complex equations much easier. We're going to start with the simplest form, where the exponent is one over n.`,
-      emotion: 'excited',
+      text: `Greetings! Today we are making a crucial connection in algebra, linking two seemingly different concepts: exponents and roots. Rational exponents, which are exponents that are fractions, are the key to this connection. They allow us to rewrite tricky radical expressions using the familiar rules of exponents, which makes advanced problem solving much smoother.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-exponents-rational.mp3'
     },
     display: {
-      content: `### Rational Exponents: Form \$\\frac{1}{n}\$
+      content: `# Introduction to Rational Exponents
 
-The core rule for this form is:
-\$\$a^{\\frac{1}{n}} = \\sqrt[n]{a}\$\$
+Hello! If you've mastered the basic laws of exponents, you're ready for the next level: **Rational Exponents**. A rational exponent is simply an exponent that is a fraction, like \$\\frac{1}{2}\$ or \$\\frac{2}{3}\$.
 
-This means the denominator of the exponent (\$n\$) becomes the index of the root.
+Why do we need them? Rational exponents provide a powerful way to express roots (radicals). The core rule we learn first is:
 
-**Problem 1:**
-Rewrite \$8^{\\frac{1}{3}}\$ in radical form and then evaluate the expression.`,
+\$ a^{1/n} = \\sqrt[n]{a} \$
+
+This rule means that raising a number to the power of \$\\frac{1}{n}\$ is the same as taking the \$n\$-th root of that number. For instance, \$9^{1/2}\$ is the square root of 9. This notation is essential for simplifying complex expressions and is widely used in calculus and higher mathematics.
+
+We start by mastering the simplest form, \$a^{1/n}\$.
+
+---
+
+**First Problem: Rational Exponents of the Form 1/n**
+
+Evaluate the following expression without using a calculator:
+
+\$ 64^{1/3} \$`,
       showAfterSpeech: true
     }
   },
 
   's3-math-exponents-standard-form': {
     speech: {
-      text: `Hello! I am so excited to start our new topic today. We're learning about scientific notation, which is also called standard form. This is a super powerful way to write really big numbers, like the distance to a star, or really tiny numbers, like the size of an atom. We are going to start by mastering the basic format, which is a times ten to the power of k. Ready for your first challenge?`,
-      emotion: 'excited',
+      text: `Welcome to the world of the very big and the very small! Have you ever wondered how scientists calculate the distance to a star or the size of an atom? They use Standard Form, also known as Scientific Notation. This system allows us to handle incredibly long numbers, whether they have dozens of zeros at the end or dozens of zeros after the decimal point, by expressing them neatly as a number between one and ten multiplied by a power of ten.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-exponents-standard-form.mp3'
     },
     display: {
-      content: `### Understanding Standard Form (a × 10ᵏ)
+      content: `# Introduction to Standard Form (Scientific Notation)
 
-The number 6,500,000,000,000 represents the approximate mass of water (in kg) that flows over Niagara Falls every year.
+Greetings! Standard Form, or Scientific Notation, is the universal language for expressing numbers encountered in the real world—from the mass of the Sun to the diameter of a virus. It solves the problem of writing and manipulating numbers that are too large or too small to be practical in their ordinary form.
 
-Standard Form requires the coefficient 'a' to be between 1 and 10 (i.e., \$1 \\le a < 10\$).
+The format is always expressed as:
 
-Which of the following expressions correctly represents this number in **Standard Form**?
+\$ a \\times 10^k \$
 
-A) 65 × 10¹¹
-B) 6.5 × 10¹²
-C) 0.65 × 10¹³
-D) 650 × 10¹⁰`,
+Where 'a' is a number between 1 and 10 (specifically, 1 <= |a| &lt; 10), and 'k' is an integer exponent. The exponent \$k\$ tells us exactly how many places the decimal point has been moved. Mastering this notation is essential for scientific literacy and advanced calculations.
+
+Let's start by identifying the components of Standard Form.
+
+---
+
+**First Problem: Understanding and Writing Standard Form**
+
+In the standard form expression \$3.45 \\times 10^9\$:
+
+1. Identify the value of 'a' (the coefficient).
+2. Identify the value of 'k' (the exponent).`,
       showAfterSpeech: true
     }
   },
@@ -294,20 +402,24 @@ D) 650 × 10¹⁰`,
    */
   's3-math-relations-functions-fundamentals': {
     speech: {
-      text: `Welcome! Today we’ll be learning about one of the most fundamental ideas in algebra and calculus: relations and functions. We'll start by defining what a relation is, then we'll learn how to spot a special type of relation called a function, and finally, we'll use a cool trick called the Vertical Line Test to check our graphs! Let's jump right into understanding relations.`,
+      text: `Welcome to the foundation of advanced mathematics! Relations and Functions. Think of a relation as a partnership or a connection between two sets of values, usually the input x and the output y. Understanding how these variables connect is the very first step in mathematical modeling.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-relations-functions-fundamentals.mp3'
     },
     display: {
-      content: `### Understanding Relations
+      content: `# Introduction to Relations and Functions Fundamentals
 
-A **relation** is simply a set of ordered pairs (x, y).
+Relations are the backbone of mathematical modeling. Think of a relation as a partnership or a connection between two sets of values—usually the input (\$x\$) and the output (\$y\$). Mathematically, a **relation** is simply a set of ordered pairs \$(x, y)\$. These pairs can come from a list of points, an equation, or a graph.
 
-Consider the following finite relation, R, plotted below:
-\$\$R = \\{(-3, 5), (1, 2), (-3, 0), (4, 2)\\}\$\$
+Understanding relations is the first step toward understanding functions, which are special, highly organized relations where every input has exactly one output. In this first section, we will focus on defining relations, whether they are represented by a finite set of points or an infinite set described by an equation.
 
-1. What is the **Domain** of the relation R?
-2. What is the **Range** of the relation R?`,
+--- 
+
+### First Problem: Understanding Relations
+
+Consider the relation \$R = \\{(1, 5), (2, 7), (3, 5), (4, 9)\\}\$.
+
+Which of the following ordered pairs belongs to the relation \$R\$?`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -315,307 +427,168 @@ Consider the following finite relation, R, plotted below:
           "parameters": {
                 "points": [
                       {
-                            "x": -3,
-                            "y": 5,
-                            "label": "(-3, 5)"
-                      },
-                      {
                             "x": 1,
-                            "y": 2,
-                            "label": "(1, 2)"
+                            "y": 5
                       },
                       {
-                            "x": -3,
-                            "y": 0,
-                            "label": "(-3, 0)"
+                            "x": 2,
+                            "y": 7
+                      },
+                      {
+                            "x": 3,
+                            "y": 5
                       },
                       {
                             "x": 4,
-                            "y": 2,
-                            "label": "(4, 2)"
+                            "y": 9
                       }
                 ],
                 "title": "Relation R",
-                "xMin": -5,
+                "xMin": 0,
                 "xMax": 5,
-                "yMin": -1,
-                "yMax": 6
+                "yMin": 0,
+                "yMax": 10
           },
-          "caption": "The points representing the relation R plotted on the coordinate plane."
+          "caption": "The relation R visualized as a set of points on the coordinate plane."
     }
   },
 
   's3-math-relations-functions-function-notation': {
     speech: {
-      text: `Welcome! Let's explore function notation today. This is a super useful concept that helps us describe relationships between variables clearly. We'll start by understanding what f of x actually means, and then we'll practice substituting values into functions to solve them. Ready to jump in?`,
-      emotion: 'excited',
-      preGeneratedAudioUrl:'/assets/audio/initial-greetings/s3-math-relations-functions-function-notation.mp3'
+      text: `Hello and welcome to Function Notation! Get ready to upgrade your mathematical language. Function notation, often written as f of x, is one of the most powerful conventions in mathematics because it clearly identifies the input, the output, and the function itself.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-relations-functions-function-notation.mp3'
     },
     display: {
-      content: `### Section 1: Function Notation Basics
+      content: `# Introduction to Function Notation
 
-Function notation, written as \$f(x)\$, is a way to name a function and show its input variable.
+Function notation, often written as \$f(x)\$, is one of the most powerful conventions in mathematics. While you are used to writing equations like \$y = 2x + 1\$, the \$f(x)\$ notation doesn't just replace \$y\$; it tells you *which* function you are using and *what* the input variable is. We read \$f(x)\$ as "f of x," meaning the output value of the function \$f\$ when the input is \$x\$.
 
-Consider the notation \$f(x) = 3x - 5\$.
+This notation is essential because it allows us to clearly distinguish between multiple functions in a single problem (like \$f(x)\$ and \$g(x)\$) and makes evaluating functions incredibly clear. Instead of saying, "Find \$y\$ when \$x=3\$," we simply write "Find \$f(3)\$." We start by understanding the components of this notation.
 
-**Question:** What does the letter 'f' represent in this notation?`,
+--- 
+
+### First Problem: Function Notation Basics
+
+Consider the function notation \$P(t) = 5t² - 1\$.
+
+In this expression, what does the variable \$t\$ represent?`,
       showAfterSpeech: true
     }
   },
 
   's3-math-relations-functions-domain-range': {
     speech: {
-      text: `Hello! Let's learn about one of the most fundamental concepts in function analysis: Domain and Range. These ideas tell us exactly what input values a function can take and what output values it can produce. We'll start by visualizing these concepts on a graph, and then we'll move on to finding the natural domain of functions with restrictions like square roots and denominators. Ready to start?`,
-      emotion: 'excited',
+      text: `Hey there! Are you ready to define the boundaries of a function? We are diving into Domain and Range. Every function operates within certain limits, and understanding these limits is essential for real-world applications.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-relations-functions-domain-range.mp3'
     },
     display: {
-      content: `### Introductory Problem
+      content: `# Introduction to Domain and Range
 
-Look at the graph of the function below. It shows a segment of a parabola. 
+Every function operates within certain limits. The **Domain** of a function is the complete set of all possible input values (the \$x\$-values) that the function can accept. The **Range** is the complete set of all resulting output values (the \$y\$-values) that the function produces.
 
-What are the **Domain** (x-values) and the **Range** (y-values) of this function, expressed in interval notation?`,
+Understanding domain and range is critical because, in real-world scenarios, inputs often have physical constraints—you can't have a negative number of people or divide by zero. We use interval notation to precisely describe these sets of values. In this first section, we will establish the foundational concepts: identifying which values belong to the domain and which belong to the range.
+
+--- 
+
+### First Problem: Domain and Range Concepts
+
+Consider the relation \$R = \\{(1, 8), (3, 9), (5, 10), (7, 11)\\}\$.
+
+What is the Domain of this relation?`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "cartesianPlane",
-          "parameters": {
-                "xMin": -3,
-                "xMax": 3,
-                "yMin": -1,
-                "yMax": 5,
-                "points": [
-                      {
-                            "x": -2,
-                            "y": 4,
-                            "style": "closed",
-                            "label": "(-2, 4)"
-                      },
-                      {
-                            "x": 2,
-                            "y": 4,
-                            "style": "open",
-                            "label": "(2, 4)"
-                      }
-                ],
-                "curves": [
-                      {
-                            "type": "custom",
-                            "points": [
-                                  {
-                                        "x": -2,
-                                        "y": 4
-                                  },
-                                  {
-                                        "x": -1.5,
-                                        "y": 2.25
-                                  },
-                                  {
-                                        "x": -1,
-                                        "y": 1
-                                  },
-                                  {
-                                        "x": -0.5,
-                                        "y": 0.25
-                                  },
-                                  {
-                                        "x": 0,
-                                        "y": 0
-                                  },
-                                  {
-                                        "x": 0.5,
-                                        "y": 0.25
-                                  },
-                                  {
-                                        "x": 1,
-                                        "y": 1
-                                  },
-                                  {
-                                        "x": 1.5,
-                                        "y": 2.25
-                                  },
-                                  {
-                                        "x": 2,
-                                        "y": 4
-                                  }
-                            ],
-                            "equation": "y = x²"
-                      }
-                ],
-                "title": "Function Segment: f(x) = x²",
-                "xLabel": "Domain (x)",
-                "yLabel": "Range (y)"
-          },
-          "caption": "A segment of the parabola y = x² defined from x = -2 (inclusive, closed circle) to x = 2 (exclusive, open circle)."
     }
   },
 
   's3-math-relations-functions-sign-diagrams': {
     speech: {
-      text: `Hello! Today we’ll be learning about a super useful tool called Sign Diagrams. These diagrams are fantastic for quickly figuring out where a function is positive, negative, zero, or undefined. This skill is essential for analyzing function behavior, solving inequalities, and even sketching graphs! Let's start with the basics: identifying the critical points.`,
-      emotion: 'excited',
+      text: `Greetings! Today we learn a powerful analytical tool: Sign Diagrams. This technique helps us map out the behavior of functions by summarizing where a function's output values are positive, negative, zero, or undefined.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-relations-functions-sign-diagrams.mp3'
     },
     display: {
-      content: `### Section 1: Creating Sign Diagrams
+      content: `# Introduction to Sign Diagrams
 
-A sign diagram is built around **critical points**, which are the values of \$x\$ where the function \$f(x)\$ is either \$0\$ (a zero) or undefined.
+A **Sign Diagram** (or sign chart) is essentially a number line that summarizes where a function's output values (\$y\$ or \$f(x)\$) are positive (+), negative (-), zero (0), or undefined. Instead of graphing the entire function, we use the diagram to quickly analyze inequalities and determine the function's behavior across different intervals.
 
-Consider the function:
-\$\$f(x) = \\frac{x-3}{x+1}\$\$
+The key to creating a sign diagram is finding the **critical points**—the values of \$x\$ where the function equals zero (roots) or where the function is undefined. These critical points divide the number line into intervals, and within each interval, the sign of the function remains constant. We start by identifying these critical points.
 
-**Question:** What are the critical points for this function? (List the values of \$x\$ where \$f(x) = 0\$ or \$f(x)\$ is undefined.)`,
+--- 
+
+### First Problem: Creating Sign Diagrams
+
+To create a sign diagram for the function \$f(x) = (x - 2)(x + 5)\$, we must first find the critical points where \$f(x) = 0\$.
+
+What are the critical points (roots) of \$f(x)\$?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "numberLine",
           "parameters": {
-                "min": -5,
-                "max": 5,
-                "step": 1,
-                "showTickMarks": true,
-                "showTickLabels": true,
-                "title": "Number Line for $f(x)$",
+                "min": -7,
+                "max": 4,
                 "points": [
                       {
-                            "value": -1,
-                            "style": "none"
+                            "value": -5,
+                            "label": "-5",
+                            "style": "closed"
                       },
                       {
-                            "value": 3,
-                            "style": "none"
+                            "value": 2,
+                            "label": "2",
+                            "style": "closed"
                       }
-                ]
-          },
-          "caption": "These critical points will divide the number line into intervals where the function's sign remains constant."
+                ],
+                "title": "Critical Points for f(x) = (x - 2)(x + 5)",
+                "caption": "The critical points divide the number line into intervals where the sign of the function is constant."
+          }
     }
   },
 
   's3-math-relations-functions-transformations': {
     speech: {
-      text: `Hello! I'm thrilled to explore a really fun topic today: Transformations of Graphs! We're going to learn how to take a basic function and move it around, stretch it, or flip it, all by changing its equation. We'll start with the simplest type of transformation: Translations, or just plain old shifts. Are you ready to see how we can move graphs up, down, left, and right?`,
+      text: `Hi there, future graph master! Ready to move some functions around? We are diving into Transformations! This technique gives us a massive shortcut for graphing by systematically shifting, stretching, or reflecting a basic parent function.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-relations-functions-transformations.mp3'
     },
     display: {
-      content: `## Section 1: Translations (Shifts)
+      content: `# Introduction to Transformations of Graphs
 
-We start with the parent function \$f(x) = |x|\$ (blue line).
+Why redraw an entire graph from scratch every time you change the equation slightly? Function transformations give us a massive shortcut! Transformations are systematic ways to manipulate the graph of a basic function (the parent function) to create the graph of a more complex function. We achieve this through three main types of changes: **translations** (shifts), **stretches/compressions**, and **reflections** (flips).
 
-Consider the transformed function \$g(x) = |x| + 3\$ (red line).
+In this first section, we focus on **translations**, which involve shifting the graph horizontally or vertically without changing its shape or orientation. If you add a constant \$k\$ *outside* the function, \$y = f(x) + k\$, the graph shifts vertically. If you subtract a constant \$h\$ *inside* the function, \$y = f(x - h)\$, the graph shifts horizontally. 
 
-Look at the graph provided. How does the graph of \$g(x)\$ relate to the graph of \$f(x)\$?`,
+--- 
+
+### First Problem: Translations (Shifts)
+
+Consider the parent function \$f(x) = x²\$. A new function is defined as \$g(x) = x² + 7\$.
+
+How does the graph of \$g(x)\$ relate to the graph of \$f(x)\$?`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "cartesianPlane",
-          "parameters": {
-                "xMin": -6,
-                "xMax": 6,
-                "yMin": -1,
-                "yMax": 9,
-                "title": "Vertical Translation",
-                "curves": [
-                      {
-                            "type": "absolute",
-                            "points": [
-                                  {
-                                        "x": -5,
-                                        "y": 5
-                                  },
-                                  {
-                                        "x": -3,
-                                        "y": 3
-                                  },
-                                  {
-                                        "x": 0,
-                                        "y": 0
-                                  },
-                                  {
-                                        "x": 3,
-                                        "y": 3
-                                  },
-                                  {
-                                        "x": 5,
-                                        "y": 5
-                                  }
-                            ],
-                            "equation": "f(x) = |x|",
-                            "color": "blue"
-                      },
-                      {
-                            "type": "absolute",
-                            "points": [
-                                  {
-                                        "x": -5,
-                                        "y": 8
-                                  },
-                                  {
-                                        "x": -3,
-                                        "y": 6
-                                  },
-                                  {
-                                        "x": 0,
-                                        "y": 3
-                                  },
-                                  {
-                                        "x": 3,
-                                        "y": 6
-                                  },
-                                  {
-                                        "x": 5,
-                                        "y": 8
-                                  }
-                            ],
-                            "equation": "g(x) = |x| + 3",
-                            "color": "red"
-                      }
-                ]
-          },
-          "caption": "The parent function $f(x) = |x|$ (blue) is shifted to create $g(x) = |x| + 3$ (red)."
     }
   },
 
   's3-math-relations-functions-absolute-value': {
     speech: {
-      text: `Welcome! Today we’ll be learning about a really cool concept: the absolute value function, sometimes called the modulus. It sounds fancy, but at its heart, absolute value is simply about distance. We'll start by mastering what absolute value means and how to calculate it, and then we'll move on to graphing those famous V-shapes! Are you ready to jump in?`,
-      emotion: 'excited',
+      text: `Welcome to the world of absolute value! What happens when we only care about magnitude, not direction? The absolute value of a number is simply its distance from zero on the number line, meaning it always returns a non-negative result.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-relations-functions-absolute-value.mp3'
     },
     display: {
-      content: `Let's start with the basics. The absolute value of a number represents its distance from zero on the number line. Since distance is always positive or zero, the result of an absolute value operation is never negative.
+      content: `# Introduction to the Absolute Value Function
 
-### Question 1
+The **absolute value** of a number, denoted by \$|x|\$, is simply its distance from zero on the number line. Because distance is always non-negative, the absolute value function takes any input and returns a positive result (or zero).
 
-What is the value of \$|-4|\$?`,
+This fundamental concept is defined piecewise: \$|x| = x\$ if \$x \\ge 0\$, and \$|x| = -x\$ if \$x < 0\$. The absolute value function is crucial in mathematics for measuring error, distance, and magnitude. Graphically, the absolute value function \$y = |x|\$ forms a distinctive V-shape. We start by ensuring we fully grasp the definition and evaluation process.
+
+--- 
+
+### First Problem: Understanding Absolute Value
+
+Evaluate the expression \$|-15| + |8 - 3|\$.`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "numberLine",
-          "parameters": {
-                "min": -6,
-                "max": 6,
-                "step": 1,
-                "points": [
-                      {
-                            "value": -4,
-                            "label": "-4",
-                            "style": "closed",
-                            "color": "#ef4444"
-                      }
-                ],
-                "intervals": [
-                      {
-                            "start": -4,
-                            "end": 0,
-                            "startInclusive": true,
-                            "endInclusive": true,
-                            "color": "#3b82f6"
-                      }
-                ],
-                "highlightIntegers": true
-          },
-          "caption": "The absolute value, $|-4|$, is the distance from -4 to 0. Count the units!"
     }
   },
 
@@ -626,39 +599,48 @@ What is the value of \$|-4|\$?`,
    */
   's3-math-statistics-data-types': {
     speech: {
-      text: `Hey there! I'm excited to start this new topic with you: Data Types and Organization. Understanding how we collect and classify data, whether it's by counting things or measuring them, is super important for statistics. We're going to start right at the beginning by looking at the basics of data collection. Ready for your first scenario?`,
-      emotion: 'excited',
+      text: `Welcome to the world of statistics! Before we can analyze data, we have to collect and organize it properly. This means understanding the difference between a population and a sample, and classifying data as either discrete, which is counted, or continuous, which is measured. Mastering data collection basics is the essential first step to becoming a great statistician.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-statistics-data-types.mp3'
     },
     display: {
-      content: `## Introduction to Statistics: Data Collection
+      content: `# Introduction to Statistics and Data Collection
 
-A high school principal wants to know how students feel about the new cafeteria menu. Since surveying all 1,500 students would take too long, the principal decides to randomly survey 150 students from various grade levels.
+Statistics is the science of collecting, organizing, analyzing, and interpreting data. Our journey begins with **Data Collection Basics**, where we establish the scope of our study. A **Population** is the entire group we are interested in, while a **Sample** is a smaller, manageable subset chosen from that population.
 
-**Question 1:**
+We also classify data based on how it is obtained: **Discrete data** results from counting (like the number of cars), and **Continuous data** results from measuring (like height or temperature). Correctly identifying these types is fundamental, as it dictates how we organize the data using tools like frequency tables and histograms.
 
-In this scenario, what is the **population** being studied?
+--- 
 
-A) The 150 students who were surveyed.
-B) The high school principal.
-C) All 1,500 students in the high school.
-D) The new cafeteria menu.`,
+Let's start with the foundational concepts of data collection.
+
+**Problem:** A researcher wants to study the average age of all registered voters in the state of Texas. They randomly select 5,000 registered voters and record their ages.
+
+Identify the **Population** and the **Sample** in this study.`,
       showAfterSpeech: true
     }
   },
 
   's3-math-statistics-distributions': {
     speech: {
-      text: `Hi there! Today, we are diving into a super insightful part of statistics: describing the shape of data distributions. Understanding the shape—whether it’s symmetric, skewed, or has multiple peaks—tells us a lot about the data set. Let's start by looking at a very common shape. Take a look at the histogram below and tell me what you notice about how the data is spread out.`,
-      emotion: 'excited',
+      text: `Have you ever looked at a graph and wondered what story the data is telling? Today, we are learning to read that story by describing distribution shapes. Understanding whether data is symmetric, skewed, or bimodal is crucial because the shape influences which statistical tools we should use for analysis.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-statistics-distributions.mp3'
     },
     display: {
-      content: `### Distribution Shapes
+      content: `# Describing Distribution Shapes
 
-When we analyze data, the visual shape of its distribution gives us important clues about the underlying process. We typically look for **symmetry**, **skewness**, and the presence of **peaks** or **outliers**.
+When we plot data, the resulting shape of the distribution reveals critical information about the underlying process. We look for key features like symmetry, peaks, and tails. A **Symmetric** distribution (like a perfect bell curve) has equal halves, suggesting the mean and median are similar.
 
-Look closely at the shape formed by the bars in the histogram below. If you drew a line down the middle, how would you describe the relationship between the left side and the right side of the distribution?`,
+If the data is clustered on one side, it is **Skewed**. If the tail points to the right, it is positively skewed; if the tail points to the left, it is negatively skewed. We also look for **Bimodal** distributions (having two distinct peaks) and **Outliers** (extreme values that stand far away from the rest of the data).
+
+--- 
+
+Let's practice identifying the shape of a distribution.
+
+**Problem:** A histogram showing the results of a difficult exam has most students scoring between 10% and 40%, with a long, thin tail extending towards 100%. 
+
+How would you describe the shape of this distribution (symmetric, positively skewed, or negatively skewed)?`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -666,142 +648,158 @@ Look closely at the shape formed by the bars in the histogram below. If you drew
           "parameters": {
                 "intervals": [
                       {
-                            "start": 10,
+                            "start": 0,
                             "end": 20,
-                            "frequency": 3
+                            "frequency": 15
                       },
                       {
                             "start": 20,
-                            "end": 30,
-                            "frequency": 8
-                      },
-                      {
-                            "start": 30,
                             "end": 40,
-                            "frequency": 12
+                            "frequency": 25
                       },
                       {
                             "start": 40,
-                            "end": 50,
-                            "frequency": 8
+                            "end": 60,
+                            "frequency": 10
                       },
                       {
-                            "start": 50,
-                            "end": 60,
-                            "frequency": 3
+                            "start": 60,
+                            "end": 80,
+                            "frequency": 5
+                      },
+                      {
+                            "start": 80,
+                            "end": 100,
+                            "frequency": 2
                       }
                 ],
-                "xLabel": "Value",
-                "yLabel": "Frequency",
-                "title": "Data Distribution Example",
-                "showFrequencies": true
+                "xLabel": "Exam Score (%)",
+                "title": "Distribution of Difficult Exam Scores"
           },
-          "caption": "A histogram showing a common data distribution shape."
+          "caption": "A visual representation of the exam scores. Notice the long tail on the right side."
     }
   },
 
   's3-math-statistics-centre': {
     speech: {
-      text: `Welcome! Today we’ll be learning about one of the most practical areas of statistics: Measures of Centre. These are ways we summarize data using a single number. We'll be covering the three main types: the mean, the median, and the mode. Let's start right away with the mean, which is the arithmetic average. It's probably the measure you use most often in everyday life! Ready for our first problem?`,
+      text: `Hey there! Ready to find the 'average' of a dataset? Today we dive into Measures of Centre, which are single values that represent the typical or central position of a group of numbers. We will focus on the three main types: the mean, the median, and the mode. This skill is vital for summarizing information quickly, whether you are calculating your GPA or reporting market trends.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-statistics-centre.mp3'
     },
     display: {
-      content: `### Section 1: The Mean (Arithmetic Average)
+      content: `# The Mean (Arithmetic Average)
 
-The **mean** (often denoted as x̄) is the arithmetic average. We find it by summing all the values (Σx) and dividing by the number of values (n).
+Measures of centre provide a summary statistic for a dataset. The most common measure is the **Mean**, often denoted by \$\\\\bar{x}\$ (x-bar) for a sample. The mean is the arithmetic average—the sum of all values divided by the count of values.
 
-\$\$ \\bar{x} = \\frac{\\Sigma x}{n} \$\$
+The formula for the mean is: 
+\$\\\\bar{x} = \\\\frac{\\\\Sigma x}{n}\$
 
-**Problem:** A student received the following scores on four quizzes: 85, 92, 78, and 95.
+Where \$\\Sigma x\$ is the sum of all data points, and \$n\$ is the total number of data points. We will also learn about the **Median** (the middle value) and the **Mode** (the most frequent value), and when it is best to use each one.
 
-What is the mean quiz score?`,
+--- 
+
+Let's begin by calculating the mean.
+
+**Problem:** A small group of students recorded the number of hours they spent studying for a test: 5, 8, 2, 7, 3. 
+
+Calculate the mean (\$\\bar{x}\$) number of hours studied.`,
       showAfterSpeech: true
     }
   },
 
   's3-math-statistics-boxplots': {
     speech: {
-      text: `Hello! Let's learn about one of the most useful tools in statistics: box plots! Today, we are going to master how to summarize data using the five-number summary, calculate quartiles, and understand key measures of spread like the range and the Interquartile Range, or IQR. Let's start by finding the heart of our data set—the five-number summary.`,
-      emotion: 'excited',
+      text: `Greetings! Let's master the art of data summarization using box plots. These visual tools rely on the five number summary, which gives us a quick, robust overview of a dataset's spread and central tendency, regardless of how large the data is. Understanding quartiles is key to comparing different data sets effectively.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-statistics-boxplots.mp3'
     },
     display: {
-      content: `### Section 1: The Five-Number Summary
+      content: `# The Five-Number Summary and Quartiles
 
-The **five-number summary** is the foundation of a box plot. It consists of the minimum value, the first quartile (Q₁), the median (Q₂), the third quartile (Q₃), and the maximum value.
+Box plots (or box-and-whisker plots) are built using the **Five-Number Summary**: Minimum, First Quartile (\$Q_1\$), Median (\$Q_2\$), Third Quartile (\$Q_3\$), and Maximum. These five values divide the ordered data into four equal sections, or quartiles, with 25% of the data falling into each section.
 
-Consider the following set of test scores, which are already ordered:
+The **Median** (\$Q_2\$) is the middle value of the entire dataset. \$Q_1\$ is the median of the lower half, and \$Q_3\$ is the median of the upper half. These quartiles allow us to calculate the **Interquartile Range (IQR)**, which measures the spread of the middle 50% of the data.
 
-\$\$5, 8, 10, 12, 15, 18, 20\$\$
+--- 
 
-What is the **median (Q₂)** of this data set?`,
+Let's start by finding the most important part of the summary: the median.
+
+**Problem:** Find the median (\$Q_2\$) of the following ordered dataset:
+
+12, 15, 18, 20, 21, 25, 29`,
       showAfterSpeech: true
     }
   },
 
   's3-math-statistics-cumulative': {
     speech: {
-      text: `Welcome! Today we’ll be learning about a really useful topic: Cumulative Frequency Graphs. These graphs help us understand how data piles up and are essential for finding things like the median and percentiles. Let's start with the basics of calculating cumulative frequency.`,
-      emotion: 'excited',
+      text: `Hello! Today we unlock the power of percentiles. Cumulative frequency is a technique that lets us track the running total of frequencies, which is essential for determining the relative standing of any score. If you have ever wondered what percentile your test score falls into, this is the math that tells you!`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-statistics-cumulative.mp3'
     },
     display: {
-      content: `### Cumulative Frequency Basics
+      content: `# Cumulative Frequency and Percentiles
 
-A group of 35 students took a math quiz. Their scores are summarized in the frequency table below.
+While standard frequency tells us *how many* times a score occurred, **Cumulative Frequency (CF)** tells us *how many* scores fall below a certain value. We calculate CF by continuously adding the frequencies of the preceding classes.
+
+This running total is vital for finding **Percentiles**, which are measures of position. For example, the 75th percentile is the value below which 75% of the data falls. We use CF tables to construct **Cumulative Frequency Graphs (Ogive)**, which allow us to estimate percentiles and quartiles quickly from the curve.
+
+--- 
+
+Let's begin by building a cumulative frequency table.
+
+**Problem:** Given the following frequency table, calculate the cumulative frequency for the score of 3.
 
 | Score (x) | Frequency (f) |
 | :---: | :---: |
-| 0 ≤ x < 10 | 3 |
-| 10 ≤ x < 20 | 7 |
-| 20 ≤ x < 30 | 12 |
-| 30 ≤ x < 40 | 8 |
-| 40 ≤ x < 50 | 5 |
-
-**Question:** What is the cumulative frequency for scores less than 30 (i.e., for the interval \$x < 30\$)?`,
+| 1 | 4 |
+| 2 | 7 |
+| 3 | 5 |
+| 4 | 2 |`,
       showAfterSpeech: true
     }
   },
 
   's3-math-statistics-deviation': {
     speech: {
-      text: `Hi there! We're diving into one of the most important concepts in statistics: Standard Deviation. It's the ultimate tool for measuring how spread out or consistent a set of data is. We're going to break it down into three simple steps, starting right now with understanding how far each data point is from the average. Let's get started!`,
-      emotion: 'excited',
+      text: `Think about consistency. If two athletes have the same average score, how do we know which one is more reliable? The answer lies in Standard Deviation, which is the most common measure of spread. It quantifies how much data points typically deviate from the mean, helping us understand risk, reliability, and consistency.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-statistics-deviation.mp3'
     },
     display: {
-      content: `### Section 1: Deviation from the Mean (x − \$\\bar{x}\$)
+      content: `# Understanding Deviation from the Mean
 
-Standard deviation starts with finding out how much each data point *deviates* from the average.
+We know the mean (\$\\\\bar{x}\$) tells us the center of the data, but **Standard Deviation (\$\\sigma\$)** tells us how spread out the data is. Our first step in calculating \$\\\\sigma\$ is finding the **deviation** of each data point (\$x\$) from the mean (\$\\\\bar{x}\$), calculated as \$(x - \\\\bar{x})\$.
 
-Consider the following set of scores from a small quiz:
-\$\$[2, 4, 6]\$\$
+We square these deviations, \$(x - \\\\bar{x})^2\$, to ensure positive values (since positive and negative deviations would cancel out) and to penalize larger deviations more heavily. The standard deviation is ultimately the square root of the average of these squared deviations, giving us a measure in the original units of the data.
 
-First, find the mean (\$\\bar{x}\$). Then, calculate the deviation for the score 6.
+--- 
 
-**What is the deviation (x − \$\\bar{x}\$) for the score x = 6?**`,
+Let's start with the very first step in the calculation.
+
+**Problem:** A small dataset has a mean (\$\\\\bar{x}\$) of 10. Calculate the deviation from the mean \$(x - \\\\bar{x})\$ for a data point where \$x = 13\$.`,
       showAfterSpeech: true
     }
   },
 
   's3-math-statistics-normal': {
     speech: {
-      text: `Greetings! I am so excited to dive into one of the most useful concepts in statistics: the Normal Distribution! This is often called the 'bell curve', and by the end of this session, we will be using it to make real-world probability estimates. We are starting with the basics: understanding what makes this distribution so special.`,
+      text: `Welcome to the 'Bell Curve' club! The Normal Distribution is arguably the most important concept in statistics, describing everything from human height to manufacturing errors. It is a beautiful, symmetric distribution that allows us to make powerful predictions about probability and population characteristics.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-statistics-normal.mp3'
     },
     display: {
-      content: `### Understanding the Normal Distribution
+      content: `# Understanding the Normal Distribution
 
-The Normal Distribution, often visualized as a bell curve, is fundamental in statistics due to its symmetry and predictable properties.
+The **Normal Distribution** is a continuous probability distribution characterized by its distinctive **bell curve** shape. It is perfectly symmetric around its central point, where the mean (\$\\mu\$), median, and mode are all equal. The shape is entirely defined by two parameters: the mean (\$\\mu\$) and the standard deviation (\$\\sigma\$).
 
-Which of the following statements accurately describes the relationship between the key measures of central tendency in a perfectly normal distribution?
+Because of its predictable shape, we can use the **Empirical Rule** (or 68-95-99.7 rule) to estimate the percentage of data that falls within 1, 2, or 3 standard deviations of the mean. This rule is fundamental for calculating probabilities and making real-world predictions based on normally distributed data.
 
-A) The mean is always greater than the median.
-B) The mode is always greater than the mean.
-C) The mean, median, and mode are all equal.
-D) The median is always twice the value of the mode.`,
+--- 
+
+Let's start by confirming our understanding of its basic properties.
+
+**Problem:** State two key properties of the Normal Distribution curve related to its shape and central tendency.`,
       showAfterSpeech: true
     }
   },
@@ -813,175 +811,216 @@ D) The median is always twice the value of the mode.`,
    */
   's3-math-quadratic-solving-standard-form': {
     speech: {
-      text: `Hi there! Today we're going to tackle a really useful way to solve quadratic equations: using the square root method. This method works perfectly for equations that look like a x squared equals k. It's fast, efficient, and will help us understand why quadratic equations often have two solutions. Let's start with a simple one!`,
-      emotion: 'excited',
+      text: `Hello! Ready to dive into the simplest way to solve quadratics? We start with the basic square root method. This technique acts like an undo button for squared terms, allowing us to isolate x quickly. Remember, when you take a square root, you always get two answers: a positive one and a negative one. This approach is essential for calculating things like area and distance in physics.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-solving-standard-form.mp3'
     },
     display: {
-      content: `### Introductory Problem
+      content: `# Introduction to the Basic Square Root Method
 
-Solve the following quadratic equation for \$x\$:
+Solving quadratic equations of the form \$ax² = k\$ is the most straightforward path to finding roots. This method relies on the fundamental concept of **inverse operations**. Since squaring a number is the last operation performed on x, we 'undo' it by taking the square root of both sides.
 
-\$\$x^2 = 25\$\$
+Crucially, remember the **Plus/Minus (±) Rule**: Every positive number has two real square roots (a positive one and a negative one). If we ignore the negative root, we lose a valid solution! This method is widely used in geometry and physics when dealing with formulas involving squares, such as \$A = \\pi r²\$ or distance calculations. We must also recognize that if \$k\$ is negative, there are no real solutions.
 
-What are the two possible values for \$x\$?`,
+Let's start by practicing the basic isolation and application of the square root rule.
+
+***
+
+**First Problem:**
+
+Solve the following quadratic equation for x:
+
+\$3x² = 75\$`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "parabolaGraph",
-          "parameters": {
-                "a": 1,
-                "b": 0,
-                "c": -25,
-                "showVertex": false,
-                "showRoots": true,
-                "showAxisOfSymmetry": true
-          },
-          "caption": "This graph shows $y = x^2 - 25$. The solutions to $x^2 = 25$ are the x-intercepts (where y = 0)."
     }
   },
 
   's3-math-quadratic-solving-factorization': {
     speech: {
-      text: `Hi there! Ready to learn about one of the most powerful ways to solve quadratic equations? We're going to use factorization to turn tricky equations into simple ones. The key idea behind this method is the Zero Product Property. Let's start by seeing how that property works!`,
+      text: `Hey there, math enthusiast! Get ready to unlock the secrets of factorization. We are starting with one of the most powerful rules in algebra: the Zero Product Property. This property allows us to turn a complicated quadratic equation into two simple linear equations, making finding the solutions incredibly fast and efficient.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-solving-factorization.mp3'
     },
     display: {
-      content: `We are solving quadratic equations using factorization. This method relies on the **Zero Product Property**.
+      content: `# Introduction to the Zero Product Property
 
-If the product of two factors is zero, then at least one of the factors must be zero.
+Factorization is a cornerstone of algebra, allowing us to rewrite complex polynomials as a product of simpler expressions (factors). The key to solving quadratics using this method is the **Zero Product Property (ZPP)**. This property states that if the product of two or more factors is zero, then at least one of the factors must be zero. If \$A \\times B = 0\$, then \$A = 0\$ or \$B = 0\$.
 
-Solve the following equation for x:
+This method is essential because it provides the fastest way to find the roots (x-intercepts) of a quadratic equation, provided the equation is factorable. We will learn how to factor equations where the leading coefficient (\$a\$) equals 1, and later, where \$a\$ is not 1, using techniques like splitting the middle term.
 
-\$\$(x + 5)(x - 2) = 0\$\$
+Let's begin by applying the Zero Product Property directly to an already factored equation.
 
-What are the two possible values for x?`,
+***
+
+**First Problem:**
+
+Use the Zero Product Property to solve for the roots of the equation:
+
+\$(x - 5)(x + 2) = 0\$`,
       showAfterSpeech: true
     },
     mathTool: {
-          "toolName": "parabolaGraph",
+          "toolName": "factoringVisualizer",
           "parameters": {
                 "a": 1,
-                "b": 3,
+                "b": -3,
                 "c": -10,
-                "showRoots": true,
-                "showVertex": true,
-                "showAxisOfSymmetry": true,
-                "xMin": -7,
-                "xMax": 4
+                "showSteps": false
           },
-          "caption": "This graph shows the function y = (x + 5)(x - 2). The solutions to (x + 5)(x - 2) = 0 are the x-intercepts (roots) where the graph crosses the x-axis."
+          "caption": "Visualizing the roots of the expanded form x² - 3x - 10 = 0, which factors to (x-5)(x+2)."
     }
   },
 
   's3-math-quadratic-solving-fractional': {
     speech: {
-      text: `Hi there! Today, we will learn about one of the most exciting topics in algebra: solving fractional equations that turn into quadratic equations. It's like a puzzle where we clear the denominators first, then solve the resulting quadratic. Ready to jump in?`,
-      emotion: 'excited',
+      text: `Welcome! Dealing with fractional equations can feel messy, but we have a powerful technique to clear the clutter: the Least Common Denominator method. Today, we learn how to transform these equations into standard quadratics that we already know how to solve. A critical step in this process is checking your final answers to ensure you dont have any extraneous roots.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-solving-fractional.mp3'
     },
     display: {
-      content: `### Introductory Problem
+      content: `# Introduction to Clearing Fractional Equations
 
-Our first step in solving these types of equations is to eliminate the denominators by multiplying every term by the Least Common Denominator (LCD).
+Fractional equations, also known as rational equations, often hide a quadratic structure. Our primary goal is to **clear the fractions** to transform the equation into the standard form \$ax² + bx + c = 0\$. We achieve this by multiplying every term in the equation by the **Least Common Denominator (LCD)** of all the fractions present.
 
-Solve the following fractional equation for x:
+This transformation is crucial because it simplifies the solving process dramatically. However, when variables appear in the denominator, we must be vigilant. Any solution that makes the original denominator equal to zero is an **extraneous root** and must be discarded. This concept is vital when solving real-world problems involving work rates or mixing solutions, where constraints on inputs exist.
 
-\$\$\\frac{x}{2} + \\frac{1}{x} = \\frac{3}{2}\$\$`,
+Let's start by clearing the denominator in a simple rational equation.
+
+***
+
+**First Problem:**
+
+Clear the fraction and rewrite the following equation in the standard quadratic form \$ax² + bx + c = 0\$:
+
+\$\\frac{6}{x} = x + 5\$`,
       showAfterSpeech: true
     }
   },
 
   's3-math-quadratic-solving-completing-square': {
     speech: {
-      text: `Hey there! I am so excited to start this journey with you. Today, we are tackling one of the most powerful techniques in algebra: Solving quadratic equations by completing the square! This method will not only help us find solutions but also unlock the secrets of the parabola's shape. We need to start by mastering the concept of a perfect square. Are you ready?`,
-      emotion: 'excited',
+      text: `Greetings! Today we are tackling one of the most elegant and fundamental methods in algebra: completing the square. Think of it like building a perfect geometric square out of algebraic pieces. This method is crucial because it helps us understand the structure of the parabola, easily find its vertex, and is the very technique used to derive the quadratic formula itself.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-solving-completing-square.mp3'
     },
     display: {
-      content: `### Understanding Perfect Squares
+      content: `# Introduction to Perfect Squares
 
-A **perfect square trinomial** is a polynomial that results from squaring a binomial, meaning it can be factored into \$(x + k)²\$ or \$(x - k)²\$.
+**Completing the Square (CTS)** is an algebraic technique used to convert any standard quadratic equation (\$ax² + bx + c = 0\$) into the vertex form \$a(x-h)² + k = 0\$. This method is based on creating a **perfect square trinomial (PST)**, which is a trinomial that factors into \$(x + d)²\$.
 
-Which of the following expressions is a perfect square trinomial?
+The key insight is that for a PST of the form \$x² + bx + c\$, the constant term \$c\$ must always be equal to the square of half the coefficient of \$x\$: \$c = (b/2)²\$. By adding and subtracting this specific value, we maintain the equality of the equation while creating the desired perfect square structure. This method is indispensable for graphing parabolas and understanding transformations.
 
-A) \$x² + 8x + 15\$
-B) \$x² + 10x + 25\$
-C) \$x² - 6x - 9\$`,
+Let's begin by identifying the missing piece needed to form a perfect square.
+
+***
+
+**First Problem:**
+
+Find the constant \$c\$ that must be added to the expression to complete the square:
+
+\$x² + 10x + c\$`,
       showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "completingSquareVisualizer",
+          "parameters": {
+                "a": 1,
+                "b": 10,
+                "c": 0,
+                "showGeometric": true,
+                "showSteps": false
+          },
+          "caption": "Visualizing the geometric components of x² + 10x, showing the missing piece needed to form a perfect square."
     }
   },
 
   's3-math-quadratic-solving-formula': {
     speech: {
-      text: `Hey there! I'm so excited to be your tutor today and will teach you about one of the most powerful tools in algebra: the Quadratic Formula! This formula is like a universal key—it can solve any quadratic equation, no matter how tricky it looks. We're going to master it today!`,
-      emotion: 'excited',
+      text: `Good morning! Are you ready for the ultimate safety net of quadratic solving? The quadratic formula is the reliable tool that guarantees a solution for any quadratic equation, regardless of how messy the numbers are or whether it factors easily. Understanding the formula starts with correctly identifying the coefficients a, b, and c from the standard form.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-solving-formula.mp3'
     },
     display: {
-      content: `### Understanding the Standard Form
+      content: `# Introduction to the Quadratic Formula
 
-The **Quadratic Formula** is used to solve equations written in standard form:
-\$\$ax² + bx + c = 0\$\$
+The **Quadratic Formula** is the universal method for solving any equation in the standard form \$ax² + bx + c = 0\$. It is derived directly from the method of completing the square and provides the roots (solutions) \$x\$ instantly, provided you correctly substitute the coefficients \$a\$, \$b\$, and \$c\$.
 
-To begin, we must correctly identify the coefficients. For the following equation, what are the values of a, b, and c?
+The formula is:
 
-\$\$3x² - 5x + 2 = 0\$\$`,
+\$x = \\frac{-b \\pm \\sqrt{b² - 4ac}}{2a}\$
+
+This formula is not just a calculation tool; it also contains the **discriminant** (\$b² - 4ac\$), which predicts the number and nature of the solutions (two real, one real, or complex). The quadratic formula is essential in fields like engineering and finance, where finding exact breaking points or optimal values is critical.
+
+We start by ensuring we can accurately identify the inputs for the formula.
+
+***
+
+**First Problem:**
+
+Identify the coefficients \$a\$, \$b\$, and \$c\$ for the following quadratic equation:
+
+\$5x² - 2x + 1 = 0\$`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "quadraticFormulaVisualizer",
           "parameters": {
-                "a": 3,
-                "b": -5,
-                "c": 2,
-                "showDiscriminant": true,
+                "a": 5,
+                "b": -2,
+                "c": 1,
+                "showDiscriminant": false,
                 "showSteps": false
           },
-          "caption": "The Quadratic Formula is $x = \\frac{-b \\pm \\sqrt{b² - 4ac}}{2a}$. Identifying a, b, and c is the crucial first step!"
+          "caption": "Highlighting the coefficients a, b, and c in the standard quadratic equation."
     }
   },
 
   's3-math-quadratic-solving-exponential': {
     speech: {
-      text: `Hey there! Today we are tackling one of the coolest algebraic tricks: solving exponential equations by turning them into quadratics! It sounds complicated, but we'll use a simple substitution method to make these tough problems easy. Get ready to put your factoring skills to the test!`,
-      emotion: 'excited',
+      text: `Hi there! Let's explore a fascinating intersection of exponential functions and quadratics. Sometimes, an equation looks intimidatingly exponential, but it's actually a quadratic in disguise! We use the substitution method to temporarily simplify the equation, solve it using standard techniques, and then revert back to the original variable using logarithms if necessary.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-solving-exponential.mp3'
     },
     display: {
-      content: `We are going to solve the exponential equation below. Notice how the bases relate to each other:
+      content: `# Introduction to Substitution in Exponential Equations
 
-\$\$4^x - 5(2^x) + 6 = 0\$\$
+Certain exponential equations can be solved using quadratic techniques if they exhibit the form \$A(a^{2x}) + B(a^x) + C = 0\$. Recognizing this pattern is the first step in applying the **Substitution Method**.
 
-### Step 1: Identify the Substitution
+By defining a new variable, say \$y\$, where \$y = a^x\$, the equation simplifies dramatically into the standard quadratic form \$Ay² + By + C = 0\$. This transformation allows us to use factoring or the quadratic formula to solve for \$y\$. Once \$y\$ is found, we substitute back (\$a^x = y\$) and use logarithms to solve for the original variable \$x\$.
 
-To see the quadratic form, we need to rewrite \$4^x\$. Remember the exponent rule \$(a^m)^n = a^{mn}\$.
+This technique is vital in modeling real-world phenomena like population growth, radioactive decay, and compound interest, where exponential functions are fundamental. We will start by applying the substitution step.
 
-Since \$4 = 2²\$, we can rewrite \$4^x\$ as \$(2^2)^x = 2^{2x} = (2^x)²\$.
+***
 
-The equation becomes:
-\$\$(2^x)² - 5(2^x) + 6 = 0\$\$
+**First Problem:**
 
-What substitution should we use to turn this into a standard quadratic equation, like \$y² - 5y + 6 = 0\$?`,
+Use the substitution \$y = e^x\$ to transform the following exponential equation into a standard quadratic equation in terms of \$y\$:
+
+\$e^{2x} + e^x - 12 = 0\$`,
       showAfterSpeech: true
     }
   },
 
   's3-math-quadratic-word-problems': {
     speech: {
-      text: `Hi there! let's learn about one of the most practical areas of mathematics: solving real-world word problems using quadratic equations. We're going to learn how to translate everyday situations, like calculating areas or figuring out projectile motion, into equations we already know how to solve. Our first step is mastering the translation. Ready to tackle our first setup problem?`,
+      text: `Welcome to the exciting world of quadratic word problems! Think of these problems as mathematical puzzles where you are the detective. Instead of just solving equations, you first have to find them hidden in plain sight within a story. This topic is crucial because quadratics describe real-world phenomena like how a ball flies through the air or how architects design space. The main challenge is translating complex sentences into the standard form A x squared plus B x plus C equals zero. Let's focus on setting up that equation correctly.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-word-problems.mp3'
     },
     display: {
-      content: `## Setting Up Equations from Words
+      content: `# Introduction to Quadratic Word Problems
 
-A rectangular field has an area of 84 square meters. The length of the field is 5 meters longer than its width.
+Quadratic word problems are mathematical scenarios that describe a relationship between variables where one variable is proportional to the square of another. These problems require you to translate verbal descriptions into the standard quadratic equation form: \$Ax^2 + Bx + C = 0\$.
 
-Let 'x' represent the width of the field in meters.
+Why does this matter? Quadratics are the backbone of many real-world applications. They model the path of projectiles (like rockets or thrown balls), help engineers optimize the area of structures, and are used in finance to calculate maximum profit or minimum cost. Mastering the translation process is the key to unlocking these powerful applications.
 
-**Question:** Write the quadratic equation that models this situation, before simplifying (i.e., keep it in factored form).`,
+Our core focus in this section is **Setting Up Equations from Words**. This involves two critical steps: first, defining your unknown variables (usually \$x\$), and second, using the constraints given in the problem (like area, perimeter, or time) to build the complete quadratic equation. Once the equation is set up correctly, solving it becomes straightforward.
+
+--- 
+
+### First Problem: Setting Up Equations from Words
+
+The length of a rectangular garden is 5 meters greater than its width. If the area of the garden is 36 square meters, write the quadratic equation that models this situation in the form \$Ax^2 + Bx + C = 0\$.`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -989,208 +1028,235 @@ Let 'x' represent the width of the field in meters.
           "parameters": {
                 "problemType": "area",
                 "labels": {
-                      "length": "x + 5",
                       "width": "x",
-                      "area": "A = 84 m²"
+                      "length": "x + 5",
+                      "area": "36 m²"
                 },
                 "showEquation": false
           },
-          "caption": "Visualizing the rectangular field with width x and length x + 5."
+          "caption": "A diagram illustrating the rectangular garden with width x and length x + 5, and a total area of 36 m²."
     }
   },
 
   's3-math-quadratic-graph-features': {
     speech: {
-      text: `Hi there! I'm glad to teach you about graphing quadratic functions today. We are going to learn how to understand and sketch all the key features of these awesome U-shaped curves, called parabolas! Let's start with the basics: shape and direction.`,
+      text: `Hey there, ready to dive into the world of parabolas? Think of a basketball shot or a water fountain arc. These are the shapes we are studying! We will learn how to read the quadratic equation to immediately know the shape, direction, and key points of the graph, allowing us to sketch accurate pictures of these real-world trajectories.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-graph-features.mp3'
     },
     display: {
-      content: `### Parabola Shape and Direction
+      content: `# Introduction to Graph Features & Sketching
 
-Quadratic functions, like \$y = ax^2 + bx + c\$, always graph as parabolas. The coefficient 'a' tells us everything about its direction and width.
+Quadratic functions, represented by the equation \$y = ax² + bx + c\$, produce U-shaped graphs called **parabolas**. These shapes are fundamental in physics, engineering, and architecture, describing projectile motion, satellite dishes, and bridge structures.
 
-Look at the function below:
+Our first step in graphing is understanding how the coefficient \$a\$ dictates the overall appearance. If a > 0, the parabola opens upward (like a smile), meaning it has a minimum value. If a < 0, it opens downward (like a frown), indicating a maximum value. The magnitude of \$a\$ controls the width—a larger absolute value means a narrower parabola.
 
-\$\$y = -2x^2 + 8x - 5\$\$
+Mastering these basic features—shape, direction, vertex, and intercepts—is essential for creating a complete, labeled sketch of any quadratic function.
 
-**Question:** Based on the coefficient of \$x^2\$, what is the shape of this graph and which direction does it open?`,
+***
+
+### First Problem: Parabola Shape and Direction
+
+Consider the quadratic function \$y = -3x² + 5x - 1\$.
+
+1.  What is the shape of the graph (parabola)?
+2.  Does the parabola open upward or downward?
+3.  Does the function have a maximum or a minimum value?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "parabolaGraph",
           "parameters": {
-                "a": -2,
-                "b": 8,
-                "c": -5,
+                "a": -3,
+                "b": 5,
+                "c": -1,
                 "showVertex": true,
-                "showRoots": true,
+                "showRoots": false,
                 "showAxisOfSymmetry": true
           },
-          "caption": "Graph of $y = -2x^2 + 8x - 5$"
+          "caption": "Visualizing the parabola y = -3x² + 5x - 1 to determine its direction and maximum point."
     }
   },
 
   's3-math-quadratic-graph-completed-square': {
     speech: {
-      text: `Welcome! Today we’ll be learning about one of the most powerful ways to graph quadratic functions: using the vertex form! This form makes graphing parabolas incredibly fast because it tells us exactly where the vertex is and how the graph is transformed. The general vertex form is f(x) = a times the quantity x minus h squared plus k. Let's start by identifying the vertex.`,
-      emotion: 'excited',
+      text: `Welcome! Today we are looking at the most informative way to write a quadratic equation: vertex form. Think of the standard form as a cryptic code, and the vertex form as a perfectly clear map. Once the equation is in the form y equals a times x minus h squared plus k, the graph's most important feature, the vertex, is instantly revealed, making graphing incredibly straightforward.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-graph-completed-square.mp3'
     },
     display: {
-      content: `### Reading the Vertex
+      content: `# Introduction to Graphing from Vertex Form
 
-The **Vertex Form** of a quadratic function is given by:
-\$\$f(x) = a(x - h)² + k\$\$
+Graphing a quadratic function is easiest when the equation is in **vertex form**: \$y = a(x - h)² + k\$. This form is powerful because it allows us to read the vertex \$(h, k)\$ directly, without any calculation. Furthermore, this form clearly shows the transformations applied to the basic parent function \$y = x²\$.
 
-Where the vertex is the point \$(h, k)\$.
+\$h\$ dictates the horizontal shift (right if h > 0, left if h < 0), and \$k\$ dictates the vertical shift (up if k > 0, down if k < 0). The coefficient \$a\$ still determines the direction and vertical stretch/compression. By identifying \$(h, k)\$, we establish the turning point and can quickly sketch the parabola.
 
---- 
+Let's start by practicing how to extract the vertex coordinates from this efficient form.
 
-**Problem:**
+***
 
-What is the vertex \$(h, k)\$ of the parabola defined by the function \$f(x) = 2(x - 3)² + 1\$?`,
+### First Problem: Reading Vertex from Vertex Form
+
+Identify the coordinates of the vertex for the following quadratic function:
+
+\$y = 2(x + 4)² - 7\$`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "vertexFormTransform",
           "parameters": {
                 "a": 2,
-                "h": 3,
-                "k": 1,
+                "h": -4,
+                "k": -7,
                 "showTransformations": true,
-                "showBothForms": true
+                "showBothForms": false
           },
-          "caption": "This visual shows the parent function $y = x²$ shifting and stretching to match $f(x) = 2(x - 3)² + 1$. Observe the location of the vertex."
+          "caption": "The Vertex Form $y = 2(x + 4)² - 7$ showing the vertex at (-4, -7) and the vertical stretch."
     }
   },
 
   's3-math-quadratic-graph-factorised': {
     speech: {
-      text: `Hi there! Today, we're diving into graphing quadratic functions when they're written in what we call factorised form. This form, f of x equals a times the quantity x minus p times the quantity x minus q, is actually the easiest way to find where the parabola crosses the x-axis, which we call the x-intercepts. Let's start with a function and see if you can spot those intercepts right away!`,
-      emotion: 'excited',
+      text: `Hi there! If you love shortcuts, you'll love factorised form. When a quadratic is factored, it gives away its x-intercepts—the places where the graph crosses the x-axis—for free! This makes finding the axis of symmetry and the vertex extremely fast, since the axis of symmetry is always exactly halfway between the intercepts.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-graph-factorised.mp3'
     },
     display: {
-      content: `### Reading the X-Intercepts
+      content: `# Introduction to Graphing from Factorised Form
 
-When a quadratic function is written in the factorised form \$f(x) = a(x - p)(x - q)\$, the x-intercepts (or roots) occur at \$x = p\$ and \$x = q\$.
+When a quadratic function is written in **factorised form**, \$y = a(x - r_1)(x - r_2)\$, the values \$r_1\$ and \$r_2\$ are the **x-intercepts** (also called the roots or zeros). This is because setting \$y = 0\$ immediately yields \$x = r_1\$ or \$x = r_2\$.
 
-Consider the function:
+Having the intercepts makes graphing highly efficient. The **axis of symmetry** is the vertical line exactly in the middle, calculated by averaging the roots: \$x = \\frac{r_1 + r_2}{2}\$. Once the axis of symmetry is known, substituting that \$x\$-value back into the equation gives the \$y\$-coordinate of the vertex.
 
-\$\$f(x) = (x - 2)(x + 4)\$\$
+Let's start by using the factorised form to identify the intercepts.
 
-What are the x-intercepts of this parabola?`,
+***
+
+### First Problem: Reading x-intercepts
+
+Identify the x-intercepts (roots) of the function given in factorised form:
+
+\$y = -0.5(x - 6)(x + 2)\$`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "parabolaGraph",
+          "parameters": {
+                "a": -0.5,
+                "b": 2,
+                "c": 6,
+                "showVertex": true,
+                "showRoots": true,
+                "showAxisOfSymmetry": true,
+                "xMin": -5,
+                "xMax": 9
+          },
+          "caption": "The graph of $y = -0.5(x - 6)(x + 2)$ visually confirming the x-intercepts at 6 and -2."
+    }
+  },
+
+  's3-math-quadratic-graph-polynomial': {
+    speech: {
+      text: `Greetings. We are now focusing on the standard polynomial form, y equals ax squared plus bx plus c. While this form doesn't immediately reveal the vertex or the roots, it is the most common starting point. Our goal is to develop a systematic strategy to extract every necessary feature—vertex, intercepts, and direction—efficiently using specific formulas derived from this structure.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-graph-polynomial.mp3'
+    },
+    display: {
+      content: `# Introduction to Graphing from Standard Form
+
+The **Standard Form** of a quadratic function, \$y = ax² + bx + c\$, is the general way we encounter these equations. Although less descriptive than vertex or factorised form, it provides two key features immediately: the direction (from \$a\$) and the **y-intercept** (which is always \$c\$, since setting \$x=0\$ yields \$y=c\$).
+
+To find the crucial vertex, we rely on the derived formula for the axis of symmetry: \$x = \\frac{-b}{2a}\$. This calculation gives us the \$x\$-coordinate of the vertex. We then substitute this value back into the original equation to find the \$y\$-coordinate. This systematic approach ensures we can accurately plot the graph regardless of the initial form.
+
+Let's begin by finding the axis of symmetry, the backbone of the parabola.
+
+***
+
+### First Problem: Basic Features from Standard Form
+
+For the function \$y = x² + 6x + 5\$, use the formula \$x = \\frac{-b}{2a}\$ to calculate the equation of the axis of symmetry.`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "parabolaGraph",
           "parameters": {
                 "a": 1,
-                "b": 2,
-                "c": -8,
+                "b": 6,
+                "c": 5,
                 "showVertex": true,
                 "showRoots": true,
                 "showAxisOfSymmetry": true,
-                "highlightVertex": false,
-                "xMin": -6,
-                "xMax": 4
+                "highlightAxisOfSymmetry": true
           },
-          "caption": "Observe the graph of $f(x) = (x - 2)(x + 4)$. Where does it cross the x-axis?"
-    }
-  },
-
-  's3-math-quadratic-graph-polynomial': {
-    speech: {
-      text: `Hello! Let's explore one of the most useful forms of quadratic functions today: the standard form, f(x) equals a x squared plus b x plus c. This form holds all the secrets we need to graph parabolas quickly and accurately. Let's start by identifying the basic features that tell us how the graph will look.`,
-      emotion: 'excited',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-graph-polynomial.mp3'
-    },
-    display: {
-      content: `Let's begin with the function:
-
-\$\$f(x) = 2x^2 + 8x - 5\$\$
-
-What are the values of \$a\$, \$b\$, and \$c\$, and based on the value of \$a\$, does the parabola open up or down?`,
-      showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "parabolaGraph",
-          "parameters": {
-                "a": 2,
-                "b": 8,
-                "c": -5,
-                "showVertex": true,
-                "showRoots": false,
-                "showAxisOfSymmetry": false
-          },
-          "caption": "This graph shows the parabola $f(x) = 2x^2 + 8x - 5$. We can see the direction of opening immediately."
+          "caption": "Visualizing $y = x² + 6x + 5$ and its axis of symmetry, which passes through the vertex."
     }
   },
 
   's3-math-quadratic-graph-finding-function': {
     speech: {
-      text: `Hi there! Today, we're diving into a super useful skill: writing the equation for a quadratic function, or a parabola, when we're given some key information. We'll start with the easiest case: when you know the vertex and one other point! This method relies on the vertex form of a quadratic equation.`,
-      emotion: 'excited',
+      text: `Have you ever wanted to reverse engineer a formula? That's what we are doing today! Instead of starting with an equation and drawing the graph, we are given key points on the graph—like the vertex or the intercepts—and must work backwards to construct the unique quadratic equation that fits those constraints. This requires choosing the right starting form based on the information provided.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-graph-finding-function.mp3'
     },
     display: {
-      content: `### Finding the Equation from Vertex and a Point
+      content: `# Introduction to Finding Quadratic Functions
 
-The **Vertex Form** of a quadratic function is given by:
+In this section, we transition from analyzing given equations to **constructing** them. Finding the equation of a quadratic function requires identifying three independent pieces of information, typically provided as key points on the graph.
 
-\$\$y = a(x - h)² + k\$\$
+If the **vertex \$(h, k)\$** is known, we should start with the Vertex Form: \$y = a(x - h)² + k\$. If the **x-intercepts \$(r_1, 0)\$ and \$(r_2, 0)\$** are known, we should start with the Factorised Form: \$y = a(x - r_1)(x - r_2)\$. In both cases, a third point \$(x, y)\$ is required to solve for the vertical stretch factor, \$a\$.
 
-where (h, k) is the vertex.
+Let's start with the most common scenario: using the vertex and one additional point.
 
-**Problem:**
+***
 
-A parabola has a vertex at (2, 5) and passes through the point (0, 1).
+### First Problem: From Vertex and a Point
 
-What is the value of the stretch factor, 'a'?`,
+A parabola has a vertex at \$(3, 1)\$ and passes through the point \$(1, 9)\$.
+
+Substitute the vertex coordinates into the vertex form \$y = a(x - h)² + k\$ and then use the point \$(1, 9)\$ to solve for the value of \$a\$.`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "parabolaGraph",
-          "parameters": {
-                "a": -1,
-                "b": 4,
-                "c": 1,
-                "highlightVertex": true
-          },
-          "caption": "This graph shows the parabola defined by the vertex (2, 5) and the point (0, 1). Notice how the parabola opens downward."
     }
   },
 
   's3-math-quadratic-graph-problem-solving': {
     speech: {
-      text: `Hi there! Today, we are going to dive into one of the most useful applications of math: using quadratic graphs to solve real-world problems. We will learn how to interpret every feature of a parabola, from the vertex to the intercepts, to understand things like maximum profit or the highest point a rocket reaches. Let's start with a classic example!`,
-      emotion: 'excited',
+      text: `Hello, and welcome to applying quadratic graphs to the real world! Quadratic functions are essential tools for optimization, whether you are maximizing profit, minimizing cost, or determining the highest point of a launched object. The features we have studied—the vertex, the intercepts, and the axis of symmetry—all take on important physical meaning in context.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-quadratic-graph-problem-solving.mp3'
     },
     display: {
-      content: `A ball is thrown upward from a height of 1 meter. The height, \$h\$ (in meters), of the ball above the ground \$t\$ seconds after being thrown is modeled by the equation: \$h(t) = -t² + 6t + 1\$.
+      content: `# Introduction to Problem Solving with Graphs
 
-The graph of this function is shown below.
+Quadratic graphs are powerful models for real-world phenomena. When solving problems involving projectile motion (like throwing a ball) or area maximization, the graph features translate directly into answers to practical questions.
 
-### Question 1
-Based on the graph, what is the maximum height, in meters, that the ball reaches?`,
+-   The **Vertex** represents the maximum height or the maximum profit/area.
+-   The **x-intercepts** often represent the starting point, the landing point, or the break-even points.
+-   The **y-intercept** usually represents the initial value or starting height.
+
+Success in problem-solving depends on accurately interpreting what each feature means within the context of the word problem.
+
+***
+
+### First Problem: Interpreting Graphs in Context
+
+The height \$H\$ (in meters) of a rocket \$t\$ seconds after launch is modeled by the function \$H(t) = -5t² + 40t + 5\$. The graph of this function is a parabola opening downward.
+
+What physical quantity does the vertex of this parabola represent in this scenario?`,
       showAfterSpeech: true
     },
     mathTool: {
-          "toolName": "parabolaGraph",
+          "toolName": "wordProblemDiagram",
           "parameters": {
-                "a": -1,
-                "b": 6,
-                "c": 1,
-                "showVertex": true,
-                "showRoots": false,
-                "showAxisOfSymmetry": true,
-                "highlightVertex": true,
-                "xMin": 0,
-                "xMax": 7
+                "problemType": "projectile",
+                "labels": {
+                      "equation": "H(t) = -5t² + 40t + 5",
+                      "vertex": "Maximum Height",
+                      "xIntercept": "Landing Time (t)",
+                      "yIntercept": "Initial Height"
+                },
+                "showEquation": true
           },
-          "caption": "Graph showing the height (h) of the ball over time (t). Note: Only the positive time values are relevant in this physical context."
+          "caption": "Diagram illustrating the projectile path, where the vertex signifies the maximum height achieved."
     }
   },
 
@@ -1201,121 +1267,160 @@ Based on the graph, what is the maximum height, in meters, that the ball reaches
    */
   's3-math-surds-fundamentals': {
     speech: {
-      text: `Hello! Let's learn about the world of surds, radicals, and square roots with you today. These concepts are fundamental in algebra, and we’re going to make sure you master them. Let's start right at the beginning by defining what a surd actually is.`,
-      emotion: 'excited',
+      text: `Hello and welcome to the world of Surds! Surds are the mathematical way of dealing with exact, irrational numbers. They are roots that cannot be simplified into neat whole numbers or fractions, like the square root of 2. We are starting with Surd Basics, where we will learn to identify these special numbers and distinguish them from rational roots. Let us begin by testing your foundational knowledge.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-surds-fundamentals.mp3'
     },
     display: {
-      content: `### Surd Basics
+      content: `# Introduction to Understanding Surds
 
-A **surd** is a root of a number that cannot be simplified to a rational number (an integer or a fraction).
+Surds are square roots (or other roots) that result in **irrational numbers**—decimals that go on forever without repeating, such as √2 or √3. We call the symbol (√) the radical sign. Understanding surds is crucial because they allow us to express exact values in geometry and physics, avoiding messy rounding errors that occur when we approximate irrational numbers.
 
-For example, \$\\sqrt{2}\$ is a surd, but \$\\sqrt{4}\$ is not (since \$\\sqrt{4} = 2\$).
+In this first section, we establish the basics: identifying a surd and distinguishing it from a rational root. For example, √9 is **not** a surd because it equals 3 (a rational number), but √5 **is** a surd because its value is non-terminating and non-repeating.
 
-Which of the following expressions represents a **surd**?
+We will progress by learning to identify surds and then applying basic multiplication and division properties.
 
-A) \$\\sqrt{9}\$
-B) \$\\sqrt{16}\$
-C) \$\\sqrt{25}\$
-D) \$\\sqrt{3}\$`,
+***
+
+### First Problem: Understanding Surds and Radicals
+
+Which of the following is a surd?
+
+A) √16
+B) √49
+C) √5
+D) √100`,
       showAfterSpeech: true
     }
   },
 
   's3-math-surds-simplifying': {
     speech: {
-      text: `Hello! Let's learn about simplifying surds today. This skill is super useful for making complicated square roots much easier to work with. We're going to start by focusing on finding and extracting perfect square factors. Ready for our first challenge?`,
+      text: `Hey there! Ready to unlock some hidden math power? Surds often come in a messy form, but we can simplify them to make calculations much easier. This process is called simplifying surds, and it involves extracting perfect square factors. Think of it like unpacking a complicated mathematical package. Let us jump straight into extracting those perfect squares.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-surds-simplifying.mp3'
     },
     display: {
-      content: `### Simplifying Surds: Perfect Square Extraction
+      content: `# Introduction to Simplifying Surds
 
-The goal of simplifying a surd is to find the largest perfect square factor within the number under the square root sign.
+Simplifying a surd means extracting any **perfect square factors** from inside the radical sign. We look for the largest perfect square (4, 9, 16, 25, etc.) that divides the number under the root. The key rule that allows us to do this is the multiplication property of radicals: \$\\sqrt{a \\times b} = \\sqrt{a} \\times \\sqrt{b}\$.
 
-**Problem 1:**
+For instance, to simplify √18, we recognize that 18 = 9 × 2, where 9 is a perfect square. We rewrite this as \$\\sqrt{9 \\times 2} = \\sqrt{9} \\times \\sqrt{2} = 3\\sqrt{2}\$. This simplified form is easier to work with when performing further calculations.
 
-Simplify the following surd:
+We will start by mastering the extraction of perfect square factors and then move on to handling complex surds using prime factorization.
 
-\$\$\\sqrt{48}\$\$`,
+***
+
+### First Problem: Extracting Perfect Square Factors
+
+Simplify the surd \$\\sqrt{12}\$ by extracting the largest perfect square factor.`,
       showAfterSpeech: true
     }
   },
 
   's3-math-surds-addition-subtraction': {
     speech: {
-      text: `Hi there! Ready to tackle surds? Today, we are learning how to add and subtract them. It's actually a lot like combining like terms in algebra. We'll start with the easy part: combining 'like surds'. This just means adding or subtracting the numbers in front of the square roots, treating the surd itself like a variable. Let's try an example.`,
-      emotion: 'excited',
+      text: `Greetings! Today we tackle combining surds. If you can combine like terms in algebra, you can add and subtract surds. The core idea is that you can only combine surds if they are 'like surds', meaning they have the exact same number under the radical sign. Let us start by combining some simple like surds.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-surds-addition-subtraction.mp3'
     },
     display: {
-      content: `### Problem 1: Adding and Subtracting Like Surds
+      content: `# Introduction to Adding and Subtracting Surds
 
-Simplify the following expression:
+Adding and subtracting surds follows the same fundamental principle as combining like terms in algebra. Just as \$3x + 2x = 5x\$, we can combine \$3\\sqrt{5}\$ and \$2\\sqrt{5}\$ to get \$5\\sqrt{5}\$. The surd term (\$\\sqrt{5}\$) acts like the variable (\$x\$).
 
-4√7 + 3√7 - √7`,
+Crucially, you must have **like surds** (the number under the radical must be identical) to perform addition or subtraction. You simply add or subtract the coefficients (the numbers outside the radical) while keeping the surd term unchanged.
+
+In this module, we first practice combining like surds, and then we move on to more complex problems where you must simplify the surds first to *create* like surds before combining them.
+
+***
+
+### First Problem: Adding and Subtracting Like Surds
+
+Calculate the value of the following expression:
+
+\$7\\sqrt{3} + 2\\sqrt{3} - 4\\sqrt{3}\$`,
       showAfterSpeech: true
     }
   },
 
   's3-math-surds-multiplication-division': {
     speech: {
-      text: `Hey there! Ready to dive into the exciting world of surds? Today, we're mastering how to multiply and divide these tricky square roots. We'll start with multiplication, which is surprisingly straightforward once you know the rule. Let's get started with our first problem!`,
-      emotion: 'excited',
+      text: `Welcome back! Let us explore the power of surd algebra through multiplication and division. Unlike addition, these operations are always possible, regardless of the number under the radical. The rules are straightforward and essential for expanding brackets and solving complex geometry problems. We will start with the core multiplication rule.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-surds-multiplication-division.mp3'
     },
     display: {
-      content: `### Section 1: Multiplying Surds
+      content: `# Introduction to Multiplying and Dividing Surds
 
-When multiplying surds, we use the rule: √a × √b = √(ab)
+Multiplication and division of surds rely on two simple, powerful rules derived from the properties of exponents:
 
-This means we multiply the numbers inside the square roots together, and then simplify the resulting surd if possible.
+1. **Multiplication:** \$\\sqrt{a} \\times \\sqrt{b} = \\sqrt{a \\times b}\$
+2. **Division:** \$\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}}\$
 
-**Problem 1:**
+When multiplying expressions that include coefficients (numbers outside the radical), remember to multiply the outside numbers together and the inside numbers together. For example, \$(2\\sqrt{3}) \\times (4\\sqrt{5}) = (2 \\times 4) \\sqrt{3 \\times 5} = 8\\sqrt{15}\$. Always simplify the resulting surd if possible.
 
-Calculate and simplify the following expression:
+We will cover basic multiplication and division, followed by expanding brackets using techniques like FOIL and the distributive property.
 
-√2 × √10`,
+***
+
+### First Problem: Multiplying Surds
+
+Multiply the following surds and simplify the result:
+
+\$3\\sqrt{2} \\times 5\\sqrt{3}\$`,
       showAfterSpeech: true
     }
   },
 
   's3-math-surds-rationalizing': {
     speech: {
-      text: `Hello! Today we’ll be learning about a super useful skill called rationalizing denominators. This is all about cleaning up fractions so that we never have a square root, or a surd, hanging out in the denominator. We will start with the simpler cases, where the denominator is just a single surd. Let's get started!`,
-      emotion: 'excited',
+      text: `Hi there! Ever wonder why mathematicians hate surds in the denominator? Rationalizing the denominator is a key skill that eliminates surds from the bottom of a fraction, ensuring consistency and precision in our answers. We achieve this by multiplying the fraction by a clever form of the number one. Let us master rationalizing simple monomial denominators first.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-surds-rationalizing.mp3'
     },
     display: {
-      content: `### Rationalizing Monomial Denominators
+      content: `# Introduction to Rationalizing Denominators
 
-Our goal is to eliminate the surd from the denominator. For a monomial surd, like \$\\sqrt{5}\$, we multiply the numerator and the denominator by the surd itself.
+Rationalizing the denominator is the process of converting a fraction with an irrational denominator (a surd) into an equivalent fraction with a rational denominator (a whole number or integer). While \$1/\\sqrt{2}\$ is mathematically correct, it is considered unsimplified.
 
-**Problem:** Rationalize the denominator of the following expression.
+To rationalize a simple **monomial denominator** (like \$\\sqrt{b}\$), we multiply the entire fraction by \$\\frac{\\sqrt{b}}{\\sqrt{b}}\$. Since this fraction equals 1, we haven't changed the value of the original expression. The magic happens in the denominator: \$\\sqrt{b} \\times \\sqrt{b} = b\$, which is now rational.
 
-\$\$\\frac{3}{\\sqrt{5}}\$\$
+We begin with monomial denominators and then progress to the more complex technique of using conjugates to rationalize binomial denominators.
 
-What is the resulting expression?`,
+***
+
+### First Problem: Rationalizing Monomial Denominators
+
+Rationalize the denominator of the fraction:
+
+\$\\frac{4}{\\sqrt{3}}\$`,
       showAfterSpeech: true
     }
   },
 
   's3-math-surds-mixed-operations': {
     speech: {
-      text: `Glad to see you again! We are leveling up our surd skills today. We're diving into combined operations, where we mix up addition, subtraction, multiplication, and division in multi-step problems. Then, we'll tackle some real-world problem-solving using everything we've learned. Let's start with a challenging combined operation to warm up!`,
-      emotion: 'excited',
+      text: `Fantastic job reaching the final stage of Surds mastery! Mixed operations is where we truly test your command of all the rules. You will need to apply simplification, multiplication, division, and rationalization, all while strictly following the order of operations, or PEMDAS. This is the mathematical toolkit you need for solving complex real-world problems. Let us tackle our first combined operation problem.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-surds-mixed-operations.mp3'
     },
     display: {
-      content: `### Combined Surd Operations
+      content: `# Introduction to Mixed Operations with Surds
 
-We are starting with multi-step problems that combine all the operations we've mastered. 
+Solving problems involving mixed surd operations requires methodical application of every skill you have learned: simplifying, combining, multiplying, dividing, and rationalizing. The key to success is adhering strictly to the order of operations (PEMDAS/BODMAS).
 
-**Question 1:**
+**Key Strategy:** Always handle multiplication, division, and simplification *before* attempting addition or subtraction. If a fraction needs rationalization, do that first. Often, simplification is the first step that allows unlike surds to become like surds, enabling final combination.
 
-Simplify the following expression completely:
+These multi-step problems are essential for advanced geometry and physics applications where exact answers are required. We will start with combined operations and then move into practical problem-solving scenarios.
 
-\$\$(\\sqrt{5} + 2)(\\sqrt{5} - 1) - \\frac{10}{\\sqrt{5}}\$\$`,
+***
+
+### First Problem: Combined Surd Operations
+
+Simplify the expression fully:
+
+\$3\\sqrt{8} + 5\\sqrt{2} - \\frac{10}{\\sqrt{2}}\$`,
       showAfterSpeech: true
     }
   },
@@ -1327,76 +1432,53 @@ Simplify the following expression completely:
    */
   's3-math-coord-geom-fundamentals': {
     speech: {
-      text: `Hello! I'm thrilled to explore coordinate geometry with you today. We're going to explore the amazing world of the Cartesian plane, where we use coordinates to locate points, measure the distance between them, and even find their exact middle using midpoints. Let's start with the basics: understanding coordinates and quadrants!`,
-      emotion: 'excited',
+      text: `Welcome to the absolute foundation of coordinate geometry! Think of the Cartesian Plane as the ultimate mathematical map. Just like a map uses latitude and longitude, we use X and Y coordinates to pinpoint any location precisely. This module will teach you how to read this map, understand the four quadrants, and use coordinates to calculate things like distance and midpoints. Mastering plotting points is the critical first step, so let's start by locating a specific spot on our grid.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-coord-geom-fundamentals.mp3'
     },
     display: {
-      content: `Look at the points plotted on the coordinate plane.
+      content: `# Introduction to Coordinate Plane Fundamentals
 
-### Question 1: Coordinates and Quadrants
+Coordinate geometry begins with the **Cartesian Plane**, a two-dimensional system defined by a horizontal x-axis and a vertical y-axis. These axes intersect at the origin (0, 0) and divide the plane into four regions called **quadrants**.
 
-What are the coordinates (x, y) of **Point C**, and which quadrant is it located in?`,
+Every point on this plane is uniquely identified by an ordered pair of coordinates, (x, y). Understanding how to plot these points and interpret their location is the foundational skill required to apply coordinate geometry tools, such as the Distance Formula and the Midpoint Formula, which you will master in this module.
+
+Let's begin by ensuring we can accurately locate points.
+
+**Problem 1:** Plot the point P(4, -3) on the coordinate plane. In which quadrant does the point P lie?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "cartesianPlane",
           "parameters": {
-                "xMin": -6,
-                "xMax": 6,
-                "yMin": -6,
-                "yMax": 6,
-                "points": [
-                      {
-                            "x": 3,
-                            "y": 4,
-                            "label": "A",
-                            "color": "#ef4444"
-                      },
-                      {
-                            "x": -2,
-                            "y": 5,
-                            "label": "B",
-                            "color": "#f97316"
-                      },
-                      {
-                            "x": -4,
-                            "y": -3,
-                            "label": "C",
-                            "color": "#22c55e"
-                      },
-                      {
-                            "x": 5,
-                            "y": -1,
-                            "label": "D",
-                            "color": "#3b82f6"
-                      }
-                ],
-                "title": "Points on the Cartesian Plane"
-          },
-          "caption": "Points A, B, C, and D plotted on the coordinate plane. Remember that quadrants are numbered counter-clockwise starting from the top right (Quadrant I)."
+                "xMin": -5,
+                "xMax": 5,
+                "yMin": -5,
+                "yMax": 5,
+                "showGrid": true,
+                "title": "The Cartesian Plane",
+                "caption": "The standard x-y coordinate plane used for plotting points."
+          }
     }
   },
 
   's3-math-coord-geom-gradient': {
     speech: {
-      text: `Hi there! Let's learn about coordinate geometry with you today. We are going to master the key relationships between lines, starting with the concept of gradient, then moving on to parallel lines, and finally tackling perpendicular lines. Let's start by making sure we have a solid understanding of how to calculate the gradient of a straight line!`,
+      text: `Hey there! Get ready to tackle one of the most practical concepts in math: Gradient. Gradient, often represented by the letter m, is simply the measure of a line's steepness or slope. Whether you are designing a road, calculating the pitch of a roof, or analyzing rates of change in physics, gradient is essential. We calculate it using the 'rise over run' ratio, which tells us how much the line changes vertically for every unit it changes horizontally. This concept is also the key to understanding how lines relate to each other—specifically, if they are parallel or perpendicular.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-coord-geom-gradient.mp3'
     },
     display: {
-      content: `### Section 1: Understanding Gradient
+      content: `# Introduction to Gradient and Line Relationships
 
-The **gradient** (\$m\$) of a line measures its steepness and direction. We calculate it using the formula:
+**Gradient (m)** measures the steepness and direction of a line segment. It is calculated using the ratio of the vertical change (rise) to the horizontal change (run) between any two points, \$(x_1, y_1)\$ and \$(x_2, y_2)\$, on the line.
 
-\$\$m = \\frac{\\text{Change in } y}{\\text{Change in } x} = \\frac{y_2 - y_1}{x_2 - x_1}\$\$
+The formula for gradient is:
+\$m = \\frac{y_2 - y_1}{x_2 - x_1}\$
 
-Use the points plotted on the graph below to find the gradient of the line segment AB.
+Mastering this calculation allows us to determine if lines are parallel (same gradient) or perpendicular (gradients are negative reciprocals). Let's start by calculating the steepness of a segment.
 
-**Point A:** (2, 7)
-**Point B:** (8, 4)
-
-What is the gradient of the line segment AB?`,
+**Problem 1:** Calculate the gradient (m) of the line segment connecting point A(2, 7) and point B(8, 4).`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -1410,14 +1492,12 @@ What is the gradient of the line segment AB?`,
                       {
                             "x": 2,
                             "y": 7,
-                            "label": "A(2, 7)",
-                            "color": "#e11d48"
+                            "label": "A"
                       },
                       {
                             "x": 8,
                             "y": 4,
-                            "label": "B(8, 4)",
-                            "color": "#1d4ed8"
+                            "label": "B"
                       }
                 ],
                 "lines": [
@@ -1425,32 +1505,54 @@ What is the gradient of the line segment AB?`,
                             "type": "linear",
                             "slope": -0.5,
                             "yIntercept": 8,
-                            "color": "#059669"
+                            "color": "#3b82f6"
                       }
                 ],
-                "title": "Line Segment AB",
-                "caption": "Find the gradient of the line passing through A and B."
-          },
-          "caption": "Visual representation of the line segment AB."
+                "caption": "Visualizing the line segment between A(2, 7) and B(8, 4) to find the gradient."
+          }
     }
   },
 
   's3-math-coord-geom-line-equations': {
     speech: {
-      text: `Hello! Today we’ll be learning about the fascinating world of linear equations. Lines can be written in several different forms, and learning how to switch between them is super useful. We'll start with the Point-Gradient Form, then move to Gradient-Intercept, and finally tackle the General Form. Let's start strong with our first form!`,
-      emotion: 'excited',
+      text: `Hello! Today we are moving from calculating the properties of lines to writing their algebraic DNA. An equation of a line is a powerful tool because it allows us to describe every single point on that line using a simple algebraic rule. We will focus on three key formats: Point-Gradient form, Gradient-Intercept form, and General form. The Point-Gradient form, y minus y one equals m times x minus x one, is the most versatile starting block, allowing you to build the equation of any straight line provided you know its slope and just one point it passes through.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-coord-geom-line-equations.mp3'
     },
     display: {
-      content: `### Section 1: Point-Gradient Form
+      content: `# Introduction to Equations of Lines
 
-The Point-Gradient Form is written as: \$y - y₁ = m(x - x₁)\$, where \$m\$ is the gradient (slope) and \$(x₁, y₁)\$ is a point on the line.
+While coordinates define points and gradient defines steepness, the **equation of a line** connects these elements into a single algebraic statement. This statement allows us to predict the position of any point on that line.
 
-**Problem 1:**
+We start with the **Point-Gradient Form**:
+\$y - y_1 = m(x - x_1)\$
 
-A line passes through the point \$(2, 5)\$ and has a gradient (\$m\$) of \$3\$.
+Where \$m\$ is the gradient and \$(x_1, y_1)\$ is a known point on the line. This foundational form can then be rearranged into the more familiar Gradient-Intercept Form (\$y = mx + c\$) or the General Form (\$ax + by = d\$).
 
-Write the equation of this line in **Point-Gradient Form**.`,
+Let's practice using the Point-Gradient Form directly.
+
+**Problem 1:** A line passes through the point (5, 2) and has a gradient (m) of 3. Write the equation of this line in Point-Gradient Form.`,
+      showAfterSpeech: true
+    }
+  },
+
+  's3-math-coord-geom-graphing': {
+    speech: {
+      text: `Greetings! Have you ever wanted to translate abstract algebra into clear, visual geometry? That is exactly what graphing straight lines allows us to do. Graphing is a crucial skill for interpreting relationships and solving systems of equations. We will focus first on the Gradient-Intercept form, y equals m x plus c, because it gives us two immediate clues for plotting: the y-intercept, c, and the gradient, m. These clues make graphing quick and accurate.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-coord-geom-graphing.mp3'
+    },
+    display: {
+      content: `# Introduction to Graphing Straight Lines
+
+Graphing is the process of visually representing an algebraic relationship on the Cartesian plane. The most straightforward method uses the **Gradient-Intercept Form**:
+\$y = mx + c\$
+
+Here, \$c\$ is the **y-intercept** (where the line crosses the y-axis), giving us our starting point. The gradient \$m\$ (rise over run) then tells us the direction and steepness, providing the steps needed to find subsequent points and draw the line.
+
+We will also learn how to graph lines given in General Form by finding the x and y intercepts.
+
+**Problem 1:** Consider the equation \$y = -2x + 5\$. Identify the y-intercept (\$c\$) and the gradient (\$m\$).`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -1460,218 +1562,83 @@ Write the equation of this line in **Point-Gradient Form**.`,
                 "xMax": 5,
                 "yMin": -5,
                 "yMax": 10,
-                "points": [
-                      {
-                            "x": 2,
-                            "y": 5,
-                            "label": "(2, 5)",
-                            "color": "red"
-                      }
-                ],
                 "lines": [
                       {
                             "type": "linear",
-                            "slope": 3,
-                            "yIntercept": -1,
-                            "equation": "y = 3x - 1",
-                            "color": "blue"
+                            "slope": -2,
+                            "yIntercept": 5,
+                            "equation": "y = -2x + 5"
                       }
                 ],
-                "title": "Line through (2, 5) with slope 3",
-                "caption": "The line we are defining passes through the red point $(2, 5)$ and has a slope of $3$."
-          },
-          "caption": "Visualizing the line we are trying to define."
-    }
-  },
-
-  's3-math-coord-geom-graphing': {
-    speech: {
-      text: `Hello there! Let's explore graphing straight lines today. This is a super important skill that helps us visualize equations and understand relationships between variables. We'll start by mastering the Gradient-Intercept Form, which is y equals m x plus c. Ready for your first challenge?`,
-      emotion: 'excited',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-coord-geom-graphing.mp3'
-    },
-    display: {
-      content: `### Section 1: Graphing from \$y = mx + c\$
-
-We start with the **Gradient-Intercept Form** where \$m\$ is the gradient and \$c\$ is the y-intercept.
-
-Consider the equation:
-
-\$\$y = 2x - 3\$\$
-
-To begin graphing this line, we need to find the starting point.
-
-**What are the coordinates of the y-intercept?**`,
-      showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "cartesianPlane",
-          "parameters": {
-                "lines": [
-                      {
-                            "type": "linear",
-                            "slope": 2,
-                            "yIntercept": -3,
-                            "equation": "y = 2x - 3"
-                      }
-                ],
-                "points": [
-                      {
-                            "x": 0,
-                            "y": -3,
-                            "label": "(0, -3)",
-                            "color": "red"
-                      }
-                ],
-                "xMin": -5,
-                "xMax": 5,
-                "yMin": -10,
-                "yMax": 5,
-                "title": "Graphing y = 2x - 3"
-          },
-          "caption": "The graph of $y = 2x - 3$. Notice the line crossing the y-axis."
+                "title": "Graphing y = -2x + 5",
+                "caption": "The graph of the line showing the y-intercept at (0, 5) and a negative gradient."
+          }
     }
   },
 
   's3-math-coord-geom-perpendicular-bisectors': {
     speech: {
-      text: `Hello! Let's learn about a really important concept in geometry and coordinate math today: perpendicular bisectors of line segments. These lines have some amazing properties that make solving complex coordinate problems much easier. Let's start by understanding their key characteristics!`,
-      emotion: 'excited',
+      text: `Welcome to a topic that demands precision: Perpendicular Bisectors. This is where you bring together everything you have learned about midpoints and gradients. A perpendicular bisector is a line with two defining properties: it cuts a line segment exactly in half, and it intersects that segment at a perfect ninety degree angle. Finding the equation of this unique line requires a multi-step, advanced process, combining the midpoint formula and the negative reciprocal rule for slopes.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-coord-geom-perpendicular-bisectors.mp3'
     },
     display: {
-      content: `### Understanding Perpendicular Bisectors
+      content: `# Introduction to Perpendicular Bisectors
 
-Look at the segment AB and the line L (dashed blue line), which is its perpendicular bisector. P is any point on line L.
+A **perpendicular bisector** is a line that is simultaneously perpendicular to a given line segment and passes through its midpoint. This line is geometrically significant because every point on the bisector is equidistant from the endpoints of the segment it bisects.
 
-Which statement correctly describes the relationship between the distance from P to A (PA) and the distance from P to B (PB)?
+To find the equation of a perpendicular bisector, we must first find the midpoint \$(x_m, y_m)\$ and then determine the perpendicular gradient (\$m_{\\perp}\$). 
 
-A) PA is greater than PB.
-B) PA is less than PB.
-C) PA is equal to PB.
-D) PA is twice PB.`,
+We start with the first step: finding the midpoint.
+
+**Problem 1:** Calculate the coordinates of the midpoint (M) of the line segment AB, where A = (1, 10) and B = (7, 4).`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "cartesianPlane",
-          "parameters": {
-                "xMin": 0,
-                "xMax": 6,
-                "yMin": 0,
-                "yMax": 6,
-                "points": [
-                      {
-                            "x": 1,
-                            "y": 2,
-                            "label": "A"
-                      },
-                      {
-                            "x": 5,
-                            "y": 2,
-                            "label": "B"
-                      },
-                      {
-                            "x": 3,
-                            "y": 5,
-                            "label": "P"
-                      }
-                ],
-                "lines": [
-                      {
-                            "type": "vertical",
-                            "xValue": 3,
-                            "color": "#1e40af",
-                            "style": "dashed"
-                      },
-                      {
-                            "type": "horizontal",
-                            "yValue": 2,
-                            "xMin": 1,
-                            "xMax": 5,
-                            "color": "#ef4444"
-                      }
-                ],
-                "title": "Perpendicular Bisector Concept"
-          },
-          "caption": "Line L (dashed blue line) is the perpendicular bisector of segment AB (red line). P is a point on L."
     }
   },
 
   's3-math-coord-geom-applications': {
     speech: {
-      text: `Hey there! I'm excited to start this new topic with you. Today, we're diving into one of the most powerful applications of coordinate geometry: using algebra to rigorously prove geometric facts. We will use tools like the distance formula and the slope formula to prove properties of shapes like triangles and quadrilaterals. We are starting with triangles. Ready for our first challenge?`,
-      emotion: 'excited',
+      text: `Are you ready to use coordinate geometry as a tool for rigorous proof? This module is all about application. Instead of just calculating distances or slopes, you will use these formulas to prove geometric properties. Is that triangle truly right-angled? Is that quadrilateral a perfect square? By applying the distance formula, gradient formula, and midpoint formula systematically, you can provide mathematical certainty to these geometric questions. We begin by proving properties of triangles.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-coord-geom-applications.mp3'
     },
     display: {
-      content: `### Section 1: Proving Triangle Properties
+      content: `# Introduction to Coordinate Geometry Applications
 
-We can use coordinate geometry to prove if a triangle is isosceles, right-angled, or equilateral by calculating the lengths of its sides and the slopes of those sides.
+Coordinate geometry provides an algebraic framework for solving geometric problems. By assigning coordinates to vertices, we can use formulas to prove properties of shapes, such as triangles and quadrilaterals, rather than relying on visual inspection.
 
-Consider the triangle ABC with vertices A(1, 1), B(5, 1), and C(1, 5).
+For example, to prove a triangle is isosceles, we must show that at least two sides have equal length using the Distance Formula. To prove it is right-angled, we must show two sides have perpendicular gradients.
 
-**Question:** Prove that triangle ABC is a right-angled isosceles triangle. (Hint: You will need the distance formula and the slope formula.)`,
+Let's start by calculating the length of one side of a triangle.
+
+**Problem 1:** A triangle has vertices at P(1, 1), Q(5, 1), and R(3, 4). Calculate the length of the side PQ.`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "cartesianPlane",
-          "parameters": {
-                "xMin": 0,
-                "xMax": 6,
-                "yMin": 0,
-                "yMax": 6,
-                "points": [
-                      {
-                            "x": 1,
-                            "y": 1,
-                            "label": "A(1, 1)",
-                            "style": "closed"
-                      },
-                      {
-                            "x": 5,
-                            "y": 1,
-                            "label": "B(5, 1)",
-                            "style": "closed"
-                      },
-                      {
-                            "x": 1,
-                            "y": 5,
-                            "label": "C(1, 5)",
-                            "style": "closed"
-                      }
-                ],
-                "title": "Triangle ABC",
-                "caption": "The vertices of Triangle ABC plotted on the coordinate plane."
-          },
-          "caption": "Visualizing the triangle ABC."
     }
   },
 
   's3-math-coord-geom-3d': {
     speech: {
-      text: `Hello! Let's learn about the world of 3D geometry with you today. We are going to explore how to use coordinates to describe rectangular prisms, also known as cuboids, and then we'll learn how to calculate distances and find midpoints in three dimensional space. Get ready to add that third dimension, Z, to your math toolkit!`,
-      emotion: 'excited',
+      text: `Wow, we are expanding our mathematical universe today! We are leaving the flat, two-dimensional world of the X Y plane and jumping into three dimensions by adding the Z axis, which represents depth or height. This allows us to accurately model real objects like buildings, rooms, and boxes, often called rectangular prisms or cuboids. While the space is bigger, the rules are familiar: coordinates now have three values, X, Y, and Z, and we simply adapt our distance and midpoint formulas to include this third dimension.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-coord-geom-3d.mp3'
     },
     display: {
-      content: `### 1. 3D Coordinates and Rectangular Prisms
+      content: `# Introduction to 3-Dimensional Coordinate Geometry
 
-Imagine a rectangular prism (cuboid) placed in the 3D coordinate system. One vertex rests at the **origin O(0, 0, 0)**.
+Three-dimensional coordinate geometry extends the Cartesian system by introducing a third axis, the **z-axis**, perpendicular to both the x and y axes. Points are now represented by ordered triples \$(x, y, z)\$.
 
-Based on the visualization:
+This system is essential for modeling solid shapes like rectangular prisms (cuboids). The vertices of a cuboid placed at the origin can be easily identified by its length (y-axis), width (x-axis), and height (z-axis).
 
-*   **Width (x-direction):** 4 units
-*   **Length (y-direction):** 3 units
-*   **Height (z-direction):** 5 units
+Let's start by identifying the coordinates of key vertices on a cuboid.
 
-What are the coordinates (x, y, z) of the vertex labeled P, which is the point farthest from the origin?`,
+**Problem 1:** A rectangular prism has its base on the xy-plane with one vertex at the origin O(0, 0, 0). If the width is 4 units (along x), the length is 3 units (along y), and the height is 5 units (along z), what are the coordinates of the vertex P diagonally opposite the origin?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "coordinate3DPlane",
           "parameters": {
-                "width": "4",
                 "length": "3",
+                "width": "4",
                 "height": "5",
                 "showAxes": true,
                 "showOriginLabel": true,
@@ -1682,9 +1649,9 @@ What are the coordinates (x, y, z) of the vertex labeled P, which is the point f
                             "z": 5,
                             "label": "P"
                       }
-                ]
-          },
-          "caption": "A rectangular prism (cuboid) starting at the origin O(0, 0, 0) with dimensions 4 units (width), 3 units (length), and 5 units (height)."
+                ],
+                "caption": "A rectangular prism with dimensions 4 (width), 3 (length), and 5 (height) anchored at the origin."
+          }
     }
   },
 
@@ -1695,36 +1662,59 @@ What are the coordinates (x, y, z) of the vertex labeled P, which is the point f
    */
   's3-math-circle-geometry-definitions': {
     speech: {
-      text: "Greetings! Let's start our journey into circle geometry today. Circles are everywhere, and understanding their parts is the first step to mastering them. We're going to define things like arcs, chords, and segments, but let's start with the very basics: the center, radius, and diameter.",
+      text: `Welcome to the exciting world of Circle Geometry! Before we dive into complex theorems, we must first learn the language. Mastering the definitions of the basic parts of a circle is the crucial first step to success in this topic.`,
       emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-circle-geometry-definitions.mp3'
     },
     display: {
-      content: '### Parts of a Circle\n\nTake a look at the circle diagram. The line segment connecting the centre (O) to the edge of the circle is highlighted.\n\nWhat is the mathematical term for this line segment?',
+      content: `# Introduction to Circle Geometry Definitions
+
+Circles are fundamental shapes, appearing everywhere from architecture to engineering. To analyze circle geometry effectively, we must first master the terminology. We need precise definitions for every component, ensuring we can communicate clearly about the geometry we observe.
+
+In this section, we will define the core building blocks: the **Centre (O)**, the distance from the centre to the edge (**radius, r**), and the distance across the circle through the centre (**diameter, d = 2r**). We will also learn about segments of the circle's boundary (**arcs** and **circumference**) and internal elements like **chords** (lines connecting two points on the circle) and the regions they define (**segments**).
+
+Understanding these terms is non-negotiable. Let's start by identifying the basic parts in a diagram.
+
+### First Problem: Identifying Parts of a Circle
+
+In the circle provided, the centre is O, and the distance from O to point A on the circumference is 7 cm.
+
+1. What is the length of the radius?
+2. What is the length of the diameter?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "circleBasic",
           "parameters": {
-                "radius": "r",
+                "radius": "7 cm",
                 "centreLabel": "O",
                 "showCentre": true,
                 "showRadius": true,
                 "showDiameter": false,
                 "highlightElement": "radius"
           },
-          "caption": "A basic circle with centre O, showing a key line segment."
+          "caption": "A circle with centre O and radius OA = 7 cm."
     }
   },
 
   's3-math-circle-geometry-angle-semicircle': {
     speech: {
-      text: "Hey there! Today we're going to learn about one of the most elegant circle theorems: the Angle in a Semi-circle theorem. This theorem is super useful and easy to remember. It states that if you draw a triangle inside a circle where one side is the diameter, the angle opposite the diameter—the one on the circumference—will always be 90 degrees, or a right angle! Let's look at a diagram and confirm this key fact.",
-      emotion: 'warm',
+      text: `Hi there! Are you ready to master one of the simplest yet most powerful rules in geometry? The Angle in a Semi-circle theorem is elegant and essential for solving problems involving right-angled triangles inside circles.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-circle-geometry-angle-semicircle.mp3'
     },
     display: {
-      content: '### Understanding the Theorem\n\nLook at the diagram provided. AB is the diameter of the circle, and C is a point on the circumference.\n\nAccording to the Angle in a Semi-circle Theorem, what is the measure of angle ACB?\n\nA) 45°\nB) 90°\nC) 180°\nD) It depends on the location of C',
+      content: `# The Angle in a Semi-circle Theorem
+
+The Angle in a Semi-circle Theorem (also known as Thales' Theorem) is a geometric gem. It states that if you construct a triangle inside a circle such that one side is the circle's diameter, the angle opposite the diameter (the angle on the circumference) will **always be 90°**.
+
+This theorem is incredibly useful because it instantly creates a right-angled triangle, allowing us to use tools like Pythagoras' Theorem and trigonometry to find unknown lengths and angles. We will explore the proof using isosceles triangles and then apply this knowledge to solve various problems.
+
+Let's apply this instant right-angle rule.
+
+### First Problem: Finding the Semi-circle Angle
+
+In the circle with centre O, AB is the diameter. C is a point on the circumference. Find the measure of angle ACB.`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -1733,68 +1723,98 @@ What are the coordinates (x, y, z) of the vertex labeled P, which is the point f
                 "diameter": "AB",
                 "pointOnCircle": "C",
                 "showAngle": true,
-                "showRightAngleMarker": true,
+                "showRightAngleMarker": false,
                 "highlightDiameter": true
           },
-          "caption": "The angle subtended by the diameter (AB) at any point on the circumference (C) is 90°."
+          "caption": "Triangle ABC is inscribed in a circle where AB is the diameter."
     }
   },
 
   's3-math-circle-geometry-chords': {
     speech: {
-      text: "Hey there! I'll take you into the fascinating world of circles today. We're going to explore some powerful theorems about chords—those line segments that connect two points on a circle. These theorems make solving geometry problems much easier! Let's start with our very first theorem: The Equal Chords Theorem.",
+      text: `Hello! Did you know that circles and their internal line segments, called chords, were crucial for ancient navigators and builders? Today, we unlock the geometric rules governing these chords, focusing on symmetry and length relationships.`,
       emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-circle-geometry-chords.mp3'
     },
     display: {
-      content: '### Introductory Problem: Equal Chords and Central Angles\n\nIn the circle with center O, chord AB is equal in length to chord CD (AB = CD).\n\nIf the angle subtended by chord AB at the center, ∠AOB, is 75°, what is the measure of the angle subtended by chord CD at the center, ∠COD?',
+      content: `# Theorems Related to Chords of a Circle
+
+A **chord** is simply a straight line segment whose endpoints both lie on the circle's circumference. Chords create fascinating geometric relationships, especially when related to the circle's centre.
+
+We will focus on two key theorems. Firstly, we learn that **equal chords** subtend equal angles at the centre. Secondly, and perhaps more importantly for calculations, we discover the **Perpendicular Bisector Theorem**: A line drawn from the centre of the circle perpendicular (at 90°) to a chord will always bisect (cut in half) that chord. This rule is often combined with Pythagoras' theorem to calculate unknown lengths.
+
+Let's start by applying the perpendicular bisector rule.
+
+### First Problem: Distance from Centre to Chord
+
+A circle has a radius of 5 cm. A chord AB is 8 cm long. If a perpendicular line segment is drawn from the centre O to the chord at point M (the midpoint of AB), what is the length of OM (the distance from the centre to the chord)?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "circleWithChords",
           "parameters": {
                 "chord1Points": "AB",
-                "chord2Points": "CD",
-                "showPerpendicular": false,
-                "equalChords": true,
-                "highlightChord": "none"
+                "showPerpendicular": true,
+                "showMidpoint": true,
+                "equalChords": false,
+                "highlightChord": "1"
           },
-          "caption": "A circle showing two equal chords, AB and CD, subtending angles at the center O."
+          "caption": "Chord AB with perpendicular OM drawn from the centre O."
     }
   },
 
   's3-math-circle-geometry-radius-tangent': {
     speech: {
-      text: "Hey there! Let's learn about a super important concept in geometry today: the Radius and Tangent Perpendicular Theorem. This theorem connects two fundamental parts of a circle, the radius and the tangent line. Before we get to the perpendicular part, let's make sure we are clear on what a tangent line actually is.",
+      text: `Greetings. We are about to explore the elegant relationship between a circle's radius and a tangent line. This is a fundamental concept that defines how a straight line can interact with a curved boundary at a single point.`,
       emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-circle-geometry-radius-tangent.mp3'
     },
     display: {
-      content: '### Understanding Tangents\n\nLook at the visualizer showing a circle and a line. Based on the definition, which of the following statements correctly describes a **tangent line**?\n\nA. A line that passes through the center of the circle.\nB. A line that intersects the circle at exactly one point.\nC. A line segment whose endpoints are on the circle.\nD. A line that intersects the circle at two points.',
+      content: `# The Radius-Tangent Theorem
+
+A **tangent** is a straight line that touches the circle at exactly one single point, known as the point of tangency. This relationship is incredibly precise and leads to a crucial geometric rule.
+
+The **Radius-Tangent Perpendicular Theorem** states that the radius drawn to the point of tangency is always perpendicular to the tangent line. In other words, the radius and the tangent form a **90° angle** at the point where they meet. This perpendicularity is the cornerstone for solving problems involving tangents, as it immediately introduces a right angle, which can be used in conjunction with other geometric rules.
+
+Let's confirm this foundational angle.
+
+### First Problem: The Angle of Contact
+
+A circle has its centre at O. A line L is tangent to the circle at point T. If the radius OT is drawn to the point of tangency, what is the measure of the angle between the radius OT and the tangent line L?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "circleTangent",
           "parameters": {
                 "tangentPoint": "T",
-                "showRadius": false,
-                "showRightAngle": false,
-                "tangentLabel": "Line L",
+                "showRadius": true,
+                "showRightAngle": true,
+                "tangentLabel": "L",
                 "highlightRadius": false,
                 "highlightTangent": true
           },
-          "caption": "Line L is tangent to the circle at point T."
+          "caption": "Radius OT meets the tangent line L at point T."
     }
   },
 
   's3-math-circle-geometry-tangents-external': {
     speech: {
-      text: "Hello! Today we’ll be learning about a really neat concept about circles called 'Tangents from an External Point'. The main idea is simple but super powerful: if you draw two tangents from the same point outside a circle, those two tangents will always be exactly the same length! This is called the Equal Tangents Theorem. Let's look at a diagram and then try a quick problem.",
+      text: `Hey, let's investigate what happens when we draw two tangents from the same point outside a circle. Does symmetry dictate the outcome? Absolutely! This theorem is a great tool for calculating unknown lengths.`,
       emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-circle-geometry-tangents-external.mp3'
     },
     display: {
-      content: '### Introductory Problem\n\nIn the figure shown, PA and PB are tangents to the circle from the external point P.\n\nIf the length of PA = 3x + 5 and the length of PB = 20, what is the value of x?',
+      content: `# Tangents from an External Point
+
+When you stand outside a circle and draw two lines that just touch the circle (tangents), you create a perfectly symmetrical configuration. The **Equal Tangents Theorem** formalizes this symmetry: the lengths of the two tangent segments, measured from the external point to the points of contact on the circle, are always equal.
+
+If P is the external point and T₁ and T₂ are the points of tangency, then PT₁ = PT₂. This theorem is proven using the Radius-Tangent theorem (creating two right angles) and congruent triangles (RHS rule). This equality is essential for calculating unknown lengths and solving perimeter problems.
+
+Let's start with a direct application of the equality rule.
+
+### First Problem: Calculating Tangent Lengths
+
+From an external point P, tangents PA and PB are drawn to a circle. If the length of PA is 15 cm, what is the length of PB?`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -1807,18 +1827,28 @@ What are the coordinates (x, y, z) of the vertex labeled P, which is the point f
                 "showTangentLengths": true,
                 "highlightTangents": true
           },
-          "caption": "The Equal Tangents Theorem states that the lengths of the tangents PA and PB are equal."
+          "caption": "Tangents PA and PB drawn from external point P."
     }
   },
 
   's3-math-circle-geometry-angle-centre': {
     speech: {
-      text: "Hi there! Today, we're going to tackle one of the most fundamental and useful circle theorems: the Angle at the Centre theorem. This theorem is elegant and powerful, essentially stating that the angle formed at the centre of a circle is exactly double the angle formed at the circumference, provided they are both subtended by the same arc. Let's start by seeing this relationship visually and solving a quick problem.",
-      emotion: 'warm',
+      text: `Fantastic! Get ready for the cornerstone of angle theorems in circle geometry. The relationship between the angle at the center and the angle at the circumference is the key to unlocking almost every complex angle calculation.`,
+      emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-circle-geometry-angle-centre.mp3'
     },
     display: {
-      content: '### Introductory Problem\n\nTake a look at the circle below. The angle at the centre is 100°. Both the angle at the centre (∠AOB) and the angle at the circumference (∠ACB, marked as x) are subtended by the same arc, AB.\n\nUsing the **Angle at the Centre Theorem**, what is the value of x (in degrees)?\n\n$ \\text{Angle at the Centre} = 2 \\times \\text{Angle at the Circumference} $',
+      content: `# The Angle at the Centre Theorem
+
+This theorem establishes a crucial 2:1 ratio within the circle. The **Angle at the Centre Theorem** states that the angle subtended by an arc at the centre of the circle (∠AOB) is exactly double the angle subtended by the same arc at any point on the remaining part of the circumference (∠ACB).
+
+If ∠ACB = θ, then ∠AOB = 2θ. This relationship holds true regardless of where point C is located on the major arc. We will explore the proof, which relies on isosceles triangles and the exterior angle theorem, and then use this powerful rule to find unknown angles.
+
+Let's test this 2:1 ratio immediately.
+
+### First Problem: Applying the 2:1 Ratio
+
+In a circle with centre O, the angle subtended by the minor arc AB at the centre is 110°. If C is a point on the major arc, what is the measure of the angle subtended by the arc AB at C (∠ACB)?`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -1826,41 +1856,52 @@ What are the coordinates (x, y, z) of the vertex labeled P, which is the point f
           "parameters": {
                 "arcPoints": "AB",
                 "circumferencePoint1": "C",
-                "arcAngleDegrees": 100,
+                "arcAngleDegrees": 110,
                 "showAngleCentre": true,
                 "showAngleCircumference": true,
-                "angleCentreLabel": "100°",
-                "angleCircumferenceLabel": "x",
+                "angleCentreLabel": "110°",
+                "angleCircumferenceLabel": "$x$",
                 "highlightArc": true
           },
-          "caption": "The angle at the centre (∠AOB = 100°) and the angle at the circumference (∠ACB = x) are subtended by the same arc, AB."
+          "caption": "Angle at centre AOB = 110°. Find angle ACB."
     }
   },
 
   's3-math-circle-geometry-angle-same-arc': {
     speech: {
-      text: "Hello! Today we’ll be learning about a really neat circle theorem about angles subtended by the same arc. This theorem is super useful and often called the Angles in the Same Segment theorem. It tells us something very simple and powerful about angles that share the same endpoints on the circle's circumference. Let's look at the diagram and figure out what that relationship is.",
-      emotion: 'warm',
+      text: `It's great to have you back! We are now connecting our knowledge of the angle at the center to discover another fundamental angle relationship: Angles Subtended by the Same Arc. This principle simplifies complex diagrams dramatically.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-circle-geometry-angle-same-arc.mp3'
     },
     display: {
-      content: '### Introductory Problem 1\n\nIn the circle shown, the angles ∠ACB and ∠ADB are subtended by the same arc AB.\n\nIf ∠ACB = 40°, what is the value of x (∠ADB)?\n\nx = ?',
+      content: `# Angles Subtended by the Same Arc (Angles in the Same Segment)
+
+Building directly upon the Angle at the Centre Theorem, we arrive at the **Angles in the Same Segment Theorem**. This theorem states that angles subtended by the same arc (or chord) at the circumference are equal. Imagine a chord AB; if you draw multiple triangles using AB as the base, all the angles opposite AB on the circumference will be identical.
+
+If points C and D both lie on the major arc defined by chord AB, then ∠ACB = ∠ADB. This equality is vital for solving problems where multiple points lie on the circumference. We will also use this concept to introduce the properties of **Cyclic Quadrilaterals** later in the lesson.
+
+Let's begin by applying the equality rule.
+
+### First Problem: Finding Equal Angles
+
+In the diagram, chord PQ subtends angles at points R and S on the circumference. If ∠PRQ = 35°, and R and S are in the same segment, find the measure of angle PSQ.`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "circleSameArc",
           "parameters": {
-                "arcPoints": "AB",
-                "circumferencePoint1": "C",
-                "circumferencePoint2": "D",
-                "arcAngleDegrees": 90,
-                "angleLabel": "40°",
-                "angleLabel2": "x",
+                "arcPoints": "PQ",
+                "circumferencePoint1": "R",
+                "circumferencePoint2": "S",
+                "arcAngleDegrees": 70,
+                "oppositeSegments": false,
                 "showAngle1": true,
                 "showAngle2": true,
-                "oppositeSegments": false
+                "angleLabel": "35°",
+                "angleLabel2": "$x$",
+                "highlightSegment": false
           },
-          "caption": "Angles ∠ACB and ∠ADB are subtended by the same arc AB."
+          "caption": "Angles PRQ and PSQ are subtended by the same arc PQ."
     }
   },
   /**
@@ -1870,188 +1911,157 @@ What are the coordinates (x, y, z) of the vertex labeled P, which is the point f
    */
   's3-math-exponential-logarithms-exponential-functions': {
     speech: {
-      text: `Hey there! I'm excited to start our journey into exponential functions today. These functions are super important because they describe rapid growth and decay—things like population changes or compound interest. The key feature is that the variable, usually x, is up in the exponent! Let's start by defining exactly what an exponential function looks like.`,
+      text: `Hey there! Get ready to unlock the power of exponents. We are moving beyond simple polynomials and diving into functions where the variable itself is the exponent. This is where math starts modeling truly rapid change, like population booms or viral spread.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-exponential-logarithms-exponential-functions.mp3'
     },
     display: {
-      content: `Exponential functions are defined by the general form \$f(x) = a \\cdot b^x\$, where \$a\$ is the initial value and \$b\$ is the base.
+      content: `# Introduction to Exponential Functions
 
-Which statement correctly identifies the location of the **variable** in an exponential function?
+Exponential functions are fundamentally different from linear or quadratic functions because the independent variable (x) appears in the exponent, rather than the base. They take the general form \$f(x) = b^x\$ or \$f(x) = a \\times b^x\$, where \$b\$ is the base and must be a positive number not equal to 1.
 
-A) The variable (x) is the base.
-B) The variable (x) is the exponent.
-C) The variable (x) is the coefficient (a).`,
+Why do these matter? Exponential functions are essential for modeling any phenomenon characterized by rapid growth or decay, such as compound interest, population dynamics, or radioactive half-life. Understanding their definition and how to evaluate them is the critical first step in analyzing these real-world processes.
+
+In this section, we will focus on the foundational skill of evaluation. This means substituting a value for the variable and calculating the result.
+
+***
+
+## First Problem: Understanding Exponential Functions
+
+Evaluate the exponential expression \$2^5\$.`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "exponentialGraph",
-          "parameters": {
-                "base": 2,
-                "coefficient": 1,
-                "verticalShift": 0,
-                "showAsymptote": true,
-                "showYIntercept": true,
-                "xRange": [
-                      -3,
-                      4
-                ],
-                "showGrid": true,
-                "label": "f(x) = 2^x"
-          },
-          "caption": "This graph of $f(x) = 2^x$ illustrates exponential growth. Notice how the input variable, x, controls the power of the base (2)."
     }
   },
 
   's3-math-exponential-logarithms-exponential-graphs': {
     speech: {
-      text: `Hello! Let's explore one of the most exciting topics in algebra: the graphs of exponential functions! These functions model everything from population growth to compound interest. We are going to start with the basics: how to plot these graphs using a simple table of values. Let's get started!`,
-      emotion: 'excited',
+      text: `Welcome! Today we are learning how to see exponential functions in action. These functions do not look like straight lines or parabolas; they have a unique, curving shape that shows rapid change. By plotting points, we can visualize exactly how quickly things grow or decay.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-exponential-logarithms-exponential-graphs.mp3'
     },
     display: {
-      content: `### Section 1: Graphing Basics
+      content: `# Creating Graphs from Tables of Values
 
-We are going to start by exploring the parent function for exponential growth: \$f(x) = 2^x\$.
+Graphing an exponential function, such as \$f(x) = b^x\$, gives us a clear visual understanding of its behavior. Unlike linear functions which have constant slope, exponential functions have a rate of change that accelerates dramatically (growth) or slows down rapidly (decay).
 
-To understand the shape of the graph, we first need to calculate some points.
+The most basic way to understand this unique curve is by creating a table of values. We choose several x-values (both positive and negative), calculate the corresponding y-values, and plot the resulting coordinate pairs. This process reveals key features of the graph, including the **y-intercept** (where x=0) and the **horizontal asymptote** (the line the graph approaches but never crosses).
 
-Complete the table of values below for the given x-values. What is the value of \$f(x)\$ when \$x = 3\$?
+Let’s start by building the foundation for graphing: completing a table of values.
 
-| x | \$f(x) = 2^x\$ | (x, f(x)) |
-|---|---|---|
-| -2 | | |
-| -1 | | |
-| 0 | | |
-| 1 | | |
-| 2 | | |
-| **3** | | |`,
+***
+
+## First Problem: Creating Graphs from Tables of Values
+
+Complete the following table of values for the function $f(x) = 3^x$.
+
+| $x$ | $f(x) = 3^x$ | $y$ |
+|:---:|:------------:|:---:|
+| $-1$ | $3^{-1}$ | $?$ |
+| $0$ | $3^0$ | $?$ |
+| $1$ | $3^1$ | $?$ |`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "exponentialGraph",
           "parameters": {
-                "base": 2,
+                "base": 3,
                 "coefficient": 1,
                 "verticalShift": 0,
                 "showAsymptote": true,
                 "showYIntercept": true,
                 "xRange": [
                       -3,
-                      4
+                      3
                 ],
                 "yRange": [
                       -1,
                       10
                 ],
-                "highlightPoints": [
-                      {
-                            "x": 3,
-                            "label": "(3, 8)"
-                      }
-                ]
+                "showGrid": true,
+                "caption": "The graph of f(x) = 3ˣ demonstrates rapid exponential growth."
           },
-          "caption": "This graph shows the function $f(x) = 2^x$. We are calculating the points that define this curve."
+          "caption": "The graph of f(x) = 3ˣ demonstrates rapid exponential growth."
     }
   },
 
   's3-math-exponential-logarithms-exponential-equations': {
     speech: {
-      text: `Hello! Let's learn about exponential equations with you today. These equations look tricky, but once you master the trick of getting the bases to match, solving them becomes super straightforward! We're going to start with some simple cases where the bases are already the same or easy to make the same. Ready for our first problem?`,
-      emotion: 'excited',
+      text: `Greetings! Solving exponential equations might sound intimidating, but often we can use a clever trick: rewriting both sides with the same base. When the bases match, we can simply equate the exponents, turning a complex exponential problem into a straightforward linear one.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-exponential-logarithms-exponential-equations.mp3'
     },
     display: {
-      content: `### Section 1: Simple Same-Base Equations
+      content: `# Solving Simple Same-Base Equations
 
-When solving exponential equations, our primary goal is to rewrite both sides so they have the **same base**. Once the bases are equal, we can simply equate the exponents.
+An exponential equation is one where the variable appears in the exponent. To solve these equations without using logarithms (yet!), we rely on a fundamental property: **If \$b^x = b^y\$ and b > 0 and \$b ≠ 1\$, then \$x = y\$.**
 
-Solve for x:
+This means our primary goal is to rewrite the numbers on both sides of the equation using a common base. Once the bases are identical, we can set the exponents equal to each other and solve for the variable. This technique is the cornerstone of solving all exponential equations.
 
-5ˣ = 125
+Let's begin with a simple equation where the common base is easily recognizable.
 
-What exponent must 5 be raised to in order to equal 125?`,
+***
+
+## First Problem: Solving Simple Same-Base Equations
+
+Solve the following exponential equation for \$x\$:
+
+\$2^x = 32\$`,
       showAfterSpeech: true
     }
   },
 
   's3-math-exponential-logarithms-exponential-growth': {
     speech: {
-      text: `Hello! I'm thrilled to explore one of the most powerful concepts in mathematics: Exponential Growth! This is how things like populations, investments, and even viruses spread. It's all about growth that gets faster and faster. We're going to start by understanding the core idea—what makes exponential growth different from regular, linear growth.`,
-      emotion: 'excited',
+      text: `Hello and welcome to Exponential Growth! This is arguably the most powerful concept in finance and population science. It is the math behind why savings accounts grow rapidly and why populations can explode. Understanding this formula is key to making smart financial decisions.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-exponential-logarithms-exponential-growth.mp3'
     },
     display: {
-      content: `We are comparing two investment strategies over 5 days, starting with \$10.
+      content: `# Understanding Exponential Growth
 
-**Strategy A:** Add \$5 every day.
-**Strategy B:** Multiply the current amount by 1.5 every day.
+Exponential growth occurs when a quantity increases by a fixed percentage over regular time intervals. This type of growth is characterized by an accelerating rate—the larger the quantity gets, the faster it grows.
 
-1. Calculate the amount after 3 days for both strategies.
-2. Which strategy represents **Exponential Growth**?`,
+The standard formula for exponential growth is \$f(x) = p \\times a^x\$, where:
+*   \$p\$ is the initial amount (principal).
+*   \$a\$ is the growth factor, calculated as \$a = 1 + r\$ (where \$r\$ is the growth rate expressed as a decimal).
+*   \$x\$ is the time period.
+
+For a function to represent growth, the growth factor \$a\$ must be greater than 1 (a > 1). Our first task is learning to identify the components of the growth formula.
+
+***
+
+## First Problem: Understanding Exponential Growth
+
+A city's population, \$P(t)\$, after \$t\$ years is modeled by the function \$P(t) = 500(1.08)^t\$.
+
+What is the annual growth factor in this model?`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "exponentialGraph",
-          "parameters": {
-                "base": 2,
-                "coefficient": 1,
-                "verticalShift": 0,
-                "xRange": [
-                      -2,
-                      4
-                ],
-                "yRange": [
-                      0,
-                      16
-                ],
-                "label": "f(x) = 2ˣ",
-                "showAsymptote": true,
-                "showYIntercept": true
-          },
-          "caption": "This graph shows a classic exponential growth function, f(x) = 2ˣ. Notice how the curve starts slow but quickly shoots upward. This is the hallmark of exponential growth."
     }
   },
 
   's3-math-exponential-logarithms-exponential-decay': {
     speech: {
-      text: `Hello! I'm thrilled to explore a fascinating topic today: exponential decay. We've seen how things can grow exponentially, but what happens when they shrink? Decay is all about things decreasing rapidly over time, like the value of a car or the amount of medicine in your bloodstream. Let's start by looking at the graph of a decay function.`,
-      emotion: 'excited',
+      text: `Hi! Have you ever wondered how scientists calculate the age of ancient artifacts or how fast medicine leaves your bloodstream? The answer lies in exponential decay, the opposite side of the growth coin.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-exponential-logarithms-exponential-decay.mp3'
     },
     display: {
-      content: `### Understanding Exponential Decay
+      content: `# Understanding Exponential Decay
 
-Exponential functions have the form \$f(x) = p \\times a^x\$, where \$p\$ is the starting value and \$a\$ is the base.
+Exponential decay describes a process where a quantity decreases by a fixed percentage over regular time intervals. Unlike linear decrease, the amount lost is proportional to the current amount, meaning the rate of decrease slows down over time. This concept is vital in physics (radioactive decay) and chemistry (half-life).
 
-We know that if the base \$a > 1\$, we have **exponential growth**.
+The decay formula is the same structure as the growth formula: \$f(x) = p \\times a^x\$. However, the decay factor, \$a\$, is calculated as \$a = 1 - r\$ (where \$r\$ is the decay rate expressed as a decimal).
 
-What condition must the base \$a\$ meet for the function to show **exponential decay**?
+For a function to represent decay, the decay factor \$a\$ must be between 0 and 1 (0 < a < 1). Let's practice identifying the rate of decrease from a given formula.
 
-Which of the following functions represents exponential decay?
+***
 
-A. \$f(x) = 3 \\times 1.5^x\$
-B. \$g(x) = 5 \\times 0.8^x\$
-C. \$h(x) = 0.5 \\times 2^x\$`,
+## First Problem: Understanding Exponential Decay
+
+The concentration of a drug, \$A(t)\$, in a patient's bloodstream after \$t\$ hours is modeled by the function \$A(t) = 100(0.75)^t\$.
+
+What is the hourly decay rate (as a percentage) of the drug concentration?`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "exponentialGraph",
-          "parameters": {
-                "base": 0.7,
-                "coefficient": 4,
-                "xRange": [
-                      0,
-                      7
-                ],
-                "yRange": [
-                      0,
-                      5
-                ],
-                "realWorldContext": true,
-                "label": "f(x) = 4 × 0.7^x"
-          },
-          "caption": "This graph illustrates exponential decay, where the function value decreases as x increases, approaching the x-axis."
     }
   },
 
@@ -2068,7 +2078,7 @@ Logarithms are the inverse of exponential functions. They answer the question: '
 
 If we have the exponential statement:
 
-\$\$10^2 = 100\$\$
+\$10^2 = 100\$
 
 Which of the following correctly represents this relationship in **logarithmic form**?
 
@@ -2089,12 +2099,12 @@ C) \$\\log_{2}(100) = 10\$`,
       content: `### Product Law of Logarithms
 
 The Product Law states that:
-\$\$\\log_b(xy) = \\log_b(x) + \\log_b(y)\$\$
+\$\\log_b(xy) = \\log_b(x) + \\log_b(y)\$
 
 **Problem 1:**
 Expand the following expression using the Product Law. Remember to simplify any resulting logarithmic terms if possible.
 
-\$\$\\log_2(8x)\$\$`,
+\$\\log_2(8x)\$`,
       showAfterSpeech: true
     }
   },
@@ -2109,7 +2119,7 @@ Expand the following expression using the Product Law. Remember to simplify any 
       content: `We use logarithms to find unknown exponents. Logarithms essentially ask: "What exponent do I need?"
 
 Consider this simple equation:
-\$\$2^x = 8\$\$
+\$2^x = 8\$
 
 1. What is the value of x?
 2. How would you rewrite this equation using the definition of a logarithm (log base 2)?`,
@@ -2128,7 +2138,7 @@ Consider this simple equation:
 
 The fundamental definition of a logarithm is that it is the inverse operation of exponentiation:
 
-\$\$\\log_b(x) = y \\iff b^y = x\$\$
+\$\\log_b(x) = y \\iff b^y = x\$
 
 **Problem:**
 
@@ -2166,26 +2176,25 @@ Convert the logarithmic equation \$\\log_3(81) = x\$ into its equivalent exponen
    */
   's3-math-sets-fundamentals': {
     speech: {
-      text: `Hi there! I'm thrilled to explore the world of sets with you today. Sets are fundamental to math and logic, and they're really just collections of distinct objects. We'll start by learning how to write sets down, count what's inside them, and then explore how different sets relate to each other. Ready to jump in?`,
-      emotion: 'excited',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-fundamentals.mp3' 
+      text: `Welcome to the foundational world of set theory! Sets are the basic building blocks of mathematical organization. Think of a set as a well defined collection of distinct objects. These objects are called elements or members.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-fundamentals.mp3'
     },
     display: {
-      content: `A set is a collection of distinct objects. We use curly braces { } to list the elements inside the set.
+      content: `# Introduction to Set Fundamentals and Notation
 
-Let's consider Set A, which contains the first five positive integers:
-\$\$A = \\\\{1, 2, 3, 4, 5\\\\}\$\$
+Sets provide a precise language for grouping items. Whether you're organizing data, defining mathematical domains, or analyzing logic, sets are essential. In this first section, we establish the core vocabulary: defining a set, listing its elements (usually using braces { }), and determining its **cardinality**, which is the number of elements it contains, denoted as n(A).
 
-### Your Turn:
+We will also master the membership notation: the symbol **∈** means 'is an element of', and **∉** means 'is not an element of'. Understanding this notation is crucial for describing relationships between elements and sets.
 
-Set B is the set of prime numbers less than 10:
-\$\$B = \\\\{2, 3, 5, 7\\\\}\$\$
+***
 
-We use the symbol '∈' to mean 'is an element of' and '∉' to mean 'is not an element of'.
+### First Problem
 
-Which symbol (∈ or ∉) correctly completes the following statement?
+Let Set A be defined as the set of all positive factors of 12.
 
-\$\$9 \\\\text{ \\_\\_\\_ } B\$\$`,
+1. List the elements of Set A using roster notation.
+2. Determine the cardinality, n(A).`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -2197,225 +2206,189 @@ Which symbol (∈ or ∉) correctly completes the following statement?
                       "2",
                       "3",
                       "4",
-                      "5"
+                      "6",
+                      "12"
                 ],
                 "displayMode": "list",
                 "showCardinality": true,
-                "caption": "Set A contains 5 elements. We write the number of elements as n(A) = 5."
+                "showBraces": true,
+                "membershipExamples": [
+                      {
+                            "element": "3",
+                            "isMember": true
+                      },
+                      {
+                            "element": "5",
+                            "isMember": false
+                      }
+                ]
           },
-          "caption": "A set is a collection of distinct objects, often listed inside curly braces { }."
+          "caption": "Set A, representing the positive factors of 12, shown with its cardinality n(A) = 6."
     }
   },
 
   's3-math-sets-complement': {
     speech: {
-      text: `Hello! Let's learn about set theory today. We're going to explore the idea of the universal set, which is the big picture, and how it helps us define the complement of a set. The complement is simply everything that is not in the set but is in the universal set. Let's start with a visual example!`,
+      text: `Hey there! Ready to explore the concept of 'everything else'? In set theory, every problem operates within a defined boundary called the Universal Set, or U. When we talk about a set A, the complement of A, written as A prime or A with a superscript C, is simply every element in U that is NOT in A.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-complement.mp3'
     },
     display: {
-      content: `### Understanding the Complement of a Set
+      content: `# Understanding Complements and Universal Set
 
-The **Universal Set (U)** is the set of all possible elements under consideration.
+The **Universal Set (U)** acts as the container for all elements relevant to a specific problem. The concept of the **Complement (A')** is essential for logic and filtering data—it's like hitting the 'NOT' button on a search query.
 
-The **Complement of Set A**, written as A' or Aᶜ, is the set of all elements in U that are *not* in A.
+Formally, the complement of A, denoted \$A^1\$ or \$A^c\$, is the set of all elements \$x\$ such that \$x \\\\in U\$ and \$x \\
+otin A\$. This relationship gives us a fundamental cardinality rule: the number of elements in A plus the number of elements in A prime must equal the number of elements in the universal set: n(A) + n(A') = n(U).
 
----
+***
 
-**Problem 1:**
+### First Problem
 
-A teacher defines the universal set U as the set of all primary and secondary colors:
-\$\$U = \\{\\text{red, orange, yellow, green, blue, purple}\\}\$\$
+Let the Universal Set \$U = \\\\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\\\}\$.
 
-She defines set P as the set of primary colors:
-\$\$P = \\{\\text{red, yellow, blue}\\}\$\$
-
-1. List the elements of the complement of P, denoted P'.
-2. How many elements are in P'? (Find n(P'))`,
+If Set \$P = \\\\{2, 4, 6, 8, 10\\\\}\$, what is the complement of P, denoted P'?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "vennDiagram1Set",
           "parameters": {
-                "setLabel": "A",
+                "setLabel": "P",
                 "universalSetLabel": "U",
                 "setElements": [
-                      "1",
-                      "3",
-                      "5"
-                ],
-                "complementElements": [
                       "2",
                       "4",
                       "6",
-                      "7"
+                      "8",
+                      "10"
+                ],
+                "complementElements": [
+                      "1",
+                      "3",
+                      "5",
+                      "7",
+                      "9"
                 ],
                 "showElements": true,
-                "shadeRegion": "none",
-                "caption": "The Universal Set U contains all elements. Set A and its complement A' partition U."
+                "shadeRegion": "complement"
           },
-          "caption": "The Universal Set U contains all elements. Set A and its complement A' partition U."
+          "caption": "The shaded region represents P', the complement of P."
     }
   },
 
   's3-math-sets-intersection-union': {
     speech: {
-      text: `Hello! Let's learn about the world of set operations with you today. We're going to learn all about how sets interact, specifically focusing on intersection and union, and then move on to some more complex combined operations. These concepts are fundamental for understanding probability and data analysis. Ready to start with some basic operations?`,
-      emotion: 'excited',
+      text: `Greetings! Think about sorting your music playlists. You might want songs that are both rock AND from the 90s, or perhaps songs that are rock OR pop. These concepts of 'and' and 'or' are the core of set operations: intersection and union.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-intersection-union.mp3'
     },
     display: {
-      content: `### Basic Set Operations: Intersection
+      content: `# Basic Set Operations: Intersection and Union
 
-We are given two sets:
+Set operations allow us to combine or compare sets. The **Intersection** of two sets, \$A\$ and \$B\$, denoted \$A \\\\cap B\$, represents the elements that are common to *both* sets (the 'AND' condition). The **Union** of two sets, \$A\$ and \$B\$, denoted \$A \\\\cup B\$, represents all elements that belong to \$A\$ *or* \$B\$ (or both) (the 'OR' condition).
 
-Set A = {1, 3, 5, 7, 9}
-Set B = {1, 2, 3, 4, 5}
+These operations are fundamental in fields like database querying and probability. If two sets have no elements in common (i.e., \$A \\\\cap B = \\\\emptyset\$), they are called **disjoint sets**.
 
-**Question:** Find the intersection of A and B, written as A ∩ B. Which elements do both sets share?`,
+***
+
+### First Problem
+
+Given the following two sets:
+
+\$A = \\\\{m, a, t, h, s\\\\}\$
+\$B = \\\\{s, c, i, e, n, c, e\\\\}\$
+
+Find the intersection of A and B, \$A \\\\cap B\$.`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "vennDiagram",
-          "parameters": {
-                "setALabel": "A",
-                "setBLabel": "B",
-                "layout": "overlapping",
-                "aOnlyElements": [
-                      "7",
-                      "9"
-                ],
-                "bOnlyElements": [
-                      "2",
-                      "4"
-                ],
-                "intersectionElements": [
-                      "1",
-                      "3",
-                      "5"
-                ],
-                "neitherElements": [],
-                "showElements": true,
-                "shadeRegion": "intersection",
-                "highlightSet": "none"
-          },
-          "caption": "The shaded region represents the intersection of A and B (A ∩ B)."
     }
   },
 
   's3-math-sets-special-number-sets': {
     speech: {
-      text: `Hi there! Ready to dive into some fundamental math concepts? Today, we're exploring Special Number Sets. These sets are the building blocks of mathematics, helping us categorize every number we use, from simple counting numbers to complex irrational values. We'll start with the basics: the Natural Numbers and the Integers!`,
-      emotion: 'excited',
+      text: `Hello and welcome to the structure of numbers! Mathematics isn't just a random collection of values; it's a beautifully organized system. We use special symbols to categorize numbers based on their properties, creating nested sets that build upon each other.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-special-number-sets.mp3'
     },
     display: {
-      content: `### Section 1: Integer Sets (ℕ, ℤ)
+      content: `# Integer Sets: ℕ, ℤ, ℤ⁺, ℤ⁻
 
-We start with the **Natural Numbers**, denoted by ℕ. These are the counting numbers: {1, 2, 3, ...}.
+We begin by classifying the most basic number sets. The **Natural Numbers (ℕ)** are the counting numbers \$\\{1, 2, 3, ...\\}\$. When we include zero and the negative counterparts, we get the **Integers (ℤ)**: \$\\{..., -2, -1, 0, 1, 2, ...\\}\$.
 
-Next, we have the **Integers**, denoted by ℤ. This set includes all natural numbers, zero, and the negative whole numbers: {..., -3, -2, -1, 0, 1, 2, 3, ...}.
+This categorization is crucial because it defines the domain for many mathematical functions and equations. In this section, we focus on identifying and distinguishing between the integers, positive integers (\$\\\\mathbb{Z}^+\$), and negative integers (\$\\\\mathbb{Z}^-\$), understanding the subset relationships between them (e.g., \$\\\\mathbb{N} \\\\subset \\\\mathbb{Z}\$). 
 
-Take a look at the number line below, which visualizes the set of Integers (ℤ).
+***
 
-**Problem:**
+### First Problem
 
-Given the following list of numbers: \$5\$, \$0\$, \$-10\$, \$1.5\$, \$\\frac{1}{2}\$
+Which of the following numbers belong to the set of positive integers (\$\\\\mathbb{Z}^+\$)?
 
-Which of these numbers belong to the set of **Integers (ℤ)**?`,
+\$\\\\{ -5, \\\\ 0, \\\\ 1, \\\\ 3.5, \\\\ 100, \\\\ -\\\\frac{1}{2} \\\\}\$`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "numberLine",
-          "parameters": {
-                "min": -5,
-                "max": 5,
-                "step": 1,
-                "highlightIntegers": true,
-                "showArrows": true,
-                "title": "The Integers (ℤ)"
-          },
-          "caption": "Integers (ℤ) include all whole numbers: positive, negative, and zero. They are discrete points on the number line."
     }
   },
 
   's3-math-sets-interval-notation': {
     speech: {
-      text: `Welcome! Today we’ll be learning about a super useful topic called interval notation. It's a neat, shorthand way to describe sets of numbers, and it connects directly to what we see on a number line. Let's start right away by looking at how the brackets work!`,
-      emotion: 'excited',
+      text: `Hi! Imagine trying to describe an infinite range of numbers using just a few symbols. That's the power of Interval Notation. It's a concise mathematical language used to represent continuous sets of real numbers, often derived from inequalities.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-interval-notation.mp3'
     },
     display: {
-      content: `### Reading Intervals from a Number Line
+      content: `# Reading and Writing Intervals
 
-Take a look at the number line shown below. This shaded region represents a set of real numbers.
+**Interval Notation** provides a compact way to describe subsets of the real number line. Instead of writing x > 3 or 5 <= x < 10, we use brackets and parentheses.
 
-How would you write this set using **interval notation**?`,
+- **Parentheses ( )** indicate that the endpoint is **excluded** (used for strict inequalities like < or >).
+- **Square Brackets [ ]** indicate that the endpoint is **included** (used for non-strict inequalities like \$\\\\le\$ or \$\\\\ge\$).
+
+Mastering the difference between open and closed intervals is key to accurately describing domains, ranges, and solution sets in higher mathematics.
+
+***
+
+### First Problem
+
+Convert the following inequality into interval notation:
+
+\$x \\\\le 4\$`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "numberLine",
           "parameters": {
-                "min": -3,
-                "max": 5,
+                "min": 0,
+                "max": 6,
                 "intervals": [
                       {
-                            "start": -1,
-                            "end": 3,
-                            "startInclusive": true,
-                            "endInclusive": false
+                            "start": null,
+                            "end": 4,
+                            "startInclusive": false,
+                            "endInclusive": true,
+                            "label": "(-∞, 4]"
                       }
-                ]
-          },
-          "caption": "A number line representation of a set of numbers."
+                ],
+                "caption": "Visualizing x <= 4 on the number line, showing the closed circle at 4 and shading extending to negative infinity."
+          }
     }
   },
 
   's3-math-sets-venn-diagrams': {
     speech: {
-      text: `Hello! Let's learn about Venn diagrams with you today. They are fantastic tools for visualizing relationships between groups of things. We'll start by mastering the drawing basics—the universal set, the circles, and the labels—and then move on to using them to represent complex set operations. Ready to start with the foundational drawing?`,
-      emotion: 'excited',
+      text: `Wow, we're diving into visualization! Venn diagrams are perhaps the most famous tool in set theory. They transform abstract set relationships into clear, easy to understand pictures, helping us organize and analyze data visually.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-venn-diagrams.mp3'
     },
     display: {
-      content: `We are organizing a set of students (U) based on two activities: Set A (Plays Soccer) and Set B (Plays Piano).
+      content: `# Drawing Venn Diagrams
 
-If a student, Lisa, plays **both** Soccer and Piano, which of the following regions describes her placement?
+A **Venn Diagram** uses geometric shapes—typically a rectangle for the Universal Set (\$U\$) and circles for the individual sets (\$A\$, \$B\$, etc.)—to illustrate the relationships between sets. When sets overlap, the intersection is clearly visible.
 
-A) The region *only* inside A.
-B) The region where A and B *overlap*.
-C) The region *only* inside B.
-D) The region *outside* both A and B.`,
-      showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "vennDiagram",
-          "parameters": {
-                "setALabel": "A (Soccer)",
-                "setBLabel": "B (Piano)",
-                "universalSetLabel": "U (Class)",
-                "layout": "overlapping",
-                "showElements": false,
-                "highlightSet": "none"
-          },
-          "caption": "Basic structure of a two-set Venn Diagram."
-    }
-  },
+In this section, we learn the foundational skill of properly drawing and labeling a Venn diagram for two sets. The rectangle defines the boundary (\$U\$), and the circles define the sets within that boundary. The way the circles intersect (or don't) reveals whether the sets are overlapping, disjoint, or if one is a subset of the other.
 
-  's3-math-sets-venn-regions': {
-    speech: {
-      text: `Hello! Today we’ll be learning about some advanced set theory using our favorite visual tool: Venn diagrams. We're going to use them to prove and understand powerful set identities and laws, like De Morgan's Laws. Let's start by verifying a fundamental identity visually!`,
-      emotion: 'excited',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-venn-regions.mp3'
-    },
-    display: {
-      content: `### Understanding and Verifying Set Identities
+***
 
-We are going to verify the identity known as De Morgan's First Law: \$\$(A ∪ B)' = A' ∩ B'\$\$
+### First Problem
 
-First, let's focus on the left side of the equation: \$(A ∪ B)'\$.
-
-Which region in the Venn diagram represents the complement of the union of A and B?`,
+Draw a standard Venn diagram illustrating two overlapping sets, A and B, within a universal set U. Label the four distinct regions created by the sets using Roman numerals I, II, III, and IV, starting with region I for A only.`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -2424,85 +2397,109 @@ Which region in the Venn diagram represents the complement of the union of A and
                 "setALabel": "A",
                 "setBLabel": "B",
                 "layout": "overlapping",
-                "aOnlyElements": "",
-                "bOnlyElements": "",
-                "intersectionElements": "",
-                "neitherElements": "",
+                "aOnlyElements": "I",
+                "bOnlyElements": "III",
+                "intersectionElements": "II",
+                "neitherElements": "IV",
+                "showElements": true,
                 "showRegionCounts": false,
-                "shadeRegion": "neither"
+                "caption": "Standard two-set Venn diagram showing the four regions."
+          }
+    }
+  },
+
+  's3-math-sets-venn-regions': {
+    speech: {
+      text: `Ready for a challenge? Set theory isn't just about grouping objects; it's about logic and proving mathematical truths. We are going to use the visual power of Venn diagrams to verify complex set identities, ensuring that two different set expressions are actually equivalent.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-venn-regions.mp3'
+    },
+    display: {
+      content: `# Understanding and Verifying Set Identities
+
+Two set expressions are considered **identical** if they describe the exact same region(s) in a Venn diagram, regardless of how they are written. For instance, $(A \\cup B)'$ and $A' \\cap B'$ look different but describe the same region (the area outside both A and B).
+
+Verifying these identities using Venn diagrams is a powerful technique. We shade the region corresponding to the left side of the equation and then shade the region corresponding to the right side. If the final shaded regions match perfectly, the identity is proven. This process is critical for understanding advanced set laws, including De Morgan's Laws and the Distributive Laws.
+
+***
+
+### First Problem
+
+On a two-set Venn diagram (A and B), shade the region that corresponds to the expression $A \\cap B'$.`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "vennDiagram",
+          "parameters": {
+                "setALabel": "A",
+                "setBLabel": "B",
+                "layout": "overlapping",
+                "aOnlyElements": " ",
+                "bOnlyElements": " ",
+                "intersectionElements": " ",
+                "neitherElements": " ",
+                "showElements": false,
+                "shadeRegion": "aOnly"
           },
-          "caption": "The shaded region represents the set $(A ∪ B)'$"
+          "caption": "Shade the region representing $A \\\\cap B'$ (elements in A AND not in B)."
     }
   },
 
   's3-math-sets-numbers-in-regions': {
     speech: {
-      text: `Greetings! Get ready to dive into the fascinating world of set theory and counting. We are going to learn how to use Venn diagrams to organize data and figure out how many things fit into specific categories, especially when those categories overlap. This is super useful for solving survey problems!`,
-      emotion: 'excited',
+      text: `Good day! Now that we know how to draw Venn diagrams, let's put them to practical use by filling them with numbers. This skill is essential for managing data, counting elements, and ensuring we don't double count items that belong to multiple categories.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-numbers-in-regions.mp3'
     },
     display: {
-      content: `## Basic Counting: Two Sets
+      content: `# Basic Counting with Two Sets
 
-A survey was conducted among 50 students about their favorite hot drinks.
+When dealing with the cardinality of sets, Venn diagrams help us visualize the counts in each specific region: \$A\$ only, \$B\$ only, the intersection (\$A \\\\cap B\$), and neither set \$((A \\\\cup B)')\$.
 
-*   30 students like Coffee (C)
-*   25 students like Tea (T)
-*   5 students like neither Coffee nor Tea
+The key strategy is always to start filling the diagram from the innermost region—the intersection—and work outward. This prevents errors caused by counting shared elements twice. This method is the foundation for solving complex survey problems involving up to three sets.
 
-**Question:** How many students like both Coffee and Tea? (i.e., find n(C ∩ T))`,
+***
+
+### First Problem
+
+In a class survey, 15 students like soccer (S) and 12 students like basketball (B). If 5 students like both sports, how many students like only soccer?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "vennDiagram",
           "parameters": {
-                "setALabel": "Coffee (C)",
-                "setBLabel": "Tea (T)",
+                "setALabel": "S",
+                "setBLabel": "B",
                 "layout": "overlapping",
-                "aOnlyElements": "(30-?)",
-                "bOnlyElements": "(25-?)",
-                "intersectionElements": "(?)",
-                "neitherElements": 5,
+                "aOnlyElements": 10,
+                "bOnlyElements": 7,
+                "intersectionElements": 5,
+                "showElements": false,
                 "showRegionCounts": true,
-                "highlightSet": "none"
-          },
-          "caption": "A two-set Venn diagram to organize the survey data. Remember the total surveyed is 50."
+                "caption": "Venn diagram showing the counts derived from the problem data."
+          }
     }
   },
 
   's3-math-sets-problem-solving': {
     speech: {
-      text: `Hi there! Get ready to unlock the secrets of surveys and data! Venn diagrams are incredibly powerful tools for organizing information, especially when things overlap. We are starting with two-set problems, which are the foundation for solving complex real-world scenarios. Let's dive right into our first survey problem. I've set up a Venn diagram to help us visualize the data.`,
-      emotion: 'excited',
+      text: `Fantastic! It's time to apply everything we know about sets, operations, and Venn diagrams to real-world scenarios. This is where set theory truly shines, helping us organize and analyze data from surveys, experiments, and population studies.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s3-math-sets-problem-solving.mp3'
     },
     display: {
-      content: `### Two-Set Survey Problem
+      content: `# Two-Set Survey Problems
 
-A survey of **50 students** revealed the following preferences for morning beverages:
+Solving real-world problems using Venn diagrams requires translating natural language into precise set notation. Phrases like 'like both' refer to the intersection (\$A \\\\cap B\$), while 'like neither' refers to the complement of the union \$((A \\\\cup B)')\$.
 
-*   30 students like Coffee (C).
-*   25 students like Tea (T).
-*   10 students like both Coffee and Tea.
+Our primary tool for success is the Venn diagram, which acts as a visual organizer. We must systematically fill the regions, usually starting with the intersection, to determine the total number of elements in the universal set or in specific categories. This skill is vital for statistical analysis and logical deduction.
 
-**Question:** How many students like **neither** Coffee nor Tea?`,
+***
+
+### First Problem
+
+A survey of 50 people found that 30 enjoy coffee (C) and 25 enjoy tea (T). If 10 people enjoy neither beverage, how many people enjoy both coffee and tea?`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "vennDiagram",
-          "parameters": {
-                "setALabel": "Coffee (C)",
-                "setBLabel": "Tea (T)",
-                "universalSetLabel": "Total (50)",
-                "layout": "overlapping",
-                "aOnlyElements": 20,
-                "bOnlyElements": 15,
-                "intersectionElements": 10,
-                "neitherElements": 0,
-                "showRegionCounts": true,
-                "caption": "We know the total surveyed (50) and the intersection (10). Use the given totals for C (30) and T (25) to find the remaining regions."
-          },
-          "caption": "Venn Diagram for the Coffee and Tea Survey"
     }
   },
 

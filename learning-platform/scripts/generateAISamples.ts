@@ -180,9 +180,6 @@ async function generateAISamples() {
       const batchResults = await aiService.generateInitialGreetingBatch(topicIds, {
         variationStyle: 'diverse',
         avoidPatterns: [
-          "I'm excited to dive into",
-          "I'm so excited to dive into",
-          "I am so excited to dive into"
         ],
         batchSize: 20
       });

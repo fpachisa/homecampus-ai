@@ -24,7 +24,7 @@ export class ClaudeProvider implements AIProvider {
 
   async generateContent(prompt: string, maxTokens?: number): Promise<string> {
     try {
-      // Add 30-second timeout to prevent hanging requests
+      // Add 2-minute timeout (increased for batch generation with theory content)
       const response = await this.withTimeout(
         this.anthropic.messages.create({
           model: this.modelName,
@@ -37,8 +37,8 @@ export class ClaudeProvider implements AIProvider {
             }
           ]
         }),
-        30000, // 30 seconds
-        'Claude API request timed out after 30 seconds'
+        120000, // 120 seconds (2 minutes)
+        'Claude API request timed out after 120 seconds'
       );
 
       // Extract text content from Claude response
