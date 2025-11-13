@@ -110,20 +110,20 @@ export function useProgressSummary(): ProgressSummaryData {
         // Transform Firestore data to component format
         const topics = await transformTopicProgress(summary);
         const lastAccessed = findLastAccessedTopic(topics);
-        const weeklyData = await fetchWeeklyActivity(effectiveUid);
-        const weeklyStats = calculateWeeklyStats(weeklyData);
+        const { thisWeek, lastWeek } = await fetchWeeklyActivity(effectiveUid);
+        const weeklyStats = calculateWeeklyStats(thisWeek);
         const achievements = await fetchRecentAchievements(effectiveUid);
 
         if (isMounted) {
           setData({
             topics,
             lastAccessedTopic: lastAccessed,
-            weeklyActivity: weeklyData,
+            weeklyActivity: thisWeek,
             weeklyProblems: weeklyStats.problemsSolved,
             weeklyXP: weeklyStats.xpEarned,
             weeklyTimeMinutes: Math.round(weeklyStats.timeSpentSeconds / 60),
-            weekTrend: calculateWeekTrend(weeklyData),
-            dailyProblems: getTodayProblems(weeklyData),
+            weekTrend: calculateWeekTrend(thisWeek, lastWeek),
+            dailyProblems: getTodayProblems(thisWeek),
             dailyGoal: 5,
             achievements,
             totalAchievements: userProfile?.gamification?.totalAchievements || 0,
@@ -282,8 +282,9 @@ function getLocalDateString(date: Date): string {
 
 /**
  * Fetch weekly activity data from practice progress
+ * Returns last 14 days to support week-over-week trend calculation
  */
-async function fetchWeeklyActivity(uid: string): Promise<DailyActivity[]> {
+async function fetchWeeklyActivity(uid: string): Promise<{ thisWeek: DailyActivity[]; lastWeek: DailyActivity[] }> {
   try {
     const topicIds = await listPracticeTopics(uid);
 
@@ -309,19 +310,36 @@ async function fetchWeeklyActivity(uid: string): Promise<DailyActivity[]> {
       }
     }
 
-    // Get last 7 days using local timezone
+    // Get last 14 days using local timezone (this week + last week)
     const today = new Date();
-    const weeklyData: DailyActivity[] = [];
+    const thisWeek: DailyActivity[] = [];
+    const lastWeek: DailyActivity[] = [];
 
+    // Last 7 days = this week
     for (let i = 6; i >= 0; i--) {
       const date = new Date(today);
       date.setDate(date.getDate() - i);
-      // Use local date string instead of UTC
       const dateStr = getLocalDateString(date);
 
       const session = allSessions[dateStr] || { problems: 0, time: 0, xp: 0 };
 
-      weeklyData.push({
+      thisWeek.push({
+        date,
+        problemsSolved: session.problems,
+        timeSpentMinutes: Math.round(session.time / 60),
+        xpEarned: session.xp,
+      });
+    }
+
+    // Days 7-13 ago = last week
+    for (let i = 13; i >= 7; i--) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+      const dateStr = getLocalDateString(date);
+
+      const session = allSessions[dateStr] || { problems: 0, time: 0, xp: 0 };
+
+      lastWeek.push({
         date,
         problemsSolved: session.problems,
         timeSpentMinutes: Math.round(session.time / 60),
@@ -332,21 +350,14 @@ async function fetchWeeklyActivity(uid: string): Promise<DailyActivity[]> {
     console.log('📊 Weekly activity fetch result:', {
       topicCount: topicIds.length,
       allSessionDates: Object.keys(allSessions),
-      allSessionsData: allSessions,
-      weekDates: weeklyData.map(d => getLocalDateString(d.date)),
-      weeklyDataDetailed: weeklyData.map(d => ({
-        date: getLocalDateString(d.date),
-        problems: d.problemsSolved,
-        minutes: d.timeSpentMinutes,
-        xp: d.xpEarned,
-      })),
-      totalProblems: weeklyData.reduce((sum, d) => sum + d.problemsSolved, 0),
+      thisWeekTotal: thisWeek.reduce((sum, d) => sum + d.problemsSolved, 0),
+      lastWeekTotal: lastWeek.reduce((sum, d) => sum + d.problemsSolved, 0),
     });
 
-    return weeklyData;
+    return { thisWeek, lastWeek };
   } catch (error) {
     console.error('Failed to fetch weekly activity:', error);
-    return [];
+    return { thisWeek: [], lastWeek: [] };
   }
 }
 
@@ -378,14 +389,24 @@ function calculateWeeklyStats(weeklyData: DailyActivity[]): {
 /**
  * Calculate week-over-week trend
  */
-function calculateWeekTrend(weeklyData: DailyActivity[]): string {
-  if (weeklyData.length < 7) return '+0%';
+function calculateWeekTrend(thisWeek: DailyActivity[], lastWeek: DailyActivity[]): string {
+  const thisWeekTotal = thisWeek.reduce((sum, d) => sum + d.problemsSolved, 0);
+  const lastWeekTotal = lastWeek.reduce((sum, d) => sum + d.problemsSolved, 0);
 
-  const thisWeekTotal = weeklyData.reduce((sum, d) => sum + d.problemsSolved, 0);
+  // If no activity in either week
+  if (thisWeekTotal === 0 && lastWeekTotal === 0) {
+    return '+0%';
+  }
 
-  // Simplified: assuming we only have this week's data
-  // In a real implementation, we'd fetch last week's data too
-  return thisWeekTotal > 0 ? '+25%' : '+0%';
+  // If no activity last week but activity this week = infinite growth
+  if (lastWeekTotal === 0 && thisWeekTotal > 0) {
+    return '+100%';
+  }
+
+  // Calculate percentage change
+  const change = ((thisWeekTotal - lastWeekTotal) / lastWeekTotal) * 100;
+  const sign = change > 0 ? '+' : '';
+  return `${sign}${Math.round(change)}%`;
 }
 
 /**

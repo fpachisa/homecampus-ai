@@ -12,6 +12,7 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from './firebase';
 import { achievementService } from './achievementService';
+import { loadGlobalStreak } from './globalStreakService';
 
 // ============================================
 // TYPES
@@ -25,6 +26,8 @@ export interface GlobalStats {
   totalTimeSpentSeconds: number;
   totalAchievements: number;
   achievementIds: string[]; // Deduplicated achievement IDs
+  currentStreak: number; // Current daily practice streak
+  longestStreak: number; // Longest streak ever achieved
 }
 
 // ============================================
@@ -88,13 +91,18 @@ export async function aggregateGlobalStats(uid: string): Promise<GlobalStats> {
     // Calculate level from TOTAL XP across ALL modes
     const currentLevel = calculateLevelFromXP(totalXP);
 
+    // Load current streak data
+    const streakData = await loadGlobalStreak(uid);
+
     console.log('📊 Global Stats Aggregation:', {
       practiceTopics: practiceSnapshot.size,
       learnTopics: learnSnapshot.size,
       totalXP,
       currentLevel,
       totalProblemsSolved,
-      totalAchievements: achievementIdsSet.size
+      totalAchievements: achievementIdsSet.size,
+      currentStreak: streakData.currentStreak,
+      longestStreak: streakData.longestStreak
     });
 
     return {
@@ -104,7 +112,9 @@ export async function aggregateGlobalStats(uid: string): Promise<GlobalStats> {
       totalProblemsAttempted,
       totalTimeSpentSeconds,
       totalAchievements: achievementIdsSet.size,
-      achievementIds: Array.from(achievementIdsSet)
+      achievementIds: Array.from(achievementIdsSet),
+      currentStreak: streakData.currentStreak,
+      longestStreak: streakData.longestStreak
     };
   } catch (error) {
     console.error('Error aggregating global stats:', error);
@@ -117,7 +127,9 @@ export async function aggregateGlobalStats(uid: string): Promise<GlobalStats> {
       totalProblemsAttempted: 0,
       totalTimeSpentSeconds: 0,
       totalAchievements: 0,
-      achievementIds: []
+      achievementIds: [],
+      currentStreak: 0,
+      longestStreak: 0
     };
   }
 }

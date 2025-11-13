@@ -7,6 +7,7 @@
 
 import React, { useState } from 'react';
 import { useTheme } from '../../../hooks/useTheme';
+import { getLocalDateString } from '../../../utils/dateUtils';
 import type { HeatmapDay } from '../../../services/analytics/parentAnalyticsService';
 
 interface ActivityHeatmapProps {
@@ -101,7 +102,7 @@ export const ActivityHeatmap: React.FC<ActivityHeatmapProps> = ({ data }) => {
           {weeks.map((week, weekIdx) => (
             <div key={weekIdx} className="flex flex-col gap-1">
               {week.map((day) => {
-                const isToday = day.date === new Date().toISOString().split('T')[0];
+                const isToday = day.date === getLocalDateString(new Date());
                 return (
                   <div
                     key={day.date}

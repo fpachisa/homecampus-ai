@@ -53,6 +53,26 @@ import { aggregateGlobalStats } from './globalStatsAggregator';
 import { updateDailyActivity } from './dailyActivityService';
 import { recordMasteryEvent } from './masteryEventService';
 
+// ============================================
+// DELTA TRACKING FOR DAILY ACTIVITY
+// ============================================
+
+/**
+ * Tracks last saved stats to calculate deltas for daily activity updates.
+ * Key format: "uid:topicId" for practice, "uid:subtopicId" for learn
+ *
+ * This prevents stats duplication bug where cumulative totals were
+ * being added repeatedly on each debounced save.
+ */
+interface LastSavedStats {
+  problemsSolved: number;
+  problemsAttempted: number;
+  timeSeconds: number;
+  xpEarned: number;
+}
+
+const lastSavedStatsMap = new Map<string, LastSavedStats>();
+
 /**
  * Recursively remove undefined values from an object
  * Firestore doesn't allow undefined values - they must be null or omitted
@@ -142,18 +162,50 @@ export async function saveLearnProgress(
     await batch.commit();
 
     // 3. Update daily activity stats (Learn mode)
-    // NOTE: sessionStats contains cumulative session totals, not deltas
-    // This works correctly when called at session end
     try {
-      await updateDailyActivity(uid, {
-        mode: 'learn',
+      // Get last saved stats for this uid:subtopicId combination
+      const statsKey = `${uid}:${subtopicId}`;
+      const lastStats = lastSavedStatsMap.get(statsKey) || {
+        problemsSolved: 0,
+        problemsAttempted: 0,
+        timeSeconds: 0,
+        xpEarned: 0
+      };
+
+      // Calculate current cumulative totals
+      const currentStats = {
         problemsSolved: conversation.sessionStats.correctAnswers,
         problemsAttempted: conversation.sessionStats.problemsAttempted,
         timeSeconds: conversation.sessionStats.totalTimeSpent,
-        xpEarned: 0, // XP is tracked in practice mode only
-        hintsUsed: conversation.sessionStats.hintsProvided,
+        xpEarned: 0 // XP is tracked in practice mode only
+      };
+
+      // Calculate DELTA (only new activity since last save)
+      const delta = {
+        problemsSolved: Math.max(0, currentStats.problemsSolved - lastStats.problemsSolved),
+        problemsAttempted: Math.max(0, currentStats.problemsAttempted - lastStats.problemsAttempted),
+        timeSeconds: Math.max(0, currentStats.timeSeconds - lastStats.timeSeconds),
+        hintsUsed: conversation.sessionStats.hintsProvided, // These are already session deltas
         solutionsViewed: conversation.sessionStats.solutionsViewed || 0
-      });
+      };
+
+      // Only update if there's actual new activity
+      if (delta.problemsSolved > 0 || delta.problemsAttempted > 0 || delta.timeSeconds > 0) {
+        await updateDailyActivity(uid, {
+          mode: 'learn',
+          problemsSolved: delta.problemsSolved,
+          problemsAttempted: delta.problemsAttempted,
+          timeSeconds: delta.timeSeconds,
+          xpEarned: 0,
+          hintsUsed: delta.hintsUsed,
+          solutionsViewed: delta.solutionsViewed
+        });
+
+        // Update last saved stats in memory
+        lastSavedStatsMap.set(statsKey, currentStats);
+
+        console.log('📊 Daily activity updated (Learn):', delta);
+      }
     } catch (err) {
       console.error('Failed to update daily activity:', err);
       // Don't fail the entire save if daily activity update fails
@@ -179,6 +231,8 @@ export async function saveLearnProgress(
           totalProblemsAttempted: globalStats.totalProblemsAttempted || 0,
           totalTimeSpentSeconds: globalStats.totalTimeSpentSeconds || 0,
           totalAchievements: globalStats.totalAchievements || 0,
+          currentStreak: globalStats.currentStreak || 0,
+          longestStreak: globalStats.longestStreak || 0,
           lastActive: new Date().toISOString(),
           lastUpdated: new Date().toISOString()
         }
@@ -190,11 +244,22 @@ export async function saveLearnProgress(
       console.log('📊 Global stats updated (Learn mode):', {
         currentLevel: globalStats.currentLevel,
         totalProblemsSolved: globalStats.totalProblemsSolved,
-        totalXP: globalStats.totalXP
+        totalXP: globalStats.totalXP,
+        currentStreak: globalStats.currentStreak,
+        longestStreak: globalStats.longestStreak
       });
     } catch (err) {
       console.error('Failed to update global stats:', err);
       // Don't fail the entire save if stats update fails
+    }
+
+    // 6. Update global streak (Learn mode activity counts for streaks too!)
+    try {
+      await updateGlobalStreak(uid);
+      console.log('🔥 Global streak updated after learn session');
+    } catch (streakError) {
+      console.error('Error updating global streak:', streakError);
+      // Don't throw - streak update failure shouldn't break progress save
     }
 
   } catch (error) {
@@ -466,6 +531,8 @@ export async function savePracticeProgress(
           totalProblemsAttempted: globalStats.totalProblemsAttempted || 0,      // ✅ Sum across ALL topics
           totalTimeSpentSeconds: globalStats.totalTimeSpentSeconds || 0,        // ✅ Sum across ALL topics
           totalAchievements: globalStats.totalAchievements || 0,                // ✅ Deduplicated count
+          currentStreak: globalStats.currentStreak || 0,                        // ✅ Current daily streak
+          longestStreak: globalStats.longestStreak || 0,                        // ✅ Longest streak ever
           lastActive: new Date().toISOString(),                                 // ✅ Track last practice time
           lastUpdated: new Date().toISOString()
         }
@@ -476,10 +543,12 @@ export async function savePracticeProgress(
 
       await setDoc(userProfileRef, cleanedUpdate, { merge: true });
 
-      console.log('📊 Global stats updated:', {
+      console.log('📊 Global stats updated (Practice):', {
         totalXP: globalStats.totalXP,
         currentLevel: globalStats.currentLevel,
-        totalProblemsSolved: globalStats.totalProblemsSolved
+        totalProblemsSolved: globalStats.totalProblemsSolved,
+        currentStreak: globalStats.currentStreak,
+        longestStreak: globalStats.longestStreak
       });
     } catch (statsError) {
       console.error('Error aggregating global stats:', statsError);
@@ -489,19 +558,46 @@ export async function savePracticeProgress(
 
     // 5. Update daily activity stats (Practice mode)
     try {
-      // Calculate session stats
-      const sessionProblemsSolved = progress.totalProblemsCorrect; // Cumulative total
-      const sessionProblemsAttempted = progress.totalProblemsAttempted; // Cumulative total
-      const sessionTimeSeconds = progress.totalTimeSpentSeconds || 0;
-      const sessionXPEarned = progress.totalXP; // Cumulative total
+      // Get last saved stats for this uid:topicId combination
+      const statsKey = `${uid}:${topicId}`;
+      const lastStats = lastSavedStatsMap.get(statsKey) || {
+        problemsSolved: 0,
+        problemsAttempted: 0,
+        timeSeconds: 0,
+        xpEarned: 0
+      };
 
-      await updateDailyActivity(uid, {
-        mode: 'practice',
-        problemsSolved: sessionProblemsSolved,
-        problemsAttempted: sessionProblemsAttempted,
-        timeSeconds: sessionTimeSeconds,
-        xpEarned: sessionXPEarned
-      });
+      // Calculate current cumulative totals
+      const currentStats = {
+        problemsSolved: progress.totalProblemsCorrect,
+        problemsAttempted: progress.totalProblemsAttempted,
+        timeSeconds: progress.totalTimeSpentSeconds || 0,
+        xpEarned: progress.totalXP
+      };
+
+      // Calculate DELTA (only new activity since last save)
+      const delta = {
+        problemsSolved: Math.max(0, currentStats.problemsSolved - lastStats.problemsSolved),
+        problemsAttempted: Math.max(0, currentStats.problemsAttempted - lastStats.problemsAttempted),
+        timeSeconds: Math.max(0, currentStats.timeSeconds - lastStats.timeSeconds),
+        xpEarned: Math.max(0, currentStats.xpEarned - lastStats.xpEarned)
+      };
+
+      // Only update if there's actual new activity
+      if (delta.problemsSolved > 0 || delta.problemsAttempted > 0 || delta.timeSeconds > 0) {
+        await updateDailyActivity(uid, {
+          mode: 'practice',
+          problemsSolved: delta.problemsSolved,
+          problemsAttempted: delta.problemsAttempted,
+          timeSeconds: delta.timeSeconds,
+          xpEarned: delta.xpEarned
+        });
+
+        // Update last saved stats in memory
+        lastSavedStatsMap.set(statsKey, currentStats);
+
+        console.log('📊 Daily activity updated (Practice):', delta);
+      }
     } catch (activityError) {
       console.error('Failed to update daily activity:', activityError);
       // Don't fail the entire save if daily activity update fails

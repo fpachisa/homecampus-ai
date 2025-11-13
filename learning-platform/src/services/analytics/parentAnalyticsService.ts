@@ -8,6 +8,7 @@
 import { getProgressSummary } from '../firestoreProgressService';
 import { doc, getDoc } from 'firebase/firestore';
 import { firestore } from '../firebase';
+import { getLocalDateString } from '../../utils/dateUtils';
 import type {
   ProgressSummary,
   LearnSubtopicSummary,
@@ -330,7 +331,7 @@ export class ParentAnalyticsService {
     const heatmap: HeatmapDay[] = [];
     for (let i = 0; i < 30; i++) {
       const date = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
-      const dateStr = date.toISOString().split('T')[0];
+      const dateStr = getLocalDateString(date);
 
       const dayActivity = (summary.recentActivity || []).filter(a => a.date === dateStr);
       const problemsSolved = dayActivity.reduce((sum, a) => sum + (a.problemsSolved || 0), 0);
@@ -350,7 +351,7 @@ export class ParentAnalyticsService {
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     for (let i = 6; i >= 0; i--) {
       const date = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
-      const dateStr = date.toISOString().split('T')[0];
+      const dateStr = getLocalDateString(date);
       const dayActivity = (summary.recentActivity || []).filter(a => a.date === dateStr);
       const xp = dayActivity.reduce((sum) => sum + 0, 0); // TODO: Add XP tracking
 
