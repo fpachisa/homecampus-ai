@@ -11,25 +11,8 @@ import { useState } from 'react';
 import { INITIAL_GREETINGS_CACHE, getCachedTopicIds } from '../data/initialGreetingsCache';
 // AI-generated file removed after copying to main cache
 // import { INITIAL_GREETINGS_AI_GENERATED, getAIGeneratedTopicIds } from '../data/initialGreetingsCache-ai-generated';
-import { marked } from 'marked';
-import 'katex/dist/katex.min.css';
-import katex from 'katex';
+import MathText from '../components/MathText';
 import { MathToolRenderer } from '../components/practice/MathToolRenderer';
-
-// Render markdown with KaTeX math
-function renderContent(content: string): string {
-  // First render markdown
-  const html = marked.parse(content) as string;
-
-  // Then render LaTeX math
-  return html.replace(/\$([^$]+)\$/g, (match, math) => {
-    try {
-      return katex.renderToString(math, { throwOnError: false });
-    } catch (e) {
-      return match;
-    }
-  });
-}
 
 export default function GreetingsViewer() {
   const [viewMode, setViewMode] = useState<'handcrafted' | 'ai-generated' | 'comparison'>('handcrafted');
@@ -273,8 +256,8 @@ function GreetingContent({ greeting }: { greeting: any }) {
         <div className="text-xs font-semibold text-gray-500 uppercase mb-1">
           Display (First Question)
         </div>
-        <div className="bg-purple-50 rounded p-3 text-sm prose prose-sm max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: renderContent(greeting.display.content) }} />
+        <div className="bg-purple-50 rounded p-3 text-sm math-text-with-lists">
+          <MathText>{greeting.display.content}</MathText>
         </div>
       </div>
 

@@ -2510,76 +2510,93 @@ A survey of 50 people found that 30 enjoy coffee (C) and 25 enjoy tea (T). If 10
    */
   's4-math-probability-basic-concepts': {
     speech: {
-      text: `Hey there! I'm so excited to start our journey into probability today. Probability is all about predicting how likely things are to happen, and it's super useful in everyday life. We're going to start with the basics: understanding all the possible results in an experiment, which we call the sample space. Ready to dive in?`,
+      text: `Hey there! Ready to unlock the secrets of chance? We are diving into Basic Probability Concepts, the absolute foundation for quantifying uncertainty. Before we calculate the likelihood of winning the lottery, we need to master the building blocks: defining all possible results. This first section is all about systematically listing every possible outcome in an experiment. Let us start by mapping out the Sample Space.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-probability-basic-concepts.mp3'
     },
     display: {
-      content: `### Section 1: Sample Spaces and Outcomes
+      content: `# Introduction to Basic Probability Concepts
 
-Imagine you flip two standard coins, one after the other. We want to list every possible result.
+Probability is the mathematical framework we use to quantify uncertainty, turning guesswork into calculated prediction. At its core, probability relies on two fundamental ideas: the **Sample Space (S)**, which is the set of all possible outcomes of an experiment, and an **Event (E)**, which is a specific subset of those outcomes we are interested in.
 
-Let H represent Heads and T represent Tails.
+Mastering the concept of the Sample Space is crucial because the probability of any event E is calculated using the foundational formula: P(E) = n(E) / n(S), where n(E) is the number of favorable outcomes and n(S) is the total number of outcomes. We will start by focusing on how to list and identify these outcomes systematically.
 
-**Question:** List all the possible outcomes in the sample space (S) for this experiment. (Hint: The order matters, so HT is different from TH.)`,
+***
+
+### First Problem: Sample Spaces and Outcomes
+
+A six-sided die is rolled, and a coin is flipped. List the complete sample space, S, for this combined experiment using set notation (e.g., {1H, 2H, ...}).`,
       showAfterSpeech: true
     }
   },
 
   's4-math-probability-combined-events': {
     speech: {
-      text: `Hello! Let's learn about combined events and probability rules with you. Today, we'll learn how to combine probabilities using the addition and multiplication rules. We'll start with a fundamental concept: mutually exclusive events. These are events that simply cannot happen at the same time. Let's look at an example using a standard die roll!`,
-      emotion: 'excited',
+      text: `Welcome back! You have mastered single events. Now let us put those building blocks together to calculate the probability of combined events. This is where probability gets powerful, allowing us to analyze complex scenarios like the chance of rain or winning a specific hand in poker. We start by looking at mutually exclusive events, which are events that cannot happen at the same time. Think of rolling a four and rolling a five on a single die. They are separate, non-overlapping possibilities.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-probability-combined-events.mp3'
     },
     display: {
-      content: `### Section 1: Mutually Exclusive Events
+      content: `# Introduction to Combined Events & Probability Rules
 
-We are rolling a standard six-sided die.
+When we deal with two or more events, we need rules to calculate the probability of them happening together (intersection, \$A \\cap B\$) or either one happening (union, \$A \\cup B\$). Our focus here is the Addition Rule, which governs the probability of the union of two events.
 
-Let A be the event of rolling a 2. (\$P(A) = \\frac{1}{6}\$)
-Let B be the event of rolling an odd number (1, 3, or 5). (\$P(B) = \\frac{3}{6}\$)
+We begin with **Mutually Exclusive Events**. These are events that share no outcomes; if one occurs, the other cannot. Because the intersection is empty (P(\$A \\cap B\$) = 0), the Addition Rule simplifies significantly: P(\$A \\cup B\$) = P(A) + P(B). If events are *not* mutually exclusive, we must use the General Addition Rule: P(\$A \\cup B\$) = P(A) + P(B) - P(\$A \\cap B\$).
 
-Since A and B cannot happen at the same time, they are **mutually exclusive**. We can find the probability of A OR B happening using the simple Addition Rule:
+***
 
-\$\$P(A \\cup B) = P(A) + P(B)\$\$
+### First Problem: Mutually Exclusive Events
 
-What is the probability of rolling a 2 OR an odd number, \$P(A \\cup B)\$? (Express your answer as a fraction in simplest form.)`,
+Consider rolling a standard six-sided die once. Let Event A be rolling an even number {2, 4, 6} and Event B be rolling a number less than 3 {1, 2}.
+
+Are Event A and Event B mutually exclusive? Explain why or why not.`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "vennDiagram",
           "parameters": {
-                "setALabel": "A (Roll a 2)",
-                "setBLabel": "B (Roll Odd)",
-                "layout": "disjoint",
-                "aOnlyElements": 1,
-                "bOnlyElements": 3,
-                "intersectionElements": 0,
-                "neitherElements": 2,
-                "showRegionCounts": true,
-                "shadeRegion": "union"
-          },
-          "caption": "Events A and B are mutually exclusive (disjoint). The shaded region represents $P(A \\cup B)$, which includes all outcomes in A or B."
+                "setALabel": "A (Even)",
+                "setBLabel": "B (< 3)",
+                "intersectionElements": [
+                      "2"
+                ],
+                "aOnlyElements": [
+                      "4",
+                      "6"
+                ],
+                "bOnlyElements": [
+                      "1"
+                ],
+                "neitherElements": [
+                      "3",
+                      "5"
+                ],
+                "showElements": true,
+                "caption": "Visualization of Event A (Even) and Event B (Less than 3) on a single die roll. The intersection shows they are NOT mutually exclusive."
+          }
     }
   },
 
   's4-math-probability-trees': {
     speech: {
-      text: `Hello! Let's learn about a super useful topic today: Probability Trees! These diagrams are fantastic tools for visualizing and calculating probabilities for experiments that happen in multiple stages. We'll start with drawing the trees, then learn how to use them to find probabilities, handle three or more stages, and finally tackle tricky scenarios like 'without replacement'. Let's jump right into constructing our first tree!`,
-      emotion: 'excited',
+      text: `Hello! Ready to map out your probability journey? When experiments happen in sequence, like drawing cards or flipping a coin multiple times, tracking the outcomes can get complicated. Probability trees are powerful visual tools that help us organize these multi-stage events. They allow us to see every possible path and calculate the probability of reaching the end of that path by simply multiplying the probabilities along the branches.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-probability-trees.mp3'
     },
     display: {
-      content: `## Section 1: Tree Construction
+      content: `# Introduction to Probability Trees
 
-### Introductory Problem
+Probability trees are graphical representations used to model sequences of events. They are particularly useful when dealing with multi-stage experiments where the outcome of one stage might influence the probabilities in the next stage (dependent events).
 
-Imagine you flip a fair coin twice.
+**Core Concepts:** Each branch represents a possible outcome, and the number written on the branch is the probability of that outcome occurring. To find the probability of a specific sequence of events, we use the **Multiplication Rule**: we multiply the probabilities along the path (or 'branch'). To find the probability of a general outcome (which might be reached by multiple paths), we use the **Addition Rule**: we add the probabilities of the relevant end points.
 
-We need to construct a probability tree diagram to map out all possible sequences of outcomes.
+***
 
-**Question:** Based on the visual tool provided, list all the possible final outcomes (sequences) for this two-stage experiment.`,
+### First Problem: Constructing Tree Diagrams
+
+A bag contains 4 red marbles (R) and 6 blue marbles (B). A marble is drawn, its color is noted, and then it is replaced before a second marble is drawn (drawing *with* replacement).
+
+Draw the first stage of the probability tree diagram. What are the probabilities for the two initial branches?`,
       showAfterSpeech: true
     },
     mathTool: {
@@ -2587,132 +2604,79 @@ We need to construct a probability tree diagram to map out all possible sequence
           "parameters": {
                 "stage1": [
                       {
-                            "outcome": "Heads (H)",
-                            "probability": 0.5
+                            "outcome": "Red",
+                            "probability": 0.4
                       },
                       {
-                            "outcome": "Tails (T)",
-                            "probability": 0.5
+                            "outcome": "Blue",
+                            "probability": 0.6
                       }
                 ],
-                "stage2": [
-                      {
-                            "outcome": "Heads (H)",
-                            "probability": 0.5
-                      },
-                      {
-                            "outcome": "Tails (T)",
-                            "probability": 0.5
-                      }
-                ],
-                "showProbabilities": true
-          },
-          "caption": "A probability tree for two independent coin flips."
+                "showProbabilities": true,
+                "caption": "The first stage of the probability tree for drawing a marble from the bag."
+          }
     }
   },
 
   's4-math-probability-conditional': {
     speech: {
-      text: `Hey there! I am so excited to dive into Conditional Probability with you today. This is where we learn about the probability of an event happening, given that we already know another event has occurred. It's like zooming in on a specific part of our data! We are going to master interpreting P(A given B), using the formula, working with probability trees, and reading two-way tables.`,
-      emotion: 'excited',
+      text: `Greetings, advanced learner! How does new information change your world? Conditional probability is arguably the most powerful concept in this field, because it allows us to update our predictions based on evidence. We are no longer calculating the chance of an event in a general setting, but rather, the chance of an event happening, knowing that another specific event has already occurred. This fundamentally restricts our sample space, making our calculations far more precise.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-probability-conditional.mp3'
     },
     display: {
-      content: `We surveyed 150 people about their gender and whether they prefer cats or dogs. The results are shown in the table below.
+      content: `# Introduction to Conditional Probability
 
-### 1. Conditional Probability Concept
+**Conditional Probability** measures the likelihood of an event A occurring, given that another event B has already occurred. This is written as P(A|B), read as 'the probability of A given B'. The key insight here is the restriction of the sample space: instead of considering all possible outcomes (S), we only consider the outcomes where B is true.
 
-**Question:**
+The fundamental formula linking joint probability and conditional probability is: P(A|B) = \$\\frac{P(A \\cap B)}{P(B)}\$. This concept is crucial for fields like medical testing, machine learning, and risk assessment, where decisions must be updated instantly based on new data.
 
-Imagine we randomly select a person **who is Male (M)**. What is the probability that this person **Likes Cats (C)**?
+***
 
-This is written as P(C | M).`,
+### First Problem: Understanding Conditional Probability
+
+In a class of 30 students, 18 take Math (M) and 12 take Physics (P). 5 students take both subjects.
+
+If you randomly select a student who is known to take Physics (P), what is the size of the new, restricted sample space for this selection?`,
       showAfterSpeech: true
     },
     mathTool: {
-          "toolName": "twoWayTable",
+          "toolName": "vennDiagram",
           "parameters": {
-                "rowLabels": [
-                      "Male (M)",
-                      "Female (F)"
-                ],
-                "columnLabels": [
-                      "Likes Cats (C)",
-                      "Likes Dogs (D)"
-                ],
-                "data": [
-                      [
-                            20,
-                            50
-                      ],
-                      [
-                            40,
-                            40
-                      ]
-                ],
-                "showTotals": true,
-                "highlightRow": 0,
-                "highlightCell": {
-                      "row": 0,
-                      "col": 0
-                },
-                "caption": "Survey results on pet preference by gender (150 people)"
-          },
-          "caption": "Survey results on pet preference by gender (150 people)"
+                "setALabel": "Math (M)",
+                "setBLabel": "Physics (P)",
+                "aOnlyElements": 13,
+                "bOnlyElements": 7,
+                "intersectionElements": 5,
+                "neitherElements": 5,
+                "showRegionCounts": true,
+                "highlightSet": "B",
+                "caption": "Venn diagram showing the counts for Math and Physics students. The restricted sample space for P(A|B) is the count within set B (Physics)."
+          }
     }
   },
 
   's4-math-probability-applications': {
     speech: {
-      text: `Hi there! We're moving into the really exciting part of probability: applying these concepts to real-world scenarios. Today, we'll tackle everything from medical testing and quality control to those tricky 'at least' problems. Get ready to use all your probability rules together to solve some complex challenges!`,
-      emotion: 'excited',
+      text: `Good day. We are now moving from theory to impact. You have mastered the formulas, the trees, and the conditional rules. Now, we apply this powerful knowledge to solve complex, real-world problems. Probability is the language of risk and decision-making, used everywhere from assessing insurance premiums to ensuring product quality and analyzing medical test results. This final module is about translating messy, practical scenarios into clean mathematical models.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-probability-applications.mp3'
     },
     display: {
-      content: `### Section 1: Real-World Probability Applications
+      content: `# Introduction to Applications & Problem Solving
 
-**Quality Control Scenario**
+Probability theory moves beyond classroom examples when applied to real-world scenarios. In this unit, we focus on translating complex descriptions—often involving multiple stages, dependence, or high-stakes outcomes—into solvable mathematical structures. We will use all the rules learned previously, including the multiplication rule, addition rule, and conditional probability.
 
-A manufacturing plant produces electronic components. Historically, **2%** of all components are defective (D).
+One particularly useful strategy we will master is the use of the **Complementary Event** for 'at least' problems. Calculating P(at least one success) is often far easier by calculating 1 minus P(no successes), or P(A') = 1 - P(A).
 
-The plant uses an automated testing machine (T) with the following accuracy rates:
+***
 
-1.  If a component is defective, the test correctly flags it as positive (T+) **95%** of the time (True Positive Rate).
-2.  If a component is *not* defective, the test incorrectly flags it as positive (a 'false positive') **5%** of the time.
+### First Problem: Real-World Probability Applications
 
-If a randomly selected component tests positive (T+), what is the probability that it is **actually defective**? (P(D | T+))`,
+An electronics factory produces light bulbs. Historically, 5% of the bulbs produced are defective. A quality control inspector randomly selects one bulb.
+
+What is the probability that the selected bulb is *not* defective? Express your answer as a decimal.`,
       showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "twoWayTable",
-          "parameters": {
-                "rowLabels": [
-                      "Defective (D)",
-                      "Not Defective (D')"
-                ],
-                "columnLabels": [
-                      "Test Positive (T+)",
-                      "Test Negative (T-)"
-                ],
-                "data": [
-                      [
-                            19,
-                            1
-                      ],
-                      [
-                            49,
-                            931
-                      ]
-                ],
-                "highlightColumn": 0,
-                "highlightCell": {
-                      "row": 0,
-                      "col": 0
-                },
-                "showTotals": true,
-                "showProbabilities": false,
-                "caption": "Quality Control Data based on 1000 components. We need P(D | T+), which is the count of (D and T+) divided by the total count of (T+)."
-          }
     }
   },
 
@@ -2723,127 +2687,182 @@ If a randomly selected component tests positive (T+), what is the probability th
    */
   's4-math-differential-calculus-limits': {
     speech: {
-      text: `Hey there! I'm so excited to start learning about limits with you. Limits are one of the most fundamental ideas in calculus. They help us understand what value a function is heading toward as the input gets incredibly close to a certain number. It's like predicting where you'll end up, even if you can't actually step on that exact spot. Let's dive right into our first problem to see this concept in action.`,
-      emotion: 'excited',
+      text: `Hello and welcome to the foundation of calculus! Have you ever wondered what happens right at the edge of something, even if you can't touch it? Limits are the mathematical tool we use to explore that very question.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-differential-calculus-limits.mp3'
     },
     display: {
-      content: `Consider the function \$f(x) = x² + 3\$.
+      content: `# Introduction to Limits
 
-We want to find the limit of \$f(x)\$ as \$x\$ approaches 2, written as:
+Limits are the conceptual cornerstone of calculus. A limit describes the value that a function or sequence "approaches" as the input approaches some specific value. Crucially, the limit does not depend on the value of the function *at* that point, only on the values near it. This allows us to analyze functions that have holes or breaks, which is essential for defining continuity and the derivative.
 
-\$\$\\lim_{x \\to 2} (x² + 3)\$\$
+In practical applications, limits help engineers and scientists model asymptotic behavior—such as the maximum speed an object can reach or the long-term carrying capacity of an ecosystem. Mastering limits involves understanding how to approach a value (from the left, from the right, or toward infinity) and using algebraic techniques (like factoring or rationalizing) to resolve indeterminate forms.
 
-Based on your intuition, what value does \$f(x)\$ appear to be approaching as \$x\$ gets infinitely close to 2?`,
+Let's start by evaluating a limit using direct substitution and algebraic simplification.
+
+***
+
+### First Problem: Evaluate the Limit
+
+Find the limit of the function \$f(x) = x^2 + 5x - 3\$ as \$x\$ approaches 2.
+
+\$\$\\lim_{x \\to 2} (x^2 + 5x - 3)\$\$
+`,
       showAfterSpeech: true
     }
   },
 
   's4-math-differential-calculus-gradient-tangent': {
     speech: {
-      text: `Hello! Today we’ll be learning about one of the coolest parts of calculus: finding the gradient of a tangent line. This is where we learn how to measure the speed of a curve at a single, precise moment. It all starts with understanding the difference between two special types of lines. Let's get started!`,
+      text: `Hey there! Get ready for some high-speed math. We are diving into the gradient of a tangent line. This is where we learn how to measure the exact speed or rate of change of a curve at a single, specific moment.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-differential-calculus-gradient-tangent.mp3'
     },
     display: {
-      content: `To find the gradient of a curve at a specific point, we first need to understand the difference between two important lines:
+      content: `# Tangent vs Secant Lines
 
-1.  **Secant Line:** A line that passes through *two* distinct points on a curve.
-2.  **Tangent Line:** A line that touches the curve at exactly *one* point.
+In algebra, we calculate the **average rate of change** over an interval using the slope of a **secant line** (a line connecting two points on a curve). Calculus, however, focuses on the **instantaneous rate of change**—the rate at a single, precise moment.
 
-### Question
+To achieve this instantaneous measurement, we use the limit process. We take the two points defining the secant line and move them infinitely close together until they merge into a single point. The resulting line is the **tangent line**, which touches the curve at exactly one point. The slope (or gradient) of this tangent line is the instantaneous rate of change.
 
-If the gradient of a secant line represents the **average rate of change** between two points, what does the gradient of a tangent line represent?`,
+Understanding this transition from secant to tangent via the limit is the foundation for defining the derivative. It allows us to analyze motion, optimize processes, and understand how quickly things are changing in real-time.
+
+***
+
+### First Problem: Calculate the Secant Gradient
+
+Consider the function \$f(x) = x^2 + 1\$.
+
+Find the gradient of the secant line passing through the points where \$x_1 = 1\$ and \$x_2 = 3\$.`,
       showAfterSpeech: true
     }
   },
 
   's4-math-differential-calculus-derivative-function': {
     speech: {
-      text: `Welcome! Let's explore one of the most exciting and fundamental concepts in calculus: the derivative! This idea is all about measuring change, specifically, the instantaneous rate of change. It's the mathematical tool that lets us find the exact slope of a curve at any single point. Ready to define it formally?`,
-      emotion: 'excited',
+      text: `Greetings! We are about to define the single most important concept in this entire module: the derivative function. This function gives us a formula that unlocks the slope of any curve at any point.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-differential-calculus-derivative-function.mp3'
     },
     display: {
-      content: `### Defining the Derivative
+      content: `# Definition of the Derivative
 
-The derivative function, \$f'(x)\$, is formally defined as the instantaneous rate of change of \$f(x)\$. It is calculated by taking the limit of the difference quotient.
+Welcome to the core of differential calculus: the derivative function. The derivative, denoted \$f'(x)\$ or \$\\frac{dy}{dx}\$, is a function derived from the original function \$f(x)\$. Its value at any point \$x\$ gives the instantaneous rate of change of \$f(x)\$ at that point (i.e., the slope of the tangent line).
 
-Which of the following expressions correctly represents the definition of the derivative of a function \$f(x)\$?
+Formally, the derivative is defined as the **limit of the difference quotient**:
 
-A) \$\\lim_{h→0} \\frac{f(x) - f(a)}{x - a}\$
-B) \$\\frac{f(x_2) - f(x_1)}{x_2 - x_1}\$
-C) \$\\lim_{h→0} \\frac{f(x+h) - f(x)}{h}\$
-D) \$f(x+h) - f(x)\$`,
+\$\$f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\$\$
+
+This definition is crucial because it connects the concepts of limits and instantaneous rate of change. We must also understand **differentiability**: a function is differentiable at a point if this limit exists. Graphically, this means the function is smooth and continuous, without sharp corners or vertical tangents. 
+
+***
+
+### First Problem: Identify the Definition
+
+Which of the following expressions represents the definition of the derivative of a function \$f(x)\$?`,
       showAfterSpeech: true
     }
   },
 
   's4-math-differential-calculus-first-principles': {
     speech: {
-      text: `Hello! I'm thrilled to explore one of the foundational concepts of calculus: differentiation from first principles. This is where we truly understand what a derivative is—the limit of the average rate of change. It’s all about finding the instantaneous rate of change of a function. Let's start by looking at the formula that defines this process.`,
-      emotion: 'excited',
+      text: `Welcome back! Today we are tackling the challenge of differentiation from first principles. This is the ultimate proof, showing exactly how the derivative rules are derived using the limit definition.`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-differential-calculus-first-principles.mp3'
     },
     display: {
-      content: `The derivative of a function \$f(x)\$, denoted \$f'(x)\$, is defined using the concept of a limit. This definition is known as differentiation from first principles.
+      content: `# First Principles Formula
 
-Here is the formula:
+Differentiation from First Principles is the foundational method for finding derivatives. It requires us to apply the formal definition of the derivative directly, using the limit of the difference quotient. While it can be algebraically intensive, mastering this process ensures a deep understanding of *why* the derivative rules work.
+
+The **First Principles Formula** is:
 
 \$\$f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\$\$
 
-**Question:** What does the expression \$\\frac{f(x+h) - f(x)}{h}\$ represent *before* the limit is taken?`,
+To successfully use this formula, you must first substitute \$f(x+h)\$ and \$f(x)\$, expand the expression, simplify the numerator so that the \$h\$ in the denominator can be cancelled, and finally, take the limit by setting \$h=0\$. This process is essential for deriving the basic rules like the Power Rule.
+
+***
+
+### First Problem: Set Up the Expression
+
+Given the function \$f(x) = 3x + 5\$, set up the numerator of the difference quotient, \$f(x+h) - f(x)\$.`,
       showAfterSpeech: true
     }
   },
 
   's4-math-differential-calculus-differentiation-rules': {
     speech: {
-      text: `Hi there! Are you ready to dive into the core rules of calculus? Differentiation rules are the foundation for so much of what we do, and mastering them will make solving complex problems a breeze. We're going to start with the most fundamental one: the Power Rule!`,
-      emotion: 'excited',
+      text: `Hi there! Are you ready to level up your calculus game? We are moving from the slow, foundational method to the fast, powerful rules that make differential calculus practical. This is where we learn to work smarter, not harder.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-differential-calculus-differentiation-rules.mp3'
     },
     display: {
-      content: `### Power Rule Practice
+      content: `# Power Rule
 
-We are starting with the foundational rule: the Power Rule.
+While differentiation from first principles is necessary for understanding the theory, it is far too slow for real-world application. Differentiation rules are the shortcuts that allow us to find derivatives quickly and efficiently. These rules are the core tools used in physics, economics, and engineering.
 
-**Problem:** Find the derivative, \$f'(x)\$, of the function:
+The most fundamental rule is the **Power Rule**. It states that if \$f(x) = ax^n\$, then the derivative is \$f'(x) = anx^{n-1}\$. This rule applies to all real exponents, positive or negative, whole numbers or fractions.
 
-\$\$f(x) = 5x³ + x⁻² + 7\$\$`,
+Beyond the Power Rule, we will master the Product Rule (for multiplying functions), the Quotient Rule (for dividing functions), and the Chain Rule (for composite functions). Combining these rules allows us to differentiate almost any function encountered in applied mathematics.
+
+***
+
+### First Problem: Simple Power Rule Application
+
+Find the derivative of the function \$f(x) = 7x^3\$.`,
       showAfterSpeech: true
     }
   },
 
   's4-math-differential-calculus-tangent-equations': {
     speech: {
-      text: `Hello! Let's learn about a really important topic in calculus today: finding the equations of tangents and normals. These concepts help us understand the slope of a curve at any specific point. We're going to start with the tangent line, which relies heavily on the familiar point-slope form. Ready for our first problem?`,
-      emotion: 'excited',
+      text: `Hello! Today we are applying everything we have learned about derivatives to solve a practical geometry problem: finding the equation of a tangent line. This is where the abstract concept of the derivative becomes a tangible line on a graph.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-differential-calculus-tangent-equations.mp3'
     },
     display: {
-      content: `### Introductory Problem: The Tangent Line
+      content: `# Tangent Equation Using Point-Slope Form
 
-A curve passes through the point (2, 5). The gradient (slope) of the tangent line at this point is 3.
+Finding the equation of a tangent line at a specific point is a key application of differential calculus. Remember, any straight line requires two things: a point and a slope (\$m\$).
 
-Using the point-slope form, \$y - y_1 = m(x - x_1)\$, what is the equation of the tangent line in the form \$y = mx + c\$?`,
+1. **The Point \$(x_1, y_1)\$:** This is given or found by substituting \$x\$ into the original function \$f(x)\$.
+2. **The Slope \$m_{tan}\$:** This is found by calculating the derivative \$f'(x)\$ and substituting the given \$x\$-value into the derivative function.
+
+Once we have these two components, we use the standard **point-slope form** of a linear equation: \$y - y_1 = m(x - x_1)\$. We can also find the equation of the **normal line**, which is perpendicular to the tangent, using the negative reciprocal of the tangent's slope (\$m_{normal} = -1/m_{tan}\$). 
+
+***
+
+### First Problem: Find the Slope
+
+Given the function \$f(x) = x^2 - 4x + 1\$.
+
+Find the slope of the tangent line to the curve at the point where \$x = 3\$.`,
       showAfterSpeech: true
     }
   },
 
   's4-math-differential-calculus-stationary-points': {
     speech: {
-      text: `Hey there! I am so excited to dive into stationary points and optimization today. This is where calculus truly helps us understand the peaks and valleys of functions. Stationary points are those crucial spots where the gradient, or the slope, of the curve is exactly zero. Ready to find our first one?`,
-      emotion: 'excited',
+      text: `Greetings and welcome to optimization! We are going to learn how to find the highest highs and the lowest lows of any function. These critical locations, where the function momentarily stops changing, are called stationary points.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-differential-calculus-stationary-points.mp3'
     },
     display: {
-      content: `We are starting our journey by locating stationary points! Remember, a stationary point occurs when the first derivative, \$f'(x)\$, equals zero.
+      content: `# Finding Stationary Points
 
-Consider the function:
-\$\$f(x) = x³ - 6x² + 5\$\$
+Stationary points are the points on a function's graph where the gradient (slope of the tangent) is exactly zero. Graphically, these correspond to the peaks (local maxima) and valleys (local minima) of the curve, as well as some points of inflection.
 
-**Question:** What are the x-coordinates of the stationary points for \$f(x)\$?`,
+To locate these points, we use the first derivative. Since the gradient must be zero, the mathematical condition for a stationary point is:
+
+\$\$f'(x) = 0\$\$
+
+Solving this equation for \$x\$ gives us the \$x\$-coordinates of all stationary points. Finding and classifying these points is essential for solving real-world optimization problems, such as determining the maximum volume of a container or the minimum cost of production.
+
+***
+
+### First Problem: Locate Potential Stationary Points
+
+Find the \$x\$-coordinates of the stationary points for the function \$f(x) = x^3 - 6x^2 + 5\$.`,
       showAfterSpeech: true
     }
   },
@@ -2855,138 +2874,155 @@ Consider the function:
    */
   's4-math-integration-area-under-curves': {
     speech: {
-      text: `Hi there! Today we are starting one of the coolest topics in calculus: finding the area under curves. This skill is super important for understanding how things accumulate over time. We are going to start simple, using shapes you already know, like triangles and trapezoids, to find exact areas. Let's jump right into our first problem!`,
+      text: `Welcome to the world where geometry meets calculus! For centuries, mathematicians struggled with finding the exact area under a curved line. This concept, known as integration, is the solution. It allows engineers to calculate volumes, physicists to determine work done, and economists to analyze total change. We start by mastering the basics: finding areas using shapes we already know, like triangles and trapezoids, to build a strong foundation for approximating and ultimately solving complex areas.`,
       emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-integration-area-under-curves.mp3'
     },
     display: {
-      content: `## Section 1: Geometric Areas
+      content: `# Introduction to Area Under Curves
 
-We can find the exact area under some simple curves using geometric formulas before we learn more complex methods.
+Integration is the process of finding the total accumulation of a quantity, often visualized as the area bounded by a function, the x-axis, and specific vertical lines. Before we tackle complex curves that require advanced calculus, we must first confirm we can calculate areas of simple shapes defined by linear functions.
 
-**Problem:**
+This foundational step ensures we understand that the definite integral is fundamentally a measure of area. We will use standard geometric formulas (Area = ½bh, Area = h(b₁ + b₂)/2) to find exact areas bounded by straight lines and the x-axis.
 
-Find the exact area under the curve defined by the function \$f(x) = 2x\$ over the interval \$[0, 4]\$.
+Let's begin by finding the area of a region that forms a simple geometric shape.
 
-*Hint: The region bounded by the function, the x-axis, and the vertical line \$x=4\$ forms a right triangle. Use the formula for the area of a triangle.*`,
-      showAfterSpeech: true
-    },
-    mathTool: {
-          "toolName": "definiteIntegralVisualizer",
-          "parameters": {
-                "functionExpression": "2*x",
-                "lowerBound": 0,
-                "upperBound": 4,
-                "shadeArea": true,
-                "showValue": false
-          },
-          "caption": "The area under $f(x) = 2x$ from $x = 0$ to $x = 4$."
-    }
-  },
+**First Problem:**
 
-  's4-math-integration-antiderivatives': {
-    speech: {
-      text: `Hey there! We're starting a really exciting topic today: Antiderivatives and Introduction to Integration. If differentiation was all about finding the slope, integration is like running the whole process in reverse! We're going to learn how to undo differentiation, which is super useful in calculus. Let's dive right into the core concept of what an antiderivative actually is.`,
-      emotion: 'excited',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-integration-antiderivatives.mp3'
-    },
-    display: {
-      content: `### Understanding the Antiderivative Concept
-
-An **antiderivative** of a function \$f(x)\$ is a function \$F(x)\$ such that \$F'(x) = f(x)\$.
-
-Consider the function \$f(x) = 3x² + 4\$.
-
-Is the function \$F(x) = x³ + 4x\$ an antiderivative of \$f(x)\$?
-
-**To verify, what is the derivative of \$F(x)\$?**`,
-      showAfterSpeech: true
-    }
-  },
-
-  's4-math-integration-rules': {
-    speech: {
-      text: `Hi there! Ready to dive into the core rules of integration? We're going to unlock the secrets to solving almost any polynomial integral using just three main ideas: the Power Rule, the Constant Multiple Rule, and the Sum and Difference Rule. These rules make integration much easier than you might think! Let's start with the most fundamental one: the Power Rule.`,
-      emotion: 'excited',
-      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-integration-rules.mp3'
-    },
-    display: {
-      content: `### Section 1: The Power Rule
-
-The Power Rule for integration states:
-\$\$\\int x^n dx = \\frac{x^{n+1}}{n+1} + C, \\quad \\text{where } n 
-eq -1\$\$
-
-**Problem 1:**
-Find the indefinite integral:
-\$\$\\int x^5 dx\$\$
-What is the resulting expression before adding the constant of integration, C?`,
-      showAfterSpeech: true
-    }
-  },
-
-  's4-math-integration-definite-integrals': {
-    speech: {
-      text: `Welcome! Let's explore one of the most powerful ideas in calculus: the Definite Integral! This is how we find the exact area under a curve. We'll start with the Fundamental Theorem of Calculus, which beautifully connects integration and differentiation. Ready to jump in and calculate some exact areas?`,
-      emotion: 'excited'
-    },
-    display: {
-      content: `### Section 1: The Fundamental Theorem of Calculus
-
-The Fundamental Theorem of Calculus (Part 2) provides the key tool for evaluating definite integrals:
-
-\$\$\\int_a^b f(x) dx = F(b) - F(a)\$\$
-
-where F(x) is the antiderivative of f(x).
-
-**Problem 1:**
-
-Evaluate the following definite integral:
-
-\$\$\\int_1^3 (2x + 1) dx\$\$
-
-What is the exact value of this integral?`,
+Find the exact area bounded by the function \$f(x) = 2x + 1\$, the x-axis, and the vertical lines \$x = 0\$ and \$x = 3\$.`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "definiteIntegralVisualizer",
           "parameters": {
                 "functionExpression": "2*x+1",
-                "lowerBound": 1,
+                "lowerBound": 0,
                 "upperBound": 3,
+                "shadeArea": true,
+                "showValue": false
+          },
+          "caption": "Visualize the area under the linear function f(x) = 2x + 1 from x=0 to x=3."
+    }
+  },
+
+  's4-math-integration-antiderivatives': {
+    speech: {
+      text: `Hi there! Ready to learn how to reverse the magic of differentiation? If differentiation tells you the rate of change, the antiderivative tells you the original function—the total accumulated change. This is the core concept of integration. Understanding antiderivatives is crucial because it connects the two major halves of calculus, and it's essential for solving differential equations in physics and engineering.`,
+      emotion: 'supportive',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-integration-antiderivatives.mp3'
+    },
+    display: {
+      content: `# Understanding Antiderivatives
+
+An **antiderivative** of a function \$f(x)\$ is a function \$F(x)\$ such that the derivative of \$F(x)\$ is \$f(x)\$. In notation, this means \$F'(x) = f(x)\$. Finding the antiderivative is the inverse process of finding the derivative.
+
+Because the derivative of any constant (like 5, -10, or π) is zero, when finding an antiderivative, we must always include the **constant of integration**, denoted as \$+ C\$. This \$C\$ represents a family of functions that all share the same derivative. We will start by identifying this fundamental inverse relationship.
+
+**First Problem:**
+
+If the derivative of a function \$F(x)\$ is \$f(x) = 3x^2 + 2\$, which of the following expressions could represent the original function \$F(x)\$?
+
+A) \$x^3 + 2x\$
+B) \$x^3 + 2x + 5\$
+C) \$6x + 2\$
+D) \$6x + 2 + C\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-integration-rules': {
+    speech: {
+      text: `Greetings, future integration master! Now that you know what an antiderivative is, we need the tools to find them efficiently. Just as the power rule was your best friend for differentiation, it's essential for integration too. Mastering the power rule allows us to integrate polynomials and many other expressions quickly, forming the backbone of almost every integration problem you will encounter. Let's unlock this first key tool for indefinite integrals.`,
+      emotion: 'encouraging',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-integration-rules.mp3'
+    },
+    display: {
+      content: `# The Power Rule for Integration
+
+The **Power Rule for Integration** is the inverse operation of the Power Rule for Differentiation. Instead of multiplying by the exponent and subtracting 1, we reverse the process: we add 1 to the exponent and then divide by the new exponent.
+
+The general formula for the power rule is:
+\$\$\\int x^n dx = \\frac{x^{n+1}}{n+1} + C, \\quad \\text{provided n is not equal to -1} \$\$
+
+This rule is the most fundamental technique for finding indefinite integrals (integrals without limits of integration). Remember that the constant of integration (\$+ C\$) is always required when the integral is indefinite.
+
+**First Problem:**
+
+Apply the Power Rule to find the indefinite integral:
+
+\$\$\\int x^5 dx\$\$`,
+      showAfterSpeech: true
+    }
+  },
+
+  's4-math-integration-definite-integrals': {
+    speech: {
+      text: `Hello and welcome to the pinnacle of calculus—a concept so powerful it changed mathematics forever! We are about to bridge the gap between finding the rate of change and finding the total accumulated change. This connection is formalized in the Fundamental Theorem of Calculus. This theorem is arguably the most important result in the field, allowing us to calculate exact areas under curves, total distance traveled, and overall change in any quantity, simply by evaluating the antiderivative at the endpoints.`,
+      emotion: 'warm',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-integration-definite-integrals.mp3'
+    },
+    display: {
+      content: `# The Fundamental Theorem of Calculus
+
+A **definite integral** calculates the net area under a curve \$f(x)\$ between two specific points, \$x=a\$ (the lower limit) and \$x=b\$ (the upper limit). The notation is \$\\int_a^b f(x) dx\$.
+
+The **Fundamental Theorem of Calculus (Part 2)** provides the elegant method for evaluating these integrals:
+\$\$\\int_a^b f(x) dx = F(b) - F(a)\$\$
+
+Where \$F(x)\$ is any antiderivative of \$f(x)\$. This means we no longer have to rely on complex approximations; we can find the exact value instantly! Our goal in this section is to master the application of this theorem.
+
+**First Problem:**
+
+Use the Fundamental Theorem of Calculus to evaluate the definite integral:
+
+\$\$\\int_1^4 2x dx\$\$`,
+      showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "definiteIntegralVisualizer",
+          "parameters": {
+                "functionExpression": "2*x",
+                "lowerBound": 1,
+                "upperBound": 4,
                 "shadeArea": true,
                 "showValue": true
           },
-          "caption": "Visualizing the area represented by $\\int_1^3 (2x + 1) dx$. The calculation we perform gives us the exact area of the shaded region."
+          "caption": "Visualize the definite integral of 2x from 1 to 4."
     }
   },
 
   's4-math-integration-riemann-sums': {
     speech: {
-      text: `Welcome to our deep dive into Riemann Sums! This topic is truly the bridge between differential and integral calculus. We're going to move beyond basic approximations and explore how these sums formally define the area under a curve. We have four exciting sections ahead, starting right now with calculating different types of Riemann sums. Let's warm up with a classic approximation!`,
-      emotion: 'excited',
+      text: `Hey there! Are you ready to dive into the intricate details of how integration actually works? Before the Fundamental Theorem of Calculus gave us the easy way out, mathematicians had to calculate area by approximating it with thousands of tiny rectangles. These approximations are called Riemann Sums. Understanding Riemann Sums is vital because it reveals the formal definition of the definite integral as a limit, connecting discrete sums to continuous area.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-integration-riemann-sums.mp3'
     },
     display: {
-      content: `### Section 1: Riemann Sum Types
+      content: `# Types of Riemann Sums
 
-We are approximating the area under the function \$f(x) = x^2 + 1\$ on the interval \$[0, 4]\$.
+**Riemann Sums** are methods used to approximate the area under a curve by dividing the area into a finite number (\$n\$) of rectangles and summing their areas. The width of each rectangle is \$\\Delta x\$, and the height is determined by the function value, \$f(x_i)\$.
 
-We will use \$n=4\$ subdivisions.
+We primarily use three types, defined by where the height is measured: **Left, Right, and Midpoint** sums. The key insight is that as the number of rectangles (\$n\$) approaches infinity, the Riemann Sum converges exactly to the definite integral:
+\$\$\\int_a^b f(x) dx = \\lim_{n\\to\\infty} \\sum_{i=1}^n f(x_i) \\Delta x\$\$
 
-**Question:** Calculate the value of the Left Riemann Sum (\$L_4\$).`,
+We start by calculating these approximations using a small number of partitions.
+
+**First Problem:**
+
+Approximate the area under the curve \$f(x) = x^2 + 1\$ on the interval \$[0, 4]\$ using a **Left Riemann Sum** with \$n=4\$ rectangles.`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "areaApproximation",
           "parameters": {
-                "functionExpression": "x^2 + 1",
+                "functionExpression": "x^2+1",
                 "lowerBound": 0,
                 "upperBound": 4,
                 "rectangles": 4,
-                "method": "left"
+                "method": "left",
+                "showExact": false
           },
-          "caption": "Visualizing the Left Riemann Sum ($L_4$) for $f(x) = x^2 + 1$ on $[0, 4]$"
+          "caption": "Visualize the area approximation using 4 left-hand rectangles."
     }
   },
 
@@ -2997,99 +3033,129 @@ We will use \$n=4\$ subdivisions.
    */
   's4-math-quad-fundamentals': {
     speech: {
-      text: `Hey there! I'm so excited to start working on quadratic functions with you. These functions are super useful because they create beautiful U-shaped curves called parabolas. We're going to start by looking at the standard form of a quadratic function and figuring out what makes it different from other functions you've seen.`,
-      emotion: 'excited',
+      text: `Hello and welcome! Have you ever wondered how engineers model the path of a projectile or the shape of a satellite dish? The answer lies in quadratic functions.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-quad-fundamentals.mp3'
     },
     display: {
-      content: `### Understanding Quadratic Functions
+      content: `# Introduction to Quadratic Functions Fundamentals
 
-The standard form of a quadratic function is:
+Quadratic functions are defined by the standard form: y = ax² + bx + c, where 'a' cannot be zero. The term 'quadratic' comes from the Latin word for square, reflecting the presence of the x² term. These functions are critical in physics, engineering, and economics because they model parabolic curves, which describe everything from the trajectory of a launched object to the shape of reflective surfaces.
 
-y = ax² + bx + c
+In this module, we will build a foundational understanding of quadratics. We start by defining the components of the standard equation. Then, we move into evaluating the function (finding y given x). Finally, we will use basic factoring techniques to solve for x when y is known, laying the groundwork for more advanced solving methods.
 
-where **a** cannot be zero.
+Let's start with the most basic skill: evaluating the function.
 
-Which of the following equations represents a quadratic function?
+### First Problem
 
-A) y = 3x + 5
-B) y = 2x³ - x² + 1
-C) y = 5x² - 4x + 7
-D) y = 4x + 7`,
+Given the quadratic function f(x) = x² + 3x - 4, what is the value of f(x) when x = 2?`,
       showAfterSpeech: true
     }
   },
 
   's4-math-quad-graphs-transformations': {
     speech: {
-      text: `Welcome! Today we’ll be learning about one of the most useful shapes in math: the parabola! We'll be exploring how to graph quadratic functions and how to transform them by sliding, stretching, and flipping. We are starting with the basics: what a parabola looks like and how to plot its points using a table.`,
-      emotion: 'excited'
+      text: `Hey there! Get ready to become a mathematical sculptor! We are diving into the beautiful, symmetrical shape created by quadratic functions: the parabola.`,
+      emotion: 'excited',
+      preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-quad-graphs-transformations.mp3'
     },
     display: {
-      content: `### Section 1: Parabola Basics
+      content: `# Parabolas and Graphing
 
-We are starting with the simplest quadratic function, the parent function:
-\$y = x^2\$
+The graph of a quadratic function is called a **parabola**. This U-shaped curve is perfectly symmetrical and has a single turning point called the vertex. Understanding how to graph parabolas and transform them allows us to visualize real-world phenomena, such as the optimal design for bridges or the path of water from a fountain.
 
-**Question 1:** Complete the table of values for the function \$y = x^2\$. Based on the completed table, what are the coordinates of the lowest point on the graph (the vertex)?
+We will primarily use the **Vertex Form** of the quadratic equation, y = a(x-h)² + k, which acts as a blueprint for transformations. In this form, the vertex is easily identified at (h, k). We will analyze how the coefficient 'a' affects the width and direction of the parabola, and how 'h' and 'k' translate (shift) the graph horizontally and vertically.
 
-| x | y = x² |
-|---|---|
-| -2 | |
-| -1 | |
-| 0 | |
-| 1 | |
-| 2 | |`,
+Our first step is to master the Vertex Form to quickly identify the position of the graph.
+
+### First Problem
+
+Identify the coordinates of the vertex for the following quadratic function:
+
+y = 2(x - 3)² + 5`,
       showAfterSpeech: true
     }
   },
 
   's4-math-quad-key-features': {
     speech: {
-      text: `Welcome! Today we’ll be learning about the key features of parabolas. These curves are everywhere in math and science, and understanding their intercepts, axis of symmetry, and vertex helps us unlock their secrets. Let's start with the intercepts!`,
-      emotion: 'excited',
+      text: `Greetings! Let's talk about optimization. When you throw a ball, how high does it go? When should a company set its price to maximize profit? Finding these critical points requires analyzing the key features of a parabola.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-quad-key-features.mp3'
     },
     display: {
-      content: `We are starting with the quadratic function:
-y = x² + 2x - 8
+      content: `# x-intercepts and y-intercepts
 
-### Question 1: Intercepts
+Key features—like intercepts, the axis of symmetry (AOS), and the vertex—are the navigational points of a quadratic graph. Intercepts tell us where the function crosses the axes: the y-intercept occurs when x = 0, and the x-intercepts (or roots) occur when y = 0. These points often represent starting or ending conditions in a real-world scenario.
 
-Find the coordinates of the y-intercept and the x-intercepts for this function.`,
+The Axis of Symmetry is a vertical line that divides the parabola into two mirror images. We calculate it using the formula: x = \$\\frac{-b}{2a}\$. This line is crucial because the vertex always lies on it. By finding the vertex, we determine the maximum (highest) or minimum (lowest) value of the function, which is the core of optimization problems.
+
+We begin by locating the easiest feature to find: the y-intercept.
+
+### First Problem
+
+Find the y-intercept of the quadratic function defined by:
+
+y = 3x² - 5x + 1`,
       showAfterSpeech: true
     }
   },
 
   's4-math-quad-finding-functions': {
     speech: {
-      text: `Hey there! Welcome back. Today we are leveling up our skills in quadratics. We're going to dive deep into determining quadratic equations, not just from simple graphs, but from specific features like vertices and intercepts, and then we'll tackle some complex real-world optimization problems. Let's start with finding equations from features. Are you ready?`,
-      emotion: 'excited',
+      text: `Welcome to the detective work of algebra! We are moving beyond solving equations—now we are reverse-engineering them. If you know the critical points of a parabola, can you write its equation?`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-quad-finding-functions.mp3'
     },
     display: {
-      content: `## Finding Quadratic Equations from Features
+      content: `# Finding Quadratic Equations
 
-A parabola has a vertex at (3, -2) and passes through the point (1, 6).
+In previous sections, we graphed functions given their equations. Now, we flip the process. We will be given key features—such as the vertex, intercepts, or a set of points—and our task is to determine the specific quadratic equation that generated those features.
 
-**Question:** Determine the equation of the quadratic function in vertex form, y = a(x - h)² + k.`,
+Choosing the correct form (Standard Form: y = ax² + bx + c, or Vertex Form: y = a(x-h)² + k) is the first step. If the vertex is known, the Vertex Form is usually easiest. We then substitute the known coordinates into the chosen equation and solve for the remaining unknown coefficients, most often the stretch factor 'a'. This skill is essential for modeling data gathered from experiments or observations.
+
+Let's use the Vertex Form to construct our first equation.
+
+### First Problem
+
+A parabola has a vertex at (1, -4) and passes through the point (0, -3). Write the equation of the parabola in Vertex Form.`,
       showAfterSpeech: true
     }
   },
 
   's4-math-quad-inequalities': {
     speech: {
-      text: `Hello! Today we’ll be learning about one of the most powerful tools in algebra: Quadratic Inequalities! We'll learn how to solve them using two fantastic methods: sign diagrams and graphical interpretation. This is where algebra meets geometry. Ready to tackle our first challenge using sign diagrams?`,
-      emotion: 'excited',
+      text: `Hi! We've mastered equality, but the real world is full of 'greater than' and 'less than' scenarios. When is the profit *above* zero? When is the height *less than* 10 feet? Are you ready for the next level of quadratic analysis?`,
+      emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-quad-inequalities.mp3'
     },
     display: {
-      content: `### Introductory Problem: Quadratic Inequalities
+      content: `# Quadratic Inequalities (Sign Diagrams)
 
-Solve the following quadratic inequality and express your answer in interval notation:
+Quadratic inequalities involve comparing a quadratic expression to zero using symbols like <, >, ≤, or ≥ (e.g., x² - 4 > 0). Unlike equations, which usually have one or two solutions, inequalities result in a range or interval of x-values that satisfy the condition.
 
-\$\$x^2 - x - 6 > 0\$\$`,
+To solve these, we first treat the inequality as an equation to find the roots (the boundary points). We then use a **sign diagram** or analyze the graph of the parabola to test the intervals created by those roots. This process helps us determine whether the quadratic expression is positive or negative in those regions, thus identifying the solution set.
+
+We will use factoring and sign analysis to solve our first inequality. Since the solution is an interval, we will visualize it on a number line.
+
+### First Problem
+
+Solve the following quadratic inequality for x:
+
+x² - x - 6 < 0`,
       showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "numberLine",
+          "parameters": {
+                "min": -5,
+                "max": 5,
+                "step": 1,
+                "intervals": [],
+                "points": [],
+                "caption": "Use the number line to visualize the solution interval after finding the roots."
+          },
+          "caption": "A number line tool to visualize the solution set for the inequality."
     }
   },
   /**
@@ -3099,88 +3165,193 @@ Solve the following quadratic inequality and express your answer in interval not
    */
   's4-math-advanced-trig-unit-circle': {
     speech: {
-      text: `Welcome! We are starting at the very heart of trigonometry: the Unit Circle. This elegant tool connects angles to coordinates, making complex problems visual and manageable.`,
-      emotion: 'warm',
+      text: `Hello and welcome to the world of advanced trigonometry! We are starting with the Unit Circle, which is arguably the most important map in all of trig. This simple circle, centered at the origin with a radius of one, is the key to defining sine and cosine for every single angle. Get ready to connect angles to coordinates, because that relationship, where the point P is always equal to cosine theta, sine theta, is the foundational concept we need to master first.`,
+      emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-unit-circle.mp3'
     },
     display: {
-      content: `### Understanding the Unit Circle
+      content: `# Introduction to Unit Circle & Special Angles
 
-What are the coordinates (x, y) of the point on the unit circle that corresponds to the angle \$\\theta = 90°\$?`,
+The **Unit Circle** is a circle centered at the origin (0, 0) with a radius \$r=1\$. It serves as the foundational tool for advanced trigonometry because it allows us to define trigonometric functions for *any* angle, not just acute angles in a right triangle.
+
+For any angle \$\\theta\$ measured counterclockwise from the positive x-axis, the coordinates of the point \$P\$ where the terminal side intersects the circle are always given by the ordered pair: \$P = (\\cos \\theta, \\sin \\theta)\$. This means the x-coordinate is \$\\cos \\theta\$ and the y-coordinate is \$\\sin \\theta\$.
+
+Mastering this connection is essential for understanding periodic functions and solving complex equations later on. Let's start by identifying these coordinates for a basic angle.
+
+***
+
+### First Problem: Understanding the Unit Circle
+
+If the terminal side of an angle \$\\theta\$ intersects the unit circle at the point \$P = (0.6, 0.8)\$, what are the values of \$\\cos \\theta\$ and \$\\sin \\theta\$?`,
       showAfterSpeech: true
     },
     mathTool: {
           "toolName": "unitCircle",
-          "parameters": {      
-            "angle": 90,
-            "showPoint": true,
-            "showCoordinates": false,
-            "showAngleArc": true,
-            "showTriangle": false
-            },
-          "caption": "The Unit Circle visualization helps locate coordinates based on angles."
+          "parameters": {
+                "angle": 53,
+                "showPoint": true,
+                "showCoordinates": true,
+                "showAngleArc": true
+          },
+          "caption": "The Unit Circle visualization shows the coordinates (cos θ, sin θ) for any angle θ."
     }
   },
 
   's4-math-advanced-trig-functions-graphs': {
     speech: {
-      text: `Hey there! Get ready to see trigonometry in motion. When we graph sine and cosine, we reveal beautiful, repeating waves that model everything from sound to light.`,
-      emotion: 'excited',
+      text: `Greetings! We are diving into the world of wave mathematics today. Trigonometric functions like sine and cosine don't just solve triangles; they model everything that oscillates, from sound waves to electrical currents. When we graph these functions, we are visualizing repeating cycles. Our first goal is to nail down the fundamental characteristics of these basic wave forms: the period, the amplitude, the domain, and the range.`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-functions-graphs.mp3'
     },
     display: {
-      content: `### The Sine and Cosine Functions
+      content: `# Introduction to Trigonometric Functions & Graphs
 
-For the standard sine function, \$y = \\sin(x)\$:
+Trigonometric functions (\$y = \\sin(x)\$, \$y = \\cos(x)\$, etc.) are essential for modeling **periodic phenomena**—anything that repeats over a fixed interval, such as sound waves, light waves, and seasonal cycles. Graphing these functions allows us to visualize their behavior.
 
-1. What is the maximum value of the function?`,
+For the basic sine and cosine functions, \$y = \\sin(x)\$ and \$y = \\cos(x)\$, the key characteristics are:
+
+*   **Amplitude:** The maximum displacement from the midline (usually 1).
+*   **Period:** The horizontal length of one complete cycle (usually \$360°\$ or \$2\\pi\$).
+*   **Domain:** All real numbers.
+*   **Range:** \$[-1, 1]\$.
+
+Let's begin by confirming these fundamental properties for the sine function.
+
+***
+
+### First Problem: The Sine and Cosine Functions
+
+Consider the graph of the basic sine function, \$y = \\sin(x)\$. What are the amplitude and the period (in radians) of this function?`,
       showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "functionGraph",
+          "parameters": {
+                "expression": "sin(x)",
+                "xMin": -6.28,
+                "xMax": 6.28,
+                "yMin": -1.5,
+                "yMax": 1.5,
+                "xAxisMode": "radians",
+                "label": "y = sin(x)"
+          },
+          "caption": "The graph of y = sin(x) showing its periodic nature over two cycles (from -2π to 2π)."
     }
   },
 
   's4-math-advanced-trig-transformations': {
     speech: {
-      text: `Greetings! Think of trigonometric functions as elastic bands. We are going to learn how to stretch, compress, and move these waves precisely. This is where we gain control over the graphs.`,
+      text: `Hey there, advanced mathematician! Welcome to the control panel of trigonometry. We've seen the basic sine and cosine waves, but real-world data rarely fits the default settings. In this unit, we learn how to stretch, compress, and shift those waves to match any scenario. We begin by mastering amplitude and period changes, which control the height and the speed of the wave. Remember, the amplitude is determined by a, and the period is determined by b, using the formula two pi divided by the absolute value of b.`,
       emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-transformations.mp3'
     },
     display: {
-      content: `### Amplitude and Period Changes
+      content: `# Introduction to Transformations of Trigonometric Functions
 
-Consider the function \$y = 3\\cos(x)\$.
+In advanced trigonometry, we move beyond the basic graphs of \$y = \\sin(x)\$ and \$y = \\cos(x)\$ to analyze and create functions that model specific real-world phenomena. This requires understanding **transformations**—how changes to the function's parameters alter its graph.
 
-How does the coefficient 3 affect the **amplitude** of the graph compared to the standard function \$y = \\cos(x)\$?`,
+We begin with the function \$y = a \\sin(bx)\$ (or \$y = a \\cos(bx)\$):
+
+1.  **Amplitude (a):** The value \$|a|\$ determines the amplitude, controlling the vertical stretch or compression of the graph.
+2.  **Period (b):** The value \$b\$ determines the period, controlling the horizontal stretch or compression. The new period \$P\$ is calculated using the formula: \$P = \\frac{2\\pi}{|b|}\$.
+
+Mastering these two parameters is essential for accurately modeling cyclic data.
+
+***
+
+### First Problem: Amplitude and Period Changes
+
+Determine the amplitude and the period (in radians) of the function \$y = 4 \\cos(3x)\$.`,
       showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "functionGraph",
+          "parameters": {
+                "expression": "4*cos(3*x)",
+                "xMin": 0,
+                "xMax": 2.09,
+                "yMin": -5,
+                "yMax": 5,
+                "xAxisMode": "radians",
+                "label": "y = 4 cos(3x)"
+          },
+          "caption": "Visualization of $y = 4 \\cos(3x)$, showing the increased amplitude (4) and compressed period (2π/3)."
     }
   },
 
   's4-math-advanced-trig-equations-identities': {
     speech: {
-      text: `Hello! We are stepping into the realm of trigonometric puzzles. Solving these equations requires combining algebra skills with our knowledge of angles and periodicity. Let us start simple.`,
-      emotion: 'supportive',
+      text: `Hello. Today we embark on a crucial phase of trigonometry: solving equations. This is where all your foundational knowledge of the Unit Circle and special angles comes together. Solving trig equations is a strategic process. We must find every single angle that satisfies the condition, which means we need to use the ASTC rule to find solutions in all four quadrants, and then account for the infinite nature of the periodic functions.`,
+      emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-equations-identities.mp3'
     },
     display: {
-      content: `### Solving Trigonometric Equations
+      content: `# Introduction to Trigonometric Equations & Identities
+
+Solving **Trigonometric Equations** means finding the angle(s) \$\\theta\$ that make a given equation true. Because trigonometric functions are periodic, these equations typically have an infinite number of solutions. Our primary goal is to find all solutions within one rotation (\$0° \\le \\theta < 360°\$) and then generalize the solution set.
+
+Key steps in solving equations:
+
+1.  Isolate the trigonometric function (e.g., \$\\sin \\theta\$).
+2.  Determine the **reference angle** (the acute angle that satisfies the equation).
+3.  Use the **ASTC rule** (All, Sine, Tangent, Cosine) to identify the quadrants where the function has the required sign.
+4.  Calculate the specific angles in those quadrants.
+
+Let's apply this strategy to a fundamental equation.
+
+***
+
+### First Problem: Solving Trigonometric Equations
 
 Find all solutions for \$\\theta\$ in the interval \$0° \\le \\theta < 360°\$ for the equation:
 
-\$\$\\sin(\\theta) = \\frac{1}{2}\$\$`,
+\$\$2 \\sin(\\theta) - 1 = 0\$\$`,
       showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "unitCircle",
+          "parameters": {
+                "showPoint": true,
+                "showSpecialAngles": true,
+                "showASTC": true
+          },
+          "caption": "The Unit Circle showing special angles and the ASTC rule, essential tools for solving trigonometric equations."
     }
   },
 
   's4-math-advanced-trig-radians': {
     speech: {
-      text: `Hi! We are transitioning from degrees to a more natural, fundamental way to measure angles: radians. This system is essential for calculus and advanced physics because it links arc length directly to the radius.`,
+      text: `Hey there! We are stepping into the advanced language of mathematics: radians. While degrees are intuitive for geometry, radians are absolutely essential for calculus and physics because they link angle measure directly to the physical dimensions of a circle. A radian is fundamentally defined by the relationship between the arc length and the radius. Our first goal is to grasp this definition and understand why pi, the circumference constant, is so central to angular measurement.`,
       emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-advanced-trig-radians.mp3'
     },
     display: {
-      content: `### Understanding Radian Measure
+      content: `# Introduction to Radian Measure
 
-If a circle has a radius (\$r\$) of 1 unit, what is the radian measure of the central angle (\$\\theta\$) that subtends an arc length (\$s\$) of 1 unit?`,
+In advanced mathematics, **radian measure** is the standard unit for angles. Unlike degrees, which are arbitrary divisions (360 parts), radians are based on the geometric properties of the circle itself.
+
+A **radian** is defined as the measure of a central angle \$\\theta\$ that subtends an arc length (\$s\$) equal to the radius (\$r\$) of the circle. This leads to the fundamental relationship between arc length, radius, and angle:
+
+\$\$s = r\\theta \\quad (\\text{where } \\theta \\text{ is in radians})\$\$
+
+This definition is critical because it simplifies many formulas in calculus and physics. Since the circumference of a circle is \$C = 2\\pi r\$, a full rotation (\$360°\$) corresponds to an arc length of \$2\\pi r\$. If we set \$r=1\$, then \$360° = 2\\pi\$ radians.
+
+***
+
+### First Problem: Understanding Radian Measure
+
+Based on the definition of a radian, if a central angle \$\\theta\$ in a circle with radius \$r=5\$ centimeters intercepts an arc length \$s=5\$ centimeters, what is the measure of \$\\theta\$ in radians?`,
       showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "unitCircle",
+          "parameters": {
+                "angle": 57.3,
+                "showPoint": true,
+                "showAngleArc": true,
+                "angleMode": "radians"
+          },
+          "caption": "Visualization showing approximately 1 radian (≈ 57.3°), where the arc length equals the radius."
     }
   },
   /**
@@ -3190,80 +3361,153 @@ If a circle has a radius (\$r\$) of 1 unit, what is the radian measure of the ce
    */
   's4-math-vectors-fundamentals': {
     speech: {
-      text: `Greetings! We are starting our journey into vectors by laying the groundwork. Understanding the difference between a simple number and a quantity that has direction is crucial. Let us make sure we have the basic definitions down.`,
-      emotion: 'warm',
+      text: `Welcome to Vector Fundamentals! Imagine trying to describe the wind or the movement of an airplane. You need more than just speed; you need direction. This is the essence of vectors. Unlike scalars, which only have magnitude, vectors have both magnitude and direction. In this first section, we will learn to distinguish between these two types of quantities and understand what makes two vectors equal or opposite. This foundation is crucial for mastering geometric operations like addition and subtraction later on. Let's start by looking at some basic vector representations.`,
+      emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-fundamentals.mp3'
     },
     display: {
-      content: `### Scalars and Vectors
+      content: `# Introduction to Vector Fundamentals
 
-Which of the following physical quantities is a **vector** (requires both magnitude and direction)?
+Vectors are mathematical objects used to represent quantities that have both **magnitude (size)** and **direction**, such as force, velocity, and displacement. This distinguishes them from **scalars**, which only possess magnitude (like temperature, speed, or mass).
 
-1. Mass
-2. Speed
-3. Velocity
-4. Temperature`,
+In this module, we start by understanding the geometric nature of vectors. Two vectors are considered **equal** if they have the same magnitude and the same direction, regardless of where they start. A vector is the **negative** of another if they have the same magnitude but point in the exact opposite direction.
+
+Mastering this distinction—scalars versus vectors—is the essential first step before we dive into geometric operations like the Triangle and Parallelogram Laws of addition. Let's begin by identifying vector properties visually.
+
+---
+
+### First Problem: Scalars and Vectors
+
+Observe the vectors **a**, **b**, **c**, and **d** in the diagram below.
+
+Which vector is equal to **a**?`,
       showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "vectorDiagram",
+          "parameters": {
+                "vectors": "[{\"label\":\"a\",\"x\":3,\"y\":2},{\"label\":\"b\",\"x\":-3,\"y\":-2},{\"label\":\"c\",\"x\":2,\"y\":3},{\"label\":\"d\",\"x\":3,\"y\":2}]",
+                "operation": "none",
+                "resultant": false,
+                "showComponents": false,
+                "gridSize": 5
+          },
+          "caption": "Four vectors shown on a grid."
     }
   },
 
   's4-math-vectors-component-form': {
     speech: {
-      text: `Hi there! Vectors are fantastic tools, but drawing them all the time can be slow. This section teaches us how to move vectors onto the coordinate plane, transforming visual geometry into straightforward algebra. Ready to see how components simplify everything?`,
+      text: `Hello there! We are moving from the visual world of geometric vectors to the powerful realm of algebra. While drawing vectors helps us understand direction, calculating with them requires a coordinate system. This is where component form comes in. By breaking a vector down into its horizontal and vertical movements, we can perform complex operations easily using simple arithmetic. This section introduces the language of component notation, which is the cornerstone of advanced vector algebra.`,
       emotion: 'encouraging',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-component-form.mp3'
     },
     display: {
-      content: `### Vectors in Component Form
+      content: `# Component Form and Algebraic Methods
 
-Vector **v** has an initial point P(2, 5) and a terminal point Q(8, 1).
+To move beyond drawing and measuring, we use **component form** to represent vectors algebraically. Any vector \$\\mathbf{v}\$ can be uniquely defined by how far it moves horizontally (the \$x\$-component) and how far it moves vertically (the \$y\$-component).
 
-Express **v** in component form \$\\langle a, b \\rangle\$.`,
+We typically use two notations for components: the **column vector** \$\\begin{pmatrix} x \\ y \\end{pmatrix}\$ or the **unit vector notation** \$x\\mathbf{i} + y\\mathbf{j}\$, where \$\\mathbf{i}\$ is the unit vector in the \$x\$-direction and \$\\mathbf{j}\$ is the unit vector in the \$y\$-direction.
+
+This algebraic representation allows us to easily add, subtract, and scale vectors using simple arithmetic rules, making calculations fast and precise. Let's practice writing vectors in this new algebraic language.
+
+---
+
+### First Problem: Vectors in Component Form
+
+Given two points, \$A=(2, 1)\$ and \$B=(5, 7)\$, find the component form of the displacement vector \$\\vec{AB}\$. Express your answer using column notation.`,
       showAfterSpeech: true
     }
   },
 
   's4-math-vectors-magnitude-ops': {
     speech: {
-      text: `Welcome! If a vector tells you where to go, the magnitude tells you how far! We are tackling the essential skill of finding the length of any vector, which is just a quick application of the distance formula. Let us calculate some distance!`,
+      text: `Hi! We've learned that a vector has both direction and magnitude. Now, let's focus on calculating that magnitude, which is simply the length or size of the vector. Whether you're calculating the speed of an object or the strength of a force, finding the magnitude is essential. Since vectors are defined by their components, we can use one of the most famous theorems in mathematics to find its length. Let's dive into the Pythagorean connection!`,
       emotion: 'warm',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-magnitude-ops.mp3'
     },
     display: {
-      content: `### The Magnitude of a Vector
+      content: `# Magnitude of a Vector
 
-Find the magnitude of the vector **u** = \$\\langle -3, 4 \\rangle\$.`,
+The **magnitude** of a vector, often denoted by \$|\\mathbf{v}|\$ or \$||\\mathbf{v}||\$, represents its length or size. In physics, this might be the speed (for a velocity vector) or the force (for a force vector). Since a vector \$\\mathbf{v} = \\begin{pmatrix} x \\ y \\end{pmatrix}\$ forms the hypotenuse of a right-angled triangle with sides \$x\$ and \$y\$, we can calculate its magnitude using the Pythagorean theorem:
+
+\$\$||\\mathbf{v}|| = \\sqrt{x^2 + y^2}\$\$
+
+Understanding magnitude also leads us to the concept of a **unit vector**, which is a vector with a magnitude of exactly 1. Unit vectors are vital because they define direction without affecting size. Let's start by calculating the length of a simple vector.
+
+---
+
+### First Problem: The Magnitude of a Vector
+
+Calculate the magnitude of the vector \$\\mathbf{a} = 5\\mathbf{i} - 12\\mathbf{j}\$.`,
       showAfterSpeech: true
     }
   },
 
   's4-math-vectors-parallelism': {
     speech: {
-      text: `Hey! Think of vectors as paths. When are two paths running perfectly alongside each other, even if one is longer or shorter? That is what parallelism is all about! We will explore the simple algebraic condition that defines this key geometric relationship.`,
-      emotion: 'warm',
+      text: `Greetings, future geometric proof master! In this module, we tackle parallelism, a concept that allows us to prove geometric relationships using pure vector algebra. How do you know if two paths are running side-by-side without ever intersecting? In vector language, two vectors are parallel if one is simply a scaled version of the other. This powerful idea is key to solving advanced geometry problems and proving collinearity. Let's unlock the scalar multiple condition!`,
+      emotion: 'supportive',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-parallelism.mp3'
     },
     display: {
-      content: `### Parallelism
+      content: `# Parallelism and Geometric Applications
 
-Determine if the vectors **a** = \$\\langle 6, -2 \\rangle\$ and **b** = \$\\langle -18, 6 \\rangle\$ are parallel.`,
+Two non-zero vectors, \$\\mathbf{a}\$ and \$\\mathbf{b}\$, are **parallel** if and only if one is a scalar multiple of the other. Mathematically, this means:
+
+\$\$\\mathbf{a} = k\\mathbf{b}\$\$
+
+where \$k\$ is a non-zero scalar (a real number). If \$k\$ is positive, the vectors point in the same direction; if \$k\$ is negative, they point in opposite directions.
+
+This condition is fundamental in advanced vector geometry, allowing us to prove that lines are parallel or that three points are collinear (lie on the same straight line) without relying on visual inspection or complex coordinate geometry.
+
+---
+
+### First Problem: Parallelism
+
+Determine whether the vector \$\\mathbf{p} = \\begin{pmatrix} 6 \\ 9 \\end{pmatrix}\$ is parallel to the vector \$\\mathbf{q} = \\begin{pmatrix} 2 \\ 3 \\end{pmatrix}\$. If they are parallel, find the scalar \$k\$ such that \$\\mathbf{p} = k\\mathbf{q}\$.`,
       showAfterSpeech: true
     }
   },
 
   's4-math-vectors-dot-product': {
     speech: {
-      text: `Hello! The dot product is one of the most powerful tools in vector math because it allows us to multiply two vectors and get a single, useful number, a scalar, back. This number unlocks concepts like angles and projections. Let us start with the calculation itself.`,
-      emotion: 'supportive',
+      text: `Hey, get ready for an exciting new operation! We've added and subtracted vectors, but how do we multiply them? We introduce the Scalar Product, also known as the Dot Product. This operation is unique because multiplying two vectors results in a scalar, a single number, not another vector. Why is this number so important? It tells us about the relationship between the vectors, especially their angle. Most critically, if the dot product is zero, the vectors are perfectly perpendicular! Let's calculate our first scalar product.`,
+      emotion: 'excited',
       preGeneratedAudioUrl: '/assets/audio/initial-greetings/s4-math-vectors-dot-product.mp3'
     },
     display: {
-      content: `### The Scalar (Dot) Product
+      content: `# The Scalar (Dot) Product
 
-Given vectors **u** = \$\\langle 5, 2 \\rangle\$ and **v** = \$\\langle -1, 3 \\rangle\$.
+The **Scalar Product**, or **Dot Product** (denoted \$\\mathbf{a} \\cdot \\mathbf{b}\$), is a type of vector multiplication that yields a scalar (a number). It measures the extent to which two vectors point in the same direction and is defined algebraically by multiplying corresponding components and summing the results:
 
-Calculate the dot product **u** \$\\cdot\$ **v**.`,
+\$\$\\mathbf{a} \\cdot \\mathbf{b} = a_x b_x + a_y b_y\$\$
+
+This operation is foundational for finding the angle between vectors and for testing perpendicularity. A key property is that if \$\\mathbf{a} \\cdot \\mathbf{b} = 0\$, then the vectors \$\\mathbf{a}\$ and \$\\mathbf{b}\$ are **perpendicular** (orthogonal).
+
+In this section, we will master the calculation of the dot product and use it to classify the angle between vectors.
+
+---
+
+### First Problem: The Scalar (Dot) Product
+
+Calculate the scalar product \$\\mathbf{a} \\cdot \\mathbf{b}\$ for the vectors \$\\mathbf{a} = \\begin{pmatrix} 4 \\ 1 \\end{pmatrix}\$ and \$\\mathbf{b} = \\begin{pmatrix} -2 \\ 5 \\end{pmatrix}\$.`,
       showAfterSpeech: true
+    },
+    mathTool: {
+          "toolName": "dotProduct",
+          "parameters": {
+                "vector1X": 4,
+                "vector1Y": 1,
+                "vector2X": -2,
+                "vector2Y": 5,
+                "label1": "a",
+                "label2": "b",
+                "showAngle": false,
+                "showDotProduct": true,
+                "showMagnitudes": false
+          },
+          "caption": "Visualizing vectors a and b for the dot product calculation."
     }
   },
 

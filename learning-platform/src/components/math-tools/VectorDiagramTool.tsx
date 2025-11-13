@@ -224,7 +224,6 @@ const VectorDiagramTool: React.FC<VectorDiagramToolProps> = ({
           y2={endY}
           stroke={color}
           strokeWidth="2.5"
-          markerEnd="url(#arrowhead)"
         />
         <polygon
           points={`${endX},${endY} ${arrowX1},${arrowY1} ${arrowX2},${arrowY2}`}
