@@ -37,7 +37,13 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({ progress, globalStreak, 
   };
 
   // Recent achievements (last 3) - safely handle undefined
-  const recentAchievements = progress.achievements ? progress.achievements.slice(-3).reverse() : [];
+  // Deduplicate by ID first (in case same achievement appears multiple times)
+  const uniqueAchievements = progress.achievements
+    ? Array.from(
+        new Map(progress.achievements.map(a => [a.id, a])).values()
+      )
+    : [];
+  const recentAchievements = uniqueAchievements.slice(-3).reverse();
   const totalTimeSpent = progress.totalTimeSpentSeconds || 0;
 
   return (
@@ -57,7 +63,7 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({ progress, globalStreak, 
               Level {currentLevel}
             </div>
             <div className="text-xs" style={{ color: theme.colors.textSecondary }}>
-              {totalXP} XP
+              Total: {totalXP} XP
             </div>
           </div>
           <div className="text-3xl">🎓</div>

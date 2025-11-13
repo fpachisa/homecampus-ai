@@ -2,16 +2,18 @@
  * Streak Tracking Service
  *
  * Manages daily streak tracking with fire streak system.
+ * CRITICAL: Uses LOCAL timezone for consistency with user's location.
  */
 
 import type { DailyStreak } from '../types/practice';
+import { getLocalDateString } from '../utils/dateUtils';
 
 // ============================================
 // DATE UTILITIES
 // ============================================
 
 const getDateString = (date: Date): string => {
-  return date.toISOString().split('T')[0]; // Returns YYYY-MM-DD
+  return getLocalDateString(date); // ✅ Uses LOCAL timezone, not UTC
 };
 
 const getTodayString = (): string => {

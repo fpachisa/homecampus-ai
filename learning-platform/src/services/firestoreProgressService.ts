@@ -46,6 +46,13 @@ import {
 // Import global streak service
 import { updateGlobalStreak } from './globalStreakService';
 
+// Import global stats aggregator
+import { aggregateGlobalStats } from './globalStatsAggregator';
+
+// Import daily activity and mastery services
+import { updateDailyActivity } from './dailyActivityService';
+import { recordMasteryEvent } from './masteryEventService';
+
 /**
  * Recursively remove undefined values from an object
  * Firestore doesn't allow undefined values - they must be null or omitted
@@ -133,6 +140,63 @@ export async function saveLearnProgress(
     batch.set(summaryRef, cleanedSummaryUpdate, { merge: true });
 
     await batch.commit();
+
+    // 3. Update daily activity stats (Learn mode)
+    // NOTE: sessionStats contains cumulative session totals, not deltas
+    // This works correctly when called at session end
+    try {
+      await updateDailyActivity(uid, {
+        mode: 'learn',
+        problemsSolved: conversation.sessionStats.correctAnswers,
+        problemsAttempted: conversation.sessionStats.problemsAttempted,
+        timeSeconds: conversation.sessionStats.totalTimeSpent,
+        xpEarned: 0, // XP is tracked in practice mode only
+        hintsUsed: conversation.sessionStats.hintsProvided,
+        solutionsViewed: conversation.sessionStats.solutionsViewed || 0
+      });
+    } catch (err) {
+      console.error('Failed to update daily activity:', err);
+      // Don't fail the entire save if daily activity update fails
+    }
+
+    // 4. Record mastery events for newly mastered sections
+    // Check if there are any sections that just became mastered in this session
+    // TODO: Track previously mastered sections to detect new ones
+    // For now, this will be handled when section mastery occurs in the UI
+
+    // 5. Aggregate global stats from BOTH learn AND practice modes
+    try {
+      const { aggregateGlobalStats } = await import('./globalStatsAggregator');
+      const globalStats = await aggregateGlobalStats(uid);
+
+      // Update user profile with AGGREGATED stats
+      const userProfileRef = doc(firestore, 'users', uid);
+      const gamificationUpdate = {
+        gamification: {
+          totalXP: globalStats.totalXP || 0,
+          currentLevel: globalStats.currentLevel || 1,
+          totalProblemsSolved: globalStats.totalProblemsSolved || 0,
+          totalProblemsAttempted: globalStats.totalProblemsAttempted || 0,
+          totalTimeSpentSeconds: globalStats.totalTimeSpentSeconds || 0,
+          totalAchievements: globalStats.totalAchievements || 0,
+          lastActive: new Date().toISOString(),
+          lastUpdated: new Date().toISOString()
+        }
+      };
+
+      const cleanedUpdate = stripUndefined(gamificationUpdate);
+      await setDoc(userProfileRef, cleanedUpdate, { merge: true });
+
+      console.log('📊 Global stats updated (Learn mode):', {
+        currentLevel: globalStats.currentLevel,
+        totalProblemsSolved: globalStats.totalProblemsSolved,
+        totalXP: globalStats.totalXP
+      });
+    } catch (err) {
+      console.error('Failed to update global stats:', err);
+      // Don't fail the entire save if stats update fails
+    }
+
   } catch (error) {
     // Simple retry logic (3 attempts)
     if (retryCount < 3) {
@@ -238,6 +302,7 @@ export function conversationStateToFirestore(
       problemsAttempted: state.sessionStats.problemsAttempted,
       correctAnswers: state.sessionStats.correctAnswers,
       hintsProvided: state.sessionStats.hintsProvided,
+      solutionsViewed: state.sessionStats.solutionsViewed || 0,
       startTime: Timestamp.fromDate(state.sessionStats.startTime),
       totalTimeSpent: Math.floor((Date.now() - state.sessionStats.startTime.getTime()) / 1000)
     },
@@ -290,7 +355,8 @@ export function conversationStateFromFirestore(
         problemsAttempted: conversation.sessionStats.problemsAttempted,
         correctAnswers: conversation.sessionStats.correctAnswers,
         hintsProvided: conversation.sessionStats.hintsProvided,
-        startTime: conversation.sessionStats.startTime.toDate()
+        solutionsViewed: conversation.sessionStats.solutionsViewed || 0,
+        startTime: new Date()  // Start fresh for current session
       },
       studentProfile: conversation.studentProfile
     },
@@ -383,22 +449,65 @@ export async function savePracticeProgress(
     const cleanedSummaryUpdate = stripUndefined(summaryUpdate);
     batch.set(summaryRef, cleanedSummaryUpdate, { merge: true });
 
-    // 3. Update user profile with global gamification stats (excluding streak)
-    const userProfileRef = doc(firestore, 'users', uid);
-    const gamificationUpdate = {
-      gamification: {
-        totalXP: progress.totalXP,
-        currentLevel: progress.currentLevel,
-        totalAchievements: progress.achievements?.length || 0,
-        lastUpdated: new Date().toISOString()
-      }
-    };
-
-    batch.set(userProfileRef, gamificationUpdate, { merge: true });
-
+    // 3. Commit the batch FIRST (so aggregation can read the saved data)
     await batch.commit();
 
-    // 4. Update global streak (separate from batch, happens after commit)
+    // 4. Aggregate global stats from ALL practice topics
+    try {
+      const globalStats = await aggregateGlobalStats(uid);
+
+      // Update user profile with AGGREGATED stats (not just this topic)
+      const userProfileRef = doc(firestore, 'users', uid);
+      const gamificationUpdate = {
+        gamification: {
+          totalXP: globalStats.totalXP || 0,                                    // ✅ Sum across ALL topics
+          currentLevel: globalStats.currentLevel || 1,                          // ✅ Calculated from total XP
+          totalProblemsSolved: globalStats.totalProblemsSolved || 0,            // ✅ Sum across ALL topics
+          totalProblemsAttempted: globalStats.totalProblemsAttempted || 0,      // ✅ Sum across ALL topics
+          totalTimeSpentSeconds: globalStats.totalTimeSpentSeconds || 0,        // ✅ Sum across ALL topics
+          totalAchievements: globalStats.totalAchievements || 0,                // ✅ Deduplicated count
+          lastActive: new Date().toISOString(),                                 // ✅ Track last practice time
+          lastUpdated: new Date().toISOString()
+        }
+      };
+
+      // Strip undefined values (Firestore doesn't allow them)
+      const cleanedUpdate = stripUndefined(gamificationUpdate);
+
+      await setDoc(userProfileRef, cleanedUpdate, { merge: true });
+
+      console.log('📊 Global stats updated:', {
+        totalXP: globalStats.totalXP,
+        currentLevel: globalStats.currentLevel,
+        totalProblemsSolved: globalStats.totalProblemsSolved
+      });
+    } catch (statsError) {
+      console.error('Error aggregating global stats:', statsError);
+      // Don't throw - stats aggregation failure shouldn't break progress save
+      // User will see stale global stats until next save succeeds
+    }
+
+    // 5. Update daily activity stats (Practice mode)
+    try {
+      // Calculate session stats
+      const sessionProblemsSolved = progress.totalProblemsCorrect; // Cumulative total
+      const sessionProblemsAttempted = progress.totalProblemsAttempted; // Cumulative total
+      const sessionTimeSeconds = progress.totalTimeSpentSeconds || 0;
+      const sessionXPEarned = progress.totalXP; // Cumulative total
+
+      await updateDailyActivity(uid, {
+        mode: 'practice',
+        problemsSolved: sessionProblemsSolved,
+        problemsAttempted: sessionProblemsAttempted,
+        timeSeconds: sessionTimeSeconds,
+        xpEarned: sessionXPEarned
+      });
+    } catch (activityError) {
+      console.error('Failed to update daily activity:', activityError);
+      // Don't fail the entire save if daily activity update fails
+    }
+
+    // 6. Update global streak (separate from batch, happens after commit)
     try {
       await updateGlobalStreak(uid);
       console.log('🔥 Global streak updated after practice');
@@ -560,4 +669,41 @@ export function pathProgressToFirestore(
     ),
     weeklyStats: pathProgress.weeklyStats
   };
+}
+
+/**
+ * Record Section Mastery Event
+ *
+ * Call this when a student masters a section in Learn Mode.
+ * Records the event for dashboard timeline.
+ *
+ * @param uid - User ID
+ * @param topicId - Parent topic ID (e.g., "s3-math-trigonometry")
+ * @param topicDisplayName - Human-readable topic name
+ * @param subtopicId - Full subtopic ID
+ * @param sectionNumber - Section number (1-based)
+ * @param sectionName - Section display name
+ */
+export async function recordSectionMastery(
+  uid: string,
+  topicId: string,
+  topicDisplayName: string,
+  subtopicId: string,
+  sectionNumber: number,
+  sectionName: string
+): Promise<void> {
+  try {
+    await recordMasteryEvent(uid, {
+      topicId,
+      topicDisplayName,
+      subtopicId,
+      sectionId: `section-${sectionNumber}`,
+      sectionName,
+      sectionNumber
+    });
+    console.log(`✅ Mastery event recorded: ${topicDisplayName} - ${sectionName}`);
+  } catch (error) {
+    console.error('Failed to record mastery event:', error);
+    // Don't throw - mastery event failure shouldn't break the session
+  }
 }

@@ -7,25 +7,28 @@
  * - This week's activity (problems, time, XP, trend)
  */
 
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import { useGamificationStats } from '../../hooks/useGamificationStats';
+import { useProgressSummary } from '../../hooks/useProgressSummary';
 import { achievementService } from '../../services/achievementService';
 import { StatCard } from './StatCard';
 
 export const HeroStatsBanner: React.FC = () => {
   const { theme } = useTheme();
+  const navigate = useNavigate();
   const { totalXP, currentLevel, currentStreak, longestStreak } = useGamificationStats();
+  const { weeklyProblems, weeklyTimeMinutes, weeklyXP, weekTrend } = useProgressSummary();
 
   // Calculate XP progress for current level
   const xpProgress = achievementService.getXPProgress(totalXP);
 
-  // TODO: Get weekly stats from PathProgress or ProgressSummary
-  // For now, using placeholder values
+  // Use real weekly stats from useProgressSummary (no more placeholders!)
   const weeklyStats = {
-    problemsSolved: 45,
-    timeSpent: 135, // minutes
-    xpEarned: 120,
-    trend: '+25%', // vs last week
+    problemsSolved: weeklyProblems,          // ✅ Real data
+    timeSpent: weeklyTimeMinutes,            // ✅ Real data (minutes)
+    xpEarned: weeklyXP,                      // ✅ Real data
+    trend: weekTrend,                        // ✅ Real trend (e.g., "+25%")
   };
 
   // Format time
@@ -36,6 +39,9 @@ export const HeroStatsBanner: React.FC = () => {
     return `${mins}m`;
   };
 
+  // Note: Component shows 0 values while isLoading=true, then updates with real data
+  // This prevents layout shift and provides instant feedback
+
   return (
     <div className="mb-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -44,7 +50,8 @@ export const HeroStatsBanner: React.FC = () => {
           icon="🎓"
           label="Level & XP"
           value={`Level ${currentLevel}`}
-          subtitle={`${totalXP} XP`}
+          subtitle={`Total: ${totalXP} XP`}
+          onClick={() => navigate('/stats')}
         >
           {/* XP Progress Bar */}
           <div className="mt-3">
@@ -82,6 +89,7 @@ export const HeroStatsBanner: React.FC = () => {
           label="Streak"
           value={`${currentStreak}-Day Streak`}
           subtitle={currentStreak > 0 ? 'Keep it going!' : 'Start your streak today!'}
+          onClick={() => navigate('/stats')}
         >
           <div
             className="text-xs mt-2"
@@ -101,6 +109,7 @@ export const HeroStatsBanner: React.FC = () => {
             value: weeklyStats.trend + ' vs last week',
             isPositive: true,
           }}
+          onClick={() => navigate('/stats')}
         >
           <div
             className="text-sm mt-2"

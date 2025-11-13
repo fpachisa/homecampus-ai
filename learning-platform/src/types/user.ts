@@ -84,6 +84,7 @@ export interface UserProfile {
   parentEmail?: string;        // Parent's email address
   parentInvitePending?: boolean; // True if parent invite has been sent
   parentLinked?: boolean;      // True if parent account is linked
+  parents?: string[];          // Array of parent UIDs (for security rules)
 
   pathProgress: {
     [pathId: string]: PathProgressData;

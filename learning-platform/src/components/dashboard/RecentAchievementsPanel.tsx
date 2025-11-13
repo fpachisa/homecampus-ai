@@ -25,7 +25,12 @@ export const RecentAchievementsPanel: React.FC<RecentAchievementsPanelProps> = (
   const { theme } = useTheme();
 
   // Get last 5 achievements, sorted by earnedAt descending
-  const recentAchievements = achievements
+  // Deduplicate by ID first (in case same achievement appears multiple times)
+  const uniqueAchievements = Array.from(
+    new Map(achievements.map(a => [a.id, a])).values()
+  );
+
+  const recentAchievements = uniqueAchievements
     .filter((a) => a.earnedAt)
     .sort((a, b) => {
       const dateA = a.earnedAt instanceof Date ? a.earnedAt : new Date(a.earnedAt!);

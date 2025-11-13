@@ -17,6 +17,7 @@ interface StatCardProps {
     isPositive: boolean; // Green or red
   };
   children?: React.ReactNode; // Optional custom content (e.g., progress bar)
+  onClick?: () => void; // Optional click handler
 }
 
 export const StatCard: React.FC<StatCardProps> = ({
@@ -26,17 +27,19 @@ export const StatCard: React.FC<StatCardProps> = ({
   subtitle,
   trend,
   children,
+  onClick,
 }) => {
   const { theme } = useTheme();
 
   return (
     <div
-      className="p-4 rounded-xl"
+      className={`p-4 rounded-xl ${onClick ? 'cursor-pointer transition-all hover:scale-105' : ''}`}
       style={{
         background: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,
         backdropFilter: theme.glass.backdrop,
       }}
+      onClick={onClick}
     >
       {/* Icon */}
       <div className="text-3xl mb-2">{icon}</div>

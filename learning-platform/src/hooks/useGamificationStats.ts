@@ -3,17 +3,23 @@
  *
  * Provides easy access to user's gamification data (XP, level, streak, achievements).
  *
- * PRIORITY:
- * 1. If pathProgress is provided (practice mode), read XP/level/achievements from it
- * 2. Streak is ALWAYS read from userProfile.gamification (global across all topics)
- * 3. Fall back to userProfile.gamification for all stats (non-practice mode)
+ * CRITICAL: ALWAYS reads from userProfile.gamification (single source of truth)
+ * - XP, Level, Streak, Achievements are GLOBAL across all topics
+ * - Updated via firestoreProgressService after every practice session
+ * - Real-time updates via Firestore listeners in AuthContext
  *
- * This ensures stats update in real-time during practice sessions while maintaining
- * backward compatibility for components outside practice mode.
+ * The pathProgress parameter is kept for backward compatibility but is IGNORED.
+ * All stats are aggregated globally across topics, not per-topic.
  */
 
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useActiveProfile } from '../contexts/ActiveProfileContext';
+import { doc, getDoc } from 'firebase/firestore';
+import { firestore } from '../services/firebase';
 import type { PathProgress } from '../types/practice';
+import type { UserProfile } from '../types/user';
 
 export interface GamificationStats {
   totalXP: number;
@@ -28,37 +34,56 @@ export interface GamificationStats {
 /**
  * Custom hook to access gamification stats
  *
- * @param pathProgress - Optional PathProgress from practice mode for real-time updates
+ * @param pathProgress - DEPRECATED: Kept for backward compatibility but ignored
  * @returns Gamification stats with loading state
  *
  * @example
  * ```tsx
- * // In practice mode (real-time updates)
- * const { totalXP, currentLevel } = useGamificationStats(pathProgress);
- *
- * // Outside practice mode (fallback to userProfile)
+ * // All contexts (homepage, dashboard, practice) show same global stats
  * const { totalXP, currentLevel } = useGamificationStats();
  * ```
  */
-export function useGamificationStats(pathProgress?: PathProgress | null): GamificationStats {
-  const { userProfile, loading } = useAuth();
+export function useGamificationStats(_pathProgress?: PathProgress | null): GamificationStats {
+  const { userProfile, loading: authLoading } = useAuth();
+  const { activeProfile } = useActiveProfile();
+  const location = useLocation();
+  const [childProfile, setChildProfile] = useState<UserProfile | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  // PRIORITY 1: Use PathProgress if provided (real-time data in practice mode)
-  // NOTE: Streak is ALWAYS read from userProfile.gamification (global across all topics)
-  if (pathProgress) {
-    return {
-      totalXP: pathProgress.totalXP || 0,
-      currentLevel: pathProgress.currentLevel || 1,
-      currentStreak: userProfile?.gamification?.currentStreak || 0,
-      longestStreak: userProfile?.gamification?.longestStreak || 0,
-      totalAchievements: pathProgress.achievements?.length || 0,
-      lastUpdated: pathProgress.lastUpdated?.toISOString(),
-      isLoading: false,
-    };
-  }
+  // Determine which profile to use
+  const isViewingChild = activeProfile && activeProfile.uid !== userProfile?.uid;
+  const effectiveProfile = isViewingChild ? childProfile : userProfile;
+
+  // Fetch child profile if viewing as child
+  useEffect(() => {
+    async function fetchChildProfile() {
+      if (!isViewingChild || !activeProfile?.uid) {
+        setChildProfile(null);
+        setLoading(authLoading);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        const profileDoc = await getDoc(doc(firestore, 'users', activeProfile.uid));
+        if (profileDoc.exists()) {
+          setChildProfile(profileDoc.data() as UserProfile);
+        } else {
+          setChildProfile(null);
+        }
+      } catch (error) {
+        console.error('Failed to fetch child profile for gamification stats:', error);
+        setChildProfile(null);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchChildProfile();
+  }, [activeProfile?.uid, isViewingChild, authLoading, location.pathname]); // Re-fetch when navigating
 
   // Return default stats if still loading or no profile
-  if (loading || !userProfile) {
+  if (loading || !effectiveProfile) {
     return {
       totalXP: 0,
       currentLevel: 1,
@@ -69,15 +94,16 @@ export function useGamificationStats(pathProgress?: PathProgress | null): Gamifi
     };
   }
 
-  // PRIORITY 2: Fall back to userProfile.gamification (non-practice mode)
-  if (userProfile.gamification) {
+  // ALWAYS read from effectiveProfile.gamification (single source of truth)
+  // Stats are aggregated globally across ALL topics via globalStatsAggregator
+  if (effectiveProfile.gamification) {
     return {
-      totalXP: userProfile.gamification.totalXP,
-      currentLevel: userProfile.gamification.currentLevel,
-      currentStreak: userProfile.gamification.currentStreak,
-      longestStreak: userProfile.gamification.longestStreak,
-      totalAchievements: userProfile.gamification.totalAchievements,
-      lastUpdated: userProfile.gamification.lastUpdated,
+      totalXP: effectiveProfile.gamification.totalXP || 0,                      // ✅ Global across all topics
+      currentLevel: effectiveProfile.gamification.currentLevel || 1,            // ✅ Calculated from total XP
+      currentStreak: effectiveProfile.gamification.currentStreak || 0,          // ✅ Global daily streak
+      longestStreak: effectiveProfile.gamification.longestStreak || 0,          // ✅ Global longest streak
+      totalAchievements: effectiveProfile.gamification.totalAchievements || 0,  // ✅ Deduplicated count
+      lastUpdated: effectiveProfile.gamification.lastUpdated,
       isLoading: false,
     };
   }

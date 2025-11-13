@@ -18,6 +18,7 @@ import { MathToolRenderer } from './MathToolRenderer';
 import { BackButton } from '../BackButton';
 import Avatar from '../Avatar';
 import { useAuth } from '../../contexts/AuthContext';
+import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 import { useAudioManager } from '../../hooks/useAudioManager';
 import MathText from '../MathText';
 import MathInputToolbar from '../MathInputToolbar';
@@ -99,20 +100,47 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   const [showMathToolbar, setShowMathToolbar] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Timer tracking for time spent per problem
+  const [problemStartTime, setProblemStartTime] = useState<Date>(new Date());
+
   // Mobile detection for responsive scratch pad
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   // Audio manager for Avatar TTS
   const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText } = useAudioManager();
 
-  // Auth
+  // Auth and Profile
   const { user } = useAuth();
+  const { activeProfile } = useActiveProfile();
+
+  // Compute effective UID: use activeProfile's UID if viewing as child, otherwise user's UID
+  // This ensures progress saves to the correct user document (Netflix profiles or linked children)
+  const effectiveUid = activeProfile?.uid || user?.uid;
 
   // Detect window resize for responsive layout
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Flush pending saves on page unload to prevent data loss
+  useEffect(() => {
+    const handleBeforeUnload = (_e: BeforeUnloadEvent) => {
+      // Flush any pending debounced saves immediately
+      pathProgressService.flushPendingSaves();
+
+      // Note: We don't prevent navigation, just ensure data is saved
+      // The browser might wait for the flush to complete
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      // Also flush on component unmount (e.g., navigation within app)
+      pathProgressService.flushPendingSaves();
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, []);
 
   // Handle math symbol insertion at cursor position
@@ -452,6 +480,9 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
       // If correct or last attempt, record for progress
       if (result.isCorrect || updatedProblemSession.attemptCount >= 3) {
+        // Calculate time spent on this problem
+        const timeSpent = Math.floor((new Date().getTime() - problemStartTime.getTime()) / 1000);
+
         const attempt: ProblemAttempt = {
           problemId: currentProblem.id,
           nodeId: node.id,
@@ -459,7 +490,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
           isCorrect: result.isCorrect,
           hintsUsed: updatedProblemSession.attemptCount - 1,
           attemptedAt: new Date(),
-          timeSpentSeconds: 0,
+          timeSpentSeconds: timeSpent,  // ✅ NOW TRACKS ACTUAL TIME
         };
 
         const newAttempts = [...session.attempts, attempt];
@@ -497,14 +528,18 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
             result.isCorrect,
             allNodes,
             isFirstTry,
-            user?.uid,
+            effectiveUid,
             category
           );
+
+          // Accumulate time spent to total (using timeSpent from above)
+          pathProgress.totalTimeSpentSeconds = (pathProgress.totalTimeSpentSeconds || 0) + timeSpent;
+          console.log(`⏱️ Time spent on this problem: ${timeSpent}s (Total: ${pathProgress.totalTimeSpentSeconds}s)`);
 
           // Check if node is complete and mark it
           const nodeProgress = pathProgress.nodes[node.id];
           if (nodeProgress && nodeProgress.problemsAttempted >= node.problemsRequired) {
-            pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes, user?.uid, category);
+            pathProgressService.completeUnifiedNode(pathProgress, node.id, allNodes, effectiveUid, category);
             console.log(`✅ Node completed! (${nodeProgress.problemsAttempted}/${node.problemsRequired})`);
           }
 
@@ -619,6 +654,10 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
         },
       }));
       setStudentAnswer('');
+
+      // Reset timer for next problem
+      setProblemStartTime(new Date());
+      console.log('⏱️ Timer reset for next problem');
       setSolution(null);
 
       // Save progress with updated problem sessions
@@ -669,6 +708,10 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
     setStudentAnswer('');
     setSolution(null);
 
+    // Reset timer when navigating to different problem
+    setProblemStartTime(new Date());
+    console.log('⏱️ Timer reset for navigated problem');
+
     // Save to localStorage
     saveSessionToStorage({
       nodeId: node.id,
@@ -717,7 +760,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
       console.log('✓ Progress saved to unified system');
 
       // Also save to Firestore
-      await saveProgressToFirestore(pathProgress, allNodes, user?.uid);
+      await saveProgressToFirestore(pathProgress, allNodes, effectiveUid);
     } else {
       console.error('❌ No unified progress found!');
     }

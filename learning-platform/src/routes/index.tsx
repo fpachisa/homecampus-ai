@@ -12,6 +12,7 @@ const SettingsPage = lazy(() => import('../pages/SettingsPage'));
 const ParentDashboard = lazy(() => import('../components/parent/ParentDashboard'));
 const ErrorBoundary = lazy(() => import('../components/ErrorBoundary'));
 const GreetingsViewer = lazy(() => import('../pages/GreetingsViewer'));
+const StudentStatsDashboard = lazy(() => import('../components/dashboard/stats/StudentStatsDashboard').then(module => ({ default: module.StudentStatsDashboard })));
 
 // Lazy load sub-routers for better code splitting
 const LearnRouter = lazy(() => import('./LearnRouter'));
@@ -181,6 +182,16 @@ export const router = createBrowserRouter([
       <RootLayout>
         <ProtectedRoute>
           <SettingsPage />
+        </ProtectedRoute>
+      </RootLayout>
+    ),
+  },
+  {
+    path: '/stats',
+    element: (
+      <RootLayout>
+        <ProtectedRoute>
+          <StudentStatsDashboard />
         </ProtectedRoute>
       </RootLayout>
     ),

@@ -15,6 +15,7 @@ import type {
 import { streakService } from './streakService';
 import { achievementService } from './achievementService';
 import { savePracticeProgress, pathProgressToFirestore } from './firestoreProgressService';
+import { getLocalDateString } from '../utils/dateUtils';
 
 class PathProgressService {
   private readonly STORAGE_KEY_PREFIX = 'practice_path_state_';
@@ -22,6 +23,13 @@ class PathProgressService {
 
   // Debounce timer for Firestore saves
   private saveTimers: Map<string, NodeJS.Timeout> = new Map();
+  // Store pending save data so we can flush them on page unload
+  private pendingSaves: Map<string, {
+    uid: string;
+    category: string;
+    pathProgress: PathProgress;
+    allNodes: PathNode[];
+  }> = new Map();
   private readonly SAVE_DEBOUNCE_MS = 500; // Reduced from 2000ms for faster persistence
 
   /**
@@ -504,6 +512,9 @@ class PathProgressService {
       clearTimeout(this.saveTimers.get(key)!);
     }
 
+    // Store the pending save data (so we can flush on page unload)
+    this.pendingSaves.set(key, { uid, category, pathProgress, allNodes });
+
     // Set new timer
     const timer = setTimeout(async () => {
       try {
@@ -519,6 +530,7 @@ class PathProgressService {
         console.error('Failed to auto-save progress to Firestore:', error);
       } finally {
         this.saveTimers.delete(key);
+        this.pendingSaves.delete(key);
       }
     }, this.SAVE_DEBOUNCE_MS);
 
@@ -532,14 +544,36 @@ class PathProgressService {
   async flushPendingSaves(): Promise<void> {
     const promises: Promise<void>[] = [];
 
-    // Clear all timers and execute saves immediately
-    for (const [_key, timer] of this.saveTimers.entries()) {
+    // Clear all timers (cancel debounce)
+    for (const [key, timer] of this.saveTimers.entries()) {
       clearTimeout(timer);
-      // Note: We can't execute the saves here without more context
-      // This is a best-effort flush; components should call explicit saves on unmount
+
+      // Execute the pending save immediately if data exists
+      const pendingData = this.pendingSaves.get(key);
+      if (pendingData) {
+        const { uid, category, pathProgress, allNodes } = pendingData;
+
+        const savePromise = (async () => {
+          try {
+            console.log(`🚀 Flushing pending save for ${category}...`);
+            const displayName = allNodes[0]?.title?.split(' - ')[0] || category;
+            const firestoreProgress = pathProgressToFirestore(pathProgress, category, displayName, allNodes);
+            await savePracticeProgress(uid, category, firestoreProgress);
+            console.log(`✅ Flushed save for ${category}`);
+          } catch (error) {
+            console.error(`❌ Failed to flush save for ${category}:`, error);
+          }
+        })();
+
+        promises.push(savePromise);
+      }
     }
 
+    // Clear all maps
     this.saveTimers.clear();
+    this.pendingSaves.clear();
+
+    // Wait for all saves to complete
     await Promise.all(promises);
   }
 
@@ -694,12 +728,10 @@ class PathProgressService {
 
   /**
    * Helper to get local date string without timezone conversion
+   * NOTE: Now uses centralized dateUtils for consistency
    */
   private getLocalDateString(date: Date = new Date()): string {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    return getLocalDateString(date);
   }
 
   /**

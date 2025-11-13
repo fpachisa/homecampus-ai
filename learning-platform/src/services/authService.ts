@@ -159,6 +159,7 @@ class AuthService {
       profileCompleted: false, // Marks that setup is needed
       accountType: accountType || 'student', // Use URL param or default to student
       pathProgress: {},
+      parents: [], // Initialize empty parents array (populated when parent links via invite)
       settings: {
         ttsSpeaker: 'callirrhoe',
         theme: 'dark',
@@ -288,6 +289,14 @@ class AuthService {
       const children: Array<{uid: string; email: string; displayName: string; grade: string; lastActivityAt?: string}> = [];
       snapshot.forEach((doc) => {
         const data = doc.data();
+
+        // Filter out Netflix-style profiles (type: 'child-profile')
+        // They're already shown via childProfiles[] array to avoid duplicates
+        if (data.type === 'child-profile') {
+          console.log('[AuthService] Skipping Netflix profile in linked children:', data.childUid);
+          return;
+        }
+
         children.push({
           uid: data.childUid,
           email: data.email,
@@ -297,7 +306,7 @@ class AuthService {
         });
       });
 
-      console.log(`[AuthService] Fetched ${children.length} linked children from subcollection`);
+      console.log(`[AuthService] Fetched ${children.length} email-based linked children from subcollection (Netflix profiles excluded)`);
       return children;
     } catch (error) {
       console.error('Error fetching linked children:', error);
@@ -768,15 +777,25 @@ class AuthService {
 
       // Update child's own profile (child has permission to update their own profile)
       try {
+        // Get current parents array
+        const childProfile = await this.getUserProfile(childUid);
+        const currentParents = childProfile?.parents || [];
+
+        // Add parent to parents array if not already present
+        if (!currentParents.includes(parentUid)) {
+          currentParents.push(parentUid);
+        }
+
         await this.updateUserProfile(childUid, {
           parentUid: parentUid,
           parentLinked: true,
+          parents: currentParents, // Update parents array for security rules
           displayName: inviteData.childInfo.displayName,
           gradeLevel: inviteData.childInfo.gradeLevel,
           accountType: 'student',
           profileCompleted: true,
         });
-        console.log('[AuthService] Updated child profile with parent link');
+        console.log('[AuthService] Updated child profile with parent link and parents array');
       } catch (error) {
         console.warn('[AuthService] Could not update child profile fields (non-critical):', error);
       }
@@ -842,12 +861,13 @@ class AuthService {
         throw new Error('Parent profile not found');
       }
 
-      // Generate unique profile ID
+      // Generate unique profile ID (serves as pseudo-UID)
       const profileId = `profile_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
 
       const childProfiles = parentProfile.childProfiles || [];
+      const timestamp = new Date().toISOString();
 
-      // Create new child profile
+      // Create new child profile entry for parent's array
       const newChildProfile = {
         profileId,
         displayName: childInfo.displayName,
@@ -858,16 +878,94 @@ class AuthService {
           theme: 'light' as const,
           audioEnabled: true,
         },
-        createdAt: new Date().toISOString(),
+        createdAt: timestamp,
       };
 
       childProfiles.push(newChildProfile);
 
-      // Update parent profile
+      // ==============================================================
+      // SHADOW DOCUMENT CREATION (Option B Implementation)
+      // ==============================================================
+      // Create a full user document for the child profile to enable:
+      // - Progress tracking (learn/practice subcollections)
+      // - Stats and analytics (progressSummaries)
+      // - Gamification (XP, levels, streaks)
+      // - Settings management
+      //
+      // Authentication: Parent's Firebase Auth token is used
+      // Data Storage: Child's pseudo-UID (profileId)
+      // Security: Parent has access via 'parents' array + subcollections
+      // ==============================================================
+
+      // 1. Create shadow user document
+      const shadowUserDoc = {
+        uid: profileId,
+        displayName: childInfo.displayName,
+        gradeLevel: childInfo.gradeLevel,
+        email: null, // No email for Netflix-style profiles
+        photoURL: null,
+        accountType: 'child-profile' as const, // Distinguish from real students
+        isParent: false,
+        profileCompleted: true,
+        parentUid: parentUid, // Link to parent
+        parents: [parentUid], // For security rules - CRITICAL!
+        parentLinked: true,
+        createdAt: timestamp,
+        lastLogin: timestamp,
+        pathProgress: {},
+        settings: {
+          ttsSpeaker: 'callirrhoe',
+          theme: 'light',
+          audioEnabled: true,
+        },
+        // Initialize gamification stats
+        gamification: {
+          totalXP: 0,
+          currentLevel: 1,
+          dailyStreak: {
+            currentStreak: 0,
+            longestStreak: 0,
+            lastActivityDate: null,
+          },
+        },
+      };
+
+      await setDoc(doc(firestore, 'users', profileId), shadowUserDoc);
+      console.log('✅ Created shadow user document:', profileId);
+
+      // 2. Create parent-child relationship subcollections (for security rules)
+      await setDoc(doc(firestore, `users/${parentUid}/children`, profileId), {
+        childUid: profileId,
+        displayName: childInfo.displayName,
+        gradeLevel: childInfo.gradeLevel,
+        type: 'child-profile', // vs 'linked-child'
+        email: null,
+        linkedAt: serverTimestamp(),
+      });
+      console.log('✅ Created parent→child subcollection entry');
+
+      await setDoc(doc(firestore, `users/${profileId}/parents`, parentUid), {
+        parentUid: parentUid,
+        linkedAt: serverTimestamp(),
+      });
+      console.log('✅ Created child→parent subcollection entry');
+
+      // 3. Create empty progress summary (required for parent dashboard analytics)
+      await setDoc(doc(firestore, 'progressSummaries', profileId), {
+        learnSubtopics: {},
+        practiceTopics: {},
+        recentActivity: [],
+        lastUpdated: serverTimestamp(),
+      });
+      console.log('✅ Created progress summary document');
+
+      // 4. Update parent profile with child entry (for UI compatibility)
       await this.updateUserProfile(parentUid, {
         childProfiles,
       });
+      console.log('✅ Updated parent profile with child entry');
 
+      console.log('🎉 Netflix-style child profile created successfully:', profileId);
       return profileId;
     } catch (error) {
       console.error('Error adding child profile:', error);

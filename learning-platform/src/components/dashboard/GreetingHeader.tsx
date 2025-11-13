@@ -7,6 +7,7 @@
  */
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 import { useGamificationStats } from '../../hooks/useGamificationStats';
@@ -15,6 +16,7 @@ import { achievementService } from '../../services/achievementService';
 
 export const GreetingHeader: React.FC = () => {
   const { theme } = useTheme();
+  const navigate = useNavigate();
   const { activeProfile } = useActiveProfile();
   const { currentLevel, totalXP, currentStreak, longestStreak } = useGamificationStats();
   const progressSummary = useProgressSummary();
@@ -54,13 +56,14 @@ export const GreetingHeader: React.FC = () => {
         <div className="flex items-center gap-3">
           {/* Level */}
           <div
-            className="relative px-4 py-2 rounded-full flex items-center gap-2 cursor-help transition-all"
+            className="relative px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer transition-all hover:scale-105"
             style={{
               backgroundColor: theme.colors.interactive,
               border: `1px solid ${hoveredStat === 'level' ? theme.colors.brand : theme.colors.border}`,
             }}
             onMouseEnter={() => setHoveredStat('level')}
             onMouseLeave={() => setHoveredStat(null)}
+            onClick={() => navigate('/stats')}
           >
             <span className="text-xl">🎓</span>
             <div className="text-sm">
@@ -102,13 +105,14 @@ export const GreetingHeader: React.FC = () => {
           {/* Streak */}
           {currentStreak > 0 && (
             <div
-              className="relative px-4 py-2 rounded-full flex items-center gap-2 cursor-help transition-all"
+              className="relative px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer transition-all hover:scale-105"
               style={{
                 backgroundColor: theme.colors.interactive,
                 border: `1px solid ${hoveredStat === 'streak' ? theme.colors.brand : theme.colors.border}`,
               }}
               onMouseEnter={() => setHoveredStat('streak')}
               onMouseLeave={() => setHoveredStat(null)}
+              onClick={() => navigate('/stats')}
             >
               <span className="text-xl">🔥</span>
               <div className="text-sm">
@@ -147,13 +151,14 @@ export const GreetingHeader: React.FC = () => {
 
           {/* Weekly Stats */}
           <div
-            className="relative px-4 py-2 rounded-full flex items-center gap-2 cursor-help transition-all"
+            className="relative px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer transition-all hover:scale-105"
             style={{
               backgroundColor: theme.colors.interactive,
               border: `1px solid ${hoveredStat === 'weekly' ? theme.colors.brand : theme.colors.border}`,
             }}
             onMouseEnter={() => setHoveredStat('weekly')}
             onMouseLeave={() => setHoveredStat(null)}
+            onClick={() => navigate('/stats')}
           >
             <span className="text-xl">📊</span>
             <div className="text-sm">

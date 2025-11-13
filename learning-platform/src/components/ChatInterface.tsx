@@ -6,12 +6,14 @@ import SolutionPrompt from './SolutionPrompt';
 import FallbackAIService from '../services/fallbackAIService';
 import type { AIService } from '../services/aiService';
 import { useAuth } from '../contexts/AuthContext';
+import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { useTheme } from '../hooks/useTheme';
 import {
   saveLearnProgress,
   loadLearnProgress,
   conversationStateToFirestore,
-  conversationStateFromFirestore
+  conversationStateFromFirestore,
+  recordSectionMastery
 } from '../services/firestoreProgressService';
 import { useAudioManager } from '../hooks/useAudioManager';
 import { S3_MATH_TRIGONOMETRY } from '../prompt-library/subjects/mathematics/secondary/s3-trigonometry';
@@ -355,7 +357,12 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   onBackToTopics,
 }) => {
   const { user, signInWithGoogle } = useAuth();
+  const { activeProfile } = useActiveProfile();
   const { theme } = useTheme();
+
+  // Compute effective UID: use activeProfile's UID if viewing as child, otherwise user's UID
+  // This ensures progress saves to the correct user document (Netflix profiles or linked children)
+  const effectiveUid = activeProfile?.uid || user?.uid || '';
   const [state, setState] = useState<ConversationState>({
     messages: [],
     currentProblemType: 1,
@@ -363,6 +370,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
       problemsAttempted: 0,
       correctAnswers: 0,
       hintsProvided: 0,
+      solutionsViewed: 0,
       startTime: new Date()
     },
     studentProfile: {
@@ -468,8 +476,8 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
           sectionProgress
         );
 
-        await saveLearnProgress(user.uid, topicId, firestoreConv);
-        console.log('✅ Progress auto-saved to Firestore');
+        await saveLearnProgress(effectiveUid, topicId, firestoreConv);
+        console.log('✅ Progress auto-saved to Firestore for UID:', effectiveUid);
       } catch (error) {
         console.error('Failed to auto-save progress:', error);
       }
@@ -556,6 +564,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
         problemsAttempted: 0,
         correctAnswers: 0,
         hintsProvided: 0,
+        solutionsViewed: 0,
         startTime: new Date()
       },
       studentProfile: {
@@ -641,7 +650,7 @@ const scrollToBottom = () => {
     }
 
     try {
-      const savedConversation = await loadLearnProgress(user.uid, topicId);
+      const savedConversation = await loadLearnProgress(effectiveUid, topicId);
 
       if (!savedConversation || savedConversation.messages.length === 0) {
         // No saved data, start new conversation
@@ -1345,6 +1354,18 @@ const handleStudentSubmit = async (input: string) => {
           console.log('📊 Session-wide hints provided incremented');
         }
 
+        // STEP 2.4.2: Update session-wide stats for solutions viewed
+        if (preGenEvaluatorOutput.action === "GIVE_SOLUTION") {
+          setState(prev => ({
+            ...prev,
+            sessionStats: {
+              ...prev.sessionStats,
+              solutionsViewed: (prev.sessionStats.solutionsViewed || 0) + 1
+            }
+          }));
+          console.log('📊 Session-wide solutions viewed incremented');
+        }
+
         // STEP 2.5: Section progression
         // NOTE: For pre-generated questions, section completion is determined by the system
         // based on isLastQuestionInSection, not by AI mastery decisions.
@@ -1612,11 +1633,52 @@ const handleStudentSubmit = async (input: string) => {
         console.log('📊 Session-wide hints provided incremented');
       }
 
+      // STEP 2.4.2: Update session-wide stats for solutions viewed
+      if (evaluatorOutput.action === "GIVE_SOLUTION") {
+        setState(prev => ({
+          ...prev,
+          sessionStats: {
+            ...prev.sessionStats,
+            solutionsViewed: (prev.sessionStats.solutionsViewed || 0) + 1
+          }
+        }));
+        console.log('📊 Session-wide solutions viewed incremented');
+      }
+
       // STEP 2.5: Handle section mastery and progression
       if (evaluatorOutput.sectionMastered && currentSectionId && !sectionProgress.masteredSections.includes(currentSectionId)) {
         console.log(`✅ Section mastered: ${currentSectionId}`);
 
         const newMasteredSections = [...sectionProgress.masteredSections, currentSectionId];
+
+        // Record mastery event for dashboard timeline
+        if (user) {
+          const topicConfig = getTopicConfig(topicId);
+          const topicTitle = topicConfig?.displayName || topicId;
+          let sectionName = currentSectionId;
+          let sectionNumber = 1; // Default section number
+
+          if (topicConfig && 'progressionStructure' in topicConfig) {
+            const sections = (topicConfig as any).progressionStructure.sections;
+            const section = sections.find((s: any) => s.id === currentSectionId);
+            if (section) {
+              sectionName = section.name || section.title || currentSectionId;
+              sectionNumber = section.sectionNumber || 1;
+            }
+          }
+
+          // Record the mastery event (async, non-blocking)
+          // Note: topicId prop is actually the subtopicId (e.g., "s3-math-trigonometry-basic-ratios")
+          const actualTopicId = getPathIdFromSubtopicId(topicId); // Extract "s3-math-trigonometry"
+          recordSectionMastery(
+            effectiveUid,
+            actualTopicId,           // Topic ID: "s3-math-trigonometry"
+            topicTitle,              // Topic display name
+            topicId,                 // Subtopic ID: "s3-math-trigonometry-basic-ratios"
+            sectionNumber,
+            sectionName
+          ).catch(err => console.error('Failed to record mastery event:', err));
+        }
 
         // Get next section from topic config if advancing
         let newCurrentSection = currentSectionId;

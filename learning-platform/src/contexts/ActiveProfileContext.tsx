@@ -139,7 +139,7 @@ export const ActiveProfileProvider: React.FC<ActiveProfileProviderProps> = ({ ch
 
     setActiveProfile({
       type: 'child-profile',
-      uid: user.uid, // Parent's UID
+      uid: profileId, // ✅ FIXED: Use child's pseudo-UID, not parent's UID
       profileId,
       displayName,
       gradeLevel,

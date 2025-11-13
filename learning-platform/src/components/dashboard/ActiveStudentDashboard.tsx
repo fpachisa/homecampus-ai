@@ -107,8 +107,7 @@ export const ActiveStudentDashboard: React.FC = () => {
             className="text-lg font-bold mb-4 flex items-center gap-2"
             style={{ color: theme.colors.textPrimary }}
           >
-            <span>💡</span>
-            <span>Quick Actions</span>
+
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Streak Protection */}
@@ -172,7 +171,7 @@ export const ActiveStudentDashboard: React.FC = () => {
               style={{ color: theme.colors.textPrimary }}
             >
               <span>📚</span>
-              <span>Your Topics ({gradeLevel})</span>
+              <span>{gradeLevel}</span>
             </h2>
 
             {/* Mode Toggle */}

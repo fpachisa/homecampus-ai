@@ -37,6 +37,7 @@ export interface ConversationState {
     problemsAttempted: number;
     correctAnswers: number;
     hintsProvided: number;
+    solutionsViewed: number;
     startTime: Date;
   };
   studentProfile: {

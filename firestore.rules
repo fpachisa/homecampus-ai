@@ -13,9 +13,16 @@ service cloud.firestore {
     }
 
     function isParent(childId) {
-      return isAuthenticated() &&
+      // Check if parent's UID is in child's parents array (for child profiles)
+      let hasParentArray = isAuthenticated() &&
         exists(/databases/$(database)/documents/users/$(childId)) &&
         get(/databases/$(database)/documents/users/$(childId)).data.parents.hasAny([request.auth.uid]);
+
+      // OR check if child is in parent's children subcollection (for linked children)
+      let hasChildSubcollection = isAuthenticated() &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)/children/$(childId));
+
+      return hasParentArray || hasChildSubcollection;
     }
 
     function isAdmin() {
@@ -30,11 +37,26 @@ service cloud.firestore {
              request.resource.data.messages.size() < 1500; // Prevent abuse
     }
 
+    // Helper function to check if user is creating a child profile for themselves
+    function isCreatingChildProfile() {
+      return request.resource.data.accountType == 'child-profile' &&
+             request.resource.data.parents.hasAny([request.auth.uid]) &&
+             request.resource.data.parentUid == request.auth.uid;
+    }
+
     // User data - new hybrid collection structure
     match /users/{userId} {
       // Main user profile document
       allow read: if isOwner(userId) || isParent(userId);
-      allow write: if isOwner(userId);
+
+      // Allow create if owner OR if parent is creating a child profile
+      allow create: if isOwner(userId) || isCreatingChildProfile();
+
+      // Allow update if owner OR if parent (for updating child profile stats)
+      allow update: if isOwner(userId) || isParent(userId);
+
+      // Only owner can delete
+      allow delete: if isOwner(userId);
 
       // Parent-child relationship subcollections
       match /parents/{parentId} {
@@ -50,13 +72,27 @@ service cloud.firestore {
       // Learn mode conversations (subtopic level: users/{uid}/learn/{subtopicId})
       match /learn/{subtopicId} {
         allow read: if isOwner(userId) || isParent(userId);
-        allow write: if isOwner(userId) && validateProgressUpdate();
+        // Allow parent to write for child profiles
+        allow write: if (isOwner(userId) || isParent(userId)) && validateProgressUpdate();
       }
 
       // Practice mode progress (topic level: users/{uid}/practice/{topicId})
       match /practice/{topicId} {
         allow read: if isOwner(userId) || isParent(userId);
-        allow write: if isOwner(userId);
+        // Allow parent to write for child profiles
+        allow write: if isOwner(userId) || isParent(userId);
+      }
+
+      // Daily activity tracking (users/{uid}/dailyActivity/{date})
+      match /dailyActivity/{date} {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) || isParent(userId);
+      }
+
+      // Mastery events (users/{uid}/masteryEvents/{eventId})
+      match /masteryEvents/{eventId} {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow write: if isOwner(userId) || isParent(userId);
       }
     }
 
@@ -64,7 +100,12 @@ service cloud.firestore {
     // Top-level collection for valid 2-segment paths
     match /progressSummaries/{userId} {
       allow read: if isOwner(userId) || isParent(userId);
-      allow write: if isOwner(userId);
+
+      // Allow create/update if owner OR if parent (for updating child profile progress)
+      allow create, update: if isOwner(userId) || isParent(userId);
+
+      // Only owner can delete
+      allow delete: if isOwner(userId);
     }
 
     // Parent/Student invite links

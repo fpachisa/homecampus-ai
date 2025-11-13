@@ -134,6 +134,7 @@ export interface LearnConversation {
     problemsAttempted: number;
     correctAnswers: number;
     hintsProvided: number;
+    solutionsViewed: number;    // NEW: Track when student views full solutions
     startTime: Timestamp;
     totalTimeSpent: number;     // seconds
   };

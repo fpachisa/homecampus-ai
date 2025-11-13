@@ -5,11 +5,13 @@ import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 import { ChildCard } from './ChildCard';
 import { authService } from '../../services/authService';
 import type { LinkedChild } from '../../types/user';
+import { ParentDashboardV2 } from './v2';
 
 export const ParentDashboard: React.FC = () => {
   const { theme } = useTheme();
   const { user, userProfile } = useAuth();
   const { switchToChildProfile, switchToLinkedChild } = useActiveProfile();
+  const [useV2, setUseV2] = useState(true); // Toggle between V1 and V2
   const [pendingInvites, setPendingInvites] = useState<Array<{
     email: string;
     displayName: string;
@@ -47,8 +49,44 @@ export const ParentDashboard: React.FC = () => {
   const childProfiles = userProfile.childProfiles || [];
   const totalChildren = childProfiles.length + linkedChildren.length + pendingInvites.length;
 
+  // Use V2 dashboard by default
+  if (useV2) {
+    return (
+      <div>
+        {/* Toggle Button (for testing) */}
+        <div className="max-w-7xl mx-auto px-4 mb-4">
+          <button
+            onClick={() => setUseV2(false)}
+            className="text-sm px-3 py-1.5 rounded-lg"
+            style={{
+              backgroundColor: theme.colors.interactive,
+              color: theme.colors.textPrimary,
+            }}
+          >
+            Switch to Classic View
+          </button>
+        </div>
+        <ParentDashboardV2 />
+      </div>
+    );
+  }
+
+  // V1 Dashboard (Classic)
   return (
     <div className="max-w-7xl mx-auto">
+      {/* Toggle Button */}
+      <div className="mb-4">
+        <button
+          onClick={() => setUseV2(true)}
+          className="text-sm px-3 py-1.5 rounded-lg"
+          style={{
+            backgroundColor: theme.colors.brand,
+            color: '#ffffff',
+          }}
+        >
+          Try New Dashboard (V2)
+        </button>
+      </div>
       {/* Welcome Section */}
       <div className="mb-12">
         <h2 className="text-3xl font-bold mb-2" style={{ color: theme.colors.textPrimary }}>

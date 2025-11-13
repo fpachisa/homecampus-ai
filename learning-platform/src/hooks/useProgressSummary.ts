@@ -11,7 +11,9 @@
  */
 
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useActiveProfile } from '../contexts/ActiveProfileContext';
 import { getProgressSummary } from '../services/firestoreProgressService';
 import { loadPracticeProgress, listPracticeTopics } from '../services/firestoreProgressService';
 import type { ProgressSummary } from '../types/firestore';
@@ -61,6 +63,12 @@ export interface ProgressSummaryData {
 
 export function useProgressSummary(): ProgressSummaryData {
   const { userProfile } = useAuth();
+  const { activeProfile } = useActiveProfile();
+  const location = useLocation();
+
+  // Use effective UID: activeProfile UID if viewing as child, otherwise user's UID
+  const effectiveUid = activeProfile?.uid || userProfile?.uid;
+
   const [data, setData] = useState<ProgressSummaryData>({
     topics: [],
     lastAccessedTopic: undefined,
@@ -80,7 +88,7 @@ export function useProgressSummary(): ProgressSummaryData {
     let isMounted = true;
 
     async function fetchData() {
-      if (!userProfile?.uid) {
+      if (!effectiveUid) {
         if (isMounted) {
           setData(prev => ({ ...prev, isLoading: false }));
         }
@@ -88,8 +96,8 @@ export function useProgressSummary(): ProgressSummaryData {
       }
 
       try {
-        // Fetch progress summary from Firestore
-        const summary = await getProgressSummary(userProfile.uid);
+        // Fetch progress summary from Firestore (using effectiveUid for child profiles)
+        const summary = await getProgressSummary(effectiveUid);
 
         if (!isMounted) return;
 
@@ -102,9 +110,9 @@ export function useProgressSummary(): ProgressSummaryData {
         // Transform Firestore data to component format
         const topics = await transformTopicProgress(summary);
         const lastAccessed = findLastAccessedTopic(topics);
-        const weeklyData = await fetchWeeklyActivity(userProfile.uid);
+        const weeklyData = await fetchWeeklyActivity(effectiveUid);
         const weeklyStats = calculateWeeklyStats(weeklyData);
-        const achievements = await fetchRecentAchievements(userProfile.uid);
+        const achievements = await fetchRecentAchievements(effectiveUid);
 
         if (isMounted) {
           setData({
@@ -118,7 +126,7 @@ export function useProgressSummary(): ProgressSummaryData {
             dailyProblems: getTodayProblems(weeklyData),
             dailyGoal: 5,
             achievements,
-            totalAchievements: userProfile.gamification?.totalAchievements || 0,
+            totalAchievements: userProfile?.gamification?.totalAchievements || 0,
             isLoading: false,
           });
         }
@@ -135,7 +143,7 @@ export function useProgressSummary(): ProgressSummaryData {
     return () => {
       isMounted = false;
     };
-  }, [userProfile]);
+  }, [effectiveUid, location.pathname]); // Re-fetch when effective UID changes OR when navigating
 
   return data;
 }

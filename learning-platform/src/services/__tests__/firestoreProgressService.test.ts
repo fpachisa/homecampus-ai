@@ -41,6 +41,7 @@ describe('Firestore Progress Service - Unit Tests', () => {
       problemsAttempted: 0,
       correctAnswers: 0,
       hintsProvided: 0,
+      solutionsViewed: 0,
       startTime: new Date()
     },
     studentProfile: {

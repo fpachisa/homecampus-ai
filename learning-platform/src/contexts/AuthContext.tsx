@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { onAuthStateChanged, isSignInWithEmailLink } from 'firebase/auth';
 import type { User } from 'firebase/auth';
-import { auth } from '../services/firebase';
+import { doc, onSnapshot } from 'firebase/firestore';
+import { auth, firestore } from '../services/firebase';
 import { authService } from '../services/authService';
 import type { UserProfile } from '../types/user';
 
@@ -141,7 +142,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setUser(firebaseUser);
 
       if (firebaseUser) {
-        // Load user profile from Firestore
+        // Load user profile from Firestore (initial load)
         const profile = await authService.getUserProfile(firebaseUser.uid);
         setUserProfile(profile);
 
@@ -158,6 +159,24 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     return unsubscribe;
   }, []);
+
+  // Real-time listener for user profile changes (keeps gamification stats updated)
+  useEffect(() => {
+    if (!user?.uid) return;
+
+    const userRef = doc(firestore, 'users', user.uid);
+    const unsubscribe = onSnapshot(userRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const profileData = snapshot.data() as UserProfile;
+        setUserProfile(profileData);
+        console.log('🔄 User profile updated in real-time');
+      }
+    }, (error) => {
+      console.error('Error listening to profile changes:', error);
+    });
+
+    return unsubscribe;
+  }, [user?.uid]);
 
   // Check for email link sign-in on app load
   useEffect(() => {
