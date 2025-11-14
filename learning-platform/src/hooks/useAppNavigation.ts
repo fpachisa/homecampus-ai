@@ -135,5 +135,19 @@ export function useAppNavigation() {
       },
       [navigate]
     ),
+
+    /**
+     * Navigate to homework helper
+     */
+    goToHomeworkHelper: useCallback(() => {
+      navigate('/homework-helper');
+    }, [navigate]),
+
+    /**
+     * Navigate to stats dashboard
+     */
+    goToStats: useCallback(() => {
+      navigate('/stats');
+    }, [navigate]),
   };
 }

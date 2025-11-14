@@ -13,6 +13,7 @@ const ParentDashboard = lazy(() => import('../components/parent/ParentDashboard'
 const ErrorBoundary = lazy(() => import('../components/ErrorBoundary'));
 const GreetingsViewer = lazy(() => import('../pages/GreetingsViewer'));
 const StudentStatsDashboard = lazy(() => import('../components/dashboard/stats/StudentStatsDashboard').then(module => ({ default: module.StudentStatsDashboard })));
+const HomeworkHelperPage = lazy(() => import('../pages/HomeworkHelperPage'));
 
 // Lazy load sub-routers for better code splitting
 const LearnRouter = lazy(() => import('./LearnRouter'));
@@ -192,6 +193,16 @@ export const router = createBrowserRouter([
       <RootLayout>
         <ProtectedRoute>
           <StudentStatsDashboard />
+        </ProtectedRoute>
+      </RootLayout>
+    ),
+  },
+  {
+    path: '/homework-helper',
+    element: (
+      <RootLayout>
+        <ProtectedRoute>
+          <HomeworkHelperPage />
         </ProtectedRoute>
       </RootLayout>
     ),

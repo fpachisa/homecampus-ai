@@ -298,7 +298,6 @@ async function fetchWeeklyActivity(uid: string): Promise<{ thisWeek: DailyActivi
         continue;
       }
 
-      console.log(`📚 Topic ${topicId} sessionHistory:`, progress.sessionHistory);
 
       for (const session of progress.sessionHistory) {
         if (!allSessions[session.date]) {
@@ -347,13 +346,6 @@ async function fetchWeeklyActivity(uid: string): Promise<{ thisWeek: DailyActivi
       });
     }
 
-    console.log('📊 Weekly activity fetch result:', {
-      topicCount: topicIds.length,
-      allSessionDates: Object.keys(allSessions),
-      thisWeekTotal: thisWeek.reduce((sum, d) => sum + d.problemsSolved, 0),
-      lastWeekTotal: lastWeek.reduce((sum, d) => sum + d.problemsSolved, 0),
-    });
-
     return { thisWeek, lastWeek };
   } catch (error) {
     console.error('Failed to fetch weekly activity:', error);
@@ -378,10 +370,6 @@ function calculateWeeklyStats(weeklyData: DailyActivity[]): {
     { problemsSolved: 0, timeSpentSeconds: 0, xpEarned: 0 }
   );
 
-  console.log('📊 calculateWeeklyStats result:', {
-    input: weeklyData.map(d => ({ date: d.date.toISOString().split('T')[0], problems: d.problemsSolved })),
-    output: result,
-  });
 
   return result;
 }

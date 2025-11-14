@@ -27,7 +27,7 @@ export const ActiveStudentDashboard: React.FC = () => {
   const { theme } = useTheme();
   const { activeProfile } = useActiveProfile();
   const { currentStreak } = useGamificationStats();
-  const { goToPractice } = useAppNavigation();
+  const { goToPractice, goToHomeworkHelper } = useAppNavigation();
   const [learningMode, setLearningMode] = useState<LearningMode>('learn');
 
   // Get topics for student's grade
@@ -155,6 +155,19 @@ export const ActiveStudentDashboard: React.FC = () => {
             metadata={{
               time: '~15 min',
               xp: 50,
+            }}
+          />
+
+          {/* Homework Helper */}
+          <ActionCard
+            icon="📸"
+            title="Need help with homework?"
+            description="Upload your math problem and I'll guide you through solving it"
+            buttonLabel="Upload Problem"
+            buttonColor="#8B5CF6"
+            onAction={goToHomeworkHelper}
+            metadata={{
+              time: 'As needed',
             }}
           />
           </div>
