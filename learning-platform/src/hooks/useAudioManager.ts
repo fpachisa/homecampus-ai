@@ -22,6 +22,8 @@ interface UseAudioManagerReturn {
   currentSubtitle: string;
   avatarState: 'idle' | 'speaking' | 'listening';
   audioDuration: number;  // Duration of current audio in seconds
+  isAudioUnlocked: boolean; // iOS audio unlock state
+  unlockAudio: () => Promise<void>; // Unlock audio on iOS
   speakText: (text: string, emotion?: AudioQueueItem['emotion'], onComplete?: () => void) => Promise<void>;
   speakTextWithAudio: (text: string, audioUrl: string, emotion?: AudioQueueItem['emotion'], onComplete?: () => void) => Promise<void>;
   stopSpeaking: () => void;
@@ -35,10 +37,41 @@ export const useAudioManager = (): UseAudioManagerReturn => {
   const [avatarState, setAvatarState] = useState<'idle' | 'speaking' | 'listening'>('idle');
   const [playbackSpeed, setPlaybackSpeed] = useState(1.25);
   const [audioDuration, setAudioDuration] = useState(0);
+  const [isAudioUnlocked, setIsAudioUnlocked] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const queueRef = useRef<AudioQueueItem[]>([]);
   const isProcessingRef = useRef(false);
+
+  // iOS audio unlock - play silent audio on first user gesture
+  const unlockAudio = useCallback(async () => {
+    if (isAudioUnlocked) return;
+
+    try {
+      // Create silent audio to unlock iOS audio context
+      const silentAudio = new Audio('data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAADhADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA//////////////////////////////////////////////////////////////////8AAAAATGF2YzU4LjEzAAAAAAAAAAAAAAAAJAAAAAAAAAAAA4QfQ');
+
+      silentAudio.volume = 0.1;
+      await silentAudio.play();
+
+      setIsAudioUnlocked(true);
+      console.log('✅ Audio unlocked for iOS');
+
+      // Store in sessionStorage so we don't ask again
+      sessionStorage.setItem('audio_unlocked', 'true');
+    } catch (error) {
+      console.warn('⚠️ Failed to unlock audio:', error);
+      // Don't set isAudioUnlocked to true if it fails
+    }
+  }, [isAudioUnlocked]);
+
+  // Check if audio was already unlocked in this session
+  useEffect(() => {
+    const wasUnlocked = sessionStorage.getItem('audio_unlocked');
+    if (wasUnlocked === 'true') {
+      setIsAudioUnlocked(true);
+    }
+  }, []);
 
   // Process the audio queue
   const processQueue = useCallback(async () => {
@@ -256,6 +289,8 @@ export const useAudioManager = (): UseAudioManagerReturn => {
     currentSubtitle,
     avatarState,
     audioDuration,
+    isAudioUnlocked,
+    unlockAudio,
     speakText,
     speakTextWithAudio,
     stopSpeaking,

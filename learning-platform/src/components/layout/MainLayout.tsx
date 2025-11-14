@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { useTheme } from '../../hooks/useTheme';
+import { useReducedMotion } from '../../hooks/useReducedMotion';
 import LeftPanel from './LeftPanel';
 import CenterPanel from './CenterPanel';
 
@@ -24,6 +25,20 @@ export interface LayoutActions {
 
 const MainLayout: React.FC<MainLayoutProps> = () => {
   const { theme } = useTheme();
+  const prefersReducedMotion = useReducedMotion();
+
+  // Mobile detection with resize listener
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Layout state management
   const [layoutState, setLayoutState] = useState<LayoutState>({
@@ -50,11 +65,8 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
       setLayoutState(prev => ({ ...prev, leftPanelCollapsed: false, rightPanelCollapsed: false })),
   };
 
-  // Responsive breakpoints
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-
-  // Auto-collapse panels on mobile
-  React.useEffect(() => {
+  // Auto-collapse left panel on mobile
+  useEffect(() => {
     if (isMobile) {
       setLayoutState(prev => ({
         ...prev,
@@ -65,10 +77,11 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
 
   return (
     <div
-      className="flex h-screen overflow-hidden relative"
+      className="flex overflow-hidden relative"
       style={{
         background: theme.gradients.panel,
         color: theme.colors.textPrimary,
+        minHeight: '100dvh',
       }}
     >
       {/* Background texture/pattern for depth */}
@@ -79,19 +92,51 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
           pointerEvents: 'none',
         }}
       />
-      {/* Left Panel - Topics */}
-      <div
-        className="flex-shrink-0 transition-all duration-300 ease-in-out"
-        style={{
-          width: layoutState.leftPanelCollapsed ? 60 : layoutState.leftPanelWidth,
-        }}
-      >
-        <LeftPanel
-          isCollapsed={layoutState.leftPanelCollapsed}
-          width={layoutState.leftPanelWidth}
-          layoutActions={layoutActions}
-        />
-      </div>
+
+      {/* Desktop Left Panel - Topics */}
+      {!isMobile && (
+        <div
+          className="flex-shrink-0 transition-all duration-300 ease-in-out"
+          style={{
+            width: layoutState.leftPanelCollapsed ? 60 : layoutState.leftPanelWidth,
+          }}
+        >
+          <LeftPanel
+            isCollapsed={layoutState.leftPanelCollapsed}
+            width={layoutState.leftPanelWidth}
+            layoutActions={layoutActions}
+          />
+        </div>
+      )}
+
+      {/* Mobile Drawer - Left Panel */}
+      {isMobile && !layoutState.leftPanelCollapsed && (
+        <div className="fixed inset-0 z-50">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => layoutActions.collapseAllPanels()}
+            style={{
+              animation: prefersReducedMotion ? 'none' : 'fadeIn 0.3s ease-out',
+            }}
+          />
+          {/* Drawer */}
+          <div
+            className="absolute inset-y-0 left-0 w-[88%] max-w-sm shadow-xl pt-safe-t pb-safe-b"
+            style={{
+              backgroundColor: theme.colors.sidebar,
+              animation: prefersReducedMotion ? 'none' : 'slideInFromLeft 0.3s ease-out',
+              willChange: prefersReducedMotion ? 'auto' : 'transform',
+            }}
+          >
+            <LeftPanel
+              isCollapsed={false}
+              width={320}
+              layoutActions={layoutActions}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Resize Handle for Left Panel */}
       {!layoutState.leftPanelCollapsed && !isMobile && (
@@ -121,16 +166,8 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
 
       {/* Center Panel - Chat */}
       <div className="flex-1 flex flex-col min-w-0">
-        <CenterPanel layoutActions={layoutActions} layoutState={layoutState} />
+        <CenterPanel layoutActions={layoutActions} layoutState={layoutState} isMobile={isMobile} />
       </div>
-
-      {/* Mobile Overlay for Panels */}
-      {isMobile && !layoutState.leftPanelCollapsed && (
-        <div
-          className="fixed inset-0 bg-black/50 z-40"
-          onClick={() => layoutActions.collapseAllPanels()}
-        />
-      )}
     </div>
   );
 };

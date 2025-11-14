@@ -168,25 +168,25 @@ export const LandingPage: React.FC = () => {
       />
 
       {/* Header */}
-      <header className="relative z-10 px-8 py-6">
+      <header className="relative z-10 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 flex items-center justify-center">
-              <img src={logoSrc} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <img src={logoSrc} alt="Home Campus Logo" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold" style={{ color: theme.colors.textPrimary }}>
+              <h1 className="text-xl sm:text-2xl font-bold" style={{ color: theme.colors.textPrimary }}>
                 Home Campus
               </h1>
             </div>
           </div>
 
           {/* Sign In and Theme Toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Sign In Button */}
             <button
               onClick={goToLogin}
-              className="px-4 py-2 rounded-lg font-semibold transition-all duration-200"
+              className="px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base rounded-lg font-semibold transition-all duration-200"
               style={{
                 backgroundColor: theme.colors.brand,
                 color: '#ffffff',
@@ -236,24 +236,24 @@ export const LandingPage: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative z-10 px-8 py-8">
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Heading */}
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <h2
-              className="text-5xl md:text-4xl font-bold mb-4"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
               style={{ color: theme.colors.textPrimary }}
             >
               Smarter Maths Learning Starts Here
             </h2>
             <h3
-              className="text-2xl md:text-3xl mb-6"
+              className="text-xl sm:text-2xl lg:text-3xl mb-6"
               style={{ color: theme.colors.textAccent }}
             >
               With Your Personal AI Tutor
             </h3>
             <p
-              className="text-lg md:text-xl max-w-3xl mx-auto mb-8"
+              className="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto mb-8"
               style={{ color: theme.colors.textSecondary, lineHeight: '1.6' }}
             >
               Learn through guided conversations that build real understanding.
@@ -263,7 +263,7 @@ export const LandingPage: React.FC = () => {
             {/* CTA Button */}
             <button
               onClick={goToSignup}
-              className="px-12 py-4 rounded-xl text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-3 sm:px-10 sm:py-4 lg:px-12 rounded-xl text-base sm:text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105"
               style={{
                 background: theme.gradients.brand,
                 boxShadow: theme.shadows.lg,
@@ -281,7 +281,7 @@ export const LandingPage: React.FC = () => {
 
             {/* Supported Grades */}
             <p
-              className="mt-6 text-sm"
+              className="mt-4 sm:mt-6 text-sm"
               style={{ color: theme.colors.textMuted }}
             >
               Supporting Secondary 1 - 4 Mathematics
@@ -291,7 +291,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Problem-Solution Framework */}
-      <section className="relative z-10 px-8 py-8" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 sm:py-8" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-4"
@@ -369,7 +369,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Socratic Learning Showcase */}
-      <section className="relative z-10 px-8 py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-4"
@@ -608,7 +608,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Features */}
-      <section className="relative z-10 px-8 py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-4"
@@ -670,7 +670,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Social Proof */}
-      <section className="relative z-10 px-8 py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-12"
@@ -772,7 +772,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="relative z-10 px-8 py-16">
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="max-w-4xl mx-auto text-center">
           <h2
             className="text-3xl md:text-4xl font-bold mb-4"
@@ -816,7 +816,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 px-8 py-6 border-t" style={{ borderColor: theme.colors.border }}>
+      <footer className="relative z-10 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 border-t" style={{ borderColor: theme.colors.border }}>
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm" style={{ color: theme.colors.textMuted }}>
             © 2025 Home Campus - Personalized Learning Platform

@@ -17,36 +17,41 @@ const MathInputToolbar: React.FC<Props> = ({ onInsert, disabled = false, topicId
   const handleButtonClick = (insert: string) => {
     if (!disabled) {
       onInsert(insert);
+      // Haptic feedback on mobile (if supported)
+      if ('vibrate' in navigator) {
+        navigator.vibrate(10);
+      }
     }
   };
 
   return (
     <div
-      className="flex flex-wrap gap-1.5 p-3 border rounded-lg"
+      className="p-3 border rounded-lg"
       style={{
         backgroundColor: theme.colors.interactive,
         borderColor: theme.colors.border,
       }}
     >
-      <div className="text-xs font-medium mb-1 w-full" style={{ color: theme.colors.textMuted }}>
+      <div className="text-xs font-medium mb-2 w-full" style={{ color: theme.colors.textMuted }}>
         Math Symbols:
       </div>
-      {mathButtons.map((btn, index) => (
-        <button
-          key={index}
-          onClick={() => handleButtonClick(btn.insert)}
-          disabled={disabled}
-          title={btn.tooltip}
-          className="px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-150 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2"
-          style={{
-            backgroundColor: disabled ? theme.colors.interactive : theme.colors.chat,
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            borderColor: theme.colors.border,
-            color: disabled ? theme.colors.textMuted : theme.colors.textPrimary,
-            cursor: disabled ? 'not-allowed' : 'pointer',
-            minWidth: '40px',
-          }}
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2">
+        {mathButtons.map((btn, index) => (
+          <button
+            key={index}
+            onClick={() => handleButtonClick(btn.insert)}
+            disabled={disabled}
+            title={btn.tooltip}
+            className="min-w-[48px] min-h-[48px] rounded-md text-base sm:text-sm font-medium transition-all duration-150 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 flex items-center justify-center"
+            style={{
+              backgroundColor: disabled ? theme.colors.interactive : theme.colors.chat,
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: theme.colors.border,
+              color: disabled ? theme.colors.textMuted : theme.colors.textPrimary,
+              cursor: disabled ? 'not-allowed' : 'pointer',
+              touchAction: 'manipulation', // Prevent 300ms delay on mobile
+            }}
           onMouseEnter={(e) => {
             if (!disabled) {
               e.currentTarget.style.backgroundColor = theme.colors.interactive;
@@ -63,6 +68,7 @@ const MathInputToolbar: React.FC<Props> = ({ onInsert, disabled = false, topicId
           {btn.label}
         </button>
       ))}
+      </div>
     </div>
   );
 };

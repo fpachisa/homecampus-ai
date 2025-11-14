@@ -11,9 +11,10 @@ import type { LayoutActions, LayoutState } from './MainLayout';
 interface CenterPanelProps {
   layoutActions: LayoutActions;
   layoutState: LayoutState;
+  isMobile?: boolean;
 }
 
-const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState }) => {
+const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState, isMobile }) => {
   const { theme, toggleTheme } = useTheme();
   const { pathId } = useParams<{ pathId: string }>();
   const [searchParams] = useSearchParams();
@@ -30,6 +31,23 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
 
   // Category is the pathId (e.g., 's4-math-probability')
   const category = pathId || '';
+
+  // Get topic display name for mobile header
+  const getTopicDisplayName = () => {
+    if (!selectedTopic) return '';
+
+    // Extract a readable name from the topic ID
+    // Topic IDs follow pattern: s[1-4]-math-[subject]-[topic-name]
+    // e.g., 's4-math-probability-basic-probability-concepts' -> 'Basic Probability Concepts'
+    const parts = selectedTopic.split('-');
+
+    // Skip the first 2 parts (grade level and 'math')
+    // Then capitalize each remaining word
+    const nameParts = parts.slice(2);
+    return nameParts
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
 
   // Track which topics user has dismissed this session (separate from localStorage)
   const [dismissedTopics, setDismissedTopics] = useState<Set<string>>(new Set());
@@ -98,98 +116,102 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
           backgroundColor: theme.colors.chat,
         }}
       >
-        {/* Top Bar for Mobile Layout Controls */}
+        {/* Top Bar for Mobile Layout Controls - Minimal with Topic Name */}
+        {!isMobile ? null : (
         <div
-          className="flex items-center justify-between px-4 py-3 border-b md:hidden"
+          className="flex items-center justify-between px-3 py-2 border-b"
           style={{
             borderColor: theme.colors.border,
             backgroundColor: theme.colors.chat,
           }}
         >
-          <div className="flex items-center space-x-2">
+          {/* Left: Back + Topics Menu */}
+          <div className="flex items-center gap-1 flex-shrink-0">
+            {/* Back Button */}
+            <button
+              onClick={goToHome}
+              className="p-2 rounded-md transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              style={{
+                color: theme.colors.textSecondary,
+                backgroundColor: 'transparent',
+              }}
+              title="Back to topics"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Topics Menu */}
             <button
               onClick={layoutActions.toggleLeftPanel}
-              className="p-2 rounded-md transition-colors duration-200"
+              className="p-2 rounded-md transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
               style={{
                 color: theme.colors.textSecondary,
                 backgroundColor: 'transparent',
               }}
               title="Topics"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-
-            <button
-              onClick={layoutActions.toggleRightPanel}
-              className="p-2 rounded-md transition-colors duration-200"
-              style={{
-                color: theme.colors.textSecondary,
-                backgroundColor: 'transparent',
-              }}
-              title="Scratch Pad"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </button>
           </div>
 
-          <div className="flex items-center space-x-2">
-            {/* Voice Assistant Toggle */}
-            <div className="flex items-center space-x-2 mr-1">
-              <span className="text-lg">🎙️</span>
-              <button
-                onClick={() => setVoiceEnabled(!voiceEnabled)}
-                className="relative inline-flex h-6 w-10 items-center rounded-full transition-colors duration-200"
-                style={{
-                  backgroundColor: voiceEnabled ? theme.colors.brand : theme.colors.interactive,
-                }}
-                title={voiceEnabled ? 'Disable Voice Assistant' : 'Enable Voice Assistant'}
-              >
-                <span
-                  className="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200"
-                  style={{
-                    transform: voiceEnabled ? 'translateX(1.5rem)' : 'translateX(0.25rem)',
-                  }}
-                />
-              </button>
-            </div>
+          {/* Center: Topic Name */}
+          <div className="flex-1 text-center px-2">
+            <h1
+              className="text-base font-semibold truncate"
+              style={{ color: theme.colors.textPrimary }}
+            >
+              {getTopicDisplayName() || 'Learning'}
+            </h1>
+          </div>
 
-            {/* Theme Toggle */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                console.log('Chat theme toggle clicked, current theme:', theme.name);
-                toggleTheme();
-              }}
-              className="p-2 rounded-md transition-all duration-300 hover:scale-110 relative z-10"
-              style={{
-                color: theme.colors.textSecondary,
-                backgroundColor: 'transparent',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = theme.colors.interactive;
-                e.currentTarget.style.color = theme.colors.textPrimary;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = theme.colors.textSecondary;
+          {/* Right: Theme Toggle */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleTheme();
+            }}
+            className="p-2 rounded-md transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"
+            style={{
+              color: theme.colors.textSecondary,
+              backgroundColor: 'transparent',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = theme.colors.interactive;
+              e.currentTarget.style.color = theme.colors.textPrimary;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = theme.colors.textSecondary;
               }}
               title={`Switch to ${theme.name === 'dark' ? 'light' : 'dark'} mode`}
             >
               {theme.name === 'dark' ? (
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               ) : (
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                 </svg>
               )}
             </button>
+        </div>
+        )}
 
+        {/* Desktop Top Bar - HIDDEN, ChatInterface has its own header */}
+        {false && !isMobile ? (
+        <div
+          className="flex items-center justify-between px-4 py-3 border-b"
+          style={{
+            borderColor: theme.colors.border,
+            backgroundColor: theme.colors.chat,
+          }}
+        >
+          <div className="flex items-center space-x-2">
             <button
               onClick={layoutActions.toggleLeftPanel}
               className={`p-2 rounded-md transition-colors duration-200 ${
@@ -222,7 +244,62 @@ const CenterPanel: React.FC<CenterPanelProps> = ({ layoutActions, layoutState })
               </svg>
             </button>
           </div>
+
+          <div className="flex items-center space-x-2">
+            {/* Voice Assistant Toggle */}
+            <div className="flex items-center space-x-2 mr-1">
+              <span className="text-lg">🎙️</span>
+              <button
+                onClick={() => setVoiceEnabled(!voiceEnabled)}
+                className="relative inline-flex h-6 w-10 items-center rounded-full transition-colors duration-200"
+                style={{
+                  backgroundColor: voiceEnabled ? theme.colors.brand : theme.colors.interactive,
+                }}
+                title={voiceEnabled ? 'Disable Voice Assistant' : 'Enable Voice Assistant'}
+              >
+                <span
+                  className="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200"
+                  style={{
+                    transform: voiceEnabled ? 'translateX(1.5rem)' : 'translateX(0.25rem)',
+                  }}
+                />
+              </button>
+            </div>
+
+            {/* Theme Toggle */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleTheme();
+              }}
+              className="p-2 rounded-md transition-all duration-300 hover:scale-110 relative z-10"
+              style={{
+                color: theme.colors.textSecondary,
+                backgroundColor: 'transparent',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = theme.colors.interactive;
+                e.currentTarget.style.color = theme.colors.textPrimary;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = theme.colors.textSecondary;
+              }}
+              title={`Switch to ${theme.name === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme.name === 'dark' ? (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              ) : (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
+        ) : null}
 
         {/* Chat Interface Container */}
         <div className="flex-1">

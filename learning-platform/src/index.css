@@ -1,6 +1,50 @@
 @import "tailwindcss";
 @import "katex/dist/katex.min.css";
 
+/* ============================================================================
+   SAFE AREA INSETS - iOS Notch & Dynamic Island Support
+   ============================================================================
+
+   These CSS variables provide safe area padding for iOS devices with:
+   - Notch (iPhone X, 11, 12, 13)
+   - Dynamic Island (iPhone 14 Pro, 15 Pro)
+
+   Usage:
+   - Use Tailwind utilities: pt-safe-t, pb-safe-b, pl-safe-l, pr-safe-r
+   - Or use CSS variables directly: padding-top: var(--safe-top);
+
+   Fallback to 0px on devices without notches/dynamic island.
+   ============================================================================ */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+
+/* ============================================================================
+   REDUCED MOTION - Accessibility Support
+   ============================================================================
+
+   Disable or reduce animations for users who prefer reduced motion.
+   Respects system setting: Settings > Accessibility > Motion > Reduce Motion
+
+   This helps users with:
+   - Vestibular disorders
+   - Motion sickness
+   - Preference for calmer UI
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @layer base {
   html {
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -29,6 +73,25 @@
     to {
       opacity: 1;
       transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Mobile drawer slide-in animation */
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 

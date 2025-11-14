@@ -7,6 +7,11 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      // Mobile-first breakpoints
+      screens: {
+        xs: '360px', // Very small devices
+      },
+
       // Custom CSS variables for dynamic theming
       colors: {
         // Background colors
@@ -72,6 +77,25 @@ export default {
         '18': '4.5rem',
         '88': '22rem',
         '128': '32rem',
+        // Safe area insets for iOS notch/dynamic island
+        'safe-top': 'env(safe-area-inset-top)',
+        'safe-right': 'env(safe-area-inset-right)',
+        'safe-bottom': 'env(safe-area-inset-bottom)',
+        'safe-left': 'env(safe-area-inset-left)',
+      },
+
+      // Safe area padding utilities
+      padding: {
+        'safe': 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)',
+        'safe-t': 'env(safe-area-inset-top)',
+        'safe-r': 'env(safe-area-inset-right)',
+        'safe-b': 'env(safe-area-inset-bottom)',
+        'safe-l': 'env(safe-area-inset-left)',
+      },
+
+      // Min height for mobile dynamic viewport
+      minHeight: {
+        'screen-dynamic': '100dvh',
       },
 
       // Typography extensions

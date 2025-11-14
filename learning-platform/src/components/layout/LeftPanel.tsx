@@ -470,6 +470,10 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ isCollapsed, width, layoutActions
     if (selectedCategory) {
       goToLearn(selectedCategory, undefined, true, topicId);
     }
+    // Close the drawer on mobile after selecting a topic
+    if (window.innerWidth < 768) {
+      layoutActions.collapseAllPanels();
+    }
   };
 
   // Handle back to topics - go back to home page

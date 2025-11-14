@@ -2151,9 +2151,9 @@ const handleStudentSubmit = async (input: string) => {
           color: theme.colors.textPrimary,
         }}
       >
-      {/* Header with topic info and progress */}
+      {/* Header with topic info and progress - Hidden on mobile */}
       <div
-        className="flex items-center justify-between px-4 py-3 border-b"
+        className="hidden md:flex items-center justify-between px-4 py-3 border-b"
         style={{
           borderColor: theme.colors.border,
           backgroundColor: theme.colors.chat,
@@ -2285,18 +2285,20 @@ const handleStudentSubmit = async (input: string) => {
         style={{ height: 0, flexGrow: 1 }}
       >
         <div className="max-w-5xl mx-auto p-3 space-y-4">
-          {/* Avatar - Fixed Position (stays visible during scroll) */}
+          {/* Avatar - Fixed Position (stays visible during scroll) - Hidden on mobile */}
           {(state.messages.length === 0 || isPlaying) && (
-            <div style={{
-              position: 'fixed',
-              top: '100px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              zIndex: 1000,
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}>
+            <div
+              className="hidden sm:flex"
+              style={{
+                position: 'fixed',
+                top: '100px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                zIndex: 1000,
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
               <Avatar
                 state={avatarState}
                 subtitle={currentSubtitle}
@@ -2306,6 +2308,20 @@ const handleStudentSubmit = async (input: string) => {
               />
             </div>
           )}
+
+          {/* Mobile Avatar - Inline at top when speaking */}
+          {isPlaying && (
+            <div className="sm:hidden flex justify-center py-4 sticky top-0 z-30 backdrop-blur-md bg-chat/80 -mx-3 px-3">
+              <Avatar
+                state={avatarState}
+                subtitle={currentSubtitle}
+                showSubtitle={showSubtitle}
+                size={80}
+                audioDuration={audioDuration}
+              />
+            </div>
+          )}
+
           {state.messages.map((message, index) => {
             // Only pass the callback to messages that have step-by-step visualization OR plain text solution
             const hasStepByStepVisualization = message.visualization &&

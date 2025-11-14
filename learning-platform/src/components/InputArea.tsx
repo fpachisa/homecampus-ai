@@ -1,5 +1,6 @@
 import { useState, useRef, useImperativeHandle, forwardRef, type KeyboardEvent } from 'react';
 import { useTheme } from '../hooks/useTheme';
+import { useKeyboardHeight } from '../hooks/useKeyboardHeight';
 import MathInputToolbar from './MathInputToolbar';
 
 interface Props {
@@ -14,6 +15,7 @@ export interface InputAreaHandle {
 
 const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topicId }, ref) => {
   const { theme } = useTheme();
+  const { keyboardHeight } = useKeyboardHeight(); // Mobile keyboard detection
   const [input, setInput] = useState('');
   const [showMathToolbar, setShowMathToolbar] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -59,10 +61,12 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
 
   return (
     <div
-      className="border-t p-3"
+      className="border-t p-3 pb-safe-b"
       style={{
         backgroundColor: theme.colors.chat,
         borderColor: theme.colors.border,
+        // Add extra padding when keyboard is open to prevent input being hidden
+        paddingBottom: `max(calc(env(safe-area-inset-bottom) + 12px), ${keyboardHeight > 0 ? '12px' : '12px'})`,
       }}
     >
       <div className="max-w-5xl mx-auto">
@@ -115,23 +119,26 @@ const InputArea = forwardRef<InputAreaHandle, Props>(({ onSubmit, disabled, topi
             onKeyPress={handleKeyPress}
             disabled={disabled}
             placeholder="Type your answer or ask for help..."
-            className="flex-1 px-4 py-3 bg-transparent text-sm focus:outline-none disabled:cursor-not-allowed transition-all duration-200"
+            className="flex-1 px-3 sm:px-4 py-3 bg-transparent text-base focus:outline-none disabled:cursor-not-allowed transition-all duration-200"
             style={{
               color: theme.colors.textPrimary,
+              fontSize: '16px', // Prevent iOS zoom on focus
               ...(disabled && {
                 color: theme.colors.textMuted,
               }),
             }}
+            inputMode="text"
           />
 
           <button
             onClick={handleSubmit}
             disabled={disabled || !input.trim()}
-            className="px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 focus:outline-none focus:ring-2"
+            className="px-4 sm:px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 focus:outline-none focus:ring-2 min-w-[44px] min-h-[44px]"
             style={{
               background: disabled || !input.trim() ? theme.colors.interactive : theme.gradients.brand,
               color: disabled || !input.trim() ? theme.colors.textMuted : '#ffffff',
               cursor: disabled || !input.trim() ? 'not-allowed' : 'pointer',
+              touchAction: 'manipulation', // Prevent 300ms delay on mobile
               ...(!(disabled || !input.trim()) && {
                 boxShadow: theme.shadows.glow,
               }),
