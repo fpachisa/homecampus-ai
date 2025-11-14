@@ -150,7 +150,7 @@ export const ActiveStudentDashboard: React.FC = () => {
             title="Need help with homework?"
             description="Upload your math problem and I'll guide you through solving it"
             buttonLabel="Upload Problem"
-            buttonColor="#8B5CF6"
+            buttonColor="#D97757"
             onAction={goToHomeworkHelper}
             metadata={{
               time: 'As needed',
