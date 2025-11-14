@@ -83,7 +83,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
             onClick={onExit}
             className="p-2 rounded-lg transition-colors"
             style={{
-              backgroundColor: theme.colors.background,
+              backgroundColor: theme.colors.interactive,
               color: theme.colors.textSecondary
             }}
             title="Exit session"
@@ -104,7 +104,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
           onClick={() => setShowProblemImage(!showProblemImage)}
           className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors"
           style={{
-            backgroundColor: theme.colors.background,
+            backgroundColor: theme.colors.interactive,
             borderColor: theme.colors.border,
             border: `1px solid ${theme.colors.border}`,
             color: theme.colors.textPrimary
@@ -128,7 +128,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
             </h3>
             <div className="rounded-lg overflow-hidden" style={{
               border: `1px solid ${theme.colors.border}`,
-              backgroundColor: theme.colors.background
+              backgroundColor: theme.colors.surface
             }}>
               <img
                 src={problem.imageUrl || problem.imageData}
@@ -212,7 +212,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
                         </div>
                         {message.display?.mathTool && (
                           <div className="mt-4 p-4 rounded-lg" style={{
-                            backgroundColor: theme.colors.background,
+                            backgroundColor: theme.colors.surface,
                             border: `1px solid ${theme.colors.border}`
                           }}>
                             <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
@@ -259,7 +259,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
 
           {/* Progress Indicator */}
           <div className="px-6 py-2 relative z-10" style={{
-            backgroundColor: theme.colors.background,
+            backgroundColor: theme.colors.surface,
             borderTop: `1px solid ${theme.colors.border}`
           }}>
             <div className="flex items-center justify-between text-sm" style={{ color: theme.colors.textSecondary }}>
@@ -321,7 +321,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
                   placeholder="Share your thinking, ask a question, or show your work..."
                   className="w-full px-4 py-3 rounded-lg resize-none focus:ring-2 focus:outline-none"
                   style={{
-                    backgroundColor: theme.colors.background,
+                    backgroundColor: theme.colors.surface,
                     border: `1px solid ${theme.colors.border}`,
                     color: theme.colors.textPrimary,
                     borderRadius: theme.radius.lg,
@@ -360,7 +360,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
           backdropFilter: 'blur(4px)'
         }}>
           <div className="p-8 max-w-md w-full" style={{
-            backgroundColor: theme.colors.background,
+            backgroundColor: theme.colors.surface,
             borderRadius: theme.radius.lg,
             boxShadow: theme.shadows.xl,
             border: `1px solid ${theme.colors.border}`
