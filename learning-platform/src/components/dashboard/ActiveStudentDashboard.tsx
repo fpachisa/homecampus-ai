@@ -144,20 +144,6 @@ export const ActiveStudentDashboard: React.FC = () => {
             }}
           />
 
-          {/* Quick Practice / Achievement Unlock */}
-          <ActionCard
-            icon="🏆"
-            title="Unlock: Perfectionist"
-            description="Get 2 more perfect scores to unlock this achievement"
-            buttonLabel="Practice Now"
-            buttonColor="#D97757"
-            onAction={handleQuickPractice}
-            metadata={{
-              time: '~15 min',
-              xp: 50,
-            }}
-          />
-
           {/* Homework Helper */}
           <ActionCard
             icon="📸"
