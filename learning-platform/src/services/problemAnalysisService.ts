@@ -52,15 +52,9 @@ export class ProblemAnalysisService {
     this.ai = new GoogleGenAI({ apiKey });
     this.modelName = 'gemini-2.5-flash';
     this.config = {
-      temperature: 0.2, // Low temperature for consistent analysis
-      topP: 0.8,
-      topK: 40,
-      maxOutputTokens: 2048,
+      temperature: 0.3,
       responseMimeType: "application/json",
-      responseSchema: zodToJsonSchema(ProblemAnalysisSchema, {
-        target: 'openApi3',
-        $refStrategy: 'none',
-      }) as any,
+      responseJsonSchema: zodToJsonSchema(ProblemAnalysisSchema),
     };
   }
 
@@ -96,7 +90,7 @@ export class ProblemAnalysisService {
       const textResponse = response.text;
 
       console.log('[ProblemAnalysis] 📥 Received response from Gemini');
-      console.log('[ProblemAnalysis] Response length:', textResponse?.length || 0, 'chars');
+      console.log('[ProblemAnalysis] Raw response:', textResponse);
 
       if (!textResponse) {
         throw new Error('No response from Gemini');

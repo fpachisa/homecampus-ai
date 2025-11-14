@@ -38,7 +38,7 @@ export const GradeCheckSchema = z.object({
   requiredGradeLevel: z.number().int().min(1).max(12).describe("Minimum grade level required for this problem"),
   conceptsCovered: z.array(z.string()).describe("Concepts that the student should already know at their grade level"),
   conceptsMissing: z.array(z.string()).describe("Concepts not yet covered at the student's grade level"),
-  recommendation: z.enum(["proceed", "too-advanced", "too-basic", "review-needed"]).describe("Recommendation for how to proceed"),
+  recommendation: z.enum(["proceed", "too-advanced", "too-basic"]).describe("Recommendation for how to proceed"),
   suggestionMessage: z.string().describe("Friendly message to show the student")
 });
 

@@ -27,15 +27,9 @@ export class HomeworkHelperService {
     this.ai = new GoogleGenAI({ apiKey });
     this.modelName = 'gemini-2.5-flash';
     this.config = {
-      temperature: 0.7, // Higher temperature for more varied Socratic responses
-      topP: 0.9,
-      topK: 40,
-      maxOutputTokens: 2048,
-      responseMimeType: "application/json",
-      responseSchema: zodToJsonSchema(HomeworkHelperResponseSchema, {
-        target: 'openApi3',
-        $refStrategy: 'none',
-      }) as any,
+      temperature: 0.3,
+      responseMimeType: 'application/json',
+      responseJsonSchema: zodToJsonSchema(HomeworkHelperResponseSchema),
     };
   }
 
@@ -51,7 +45,7 @@ export class HomeworkHelperService {
 
     console.log('[HomeworkHelper] 📤 Generating Socratic response...');
     console.log('[HomeworkHelper] Student input:', studentInput);
-    console.log('[HomeworkHelper] Conversation turns:', context.conversationHistory.length);
+    console.log('[HomeworkHelper] Prompt:', fullPrompt);
 
     // Call Gemini with structured output
     const response = await this.ai.models.generateContent({
@@ -155,6 +149,7 @@ Generate a warm, encouraging greeting that:
 
     console.log('[HomeworkHelper] 📥 Received greeting from Gemini');
     console.log('[HomeworkHelper] Response length:', textResponse?.length || 0, 'chars');
+    console.log('[HomeworkHelper] Raw response:', textResponse);
 
     if (!textResponse) {
       throw new Error('No response from Gemini');

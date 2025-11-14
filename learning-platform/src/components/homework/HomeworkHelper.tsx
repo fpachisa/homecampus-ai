@@ -303,7 +303,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
                   Homework Helper
                 </h1>
                 <p className="text-sm" style={{ color: theme.colors.textMuted }}>
-                  Get Socratic guidance without giving away the answer
+                  Get hints and guidance to solve your math problems step-by-step
                 </p>
               </div>
             </div>
@@ -362,7 +362,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
                   'Upload a clear photo or PDF of your math problem',
                   'I\'ll analyze it and check if it matches your grade level',
                   'I\'ll guide you through solving it with questions and hints',
-                  'You do the thinking - I\'ll never give you the answer!',
+                  'You do the thinking - I\'ll provide the support!',
                 ].map((step, idx) => (
                   <li key={idx} className="flex items-start space-x-3">
                     <span

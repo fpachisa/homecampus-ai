@@ -75,13 +75,11 @@ RECOMMENDATION GUIDELINES:
 - "proceed": Problem is well-suited for student's grade
 - "too-advanced": Requires concepts not yet taught
 - "too-basic": Well below grade level (but can still help with review)
-- "review-needed": Student should review foundational concepts first
 
 SUGGESTION MESSAGE EXAMPLES:
 - proceed: "This looks like a great problem to practice your trigonometry skills!"
 - too-advanced: "This problem involves calculus concepts you'll learn in grade 11. Want to try something else?"
-- too-basic: "This is a bit below your grade level, but reviewing basics never hurts!"
-- review-needed: "This problem needs some trigonometry basics. Let's make sure you're comfortable with those first."`;
+- too-basic: "This is a bit below your grade level, but reviewing basics never hurts!"`;
 
 export class GradeAppropriatenessService {
   private ai: GoogleGenAI;
@@ -98,14 +96,8 @@ export class GradeAppropriatenessService {
     this.modelName = 'gemini-2.5-flash';
     this.config = {
       temperature: 0.3,
-      topP: 0.8,
-      topK: 40,
-      maxOutputTokens: 1024,
       responseMimeType: "application/json",
-      responseSchema: zodToJsonSchema(GradeCheckSchema, {
-        target: 'openApi3',
-        $refStrategy: 'none',
-      }) as any,
+      responseJsonSchema: zodToJsonSchema(GradeCheckSchema),
     };
   }
 
@@ -116,70 +108,11 @@ export class GradeAppropriatenessService {
     analysis: ProblemAnalysis,
     studentGrade: number
   ): Promise<GradeAppropriatenessCheck> {
-    // First try rule-based check (faster)
-    const ruleBasedCheck = this.ruleBasedCheck(analysis, studentGrade);
 
-    // If confidence is low or we need AI reasoning, use Gemini
-    if (analysis.analysisConfidence === 'low' || !ruleBasedCheck) {
       return this.aiBasedCheck(analysis, studentGrade);
-    }
-
-    return ruleBasedCheck;
   }
 
-  /**
-   * Rule-based check using curriculum map
-   */
-  private ruleBasedCheck(
-    analysis: ProblemAnalysis,
-    studentGrade: number
-  ): GradeAppropriatenessCheck | null {
-    const topicKey = analysis.subTopic?.toLowerCase() || analysis.topic.toLowerCase();
-    const curriculumInfo = CURRICULUM_MAP[topicKey];
 
-    if (!curriculumInfo) {
-      // Topic not in our map, fall back to AI
-      return null;
-    }
-
-    const { minGrade, maxGrade, concepts } = curriculumInfo;
-
-    // Determine appropriateness
-    let isAppropriate = studentGrade >= minGrade;
-    let recommendation: 'proceed' | 'too-advanced' | 'too-basic' | 'review-needed';
-    let suggestionMessage: string;
-    let reason: string;
-
-    if (studentGrade < minGrade) {
-      recommendation = 'too-advanced';
-      isAppropriate = false;
-      reason = `This topic (${analysis.topic}) is typically taught in grade ${minGrade} or higher.`;
-      suggestionMessage = `This problem covers ${analysis.topic}, which you'll learn in grade ${minGrade}. Want to try a different problem?`;
-    } else if (studentGrade > maxGrade + 2) {
-      recommendation = 'too-basic';
-      reason = `This is below your grade level, but reviewing fundamentals can be helpful.`;
-      suggestionMessage = `This is below your current grade level, but practicing the basics never hurts!`;
-    } else if (analysis.difficulty === 'advanced' && studentGrade === minGrade) {
-      recommendation = 'review-needed';
-      reason = `This is an advanced problem for your grade. Make sure you're comfortable with the basics first.`;
-      suggestionMessage = `This is a challenging problem! Let's make sure you're comfortable with ${analysis.topic} basics first.`;
-    } else {
-      recommendation = 'proceed';
-      reason = `This problem is appropriate for grade ${studentGrade}.`;
-      suggestionMessage = `Great! This is a perfect problem to practice your ${analysis.topic} skills.`;
-    }
-
-    return {
-      studentGrade,
-      isAppropriate,
-      reason,
-      requiredGradeLevel: minGrade,
-      conceptsCovered: concepts,
-      conceptsMissing: studentGrade < minGrade ? concepts : [],
-      recommendation,
-      suggestionMessage,
-    };
-  }
 
   /**
    * AI-based check using Gemini for complex cases
@@ -200,6 +133,8 @@ export class GradeAppropriatenessService {
       console.log('[GradeCheck] 📤 Checking grade appropriateness...');
       console.log('[GradeCheck] Student grade:', studentGrade);
       console.log('[GradeCheck] Problem:', `${analysis.topic} (${analysis.difficulty})`);
+      console.log('[GradeCheck] Prompt:', prompt);
+
 
       // Call Gemini using SDK with structured output
       const response = await this.ai.models.generateContent({
@@ -211,6 +146,7 @@ export class GradeAppropriatenessService {
       const textResponse = response.text;
 
       console.log('[GradeCheck] 📥 Received response from Gemini');
+      console.log('[GradeCheck] Raw response:', textResponse);
 
       if (!textResponse) {
         throw new Error('No response from Gemini');
