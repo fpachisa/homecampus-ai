@@ -236,21 +236,21 @@ export const LandingPage: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative z-10 px-8 py-16">
+      <section className="relative z-10 px-8 py-8">
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Heading */}
           <div className="mb-12">
             <h2
-              className="text-5xl md:text-6xl font-bold mb-4"
+              className="text-5xl md:text-4xl font-bold mb-4"
               style={{ color: theme.colors.textPrimary }}
             >
-              From Struggling to A's
+              Smarter Maths Learning Starts Here
             </h2>
             <h3
               className="text-2xl md:text-3xl mb-6"
               style={{ color: theme.colors.textAccent }}
             >
-              Master Secondary Math with Your Personal AI Tutor
+              With Your Personal AI Tutor
             </h3>
             <p
               className="text-lg md:text-xl max-w-3xl mx-auto mb-8"
@@ -291,13 +291,13 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Problem-Solution Framework */}
-      <section className="relative z-10 px-8 py-16" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
+      <section className="relative z-10 px-8 py-8" style={{ borderTop: `1px solid ${theme.colors.border}` }}>
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-4"
             style={{ color: theme.colors.textPrimary }}
           >
-            Struggling with Math? Here's Why Traditional Methods Fall Short
+            Struggling with Maths? Here's Why Traditional Methods Fall Short
           </h2>
           <p
             className="text-center text-lg mb-12 max-w-3xl mx-auto"
@@ -778,7 +778,7 @@ export const LandingPage: React.FC = () => {
             className="text-3xl md:text-4xl font-bold mb-4"
             style={{ color: theme.colors.textPrimary }}
           >
-            Ready to Transform Your Math Journey?
+            Ready to Transform Your Maths Journey?
           </h2>
           <p
             className="text-lg mb-8 max-w-2xl mx-auto"
