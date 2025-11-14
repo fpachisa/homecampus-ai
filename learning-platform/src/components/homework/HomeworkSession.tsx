@@ -28,7 +28,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
   isLoading = false,
   error = null,
   onClearError,
-  theme: _theme, // TODO: Apply theme styling to session view
+  theme,
 }) => {
   const [input, setInput] = useState('');
   const [showProblemImage, setShowProblemImage] = useState(true);
@@ -66,20 +66,35 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-screen max-h-screen bg-gray-50">
+    <div className="flex flex-col h-screen max-h-screen relative" style={{ background: theme.gradients.panel }}>
+      {/* Background texture */}
+      <div
+        className="fixed inset-0 opacity-30 pointer-events-none"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 25% 25%, rgba(88, 101, 242, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(71, 82, 196, 0.05) 0%, transparent 50%)',
+        }}
+      />
+
       {/* Header */}
-      <div className="bg-white border-b px-6 py-4 flex items-center justify-between">
+      <div className="px-6 py-4 flex items-center justify-between relative z-10" style={{ backgroundColor: theme.colors.chat, borderBottom: `1px solid ${theme.colors.border}` }}>
         <div className="flex items-center space-x-4">
           <button
             onClick={onExit}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 rounded-lg transition-colors"
+            style={{
+              backgroundColor: theme.colors.background,
+              color: theme.colors.textSecondary
+            }}
             title="Exit session"
           >
-            <ArrowLeft className="w-5 h-5 text-gray-600" />
+            <ArrowLeft className="w-5 h-5" />
           </button>
           <div>
-            <h2 className="text-lg font-semibold text-gray-800">Homework Help</h2>
-            <p className="text-sm text-gray-600 capitalize">
+            <h2 className="text-lg font-semibold" style={{ color: theme.colors.textPrimary }}>
+              Homework Help
+            </h2>
+            <p className="text-sm capitalize" style={{ color: theme.colors.textSecondary }}>
               {problem.analysis?.topic || 'Mathematics'}
             </p>
           </div>
@@ -87,7 +102,13 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
 
         <button
           onClick={() => setShowProblemImage(!showProblemImage)}
-          className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+          className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors"
+          style={{
+            backgroundColor: theme.colors.background,
+            borderColor: theme.colors.border,
+            border: `1px solid ${theme.colors.border}`,
+            color: theme.colors.textPrimary
+          }}
         >
           <ImageIcon className="w-4 h-4" />
           <span className="text-sm">{showProblemImage ? 'Hide' : 'Show'} Problem</span>
@@ -98,9 +119,17 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
       <div className="flex-1 overflow-hidden flex">
         {/* Problem Image Sidebar */}
         {showProblemImage && (
-          <div className="w-80 border-r bg-white p-4 overflow-y-auto">
-            <h3 className="font-semibold text-gray-700 mb-3">Your Problem</h3>
-            <div className="border rounded-lg overflow-hidden bg-gray-50">
+          <div className="w-80 p-4 overflow-y-auto relative z-10" style={{
+            backgroundColor: theme.colors.chat,
+            borderRight: `1px solid ${theme.colors.border}`
+          }}>
+            <h3 className="font-semibold mb-3" style={{ color: theme.colors.textPrimary }}>
+              Your Problem
+            </h3>
+            <div className="rounded-lg overflow-hidden" style={{
+              border: `1px solid ${theme.colors.border}`,
+              backgroundColor: theme.colors.background
+            }}>
               <img
                 src={problem.imageUrl || problem.imageData}
                 alt="Problem"
@@ -109,8 +138,10 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
             </div>
             {problem.analysis?.extractedText && (
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-gray-600 mb-2">Problem Text</h4>
-                <p className="text-sm text-gray-700 whitespace-pre-wrap">
+                <h4 className="text-sm font-semibold mb-2" style={{ color: theme.colors.textSecondary }}>
+                  Problem Text
+                </h4>
+                <p className="text-sm whitespace-pre-wrap" style={{ color: theme.colors.textPrimary }}>
                   {problem.analysis.extractedText}
                 </p>
               </div>
@@ -121,41 +152,80 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
         {/* Chat Area */}
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+          <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4 relative z-10">
             {session.messages.map((message, idx) => (
               <div
                 key={message.id || idx}
-                className={`flex ${message.role === 'student' ? 'justify-end' : 'justify-start'}`}
+                className={`flex ${message.role === 'student' ? 'justify-end' : 'justify-start'} animate-message-appear`}
               >
                 {message.role === 'student' ? (
                   // Student message
-                  <div className="max-w-2xl">
-                    <div className="bg-blue-600 text-white rounded-lg px-4 py-3">
-                      <p className="whitespace-pre-wrap">{message.text}</p>
+                  <div className="max-w-2xl flex items-end space-x-2">
+                    <div className="flex-1">
+                      <div
+                        className="px-5 py-4 backdrop-blur-sm hover:scale-[1.02] transition-transform"
+                        style={{
+                          background: theme.gradients.brand,
+                          color: '#ffffff',
+                          borderRadius: theme.radius.lg,
+                          boxShadow: theme.shadows.glow,
+                          backdropFilter: 'blur(8px)',
+                        }}
+                      >
+                        <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">
+                          {message.text}
+                        </p>
+                      </div>
+                      <p className="text-xs mt-1 text-right" style={{ color: theme.colors.textSecondary }}>
+                        {new Date(message.timestamp).toLocaleTimeString()}
+                      </p>
                     </div>
-                    <p className="text-xs text-gray-500 mt-1 text-right">
-                      {new Date(message.timestamp).toLocaleTimeString()}
-                    </p>
+                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-xl">
+                      🙋‍♀️
+                    </div>
                   </div>
                 ) : (
                   // Tutor message
-                  <div className="max-w-3xl">
-                    <div className="bg-white border rounded-lg p-4">
-                      {message.display?.content && (
-                        <MessageDisplay content={message.display.content} />
-                      )}
-                      {message.display?.mathTool && (
-                        <div className="mt-4 p-4 bg-gray-50 rounded-lg border">
-                          <p className="text-sm text-gray-600">
-                            Visual tool: {message.display.mathTool.type}
-                          </p>
-                          {/* TODO: Render actual math tool */}
-                        </div>
-                      )}
+                  <div className="max-w-3xl flex items-start space-x-2">
+                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-xl">
+                      📚
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">
-                      {new Date(message.timestamp).toLocaleTimeString()}
-                    </p>
+                    <div className="flex-1">
+                      <div
+                        className="px-5 py-4 border backdrop-blur-sm hover:scale-[1.02] transition-transform"
+                        style={{
+                          background: theme.colors.tutorMessage,
+                          borderColor: theme.glass.border,
+                          color: theme.colors.textPrimary,
+                          borderRadius: theme.radius.lg,
+                          boxShadow: theme.shadows.md,
+                          backdropFilter: 'blur(8px)',
+                        }}
+                      >
+                        <div
+                          className="text-sm leading-relaxed whitespace-pre-wrap font-medium"
+                          style={{ fontFamily: theme.typography.fontFamily }}
+                        >
+                          {message.display?.content && (
+                            <MessageDisplay content={message.display.content} />
+                          )}
+                        </div>
+                        {message.display?.mathTool && (
+                          <div className="mt-4 p-4 rounded-lg" style={{
+                            backgroundColor: theme.colors.background,
+                            border: `1px solid ${theme.colors.border}`
+                          }}>
+                            <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
+                              Visual tool: {message.display.mathTool.type}
+                            </p>
+                            {/* TODO: Render actual math tool */}
+                          </div>
+                        )}
+                      </div>
+                      <p className="text-xs mt-1" style={{ color: theme.colors.textSecondary }}>
+                        {new Date(message.timestamp).toLocaleTimeString()}
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
@@ -164,9 +234,22 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
             {/* Loading indicator */}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-white border rounded-lg px-4 py-3 flex items-center space-x-2">
-                  <Loader className="w-4 h-4 animate-spin text-blue-600" />
-                  <span className="text-gray-600">Thinking...</span>
+                <div className="flex items-start space-x-2">
+                  <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-xl">
+                    📚
+                  </div>
+                  <div
+                    className="px-4 py-3 flex items-center space-x-2 backdrop-blur-sm"
+                    style={{
+                      background: theme.colors.tutorMessage,
+                      border: `1px solid ${theme.glass.border}`,
+                      borderRadius: theme.radius.lg,
+                      boxShadow: theme.shadows.md,
+                    }}
+                  >
+                    <Loader className="w-4 h-4 animate-spin" style={{ color: theme.colors.brand }} />
+                    <span style={{ color: theme.colors.textPrimary }}>Thinking...</span>
+                  </div>
                 </div>
               </div>
             )}
@@ -175,15 +258,18 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
           </div>
 
           {/* Progress Indicator */}
-          <div className="px-6 py-2 bg-gray-100 border-t">
-            <div className="flex items-center justify-between text-sm text-gray-600">
+          <div className="px-6 py-2 relative z-10" style={{
+            backgroundColor: theme.colors.background,
+            borderTop: `1px solid ${theme.colors.border}`
+          }}>
+            <div className="flex items-center justify-between text-sm" style={{ color: theme.colors.textSecondary }}>
               <div className="flex items-center space-x-4">
                 <span>Hints given: {session.hintsGiven}</span>
                 <span>Questions asked: {session.questionsAsked}</span>
               </div>
               {session.understoodConcepts.length > 0 && (
                 <div className="flex items-center space-x-2">
-                  <span className="text-green-600">✓</span>
+                  <span style={{ color: theme.colors.brand }}>✓</span>
                   <span>{session.understoodConcepts.length} concepts mastered</span>
                 </div>
               )}
@@ -192,23 +278,28 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
 
           {/* Error Banner */}
           {error && (
-            <div className="px-6 py-3 bg-red-50 border-t border-b border-red-200">
+            <div className="px-6 py-3 relative z-10" style={{
+              backgroundColor: 'rgba(220, 38, 38, 0.1)',
+              borderTop: '1px solid rgba(220, 38, 38, 0.3)',
+              borderBottom: '1px solid rgba(220, 38, 38, 0.3)'
+            }}>
               <div className="flex items-start space-x-3">
-                <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#DC2626' }} />
                 <div className="flex-1">
-                  <p className="text-sm text-red-800 font-medium">Failed to get response</p>
-                  <p className="text-sm text-red-700 mt-1">{error}</p>
-                  <p className="text-xs text-red-600 mt-1">
+                  <p className="text-sm font-medium" style={{ color: '#991B1B' }}>Failed to get response</p>
+                  <p className="text-sm mt-1" style={{ color: '#B91C1C' }}>{error}</p>
+                  <p className="text-xs mt-1" style={{ color: '#DC2626' }}>
                     Please try sending your message again, or exit and restart the session.
                   </p>
                 </div>
                 {onClearError && (
                   <button
                     onClick={onClearError}
-                    className="p-1 hover:bg-red-100 rounded transition-colors"
+                    className="p-1 rounded transition-colors"
+                    style={{ color: '#DC2626' }}
                     title="Dismiss error"
                   >
-                    <X className="w-4 h-4 text-red-600" />
+                    <X className="w-4 h-4" />
                   </button>
                 )}
               </div>
@@ -216,7 +307,10 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
           )}
 
           {/* Input Area */}
-          <div className="border-t bg-white px-6 py-4">
+          <div className="px-6 py-4 relative z-10" style={{
+            backgroundColor: theme.colors.chat,
+            borderTop: `1px solid ${theme.colors.border}`
+          }}>
             <form onSubmit={handleSubmit} className="flex items-end space-x-3">
               <div className="flex-1">
                 <textarea
@@ -225,11 +319,17 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Share your thinking, ask a question, or show your work..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+                  className="w-full px-4 py-3 rounded-lg resize-none focus:ring-2 focus:outline-none"
+                  style={{
+                    backgroundColor: theme.colors.background,
+                    border: `1px solid ${theme.colors.border}`,
+                    color: theme.colors.textPrimary,
+                    borderRadius: theme.radius.lg,
+                  }}
                   rows={3}
                   disabled={isLoading}
                 />
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs mt-1" style={{ color: theme.colors.textSecondary }}>
                   Press Enter to send, Shift+Enter for new line
                 </p>
               </div>
@@ -237,7 +337,13 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                className="px-6 py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                style={{
+                  background: theme.gradients.brand,
+                  color: '#ffffff',
+                  borderRadius: theme.radius.lg,
+                  boxShadow: theme.shadows.md,
+                }}
               >
                 <Send className="w-5 h-5" />
                 <span>Send</span>
@@ -249,17 +355,27 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
 
       {/* Session Complete Modal */}
       {session.status === 'completed' && (
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-6">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Great Work!</h3>
+        <div className="absolute inset-0 flex items-center justify-center p-6 z-50" style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          backdropFilter: 'blur(4px)'
+        }}>
+          <div className="p-8 max-w-md w-full" style={{
+            backgroundColor: theme.colors.background,
+            borderRadius: theme.radius.lg,
+            boxShadow: theme.shadows.xl,
+            border: `1px solid ${theme.colors.border}`
+          }}>
+            <h3 className="text-2xl font-bold mb-4" style={{ color: theme.colors.textPrimary }}>
+              Great Work! 🎉
+            </h3>
             {session.finalOutcome === 'solved-with-understanding' && (
               <div>
-                <p className="text-gray-700 mb-4">
+                <p className="mb-4" style={{ color: theme.colors.textPrimary }}>
                   You successfully solved the problem and demonstrated solid understanding of:
                 </p>
-                <ul className="list-disc list-inside space-y-1 mb-6">
+                <ul className="list-disc list-inside space-y-1 mb-6" style={{ color: theme.colors.textPrimary }}>
                   {session.understoodConcepts.map((concept, idx) => (
-                    <li key={idx} className="text-gray-700">
+                    <li key={idx}>
                       {concept}
                     </li>
                   ))}
@@ -269,7 +385,13 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
             <div className="flex space-x-3">
               <button
                 onClick={onExit}
-                className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="flex-1 px-4 py-2 rounded-lg transition-colors"
+                style={{
+                  background: theme.gradients.brand,
+                  color: '#ffffff',
+                  borderRadius: theme.radius.lg,
+                  boxShadow: theme.shadows.md,
+                }}
               >
                 Done
               </button>
