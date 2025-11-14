@@ -9,49 +9,6 @@ import { zodToJsonSchema } from 'zod-to-json-schema';
 import { GradeCheckSchema } from '../schemas/homework.schemas';
 import type { ProblemAnalysis, GradeAppropriatenessCheck } from '../types/homework';
 
-// Standard K-12 Math Curriculum Mapping
-// Maps topics to typical grade levels
-const CURRICULUM_MAP: Record<string, { minGrade: number; maxGrade: number; concepts: string[] }> = {
-  // Algebra
-  'linear equations': { minGrade: 8, maxGrade: 12, concepts: ['solving equations', 'slope', 'y-intercept'] },
-  'quadratic equations': { minGrade: 9, maxGrade: 12, concepts: ['factoring', 'quadratic formula', 'parabolas'] },
-  'polynomials': { minGrade: 9, maxGrade: 12, concepts: ['factoring', 'operations', 'synthetic division'] },
-  'systems of equations': { minGrade: 8, maxGrade: 12, concepts: ['substitution', 'elimination', 'graphing'] },
-  'exponentials': { minGrade: 9, maxGrade: 12, concepts: ['exponential growth', 'logarithms', 'compound interest'] },
-  'rational expressions': { minGrade: 10, maxGrade: 12, concepts: ['simplification', 'operations', 'asymptotes'] },
-
-  // Geometry
-  'basic geometry': { minGrade: 6, maxGrade: 10, concepts: ['angles', 'triangles', 'quadrilaterals', 'perimeter', 'area'] },
-  'circles': { minGrade: 9, maxGrade: 12, concepts: ['circumference', 'area', 'arc length', 'sectors'] },
-  'solid geometry': { minGrade: 9, maxGrade: 12, concepts: ['volume', 'surface area', 'prisms', 'pyramids', 'spheres'] },
-  'coordinate geometry': { minGrade: 8, maxGrade: 12, concepts: ['distance formula', 'midpoint', 'slope'] },
-  'transformations': { minGrade: 8, maxGrade: 10, concepts: ['translation', 'rotation', 'reflection', 'dilation'] },
-
-  // Trigonometry
-  'trigonometry': { minGrade: 9, maxGrade: 12, concepts: ['SOH-CAH-TOA', 'sine', 'cosine', 'tangent', 'angles'] },
-  'angle of elevation': { minGrade: 9, maxGrade: 12, concepts: ['right triangles', 'trigonometric ratios'] },
-  'unit circle': { minGrade: 10, maxGrade: 12, concepts: ['radians', 'special angles', 'trig identities'] },
-  'law of sines': { minGrade: 10, maxGrade: 12, concepts: ['non-right triangles', 'ambiguous case'] },
-  'law of cosines': { minGrade: 10, maxGrade: 12, concepts: ['non-right triangles', 'SAS', 'SSS'] },
-
-  // Arithmetic & Pre-Algebra
-  'fractions': { minGrade: 4, maxGrade: 8, concepts: ['operations', 'simplification', 'mixed numbers'] },
-  'decimals': { minGrade: 4, maxGrade: 8, concepts: ['operations', 'conversion', 'percentages'] },
-  'percentages': { minGrade: 6, maxGrade: 10, concepts: ['conversion', 'percent change', 'applications'] },
-  'ratios and proportions': { minGrade: 6, maxGrade: 9, concepts: ['ratios', 'proportions', 'scale factor'] },
-  'integers': { minGrade: 6, maxGrade: 8, concepts: ['operations', 'order of operations', 'absolute value'] },
-
-  // Statistics & Probability
-  'statistics': { minGrade: 6, maxGrade: 12, concepts: ['mean', 'median', 'mode', 'range', 'standard deviation'] },
-  'probability': { minGrade: 7, maxGrade: 12, concepts: ['simple probability', 'compound events', 'permutations'] },
-  'data analysis': { minGrade: 6, maxGrade: 12, concepts: ['graphs', 'histograms', 'box plots', 'scatter plots'] },
-
-  // Advanced Topics
-  'calculus': { minGrade: 11, maxGrade: 12, concepts: ['limits', 'derivatives', 'integrals'] },
-  'sequences and series': { minGrade: 10, maxGrade: 12, concepts: ['arithmetic', 'geometric', 'summation'] },
-  'matrices': { minGrade: 10, maxGrade: 12, concepts: ['operations', 'determinants', 'systems'] },
-};
-
 const CHECK_PROMPT = `You are a curriculum expert for K-12 mathematics education.
 
 Given:
@@ -130,9 +87,6 @@ export class GradeAppropriatenessService {
         .replace('{CONCEPTS}', analysis.keyMathConcepts.join(', '))
         .replace('{PROBLEM_TYPE}', analysis.problemType);
 
-      console.log('[GradeCheck] 📤 Checking grade appropriateness...');
-      console.log('[GradeCheck] Student grade:', studentGrade);
-      console.log('[GradeCheck] Problem:', `${analysis.topic} (${analysis.difficulty})`);
       console.log('[GradeCheck] Prompt:', prompt);
 
 

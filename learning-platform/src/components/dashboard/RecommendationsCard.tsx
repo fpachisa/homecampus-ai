@@ -119,6 +119,7 @@ export const RecommendationsCard: React.FC<RecommendationsCardProps> = ({
                 style={{
                   backgroundColor: theme.colors.brand,
                   color: '#ffffff',
+                  cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.opacity = '0.9';

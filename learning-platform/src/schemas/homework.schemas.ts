@@ -48,17 +48,13 @@ export const GradeCheckSchema = z.object({
  */
 export const HomeworkHelperResponseSchema = z.object({
   speech: z.object({
-    text: z.string().describe("Plain text for TTS - no markdown, no LaTeX, no hyphens in acronyms"),
+    text: z.string().describe("A brief speech in Plain text for TTS Avataar- no markdown, no LaTeX, no hyphens in acronyms"),
     emotion: z.enum(["encouraging", "celebratory", "supportive", "neutral", "curious"]).describe("Emotion for voice context")
   }).describe("Speech content for text-to-speech"),
 
   display: z.object({
-    content: z.string().describe("Markdown and LaTeX formatted content for visual display"),
-    mathTool: z.object({
-      type: z.string().describe("Math tool type (e.g., rightTriangle, generalTriangle)"),
-      parameters: z.any().describe("Tool-specific parameters as an object")
-    }).optional().describe("Optional math visualization tool")
-  }).describe("Display content with rich formatting"),
+    content: z.string().describe("A bit more detailed content with rich formatting - markdown and LaTeX supported. Use unicode when possible. For LaTeX: Use $...$ delimiters."),
+  }),
 
   conceptsAddressed: z.array(z.string()).describe("List of concepts discussed in this response"),
   teachingAction: z.enum([

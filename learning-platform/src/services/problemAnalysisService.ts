@@ -67,9 +67,6 @@ export class ProblemAnalysisService {
       const imageData = problem.imageData || await this.fetchImageData(problem.imageUrl);
       const mimeType = problem.fileType;
 
-      console.log('[ProblemAnalysis] 📤 Sending image to Gemini for analysis...');
-      console.log('[ProblemAnalysis] Image type:', mimeType);
-      console.log('[ProblemAnalysis] Image size:', Math.round(imageData.length / 1024), 'KB');
 
       // Call Gemini with multimodal input using SDK
       // With structured output, Gemini guarantees valid JSON matching our schema
@@ -80,7 +77,7 @@ export class ProblemAnalysisService {
           {
             inlineData: {
               mimeType: mimeType,
-              data: imageData.replace(/^data:image\/\w+;base64,/, ''),
+              data: imageData.replace(/^data:[^;]+;base64,/, ''),
             },
           },
         ],

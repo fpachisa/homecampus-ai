@@ -38,11 +38,17 @@ export const ActiveStudentDashboard: React.FC = () => {
   const progressSummary = useProgressSummary();
 
   // Transform weekly activity to chart format
-  const weeklyData = progressSummary.weeklyActivity.map((activity, index) => ({
-    day: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][index] || 'Mon',
-    value: activity.problemsSolved,
-    date: activity.date,
-  }));
+  const weeklyData = progressSummary.weeklyActivity.map((activity) => {
+    // Get actual day name from the date
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const dayName = dayNames[activity.date.getDay()];
+
+    return {
+      day: dayName,
+      value: activity.problemsSolved,
+      date: activity.date,
+    };
+  });
 
   // Get last accessed topic for navigation
   const lastTopic = progressSummary.lastAccessedTopic;
@@ -96,7 +102,9 @@ export const ActiveStudentDashboard: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Greeting Header with Integrated Stats */}
-        <GreetingHeader />
+        <div className="relative" style={{ zIndex: 50 }}>
+          <GreetingHeader />
+        </div>
 
         {/* Divider */}
         <hr className="mb-8 mx-auto" style={{ borderColor: theme.colors.border, opacity: 0.6, maxWidth: '600px' }} />
@@ -135,7 +143,7 @@ export const ActiveStudentDashboard: React.FC = () => {
                 ? 'Great job! You completed your daily goal'
                 : `Solve ${progressSummary.dailyGoal - progressSummary.dailyProblems} more to complete your daily goal`
             }
-            buttonLabel="Continue Progress"
+            buttonLabel="Complete Daily Goal"
             buttonColor="#D97757"
             onAction={handleContinuePractice}
             metadata={{
@@ -149,7 +157,7 @@ export const ActiveStudentDashboard: React.FC = () => {
             icon="📸"
             title="Need help with homework?"
             description="Upload your math problem and I'll guide you through solving it"
-            buttonLabel="Upload Problem"
+            buttonLabel="Get Help"
             buttonColor="#D97757"
             onAction={goToHomeworkHelper}
             metadata={{
@@ -188,6 +196,7 @@ export const ActiveStudentDashboard: React.FC = () => {
                   style={{
                     backgroundColor: learningMode === 'learn' ? theme.colors.brand : 'transparent',
                     color: learningMode === 'learn' ? '#ffffff' : theme.colors.textSecondary,
+                    cursor: 'pointer',
                   }}
                 >
                   Learn Mode
@@ -198,6 +207,7 @@ export const ActiveStudentDashboard: React.FC = () => {
                   style={{
                     backgroundColor: learningMode === 'practice' ? theme.colors.brand : 'transparent',
                     color: learningMode === 'practice' ? '#ffffff' : theme.colors.textSecondary,
+                    cursor: 'pointer',
                   }}
                 >
                   Practice Mode

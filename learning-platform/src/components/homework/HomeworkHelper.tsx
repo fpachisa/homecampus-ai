@@ -1,15 +1,18 @@
 /**
  * HomeworkHelper Component
  * Main container orchestrating the homework help flow
+ * Now with autosave functionality for session persistence
  */
 
-import React, { useState, useCallback } from 'react';
-import { BookOpen, Loader, AlertCircle, ArrowLeft } from 'lucide-react';
+import React, { useState, useCallback, useEffect } from 'react';
+import { BookOpen, Loader, AlertCircle, ArrowLeft, History } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
+import { useHomeworkAutoSave } from '../../hooks/useHomeworkAutoSave';
 import { UploadZone } from './UploadZone';
 import { ProblemPreview } from './ProblemPreview';
 import { HomeworkSessionView } from './HomeworkSession';
+import { SessionResumeModal } from './SessionResumeModal';
 import { ProblemAnalysisService } from '../../services/problemAnalysisService';
 import { GradeAppropriatenessService } from '../../services/gradeAppropriatenessService';
 import { HomeworkHelperService } from '../../services/homeworkHelperService';
@@ -33,6 +36,15 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
   const navigate = useNavigate();
   const { theme } = useTheme();
 
+  // Autosave hook
+  const {
+    saveProblem,
+    saveSession,
+    completeSession: autoSaveCompleteSession,
+    checkForActiveSession,
+    clearActiveSession
+  } = useHomeworkAutoSave();
+
   // Services
   const [analysisService] = useState(() => new ProblemAnalysisService());
   const [gradeService] = useState(() => new GradeAppropriatenessService());
@@ -45,6 +57,57 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
   const [session, setSession] = useState<HomeworkSession | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
+
+  // Resume modal state
+  const [showResumeModal, setShowResumeModal] = useState(false);
+  const [resumeData, setResumeData] = useState<{ problem: any; session: HomeworkSession } | null>(null);
+
+  /**
+   * Check for active session on mount
+   */
+  useEffect(() => {
+    const { hasSaved, problem, session } = checkForActiveSession(studentId);
+
+    if (hasSaved && problem && session) {
+      setResumeData({ problem, session });
+      setShowResumeModal(true);
+    }
+  }, [studentId, checkForActiveSession]);
+
+  /**
+   * Resume previous session
+   */
+  const handleResumeSession = useCallback(() => {
+    if (!resumeData) return;
+
+    // Reconstruct the full problem object
+    const reconstructedProblem: UploadedProblem = {
+      id: resumeData.session.problemId,
+      studentId,
+      uploadedAt: resumeData.problem.uploadedAt,
+      imageUrl: '', // No image data in cache
+      fileType: 'image/png', // Default
+      status: 'in-progress',
+      analysis: resumeData.problem.analysis,
+      gradeCheck: resumeData.problem.gradeCheck
+    };
+
+    setCurrentProblem(reconstructedProblem);
+    setGradeCheck(resumeData.problem.gradeCheck);
+    setSession(resumeData.session);
+    setFlowState('session');
+    setShowResumeModal(false);
+  }, [resumeData, studentId]);
+
+  /**
+   * Start new problem (discarding any active session)
+   */
+  const handleStartNew = useCallback(() => {
+    clearActiveSession(studentId);
+    setShowResumeModal(false);
+    setResumeData(null);
+    setFlowState('upload');
+  }, [studentId, clearActiveSession]);
 
   /**
    * Handle file upload
@@ -88,6 +151,9 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
         setCurrentProblem(analyzedProblem);
         setGradeCheck(check);
         setFlowState('preview');
+
+        // Autosave: Save analyzed problem
+        await saveProblem(analyzedProblem);
       } catch (err) {
         console.error('Upload/analysis failed:', err);
         setError(
@@ -96,7 +162,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
         setFlowState('error');
       }
     },
-    [studentId, studentGrade, analysisService, gradeService]
+    [studentId, studentGrade, analysisService, gradeService, saveProblem]
   );
 
   /**
@@ -159,6 +225,9 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
 
         setSession(newSession);
         setFlowState('session');
+
+        // Autosave: Save new session (immediate)
+        await saveSession(newSession, true);
       } catch (err) {
         console.error('Failed to start session:', err);
         setError('Failed to start tutoring session. Please try again.');
@@ -167,7 +236,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
         setIsProcessing(false);
       }
     },
-    [currentProblem, studentId, studentGrade, helperService]
+    [currentProblem, studentId, studentGrade, helperService, saveSession]
   );
 
   /**
@@ -177,20 +246,29 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
     async (messageText: string) => {
       if (!session || !currentProblem?.analysis) return;
 
+      // Add student message immediately (so it appears right away)
+      const studentMessage: HomeworkMessage = {
+        id: generateId(),
+        role: 'student',
+        timestamp: new Date().toISOString(),
+        text: messageText,
+        messageType: 'answer-attempt',
+      };
+
+      const updatedMessages = [...session.messages, studentMessage];
+
+      // Update session with student message immediately
+      const sessionWithStudentMessage: HomeworkSession = {
+        ...session,
+        messages: updatedMessages,
+        lastActivityAt: new Date().toISOString(),
+        studentAttempts: session.studentAttempts + 1,
+      };
+
+      setSession(sessionWithStudentMessage);
       setIsProcessing(true);
 
       try {
-        // Add student message
-        const studentMessage: HomeworkMessage = {
-          id: generateId(),
-          role: 'student',
-          timestamp: new Date().toISOString(),
-          text: messageText,
-          messageType: 'answer-attempt',
-        };
-
-        const updatedMessages = [...session.messages, studentMessage];
-
         // Build context for helper
         const context: HomeworkHelperContext = {
           problem: currentProblem,
@@ -237,6 +315,19 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
         };
 
         setSession(updatedSession);
+
+        // Autosave: Save updated session (debounced unless completed)
+        if (response.sessionComplete) {
+          // Session completed - save immediately and mark as complete
+          const finalOutcome = response.completionReason === 'understood'
+            ? 'solved-with-understanding'
+            : (response.completionReason as HomeworkSession['finalOutcome']);
+
+          await autoSaveCompleteSession(updatedSession, finalOutcome);
+        } else {
+          // Session ongoing - debounced save
+          await saveSession(updatedSession);
+        }
       } catch (err) {
         console.error('Failed to send message:', err);
         // Show error state - don't fake AI response
@@ -248,7 +339,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
         setIsProcessing(false);
       }
     },
-    [session, currentProblem, studentGrade, helperService]
+    [session, currentProblem, studentGrade, helperService, saveSession, autoSaveCompleteSession]
   );
 
   /**
@@ -264,24 +355,65 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
 
   // Render based on flow state
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: theme.gradients.panel }}>
-      {/* Background texture */}
-      <div
-        className="fixed inset-0 opacity-30 pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 25% 25%, rgba(88, 101, 242, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(71, 82, 196, 0.05) 0%, transparent 50%)',
-        }}
+    <>
+      {/* Resume Session Modal */}
+      <SessionResumeModal
+        isOpen={showResumeModal}
+        onResume={handleResumeSession}
+        onStartNew={handleStartNew}
+        problem={resumeData?.problem || null}
+        session={resumeData?.session || null}
       />
+
+      <div className="min-h-screen flex flex-col" style={{ background: theme.gradients.panel }}>
+        {/* Background texture */}
+        <div
+          className="fixed inset-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 25% 25%, rgba(88, 101, 242, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(71, 82, 196, 0.05) 0%, transparent 50%)',
+          }}
+        />
 
       {/* Header - show unless in session */}
       {flowState !== 'session' && (
         <header className="relative z-10 border-b" style={{ borderColor: theme.colors.border }}>
           <div className="max-w-6xl mx-auto px-6 py-6">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={() => navigate('/home')}
+                  className="p-2 rounded-lg transition-all duration-200"
+                  style={{
+                    backgroundColor: theme.colors.interactive,
+                    color: theme.colors.textSecondary,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = theme.colors.brand;
+                    e.currentTarget.style.color = '#ffffff';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = theme.colors.interactive;
+                    e.currentTarget.style.color = theme.colors.textSecondary;
+                  }}
+                  title="Back to home"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                </button>
+                <div>
+                  <h1 className="text-2xl font-bold" style={{ color: theme.colors.textPrimary }}>
+                    Homework Helper
+                  </h1>
+                  <p className="text-sm" style={{ color: theme.colors.textMuted }}>
+                    Get hints and guidance to solve your math problems step-by-step
+                  </p>
+                </div>
+              </div>
+
+              {/* History Button */}
               <button
-                onClick={() => navigate('/home')}
-                className="p-2 rounded-lg transition-all duration-200"
+                onClick={() => navigate('/homework/history')}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 font-medium"
                 style={{
                   backgroundColor: theme.colors.interactive,
                   color: theme.colors.textSecondary,
@@ -294,18 +426,11 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
                   e.currentTarget.style.backgroundColor = theme.colors.interactive;
                   e.currentTarget.style.color = theme.colors.textSecondary;
                 }}
-                title="Back to home"
+                title="View homework history"
               >
-                <ArrowLeft className="w-5 h-5" />
+                <History className="w-5 h-5" />
+                <span className="hidden sm:inline">History</span>
               </button>
-              <div>
-                <h1 className="text-2xl font-bold" style={{ color: theme.colors.textPrimary }}>
-                  Homework Helper
-                </h1>
-                <p className="text-sm" style={{ color: theme.colors.textMuted }}>
-                  Get hints and guidance to solve your math problems step-by-step
-                </p>
-              </div>
             </div>
           </div>
         </header>
@@ -405,6 +530,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
               gradeCheck={gradeCheck}
               onConfirm={handleStartSession}
               onCancel={handleReset}
+              isProcessing={isProcessing}
               theme={theme}
             />
           </div>
@@ -460,6 +586,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
         )}
       </main>
     </div>
+    </>
   );
 };
 

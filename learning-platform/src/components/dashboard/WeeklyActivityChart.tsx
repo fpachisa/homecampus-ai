@@ -3,8 +3,8 @@
  *
  * Displays:
  * - Problems solved per day (bar height)
- * - Day labels (Mon-Sun)
- * - Daily average
+ * - Day labels (actual days from the last 7 days)
+ * - Daily average (total divided by 7)
  * - Week-over-week comparison
  */
 
@@ -55,7 +55,7 @@ export const WeeklyActivityChart: React.FC<WeeklyActivityChartProps> = ({
           className="text-lg font-semibold"
           style={{ color: theme.colors.textPrimary }}
         >
-          This Week's Activity
+          Last 7 Days
         </h3>
       </div>
 

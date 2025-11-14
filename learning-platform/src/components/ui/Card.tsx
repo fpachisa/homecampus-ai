@@ -236,6 +236,7 @@ export const MessageCard = forwardRef<HTMLDivElement, MessageCardProps>(
                   backgroundColor: reaction.active
                     ? `${theme.colors.brand}20`
                     : `${theme.colors.interactive}50`,
+                  cursor: 'pointer',
                 }}
               >
                 {reaction.emoji} {reaction.count}
@@ -245,7 +246,7 @@ export const MessageCard = forwardRef<HTMLDivElement, MessageCardProps>(
         )}
         <button
           className="p-1 rounded-md opacity-60 hover:opacity-100 transition-opacity duration-200"
-          style={{ color: 'currentColor' }}
+          style={{ color: 'currentColor', cursor: 'pointer' }}
           title="More actions"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

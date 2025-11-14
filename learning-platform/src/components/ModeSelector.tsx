@@ -130,7 +130,8 @@ const ModeSelector: React.FC<ModeSelectorProps> = ({ category, onModeSelect, onB
               background: theme.glass.background,
               border: `1px solid ${theme.glass.border}`,
               backdropFilter: theme.glass.backdrop,
-              boxShadow: theme.shadows.md
+              boxShadow: theme.shadows.md,
+              cursor: 'pointer',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-4px)';
@@ -213,7 +214,8 @@ const ModeSelector: React.FC<ModeSelectorProps> = ({ category, onModeSelect, onB
               background: theme.glass.background,
               border: `1px solid ${theme.glass.border}`,
               backdropFilter: theme.glass.backdrop,
-              boxShadow: theme.shadows.md
+              boxShadow: theme.shadows.md,
+              cursor: 'pointer',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-4px)';

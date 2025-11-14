@@ -94,6 +94,7 @@ const EntryPointSelector: React.FC<EntryPointSelectorProps> = ({
           style={{
             backgroundColor: theme.colors.interactive,
             color: theme.colors.textSecondary,
+            cursor: 'pointer',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = theme.colors.brand;
@@ -132,6 +133,7 @@ const EntryPointSelector: React.FC<EntryPointSelectorProps> = ({
                 border: `1px solid ${theme.glass.border}`,
                 backdropFilter: theme.glass.backdrop,
                 boxShadow: theme.shadows.md,
+                cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';

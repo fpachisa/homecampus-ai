@@ -22,6 +22,7 @@ export const BackButton: React.FC<BackButtonProps> = ({ onClick, label = 'Back' 
       style={{
         backgroundColor: theme.colors.interactive,
         color: theme.colors.textPrimary,
+        cursor: 'pointer',
       }}
     >
       ← {label}

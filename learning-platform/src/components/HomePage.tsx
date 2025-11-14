@@ -75,6 +75,7 @@ const HomePage: React.FC = () => {
                 style={{
                   backgroundColor: theme.colors.interactive,
                   color: theme.colors.textSecondary,
+                  cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = theme.colors.brand;

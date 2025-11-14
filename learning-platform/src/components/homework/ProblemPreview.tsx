@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Sparkles,
   ArrowRight,
+  Loader,
 } from 'lucide-react';
 import type { ProblemAnalysis, GradeAppropriatenessCheck } from '../../types/homework';
 import type { Theme } from '../../styles/themes';
@@ -22,6 +23,7 @@ interface ProblemPreviewProps {
   gradeCheck: GradeAppropriatenessCheck;
   onConfirm: (finalText: string) => void;
   onCancel: () => void;
+  isProcessing?: boolean;
   theme: Theme;
 }
 
@@ -31,7 +33,8 @@ export const ProblemPreview: React.FC<ProblemPreviewProps> = ({
   gradeCheck,
   onConfirm,
   onCancel,
-  theme: _theme, // TODO: Apply full theme styling to preview
+  isProcessing = false,
+  theme,
 }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(analysis.extractedText);
@@ -233,20 +236,58 @@ export const ProblemPreview: React.FC<ProblemPreviewProps> = ({
       )}
 
       {/* Actions */}
-      <div className="flex justify-between items-center pt-4 border-t">
+      <div className="flex justify-between items-center pt-4 border-t" style={{ borderColor: theme.colors.border }}>
         <button
           onClick={onCancel}
-          className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+          disabled={isProcessing}
+          className="px-6 py-2 rounded-lg transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+          style={{
+            backgroundColor: theme.colors.interactive,
+            color: theme.colors.textSecondary,
+            border: `1px solid ${theme.colors.border}`,
+          }}
+          onMouseEnter={(e) => {
+            if (!isProcessing) {
+              e.currentTarget.style.backgroundColor = theme.colors.textMuted + '20';
+            }
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = theme.colors.interactive;
+          }}
         >
           Upload Different Problem
         </button>
 
         <button
           onClick={handleConfirm}
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 font-medium"
+          disabled={isProcessing}
+          className="px-6 py-3 rounded-lg transition-all duration-200 flex items-center gap-2 font-medium disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-lg"
+          style={{
+            backgroundColor: theme.colors.brand,
+            color: '#ffffff',
+          }}
+          onMouseEnter={(e) => {
+            if (!isProcessing) {
+              e.currentTarget.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.backgroundColor = theme.colors.brandHover || theme.colors.brand;
+            }
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.backgroundColor = theme.colors.brand;
+          }}
         >
-          <span>Start Tutoring Session</span>
-          <ArrowRight className="w-5 h-5" />
+          {isProcessing ? (
+            <>
+              <Loader className="w-5 h-5 animate-spin" />
+              <span>Starting Session...</span>
+            </>
+          ) : (
+            <>
+              <span>Start Tutoring Session</span>
+              <ArrowRight className="w-5 h-5" />
+            </>
+          )}
         </button>
       </div>
     </div>

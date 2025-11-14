@@ -117,6 +117,7 @@ export const ContinueLearningCard: React.FC<ContinueLearningCardProps> = ({
         style={{
           backgroundColor: theme.colors.brand,
           color: '#ffffff',
+          cursor: 'pointer',
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = 'scale(1.02)';

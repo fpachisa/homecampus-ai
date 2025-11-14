@@ -60,6 +60,7 @@ export const GreetingHeader: React.FC = () => {
             style={{
               backgroundColor: theme.colors.interactive,
               border: `1px solid ${hoveredStat === 'level' ? theme.colors.brand : theme.colors.border}`,
+              cursor: 'pointer',
             }}
             onMouseEnter={() => setHoveredStat('level')}
             onMouseLeave={() => setHoveredStat(null)}
@@ -84,10 +85,11 @@ export const GreetingHeader: React.FC = () => {
             {/* Tooltip */}
             {hoveredStat === 'level' && (
               <div
-                className="absolute top-full left-0 mt-2 p-3 rounded-lg shadow-lg z-10 whitespace-nowrap"
+                className="absolute top-full left-0 mt-2 p-3 rounded-lg shadow-lg whitespace-nowrap"
                 style={{
                   backgroundColor: theme.colors.panel,
                   border: `1px solid ${theme.colors.border}`,
+                  zIndex: 9999,
                 }}
               >
                 <div className="text-xs space-y-1">
@@ -109,6 +111,7 @@ export const GreetingHeader: React.FC = () => {
               style={{
                 backgroundColor: theme.colors.interactive,
                 border: `1px solid ${hoveredStat === 'streak' ? theme.colors.brand : theme.colors.border}`,
+                cursor: 'pointer',
               }}
               onMouseEnter={() => setHoveredStat('streak')}
               onMouseLeave={() => setHoveredStat(null)}
@@ -127,10 +130,11 @@ export const GreetingHeader: React.FC = () => {
               {/* Tooltip */}
               {hoveredStat === 'streak' && (
                 <div
-                  className="absolute top-full left-0 mt-2 p-3 rounded-lg shadow-lg z-10 whitespace-nowrap"
+                  className="absolute top-full left-0 mt-2 p-3 rounded-lg shadow-lg whitespace-nowrap"
                   style={{
                     backgroundColor: theme.colors.panel,
                     border: `1px solid ${theme.colors.border}`,
+                    zIndex: 9999,
                   }}
                 >
                   <div className="text-xs space-y-1">
@@ -155,6 +159,7 @@ export const GreetingHeader: React.FC = () => {
             style={{
               backgroundColor: theme.colors.interactive,
               border: `1px solid ${hoveredStat === 'weekly' ? theme.colors.brand : theme.colors.border}`,
+              cursor: 'pointer',
             }}
             onMouseEnter={() => setHoveredStat('weekly')}
             onMouseLeave={() => setHoveredStat(null)}
@@ -179,10 +184,11 @@ export const GreetingHeader: React.FC = () => {
             {/* Tooltip */}
             {hoveredStat === 'weekly' && (
               <div
-                className="absolute top-full left-0 mt-2 p-3 rounded-lg shadow-lg z-10 whitespace-nowrap"
+                className="absolute top-full left-0 mt-2 p-3 rounded-lg shadow-lg whitespace-nowrap"
                 style={{
                   backgroundColor: theme.colors.panel,
                   border: `1px solid ${theme.colors.border}`,
+                  zIndex: 9999,
                 }}
               >
                 <div className="text-xs space-y-1">

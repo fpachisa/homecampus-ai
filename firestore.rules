@@ -94,6 +94,20 @@ service cloud.firestore {
         allow read: if isOwner(userId) || isParent(userId);
         allow write: if isOwner(userId) || isParent(userId);
       }
+
+      // Homework Helper - Problems (users/{uid}/homeworkProblems/{problemId})
+      match /homeworkProblems/{problemId} {
+        allow read: if isOwner(userId) || isParent(userId);
+        allow create, update: if isOwner(userId) || isParent(userId);
+        allow delete: if isOwner(userId);
+
+        // Homework sessions subcollection (users/{uid}/homeworkProblems/{problemId}/sessions/{sessionId})
+        match /sessions/{sessionId} {
+          allow read: if isOwner(userId) || isParent(userId);
+          allow create, update: if isOwner(userId) || isParent(userId);
+          allow delete: if isOwner(userId);
+        }
+      }
     }
 
     // Progress summaries (denormalized for parent dashboard - single read!)

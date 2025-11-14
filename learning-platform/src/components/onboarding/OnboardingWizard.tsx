@@ -405,7 +405,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
               <button
                 onClick={onCancel}
                 className="text-sm"
-                style={{ color: theme.colors.textMuted }}
+                style={{ color: theme.colors.textMuted, cursor: 'pointer' }}
               >
                 Cancel
               </button>
@@ -513,6 +513,7 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
                 style={{
                   background: theme.gradients.brand,
                   boxShadow: theme.shadows.md,
+                  cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = theme.shadows.glow;

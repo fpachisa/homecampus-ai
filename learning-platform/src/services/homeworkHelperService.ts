@@ -43,9 +43,6 @@ export class HomeworkHelperService {
     // Build full prompt with system prompt and context
     const fullPrompt = `${HOMEWORK_HELPER_AGENT}\n\n${this.buildPrompt(context, studentInput)}`;
 
-    console.log('[HomeworkHelper] 📤 Generating Socratic response...');
-    console.log('[HomeworkHelper] Student input:', studentInput);
-    console.log('[HomeworkHelper] Prompt:', fullPrompt);
 
     // Call Gemini with structured output
     const response = await this.ai.models.generateContent({
@@ -53,12 +50,10 @@ export class HomeworkHelperService {
       contents: fullPrompt,
       config: this.config
     });
-
-    const textResponse = response.text;
-
     console.log('[HomeworkHelper] 📥 Received response from Gemini');
-    console.log('[HomeworkHelper] Response length:', textResponse?.length || 0, 'chars');
-
+    console.log('[HomeworkHelper] Prompt:', fullPrompt);
+    const textResponse = response.text;
+    console.log('[HomeworkHelper] Response:', textResponse);
     if (!textResponse) {
       throw new Error('No response from Gemini');
     }
@@ -68,12 +63,6 @@ export class HomeworkHelperService {
 
     // Validate with Zod schema for runtime type safety
     const validated = HomeworkHelperResponseSchema.parse(parsed);
-
-    console.log('[HomeworkHelper] ✅ Response generated:', {
-      teachingAction: validated.teachingAction,
-      hasMathTool: !!validated.display.mathTool,
-      speechLength: validated.speech.text.length
-    });
 
     return validated;
   }
@@ -108,14 +97,12 @@ export class HomeworkHelperService {
     return `CONTEXT:
 ${JSON.stringify(contextObj, null, 2)}
 
-The student just said: "${studentInput}"
 
-Generate your Socratic response following the rules in your system prompt.
+Evaluate the student response and generate your Socratic response.
 
 Remember:
 - NEVER give the final answer
-- Ask questions to guide thinking
-- Validate reasoning, not just answers`;
+- Ask questions to guide thinking`;
   }
 
   /**
@@ -128,15 +115,16 @@ ${JSON.stringify({ problemAnalysis: context.analysis }, null, 2)}
 This is the FIRST interaction with the student about this uploaded problem.
 
 Generate a warm, encouraging greeting that:
-1. Acknowledges you see their problem
-2. Asks what they understand so far
+1. Acknowledge the probem uploaded
+2. Check thier understanding of the problem
 3. Sets a collaborative, Socratic tone`;
 
     // Build full prompt with system prompt
     const fullPrompt = `${HOMEWORK_HELPER_AGENT}\n\n${contextPrompt}`;
 
     console.log('[HomeworkHelper] 📤 Generating initial greeting...');
-    console.log('[HomeworkHelper] Problem topic:', context.analysis.topic);
+    console.log('[HomeworkHelper] Prompt:', fullPrompt);
+
 
     // Call Gemini with structured output
     const response = await this.ai.models.generateContent({
@@ -147,8 +135,6 @@ Generate a warm, encouraging greeting that:
 
     const textResponse = response.text;
 
-    console.log('[HomeworkHelper] 📥 Received greeting from Gemini');
-    console.log('[HomeworkHelper] Response length:', textResponse?.length || 0, 'chars');
     console.log('[HomeworkHelper] Raw response:', textResponse);
 
     if (!textResponse) {
@@ -162,8 +148,7 @@ Generate a warm, encouraging greeting that:
     const validated = HomeworkHelperResponseSchema.parse(parsed);
 
     console.log('[HomeworkHelper] ✅ Initial greeting generated:', {
-      emotion: validated.speech.emotion,
-      hasVisual: !!validated.display.mathTool
+      emotion: validated.speech.emotion
     });
 
     return validated;

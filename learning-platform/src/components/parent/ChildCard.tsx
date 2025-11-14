@@ -62,6 +62,7 @@ export const ChildCard: React.FC<ChildCardProps> = ({ child, type, onSwitch }) =
         border: `1px solid ${theme.glass.border}`,
         backdropFilter: theme.glass.backdrop,
         boxShadow: theme.shadows.md,
+        cursor: 'pointer',
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = 'translateY(-4px)';

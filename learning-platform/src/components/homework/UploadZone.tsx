@@ -164,6 +164,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
             style={{
               backgroundColor: theme.colors.brand,
               color: '#ffffff',
+              cursor: disabled ? 'not-allowed' : 'pointer',
             }}
             onMouseEnter={(e) => {
               if (!disabled) e.currentTarget.style.opacity = '0.9';

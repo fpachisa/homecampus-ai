@@ -190,6 +190,7 @@ export const LandingPage: React.FC = () => {
               style={{
                 backgroundColor: theme.colors.brand,
                 color: '#ffffff',
+                cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = theme.colors.brandHover;
@@ -208,6 +209,7 @@ export const LandingPage: React.FC = () => {
               style={{
                 backgroundColor: theme.colors.interactive,
                 color: theme.colors.textSecondary,
+                cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = theme.colors.brand;
@@ -265,6 +267,7 @@ export const LandingPage: React.FC = () => {
               style={{
                 background: theme.gradients.brand,
                 boxShadow: theme.shadows.lg,
+                cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.boxShadow = theme.shadows.glow;
@@ -791,6 +794,7 @@ export const LandingPage: React.FC = () => {
             style={{
               background: theme.gradients.brand,
               boxShadow: theme.shadows.lg,
+              cursor: 'pointer',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = theme.shadows.glow;

@@ -30,7 +30,6 @@ export const ActionCard: React.FC<ActionCardProps> = ({
   buttonLabel,
   buttonColor,
   onAction,
-  metadata,
 }) => {
   const { theme } = useTheme();
 
@@ -62,37 +61,15 @@ export const ActionCard: React.FC<ActionCardProps> = ({
         {description}
       </p>
 
-      {/* Metadata (time + XP) */}
-      {metadata && (
-        <div className="flex items-center gap-3 mb-3 text-xs">
-          {metadata.time && (
-            <div
-              className="flex items-center gap-1"
-              style={{ color: theme.colors.textMuted }}
-            >
-              <span>⏱️</span>
-              <span>{metadata.time}</span>
-            </div>
-          )}
-          {metadata.xp && (
-            <div
-              className="flex items-center gap-1"
-              style={{ color: theme.colors.textMuted }}
-            >
-              <span>⭐</span>
-              <span>+{metadata.xp} XP</span>
-            </div>
-          )}
-        </div>
-      )}
 
       {/* CTA Button */}
       <button
         onClick={onAction}
-        className="w-full py-2.5 px-4 rounded-lg text-sm font-semibold transition-all duration-200"
+        className="self-center py-2 px-5 rounded-lg text-sm font-semibold transition-all duration-200"
         style={{
           backgroundColor: buttonColor || theme.colors.brand,
           color: '#ffffff',
+          cursor: 'pointer',
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.opacity = '0.9';

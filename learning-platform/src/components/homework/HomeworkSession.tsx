@@ -8,6 +8,8 @@ import { Send, Image as ImageIcon, Loader, ArrowLeft, AlertCircle, X } from 'luc
 import type { HomeworkSession, UploadedProblem } from '../../types/homework';
 import type { Theme } from '../../styles/themes';
 import { MessageDisplay } from '../chat/MessageDisplay';
+import Avatar from '../Avatar';
+import { useAudioManager } from '../../hooks/useAudioManager';
 
 interface HomeworkSessionProps {
   session: HomeworkSession;
@@ -33,12 +35,94 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
   const [input, setInput] = useState('');
   const [showProblemImage, setShowProblemImage] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const lastMessageRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  // Auto-scroll to bottom when new messages arrive
+  // Audio Manager for TTS and Avatar control
+  const { isPlaying, currentSubtitle, avatarState, audioDuration, speakText } = useAudioManager();
+  const [showSubtitle] = useState(true);
+
+  // Track last message to trigger speech
+  const lastMessageIdRef = useRef<string | null>(null);
+
+  // Track which message is currently being spoken (hide it from chat until speech completes)
+  const [speakingMessageId, setSpeakingMessageId] = useState<string | null>(null);
+
+  // Track whether to show completion modal (only show after speech completes)
+  const [showCompletionModal, setShowCompletionModal] = useState(false);
+
+  // Helper to get avatar emotion from homework emotion
+  const getAvatarEmotion = (): 'encouraging' | 'celebratory' | 'supportive' | 'neutral' => {
+    if (session.messages.length === 0) return 'neutral';
+    const lastMsg = session.messages[session.messages.length - 1];
+    if (!lastMsg.speech?.emotion) return 'neutral';
+    // Map 'curious' to 'neutral', pass through others
+    if (lastMsg.speech.emotion === 'curious') return 'neutral';
+    return lastMsg.speech.emotion as 'encouraging' | 'celebratory' | 'supportive' | 'neutral';
+  };
+
+  // Auto-scroll to TOP of new message when messages arrive or loading state changes
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [session.messages]);
+    // Small delay to ensure DOM has updated before scrolling
+    const scrollTimeout = setTimeout(() => {
+      if (lastMessageRef.current) {
+        // Scroll to the top of the last message (so user sees the beginning)
+        lastMessageRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        });
+      }
+    }, 100);
+
+    return () => clearTimeout(scrollTimeout);
+  }, [session.messages, isLoading]);
+
+  // Trigger speech when new tutor message arrives
+  useEffect(() => {
+    if (session.messages.length === 0) return;
+
+    const lastMessage = session.messages[session.messages.length - 1];
+
+    // Only speak new tutor messages
+    if (
+      lastMessage.role === 'tutor' &&
+      lastMessage.id !== lastMessageIdRef.current &&
+      lastMessage.speech?.text
+    ) {
+      lastMessageIdRef.current = lastMessage.id;
+
+      // Mark this message as currently being spoken (hide from chat)
+      setSpeakingMessageId(lastMessage.id);
+
+      // Check if session is completed with this message
+      const isSessionCompleted = session.status === 'completed';
+
+      // Generate TTS on-the-fly and speak
+      // Map homework emotions to TTS emotions
+      const ttsEmotion = (lastMessage.speech.emotion === 'curious' ? 'neutral' : lastMessage.speech.emotion) as
+        | 'encouraging'
+        | 'celebratory'
+        | 'supportive'
+        | 'neutral'
+        | undefined;
+
+      speakText(
+        lastMessage.speech.text,
+        ttsEmotion || 'neutral',
+        () => {
+          // When speech completes:
+          // 1. Show the message in chat
+          setSpeakingMessageId(null);
+
+          // 2. If session completed, show completion modal AFTER speech
+          if (isSessionCompleted) {
+            setShowCompletionModal(true);
+          }
+        }
+      );
+    }
+  }, [session.messages, session.status, speakText]);
 
   // Auto-focus input
   useEffect(() => {
@@ -153,9 +237,39 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Messages */}
           <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4 relative z-10">
-            {session.messages.map((message, idx) => (
+            {/* Avatar - Show when no messages or when speaking */}
+            {(session.messages.length === 0 || isPlaying) && (
+              <div
+                style={{
+                  position: 'fixed',
+                  top: '120px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  zIndex: 50,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
+              >
+                <Avatar
+                  state={avatarState}
+                  emotion={getAvatarEmotion()}
+                  subtitle={currentSubtitle}
+                  showSubtitle={showSubtitle}
+                  size={120}
+                  audioDuration={audioDuration}
+                />
+              </div>
+            )}
+
+            {session.messages
+              .filter(msg => msg.id !== speakingMessageId) // Hide message being spoken
+              .map((message, idx, filteredArray) => {
+                const isLastMessage = idx === filteredArray.length - 1;
+                return (
               <div
                 key={message.id || idx}
+                ref={isLastMessage ? lastMessageRef : null}
                 className={`flex ${message.role === 'student' ? 'justify-end' : 'justify-start'} animate-message-appear`}
               >
                 {message.role === 'student' ? (
@@ -229,11 +343,12 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
                   </div>
                 )}
               </div>
-            ))}
+                );
+              })}
 
             {/* Loading indicator */}
             {isLoading && (
-              <div className="flex justify-start">
+              <div ref={lastMessageRef} className="flex justify-start">
                 <div className="flex items-start space-x-2">
                   <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-xl">
                     📚
@@ -248,7 +363,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
                     }}
                   >
                     <Loader className="w-4 h-4 animate-spin" style={{ color: theme.colors.brand }} />
-                    <span style={{ color: theme.colors.textPrimary }}>Thinking...</span>
+                    <span style={{ color: theme.colors.textPrimary }}>Analyzing...</span>
                   </div>
                 </div>
               </div>
@@ -262,18 +377,6 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
             backgroundColor: theme.colors.surface,
             borderTop: `1px solid ${theme.colors.border}`
           }}>
-            <div className="flex items-center justify-between text-sm" style={{ color: theme.colors.textSecondary }}>
-              <div className="flex items-center space-x-4">
-                <span>Hints given: {session.hintsGiven}</span>
-                <span>Questions asked: {session.questionsAsked}</span>
-              </div>
-              {session.understoodConcepts.length > 0 && (
-                <div className="flex items-center space-x-2">
-                  <span style={{ color: theme.colors.brand }}>✓</span>
-                  <span>{session.understoodConcepts.length} concepts mastered</span>
-                </div>
-              )}
-            </div>
           </div>
 
           {/* Error Banner */}
@@ -353,8 +456,8 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
         </div>
       </div>
 
-      {/* Session Complete Modal */}
-      {session.status === 'completed' && (
+      {/* Session Complete Modal - Only show after speech completes */}
+      {showCompletionModal && (
         <div className="absolute inset-0 flex items-center justify-center p-6 z-50" style={{
           backgroundColor: 'rgba(0, 0, 0, 0.6)',
           backdropFilter: 'blur(4px)'

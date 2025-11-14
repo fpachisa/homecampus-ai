@@ -48,6 +48,7 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
             className="absolute top-4 right-4 p-1 rounded-lg transition-colors"
             style={{
               color: theme.colors.textMuted,
+              cursor: 'pointer',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = theme.colors.interactive;
@@ -107,6 +108,7 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
           style={{
             background: theme.gradients.brand,
             boxShadow: theme.shadows.md,
+            cursor: 'pointer',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.boxShadow = theme.shadows.glow;
