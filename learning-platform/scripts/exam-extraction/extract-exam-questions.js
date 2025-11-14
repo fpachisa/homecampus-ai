@@ -9,8 +9,7 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GoogleAIFileManager } from '@google/generative-ai/server';
+import { GoogleGenAI } from '@google/genai';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -28,8 +27,7 @@ const anthropic = AI_CONFIG.provider === 'anthropic' ? new Anthropic({
   apiKey: AI_CONFIG.anthropic.apiKey
 }) : null;
 
-const genAI = AI_CONFIG.provider === 'gemini' ? new GoogleGenerativeAI(AI_CONFIG.gemini.apiKey) : null;
-const fileManager = AI_CONFIG.provider === 'gemini' ? new GoogleAIFileManager(AI_CONFIG.gemini.apiKey) : null;
+const genAI = AI_CONFIG.provider === 'gemini' ? new GoogleGenAI({ apiKey: AI_CONFIG.gemini.apiKey }) : null;
 
 const EXTRACTION_PROMPT = `Extract ALL exam questions from this PDF into a simple JSON structure.
 
@@ -194,27 +192,28 @@ async function extractWithGemini(pdfPath) {
   console.log('Step 1: Uploading PDF to Gemini File API...');
 
   // Upload PDF to Gemini
-  const uploadResult = await fileManager.uploadFile(pdfPath, {
-    mimeType: 'application/pdf',
+  const uploadResult = await genAI.files.upload({
+    file: pdfPath,
     displayName: path.basename(pdfPath)
   });
 
-  console.log(`✓ PDF uploaded: ${uploadResult.file.displayName}`);
+  console.log(`✓ PDF uploaded: ${uploadResult.displayName}`);
   console.log('Step 2: Processing with Gemini...');
 
-  const model = genAI.getGenerativeModel({ model: AI_CONFIG.gemini.model });
+  const result = await genAI.models.generateContent({
+    model: AI_CONFIG.gemini.model,
+    contents: [
+      {
+        fileData: {
+          mimeType: uploadResult.mimeType,
+          fileUri: uploadResult.uri
+        }
+      },
+      EXTRACTION_PROMPT
+    ]
+  });
 
-  const result = await model.generateContent([
-    {
-      fileData: {
-        mimeType: uploadResult.file.mimeType,
-        fileUri: uploadResult.file.uri
-      }
-    },
-    { text: EXTRACTION_PROMPT }
-  ]);
-
-  return result.response.text();
+  return result.text;
 }
 
 async function extractQuestionsFromPDF(pdfPath, outputPath) {

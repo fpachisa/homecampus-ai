@@ -10,7 +10,7 @@
  */
 
 import { config } from 'dotenv';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { writeFileSync, readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { S1_MATH_PERIMETER_AREA_SUBTOPICS } from '../src/prompt-library/subjects/mathematics/secondary/s1-perimeter-area';
@@ -266,9 +266,11 @@ Generate ${numQuestions} problems now:`;
   console.log(`prompt: ${prompt}`);
   console.log(`\n🤖 Generating ${numQuestions} questions for Section ${sectionIndex + 1}: ${section.title}...`);
 
-  const model = gemini.getGenerativeModel({ model: 'gemini-2.5-flash' });
-  const result = await model.generateContent(prompt);
-  const response = result.response.text();
+  const result = await gemini.models.generateContent({
+    model: 'gemini-2.5-flash',
+    contents: prompt
+  });
+  const response = result.text;
 
   console.log('📥 Raw response length:', response.length);
 
@@ -351,7 +353,7 @@ async function generateQuestionBank(
 
   // Initialize with existing data
   const questionBank = [...existingSections];
-  const gemini = new GoogleGenerativeAI(apiKey);
+  const gemini = new GoogleGenAI({ apiKey });
   const errors: number[] = [];
 
   // Generate questions for missing sections only

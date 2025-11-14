@@ -10,7 +10,7 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -28,7 +28,7 @@ const anthropic = AI_CONFIG.provider === 'anthropic' ? new Anthropic({
   apiKey: AI_CONFIG.anthropic.apiKey
 }) : null;
 
-const genAI = AI_CONFIG.provider === 'gemini' ? new GoogleGenerativeAI(AI_CONFIG.gemini.apiKey) : null;
+const genAI = AI_CONFIG.provider === 'gemini' ? new GoogleGenAI({ apiKey: AI_CONFIG.gemini.apiKey }) : null;
 
 const FILTER_PROMPT = `Analyze these exam questions and identify which ones require the STUDENT to DRAW or SKETCH a graph.
 
@@ -114,11 +114,11 @@ async function filterQuestions(inputPath, outputPath, logPath) {
     // Call appropriate AI provider
     let responseText;
     if (AI_CONFIG.provider === 'gemini') {
-      const model = genAI.getGenerativeModel({ model: AI_CONFIG.gemini.model });
-      const result = await model.generateContent(
-        FILTER_PROMPT + '\n\n' + JSON.stringify(rawData, null, 2)
-      );
-      responseText = result.response.text();
+      const result = await genAI.models.generateContent({
+        model: AI_CONFIG.gemini.model,
+        contents: FILTER_PROMPT + '\n\n' + JSON.stringify(rawData, null, 2)
+      });
+      responseText = result.text;
     } else {
       const response = await anthropic.messages.create({
         model: AI_CONFIG.anthropic.model,

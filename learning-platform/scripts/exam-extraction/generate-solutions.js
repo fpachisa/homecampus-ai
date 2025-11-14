@@ -9,7 +9,7 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import fs from 'fs';
 import path from 'path';
 import { AI_CONFIG, getProviderName, validateConfig } from './config.js';
@@ -23,7 +23,7 @@ const anthropic = AI_CONFIG.provider === 'anthropic' ? new Anthropic({
   apiKey: AI_CONFIG.anthropic.apiKey
 }) : null;
 
-const genAI = AI_CONFIG.provider === 'gemini' ? new GoogleGenerativeAI(AI_CONFIG.gemini.apiKey) : null;
+const genAI = AI_CONFIG.provider === 'gemini' ? new GoogleGenAI({ apiKey: AI_CONFIG.gemini.apiKey }) : null;
 
 const SOLUTION_GENERATION_PROMPT = `Generate step-by-step solutions, calculate answers (if missing), create avatarIntro messages, and generate a concise title for each question.
 
@@ -155,9 +155,11 @@ async function generateSolutions(inputPath, outputPath) {
         // Call appropriate AI provider
         let responseText;
         if (AI_CONFIG.provider === 'gemini') {
-          const model = genAI.getGenerativeModel({ model: AI_CONFIG.gemini.model });
-          const result = await model.generateContent(prompt);
-          responseText = result.response.text();
+          const result = await genAI.models.generateContent({
+            model: AI_CONFIG.gemini.model,
+            contents: prompt
+          });
+          responseText = result.text;
         } else {
           const response = await anthropic.messages.create({
             model: AI_CONFIG.anthropic.model,

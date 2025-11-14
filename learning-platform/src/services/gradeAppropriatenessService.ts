@@ -4,7 +4,7 @@
  * Uses structured output to guarantee valid JSON responses
  */
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { GradeCheckSchema } from '../schemas/homework.schemas';
 import type { ProblemAnalysis, GradeAppropriatenessCheck } from '../types/homework';
@@ -84,8 +84,9 @@ SUGGESTION MESSAGE EXAMPLES:
 - review-needed: "This problem needs some trigonometry basics. Let's make sure you're comfortable with those first."`;
 
 export class GradeAppropriatenessService {
-  private genAI: GoogleGenerativeAI;
-  private model: any;
+  private ai: GoogleGenAI;
+  private modelName: string;
+  private config: any;
 
   constructor() {
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
@@ -93,21 +94,19 @@ export class GradeAppropriatenessService {
       throw new Error('VITE_GEMINI_API_KEY not configured');
     }
 
-    this.genAI = new GoogleGenerativeAI(apiKey);
-    this.model = this.genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash',
-      generationConfig: {
-        temperature: 0.3,
-        topP: 0.8,
-        topK: 40,
-        maxOutputTokens: 1024,
-        responseMimeType: "application/json",
-        responseSchema: zodToJsonSchema(GradeCheckSchema, {
-          target: 'openApi3',
-          $refStrategy: 'none',
-        }) as any,
-      },
-    });
+    this.ai = new GoogleGenAI({ apiKey });
+    this.modelName = 'gemini-2.5-flash';
+    this.config = {
+      temperature: 0.3,
+      topP: 0.8,
+      topK: 40,
+      maxOutputTokens: 1024,
+      responseMimeType: "application/json",
+      responseSchema: zodToJsonSchema(GradeCheckSchema, {
+        target: 'openApi3',
+        $refStrategy: 'none',
+      }) as any,
+    };
   }
 
   /**
@@ -199,9 +198,13 @@ export class GradeAppropriatenessService {
         .replace('{PROBLEM_TYPE}', analysis.problemType);
 
       // Call Gemini using SDK with structured output
-      const result = await this.model.generateContent(prompt);
-      const response = result.response;
-      const textResponse = response.text();
+      const response = await this.ai.models.generateContent({
+        model: this.modelName,
+        contents: prompt,
+        config: this.config
+      });
+
+      const textResponse = response.text;
 
       if (!textResponse) {
         throw new Error('No response from Gemini');

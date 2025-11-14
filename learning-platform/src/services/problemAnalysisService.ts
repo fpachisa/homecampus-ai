@@ -4,7 +4,7 @@
  * Uses structured output to guarantee valid JSON responses
  */
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { ProblemAnalysisSchema } from '../schemas/homework.schemas';
 import type { ProblemAnalysis, UploadedProblem } from '../types/homework';
@@ -39,8 +39,9 @@ PROBLEM TYPE CLASSIFICATION:
 If the image is unclear, blurry, or cut off, set analysisConfidence to "low" and list specific issues in clarificationNeeded.`;
 
 export class ProblemAnalysisService {
-  private genAI: GoogleGenerativeAI;
-  private model: any;
+  private ai: GoogleGenAI;
+  private modelName: string;
+  private config: any;
 
   constructor() {
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
@@ -48,21 +49,19 @@ export class ProblemAnalysisService {
       throw new Error('VITE_GEMINI_API_KEY not configured');
     }
 
-    this.genAI = new GoogleGenerativeAI(apiKey);
-    this.model = this.genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash',
-      generationConfig: {
-        temperature: 0.2, // Low temperature for consistent analysis
-        topP: 0.8,
-        topK: 40,
-        maxOutputTokens: 2048,
-        responseMimeType: "application/json",
-        responseSchema: zodToJsonSchema(ProblemAnalysisSchema, {
-          target: 'openApi3',
-          $refStrategy: 'none',
-        }) as any,
-      },
-    });
+    this.ai = new GoogleGenAI({ apiKey });
+    this.modelName = 'gemini-2.5-flash';
+    this.config = {
+      temperature: 0.2, // Low temperature for consistent analysis
+      topP: 0.8,
+      topK: 40,
+      maxOutputTokens: 2048,
+      responseMimeType: "application/json",
+      responseSchema: zodToJsonSchema(ProblemAnalysisSchema, {
+        target: 'openApi3',
+        $refStrategy: 'none',
+      }) as any,
+    };
   }
 
   /**
@@ -76,18 +75,21 @@ export class ProblemAnalysisService {
 
       // Call Gemini with multimodal input using SDK
       // With structured output, Gemini guarantees valid JSON matching our schema
-      const result = await this.model.generateContent([
-        { text: ANALYSIS_PROMPT },
-        {
-          inlineData: {
-            mimeType: mimeType,
-            data: imageData.replace(/^data:image\/\w+;base64,/, ''),
+      const response = await this.ai.models.generateContent({
+        model: this.modelName,
+        contents: [
+          ANALYSIS_PROMPT,
+          {
+            inlineData: {
+              mimeType: mimeType,
+              data: imageData.replace(/^data:image\/\w+;base64,/, ''),
+            },
           },
-        },
-      ]);
+        ],
+        config: this.config
+      });
 
-      const response = result.response;
-      const textResponse = response.text();
+      const textResponse = response.text;
 
       if (!textResponse) {
         throw new Error('No response from Gemini');

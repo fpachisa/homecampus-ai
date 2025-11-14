@@ -4,7 +4,7 @@
  * Uses structured output to guarantee valid JSON responses
  */
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { HomeworkHelperResponseSchema } from '../schemas/homework.schemas';
 import HOMEWORK_HELPER_AGENT from '../prompt-library/core/agents/homeworkHelper';
@@ -14,8 +14,9 @@ import type {
 } from '../types/homework';
 
 export class HomeworkHelperService {
-  private genAI: GoogleGenerativeAI;
-  private model: any;
+  private ai: GoogleGenAI;
+  private modelName: string;
+  private config: any;
 
   constructor() {
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
@@ -23,21 +24,19 @@ export class HomeworkHelperService {
       throw new Error('VITE_GEMINI_API_KEY not configured');
     }
 
-    this.genAI = new GoogleGenerativeAI(apiKey);
-    this.model = this.genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash',
-      generationConfig: {
-        temperature: 0.7, // Higher temperature for more varied Socratic responses
-        topP: 0.9,
-        topK: 40,
-        maxOutputTokens: 2048,
-        responseMimeType: "application/json",
-        responseSchema: zodToJsonSchema(HomeworkHelperResponseSchema, {
-          target: 'openApi3',
-          $refStrategy: 'none',
-        }) as any,
-      },
-    });
+    this.ai = new GoogleGenAI({ apiKey });
+    this.modelName = 'gemini-2.5-flash';
+    this.config = {
+      temperature: 0.7, // Higher temperature for more varied Socratic responses
+      topP: 0.9,
+      topK: 40,
+      maxOutputTokens: 2048,
+      responseMimeType: "application/json",
+      responseSchema: zodToJsonSchema(HomeworkHelperResponseSchema, {
+        target: 'openApi3',
+        $refStrategy: 'none',
+      }) as any,
+    };
   }
 
   /**
@@ -51,9 +50,13 @@ export class HomeworkHelperService {
     const fullPrompt = `${HOMEWORK_HELPER_AGENT}\n\n${this.buildPrompt(context, studentInput)}`;
 
     // Call Gemini with structured output
-    const result = await this.model.generateContent(fullPrompt);
-    const response = result.response;
-    const textResponse = response.text();
+    const response = await this.ai.models.generateContent({
+      model: this.modelName,
+      contents: fullPrompt,
+      config: this.config
+    });
+
+    const textResponse = response.text;
 
     if (!textResponse) {
       throw new Error('No response from Gemini');
@@ -126,9 +129,13 @@ Generate a warm, encouraging greeting that:
     const fullPrompt = `${HOMEWORK_HELPER_AGENT}\n\n${contextPrompt}`;
 
     // Call Gemini with structured output
-    const result = await this.model.generateContent(fullPrompt);
-    const response = result.response;
-    const textResponse = response.text();
+    const response = await this.ai.models.generateContent({
+      model: this.modelName,
+      contents: fullPrompt,
+      config: this.config
+    });
+
+    const textResponse = response.text;
 
     if (!textResponse) {
       throw new Error('No response from Gemini');

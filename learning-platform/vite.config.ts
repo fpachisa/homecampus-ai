@@ -37,7 +37,7 @@ export default defineConfig({
               return 'firebase-vendor';
             }
             // AI SDKs
-            if (id.includes('@google/generative-ai') || id.includes('@anthropic-ai/sdk')) {
+            if (id.includes('@google/genai') || id.includes('@anthropic-ai/sdk')) {
               return 'ai-vendor';
             }
             // Math rendering

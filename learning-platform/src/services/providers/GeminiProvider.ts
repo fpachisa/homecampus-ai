@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import type { AIProvider, AIProviderConfig } from './AIProvider';
 import { AIServiceError, AIErrorType } from '../aiService';
 
@@ -7,34 +7,33 @@ import { AIServiceError, AIErrorType } from '../aiService';
  * Handles all raw API calls to Google Gemini API
  */
 export class GeminiProvider implements AIProvider {
-  private genAI: GoogleGenerativeAI;
-  private model: any;
+  private ai: GoogleGenAI;
   private modelName: string;
   private temperature: number;
 
   constructor(config: AIProviderConfig) {
-    this.genAI = new GoogleGenerativeAI(config.apiKey);
+    this.ai = new GoogleGenAI({ apiKey: config.apiKey });
     this.modelName = config.model || 'gemini-flash-latest';
     this.temperature = config.temperature ?? 0.5;
-
-    this.model = this.genAI.getGenerativeModel({
-      model: this.modelName,
-      generationConfig: {
-        temperature: this.temperature,
-      }
-    });
   }
 
   async generateContent(prompt: string, _maxTokens?: number): Promise<string> {
     try {
       // Add 2-minute timeout (increased for batch generation with theory content)
-      const result = await this.withTimeout(
-        this.model.generateContent(prompt),
+      const response = await this.withTimeout(
+        this.ai.models.generateContent({
+          model: this.modelName,
+          contents: prompt,
+          config: {
+            temperature: this.temperature,
+            ...(_maxTokens && { maxOutputTokens: _maxTokens })
+          }
+        }),
         120000, // 120 seconds (2 minutes)
         'Gemini API request timed out after 120 seconds'
-      ) as any;
+      );
 
-      const text = result.response.text().trim();
+      const text = response.text?.trim() || '';
 
       if (!text) {
         throw new AIServiceError(
@@ -54,14 +53,15 @@ export class GeminiProvider implements AIProvider {
         throw new AIServiceError(AIErrorType.TIMEOUT, error, true, error.message);
       }
 
-      // Map Gemini-specific errors
-      if (error.status === 429) {
+      // Map Gemini-specific errors (error structure may vary in new SDK)
+      const status = error.status || error.statusCode || error.code;
+      if (status === 429) {
         throw new AIServiceError(AIErrorType.RATE_LIMIT, error, true, error.message);
       }
-      if (error.status === 503 || error.status === 502) {
+      if (status === 503 || status === 502) {
         throw new AIServiceError(AIErrorType.SERVICE_UNAVAILABLE, error, true, error.message);
       }
-      if (error.status === 401 || error.status === 403) {
+      if (status === 401 || status === 403) {
         throw new AIServiceError(AIErrorType.AUTHENTICATION, error, false, error.message);
       }
 
