@@ -73,6 +73,10 @@ export class ProblemAnalysisService {
       const imageData = problem.imageData || await this.fetchImageData(problem.imageUrl);
       const mimeType = problem.fileType;
 
+      console.log('[ProblemAnalysis] 📤 Sending image to Gemini for analysis...');
+      console.log('[ProblemAnalysis] Image type:', mimeType);
+      console.log('[ProblemAnalysis] Image size:', Math.round(imageData.length / 1024), 'KB');
+
       // Call Gemini with multimodal input using SDK
       // With structured output, Gemini guarantees valid JSON matching our schema
       const response = await this.ai.models.generateContent({
@@ -91,6 +95,9 @@ export class ProblemAnalysisService {
 
       const textResponse = response.text;
 
+      console.log('[ProblemAnalysis] 📥 Received response from Gemini');
+      console.log('[ProblemAnalysis] Response length:', textResponse?.length || 0, 'chars');
+
       if (!textResponse) {
         throw new Error('No response from Gemini');
       }
@@ -101,10 +108,17 @@ export class ProblemAnalysisService {
       // Validate with Zod schema for runtime type safety
       const validated = ProblemAnalysisSchema.parse(parsed);
 
+      console.log('[ProblemAnalysis] ✅ Analysis complete:', {
+        topic: validated.topic,
+        subTopic: validated.subTopic,
+        difficulty: validated.difficulty,
+        confidence: validated.analysisConfidence
+      });
+
       // Type assertion for subject field (Zod schema uses string, TS type uses union)
       return validated as ProblemAnalysis;
     } catch (error) {
-      console.error('Problem analysis failed:', error);
+      console.error('[ProblemAnalysis] ❌ Analysis failed:', error);
       throw new Error(
         `Failed to analyze problem: ${error instanceof Error ? error.message : 'Unknown error'}`
       );

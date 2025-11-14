@@ -197,6 +197,10 @@ export class GradeAppropriatenessService {
         .replace('{CONCEPTS}', analysis.keyMathConcepts.join(', '))
         .replace('{PROBLEM_TYPE}', analysis.problemType);
 
+      console.log('[GradeCheck] 📤 Checking grade appropriateness...');
+      console.log('[GradeCheck] Student grade:', studentGrade);
+      console.log('[GradeCheck] Problem:', `${analysis.topic} (${analysis.difficulty})`);
+
       // Call Gemini using SDK with structured output
       const response = await this.ai.models.generateContent({
         model: this.modelName,
@@ -205,6 +209,8 @@ export class GradeAppropriatenessService {
       });
 
       const textResponse = response.text;
+
+      console.log('[GradeCheck] 📥 Received response from Gemini');
 
       if (!textResponse) {
         throw new Error('No response from Gemini');
@@ -216,12 +222,18 @@ export class GradeAppropriatenessService {
       // Validate with Zod schema for runtime type safety
       const validated = GradeCheckSchema.parse(parsed);
 
+      console.log('[GradeCheck] ✅ Check complete:', {
+        isAppropriate: validated.isAppropriate,
+        recommendation: validated.recommendation,
+        requiredGrade: validated.requiredGradeLevel
+      });
+
       return {
         studentGrade,
         ...validated
       };
     } catch (error) {
-      console.error('AI-based check failed:', error);
+      console.error('[GradeCheck] ❌ Check failed:', error);
       // Propagate error - don't fake a grade check result
       throw new Error(
         `Failed to check grade appropriateness: ${error instanceof Error ? error.message : 'Unknown error'}`

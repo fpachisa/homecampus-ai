@@ -49,6 +49,10 @@ export class HomeworkHelperService {
     // Build full prompt with system prompt and context
     const fullPrompt = `${HOMEWORK_HELPER_AGENT}\n\n${this.buildPrompt(context, studentInput)}`;
 
+    console.log('[HomeworkHelper] 📤 Generating Socratic response...');
+    console.log('[HomeworkHelper] Student input:', studentInput);
+    console.log('[HomeworkHelper] Conversation turns:', context.conversationHistory.length);
+
     // Call Gemini with structured output
     const response = await this.ai.models.generateContent({
       model: this.modelName,
@@ -57,6 +61,9 @@ export class HomeworkHelperService {
     });
 
     const textResponse = response.text;
+
+    console.log('[HomeworkHelper] 📥 Received response from Gemini');
+    console.log('[HomeworkHelper] Response length:', textResponse?.length || 0, 'chars');
 
     if (!textResponse) {
       throw new Error('No response from Gemini');
@@ -67,6 +74,12 @@ export class HomeworkHelperService {
 
     // Validate with Zod schema for runtime type safety
     const validated = HomeworkHelperResponseSchema.parse(parsed);
+
+    console.log('[HomeworkHelper] ✅ Response generated:', {
+      teachingAction: validated.teachingAction,
+      hasMathTool: !!validated.display.mathTool,
+      speechLength: validated.speech.text.length
+    });
 
     return validated;
   }
@@ -128,6 +141,9 @@ Generate a warm, encouraging greeting that:
     // Build full prompt with system prompt
     const fullPrompt = `${HOMEWORK_HELPER_AGENT}\n\n${contextPrompt}`;
 
+    console.log('[HomeworkHelper] 📤 Generating initial greeting...');
+    console.log('[HomeworkHelper] Problem topic:', context.analysis.topic);
+
     // Call Gemini with structured output
     const response = await this.ai.models.generateContent({
       model: this.modelName,
@@ -136,6 +152,9 @@ Generate a warm, encouraging greeting that:
     });
 
     const textResponse = response.text;
+
+    console.log('[HomeworkHelper] 📥 Received greeting from Gemini');
+    console.log('[HomeworkHelper] Response length:', textResponse?.length || 0, 'chars');
 
     if (!textResponse) {
       throw new Error('No response from Gemini');
@@ -146,6 +165,11 @@ Generate a warm, encouraging greeting that:
 
     // Validate with Zod schema for runtime type safety
     const validated = HomeworkHelperResponseSchema.parse(parsed);
+
+    console.log('[HomeworkHelper] ✅ Initial greeting generated:', {
+      emotion: validated.speech.emotion,
+      hasVisual: !!validated.display.mathTool
+    });
 
     return validated;
   }
