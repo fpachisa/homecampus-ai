@@ -56,7 +56,7 @@ export const HomeworkHelperResponseSchema = z.object({
     content: z.string().describe("Markdown and LaTeX formatted content for visual display"),
     mathTool: z.object({
       type: z.string().describe("Math tool type (e.g., rightTriangle, generalTriangle)"),
-      parameters: z.record(z.unknown()).describe("Tool-specific parameters")
+      parameters: z.any().describe("Tool-specific parameters as an object")
     }).optional().describe("Optional math visualization tool")
   }).describe("Display content with rich formatting"),
 
