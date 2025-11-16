@@ -280,4 +280,30 @@
       background: #94a3b8;
     }
   }
+
+  /* ============================================================================
+     RESPONSIVE IMAGES - Mobile Optimization
+     ============================================================================
+
+     Make all images inside messages responsive on mobile.
+     Prevents visualizations (like unit circles) from overflowing on small screens.
+     ============================================================================ */
+
+  /* Only make message images responsive, not all images */
+  .visualization-in-message img,
+  .visualization-in-message svg,
+  .math-text-with-lists img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Ensure message containers don't overflow on mobile */
+  @media (max-width: 768px) {
+    .visualization-in-message {
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: visible;
+    }
+  }
 }

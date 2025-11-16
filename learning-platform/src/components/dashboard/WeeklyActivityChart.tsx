@@ -41,7 +41,7 @@ export const WeeklyActivityChart: React.FC<WeeklyActivityChartProps> = ({
 
   return (
     <div
-      className="p-6 rounded-2xl"
+      className="p-4 sm:p-5 md:p-6 rounded-2xl"
       style={{
         background: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,
@@ -49,10 +49,10 @@ export const WeeklyActivityChart: React.FC<WeeklyActivityChartProps> = ({
       }}
     >
       {/* Header */}
-      <div className="flex items-center gap-2 mb-4">
-        <span className="text-2xl">📊</span>
+      <div className="flex items-center gap-2 mb-3 sm:mb-4">
+        <span className="text-xl sm:text-2xl">📊</span>
         <h3
-          className="text-lg font-semibold"
+          className="text-base sm:text-lg font-semibold"
           style={{ color: theme.colors.textPrimary }}
         >
           Last 7 Days
@@ -60,7 +60,7 @@ export const WeeklyActivityChart: React.FC<WeeklyActivityChartProps> = ({
       </div>
 
       {/* Chart */}
-      <div className="mb-6">
+      <div className="mb-4 sm:mb-6">
         <div
           className="text-xs font-medium mb-2"
           style={{ color: theme.colors.textMuted }}
@@ -69,7 +69,7 @@ export const WeeklyActivityChart: React.FC<WeeklyActivityChartProps> = ({
         </div>
 
         {/* Bar Chart */}
-        <div className="flex items-end justify-between gap-2 h-32">
+        <div className="flex items-end justify-between gap-1.5 sm:gap-2 h-24 sm:h-28 md:h-32">
           {data.map((day, index) => (
             <div
               key={index}

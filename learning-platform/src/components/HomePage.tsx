@@ -46,25 +46,25 @@ const HomePage: React.FC = () => {
       />
 
       {/* Header */}
-      <header className="relative z-[100] px-8 py-4 border-b" style={{ borderColor: theme.colors.border }}>
+      <header className="relative z-[100] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 border-b" style={{ borderColor: theme.colors.border }}>
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 flex items-center justify-center animate-float">
-                <img src={logoSrc} alt="Home Campus Logo" className="w-12 h-12 object-contain" />
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center animate-float">
+                <img src={logoSrc} alt="Home Campus Logo" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
                   Home Campus
                 </h1>
-                <p className="text-sm" style={{ color: theme.colors.textMuted }}>
+                <p className="text-xs sm:text-sm" style={{ color: theme.colors.textMuted }}>
                   AI-Powered Home Learning
                 </p>
               </div>
             </div>
 
             {/* Theme toggle and user section */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               {/* Profile Switcher (for parents to switch between children) - only show for parents */}
               {canSwitchProfiles && <ProfileSwitcher />}
 
@@ -114,7 +114,7 @@ const HomePage: React.FC = () => {
       {/* Main Content - Route to appropriate dashboard */}
       <main className="relative z-10 flex-1">
         {isViewingAsParent ? (
-          <div className="px-8 py-6">
+          <div className="px-4 sm:px-6 lg:px-8 py-6">
             <ParentDashboard />
           </div>
         ) : (
@@ -123,7 +123,7 @@ const HomePage: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 px-8 py-4 border-t" style={{ borderColor: theme.colors.border }}>
+      <footer className="relative z-10 px-4 sm:px-6 lg:px-8 py-4 border-t" style={{ borderColor: theme.colors.border }}>
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm" style={{ color: theme.colors.textMuted }}>
             AI-powered Socratic learning

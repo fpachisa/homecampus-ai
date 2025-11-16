@@ -53,7 +53,7 @@ export const ContinueLearningCard: React.FC<ContinueLearningCardProps> = ({
 
   return (
     <div
-      className="p-6 rounded-2xl"
+      className="p-4 sm:p-5 md:p-6 rounded-2xl"
       style={{
         background: theme.glass.background,
         border: `2px solid ${theme.colors.brand}`,

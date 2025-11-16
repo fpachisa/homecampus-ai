@@ -87,16 +87,16 @@ export const ProblemPreview: React.FC<ProblemPreviewProps> = ({
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-800">Problem Preview</h2>
-        <p className="text-gray-600 mt-2">Review and confirm the problem details</p>
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Problem Preview</h2>
+        <p className="text-sm sm:text-base text-gray-600 mt-2">Review and confirm the problem details</p>
       </div>
 
       {/* Grade Check Notice */}
       <div
-        className={`p-4 border rounded-lg ${getRecommendationColor(gradeCheck.recommendation)}`}
+        className={`p-3 sm:p-4 border rounded-lg ${getRecommendationColor(gradeCheck.recommendation)}`}
       >
         <div className="flex items-start space-x-3">
           {getRecommendationIcon(gradeCheck.recommendation)}
@@ -164,14 +164,14 @@ export const ProblemPreview: React.FC<ProblemPreviewProps> = ({
           </div>
 
           {/* Topic Info */}
-          <div className="grid grid-cols-2 gap-3">
-            <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-              <p className="text-xs text-blue-600 font-medium">Topic</p>
-              <p className="text-sm font-semibold text-gray-800 capitalize">{analysis.topic}</p>
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
+            <div className="p-2 sm:p-3 bg-blue-50 border border-blue-200 rounded-lg">
+              <p className="text-[10px] sm:text-xs text-blue-600 font-medium">Topic</p>
+              <p className="text-xs sm:text-sm font-semibold text-gray-800 capitalize">{analysis.topic}</p>
             </div>
-            <div className={`p-3 border rounded-lg ${getDifficultyColor(analysis.difficulty)}`}>
-              <p className="text-xs font-medium">Difficulty</p>
-              <p className="text-sm font-semibold capitalize">{analysis.difficulty}</p>
+            <div className={`p-2 sm:p-3 border rounded-lg ${getDifficultyColor(analysis.difficulty)}`}>
+              <p className="text-[10px] sm:text-xs font-medium">Difficulty</p>
+              <p className="text-xs sm:text-sm font-semibold capitalize">{analysis.difficulty}</p>
             </div>
           </div>
 
@@ -236,11 +236,11 @@ export const ProblemPreview: React.FC<ProblemPreviewProps> = ({
       )}
 
       {/* Actions */}
-      <div className="flex justify-between items-center pt-4 border-t" style={{ borderColor: theme.colors.border }}>
+      <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 sm:gap-4 pt-4 border-t" style={{ borderColor: theme.colors.border }}>
         <button
           onClick={onCancel}
           disabled={isProcessing}
-          className="px-6 py-2 rounded-lg transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 sm:px-6 py-2.5 sm:py-2 min-h-[44px] rounded-lg transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base order-2 sm:order-1"
           style={{
             backgroundColor: theme.colors.interactive,
             color: theme.colors.textSecondary,
@@ -261,7 +261,7 @@ export const ProblemPreview: React.FC<ProblemPreviewProps> = ({
         <button
           onClick={handleConfirm}
           disabled={isProcessing}
-          className="px-6 py-3 rounded-lg transition-all duration-200 flex items-center gap-2 font-medium disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-lg"
+          className="px-4 sm:px-6 py-3 min-h-[44px] rounded-lg transition-all duration-200 flex items-center justify-center gap-2 font-medium disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-lg text-sm sm:text-base order-1 sm:order-2"
           style={{
             backgroundColor: theme.colors.brand,
             color: '#ffffff',

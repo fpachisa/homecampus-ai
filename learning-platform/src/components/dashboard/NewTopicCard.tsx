@@ -32,7 +32,7 @@ export const NewTopicCard: React.FC<NewTopicCardProps> = ({ topic, disabled = fa
     <button
       onClick={handleClick}
       disabled={disabled}
-      className="group relative p-6 rounded-2xl transition-all duration-300 text-left w-full"
+      className="group relative p-4 sm:p-5 md:p-6 rounded-2xl transition-all duration-300 text-left w-full"
       style={{
         background: disabled ? theme.colors.interactive : theme.glass.background,
         border: `1px solid ${disabled ? theme.colors.border : theme.glass.border}`,
@@ -59,7 +59,7 @@ export const NewTopicCard: React.FC<NewTopicCardProps> = ({ topic, disabled = fa
       {/* NEW Badge */}
       {!disabled && (
         <div
-          className="absolute top-4 right-4 px-2 py-1 rounded-full text-xs font-bold"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-1 rounded-full text-xs font-bold"
           style={{
             backgroundColor: theme.colors.brand,
             color: '#ffffff',
@@ -71,7 +71,7 @@ export const NewTopicCard: React.FC<NewTopicCardProps> = ({ topic, disabled = fa
 
       {/* Icon */}
       <div
-        className="w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4"
+        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4"
         style={{
           backgroundColor: disabled ? theme.colors.interactive : theme.colors.brand,
           color: disabled ? theme.colors.textMuted : '#ffffff',

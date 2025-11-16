@@ -97,50 +97,54 @@ export const StudentStatsDashboard: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen p-6" style={{ backgroundColor: theme.colors.primary }}>
+    <div className="min-h-screen p-3 sm:p-4 md:p-6" style={{ backgroundColor: theme.colors.primary }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-6 flex items-center justify-between">
-          <div className="flex items-center space-x-4">
+        <div className="mb-4 sm:mb-6">
+          {/* Top row: Back button and Refresh button */}
+          <div className="flex items-center justify-between mb-3">
             <button
               onClick={() => navigate('/')}
-              className="p-2 rounded-lg transition-all hover:scale-105"
+              className="p-2 rounded-lg transition-all hover:scale-105 flex items-center gap-1"
               style={{
                 backgroundColor: theme.glass.background,
                 border: `1px solid ${theme.glass.border}`,
                 color: theme.colors.textSecondary
               }}
             >
-              ← Back
+              <span>←</span>
+              <span className="text-sm">Back</span>
             </button>
-            <div>
-              <h1 className="text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
-                My Stats Dashboard
-              </h1>
-              <p className="text-sm mt-1" style={{ color: theme.colors.textSecondary }}>
-                Track your learning progress and achievements
-              </p>
-            </div>
+
+            <button
+              onClick={refresh}
+              className="px-3 py-2 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-1"
+              style={{
+                backgroundColor: theme.glass.background,
+                border: `1px solid ${theme.glass.border}`,
+                color: theme.colors.textSecondary
+              }}
+            >
+              <span>🔄</span>
+              <span className="hidden sm:inline text-sm">Refresh</span>
+            </button>
           </div>
 
-          {/* Refresh Button */}
-          <button
-            onClick={refresh}
-            className="px-4 py-2 rounded-lg font-medium transition-all hover:scale-105"
-            style={{
-              backgroundColor: theme.glass.background,
-              border: `1px solid ${theme.glass.border}`,
-              color: theme.colors.textSecondary
-            }}
-          >
-            🔄 Refresh
-          </button>
+          {/* Title section */}
+          <div>
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
+              My Stats Dashboard
+            </h1>
+            <p className="text-xs sm:text-sm mt-1" style={{ color: theme.colors.textSecondary }}>
+              Track your learning progress and achievements
+            </p>
+          </div>
         </div>
 
         {/* Tab Navigation */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <div
-            className="flex space-x-2 p-1 rounded-lg"
+            className="flex gap-1 sm:gap-2 p-1 rounded-lg overflow-x-auto"
             style={{
               backgroundColor: theme.glass.background,
               border: `1px solid ${theme.glass.border}`
@@ -152,15 +156,15 @@ export const StudentStatsDashboard: React.FC = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className="flex-1 px-4 py-3 rounded-lg font-medium transition-all relative"
+                  className="flex-1 min-w-[70px] px-2 sm:px-3 md:px-4 py-2 sm:py-3 rounded-lg font-medium transition-all relative flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2"
                   style={{
                     backgroundColor: isActive ? '#FFA50020' : 'transparent',
                     color: isActive ? '#FFA500' : theme.colors.textSecondary,
                     borderBottom: isActive ? '3px solid #FFA500' : '3px solid transparent'
                   }}
                 >
-                  <span className="mr-2">{tab.icon}</span>
-                  {tab.label}
+                  <span className="text-lg sm:text-base">{tab.icon}</span>
+                  <span className="text-[10px] sm:text-xs md:text-sm lg:text-base whitespace-nowrap">{tab.label}</span>
                 </button>
               );
             })}

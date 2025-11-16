@@ -1,0 +1,248 @@
+{
+  "syllabus_title": "4052 MATHEMATICS GCE ORDINARY LEVEL SYLLABUS",
+  "subject_content": [
+    {
+      "area": "NUMBER AND ALGEBRA",
+      "topics": [
+        {
+          "no": "N1",
+          "topic": "Numbers and their operations",
+          "content": [
+            "primes and prime factorisation",
+            "finding highest common factor (HCF) and lowest common multiple (LCM), squares, cubes, square roots and cube roots by prime factorisation",
+            "negative numbers, integers, rational numbers, real numbers, and their four operations",
+            "calculations with calculator",
+            "representation and ordering of numbers on the number line",
+            "use of the symbols $<$, $>$, $\\le$, $\\ge$",
+            "approximation and estimation (including rounding off numbers to a required number of decimal places or significant figures and estimating the results of computation)",
+            "use of standard form $A\\times10^{n}$, where n is an integer, and $1\\le A<10$",
+            "positive, negative, zero and fractional indices",
+            "laws of indices"
+          ]
+        },
+        {
+          "no": "N2",
+          "topic": "Ratio and proportion",
+          "content": [
+            "ratios involving rational numbers",
+            "writing a ratio in its simplest form",
+            "map scales (distance and area)",
+            "direct and inverse proportion"
+          ]
+        },
+        {
+          "no": "N3",
+          "topic": "Percentage",
+          "content": [
+            "expressing one quantity as a percentage of another",
+            "comparing two quantities by percentage",
+            "percentages greater than 100%",
+            "increasing/decreasing a quantity by a given percentage",
+            "reverse percentages"
+          ]
+        },
+        {
+          "no": "N4",
+          "topic": "Rate and speed",
+          "content": [
+            "average rate and average speed",
+            "conversion of units (e.g. $km/h$ to $m/s$)"
+          ]
+        },
+        {
+          "no": "N5",
+          "topic": "Algebraic expressions and formulae",
+          "content": [
+            "using letters to represent numbers",
+            "interpreting notations: $ab$ as $a\\times b$; $\\frac{a}{b}$ as $a\\div b$ or $a\\times\\frac{1}{b}$; $a^{2}$ as $a\\times a, a^{3}$ as $a\\times a\\times a, a^{2}b$ as $a\\times a\\times b,...$; $3y$ as $y+y+y$ or $3\\times y$; $3(x+y)$ as $3\\times(x+y)$; $\\frac{3+y}{5}$ as $(3+y)\\div5$ or $\\frac{1}{5}\\times(3+y)$",
+            "evaluation of algebraic expressions and formulae",
+            "translation of simple real-world situations into algebraic expressions",
+            "recognising and representing patterns/relationships by finding an algebraic expression for the nth term",
+            "addition and subtraction of linear expressions",
+            "simplification of linear expressions such as: $-2(3x-5)+4x$; $\\frac{2x}{3}-\\frac{3(x-5)}{2}$",
+            "use brackets and extract common factors",
+            "factorisation of linear expressions of the form $ax+bx+kay+kby$",
+            "expansion of the product of algebraic expressions",
+            "changing the subject of a formula",
+            "finding the value of an unknown quantity in a given formula",
+            "use of: $(a+b)^{2}=a^{2}+2ab+b^{2}$; $(a-b)^{2}=a^{2}-2ab+b^{2}$; $a^{2}-b^{2}=(a+b)(a-b)$",
+            "factorisation of quadratic expressions $ax^{2}+bx+c$",
+            "multiplication and division of simple algebraic fractions such as: $(\\frac{3a}{4b^{2}})(\\frac{5ab}{3})$; $\\frac{3a}{4}\\div\\frac{9a^{2}}{10}$",
+            "addition and subtraction of algebraic fractions with linear or quadratic denominator such as: $\\frac{1}{x-2}+\\frac{2}{x-3}$; $\\frac{1}{x^{2}-9}+\\frac{2}{x-3}$; $\\frac{1}{x-3}+\\frac{2}{(x-3)^{2}}$"
+          ]
+        },
+        {
+          "no": "N6",
+          "topic": "Functions and graphs",
+          "content": [
+            "Cartesian coordinates in two dimensions",
+            "graph of a set of ordered pairs as a representation of a relationship between two variables",
+            "linear functions ($y=ax+b$) and quadratic functions ($y=ax^{2}+bx+c$)",
+            "graphs of linear functions",
+            "the gradient of a linear graph as the ratio of the vertical change to the horizontal change (positive and negative gradients)",
+            "graphs of quadratic functions and their properties: positive or negative coefficient of $x^{2}$; maximum and minimum points; symmetry",
+            "sketching the graphs of quadratic functions given in the form: $y=(x-p)^{2}+q$; $y=-(x-p)^{2}+q$; $y=(x-a)(x-b)$; $y=-(x-a)(x-b)$",
+            "graphs of power functions of the form $y=ax^{n}$, where $n=-2,-1,0,1,2,3,$ and simple sums of not more than three of these",
+            "graphs of exponential functions $y=ka^{x}$, where a is a positive integer",
+            "estimation of the gradient of a curve by drawing a tangent"
+          ]
+        },
+        {
+          "no": "N7",
+          "topic": "Equations and inequalities",
+          "content": [
+            "solving linear equations in one variable",
+            "solving simple fractional equations that can be reduced to linear equations such as: $\\frac{x}{3}+\\frac{x-2}{4}=3$; $\\frac{3}{x-2}=6$",
+            "solving simultaneous linear equations in two variables by: substitution and elimination methods; graphical method",
+            "solving quadratic equations in one unknown by: factorisation; use of formula; completing the square for $y=x^{2}+px+q$; graphical method",
+            "solving fractional equations that can be reduced to quadratic equations such as: $\\frac{6}{x+4}=x+3$; $\\frac{1}{x-2}+\\frac{2}{x-3}=5$",
+            "formulating equations to solve problems",
+            "solving linear inequalities in one variable, and representing the solution on the number line"
+          ]
+        },
+        {
+          "no": "N8",
+          "topic": "Set language and notation",
+          "content": [
+            "use of set language and the following notation: Union of A and B ($A\\cup B$); Intersection of A and B ($A\\cap B$); Number of elements in set A ($n(A)$); '... is an element of ...' ($\\in$); '... is not an element of ...' ($\\notin$); Complement of set A ($A'$); The empty set ($\\emptyset$); Universal set ($\\mathcal{E}$); A is a subset of B ($A\\subseteq B$); A is not a subset of B ($A\\not\\subseteq B$); A is a (proper) subset of B ($A\\subset B$); A is not a (proper) subset of B ($A\\not\\subset B$)",
+            "union and intersection of two sets",
+            "Venn diagrams"
+          ]
+        },
+        {
+          "no": "N9",
+          "topic": "Matrices",
+          "content": [
+            "display of information in the form of a matrix of any order",
+            "interpreting the data in a given matrix",
+            "product of a scalar quantity and a matrix",
+            "problems involving the calculation of the sum and product (where appropriate) of two matrices"
+          ]
+        }
+      ]
+    },
+    {
+      "area": "GEOMETRY AND MEASUREMENT",
+      "topics": [
+        {
+          "no": "G1",
+          "topic": "Angles, triangles and polygons",
+          "content": [
+            "right, acute, obtuse and reflex angles",
+            "vertically opposite angles, angles on a straight line and angles at a point",
+            "angles formed by two parallel lines and a transversal: corresponding angles, alternate angles, interior angles",
+            "properties of triangles, special quadrilaterals and regular polygons (pentagon, hexagon, octagon and decagon), including symmetry properties",
+            "classifying special quadrilaterals on the basis of their properties",
+            "angle sum of interior and exterior angles of any convex polygon",
+            "construction of simple geometrical figures from given data using compasses, ruler, set squares and protractors, where appropriate"
+          ]
+        },
+        {
+          "no": "G2",
+          "topic": "Congruence and similarity",
+          "content": [
+            "congruent figures and similar figures",
+            "properties of similar triangles and polygons: corresponding angles are equal; corresponding sides are proportional",
+            "enlargement and reduction of a plane figure",
+            "scale drawings",
+            "properties and construction of perpendicular bisectors of line segments and angle bisectors",
+            "determining whether two triangles are: congruent; similar",
+            "ratio of areas of similar plane figures",
+            "ratio of volumes of similar solids",
+            "solving simple problems involving similarity and congruence"
+          ]
+        },
+        {
+          "no": "G3",
+          "topic": "Properties of circles",
+          "content": [
+            "symmetry properties of circles: equal chords are equidistant from the centre; the perpendicular bisector of a chord passes through the centre; tangents from an external point are equal in length; the line joining an external point to the centre of the circle bisects the angle between the tangents",
+            "angle properties of circles: angle in a semicircle is a right angle; angle between tangent and radius of a circle is a right angle; angle at the centre is twice the angle at the circumference; angles in the same segment are equal; angles in opposite segments are supplementary"
+          ]
+        },
+        {
+          "no": "G4",
+          "topic": "Pythagoras' theorem and trigonometry",
+          "content": [
+            "use of Pythagoras' theorem",
+            "determining whether a triangle is right-angled given the lengths of three sides",
+            "use of trigonometric ratios (sine, cosine and tangent) of acute angles to calculate unknown sides and angles in right-angled triangles",
+            "extending sine and cosine to obtuse angles",
+            "use of the formula $\\frac{1}{2}ab\\sin C$ for the area of a triangle",
+            "use of sine rule and cosine rule for any triangle",
+            "problems in two and three dimensions including those involving angles of elevation and depression and bearings"
+          ]
+        },
+        {
+          "no": "G5",
+          "topic": "Mensuration",
+          "content": [
+            "area of parallelogram and trapezium",
+            "problems involving perimeter and area of composite plane figures",
+            "volume and surface area of cube, cuboid, prism, cylinder, pyramid, cone and sphere",
+            "conversion between $cm^{2}$ and $m^{2}$, and between $cm^{3}$ and $m^{3}$",
+            "problems involving volume and surface area of composite solids",
+            "arc length, sector area and area of a segment of a circle",
+            "use of radian measure of angle (including conversion between radians and degrees)"
+          ]
+        },
+        {
+          "no": "G6",
+          "topic": "Coordinate geometry",
+          "content": [
+            "finding the gradient of a straight line given the coordinates of two points on it",
+            "finding the length of a line segment given the coordinates of its end points",
+            "interpreting and finding the equation of a straight line graph in the form $y=mx+c$",
+            "geometric problems involving the use of coordinates"
+          ]
+        },
+        {
+          "no": "G7",
+          "topic": "Vectors in two dimensions",
+          "content": [
+            "use of notations: $\\begin{pmatrix}x\\\\ y\\end{pmatrix}$, $\\overline{AB}$, $\\mathbf{a}$, $|\\overline{AB}|$, and $\\mathbf{a}$",
+            "representing a vector as a directed line segment",
+            "translation by a vector",
+            "position vectors",
+            "magnitude of a vector as $\\sqrt{x^{2}+y^{2}}$",
+            "use of sum and difference of two vectors to express given vectors in terms of two coplanar vectors",
+            "multiplication of a vector by a scalar",
+            "geometric problems involving the use of vectors"
+          ]
+        }
+      ]
+    },
+    {
+      "area": "STATISTICS AND PROBABILITY",
+      "topics": [
+        {
+          "no": "S1",
+          "topic": "Data handling and analysis",
+          "content": [
+            "simple concepts in collecting, classifying and tabulating data",
+            "analysis and interpretation of: tables, bar graphs, pictograms, line graphs, pie charts, dot diagrams, histograms with equal class intervals, stem-and-leaf diagrams, cumulative frequency diagrams, box-and-whisker plots",
+            "purposes and uses, advantages and disadvantages of the different forms of statistical representations",
+            "drawing simple inference from statistical diagrams",
+            "explaining why a given statistical diagram leads to misinterpretation of data",
+            "purposes and use of mean, mode and median as measures of central tendency for a set of data",
+            "calculation of the mean for grouped data",
+            "quartiles and percentiles",
+            "range, interquartile range and standard deviation as measures of spread for a set of data",
+            "calculation of the standard deviation for a set of data (grouped and ungrouped)",
+            "using the mean and standard deviation to compare two sets of data"
+          ]
+        },
+        {
+          "no": "S2",
+          "topic": "Probability",
+          "content": [
+            "probability as a measure of chance",
+            "probability of single events (including listing all the possible outcomes in a simple chance situation to calculate the probability)",
+            "probability of simple combined events (including using possibility diagrams and tree diagrams, where appropriate)",
+            "addition and multiplication of probabilities (mutually exclusive events and independent events)"
+          ]
+        }
+      ]
+    }
+  ]
+}

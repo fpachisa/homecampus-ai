@@ -36,6 +36,11 @@
       "category": "s4-math-differential-calculus"
     },
     {
+      "filename": "S4/Maths/s4-math-quad.yaml",
+      "displayName": "Quadratic Functions",
+      "category": "s4-math-quadi "
+    },
+    {
       "filename": "S3/Maths/s3-math-quadratic-equations.yaml",
       "displayName": "S3 - Quadratic Equations",
       "category": "s3-math-quadratic-equations"

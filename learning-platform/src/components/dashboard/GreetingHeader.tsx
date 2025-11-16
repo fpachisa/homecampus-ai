@@ -34,18 +34,18 @@ export const GreetingHeader: React.FC = () => {
   };
 
   return (
-    <div className="mb-6">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div className="mb-4 sm:mb-6">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 sm:gap-4">
         {/* Greeting */}
         <div>
           <h1
-            className="text-3xl font-bold mb-1"
+            className="text-xl sm:text-2xl lg:text-3xl font-bold mb-1"
             style={{ color: theme.colors.textPrimary }}
           >
             {getGreeting()}, {activeProfile?.displayName || 'Student'}! 👋
           </h1>
           <p
-            className="text-sm"
+            className="text-xs sm:text-sm"
             style={{ color: theme.colors.textSecondary }}
           >
             Ready to continue your learning journey?
@@ -53,10 +53,10 @@ export const GreetingHeader: React.FC = () => {
         </div>
 
         {/* Compact Stats Chips */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center flex-wrap gap-2 sm:gap-3">
           {/* Level */}
           <div
-            className="relative px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer transition-all hover:scale-105"
+            className="relative px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all hover:scale-105"
             style={{
               backgroundColor: theme.colors.interactive,
               border: `1px solid ${hoveredStat === 'level' ? theme.colors.brand : theme.colors.border}`,
@@ -66,8 +66,8 @@ export const GreetingHeader: React.FC = () => {
             onMouseLeave={() => setHoveredStat(null)}
             onClick={() => navigate('/stats')}
           >
-            <span className="text-xl">🎓</span>
-            <div className="text-sm">
+            <span className="text-base sm:text-xl">🎓</span>
+            <div className="text-xs sm:text-sm">
               <span
                 className="font-bold"
                 style={{ color: theme.colors.textPrimary }}
@@ -75,7 +75,7 @@ export const GreetingHeader: React.FC = () => {
                 Level {currentLevel}
               </span>
               <span
-                className="text-xs ml-1"
+                className="text-[10px] sm:text-xs ml-1"
                 style={{ color: theme.colors.textMuted }}
               >
                 ({totalXP} XP)
@@ -107,7 +107,7 @@ export const GreetingHeader: React.FC = () => {
           {/* Streak */}
           {currentStreak > 0 && (
             <div
-              className="relative px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer transition-all hover:scale-105"
+              className="relative px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all hover:scale-105"
               style={{
                 backgroundColor: theme.colors.interactive,
                 border: `1px solid ${hoveredStat === 'streak' ? theme.colors.brand : theme.colors.border}`,
@@ -117,8 +117,8 @@ export const GreetingHeader: React.FC = () => {
               onMouseLeave={() => setHoveredStat(null)}
               onClick={() => navigate('/stats')}
             >
-              <span className="text-xl">🔥</span>
-              <div className="text-sm">
+              <span className="text-base sm:text-xl">🔥</span>
+              <div className="text-xs sm:text-sm">
                 <span
                   className="font-bold"
                   style={{ color: theme.colors.textPrimary }}
@@ -155,7 +155,7 @@ export const GreetingHeader: React.FC = () => {
 
           {/* Weekly Stats */}
           <div
-            className="relative px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer transition-all hover:scale-105"
+            className="relative px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all hover:scale-105"
             style={{
               backgroundColor: theme.colors.interactive,
               border: `1px solid ${hoveredStat === 'weekly' ? theme.colors.brand : theme.colors.border}`,
@@ -165,8 +165,8 @@ export const GreetingHeader: React.FC = () => {
             onMouseLeave={() => setHoveredStat(null)}
             onClick={() => navigate('/stats')}
           >
-            <span className="text-xl">📊</span>
-            <div className="text-sm">
+            <span className="text-base sm:text-xl">📊</span>
+            <div className="text-xs sm:text-sm">
               <span
                 className="font-bold"
                 style={{ color: theme.colors.textPrimary }}
@@ -174,7 +174,7 @@ export const GreetingHeader: React.FC = () => {
                 {progressSummary.weeklyProblems} problems
               </span>
               <span
-                className="text-xs ml-1"
+                className="text-[10px] sm:text-xs ml-1"
                 style={{ color: theme.colors.success }}
               >
                 this week

@@ -18,7 +18,8 @@
     "generate-initial-audio": "tsx scripts/generateInitialAudio.ts",
     "generate-ai-samples": "tsx scripts/generateAISamples.ts",
     "migrate:subtopics": "tsx scripts/renameRelationsFunctionsSubtopics.ts",
-    "generate-question-bank": "tsx scripts/generateQuestionBank.ts"
+    "generate-question-bank": "tsx scripts/generateQuestionBank.ts",
+    "extract:exam-questions": "tsx scripts/exam-extraction/extract-questions.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.64.0",

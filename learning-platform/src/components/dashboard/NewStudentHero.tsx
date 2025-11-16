@@ -47,7 +47,7 @@ export const NewStudentHero: React.FC<NewStudentHeroProps> = ({ name }) => {
       {/* Welcome Message */}
       <div className="text-center mb-8">
         <h1
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
           style={{ color: theme.colors.textPrimary }}
         >
           🎉 Welcome to Home Campus, {name}!

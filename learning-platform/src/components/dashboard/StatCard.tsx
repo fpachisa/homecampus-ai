@@ -33,7 +33,7 @@ export const StatCard: React.FC<StatCardProps> = ({
 
   return (
     <div
-      className={`p-4 rounded-xl ${onClick ? 'cursor-pointer transition-all hover:scale-105' : ''}`}
+      className={`p-3 sm:p-4 md:p-5 rounded-xl ${onClick ? 'cursor-pointer transition-all hover:scale-105' : ''}`}
       style={{
         background: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,
@@ -42,7 +42,7 @@ export const StatCard: React.FC<StatCardProps> = ({
       onClick={onClick}
     >
       {/* Icon */}
-      <div className="text-3xl mb-2">{icon}</div>
+      <div className="text-2xl sm:text-3xl mb-2">{icon}</div>
 
       {/* Label */}
       <div
@@ -54,7 +54,7 @@ export const StatCard: React.FC<StatCardProps> = ({
 
       {/* Value */}
       <div
-        className="text-2xl font-bold mb-1"
+        className="text-xl sm:text-2xl font-bold mb-1"
         style={{ color: theme.colors.textPrimary }}
       >
         {value}

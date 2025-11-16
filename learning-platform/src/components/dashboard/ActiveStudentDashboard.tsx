@@ -100,24 +100,24 @@ export const ActiveStudentDashboard: React.FC = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-3 sm:py-4 lg:py-6">
         {/* Greeting Header with Integrated Stats */}
         <div className="relative" style={{ zIndex: 50 }}>
           <GreetingHeader />
         </div>
 
         {/* Divider */}
-        <hr className="mb-8 mx-auto" style={{ borderColor: theme.colors.border, opacity: 0.6, maxWidth: '600px' }} />
+        <hr className="mb-4 sm:mb-6 lg:mb-8 mx-auto" style={{ borderColor: theme.colors.border, opacity: 0.6, maxWidth: '600px' }} />
 
         {/* Quick Actions Section */}
-        <section className="mb-8">
+        <section className="mb-4 sm:mb-6 lg:mb-8">
           <h2
-            className="text-lg font-bold mb-4 flex items-center gap-2"
+            className="text-base sm:text-lg font-bold mb-3 sm:mb-4 flex items-center gap-2"
             style={{ color: theme.colors.textPrimary }}
           >
 
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
           {/* Streak Protection */}
           {currentStreak > 0 && (
             <ActionCard
@@ -168,13 +168,13 @@ export const ActiveStudentDashboard: React.FC = () => {
         </section>
 
         {/* Divider */}
-        <hr className="mb-8 mx-auto" style={{ borderColor: theme.colors.border, opacity: 0.6, maxWidth: '600px' }} />
+        <hr className="mb-4 sm:mb-6 lg:mb-8 mx-auto" style={{ borderColor: theme.colors.border, opacity: 0.6, maxWidth: '600px' }} />
 
         {/* Topic Grid Section */}
-        <section className="mb-8">
-          <div className="flex items-center justify-between mb-4">
+        <section className="mb-4 sm:mb-6 lg:mb-8">
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
             <h2
-              className="text-lg font-bold flex items-center gap-2"
+              className="text-base sm:text-lg font-bold flex items-center gap-2"
               style={{ color: theme.colors.textPrimary }}
             >
               <span>📚</span>
@@ -219,7 +219,7 @@ export const ActiveStudentDashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
             {topics
               .filter((topic) => topic.isActive)
               .map((topic) => {
@@ -250,18 +250,18 @@ export const ActiveStudentDashboard: React.FC = () => {
         </section>
 
         {/* Divider */}
-        <hr className="mb-8 mx-auto" style={{ borderColor: theme.colors.border, opacity: 0.6, maxWidth: '600px' }} />
+        <hr className="mb-4 sm:mb-6 lg:mb-8 mx-auto" style={{ borderColor: theme.colors.border, opacity: 0.6, maxWidth: '600px' }} />
 
         {/* Progress & Insights Section */}
         <section>
           <h2
-            className="text-lg font-bold mb-4 flex items-center gap-2"
+            className="text-base sm:text-lg font-bold mb-3 sm:mb-4 flex items-center gap-2"
             style={{ color: theme.colors.textPrimary }}
           >
             <span>📊</span>
             <span>Progress & Insights</span>
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
           {/* Recent Achievements */}
           <RecentAchievementsPanel
             achievements={progressSummary.achievements}

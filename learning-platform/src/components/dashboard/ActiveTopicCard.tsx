@@ -67,7 +67,7 @@ export const ActiveTopicCard: React.FC<ActiveTopicCardProps> = ({
     <button
       onClick={handleClick}
       disabled={!topic.isActive}
-      className="group relative p-6 rounded-2xl transition-all duration-300 text-left w-full"
+      className="group relative p-4 sm:p-5 md:p-6 rounded-2xl transition-all duration-300 text-left w-full"
       style={{
         background: topic.isActive ? theme.glass.background : theme.colors.interactive,
         border: `1px solid ${theme.glass.border}`,
@@ -91,7 +91,7 @@ export const ActiveTopicCard: React.FC<ActiveTopicCardProps> = ({
     >
       {/* Status Badge */}
       <div
-        className="absolute top-4 right-4 px-2 py-1 rounded-full text-xs font-bold"
+        className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-1 rounded-full text-xs font-bold"
         style={{
           backgroundColor: status.color,
           color: '#ffffff',

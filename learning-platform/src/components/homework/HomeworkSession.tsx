@@ -161,11 +161,14 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
       />
 
       {/* Header */}
-      <div className="px-6 py-4 flex items-center justify-between relative z-10" style={{ backgroundColor: theme.colors.chat, borderBottom: `1px solid ${theme.colors.border}` }}>
-        <div className="flex items-center space-x-4">
+      <div
+        className="px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between relative z-10 pt-safe-t"
+        style={{ backgroundColor: theme.colors.chat, borderBottom: `1px solid ${theme.colors.border}` }}
+      >
+        <div className="flex items-center gap-2 sm:gap-4 min-w-0 flex-1">
           <button
             onClick={onExit}
-            className="p-2 rounded-lg transition-colors"
+            className="min-w-[44px] min-h-[44px] p-2 rounded-lg transition-colors flex-shrink-0"
             style={{
               backgroundColor: theme.colors.interactive,
               color: theme.colors.textSecondary
@@ -174,11 +177,11 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
-          <div>
-            <h2 className="text-lg font-semibold" style={{ color: theme.colors.textPrimary }}>
+          <div className="min-w-0">
+            <h2 className="text-base sm:text-lg font-semibold truncate" style={{ color: theme.colors.textPrimary }}>
               Homework Help
             </h2>
-            <p className="text-sm capitalize" style={{ color: theme.colors.textSecondary }}>
+            <p className="text-xs sm:text-sm capitalize truncate" style={{ color: theme.colors.textSecondary }}>
               {problem.analysis?.topic || 'Mathematics'}
             </p>
           </div>
@@ -186,7 +189,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
 
         <button
           onClick={() => setShowProblemImage(!showProblemImage)}
-          className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors"
+          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 min-h-[44px] rounded-lg transition-colors flex-shrink-0"
           style={{
             backgroundColor: theme.colors.interactive,
             borderColor: theme.colors.border,
@@ -195,18 +198,21 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
           }}
         >
           <ImageIcon className="w-4 h-4" />
-          <span className="text-sm">{showProblemImage ? 'Hide' : 'Show'} Problem</span>
+          <span className="text-xs sm:text-sm">{showProblemImage ? 'Hide' : 'Show'}</span>
         </button>
       </div>
 
       {/* Main Content */}
       <div className="flex-1 overflow-hidden flex">
-        {/* Problem Image Sidebar */}
+        {/* Problem Image Sidebar - Hidden on mobile, shown on desktop */}
         {showProblemImage && (
-          <div className="w-80 p-4 overflow-y-auto relative z-10" style={{
-            backgroundColor: theme.colors.chat,
-            borderRight: `1px solid ${theme.colors.border}`
-          }}>
+          <div
+            className="hidden md:block w-80 p-4 overflow-y-auto relative z-10"
+            style={{
+              backgroundColor: theme.colors.chat,
+              borderRight: `1px solid ${theme.colors.border}`
+            }}
+          >
             <h3 className="font-semibold mb-3" style={{ color: theme.colors.textPrimary }}>
               Your Problem
             </h3>
@@ -233,30 +239,69 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
           </div>
         )}
 
+        {/* Mobile Problem Image Overlay */}
+        {showProblemImage && (
+          <div
+            className="md:hidden fixed inset-0 z-40 flex items-center justify-center p-4"
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+            onClick={() => setShowProblemImage(false)}
+          >
+            <div
+              className="max-w-2xl w-full max-h-[80vh] overflow-y-auto rounded-lg p-4"
+              style={{ backgroundColor: theme.colors.surface }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-semibold" style={{ color: theme.colors.textPrimary }}>
+                  Your Problem
+                </h3>
+                <button
+                  onClick={() => setShowProblemImage(false)}
+                  className="p-2 rounded-lg"
+                  style={{ backgroundColor: theme.colors.interactive }}
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="rounded-lg overflow-hidden mb-4" style={{
+                border: `1px solid ${theme.colors.border}`,
+                backgroundColor: theme.colors.surface
+              }}>
+                <img
+                  src={problem.imageUrl || problem.imageData}
+                  alt="Problem"
+                  className="w-full h-auto"
+                />
+              </div>
+              {problem.analysis?.extractedText && (
+                <div>
+                  <h4 className="text-sm font-semibold mb-2" style={{ color: theme.colors.textSecondary }}>
+                    Problem Text
+                  </h4>
+                  <p className="text-sm whitespace-pre-wrap" style={{ color: theme.colors.textPrimary }}>
+                    {problem.analysis.extractedText}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         {/* Chat Area */}
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4 relative z-10">
+          <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-3 sm:py-4 space-y-3 sm:space-y-4 relative z-10 pb-safe-b">
             {/* Avatar - Show when no messages or when speaking */}
             {(session.messages.length === 0 || isPlaying) && (
               <div
-                style={{
-                  position: 'fixed',
-                  top: '120px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  zIndex: 50,
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center'
-                }}
+                className="fixed top-20 sm:top-24 md:top-28 left-1/2 -translate-x-1/2 z-50 flex justify-center items-center"
               >
                 <Avatar
                   state={avatarState}
                   emotion={getAvatarEmotion()}
                   subtitle={currentSubtitle}
                   showSubtitle={showSubtitle}
-                  size={120}
+                  size={window.innerWidth < 640 ? 100 : 120}
                   audioDuration={audioDuration}
                 />
               </div>
@@ -410,29 +455,33 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
           )}
 
           {/* Input Area */}
-          <div className="px-6 py-4 relative z-10" style={{
-            backgroundColor: theme.colors.chat,
-            borderTop: `1px solid ${theme.colors.border}`
-          }}>
-            <form onSubmit={handleSubmit} className="flex items-end space-x-3">
-              <div className="flex-1">
+          <div
+            className="px-4 sm:px-6 py-3 sm:py-4 relative z-10"
+            style={{
+              backgroundColor: theme.colors.chat,
+              borderTop: `1px solid ${theme.colors.border}`,
+              paddingBottom: 'max(env(safe-area-inset-bottom), 12px)',
+            }}
+          >
+            <form onSubmit={handleSubmit} className="flex items-end gap-2 sm:gap-3">
+              <div className="flex-1 min-w-0">
                 <textarea
                   ref={inputRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Share your thinking, ask a question, or show your work..."
-                  className="w-full px-4 py-3 rounded-lg resize-none focus:ring-2 focus:outline-none"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg resize-none focus:ring-2 focus:outline-none text-sm sm:text-base"
                   style={{
                     backgroundColor: theme.colors.surface,
                     border: `1px solid ${theme.colors.border}`,
                     color: theme.colors.textPrimary,
                     borderRadius: theme.radius.lg,
                   }}
-                  rows={3}
+                  rows={2}
                   disabled={isLoading}
                 />
-                <p className="text-xs mt-1" style={{ color: theme.colors.textSecondary }}>
+                <p className="text-[10px] sm:text-xs mt-1 hidden xs:block" style={{ color: theme.colors.textSecondary }}>
                   Press Enter to send, Shift+Enter for new line
                 </p>
               </div>
@@ -440,7 +489,7 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="px-6 py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                className="px-4 sm:px-6 min-h-[44px] sm:py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 sm:gap-2 flex-shrink-0"
                 style={{
                   background: theme.gradients.brand,
                   color: '#ffffff',
@@ -448,8 +497,8 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
                   boxShadow: theme.shadows.md,
                 }}
               >
-                <Send className="w-5 h-5" />
-                <span>Send</span>
+                <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-sm sm:text-base">Send</span>
               </button>
             </form>
           </div>
@@ -458,25 +507,25 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
 
       {/* Session Complete Modal - Only show after speech completes */}
       {showCompletionModal && (
-        <div className="absolute inset-0 flex items-center justify-center p-6 z-50" style={{
+        <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 z-50" style={{
           backgroundColor: 'rgba(0, 0, 0, 0.6)',
           backdropFilter: 'blur(4px)'
         }}>
-          <div className="p-8 max-w-md w-full" style={{
+          <div className="p-5 sm:p-6 md:p-8 max-w-md w-full" style={{
             backgroundColor: theme.colors.surface,
             borderRadius: theme.radius.lg,
             boxShadow: theme.shadows.xl,
             border: `1px solid ${theme.colors.border}`
           }}>
-            <h3 className="text-2xl font-bold mb-4" style={{ color: theme.colors.textPrimary }}>
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4" style={{ color: theme.colors.textPrimary }}>
               Great Work! 🎉
             </h3>
             {session.finalOutcome === 'solved-with-understanding' && (
               <div>
-                <p className="mb-4" style={{ color: theme.colors.textPrimary }}>
+                <p className="text-sm sm:text-base mb-3 sm:mb-4" style={{ color: theme.colors.textPrimary }}>
                   You successfully solved the problem and demonstrated solid understanding of:
                 </p>
-                <ul className="list-disc list-inside space-y-1 mb-6" style={{ color: theme.colors.textPrimary }}>
+                <ul className="list-disc list-inside space-y-1 mb-4 sm:mb-6 text-sm sm:text-base" style={{ color: theme.colors.textPrimary }}>
                   {session.understoodConcepts.map((concept, idx) => (
                     <li key={idx}>
                       {concept}
@@ -485,10 +534,10 @@ export const HomeworkSessionView: React.FC<HomeworkSessionProps> = ({
                 </ul>
               </div>
             )}
-            <div className="flex space-x-3">
+            <div className="flex gap-3">
               <button
                 onClick={onExit}
-                className="flex-1 px-4 py-2 rounded-lg transition-colors"
+                className="flex-1 px-4 py-2.5 sm:py-2 min-h-[44px] rounded-lg transition-colors text-sm sm:text-base font-medium"
                 style={{
                   background: theme.gradients.brand,
                   color: '#ffffff',

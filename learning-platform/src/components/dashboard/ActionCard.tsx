@@ -35,7 +35,7 @@ export const ActionCard: React.FC<ActionCardProps> = ({
 
   return (
     <div
-      className="p-5 rounded-xl flex flex-col h-full"
+      className="p-3 sm:p-4 lg:p-5 rounded-xl flex flex-col h-full"
       style={{
         background: theme.glass.background,
         border: `1px solid ${theme.glass.border}`,
@@ -43,11 +43,11 @@ export const ActionCard: React.FC<ActionCardProps> = ({
       }}
     >
       {/* Icon */}
-      <div className="text-3xl mb-3">{icon}</div>
+      <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">{icon}</div>
 
       {/* Title */}
       <h3
-        className="text-base font-bold mb-2"
+        className="text-sm sm:text-base font-bold mb-1.5 sm:mb-2"
         style={{ color: theme.colors.textPrimary }}
       >
         {title}
@@ -55,7 +55,7 @@ export const ActionCard: React.FC<ActionCardProps> = ({
 
       {/* Description */}
       <p
-        className="text-sm mb-3 flex-1"
+        className="text-xs sm:text-sm mb-2 sm:mb-3 flex-1"
         style={{ color: theme.colors.textSecondary }}
       >
         {description}
@@ -65,11 +65,12 @@ export const ActionCard: React.FC<ActionCardProps> = ({
       {/* CTA Button */}
       <button
         onClick={onAction}
-        className="self-center py-2 px-5 rounded-lg text-sm font-semibold transition-all duration-200"
+        className="self-center py-2.5 px-4 sm:py-2 sm:px-5 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 min-h-[44px] sm:min-h-0"
         style={{
           backgroundColor: buttonColor || theme.colors.brand,
           color: '#ffffff',
           cursor: 'pointer',
+          touchAction: 'manipulation',
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.opacity = '0.9';

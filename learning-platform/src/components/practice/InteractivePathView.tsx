@@ -6,7 +6,7 @@
  * Right: Leaderboard & Goals
  */
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
 import { useAuth } from '../../contexts/AuthContext';
@@ -28,6 +28,16 @@ import { MilestoneMarker } from './MilestoneMarker';
 import { BackButton } from '../BackButton';
 import { useTheme } from '../../hooks/useTheme';
 
+// Lazy load panels for mobile drawers
+const StatsPanelLazy = lazy(() => import('./StatsPanel').then(m => ({ default: m.StatsPanel })));
+const LeaderboardPanelLazy = lazy(() => import('./LeaderboardPanel').then(m => ({ default: m.LeaderboardPanel })));
+
+interface YAMLFileInfo {
+  filename: string;
+  displayName: string;
+  category: string;
+}
+
 interface InteractivePathViewProps {
   // Props removed - now reads from URL
 }
@@ -45,6 +55,12 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   const [error, setError] = useState<string | null>(null);
   const centerPanelRef = useRef<HTMLDivElement>(null);
   const [_pathWidth, setPathWidth] = useState(600);
+  const [displayName, setDisplayName] = useState<string>('');
+
+  // Mobile state
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [showStats, setShowStats] = useState(false);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   useEffect(() => {
     loadPathData();
@@ -83,12 +99,13 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
     };
   }, [user?.uid]);
 
-  // Measure center panel width for path generation
+  // Measure center panel width for path generation and detect mobile
   useEffect(() => {
     const updateWidth = () => {
       if (centerPanelRef.current) {
         setPathWidth(centerPanelRef.current.offsetWidth);
       }
+      setIsMobile(window.innerWidth < 768);
     };
 
     updateWidth();
@@ -118,6 +135,32 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       // Load unified path
       const loadedNodes = await yamlPathLoader.loadUnifiedPath(category);
       setNodes(loadedNodes);
+
+      // Load display name from global manifest
+      try {
+        const manifestPath = '/curriculum-content/index.json';
+
+        console.log(`📋 Loading manifest from: ${manifestPath}`);
+        const manifestResponse = await fetch(manifestPath);
+
+        if (manifestResponse.ok) {
+          const manifest = await manifestResponse.json();
+          const pathInfo = manifest.files?.find((f: YAMLFileInfo) => f.category === category);
+          if (pathInfo) {
+            setDisplayName(pathInfo.displayName);
+            console.log(`✅ Display name loaded: ${pathInfo.displayName}`);
+          } else {
+            console.warn(`⚠️ Category ${category} not found in manifest`);
+            setDisplayName(category.replace(/^s\d+-math-/i, '').replace(/-/g, ' '));
+          }
+        } else {
+          console.warn(`⚠️ Manifest not found at ${manifestPath}`);
+          setDisplayName(category.replace(/^s\d+-math-/i, '').replace(/-/g, ' '));
+        }
+      } catch (manifestError) {
+        console.warn('Failed to load manifest, using fallback display name:', manifestError);
+        setDisplayName(category.replace(/^s\d+-math-/i, '').replace(/-/g, ' '));
+      }
 
       let pathProgress: PathProgress | null = null;
 
@@ -256,8 +299,10 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
     );
   }
 
-  // Generate meandering path positions with tighter spacing
-  const basePositions = generateMeanderingPath(nodes.length, 100);
+  // Generate meandering path positions with responsive spacing
+  // Mobile: 120px spacing, Desktop: 80px spacing
+  const verticalSpacing = isMobile ? 120 : 80;
+  const basePositions = generateMeanderingPath(nodes.length, verticalSpacing);
 
   // Group nodes by layer
   const nodesByLayer: Record<PathLayer, PathNode[]> = {
@@ -308,10 +353,10 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   const isPathComplete = totalCompletedNodes === nodes.length && nodes.length > 0;
 
   return (
-    <div className="min-h-screen flex overflow-hidden" style={{ background: theme.gradients.panel }}>
-      {/* Left Sidebar - Stats Panel (25%) - Fixed */}
+    <div className="min-h-[100dvh] md:flex overflow-hidden" style={{ background: theme.gradients.panel }}>
+      {/* Left Sidebar - Stats Panel (25%) - Desktop only */}
       <div
-        className="w-1/4 border-r flex flex-col h-screen"
+        className="hidden md:flex md:w-1/4 border-r flex-col min-h-[100dvh]"
         style={{
           borderColor: theme.glass.border,
           backgroundColor: theme.colors.sidebar,
@@ -325,23 +370,29 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
         </div>
       </div>
 
-      {/* Center Panel - Curved Path (50%) - Scrollable */}
+      {/* Center Panel - Curved Path (50% desktop, 100% mobile) - Scrollable */}
       <div
         ref={centerPanelRef}
-        className="w-1/2 h-screen overflow-y-auto relative flex flex-col"
+        className="w-full md:w-1/2 min-h-[100dvh] overflow-y-auto relative flex flex-col pb-20 md:pb-0"
         style={{  }}
       >
         {/* Header - Sticky */}
         <div
-          className="sticky top-0 z-30 p-6 border-b flex-shrink-0"
+          className="sticky top-0 z-30 px-4 sm:px-6 py-4 border-b flex-shrink-0"
           style={{
             backgroundColor: theme.glass.background,
             backdropFilter: theme.glass.backdrop,
             borderColor: theme.glass.border,
           }}
         >
-          <h1 className="text-3xl font-bold capitalize" style={{ color: theme.colors.textPrimary }}>
-            {category.replace(/^s\d+-math-/i, '')}
+          {/* Mobile back button */}
+          {isMobile && (
+            <div className="mb-3">
+              <BackButton onClick={goToHome} />
+            </div>
+          )}
+          <h1 className="text-2xl sm:text-3xl font-bold" style={{ color: theme.colors.textPrimary }}>
+            {displayName || 'Loading...'}
           </h1>
           <div className="text-sm mt-1" style={{ color: theme.colors.textSecondary }}>
             {totalCompletedNodes}/{nodes.length} nodes completed
@@ -367,6 +418,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
                 position={adjustedPosition}
                 onClick={() => goToPractice(category, node.id)}
                 displayNumber={index + 1}
+                isMobile={isMobile}
               />
             );
           })}
@@ -414,9 +466,9 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
         </div>
       </div>
 
-      {/* Right Sidebar - Leaderboard Panel (25%) - Fixed */}
+      {/* Right Sidebar - Leaderboard Panel (25%) - Desktop only */}
       <div
-        className="w-1/4 border-l flex flex-col h-screen"
+        className="hidden md:flex md:w-1/4 border-l flex-col min-h-[100dvh]"
         style={{
           borderColor: theme.glass.border,
           backgroundColor: theme.colors.sidebar,
@@ -431,6 +483,138 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
           <LeaderboardPanel progress={progress} globalStreak={globalStreak} allNodes={nodes} />
         </div>
       </div>
+
+      {/* Mobile-only UI */}
+      {isMobile && (
+        <>
+          {/* Mobile Action Bar - Fixed at bottom */}
+          <div
+            className="fixed bottom-0 left-0 right-0 z-30 border-t"
+            style={{
+              backgroundColor: theme.colors.surface,
+              borderColor: theme.glass.border,
+              paddingBottom: 'max(env(safe-area-inset-bottom), 12px)',
+            }}
+          >
+            <div className="flex gap-2 p-3">
+              <button
+                onClick={() => {
+                  setShowStats(!showStats);
+                  setShowLeaderboard(false);
+                }}
+                className="flex-1 h-12 rounded-lg font-semibold transition-all"
+                style={{
+                  backgroundColor: showStats ? theme.colors.brand : `${theme.colors.brand}20`,
+                  color: showStats ? '#ffffff' : theme.colors.textPrimary,
+                }}
+              >
+                📊 Stats
+              </button>
+              <button
+                onClick={() => {
+                  setShowLeaderboard(!showLeaderboard);
+                  setShowStats(false);
+                }}
+                className="flex-1 h-12 rounded-lg font-semibold transition-all"
+                style={{
+                  backgroundColor: showLeaderboard ? theme.colors.brand : `${theme.colors.brand}20`,
+                  color: showLeaderboard ? '#ffffff' : theme.colors.textPrimary,
+                }}
+              >
+                🏆 Goals
+              </button>
+            </div>
+          </div>
+
+          {/* Stats Drawer - Slide up from bottom */}
+          {showStats && (
+            <div className="fixed inset-0 z-40" onClick={() => setShowStats(false)}>
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                }}
+              />
+              <div
+                className="absolute bottom-0 left-0 right-0 rounded-t-2xl max-h-[70vh] overflow-y-auto animate-drawer-slide-up"
+                style={{
+                  backgroundColor: theme.colors.surface,
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div
+                  className="sticky top-0 border-b px-4 py-3 flex justify-between items-center"
+                  style={{
+                    backgroundColor: theme.colors.surface,
+                    borderColor: theme.glass.border,
+                  }}
+                >
+                  <h3 className="font-semibold" style={{ color: theme.colors.textPrimary }}>
+                    Your Stats
+                  </h3>
+                  <button
+                    onClick={() => setShowStats(false)}
+                    className="w-8 h-8 rounded-full flex items-center justify-center"
+                    style={{
+                      backgroundColor: theme.glass.background,
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    ✕
+                  </button>
+                </div>
+                <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+                  <StatsPanelLazy progress={progress} globalStreak={globalStreak} />
+                </Suspense>
+              </div>
+            </div>
+          )}
+
+          {/* Leaderboard Drawer - Slide up from bottom */}
+          {showLeaderboard && (
+            <div className="fixed inset-0 z-40" onClick={() => setShowLeaderboard(false)}>
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                }}
+              />
+              <div
+                className="absolute bottom-0 left-0 right-0 rounded-t-2xl max-h-[70vh] overflow-y-auto animate-drawer-slide-up"
+                style={{
+                  backgroundColor: theme.colors.surface,
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div
+                  className="sticky top-0 border-b px-4 py-3 flex justify-between items-center"
+                  style={{
+                    backgroundColor: theme.colors.surface,
+                    borderColor: theme.glass.border,
+                  }}
+                >
+                  <h3 className="font-semibold" style={{ color: theme.colors.textPrimary }}>
+                    Goals & Progress
+                  </h3>
+                  <button
+                    onClick={() => setShowLeaderboard(false)}
+                    className="w-8 h-8 rounded-full flex items-center justify-center"
+                    style={{
+                      backgroundColor: theme.glass.background,
+                      color: theme.colors.textPrimary,
+                    }}
+                  >
+                    ✕
+                  </button>
+                </div>
+                <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+                  <LeaderboardPanelLazy progress={progress} globalStreak={globalStreak} allNodes={nodes} />
+                </Suspense>
+              </div>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };

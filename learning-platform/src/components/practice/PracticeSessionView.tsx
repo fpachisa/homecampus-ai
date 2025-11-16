@@ -886,69 +886,69 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-blue-50 to-indigo-100 pb-safe-b">
       {/* Header */}
-      <div className="bg-white shadow-md border-b-2 border-blue-200">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+      <div className="bg-white shadow-md border-b-2 border-blue-200 pt-safe-t">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+          {/* Top Row: Back button + Title + Progress */}
+          <div className="flex items-center justify-between gap-3 mb-3">
+            <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
               <BackButton onClick={onBack} />
-              <div>
-                <h1 className="text-xl font-bold text-gray-800">{node.title}</h1>
+              <div className="flex-1 min-w-0">
+                <h1 className="text-base sm:text-xl font-bold text-gray-800 truncate">{node.title}</h1>
               </div>
             </div>
-            {/* Problem Navigation Pills */}
-            <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
-              {session.problems.map((problem, index) => {
-                const isAttempted = session.attempts.some(a => a.problemId === problem.id);
-                const hasVisited = session.problemSessions[problem.id] !== undefined;
-                const isCurrent = index === session.currentIndex;
-                // Can click if: attempted, current, has visited session, or any problem up to current index
-                const canClick = isAttempted || isCurrent || hasVisited || index <= session.currentIndex;
-
-                return (
-                  <button
-                    key={problem.id}
-                    onClick={() => canClick && handleNavigateToProblem(index)}
-                    disabled={!canClick}
-                    className={`w-10 h-10 rounded-full font-semibold transition-all ${
-                      isAttempted
-                        ? 'bg-green-500 text-white hover:bg-green-600 hover:scale-105 cursor-pointer'  // Green for attempted (priority)
-                        : isCurrent
-                        ? 'bg-amber-500 text-white shadow-lg scale-110'  // Orange for current
-                        : hasVisited || index < session.currentIndex
-                        ? 'bg-amber-400 text-white hover:bg-amber-500 hover:scale-105 cursor-pointer'  // Lighter orange for visited
-                        : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-60'  // Grey for not yet reached
-                    } ${isCurrent && isAttempted ? 'ring-4 ring-amber-300' : ''}`}
-                    title={
-                      isCurrent && isAttempted
-                        ? `Current problem ${index + 1} (attempted)`
-                        : isCurrent
-                        ? `Current problem ${index + 1}`
-                        : isAttempted
-                        ? `Navigate to problem ${index + 1} (completed)`
-                        : hasVisited || index < session.currentIndex
-                        ? `Navigate to problem ${index + 1} (visited)`
-                        : `Problem ${index + 1} (not reached yet)`
-                    }
-                  >
-                    {index + 1}
-                  </button>
-                );
-              })}
-            </div>            
-            <div className="text-right">
-              <div className="text-sm text-gray-600">Progress</div>
-              <div className="text-lg font-bold text-gray-800">{progressPercent}%</div>
+            <div className="text-right flex-shrink-0">
+              <div className="text-xs sm:text-sm text-gray-600">Progress</div>
+              <div className="text-base sm:text-lg font-bold text-gray-800">{progressPercent}%</div>
             </div>
           </div>
 
+          {/* Bottom Row: Problem Navigation Pills */}
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 -mx-1 px-1">
+            {session.problems.map((problem, index) => {
+              const isAttempted = session.attempts.some(a => a.problemId === problem.id);
+              const hasVisited = session.problemSessions[problem.id] !== undefined;
+              const isCurrent = index === session.currentIndex;
+              // Can click if: attempted, current, has visited session, or any problem up to current index
+              const canClick = isAttempted || isCurrent || hasVisited || index <= session.currentIndex;
 
+              return (
+                <button
+                  key={problem.id}
+                  onClick={() => canClick && handleNavigateToProblem(index)}
+                  disabled={!canClick}
+                  className={`min-w-[44px] min-h-[44px] w-11 h-11 flex-shrink-0 rounded-full font-semibold transition-all text-sm sm:text-base ${
+                    isAttempted
+                      ? 'bg-green-500 text-white hover:bg-green-600 hover:scale-105 cursor-pointer'  // Green for attempted (priority)
+                      : isCurrent
+                      ? 'bg-amber-500 text-white shadow-lg scale-105 sm:scale-110'  // Orange for current
+                      : hasVisited || index < session.currentIndex
+                      ? 'bg-amber-400 text-white hover:bg-amber-500 hover:scale-105 cursor-pointer'  // Lighter orange for visited
+                      : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-60'  // Grey for not yet reached
+                  } ${isCurrent && isAttempted ? 'ring-2 sm:ring-4 ring-amber-300' : ''}`}
+                  title={
+                    isCurrent && isAttempted
+                      ? `Current problem ${index + 1} (attempted)`
+                      : isCurrent
+                      ? `Current problem ${index + 1}`
+                      : isAttempted
+                      ? `Navigate to problem ${index + 1} (completed)`
+                      : hasVisited || index < session.currentIndex
+                      ? `Navigate to problem ${index + 1} (visited)`
+                      : `Problem ${index + 1} (not reached yet)`
+                  }
+                >
+                  {index + 1}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Avatar Component - Fixed Position (stays visible during scroll) */}
         {(isPlaying || currentSubtitle) && (
           <div style={{
@@ -1123,7 +1123,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
               {session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect) ? (
                 <button
                   onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
-                  className={`w-full px-6 py-3 ${colors.button} text-white rounded-lg font-semibold transition`}
+                  className={`w-full px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition`}
                 >
                   {session.currentIndex >= session.problems.length - 1
                     ? 'Finish Lesson'
@@ -1138,7 +1138,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                     <button
                       onClick={handleSubmitAnswer}
                       disabled={!studentAnswer.trim() || submitting}
-                      className={`flex-1 px-6 py-3 ${colors.button} text-white rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed`}
+                      className={`flex-1 px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed`}
                     >
                       {submitting ? 'Checking...' : 'Submit Answer'}
                     </button>
@@ -1149,14 +1149,14 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                         <button
                           onClick={handleShowSolution}
                           disabled={loadingSolution}
-                          className="flex-1 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition disabled:opacity-50"
+                          className="flex-1 px-6 py-3 min-h-[48px] bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition disabled:opacity-50"
                         >
                           {loadingSolution ? 'Loading...' : 'Show Solution'}
                         </button>
                       ) : (
                         <button
                           onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
-                          className={`flex-1 px-6 py-3 ${colors.button} text-white rounded-lg font-semibold transition`}
+                          className={`flex-1 px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition`}
                         >
                           {session.currentIndex >= session.problems.length - 1
                             ? 'Finish Lesson'

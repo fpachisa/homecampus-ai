@@ -377,13 +377,16 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
 
       {/* Header - show unless in session */}
       {flowState !== 'session' && (
-        <header className="relative z-10 border-b" style={{ borderColor: theme.colors.border }}>
-          <div className="max-w-6xl mx-auto px-6 py-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
+        <header
+          className="relative z-10 border-b pt-safe-t"
+          style={{ borderColor: theme.colors.border }}
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
                 <button
                   onClick={() => navigate('/home')}
-                  className="p-2 rounded-lg transition-all duration-200"
+                  className="min-w-[44px] min-h-[44px] p-2 sm:p-2.5 rounded-lg transition-all duration-200 flex-shrink-0"
                   style={{
                     backgroundColor: theme.colors.interactive,
                     color: theme.colors.textSecondary,
@@ -400,12 +403,12 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
                 >
                   <ArrowLeft className="w-5 h-5" />
                 </button>
-                <div>
-                  <h1 className="text-2xl font-bold" style={{ color: theme.colors.textPrimary }}>
+                <div className="min-w-0">
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-bold truncate" style={{ color: theme.colors.textPrimary }}>
                     Homework Helper
                   </h1>
-                  <p className="text-sm" style={{ color: theme.colors.textMuted }}>
-                    Get hints and guidance to solve your math problems step-by-step
+                  <p className="text-xs sm:text-sm hidden xs:block" style={{ color: theme.colors.textMuted }}>
+                    Get hints and guidance step-by-step
                   </p>
                 </div>
               </div>
@@ -413,7 +416,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
               {/* History Button */}
               <button
                 onClick={() => navigate('/homework/history')}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 font-medium"
+                className="flex items-center gap-2 px-3 sm:px-4 min-h-[44px] rounded-lg transition-all duration-200 font-medium flex-shrink-0"
                 style={{
                   backgroundColor: theme.colors.interactive,
                   color: theme.colors.textSecondary,
@@ -428,8 +431,8 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
                 }}
                 title="View homework history"
               >
-                <History className="w-5 h-5" />
-                <span className="hidden sm:inline">History</span>
+                <History className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="hidden sm:inline text-sm">History</span>
               </button>
             </div>
           </div>
@@ -437,12 +440,12 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
       )}
 
       {/* Main Content */}
-      <main className="relative z-10 flex-1 overflow-y-auto">
+      <main className="relative z-10 flex-1 overflow-y-auto pb-safe-b">
         {flowState === 'upload' && (
-          <div className="max-w-4xl mx-auto px-6 py-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
             {/* Welcome Card */}
             <div
-              className="p-8 rounded-2xl mb-6"
+              className="p-5 sm:p-6 md:p-8 rounded-2xl mb-4 sm:mb-6"
               style={{
                 background: theme.glass.background,
                 border: `1px solid ${theme.glass.border}`,
@@ -450,17 +453,17 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
                 boxShadow: theme.shadows.lg,
               }}
             >
-              <div className="text-center mb-6">
+              <div className="text-center mb-4 sm:mb-6">
                 <div
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
+                  className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-3 sm:mb-4"
                   style={{ backgroundColor: `${theme.colors.brand}20` }}
                 >
-                  <BookOpen className="w-8 h-8" style={{ color: theme.colors.brand }} />
+                  <BookOpen className="w-7 h-7 sm:w-8 sm:h-8" style={{ color: theme.colors.brand }} />
                 </div>
-                <h2 className="text-2xl font-bold mb-2" style={{ color: theme.colors.textPrimary }}>
+                <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: theme.colors.textPrimary }}>
                   Upload Your Math Problem
                 </h2>
-                <p style={{ color: theme.colors.textSecondary }}>
+                <p className="text-sm sm:text-base px-2" style={{ color: theme.colors.textSecondary }}>
                   I'll guide you through solving it step by step - without giving away the answer!
                 </p>
               </div>
@@ -470,7 +473,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
 
             {/* How It Works Card */}
             <div
-              className="p-6 rounded-2xl"
+              className="p-4 sm:p-5 md:p-6 rounded-2xl"
               style={{
                 background: theme.glass.background,
                 border: `1px solid ${theme.glass.border}`,
@@ -523,7 +526,7 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
         )}
 
         {flowState === 'preview' && currentProblem && gradeCheck && (
-          <div className="max-w-6xl mx-auto px-6 py-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
             <ProblemPreview
               imageUrl={currentProblem.imageUrl || currentProblem.imageData!}
               analysis={currentProblem.analysis!}
@@ -550,22 +553,22 @@ export const HomeworkHelper: React.FC<HomeworkHelperProps> = ({ studentId, stude
         )}
 
         {flowState === 'error' && (
-          <div className="max-w-2xl mx-auto px-6 py-12">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
             <div
-              className="rounded-2xl p-6"
+              className="rounded-2xl p-4 sm:p-6"
               style={{
                 background: 'rgba(239, 68, 68, 0.1)',
                 border: '1px solid #ef4444',
               }}
             >
-              <div className="flex items-start space-x-3">
-                <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0" />
-                <div className="flex-1">
-                  <h3 className="font-semibold text-red-800 mb-2">Something went wrong</h3>
-                  <p className="text-red-700 mb-4">{error}</p>
+              <div className="flex items-start gap-3">
+                <AlertCircle className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 flex-shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-sm sm:text-base text-red-800 mb-2">Something went wrong</h3>
+                  <p className="text-sm text-red-700 mb-4">{error}</p>
                   <button
                     onClick={handleReset}
-                    className="px-4 py-2 rounded-lg transition-colors"
+                    className="px-4 py-2 min-h-[44px] rounded-lg transition-colors text-sm font-medium"
                     style={{
                       backgroundColor: '#ef4444',
                       color: '#ffffff',

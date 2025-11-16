@@ -105,7 +105,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
   return (
     <div className="w-full">
       <div
-        className="relative border-2 border-dashed rounded-lg p-8 transition-all"
+        className="relative border-2 border-dashed rounded-lg p-6 sm:p-8 md:p-10 transition-all min-h-[200px] sm:min-h-[240px]"
         style={{
           borderColor: isDragging ? theme.colors.brand : theme.colors.border,
           backgroundColor: isDragging ? `${theme.colors.brand}10` : 'transparent',
@@ -127,32 +127,32 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
 
         <label
           htmlFor="file-upload"
-          className={`flex flex-col items-center justify-center space-y-4 ${
+          className={`flex flex-col items-center justify-center space-y-3 sm:space-y-4 ${
             disabled ? 'cursor-not-allowed' : 'cursor-pointer'
           }`}
         >
           <div
-            className="p-4 rounded-full"
+            className="p-3 sm:p-4 rounded-full"
             style={{ backgroundColor: `${theme.colors.brand}20` }}
           >
-            <Upload className="w-8 h-8" style={{ color: theme.colors.brand }} />
+            <Upload className="w-10 h-10 sm:w-12 sm:h-12 md:w-8 md:h-8" style={{ color: theme.colors.brand }} />
           </div>
 
           <div className="text-center">
-            <p className="text-lg font-medium" style={{ color: theme.colors.textPrimary }}>
+            <p className="text-base sm:text-lg font-medium px-4" style={{ color: theme.colors.textPrimary }}>
               Drop your problem here or click to upload
             </p>
-            <p className="text-sm mt-2" style={{ color: theme.colors.textSecondary }}>
+            <p className="text-xs sm:text-sm mt-2 px-4" style={{ color: theme.colors.textSecondary }}>
               Supports PNG, JPEG, and PDF files up to {maxSizeMB}MB
             </p>
           </div>
 
-          <div className="flex items-center space-x-4 text-sm" style={{ color: theme.colors.textSecondary }}>
-            <div className="flex items-center space-x-1">
+          <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm" style={{ color: theme.colors.textSecondary }}>
+            <div className="flex items-center gap-1">
               <Image className="w-4 h-4" />
               <span>Image</span>
             </div>
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center gap-1">
               <FileText className="w-4 h-4" />
               <span>PDF</span>
             </div>
