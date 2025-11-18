@@ -192,7 +192,17 @@
      ============================================================================ */
 
   .katex {
-    display: inline !important;  /* Ensure KaTeX is always inline, not block */
+    display: inline !important;     /* Ensure KaTeX is always inline, not block */
+    font-size: inherit !important;  /* Match surrounding text size */
+    font-family: inherit !important; /* Use Georgia to match body text */
+  }
+
+  /* Force all KaTeX math elements to use inherited font for consistency */
+  .katex .mathnormal,
+  .katex .mathit,
+  .katex .mathrm,
+  .katex .text {
+    font-family: inherit !important;
   }
 
   /* Prevent awkward line breaks before/within inline math */

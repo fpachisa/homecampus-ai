@@ -1,0 +1,62 @@
+{
+  "topicId": "G2",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 10,
+        "questionId": "G2-anderson-2024-p1-q10",
+        "topicID": "G2",
+        "stem": "ABCD is a rhombus and $RD=CS$. SCB, DCR and AQR are straight lines.",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram showing a rhombus ABCD and points S, C, B, D, R, A, Q in a configuration where SCB, DCR, and AQR are straight lines. Points S, C, Q, B are collinear.",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Diagram showing a rhombus ABCD and points S, C, B, D, R, A, Q in a configuration where SCB, DCR, and AQR are straight lines. Points S, C, Q, B are collinear.",
+          "notes": "Complex rhombus with extended lines SCB, DCR, AQR - no suitable tool",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G2-anderson-2024-p1-q10.png"
+        },
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "Prove that triangles SCD and RDA are congruent.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The triangles are congruent by the SAS (Side-Angle-Side) congruence test.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Establish the equality of one pair of corresponding sides ($CD$ and $DA$) using the properties of the rhombus $ABCD$.",
+                  "working": "CD = DA",
+                  "reasoning": "All sides of a rhombus are equal in length."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Establish the equality of the second pair of corresponding sides ($CS$ and $RD$) using the given information.",
+                  "working": "CS = RD",
+                  "reasoning": "Given information."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Prove the equality of the included angle $\\angle SCD$ and $\\angle RDA$. This requires using the parallel sides of the rhombus and the straight line condition.",
+                  "working": "1. In rhombus $ABCD$, side $\\overline{BC}$ is parallel to side $\\overline{DA}$ (opposite sides of a rhombus are parallel).\n2. Since $\\overline{BC} \\parallel \\overline{DA}$, the consecutive interior angles $\\angle BCD$ and $\\angle CDA$ are supplementary (add up to $180^\\circ$): $\\angle CDA = 180^\\circ - \\angle BCD$. Note that $\\angle CDA$ is the same as $\\angle RDA$.\n3. Since $SCB$ is a straight line, the adjacent angles $\\angle SCD$ and $\\angle BCD$ form a linear pair (add up to $180^\\circ$): $\\angle SCD = 180^\\circ - \\angle BCD$.",
+                  "reasoning": "By comparing the two expressions: $\\angle SCD = 180^\\circ - \\angle BCD$ and $\\angle RDA = 180^\\circ - \\angle BCD$. Therefore, $\\angle SCD = \\angle RDA$ (Both are supplementary to $\\angle BCD$). This is the included angle."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Conclude the congruence of the two triangles using the Side-Angle-Side (SAS) congruence test.",
+                  "working": "We have: Side $CD = DA$ (Step 1), Angle $\\angle SCD = \\angle RDA$ (Step 3), and Side $CS = RD$ (Step 2).",
+                  "reasoning": "Since two sides and the included angle of $\\triangle SCD$ are equal to the corresponding two sides and the included angle of $\\triangle RDA$, the triangles are congruent by SAS ($\\triangle SCD \\cong \\triangle RDA$)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Rhombus Congruence Proof"
+      }
+    ],
+    "Paper 2": []
+  }
+}

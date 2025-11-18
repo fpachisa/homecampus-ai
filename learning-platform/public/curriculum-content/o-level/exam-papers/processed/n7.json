@@ -1,0 +1,281 @@
+{
+  "topicId": "N7",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 15,
+        "questionId": "N7-anderson-2024-p1-q15",
+        "topicID": "N7",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "Solve the inequality $x-3\\le\\frac{5-x}{3}<\\frac{x+1}{2}.$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$1\\frac{2}{5} < x \\le 3\\frac{1}{2}$ or $1.4 < x \\le 3.5$ or $\\frac{7}{5} < x \\le \\frac{7}{2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Split into two separate inequalities",
+                  "working": "Inequality 1: $x-3\\le\\frac{5-x}{3}$ and Inequality 2: $\\frac{5-x}{3}<\\frac{x+1}{2}$",
+                  "reasoning": "A compound inequality can be solved by breaking it into two parts"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve Inequality 1: $x-3\\le\\frac{5-x}{3}$",
+                  "working": "Multiply both sides by 3: $3(x-3)\\le 5-x$, which gives $3x-9\\le 5-x$. Then $3x+x\\le 5+9$, so $4x\\le 14$ and $x\\le\\frac{14}{4}=\\frac{7}{2}=3.5$",
+                  "reasoning": "Multiply by 3 to clear the fraction, then collect like terms and solve for x"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve Inequality 2: $\\frac{5-x}{3}<\\frac{x+1}{2}$",
+                  "working": "Multiply both sides by 6: $2(5-x)<3(x+1)$, which gives $10-2x<3x+3$. Then $10-3<3x+2x$, so $7<5x$ and $x>\\frac{7}{5}=1.4$",
+                  "reasoning": "Multiply by the LCM (6) to clear fractions, then collect like terms and solve for x"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Combine the solutions",
+                  "working": "From Inequality 1: $x\\le 3.5$ and from Inequality 2: $x>1.4$. Therefore: $1.4 < x \\le 3.5$ or $\\frac{7}{5} < x \\le \\frac{7}{2}$ or $1\\frac{2}{5} < x \\le 3\\frac{1}{2}$",
+                  "reasoning": "The solution must satisfy both inequalities simultaneously"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Compound Inequality"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 31,
+        "questionId": "N7-anderson-2024-p2-q31",
+        "topicID": "N7",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Adam has some 50-cent and 20-cent coins in his wallet. Given that he has a total of 73 coins adding up to a value of \\$28.10, form 2 simultaneous equations to find the number of 50-cent and 20-cent coins he has.",
+            "marks": 5,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "45 fifty-cent coins and 28 twenty-cent coins",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define variables",
+                  "working": "Let $x$ = number of 50-cent coins and $y$ = number of 20-cent coins",
+                  "reasoning": "We need two variables to represent the two unknown quantities"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form equation from total number of coins",
+                  "working": "$x + y = 73$ ... (1)",
+                  "reasoning": "The total number of coins is 73"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Form equation from total value",
+                  "working": "Value: $0.50x + 0.20y = 28.10$ or $50x + 20y = 2810$ ... (2)",
+                  "reasoning": "Each 50-cent coin contributes \\$0.50 and each 20-cent coin contributes \\$0.20 to the total of \\$28.10"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve using substitution or elimination",
+                  "working": "From (1): $y = 73 - x$. Substitute into (2): $50x + 20(73-x) = 2810$, which gives $50x + 1460 - 20x = 2810$. Therefore $30x = 1350$ and $x = 45$",
+                  "reasoning": "Substitution method allows us to solve for one variable first"
+                },
+                {
+                  "step": 5,
+                  "explanation": "Find the other variable",
+                  "working": "$y = 73 - 45 = 28$",
+                  "reasoning": "Substitute the value of x back into equation (1) to find y"
+                },
+                {
+                  "step": 6,
+                  "explanation": "Verify the answer",
+                  "working": "Check: $45 + 28 = 73$ ✓ and 45(\\$0.50) + 28(\\$0.20) = \\$22.50 + \\$5.60 = \\$28.10 ✓",
+                  "reasoning": "Verification confirms both conditions are satisfied"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Express $\\frac{4x}{4x^{2}-25}+\\frac{1}{5-2x}$ as a single fraction in its simplest form.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{2x+5}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the denominator of the first fraction",
+                  "working": "$4x^{2}-25 = (2x)^{2}-5^{2} = (2x-5)(2x+5)$",
+                  "reasoning": "This is a difference of squares: $a^{2}-b^{2} = (a-b)(a+b)$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rewrite with factorised denominator",
+                  "working": "$\\frac{4x}{(2x-5)(2x+5)}+\\frac{1}{5-2x}$",
+                  "reasoning": "Replace the factorised form to identify common factors"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Note that $5-2x = -(2x-5)$",
+                  "working": "$\\frac{4x}{(2x-5)(2x+5)}+\\frac{1}{-(2x-5)} = \\frac{4x}{(2x-5)(2x+5)}-\\frac{1}{2x-5}$",
+                  "reasoning": "Factor out the negative sign to create a common denominator"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find common denominator and combine",
+                  "working": "$\\frac{4x}{(2x-5)(2x+5)}-\\frac{2x+5}{(2x-5)(2x+5)} = \\frac{4x-(2x+5)}{(2x-5)(2x+5)} = \\frac{2x-5}{(2x-5)(2x+5)}$",
+                  "reasoning": "Common denominator is $(2x-5)(2x+5)$"
+                },
+                {
+                  "step": 5,
+                  "explanation": "Cancel common factors",
+                  "working": "$\\frac{2x-5}{(2x-5)(2x+5)} = \\frac{1}{2x+5}$",
+                  "reasoning": "The factor $(2x-5)$ appears in both numerator and denominator"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Coin Simultaneous Equations"
+      },
+      {
+        "questionNumber": 38,
+        "questionId": "N7-anderson-2024-p2-q38",
+        "topicID": "N7",
+        "stem": "Mr Tan took part in a 42 km marathon run. He used x minutes to run the first 25 km at a constant speed.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression, in terms of $x,$ for his speed in $km/h$ for the first 25 km.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{1500}{x}$ km/h",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert time to hours and calculate speed",
+                  "working": "Time = $x$ minutes $= \\frac{x}{60}$ hours. Speed $= \\frac{\\text{distance}}{\\text{time}} = \\frac{25}{\\frac{x}{60}} = \\frac{25 \\times 60}{x} = \\frac{1500}{x}$ km/h",
+                  "reasoning": "Speed equals distance divided by time. Convert minutes to hours by dividing by 60"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "For the last 17 km of the run, Mr Tan ran at a speed that is $2~km/h$ slower than his initial speed, and he took $(x-22.5)$ minutes. Write down an equation to represent this information and show that it simplifies to $2x^{2}-525x+33750=0$.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Shown: $2x^{2}-525x+33750=0$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the speed for last 17 km",
+                  "working": "Speed for last 17 km $= \\frac{1500}{x} - 2$ km/h. Time taken $= (x-22.5)$ minutes $= \\frac{x-22.5}{60}$ hours",
+                  "reasoning": "The speed is 2 km/h slower than the initial speed, and time must be converted to hours"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use distance = speed × time",
+                  "working": "$17 = \\left(\\frac{1500}{x} - 2\\right) \\times \\frac{x-22.5}{60}$",
+                  "reasoning": "The distance of 17 km equals speed multiplied by time"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply both sides by 60x",
+                  "working": "$17 \\times 60x = (1500 - 2x)(x - 22.5)$, which gives $1020x = (1500-2x)(x-22.5)$",
+                  "reasoning": "Clear the fractions to simplify"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Expand the right side",
+                  "working": "$1020x = 1500x - 33750 - 2x^{2} + 45x = -2x^{2} + 1545x - 33750$",
+                  "reasoning": "Expand the brackets and collect like terms"
+                },
+                {
+                  "step": 5,
+                  "explanation": "Rearrange to standard form",
+                  "working": "$2x^{2} + 1020x - 1545x + 33750 = 0$, which gives $2x^{2} - 525x + 33750 = 0$",
+                  "reasoning": "Move all terms to one side and simplify"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Solve $2x^{2}-525x+33750=0.$",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 150$ or $x = 112.5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the quadratic formula",
+                  "working": "$x = \\frac{-(-525) \\pm \\sqrt{(-525)^{2} - 4(2)(33750)}}{2(2)} = \\frac{525 \\pm \\sqrt{275625 - 270000}}{4}$",
+                  "reasoning": "Using the quadratic formula $x = \\frac{-b \\pm \\sqrt{b^{2}-4ac}}{2a}$ where $a=2$, $b=-525$, $c=33750$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the discriminant",
+                  "working": "$x = \\frac{525 \\pm \\sqrt{5625}}{4} = \\frac{525 \\pm 75}{4}$",
+                  "reasoning": "$\\sqrt{5625} = 75$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find both solutions",
+                  "working": "$x = \\frac{525 + 75}{4} = \\frac{600}{4} = 150$ or $x = \\frac{525 - 75}{4} = \\frac{450}{4} = 112.5$",
+                  "reasoning": "The quadratic equation has two solutions"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Given that Mr Tan took more than 4 hours to complete his run, find the time he took for the whole run. Give your answer in hours and minutes.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$4$ hours $37.5$ minutes or $4$ h $37$ min $30$ s",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Test which value of x gives total time > 4 hours",
+                  "working": "For $x = 112.5$: Total time $= x + (x-22.5) = 112.5 + 90 = 202.5$ minutes $= 3.375$ hours $< 4$ hours ✗. For $x = 150$: Total time $= 150 + 127.5 = 277.5$ minutes $= 4.625$ hours $> 4$ hours ✓",
+                  "reasoning": "We need to check which solution satisfies the condition that total time exceeds 4 hours"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert to hours and minutes",
+                  "working": "$277.5$ minutes $= 4$ hours and $37.5$ minutes $= 4$ h $37$ min $30$ s",
+                  "reasoning": "$277.5 \\div 60 = 4$ remainder $37.5$, and $0.5$ minutes $= 30$ seconds"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Speed Unit Conversion"
+      }
+    ]
+  }
+}

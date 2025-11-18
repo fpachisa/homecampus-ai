@@ -1,0 +1,173 @@
+{
+  "topicId": "G5",
+  "questions": {
+    "Paper 1": [],
+    "Paper 2": [
+      {
+        "questionNumber": 27,
+        "questionId": "G5-anderson-2024-p2-q27",
+        "topicID": "G5",
+        "stem": "A cone has a radius of 24 cm and a total surface area of $1536\\pi~cm^{2}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that the volume of the cone is $6144\\pi~cm^{3}$.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The volume of the cone is $6144 \\pi \\text{ cm}^3$.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the formula for the total surface area of a cone ($A_{total} = \\pi r^2 + \\pi r l$) to solve for the slant height ($l$).",
+                  "working": "Given $r = 24\\text{ cm}$ and $A_{total} = 1536\\pi\\text{ cm}^2$.\n$$1536\\pi = \\pi (24)^2 + \\pi (24) l$$\n$$1536\\pi = 576\\pi + 24\\pi l$$\nDivide by $\\pi$ and solve for $l$:\n$$1536 = 576 + 24l$$\n$$960 = 24l$$\n$$l = 40\\text{ cm}$$",
+                  "reasoning": "Formula for total surface area and algebraic manipulation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the Pythagorean theorem ($h^2 + r^2 = l^2$) to find the perpendicular height ($h$).",
+                  "working": "Substitute $r=24\\text{ cm}$ and $l=40\\text{ cm}$:\n$$h^2 + 24^2 = 40^2$$\n$$h^2 + 576 = 1600$$\n$$h^2 = 1024$$\n$$h = \\sqrt{1024} = 32\\text{ cm}$$",
+                  "reasoning": "The radius, perpendicular height, and slant height of a cone form a right-angled triangle."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the volume ($V$) of the cone using the formula $V = \\frac{1}{3} \\pi r^2 h$.",
+                  "working": "Substitute $r=24\\text{ cm}$ and $h=32\\text{ cm}$:\n$$V = \\frac{1}{3} \\pi (24)^2 (32)$$\n$$V = \\frac{1}{3} \\pi (576)(32)$$\n$$V = \\pi (192)(32)$$\n$$V = 6144\\pi\\text{ cm}^3$$",
+                  "reasoning": "Volume formula for a cone and arithmetic calculation, which proves the required result."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b(i)",
+            "questionText": "The cone is recasted into a solid sphere. Find the radius of the sphere,",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "16.6\\text{ cm } (3\\text{ s.f.})",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "State the principle of conservation of volume and the volume formulas for the cone and the sphere.",
+                  "working": "The volume of the sphere ($V_{\\text{sphere}}$) is equal to the volume of the cone ($V_{\\text{cone}}$).\n$$V_{\\text{sphere}} = V_{\\text{cone}} = 6144\\pi\\text{ cm}^3$$\n$$V_{\\text{sphere}} = \\frac{4}{3} \\pi R^3$$\nwhere $R$ is the radius of the sphere.",
+                  "reasoning": "Conservation of volume upon recasting."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Equate the volumes and solve for $R^3$.",
+                  "working": "$$\\frac{4}{3} \\pi R^3 = 6144 \\pi$$\n$$R^3 = 6144 \\times \\frac{3}{4}$$\n$$R^3 = 4608$$",
+                  "reasoning": "Algebraic isolation of $R^3$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the radius $R$ by taking the cube root and state the answer to three significant figures.",
+                  "working": "$$R = \\sqrt[3]{4608}$$\n$$R \\approx 16.634\\dots\\text{ cm}$$",
+                  "reasoning": "Calculation of the cube root. $R \\approx 16.6\\text{ cm}$ (3 s.f.)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b(ii)",
+            "questionText": "the total surface area of the sphere.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3480 $cm^3$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "State the formula for the total surface area of a sphere ($A_{\\text{total}}$) and the radius $R$ found in part (i).",
+                  "working": "$$A_{\\text{total}} = 4 \\pi R^2$$\n$$R = \\sqrt[3]{4608}\\text{ cm}$$",
+                  "reasoning": "Formula for the total surface area of a sphere."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the value of $R$ into the formula and calculate the total surface area.",
+                  "working": "$$A_{\\text{total}} = 4 \\pi (\\sqrt[3]{4608})^2$$\n$$A_{\\text{total}} \\approx 4 \\pi (16.6406\\dots)^2$$\n$$A_{\\text{total}} \\approx 3478.01\\dots\\text{ cm}^2$$",
+                  "reasoning": "Substitution and calculation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "State the final answer, rounding to three significant figures.",
+                  "working": "$$A_{\\text{total}} \\approx 3480\\text{ cm}^2$$",
+                  "reasoning": "Standard rounding to three significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Cone Surface Area Volume"
+      },
+      {
+        "questionNumber": 33,
+        "questionId": "G5-anderson-2024-p2-q33",
+        "topicID": "G5",
+        "stem": "The diagram shows the cross section of a plastic pipe. The arc AB is part of the circle with centre O and radius 45 mm. The pipe has an uniform thickness of x mm. The shaded area represents the cross-sectional area that is filled with water. $AB=65.32~mm.$",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram of a circular cross-section of a pipe with a concentric ring representing the thickness. The inner circle has a chord AB of length 65.32 mm. O is the centre. The inner radius is 45 mm. The thickness is x mm. A segment defined by chord AB is shaded.",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Diagram of a circular cross-section of a pipe with a concentric ring representing the thickness. The inner circle has a chord AB of length 65.32 mm. O is the centre. The inner radius is 45 mm. The thickness is x mm. A segment defined by chord AB is shaded.",
+          "notes": "Concentric circles with shaded segment for pipe cross-section",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/g5-anderson-2024-p2-q33.svg"
+        },
+        "parts": [
+          {
+            "partId": "i",
+            "questionText": "Show that $\\angle AOB=1.6243$ radians.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Shown: $\\angle AOB = 1.6243$ radians",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the chord length formula",
+                  "working": "For a chord of length $c$ in a circle of radius $r$, with central angle $\\theta$ (in radians): $c = 2r\\sin\\frac{\\theta}{2}$. Given: $AB = 65.32$ mm, $r = 45$ mm. $65.32 = 2(45)\\sin\\frac{\\theta}{2} = 90\\sin\\frac{\\theta}{2}$",
+                  "reasoning": "The chord length relates to the central angle through the sine function"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for the angle",
+                  "working": "$\\sin\\frac{\\theta}{2} = \\frac{65.32}{90} = 0.7258$. $\\frac{\\theta}{2} = \\sin^{-1}(0.7258) = 0.81215$ radians. $\\theta = 2 \\times 0.81215 = 1.6243$ radians",
+                  "reasoning": "Use inverse sine and double the result to find the full central angle"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "ii",
+            "questionText": "Given that the cross-sectional area of the pipe is $1398.29~mm^{2}$, find x.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 4.70$ mm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation for the pipe's cross-sectional area",
+                  "working": "The pipe has inner radius 45 mm and outer radius $(45+x)$ mm. Cross-sectional area of pipe (the ring) = $\\pi(45+x)^{2} - \\pi(45)^{2} = \\pi[(45+x)^{2} - 2025]$. Given this area = $1398.29~mm^{2}$",
+                  "reasoning": "The pipe's cross-sectional area is the difference between the outer circle and inner circle areas"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for x",
+                  "working": "$\\pi[(45+x)^{2} - 2025] = 1398.29$. $(45+x)^{2} - 2025 = \\frac{1398.29}{\\pi} = \\frac{1398.29}{3.14159} = 445.13$. $(45+x)^{2} = 2470.13$. $45 + x = \\sqrt{2470.13} = 49.70$. x = 49.70 - 45 = 4.70 mm (upto 3 s.f.).",
+                  "reasoning": "Isolate x by solving the equation step by step"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Chord Central Angle"
+      }
+    ]
+  }
+}

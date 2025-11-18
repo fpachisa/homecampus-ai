@@ -1,0 +1,68 @@
+{
+  "topicId": "N4",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 23,
+        "questionId": "N4-anderson-2024-p1-q23",
+        "topicID": "N4",
+        "stem": "4 technicians plan to repair 416 computers in 16 days. However, after repairing for 10 days, one of the technicians fell sick and could not continue. The remaining computers are to be repaired by the other three technicians. Assuming that the technicians work at the same rate,",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "calculate the total number of days needed for all 416 computers to be repaired.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$18$ days",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the rate of work for 4 technicians",
+                  "working": "4 technicians plan to repair 416 computers in 16 days. Rate of 4 technicians $= \\frac{416}{16} = 26$ computers per day",
+                  "reasoning": "Dividing total work by time gives the combined rate of work"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate how many computers were repaired in the first 10 days",
+                  "working": "In 10 days with 4 technicians: Number repaired $= 26 \\times 10 = 260$ computers",
+                  "reasoning": "Multiply the daily rate by the number of days to get total computers repaired"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate remaining computers after 10 days",
+                  "working": "Remaining computers $= 416 - 260 = 156$ computers",
+                  "reasoning": "Subtract the completed work from the total work to find what remains"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the rate of work for 3 technicians",
+                  "working": "Since technicians work at the same rate, and 4 technicians repair 26 per day, 1 technician repairs $\\frac{26}{4} = 6.5$ computers per day. Therefore, 3 technicians repair $6.5 \\times 3 = 19.5$ computers per day",
+                  "reasoning": "When one technician is removed, the rate decreases proportionally from 26 to 19.5 computers per day"
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate additional days needed for 3 technicians",
+                  "working": "Additional days $= \\frac{156}{19.5} = 8$ days",
+                  "reasoning": "Divide the remaining work by the new rate to find the additional time needed"
+                },
+                {
+                  "step": 6,
+                  "explanation": "Calculate total days needed",
+                  "working": "Total days $= 10 + 8 = 18$ days",
+                  "reasoning": "Add the initial 10 days to the additional 8 days to get the total time"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Manpower Rate"
+      }
+    ],
+    "Paper 2": []
+  }
+}

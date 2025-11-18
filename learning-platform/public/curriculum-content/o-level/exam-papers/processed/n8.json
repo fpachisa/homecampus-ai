@@ -1,0 +1,198 @@
+{
+  "topicId": "N8",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 12,
+        "questionId": "N8-anderson-2024-p1-q12",
+        "topicID": "N8",
+        "stem": "$\\xi=\\{(x,y):$ x and y are integers, $-2\\le x<1$ and $-1\\le y\\le1\\}$ $P=\\{(x,y):x^{2}+y^{2}<2\\}$ $Q=\\{(x,y):xy<0\\}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the number of elements in the universal set $\\xi$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n(\\xi) = 9$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "List all possible values of x and y",
+                  "working": "For $x$: $-2\\le x<1$ where $x$ is an integer gives $x \\in \\{-2, -1, 0\\}$ (3 values). For $y$: $-1\\le y\\le 1$ where $y$ is an integer gives $y \\in \\{-1, 0, 1\\}$ (3 values)",
+                  "reasoning": "Count all integer values that satisfy the given inequalities"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Count all ordered pairs",
+                  "working": "$n(\\xi) = 3 \\times 3 = 9$ elements",
+                  "reasoning": "Each of the 3 x-values can pair with each of the 3 y-values, giving 9 ordered pairs total"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b(i)",
+            "questionText": "List the elements of P in set notation.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$P = \\{(-1,0), (0,-1), (0,0), (0,1)\\}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Test each element of $\\xi$ to see if $x^{2}+y^{2}<2$",
+                  "working": "Testing all 9 pairs: $(-2,-1): 4+1=5\\not<2$; $(-2,0): 4+0=4\\not<2$; $(-2,1): 4+1=5\\not<2$; $(-1,-1): 1+1=2\\not<2$; $(-1,0): 1+0=1<2$ ✓; $(-1,1): 1+1=2\\not<2$; $(0,-1): 0+1=1<2$ ✓; $(0,0): 0+0=0<2$ ✓; $(0,1): 0+1=1<2$ ✓",
+                  "reasoning": "Check the condition $x^{2}+y^{2}<2$ for each ordered pair in the universal set"
+                },
+                {
+                  "step": 2,
+                  "explanation": "List elements that satisfy the condition",
+                  "working": "$P = \\{(-1,0), (0,-1), (0,0), (0,1)\\}$",
+                  "reasoning": "These are the 4 elements where $x^{2}+y^{2}<2$"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b(ii)",
+            "questionText": "List the elements of Q in set notation.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$Q = \\{(-2,1), (-1,1)\\}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify when $xy<0$",
+                  "working": "The product $xy<0$ when $x$ and $y$ have opposite signs (one positive, one negative)",
+                  "reasoning": "A product is negative only when one factor is positive and the other is negative"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Test all elements of $\\xi$",
+                  "working": "Negative $x$ with positive $y$: $(-2,1): xy=-2<0$ ✓; $(-1,1): xy=-1<0$ ✓. Positive or zero values don't give $xy<0$",
+                  "reasoning": "Check which ordered pairs have $x<0$ and $y>0$ or $x>0$ and $y<0$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "List the elements",
+                  "working": "$Q = \\{(-2,1), (-1,1)\\}$",
+                  "reasoning": "These are the only 2 elements where the product is negative"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Set Cardinality"
+      },
+      {
+        "questionNumber": 14,
+        "questionId": "N8-anderson-2024-p1-q14",
+        "topicID": "N8",
+        "stem": "$W=\\{0,\\{0\\}\\}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Venn diagram showing two overlapping sets A and B within a universal set $\\xi$. The region $A\\cup B'$ is shaded.",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Venn diagram showing two overlapping sets A and B within a universal set $\\xi$. The region $A\\cup B'$ is shaded.",
+          "notes": "Venn diagram with A∪B' shading not available as standard option"
+        },
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find $n(W)$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n(W) = 2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Count the elements in set W",
+                  "working": "$W = \\{0, \\{0\\}\\}$ has 2 elements: the number $0$ and the set $\\{0\\}$",
+                  "reasoning": "The set W contains two distinct elements - the element 0 and the element {0} which is a set containing 0"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "List all possible subsets of W.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\emptyset, \\{0\\}, \\{\\{0\\}\\}, \\{0, \\{0\\}\\}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "List all possible subsets",
+                  "working": "A set with 2 elements has $2^{2}=4$ subsets: Empty set: $\\emptyset$; Single element subsets: $\\{0\\}$ and $\\{\\{0\\}\\}$; The set itself: $\\{0, \\{0\\}\\}$",
+                  "reasoning": "Every set has $2^n$ subsets where $n$ is the number of elements. We include the empty set and the set itself"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Set Cardinality"
+      },
+      {
+        "questionNumber": 14,
+        "questionId": "N8-anderson-2024-p1-q14-1",
+        "topicID": "N8",
+        "stem": "",
+        "hasDiagram": true,
+        "diagramDescription": "Venn diagram showing two overlapping sets A and B within a universal set $\\xi$. The region $A\\cup B'$ is shaded.",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Venn diagram showing two overlapping sets A and B within a universal set",
+          "notes": "Venn diagram with A∪B' shading not available as standard option",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/N8-anderson-2024-p1-q14-1.svg"
+        },
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the set represented by the following shaded region.",
+            "marks": 1,
+            "answerType": "algebraic",
+
+            "solution": {
+              "finalAnswer": "A ∪ B'  (or equivalent forms like (B ∩ A')' )",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Method 1: Visual 'Union' Approach.",
+                  "working": "1. Identify Set A: The entire circle A is shaded.\n2. Identify Set B' (Complement of B): Everything outside circle B is shaded.\n3. Combine them: The union of these two sets covers the Left Crescent, the Intersection, and the Outside Background.\nResult: A ∪ B'",
+                  "reasoning": "The shaded region is the combination of everything in A and everything not in B."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Method 2: 'Complement' Approach (Subtracting the white part).",
+                  "working": "1. Identify the unshaded (white) region: This is the part of B that does not touch A. Notation: B ∩ A' (B intersects Not A).\n2. The shaded region is everything EXCEPT that white part.\nResult: (B ∩ A')'",
+                  "reasoning": "Defining the region by what it is NOT."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Method 3: Set Difference Notation.",
+                  "working": "The unshaded region can also be written as 'B minus A' (B \\ A).\nTherefore, the shaded region is the complement of that difference.\nResult: (B \\ A)'",
+                  "reasoning": "Using set difference syntax."
+                }
+              ]
+            }
+
+          }
+        ],
+        "totalMarks": 1,
+        "paper": "Paper 1",
+        "title": "Set Cardinality Shaded Region"
+      }
+    ],
+    "Paper 2": []
+  }
+}

@@ -37,8 +37,11 @@ const MathText: React.FC<MathTextProps> = ({ children, className = '' }) => {
     gfm: true,
   });
 
+  // CRITICAL FIX: Replace \$ with HTML entity for currency symbols
+  const textWithCurrency = children.replace(/\\\$/g, '&#36;');
+
   // Step 1: Extract math segments and replace with unique placeholders
-  const segments = processTextWithBasicMath(children);
+  const segments = processTextWithBasicMath(textWithCurrency);
   const mathSegments: Array<{ content: string; inline: boolean }> = [];
   let textWithPlaceholders = '';
 

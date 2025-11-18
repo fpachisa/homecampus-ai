@@ -1,0 +1,208 @@
+{
+  "topicId": "G1",
+  "questions": {
+    "Paper 1": [],
+    "Paper 2": [      
+      {
+        "questionNumber": 36,
+        "questionId": "G1-anderson-2024-p2-q36",
+        "topicID": "G1",
+        "stem": "CBEO is a parallelogram. The position vectors of C and E, relative to O, are $\\mathbf{a}$ and $\\mathbf{b}$ respectively. It is given that $3BC=5BD$ and $\\vec{AD}=\\frac{2}{3}\\vec{DE}$.",
+        "hasDiagram": true,
+        "diagramDescription": "A diagram showing points O, A, B, C, D, E. CBEO is a parallelogram. $\\vec{OC}=\\mathbf{a}$ and $\\vec{OE}=\\mathbf{b}$. Points C, D, B are collinear. Points A, D, E are collinear.",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "A diagram showing points O, A, B, C, D, E. CBEO is a parallelogram.",
+          "notes": "Complex parallelogram with collinear points and vector relationships",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G1-anderson-2024-p2-q36.svg"
+        },
+        "parts": [
+          {
+            "partId": "a(i)",
+            "questionText": "Find, in terms of $\\mathbf{a}$ and $\\mathbf{b}$, $\\vec{CD}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+
+            "solution": {
+              "finalAnswer": "$\\frac{2}{5}\\mathbf{b}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the vector for side CB using parallelogram properties.",
+                  "working": "In parallelogram $CBEO$, opposite sides are parallel and equal in magnitude. Therefore, $\\vec{CB} = \\vec{OE}$.\nGiven $\\vec{OE} = \\mathbf{b}$, we have $\\vec{CB} = \\mathbf{b}$.",
+                  "reasoning": "Definition of equal vectors in a parallelogram."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the fractional length of segment CD using the given ratio.",
+                  "working": "We are given $3BC = 5BD$. This implies the length $BD = \\frac{3}{5}BC$.\nLooking at the diagram, point $D$ lies on the line $CB$. The length of $CD$ is the remainder of the segment:\n$CD = BC - BD$\n$CD = BC - \\frac{3}{5}BC = \\frac{2}{5}BC$",
+                  "reasoning": "Segment addition postulate ($CD + DB = CB$)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Express vector CD in terms of b.",
+                  "working": "Since $C$, $D$, and $B$ are collinear and in the same direction, the vector relationship mirrors the length relationship:\n$\\vec{CD} = \\frac{2}{5}\\vec{CB}$\nSubstitute $\\vec{CB} = \\mathbf{b}$:\n$\\vec{CD} = \\frac{2}{5}\\mathbf{b}$",
+                  "reasoning": "Scalar multiplication of vectors."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a(ii)",
+            "questionText": "Find, in terms of $\\mathbf{a}$ and $\\mathbf{b}$, $\\vec{AD}$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+                "finalAnswer": "$\\frac{2}{5}\\mathbf{b} - \\frac{2}{3}\\mathbf{a}$",
+                "stepByStep": [
+                  {
+                    "step": 1,
+                    "explanation": "Find the vector OD using the triangle rule in $\\triangle OCD$.",
+                    "working": "$\\vec{OD} = \\vec{OC} + \\vec{CD}$\nSubstitute the known values ($\\vec{OC} = \\mathbf{a}$ and $\\vec{CD} = \\frac{2}{5}\\mathbf{b}$ from part i):\n$\\vec{OD} = \\mathbf{a} + \\frac{2}{5}\\mathbf{b}$",
+                    "reasoning": "Vector addition."
+                  },
+                  {
+                    "step": 2,
+                    "explanation": "Use the Ratio Theorem (Section Formula) on line segment $AE$. Point $D$ lies on $AE$ such that $AD = \\frac{2}{3}DE$, meaning the ratio $AD:DE$ is $2:3$.",
+                    "working": "Using the section formula for position vector $\\vec{OD}$:\n$\\vec{OD} = \\frac{3\\vec{OA} + 2\\vec{OE}}{3 + 2} = \\frac{3\\vec{OA} + 2\\mathbf{b}}{5}$",
+                    "reasoning": "The position vector of a point dividing a segment in ratio $m:n$ is $\\frac{n\\mathbf{a} + m\\mathbf{b}}{m+n}$."
+                  },
+                  {
+                    "step": 3,
+                    "explanation": "Equate the two expressions for $\\vec{OD}$ to find $\\vec{OA}$.",
+                    "working": "$\\mathbf{a} + \\frac{2}{5}\\mathbf{b} = \\frac{3}{5}\\vec{OA} + \\frac{2}{5}\\mathbf{b}$\nSubtract $\\frac{2}{5}\\mathbf{b}$ from both sides:\n$\\mathbf{a} = \\frac{3}{5}\\vec{OA}$\n$\\vec{OA} = \\frac{5}{3}\\mathbf{a}$",
+                    "reasoning": "Comparison of coefficients."
+                  },
+                  {
+                    "step": 4,
+                    "explanation": "Calculate vector AD.",
+                    "working": "$\\vec{AD} = \\vec{OD} - \\vec{OA}$\n$\\vec{AD} = (\\mathbf{a} + \\frac{2}{5}\\mathbf{b}) - \\frac{5}{3}\\mathbf{a}$\n$\\vec{AD} = \\frac{2}{5}\\mathbf{b} + (1 - \\frac{5}{3})\\mathbf{a}$\n$\\vec{AD} = \\frac{2}{5}\\mathbf{b} - \\frac{2}{3}\\mathbf{a}$",
+                    "reasoning": "Vector subtraction to find the vector between two points."
+                  }
+                ]
+              }
+          },
+          {
+            "partId": "b",
+            "questionText": "Is $\\vec{AC}$ parallel to $\\vec{OC}$? Justify your answer with appropriate working.",
+            "marks": 2,
+            "answerType": "proof",
+
+            "solution": {
+              "finalAnswer": "Yes, AC is parallel to OC.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the vector for AC using vector subtraction.",
+                  "working": "$\\vec{AC} = \\vec{OC} - \\vec{OA}$",
+                  "reasoning": "Triangle law of vector addition (or subtraction) to find the vector between two points."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the known values for vectors OC and OA.",
+                  "working": "We know $\\vec{OC} = \\mathbf{a}$ (given).\nFrom the previous calculation, we found $\\vec{OA} = \\frac{5}{3}\\mathbf{a}$.\n$\\vec{AC} = \\mathbf{a} - \\frac{5}{3}\\mathbf{a} = -\\frac{2}{3}\\mathbf{a}$",
+                  "reasoning": "Substitution of previously derived values."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare vector AC to vector OC.",
+                  "working": "$\\vec{AC} = -\\frac{2}{3}\\mathbf{a}$ and $\\vec{OC} = \\mathbf{a}$.\nTherefore, $\\vec{AC} = -\\frac{2}{3}\\vec{OC}$.",
+                  "reasoning": "To prove two vectors are parallel, show that one is a scalar multiple of the other ($\\vec{u} = k\\vec{v}$). Since $\\vec{AC}$ is a scalar multiple of $\\vec{OC}$, they are parallel vectors. (Note: Since they share the point C, the points A, C, and O are collinear)."
+                }
+              ]
+            }
+
+          },
+          {
+            "partId": "c(i)",
+            "questionText": "Find $\\frac{\\text{area of }\\triangle ADB}{\\text{area of }\\triangle ACD}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the property that triangles with same height have areas proportional to their bases",
+                  "working": "Triangles ADB and ACD share the same vertex A and have bases DB and CD on the same line CBD. Area ratio = $\\frac{DB}{CD}$. From earlier, if $\\vec{CD} = \\frac{3}{5}\\mathbf{b}$ and $\\vec{CB} = \\mathbf{b}$, then $\\vec{DB} = \\frac{2}{5}\\mathbf{b}$. Wait, let me recalculate: $\\vec{DB} = \\vec{CB} - \\vec{CD}$. If using $\\vec{CD} = \\frac{2}{5}\\mathbf{b}$ (from earlier detailed calculation), then $\\vec{DB} = \\mathbf{b} - \\frac{2}{5}\\mathbf{b} = \\frac{3}{5}\\mathbf{b}$. So $\\frac{|DB|}{|CD|} = \\frac{3/5}{2/5} = \\frac{3}{2}$",
+                  "reasoning": "Triangles sharing the same height have areas in the ratio of their bases"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c(ii)",
+            "questionText": "Find $\\frac{\\text{area of }\\triangle ADC}{\\text{area of }\\triangle AOE}$.",
+            "marks": 2,
+            "answerType": "numerical",
+
+            "solution": {
+              "finalAnswer": "\\frac{4}{25}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the ratio of side lengths AC to AO.",
+                  "working": "From part (a), we established that $\\vec{OA} = \\frac{5}{3}\\mathbf{a}$ and $\\vec{OC} = \\mathbf{a}$. Since points O, C, and A are collinear, we can compare their lengths:\n$OA = \\frac{5}{3}$ units and $OC = 1$ unit.\n$AC = OA - OC = \\frac{5}{3} - 1 = \\frac{2}{3}$.\nTherefore, the ratio $\\frac{AC}{AO} = \\frac{2/3}{5/3} = \\frac{2}{5}$.",
+                  "reasoning": "Ratio of segments on a straight line."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the ratio of side lengths AD to AE.",
+                  "working": "The problem states that $AD = \\frac{2}{3}DE$. This means for every 2 parts of length AD, there are 3 parts of length DE.\nThe total length AE is the sum of AD and DE: $AE = 2 + 3 = 5$ parts.\nTherefore, the ratio $\\frac{AD}{AE} = \\frac{2}{5}$.",
+                  "reasoning": "Ratio of segments on a straight line."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the ratio of the areas using the formula: Area = $\\frac{1}{2}xy\\sin(\\theta)$.",
+                  "working": "Triangles $ADC$ and $AOE$ share a common angle at vertex $A$ ($\\angle OAE$).\n$\\frac{\\text{Area } \\Delta ADC}{\\text{Area } \\Delta AOE} = \\frac{\\frac{1}{2}(AC)(AD)\\sin A}{\\frac{1}{2}(AO)(AE)\\sin A}$\nSince the $\\frac{1}{2}$ and $\\sin A$ terms cancel out:\nRatio = $\\frac{AC}{AO} \\times \\frac{AD}{AE}$\nRatio = $\\frac{2}{5} \\times \\frac{2}{5} = \\frac{4}{25}$",
+                  "reasoning": "The ratio of areas of two triangles sharing a common angle is the product of the ratios of the sides including that angle."
+                }
+              ]
+            }
+
+          },
+          {
+            "partId": "c(iii)",
+            "questionText": "Find $\\frac{\\text{area of }\\triangle ADB}{\\text{area of }CDEO}$.",
+            "marks": 2,
+            "answerType": "numerical",
+
+            "solution": {
+              "finalAnswer": "\\frac{2}{7}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the area of quadrilateral CDEO in terms of the area of triangle AOE.",
+                  "working": "From the previous part, we found that $\\frac{\\text{area of } \\Delta ADC}{\\text{area of } \\Delta AOE} = \\frac{4}{25}$.\nThe quadrilateral $CDEO$ is the remainder of $\\Delta AOE$ when $\\Delta ADC$ is removed.\nArea of $CDEO$ = Area of $\\Delta AOE$ - Area of $\\Delta ADC$\nArea of $CDEO$ = $1 - \\frac{4}{25} = \\frac{21}{25}$ of Area $\\Delta AOE$.",
+                  "reasoning": "Area subtraction property."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the ratio of the area of triangle ADB to the area of triangle ADC.",
+                  "working": "Triangles $ADB$ and $ADC$ share the same vertex $A$ and their bases ($DB$ and $CD$) lie on the same straight line ($CB$). Therefore, their areas are proportional to their bases.\nWe established earlier that $3BC = 5BD$, so $BD = \\frac{3}{5}BC$.\nThis implies $CD = BC - BD = \\frac{2}{5}BC$.\nRatio $\\frac{DB}{CD} = \\frac{3/5}{2/5} = \\frac{3}{2}$.\nSo, Area of $\\Delta ADB$ = $\\frac{3}{2} \\times$ Area of $\\Delta ADC$.",
+                  "reasoning": "Triangles with the same height have areas proportional to their bases."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Express the area of triangle ADB in terms of the area of triangle AOE.",
+                  "working": "Substitute the area of $\\Delta ADC$ (from step 1 context) into the equation from step 2:\nArea of $\\Delta ADB$ = $\\frac{3}{2} \\times \\frac{4}{25}$ Area of $\\Delta AOE$\nArea of $\\Delta ADB$ = $\\frac{6}{25}$ Area of $\\Delta AOE$.",
+                  "reasoning": "Substitution."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the final ratio.",
+                  "working": "Ratio = $\\frac{\\text{area of } \\Delta ADB}{\\text{area of } CDEO}$\nRatio = $\\frac{6/25}{21/25}$\nRatio = $\\frac{6}{21} = \\frac{2}{7}$",
+                  "reasoning": "Division of the two derived fractions."
+                }
+              ]
+            }
+
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Vectors Parallelogram Ratios"
+      }
+    ]
+  }
+}

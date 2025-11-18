@@ -1,0 +1,246 @@
+{
+  "topicId": "N1",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 2,
+        "questionId": "N1-anderson-2024-p1-q2",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "Given that $3^{x}+3^{x+2}=90$, find x.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factor out the common term $3^x$",
+                  "working": "$3^{x}+3^{x+2}=90$ can be rewritten as $3^{x}+3^{x}\\times3^{2}=90$, which gives $3^{x}(1+3^{2})=90$",
+                  "reasoning": "Using the index law $a^{m+n}=a^{m}\\times a^{n}$, we can factor out $3^x$ from both terms"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the expression in brackets",
+                  "working": "$3^{x}(1+9)=90$, which simplifies to $3^{x}\\times 10=90$",
+                  "reasoning": "$3^2 = 9$, so $1 + 9 = 10$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $3^x$",
+                  "working": "$3^{x}=\\frac{90}{10}=9$",
+                  "reasoning": "Divide both sides by 10 to isolate $3^x$"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Express 9 as a power of 3 and solve for x",
+                  "working": "$3^{x}=9=3^{2}$, therefore $x=2$",
+                  "reasoning": "Since $9 = 3^2$, we can equate the exponents to get $x = 2$"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Exponential Equation"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "N1-anderson-2024-p1-q4",
+        "topicID": "N1",
+        "stem": "Two integers, A and B, can be written as products of prime factors. $A=3^{m+2}\\times7$, $B=q\\times3^{m}\\times7$. The lowest common multiple (LCM) of A and B is $3^{3}\\times5\\times7$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the value of m and q.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$m = 1$, $q = 5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find m using the power of 3 in the LCM",
+                  "working": "The LCM contains $3^{3}$. Since LCM takes the highest power of each prime, and A has $3^{m+2}$ while B has $3^{m}$, the highest power must be $3^{m+2}=3^{3}$",
+                  "reasoning": "The LCM is formed by taking the highest power of each prime factor that appears in either number"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for m",
+                  "working": "$m+2=3$, therefore $m=1$",
+                  "reasoning": "Equating the exponents gives us the value of m"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find q using the prime factor 5 in the LCM",
+                  "working": "The LCM contains the prime factor 5. Since A does not contain 5 (A only has factors 3 and 7), the factor 5 must come from B. Therefore $q=5$",
+                  "reasoning": "For a prime to appear in the LCM, it must appear in at least one of the numbers. Since 5 is not in A, it must be in B"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the highest common factor of A and B.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$21$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute m = 1 into the expressions for A and B",
+                  "working": "$A=3^{1+2}\\times7=3^{3}\\times7=27\\times7$ and $B=5\\times3^{1}\\times7=5\\times3\\times7$",
+                  "reasoning": "We use the value of m found in part (a) to write out the complete prime factorizations"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the HCF by taking the lowest power of common prime factors",
+                  "working": "Common primes: 3 and 7. Lowest powers: $\\min(3^{3},3^{1})=3^{1}=3$ and $\\min(7,7)=7$. Therefore HCF $=3\\times7=21$",
+                  "reasoning": "The HCF is formed by taking the lowest power of each prime factor that appears in both numbers. The prime 5 only appears in B, so it is not included"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "LCM Prime Factors"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "N1-anderson-2024-p1-q6",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $(\\frac{y^{9}}{27x^{-6}})^{-\\frac{2}{3}},$ leaving your answer in positive index.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{9}{x^{4}y^{6}}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Rewrite using the rule $a^{-n}=\\frac{1}{a^{n}}$ for $x^{-6}$",
+                  "working": "$(\\frac{y^{9}}{27x^{-6}})^{-\\frac{2}{3}}=(\\frac{y^{9}\\times x^{6}}{27})^{-\\frac{2}{3}}$",
+                  "reasoning": "Moving $x^{-6}$ from denominator to numerator changes the sign of the exponent"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the negative exponent to flip the fraction",
+                  "working": "$(\\frac{y^{9}\\times x^{6}}{27})^{-\\frac{2}{3}}=(\\frac{27}{y^{9}\\times x^{6}})^{\\frac{2}{3}}$",
+                  "reasoning": "Using the rule $(\\frac{a}{b})^{-n}=(\\frac{b}{a})^{n}$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the fractional exponent to numerator and denominator",
+                  "working": "$\\frac{27^{\\frac{2}{3}}}{(y^{9})^{\\frac{2}{3}}\\times(x^{6})^{\\frac{2}{3}}}=\\frac{(3^{3})^{\\frac{2}{3}}}{y^{9\\times\\frac{2}{3}}\\times x^{6\\times\\frac{2}{3}}}$",
+                  "reasoning": "Using the power rules $(ab)^{n}=a^{n}b^{n}$ and $(a^{m})^{n}=a^{mn}$"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the exponents",
+                  "working": "$\\frac{3^{3\\times\\frac{2}{3}}}{y^{6}\\times x^{4}}=\\frac{3^{2}}{x^{4}y^{6}}=\\frac{9}{x^{4}y^{6}}$",
+                  "reasoning": "$3 \\times \\frac{2}{3} = 2$, $9 \\times \\frac{2}{3} = 6$, and $6 \\times \\frac{2}{3} = 4$"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given $\\frac{25}{125^{2-x}}=5^{y}$ express x in terms of y.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x=\\frac{y+4}{3}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all terms as powers of 5",
+                  "working": "$\\frac{5^{2}}{(5^{3})^{2-x}}=5^{y}$",
+                  "reasoning": "Since $25 = 5^2$ and $125 = 5^3$, we can write everything in terms of base 5"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the denominator using power rules",
+                  "working": "$\\frac{5^{2}}{5^{3(2-x)}}=5^{y}$",
+                  "reasoning": "Using the rule $(a^{m})^{n}=a^{mn}$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the quotient rule for indices",
+                  "working": "$5^{2-3(2-x)}=5^{y}$, which simplifies to $5^{2-6+3x}=5^{y}$",
+                  "reasoning": "Using the rule $\\frac{a^{m}}{a^{n}}=a^{m-n}$, and expanding $3(2-x)=6-3x$"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Equate the exponents and solve for x",
+                  "working": "$2-6+3x=y$ gives $3x-4=y$, therefore $3x=y+4$ and $x=\\frac{y+4}{3}$",
+                  "reasoning": "Since the bases are equal, the exponents must be equal. Rearranging gives x in terms of y"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Simplify Indices"
+      },
+      {
+        "questionNumber": 19,
+        "questionId": "N1-anderson-2024-p1-q19",
+        "topicID": "N1",
+        "stem": "In the year 2022, it was recorded that the average amount of waste generated in Singapore daily was $20.3$ thousand tonnes. Assuming that there are 365 days in a year,",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "find the total amount of waste generated in the year 2022, leaving your answer in standard form.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$7.41\\times10^{6}$ tonnes (or $7.4095\\times10^{6}$ tonnes)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total waste in thousand tonnes",
+                  "working": "Total waste $=20.3\\times365=7409.5$ thousand tonnes",
+                  "reasoning": "Multiply the daily average by the number of days in a year"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert thousand tonnes to tonnes",
+                  "working": "$7409.5$ thousand tonnes $=7409.5\\times1000=7409500$ tonnes",
+                  "reasoning": "Since the original value was in thousand tonnes, we multiply by 1000 to get tonnes"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Express in standard form",
+                  "working": "$7409500=7.4095\\times10^{6}$ tonnes, or $7.41\\times10^{6}$ tonnes (to 3 significant figures)",
+                  "reasoning": "Standard form is $a\\times10^{n}$ where $1\\le a<10$. Move the decimal point 6 places to the left"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 1,
+        "paper": "Paper 1",
+        "title": "Total Waste Standard Form"
+      }
+    ],
+    "Paper 2": []
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "note": "Questions requiring drawing input are stored here separately. These questions will be re-enabled when the application supports drawing capabilities.",
+  "source": "anderson-2024-paper-1-2",
+  "totalFilteredQuestions": 4,
+  "questions": [
+    {
+      "questionNumber": 9,
+      "questionId": "N6-anderson-2024-p1-q9",
+      "topicID": "N6",
+      "stem": null,
+      "hasDiagram": true,
+      "diagramDescription": "Empty Cartesian coordinate plane with x and y axes.",
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "Sketch the graph of $y=3^{-x}$ on the axes below. Indicate clearly the coordinates of the points where the graph crosses the axes.",
+          "marks": 1,
+          "answerType": "drawing"
+        }
+      ],
+      "totalMarks": 1
+    },
+    {
+      "questionNumber": 13,
+      "questionId": "G1-anderson-2024-p1-q13",
+      "topicID": "G1",
+      "stem": "The diagram below shows a triangle ABC.",
+      "hasDiagram": true,
+      "diagramDescription": "A scalene triangle ABC.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Construct the perpendicular bisector of AC.",
+          "marks": 1,
+          "answerType": "drawing"
+        },
+        {
+          "partId": "b",
+          "questionText": "Construct the bisector of angle BCA.",
+          "marks": 1,
+          "answerType": "drawing"
+        }
+      ],
+      "totalMarks": 2
+    },
+    {
+      "questionNumber": 26,
+      "questionId": "G2-anderson-2024-p1-q26",
+      "topicID": "G2",
+      "stem": "A liquid container, 30 cm tall, can be modelled by a frustrum, A, placed below a cylinder B, as shown in Figure 1. Figure 2 shows a sketch of the cone that the frustum A is a part of. The diameter QRS of the top of the frustrum, is 12 cm and the diameter VUT of the bottom is 8 cm. The height of the frustrum, RU is 9 cm. R and U are the midpoints of QS and VT respectively.",
+      "hasDiagram": true,
+      "diagramDescription": "Figure 1 shows a liquid container, 30 cm tall, composed of a frustum (A, height 9 cm) below a cylinder (B). Figure 2 shows the frustum A as part of a larger cone with height 9 cm for the frustum and diameters 12 cm (top) and 8 cm (bottom), with the dashed lines completing the cone to a vertex W.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Calculate the volume of the frustrum, A.",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "A liquid is poured into the container at a constant rate of $q~cm^{3}$ per second. It takes 50 seconds to fill up A completely and it takes another 30 seconds to fill up B completely. Sketch the height of the liquid in the container with respect to time.",
+          "marks": 2,
+          "answerType": "drawing"
+        }
+      ],
+      "totalMarks": 5
+    },
+    {
+      "questionNumber": 37,
+      "questionId": "N6-anderson-2024-p2-q37",
+      "topicID": "N6",
+      "stem": "The variables x and y are connected by the equation $y=2x+\\frac{6}{x}-7$. Some corresponding values of x and y are given in the table below.",
+      "hasDiagram": true,
+      "diagramDescription": "Table of values for $y=2x+\\frac{6}{x}-7$: x values are 0.5, 1, 1.5, 2, 3, 4, 5, 6, 7. Corresponding y values are 6, 1, 0, a, 1, 2.5, 4.2, 6, 7.9. A grid for drawing the graph of $y=2x+\\frac{6}{x}-7$ for $0.5\\le x\\le7$ is provided.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Calculate the value of a.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "On the grid, draw the graph of $y=2x+\\frac{6}{x}-7$ for $0.5\\le x\\le7$.",
+          "marks": 2,
+          "answerType": "drawing"
+        },
+        {
+          "partId": "c(i)",
+          "questionText": "The point A has coordinates (3,-1). A tangent to the curve can be drawn so that the tangent passes through A. On the same grid draw this tangent.",
+          "marks": 1,
+          "answerType": "drawing"
+        },
+        {
+          "partId": "c(ii)",
+          "questionText": "Find the equation of this tangent.",
+          "marks": 2,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "d",
+          "questionText": "By drawing a suitable straight line on your graph, explain why the equation $3x^{2}-8x+6=0$ has no solution for $0.5\\le x\\le7$.",
+          "marks": 3,
+          "answerType": "proof"
+        }
+      ],
+      "totalMarks": 9
+    }
+  ]
+}

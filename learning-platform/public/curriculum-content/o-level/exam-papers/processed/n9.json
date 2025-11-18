@@ -1,0 +1,159 @@
+{
+  "topicId": "N9",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 20,
+        "questionId": "N9-anderson-2024-p1-q20",
+        "topicID": "N9",
+        "stem": "A company sells chocolate muffins and banana muffins. These muffins are sold across three different outlets, which are Outlet A, Outlet B and Outlet C. The table shows the number of boxes of chocolate muffins and banana muffins produced at each of the three outlets in a particular day.\n\n**Number of boxes produced:**\n- **Outlet A:** 36 Chocolate Muffins, 40 Banana Muffins\n- **Outlet B:** 48 Chocolate Muffins, 39 Banana Muffins\n- **Outlet C:** 45 Chocolate Muffins, x Banana Muffins\n\nThe table can be represented by matrix $Q$, where $Q = \\begin{pmatrix}36 & 40 \\\\ 48 & 39 \\\\ 45 & x\\end{pmatrix}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Table showing number of boxes of muffins: Outlet A (36 Chocolate, 40 Banana), Outlet B (48 Chocolate, 39 Banana), Outlet C (45 Chocolate, x Banana). This is represented by matrix $Q=(\\begin{smallmatrix}36&40\\\\ 48&39\\\\ 45&x\\end{smallmatrix}).$",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Table showing number of boxes of muffins: Outlet A (36 Chocolate, 40 Banana), Outlet B (48 Chocolate, 39 Banana), Outlet C (45 Chocolate, x Banana). This is represented by matrix $Q=(\\begin{smallmatrix}36&40\\\\ 48&39\\\\ 45&x\\end{smallmatrix}).$",
+          "notes": "Table/matrix data representation - not geometric"
+        },
+        "parts": [
+          {
+            "partId": "a(i)",
+            "questionText": "The production cost for each box of chocolate muffin and each box of banana muffin is \\$3 and \\$4.50 respectively. Represent this information in a $2\\times1$ matrix, P.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix}3\\\\4.5\\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the cost information",
+                  "working": "Chocolate muffin cost: \\$3 per box. Banana muffin cost: \\$4.50 per box",
+                  "reasoning": "The costs need to be arranged in a matrix format corresponding to the two types of muffins"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Write as a $2\\times1$ column matrix",
+                  "working": "$P = \\begin{pmatrix}3\\\\4.5\\end{pmatrix}$ where the first row represents chocolate and the second row represents banana",
+                  "reasoning": "A $2\\times1$ matrix has 2 rows and 1 column, with chocolate cost in row 1 and banana cost in row 2"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a(ii)",
+            "questionText": "Evaluate the matrix $R=QP$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$R = \\begin{pmatrix}288\\\\319.5\\\\135+4.5x\\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication",
+                  "working": "$R = QP = \\begin{pmatrix}36&40\\\\48&39\\\\45&x\\end{pmatrix}\\begin{pmatrix}3\\\\4.5\\end{pmatrix}$",
+                  "reasoning": "Matrix Q is $3\\times2$ and matrix P is $2\\times1$, so the product will be $3\\times1$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate each element of the product",
+                  "working": "Row 1: $36(3) + 40(4.5) = 108 + 180 = 288$. Row 2: $48(3) + 39(4.5) = 144 + 175.5 = 319.5$. Row 3: $45(3) + x(4.5) = 135 + 4.5x$",
+                  "reasoning": "Multiply each row of Q by the column vector P and sum the products"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the result matrix",
+                  "working": "$R = \\begin{pmatrix}288\\\\319.5\\\\135+4.5x\\end{pmatrix}$",
+                  "reasoning": "The resulting matrix has 3 rows and 1 column"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "State what each of the elements in matrix R represents.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Each element represents the total production cost (in dollars) for all muffins at each outlet: Row 1 is Outlet A, Row 2 is Outlet B, Row 3 is Outlet C",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the meaning of the matrix multiplication",
+                  "working": "Each element = (number of chocolate boxes × \\$3) + (number of banana boxes × \\$4.50)",
+                  "reasoning": "Matrix multiplication of quantity and cost gives total cost"
+                },
+                {
+                  "step": 2,
+                  "explanation": "State what each element represents",
+                  "working": "Element 1 (288): Total production cost for Outlet A = \\$288. Element 2 (319.5): Total production cost for Outlet B = \\$319.50. Element 3 (135+4.5x): Total production cost for Outlet C = \\$(135+4.5x)",
+                  "reasoning": "Each row in R corresponds to the total production cost for that particular outlet"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The company sells each box of muffins for 70% more than it costs to produce. On that day, the company sold $\\frac{5}{6}$ of each flavour of muffins in Outlet A, $\\frac{4}{5}$ of each flavour of muffins in Outlet B, and all the muffins in Outlet C. By using the matrix R, find the total amount collected from the sale of muffins from all three outlets.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "\\$(1072.02 + 7.65x) or \\$1072.02 + \\$7.65x (when x is unknown)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the selling price multiplier",
+                  "working": "Selling price = Cost + 70% of cost = 1.7 × cost",
+                  "reasoning": "70% more than cost means multiply by 1.7"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate revenue for each outlet using matrix R",
+                  "working": "Outlet A: $\\frac{5}{6} \\times 288 \\times 1.7 = 240 \\times 1.7 = 408$. Outlet B: $\\frac{4}{5} \\times 319.5 \\times 1.7 = 255.6 \\times 1.7 = 434.52$. Outlet C: $1 \\times (135+4.5x) \\times 1.7 = 229.5 + 7.65x$",
+                  "reasoning": "For each outlet: multiply production cost by fraction sold, then by 1.7 to get revenue"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find total amount collected",
+                  "working": "Total = $408 + 434.52 + 229.5 + 7.65x = 1072.02 + 7.65x$",
+                  "reasoning": "Sum the revenues from all three outlets"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Express final answer",
+                  "working": "Total amount collected = \\$(1072.02 + 7.65x)$ or equivalently \\$1072.02 + \\$7.65x",
+                  "reasoning": "The total depends on the value of x (number of banana boxes at Outlet C)"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "The total amount collected from the sales of muffins from all three outlets is \\$1454.52. Calculate the value of x.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 50$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation",
+                  "working": "$1072.02 + 7.65x = 1454.52$",
+                  "reasoning": "Use the result from part (c) and set it equal to the given total"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for x",
+                  "working": "$7.65x = 1454.52 - 1072.02 = 382.5$, so $x = \\frac{382.5}{7.65} = 50$",
+                  "reasoning": "Isolate x by subtracting 1072.02 from both sides and dividing by 7.65"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Production Cost Matrix"
+      }
+    ],
+    "Paper 2": []
+  }
+}

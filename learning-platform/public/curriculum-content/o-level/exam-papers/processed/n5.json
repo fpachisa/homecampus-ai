@@ -1,0 +1,239 @@
+{
+  "topicId": "N5",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 1,
+        "questionId": "N5-anderson-2024-p1-q1",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "Expand and simplify $a(5a-2b)(5a+2b)$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$25a^{3}-4ab^{2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Recognize the difference of squares pattern",
+                  "working": "$(5a-2b)(5a+2b) = (5a)^{2}-(2b)^{2}$",
+                  "reasoning": "Using the identity $(x-y)(x+y) = x^{2}-y^{2}$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the squared terms",
+                  "working": "$(5a)^{2}-(2b)^{2} = 25a^{2}-4b^{2}$",
+                  "reasoning": "Squaring each term: $(5a)^2 = 25a^2$ and $(2b)^2 = 4b^2$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply by $a$",
+                  "working": "$a(25a^{2}-4b^{2}) = 25a^{3}-4ab^{2}$",
+                  "reasoning": "Distribute $a$ across the brackets"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Expansion"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "N5-anderson-2024-p1-q3",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "Simplify $\\frac{2x^{2}+4xy-3x-6y}{2x^{2}+xy-6y^{2}}.$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{2x-3}{2x-3y}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the numerator by grouping",
+                  "working": "$2x^{2}+4xy-3x-6y = 2x(x+2y)-3(x+2y) = (x+2y)(2x-3)$",
+                  "reasoning": "Group the first two terms and last two terms, then factor out common factors"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the denominator as a quadratic",
+                  "working": "$2x^{2}+xy-6y^{2} = (2x-3y)(x+2y)$",
+                  "reasoning": "Factor the quadratic in $x$ treating $y$ as a constant. Looking for factors that give $2x^2$ and $-6y^2$ with middle term $xy$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Cancel common factors",
+                  "working": "$\\frac{(x+2y)(2x-3)}{(2x-3y)(x+2y)} = \\frac{2x-3}{2x-3y}$",
+                  "reasoning": "The factor $(x+2y)$ appears in both numerator and denominator and can be cancelled"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Rational Expression Simplification"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "N5-anderson-2024-p1-q7",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise $9x^{2}+24xy+16y^{2}$ completely.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(3x+4y)^{2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Recognize the perfect square trinomial pattern",
+                  "working": "$9x^{2}+24xy+16y^{2} = (3x)^{2} + 2(3x)(4y) + (4y)^{2} = (3x+4y)^{2}$",
+                  "reasoning": "This follows the pattern $a^{2}+2ab+b^{2} = (a+b)^{2}$ where $a=3x$ and $b=4y$"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence factorise $144a^{8}-(9a^{8}+24a^{4}y+16y^{2})$ completely.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(15a^{4}+4y)(9a^{4}-4y)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute result from part (a)",
+                  "working": "From part (a): $9a^{8}+24a^{4}y+16y^{2} = (3a^{4})^{2}+2(3a^{4})(4y)+(4y)^{2} = (3a^{4}+4y)^{2}$",
+                  "reasoning": "Replace $x$ with $a^4$ in the expression from part (a)"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rewrite the expression as difference of squares",
+                  "working": "$144a^{8}-(3a^{4}+4y)^{2} = (12a^{4})^{2}-(3a^{4}+4y)^{2}$",
+                  "reasoning": "Recognize that $144a^8 = (12a^4)^2$ and we have a difference of squares"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the difference of squares formula",
+                  "working": "$(12a^{4})^{2}-(3a^{4}+4y)^{2} = (12a^{4}+3a^{4}+4y)(12a^{4}-3a^{4}-4y) = (15a^{4}+4y)(9a^{4}-4y)$",
+                  "reasoning": "Using the identity $A^{2}-B^{2} = (A+B)(A-B)$ where $A=12a^4$ and $B=3a^4+4y$"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Perfect Square Factorisation"
+      },
+      {
+        "questionNumber": 17,
+        "questionId": "N5-anderson-2024-p1-q17",
+        "topicID": "N5",
+        "stem": "The sequence $T_{1}$, $T_{2}$, $T_{3}$, $T_{4}$ ... has the following first four terms. $T_{1}=2^{2}-1=3$, $T_{2}=3^{2}-2=7$, $T_{3}=4^{2}-3=13$, $T_{4}=5^{2}-4=21$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the 7th term of the sequence, $T_{7}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$T_{7} = 57$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern for the nth term",
+                  "working": "From the pattern: $T_n = (n+1)^{2}-n$. Therefore $T_{7} = 8^{2}-7 = 64-7 = 57$",
+                  "reasoning": "Each term follows the pattern where the squared number is one more than the term number"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write the expression for the nth term of the sequence.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T_{n} = (n+1)^{2}-n$ or equivalently $T_n = n^2+n+1$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the general term from the pattern",
+                  "working": "$T_{n} = (n+1)^{2}-n$",
+                  "reasoning": "For the nth term, we square $(n+1)$ and subtract $n$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Alternatively, expand and simplify",
+                  "working": "$T_{n} = (n+1)^{2}-n = n^{2}+2n+1-n = n^{2}+n+1$",
+                  "reasoning": "Both forms are correct; the simplified form shows it's a quadratic sequence"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Kelvin claims that the difference between 2 consecutive terms $T_{n+1}-T_{n}$ where n is a positive integer, will always be even. Do you agree? Explain your answer with clear workings.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Yes, I agree. The difference is always $2(n+1)$ which is even for all positive integers $n$.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find expressions for $T_{n+1}$ and $T_n$",
+                  "working": "$T_{n} = (n+1)^{2}-n$ and $T_{n+1} = (n+2)^{2}-(n+1)$",
+                  "reasoning": "Use the formula from part (b), replacing $n$ with $n+1$ for the next term"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the difference",
+                  "working": "$T_{n+1}-T_{n} = [(n+2)^{2}-(n+1)] - [(n+1)^{2}-n] = (n+2)^{2}-(n+1)^{2}-(n+1)+n$",
+                  "reasoning": "Subtract the two expressions"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and simplify",
+                  "working": "$= n^{2}+4n+4-(n^{2}+2n+1)-1 = n^{2}+4n+4-n^{2}-2n-1-1 = 2n+2 = 2(n+1)$",
+                  "reasoning": "Combine like terms to get the simplified difference"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Conclude",
+                  "working": "Since $T_{n+1}-T_{n} = 2(n+1)$ and 2 is a factor, the difference is always even for any positive integer $n$.",
+                  "reasoning": "Any number that is a multiple of 2 is even, therefore Kelvin's claim is correct"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Algebraic Sequence"
+      }
+    ],
+    "Paper 2": []
+  }
+}

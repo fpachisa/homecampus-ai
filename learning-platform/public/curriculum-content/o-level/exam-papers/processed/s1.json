@@ -1,0 +1,198 @@
+{
+  "topicId": "S1",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 5,
+        "questionId": "S1-anderson-2024-p1-q5",
+        "topicID": "S1",
+        "stem": "Below is a graph from the Annual Climate Singapore 2023, which shows the top 10 warmest years in Singapore since 1929.",
+        "hasDiagram": true,
+        "diagramDescription": "Bar graph titled 'Top 10 Warmest Years' showing temperature (in °C) on the y-axis (from 27.8 to 28.5) and years on the x-axis (2019, 2016, 1998, 2023, 2015, 1997, 2010, 2002, 2020, 2005). The bar for 2023 is labelled $28.2^{\\circ}C$ and a text box indicates '2023 is the 4th warmest year since 1929'.",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Bar graph titled 'Top 10 Warmest Years' showing temperature (in °C) on the y-axis (from 27.8 to 28.5) and years on the x-axis (2019, 2016, 1998, 2023, 2015, 1997, 2010, 2002, 2020, 2005). ",
+          "notes": "Bar graph required - tool not available",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/S1-anderson-2024-p1-q5.svg"
+
+        },
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "State one aspect of the graph that may be misleading and explain how this may lead to a misinterpretation of the graph.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The y-axis starts at 27.8°C instead of 0°C, which exaggerates the visual differences between the temperatures and may make the temperature variations appear more dramatic than they actually are.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the misleading aspect",
+                  "working": "The y-axis does not start at zero; it starts at 27.8°C. This truncated scale makes the bars appear much taller relative to each other than they would be if the full scale from 0°C was used",
+                  "reasoning": "When a graph's y-axis doesn't start at zero, it can visually exaggerate differences between values"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Explain the potential misinterpretation",
+                  "working": "A reader might perceive that 2019 was significantly hotter than 2005 because the bar for 2019 appears roughly 3-4 times taller than the bar for 2005. However, the actual temperature difference is only $28.4 - 28.1 = 0.3^{\\circ}C$, which is relatively small. The truncated y-axis makes this small difference look much larger visually, potentially leading viewers to overestimate the magnitude of climate change or temperature variations",
+                  "reasoning": "The visual representation suggests a larger proportional difference than the actual numerical difference, which can mislead viewers about the severity or significance of temperature changes"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Data Misrepresentation"
+      },
+      {
+        "questionNumber": 24,
+        "questionId": "S1-gemini-project-time-2025-q24",
+        "topicID": "S1",
+        "stem": "The cumulative frequency diagram shows the time in hours that 80 students spent on a project.",
+        "hasDiagram": true,
+        "diagramDescription": "A cumulative frequency curve with Time (hours) on the x-axis (scale 0 to 10) and Cumulative Frequency on the y-axis (scale 0 to 80). The curve starts at (0,0), passes through (2,6), (4,24), (6,60), (8,76), and ends at (10,80).",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Cumulative frequency curve for 80 students. X-axis: 0-10 hours. Y-axis: 0-80 students.",
+          "notes": "Ensure x-axis labels are 0, 1, 2...10. Ensure y-axis major gridlines allow easy reading of 60.",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/S1-gemini-project-time-2025-q24.svg"
+        },
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Explain whether you can find the exact number of students who spent exactly 5 hours on the project.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "No, it is not possible to find the exact number of students who spent exactly 5 hours.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the limitation of Cumulative Frequency graphs.",
+                  "working": "The cumulative frequency diagram plots the number of students who spent 'less than or equal to' a certain time. It represents grouped continuous data.",
+                  "reasoning": "The graph shows accumulated totals ($x \\leq t$), not individual frequencies for specific exact values."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The teacher notes that 75% of the students spent less than $k$ hours on the project. Find the value of $k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "k = 6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the cumulative frequency corresponding to 75%.",
+                  "working": "75% of 80 students = $0.75 \\times 80 = 60$ students.",
+                  "reasoning": "We need to find the time $k$ where the cumulative frequency is 60."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Read the value from the graph.",
+                  "working": "Locate 60 on the vertical axis (Cumulative Frequency). Move horizontally to the curve, then vertically down to the x-axis. The line meets the x-axis at 6.",
+                  "reasoning": "Reading from the graph at $y = 60$, we find $x = 6$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Data Plot Probability"
+      },
+      {
+        "questionNumber": 25,
+        "questionId": "S1-gemini-airport-suitcase-2025-q25",
+        "topicID": "S1",
+        "stem": "The box-and-whisker plot shows the distribution of masses, in kg, of 80 suitcases checked in at an airport.",
+        "hasDiagram": true,
+        "diagramDescription": "A box-and-whisker plot above a horizontal axis labeled 'Mass (kg)'. The axis ranges from 0 to 40. The plot has the following coordinates: Left whisker end at 6, left side of box at 12, vertical line inside box at 19, right side of box at 24, and right whisker end at 29.",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Box-and-whisker plot. X-axis: 0-40 kg. Key values: Min=6, Q1=12, Med=19, Q3=24, Max=29.",
+          "notes": "Ensure x-axis has major gridlines every 5 units and minor ticks every 1 unit. Label axis 'Mass (kg)'.",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/S1-gemini-airport-suitcase-2025-q25.svg"
+        },
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the median mass of the suitcases.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "19 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the median on the plot.",
+                  "working": "Locate the vertical line inside the rectangular box.",
+                  "reasoning": "In a box-and-whisker plot, the line dividing the box represents the median value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Read the value from the scale.",
+                  "working": "The line aligns with 19 on the x-axis.",
+                  "reasoning": "The median is 19."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the interquartile range (IQR) of the masses.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the Upper and Lower Quartiles.",
+                  "working": "Lower Quartile ($Q_1$) = left edge of the box = 12.\nUpper Quartile ($Q_3$) = right edge of the box = 24.",
+                  "reasoning": "The ends of the rectangular box represent the interquartile range boundaries."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the difference.",
+                  "working": "$IQR = Q_3 - Q_1 = 24 - 12 = 12$.",
+                  "reasoning": "The interquartile range is the difference between the upper and lower quartiles."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Suitcases weighing more than 24 kg are tagged as 'Heavy'. Calculate the percentage of suitcases that are tagged as Heavy.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "25%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the position of 24 kg relative to the quartiles.",
+                  "working": "24 kg corresponds to the Upper Quartile ($Q_3$).",
+                  "reasoning": "The Upper Quartile marks the boundary where 75% of data is below and 25% is above."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the percentage above $Q_3$.",
+                  "working": "The right whisker represents the top 25% of the data.",
+                  "reasoning": "Since 'Heavy' is $> Q_3$, exactly 25% of the suitcases are heavy."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Box Plot Interpretation"
+      }
+    ],
+    "Paper 2": []
+  }
+}

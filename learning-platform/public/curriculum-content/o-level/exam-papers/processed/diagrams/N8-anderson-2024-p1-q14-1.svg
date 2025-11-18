@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="180" viewBox="0 0 420 180">
+  <style>
+    text { font-family: "Times New Roman", serif; font-size: 20px; }
+  </style>
+
+  <defs>
+    <!-- Shading pattern -->
+    <pattern id="shade" patternUnits="userSpaceOnUse" width="6" height="6">
+      <rect width="6" height="6" fill="#ddd" />
+      <path d="M0 6 L6 0" stroke="#aaa" stroke-width="0.5" />
+    </pattern>
+
+    <!-- Clip for A (used to get A ∩ B) -->
+    <clipPath id="clipA">
+      <ellipse cx="150" cy="90" rx="110" ry="55" />
+    </clipPath>
+  </defs>
+
+  <!-- Universal set rectangle: shaded -->
+  <rect x="10" y="10" width="400" height="160"
+        fill="url(#shade)" stroke="black" stroke-width="1.5"/>
+
+  <!-- Whole of A shaded -->
+  <ellipse cx="150" cy="90" rx="110" ry="55"
+           fill="url(#shade)" stroke="none"/>
+
+  <!-- B carved out to white first (removes A∩B too) -->
+  <ellipse cx="270" cy="90" rx="110" ry="55"
+           fill="white" stroke="none"/>
+
+  <!-- Re-shade A ∩ B -->
+  <ellipse cx="270" cy="90" rx="110" ry="55"
+           fill="url(#shade)" stroke="none" clip-path="url(#clipA)"/>
+
+  <!-- Outlines of A and B -->
+  <ellipse cx="150" cy="90" rx="110" ry="55"
+           fill="none" stroke="black" stroke-width="2"/>
+  <ellipse cx="270" cy="90" rx="110" ry="55"
+           fill="none" stroke="black" stroke-width="2"/>
+
+  <!-- Labels -->
+  <text x="135" y="75">A</text>
+  <text x="255" y="75">B</text>
+</svg>

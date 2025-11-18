@@ -1,0 +1,61 @@
+{
+  "topicId": "G7",
+  "questions": {
+    "Paper 1": [],
+    "Paper 2": [
+      {
+        "questionNumber": 32,
+        "questionId": "G7-anderson-2024-p2-q32",
+        "topicID": "G7",
+        "stem": "The position vectors of points A and B are $\\binom{-9}{3}$ and $\\binom{1}{-12}$ respectively.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the column vector $\\vec{BA}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\vec{BA} = \\binom{-10}{15}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the formula for vector from B to A",
+                  "working": "$\\vec{BA} = \\vec{OA} - \\vec{OB} = \\binom{-9}{3} - \\binom{1}{-12} = \\binom{-9-1}{3-(-12)} = \\binom{-10}{15}$",
+                  "reasoning": "The vector from B to A is found by subtracting the position vector of B from the position vector of A"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find $|\\vec{BA}|$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$|\\vec{BA}| = 5\\sqrt{13}$ or $18.0$ (to 1 d.p.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the magnitude formula",
+                  "working": "$|\\vec{BA}| = \\sqrt{(-10)^{2} + 15^{2}} = \\sqrt{100 + 225} = \\sqrt{325}$",
+                  "reasoning": "The magnitude of a vector $\\binom{x}{y}$ is $\\sqrt{x^{2} + y^{2}}$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the radical",
+                  "working": "$\\sqrt{325} = \\sqrt{25 \\times 13} = 5\\sqrt{13} \\approx 18.0$ units",
+                  "reasoning": "Simplify by factoring out perfect squares"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Vector Between Points"
+      }
+    ]
+  }
+}

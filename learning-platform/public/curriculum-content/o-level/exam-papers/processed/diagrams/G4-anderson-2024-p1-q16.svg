@@ -1,0 +1,42 @@
+<svg width="700" height="350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Semicircle with diameter BC -->
+  <path d="M 100 250 A 170 170 0 0 1 440 250" 
+        fill="none" 
+        stroke="black" 
+        stroke-width="2"/>
+  
+  <!-- Base line BD -->
+  <line x1="100" y1="250" x2="640" y2="250" 
+        stroke="black" 
+        stroke-width="2"/>
+  
+  <!-- Line from B to A -->
+  <line x1="100" y1="250" x2="200" y2="95" 
+        stroke="black" 
+        stroke-width="2"/>
+  
+  <!-- Line from A to C -->
+  <line x1="200" y1="95" x2="440" y2="250" 
+        stroke="black" 
+        stroke-width="2"/>
+  
+  <!-- Line from A to D -->
+  <line x1="200" y1="95" x2="640" y2="250" 
+        stroke="black" 
+        stroke-width="2"/>
+  
+  <!-- Label A (top) -->
+  <text x="195" y="80" font-family="serif" font-size="24" font-style="italic">A</text>
+  
+  <!-- Label B (bottom left) -->
+  <text x="85" y="275" font-family="serif" font-size="24" font-style="italic">B</text>
+  
+  <!-- Label C (bottom middle) -->
+  <text x="435" y="275" font-family="serif" font-size="24" font-style="italic">C</text>
+  
+  <!-- Label D (bottom right) -->
+  <text x="645" y="275" font-family="serif" font-size="24" font-style="italic">D</text>
+  
+  <!-- 34 cm label -->
+  <text x="250" y="295" font-family="sans-serif" font-size="20">34 cm</text>
+</svg>

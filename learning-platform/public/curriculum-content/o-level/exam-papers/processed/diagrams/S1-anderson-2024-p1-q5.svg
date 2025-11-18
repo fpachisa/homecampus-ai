@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360">
+  <style>
+    text { font-family: "Times New Roman", serif; }
+  </style>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="720" height="360" fill="white"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="30" width="720" height="40" fill="black" />
+  <text x="20" y="57" fill="white" font-size="22">Top 10 Warmest Years</text>
+
+  <!-- Plot frame -->
+  <rect x="80" y="90" width="600" height="220" fill="none" stroke="black" stroke-width="1"/>
+
+  <!-- Axes -->
+  <line x1="80" y1="110" x2="80" y2="290" stroke="black" stroke-width="1" />
+  <line x1="80" y1="290" x2="680" y2="290" stroke="black" stroke-width="1" />
+
+  <!-- Y-axis ticks & labels: 27.8 to 28.5 -->
+  <!-- Mapping: 27.8→290, 27.9→267, 28.0→244, 28.1→221, 28.2→199, 28.3→176, 28.4→153, 28.5→130 -->
+
+  <!-- 27.8 -->
+  <line x1="75" y1="290" x2="80" y2="290" stroke="black" />
+  <text x="70" y="295" font-size="12" text-anchor="end">27.8</text>
+
+  <!-- 27.9 -->
+  <line x1="75" y1="267" x2="80" y2="267" stroke="black" />
+  <text x="70" y="272" font-size="12" text-anchor="end">27.9</text>
+
+  <!-- 28.0 -->
+  <line x1="75" y1="244" x2="80" y2="244" stroke="black" />
+  <text x="70" y="249" font-size="12" text-anchor="end">28.0</text>
+
+  <!-- 28.1 -->
+  <line x1="75" y1="221" x2="80" y2="221" stroke="black" />
+  <text x="70" y="226" font-size="12" text-anchor="end">28.1</text>
+
+  <!-- 28.2 -->
+  <line x1="75" y1="199" x2="80" y2="199" stroke="black" />
+  <text x="70" y="204" font-size="12" text-anchor="end">28.2</text>
+
+  <!-- 28.3 -->
+  <line x1="75" y1="176" x2="80" y2="176" stroke="black" />
+  <text x="70" y="181" font-size="12" text-anchor="end">28.3</text>
+
+  <!-- 28.4 -->
+  <line x1="75" y1="153" x2="80" y2="153" stroke="black" />
+  <text x="70" y="158" font-size="12" text-anchor="end">28.4</text>
+
+  <!-- 28.5 -->
+  <line x1="75" y1="130" x2="80" y2="130" stroke="black" />
+  <text x="70" y="135" font-size="12" text-anchor="end">28.5</text>
+
+  <!-- Y-axis label -->
+  <text x="25" y="215" font-size="16" transform="rotate(-90 25 215)">Temperature (°C)</text>
+
+  <!-- Bars (base at y=290) -->
+  <!-- Heights from mapping above: 
+       28.4 → top 153, h=137
+       28.3 → top 176, h=114
+       28.2 → top 199, h=91
+       28.1 → top 221, h=69
+  -->
+
+  <!-- 2019: 28.4 -->
+  <rect x="110" y="153" width="35" height="137" fill="#777" />
+  <!-- 2016: 28.4 -->
+  <rect x="165" y="153" width="35" height="137" fill="#777" />
+  <!-- 1998: 28.3 -->
+  <rect x="220" y="176" width="35" height="114" fill="#777" />
+  <!-- 2023: 28.3 (highlighted) -->
+  <rect x="275" y="176" width="35" height="114" fill="#777" stroke="black" stroke-width="2" />
+  <!-- 2015: 28.3 -->
+  <rect x="330" y="176" width="35" height="114" fill="#777" />
+  <!-- 1997: 28.3 -->
+  <rect x="385" y="176" width="35" height="114" fill="#777" />
+  <!-- 2010: 28.2 -->
+  <rect x="440" y="199" width="35" height="91" fill="#777" />
+  <!-- 2002: 28.2 -->
+  <rect x="495" y="199" width="35" height="91" fill="#777" />
+  <!-- 2020: 28.1 -->
+  <rect x="550" y="221" width="35" height="69" fill="#777" />
+  <!-- 2005: 28.1 -->
+  <rect x="605" y="221" width="35" height="69" fill="#777" />
+
+  <!-- X-axis labels -->
+  <text x="127" y="325" font-size="12" text-anchor="middle">2019</text>
+  <text x="182" y="325" font-size="12" text-anchor="middle">2016</text>
+  <text x="237" y="325" font-size="12" text-anchor="middle">1998</text>
+  <text x="292" y="325" font-size="12" text-anchor="middle">2023</text>
+  <text x="347" y="325" font-size="12" text-anchor="middle">2015</text>
+  <text x="402" y="325" font-size="12" text-anchor="middle">1997</text>
+  <text x="457" y="325" font-size="12" text-anchor="middle">2010</text>
+  <text x="512" y="325" font-size="12" text-anchor="middle">2002</text>
+  <text x="567" y="325" font-size="12" text-anchor="middle">2020</text>
+  <text x="622" y="325" font-size="12" text-anchor="middle">2005</text>
+
+  <!-- 2023 value label -->
+  <text x="292" y="170" font-size="14" text-anchor="middle">28.3°C</text>
+
+  <!-- Callout box for 2023 -->
+  <rect x="235" y="110" width="190" height="60" fill="#e0e0e0" stroke="#777" stroke-width="1"/>
+  <text x="330" y="130" font-size="14" text-anchor="middle">2023 is the 4th</text>
+  <text x="330" y="147" font-size="14" text-anchor="middle">warmest year</text>
+  <text x="330" y="164" font-size="14" text-anchor="middle">since 1929</text>
+</svg>

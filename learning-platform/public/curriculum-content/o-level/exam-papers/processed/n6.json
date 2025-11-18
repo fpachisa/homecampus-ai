@@ -1,0 +1,44 @@
+{
+  "topicId": "N6",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 11,
+        "questionId": "N6-anderson-2024-p1-q11",
+        "topicID": "N6",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "By expressing $x^{2}-10x-2$ in the form $(x-h)^{2}+k$, where h and k are constants, write down the coordinates of the minimum point of the graph of $y=x^{2}-10x-2$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(5, -27)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Complete the square",
+                  "working": "$x^{2}-10x-2 = (x-5)^{2}-25-2 = (x-5)^{2}-27$",
+                  "reasoning": "Take half the coefficient of $x$ to get 5, square it to get 25, then subtract 25 to maintain equality"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the minimum point",
+                  "working": "The expression is in the form $(x-h)^{2}+k$ where $h=5$ and $k=-27$. The minimum point is $(h, k) = (5, -27)$",
+                  "reasoning": "For a parabola in the form $y = (x-h)^{2}+k$, the vertex (minimum for positive leading coefficient) is at $(h, k)$"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Quadratic Minimum Point"
+      }
+    ],
+    "Paper 2": []
+  }
+}

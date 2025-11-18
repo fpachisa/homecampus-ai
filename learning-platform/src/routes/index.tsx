@@ -16,6 +16,7 @@ const StudentStatsDashboard = lazy(() => import('../components/dashboard/stats/S
 const HomeworkHelperPage = lazy(() => import('../pages/HomeworkHelperPage'));
 const HomeworkHistoryPageWrapper = lazy(() => import('../pages/HomeworkHistoryPageWrapper'));
 const SessionDetailPageWrapper = lazy(() => import('../pages/SessionDetailPageWrapper'));
+const QuestionBankQA = lazy(() => import('../components/QuestionBankQA'));
 
 // Lazy load sub-routers for better code splitting
 const LearnRouter = lazy(() => import('./LearnRouter'));
@@ -283,6 +284,14 @@ export const router = createBrowserRouter([
     element: (
       <RootLayout>
         <GreetingsViewer />
+      </RootLayout>
+    ),
+  },
+  {
+    path: '/dev/question-bank-qa',
+    element: (
+      <RootLayout>
+        <QuestionBankQA />
       </RootLayout>
     ),
   },

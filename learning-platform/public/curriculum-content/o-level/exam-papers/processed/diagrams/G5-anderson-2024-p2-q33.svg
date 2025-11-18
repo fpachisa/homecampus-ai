@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <style>
+    text { font-family: "Times New Roman", serif; font-size: 16px; }
+  </style>
+
+  <defs>
+    <!-- Hatching pattern -->
+    <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6">
+      <path d="M0 6 L6 0" stroke="black" stroke-width="0.5" />
+    </pattern>
+
+    <!-- Clip to inner circle -->
+    <clipPath id="innerCircleClip">
+      <circle cx="200" cy="200" r="120" />
+    </clipPath>
+  </defs>
+
+  <!-- Outer circle -->
+  <circle cx="200" cy="200" r="150" fill="none" stroke="black" stroke-width="2" />
+
+  <!-- Inner circle -->
+  <circle cx="200" cy="200" r="120" fill="none" stroke="black" stroke-width="2" />
+
+  <!-- WATER: portion of inner circle below chord AB -->
+  <!-- Rectangle from the chord (y=260) down, clipped by inner circle -->
+  <rect x="80" y="260" width="240" height="140"
+        fill="url(#hatch)" stroke="black" stroke-width="1"
+        clip-path="url(#innerCircleClip)" />
+
+  <!-- Chord AB (free surface) -->
+  <line x1="96.08" y1="260" x2="303.92" y2="260" stroke="black" stroke-width="2" />
+
+  <!-- Dashed radii OA and OB -->
+  <line x1="200" y1="200" x2="96.08" y2="260"
+        stroke="black" stroke-width="1.5" stroke-dasharray="6,4" />
+  <line x1="200" y1="200" x2="303.92" y2="260"
+        stroke="black" stroke-width="1.5" stroke-dasharray="6,4" />
+
+  <!-- Labels -->
+  <text x="200" y="190" text-anchor="middle">O</text>
+  <text x="200" y="252" text-anchor="middle">65.32</text>
+  <text x="258" y="222" text-anchor="middle">45</text>
+  <text x="88"  y="272" text-anchor="middle">A</text>
+  <text x="312" y="272" text-anchor="middle">B</text>
+
+  <!-- Dimension x on the right -->
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="black" />
+    </marker>
+  </defs>
+
+  <line x1="320" y1="200" x2="350" y2="200"
+        stroke="black" stroke-width="1.5"
+        marker-start="url(#arrow)" marker-end="url(#arrow)" />
+  <text x="355" y="205">x</text>
+</svg>

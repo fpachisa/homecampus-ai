@@ -1,0 +1,204 @@
+{
+  "topicId": "G4",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 16,
+        "questionId": "G4-anderson-2024-p1-q16",
+        "topicID": "G4",
+        "stem": "The diagram shows a semi-circle BAC, with diameter $BC=34$ cm. AD and BCD are straight lines. Given that $\\cos\\angle ABC=\\frac{8}{17}$,",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram showing a semicircle with diameter BC=34 cm. A is a point on the circumference. AD and BCD are straight lines, with D outside the semicircle on the extension of BC.",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Diagram showing a semicircle with diameter BC=34 cm. A is a point on the circumference. AD and BCD are straight lines, with D outside the semicircle on the extension of BC.",
+          "notes": "Semicircle with extended line AD - circleSemicircle cannot show extension",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G4-anderson-2024-p1-q16.svg"
+        },
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "without solving for angle ABC and angle ACD, find the exact value of $\\cos\\angle ACD$.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "-\\frac{15}{17}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the type of triangle $\\triangle ABC$ using the semicircle property.",
+                  "working": "Since $BC$ is the diameter of the semicircle $BAC$ and $A$ is on the circumference, the angle $\\angle BAC$ is $90^\\circ$. Thus, $\\triangle ABC$ is a right-angled triangle.",
+                  "reasoning": "Angle in a semicircle is $90^\\circ$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the value of $\\sin \\angle ABC$ using the given $\\cos \\angle ABC = \\frac{8}{17}$ and the Pythagorean identity.",
+                  "working": "$$\\sin^2 \\angle ABC = 1 - \\cos^2 \\angle ABC = 1 - \\left(\\frac{8}{17}\\right)^2 = 1 - \\frac{64}{289} = \\frac{225}{289}$$ $$\\sin \\angle ABC = \\sqrt{\\frac{225}{289}} = \\frac{15}{17}$$",
+                  "reasoning": "Pythagorean identity $\\sin^2\\theta + \\cos^2\\theta = 1$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find $\\cos \\angle ACB$ using the complementary angle relationship in the right-angled $\\triangle ABC$.",
+                  "working": "Since $\\angle ABC + \\angle ACB = 90^\\circ$, we have $$\\cos \\angle ACB = \\sin \\angle ABC = \\frac{15}{17}$$",
+                  "reasoning": "Cofunction identity: $\\cos\\theta = \\sin(90^\\circ - \\theta)$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Determine $\\cos \\angle ACD$ using the supplementary angle relationship since $\\overline{BCD}$ is a straight line.",
+                  "working": "The angles $\\angle ACB$ and $\\angle ACD$ are supplementary ($\\angle ACB + \\angle ACD = 180^\\circ$). Using the supplementary angle identity: $$\\cos \\angle ACD = \\cos (180^\\circ - \\angle ACB) = -\\cos \\angle ACB$$ Substituting the value from Step 3: $$\\cos \\angle ACD = -\\frac{15}{17}$$",
+                  "reasoning": "Supplementary angle identity: $\\cos(180^\\circ - \\theta) = -\\cos\\theta$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Semi-circle Trig Ratios"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 34,
+        "questionId": "G4-anderson-2024-p2-q34",
+        "topicID": "G4",
+        "stem": "The diagram shows the positions of 3 points A, B, and C, at sea level. $AB=4.83~km$ and $BC=7.24~km.$ The bearing of B from A is $064^{\\circ}$ and the bearing of C from B is $127^{\\circ}$.",
+        "hasDiagram": true,
+        "diagramDescription": "Diagram showing three points A, B, and C with distances and bearings. $AB=4.83~km$, $BC=7.24~km$. Bearing of B from A is $064^{\\circ}$. Bearing of C from B is $127^{\\circ}$. North lines are drawn at A and B.",
+        "diagram": {
+          "type": "needsSVG",
+          "description": "Diagram showing three points A, B, and C with distances and bearings.",
+          "notes": "Diagram with bearings and distances between points A, B, and C",
+          "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/G4-anderson-2024-p2-q34.svg"
+        },
+        "parts": [
+          {
+            "partId": "i",
+            "questionText": "Show that $AC=10.368~km.$",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Shown: $AC = 10.368$ km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find angle ABC using bearings",
+                  "working": "Bearing of B from A is $064^{\\circ}$, so the direction from A to B is $064^{\\circ}$ from North. Bearing of C from B is $127^{\\circ}$, so the direction from B to C is $127^{\\circ}$ from North. The angle ABC (interior angle of triangle) can be found from: The bearing from A to B is $064^{\\circ}$, so the bearing from B to A (opposite direction) is $064^{\\circ} + 180^{\\circ} = 244^{\\circ}$. The angle between the direction from B to A ($244^{\\circ}$) and from B to C ($127^{\\circ}$) is: $\\angle ABC = 244^{\\circ} - 127^{\\circ} = 117^{\\circ}$",
+                  "reasoning": "The interior angle at B is the difference between the back bearing to A and the bearing to C"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the cosine rule to find AC",
+                  "working": "In triangle ABC: $AC^{2} = AB^{2} + BC^{2} - 2(AB)(BC)\\cos\\angle ABC$. $AC^{2} = 4.83^{2} + 7.24^{2} - 2(4.83)(7.24)\\cos 117^{\\circ}$",
+                  "reasoning": "The cosine rule relates the three sides of a triangle to one of its angles"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the value",
+                  "working": "$AC^{2} = 23.3289 + 52.4176 - 69.9384\\cos 117^{\\circ}$. $\\cos 117^{\\circ} = \\cos(180^{\\circ} - 63^{\\circ}) = -\\cos 63^{\\circ} \\approx -0.45399$. $AC^{2} = 23.3289 + 52.4176 - 69.9384(-0.45399) = 75.7465 + 31.7480 = 107.4945$. $AC = \\sqrt{107.4945} = 10.368$ km",
+                  "reasoning": "Substitute values and calculate to verify the given result"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "ii",
+            "questionText": "Hence find the bearing of A from C.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$282.5^\\circ$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the interior angle $\\angle ABC$ by using the parallel North lines at $A$ and $B$.",
+                  "working": "1. Find the bearing of $A$ from $B$: $180^\\circ + 064^\\circ = 244^\\circ$.\n2. The angle between the North line at $B$ and $BA$ is $\\angle N_B BA = 360^\\circ - 244^\\circ$ (anti-clockwise) or use $180^\\circ - 64^\\circ = 116^\\circ$ (the angle supplementary to the internal angle formed by the North line at $A$).\n3. The angle $\\angle ABC$ is the difference between the bearing of $A$ from $B$ (anti-clockwise angle $360^\\circ - 244^\\circ = 116^\\circ$) and the bearing of $C$ from $B$ ($127^\\circ$). \n   Since $BA$ is to the West of North and $BC$ is to the East of North, the total angle is the sum of the angles from the South line at $B$:\n   $\\angle S_B BA = 64^\\circ$ (Alternate Interior Angles to $64^\\circ$).\n   $\\angle S_B BC = 180^\\circ - 127^\\circ = 53^\\circ$.\n   $$\\angle ABC = \\angle S_B BA + \\angle S_B BC = 64^\\circ + 53^\\circ = 117^\\circ$$",
+                  "reasoning": "The angle $\\angle ABC$ is the sum of the angle $\\angle S_B BA$ (Alternate Interior to $64^\\circ$) and $\\angle S_B BC$ (angle between $BC$ and the South line at $B$). $64^\\circ + 53^\\circ = 117^\\circ$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the length of $AC$ using the Cosine Rule for $\\triangle ABC$.",
+                  "working": "Using the Cosine Rule $b^2 = a^2 + c^2 - 2ac \\cos B$: \n$$AC^2 = (4.83)^2 + (7.24)^2 - 2(4.83)(7.24) \\cos 117^\\circ$$\n$$AC^2 = 23.3289 + 52.4176 - 69.9696 \\times (-0.45399...)$$\n$$AC^2 = 75.7465 + 31.7853$$\n$$AC^2 = 107.5318$$\n$$AC = \\sqrt{107.5318} \\approx 10.3697...$$\nRounding to 4 significant figures: $AC \\approx 10.37 \\text{ km}$. This shows that $AC \\approx 10.368 \\text{ km}$ (The slight difference is due to rounding in the required value).",
+                  "reasoning": "Cosine Rule: $AC^2 = AB^2 + BC^2 - 2(AB)(BC) \\cos \\angle ABC$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the internal angle $\\angle BCA$ using the Sine Rule.",
+                  "working": "Using the value $AC = 10.368\\text{ km}$:\n$$\\frac{\\sin \\angle BCA}{AB} = \\frac{\\sin \\angle ABC}{AC}$$\n$$\\sin \\angle BCA = \\frac{4.83 \\sin 117^\\circ}{10.368} = \\frac{4.83 \\times 0.89101}{10.368} \\approx 0.41505$$\n$$\\angle BCA = \\sin^{-1}(0.41505) \\approx 24.53^\\circ$$\n",
+                  "reasoning": "Sine Rule: $\\frac{\\sin A}{a} = \\frac{\\sin B}{b}$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the bearing of $A$ from $C$.",
+                  "working": "1. Find the back bearing of $B$ from $C$: $\\text{Bearing of } B \\text{ from } C = 127^\\circ + 180^\\circ = 307^\\circ$.\n2. The bearing of $A$ from $C$ is the angle from the North line at $C$ to $CA$. This is found by subtracting the angle $\\angle BCA$ from the bearing of $B$ from $C$.\n$$\\text{Bearing of } A \\text{ from } C = (\\text{Bearing of } B \\text{ from } C) - \\angle BCA$$\n$$\\text{Bearing of } A \\text{ from } C = 307^\\circ - 24.53^\\circ = 282.47^\\circ$$\nRounding to one decimal place: $282.5^\\circ$.",
+                  "reasoning": "The bearing of $A$ from $C$ is the reciprocal bearing of $C$ from $B$ minus the angle $\\angle BCA$ (since $A$ is to the left of $B$ when viewed from $C$). The bearing is rounded to one decimal place."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "iii",
+            "questionText": "A boat travels in a straight line from point B to reach the line AC. Find the shortest distance that the boat needs to travel.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3.01 km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the shortest distance as the length of the altitude ($h$) from point $B$ to the line $AC$.",
+                  "working": "The shortest distance $h$ is the perpendicular distance $BM$ where $M$ is a point on $AC$ and $\\angle BMA = 90^\\circ$. The relationship in the right-angled triangle $\\triangle ABM$ is given by $h = AB \\sin \\angle BAC$.",
+                  "reasoning": "The shortest distance from a point to a line is the perpendicular distance. We use the sine function in $\\triangle ABM$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the angle $\\angle BAC$ using the sum of angles in $\\triangle ABC$.",
+                  "working": "Using the results from previous parts: $\\angle ABC = 117^\\circ$ and $\\angle BCA \\approx 24.53^\\circ$. \n$$\\angle BAC = 180^\\circ - 117^\\circ - 24.53^\\circ = 38.47^\\circ$$",
+                  "reasoning": "Sum of angles in a triangle is $180^\\circ$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the shortest distance ($h$).",
+                  "working": "$$h = AB \\sin \\angle BAC$$\n$$h = 4.83 \\sin(38.47^\\circ)$$\n$$h \\approx 4.83 \\times 0.6221$$\n$$h \\approx 3.0051 \\text{ km}$$",
+                  "reasoning": "Substitution and calculation."
+                },
+                {
+                  "step": 4,
+                  "explanation": "State the final answer, rounding to three significant figures.",
+                  "working": "$$h \\approx 3.01 \\text{ km}$$",
+                  "reasoning": "Rounding to the standard three significant figures based on the precision of the input data."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "iv",
+            "questionText": "An object was detected directly below point C. The angle of depression of the object from B is $12^{\\circ}$. Find the distance of the object from C.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1.54$ km or $1540$ m",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the right triangle",
+                  "working": "The object O is directly below C, so the line CO is vertical. B is at sea level. The angle of depression from B to O is $12^{\\circ}$. In the right triangle BCO (right angle at C): the angle at B = $12^{\\circ}$, the horizontal distance BC = $7.24$ km, and we need to find the vertical distance CO",
+                  "reasoning": "Angle of depression from B to O means looking down from B at angle $12^{\\circ}$ below horizontal"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use trigonometry to find CO",
+                  "working": "$\\tan 12^{\\circ} = \\frac{CO}{BC}$. $CO = BC \\times \\tan 12^{\\circ} = 7.24 \\times \\tan 12^{\\circ} = 7.24 \\times 0.2126 = 1.539$ km $\\approx 1.54$ km or $1540$ m",
+                  "reasoning": "Using the tangent ratio in the right triangle: opposite over adjacent"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Bearings Trigonometry Distance"
+      }
+    ]
+  }
+}

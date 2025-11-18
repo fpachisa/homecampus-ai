@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
+  <style>
+    text { font-family: "Times New Roman", serif; font-size: 16px; }
+  </style>
+
+  <!-- Coordinate axes: origin at (220,220) -->
+  <!-- x-axis -->
+  <line x1="40" y1="220" x2="500" y2="220" stroke="black" stroke-width="2" />
+  <polygon points="500,220 490,215 490,225" fill="black" />
+  <text x="505" y="225">x</text>
+
+  <!-- y-axis -->
+  <line x1="220" y1="240" x2="220" y2="30" stroke="black" stroke-width="2" />
+  <polygon points="220,30 215,40 225,40" fill="black" />
+  <text x="225" y="30">y</text>
+
+  <!-- Points (scaled from coordinates: origin(220,220), 1 unit = 15 px) -->
+  <!-- P(-2,1)  -> (190,205) -->
+  <!-- Q        -> (300,205) -->
+  <!-- S        -> (305,160) -->
+  <!-- R(13,4)  -> (415,160) -->
+
+  <!-- Parallelogram P-S-R-Q -->
+  <polygon points="190,205 305,160 415,160 300,205"
+           fill="none" stroke="black" stroke-width="2" />
+
+  <!-- Diagonal S-Q to form triangles PQS and RSQ -->
+  <line x1="305" y1="160" x2="300" y2="205" stroke="black" stroke-width="2" />
+
+  <!-- Point markers -->
+  <circle cx="190" cy="205" r="2.5" fill="black" />
+  <circle cx="300" cy="205" r="2.5" fill="black" />
+  <circle cx="305" cy="160" r="2.5" fill="black" />
+  <circle cx="415" cy="160" r="2.5" fill="black" />
+
+  <!-- Labels -->
+  <text x="140" y="200">P(-2,1)</text>
+  <text x="295" y="220">Q</text>
+  <text x="298" y="152">S</text>
+  <text x="420" y="155">R(13,4)</text>
+</svg>

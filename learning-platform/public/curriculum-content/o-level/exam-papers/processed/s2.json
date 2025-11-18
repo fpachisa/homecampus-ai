@@ -1,0 +1,104 @@
+{
+  "topicId": "S2",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 21,
+        "questionId": "S2-anderson-2024-p1-q21",
+        "topicID": "S2",
+        "stem": "In a class of 36 students, each student is either in a sports team or a performing arts club. Each student is also either a member or is a leader in their respective co-curricular activities. One student is selected at random from the class. The probability that the student selected is in a sports team is $\\frac{1}{3}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that there are 4 sports team members in the class, find the number of students who are leaders in a sports team.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "8 students",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the total number of students in sports teams",
+                  "working": "Probability of selecting a sports team student = $\\frac{1}{3}$. Total students = 36. Number of students in sports teams = $\\frac{1}{3} \\times 36 = 12$ students",
+                  "reasoning": "Probability equals the number of favorable outcomes divided by total outcomes"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the number of sports team leaders",
+                  "working": "Total in sports teams = Members + Leaders = 12. Given: Members = 4. Therefore: Leaders = $12 - 4 = 8$ students",
+                  "reasoning": "The total in sports teams is the sum of members and leaders"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Two students are selected at random from the class. The probability that both of them are members of a performing arts club is $\\frac{1}{42}$. Find the number of students who are members in a performing arts club.",
+            "marks": 3,
+            "answerType": "numerical",
+
+            "solution": {
+              "finalAnswer": "6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define the variable and set up the probability expression.",
+                  "working": "Let $x$ be the number of students who are members in a performing arts club.\nThe probability of selecting one such student is $\\frac{x}{36}$.\nSince the students are selected without replacement, the probability of selecting a second such student is $\\frac{x-1}{35}$.",
+                  "reasoning": "Probability of dependent events (selection without replacement)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Formulate the equation based on the given probability.",
+                  "working": "$\\frac{x}{36} \\times \\frac{x-1}{35} = \\frac{1}{42}$",
+                  "reasoning": "The product of individual probabilities equals the combined probability."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for x.",
+                  "working": "$x(x-1) = \\frac{36 \\times 35}{42}$\n$x(x-1) = \\frac{1260}{42}$\n$x(x-1) = 30$",
+                  "reasoning": "Simplifying the algebraic equation."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find the valid integer value for x.",
+                  "working": "We need two consecutive integers that multiply to 30.\n$6 \\times 5 = 30$\nTherefore, $x = 6$.",
+                  "reasoning": "Solving the quadratic equation $x^2 - x - 30 = 0$ (ignoring the negative root)."
+                }
+              ]
+            }
+
+          },
+          {
+            "partId": "c",
+            "questionText": "In another class, the probability that a student is a leader in a co-curricular activity is $k$. The probability that a student is in a performing arts club is $m$. Derrick claimed that the probability of a student in this class being a leader or is in a performing arts club is $k+m$. Explain with reasons whether you agree with Derrick's claim.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "I do not agree with Derrick's claim. The probability is $k + m - P(\\text{leader AND performing arts})$, not simply $k + m$.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the addition rule for probability",
+                  "working": "For two events A and B: $P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B)$. In this case: $P(\\text{leader or performing arts}) = P(\\text{leader}) + P(\\text{performing arts}) - P(\\text{leader and performing arts}) = k + m - P(\\text{leader and performing arts})$",
+                  "reasoning": "The addition rule accounts for the overlap between the two events"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Explain why Derrick's claim is incorrect",
+                  "working": "Derrick's formula $k + m$ would only be correct if the two events are mutually exclusive (cannot occur together). However, a student can be both a leader AND in a performing arts club at the same time - these events are not mutually exclusive. Therefore, we must subtract the probability of the overlap $P(\\text{leader and performing arts})$ to avoid double-counting. Since this probability is not necessarily zero, Derrick's claim is incorrect",
+                  "reasoning": "The events \"being a leader\" and \"being in performing arts\" can overlap, so we cannot simply add the probabilities"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Probability Categories"
+      }
+    ],
+    "Paper 2": []
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "topicId": "N2",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 8,
+        "questionId": "N2-anderson-2024-p1-q8",
+        "topicID": "N2",
+        "stem": "The intensity of a sound detected by a receiver is inversely proportional to the square of the distance of the receiver from the source of the sound. When the distance is $r$ metres, the intensity of the sound detected is $q$ decibels. When the distance is reduced by 40%,",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "find the intensity of the sound detected, in terms of q.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{25q}{9}$ decibels",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the inverse proportion relationship",
+                  "working": "Since intensity $I$ is inversely proportional to the square of distance $r$, we write $I\\propto\\frac{1}{r^{2}}$ or $I=\\frac{k}{r^{2}}$ where $k$ is a constant",
+                  "reasoning": "Inverse proportion to the square means the product $I \\times r^2$ is constant"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the constant k using the given condition",
+                  "working": "When distance is $r$ metres, intensity is $q$ decibels: $q=\\frac{k}{r^{2}}$, therefore $k=qr^{2}$",
+                  "reasoning": "Substitute the given values to find the constant of proportionality"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new distance after 40% reduction",
+                  "working": "Distance reduced by 40% means new distance $=r-0.4r=0.6r$",
+                  "reasoning": "A 40% reduction leaves 60% of the original distance"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find the new intensity at the reduced distance",
+                  "working": "New intensity $=\\frac{k}{(0.6r)^{2}}=\\frac{qr^{2}}{0.36r^{2}}=\\frac{q}{0.36}=\\frac{q}{\\frac{36}{100}}=\\frac{100q}{36}=\\frac{25q}{9}$ decibels",
+                  "reasoning": "Substitute the new distance into the formula and simplify. Note that $0.6^2 = 0.36 = \\frac{9}{25}$, so $\\frac{1}{0.36} = \\frac{25}{9}$"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "calculate the percentage difference in the intensity of the sound detected.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$177.8\\%$ or $177\\frac{7}{9}\\%$ (accept $178\\%$)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the difference in intensity",
+                  "working": "Difference $=\\frac{25q}{9}-q=\\frac{25q-9q}{9}=\\frac{16q}{9}$ decibels",
+                  "reasoning": "The new intensity is greater than the original, so we subtract the original from the new"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the percentage increase",
+                  "working": "Percentage increase $=\\frac{\\text{difference}}{\\text{original}}\\times100\\%=\\frac{16q/9}{q}\\times100\\%=\\frac{16}{9}\\times100\\%=\\frac{1600}{9}\\%=177.\\overline{7}\\%$ or $177\\frac{7}{9}\\%$",
+                  "reasoning": "Percentage change is calculated as (change ÷ original) × 100%. The intensity increases as distance decreases"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Sound Inverse Square"
+      },
+      {
+        "questionNumber": 22,
+        "questionId": "N2-anderson-2024-p1-q22",
+        "topicID": "N2",
+        "stem": "The scale of a map is $1:n$. A school garden measuring $8~cm^{2}$ on a map has an actual area of $2048~m^{2}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": null,
+            "questionText": "Find n.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n = 1600$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert actual area to the same units as the map",
+                  "working": "Actual area $=2048~m^{2}=2048\\times10000~cm^{2}=20480000~cm^{2}$",
+                  "reasoning": "Since $1~m = 100~cm$, we have $1~m^2 = (100~cm)^2 = 10000~cm^2$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the area scale ratio",
+                  "working": "If the length scale is $1:n$, then the area scale is $1:n^{2}$. Therefore: $\\frac{\\text{map area}}{\\text{actual area}}=\\frac{8}{20480000}=\\frac{1}{2560000}=\\frac{1}{n^{2}}$",
+                  "reasoning": "Area is a 2-dimensional measure, so the scale factor for area is the square of the length scale factor"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for n",
+                  "working": "$n^{2}=2560000$, therefore $n=\\sqrt{2560000}=1600$",
+                  "reasoning": "Taking the positive square root gives us the scale factor. We can verify: $1600^2 = 2560000$ and $\\frac{8}{20480000} = \\frac{1}{2560000}$"
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Map Scale Area"
+      }
+    ],
+    "Paper 2": []
+  }
+}

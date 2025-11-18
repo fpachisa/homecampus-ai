@@ -7,6 +7,7 @@ const QuestionPreviewPage = lazy(() => import('../components/QuestionPreviewPage
 const VisualizerTestPage = lazy(() => import('../pages/VisualizerTestPage'));
 const NotesViewerPage = lazy(() => import('../pages/NotesViewerPage'));
 const QuestionBankViewer = lazy(() => import('../components/QuestionBankViewer'));
+const QuestionBankQA = lazy(() => import('../components/QuestionBankQA'));
 
 /**
  * DevRouter handles all /dev/* routes
@@ -83,6 +84,15 @@ const QuestionBankView = () => {
   );
 };
 
+// Question Bank QA Interface
+const QuestionBankQAView = () => {
+  return (
+    <Suspense fallback={<DevLoader />}>
+      <QuestionBankQA />
+    </Suspense>
+  );
+};
+
 // Dev home - lists all dev tools
 const DevHome = () => {
   const devTools = [
@@ -92,6 +102,7 @@ const DevHome = () => {
     { path: '/dev/notes', name: 'Notes Viewer', description: 'View and test all notes components' },
     { path: '/dev/preview', name: 'Question Preview', description: 'Preview and test question generation' },
     { path: '/dev/question-bank', name: 'Question Bank Viewer', description: 'View pre-generated question banks with SVG diagrams' },
+    { path: '/dev/question-bank-qa', name: 'Question Bank QA', description: 'Review and validate O-Level exam questions with solutions' },
   ];
 
   return (
@@ -136,6 +147,7 @@ export default function DevRouter() {
       <Route path="notes" element={<NotesViewer />} />
       <Route path="preview" element={<QuestionPreview />} />
       <Route path="question-bank" element={<QuestionBankView />} />
+      <Route path="question-bank-qa" element={<QuestionBankQAView />} />
       <Route path="*" element={<Navigate to="/dev" replace />} />
     </Routes>
   );
