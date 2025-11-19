@@ -195,9 +195,50 @@
         "hasDiagram": true,
         "diagramDescription": "Table of Speedpost (International) Service Rates for different zones (A, B, C, D), weights (Document, 2kg, 5kg, 10kg, 20kg), and services (Express, Priority, Economy). Zone C includes Australia. Zone D includes Rest of the World (where Brazil is assumed to be, based on the question). A diagram shows package size constraints (Length, Width, Height, largest dimension $\\le 400$ mm, $L+W+H \\le 900$ mm). Each book dimension is 6 mm by 128 mm by 128 mm and weighs 75g.",
         "diagram": {
-          "type": "needsSVG",
-          "description": "Table of Speedpost (International) Service Rates for different zones (A, B, C, D), weights (Document, 2kg, 5kg, 10kg, 20kg), and services (Express, Priority, Economy). Zone C includes Australia. Zone D includes Rest of the World (where Brazil is assumed to be, based on the question). A diagram shows package size constraints (Length, Width, Height, largest dimension $\\le 400$ mm, $L+W+H \\le 900$ mm). Each book dimension is 6 mm by 128 mm by 128 mm and weighs 75g.",
-          "notes": "Pricing table with package constraints - not geometric"
+          "type": "table",
+          "description": "Speedpost (International) Service Rates table with package constraints",
+          "notes": "Pricing table with package constraints - not geometric",
+          "tableData": {
+            "title": "Speedpost (International) Service Rates",
+            "zones": {
+              "Zone A - Malaysia": {
+                "Document": { "express": "$25.00", "priority": "$20.00", "economy": "-" },
+                "2kg": { "express": "$61.00", "priority": "$39.00", "economy": "$26.00" },
+                "5kg": { "express": "$91.00", "priority": "$55.00", "economy": "$26.00" },
+                "10kg": { "express": "$122.00", "priority": "$78.00", "economy": "$43.00" },
+                "20kg": { "express": "$158.00", "priority": "$115.00", "economy": "$66.00" }
+              },
+              "Zone B - Asia": {
+                "Document": { "express": "$50.00", "priority": "$45.00", "economy": "-" },
+                "2kg": { "express": "$108.00", "priority": "$78.00", "economy": "$37.00" },
+                "5kg": { "express": "$180.00", "priority": "$123.00", "economy": "$37.00" },
+                "10kg": { "express": "$269.00", "priority": "$182.00", "economy": "$64.00" },
+                "20kg": { "express": "$398.00", "priority": "$278.00", "economy": "$106.00" }
+              },
+              "Zone C - Australia, New Zealand, Europe, USA & Canada": {
+                "Document": { "express": "$75.00", "priority": "$70.00", "economy": "-" },
+                "2kg": { "express": "$159.00", "priority": "$107.00", "economy": "$80.00" },
+                "5kg": { "express": "$259.00", "priority": "$161.00", "economy": "$80.00" },
+                "10kg": { "express": "$400.00", "priority": "$232.00", "economy": "$135.00" },
+                "20kg": { "express": "$569.00", "priority": "$354.00", "economy": "$202.00" }
+              },
+              "Zone D - Rest of the World": {
+                "Document": { "express": "$100.00", "priority": "$95.00", "economy": "-" },
+                "2kg": { "express": "$393.00", "priority": "$155.00", "economy": "$86.00" },
+                "5kg": { "express": "$630.00", "priority": "$260.00", "economy": "$86.00" },
+                "10kg": { "express": "$929.00", "priority": "$386.00", "economy": "$160.00" },
+                "20kg": { "express": "$1,388.00", "priority": "$603.00", "economy": "$282.00" }
+              }
+            },
+            "constraints": {
+              "maxDimension": "400 mm",
+              "maxSum": "L + W + H ≤ 900 mm"
+            },
+            "bookSpecs": {
+              "dimensions": "6 mm × 128 mm × 128 mm",
+              "weight": "75g"
+            }
+          }
         },
         "parts": [
           {
@@ -206,34 +247,34 @@
             "marks": 2,
             "answerType": "numerical",
             "solution": {
-              "finalAnswer": "$108.9\\%$ or $109\\%$ (to 3 s.f.)",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Identify the relevant prices from the table",
-                  "working": "For an 18 kg parcel, use the 20 kg rate (next weight bracket). Zone C (Australia) Economy: \\$135, Zone D (Brazil/Rest of World) Economy: \\$282",
-                  "reasoning": "The pricing table shows rates for specific weight brackets. An 18 kg parcel requires the 20 kg rate as it exceeds 10 kg but is below 20 kg"
-                },
-                {
-                  "step": 2,
-                  "explanation": "Calculate the difference in cost",
-                  "working": "Difference = \\$282 $-$ \\$135 = \\$147",
-                  "reasoning": "The increase in cost is the difference between the Brazil price and the Australia price"
-                },
-                {
-                  "step": 3,
-                  "explanation": "Calculate the percentage increase",
-                  "working": "Percentage increase $= \\frac{147}{135} \\times 100\\% = \\frac{14700}{135}\\% = 108.\\overline{888}\\%$",
-                  "reasoning": "Percentage increase is calculated as (difference ÷ original cost) × 100%, where the original cost is the Australia price"
-                },
-                {
-                  "step": 4,
-                  "explanation": "Round to appropriate precision",
-                  "working": "$108.9\\%$ (to 1 d.p.) or $109\\%$ (to 3 s.f.)",
-                  "reasoning": "Rounding to appropriate significant figures for the final answer"
-                }
-              ]
-            }
+                    "finalAnswer": "39.6%",
+                    "stepByStep": [
+                      {
+                        "step": 1,
+                        "explanation": "Identify the zones and weight bracket.",
+                        "working": "Australia is in **Zone C**. Brazil is in **Zone D** (Rest of the World). \nAn 18 kg parcel falls into the 'Weight Up To **20kg**' category.",
+                        "reasoning": "We must look up the rates for the 20kg limit in the Economy column."
+                      },
+                      {
+                        "step": 2,
+                        "explanation": "Find the costs from the table.",
+                        "working": "Cost to Australia (Zone C, Economy, 20kg) = **$202.00**\nCost to Brazil (Zone D, Economy, 20kg) = **$282.00**",
+                        "reasoning": "Extract data from the table."
+                      },
+                      {
+                        "step": 3,
+                        "explanation": "Calculate the percentage increase.",
+                        "working": "$$ \\text{Percentage Increase} = \\frac{\\text{Difference}}{\\text{Original}} \\times 100\\% $$\n$$ = \\frac{282 - 202}{202} \\times 100\\% $$\n$$ = \\frac{80}{202} \\times 100\\% $$\n$$ \\approx 39.6039...\\% $$",
+                        "reasoning": "The comparison base ('as compared to') is Australia."
+                      },
+                      {
+                        "step": 4,
+                        "explanation": "Round to 3 significant figures.",
+                        "working": "39.6%",
+                        "reasoning": "Standard precision for percentage answers."
+                      }
+                    ]
+                  }
           },
           {
             "partId": "b",
@@ -241,58 +282,40 @@
             "marks": 6,
             "answerType": "numerical",
             "solution": {
-              "finalAnswer": "\\$5.70",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Determine the optimal packing configuration",
-                  "working": "Each book: 6 mm × 128 mm × 128 mm, weighs 75 g. Package constraints: largest dimension $\\le 400$ mm, $L+W+H \\le 900$ mm. To maximize books per package, stack books with 6 mm as height.",
-                  "reasoning": "We need to find how many books fit in one package to minimize mailing cost per book"
-                },
-                {
-                  "step": 2,
-                  "explanation": "Calculate maximum books that fit by dimensions",
-                  "working": "Configuration 1: Stack books with 6 mm dimension as height. Base: 128 mm × 128 mm, Height: varies with number of books. For $n$ books: Dimensions are 128 mm × 128 mm × $(6n)$ mm. Constraints: $6n \\le 400$ gives $n \\le 66.67$ books, $128 + 128 + 6n \\le 900$ gives $6n \\le 644$, so $n \\le 107$ books. Therefore maximum by dimensions: 66 books (height = 396 mm, $L+W+H = 652$ mm ✓)",
-                  "reasoning": "The limiting constraint is the maximum dimension of 400 mm, allowing 66 books stacked"
-                },
-                {
-                  "step": 3,
-                  "explanation": "Calculate maximum books that fit by weight",
-                  "working": "Each book weighs 75 g = 0.075 kg. Weight brackets: 2 kg, 5 kg, 10 kg, 20 kg. For 20 kg: $n = \\frac{20000 \\text{ g}}{75 \\text{ g}} = 266.\\overline{6}$ books maximum = 266 books. But dimension limit is 66 books, so weight is not the limiting factor.",
-                  "reasoning": "Weight allows many more books than dimensions permit, so dimensions are the constraint"
-                },
-                {
-                  "step": 4,
-                  "explanation": "Find the optimal number of books per package",
-                  "working": "Maximum 66 books fit by dimensions. Weight of 66 books $= 66 \\times 75 = 4950$ g = 4.95 kg. This requires the 5 kg rate. Zone C (Australia) Economy 5 kg: \\$80.00",
-                  "reasoning": "66 books weighing 4.95 kg falls in the 5 kg weight bracket costing \\$80"
-                },
-                {
-                  "step": 5,
-                  "explanation": "Calculate cost per book with this configuration",
-                  "working": "Mailing cost per book $= \\frac{\\text{\\$}80.00}{66} =$ \\$1.212121..., Manufacturing cost per book = \\$1.80, Desired profit per book = \\$3.00",
-                  "reasoning": "Distributing the shipping cost across all books in the package gives the mailing cost per book"
-                },
-                {
-                  "step": 6,
-                  "explanation": "Calculate the minimum selling price",
-                  "working": "Selling price = Manufacturing cost $+$ Mailing cost $+$ Profit $= 1.80 + 1.212121... + 3.00 =$ \\$6.012121...",
-                  "reasoning": "The selling price must cover all costs and provide the desired profit"
-                },
-                {
-                  "step": 7,
-                  "explanation": "Round to the nearest ten cents",
-                  "working": "$\\$6.012121...$ rounds down to $\\$6.00$ to the nearest 10 cents. However, this would not provide the full \\$3 profit. We must round up to $\\$6.10$ to ensure the profit target is met.",
-                  "reasoning": "Wait, let me recalculate. $6.012...$ to nearest 10 cents would be \\$6.00. But let's verify: At \\$6.00, profit = $6.00 - 1.80 - 1.212... = \\$2.988$ which is less than \\$3.00. So we need \\$6.10? Let me reconsider..."
-                },
-                {
-                  "step": 8,
-                  "explanation": "Re-examine for better optimization",
-                  "working": "Alternative: Try Configuration 2 with 132 books using two stacks side by side: 260 mm × 128 mm × 132 mm... exceeds 400 mm limit. Try Configuration 3 with books in 2×2 arrangement: Actually, let me try 64 books in the 5kg bracket: 64 books × 75g = 4800g = 4.8kg (still 5kg rate \\$80). Mailing per book = \\$80/64 = \\$1.25. Total = 1.80 + 1.25 + 3.00 = \\$6.05 → \\$6.10 (nearest 10 cents). Actually, let's try different configurations more carefully. For 10 kg bracket (\\$135): Maximum 133 books by weight, but only 66 by dimension. Still \\$135/66 = \\$2.045 per book. Total = 1.80 + 2.045 + 3.00 = \\$6.85. This is worse. Best is 5kg with 66 books: \\$1.80 + \\$80/66 + \\$3.00 = \\$6.0121 ≈ \\$6.00 or \\$6.10.",
-                  "reasoning": "Need to verify we achieve exactly \\$3 profit"
-                }
-              ]
-            }
+                    "finalAnswer": "$5.60",
+                    "stepByStep": [
+                      {
+                        "step": 1,
+                        "explanation": "Determine the most cost-effective shipping strategy.",
+                        "working": "To get the lowest price, the writer must minimize shipping cost per book. This is achieved by sending the maximum weight allowed in the largest bracket (20 kg) via Economy.",
+                        "reasoning": "Bulk shipping reduces the cost per unit."
+                      },
+                      {
+                        "step": 2,
+                        "explanation": "Calculate the maximum number of books per 20kg parcel.",
+                        "working": "$$ \\text{Max Weight} = 20\\text{ kg} = 20,000\\text{ g} $$\n$$ \\text{Weight per book} = 75\\text{ g} $$\n$$ \\text{Number of books} = \\frac{20,000}{75} = 266.66... $$\nMax books = 266.",
+                        "reasoning": "We cannot send a fraction of a book, so we round down to 266."
+                      },
+                      {
+                        "step": 3,
+                        "explanation": "Calculate the shipping cost per book.",
+                        "working": "Total Shipping for 20kg (Zone C) = \\$202.00 \n\n Shipping per book = $\\frac{202}{266}$ $\\approx$ \\$0.75939...",
+                        "reasoning": "Distribute the total shipping cost across the 266 books."
+                      },
+                      {
+                        "step": 4,
+                        "explanation": "Calculate the total selling price per book.",
+                        "working": "$$ \\text{Price} = \\text{Manufacturing} + \\text{Profit} + \\text{Shipping} $$\n$$ \\text{Price} = 1.80 + 3.00 + 0.75939... $$\n$$ \\text{Price} = 5.55939... $$",
+                        "reasoning": "Sum all component costs and desired profit."
+                      },
+                      {
+                        "step": 5,
+                        "explanation": "Round to the nearest ten cents.",
+                        "working": "\\$5.559... rounded to nearest ten cents is **\\$5.60**.",
+                        "reasoning": "The digit in the hundredths place is 5, so we round the tenths digit up."
+                      }
+                    ]
+                  }
           }
         ],
         "totalMarks": 8,

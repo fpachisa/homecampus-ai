@@ -9,6 +9,7 @@
  */
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import { useActiveProfile } from '../../contexts/ActiveProfileContext';
 import { useGamificationStats } from '../../hooks/useGamificationStats';
@@ -28,6 +29,7 @@ export const ActiveStudentDashboard: React.FC = () => {
   const { activeProfile } = useActiveProfile();
   const { currentStreak } = useGamificationStats();
   const { goToPractice, goToHomeworkHelper } = useAppNavigation();
+  const navigate = useNavigate();
   const [learningMode, setLearningMode] = useState<LearningMode>('learn');
 
   // Get topics for student's grade
@@ -118,8 +120,21 @@ export const ActiveStudentDashboard: React.FC = () => {
 
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
-          {/* Streak Protection */}
-          {currentStreak > 0 && (
+          {/* First Card: O-Level Practice (Sec 4) OR Streak Protection (Others) */}
+          {gradeLevel === 'Secondary 4' ? (
+            <ActionCard
+              icon="🎓"
+              title="O-Level Practice"
+              description="Practice with real past-year questions"
+              buttonLabel="Start Practice"
+              buttonColor="#D97757"
+              onAction={() => navigate('/practice/olevel')}
+              metadata={{
+                time: '35 questions',
+                xp: 18,
+              }}
+            />
+          ) : currentStreak > 0 ? (
             <ActionCard
               icon="🔥"
               title={`Keep your ${currentStreak}-day streak alive!`}
@@ -132,7 +147,7 @@ export const ActiveStudentDashboard: React.FC = () => {
                 xp: 5,
               }}
             />
-          )}
+          ) : null}
 
           {/* Daily Goal */}
           <ActionCard

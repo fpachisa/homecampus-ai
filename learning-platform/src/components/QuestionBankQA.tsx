@@ -6,6 +6,7 @@
 import { useState, useEffect } from 'react';
 import MathText from './MathText';
 import { MathToolRenderer } from './practice/MathToolRenderer';
+import { TableRenderer } from './practice/TableRenderer';
 
 // ============================================
 // TYPE DEFINITIONS
@@ -357,6 +358,11 @@ export default function QuestionBankQA() {
                         </div>
                       )}
                     </div>
+                  )}
+
+                  {/* Table Data */}
+                  {currentQuestion.diagram.type === 'table' && currentQuestion.diagram.tableData && (
+                    <TableRenderer tableData={currentQuestion.diagram.tableData} />
                   )}
                 </div>
               )}

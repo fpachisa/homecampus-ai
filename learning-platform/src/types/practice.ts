@@ -34,6 +34,16 @@ export interface PreWrittenQuestion {
     parameters: Record<string, any>; // Tool-specific parameters
   };
 
+  // NEW: Table data for questions with tabular information
+  // Used for pricing tables, data tables, etc.
+  tableData?: {
+    title?: string;
+    zones?: Record<string, Record<string, any>>;
+    constraints?: Record<string, string>;
+    bookSpecs?: Record<string, string>;
+    [key: string]: any;
+  };
+
   // NEW: Pre-written answer and solution (optional)
   // If provided, these will be used instead of AI-solving the question
   finalAnswer?: string;           // The correct final answer (e.g., "222 m", "67.5°", "1250 m²")
@@ -219,6 +229,15 @@ export interface PathProblem {
 
   // NEW: For pre-written questions with pre-built diagrams
   diagramSvg?: string;             // Path to pre-built SVG diagram
+
+  // NEW: Table data for questions with tabular information
+  tableData?: {
+    title?: string;
+    zones?: Record<string, Record<string, any>>;
+    constraints?: Record<string, string>;
+    bookSpecs?: Record<string, string>;
+    [key: string]: any;
+  };
 
   // NEW: Group identifier for multi-part questions
   questionGroup?: string;          // Group identifier (e.g., "q26", "q27") for related multi-part questions

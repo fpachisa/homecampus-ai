@@ -15,6 +15,7 @@ import {
   pathProgressToFirestore
 } from '../../services/firestoreProgressService';
 import { MathToolRenderer } from './MathToolRenderer';
+import { TableRenderer } from './TableRenderer';
 import { BackButton } from '../BackButton';
 import Avatar from '../Avatar';
 import { useAuth } from '../../contexts/AuthContext';
@@ -995,6 +996,11 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                 />
               </div>
             </div>
+          )}
+
+          {/* Table Data (for questions with tabular information) */}
+          {currentProblem?.tableData && (
+            <TableRenderer tableData={currentProblem.tableData} />
           )}
 
           {/* Math Tool Visualization (for AI-generated questions) */}
