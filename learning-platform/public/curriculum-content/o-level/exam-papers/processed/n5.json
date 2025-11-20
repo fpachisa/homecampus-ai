@@ -146,6 +146,173 @@
         "title": "Perfect Square Factorisation"
       },
       {
+        "questionNumber": 11,
+        "questionId": "N5-acsi-2024-p1-q11",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Explain why $(5n+2)^{2}-(5n-2)^{2}$ is a multiple of 8 for all integer values of n.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Since $40n = 8(5n)$ and $n$ is an integer, the expression is a multiple of 8.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the algebraic structure. This is a difference of two squares: $a^2 - b^2 = (a-b)(a+b)$.",
+                  "working": "Let $a = 5n+2$ and $b = 5n-2$.\n$(5n+2)^{2}-(5n-2)^{2} = [(5n+2) - (5n-2)][(5n+2) + (5n-2)]",
+                  "reasoning": "Using the difference of squares identity is more efficient than expanding both brackets individually."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the terms inside the square brackets.",
+                  "working": "= [5n + 2 - 5n + 2][5n + 2 + 5n - 2]\n= [4][10n]\n= 40n",
+                  "reasoning": "Combine like terms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Show that the result is a multiple of 8.",
+                  "working": "40n = 8(5n)",
+                  "reasoning": "To prove it is a multiple of 8, we must factor out 8 from the expression."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Conclude the proof based on the integer nature of $n$.",
+                  "working": "Since $n$ is an integer, $5n$ is an integer. Therefore, $8(5n)$ is a multiple of 8.",
+                  "reasoning": "A formal proof requires stating that the remaining factor is an integer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Proof"
+      },
+      {
+        "questionNumber": 12,
+        "questionId": "N5-acsi-2024-p1-q12",
+        "topicID": "N5",
+        "stem": "Factorise the following completely.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$45b-18ab-2a^{2}+5a$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(5-2a)(9b+a)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Rearrange the terms to group them effectively. We look for common factors in pairs.",
+                  "working": "$45b - 18ab + 5a - 2a^2$",
+                  "reasoning": "Grouping terms with 'b' and terms with 'a' allows for partial factorization."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise each pair.",
+                  "working": "$9b(5 - 2a) + a(5 - 2a)$",
+                  "reasoning": "Extract $9b$ from the first two terms and $a$ from the last two terms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Extract the common binomial factor $(5-2a)$.",
+                  "working": "$(5-2a)(9b + a)$",
+                  "reasoning": "Complete the factorization."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$2p^{2}-\\frac{2}{3}p-\\frac{1}{6}$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{6}(6p+1)(2p-1)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract the fractional denominator to work with integers inside the bracket.",
+                  "working": "$\\frac{1}{6}(12p^2 - 4p - 1)$",
+                  "reasoning": "Factorising quadratics with integers is easier. Since the smallest fraction is 1/6, factor out 1/6."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the quadratic expression $12p^2 - 4p - 1$. We need numbers that multiply to -12 and add to -4.",
+                  "working": "Factors are -6 and +2.\n$12p^2 - 6p + 2p - 1$\n$= 6p(2p - 1) + 1(2p - 1)$",
+                  "reasoning": "Splitting the middle term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine the factors.",
+                  "working": "$\\frac{1}{6}(6p + 1)(2p - 1)$",
+                  "reasoning": "Don't forget to include the $\\frac{1}{6}$ extracted in step 1."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Factorisation"
+      },
+      {
+        "questionNumber": 13,
+        "questionId": "N5-acsi-2024-p1-q13",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Simplify $\\frac{x^{2}-9y^{2}}{3x^{2}+7xy-6y^{2}}$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x-3y}{3x-2y}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the numerator using the difference of squares.",
+                  "working": "$x^2 - (3y)^2 = (x-3y)(x+3y)$",
+                  "reasoning": "Recognize $9y^2$ as $(3y)^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the denominator $3x^2 + 7xy - 6y^2$.",
+                  "working": "Product needed: $3(-6) = -18$. Sum needed: 7.\nFactors are +9 and -2.\n$3x^2 + 9xy - 2xy - 6y^2$\n$= 3x(x+3y) - 2y(x+3y)$\n$= (3x-2y)(x+3y)$",
+                  "reasoning": "Factorisation by splitting the middle term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Rewrite the fraction and cancel common factors.",
+                  "working": "$\\frac{(x-3y)(x+3y)}{(3x-2y)(x+3y)}$\nCancel $(x+3y)$ from top and bottom.",
+                  "reasoning": "Simplify the algebraic fraction."
+                },
+                {
+                  "step": 4,
+                  "explanation": "State final simplified expression.",
+                  "working": "$\\frac{x-3y}{3x-2y}$",
+                  "reasoning": "Final answer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Algebraic Fractions"
+      },
+      {
         "questionNumber": 17,
         "questionId": "N5-anderson-2024-p1-q17",
         "topicID": "N5",
@@ -232,8 +399,872 @@
         "totalMarks": 5,
         "paper": "Paper 1",
         "title": "Algebraic Sequence"
+      },
+      {
+        "questionNumber": 17,
+        "questionId": "N5-broadrick-2024-p1-q17",
+        "topicID": "N5",
+        "stem": "Write as a single fraction in its simplest form",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "17",
+            "questionText": "$\\frac{2x}{3x-1} - \\frac{4}{2x+1}$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{4x^2-10x+4}{(3x-1)(2x+1)}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the common denominator, which is the product of the two denominators.",
+                  "working": "Common Denominator = $(3x-1)(2x+1)$",
+                  "reasoning": "To subtract fractions, they must have the same denominator."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Adjust the numerators by multiplying by the missing factors from the common denominator.",
+                  "working": "$\\frac{2x(2x+1) - 4(3x-1)}{(3x-1)(2x+1)}$",
+                  "reasoning": "Standard algebraic fraction subtraction rule: $\\frac{a}{b} - \\frac{c}{d} = \\frac{ad-bc}{bd}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand the numerator.",
+                  "working": "$2x(2x+1) = 4x^2 + 2x$\n$-4(3x-1) = -12x + 4$\nNumerator: $4x^2 + 2x - 12x + 4$",
+                  "reasoning": "Expand brackets to combine like terms."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the numerator by collecting like terms.",
+                  "working": "$4x^2 - 10x + 4$",
+                  "reasoning": "Combine $+2x$ and $-12x$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Algebraic Fractions"
+      },
+      {
+        "questionNumber": 18,
+        "questionId": "N5-broadrick-2024-p1-q18",
+        "topicID": "N5",
+        "stem": "",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "ai",
+            "questionText": "Factorise completely $24a^{2}b+12ab^{2}-ab$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$ab(24a+12b-1)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the highest common factor (HCF) for all three terms.",
+                  "working": "HCF of $24a^2b$, $12ab^2$, and $-ab$ is $ab$.",
+                  "reasoning": "Factorization starts by extracting common terms."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide each term by the HCF.",
+                  "working": "$ab(\\frac{24a^2b}{ab} + \\frac{12ab^2}{ab} - \\frac{ab}{ab}) = ab(24a + 12b - 1)$",
+                  "reasoning": "Ensure the last term becomes -1, not 0."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "aii",
+            "questionText": "Factorise completely $mn-18-9m+2n$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(m+2)(n-9)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Rearrange terms to group them for factorization.",
+                  "working": "$mn - 9m + 2n - 18$",
+                  "reasoning": "Group terms that share common factors (m with m, n with constant)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise each pair separately.",
+                  "working": "$m(n-9) + 2(n-9)$",
+                  "reasoning": "Extract $m$ from the first pair and $2$ from the second pair."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Extract the common bracket $(n-9)$.",
+                  "working": "$(n-9)(m+2)$",
+                  "reasoning": "The binomial $(n-9)$ is the common factor."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Expand and simplify $(-2x+3q)(x-2q)$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$-2x^2 + 7qx - 6q^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the brackets using the FOIL method (First, Outer, Inner, Last).",
+                  "working": "$(-2x)(x) + (-2x)(-2q) + (3q)(x) + (3q)(-2q)$",
+                  "reasoning": "Multiply every term in the first bracket by every term in the second."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the multiplications.",
+                  "working": "$-2x^2 + 4xq + 3qx - 6q^2$",
+                  "reasoning": "Watch the signs: negative times negative is positive."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify by collecting like terms.",
+                  "working": "$-2x^2 + (4xq + 3qx) - 6q^2 = -2x^2 + 7qx - 6q^2$",
+                  "reasoning": "$4xq$ and $3qx$ are like terms."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Algebraic Manipulation"
+      },
+      {
+        "questionNumber": 20,
+        "questionId": "N5-broadrick-2024-p1-q20",
+        "topicID": "N5",
+        "stem": "",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "20",
+            "questionText": "Simplify $\\frac{2x^{2}-5xy-12y^{2}}{x^{2}-16y^{2}}$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{2x+3y}{x+4y}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the numerator $2x^2 - 5xy - 12y^2$.",
+                  "working": "Find factors of $2 \\times -12 = -24$ that sum to $-5$. Factors are $-8$ and $3$.\n$2x^2 - 8xy + 3xy - 12y^2$\n$= 2x(x-4y) + 3y(x-4y)$\n$= (2x+3y)(x-4y)$",
+                  "reasoning": "Use the AC method or cross-multiplication for quadratic factorization."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the denominator $x^2 - 16y^2$.",
+                  "working": "$(x)^2 - (4y)^2 = (x-4y)(x+4y)$",
+                  "reasoning": "Use the difference of two squares identity: $a^2 - b^2 = (a-b)(a+b)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Rewrite the fraction and cancel common factors.",
+                  "working": "$\\frac{(2x+3y)(x-4y)}{(x-4y)(x+4y)}$\nCancel $(x-4y)$ from top and bottom.",
+                  "reasoning": "Factors common to numerator and denominator can be divided out."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Algebraic Simplification"
+      },
+      {
+        "questionNumber": 24,
+        "questionId": "N5-broadrick-2024-p1-q24",
+        "topicID": "N5",
+        "stem": "The sum of the first n terms of a linear sequence is $5n^2 - n$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that the sum of the first n terms in the sequence is always even.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Proof provided in steps.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the expression for the sum.",
+                  "working": "$S_n = 5n^2 - n = n(5n - 1)$",
+                  "reasoning": "Factorization helps analyze the properties of the factors."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the parity (odd/even nature) of $n$ and $(5n-1)$.",
+                  "working": "Case 1: If $n$ is even, then $n(5n-1)$ is even (Even $\\times$ Any = Even).\nCase 2: If $n$ is odd, then $5n$ is odd, so $5n-1$ is even. Thus $n(5n-1)$ is Odd $\\times$ Even = Even.",
+                  "reasoning": "Since the product always contains at least one even factor regardless of whether $n$ is odd or even, the result is always even."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "By finding the first three terms in the sequence or otherwise, find, in terms of n, an expression for the nth term of the sequence.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$10n - 6$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of the first 1, 2, and 3 terms ($S_1, S_2, S_3$).",
+                  "working": "$S_1 = 5(1)^2 - 1 = 4$\n$S_2 = 5(2)^2 - 2 = 18$\n$S_3 = 5(3)^2 - 3 = 42$",
+                  "reasoning": "Substitute $n=1, 2, 3$ into the sum formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the individual terms ($T_n$) using $T_n = S_n - S_{n-1}$.",
+                  "working": "$T_1 = S_1 = 4$\n$T_2 = S_2 - S_1 = 18 - 4 = 14$\n$T_3 = S_3 - S_2 = 42 - 18 = 24$",
+                  "reasoning": "The sequence is 4, 14, 24..."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the general term for the arithmetic progression.",
+                  "working": "First term $a = 4$, Common difference $d = 10$.\n$T_n = a + (n-1)d$\n$T_n = 4 + (n-1)10$\n$T_n = 4 + 10n - 10$",
+                  "reasoning": "Simplify the arithmetic progression formula."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Sequences"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-1911-p1-101",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Show that $(3n+4)^{2}-(3n-4)^{2}$ is a multiple of 24 for all integer values of n.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Since $48n = 24(2n)$ and $n$ is an integer, the expression is a multiple of 24.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the difference of two squares identity $a^2 - b^2 = (a-b)(a+b)$.",
+                  "working": "Let $a = 3n+4$ and $b = 3n-4$.\n$(3n+4)^{2}-(3n-4)^{2} = [(3n+4) - (3n-4)][(3n+4) + (3n-4)]",
+                  "reasoning": "Standard algebraic proof technique."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the brackets.",
+                  "working": "= [3n + 4 - 3n + 4][3n + 4 + 3n - 4]\n= [8][6n]\n= 48n",
+                  "reasoning": "Arithmetic simplification."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Factor out 24 to prove divisibility.",
+                  "working": "48n = 24(2n)",
+                  "reasoning": "To show it is a multiple of 24, 24 must be a factor."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Conclude based on integer properties.",
+                  "working": "Since $n$ is an integer, $2n$ is an integer. Thus $24(2n)$ is a multiple of 24.",
+                  "reasoning": "Final proof statement."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Proof"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2011-p1-101",
+        "topicID": "N5",
+        "stem": "Rearrange the formula to make $x$ the subject.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "101",
+            "questionText": "Given that $y = \\sqrt{\\frac{x+a}{2x-b}}$, express $x$ in terms of $y$, $a$, and $b$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x = \\frac{by^2+a}{2y^2-1}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Square both sides to remove the square root.",
+                  "working": "$y^2 = \\frac{x+a}{2x-b}$",
+                  "reasoning": "Inverse operation of square root is squaring."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply by the denominator to remove the fraction.",
+                  "working": "$y^2(2x-b) = x+a$\n$2xy^2 - by^2 = x + a$",
+                  "reasoning": "Expand the brackets to isolate terms with $x$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Group all terms containing $x$ on one side and other terms on the other.",
+                  "working": "$2xy^2 - x = a + by^2$",
+                  "reasoning": "Move $x$ to LHS and $-by^2$ to RHS."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factorise $x$ and divide.",
+                  "working": "$x(2y^2 - 1) = a + by^2$\n$x = \\frac{a + by^2}{2y^2 - 1}$",
+                  "reasoning": "Isolate $x$ as the subject."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Changing Subject of Formula"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N5-gemini-1911-p1-102",
+        "topicID": "N5",
+        "stem": "Factorise the following completely.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$3xy - 6x + 2z - yz$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(3x-z)(y-2)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Group terms to find common factors.",
+                  "working": "Group $(3xy - 6x)$ and $(2z - yz)$.",
+                  "reasoning": "Look for variables common to pairs of terms."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise each group.",
+                  "working": "$3x(y - 2) + z(2 - y)$",
+                  "reasoning": "Note that $(2-y)$ is the negative of $(y-2)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Adjust signs to make the binomial factor identical.",
+                  "working": "$3x(y - 2) - z(y - 2)$",
+                  "reasoning": "Change $+z(2-y)$ to $-z(y-2)$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Extract the common binomial.",
+                  "working": "$(3x - z)(y - 2)$",
+                  "reasoning": "Final factorization."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$\\frac{1}{2}x^{2} + \\frac{5}{4}x - 3$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{4}(2x-3)(x+4)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factor out the smallest fraction denominator (1/4) to clear fractions.",
+                  "working": "$\\frac{1}{4}(2x^2 + 5x - 12)$",
+                  "reasoning": "Checking: $\\frac{1}{4} \\times 2 = \\frac{1}{2}$, $\\frac{1}{4} \\times 5 = \\frac{5}{4}$, $\\frac{1}{4} \\times -12 = -3$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the quadratic $2x^2 + 5x - 12$.",
+                  "working": "Product: -24, Sum: 5. Factors: +8, -3.\n$2x^2 + 8x - 3x - 12$\n$= 2x(x+4) - 3(x+4)$",
+                  "reasoning": "Splitting the middle term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine factors.",
+                  "working": "$\\frac{1}{4}(2x-3)(x+4)$",
+                  "reasoning": "Combine the quadratic factors with the extracted fraction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Factorisation"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N5-gemini-2011-p1-102",
+        "topicID": "N5",
+        "stem": "Simplify the following expression.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "102",
+            "questionText": "Express $\\frac{3}{x^2-4} - \\frac{2}{x(x-2)}$ as a single fraction in its simplest form.",
+            "marks": 4,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x-4}{x(x-2)(x+2)}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the denominators completely.",
+                  "working": "$x^2-4 = (x-2)(x+2)$\nSecond denominator is $x(x-2)$.",
+                  "reasoning": "Identify factors to find the Lowest Common Multiple (LCM)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the common denominator.",
+                  "working": "LCM is $x(x-2)(x+2)$.",
+                  "reasoning": "The denominator must contain all unique factors from both fractions."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Adjust numerators and combine.",
+                  "working": "$\\frac{3(x)}{x(x-2)(x+2)} - \\frac{2(x+2)}{x(x-2)(x+2)}$\n$= \\frac{3x - 2(x+2)}{x(x-2)(x+2)}$",
+                  "reasoning": "Multiply top and bottom by missing factors."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Expand and simplify the numerator.",
+                  "working": "$3x - 2x - 4 = x - 4$",
+                  "reasoning": "Combine like terms."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Algebraic Fractions"
       }
     ],
-    "Paper 2": []
+    "Paper 2": [
+      {
+        "questionNumber": 4,
+        "questionId": "N5-acsi-2024-p2-q4",
+        "topicID": "N5",
+        "stem": "Here are the first four terms of a sequence: $2, \\frac{5}{3}, \\frac{10}{5}, \\frac{17}{7}$.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the fifth term of the sequence.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{26}{9}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the pattern of the sequence by writing the first term as a fraction.",
+                  "working": "Sequence: $\\frac{2}{1}, \\frac{5}{3}, \\frac{10}{5}, \\frac{17}{7}$",
+                  "reasoning": "Writing 2 as 2/1 helps see the pattern in numerators and denominators separately."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the pattern in the numerators (2, 5, 10, 17).",
+                  "working": "$1^2+1=2, 2^2+1=5, 3^2+1=10, 4^2+1=17$. Pattern is $n^2+1$.",
+                  "reasoning": "Recognizing square numbers plus one."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify the pattern in the denominators (1, 3, 5, 7).",
+                  "working": "These are consecutive odd numbers starting from 1. Pattern is $2n-1$.",
+                  "reasoning": "Linear sequence with difference of 2."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the 5th term ($n=5$).",
+                  "working": "Numerator: $5^2+1 = 26$. Denominator: $2(5)-1 = 9$. Term: $\\frac{26}{9}$",
+                  "reasoning": "Substitute n=5 into the patterns."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$T_{n}$ is the nth term of the sequence. Find an expression, in terms of n, for $T_{n}$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T_n = \\frac{n^2+1}{2n-1}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Combine the patterns found in part (a).",
+                  "working": "Numerator pattern: $n^2+1$\nDenominator pattern: $2n-1$",
+                  "reasoning": "Construct the general formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Write the final fraction.",
+                  "working": "$T_n = \\frac{n^2+1}{2n-1}$",
+                  "reasoning": "Ensure the expression is in terms of n."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the value of $T_{25}-T_{24}$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1149}{2303}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $T_{25}$ and $T_{24}$.",
+                  "working": "$T_{25} = \\frac{25^2+1}{2(25)-1} = \\frac{626}{49}$\n$T_{24} = \\frac{24^2+1}{2(24)-1} = \\frac{577}{47}$",
+                  "reasoning": "Substitute n=25 and n=24 into the formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the two terms.",
+                  "working": "$\\frac{626}{49} - \\frac{577}{47} = \\frac{626(47) - 577(49)}{49(47)}$",
+                  "reasoning": "Find a common denominator (49 * 47 = 2303)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute the final value.",
+                  "working": "$\\frac{29422 - 28273}{2303} = \\frac{1149}{2303}$",
+                  "reasoning": "Perform the arithmetic."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Number Patterns"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "N5-broadrick-2024-p2-q4",
+        "topicID": "N5",
+        "stem": "The table below shows the number of vertices (n) and number of diagonals (X) in a polygon.\n| Number of Vertices (n) | 3 | 4 | 5 | 6 | 8 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| Number of diagonals (X) | 0 | 2 | 5 | 9 | a |",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the value of a.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "20",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern of differences or use the polygon diagonal formula.",
+                  "working": "Differences in X: 2-0=2, 5-2=3, 9-5=4. Next difference should be 5 (for n=7) and 6 (for n=8).\n$n=6, X=9$\n$n=7, X=9+5=14$\n$n=8, X=14+6=20$",
+                  "reasoning": "The second difference is constant (1), implying a quadratic sequence."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "bi",
+            "questionText": "The number of diagonals is related to the number of vertices by the equation $X=pn^{2}+qn$ where p and q are constants. Using appropriate substitution, show that $16p+4q=2$ and $25p+5q=5$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Proof by substitution.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute values for $n=4$ and $X=2$ from the table into the equation.",
+                  "working": "$2 = p(4)^2 + q(4)$\n$2 = 16p + 4q$\n$16p + 4q = 2$ (Shown)",
+                  "reasoning": "Using a known data point to form an equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute values for $n=5$ and $X=5$ from the table.",
+                  "working": "$5 = p(5)^2 + q(5)$\n$5 = 25p + 5q$\n$25p + 5q = 5$ (Shown)",
+                  "reasoning": "Using a second data point to form the second equation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "bii",
+            "questionText": "Solve these simultaneous equations to find the values of p and of q.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$p = 0.5, q = -1.5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Simplify the equations.",
+                  "working": "(1) $16p + 4q = 2 \\implies 8p + 2q = 1$\n(2) $25p + 5q = 5 \\implies 5p + q = 1$",
+                  "reasoning": "Dividing by common factors makes arithmetic easier."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Express $q$ in terms of $p$ from equation (2).",
+                  "working": "$q = 1 - 5p$",
+                  "reasoning": "Substitution method."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute into equation (1) and solve for $p$.",
+                  "working": "$8p + 2(1 - 5p) = 1$\n$8p + 2 - 10p = 1$\n$-2p = -1$\n$p = 0.5$",
+                  "reasoning": "Linear equation solving."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find $q$.",
+                  "working": "$q = 1 - 5(0.5) = 1 - 2.5 = -1.5$",
+                  "reasoning": "Back-substitution."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "biii",
+            "questionText": "Explain whether it is possible to have a n-sided polygon with 495 diagonals. Show your working clearly.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "Yes, it is possible (n=33).",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation with $X=495$ using the found values of $p$ and $q$.",
+                  "working": "$0.5n^2 - 1.5n = 495$",
+                  "reasoning": "We need to check if this equation yields a valid integer $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rearrange into standard quadratic form.",
+                  "working": "Multiply by 2: $n^2 - 3n = 990$\n$n^2 - 3n - 990 = 0$",
+                  "reasoning": "Prepare for factorization or quadratic formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $n$.",
+                  "working": "Using quadratic formula: $n = \\frac{-(-3) \\pm \\sqrt{(-3)^2 - 4(1)(-990)}}{2}$\n$n = \\frac{3 \\pm \\sqrt{9 + 3960}}{2} = \\frac{3 \\pm \\sqrt{3969}}{2}$\n$\\sqrt{3969} = 63$\n$n = \\frac{3+63}{2} = 33$ (ignore negative result)",
+                  "reasoning": "Since $n=33$ is a positive integer, such a polygon exists."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Number Patterns"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-1911-p2-101",
+        "topicID": "N5",
+        "stem": "Consider the sequence: $0, \\frac{3}{4}, \\frac{8}{6}, \\frac{15}{8}$.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the next term in the sequence.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{24}{10}$ or $2.4$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Rewrite the first term as a fraction to match the others.",
+                  "working": "Sequence: $\\frac{0}{2}, \\frac{3}{4}, \\frac{8}{6}, \\frac{15}{8}$",
+                  "reasoning": "0 can be written as 0/2 to fit the denominator pattern (2, 4, 6...)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the numerator pattern (0, 3, 8, 15).",
+                  "working": "$1^2-1=0, 2^2-1=3, 3^2-1=8$. Pattern is $n^2-1$. Next is $5^2-1=24$.",
+                  "reasoning": "Square numbers minus one."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify the denominator pattern (2, 4, 6, 8).",
+                  "working": "Even numbers: $2n$. Next is 10.",
+                  "reasoning": "Linear sequence."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Form the 5th term.",
+                  "working": "$\\frac{24}{10}$",
+                  "reasoning": "Combine numerator and denominator."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression for the nth term, $T_n$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T_n = \\frac{n^2-1}{2n}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the patterns identified in part (a).",
+                  "working": "Numerator: $n^2-1$. Denominator: $2n$.",
+                  "reasoning": "Generalize for n."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Write the formula.",
+                  "working": "$T_n = \\frac{n^2-1}{2n}$",
+                  "reasoning": "Final expression."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Evaluate $T_{10}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$4.95$ or $\\frac{99}{20}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute n=10 into the formula.",
+                  "working": "$T_{10} = \\frac{10^2-1}{2(10)}$",
+                  "reasoning": "Direct substitution."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value.",
+                  "working": "$\\frac{100-1}{20} = \\frac{99}{20} = 4.95$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Number Patterns"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2011-p2-101",
+        "topicID": "N5",
+        "stem": "The first four terms of a sequence are 2, 5, 10, 17.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the 6th term of the sequence.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "37",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern.",
+                  "working": "Terms: 2, 5, 10, 17...\nDifferences: +3, +5, +7...\nNext differences: +9, +11.",
+                  "reasoning": "The differences are increasing odd numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the 5th and 6th terms.",
+                  "working": "$T_5 = 17 + 9 = 26$\n$T_6 = 26 + 11 = 37$",
+                  "reasoning": "Add the next difference to the previous term."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in terms of n, for the nth term of the sequence.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$n^2 + 1$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the sequence to square numbers.",
+                  "working": "Square numbers ($n^2$): 1, 4, 9, 16...\nSequence: 2, 5, 10, 17...",
+                  "reasoning": "Quadratic sequences often relate to $n^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the offset.",
+                  "working": "Each term is exactly 1 greater than $n^2$.\n$T_n = n^2 + 1$",
+                  "reasoning": "Adjust the standard square sequence."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "One term in the sequence has a value of 145. Find the value of n for this term.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set the nth term expression equal to 145.",
+                  "working": "$n^2 + 1 = 145$",
+                  "reasoning": "Solve for $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve the equation.",
+                  "working": "$n^2 = 144$\n$n = \\sqrt{144} = 12$",
+                  "reasoning": "Take the positive square root as position $n$ must be positive."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Quadratic Sequences"
+      }
+    ]
   }
 }

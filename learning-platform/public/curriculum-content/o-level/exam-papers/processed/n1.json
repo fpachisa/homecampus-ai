@@ -3,6 +3,54 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 1,
+        "questionId": "N1-broadrick-2024-p1-q1",
+        "topicID": "N1",
+        "stem": "Evaluate",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "1",
+            "questionText": "$(-3.85)^2 - 10 - 0.9 \\times (-6) \\div 3.11 - 43$, giving your answer to 4 significant figures.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "-36.44",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the square of -3.85.",
+                  "working": "$(-3.85)^2 = 14.8225$",
+                  "reasoning": "A negative number squared becomes positive."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the multiplication and division part of the expression (BODMAS/BIDMAS).",
+                  "working": "$0.9 \\times (-6) = -5.4$\n$-5.4 \\div 3.11 \\approx -1.736334...$",
+                  "reasoning": "Multiplication and division are performed from left to right."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute these values back into the expression and evaluate.",
+                  "working": "$14.8225 - 10 - (-1.736334...) - 43$\n$= 14.8225 - 10 + 1.736334... - 43$\n$= -36.44116...$",
+                  "reasoning": "Subtracting a negative number is equivalent to adding."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round the final result to 4 significant figures.",
+                  "working": "$-36.44116... \\approx -36.44$",
+                  "reasoning": "The 5th significant figure is 1, so we round down (keep the 4)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 1,
+        "paper": "Paper 1",
+        "title": "Order of Operations"
+      },
+      {
         "questionNumber": 2,
         "questionId": "N1-anderson-2024-p1-q2",
         "topicID": "N1",
@@ -49,6 +97,54 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Exponential Equation"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "N1-broadrick-2024-p1-q3",
+        "topicID": "N1",
+        "stem": "Given that $\\frac{5^{x}}{2^{2x}\\times5^{3-x}}=2^{m}5^{n}$, express m and n in terms of x.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "3",
+            "questionText": "Find the values of m and n.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "m = -2x, n = 2x - 3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Group the terms with base 5 on the left-hand side using index laws.",
+                  "working": "$\\frac{5^x}{5^{3-x}} = 5^{x - (3-x)} = 5^{x - 3 + x} = 5^{2x - 3}$",
+                  "reasoning": "$\n\\frac{a^m}{a^n} = a^{m-n}$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Move the base 2 term from the denominator to the numerator using negative indices.",
+                  "working": "$\\frac{1}{2^{2x}} = 2^{-2x}$",
+                  "reasoning": "$\\frac{1}{a^n} = a^{-n}$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine the simplified terms and compare with the right-hand side.",
+                  "working": "$2^{-2x} \\times 5^{2x-3} = 2^m \\times 5^n$",
+                  "reasoning": "By comparing powers of the same bases, we can equate the exponents."
+                },
+                {
+                  "step": 4,
+                  "explanation": "State the values of m and n.",
+                  "working": "$m = -2x$\n$n = 2x - 3$",
+                  "reasoning": "Equating the exponents of base 2 and base 5 respectively."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices"
       },
       {
         "questionNumber": 4,
@@ -114,6 +210,54 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "LCM Prime Factors"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "N1-broadrick-2024-p1-q4",
+        "topicID": "N1",
+        "stem": "The highest common factor of two numbers is 18.\nThe lowest common multiple of the two numbers is 324.\nBoth numbers are greater than 20.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "4",
+            "questionText": "Find the two numbers.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "36 and 162",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express HCF and LCM as products of prime factors.",
+                  "working": "$18 = 2 \\times 3^2$\n$324 = 2^2 \\times 3^4$",
+                  "reasoning": "Prime factorization helps visualize the distribution of factors between the two numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the necessary factors for the two numbers (Let them be A and B).",
+                  "working": "Both A and B must contain the HCF ($2 \\times 3^2$).\nThe union of their factors must be the LCM ($2^2 \\times 3^4$).\nProduct of numbers = HCF $\\times$ LCM = $18 \\times 324 = 5832$.",
+                  "reasoning": "The HCF is the intersection of prime factors; LCM is the union."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Test factor pairs of the product (5832) that are multiples of 18.",
+                  "working": "Possible pairs $(x, y)$ such that $HCF(x,y)=18$ and $LCM(x,y)=324$:\n1. $18$ and $324$. (Reject: 18 is not greater than 20).\n2. Consider factors of $\\frac{324}{18} = 18$. Factors of 18 are 1, 2, 9, 18.\n   Multiply base HCF (18) by these factors distributed: $18\\times2 = 36$ and $18\\times9 = 162$.",
+                  "reasoning": "We distribute the 'remaining' factors from the LCM ($2^1$ and $3^2$) between the two numbers."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Verify the pair 36 and 162.",
+                  "working": "$36 = 2^2 \\times 3^2$\n$162 = 2 \\times 3^4$\nHCF = $2 \\times 3^2 = 18$ (Correct)\nLCM = $2^2 \\times 3^4 = 324$ (Correct)\nBoth > 20 (Correct)",
+                  "reasoning": "Verification ensures all constraints in the question are met."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "HCF and LCM"
       },
       {
         "questionNumber": 6,
@@ -199,6 +343,309 @@
         "title": "Simplify Indices"
       },
       {
+        "questionNumber": 6,
+        "questionId": "N1-broadrick-2024-p1-q6",
+        "topicID": "N1",
+        "stem": "A wooden block has a mass of 115 grams, correct to the nearest gram.\nThe volume of the block is 6 $cm^{3},$ correct to the nearest $cm^{3}.$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "6",
+            "questionText": "Find the largest possible density of the block in $g/cm^{3}$. ($Density=\\frac{Mass}{Volume}$)",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "21",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the upper bound for the Mass.",
+                  "working": "Mass is 115g (nearest g).\nUpper Bound Mass = $115 + 0.5 = 115.5$ g",
+                  "reasoning": "To maximize a fraction (Density), we need the largest possible numerator (Mass)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the lower bound for the Volume.",
+                  "working": "Volume is 6 $cm^3$ (nearest $cm^3$).\nLower Bound Volume = $6 - 0.5 = 5.5$ $cm^3$",
+                  "reasoning": "To maximize a fraction, we need the smallest possible denominator (Volume)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the maximum density.",
+                  "working": "Max Density = $\\frac{\\text{Max Mass}}{\\text{Min Volume}}$\n$= \\frac{115.5}{5.5} = 21$",
+                  "reasoning": "Perform the division."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Limits of Accuracy"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "N1-acsi-2024-p1-q7",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Simplify $(\\frac{1}{2}x^{2})^{3}\\div(4\\sqrt[3]{x^{5}})$ giving your answer in the form of $ax^n$, where a and n are rational numbers.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{32}x^{\\frac{13}{3}}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the term $(\\frac{1}{2}x^{2})^{3}$ using the laws of indices $(ab)^n = a^n b^n$ and $(x^m)^n = x^{mn}$.",
+                  "working": "$(\\frac{1}{2})^{3}(x^{2})^{3} = \\frac{1}{8}x^{6}$",
+                  "reasoning": "Cube both the coefficient and the variable term."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert the radical term $4\\sqrt[3]{x^{5}}$ to index form.",
+                  "working": "$4x^{\\frac{5}{3}}$",
+                  "reasoning": "Using the rule $\\sqrt[n]{x^m} = x^{\\frac{m}{n}}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Perform the division by dividing coefficients and subtracting indices for the variable.",
+                  "working": "$\\frac{\\frac{1}{8}x^{6}}{4x^{\\frac{5}{3}}} = (\\frac{1}{8} \\div 4) x^{6 - \\frac{5}{3}}$",
+                  "reasoning": "$\\frac{x^a}{x^b} = x^{a-b}$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the fraction and the exponent.",
+                  "working": "Coefficient: $\\frac{1}{8} \\times \\frac{1}{4} = \\frac{1}{32}$. Exponent: $6 - \\frac{5}{3} = \\frac{18}{3} - \\frac{5}{3} = \\frac{13}{3}$.",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices Simplification"
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "N1-acsi-2024-p1-q8",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express 13 824 as a product of its prime factors.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2^9 \\times 3^3$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform prime factorisation on 13824 by repeatedly dividing by prime numbers.",
+                  "working": "$13824 \\div 2 = 6912$\n$6912 \\div 2 = 3456$\n$3456 \\div 2 = 1728$\n$1728 \\div 2 = 864$\n$864 \\div 2 = 432$\n$432 \\div 2 = 216$\n$216 \\div 2 = 108$\n$108 \\div 2 = 54$\n$54 \\div 2 = 27$\n$27 = 3^3$",
+                  "reasoning": "Count the number of 2s and 3s."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Write in index notation.",
+                  "working": "There are nine 2s and three 3s. $13824 = 2^9 \\times 3^3$.",
+                  "reasoning": ""
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why 13 824 is a perfect cube.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "See explanation",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Examine the indices of the prime factors.",
+                  "working": "Indices are 9 and 3.",
+                  "reasoning": "For a number to be a perfect cube, the indices of all its prime factors must be multiples of 3."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Conclude based on the property.",
+                  "working": "Since 9 and 3 are both divisible by 3, $13824 = (2^3 \\times 3^1)^3$. Therefore, it is a perfect cube.",
+                  "reasoning": ""
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Given that a is a prime number, find the value of a such that $\\frac{1}{8a}\\times13824$ is a perfect square.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute the prime factorization of 13824 into the expression.",
+                  "working": "$\\frac{1}{8a} \\times 13824 = \\frac{2^9 \\times 3^3}{2^3 \\times a}$",
+                  "reasoning": "Note that $8 = 2^3$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the expression using laws of indices.",
+                  "working": "$2^{9-3} \\times \\frac{3^3}{a} = \\frac{2^6 \\times 3^3}{a}$",
+                  "reasoning": ""
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine 'a' to make the result a perfect square.",
+                  "working": "For a perfect square, all indices must be even. $2^6$ has an even index. $3^3$ has an odd index. Dividing by $a=3$ reduces the term to $3^{3-1} = 3^2$, which is even.",
+                  "reasoning": "Since 'a' must be a prime number, $a=3$ is the unique solution."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Prime Factors and Cubes"
+      },
+      {
+        "questionNumber": 11,
+        "questionId": "N1-broadrick-2024-p1-q11",
+        "topicID": "N1",
+        "stem": "The number $2^{p}\\times5^{q}\\times\\frac{5}{2}$ is a perfect cube where p and q are greater than 1.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "11",
+            "questionText": "Find the smallest possible integer values of p and of q.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "p = 4, q = 2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Simplify the expression by combining the indices.",
+                  "working": "$2^p \\times 5^q \\times 5^1 \\times 2^{-1}$\n$= 2^{p-1} \\times 5^{q+1}$",
+                  "reasoning": "Group bases 2 and 5 together."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the condition for a perfect cube.",
+                  "working": "For a perfect cube, all indices must be multiples of 3.\nTherefore, $p-1$ must be a multiple of 3, and $q+1$ must be a multiple of 3.",
+                  "reasoning": "In a perfect cube $k^3$, prime factors appear with exponents 3, 6, 9, etc."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the smallest integer $p > 1$.",
+                  "working": "Multiples of 3: 0, 3, 6...\n$p-1 = 3 \\Rightarrow p = 4$. (Checks out: $4 > 1$).",
+                  "reasoning": "We solve for p using the smallest non-zero multiple of 3 that satisfies the condition."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find the smallest integer $q > 1$.",
+                  "working": "Multiples of 3: 3, 6...\n$q+1 = 3 \\Rightarrow q = 2$. (Checks out: $2 > 1$).",
+                  "reasoning": "We solve for q using the smallest multiple of 3 that satisfies the condition."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Prime Factorisation"
+      },
+      {
+        "questionNumber": 12,
+        "questionId": "N1-broadrick-2024-p1-q12",
+        "topicID": "N1",
+        "stem": "",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $(16y^{3})^{\\frac{3}{2}}$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$64y^{4.5} \\text{ or } 64y^{\\frac{9}{2}}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the power to both the coefficient and the variable.",
+                  "working": "$16^{\\frac{3}{2}} \\times (y^3)^{\\frac{3}{2}}$",
+                  "reasoning": "$(ab)^n = a^n b^n$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the numerical part.",
+                  "working": "$16^{\\frac{3}{2}} = (\\sqrt{16})^3 = 4^3 = 64$",
+                  "reasoning": "$x^{\\frac{m}{n}} = (\\sqrt[n]{x})^m$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Evaluate the variable part.",
+                  "working": "$(y^3)^{\\frac{3}{2}} = y^{3 \\times \\frac{3}{2}} = y^{\\frac{9}{2}}$",
+                  "reasoning": "$(x^a)^b = x^{ab}$"
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given $5^{k}=125\\sqrt[3]{5\\sqrt{5}}$, use laws of indices to find the value of k. Show your working.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "k = 3.5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all terms with base 5.",
+                  "working": "$125 = 5^3$\n$\\sqrt{5} = 5^{\\frac{1}{2}}$",
+                  "reasoning": "To solve for the exponent, bases must be consistent."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the inner square root term.",
+                  "working": "$5\\sqrt{5} = 5^1 \\times 5^{0.5} = 5^{1.5}$",
+                  "reasoning": "Multiplication of same bases adds exponents."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the cube root to the simplified inner term.",
+                  "working": "$\\sqrt[3]{5^{1.5}} = (5^{1.5})^{\\frac{1}{3}} = 5^{1.5 \\div 3} = 5^{0.5}$",
+                  "reasoning": "$\\sqrt[n]{x} = x^{\\frac{1}{n}}$"
+                },
+                {
+                  "step": 4,
+                  "explanation": "Combine all parts to find k.",
+                  "working": "$5^k = 5^3 \\times 5^{0.5} = 5^{3.5}$\n$k = 3.5$",
+                  "reasoning": "Equate exponents."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Indices"
+      },
+      {
         "questionNumber": 19,
         "questionId": "N1-anderson-2024-p1-q19",
         "topicID": "N1",
@@ -239,8 +686,787 @@
         "totalMarks": 1,
         "paper": "Paper 1",
         "title": "Total Waste Standard Form"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-1911-p1-101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Simplify $(\\frac{1}{3}y^{3})^{2} \\div (3\\sqrt{y^{5}})$ giving your answer in the form $ay^n$, where a and n are rational numbers.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{27}y^{\\frac{7}{2}}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the first term.",
+                  "working": "$(\\frac{1}{3}y^3)^2 = \\frac{1}{9}y^6$",
+                  "reasoning": "Square the coefficient and multiply the exponent by 2."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert the radical to index form.",
+                  "working": "$3\\sqrt{y^5} = 3y^{\\frac{5}{2}}$",
+                  "reasoning": "Root becomes denominator of the exponent."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide the two terms.",
+                  "working": "$\\frac{\\frac{1}{9}y^6}{3y^{\\frac{5}{2}}} = (\\frac{1}{9} \\div 3) y^{6 - \\frac{5}{2}}$",
+                  "reasoning": "Divide coefficients and subtract exponents."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify.",
+                  "working": "Coefficient: $\\frac{1}{27}$. Exponent: $\\frac{12}{2} - \\frac{5}{2} = \\frac{7}{2}$.",
+                  "reasoning": ""
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices Simplification"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2011-p1-101",
+        "topicID": "N1",
+        "stem": "The speed of light is approximately $3 \\times 10^8$ meters per second.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the distance light travels in one nanosecond ($10^{-9}$ seconds). Give your answer in meters.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.3 m",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the formula Distance = Speed × Time.",
+                  "working": "$D = (3 \\times 10^8) \\times (10^{-9})$",
+                  "reasoning": "Standard kinematic formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine indices.",
+                  "working": "$3 \\times 10^{8 + (-9)} = 3 \\times 10^{-1}$",
+                  "reasoning": "$a^m \\times a^n = a^{m+n}$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert to ordinary notation.",
+                  "working": "$3 \\times 0.1 = 0.3$ meters",
+                  "reasoning": "Final simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A fiber optic cable is 45 km long. Calculate the time taken for light to travel the length of this cable. Give your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1.5 \\times 10^{-4} s$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert distance to meters.",
+                  "working": "$45 \\text{ km} = 45,000 \\text{ m} = 4.5 \\times 10^4 \\text{ m}$",
+                  "reasoning": "Units must be consistent (meters and meters/second)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use formula Time = Distance / Speed.",
+                  "working": "$T = \\frac{4.5 \\times 10^4}{3 \\times 10^8}$",
+                  "reasoning": "Rearranging $D=S \\times T$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate and format in standard form.",
+                  "working": "$\\frac{4.5}{3} \\times 10^{4-8} = 1.5 \\times 10^{-4}$ seconds",
+                  "reasoning": "Division of indices involves subtraction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Standard Form"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-1911-p1-102",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express 7200 as a product of its prime factors.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2^5 \\times 3^2 \\times 5^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorize 7200.",
+                  "working": "$7200 = 72 \\times 100 = (8 \\times 9) \\times (10^2) = 2^3 \\times 3^2 \\times (2 \\times 5)^2$",
+                  "reasoning": "Break down into smaller components."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine powers of same bases.",
+                  "working": "$2^3 \\times 3^2 \\times 2^2 \\times 5^2 = 2^{3+2} \\times 3^2 \\times 5^2$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the smallest prime number $k$ such that $\\frac{7200}{k}$ is a perfect square.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze indices for perfect square condition.",
+                  "working": "Indices of 7200 are: 5 (for base 2), 2 (for base 3), 2 (for base 5). For a perfect square, all indices must be even.",
+                  "reasoning": ""
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the factor to remove.",
+                  "working": "The index of 2 is odd (5). Dividing by 2 reduces the index to 4 (even).",
+                  "reasoning": "k must be 2."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Prime Factorisation Application"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2011-p1-102",
+        "topicID": "N1",
+        "stem": "Consider the numbers: $\\sqrt{3}, \\frac{22}{7}, \\pi, 3.142, \\sqrt[3]{27}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the irrational number(s) from the list.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\sqrt{3}, \\pi$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Evaluate each number to check if it can be written as a fraction or terminates/recurs.",
+                  "working": "$\\sqrt{3}$ is a non-perfect square root (Irrational).\n$\\frac{22}{7}$ is a fraction (Rational).\n$\\pi$ is a known irrational constant.\n$3.142$ is a terminating decimal (Rational).\n$\\sqrt[3]{27} = 3$ (Rational).",
+                  "reasoning": "Irrational numbers cannot be expressed as a ratio of two integers."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the value of $\\frac{3.142 + \\sqrt{3}}{2.5}$, giving your answer correct to 2 decimal places.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1.95",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the numerator.",
+                  "working": "$3.142 + 1.732... = 4.874...$",
+                  "reasoning": "Order of operations."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide by the denominator.",
+                  "working": "$4.874... / 2.5 = 1.9496...$",
+                  "reasoning": "Calculation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Round to 2 decimal places.",
+                  "working": "$1.9496... \\approx 1.95$",
+                  "reasoning": "The third decimal digit is 9, so round up."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Rational and Irrational Numbers"
       }
     ],
-    "Paper 2": []
+    "Paper 2": [
+      {
+        "questionNumber": 2,
+        "questionId": "N1-acsi-2024-p2-q2",
+        "topicID": "N1",
+        "stem": "A manufacturing company produces electronic components for various devices. They are analyzing the production data for the past 3 months, which includes quantities of components produced and the corresponding costs. (Data: May: $5.8\\times10^5$ units @ $0.0211; June: $4.3\\times10^6$ units @ $0.0183; July: $7.6\\times10^5$ units @ $0.0203)",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a-i",
+            "questionText": "Express the total quantity produced from May to July in standard form correct to 3 significant figures.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$5.64 \\times 10^6$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert all quantities to the same power of 10 to add them.",
+                  "working": "May: $0.58 \\times 10^6$\nJune: $4.3 \\times 10^6$\nJuly: $0.76 \\times 10^6$",
+                  "reasoning": "Standardizing the exponent makes addition straightforward."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Sum the coefficients.",
+                  "working": "$0.58 + 4.3 + 0.76 = 5.64$",
+                  "reasoning": ""
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write in standard form.",
+                  "working": "$5.64 \\times 10^6$",
+                  "reasoning": "Value is already in correct standard form and has 3 significant figures."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a-ii",
+            "questionText": "Calculate the average cost per unit for these 3 months. Express your answer in cents.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1.89 cents",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total cost for each month (Quantity $\\times$ Cost per unit).",
+                  "working": "May: $5.8 \\times 10^5 \\times 0.0211 = 12238$\nJune: $4.3 \\times 10^6 \\times 0.0183 = 78690$\nJuly: $7.6 \\times 10^5 \\times 0.0203 = 15428$",
+                  "reasoning": ""
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate total cost and total quantity.",
+                  "working": "Total Cost = $12238 + 78690 + 15428 = 106356$\nTotal Quantity = $5.64 \\times 10^6$ (from part a-i)",
+                  "reasoning": ""
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate average cost and convert to cents.",
+                  "working": "Avg Cost ($) = \\frac{106356}{5640000} \\approx 0.018857$\nAvg Cost (cents) = $0.018857 \\times 100 = 1.8857...$",
+                  "reasoning": "1 dollar = 100 cents."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to appropriate accuracy (usually 2 d.p. for currency or 3 s.f.).",
+                  "working": "1.89 cents (to 2 decimal places / 3 s.f.)",
+                  "reasoning": ""
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a-iii",
+            "questionText": "Given that the percentage increase in the quantity produced from July to August is 11.8%, calculate the quantity produced in August. Leave your answer in standard form correct to 3 significant figures.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$8.50 \\times 10^5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the multiplier for an 11.8% increase.",
+                  "working": "$100\\% + 11.8\\% = 111.8\\% = 1.118$",
+                  "reasoning": ""
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply July's quantity by the multiplier.",
+                  "working": "$7.6 \\times 10^5 \\times 1.118 = 8.4968 \\times 10^5$",
+                  "reasoning": ""
+                },
+                {
+                  "step": 3,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "$8.4968 \\approx 8.50$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b-i",
+            "questionText": "The company wants to build a prototype of a particular electronic component they are manufacturing. The radius of the actual electronic component is $3.8\\times10^{-5}m.$ In a scale drawing, the radius of the prototype of the electronic component is 1.9 cm. Find the scale used for the drawing. Give your answer in the form n: 1.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "500:1",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert dimensions to the same unit (cm).",
+                  "working": "Actual Radius = $3.8 \\times 10^{-5}$ m = $3.8 \\times 10^{-3}$ cm.\nPrototype Radius = 1.9 cm.",
+                  "reasoning": "$1 m = 100 cm$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the scale ratio $n = \\frac{\\text{Prototype}}{\\text{Actual}}$.",
+                  "working": "$\\frac{1.9}{3.8 \\times 10^{-3}} = \\frac{1.9}{0.0038} = 500$",
+                  "reasoning": "The drawing (prototype) is larger."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Express as n:1.",
+                  "working": "500:1",
+                  "reasoning": ""
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b-ii",
+            "questionText": "Given that the prototype has a total surface area of $1.81\\times10^{-8}m^{2}$ find, in $cm^{2},$ the actual total surface area of the electronic component. Give your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$7.24 \\times 10^{-10} cm^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert prototype area to $cm^2$.",
+                  "working": "$1.81 \\times 10^{-8} m^2 = 1.81 \\times 10^{-8} \\times 10^4 cm^2 = 1.81 \\times 10^{-4} cm^2$",
+                  "reasoning": "$1 m^2 = 10,000 cm^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the square of the scale factor to find the actual area.",
+                  "working": "Scale factor $n = 500$. Area ratio = $n^2 = 500^2 = 250,000$.\nActual Area = $\\frac{\\text{Prototype Area}}{n^2}$",
+                  "reasoning": "Area scales by the square of the linear scale."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate actual area.",
+                  "working": "$\\frac{1.81 \\times 10^{-4}}{2.5 \\times 10^5} = 0.724 \\times 10^{-9} = 7.24 \\times 10^{-10}$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Standard Form and Scales"
+      },
+      {
+        "questionNumber": 10,
+        "questionId": "N1-broadrick-2024-p2-q10",
+        "topicID": "N1",
+        "stem": "Tay is part of a student committee organizing a charity race event in 2025.\nHe wants to estimate the cost per participant to cover all expenses.\n\nHe did some more research and found the following costs.\n\n**Costs (excluding 9% GST)**\n\n<table style=\"width:100%; border-collapse: collapse; margin: 20px 0; font-family: sans-serif; box-shadow: 0 0 20px rgba(0,0,0,0.15);\"><thead><tr style=\"background-color: #009879; color: #ffffff; text-align: left;\"><th style=\"padding: 12px 15px;\">Item</th><th style=\"padding: 12px 15px;\">Description</th><th style=\"padding: 12px 15px;\">Unit cost</th></tr></thead><tbody><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\" rowspan=\"3\">Printing of T-shirts</td><td style=\"padding: 12px 15px;\">One sided print (100 pcs)</td><td style=\"padding: 12px 15px;\">\\$800</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">Double sided print (100 pcs)</td><td style=\"padding: 12px 15px;\">\\$1500</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">Bundle of 500 pcs</td><td style=\"padding: 12px 15px;\">\\$7000</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\" rowspan=\"3\">Goodie bags (Pack of 5)</td><td style=\"padding: 12px 15px;\">Single pack (5 bags)</td><td style=\"padding: 12px 15px;\">\\$20</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">Bulk (100+ packs)</td><td style=\"padding: 12px 15px;\">\\$18</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">Bulk (500+ packs)</td><td style=\"padding: 12px 15px;\">\\$15</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\" rowspan=\"2\">Booking of venue</td><td style=\"padding: 12px 15px;\">At least 6 months in advance</td><td style=\"padding: 12px 15px;\">\\$1200</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">3 to 5 months in advance</td><td style=\"padding: 12px 15px;\">\\$1500</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\" rowspan=\"3\">Refreshments</td><td style=\"padding: 12px 15px;\">Large set</td><td style=\"padding: 12px 15px;\">\\$3.00</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">Regular set</td><td style=\"padding: 12px 15px;\">\\$2.80</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">Small set</td><td style=\"padding: 12px 15px;\">\\$2.50</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\" rowspan=\"2\">Participant medals</td><td style=\"padding: 12px 15px;\">Pack of 10</td><td style=\"padding: 12px 15px;\">\\$45</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">Pack of 50</td><td style=\"padding: 12px 15px;\">\\$210</td></tr></tbody></table>\n\nThe T-shirts are printed overseas and shipped by a local courier.\nTay estimated the weight of each shirt to be 140 grams and he needs to select one of the local couriers.\nThe shipping rate depends on the weight of the product and courier.\n\n<table style=\"width:100%; border-collapse: collapse; margin: 20px 0; font-family: sans-serif; box-shadow: 0 0 20px rgba(0,0,0,0.15);\"><thead><tr style=\"background-color: #009879; color: #ffffff; text-align: left;\"><th style=\"padding: 12px 15px;\">Local Courier</th><th style=\"padding: 12px 15px;\">First kg</th><th style=\"padding: 12px 15px;\">Next 0.5 kg</th><th style=\"padding: 12px 15px;\">Weight Limit of each parcel*</th></tr></thead><tbody><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">Simply Post</td><td style=\"padding: 12px 15px;\">\\$4.80</td><td style=\"padding: 12px 15px;\">\\$1.85</td><td style=\"padding: 12px 15px;\">80 kg</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">Singapore Post</td><td style=\"padding: 12px 15px;\">\\$6.00</td><td style=\"padding: 12px 15px;\">\\$1.80</td><td style=\"padding: 12px 15px;\">50 kg</td></tr><tr style=\"border-bottom: 1px solid #dddddd;\"><td style=\"padding: 12px 15px;\">DPEX</td><td style=\"padding: 12px 15px;\">\\$5.50</td><td style=\"padding: 12px 15px;\">\\$1.60</td><td style=\"padding: 12px 15px;\">30 kg</td></tr></tbody></table>\n\n*Products need to be shipped in separate parcels if weight exceeds the limit.\n9% GST is applicable for import goods as well as shipping fees.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "How many percent more will Tay need to pay if he booked the venue 3 months in advance instead of 6 months in advance?",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "25%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the venue booking costs for the two different timeframes from the table.",
+                  "working": "Booking 6 months in advance: \\$1200 \n Booking 3 months in advance: \\$1500",
+                  "reasoning": "The table provides explicit costs for booking venues based on how far in advance the booking is made."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the percentage increase using the formula: $\\frac{\\text{New Cost} - \\text{Old Cost}}{\\text{Old Cost}} \\times 100\\%$.",
+                  "working": "Increase = \\$1500 - \\$1200 = \\$300 \n \n Percentage = $\\frac{300}{1200} \\times 100\\% = 25\\%$",
+                  "reasoning": "We are comparing the price difference relative to the original cheaper price (6 months in advance)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "For a 50 kg purchase, calculate the amount of shipping fees charged by Singapore Post.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "\\$198.82 (inclusive of GST)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the shipping fee for 50kg using Singapore Post rates.",
+                  "working": "**Rate:** First kg = \\$6.00, Next 0.5 kg = \\$1.80. \n \n **Weight Breakdown:** \n Total Weight = 50 kg \n First kg = 1 kg \n Remaining Weight = 50 - 1 = 49kg",
+                  "reasoning": "The shipping cost is split into a base rate for the first kg and a rate for every subsequent 0.5kg block."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the number of 0.5kg blocks in the remaining 49kg and calculate the total cost.",
+                  "working": "Number of 0.5 kg blocks = $\\frac{49}{0.5} = 98$ blocks. \n \n Cost for remaining weight = 98 $\\times$ \\$1.80 = \\$176.40 \n \n Total Shipping Fee (Pre-GST) = \\$6.00 + \\$176.40 = \\$182.40",
+                  "reasoning": "Multiply the number of blocks by the unit rate and add the base rate."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the 9% GST as stated in the footnote.",
+                  "working": "GST = 182.40 $\\times$ 0.09 = \\$16.416 \n \n Total Charged = 182.40 + 16.416 = \\$198.816 \\approx \\$198.82",
+                  "reasoning": "The question asks for the amount 'charged', and the note states 9% GST applies to shipping fees."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The event is scheduled to be in October. Tay estimated the number of participants to be 1000 and he plans to confirm the venue by February. He also wants to print double sided for the participant's T-shirt, and issue a goodie bag, refreshment and medal to each participant. He needs to decide how much registration fee he should charge each participant. He must be able donate at least 40% of the proceeds to the charity and still cover all the costs. Suggest a sensible amount for the registration fee of a participant. State your assumptions and decisions if any. Show your calculations clearly.",
+            "marks": 7,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "\\$50",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Establish the necessary assumptions to calculate the total cost per participant.",
+                  "working": "1. **Venue:** Booked in Feb for Oct (8 months prior) $\\rightarrow$ 'At least 6 months' rate (\\$1200). \n 2. **T-shirts:** 1000 participants require 2 bundles of 500 Double Sided shirts (\\$7000 each). \n 3. **Shipping:** Total weight = 1000 $\\times$ 0.14 kg = 140 kg. Assume cheapest courier (DPEX) is used. \n 4. **Refreshments:** Assume 'Regular set' (\\$2.80) is sensible. \n 5. **Goodie Bags:** 1000 bags = 200 packs. Bulk rate (100+ packs) is \\$18. \n 6. **Medals:** 1000 medals = 20 packs of 50 (\\$210/pack).",
+                  "reasoning": "We need to select specific items to build a budget. DPEX is chosen because its per-unit rate ($1.60) is the lowest, making it the most cost-effective for bulk shipping."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the cost for each category based on 1000 participants.",
+                  "working": "**Venue:** \\$1200 \n **T-shirts:** 2 bundles $\\times$ \\$7000 = \\$14,000 \n **Goodie Bags:** 200 packs $\\times$ \\$18 = \\$3,600 \n **Medals:** 20 packs $\\times$ \\$210 = \\$4,200 \n **Refreshments:** 1000 $\\times$ \\$2.80 = \\$2,800",
+                  "reasoning": "Applying the unit costs from the table to the quantity of 1000 participants."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate shipping for 140kg using DPEX (Limit 30kg/parcel). Split into 4 parcels of 30kg and 1 parcel of 20kg.",
+                  "working": "**30kg Parcel:** $5.50 + (\\frac{29}{0.5} \\times 1.60) = 5.50 + 92.80$ = \\$98.30 \n Cost for 4 parcels = $4 \\times 98.30$ = \\$393.20 \n \n **20kg Parcel:** $5.50 + (\\frac{19}{0.5} \\times 1.60) = 5.50 + 60.80$ = \\$66.30 \n \n **Total Shipping:** 393.20 + 66.30 = \\$459.50",
+                  "reasoning": "Shipping must be split because the total weight (140kg) exceeds the single parcel limit (30kg) for DPEX."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Sum all costs and apply 9% GST.",
+                  "working": "Sum = 1200 + 14000 + 3600 + 4200 + 2800 + 459.50 = \\$26,259.50 \n \n Total with GST = 26,259.50 $\\times$ 1.09 = \\$28,622.86",
+                  "reasoning": "The prompt states GST is applicable to import goods (items) and shipping fees."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate the required fee so that 40% is donated and costs are covered by the remaining 60%.",
+                  "working": "Let $R$ be Total Revenue. \n Cost $\\le 60\\%$ of Revenue \n $28,622.86 \\le 0.60 \\times R$ \n $R \\ge \\frac{28,622.86}{0.60}$ \n $R \\ge 47,704.77$ \n \n Fee per participant = $\\frac{47,704.77}{1000} \\approx$ \\$47.70",
+                  "reasoning": "To donate 40%, the costs must not exceed the remaining 60% of the funds collected."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Round the calculated minimum fee to a sensible number.",
+                  "working": "Calculated minimum is \\$47.70$. \n Suggested Fee: **\\$50.00**",
+                  "reasoning": "Rounding up to \\$50 provides a clean number for registration and ensures slightly more than 40% is available for charity."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Real World Context"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2011-p2-101",
+        "topicID": "N1",
+        "stem": "Mr. Tan is planning a holiday to Japan. He monitors the exchange rate between Singapore Dollars (SGD) and Japanese Yen (JPY).",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The exchange rate is 1 SGD = 108.50 JPY. Mr. Tan exchanges SGD 2500 into JPY. Calculate the amount of JPY he receives.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "271,250 JPY",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply the SGD amount by the exchange rate.",
+                  "working": "$2500 \\times 108.50 = 271,250$",
+                  "reasoning": "To convert from base currency to foreign currency, multiply by the rate."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "At the end of his trip, he has 35,000 JPY left. He converts this back to SGD at a rate of 100 JPY = 0.91 SGD. Calculate how much SGD he receives, correct to the nearest cent.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$318.50",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the rate per 1 JPY or use proportion.",
+                  "working": "Rate: $\\frac{0.91}{100} = 0.0091$ SGD per JPY.",
+                  "reasoning": "Find the unit rate."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the SGD amount.",
+                  "working": "$35,000 \\times 0.0091 = 318.5$",
+                  "reasoning": "Multiply foreign currency by the sell-back rate."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Format to nearest cent.",
+                  "working": "$318.50",
+                  "reasoning": "Currency is always 2 decimal places."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Mr. Tan bought a watch in Japan for 45,000 JPY. The same watch costs SGD 480 in Singapore. Using the initial exchange rate of 1 SGD = 108.50 JPY, calculate the percentage difference in the price of the watch in Japan compared to Singapore.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "13.6%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the Singapore price to JPY for comparison.",
+                  "working": "$480 \\times 108.50 = 52,080$ JPY",
+                  "reasoning": "Compare prices in the same currency."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the difference in price.",
+                  "working": "$52,080 - 45,000 = 7,080$ JPY",
+                  "reasoning": "Find the absolute saving."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate percentage difference relative to the Singapore price.",
+                  "working": "$\\frac{7080}{52080} \\times 100\\% \\approx 13.594...\\%$",
+                  "reasoning": "Percentage Difference = $\\frac{\\text{Difference}}{\\text{Original/Base}} \\times 100$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "13.6%",
+                  "reasoning": "Standard accuracy for percentage."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Exchange Rates and Percentages"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2011-p2-102",
+        "topicID": "N1",
+        "stem": "A household's electricity consumption is charged based on the following block rates:\nFirst 200 kWh: \\$0.25 per kWh\nNext 300 kWh: \\$0.30 per kWh\nAny amount above 500 kWh: \\$0.35 per kWh.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "In June, the household used 450 kWh of electricity. Calculate the total cost of electricity for June.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$125.00",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate cost for the first tier (200 kWh).",
+                  "working": "$200 \\times 0.25 = 50.00$",
+                  "reasoning": "First 200 units are charged at the lowest rate."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the remaining units and cost for the second tier.",
+                  "working": "Remaining: $450 - 200 = 250$ kWh.\nCost: $250 \\times 0.30 = 75.00$",
+                  "reasoning": "The remaining 250 units fall entirely within the 'Next 300' tier."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Sum the costs.",
+                  "working": "$50.00 + 75.00 = 125.00$",
+                  "reasoning": "Total Bill = Sum of tier costs."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "In July, the total electricity bill was $188.50. Calculate the amount of electricity, in kWh, consumed in July.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "638.57 kWh",
+              "stepByStep": [
+                {
+                  "step": "Calculate maximum cost of the first block",
+                  "explanation": "Determine the cost for the full 200 kWh in the first tier to see if the bill exceeds it.",
+                  "working": "200 kWh $\\times$ \\$0.25 = \\$50.00",
+                  "reasoning": "The total bill (\\$188.50) is greater than \\$50.00, so consumption exceeds 200 kWh."
+                },
+                {
+                  "step": "Calculate maximum cost of the second block",
+                  "explanation": "Determine the cost for the next 300 kWh tier.",
+                  "working": "300 kWh $\\times$ \\$0.30 = \\$90.00",
+                  "reasoning": "We need to find the cumulative cost of the first 500 kWh to see if the usage entered the third tier."
+                },
+                {
+                  "step": "Check total base cost vs bill",
+                  "explanation": "Sum the costs of the first two blocks and subtract from the total bill.",
+                  "working": "Base Cost = \\$50.00 + \\$90.00 = \\$140.00 \n Remaining Bill = \\$188.50 - \\$140.00 = \\$48.50",
+                  "reasoning": "Since \\$188.50 > \\$140.00, the remaining \\$48.50 was charged at the third block rate."
+                },
+                {
+                  "step": "Calculate usage in the third block",
+                  "explanation": "Divide the remaining bill amount by the third tier rate.",
+                  "working": "$\\frac{48.50}{0.35} \\approx 138.57 kWh$",
+                  "reasoning": "The rate for any amount above 500 kWh is \\$0.35 per kWh."
+                },
+                {
+                  "step": "Calculate total consumption",
+                  "explanation": "Add the kWh usage from all three blocks.",
+                  "working": "200 + 300 + 138.57 = 638.57 kWh",
+                  "reasoning": "Total Usage = Block 1 Limit + Block 2 Limit + Calculated Block 3 Usage."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Utility Bills and Tiered Pricing"
+      },
+      {
+        "questionNumber": 103,
+        "questionId": "N1-gemini-1911-p2-103",
+        "topicID": "N1",
+        "stem": "A logistics company manages three warehouses. The inventory records show the total mass of goods and the cost per kilogram stored in each warehouse: Warehouse A: $2.5 \\times 10^4$ kg @ $4.20/kg; Warehouse B: $1.8 \\times 10^5$ kg @ $3.50/kg; Warehouse C: $9.6 \\times 10^4$ kg @ $4.80/kg.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "i",
+            "questionText": "Calculate the total mass of goods across all three warehouses. Give your answer in standard form.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$3.01 \\times 10^5$ kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert masses to common exponent ($10^5$).",
+                  "working": "A: $0.25 \\times 10^5$, B: $1.8 \\times 10^5$, C: $0.96 \\times 10^5$.",
+                  "reasoning": ""
+                },
+                {
+                  "step": 2,
+                  "explanation": "Sum the masses.",
+                  "working": "$0.25 + 1.8 + 0.96 = 3.01$. Total = $3.01 \\times 10^5$.",
+                  "reasoning": ""
+                }
+              ]
+            }
+          },
+          {
+            "partId": "ii",
+            "questionText": "Calculate the average cost per kilogram of the goods stored. Give your answer correct to 2 decimal places.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$3.97",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate total value in each warehouse.",
+                  "working": "A: $25000 \\times 4.2 = 105000$\nB: $180000 \\times 3.5 = 630000$\nC: $96000 \\times 4.8 = 460800$",
+                  "reasoning": ""
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate grand total value and divide by total mass.",
+                  "working": "Total Value = $1,195,800$. Total Mass = $301,000$.\nAverage = $1195800 / 301000 \\approx 3.9727$.",
+                  "reasoning": ""
+                },
+                {
+                  "step": 3,
+                  "explanation": "Round to 2 decimal places.",
+                  "working": "$3.97",
+                  "reasoning": ""
+                }
+              ]
+            }
+          },
+          {
+            "partId": "iii",
+            "questionText": "A scale model of Warehouse B is built. The actual length of the warehouse is 120 m. On the model, the length is 24 cm. Calculate the scale of the model in the form n:1.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "500:1",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert actual length to cm.",
+                  "working": "$120 m = 12000 cm$.",
+                  "reasoning": ""
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate scale ratio (Actual : Model). Wait, question asks n:1, implying Actual is n times Model (reduction) or Model is n times Actual (enlargement)? Context: 'Scale model' is usually smaller. 120m actual vs 24cm model. Scale is Actual/Model = 12000/24 = 500. So 1 cm represents 500 cm. Scale 1:500. If form n:1 is requested, maybe it means 1:n? Or is it an enlargement? Usually 'scale n:1' implies n units on model = 1 unit actual (Enlargement). But here it is a reduction. If the question asks for n:1, and it is a reduction, it might be a trick or standard notation variation. Given previous question was 500:1 for enlargement, I will assume standard map scale notation 1:n (1 unit on map = n units actual). But if strict 'n:1' format is required for a reduction, n would be fractional (1/500:1) or it represents Actual:Model (500:1). Let's assume the standard representative fraction 1:n. However, the previous question asked for n:1 for an *enlargement*. Here we have a reduction. I will provide the ratio representing Actual Size / Model Size = 500.",
+                  "working": "Scale = Actual Length / Model Length = $12000 / 24 = 500$. Ratio 500:1 (Actual : Model) or 1:500 (Model : Actual).",
+                  "reasoning": "Standard interpretation for 'scale of the model' is Model:Actual = 1:n. If format n:1 is forced, check if n can be 1/500 or if it means 500 Actual = 1 Model? No, likely 1:n was meant or n:1 means Actual:Model. Let's write 1:500."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Inventory Data Analysis"
+      }
+    ]
   }
 }

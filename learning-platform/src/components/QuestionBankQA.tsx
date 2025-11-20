@@ -113,7 +113,7 @@ export default function QuestionBankQA() {
 
       for (const topicFile of topicFiles) {
         try {
-          const response = await fetch(`/curriculum-content/o-level/exam-papers/processed/${topicFile}.json`);
+          const response = await fetch(`/curriculum-content/o-level/exam-papers/QA/${topicFile}.json`);
 
           if (response.ok) {
             const text = await response.text();
@@ -247,7 +247,7 @@ export default function QuestionBankQA() {
         <div className="max-w-5xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Question Bank QA Tool</h1>
+              <h1 className="text-2xl font-bold text-gray-900">Question Bank QA Tool (QA Queue)</h1>
               <p className="text-sm text-gray-600 mt-1">
                 {questionBank.metadata.school} {questionBank.metadata.year} · {questionBank.metadata.paper}
               </p>

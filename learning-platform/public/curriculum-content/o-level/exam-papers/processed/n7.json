@@ -49,9 +49,588 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Compound Inequality"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N7-gemini-1911-p1-101",
+        "topicID": "N7",
+        "stem": "Solve the following simultaneous equations.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "3x + 4y = 18\n2x - y = 1",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 2, y = 3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Label the equations.",
+                  "working": "(1) ... $3x + 4y = 18$\n(2) ... $2x - y = 1$",
+                  "reasoning": "Standard procedure for simultaneous equations."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Make 'y' the subject of equation (2) to use the substitution method (or multiply eq 2 by 4 for elimination). Let's use substitution.",
+                  "working": "From (2): $y = 2x - 1$ ... (3)",
+                  "reasoning": "Isolating a variable makes it easy to substitute into the other equation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute (3) into (1).",
+                  "working": "$3x + 4(2x - 1) = 18$\n$3x + 8x - 4 = 18$",
+                  "reasoning": "This creates a linear equation with only one variable (x)."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for x.",
+                  "working": "$11x = 22$\n$x = 2$",
+                  "reasoning": "Basic algebraic manipulation."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Substitute x back into (3) to find y.",
+                  "working": "$y = 2(2) - 1$\n$y = 4 - 1$\n$y = 3$",
+                  "reasoning": "Finding the value of the second variable."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Simultaneous Equations"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N7-gemini-2011-p1-101",
+        "topicID": "N7",
+        "stem": "Answer the following questions regarding algebraic manipulation.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise completely $9x^2 - 16y^2$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "(3x - 4y)(3x + 4y)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the expression as a difference of two squares.",
+                  "working": "$(3x)^2 - (4y)^2$",
+                  "reasoning": "Recognizing the form $a^2 - b^2$ allows for immediate factorization."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the formula $a^2 - b^2 = (a-b)(a+b)$.",
+                  "working": "$(3x - 4y)(3x + 4y)$",
+                  "reasoning": "Standard algebraic identity application."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the equation $\\frac{2x-1}{3} = \\frac{x+4}{4}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 3.2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Cross-multiply to eliminate the fractions.",
+                  "working": "$4(2x - 1) = 3(x + 4)$",
+                  "reasoning": "Multiplying both sides by the common denominator (12) removes fractions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the brackets.",
+                  "working": "$8x - 4 = 3x + 12$",
+                  "reasoning": "Distributive law."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Rearrange terms to isolate $x$.",
+                  "working": "$8x - 3x = 12 + 4 \\Rightarrow 5x = 16$",
+                  "reasoning": "Grouping like terms."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $x$.",
+                  "working": "$x = \\frac{16}{5} = 3.2$",
+                  "reasoning": "Final division."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Simplify $\\frac{3a^2}{5b} \\div \\frac{9a}{10b^2}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "\\frac{2ab}{3}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Change division to multiplication by flipping the second fraction (reciprocal).",
+                  "working": "$\\frac{3a^2}{5b} \\times \\frac{10b^2}{9a}$",
+                  "reasoning": "Standard rule for dividing fractions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Cancel common factors in the numerator and denominator.",
+                  "working": "$\\frac{3}{9} \\rightarrow \\frac{1}{3}$, $\\frac{10}{5} \\rightarrow 2$, $\\frac{a^2}{a} \\rightarrow a$, $\\frac{b^2}{b} \\rightarrow b$",
+                  "reasoning": "Simplifying coefficients and indices."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine remaining terms.",
+                  "working": "$\\frac{1 \\cdot a \\cdot 2 \\cdot b}{1 \\cdot 1 \\cdot 3} = \\frac{2ab}{3}$",
+                  "reasoning": "Final multiplication."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Basic Algebra"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N7-gemini-1911-p1-102",
+        "topicID": "N7",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $y = \\frac{2x-5}{3x+1}$, express $x$ in terms of $y$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "x = \\frac{y+5}{2-3y}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Remove the fraction by multiplying both sides by the denominator.",
+                  "working": "$y(3x + 1) = 2x - 5$",
+                  "reasoning": "To make x the subject, we first need to linearize the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the brackets.",
+                  "working": "$3xy + y = 2x - 5$",
+                  "reasoning": "We need to access the x term inside the brackets."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Group all terms containing $x$ on one side and other terms on the other side.",
+                  "working": "$y + 5 = 2x - 3xy$",
+                  "reasoning": "Isolating terms with the subject variable is crucial."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factorize $x$ out on the RHS.",
+                  "working": "$y + 5 = x(2 - 3y)$",
+                  "reasoning": "This separates x from the coefficients."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Divide by the bracket to isolate $x$.",
+                  "working": "$x = \\frac{y+5}{2-3y}$",
+                  "reasoning": "Final step to make x the subject."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Changing the Subject of a Formula"
       }
     ],
     "Paper 2": [
+      {
+        "questionNumber": 1,
+        "questionId": "N7-acsi-2024-p2-q1",
+        "topicID": "N7",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Solve the equation $2(x-5)=3x-1$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = -9",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the brackets on the left-hand side.",
+                  "working": "$2x - 10 = 3x - 1$",
+                  "reasoning": "Remove parentheses to simplify the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rearrange terms to group $x$ on one side and constants on the other.",
+                  "working": "$-10 + 1 = 3x - 2x$",
+                  "reasoning": "Isolating the variable."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify both sides.",
+                  "working": "$-9 = x$",
+                  "reasoning": "Solving for the final value."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the inequality $7-4y>3(y+2)$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "y < \\frac{1}{7}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the brackets on the right-hand side.",
+                  "working": "$7 - 4y > 3y + 6$",
+                  "reasoning": "Simplify the inequality structure."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Group $y$ terms on one side and constants on the other. Note: Adding $4y$ to both sides avoids dividing by a negative number later.",
+                  "working": "$7 - 6 > 3y + 4y$",
+                  "reasoning": "Standard inequality manipulation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify.",
+                  "working": "$1 > 7y$",
+                  "reasoning": "Combining like terms."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Divide by 7.",
+                  "working": "$\\frac{1}{7} > y$ or $y < \\frac{1}{7}$",
+                  "reasoning": "Final isolation of y."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c-i",
+            "questionText": "Given that $\\frac{1}{p}-\\frac{1}{2q}=\\frac{1}{3r},$ find p when $q=-1$ and $r=2,$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "p = -3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute the given values of $q$ and $r$ into the equation.",
+                  "working": "$\\frac{1}{p} - \\frac{1}{2(-1)} = \\frac{1}{3(2)}$",
+                  "reasoning": "Direct substitution."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the fractions.",
+                  "working": "$\\frac{1}{p} - (-\\frac{1}{2}) = \\frac{1}{6}$\n$\\frac{1}{p} + \\frac{1}{2} = \\frac{1}{6}$",
+                  "reasoning": "Arithmetic simplification."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Isolate $\\frac{1}{p}$.",
+                  "working": "$\\frac{1}{p} = \\frac{1}{6} - \\frac{1}{2}$",
+                  "reasoning": "Moving constants to one side."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the RHS using a common denominator.",
+                  "working": "$\\frac{1}{p} = \\frac{1}{6} - \\frac{3}{6} = -\\frac{2}{6} = -\\frac{1}{3}$",
+                  "reasoning": "Fraction subtraction."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Invert both sides to find $p$.",
+                  "working": "$p = -3$",
+                  "reasoning": "Solving for the reciprocal."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c-ii",
+            "questionText": "rearrange the formula $\\frac{1}{p}-\\frac{1}{2q}=\\frac{1}{3r}$ to make q the subject.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "q = \\frac{3pr}{2(3r-p)}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Isolate the term containing $q$.",
+                  "working": "$-\\frac{1}{2q} = \\frac{1}{3r} - \\frac{1}{p}$",
+                  "reasoning": "Isolating the subject term."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine the RHS into a single fraction.",
+                  "working": "$-\\frac{1}{2q} = \\frac{p - 3r}{3pr}$",
+                  "reasoning": "Common denominator is $3pr$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply by -1 to make the LHS positive.",
+                  "working": "$\\frac{1}{2q} = \\frac{3r - p}{3pr}$",
+                  "reasoning": "Simplifying signs (Note: $-(p-3r) = 3r-p$)."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Invert both fractions.",
+                  "working": "$2q = \\frac{3pr}{3r - p}$",
+                  "reasoning": "Reciprocal property."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Divide by 2 to isolate $q$.",
+                  "working": "$q = \\frac{3pr}{2(3r - p)}$",
+                  "reasoning": "Final isolation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Solve the equation $\\frac{5}{x+2}-\\frac{3x}{2x-1}=3$. Give your solutions correct to 2 decimal places.",
+            "marks": 5,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 0.16 or x = -0.71",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Combine the LHS into a single fraction using a common denominator.",
+                  "working": "$\\frac{5(2x-1) - 3x(x+2)}{(x+2)(2x-1)} = 3$",
+                  "reasoning": "Algebraic fraction subtraction."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the denominator over to the RHS and expand the numerator.",
+                  "working": "$10x - 5 - 3x^2 - 6x = 3(x+2)(2x-1)$",
+                  "reasoning": "Removing fractions."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify LHS and expand RHS.",
+                  "working": "$-3x^2 + 4x - 5 = 3(2x^2 - x + 4x - 2)$\n$-3x^2 + 4x - 5 = 3(2x^2 + 3x - 2)$\n$-3x^2 + 4x - 5 = 6x^2 + 9x - 6$",
+                  "reasoning": "Expansion and simplification."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Rearrange into standard quadratic form $ax^2 + bx + c = 0$.",
+                  "working": "$0 = 6x^2 + 3x^2 + 9x - 4x - 6 + 5$\n$9x^2 + 5x - 1 = 0$",
+                  "reasoning": "Preparing for the quadratic formula."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Use the quadratic formula $x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$.",
+                  "working": "$x = \\frac{-5 \\pm \\sqrt{5^2 - 4(9)(-1)}}{2(9)}$\n$x = \\frac{-5 \\pm \\sqrt{25 + 36}}{18}$\n$x = \\frac{-5 \\pm \\sqrt{61}}{18}$",
+                  "reasoning": "Solving quadratic equation."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Calculate values and round to 2 decimal places.",
+                  "working": "$x_1 = \\frac{-5 + \\sqrt{61}}{18} \\approx 0.156$\n$x_2 = \\frac{-5 - \\sqrt{61}}{18} \\approx -0.711$",
+                  "reasoning": "Final calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 14,
+        "paper": "Paper 2",
+        "title": "Algebraic Equations and Inequalities"
+      },
+      {
+        "questionNumber": 2,
+        "questionId": "N7-broadrick-2024-p2-q2",
+        "topicID": "N7",
+        "stem": "",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Solve the equation. (Equation not fully visible, mark scheme suggests an equation leading to $12x - 8x^2 = 6 - 8x^2$)",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 0.5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation based on the inferred structure.",
+                  "working": "$12x - 8x^2 = 6 - 8x^2$",
+                  "reasoning": "Starting point derived from the problem description."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add $8x^2$ to both sides to eliminate the quadratic term.",
+                  "working": "$12x = 6$",
+                  "reasoning": "Simplifying the equation to a linear form."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for x.",
+                  "working": "$x = \\frac{6}{12} = 0.5$",
+                  "reasoning": "Basic arithmetic division."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the inequality $1-3p\\ge5$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "p \\le -\\frac{4}{3}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Subtract 1 from both sides.",
+                  "working": "$-3p \\ge 5 - 1 \\Rightarrow -3p \\ge 4$",
+                  "reasoning": "Isolating the term with the variable."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide by -3 and reverse the inequality sign.",
+                  "working": "$p \\le \\frac{4}{-3}$",
+                  "reasoning": "When dividing or multiplying an inequality by a negative number, the direction of the inequality must flip."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final formatting.",
+                  "working": "$p \\le -1\\frac{1}{3}$ or $p \\le -1.33$",
+                  "reasoning": "Presenting the answer clearly."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Rearrange the formula $3A=\\frac{Ap+h}{1-h}$ to make A the subject.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "A = \\frac{h}{3 - 3h - p}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply both sides by the denominator $(1-h)$.",
+                  "working": "$3A(1-h) = Ap + h$",
+                  "reasoning": "Removing the fraction to linearize the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the left side.",
+                  "working": "$3A - 3Ah = Ap + h$",
+                  "reasoning": "Distributive law to expose all 'A' terms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Group all terms containing 'A' on one side.",
+                  "working": "$3A - 3Ah - Ap = h$",
+                  "reasoning": "Isolating the subject variable."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factorize 'A' out.",
+                  "working": "$A(3 - 3h - p) = h$",
+                  "reasoning": "Preparing for the final division."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Divide by the bracket to make A the subject.",
+                  "working": "$A = \\frac{h}{3 - 3h - p}$",
+                  "reasoning": "Final algebraic manipulation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Solve the equation $\\frac{x}{(x-4)^2} - \\frac{3}{4-x} = 2$ (Inferred from mark scheme). Give your answers correct to two decimal places.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 6.73 or x = 3.27",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Adjust the denominator of the second fraction to match the first term's base. Note that $4-x = -(x-4)$.",
+                  "working": "$\\frac{x}{(x-4)^2} - \\frac{3}{-(x-4)} = 2 \\Rightarrow \\frac{x}{(x-4)^2} + \\frac{3}{x-4} = 2$",
+                  "reasoning": "Handling negative signs in denominators simplifies finding a common denominator."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the entire equation by the lowest common denominator $(x-4)^2$.",
+                  "working": "$x + 3(x-4) = 2(x-4)^2$",
+                  "reasoning": "Eliminating fractions."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and simplify.",
+                  "working": "$x + 3x - 12 = 2(x^2 - 8x + 16)$",
+                  "reasoning": "Expanding brackets."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Form a quadratic equation equal to zero.",
+                  "working": "$4x - 12 = 2x^2 - 16x + 32 \\Rightarrow 0 = 2x^2 - 20x + 44$",
+                  "reasoning": "Rearranging terms to standard quadratic form $ax^2+bx+c=0$."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Simplify by dividing by 2.",
+                  "working": "$x^2 - 10x + 22 = 0$",
+                  "reasoning": "Simplifying coefficients."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Use the quadratic formula $x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$.",
+                  "working": "$x = \\frac{10 \\pm \\sqrt{(-10)^2 - 4(1)(22)}}{2} = \\frac{10 \\pm \\sqrt{100 - 88}}{2} = \\frac{10 \\pm \\sqrt{12}}{2}$",
+                  "reasoning": "Solving for x where factorization is not integer-friendly."
+                },
+                {
+                  "step": 7,
+                  "explanation": "Calculate final values to 2 decimal places.",
+                  "working": "$x = \\frac{10 + 3.464}{2} = 6.732...$ or $x = \\frac{10 - 3.464}{2} = 3.267...$",
+                  "reasoning": "Rounding to required precision."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Algebra"
+      },
       {
         "questionNumber": 31,
         "questionId": "N7-anderson-2024-p2-q31",
@@ -275,6 +854,301 @@
         "totalMarks": 9,
         "paper": "Paper 2",
         "title": "Speed Unit Conversion"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N7-gemini-1911-p2-101",
+        "topicID": "N7",
+        "stem": "A cyclist travels a distance of 60 km from Town A to Town B at an average speed of $x$ km/h.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression, in terms of $x$, for the time taken to travel from Town A to Town B.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "\\frac{60}{x}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the formula Time = Distance / Speed.",
+                  "working": "Time = $\\frac{60}{x}$",
+                  "reasoning": "Basic kinematics relationship."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "On the return journey from Town B to Town A, the cyclist increases their average speed by 4 km/h. Write down an expression, in terms of $x$, for the time taken for the return journey.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "\\frac{60}{x+4}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the new speed.",
+                  "working": "New Speed = $x + 4$",
+                  "reasoning": "Speed increased by 4."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply Time formula.",
+                  "working": "Time = $\\frac{60}{x+4}$",
+                  "reasoning": "Distance remains 60km."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The time taken for the return journey is 30 minutes less than the time taken for the journey from Town A to Town B. Form an equation in $x$ and show that it reduces to $x^2 + 4x - 480 = 0$.",
+            "marks": 4,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "x^2 + 4x - 480 = 0",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert time difference to hours.",
+                  "working": "30 minutes = $\\frac{1}{2}$ hour",
+                  "reasoning": "Units must be consistent (km/h uses hours)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation: (Time A to B) - (Time B to A) = Difference.",
+                  "working": "$\\frac{60}{x} - \\frac{60}{x+4} = \\frac{1}{2}$",
+                  "reasoning": "Slower journey takes more time, so subtract faster time from slower time."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply by common denominator $2x(x+4)$ to remove fractions.",
+                  "working": "$2(x+4)(60) - 2x(60) = x(x+4)$",
+                  "reasoning": "Clearing fractions."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Expand and simplify.",
+                  "working": "$120(x+4) - 120x = x^2 + 4x$\n$120x + 480 - 120x = x^2 + 4x$\n$480 = x^2 + 4x$",
+                  "reasoning": "Algebraic simplification."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Rearrange to the required form.",
+                  "working": "$x^2 + 4x - 480 = 0$",
+                  "reasoning": "QED."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Solve the equation $x^2 + 4x - 480 = 0$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 20 or x = -24",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorize the quadratic equation or use the formula. Factors of 480 with difference 4 are 20 and 24.",
+                  "working": "$(x + 24)(x - 20) = 0$",
+                  "reasoning": "Factorization method."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for x.",
+                  "working": "$x + 24 = 0 \\Rightarrow x = -24$\n$x - 20 = 0 \\Rightarrow x = 20$",
+                  "reasoning": "Zero product property."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "e",
+            "questionText": "Calculate the time taken for the journey from Town A to Town B.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Select the valid value for $x$ (speed cannot be negative).",
+                  "working": "$x = 20$",
+                  "reasoning": "Physical constraints of the problem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute $x$ into the expression from part (a).",
+                  "working": "Time = $\\frac{60}{20} = 3$",
+                  "reasoning": "Calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Word Problems leading to Quadratic Equations"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N7-gemini-2011-p2-101",
+        "topicID": "N7",
+        "stem": "Solve the following algebraic problems.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Make $x$ the subject of the formula $y = \\sqrt{\\frac{x+2}{3x}}$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "x = \\frac{2}{3y^2 - 1}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Square both sides to remove the square root.",
+                  "working": "$y^2 = \\frac{x+2}{3x}$",
+                  "reasoning": "Inverse operation of square root."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply by $3x$ to clear the fraction.",
+                  "working": "$3xy^2 = x + 2$",
+                  "reasoning": "Linearizing the equation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Group terms with $x$ on one side.",
+                  "working": "$3xy^2 - x = 2$",
+                  "reasoning": "Isolating the variable of interest."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factorise $x$.",
+                  "working": "$x(3y^2 - 1) = 2$",
+                  "reasoning": "Extracting $x$ as a common factor."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Divide to make $x$ the subject.",
+                  "working": "$x = \\frac{2}{3y^2 - 1}$",
+                  "reasoning": "Final isolation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Express $\\frac{4}{x-2} - \t\\frac{3}{2x+1}$ as a single fraction in its simplest form.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "\\frac{5x + 10}{(x-2)(2x+1)}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the common denominator.",
+                  "working": "Denominator is $(x-2)(2x+1)$",
+                  "reasoning": "The product of the distinct denominators."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Adjust numerators.",
+                  "working": "$\\frac{4(2x+1) - 3(x-2)}{(x-2)(2x+1)}$",
+                  "reasoning": "Multiplying numerators by the missing factors from the denominator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand the numerator.",
+                  "working": "$\\frac{8x + 4 - 3x + 6}{(x-2)(2x+1)}$",
+                  "reasoning": "Distributive law. Watch the negative sign: $-3 \\times -2 = +6$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the numerator.",
+                  "working": "$\\frac{5x + 10}{(x-2)(2x+1)}$",
+                  "reasoning": "Combining like terms."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Formulae and Fractions"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N7-gemini-2011-p2-102",
+        "topicID": "N7",
+        "stem": "",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Solve the equation $\\frac{2x}{x-3} - \\frac{1}{x+2} = 4$. Give your answers correct to two decimal places.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 5.82 or x = -2.32",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply by the common denominator $(x-3)(x+2)$.",
+                  "working": "$2x(x+2) - 1(x-3) = 4(x-3)(x+2)$",
+                  "reasoning": "Eliminating fractions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand brackets on both sides.",
+                  "working": "$2x^2 + 4x - x + 3 = 4(x^2 - x - 6)$",
+                  "reasoning": "Expansion of algebraic terms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify and expand the RHS.",
+                  "working": "$2x^2 + 3x + 3 = 4x^2 - 4x - 24$",
+                  "reasoning": "Preparing to group terms."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Rearrange to form a quadratic equation equal to zero.",
+                  "working": "$0 = 2x^2 - 7x - 27$",
+                  "reasoning": "Moving all terms to the RHS to keep $x^2$ positive."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Use the quadratic formula.",
+                  "working": "$x = \\frac{-(-7) \\pm \\sqrt{(-7)^2 - 4(2)(-27)}}{2(2)} = \\frac{7 \\pm \\sqrt{49 + 216}}{4}$",
+                  "reasoning": "Solving $2x^2 - 7x - 27 = 0$."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Calculate values.",
+                  "working": "$x = \\frac{7 \\pm \\sqrt{265}}{4}$",
+                  "reasoning": "Arithmetic calculation."
+                },
+                {
+                  "step": 7,
+                  "explanation": "Final answers to 2 d.p.",
+                  "working": "$x \\approx 5.82$ or $x \\approx -2.32$",
+                  "reasoning": "Rounding."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Complex Algebraic Equations"
       }
     ]
   }

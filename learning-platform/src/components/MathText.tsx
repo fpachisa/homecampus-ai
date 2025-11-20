@@ -56,7 +56,10 @@ const MathText: React.FC<MathTextProps> = ({ children, className = '' }) => {
       // Use a unique marker that won't be modified by marked
       textWithPlaceholders += `⟨⟨MATH${index}⟩⟩`;
     } else {
-      textWithPlaceholders += segment.content;
+      // CRITICAL FIX: Replace single newlines with double-space + newline
+      // This forces marked to render <br> tags, preserving user-intended line breaks
+      // while keeping breaks: false in options (which protects inline math)
+      textWithPlaceholders += segment.content.replace(/\n/g, '  \n');
     }
   });
 
@@ -77,10 +80,10 @@ const MathText: React.FC<MathTextProps> = ({ children, className = '' }) => {
   // - This was too aggressive and caused inline math to render as block elements
   // - Now we only use block parsing when there's actual block-level markdown syntax
   const hasBlockMarkdown = textWithPlaceholders.includes('###') ||
-                          textWithPlaceholders.includes('##') ||
-                          (textWithPlaceholders.includes('#') && textWithPlaceholders.match(/^#+ /m)) ||
-                          textWithPlaceholders.includes('\n- ') ||
-                          textWithPlaceholders.includes('\n* ');
+    textWithPlaceholders.includes('##') ||
+    (textWithPlaceholders.includes('#') && textWithPlaceholders.match(/^#+ /m)) ||
+    textWithPlaceholders.includes('\n- ') ||
+    textWithPlaceholders.includes('\n* ');
 
   // DEBUG LOGGING: Keep for troubleshooting LaTeX/markdown rendering issues
   // WHEN TO USE: When investigating "extra line breaks" or "LaTeX on separate lines" bugs
@@ -93,11 +96,11 @@ const MathText: React.FC<MathTextProps> = ({ children, className = '' }) => {
   //              textWithPlaceholders as "* Length = ⟨⟨MATH0⟩⟩" which triggers block mode.
   if (hasBlockMarkdown) {
     //console.log('🔍 MathText block markdown detected:', {
-     // originalText: children.substring(0, 200),
-      //textWithPlaceholders: textWithPlaceholders.substring(0, 200),
-      //mathSegments: mathSegments.length,
-      //hasBlockMarkdown
-   // });
+    // originalText: children.substring(0, 200),
+    //textWithPlaceholders: textWithPlaceholders.substring(0, 200),
+    //mathSegments: mathSegments.length,
+    //hasBlockMarkdown
+    // });
   }
 
   // Step 3: Render markdown with placeholders

@@ -136,7 +136,7 @@ Questions with unique questionId field
     ↓
 Questions requiring drawing moved to separate file
     ↓
-[Step 5] Claude: Manual Diagram Mapping (using mathTools library)
+[Step 5] Claude: Filter Diagram Questions (using mathTools library)
     ↓
 Questions with diagram configs (or "needs SVG" flag)
     ↓
@@ -354,7 +354,7 @@ From the mathTools library (70+ visualizers available):
 
 **Output:**
 - Main JSON file with drawing questions removed
-- Separate `questions_require_drawing.json` file with filtered questions
+- Update `questions_require_drawing.json` file with filtered questions
 
 **Reason:**
 The application does not currently support drawing input capabilities. Questions requiring students to sketch graphs, construct geometric shapes, or draw diagrams must be filtered out.

@@ -1,8 +1,603 @@
 {
   "topicId": "N3",
   "questions": {
-    "Paper 1": [],
+    "Paper 1": [
+      {
+        "questionNumber": 4,
+        "questionId": "N3-acsi-2024-p1-q4",
+        "topicID": "N3",
+        "stem": "A shopkeeper bought a pair of shorts for $24. He made a percentage profit of 45% despite selling it at a discount of 20% off the listed price.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Calculate the listed price for this pair of shorts.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$43.50",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the selling price based on the cost price and percentage profit.",
+                  "working": "Selling Price = Cost Price $\\times (1 + \\frac{\\text{Profit}}{100})$\n$= 24 \\times 1.45 = 34.80$",
+                  "reasoning": "The shopkeeper sells at a 45% profit."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Relate the selling price to the listed price and discount.",
+                  "working": "Selling Price = Listed Price $\\times (1 - \\frac{\\text{Discount}}{100})$\n$34.80 = \\text{Listed Price} \\times 0.80$",
+                  "reasoning": "The shorts were sold at a 20% discount off the listed price."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for the listed price.",
+                  "working": "Listed Price = $\\frac{34.80}{0.80} = 43.50$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Profit and Discount"
+      },
+      {
+        "questionNumber": 14,
+        "questionId": "N3-broadrick-2024-p1-q14",
+        "topicID": "N3",
+        "stem": "A company divided a bonus among its employees A, B, and C in the ratio 2:3:7. C's bonus was X% more than the combined bonus of A and B.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "14",
+            "questionText": "Find X.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "40",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the bonuses in terms of units based on the ratio A:B:C = 2:3:7.",
+                  "working": "Let $A = 2u$, $B = 3u$, $C = 7u$.",
+                  "reasoning": "Using algebraic units helps compare the quantities directly."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the combined bonus of A and B.",
+                  "working": "Combined $(A + B) = 2u + 3u = 5u$.",
+                  "reasoning": "We need the sum of A and B to compare it against C."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the difference between C's bonus and the combined bonus of A and B.",
+                  "working": "Difference $= C - (A + B) = 7u - 5u = 2u$.",
+                  "reasoning": "To find the percentage 'more than', we first need the absolute difference."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the percentage X.",
+                  "working": "$X = \\frac{\\text{Difference}}{\\text{Combined (A+B)}} \\times 100\\%$\n$= \\frac{2u}{5u} \\times 100\\%$\n$= 0.4 \\times 100\\%$\n$= 40\\%$",
+                  "reasoning": "The base for the percentage is the combined bonus of A and B."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Ratio and Percentage"
+      },
+      {
+        "questionNumber": 19,
+        "questionId": "N3-broadrick-2024-p1-q19",
+        "topicID": "N3",
+        "stem": "Rayden invested $20 000 at a rate of 0.3% per month compound interest.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of his investment at the end of 2 years.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$21 491.57",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the variables for the compound interest formula. Note that the rate is per month, so time must be in months.",
+                  "working": "$P = 20000$\n$r = 0.3\\%$\n$n = 2 \\text{ years} \\times 12 = 24 \\text{ months}$",
+                  "reasoning": "Consistency in units (months) is crucial for the formula A = P(1 + r/100)^n."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute values into the formula.",
+                  "working": "$A = 20000(1 + \\frac{0.3}{100})^{24}$\n$A = 20000(1.003)^{24}$",
+                  "reasoning": "Apply the standard compound interest formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final value.",
+                  "working": "$A \\approx 21491.573...$\n$A = 21491.57 \\text{ (to 2 d.p.)}$",
+                  "reasoning": "Currency should be rounded to 2 decimal places."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Rayden then withdrew $\\frac{1}{5}$ of the accumulated amount at the end of the 2 years. Find the new rate of compound interest per month so that his remaining investment reaches the same value in (a) in another 3 years.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.622",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the remaining proportion of the investment.",
+                  "working": "Withdrew $\\frac{1}{5}$ $\\rightarrow$ Remaining $= 1 - \\frac{1}{5} = \\frac{4}{5}$.",
+                  "reasoning": "We need the starting principal for the next 3 years."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation. Let A be the amount from part (a). The new Principal is \\frac{4}{5}A. The Target Amount is A.",
+                  "working": "Target Amount $=$ New Principal $\\times (1 + \\frac{r}{100})^{36}$\n$A = (\\frac{4}{5}A) \\times (1 + \\frac{r}{100})^{36}$",
+                  "reasoning": "The target value is the same as the answer in (a). The time is 3 years (36 months)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the equation by dividing both sides by A.",
+                  "working": "$1 = \\frac{4}{5}(1 + \\frac{r}{100})^{36}$\n$\\frac{5}{4} = (1 + \\frac{r}{100})^{36}$\n$1.25 = (1 + \\frac{r}{100})^{36}$",
+                  "reasoning": "The actual dollar value cancels out; the rate depends only on the growth factor required to recover the 1/5 withdrawal."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for r.",
+                  "working": "$1 + \\frac{r}{100} = \\sqrt[36]{1.25}$\n$1 + \\frac{r}{100} \\approx 1.006217...$\n$\\frac{r}{100} = 0.006217...$\n$r = 0.6217...$",
+                  "reasoning": "Isolate r using roots."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "$r = 0.622\\%$",
+                  "reasoning": "Standard O-level accuracy for non-exact numerical answers."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Compound Interest"
+      },
+      {
+        "questionNumber": 25,
+        "questionId": "N3-acsi-2024-p1-q25",
+        "topicID": "N3",
+        "stem": "Edwin deposited $P each into Bank A and Bank B. Bank A offered a simple interest of 4% per annum while Bank B offered an interest rate of 2% per half-year, compounded every six months. The difference in the amount Edwin received from both banks after a period of 7 years is $513.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Find P, correct your answer to the nearest hundred.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "13000",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total amount from Bank A (Simple Interest).",
+                  "working": "Interest = $P \\times R \\times T = P \\times 0.04 \\times 7 = 0.28P$\nTotal Amount A = $P + 0.28P = 1.28P$",
+                  "reasoning": "Simple interest formula $I = Prt$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total amount from Bank B (Compound Interest).",
+                  "working": "Rate per period = 2% = 0.02\nNumber of periods = $7 \\text{ years} \\times 2 = 14$ periods\nTotal Amount B = $P(1 + 0.02)^{14} \\approx 1.319479P$",
+                  "reasoning": "Compound interest formula $A = P(1+r)^n$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Form an equation using the difference in amounts.",
+                  "working": "Amount B - Amount A = 513\n$1.319479P - 1.28P = 513$\n$0.039479P = 513$",
+                  "reasoning": "Bank B yields a higher amount due to compounding."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for P and round to the nearest hundred.",
+                  "working": "$P = \\frac{513}{0.039479} \\approx 12994.25$\nNearest hundred = 13000",
+                  "reasoning": ""
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Compound vs Simple Interest"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-1911-p1-101",
+        "topicID": "N3",
+        "stem": "A watch is sold for $520, incurring a loss of 20% on the cost price. To make a profit of 15% on the cost price, what should be the new selling price?",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Calculate the new selling price.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$747.50",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the cost price (CP) using the initial selling price and loss percentage.",
+                  "working": "$80\\% \\text{ of CP} = 520$\n$0.8 \\times \\text{CP} = 520$\n$\\text{CP} = \\frac{520}{0.8} = 650$",
+                  "reasoning": "Loss is 20%, so selling price is 80% of cost."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the new selling price for 15% profit.",
+                  "working": "New SP = $115\\% \\text{ of CP} = 1.15 \\times 650$\n$= 747.50$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Reverse Percentage and Profit"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-2024-p1-101",
+        "topicID": "N3",
+        "stem": "The ratio of the number of red balls to blue balls in a bag is 5 : 3. After 12 red balls are removed from the bag, the ratio of red balls to blue balls becomes 7 : 6.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the original number of blue balls in the bag.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "24",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define the original numbers using algebra based on the initial ratio.",
+                  "working": "Let original Red $= 5u$ and Blue $= 3u$.",
+                  "reasoning": "Using a common unit 'u' allows us to form an equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation based on the change (removing red balls) and the new ratio.",
+                  "working": "$\\frac{5u - 12}{3u} = \\frac{7}{6}$",
+                  "reasoning": "The number of blue balls (3u) did not change, only the red balls decreased by 12."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for u.",
+                  "working": "$6(5u - 12) = 7(3u)$\n$30u - 72 = 21u$\n$30u - 21u = 72$\n$9u = 72$\n$u = 8$",
+                  "reasoning": "Cross-multiply and isolate the variable."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the original number of blue balls.",
+                  "working": "Blue $= 3u = 3(8) = 24$.",
+                  "reasoning": "Substitute u back into the expression for blue balls."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the percentage decrease in the total number of balls in the bag.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "18.75",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the original total number of balls.",
+                  "working": "Original Total $= 5u + 3u = 8u = 8(8) = 64$.",
+                  "reasoning": "Sum of red and blue initially."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the decrease in the number of balls.",
+                  "working": "Decrease = 12 (since 12 red balls were removed).",
+                  "reasoning": "The change is explicitly given in the stem."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the percentage decrease.",
+                  "working": "Percentage Decrease $= \\frac{\\text{Decrease}}{\\text{Original Total}} \\times 100\\%$\n$= \\frac{12}{64} \\times 100\\%$\n$= 18.75\\%$",
+                  "reasoning": "Percentage change formula: (Change / Original) * 100."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Ratio and Proportion"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N3-gemini-1911-p2-102",
+        "topicID": "N3",
+        "stem": "During a sale, a furniture store offers a 15% discount on the marked price of a sofa. A customer pays $1377 for the sofa, which includes a 8% GST on the discounted price.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Calculate the marked price of the sofa.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1500",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the price before GST.",
+                  "working": "Price inclusive of GST = $108\\%$ of Price before GST\n$1.08 \\times \\text{Price}_{\\text{before GST}} = 1377$\n$\\text{Price}_{\\text{before GST}} = \\frac{1377}{1.08} = 1275$",
+                  "reasoning": "GST is applied on the final discounted price."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the marked price before the 15% discount.",
+                  "working": "Discounted Price = $85\\%$ of Marked Price\n$0.85 \\times \\text{Marked Price} = 1275$\n$\\text{Marked Price} = \\frac{1275}{0.85} = 1500$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Reverse Percentage with Tax"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N3-gemini-2024-p1-102",
+        "topicID": "N3",
+        "stem": "A sum of money is invested at 4% per annum simple interest. It takes $n$ years for the sum of money to double.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $n$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "25",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the Simple Interest formula where Interest equals Principal.",
+                  "working": "Let Principal $= P$.\nFor the sum to double, Interest $(I)$ must equal $P$.\n$I = \\frac{PRT}{100}$",
+                  "reasoning": "If the total amount is 2P, the interest earned is 2P - P = P."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute known values and solve for T (which is n).",
+                  "working": "$P = \\frac{P \\times 4 \\times n}{100}$\n$1 = \\frac{4n}{100}$ (Dividing both sides by $P$)\n$100 = 4n$\n$n = 25$",
+                  "reasoning": "Algebraic manipulation to isolate n."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Another sum of money is invested at 4% per annum compound interest, compounded yearly. Calculate the percentage growth of this investment after 5 years.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "21.7",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the compound interest multiplier for 5 years.",
+                  "working": "Multiplier $= (1 + \\frac{4}{100})^5 = 1.04^5$",
+                  "reasoning": "The growth factor for one year is 1.04."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value of the multiplier.",
+                  "working": "$1.04^5 \\approx 1.21665...$",
+                  "reasoning": "This represents the final amount as a proportion of the original."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert to percentage growth.",
+                  "working": "Percentage Growth $= (1.21665... - 1) \\times 100\\%$\n$= 21.665...\\%$\n$= 21.7\\%$ (to 3 s.f.)",
+                  "reasoning": "Subtract the original 100% (or 1) to find the growth only."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Simple and Compound Interest"
+      },
+      {
+        "questionNumber": 103,
+        "questionId": "N3-gemini-1911-p2-103",
+        "topicID": "N3",
+        "stem": "A company invests $50,000 in an account paying compound interest at a rate of 3.5% per annum. At the end of 3 years, the company withdraws the total amount and reinvests it in a new scheme paying 4% simple interest per annum.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the total amount available for reinvestment after 3 years.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$55,435.94",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the amount after 3 years of compound interest.",
+                  "working": "$A = P(1 + r)^n = 50000(1 + 0.035)^3$\n$= 50000(1.108717...)$",
+                  "reasoning": ""
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the final value.",
+                  "working": "$= 55435.9375$\n$\\approx 55435.94$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the annual interest earned from the new scheme.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2,217.44",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate one year's simple interest on the new principal.",
+                  "working": "$I = P \\times R = 55435.9375 \\times 0.04$\n$= 2217.4375$",
+                  "reasoning": "Using the unrounded principal for accuracy."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Round to 2 decimal places.",
+                  "working": "$2217.44$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Compound and Simple Interest"
+      }
+    ],
     "Paper 2": [
+      {
+        "questionNumber": 1,
+        "questionId": "N3-broadrick-2024-p2-q1",
+        "topicID": "N3",
+        "stem": "A company produces phones. In 2023, the company produced 3.6 million smartphones.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Due to increased demand, the company produced 4.2 million smartphones in 2024. Express this production figure in standard form.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$4.2 \\times 10^6$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the word 'million' to numerical form.",
+                  "working": "4.2 million $= 4,200,000$",
+                  "reasoning": "One million is 10^6."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Express in standard form A x 10^n where 1 <= A < 10.",
+                  "working": "$4,200,000 = 4.2 \\times 10^6$",
+                  "reasoning": "Move the decimal point 6 places to the left."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the percentage increase in smartphone production from 2023 to 2024.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$16 \\frac{2}{3}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the increase in production.",
+                  "working": "Increase $= 4.2m - 3.6m = 0.6m$",
+                  "reasoning": "Difference between new and old values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate percentage increase based on the original (2023) value.",
+                  "working": "$\\frac{0.6}{3.6} \\times 100\\%$",
+                  "reasoning": "Percentage increase = (Increase / Original) * 100."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the fraction.",
+                  "working": "$\\frac{0.6}{3.6} = \\frac{1}{6}$\n$\\frac{1}{6} \\times 100\\% = 16.66...\\% = 16 \\frac{2}{3}\\%$",
+                  "reasoning": "Exact fraction is preferred in O-level unless specified otherwise, or 16.7% (3 s.f.)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "In 2023, 4% of the total phones produced were not smartphones. Calculate the total number of phones produced in 2023. Express your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$3.75 \\times 10^6$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the percentage of phones that WERE smartphones.",
+                  "working": "$100\\% - 4\\% = 96\\%$",
+                  "reasoning": "The total consists of smartphones and non-smartphones."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Equate the percentage to the given number of smartphones.",
+                  "working": "$96\\%$ of Total $= 3.6 \\times 10^6$",
+                  "reasoning": "We know the quantity of smartphones from the stem."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the 100% (Total) value.",
+                  "working": "Total $= \\frac{3.6 \\times 10^6}{96} \\times 100$\n$= \\frac{3,600,000}{0.96}$\n$= 3,750,000$",
+                  "reasoning": "Reverse percentage calculation."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert the final answer to standard form.",
+                  "working": "$3,750,000 = 3.75 \\times 10^6$",
+                  "reasoning": "Format requirement."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Standard Form and Percentage"
+      },
       {
         "questionNumber": 28,
         "questionId": "N3-anderson-2024-p2-q28",
@@ -202,32 +797,112 @@
             "title": "Speedpost (International) Service Rates",
             "zones": {
               "Zone A - Malaysia": {
-                "Document": { "express": "$25.00", "priority": "$20.00", "economy": "-" },
-                "2kg": { "express": "$61.00", "priority": "$39.00", "economy": "$26.00" },
-                "5kg": { "express": "$91.00", "priority": "$55.00", "economy": "$26.00" },
-                "10kg": { "express": "$122.00", "priority": "$78.00", "economy": "$43.00" },
-                "20kg": { "express": "$158.00", "priority": "$115.00", "economy": "$66.00" }
+                "Document": {
+                  "express": "$25.00",
+                  "priority": "$20.00",
+                  "economy": "-"
+                },
+                "2kg": {
+                  "express": "$61.00",
+                  "priority": "$39.00",
+                  "economy": "$26.00"
+                },
+                "5kg": {
+                  "express": "$91.00",
+                  "priority": "$55.00",
+                  "economy": "$26.00"
+                },
+                "10kg": {
+                  "express": "$122.00",
+                  "priority": "$78.00",
+                  "economy": "$43.00"
+                },
+                "20kg": {
+                  "express": "$158.00",
+                  "priority": "$115.00",
+                  "economy": "$66.00"
+                }
               },
               "Zone B - Asia": {
-                "Document": { "express": "$50.00", "priority": "$45.00", "economy": "-" },
-                "2kg": { "express": "$108.00", "priority": "$78.00", "economy": "$37.00" },
-                "5kg": { "express": "$180.00", "priority": "$123.00", "economy": "$37.00" },
-                "10kg": { "express": "$269.00", "priority": "$182.00", "economy": "$64.00" },
-                "20kg": { "express": "$398.00", "priority": "$278.00", "economy": "$106.00" }
+                "Document": {
+                  "express": "$50.00",
+                  "priority": "$45.00",
+                  "economy": "-"
+                },
+                "2kg": {
+                  "express": "$108.00",
+                  "priority": "$78.00",
+                  "economy": "$37.00"
+                },
+                "5kg": {
+                  "express": "$180.00",
+                  "priority": "$123.00",
+                  "economy": "$37.00"
+                },
+                "10kg": {
+                  "express": "$269.00",
+                  "priority": "$182.00",
+                  "economy": "$64.00"
+                },
+                "20kg": {
+                  "express": "$398.00",
+                  "priority": "$278.00",
+                  "economy": "$106.00"
+                }
               },
               "Zone C - Australia, New Zealand, Europe, USA & Canada": {
-                "Document": { "express": "$75.00", "priority": "$70.00", "economy": "-" },
-                "2kg": { "express": "$159.00", "priority": "$107.00", "economy": "$80.00" },
-                "5kg": { "express": "$259.00", "priority": "$161.00", "economy": "$80.00" },
-                "10kg": { "express": "$400.00", "priority": "$232.00", "economy": "$135.00" },
-                "20kg": { "express": "$569.00", "priority": "$354.00", "economy": "$202.00" }
+                "Document": {
+                  "express": "$75.00",
+                  "priority": "$70.00",
+                  "economy": "-"
+                },
+                "2kg": {
+                  "express": "$159.00",
+                  "priority": "$107.00",
+                  "economy": "$80.00"
+                },
+                "5kg": {
+                  "express": "$259.00",
+                  "priority": "$161.00",
+                  "economy": "$80.00"
+                },
+                "10kg": {
+                  "express": "$400.00",
+                  "priority": "$232.00",
+                  "economy": "$135.00"
+                },
+                "20kg": {
+                  "express": "$569.00",
+                  "priority": "$354.00",
+                  "economy": "$202.00"
+                }
               },
               "Zone D - Rest of the World": {
-                "Document": { "express": "$100.00", "priority": "$95.00", "economy": "-" },
-                "2kg": { "express": "$393.00", "priority": "$155.00", "economy": "$86.00" },
-                "5kg": { "express": "$630.00", "priority": "$260.00", "economy": "$86.00" },
-                "10kg": { "express": "$929.00", "priority": "$386.00", "economy": "$160.00" },
-                "20kg": { "express": "$1,388.00", "priority": "$603.00", "economy": "$282.00" }
+                "Document": {
+                  "express": "$100.00",
+                  "priority": "$95.00",
+                  "economy": "-"
+                },
+                "2kg": {
+                  "express": "$393.00",
+                  "priority": "$155.00",
+                  "economy": "$86.00"
+                },
+                "5kg": {
+                  "express": "$630.00",
+                  "priority": "$260.00",
+                  "economy": "$86.00"
+                },
+                "10kg": {
+                  "express": "$929.00",
+                  "priority": "$386.00",
+                  "economy": "$160.00"
+                },
+                "20kg": {
+                  "express": "$1,388.00",
+                  "priority": "$603.00",
+                  "economy": "$282.00"
+                }
               }
             },
             "constraints": {
@@ -247,34 +922,34 @@
             "marks": 2,
             "answerType": "numerical",
             "solution": {
-                    "finalAnswer": "39.6%",
-                    "stepByStep": [
-                      {
-                        "step": 1,
-                        "explanation": "Identify the zones and weight bracket.",
-                        "working": "Australia is in **Zone C**. Brazil is in **Zone D** (Rest of the World). \nAn 18 kg parcel falls into the 'Weight Up To **20kg**' category.",
-                        "reasoning": "We must look up the rates for the 20kg limit in the Economy column."
-                      },
-                      {
-                        "step": 2,
-                        "explanation": "Find the costs from the table.",
-                        "working": "Cost to Australia (Zone C, Economy, 20kg) = **$202.00**\nCost to Brazil (Zone D, Economy, 20kg) = **$282.00**",
-                        "reasoning": "Extract data from the table."
-                      },
-                      {
-                        "step": 3,
-                        "explanation": "Calculate the percentage increase.",
-                        "working": "$$ \\text{Percentage Increase} = \\frac{\\text{Difference}}{\\text{Original}} \\times 100\\% $$\n$$ = \\frac{282 - 202}{202} \\times 100\\% $$\n$$ = \\frac{80}{202} \\times 100\\% $$\n$$ \\approx 39.6039...\\% $$",
-                        "reasoning": "The comparison base ('as compared to') is Australia."
-                      },
-                      {
-                        "step": 4,
-                        "explanation": "Round to 3 significant figures.",
-                        "working": "39.6%",
-                        "reasoning": "Standard precision for percentage answers."
-                      }
-                    ]
-                  }
+              "finalAnswer": "39.6%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the zones and weight bracket.",
+                  "working": "Australia is in **Zone C**. Brazil is in **Zone D** (Rest of the World). \nAn 18 kg parcel falls into the 'Weight Up To **20kg**' category.",
+                  "reasoning": "We must look up the rates for the 20kg limit in the Economy column."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the costs from the table.",
+                  "working": "Cost to Australia (Zone C, Economy, 20kg) = **$202.00**\nCost to Brazil (Zone D, Economy, 20kg) = **$282.00**",
+                  "reasoning": "Extract data from the table."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the percentage increase.",
+                  "working": "$$ \\text{Percentage Increase} = \\frac{\\text{Difference}}{\\text{Original}} \\times 100\\% $$\n$$ = \\frac{282 - 202}{202} \\times 100\\% $$\n$$ = \\frac{80}{202} \\times 100\\% $$\n$$ \\approx 39.6039...\\% $$",
+                  "reasoning": "The comparison base ('as compared to') is Australia."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "39.6%",
+                  "reasoning": "Standard precision for percentage answers."
+                }
+              ]
+            }
           },
           {
             "partId": "b",
@@ -282,45 +957,139 @@
             "marks": 6,
             "answerType": "numerical",
             "solution": {
-                    "finalAnswer": "$5.60",
-                    "stepByStep": [
-                      {
-                        "step": 1,
-                        "explanation": "Determine the most cost-effective shipping strategy.",
-                        "working": "To get the lowest price, the writer must minimize shipping cost per book. This is achieved by sending the maximum weight allowed in the largest bracket (20 kg) via Economy.",
-                        "reasoning": "Bulk shipping reduces the cost per unit."
-                      },
-                      {
-                        "step": 2,
-                        "explanation": "Calculate the maximum number of books per 20kg parcel.",
-                        "working": "$$ \\text{Max Weight} = 20\\text{ kg} = 20,000\\text{ g} $$\n$$ \\text{Weight per book} = 75\\text{ g} $$\n$$ \\text{Number of books} = \\frac{20,000}{75} = 266.66... $$\nMax books = 266.",
-                        "reasoning": "We cannot send a fraction of a book, so we round down to 266."
-                      },
-                      {
-                        "step": 3,
-                        "explanation": "Calculate the shipping cost per book.",
-                        "working": "Total Shipping for 20kg (Zone C) = \\$202.00 \n\n Shipping per book = $\\frac{202}{266}$ $\\approx$ \\$0.75939...",
-                        "reasoning": "Distribute the total shipping cost across the 266 books."
-                      },
-                      {
-                        "step": 4,
-                        "explanation": "Calculate the total selling price per book.",
-                        "working": "$$ \\text{Price} = \\text{Manufacturing} + \\text{Profit} + \\text{Shipping} $$\n$$ \\text{Price} = 1.80 + 3.00 + 0.75939... $$\n$$ \\text{Price} = 5.55939... $$",
-                        "reasoning": "Sum all component costs and desired profit."
-                      },
-                      {
-                        "step": 5,
-                        "explanation": "Round to the nearest ten cents.",
-                        "working": "\\$5.559... rounded to nearest ten cents is **\\$5.60**.",
-                        "reasoning": "The digit in the hundredths place is 5, so we round the tenths digit up."
-                      }
-                    ]
-                  }
+              "finalAnswer": "$5.60",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the most cost-effective shipping strategy.",
+                  "working": "To get the lowest price, the writer must minimize shipping cost per book. This is achieved by sending the maximum weight allowed in the largest bracket (20 kg) via Economy.",
+                  "reasoning": "Bulk shipping reduces the cost per unit."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the maximum number of books per 20kg parcel.",
+                  "working": "$$ \\text{Max Weight} = 20\\text{ kg} = 20,000\\text{ g} $$\n$$ \\text{Weight per book} = 75\\text{ g} $$\n$$ \\text{Number of books} = \\frac{20,000}{75} = 266.66... $$\nMax books = 266.",
+                  "reasoning": "We cannot send a fraction of a book, so we round down to 266."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the shipping cost per book.",
+                  "working": "Total Shipping for 20kg (Zone C) = \\$202.00 \n\n Shipping per book = $\\frac{202}{266}$ $\\approx$ \\$0.75939...",
+                  "reasoning": "Distribute the total shipping cost across the 266 books."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the total selling price per book.",
+                  "working": "$$ \\text{Price} = \\text{Manufacturing} + \\text{Profit} + \\text{Shipping} $$\n$$ \\text{Price} = 1.80 + 3.00 + 0.75939... $$\n$$ \\text{Price} = 5.55939... $$",
+                  "reasoning": "Sum all component costs and desired profit."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Round to the nearest ten cents.",
+                  "working": "\\$5.559... rounded to nearest ten cents is **\\$5.60**.",
+                  "reasoning": "The digit in the hundredths place is 5, so we round the tenths digit up."
+                }
+              ]
+            }
           }
         ],
         "totalMarks": 8,
         "paper": "Paper 2",
         "title": "Cost Percentage Increase"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-2024-p2-101",
+        "topicID": "N3",
+        "stem": "The population of a bacteria colony is $5.4 \\times 10^8$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The population increases by 15%. Calculate the new population, giving your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$6.21 \\times 10^8$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the multiplier for a 15% increase.",
+                  "working": "Multiplier $= 1 + 0.15 = 1.15$",
+                  "reasoning": "Increasing by 15% is equivalent to finding 115% of the original."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the original population by the multiplier.",
+                  "working": "$1.15 \\times (5.4 \\times 10^8) = 6.21 \\times 10^8$",
+                  "reasoning": "Direct calculation. Since 1.15 * 5.4 = 6.21, the power of 10 remains unchanged."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The original population of $5.4 \\times 10^8$ was the result of a 20% decrease from the previous day. Calculate the population on the previous day.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$6.75 \\times 10^8$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the percentage representing the current population relative to the previous day.",
+                  "working": "Previous Day $= 100\\%$\nCurrent $= 100\\% - 20\\% = 80\\%$",
+                  "reasoning": "This is a reverse percentage problem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation.",
+                  "working": "$80\\%$ of Previous $= 5.4 \\times 10^8$",
+                  "reasoning": "Equating the percentage to the value."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for the previous population.",
+                  "working": "Previous $= \\frac{5.4 \\times 10^8}{0.8}$\n$= 6.75 \\times 10^8$",
+                  "reasoning": "Divide by the decimal equivalent of the percentage."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "A virus is approximately $9 \\times 10^{-7}$ meters in length. Calculate how many times larger the bacteria population ($5.4 \\times 10^8$) is compared to the length of the virus. Give your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$6 \\times 10^{14}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the division to compare the two numbers.",
+                  "working": "$\\frac{5.4 \\times 10^8}{9 \\times 10^{-7}}$",
+                  "reasoning": "'How many times larger' implies division."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide the coefficients and subtract the indices.",
+                  "working": "$\\frac{5.4}{9} \\times 10^{8 - (-7)}$\n$= 0.6 \\times 10^{15}$",
+                  "reasoning": "Laws of indices: subtract powers when dividing."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert to standard form.",
+                  "working": "$0.6 \\times 10^{15} = 6 \\times 10^{-1} \\times 10^{15}$\n$= 6 \\times 10^{14}$",
+                  "reasoning": "Standard form requires the coefficient to be between 1 and 10."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Standard Form and Reverse Percentage"
       }
     ]
   }

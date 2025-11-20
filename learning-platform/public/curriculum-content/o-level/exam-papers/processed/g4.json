@@ -3,6 +3,71 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 2,
+        "questionId": "G4-acsi-2024-p1-q2",
+        "topicID": "G4",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$sin~x^{\\circ}=0.66913$. Given that x is an obtuse angle, find x.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "138",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the reference angle (basic angle) $\\alpha$ by taking the inverse sine of the value.",
+                  "working": "$\\alpha = \\sin^{-1}(0.66913) \\approx 42.0^{\\circ}$",
+                  "reasoning": "The reference angle is always acute and positive."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the obtuse angle $x$ located in the second quadrant.",
+                  "working": "$x = 180^{\\circ} - 42.0^{\\circ} = 138.0^{\\circ}$",
+                  "reasoning": "For obtuse angles ($90^{\\circ} < x < 180^{\\circ}$), $sin(180^{\\circ} - \\alpha) = sin(\\alpha)$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$cos~y^{\\circ}=-cos~121^{\\circ}$. Given that y is an acute angle, find the value of y.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "59",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the reference angle for $121^{\\circ}$ to express $cos(121^{\\circ})$ in terms of an acute angle.",
+                  "working": "Reference angle $= 180^{\\circ} - 121^{\\circ} = 59^{\\circ}$. Since $121^{\\circ}$ is in the second quadrant, $cos(121^{\\circ}) = -cos(59^{\\circ})$.",
+                  "reasoning": "Using the property $cos(180^{\\circ} - \\theta) = -cos(\\theta)$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute this back into the original equation to find $y$.",
+                  "working": "$cos(y) = -(-cos(59^{\\circ})) \\Rightarrow cos(y) = cos(59^{\\circ})$",
+                  "reasoning": "The negatives cancel out."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify the acute angle $y$.",
+                  "working": "$y = 59$",
+                  "reasoning": "Since $cos(y) = cos(59^{\\circ})$ and y is acute."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Trigonometric Equations"
+      },
+      {
         "questionNumber": 16,
         "questionId": "G4-anderson-2024-p1-q16",
         "topicID": "G4",
@@ -55,6 +120,136 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Semi-circle Trig Ratios"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-1911-p1-101",
+        "topicID": "G4",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$sin~x^{\\circ}=0.9397$. Given that x is an obtuse angle, find x.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "110",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the basic reference angle.",
+                  "working": "$\\alpha = \\sin^{-1}(0.9397) \\approx 70.0^{\\circ}$",
+                  "reasoning": ""
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the obtuse angle in the second quadrant.",
+                  "working": "$x = 180^{\\circ} - 70.0^{\\circ} = 110.0^{\\circ}$",
+                  "reasoning": "Obtuse angles are $180^{\\circ} - \\text{reference angle}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$cos~y^{\\circ} = -cos~145^{\\circ}$. Given that y is an acute angle, find the value of y.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "35",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the reference angle for $145^{\\circ}$.",
+                  "working": "$180^{\\circ} - 145^{\\circ} = 35^{\\circ}$. Thus, $cos(145^{\\circ}) = -cos(35^{\\circ})$.",
+                  "reasoning": "Cosine is negative in the second quadrant."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute into the equation.",
+                  "working": "$cos(y) = -(-cos(35^{\\circ})) = cos(35^{\\circ})$",
+                  "reasoning": ""
+                },
+                {
+                  "step": 3,
+                  "explanation": "State the value of $y$.",
+                  "working": "$y = 35$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Trigonometric Values"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G4-gemini-1911-p1-102",
+        "topicID": "G4",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$cos~x^{\\circ}=-0.6428$. Given that x is an obtuse angle, find x.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "130",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the reference angle by taking the inverse cosine of the positive value.",
+                  "working": "$\\alpha = \\cos^{-1}(0.6428) \\approx 50.0^{\\circ}$",
+                  "reasoning": "Always use the positive magnitude for the reference angle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the obtuse angle.",
+                  "working": "$x = 180^{\\circ} - 50.0^{\\circ} = 130.0^{\\circ}$",
+                  "reasoning": "Cosine is negative in the second quadrant (obtuse)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$sin~y^{\\circ}=sin~115^{\\circ}$. Given that y is an acute angle, find the value of y.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "65",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the property that sines of supplementary angles are equal.",
+                  "working": "$sin(115^{\\circ}) = sin(180^{\\circ} - 115^{\\circ})$",
+                  "reasoning": "$sin(\\theta) = sin(180^{\\circ} - \\theta)$"
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the acute angle.",
+                  "working": "$180^{\\circ} - 115^{\\circ} = 65^{\\circ}$. Therefore, $sin(y) = sin(65^{\\circ})$.",
+                  "reasoning": ""
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for y.",
+                  "working": "$y = 65$",
+                  "reasoning": ""
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Trigonometric Angles"
       }
     ],
     "Paper 2": [

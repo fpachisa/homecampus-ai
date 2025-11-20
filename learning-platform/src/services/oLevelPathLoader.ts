@@ -5,8 +5,8 @@
  * Transforms them into PathNode structure for the practice system
  *
  * Strategy:
- * - Paper 1: Group 5 questions per node (faster practice)
- * - Paper 2: 1 question per node (deeper focus)
+ * - Paper 1: 1 question per node (no prerequisites - independent practice)
+ * - Paper 2: 1 question per node (sequential prerequisites - deeper focus)
  * - Multi-part questions stay together with shared questionGroup
  */
 
@@ -136,8 +136,8 @@ class OLevelPathLoader {
 
   /**
    * Transform O-Level questions to PathNode structure
-   * Paper 1: Group 5 questions per node
-   * Paper 2: 1 question per node
+   * Paper 1: 1 question per node (no prerequisites)
+   * Paper 2: 1 question per node (sequential prerequisites)
    */
   private transformToPathNodes(
     topicId: string,
@@ -168,32 +168,26 @@ class OLevelPathLoader {
         });
       });
     } else {
-      // Paper 1: Group 5 questions per node
-      const questionsPerNode = 5;
-      let nodeNumber = 1;
-
-      for (let i = 0; i < questions.length; i += questionsPerNode) {
-        const nodeQuestions = questions.slice(i, i + questionsPerNode);
-        const allPreWritten = nodeQuestions.flatMap(q => this.transformQuestionToParts(q));
+      // Paper 1: One question per node (no prerequisites)
+      questions.forEach((question, index) => {
+        const preWrittenQuestions = this.transformQuestionToParts(question);
         const topicName = TOPIC_NAMES[topicId.toLowerCase()] || topicId.toUpperCase();
 
         nodes.push({
-          id: `olevel-${topicId.toLowerCase()}-p1-node${nodeNumber}`,
-          nodeNumber,
-          title: `Paper 1: ${topicName} (Set ${nodeNumber})`,
-          problemsRequired: allPreWritten.length,
+          id: `olevel-${topicId.toLowerCase()}-p1-node${index + 1}`,
+          nodeNumber: index + 1,
+          title: question.title || `Question ${question.questionNumber}`,
+          problemsRequired: preWrittenQuestions.length,
           layer: 'examPractice',
           prerequisites: [], // Paper 1 nodes have no prerequisites
           descriptor: {
-            problemDescription: [`O-Level ${topicName} - Paper 1 Practice Set ${nodeNumber}`],
+            problemDescription: [`O-Level ${topicName} - ${question.title || 'Question ' + question.questionNumber}`],
             contexts: ['exam'],
             aiGeneratedQuestions: false,
-            preWrittenQuestions: allPreWritten
+            preWrittenQuestions
           }
         });
-
-        nodeNumber++;
-      }
+      });
     }
 
     return nodes;

@@ -152,8 +152,658 @@
         "totalMarks": 7,
         "paper": "Paper 1",
         "title": "Production Cost Matrix"
+      },
+      {
+        "questionNumber": 21,
+        "questionId": "N9-acsi-2024-p1-q21",
+        "topicID": "N9",
+        "stem": "A tour agency sells cruise packages to Vietnam, Maldives and Taiwan at $1299, $1398 and $2538 respectively. The table below shows the number of customers who have signed up for the respective cruise packages via the tour agency from January to June and from July to December.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The number of people who signed up for cruise packages to Vietnam, Maldives and Taiwan can be represented by the matrix $P=(\\begin{matrix}27&24\\\\ 23&29\\\\ 19&22\\end{matrix}).$ The elements of matrix C, where $C=AP$, represents the total earnings for each period. Write down the matrix A.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$A = \\begin{pmatrix} 1299 & 1398 & 2538 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the dimensions required for matrix multiplication. $P$ is a $3 \\times 2$ matrix. $C$ represents earnings per period, so it must be a $1 \\times 2$ matrix.",
+                  "working": "Order of $A \\times$ Order of $P =$ Order of $C$\n$(1 \\times 3) \\times (3 \\times 2) = (1 \\times 2)$",
+                  "reasoning": "For matrix multiplication to be defined, the number of columns in the first matrix must equal the number of rows in the second."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct matrix A using the prices given for Vietnam, Maldives, and Taiwan respectively.",
+                  "working": "$A = \\begin{pmatrix} 1299 & 1398 & 2538 \\end{pmatrix}$",
+                  "reasoning": "The row vector represents the price per package corresponding to the rows in matrix P."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, by using matrix multiplication, determine the total earnings, C by the tour agency for each of the period respectively.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$C = \\begin{pmatrix} 115449 & 127554 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication $C = AP$.",
+                  "working": "$C = \\begin{pmatrix} 1299 & 1398 & 2538 \\end{pmatrix} \\begin{pmatrix} 27 & 24 \\\\ 23 & 29 \\\\ 19 & 22 \\end{pmatrix}$",
+                  "reasoning": "Substitute the matrices identified in part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform row-by-column multiplication for the first element (Jan-Jun earnings).",
+                  "working": "$c_{11} = (1299 \\times 27) + (1398 \\times 23) + (2538 \\times 19)$\n$= 35073 + 32154 + 48222$\n$= 115449$",
+                  "reasoning": "Sum of (Price $\\times$ Quantity) for the first column."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Perform row-by-column multiplication for the second element (Jul-Dec earnings).",
+                  "working": "$c_{12} = (1299 \\times 24) + (1398 \\times 29) + (2538 \\times 22)$\n$= 31176 + 40542 + 55836$\n$= 127554$",
+                  "reasoning": "Sum of (Price $\\times$ Quantity) for the second column."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Write the final matrix.",
+                  "working": "$C = \\begin{pmatrix} 115449 & 127554 \\end{pmatrix}$",
+                  "reasoning": "Combine the calculated elements into the result matrix."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Given $M=CR,$ where $R=(\\begin{matrix}1\\\\ 1\\end{matrix}),$ find the matrix M.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$M = \\begin{pmatrix} 243003 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the multiplication using the result from part (b).",
+                  "working": "$M = \\begin{pmatrix} 115449 & 127554 \\end{pmatrix} \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$",
+                  "reasoning": "Substitute matrix C and the given matrix R."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the matrix multiplication.",
+                  "working": "$M = (115449 \\times 1) + (127554 \\times 1)$\n$= 115449 + 127554$\n$= 243003$",
+                  "reasoning": "Multiplying a row vector by a column vector of 1s effectively sums the elements of the row vector."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Express as a matrix.",
+                  "working": "$M = \\begin{pmatrix} 243003 \\end{pmatrix}$",
+                  "reasoning": "The result is a $1 \\times 1$ matrix."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Describe what is represented by the element(s) of M.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "The total earnings by the tour agency for the entire year (from January to December).",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the operation performed in part (c).",
+                  "working": "Sum of (Jan-Jun Earnings) + (Jul-Dec Earnings)",
+                  "reasoning": "Since $C$ contained earnings for two 6-month periods, summing them gives the total for the whole year."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Matrices Application"
+      },
+      {
+        "questionNumber": 25,
+        "questionId": "N9-broadrick-2024-p1-q25",
+        "topicID": "N9",
+        "stem": "In bookstore A, a fiction book costs \\$8, a non-fiction book costs \\$10 and a science book costs \\$11.50. In bookstore B, a fiction book costs \\$1.10 less, a non-fiction book costs \\$2.80 less and a science book costs \\$1.50 more than that in bookstore A. The information can be represented by the matrix.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Kevin bought 4 fiction books, 3 non-fiction books and 2 science books. Molly bought 2 fiction book and x science books. Represent their purchases, in terms of x, in a $2\\times3$ matrix P.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "P = $\\begin{pmatrix} 4 & 3 & 2 \\\\ 2 & 0 & x \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the rows and columns. The question asks for a $2 \\times 3$ matrix. The rows represent the people (Kevin and Molly) and the columns represent the book types (Fiction, Non-fiction, Science).",
+                  "working": "Row 1 (Kevin): 4 Fiction, 3 Non-fiction, 2 Science.\nRow 2 (Molly): 2 Fiction, 0 Non-fiction, $x$ Science.",
+                  "reasoning": "Organize the data sequentially corresponding to the book types defined in the stem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct the matrix.",
+                  "working": "P = $\\begin{pmatrix} 4 & 3 & 2 \\\\ 2 & 0 & x \\end{pmatrix}$",
+                  "reasoning": "Place the values into the matrix format."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Evaluate the matrix $R=PQ$ where Q represents the cost matrix.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "R = $\\begin{pmatrix} 85 & 75.20 \\\\ 16+11.5x & 13.80+13x \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define Matrix Q (Cost Matrix) based on the stem. The rows must match the columns of P (Book types), and columns represent the stores (A and B).",
+                  "working": "Store A prices: F=\\$8, N=\\$10, S=\\$11.50\nStore B prices: F=\\$8-1.10=\\$6.90, N=\\$10-2.80=\\$7.20, S=\\$11.50+1.50=\\$13.00\nQ = $\\begin{pmatrix} 8 & 6.90 \\\\ 10 & 7.20 \\\\ 11.50 & 13.00 \\end{pmatrix}$",
+                  "reasoning": "Calculate the specific prices for Store B before constructing the matrix."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform matrix multiplication $R = PQ$. Multiply rows of P by columns of Q.",
+                  "working": "R = $\\begin{pmatrix} 4 & 3 & 2 \\\\ 2 & 0 & x \\end{pmatrix} \\begin{pmatrix} 8 & 6.90 \\\\ 10 & 7.20 \\\\ 11.50 & 13.00 \\end{pmatrix}\n\nRow 1, Col 1: $4(8) + 3(10) + 2(11.50) = 32 + 30 + 23 = 85$\nRow 1, Col 2: $4(6.90) + 3(7.20) + 2(13.00) = 27.60 + 21.60 + 26.00 = 75.20$\nRow 2, Col 1: $2(8) + 0(10) + x(11.50) = 16 + 11.5x$\nRow 2, Col 2: $2(6.90) + 0(7.20) + x(13.00) = 13.80 + 13x$",
+                  "reasoning": "Apply the dot product rule: (Row $i$ of first matrix) $\\cdot$ (Column $j$ of second matrix)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final matrix R.",
+                  "working": "R = $\\begin{pmatrix} 85 & 75.20 \\\\ 16+11.5x & 13.80+13x \\end{pmatrix}$",
+                  "reasoning": "Combine the calculated elements."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Explain what the elements in the first column of matrix R represent.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "The total cost for Kevin and Molly respectively if they purchase their books at Bookstore A.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the structure of the multiplication.",
+                  "working": "Matrix P rows are People (Kevin, Molly). Matrix Q columns are Stores (Store A, Store B). Therefore, Result R columns are Stores.",
+                  "reasoning": "The first column of Q represented prices at Bookstore A, so the first column of the result represents the total expenditure at Bookstore A."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Molly can save \\$5.30 by purchasing in bookstore A. Using your answer in (b), find the value of x.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Formulate an equation based on the savings.",
+                  "working": "Cost at B - Cost at A = Savings\n$(13.80 + 13x) - (16 + 11.5x) = 5.30$",
+                  "reasoning": "Since she saves money at A, Store B is more expensive. We subtract the cost at A from the cost at B."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve the linear equation for x.",
+                  "working": "$13.80 - 16 + 13x - 11.5x = 5.30$\n$-2.20 + 1.5x = 5.30$\n$1.5x = 5.30 + 2.20$\n$1.5x = 7.50$\n$x = \\frac{7.50}{1.5}$\n$x = 5$",
+                  "reasoning": "Group like terms and isolate x."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Matrices"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-1911-p1-101",
+        "topicID": "N9",
+        "stem": "A bakery sells three types of pastries: Croissants, Danishes, and Eclairs. The selling prices are $3.50, $4.00, and $5.50 respectively. The table below shows the number of pastries sold on Saturday and Sunday.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The sales volume for the three pastries can be represented by the matrix $S = \\begin{pmatrix} 120 & 140 \\\\ 85 & 95 \\\\ 60 & 75 \\end{pmatrix}$, where the rows represent the types of pastries and the columns represent the days (Saturday and Sunday). The matrix $D = BS$ represents the total revenue for each day. Write down the matrix $B$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$B = \\begin{pmatrix} 3.50 & 4.00 & 5.50 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the dimensions of matrix B.",
+                  "working": "To result in a $1 \\times 2$ revenue matrix (Revenue per day) when multiplied by a $3 \\times 2$ matrix ($S$), $B$ must be $1 \\times 3$.",
+                  "reasoning": "Matrix multiplication rule: $(m \\times n) \\times (n \\times p) = (m \\times p)$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Populate matrix B with the prices.",
+                  "working": "$B = \\begin{pmatrix} 3.50 & 4.00 & 5.50 \\end{pmatrix}$",
+                  "reasoning": "The prices must correspond to the order of pastries in the rows of S (Croissants, Danishes, Eclairs)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the matrix $D$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$D = \\begin{pmatrix} 1090 & 1282.5 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the multiplication $D = BS$.",
+                  "working": "$D = \\begin{pmatrix} 3.5 & 4 & 5.5 \\end{pmatrix} \\begin{pmatrix} 120 & 140 \\\\ 85 & 95 \\\\ 60 & 75 \\end{pmatrix}$",
+                  "reasoning": "Substitute the matrices."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate Saturday's revenue (1st element).",
+                  "working": "$d_{11} = 3.5(120) + 4(85) + 5.5(60)$\n$= 420 + 340 + 330$\n$= 1090$",
+                  "reasoning": "Row 1 of B $\\times$ Column 1 of S."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate Sunday's revenue (2nd element).",
+                  "working": "$d_{12} = 3.5(140) + 4(95) + 5.5(75)$\n$= 490 + 380 + 412.5$\n$= 1282.5$",
+                  "reasoning": "Row 1 of B $\\times$ Column 2 of S."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate $T = D \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$ and explain what the element in $T$ represents.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T = \\begin{pmatrix} 2372.5 \\end{pmatrix}$. It represents the total revenue for the whole weekend (Saturday and Sunday combined).",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform the matrix multiplication.",
+                  "working": "$T = \\begin{pmatrix} 1090 & 1282.5 \\end{pmatrix} \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix} = (1090 \\times 1) + (1282.5 \\times 1) = 2372.5$",
+                  "reasoning": "Summing the daily revenues."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Interpret the result.",
+                  "working": "Sum of Saturday revenue + Sunday revenue = Total Weekend Revenue.",
+                  "reasoning": "The column vector $\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$ acts as a summing operator."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Bakery Sales Matrix"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2011-p1-101",
+        "topicID": "N9",
+        "stem": "A florist sells three types of flowers: Roses, Lilies, and Orchids. At Shop A, a Rose costs \\$2.00, a Lily costs \\$3.00, and an Orchid costs \\$5.00. At Shop B, a Rose costs \\$0.50 more, a Lily costs \\$0.20 less, and an Orchid costs \\$0.50 more than at Shop A.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Alice buys 5 Roses, 2 Lilies, and 3 Orchids. Ben buys $k$ Roses, 4 Lilies, and 2 Orchids. Represent their purchases in a $2\\times3$ matrix D.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "D = $\\begin{pmatrix} 5 & 2 & 3 \\\\ k & 4 & 2 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify rows (People) and columns (Flower Types).",
+                  "working": "Row 1 (Alice): 5 Roses, 2 Lilies, 3 Orchids.\nRow 2 (Ben): $k$ Roses, 4 Lilies, 2 Orchids.",
+                  "reasoning": "Map the quantities to the matrix structure."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down a matrix C such that the product DC gives the total cost for each person at each shop.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "C = $\\begin{pmatrix} 2.00 & 2.50 \\\\ 3.00 & 2.80 \\\\ 5.00 & 5.50 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate prices for Shop B.",
+                  "working": "Rose: $2.00 + 0.50 = 2.50$\nLily: $3.00 - 0.20 = 2.80$\nOrchid: $5.00 + 0.50 = 5.50$",
+                  "reasoning": "Apply the price differences given in the stem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct Matrix C ($3\\times2$).",
+                  "working": "Rows: Flower types (Rose, Lily, Orchid). Cols: Shops (A, B).\nC = $\\begin{pmatrix} 2.00 & 2.50 \\\\ 3.00 & 2.80 \\\\ 5.00 & 5.50 \\end{pmatrix}$",
+                  "reasoning": "Ensure dimensions allow multiplication with D ($2\\times3$). C must be $3\\times2$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Evaluate $T = DC$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "T = $\\begin{pmatrix} 31 & 34.60 \\\\ 2k+22 & 2.5k+22.20 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply Row 1 of D by columns of C.",
+                  "working": "Alice at A: $5(2) + 2(3) + 3(5) = 10 + 6 + 15 = 31$\nAlice at B: $5(2.5) + 2(2.8) + 3(5.5) = 12.5 + 5.6 + 16.5 = 34.60$",
+                  "reasoning": "Calculate total costs for Alice."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply Row 2 of D by columns of C.",
+                  "working": "Ben at A: $k(2) + 4(3) + 2(5) = 2k + 12 + 10 = 2k + 22$\nBen at B: $k(2.5) + 4(2.8) + 2(5.5) = 2.5k + 11.2 + 11 = 2.5k + 22.20$",
+                  "reasoning": "Calculate total costs for Ben in terms of k."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Ben would spend \\$2.70 more if he bought his flowers at Shop B compared to Shop A. Find the value of k.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "k = 5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation based on the cost difference.",
+                  "working": "Cost B - Cost A = 2.70\n$(2.5k + 22.20) - (2k + 22) = 2.70$",
+                  "reasoning": "Use the expressions derived in part (c)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for k.",
+                  "working": "$0.5k + 0.20 = 2.70$\n$0.5k = 2.50$\n$k = 5$",
+                  "reasoning": "Isolate k to find the number of roses."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Matrices"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-1911-p1-102",
+        "topicID": "N9",
+        "stem": "In a school sports carnival, points are awarded for Gold, Silver, and Bronze medals. The medal tally for three houses, Red, Blue, and Green, is shown below:\n\nRed House: 5 Gold, 3 Silver, 2 Bronze\nBlue House: 4 Gold, 5 Silver, 1 Bronze\nGreen House: 6 Gold, 2 Silver, 3 Bronze",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Represent the medal tally in a $3 \\times 3$ matrix $M$, where the rows represent the houses (Red, Blue, Green in that order) and the columns represent the medal types (Gold, Silver, Bronze).",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$M = \\begin{pmatrix} 5 & 3 & 2 \\\\ 4 & 5 & 1 \\\\ 6 & 2 & 3 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract data for each house into rows.",
+                  "working": "Row 1 (Red): 5, 3, 2\nRow 2 (Blue): 4, 5, 1\nRow 3 (Green): 6, 2, 3",
+                  "reasoning": "Direct transcription of data into matrix format."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Points are awarded as follows: 5 points for Gold, 3 points for Silver, and 1 point for Bronze. Write down a matrix $P$ such that the product $MP$ gives the total points for each house.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix} 5 \\\\ 3 \\\\ 1 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine dimensions for P.",
+                  "working": "$M$ is $3 \\times 3$. The result needs to be $3 \\times 1$ (Total points per house). Thus $P$ must be $3 \\times 1$.",
+                  "reasoning": "To sum weighted values for each row, we multiply by a column vector."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Fill in the point values.",
+                  "working": "$P = \\begin{pmatrix} 5 \\\\ 3 \\\\ 1 \\end{pmatrix}$",
+                  "reasoning": "Rows of P correspond to columns of M (Gold, Silver, Bronze)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate $MP$ and state which house won the carnival.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$MP = \\begin{pmatrix} 36 \\\\ 36 \\\\ 39 \\end{pmatrix}$. Green House won.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform matrix multiplication.",
+                  "working": "$MP = \\begin{pmatrix} 5 & 3 & 2 \\\\ 4 & 5 & 1 \\\\ 6 & 2 & 3 \\end{pmatrix} \\begin{pmatrix} 5 \\\\ 3 \\\\ 1 \\end{pmatrix}$",
+                  "reasoning": "Setup the calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate points for each house.",
+                  "working": "Red: $5(5) + 3(3) + 2(1) = 25 + 9 + 2 = 36$\nBlue: $4(5) + 5(3) + 1(1) = 20 + 15 + 1 = 36$\nGreen: $6(5) + 2(3) + 3(1) = 30 + 6 + 3 = 39$",
+                  "reasoning": "Row by column multiplication."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify the winner.",
+                  "working": "Green has the highest score (39).",
+                  "reasoning": "Comparison of the resulting elements."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Sports Carnival Points"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-2011-p1-102",
+        "topicID": "N9",
+        "stem": "A factory produces two types of gadgets: Type X and Type Y. The production output for Day 1 and Day 2 is given by matrix $P = \\begin{pmatrix} 50 & 30 \\\\ 40 & 60 \\end{pmatrix}$, where the rows represent the days (Day 1, Day 2) and columns represent the gadget types (X, Y). The cost to produce and the selling price of each gadget is given by matrix $V = \\begin{pmatrix} 10 & 15 \\\\ 12 & 20 \\end{pmatrix}$, where rows represent gadget types (X, Y) and columns represent money (Cost, Selling Price).",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Evaluate the matrix $M = PV$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "M = $\\begin{pmatrix} 860 & 1350 \\\\ 1120 & 1800 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform matrix multiplication for Row 1 (Day 1).",
+                  "working": "Row 1, Col 1: $50(10) + 30(12) = 500 + 360 = 860$\nRow 1, Col 2: $50(15) + 30(20) = 750 + 600 = 1350$",
+                  "reasoning": "Calculate Day 1 Total Cost and Total Revenue."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform matrix multiplication for Row 2 (Day 2).",
+                  "working": "Row 2, Col 1: $40(10) + 60(12) = 400 + 720 = 1120$\nRow 2, Col 2: $40(15) + 60(20) = 600 + 1200 = 1800$",
+                  "reasoning": "Calculate Day 2 Total Cost and Total Revenue."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "State what the element in the second row and first column of M represents.",
+            "marks": 1,
+            "answerType": "text",
+            "solution": {
+              "finalAnswer": "The total production cost for Day 2.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Map the rows and columns to their labels.",
+                  "working": "Row 2 corresponds to Day 2. Column 1 corresponds to Cost.",
+                  "reasoning": "Intersection of Day 2 and Cost gives the total cost incurred on that day."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate the total profit made by the factory over the two days.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "\\$1170",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate profit for Day 1.",
+                  "working": "Revenue (Day 1) - Cost (Day 1) = $1350 - 860 = 490$",
+                  "reasoning": "Profit is Revenue minus Cost, found in Row 1 of M."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate profit for Day 2.",
+                  "working": "Revenue (Day 2) - Cost (Day 2) = $1800 - 1120 = 680$",
+                  "reasoning": "Profit is Revenue minus Cost, found in Row 2 of M."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Sum the profits.",
+                  "working": "Total Profit = $490 + 680 = 1170$",
+                  "reasoning": "Add daily profits for the total."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Matrices"
       }
     ],
-    "Paper 2": []
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-1911-p2-101",
+        "topicID": "N9",
+        "stem": "Two food stalls, Stall A and Stall B, sell burgers and fries. \nOn a particular day:\nStall A sold 50 burgers and 80 packets of fries.\nStall B sold 60 burgers and 70 packets of fries.\n\nThe profit made on each burger is $2.50 and on each packet of fries is $1.50.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down a $2 \\times 2$ matrix $N$ to represent the number of items sold by the two stalls, where the rows represent the stalls and the columns represent the items (Burgers, Fries).",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$N = \\begin{pmatrix} 50 & 80 \\\\ 60 & 70 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Organize the data into the specified format.",
+                  "working": "Row 1 (Stall A): 50, 80\nRow 2 (Stall B): 60, 70",
+                  "reasoning": "Direct transcription based on the question stem."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down a column matrix $P$ to represent the profit per item.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix} 2.50 \\\\ 1.50 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify profit values and format as a column vector.",
+                  "working": "Burger profit: 2.50, Fries profit: 1.50.\nMatrix must be compatible with N for multiplication ($2 \\times 2$ multiplied by $2 \\times 1$).",
+                  "reasoning": "Column matrix required."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate the matrix product $T = NP$ and describe what the elements of $T$ represent.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$T = \\begin{pmatrix} 245 \\\\ 255 \\end{pmatrix}$. The elements represent the total profit made by Stall A and Stall B respectively.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform the multiplication $NP$.",
+                  "working": "$T = \\begin{pmatrix} 50 & 80 \\\\ 60 & 70 \\end{pmatrix} \\begin{pmatrix} 2.50 \\\\ 1.50 \\end{pmatrix}$",
+                  "reasoning": "Setup."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the values.",
+                  "working": "Row 1: $50(2.5) + 80(1.5) = 125 + 120 = 245$\nRow 2: $60(2.5) + 70(1.5) = 150 + 105 = 255$",
+                  "reasoning": "Row by column multiplication."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Interpret the result.",
+                  "working": "Top element corresponds to Stall A's total profit. Bottom element corresponds to Stall B's total profit.",
+                  "reasoning": "The resulting $2 \\times 1$ matrix maintains the row order (Stalls) of the first matrix."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Food Stall Profits"
+      }
+    ]
   }
 }

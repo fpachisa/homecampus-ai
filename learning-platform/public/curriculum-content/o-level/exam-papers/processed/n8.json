@@ -91,6 +91,112 @@
         "title": "Set Cardinality"
       },
       {
+        "questionNumber": 13,
+        "questionId": "N8-broadrick-2024-p1-q13",
+        "topicID": "N8",
+        "stem": "Given that $\\xi=\\{integers~x:p\\le x<20\\}$, $A=$ {factors of 24}, $B=$ {prime numbers}, $C=$ {perfect squares}.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "List the elements of A if $p=2$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "{2, 3, 4, 6, 8, 12}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the universal set range when $p=2$.",
+                  "working": "$\\xi = \\{2, 3, 4, ..., 19\\}$",
+                  "reasoning": "The universal set includes integers from 2 up to, but not including, 20."
+                },
+                {
+                  "step": 2,
+                  "explanation": "List all factors of 24.",
+                  "working": "Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24",
+                  "reasoning": "Identify potential candidates for set A."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Select the factors that exist within the universal set $\\xi$.",
+                  "working": "1 is not in $\\xi$ (since $x \\ge 2$).\n24 is not in $\\xi$ (since $x < 20$).\nRemaining elements: 2, 3, 4, 6, 8, 12.",
+                  "reasoning": "Elements of A must be a subset of $\\xi$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "For $p\\ge0$, list the elements of $(B\\cup C)^{\\prime}$ such that $n(B\\cup C)^{\\prime}=4$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "{12, 14, 15, 18}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify elements of B (primes) and C (perfect squares) less than 20.",
+                  "working": "$B = \\{2, 3, 5, 7, 11, 13, 17, 19\\}$\n$C = \\{0, 1, 4, 9, 16\\}$",
+                  "reasoning": "List the sets explicitly to find their union."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the union $B \\cup C$.",
+                  "working": "$B \\cup C = \\{0, 1, 2, 3, 4, 5, 7, 9, 11, 13, 16, 17, 19\\}$",
+                  "reasoning": "Combine all unique elements from both sets."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify integers less than 20 that are NOT in $B \\cup C$.",
+                  "working": "Candidates for complement: 6, 8, 10, 12, 14, 15, 18.",
+                  "reasoning": "These are the numbers that could potentially form the complement set."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Determine the specific elements required to make the set size exactly 4.",
+                  "working": "The universal set is defined by $p \\le x < 20$. As $p$ increases, we remove numbers from the bottom of the list.\nTo have exactly 4 elements remaining, we must keep the largest 4 candidates: 12, 14, 15, 18.",
+                  "reasoning": "We need the 'top' 4 numbers because the lower bound $p$ cuts off the smaller numbers."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the smallest p such that $A \\cap C = \\emptyset$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the intersection of A (factors of 24) and C (perfect squares) generally.",
+                  "working": "Factors of 24: $\\{1, 2, 3, 4, 6, 8, 12, 24\\}$\nPerfect Squares: $\\{0, 1, 4, 9, 16...\\}$\nIntersection: $\\{1, 4\\}$",
+                  "reasoning": "Find the common elements that we need to exclude."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the range of $\\xi$ required to exclude these elements.",
+                  "working": "To make the intersection empty, the universal set must not contain 1 or 4.\nSince $\\xi = \\{x : p \\le x < 20\\}$, we need $p > 4$.",
+                  "reasoning": "If $p \\le 4$, the number 4 would be in the set. If $p \\le 1$, 1 would be in the set."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the smallest integer $p$.",
+                  "working": "The smallest integer greater than 4 is 5.",
+                  "reasoning": "p must be an integer as per the context of set indices usually, or simply the boundary for integer set x."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Set Language"
+      },
+      {
         "questionNumber": 14,
         "questionId": "N8-anderson-2024-p1-q14",
         "topicID": "N8",
@@ -161,7 +267,6 @@
             "questionText": "Write down the set represented by the following shaded region.",
             "marks": 1,
             "answerType": "algebraic",
-
             "solution": {
               "finalAnswer": "A ∪ B'  (or equivalent forms like (B ∩ A')' )",
               "stepByStep": [
@@ -185,14 +290,279 @@
                 }
               ]
             }
-
           }
         ],
         "totalMarks": 1,
         "paper": "Paper 1",
         "title": "Set Cardinality Shaded Region"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2011-p1-101",
+        "topicID": "N8",
+        "stem": "Given that $\\xi = \\{x : x \\text{ is an integer and } 5 < x \\le 25\\}$, $P = \\{ \\text{multiples of } 4 \\}$, $Q = \\{ \\text{factors of } 60 \\}$ and $R = \\{ \\text{odd numbers} \\}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "List the elements of $P \\cap Q$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "{12, 20}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "List elements of P within the universal set range (6 to 25).",
+                  "working": "Multiples of 4: 8, 12, 16, 20, 24",
+                  "reasoning": "Identify valid elements for set P."
+                },
+                {
+                  "step": 2,
+                  "explanation": "List elements of Q within the universal set range.",
+                  "working": "Factors of 60: 6, 10, 12, 15, 20",
+                  "reasoning": "Identify valid elements for set Q (Note: 1, 2, 3, 4, 5 are excluded by range; 30, 60 excluded by range)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the intersection.",
+                  "working": "Common elements: 12, 20",
+                  "reasoning": "Select elements present in both lists."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the value of $n(P \\cup R)^{\\prime}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Understand the set $(P \\cup R)^{\\prime}$.",
+                  "working": "This represents elements in $\\xi$ that are NOT in P (multiples of 4) AND NOT in R (odd numbers).",
+                  "reasoning": "De Morgan's laws or logical definition of complement."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the characteristics of the required numbers.",
+                  "working": "They must be Even numbers (not odd) that are NOT multiples of 4.",
+                  "reasoning": "If a number is not odd, it is even. If it is not in P, it is not a multiple of 4."
+                },
+                {
+                  "step": 3,
+                  "explanation": "List and count these numbers in the range $6, 7, ..., 25$.",
+                  "working": "Even numbers: 6, 8, 10, 12, 14, 16, 18, 20, 22, 24.\nRemove multiples of 4 (8, 12, 16, 20, 24).\nRemaining: 6, 10, 14, 18, 22.",
+                  "reasoning": "Filter the list of even numbers."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Recalculate check.",
+                  "working": "Wait, let's list all evens: 6, 8, 10, 12, 14, 16, 18, 20, 22, 24.\nMultiples of 4 to remove: 8, 12, 16, 20, 24.\nLeft: 6, 10, 14, 18, 22.\nCount is 5.",
+                  "reasoning": "Verification of count."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Correction on final answer based on working.",
+                  "working": "The set is {6, 10, 14, 18, 22}. The count is 5.",
+                  "reasoning": "Final count."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Use set notation to describe the relationship between $R$ and $Q$.",
+            "marks": 1,
+            "answerType": "string",
+            "solution": {
+              "finalAnswer": "$R \\cap Q \\neq \\emptyset$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze elements of R and Q.",
+                  "working": "R (Odds in range): 7, 9, 11, 13, 15, 17, 19, 21, 23, 25.\nQ (Factors of 60 in range): 6, 10, 12, 15, 20.",
+                  "reasoning": "Compare the sets."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Check for subsets or intersection.",
+                  "working": "Intersection is {15}. Since they share an element but neither is fully inside the other.",
+                  "reasoning": "The most descriptive standard notation is that their intersection is not empty, or simply listing the intersection."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Set Language"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N8-gemini-2011-p1-102",
+        "topicID": "N8",
+        "stem": "It is given that $\\xi = \\{x : x \\text{ is a positive integer and } x \\le 15\\}$, $A = \\{x : 2x - 3 > 5\\}$ and $B = \\{x : x \\text{ is a prime number}\\}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "List the elements of A.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "{5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Solve the inequality for A.",
+                  "working": "$2x - 3 > 5 \\implies 2x > 8 \\implies x > 4$.",
+                  "reasoning": "Determine the condition for membership in A."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the universal set constraint.",
+                  "working": "Integers $x$ where $4 < x \\le 15$.",
+                  "reasoning": "Combine inequality with $\\xi$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the value of $n(A \\cap B)$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "List elements of B (Primes $\\le 15$).",
+                  "working": "$B = \\{2, 3, 5, 7, 11, 13\\}$.",
+                  "reasoning": "Identify prime numbers in range."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find intersection with A ($x > 4$).",
+                  "working": "Primes greater than 4: 5, 7, 11, 13.",
+                  "reasoning": "Filter B based on condition of A."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Count the elements.",
+                  "working": "Count is 4.",
+                  "reasoning": "Final answer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Set Inequalities"
       }
     ],
-    "Paper 2": []
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2011-p2-101",
+        "topicID": "N8",
+        "stem": "The universal set $\\xi = \\{x : x \\text{ is an integer}, 1 \\le x \\le 30\\}$.\n$S = \\{ \\text{perfect square numbers} \\}$\n$M = \\{ \\text{multiples of } 3 \\}$\n$E = \\{ \\text{even numbers} \\}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "List the elements of $S \\cap E$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "{4, 16}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "List elements of S (Squares $\\le 30$).",
+                  "working": "$S = \\{1, 4, 9, 16, 25\\}$",
+                  "reasoning": "Identify squares in range."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Select even numbers from S.",
+                  "working": "Even squares: 4, 16.",
+                  "reasoning": "Intersection with set E."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find $n(S \\cup M)$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "14",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "List elements of M (Multiples of 3 $\\le 30$).",
+                  "working": "$M = \\{3, 6, 9, 12, 15, 18, 21, 24, 27, 30\\}$. (10 elements)",
+                  "reasoning": "Identify multiples."
+                },
+                {
+                  "step": 2,
+                  "explanation": "List elements of S.",
+                  "working": "$S = \\{1, 4, 9, 16, 25\\}$. (5 elements)",
+                  "reasoning": "Identify squares."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the union, avoiding duplicates.",
+                  "working": "Duplicates (in both): 9.\nUnion: $\\{1, 3, 4, 6, 9, 12, 15, 16, 18, 21, 24, 25, 27, 30\\}$.",
+                  "reasoning": "Combine sets."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Count the elements.",
+                  "working": "Total count is 14.",
+                  "reasoning": "Wait, let's recount carefully.\nM has 10.\nS has 5.\nIntersection $S \\cap M = \\{9\\}$.\n$n(S \\cup M) = n(S) + n(M) - n(S \\cap M) = 5 + 10 - 1 = 14$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "A subset $K$ of $\\xi$ is defined such that $K \\subset M$ and $n(K) = 2$. Write down a possible set $K$ such that the product of its elements is a perfect square.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "{3, 12} or {3, 27} or {12, 27}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the condition.",
+                  "working": "We need two numbers from M (multiples of 3) whose product is a square.",
+                  "reasoning": "Product of elements must be $k^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze multiples of 3.",
+                  "working": "$M = \\{3, 6, 9, 12, 15, 18, 21, 24, 27, 30\\}$.\nTry pairs:\n$3 \\times 12 = 36 = 6^2$ (Valid)\n$3 \\times 27 = 81 = 9^2$ (Valid)\n$12 \\times 27 = 324 = 18^2$ (Valid)",
+                  "reasoning": "Test combinations."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Set Properties"
+      }
+    ]
   }
 }

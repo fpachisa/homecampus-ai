@@ -3,6 +3,96 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 9,
+        "questionId": "N4-broadrick-2024-p1-q9",
+        "topicID": "N4",
+        "stem": "Keila travels from Singapore to Japan.\nShe wants to change 850 Singapore dollars ($) into Yen (¥).\nThe exchange rate in Singapore is $100 = ¥11600 and the exchange rate in Japan is ¥1 = $0.0086.\nShe claims that she will receive more if she changes the money in Singapore.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "9",
+            "questionText": "Justify if her claim is true. Show your working.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Her claim is false. She receives ¥98 600 in Singapore and approximately ¥98 837 in Japan.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the amount of Yen received if exchanged in Singapore.",
+                  "working": "Amount in Singapore = $\\frac{850}{100} \\times 11600 = 8.5 \\times 11600 = 98\\,600 \\text{ Yen}$",
+                  "reasoning": "Use the unitary method or direct multiplication based on the rate $100 = ¥11600."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the amount of Yen received if exchanged in Japan.",
+                  "working": "Amount in Japan = $\\frac{850}{0.0086} \\approx 98\\,837.21 \\text{ Yen}$",
+                  "reasoning": "Divide the SGD amount by the rate of 1 Yen in SGD ($0.0086) to find the total Yen."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare the two amounts to validate the claim.",
+                  "working": "98,600 < 98,837.21\nTherefore, she receives less in Singapore.",
+                  "reasoning": "Compare the numerical values calculated in steps 1 and 2."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Exchange Rates"
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "N4-acsi-2024-p1-q16",
+        "topicID": "N4",
+        "stem": "Mr Tan took 4 hours to travel from Town A to Town B. Mr Lim took 8 hours to travel in the opposite direction from Town B to Town A using the same route. They both started at 11am.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "What time did they pass each other?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1:40 pm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the speed of each person in terms of the total distance, D.",
+                  "working": "Let distance = D.\nSpeed of Mr Tan = D/4 km/h\nSpeed of Mr Lim = D/8 km/h",
+                  "reasoning": "Using the formula Speed = Distance / Time."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the combined speed (relative speed) since they are moving towards each other.",
+                  "working": "Combined Speed = D/4 + D/8 = 2D/8 + D/8 = 3D/8 km/h",
+                  "reasoning": "When two objects move towards each other, their relative speed is the sum of their individual speeds."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the time taken to meet.",
+                  "working": "Time = Distance / Combined Speed\nTime = D / (3D/8) = 8/3 hours",
+                  "reasoning": "The distance D cancels out, leaving a constant time value."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert the time duration into hours and minutes and add to the start time.",
+                  "working": "8/3 hours = 2 and 2/3 hours\n2/3 hours = 2/3 * 60 = 40 minutes\nTotal time = 2 hours 40 minutes\nStart time: 11:00 am\nMeeting time: 11:00 am + 2h 40m = 1:40 pm",
+                  "reasoning": "Convert fractional hours to minutes for standard time format."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Relative Speed"
+      },
+      {
         "questionNumber": 23,
         "questionId": "N4-anderson-2024-p1-q23",
         "topicID": "N4",
@@ -61,8 +151,384 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Manpower Rate"
+      },
+      {
+        "questionNumber": 23,
+        "questionId": "N4-acsi-2024-p1-q23",
+        "topicID": "N4",
+        "stem": "Jefferson and Victor were sent by their company to work in Washington D.C. and Beijing respectively. Jefferson rented a 696 sq ft apartment in Washington D.C. for 1800 USD while Victor rented a $60~m^{2}$ apartment in Beijing for 8000 CNY.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Given that the currency exchange rate for both cities is $1~USD=7.25$ CNY and that $1~m^{2}=10.7639$ sq ft, illustrate with clear working, which apartment has a higher rental cost.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Jefferson's apartment",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert Jefferson's rental details (USD and sq ft) into the same units as Victor's (CNY and m²) for comparison. First, convert the rent.",
+                  "working": "Jefferson's Rent in CNY = 1800 USD * 7.25 = 13,050 CNY",
+                  "reasoning": "To compare costs, we must use a common currency."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert Jefferson's apartment area from sq ft to m².",
+                  "working": "Jefferson's Area in m² = 696 / 10.7639 ≈ 64.66 m² (to 2 d.p.)",
+                  "reasoning": "To compare value, we must compare the cost per unit area (per m²)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the rental rate (Cost per m²) for Jefferson.",
+                  "working": "Jefferson's Rate = 13,050 CNY / 64.66 m² ≈ 201.82 CNY/m²",
+                  "reasoning": "Rate = Total Cost / Total Area."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the rental rate (Cost per m²) for Victor.",
+                  "working": "Victor's Rate = 8000 CNY / 60 m² ≈ 133.33 CNY/m²",
+                  "reasoning": "Victor's data is already in CNY and m²."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Compare the two rates to determine the higher cost.",
+                  "working": "201.82 CNY/m² > 133.33 CNY/m²\nTherefore, Jefferson's apartment has the higher rental cost.",
+                  "reasoning": "Comparing the calculated unit rates."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Exchange Rates and Unit Conversion"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-1911-p1-101",
+        "topicID": "N4",
+        "stem": "Alice takes 6 hours to paint a large room by herself. Bob takes 4 hours to paint the same room by himself. They decide to work together and start painting at 9:00 am.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "At what time will they finish painting the room?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "11:24 am",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the rate of work for Alice and Bob per hour.",
+                  "working": "Alice's rate = 1/6 of the room per hour.\nBob's rate = 1/4 of the room per hour.",
+                  "reasoning": "Rate of work is the reciprocal of the time taken to complete the task."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate their combined rate of work.",
+                  "working": "Combined rate = 1/6 + 1/4 = 2/12 + 3/12 = 5/12 of the room per hour.",
+                  "reasoning": "When working together, rates are additive."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the total time taken to complete the job.",
+                  "working": "Time taken = 1 / (Combined Rate) = 1 / (5/12) = 12/5 hours.",
+                  "reasoning": "Time = Work / Rate. Here Work = 1 (whole room)."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert the time to hours and minutes and find the finish time.",
+                  "working": "12/5 hours = 2.4 hours.\n0.4 hours = 0.4 * 60 = 24 minutes.\nTotal duration = 2 hours 24 minutes.\nFinish time = 9:00 am + 2h 24m = 11:24 am.",
+                  "reasoning": "Add the calculated duration to the start time."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Rate of Work"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-2011-p1-101",
+        "topicID": "N4",
+        "stem": "A camera costs 450 British Pounds (£) in London. The same camera costs 780 Singapore Dollars (\\$) in Singapore.\nThe exchange rate is £1 = \\$1.68.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "101",
+            "questionText": "Calculate, in Singapore Dollars, how much cheaper it is to buy the camera in Singapore.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$24.00",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the cost of the camera in London to Singapore Dollars.",
+                  "working": "Cost in London = $450 \\times 1.68 = 756 \\text{ SGD}$",
+                  "reasoning": "Multiply the amount in Pounds by the exchange rate to get the value in SGD."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the difference between the Singapore price and the converted London price.",
+                  "working": "Difference = 780 - 756 = 24",
+                  "reasoning": "Subtract the lower price from the higher price to find the difference."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Currency Comparison"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N4-gemini-1911-p1-102",
+        "topicID": "N4",
+        "stem": "In Singapore, a specific brand of cooking oil costs $5.60 SGD for a 2-litre bottle. In the United States, the same brand costs $9.00 USD for a 1-gallon bottle.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Given that $1~USD = 1.35~SGD$ and $1~gallon = 3.785~litres$, determine which country sells the cooking oil at a cheaper rate per litre. Show your working clearly.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Singapore",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the price per litre in Singapore (SGD).",
+                  "working": "Price in SG = $5.60 / 2 = $2.80 SGD per litre.",
+                  "reasoning": "Unit rate calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert the US price and volume to SGD and litres respectively.",
+                  "working": "US Price in SGD = 9.00 USD * 1.35 = $12.15 SGD.\nUS Volume in litres = 1 gallon = 3.785 litres.",
+                  "reasoning": "Using the provided conversion factors to standardize units."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the price per litre in the US (in SGD).",
+                  "working": "Price in US (SGD/litre) = 12.15 / 3.785 ≈ $3.21 SGD per litre.",
+                  "reasoning": "Calculating the unit rate for the US option in the common currency."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Compare the two rates.",
+                  "working": "$2.80 < $3.21.\nSingapore sells the oil at a cheaper rate.",
+                  "reasoning": "Comparing the standardized unit costs."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Currency and Unit Conversion"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N4-gemini-2011-p1-102",
+        "topicID": "N4",
+        "stem": "Tom invests $5000 in a savings account that pays simple interest at a rate of 2.5% per annum.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "102",
+            "questionText": "Calculate the total amount of money in the account after 4 years.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$5500",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the simple interest earned over 4 years.",
+                  "working": "Interest = $\\frac{PRT}{100} = \\frac{5000 \\times 2.5 \\times 4}{100} = 500$",
+                  "reasoning": "Apply the simple interest formula $I = \\frac{PRT}{100}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add the interest to the principal to find the total amount.",
+                  "working": "Total Amount = 5000 + 500 = 5500",
+                  "reasoning": "Total Amount = Principal + Interest."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Simple Interest"
       }
     ],
-    "Paper 2": []
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-1911-p2-101",
+        "topicID": "N4",
+        "stem": "A cyclist travels a distance of 60 km from Town P to Town Q at an average speed of $x$ km/h. On the return journey from Town Q to Town P, the cyclist increases his average speed by 4 km/h.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression, in terms of $x$, for the time taken for the journey from Town P to Town Q.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "60/x",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the time formula.",
+                  "working": "Time = Distance / Speed = 60/x hours",
+                  "reasoning": "Basic kinematics formula."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down an expression, in terms of $x$, for the time taken for the return journey.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "60/(x+4)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Adjust speed and use time formula.",
+                  "working": "Return Speed = x + 4\nTime = 60 / (x + 4) hours",
+                  "reasoning": "Distance remains 60km, speed increases by 4."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The time taken for the return journey is 30 minutes less than the time taken for the journey from P to Q. Form an equation in $x$ and show that it reduces to $x^2 + 4x - 480 = 0$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "x^2 + 4x - 480 = 0",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation based on the time difference. Convert minutes to hours.",
+                  "working": "Time(P to Q) - Time(Q to P) = 30 mins\n60/x - 60/(x+4) = 0.5",
+                  "reasoning": "Consistent units are required (hours)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Eliminate fractions by multiplying by the common denominator 2x(x+4) or cross-multiplying.",
+                  "working": "120(x+4) - 120x = x(x+4)\n120x + 480 - 120x = x^2 + 4x",
+                  "reasoning": "Algebraic simplification."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Rearrange into quadratic form.",
+                  "working": "480 = x^2 + 4x\nx^2 + 4x - 480 = 0",
+                  "reasoning": "Standard quadratic form ax^2 + bx + c = 0."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Solve the equation $x^2 + 4x - 480 = 0$ to find the time taken for the journey from Town P to Town Q.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorize the quadratic equation.",
+                  "working": "(x + 24)(x - 20) = 0",
+                  "reasoning": "Finding two numbers that multiply to -480 and add to 4 (24 and -20)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for x.",
+                  "working": "x = -24 or x = 20",
+                  "reasoning": "Zero product property."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Reject the negative solution and calculate the time.",
+                  "working": "Since speed cannot be negative, x = 20 km/h.\nTime (P to Q) = 60 / 20 = 3 hours.",
+                  "reasoning": "Physical constraints on speed."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 9,
+        "paper": "Paper 2",
+        "title": "Algebra in Speed Problems"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-2011-p2-101",
+        "topicID": "N4",
+        "stem": "Mr. Tan invests $15 000 in a bank for 3 years at a compound interest rate of 3.2% per annum.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "101a",
+            "questionText": "Calculate the total interest earned at the end of 3 years. Give your answer correct to the nearest cent.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1495.66",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total amount after 3 years using the compound interest formula.",
+                  "working": "Amount = P(1 + $\\frac{r}{100})^n = 15000(1 + \\frac{3.2}{100})^3 = 15000(1.032)^3$",
+                  "reasoning": "Use the formula $A = P(1 + \\frac{r}{100})^n$ where $P=15000$, $r=3.2$, and $n=3$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compute the numerical value of the amount.",
+                  "working": "Amount = 15000 $\\times$ 1.09909... = 16495.663...",
+                  "reasoning": "Perform the calculation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Subtract the principal from the total amount to find the interest.",
+                  "working": "Interest = 16495.663... - 15000 = 1495.663...",
+                  "reasoning": "Interest = Total Amount - Principal."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round the answer to the nearest cent.",
+                  "working": "1495.663... $\\approx$ 1495.66",
+                  "reasoning": "Money should be rounded to 2 decimal places."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Compound Interest"
+      }
+    ]
   }
 }

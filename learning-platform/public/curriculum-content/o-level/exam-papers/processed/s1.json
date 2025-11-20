@@ -3,6 +3,77 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 2,
+        "questionId": "S1-broadrick-2024-p1-q2",
+        "topicID": "S1",
+        "stem": "The frequency table shows the reaction time, t seconds, for a chemical to change the colour of the litmus paper in 100 laboratory sessions.\n\n**Time (t sec):**    $0<t\\le1$  |  $1<t\\le2$  |  $2<t\\le3$  |  $3<t\\le4$  |  $4<t\\le5$\n**Frequency:**           8          |      28         |      44         |      18         |       2",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate an estimate for the mean reaction time.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2.28 s",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the mid-value ($x$) for each class interval.",
+                  "working": "Mid-values ($x$): \n$0 < t \\le 1 \\rightarrow 0.5$\n$1 < t \\le 2 \\rightarrow 1.5$\n$2 < t \\le 3 \\rightarrow 2.5$\n$3 < t \\le 4 \\rightarrow 3.5$\n$4 < t \\le 5 \\rightarrow 4.5$",
+                  "reasoning": "For grouped data, we use the midpoint of the interval to represent the values in that class."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the sum of the product of frequency and mid-value ($\\sum fx$).",
+                  "working": "$\\sum fx = (8 \\times 0.5) + (28 \\times 1.5) + (44 \\times 2.5) + (18 \\times 3.5) + (2 \times 4.5) \\\\ = 4 + 42 + 110 + 63 + 9 \\\\ = 228$",
+                  "reasoning": "This represents the estimated total reaction time for all sessions."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide $\\sum fx$ by the total frequency ($\\sum f$) to find the mean.",
+                  "working": "Mean = $\\frac{\\sum fx}{\\sum f} = \\frac{228}{100} = 2.28$",
+                  "reasoning": "The formula for the estimated mean of grouped data is $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate for the standard deviation of the reaction times.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.901 s (3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of frequency times the square of the mid-value ($\\sum fx^2$).",
+                  "working": "$\\sum fx^2 = (8 \\times 0.5^2) + (28 \\times 1.5^2) + (44 \\times 2.5^2) + (18 \\times 3.5^2) + (2 \\times 4.5^2) \\\\ = (8 \\times 0.25) + (28 \\times 2.25) + (44 \\times 6.25) + (18 \\times 12.25) + (2 \\times 20.25) \\\\ = 2 + 63 + 275 + 220.5 + 40.5 \\\\ = 601$",
+                  "reasoning": "This value is required for the standard deviation formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2} \\\\ = \\sqrt{\\frac{601}{100} - (2.28)^2} \\\\ = \\sqrt{6.01 - 5.1984} \\\\ = \\sqrt{0.8116}$",
+                  "reasoning": "Using the computational formula for standard deviation is often more direct."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final value.",
+                  "working": "$\\sigma \\approx 0.900888... \\\\ \\approx 0.901$ (to 3 s.f.)",
+                  "reasoning": "Standard deviation is usually given to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Statistics"
+      },
+      {
         "questionNumber": 5,
         "questionId": "S1-anderson-2024-p1-q5",
         "topicID": "S1",
@@ -14,7 +85,6 @@
           "description": "Bar graph titled 'Top 10 Warmest Years' showing temperature (in °C) on the y-axis (from 27.8 to 28.5) and years on the x-axis (2019, 2016, 1998, 2023, 2015, 1997, 2010, 2002, 2020, 2005). ",
           "notes": "Bar graph required - tool not available",
           "diagramPath": "/curriculum-content/o-level/exam-papers/processed/diagrams/S1-anderson-2024-p1-q5.svg"
-
         },
         "parts": [
           {
@@ -44,6 +114,71 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Data Misrepresentation"
+      },
+      {
+        "questionNumber": 20,
+        "questionId": "S1-acsi-2024-p1-q20",
+        "topicID": "S1",
+        "stem": "The mean of ten different numbers is 11.8.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down a number which will generate a mean of 12, when added to these ten numbers.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "14",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of the original ten numbers.",
+                  "working": "Sum = Mean × Count = 11.8 × 10 = 118",
+                  "reasoning": "To find the value of a new number added, we first need the total sum of the existing numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the required sum of the eleven numbers to achieve a mean of 12.",
+                  "working": "New Sum = New Mean × New Count = 12 × 11 = 132",
+                  "reasoning": "We use the new count (10 + 1 = 11) and the target mean to find the new total."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Subtract the original sum from the new sum to find the added number.",
+                  "working": "Number added = 132 - 118 = 14",
+                  "reasoning": "The difference between the new total and the old total represents the value of the added number."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Each value within the ten numbers is adjusted as follows:\nIf the number is less than the mean, the number is decreased by 2,\nif the number is greater than the mean, the number is increased by 2 and\nif the number is equal to the mean, it remains unchanged.\nExplain clearly how these adjustments would affect the standard deviation.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "The standard deviation will increase.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the movement of the numbers relative to the mean.",
+                  "working": "Numbers < 11.8 move further left (decrease). Numbers > 11.8 move further right (increase).",
+                  "reasoning": "We need to determine if the data points are moving closer to or further away from the central value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Relate the movement to the concept of Standard Deviation.",
+                  "working": "Since the values are moving away from the mean, the spread (dispersion) of the data increases.",
+                  "reasoning": "Standard deviation is a measure of spread. If the data points are more spread out from the mean, the standard deviation increases."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Mean and Standard Deviation"
       },
       {
         "questionNumber": 24,
@@ -191,8 +326,382 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Box Plot Interpretation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-1911-p1-101",
+        "topicID": "S1",
+        "stem": "The mean of six numbers is 15.5.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "A seventh number is added to the set. The new mean becomes 16. Calculate the value of the seventh number.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "19",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of the original six numbers.",
+                  "working": "Sum = 15.5 × 6 = 93",
+                  "reasoning": "Using the formula Sum = Mean × N."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the sum of the seven numbers.",
+                  "working": "New Sum = 16 × 7 = 112",
+                  "reasoning": "Using the new mean and the new count (N=7)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the difference.",
+                  "working": "Seventh number = 112 - 93 = 19",
+                  "reasoning": "The added number is the difference between the new total and the old total."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The original six numbers are each multiplied by 3. State how the standard deviation of the new set of numbers compares to the standard deviation of the original set.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "The new standard deviation is 3 times the original standard deviation.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the property of standard deviation regarding multiplication.",
+                  "working": "New SD = 3 × Old SD",
+                  "reasoning": "When every observation in a data set is multiplied by a constant k, the standard deviation is also multiplied by |k|. Here, the spread is magnified by a factor of 3."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Mean and Standard Deviation Adjustments"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2011-p1-101",
+        "topicID": "S1",
+        "stem": "The table below shows the heights, $h$ cm, of 100 seedlings grown in a nursery.\n\n**Height ($h$ cm):**    $10<h\\le20$  |  $20<h\\le30$  |  $30<h\\le40$  |  $40<h\\le50$\n**Frequency:**                12           |       30           |       38           |       20",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate an estimate for the mean height of the seedlings.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "31.6 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the mid-values ($x$) for each height interval.",
+                  "working": "Mid-values ($x$): \n$10 < h \\le 20 \\rightarrow 15$\n$20 < h \\le 30 \\rightarrow 25$\n$30 < h \\le 40 \\rightarrow 35$\n$40 < h \\le 50 \\rightarrow 45$",
+                  "reasoning": "The midpoint is the average of the lower and upper class boundaries."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$.",
+                  "working": "$\\sum fx = (12 \\times 15) + (30 \\times 25) + (38 \\times 35) + (20 \\times 45) \\\\ = 180 + 750 + 1330 + 900 \\\\ = 3160$",
+                  "reasoning": "Summing the product of frequencies and midpoints gives the estimated total height."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the mean.",
+                  "working": "Mean = $\\frac{3160}{100} = 31.6$",
+                  "reasoning": "Divide the total estimated height by the total number of seedlings."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate for the standard deviation of the heights.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "9.30 cm (3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$\\sum fx^2 = (12 \\times 15^2) + (30 \\times 25^2) + (38 \\times 35^2) + (20 \\times 45^2) \\\\ = (12 \\times 225) + (30 \\times 625) + (38 \\times 1225) + (20 \\times 2025) \\\\ = 2700 + 18750 + 46550 + 40500 \\\\ = 108500$",
+                  "reasoning": "Calculate the sum of frequencies multiplied by the square of the midpoints."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{108500}{100} - 31.6^2} \\\\ = \\sqrt{1085 - 998.56} \\\\ = \\sqrt{86.44}$",
+                  "reasoning": "Use $\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - \\bar{x}^2}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute the final answer.",
+                  "working": "$\\sigma \\approx 9.2973... \\\\ \\approx 9.30$ (to 3 s.f.)",
+                  "reasoning": "Round to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Statistics"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S1-gemini-1911-p1-102",
+        "topicID": "S1",
+        "stem": "Two groups of students, Group A and Group B, took the same mathematics test.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Group A has 12 students with a mean score of 65. Group B has 8 students with a mean score of 55. Calculate the mean score of all 20 students.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "61",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total score for Group A and Group B separately.",
+                  "working": "Total A = 12 × 65 = 780\nTotal B = 8 × 55 = 440",
+                  "reasoning": "Find the sum of scores for each group to combine them later."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the combined mean.",
+                  "working": "Combined Mean = (780 + 440) / (12 + 8) = 1220 / 20 = 61",
+                  "reasoning": "The combined mean is the total sum of all scores divided by the total number of students."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The standard deviation for Group A is 5.2 and the standard deviation for Group B is 8.4. Explain which group's results were more consistent.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "Group A was more consistent.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the standard deviations.",
+                  "working": "5.2 < 8.4",
+                  "reasoning": "A lower standard deviation indicates that the data points are closer to the mean."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Conclude based on the definition of consistency.",
+                  "working": "Since Group A has a smaller standard deviation, their scores are less spread out, meaning they are more consistent.",
+                  "reasoning": "In statistics, 'consistency' is inversely related to the spread (standard deviation) of the data."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Combined Mean and Consistency"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S1-gemini-2011-p1-102",
+        "topicID": "S1",
+        "stem": "50 students participated in a puzzle competition. The time taken, $t$ minutes, to complete the puzzle is recorded in the table below.\n\n**Time ($t$ min):**    $5<t\\le10$  |  $10<t\\le15$  |  $15<t\\le20$  |  $20<t\\le25$\n**Frequency:**              5           |       15            |       20            |       10",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate an estimate for the mean time taken.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "16 min",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the mid-values ($x$).",
+                  "working": "Mid-values: 7.5, 12.5, 17.5, 22.5",
+                  "reasoning": "Midpoints of the intervals $5-10$, $10-15$, etc."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$.",
+                  "working": "$\\sum fx = (5 \\times 7.5) + (15 \\times 12.5) + (20 \\times 17.5) + (10 \\times 22.5) \\\\ = 37.5 + 187.5 + 350 + 225 \\\\ = 800$",
+                  "reasoning": "Sum of products of frequency and midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the mean.",
+                  "working": "Mean = $\\frac{800}{50} = 16$",
+                  "reasoning": "Total estimated time divided by number of students."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate for the standard deviation.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4.5 min",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$\\sum fx^2 = (5 \\times 7.5^2) + (15 \\times 12.5^2) + (20 \\times 17.5^2) + (10 \\times 22.5^2) \\\\ = (5 \\times 56.25) + (15 \\times 156.25) + (20 \\times 306.25) + (10 \\times 506.25) \\\\ = 281.25 + 2343.75 + 6125 + 5062.5 \\\\ = 13812.5$",
+                  "reasoning": "Sum of frequency times midpoint squared."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{13812.5}{50} - 16^2} \\\\ = \\sqrt{276.25 - 256} \\\\ = \\sqrt{20.25}$",
+                  "reasoning": "Substitute values into $\\sqrt{\\frac{\\sum fx^2}{\\sum f} - \\bar{x}^2}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate final answer.",
+                  "working": "$\\sigma = 4.5$",
+                  "reasoning": "The result is exact."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Statistics"
       }
     ],
-    "Paper 2": []
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-1911-p2-101",
+        "topicID": "S1",
+        "stem": "A sample of 50 batteries has a mean life of 20 hours and a standard deviation of 4 hours.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the sum of the squares of the battery lives, Σx².",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "20800",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "State the formula for standard deviation relating to sum of squares.",
+                  "working": "σ² = (Σx² / N) - (mean)²",
+                  "reasoning": "We are given N, mean, and standard deviation (σ), and need to find Σx²."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the known values into the formula.",
+                  "working": "4² = (Σx² / 50) - 20²\n16 = (Σx² / 50) - 400",
+                  "reasoning": "Square the standard deviation to get variance (16) and square the mean (400)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for Σx².",
+                  "working": "16 + 400 = Σx² / 50\n416 = Σx² / 50\nΣx² = 416 × 50 = 20800",
+                  "reasoning": "Rearrange the equation to isolate Σx²."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Sum of Squares Calculation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2011-p2-101",
+        "topicID": "S1",
+        "stem": "The masses, $m$ kg, of 100 parcels handled by a courier service are recorded in the table below.\n\n**Mass ($m$ kg):**    $0<m\\le2$  |  $2<m\\le4$  |  $4<m\\le6$\n**Frequency:**             20          |      50          |      30",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate an estimate for the mean mass of the parcels.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3.2 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify mid-values ($x$).",
+                  "working": "Mid-values: 1, 3, 5",
+                  "reasoning": "Midpoints of $0-2$, $2-4$, and $4-6$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$.",
+                  "working": "$\\sum fx = (20 \\times 1) + (50 \\times 3) + (30 \\times 5) \\\\ = 20 + 150 + 150 \\\\ = 320$",
+                  "reasoning": "Sum of frequency $\\times$ midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate Mean.",
+                  "working": "Mean = $\\frac{320}{100} = 3.2$",
+                  "reasoning": "Divide total mass by total frequency."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate for the standard deviation of the masses.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1.4 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$\\sum fx^2 = (20 \\times 1^2) + (50 \\times 3^2) + (30 \\times 5^2) \\\\ = 20 + (50 \\times 9) + (30 \\times 25) \\\\ = 20 + 450 + 750 \\\\ = 1220$",
+                  "reasoning": "Sum of frequency $\\times$ midpoint squared."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{1220}{100} - 3.2^2} \\\\ = \\sqrt{12.2 - 10.24} \\\\ = \\sqrt{1.96}$",
+                  "reasoning": "Using $\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - \\bar{x}^2}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final calculation.",
+                  "working": "$\\sigma = 1.4$",
+                  "reasoning": "Exact value."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Statistics"
+      }
+    ]
   }
 }

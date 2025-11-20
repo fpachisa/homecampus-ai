@@ -3,6 +3,60 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 15,
+        "questionId": "G6-acsi-2024-p1-q15",
+        "topicID": "G6",
+        "stem": "The distance between the points $M(k,7)$ and $N(9,k)$ is $\\sqrt{20}$ units. Given that $k>10,$",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "find the value of k.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "11",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation using the distance formula $d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$.",
+                  "working": "$\\sqrt{(9-k)^2 + (k-7)^2} = \\sqrt{20}$",
+                  "reasoning": "Substitute the coordinates of M and N into the formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Square both sides to remove the square root and expand the squared terms.",
+                  "working": "$(9-k)^2 + (k-7)^2 = 20$\n$(81 - 18k + k^2) + (k^2 - 14k + 49) = 20$",
+                  "reasoning": "Use $(a-b)^2 = a^2 - 2ab + b^2$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the expression into a standard quadratic equation form $ax^2 + bx + c = 0$.",
+                  "working": "$2k^2 - 32k + 130 = 20$\n$2k^2 - 32k + 110 = 0$\n$k^2 - 16k + 55 = 0$",
+                  "reasoning": "Combine like terms and divide by 2 for simpler factorization."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve the quadratic equation for k.",
+                  "working": "$(k-5)(k-11) = 0$\n$k = 5$ or $k = 11$",
+                  "reasoning": "Factorize the quadratic trinomial."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Select the valid value of k based on the given condition.",
+                  "working": "Since $k > 10$, $k = 11$.",
+                  "reasoning": "Apply the constraint given in the stem."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Coordinate Geometry Distance"
+      },
+      {
         "questionNumber": 18,
         "questionId": "G6-anderson-2024-p1-q18",
         "topicID": "G6",
@@ -21,37 +75,35 @@
             "questionText": "Write down the coordinates of the point Q.",
             "marks": 1,
             "answerType": "numerical",
-
             "solution": {
-                "finalAnswer": "(8, 1)",
-                "stepByStep": [
-                  {
-                    "step": 1,
-                    "explanation": "Find the y-coordinate of Q.",
-                    "working": "Since line PQ is parallel to the x-axis, Q has the same y-coordinate as P.\ny = 1",
-                    "reasoning": "Points on a horizontal line have equal y-values."
-                  },
-                  {
-                    "step": 2,
-                    "explanation": "Use the isosceles triangle property to relate the x-coordinates.",
-                    "working": "Triangle PQS is isosceles with a horizontal base PQ. This means the vertex S is horizontally centered exactly between P and Q.\nx_s = (x_q + (-2)) / 2",
-                    "reasoning": "In an isosceles triangle with a horizontal base, the vertex lies on the perpendicular bisector of the base."
-                  },
-                  {
-                    "step": 3,
-                    "explanation": "Use the congruence property to relate the bases.",
-                    "working": "Triangles PQS and RSQ are congruent, so their bases are equal length (PQ = RS). Therefore, the horizontal distance from P to Q equals the distance from S to R.\nx_q - (-2) = 13 - x_s",
-                    "reasoning": "Congruent triangles have equal corresponding side lengths."
-                  },
-                  {
-                    "step": 4,
-                    "explanation": "Solve the system of equations for x_q.",
-                    "working": "Substitute x_s from step 2 into the equation from step 3:\n(x_q + 2) = 13 - [(x_q - 2) / 2]\nMultiply by 2: 2(x_q + 2) = 26 - (x_q - 2)\n2x_q + 4 = 26 - x_q + 2\n3x_q = 24\nx_q = 8",
-                    "reasoning": "Algebraic substitution."
-                  }
-                ]
-              }
-
+              "finalAnswer": "(8, 1)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the y-coordinate of Q.",
+                  "working": "Since line PQ is parallel to the x-axis, Q has the same y-coordinate as P.\ny = 1",
+                  "reasoning": "Points on a horizontal line have equal y-values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the isosceles triangle property to relate the x-coordinates.",
+                  "working": "Triangle PQS is isosceles with a horizontal base PQ. This means the vertex S is horizontally centered exactly between P and Q.\nx_s = (x_q + (-2)) / 2",
+                  "reasoning": "In an isosceles triangle with a horizontal base, the vertex lies on the perpendicular bisector of the base."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Use the congruence property to relate the bases.",
+                  "working": "Triangles PQS and RSQ are congruent, so their bases are equal length (PQ = RS). Therefore, the horizontal distance from P to Q equals the distance from S to R.\nx_q - (-2) = 13 - x_s",
+                  "reasoning": "Congruent triangles have equal corresponding side lengths."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve the system of equations for x_q.",
+                  "working": "Substitute x_s from step 2 into the equation from step 3:\n(x_q + 2) = 13 - [(x_q - 2) / 2]\nMultiply by 2: 2(x_q + 2) = 26 - (x_q - 2)\n2x_q + 4 = 26 - x_q + 2\n3x_q = 24\nx_q = 8",
+                  "reasoning": "Algebraic substitution."
+                }
+              ]
+            }
           },
           {
             "partId": "b",
@@ -110,7 +162,6 @@
             "questionText": "Find the perimeter of PQRS.",
             "marks": 3,
             "answerType": "numerical",
-
             "solution": {
               "finalAnswer": "31.7 units (to 3 s.f.) or 20 + 2√34",
               "stepByStep": [
@@ -134,12 +185,107 @@
                 }
               ]
             }
-
           }
         ],
         "totalMarks": 7,
         "paper": "Paper 1",
         "title": "Rhombus Coordinates"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G6-gemini-1911-p1-101",
+        "topicID": "G6",
+        "stem": "The distance between the points $P(t, 2)$ and $Q(6, t)$ is $\\sqrt{26}$ units. Given that $t > 5$,",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "find the value of t.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the distance formula to points P and Q.",
+                  "working": "$\\sqrt{(6-t)^2 + (t-2)^2} = \\sqrt{26}$",
+                  "reasoning": "Distance squared is $(x_2-x_1)^2 + (y_2-y_1)^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Square both sides and expand the brackets.",
+                  "working": "$(6-t)^2 + (t-2)^2 = 26$\n$(36 - 12t + t^2) + (t^2 - 4t + 4) = 26$",
+                  "reasoning": "Remove square roots to form an algebraic equation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Form a quadratic equation set to zero.",
+                  "working": "$2t^2 - 16t + 40 = 26$\n$2t^2 - 16t + 14 = 0$\n$t^2 - 8t + 7 = 0$",
+                  "reasoning": "Simplify terms and divide by the common factor of 2."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for t.",
+                  "working": "$(t-1)(t-7) = 0$\n$t=1$ or $t=7$",
+                  "reasoning": "Factorise the quadratic equation."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Apply the given condition to find the final answer.",
+                  "working": "Given $t > 5$, therefore $t = 7$.",
+                  "reasoning": "Reject $t=1$ as it does not satisfy the condition."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Distance between Points"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G6-gemini-1911-p1-102",
+        "topicID": "G6",
+        "stem": "The line joining the points $A(-1, p)$ and $B(p, 5)$ has a gradient of 2.",
+        "hasDiagram": false,
+        "diagramDescription": "",
+        "parts": [
+          {
+            "partId": "",
+            "questionText": "Find the value of p.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the gradient formula $m = \\frac{y_2-y_1}{x_2-x_1}$.",
+                  "working": "$\\frac{5-p}{p-(-1)} = 2$",
+                  "reasoning": "Set the gradient expression equal to the given value of 2."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rearrange the equation to solve for p.",
+                  "working": "$\\frac{5-p}{p+1} = 2$\n$5 - p = 2(p + 1)$",
+                  "reasoning": "Multiply both sides by the denominator $(p+1)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and solve the linear equation.",
+                  "working": "$5 - p = 2p + 2$\n$3 = 3p$\n$p = 1$",
+                  "reasoning": "Isolate p on one side."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Gradient of a Line"
       }
     ],
     "Paper 2": []

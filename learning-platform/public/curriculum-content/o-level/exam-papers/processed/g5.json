@@ -1,7 +1,186 @@
 {
   "topicId": "G5",
   "questions": {
-    "Paper 1": [],
+    "Paper 1": [
+      {
+        "questionNumber": 23,
+        "questionId": "G5-broadrick-2024-p1-q23",
+        "topicID": "G5",
+        "stem": "A cylinder X has radius, r cm and height h cm. A hemisphere S is such that its radius is half of the radius of cylinder X.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The volume of the cylinder is 4 times that of the hemisphere. Express h in terms of r.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "h = $\\frac{1}{3}r$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the dimensions of the cylinder and the hemisphere.",
+                  "working": "Radius of cylinder X = $r$\nHeight of cylinder X = $h$\nRadius of hemisphere S = $\\frac{1}{2}r$",
+                  "reasoning": "Establish the variables given in the stem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation based on the volume relationship given: Volume of Cylinder = 4 × Volume of Hemisphere.",
+                  "working": "$\\text{Volume of Cylinder} = \\pi r^2 h$\n$\\text{Volume of Hemisphere} = \\frac{2}{3} \\pi (\\text{radius})^3 = \\frac{2}{3} \\pi (\\frac{r}{2})^3$\n\n$\\pi r^2 h = 4 \\times [\\frac{2}{3} \\pi (\\frac{r}{2})^3]$",
+                  "reasoning": "Use standard mensuration formulae: $V_{cyl} = \\pi r^2 h$ and $V_{hemi} = \\frac{2}{3} \\pi r^3$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the equation to solve for h.",
+                  "working": "$\\pi r^2 h = \\frac{8}{3} \\pi (\\frac{r^3}{8})$\n$\\pi r^2 h = \\frac{1}{3} \\pi r^3$",
+                  "reasoning": "Expand the cubed term $(\\frac{r}{2})^3 = \\frac{r^3}{8}$ and multiply by 4."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Isolate h by dividing both sides by $\\pi r^2$.",
+                  "working": "h = $\\frac{\\frac{1}{3} \\pi r^3}{\\pi r^2}$\nh = $\\frac{1}{3}r$",
+                  "reasoning": "Cancel out common terms $\\pi$ and $r^2$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Another cylinder Y is geometrically similar to cylinder X. The ratio of the curved surface area of X: Y = 9 : 4. Find the height of cylinder Y in terms of r.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "h_Y = $\\frac{2}{9}r$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the property of similar solids to find the ratio of heights.",
+                  "working": "$\\frac{A_X}{A_Y} = (\\frac{h_X}{h_Y})^2 = \\frac{9}{4}$\n$\\frac{h_X}{h_Y} = \\sqrt{\\frac{9}{4}} = \\frac{3}{2}$",
+                  "reasoning": "For similar solids, the ratio of areas is the square of the ratio of corresponding lengths."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Express the height of Y ($h_Y$) in terms of the height of X ($h_X$).",
+                  "working": "$h_Y = \\frac{2}{3} h_X$",
+                  "reasoning": "Rearrange the ratio $\\frac{h_X}{h_Y} = \\frac{3}{2}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute the value of $h_X$ (which is $h$) from part (a) to find $h_Y$ in terms of $r$.",
+                  "working": "From part (a), $h_X = \\frac{1}{3}r$\nh_Y = $\\frac{2}{3} (\\frac{1}{3}r)$\nh_Y = $\\frac{2}{9}r$",
+                  "reasoning": "Substitute $h = \\frac{1}{3}r$ into the expression for $h_Y$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Mensuration"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G5-gemini-2011-p1-101",
+        "topicID": "G5",
+        "stem": "Two solid cones, A and B, are geometrically similar. The volume of cone A is 64 times the volume of cone B. Cone B has a base radius of $r$ cm and a height of $h$ cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the ratio of the base radius of cone A to the base radius of cone B.",
+            "marks": 1,
+            "answerType": "numeric",
+            "solution": {
+              "finalAnswer": "4 : 1",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the relationship between volume ratio and length ratio for similar solids.",
+                  "working": "$\\frac{V_A}{V_B} = (\\frac{r_A}{r_B})^3 = 64$",
+                  "reasoning": "For similar solids, the ratio of volumes is the cube of the ratio of corresponding lengths."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the cube root to find the length ratio.",
+                  "working": "$\\frac{r_A}{r_B} = \\sqrt[3]{64} = 4$",
+                  "reasoning": "Solve for the ratio."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The curved surface area of cone B is $A$ cm². Express the curved surface area of cone A in terms of $A$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "16A",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the area ratio based on the length ratio found in part (a).",
+                  "working": "$\\text{Ratio of lengths} = 4 : 1$\n$\\text{Ratio of areas} = 4^2 : 1^2 = 16 : 1$",
+                  "reasoning": "For similar solids, the ratio of areas is the square of the ratio of corresponding lengths."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the area of cone A.",
+                  "working": "$\\text{Area}_A = 16 \\times \\text{Area}_B$\n$\\text{Area}_A = 16A$",
+                  "reasoning": "Multiply the area of B by the area ratio."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Mensuration"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G5-gemini-2011-p1-102",
+        "topicID": "G5",
+        "stem": "A solid metal cone has a base radius of $x$ cm and a height of $6x$ cm. It is melted down completely and recast into a solid sphere.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the radius of the sphere in terms of $x$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$R = \\sqrt[3]{1.5}x \\text{ or } R = x\\sqrt[3]{\\frac{3}{2}}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the volume of the cone.",
+                  "working": "$V_{cone} = \\frac{1}{3}\\pi r^2 h$\n$V_{cone} = \\frac{1}{3}\\pi (x)^2 (6x) = 2\\pi x^3$",
+                  "reasoning": "Substitute the given dimensions into the cone volume formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Equate the volume of the cone to the volume of the sphere.",
+                  "working": "$V_{sphere} = \\frac{4}{3}\\pi R^3$\n$\\frac{4}{3}\\pi R^3 = 2\\pi x^3$",
+                  "reasoning": "Since the metal is conserved, the volumes are equal."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for the radius of the sphere, R.",
+                  "working": "$\\frac{4}{3} R^3 = 2 x^3$\n$R^3 = 2 x^3 \\times \\frac{3}{4}$\n$R^3 = \\frac{3}{2} x^3$\n$R = \\sqrt[3]{\\frac{3}{2}} x$",
+                  "reasoning": "Isolate R algebraically."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Mensuration"
+      }
+    ],
     "Paper 2": [
       {
         "questionNumber": 27,
@@ -167,6 +346,77 @@
         "totalMarks": 4,
         "paper": "Paper 2",
         "title": "Chord Central Angle"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G5-gemini-2011-p2-101",
+        "topicID": "G5",
+        "stem": "A composite solid is formed by joining a hemisphere of radius $r$ cm to one end of a cylinder with the same radius $r$ cm and height $h$ cm. The volume of the cylinder is twice the volume of the hemisphere.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that $h = \\frac{4}{3}r$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Proof shown",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write down the formulae for the volumes.",
+                  "working": "$V_{cyl} = \\pi r^2 h$\n$V_{hemi} = \\frac{2}{3}\\pi r^3$",
+                  "reasoning": "Standard mensuration formulae."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation based on the given relationship.",
+                  "working": "$V_{cyl} = 2 \\times V_{hemi}$\n$\\pi r^2 h = 2 \\times (\\frac{2}{3}\\pi r^3)$\n$\\pi r^2 h = \\frac{4}{3}\\pi r^3$",
+                  "reasoning": "Substitute the formulae into the given condition."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify to find h.",
+                  "working": "h = $\\frac{\\frac{4}{3}\\pi r^3}{\\pi r^2}$\nh = $\\frac{4}{3}r$",
+                  "reasoning": "Divide by $\\pi r^2$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that the total surface area of the solid is $360\\pi$ cm², find the value of $r$.",
+            "marks": 4,
+            "answerType": "numeric",
+            "solution": {
+              "finalAnswer": "$r = 10.39 \\text{ (to 2 d.p.) or } \\sqrt{108}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the components of the total surface area.",
+                  "working": "Total SA = Curved SA of Hemisphere + Curved SA of Cylinder + Area of Circular Base\n$SA = 2\\pi r^2 + 2\\pi r h + \\pi r^2$\n$SA = 3\\pi r^2 + 2\\pi r h$",
+                  "reasoning": "Note that the join between the hemisphere and cylinder is internal and not part of the surface area."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute $h = \\frac{4}{3}r$ into the surface area expression.",
+                  "working": "$SA = 3\\pi r^2 + 2\\pi r (\\frac{4}{3}r)$\n$SA = 3\\pi r^2 + \\frac{8}{3}\\pi r^2$\n$SA = \\frac{9}{3}\\pi r^2 + \\frac{8}{3}\\pi r^2 = \\frac{17}{3}\\pi r^2$",
+                  "reasoning": "Express the total area in terms of a single variable $r$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate to the given value and solve for $r$.",
+                  "working": "$\\frac{17}{3}\\pi r^2 = 360\\pi$\n$\\frac{17}{3} r^2 = 360$\n$r^2 = \\frac{360 \\times 3}{17} = \\frac{1080}{17}$\n$r = \\sqrt{\\frac{1080}{17}} \\approx 7.97$",
+                  "reasoning": "Solve the algebraic equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Mensuration"
       }
     ]
   }
