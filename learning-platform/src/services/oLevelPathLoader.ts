@@ -11,6 +11,7 @@
  */
 
 import type { PathNode, PreWrittenQuestion } from '../types/practice';
+import type { QuestionTable } from '../types/examQuestions';
 
 // Topic ID to topic name mapping
 const TOPIC_NAMES: Record<string, string> = {
@@ -40,6 +41,7 @@ interface OLevelQuestion {
   topicID: string;
   title?: string;
   stem?: string;
+  table?: QuestionTable;
   hasDiagram?: boolean;
   diagramDescription?: string;
   diagram?: {
@@ -245,6 +247,11 @@ class OLevelPathLoader {
           // Static SVG diagram
           preWrittenQuestion.diagramSvg = question.diagram.diagramPath;
         }
+      }
+
+      // Add structured table if present (only for first part)
+      if (partIndex === 0 && question.table) {
+        preWrittenQuestion.questionTable = question.table;
       }
 
       // Add avatar intro for first part only

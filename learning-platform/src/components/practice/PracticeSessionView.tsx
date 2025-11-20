@@ -24,6 +24,7 @@ import { useAudioManager } from '../../hooks/useAudioManager';
 import MathText from '../MathText';
 import MathInputToolbar from '../MathInputToolbar';
 import ScratchPad from './ScratchPad';
+import { QuestionTable } from '../tables';
 
 interface PracticeSessionViewProps {
   category: string;
@@ -794,7 +795,7 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
 
   // Determine if user is reviewing (viewing a completed problem that's not the active one)
   const isReviewing = session.currentIndex < finalActiveIndex &&
-                     session.currentProblemSession?.attemptHistory.some(a => a.isCorrect);
+    session.currentProblemSession?.attemptHistory.some(a => a.isCorrect);
 
   // Color schemes by difficulty
   const colorSchemes = {
@@ -919,25 +920,24 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
                   key={problem.id}
                   onClick={() => canClick && handleNavigateToProblem(index)}
                   disabled={!canClick}
-                  className={`min-w-[44px] min-h-[44px] w-11 h-11 flex-shrink-0 rounded-full font-semibold transition-all text-sm sm:text-base ${
-                    isAttempted
-                      ? 'bg-green-500 text-white hover:bg-green-600 hover:scale-105 cursor-pointer'  // Green for attempted (priority)
-                      : isCurrent
+                  className={`min-w-[44px] min-h-[44px] w-11 h-11 flex-shrink-0 rounded-full font-semibold transition-all text-sm sm:text-base ${isAttempted
+                    ? 'bg-green-500 text-white hover:bg-green-600 hover:scale-105 cursor-pointer'  // Green for attempted (priority)
+                    : isCurrent
                       ? 'bg-amber-500 text-white shadow-lg scale-105 sm:scale-110'  // Orange for current
                       : hasVisited || index < session.currentIndex
-                      ? 'bg-amber-400 text-white hover:bg-amber-500 hover:scale-105 cursor-pointer'  // Lighter orange for visited
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-60'  // Grey for not yet reached
-                  } ${isCurrent && isAttempted ? 'ring-2 sm:ring-4 ring-amber-300' : ''}`}
+                        ? 'bg-amber-400 text-white hover:bg-amber-500 hover:scale-105 cursor-pointer'  // Lighter orange for visited
+                        : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-60'  // Grey for not yet reached
+                    } ${isCurrent && isAttempted ? 'ring-2 sm:ring-4 ring-amber-300' : ''}`}
                   title={
                     isCurrent && isAttempted
                       ? `Current problem ${index + 1} (attempted)`
                       : isCurrent
-                      ? `Current problem ${index + 1}`
-                      : isAttempted
-                      ? `Navigate to problem ${index + 1} (completed)`
-                      : hasVisited || index < session.currentIndex
-                      ? `Navigate to problem ${index + 1} (visited)`
-                      : `Problem ${index + 1} (not reached yet)`
+                        ? `Current problem ${index + 1}`
+                        : isAttempted
+                          ? `Navigate to problem ${index + 1} (completed)`
+                          : hasVisited || index < session.currentIndex
+                            ? `Navigate to problem ${index + 1} (visited)`
+                            : `Problem ${index + 1} (not reached yet)`
                   }
                 >
                   {index + 1}
@@ -979,221 +979,227 @@ export const PracticeSessionView: React.FC<PracticeSessionViewProps> = ({
           <div className="problem-column">
             {/* Problem Card */}
             <div className="bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Problem {progress}</h2>
-          <div className="text-gray-800 text-lg leading-relaxed mb-6">
-            <MathText>{currentProblem?.problemText || ''}</MathText>
-          </div>
-
-          {/* SVG Diagram (for pre-written questions) */}
-          {currentProblem?.diagramSvg && (
-            <div className="my-4 p-4 bg-white rounded-lg border-2 border-gray-200">
-              <div className="flex justify-center">
-                <img
-                  src={currentProblem.diagramSvg}
-                  alt="Problem diagram"
-                  className="max-w-full h-auto"
-                  style={{ maxHeight: '500px' }}
-                />
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">Problem {progress}</h2>
+              <div className="text-gray-800 text-lg leading-relaxed mb-6">
+                <MathText>{currentProblem?.problemText || ''}</MathText>
               </div>
-            </div>
-          )}
 
-          {/* Table Data (for questions with tabular information) */}
-          {currentProblem?.tableData && (
-            <TableRenderer tableData={currentProblem.tableData} />
-          )}
-
-          {/* Math Tool Visualization (for AI-generated questions) */}
-          {currentProblem?.mathTool && currentProblem.mathTool.toolName !== "none" && (
-            <MathToolRenderer
-              toolName={currentProblem.mathTool.toolName}
-              parameters={currentProblem.mathTool.parameters}
-              caption={currentProblem.mathTool.caption}
-            />
-          )}
-
-          {/* Attempt History Display - Shows all previous attempts and hints */}
-          {session.currentProblemSession && session.currentProblemSession.attemptHistory.length > 0 && (
-            <div className="mt-6 mb-6 space-y-3">
-              <div className="text-sm font-semibold text-gray-600 mb-2">Previous Attempts:</div>
-              {session.currentProblemSession.attemptHistory.map((attempt, index) => (
-                <div key={index} className="border-l-4 border-blue-300 pl-4 py-2">
-                  {/* Student's Answer */}
-                  <div className="flex items-start space-x-2 mb-2">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm">
-                      🙋‍♀️
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs text-gray-500 mb-1">Attempt {attempt.attemptNumber}</div>
-                      <div className="bg-blue-50 rounded-lg px-3 py-2 text-gray-800">
-                        {attempt.studentAnswer}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Tutor's Hint/Feedback - WhatsApp style (right-aligned) */}
-                  <div className="flex items-start space-x-2 justify-end">
-                    <div className="max-w-[75%]">
-                      <div className={`rounded-lg px-3 py-2 ${
-                        attempt.isCorrect ? 'bg-green-50 text-green-800' : 'bg-yellow-50 text-gray-800'
-                      }`}>
-                        {/* Show explanation for correct answers, hint with label for incorrect */}
-                        <MathText>
-                          {attempt.isCorrect
-                            ? (attempt.explanation || '')
-                            : `Hint ${attempt.attemptNumber}: ${attempt.hint || ''}`}
-                        </MathText>
-                      </div>
-                    </div>
-                    {/* Tutor label badge */}
-                    <div className="flex-shrink-0 px-2 py-1 rounded bg-indigo-100 text-indigo-700 text-xs font-semibold whitespace-nowrap">
-                      Tutor
-                    </div>
+              {/* SVG Diagram (for pre-written questions) */}
+              {currentProblem?.diagramSvg && (
+                <div className="my-4 p-4 bg-white rounded-lg border-2 border-gray-200">
+                  <div className="flex justify-center">
+                    <img
+                      src={currentProblem.diagramSvg}
+                      alt="Problem diagram"
+                      className="max-w-full h-auto"
+                      style={{ maxHeight: '500px' }}
+                    />
                   </div>
                 </div>
-              ))}
-            </div>
-          )}
+              )}
 
-          {/* Answer Input */}
-          <div className="space-y-4">
-            {/* Math Toolbar (collapsible) */}
-            {showMathToolbar && (
-              <div className="mb-3">
-                <MathInputToolbar
-                  onInsert={handleMathInsert}
-                  disabled={
-                    submitting ||
-                    (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
-                    (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
-                    false
-                  }
+              {/* Structured Question Table */}
+              {currentProblem?.questionTable && (
+                <div className="my-4">
+                  <QuestionTable table={currentProblem.questionTable} />
+                </div>
+              )}
+
+              {/* Table Data (for questions with tabular information) */}
+              {currentProblem?.tableData && (
+                <TableRenderer tableData={currentProblem.tableData} />
+              )}
+
+              {/* Math Tool Visualization (for AI-generated questions) */}
+              {currentProblem?.mathTool && currentProblem.mathTool.toolName !== "none" && (
+                <MathToolRenderer
+                  toolName={currentProblem.mathTool.toolName}
+                  parameters={currentProblem.mathTool.parameters}
+                  caption={currentProblem.mathTool.caption}
                 />
-              </div>
-            )}
+              )}
 
-            <div>
-              {/* Math toolbar toggle button */}
-              <button
-                onClick={() => setShowMathToolbar(!showMathToolbar)}
-                disabled={
-                  submitting ||
-                  (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
-                  (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
-                  false
-                }
-                className="text-xs px-3 py-1.5 mb-2 rounded-md transition-all duration-150 hover:scale-105 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{
-                  backgroundColor: showMathToolbar ? '#4f46e5' : '#e5e7eb',
-                  color: showMathToolbar ? '#ffffff' : '#374151',
-                }}
-                title="Toggle math symbols toolbar"
-              >
-                {showMathToolbar ? '✕ Hide Math Symbols' : '∑ Math Symbols'}
-              </button>
+              {/* Attempt History Display - Shows all previous attempts and hints */}
+              {session.currentProblemSession && session.currentProblemSession.attemptHistory.length > 0 && (
+                <div className="mt-6 mb-6 space-y-3">
+                  <div className="text-sm font-semibold text-gray-600 mb-2">Previous Attempts:</div>
+                  {session.currentProblemSession.attemptHistory.map((attempt, index) => (
+                    <div key={index} className="border-l-4 border-blue-300 pl-4 py-2">
+                      {/* Student's Answer */}
+                      <div className="flex items-start space-x-2 mb-2">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm">
+                          🙋‍♀️
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-xs text-gray-500 mb-1">Attempt {attempt.attemptNumber}</div>
+                          <div className="bg-blue-50 rounded-lg px-3 py-2 text-gray-800">
+                            {attempt.studentAnswer}
+                          </div>
+                        </div>
+                      </div>
 
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Your Answer {session.currentProblemSession && session.currentProblemSession.attemptCount > 0
-                  ? `(Attempt ${Math.min(session.currentProblemSession.attemptCount + 1, 3)} of 3)`
-                  : ''}:
-              </label>
-              <input
-                ref={inputRef}
-                type="text"
-                value={studentAnswer}
-                onChange={(e) => setStudentAnswer(e.target.value)}
-                onKeyDown={(e) => {
-                  const canSubmit = session.currentProblemSession?.canRetry ?? false;
-                  if (e.key === 'Enter' && canSubmit && !submitting) {
-                    handleSubmitAnswer();
-                  }
-                }}
-                disabled={
-                  submitting ||
-                  (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
-                  (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
-                  false
-                }
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
-                placeholder={
-                  session.currentProblemSession && !session.currentProblemSession.canRetry
-                    ? "Maximum attempts reached"
-                    : "Enter your answer..."
-                }
-              />
-            </div>
+                      {/* Tutor's Hint/Feedback - WhatsApp style (right-aligned) */}
+                      <div className="flex items-start space-x-2 justify-end">
+                        <div className="max-w-[75%]">
+                          <div className={`rounded-lg px-3 py-2 ${attempt.isCorrect ? 'bg-green-50 text-green-800' : 'bg-yellow-50 text-gray-800'
+                            }`}>
+                            {/* Show explanation for correct answers, hint with label for incorrect */}
+                            <MathText>
+                              {attempt.isCorrect
+                                ? (attempt.explanation || '')
+                                : `Hint ${attempt.attemptNumber}: ${attempt.hint || ''}`}
+                            </MathText>
+                          </div>
+                        </div>
+                        {/* Tutor label badge */}
+                        <div className="flex-shrink-0 px-2 py-1 rounded bg-indigo-100 text-indigo-700 text-xs font-semibold whitespace-nowrap">
+                          Tutor
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
 
-            {/* Action Buttons */}
-            <div className="flex space-x-3">
-              {/* Check if student got it correct */}
-              {session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect) ? (
-                <button
-                  onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
-                  className={`w-full px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition`}
-                >
-                  {session.currentIndex >= session.problems.length - 1
-                    ? 'Finish Lesson'
-                    : isReviewing
-                    ? `Return to Problem ${finalActiveIndex + 1} →`
-                    : 'Next Problem →'}
-                </button>
-              ) : (
-                <>
-                  {/* If still can retry, show submit button */}
-                  {session.currentProblemSession && session.currentProblemSession.canRetry ? (
+              {/* Answer Input */}
+              <div className="space-y-4">
+                {/* Math Toolbar (collapsible) */}
+                {showMathToolbar && (
+                  <div className="mb-3">
+                    <MathInputToolbar
+                      onInsert={handleMathInsert}
+                      disabled={
+                        submitting ||
+                        (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
+                        (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
+                        false
+                      }
+                    />
+                  </div>
+                )}
+
+                <div>
+                  {/* Math toolbar toggle button */}
+                  <button
+                    onClick={() => setShowMathToolbar(!showMathToolbar)}
+                    disabled={
+                      submitting ||
+                      (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
+                      (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
+                      false
+                    }
+                    className="text-xs px-3 py-1.5 mb-2 rounded-md transition-all duration-150 hover:scale-105 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{
+                      backgroundColor: showMathToolbar ? '#4f46e5' : '#e5e7eb',
+                      color: showMathToolbar ? '#ffffff' : '#374151',
+                    }}
+                    title="Toggle math symbols toolbar"
+                  >
+                    {showMathToolbar ? '✕ Hide Math Symbols' : '∑ Math Symbols'}
+                  </button>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Your Answer {session.currentProblemSession && session.currentProblemSession.attemptCount > 0
+                      ? `(Attempt ${Math.min(session.currentProblemSession.attemptCount + 1, 3)} of 3)`
+                      : ''}:
+                  </label>
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={studentAnswer}
+                    onChange={(e) => setStudentAnswer(e.target.value)}
+                    onKeyDown={(e) => {
+                      const canSubmit = session.currentProblemSession?.canRetry ?? false;
+                      if (e.key === 'Enter' && canSubmit && !submitting) {
+                        handleSubmitAnswer();
+                      }
+                    }}
+                    disabled={
+                      submitting ||
+                      (session.currentProblemSession && !session.currentProblemSession.canRetry) ||
+                      (session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect)) ||
+                      false
+                    }
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    placeholder={
+                      session.currentProblemSession && !session.currentProblemSession.canRetry
+                        ? "Maximum attempts reached"
+                        : "Enter your answer..."
+                    }
+                  />
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex space-x-3">
+                  {/* Check if student got it correct */}
+                  {session.currentProblemSession && session.currentProblemSession.attemptHistory.some(a => a.isCorrect) ? (
                     <button
-                      onClick={handleSubmitAnswer}
-                      disabled={!studentAnswer.trim() || submitting}
-                      className={`flex-1 px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed`}
+                      onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
+                      className={`w-full px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition`}
                     >
-                      {submitting ? 'Checking...' : 'Submit Answer'}
+                      {session.currentIndex >= session.problems.length - 1
+                        ? 'Finish Lesson'
+                        : isReviewing
+                          ? `Return to Problem ${finalActiveIndex + 1} →`
+                          : 'Next Problem →'}
                     </button>
                   ) : (
-                    /* After 3 failed attempts, show solution and next buttons */
                     <>
-                      {!solution ? (
+                      {/* If still can retry, show submit button */}
+                      {session.currentProblemSession && session.currentProblemSession.canRetry ? (
                         <button
-                          onClick={handleShowSolution}
-                          disabled={loadingSolution}
-                          className="flex-1 px-6 py-3 min-h-[48px] bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition disabled:opacity-50"
+                          onClick={handleSubmitAnswer}
+                          disabled={!studentAnswer.trim() || submitting}
+                          className={`flex-1 px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed`}
                         >
-                          {loadingSolution ? 'Loading...' : 'Show Solution'}
+                          {submitting ? 'Checking...' : 'Submit Answer'}
                         </button>
                       ) : (
-                        <button
-                          onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
-                          className={`flex-1 px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition`}
-                        >
-                          {session.currentIndex >= session.problems.length - 1
-                            ? 'Finish Lesson'
-                            : isReviewing
-                            ? `Return to Problem ${finalActiveIndex + 1} →`
-                            : 'Next Problem →'}
-                        </button>
+                        /* After 3 failed attempts, show solution and next buttons */
+                        <>
+                          {!solution ? (
+                            <button
+                              onClick={handleShowSolution}
+                              disabled={loadingSolution}
+                              className="flex-1 px-6 py-3 min-h-[48px] bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition disabled:opacity-50"
+                            >
+                              {loadingSolution ? 'Loading...' : 'Show Solution'}
+                            </button>
+                          ) : (
+                            <button
+                              onClick={() => isReviewing ? handleNavigateToProblem(finalActiveIndex) : handleNextProblem()}
+                              className={`flex-1 px-6 py-3 min-h-[48px] ${colors.button} text-white rounded-lg font-semibold transition`}
+                            >
+                              {session.currentIndex >= session.problems.length - 1
+                                ? 'Finish Lesson'
+                                : isReviewing
+                                  ? `Return to Problem ${finalActiveIndex + 1} →`
+                                  : 'Next Problem →'}
+                            </button>
+                          )}
+                        </>
                       )}
                     </>
                   )}
-                </>
-              )}
-            </div>
-          </div>
+                </div>
+              </div>
 
-          {/* Solution Display */}
-          {solution && (
-            <div className="mt-6 p-4 bg-purple-100 border-2 border-purple-400 rounded-lg">
-              <div className="font-semibold text-purple-800 mb-3">Solution:</div>
-              <div className="space-y-2">
-                {solution.steps.map((step, index) => (
-                  <div key={index} className="text-gray-700">
-                    <MathText>{step}</MathText>
+              {/* Solution Display */}
+              {solution && (
+                <div className="mt-6 p-4 bg-purple-100 border-2 border-purple-400 rounded-lg">
+                  <div className="font-semibold text-purple-800 mb-3">Solution:</div>
+                  <div className="space-y-2">
+                    {solution.steps.map((step, index) => (
+                      <div key={index} className="text-gray-700">
+                        <MathText>{step}</MathText>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-              <div className="mt-3 font-semibold text-purple-800">
-                Final Answer: <MathText>{solution.finalAnswer}</MathText>
-              </div>
-            </div>
-          )}
+                  <div className="mt-3 font-semibold text-purple-800">
+                    Final Answer: <MathText>{solution.finalAnswer}</MathText>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 

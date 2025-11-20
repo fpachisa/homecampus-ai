@@ -5,6 +5,8 @@
  * Layered learning path with gamification features.
  */
 
+import type { QuestionTable } from './examQuestions';
+
 // ============================================
 // PATH LAYERS
 // ============================================
@@ -43,6 +45,9 @@ export interface PreWrittenQuestion {
     bookSpecs?: Record<string, string>;
     [key: string]: any;
   };
+
+  // NEW: Structured table for exam questions (markdown tables converted to structured format)
+  questionTable?: QuestionTable;
 
   // NEW: Pre-written answer and solution (optional)
   // If provided, these will be used instead of AI-solving the question
@@ -238,6 +243,9 @@ export interface PathProblem {
     bookSpecs?: Record<string, string>;
     [key: string]: any;
   };
+
+  // NEW: Structured table for exam questions  
+  questionTable?: QuestionTable;
 
   // NEW: Group identifier for multi-part questions
   questionGroup?: string;          // Group identifier (e.g., "q26", "q27") for related multi-part questions

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import MathText from './MathText';
 import { MathToolRenderer } from './practice/MathToolRenderer';
+import { QuestionTable } from './tables';
+import type { QuestionTable as QuestionTableType } from '../types/examQuestions';
 import type { PreWrittenQuestion } from '../types/practice';
 import type { PathLayer } from '../types/practice';
 
@@ -61,6 +63,13 @@ const QuestionPreviewCard: React.FC<QuestionPreviewCardProps> = ({
           <MathText>{question.problemText}</MathText>
         </div>
       </div>
+
+      {/* Structured Table */}
+      {question.questionTable && (
+        <div className="mb-4">
+          <QuestionTable table={question.questionTable} />
+        </div>
+      )}
 
       {/* MathTool Visualization */}
       {question.mathTool && (
