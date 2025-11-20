@@ -45,6 +45,83 @@
         "title": "Profit and Discount"
       },
       {
+        "questionNumber": 5,
+        "questionId": "N3-cchms-2024-p1-q5",
+        "topicID": "N3",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "On 6 June 2020, Elijah invested some money in a bank which pays a simple interest at a rate of 3.5% per annum. He received a total interest of $680.40 on 6 June 2023. Find the amount of money Elijah invested in the bank.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$6480",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the time period of the investment.",
+                  "working": "Time ($T$) = $2023 - 2020 = 3$ years",
+                  "reasoning": "The investment is from 6 June 2020 to 6 June 2023, which is exactly 3 years."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the simple interest formula to set up an equation for the Principal ($P$).",
+                  "working": "$I = \\frac{PRT}{100}$ \n $680.40 = \\frac{P \\times 3.5 \\times 3}{100}$",
+                  "reasoning": "Substitute the known values: Interest ($I$) = 680.40, Rate ($R$) = 3.5, and Time ($T$) = 3."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $P$.",
+                  "working": "$680.40 = P \\times 0.105$ \n $P = \\frac{680.40}{0.105}$ \n $P = 6480$",
+                  "reasoning": "Isolate $P$ by dividing the total interest by the product of the rate and time factor."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Freddy invested $8000 in another bank that paid compound interest at a rate of 1.75% per annum, compounded quarterly. Find the total amount Freddy received at the end of 5 years. Give your answer correct to the nearest cent.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$8729.37",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the parameters for the compound interest formula.",
+                  "working": "Principal ($P$) = $8000$ \n Rate ($r$) = $1.75\\%$ \n Frequency ($n$) = 4 (quarterly) \n Time ($t$) = 5 years",
+                  "reasoning": "Compounded quarterly means interest is calculated 4 times a year ($n=4$)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the compound interest formula.",
+                  "working": "$A = P(1 + \\frac{r}{100n})^{nt}$ \n $A = 8000(1 + \\frac{1.75}{400})^{4 \\times 5}$",
+                  "reasoning": "Substitute the values into the standard compound interest formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the value.",
+                  "working": "$A = 8000(1 + 0.004375)^{20}$ \n $A = 8000(1.004375)^{20}$ \n $A \\approx 8729.366...$",
+                  "reasoning": "Compute the bracket first, then raise to the power of 20, and multiply by the principal."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to the nearest cent.",
+                  "working": "$A \\approx 8729.37$",
+                  "reasoning": "Money is rounded to 2 decimal places."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Simple and Compound Interest"
+      },
+      {
         "questionNumber": 14,
         "questionId": "N3-broadrick-2024-p1-q14",
         "topicID": "N3",
@@ -337,6 +414,83 @@
         "title": "Ratio and Proportion"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-2011-p1-q101",
+        "topicID": "N3",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Siti invested a sum of money for 4 years at a simple interest rate of R% per annum. The principal sum was \\$5000 and the total amount she received at the end of the period was \\$5600. Find the value of $R$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total interest earned.",
+                  "working": "$I = \\text{Total Amount} - \\text{Principal}$ \n $I = 5600 - 5000 = 600$",
+                  "reasoning": "Simple interest is the difference between the final amount and the initial investment."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the simple interest formula to find $R$.",
+                  "working": "$600 = \\frac{5000 \\times R \\times 4}{100}$ \n $600 = 200R$",
+                  "reasoning": "Substitute $I=600, P=5000, T=4$ into $I = \\frac{PRT}{100}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $R$.",
+                  "working": "$R = \\frac{600}{200} = 3$",
+                  "reasoning": "Divide the interest by the product of Principal and Time (divided by 100)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "James deposits \\$12000 into a savings account that pays compound interest at a rate of 2.4% per annum, compounded half-yearly. Calculate the total interest earned at the end of 3 years. Give your answer correct to the nearest cent.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$890.90",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the parameters for compound interest.",
+                  "working": "$P = 12000$, $r = 2.4\\%$, $n = 2$ (half-yearly), $t = 3$ years.",
+                  "reasoning": "Half-yearly compounding means $n=2$ periods per year."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the Total Amount ($A$).",
+                  "working": "$A = 12000(1 + \\frac{2.4}{200})^{2 \\times 3}$ \n $A = 12000(1.012)^6$ \n $A \\approx 12890.903...$",
+                  "reasoning": "Apply the formula $A = P(1 + \\frac{r}{100n})^{nt}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the Interest earned.",
+                  "working": "$I = A - P$ \n $I = 12890.903 - 12000 = 890.903...$",
+                  "reasoning": "The question asks for interest earned, not the total amount."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to the nearest cent.",
+                  "working": "$I \\approx 890.90$",
+                  "reasoning": "Round to 2 decimal places."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Interest Rates and Compounding"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N3-gemini-1911-p2-102",
         "topicID": "N3",
@@ -436,6 +590,71 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Simple and Compound Interest"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N3-gemini-2011-p1-q102",
+        "topicID": "N3",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "A sum of \\$2500 is invested at a simple interest rate of 4% per annum. Find the number of years required for the investment to earn an interest of \\$450.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4.5 years",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the simple interest equation.",
+                  "working": "$450 = \\frac{2500 \\times 4 \\times T}{100}$",
+                  "reasoning": "Substitute $I=450, P=2500, R=4$ into $I = \\frac{PRT}{100}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for Time ($T$).",
+                  "working": "$450 = 100T$ \n $T = \\frac{450}{100} = 4.5$",
+                  "reasoning": "Simplify the equation and isolate $T$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the total amount payable on a loan of \\$15000 for 2 years at 3% per annum, compounded monthly. Give your answer correct to the nearest cent.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$15926.83",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify parameters for monthly compounding.",
+                  "working": "$P = 15000$, $r = 3\\%$, $n = 12$ (monthly), $t = 2$.",
+                  "reasoning": "Monthly compounding implies $n=12$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the compound interest formula.",
+                  "working": "$A = 15000(1 + \\frac{3}{1200})^{12 \\times 2}$ \n $A = 15000(1 + 0.0025)^{24}$",
+                  "reasoning": "Substitute values into $A = P(1 + \\frac{r}{100n})^{nt}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate and round.",
+                  "working": "$A = 15000(1.0025)^{24} \\approx 15926.826...$ \n $A \\approx 15926.83$",
+                  "reasoning": "Calculate the final value and round to 2 decimal places."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Loan Interest Calculation"
       },
       {
         "questionNumber": 103,
@@ -597,6 +816,112 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Standard Form and Percentage"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "N3-canberra-2024-p2-q3",
+        "topicID": "N3",
+        "stem": "(a) Wayne inherited a sum of money from his parents. He decided to invest 60% of the money and shares $\\frac{3}{4}$ of the remaining amount with his wife. The other $20 000 are meant for their travelling expenses. Calculate the sum of money he inherited.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the sum of money he inherited.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$200 000",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the percentage of money remaining after the investment.",
+                  "working": "100\\% - 60\\% = 40\\%",
+                  "reasoning": "The total sum is 100%. Subtracting the invested portion gives the remainder."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the fraction of the *original* sum kept for travelling. He shares $\\frac{3}{4}$ of the remainder, so he keeps $\\frac{1}{4}$ of the remainder.",
+                  "working": "\\text{Fraction left} = \\frac{1}{4} \\times 40\\% = 10\\%",
+                  "reasoning": "If $\\frac{3}{4}$ is given away, $\\frac{1}{4}$ remains. We find $\\frac{1}{4}$ of the 40% remainder."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the remaining percentage to the dollar amount given and solve for 100%.",
+                  "working": "10\\% = $20 000 \\\\\n1\\% = $2 000 \\\\\n100\\% = $200 000",
+                  "reasoning": "Using the unitary method to find the total inherited sum."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A bank offers two investment packages:\n\n**Package A:**\n- Simple interest of 0.97% per annum\n- One time payout of 10% of the amount of the investment\n\n**Package B:**\n- Compound interest of 3.78% per annum\n\nWayne wants to invest $55 000 in one of the packages for 3 years. Which package should he choose if he wishes to reap the most benefits from the investment?",
+            "marks": 5,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Package A",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total return for Package A. First, calculate the Simple Interest.",
+                  "working": "I = \\frac{PRT}{100} = \\frac{55000 \\times 0.97 \\times 3}{100} = $1600.50",
+                  "reasoning": "Use the simple interest formula $I = \\frac{PRT}{100}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the one-time payout for Package A and the total amount.",
+                  "working": "\\text{Payout} = 10\\% \\times 55000 = $5500 \\\\\n\\text{Total A} = 55000 + 1600.50 + 5500 = $62 100.50",
+                  "reasoning": "Add the principal, the interest earned, and the bonus payout."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the total amount for Package B using the Compound Interest formula.",
+                  "working": "A = P(1 + \\frac{r}{100})^n \\\\\nA = 55000(1 + \\frac{3.78}{100})^3 \\\\\nA = 55000(1.0378)^3 \\approx $61 472.62",
+                  "reasoning": "Use the compound interest formula where $n=3$ years."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Compare the final amounts to determine the best option.",
+                  "working": "62 100.50 > 61 472.62",
+                  "reasoning": "Since the total return from Package A is higher, it is the better choice."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Wayne and his wife go on a seven days self-drive trip to Australia. They pay 150 AUD per day for car hire and 380 AUD per night for hotel. They pay using credit card and is charged with a fee of 2% for the currency conversion. The exchange rate between Singapore dollars and Australian dollars is $1=0.91$ AUD. Calculate the total amount, including credit card fee, Wayne is charged for car hire and accommodation. Give your answer in Singapore dollars, correct to the nearest dollar.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$3733",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total cost in AUD. Note: A 7-day trip typically implies 7 days of car hire and 6 nights of accommodation.",
+                  "working": "\\text{Car} = 7 \\times 150 = 1050 \\text{ AUD} \\\\\n\\text{Hotel} = 6 \\times 380 = 2280 \\text{ AUD} \\\\\n\\text{Total AUD} = 1050 + 2280 = 3330 \\text{ AUD}",
+                  "reasoning": "Sum the costs in the foreign currency first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert the total AUD to SGD.",
+                  "working": "1 \\text{ SGD} = 0.91 \\text{ AUD} \\\\\n\\text{Amount in SGD} = \\frac{3330}{0.91} \\approx 3659.3406...",
+                  "reasoning": "To convert from foreign currency back to home currency (when rate is $1 = X$ foreign), divide by the rate."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Add the 2% credit card fee and round to the nearest dollar.",
+                  "working": "\\text{Total with fee} = 3659.3406 \\times \\frac{102}{100} \\\\\n= 3732.527... \\\\\n\\approx 3733",
+                  "reasoning": "The fee is an additional charge on the converted amount. Round to the nearest whole number as requested."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Investment and Travel Costs"
       },
       {
         "questionNumber": 28,
@@ -1090,6 +1415,88 @@
         "totalMarks": 6,
         "paper": "Paper 2",
         "title": "Standard Form and Reverse Percentage"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-2011-p2-q101",
+        "topicID": "N3",
+        "stem": "Mr. Tan has \\$20,000 to invest for a period of 5 years. He is considering two different investment plans.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Plan A offers simple interest at a rate of 3.2% per annum. Calculate the total amount Mr. Tan will have at the end of 5 years if he chooses Plan A.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$23200",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the simple interest.",
+                  "working": "$I = \\frac{20000 \\times 3.2 \\times 5}{100}$ \n $I = 200 \\times 3.2 \\times 5 = 3200$",
+                  "reasoning": "Use $I = \\frac{PRT}{100}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate total amount.",
+                  "working": "$A = 20000 + 3200 = 23200$",
+                  "reasoning": "Total Amount = Principal + Interest."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Plan B offers compound interest at a rate of 3% per annum, compounded yearly. Calculate the total amount Mr. Tan will have at the end of 5 years if he chooses Plan B. Give your answer correct to the nearest cent.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$23185.48",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate compound interest amount.",
+                  "working": "$A = 20000(1 + \\frac{3}{100})^5$ \n $A = 20000(1.03)^5$",
+                  "reasoning": "Use $A = P(1+r)^n$ for yearly compounding."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compute and round.",
+                  "working": "$A \\approx 23185.481...$ \n $A \\approx 23185.48$",
+                  "reasoning": "Round to 2 decimal places."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Determine which plan gives a better return and calculate the difference in the total amount received.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Plan A is better by $14.52",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the amounts from Part (a) and Part (b).",
+                  "working": "Plan A: $23200$ \n Plan B: $23185.48$ \n $23200 > 23185.48$",
+                  "reasoning": "Compare the final values calculated previously."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the difference.",
+                  "working": "$23200 - 23185.48 = 14.52$",
+                  "reasoning": "Subtract the smaller amount from the larger amount."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Comparison of Investment Plans"
       }
     ]
   }

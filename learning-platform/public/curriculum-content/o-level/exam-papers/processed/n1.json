@@ -147,6 +147,89 @@
         "title": "Indices"
       },
       {
+        "questionNumber": 3,
+        "questionId": "N1-cchms-2024-p1-q3",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $\\frac{(4a^{4}b)^{3}}{10a^{3}b^{7}}$ leaving your answer in positive index form.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{32a^9}{5b^4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the numerator by applying the power of 3 to each term inside the bracket.",
+                  "working": "$(4a^4b)^3 = 4^3 \\times (a^4)^3 \\times b^3 = 64a^{12}b^3$",
+                  "reasoning": "Use the law $(xy)^n = x^n y^n$ and $(x^m)^n = x^{mn}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the expanded numerator back into the fraction and group constants and like terms.",
+                  "working": "$\\frac{64a^{12}b^3}{10a^3b^7} = \\frac{64}{10} \\times \\frac{a^{12}}{a^3} \\times \\frac{b^3}{b^7}$",
+                  "reasoning": "Separate the expression into coefficients, $a$ terms, and $b$ terms to simplify individually."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the fraction and apply the division law of indices.",
+                  "working": "$\\frac{32}{5} \\times a^{12-3} \\times b^{3-7} = \\frac{32}{5}a^9 b^{-4}$",
+                  "reasoning": "Use the law $\\frac{x^m}{x^n} = x^{m-n}$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert the negative index to a positive index.",
+                  "working": "$\\frac{32a^9}{5} \\times \\frac{1}{b^4} = \\frac{32a^9}{5b^4}$",
+                  "reasoning": "Use the law $x^{-n} = \\frac{1}{x^n}$ to meet the requirement of 'positive index form'."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that $2^{x}=3$, $2^{y}=7$ and $2^{z}=\\frac{9}{49}$, use the laws of indices to find the value of $2^{3x-y+\\frac{1}{2}z}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{81}{49}$ or $1\\frac{32}{49}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Rewrite the expression $2^{3x-y+\\frac{1}{2}z}$ using laws of indices to isolate terms matching the given information.",
+                  "working": "$2^{3x-y+\\frac{1}{2}z} = 2^{3x} \\div 2^y \\times 2^{\\frac{1}{2}z} = (2^x)^3 \\div 2^y \\times (2^z)^{\\frac{1}{2}}$",
+                  "reasoning": "Use addition/subtraction in powers to split terms ($a^{m+n} = a^m a^n$) and multiplication in powers for brackets ($a^{mn} = (a^m)^n$)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the given values $2^x=3$, $2^y=7$, and $2^z=\\frac{9}{49}$.",
+                  "working": "$(3)^3 \\div 7 \\times (\\frac{9}{49})^{\\frac{1}{2}}$",
+                  "reasoning": "Direct substitution."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Evaluate the powers and roots.",
+                  "working": "$27 \\div 7 \\times \\sqrt{\\frac{9}{49}} = \\frac{27}{7} \\times \\frac{3}{7}$",
+                  "reasoning": "Calculate $3^3=27$ and the square root of $\\frac{9}{49}$ is $\\frac{3}{7}$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Perform the final multiplication.",
+                  "working": "$\\frac{27 \\times 3}{7 \\times 7} = \\frac{81}{49}$",
+                  "reasoning": "Multiply numerators and denominators."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Simplifying Indices Expressions"
+      },
+      {
         "questionNumber": 4,
         "questionId": "N1-anderson-2024-p1-q4",
         "topicID": "N1",
@@ -258,6 +341,54 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "HCF and LCM"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "N1-cchms-2024-p1-q4",
+        "topicID": "N1",
+        "stem": "A group of students won $226 in a competition and shared the amount equally, leaving $4 leftover. Competing for a second time, the same group of students won $296. They shared the $296 along with the $4 left over from the first competition equally, with no amount remaining.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Assuming that each student received a whole number of dollars in both distributions, find the greatest possible number of students in the group.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Formulate the relationship for the first competition.",
+                  "working": "$226 - 4 = 222$. The number of students, $n$, must be a factor of 222. Also, $n > 4$ because the remainder is 4.",
+                  "reasoning": "Dividend = Divisor $\\times$ Quotient + Remainder. The divisor must be greater than the remainder."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Formulate the relationship for the second distribution.",
+                  "working": "Total amount = $296 + 4 = 300$. The number of students, $n$, must be a factor of 300.",
+                  "reasoning": "The leftover $4 is added to the new prize money, and it divides perfectly."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the Highest Common Factor (HCF) of 222 and 300.",
+                  "working": "$222 = 2 \\times 3 \\times 37$\n$300 = 2^2 \\times 3 \\times 5^2$\nHCF = $2 \\times 3 = 6$",
+                  "reasoning": "The number of students must divide both amounts. We look for the greatest possible number."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Check validity against the remainder constraint.",
+                  "working": "Is $6 > 4$? Yes.",
+                  "reasoning": "Ensure the divisor is larger than the remainder from the first distribution."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Sharing Prize Money"
       },
       {
         "questionNumber": 6,
@@ -521,6 +652,83 @@
         "title": "Prime Factors and Cubes"
       },
       {
+        "questionNumber": 8,
+        "questionId": "N1-canberra-2024-p1-q8",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $\\sqrt{a}\\times a^{3}\\div a^{x}=1$, find the value of $x$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 3.5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the radical to index form.",
+                  "working": "$\\sqrt{a} = a^{\\frac{1}{2}}$",
+                  "reasoning": "To solve indices equations, all terms should be expressed with the same base and index notation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the laws of indices for multiplication and division.",
+                  "working": "$a^{\\frac{1}{2}} \\times a^{3} \\div a^{x} = a^{\\frac{1}{2} + 3 - x} = a^{3.5 - x}$",
+                  "reasoning": "$a^m \\times a^n = a^{m+n}$ and $a^m \\div a^n = a^{m-n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the index to 0, since $a^0 = 1$.",
+                  "working": "$a^{3.5 - x} = a^0$\n$3.5 - x = 0$\n$x = 3.5$",
+                  "reasoning": "Since the result is 1, the total power of base $a$ must be 0."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Simplify $4\\div(\\frac{x}{2})^{-2}$, giving your answer in positive index.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Handle the negative index by inverting the fraction.",
+                  "working": "$(\\frac{x}{2})^{-2} = (\\frac{2}{x})^{2}$",
+                  "reasoning": "$(\\frac{a}{b})^{-n} = (\\frac{b}{a})^{n}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the squared term.",
+                  "working": "$(\\frac{2}{x})^{2} = \\frac{2^2}{x^2} = \\frac{4}{x^2}$",
+                  "reasoning": "Apply the power to both numerator and denominator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Perform the division by multiplying by the reciprocal.",
+                  "working": "$4 \\div \\frac{4}{x^2} = 4 \\times \\frac{x^2}{4}$",
+                  "reasoning": "Dividing by a fraction is the same as multiplying by its reciprocal."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the expression.",
+                  "working": "$4 \\times \\frac{x^2}{4} = x^2$",
+                  "reasoning": "The 4 in the numerator and denominator cancel out."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Indices Equations and Simplification"
+      },
+      {
         "questionNumber": 11,
         "questionId": "N1-broadrick-2024-p1-q11",
         "topicID": "N1",
@@ -644,6 +852,165 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Indices"
+      },
+      {
+        "questionNumber": 15,
+        "questionId": "N1-canberra-2024-p1-q15",
+        "topicID": "N1",
+        "stem": "As of 2023, the population of Singapore is approximately 5.64 million and the population of Malaysia is approximately 33.57 million.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the total population of both countries, giving your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$3.921 \\times 10^7$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Sum the two populations in millions.",
+                  "working": "$5.64 + 33.57 = 39.21$ million",
+                  "reasoning": "Add the numerical values first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert 'million' to numerical form.",
+                  "working": "$39.21 \\times 10^6$",
+                  "reasoning": "1 million = $10^6$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert to standard form ($A \\times 10^n$ where $1 \\le A < 10$).",
+                  "working": "$39.21 \\times 10^6 = 3.921 \\times 10^1 \\times 10^6 = 3.921 \\times 10^7$",
+                  "reasoning": "Shift the decimal point one place to the left and increase the exponent by 1."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The population of Singapore in 2023 was 5% more than its population in 2013. Calculate the population of Singapore in 2013.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5.37 million",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the percentage relationship.",
+                  "working": "Population 2023 = $105\\%$ of Population 2013.\n$105\\% = 5.64$ million.",
+                  "reasoning": "This is a reverse percentage problem. The 2023 value represents 105% of the original 2013 value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate 100% (Population 2013).",
+                  "working": "Population 2013 = $\\frac{5.64}{105} \\times 100$",
+                  "reasoning": "Unitary method or direct algebraic manipulation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute and round to 3 significant figures.",
+                  "working": "$\\frac{5.64}{1.05} \\approx 5.3714...$\nAnswer: $5.37$ million",
+                  "reasoning": "Standard O-level rounding rule applies (3 s.f. for non-exact numerical answers)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Population Standard Form"
+      },
+      {
+        "questionNumber": 17,
+        "questionId": "N1-canberra-2024-p1-q17",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Express 1500 as the product of its prime factors. Leave your answer in index notations.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2^2 \\times 3 \\times 5^3$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform prime factorization of 1500.",
+                  "working": "$1500 = 15 \\times 100$\n$= (3 \\times 5) \\times (10^2)$\n$= 3 \\times 5 \\times (2 \\times 5)^2$\n$= 3 \\times 5 \\times 2^2 \\times 5^2$",
+                  "reasoning": "Break down the number into smaller factors until only prime numbers remain."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Group like bases.",
+                  "working": "$2^2 \\times 3^1 \\times 5^{1+2} = 2^2 \\times 3 \\times 5^3$",
+                  "reasoning": "Combine the powers of 5."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "$p=2^{m}\\times3^{2}\\times n$, where $m$ and $n$ are positive integers. Find the values of $m$ and $n$ if the HCF of 1500 and $p$ is 6, given that $100<p<150$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "m=1, n=7",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the HCF condition.",
+                  "working": "$1500 = 2^2 \\times 3 \\times 5^3$\n$p = 2^m \\times 3^2 \\times n$\n$HCF = 6 = 2^1 \\times 3^1$\nTherefore, min($2, m$) = 1 $\\Rightarrow m=1$.",
+                  "reasoning": "For the HCF to have $2^1$, the lower power of 2 between 1500 and $p$ must be 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine constraints on $n$.",
+                  "working": "Since HCF is 6 ($2 \\times 3$), $p$ cannot contain the factor 5 (otherwise HCF would be a multiple of 5). So $n$ is not a multiple of 5.",
+                  "reasoning": "HCF takes the lowest power of common prime factors."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Use the range $100 < p < 150$ to find $n$.",
+                  "working": "$p = 2^1 \\times 3^2 \\times n = 18n$\n$100 < 18n < 150$\nPossible values for $n$: $6, 7, 8$.\nIf $n=6$, $p=108$. $n=6=2\\times3$, so $p=2^2\\times3^3$. HCF(1500, p) = $2^2\\times3=12 \\ne 6$. (Reject)\nIf $n=7$, $p=126$. $n=7$ (prime). $p=2\\times3^2\\times7$. HCF(1500, p) = $2\\times3=6$. (Accept)\nIf $n=8$, $p=144$. $n=2^3$, so $p=2^4\\times3^2$. HCF(1500, p) = $2^2\\times3=12 \\ne 6$. (Reject)",
+                  "reasoning": "Test integer values of $n$ that satisfy the inequality and check against the HCF condition."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "In a race, Car A, Car B and Car C took 3 minutes, 6 minutes and 8 minutes respectively to complete one lap around the racing track. If the race started at 7 pm, at what time will the cars be back at the starting point together again?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7:24 pm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the Lowest Common Multiple (LCM) of the lap times.",
+                  "working": "Times: 3, 6, 8.\n$3 = 3$\n$6 = 2 \\times 3$\n$8 = 2^3$\n$LCM = 2^3 \\times 3 = 8 \\times 3 = 24$ minutes.",
+                  "reasoning": "The cars meet when they have all completed a whole number of laps, which corresponds to the LCM of their lap times."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add the LCM to the start time.",
+                  "working": "Start: 7:00 pm\nNext meeting: 7:00 pm + 24 mins = 7:24 pm",
+                  "reasoning": "Add the calculated time interval to the initial time."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Factors and Multiples"
       },
       {
         "questionNumber": 19,
@@ -807,6 +1174,77 @@
         "title": "Standard Form"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2011-p1-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $\\frac{16x^{-3}y^{2}}{(2xy)^3}$, giving your answer in positive index form.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{2}{x^6 y}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the denominator.",
+                  "working": "$(2xy)^3 = 2^3 x^3 y^3 = 8x^3y^3$",
+                  "reasoning": "Apply the power to every factor inside the parenthesis."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide the coefficients and subtract indices for variables.",
+                  "working": "$\\frac{16}{8} x^{-3-3} y^{2-3} = 2 x^{-6} y^{-1}$",
+                  "reasoning": "Use $\\frac{x^a}{x^b} = x^{a-b}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert negative indices to positive indices.",
+                  "working": "$2 \\times \\frac{1}{x^6} \\times \\frac{1}{y} = \\frac{2}{x^6 y}$",
+                  "reasoning": "Move terms with negative exponents to the denominator."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the equation $9^{x-1} = \\frac{1}{27}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = -0.5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express both sides with the same base (base 3).",
+                  "working": "$9 = 3^2$ and $27 = 3^3$, so $\\frac{1}{27} = 3^{-3}$.\nEquation becomes $(3^2)^{x-1} = 3^{-3}$.",
+                  "reasoning": "Solving exponential equations requires a common base."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the powers.",
+                  "working": "$3^{2(x-1)} = 3^{-3} \\Rightarrow 3^{2x-2} = 3^{-3}$",
+                  "reasoning": "Apply power law $(a^m)^n = a^{mn}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the indices and solve for $x$.",
+                  "working": "$2x - 2 = -3$\n$2x = -1$\n$x = -0.5$",
+                  "reasoning": "If bases are equal, exponents must be equal."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Indices and Exponential Equations"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N1-gemini-1911-p1-102",
         "topicID": "N1",
@@ -923,9 +1361,192 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Rational and Irrational Numbers"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2011-p1-q102",
+        "topicID": "N1",
+        "stem": "Three bells, A, B, and C, toll at intervals of 15 minutes, 20 minutes, and 35 minutes respectively. They toll together at 09 00.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the time interval, in minutes, between consecutive simultaneous tollings of the three bells.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "420 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express each interval as a product of prime factors.",
+                  "working": "$15 = 3 \\times 5$\n$20 = 2^2 \\times 5$\n$35 = 5 \\times 7$",
+                  "reasoning": "To find when events coincide, we need the Lowest Common Multiple (LCM)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the LCM of 15, 20, and 35.",
+                  "working": "LCM = $2^2 \\times 3 \\times 5 \\times 7$\n$= 4 \\times 3 \\times 5 \\times 7$\n$= 420$",
+                  "reasoning": "Take the highest power of each prime factor present."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the time when the bells will next toll together.",
+            "marks": 1,
+            "answerType": "string",
+            "solution": {
+              "finalAnswer": "16 00",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the interval from minutes to hours.",
+                  "working": "$420 \\text{ minutes} \\div 60 = 7 \\text{ hours}$",
+                  "reasoning": "Easier to add hours to the start time."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add the interval to the start time.",
+                  "working": "$09\\,00 + 7\\,00 = 16\\,00$",
+                  "reasoning": "Simple time addition."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Bells and LCM"
       }
     ],
     "Paper 2": [
+      {
+        "questionNumber": 1,
+        "questionId": "N1-cchms-2024-p2-q1",
+        "topicID": "N1",
+        "stem": "The table shows the total electricity consumption in Singapore over three years.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "(i) In 2021, the electricity consumed by households took up 15.5% of the total electricity consumption. Calculate the amount of electricity consumed by households in 2021, correct to two significant figures.\n(ii) Calculate the percentage increase in the total electricity consumption from 2020 to 2022.\n(iii) Express the 2020 electricity consumption in kilowatt hours (kWh), leaving your answer in standard form, correct to two significant figures.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) 8300 GWh, (ii) 8.08%, (iii) $5.1 \\times 10^{10}$ kWh",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Part (i): Calculate 15.5% of the 2021 total.",
+                  "working": "$\\frac{15.5}{100} \\times 53483 = 8289.865$",
+                  "reasoning": "Percentage calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Part (i): Round to 2 significant figures.",
+                  "working": "$8289.865 \\approx 8300$",
+                  "reasoning": "The first two non-zero digits are 8 and 2. The next digit (8) rounds the 2 up to 3."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Part (ii): Calculate percentage increase.",
+                  "working": "$\\frac{54884 - 50779}{50779} \\times 100\\% = \\frac{4105}{50779} \\times 100\\% \\approx 8.08405\\%$",
+                  "reasoning": "Formula: $\\frac{\\text{New} - \\text{Original}}{\\text{Original}} \\times 100$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Part (ii): Round to 3 significant figures (standard accuracy).",
+                  "working": "8.08%",
+                  "reasoning": "Standard examination rounding rule."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Part (iii): Convert GWh to kWh.",
+                  "working": "$1 \\text{ GWh} = 10^9 \\text{ Wh}$ and $1 \\text{ kWh} = 10^3 \\text{ Wh}$, so $1 \\text{ GWh} = 10^6 \\text{ kWh}$.\n$50779 \\text{ GWh} = 50779 \\times 10^6 \\text{ kWh} = 5.0779 \\times 10^{10} \\text{ kWh}$",
+                  "reasoning": "Unit conversion and standard form adjustment."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Part (iii): Round to 2 significant figures.",
+                  "working": "$5.0779 \\times 10^{10} \\approx 5.1 \\times 10^{10}$",
+                  "reasoning": "Round 5.07... to 5.1."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A microprocessor is in the shape of a cube where the sides are 5 mm in length.\n(i) Find the maximum number of microprocessors that can be placed into a container with dimensions 10 cm by 2 cm by 8 cm.\n(ii) A model of the microprocessor was made to a scale of 10: 1. Given that the surface area of microprocessor is 150 mm², find the surface area of the model microprocessor in square centimetres.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) 1280, (ii) 150 cm²",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Part (i): Convert units to be consistent (cm to mm or mm to cm). Let's use cm.",
+                  "working": "Side of cube = 5 mm = 0.5 cm.",
+                  "reasoning": "Consistent units are required for division."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Part (i): Calculate how many cubes fit along each dimension.",
+                  "working": "Length: $10 \\div 0.5 = 20$\nWidth: $2 \\div 0.5 = 4$\nHeight: $8 \\div 0.5 = 16$",
+                  "reasoning": "We cannot simply divide volumes because packing depends on dimensions fitting whole numbers of items."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Part (i): Multiply the counts.",
+                  "working": "$20 \\times 4 \\times 16 = 1280$",
+                  "reasoning": "Total capacity is the product of items along each axis."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Part (ii): Determine the Area Scale Factor.",
+                  "working": "Linear Scale = 10 : 1 (Model : Actual).\nArea Scale Factor = $10^2 : 1^2 = 100 : 1$.",
+                  "reasoning": "Area scale factor is the square of the linear scale factor."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Part (ii): Calculate Model Area in mm².",
+                  "working": "Model Area = $150 \\text{ mm}^2 \\times 100 = 15000 \\text{ mm}^2$.",
+                  "reasoning": "Multiply actual area by area scale factor."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Part (ii): Convert to cm².",
+                  "working": "$1 \\text{ cm}^2 = 100 \\text{ mm}^2$.\n$15000 \\div 100 = 150 \\text{ cm}^2$.",
+                  "reasoning": "Conversion factor for area."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Electricity Consumption and Scales",
+        "table": {
+          "type": "comparison",
+          "headers": [
+            "Year",
+            "2020",
+            "2021",
+            "2022"
+          ],
+          "rows": [
+            [
+              "Total Electricity Consumption in Gigawatt Hours (GWh)",
+              "50 779",
+              "53 483",
+              "54 884"
+            ]
+          ]
+        }
+      },
       {
         "questionNumber": 2,
         "questionId": "N1-acsi-2024-p2-q2",
@@ -1295,6 +1916,114 @@
         "totalMarks": 6,
         "paper": "Paper 2",
         "title": "Exchange Rates and Percentages"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2011-p2-q101",
+        "topicID": "N1",
+        "stem": "The table below displays data regarding three planets in the solar system.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "(i) Calculate the distance between Earth and Jupiter when they are closest to each other, giving your answer in standard form.\n(ii) How many times more massive is Jupiter than Earth? Give your answer correct to the nearest whole number.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) $6.289 \\times 10^8$ km, (ii) 318",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Part (i): Find the difference in distance from the Sun.",
+                  "working": "$(7.785 \\times 10^8) - (1.496 \\times 10^8)$",
+                  "reasoning": "Closest distance occurs when the planets are aligned on the same side of the Sun."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Part (i): Calculate the value.",
+                  "working": "$(7.785 - 1.496) \\times 10^8 = 6.289 \\times 10^8$",
+                  "reasoning": "Subtract coefficients while keeping the power of 10 constant."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Part (ii): Divide Mass of Jupiter by Mass of Earth.",
+                  "working": "$\\frac{1.90 \\times 10^{27}}{5.97 \\times 10^{24}} = \\frac{1.90}{5.97} \\times 10^{27-24}$",
+                  "reasoning": "Ratio calculation using laws of indices."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Part (ii): Evaluate and round.",
+                  "working": "$0.31825... \\times 10^3 = 318.25... \\approx 318$",
+                  "reasoning": "Round to the nearest whole number as requested."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Light travels at a speed of approximately $3.0 \\times 10^5$ km/s.\n(i) Calculate the time taken, in seconds, for light to travel from the Sun to Neptune.\n(ii) Convert your answer in b(i) to hours, correct to 2 significant figures.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) 14983 s (or $1.50 \\times 10^4$), (ii) 4.2 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Part (i): Use the formula Time = Distance / Speed.",
+                  "working": "Time = $\\frac{4.495 \\times 10^9}{3.0 \\times 10^5}$",
+                  "reasoning": "Standard kinematics formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Part (i): Calculate the value.",
+                  "working": "$\\frac{4.495}{3.0} \\times 10^{9-5} = 1.49833... \\times 10^4$ seconds",
+                  "reasoning": "Arithmetic with scientific notation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Part (ii): Convert seconds to hours.",
+                  "working": "$\\frac{14983.33...}{3600} = 4.162...$",
+                  "reasoning": "Divide by 60 for minutes, then 60 for hours (or 3600 total)."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Part (ii): Round to 2 significant figures.",
+                  "working": "$4.162... \\approx 4.2$",
+                  "reasoning": "Rounding instruction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Planetary Data and Standard Form",
+        "table": {
+          "type": "comparison",
+          "headers": [
+            "Planet",
+            "Distance from Sun (km)",
+            "Mass (kg)"
+          ],
+          "rows": [
+            [
+              "Earth",
+              "$1.496 \\times 10^8$",
+              "$5.97 \\times 10^{24}$"
+            ],
+            [
+              "Jupiter",
+              "$7.785 \\times 10^8$",
+              "$1.90 \\times 10^{27}$"
+            ],
+            [
+              "Neptune",
+              "$4.495 \\times 10^9$",
+              "$1.02 \\times 10^{26}$"
+            ]
+          ]
+        }
       },
       {
         "questionNumber": 102,

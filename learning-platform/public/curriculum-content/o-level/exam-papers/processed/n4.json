@@ -93,6 +93,60 @@
         "title": "Relative Speed"
       },
       {
+        "questionNumber": 22,
+        "questionId": "N4-cchms-2024-p1-q22",
+        "topicID": "N4",
+        "stem": "Sam's daily morning routine involves getting breakfast before going to work. He travels by car. On a particular day, Sam leaves home at 8:00 am and arrives at the breakfast place at 8:15 am. He leaves the breakfast place at 8:30 am. He arrives at his office at 9:00 am. Sam's average speed for the whole journey is $42 \\text{ km/h}$. His average speed from home to the breakfast place is $10 \\text{ km/h}$ faster than his average speed from the breakfast place to the office.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the distance between the breakfast place and Sam's office.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "26 $\\frac{1}{3}$ km or 26.3 km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total time taken for the whole journey.",
+                  "working": "\\text{Total Time} = 09:00 - 08:00 = 1 \\text{ hour}",
+                  "reasoning": "Average speed is calculated based on the total time elapsed from start to finish."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total distance of the journey.",
+                  "working": "\\text{Total Distance} = \\text{Average Speed} \\times \\text{Total Time} = 42 \\times 1 = 42 \\text{ km}",
+                  "reasoning": "Using the formula Distance = Speed × Time."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Define variables for the two parts of the journey (Home to Breakfast, Breakfast to Office).",
+                  "working": "\\text{Let } d_1 \\text{ be the distance from Home to Breakfast.}\n\\text{Let } d_2 \\text{ be the distance from Breakfast to Office.}\n\\text{Time}_1 = 15 \\text{ mins} = 0.25 \\text{ h}\n\\text{Time}_2 = 30 \\text{ mins} = 0.5 \\text{ h}",
+                  "reasoning": "Convert minutes to hours to match the speed unit (km/h)."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Express the speeds in terms of distance and set up the equation based on the speed difference.",
+                  "working": "\\text{Speed}_1 = \\frac{d_1}{0.25} = 4d_1\n\\text{Speed}_2 = \\frac{d_2}{0.5} = 2d_2\n\\text{Given } \\text{Speed}_1 = \\text{Speed}_2 + 10:\n4d_1 = 2d_2 + 10 \\implies 2d_1 = d_2 + 5",
+                  "reasoning": "We are given that the first speed is 10 km/h faster than the second."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Solve the simultaneous equations for the required distance ($d_2$).",
+                  "working": "\\text{We know } d_1 + d_2 = 42\n\\text{From previous step: } d_1 = \\frac{d_2 + 5}{2}\n\\text{Substitute into sum: } \\frac{d_2 + 5}{2} + d_2 = 42\nd_2 + 5 + 2d_2 = 84\n3d_2 = 79\nd_2 = 26 \\frac{1}{3}",
+                  "reasoning": "Substitute and solve algebraically."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Average Speed Journey"
+      },
+      {
         "questionNumber": 23,
         "questionId": "N4-anderson-2024-p1-q23",
         "topicID": "N4",
@@ -289,6 +343,60 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Currency Comparison"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-2011-p1-q101",
+        "topicID": "N4",
+        "stem": "A bus travels from Town A to Town B in 20 minutes and then continues to Town C. The journey from Town B to Town C takes 40 minutes. The average speed of the bus for the whole journey from Town A to Town C is $48 \\text{ km/h}$. The average speed of the bus from Town A to Town B is $18 \\text{ km/h}$ faster than the average speed from Town B to Town C.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the distance between Town A and Town B.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "20 km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total time and total distance.",
+                  "working": "\\text{Total Time} = 20 \\text{ min} + 40 \\text{ min} = 60 \\text{ min} = 1 \\text{ hour}.\n\\text{Total Distance} = 48 \\text{ km/h} \\times 1 \\text{ h} = 48 \\text{ km}.",
+                  "reasoning": "Establish the totals to form an equation for distance."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up variables for speed.",
+                  "working": "\\text{Let } v \\text{ be the speed from B to C (in km/h).}\n\\text{Speed from A to B} = v + 18.",
+                  "reasoning": "Using a single variable for speed makes the algebra simpler."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Form an equation for total distance.",
+                  "working": "\\text{Distance}_{AB} + \\text{Distance}_{BC} = 48\n(v + 18) \\times \\frac{20}{60} + v \\times \\frac{40}{60} = 48\n\\frac{1}{3}(v + 18) + \\frac{2}{3}v = 48",
+                  "reasoning": "Distance = Speed × Time. Ensure time is in hours."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $v$.",
+                  "working": "\\frac{1}{3}v + 6 + \\frac{2}{3}v = 48\nv + 6 = 48\nv = 42 \\text{ km/h}",
+                  "reasoning": "Simplify the linear equation."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate the specific distance required.",
+                  "working": "\\text{Speed}_{AB} = 42 + 18 = 60 \\text{ km/h}\n\\text{Distance}_{AB} = 60 \\times \\frac{1}{3} = 20 \\text{ km}",
+                  "reasoning": "Substitute the speed back into the distance formula for the first leg."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Multi-stage Journey Speed"
       },
       {
         "questionNumber": 102,
@@ -528,6 +636,111 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Compound Interest"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-2011-p2-q101",
+        "topicID": "N4",
+        "stem": "John cycles a distance of 60 km. Let his average speed be x km/h.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression, in terms of $x$, for the time taken in hours.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{60}{x}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the time formula.",
+                  "working": "\\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}} = \\frac{60}{x}",
+                  "reasoning": "Basic relationship between Time, Distance, and Speed."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Peter cycles the same distance at an average speed which is 4 km/h faster than John. He takes 1 hour less than John. Form an equation in $x$ and show that it reduces to $x^2 + 4x - 240 = 0$.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "$x^2 + 4x - 240 = 0$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the expression for Peter's time.",
+                  "working": "\\text{Peter's Speed} = x + 4\n\\text{Peter's Time} = \\frac{60}{x+4}",
+                  "reasoning": "Peter is faster, so his speed is $x+4$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form the equation based on the time difference.",
+                  "working": "\\text{John's Time} - \\text{Peter's Time} = 1\n\\frac{60}{x} - \\frac{60}{x+4} = 1",
+                  "reasoning": "The slower person (John) takes more time, so subtract the smaller time from the larger time."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the equation to the required quadratic form.",
+                  "working": "60(x+4) - 60x = 1 \\cdot x(x+4)\n60x + 240 - 60x = x^2 + 4x\n240 = x^2 + 4x\nx^2 + 4x - 240 = 0",
+                  "reasoning": "Combine fractions and rearrange terms."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Solve the equation $x^2 + 4x - 240 = 0$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 13.6 or x = -17.6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the quadratic formula.",
+                  "working": "x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\nx = \\frac{-4 \\pm \\sqrt{4^2 - 4(1)(-240)}}{2}\nx = \\frac{-4 \\pm \\sqrt{16 + 960}}{2}\nx = \\frac{-4 \\pm \\sqrt{976}}{2}",
+                  "reasoning": "Standard method for solving quadratics when factorization is difficult."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the values.",
+                  "working": "x = \\frac{-4 + 31.24}{2} = 13.62...\nx = \\frac{-4 - 31.24}{2} = -17.62...\nx = 13.6 \\text{ or } -17.6 \\text{ (to 3 s.f.)}",
+                  "reasoning": "Provide answers to 3 significant figures as per O-level standard."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Find the time taken by John to complete the journey.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4.41 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Select the valid $x$ value and calculate time.",
+                  "working": "\\text{Since speed } > 0, x = 13.62...\n\\text{Time} = \\frac{60}{13.62...} \\approx 4.405...",
+                  "reasoning": "Reject negative speed. Substitute $x$ back into the expression from part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Round to appropriate significant figures.",
+                  "working": "4.41 \\text{ hours (3 s.f.)}",
+                  "reasoning": "Final answer formatting."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Speed and Time Algebra"
       }
     ]
   }

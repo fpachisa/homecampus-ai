@@ -271,6 +271,205 @@
         "title": "Matrices Application"
       },
       {
+        "questionNumber": 21,
+        "questionId": "N9-cchms-2024-p1-q21",
+        "topicID": "N9",
+        "stem": "The table shows the prices of movie tickets categorised by different days of the week and the various age groups.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down a $3\\times3$ matrix P to represent the above information.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix} 6.00 & 8.50 & 9.00 \\\\ 7.00 & 10.00 & 12.50 \\\\ 6.50 & 9.00 & 10.00 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Map the table data directly into a matrix format.",
+                  "working": "Row 1 (Child): 6.00, 8.50, 9.00\nRow 2 (Adult): 7.00, 10.00, 12.50\nRow 3 (Senior): 6.50, 9.00, 10.00",
+                  "reasoning": "A matrix is an array of numbers. Since the table has 3 rows and 3 columns, the resulting matrix will be a $3\\times3$ matrix where each entry corresponds to the cell in the table."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "(i) The Ng family comprises a child, two adults and a senior citizen while the Tan family comprises three children and two adults. Represent this information as a $2\\times3$ matrix Q.\n(ii) Evaluate QP and explain what the elements represent.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) $Q = \\begin{pmatrix} 1 & 2 & 1 \\\\ 3 & 2 & 0 \\end{pmatrix}$\n(ii) $QP = \\begin{pmatrix} 26.50 & 37.50 & 44.00 \\\\ 32.00 & 45.50 & 52.00 \\end{pmatrix}$. The elements represent the total cost of movie tickets for the Ng family (row 1) and Tan family (row 2) on the different categories of days (columns).",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Construct Matrix Q based on the family composition.",
+                  "working": "Columns represent: Child, Adult, Senior Citizen.\nRow 1 (Ng Family): 1 Child, 2 Adults, 1 Senior $\\rightarrow [1, 2, 1]$\nRow 2 (Tan Family): 3 Children, 2 Adults, 0 Seniors $\\rightarrow [3, 2, 0]$\n\n$Q = \\begin{pmatrix} 1 & 2 & 1 \\\\ 3 & 2 & 0 \\end{pmatrix}$",
+                  "reasoning": "The question asks for a $2\\times3$ matrix. Since there are 2 families, they form the rows. The 3 types of people form the columns to match the rows of matrix P for multiplication later."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the matrix multiplication QP.",
+                  "working": "$QP = \\begin{pmatrix} 1 & 2 & 1 \\\\ 3 & 2 & 0 \\end{pmatrix} \\begin{pmatrix} 6.00 & 8.50 & 9.00 \\\\ 7.00 & 10.00 & 12.50 \\\\ 6.50 & 9.00 & 10.00 \\end{pmatrix}$",
+                  "reasoning": "Matrix multiplication is possible because the number of columns in Q (3) equals the number of rows in P (3)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the first row (Ng Family costs).",
+                  "working": "Row 1, Col 1: $(1)(6) + (2)(7) + (1)(6.5) = 6 + 14 + 6.5 = 26.5$\nRow 1, Col 2: $(1)(8.5) + (2)(10) + (1)(9) = 8.5 + 20 + 9 = 37.5$\nRow 1, Col 3: $(1)(9) + (2)(12.5) + (1)(10) = 9 + 25 + 10 = 44$",
+                  "reasoning": "Multiply the elements of the row from the first matrix by the corresponding elements of the column from the second matrix and sum them up."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the second row (Tan Family costs).",
+                  "working": "Row 2, Col 1: $(3)(6) + (2)(7) + (0)(6.5) = 18 + 14 + 0 = 32$\nRow 2, Col 2: $(3)(8.5) + (2)(10) + (0)(9) = 25.5 + 20 + 0 = 45.5$\nRow 2, Col 3: $(3)(9) + (2)(12.5) + (0)(10) = 27 + 25 + 0 = 52$",
+                  "reasoning": "Repeat the row-by-column multiplication process for the second row."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Interpret the result.",
+                  "working": "Row 1 corresponds to Ng Family, Row 2 to Tan Family.\nCol 1 is Mon-Thu, Col 2 is Fri, Col 3 is Sat-Sun.\nAnswer: The elements represent the total ticket cost for each family on the specific days.",
+                  "reasoning": "The resulting matrix inherits the rows from the first matrix (Families) and the columns from the second matrix (Days)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Matrix Problem with Prices",
+        "table": {
+          "type": "matrix",
+          "headers": [
+            "Monday to Thursday",
+            "Friday",
+            "Saturday and Sunday"
+          ],
+          "rows": [
+            [
+              "Child",
+              "\\$6.00",
+              "\\$8.50",
+              "\\$9.00"
+            ],
+            [
+              "Adult",
+              "\\$7.00",
+              "\\$10.00",
+              "\\$12.50"
+            ],
+            [
+              "Senior Citizen",
+              "\\$6.50",
+              "\\$9.00",
+              "\\$10.00"
+            ]
+          ]
+        }
+      },
+      {
+        "questionNumber": 24,
+        "questionId": "N9-canberra-2024-p1-q24",
+        "topicID": "N9",
+        "stem": "At Café A, a latte costs \\$3.50, a croissant costs \\$2.70 and a sandwich costs \\$5.00. At Café B, a latte costs \\$0.40 more, a croissant costs \\$0.20 less and a sandwich costs \\$0.50 less. This information can be represented by the matrix $Q=(\\begin{matrix}3.50&0.40\\\\ 2.70&-0.20\\\\ 5.00&-0.50\\end{matrix}).$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Azza buys 2 latte, 3 croissants and 3 sandwiches. Yu Fei buys 1 latte and 4 sandwiches. Represent their purchases in a $2\\times3$ matrix P.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix} 2 & 3 & 3 \\\\ 1 & 0 & 4 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the rows and columns required. The question asks for a $2\\times3$ matrix. Rows represent the people (Azza, Yu Fei) and columns represent the items (Latte, Croissant, Sandwich).",
+                  "working": "Row 1 (Azza): 2 Latte, 3 Croissants, 3 Sandwiches\nRow 2 (Yu Fei): 1 Latte, 0 Croissants, 4 Sandwiches",
+                  "reasoning": "Matrix organization requires aligning corresponding quantities to the structure of the price matrix Q for future multiplication."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct the matrix P.",
+                  "working": "$P = \\begin{pmatrix} 2 & 3 & 3 \\\\ 1 & 0 & 4 \\end{pmatrix}$",
+                  "reasoning": "Ensure the entry for Yu Fei's croissants is 0 as none were purchased."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Evaluate $M=PQ$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$M = \\begin{pmatrix} 30.10 & -1.30 \\\\ 23.50 & -1.60 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication $PQ$.",
+                  "working": "$M = \\begin{pmatrix} 2 & 3 & 3 \\\\ 1 & 0 & 4 \\end{pmatrix} \\begin{pmatrix} 3.50 & 0.40 \\\\ 2.70 & -0.20 \\\\ 5.00 & -0.50 \\end{pmatrix}$",
+                  "reasoning": "Multiply rows of P by columns of Q."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate Row 1 (Azza).",
+                  "working": "$R_1C_1 = 2(3.50) + 3(2.70) + 3(5.00) = 7.00 + 8.10 + 15.00 = 30.10$\n$R_1C_2 = 2(0.40) + 3(-0.20) + 3(-0.50) = 0.80 - 0.60 - 1.50 = -1.30$",
+                  "reasoning": "Sum of products for the first row."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate Row 2 (Yu Fei).",
+                  "working": "$R_2C_1 = 1(3.50) + 0(2.70) + 4(5.00) = 3.50 + 0 + 20.00 = 23.50$\n$R_2C_2 = 1(0.40) + 0(-0.20) + 4(-0.50) = 0.40 + 0 - 2.00 = -1.60$",
+                  "reasoning": "Sum of products for the second row."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Write the final matrix.",
+                  "working": "$M = \\begin{pmatrix} 30.10 & -1.30 \\\\ 23.50 & -1.60 \\end{pmatrix}$",
+                  "reasoning": "Combine calculated elements into the final matrix structure."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Should Azza buy from Café A or Café B? Give your reasons.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Café B",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the elements of Matrix M for Azza (Row 1).",
+                  "working": "Row 1, Column 1 represents the total cost at Café A ($30.10).\nRow 1, Column 2 represents the price difference (Café B - Café A) which is $-1.30$.",
+                  "reasoning": "The second column of Q represented the price difference, so the result represents the total difference in cost."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the difference.",
+                  "working": "Since the difference is $-1.30$, the total cost at Café B is $1.30 less than at Café A.",
+                  "reasoning": "A negative difference indicates the second option is cheaper."
+                },
+                {
+                  "step": 3,
+                  "explanation": "State the conclusion.",
+                  "working": "Azza should buy from Café B because she will save $1.30.",
+                  "reasoning": "Financial decision based on lower total cost."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Matrix Cafe Prices"
+      },
+      {
         "questionNumber": 25,
         "questionId": "N9-broadrick-2024-p1-q25",
         "topicID": "N9",
@@ -563,6 +762,101 @@
         "title": "Matrices"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2011-p1-q101",
+        "topicID": "N9",
+        "stem": "A fruit stall sells apples and oranges. The sales in kilograms for two days are given in the table below.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Represent the sales data as a $2\\times2$ matrix $S$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$S = \\begin{pmatrix} 25 & 18 \\\\ 30 & 22 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the table directly into matrix form.",
+                  "working": "Row 1 (Day 1): 25, 18\nRow 2 (Day 2): 30, 22",
+                  "reasoning": "The rows represent the days and the columns represent the fruit types."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The price of an apple is \\$2 per kg and the price of an orange is \\$3 per kg. Represent these prices as a column matrix $P$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Format the prices into a column matrix.",
+                  "working": "Apples: 2\nOranges: 3\n$P = \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$",
+                  "reasoning": "A column matrix has dimensions $n \\times 1$. Since the sales matrix columns are Apples then Oranges, the price matrix rows must follow the same order (Apple price top, Orange price bottom) to allow for valid multiplication."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate the matrix product $SP$ and describe what the elements represent.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$SP = \\begin{pmatrix} 104 \\\\ 126 \\end{pmatrix}$. The elements represent the total revenue earned from sales on Day 1 and Day 2 respectively.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform matrix multiplication $SP$.",
+                  "working": "$SP = \\begin{pmatrix} 25 & 18 \\\\ 30 & 22 \\end{pmatrix} \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$",
+                  "reasoning": "We are multiplying a $2\\times2$ matrix by a $2\\times1$ matrix. The result will be a $2\\times1$ matrix."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the row products.",
+                  "working": "Row 1: $(25)(2) + (18)(3) = 50 + 54 = 104$\nRow 2: $(30)(2) + (22)(3) = 60 + 66 = 126$",
+                  "reasoning": "Sum of (Quantity $\\times$ Price) gives total revenue."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Interpret the result.",
+                  "working": "The resulting column vector corresponds to the rows of $S$ (Days).\nTop element: Day 1 Revenue.\nBottom element: Day 2 Revenue.",
+                  "reasoning": "The operation calculates the total value of items sold for each day."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Fruit Sales Revenue",
+        "table": {
+          "type": "data",
+          "headers": [
+            "Apples (kg)",
+            "Oranges (kg)"
+          ],
+          "rows": [
+            [
+              "Day 1",
+              "25",
+              "18"
+            ],
+            [
+              "Day 2",
+              "30",
+              "22"
+            ]
+          ]
+        }
+      },
+      {
         "questionNumber": 102,
         "questionId": "N9-gemini-1911-p1-102",
         "topicID": "N9",
@@ -725,6 +1019,77 @@
         "totalMarks": 5,
         "paper": "Paper 1",
         "title": "Matrices"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-2011-p1-q102",
+        "topicID": "N9",
+        "stem": "Given the matrices $A = \\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix}$ and $B = \\begin{pmatrix} 1 & 4 \\\\ -2 & 5 \\end{pmatrix}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the matrix $2A - B$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\begin{pmatrix} 5 & -6 \\\\ 2 & -1 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply matrix A by the scalar 2.",
+                  "working": "$2A = 2\\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix} = \\begin{pmatrix} 6 & -2 \\\\ 0 & 4 \\end{pmatrix}$",
+                  "reasoning": "Scalar multiplication involves multiplying every element inside the matrix by the scalar value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract matrix B from 2A.",
+                  "working": "$\\begin{pmatrix} 6 & -2 \\\\ 0 & 4 \\end{pmatrix} - \\begin{pmatrix} 1 & 4 \\\\ -2 & 5 \\end{pmatrix} = \\begin{pmatrix} 6-1 & -2-4 \\\\ 0-(-2) & 4-5 \\end{pmatrix}$",
+                  "reasoning": "Matrix subtraction is performed element by element. Be careful with double negatives (e.g., $0 - (-2)$)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify to find the final answer.",
+                  "working": "$\\begin{pmatrix} 5 & -6 \\\\ 2 & -1 \\end{pmatrix}$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find $A^2$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\begin{pmatrix} 9 & -5 \\\\ 0 & 4 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write out the multiplication $A \\times A$.",
+                  "working": "$A^2 = \\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix} \\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix}$",
+                  "reasoning": "Squaring a matrix means multiplying it by itself, not squaring the individual elements."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform row-by-column multiplication.",
+                  "working": "Row 1, Col 1: $(3)(3) + (-1)(0) = 9$\nRow 1, Col 2: $(3)(-1) + (-1)(2) = -3 - 2 = -5$\nRow 2, Col 1: $(0)(3) + (2)(0) = 0$\nRow 2, Col 2: $(0)(-1) + (2)(2) = 4$",
+                  "reasoning": "Apply the standard matrix multiplication rule."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Construct the final matrix.",
+                  "working": "$\\begin{pmatrix} 9 & -5 \\\\ 0 & 4 \\end{pmatrix}$",
+                  "reasoning": "Assemble the calculated elements into the $2\\times2$ format."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Matrix Algebra"
       }
     ],
     "Paper 2": [
@@ -803,6 +1168,204 @@
         "totalMarks": 4,
         "paper": "Paper 2",
         "title": "Food Stall Profits"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2011-p2-q101",
+        "topicID": "N9",
+        "stem": "Three schools, Alpha, Beta, and Gamma, participated in a sports carnival. The number of Gold, Silver, and Bronze medals won by each school is shown in the table below.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down a $3\\times3$ matrix $M$ to represent the number of medals won by the schools.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$M = \\begin{pmatrix} 5 & 3 & 4 \\\\ 4 & 5 & 2 \\\\ 6 & 2 & 3 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Transcribe the table data into matrix notation.",
+                  "working": "Row 1 (Alpha): 5, 3, 4\nRow 2 (Beta): 4, 5, 2\nRow 3 (Gamma): 6, 2, 3",
+                  "reasoning": "The matrix structure mirrors the table structure."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A points system is used to determine the overall champion. A Gold medal is worth 5 points, a Silver medal is worth 3 points, and a Bronze medal is worth 1 point.\n(i) Represent the points system as a column matrix $P$.\n(ii) Calculate the product $MP$ and explain what the elements represent.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) $P = \\begin{pmatrix} 5 \\\\ 3 \\\\ 1 \\end{pmatrix}$\n(ii) $MP = \\begin{pmatrix} 38 \\\\ 37 \\\\ 39 \\end{pmatrix}$. The elements represent the total points scored by Alpha, Beta, and Gamma school respectively.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Create the points matrix P.",
+                  "working": "Gold: 5, Silver: 3, Bronze: 1.\n$P = \\begin{pmatrix} 5 \\\\ 3 \\\\ 1 \\end{pmatrix}$",
+                  "reasoning": "It must be a column matrix ($3\\times1$) to be multiplied by the $3\\times3$ matrix $M$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $MP$.",
+                  "working": "$MP = \\begin{pmatrix} 5 & 3 & 4 \\\\ 4 & 5 & 2 \\\\ 6 & 2 & 3 \\end{pmatrix} \\begin{pmatrix} 5 \\\\ 3 \\\\ 1 \\end{pmatrix}$",
+                  "reasoning": "Set up the multiplication."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute the dot products.",
+                  "working": "Alpha: $(5)(5) + (3)(3) + (4)(1) = 25 + 9 + 4 = 38$\nBeta: $(4)(5) + (5)(3) + (2)(1) = 20 + 15 + 2 = 37$\nGamma: $(6)(5) + (2)(3) + (3)(1) = 30 + 6 + 3 = 39$",
+                  "reasoning": "Sum the products of medal count and medal value for each school."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Interpret the result.",
+                  "working": "The result is a $3\\times1$ matrix. The rows correspond to the schools (Alpha, Beta, Gamma). The values are the total points.",
+                  "reasoning": "Matrix multiplication aggregates the weighted values."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Using your answer to (b)(ii), determine which school is the overall champion.",
+            "marks": 1,
+            "answerType": "string",
+            "solution": {
+              "finalAnswer": "Gamma School",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the total points calculated in the previous part.",
+                  "working": "Alpha: 38, Beta: 37, Gamma: 39.\n39 is the highest score.",
+                  "reasoning": "The champion is the school with the highest total points."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Sports Carnival Points",
+        "table": {
+          "type": "comparison",
+          "headers": [
+            "Gold",
+            "Silver",
+            "Bronze"
+          ],
+          "rows": [
+            [
+              "Alpha",
+              "5",
+              "3",
+              "4"
+            ],
+            [
+              "Beta",
+              "4",
+              "5",
+              "2"
+            ],
+            [
+              "Gamma",
+              "6",
+              "2",
+              "3"
+            ]
+          ]
+        }
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-2011-p2-q102",
+        "topicID": "N9",
+        "stem": "A factory produces two types of gadgets: Alpha and Beta. The materials required (in units) and labour required (in hours) per gadget are given by matrix $M$:\n\n$M = \\begin{pmatrix} 5 & 2 \\\\ 3 & 4 \\end{pmatrix} \\begin{matrix} \\text{Alpha} \\\\ \\text{Beta} \\end{matrix}$\n\nThe columns represent Material (left) and Labour (right).\n\nThe cost of material is \\$10 per unit and labour is \\$15 per hour. This is represented by matrix $C = \\begin{pmatrix} 10 \\\\ 15 \\end{pmatrix}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the product $MC$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\begin{pmatrix} 80 \\\\ 90 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the multiplication.",
+                  "working": "$\\begin{pmatrix} 5 & 2 \\\\ 3 & 4 \\end{pmatrix} \\begin{pmatrix} 10 \\\\ 15 \\end{pmatrix}$",
+                  "reasoning": "Matrix M ($2\\times2$) multiplied by C ($2\\times1$).Result will be $2\\times1$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the elements.",
+                  "working": "Row 1: $5(10) + 2(15) = 50 + 30 = 80$\nRow 2: $3(10) + 4(15) = 30 + 60 = 90$",
+                  "reasoning": "Sum of (Material Units $\\times$ Material Cost) + (Labour Hours $\\times$ Labour Cost)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain the meaning of the numbers in your answer to part (a).",
+            "marks": 1,
+            "answerType": "text",
+            "solution": {
+              "finalAnswer": "The production cost for one Alpha gadget is $80 and for one Beta gadget is $90.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the rows.",
+                  "working": "Row 1 corresponds to Alpha gadgets. Row 2 corresponds to Beta gadgets.",
+                  "reasoning": "Based on the row labels of matrix M."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Interpret the result values.",
+                  "working": "The calculation combined material and labour costs.",
+                  "reasoning": "The result represents the total production cost per unit for each gadget type."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The factory wants to produce 100 Alpha gadgets and 200 Beta gadgets. Write a row matrix $N$ representing these quantities and calculate $N(MC)$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$N = \\begin{pmatrix} 100 & 200 \\end{pmatrix}$. Total Cost = $26000.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define matrix N.",
+                  "working": "$N = \\begin{pmatrix} 100 & 200 \\end{pmatrix}$",
+                  "reasoning": "A row matrix representing quantities of Alpha and Beta."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $N(MC)$.",
+                  "working": "$\\begin{pmatrix} 100 & 200 \\end{pmatrix} \\begin{pmatrix} 80 \\\\ 90 \\end{pmatrix} = 100(80) + 200(90)$",
+                  "reasoning": "Multiply the quantity matrix by the unit cost matrix calculated in part (a)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final calculation.",
+                  "working": "$8000 + 18000 = 26000$",
+                  "reasoning": "This represents the total cost to produce the specified batch of gadgets."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Production Costs"
       }
     ]
   }

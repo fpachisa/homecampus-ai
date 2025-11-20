@@ -3,6 +3,136 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 6,
+        "questionId": "N6-canberra-2024-p1-q6",
+        "topicID": "N6",
+        "stem": "The quadratic curve $y=x^{2}+4x-21$ can be written as $y=(x-a)(x+b)$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $a$ and the value of $b$, where $a$ and $b$ are positive integers.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "a = 3, b = 7",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the quadratic expression $x^2+4x-21$. We need two numbers that multiply to -21 and add to +4.",
+                  "working": "$x^2+4x-21 = (x+7)(x-3)$",
+                  "reasoning": "Standard factorization of a quadratic trinomial."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare the factorised form with the given form $y=(x-a)(x+b)$.",
+                  "working": "$(x-3)(x+7) \\equiv (x-a)(x+b)$",
+                  "reasoning": "Matching coefficients/terms to identify the constants."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify $a$ and $b$ noting that they must be positive integers.",
+                  "working": "$-a = -3 \\Rightarrow a=3$\n$b = 7$",
+                  "reasoning": "Direct comparison."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why $y$ will not have a value smaller than -25.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Complete the square to find the minimum value of the quadratic function.",
+                  "working": "$y = x^2+4x-21$\n$y = (x+2)^2 - 2^2 - 21$\n$y = (x+2)^2 - 4 - 21$\n$y = (x+2)^2 - 25$",
+                  "reasoning": "Completing the square converts the quadratic to vertex form, revealing the minimum y-value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the squared term.",
+                  "working": "Since $(x+2)^2 \\ge 0$ for all real values of $x$, the minimum value of the expression is $0 - 25 = -25$.",
+                  "reasoning": "A real square cannot be negative."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Conclude the proof.",
+                  "working": "Therefore, $y \\ge -25$.",
+                  "reasoning": "Final conclusion based on the inequality."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Quadratic Curve Properties"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "N6-canberra-2024-p1-q9",
+        "topicID": "N6",
+        "stem": "$x^{2}-10x+27$ can be expressed in the form $(x+p)^{2}+q$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $p$ and the value of $q$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "p = -5, q = 2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the method of completing the square. Take half of the coefficient of $x$ (which is -10) to form the squared term.",
+                  "working": "$x^2 - 10x + 27 = (x - 5)^2 - (-5)^2 + 27$",
+                  "reasoning": "Using the identity $(x-a)^2 = x^2 - 2ax + a^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the constant terms.",
+                  "working": "$(x - 5)^2 - 25 + 27$\n$= (x - 5)^2 + 2$",
+                  "reasoning": "Arithmetic simplification."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare with $(x+p)^2+q$ to find $p$ and $q$.",
+                  "working": "$x+p = x-5 \\Rightarrow p = -5$\n$q = 2$",
+                  "reasoning": "Equating coefficients."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence write down the coordinates of the minimum point of the graph of $y=x^{2}-10x+27$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(5, 2)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the vertex from the completed square form $(x+p)^2+q$.",
+                  "working": "For $y = (x-5)^2 + 2$, the minimum occurs when the squared term is zero, i.e., $x-5=0 \\Rightarrow x=5$. The corresponding $y$ value is 2.",
+                  "reasoning": "The vertex of $y=a(x-h)^2+k$ is at $(h, k)$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Completing the Square"
+      },
+      {
         "questionNumber": 11,
         "questionId": "N6-anderson-2024-p1-q11",
         "topicID": "N6",
@@ -37,8 +167,257 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Quadratic Minimum Point"
+      },
+      {
+        "questionNumber": 15,
+        "questionId": "N6-cchms-2024-p1-q15",
+        "topicID": "N6",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $x^{2}+5x+7$ in the form $(x+a)^{2}+b$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(x + 2.5)^2 + 0.75$ or $(x + \\frac{5}{2})^2 + \\frac{3}{4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the coefficient of $x$, which is 5. We halve this value to find $a$.",
+                  "working": "$a = \\frac{5}{2} = 2.5$",
+                  "reasoning": "To complete the square for $x^2 + bx$, the term inside the bracket is $(x + \\frac{b}{2})$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the completing the square formula: $x^2 + bx = (x + \\frac{b}{2})^2 - (\\frac{b}{2})^2$.",
+                  "working": "$x^2 + 5x = (x + 2.5)^2 - (2.5)^2$\n$= (x + 2.5)^2 - 6.25$",
+                  "reasoning": "We subtract the square of half the coefficient to maintain equality."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Add the constant term (+7) from the original expression and simplify.",
+                  "working": "$(x + 2.5)^2 - 6.25 + 7$\n$= (x + 2.5)^2 + 0.75$",
+                  "reasoning": "Combine the numerical constants to find the final value of $b$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, explain why the expression will never be negative.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Since $(x+2.5)^2 \\ge 0$ for all real $x$, and $0.75 > 0$, the sum is always positive.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "State the property of a perfect square.",
+                  "working": "For any real number $x$, $(x + 2.5)^2 \\ge 0$.",
+                  "reasoning": "The square of any real number is always non-negative (greater than or equal to zero)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the whole expression.",
+                  "working": "Since $(x + 2.5)^2 \\ge 0$, adding $0.75$ makes the expression $\\ge 0.75$.\nTherefore, the expression is always positive (never negative).",
+                  "reasoning": "Adding a positive constant to a non-negative value results in a positive value."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Completing the Square"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N6-gemini-2011-p1-q101",
+        "topicID": "N6",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $x^2 - 8x + 25$ in the form $(x-p)^2 + q$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(x - 4)^2 + 9$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Halve the coefficient of $x$ (-8) to determine the term inside the bracket.",
+                  "working": "$\\frac{-8}{2} = -4$",
+                  "reasoning": "The form $(x-p)^2$ expands to $x^2 - 2px + p^2$, so $p$ is half the coefficient of $x$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the square of (-4) and add the original constant.",
+                  "working": "$(x - 4)^2 - (-4)^2 + 25$\n$= (x - 4)^2 - 16 + 25$",
+                  "reasoning": "Completing the square requires subtracting the square of the term we added inside the bracket."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the constants.",
+                  "working": "$(x - 4)^2 + 9$",
+                  "reasoning": "Combine -16 and +25."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down the minimum value of the expression $x^2 - 8x + 25$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "9",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the minimum value from the vertex form.",
+                  "working": "Minimum value = $q = 9$",
+                  "reasoning": "In the form $(x-p)^2 + q$, the squared term is minimum at 0, so the minimum value of the whole expression is $q$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Completing the Square"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N6-gemini-2011-p1-q102",
+        "topicID": "N6",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $y = x^2 + 6x - 2$, find the values of $a$ and $b$ such that $y = (x+a)^2 + b$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$a = 3, b = -11$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find $a$ by halving the coefficient of $x$.",
+                  "working": "$a = \\frac{6}{2} = 3$",
+                  "reasoning": "Standard procedure for completing the square."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $b$ by subtracting $a^2$ from the constant term.",
+                  "working": "$b = -2 - (3)^2$\n$b = -2 - 9$\n$b = -11$",
+                  "reasoning": "The expression becomes $(x+3)^2 - 9 - 2$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, state the coordinates of the turning point of the graph of $y = x^2 + 6x - 2$.",
+            "marks": 1,
+            "answerType": "coordinates",
+            "solution": {
+              "finalAnswer": "$(-3, -11)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract coordinates from the completed square form.",
+                  "working": "For $y = (x+a)^2 + b$, the turning point is $(-a, b)$.\nHere, $x+3=0 \\Rightarrow x=-3$ and $y=-11$.",
+                  "reasoning": "The minimum point occurs when the squared term is zero."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Quadratic Graphs"
       }
     ],
-    "Paper 2": []
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "N6-gemini-2011-p2-q101",
+        "topicID": "N6",
+        "stem": "The expression $12 - 4x - x^2$ can be written in the form $k - (x+h)^2$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $k$ and the value of $h$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$k = 16, h = 2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factor out -1 from the $x$ terms to handle the negative quadratic.",
+                  "working": "$12 - (x^2 + 4x)$",
+                  "reasoning": "It is easier to complete the square when the coefficient of $x^2$ is positive 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Complete the square inside the bracket.",
+                  "working": "$12 - [(x + 2)^2 - 2^2]$\n$= 12 - [(x + 2)^2 - 4]$",
+                  "reasoning": "Halve the coefficient of $x$ (4) to get 2, square it to get 4."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand the negative sign and simplify.",
+                  "working": "$12 - (x + 2)^2 + 4$\n$= 16 - (x + 2)^2$",
+                  "reasoning": "Distribute the negative sign: $-(-4)$ becomes $+4$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Identify $k$ and $h$ by comparing with $k - (x+h)^2$.",
+                  "working": "$k = 16, h = 2$",
+                  "reasoning": "Matching coefficients."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, write down the maximum value of the expression and the value of $x$ at which it occurs.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Maximum value is 16 at $x = -2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the maximum value.",
+                  "working": "Max value = $k = 16$",
+                  "reasoning": "Since $-(x+2)^2$ is always $\\le 0$, the maximum value is reached when the squared term is 0."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the $x$ value.",
+                  "working": "$(x + 2) = 0 \\Rightarrow x = -2$",
+                  "reasoning": "The maximum occurs when the term being subtracted is zero."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Maximum of Quadratic Functions"
+      }
+    ]
   }
 }

@@ -1,8 +1,192 @@
 {
   "topicId": "G7",
   "questions": {
-    "Paper 1": [],
+    "Paper 1": [
+      {
+        "questionNumber": 101,
+        "questionId": "G7-gemini-2011-p1-q101",
+        "topicID": "G7",
+        "stem": "The position vectors of points P and Q relative to an origin O are $\\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}$ and $\\begin{pmatrix} -2 \\\\ 16 \\end{pmatrix}$ respectively.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the vector $\\vec{PQ}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\begin{pmatrix} -5 \\\\ 12 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the triangle law of vector addition where $\\vec{PQ} = \\vec{OQ} - \\vec{OP}$.",
+                  "working": "$\\vec{PQ} = \\begin{pmatrix} -2 \\\\ 16 \\end{pmatrix} - \\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}$",
+                  "reasoning": "To find the vector between two points given their position vectors, subtract the start point from the end point."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the subtraction for x and y components.",
+                  "working": "$\\vec{PQ} = \\begin{pmatrix} -2 - 3 \\\\ 16 - 4 \\end{pmatrix} = \\begin{pmatrix} -5 \\\\ 12 \\end{pmatrix}$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find $|\\vec{PQ}|$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "13",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the magnitude formula $|\\begin{pmatrix} x \\\\ y \\end{pmatrix}| = \\sqrt{x^2 + y^2}$.",
+                  "working": "$|\\vec{PQ}| = \\sqrt{(-5)^2 + (12)^2}$",
+                  "reasoning": "The magnitude represents the length of the vector."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the squares and the square root.",
+                  "working": "$= \\sqrt{25 + 144} = \\sqrt{169} = 13$",
+                  "reasoning": "Simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Given that $\\vec{OR} = \\begin{pmatrix} h \\\\ k \\end{pmatrix}$ and $OQPR$ is a parallelogram, find the values of $h$ and $k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "h = 5, k = -12",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the property of a parallelogram regarding parallel vectors.",
+                  "working": "In parallelogram $OQPR$, $\\vec{OR} = \\vec{QP}$.",
+                  "reasoning": "Opposite sides of a parallelogram are equal in magnitude and direction. Note the order of vertices $O \\to Q \\to P \\to R$ implies $\\vec{OR}$ is parallel and equal to $\\vec{QP}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find $\\vec{QP}$.",
+                  "working": "$\\vec{QP} = -\\vec{PQ} = -\\begin{pmatrix} -5 \\\\ 12 \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ -12 \\end{pmatrix}$",
+                  "reasoning": "Reversing the direction of a vector negates its components."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate to $\\vec{OR}$ to find $h$ and $k$.",
+                  "working": "$\\begin{pmatrix} h \\\\ k \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ -12 \\end{pmatrix}$",
+                  "reasoning": "Comparing components."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Vectors in Two Dimensions"
+      }
+    ],
     "Paper 2": [
+      {
+        "questionNumber": 7,
+        "questionId": "G7-cchms-2024-p2-q7",
+        "topicID": "G7",
+        "stem": "(a) A, B, C and D are four points such that the coordinates of A and C are (4,2) and (10,-34) respectively. $\\vec{AB}=\\begin{pmatrix}-9\\\\ -12\\end{pmatrix}$ and $\\vec{AD}=\\begin{pmatrix}24\\\\ -12\\end{pmatrix}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "(i) Find the coordinates of B.\n(ii) Find $|\\vec{AB}|$.\n(iii) It is given that E is a point on BD such that $\\vec{BE}=\\frac{1}{3}\\vec{BD}$. Show that A, C and E are collinear.",
+            "marks": 6,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) (-5, -10), (ii) 15, (iii) See proof",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "(i) Find position vector of B using $\\vec{OB} = \\vec{OA} + \\vec{AB}$.",
+                  "working": "$\\vec{OA} = \\begin{pmatrix} 4 \\\\ 2 \\end{pmatrix}$\n$\\vec{OB} = \\begin{pmatrix} 4 \\\\ 2 \\end{pmatrix} + \\begin{pmatrix} -9 \\\\ -12 \\end{pmatrix} = \\begin{pmatrix} -5 \\\\ -10 \\end{pmatrix}$\nCoordinates of B are $(-5, -10)$.",
+                  "reasoning": "Vector addition to find coordinates."
+                },
+                {
+                  "step": 2,
+                  "explanation": "(ii) Calculate the magnitude of vector AB.",
+                  "working": "$|\\vec{AB}| = \\sqrt{(-9)^2 + (-12)^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15$",
+                  "reasoning": "Using Pythagoras theorem on vector components."
+                },
+                {
+                  "step": 3,
+                  "explanation": "(iii) Find $\\vec{BD}$ first to determine $\\vec{BE}$.",
+                  "working": "$\\vec{BD} = \\vec{AD} - \\vec{AB} = \\begin{pmatrix} 24 \\\\ -12 \\end{pmatrix} - \\begin{pmatrix} -9 \\\\ -12 \\end{pmatrix} = \\begin{pmatrix} 33 \\\\ 0 \\end{pmatrix}$",
+                  "reasoning": "Triangle law of vectors."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate $\\vec{BE}$ and then $\\vec{AE}$.",
+                  "working": "$\\vec{BE} = \\frac{1}{3}\\vec{BD} = \\frac{1}{3}\\begin{pmatrix} 33 \\\\ 0 \\end{pmatrix} = \\begin{pmatrix} 11 \\\\ 0 \\end{pmatrix}$\n$\\vec{AE} = \\vec{AB} + \\vec{BE} = \\begin{pmatrix} -9 \\\\ -12 \\end{pmatrix} + \\begin{pmatrix} 11 \\\\ 0 \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ -12 \\end{pmatrix}$",
+                  "reasoning": "Finding vector from common point A to E."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Find $\\vec{AC}$ and compare with $\\vec{AE}$.",
+                  "working": "$\\vec{AC} = \\vec{OC} - \\vec{OA} = \\begin{pmatrix} 10 \\\\ -34 \\end{pmatrix} - \\begin{pmatrix} 4 \\\\ 2 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -36 \\end{pmatrix}$\n$\\vec{AC} = 3\\begin{pmatrix} 2 \\\\ -12 \\end{pmatrix} = 3\\vec{AE}$",
+                  "reasoning": "Since $\\vec{AC} = 3\\vec{AE}$, the vectors are parallel. Since they share a common point A, points A, C, and E are collinear."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A is the point (2,6), B is the point (-4,-2) and C is the point (6,-2). A line L passes through point C and is parallel to AB.\n(i) Find the equation of line L.\n(ii) Point D lies on line L such that AD // BC. Find the coordinates of point D.\n(iii) Show that ABCD is a rhombus.",
+            "marks": 6,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) $y = \\frac{4}{3}x - 10$, (ii) (12, 6), (iii) See proof",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "(i) Find the gradient of AB.",
+                  "working": "Gradient $m_{AB} = \\frac{-2 - 6}{-4 - 2} = \\frac{-8}{-6} = \\frac{4}{3}$",
+                  "reasoning": "Parallel lines have the same gradient."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find equation of line L passing through C(6, -2) with gradient 4/3.",
+                  "working": "$y - (-2) = \\frac{4}{3}(x - 6)$\n$y + 2 = \\frac{4}{3}x - 8$\n$y = \\frac{4}{3}x - 10$ (or $4x - 3y = 30$)",
+                  "reasoning": "Point-slope form."
+                },
+                {
+                  "step": 3,
+                  "explanation": "(ii) Determine the equation of line AD.",
+                  "working": "Gradient of BC: $\\frac{-2 - (-2)}{6 - (-4)} = 0$. BC is horizontal.\nSince $AD // BC$, AD is also horizontal. Passes through A(2,6), so equation is $y = 6$.",
+                  "reasoning": "Horizontal lines have equation y = k."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find intersection of line L and line AD to find D.",
+                  "working": "Substitute $y=6$ into $y = \\frac{4}{3}x - 10$:\n$6 = \\frac{4}{3}x - 10$\n$16 = \\frac{4}{3}x$\n$x = 12$\nCoordinates of D are $(12, 6)$.",
+                  "reasoning": "Solving simultaneous equations."
+                },
+                {
+                  "step": 5,
+                  "explanation": "(iii) Prove ABCD is a rhombus by showing it is a parallelogram with equal adjacent sides.",
+                  "working": "1. $AB // CD$ (from construction of L) and $AD // BC$ (given), so ABCD is a parallelogram.\n2. Length $AB = \\sqrt{(-4-2)^2 + (-2-6)^2} = \\sqrt{36+64} = 10$.\n3. Length $BC = \\sqrt{(6-(-4))^2 + (-2-(-2))^2} = \\sqrt{100} = 10$.\nSince adjacent sides $AB = BC$, ABCD is a rhombus.",
+                  "reasoning": "A parallelogram with equal adjacent sides is a rhombus."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 12,
+        "paper": "Paper 2",
+        "title": "Vectors and Coordinate Geometry"
+      },
       {
         "questionNumber": 32,
         "questionId": "G7-anderson-2024-p2-q32",
@@ -55,6 +239,153 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Vector Between Points"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G7-gemini-2011-p2-q101",
+        "topicID": "G7",
+        "stem": "The line $2y + x = 14$ intersects the y-axis at point A and the x-axis at point B. M is the midpoint of AB.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the coordinates of M.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(7, 3.5)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find coordinates of A (x=0) and B (y=0).",
+                  "working": "At A, $x=0 \\Rightarrow 2y = 14 \\Rightarrow y=7$. A is $(0, 7)$.\nAt B, $y=0 \\Rightarrow x = 14$. B is $(14, 0)$.",
+                  "reasoning": "Intercepts occur where the opposite coordinate is zero."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the midpoint M.",
+                  "working": "$M = (\\frac{0+14}{2}, \\frac{7+0}{2}) = (7, 3.5)$",
+                  "reasoning": "Midpoint formula $(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2})$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the equation of the perpendicular bisector of AB.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "y = 2x - 10.5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the gradient of line AB.",
+                  "working": "$2y = -x + 14 \\Rightarrow y = -\\frac{1}{2}x + 7$. Gradient $m_{AB} = -\\frac{1}{2}$.",
+                  "reasoning": "Rearranging to $y=mx+c$ form."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine gradient of the perpendicular bisector.",
+                  "working": "$m_{\\perp} = -\\frac{1}{m_{AB}} = -\\frac{1}{-0.5} = 2$.",
+                  "reasoning": "Product of perpendicular gradients is -1."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Use point M and perpendicular gradient to find the equation.",
+                  "working": "Using $M(7, 3.5)$ and $m=2$:\n$y - 3.5 = 2(x - 7)$\n$y = 2x - 14 + 3.5$\n$y = 2x - 10.5$ (or $2y = 4x - 21$)",
+                  "reasoning": "Point-slope form."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Given a point $C(k, 10)$ such that the length of AC is 5 units, find the possible values of $k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "k = 4 or k = -4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the distance formula between A(0, 7) and C(k, 10).",
+                  "working": "$\\sqrt{(k-0)^2 + (10-7)^2} = 5$",
+                  "reasoning": "Distance formula $d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for k.",
+                  "working": "$k^2 + 3^2 = 5^2$\n$k^2 + 9 = 25$\n$k^2 = 16$\n$k = \\pm 4$",
+                  "reasoning": "Algebraic manipulation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Coordinate Geometry"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G7-gemini-2011-p2-q102",
+        "topicID": "G7",
+        "stem": "OABC is a parallelogram where O is the origin. The position vectors of A and C are $\\mathbf{a}$ and $\\mathbf{c}$ respectively. P is a point on AB such that $AP:PB = 1:1$. Q is a point on CB extended such that $CB = BQ$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express, in terms of $\\mathbf{a}$ and $\\mathbf{c}$,\n(i) $\\vec{OP}$\n(ii) $\\vec{OQ}$",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) $\\mathbf{a} + \\frac{1}{2}\\mathbf{c}$, (ii) $2\\mathbf{a} + \\mathbf{c}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "(i) Find $\\vec{OP}$. P is the midpoint of AB.",
+                  "working": "$\\vec{AB} = \\vec{OC} = \\mathbf{c}$ (Opposite sides of parallelogram).\n$\\vec{AP} = \\frac{1}{2}\\vec{AB} = \\frac{1}{2}\\mathbf{c}$.\n$\\vec{OP} = \\vec{OA} + \\vec{AP} = \\mathbf{a} + \\frac{1}{2}\\mathbf{c}$.",
+                  "reasoning": "Vector addition path $O \\to A \\to P$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "(ii) Find $\\vec{OQ}$. Q is on CB extended such that $CB=BQ$.",
+                  "working": "$\\vec{CB} = \\vec{OA} = \\mathbf{a}$.\nSince $CB=BQ$ and Q is on the extension, $\\vec{BQ} = \\vec{CB} = \\mathbf{a}$.\n$\\vec{OQ} = \\vec{OC} + \\vec{CB} + \\vec{BQ} = \\mathbf{c} + \\mathbf{a} + \\mathbf{a} = 2\\mathbf{a} + \\mathbf{c}$.",
+                  "reasoning": "Vector addition path $O \\to C \\to B \\to Q$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that O, P and Q are collinear.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "See proof",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the vectors $\\vec{OP}$ and $\\vec{OQ}$.",
+                  "working": "$\\vec{OP} = \\mathbf{a} + \\frac{1}{2}\\mathbf{c} = \\frac{1}{2}(2\\mathbf{a} + \\mathbf{c})$\n$\\vec{OQ} = 2\\mathbf{a} + \\mathbf{c}$",
+                  "reasoning": "Factorizing to find a scalar multiple."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Establish the relationship.",
+                  "working": "$\\vec{OQ} = 2\\vec{OP}$.\nSince $\\vec{OQ}$ is a scalar multiple of $\\vec{OP}$ and they share a common point O, the points O, P, and Q are collinear.",
+                  "reasoning": "Definition of collinear points using vectors."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Vector Geometry"
       }
     ]
   }

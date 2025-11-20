@@ -74,6 +74,66 @@
         "title": "Statistics"
       },
       {
+        "questionNumber": 4,
+        "questionId": "S1-canberra-2024-p1-q4",
+        "topicID": "S1",
+        "stem": "Five positive integers have a mean of 5, median of 4, mode of 3 and a range of 7.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the five numbers.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3, 3, 4, 5, 10",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Let the five integers be $a, b, c, d, e$ arranged in ascending order.",
+                  "working": "$a \\le b \\le c \\le d \\le e$",
+                  "reasoning": "Ordering the numbers helps in identifying the median and range."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the median.",
+                  "working": "Since there are 5 numbers, the median is the 3rd number.\n$c = 4$",
+                  "reasoning": "Definition of median for an odd set of numbers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Use the mode to find $a$ and $b$.",
+                  "working": "The mode is 3. Since the list is sorted and $c=4$, $a$ and $b$ must both be 3 to make 3 the most frequent number.\n$a = 3, b = 3$",
+                  "reasoning": "If the mode is less than the median, the repeated numbers must appear before the median."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Use the range to find $e$.",
+                  "working": "Range = $e - a = 7$\n$e - 3 = 7$\n$e = 10$",
+                  "reasoning": "Range is the difference between the largest and smallest values."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Use the mean to find the remaining number $d$.",
+                  "working": "Mean = $\\frac{\\text{Sum}}{5} = 5 \\implies \\text{Sum} = 25$\n$3 + 3 + 4 + d + 10 = 25$\n$20 + d = 25$\n$d = 5$",
+                  "reasoning": "The sum of the data is the mean multiplied by the number of data points."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Verify the order.",
+                  "working": "The numbers are 3, 3, 4, 5, 10. They are in ascending order.",
+                  "reasoning": "Final check to ensure consistency."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Finding Integers from Statistics"
+      },
+      {
         "questionNumber": 5,
         "questionId": "S1-anderson-2024-p1-q5",
         "topicID": "S1",
@@ -114,6 +174,244 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Data Misrepresentation"
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "S1-cchms-2024-p1-q8",
+        "topicID": "S1",
+        "stem": "The table shows the distribution of the weights of 40 students.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $a$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the total frequency given in the problem stem.",
+                  "working": "Total frequency = 40",
+                  "reasoning": "The problem states there are 40 students in total."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up an equation summing the frequencies to the total.",
+                  "working": "$6 + 8 + a + 11 + 3 = 40$",
+                  "reasoning": "The sum of individual frequencies in a distribution must equal the total number of data points."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $a$.",
+                  "working": "$28 + a = 40$\n$a = 40 - 28$\n$a = 12$",
+                  "reasoning": "Simple algebraic manipulation to isolate the unknown variable."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate for\n(i) the mean weight of the students,\n(ii) the standard deviation of the weights.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) 64.25 kg (ii) 11.7 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the mid-value ($x$) for each class interval.",
+                  "working": "Intervals:\n$40 < W \\le 50 \\rightarrow x = 45$\n$50 < W \\le 60 \\rightarrow x = 55$\n$60 < W \\le 70 \\rightarrow x = 65$\n$70 < W \\le 80 \\rightarrow x = 75$\n$80 < W \\le 90 \\rightarrow x = 85$",
+                  "reasoning": "For grouped data, we use the midpoint of the class interval to represent the data values for calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$ for the mean.",
+                  "working": "$\\sum fx = (6 \\times 45) + (8 \\times 55) + (12 \\times 65) + (11 \\times 75) + (3 \\times 85)$\n$= 270 + 440 + 780 + 825 + 255$\n$= 2570$",
+                  "reasoning": "The mean formula is $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the mean.",
+                  "working": "Mean = $\\frac{2570}{40} = 64.25$",
+                  "reasoning": "Divide the sum of products by the total frequency."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate $\\sum fx^2$ for the standard deviation.",
+                  "working": "$\\sum fx^2 = (6 \\times 45^2) + (8 \\times 55^2) + (12 \\times 65^2) + (11 \\times 75^2) + (3 \\times 85^2)$\n$= 12150 + 24200 + 50700 + 61875 + 21675$\n$= 170600$",
+                  "reasoning": "The standard deviation formula is $\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2}$."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate the standard deviation.",
+                  "working": "$\\sigma = \\sqrt{\\frac{170600}{40} - (64.25)^2}$\n$= \\sqrt{4265 - 4128.0625}$\n$= \\sqrt{136.9375}$\n$\\approx 11.702$",
+                  "reasoning": "Substitute values into the formula and calculate. Round to 3 significant figures."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "An error in the weighing machine caused the students' weights to be recorded 2 kg more than their actual values. Explain how the mean and standard deviation will change after the error is rectified.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Mean decreases by 2 kg; Standard deviation remains unchanged.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the relationship between recorded and actual weights.",
+                  "working": "Recorded = Actual + 2\nTherefore, Actual = Recorded - 2",
+                  "reasoning": "Rectifying the error involves subtracting 2 kg from every data point."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the effect on the mean.",
+                  "working": "New Mean = Old Mean - 2\n$64.25 - 2 = 62.25$",
+                  "reasoning": "If a constant $k$ is subtracted from every observation, the mean decreases by $k$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine the effect on the standard deviation.",
+                  "working": "New SD = Old SD",
+                  "reasoning": "Standard deviation measures the spread of data. Adding or subtracting a constant shifts the data but does not change the spread (distance from the mean)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Mean and Standard Deviation",
+        "table": {
+          "type": "data",
+          "headers": [
+            "Weight ($W$ kg)",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$40 < W \\le 50$",
+              "6"
+            ],
+            [
+              "$50 < W \\le 60$",
+              "8"
+            ],
+            [
+              "$60 < W \\le 70$",
+              "$a$"
+            ],
+            [
+              "$70 < W \\le 80$",
+              "11"
+            ],
+            [
+              "$80 < W \\le 90$",
+              "3"
+            ]
+          ]
+        }
+      },
+      {
+        "questionNumber": 13,
+        "questionId": "S1-canberra-2024-p1-q13",
+        "topicID": "S1",
+        "stem": "The following stem-and-leaf diagram shows the scores of students in a math test.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the median score.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "78",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the total number of students ($n$).",
+                  "working": "$n = 2 + 9 + 7 + 3 = 21$",
+                  "reasoning": "Count the total number of leaves."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the position of the median.",
+                  "working": "Position = $\\frac{n+1}{2} = \\frac{21+1}{2} = 11$th value",
+                  "reasoning": "For an odd number of data points, the median is the middle value."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Locate the 11th value in the diagram.",
+                  "working": "Row 6 has 2 leaves.\nRow 7 has 9 leaves.\n$2 + 9 = 11$. The 11th value is the last leaf in row 7.\nValue = 78",
+                  "reasoning": "Count cumulatively from the top stem."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the interquartile range.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "14",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the position of the Lower Quartile ($Q_1$).",
+                  "working": "Position = $\\frac{n+1}{4} = \\frac{22}{4} = 5.5$th value.\nAverage of 5th and 6th values.\n5th value = 73, 6th value = 73.\n$Q_1 = 73$",
+                  "reasoning": "$Q_1$ is the median of the lower half of the data."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the position of the Upper Quartile ($Q_3$).",
+                  "working": "Position = $3 \\times 5.5 = 16.5$th value.\nAverage of 16th and 17th values.\nCumulative count: Row 6 (2) + Row 7 (9) = 11.\nNeed 5th and 6th value in Row 8.\nRow 8 leaves: 3, 4, 5, 6, 7, 7...\n16th value = 87, 17th value = 87.\n$Q_3 = 87$",
+                  "reasoning": "$Q_3$ is the median of the upper half of the data."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate Interquartile Range (IQR).",
+                  "working": "IQR = $Q_3 - Q_1$\nIQR = $87 - 73 = 14$",
+                  "reasoning": "IQR measures the spread of the middle 50% of data."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Stem-and-Leaf Statistics",
+        "table": {
+          "type": "stem-and-leaf",
+          "headers": [
+            "Stem",
+            "Leaf"
+          ],
+          "rows": [
+            [
+              "6",
+              "8 9"
+            ],
+            [
+              "7",
+              "0 2 3 3 4 4 4 7 8"
+            ],
+            [
+              "8",
+              "3 4 5 6 7 7 9"
+            ],
+            [
+              "9",
+              "1 3 7"
+            ]
+          ],
+          "key": "6|8 represents 68 marks"
+        }
       },
       {
         "questionNumber": 20,
@@ -458,6 +756,65 @@
         "title": "Statistics"
       },
       {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2011-p1-q101",
+        "topicID": "S1",
+        "stem": "A group of 10 boys has a mean height of 165 cm and a standard deviation of 5 cm. A group of 15 girls has a mean height of 155 cm and a standard deviation of 4 cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the mean height of all 25 students.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "159 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of heights for the boys.",
+                  "working": "Sum$_{boys} = 10 \\times 165 = 1650$ cm",
+                  "reasoning": "Sum = Mean $\\times$ Number of observations."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the sum of heights for the girls.",
+                  "working": "Sum$_{girls} = 15 \\times 155 = 2325$ cm",
+                  "reasoning": "Sum = Mean $\\times$ Number of observations."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the combined mean.",
+                  "working": "Total Sum = $1650 + 2325 = 3975$\nTotal Students = $10 + 15 = 25$\nCombined Mean = $\\frac{3975}{25} = 159$",
+                  "reasoning": "Combined Mean = (Total Sum of all groups) / (Total Frequency)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why the standard deviation of the combined group is likely to be greater than 5 cm.",
+            "marks": 1,
+            "answerType": "text",
+            "solution": {
+              "finalAnswer": "The means of the two groups are significantly different (165 cm vs 155 cm), which increases the overall spread of the data around the new combined mean.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the individual means to the combined mean.",
+                  "working": "Boys mean (165) is far from Girls mean (155).",
+                  "reasoning": "Standard deviation measures spread. Even though individual groups have low spread (4 and 5), combining two distinct clusters creates a wider range of values relative to the new central average."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Combined Mean and Statistics Logic"
+      },
+      {
         "questionNumber": 102,
         "questionId": "S1-gemini-1911-p1-102",
         "topicID": "S1",
@@ -586,6 +943,65 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Statistics"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S1-gemini-2011-p1-q102",
+        "topicID": "S1",
+        "stem": "The number of books read by a group of 15 students during a holiday is recorded. The results are shown in the dot diagram below.\n\n1 book:  ● ● ●\n2 books: ● ● ● ● ●\n3 books: (x dots)\n4 books: ● ●",
+        "hasDiagram": true,
+        "diagramDescription": "A dot plot where x-axis is number of books. 1 has 3 dots, 2 has 5 dots, 3 has an unknown number of dots x, 4 has 2 dots.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $x$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up an equation using the total frequency.",
+                  "working": "Total students = 15\n$3 + 5 + x + 2 = 15$",
+                  "reasoning": "The sum of the dots equals the total number of students."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $x$.",
+                  "working": "$10 + x = 15$\n$x = 5$",
+                  "reasoning": "Basic algebra."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the mean number of books read.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2.4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of books read ($\\sum fx$).",
+                  "working": "$(1 \\times 3) + (2 \\times 5) + (3 \\times 5) + (4 \\times 2)$\n$= 3 + 10 + 15 + 8$\n$= 36$",
+                  "reasoning": "Multiply each value by its frequency."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide by the total number of students.",
+                  "working": "Mean = $\\frac{36}{15}$\nMean = $2.4$",
+                  "reasoning": "Mean formula $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Dot Diagram Analysis"
       }
     ],
     "Paper 2": [
@@ -701,6 +1117,129 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Statistics"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2011-p2-q101",
+        "topicID": "S1",
+        "stem": "The table below shows the number of hours, $h$, spent on social media per week by 50 teenagers.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that the value of $x$ is 18.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "18",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation for total frequency.",
+                  "working": "$4 + 12 + x + 10 + 6 = 50$",
+                  "reasoning": "The sum of all frequencies must equal the total number of teenagers stated in the stem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $x$.",
+                  "working": "$32 + x = 50$\n$x = 50 - 32$\n$x = 18$",
+                  "reasoning": "Algebraic rearrangement."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate for the mean and standard deviation of the number of hours spent.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Mean = 12.8 hours, SD = 5.81 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify midpoints ($m$) for intervals.",
+                  "working": "2.5, 7.5, 12.5, 17.5, 22.5",
+                  "reasoning": "Midpoints are required for grouped data calculations."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fm$ and Mean.",
+                  "working": "$\\sum fm = 4(2.5) + 12(7.5) + 18(12.5) + 10(17.5) + 6(22.5)$\n$= 10 + 90 + 225 + 175 + 135 = 635$\nMean = $\\frac{635}{50} = 12.7$",
+                  "reasoning": "Mean $\\bar{x} = \\frac{\\sum fm}{\\sum f}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $\\sum fm^2$.",
+                  "working": "$\\sum fm^2 = 4(2.5^2) + 12(7.5^2) + 18(12.5^2) + 10(17.5^2) + 6(22.5^2)$\n$= 25 + 675 + 2812.5 + 3062.5 + 3037.5 = 9612.5$",
+                  "reasoning": "Sum of frequency $\\times$ midpoint squared is needed for SD."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate Standard Deviation.",
+                  "working": "$\\sigma = \\sqrt{\\frac{9612.5}{50} - (12.7)^2}$\n$= \\sqrt{192.25 - 161.29}$\n$= \\sqrt{30.96} \\approx 5.564$",
+                  "reasoning": "Using formula $\\sigma = \\sqrt{\\frac{\\sum fm^2}{\\sum f} - \\bar{x}^2}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "It was found that the actual time spent by each teenager was 10% less than recorded. Calculate the new mean and new standard deviation.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "New Mean = 11.43 hours, New SD = 5.01 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the scaling factor to the mean.",
+                  "working": "New Mean = $12.7 \\times 0.9 = 11.43$",
+                  "reasoning": "If data is multiplied by $k$ (where $k=0.9$ for a 10% decrease), the mean is multiplied by $k$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the scaling factor to the standard deviation.",
+                  "working": "New SD = $5.564 \\times 0.9 \\approx 5.01$",
+                  "reasoning": "If data is multiplied by $k$, the standard deviation is also multiplied by $k$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Grouped Data and Linear Transformation",
+        "table": {
+          "type": "data",
+          "headers": [
+            "Hours ($h$)",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$0 < h \\le 5$",
+              "4"
+            ],
+            [
+              "$5 < h \\le 10$",
+              "12"
+            ],
+            [
+              "$10 < h \\le 15$",
+              "$x$"
+            ],
+            [
+              "$15 < h \\le 20$",
+              "10"
+            ],
+            [
+              "$20 < h \\le 25$",
+              "6"
+            ]
+          ]
+        }
       }
     ]
   }

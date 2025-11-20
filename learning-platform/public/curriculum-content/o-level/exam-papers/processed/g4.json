@@ -68,6 +68,54 @@
         "title": "Trigonometric Equations"
       },
       {
+        "questionNumber": 2,
+        "questionId": "G4-cchms-2024-p1-q2",
+        "topicID": "G4",
+        "stem": "Given that $0 < x < 180$, find the possible values of $x$ for $\\sin x^{\\circ} = 0.985$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Give your answers correct to 1 decimal place.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "80.1°, 99.9°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the basic reference angle ($\\alpha$) by taking the inverse sine of the value.",
+                  "working": "$\\alpha = \\sin^{-1}(0.985) \\approx 80.064^{\\circ}$",
+                  "reasoning": "To solve trigonometric equations, we first find the acute reference angle ignoring any negative signs (though here it is positive)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the quadrants where sine is positive.",
+                  "working": "Since $\\sin x > 0$, $x$ lies in the 1st and 2nd quadrants.",
+                  "reasoning": "Using the ASTC rule, sine is positive in Quadrant 1 ($0$ to $90$) and Quadrant 2 ($90$ to $180$)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the values of $x$ in the respective quadrants.",
+                  "working": "1st Quadrant: $x = 80.064^{\\circ}$\n2nd Quadrant: $x = 180^{\\circ} - 80.064^{\\circ} = 99.936^{\\circ}$",
+                  "reasoning": "In Q1, the angle is the reference angle. In Q2, the angle is $180^{\\circ} - \\text{reference angle}$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round the answers to 1 decimal place as requested.",
+                  "working": "$x \\approx 80.1^{\\circ}$\n$x \\approx 99.9^{\\circ}$",
+                  "reasoning": "Final answers must adhere to the precision specified in the question."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Solving Sine Equation"
+      },
+      {
         "questionNumber": 16,
         "questionId": "G4-anderson-2024-p1-q16",
         "topicID": "G4",
@@ -187,6 +235,54 @@
         "title": "Trigonometric Values"
       },
       {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2011-p1-q101",
+        "topicID": "G4",
+        "stem": "Solve the equation $2 \\cos x^{\\circ} + 1 = 0$ for $0 \\le x \\le 360$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Give your answers correct to 1 decimal place.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "120.0°, 240.0°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Rearrange the equation to make $\\cos x$ the subject.",
+                  "working": "$2 \\cos x = -1$\n$\\cos x = -0.5$",
+                  "reasoning": "Isolate the trigonometric ratio to determine the value and sign."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the basic reference angle ($\\alpha$) ignoring the negative sign.",
+                  "working": "$\\alpha = \\cos^{-1}(0.5) = 60^{\\circ}$",
+                  "reasoning": "The reference angle is always acute and positive."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify the quadrants where cosine is negative.",
+                  "working": "Since $\\cos x < 0$, $x$ lies in the 2nd and 3rd quadrants.",
+                  "reasoning": "ASTC Rule: Cosine is negative in Q2 and Q3."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate $x$ for the specific quadrants.",
+                  "working": "2nd Quadrant: $180^{\\circ} - 60^{\\circ} = 120^{\\circ}$\n3rd Quadrant: $180^{\\circ} + 60^{\\circ} = 240^{\\circ}$",
+                  "reasoning": "Apply quadrant rules: Q2 ($180-\\alpha$) and Q3 ($180+\\alpha$)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Solving Cosine Equation"
+      },
+      {
         "questionNumber": 102,
         "questionId": "G4-gemini-1911-p1-102",
         "topicID": "G4",
@@ -250,6 +346,54 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Trigonometric Angles"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G4-gemini-2011-p1-q102",
+        "topicID": "G4",
+        "stem": "Given that $\\tan x^{\\circ} = 2.5$, find the values of $x$ in the range $0 \\le x \\le 360$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Give your answers correct to 1 decimal place.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "68.2°, 248.2°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the basic reference angle.",
+                  "working": "$\\alpha = \\tan^{-1}(2.5) \\approx 68.199^{\\circ}$",
+                  "reasoning": "Calculate the acute angle associated with the value 2.5."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the quadrants where tangent is positive.",
+                  "working": "Since $\\tan x > 0$, $x$ is in the 1st and 3rd quadrants.",
+                  "reasoning": "ASTC Rule: Tangent is positive in Q1 and Q3."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the angles.",
+                  "working": "1st Quadrant: $68.199^{\\circ}$\n3rd Quadrant: $180^{\\circ} + 68.199^{\\circ} = 248.199^{\\circ}$",
+                  "reasoning": "Apply quadrant rules: Q1 ($\\alpha$) and Q3 ($180+\\alpha$)."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to 1 decimal place.",
+                  "working": "$x = 68.2^{\\circ}, 248.2^{\\circ}$",
+                  "reasoning": "Standard O-Level rounding for angles in degrees."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Solving Tangent Equation"
       }
     ],
     "Paper 2": [
@@ -393,6 +537,102 @@
         "totalMarks": 10,
         "paper": "Paper 2",
         "title": "Bearings Trigonometry Distance"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2011-p2-q101",
+        "topicID": "G4",
+        "stem": "Find the values of $x$ for which $3 \\sin x^{\\circ} = -2$ in the range $0 \\le x \\le 360$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Give your answers correct to 1 decimal place.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "221.8°, 318.2°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Isolate $\\sin x$.",
+                  "working": "$\\sin x = -\\frac{2}{3}$",
+                  "reasoning": "Divide both sides by 3 to get the trigonometric ratio."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the reference angle ($\\alpha$) using the positive value.",
+                  "working": "$\\alpha = \\sin^{-1}(\\frac{2}{3}) \\approx 41.81^{\\circ}$",
+                  "reasoning": "Always use the positive magnitude to find the reference angle."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine the quadrants.",
+                  "working": "Since $\\sin x$ is negative, $x$ is in the 3rd and 4th quadrants.",
+                  "reasoning": "ASTC Rule: Sine is negative in Q3 and Q4."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $x$ and round.",
+                  "working": "3rd Quadrant: $180^{\\circ} + 41.81^{\\circ} = 221.81^{\\circ} \\approx 221.8^{\\circ}$\n4th Quadrant: $360^{\\circ} - 41.81^{\\circ} = 318.19^{\\circ} \\approx 318.2^{\\circ}$",
+                  "reasoning": "Apply rules: Q3 ($180+\\alpha$) and Q4 ($360-\\alpha$)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Negative Sine Equation"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G4-gemini-2011-p2-q102",
+        "topicID": "G4",
+        "stem": "Solve the equation $5 \\cos x^{\\circ} - 3 = 0$ for $0 \\le x \\le 360$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Give your answers correct to 1 decimal place.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "53.1°, 306.9°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Rearrange to find $\\cos x$.",
+                  "working": "$5 \\cos x = 3$\n$\\cos x = \\frac{3}{5} = 0.6$",
+                  "reasoning": "Isolate the cosine term."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the reference angle.",
+                  "working": "$\\alpha = \\cos^{-1}(0.6) \\approx 53.13^{\\circ}$",
+                  "reasoning": "Calculate inverse cosine of 0.6."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify quadrants.",
+                  "working": "Since $\\cos x$ is positive, $x$ is in the 1st and 4th quadrants.",
+                  "reasoning": "ASTC Rule: Cosine is positive in Q1 and Q4."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate final angles.",
+                  "working": "1st Quadrant: $53.13^{\\circ} \\approx 53.1^{\\circ}$\n4th Quadrant: $360^{\\circ} - 53.13^{\\circ} = 306.87^{\\circ} \\approx 306.9^{\\circ}$",
+                  "reasoning": "Apply rules: Q1 ($\\alpha$) and Q4 ($360-\\alpha$)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Positive Cosine Equation"
       }
     ]
   }

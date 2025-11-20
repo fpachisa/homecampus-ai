@@ -62,6 +62,96 @@
         "title": "Ratio of Line Segments"
       },
       {
+        "questionNumber": 1,
+        "questionId": "N2-cchms-2024-p1-q1",
+        "topicID": "N2",
+        "stem": "The length of a court is 0.028 km and the width of the court is 16 m.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express the ratio of the length to the width of the court in its simplest form.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7 : 4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the length from kilometers to meters to ensure both dimensions use the same unit.",
+                  "working": "Length = $0.028 \\text{ km} \\times 1000 = 28 \\text{ m}$",
+                  "reasoning": "Ratios must compare quantities of the same unit."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the ratio of length to width.",
+                  "working": "Ratio = $28 : 16$",
+                  "reasoning": "Place the values in the order requested (length to width)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the ratio by dividing both numbers by their greatest common divisor (4).",
+                  "working": "$\\frac{28}{4} : \\frac{16}{4} = 7 : 4$",
+                  "reasoning": "A ratio in simplest form contains integers with no common factors other than 1."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 1,
+        "paper": "Paper 1",
+        "title": "Ratio of Court Dimensions"
+      },
+      {
+        "questionNumber": 2,
+        "questionId": "N2-canberra-2024-p1-q2",
+        "topicID": "N2",
+        "stem": "Ahmad, Simon and Bala share a sum of money in the ratio 3 : 2 : 5. If Bala has $900 more than Simon, what is the sum of money being shared by the three of them?",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the total sum of money.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$3000",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the ratio units for Simon and Bala.",
+                  "working": "Ratio of Simon : Bala = 2 : 5",
+                  "reasoning": "We need to compare the specific parts of the ratio mentioned in the condition."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the difference in units between Bala and Simon.",
+                  "working": "Difference = 5 - 2 = 3 units",
+                  "reasoning": "The problem states Bala has $900 more, which corresponds to this difference in units."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the value of 1 unit.",
+                  "working": "3 units = $900\n1 unit = $900 ÷ 3 = $300",
+                  "reasoning": "Unitary method allows us to find the value of a single part of the ratio."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the total number of units and the total sum.",
+                  "working": "Total units = 3 + 2 + 5 = 10 units\nTotal Sum = 10 × $300 = $3000",
+                  "reasoning": "Multiplying the value of one unit by the sum of all ratio parts gives the total amount."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Ratio Word Problem"
+      },
+      {
         "questionNumber": 5,
         "questionId": "N2-broadrick-2024-p1-q5",
         "topicID": "N2",
@@ -192,6 +282,54 @@
         "title": "Sound Inverse Square"
       },
       {
+        "questionNumber": 9,
+        "questionId": "N2-cchms-2024-p1-q9",
+        "topicID": "N2",
+        "stem": "Andy bought a limited-edition watch from an online website based in Thailand for 10 460 baht. Andy also paid \\$15 in Singapore dollars for shipping and GST of 9% on the cost of the watch. The exchange rate between Thai baht ($\\mathbb{B}$) and Singapore dollars (S\\$) was $\\mathbb{B}100$ = S\\$P. Andy spent a total of \\$436 in Singapore dollars.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $P$, giving your answer correct to 3 significant figures.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3.69",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Formulate an equation for the total cost in SGD. Let $C$ be the cost of the watch in SGD.",
+                  "working": "Total Cost = (Cost of watch) + (GST on watch) + (Shipping)\n436 = C + 0.09C + 15",
+                  "reasoning": "The total amount spent includes the converted cost of the watch, the tax on that cost, and the fixed shipping fee."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $C$ (the cost of the watch in SGD).",
+                  "working": "436 - 15 = 1.09C\n421 = 1.09C\n$C = \\frac{421}{1.09} \\approx 386.2385...$",
+                  "reasoning": "Isolate the variable representing the watch cost to find its value in local currency."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Use the exchange rate relationship to find $P$. The cost in Baht is 10 460.",
+                  "working": "Rate: $\\mathbb{B}100 = S\\$P$\nRatio: $\\frac{10460}{100} = \\frac{386.2385}{P}$\n$104.6 = \\frac{386.2385}{P}$",
+                  "reasoning": "Set up a proportion comparing the Baht amount to the SGD amount using the given exchange rate unit."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $P$ and round to 3 significant figures.",
+                  "working": "$P = \\frac{386.2385}{104.6}$\n$P = 3.69252...$\n$P \\approx 3.69$",
+                  "reasoning": "Calculate the final value and apply the specified rounding precision."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Currency Exchange Calculation"
+      },
+      {
         "questionNumber": 10,
         "questionId": "N2-acsi-2024-p1-q10",
         "topicID": "N2",
@@ -292,6 +430,213 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Work Word Problem"
+      },
+      {
+        "questionNumber": 18,
+        "questionId": "N2-canberra-2024-p1-q18",
+        "topicID": "N2",
+        "stem": "A length of 5 cm on a map represents an actual distance of 2.5 km.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the actual distance represented by 20 cm on the map, giving your answer in km.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "10 km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the scale factor between the map lengths.",
+                  "working": "Scale factor = $\\frac{20}{5} = 4$",
+                  "reasoning": "The new map length is 4 times the original reference length."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the actual distance by the scale factor.",
+                  "working": "Actual distance = $2.5 \\text{ km} \\times 4 = 10 \\text{ km}$",
+                  "reasoning": "Since map length is directly proportional to actual distance."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the scale of the map in the form 1 : n.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1 : 50 000",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the scale as a ratio of Map Distance to Actual Distance.",
+                  "working": "5 cm : 2.5 km",
+                  "reasoning": "Start with the given values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert the actual distance to the same unit (cm).",
+                  "working": "$2.5 \\text{ km} = 2.5 \\times 1000 \\text{ m} = 2500 \\text{ m}$\n$2500 \\text{ m} = 2500 \\times 100 \\text{ cm} = 250,000 \\text{ cm}$",
+                  "reasoning": "Ratios must compare quantities of the same unit."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the ratio to the form 1 : n.",
+                  "working": "5 : 250,000\nDivide by 5: $1 : 50,000$",
+                  "reasoning": "Divide both sides by the map value to get unity on the left."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the land area in $km^{2}$, which is represented by $30~cm^{2}$ on the map.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7.5 $km^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the linear scale in terms of 1 cm.",
+                  "working": "5 cm represents 2.5 km\n1 cm represents $\\frac{2.5}{5} = 0.5$ km",
+                  "reasoning": "Establish the relationship for linear distance first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Square the linear scale to find the area scale.",
+                  "working": "$(1 \\text{ cm})^2 \\text{ represents } (0.5 \\text{ km})^2$\n$1 \\text{ cm}^2 \\text{ represents } 0.25 \\text{ km}^2$",
+                  "reasoning": "The ratio of areas is the square of the ratio of corresponding lengths."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the actual area for $30 \\text{ cm}^2$.",
+                  "working": "Area = $30 \\times 0.25 = 7.5 \\text{ km}^2$",
+                  "reasoning": "Multiply the map area by the area conversion factor."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Map Scale and Area"
+      },
+      {
+        "questionNumber": 20,
+        "questionId": "N2-cchms-2024-p1-q20",
+        "topicID": "N2",
+        "stem": "It is given that $y$ is inversely proportional to the square root of $x$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the percentage change in $x$ when the value of $y$ decreases by 50%.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "300%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the algebraic equation connecting $x$ and $y$.",
+                  "working": "$y = \\frac{k}{\\sqrt{x}}$ where $k$ is a constant.",
+                  "reasoning": "Inverse proportionality implies $y \\times \\sqrt{x} = k$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the new value of $y$ and set up the equation for the new $x$.",
+                  "working": "New $y$ ($y_{new}$) = $0.5y$ (since it decreased by 50%).\n$0.5y = \\frac{k}{\\sqrt{x_{new}}}$",
+                  "reasoning": "A 50% decrease means the new value is 50% (or 0.5) of the original."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute the original expression for $y$ into the new equation to compare $x_{new}$ and $x$.",
+                  "working": "$0.5(\\frac{k}{\\sqrt{x}}) = \\frac{k}{\\sqrt{x_{new}}}$\n$\\frac{1}{2\\sqrt{x}} = \\frac{1}{\\sqrt{x_{new}}}$\n$\\sqrt{x_{new}} = 2\\sqrt{x}$",
+                  "reasoning": "Cancel the constant $k$ to find the relationship between the old and new $x$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Square both sides to find $x_{new}$ and calculate percentage change.",
+                  "working": "$x_{new} = (2\\sqrt{x})^2 = 4x$\nChange = $4x - x = 3x$\nPercentage Change = $\\frac{3x}{x} \\times 100\\% = 300\\%$",
+                  "reasoning": "If the new value is 4 times the original, the increase is 3 times the original, which is 300%."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Inverse Proportion Percentage"
+      },
+      {
+        "questionNumber": 21,
+        "questionId": "N2-canberra-2024-p1-q21",
+        "topicID": "N2",
+        "stem": "12 men will take 54 days to complete a building project.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Assuming that the men work at the same rate, how long will it take for 9 men to complete the project?",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "72 days",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the relationship as inverse proportion.",
+                  "working": "Total man-days required = $12 \\times 54 = 648$ man-days",
+                  "reasoning": "Fewer men will take more time, so the product of men and days is constant."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the days required for 9 men.",
+                  "working": "Days = $\\frac{648}{9} = 72$ days",
+                  "reasoning": "Divide the total effort (constant) by the new number of workers."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "How many days can be saved if 6 more men are added to the team?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "18 days",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the new total number of men.",
+                  "working": "New number of men = $12 + 6 = 18$ men",
+                  "reasoning": "Add the additional men to the original workforce."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the time taken by 18 men.",
+                  "working": "Time taken = $\\frac{12 \\times 54}{18} = \\frac{648}{18} = 36$ days",
+                  "reasoning": "Use the inverse proportion constant calculated previously."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the days saved.",
+                  "working": "Days saved = $54 - 36 = 18$ days",
+                  "reasoning": "Subtract the new duration from the original duration."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Inverse Proportion Workers"
       },
       {
         "questionNumber": 22,
@@ -454,6 +799,48 @@
         "title": "Map Scales Conversion"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2011-p1-q101",
+        "topicID": "N2",
+        "stem": "A map is drawn to a scale of $1 : 20\\,000$. A forest reserve has an actual area of $3.2 \\text{ km}^2$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the area of the forest reserve on the map in square centimetres ($\\text{cm}^2$).",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "80",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the linear scale to units involving km and cm.",
+                  "working": "$1 \\text{ cm} : 20\\,000 \\text{ cm}$\n$1 \\text{ cm} : 0.2 \\text{ km}$",
+                  "reasoning": "Since actual area is in km, convert the map scale so 1 cm represents km. $20\\,000 \\div 100\\,000 = 0.2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Square the linear scale to find the area scale.",
+                  "working": "$(1 \\text{ cm})^2 : (0.2 \\text{ km})^2$\n$1 \\text{ cm}^2 : 0.04 \\text{ km}^2$",
+                  "reasoning": "The ratio of areas is the square of the ratio of corresponding lengths."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the map area using the area scale.",
+                  "working": "Map Area = $\\frac{3.2}{0.04}$\nMap Area = $80 \\text{ cm}^2$",
+                  "reasoning": "Divide the actual area by the area represented by $1 \\text{ cm}^2$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Map Scale and Area"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N2-gemini-1911-p1-102",
         "topicID": "N2",
@@ -561,6 +948,48 @@
         "title": "Finding Map Scale"
       },
       {
+        "questionNumber": 102,
+        "questionId": "N2-gemini-2011-p1-q102",
+        "topicID": "N2",
+        "stem": "Ali invests $8000 in a savings account for 2 years. The bank offers compound interest at a rate of 3.5% per annum, compounded annually.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the total interest earned at the end of 2 years.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "569.80",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total amount using the compound interest formula.",
+                  "working": "$A = P(1 + \\frac{r}{100})^n$\n$A = 8000(1 + \\frac{3.5}{100})^2$\n$A = 8000(1.035)^2$",
+                  "reasoning": "Use the standard formula for annual compounding where n is the number of years."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compute the value of A.",
+                  "working": "$A = 8000(1.071225) = 8569.80$",
+                  "reasoning": "Find the total value of the investment after 2 years."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Subtract the principal to find the interest earned.",
+                  "working": "Interest = $8569.80 - 8000 = 569.80$",
+                  "reasoning": "Interest is the difference between the final amount and the initial investment."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Compound Interest Calculation"
+      },
+      {
         "questionNumber": 103,
         "questionId": "N2-gemini-1911-p2-103",
         "topicID": "N2",
@@ -607,6 +1036,54 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Rate of Work"
+      },
+      {
+        "questionNumber": 103,
+        "questionId": "N2-gemini-2011-p1-q103",
+        "topicID": "N2",
+        "stem": "It is given that $p$ is directly proportional to the cube of $q$. When $q=2$, $p=24$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $p$ when $q=3$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "81",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation of proportionality involving a constant $k$.",
+                  "working": "$p = k q^3$",
+                  "reasoning": "Direct proportionality to the cube means $p$ equals a constant times $q$ cubed."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the given values to find $k$.",
+                  "working": "$24 = k(2)^3$\n$24 = 8k$\n$k = 3$",
+                  "reasoning": "Use the initial condition to solve for the constant of proportionality."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute the new value of $q$ into the equation to find $p$.",
+                  "working": "$p = 3(3)^3$\n$p = 3(27)$",
+                  "reasoning": "Use the specific equation $p = 3q^3$ to find the unknown value."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the final answer.",
+                  "working": "$p = 81$",
+                  "reasoning": "Perform the multiplication."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Direct Proportion with Cubes"
       }
     ],
     "Paper 2": [
@@ -668,6 +1145,71 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Floor Plan Scales"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2011-p2-q101",
+        "topicID": "N2",
+        "stem": "The variable $y$ is inversely proportional to the square of $x$. It is given that $y = 2$ when $x = 4$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find an equation connecting $x$ and $y$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$y = \\frac{32}{x^2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the general proportionality relationship.",
+                  "working": "$y = \\frac{k}{x^2}$",
+                  "reasoning": "Inverse proportion to the square means $y \\times x^2$ is constant."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute given values to find constant $k$.",
+                  "working": "$2 = \\frac{k}{4^2}$\n$k = 2 \\times 16 = 32$",
+                  "reasoning": "Solve for the constant of proportionality."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final equation.",
+                  "working": "$y = \\frac{32}{x^2}$",
+                  "reasoning": "Substitute $k$ back into the general equation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the value of $y$ when $x = 8$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute the new $x$ value into the equation.",
+                  "working": "$y = \\frac{32}{8^2}$",
+                  "reasoning": "Use the formula derived in part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate.",
+                  "working": "$y = \\frac{32}{64} = 0.5$",
+                  "reasoning": "Simplify the fraction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Algebraic Inverse Proportion"
       }
     ]
   }

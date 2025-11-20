@@ -77,7 +77,7 @@
         ],
         "totalMarks": 5,
         "paper": "Paper 1",
-        "title": "Mensuration"
+        "title": "Cylinder Hemisphere Volume Ratio"
       },
       {
         "questionNumber": 101,
@@ -136,7 +136,7 @@
         ],
         "totalMarks": 3,
         "paper": "Paper 1",
-        "title": "Mensuration"
+        "title": "Similar Cones Volume Ratio"
       },
       {
         "questionNumber": 102,
@@ -178,7 +178,7 @@
         ],
         "totalMarks": 3,
         "paper": "Paper 1",
-        "title": "Mensuration"
+        "title": "Cone to Sphere Recast"
       }
     ],
     "Paper 2": [
@@ -416,7 +416,7 @@
         ],
         "totalMarks": 6,
         "paper": "Paper 2",
-        "title": "Mensuration"
+        "title": "Composite Hemisphere Cylinder Solid"
       }
     ]
   }

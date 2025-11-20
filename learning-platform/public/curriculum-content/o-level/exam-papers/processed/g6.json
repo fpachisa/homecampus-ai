@@ -3,6 +3,60 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 10,
+        "questionId": "G6-cchms-2024-p1-q10",
+        "topicID": "G6",
+        "stem": "The gradient of the line joining the points $(-3+2a, 7)$ and $(a+1, 2)$ is $-\\frac{2}{3}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $a$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "a = -3.5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Recall the formula for the gradient $m$ between two points $(x_1, y_1)$ and $(x_2, y_2)$.",
+                  "working": "$m = \\frac{y_2 - y_1}{x_2 - x_1}$",
+                  "reasoning": "To find the unknown coordinate, we must set up an equation using the gradient formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the given coordinates and the gradient value into the formula.",
+                  "working": "$-\\frac{2}{3} = \\frac{2 - 7}{(a+1) - (-3+2a)}$",
+                  "reasoning": "Substitute $x_1 = -3+2a$, $y_1 = 7$, $x_2 = a+1$, and $y_2 = 2$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the numerator and the denominator.",
+                  "working": "$-\\frac{2}{3} = \\frac{-5}{a + 1 + 3 - 2a}$\n$-\\frac{2}{3} = \\frac{-5}{4 - a}$",
+                  "reasoning": "Be careful with the negative sign when expanding the denominator: $-( -3 + 2a ) = +3 - 2a$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Cross-multiply to solve for $a$.",
+                  "working": "$-2(4 - a) = 3(-5)$\n$-8 + 2a = -15$",
+                  "reasoning": "Remove the fractions to form a linear equation."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Isolate $a$ to find the final value.",
+                  "working": "$2a = -15 + 8$\n$2a = -7$\n$a = -3.5$",
+                  "reasoning": "Solve the linear equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Gradient Between Two Points"
+      },
+      {
         "questionNumber": 15,
         "questionId": "G6-acsi-2024-p1-q15",
         "topicID": "G6",
@@ -246,6 +300,48 @@
         "title": "Distance between Points"
       },
       {
+        "questionNumber": 101,
+        "questionId": "G6-gemini-2011-p1-q101",
+        "topicID": "G6",
+        "stem": "Two points have coordinates $A(k, 3)$ and $B(2k-1, -5)$. The gradient of the line segment $AB$ is $4$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "k = -1",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the gradient equation using $m = \\frac{y_2 - y_1}{x_2 - x_1}$.",
+                  "working": "$4 = \\frac{-5 - 3}{(2k - 1) - k}$",
+                  "reasoning": "Substitute the coordinates of A and B into the gradient formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the fraction.",
+                  "working": "$4 = \\frac{-8}{k - 1}$",
+                  "reasoning": "Simplify the numerator $(-8)$ and denominator $(2k - 1 - k = k - 1)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $k$.",
+                  "working": "$4(k - 1) = -8$\n$4k - 4 = -8$\n$4k = -4$\n$k = -1$",
+                  "reasoning": "Multiply both sides by $(k-1)$ and solve the linear equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Finding Unknown Coordinate Given Gradient"
+      },
+      {
         "questionNumber": 102,
         "questionId": "G6-gemini-1911-p1-102",
         "topicID": "G6",
@@ -286,8 +382,99 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Gradient of a Line"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G6-gemini-2011-p1-q102",
+        "topicID": "G6",
+        "stem": "The points $P(-2, 1)$, $Q(1, h)$, and $R(4, 5)$ lie on a straight line.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $h$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "h = 3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Understand the property of collinear points.",
+                  "working": "Gradient of $PQ$ = Gradient of $QR$",
+                  "reasoning": "If three points are on the same straight line, the gradient between any pair of points must be equal."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation equating the gradients.",
+                  "working": "$\\frac{h - 1}{1 - (-2)} = \\frac{5 - h}{4 - 1}$",
+                  "reasoning": "Calculate the gradient for segment PQ and segment QR."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify and solve for $h$.",
+                  "working": "$\\frac{h - 1}{3} = \\frac{5 - h}{3}$\n$h - 1 = 5 - h$\n$2h = 6$\n$h = 3$",
+                  "reasoning": "Since denominators are equal, equate the numerators and solve."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Collinear Points"
       }
     ],
-    "Paper 2": []
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "G6-gemini-2011-p2-q101",
+        "topicID": "G6",
+        "stem": "A line connects point $A(3, p)$ and point $B(p, 9)$. This line is parallel to the line with equation $2y + x = 5$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $p$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "p = 15",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the gradient of the given line equation.",
+                  "working": "$2y + x = 5$\n$2y = -x + 5$\n$y = -\\frac{1}{2}x + \\frac{5}{2}$\nGradient = $-\\frac{1}{2}$",
+                  "reasoning": "Rearrange the equation into the form $y = mx + c$ to identify the gradient $m$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the gradient expression for line segment $AB$.",
+                  "working": "$m_{AB} = \\frac{9 - p}{p - 3}$",
+                  "reasoning": "Use the gradient formula with points $(3, p)$ and $(p, 9)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the gradients and solve for $p$.",
+                  "working": "$\\frac{9 - p}{p - 3} = -\\frac{1}{2}$\n$2(9 - p) = -1(p - 3)$\n$18 - 2p = -p + 3$",
+                  "reasoning": "Parallel lines have equal gradients. Cross-multiply to solve."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Final algebraic manipulation.",
+                  "working": "$18 - 3 = 2p - p$\n$15 = p$",
+                  "reasoning": "Rearrange terms to isolate $p$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Gradient of Parallel Lines"
+      }
+    ]
   }
 }

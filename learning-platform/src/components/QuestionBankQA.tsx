@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 import MathText from './MathText';
 import { MathToolRenderer } from './practice/MathToolRenderer';
 import { TableRenderer } from './practice/TableRenderer';
+import { QuestionTable } from './tables';
+import type { QuestionTable as QuestionTableType } from '../types/examQuestions';
 
 // ============================================
 // TYPE DEFINITIONS
@@ -38,6 +40,7 @@ interface Question {
   topicId: string;
   paper: string;
   stem: string;
+  table?: QuestionTableType;
   hasDiagram: boolean;
   diagram: any;
   parts: QuestionPart[];
@@ -314,6 +317,13 @@ export default function QuestionBankQA() {
               {currentQuestion.stem && (
                 <div className="text-gray-800 text-lg leading-relaxed mb-6">
                   <MathText>{currentQuestion.stem}</MathText>
+                </div>
+              )}
+
+              {/* Structured Table - NEW */}
+              {currentQuestion.table && (
+                <div className="mb-6">
+                  <QuestionTable table={currentQuestion.table} />
                 </div>
               )}
 

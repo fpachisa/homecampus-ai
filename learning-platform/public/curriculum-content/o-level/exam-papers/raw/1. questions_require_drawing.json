@@ -1,7 +1,7 @@
 {
     "note": "Questions requiring drawing input are stored here separately. These questions will be re-enabled when the application supports drawing capabilities.",
     "source": "anderson-2024-paper-1-2",
-    "totalFilteredQuestions": 5,
+    "totalFilteredQuestions": 10,
     "questions": [
         {
             "questionNumber": 9,
@@ -149,6 +149,143 @@
             "totalMarks": 10,
             "paper": "Paper 2",
             "title": "Graphs of Functions"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "N8-cchms-2024-p1-q17",
+            "topicID": "N8",
+            "stem": "$\\epsilon = \\{ \\text{integer } x : 0 < x < 12 \\}$\n$A = \\{ \\text{prime numbers} \\}$\n$B = \\{ \\text{numbers that have at least 2 distinct factors} \\}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Explain why A is a proper subset of B without listing down the elements.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Draw a Venn diagram and list down the elements to illustrate the above information.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Sets and Venn Diagrams"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "N6-cchms-2024-p1-q19",
+            "topicID": "N6",
+            "stem": null,
+            "hasDiagram": true,
+            "diagramDescription": "Blank Cartesian axes with y-axis vertical and x-axis horizontal.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Sketch the graph of $y=(2+x)(x-6)$ on the axes below. Indicate clearly the values where the graph crosses the axes and write down the equation of the line of symmetry.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Sketching Quadratic Graph"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N6-cchms-2024-p2-q5",
+            "topicID": "N6",
+            "stem": "(a) Complete the table of values for $y=\\frac{2}{x^{2}}-2x$. Values are given to one decimal place where appropriate.\n\n| x | -3 | -2 | -1 | -0.5 | -0.4 | 0.5 | 1 | 2 | 3 |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| y | | 4.5 | 4 | 9 | 13.3 | 7 | 0 | -3.5 | -5.8 |",
+            "hasDiagram": true,
+            "diagramDescription": "Blank grid with x and y axes for plotting the graph.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of values.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid opposite, draw the graph of $y=\\frac{2}{x^{2}}-2x$ for $-3\\le x\\le3$.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "(i) On the same grid, draw the graph of $y+x=6$ for $-3\\le x\\le3$.\n(ii) Write down the x-coordinates of the points where the line intersects the curve.\n(iii) These values of x are solutions of the equation $x^{3}+Ax^{2}+B=0$. Find the value of A and of B.",
+                    "marks": 6,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Plotting Rational Functions"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N8-canberra-2024-p1-q5",
+            "topicID": "N8",
+            "stem": null,
+            "hasDiagram": true,
+            "diagramDescription": "Two intersecting circles labelled A and B within a rectangle labeled with the universal set symbol.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "On the Venn diagram, shade the region that represents $A^{\\prime}\\cup B$.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Use set notation to describe the shaded region. [Note: Diagram shows a shaded annulus-like region where the intersection of A and B is unshaded, and the region outside A is unshaded, implying the shaded part is $A \\cap B'$ or similar depending on interpretation of the specific diagram provided in the paper, but based on standard questions it asks to describe a given shaded region]",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Venn Diagram Shading"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N6-canberra-2024-p2-q7",
+            "topicID": "N6",
+            "stem": "(a) Complete the table of values for $y=\\frac{x^{3}}{4}-2x+1.$\n\n| x | -3 | -2 | -1 | 0 | 1 | 2 | 3 |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| y | 0.25 | 3 | 2.75 | 1 | -0.75 | | 1.75 |",
+            "hasDiagram": true,
+            "diagramDescription": "Grid for plotting graph.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of values.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid opposite, draw the graph of $y=\\frac{x^{3}}{4}-2x+1$ for $-3\\le x\\le3$.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Explain how your graph shows that there is only one solution of the equation $\\frac{x^{3}}{4}-2x+1=k$ for some values of k.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The equation $x^{3}-9x-4=0$ can be solved by drawing a suitable straight line on the grid. (i) Find the equation of the straight line. (ii) By drawing this straight line, solve the equation $x^{3}-9x-4=0$.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Cubic Graph and Equation"
         }
     ]
 }

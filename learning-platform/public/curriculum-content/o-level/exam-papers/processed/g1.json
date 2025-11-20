@@ -1,8 +1,145 @@
 {
   "topicId": "G1",
   "questions": {
-    "Paper 1": [],
-    "Paper 2": [      
+    "Paper 1": [
+      {
+        "questionNumber": 11,
+        "questionId": "G1-canberra-2024-p1-q11",
+        "topicID": "G1",
+        "stem": "The angles of a quadrilateral taken in order are $3x$, $6x$, $5x$ and $4x$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $x$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 20",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the property of the sum of angles in a quadrilateral.",
+                  "working": "Sum of angles = $360^\\circ$",
+                  "reasoning": "The sum of the interior angles of a quadrilateral is always $360^\\circ$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation summing the given angles to 360.",
+                  "working": "$3x + 6x + 5x + 4x = 360$",
+                  "reasoning": "Summing the algebraic terms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $x$.",
+                  "working": "$18x = 360$\n$x = \\frac{360}{18}$\n$x = 20$",
+                  "reasoning": "Basic algebraic simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain whether the quadrilateral is a parallelogram or a trapezium.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The quadrilateral is a trapezium.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the actual values of the four angles using $x=20$.",
+                  "working": "$3(20) = 60^\\circ$\n$6(20) = 120^\\circ$\n$5(20) = 100^\\circ$\n$4(20) = 80^\\circ$\nThe angles in order are $60^\\circ, 120^\\circ, 100^\\circ, 80^\\circ$.",
+                  "reasoning": "To check geometric properties, we need the numerical values of the angles."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Check for properties of a parallelogram (opposite angles equal).",
+                  "working": "Opposite angles: $60^\\circ$ and $100^\\circ$; $120^\\circ$ and $80^\\circ$.\nSince $60 \\neq 100$, it is not a parallelogram.",
+                  "reasoning": "In a parallelogram, opposite angles must be equal."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Check for properties of a trapezium (one pair of parallel sides).",
+                  "working": "Check sum of interior angles between lines:\n$60^\\circ + 120^\\circ = 180^\\circ$\nSince the interior angles sum to $180^\\circ$, these two lines are parallel.",
+                  "reasoning": "If interior angles on the same side of a transversal sum to $180^\\circ$, the lines are parallel. A quadrilateral with at least one pair of parallel sides is a trapezium."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Quadrilateral Angles"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G1-gemini-2011-p1-q101",
+        "topicID": "G1",
+        "stem": "The exterior angles of a pentagon are $x$, $2x$, $2x$, $3x$ and $4x$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $x$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "x = 30",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "State the sum of exterior angles of a polygon.",
+                  "working": "Sum of exterior angles = $360^\\circ$",
+                  "reasoning": "Regardless of the number of sides, the exterior angles of a convex polygon always sum to $360^\\circ$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation and solve for $x$.",
+                  "working": "$x + 2x + 2x + 3x + 4x = 360$\n$12x = 360$\n$x = 30$",
+                  "reasoning": "Combine like terms and divide."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the size of the smallest interior angle.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "60^\\circ",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the relationship between interior and exterior angles.",
+                  "working": "Interior Angle + Exterior Angle = $180^\\circ$. To find the smallest interior angle, we must find the largest exterior angle.",
+                  "reasoning": "The larger the exterior angle, the smaller the corresponding interior angle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the largest exterior angle.",
+                  "working": "Largest exterior angle is $4x$.\n$4(30) = 120^\\circ$",
+                  "reasoning": "Substitute $x=30$ into the largest term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the smallest interior angle.",
+                  "working": "$180^\\circ - 120^\\circ = 60^\\circ$",
+                  "reasoning": "Subtract the exterior angle from $180^\\circ$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Pentagon Exterior Angles"
+      }
+    ],
+    "Paper 2": [
       {
         "questionNumber": 36,
         "questionId": "G1-anderson-2024-p2-q36",
@@ -22,7 +159,6 @@
             "questionText": "Find, in terms of $\\mathbf{a}$ and $\\mathbf{b}$, $\\vec{CD}$.",
             "marks": 1,
             "answerType": "algebraic",
-
             "solution": {
               "finalAnswer": "$\\frac{2}{5}\\mathbf{b}$",
               "stepByStep": [
@@ -53,41 +189,40 @@
             "marks": 3,
             "answerType": "algebraic",
             "solution": {
-                "finalAnswer": "$\\frac{2}{5}\\mathbf{b} - \\frac{2}{3}\\mathbf{a}$",
-                "stepByStep": [
-                  {
-                    "step": 1,
-                    "explanation": "Find the vector OD using the triangle rule in $\\triangle OCD$.",
-                    "working": "$\\vec{OD} = \\vec{OC} + \\vec{CD}$\nSubstitute the known values ($\\vec{OC} = \\mathbf{a}$ and $\\vec{CD} = \\frac{2}{5}\\mathbf{b}$ from part i):\n$\\vec{OD} = \\mathbf{a} + \\frac{2}{5}\\mathbf{b}$",
-                    "reasoning": "Vector addition."
-                  },
-                  {
-                    "step": 2,
-                    "explanation": "Use the Ratio Theorem (Section Formula) on line segment $AE$. Point $D$ lies on $AE$ such that $AD = \\frac{2}{3}DE$, meaning the ratio $AD:DE$ is $2:3$.",
-                    "working": "Using the section formula for position vector $\\vec{OD}$:\n$\\vec{OD} = \\frac{3\\vec{OA} + 2\\vec{OE}}{3 + 2} = \\frac{3\\vec{OA} + 2\\mathbf{b}}{5}$",
-                    "reasoning": "The position vector of a point dividing a segment in ratio $m:n$ is $\\frac{n\\mathbf{a} + m\\mathbf{b}}{m+n}$."
-                  },
-                  {
-                    "step": 3,
-                    "explanation": "Equate the two expressions for $\\vec{OD}$ to find $\\vec{OA}$.",
-                    "working": "$\\mathbf{a} + \\frac{2}{5}\\mathbf{b} = \\frac{3}{5}\\vec{OA} + \\frac{2}{5}\\mathbf{b}$\nSubtract $\\frac{2}{5}\\mathbf{b}$ from both sides:\n$\\mathbf{a} = \\frac{3}{5}\\vec{OA}$\n$\\vec{OA} = \\frac{5}{3}\\mathbf{a}$",
-                    "reasoning": "Comparison of coefficients."
-                  },
-                  {
-                    "step": 4,
-                    "explanation": "Calculate vector AD.",
-                    "working": "$\\vec{AD} = \\vec{OD} - \\vec{OA}$\n$\\vec{AD} = (\\mathbf{a} + \\frac{2}{5}\\mathbf{b}) - \\frac{5}{3}\\mathbf{a}$\n$\\vec{AD} = \\frac{2}{5}\\mathbf{b} + (1 - \\frac{5}{3})\\mathbf{a}$\n$\\vec{AD} = \\frac{2}{5}\\mathbf{b} - \\frac{2}{3}\\mathbf{a}$",
-                    "reasoning": "Vector subtraction to find the vector between two points."
-                  }
-                ]
-              }
+              "finalAnswer": "$\\frac{2}{5}\\mathbf{b} - \\frac{2}{3}\\mathbf{a}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the vector OD using the triangle rule in $\\triangle OCD$.",
+                  "working": "$\\vec{OD} = \\vec{OC} + \\vec{CD}$\nSubstitute the known values ($\\vec{OC} = \\mathbf{a}$ and $\\vec{CD} = \\frac{2}{5}\\mathbf{b}$ from part i):\n$\\vec{OD} = \\mathbf{a} + \\frac{2}{5}\\mathbf{b}$",
+                  "reasoning": "Vector addition."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the Ratio Theorem (Section Formula) on line segment $AE$. Point $D$ lies on $AE$ such that $AD = \\frac{2}{3}DE$, meaning the ratio $AD:DE$ is $2:3$.",
+                  "working": "Using the section formula for position vector $\\vec{OD}$:\n$\\vec{OD} = \\frac{3\\vec{OA} + 2\\vec{OE}}{3 + 2} = \\frac{3\\vec{OA} + 2\\mathbf{b}}{5}$",
+                  "reasoning": "The position vector of a point dividing a segment in ratio $m:n$ is $\\frac{n\\mathbf{a} + m\\mathbf{b}}{m+n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the two expressions for $\\vec{OD}$ to find $\\vec{OA}$.",
+                  "working": "$\\mathbf{a} + \\frac{2}{5}\\mathbf{b} = \\frac{3}{5}\\vec{OA} + \\frac{2}{5}\\mathbf{b}$\nSubtract $\\frac{2}{5}\\mathbf{b}$ from both sides:\n$\\mathbf{a} = \\frac{3}{5}\\vec{OA}$\n$\\vec{OA} = \\frac{5}{3}\\mathbf{a}$",
+                  "reasoning": "Comparison of coefficients."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate vector AD.",
+                  "working": "$\\vec{AD} = \\vec{OD} - \\vec{OA}$\n$\\vec{AD} = (\\mathbf{a} + \\frac{2}{5}\\mathbf{b}) - \\frac{5}{3}\\mathbf{a}$\n$\\vec{AD} = \\frac{2}{5}\\mathbf{b} + (1 - \\frac{5}{3})\\mathbf{a}$\n$\\vec{AD} = \\frac{2}{5}\\mathbf{b} - \\frac{2}{3}\\mathbf{a}$",
+                  "reasoning": "Vector subtraction to find the vector between two points."
+                }
+              ]
+            }
           },
           {
             "partId": "b",
             "questionText": "Is $\\vec{AC}$ parallel to $\\vec{OC}$? Justify your answer with appropriate working.",
             "marks": 2,
             "answerType": "proof",
-
             "solution": {
               "finalAnswer": "Yes, AC is parallel to OC.",
               "stepByStep": [
@@ -111,7 +246,6 @@
                 }
               ]
             }
-
           },
           {
             "partId": "c(i)",
@@ -135,7 +269,6 @@
             "questionText": "Find $\\frac{\\text{area of }\\triangle ADC}{\\text{area of }\\triangle AOE}$.",
             "marks": 2,
             "answerType": "numerical",
-
             "solution": {
               "finalAnswer": "\\frac{4}{25}",
               "stepByStep": [
@@ -159,14 +292,12 @@
                 }
               ]
             }
-
           },
           {
             "partId": "c(iii)",
             "questionText": "Find $\\frac{\\text{area of }\\triangle ADB}{\\text{area of }CDEO}$.",
             "marks": 2,
             "answerType": "numerical",
-
             "solution": {
               "finalAnswer": "\\frac{2}{7}",
               "stepByStep": [
@@ -196,12 +327,141 @@
                 }
               ]
             }
-
           }
         ],
         "totalMarks": 11,
         "paper": "Paper 2",
         "title": "Vectors Parallelogram Ratios"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G1-gemini-2011-p2-q102",
+        "topicID": "G1",
+        "stem": "The interior angle of a regular polygon is $156^\\circ$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the number of sides of the polygon.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "15 sides",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the size of one exterior angle.",
+                  "working": "Exterior angle = $180^\\circ - 156^\\circ = 24^\\circ$",
+                  "reasoning": "Interior and exterior angles on a straight line sum to $180^\\circ$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the formula relating exterior angles to the number of sides ($n$).",
+                  "working": "$n = \\frac{360}{\\text{exterior angle}}$\n$n = \\frac{360}{24}$",
+                  "reasoning": "The sum of exterior angles is $360^\\circ$. Dividing this by one exterior angle gives the number of sides for a regular polygon."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final value.",
+                  "working": "$n = 15$",
+                  "reasoning": "Arithmetic division."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the sum of the interior angles of this polygon.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2340^\\circ",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the sum of interior angles formula.",
+                  "working": "Sum = $(n - 2) \\times 180^\\circ$\nSum = $(15 - 2) \\times 180^\\circ$",
+                  "reasoning": "The formula $(n-2) \\times 180$ gives the total sum of interior angles for an $n$-sided polygon."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compute the result.",
+                  "working": "$13 \\times 180 = 2340^\\circ$",
+                  "reasoning": "Calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Regular Polygon Properties"
+      },
+      {
+        "questionNumber": 103,
+        "questionId": "G1-gemini-2011-p2-q103",
+        "topicID": "G1",
+        "stem": "The interior angles of a hexagon are $105^\\circ$, $115^\\circ$, $125^\\circ$, $k^\\circ$, $k^\\circ$ and $(k+15)^\\circ$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $k$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "k = 120",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of interior angles for a hexagon ($n=6$).",
+                  "working": "Sum = $(6 - 2) \\times 180^\\circ$\nSum = $4 \\times 180 = 720^\\circ$",
+                  "reasoning": "Using the formula $(n-2) \\times 180$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the algebraic equation.",
+                  "working": "$105 + 115 + 125 + k + k + (k + 15) = 720$",
+                  "reasoning": "Sum of individual angles equals the total sum calculated in step 1."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify and solve for $k$.",
+                  "working": "$(105 + 115 + 125 + 15) + 3k = 720$\n$360 + 3k = 720$\n$3k = 720 - 360$\n$3k = 360$\n$k = 120$",
+                  "reasoning": "Combine constants and like terms, then isolate $k$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, find the largest exterior angle of the hexagon.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$75^\\circ$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the smallest interior angle.",
+                  "working": "The angles are $105, 115, 125, 120, 120, 135$. The smallest is $105^\\circ$.",
+                  "reasoning": "The largest exterior angle corresponds to the smallest interior angle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the exterior angle.",
+                  "working": "$180^\\circ - 105^\\circ = 75^\\circ$",
+                  "reasoning": "Interior + Exterior = $180^\\circ$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Hexagon Angles"
       }
     ]
   }

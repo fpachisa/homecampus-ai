@@ -3,6 +3,148 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 13,
+        "questionId": "S2-cchms-2024-p1-q13",
+        "topicID": "S2",
+        "stem": "A bag contains 4 black coins, 7 red coins and 11 white coins. Two coins are drawn from the bag at random, one after another without replacement.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the probability that a white coin will be chosen on the second draw.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of coins in the bag.",
+                  "working": "Total coins = $4 + 7 + 11 = 22$",
+                  "reasoning": "To find probabilities, we first need the total sample space."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the two mutually exclusive cases where the second coin is white: (White, White) or (Not White, White).",
+                  "working": "Case 1 (White then White): $\\frac{11}{22} \\times \\frac{10}{21} = \\frac{110}{462}$\nCase 2 (Not White then White): $\\frac{11}{22} \\times \\frac{11}{21} = \\frac{121}{462}$",
+                  "reasoning": "Since the coins are drawn without replacement, the probabilities change for the second draw depending on the first outcome."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Add the probabilities of the two cases.",
+                  "working": "Total Probability = $\\frac{110}{462} + \\frac{121}{462} = \\frac{231}{462} = \\frac{1}{2}$",
+                  "reasoning": "Alternatively, by symmetry, the probability of drawing a specific color on the $n$-th draw (without information about previous draws) is the same as drawing it on the first draw. $P(W) = \\frac{11}{22} = \\frac{1}{2}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$x$ yellow coins are added to the bag. The probability of picking a black coin in both draws is $\\frac{1}{50}$. Find the value of $x$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the new total number of coins and the probability of drawing two black coins in terms of $x$.",
+                  "working": "New Total = $22 + x$\n$P(B_1) = \\frac{4}{22+x}$\n$P(B_2 | B_1) = \\frac{3}{21+x}$",
+                  "reasoning": "We start with 4 black coins. After one is taken, 3 remain. The total decreases by 1 for the second draw."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation using the given probability.",
+                  "working": "$\\frac{4}{22+x} \\times \\frac{3}{21+x} = \\frac{1}{50}$",
+                  "reasoning": "The probability of independent events occurring sequentially is the product of their individual probabilities."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify and solve the equation for $x$.",
+                  "working": "$\\frac{12}{(22+x)(21+x)} = \\frac{1}{50}$\n$600 = (22+x)(21+x)$",
+                  "reasoning": "Cross-multiply to eliminate fractions."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for the term $(22+x)$ or expand into a quadratic equation.",
+                  "working": "Let $N = 22+x$. Then $N(N-1) = 600$.\nSince $25 \\times 24 = 600$, $N = 25$.\n$22 + x = 25 \\implies x = 3$.",
+                  "reasoning": "We can solve by inspection (consecutive integers multiplying to 600) or by solving the quadratic $x^2 + 43x - 138 = 0$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Probability with Coins"
+      },
+      {
+        "questionNumber": 16,
+        "questionId": "S2-canberra-2024-p1-q16",
+        "topicID": "S2",
+        "stem": "A box contains 15 marbles of which $x$ are green and the rest are yellow.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the probability, in terms of $x$, that a marble chosen from the box is yellow.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{15-x}{15}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the number of yellow marbles.",
+                  "working": "Total marbles = 15\nGreen marbles = $x$\nYellow marbles = $15 - x$",
+                  "reasoning": "To find the probability of an event, we first need the number of favourable outcomes (yellow marbles)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Express the probability as a fraction.",
+                  "working": "P(Yellow) = $\\frac{\\text{Number of yellow marbles}}{\\text{Total number of marbles}} = \\frac{15-x}{15}$",
+                  "reasoning": "Probability is the ratio of favourable outcomes to the total number of possible outcomes."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "When 5 more green marbles are added to the box, the probability of choosing a yellow marble becomes $\\frac{1}{2}$. Find the initial number of green marbles in the box.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the new total number of marbles.",
+                  "working": "New Total = $15 + 5 = 20$",
+                  "reasoning": "Adding marbles changes the denominator of our probability fraction."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation for the new probability of choosing a yellow marble.",
+                  "working": "The number of yellow marbles remains $15-x$.\nNew P(Yellow) = $\\frac{15-x}{20} = \\frac{1}{2}$",
+                  "reasoning": "We equate the algebraic probability to the given value to solve for $x$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve the equation for $x$.",
+                  "working": "$2(15-x) = 20$\n$30 - 2x = 20$\n$10 = 2x$\n$x = 5$",
+                  "reasoning": "Rearrange the linear equation to isolate $x$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Probability with Marbles"
+      },
+      {
         "questionNumber": 21,
         "questionId": "S2-anderson-2024-p1-q21",
         "topicID": "S2",
@@ -38,7 +180,6 @@
             "questionText": "Two students are selected at random from the class. The probability that both of them are members of a performing arts club is $\\frac{1}{42}$. Find the number of students who are members in a performing arts club.",
             "marks": 3,
             "answerType": "numerical",
-
             "solution": {
               "finalAnswer": "6",
               "stepByStep": [
@@ -68,7 +209,6 @@
                 }
               ]
             }
-
           },
           {
             "partId": "c",
@@ -97,8 +237,245 @@
         "totalMarks": 5,
         "paper": "Paper 1",
         "title": "Probability Categories"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2011-p1-q101",
+        "topicID": "S2",
+        "stem": "A box contains cards of different colours: 3 are blue, 5 are green and $k$ are red. Two cards are drawn from the box at random, one after another without replacement.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $k=4$, find the probability that the first card drawn is not blue.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of cards when $k=4$.",
+                  "working": "Total = $3 (Blue) + 5 (Green) + 4 (Red) = 12$",
+                  "reasoning": "Establish the sample space size."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the number of cards that are not blue.",
+                  "working": "Not Blue = Green + Red = $5 + 4 = 9$",
+                  "reasoning": "We are looking for the favorable outcomes for the event 'Not Blue'."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the probability.",
+                  "working": "Probability = $\\frac{9}{12} = \\frac{3}{4}$",
+                  "reasoning": "Probability is favorable outcomes divided by total outcomes."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The probability that both cards drawn are blue is $\\frac{1}{22}$. Find the value of $k$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the probability of drawing two blue cards in terms of $k$.",
+                  "working": "Total cards = $8 + k$. Blue cards = 3.\n$P(Blue, Blue) = \\frac{3}{8+k} \\times \\frac{2}{7+k}$",
+                  "reasoning": "For the second draw, both the number of blue cards and the total number of cards decrease by 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation with the given probability.",
+                  "working": "$\\frac{6}{(8+k)(7+k)} = \\frac{1}{22}$",
+                  "reasoning": "Equate the algebraic probability to the given numerical value."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $k$.",
+                  "working": "$6 \\times 22 = (8+k)(7+k)$\n$132 = (8+k)(7+k)$",
+                  "reasoning": "Cross-multiply to clear the fractions."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find factors of 132 or solve the quadratic.",
+                  "working": "We need two consecutive integers that multiply to 132. $12 \\times 11 = 132$.\nSo, $8+k = 12 \\implies k = 4$.",
+                  "reasoning": "Since $k$ must be a positive integer (number of cards), we take the valid solution."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Probability with Cards"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S2-gemini-2011-p1-q102",
+        "topicID": "S2",
+        "stem": "A student club has 20 members. There are $b$ boys and the rest are girls.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find, in terms of $b$, the probability that a member selected at random is a girl.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{20-b}{20}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the number of girls.",
+                  "working": "Number of girls = $20 - b$",
+                  "reasoning": "Total members minus number of boys equals number of girls."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form the probability fraction.",
+                  "working": "P(Girl) = $\\frac{20-b}{20}$",
+                  "reasoning": "Divide the number of girls by the total number of members."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Two boys leave the club. The probability that a member selected at random is a boy is now $\\frac{1}{3}$. Calculate the value of $b$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "8",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the new totals.",
+                  "working": "New Total members = $20 - 2 = 18$\nNew Number of boys = $b - 2$",
+                  "reasoning": "Both the specific group (boys) and the total population decrease by 2."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form the equation.",
+                  "working": "$\\frac{b-2}{18} = \\frac{1}{3}$",
+                  "reasoning": "Set the ratio of remaining boys to remaining members equal to the given probability."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $b$.",
+                  "working": "$3(b-2) = 18$\n$b - 2 = 6$\n$b = 8$",
+                  "reasoning": "Multiply both sides by 18 (or cross multiply) and isolate $b$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Club Membership Probability"
       }
     ],
-    "Paper 2": []
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2011-p2-q101",
+        "topicID": "S2",
+        "stem": "A bag contains $n$ red balls and 4 blue balls. Two balls are drawn from the bag at random, one after another without replacement.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that the probability that both balls are red is $\\frac{1}{3}$, show that $n^2 - 5n - 6 = 0$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n^2 - 5n - 6 = 0$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the total number of balls and the probability expression for two red balls.",
+                  "working": "Total balls = $n + 4$.\n$P(R_1 \\cap R_2) = \\frac{n}{n+4} \\times \\frac{n-1}{n+3}$",
+                  "reasoning": "Without replacement, the count of red balls and total balls both decrease by 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Equate the expression to the given probability.",
+                  "working": "$\\frac{n(n-1)}{(n+4)(n+3)} = \\frac{1}{3}$",
+                  "reasoning": "Set up the equation to solve for $n$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the equation to form the required quadratic.",
+                  "working": "$3(n^2 - n) = (n+4)(n+3)$\n$3n^2 - 3n = n^2 + 7n + 12$\n$2n^2 - 10n - 12 = 0$\nDivide by 2: $n^2 - 5n - 6 = 0$",
+                  "reasoning": "Expand the brackets, collect like terms on one side, and simplify."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the equation $n^2 - 5n - 6 = 0$ to find the number of red balls.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorize the quadratic equation.",
+                  "working": "$(n-6)(n+1) = 0$",
+                  "reasoning": "Find two numbers that multiply to -6 and add to -5."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the valid value for $n$.",
+                  "working": "$n = 6$ or $n = -1$.\nSince $n$ represents the number of balls, $n > 0$, so $n = 6$.",
+                  "reasoning": "Reject the negative solution as it is physically impossible in this context."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the probability that the two balls drawn are of different colours.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{8}{15}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the cases for different colours using $n=6$.",
+                  "working": "Total balls = $6+4=10$.\nCase 1: Red then Blue ($RB$)\nCase 2: Blue then Red ($BR$)",
+                  "reasoning": "Different colours means one Red and one Blue, order matters in calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the probability.",
+                  "working": "$P(RB) = \\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90}$\n$P(BR) = \\frac{4}{10} \\times \\frac{6}{9} = \\frac{24}{90}$\nTotal = $\\frac{48}{90}$",
+                  "reasoning": "Sum the probabilities of the mutually exclusive cases."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the fraction.",
+                  "working": "$\\frac{48}{90} = \\frac{8}{15}$",
+                  "reasoning": "Always express probability in simplest form."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Probability with Algebra"
+      }
+    ]
   }
 }

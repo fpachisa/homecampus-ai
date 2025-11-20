@@ -1,0 +1,302 @@
+/**
+ * QuestionTable Styles
+ * 
+ * Comprehensive styling for all table types with responsive design
+ */
+
+/* ============================================
+   COMMON TABLE STYLES
+   ============================================ */
+
+.table-container {
+  margin: 1.5rem 0;
+  width: 100%;
+  max-width: 800px;
+}
+
+.table-caption {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 0.95rem;
+}
+
+.table-container th {
+  background: #f9fafb;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  color: #111827;
+}
+
+.table-container td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.table-container tr:last-child td {
+  border-bottom: none;
+}
+
+.table-container tbody tr:hover {
+  background: #f9fafb;
+  transition: background 0.15s ease;
+}
+
+.table-key {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: #6b7280;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: #f9fafb;
+  border-left: 3px solid #cbd5e1;
+  border-radius: 4px;
+}
+
+.table-notes {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.table-note {
+  padding: 0.5rem 0.75rem;
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+  color: #78350f;
+  margin-bottom: 0.5rem;
+}
+
+.table-note:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   STEM-AND-LEAF TABLE
+   ============================================ */
+
+.stem-leaf-table {
+  max-width: 500px;
+}
+
+.stem-leaf-table table {
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+}
+
+.stem-col {
+  width: 15%;
+  text-align: center;
+  background: #f3f4f6;
+  font-weight: 700;
+}
+
+.leaf-col {
+  width: 85%;
+  background: #fefefe;
+}
+
+.stem-cell {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1f2937;
+  background: #f9fafb;
+}
+
+.leaf-cell {
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  letter-spacing: 0.4em;
+  padding-left: 1.5rem;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   COMPARISON TABLE
+   ============================================ */
+
+.comparison-table th {
+  text-align: center;
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+.comparison-table td {
+  text-align: center;
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+  background: #f9fafb;
+}
+
+.comparison-table tbody tr:hover {
+  background: #eff6ff;
+}
+
+/* ============================================
+   GENERIC TABLE
+   ============================================ */
+
+.generic-table th:first-child,
+.generic-table td:first-child {
+  font-weight: 600;
+  background: #f9fafb;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 640px) {
+  .table-container {
+    margin: 1rem -1rem;
+    max-width: none;
+  }
+
+  .table-wrapper {
+    border-radius: 0;
+  }
+
+  .table-container th,
+  .table-container td {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .stem-leaf-table .leaf-cell {
+    letter-spacing: 0.3em;
+    padding-left: 1rem;
+  }
+
+  .table-caption {
+    padding: 0 1rem;
+  }
+
+  .table-key,
+  .table-note {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-container th,
+  .table-container td {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8125rem;
+  }
+
+  .stem-leaf-table .leaf-cell {
+    letter-spacing: 0.2em;
+    padding-left: 0.75rem;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .table-container {
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .table-wrapper {
+    box-shadow: none;
+  }
+
+  .table-container table {
+    border: 1px solid #e5e7eb;
+  }
+
+  .table-container th,
+  .table-container td {
+    border: 1px solid #e5e7eb;
+  }
+
+  .table-container tbody tr:hover {
+    background: transparent;
+  }
+}
+
+/* ============================================
+   DARK MODE SUPPORT (OPTIONAL)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .table-container table {
+    background: #1f2937;
+  }
+
+  .table-container th {
+    background: #374151;
+    color: #f9fafb;
+    border-bottom-color: #4b5563;
+  }
+
+  .table-container td {
+    color: #e5e7eb;
+    border-bottom-color: #374151;
+  }
+
+  .table-container tbody tr:hover {
+    background: #374151;
+  }
+
+  .table-caption {
+    color: #f3f4f6;
+  }
+
+  .table-key {
+    background: #374151;
+    color: #d1d5db;
+    border-left-color: #6b7280;
+  }
+
+  .table-note {
+    background: #78350f;
+    color: #fef3c7;
+    border-left-color: #f59e0b;
+  }
+
+  .stem-cell {
+    background: #374151;
+    color: #f9fafb;
+  }
+
+  .leaf-cell {
+    color: #e5e7eb;
+  }
+
+  .comparison-table th {
+    background: #1e3a8a;
+    color: #dbeafe;
+  }
+
+  .comparison-table tbody tr:nth-child(odd) {
+    background: #374151;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: #1e3a8a;
+  }
+}

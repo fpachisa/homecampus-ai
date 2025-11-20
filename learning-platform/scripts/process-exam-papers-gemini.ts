@@ -29,15 +29,19 @@ if (!fs.existsSync(QA_DIR)) {
     fs.mkdirSync(QA_DIR, { recursive: true });
 }
 
-// Helper to generate today's date string for ID (DDMM)
-const getTodayDateString = () => {
+// Helper to generate unique ID suffix using timestamp
+// Format: DDMMHHMMSS (e.g., 2011143045 = Nov 20, 14:30:45)
+const getUniqueIdSuffix = () => {
     const date = new Date();
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
-    return `${day}${month}`; // e.g. 1911
+    const hour = String(date.getHours()).padStart(2, '0');
+    const minute = String(date.getMinutes()).padStart(2, '0');
+    const second = String(date.getSeconds()).padStart(2, '0');
+    return `${day}${month}${hour}${minute}${second}`; // e.g. 2011143045
 };
 
-const TODAY_DDMM = getTodayDateString();
+const UNIQUE_ID_SUFFIX = getUniqueIdSuffix();
 
 // Process a single file
 async function processFile(filename: string) {
@@ -70,10 +74,14 @@ async function processFile(filename: string) {
         
     2.  **Generate New Questions**: Create 2-3 NEW questions for "Paper 1" and "Paper 2" (if applicable) with the SAME complexity level and similar structure to the existing ones.
         - Use the "questionNumber" starting from 101.
-        - Generate "questionId" using format: "${topicId}-gemini-${TODAY_DDMM}-{paper}-101" (e.g., N2-gemini-1911-p1-101).
+        - Generate "questionId" using format: "${topicId}-gemini-${UNIQUE_ID_SUFFIX}-{paper}-q101" (e.g., N2-gemini-2011143045-p1-q101).
         - Ensure these new questions also have the full "solution" structure.
         - Add these new questions to the respective "Paper 1" or "Paper 2" arrays.
 
+    CRITICAL: FORMATTING RULES
+    use unicode as much as possible. Use LaTeX where there is no unicode support.
+    LaTeX: $\\frac{5}{6}$ ALWAYS use $..$ delimiters.
+    
     Input JSON:
     ${JSON.stringify(jsonData)}
 
