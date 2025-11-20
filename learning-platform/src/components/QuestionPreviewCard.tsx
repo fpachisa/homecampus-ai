@@ -2,7 +2,7 @@ import { useState } from 'react';
 import MathText from './MathText';
 import { MathToolRenderer } from './practice/MathToolRenderer';
 import { QuestionTable } from './tables';
-import type { QuestionTable as QuestionTableType } from '../types/examQuestions';
+
 import type { PreWrittenQuestion } from '../types/practice';
 import type { PathLayer } from '../types/practice';
 
