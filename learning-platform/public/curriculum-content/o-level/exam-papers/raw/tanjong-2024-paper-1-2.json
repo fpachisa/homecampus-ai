@@ -1,0 +1,596 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "questionId": "N1-tkgs-2024-p1-q1",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate $\\frac{165^{2}+\\sqrt[4]{75.125-11.2\\times(-3)}}{3.142}$. Write your answer correct to 2 significant figures.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The number of people in a shopping mall is 1100, correct to the nearest hundred. Write down the minimum number of people there are in the mall.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Calculation and Approximation"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N5-tkgs-2024-p1-q2",
+            "topicID": "N5",
+            "stem": "Simplify",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$5-2(6x-1)$",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$(\\frac{27b^{9}}{a^{6}})^{-\\frac{1}{3}}$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Algebraic Simplification"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N2-tkgs-2024-p1-q3",
+            "topicID": "N2",
+            "stem": "Albert and Chris have some savings in the ratio 5 : 3. They spent $30 each from their savings and the new ratio of their savings is 2 : 1.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the amount of savings Chris has at the start.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Ratio Word Problem"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N1-tkgs-2024-p1-q4",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express 1400 as a product of its prime factors.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$q$ is a number between 70 and 90. The highest common factor of $q$ and 1400 is 28. Find the smallest possible value of $q$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Primes and HCF"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N1-tkgs-2024-p1-q5",
+            "topicID": "N1",
+            "stem": "Given that $\\frac{1}{2^{a-1}}=2^{3}+2^{3}+2^{3}+2^{3}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $a$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Indices Equation"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "N5-tkgs-2024-p1-q6",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Expand and simplify $2(5m+3n)^{2}$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Factorise completely $24(mn)^{2}-21mn^{3}$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Algebraic Expansion and Factorisation"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "G4-tkgs-2024-p1-q7",
+            "topicID": "G4",
+            "stem": "The area of triangle XYZ is $12.6~cm^{2}.$ $XY=4.5$ cm and $YZ=7.1$ cm.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find two possible values for angle XYZ. Give your answers in radians.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Triangle Area and Angles"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "N2-tkgs-2024-p1-q8",
+            "topicID": "N2",
+            "stem": "$P$ is inversely proportional to $Q^{3}$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the percentage change in $P$ when $Q$ is reduced by 20%.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Percentage Change in Proportion"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N5-tkgs-2024-p1-q9",
+            "topicID": "N5",
+            "stem": "It is given that $p=\\frac{q+r^{2}}{q-5}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find $p$ when $q=\\frac{1}{5}$ and $r=-6$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Express $q$ in terms of $p$ and $r$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Formula Rearrangement"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "N5-tkgs-2024-p1-q11",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write as a single fraction in its simplest form $\\frac{3}{(1-2h)^{2}}+\\frac{8}{2h-1}$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Algebraic Fractions"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "N7-tkgs-2024-p1-q12",
+            "topicID": "N7",
+            "stem": "$k$ is a positive integer. An odd number is formed when 5 is subtracted from twice of $k$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write down an expression for the odd number in terms of $k$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The sum between the odd number and the next consecutive odd number is greater than 16. Form an inequality in terms of $k$ and solve it to find the smallest possible value of the larger odd number.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Inequalities Word Problem"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "N5-tkgs-2024-p1-q14",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Factorise $3x^{2}-14x-5$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hence, factorise completely $3(y+1)^{2}-14y-19$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Factorisation Applications"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "N7-tkgs-2024-p1-q15",
+            "topicID": "N7",
+            "stem": "The points $P(2,3)$ and $Q(-1,-3)$ lie on the curve $y=ax^{2}+bx+2$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Form and solve two simultaneous equations to find the values of $a$ and $b$.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Simultaneous Equations on Curve"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "S2-tkgs-2024-p1-q16",
+            "topicID": "S2",
+            "stem": "A bag contains 15 red marbles, some blue marbles and some yellow marbles. A marble is chosen at random from the bag. The probability of choosing a blue marble is $\\frac{1}{6}$ and the probability of choosing a yellow marble is $\\frac{7}{12}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that there are 60 marbles in total in the bag.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Two marbles are chosen at random from the bag. Find the probability that both marbles are blue.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Probability of Marbles"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "S1-tkgs-2024-p1-q19",
+            "topicID": "S1",
+            "stem": "The times taken, in minutes, by 14 students to complete a Mathematics assignment are recorded. The results are shown in the stem-and-leaf diagram.\n\n| Stem | Leaf |\n| :--- | :--- |\n| 1 | 1 5 9 |\n| 2 | 0 3 3 3 6 9 |\n| 3 | 4 8 8 9 |\n| 4 | 0 |\n\nKey: 4|0 represents 40 minutes",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the modal time.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the percentage of students who took at most 20 minutes to complete the assignment.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The time taken for the 15th student to complete the assignment is recorded. The range increases to 31 minutes. Find two possible times this student spent completing the assignment.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Stem-and-Leaf Statistics"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "N8-tkgs-2024-p1-q20",
+            "topicID": "N8",
+            "stem": "The first four terms in a sequence of numbers are given below.\n$T_{1}=\\frac{2}{1}-\\frac{3}{5}=\\frac{7}{5}$\n$T_{2}=\\frac{3}{5}-\\frac{4}{5^{2}}=\\frac{11}{25}$\n$T_{3}=\\frac{4}{5^{2}}-\\frac{5}{5^{3}}=\\frac{3}{25}$\n$T_{4}=\\frac{5}{5^{3}}-\\frac{6}{5^{4}}=\\frac{19}{625}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find $T_{5}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find an expression, in terms of $n$, for $T_{n}$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Evaluate the sum of the first ten terms, $T_{1}+T_{2}+T_{3}+...+T_{10}$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Number Patterns"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "N4-tkgs-2024-p1-q21",
+            "topicID": "N4",
+            "stem": "Benedict left his house to go to the library. He took the first bus, which travelled 5 km in $t$ minutes. He then alighted at a bus stop and waited for 12 minutes to switch to the next bus. The second bus took 2 minutes less than the first bus to reach his destination after travelling a further 3.75 km.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the time taken for the whole journey, in minutes, in terms of $t$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Given that the average speed for the whole journey is $10.5~km/h.$, form an equation in terms of $t$ to calculate the total time taken for the journey.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Average Speed Journey"
+        },
+        {
+            "questionNumber": 23,
+            "questionId": "S1-tkgs-2024-p1-q23",
+            "topicID": "S1",
+            "stem": "The table below shows the number of books read by 50 students in Class A in semester 1.\n\n| Number of books read, n | Frequency |\n| :--- | :--- |\n| $0<n\\le2$ | 8 |\n| $2<n\\le4$ | 21 |\n| $4<n\\le6$ | 11 |\n| $6<n\\le8$ | 3 |\n| $8<n\\le10$ | 7 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Calculate an estimate for the mean number of books read by the students.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Calculate an estimate for the standard deviation of the number of books read by the students.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "After introducing a reading programme in semester 2, the number of books read by each student in Class A increased by 2. State how the mean and standard deviation will change after the increase.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The standard deviation of the number of books read by the students from Class B was 3.15. Use this information to comment on one difference between the two distributions.",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Statistics Mean and SD"
+        },
+        {
+            "questionNumber": 24,
+            "questionId": "N9-tkgs-2024-p1-q24",
+            "topicID": "N9",
+            "stem": "An enrichment centre offers drama, writing and speech enrichment classes on weekdays during the school holiday. The matrix S shows the number of students who attend the different classes for beginners and advanced levels in a day.\n\n$S=\\begin{pmatrix}25&32&40\\\\ 21&19&32\\end{pmatrix}$ (Rows: beginners, advanced. Cols: drama, writing, speech)",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Evaluate the matrix $W=5S$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The school fee for drama cost $40 per session, $25 per session for writing and $30 per session for speech. The fees for beginner and advanced learners are the same for each type of class. Represent these amounts in a column matrix C.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Evaluate the matrix $T=WC$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Explain what the elements in T represent.",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Matrix Operations"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N5-tkgs-2024-p2-q1",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve the equation $\\frac{3-2x}{7}=\\frac{1}{3}(2x-1)$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Simplify $\\frac{25a^{2}-9b^{2}}{15a-10ab+6b^{2}-9b}$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Simplify $\\frac{3c}{4ab}\\div\\frac{c^{3}}{12a^{2}b}$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c_i",
+                    "questionText": "Solve the equation $-x^{2}+9x-\\frac{7}{2}=0$ by completing the square. Give your solutions correct to two decimal places.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c_ii",
+                    "questionText": "Explain why $-x^{2}+9x-\\frac{7}{2}=18$ has no real solution.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 12,
+            "paper": "Paper 2",
+            "title": "Algebraic Solving and Simplification"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "S2-tkgs-2024-p2-q2",
+            "topicID": "S2",
+            "stem": "In a particular month, 21 people took a driving test. One of the 21 people is selected at random. The probability that it is a man who passed the test is $\\frac{1}{7}$. Two of the 21 people are selected at random. The probability that they are both women who failed the test is $\\frac{1}{10}$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of information about the 21 people who took the test on that particular month. (Table with Men/Women vs Passed/Failed).",
+                    "marks": 4,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "$\\epsilon = \\{x: x \\text{ is a student in a class}\\}$\n$A = \\{x: x \\text{ is a student who listens to pop music}\\}$\n$B = \\{x: x \\text{ is a student who listens to classical music}\\}$\nIt is given that $n(\\epsilon)=35$, $n(A)=22,$ $n(B)=14$ and $n(A\\cap B^{\\prime})=12$.\nDescribe in words the set $A\\cap B^{\\prime}$.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Find the number of students who listen to both pop and classical music.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "Find the number of students who listen to classical music only.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_iv",
+                    "questionText": "Find the number of students who listen to neither pop nor classical music.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Probability and Sets"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N9-tkgs-2024-p2-q9",
+            "topicID": "N9",
+            "stem": "A factory prints posters for corporate events. The prices of printing posters of different sizes are listed below:",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Given that 1 inch $=2.54$ cm, find the area of a bulletin poster ($11\\times17$ inches) in $m^{2}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Mr Tan wants to print 1200 bulletin posters for an event. Calculate how much does it cost. (Cost details: Bulletin poster \\$2.00. Additional 5% if total area > 120 m2)",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The factory uses 2 printers to print Mr Tan's order for an entire day. The older printer takes 15 seconds more to print one bulletin poster compared to the newer printer and the rates of printing of the 2 printers are constant throughout the day. An operator of the printers claims that the older printer needs servicing. Do you agree? Justify your answers with clear working. (Guidelines: Printer operates 9am-4pm. Cooled 30mins after every 2h. Needs servicing if rate < 60m2/day)",
+                    "marks": 7,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Printing Costs and Efficiency"
+        }
+    ]
+}

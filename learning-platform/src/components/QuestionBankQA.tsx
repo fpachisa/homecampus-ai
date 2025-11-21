@@ -32,6 +32,7 @@ interface QuestionPart {
   marks: number;
   answerType: string;
   table?: QuestionTableType;
+  tables?: QuestionTableType[];
   solution: PartSolution;
 }
 
@@ -134,7 +135,8 @@ export default function QuestionBankQA() {
               table: q.table || q.questionTable,
               parts: q.parts?.map((p: any) => ({
                 ...p,
-                table: p.table || p.questionTable
+                table: p.table || p.questionTable,
+                tables: p.tables || p.questionTables
               }))
             }));
             const normalizedP2 = paper2Questions.map((q: any) => ({
@@ -143,7 +145,8 @@ export default function QuestionBankQA() {
               table: q.table || q.questionTable,
               parts: q.parts?.map((p: any) => ({
                 ...p,
-                table: p.table || p.questionTable
+                table: p.table || p.questionTable,
+                tables: p.tables || p.questionTables
               }))
             }));
 
@@ -410,6 +413,11 @@ export default function QuestionBankQA() {
                         <QuestionTable table={part.table} />
                       </div>
                     )}
+                    {part.tables && part.tables.map((tbl, idx) => (
+                      <div key={idx} className="mb-4 mt-2">
+                        <QuestionTable table={tbl} />
+                      </div>
+                    ))}
 
                     {/* Solution for this part - Match Practice module styling */}
                     {showSolutions && part.solution && (

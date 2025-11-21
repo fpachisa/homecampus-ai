@@ -1,0 +1,489 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "questionId": "N1-woodgrove-2024-p1-q1",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate $\\frac{-11+\\sqrt{(-11)^{2}-\\frac{20}{11}}}{8\\times0.6}.$ Write your answer correct to 4 significant figures.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Write your answer to part (a) in standard form.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Calculation and Standard Form"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N5-woodgrove-2024-p1-q2",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Expand and simplify $(2x+5)(3+4x)$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Algebraic Expansion"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N7-woodgrove-2024-p1-q3",
+            "topicID": "N7",
+            "stem": "Solve",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$3-4x=21$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$2x<3x+1\\le13$,",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Linear Equation and Inequality"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N1-woodgrove-2024-p1-q4",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express 4312 as a product of its prime factors.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Given $588=2^{2}\\times3\\times7^{2}$. Find The largest integer which is a factor of both 588 and 4312.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Find the smallest integer which is the multiple of both 588 and 4312.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "Find the smallest integer value of $m$ such that $4312m$ is a perfect square.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Prime Factors, HCF and LCM"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "G6-woodgrove-2024-p1-q5",
+            "topicID": "G6",
+            "stem": "Given that the coordinates of point A is (-2,11) and point B is (5, -11).",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find length AB.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find equation of the straight-line AB.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Coordinate Geometry"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "N5-woodgrove-2024-p1-q6",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Simplify $\\frac{9x^{2}-4}{12x^{2}-x-6}.$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Algebraic Fraction Simplification"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N7-woodgrove-2024-p1-q7",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve $\\frac{2}{x+1}-3=\\frac{1}{2x-5}.$",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Fractional Equation"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "N9-woodgrove-2024-p1-q8",
+            "topicID": "N9",
+            "stem": "The table below shows a multiple-choice test Sam and Roger took.\n\n| | Correct | No attempt | Incorrect |\n| :--- | :--- | :--- | :--- |\n| Sam | 14 | 5 | 1 |\n| Roger | 15 | 0 | 5 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Represent this information in a 2x3 matrix, S.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The marks are awarded as follow:\nCorrect - 2 marks\nNo attempt - 0 mark\nIncorrect - -1 mark\nRepresent the information in a 3x1 matrix, T.\nEvaluate ST",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Explain what your answer to (b) represents.",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Matrices Word Problem"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N5-woodgrove-2024-p1-q9",
+            "topicID": "N5",
+            "stem": "Factorise completely.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$abc -3c-6+2ab$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$80x^{4}-5$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Factorisation"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "N2-woodgrove-2024-p1-q10",
+            "topicID": "N2",
+            "stem": "Ken divides his monthly salary into daily expenses, spending and saving in the ratio 3:4:5 respectively. Later he decides to spend $1200 more daily the new ratio become 9:8:7.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate his monthly salary.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Ratio and Salary"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "S1-woodgrove-2024-p1-q11",
+            "topicID": "S1",
+            "stem": "John conducted a survey on the average time spent reading per week. This survey was carried out outside Woodlands Regional Library. The table below represents the survey results.\n\n| Time spends (t) in hours | $0\\le t<2$ | $2\\le t<4$ | $4\\le t<6$ | $6\\le t<8$ | $8\\le t<10$ | $10\\le t<12$ |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| Frequency | 3 | 8 | 9 | 15 | 3 | 2 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the percentage of people spend between 6 to 8 hours per week in reading.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the average time spend in reading.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "John concludes that the result in part (b) is the average time spent in reading by a Singaporean. Do you agree, give a reason.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Statistics Survey"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "N6-woodgrove-2024-p1-q12",
+            "topicID": "N6",
+            "stem": "The expression $x^{2}-4x+7$ can be written in the form of $(x-a)^{2}+b$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $a$ and $b$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Explain why the expression gives a minimum value.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Write down the minimum value.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Completing the Square"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "N1-woodgrove-2024-p1-q17",
+            "topicID": "N1",
+            "stem": "Simplify.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "$\\frac{a^{3}}{3a^{2}}\\times27a^{6}$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "$\\sqrt{16x^{\\frac{4}{3}}}$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find an expression for b in terms of a and c. $\\frac{49^{2a}}{7^{b}}=343^{4c}$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Indices Simplification and Equation"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "N8-woodgrove-2024-p1-q21",
+            "topicID": "N8",
+            "stem": "The first four terms in a sequence of numbers, $x_{1}, x_{2}, x_{3}, x_{4}, ...$ are given below.\n$x_{1}=2(0)+1=1$\n$x_{2}=2(1)+3=5$\n$x_{3}=2(2)+5=9$\n$x_{4}=2(3)+7=13$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write down an expression for $x_{5}$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find an expression, in term of $n,$ for the $n^{th}term,x_{n}$ of the sequence.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Evaluate $x_{20}$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Explain why 203 is not a term of this sequence.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Number Sequence"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "S2-woodgrove-2024-p1-q22",
+            "topicID": "S2",
+            "stem": "A survey was carried out to find out the number of emails received in a week by each of a group of students. The table below represents the result of the survey.\n\n| Number of emails (n) | Frequency |\n| :--- | :--- |\n| $0\\le n<10$ | 8 |\n| $10\\le n<20$ | 13 |\n| $20\\le n<30$ | 25 |\n| $30\\le n<40$ | 30 |\n| $40\\le n<50$ | 18 |\n| $50\\le n<60$ | 6 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the probability that two students, chosen in random, both received at least 40 emails.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Which interval contain the median number of emails received by the students.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Calculate an estimate of the mean number of emails received by the students.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Calculate an estimate of the standard deviation.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Statistics Emails"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N5-woodgrove-2024-p2-q1",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "$b=\\frac{a}{a-1}+\\frac{2}{c}$. Find the value of b when $a=3$ and $c=4$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Rearrange the formula to make a the subject.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Solve these simultaneous equations.\n$4x-y=-11$\n$5x+3y=-1$",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Solve the equation $\\frac{x}{3x-1}-\\frac{5}{2x+3}=1$. Give your solutions correct to three decimal places.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Algebraic Formulae and Equations"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N3-woodgrove-2024-p2-q2",
+            "topicID": "N3",
+            "stem": "(a) Timmy wants to invest a sum of money in one of the following investment plans.\nPlan A: Pays 2% simple interest per year\nPlan B: Pays 2% compound interest per year",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Which investment plan is the better choice for Timmy? Explain your answer.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Mary deposits $8000 in a savings account at a simple interest rate of 3.5% per year. Calculate the total value of her savings at the end of 12 years.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Peter invested $50 000 in an investment plan from 2010 to 2024. The value of his investment increased by r% at the end of every year. At the end of 2024, the total value of Peter's investment is $65 320. Calculate the value of r.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The current exchange rate between Singapore dollars (SGD) and Thailand baht (THB) is given as SGD 1 = THB 27.16. Susan bought a bag while shopping in Thailand. The original price of the bag was THB 56 000 and Susan bought it at a 15% discount. Susan paid for the bag using her credit card which charged her an additional 2% fee for overseas transaction. Calculate the total amount, including credit card fee, that Susan had to pay in Singapore dollars (SGD). Correct your answer to the nearest cent.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Financial Mathematics"
+        }
+    ]
+}

@@ -1,0 +1,373 @@
+{
+  "topicId": "N8",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 21,
+        "questionId": "N8-woodgrove-2024-p1-q21",
+        "topicID": "N8",
+        "stem": "The first four terms in a sequence of numbers, $x_{1}, x_{2}, x_{3}, x_{4}, ...$ are given below.\n$x_{1}=2(0)+1=1$\n$x_{2}=2(1)+3=5$\n$x_{3}=2(2)+5=9$\n$x_{4}=2(3)+7=13$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression for $x_{5}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x_5 = 2(4) + 9 = 17$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern in the given terms.",
+                  "working": "The term $x_n$ follows the structure: $2(\\text{number}) + (\\text{odd number})$.\nFor $x_1$, number is 0.\nFor $x_2$, number is 1.\nFor $x_n$, the number in the bracket is $(n-1)$.",
+                  "reasoning": "Recognizing the relationship between the subscript position $n$ and the numbers in the expression."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the pattern to $n=5$.",
+                  "working": "For $x_5$, the multiplier is $(5-1) = 4$.\nThe added number follows the odd number sequence $1, 3, 5, 7...$ which is the 5th odd number: 9.\nExpression: $2(4) + 9$.",
+                  "reasoning": "Substituting $n=5$ into the observed structural pattern."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in term of $n,$ for the $n^{th}term,x_{n}$ of the sequence.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x_n = 4n - 3$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the structure of the sequence terms.",
+                  "working": "From the stem:\n$x_n = 2(n-1) + [\\text{something}]$.\nThe added terms are $1, 3, 5, 7...$. The formula for the $k$-th odd number is $2k-1$. Here, for term $n$, it is the $n$-th odd number? Let's check:\n$n=1 → 1$\n$n=2 → 3$\n$n=3 → 5$\nSo the added part is $2n - 1$.",
+                  "reasoning": "Deconstructing the expression into two variable parts dependent on $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine the parts into a single algebraic expression.",
+                  "working": "$x_n = 2(n-1) + (2(n-1) + 1)$\nAlternatively, looking at the final values: $1, 5, 9, 13...$\nThis is an arithmetic progression with first term $a=1$ and difference $d=4$.",
+                  "reasoning": "Using the arithmetic progression formula is often faster than reconstructing the stem's specific format."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the arithmetic sequence formula $T_n = a + (n-1)d$.",
+                  "working": "$x_n = 1 + (n-1)4$\n$x_n = 1 + 4n - 4$\n$x_n = 4n - 3$",
+                  "reasoning": "Simplifying the linear expression to its final form."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Evaluate $x_{20}$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "77",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $n=20$ into the formula found in part (b).",
+                  "working": "$x_{20} = 4(20) - 3$",
+                  "reasoning": "Direct substitution."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the final value.",
+                  "working": "$80 - 3 = 77$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Explain why 203 is not a term of this sequence.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Equate the general term formula to 203.",
+                  "working": "$4n - 3 = 203$",
+                  "reasoning": "To determine if a number exists in a sequence, we solve for $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $n$.",
+                  "working": "$4n = 203 + 3$\n$4n = 206$\n$n = \\frac{206}{4} = 51.5$",
+                  "reasoning": "Isolating $n$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Interpret the result.",
+                  "working": "Since $n$ is $51.5$, which is not a positive integer, 203 cannot be a term in the sequence.",
+                  "reasoning": "Sequence positions ($n$) must always be whole numbers (integers)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Number Sequence"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111185018-p1-q101",
+        "topicID": "N8",
+        "stem": "The first three terms of a sequence, $y_{1}, y_{2}, y_{3}, ...$ are given below.\n$y_{1} = 1(2) + 2 = 4$\n$y_{2} = 2(3) + 4 = 10$\n$y_{3} = 3(4) + 6 = 18$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression for $y_{4}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$y_4 = 4(5) + 8 = 28$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern for each component.",
+                  "working": "First number: $n$\nNumber in bracket: $n+1$\nAdded number: $2n$",
+                  "reasoning": "Observing the change in numbers relative to the term position $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct the expression for $n=4$.",
+                  "working": "$y_4 = 4(4+1) + 2(4) = 4(5) + 8$",
+                  "reasoning": "Substitution of $n=4$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in terms of $n$, for the $n^{th}$ term, $y_{n}$. Give your answer in its simplest form.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$y_n = n^2 + 3n$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Translate the pattern into algebra.",
+                  "working": "$y_n = n(n+1) + 2n$",
+                  "reasoning": "Using the components identified in part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand and simplify.",
+                  "working": "$y_n = n^2 + n + 2n$\n$y_n = n^2 + 3n$",
+                  "reasoning": "Algebraic simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the value of $n$ for which $y_{n} = 180$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n = 12$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set the expression equal to 180.",
+                  "working": "$n^2 + 3n = 180$",
+                  "reasoning": "Setting up the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve the quadratic equation.",
+                  "working": "$n^2 + 3n - 180 = 0$\n$(n+15)(n-12) = 0$",
+                  "reasoning": "Factorization of quadratic."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Select the valid solution.",
+                  "working": "$n = -15$ or $n = 12$. Since $n > 0$, $n = 12$.",
+                  "reasoning": "Sequence positions must be positive integers."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Quadratic Sequence"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N8-gemini-2111185018-p1-q102",
+        "topicID": "N8",
+        "stem": "Consider the following pattern of equations:\nLine 1: $3^1 - 1 = 2$\nLine 2: $3^2 - 3 = 6$\nLine 3: $3^3 - 5 = 22$\nLine 4: $3^4 - 7 = 74$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down Line 5.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$3^5 - 9 = 234$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern.",
+                  "working": "Base is always 3. Exponent is the line number $n$. The subtracted number is the $n$-th odd number ($2n-1$).",
+                  "reasoning": "Pattern recognition."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct Line 5.",
+                  "working": "Exponent: 5. Subtracted: $2(5)-1 = 9$.\nResult: $243 - 9 = 234$.",
+                  "reasoning": "Calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down an expression, in terms of $n$, for the result of Line $n$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$3^n - (2n - 1)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Generalize the components.",
+                  "working": "First term: $3^n$.\nSubtracted term: The sequence $1, 3, 5, 7...$ is represented by $2n-1$.",
+                  "reasoning": "Generalizing from specific cases to $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine.",
+                  "working": "$3^n - (2n - 1)$ or $3^n - 2n + 1$",
+                  "reasoning": "Final expression."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Exponential Pattern"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111185018-p2-q101",
+        "topicID": "N8",
+        "stem": "A sequence of diagrams is formed using dots. The number of dots in each diagram is given by the sequence $T_1, T_2, T_3, ...$\n$T_1 = 1 \\times 3 + 1 = 4$\n$T_2 = 2 \\times 4 + 2 = 10$\n$T_3 = 3 \\times 5 + 3 = 18$\n$T_4 = 4 \\times 6 + 4 = 28$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression for $T_5$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T_5 = 5 \\times 7 + 5 = 40$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the pattern.",
+                  "working": "$T_n = n \\times (n+2) + n$.",
+                  "reasoning": "Comparing $n$ to the numbers in the expression."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute $n=5$.",
+                  "working": "$5 \\times (5+2) + 5 = 5 \\times 7 + 5 = 35 + 5 = 40$.",
+                  "reasoning": "Calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that the $n^{th}$ term of the sequence is given by $T_n = n^2 + 3n$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See working",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the general expression based on the stem.",
+                  "working": "$T_n = n(n+2) + n$",
+                  "reasoning": "Translating the numerical pattern to algebra."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the brackets.",
+                  "working": "$T_n = n^2 + 2n + n$",
+                  "reasoning": "Expansion."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify.",
+                  "working": "$T_n = n^2 + 3n$ (Shown)",
+                  "reasoning": "Collecting like terms."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the value of $n$ such that $T_n = 550$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n = 22$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the quadratic equation.",
+                  "working": "$n^2 + 3n = 550$",
+                  "reasoning": "Equating formula to value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rearrange to standard form.",
+                  "working": "$n^2 + 3n - 550 = 0$",
+                  "reasoning": "Preparation for solving."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $n$.",
+                  "working": "Using factorization or quadratic formula.\n$(n+25)(n-22) = 0$",
+                  "reasoning": "Solving quadratic."
+                },
+                {
+                  "step": 4,
+                  "explanation": "State the valid answer.",
+                  "working": "$n = -25$ (rejected) or $n = 22$.\nAnswer: $n=22$.",
+                  "reasoning": "Sequence index must be positive."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Dot Patterns"
+      }
+    ]
+  }
+}

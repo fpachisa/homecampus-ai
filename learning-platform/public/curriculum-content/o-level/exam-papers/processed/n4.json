@@ -229,6 +229,89 @@
         "title": "Rate of Work"
       },
       {
+        "questionNumber": 21,
+        "questionId": "N4-tkgs-2024-p1-q21",
+        "topicID": "N4",
+        "stem": "Benedict left his house to go to the library. He took the first bus, which travelled 5 km in $t$ minutes. He then alighted at a bus stop and waited for 12 minutes to switch to the next bus. The second bus took 2 minutes less than the first bus to reach his destination after travelling a further 3.75 km.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the time taken for the whole journey, in minutes, in terms of $t$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(2t + 10)$ minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the time taken for each segment of the journey.",
+                  "working": "Time for 1st bus = $t$ minutes\nWaiting time = $12$ minutes\nTime for 2nd bus = $(t - 2)$ minutes",
+                  "reasoning": "The problem states the second bus took 2 minutes less than the first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Sum the times to find the total duration.",
+                  "working": "Total time = $t + 12 + (t - 2)$",
+                  "reasoning": "Total time is the sum of travel times and waiting time."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the algebraic expression.",
+                  "working": "Total time = $2t + 10$",
+                  "reasoning": "Combine like terms ($t+t=2t$ and $12-2=10$)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that the average speed for the whole journey is $10.5~km/h.$, form an equation in terms of $t$ to calculate the total time taken for the journey.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "50 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total distance travelled.",
+                  "working": "Total distance = $5 + 3.75 = 8.75$ km",
+                  "reasoning": "Add the distance of the first leg and the second leg."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert the total time from minutes to hours.",
+                  "working": "Total time in hours = $\\frac{2t + 10}{60}$ h",
+                  "reasoning": "Speed is given in km/h, so time must be consistent with hours."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Set up the equation using the formula: Average Speed = Total Distance / Total Time.",
+                  "working": "$10.5 = \\frac{8.75}{\\frac{2t + 10}{60}}$",
+                  "reasoning": "Substitute the known values into the speed formula."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $t$.",
+                  "working": "$10.5 \\times \\frac{2t + 10}{60} = 8.75$\n$0.175(2t + 10) = 8.75$\n$2t + 10 = \\frac{8.75}{0.175}$\n$2t + 10 = 50$\n$2t = 40$\n$t = 20$",
+                  "reasoning": "Rearrange the equation to isolate $t$."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate the total time using the expression from part (a).",
+                  "working": "Total time = $2t + 10 = 2(20) + 10 = 50$ minutes",
+                  "reasoning": "Substitute $t=20$ back into the expression found in part (a)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Average Speed Journey"
+      },
+      {
         "questionNumber": 22,
         "questionId": "N4-cchms-2024-p1-q22",
         "topicID": "N4",
@@ -581,6 +664,77 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Combined Rates"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-2111153547-p1-q101",
+        "topicID": "N4",
+        "stem": "A car travels a distance of $x$ km at a constant speed of $60$ km/h. It then travels a further distance of $2x$ km at a constant speed of $80$ km/h.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression, in terms of $x$, for the total time taken for the journey in hours.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x}{24}$ hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the time taken for the first part of the journey.",
+                  "working": "Time 1 = $\\frac{\\text{Distance}}{\\text{Speed}} = \\frac{x}{60}$ h",
+                  "reasoning": "Time = Distance ÷ Speed."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the time taken for the second part of the journey.",
+                  "working": "Time 2 = $\\frac{2x}{80} = \\frac{x}{40}$ h",
+                  "reasoning": "Simplify the fraction $\\frac{2}{80}$ to $\\frac{1}{40}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Sum the times and simplify.",
+                  "working": "Total Time = $\\frac{x}{60} + \\frac{x}{40}$\nCommon denominator is 120:\n$= \\frac{2x}{120} + \\frac{3x}{120} = \\frac{5x}{120}$\n$= \\frac{x}{24}$",
+                  "reasoning": "Add the fractions to get a single algebraic term."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that the total time taken for the journey is 1 hour and 45 minutes, calculate the value of $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 42$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the total time into hours.",
+                  "working": "1 hour 45 minutes = $1 \\frac{45}{60}$ hours = $1.75$ hours or $\\frac{7}{4}$ hours",
+                  "reasoning": "Units must match the speed (km/h), so minutes are converted to hours."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Equate the expression from part (a) to the time given.",
+                  "working": "$\\frac{x}{24} = 1.75$",
+                  "reasoning": "Set the algebraic time equal to the numerical time."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $x$.",
+                  "working": "$x = 1.75 \\times 24$\n$x = 42$",
+                  "reasoning": "Multiply both sides by 24."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Multi-stage Travel"
       },
       {
         "questionNumber": 102,
@@ -1001,6 +1155,188 @@
         "totalMarks": 8,
         "paper": "Paper 2",
         "title": "Speed and Time Algebra"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-2111153547-p2-q101",
+        "topicID": "N4",
+        "stem": "A cyclist travels a distance of $d$ km up a hill at a speed of $12$ km/h. He returns along the same route downhill at a speed of $18$ km/h.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression, in terms of $d$, for the total time taken for the whole journey.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{5d}{36}$ hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write expressions for time taken uphill and downhill.",
+                  "working": "$T_{up} = \\frac{d}{12}$\n$T_{down} = \\frac{d}{18}$",
+                  "reasoning": "Time = Distance / Speed."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add the two times together.",
+                  "working": "Total Time = $\\frac{d}{12} + \\frac{d}{18}$",
+                  "reasoning": "Summing the duration of both legs."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the expression using a common denominator.",
+                  "working": "LCM of 12 and 18 is 36.\n$\\frac{3d}{36} + \\frac{2d}{36} = \\frac{5d}{36}$",
+                  "reasoning": "Combine fractions."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the average speed for the whole journey.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "14.4 km/h",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the total distance travelled.",
+                  "working": "Total Distance = $d + d = 2d$ km",
+                  "reasoning": "The journey consists of going up and coming back the same distance."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the average speed formula.",
+                  "working": "Average Speed = $\\frac{\\text{Total Distance}}{\\text{Total Time}}$\nAverage Speed = $\\frac{2d}{\\frac{5d}{36}}$",
+                  "reasoning": "Divide total distance by the total time expression found in part (a)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the fraction to find the value.",
+                  "working": "$2d \\times \\frac{36}{5d}$\n$= \\frac{72d}{5d}$\n$= 14.4$",
+                  "reasoning": "The variable $d$ cancels out, leaving a numerical value."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Average Speed Calculation"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N4-gemini-2111153547-p2-q102",
+        "topicID": "N4",
+        "stem": "Two athletes, Alice and Bernice, run a 100 m race. Alice completes the race in $x$ seconds. Bernice takes 5 seconds longer than Alice to complete the race.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression, in terms of $x$, for Alice's average speed in m/s.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{100}{x}$ m/s",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply speed formula.",
+                  "working": "Speed = $\\frac{\\text{Distance}}{\\text{Time}} = \\frac{100}{x}$",
+                  "reasoning": "Distance is 100m and time is $x$ seconds."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down an expression, in terms of $x$, for Bernice's average speed in m/s.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{100}{x+5}$ m/s",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine Bernice's time.",
+                  "working": "Time = $x + 5$ seconds",
+                  "reasoning": "Bernice takes 5 seconds longer than Alice."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply speed formula.",
+                  "working": "Speed = $\\frac{100}{x+5}$",
+                  "reasoning": "Distance is constant (100m)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Given that Alice's average speed is $1$ m/s faster than Bernice's, form an equation in $x$ and show that it reduces to $x^2 + 5x - 500 = 0$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Proof shown",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Form the equation based on the speed difference.",
+                  "working": "$\\frac{100}{x} - \\frac{100}{x+5} = 1$",
+                  "reasoning": "Alice's speed minus Bernice's speed equals 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Eliminate the denominators.",
+                  "working": "Multiply by $x(x+5)$:\n$100(x+5) - 100x = 1 \\cdot x(x+5)$",
+                  "reasoning": "Clearing fractions to form a standard polynomial."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and simplify.",
+                  "working": "$100x + 500 - 100x = x^2 + 5x$\n$500 = x^2 + 5x$\n$x^2 + 5x - 500 = 0$",
+                  "reasoning": "Rearrange terms to equal zero."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Solve the equation $x^2 + 5x - 500 = 0$ to find the time taken by Alice.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "20 seconds",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the quadratic equation.",
+                  "working": "$(x + 25)(x - 20) = 0$",
+                  "reasoning": "Find two numbers that multiply to -500 and add to 5 (25 and -20)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $x$.",
+                  "working": "$x = -25$ or $x = 20$",
+                  "reasoning": "Set each factor to zero."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Select the valid solution.",
+                  "working": "Since time cannot be negative, $x = 20$.",
+                  "reasoning": "Reject the negative root in the context of time."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Speed Difference Algebra"
       }
     ]
   }

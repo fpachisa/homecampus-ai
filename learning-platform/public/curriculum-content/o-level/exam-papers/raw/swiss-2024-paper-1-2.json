@@ -1,0 +1,552 @@
+{
+    "questions": [
+        {
+            "questionNumber": 2,
+            "questionId": "S2-swisscottage-2024-p1-q2",
+            "topicID": "S2",
+            "stem": "A bag contains 8 red balls, 5 green balls and 7 yellow balls.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "A ball is chosen at random and then replaced. What is the probability that it is not a red ball?",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$x$ yellow balls are removed from the bag. The probability of choosing a green ball is now $\\frac{1}{3}$. Find the value of $x$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Probability of Balls"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N3-swisscottage-2024-p1-q3",
+            "topicID": "N3",
+            "stem": "In 2023, the population in Singapore was 5 920 000, correct to the nearest ten thousand. The population increased by 4% from 2020 to 2023.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the population in Singapore in 2020, giving your answer correct to the nearest ten thousand.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Population Reverse Percentage"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N5-swisscottage-2024-p1-q4",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write as a single fraction in its simplest form $\\frac{2x}{3}-\\frac{3(x-2)}{4}.$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Algebraic Fraction Subtraction"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N1-swisscottage-2024-p1-q5",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Simplify $(\\frac{x^{3}}{27y^{6}})^{\\frac{4}{3}}.$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Indices Simplification"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "N1-swisscottage-2024-p1-q6",
+            "topicID": "N1",
+            "stem": "Peter has many cuboid blocks with dimensions 24 cm by 20 cm by 15 cm. He wishes to manufacture a box in the shape of a cube to pack the blocks such that there is no empty space in the box.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the smallest possible length of the box.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "LCM Cuboid Packing"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "S1-swisscottage-2024-p1-q7",
+            "topicID": "S1",
+            "stem": "The students in a school participate in exactly one CCA each. The table shows information on the type of CCA which students in a class participate in.\n\n| | Clubs and Society | Sports | Uniformed Groups | TOTAL |\n| :--- | :--- | :--- | :--- | :--- |\n| Males | 6 | | | |\n| Females | 10 | 5 | 3 | 18 |\n| TOTAL | 16 | 12 | | 40 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "How many males participate in uniformed groups?",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "A pie chart is to be drawn showing the data for the females. Calculate the angle representing females participating in uniformed groups.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "CCA Participation Statistics"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "N1-swisscottage-2024-p1-q8",
+            "topicID": "N1",
+            "stem": "The mass of Jupiter is approximately $1.90\\times10^{27}kg.$ The mass of Earth is approximately $5.97\\times10^{24}$ kg.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Giving your answer in standard form, calculate how many times Jupiter's mass is, compared to that of Earth's.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Density refers to the mass per unit volume. Given that the volume of Jupiter is $1.43\\times10^{24}m^{3}$ and that of Earth's is $1.08\\times10^{21}m^{3}$ calculate and determine which planet has a higher density.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Planetary Mass and Density"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N3-swisscottage-2024-p1-q9",
+            "topicID": "N3",
+            "stem": "Elva invested a sum of money in an account paying compound interest at 4% per year. After 3 years, there was $89 989.12 in her account.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "How much did Elva invest in the account?",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Compound Interest Principal"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "N1-swisscottage-2024-p1-q10",
+            "topicID": "N1",
+            "stem": "A metal sphere has a mass of 197 grams, correct to the nearest gram.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the least possible mass of the metal sphere.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The volume of the metal sphere is $25~cm^{3}$, correct to the nearest cubic centimetre. Find the greatest possible mass of 1 cubic centimetre of the metal.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Estimation and Density Limits"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "S1-swisscottage-2024-p1-q11",
+            "topicID": "S1",
+            "stem": "A class of 10 boys and 10 girls took a test. The girls' marks were 4, 5, 6, 7, 7, 7, 8, 8, 8 and 10.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "State the modal mark for the girls.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the mean mark for the girls.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The mean mark for the whole class was 7.5. Aaron claims that the boys did better in the test. Do you agree? Justify your answer.",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Test Score Statistics"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "N5-swisscottage-2024-p1-q12",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Factorise $a^{4}-b^{2}$",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Factorise completely $8xy -1-4x+2y$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Factorisation"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "N5-swisscottage-2024-p1-q17",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Simplify $(a+2b)(a-2b)-a^{2}$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hence evaluate $12~349\\times12~341-12~345^{2}$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Algebraic Expansion and Evaluation"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "N2-swisscottage-2024-p1-q18",
+            "topicID": "N2",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "8 men can build a structure in 15 days. How long would it take 5 men to build the structure?",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The period, T seconds, of a pendulum is proportional to the square root of the length, $l$ metres, of the pendulum. The length of a pendulum is increased by 50% of its original value. Calculate the percentage increase in the period of the pendulum.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Proportion and Variation"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "N2-swisscottage-2024-p1-q19",
+            "topicID": "N2",
+            "stem": "The scale of a map is 4 cm: 1 km.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write this scale in the form 1: n.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The distance between two cities on the map is 40 cm. Find the actual distance, in kilometres, between the two cities.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "A park has an actual area of $4.5~km^{2}$. Find the area, in square centimetres, of the park on the map.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Map Scale and Area"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "N1-swisscottage-2024-p1-q21",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Use prime factors to explain why $56\\times126$ is a perfect square.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Write down the greatest integer that will divide both 56 and 126 exactly.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The number 126k is a perfect cube. Find the smallest positive integer value of k.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Prime Factors and Squares"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "N7-swisscottage-2024-p1-q22",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Using factorisation, solve $9x^{2}+6x-8=0$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hence solve $9(y-1)^{2}+6y-14=0$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Solving Quadratic Equations"
+        },
+        {
+            "questionNumber": 23,
+            "questionId": "N9-swisscottage-2024-p1-q23",
+            "topicID": "N9",
+            "stem": "On every weekday morning, a theatre admits 20 adults and 40 children for a show. On every weekday afternoon, the theatre admits 30 adults and 30 children. This information can be represented by the matrix $A=(\\begin{matrix}20&40\\\\ 30&30\\end{matrix})$. On every weekend morning, the theatre admits 30 adults and 60 children for the show. On every weekend afternoon, the theatre admits 35 adults and 55 children.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Represent the number of people admitted to the show on a day in the weekend by a matrix B.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Evaluate the matrix $C=5A+2B$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "State what the elements of C represent.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d_i",
+                    "questionText": "The admission fee for an adult is $25 and for a child is $12. Evaluate the matrix $D=C(\\begin{matrix}25\\\\ 12\\end{matrix})$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d_ii",
+                    "questionText": "Evaluate the matrix $E=\\frac{1}{7}(1~1)D.$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d_iii",
+                    "questionText": "State what the elements of E represent.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Matrices Word Problem"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N7-swisscottage-2024-p2-q1",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve the inequality $\\frac{3x+1}{3}<\\frac{2-5x}{4}$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "It is given that $a=\\frac{2b-3c}{b+2c}$. Find a when $b=0.2$ and $c=-1.5$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Express b in terms of a and c.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Solve the equation $\\frac{5x}{x-3}-\\frac{2}{2x-3}=1.$ Give your solutions correct to 3 decimal places.",
+                    "marks": 5,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Algebraic Manipulation and Equations"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N8-swisscottage-2024-p2-q4",
+            "topicID": "N8",
+            "stem": "Here are the first four terms of a sequence: $\\frac{13}{5}, \\frac{10}{10}, \\frac{7}{15}, \\frac{4}{20}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the fifth term of the sequence.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$T_{n}$ is the nth term of the sequence. Find an expression, in terms of n, for $T_{n}$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The difference between the two consecutive terms of the sequence is $T_{n+1}-T_{n}$. Show that $T_{n+1}-T_{n}=\\frac{-16}{5n(n+1)}$",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Explain why the difference between the two consecutive terms of the sequence is always negative.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Sequence and Series"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "G6-swisscottage-2024-p2-q5",
+            "topicID": "G6",
+            "stem": "Line l passes through the points $(-4,4)$ and $(8,-2)$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the equation of line l.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The equation of line m is $6y=18-3x$. Show how you can tell that the line m does not intersect the line l.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The equation of line n is $2y=3x-4$. Line n and line l intersect at point A. Find the coordinates of A.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Line l intersects the y-axis at point B and line n intersects the y-axis at point C. Calculate the area of triangle ABC.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Coordinate Geometry Lines"
+        }
+    ]
+}

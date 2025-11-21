@@ -3,6 +3,123 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 8,
+        "questionId": "N9-woodgrove-2024-p1-q8",
+        "topicID": "N9",
+        "stem": "The table below shows a multiple-choice test Sam and Roger took.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "",
+            "Correct",
+            "No attempt",
+            "Incorrect"
+          ],
+          "rows": [
+            [
+              "Sam",
+              "14",
+              "5",
+              "1"
+            ],
+            [
+              "Roger",
+              "15",
+              "0",
+              "5"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Represent this information in a 2x3 matrix, S.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$S = \\begin{pmatrix} 14 & 5 & 1 \\\\ 15 & 0 & 5 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the rows and columns from the table.",
+                  "working": "Rows: Sam, Roger\nColumns: Correct, No attempt, Incorrect",
+                  "reasoning": "The matrix structure must mirror the table layout."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Write the entries into the matrix.",
+                  "working": "$S = \\begin{pmatrix} 14 & 5 & 1 \\\\ 15 & 0 & 5 \\end{pmatrix}$",
+                  "reasoning": "Transfer the numerical values directly."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The marks are awarded as follow:\nCorrect - 2 marks\nNo attempt - 0 mark\nIncorrect - -1 mark\nRepresent the information in a 3x1 matrix, T.\nEvaluate ST",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$T = \\begin{pmatrix} 2 \\\\ 0 \\\\ -1 \\end{pmatrix}$, $ST = \\begin{pmatrix} 27 \\\\ 25 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Construct matrix T based on the marks awarded.",
+                  "working": "$T = \\begin{pmatrix} 2 \\\\ 0 \\\\ -1 \\end{pmatrix}$",
+                  "reasoning": "A $3 \\times 1$ matrix is a column vector. The order corresponds to the columns of S (Correct, No attempt, Incorrect)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the matrix multiplication $ST$.",
+                  "working": "$ST = \\begin{pmatrix} 14 & 5 & 1 \\\\ 15 & 0 & 5 \\end{pmatrix} \\begin{pmatrix} 2 \\\\ 0 \\\\ -1 \\end{pmatrix}$",
+                  "reasoning": "Matrix multiplication is Row $\\times$ Column."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the product for the first row (Sam).",
+                  "working": "$(14)(2) + (5)(0) + (1)(-1) = 28 + 0 - 1 = 27$",
+                  "reasoning": "Sum of products of corresponding elements."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the product for the second row (Roger).",
+                  "working": "$(15)(2) + (0)(0) + (5)(-1) = 30 + 0 - 5 = 25$",
+                  "reasoning": "Sum of products of corresponding elements."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Write the final matrix.",
+                  "working": "$ST = \\begin{pmatrix} 27 \\\\ 25 \\end{pmatrix}$",
+                  "reasoning": "Combine the calculated row values."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Explain what your answer to (b) represents.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The matrix represents the total marks obtained by Sam and Roger respectively.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the resulting matrix dimensions and context.",
+                  "working": "The rows correspond to the students (Sam, Roger). The value is the sum of marks.",
+                  "reasoning": "Since we multiplied (Number of answers) by (Marks per answer), the result is the total score."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Matrices Word Problem"
+      },
+      {
         "questionNumber": 14,
         "questionId": "N9-huayi-2024-p1-q14",
         "topicID": "N9",
@@ -632,6 +749,163 @@
         "title": "Matrix Ticket Sales"
       },
       {
+        "questionNumber": 23,
+        "questionId": "N9-swisscottage-2024-p1-q23",
+        "topicID": "N9",
+        "stem": "On every weekday morning, a theatre admits 20 adults and 40 children for a show. On every weekday afternoon, the theatre admits 30 adults and 30 children. This information can be represented by the matrix $A=(\\begin{matrix}20&40\\\\ 30&30\\end{matrix})$. On every weekend morning, the theatre admits 30 adults and 60 children for the show. On every weekend afternoon, the theatre admits 35 adults and 55 children.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Represent the number of people admitted to the show on a day in the weekend by a matrix B.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$B = \\begin{pmatrix} 30 & 60 \\\\ 35 & 55 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the data for the weekend. Morning: 30 adults, 60 children. Afternoon: 35 adults, 55 children.",
+                  "working": "Row 1 (Morning): 30, 60\nRow 2 (Afternoon): 35, 55",
+                  "reasoning": "The structure of matrix B must match matrix A, where rows represent the time of day (Morning/Afternoon) and columns represent the category of people (Adults/Children)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct the matrix.",
+                  "working": "$B = \\begin{pmatrix} 30 & 60 \\\\ 35 & 55 \\end{pmatrix}$",
+                  "reasoning": "Place the identified values into the $2 \\times 2$ matrix format."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Evaluate the matrix $C=5A+2B$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$C = \\begin{pmatrix} 160 & 320 \\\\ 220 & 260 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply matrix A by scalar 5 and matrix B by scalar 2.",
+                  "working": "$5A = 5\\begin{pmatrix} 20 & 40 \\\\ 30 & 30 \\end{pmatrix} = \\begin{pmatrix} 100 & 200 \\\\ 150 & 150 \\end{pmatrix}$\n$2B = 2\\begin{pmatrix} 30 & 60 \\\\ 35 & 55 \\end{pmatrix} = \\begin{pmatrix} 60 & 120 \\\\ 70 & 110 \\end{pmatrix}$",
+                  "reasoning": "Scalar multiplication involves multiplying every element within the matrix by the scalar value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add the two resulting matrices.",
+                  "working": "$C = \\begin{pmatrix} 100+60 & 200+120 \\\\ 150+70 & 150+110 \\end{pmatrix} = \\begin{pmatrix} 160 & 320 \\\\ 220 & 260 \\end{pmatrix}$",
+                  "reasoning": "Matrix addition is performed by adding corresponding elements of matrices with the same order."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "State what the elements of C represent.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "The elements represent the total number of adults and children admitted on mornings and afternoons over a period of one week (5 weekdays and 2 weekend days).",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the scalars used in part (b).",
+                  "working": "5A represents 5 weekdays. 2B represents 2 weekend days.",
+                  "reasoning": "A standard week consists of 5 weekdays and 2 weekend days."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Interpret the sum.",
+                  "working": "Summing them gives the total attendance for a full week, categorized by time of day (rows) and person type (columns).",
+                  "reasoning": "Contextual interpretation of matrix operations is a key skill in applying mathematics to real-world problems."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d_i",
+            "questionText": "The admission fee for an adult is \\$25 and for a child is \\$12. Evaluate the matrix $D=C(\\begin{matrix}25\\\\ 12\\end{matrix})$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$D = \\begin{pmatrix} 7840 \\\\ 8620 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication.",
+                  "working": "$D = \\begin{pmatrix} 160 & 320 \\\\ 220 & 260 \\end{pmatrix} \\begin{pmatrix} 25 \\\\ 12 \\end{pmatrix}$",
+                  "reasoning": "We are multiplying a $2 \\times 2$ matrix by a $2 \\times 1$ column vector."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform row-by-column multiplication.",
+                  "working": "Row 1: $(160 \\times 25) + (320 \\times 12) = 4000 + 3840 = 7840$\nRow 2: $(220 \\times 25) + (260 \\times 12) = 5500 + 3120 = 8620$",
+                  "reasoning": "Multiply elements of the row by corresponding elements of the column and sum the results."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final matrix.",
+                  "working": "$D = \\begin{pmatrix} 7840 \\\\ 8620 \\end{pmatrix}$",
+                  "reasoning": "The result is a $2 \\times 1$ matrix representing total revenue for mornings and afternoons respectively."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d_ii",
+            "questionText": "Evaluate the matrix $E=\\frac{1}{7}(1~1)D.$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$E = (2351.43)$ (to 2 d.p.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply the row vector $(1 \\quad 1)$ by matrix D.",
+                  "working": "$(1 \\quad 1) \\begin{pmatrix} 7840 \\\\ 8620 \\end{pmatrix} = (1 \\times 7840 + 1 \\times 8620) = (16460)$",
+                  "reasoning": "Multiplying by a row vector of 1s effectively sums the elements of the column vector D."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply by the scalar $\\frac{1}{7}$.",
+                  "working": "$E = \\frac{1}{7} (16460) = (2351.428...)$",
+                  "reasoning": "This calculates the average."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Round to appropriate accuracy (currency usually 2 d.p.).",
+                  "working": "$E \\approx (2351.43)$",
+                  "reasoning": "Final answer presentation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d_iii",
+            "questionText": "State what the elements of E represent.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "It represents the average daily revenue collected by the theatre from ticket sales.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the operations.",
+                  "working": "Matrix D was total weekly revenue. $(1 \\quad 1)D$ summed the morning and afternoon revenues to get total weekly revenue. $\\frac{1}{7}$ divides the weekly total by 7 days.",
+                  "reasoning": "Total Revenue / Number of Days = Average Daily Revenue."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Matrices Word Problem"
+      },
+      {
         "questionNumber": 24,
         "questionId": "N9-canberra-2024-p1-q24",
         "topicID": "N9",
@@ -730,6 +1004,111 @@
         "totalMarks": 5,
         "paper": "Paper 1",
         "title": "Matrix Cafe Prices"
+      },
+      {
+        "questionNumber": 24,
+        "questionId": "N9-tkgs-2024-p1-q24",
+        "topicID": "N9",
+        "stem": "An enrichment centre offers drama, writing and speech enrichment classes on weekdays during the school holiday. The matrix S shows the number of students who attend the different classes for beginners and advanced levels in a day.\n\n$S=\\begin{pmatrix}25&32&40\\\\ 21&19&32\\end{pmatrix}$ (Rows: beginners, advanced. Cols: drama, writing, speech)",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Evaluate the matrix $W=5S$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$W=\\begin{pmatrix}125&160&200\\\\ 105&95&160\\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply every element in matrix S by the scalar 5.",
+                  "working": "$W = 5\\begin{pmatrix}25&32&40\\\\ 21&19&32\\end{pmatrix} = \\begin{pmatrix}5(25)&5(32)&5(40)\\\\ 5(21)&5(19)&5(32)\\end{pmatrix}$",
+                  "reasoning": "Scalar multiplication involves multiplying the scalar value to every entry within the matrix."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compute the products.",
+                  "working": "$W = \\begin{pmatrix}125&160&200\\\\ 105&95&160\\end{pmatrix}$",
+                  "reasoning": "Perform the arithmetic to find the final matrix elements."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The school fee for drama cost \\$40 per session, \\$25 per session for writing and \\$30 per session for speech. The fees for beginner and advanced learners are the same for each type of class. Represent these amounts in a column matrix C.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$C=\\begin{pmatrix}40\\\\ 25\\\\ 30\\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the costs corresponding to the columns of matrix S (drama, writing, speech) and arrange them in a column matrix.",
+                  "working": "Drama: $40, Writing: $25, Speech: $30.\n$C = \\begin{pmatrix}40\\\\ 25\\\\ 30\\end{pmatrix}$",
+                  "reasoning": "A column matrix has dimension $3 \\times 1$. The order must match the columns of S (Drama, Writing, Speech) to allow for matrix multiplication later."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Evaluate the matrix $T=WC$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$T=\\begin{pmatrix}15000\\\\ 11375\\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication of W ($2 \\times 3$) and C ($3 \\times 1$).",
+                  "working": "$T = \\begin{pmatrix}125&160&200\\\\ 105&95&160\\end{pmatrix} \\begin{pmatrix}40\\\\ 25\\\\ 30\\end{pmatrix}$",
+                  "reasoning": "Matrix multiplication is possible because the number of columns in W (3) equals the number of rows in C (3)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply rows of W by the column of C.",
+                  "working": "Row 1: $(125 \\times 40) + (160 \\times 25) + (200 \\times 30) = 5000 + 4000 + 6000 = 15000$\nRow 2: $(105 \\times 40) + (95 \\times 25) + (160 \\times 30) = 4200 + 2375 + 4800 = 11375$",
+                  "reasoning": "Sum of products of corresponding elements."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final matrix.",
+                  "working": "$T = \\begin{pmatrix}15000\\\\ 11375\\end{pmatrix}$",
+                  "reasoning": "The resulting matrix has dimensions $2 \\times 1$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Explain what the elements in T represent.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The elements represent the total fees collected for the beginners and advanced learners respectively over the 5 weekdays.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the components of the multiplication.",
+                  "working": "Matrix $W$ represents the total number of students over 5 days. Matrix $C$ represents the cost per student.",
+                  "reasoning": "Multiplying quantity (students) by rate (fee) gives the total monetary value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the row meanings.",
+                  "working": "Row 1 corresponds to Beginners. Row 2 corresponds to Advanced learners.",
+                  "reasoning": "The structure of the rows is preserved from Matrix S and W."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Matrix Operations"
       },
       {
         "questionNumber": 25,
@@ -1528,6 +1907,241 @@
         "title": "Stationery Sales Matrix"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2111145943-p1-q101",
+        "topicID": "N9",
+        "stem": "Given the matrices $P = \\begin{pmatrix} 3 & -1 \\\\ 2 & 0 \\end{pmatrix}$ and $Q = \\begin{pmatrix} 1 & 2 \\\\ 4 & k \\end{pmatrix}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find an expression for the matrix product $PQ$ in terms of $k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$PQ = \\begin{pmatrix} -1 & 6-k \\\\ 2 & 4 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication.",
+                  "working": "$PQ = \\begin{pmatrix} 3 & -1 \\\\ 2 & 0 \\end{pmatrix} \\begin{pmatrix} 1 & 2 \\\\ 4 & k \\end{pmatrix}$",
+                  "reasoning": "Multiply rows of P by columns of Q."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate individual elements.",
+                  "working": "Top-Left: $(3)(1) + (-1)(4) = 3 - 4 = -1$\nTop-Right: $(3)(2) + (-1)(k) = 6 - k$\nBottom-Left: $(2)(1) + (0)(4) = 2$\nBottom-Right: $(2)(2) + (0)(k) = 4$",
+                  "reasoning": "Standard matrix multiplication algorithm."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that the determinant of $PQ$ is -16, find the value of $k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$k = 0$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Recall the formula for determinant of a $2 \\times 2$ matrix.",
+                  "working": "For $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$, determinant is $ad - bc$.",
+                  "reasoning": "Apply this to the result from part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation.",
+                  "working": "$(-1)(4) - (2)(6-k) = -16$\n$-4 - (12 - 2k) = -16$",
+                  "reasoning": "Substitute the elements from matrix PQ."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $k$.",
+                  "working": "$-4 - 12 + 2k = -16$\n$-16 + 2k = -16$\n$2k = 0$\n$k = 0$",
+                  "reasoning": "Algebraic manipulation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Matrix Multiplication and Determinant"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-20241027-p1-q101",
+        "topicID": "N9",
+        "stem": "Given the matrices $A = \\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix}$ and $B = \\begin{pmatrix} 1 & 4 \\\\ -2 & 5 \\end{pmatrix}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Evaluate the matrix $2A - B$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\begin{pmatrix} 5 & -6 \\\\ 2 & -1 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply matrix A by the scalar 2.",
+                  "working": "$2A = 2\\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix} = \\begin{pmatrix} 6 & -2 \\\\ 0 & 4 \\end{pmatrix}$",
+                  "reasoning": "Scalar multiplication is applied to every element."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract matrix B from the result.",
+                  "working": "$\\begin{pmatrix} 6 & -2 \\\\ 0 & 4 \\end{pmatrix} - \\begin{pmatrix} 1 & 4 \\\\ -2 & 5 \\end{pmatrix} = \\begin{pmatrix} 6-1 & -2-4 \\\\ 0-(-2) & 4-5 \\end{pmatrix}$",
+                  "reasoning": "Matrix subtraction is performed element by element."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the elements.",
+                  "working": "$= \\begin{pmatrix} 5 & -6 \\\\ 2 & -1 \\end{pmatrix}$",
+                  "reasoning": "Final arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find $A^2$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\begin{pmatrix} 9 & -5 \\\\ 0 & 4 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write $A^2$ as $A \\times A$.",
+                  "working": "$A^2 = \\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix} \\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix}$",
+                  "reasoning": "Squaring a matrix means multiplying it by itself, not squaring individual elements."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform matrix multiplication (Row by Column).",
+                  "working": "Row 1, Col 1: $(3)(3) + (-1)(0) = 9$\nRow 1, Col 2: $(3)(-1) + (-1)(2) = -3 - 2 = -5$\nRow 2, Col 1: $(0)(3) + (2)(0) = 0$\nRow 2, Col 2: $(0)(-1) + (2)(2) = 4$",
+                  "reasoning": "Standard matrix multiplication algorithm."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Construct final matrix.",
+                  "working": "$\\begin{pmatrix} 9 & -5 \\\\ 0 & 4 \\end{pmatrix}$",
+                  "reasoning": "Combine calculated elements."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Matrix Arithmetic"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2111185018-p1-q101",
+        "topicID": "N9",
+        "stem": "A florist sells two types of bouquets: 'Standard' and 'Deluxe'. The flowers used in each bouquet are Roses, Lilies, and Tulips.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "",
+            "Roses",
+            "Lilies",
+            "Tulips"
+          ],
+          "rows": [
+            [
+              "Standard",
+              "5",
+              "3",
+              "2"
+            ],
+            [
+              "Deluxe",
+              "10",
+              "5",
+              "5"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down a $2 \\times 3$ matrix, $\\mathbf{B}$, to represent the number of flowers in each bouquet type.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\mathbf{B} = \\begin{pmatrix} 5 & 3 & 2 \\\\ 10 & 5 & 5 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract data from the table into matrix format.",
+                  "working": "Row 1 (Standard): 5, 3, 2\nRow 2 (Deluxe): 10, 5, 5",
+                  "reasoning": "Rows represent bouquet types, columns represent flower types."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The cost price of a Rose is \\$1.50, a Lily is \\$2.00, and a Tulip is \\$1.00.\nRepresent these costs in a column matrix, $\\mathbf{C}$.\nCalculate $\\mathbf{B}\\mathbf{C}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\mathbf{C} = \\begin{pmatrix} 1.5 \\\\ 2 \\\\ 1 \\end{pmatrix}$, $\\mathbf{B}\\mathbf{C} = \\begin{pmatrix} 15.5 \\\\ 30 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Form the cost matrix C.",
+                  "working": "$\\mathbf{C} = \\begin{pmatrix} 1.5 \\\\ 2 \\\\ 1 \\end{pmatrix}$",
+                  "reasoning": "The order must match the columns of B (Roses, Lilies, Tulips)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform matrix multiplication $\\mathbf{B}\\mathbf{C}$.",
+                  "working": "$\\begin{pmatrix} 5 & 3 & 2 \\\\ 10 & 5 & 5 \\end{pmatrix} \\begin{pmatrix} 1.5 \\\\ 2 \\\\ 1 \\end{pmatrix}$",
+                  "reasoning": "Multiply row elements by column elements and sum them."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the values.",
+                  "working": "Row 1: $(5)(1.5) + (3)(2) + (2)(1) = 7.5 + 6 + 2 = 15.5$\nRow 2: $(10)(1.5) + (5)(2) + (5)(1) = 15 + 10 + 5 = 30$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "State what the elements of $\\mathbf{B}\\mathbf{C}$ represent.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The total cost of flowers for one Standard bouquet and one Deluxe bouquet respectively.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the result.",
+                  "working": "Top element: Cost for Standard. Bottom element: Cost for Deluxe.",
+                  "reasoning": "The calculation sums the cost of individual flowers per bouquet type."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Matrix Multiplication - Florist"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N9-gemini-1911-p1-102",
         "topicID": "N9",
@@ -1874,6 +2488,223 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Matrix Operations"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-2111145943-p1-q102",
+        "topicID": "N9",
+        "stem": "Find the inverse of the matrix $A = \\begin{pmatrix} 4 & 1 \\\\ 3 & 2 \\end{pmatrix}$. Hence, solve the simultaneous equations:\n$4x + y = 9$\n$3x + 2y = 13$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find $A^{-1}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$A^{-1} = \\frac{1}{5} \\begin{pmatrix} 2 & -1 \\\\ -3 & 4 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the determinant of A.",
+                  "working": "$|A| = (4)(2) - (1)(3) = 8 - 3 = 5$",
+                  "reasoning": "Determinant is required for the inverse formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the inverse matrix formula.",
+                  "working": "$A^{-1} = \\frac{1}{det} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix} = \\frac{1}{5} \\begin{pmatrix} 2 & -1 \\\\ -3 & 4 \\end{pmatrix}$",
+                  "reasoning": "Swap the main diagonal elements and change the signs of the other diagonal elements."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the simultaneous equations.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 1, y = 5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the equations in matrix form $AX = B$.",
+                  "working": "$\\begin{pmatrix} 4 & 1 \\\\ 3 & 2 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 9 \\\\ 13 \\end{pmatrix}$",
+                  "reasoning": "Transforming algebraic system to matrix form."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Pre-multiply by $A^{-1}$.",
+                  "working": "$\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\frac{1}{5} \\begin{pmatrix} 2 & -1 \\\\ -3 & 4 \\end{pmatrix} \\begin{pmatrix} 9 \\\\ 13 \\end{pmatrix}$",
+                  "reasoning": "Using the inverse found in part (a) to isolate the variable matrix."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Perform matrix multiplication and solve.",
+                  "working": "$\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\frac{1}{5} \\begin{pmatrix} (2)(9) + (-1)(13) \\\\ (-3)(9) + (4)(13) \\end{pmatrix}$\n$= \\frac{1}{5} \\begin{pmatrix} 18 - 13 \\\\ -27 + 52 \\end{pmatrix}$\n$= \\frac{1}{5} \\begin{pmatrix} 5 \\\\ 25 \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ 5 \\end{pmatrix}$",
+                  "reasoning": "Calculate the final values for x and y."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Inverse Matrices and Simultaneous Equations"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-20241027-p1-q102",
+        "topicID": "N9",
+        "stem": "A fruit stall sells apples and oranges. The sales for Week 1 are represented by matrix $P = \\begin{pmatrix} 120 & 90 \\end{pmatrix}$ and for Week 2 by matrix $Q = \\begin{pmatrix} 150 & 110 \\end{pmatrix}$, where the columns represent apples and oranges respectively.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the matrix $R = P + Q$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$R = \\begin{pmatrix} 270 & 200 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Add the corresponding elements of matrices P and Q.",
+                  "working": "$R = \\begin{pmatrix} 120+150 & 90+110 \\end{pmatrix}$",
+                  "reasoning": "Matrix addition sums the sales of the two weeks for each fruit type."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the sums.",
+                  "working": "$R = \\begin{pmatrix} 270 & 200 \\end{pmatrix}$",
+                  "reasoning": "Final calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The profit for an apple is \\$0.40 and for an orange is \\$0.50. Represent this as a column matrix $V$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$V = \\begin{pmatrix} 0.40 \\\\ 0.50 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Arrange the profit values in a column matrix.",
+                  "working": "$V = \\begin{pmatrix} 0.40 \\\\ 0.50 \\end{pmatrix}$",
+                  "reasoning": "The order must match the columns of the sales matrices (Apples first, then Oranges)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate $RV$ and explain what the result represents.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$RV = \\begin{pmatrix} 208 \\end{pmatrix}$. It represents the total profit from both fruits over the two weeks.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply matrix R by matrix V.",
+                  "working": "$RV = \\begin{pmatrix} 270 & 200 \\end{pmatrix} \\begin{pmatrix} 0.40 \\\\ 0.50 \\end{pmatrix}$",
+                  "reasoning": "Matrix multiplication $(1 \\times 2) \\times (2 \\times 1)$ results in a $(1 \\times 1)$ matrix."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compute the value.",
+                  "working": "$= (270 \\times 0.40) + (200 \\times 0.50) = 108 + 100 = 208$",
+                  "reasoning": "Sum of (Quantity $\\times$ Profit per unit)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Interpret the result.",
+                  "working": "The single element 208 represents the total profit in dollars.",
+                  "reasoning": "Since R is total sales and V is profit per unit, the product is total profit."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Sales Matrices"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-2111185018-p1-q102",
+        "topicID": "N9",
+        "stem": "Three teams, Alpha, Beta, and Gamma, participated in a quiz. Their results are shown below:\n\nAlpha: 6 Wins, 2 Draws, 2 Losses\nBeta: 5 Wins, 4 Draws, 1 Loss\nGamma: 4 Wins, 3 Draws, 3 Losses",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Represent the results in a $3 \\times 3$ matrix, $\\mathbf{R}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\mathbf{R} = \\begin{pmatrix} 6 & 2 & 2 \\\\ 5 & 4 & 1 \\\\ 4 & 3 & 3 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Organize data into rows and columns.",
+                  "working": "Rows: Alpha, Beta, Gamma\nCols: Wins, Draws, Losses",
+                  "reasoning": "Standard matrix representation of tabular data."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Points are awarded as follows: 3 points for a Win, 1 point for a Draw, and 0 points for a Loss.\nWrite down a matrix $\\mathbf{P}$ such that the product $\\mathbf{R}\\mathbf{P}$ gives the total points for each team.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\mathbf{P} = \\begin{pmatrix} 3 \\\\ 1 \\\\ 0 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the dimensions and values for P.",
+                  "working": "Since R is $3 \\times 3$, P must be $3 \\times 1$ to result in a $3 \\times 1$ total score matrix.",
+                  "reasoning": "Column vector corresponding to points for Wins, Draws, and Losses."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate $\\mathbf{R}\\mathbf{P}$ and determine which team won the quiz.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\mathbf{R}\\mathbf{P} = \\begin{pmatrix} 20 \\\\ 19 \\\\ 15 \\end{pmatrix}$. Team Alpha won.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the matrix product.",
+                  "working": "Alpha: $6(3) + 2(1) + 2(0) = 18 + 2 = 20$\nBeta: $5(3) + 4(1) + 1(0) = 15 + 4 = 19$\nGamma: $4(3) + 3(1) + 3(0) = 12 + 3 = 15$",
+                  "reasoning": "Matrix multiplication."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare scores to find the winner.",
+                  "working": "20 > 19 > 15. Alpha has the highest score.",
+                  "reasoning": "The highest total score indicates the winner."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Quiz Scoring Matrices"
       }
     ],
     "Paper 2": [
@@ -2351,6 +3182,275 @@
         "title": "Inverse Matrix and Simultaneous Equations"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2111145943-p2-q101",
+        "topicID": "N9",
+        "stem": "A furniture shop sells chairs and tables. The sales for two branches, East and West, over two months are recorded. \nIn January, the East branch sold 50 chairs and 10 tables, while the West branch sold 40 chairs and 15 tables.\nIn February, the East branch sold 60 chairs and 12 tables, while the West branch sold 55 chairs and 20 tables.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Represent the sales data for January by a $2 \\times 2$ matrix $J$ and for February by a matrix $F$, where the rows represent the branches (East, West) and columns represent the items (Chairs, Tables).",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$J = \\begin{pmatrix} 50 & 10 \\\\ 40 & 15 \\end{pmatrix}, F = \\begin{pmatrix} 60 & 12 \\\\ 55 & 20 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract data for January.",
+                  "working": "East: 50, 10. West: 40, 15.",
+                  "reasoning": "Organize data according to specified rows (branches) and columns (items)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Extract data for February.",
+                  "working": "East: 60, 12. West: 55, 20.",
+                  "reasoning": "Same structure as Matrix J."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The selling price of a chair is $45 and a table is $120. The cost price of a chair is $30 and a table is $80. Represent the profit per item as a column matrix $P$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix} 15 \\\\ 40 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate profit for each item.",
+                  "working": "Chair Profit: $45 - 30 = 15$\nTable Profit: $120 - 80 = 40$",
+                  "reasoning": "Profit = Selling Price - Cost Price."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Format as a column matrix.",
+                  "working": "$P = \\begin{pmatrix} 15 \\\\ 40 \\end{pmatrix}$",
+                  "reasoning": "Top element for Chairs, bottom for Tables to match the column order of J and F."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate the matrix $T = (J + F)P$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$T = \\begin{pmatrix} 2530 \\\\ 2825 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $J + F$ (Total sales over two months).",
+                  "working": "$\\begin{pmatrix} 50 & 10 \\\\ 40 & 15 \\end{pmatrix} + \\begin{pmatrix} 60 & 12 \\\\ 55 & 20 \\end{pmatrix} = \\begin{pmatrix} 110 & 22 \\\\ 95 & 35 \\end{pmatrix}$",
+                  "reasoning": "Matrix addition sums the sales of corresponding items/branches."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply by Profit matrix $P$.",
+                  "working": "$\\begin{pmatrix} 110 & 22 \\\\ 95 & 35 \\end{pmatrix} \\begin{pmatrix} 15 \\\\ 40 \\end{pmatrix} = \\begin{pmatrix} 110(15) + 22(40) \\\\ 95(15) + 35(40) \\end{pmatrix}$",
+                  "reasoning": "Matrix multiplication to find total profit."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute final values.",
+                  "working": "Row 1: $1650 + 880 = 2530$\nRow 2: $1425 + 1400 = 2825$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Explain what the elements of matrix T represent.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "The elements represent the total profit made by the East branch and West branch respectively over the two months.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the rows and operation.",
+                  "working": "Rows correspond to branches (East, West). The operation multiplied total quantity by profit per item.",
+                  "reasoning": "Relating the mathematical result back to the business context."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Furniture Sales and Profit Matrices"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-20241027-p2-q101",
+        "topicID": "N9",
+        "stem": "A construction company sources sand, cement, and gravel from two suppliers, Supplier A and Supplier B. The cost per unit (in dollars) for each material is given by the matrix $C$:\n\n$C = \\begin{pmatrix} 40 & 12 & 35 \\\\ 42 & 11 & 34 \\end{pmatrix}$ \n(Rows: Supplier A, Supplier B. Columns: Sand, Cement, Gravel)\n\nThe company requires 50 units of sand, 200 units of cement, and 80 units of gravel for a new project.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Represent the quantities of materials required as a column matrix $Q$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$Q = \\begin{pmatrix} 50 \\\\ 200 \\\\ 80 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "List the quantities in the order corresponding to the columns of C (Sand, Cement, Gravel).",
+                  "working": "Sand: 50, Cement: 200, Gravel: 80.\n$Q = \\begin{pmatrix} 50 \\\\ 200 \\\\ 80 \\end{pmatrix}$",
+                  "reasoning": "To allow for matrix multiplication $CQ$, the number of rows in Q must match the number of columns in C."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the matrix product $D = CQ$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$D = \\begin{pmatrix} 7200 \\\\ 7020 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the multiplication.",
+                  "working": "$D = \\begin{pmatrix} 40 & 12 & 35 \\\\ 42 & 11 & 34 \\end{pmatrix} \\begin{pmatrix} 50 \\\\ 200 \\\\ 80 \\end{pmatrix}$",
+                  "reasoning": "Multiply the $2 \\times 3$ matrix by the $3 \\times 1$ matrix."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the row products.",
+                  "working": "Row 1: $(40 \\times 50) + (12 \\times 200) + (35 \\times 80) = 2000 + 2400 + 2800 = 7200$\nRow 2: $(42 \\times 50) + (11 \\times 200) + (34 \\times 80) = 2100 + 2200 + 2720 = 7020$",
+                  "reasoning": "Summing the cost of all materials for each supplier."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Explain the significance of the elements in $D$ and determine which supplier offers the cheaper total cost.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The elements represent the total cost of materials from Supplier A ($7200) and Supplier B ($7020). Supplier B is cheaper.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the rows of matrix D.",
+                  "working": "Row 1 corresponds to Supplier A's prices. Row 2 corresponds to Supplier B's prices.",
+                  "reasoning": "The row structure is inherited from matrix C."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare the values.",
+                  "working": "$7020 < 7200$. Supplier B is cheaper.",
+                  "reasoning": "Direct numerical comparison."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Construction Material Costs"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2111185018-p2-q101",
+        "topicID": "N9",
+        "stem": "A bakery uses flour and sugar to make Cakes and Tarts. The amount of ingredients (in kg) required for one batch of each is given by matrix $\\mathbf{A}$:\n\n$\\mathbf{A} = \\begin{pmatrix} 10 & 5 \\\\ 6 & 4 \\end{pmatrix}$\n\nThe rows represent Cakes and Tarts respectively, and the columns represent Flour and Sugar respectively.\n\nThe bakery orders ingredients from two different suppliers, X and Y. The cost per kg (\\$) is given by matrix $\\mathbf{C}$:\n\n$\\mathbf{C} = \\begin{pmatrix} 2.00 & 1.80 \\\\ 1.50 & 1.60 \\end{pmatrix}$\n\nThe rows represent Flour and Sugar respectively, and the columns represent Supplier X and Supplier Y respectively.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the matrix product $\\mathbf{AC}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\mathbf{AC} = \\begin{pmatrix} 27.5 & 26 \\\\ 18 & 17.2 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the multiplication.",
+                  "working": "$\\begin{pmatrix} 10 & 5 \\\\ 6 & 4 \\end{pmatrix} \\begin{pmatrix} 2.00 & 1.80 \\\\ 1.50 & 1.60 \\end{pmatrix}$",
+                  "reasoning": "Multiply Row (Product) by Column (Supplier)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate Row 1 (Cakes).",
+                  "working": "Entry (1,1): $10(2) + 5(1.5) = 20 + 7.5 = 27.5$\nEntry (1,2): $10(1.8) + 5(1.6) = 18 + 8 = 26$",
+                  "reasoning": "Cost for Cakes from Supplier X and Y."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate Row 2 (Tarts).",
+                  "working": "Entry (2,1): $6(2) + 4(1.5) = 12 + 6 = 18$\nEntry (2,2): $6(1.8) + 4(1.6) = 10.8 + 6.4 = 17.2$",
+                  "reasoning": "Cost for Tarts from Supplier X and Y."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain what the element in the first row and second column of $\\mathbf{AC}$ represents.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "It represents the total cost of ingredients for one batch of Cakes if purchased from Supplier Y.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Map the indices to the labels.",
+                  "working": "Row 1 corresponds to Cakes. Column 2 corresponds to Supplier Y.",
+                  "reasoning": "Matrix multiplication combines the 'Product vs Ingredient' and 'Ingredient vs Supplier' to give 'Product vs Supplier'."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The bakery wants to produce 10 batches of Cakes and 20 batches of Tarts. They decide to buy all ingredients from Supplier X. Calculate the total cost.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$635",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the relevant costs from matrix AC.",
+                  "working": "From Supplier X (Column 1 of AC):\nCost per Cake batch = $27.50\nCost per Tart batch = $18.00",
+                  "reasoning": "Use the results calculated in part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate total cost based on quantity.",
+                  "working": "Total = $10(27.5) + 20(18)$",
+                  "reasoning": "Multiply quantity by unit cost."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final calculation.",
+                  "working": "$275 + 360 = 635$",
+                  "reasoning": "Sum the costs."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Bakery Production Costs"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N9-gemini-2011-p2-q102",
         "topicID": "N9",
@@ -2437,6 +3537,105 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Production Costs"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-20241027-p2-q102",
+        "topicID": "N9",
+        "stem": "A cinema sells tickets for adults and students. On Saturday, 5 adult tickets and 2 student tickets cost $88. On Sunday, 3 adult tickets and 4 student tickets cost $78. Let $x$ be the price of an adult ticket and $y$ be the price of a student ticket.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down a pair of simultaneous equations to represent this information.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$5x + 2y = 88$\n$3x + 4y = 78$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Translate the sentences into algebraic equations.",
+                  "working": "Sat: $5x + 2y = 88$\nSun: $3x + 4y = 78$",
+                  "reasoning": "Sum of (Quantity $\\times$ Price) equals Total Cost."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write the simultaneous equations in the form $AX = B$, where $A$, $X$ and $B$ are matrices.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\begin{pmatrix} 5 & 2 \\\\ 3 & 4 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 88 \\\\ 78 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract the coefficients into matrix A, variables into X, and constants into B.",
+                  "working": "$A = \\begin{pmatrix} 5 & 2 \\\\ 3 & 4 \\end{pmatrix}, X = \\begin{pmatrix} x \\\\ y \\end{pmatrix}, B = \\begin{pmatrix} 88 \\\\ 78 \\end{pmatrix}$",
+                  "reasoning": "Standard matrix representation of linear systems."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find $A^{-1}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{14} \\begin{pmatrix} 4 & -2 \\\\ -3 & 5 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the determinant of A.",
+                  "working": "$det(A) = (5)(4) - (2)(3) = 20 - 6 = 14$",
+                  "reasoning": "Determinant $ad - bc$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the inverse formula.",
+                  "working": "$A^{-1} = \\frac{1}{det(A)} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix} = \\frac{1}{14} \\begin{pmatrix} 4 & -2 \\\\ -3 & 5 \\end{pmatrix}$",
+                  "reasoning": "Swap diagonal elements, negate off-diagonal elements, divide by determinant."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Hence, calculate the price of an adult ticket and a student ticket.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Adult: $14, Student: $9",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the matrix equation $X = A^{-1}B$.",
+                  "working": "$\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\frac{1}{14} \\begin{pmatrix} 4 & -2 \\\\ -3 & 5 \\end{pmatrix} \\begin{pmatrix} 88 \\\\ 78 \\end{pmatrix}$",
+                  "reasoning": "Pre-multiplying by the inverse isolates the variable matrix X."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the multiplication.",
+                  "working": "Row 1: $4(88) + (-2)(78) = 352 - 156 = 196$\nRow 2: $-3(88) + 5(78) = -264 + 390 = 126$\n$\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\frac{1}{14} \\begin{pmatrix} 196 \\\\ 126 \\end{pmatrix}$",
+                  "reasoning": "Matrix multiplication."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply by the scalar fraction.",
+                  "working": "$x = 196/14 = 14$\n$y = 126/14 = 9$",
+                  "reasoning": "Final division."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Ticket Pricing"
       }
     ]
   }

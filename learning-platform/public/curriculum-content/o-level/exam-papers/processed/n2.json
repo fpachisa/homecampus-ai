@@ -152,6 +152,54 @@
         "title": "Ratio Word Problem"
       },
       {
+        "questionNumber": 3,
+        "questionId": "N2-tkgs-2024-p1-q3",
+        "topicID": "N2",
+        "stem": "Albert and Chris have some savings in the ratio 5 : 3. They spent $30 each from their savings and the new ratio of their savings is 2 : 1.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the amount of savings Chris has at the start.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$90",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define the initial savings for Albert and Chris using a common variable $u$.",
+                  "working": "Let Albert's initial savings be $5u$ and Chris's initial savings be $3u$.",
+                  "reasoning": "Using algebra allows us to represent the unknown ratio units."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up an equation based on the information that both spent $30 and the new ratio is 2 : 1.",
+                  "working": "$\\frac{5u - 30}{3u - 30} = \\frac{2}{1}$",
+                  "reasoning": "We subtract the expenditure from the initial amounts and equate it to the new ratio fraction."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve the equation for $u$.",
+                  "working": "$1(5u - 30) = 2(3u - 30)$\n$5u - 30 = 6u - 60$\n$60 - 30 = 6u - 5u$\n$u = 30$",
+                  "reasoning": "Cross-multiply and rearrange terms to isolate the variable."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate Chris's initial savings using the value of $u$.",
+                  "working": "Chris's savings = $3u = 3 × 30 = 90$",
+                  "reasoning": "Substitute the value of the unit back into the expression for Chris's savings."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Ratio Word Problem"
+      },
+      {
         "questionNumber": 5,
         "questionId": "N2-broadrick-2024-p1-q5",
         "topicID": "N2",
@@ -282,6 +330,54 @@
         "title": "Sound Inverse Square"
       },
       {
+        "questionNumber": 8,
+        "questionId": "N2-tkgs-2024-p1-q8",
+        "topicID": "N2",
+        "stem": "$P$ is inversely proportional to $Q^{3}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the percentage change in $P$ when $Q$ is reduced by 20%.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "95.3125%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the relationship between $P$ and $Q$ as an equation.",
+                  "working": "$P = \\frac{k}{Q^3}$ where $k$ is a constant.",
+                  "reasoning": "Inverse proportionality means the product of the variables (with the power) is constant."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the new value of $Q$ and substitute it into the equation to find the new $P$ ($P_{new}$).",
+                  "working": "$Q_{new} = (100\\% - 20\\%)Q = 0.8Q$\n$P_{new} = \\frac{k}{(0.8Q)^3} = \\frac{k}{0.512Q^3}$",
+                  "reasoning": "A reduction of 20% means the new value is 80% (or 0.8) of the original."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Express $P_{new}$ in terms of the original $P$.",
+                  "working": "$P_{new} = \\frac{1}{0.512} × \\frac{k}{Q^3} = \\frac{1}{0.512}P \\approx 1.953125P$",
+                  "reasoning": "Separate the numerical coefficient from the original variables to compare the new value to the old value."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the percentage change.",
+                  "working": "Change = $1.953125P - P = 0.953125P$\nPercentage Change = $0.953125 × 100\\% = 95.3125\\%$",
+                  "reasoning": "Percentage change is calculated by finding the difference relative to the original, multiplied by 100."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Percentage Change in Proportion"
+      },
+      {
         "questionNumber": 9,
         "questionId": "N2-cchms-2024-p1-q9",
         "topicID": "N2",
@@ -378,6 +474,54 @@
         "title": "Ratio Word Problem"
       },
       {
+        "questionNumber": 10,
+        "questionId": "N2-woodgrove-2024-p1-q10",
+        "topicID": "N2",
+        "stem": "Ken divides his monthly salary into daily expenses, spending and saving in the ratio 3:4:5 respectively. Later he decides to spend $1200 more daily the new ratio become 9:8:7.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate his monthly salary.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$9600",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of units for the original ratio and the new ratio.",
+                  "working": "Original Ratio (Daily : Spending : Saving) = $3 : 4 : 5$\nTotal units = $3 + 4 + 5 = 12$ units\n\nNew Ratio = $9 : 8 : 7$\nTotal units = $9 + 8 + 7 = 24$ units",
+                  "reasoning": "To compare ratios before and after a change, we often look at the total. Since the change is internal (shifting money between categories), the total salary remains constant."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Make the total units equal for both ratios to compare them directly.",
+                  "working": "LCM of 12 and 24 is 24.\nMultiply the Original Ratio by 2:\n$3 : 4 : 5 \\xrightarrow{\\times 2} 6 : 8 : 10$\n(Total is now 24 units)",
+                  "reasoning": "By equating the total units, 1 unit in the original ratio now represents the same value as 1 unit in the new ratio."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify the change in units for 'Daily Expenses' and equate it to the monetary value given.",
+                  "working": "Original Daily Expenses = 6 units\nNew Daily Expenses = 9 units\nIncrease = $9 - 6 = 3$ units\n\nGiven increase = $1200\n$3 \\text{ units} = 1200$",
+                  "reasoning": "The problem states he spends $1200 more daily. We compare the scaled units to find the value of a single unit."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the value of 1 unit and then the total monthly salary.",
+                  "working": "$1 \\text{ unit} = \\frac{1200}{3} = 400$\n\nTotal Salary (24 units) = $24 \\times 400 = 9600$",
+                  "reasoning": "Multiply the unit value by the total number of units representing the salary."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Ratio and Salary"
+      },
+      {
         "questionNumber": 14,
         "questionId": "N2-greenridge-2024-p1-q14",
         "topicID": "N2",
@@ -453,6 +597,77 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Proportion Problems"
+      },
+      {
+        "questionNumber": 15,
+        "questionId": "N2-orchidpark-2024-p1-q15",
+        "topicID": "N2",
+        "stem": "The illumination, I units, of a bulb varies inversely as the square of the distance, d metres. It is given that the illumination is 8 units when the distance is 3 m.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find an equation connecting I and d.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "I = \\frac{72}{d^2}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the general equation for inverse square variation.",
+                  "working": "$I = \\frac{k}{d^2}$",
+                  "reasoning": "When a variable varies inversely as the square of another, we use the constant $k$ divided by the square of that variable."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the given values ($I=8, d=3$) to find $k$.",
+                  "working": "$8 = \\frac{k}{3^2}$ \n $8 = \\frac{k}{9}$ \n $k = 8 \\times 9 = 72$",
+                  "reasoning": "We use the initial condition to solve for the constant of proportionality."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final equation with the value of $k$.",
+                  "working": "$I = \\frac{72}{d^2}$",
+                  "reasoning": "Substitute $k$ back into the general equation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the percentage change in the illumination of the bulb when the bulb is shifted to a new location which is one quarter of the original distance.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1500%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the new distance in terms of the original distance.",
+                  "working": "$d_{new} = \\frac{1}{4}d$",
+                  "reasoning": "The problem states the new location is one quarter of the original distance."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the new illumination ($I_{new}$) using the relationship found in part (a).",
+                  "working": "$I_{new} = \\frac{k}{(d_{new})^2} = \\frac{k}{(\\frac{1}{4}d)^2}$ \n $I_{new} = \\frac{k}{\\frac{1}{16}d^2} = 16(\\frac{k}{d^2})$ \n $I_{new} = 16I$",
+                  "reasoning": "Substitute the new distance into the variation formula. Since $\\frac{k}{d^2}$ is the original $I$, the new illumination is 16 times the original."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the percentage change.",
+                  "working": "Change = $I_{new} - I = 16I - I = 15I$ \n $\\text{Percentage Change} = \\frac{\\text{Change}}{\\text{Original}} \\times 100\\%$ \n $= \\frac{15I}{I} \\times 100\\% = 1500\\%$",
+                  "reasoning": "Percentage change is the difference divided by the original value, multiplied by 100."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Inverse Square Variation"
       },
       {
         "questionNumber": 16,
@@ -738,6 +953,171 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Fuel Consumption and Scale Models"
+      },
+      {
+        "questionNumber": 18,
+        "questionId": "N2-swisscottage-2024-p1-q18",
+        "topicID": "N2",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "8 men can build a structure in 15 days. How long would it take 5 men to build the structure?",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "24 days",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the type of proportion. Since fewer men will take more time, this is inverse proportion.",
+                  "working": "Inverse Proportion: $\\text{Men} \\times \\text{Days} = \\text{Constant}$",
+                  "reasoning": "Establish the relationship between the variables."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total amount of work required in 'man-days'.",
+                  "working": "Total work = $8 \\times 15 = 120$ man-days",
+                  "reasoning": "Finding the constant allows us to equate it to the new scenario."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide the total work by the new number of men to find the number of days.",
+                  "working": "Time taken for 5 men = $\\frac{120}{5} = 24$ days",
+                  "reasoning": "Apply the constant to the new variable value."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The period, T seconds, of a pendulum is proportional to the square root of the length, $l$ metres, of the pendulum. The length of a pendulum is increased by 50% of its original value. Calculate the percentage increase in the period of the pendulum.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "22.5%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write down the relationship between $T$ and $l$ using a constant $k$.",
+                  "working": "$T = k\\sqrt{l}$",
+                  "reasoning": "Expressing the proportionality algebraically is the first step in variation problems."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the new length $l_{new}$ in terms of the original length $l$.",
+                  "working": "$l_{new} = l + 0.5l = 1.5l$",
+                  "reasoning": "An increase of 50% means the new value is 150% of the original."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new period $T_{new}$ and express it in terms of the original $T$.",
+                  "working": "$T_{new} = k\\sqrt{1.5l} = \\sqrt{1.5} \\times (k\\sqrt{l}) = \\sqrt{1.5}T \\approx 1.2247T$",
+                  "reasoning": "Substitute the new length into the formula and separate the coefficient."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the percentage increase.",
+                  "working": "Percentage increase = $\\frac{T_{new} - T}{T} \\times 100\\%$\n$= (1.2247 - 1) \\times 100\\% = 22.47\\%$",
+                  "reasoning": "Compare the new value to the original value to find the percentage change."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "$22.5\\%$",
+                  "reasoning": "Standard O-level accuracy for non-exact numerical answers."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Proportion and Variation"
+      },
+      {
+        "questionNumber": 19,
+        "questionId": "N2-swisscottage-2024-p1-q19",
+        "topicID": "N2",
+        "stem": "The scale of a map is 4 cm: 1 km.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write this scale in the form 1: n.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1 : 25 000",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the actual distance to the same unit as the map distance (cm).",
+                  "working": "$1 \\text{ km} = 1000 \\text{ m} = 100,000 \\text{ cm}$",
+                  "reasoning": "Ratios must compare quantities of the same unit."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Write the ratio and simplify to the form $1:n$.",
+                  "working": "$4 \\text{ cm} : 100,000 \\text{ cm}$\nDivide by 4:\n$1 : 25,000$",
+                  "reasoning": "Simplify the ratio by dividing both sides by the map value."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The distance between two cities on the map is 40 cm. Find the actual distance, in kilometres, between the two cities.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "10 km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the given scale to find the actual distance.",
+                  "working": "Scale: $4 \\text{ cm} = 1 \\text{ km}$\nMap distance: $40 \\text{ cm}$",
+                  "reasoning": "Identify the relationship given in the stem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the multiplier.",
+                  "working": "Multiplier = $\\frac{40}{4} = 10$\nActual Distance = $1 \\text{ km} \\times 10 = 10 \\text{ km}$",
+                  "reasoning": "Since map distance increased by a factor of 10, actual distance increases by the same factor."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "A park has an actual area of $4.5~km^{2}$. Find the area, in square centimetres, of the park on the map.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "72 cm²",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the area scale by squaring the linear scale.",
+                  "working": "Linear Scale: $4 \\text{ cm} : 1 \\text{ km}$\nArea Scale: $(4 \\text{ cm})^2 : (1 \\text{ km})^2$\n$16 \\text{ cm}^2 : 1 \\text{ km}^2$",
+                  "reasoning": "The ratio of areas is the square of the ratio of corresponding lengths."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the map area using the area scale.",
+                  "working": "Actual Area = $4.5 \\text{ km}^2$\nMap Area = $4.5 \\times 16 \\text{ cm}^2$\n$= 72 \\text{ cm}^2$",
+                  "reasoning": "Multiply the actual area by the conversion factor derived from the area scale."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Map Scale and Area"
       },
       {
         "questionNumber": 20,
@@ -1363,6 +1743,226 @@
         "title": "Inverse Proportion (Force)"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111142454-p1-q101",
+        "topicID": "N2",
+        "stem": "The force, F newtons, between two particles is inversely proportional to the square of the distance, r metres, between them. The force is 20 newtons when the distance is 2 metres.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the formula for F in terms of r.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "F = \\frac{80}{r^2}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the general relationship for inverse square proportionality.",
+                  "working": "$F = \\frac{k}{r^2}$",
+                  "reasoning": "Inverse proportionality to the square implies $F \\times r^2$ is constant."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the known values to find k.",
+                  "working": "$20 = \\frac{k}{2^2}$ \n $20 = \\frac{k}{4}$ \n $k = 80$",
+                  "reasoning": "Using $F=20$ and $r=2$ allows us to solve for the constant $k$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "State the final formula.",
+                  "working": "$F = \\frac{80}{r^2}$",
+                  "reasoning": "Replace $k$ with 80 in the general equation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the force when the distance is 5 metres.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3.2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute the new distance into the formula found in part (a).",
+                  "working": "$F = \\frac{80}{5^2}$ \n $F = \\frac{80}{25}$",
+                  "reasoning": "We use the derived formula to find the value of $F$ for a specific $r$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the expression.",
+                  "working": "$F = 3.2$",
+                  "reasoning": "Simple division."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Inverse Variation Calculation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111145943-p1-q101",
+        "topicID": "N2",
+        "stem": "It is given that $y$ is inversely proportional to the square of $x$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "If $y = 5$ when $x = 4$, find the formula for $y$ in terms of $x$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "y = \\frac{80}{x^2}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the general equation for inverse proportion involving a square.",
+                  "working": "$y = \\frac{k}{x^2}$",
+                  "reasoning": "Inverse proportion means $y$ equals a constant divided by the variable."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the given values to find $k$.",
+                  "working": "$5 = \\frac{k}{4^2}$\n$5 = \\frac{k}{16}$\n$k = 5 \\times 16 = 80$",
+                  "reasoning": "Solve for the constant of proportionality."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final equation.",
+                  "working": "$y = \\frac{80}{x^2}$",
+                  "reasoning": "Substitute $k$ back into the general equation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the value of $y$ when $x = 10$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.8",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute the new value of $x$ into the formula found in part (a).",
+                  "working": "$y = \\frac{80}{10^2}$",
+                  "reasoning": "Use the established relationship."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the expression.",
+                  "working": "$y = \\frac{80}{100} = 0.8$",
+                  "reasoning": "Compute the final numerical value."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Inverse Variation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111153547-p1-q101",
+        "topicID": "N2",
+        "stem": "The variable $y$ is directly proportional to the square root of $x$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the percentage increase in $y$ when $x$ is increased by 44%.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "20%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the relationship equation.",
+                  "working": "$y = k\\sqrt{x}$",
+                  "reasoning": "Direct proportionality involves a constant $k$ multiplied by the variable."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the new value of $x$ and substitute.",
+                  "working": "$x_{new} = 1.44x$\n$y_{new} = k\\sqrt{1.44x}$",
+                  "reasoning": "An increase of 44% means the new value is $100\\% + 44\\% = 144\\% = 1.44$ of the original."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify to find the relationship between $y_{new}$ and $y$.",
+                  "working": "$y_{new} = k(1.2)\\sqrt{x} = 1.2(k\\sqrt{x}) = 1.2y$",
+                  "reasoning": "Evaluate the square root of the coefficient: $\\sqrt{1.44} = 1.2$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the percentage increase.",
+                  "working": "Increase = $1.2y - y = 0.2y$\nPercentage = $0.2 × 100\\% = 20\\%$",
+                  "reasoning": "The decimal part of the coefficient represents the increase."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Variation Percentage Change"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111185018-p1-q101",
+        "topicID": "N2",
+        "stem": "A sum of money is shared among Alice, Bernice, and Clarissa in the ratio 4 : 5 : 6. After Bernice gives $60 to Alice, the new ratio of their shares becomes 5 : 4 : 6.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the total sum of money shared.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$900",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Check if the total number of units has changed.",
+                  "working": "Original Total = $4 + 5 + 6 = 15$ units.\nNew Total = $5 + 4 + 6 = 15$ units.",
+                  "reasoning": "Since money is transferred between people within the group, the total sum remains constant. The totals already match, so no scaling is needed."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the change in units for the person giving or receiving money.",
+                  "working": "Alice's share: $4 \\text{ units} \\to 5 \\text{ units}$ (+1 unit).\nBernice's share: $5 \\text{ units} \\to 4 \\text{ units}$ (-1 unit).\n\nChange = 1 unit.",
+                  "reasoning": "We can use either Alice's increase or Bernice's decrease to find the value of one unit."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the unit change to the monetary value and solve for the total.",
+                  "working": "$1 \\text{ unit} = \\$60$\nTotal Sum = $15 \\text{ units} \\times 60 = 900$",
+                  "reasoning": "Multiply the value of 1 unit by the total number of units (15)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Ratio Transfer"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N2-gemini-1911-p1-102",
         "topicID": "N2",
@@ -1654,6 +2254,220 @@
         "title": "Map Scales and Area"
       },
       {
+        "questionNumber": 102,
+        "questionId": "N2-gemini-2111142454-p1-q102",
+        "topicID": "N2",
+        "stem": "y is directly proportional to the cube of x. It is given that y = 54 when x = 3.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find an equation connecting x and y.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "y = 2x^3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the general equation for direct variation with a cube.",
+                  "working": "$y = kx^3$",
+                  "reasoning": "Direct proportionality means $y$ equals a constant times the variable."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the given values to find k.",
+                  "working": "$54 = k(3)^3$ \n $54 = 27k$ \n $k = 2$",
+                  "reasoning": "Solving for the constant of proportionality."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the specific equation.",
+                  "working": "$y = 2x^3$",
+                  "reasoning": "Substitute $k=2$ back into the equation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the value of x when y = 128.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute y = 128 into the equation.",
+                  "working": "$128 = 2x^3$",
+                  "reasoning": "We need to solve for $x$ given a specific $y$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for x.",
+                  "working": "$x^3 = \\frac{128}{2}$ \n $x^3 = 64$ \n $x = \\sqrt[3]{64}$ \n $x = 4$",
+                  "reasoning": "Isolate $x^3$ and then take the cube root."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Direct Cube Variation"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N2-gemini-2111145943-p1-q102",
+        "topicID": "N2",
+        "stem": "A map is drawn to a scale of 1 : 50 000.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The distance between two villages on the map is 12 cm. Calculate the actual distance, in kilometres, between the two villages.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6 km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the ratio to relate cm to km.",
+                  "working": "$1 \\text{ cm} : 50,000 \\text{ cm}$\n$50,000 \\text{ cm} = 500 \\text{ m} = 0.5 \\text{ km}$\nScale: $1 \\text{ cm} : 0.5 \\text{ km}$",
+                  "reasoning": "Converting the scale to useful units simplifies the calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the actual distance.",
+                  "working": "$12 \\times 0.5 = 6 \\text{ km}$",
+                  "reasoning": "Multiply the map distance by the scale factor."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A forest has an actual area of $15~km^{2}$. Calculate the area, in square centimetres, of the forest on the map.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "60 cm²",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the area scale.",
+                  "working": "Linear Scale: $1 \\text{ cm} : 0.5 \\text{ km}$\nArea Scale: $(1 \\text{ cm})^2 : (0.5 \\text{ km})^2$\n$1 \\text{ cm}^2 : 0.25 \\text{ km}^2$",
+                  "reasoning": "Square the linear scale units to find the area relationship."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the map area.",
+                  "working": "Number of $0.25 \\text{ km}^2$ units in $15 \\text{ km}^2$:\n$\\frac{15}{0.25} = 60$\nMap Area = $60 \\times 1 \\text{ cm}^2 = 60 \\text{ cm}^2$",
+                  "reasoning": "Divide the actual area by the area represented by 1 unit on the map."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Map Scales"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N2-gemini-2111153547-p1-q102",
+        "topicID": "N2",
+        "stem": "A map is drawn to a scale of 1 : 50 000.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The area of a forest on the map is 12 cm². Calculate the actual area of the forest in square kilometres (km²).",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3 km²",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the linear scale to relate cm to km.",
+                  "working": "1 cm : 50 000 cm\n1 cm : 0.5 km",
+                  "reasoning": "Since 1 km = 100 000 cm, we divide 50 000 by 100 000."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Square the linear scale to find the area scale.",
+                  "working": "$(1 \\text{ cm})^2 : (0.5 \\text{ km})^2$\n$1 \\text{ cm}^2 : 0.25 \\text{ km}^2$",
+                  "reasoning": "The ratio of areas is the square of the ratio of lengths."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the actual area.",
+                  "working": "Actual Area = $12 × 0.25 = 3 \\text{ km}^2$",
+                  "reasoning": "Multiply the map area by the area scale factor."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Map Scale Area"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N2-gemini-2111185018-p1-q102",
+        "topicID": "N2",
+        "stem": "A fruit stall has apples, oranges, and pears in the ratio 7 : 4 : 3. After selling 36 apples, the ratio of apples to oranges to pears becomes 5 : 8 : 6.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the original number of apples.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "56",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify which quantities remained unchanged.",
+                  "working": "Only apples were sold. The number of oranges and pears remained the same.",
+                  "reasoning": "Since oranges and pears didn't change, their relative ratio should be consistent or scalable between the start and end."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare the Oranges:Pears ratio in both scenarios and scale if necessary.",
+                  "working": "Original Oranges:Pears = $4:3$\nNew Oranges:Pears = $8:6$\n\nNote that $8:6$ simplifies to $4:3$. To make the units comparable, we must scale the Original ratio so the Orange and Pear parts match the New ratio.\nMultiply Original ($7:4:3$) by 2 $\\to$ $14:8:6$.",
+                  "reasoning": "We need the 'unchanged' parts (Oranges and Pears) to have the same unit values in both ratios to compare the Apples."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the change in units for apples.",
+                  "working": "Original Apples (scaled) = 14 units\nNew Apples = 5 units\nDecrease = $14 - 5 = 9$ units",
+                  "reasoning": "The difference in units corresponds to the actual number of apples sold."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for the original number of apples.",
+                  "working": "$9 \\text{ units} = 36$\n$1 \\text{ unit} = 4$\n\nOriginal Apples = $14 \\text{ units} \\times 4 = 56$",
+                  "reasoning": "Use the scaled unit value (14) for the original apples."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Ratio with One Quantity Changing"
+      },
+      {
         "questionNumber": 103,
         "questionId": "N2-gemini-1911-p2-103",
         "topicID": "N2",
@@ -1751,6 +2565,65 @@
       }
     ],
     "Paper 2": [
+      {
+        "questionNumber": 5,
+        "questionId": "N2-orchidpark-2024-p2-q5",
+        "topicID": "N2",
+        "stem": "The scale of a map is 2 cm: 1 km.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write this scale in the form 1:n.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1:50000",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the actual distance to the same units as the map distance (cm).",
+                  "working": "$1 \\text{ km} = 1000 \\text{ m} = 100,000 \\text{ cm}$",
+                  "reasoning": "To write a ratio $1:n$, both sides must be in the same units."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the ratio and simplify to the form 1:n.",
+                  "working": "$2 \\text{ cm} : 100,000 \\text{ cm}$ \n Divide by 2: \n $1 : 50,000$",
+                  "reasoning": "The Representative Fraction (RF) must have a 1 on the left side."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The area of a park is represented by an area of $456~cm^{2}$ on the map. Calculate the actual area of the land in square kilometres.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "114",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the area scale by squaring the linear scale.",
+                  "working": "Linear Scale: $2 \\text{ cm} : 1 \\text{ km}$ \n Area Scale: $(2 \\text{ cm})^2 : (1 \\text{ km})^2$ \n $4 \\text{ cm}^2 : 1 \\text{ km}^2$",
+                  "reasoning": "The ratio of areas is the square of the ratio of corresponding lengths."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the actual area using the area scale.",
+                  "working": "Map Area = $456 \\text{ cm}^2$ \n Actual Area = $\\frac{456}{4} \\times 1 \\text{ km}^2$ \n $= 114 \\text{ km}^2$",
+                  "reasoning": "Since $4 \\text{ cm}^2$ represents $1 \\text{ km}^2$, we divide the map area by 4."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Map Scale"
+      },
       {
         "questionNumber": 101,
         "questionId": "N2-gemini-2011-p2-101",
@@ -2041,6 +2914,278 @@
         "title": "Rate of Work (Inverse Proportion)"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111142454-p2-q101",
+        "topicID": "N2",
+        "stem": "A map is drawn to a scale of 1 : 25 000.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the actual distance, in kilometres, represented by a length of 12 cm on the map.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the ratio scale to a meaningful linear scale (cm to km).",
+                  "working": "$1 \\text{ cm} : 25,000 \\text{ cm}$ \n $25,000 \\text{ cm} = \\frac{25000}{100000} \\text{ km} = 0.25 \\text{ km}$ \n Scale: $1 \\text{ cm} : 0.25 \\text{ km}$",
+                  "reasoning": "Converting cm to km makes the calculation for actual distance straightforward."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the actual distance for 12 cm.",
+                  "working": "Actual Distance = $12 \\times 0.25$ \n $= 3 \\text{ km}$",
+                  "reasoning": "Multiply the map length by the conversion factor."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The actual area of a forest is $4.5~km^{2}$. Calculate the area, in square centimetres, representing the forest on the map.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "72",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the area scale.",
+                  "working": "Linear Scale: $1 \\text{ cm} : 0.25 \\text{ km}$ \n Area Scale: $1^2 \\text{ cm}^2 : 0.25^2 \\text{ km}^2$ \n $1 \\text{ cm}^2 : 0.0625 \\text{ km}^2$",
+                  "reasoning": "Square the linear units to find the relationship between map area and actual area."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the map area.",
+                  "working": "Map Area = $\\frac{4.5}{0.0625}$ \n $= 72 \\text{ cm}^2$",
+                  "reasoning": "Divide the actual area by the area factor representing $1 \\text{ cm}^2$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Map Scale Conversions"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111145943-p2-q101",
+        "topicID": "N2",
+        "stem": "The force of attraction, $F$ Newtons, between two magnets is inversely proportional to the square of the distance, $d$ metres, between them.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "When the distance between the magnets is 2 metres, the force is 10 Newtons. Find the equation connecting $F$ and $d$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "F = \\frac{40}{d^2}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the general relationship.",
+                  "working": "$F = \\frac{k}{d^2}$",
+                  "reasoning": "Inverse square law relationship."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute known values to find $k$.",
+                  "working": "$10 = \\frac{k}{2^2}$\n$10 = \\frac{k}{4}$\n$k = 40$",
+                  "reasoning": "Solve for the constant."
+                },
+                {
+                  "step": 3,
+                  "explanation": "State the final equation.",
+                  "working": "$F = \\frac{40}{d^2}$",
+                  "reasoning": "Complete the formula."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the force when the distance is reduced to 0.5 metres.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "160 N",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $d=0.5$ into the equation.",
+                  "working": "$F = \\frac{40}{(0.5)^2}$",
+                  "reasoning": "Apply the derived formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the result.",
+                  "working": "$F = \\frac{40}{0.25} = 160$",
+                  "reasoning": "Dividing by 0.25 is equivalent to multiplying by 4."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "If the distance $d$ is increased by 100%, calculate the percentage change in the force $F$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "75% decrease",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the new distance.",
+                  "working": "New distance $d_{new} = 2d$ (100% increase)",
+                  "reasoning": "Doubling the distance."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the new Force in terms of the old Force.",
+                  "working": "$F_{new} = \\frac{k}{(2d)^2} = \\frac{k}{4d^2} = \\frac{1}{4} \\left(\\frac{k}{d^2}\\right) = 0.25F$",
+                  "reasoning": "Substitute the new distance into the proportionality formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate percentage change.",
+                  "working": "Change = $0.25F - F = -0.75F$\nPercentage = $-75\\%$",
+                  "reasoning": "The negative sign indicates a decrease."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Applied Inverse Variation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111153547-p2-q101",
+        "topicID": "N2",
+        "stem": "Two containers, A and B, contain water in the ratio 3 : 1. After pouring 10 litres of water from container A to container B, the ratio of the volume of water in A to B becomes 1 : 3.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the initial volume of water in container A.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "15 litres",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define the initial volumes using a variable.",
+                  "working": "Let initial volume in A = $3x$ and B = $1x$.",
+                  "reasoning": "Using the initial ratio 3:1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation representing the transfer of water.",
+                  "working": "New A = $3x - 10$\nNew B = $x + 10$\n$\\frac{3x - 10}{x + 10} = \\frac{1}{3}$",
+                  "reasoning": "Subtract 10 from A and add 10 to B, then equate to the new ratio."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $x$.",
+                  "working": "$3(3x - 10) = 1(x + 10)$\n$9x - 30 = x + 10$\n$8x = 40$\n$x = 5$",
+                  "reasoning": "Cross-multiply and solve the linear equation."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the initial volume of A.",
+                  "working": "Initial A = $3x = 3 × 5 = 15$ litres.",
+                  "reasoning": "Substitute $x$ back into the expression for A."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Ratio Transfer Problem"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111185018-p2-q101",
+        "topicID": "N2",
+        "stem": "In a school sports club, the number of swimmers, runners, and cyclists are in the ratio 6 : 5 : 4.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "There are 18 more swimmers than cyclists. Calculate the total number of students in the club.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "135",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the difference in units between swimmers and cyclists.",
+                  "working": "Swimmers = 6 units, Cyclists = 4 units.\nDifference = $6 - 4 = 2$ units.",
+                  "reasoning": "The problem gives the real value of the difference between these two groups."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value of 1 unit and the total.",
+                  "working": "$2 \\text{ units} = 18 \\implies 1 \\text{ unit} = 9$.\nTotal units = $6 + 5 + 4 = 15$.\nTotal students = $15 \\times 9 = 135$.",
+                  "reasoning": "Multiply the unit value by the sum of all parts of the ratio."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Later, 10 runners leave the club and $x$ new swimmers join. The ratio of swimmers to runners becomes 3 : 1. Find the value of $x$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "51",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the original number of runners and swimmers using the unit value from Part (a).",
+                  "working": "Original Runners = $5 \\times 9 = 45$\nOriginal Swimmers = $6 \\times 9 = 54$",
+                  "reasoning": "We need the actual starting numbers to apply the changes."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the new number of runners.",
+                  "working": "New Runners = $45 - 10 = 35$",
+                  "reasoning": "Subtract the runners who left."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Use the new ratio to find the new number of swimmers.",
+                  "working": "New Ratio Swimmers : Runners = $3 : 1$\nNew Swimmers = $3 \\times (\\text{New Runners})$\nNew Swimmers = $3 \\times 35 = 105$",
+                  "reasoning": "Since the ratio is 3:1, swimmers are 3 times the number of runners."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate $x$ (the number of new swimmers).",
+                  "working": "$x = \\text{New Swimmers} - \\text{Original Swimmers}$\n$x = 105 - 54 = 51$",
+                  "reasoning": "The difference between the final and initial count is the number of students who joined."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Ratio Word Problem"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N2-gemini-2111071107-p2-q102",
         "topicID": "N2",
@@ -2110,6 +3255,77 @@
         "totalMarks": 4,
         "paper": "Paper 2",
         "title": "Direct Proportion Involving Roots"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N2-gemini-2111142454-p2-q102",
+        "topicID": "N2",
+        "stem": "A car travels a distance of 240 km. The time taken, t hours, is inversely proportional to the average speed, v km/h.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "If the car travels at an average speed of 80 km/h, it takes 3 hours. Write down an equation connecting t and v.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "t = \\frac{240}{v}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the inverse variation equation.",
+                  "working": "$t = \\frac{k}{v}$",
+                  "reasoning": "Time is inversely proportional to speed."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the constant k.",
+                  "working": "$3 = \\frac{k}{80}$ \n $k = 240$",
+                  "reasoning": "Substitute $t=3$ and $v=80$. Note that for distance/speed/time, $k$ represents the distance."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final equation.",
+                  "working": "$t = \\frac{240}{v}$",
+                  "reasoning": "Substitute $k$ back into the equation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the speed of the car if the journey takes 4 hours and 48 minutes.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "50",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the time into hours.",
+                  "working": "4 hours 48 mins = $4 + \\frac{48}{60}$ hours \n $= 4.8$ hours",
+                  "reasoning": "The formula requires time in hours, not minutes."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute time into the equation to find speed.",
+                  "working": "$4.8 = \\frac{240}{v}$ \n $v = \\frac{240}{4.8}$",
+                  "reasoning": "Rearrange the formula $t = 240/v$ to solve for $v$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final value.",
+                  "working": "$v = 50$ km/h",
+                  "reasoning": "Perform the division."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Inverse Variation (Speed and Time)"
       }
     ]
   }

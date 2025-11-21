@@ -1,7 +1,7 @@
 {
     "note": "Questions requiring drawing input are stored here separately. These questions will be re-enabled when the application supports drawing capabilities.",
     "source": "anderson-2024-paper-1-2",
-    "totalFilteredQuestions": 18,
+    "totalFilteredQuestions": 33,
     "questions": [
         {
             "questionNumber": 9,
@@ -633,6 +633,519 @@
             "totalMarks": 11,
             "paper": "Paper 2",
             "title": "Curve Plotting and Analysis"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "S1-orchidpark-2024-p1-q9",
+            "topicID": "S1",
+            "stem": "A set of Pollutant Standards Index (PSI) taken from different parts of Singapore is as follows: 28, 30, 48, 19, 70, 50, 32, 72",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Represent the data using a box-and-whisker plot.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Box-and-Whisker Plot"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "N6-orchidpark-2024-p1-q10",
+            "topicID": "N6",
+            "stem": "Sketch the graph in the spaces below.",
+            "hasDiagram": true,
+            "diagramDescription": "Blank axes for sketching graphs.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$y=\\frac{4}{x}$",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$y=-2x^{3}$",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Hence, state the number of solutions for the equation $\\frac{4}{x}+2x^{3}=0$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Sketching Graphs"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "N6-orchidpark-2024-p1-q11",
+            "topicID": "N6",
+            "stem": null,
+            "hasDiagram": true,
+            "diagramDescription": "Blank axes for sketching graph.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express $y=-(x+2)(x-5)$ in the form of $y=-(x+p)^{2}+k$. State the value of p and the value of k.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Sketch the graph of $y=-(x+2)(x-5)$ in the given axes below. Indicate any intercepts on the axes.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the coordinates of the turning point of the graph $y=-(x+2)(x-5)$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Quadratic Function Properties"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "N8-orchidpark-2024-p1-q17",
+            "topicID": "N8",
+            "stem": "It is given that\n$\\xi=$ {x: x is polygon},\n$q=$ {x: x is a quadrilateral},\n$p=$ {x: x is a parallelogram},\n$r=$ {x: x is a rectangle} and\n$s=$ {x: x is a square}.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Draw a clearly labelled Venn diagram in the space below to show the relationship between sets $\\xi,$ p, q, r and s.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Label in the Venn diagram above, the element \"kite\".",
+                    "marks": 1,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Set Theory Polygons"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "G1-orchidpark-2024-p1-q19",
+            "topicID": "G1",
+            "stem": "In a scale drawing, Town W, X and Y are shown below. Town Z is 10 cm from Town W and 8 cm from Town Y.",
+            "hasDiagram": true,
+            "diagramDescription": "Three points W, X, Y forming two line segments WX and XY.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "On the diagram, construct the quadrilateral WXYZ.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Measure angle WZY.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the diagram, using compass, construct (i) the perpendicular bisector of XY. (ii) the angle bisector of angle WXY.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Mark claimed that it is possible to locate Town G which is equidistant from Points W, X and Y, and angle WXG = angle YXG. Explain whether Mark's claim is valid. Show your workings clearly.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Construction and Loci"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "N4-orchidpark-2024-p1-q20",
+            "topicID": "N4",
+            "stem": "Mr Tan rides his motorcycle to a coffee shop for breakfast. He starts from rest and accelerates at a constant rate to a speed of $20~m/s$ in 15 seconds. He then travels at this constant speed of $20~m/s$ for the next 20 seconds before coming to rest in the next 10 seconds.",
+            "hasDiagram": true,
+            "diagramDescription": "Axes for Speed (m/s) vs Time (s).",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "On the given axes below, sketch Mr Tan's speed-time graph.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Find the acceleration in the first 15 seconds.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Calculate the average speed for the whole journey.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Speed-Time Graph"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N6-orchidpark-2024-p2-q7",
+            "topicID": "N6",
+            "stem": "(a) Complete the table of values for $y=x-\\frac{4}{x^{2}}$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of values.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid on page 11, draw the graph of $y=x-\\frac{4}{x^{2}}$ for $-15\\le x\\le15$. The graph has an asymptote at $x=0$.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c_i",
+                    "questionText": "On the same grid, draw the graph of $2y-2x=-7$ for $-15\\le x\\le15$.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c_ii",
+                    "questionText": "Write down the x-coordinates of the points where the line intersects the curve.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c_iii",
+                    "questionText": "These values of x in part (ii) are the solutions of the equation $Ax^{2}+B=0$. Find the value of A and the value of B.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Graph Plotting"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "N8-swisscottage-2024-p1-q13",
+            "topicID": "N8",
+            "stem": null,
+            "hasDiagram": true,
+            "diagramDescription": "Venn diagram with two intersecting sets A and B inside universal set Epsilon.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "On the Venn Diagram shown in the answer space, shade the set $A\\cap B^{\\prime}$",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$\\xi=$ {x:x is an integer and $1\\le x\\le100\\}$\n$P=\\{$ x: x is a perfect square\\}\n$Q=\\{$ x:x is a multiple of 3\\}\n$R=\\{$ x:x is an integer ending in 2\\}\n(i) List the elements contained in the set $Q\\cap R$.\n(ii) Write down $n(P\\cap R)$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Sets and Venn Diagrams"
+        },
+        {
+            "questionNumber": 25,
+            "questionId": "N4-swisscottage-2024-p1-q25",
+            "topicID": "N4",
+            "stem": "The diagram shows the speed-time graph for a car journey.",
+            "hasDiagram": true,
+            "diagramDescription": "Speed-time graph. Starts at (0,0), increases linearly to (10,20), constant at 20 until t=20, then decreases linearly to (40,0).",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the speed of the car when $t=8$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the acceleration of the car when $t=8$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the total distance travelled on the journey.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Complete the distance-time graph for the journey on the grid below.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Speed-Time Graph and Distance"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N6-swisscottage-2024-p2-q2",
+            "topicID": "N6",
+            "stem": "(a) Complete the table of values for $y=x^{2}+2x-1$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of values for $y=x^{2}+2x-1$. \n| x | -3 | -2 | -1 | 0 | 1 | 2 |\n| y | 2 | -1 | -2 | -1 | 2 | 7 |",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid opposite, draw the graph of $y=x^{2}+2x-1$ for $-4\\le x\\le2$.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c_i",
+                    "questionText": "Use your graph to write down an inequality in x to describe the range of values where $y<3$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c_ii",
+                    "questionText": "Use your graph to solve the equation $x^{2}+2x+\\frac{1}{2}=0$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Based on the graph, Eileen stated that 'the coordinates of the minimum point of the graph is $(-1,-2)$'. Show, with working, how you can verify this by expressing $x^{2}+2x-1$ in the form $(x+p)^{2}+q$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Quadratic Graph Analysis"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "G1-tkgs-2024-p1-q22",
+            "topicID": "G1",
+            "stem": "In this scale drawing, A, B and C are three corners of a park ABCD with C due north of B.",
+            "hasDiagram": true,
+            "diagramDescription": "Points A, B, C forming part of a quadrilateral. C is vertically above B. AB connects A to B.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Construct the perpendicular bisector of BC.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "D is on a bearing of $065^{\\circ}$ from A and equidistant from B and C. Mark and label point D on the drawing.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Construct the bisector of angle ABC.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Eleanor is standing inside the park ABCD such that she is closer to BC than AB and closer to B than C. Shade the region where Eleanor could be standing.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Construction and Loci"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N6-tkgs-2024-p2-q3",
+            "topicID": "N6",
+            "stem": "(a) Complete the table of values for $y=2x+\\frac{20}{x}-15$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of values for $y=2x+\\frac{20}{x}-15$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid, draw the graph of $y=2x+\\frac{20}{x}-15$ for $0<x\\le20$.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Using the graph, state the range of values of x for which $2x+\\frac{20}{x}<22$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "By drawing a tangent, find the gradient of the curve at the point where $x=4$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "By drawing a suitable straight line on the grid, find the solutions of the equation $x^{2}-13x+20=0$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Graph of Reciprocal Function"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "G1-woodgrove-2024-p1-q13",
+            "topicID": "G1",
+            "stem": "The diagram shows a quadrilateral WXYZ.",
+            "hasDiagram": true,
+            "diagramDescription": "A quadrilateral WXYZ.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Construct the perpendicular bisector of XY.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Construct the bisector of angle WXY.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Point A in the quadrilateral is equidistant from X and Y and is closer to the line WX then to line XY. Mark and label a possible location for point A in the diagram above.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Locus Construction"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "N8-woodgrove-2024-p1-q20",
+            "topicID": "N8",
+            "stem": "$\\xi = \\{x:x \\text{ is an integer and } -3\\le x<7\\}$\n$P=\\{x:-3<x<3\\}$\n$Q=\\{x:0<x\\le3\\}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Draw a Venn diagram below to illustrate this information.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "List the elements in $P^{\\prime}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "List the elements in $P\\cap Q$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Write down $n(P\\cup Q)$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Sets and Venn Diagrams"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N6-woodgrove-2024-p2-q3",
+            "topicID": "N6",
+            "stem": "The table of values for $y=x+\\frac{5}{x}-7$ is given below.",
+            "hasDiagram": true,
+            "diagramDescription": "Table of values and blank grid for plotting.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of k. (x=4, y=k)",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid below, draw the graph of $y=x+\\frac{5}{x}-7$ for $0.5\\le x\\le7$.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Use your graph to find the solutions to $x+\\frac{5}{x}=5$ in the range of $0.5\\le x\\le7$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "By drawing a tangent, find the gradient of the curve at (4, -1.8).",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "The solutions of $Px^{2}+Qx+5=0$ are the same as the x-coordinates of the intersections between the graph $y=x+\\frac{5}{x}-7$ and the line $y=-x+3$. Find the values of P and Q.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Curve Sketching and Analysis"
         }
     ]
 }

@@ -35,6 +35,7 @@
    - Preference for calmer UI
    ============================================================================ */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -70,6 +71,7 @@
       opacity: 0;
       transform: translateY(10px) scale(0.95);
     }
+
     to {
       opacity: 1;
       transform: translateY(0) scale(1);
@@ -81,6 +83,7 @@
     from {
       transform: translateX(-100%);
     }
+
     to {
       transform: translateX(0);
     }
@@ -90,6 +93,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -100,9 +104,12 @@
   }
 
   @keyframes pulseGlow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
     }
+
     50% {
       box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4);
     }
@@ -157,20 +164,27 @@
 
   .math-text-with-lists ul,
   .math-text-with-lists ol {
-    margin: 0.5em 0;           /* Reduced from browser default ~1em */
-    padding-left: 1.5em;       /* Standard indent for bullets */
-    line-height: 1.6;          /* Comfortable reading line height */
+    margin: 0.5em 0;
+    /* Reduced from browser default ~1em */
+    padding-left: 1.5em;
+    /* Standard indent for bullets */
+    line-height: 1.6;
+    /* Comfortable reading line height */
   }
 
   .math-text-with-lists li {
-    margin: 0.25em 0;          /* Minimal spacing between list items */
-    line-height: 1.6;          /* Match parent line-height */
+    margin: 0.25em 0;
+    /* Minimal spacing between list items */
+    line-height: 1.6;
+    /* Match parent line-height */
   }
 
   /* Ensure KaTeX (LaTeX renderer) inside list items displays inline */
   .math-text-with-lists li .katex {
-    display: inline;           /* Force inline, override any block defaults */
-    margin: 0;                 /* No extra margin around math expressions */
+    display: inline;
+    /* Force inline, override any block defaults */
+    margin: 0;
+    /* No extra margin around math expressions */
   }
 
   /* ============================================================================
@@ -192,9 +206,27 @@
      ============================================================================ */
 
   .katex {
-    display: inline !important;     /* Ensure KaTeX is always inline, not block */
-    font-size: inherit !important;  /* Match surrounding text size */
-    font-family: inherit !important; /* Use Georgia to match body text */
+    display: inline !important;
+    /* Ensure KaTeX is always inline, not block */
+    font-size: inherit !important;
+    /* Match surrounding text size */
+    font-family: inherit !important;
+    /* Use Georgia to match body text */
+  }
+
+  /* Increase size ONLY for complex math elements (fractions, radicals) */
+  .katex .mfrac,
+  .katex .sqrt {
+    font-size: 1.25em;
+    /* Make fractions and square roots 25% larger for readability */
+  }
+
+  /* Prevent double-scaling for nested elements (e.g. fraction inside sqrt) */
+  .katex .mfrac .mfrac,
+  .katex .mfrac .sqrt,
+  .katex .sqrt .mfrac,
+  .katex .sqrt .sqrt {
+    font-size: 1em;
   }
 
   /* Force all KaTeX math elements to use inherited font for consistency */
@@ -207,9 +239,12 @@
 
   /* Prevent awkward line breaks before/within inline math */
   .math-renderer {
-    display: inline-block;       /* Prevent line breaks before math - treat as atomic unit */
-    white-space: nowrap;         /* Prevent breaking within the math expression */
-    vertical-align: baseline;    /* Align with text baseline for proper positioning */
+    display: inline-block;
+    /* Prevent line breaks before math - treat as atomic unit */
+    white-space: nowrap;
+    /* Prevent breaking within the math expression */
+    vertical-align: baseline;
+    /* Align with text baseline for proper positioning */
   }
 
   /* Try to keep math with preceding text - DISABLED: Causes unwanted line breaks
@@ -232,12 +267,14 @@
   .grid-layout-responsive {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: 1fr; /* Mobile: stacked */
+    grid-template-columns: 1fr;
+    /* Mobile: stacked */
   }
 
   @media (min-width: 1024px) {
     .grid-layout-responsive {
-      grid-template-columns: 60% 40%; /* Desktop: side-by-side */
+      grid-template-columns: 60% 40%;
+      /* Desktop: side-by-side */
       align-items: start;
     }
 
@@ -263,12 +300,10 @@
   /* Lined paper effect for text mode */
   .text-lined-bg {
     background-color: #ffffff;
-    background-image: repeating-linear-gradient(
-      transparent,
-      transparent 24px,
-      #e5e7eb 24px,
-      #e5e7eb 25px
-    );
+    background-image: repeating-linear-gradient(transparent,
+        transparent 24px,
+        #e5e7eb 24px,
+        #e5e7eb 25px);
   }
 
   /* Smooth scrollbar for scratch pad on desktop */

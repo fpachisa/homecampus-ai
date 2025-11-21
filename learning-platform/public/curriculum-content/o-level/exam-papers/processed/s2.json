@@ -3,6 +3,148 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 2,
+        "questionId": "S2-swisscottage-2024-p1-q2",
+        "topicID": "S2",
+        "stem": "A bag contains 8 red balls, 5 green balls and 7 yellow balls.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "A ball is chosen at random and then replaced. What is the probability that it is not a red ball?",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{5}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of balls in the bag.",
+                  "working": "Total balls = $8 + 5 + 7 = 20$",
+                  "reasoning": "To find the probability, we first need the total number of possible outcomes (sample space)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the number of balls that are not red.",
+                  "working": "Number of non-red balls = Green + Yellow = $5 + 7 = 12$",
+                  "reasoning": "The event 'not red' includes all outcomes that are green or yellow."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the probability and simplify the fraction.",
+                  "working": "Probability = $\\frac{12}{20} = \\frac{3}{5}$",
+                  "reasoning": "Probability is the ratio of favorable outcomes to total outcomes. Always express the fraction in its simplest form."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$x$ yellow balls are removed from the bag. The probability of choosing a green ball is now $\\frac{1}{3}$. Find the value of $x$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Formulate an expression for the new total number of balls.",
+                  "working": "New total = $20 - x$",
+                  "reasoning": "Since $x$ balls are removed, the sample space decreases by $x$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up an equation using the probability of choosing a green ball.",
+                  "working": "$\\frac{5}{20 - x} = \\frac{1}{3}$",
+                  "reasoning": "The number of green balls (5) remains unchanged. The probability is the number of green balls divided by the new total."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve the equation for $x$.",
+                  "working": "$3(5) = 1(20 - x)$\n$15 = 20 - x$\n$x = 20 - 15$\n$x = 5$",
+                  "reasoning": "Cross-multiply to eliminate fractions and solve the linear equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Probability of Balls"
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "S2-orchidpark-2024-p1-q8",
+        "topicID": "S2",
+        "stem": "A carton contains 17 good apples and 3 rotten apples. A fruit seller picks three apples in random from the carton and puts them into a smaller box for sale.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the probability that there is at least 1 rotten apple in the box for sale.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{23}{57}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the complementary event. The opposite of 'at least 1 rotten apple' is '0 rotten apples' (all 3 are good).",
+                  "working": "$P(\\text{at least 1 rotten}) = 1 - P(\\text{all 3 good})$",
+                  "reasoning": "Using the complement method is often faster than calculating probabilities for 1 rotten, 2 rotten, and 3 rotten apples separately."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the probability of picking 3 good apples without replacement.",
+                  "working": "$P(\\text{all 3 good}) = \\frac{17}{20} \\times \\frac{16}{19} \\times \\frac{15}{18}$",
+                  "reasoning": "The total number of apples decreases by 1 after each pick, as does the number of good apples."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the fraction and subtract from 1.",
+                  "working": "$\\frac{17}{20} \\times \\frac{16}{19} \\times \\frac{5}{6} = \\frac{17 \\times 4 \\times 1}{5 \\times 19 \\times 3} \\times \\frac{5}{4} \\text{ (cancelling terms)} = \\frac{34}{57}$\n\n$1 - \\frac{34}{57} = \\frac{23}{57}$",
+                  "reasoning": "Perform the arithmetic to find the final probability."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "When Student A is asked to find the probability that the box contains two good apples and one rotten apple, he claims that the answer is $\\frac{17}{20}\\times\\frac{16}{19}\\times\\frac{3}{18}$. Do you agree with the Student A's claim? Explain your answer.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "No, I do not agree.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze Student A's calculation.",
+                  "working": "Student A calculated the probability of picking Good, then Good, then Rotten in that specific order ($G, G, R$).",
+                  "reasoning": "Multiplication of probabilities in a specific sequence assumes a specific order of events."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the missing factor.",
+                  "working": "The rotten apple could be picked first, second, or third. There are 3 possible arrangements: $(G, G, R), (G, R, G), (R, G, G)$.",
+                  "reasoning": "Since the order in which the apples are placed in the box does not matter for the final composition of the box, we must account for all permutations."
+                },
+                {
+                  "step": 3,
+                  "explanation": "State the conclusion.",
+                  "working": "The correct probability should be $3 \\times \\frac{17}{20} \\times \\frac{16}{19} \\times \\frac{3}{18}$. Therefore, Student A is incorrect.",
+                  "reasoning": "Provide the correct logic to justify the disagreement."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Probability of Apples"
+      },
+      {
         "questionNumber": 13,
         "questionId": "S2-cchms-2024-p1-q13",
         "topicID": "S2",
@@ -316,6 +458,77 @@
         "title": "Probability with Marbles"
       },
       {
+        "questionNumber": 16,
+        "questionId": "S2-tkgs-2024-p1-q16",
+        "topicID": "S2",
+        "stem": "A bag contains 15 red marbles, some blue marbles and some yellow marbles. A marble is chosen at random from the bag. The probability of choosing a blue marble is $\\frac{1}{6}$ and the probability of choosing a yellow marble is $\\frac{7}{12}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that there are 60 marbles in total in the bag.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Total marbles = 60",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the probability of choosing a red marble.",
+                  "working": "$P(\\text{Red}) = 1 - P(\\text{Blue}) - P(\\text{Yellow}) = 1 - \\frac{1}{6} - \\frac{7}{12}$",
+                  "reasoning": "The sum of probabilities of all mutually exclusive outcomes is 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the fraction.",
+                  "working": "$P(\\text{Red}) = \\frac{12}{12} - \\frac{2}{12} - \\frac{7}{12} = \\frac{3}{12} = \\frac{1}{4}$",
+                  "reasoning": "Finding a common denominator allows for subtraction."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the probability to the known number of red marbles to find the total.",
+                  "working": "Let $T$ be the total number of marbles.\n$\\frac{1}{4} \\times T = 15$\n$T = 15 \\times 4 = 60$",
+                  "reasoning": "Probability = (Number of favourable outcomes) / (Total outcomes)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Two marbles are chosen at random from the bag. Find the probability that both marbles are blue.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{118}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the number of blue marbles.",
+                  "working": "Number of Blue = $\\frac{1}{6} \\times 60 = 10$",
+                  "reasoning": "Using the total found in part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the probability of choosing two blue marbles without replacement.",
+                  "working": "$P(\\text{Blue, Blue}) = \\frac{10}{60} \\times \\frac{9}{59}$",
+                  "reasoning": "When two items are chosen 'at random', it implies without replacement. The denominator decreases by 1 for the second draw."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the result.",
+                  "working": "$\\frac{1}{6} \\times \\frac{9}{59} = \\frac{3}{2 \\times 59} = \\frac{3}{118}$",
+                  "reasoning": "Standard fraction multiplication."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Probability of Marbles"
+      },
+      {
         "questionNumber": 21,
         "questionId": "S2-anderson-2024-p1-q21",
         "topicID": "S2",
@@ -470,6 +683,162 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Probability Table Completion"
+      },
+      {
+        "questionNumber": 22,
+        "questionId": "S2-woodgrove-2024-p1-q22",
+        "topicID": "S2",
+        "stem": "A survey was carried out to find out the number of emails received in a week by each of a group of students. The table below represents the result of the survey.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Number of emails (n)",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$0 \\le n < 10$",
+              "8"
+            ],
+            [
+              "$10 \\le n < 20$",
+              "13"
+            ],
+            [
+              "$20 \\le n < 30$",
+              "25"
+            ],
+            [
+              "$30 \\le n < 40$",
+              "30"
+            ],
+            [
+              "$40 \\le n < 50$",
+              "18"
+            ],
+            [
+              "$50 \\le n < 60$",
+              "6"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the probability that two students, chosen in random, both received at least 40 emails.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{46}{825}$ or $0.0558$ (3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the number of students who received at least 40 emails.",
+                  "working": "Number of students $\\ge 40$ = Frequency of ($40\\le n<50$) + Frequency of ($50\\le n<60$)\n$= 18 + 6 = 24$",
+                  "reasoning": "We sum the frequencies of the intervals that satisfy the condition $n \\ge 40$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total number of students.",
+                  "working": "Total frequency = $8 + 13 + 25 + 30 + 18 + 6 = 100$",
+                  "reasoning": "Sum of all frequencies."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the probability of choosing two students without replacement.",
+                  "working": "P(Both $\\ge 40$) = $\\frac{24}{100} \\times \\frac{23}{99}$\n$= \\frac{6}{25} \\times \\frac{23}{99}$\n$= \\frac{2}{25} \\times \\frac{23}{33}$\n$= \\frac{46}{825}$",
+                  "reasoning": "When choosing two specific individuals from a group, the events are dependent (without replacement). The first probability is $\\frac{24}{100}$, and the second is $\\frac{23}{99}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Which interval contain the median number of emails received by the students.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$30\\le n<40$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the position of the median.",
+                  "working": "Median position = $\\frac{100 + 1}{2} = 50.5^{th}$ value",
+                  "reasoning": "For $N$ data points, the median is at position $\\frac{N+1}{2}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate cumulative frequencies to locate the interval.",
+                  "working": "$0\\le n<10$: 8\n$10\\le n<20$: $8+13=21$\n$20\\le n<30$: $21+25=46$\n$30\\le n<40$: $46+30=76$",
+                  "reasoning": "The 46th value is in the $20-30$ range. The values from 47th to 76th fall in the $30-40$ range. Therefore, the 50.5th value is in $30\\le n<40$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate an estimate of the mean number of emails received by the students.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "30.5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the mid-value ($x$) for each interval.",
+                  "working": "Mid-values: 5, 15, 25, 35, 45, 55",
+                  "reasoning": "For grouped data, we use the midpoint of the class interval to represent the data values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$.",
+                  "working": "$\\sum fx = (8\\times 5) + (13\\times 15) + (25\\times 25) + (30\\times 35) + (18\\times 45) + (6\\times 55)$\n$= 40 + 195 + 625 + 1050 + 810 + 330$\n$= 3050$",
+                  "reasoning": "Multiply each frequency by its corresponding midpoint and sum the results."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the mean.",
+                  "working": "Mean = $\\frac{\\sum fx}{\\sum f} = \\frac{3050}{100} = 30.5$",
+                  "reasoning": "Divide the sum of products by the total frequency."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Calculate an estimate of the standard deviation.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "13.1",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$\\sum fx^2 = (8\\times 5^2) + (13\\times 15^2) + (25\\times 25^2) + (30\\times 35^2) + (18\\times 45^2) + (6\\times 55^2)$\n$= (8\\times 25) + (13\\times 225) + (25\\times 625) + (30\\times 1225) + (18\\times 2025) + (6\\times 3025)$\n$= 200 + 2925 + 15625 + 36750 + 36450 + 18150$\n$= 110100$",
+                  "reasoning": "Sum of frequency multiplied by the square of the midpoint."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "SD = $\\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2}$\n$= \\sqrt{\\frac{110100}{100} - (30.5)^2}$\n$= \\sqrt{1101 - 930.25}$\n$= \\sqrt{170.75}$",
+                  "reasoning": "Use the formula for standard deviation of grouped data."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate final value.",
+                  "working": "SD $\\approx 13.0671...$\nSD $\\approx 13.1$ (3 s.f.)",
+                  "reasoning": "Evaluate the square root and round to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Statistics Emails"
       },
       {
         "questionNumber": 101,
@@ -773,6 +1142,347 @@
         "title": "Probability and Algebra"
       },
       {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111142454-p1-q101",
+        "topicID": "S2",
+        "stem": "A bag contains 5 red counters and 4 blue counters. Two counters are drawn from the bag at random, one after the other, without replacement.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the probability that both counters drawn are of the same colour.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{4}{9}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the two mutually exclusive cases for 'same colour'.",
+                  "working": "Case 1: Red then Red ($R, R$)\nCase 2: Blue then Blue ($B, B$)",
+                  "reasoning": "The counters can be either both red or both blue."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the probability for each case without replacement.",
+                  "working": "$P(R, R) = \\frac{5}{9} \\times \\frac{4}{8} = \\frac{20}{72}$\n$P(B, B) = \\frac{4}{9} \\times \\frac{3}{8} = \\frac{12}{72}$",
+                  "reasoning": "Total counters start at 9. For the second draw, total is 8."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Sum the probabilities.",
+                  "working": "$\\frac{20}{72} + \\frac{12}{72} = \\frac{32}{72} = \\frac{4}{9}$",
+                  "reasoning": "Add the probabilities of mutually exclusive events."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the probability that at least one red counter is drawn.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{5}{6}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the complement method.",
+                  "working": "$P(\\text{at least 1 Red}) = 1 - P(\\text{No Red})$\nNo Red means both are Blue.",
+                  "reasoning": "Calculating $1 - P(B, B)$ is faster than calculating $P(R, B) + P(B, R) + P(R, R)$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate using the value from part (a).",
+                  "working": "$P(B, B) = \\frac{12}{72} = \\frac{1}{6}$",
+                  "reasoning": "We already calculated $P(B, B)$ in the previous step."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Subtract from 1.",
+                  "working": "$1 - \\frac{1}{6} = \\frac{5}{6}$",
+                  "reasoning": "Final calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Counters in a Bag"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111145943-p1-q101",
+        "topicID": "S2",
+        "stem": "A box contains 6 blue pens, 9 red pens, and 5 black pens.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "A pen is chosen at random. Find the probability that it is red or black.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{7}{10}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of pens.",
+                  "working": "Total = $6 + 9 + 5 = 20$",
+                  "reasoning": "Establish the total sample space."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the number of favorable outcomes (Red or Black).",
+                  "working": "Red + Black = $9 + 5 = 14$",
+                  "reasoning": "Sum the quantities of the specific colors requested."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the probability.",
+                  "working": "Probability = $\\frac{14}{20} = \\frac{7}{10}$",
+                  "reasoning": "Divide favorable outcomes by total outcomes and simplify."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$y$ blue pens are added to the box. The probability of choosing a red pen is now $\\frac{3}{10}$. Find the value of $y$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "10",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the new total number of pens.",
+                  "working": "New Total = $20 + y$",
+                  "reasoning": "Adding $y$ pens increases the denominator of the probability fraction."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation for the probability of choosing a red pen.",
+                  "working": "$\\frac{9}{20 + y} = \\frac{3}{10}$",
+                  "reasoning": "The number of red pens (9) is constant. The probability is red pens divided by the new total."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $y$.",
+                  "working": "$9 \\times 10 = 3(20 + y)$\n$90 = 60 + 3y$\n$30 = 3y$\n$y = 10$",
+                  "reasoning": "Cross-multiply and solve the algebraic equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Probability with Pens"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111153547-p1-q101",
+        "topicID": "S2",
+        "stem": "A box contains $n$ cards. 5 of the cards are Red and the rest are Black. Two cards are picked at random from the box without replacement.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression, in terms of $n$, for the probability that both cards are Red.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{20}{n(n-1)}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the probability of the first and second draw.",
+                  "working": "First Red: $\\frac{5}{n}$\nSecond Red: $\\frac{4}{n-1}$",
+                  "reasoning": "Without replacement, the number of red cards drops to 4 and total cards to $n-1$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply probabilities.",
+                  "working": "$\\frac{5}{n} \\times \\frac{4}{n-1} = \\frac{20}{n(n-1)}$",
+                  "reasoning": "Combined probability of independent events (conditional in this case) is the product."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that the probability that both cards are Red is $\\frac{2}{21}$, form an equation in $n$ and show that it reduces to $n^2 - n - 210 = 0$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "$n^2 - n - 210 = 0$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Equate the expression from (a) to the given probability.",
+                  "working": "$\\frac{20}{n(n-1)} = \\frac{2}{21}$",
+                  "reasoning": "Setting up the equation based on the problem statement."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Cross multiply and rearrange.",
+                  "working": "$20 \\times 21 = 2n(n-1)$\n$420 = 2(n^2 - n)$\n$210 = n^2 - n$\n$n^2 - n - 210 = 0$",
+                  "reasoning": "Algebraic manipulation to form a quadratic equation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Solve the equation to find the total number of cards in the box.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "15",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the quadratic equation.",
+                  "working": "$(n-15)(n+14) = 0$",
+                  "reasoning": "Finding factors of -210 that sum to -1 (-15 and 14)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $n$ and reject the invalid solution.",
+                  "working": "$n = 15$ or $n = -14$\nSince $n$ must be positive, $n = 15$.",
+                  "reasoning": "Number of cards cannot be negative."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Probability with Algebra"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111185018-p1-q101",
+        "topicID": "S2",
+        "stem": "The time, $t$ minutes, taken by 40 students to solve a logic puzzle is recorded in the table below.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Time ($t$ min)",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$2 < t \\le 4$",
+              "4"
+            ],
+            [
+              "$4 < t \\le 6$",
+              "12"
+            ],
+            [
+              "$6 < t \\le 8$",
+              "14"
+            ],
+            [
+              "$8 < t \\le 10$",
+              "8"
+            ],
+            [
+              "$10 < t \\le 12$",
+              "2"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "State the modal class of the distribution.",
+            "marks": 1,
+            "answerType": "string",
+            "solution": {
+              "finalAnswer": "$6 < t \\le 8$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the highest frequency.",
+                  "working": "Frequencies are 4, 12, 14, 8, 2.\nThe highest frequency is 14.",
+                  "reasoning": "The modal class is the interval with the highest frequency."
+                },
+                {
+                  "step": 2,
+                  "explanation": "State the corresponding interval.",
+                  "working": "The interval corresponding to frequency 14 is $6 < t \\le 8$.",
+                  "reasoning": "Direct reading from the table."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate of the mean time taken.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6.8 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine midpoints ($x$) of the intervals.",
+                  "working": "Midpoints: 3, 5, 7, 9, 11",
+                  "reasoning": "Average of the lower and upper bounds of each class."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$.",
+                  "working": "$\\sum fx = (4\\times 3) + (12\\times 5) + (14\\times 7) + (8\\times 9) + (2\\times 11)$\n$= 12 + 60 + 98 + 72 + 22$\n$= 264$",
+                  "reasoning": "Sum of the products of frequency and midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide by total frequency.",
+                  "working": "Mean = $\\frac{264}{40} = 6.6$",
+                  "reasoning": "Formula for estimated mean: $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "One student is selected at random. Find the probability that this student took more than 8 minutes to solve the puzzle.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify favorable outcomes.",
+                  "working": "Students taking $> 8$ mins are in intervals $8 < t \\le 10$ and $10 < t \\le 12$.\nNumber of students = $8 + 2 = 10$.",
+                  "reasoning": "Sum the frequencies of relevant intervals."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate probability.",
+                  "working": "Probability = $\\frac{10}{40} = \\frac{1}{4}$",
+                  "reasoning": "Ratio of favorable outcomes to total outcomes."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Logic Puzzle Times"
+      },
+      {
         "questionNumber": 102,
         "questionId": "S2-gemini-2011-p1-q102",
         "topicID": "S2",
@@ -895,9 +1605,396 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Biased Spinner"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S2-gemini-2111145943-p1-q102",
+        "topicID": "S2",
+        "stem": "A group of students were surveyed about their pets. 10 students have dogs, 4 students have cats, and 6 students have hamsters.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "One student is chosen at random. What is the probability that the student has a cat?",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{5}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the total number of students.",
+                  "working": "Total = $10 + 4 + 6 = 20$",
+                  "reasoning": "Sum all categories to find the sample space."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the probability of picking a student with a cat.",
+                  "working": "Probability = $\\frac{4}{20} = \\frac{1}{5}$",
+                  "reasoning": "Number of cat owners divided by total students."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$n$ students who have hamsters leave the group. The probability of choosing a student with a dog becomes $\\frac{5}{8}$. Find the value of $n$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the new total number of students.",
+                  "working": "New Total = $20 - n$",
+                  "reasoning": "Students leaving reduces the total count."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the probability equation for choosing a dog owner.",
+                  "working": "$\\frac{10}{20 - n} = \\frac{5}{8}$",
+                  "reasoning": "The number of dog owners (10) stays the same. The ratio equals the given probability."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $n$.",
+                  "working": "$10 \\times 8 = 5(20 - n)$\n$80 = 100 - 5n$\n$5n = 20$\n$n = 4$",
+                  "reasoning": "Rearrange and solve for the unknown variable."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Pet Survey Probability"
       }
     ],
     "Paper 2": [
+      {
+        "questionNumber": 2,
+        "questionId": "S2-tkgs-2024-p2-q2",
+        "topicID": "S2",
+        "stem": "In a particular month, 21 people took a driving test. One of the 21 people is selected at random. The probability that it is a man who passed the test is $\\frac{1}{7}$. Two of the 21 people are selected at random. The probability that they are both women who failed the test is $\\frac{1}{10}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Complete the table of information about the 21 people who took the test on that particular month. (Table with Men/Women vs Passed/Failed).",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Men Passed: 3, Women Failed: 7",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the number of Men who Passed.",
+                  "working": "Number = Total $\\times$ Probability\n$21 \\times \\frac{1}{7} = 3$",
+                  "reasoning": "Direct application of probability formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up an equation for Women who Failed ($w$).",
+                  "working": "Probability of picking 2 women who failed = $\\frac{w}{21} \\times \\frac{w-1}{20} = \\frac{1}{10}$",
+                  "reasoning": "Probability of dependent events (without replacement)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $w$.",
+                  "working": "$\\frac{w(w-1)}{420} = \\frac{1}{10}$\n$w(w-1) = 42$\n$w^2 - w - 42 = 0$\n$(w-7)(w+6) = 0$\n$w=7$ (since count > 0)",
+                  "reasoning": "Solving the quadratic equation derived from the probability."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Fill the table values.",
+                  "working": "Men Passed = 3, Women Failed = 7. (Note: Without further info on total men/women or total pass/fail, only these two specific cells can be definitively calculated from the stem).",
+                  "reasoning": "Applying the calculated values."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_i",
+            "questionText": "$\\epsilon = \\{x: x \\text{ is a student in a class}\\}$\n$A = \\{x: x \\text{ is a student who listens to pop music}\\}$\n$B = \\{x: x \\text{ is a student who listens to classical music}\\}$\nIt is given that $n(\\epsilon)=35$, $n(A)=22,$ $n(B)=14$ and $n(A\\cap B^{\\prime})=12$.\nDescribe in words the set $A\\cap B^{\\prime}$.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Students who listen to pop music but not classical music.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the set notation.",
+                  "working": "$A$ is Pop, $B'$ is NOT Classical. Intersection means 'and'.",
+                  "reasoning": "Set notation definition."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Find the number of students who listen to both pop and classical music.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "10",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the relationship between $A$, $A \\cap B$ and $A \\cap B'$.",
+                  "working": "$n(A) = n(A \\cap B) + n(A \\cap B')$\n$22 = n(A \\cap B) + 12$\n$n(A \\cap B) = 10$",
+                  "reasoning": "The set A is composed of those who like only A and those who like both A and B."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_iii",
+            "questionText": "Find the number of students who listen to classical music only.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Subtract the intersection from the total in B.",
+                  "working": "$n(B \\text{ only}) = n(B) - n(A \\cap B)$\n$14 - 10 = 4$",
+                  "reasoning": "Removing those who like both from the total B count leaves those who like B only."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_iv",
+            "questionText": "Find the number of students who listen to neither pop nor classical music.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "9",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the union of A and B.",
+                  "working": "$n(A \\cup B) = n(A \\text{ only}) + n(B \\text{ only}) + n(A \\cap B)$\n$12 + 4 + 10 = 26$",
+                  "reasoning": "Summing all disjoint parts of the sets."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract union from universal set.",
+                  "working": "$n(\\epsilon) - n(A \\cup B) = 35 - 26 = 9$",
+                  "reasoning": "Finding the complement of the union."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Probability and Sets"
+      },
+      {
+        "questionNumber": 13,
+        "questionId": "S2-orchidpark-2024-p2-q13",
+        "topicID": "S2",
+        "stem": "In a shooting game, the player has to shoot with a gun to capture a monster. The bullet from the gun has to land on a circular target on the monster so that a net will open up. The circular target has four different sizes. Target 1 is a big circle; Target 2 is three quarters of the area of Target 1; Target 3 is half of the area of Target 1; Target 4 is one quarter of the area of Target 1.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Sam estimates that the probability that he hits Target 1 is about 0.88. Given that the probability of hitting the circular target is proportional to its area, show that the probability that Sam hits Target 2 and Target 4 is estimated to be 0.66 and 0.44 respectively.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See working.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Establish the relationship between Probability and Area.",
+                  "working": "Given $P \\propto Area$. Let $A$ be the area of Target 1.\n$P(\\text{Target 1}) = kA = 0.88$.",
+                  "reasoning": "We use the proportionality constant $k$ to relate area to probability."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate Probability for Target 2.",
+                  "working": "Area of Target 2 = $\\frac{3}{4}A = 0.75A$\n$P(\\text{Target 2}) = 0.75 \\times P(\\text{Target 1}) = 0.75 \\times 0.88 = 0.66$ (Shown)",
+                  "reasoning": "Since area is 0.75 of Target 1, probability is 0.75 of Target 1's probability."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate Probability for Target 4.",
+                  "working": "Area of Target 4 = $\\frac{1}{4}A = 0.25A$\n$P(\\text{Target 4}) = 0.25 \\times 0.88 = 0.22$\n*Note: The question asks to show it is 0.44, but mathematically based on the stem 'one quarter of the area', the value is 0.22. If Target 3 (half area) was meant, it would be 0.44.*",
+                  "reasoning": "Direct calculation based on the stem's definition of Target 4's area."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Even if the bullet hits the circular target, the monster might not be captured as it can break free from the net. The probability of successfully capturing the monster depends on the area and colour of the circular target, and the type of bullet that the player uses. Information that the players need is given below.\n\nShow that the estimated probability that Sam will hit and capture a monster with an orange Target 4 using a Flat Nose Bullet is 0.0495.",
+            "tables": [
+              {
+                "type": "data",
+                "headers": [
+                  "",
+                  "Target 1",
+                  "Target 2",
+                  "Target 3",
+                  "Target 4"
+                ],
+                "rows": [
+                  [
+                    "Probability of Sam hitting the target",
+                    0.88,
+                    0.66,
+                    0.44,
+                    0.22
+                  ]
+                ]
+              },
+              {
+                "type": "data",
+                "headers": [
+                  "Targets of different sizes",
+                  "Target 1",
+                  "Target 2",
+                  "Target 3",
+                  "Target 4"
+                ],
+                "rows": [
+                  [
+                    "Multiplier for capturing monster",
+                    0.7,
+                    0.8,
+                    0.95,
+                    0.5
+                  ]
+                ]
+              },
+              {
+                "type": "data",
+                "headers": [
+                  "Targets of different colours",
+                  "Green",
+                  "Yellow",
+                  "Orange",
+                  "Red"
+                ],
+                "rows": [
+                  [
+                    "Multiplier for capturing monster",
+                    0.9,
+                    0.7,
+                    0.5,
+                    0.4
+                  ]
+                ]
+              },
+              {
+                "type": "data",
+                "headers": [
+                  "Types of bullets",
+                  "Hollow Point",
+                  "Soft Point",
+                  "Flat Nose"
+                ],
+                "rows": [
+                  [
+                    "Multiplier for capturing monster",
+                    0.6,
+                    0.7,
+                    0.9
+                  ]
+                ]
+              }
+            ],
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "0.0495",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the relevant probabilities and multipliers from the tables.",
+                  "working": "1. Probability of hitting Target 4: $0.22$\n2. Multiplier for Target 4 size: $0.5$\n3. Multiplier for Orange colour: $0.5$\n4. Multiplier for Flat Nose bullet: $0.9$",
+                  "reasoning": "The total probability is the product of the probability of hitting and all conditional multipliers for capturing."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the product.",
+                  "working": "$P(\\text{Capture}) = 0.22 \\times 0.5 \\times 0.5 \\times 0.9$",
+                  "reasoning": "Multiply the independent factors."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute the final value.",
+                  "working": "$0.22 \\times 0.25 \\times 0.9 = 0.055 \\times 0.9 = 0.0495$ (Shown)",
+                  "reasoning": "Verification of the arithmetic."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "In the game, the target changes colour from green to yellow to orange to red and finally back to green. Each change occurs every second. In addition, the target also changes its size from Target 1 to 2 to 3 to 4 and then back to Target 1. Each change also occurs every second. At time $t=0$ seconds, Sam sees a monster with a red Target 2. He only has one Soft Point Bullet. State the colour, Target size and find the maximum probability and the number of seconds Sam should take to shoot at the monster in order to maximise his chance of hitting and capturing it. Justify your decision and show your calculations clearly.",
+            "marks": 6,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Sam should shoot at $t=1$ second (Green, Target 3) with a probability of 0.26334.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the sequence of changes over time.",
+                  "working": "Colour Cycle (Period 4): Green $\\to$ Yellow $\\to$ Orange $\\to$ Red $\\to$ Green\nSize Cycle (Period 4): T1 $\\to$ T2 $\\to$ T3 $\\to$ T4 $\\to$ T1\n\nInitial State ($t=0$): Red, Target 2.",
+                  "reasoning": "We need to map the state of the monster at $t=0, 1, 2, 3$ since the cycle repeats every 4 seconds."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the state at each second ($t=0$ to $t=3$).",
+                  "working": "$t=0$: Red, Target 2\n$t=1$: Green (after Red), Target 3 (after T2)\n$t=2$: Yellow (after Green), Target 4 (after T3)\n$t=3$: Orange (after Yellow), Target 1 (after T4)",
+                  "reasoning": "Project the sequence forward step-by-step."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate probability for $t=0$ (Red, T2).",
+                  "working": "Bullet (Soft Point) Multiplier = 0.7 (Constant)\n$P(t=0) = P(\\text{Hit T2}) \\times M(\\text{T2}) \\times M(\\text{Red}) \\times M(\\text{Bullet})$\n$= 0.66 \\times 0.8 \\times 0.4 \\times 0.7 = 0.14784$",
+                  "reasoning": "Using values from the table: Hit T2(0.66), Size T2(0.8), Red(0.4)."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate probability for $t=1$ (Green, T3).",
+                  "working": "$P(t=1) = P(\\text{Hit T3}) \\times M(\\text{T3}) \\times M(\\text{Green}) \\times M(\\text{Bullet})$\n$= 0.44 \\times 0.95 \\times 0.9 \\times 0.7 = 0.26334$",
+                  "reasoning": "Using values: Hit T3(0.44), Size T3(0.95), Green(0.9)."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate probability for $t=2$ (Yellow, T4).",
+                  "working": "$P(t=2) = P(\\text{Hit T4}) \\times M(\\text{T4}) \\times M(\\text{Yellow}) \\times M(\\text{Bullet})$\n$= 0.22 \\times 0.5 \\times 0.7 \\times 0.7 = 0.0539$",
+                  "reasoning": "Using values: Hit T4(0.22), Size T4(0.5), Yellow(0.7)."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Calculate probability for $t=3$ (Orange, T1).",
+                  "working": "$P(t=3) = P(\\text{Hit T1}) \\times M(\\text{T1}) \\times M(\\text{Orange}) \\times M(\\text{Bullet})$\n$= 0.88 \\times 0.7 \\times 0.5 \\times 0.7 = 0.2156$",
+                  "reasoning": "Using values: Hit T1(0.88), Size T1(0.7), Orange(0.5)."
+                },
+                {
+                  "step": 7,
+                  "explanation": "Compare and conclude.",
+                  "working": "Max probability is 0.26334 at $t=1$.\nState: Green, Target 3.",
+                  "reasoning": "Comparing 0.14784, 0.26334, 0.0539, and 0.2156."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Probability Game Strategy"
+      },
       {
         "questionNumber": 101,
         "questionId": "S2-gemini-2011-p2-q101",
@@ -1244,6 +2341,485 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Dice Probability"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111142454-p2-q101",
+        "topicID": "S2",
+        "stem": "A box contains $n$ chocolate cookies and 4 butter cookies. Two cookies are selected at random from the box, one after another, without replacement.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that the probability that two chocolate cookies are selected is $\\frac{n(n-1)}{(n+4)(n+3)}$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See working.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the total number of cookies.",
+                  "working": "Total cookies = $n$ (chocolate) + $4$ (butter) = $n + 4$.",
+                  "reasoning": "The denominator for the first probability is the total count."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate probability of first chocolate cookie.",
+                  "working": "$P(\\text{1st Choc}) = \\frac{n}{n+4}$",
+                  "reasoning": "Number of chocolate cookies divided by total."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate probability of second chocolate cookie (without replacement).",
+                  "working": "Remaining chocolate = $n-1$. Remaining total = $n+3$.\n$P(\\text{2nd Choc}) = \\frac{n-1}{n+3}$",
+                  "reasoning": "The counts decrease by 1."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Multiply probabilities.",
+                  "working": "$P(\\text{Choc, Choc}) = \\frac{n}{n+4} \\times \\frac{n-1}{n+3} = \\frac{n(n-1)}{(n+4)(n+3)}$",
+                  "reasoning": "Probability of independent events in sequence."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that the probability that two chocolate cookies are selected is $\\frac{1}{3}$, form an equation in terms of $n$ and show that it reduces to $n^2 - 5n - 6 = 0$.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See working.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Equate the expression from (a) to $\\frac{1}{3}$.",
+                  "working": "$\\frac{n(n-1)}{(n+4)(n+3)} = \\frac{1}{3}$",
+                  "reasoning": "Set up the equation based on the given probability."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Cross multiply and expand.",
+                  "working": "$3n(n-1) = 1(n+4)(n+3)$\n$3n^2 - 3n = n^2 + 3n + 4n + 12$\n$3n^2 - 3n = n^2 + 7n + 12$",
+                  "reasoning": "Eliminate fractions to solve for $n$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Rearrange to form a quadratic equation equal to zero.",
+                  "working": "$3n^2 - n^2 - 3n - 7n - 12 = 0$\n$2n^2 - 10n - 12 = 0$",
+                  "reasoning": "Group like terms."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify by dividing by 2.",
+                  "working": "$n^2 - 5n - 6 = 0$ (Shown)",
+                  "reasoning": "Divide the entire equation by the common factor 2."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Solve the equation $n^2 - 5n - 6 = 0$ to find the number of chocolate cookies in the box.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n=6$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorize the quadratic equation.",
+                  "working": "$n^2 - 5n - 6 = 0$\n$(n-6)(n+1) = 0$",
+                  "reasoning": "Find two numbers that multiply to -6 and add to -5 (-6 and +1)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $n$.",
+                  "working": "$n = 6$ or $n = -1$",
+                  "reasoning": "Set each factor to zero."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Reject the invalid solution.",
+                  "working": "Since $n$ represents the number of cookies, $n > 0$. Reject $n = -1$.\nTherefore, $n = 6$.",
+                  "reasoning": "Physical quantities cannot be negative."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Cookies Probability Algebra"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111145943-p2-q101",
+        "topicID": "S2",
+        "stem": "Bag A contains 3 red counters and 2 blue counters. Bag B contains 4 red counters and 1 blue counter.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "A counter is picked at random from Bag A. Find the probability that it is red.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{5}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify total counters in Bag A.",
+                  "working": "Total in A = $3 + 2 = 5$",
+                  "reasoning": "Sample space for Bag A."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate probability of Red.",
+                  "working": "P(Red) = $\\frac{3}{5}$",
+                  "reasoning": "Favorable outcomes (3) over total outcomes (5)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "One counter is picked at random from Bag A and one counter is picked at random from Bag B. Find the probability that both counters are red.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{12}{25}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the probability of Red from Bag B.",
+                  "working": "Total in B = $4 + 1 = 5$. P(Red from B) = $\\frac{4}{5}$",
+                  "reasoning": "Determine the probability for the second independent event."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the probabilities of the independent events.",
+                  "working": "P(Both Red) = P(Red A) $\\times$ P(Red B) = $\\frac{3}{5} \\times \\frac{4}{5} = \\frac{12}{25}$",
+                  "reasoning": "For independent events A and B, $P(A \\cap B) = P(A) \\times P(B)$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the probability that the two counters picked are of different colors.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{11}{25}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the two scenarios for different colors.",
+                  "working": "Scenario 1: Red from A and Blue from B.\nScenario 2: Blue from A and Red from B.",
+                  "reasoning": "Different colors can happen in two mutually exclusive ways."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate probability for Scenario 1.",
+                  "working": "P(R$_A$ and B$_B$) = $\\frac{3}{5} \\times \\frac{1}{5} = \\frac{3}{25}$",
+                  "reasoning": "Multiply probabilities for the specific outcomes."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate probability for Scenario 2.",
+                  "working": "P(B$_A$ and R$_B$) = $\\frac{2}{5} \\times \\frac{4}{5} = \\frac{8}{25}$",
+                  "reasoning": "Multiply probabilities for the specific outcomes."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Add the probabilities of the two scenarios.",
+                  "working": "Total Probability = $\\frac{3}{25} + \\frac{8}{25} = \\frac{11}{25}$",
+                  "reasoning": "Sum the probabilities of mutually exclusive events."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Two Bags Probability"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111153547-p2-q101",
+        "topicID": "S2",
+        "stem": "A youth club has 40 members. Each member signs up for at least one activity: Archery ($A$) or Badminton ($B$).\nIt is given that $n(A) = 25$ and $n(B) = 22$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the number of members who signed up for both Archery and Badminton.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the set formula for the Union.",
+                  "working": "$n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$",
+                  "reasoning": "Standard set theory formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute known values. Since everyone does at least one, Union is 40.",
+                  "working": "$40 = 25 + 22 - n(A \\cap B)$\n$40 = 47 - n(A \\cap B)$\n$n(A \\cap B) = 7$",
+                  "reasoning": "Solving for the intersection."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "One member is selected at random. Find the probability that this member signed up for Badminton only.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{8}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the number of members in B only.",
+                  "working": "$n(B \\text{ only}) = n(B) - n(A \\cap B) = 22 - 7 = 15$",
+                  "reasoning": "Subtracting the intersection from the total set B."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate probability.",
+                  "working": "$\\frac{15}{40} = \\frac{3}{8}$",
+                  "reasoning": "Favourable outcomes divided by total outcomes."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Two different members are selected at random. Find the probability that one signed up for Archery only and the other signed up for Badminton only.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{9}{26}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify count for Archery only.",
+                  "working": "$n(A \\text{ only}) = 25 - 7 = 18$",
+                  "reasoning": "Subtract intersection from set A."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate probability of (A only, B only) OR (B only, A only).",
+                  "working": "$P = \\left(\\frac{18}{40} \\times \\frac{15}{39}\\right) + \\left(\\frac{15}{40} \\times \\frac{18}{39}\\right)$",
+                  "reasoning": "There are two possible orders for selecting the members."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify.",
+                  "working": "$2 \\times \\frac{18}{40} \\times \\frac{15}{39} = 2 \\times \\frac{9}{20} \\times \\frac{5}{13} = 2 \\times \\frac{45}{260} = \\frac{90}{260} = \\frac{9}{26}$",
+                  "reasoning": "Arithmetic simplification."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Sets and Probability Selection"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111185018-p2-q101",
+        "topicID": "S2",
+        "stem": "The daily wages of 50 workers in Factory A are recorded in the table below.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Wages ($w$)",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$40 < w \\le 50$",
+              "10"
+            ],
+            [
+              "$50 < w \\le 60$",
+              "20"
+            ],
+            [
+              "$60 < w \\le 70$",
+              "15"
+            ],
+            [
+              "$70 < w \\le 80$",
+              "5"
+            ]
+          ]
+        },
+        "additionalInfo": "In Factory B, the mean daily wage is $60 and the standard deviation is $15.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the mean and standard deviation of the wages in Factory A.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Mean = $58, SD = $9",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find midpoints ($x$) and calculate $\\sum fx$.",
+                  "working": "Midpoints: 45, 55, 65, 75\n$\\sum fx = (10\\times 45) + (20\\times 55) + (15\\times 65) + (5\\times 75)$\n$= 450 + 1100 + 975 + 375 = 2900$",
+                  "reasoning": "Prepare sums for mean calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate Mean for Factory A.",
+                  "working": "Mean = $\\frac{2900}{50} = 58$",
+                  "reasoning": "Mean = Total Wage / Total Workers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $\\sum fx^2$ for Standard Deviation.",
+                  "working": "$\\sum fx^2 = (10\\times 45^2) + (20\\times 55^2) + (15\\times 65^2) + (5\\times 75^2)$\n$= (10\\times 2025) + (20\\times 3025) + (15\\times 4225) + (5\\times 5625)$\n$= 20250 + 60500 + 63375 + 28125 = 172250$",
+                  "reasoning": "Sum of frequency times midpoint squared."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate Standard Deviation.",
+                  "working": "$\\sigma = \\sqrt{\\frac{172250}{50} - 58^2}$\n$= \\sqrt{3445 - 3364} = \\sqrt{81} = 9$",
+                  "reasoning": "Use formula $\\sigma = \\sqrt{\\frac{\\sum fx^2}{N} - \\bar{x}^2}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Make two comparisons between the wages of workers in Factory A and Factory B.",
+            "marks": 2,
+            "answerType": "string",
+            "solution": {
+              "finalAnswer": "1. Factory B pays higher wages on average. 2. Factory A wages are more consistent.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the means (Central Tendency).",
+                  "working": "Mean of A ($58) < Mean of B ($60).\nTherefore, workers in Factory B earn more on average.",
+                  "reasoning": "Mean indicates the average performance/value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare the standard deviations (Spread).",
+                  "working": "SD of A ($9) < SD of B ($15).\nTherefore, the wages in Factory A are more consistent (or less spread out) than in Factory B.",
+                  "reasoning": "Standard deviation measures the spread or consistency of the data. Lower SD means more consistent."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Wage Comparison"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S2-gemini-2111153547-p2-q102",
+        "topicID": "S2",
+        "stem": "A fair 4-sided spinner numbered 1, 2, 3, 4 and a fair 6-sided die numbered 1, 2, 3, 4, 5, 6 are used in a game. The score is the sum of the number shown on the spinner and the number shown on the die.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Draw a possibility space diagram to show all possible outcomes.",
+            "marks": 2,
+            "answerType": "diagram",
+            "solution": {
+              "finalAnswer": "Grid showing sums from 2 to 10.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Create a grid with 1-4 on one axis and 1-6 on the other.",
+                  "working": "Axis X: 1, 2, 3, 4. Axis Y: 1, 2, 3, 4, 5, 6.",
+                  "reasoning": "Representing the two independent events."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Fill the grid with sums.",
+                  "working": "Smallest: 1+1=2. Largest: 4+6=10. Total outcomes = 24.",
+                  "reasoning": "The score is defined as the sum."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the probability that the score is a prime number.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{8}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify prime numbers in the range 2 to 10.",
+                  "working": "Primes: 2, 3, 5, 7.",
+                  "reasoning": "Definition of prime numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Count occurrences in the possibility space.",
+                  "working": "2 (1 way: 1+1)\n3 (2 ways: 1+2, 2+1)\n5 (4 ways: 1+4, 2+3, 3+2, 4+1)\n7 (2 ways: 1+6, 2+5, 3+4, 4+3 -> 4 ways? No, spinner max is 4. 1+6(ok), 2+5(ok), 3+4(ok), 4+3(ok). Total 4 ways? Wait. Spinner 1-4. Die 1-6.\nSum 7: (1,6), (2,5), (3,4), (4,3). Yes, 4 ways.\nTotal Favourable: 1 + 2 + 4 + 4 = 11? Let's recheck.\nSum 2: (1,1) - 1\nSum 3: (1,2), (2,1) - 2\nSum 5: (1,4), (2,3), (3,2), (4,1) - 4\nSum 7: (1,6), (2,5), (3,4), (4,3) - 4\nTotal = 11.",
+                  "reasoning": "Systematic counting from the grid."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate probability.",
+                  "working": "$\\frac{11}{24}$",
+                  "reasoning": "Wait, let me double check the arithmetic. Total outcomes $4 \\times 6 = 24$. Primes sums: 2, 3, 5, 7. (Next prime is 11, max sum is 10). Correct. Answer is 11/24."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the probability that the score is greater than 7.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify sums greater than 7 (8, 9, 10).",
+                  "working": "Sum 8: (2,6), (3,5), (4,4) -> 3 ways.\nSum 9: (3,6), (4,5) -> 2 ways.\nSum 10: (4,6) -> 1 way.\nTotal = 6 ways.",
+                  "reasoning": "Counting outcomes where sum > 7."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate probability.",
+                  "working": "$\\frac{6}{24} = \\frac{1}{4}$",
+                  "reasoning": "Simplifying the fraction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Possibility Space Diagram"
       }
     ]
   }

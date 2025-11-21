@@ -1,0 +1,471 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "questionId": "N1-orchidpark-2024-p1-q1",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The approximate mass of the earth is $5.976\\times10^{24}$ kg. How many times is the earth heavier than an average male adult who weighs 75 kg? Give your answer in standard form correct to 3 significant figures.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The sum of 3 consecutive even numbers is estimated to be 300 when rounded off to 1 significant figure. Find the largest possible set of the 3 numbers.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Approximation and Estimation"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N7-orchidpark-2024-p1-q2",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve the inequality $2y-1<\\frac{11y}{4}<\\frac{1}{4}$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Given $-25\\le x\\le50$ and $-15\\le y\\le-5$, what is the smallest possible value for $x+y^{2}$?",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Inequalities and Limits"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N1-orchidpark-2024-p1-q3",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write 756 as a product of its prime factors.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Given that $495=3^{2}\\times5\\times11$ find the smallest positive integer p such that 756p is a multiple of 495.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The number $756\\times\\frac{a}{b}$ is a perfect cube where a and b are both prime numbers. Find the smallest possible value of a and smallest possible value of b.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Primes, Factors and Multiples"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N5-orchidpark-2024-p1-q4",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Simplify $\\frac{a^{2}-3a+2}{9a^{2}-1}\\div\\frac{2a-2}{6a-2}$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Algebraic Fraction Simplification"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N1-orchidpark-2024-p1-q5",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Simplify $\\frac{(2x^{3}y^{2})^{-4}}{(10x^{-2}y^{3})^{2}}\\div\\sqrt[3]{27x^{-3}y^{6}}.$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Solve $3^{x+2}\\times3(3^{5})=1$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Indices"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "N5-orchidpark-2024-p1-q6",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Factorise $a^{3}-2a^{2}b-4a+8b.$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Solve $\\frac{3x+2}{9x}=\\frac{1}{7x-3}.$",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Factorisation and Equations"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N3-orchidpark-2024-p1-q7",
+            "topicID": "N3",
+            "stem": "Peter has $20 000 to invest in either Bank A, Bank B or Bank C for 5 years. The table below shows the investment plans.\n\n| Bank | Interest rate per annum |\n| :--- | :--- |\n| A | 3.0% compound interest, compounded annually |\n| B | 3.2% simple interest annually |\n| C | Fixed interest of $3000 after 5 years |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Which plan should he invest in? Explain your answer.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Investment Comparison"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "S2-orchidpark-2024-p1-q8",
+            "topicID": "S2",
+            "stem": "A carton contains 17 good apples and 3 rotten apples. A fruit seller picks three apples in random from the carton and puts them into a smaller box for sale.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the probability that there is at least 1 rotten apple in the box for sale.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "When Student A is asked to find the probability that the box contains two good apples and one rotten apple, he claims that the answer is $\\frac{17}{20}\\times\\frac{16}{19}\\times\\frac{3}{18}$. Do you agree with the Student A's claim? Explain your answer.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Probability of Apples"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "N5-orchidpark-2024-p1-q13",
+            "topicID": "N5",
+            "stem": "It is given that $\\sqrt{3p^{3}+6r^{2}}=\\frac{5r}{2}.$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Make $r$ the subject of the equation.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Subject of Formula"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "N2-orchidpark-2024-p1-q15",
+            "topicID": "N2",
+            "stem": "The illumination, I units, of a bulb varies inversely as the square of the distance, d metres. It is given that the illumination is 8 units when the distance is 3 m.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find an equation connecting I and d.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the percentage change in the illumination of the bulb when the bulb is shifted to a new location which is one quarter of the original distance.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Inverse Square Variation"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N6-orchidpark-2024-p2-q1",
+            "topicID": "N6",
+            "stem": "(a) (i) Express $2x^{2}-6x-12$ in the form $k(x-a)^{2}-b$, where k is an integer.\n(ii) Hence, solve $2x^{2}-6x-12=0$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Express $2x^{2}-6x-12$ in the form $k(x-a)^{2}-b$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Hence, solve $2x^{2}-6x-12=0$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Simplify $\\frac{3x+1}{2x^{2}+11x+12}-\\frac{1}{x+4}.$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 2",
+            "title": "Quadratics and Algebraic Fractions"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N7-orchidpark-2024-p2-q3",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "By using factorisation, solve $(x-3)(2x+8)=-12$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Solve the equation $\\frac{4}{2x-3}-\\frac{3}{x+2}=1$. Give your solutions correct to two decimal places.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 2",
+            "title": "Solving Quadratic Equations"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N2-orchidpark-2024-p2-q5",
+            "topicID": "N2",
+            "stem": "The scale of a map is 2 cm: 1 km.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write this scale in the form 1:n.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The area of a park is represented by an area of $456~cm^{2}$ on the map. Calculate the actual area of the land in square kilometres.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 2",
+            "title": "Map Scale"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "G6-orchidpark-2024-p2-q9",
+            "topicID": "G6",
+            "stem": "ABCD is a parallelogram. A is the point $(-6,-2)$ and B is the point $(-4,-7)$. $\\vec{BC}=\\begin{pmatrix}8\\\\ -2\\end{pmatrix}.$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the length of the line AB.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the equation of the line CD.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c_i",
+                    "questionText": "X is the point where the diagonals of the parallelogram intersect. Find $\\vec{XC}$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c_ii",
+                    "questionText": "Find the position vector of X.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "P is the point on BC such that $\\frac{BP}{PC}=\\frac{2}{1}$. Find the ratio of the area of $\\frac{\\Delta ABP}{\\Delta ACP}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Vectors and Coordinate Geometry"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "S1-orchidpark-2024-p2-q10",
+            "topicID": "S1",
+            "stem": "The table below summarises the times taken by female participants to complete a 10 km race.\n\n| Time (t min) | $30\\le t<40$ | $40\\le t<50$ | $50\\le t<60$ | $60\\le t<70$ | $70\\le t<80$ |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| Freq | 20 | 39 | 16 | 20 | x |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Given that the estimated mean time is 50.1 min, show that the value of x is 5.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate an estimate of the standard deviation.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The mean time for male participants to complete the race was 45.3 min and the standard deviation was 12.6 min. Make 2 comparisons between the times for male and female participants.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 2",
+            "title": "Statistics Mean and SD"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "N8-orchidpark-2024-p2-q11",
+            "topicID": "N8",
+            "stem": "The first four terms in a sequence of numbers are given below.\n$T_{1}=3^{2}+5=14$\n$T_{2}=4^{2}+8=24$\n$T_{3}=5^{2}+11=36$\n$T_{4}=6^{2}+14=50$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find $T_{5}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Explain why the value of $T_{n}$ must be even for all values of n.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Show that the nth term of the sequence, $T_{n}$ is given by $n^{2}+7n+6.$",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "$T_{p}$ and $T_{p+1}$ are consecutive terms in the sequence. Find and simplify an expression, in terms of p for $T_{p+1}-T_{p}$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "Explain why two consecutive terms of the sequence cannot have a difference of 4.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Number Patterns"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "S2-orchidpark-2024-p2-q13",
+            "topicID": "S2",
+            "stem": "In a shooting game, the player has to shoot with a gun to capture a monster. The bullet from the gun has to land on a circular target on the monster so that a net will open up. The circular target has four different sizes. Target 1 is a big circle; Target 2 is three quarters of the area of Target 1; Target 3 is half of the area of Target 1; Target 4 is one quarter of the area of Target 1.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Sam estimates that the probability that he hits Target 1 is about 0.88. Given that the probability of hitting the circular target is proportional to its area, show that the probability that Sam hits Target 2 and Target 4 is estimated to be 0.66 and 0.44 respectively.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Even if the bullet hits the circular target, the monster might not be captured as it can break free from the net. The probability of successfully capturing the monster depends on the area and colour of the circular target, and the type of bullet that the player uses. Information that the players need is given below.\n\nEstimated probability of Sam hitting the target.\n| | Target 1 | Target 2 | Target 3 | Target 4 |\n| :--- | :--- | :--- | :--- | :--- |\n| Probability of Sam hitting the target | 0.88 | 0.66 | 0.44 | 0.22 |\n\nIn-built multipliers for capturing monster if the monster has been hit.\n| Targets of different sizes | Target 1 | Target 2 | Target 3 | Target 4 |\n| :--- | :--- | :--- | :--- | :--- |\n| Multiplier for capturing monster | 0.7 | 0.8 | 0.95 | 0.5 |\n\n| Targets of different colours | Green | Yellow | Orange | Red |\n| :--- | :--- | :--- | :--- | :--- |\n| Multiplier for capturing monster | 0.9 | 0.7 | 0.5 | 0.4 |\n\n| Types of bullets | Hollow Point | Soft Point | Flat Nose |\n| :--- | :--- | :--- | :--- |\n| Multiplier for capturing monster | 0.6 | 0.7 | 0.9 |\n\nShow that the estimated probability that Sam will hit and capture a monster with an orange Target 4 using a Flat Nose Bullet is 0.0495.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "In the game, the target changes colour from green to yellow to orange to red and finally back to green. Each change occurs every second. In addition, the target also changes its size from Target 1 to 2 to 3 to 4 and then back to Target 1. Each change also occurs every second. At time $t=0$ seconds, Sam sees a monster with a red Target 2. He only has one Soft Point Bullet. State the colour, Target size and find the maximum probability and the number of seconds Sam should take to shoot at the monster in order to maximise his chance of hitting and capturing it. Justify your decision and show your calculations clearly.",
+                    "marks": 6,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Probability Game Strategy"
+        }
+    ]
+}

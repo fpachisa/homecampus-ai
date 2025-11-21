@@ -1,7 +1,7 @@
 {
     "note": "Questions with diagrams (hasDiagram: true) are stored here separately. These questions require visual elements like graphs, geometric figures, or tables that need to be rendered alongside the question text.",
     "source": "acsi-2024-paper-1-2",
-    "totalDiagramQuestions": 84,
+    "totalDiagramQuestions": 125,
     "questions": [
         {
             "questionNumber": 5,
@@ -2681,6 +2681,1379 @@
             "totalMarks": 8,
             "paper": "Paper 2",
             "title": "Fuel Consumption and Discount"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "G3-orchidpark-2024-p1-q12",
+            "topicID": "G3",
+            "stem": "In the diagram, A, B, C and D are points on the circumference of a circle with centre O. AB is parallel to DO and angle $AOD=67^{\\circ}$. AOC is the diameter of the circle.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with points A, B, C, D on circumference. O is centre. AOC is diameter. AB parallel to DO. Angle AOD=67.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find angle BCD. Give a reason for each step of your working.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Explain why angle DAB is $123.5^{\\circ}$",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find angle DBC. Give a reason for each step of your working.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Circle Properties"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "G2-orchidpark-2024-p1-q14",
+            "topicID": "G2",
+            "stem": "The base areas of two geometrically similar cones are in the ratio of 9: 49.",
+            "hasDiagram": true,
+            "diagramDescription": "Diagram of a cone.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "If the volume of the bigger cone is $1200~cm^{3},$ find the volume of the smaller cone.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "80% of the smaller cone was filled with water. Find the height of water in the smaller cone given that the radius is 3 cm.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Similar Cones"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "G1-orchidpark-2024-p1-q16",
+            "topicID": "G1",
+            "stem": "The figure is made up of a 7-sided regular polygon with centre O, a triangle OAG and a parallelogram OHFG, where GF is parallel to OH and GO is parallel to FH.",
+            "hasDiagram": true,
+            "diagramDescription": "Heptagon ABCDEFG with center O. Parallelogram OHFG attached.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Find angle OGF.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Find angle EFH.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Three of the exterior angles of an n-sided polygon are $18^{\\circ}$, $22^{\\circ}$ and $32^{\\circ}$, four of its interior angles are $163^{\\circ}$ each, and each of the remaining interior angles is $160^{\\circ}$. Find the value of n.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Polygon Angles"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "G6-orchidpark-2024-p1-q18",
+            "topicID": "G6",
+            "stem": "The diagram below shows a triangle ABC, with $A(3,6)$ and $B(-11,0)$. Triangle ABC has an area of $22.5~units^{2}$. E is a point on the line AB passing through the y-axis.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABC on Cartesian plane. A(3,6), B(-11,0), C is on x-axis. E is y-intercept of line AB.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the length AB.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the equation of the line AB.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "State the coordinates of E.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Find the coordinates of C.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "Given that ABDC is a parallelogram, find the coordinates of D.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "f",
+                    "questionText": "The line $l$ has equation $7y-3x+15=0$. Explain whether line $l$ will ever cut the line AB when both lines are extended. Show your workings clearly.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 1",
+            "title": "Coordinate Geometry"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N7-orchidpark-2024-p2-q2",
+            "topicID": "N7",
+            "stem": "In the diagram, ABCD is a rectangle. Given that $AB=(2x+y)$ cm, $BC=(x+y)$ cm, $CD=(3x+5y+3)$ cm and $AD=(4x+5y-7)$ cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Rectangle ABCD with side lengths given as algebraic expressions.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the values of x and y.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 2",
+            "title": "Simultaneous Equations Rectangle"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "G5-orchidpark-2024-p2-q4",
+            "topicID": "G5",
+            "stem": "The diagrams below show a solid hemisphere and a solid cone. The hemisphere has a radius of 3y cm. The cone has a radius of 2y cm and slanted height $l$ cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Solid cone and solid hemisphere.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that the total surface area of the solid cone is $2\\pi y(l+2y)cm^{2}.$",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The total surface area of the solid hemisphere is equal to the total surface area of the solid cone. Find $l$ in terms of y.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The volume of the hemisphere is $729~cm^{3}$. Calculate the volume of the cone.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Surface Area and Volume"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "G4-orchidpark-2024-p2-q6",
+            "topicID": "G4",
+            "stem": "The points A, B, C, D and E are shown in the diagram below such that ABC and AED are straight lines and $BE=\\sqrt{8}$ cm. E(4,3), A(-3,1), B(1,1), C(4,1).",
+            "hasDiagram": true,
+            "diagramDescription": "Two similar triangles ABE and ACD on coordinate axes.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Without using a calculator, find sin ABE.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Without using a calculator, find cos ABE.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Using your answer in (a)(i) calculate the area of triangle ABE",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Given that triangle ABE and triangle ACD are similar, calculate the area of triangle ACD.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 2",
+            "title": "Similar Triangles and Trig"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "G3-orchidpark-2024-p2-q8",
+            "topicID": "G3",
+            "stem": "P, R and Q are points on the circle with centre, O. PT and QT are tangents to the circle at P and Q respectively. $\\angle PTQ=60^{\\circ}$ and $\\angle OQR=20^{\\circ}$",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with tangents PT and QT meeting at T. Angle PTQ=60. Angle OQR=20. Triangle PQR inside circle.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Writing your reasons clearly, find $\\angle TQP$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find $\\angle PRQ$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find $\\angle OPR$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "If the radius of the circle is 5 cm, find the area of the major segment QRP of the circle.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 2",
+            "title": "Circle Geometry"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "G4-orchidpark-2024-p2-q12",
+            "topicID": "G4",
+            "stem": "The diagram shows the positions of a harbour, H, a lighthouse, L, and two buoys P and Q. HPQ is a straight line. The bearing of P from H is $306^{\\circ}$. $HP=3~km$, PL = 2.5 km and angle $HPL=124^{\\circ}$",
+            "hasDiagram": true,
+            "diagramDescription": "Diagram with points H, P, L, Q. HPQ is a line. North arrow at H.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Find the bearing of H from P.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Find the bearing of L from P.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "A helicopter is 500 m vertically above P. Find the angle of elevation from L to the helicopter.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Calculate HL.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "A ship sailed from the harbour along the line HPQ at an average speed of $4.5~m/s$. At 0809 hours, it reached a point X which is nearest to the lighthouse. Find the time it left the harbour. Correct your answer to the nearest minute.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Bearings and Distances"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "G4-swisscottage-2024-p1-q1",
+            "topicID": "G4",
+            "stem": "In the triangle, $PQ=QR$, $PR=15$ cm and angle $PQR=90^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Isosceles right-angled triangle PQR with hypotenuse PR=15cm and right angle at Q.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate PQ.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Isosceles Right Triangle"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "G1-swisscottage-2024-p1-q14",
+            "topicID": "G1",
+            "stem": null,
+            "hasDiagram": true,
+            "diagramDescription": "A sketch showing a regular octagon attached to an equilateral triangle on one side. Angle x is the exterior angle formed between a side of the octagon and a side of the triangle.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "A regular polygon has interior angles of $140^{\\circ}$. Find the number of sides of the polygon",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The diagram shows a sketch of a regular octagon and an equilateral triangle. Calculate x.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Polygons and Interior Angles"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "S1-swisscottage-2024-p1-q15",
+            "topicID": "S1",
+            "stem": "The graph shows information about the waste generated in Singapore from 2013 to 2023.",
+            "hasDiagram": true,
+            "diagramDescription": "Stacked bar chart showing 'Waste Recycled' and 'Waste Disposed of' for years 2013 to 2023. Tonnage on y-axis from 0 to 9000 ('000 tonnes).",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Estimate the waste recycled in 2021.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Make one comment about the total waste generated in the 2020s compared with the 2010s.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "There was a significant drop in the amount of construction and demolition waste, which is usually completely recycled, over the last decade. Brian claims that this contributed to a decline in the percentage of waste recycled in the 2020s compared with the 2010s. Does the graph support his claim? Justify your answer with reference to the graph.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Waste Generation Statistics"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "G2-swisscottage-2024-p1-q16",
+            "topicID": "G2",
+            "stem": "In the diagram, ABC and ACD are triangles such that angle $ACB=$ angle ADC.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABD with line segment BC dividing it into triangles ABC and ACD. Angle ACB is marked equal to angle ADC.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that the two triangles are similar.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Given that $AB=6.5$ cm and $BD=5.5$ cm, find AC.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Similar Triangles"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "G4-swisscottage-2024-p1-q20",
+            "topicID": "G4",
+            "stem": "The diagram shows the positions of three towns, A, B and C. AB is 73 km, BC is 62 km and AC is 56 km. A is due North of C.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABC with side lengths AC=56, AB=73, BC=62. A is North of C, so AC is a vertical line.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the bearing of B from A.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the area of triangle ABC.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Bearings and Triangle Area"
+        },
+        {
+            "questionNumber": 24,
+            "questionId": "N6-swisscottage-2024-p1-q24",
+            "topicID": "N6",
+            "stem": "The graphs of $y=\\frac{x^{3}}{2}-4x-1$ and $y=1-x$ are drawn on the grid.",
+            "hasDiagram": true,
+            "diagramDescription": "A graph showing a cubic curve and a straight line intersecting at three points. The x-axis ranges from -4 to 5, y-axis from -5 to 4.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The points of intersection of the curve and the straight line give the solutions of a cubic equation. Find the cubic equation, giving your answer in the form $ax^{3}+bx^{2}+cx+d=0$, where a, b, c and d are integers.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "By drawing a tangent, find the gradient of the curve at (-2,3).",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c_i",
+                    "questionText": "The equation $x^{3}-4x=0$ can be solved by drawing a suitable straight line on the grid. Find the equation of the straight line.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c_ii",
+                    "questionText": "By drawing this straight line, solve the equation $x^{3}-4x=0$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Graphical Solutions"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "G5-swisscottage-2024-p2-q3",
+            "topicID": "G5",
+            "stem": "The diagram shows a solid formed from a cone, a cylinder and a hemisphere. The cone has base radius 1.5x cm and height y cm. The cylinder has radius 1.5x cm and height 3x cm. The hemisphere has radius 3x cm.",
+            "hasDiagram": true,
+            "diagramDescription": "A composite solid consisting of a cone on top of a cylinder, which is on top of a hemisphere. The cone's base matches the cylinder's top. The cylinder's base sits on the flat face of the hemisphere. Wait, the diagram shows the cylinder sitting on the flat face of a larger hemisphere. Cylinder radius is 1.5x, hemisphere radius is 3x.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The volume of the hemisphere is thrice the volume of the cone. Show that $y=8x.$",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The total surface area of the solid is 450 cm\u00b2. Calculate the total height, h cm, of the solid.",
+                    "marks": 7,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Composite Solid Volume and Surface Area"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "G3-swisscottage-2024-p2-q6",
+            "topicID": "G3",
+            "stem": "The diagram shows a circle PQRST, with centre O. PV and RV are tangents to the circle and U is the intersection of PS and TR. Angle $PVR=40^{\\circ}$ and angle $STU=43^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle PQRST with centre O. Tangents PV and RV meeting at V. TR and PS intersect at U inside the circle. T, S, R, Q, P are on circle. Angle PVR = 40 degrees. Angle STU (STR) = 43 degrees.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find angle PQR. Give a reason for each step of your working.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find angle TUP. Give a reason for each step of your working.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Alice claims that the area of the minor sector OSR is more than one third of the area of the major sector OSR. Do you support her claim? Justify your decision with calculations.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Circle Properties and Sector Area"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "G7-swisscottage-2024-p2-q7",
+            "topicID": "G7",
+            "stem": "(a) The position vector of point X is $\\binom{8}{-4}$. The position vector of point Y is $\\binom{6}{4}.$",
+            "hasDiagram": true,
+            "diagramDescription": "Diagram for part b showing trapezium OABC. OA is parallel to CB. OA=a, OC=2c, CB=2a. P on AC? No, P is on OB?",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Find the vector that represents the translation from X to Y.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Find the magnitude of $\\vec{XY}$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "Z has coordinates (-1, k) and lies on the line XY produced. Find the position vector of point Z.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "OABC is a trapezium. $\\vec{OA}=a$, $\\vec{OC}=2c$ and $\\vec{CB}=2a.$ $OP:PB=1:3$. Express $\\vec{OB}$ in terms of a and c, as simply as possible.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Express $\\vec{CP}$ in terms of a and c, as simply as possible.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "Explain why C, P and A do not lie on a straight line.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_iv",
+                    "questionText": "Write down the value of $\\frac{\\text{area of triangle OBC}}{\\text{area of trapezium OABC}}$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 12,
+            "paper": "Paper 2",
+            "title": "Vectors in Geometry"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "S1-swisscottage-2024-p2-q8",
+            "topicID": "S1",
+            "stem": "The cumulative frequency curve shows the distribution of the wages per week of 80 workers in a factory.",
+            "hasDiagram": true,
+            "diagramDescription": "Cumulative frequency curve of Wages per week. X-axis 0-1000. Y-axis 0-90.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Use the curve to estimate the median wages per week.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Use the curve to estimate the interquartile range of the wages per week.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "In June 2024, the average wages per week of factory workers in Singapore was $540. Calculate the percentage of the workers in the factory who earned more than this average.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the number of workers who earned between $460 and $800.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The factory employed more workers and paid them not more than $650 per week. Find the additional number of workers employed if the probability of choosing a worker who earned not more than $650 is $\\frac{11}{15}$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Cumulative Frequency Statistics"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N1-swisscottage-2024-p2-q9",
+            "topicID": "N1",
+            "stem": "An event organiser is organising a 3-day Pet Festival for 300 exhibitors. The event organiser charges each exhibitor a registration fee of $90 and a daily booth rental of $150.",
+            "hasDiagram": true,
+            "diagramDescription": "Layout of halls A, B, C, D, E with areas and rental prices. Halls A, B, C are in a row. D and E are below them. Foldable partitions between adjacent halls.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the total amount of money the organiser collected from each exhibitor.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The event organiser needs to rent an exhibition space for the Pet Festival. Each booth size is $15~m^{2}$. Aisle space and open spaces required is 65% of the total area occupied by the booths. Calculate the minimum amount payable by the event organiser for the daily rental of the exhibition hall(s) needed.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "It is estimated that there will be a total of 35 000 visitors for the 3-day exhibition. The event organiser says: 'We will meet our minimum target profit of $300 000 if we charge an entrance fee of $6 per visitor.' Is the event organiser correct? Using your answers in part (a) and (b), justify your decision with calculations.",
+                    "marks": 7,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Event Planning Profit Analysis"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "G2-tkgs-2024-p1-q10",
+            "topicID": "G2",
+            "stem": "The diagram shows a quadrilateral ABCD made up of two triangles. $AB=20$ cm, $AD=12$ cm, $CD=32$ cm. Angle $CBD=90^{\\circ}$ and angle $BCD=30^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Quadrilateral ABCD divided into two triangles ABD and BCD by diagonal BD. Angle CBD is 90 degrees. Angle BCD is 30 degrees.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find BD.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hence or otherwise, show that it is possible to form a circle with diameter AB such that point D lies on the circumference of the circle.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Quadrilateral and Circle Properties"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "G3-tkgs-2024-p1-q13",
+            "topicID": "G3",
+            "stem": "In the diagram, A, B, C and D are four points on a circle, centre O. Angle $ABO=x^{\\circ}$ and angle $ADO=y^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with points A, B, C, D. O is the centre. Quadrilateral ABCD inside. Lines connecting O to A, B, D.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find angle BCD in terms of $x$ and $y$. Give reasons for each step of your working.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Circle Geometry Angles"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "G1-tkgs-2024-p1-q17",
+            "topicID": "G1",
+            "stem": "The figure is made up of a regular pentagon ABCDE and a regular hexagon CDFGHI.",
+            "hasDiagram": true,
+            "diagramDescription": "Regular pentagon ABCDE and regular hexagon CDFGHI sharing side CD. Points B, C, I, H, G, F, E, D, A are vertices.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find angle BCI.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Determine whether BC and CI are two sides of another regular polygon. Justify your answers with mathematical working.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Polygons and Angles"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "N4-tkgs-2024-p1-q18",
+            "topicID": "N4",
+            "stem": "The diagram shows the speed-time graph of a cyclist from Town A to Town B.",
+            "hasDiagram": true,
+            "diagramDescription": "Speed-time graph. Starts at 0 speed at t=0, increases linearly to speed v at t=11, constant speed v until t=53, decreases linearly to 0 at t=63.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The total distance travelled by the cyclist is 14 km. Show that $v=16$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the speed of the cyclist 5 minutes from the start of the journey.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Calculate the acceleration of the car in the last 10 minutes.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Speed-Time Graph Analysis"
+        },
+        {
+            "questionNumber": 25,
+            "questionId": "G3-tkgs-2024-p1-q25",
+            "topicID": "G3",
+            "stem": "PR is a diameter of the large circle, centre O. QS is a diameter of the small circle, centre O. PQ and RS are tangents to the small circle.",
+            "hasDiagram": true,
+            "diagramDescription": "Two concentric circles with centre O. PR is diameter of large circle. QS is diameter of small circle. PQ and RS are chords of large circle tangent to small circle. Triangles OPQ and ORS formed.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that triangle OPQ is congruent to triangle ORS. Give a reason for each statement you make.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The ratio of OQ to PQ to OP is 5 : 12 : 13. Express the area of the shaded region as a percentage of the large circle.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Concentric Circles Congruency"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "G4-tkgs-2024-p2-q4",
+            "topicID": "G4",
+            "stem": "In the diagram, PQRS is a vertical rectangular wall of height 2.5 m and length 7.5 m. T is a point on level ground from the base of the wall RS. $\\angle STR=95^{\\circ}$ and $\\angle SRT=40^{\\circ}$. X is a point on ST such that SX: XT is 1: 3.",
+            "hasDiagram": true,
+            "diagramDescription": "Rectangular wall PQRS. Triangle SRT on ground plane. X on ST. Angle STR=95, Angle SRT=40.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the length of SX.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the length of XR.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Calculate the length of PT.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "A bird sat on the ledge of the wall along PQ such that its angle of elevation from X is the largest. Find $\\theta$.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "3D Trigonometry Wall"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "G3-tkgs-2024-p2-q5",
+            "topicID": "G3",
+            "stem": "In the diagram, O is the centre of the circle through A, B, C, D and TB is the tangent at B. AC is the diameter of the circle, and the length of the minor arc BAD is 11 cm. Given that $\\angle OBC=40^{\\circ}$, $\\angle ACD=30^{\\circ}$ and $\\angle BTC=70^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with points A, B, C, D. TB tangent at B. Angle OBC=40, ACD=30, BTC=70. AC is diameter.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Find $\\angle ABD$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Find $\\angle BAD$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "Taking $\\pi=\\frac{22}{7}$, calculate the radius of the circle.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Show that triangle BCD is similar to triangle CTB. Give a reason for each statement you make.",
+                    "marks": 4,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Hence, express CT in terms of x and y given that $BC=x$ cm and $BD=y$ cm.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Circle Properties and Similarity"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "S1-tkgs-2024-p2-q6",
+            "topicID": "S1",
+            "stem": "The cumulative frequency graph shows distribution of the waiting times before being served, in minutes, of 60 customers at restaurant A on a particular day.",
+            "hasDiagram": true,
+            "diagramDescription": "Cumulative frequency curve of waiting times.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Use the curve to estimate the median waiting time.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Use the curve to estimate the interquartile range.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "Use the curve to estimate the $35^{th}$ percentile of the waiting time.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Given that 20% of the customers waited more than x minutes to be served, find the value of x.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The data below represents the waiting times of 10 customers from restaurant B on the same day. 10, 12, 14, 14, 15, 17, 17, 18, 22, 28. Calculate (i) the median waiting time, (ii) the interquartile range.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The owner of restaurant B claims that his restaurant is more efficient and consistent in their service compared to restaurant A based on the data given. Give a reason why this is not a fair comparison.",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 2",
+            "title": "Cumulative Frequency and Comparison"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "G5-tkgs-2024-p2-q7",
+            "topicID": "G5",
+            "stem": "The figure shows a solid frustum of height 16 cm cut from right pyramid with square base. The horizontal top surface has an area of $5~cm^{2}$ while the base area is $125~cm^{2}$. The portion that is removed is h cm high.",
+            "hasDiagram": true,
+            "diagramDescription": "Frustum of a square pyramid. Top area 5 cm2, base area 125 cm2. Height 16cm. Removed top height h.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Show that $h=4$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Calculate the volume of the frustum.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "Find the percentage of the right pyramid that has been removed.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Two solid cones have the same height but the radius of cone A is 1.5 times of cone B. Given that the volume of cone B is $240~cm^{3}$. Find the volume of cone A.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Frustum and Cone Volumes"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "G7-tkgs-2024-p2-q8",
+            "topicID": "G7",
+            "stem": "$\\vec{AB}=\\begin{pmatrix}-3\\\\ 9\\end{pmatrix},$ $\\vec{BC}=\\begin{pmatrix}2\\\\ 5\\end{pmatrix},$ $\\vec{CD}=\\begin{pmatrix}d\\\\ 4\\end{pmatrix},$",
+            "hasDiagram": true,
+            "diagramDescription": "Diagram for part b showing trapezium OABC. Vector OA=a, OC=2c, CB=2a. P is on OC?",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Given that $\\vec{CD}$ is parallel to $\\vec{AB}$, find the value of d.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Find $\\mid\\vec{AC}\\mid$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "OABC is a trapezium. $\\vec{OA}=a$, $\\vec{OC}=2c$ and $\\vec{CB}=2a.$ $OP:PB=1:3$. Express $\\vec{OB}$ in terms of a and c, as simply as possible.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Express $\\vec{CP}$ in terms of a and c, as simply as possible.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "Explain why C, P and A do not lie on a straight line.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_iv",
+                    "questionText": "Write down the value of $\\frac{\\text{area of triangle OBC}}{\\text{area of trapezium OABC}}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Vector Geometry"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "G4-woodgrove-2024-p1-q14",
+            "topicID": "G4",
+            "stem": "In the diagram ABC is a straight line, $BC=10$ cm, $CD=8$ cm and $BD=6$ cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle BCD where BC=10, BD=6, CD=8. ABC is a straight line extending from B to A.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Explain why a circle that passes through B, C and D can be drawn in the above diagram. Give reasons for each step of your working.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hence find the exact value of cos ABD.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Right-Angled Triangle and Trig"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "G2-woodgrove-2024-p1-q15",
+            "topicID": "G2",
+            "stem": "The diagram shows a parallelogram ABCD. APQ, BRQ, CRS and DPS are straight lines which bisect angles A, B, C and D respectively.",
+            "hasDiagram": true,
+            "diagramDescription": "Parallelogram ABCD. Interior angle bisectors form a quadrilateral PQRS inside.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that angle $PAD=$ angle RCB.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Prove that triangles ADP and CBR are congruent.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Congruence in Parallelogram"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "G5-woodgrove-2024-p1-q16",
+            "topicID": "G5",
+            "stem": "X, Y and Z lie on a circle with centre O and radius 4 cm. Angle $XOY=2.5$ radians.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with centre O. Sector XOY. Z is on the major arc. Angle XOY is 2.5 radians.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the area of minor sector XOY.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Write down, in term of $\\pi$, for reflex angle XOY.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Find the length of the arc XZY, in term of $\\pi$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "The major sector XZYO is used to make a cone. Calculate the base radius of the cone.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Circular Measure and Cone"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "G1-woodgrove-2024-p1-q18",
+            "topicID": "G1",
+            "stem": "ABCDE is part of a regular polygon which has an exterior angle of $20^{\\circ}$. CDLM is a square.",
+            "hasDiagram": true,
+            "diagramDescription": "Part of a regular polygon ABCDE... attached to a square CDLM on side CD.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of x. (Angle BCD)",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the value of y. (Angle MBC)",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Polygons and Angles"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "N4-woodgrove-2024-p1-q19",
+            "topicID": "N4",
+            "stem": "The diagram below shows the speed-time graph of a car's journey.",
+            "hasDiagram": true,
+            "diagramDescription": "Speed-time graph. Starts at 0, accelerates linearly to 24 m/s at t=40, then decelerates linearly to 0 at t=60.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "For this journey, calculate the acceleration during the first 40 seconds,",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the total distance travelled.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Speed-Time Graph Calculations"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "G2-woodgrove-2024-p2-q4",
+            "topicID": "G2",
+            "stem": "The diagram below shows two circles, with the same centre at O. Points A, B and C lie on the bigger circle and point D lies on the smaller circle. AC is a straight line that passes through the centre of both circles. AB and BC are both tangents to the smaller circle.",
+            "hasDiagram": true,
+            "diagramDescription": "Two concentric circles with center O. AC is diameter of larger circle. AB and BC tangent to smaller circle at D? No, AB tangent at some point, BC tangent at D? Diagram shows B is a point on outer circle. Tangents from B to inner circle are BA? No, text says AB and BC are tangents. Diagram shows Triangle ABC circumscribing the inner circle? No. AB and BC tangent to inner circle. D is point of tangency on BC? Yes diagram shows D on BC.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Show that triangles ABC and ODC are similar. Give a reason for each statement you made.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "The area of triangle ODC is given as $15cm^{2}$. Find the area of trapezium ABDO.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "PQRS are points on the circumference of a circle, centre O. Angle $OQR=50^{\\circ}$ angle $PSR=73^{\\circ}$ and obtuse angle $SOQ=156^{\\circ}$. Find angle QRS. Give a reason for each step of your working.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Find angle PSO. Give a reason for each step of your working.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "Find angle PQO. Give a reason for each step of your working.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_iv",
+                    "questionText": "Explain whether line PQ parallel to line SR. Support your answer with workings.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Circle Properties and Similarity"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "S1-woodgrove-2024-p2-q5",
+            "topicID": "S1",
+            "stem": "The masses of two batches of 400 steel bars produced by factory A and B were measured and recorded. The cumulative frequency graph below shows the masses.",
+            "hasDiagram": true,
+            "diagramDescription": "Cumulative frequency curves for Factory A and Factory B. Masses from 60 to 110 kg.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "For the steel bars produced by factory A, find the median,",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "For the steel bars produced by factory A, find the interquartile range.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The steel bars produced by factory B are heavier than those produced by factory A. Do you agree? Explain your answer.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Which factory is more consistent in the production of steel bars? Support your answer with workings.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "One steel bar is chosen at random from factory A and another steel bar is chosen at random from factory B. Find, as a fraction in its simplest form, the probability that both steel bars chosen are more than 80kg.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Cumulative Frequency Statistics"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "G7-woodgrove-2024-p2-q6",
+            "topicID": "G7",
+            "stem": "(a) Point A is translated to point B by the vector $\\binom{-5}{4}$. The position vector of point B is $\\binom{3}{8}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Diagram for part b showing quadrilateral OPQR. Vector OP=3p, OR=4r, RQ=7p+4r. B lies on PR.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Find $\\mid\\vec{OA}\\mid$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "P is a point that lies on AB and has coordinates (k, 10). Find the value of k.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "OPQR is a quadrilateral. $\\vec{OP}=3p$, $\\vec{OR}=4r$ and $\\vec{RQ}=7p+4r$. B is a point on PR such that $PB:BR=3:2$. Write down $\\vec{OQ}$ in terms of p and r.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Write down $\\vec{PQ}$ in terms of p and r.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "Write down $\\vec{OB}$ in terms of p and r.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Explain why points O, B and Q are not collinear.",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Vectors"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "G4-woodgrove-2024-p2-q7",
+            "topicID": "G4",
+            "stem": "The diagram above shows a park ABCD that is on horizontal ground, crossed by a straight path AC. Point B is due north of C. $AB=700~m$, $BC=550$ m and $CD=780~m$. Angle $ABC=115^{\\circ}$ and angle $ACD=29^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Quadrilateral ABCD. B is North of C. Triangle ABC and ADC sharing side AC.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that length $AC=1057.32$ m, correct to two decimal places.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the bearing of D from C.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the total area of the park ABCD. Correct your answer to the nearest whole number.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "A vertical building is located at point D. The angle of elevation of the top of the building from point C is 10.9\u00b0. Find the height of the building.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Trigonometry and Bearings"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "G5-woodgrove-2024-p2-q8",
+            "topicID": "G5",
+            "stem": "The diagram above shows a solid structure that is formed from two identical cones and a cylinder. The cylinder is attached to the bases of the two cones. The cone has radius 3x cm, height 4x cm and slant height $l$ cm. The cylinder has radius 3x cm and height y cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Composite solid: Cone on top, cylinder in middle, cone at bottom. Dimensions given in terms of x and y.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express $l$ in terms of x.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The volume of the cylinder is equal to the volume of one cone. Show that $y=\\frac{4}{3}x$",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The total surface area of the solid structure is $(200-x)\\pi~cm^{2}$. Write an expression, in terms of x, for the total surface area of the solid and show that it reduces to $38x^{2}+x-200=0$.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Solve the equation $38x^{2}+x-200=0$, giving your solutions correct to 2 decimal places.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Composite Solid Volume and Area"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N4-woodgrove-2024-p2-q9",
+            "topicID": "N4",
+            "stem": "David will travel on his own for a holiday day trip to Australia. He is planning to rent a car for a total of 9 days for the whole trip. (a) David plans to pick up his rental car from the airport and drive from the airport to his hotel. He uses the above map, drawn to scale, to plan his way to the hotel. The above map has a scale of 1: 500 000.",
+            "hasDiagram": true,
+            "diagramDescription": "Map showing Airport, Hotel and winding road connecting them. Scale 1:500 000.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Measure and estimate the total distance that David needs to drive from the airport to the hotel.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Assuming that David will drive at an average speed of $65~km/h$ from the airport to the hotel. Calculate the time he will take to drive from airport to the hotel. Give your answer correct to the nearest minute.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The information below contains the different costs of renting a car in Australia. [Tables of rental charges for Petrol/Electric cars, tax info, petrol/charging costs provided]. David estimates that his total driving distance for the whole trip will be 850 km, including the journey to and fro from the airport to the hotel. After some calculations, David concludes that renting the electric car (5 seater) is the cheapest option for his whole trip. Do you agree with David? Justify your answer with workings.",
+                    "marks": 6,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Travel Planning and Cost Comparison"
         }
     ]
 }

@@ -297,6 +297,211 @@
         "title": "Set Cardinality Shaded Region"
       },
       {
+        "questionNumber": 20,
+        "questionId": "N8-tkgs-2024-p1-q20",
+        "topicID": "N8",
+        "stem": "The first four terms in a sequence of numbers are given below.\n$T_{1}=\\frac{2}{1}-\\frac{3}{5}=\\frac{7}{5}$\n$T_{2}=\\frac{3}{5}-\\frac{4}{5^{2}}=\\frac{11}{25}$\n$T_{3}=\\frac{4}{5^{2}}-\\frac{5}{5^{3}}=\\frac{3}{25}$\n$T_{4}=\\frac{5}{5^{3}}-\\frac{6}{5^{4}}=\\frac{19}{625}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find $T_{5}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{23}{3125}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern for the 5th term based on the previous terms. The first fraction's numerator is $n+1$ and denominator is $5^{n-1}$. The second fraction's numerator is $n+2$ and denominator is $5^n$.",
+                  "working": "For $T_5$, $n=5$.\n$T_5 = \\frac{5+1}{5^{5-1}} - \\frac{5+2}{5^5} = \\frac{6}{5^4} - \\frac{7}{5^5}$",
+                  "reasoning": "Recognizing the structure of the sequence allows us to substitute $n=5$ directly."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the powers and subtract the fractions.",
+                  "working": "$T_5 = \\frac{6}{625} - \\frac{7}{3125}$\nMake denominators common (multiply first fraction by $\\frac{5}{5}$):\n$T_5 = \\frac{30}{3125} - \\frac{7}{3125} = \\frac{23}{3125}$",
+                  "reasoning": "Standard arithmetic operations with fractions."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in terms of $n$, for $T_{n}$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{4n+3}{5^n}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Generalize the pattern observed in the stem.",
+                  "working": "$T_n = \\frac{n+1}{5^{n-1}} - \\frac{n+2}{5^n}$",
+                  "reasoning": "The first term has numerator $n+1$ and denominator $5^{n-1}$. The second term has numerator $n+2$ and denominator $5^n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine the two fractions into a single expression.",
+                  "working": "$T_n = \\frac{(n+1) \\times 5}{5^{n-1} \\times 5} - \\frac{n+2}{5^n}$\n$T_n = \\frac{5n+5}{5^n} - \\frac{n+2}{5^n}$",
+                  "reasoning": "To combine fractions, we need a common denominator of $5^n$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the numerator.",
+                  "working": "$T_n = \\frac{(5n+5) - (n+2)}{5^n} = \\frac{4n+3}{5^n}$",
+                  "reasoning": "Algebraic simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Evaluate the sum of the first ten terms, $T_{1}+T_{2}+T_{3}+...+T_{10}$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2 - \\frac{12}{5^{10}}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write out the sum using the difference form found in the stem to identify the telescoping nature of the series.",
+                  "working": "Sum $= (\\frac{2}{1} - \\frac{3}{5}) + (\\frac{3}{5} - \\frac{4}{5^2}) + (\\frac{4}{5^2} - \\frac{5}{5^3}) + ... + (\\frac{11}{5^9} - \\frac{12}{5^{10}})$",
+                  "reasoning": "Using the unsimplified difference form reveals that adjacent terms cancel each other out."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Cancel out the intermediate terms.",
+                  "working": "Sum $= \\frac{2}{1} + (-\\frac{3}{5} + \\frac{3}{5}) + (-\\frac{4}{5^2} + \\frac{4}{5^2}) + ... - \\frac{12}{5^{10}}$\nSum $= 2 - \\frac{12}{5^{10}}$",
+                  "reasoning": "This is a telescoping sum where only the first part of the first term and the last part of the last term remain."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Number Patterns"
+      },
+      {
+        "questionNumber": 21,
+        "questionId": "N8-woodgrove-2024-p1-q21",
+        "topicID": "N8",
+        "stem": "The first four terms in a sequence of numbers, $x_{1}, x_{2}, x_{3}, x_{4}, ...$ are given below.\n$x_{1}=2(0)+1=1$\n$x_{2}=2(1)+3=5$\n$x_{3}=2(2)+5=9$\n$x_{4}=2(3)+7=13$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression for $x_{5}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x_5 = 2(4) + 9 = 17$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern in the given terms.",
+                  "working": "The term $x_n$ follows the structure: $2(\\text{number}) + (\\text{odd number})$.\nFor $x_1$, number is 0.\nFor $x_2$, number is 1.\nFor $x_n$, the number in the bracket is $(n-1)$.",
+                  "reasoning": "Recognizing the relationship between the subscript position $n$ and the numbers in the expression."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the pattern to $n=5$.",
+                  "working": "For $x_5$, the multiplier is $(5-1) = 4$.\nThe added number follows the odd number sequence $1, 3, 5, 7...$ which is the 5th odd number: 9.\nExpression: $2(4) + 9$.",
+                  "reasoning": "Substituting $n=5$ into the observed structural pattern."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in term of $n,$ for the $n^{th}term,x_{n}$ of the sequence.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x_n = 4n - 3$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the structure of the sequence terms.",
+                  "working": "From the stem:\n$x_n = 2(n-1) + [\\text{something}]$.\nThe added terms are $1, 3, 5, 7...$. The formula for the $k$-th odd number is $2k-1$. Here, for term $n$, it is the $n$-th odd number? Let's check:\n$n=1 → 1$\n$n=2 → 3$\n$n=3 → 5$\nSo the added part is $2n - 1$.",
+                  "reasoning": "Deconstructing the expression into two variable parts dependent on $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine the parts into a single algebraic expression.",
+                  "working": "$x_n = 2(n-1) + (2(n-1) + 1)$\nAlternatively, looking at the final values: $1, 5, 9, 13...$\nThis is an arithmetic progression with first term $a=1$ and difference $d=4$.",
+                  "reasoning": "Using the arithmetic progression formula is often faster than reconstructing the stem's specific format."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the arithmetic sequence formula $T_n = a + (n-1)d$.",
+                  "working": "$x_n = 1 + (n-1)4$\n$x_n = 1 + 4n - 4$\n$x_n = 4n - 3$",
+                  "reasoning": "Simplifying the linear expression to its final form."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Evaluate $x_{20}$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "77",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $n=20$ into the formula found in part (b).",
+                  "working": "$x_{20} = 4(20) - 3$",
+                  "reasoning": "Direct substitution."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the final value.",
+                  "working": "$80 - 3 = 77$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Explain why 203 is not a term of this sequence.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Equate the general term formula to 203.",
+                  "working": "$4n - 3 = 203$",
+                  "reasoning": "To determine if a number exists in a sequence, we solve for $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $n$.",
+                  "working": "$4n = 203 + 3$\n$4n = 206$\n$n = \\frac{206}{4} = 51.5$",
+                  "reasoning": "Isolating $n$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Interpret the result.",
+                  "working": "Since $n$ is $51.5$, which is not a positive integer, 203 cannot be a term in the sequence.",
+                  "reasoning": "Sequence positions ($n$) must always be whole numbers (integers)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Number Sequence"
+      },
+      {
         "questionNumber": 101,
         "questionId": "N8-gemini-2011-p1-101",
         "topicID": "N8",
@@ -403,6 +608,352 @@
         "title": "Set Language"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111142454-p1-q101",
+        "topicID": "N8",
+        "stem": "Consider the number sequence below:\n$-1, 2, 7, 14, 23, \\dots$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the next term in the sequence.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "34",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern of differences between consecutive terms.",
+                  "working": "$2 - (-1) = 3$\n$7 - 2 = 5$\n$14 - 7 = 7$\n$23 - 14 = 9$\nThe differences are increasing odd numbers: $3, 5, 7, 9$.",
+                  "reasoning": "Finding the difference between terms is the standard first step in identifying a number pattern."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add the next difference to the last known term.",
+                  "working": "Next difference = $11$\nNext term = $23 + 11 = 34$",
+                  "reasoning": "Continuing the arithmetic progression of the differences allows us to find the next term."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in terms of $n$, for the $n$th term of the sequence, $T_n$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "n^2 - 2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the sequence to the square numbers ($n^2$) since the second difference is constant ($2$).",
+                  "working": "$n=1, 1^2=1$, Term=$-1$ (Diff $-2$)\n$n=2, 2^2=4$, Term=$2$ (Diff $-2$)\n$n=3, 3^2=9$, Term=$7$ (Diff $-2$)",
+                  "reasoning": "Recognizing quadratic patterns often involves comparing terms to $n^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Adjust the $n^2$ term by the constant difference.",
+                  "working": "$T_n = n^2 - 2$",
+                  "reasoning": "Since every term is exactly 2 less than the corresponding square number, we subtract 2."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Determine if $98$ is a term in this sequence.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Yes, 98 is the 10th term.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Equate the general term formula to 98.",
+                  "working": "$n^2 - 2 = 98$",
+                  "reasoning": "To check if a number belongs to a sequence, we set the $n$th term formula equal to that number and solve for $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $n$.",
+                  "working": "$n^2 = 100$\n$n = \\pm 10$",
+                  "reasoning": "Isolate $n$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Conclude based on the value of $n$.",
+                  "working": "Since $n=10$ is a positive integer, 98 is a term in the sequence.",
+                  "reasoning": "For a number to be in a sequence, its position $n$ must be a positive integer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Quadratic Sequences"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111145943-p1-q101",
+        "topicID": "N8",
+        "stem": "Consider the sequence of numbers: $2, 5, 10, 17, 26, \\dots$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the next two terms of the sequence.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "37, 50",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern in the differences between consecutive terms.",
+                  "working": "$5-2=3$, $10-5=5$, $17-10=7$, $26-17=9$. The differences are odd numbers increasing by 2.",
+                  "reasoning": "To find the next terms, we continue the pattern of adding the next odd numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the 6th term.",
+                  "working": "Next difference is 11. $26 + 11 = 37$.",
+                  "reasoning": "Add the next odd number to the previous term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the 7th term.",
+                  "working": "Next difference is 13. $37 + 13 = 50$.",
+                  "reasoning": "Add the next odd number to the 6th term."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in terms of $n$, for the $n$th term of the sequence, $T_n$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T_n = n^2 + 1$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the sequence to square numbers.",
+                  "working": "Square numbers ($n^2$): $1, 4, 9, 16, 25 \\dots$\nGiven sequence: $2, 5, 10, 17, 26 \\dots$",
+                  "reasoning": "Recognizing square numbers is a key strategy for sequences with a constant second difference."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the offset.",
+                  "working": "Each term in the given sequence is 1 greater than the corresponding square number.\n$2 = 1^2 + 1$\n$5 = 2^2 + 1$",
+                  "reasoning": "Adjust the standard $n^2$ formula to fit the specific values."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the value of $n$ for which $T_n = 145$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set the expression equal to 145 and solve for $n$.",
+                  "working": "$n^2 + 1 = 145$\n$n^2 = 144$",
+                  "reasoning": "Substitute the known value of the term into the formula derived in part (b)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the square root.",
+                  "working": "$n = \\sqrt{144} = 12$",
+                  "reasoning": "Since $n$ represents the position in a sequence, it must be a positive integer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Quadratic Sequences"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111153547-p1-q101",
+        "topicID": "N8",
+        "stem": "Study the number pattern below.\nLine 1: $1 \\times 4 + 2 = 6$\nLine 2: $2 \\times 5 + 2 = 12$\nLine 3: $3 \\times 6 + 2 = 20$\nLine 4: $4 \\times 7 + 2 = 30$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down Line 5.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$5 \\times 8 + 2 = 42$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Observe the pattern for the 5th line.",
+                  "working": "The first number is the line number (5). The second number is the line number plus 3 ($5+3=8$). The constant added is always 2.",
+                  "reasoning": "Following the sequence $1, 2, 3, 4 \\rightarrow 5$ and $4, 5, 6, 7 \\rightarrow 8$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the result.",
+                  "working": "$5 \\times 8 + 2 = 40 + 2 = 42$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in terms of $n$, for the result of Line $n$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$n^2 + 3n + 2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Translate the pattern into algebra.",
+                  "working": "Line $n$: $n \\times (n+3) + 2$",
+                  "reasoning": "The first number is $n$, the second is $n+3$, and we add 2."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand and simplify the expression.",
+                  "working": "$n(n+3) + 2 = n^2 + 3n + 2$",
+                  "reasoning": "Standard algebraic expansion."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "If the result of Line $n$ is 272, find the value of $n$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$15$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set the expression equal to 272 and form a quadratic equation.",
+                  "working": "$n^2 + 3n + 2 = 272$\n$n^2 + 3n - 270 = 0$",
+                  "reasoning": "Equating the general term to the given value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve the quadratic equation for $n$.",
+                  "working": "$(n+18)(n-15) = 0$\nSince $n$ must be positive, $n = 15$.",
+                  "reasoning": "Factorization of quadratic equation. Discard negative root as line numbers are positive integers."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Algebraic Number Patterns"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111185018-p1-q101",
+        "topicID": "N8",
+        "stem": "The first three terms of a sequence, $y_{1}, y_{2}, y_{3}, ...$ are given below.\n$y_{1} = 1(2) + 2 = 4$\n$y_{2} = 2(3) + 4 = 10$\n$y_{3} = 3(4) + 6 = 18$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression for $y_{4}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$y_4 = 4(5) + 8 = 28$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern for each component.",
+                  "working": "First number: $n$\nNumber in bracket: $n+1$\nAdded number: $2n$",
+                  "reasoning": "Observing the change in numbers relative to the term position $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct the expression for $n=4$.",
+                  "working": "$y_4 = 4(4+1) + 2(4) = 4(5) + 8$",
+                  "reasoning": "Substitution of $n=4$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in terms of $n$, for the $n^{th}$ term, $y_{n}$. Give your answer in its simplest form.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$y_n = n^2 + 3n$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Translate the pattern into algebra.",
+                  "working": "$y_n = n(n+1) + 2n$",
+                  "reasoning": "Using the components identified in part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand and simplify.",
+                  "working": "$y_n = n^2 + n + 2n$\n$y_n = n^2 + 3n$",
+                  "reasoning": "Algebraic simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the value of $n$ for which $y_{n} = 180$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n = 12$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set the expression equal to 180.",
+                  "working": "$n^2 + 3n = 180$",
+                  "reasoning": "Setting up the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve the quadratic equation.",
+                  "working": "$n^2 + 3n - 180 = 0$\n$(n+15)(n-12) = 0$",
+                  "reasoning": "Factorization of quadratic."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Select the valid solution.",
+                  "working": "$n = -15$ or $n = 12$. Since $n > 0$, $n = 12$.",
+                  "reasoning": "Sequence positions must be positive integers."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Quadratic Sequence"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N8-gemini-2011-p1-102",
         "topicID": "N8",
@@ -466,9 +1017,431 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Set Inequalities"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N8-gemini-2111145943-p1-q102",
+        "topicID": "N8",
+        "stem": "A pattern of shapes is made using identical sticks. \nPattern 1 has 4 sticks.\nPattern 2 has 7 sticks.\nPattern 3 has 10 sticks.",
+        "hasDiagram": false,
+        "diagramDescription": "Imagine a sequence of connected squares or triangles where each new shape shares a side with the previous one.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the number of sticks in Pattern 5.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "16",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the common difference.",
+                  "working": "$7 - 4 = 3$ and $10 - 7 = 3$. The sequence increases by 3 each time.",
+                  "reasoning": "This is an arithmetic progression."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Extrapolate to Pattern 5.",
+                  "working": "Pattern 4: $10 + 3 = 13$\nPattern 5: $13 + 3 = 16$",
+                  "reasoning": "Add the common difference twice to the 3rd term."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the formula for the number of sticks, $S$, in Pattern $n$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$S = 3n + 1$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the general formula for an arithmetic sequence $an + b$.",
+                  "working": "Since the difference is 3, the formula starts with $3n$.",
+                  "reasoning": "The coefficient of $n$ is always the constant difference."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the constant term.",
+                  "working": "For $n=1$, $3(1) = 3$. We need 4. So, $3 + 1 = 4$.\nCheck for $n=2$: $3(2) + 1 = 7$. Correct.",
+                  "reasoning": "Adjust the formula to match the first term."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Explain why it is not possible to have a pattern with exactly 101 sticks.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Equate the formula to 101 and solve for $n$.",
+                  "working": "$3n + 1 = 101$\n$3n = 100$\n$n = \\frac{100}{3} = 33.33\\dots$",
+                  "reasoning": "We test if 101 is a valid term in the sequence."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Conclude based on the nature of $n$.",
+                  "working": "Since $n$ is not an integer (33.33...), 101 cannot be a term in the sequence.",
+                  "reasoning": "The position number $n$ must always be a whole number."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Linear Patterns"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N8-gemini-2111185018-p1-q102",
+        "topicID": "N8",
+        "stem": "Consider the following pattern of equations:\nLine 1: $3^1 - 1 = 2$\nLine 2: $3^2 - 3 = 6$\nLine 3: $3^3 - 5 = 22$\nLine 4: $3^4 - 7 = 74$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down Line 5.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$3^5 - 9 = 234$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern.",
+                  "working": "Base is always 3. Exponent is the line number $n$. The subtracted number is the $n$-th odd number ($2n-1$).",
+                  "reasoning": "Pattern recognition."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct Line 5.",
+                  "working": "Exponent: 5. Subtracted: $2(5)-1 = 9$.\nResult: $243 - 9 = 234$.",
+                  "reasoning": "Calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down an expression, in terms of $n$, for the result of Line $n$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$3^n - (2n - 1)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Generalize the components.",
+                  "working": "First term: $3^n$.\nSubtracted term: The sequence $1, 3, 5, 7...$ is represented by $2n-1$.",
+                  "reasoning": "Generalizing from specific cases to $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine.",
+                  "working": "$3^n - (2n - 1)$ or $3^n - 2n + 1$",
+                  "reasoning": "Final expression."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Exponential Pattern"
       }
     ],
     "Paper 2": [
+      {
+        "questionNumber": 4,
+        "questionId": "N8-swisscottage-2024-p2-q4",
+        "topicID": "N8",
+        "stem": "Here are the first four terms of a sequence: $\\frac{13}{5}, \\frac{10}{10}, \\frac{7}{15}, \\frac{4}{20}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the fifth term of the sequence.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{25}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the numerator pattern.",
+                  "working": "Numerators: $13, 10, 7, 4$. This is subtracting 3 each time ($13-3=10$, etc.). Next numerator: $4-3=1$.",
+                  "reasoning": "Identify the arithmetic progression in the top numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the denominator pattern.",
+                  "working": "Denominators: $5, 10, 15, 20$. This is adding 5 each time. Next denominator: $20+5=25$.",
+                  "reasoning": "Identify the arithmetic progression in the bottom numbers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine to form the fraction.",
+                  "working": "$\\frac{1}{25}$",
+                  "reasoning": "Construct the term from the calculated numerator and denominator."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$T_{n}$ is the nth term of the sequence. Find an expression, in terms of n, for $T_{n}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T_n = \\frac{16-3n}{5n}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the formula for the numerator.",
+                  "working": "Sequence: $13, 10, 7 \\dots$ (Difference -3).\nFormula: $a + (n-1)d = 13 + (n-1)(-3) = 13 - 3n + 3 = 16 - 3n$.",
+                  "reasoning": "Use the general term for an arithmetic sequence."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the formula for the denominator.",
+                  "working": "Sequence: $5, 10, 15 \\dots$ (Multiples of 5).\nFormula: $5n$.",
+                  "reasoning": "Recognize simple multiples."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine into a fraction.",
+                  "working": "$T_n = \\frac{16-3n}{5n}$",
+                  "reasoning": "Place numerator expression over denominator expression."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The difference between the two consecutive terms of the sequence is $T_{n+1}-T_{n}$. Show that $T_{n+1}-T_{n}=\\frac{-16}{5n(n+1)}$",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See proof steps",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the expression for $T_{n+1}$.",
+                  "working": "$T_{n+1} = \\frac{16-3(n+1)}{5(n+1)} = \\frac{16-3n-3}{5(n+1)} = \\frac{13-3n}{5(n+1)}$",
+                  "reasoning": "Substitute $(n+1)$ wherever $n$ appears in the formula found in part (b)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the subtraction $T_{n+1} - T_n$.",
+                  "working": "$\\frac{13-3n}{5(n+1)} - \\frac{16-3n}{5n}$",
+                  "reasoning": "Write out the difference to be simplified."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find a common denominator and combine.",
+                  "working": "Common Denominator: $5n(n+1)$.\nNumerator: $n(13-3n) - (n+1)(16-3n)$\n$= (13n - 3n^2) - (16n - 3n^2 + 16 - 3n)$",
+                  "reasoning": "Cross-multiply numerators to combine fractions."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the numerator.",
+                  "working": "$13n - 3n^2 - (13n - 3n^2 + 16)$\n$= 13n - 3n^2 - 13n + 3n^2 - 16$\n$= -16$",
+                  "reasoning": "Expand brackets and collect like terms."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Finalize the expression.",
+                  "working": "$\\frac{-16}{5n(n+1)}$",
+                  "reasoning": "Place the simplified numerator over the common denominator."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Explain why the difference between the two consecutive terms of the sequence is always negative.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the sign of the numerator.",
+                  "working": "The numerator is $-16$, which is always negative.",
+                  "reasoning": "A constant negative number does not change sign."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the sign of the denominator.",
+                  "working": "Since $n$ represents the position of a term, $n \\ge 1$. Therefore, $n$ is positive and $(n+1)$ is positive. Thus, $5n(n+1)$ is always positive.",
+                  "reasoning": "Determine if the denominator can ever be negative or zero."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Conclude based on division rules.",
+                  "working": "A negative number divided by a positive number results in a negative number.",
+                  "reasoning": "Combine the findings from steps 1 and 2."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Sequence and Series"
+      },
+      {
+        "questionNumber": 11,
+        "questionId": "N8-orchidpark-2024-p2-q11",
+        "topicID": "N8",
+        "stem": "The first four terms in a sequence of numbers are given below.\n$T_{1}=3^{2}+5=14$\n$T_{2}=4^{2}+8=24$\n$T_{3}=5^{2}+11=36$\n$T_{4}=6^{2}+14=50$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find $T_{5}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "66",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern for the base of the square and the added number.",
+                  "working": "Base: $3, 4, 5, 6 \\dots$ so next is $7$.\nAdder: $5, 8, 11, 14 \\dots$ (adding 3 each time), so next is $17$.",
+                  "reasoning": "Observing the progression of individual components allows us to construct the next term."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $T_5$.",
+                  "working": "$T_5 = 7^2 + 17 = 49 + 17 = 66$",
+                  "reasoning": "Substitute the identified values into the expression structure."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why the value of $T_{n}$ must be even for all values of n.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the parity of the components.",
+                  "working": "The term is $(n+2)^2 + (3n+2)$.\nAlternatively, using the simplified form $n^2+7n+6 = (n+1)(n+6)$.",
+                  "reasoning": "Looking at the factors is often the easiest way to determine parity."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use a parity argument.",
+                  "working": "If $n$ is odd, $n+1$ is even. If $n$ is even, $n+6$ is even.\nSince one factor is always even, the product $(n+1)(n+6)$ is always even.",
+                  "reasoning": "The product of an even number and any integer is always even."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Show that the nth term of the sequence, $T_{n}$ is given by $n^{2}+7n+6.$",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Shown",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the components in terms of $n$.",
+                  "working": "Square part: Term 1 is $3^2$, Term $n$ is $(n+2)^2$.\nLinear part: $5, 8, 11 \\dots$ is an AP with $a=5, d=3$. Formula: $5 + (n-1)3 = 3n+2$.",
+                  "reasoning": "Translate the numerical pattern into algebraic expressions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine and simplify.",
+                  "working": "$T_n = (n+2)^2 + (3n+2)$\n$= (n^2 + 4n + 4) + 3n + 2$\n$= n^2 + 7n + 6$",
+                  "reasoning": "Expand the brackets and collect like terms to match the required expression."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "$T_{p}$ and $T_{p+1}$ are consecutive terms in the sequence. Find and simplify an expression, in terms of p for $T_{p+1}-T_{p}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "2p + 8",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write expressions for $T_{p+1}$ and $T_p$.",
+                  "working": "$T_{p+1} = (p+1)^2 + 7(p+1) + 6$\n$T_p = p^2 + 7p + 6$",
+                  "reasoning": "Substitute $p+1$ and $p$ into the formula derived in part (c)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract $T_p$ from $T_{p+1}$.",
+                  "working": "Difference $= [(p^2 + 2p + 1) + 7p + 7 + 6] - [p^2 + 7p + 6]$\n$= p^2 + 9p + 14 - p^2 - 7p - 6$",
+                  "reasoning": "Expand and subtract carefully."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the result.",
+                  "working": "$= 2p + 8$",
+                  "reasoning": "Collect like terms."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "e",
+            "questionText": "Explain why two consecutive terms of the sequence cannot have a difference of 4.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set the difference expression equal to 4.",
+                  "working": "$2p + 8 = 4$",
+                  "reasoning": "We assume the difference is 4 and solve for the position $p$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $p$.",
+                  "working": "$2p = -4$\n$p = -2$",
+                  "reasoning": "Basic algebraic manipulation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Conclude based on the definition of $p$.",
+                  "working": "Since $p$ represents the position of a term in a sequence, $p$ must be a positive integer ($p \\ge 1$). Therefore, $p = -2$ is impossible.",
+                  "reasoning": "Sequence positions are always natural numbers."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Number Patterns"
+      },
       {
         "questionNumber": 101,
         "questionId": "N8-gemini-2011-p2-101",
@@ -562,6 +1535,439 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Set Properties"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111142454-p2-q101",
+        "topicID": "N8",
+        "stem": "A pattern of numbers is defined by the rows below:\nRow 1: $1 \\times 4 + 2 = 6$\nRow 2: $2 \\times 5 + 4 = 14$\nRow 3: $3 \\times 6 + 6 = 24$\nRow 4: $4 \\times 7 + 8 = 36$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the equation for Row 5.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "5 \\times 8 + 10 = 50",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern in each column.",
+                  "working": "1st number: $1, 2, 3, 4 \\rightarrow 5$\n2nd number: $4, 5, 6, 7 \\rightarrow 8$\nAdded number: $2, 4, 6, 8 \\rightarrow 10$",
+                  "reasoning": "Follow the arithmetic progression in each position of the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the result.",
+                  "working": "$5 \\times 8 = 40$\n$40 + 10 = 50$",
+                  "reasoning": "Verify the equation holds true."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that the result of the equation in Row $n$ is given by $n^2 + 5n$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Shown",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express each component in terms of $n$.",
+                  "working": "1st number: $n$\n2nd number: starts at 4, so $n+3$\nAdded number: even numbers $2n$",
+                  "reasoning": "Translate the numerical columns into algebraic terms based on the row number $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Construct and simplify the expression.",
+                  "working": "Expression $= n(n+3) + 2n$\n$= n^2 + 3n + 2n$\n$= n^2 + 5n$",
+                  "reasoning": "Expand and collect like terms."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the value of $n$ for which the result is $204$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set the formula equal to 204.",
+                  "working": "$n^2 + 5n = 204$\n$n^2 + 5n - 204 = 0$",
+                  "reasoning": "Create a quadratic equation to solve for $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve the quadratic equation.",
+                  "working": "Using factorization: $(n+17)(n-12) = 0$\n$n = -17$ or $n = 12$",
+                  "reasoning": "Find the roots of the quadratic."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Select the valid solution.",
+                  "working": "Since $n$ must be positive, $n = 12$.",
+                  "reasoning": "Reject the negative solution as row numbers cannot be negative."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Find the difference between the result of Row $(k+1)$ and Row $k$, giving your answer in terms of $k$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "2k + 6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $k+1$ and $k$ into the formula.",
+                  "working": "Row $(k+1) = (k+1)^2 + 5(k+1)$\nRow $k = k^2 + 5k$",
+                  "reasoning": "Use the general formula derived in part (b)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the difference.",
+                  "working": "Diff $= [(k^2 + 2k + 1) + 5k + 5] - [k^2 + 5k]$\n$= k^2 + 7k + 6 - k^2 - 5k$",
+                  "reasoning": "Expand and subtract."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify.",
+                  "working": "$= 2k + 6$",
+                  "reasoning": "Collect like terms."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Algebraic Patterns"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111145943-p2-q101",
+        "topicID": "N8",
+        "stem": "Consider the sequence of fractions: $\\frac{3}{2}, \\frac{5}{6}, \\frac{7}{12}, \\frac{9}{20}, \\dots$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the 5th term of the sequence.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{11}{30}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern in the numerator.",
+                  "working": "$3, 5, 7, 9 \\dots$ (Add 2). Next is 11.",
+                  "reasoning": "Arithmetic progression."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the pattern in the denominator.",
+                  "working": "$2, 6, 12, 20 \\dots$\nDifferences: $4, 6, 8$. Next difference is 10.\n$20 + 10 = 30$.",
+                  "reasoning": "Quadratic sequence or recognizing $n(n+1)$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that the $n$th term of the sequence is given by $T_n = \\frac{2n+1}{n^2+n}$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See proof",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Derive numerator formula.",
+                  "working": "Sequence: $3, 5, 7 \\dots$\n$a=3, d=2$. $3 + (n-1)2 = 2n+1$.",
+                  "reasoning": "Arithmetic sequence formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Derive denominator formula.",
+                  "working": "Sequence: $2, 6, 12, 20 \\dots$\nNote that $1\\times2=2, 2\\times3=6, 3\\times4=12$. This is $n(n+1) = n^2+n$.",
+                  "reasoning": "Pattern recognition of product of consecutive integers."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Show that $T_n = \\frac{1}{n} + \\frac{1}{n+1}$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See proof",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Combine the fractions on the Right Hand Side (RHS).",
+                  "working": "$\\frac{1}{n} + \\frac{1}{n+1} = \\frac{n+1}{n(n+1)} + \\frac{n}{n(n+1)}$",
+                  "reasoning": "Find a common denominator to add the algebraic fractions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the numerator.",
+                  "working": "$\\frac{(n+1) + n}{n(n+1)} = \\frac{2n+1}{n^2+n}$",
+                  "reasoning": "Add the numerators."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare with $T_n$.",
+                  "working": "The result matches the expression for $T_n$ from part (b).",
+                  "reasoning": "Verification complete."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Find the value of $n$ for which $T_n = \\frac{41}{420}$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "20",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Equate $T_n$ to the value.",
+                  "working": "$\\frac{2n+1}{n(n+1)} = \\frac{41}{420}$",
+                  "reasoning": "Set up the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare components or solve quadratically.",
+                  "working": "Observation method: Denominator $n(n+1) = 420$. Numerator $2n+1 = 41$.\nFrom numerator: $2n = 40 \\Rightarrow n=20$.",
+                  "reasoning": "Checking consistency is faster than solving the full quadratic, though solving $n^2+n-420=0$ is also valid."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Verify with denominator.",
+                  "working": "If $n=20$, $n(n+1) = 20(21) = 420$. This matches.",
+                  "reasoning": "Ensure the value of $n$ satisfies both parts of the fraction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Algebraic Fractions Sequence"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111153547-p2-q101",
+        "topicID": "N8",
+        "stem": "A sequence of figures is formed using dots. The number of dots in the first three figures is shown below.\nFigure 1: ● ●\nFigure 2: ● ● ● ● ● ●\nFigure 3: ● ● ● ● ● ● ● ● ● ● ● ●",
+        "hasDiagram": true,
+        "diagramDescription": "Figure 1 shows a 1x2 rectangle of dots. Figure 2 shows a 2x3 rectangle of dots. Figure 3 shows a 3x4 rectangle of dots.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down the number of dots in Figure 6.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "42",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the pattern relating the Figure number to the number of dots.",
+                  "working": "Figure 1: $1 \\times 2 = 2$\nFigure 2: $2 \\times 3 = 6$\nFigure 3: $3 \\times 4 = 12$\nFigure $n$: $n \\times (n+1)$",
+                  "reasoning": "The number of dots is the product of the figure number and the next integer."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate for Figure 6.",
+                  "working": "$6 \\times (6+1) = 6 \\times 7 = 42$",
+                  "reasoning": "Substitution of $n=6$ into the pattern."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression, in terms of $n$, for the number of dots in Figure $n$, $D_n$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$n(n+1)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Generalize the observed pattern.",
+                  "working": "$D_n = n(n+1)$ or $n^2+n$",
+                  "reasoning": "As established in part (a), the term is the product of $n$ and $n+1$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the value of $n$ such that $D_n = 380$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "19",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation.",
+                  "working": "$n(n+1) = 380$",
+                  "reasoning": "Equating the general formula to the given value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $n$.",
+                  "working": "$n^2 + n - 380 = 0$\n$(n+20)(n-19) = 0$\n$n = 19$ (since $n > 0$)",
+                  "reasoning": "Solving the quadratic equation. Alternatively, estimate $\\sqrt{380} \\approx 19.4$, so try $19 \\times 20$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Show algebraically that $D_n + (n+1)$ is always a perfect square.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "$(n+1)^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute the expression for $D_n$ into the required statement.",
+                  "working": "$D_n + (n+1) = n(n+1) + (n+1)$",
+                  "reasoning": "Using the formula derived in part (b)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorize or expand to show the perfect square form.",
+                  "working": "Factor out $(n+1)$: $(n+1)(n+1) = (n+1)^2$\nOR Expand: $n^2 + n + n + 1 = n^2 + 2n + 1 = (n+1)^2$",
+                  "reasoning": "Since the result is a squared term $(n+1)^2$, it is always a perfect square for any integer $n$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Geometric Number Patterns"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N8-gemini-2111185018-p2-q101",
+        "topicID": "N8",
+        "stem": "A sequence of diagrams is formed using dots. The number of dots in each diagram is given by the sequence $T_1, T_2, T_3, ...$\n$T_1 = 1 \\times 3 + 1 = 4$\n$T_2 = 2 \\times 4 + 2 = 10$\n$T_3 = 3 \\times 5 + 3 = 18$\n$T_4 = 4 \\times 6 + 4 = 28$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an expression for $T_5$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T_5 = 5 \\times 7 + 5 = 40$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the pattern.",
+                  "working": "$T_n = n \\times (n+2) + n$.",
+                  "reasoning": "Comparing $n$ to the numbers in the expression."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute $n=5$.",
+                  "working": "$5 \\times (5+2) + 5 = 5 \\times 7 + 5 = 35 + 5 = 40$.",
+                  "reasoning": "Calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that the $n^{th}$ term of the sequence is given by $T_n = n^2 + 3n$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See working",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the general expression based on the stem.",
+                  "working": "$T_n = n(n+2) + n$",
+                  "reasoning": "Translating the numerical pattern to algebra."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the brackets.",
+                  "working": "$T_n = n^2 + 2n + n$",
+                  "reasoning": "Expansion."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify.",
+                  "working": "$T_n = n^2 + 3n$ (Shown)",
+                  "reasoning": "Collecting like terms."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the value of $n$ such that $T_n = 550$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n = 22$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the quadratic equation.",
+                  "working": "$n^2 + 3n = 550$",
+                  "reasoning": "Equating formula to value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rearrange to standard form.",
+                  "working": "$n^2 + 3n - 550 = 0$",
+                  "reasoning": "Preparation for solving."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $n$.",
+                  "working": "Using factorization or quadratic formula.\n$(n+25)(n-22) = 0$",
+                  "reasoning": "Solving quadratic."
+                },
+                {
+                  "step": 4,
+                  "explanation": "State the valid answer.",
+                  "working": "$n = -25$ (rejected) or $n = 22$.\nAnswer: $n=22$.",
+                  "reasoning": "Sequence index must be positive."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Dot Patterns"
       }
     ]
   }

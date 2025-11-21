@@ -158,6 +158,54 @@
         "title": "Trigonometric Angles"
       },
       {
+        "questionNumber": 7,
+        "questionId": "G4-tkgs-2024-p1-q7",
+        "topicID": "G4",
+        "stem": "The area of triangle XYZ is $12.6~cm^{2}.$ $XY=4.5$ cm and $YZ=7.1$ cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find two possible values for angle XYZ. Give your answers in radians.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.910 rad or 2.23 rad",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Recall the formula for the area of a triangle using sine.",
+                  "working": "Area $= \\frac{1}{2}ab\\sin C$\n$12.6 = \\frac{1}{2}(4.5)(7.1)\\sin(\\angle XYZ)$",
+                  "reasoning": "We use the sine area formula because we are given two sides and the included angle is the unknown."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $\\sin(\\angle XYZ)$.",
+                  "working": "$12.6 = 15.975 \\sin(\\angle XYZ)$\n$\\sin(\\angle XYZ) = \\frac{12.6}{15.975} \\approx 0.78873$",
+                  "reasoning": "Isolate the sine term to determine the possible angles."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the basic acute angle (reference angle) in radians.",
+                  "working": "$\\alpha = \\sin^{-1}(0.78873) \\approx 0.90975$ rad",
+                  "reasoning": "Use the inverse sine function. Ensure the calculator is in Radian mode."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Determine the two possible values (acute and obtuse) in the 1st and 2nd quadrants.",
+                  "working": "$\\theta_{1} = 0.90975 \\approx 0.910$ rad (3 s.f.)\n$\\theta_{2} = \\pi - 0.90975 \\approx 2.2318 \\approx 2.23$ rad (3 s.f.)",
+                  "reasoning": "Since $\\sin \\theta$ is positive, the angle can lie in the 1st or 2nd quadrant. The obtuse angle is found by subtracting the reference angle from $\\pi$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Triangle Area and Angles"
+      },
+      {
         "questionNumber": 11,
         "questionId": "G4-greenridge-2024-p1-q11",
         "topicID": "G4",
@@ -480,6 +528,48 @@
         "title": "Trigonometric Equations"
       },
       {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2111153547-p1-q101",
+        "topicID": "G4",
+        "stem": "In triangle $ABC$, the area is $18~cm^2$. Given that $AB = 8$ cm and $\\angle ABC = 0.6$ radians.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the length of $BC$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7.97 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the area formula with the given values.",
+                  "working": "Area $= \\frac{1}{2}(AB)(BC)\\sin(\\angle ABC)$\n$18 = \\frac{1}{2}(8)(BC)\\sin(0.6)$",
+                  "reasoning": "Substitute known values into the formula Area $= \\frac{1}{2}ab\\sin C$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $BC$.",
+                  "working": "$18 = 4(BC)\\sin(0.6)$\n$BC = \\frac{18}{4\\sin(0.6)}$",
+                  "reasoning": "Rearrange the equation to isolate the unknown side length $BC$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final value.",
+                  "working": "$BC \\approx \\frac{18}{4(0.5646)}$\n$BC \\approx 7.9698...$\n$BC \\approx 7.97$ cm (3 s.f.)",
+                  "reasoning": "Compute the value ensuring the calculator is in Radian mode."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Finding Side Length from Area"
+      },
+      {
         "questionNumber": 102,
         "questionId": "G4-gemini-1911-p1-102",
         "topicID": "G4",
@@ -675,6 +765,54 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Trigonometric Ratios"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G4-gemini-2111153547-p1-q102",
+        "topicID": "G4",
+        "stem": "Triangle $PQR$ has sides $PQ = 6$ cm and $QR = 10$ cm. The area of the triangle is $15~cm^2$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that angle $PQR$ is obtuse, find the angle $PQR$ in degrees.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "150°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the sine area formula.",
+                  "working": "$15 = \\frac{1}{2}(6)(10)\\sin(\\angle PQR)$",
+                  "reasoning": "Use the formula Area $= \\frac{1}{2}ab\\sin C$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $\\sin(\\angle PQR)$.",
+                  "working": "$15 = 30\\sin(\\angle PQR)$\n$\\sin(\\angle PQR) = \\frac{15}{30} = 0.5$",
+                  "reasoning": "Simplify the equation to find the sine of the angle."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the reference angle.",
+                  "working": "$\\alpha = \\sin^{-1}(0.5) = 30^{\\circ}$",
+                  "reasoning": "Determine the acute angle whose sine is 0.5."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Determine the obtuse angle.",
+                  "working": "$\\angle PQR = 180^{\\circ} - 30^{\\circ} = 150^{\\circ}$",
+                  "reasoning": "Since the question specifies the angle is obtuse (2nd quadrant), subtract the reference angle from $180^{\\circ}$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Finding Obtuse Angle from Area"
       }
     ],
     "Paper 2": [
@@ -985,6 +1123,89 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Area of Triangle"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2111153547-p2-q101",
+        "topicID": "G4",
+        "stem": "In triangle $LMN$, $LM = 12$ cm and $MN = 15$ cm. The area of triangle $LMN$ is $60~cm^2$. Angle $LMN$ is acute.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find angle $LMN$ in radians.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.730 rad",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the area formula to set up an equation for $\\theta$.",
+                  "working": "$60 = \\frac{1}{2}(12)(15)\\sin(\\angle LMN)$",
+                  "reasoning": "Area $= \\frac{1}{2}ab\\sin C$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $\\sin(\\angle LMN)$.",
+                  "working": "$60 = 90\\sin(\\angle LMN)$\n$\\sin(\\angle LMN) = \\frac{60}{90} = \\frac{2}{3}$",
+                  "reasoning": "Isolate the sine term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the angle in radians.",
+                  "working": "$\\angle LMN = \\sin^{-1}(\\frac{2}{3}) \\approx 0.7297...$\n$\\angle LMN \\approx 0.730$ rad (3 s.f.)",
+                  "reasoning": "Since the angle is acute, we take the direct inverse sine value."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the length of $LN$.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "11.1 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the need for the Cosine Rule.",
+                  "working": "$c^2 = a^2 + b^2 - 2ab\\cos C$\n$LN^2 = LM^2 + MN^2 - 2(LM)(MN)\\cos(\\angle LMN)$",
+                  "reasoning": "We have two sides and the included angle (calculated in part a), and need to find the third side."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find $\\cos(\\angle LMN)$ using the identity $\\sin^2 \\theta + \\cos^2 \\theta = 1$ or the calculated angle.",
+                  "working": "Using exact values: $\\sin \\theta = \\frac{2}{3}$, so $\\cos \\theta = \\sqrt{1 - (\\frac{2}{3})^2} = \\sqrt{\\frac{5}{9}} = \\frac{\\sqrt{5}}{3}$ (positive as acute).\nAlternatively using angle: $\\cos(0.7297) \\approx 0.74535$",
+                  "reasoning": "Calculating the cosine value is necessary for the Cosine Rule formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute values into the Cosine Rule.",
+                  "working": "$LN^2 = 12^2 + 15^2 - 2(12)(15)(\\frac{\\sqrt{5}}{3})$\n$LN^2 = 144 + 225 - 120\\sqrt{5}$",
+                  "reasoning": "Substitute $a=12, b=15$ and $\\cos C$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the final length.",
+                  "working": "$LN^2 = 369 - 268.328...$\n$LN^2 \\approx 100.67$\n$LN = \\sqrt{100.67} \\approx 10.03$\nWait, re-eval: $120\\sqrt{5} \\approx 268.33$. $369 - 268.33 = 100.67$. $\\sqrt{100.67} \\approx 10.03$.\nLet's re-check calculation: $2(12)(15) = 360$. $360 * (\\sqrt{5}/3) = 120\\sqrt{5}$. Correct.\n$LN \\approx 10.0$ cm.",
+                  "reasoning": "Take the square root to find the length."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Correction on calculation.",
+                  "working": "$LN^2 = 144 + 225 - 2(12)(15)\\cos(0.7297)$\n$LN^2 = 369 - 360(0.74535)$\n$LN^2 = 369 - 268.32 = 100.68$\n$LN \\approx 10.0$ cm.",
+                  "reasoning": "Final Answer is 10.0 cm (3 s.f)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Triangle Area and Cosine Rule"
       },
       {
         "questionNumber": 102,

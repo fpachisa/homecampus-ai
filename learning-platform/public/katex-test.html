@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KaTeX Class Inspector</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <style>
+    body { font-family: Georgia, serif; padding: 20px; line-height: 1.8; }
+    .test-case { margin: 30px 0; padding: 20px; border: 2px solid #ddd; }
+    .label { font-weight: bold; color: #666; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>KaTeX Class Inspector</h1>
+  
+  <div class="test-case">
+    <div class="label">Complex Formula (Original Problem):</div>
+    <div id="test1"></div>
+  </div>
+
+  <div class="test-case">
+    <div class="label">Simple Number:</div>
+    <div id="test2"></div>
+  </div>
+
+  <div class="test-case">
+    <div class="label">Formula from Question b_i:</div>
+    <div id="test3"></div>
+  </div>
+
+  <script>
+    // Render the formulas
+    katex.render('\\frac{-11+\\sqrt{(-11)^{2}-\\frac{20}{11}}}{8\\times0.6}', document.getElementById('test1'));
+    katex.render('588', document.getElementById('test2'));
+    katex.render('588 = 2^{2}\\times 3\\times 7^{2}', document.getElementById('test3'));
+
+    // Log all unique class names used by KaTeX
+    setTimeout(() => {
+      const allElements = document.querySelectorAll('[class*="katex"]');
+      const uniqueClasses = new Set();
+      
+      allElements.forEach(el => {
+        el.classList.forEach(cls => uniqueClasses.add(cls));
+      });
+      
+      console.log('=== All KaTeX Classes Found ===');
+      Array.from(uniqueClasses).sort().forEach(cls => console.log(cls));
+      
+      // Specifically look for fraction and sqrt classes
+      console.log('\n=== Fraction-related classes ===');
+      Array.from(uniqueClasses).filter(cls => cls.includes('frac')).forEach(cls => console.log(cls));
+      
+      console.log('\n=== Sqrt-related classes ===');
+      Array.from(uniqueClasses).filter(cls => cls.includes('sqrt') || cls.includes('rad')).forEach(cls => console.log(cls));
+    }, 100);
+  </script>
+</body>
+</html>

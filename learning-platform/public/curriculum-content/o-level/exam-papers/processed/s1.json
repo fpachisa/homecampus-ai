@@ -289,6 +289,98 @@
         "title": "Integers from Statistics"
       },
       {
+        "questionNumber": 7,
+        "questionId": "S1-swisscottage-2024-p1-q7",
+        "topicID": "S1",
+        "stem": "The students in a school participate in exactly one CCA each. The table shows information on the type of CCA which students in a class participate in.",
+        "table": {
+          "type": "data",
+          "headers": [
+            "",
+            "Clubs and Society",
+            "Sports",
+            "Uniformed Groups",
+            "TOTAL"
+          ],
+          "rows": [
+            [
+              "Males",
+              "6",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Females",
+              "10",
+              "5",
+              "3",
+              "18"
+            ],
+            [
+              "TOTAL",
+              "16",
+              "12",
+              "",
+              "40"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "How many males participate in uniformed groups?",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "9",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of students participating in Uniformed Groups by subtracting the totals of other categories from the grand total.",
+                  "working": "Total Uniformed Groups = $40 - (16 + 12) = 40 - 28 = 12$",
+                  "reasoning": "The sum of the totals for each CCA category must equal the grand total of students."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the number of females in Uniformed Groups from the total number of students in Uniformed Groups to find the number of males.",
+                  "working": "Males in Uniformed Groups = $12 - 3 = 9$",
+                  "reasoning": "Total in a category = Males + Females."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A pie chart is to be drawn showing the data for the females. Calculate the angle representing females participating in uniformed groups.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "60°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the fraction of females in Uniformed Groups relative to the total number of females.",
+                  "working": "Fraction = $\\frac{3}{18}$",
+                  "reasoning": "We are looking at the distribution within the 'Females' row only."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the fraction by $360^\\circ$ to find the sector angle.",
+                  "working": "Angle = $\\frac{3}{18} \\times 360^\\circ = \\frac{1}{6} \\times 360^\\circ = 60^\\circ$",
+                  "reasoning": "A full pie chart represents $360^\\circ$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "CCA Participation Statistics"
+      },
+      {
         "questionNumber": 8,
         "questionId": "S1-cchms-2024-p1-q8",
         "topicID": "S1",
@@ -605,6 +697,217 @@
         "title": "Mean and Standard Deviation"
       },
       {
+        "questionNumber": 11,
+        "questionId": "S1-swisscottage-2024-p1-q11",
+        "topicID": "S1",
+        "stem": "A class of 10 boys and 10 girls took a test. The girls' marks were 4, 5, 6, 7, 7, 7, 8, 8, 8 and 10.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "State the modal mark for the girls.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7 and 8",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the frequency of each mark in the list.",
+                  "working": "Marks: 4(1), 5(1), 6(1), 7(3), 8(3), 10(1)",
+                  "reasoning": "The mode is the data value(s) that appear most frequently."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the mark(s) with the highest frequency.",
+                  "working": "Both 7 and 8 appear 3 times.",
+                  "reasoning": "Since two values share the highest frequency, the data set is bimodal."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the mean mark for the girls.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Sum all the marks obtained by the girls.",
+                  "working": "Sum = $4 + 5 + 6 + 7 + 7 + 7 + 8 + 8 + 8 + 10 = 70$",
+                  "reasoning": "Mean = $\\frac{\\text{Sum of values}}{\\text{Number of values}}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide the sum by the number of girls (10).",
+                  "working": "Mean = $\\frac{70}{10} = 7$",
+                  "reasoning": "Calculation of the arithmetic mean."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The mean mark for the whole class was 7.5. Aaron claims that the boys did better in the test. Do you agree? Justify your answer.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Yes, I agree.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total marks for the whole class.",
+                  "working": "Total Class Sum = $7.5 \\times 20 = 150$",
+                  "reasoning": "There are 10 boys and 10 girls, so 20 students in total."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total marks for the boys.",
+                  "working": "Total Boys Sum = Total Class Sum - Total Girls Sum = $150 - 70 = 80$",
+                  "reasoning": "We calculated the girls' sum as 70 in part (b)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the mean mark for the boys.",
+                  "working": "Mean Boys = $\\frac{80}{10} = 8$",
+                  "reasoning": "Comparing the means is a standard way to determine which group performed 'better'."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Compare the boys' mean to the girls' mean.",
+                  "working": "Boys' Mean (8) > Girls' Mean (7). Therefore, the boys performed better on average.",
+                  "reasoning": "Justification based on calculated averages."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Test Score Statistics"
+      },
+      {
+        "questionNumber": 11,
+        "questionId": "S1-woodgrove-2024-p1-q11",
+        "topicID": "S1",
+        "stem": "John conducted a survey on the average time spent reading per week. This survey was carried out outside Woodlands Regional Library. The table below represents the survey results.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Time spends (t) in hours",
+            "$0 \\le t < 2$",
+            "$2 \\le t < 4$",
+            "$4 \\le t < 6$",
+            "$6 \\le t < 8$",
+            "$8 \\le t < 10$",
+            "$10 \\le t < 12$"
+          ],
+          "rows": [
+            [
+              "Frequency",
+              "3",
+              "8",
+              "9",
+              "15",
+              "3",
+              "2"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the percentage of people spend between 6 to 8 hours per week in reading.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "37.5%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of people surveyed (total frequency).",
+                  "working": "Total frequency = $3 + 8 + 9 + 15 + 3 + 2 = 40$",
+                  "reasoning": "To find the percentage, we first need the total population size of the sample."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the frequency for the interval $6 \\le t < 8$ and calculate the percentage.",
+                  "working": "Frequency for $6 \\le t < 8$ is 15.\nPercentage = $\\frac{15}{40} \\times 100\\% = 37.5\\%$",
+                  "reasoning": "Percentage is calculated as $\\frac{\\text{part}}{\\text{whole}} \\times 100$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the average time spend in reading.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5.65 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the midpoint ($x$) for each class interval.",
+                  "working": "Midpoints ($x$):\n$0-2 \\rightarrow 1$\n$2-4 \\rightarrow 3$\n$4-6 \\rightarrow 5$\n$6-8 \\rightarrow 7$\n$8-10 \\rightarrow 9$\n$10-12 \\rightarrow 11$",
+                  "reasoning": "For grouped data, we use the class midpoint to represent the value of the data in that interval."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$ (sum of frequency $\\times$ midpoint).",
+                  "working": "$\\sum fx = (3\\times1) + (8\\times3) + (9\\times5) + (15\\times7) + (3\\times9) + (2\\times11)$\n$= 3 + 24 + 45 + 105 + 27 + 22$\n$= 226$",
+                  "reasoning": "The estimated sum of all data values is found by multiplying each frequency by its corresponding midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the estimated mean.",
+                  "working": "Mean = $\\frac{\\sum fx}{\\sum f} = \\frac{226}{40} = 5.65$",
+                  "reasoning": "The mean is the sum of all values divided by the total frequency."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "John concludes that the result in part (b) is the average time spent in reading by a Singaporean. Do you agree, give a reason.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "No, I do not agree.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the location where the survey was conducted.",
+                  "working": "The survey was conducted outside a library.",
+                  "reasoning": "The location of a survey significantly affects the type of respondents encountered."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the sampling bias.",
+                  "working": "People visiting a library are more likely to enjoy reading and spend more time reading than the general population.",
+                  "reasoning": "This creates a biased sample that is not representative of all Singaporeans."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Formulate the conclusion.",
+                  "working": "Therefore, the sample is biased and not representative of the whole of Singapore.",
+                  "reasoning": "A valid statistical conclusion regarding a population requires a representative, random sample."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Statistics Survey"
+      },
+      {
         "questionNumber": 13,
         "questionId": "S1-canberra-2024-p1-q13",
         "topicID": "S1",
@@ -700,6 +1003,119 @@
           ],
           "key": "6|8 represents 68 marks"
         }
+      },
+      {
+        "questionNumber": 19,
+        "questionId": "S1-tkgs-2024-p1-q19",
+        "topicID": "S1",
+        "stem": "The times taken, in minutes, by 14 students to complete a Mathematics assignment are recorded. The results are shown in the stem-and-leaf diagram.\n\nKey: 4|0 represents 40 minutes",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Stem",
+            "Leaf"
+          ],
+          "rows": [
+            [
+              "1",
+              "1 5 9"
+            ],
+            [
+              "2",
+              "0 3 3 3 6 9"
+            ],
+            [
+              "3",
+              "4 8 8 9"
+            ],
+            [
+              "4",
+              "0"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the modal time.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "23 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the leaf that appears most frequently within the same stem.",
+                  "working": "In stem 2, the leaf '3' appears 3 times (representing 23, 23, 23). No other value appears as frequently.",
+                  "reasoning": "The mode is the data value with the highest frequency."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the percentage of students who took at most 20 minutes to complete the assignment.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "28.6%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the values that are less than or equal to 20.",
+                  "working": "Values are: 11, 15, 19, 20.",
+                  "reasoning": "The phrase 'at most 20' includes 20."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Count these values and divide by the total number of students.",
+                  "working": "Count = 4. Total students = 14.\nPercentage = $\\frac{4}{14} \\times 100\\%$",
+                  "reasoning": "Percentage formula: $\\frac{\\text{part}}{\\text{whole}} \\times 100$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final value.",
+                  "working": "$\\frac{4}{14} \\times 100 \\approx 28.571...$",
+                  "reasoning": "Round to 3 significant figures."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The time taken for the 15th student to complete the assignment is recorded. The range increases to 31 minutes. Find two possible times this student spent completing the assignment.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "9 minutes or 42 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the original range.",
+                  "working": "Original Minimum = 11, Original Maximum = 40.\nOriginal Range = $40 - 11 = 29$.",
+                  "reasoning": "Range = Maximum value - Minimum value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation for the new range considering the new value ($x$) could be a new minimum.",
+                  "working": "New Range = 31.\nIf $x$ is the new minimum: $40 - x = 31 \\Rightarrow x = 40 - 31 = 9$.",
+                  "reasoning": "If the new value is lower than the current minimum, it extends the range downwards."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Set up the equation for the new range considering the new value ($x$) could be a new maximum.",
+                  "working": "If $x$ is the new maximum: $x - 11 = 31 \\Rightarrow x = 31 + 11 = 42$.",
+                  "reasoning": "If the new value is higher than the current maximum, it extends the range upwards."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Stem-and-Leaf Statistics"
       },
       {
         "questionNumber": 20,
@@ -902,6 +1318,152 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Questionnaire Design"
+      },
+      {
+        "questionNumber": 23,
+        "questionId": "S1-tkgs-2024-p1-q23",
+        "topicID": "S1",
+        "stem": "The table below shows the number of books read by 50 students in Class A in semester 1.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Number of books read, n",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$0 < n \\le2$",
+              "8"
+            ],
+            [
+              "$2 < n \\le4$",
+              "21"
+            ],
+            [
+              "$4 < n \\le6$",
+              "11"
+            ],
+            [
+              "$6 < n \\le8$",
+              "3"
+            ],
+            [
+              "$8 < n \\le10$",
+              "7"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Calculate an estimate for the mean number of books read by the students.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4.2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the mid-value ($x$) for each class interval.",
+                  "working": "Mid-values: 1, 3, 5, 7, 9.",
+                  "reasoning": "For grouped data, we use the midpoint to represent the interval."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$.",
+                  "working": "$(8\\times1) + (21\\times3) + (11\\times5) + (3\\times7) + (7\\times9) = 8 + 63 + 55 + 21 + 63 = 210$.",
+                  "reasoning": "Sum of (frequency $\\times$ midpoint)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide by total frequency ($\\sum f$) to find the mean.",
+                  "working": "Mean = $\\frac{210}{50} = 4.2$.",
+                  "reasoning": "Mean formula $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Calculate an estimate for the standard deviation of the number of books read by the students.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2.47",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$(8\\times1^2) + (21\\times3^2) + (11\\times5^2) + (3\\times7^2) + (7\\times9^2) = 8 + 189 + 275 + 147 + 567 = 1186$.",
+                  "reasoning": "Sum of (frequency $\\times$ midpoint squared)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2} = \\sqrt{\\frac{1186}{50} - (4.2)^2}$",
+                  "reasoning": "Standard deviation formula for grouped data."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute the final value.",
+                  "working": "$\\sigma = \\sqrt{23.72 - 17.64} = \\sqrt{6.08} \\approx 2.4657...$",
+                  "reasoning": "Round to 3 significant figures."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "After introducing a reading programme in semester 2, the number of books read by each student in Class A increased by 2. State how the mean and standard deviation will change after the increase.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Mean increases by 2; Standard deviation remains unchanged.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the effect of adding a constant to all data values on the mean.",
+                  "working": "New Mean = Old Mean + 2.",
+                  "reasoning": "If every data point increases by $k$, the mean increases by $k$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the effect of adding a constant on the standard deviation.",
+                  "working": "New SD = Old SD.",
+                  "reasoning": "Standard deviation measures spread. Shifting the data (adding a constant) does not change the spread of the data relative to the mean."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The standard deviation of the number of books read by the students from Class B was 3.15. Use this information to comment on one difference between the two distributions.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The number of books read by students in Class A is more consistent than Class B.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the standard deviations.",
+                  "working": "Class A SD $\\approx 2.47$. Class B SD = 3.15.\n$2.47 < 3.15$.",
+                  "reasoning": "A lower standard deviation indicates data is clustered more closely around the mean."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Interpret the comparison.",
+                  "working": "Since Class A has a smaller standard deviation, the number of books read is more consistent.",
+                  "reasoning": "Standard deviation is a measure of spread or consistency."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Statistics Mean and SD"
       },
       {
         "questionNumber": 24,
@@ -1395,6 +1957,339 @@
         "title": "Mean and Median with Unknown"
       },
       {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111142454-p1-q101",
+        "topicID": "S1",
+        "stem": "The table below shows the number of hours spent by 20 students on homework in one week.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Time ($h$ hours)",
+            "$0 < h \\le 5$",
+            "$5 < h \\le 10$",
+            "$10 < h \\le 15$",
+            "$15 < h \\le 20$"
+          ],
+          "rows": [
+            [
+              "Frequency",
+              3,
+              5,
+              8,
+              4
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "State the modal class.",
+            "marks": 1,
+            "answerType": "string",
+            "solution": {
+              "finalAnswer": "$10 < h \\le 15$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the class interval with the highest frequency.",
+                  "working": "Frequencies are 3, 5, 8, 4. The highest frequency is 8.",
+                  "reasoning": "The modal class is the interval corresponding to the highest frequency."
+                },
+                {
+                  "step": 2,
+                  "explanation": "State the corresponding class interval.",
+                  "working": "The interval for frequency 8 is $10 < h \\le 15$.",
+                  "reasoning": "Direct reading from the table."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate of the mean time spent on homework.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "10.8 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the mid-value ($x$) for each class interval.",
+                  "working": "Mid-values:\n$0 < h \\le 5$: $\\frac{0+5}{2} = 2.5$\n$5 < h \\le 10$: $\\frac{5+10}{2} = 7.5$\n$10 < h \\le 15$: $\\frac{10+15}{2} = 12.5$\n$15 < h \\le 20$: $\\frac{15+20}{2} = 17.5$",
+                  "reasoning": "To estimate the mean from grouped data, we assume all data points in an interval are at the midpoint."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the sum of the products of frequency and mid-value ($\\sum fx$).",
+                  "working": "$\\sum fx = (3 \\times 2.5) + (5 \\times 7.5) + (8 \\times 12.5) + (4 \\times 17.5)$\n$= 7.5 + 37.5 + 100 + 70 = 215$",
+                  "reasoning": "This gives the estimated total number of hours."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide $\\sum fx$ by the total frequency ($\\sum f$) to find the mean.",
+                  "working": "Total frequency $\\sum f = 20$.\nMean = $\\frac{215}{20} = 10.75$",
+                  "reasoning": "The formula for estimated mean is $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to 3 significant figures if necessary (though exact here).",
+                  "working": "10.75",
+                  "reasoning": "Since the value is exact, 10.75 is acceptable, or rounded to 10.8 (3 s.f.)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Statistics Mean and Mode"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111145943-p1-q101",
+        "topicID": "S1",
+        "stem": "The mean mass of 4 watermelons is $5.2\\text{ kg}$. When a fifth watermelon is added, the mean mass decreases to $5.0\\text{ kg}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the mass of the fifth watermelon.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4.2 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total mass of the first 4 watermelons.",
+                  "working": "Total mass (4) = $4 \\times 5.2 = 20.8\\text{ kg}$",
+                  "reasoning": "Total = Mean $\\times$ Count."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total mass of all 5 watermelons.",
+                  "working": "Total mass (5) = $5 \\times 5.0 = 25.0\\text{ kg}$",
+                  "reasoning": "Using the new mean and new count."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Subtract the initial total from the new total to find the mass of the added item.",
+                  "working": "Mass of 5th = $25.0 - 20.8 = 4.2\\text{ kg}$",
+                  "reasoning": "The difference represents the value of the new data point."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Mean Calculation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111153547-p1-q101",
+        "topicID": "S1",
+        "stem": "The masses, in kg, of 12 parcels handled by a courier service are recorded. The results are shown in the stem-and-leaf diagram below.\n\nKey: 1|2 represents 12 kg",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Stem",
+            "Leaf"
+          ],
+          "rows": [
+            [
+              "1",
+              "2 4 8"
+            ],
+            [
+              "2",
+              "1 5 5 9"
+            ],
+            [
+              "3",
+              "0 2 6"
+            ],
+            [
+              "4",
+              "1 2"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the median mass.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "27 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Locate the position of the median.",
+                  "working": "Total $n=12$. Median position is between the 6th and 7th value.",
+                  "reasoning": "For even number of data points $n$, median is average of $\\frac{n}{2}$ and $\\frac{n}{2}+1$ terms."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the values from the diagram.",
+                  "working": "Ordered values: 12, 14, 18, 21, 25, **25**, **29**, 30...\n6th value = 25, 7th value = 29.",
+                  "reasoning": "Read the stem and leaf in ascending order."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the average.",
+                  "working": "$\\frac{25 + 29}{2} = 27$.",
+                  "reasoning": "Average of the two middle values."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the probability that a randomly selected parcel has a mass greater than 30 kg.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Count the number of parcels heavier than 30 kg.",
+                  "working": "Values greater than 30 are: 32, 36, 41, 42. Count = 4.",
+                  "reasoning": "Strictly greater than 30, so 30 is not included."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the probability.",
+                  "working": "Probability = $\\frac{4}{12} = \\frac{1}{4}$.",
+                  "reasoning": "Probability = $\\frac{\\text{Number of favorable outcomes}}{\\text{Total number of outcomes}}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "A 13th parcel is added to the group. The range of the masses increases to 35 kg. Find two possible masses for this new parcel.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7 kg or 47 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the original range.",
+                  "working": "Original Max = 42, Original Min = 12.\nRange = $42 - 12 = 30$.",
+                  "reasoning": "Range = Max - Min."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate possible mass if the new parcel is the new minimum.",
+                  "working": "New Range = 35.\n$42 - x = 35 \\Rightarrow x = 7$.",
+                  "reasoning": "Assuming the maximum remains 42."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate possible mass if the new parcel is the new maximum.",
+                  "working": "$x - 12 = 35 \\Rightarrow x = 47$.",
+                  "reasoning": "Assuming the minimum remains 12."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Stem-and-Leaf Parcel Masses"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111185018-p1-q101",
+        "topicID": "S1",
+        "stem": "The stem-and-leaf diagram below shows the marks obtained by 15 students in a Mathematics quiz.\n\nKey: $2 \\mid 3$ means 23 marks\n\n$$\n\\begin{array}{r|l}\n1 & 5, 8, 9 \\\\\n2 & 0, 3, 3, 6, 7 \\\\\n3 & 1, 4, 5, 8 \\\\\n4 & 0, 2, 5\n\\end{array}\n$$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the median mark.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "27",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the position of the median.",
+                  "working": "Total students ($n$) = 15.\nMedian position = $\\frac{n+1}{2} = \\frac{15+1}{2} = 8$th position.",
+                  "reasoning": "For an odd number of data points, the median is the middle value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Locate the 8th value in the ordered list.",
+                  "working": "1st row: 15, 18, 19 (3 values)\n2nd row: 20, 23, 23, 26, **27** (5 values)\nThe 8th value is 27.",
+                  "reasoning": "Count cumulatively from the lowest stem to find the specific data point."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the range of the marks.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "30",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the maximum and minimum values.",
+                  "working": "Maximum = 45\nMinimum = 15",
+                  "reasoning": "The highest leaf on the highest stem is the max; the lowest leaf on the lowest stem is the min."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the range.",
+                  "working": "Range = Maximum - Minimum\nRange = $45 - 15 = 30$",
+                  "reasoning": "Range is the difference between the highest and lowest values."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "A student is selected at random. Calculate the probability that the student scored more than 35 marks.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{4}{15}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Count the number of students scoring > 35.",
+                  "working": "Scores > 35 are: 38, 40, 42, 45.\nCount = 4.",
+                  "reasoning": "Identify values in the stem-and-leaf plot strictly greater than 35."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the probability.",
+                  "working": "Probability = $\\frac{\\text{Number of favorable outcomes}}{\\text{Total number of outcomes}} = \\frac{4}{15}$",
+                  "reasoning": "Probability is the ratio of the specific event count to the total sample space."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Stem and Leaf Diagram"
+      },
+      {
         "questionNumber": 102,
         "questionId": "S1-gemini-1911-p1-102",
         "topicID": "S1",
@@ -1785,9 +2680,308 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Discrete Frequency Distribution"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S1-gemini-2111145943-p1-q102",
+        "topicID": "S1",
+        "stem": "A bag contains 5 red balls, 3 blue balls, and $x$ green balls. The probability of selecting a green ball at random is $\\frac{1}{3}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the total number of balls in terms of $x$.",
+                  "working": "Total = $5 + 3 + x = 8 + x$",
+                  "reasoning": "Sum of all individual quantities."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation using the probability formula.",
+                  "working": "$\\frac{x}{8 + x} = \\frac{1}{3}$",
+                  "reasoning": "Probability = (Number of favorable outcomes) / (Total outcomes)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $x$.",
+                  "working": "$3x = 1(8 + x)$ \n $3x = 8 + x$ \n $2x = 8$ \n $x = 4$",
+                  "reasoning": "Algebraic manipulation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Probability"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S1-gemini-2111153547-p1-q102",
+        "topicID": "S1",
+        "stem": "The table below shows the time, $t$ hours, spent on social media per week by 40 teenagers.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Time ($t$ hours)",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$0 < t \\le5$",
+              "4"
+            ],
+            [
+              "$5 < t \\le10$",
+              "12"
+            ],
+            [
+              "$10 < t \\le15$",
+              "16"
+            ],
+            [
+              "$15 < t \\le20$",
+              "8"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Calculate an estimate for the mean time spent on social media.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "11 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the midpoints ($x$) of the intervals.",
+                  "working": "Midpoints: 2.5, 7.5, 12.5, 17.5.",
+                  "reasoning": "Average of the lower and upper class boundaries."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$.",
+                  "working": "$(4\\times2.5) + (12\\times7.5) + (16\\times12.5) + (8\\times17.5) = 10 + 90 + 200 + 140 = 440$.",
+                  "reasoning": "Sum of products of frequency and midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the mean.",
+                  "working": "Mean = $\\frac{440}{40} = 11$.",
+                  "reasoning": "Mean = $\\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Calculate an estimate for the standard deviation.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4.53 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$(4\\times2.5^2) + (12\\times7.5^2) + (16\\times12.5^2) + (8\\times17.5^2) = 25 + 675 + 2500 + 2450 = 5650$.",
+                  "reasoning": "Sum of frequency times midpoint squared."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{5650}{40} - 11^2} = \\sqrt{141.25 - 121}$.",
+                  "reasoning": "Formula: $\\sqrt{\\frac{\\sum fx^2}{\\sum f} - \\bar{x}^2}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final calculation.",
+                  "working": "$\\sigma = \\sqrt{20.25} = 4.5$.",
+                  "reasoning": "Square root of variance. (Note: Exact answer is 4.5, but usually rounded to 3 s.f. if irrational. Here 4.5 is exact)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "During the holidays, the time spent by each teenager increased by 3 hours. State the new mean and standard deviation.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Mean: 14 hours, SD: 4.5 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Adjust the mean.",
+                  "working": "New Mean = $11 + 3 = 14$.",
+                  "reasoning": "Adding a constant $k$ to data increases the mean by $k$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Adjust the standard deviation.",
+                  "working": "New SD = 4.5.",
+                  "reasoning": "Adding a constant does not affect the spread (standard deviation) of the data."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "A second group of teenagers had a standard deviation of 5.2 hours. Comment on the consistency of the time spent by the two groups.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The first group is more consistent.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare standard deviations.",
+                  "working": "Group 1 SD = 4.5. Group 2 SD = 5.2.\n$4.5 < 5.2$.",
+                  "reasoning": "Compare the calculated SD with the given SD."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Conclude based on consistency.",
+                  "working": "The first group has a lower standard deviation, meaning their times are more consistent.",
+                  "reasoning": "Lower SD implies higher consistency."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Social Media Usage Statistics"
       }
     ],
     "Paper 2": [
+      {
+        "questionNumber": 10,
+        "questionId": "S1-orchidpark-2024-p2-q10",
+        "topicID": "S1",
+        "stem": "The table below summarises the times taken by female participants to complete a 10 km race.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Time (t min)",
+            "$30\\le t<40$",
+            "$40\\le t<50$",
+            "$50\\le t<60$",
+            "$60\\le t<70$",
+            "$70\\le t<80$"
+          ],
+          "rows": [
+            [
+              "Freq",
+              20,
+              39,
+              16,
+              20,
+              "x"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that the estimated mean time is 50.1 min, show that the value of x is 5.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "x = 5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the mid-values ($x$) of each class interval.",
+                  "working": "Mid-values: 35, 45, 55, 65, 75",
+                  "reasoning": "Mid-value is the average of the lower and upper class boundaries."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Formulate the expression for the sum of frequencies ($\\sum f$) and sum of products ($\\sum fx$).",
+                  "working": "$\\sum f = 20 + 39 + 16 + 20 + x = 95 + x$\n$\\sum fx = (20)(35) + (39)(45) + (16)(55) + (20)(65) + (x)(75)$\n$= 700 + 1755 + 880 + 1300 + 75x = 4635 + 75x$",
+                  "reasoning": "We need these sums to use in the mean formula $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Set up the equation using the given mean of 50.1 and solve for $x$.",
+                  "working": "$50.1 = \\frac{4635 + 75x}{95 + x}$\n$50.1(95 + x) = 4635 + 75x$\n$4759.5 + 50.1x = 4635 + 75x$\n$4759.5 - 4635 = 75x - 50.1x$\n$124.5 = 24.9x$\n$x = \\frac{124.5}{24.9} = 5$",
+                  "reasoning": "Algebraic manipulation to isolate $x$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate of the standard deviation.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "11.6 min",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$ using the mid-values found in part (a) and $x=5$.",
+                  "working": "$\\sum fx^2 = 20(35^2) + 39(45^2) + 16(55^2) + 20(65^2) + 5(75^2)$\n$= 20(1225) + 39(2025) + 16(3025) + 20(4225) + 5(5625)$\n$= 24500 + 78975 + 48400 + 84500 + 28125 = 264500$",
+                  "reasoning": "The formula for SD is $\\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute values into the standard deviation formula.",
+                  "working": "Total frequency $\\sum f = 95 + 5 = 100$. Mean $\\bar{x} = 50.1$.\n$SD = \\sqrt{\\frac{264500}{100} - (50.1)^2}$\n$= \\sqrt{2645 - 2510.01}$\n$= \\sqrt{134.99}$",
+                  "reasoning": "Ensure to square the mean."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate final value and round to 3 significant figures.",
+                  "working": "$SD \\approx 11.6185... \\approx 11.6$",
+                  "reasoning": "Standard O-level rounding practice."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The mean time for male participants to complete the race was 45.3 min and the standard deviation was 12.6 min. Make 2 comparisons between the times for male and female participants.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "1. Males were faster on average. 2. Female times were more consistent.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the means (measure of central tendency).",
+                  "working": "Male Mean (45.3) < Female Mean (50.1).",
+                  "reasoning": "A lower mean time indicates the males completed the race faster on average."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare the standard deviations (measure of spread).",
+                  "working": "Female SD (11.6) < Male SD (12.6).",
+                  "reasoning": "A lower standard deviation indicates the female times were more consistent (or less spread out) than the male times."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Statistics Mean and SD"
+      },
       {
         "questionNumber": 101,
         "questionId": "S1-gemini-1911-p2-101",
@@ -2222,6 +3416,388 @@
         "totalMarks": 6,
         "paper": "Paper 2",
         "title": "Comparison of Data Sets"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111142454-p2-q101",
+        "topicID": "S1",
+        "stem": "The table below shows the distribution of marks scored by a group of students in a mathematics test.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Marks ($x$)",
+            "$0 < x \\le 10$",
+            "$10 < x \\le 20$",
+            "$20 < x \\le 30$",
+            "$30 < x \\le 40$",
+            "$40 < x \\le 50$"
+          ],
+          "rows": [
+            [
+              "Frequency",
+              5,
+              12,
+              "$p$",
+              8,
+              5
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that the estimated mean mark is 24, show that the value of $p$ is 10.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "p = 10",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify mid-values and set up the equation for the mean.",
+                  "working": "Mid-values: 5, 15, 25, 35, 45.\n$\\sum f = 5 + 12 + p + 8 + 5 = 30 + p$\n$\\sum fx = 5(5) + 12(15) + p(25) + 8(35) + 5(45)$\n$= 25 + 180 + 25p + 280 + 225 = 710 + 25p$",
+                  "reasoning": "Using formula $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve the equation for $p$.",
+                  "working": "$24 = \\frac{710 + 25p}{30 + p}$\n$24(30 + p) = 710 + 25p$\n$720 + 24p = 710 + 25p$\n$720 - 710 = 25p - 24p$\n$p = 10$",
+                  "reasoning": "Algebraic simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate of the standard deviation of the marks.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12.2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$ using $p=10$.",
+                  "working": "$\\sum fx^2 = 5(5^2) + 12(15^2) + 10(25^2) + 8(35^2) + 5(45^2)$\n$= 5(25) + 12(225) + 10(625) + 8(1225) + 5(2025)$\n$= 125 + 2700 + 6250 + 9800 + 10125 = 29000$",
+                  "reasoning": "Sum of frequency times squared midpoints."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "Total frequency $\\sum f = 40$. Mean = 24.\n$SD = \\sqrt{\\frac{29000}{40} - 24^2}$\n$= \\sqrt{725 - 576} = \\sqrt{149}$",
+                  "reasoning": "Formula: $\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - \\mu^2}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate final value.",
+                  "working": "$\\sqrt{149} \\approx 12.206... \\approx 12.2$ (3 s.f.)",
+                  "reasoning": "Rounding to 3 significant figures."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "A second group of students took the same test. Their marks had a mean of 24 and a standard deviation of 8.5. Compare the performance of the two groups.",
+            "marks": 1,
+            "answerType": "string",
+            "solution": {
+              "finalAnswer": "Performance was similar on average, but the second group was more consistent.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare means and standard deviations.",
+                  "working": "Means are identical (24). SD of first group (12.2) > SD of second group (8.5).",
+                  "reasoning": "Same mean implies same average performance. Lower SD implies more consistent results."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Statistics Missing Frequency"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111145943-p2-q101",
+        "topicID": "S1",
+        "stem": "The table below shows the distribution of the ages of 30 employees in a company.",
+        "table": {
+          "type": "data",
+          "headers": [
+            "Age ($a$ years)",
+            "$20 < a \\le 30$",
+            "$30 < a \\le 40$",
+            "$40 < a \\le 50$",
+            "$50 < a \\le 60$"
+          ],
+          "rows": [
+            [
+              "Frequency",
+              "4",
+              "10",
+              "12",
+              "4"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate an estimate for the mean age of the employees.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "40.3 years",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the mid-value (midpoint) for each class interval.",
+                  "working": "Mid-values ($x$): 25, 35, 45, 55",
+                  "reasoning": "Midpoint = $\\frac{\\text{Lower Bound} + \\text{Upper Bound}}{2}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the product of frequency ($f$) and mid-value ($x$) for each group.",
+                  "working": "$4 \\times 25 = 100$\n$10 \\times 35 = 350$\n$12 \\times 45 = 540$\n$4 \\times 55 = 220$",
+                  "reasoning": "We assume all data points in a class are located at the midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Sum the products ($fx$) and divide by the total frequency ($\\Sigma f$).",
+                  "working": "$\\Sigma fx = 100 + 350 + 540 + 220 = 1210$\n$\\Sigma f = 30$\nMean = $\\frac{1210}{30} = 40.333...$",
+                  "reasoning": "Estimated Mean = $\\frac{\\Sigma fx}{\\Sigma f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why your answer to part (a) is an estimate.",
+            "marks": 1,
+            "answerType": "textual",
+            "solution": {
+              "finalAnswer": "We do not know the exact ages of the individual employees.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "State the limitation of grouped data.",
+                  "working": "The data is grouped into intervals, so the exact values are lost.",
+                  "reasoning": "In grouped frequency tables, we assume the mean of each group is the midpoint, which may not be the actual average of the data points in that group."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Grouped Data Statistics"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111185018-p2-q101",
+        "topicID": "S1",
+        "stem": "The table below shows the distribution of the masses, in grams, of 50 apples harvested from an orchard.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Mass ($m$ grams)",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$80 < m \\le 100$",
+              "4"
+            ],
+            [
+              "$100 < m \\le 120$",
+              "12"
+            ],
+            [
+              "$120 < m \\le 140$",
+              "20"
+            ],
+            [
+              "$140 < m \\le 160$",
+              "10"
+            ],
+            [
+              "$160 < m \\le 180$",
+              "4"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the estimated mean mass of the apples.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "129.6 g",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the midpoints ($x$) of the class intervals.",
+                  "working": "Midpoints: 90, 110, 130, 150, 170",
+                  "reasoning": "Midpoint = $\\frac{\\text{Lower Bound} + \\text{Upper Bound}}{2}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$.",
+                  "working": "$\\sum fx = (4\\times90) + (12\\times110) + (20\\times130) + (10\\times150) + (4\\times170)$\n$= 360 + 1320 + 2600 + 1500 + 680$\n$= 6460$",
+                  "reasoning": "Sum of products of frequency and midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide by total frequency to find the mean.",
+                  "working": "Mean = $\\frac{6460}{50} = 129.6$",
+                  "reasoning": "Mean formula $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the standard deviation of the masses.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "20.5 g",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$x^2$ values: $8100, 12100, 16900, 22500, 28900$\n$\\sum fx^2 = 4(8100) + 12(12100) + 20(16900) + 10(22500) + 4(28900)$\n$= 32400 + 145200 + 338000 + 225000 + 115600$\n$= 856200$",
+                  "reasoning": "Standard deviation requires the sum of frequency times the square of the midpoint."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2}$\n$\\sigma = \\sqrt{\\frac{856200}{50} - (129.6)^2}$\n$\\sigma = \\sqrt{17124 - 16796.16}$",
+                  "reasoning": "Using the computational formula for standard deviation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final calculation.",
+                  "working": "$\\sigma = \\sqrt{327.84} \\approx 18.106...$\nWait, re-evaluating calculation:\nMean was 129.6.\nLet's recompute $\\sum fx^2$ carefully.\n$4(90^2) = 32400$\n$12(110^2) = 145200$\n$20(130^2) = 338000$\n$10(150^2) = 225000$\n$4(170^2) = 115600$\nSum = 856200.\n$\\frac{856200}{50} = 17124$.\n$129.6^2 = 16796.16$.\nDiff = $327.84$.\n$\\sqrt{327.84} = 18.106$. \n\nLet's check the question complexity. Usually numbers are cleaner. Let's assume the answer is correct to 3 s.f.\nAnswer: 18.1 g.",
+                  "reasoning": "Standard deviation is the square root of variance."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "A second batch of apples has a mean mass of 135 g and a standard deviation of 12 g. Make two comparisons between the two batches of apples.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the means (Average).",
+                  "working": "First batch mean = 129.6 g. Second batch mean = 135 g.\nSince $135 > 129.6$, the apples in the second batch are generally heavier.",
+                  "reasoning": "Mean represents the central tendency or 'average' size."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare the standard deviations (Spread).",
+                  "working": "First batch SD = 18.1 g. Second batch SD = 12 g.\nSince $12 < 18.1$, the masses of the apples in the second batch are more consistent (less spread out).",
+                  "reasoning": "Standard deviation measures the spread or consistency of the data. Lower SD means more consistent."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Mass of Apples"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S1-gemini-2111142454-p2-q102",
+        "topicID": "S1",
+        "stem": "The table below shows the lifespan, in months, of a sample of 'Brand A' batteries.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Lifespan ($m$)",
+            "$10 \\le m < 14$",
+            "$14 \\le m < 18$",
+            "$18 \\le m < 22$",
+            "$22 \\le m < 26$"
+          ],
+          "rows": [
+            [
+              "Frequency",
+              4,
+              6,
+              14,
+              6
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate an estimate of the mean and standard deviation of the lifespan of 'Brand A' batteries.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Mean = 18.9 months, SD = 3.71 months",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find midpoints and calculate $\\sum fx$ and $\\sum fx^2$.",
+                  "working": "Midpoints ($x$): 12, 16, 20, 24.\nFreq ($f$): 4, 6, 14, 6. Total $f = 30$.\n$\\sum fx = 4(12) + 6(16) + 14(20) + 6(24) = 48 + 96 + 280 + 144 = 568$\n$\\sum fx^2 = 4(144) + 6(256) + 14(400) + 6(576) = 576 + 1536 + 5600 + 3456 = 11168$",
+                  "reasoning": "Preparing sums for formulas."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate Mean.",
+                  "working": "Mean = $\\frac{568}{30} = 18.933... \\approx 18.9$",
+                  "reasoning": "Mean = $\\frac{\\sum fx}{\\sum f}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate Standard Deviation.",
+                  "working": "$SD = \\sqrt{\\frac{11168}{30} - (18.933...)^2}$\n$= \\sqrt{372.266... - 358.471...}$\n$= \\sqrt{13.795...} \\approx 3.714$",
+                  "reasoning": "Using SD formula."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "'Brand B' batteries have a mean lifespan of 20.5 months and a standard deviation of 2.1 months. Which brand of battery is better? Give a reason for your answer.",
+            "marks": 1,
+            "answerType": "string",
+            "solution": {
+              "finalAnswer": "Brand B is better because it has a higher mean lifespan.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the means.",
+                  "working": "Brand A Mean = 18.9, Brand B Mean = 20.5.",
+                  "reasoning": "For batteries, a longer lifespan is desirable. Since Brand B has a higher average lifespan, it is considered better."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Statistics Comparison"
       }
     ]
   }

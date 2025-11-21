@@ -300,6 +300,88 @@
         "title": "Finding Curve Coefficients"
       },
       {
+        "questionNumber": 12,
+        "questionId": "N6-woodgrove-2024-p1-q12",
+        "topicID": "N6",
+        "stem": "The expression $x^{2}-4x+7$ can be written in the form of $(x-a)^{2}+b$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $a$ and $b$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$a = 2, b = 3$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the completing the square method. Take half of the coefficient of $x$, square it, subtract it, and add the constant term.",
+                  "working": "$x^2 - 4x + 7 = (x - \\frac{4}{2})^2 - (\\frac{4}{2})^2 + 7$",
+                  "reasoning": "To convert $x^2+bx+c$ to $(x+p)^2+q$, we use $p = \\frac{b}{2}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the terms inside the bracket and the constants.",
+                  "working": "$= (x - 2)^2 - 2^2 + 7$\n$= (x - 2)^2 - 4 + 7$\n$= (x - 2)^2 + 3$",
+                  "reasoning": "Arithmetic simplification."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare with the given form $(x-a)^2 + b$ to identify $a$ and $b$.",
+                  "working": "$(x - 2)^2 + 3 \\equiv (x - a)^2 + b$\n$a = 2$\n$b = 3$",
+                  "reasoning": "Matching coefficients."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why the expression gives a minimum value.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Since $(x-2)^2 \\ge 0$ for all real values of $x$, the expression has a minimum value.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the squared term.",
+                  "working": "For any real number $x$, $(x-2)^2 \\ge 0$.",
+                  "reasoning": "The square of any real number is always non-negative."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Relate this to the coefficient of the squared term.",
+                  "working": "The coefficient of $(x-2)^2$ is positive (1). This indicates a U-shaped curve which has a minimum point.",
+                  "reasoning": "A positive quadratic coefficient indicates a minimum; a negative one indicates a maximum."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Write down the minimum value.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the constant term from the completed square form.",
+                  "working": "Minimum value occurs when $(x-2)^2 = 0$.\nMin value $= 0 + 3 = 3$.",
+                  "reasoning": "In the form $(x-a)^2 + b$, the minimum value is $b$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Completing the Square"
+      },
+      {
         "questionNumber": 15,
         "questionId": "N6-cchms-2024-p1-q15",
         "topicID": "N6",
@@ -495,6 +577,107 @@
         "title": "Solving Quadratics by Completing the Square"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N6-gemini-202410271200-p1-q101",
+        "topicID": "N6",
+        "stem": "Simplify the following expression completely: $\\frac{x^{2}-16}{x^{2}-4x}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $\\frac{x^{2}-16}{x^{2}-4x}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x+4}{x}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the numerator using the difference of two squares.",
+                  "working": "$x^2 - 16 = (x-4)(x+4)$",
+                  "reasoning": "Recognising $a^2 - b^2 = (a-b)(a+b)$ allows us to break down the numerator."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the denominator by extracting the common factor.",
+                  "working": "$x^2 - 4x = x(x-4)$",
+                  "reasoning": "Identifying the common term $x$ simplifies the denominator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Rewrite the fraction and cancel the common factor.",
+                  "working": "$\\frac{(x-4)(x+4)}{x(x-4)} = \\frac{x+4}{x}$",
+                  "reasoning": "The term $(x-4)$ appears in both numerator and denominator, so it can be cancelled out (assuming $x \\neq 4$)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Simplification"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N6-gemini-2111185018-p1-q101",
+        "topicID": "N6",
+        "stem": "Express $x^2 + 6x - 5$ in the form $(x+p)^2 + q$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the values of $p$ and $q$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$p = 3, q = -14$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Complete the square by halving the coefficient of $x$.",
+                  "working": "$x^2 + 6x - 5 = (x + \\frac{6}{2})^2 - (\\frac{6}{2})^2 - 5$",
+                  "reasoning": "Standard procedure for completing the square where coefficient of $x^2$ is 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the expression.",
+                  "working": "$= (x + 3)^2 - 3^2 - 5$\n$= (x + 3)^2 - 9 - 5$\n$= (x + 3)^2 - 14$",
+                  "reasoning": "Calculation of constants."
+                },
+                {
+                  "step": 3,
+                  "explanation": "State the values of $p$ and $q$.",
+                  "working": "$p = 3, q = -14$",
+                  "reasoning": "Comparing $(x+3)^2 - 14$ with $(x+p)^2 + q$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, write down the coordinates of the turning point of the graph $y = x^2 + 6x - 5$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$(-3, -14)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract coordinates from the completed square form.",
+                  "working": "From $(x+3)^2 - 14$, the turning point is at $x = -3$ and $y = -14$.",
+                  "reasoning": "For $y=(x+p)^2+q$, the turning point is $(-p, q)$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Quadratic Forms and Turning Points"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N6-gemini-2011-p1-q102",
         "topicID": "N6",
@@ -588,9 +771,180 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Quadratic Coefficients from Vertex"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N6-gemini-2111185018-p1-q102",
+        "topicID": "N6",
+        "stem": "Given the expression $x^2 - 10x + 29$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write the expression in the form $(x-h)^2 + k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$(x-5)^2 + 4$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Halve the coefficient of $x$ (-10) to find the term inside the square.",
+                  "working": "$(x - 5)^2$",
+                  "reasoning": "Start the completing the square process."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the square of 5 and add the original constant.",
+                  "working": "$(x - 5)^2 - (-5)^2 + 29$\n$= (x - 5)^2 - 25 + 29$\n$= (x - 5)^2 + 4$",
+                  "reasoning": "Adjusting the constant term to maintain equality."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why the equation $x^2 - 10x + 29 = 0$ has no real solutions.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The minimum value is 4, which is greater than 0, so the curve never intersects the x-axis.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the minimum value of the expression.",
+                  "working": "From part (a), $(x-5)^2 + 4 \\ge 4$ for all real $x$.",
+                  "reasoning": "Since $(x-5)^2 \\ge 0$, the whole expression is always at least 4."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Relate the minimum value to the existence of roots.",
+                  "working": "Since the minimum value is $4$ (positive), the expression can never equal $0$. Therefore, there are no real solutions.",
+                  "reasoning": "For real solutions to exist, the graph must cross or touch the x-axis ($y=0$)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Quadratic Expressions and Roots"
       }
     ],
     "Paper 2": [
+      {
+        "questionNumber": 1,
+        "questionId": "N6-orchidpark-2024-p2-q1",
+        "topicID": "N6",
+        "stem": "(a) (i) Express $2x^{2}-6x-12$ in the form $k(x-a)^{2}-b$, where k is an integer.\n(ii) Hence, solve $2x^{2}-6x-12=0$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Express $2x^{2}-6x-12$ in the form $k(x-a)^{2}-b$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$2(x-1.5)^{2}-16.5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factor out the coefficient of $x^2$ from the first two terms.",
+                  "working": "$2[x^2 - 3x] - 12$",
+                  "reasoning": "To complete the square, the coefficient of $x^2$ inside the bracket must be 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Complete the square inside the bracket. Take half of the coefficient of $x$ (-3), square it, and subtract it.",
+                  "working": "$2[(x - 1.5)^2 - 1.5^2] - 12$",
+                  "reasoning": "We use the identity $(x-a)^2 = x^2 - 2ax + a^2$. Here $2a=3$, so $a=1.5$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and simplify to find the final constants.",
+                  "working": "$2[(x - 1.5)^2 - 2.25] - 12$\n$= 2(x - 1.5)^2 - 4.5 - 12$\n$= 2(x - 1.5)^2 - 16.5$",
+                  "reasoning": "Distribute the 2 back into the constant term inside the bracket before combining with the outer constant."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Hence, solve $2x^{2}-6x-12=0$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 4.37$ or $x = -1.37$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the completed square form from part (a)(i) and equate to 0.",
+                  "working": "$2(x - 1.5)^2 - 16.5 = 0$",
+                  "reasoning": "The word 'Hence' implies we must use the previous result rather than the quadratic formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Isolate the squared term.",
+                  "working": "$2(x - 1.5)^2 = 16.5$\n$(x - 1.5)^2 = 8.25$",
+                  "reasoning": "Divide by 2 to prepare for taking the square root."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Take the square root of both sides and solve for $x$.",
+                  "working": "$x - 1.5 = \\pm\\sqrt{8.25}$\n$x = 1.5 \\pm \\sqrt{8.25}$",
+                  "reasoning": "Remember both positive and negative roots exist."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the final values to 2 decimal places.",
+                  "working": "$x_1 = 1.5 + 2.872... \\approx 4.37$\n$x_2 = 1.5 - 2.872... \\approx -1.37$",
+                  "reasoning": "Standard O-level precision for non-exact answers is 3 significant figures or 2 decimal places for angles/currency, but 2 d.p. is standard for quadratic roots unless specified."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Simplify $\\frac{3x+1}{2x^{2}+11x+12}-\\frac{1}{x+4}.$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x-2}{(2x+3)(x+4)}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the quadratic denominator $2x^2 + 11x + 12$.",
+                  "working": "$2x^2 + 8x + 3x + 12 = 2x(x+4) + 3(x+4) = (2x+3)(x+4)$",
+                  "reasoning": "To subtract fractions, we need a common denominator. Factorising helps identify the Lowest Common Multiple (LCM)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Express both fractions with the common denominator $(2x+3)(x+4)$.",
+                  "working": "$\\frac{3x+1}{(2x+3)(x+4)} - \\frac{1(2x+3)}{(x+4)(2x+3)}$",
+                  "reasoning": "Multiply the numerator and denominator of the second fraction by $(2x+3)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine the numerators and simplify.",
+                  "working": "$\\frac{(3x+1) - (2x+3)}{(2x+3)(x+4)} = \\frac{3x + 1 - 2x - 3}{(2x+3)(x+4)}$",
+                  "reasoning": "Be careful with the negative sign when expanding the second numerator."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Final simplification.",
+                  "working": "$\\frac{x-2}{(2x+3)(x+4)}$",
+                  "reasoning": "Combine like terms ($3x-2x=x$ and $1-3=-2$)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Quadratics and Algebraic Fractions"
+      },
       {
         "questionNumber": 101,
         "questionId": "N6-gemini-2011-p2-q101",
@@ -749,6 +1103,207 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Properties of Quadratic Curves"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N6-gemini-202410271200-p2-q101",
+        "topicID": "N6",
+        "stem": "(a) Express $4x^{2}+8x-5$ in the form $a(x+b)^{2}+c$.\n(b) Hence, solve $4x^{2}+8x-5=0$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $4x^{2}+8x-5$ in the form $a(x+b)^{2}+c$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$4(x+1)^{2}-9$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factor out the coefficient 4 from the terms involving $x$.",
+                  "working": "$4(x^2 + 2x) - 5$",
+                  "reasoning": "Isolating the $x$ terms allows us to complete the square inside the brackets."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Complete the square for $(x^2 + 2x)$.",
+                  "working": "$4[(x+1)^2 - 1^2] - 5$",
+                  "reasoning": "Half of $+2$ is $+1$. We subtract the square of 1 to keep the expression equivalent."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and simplify.",
+                  "working": "$4(x+1)^2 - 4(1) - 5 = 4(x+1)^2 - 9$",
+                  "reasoning": "Multiply the outer factor 4 by the constant inside the bracket before collecting like terms."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, solve $4x^{2}+8x-5=0$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 0.5$ or $x = -2.5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set the completed square form to 0.",
+                  "working": "$4(x+1)^2 - 9 = 0$",
+                  "reasoning": "Using the result from part (a) simplifies the solving process."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Isolate the squared term.",
+                  "working": "$4(x+1)^2 = 9$\n$(x+1)^2 = \\frac{9}{4}$",
+                  "reasoning": "Move the constant to the right and divide by the coefficient."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Square root both sides and solve.",
+                  "working": "$x+1 = \\pm\\frac{3}{2}$\n$x = -1 \\pm 1.5$",
+                  "reasoning": "$\\sqrt{9/4}$ is exactly $3/2$ or $1.5$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find the two values.",
+                  "working": "$x = -1 + 1.5 = 0.5$\n$x = -1 - 1.5 = -2.5$",
+                  "reasoning": "Calculate both cases."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Completing the Square"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N6-gemini-2111185018-p2-q101",
+        "topicID": "N6",
+        "stem": "The equation of a curve is given by $y = 2x^2 - 12x + 23$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $y$ in the form $a(x-h)^2 + k$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2(x-3)^2 + 5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorize the coefficient of $x^2$ from the first two terms.",
+                  "working": "$y = 2(x^2 - 6x) + 23$",
+                  "reasoning": "To complete the square, the coefficient of $x^2$ inside the bracket must be 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Complete the square for the expression inside the bracket.",
+                  "working": "$y = 2[(x - 3)^2 - 3^2] + 23$\n$y = 2[(x - 3)^2 - 9] + 23$",
+                  "reasoning": "Applying $(x-b)^2 - b^2$ rule."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and simplify to find the final constants.",
+                  "working": "$y = 2(x - 3)^2 - 18 + 23$\n$y = 2(x - 3)^2 + 5$",
+                  "reasoning": "Distribute the 2 and combine constant terms."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down the equation of the line of symmetry of the curve.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 3$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the $x$-coordinate of the vertex.",
+                  "working": "From $2(x-3)^2 + 5$, the vertex is at $x=3$.",
+                  "reasoning": "The line of symmetry passes through the vertex $x=h$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the minimum value of $y$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the constant term $k$.",
+                  "working": "Since $2(x-3)^2 \\ge 0$, the minimum value is $5$.",
+                  "reasoning": "The term $k$ in $a(x-h)^2 + k$ represents the minimum value when $a > 0$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Advanced Completing the Square"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N6-gemini-202410271200-p2-q102",
+        "topicID": "N6",
+        "stem": "Express $\\frac{4}{2x-1} - \\frac{3x}{2x^{2}+5x-3}$ as a single fraction in its simplest form.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $\\frac{4}{2x-1} - \\frac{3x}{2x^{2}+5x-3}$ as a single fraction in its simplest form.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x+12}{(2x-1)(x+3)}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the denominator of the second fraction.",
+                  "working": "$2x^2 + 5x - 3 = (2x-1)(x+3)$",
+                  "reasoning": "We need to find the Lowest Common Denominator (LCD). Factorising reveals that $(2x-1)$ is a common factor."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the subtraction with the common denominator $(2x-1)(x+3)$.",
+                  "working": "$\\frac{4(x+3)}{(2x-1)(x+3)} - \\frac{3x}{(2x-1)(x+3)}$",
+                  "reasoning": "Multiply the first fraction by $\\frac{x+3}{x+3}$ to match the denominator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand the numerator and subtract.",
+                  "working": "$\\frac{4x + 12 - 3x}{(2x-1)(x+3)}$",
+                  "reasoning": "Distribute the 4 into $(x+3)$ and subtract the $3x$ from the second fraction."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the numerator.",
+                  "working": "$\\frac{x + 12}{(2x-1)(x+3)}$",
+                  "reasoning": "Combine $4x$ and $-3x$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Algebraic Fractions"
       }
     ]
   }

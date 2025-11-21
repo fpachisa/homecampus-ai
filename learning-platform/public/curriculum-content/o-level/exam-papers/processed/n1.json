@@ -241,6 +241,231 @@
         "title": "Calculation and Approximation"
       },
       {
+        "questionNumber": 1,
+        "questionId": "N1-orchidpark-2024-p1-q1",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The approximate mass of the earth is $5.976\\times10^{24}$ kg. How many times is the earth heavier than an average male adult who weighs 75 kg? Give your answer in standard form correct to 3 significant figures.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$7.97 \\times 10^{22}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the division to find the ratio of the Earth's mass to the adult's mass.",
+                  "working": "$\\frac{5.976 \\times 10^{24}}{75}$",
+                  "reasoning": "To find 'how many times' one value is of another, we divide the larger value by the smaller value."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the division on the numerical part and keep the power of 10.",
+                  "working": "$= 0.07968 \\times 10^{24}$",
+                  "reasoning": "Calculation: $5.976 \\div 75 = 0.07968$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert the result to standard form ($A \\times 10^n$ where $1 \\le A < 10$).",
+                  "working": "$= 7.968 \\times 10^{-2} \\times 10^{24} \\\\ = 7.968 \\times 10^{22}$",
+                  "reasoning": "Shift the decimal point 2 places to the right, which reduces the exponent by 2."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round the coefficient to 3 significant figures.",
+                  "working": "$7.968 \\approx 7.97 \\\\ \\text{Ans: } 7.97 \\times 10^{22}$",
+                  "reasoning": "The 4th digit is 8, so we round up the 3rd digit (6) to 7."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The sum of 3 consecutive even numbers is estimated to be 300 when rounded off to 1 significant figure. Find the largest possible set of the 3 numbers.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "114, 116, 118",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define the algebraic expression for the sum of 3 consecutive even numbers.",
+                  "working": "Let the numbers be $n, n+2, n+4$. \\\\ Sum $= 3n + 6$.",
+                  "reasoning": "Consecutive even numbers differ by 2."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the upper bound for the sum based on rounding to 1 significant figure (300).",
+                  "working": "Range for 300 (1 s.f.) is $[250, 350)$. \\\\ Max integer sum $< 350$.",
+                  "reasoning": "Any number from 250 to 349 rounds to 300 when using 1 significant figure. 350 would round to 400."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the largest even sum within the range.",
+                  "working": "The sum of 3 even numbers must be even. \\\\ Largest even integer $< 350$ is $348$.",
+                  "reasoning": "Even + Even + Even = Even."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $n$ using the maximum sum.",
+                  "working": "$3n + 6 = 348 \\\\ 3n = 342 \\\\ n = 114$",
+                  "reasoning": "Solve the linear equation."
+                },
+                {
+                  "step": 5,
+                  "explanation": "List the three numbers.",
+                  "working": "$n = 114, n+2 = 116, n+4 = 118$",
+                  "reasoning": "Substitute $n$ back into the expressions."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Approximation and Estimation"
+      },
+      {
+        "questionNumber": 1,
+        "questionId": "N1-tkgs-2024-p1-q1",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\frac{165^{2}+\\sqrt[4]{75.125-11.2\\times(-3)}}{3.142}$. Write your answer correct to 2 significant figures.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "8700",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Evaluate the expression inside the fourth root.",
+                  "working": "$75.125 - 11.2 \\times (-3) = 75.125 - (-33.6) = 75.125 + 33.6 = 108.725$",
+                  "reasoning": "Follow BODMAS/BIDMAS rules: Multiplication comes before subtraction."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the fourth root and the square term in the numerator.",
+                  "working": "$\\sqrt[4]{108.725} \\approx 3.2234...$ \n $165^2 = 27225$",
+                  "reasoning": "Compute the individual components of the numerator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the total value of the fraction.",
+                  "working": "Numerator $= 27225 + 3.2234... = 27228.2234...$ \n $\\frac{27228.2234...}{3.142} \\approx 8665.889...$",
+                  "reasoning": "Perform the division using the calculator value."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round the result to 2 significant figures.",
+                  "working": "$8665.889... \\approx 8700$",
+                  "reasoning": "The first two significant digits are 8 and 6. The next digit (6) rounds the second digit up."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The number of people in a shopping mall is 1100, correct to the nearest hundred. Write down the minimum number of people there are in the mall.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1050",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the degree of accuracy.",
+                  "working": "Nearest 100.",
+                  "reasoning": "The error interval is half of the degree of accuracy."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the lower bound.",
+                  "working": "$\\text{Error} = \\frac{100}{2} = 50$ \n $\\text{Minimum} = 1100 - 50 = 1050$",
+                  "reasoning": "The minimum value for a rounded number $x$ is $x - \\text{error}$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Calculation and Approximation"
+      },
+      {
+        "questionNumber": 1,
+        "questionId": "N1-woodgrove-2024-p1-q1",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\frac{-11+\\sqrt{(-11)^{2}-\\frac{20}{11}}}{8\\times0.6}.$ Write your answer correct to 4 significant figures.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "-0.01728",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Evaluate the expression inside the square root (the discriminant).",
+                  "working": "$(-11)^2 - \\frac{20}{11} = 121 - 1.8181... = 119.1818...$",
+                  "reasoning": "Always follow BODMAS/PEMDAS. Handle the inner terms first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the square root and the denominator.",
+                  "working": "Numerator: $-11 + \\sqrt{119.1818...} \\approx -11 + 10.9170 = -0.08295...$\nDenominator: $8 \\times 0.6 = 4.8$",
+                  "reasoning": "Simplify the top and bottom of the fraction separately before dividing."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Perform the division and round to 4 significant figures.",
+                  "working": "$\\frac{-0.08295...}{4.8} = -0.0172827...$\nRounding to 4 s.f.: The first non-zero digit is 1. The digits are 1, 7, 2, 8. The next digit is 2 (round down).",
+                  "reasoning": "Significant figures start from the first non-zero digit."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write your answer to part (a) in standard form.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$-1.728 \\times 10^{-2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the first non-zero digit and move the decimal place.",
+                  "working": "Move decimal in $-0.01728$ right by 2 places to get $-1.728$.",
+                  "reasoning": "Standard form is $A \\times 10^n$ where $1 \\le |A| < 10$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the power of 10.",
+                  "working": "Since we moved the decimal 2 places to the right (making the number larger), we must multiply by $10^{-2}$ to compensate.",
+                  "reasoning": "Numbers less than 1 have negative powers of 10."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Calculation and Standard Form"
+      },
+      {
         "questionNumber": 2,
         "questionId": "N1-anderson-2024-p1-q2",
         "topicID": "N1",
@@ -680,6 +905,112 @@
         "title": "Indices Simplification"
       },
       {
+        "questionNumber": 3,
+        "questionId": "N1-orchidpark-2024-p1-q3",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write 756 as a product of its prime factors.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2^2 \\times 3^3 \\times 7$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform repeated division by prime numbers starting from the smallest.",
+                  "working": "$756 \\div 2 = 378 \\\\ 378 \\div 2 = 189 \\\\ 189 \\div 3 = 63 \\\\ 63 \\div 3 = 21 \\\\ 21 \\div 3 = 7 \\\\ 7 \\div 7 = 1$",
+                  "reasoning": "Standard algorithm for prime factorization."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Write in index notation.",
+                  "working": "$2 \\times 2 \\times 3 \\times 3 \\times 3 \\times 7 = 2^2 \\times 3^3 \\times 7$",
+                  "reasoning": "Group like bases together."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that $495=3^{2}\\times5\\times11$ find the smallest positive integer p such that 756p is a multiple of 495.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$p = 55$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the condition for $756p$ to be a multiple of $495$.",
+                  "working": "$\\frac{756p}{495}$ must be an integer.",
+                  "reasoning": "Definition of a multiple."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the prime factorizations into the fraction.",
+                  "working": "$\\frac{(2^2 \\times 3^3 \\times 7) \\times p}{3^2 \\times 5 \\times 11}$",
+                  "reasoning": "Using the result from part (a) and the given info."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the fraction by cancelling common factors.",
+                  "working": "$\\frac{2^2 \\times 3 \\times 7 \\times p}{5 \\times 11}$",
+                  "reasoning": "$3^3$ in numerator and $3^2$ in denominator leaves $3^1$ in numerator."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Determine $p$ required to eliminate the denominator.",
+                  "working": "The denominator is $5 \\times 11$. Since the numerator's known part ($2^2 \\times 3 \\times 7$) shares no factors with $5$ or $11$, $p$ must provide them. \\\\ $p = 5 \\times 11 = 55$",
+                  "reasoning": "For the result to be an integer, the denominator must be 1 after simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The number $756\\times\\frac{a}{b}$ is a perfect cube where a and b are both prime numbers. Find the smallest possible value of a and smallest possible value of b.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$a=2, b=7$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the indices of 756 for a perfect cube.",
+                  "working": "$756 = 2^2 \\times 3^3 \\times 7^1$. \\\\ For a perfect cube, all indices must be multiples of 3 (e.g., 0, 3, 6).",
+                  "reasoning": "Properties of perfect cubes in prime factorization."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine adjustments needed for each prime factor.",
+                  "working": "Power of 2 is 2. Need to reach 3 (multiply by $2^1$) or 0 (divide by $2^2$). \\\\ Power of 3 is 3. Already a multiple of 3. \\\\ Power of 7 is 1. Need to reach 3 (multiply by $7^2$) or 0 (divide by $7^1$).",
+                  "reasoning": "We multiply by $a$ and divide by $b$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Select $a$ and $b$ such that they are prime numbers.",
+                  "working": "To fix $2^2$: Multiply by $2$ ($a=2$). \\\\ To fix $7^1$: Divide by $7$ ($b=7$).",
+                  "reasoning": "If we tried to divide by $2^2$, $b=4$ (not prime). If we tried to multiply by $7^2$, $a=49$ (not prime). Therefore, we must multiply by 2 and divide by 7."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Verify the result.",
+                  "working": "$756 \\times \\frac{2}{7} = (2^2 \\times 3^3 \\times 7) \\times 2 \\div 7 = 2^3 \\times 3^3$. This is a perfect cube.",
+                  "reasoning": "Indices are 3 and 3, both divisible by 3."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Primes, Factors and Multiples"
+      },
+      {
         "questionNumber": 4,
         "questionId": "N1-anderson-2024-p1-q4",
         "topicID": "N1",
@@ -839,6 +1170,349 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Sharing Prize Money"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "N1-tkgs-2024-p1-q4",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express 1400 as a product of its prime factors.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2^3 \\times 5^2 \\times 7$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform prime factorization of 1400.",
+                  "working": "$1400 = 14 \\times 100$ \n $= (2 \\times 7) \\times (10^2)$ \n $= 2 \\times 7 \\times (2 \\times 5)^2$ \n $= 2 \\times 7 \\times 2^2 \\times 5^2$",
+                  "reasoning": "Break the number down into smaller factors until only prime numbers remain."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Group the prime factors using index notation.",
+                  "working": "$2^{1+2} \\times 5^2 \\times 7 = 2^3 \\times 5^2 \\times 7$",
+                  "reasoning": "Combine bases using laws of indices."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$q$ is a number between 70 and 90. The highest common factor of $q$ and 1400 is 28. Find the smallest possible value of $q$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "84",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the properties of $q$ based on the HCF.",
+                  "working": "Since HCF($q$, 1400) = 28, $q$ must be a multiple of 28.",
+                  "reasoning": "The HCF divides both numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "List multiples of 28 and check the range condition.",
+                  "working": "Multiples of 28: 28, 56, 84, 112... \n Range: $70 < q < 90$. \n Only 84 falls in this range.",
+                  "reasoning": "Identify candidates that satisfy the range constraint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Verify the HCF condition for the candidate.",
+                  "working": "$1400 = 2^3 \\times 5^2 \\times 7$ \n $84 = 2^2 \\times 3 \\times 7$ \n HCF = $2^2 \\times 7 = 28$. Condition satisfied.",
+                  "reasoning": "Ensure that taking $q=84$ does not introduce extra common factors (like another 2 or 5) that would increase the HCF."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Primes and HCF"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "N1-woodgrove-2024-p1-q4",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express 4312 as a product of its prime factors.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2^3 \\times 7^2 \\times 11$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform repeated division by prime numbers starting from the smallest.",
+                  "working": "$4312 \\div 2 = 2156$\n$2156 \\div 2 = 1078$\n$1078 \\div 2 = 539$\n$539$ is not divisible by 3 or 5. Try 7: $539 \\div 7 = 77$\n$77 \\div 7 = 11$\n$11$ is prime.",
+                  "reasoning": "Break the number down systematically."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Write in index notation.",
+                  "working": "$2 \\times 2 \\times 2 \\times 7 \\times 7 \\times 11 = 2^3 \\times 7^2 \\times 11$",
+                  "reasoning": "Group identical bases together."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_i",
+            "questionText": "Given $588=2^{2}\\times3\\times7^{2}$. Find The largest integer which is a factor of both 588 and 4312.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "196",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the Highest Common Factor (HCF) by comparing prime factors.",
+                  "working": "$588 = 2^2 \\times 3 \\times 7^2$\n$4312 = 2^3 \\times 7^2 \\times 11$\nCommon bases: 2 and 7.\nLowest powers: $2^2$ and $7^2$.",
+                  "reasoning": "For HCF, take the lowest power of common prime factors."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value.",
+                  "working": "$2^2 \\times 7^2 = 4 \\times 49 = 196$",
+                  "reasoning": "Evaluate the expression to find the integer."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Find the smallest integer which is the multiple of both 588 and 4312.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12936",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the Lowest Common Multiple (LCM) by comparing prime factors.",
+                  "working": "$588 = 2^2 \\times 3 \\times 7^2$\n$4312 = 2^3 \\times 7^2 \\times 11$\nTake the highest power of every prime factor present: $2^3, 3^1, 7^2, 11^1$.",
+                  "reasoning": "For LCM, take the highest power of all prime factors involved."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value.",
+                  "working": "$2^3 \\times 3 \\times 7^2 \\times 11 = 8 \\times 3 \\times 49 \\times 11 = 12936$",
+                  "reasoning": "Multiply the factors to get the final integer."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_iii",
+            "questionText": "Find the smallest integer value of $m$ such that $4312m$ is a perfect square.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "22",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the powers of the prime factors of 4312.",
+                  "working": "$4312 = 2^3 \\times 7^2 \\times 11^1$",
+                  "reasoning": "For a number to be a perfect square, all prime factors must have even indices (powers)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify missing factors to make powers even.",
+                  "working": "$2^3$ needs one more 2 to become $2^4$ (even).\n$7^2$ is already even.\n$11^1$ needs one more 11 to become $11^2$ (even).",
+                  "reasoning": "Multiply by the factors with odd powers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $m$.",
+                  "working": "$m = 2 \\times 11 = 22$",
+                  "reasoning": "The product of the missing factors is the smallest integer $m$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Prime Factors, HCF and LCM"
+      },
+      {
+        "questionNumber": 5,
+        "questionId": "N1-orchidpark-2024-p1-q5",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $\\frac{(2x^{3}y^{2})^{-4}}{(10x^{-2}y^{3})^{2}}\\div\\sqrt[3]{27x^{-3}y^{6}}.$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{4800x^7y^{16}}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the powers in the numerator and denominator of the first fraction.",
+                  "working": "Numerator: $2^{-4}x^{-12}y^{-8} = \\frac{1}{16}x^{-12}y^{-8}$ \\\\ Denominator: $10^2 x^{-4}y^6 = 100x^{-4}y^6$",
+                  "reasoning": "Apply law $(ab)^n = a^n b^n$ and $(x^a)^b = x^{ab}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the first fraction.",
+                  "working": "$\\frac{\\frac{1}{16}x^{-12}y^{-8}}{100x^{-4}y^6} = \\frac{1}{1600} x^{-12-(-4)} y^{-8-6} = \\frac{1}{1600} x^{-8} y^{-14}$",
+                  "reasoning": "Combine coefficients and subtract indices for division."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the radical term (divisor).",
+                  "working": "$\\sqrt[3]{27x^{-3}y^{6}} = (3^3 x^{-3} y^6)^{\\frac{1}{3}} = 3 x^{-1} y^2$",
+                  "reasoning": "Apply fractional index law $\\sqrt[n]{x} = x^{\\frac{1}{n}}$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Perform the final division.",
+                  "working": "$(\\frac{1}{1600} x^{-8} y^{-14}) \\div (3 x^{-1} y^2) \\\\ = \\frac{1}{1600 \\times 3} x^{-8 - (-1)} y^{-14 - 2} \\\\ = \\frac{1}{4800} x^{-7} y^{-16}$",
+                  "reasoning": "Divide coefficients and subtract indices."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Format with positive indices (optional but standard unless specified).",
+                  "working": "$\\frac{1}{4800x^7y^{16}}$",
+                  "reasoning": "$x^{-n} = \\frac{1}{x^n}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve $3^{x+2}\\times3(3^{5})=1$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = -8$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all terms on the LHS with a single base of 3.",
+                  "working": "$3^{x+2} \\times 3^1 \\times 3^5 = 3^{x+2+1+5} = 3^{x+8}$",
+                  "reasoning": "Multiplication law of indices: $a^m \\times a^n = a^{m+n}$. Note that $3 = 3^1$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Express the RHS as a power of 3.",
+                  "working": "$1 = 3^0$",
+                  "reasoning": "Any non-zero number to the power of 0 is 1."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the exponents and solve for $x$.",
+                  "working": "$x + 8 = 0 \\\\ x = -8$",
+                  "reasoning": "If $a^m = a^n$, then $m=n$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Indices"
+      },
+      {
+        "questionNumber": 5,
+        "questionId": "N1-swisscottage-2024-p1-q5",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $(\\frac{x^{3}}{27y^{6}})^{\\frac{4}{3}}.$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x^4}{81y^8}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the power $\\frac{4}{3}$ to each term inside the bracket using the law $(a^m)^n = a^{mn}$.",
+                  "working": "$(\\frac{x^{3}}{27y^{6}})^{\\frac{4}{3}} = \\frac{x^{3 \\times \\frac{4}{3}}}{27^{\\frac{4}{3}} y^{6 \\times \\frac{4}{3}}}$",
+                  "reasoning": "Distribute the exponent to the numerator (variable), the denominator coefficient, and the denominator variable."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the indices and evaluate the numerical term.",
+                  "working": "$x^{3 \\times \\frac{4}{3}} = x^4$\n$y^{6 \\times \\frac{4}{3}} = y^8$\n$27^{\\frac{4}{3}} = (3^3)^{\\frac{4}{3}} = 3^4 = 81$",
+                  "reasoning": "Perform multiplication of fractions for indices. For the number 27, express it as $3^3$ to easily multiply the powers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine the simplified terms into the final fraction.",
+                  "working": "$\\frac{x^4}{81y^8}$",
+                  "reasoning": "Reassemble the fraction with the calculated values."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices Simplification"
+      },
+      {
+        "questionNumber": 5,
+        "questionId": "N1-tkgs-2024-p1-q5",
+        "topicID": "N1",
+        "stem": "Given that $\\frac{1}{2^{a-1}}=2^{3}+2^{3}+2^{3}+2^{3}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $a$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "-4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Simplify the Right Hand Side (RHS) by grouping like terms.",
+                  "working": "RHS $= 4 \\times 2^3 = 2^2 \\times 2^3 = 2^{2+3} = 2^5$",
+                  "reasoning": "Repeated addition is multiplication. Express 4 as a base of 2."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rewrite the Left Hand Side (LHS) with a positive index in the numerator.",
+                  "working": "LHS $= \\frac{1}{2^{a-1}} = 2^{-(a-1)} = 2^{1-a}$",
+                  "reasoning": "Use the negative index law: $\\frac{1}{x^n} = x^{-n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the indices and solve for $a$.",
+                  "working": "$2^{1-a} = 2^5$ \n $1 - a = 5$ \n $-a = 4$ \n $a = -4$",
+                  "reasoning": "If bases are equal, the exponents must be equal."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices Equation"
       },
       {
         "questionNumber": 6,
@@ -1035,6 +1709,48 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Primes and Factors"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "N1-swisscottage-2024-p1-q6",
+        "topicID": "N1",
+        "stem": "Peter has many cuboid blocks with dimensions 24 cm by 20 cm by 15 cm. He wishes to manufacture a box in the shape of a cube to pack the blocks such that there is no empty space in the box.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the smallest possible length of the box.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "120 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify that the problem requires finding the Lowest Common Multiple (LCM) of the dimensions.",
+                  "working": "Dimensions: 24, 20, 15. We need the smallest cube side length that is a multiple of all three.",
+                  "reasoning": "For the blocks to fit perfectly into a cube without empty space, the side length of the cube must be divisible by the length, width, and height of the block."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the prime factorization of each number.",
+                  "working": "$24 = 2^3 \\times 3$\n$20 = 2^2 \\times 5$\n$15 = 3 \\times 5$",
+                  "reasoning": "Prime factorization allows us to determine the LCM by taking the highest power of each prime factor present."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the LCM.",
+                  "working": "LCM = $2^3 \\times 3 \\times 5 = 8 \\times 3 \\times 5 = 120$",
+                  "reasoning": "Multiply the highest powers: $2^3$, $3^1$, and $5^1$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "LCM Cuboid Packing"
       },
       {
         "questionNumber": 7,
@@ -1290,6 +2006,142 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Indices Equations and Simplification"
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "N1-swisscottage-2024-p1-q8",
+        "topicID": "N1",
+        "stem": "The mass of Jupiter is approximately $1.90\\times10^{27}kg.$ The mass of Earth is approximately $5.97\\times10^{24}$ kg.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Giving your answer in standard form, calculate how many times Jupiter's mass is, compared to that of Earth's.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$3.18 \\times 10^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the division to compare the masses.",
+                  "working": "$\\frac{1.90 \\times 10^{27}}{5.97 \\times 10^{24}}$",
+                  "reasoning": "To find 'how many times', divide the larger mass by the smaller mass."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide the coefficients and the powers of 10 separately.",
+                  "working": "Coefficient: $1.90 \\div 5.97 \\approx 0.318258...$\nPowers: $10^{27} \\div 10^{24} = 10^{27-24} = 10^3$",
+                  "reasoning": "Use laws of indices for the base 10 terms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert the result to standard form (3 significant figures).",
+                  "working": "$0.318258... \\times 10^3 = 3.18 \\times 10^{-1} \\times 10^3 = 3.18 \\times 10^2$",
+                  "reasoning": "Standard form requires the coefficient $A$ to be $1 \\le A < 10$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Density refers to the mass per unit volume. Given that the volume of Jupiter is $1.43\\times10^{24}m^{3}$ and that of Earth's is $1.08\\times10^{21}m^{3}$ calculate and determine which planet has a higher density.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Earth",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the density of Jupiter.",
+                  "working": "Density = $\\frac{\\text{Mass}}{\\text{Volume}} = \\frac{1.90 \\times 10^{27}}{1.43 \\times 10^{24}} \\approx 1.328 \\times 10^3$ kg/m³",
+                  "reasoning": "Apply the density formula using Jupiter's given mass and volume."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the density of Earth.",
+                  "working": "Density = $\\frac{5.97 \\times 10^{24}}{1.08 \\times 10^{21}} \\approx 5.527 \\times 10^3$ kg/m³",
+                  "reasoning": "Apply the density formula using Earth's given mass and volume."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare the two densities.",
+                  "working": "$5.53 \\times 10^3 > 1.33 \\times 10^3$",
+                  "reasoning": "Earth's density is approximately 5530 kg/m³ while Jupiter's is 1330 kg/m³. Therefore, Earth has the higher density."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Planetary Mass and Density"
+      },
+      {
+        "questionNumber": 10,
+        "questionId": "N1-swisscottage-2024-p1-q10",
+        "topicID": "N1",
+        "stem": "A metal sphere has a mass of 197 grams, correct to the nearest gram.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the least possible mass of the metal sphere.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "196.5 g",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the error interval for rounding to the nearest gram.",
+                  "working": "Unit = 1g. Error = $\\frac{1}{2} = 0.5$g.",
+                  "reasoning": "When rounding to the nearest unit, the bounds are $\\pm 0.5$ of that unit."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the lower bound.",
+                  "working": "$197 - 0.5 = 196.5$",
+                  "reasoning": "Least possible mass is the lower bound."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The volume of the metal sphere is $25~cm^{3}$, correct to the nearest cubic centimetre. Find the greatest possible mass of 1 cubic centimetre of the metal.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "8.06 g (3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the formula for mass of 1 cubic centimetre (Density) and the bounds required for the 'greatest' result.",
+                  "working": "Density = $\\frac{\\text{Mass}}{\\text{Volume}}$. Max Density = $\\frac{\\text{Max Mass}}{\\text{Min Volume}}$",
+                  "reasoning": "To maximize a fraction, maximize the numerator and minimize the denominator."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the upper bound for mass and lower bound for volume.",
+                  "working": "Mass (nearest 1g): Upper bound = $197 + 0.5 = 197.5$ g.\nVolume (nearest 1cm³): Lower bound = $25 - 0.5 = 24.5$ cm³.",
+                  "reasoning": "Apply the $\\pm 0.5$ rule to both measurements."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the greatest density.",
+                  "working": "$\\frac{197.5}{24.5} = 8.06122...$",
+                  "reasoning": "Perform the division."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Estimation and Density Limits"
       },
       {
         "questionNumber": 11,
@@ -1576,6 +2428,100 @@
         "title": "Factors and Multiples"
       },
       {
+        "questionNumber": 17,
+        "questionId": "N1-woodgrove-2024-p1-q17",
+        "topicID": "N1",
+        "stem": "Simplify.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "$\\frac{a^{3}}{3a^{2}}\\times27a^{6}$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$9a^7$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Separate coefficients (numbers) and variables.",
+                  "working": "Numbers: $\\frac{1}{3} \\times 27 = 9$\nVariables: $\\frac{a^3}{a^2} \\times a^6$",
+                  "reasoning": "Handle constants and algebra separately."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply laws of indices.",
+                  "working": "$a^{3-2} \\times a^6 = a^1 \\times a^6 = a^{1+6} = a^7$",
+                  "reasoning": "When dividing same bases, subtract powers. When multiplying, add powers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine results.",
+                  "working": "$9a^7$",
+                  "reasoning": "Combine the coefficient and the variable term."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "$\\sqrt{16x^{\\frac{4}{3}}}$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$4x^{\\frac{2}{3}}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the square root to the coefficient.",
+                  "working": "$\\sqrt{16} = 4$",
+                  "reasoning": "Evaluate the root of the number."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the square root to the variable (power of 1/2).",
+                  "working": "$\\sqrt{x^{\\frac{4}{3}}} = (x^{\\frac{4}{3}})^{\\frac{1}{2}} = x^{\\frac{4}{3} \\times \\frac{1}{2}} = x^{\\frac{2}{3}}$",
+                  "reasoning": "Power of a power rule: $(x^a)^b = x^{ab}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find an expression for b in terms of a and c. $\\frac{49^{2a}}{7^{b}}=343^{4c}$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$b = 4a - 12c$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert all terms to the same base (base 7).",
+                  "working": "$49 = 7^2$, so $49^{2a} = (7^2)^{2a} = 7^{4a}$\n$343 = 7^3$, so $343^{4c} = (7^3)^{4c} = 7^{12c}$",
+                  "reasoning": "Indices equations are easiest to solve when bases are identical."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute back into the equation and simplify LHS.",
+                  "working": "$\\frac{7^{4a}}{7^b} = 7^{12c}$\n$7^{4a-b} = 7^{12c}$",
+                  "reasoning": "Division law of indices: $x^m \\div x^n = x^{m-n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the powers and solve for b.",
+                  "working": "$4a - b = 12c$\n$b = 4a - 12c$",
+                  "reasoning": "If bases are equal, the exponents must be equal."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Indices Simplification and Equation"
+      },
+      {
         "questionNumber": 19,
         "questionId": "N1-anderson-2024-p1-q19",
         "topicID": "N1",
@@ -1716,6 +2662,100 @@
         "totalMarks": 5,
         "paper": "Paper 1",
         "title": "Primes and LCM"
+      },
+      {
+        "questionNumber": 21,
+        "questionId": "N1-swisscottage-2024-p1-q21",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Use prime factors to explain why $56\\times126$ is a perfect square.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the prime factorization of 56 and 126.",
+                  "working": "$56 = 8 \\times 7 = 2^3 \\times 7$\n$126 = 2 \\times 63 = 2 \\times 9 \\times 7 = 2 \\times 3^2 \\times 7$",
+                  "reasoning": "Break down composite numbers into their prime bases."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the factors together.",
+                  "working": "$56 \\times 126 = (2^3 \\times 7) \\times (2 \\times 3^2 \\times 7) = 2^{3+1} \\times 3^2 \\times 7^{1+1} = 2^4 \\times 3^2 \\times 7^2$",
+                  "reasoning": "Combine the indices for like bases."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Analyze the indices to prove it is a perfect square.",
+                  "working": "The indices are 4, 2, and 2. Since all indices are even numbers, the product is a perfect square.",
+                  "reasoning": "A number is a perfect square if and only if the index of every prime factor in its prime factorization is even."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down the greatest integer that will divide both 56 and 126 exactly.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "14",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify that the question asks for the Highest Common Factor (HCF).",
+                  "working": "$56 = 2^3 \\times 7$\n$126 = 2 \\times 3^2 \\times 7$",
+                  "reasoning": "Use the prime factorization found in part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Select the lowest power of common prime factors.",
+                  "working": "Common primes: 2 and 7.\nLowest powers: $2^1$ and $7^1$.\nHCF = $2 \\times 7 = 14$",
+                  "reasoning": "The HCF is the product of the common prime factors raised to their lowest respective powers."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The number 126k is a perfect cube. Find the smallest positive integer value of k.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "588",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write out the prime factorization of 126.",
+                  "working": "$126 = 2^1 \\times 3^2 \\times 7^1$",
+                  "reasoning": "Start with the base number's composition."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the necessary powers for a perfect cube.",
+                  "working": "For a perfect cube, all indices must be multiples of 3.\nCurrent indices: $2^1$ (needs 2 more), $3^2$ (needs 1 more), $7^1$ (needs 2 more).",
+                  "reasoning": "We need to multiply by $k$ to make the indices 3, 6, 9, etc. The smallest $k$ will bring them to the nearest multiple of 3 (which is 3)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate k.",
+                  "working": "$k = 2^2 \\times 3^1 \\times 7^2 = 4 \\times 3 \\times 49 = 12 \\times 49 = 588$",
+                  "reasoning": "Multiply the missing factors to find the value of $k$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Prime Factors and Squares"
       },
       {
         "questionNumber": 101,
@@ -2121,6 +3161,243 @@
         "title": "Prime Factorization and Multiples"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111142454-p1-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Estimate the value of $\\frac{8.94 \\times \\sqrt[3]{127}}{0.485}$ correct to 1 significant figure.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "90",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Round each number in the expression to a suitable nearby integer or simple value to facilitate estimation.",
+                  "working": "$8.94 \\approx 9$ \\\\ $127 \\approx 125$ (since $\\sqrt[3]{125}=5$) \\\\ $0.485 \\approx 0.5$",
+                  "reasoning": "Choose numbers that make mental arithmetic easy, specifically looking for perfect cubes near 127."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the rounded values and calculate.",
+                  "working": "$\\frac{9 \\times 5}{0.5} = \\frac{45}{0.5}$",
+                  "reasoning": "Perform the multiplication in the numerator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Complete the division.",
+                  "working": "$45 \\div 0.5 = 45 \\times 2 = 90$",
+                  "reasoning": "Dividing by half is the same as multiplying by 2."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Given that $A = 3.2 \\times 10^5$ and $B = 5 \\times 10^4$, calculate value of $A - B$. Give your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2.7 \\times 10^5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the numbers to have the same power of 10 to facilitate subtraction.",
+                  "working": "$B = 5 \\times 10^4 = 0.5 \\times 10^5$",
+                  "reasoning": "To add or subtract standard form numbers, exponents must match."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the subtraction.",
+                  "working": "$A - B = (3.2 \\times 10^5) - (0.5 \\times 10^5) \\\\ = (3.2 - 0.5) \\times 10^5$",
+                  "reasoning": "Factor out $10^5$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Finalize the answer in standard form.",
+                  "working": "$2.7 \\times 10^5$",
+                  "reasoning": "The coefficient 2.7 is between 1 and 10, so it is valid standard form."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Approximation and Standard Form"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111145943-p1-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $(8x^{-6}y^{3})^{-\\frac{2}{3}}.$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x^4}{4y^2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Distribute the exponent $-\\frac{2}{3}$ to the coefficient and variables.",
+                  "working": "$8^{-\\frac{2}{3}} \\times (x^{-6})^{-\\frac{2}{3}} \\times (y^{3})^{-\\frac{2}{3}}$",
+                  "reasoning": "Use the power of a product rule $(abc)^n = a^n b^n c^n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the coefficient term.",
+                  "working": "$8^{-\\frac{2}{3}} = (2^3)^{-\\frac{2}{3}} = 2^{-2} = \\frac{1}{2^2} = \\frac{1}{4}$",
+                  "reasoning": "Convert 8 to $2^3$ to simplify the fractional exponent."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the variable indices.",
+                  "working": "$x^{-6 \\times -\\frac{2}{3}} = x^4$\n$y^{3 \\times -\\frac{2}{3}} = y^{-2} = \\frac{1}{y^2}$",
+                  "reasoning": "Multiply indices. Negative indices indicate the term belongs in the denominator."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Combine all parts.",
+                  "working": "$\\frac{1}{4} \\times x^4 \\times \\frac{1}{y^2} = \\frac{x^4}{4y^2}$",
+                  "reasoning": "Assemble the final fraction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Negative Indices Simplification"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111153547-p1-q101",
+        "topicID": "N1",
+        "stem": "Consider the numbers $A = 2^4 \\times 3^2 \\times 5$ and $B = 2^2 \\times 3^3 \\times 7$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the lowest common multiple (LCM) of $A$ and $B$, leaving your answer as a product of its prime factors.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2^4 \\times 3^3 \\times 5 \\times 7$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the highest power of each prime factor present in either number.",
+                  "working": "Primes involved: 2, 3, 5, 7. \n Max power of 2: $2^4$ (from A) \n Max power of 3: $3^3$ (from B) \n Max power of 5: $5^1$ (from A) \n Max power of 7: $7^1$ (from B)",
+                  "reasoning": "The LCM must contain every factor from both numbers to be divisible by them."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine these highest powers.",
+                  "working": "LCM $= 2^4 \\times 3^3 \\times 5 \\times 7$",
+                  "reasoning": "Construct the product."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the smallest positive integer $k$ such that $\\frac{A}{k}$ is a perfect square.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the powers of the prime factors of $A$.",
+                  "working": "$A = 2^4 \\times 3^2 \\times 5^1$. \n Powers are: 4 (even), 2 (even), 1 (odd).",
+                  "reasoning": "For a number to be a perfect square, all prime factors must have even indices."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine which factor needs to be removed (divided out).",
+                  "working": "The factor 5 has an odd power (1). To make it even (0), we must divide by 5.",
+                  "reasoning": "Dividing by $k=5$ results in $2^4 \\times 3^2$, where all powers are even."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "LCM and Perfect Squares"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111185018-p1-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\frac{\\sqrt{4.5^{2}-3.2}}{2.4\\times10^{-1}}$. Write your answer correct to 5 significant figures.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "17.205",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Evaluate the numerator.",
+                  "working": "$4.5^2 - 3.2 = 20.25 - 3.2 = 17.05$\n$\\sqrt{17.05} \\approx 4.12916...$",
+                  "reasoning": "Calculate the term inside the root first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the denominator and divide.",
+                  "working": "$2.4 \\times 10^{-1} = 0.24$\n$\\frac{4.12916...}{0.24} = 17.20485...$",
+                  "reasoning": "Perform the division using the calculator value."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Round to 5 significant figures.",
+                  "working": "17.20485... rounds to 17.205",
+                  "reasoning": "The 6th digit is 8, so round up the 5th digit."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write your answer to part (a) in standard form.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1.7205 \\times 10^{1}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert to standard form $A \\times 10^n$.",
+                  "working": "$17.205 = 1.7205 \\times 10^1$",
+                  "reasoning": "Move the decimal one place to the left, so the power is positive 1."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Calculation and Standard Form"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N1-gemini-1911-p1-102",
         "topicID": "N1",
@@ -2474,6 +3751,326 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Indices"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2111142454-p1-q102",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $(\\frac{2a^{-2}}{b})^3 \\times (4ab^2)^{-1}$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{2}{a^7 b^5}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the power of 3 in the first term.",
+                  "working": "$(\\frac{2a^{-2}}{b})^3 = \\frac{2^3 a^{-6}}{b^3} = \\frac{8a^{-6}}{b^3}$",
+                  "reasoning": "Apply $(xy)^n = x^n y^n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the negative power in the second term.",
+                  "working": "$(4ab^2)^{-1} = 4^{-1} a^{-1} b^{-2} = \\frac{1}{4} a^{-1} b^{-2}$",
+                  "reasoning": "Apply negative index law."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply the two terms together.",
+                  "working": "$\\frac{8a^{-6}}{b^3} \\times \\frac{a^{-1} b^{-2}}{4} = \\frac{8}{4} \\times a^{-6-1} \\times b^{-3-2}$",
+                  "reasoning": "Group coefficients and add indices of like bases."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the result.",
+                  "working": "$2 a^{-7} b^{-5} = \\frac{2}{a^7 b^5}$",
+                  "reasoning": "Convert negative indices to positive indices in the denominator."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the integer $n$ such that $2^{n+1} \\div 8 = \\frac{1}{\\sqrt{2}}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$n = 1.5$ or $\\frac{3}{2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all terms with a base of 2.",
+                  "working": "$8 = 2^3$ \\\\ $\\frac{1}{\\sqrt{2}} = \\frac{1}{2^{0.5}} = 2^{-0.5}$",
+                  "reasoning": "Standardize bases to solve exponential equations."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rewrite the equation with base 2.",
+                  "working": "$2^{n+1} \\div 2^3 = 2^{-0.5}$",
+                  "reasoning": "Substitute the base 2 forms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the LHS using index laws.",
+                  "working": "$2^{(n+1) - 3} = 2^{n-2}$",
+                  "reasoning": "Division of indices implies subtraction: $a^x \\div a^y = a^{x-y}$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Equate indices and solve.",
+                  "working": "$n - 2 = -0.5 \\\\ n = 1.5$",
+                  "reasoning": "If bases are equal, exponents are equal."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Indices"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2111145943-p1-q102",
+        "topicID": "N1",
+        "stem": "A runner completes a race. The distance is 400 metres, correct to the nearest 10 metres. The time taken is 50 seconds, correct to the nearest second.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the greatest possible average speed of the runner.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "8.18 m/s (3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the bounds for distance and time.",
+                  "working": "Distance (nearest 10m): Error $\\pm 5$. Upper Bound = 405 m.\nTime (nearest 1s): Error $\\pm 0.5$. Lower Bound = 49.5 s.",
+                  "reasoning": "To maximize speed ($S = \\frac{D}{T}$), we need the maximum Distance and minimum Time."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the greatest average speed.",
+                  "working": "Max Speed = $\\frac{405}{49.5}$",
+                  "reasoning": "Substitute the bounds into the speed formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute and round the answer.",
+                  "working": "$405 \\div 49.5 = 8.1818... \\approx 8.18$",
+                  "reasoning": "Provide the answer to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Speed and Error Bounds"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2111153547-p1-q102",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $(3.2 \\times 10^5) - (5.0 \\times 10^4)$, giving your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2.7 \\times 10^5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the numbers to have the same power of 10.",
+                  "working": "$5.0 \\times 10^4 = 0.5 \\times 10^5$",
+                  "reasoning": "To add or subtract in standard form, the exponents must match."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the subtraction.",
+                  "working": "$(3.2 - 0.5) \\times 10^5 = 2.7 \\times 10^5$",
+                  "reasoning": "Subtract the coefficients while keeping the base power constant."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the equation $3^{x} \\times 9 = 27^{2x-1}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all terms with a base of 3.",
+                  "working": "$9 = 3^2$ \n $27 = 3^3$",
+                  "reasoning": "Common bases allow for equating indices."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rewrite the equation using base 3.",
+                  "working": "$3^x \\times 3^2 = (3^3)^{2x-1}$ \n $3^{x+2} = 3^{3(2x-1)}$",
+                  "reasoning": "Apply index laws: $a^m \\times a^n = a^{m+n}$ and $(a^m)^n = a^{mn}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the indices and solve for $x$.",
+                  "working": "$x + 2 = 6x - 3$ \n $5 = 5x$ \n $x = 1$",
+                  "reasoning": "Linear algebra solution."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Standard Form and Indices"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2111185018-p1-q102",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Written as the product of its prime factors, $P = 2^3 \\times 3^2 \\times 5$ and $Q = 2^2 \\times 3^3 \\times 7$. Find the Highest Common Factor (HCF) of $P$ and $Q$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "72",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify common prime factors with the lowest index.",
+                  "working": "Common bases: 2 and 3.\nLowest power of 2 is $2^2$.\nLowest power of 3 is $3^2$.",
+                  "reasoning": "HCF requires factors present in both numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the product.",
+                  "working": "$2^2 \\times 3^2 = 4 \\times 9 = 72$",
+                  "reasoning": "Evaluate the expression."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the smallest integer $k$ such that $Pk$ is a perfect cube.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "75",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze indices of $P$ for multiples of 3.",
+                  "working": "$P = 2^3 \\times 3^2 \\times 5^1$\nFor a perfect cube, indices must be multiples of 3.",
+                  "reasoning": "Perfect cubes have indices like 3, 6, 9, etc."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine missing factors.",
+                  "working": "$2^3$ is a multiple of 3 (good).\n$3^2$ needs $3^1$ to become $3^3$.\n$5^1$ needs $5^2$ to become $5^3$.",
+                  "reasoning": "Find what is needed to reach the next multiple of 3."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $k$.",
+                  "working": "$k = 3^1 \\times 5^2 = 3 \\times 25 = 75$",
+                  "reasoning": "Multiply the missing factors."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Prime Factors and HCF"
+      },
+      {
+        "questionNumber": 103,
+        "questionId": "N1-gemini-2111185018-p1-q103",
+        "topicID": "N1",
+        "stem": "Simplify.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$\\frac{27x^5}{(3x)^2}$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$3x^3$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the denominator.",
+                  "working": "$(3x)^2 = 3^2 x^2 = 9x^2$",
+                  "reasoning": "Apply the power to both the coefficient and the variable."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide coefficients and variables.",
+                  "working": "$\\frac{27}{9} = 3$\n$\\frac{x^5}{x^2} = x^{5-2} = x^3$",
+                  "reasoning": "Simplify the fraction."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the equation $5^{x+1} = 125 \\times 25^x$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x = -2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all terms with base 5.",
+                  "working": "$125 = 5^3$\n$25^x = (5^2)^x = 5^{2x}$",
+                  "reasoning": "Common base is required to equate indices."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the RHS.",
+                  "working": "$5^{x+1} = 5^3 \\times 5^{2x}$\n$5^{x+1} = 5^{3+2x}$",
+                  "reasoning": "Multiplication law: add the exponents."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate exponents and solve.",
+                  "working": "$x + 1 = 3 + 2x$\n$1 - 3 = 2x - x$\n$-2 = x$",
+                  "reasoning": "Solve the linear equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Indices and Exponential Equations"
       }
     ],
     "Paper 2": [
@@ -2764,6 +4361,153 @@
         "totalMarks": 9,
         "paper": "Paper 2",
         "title": "Standard Form and Scales"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "N1-tkgs-2024-p2-q9",
+        "topicID": "N1",
+        "stem": "A factory prints posters for corporate events. The prices of printing posters of different sizes are listed below:",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Type of banners",
+            "Size in inches",
+            "Prices (per copy)",
+            "Additional cost"
+          ],
+          "rows": [
+            [
+              "Bulletin poster",
+              "$11\\times17$",
+              "\\$2.00",
+              "5% of the total cost if printing a total area of more than 120 m²"
+            ],
+            [
+              "Mini poster",
+              "$12\\times18$",
+              "\\$2.50",
+              ""
+            ],
+            [
+              "Medium poster",
+              "$18\\times24$",
+              "\\$3.50",
+              ""
+            ],
+            [
+              "Large poster",
+              "$24\\times36$",
+              "\\$5.00",
+              ""
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that 1 inch $=2.54$ cm, find the area of a bulletin poster ($11\\times17$ inches) in $m^{2}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.121 $m^2$ (to 3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the dimensions from inches to meters.",
+                  "working": "1 inch = 2.54 cm = 0.0254 m.\nWidth = $11 \\times 0.0254 = 0.2794$ m\nHeight = $17 \\times 0.0254 = 0.4318$ m",
+                  "reasoning": "It is often easier to convert linear dimensions before calculating area to avoid conversion errors with square units."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the area.",
+                  "working": "Area = $0.2794 \\times 0.4318 = 0.12064492$ $m^2$",
+                  "reasoning": "Area of rectangle = width $\\times$ height."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "$\\approx 0.121$ $m^2$",
+                  "reasoning": "Standard O-level precision requirement."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Mr Tan wants to print 1200 bulletin posters for an event. Calculate how much does it cost. (Cost details: Bulletin poster \\$2.00. Additional 5% if total area > 120 m2)",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2520",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total area of 1200 posters to check the surcharge condition.",
+                  "working": "Total Area = $1200 \\times 0.120645$ (using unrounded value) $= 144.774$ $m^2$.",
+                  "reasoning": "We must check if the area exceeds $120 m^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the base cost.",
+                  "working": "Base Cost = $1200 \\times 2.00 = \\$2400$.",
+                  "reasoning": "Quantity multiplied by unit price."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the surcharge since area > 120.",
+                  "working": "Since $144.774 > 120$, add 5%.\nTotal Cost = $2400 \\times 1.05 = \\$2520$.",
+                  "reasoning": "Adding 5% is equivalent to multiplying by 1.05."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The factory uses 2 printers to print Mr Tan's order for an entire day. The older printer takes 15 seconds more to print one bulletin poster compared to the newer printer and the rates of printing of the 2 printers are constant throughout the day. An operator of the printers claims that the older printer needs servicing. Do you agree? Justify your answers with clear working. \n(Guidelines: \nPrinter operates 9am-4pm. \nCooled 30mins after every 2h. \nNeeds servicing if rate < 60 $m^2$/day)",
+            "marks": 7,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Yes, I agree. The older printer's rate is approx 57.9 $m^2$/day, which is less than 60 $m^2$/day.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total effective working time for the printers.",
+                  "working": "Operating hours: 9am to 4pm = 7 hours.\nCooling breaks: After 2h (11am-11:30am) and after another 2h of work (1:30pm-2:00pm). The next 2h block ends at 4pm.\nWork intervals: 9-11 (2h), 11:30-1:30 (2h), 2:00-4:00 (2h).\nTotal work time = 6 hours = 21600 seconds.",
+                  "reasoning": "We must deduct cooling time to find actual printing time."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Formulate an equation for the time taken per poster.",
+                  "working": "Let $t$ be the time (in seconds) for the newer printer to print one poster.\nOlder printer time = $t + 15$.\nRate of New = $\\frac{1}{t}$, Rate of Old = $\\frac{1}{t+15}$.\nTotal posters printed = 1200.\nEquation: $21600(\\frac{1}{t} + \\frac{1}{t+15}) = 1200$.",
+                  "reasoning": "Total Time $\\times$ Combined Rate = Total Output."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $t$.",
+                  "working": "Divide by 1200: $18(\\frac{1}{t} + \\frac{1}{t+15}) = 1$\n$18(\\frac{t+15+t}{t(t+15)}) = 1$\n$18(2t+15) = t^2 + 15t$\n$36t + 270 = t^2 + 15t$\n$t^2 - 21t - 270 = 0$\n$(t-30)(t+9) = 0$\n$t = 30$ (since $t>0$).",
+                  "reasoning": "Solving the quadratic equation to find the time per poster."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the older printer's rate in $m^2$/day.",
+                  "working": "Time per poster for older printer = $30 + 15 = 45$ seconds.\nPosters per day (in 21600s) = $\\frac{21600}{45} = 480$ posters.\nArea per poster $\\approx 0.120645 m^2$ (from part a).\nTotal Area/day = $480 \\times 0.120645 = 57.9096 m^2$.",
+                  "reasoning": "Convert the production rate from posters/day to area/day to match the guideline."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Compare with the servicing guideline and conclude.",
+                  "working": "$57.9 m^2 < 60 m^2$. Therefore, the older printer needs servicing.",
+                  "reasoning": "The calculated rate falls below the threshold provided in the guidelines."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Printing Costs and Efficiency"
       },
       {
         "questionNumber": 10,
@@ -3250,6 +4994,224 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "LCM Word Problem"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111145943-p2-q101",
+        "topicID": "N1",
+        "stem": "A rectangular floor measures 450 cm by 315 cm. It is to be covered completely with identical square tiles.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the length of the side of the largest possible square tile.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "45 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the problem as finding the Highest Common Factor (HCF).",
+                  "working": "We need a number that divides both 450 and 315 exactly.",
+                  "reasoning": "For the tiles to fit exactly without cutting, the side length must be a factor of both dimensions. 'Largest' implies HCF."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find prime factors of 450 and 315.",
+                  "working": "$450 = 45 \\times 10 = 9 \\times 5 \\times 2 \\times 5 = 2 \\times 3^2 \\times 5^2$\n$315 = 5 \\times 63 = 5 \\times 9 \\times 7 = 3^2 \\times 5 \\times 7$",
+                  "reasoning": "Prime factorization helps isolate common factors."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate HCF.",
+                  "working": "Common factors: $3^2$ and $5^1$.\nHCF = $9 \\times 5 = 45$.",
+                  "reasoning": "Multiply the lowest power of common primes."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the number of such tiles needed to cover the floor.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "70",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the area of the floor and the area of one tile, or divide dimensions.",
+                  "working": "Tiles along length = $450 \\div 45 = 10$\nTiles along width = $315 \\div 45 = 7$",
+                  "reasoning": "Find how many tiles fit along each edge."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the number of tiles along the length and width.",
+                  "working": "$10 \\times 7 = 70$",
+                  "reasoning": "Total tiles = (Rows) $\\times$ (Columns)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The total mass of the tiles is $1.575 \\times 10^5$ grams. Calculate the mass of one tile in kilograms, giving your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2.25 \\times 10^0$ kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert total mass to kilograms.",
+                  "working": "$1.575 \\times 10^5$ g $= 1.575 \\times 10^2$ kg (since $1$ kg $= 1000$ g).",
+                  "reasoning": "Divide by 1000 (or $10^3$) to convert grams to kg."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide total mass by the number of tiles.",
+                  "working": "$\\frac{1.575 \\times 10^2}{70}$",
+                  "reasoning": "Average mass = Total Mass / Count."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate and format.",
+                  "working": "$157.5 \\div 70 = 2.25$\nStandard form: $2.25 \\times 10^0$",
+                  "reasoning": "Ensure the result is in the form $A \\times 10^n$ where $1 \\le A < 10$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Tiling and Standard Form"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111153547-p2-q101",
+        "topicID": "N1",
+        "stem": "A rectangular garden has a length of 40 m and a width of 25 m, both measured correct to the nearest meter.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the least possible perimeter of the garden.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "128 m",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the lower bounds of the dimensions.",
+                  "working": "Measurement unit = 1m. Error = 0.5m. \n Lower bound Length ($L_{min}$) = $40 - 0.5 = 39.5$ m \n Lower bound Width ($W_{min}$) = $25 - 0.5 = 24.5$ m",
+                  "reasoning": "Least perimeter requires the smallest possible dimensions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the perimeter using the lower bounds.",
+                  "working": "Perimeter $= 2(L_{min} + W_{min})$ \n $= 2(39.5 + 24.5)$ \n $= 2(64) = 128$",
+                  "reasoning": "Formula for perimeter of a rectangle."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the greatest possible area of the garden.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1032.75 $m^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the upper bounds of the dimensions.",
+                  "working": "Upper bound Length ($L_{max}$) = $40 + 0.5 = 40.5$ m \n Upper bound Width ($W_{max}$) = $25 + 0.5 = 25.5$ m",
+                  "reasoning": "Greatest area requires the largest possible dimensions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the area.",
+                  "working": "Area $= L_{max} \\times W_{max}$ \n $= 40.5 \\times 25.5 = 1032.75$",
+                  "reasoning": "Multiplication of the upper bounds."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Bounds and Estimation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111185018-p2-q101",
+        "topicID": "N1",
+        "stem": "Light travels at a speed of approximately $3.0 \\times 10^8$ metres per second.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the distance travelled by light in 500 seconds. Give your answer in kilometres in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1.5 \\times 10^8$ km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate distance in metres.",
+                  "working": "Distance = Speed $\\times$ Time\n$D = (3.0 \\times 10^8) \\times 500 = 1500 \\times 10^8 = 1.5 \\times 10^{11}$ metres",
+                  "reasoning": "Use the standard physics formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert metres to kilometres.",
+                  "working": "$1 \\text{ km} = 1000 \\text{ m} = 10^3 \\text{ m}$\n$1.5 \\times 10^{11} \\div 10^3 = 1.5 \\times 10^{11-3} = 1.5 \\times 10^8$",
+                  "reasoning": "Divide by 1000 to convert m to km."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "One light year is the distance light travels in one year (365 days). Calculate the value of one light year in kilometres. Give your answer in standard form correct to 3 significant figures.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$9.46 \\times 10^{12}$ km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate seconds in one year.",
+                  "working": "$365 \\times 24 \\times 60 \\times 60 = 31,536,000$ seconds",
+                  "reasoning": "Days $\\to$ Hours $\\to$ Minutes $\\to$ Seconds."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate distance in metres.",
+                  "working": "$3.0 \\times 10^8 \\times 31,536,000 = 9.4608 \\times 10^{15}$ metres",
+                  "reasoning": "Speed $\\times$ Time."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert to km and round.",
+                  "working": "$9.4608 \\times 10^{15} \\div 10^3 = 9.4608 \\times 10^{12}$ km\nRound to 3 s.f.: $9.46 \\times 10^{12}$",
+                  "reasoning": "Convert units and apply rounding rules."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Standard Form Application"
       },
       {
         "questionNumber": 102,

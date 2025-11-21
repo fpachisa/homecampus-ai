@@ -4,72 +4,54 @@
     "Paper 1": [
       {
         "questionNumber": 101,
-        "questionId": "N3-gemini-2411121650-p1-q101",
+        "questionId": "N3-gemini-2111185018-p1-q101",
         "topicID": "N3",
-        "stem": "James invests a sum of money in a savings account.",
+        "stem": "The exchange rate between Singapore dollars (S\\$) and Japanese Yen (¥) is S\\$1 = ¥108.50.",
         "hasDiagram": false,
         "diagramDescription": null,
         "parts": [
           {
             "partId": "a",
-            "questionText": "Calculate the simple interest earned on $4500 at a rate of 3.5% per annum for 4 years.",
+            "questionText": "Calculate the amount of Japanese Yen received for S$600.",
             "marks": 1,
             "answerType": "numerical",
             "solution": {
-              "finalAnswer": "$630",
+              "finalAnswer": "¥65 100",
               "stepByStep": [
                 {
                   "step": 1,
-                  "explanation": "Identify the principal ($P$), rate ($R$), and time ($T$).",
-                  "working": "$P = 4500$, $R = 3.5$, $T = 4$",
-                  "reasoning": "Recall the formula for simple interest: $I = \\frac{PRT}{100}$."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Substitute the values into the formula.",
-                  "working": "$I = \\frac{4500 \\times 3.5 \\times 4}{100}$",
-                  "reasoning": "Perform the multiplication."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Calculate the final value.",
-                  "working": "$I = 45 \\times 14 = 630$",
-                  "reasoning": "The simple interest is $630."
+                  "explanation": "Multiply the amount in Singapore dollars by the exchange rate to get the value in Yen.",
+                  "working": "$600 \\times 108.50 = 65 100$",
+                  "reasoning": "Since S$1 is equivalent to ¥108.50, S$600 will be 600 times that amount."
                 }
               ]
             }
           },
           {
             "partId": "b",
-            "questionText": "James invests another $4500 in an account paying compound interest at a rate of 3.5% per annum. Calculate the total amount in this account after 4 years. Give your answer correct to the nearest cent.",
+            "questionText": "Mr. Tan spent ¥45 000 and converted the remaining Yen back to Singapore dollars at the same rate. Calculate the amount of Singapore dollars he received, correct to the nearest cent.",
             "marks": 2,
             "answerType": "numerical",
             "solution": {
-              "finalAnswer": "$5163.86",
+              "finalAnswer": "S$185.25",
               "stepByStep": [
                 {
                   "step": 1,
-                  "explanation": "Identify the formula for compound interest.",
-                  "working": "$A = P(1 + \\frac{r}{100})^n$",
-                  "reasoning": "Here $P=4500$, $r=3.5$, and $n=4$."
+                  "explanation": "Calculate the remaining amount of Yen.",
+                  "working": "$65 100 - 45 000 = 20 100$",
+                  "reasoning": "Subtract the amount spent from the total Yen obtained in part (a)."
                 },
                 {
                   "step": 2,
-                  "explanation": "Substitute the values and calculate.",
-                  "working": "$A = 4500(1 + \\frac{3.5}{100})^4$\n$A = 4500(1.035)^4$",
-                  "reasoning": "Calculate the power first, then multiply by the principal."
+                  "explanation": "Convert the remaining Yen back to Singapore dollars by dividing by the exchange rate.",
+                  "working": "$\\frac{20 100}{108.50} \\approx 185.2534...$",
+                  "reasoning": "To convert from the foreign currency back to the home currency, divide by the exchange rate."
                 },
                 {
                   "step": 3,
-                  "explanation": "Compute the value.",
-                  "working": "$A \\approx 4500(1.14752...)$\n$A \\approx 5163.855...$",
-                  "reasoning": "Use a calculator for precision."
-                },
-                {
-                  "step": 4,
-                  "explanation": "Round to the nearest cent.",
-                  "working": "$5163.855... \\approx 5163.86$",
-                  "reasoning": "Since the third decimal digit is 5, round up the second digit."
+                  "explanation": "Round the answer to the nearest cent (2 decimal places).",
+                  "working": "$185.2534... \\approx 185.25$",
+                  "reasoning": "Currency is typically rounded to two decimal places."
                 }
               ]
             }
@@ -77,360 +59,130 @@
         ],
         "totalMarks": 3,
         "paper": "Paper 1",
-        "title": "Simple and Compound Interest"
-      },
-      {
-        "questionNumber": 102,
-        "questionId": "N3-gemini-2411121650-p1-q102",
-        "topicID": "N3",
-        "stem": "A shop sells a laptop for $1605. This price includes a Goods and Services Tax (GST) of 7%.",
-        "hasDiagram": false,
-        "diagramDescription": null,
-        "parts": [
-          {
-            "partId": "a",
-            "questionText": "Calculate the price of the laptop before GST was added.",
-            "marks": 2,
-            "answerType": "numerical",
-            "solution": {
-              "finalAnswer": "$1500",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Understand the relationship between the final price and the original price.",
-                  "working": "Original Price + 7% Tax = 107% of Original Price",
-                  "reasoning": "The selling price represents 107% of the pre-tax value."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Set up the equation.",
-                  "working": "$107\\% = 1605$\n$1\\% = \\frac{1605}{107} = 15$",
-                  "reasoning": "Find the value of 1%."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Calculate the 100% value.",
-                  "working": "$100\\% = 15 \\times 100 = 1500$",
-                  "reasoning": "The price before GST is $1500."
-                }
-              ]
-            }
-          }
-        ],
-        "totalMarks": 2,
-        "paper": "Paper 1",
-        "title": "Reverse Percentage (GST)"
+        "title": "Exchange Rates"
       }
     ],
     "Paper 2": [
       {
         "questionNumber": 2,
-        "questionId": "N3-navalbase-2024-p2-q2",
+        "questionId": "N3-woodgrove-2024-p2-q2",
         "topicID": "N3",
-        "stem": "(a) Cheryl wants to open a fixed deposit account with either Bank H or Bank L for a period of 4 years.",
-        "questionTable": {
-          "type": "data",
-          "headers": [
-            "Bank H",
-            "Bank L"
-          ],
-          "rows": [
-            [
-              "Fixed Deposit Account",
-              "Fixed Deposit Account"
-            ],
-            [
-              "• Minimum deposit of $10 000.",
-              "• No minimum amount required."
-            ],
-            [
-              "• For the first $10 000, earn 0.05% simple interest per annum.",
-              "• Compound interest at the rate of 0.8% per annum."
-            ],
-            [
-              "• For the subsequent amount, earn 0.95% simple interest per annum.",
-              ""
-            ]
-          ]
-        },
+        "stem": "(a) Timmy wants to invest a sum of money in one of the following investment plans.\nPlan A: Pays 2% simple interest per year\nPlan B: Pays 2% compound interest per year",
         "hasDiagram": false,
         "diagramDescription": null,
         "parts": [
           {
-            "partId": "a_i",
-            "questionText": "Cheryl deposited $30 000 into Bank H. Calculate the total amount in her account after 4 years.",
-            "marks": 3,
-            "answerType": "numerical",
-            "solution": {
-              "finalAnswer": "$30 780",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Calculate interest on the first $10,000 using simple interest.",
-                  "working": "$I_1 = \\frac{10000 \\times 0.05 \\times 4}{100} = 20$",
-                  "reasoning": "The rate is 0.05% for the first tier."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Calculate the remaining amount and the interest earned on it.",
-                  "working": "Remaining amount = $30000 - 10000 = 20000$\n$I_2 = \\frac{20000 \\times 0.95 \\times 4}{100} = 760$",
-                  "reasoning": "The rate is 0.95% for the subsequent amount."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Calculate total interest and final amount.",
-                  "working": "Total Interest = $20 + 760 = 780$\nTotal Amount = $30000 + 780 = 30780$",
-                  "reasoning": "Add the principal and total interest."
-                }
-              ]
-            }
-          },
-          {
-            "partId": "a_ii",
-            "questionText": "Cheryl claimed that Bank H offers a better deal than Bank L. Do you agree with Cheryl's claim? Justify your conclusion with clear calculations.",
-            "marks": 3,
+            "partId": "a",
+            "questionText": "Which investment plan is the better choice for Timmy? Explain your answer.",
+            "marks": 1,
             "answerType": "proof",
             "solution": {
-              "finalAnswer": "No, I do not agree. Bank L yields $30 971.58 which is higher than Bank H.",
+              "finalAnswer": "Plan B is the better choice. Compound interest yields a higher return than simple interest over the same period because interest is earned on the accumulated interest from previous years.",
               "stepByStep": [
                 {
                   "step": 1,
-                  "explanation": "Calculate the total amount for Bank L using the compound interest formula.",
-                  "working": "$A = P(1 + \\frac{r}{100})^n$\n$A = 30000(1 + \\frac{0.8}{100})^4$",
-                  "reasoning": "Bank L offers 0.8% compound interest per annum."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Compute the value for Bank L.",
-                  "working": "$A = 30000(1.008)^4 \\approx 30971.58$",
-                  "reasoning": "Using calculator."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Compare the amounts from both banks.",
-                  "working": "Bank H: $30 780$\nBank L: $30 971.58$\n$30 971.58 > 30 780$",
-                  "reasoning": "Compare the result from part (a)(i) with the result for Bank L."
-                },
-                {
-                  "step": 4,
-                  "explanation": "State the conclusion.",
-                  "working": "Since Bank L offers a higher return, Cheryl's claim is incorrect.",
-                  "reasoning": "Justification based on calculation."
-                }
-              ]
-            }
-          },
-          {
-            "partId": "b_i",
-            "questionText": "The exchange rate between Singapore Dollars (S\\$) and Chinese Yuan (CNY) is S\\$1=CNY5.33. The exchange rate between Hong Kong dollars (HK\\$) and Singapore Dollars is HK\\$1=S\\$0.17. Tan is planning a trip to Hong Kong and Guangzhou. He finds these hotel prices on a website: Guangzhou Hotel CNY825, Hong Kong Hotel HK\\$825. By comparing the exchange rates, explain which hotel charges a cheaper rate per night. Show your working clearly.",
-            "marks": 2,
-            "answerType": "proof",
-            "solution": {
-              "finalAnswer": "The Hong Kong hotel is cheaper.",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Convert the Guangzhou hotel price (CNY) to SGD.",
-                  "working": "Price in SGD = $\\frac{825}{5.33} \\approx 154.78$",
-                  "reasoning": "Since $S$1 = CNY 5.33$, divide CNY amount by 5.33."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Convert the Hong Kong hotel price (HKD) to SGD.",
-                  "working": "Price in SGD = $825 \\times 0.17 = 140.25$",
-                  "reasoning": "Since $HK$1 = S$0.17$, multiply HKD amount by 0.17."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Compare the prices in SGD.",
-                  "working": "$140.25 < 154.78$",
-                  "reasoning": "The HK hotel costs less in Singapore dollars."
-                }
-              ]
-            }
-          },
-          {
-            "partId": "b_ii",
-            "questionText": "Tan books 4 nights in the Hong Kong hotel and 2 nights in the Guangzhou hotel. He pays using his credit card. The credit card company converts the prices to Singapore dollars and charges a fee of $k$% for the currency conversion. Given that the total amount Tan pays for the two hotels, including the credit card fee, is \\$890, find the value of $k$.",
-            "marks": 4,
-            "answerType": "numerical",
-            "solution": {
-              "finalAnswer": "2.23",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Calculate total cost of Hong Kong stay in SGD.",
-                  "working": "$4 \\times 140.25 = 561$",
-                  "reasoning": "4 nights at the SGD rate calculated in b(i)."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Calculate total cost of Guangzhou stay in SGD.",
-                  "working": "$2 \\times \\frac{825}{5.33} \\approx 309.568$",
-                  "reasoning": "2 nights at the SGD rate calculated in b(i). Keep precision."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Calculate total base cost in SGD.",
-                  "working": "$561 + 309.568 = 870.568$",
-                  "reasoning": "Sum of both hotel costs before fees."
-                },
-                {
-                  "step": 4,
-                  "explanation": "Form an equation including the percentage fee $k$.",
-                  "working": "$870.568 \\times (1 + \\frac{k}{100}) = 890$",
-                  "reasoning": "The base cost multiplied by the multiplier $(100+k)\\%$ equals the final amount paid."
-                },
-                {
-                  "step": 5,
-                  "explanation": "Solve for $k$.",
-                  "working": "$1 + \\frac{k}{100} = \\frac{890}{870.568} \\approx 1.02232$\n$\\frac{k}{100} = 0.02232$\n$k = 2.232...$",
-                  "reasoning": "Rearrange to isolate $k$."
-                },
-                {
-                  "step": 6,
-                  "explanation": "Round to 3 significant figures.",
-                  "working": "$k = 2.23$",
-                  "reasoning": "Standard accuracy for O-level answers."
-                }
-              ]
-            }
-          }
-        ],
-        "totalMarks": 12,
-        "paper": "Paper 2",
-        "title": "Financial Maths: Interest and Exchange Rates"
-      },
-      {
-        "questionNumber": 101,
-        "questionId": "N3-gemini-2411121650-p2-q101",
-        "topicID": "N3",
-        "stem": "(a) Mr. Lee plans to invest \\$50 000 for 3 years. He is considering two different investment plans, Plan A and Plan B.",
-        "questionTable": {
-          "type": "data",
-          "headers": [
-            "Plan A",
-            "Plan B"
-          ],
-          "rows": [
-            [
-              "**Tiered Interest**",
-              "**Compound Interest**"
-            ],
-            [
-              "• First $20 000: 1.5% simple interest per annum.",
-              "• 1.8% per annum compounded yearly."
-            ],
-            [
-              "• Remaining amount: 2.5% simple interest per annum.",
-              ""
-            ]
-          ]
-        },
-        "hasDiagram": false,
-        "diagramDescription": null,
-        "parts": [
-          {
-            "partId": "a_i",
-            "questionText": "Calculate the total interest Mr. Lee will earn if he chooses Plan A.",
-            "marks": 3,
-            "answerType": "numerical",
-            "solution": {
-              "finalAnswer": "$3150",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Calculate interest on the first $20,000 for 3 years.",
-                  "working": "$I_1 = \\frac{20000 \\times 1.5 \\times 3}{100} = 900$",
-                  "reasoning": "Simple interest formula $PRT/100$ on the first tier."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Calculate the remaining principal and interest on it.",
-                  "working": "Remainder = $50000 - 20000 = 30000$\n$I_2 = \\frac{30000 \\times 2.5 \\times 3}{100} = 2250$",
-                  "reasoning": "Apply the higher rate to the remaining balance."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Sum the interest components.",
-                  "working": "Total Interest = $900 + 2250 = 3150$",
-                  "reasoning": "Total interest is the sum of interest from both tiers."
-                }
-              ]
-            }
-          },
-          {
-            "partId": "a_ii",
-            "questionText": "Determine which plan gives a better return on his investment. Show your working clearly.",
-            "marks": 3,
-            "answerType": "proof",
-            "solution": {
-              "finalAnswer": "Plan A gives a better return.",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Calculate the total amount for Plan B.",
-                  "working": "$A = 50000(1 + \\frac{1.8}{100})^3$\n$A = 50000(1.018)^3$",
-                  "reasoning": "Use compound interest formula."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Compute the value for Plan B.",
-                  "working": "$A \\approx 50000(1.05497...)$\n$A \\approx 52748.86$",
-                  "reasoning": "Total amount after 3 years."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Calculate the total interest for Plan B to compare with Plan A's interest.",
-                  "working": "Interest B = $52748.86 - 50000 = 2748.86$",
-                  "reasoning": "Interest = Amount - Principal."
-                },
-                {
-                  "step": 4,
-                  "explanation": "Compare Plan A and Plan B.",
-                  "working": "Plan A Interest: $3150$\nPlan B Interest: $2748.86$\n$3150 > 2748.86$",
-                  "reasoning": "Compare the numerical values."
-                },
-                {
-                  "step": 5,
-                  "explanation": "Conclusion.",
-                  "working": "Plan A provides a higher return.",
-                  "reasoning": "State the final decision."
+                  "explanation": "Compare the nature of Simple vs Compound interest.",
+                  "working": "N/A",
+                  "reasoning": "For the same rate and principal, compound interest always results in a higher total amount after the first year because the interest is added to the principal for the next calculation."
                 }
               ]
             }
           },
           {
             "partId": "b",
-            "questionText": "Mr. Lee also buys a car from the UK for £24 000 (British Pounds). The exchange rate is £1 = S\\$1.72. He sells the car in Singapore for S\\$48 000. Calculate his percentage profit on the cost price. Give your answer correct to 1 decimal place.",
-            "marks": 3,
+            "questionText": "Mary deposits $8000 in a savings account at a simple interest rate of 3.5% per year. Calculate the total value of her savings at the end of 12 years.",
+            "marks": 2,
             "answerType": "numerical",
             "solution": {
-              "finalAnswer": "16.3%",
+              "finalAnswer": "$11 360",
               "stepByStep": [
                 {
                   "step": 1,
-                  "explanation": "Convert the cost price to Singapore Dollars.",
-                  "working": "Cost in SGD = $24000 \\times 1.72 = 41280$",
-                  "reasoning": "Multiply the GBP amount by the exchange rate."
+                  "explanation": "Calculate the simple interest earned using the formula $I = Prt$.",
+                  "working": "$I = 8000 \\times \\frac{3.5}{100} \\times 12 = 3360$",
+                  "reasoning": "Substitute Principal ($8000), Rate ($3.5\\%$) and Time ($12$) into the simple interest formula."
                 },
                 {
                   "step": 2,
-                  "explanation": "Calculate the profit in SGD.",
-                  "working": "Profit = Selling Price - Cost Price\nProfit = $48000 - 41280 = 6720$",
-                  "reasoning": "Find the difference between selling price and cost."
+                  "explanation": "Add the interest to the principal to find the total value.",
+                  "working": "$8000 + 3360 = 11 360$",
+                  "reasoning": "Total Amount = Principal + Interest."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Peter invested \\$50 000 in an investment plan from 2010 to 2024. The value of his investment increased by r% at the end of every year. At the end of 2024, the total value of Peter's investment is \\$65 320. Calculate the value of r.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1.93",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the number of years ($n$) for the investment.",
+                  "working": "$n = 2024 - 2010 = 14$ years",
+                  "reasoning": "Calculate the duration between the start and end year."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the compound interest formula $A = P(1 + \\frac{r}{100})^n$.",
+                  "working": "$65 320 = 50 000(1 + \\frac{r}{100})^{14}$",
+                  "reasoning": "Substitute $A=65320$, $P=50000$, and $n=14$."
                 },
                 {
                   "step": 3,
-                  "explanation": "Calculate percentage profit.",
-                  "working": "$\\% \\text{Profit} = \\frac{6720}{41280} \\times 100$",
-                  "reasoning": "Formula: $\\frac{\\text{Profit}}{\\text{Cost Price}} \\times 100$."
+                  "explanation": "Solve for the term with $r$.",
+                  "working": "$(1 + \\frac{r}{100})^{14} = \\frac{65 320}{50 000} = 1.3064$",
+                  "reasoning": "Isolate the power term."
                 },
                 {
                   "step": 4,
-                  "explanation": "Compute and round.",
-                  "working": "$16.279... \\approx 16.3\\%$",
-                  "reasoning": "Round to 1 decimal place as requested."
+                  "explanation": "Take the 14th root and solve for $r$.",
+                  "working": "$1 + \\frac{r}{100} = \\sqrt[14]{1.3064} \\approx 1.01928$\n$\\frac{r}{100} = 0.01928$\n$r = 1.928...$",
+                  "reasoning": "Use the root function to remove the exponent."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "$r \\approx 1.93$",
+                  "reasoning": "Standard O-level rounding for non-exact numerical answers."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "The current exchange rate between Singapore dollars (SGD) and Thailand baht (THB) is given as SGD 1 = THB 27.16. Susan bought a bag while shopping in Thailand. The original price of the bag was THB 56 000 and Susan bought it at a 15% discount. Susan paid for the bag using her credit card which charged her an additional 2% fee for overseas transaction. Calculate the total amount, including credit card fee, that Susan had to pay in Singapore dollars (SGD). Correct your answer to the nearest cent.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1787.63",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the discounted price in THB.",
+                  "working": "$56 000 \\times (1 - 0.15) = 56 000 \\times 0.85 = 47 600$ THB",
+                  "reasoning": "A 15% discount means paying 85% of the original price."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert the discounted price to SGD.",
+                  "working": "$\\frac{47 600}{27.16} \\approx 1752.5773...$ SGD",
+                  "reasoning": "Divide the foreign currency amount by the exchange rate to get SGD."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final amount including the 2% credit card fee.",
+                  "working": "$1752.5773... \\times 1.02 \\approx 1787.6288...$",
+                  "reasoning": "The fee is an increase of 2%, so multiply by 1.02."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to the nearest cent.",
+                  "working": "$1787.63$",
+                  "reasoning": "Round to 2 decimal places for currency."
                 }
               ]
             }
@@ -438,7 +190,154 @@
         ],
         "totalMarks": 9,
         "paper": "Paper 2",
-        "title": "Investment Comparison and Profit Percentage"
+        "title": "Financial Mathematics"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-2111185018-p2-q101",
+        "topicID": "N3",
+        "stem": "A laptop has a cash price of \\$2400. It can also be bought on hire purchase with a deposit of 15% of the cash price, followed by 24 equal monthly installments of \\$95.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the difference between the hire purchase price and the cash price.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$240",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the deposit amount.",
+                  "working": "$0.15 \\times 2400 = 360$",
+                  "reasoning": "Find 15% of the cash price."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total amount paid for the installments.",
+                  "working": "$24 \\times 95 = 2280$",
+                  "reasoning": "Multiply the monthly installment amount by the number of months."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the total hire purchase price and the difference.",
+                  "working": "Total HP = $360 + 2280 = 2640$\nDifference = $2640 - 2400 = 240$",
+                  "reasoning": "Add deposit to total installments, then subtract the original cash price."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Ali invests a sum of money in a bank that pays compound interest at a rate of 2.5% per annum. After 3 years, he has a total of $4307.56 in the bank. Calculate the initial sum of money Ali invested.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$4000",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the compound interest formula $A = P(1 + \\frac{r}{100})^n$.",
+                  "working": "$4307.56 = P(1 + \\frac{2.5}{100})^3$",
+                  "reasoning": "We know the final amount $A$, rate $r$, and time $n$, and need to find Principal $P$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the bracket.",
+                  "working": "$4307.56 = P(1.025)^3$",
+                  "reasoning": "Convert the percentage to a decimal multiplier."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $P$.",
+                  "working": "$P = \\frac{4307.56}{(1.025)^3}$\n$P = \\frac{4307.56}{1.07689...}$\n$P = 4000$",
+                  "reasoning": "Divide the final amount by the interest factor."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Hire Purchase and Interest"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N3-gemini-2111185018-p2-q102",
+        "topicID": "N3",
+        "stem": "A shopkeeper buys a watch for $450. He wishes to sell it at a price such that after allowing a discount of 10% on the marked price, he still makes a profit of 20% on the cost price.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the selling price required to make the 20% profit.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$540",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the profit amount or multiply cost by 120%.",
+                  "working": "$450 \\times 1.20 = 540$",
+                  "reasoning": "A 20% profit means the selling price is 120% of the cost price."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the marked price of the watch.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$600",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Relate the selling price to the marked price.",
+                  "working": "Selling Price = $90\\%$ of Marked Price\n$540 = 0.90 \\times M$",
+                  "reasoning": "A 10% discount means the customer pays 90% of the marked price."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for the marked price ($M$).",
+                  "working": "$M = \\frac{540}{0.90} = 600$",
+                  "reasoning": "Divide the selling price by 0.90 to find the original marked price."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "The shopkeeper sells another item for $1242, which is inclusive of 8% Goods and Services Tax (GST). Calculate the amount of GST paid to the government.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$92",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the original price before tax.",
+                  "working": "Original Price = $\\frac{1242}{1.08} = 1150$",
+                  "reasoning": "The price inclusive of tax represents 108% of the original price."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the GST amount.",
+                  "working": "$1242 - 1150 = 92$",
+                  "reasoning": "Subtract the pre-tax price from the inclusive price to find the tax component."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Profit, Loss and Tax"
       }
     ]
   }

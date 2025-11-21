@@ -3,50 +3,44 @@
   "questions": {
     "Paper 1": [
       {
-        "questionNumber": 16,
-        "questionId": "N2-navalbase-2024-p1-q16",
+        "questionNumber": 10,
+        "questionId": "N2-woodgrove-2024-p1-q10",
         "topicID": "N2",
-        "stem": "$x$ and $y$ are related such that $x$ is inversely proportional to the square of $y$.",
+        "stem": "Ken divides his monthly salary into daily expenses, spending and saving in the ratio 3:4:5 respectively. Later he decides to spend $1200 more daily the new ratio become 9:8:7.",
         "hasDiagram": false,
         "diagramDescription": null,
         "parts": [
           {
             "partId": "a",
-            "questionText": "If $y$ is increased by 400%, find the percentage change in $x$.",
+            "questionText": "Calculate his monthly salary.",
             "marks": 3,
             "answerType": "numerical",
             "solution": {
-              "finalAnswer": "-96%",
+              "finalAnswer": "$9600",
               "stepByStep": [
                 {
                   "step": 1,
-                  "explanation": "Set up the equation relating $x$ and $y$ using a constant $k$.",
-                  "working": "$x = \\frac{k}{y^2}$",
-                  "reasoning": "Definition of inverse proportion involving a square."
+                  "explanation": "Calculate the total number of units for the original ratio and the new ratio.",
+                  "working": "Original Ratio (Daily : Spending : Saving) = $3 : 4 : 5$\nTotal units = $3 + 4 + 5 = 12$ units\n\nNew Ratio = $9 : 8 : 7$\nTotal units = $9 + 8 + 7 = 24$ units",
+                  "reasoning": "To compare ratios before and after a change, we often look at the total. Since the change is internal (shifting money between categories), the total salary remains constant."
                 },
                 {
                   "step": 2,
-                  "explanation": "Determine the new value of $y$ ($y_{new}$) in terms of the original $y$. An increase of 400% means the new value is the original plus 4 times the original.",
-                  "working": "$y_{new} = y + 400\\% \\text{ of } y$\n$y_{new} = y + 4y = 5y$",
-                  "reasoning": "Converting percentage increase to a multiplier."
+                  "explanation": "Make the total units equal for both ratios to compare them directly.",
+                  "working": "LCM of 12 and 24 is 24.\nMultiply the Original Ratio by 2:\n$3 : 4 : 5 \\xrightarrow{\\times 2} 6 : 8 : 10$\n(Total is now 24 units)",
+                  "reasoning": "By equating the total units, 1 unit in the original ratio now represents the same value as 1 unit in the new ratio."
                 },
                 {
                   "step": 3,
-                  "explanation": "Calculate the new value of $x$ ($x_{new}$) by substituting $y_{new}$ into the equation.",
-                  "working": "$x_{new} = \\frac{k}{(5y)^2} = \\frac{k}{25y^2}$",
-                  "reasoning": "Substitution."
+                  "explanation": "Identify the change in units for 'Daily Expenses' and equate it to the monetary value given.",
+                  "working": "Original Daily Expenses = 6 units\nNew Daily Expenses = 9 units\nIncrease = $9 - 6 = 3$ units\n\nGiven increase = $1200\n$3 \\text{ units} = 1200$",
+                  "reasoning": "The problem states he spends $1200 more daily. We compare the scaled units to find the value of a single unit."
                 },
                 {
                   "step": 4,
-                  "explanation": "Express $x_{new}$ in terms of the original $x$.",
-                  "working": "$x_{new} = \\frac{1}{25} \\left( \\frac{k}{y^2} \\right) = \\frac{1}{25} x$",
-                  "reasoning": "Isolating the original expression for $x$."
-                },
-                {
-                  "step": 5,
-                  "explanation": "Calculate the percentage change.",
-                  "working": "$\\text{Change} = \\frac{x_{new} - x}{x} \\times 100\\%$\n$= \\frac{\\frac{1}{25}x - x}{x} \\times 100\\%$\n$= (\\frac{1}{25} - 1) \times 100\\%$\n$= -\\frac{24}{25} \\times 100\\% = -96\\%$",
-                  "reasoning": "Formula for percentage change: $\\frac{\\text{Final} - \\text{Initial}}{\\text{Initial}} \\times 100$."
+                  "explanation": "Calculate the value of 1 unit and then the total monthly salary.",
+                  "working": "$1 \\text{ unit} = \\frac{1200}{3} = 400$\n\nTotal Salary (24 units) = $24 \\times 400 = 9600$",
+                  "reasoning": "Multiply the unit value by the total number of units representing the salary."
                 }
               ]
             }
@@ -54,153 +48,41 @@
         ],
         "totalMarks": 3,
         "paper": "Paper 1",
-        "title": "Percentage Change in Inverse Proportion"
-      },
-      {
-        "questionNumber": 24,
-        "questionId": "N2-navalbase-2024-p1-q24",
-        "topicID": "N2",
-        "stem": null,
-        "hasDiagram": false,
-        "diagramDescription": null,
-        "parts": [
-          {
-            "partId": "a",
-            "questionText": "Which of the following ratios are equivalent to the ratio $a:b$.\n$\\frac{1}{b}:\\frac{1}{a}$\n$a^{3}:b^{3}$\n$3a:3b$\n$a+1:b+1$",
-            "marks": 2,
-            "answerType": "numerical",
-            "solution": {
-              "finalAnswer": "$\\frac{1}{b}:\\frac{1}{a}$ and $3a:3b$",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Check the first ratio $\\frac{1}{b}:\\frac{1}{a}$ by creating a common denominator.",
-                  "working": "$\\frac{1}{b}:\\frac{1}{a} = \\frac{a}{ab}:\\frac{b}{ab} = a:b$",
-                  "reasoning": "Multiplying both terms by $ab$ eliminates fractions."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Check the second ratio $a^3:b^3$.",
-                  "working": "$a^3:b^3 \\neq a:b$ (unless $a=b$ or $a,b=0,1$)",
-                  "reasoning": "Cubing the terms changes the ratio."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Check the third ratio $3a:3b$.",
-                  "working": "$3a:3b = \\frac{3a}{3}:\\frac{3b}{3} = a:b$",
-                  "reasoning": "Dividing both terms by the common factor 3 simplifies the ratio."
-                },
-                {
-                  "step": 4,
-                  "explanation": "Check the fourth ratio $a+1:b+1$.",
-                  "working": "$a+1:b+1 \\neq a:b$",
-                  "reasoning": "Adding a constant to both terms changes the ratio (e.g., $1:2 \\neq 2:3$)."
-                }
-              ]
-            }
-          },
-          {
-            "partId": "b",
-            "questionText": "John and Sam each have an amount of money. The ratio John's amount: Sam's amount = 6:2. John gives Sam \\$13. The new ratio John's amount: Sam's amount = 2:5. Find how much money John has now.",
-            "marks": 4,
-            "answerType": "numerical",
-            "solution": {
-              "finalAnswer": "$8",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Simplify the initial ratio and define variables for the initial amounts.",
-                  "working": "Initial Ratio $J:S = 6:2 = 3:1$.\nLet John's initial amount be $3u$ and Sam's initial amount be $1u$.",
-                  "reasoning": "Using algebraic units ($u$) makes it easier to track changes."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Express the new amounts after the transfer of money.",
-                  "working": "John gives $13: $J_{new} = 3u - 13$\nSam receives $13: $S_{new} = u + 13$",
-                  "reasoning": "Conservation of total money; one loses, the other gains."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Set up an equation using the new ratio $2:5$.",
-                  "working": "$\\frac{3u - 13}{u + 13} = \\frac{2}{5}$",
-                  "reasoning": "Equating the algebraic ratio to the given numerical ratio."
-                },
-                {
-                  "step": 4,
-                  "explanation": "Solve for $u$.",
-                  "working": "$5(3u - 13) = 2(u + 13)$\n$15u - 65 = 2u + 26$\n$15u - 2u = 26 + 65$\n$13u = 91$\n$u = 7$",
-                  "reasoning": "Cross-multiplication and linear equation solving."
-                },
-                {
-                  "step": 5,
-                  "explanation": "Calculate John's current amount ($J_{new}$).",
-                  "working": "John's current amount = $3u - 13$\n$= 3(7) - 13$\n$= 21 - 13 = 8$",
-                  "reasoning": "Substitute $u$ back into the expression for John's final amount."
-                }
-              ]
-            }
-          }
-        ],
-        "totalMarks": 6,
-        "paper": "Paper 1",
-        "title": "Ratios"
+        "title": "Ratio and Salary"
       },
       {
         "questionNumber": 101,
-        "questionId": "N2-gemini-2111121650-p1-q101",
+        "questionId": "N2-gemini-2111185018-p1-q101",
         "topicID": "N2",
-        "stem": "The force of attraction, $F$ Newtons, between two magnets is inversely proportional to the square of the distance, $d$ cm, between them.",
+        "stem": "A sum of money is shared among Alice, Bernice, and Clarissa in the ratio 4 : 5 : 6. After Bernice gives $60 to Alice, the new ratio of their shares becomes 5 : 4 : 6.",
         "hasDiagram": false,
         "diagramDescription": null,
         "parts": [
           {
             "partId": "a",
-            "questionText": "When the magnets are 4 cm apart, the force is 20 N. Find the formula for $F$ in terms of $d$.",
-            "marks": 2,
-            "answerType": "algebraic",
+            "questionText": "Calculate the total sum of money shared.",
+            "marks": 3,
+            "answerType": "numerical",
             "solution": {
-              "finalAnswer": "$F = \\frac{320}{d^2}$",
+              "finalAnswer": "$900",
               "stepByStep": [
                 {
                   "step": 1,
-                  "explanation": "Write the general proportionality relationship.",
-                  "working": "$F = \\frac{k}{d^2}$",
-                  "reasoning": "Inverse proportion to the square of $d$."
+                  "explanation": "Check if the total number of units has changed.",
+                  "working": "Original Total = $4 + 5 + 6 = 15$ units.\nNew Total = $5 + 4 + 6 = 15$ units.",
+                  "reasoning": "Since money is transferred between people within the group, the total sum remains constant. The totals already match, so no scaling is needed."
                 },
                 {
                   "step": 2,
-                  "explanation": "Substitute the given values ($d=4, F=20$) to find $k$.",
-                  "working": "$20 = \\frac{k}{4^2}$\n$20 = \\frac{k}{16}$\n$k = 20 \\times 16 = 320$",
-                  "reasoning": "Solving for the constant of proportionality."
+                  "explanation": "Identify the change in units for the person giving or receiving money.",
+                  "working": "Alice's share: $4 \\text{ units} \\to 5 \\text{ units}$ (+1 unit).\nBernice's share: $5 \\text{ units} \\to 4 \\text{ units}$ (-1 unit).\n\nChange = 1 unit.",
+                  "reasoning": "We can use either Alice's increase or Bernice's decrease to find the value of one unit."
                 },
                 {
                   "step": 3,
-                  "explanation": "Write the final equation.",
-                  "working": "$F = \\frac{320}{d^2}$",
-                  "reasoning": "Substitute $k$ back into the general equation."
-                }
-              ]
-            }
-          },
-          {
-            "partId": "b",
-            "questionText": "Calculate the force when the distance is reduced to 2 cm.",
-            "marks": 1,
-            "answerType": "numerical",
-            "solution": {
-              "finalAnswer": "80 N",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Substitute $d=2$ into the formula found in part (a).",
-                  "working": "$F = \\frac{320}{2^2} = \\frac{320}{4}$",
-                  "reasoning": "Direct substitution."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Calculate the final value.",
-                  "working": "$F = 80$",
-                  "reasoning": "Arithmetic."
+                  "explanation": "Equate the unit change to the monetary value and solve for the total.",
+                  "working": "$1 \\text{ unit} = \\$60$\nTotal Sum = $15 \\text{ units} \\times 60 = 900$",
+                  "reasoning": "Multiply the value of 1 unit by the total number of units (15)."
                 }
               ]
             }
@@ -208,137 +90,120 @@
         ],
         "totalMarks": 3,
         "paper": "Paper 1",
-        "title": "Inverse Proportion (Force)"
+        "title": "Ratio Transfer"
       },
       {
         "questionNumber": 102,
-        "questionId": "N2-gemini-2111121650-p1-q102",
+        "questionId": "N2-gemini-2111185018-p1-q102",
         "topicID": "N2",
-        "stem": "A map is drawn to a scale of $1 : 25\\,000$.",
+        "stem": "A fruit stall has apples, oranges, and pears in the ratio 7 : 4 : 3. After selling 36 apples, the ratio of apples to oranges to pears becomes 5 : 8 : 6.",
         "hasDiagram": false,
         "diagramDescription": null,
         "parts": [
           {
             "partId": "a",
-            "questionText": "The distance between two schools on the map is 12 cm. Calculate the actual distance between the schools in kilometers.",
-            "marks": 2,
+            "questionText": "Calculate the original number of apples.",
+            "marks": 3,
             "answerType": "numerical",
             "solution": {
-              "finalAnswer": "3 km",
+              "finalAnswer": "56",
               "stepByStep": [
                 {
                   "step": 1,
-                  "explanation": "Convert the map distance to actual distance in cm using the scale.",
-                  "working": "Actual distance = $12 \\times 25\\,000 = 300\\,000 \\text{ cm}$",
-                  "reasoning": "Scale $1:n$ means 1 unit on map = $n$ units in reality."
+                  "explanation": "Identify which quantities remained unchanged.",
+                  "working": "Only apples were sold. The number of oranges and pears remained the same.",
+                  "reasoning": "Since oranges and pears didn't change, their relative ratio should be consistent or scalable between the start and end."
                 },
                 {
                   "step": 2,
-                  "explanation": "Convert cm to km.",
-                  "working": "$300\\,000 \\text{ cm} = 3\\,000 \\text{ m} = 3 \\text{ km}$",
-                  "reasoning": "Divide by 100 to get meters, then by 1000 to get km (or divide by 100,000)."
-                }
-              ]
-            }
-          },
-          {
-            "partId": "b",
-            "questionText": "A forest has an actual area of 4.5 km². Calculate the area of the forest on the map in cm².",
-            "marks": 2,
-            "answerType": "numerical",
-            "solution": {
-              "finalAnswer": "72 cm²",
-              "stepByStep": [
-                {
-                  "step": 1,
-                  "explanation": "Determine the area scale.",
-                  "working": "Linear scale = $1 : 25\\,000$\nConvert linear scale to km: $1 \\text{ cm} : 0.25 \\text{ km}$\nArea scale = $(1 \\text{ cm})^2 : (0.25 \\text{ km})^2$\n$1 \\text{ cm}^2 : 0.0625 \\text{ km}^2$",
-                  "reasoning": "Area scale is the square of the linear scale."
-                },
-                {
-                  "step": 2,
-                  "explanation": "Calculate the map area.",
-                  "working": "Map Area = $\\frac{\\text{Actual Area}}{\\text{Scale Factor}}$\n$= \\frac{4.5}{0.0625}$",
-                  "reasoning": "Using proportion."
+                  "explanation": "Compare the Oranges:Pears ratio in both scenarios and scale if necessary.",
+                  "working": "Original Oranges:Pears = $4:3$\nNew Oranges:Pears = $8:6$\n\nNote that $8:6$ simplifies to $4:3$. To make the units comparable, we must scale the Original ratio so the Orange and Pear parts match the New ratio.\nMultiply Original ($7:4:3$) by 2 $\\to$ $14:8:6$.",
+                  "reasoning": "We need the 'unchanged' parts (Oranges and Pears) to have the same unit values in both ratios to compare the Apples."
                 },
                 {
                   "step": 3,
-                  "explanation": "Final calculation.",
-                  "working": "$4.5 \\div 0.0625 = 72$",
-                  "reasoning": "Arithmetic."
+                  "explanation": "Calculate the change in units for apples.",
+                  "working": "Original Apples (scaled) = 14 units\nNew Apples = 5 units\nDecrease = $14 - 5 = 9$ units",
+                  "reasoning": "The difference in units corresponds to the actual number of apples sold."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for the original number of apples.",
+                  "working": "$9 \\text{ units} = 36$\n$1 \\text{ unit} = 4$\n\nOriginal Apples = $14 \\text{ units} \\times 4 = 56$",
+                  "reasoning": "Use the scaled unit value (14) for the original apples."
                 }
               ]
             }
           }
         ],
-        "totalMarks": 4,
+        "totalMarks": 3,
         "paper": "Paper 1",
-        "title": "Map Scales and Area"
+        "title": "Ratio with One Quantity Changing"
       }
     ],
     "Paper 2": [
       {
         "questionNumber": 101,
-        "questionId": "N2-gemini-2111121650-p2-q101",
+        "questionId": "N2-gemini-2111185018-p2-q101",
         "topicID": "N2",
-        "stem": "A contractor estimates that he needs 8 workers to build a wall in 15 days.",
+        "stem": "In a school sports club, the number of swimmers, runners, and cyclists are in the ratio 6 : 5 : 4.",
         "hasDiagram": false,
         "diagramDescription": null,
         "parts": [
           {
             "partId": "a",
-            "questionText": "Assuming all workers work at the same rate, how many days would it take 5 workers to build the same wall?",
+            "questionText": "There are 18 more swimmers than cyclists. Calculate the total number of students in the club.",
             "marks": 2,
             "answerType": "numerical",
             "solution": {
-              "finalAnswer": "24 days",
+              "finalAnswer": "135",
               "stepByStep": [
                 {
                   "step": 1,
-                  "explanation": "Identify the relationship as inverse proportion.",
-                  "working": "More workers $\\rightarrow$ Less time.\nTotal Man-Days required = $8 \\times 15 = 120 \\text{ man-days}$.",
-                  "reasoning": "The total amount of work is constant."
+                  "explanation": "Find the difference in units between swimmers and cyclists.",
+                  "working": "Swimmers = 6 units, Cyclists = 4 units.\nDifference = $6 - 4 = 2$ units.",
+                  "reasoning": "The problem gives the real value of the difference between these two groups."
                 },
                 {
                   "step": 2,
-                  "explanation": "Calculate the days required for 5 workers.",
-                  "working": "Days = $\\frac{\\text{Total Man-Days}}{\\text{Number of Workers}}$\n$= \\frac{120}{5}$",
-                  "reasoning": "Division of total work by rate of work."
-                },
-                {
-                  "step": 3,
-                  "explanation": "Final calculation.",
-                  "working": "$120 \\div 5 = 24$",
-                  "reasoning": "Arithmetic."
+                  "explanation": "Calculate the value of 1 unit and the total.",
+                  "working": "$2 \\text{ units} = 18 \\implies 1 \\text{ unit} = 9$.\nTotal units = $6 + 5 + 4 = 15$.\nTotal students = $15 \\times 9 = 135$.",
+                  "reasoning": "Multiply the unit value by the sum of all parts of the ratio."
                 }
               ]
             }
           },
           {
             "partId": "b",
-            "questionText": "The contractor wants to finish the wall in 6 days. How many <i>additional</i> workers must he employ?",
+            "questionText": "Later, 10 runners leave the club and $x$ new swimmers join. The ratio of swimmers to runners becomes 3 : 1. Find the value of $x$.",
             "marks": 3,
             "answerType": "numerical",
             "solution": {
-              "finalAnswer": "12 workers",
+              "finalAnswer": "51",
               "stepByStep": [
                 {
                   "step": 1,
-                  "explanation": "Calculate the total number of workers needed for 6 days.",
-                  "working": "Workers needed = $\\frac{\\text{Total Man-Days}}{\\text{Days}}$\n$= \\frac{120}{6}$",
-                  "reasoning": "Using the constant total work calculated in part (a)."
+                  "explanation": "Calculate the original number of runners and swimmers using the unit value from Part (a).",
+                  "working": "Original Runners = $5 \\times 9 = 45$\nOriginal Swimmers = $6 \\times 9 = 54$",
+                  "reasoning": "We need the actual starting numbers to apply the changes."
                 },
                 {
                   "step": 2,
-                  "explanation": "Find the total workers required.",
-                  "working": "$120 \\div 6 = 20 \\text{ workers}$",
-                  "reasoning": "Arithmetic."
+                  "explanation": "Calculate the new number of runners.",
+                  "working": "New Runners = $45 - 10 = 35$",
+                  "reasoning": "Subtract the runners who left."
                 },
                 {
                   "step": 3,
-                  "explanation": "Calculate the additional workers needed.",
-                  "working": "Additional = Total needed - Initial workers\n$= 20 - 8 = 12$",
-                  "reasoning": "The question asks for *additional* workers, not the total."
+                  "explanation": "Use the new ratio to find the new number of swimmers.",
+                  "working": "New Ratio Swimmers : Runners = $3 : 1$\nNew Swimmers = $3 \\times (\\text{New Runners})$\nNew Swimmers = $3 \\times 35 = 105$",
+                  "reasoning": "Since the ratio is 3:1, swimmers are 3 times the number of runners."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate $x$ (the number of new swimmers).",
+                  "working": "$x = \\text{New Swimmers} - \\text{Original Swimmers}$\n$x = 105 - 54 = 51$",
+                  "reasoning": "The difference between the final and initial count is the number of students who joined."
                 }
               ]
             }
@@ -346,7 +211,7 @@
         ],
         "totalMarks": 5,
         "paper": "Paper 2",
-        "title": "Rate of Work (Inverse Proportion)"
+        "title": "Ratio Word Problem"
       }
     ]
   }
