@@ -4202,7 +4202,7 @@
         "questionNumber": 2,
         "questionId": "N1-acsi-2024-p2-q2",
         "topicID": "N1",
-        "stem": "A manufacturing company produces electronic components for various devices. They are analyzing the production data for the past 3 months, which includes quantities of components produced and the corresponding costs. (Data: May: $5.8\\times10^5$ units @ $0.0211; June: $4.3\\times10^6$ units @ $0.0183; July: $7.6\\times10^5$ units @ $0.0203)",
+        "stem": "stem": "A manufacturing company produces electronic components for various devices. They are analyzing the production data for the past 3 months, which includes quantities of components produced and the corresponding costs. \n(Data: May: $5.8\\times10^5$ units @ \\$0.0211; \nJune: $4.3\\times10^6$ units @ \\$0.0183; \nJuly: $7.6\\times10^5$ units @ \\$0.0203)",
         "hasDiagram": false,
         "diagramDescription": "",
         "parts": [

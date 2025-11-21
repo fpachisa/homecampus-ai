@@ -457,7 +457,7 @@
         "questionNumber": 25,
         "questionId": "N3-acsi-2024-p1-q25",
         "topicID": "N3",
-        "stem": "Edwin deposited $P each into Bank A and Bank B. Bank A offered a simple interest of 4% per annum while Bank B offered an interest rate of 2% per half-year, compounded every six months. The difference in the amount Edwin received from both banks after a period of 7 years is $513.",
+        "stem": "Edwin deposited \\$P each into Bank A and Bank B. Bank A offered a simple interest of 4% per annum while Bank B offered an interest rate of 2% per half-year, compounded every six months. The difference in the amount Edwin received from both banks after a period of 7 years is $513.",
         "hasDiagram": false,
         "diagramDescription": "",
         "parts": [

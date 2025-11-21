@@ -391,7 +391,32 @@
         "questionNumber": 21,
         "questionId": "N9-acsi-2024-p1-q21",
         "topicID": "N9",
-        "stem": "A tour agency sells cruise packages to Vietnam, Maldives and Taiwan at $1299, $1398 and $2538 respectively. The table below shows the number of customers who have signed up for the respective cruise packages via the tour agency from January to June and from July to December.",
+        "stem": "A tour agency sells cruise packages to Vietnam, Maldives and Taiwan at \\$1299, \\$1398 and \\$2538 respectively. The table below shows the number of customers who have signed up for the respective cruise packages via the tour agency from January to June and from July to December.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "",
+            "First Period (From January to June)",
+            "Second Period (From July to December)"
+          ],
+          "rows": [
+            [
+              "Vietnam",
+              "27",
+              "24"
+            ],
+            [
+              "Maldives",
+              "23",
+              "29"
+            ],
+            [
+              "Taiwan",
+              "19",
+              "22"
+            ]
+          ]
+        },
         "hasDiagram": false,
         "diagramDescription": "",
         "parts": [
