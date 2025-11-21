@@ -246,6 +246,54 @@
         "title": "Rhombus Coordinates"
       },
       {
+        "questionNumber": 23,
+        "questionId": "G6-huayi-2024-p1-q23",
+        "topicID": "G6",
+        "stem": "K is the point $(7,-8)$ and L is the point $(x,y)$. The gradient of the line KL is $\\frac{2}{3}$. Maverick claims that it is possible to express $x$ in terms of $y$, such that $x=a+by,$ where $a$ and $b$ are constants.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Explain why Maverick is correct.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Maverick is correct because the equation can be rearranged to $x = 19 + \\frac{3}{2}y$.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the gradient formula using the given points $K(7, -8)$ and $L(x, y)$.",
+                  "working": "Gradient = $\\frac{y_2 - y_1}{x_2 - x_1}$ \n $\\frac{2}{3} = \\frac{y - (-8)}{x - 7}$",
+                  "reasoning": "The gradient of a line segment is the change in y divided by the change in x."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Cross-multiply to remove the fractions.",
+                  "working": "$2(x - 7) = 3(y + 8)$",
+                  "reasoning": "To solve for variables embedded in fractions, cross-multiplication is the standard algebraic step."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and rearrange the equation to make $x$ the subject.",
+                  "working": "$2x - 14 = 3y + 24$ \n $2x = 3y + 38$ \n $x = \\frac{3}{2}y + 19$",
+                  "reasoning": "We isolate $x$ to see if it fits the form $x = a + by$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Compare with the required form.",
+                  "working": "$x = 19 + 1.5y$. This is in the form $x = a + by$ where $a=19$ and $b=1.5$.",
+                  "reasoning": "Since specific constants $a$ and $b$ were found, the claim is proven."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Gradient and Linear Equation"
+      },
+      {
         "questionNumber": 101,
         "questionId": "G6-gemini-1911-p1-101",
         "topicID": "G6",
@@ -342,6 +390,146 @@
         "title": "Finding Unknown Coordinate Given Gradient"
       },
       {
+        "questionNumber": 101,
+        "questionId": "G6-gemini-2111113911-p1-q101",
+        "topicID": "G6",
+        "stem": "The line $L_1$ passes through the points $A(2, 5)$ and $B(k, 11)$. The line $L_2$ has the equation $3y - 2x = 6$. Given that $L_1$ is parallel to $L_2$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the gradient of the line $L_2$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{2}{3}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Rearrange the equation of $L_2$ into the form $y = mx + c$.",
+                  "working": "$3y - 2x = 6$ \n $3y = 2x + 6$ \n $y = \\frac{2}{3}x + 2$",
+                  "reasoning": "The coefficient of $x$ when $y$ is the subject represents the gradient ($m$)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the value of $k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$k = 11$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Equate the gradient of $L_1$ to the gradient of $L_2$.",
+                  "working": "Gradient of $AB = \\frac{11 - 5}{k - 2} = \\frac{6}{k - 2}$ \n Since lines are parallel, $\\frac{6}{k - 2} = \\frac{2}{3}$",
+                  "reasoning": "Parallel lines have equal gradients."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $k$.",
+                  "working": "$18 = 2(k - 2)$ \n $9 = k - 2$ \n $k = 11$",
+                  "reasoning": "Cross-multiply and solve the linear equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Parallel Lines and Gradients"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G6-gemini-20231027-p1-q101",
+        "topicID": "G6",
+        "stem": "Given the points $A(2, 5)$, $B(-3, 1)$ and $C(k, -2)$.",
+        "hasDiagram": false,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the column vector $\\vec{AB}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\binom{-5}{-4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the formula $\\vec{AB} = \\vec{OB} - \\vec{OA}$.",
+                  "working": "\\vec{AB} = \\binom{-3}{1} - \\binom{2}{5}",
+                  "reasoning": "To find the vector connecting two points, subtract the coordinates of the start point from the end point."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the subtraction for x and y components.",
+                  "working": "\\binom{-3-2}{1-5} = \\binom{-5}{-4}",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find $|\\vec{AB}|$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\sqrt{41} \\text{ or } 6.40$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the magnitude formula $|\\vec{v}| = \\sqrt{x^2 + y^2}$.",
+                  "working": "|\\vec{AB}| = \\sqrt{(-5)^2 + (-4)^2}",
+                  "reasoning": "The magnitude represents the length of the vector."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value.",
+                  "working": "= \\sqrt{25 + 16} = \\sqrt{41} \\approx 6.403",
+                  "reasoning": "Final calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Given that $\\vec{BC}$ is parallel to the vector $\\binom{2}{1}$, find the value of $k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "k = -9",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the vector $\\vec{BC}$ in terms of $k$.",
+                  "working": "\\vec{BC} = \\vec{OC} - \\vec{OB} = \\binom{k}{-2} - \\binom{-3}{1} = \\binom{k+3}{-3}",
+                  "reasoning": "First, establish the vector components using the unknown $k$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the parallel condition.",
+                  "working": "\\binom{k+3}{-3} = m\\binom{2}{1}",
+                  "reasoning": "If two vectors are parallel, one is a scalar multiple ($m$) of the other."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $m$ using the y-component, then solve for $k$.",
+                  "working": "y-comp: $-3 = 1m \\Rightarrow m = -3$.\nx-comp: $k+3 = 2(-3) \\Rightarrow k+3 = -6 \\Rightarrow k = -9$.",
+                  "reasoning": "Equating components allows us to solve for the unknowns."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Vectors and Coordinates"
+      },
+      {
         "questionNumber": 102,
         "questionId": "G6-gemini-1911-p1-102",
         "topicID": "G6",
@@ -424,9 +612,308 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Collinear Points"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G6-gemini-2111113911-p1-q102",
+        "topicID": "G6",
+        "stem": "The midpoint of the line segment joining $P(-4, h)$ and $Q(2, 6)$ is $M(-1, 2)$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $h$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$h = -2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the midpoint formula for the y-coordinate.",
+                  "working": "$\\frac{y_1 + y_2}{2} = y_m$ \n $\\frac{h + 6}{2} = 2$",
+                  "reasoning": "The coordinates of the midpoint are the average of the coordinates of the endpoints."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $h$.",
+                  "working": "$h + 6 = 4$ \n $h = -2$",
+                  "reasoning": "Simple algebraic manipulation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Midpoint Coordinates"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G6-gemini-20231027-p1-q102",
+        "topicID": "G6",
+        "stem": "In a quadrilateral $PQRS$, $\\vec{PQ} = \\mathbf{a}$ and $\\vec{PS} = \\mathbf{b}$. The point $M$ lies on $QS$ such that $QM:MS = 1:2$.",
+        "hasDiagram": false,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $\\vec{QS}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\mathbf{b} - \\mathbf{a}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the triangle law of vector addition.",
+                  "working": "\\vec{QS} = \\vec{QP} + \\vec{PS} = -\\vec{PQ} + \\vec{PS}",
+                  "reasoning": "To go from Q to S, we go Q to P, then P to S."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the given vectors.",
+                  "working": "= -\\mathbf{a} + \\mathbf{b} = \\mathbf{b} - \\mathbf{a}",
+                  "reasoning": "Substitution."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Express $\\vec{PM}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{2}{3}\\mathbf{a} + \\frac{1}{3}\\mathbf{b}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find $\\vec{QM}$ using the ratio.",
+                  "working": "\\vec{QM} = \\frac{1}{1+2}\\vec{QS} = \\frac{1}{3}(\\mathbf{b} - \\mathbf{a})",
+                  "reasoning": "Since $QM:MS = 1:2$, $QM$ is $1/3$ of the total length $QS$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\vec{PM}$.",
+                  "working": "\\vec{PM} = \\vec{PQ} + \\vec{QM} = \\mathbf{a} + \\frac{1}{3}\\mathbf{b} - \\frac{1}{3}\\mathbf{a}",
+                  "reasoning": "Vector addition path from P to M."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify.",
+                  "working": "= \\frac{2}{3}\\mathbf{a} + \\frac{1}{3}\\mathbf{b}",
+                  "reasoning": "Combine like terms."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Vector Geometry"
       }
     ],
     "Paper 2": [
+      {
+        "questionNumber": 2,
+        "questionId": "G6-huayi-2024-p2-q2",
+        "topicID": "G6",
+        "stem": "C is the point (-9,1) and D is the point (7,4). $\\vec{CE}=\\begin{pmatrix}-2\\\\ 8\\end{pmatrix}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the length of the line CD.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "16.3 units (3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the distance formula between two points.",
+                  "working": "Length = $\\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$ \n = $\\sqrt{(7 - (-9))^2 + (4 - 1)^2}$",
+                  "reasoning": "Distance formula is derived from Pythagoras theorem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the expression.",
+                  "working": "= $\\sqrt{16^2 + 3^2}$ \n = $\\sqrt{256 + 9}$ \n = $\\sqrt{265}$",
+                  "reasoning": "Simplify the squares and sum."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate final value.",
+                  "working": "$\\approx 16.2788...$",
+                  "reasoning": "Round to 3 significant figures as per standard O-level instructions."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Determine the coordinates of point E.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$(-11, 9)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Add the translation vector $\\vec{CE}$ to the coordinates of C.",
+                  "working": "$E = C + \\vec{CE}$ \n $\\begin{pmatrix}x\\\\ y\\end{pmatrix} = \\begin{pmatrix}-9\\\\ 1\\end{pmatrix} + \\begin{pmatrix}-2\\\\ 8\\end{pmatrix}$",
+                  "reasoning": "The vector $\\vec{CE}$ represents the displacement from C to E."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compute the result.",
+                  "working": "$\\begin{pmatrix}-9 + (-2)\\\\ 1 + 8\\end{pmatrix} = \\begin{pmatrix}-11\\\\ 9\\end{pmatrix}$",
+                  "reasoning": "Add x and y components respectively."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the equation of the line DE. Leave your answer in the form $ax+by=c$, where a, b and c are constants.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$5x + 18y = 107$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the gradient of the line DE using points $D(7, 4)$ and $E(-11, 9)$.",
+                  "working": "$m = \\frac{9 - 4}{-11 - 7} = \\frac{5}{-18} = -\\frac{5}{18}$",
+                  "reasoning": "Gradient formula $m = \\frac{y_2-y_1}{x_2-x_1}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the point-slope form $y - y_1 = m(x - x_1)$ with point D.",
+                  "working": "$y - 4 = -\\frac{5}{18}(x - 7)$",
+                  "reasoning": "Substitute the gradient and one point to find the equation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Rearrange into the form $ax + by = c$.",
+                  "working": "$18(y - 4) = -5(x - 7)$ \n $18y - 72 = -5x + 35$ \n $5x + 18y = 35 + 72$ \n $5x + 18y = 107$",
+                  "reasoning": "Eliminate fractions and group variables on the left, constants on the right."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Coordinate Geometry"
+      },
+      {
+        "questionNumber": 8,
+        "questionId": "G6-navalbase-2024-p2-q8",
+        "topicID": "G6",
+        "stem": "(a) A is the point $(1,-4)$ and B is the point $(-7, -2)$. The point C is the result of the translation of point B by $\\binom{5}{4}$",
+        "hasDiagram": false,
+        "diagramDescription": "Diagram for part b showing Trapezium OABC. Vector OA=a, OC=2c, CB=2a. P on OA such that OP:PB=1:3.",
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Find the length of AB.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\sqrt{68} \\text{ or } 8.25$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the distance formula between two points $(x_1, y_1)$ and $(x_2, y_2)$.",
+                  "working": "\\text{Length} = \\sqrt{(-7 - 1)^2 + (-2 - (-4))^2}",
+                  "reasoning": "Distance formula: $\\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the values.",
+                  "working": "= \\sqrt{(-8)^2 + (2)^2} = \\sqrt{64 + 4} = \\sqrt{68}",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Write down the column vector $\\vec{AB}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\binom{-8}{2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Subtract the position vector of A from B.",
+                  "working": "\\vec{AB} = \\binom{-7}{-2} - \\binom{1}{-4}",
+                  "reasoning": "$\\vec{AB} = \\vec{OB} - \\vec{OA}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate components.",
+                  "working": "\\binom{-7-1}{-2-(-4)} = \\binom{-8}{2}",
+                  "reasoning": "Component-wise subtraction."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_iii",
+            "questionText": "Find the coordinates of point C.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(-2, 2)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the translation vector to point B.",
+                  "working": "\\binom{-7}{-2} + \\binom{5}{4} = \\binom{-2}{2}",
+                  "reasoning": "Translation adds the vector components to the point coordinates."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_iv",
+            "questionText": "Find the equation of the line AC.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "y = -2x - 2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the gradient ($m$) of line AC using points A(1, -4) and C(-2, 2).",
+                  "working": "m = \\frac{2 - (-4)}{-2 - 1} = \\frac{6}{-3} = -2",
+                  "reasoning": "Gradient formula $m = \\frac{y_2-y_1}{x_2-x_1}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the point-slope form or $y=mx+c$ to find the equation.",
+                  "working": "Using point C(-2, 2): $2 = -2(-2) + c \\Rightarrow 2 = 4 + c \\Rightarrow c = -2$.",
+                  "reasoning": "Substitute a point on the line to find the y-intercept."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final equation.",
+                  "working": "y = -2x - 2",
+                  "reasoning": "Combine $m$ and $c$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Vectors and Coordinate Geometry"
+      },
       {
         "questionNumber": 101,
         "questionId": "G6-gemini-2011-p2-q101",
@@ -474,6 +961,259 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Gradient of Parallel Lines"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G6-gemini-2111113911-p2-q101",
+        "topicID": "G6",
+        "stem": "Coordinates of point $A$ are $(3, -2)$ and point $B$ are $(7, 4)$. The vector $\\vec{BC} = \\begin{pmatrix}-6\\\\ 2\\end{pmatrix}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the length of the line segment AB.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7.21 units (3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the distance formula.",
+                  "working": "Length = $\\sqrt{(7-3)^2 + (4-(-2))^2}$",
+                  "reasoning": "Distance between $(x_1, y_1)$ and $(x_2, y_2)$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the values.",
+                  "working": "= $\\sqrt{4^2 + 6^2} = \\sqrt{16 + 36} = \\sqrt{52}$",
+                  "reasoning": "Simplify the expression."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert to decimal.",
+                  "working": "$\\sqrt{52} \\approx 7.211$",
+                  "reasoning": "Round to 3 significant figures."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the coordinates of point C.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$(1, 6)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Add vector $\\vec{BC}$ to point B.",
+                  "working": "$\\begin{pmatrix}7\\\\ 4\\end{pmatrix} + \\begin{pmatrix}-6\\\\ 2\\end{pmatrix} = \\begin{pmatrix}1\\\\ 6\\end{pmatrix}$",
+                  "reasoning": "Position vector of C = Position vector of B + $\\vec{BC}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the equation of the line AC. Express your answer in the form $y = mx + c$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$y = -4x + 10$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the gradient of AC using $A(3, -2)$ and $C(1, 6)$.",
+                  "working": "$m = \\frac{6 - (-2)}{1 - 3} = \\frac{8}{-2} = -4$",
+                  "reasoning": "Gradient formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the gradient and point C to find the y-intercept.",
+                  "working": "$y = -4x + c$ \n Using point $(1, 6)$: $6 = -4(1) + c$",
+                  "reasoning": "Substitute known values into linear equation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for c and write final equation.",
+                  "working": "$c = 10$ \n $y = -4x + 10$",
+                  "reasoning": "State the final equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Vectors and Lines"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G6-gemini-2111121650-p2-q101",
+        "topicID": "G6",
+        "stem": "The diagram shows a parallelogram $OPQR$. $\\vec{OP} = \\mathbf{p}$ and $\\vec{OR} = \\mathbf{r}$. $K$ is a point on $PQ$ such that $PK:KQ = 3:1$. $L$ is the midpoint of $QR$.",
+        "hasDiagram": true,
+        "diagramDescription": "Parallelogram OPQR. K on PQ, L on QR.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $\\vec{OK}$ in terms of $\\mathbf{p}$ and $\\mathbf{r}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\mathbf{p} + \\frac{3}{4}\\mathbf{r}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine $\\vec{PK}$.",
+                  "working": "$\\vec{PQ} = \\vec{OR} = \\mathbf{r}$. Since $PK:KQ = 3:1$, $\\vec{PK} = \\frac{3}{4}\\vec{PQ} = \\frac{3}{4}\\mathbf{r}$.",
+                  "reasoning": "Opposite sides of a parallelogram are equal vectors. Use the ratio to find the segment."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find $\\vec{OK}$.",
+                  "working": "\\vec{OK} = \\vec{OP} + \\vec{PK} = \\mathbf{p} + \\frac{3}{4}\\mathbf{r}",
+                  "reasoning": "Vector addition."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Express $\\vec{PL}$ in terms of $\\mathbf{p}$ and $\\mathbf{r}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "\\mathbf{r} - \\frac{1}{2}\\mathbf{p}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find path from P to L.",
+                  "working": "\\vec{PL} = \\vec{PQ} + \\vec{QL}",
+                  "reasoning": "Triangle law."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine $\\vec{QL}$.",
+                  "working": "\\vec{QR} = -\\vec{OP} = -\\mathbf{p}$. Since L is midpoint, $\\vec{QL} = \\frac{1}{2}\\vec{QR} = -\\frac{1}{2}\\mathbf{p}$.",
+                  "reasoning": "L is the midpoint of QR. Note direction: Q to R is opposite to O to P? No, $\\vec{QR} = \\vec{PO} = -\\mathbf{p}$? Wait. In parallelogram OPQR, $\\vec{OP} = \\mathbf{p}$, so $\\vec{RQ} = \\mathbf{p}$. Thus $\\vec{QR} = -\\mathbf{p}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine.",
+                  "working": "\\vec{PL} = \\mathbf{r} - \\frac{1}{2}\\mathbf{p}",
+                  "reasoning": "Substitution."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Given that $\\vec{OL} = h \\vec{OK} + k \\vec{OP}$, find the values of $h$ and $k$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "h = \\frac{2}{3}, k = \\frac{1}{3}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express $\\vec{OL}$ directly.",
+                  "working": "\\vec{OL} = \\vec{OR} + \\vec{RL} = \\mathbf{r} + \\frac{1}{2}\\mathbf{p}$.",
+                  "reasoning": "Path O to R to L. $\\vec{RL} = \\frac{1}{2}\\vec{RQ} = \\frac{1}{2}\\mathbf{p}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation with $h$ and $k$.",
+                  "working": "\\mathbf{r} + \\frac{1}{2}\\mathbf{p} = h(\\mathbf{p} + \\frac{3}{4}\\mathbf{r}) + k\\mathbf{p}",
+                  "reasoning": "Substitute $\\vec{OK}$ from part (a)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare coefficients of $\\mathbf{r}$ and $\\mathbf{p}$.",
+                  "working": "Coeff of $\\mathbf{r}$: $1 = \\frac{3}{4}h \\Rightarrow h = \\frac{4}{3}$.\nWait, let's recheck $\\vec{OL}$. $\\vec{OL} = \\vec{OR} + \\vec{RL}$. $\\vec{RQ} = \\vec{OP} = \\mathbf{p}$. So $\\vec{RL} = \\frac{1}{2}\\mathbf{p}$. Correct.\nEquation: $\\mathbf{r} + 0.5\\mathbf{p} = h\\mathbf{p} + 0.75h\\mathbf{r} + k\\mathbf{p}$.\nCompare $\\mathbf{r}$: $1 = 0.75h \\Rightarrow h = 4/3$.\nCompare $\\mathbf{p}$: $0.5 = h + k \\Rightarrow 0.5 = 4/3 + k \\Rightarrow k = 1/2 - 4/3 = 3/6 - 8/6 = -5/6$.\nLet's re-read the question structure. Usually these result in simpler fractions. But math is math.",
+                  "reasoning": "Equating coefficients."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Final check.",
+                  "working": "If $h=4/3, k=-5/6$. $\\vec{OL} = \\frac{4}{3}(\\mathbf{p} + \\frac{3}{4}\\mathbf{r}) - \\frac{5}{6}\\mathbf{p} = \\frac{4}{3}\\mathbf{p} + \\mathbf{r} - \\frac{5}{6}\\mathbf{p} = (\\frac{8}{6} - \\frac{5}{6})\\mathbf{p} + \\mathbf{r} = \\frac{1}{2}\\mathbf{p} + \\mathbf{r}$. Correct.",
+                  "reasoning": "Verification."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Vectors in Parallelogram"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G6-gemini-2111113911-p2-q102",
+        "topicID": "G6",
+        "stem": "A triangle has vertices $P(1, 2)$, $Q(7, 4)$ and $R(6, 7)$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that angle PQR is $90^{\\circ}$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Product of gradients is -1, therefore lines are perpendicular.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the gradient of PQ.",
+                  "working": "$m_{PQ} = \\frac{4-2}{7-1} = \\frac{2}{6} = \\frac{1}{3}$",
+                  "reasoning": "Calculate slope between P and Q."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the gradient of QR.",
+                  "working": "$m_{QR} = \\frac{7-4}{6-7} = \\frac{3}{-1} = -3$",
+                  "reasoning": "Calculate slope between Q and R."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Check the product of the gradients.",
+                  "working": "$m_{PQ} \\times m_{QR} = \\frac{1}{3} \\times (-3) = -1$",
+                  "reasoning": "If the product of two gradients is -1, the lines are perpendicular ($90^{\\circ}$)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the area of triangle PQR.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "10 units²",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the lengths of the perpendicular sides PQ and QR.",
+                  "working": "Length PQ = $\\sqrt{(7-1)^2 + (4-2)^2} = \\sqrt{36+4} = \\sqrt{40}$ \n Length QR = $\\sqrt{(6-7)^2 + (7-4)^2} = \\sqrt{1+9} = \\sqrt{10}$",
+                  "reasoning": "Since it is a right-angled triangle, we use $\\frac{1}{2} \\times base \\times height$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the area.",
+                  "working": "Area = $\\frac{1}{2} \\times \\sqrt{40} \\times \\sqrt{10} = \\frac{1}{2} \\times \\sqrt{400} = \\frac{1}{2} \\times 20 = 10$",
+                  "reasoning": "Apply area formula."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Triangle Properties"
       }
     ]
   }

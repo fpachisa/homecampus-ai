@@ -45,6 +45,65 @@
         "title": "Algebraic Expansion"
       },
       {
+        "questionNumber": 2,
+        "questionId": "N5-navalbase-2024-p1-q2",
+        "topicID": "N5",
+        "stem": "Simplify",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$3x^{2}\\times4y^{5}$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$12x^2y^5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply the numerical coefficients together.",
+                  "working": "$3 \\times 4 = 12$",
+                  "reasoning": "Separate numbers from variables."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine the variable terms.",
+                  "working": "$x^2 \\times y^5 = x^2y^5$",
+                  "reasoning": "Since bases $x$ and $y$ are different, they are written side by side."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$3(2x-1)-5$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$6x - 8$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the bracket by multiplying the term outside with each term inside.",
+                  "working": "$3(2x) + 3(-1) - 5 = 6x - 3 - 5$",
+                  "reasoning": "Distributive law $a(b+c) = ab + ac$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the constant terms.",
+                  "working": "$6x - 8$",
+                  "reasoning": "Combine like terms ($-3$ and $-5$)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Simplification"
+      },
+      {
         "questionNumber": 3,
         "questionId": "N5-anderson-2024-p1-q3",
         "topicID": "N5",
@@ -129,6 +188,48 @@
         "title": "Algebraic Fraction Subtraction"
       },
       {
+        "questionNumber": 3,
+        "questionId": "N5-navalbase-2024-p1-q3",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise completely $2x^{3}-13x^{2}+6x$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x(2x-1)(x-6)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify and extract the common factor from all three terms.",
+                  "working": "$x(2x^2 - 13x + 6)$",
+                  "reasoning": "Every term contains at least one $x$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the quadratic expression inside the bracket.",
+                  "working": "Find factors of $2 \\times 6 = 12$ that sum to $-13$. These are $-1$ and $-12$.\n$2x^2 - 12x - x + 6$\n$= 2x(x-6) - 1(x-6)$",
+                  "reasoning": "Using the splitting the middle term method for quadratics."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine the factors.",
+                  "working": "$x(2x-1)(x-6)$",
+                  "reasoning": "Group the common binomial factor $(x-6)$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Complete Factorisation"
+      },
+      {
         "questionNumber": 4,
         "questionId": "N5-greenridge-2024-p1-q4",
         "topicID": "N5",
@@ -175,6 +276,83 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Quadratic Factorisation"
+      },
+      {
+        "questionNumber": 4,
+        "questionId": "N5-huayi-2024-p1-q4",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express as a single fraction in its simplest form $\\frac{18b^{7}}{5c^{2}}\\div\\frac{3b^{4}}{81}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{486b^{3}}{5c^{2}}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Change the division operation to multiplication by inverting the second fraction (reciprocal).",
+                  "working": "$\\frac{18b^{7}}{5c^{2}} \\times \\frac{81}{3b^{4}}$",
+                  "reasoning": "To divide by a fraction, we multiply by its reciprocal."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the numerical coefficients and the algebraic terms.",
+                  "working": "$\\frac{18}{3} = 6$ and $\\frac{b^{7}}{b^{4}} = b^{7-4} = b^{3}$.\nExpression becomes: $\\frac{6b^{3}}{5c^{2}} \\times 81$",
+                  "reasoning": "Group constants and apply laws of indices $x^m \\div x^n = x^{m-n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply the remaining terms to get the final fraction.",
+                  "working": "$6 \\times 81 = 486$\nNumerator: $486b^{3}$\nDenominator: $5c^{2}$",
+                  "reasoning": "Combine the simplified parts into a single fraction."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Use the laws of indices to show that $6^{4}\\times100+116\\times36^{2}$ can be expressed as a single power of six.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "$6^{7}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all bases in terms of 6. Note that $36 = 6^2$.",
+                  "working": "$36^{2} = (6^{2})^{2} = 6^{4}$",
+                  "reasoning": "To combine terms using indices, it helps to have a common base."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute $6^4$ back into the expression and factorise.",
+                  "working": "$6^{4} \\times 100 + 116 \\times 6^{4}$\nFactor out $6^{4}$:\n$= 6^{4}(100 + 116)$",
+                  "reasoning": "Factorisation simplifies the expression by grouping the common term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the bracket and convert the resulting number to base 6.",
+                  "working": "$= 6^{4}(216)$\nSince $216 = 6 \\times 6 \\times 6 = 6^{3}$",
+                  "reasoning": "Recognizing powers of integers is crucial for index manipulation."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Apply the multiplication law of indices.",
+                  "working": "$6^{4} \\times 6^{3} = 6^{4+3} = 6^{7}$",
+                  "reasoning": "$x^m \\times x^n = x^{m+n}$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Algebraic Fractions and Indices"
       },
       {
         "questionNumber": 5,
@@ -395,6 +573,119 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Expansion and Factorisation"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "N5-huayi-2024-p1-q9",
+        "topicID": "N5",
+        "stem": "Factorise completely",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$2p^{4}-32s^{4}$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$2(p-2s)(p+2s)(p^{2}+4s^{2})$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract the common factor.",
+                  "working": "$2(p^{4} - 16s^{4})$",
+                  "reasoning": "Always look for a Highest Common Factor (HCF) first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the difference of two squares formula $a^2 - b^2 = (a-b)(a+b)$.",
+                  "working": "$2((p^{2})^{2} - (4s^{2})^{2})$\n$= 2(p^{2} - 4s^{2})(p^{2} + 4s^{2})$",
+                  "reasoning": "The term inside the bracket is a difference of two squares."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply difference of two squares again to the factor $(p^2 - 4s^2)$.",
+                  "working": "$p^{2} - 4s^{2} = p^{2} - (2s)^{2} = (p-2s)(p+2s)$\nFinal expression: $2(p-2s)(p+2s)(p^{2}+4s^{2})$",
+                  "reasoning": "Factorise completely means continuing until no factors can be broken down further. Note that sum of squares $(p^2+4s^2)$ cannot be factorised."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$12cd-9cx+6xy-8dy$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(4d-3x)(3c-2y)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Group terms to facilitate factorisation by grouping.",
+                  "working": "Group $(12cd - 9cx)$ and $(-8dy + 6xy)$ or rearrange: $12cd - 8dy - 9cx + 6xy$",
+                  "reasoning": "Grouping allows us to extract common factors from pairs of terms."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise each pair.",
+                  "working": "From $12cd - 8dy$: factor out $4d \\rightarrow 4d(3c - 2y)$\nFrom $-9cx + 6xy$: factor out $-3x \\rightarrow -3x(3c - 2y)$",
+                  "reasoning": "Ensure the resulting brackets are identical."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Extract the common bracket.",
+                  "working": "$(3c - 2y)(4d - 3x)$",
+                  "reasoning": "Combine the factors to get the final product."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Complete Factorisation"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "N5-navalbase-2024-p1-q9",
+        "topicID": "N5",
+        "stem": "$T=2\\pi\\sqrt{\\frac{L}{g}}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Rearrange the formula to make $g$ the subject.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$g = \\frac{4\\pi^2 L}{T^2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Isolate the square root term by dividing by $2\\pi$.",
+                  "working": "$\\frac{T}{2\\pi} = \\sqrt{\\frac{L}{g}}$",
+                  "reasoning": "Inverse operation of multiplication is division."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Square both sides to remove the square root.",
+                  "working": "$(\\frac{T}{2\\pi})^2 = \\frac{L}{g} \\implies \\frac{T^2}{4\\pi^2} = \\frac{L}{g}$",
+                  "reasoning": "Inverse operation of square root is squaring."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Make $g$ the subject.",
+                  "working": "$g = \\frac{L}{\\frac{T^2}{4\\pi^2}} = L \\times \\frac{4\\pi^2}{T^2}$",
+                  "reasoning": "Cross-multiply or invert both fractions."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Rearranging Formula"
       },
       {
         "questionNumber": 10,
@@ -1460,6 +1751,142 @@
         "title": "Rearranging Formula"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2111113911-p1-q101",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $\\frac{15a^{4}}{4b}\\div\\frac{5a^{2}}{12b^{3}}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$9a^{2}b^{2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert division to multiplication by taking the reciprocal of the second fraction.",
+                  "working": "$\\frac{15a^{4}}{4b} \\times \\frac{12b^{3}}{5a^{2}}$",
+                  "reasoning": "Standard procedure for dividing algebraic fractions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify coefficients and indices.",
+                  "working": "Numbers: $\\frac{15}{5} = 3$ and $\\frac{12}{4} = 3$. Product: $3 \\times 3 = 9$.\nIndices: $\\frac{a^{4}}{a^{2}} = a^{2}$ and $\\frac{b^{3}}{b} = b^{2}$.",
+                  "reasoning": "Cancel common factors in numerator and denominator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine results.",
+                  "working": "$9a^{2}b^{2}$",
+                  "reasoning": "Final simplified form."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Show that $2^{6}\\times20+12\\times4^{3}$ can be expressed as a single power of 2.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "$2^{11}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert base 4 to base 2.",
+                  "working": "$4^{3} = (2^{2})^{3} = 2^{6}$",
+                  "reasoning": "Ensure all exponential terms have the same base."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute and factorise.",
+                  "working": "$2^{6} \\times 20 + 12 \\times 2^{6}$\n$= 2^{6}(20 + 12)$",
+                  "reasoning": "Factor out the common power of 2."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the bracket and convert to base 2.",
+                  "working": "$= 2^{6}(32)$\nSince $32 = 2^{5}$",
+                  "reasoning": "Recognize 32 as a power of 2."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Apply index laws.",
+                  "working": "$2^{6} \\times 2^{5} = 2^{6+5} = 2^{11}$",
+                  "reasoning": "Add indices when multiplying terms with the same base."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Indices and Simplification"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2111121650-p1-q101",
+        "topicID": "N5",
+        "stem": "Simplify",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$\\frac{18a^4 b}{3a}$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$6a^3b$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Divide the coefficients.",
+                  "working": "$18 \\div 3 = 6$",
+                  "reasoning": "Simplify the numerical part."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide the variables using laws of indices.",
+                  "working": "$\\frac{a^4}{a^1} = a^{4-1} = a^3$. The $b$ remains unchanged.",
+                  "reasoning": "$\\frac{x^m}{x^n} = x^{m-n}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$4x - 2(3x - 5)$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$-2x + 10$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the bracket, being careful with the negative sign.",
+                  "working": "$4x - 2(3x) - 2(-5) = 4x - 6x + 10$",
+                  "reasoning": "Distribute $-2$ into the bracket."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify like terms.",
+                  "working": "$(4x - 6x) + 10 = -2x + 10$",
+                  "reasoning": "Combine the $x$ terms."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Simplification"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N5-gemini-1911-p1-102",
         "topicID": "N5",
@@ -1698,6 +2125,119 @@
         "title": "Algebraic Manipulation and Indices"
       },
       {
+        "questionNumber": 102,
+        "questionId": "N5-gemini-2111113911-p1-q102",
+        "topicID": "N5",
+        "stem": "Factorise completely",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$5x^{5}-80x$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$5x(x-2)(x+2)(x^{2}+4)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract the highest common factor.",
+                  "working": "$5x(x^{4} - 16)$",
+                  "reasoning": "Remove $5x$ from both terms."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply difference of two squares.",
+                  "working": "$5x((x^{2})^{2} - 4^{2}) = 5x(x^{2}-4)(x^{2}+4)$",
+                  "reasoning": "$a^2-b^2 = (a-b)(a+b)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply difference of two squares again on $(x^2-4)$.",
+                  "working": "$x^{2}-4 = (x-2)(x+2)$\nFinal: $5x(x-2)(x+2)(x^{2}+4)$",
+                  "reasoning": "Factorise completely."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$6ax-3bx+4ay-2by$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(2a-b)(3x+2y)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Group the terms.",
+                  "working": "$(6ax - 3bx) + (4ay - 2by)$",
+                  "reasoning": "Split into pairs."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise each group.",
+                  "working": "$3x(2a - b) + 2y(2a - b)$",
+                  "reasoning": "Extract HCF from each pair."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Extract the common binomial factor.",
+                  "working": "$(2a - b)(3x + 2y)$",
+                  "reasoning": "Combine to form the final product."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Advanced Factorisation"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N5-gemini-2111121650-p1-q102",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise completely $3x^3 - 27x$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$3x(x-3)(x+3)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract the highest common factor.",
+                  "working": "$3x(x^2 - 9)$",
+                  "reasoning": "Both terms are divisible by $3x$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the expression inside the bracket using algebraic identity.",
+                  "working": "$x^2 - 9 = x^2 - 3^2 = (x-3)(x+3)$",
+                  "reasoning": "Difference of two squares: $a^2 - b^2 = (a-b)(a+b)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine parts for final answer.",
+                  "working": "$3x(x-3)(x+3)$",
+                  "reasoning": "Ensure all parts are included."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Complete Factorisation"
+      },
+      {
         "questionNumber": 103,
         "questionId": "N5-gemini-2011-p1-q103",
         "topicID": "N5",
@@ -1933,6 +2473,159 @@
         "totalMarks": 10,
         "paper": "Paper 2",
         "title": "Algebraic Equations and Simplification"
+      },
+      {
+        "questionNumber": 1,
+        "questionId": "N5-huayi-2024-p2-q1",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express as a single fraction in its simplest form $\\frac{2}{7-3x}-\\frac{1}{6-x}$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x+5}{(7-3x)(6-x)}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the common denominator.",
+                  "working": "Common denominator is $(7-3x)(6-x)$.\nExpression: $\\frac{2(6-x) - 1(7-3x)}{(7-3x)(6-x)}$",
+                  "reasoning": "To subtract fractions, denominators must be the same."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand and simplify the numerator.",
+                  "working": "Numerator: $12 - 2x - (7 - 3x)$\n$= 12 - 2x - 7 + 3x$\n$= x + 5$",
+                  "reasoning": "Be careful with the negative sign when expanding brackets."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final fraction.",
+                  "working": "$\\frac{x+5}{(7-3x)(6-x)}$",
+                  "reasoning": "Leave denominator in factored form unless asked otherwise."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_i",
+            "questionText": "It is given that $v=\\frac{3-5w}{w+2}+9$. Find $v$ when $w=-6$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.75",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $w = -6$ into the formula.",
+                  "working": "$v = \\frac{3-5(-6)}{-6+2} + 9$",
+                  "reasoning": "Direct substitution."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the fraction.",
+                  "working": "$v = \\frac{3+30}{-4} + 9$\n$v = \\frac{33}{-4} + 9$\n$v = -8.25 + 9$",
+                  "reasoning": "Order of operations (PEMDAS)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate final value.",
+                  "working": "$v = 0.75$",
+                  "reasoning": "Simple arithmetic."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Rearrange the formula to make $w$ the subject.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$w = \\frac{21-2v}{v-4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Isolate the fraction term.",
+                  "working": "$v - 9 = \\frac{3-5w}{w+2}$",
+                  "reasoning": "Move constant term to the LHS."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Remove the denominator by cross-multiplying.",
+                  "working": "$(v-9)(w+2) = 3-5w$",
+                  "reasoning": "Get rid of fractions to solve for variable."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand the brackets.",
+                  "working": "$vw + 2v - 9w - 18 = 3 - 5w$",
+                  "reasoning": "Expand to access terms containing $w$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Group terms containing $w$ on one side and others on the other.",
+                  "working": "$vw - 9w + 5w = 3 + 18 - 2v$\n$vw - 4w = 21 - 2v$",
+                  "reasoning": "Collect like terms."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Factorise $w$ and divide.",
+                  "working": "$w(v-4) = 21 - 2v$\n$w = \\frac{21-2v}{v-4}$",
+                  "reasoning": "Isolate $w$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Solve the equation $\\frac{5}{x-2}-\\frac{3}{x^{2}-4}=\\frac{1}{7}.$ Give your solutions correct to two decimal places.",
+            "marks": 5,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 36.45$ or $x = -1.45$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the denominator $x^2-4$.",
+                  "working": "$x^2-4 = (x-2)(x+2)$\nEquation: $\\frac{5}{x-2} - \\frac{3}{(x-2)(x+2)} = \\frac{1}{7}$",
+                  "reasoning": "Identify common denominator."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine LHS into a single fraction.",
+                  "working": "$\\frac{5(x+2) - 3}{(x-2)(x+2)} = \\frac{1}{7}$\n$\\frac{5x + 10 - 3}{x^2-4} = \\frac{1}{7}$\n$\\frac{5x + 7}{x^2-4} = \\frac{1}{7}$",
+                  "reasoning": "Simplify numerator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Cross multiply to form a quadratic equation.",
+                  "working": "$7(5x+7) = 1(x^2-4)$\n$35x + 49 = x^2 - 4$\n$x^2 - 35x - 53 = 0$",
+                  "reasoning": "Rearrange to $ax^2+bx+c=0$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Use the quadratic formula $x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$.",
+                  "working": "$a=1, b=-35, c=-53$\n$x = \\frac{35 \\pm \\sqrt{(-35)^2 - 4(1)(-53)}}{2}$\n$x = \\frac{35 \\pm \\sqrt{1225 + 212}}{2}$\n$x = \\frac{35 \\pm \\sqrt{1437}}{2}$",
+                  "reasoning": "Solve for $x$."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate values and round to 2 decimal places.",
+                  "working": "$x_1 = \\frac{35 + 37.908}{2} = 36.454...$\n$x_2 = \\frac{35 - 37.908}{2} = -1.454...$\nRounded: $36.45, -1.45$",
+                  "reasoning": "Final precision requirement."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Algebraic Manipulation and Solving"
       },
       {
         "questionNumber": 4,
@@ -2647,6 +3340,183 @@
         "totalMarks": 7,
         "paper": "Paper 2",
         "title": "Algebraic Fractions and Equations"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2111113911-p2-q101",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express as a single fraction in its simplest form $\\frac{4}{x+3} - \\frac{2}{2x-1}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{6x-10}{(x+3)(2x-1)}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Establish common denominator.",
+                  "working": "$\\frac{4(2x-1) - 2(x+3)}{(x+3)(2x-1)}$",
+                  "reasoning": "Multiply numerators by missing factors of denominator."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand numerator.",
+                  "working": "$8x - 4 - 2x - 6$",
+                  "reasoning": "Distribute the constants."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify numerator.",
+                  "working": "$6x - 10$\nFraction: $\\frac{6x-10}{(x+3)(2x-1)}$",
+                  "reasoning": "Combine like terms."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_i",
+            "questionText": "Given that $y = \\frac{2x-5}{3-x}$, find the value of $y$ when $x=4$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "-3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $x=4$.",
+                  "working": "$y = \\frac{2(4)-5}{3-4}$",
+                  "reasoning": "Direct substitution."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate.",
+                  "working": "$y = \\frac{8-5}{-1} = \\frac{3}{-1} = -3$",
+                  "reasoning": "Simplify."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Rearrange the formula $y = \\frac{2x-5}{3-x}$ to make $x$ the subject.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x = \\frac{3y+5}{y+2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Cross multiply.",
+                  "working": "$y(3-x) = 2x-5$\n$3y - xy = 2x - 5$",
+                  "reasoning": "Remove fraction."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Group $x$ terms.",
+                  "working": "$3y + 5 = 2x + xy$",
+                  "reasoning": "Move all terms with $x$ to one side."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Factorise and solve.",
+                  "working": "$3y + 5 = x(2+y)$\n$x = \\frac{3y+5}{y+2}$",
+                  "reasoning": "Isolate $x$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Solve the equation $\\frac{3}{x} + \\frac{4}{x+2} = 2$. Give your solutions correct to two decimal places.",
+            "marks": 5,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 2.64$ or $x = -1.14$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Combine fractions on LHS.",
+                  "working": "$\\frac{3(x+2) + 4x}{x(x+2)} = 2$\n$\\frac{3x+6+4x}{x^2+2x} = 2$\n$\\frac{7x+6}{x^2+2x} = 2$",
+                  "reasoning": "Common denominator."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form quadratic equation.",
+                  "working": "$7x + 6 = 2(x^2 + 2x)$\n$7x + 6 = 2x^2 + 4x$\n$2x^2 - 3x - 6 = 0$",
+                  "reasoning": "Cross multiply and rearrange."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply quadratic formula.",
+                  "working": "$x = \\frac{-(-3) \\pm \\sqrt{(-3)^2 - 4(2)(-6)}}{2(2)}$\n$x = \\frac{3 \\pm \\sqrt{9 + 48}}{4} = \\frac{3 \\pm \\sqrt{57}}{4}$",
+                  "reasoning": "Use formula for $ax^2+bx+c=0$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate final values.",
+                  "working": "$x_1 = \\frac{3 + 7.55}{4} = 2.637...$\n$x_2 = \\frac{3 - 7.55}{4} = -1.137...$\nRounded: $2.64, -1.14$",
+                  "reasoning": "Round to 2 d.p."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 11,
+        "paper": "Paper 2",
+        "title": "Formulae and Equation Solving"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2111121650-p2-q101",
+        "topicID": "N5",
+        "stem": "Given that $y = \\frac{2x+5}{3-x}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $x$ in terms of $y$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x = \\frac{3y-5}{y+2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Remove the fraction by multiplying both sides by the denominator.",
+                  "working": "$y(3-x) = 2x + 5$",
+                  "reasoning": "Eliminate the denominator to linearize the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the bracket.",
+                  "working": "$3y - xy = 2x + 5$",
+                  "reasoning": "Prepare to group terms containing $x$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Group all $x$ terms on one side and non-$x$ terms on the other.",
+                  "working": "$3y - 5 = 2x + xy$",
+                  "reasoning": "Isolate terms with the subject variable."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factorise $x$ out and divide to make it the subject.",
+                  "working": "$3y - 5 = x(2 + y) \\implies x = \\frac{3y-5}{2+y}$",
+                  "reasoning": "Isolate $x$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Changing Subject of Formula"
       }
     ]
   }

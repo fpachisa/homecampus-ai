@@ -1,0 +1,71 @@
+{
+  "topicId": "N5",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 2,
+        "questionId": "N5-navalbase-2024-p1-q2",
+        "topicID": "N5",
+        "stem": "Simplify",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$3x^{2}\\times4y^{5}$",
+            "marks": 1,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "b",
+            "questionText": "$3(2x-1)-5$",
+            "marks": 1,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Simplification"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "N5-navalbase-2024-p1-q3",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise completely $2x^{3}-13x^{2}+6x$",
+            "marks": 2,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Complete Factorisation"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "N5-navalbase-2024-p1-q9",
+        "topicID": "N5",
+        "stem": "$T=2\\pi\\sqrt{\\frac{L}{g}}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Rearrange the formula to make $g$ the subject.",
+            "marks": 3,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Rearranging Formula"
+      }
+    ],
+    "Paper 2": []
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "topicId": "G5",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 8,
+        "questionId": "G5-navalbase-2024-p1-q8",
+        "topicID": "G5",
+        "stem": "Raj has 120 one-centimetre cubes. He arranges all of the cubes into a cuboid. The perimeter of the top of the cuboid is 20 cm. Each side of the cuboid has a length greater than 3 cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the height of the cuboid.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Cuboid Volume and Dimensions"
+      }
+    ],
+    "Paper 2": []
+  }
+}

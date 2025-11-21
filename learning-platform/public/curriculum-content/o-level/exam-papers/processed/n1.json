@@ -128,6 +128,119 @@
         "title": "Calculation and Approximation"
       },
       {
+        "questionNumber": 1,
+        "questionId": "N1-huayi-2024-p1-q1",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\frac{-(-11.8)-\\sqrt{(-11)^{2}-7\\times16\\times(-40)}}{2\\times16}$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "-1.750958...",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Simplify the expression inside the square root (the discriminant).",
+                  "working": "$(-11)^2 - 7(16)(-40) = 121 - (-4480) = 121 + 4480 = 4601$",
+                  "reasoning": "Follow BODMAS/BIDMAS rules. Multiplication comes before subtraction."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the value back into the fraction and simplify the numerator and denominator.",
+                  "working": "Numerator: $11.8 - \\sqrt{4601} \\approx 11.8 - 67.83067 = -56.03067$\nDenominator: $2 \\times 16 = 32$",
+                  "reasoning": "Ensure signs are handled correctly, specifically $-(-11.8)$ becomes positive $11.8$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Perform the final division.",
+                  "working": "$\\frac{-56.03067}{32} \\approx -1.750958$",
+                  "reasoning": "Use a calculator for the final evaluation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "There are 800 people in an auditorium, correct to the nearest hundred. State the minimum number of people that could be in the auditorium at this time.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "750",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the degree of accuracy.",
+                  "working": "Nearest 100.",
+                  "reasoning": "The rounding unit is 100."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the absolute error margin.",
+                  "working": "Error = $\\frac{100}{2} = 50$",
+                  "reasoning": "The range of values is the rounded value $\\pm$ half the degree of accuracy."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the minimum value (lower bound).",
+                  "working": "$800 - 50 = 750$",
+                  "reasoning": "Lower bound = Value - Error."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Calculation and Approximation"
+      },
+      {
+        "questionNumber": 1,
+        "questionId": "N1-navalbase-2024-p1-q1",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\sqrt[4]{13.5^{2}-\\frac{6.56}{0.37}}.$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3.58",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Evaluate the terms inside the fourth root using a calculator.",
+                  "working": "$13.5^2 = 182.25$ and $\\frac{6.56}{0.37} \\approx 17.72973$",
+                  "reasoning": "Perform operations inside the grouping symbol (the root) first, following BODMAS."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the values.",
+                  "working": "$182.25 - 17.72973 = 164.52027...$",
+                  "reasoning": "Simplify the radicand before applying the root."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the fourth root and round to 3 significant figures.",
+                  "working": "$\\sqrt[4]{164.52027...} \\approx 3.5818... \\approx 3.58$",
+                  "reasoning": "Unless specified otherwise, non-exact numerical answers in O-Level math should be rounded to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 1,
+        "paper": "Paper 1",
+        "title": "Calculation and Approximation"
+      },
+      {
         "questionNumber": 2,
         "questionId": "N1-anderson-2024-p1-q2",
         "topicID": "N1",
@@ -265,6 +378,106 @@
         "title": "Indices and Growth"
       },
       {
+        "questionNumber": 2,
+        "questionId": "N1-huayi-2024-p1-q2",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express 1400 as the product of its prime factors.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2^3 \\times 5^2 \\times 7$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform prime factorization (ladder method or factor tree).",
+                  "working": "$1400 = 14 \\times 100$\n$= (2 \\times 7) \\times (10^2)$\n$= 2 \\times 7 \\times (2 \\times 5)^2$\n$= 2 \\times 7 \\times 2^2 \\times 5^2$",
+                  "reasoning": "Break the number down into smaller factors until only prime numbers remain."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Group like bases.",
+                  "working": "$2^{1+2} \\times 5^2 \\times 7 = 2^3 \\times 5^2 \\times 7$",
+                  "reasoning": "Express in index notation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down the smallest positive integer $k$ such that $1400k$ is a perfect cube.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "245",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the indices of the prime factors of 1400.",
+                  "working": "$1400 = 2^3 \\times 5^2 \\times 7^1$",
+                  "reasoning": "For a perfect cube, all indices must be multiples of 3."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the missing factors required to make indices multiples of 3.",
+                  "working": "Powers of 2: 3 (already multiple of 3).\nPowers of 5: 2 (needs 1 more to reach 3).\nPowers of 7: 1 (needs 2 more to reach 3).",
+                  "reasoning": "We need to multiply by $5^1$ and $7^2$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $k$.",
+                  "working": "$k = 5^1 \\times 7^2 = 5 \\times 49 = 245$",
+                  "reasoning": "Combine the required factors."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "$n$ is a number between 300 and 400. The highest common factor of $n$ and 1400 is 35. Find the largest possible value for $n$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "385",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the HCF condition.",
+                  "working": "$1400 = 2^3 \\times 5^2 \\times 7$\n$HCF = 35 = 5 \\times 7$\nThis means $n$ must be a multiple of 35 ($5 \\times 7$).\nAlso, $n$ cannot share any other factors with 1400 (specifically 2 or an extra 5).",
+                  "reasoning": "If $n$ had a factor of 2, the HCF would be at least 70. If $n$ had $5^2$, the HCF would be 175."
+                },
+                {
+                  "step": 2,
+                  "explanation": "List multiples of 35 within the range 300 to 400.",
+                  "working": "$35 \\times 9 = 315$\n$35 \\times 10 = 350$\n$35 \\times 11 = 385$",
+                  "reasoning": "Find candidates for $n$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Test candidates against the HCF condition.",
+                  "working": "For 385 ($35 \\times 11$): Factors are 5, 7, 11. HCF(385, 1400) = $5 \\times 7 = 35$. (Valid)\nFor 350 ($35 \\times 10$): Divisible by 2. HCF would be 70. (Invalid)\nFor 315 ($35 \\times 9$): Factors are $3^2, 5, 7$. HCF is 35. (Valid)",
+                  "reasoning": "We need the *largest* possible value."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Select the largest valid candidate.",
+                  "working": "385 > 315",
+                  "reasoning": "385 is the largest valid integer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Prime Factors and HCF"
+      },
+      {
         "questionNumber": 3,
         "questionId": "N1-broadrick-2024-p1-q3",
         "topicID": "N1",
@@ -394,6 +607,77 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Simplifying Indices Expressions"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "N1-huayi-2024-p1-q3",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $y^{0}\\div9x^{-2}\\times x^{7}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x^9}{9}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Simplify the zero index term.",
+                  "working": "$y^0 = 1$",
+                  "reasoning": "Any non-zero base to the power of 0 is 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Handle the division and negative index. In this context, $9x^{-2}$ is treated as the divisor term.",
+                  "working": "$1 \\div (9x^{-2}) = \\frac{1}{9x^{-2}} = \\frac{x^2}{9}$",
+                  "reasoning": "The negative index in the denominator moves to the numerator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply by the final term.",
+                  "working": "$\\frac{x^2}{9} \\times x^7 = \\frac{x^{2+7}}{9} = \\frac{x^9}{9}$",
+                  "reasoning": "Law of indices: $a^m \\times a^n = a^{m+n}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Simplify $(81a^{12})^{\\frac{5}{4}}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$243a^{15}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the power to both the coefficient and the variable.",
+                  "working": "$81^{\\frac{5}{4}} \\times (a^{12})^{\\frac{5}{4}}$",
+                  "reasoning": "Law of indices: $(ab)^n = a^n b^n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the coefficient.",
+                  "working": "$81 = 3^4$, so $(3^4)^{\\frac{5}{4}} = 3^5 = 243$",
+                  "reasoning": "Power of a power rule."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Evaluate the variable part.",
+                  "working": "$a^{12 \\times \\frac{5}{4}} = a^{15}$",
+                  "reasoning": "Multiply the indices: $12 \\times 1.25 = 15$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Indices Simplification"
       },
       {
         "questionNumber": 4,
@@ -682,6 +966,77 @@
         "title": "Limits of Accuracy"
       },
       {
+        "questionNumber": 6,
+        "questionId": "N1-navalbase-2024-p1-q6",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The number $12250\\times\\frac{p}{q}$ is a perfect cube. $p$ and $q$ are prime numbers. Find $p$ and $q$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "p = 7, q = 2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the prime factorization of 12250.",
+                  "working": "$12250 = 10 \\times 1225 = 2 \\times 5 \\times 25 \\times 49 = 2 \\times 5 \\times 5^2 \\times 7^2 = 2^1 \\times 5^3 \\times 7^2$",
+                  "reasoning": "To determine if a number is a perfect cube, we analyze the indices of its prime factors."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the indices required for a perfect cube.",
+                  "working": "Indices must be multiples of 3. Current indices: $2 \\to 1$, $5 \\to 3$, $7 \\to 2$.",
+                  "reasoning": "A number is a perfect cube if all powers in its prime factorization are divisible by 3."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine $p$ and $q$ to adjust the indices.",
+                  "working": "Expression is $2^1 \\times 5^3 \\times 7^2 \\times \\frac{p}{q}$.\nTo fix $2^1$: dividing by $q=2$ reduces index to 0 (multiple of 3).\nTo fix $7^2$: multiplying by $p=7$ increases index to 3 (multiple of 3).\nResult: $\\frac{2^1 \\times 5^3 \\times 7^2 \\times 7}{2} = 5^3 \\times 7^3$, which is a perfect cube.",
+                  "reasoning": "We multiply by $p$ to increase a power and divide by $q$ to decrease a power to the nearest multiple of 3."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$x$ is a number between 700 and 800. The highest common factor of $x$ and 12 250 is 250. Find the smallest possible value of $x$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "750",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express $x$ in terms of the HCF.",
+                  "working": "Since HCF is 250, $x = 250 \\times k$ for some integer $k$.",
+                  "reasoning": "The number must be a multiple of the HCF."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the range for $k$.",
+                  "working": "$700 < 250k < 800$\n$2.8 < k < 3.2$\nSo, $k = 3$ is the only integer solution.",
+                  "reasoning": "Substitute the expression for $x$ into the given inequality."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Verify the HCF condition.",
+                  "working": "If $k=3$, $x = 750$.\nCheck HCF(750, 12250).\n$750 = 250 \\times 3$\n$12250 = 250 \\times 49$\nHCF(3, 49) = 1. Condition satisfied.",
+                  "reasoning": "We must ensure that the non-common factors (3 and 49) are coprime, otherwise the HCF would be larger than 250."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Primes and Factors"
+      },
+      {
         "questionNumber": 7,
         "questionId": "N1-acsi-2024-p1-q7",
         "topicID": "N1",
@@ -728,6 +1083,48 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Indices Simplification"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "N1-navalbase-2024-p1-q7",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $81^{2x}\\times9^{x}=27$, find $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all terms with the same base (base 3).",
+                  "working": "$81 = 3^4$, $9 = 3^2$, $27 = 3^3$.\nEquation becomes: $(3^4)^{2x} \\times (3^2)^x = 3^3$",
+                  "reasoning": "To solve exponential equations, it is easiest to convert all terms to the same base."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply index laws to simplify the powers.",
+                  "working": "$3^{8x} \\times 3^{2x} = 3^3$\n$3^{8x + 2x} = 3^3$\n$3^{10x} = 3^3$",
+                  "reasoning": "Law of indices: $(a^m)^n = a^{mn}$ and $a^m \\times a^n = a^{m+n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the exponents and solve for $x$.",
+                  "working": "$10x = 3$\n$x = \\frac{3}{10} = 0.3$",
+                  "reasoning": "If $a^m = a^n$, then $m=n$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices Equation"
       },
       {
         "questionNumber": 8,
@@ -1582,6 +1979,148 @@
         "title": "Standard Form and Estimation"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111113911-p1-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\frac{4.5 \\times 10^{8} + 9.2 \\times 10^{7}}{2.0 \\times 10^{-4}}$. Give your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2.71 \\times 10^{12}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert numerator terms to the same power of 10 to add them.",
+                  "working": "$4.5 \\times 10^8 + 0.92 \\times 10^8 = 5.42 \\times 10^8$",
+                  "reasoning": "Addition in standard form requires matching exponents."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the division.",
+                  "working": "$\\frac{5.42 \\times 10^8}{2.0 \\times 10^{-4}} = \\frac{5.42}{2.0} \\times 10^{8 - (-4)}$",
+                  "reasoning": "Divide coefficients and subtract exponents."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Finalize the standard form.",
+                  "working": "$2.71 \\times 10^{12}$",
+                  "reasoning": "The coefficient 2.71 is between 1 and 10, so it is in valid standard form."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Estimate the value of $\\frac{29.88}{\\sqrt{50.1 - 13.95}}$ correct to 1 significant figure.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Round numbers to 1 significant figure or convenient numbers for estimation.",
+                  "working": "$29.88 \\approx 30$\n$50.1 \\approx 50$\n$13.95 \\approx 14$",
+                  "reasoning": "Estimation requires simplifying numbers before calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the expression inside the square root.",
+                  "working": "$\\sqrt{50 - 14} = \\sqrt{36} = 6$",
+                  "reasoning": "Choose numbers that result in perfect squares where possible."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final estimate.",
+                  "working": "$\\frac{30}{6} = 5$",
+                  "reasoning": "Simple division."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Standard Form and Estimation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-202310271200-p1-q101",
+        "topicID": "N1",
+        "stem": "Consider the number $M = 2^4 \\times 3^3 \\times 5$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the smallest positive integer $k$ such that $\\frac{M}{k}$ is a perfect square.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "15",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the indices of the prime factors of $M$.",
+                  "working": "$M = 2^4 \\times 3^3 \\times 5^1$. Indices are 4, 3, and 1.",
+                  "reasoning": "A number is a perfect square if all indices in its prime factorization are even numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine which factors need to be removed (divided out) to make indices even.",
+                  "working": "$2^4$ is even (keep).\n$3^3$ is odd (remove one 3).\n$5^1$ is odd (remove one 5).",
+                  "reasoning": "We divide by the prime factors that have odd powers to reduce their power by 1, making them even."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $k$.",
+                  "working": "$k = 3 \\times 5 = 15$.",
+                  "reasoning": "Dividing $M$ by 15 leaves $2^4 \\times 3^2$, which is a square."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the smallest integer $n$ such that $Mn$ is a multiple of $2^4 \\times 3^4 \\times 5^2$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "15",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the factors of $M$ with the target multiple.",
+                  "working": "Current: $2^4 \\times 3^3 \\times 5^1$\nTarget: $2^4 \\times 3^4 \\times 5^2$",
+                  "reasoning": "To be a multiple, the number must contain at least the powers of the target."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the missing factors.",
+                  "working": "Powers of 2: Have 4, Need 4 (OK).\nPowers of 3: Have 3, Need 4 (Need $\\times 3$).\nPowers of 5: Have 1, Need 2 (Need $\\times 5$).",
+                  "reasoning": "$n$ must supply the missing prime factors."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $n$.",
+                  "working": "$n = 3 \\times 5 = 15$.",
+                  "reasoning": "Multiplying $M$ by 15 results in the target expression."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Prime Factorization and Multiples"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N1-gemini-1911-p1-102",
         "topicID": "N1",
@@ -1822,6 +2361,119 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Factors and Multiples"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2111113911-p1-q102",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Written as the product of its prime factors, $540 = 2^2 \\times 3^3 \\times 5$. Find the smallest integer $k$ such that $\\sqrt{540k}$ is an integer.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "15",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the condition for a number to be a perfect square.",
+                  "working": "All prime factor indices must be even.",
+                  "reasoning": "Square roots of even powers result in integer powers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Check the indices of 540.",
+                  "working": "$2^2$ (even)\n$3^3$ (odd, needs one more 3)\n$5^1$ (odd, needs one more 5)",
+                  "reasoning": "Identify which factors have odd powers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $k$.",
+                  "working": "$k = 3 \\times 5 = 15$",
+                  "reasoning": "Multiply the missing factors."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Three light signals flash at intervals of 12 seconds, 18 seconds, and 30 seconds respectively. They flash together at 10:00 am. Find the time they will next flash together.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "10:03 am",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the prime factorization of the intervals.",
+                  "working": "$12 = 2^2 \\times 3$\n$18 = 2 \\times 3^2$\n$30 = 2 \\times 3 \\times 5$",
+                  "reasoning": "Prepare to find the LCM."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the LCM.",
+                  "working": "LCM = $2^2 \\times 3^2 \\times 5 = 4 \\times 9 \\times 5 = 180$ seconds",
+                  "reasoning": "Take the highest power of each prime factor present."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert seconds to minutes and add to the start time.",
+                  "working": "180 seconds = 3 minutes.\n10:00 am + 3 mins = 10:03 am",
+                  "reasoning": "Convert units for the final answer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "LCM and Square Roots"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-202310271200-p1-q102",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Solve the equation $4^{x} \\div 2^{x-3} = 32$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert all terms to base 2.",
+                  "working": "$4^x = (2^2)^x = 2^{2x}$ and $32 = 2^5$.\nEquation: $2^{2x} \\div 2^{x-3} = 2^5$",
+                  "reasoning": "Using a common base allows us to compare exponents directly."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the division law of indices.",
+                  "working": "$2^{2x - (x-3)} = 2^5$\n$2^{2x - x + 3} = 2^5$\n$2^{x+3} = 2^5$",
+                  "reasoning": "Law of indices: $a^m \\div a^n = a^{m-n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate exponents and solve.",
+                  "working": "$x + 3 = 5 \\Rightarrow x = 2$",
+                  "reasoning": "Since bases are equal, exponents must be equal."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices"
       }
     ],
     "Paper 2": [
@@ -2497,6 +3149,107 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Financial Arithmetic"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111113911-p2-q101",
+        "topicID": "N1",
+        "stem": "A rectangular tank has a capacity of $6.4 \\times 10^5$ litres. Water flows into the tank at a rate of $8.0 \\times 10^3$ litres per hour.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the time taken, in hours, to fill the tank completely.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "80",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the division.",
+                  "working": "Time = $\\frac{\\text{Capacity}}{\\text{Rate}} = \\frac{6.4 \\times 10^5}{8.0 \\times 10^3}$",
+                  "reasoning": "Time = Volume / Rate."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the calculation.",
+                  "working": "$\\frac{6.4}{8.0} \\times 10^{5-3} = 0.8 \\times 10^2 = 80$",
+                  "reasoning": "Simplify coefficients and indices."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The length of the tank is given as 40 metres, correct to the nearest metre. Write down the upper bound for the length of the tank.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "40.5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the error margin.",
+                  "working": "Nearest 1m $\\rightarrow$ Error = $1 \\div 2 = 0.5$m",
+                  "reasoning": "Error is half the unit of accuracy."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate upper bound.",
+                  "working": "$40 + 0.5 = 40.5$",
+                  "reasoning": "Upper Bound = Measured Value + Error."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 2",
+        "title": "Standard Form and Bounds"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-202310271200-p2-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Three bells ring at intervals of 15 minutes, 20 minutes, and 45 minutes respectively. They ring together at 08:00. Find the time they will next ring together.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "11:00",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the Lowest Common Multiple (LCM) of the intervals.",
+                  "working": "$15 = 3 \\times 5$\n$20 = 2^2 \\times 5$\n$45 = 3^2 \\times 5$\nLCM = $2^2 \\times 3^2 \\times 5$",
+                  "reasoning": "The bells will ring together at a time that is a multiple of all three intervals."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the LCM value in minutes.",
+                  "working": "LCM = $4 \\times 9 \\times 5 = 180$ minutes.",
+                  "reasoning": "Convert prime factors back to a standard number."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert minutes to hours and add to the start time.",
+                  "working": "$180$ minutes = 3 hours.\n$08:00 + 3 \\text{ hours} = 11:00$.",
+                  "reasoning": "Add the calculated interval to the initial time."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "LCM Word Problem"
       },
       {
         "questionNumber": 102,

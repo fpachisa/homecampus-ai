@@ -1,0 +1,84 @@
+{
+  "topicId": "N7",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 12,
+        "questionId": "N7-navalbase-2024-p1-q12",
+        "topicID": "N7",
+        "stem": "Solve the simultaneous equations. You must show your working.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$\\frac{x}{4}-\\frac{y}{2}=2$\n$3x=19+4y$",
+            "marks": 3,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Simultaneous Equations"
+      },
+      {
+        "questionNumber": 19,
+        "questionId": "N7-navalbase-2024-p1-q19",
+        "topicID": "N7",
+        "stem": "Solve the equation $x^{2}+5x-16=0$ by completing the square.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Give your solutions correct to two decimal places.",
+            "marks": 4,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Solving Quadratic Equation"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 1,
+        "questionId": "N7-navalbase-2024-p2-q1",
+        "topicID": "N7",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Solve $\\frac{x}{5}+\\frac{2x-3}{4}=-6.$",
+            "marks": 2,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "Simplify $\\frac{2(p-3q)}{10r}\\div\\frac{(3q-p)^{2}}{r}$",
+            "marks": 2,
+            "answerType": "algebraic"
+          },
+          {
+            "partId": "c",
+            "questionText": "Solve the inequality $x+1\\le\\frac{7x-2}{4}<\\frac{5x+19}{5}$",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "d",
+            "questionText": "Simplify $\\frac{2y^{2}+7y-9}{4y^{2}-81}.$",
+            "marks": 3,
+            "answerType": "algebraic"
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Algebraic Equations and Inequalities"
+      }
+    ]
+  }
+}

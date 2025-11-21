@@ -3,6 +3,88 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 7,
+        "questionId": "N4-huayi-2024-p1-q7",
+        "topicID": "N4",
+        "stem": "A car travels at an average speed of $74.5~km/h$ for 2.25 hours.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Convert $75~km/h$ to $m/s$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$20\\frac{5}{6}~m/s$ or $20.8~m/s$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert kilometers to meters and hours to seconds.",
+                  "working": "$75~km/h = \\frac{75 \\times 1000~m}{1 \\times 3600~s}$",
+                  "reasoning": "To convert from km/h to m/s, we multiply by 1000 (meters in a km) and divide by 3600 (seconds in an hour)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the fraction.",
+                  "working": "$\\frac{75000}{3600} = \\frac{750}{36} = \\frac{125}{6} = 20\\frac{5}{6}$",
+                  "reasoning": "Calculating the value gives the speed in m/s."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "By rounding the numbers correct to 1 significant figure, find an estimate of the distance travelled by the car. Show your working clearly.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$140~km$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Round the speed and time to 1 significant figure.",
+                  "working": "Speed: $74.5 \\approx 70~km/h$\nTime: $2.25 \\approx 2~h$",
+                  "reasoning": "The question asks for estimation using 1 significant figure. 74.5 rounds down to 70 (nearest ten), and 2.25 rounds down to 2."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the estimated distance.",
+                  "working": "Distance = Speed $\\times$ Time\nDistance $\\approx 70 \\times 2 = 140~km$",
+                  "reasoning": "Apply the distance formula using the rounded values."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Without doing any calculation, explain why the actual distance travelled by the car is greater than the answer to (b).",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Both the speed and time were rounded down, so the product of the estimated values is smaller than the actual product.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the rounded values to the original values.",
+                  "working": "$70 < 74.5$ and $2 < 2.25$",
+                  "reasoning": "Identify that the estimated components are strictly less than the actual components."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Conclude the effect on the result.",
+                  "working": "Since both values used in the estimation are smaller than the actual values, the calculated estimated distance must be smaller than the actual distance.",
+                  "reasoning": "Multiplying smaller positive numbers results in a smaller product."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Speed and Estimation"
+      },
+      {
         "questionNumber": 9,
         "questionId": "N4-broadrick-2024-p1-q9",
         "topicID": "N4",
@@ -91,6 +173,60 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Relative Speed"
+      },
+      {
+        "questionNumber": 20,
+        "questionId": "N4-huayi-2024-p1-q20",
+        "topicID": "N4",
+        "stem": "Gino can paint 6 fence panels in 4 hours, while Danish can paint 7 fence panels in 5 hours. Gino and Danish work together to paint a total of 21 panels.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "If they continue to paint at the same rate, how long will it take them to paint 21 panels? Give your answer in hours and minutes, correct to the nearest minute.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7 hours 14 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the rate of work for Gino and Danish individually.",
+                  "working": "Gino's rate = $\\frac{6}{4} = 1.5$ panels/hour\nDanish's rate = $\\frac{7}{5} = 1.4$ panels/hour",
+                  "reasoning": "Rate is calculated as Quantity divided by Time."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the combined rate of work.",
+                  "working": "Combined rate = $1.5 + 1.4 = 2.9$ panels/hour",
+                  "reasoning": "When working together, their rates are additive."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the total time required.",
+                  "working": "Time = $\\frac{\\text{Total Work}}{\\text{Combined Rate}} = \\frac{21}{2.9}$ hours",
+                  "reasoning": "Time is calculated as Total Work divided by Rate."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert the decimal hours to hours and minutes.",
+                  "working": "$\\frac{21}{2.9} \\approx 7.24138$ hours\n$7$ hours\n$0.24138 \\times 60 \\approx 14.48$ minutes",
+                  "reasoning": "Keep the integer part as hours and multiply the decimal part by 60 to get minutes."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Round to the nearest minute.",
+                  "working": "$14.48 \\approx 14$ minutes\nTotal time: 7 hours 14 minutes",
+                  "reasoning": "The question asks for the answer correct to the nearest minute."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Rate of Work"
       },
       {
         "questionNumber": 22,
@@ -399,6 +535,54 @@
         "title": "Multi-stage Journey Speed"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-2111113911-p1-q101",
+        "topicID": "N4",
+        "stem": "Tap A can fill a water tank completely in 12 minutes. Tap B can fill the same tank in 8 minutes.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the time taken to fill the tank if both taps are turned on at the same time. Give your answer in minutes and seconds.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4 minutes 48 seconds",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the rate of filling for each tap per minute.",
+                  "working": "Rate of Tap A = $\\frac{1}{12}$ tank/min\nRate of Tap B = $\\frac{1}{8}$ tank/min",
+                  "reasoning": "If a job takes $t$ minutes, the rate is $\\frac{1}{t}$ of the job per minute."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the combined rate.",
+                  "working": "Combined Rate = $\\frac{1}{12} + \\frac{1}{8} = \\frac{2}{24} + \\frac{3}{24} = \\frac{5}{24}$ tank/min",
+                  "reasoning": "Add the fractions to find the total portion of the tank filled in one minute."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the total time taken.",
+                  "working": "Time = $1 \\div \\frac{5}{24} = \\frac{24}{5}$ minutes",
+                  "reasoning": "Time taken is the reciprocal of the combined rate."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert to minutes and seconds.",
+                  "working": "$\\frac{24}{5} = 4.8$ minutes\n$0.8 \\times 60 = 48$ seconds\nTotal: 4 minutes 48 seconds",
+                  "reasoning": "Convert the decimal part of the minute into seconds."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Combined Rates"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N4-gemini-1911-p1-102",
         "topicID": "N4",
@@ -481,6 +665,82 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Simple Interest"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N4-gemini-2111113911-p1-q102",
+        "topicID": "N4",
+        "stem": "A rectangular field measures $38.6~m$ by $19.4~m$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "By rounding each dimension to 1 significant figure, estimate the area of the field.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$800~m^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Round the dimensions to 1 significant figure.",
+                  "working": "Length: $38.6 \\approx 40~m$\nWidth: $19.4 \\approx 20~m$",
+                  "reasoning": "38.6 is closer to 40 than 30. 19.4 is closer to 20 than 10."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the estimated area.",
+                  "working": "Area $\\approx 40 \\times 20 = 800~m^2$",
+                  "reasoning": "Area of a rectangle is length multiplied by width."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the actual area of the field.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$748.84~m^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply the actual dimensions.",
+                  "working": "$38.6 \\times 19.4 = 748.84$",
+                  "reasoning": "Perform the multiplication with the exact given values."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Is the estimated area in part (a) an overestimate or underestimate? Give a reason for your answer.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Overestimate, because both dimensions were rounded up.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the rounded values to the actual values.",
+                  "working": "$40 > 38.6$ and $20 > 19.4$",
+                  "reasoning": "Observe that the values used for estimation are larger than the actual values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Conclude the nature of the estimate.",
+                  "working": "Since both length and width were rounded up, the product (area) will be larger than the actual area.",
+                  "reasoning": "Multiplying larger numbers yields a larger result."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Estimation and Area"
       }
     ],
     "Paper 2": [

@@ -1,0 +1,319 @@
+{
+  "topicId": "N1",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 1,
+        "questionId": "N1-navalbase-2024-p1-q1",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\sqrt[4]{13.5^{2}-\\frac{6.56}{0.37}}.$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3.58",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Evaluate the terms inside the fourth root using a calculator.",
+                  "working": "$13.5^2 = 182.25$ and $\\frac{6.56}{0.37} \\approx 17.72973$",
+                  "reasoning": "Perform operations inside the grouping symbol (the root) first, following BODMAS."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the values.",
+                  "working": "$182.25 - 17.72973 = 164.52027...$",
+                  "reasoning": "Simplify the radicand before applying the root."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the fourth root and round to 3 significant figures.",
+                  "working": "$\\sqrt[4]{164.52027...} \\approx 3.5818... \\approx 3.58$",
+                  "reasoning": "Unless specified otherwise, non-exact numerical answers in O-Level math should be rounded to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 1,
+        "paper": "Paper 1",
+        "title": "Calculation and Approximation"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "N1-navalbase-2024-p1-q6",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The number $12250\\times\\frac{p}{q}$ is a perfect cube. $p$ and $q$ are prime numbers. Find $p$ and $q$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "p = 7, q = 2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the prime factorization of 12250.",
+                  "working": "$12250 = 10 \\times 1225 = 2 \\times 5 \\times 25 \\times 49 = 2 \\times 5 \\times 5^2 \\times 7^2 = 2^1 \\times 5^3 \\times 7^2$",
+                  "reasoning": "To determine if a number is a perfect cube, we analyze the indices of its prime factors."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the indices required for a perfect cube.",
+                  "working": "Indices must be multiples of 3. Current indices: $2 \\to 1$, $5 \\to 3$, $7 \\to 2$.",
+                  "reasoning": "A number is a perfect cube if all powers in its prime factorization are divisible by 3."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine $p$ and $q$ to adjust the indices.",
+                  "working": "Expression is $2^1 \\times 5^3 \\times 7^2 \\times \\frac{p}{q}$.\nTo fix $2^1$: dividing by $q=2$ reduces index to 0 (multiple of 3).\nTo fix $7^2$: multiplying by $p=7$ increases index to 3 (multiple of 3).\nResult: $\\frac{2^1 \\times 5^3 \\times 7^2 \\times 7}{2} = 5^3 \\times 7^3$, which is a perfect cube.",
+                  "reasoning": "We multiply by $p$ to increase a power and divide by $q$ to decrease a power to the nearest multiple of 3."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$x$ is a number between 700 and 800. The highest common factor of $x$ and 12 250 is 250. Find the smallest possible value of $x$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "750",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express $x$ in terms of the HCF.",
+                  "working": "Since HCF is 250, $x = 250 \\times k$ for some integer $k$.",
+                  "reasoning": "The number must be a multiple of the HCF."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the range for $k$.",
+                  "working": "$700 < 250k < 800$\n$2.8 < k < 3.2$\nSo, $k = 3$ is the only integer solution.",
+                  "reasoning": "Substitute the expression for $x$ into the given inequality."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Verify the HCF condition.",
+                  "working": "If $k=3$, $x = 750$.\nCheck HCF(750, 12250).\n$750 = 250 \\times 3$\n$12250 = 250 \\times 49$\nHCF(3, 49) = 1. Condition satisfied.",
+                  "reasoning": "We must ensure that the non-common factors (3 and 49) are coprime, otherwise the HCF would be larger than 250."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Primes and Factors"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "N1-navalbase-2024-p1-q7",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $81^{2x}\\times9^{x}=27$, find $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all terms with the same base (base 3).",
+                  "working": "$81 = 3^4$, $9 = 3^2$, $27 = 3^3$.\nEquation becomes: $(3^4)^{2x} \\times (3^2)^x = 3^3$",
+                  "reasoning": "To solve exponential equations, it is easiest to convert all terms to the same base."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply index laws to simplify the powers.",
+                  "working": "$3^{8x} \\times 3^{2x} = 3^3$\n$3^{8x + 2x} = 3^3$\n$3^{10x} = 3^3$",
+                  "reasoning": "Law of indices: $(a^m)^n = a^{mn}$ and $a^m \\times a^n = a^{m+n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the exponents and solve for $x$.",
+                  "working": "$10x = 3$\n$x = \\frac{3}{10} = 0.3$",
+                  "reasoning": "If $a^m = a^n$, then $m=n$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices Equation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-202310271200-p1-q101",
+        "topicID": "N1",
+        "stem": "Consider the number $M = 2^4 \\times 3^3 \\times 5$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the smallest positive integer $k$ such that $\\frac{M}{k}$ is a perfect square.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "15",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the indices of the prime factors of $M$.",
+                  "working": "$M = 2^4 \\times 3^3 \\times 5^1$. Indices are 4, 3, and 1.",
+                  "reasoning": "A number is a perfect square if all indices in its prime factorization are even numbers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine which factors need to be removed (divided out) to make indices even.",
+                  "working": "$2^4$ is even (keep).\n$3^3$ is odd (remove one 3).\n$5^1$ is odd (remove one 5).",
+                  "reasoning": "We divide by the prime factors that have odd powers to reduce their power by 1, making them even."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $k$.",
+                  "working": "$k = 3 \\times 5 = 15$.",
+                  "reasoning": "Dividing $M$ by 15 leaves $2^4 \\times 3^2$, which is a square."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the smallest integer $n$ such that $Mn$ is a multiple of $2^4 \\times 3^4 \\times 5^2$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "15",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the factors of $M$ with the target multiple.",
+                  "working": "Current: $2^4 \\times 3^3 \\times 5^1$\nTarget: $2^4 \\times 3^4 \\times 5^2$",
+                  "reasoning": "To be a multiple, the number must contain at least the powers of the target."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the missing factors.",
+                  "working": "Powers of 2: Have 4, Need 4 (OK).\nPowers of 3: Have 3, Need 4 (Need $\\times 3$).\nPowers of 5: Have 1, Need 2 (Need $\\times 5$).",
+                  "reasoning": "$n$ must supply the missing prime factors."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $n$.",
+                  "working": "$n = 3 \\times 5 = 15$.",
+                  "reasoning": "Multiplying $M$ by 15 results in the target expression."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Prime Factorization and Multiples"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-202310271200-p1-q102",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Solve the equation $4^{x} \\div 2^{x-3} = 32$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert all terms to base 2.",
+                  "working": "$4^x = (2^2)^x = 2^{2x}$ and $32 = 2^5$.\nEquation: $2^{2x} \\div 2^{x-3} = 2^5$",
+                  "reasoning": "Using a common base allows us to compare exponents directly."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the division law of indices.",
+                  "working": "$2^{2x - (x-3)} = 2^5$\n$2^{2x - x + 3} = 2^5$\n$2^{x+3} = 2^5$",
+                  "reasoning": "Law of indices: $a^m \\div a^n = a^{m-n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate exponents and solve.",
+                  "working": "$x + 3 = 5 \\Rightarrow x = 2$",
+                  "reasoning": "Since bases are equal, exponents must be equal."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-202310271200-p2-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Three bells ring at intervals of 15 minutes, 20 minutes, and 45 minutes respectively. They ring together at 08:00. Find the time they will next ring together.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "11:00",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the Lowest Common Multiple (LCM) of the intervals.",
+                  "working": "$15 = 3 \\times 5$\n$20 = 2^2 \\times 5$\n$45 = 3^2 \\times 5$\nLCM = $2^2 \\times 3^2 \\times 5$",
+                  "reasoning": "The bells will ring together at a time that is a multiple of all three intervals."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the LCM value in minutes.",
+                  "working": "LCM = $4 \\times 9 \\times 5 = 180$ minutes.",
+                  "reasoning": "Convert prime factors back to a standard number."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert minutes to hours and add to the start time.",
+                  "working": "$180$ minutes = 3 hours.\n$08:00 + 3 \\text{ hours} = 11:00$.",
+                  "reasoning": "Add the calculated interval to the initial time."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "LCM Word Problem"
+      }
+    ]
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "topicId": "N5",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 2,
+        "questionId": "N5-navalbase-2024-p1-q2",
+        "topicID": "N5",
+        "stem": "Simplify",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$3x^{2}\\times4y^{5}$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$12x^2y^5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply the numerical coefficients together.",
+                  "working": "$3 \\times 4 = 12$",
+                  "reasoning": "Separate numbers from variables."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine the variable terms.",
+                  "working": "$x^2 \\times y^5 = x^2y^5$",
+                  "reasoning": "Since bases $x$ and $y$ are different, they are written side by side."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$3(2x-1)-5$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$6x - 8$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the bracket by multiplying the term outside with each term inside.",
+                  "working": "$3(2x) + 3(-1) - 5 = 6x - 3 - 5$",
+                  "reasoning": "Distributive law $a(b+c) = ab + ac$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the constant terms.",
+                  "working": "$6x - 8$",
+                  "reasoning": "Combine like terms ($-3$ and $-5$)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Simplification"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "N5-navalbase-2024-p1-q3",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise completely $2x^{3}-13x^{2}+6x$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x(2x-1)(x-6)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify and extract the common factor from all three terms.",
+                  "working": "$x(2x^2 - 13x + 6)$",
+                  "reasoning": "Every term contains at least one $x$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the quadratic expression inside the bracket.",
+                  "working": "Find factors of $2 \\times 6 = 12$ that sum to $-13$. These are $-1$ and $-12$.\n$2x^2 - 12x - x + 6$\n$= 2x(x-6) - 1(x-6)$",
+                  "reasoning": "Using the splitting the middle term method for quadratics."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine the factors.",
+                  "working": "$x(2x-1)(x-6)$",
+                  "reasoning": "Group the common binomial factor $(x-6)$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Complete Factorisation"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "N5-navalbase-2024-p1-q9",
+        "topicID": "N5",
+        "stem": "$T=2\\pi\\sqrt{\\frac{L}{g}}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Rearrange the formula to make $g$ the subject.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$g = \\frac{4\\pi^2 L}{T^2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Isolate the square root term by dividing by $2\\pi$.",
+                  "working": "$\\frac{T}{2\\pi} = \\sqrt{\\frac{L}{g}}$",
+                  "reasoning": "Inverse operation of multiplication is division."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Square both sides to remove the square root.",
+                  "working": "$(\\frac{T}{2\\pi})^2 = \\frac{L}{g} \\implies \\frac{T^2}{4\\pi^2} = \\frac{L}{g}$",
+                  "reasoning": "Inverse operation of square root is squaring."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Make $g$ the subject.",
+                  "working": "$g = \\frac{L}{\\frac{T^2}{4\\pi^2}} = L \\times \\frac{4\\pi^2}{T^2}$",
+                  "reasoning": "Cross-multiply or invert both fractions."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Rearranging Formula"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2111121650-p1-q101",
+        "topicID": "N5",
+        "stem": "Simplify",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$\\frac{18a^4 b}{3a}$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$6a^3b$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Divide the coefficients.",
+                  "working": "$18 \\div 3 = 6$",
+                  "reasoning": "Simplify the numerical part."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide the variables using laws of indices.",
+                  "working": "$\\frac{a^4}{a^1} = a^{4-1} = a^3$. The $b$ remains unchanged.",
+                  "reasoning": "$\\frac{x^m}{x^n} = x^{m-n}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "$4x - 2(3x - 5)$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$-2x + 10$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the bracket, being careful with the negative sign.",
+                  "working": "$4x - 2(3x) - 2(-5) = 4x - 6x + 10$",
+                  "reasoning": "Distribute $-2$ into the bracket."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify like terms.",
+                  "working": "$(4x - 6x) + 10 = -2x + 10$",
+                  "reasoning": "Combine the $x$ terms."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Simplification"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N5-gemini-2111121650-p1-q102",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise completely $3x^3 - 27x$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$3x(x-3)(x+3)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract the highest common factor.",
+                  "working": "$3x(x^2 - 9)$",
+                  "reasoning": "Both terms are divisible by $3x$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the expression inside the bracket using algebraic identity.",
+                  "working": "$x^2 - 9 = x^2 - 3^2 = (x-3)(x+3)$",
+                  "reasoning": "Difference of two squares: $a^2 - b^2 = (a-b)(a+b)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine parts for final answer.",
+                  "working": "$3x(x-3)(x+3)$",
+                  "reasoning": "Ensure all parts are included."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Complete Factorisation"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2111121650-p2-q101",
+        "topicID": "N5",
+        "stem": "Given that $y = \\frac{2x+5}{3-x}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $x$ in terms of $y$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x = \\frac{3y-5}{y+2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Remove the fraction by multiplying both sides by the denominator.",
+                  "working": "$y(3-x) = 2x + 5$",
+                  "reasoning": "Eliminate the denominator to linearize the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the bracket.",
+                  "working": "$3y - xy = 2x + 5$",
+                  "reasoning": "Prepare to group terms containing $x$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Group all $x$ terms on one side and non-$x$ terms on the other.",
+                  "working": "$3y - 5 = 2x + xy$",
+                  "reasoning": "Isolate terms with the subject variable."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factorise $x$ out and divide to make it the subject.",
+                  "working": "$3y - 5 = x(2 + y) \\implies x = \\frac{3y-5}{2+y}$",
+                  "reasoning": "Isolate $x$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Changing Subject of Formula"
+      }
+    ]
+  }
+}

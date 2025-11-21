@@ -116,6 +116,48 @@
         "title": "Solving Sine Equation"
       },
       {
+        "questionNumber": 4,
+        "questionId": "G4-navalbase-2024-p1-q4",
+        "topicID": "G4",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The sine of an angle is 0.6, find the two possible values for angle.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "36.9°, 143.1°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the basic reference angle ($\\alpha$) by taking the inverse sine of the absolute value.",
+                  "working": "$\\alpha = \\sin^{-1}(0.6) \\approx 36.8699^\\circ$",
+                  "reasoning": "To solve trigonometric equations, we first find the acute reference angle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the quadrants where sine is positive.",
+                  "working": "Since $\\sin \\theta > 0$, the angle lies in the 1st or 2nd quadrant.",
+                  "reasoning": "Using the ASTC rule, sine is positive in Quadrants I and II."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the two angles based on their quadrants and round to 1 decimal place.",
+                  "working": "$1^{\\text{st}} \\text{ Quad}: 36.8699^\\circ \\approx 36.9^\\circ$\n$2^{\\text{nd}} \\text{ Quad}: 180^\\circ - 36.8699^\\circ = 143.1301^\\circ \\approx 143.1^\\circ$",
+                  "reasoning": "O-level standard for angles in degrees is to round to 1 decimal place."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Trigonometric Angles"
+      },
+      {
         "questionNumber": 11,
         "questionId": "G4-greenridge-2024-p1-q11",
         "topicID": "G4",
@@ -396,6 +438,48 @@
         "title": "Pythagoras and Area"
       },
       {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2111121650-p1-q101",
+        "topicID": "G4",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $\\cos x = -0.5$ and $0^\\circ \\le x \\le 360^\\circ$, find the values of $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "120°, 240°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the basic reference angle ($\\alpha$).",
+                  "working": "$\\alpha = \\cos^{-1}(0.5) = 60^\\circ$",
+                  "reasoning": "Always use the positive value of the ratio to find the reference angle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the correct quadrants.",
+                  "working": "Since $\\cos x$ is negative ($-0.5$), $x$ lies in the 2nd and 3rd quadrants.",
+                  "reasoning": "ASTC Rule: Cosine is negative in Quadrants II and III."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the values of $x$.",
+                  "working": "$2^{\\text{nd}} \\text{ Quad}: 180^\\circ - 60^\\circ = 120^\\circ$\n$3^{\\text{rd}} \\text{ Quad}: 180^\\circ + 60^\\circ = 240^\\circ$",
+                  "reasoning": "Apply quadrant rules to the reference angle."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Trigonometric Equations"
+      },
+      {
         "questionNumber": 102,
         "questionId": "G4-gemini-1911-p1-102",
         "topicID": "G4",
@@ -549,6 +633,48 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Testing Right Angles"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G4-gemini-2111121650-p1-q102",
+        "topicID": "G4",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $\\tan \\theta = \\frac{5}{12}$ and $\\theta$ is an acute angle, find the exact value of $\\cos \\theta$ without using a calculator.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{12}{13}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Visualize a right-angled triangle.",
+                  "working": "$\\tan \\theta = \\frac{\\text{Opposite}}{\\text{Adjacent}} = \\frac{5}{12}$",
+                  "reasoning": "Use the definition of tangent in a right-angled triangle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the length of the hypotenuse using Pythagoras' theorem.",
+                  "working": "$\\text{Hypotenuse} = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$",
+                  "reasoning": "Pythagoras theorem states $a^2 + b^2 = c^2$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $\\cos \\theta$.",
+                  "working": "$\\cos \\theta = \\frac{\\text{Adjacent}}{\\text{Hypotenuse}} = \\frac{12}{13}$",
+                  "reasoning": "Use the definition of cosine."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Trigonometric Ratios"
       }
     ],
     "Paper 2": [
@@ -817,6 +943,48 @@
         "totalMarks": 4,
         "paper": "Paper 2",
         "title": "Pythagoras in Context"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2111121650-p2-q101",
+        "topicID": "G4",
+        "stem": "In triangle $ABC$, $AB = 8$ cm, $AC = 7$ cm and the area of the triangle is $14$ cm$^2$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the two possible values of angle $BAC$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "30°, 150°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the area of a triangle formula.",
+                  "working": "$\\text{Area} = \\frac{1}{2}ab \\sin C \\Rightarrow 14 = \\frac{1}{2}(8)(7)\\sin(\\angle BAC)$",
+                  "reasoning": "The formula requires two sides and the included angle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $\\sin(\\angle BAC)$.",
+                  "working": "$14 = 28 \\sin(\\angle BAC)$\n$\\sin(\\angle BAC) = \\frac{14}{28} = 0.5$",
+                  "reasoning": "Simplify the equation to isolate the sine term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the possible angles.",
+                  "working": "$\\text{Basic angle} = \\sin^{-1}(0.5) = 30^\\circ$\n$2^{\\text{nd}} \\text{ possible angle} = 180^\\circ - 30^\\circ = 150^\\circ$",
+                  "reasoning": "Since sine is positive in both the 1st and 2nd quadrants, the angle can be acute or obtuse."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Area of Triangle"
       },
       {
         "questionNumber": 102,

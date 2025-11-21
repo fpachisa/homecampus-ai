@@ -1,0 +1,189 @@
+{
+  "topicId": "G5",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 8,
+        "questionId": "G5-navalbase-2024-p1-q8",
+        "topicID": "G5",
+        "stem": "Raj has 120 one-centimetre cubes. He arranges all of the cubes into a cuboid. The perimeter of the top of the cuboid is 20 cm. Each side of the cuboid has a length greater than 3 cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the height of the cuboid.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the volume of the cuboid based on the number of cubes.",
+                  "working": "Volume = 120 × 1 cm³ = 120 cm³",
+                  "reasoning": "Since the cuboid is made of 120 one-centimetre cubes, the total volume is 120."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the perimeter of the top to find possible dimensions for the length ($L$) and width ($W$).",
+                  "working": "Perimeter = 2(L + W) = 20\nL + W = 10",
+                  "reasoning": "The top face is a rectangle. The semi-perimeter is half of the total perimeter."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine integer pairs for $L$ and $W$ that satisfy the condition that sides must be greater than 3 cm.",
+                  "working": "Possible integer pairs for (L, W) summing to 10:\n1. (1, 9) - Reject (1 ngtr 3)\n2. (2, 8) - Reject (2 ngtr 3)\n3. (3, 7) - Reject (3 ngtr 3)\n4. (4, 6) - Accept\n5. (5, 5) - Accept",
+                  "reasoning": "Since the cubes are 1 cm each, the dimensions must be integers. We filter based on the constraint given in the question."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the height ($H$) for the valid base areas and check if $H$ is an integer greater than 3.",
+                  "working": "Case 1: Base Area = 4 × 6 = 24 cm²\n$H = \\frac{Volume}{Base Area} = \\frac{120}{24} = 5$ cm\n(5 > 3, Valid)\n\nCase 2: Base Area = 5 × 5 = 25 cm²\n$H = \\frac{120}{25} = 4.8$ cm\n(Not an integer, Invalid)",
+                  "reasoning": "The height must be an integer because the cuboid is built from whole cubes. Only the base area of 24 cm² yields an integer height."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Cuboid Volume and Dimensions"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G5-gemini-2111121650-p1-q101",
+        "topicID": "G5",
+        "stem": "A solid metal block is in the shape of a cuboid with a square base. The volume of the block is 500 cm³. The height of the block is 4 times the length of the side of its square base.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the total surface area of the block.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "450 cm²",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define the dimensions in terms of a variable $x$.",
+                  "working": "Let the side of the square base be $x$ cm.\nThen the height is $4x$ cm.",
+                  "reasoning": "Setting up an algebraic expression allows us to solve for the unknown dimension using the volume."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation using the volume and solve for $x$.",
+                  "working": "Volume = Base Area × Height\n$500 = (x)(x)(4x)$\n$500 = 4x^3$\n$125 = x^3$\n$x = \\sqrt[3]{125} = 5$",
+                  "reasoning": "We equate the product of dimensions to the given volume."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine the actual dimensions of the cuboid.",
+                  "working": "Length = 5 cm\nWidth = 5 cm\nHeight = 4(5) = 20 cm",
+                  "reasoning": "Substitute $x=5$ back into the expressions defined in Step 1."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the total surface area.",
+                  "working": "Surface Area = 2(Base Area) + 4(Side Face Area)\n$= 2(5 \\times 5) + 4(5 \\times 20)$\n$= 2(25) + 4(100)$\n$= 50 + 400 = 450$ cm²",
+                  "reasoning": "Sum the areas of the top/bottom squares and the four rectangular vertical faces."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Surface Area of Square-Based Cuboid"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G5-gemini-2111121650-p1-q102",
+        "topicID": "G5",
+        "stem": "Container A is a cube with side length 6 cm and is completely filled with water. The water is poured into an empty Container B, which is a cuboid with a rectangular base of 9 cm by 4 cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the height of the water level in Container B.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the volume of water in Container A.",
+                  "working": "Volume of water = $6^3 = 6 \\times 6 \\times 6 = 216$ cm³",
+                  "reasoning": "Since Container A is full, the volume of water equals the volume of the cube."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the base area of Container B.",
+                  "working": "Base Area = $9 \\times 4 = 36$ cm²",
+                  "reasoning": "The base is rectangular."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the height of the water in Container B.",
+                  "working": "Height = $\\frac{\\text{Volume}}{\\text{Base Area}}$\nHeight = $\\frac{216}{36} = 6$ cm",
+                  "reasoning": "The volume of water remains constant when transferred. We divide volume by the new base area to find the new height."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Volume Transfer between Containers"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "G5-gemini-2111121650-p2-q101",
+        "topicID": "G5",
+        "stem": "A solid metal sphere of radius 3 cm is melted down and recast into a solid cylinder of radius 2 cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the height of the cylinder formed.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "9 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the volume of the sphere.",
+                  "working": "Volume of sphere = $\\frac{4}{3}\\pi r^3$\n$= \\frac{4}{3}\\pi (3)^3$\n$= \\frac{4}{3}\\pi (27) = 36\\pi$ cm³",
+                  "reasoning": "Use the standard formula for the volume of a sphere."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation for the volume of the cylinder.",
+                  "working": "Volume of cylinder = $\\pi r^2 h$\n$= \\pi (2)^2 h = 4\\pi h$",
+                  "reasoning": "The volume of the metal is conserved during melting and recasting."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the volumes and solve for height $h$.",
+                  "working": "$4\\pi h = 36\\pi$\nDivide both sides by $4\\pi$:\n$h = \\frac{36\\pi}{4\\pi} = 9$",
+                  "reasoning": "By equating the two volume expressions, we can isolate $h$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Volume Conservation: Sphere to Cylinder"
+      }
+    ]
+  }
+}

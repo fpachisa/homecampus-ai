@@ -1,0 +1,353 @@
+{
+  "topicId": "N2",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 16,
+        "questionId": "N2-navalbase-2024-p1-q16",
+        "topicID": "N2",
+        "stem": "$x$ and $y$ are related such that $x$ is inversely proportional to the square of $y$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "If $y$ is increased by 400%, find the percentage change in $x$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "-96%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation relating $x$ and $y$ using a constant $k$.",
+                  "working": "$x = \\frac{k}{y^2}$",
+                  "reasoning": "Definition of inverse proportion involving a square."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the new value of $y$ ($y_{new}$) in terms of the original $y$. An increase of 400% means the new value is the original plus 4 times the original.",
+                  "working": "$y_{new} = y + 400\\% \\text{ of } y$\n$y_{new} = y + 4y = 5y$",
+                  "reasoning": "Converting percentage increase to a multiplier."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new value of $x$ ($x_{new}$) by substituting $y_{new}$ into the equation.",
+                  "working": "$x_{new} = \\frac{k}{(5y)^2} = \\frac{k}{25y^2}$",
+                  "reasoning": "Substitution."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Express $x_{new}$ in terms of the original $x$.",
+                  "working": "$x_{new} = \\frac{1}{25} \\left( \\frac{k}{y^2} \\right) = \\frac{1}{25} x$",
+                  "reasoning": "Isolating the original expression for $x$."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate the percentage change.",
+                  "working": "$\\text{Change} = \\frac{x_{new} - x}{x} \\times 100\\%$\n$= \\frac{\\frac{1}{25}x - x}{x} \\times 100\\%$\n$= (\\frac{1}{25} - 1) \times 100\\%$\n$= -\\frac{24}{25} \\times 100\\% = -96\\%$",
+                  "reasoning": "Formula for percentage change: $\\frac{\\text{Final} - \\text{Initial}}{\\text{Initial}} \\times 100$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Percentage Change in Inverse Proportion"
+      },
+      {
+        "questionNumber": 24,
+        "questionId": "N2-navalbase-2024-p1-q24",
+        "topicID": "N2",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Which of the following ratios are equivalent to the ratio $a:b$.\n$\\frac{1}{b}:\\frac{1}{a}$\n$a^{3}:b^{3}$\n$3a:3b$\n$a+1:b+1$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{b}:\\frac{1}{a}$ and $3a:3b$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Check the first ratio $\\frac{1}{b}:\\frac{1}{a}$ by creating a common denominator.",
+                  "working": "$\\frac{1}{b}:\\frac{1}{a} = \\frac{a}{ab}:\\frac{b}{ab} = a:b$",
+                  "reasoning": "Multiplying both terms by $ab$ eliminates fractions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Check the second ratio $a^3:b^3$.",
+                  "working": "$a^3:b^3 \\neq a:b$ (unless $a=b$ or $a,b=0,1$)",
+                  "reasoning": "Cubing the terms changes the ratio."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Check the third ratio $3a:3b$.",
+                  "working": "$3a:3b = \\frac{3a}{3}:\\frac{3b}{3} = a:b$",
+                  "reasoning": "Dividing both terms by the common factor 3 simplifies the ratio."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Check the fourth ratio $a+1:b+1$.",
+                  "working": "$a+1:b+1 \\neq a:b$",
+                  "reasoning": "Adding a constant to both terms changes the ratio (e.g., $1:2 \\neq 2:3$)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "John and Sam each have an amount of money. The ratio John's amount: Sam's amount = 6:2. John gives Sam \\$13. The new ratio John's amount: Sam's amount = 2:5. Find how much money John has now.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$8",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Simplify the initial ratio and define variables for the initial amounts.",
+                  "working": "Initial Ratio $J:S = 6:2 = 3:1$.\nLet John's initial amount be $3u$ and Sam's initial amount be $1u$.",
+                  "reasoning": "Using algebraic units ($u$) makes it easier to track changes."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Express the new amounts after the transfer of money.",
+                  "working": "John gives $13: $J_{new} = 3u - 13$\nSam receives $13: $S_{new} = u + 13$",
+                  "reasoning": "Conservation of total money; one loses, the other gains."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Set up an equation using the new ratio $2:5$.",
+                  "working": "$\\frac{3u - 13}{u + 13} = \\frac{2}{5}$",
+                  "reasoning": "Equating the algebraic ratio to the given numerical ratio."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $u$.",
+                  "working": "$5(3u - 13) = 2(u + 13)$\n$15u - 65 = 2u + 26$\n$15u - 2u = 26 + 65$\n$13u = 91$\n$u = 7$",
+                  "reasoning": "Cross-multiplication and linear equation solving."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate John's current amount ($J_{new}$).",
+                  "working": "John's current amount = $3u - 13$\n$= 3(7) - 13$\n$= 21 - 13 = 8$",
+                  "reasoning": "Substitute $u$ back into the expression for John's final amount."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 1",
+        "title": "Ratios"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111121650-p1-q101",
+        "topicID": "N2",
+        "stem": "The force of attraction, $F$ Newtons, between two magnets is inversely proportional to the square of the distance, $d$ cm, between them.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "When the magnets are 4 cm apart, the force is 20 N. Find the formula for $F$ in terms of $d$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$F = \\frac{320}{d^2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the general proportionality relationship.",
+                  "working": "$F = \\frac{k}{d^2}$",
+                  "reasoning": "Inverse proportion to the square of $d$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the given values ($d=4, F=20$) to find $k$.",
+                  "working": "$20 = \\frac{k}{4^2}$\n$20 = \\frac{k}{16}$\n$k = 20 \\times 16 = 320$",
+                  "reasoning": "Solving for the constant of proportionality."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final equation.",
+                  "working": "$F = \\frac{320}{d^2}$",
+                  "reasoning": "Substitute $k$ back into the general equation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the force when the distance is reduced to 2 cm.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "80 N",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $d=2$ into the formula found in part (a).",
+                  "working": "$F = \\frac{320}{2^2} = \\frac{320}{4}$",
+                  "reasoning": "Direct substitution."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the final value.",
+                  "working": "$F = 80$",
+                  "reasoning": "Arithmetic."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Inverse Proportion (Force)"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N2-gemini-2111121650-p1-q102",
+        "topicID": "N2",
+        "stem": "A map is drawn to a scale of $1 : 25\\,000$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The distance between two schools on the map is 12 cm. Calculate the actual distance between the schools in kilometers.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3 km",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the map distance to actual distance in cm using the scale.",
+                  "working": "Actual distance = $12 \\times 25\\,000 = 300\\,000 \\text{ cm}$",
+                  "reasoning": "Scale $1:n$ means 1 unit on map = $n$ units in reality."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert cm to km.",
+                  "working": "$300\\,000 \\text{ cm} = 3\\,000 \\text{ m} = 3 \\text{ km}$",
+                  "reasoning": "Divide by 100 to get meters, then by 1000 to get km (or divide by 100,000)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A forest has an actual area of 4.5 km². Calculate the area of the forest on the map in cm².",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "72 cm²",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the area scale.",
+                  "working": "Linear scale = $1 : 25\\,000$\nConvert linear scale to km: $1 \\text{ cm} : 0.25 \\text{ km}$\nArea scale = $(1 \\text{ cm})^2 : (0.25 \\text{ km})^2$\n$1 \\text{ cm}^2 : 0.0625 \\text{ km}^2$",
+                  "reasoning": "Area scale is the square of the linear scale."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the map area.",
+                  "working": "Map Area = $\\frac{\\text{Actual Area}}{\\text{Scale Factor}}$\n$= \\frac{4.5}{0.0625}$",
+                  "reasoning": "Using proportion."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final calculation.",
+                  "working": "$4.5 \\div 0.0625 = 72$",
+                  "reasoning": "Arithmetic."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Map Scales and Area"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111121650-p2-q101",
+        "topicID": "N2",
+        "stem": "A contractor estimates that he needs 8 workers to build a wall in 15 days.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Assuming all workers work at the same rate, how many days would it take 5 workers to build the same wall?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "24 days",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the relationship as inverse proportion.",
+                  "working": "More workers $\\rightarrow$ Less time.\nTotal Man-Days required = $8 \\times 15 = 120 \\text{ man-days}$.",
+                  "reasoning": "The total amount of work is constant."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the days required for 5 workers.",
+                  "working": "Days = $\\frac{\\text{Total Man-Days}}{\\text{Number of Workers}}$\n$= \\frac{120}{5}$",
+                  "reasoning": "Division of total work by rate of work."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final calculation.",
+                  "working": "$120 \\div 5 = 24$",
+                  "reasoning": "Arithmetic."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The contractor wants to finish the wall in 6 days. How many <i>additional</i> workers must he employ?",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12 workers",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of workers needed for 6 days.",
+                  "working": "Workers needed = $\\frac{\\text{Total Man-Days}}{\\text{Days}}$\n$= \\frac{120}{6}$",
+                  "reasoning": "Using the constant total work calculated in part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the total workers required.",
+                  "working": "$120 \\div 6 = 20 \\text{ workers}$",
+                  "reasoning": "Arithmetic."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the additional workers needed.",
+                  "working": "Additional = Total needed - Initial workers\n$= 20 - 8 = 12$",
+                  "reasoning": "The question asks for *additional* workers, not the total."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Rate of Work (Inverse Proportion)"
+      }
+    ]
+  }
+}

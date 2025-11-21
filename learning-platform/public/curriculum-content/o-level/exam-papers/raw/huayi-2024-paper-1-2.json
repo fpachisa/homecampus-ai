@@ -1,0 +1,554 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "questionId": "N1-huayi-2024-p1-q1",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate $\\frac{-(-11.8)-\\sqrt{(-11)^{2}-7\\times16\\times(-40)}}{2\\times16}$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "There are 800 people in an auditorium, correct to the nearest hundred. State the minimum number of people that could be in the auditorium at this time.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Calculation and Approximation"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N1-huayi-2024-p1-q2",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express 1400 as the product of its prime factors.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Write down the smallest positive integer $k$ such that $1400k$ is a perfect cube.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "$n$ is a number between 300 and 400. The highest common factor of $n$ and 1400 is 35. Find the largest possible value for $n$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Prime Factors and HCF"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N1-huayi-2024-p1-q3",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Simplify $y^{0}\\div9x^{-2}\\times x^{7}$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Simplify $(81a^{12})^{\\frac{5}{4}}$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Indices Simplification"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N5-huayi-2024-p1-q4",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express as a single fraction in its simplest form $\\frac{18b^{7}}{5c^{2}}\\div\\frac{3b^{4}}{81}$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Use the laws of indices to show that $6^{4}\\times100+116\\times36^{2}$ can be expressed as a single power of six.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Algebraic Fractions and Indices"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N3-huayi-2024-p1-q5",
+            "topicID": "N3",
+            "stem": "In a greenhouse, the estimated number of flowering plants increased from 4100 in January 2024 to 4980 in June 2024. The number increased by $c$% every month.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $c$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Compound Percentage Increase"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "N7-huayi-2024-p1-q6",
+            "topicID": "N7",
+            "stem": "Kyle runs a tennis club. 54 of the members are adults and 31 are children. His aim is that at least 60% the members should be children.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Form an inequality to find the smallest number of children that Kyle would still need to recruit to achieve his aim.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Inequality Problem Solving"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N4-huayi-2024-p1-q7",
+            "topicID": "N4",
+            "stem": "A car travels at an average speed of $74.5~km/h$ for 2.25 hours.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Convert $75~km/h$ to $m/s$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "By rounding the numbers correct to 1 significant figure, find an estimate of the distance travelled by the car. Show your working clearly.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Without doing any calculation, explain why the actual distance travelled by the car is greater than the answer to (b).",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Speed and Estimation"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "S1-huayi-2024-p1-q8",
+            "topicID": "S1",
+            "stem": "Isha has written down five numbers. The mean of these numbers is 13.2, the median is 12 and the mode is 7. The largest number is three times the smallest number.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the five numbers in ascending order.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Finding Numbers from Statistics"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N5-huayi-2024-p1-q9",
+            "topicID": "N5",
+            "stem": "Factorise completely",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$2p^{4}-32s^{4}$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$12cd-9cx+6xy-8dy$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Complete Factorisation"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "N6-huayi-2024-p1-q10",
+            "topicID": "N6",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express $9-8x+x^{2}$ in the form $a+(x+b)^{2}$. Find the value of $a$ and of $b$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Explain why when $x=4$, the expression $9-8x+x^{2}$ has its minimum value.",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Completing the Square"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "N7-huayi-2024-p1-q11",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve the equation $5+2x=\\frac{20}{1+x}.$",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Solving Fractional Equation"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "N6-huayi-2024-p1-q12",
+            "topicID": "N6",
+            "stem": "The points (4,20) and $(10,-4)$ satisfy the curve given by the equation $y=ax^{2}+bx-4$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Use an algebraic method to determine the values of $a$ and $b$.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Finding Curve Coefficients"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "N9-huayi-2024-p1-q14",
+            "topicID": "N9",
+            "stem": "In grocery mart G, water costs $1.80 per litre, fresh milk costs $2.90 per litre and juice costs $2.30 per litre. In grocery mart H, water costs $0.20 more per litre, fresh milk costs $0.40 less per litre and juice costs $0.10 less per litre. This information can be represented by the matrix $Q=[\\begin{matrix}1.8&0.2\\\\ 2.9&-0.4\\\\ 2.3&-0.1\\end{matrix}]$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Rayyen and Zinnie went shopping together. Rayyen bought 4 litres of water, 2 litres of milk and 3 litres of juice. Zinnie bought 3 litres of water and 4 litres of juice. Represent their purchases in a $2\\times3$ matrix P.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Evaluate the matrix $R=PQ$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "State what the elements in the second column of matrix R represent.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Rayyen shopped in grocery mart H. He got a discount coupon that entitled him to a discount of 15%. How much did he pay altogether for his items?",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Matrix Applications in Shopping"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "G1-huayi-2024-p1-q15",
+            "topicID": "G1",
+            "stem": "In a regular polygon, the ratio of an interior angle: exterior angle $= 14 : 1$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the number of sides of the polygon.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the sum of the interior angles of the polygon.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Regular Polygon Angles"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "N2-huayi-2024-p1-q18",
+            "topicID": "N2",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "A cargo ship has an average fuel consumption of 0.000 892 kilometres per litre. Write this consumption in litres per kilometre.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "A model of another cargo ship is made to a scale of 1: 60. The length of this model cargo ship is 550 cm.\n(i) Find the actual length of this cargo ship in metres.\n(ii) The capacity of the fuel tanks in the model cargo ship is 7.75 litres. Find the actual capacity of the fuel tanks of the cargo ship. Express your answer in standard form.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Fuel Consumption and Scale Models"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "N4-huayi-2024-p1-q20",
+            "topicID": "N4",
+            "stem": "Gino can paint 6 fence panels in 4 hours, while Danish can paint 7 fence panels in 5 hours. Gino and Danish work together to paint a total of 21 panels.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "If they continue to paint at the same rate, how long will it take them to paint 21 panels? Give your answer in hours and minutes, correct to the nearest minute.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Rate of Work"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "S2-huayi-2024-p1-q21",
+            "topicID": "S2",
+            "stem": "A fitness centre has 16 employees. One of the 16 employees is selected at random. The probability that it is a woman working part time is $\\frac{1}{8}$. Two of the 16 employees are selected at random. The probability that they are both men working full time is $\\frac{1}{8}$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of information below about the 16 employees of the fitness centre. Show all supporting calculations clearly.\n\n| | Part-time employees | Full-time employees |\n| :--- | :--- | :--- |\n| Women | | 5 |\n| Men | | |",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Probability Table Completion"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "S1-huayi-2024-p1-q22",
+            "topicID": "S1",
+            "stem": "A librarian wants to find out how much time patrons spend at the library in a week. He uses the questionnaire.\n\nHow many hours do you spend at the library in a week (including weekends)? Please tick one box.\n[] 1-2\n[] 3-4\n[] 5-7\n[] over 7",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "List two ways to improve the questionnaire.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Questionnaire Design"
+        },
+        {
+            "questionNumber": 23,
+            "questionId": "G6-huayi-2024-p1-q23",
+            "topicID": "G6",
+            "stem": "K is the point $(7,-8)$ and L is the point $(x,y)$. The gradient of the line KL is $\\frac{2}{3}$. Maverick claims that it is possible to express $x$ in terms of $y$, such that $x=a+by,$ where $a$ and $b$ are constants.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Explain why Maverick is correct.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Gradient and Linear Equation"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N5-huayi-2024-p2-q1",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express as a single fraction in its simplest form $\\frac{2}{7-3x}-\\frac{1}{6-x}$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "It is given that $v=\\frac{3-5w}{w+2}+9$. Find $v$ when $w=-6$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Rearrange the formula to make $w$ the subject.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Solve the equation $\\frac{5}{x-2}-\\frac{3}{x^{2}-4}=\\frac{1}{7}.$ Give your solutions correct to two decimal places.",
+                    "marks": 5,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Algebraic Manipulation and Solving"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "G6-huayi-2024-p2-q2",
+            "topicID": "G6",
+            "stem": "C is the point (-9,1) and D is the point (7,4). $\\vec{CE}=\\begin{pmatrix}-2\\\\ 8\\end{pmatrix}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the length of the line CD.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Determine the coordinates of point E.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the equation of the line DE. Leave your answer in the form $ax+by=c$, where a, b and c are constants.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 2",
+            "title": "Coordinate Geometry"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "N3-huayi-2024-p2-q8-finance",
+            "topicID": "N3",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Sophie earns a monthly salary of $6875. She gives 15% of this amount to her parents. She puts 35% of the remainder into a savings account. Calculate the amount she has left after giving to her parents and putting into her savings account. Leave your answer correct to the nearest dollar.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The cash price of a sofa is $830. Sophie buys this sofa on credit. She pays a deposit of one quarter of the cash price. She then pays 3 monthly payments of $260. Calculate the total amount Sophie pays for the sofa.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Sophie pays a monthly rent of $3174.20. This is 18% more than her monthly rent last year. Calculate her monthly rent last year.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "During her vacation, Sophie visits her friend in Wellington. Sophie spends NZD 940 in New Zealand using her credit card. She is charged a 2.6% fee for the currency conversion. The exchange rate between Singapore dollars (SGD) and New Zealand dollars (NZD) is SGD 100 = NZD 120.7206. Calculate the total amount on Sophie's credit card bill, including the fee. Give your answer in Singapore dollars, correct to the nearest cent.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Financial Mathematics"
+        }
+    ]
+}

@@ -1,0 +1,503 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "questionId": "N1-navalbase-2024-p1-q1",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate $\\sqrt[4]{13.5^{2}-\\frac{6.56}{0.37}}.$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 1,
+            "paper": "Paper 1",
+            "title": "Calculation and Approximation"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N5-navalbase-2024-p1-q2",
+            "topicID": "N5",
+            "stem": "Simplify",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$3x^{2}\\times4y^{5}$",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$3(2x-1)-5$",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Algebraic Simplification"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N5-navalbase-2024-p1-q3",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Factorise completely $2x^{3}-13x^{2}+6x$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Complete Factorisation"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "G4-navalbase-2024-p1-q4",
+            "topicID": "G4",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The sine of an angle is 0.6, find the two possible values for angle.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Trigonometric Angles"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "S1-navalbase-2024-p1-q5",
+            "topicID": "S1",
+            "stem": "A class of 12 boys and 8 girls took a test. The girl's marks were 3, 6, 7, 8, 9, 9, 10 and 10.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the mean mark for the girls.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The mean mark for the boys were 8.0. Find the mean mark for the whole class.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Mean Calculation"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "N1-navalbase-2024-p1-q6",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The number $12250\\times\\frac{p}{q}$ is a perfect cube. $p$ and $q$ are prime numbers. Find $p$ and $q$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$x$ is a number between 700 and 800. The highest common factor of $x$ and 12 250 is 250. Find the smallest possible value of $x$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Primes and Factors"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N1-navalbase-2024-p1-q7",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Given that $81^{2x}\\times9^{x}=27$, find $x$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Indices Equation"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "G5-navalbase-2024-p1-q8",
+            "topicID": "G5",
+            "stem": "Raj has 120 one-centimetre cubes. He arranges all of the cubes into a cuboid. The perimeter of the top of the cuboid is 20 cm. Each side of the cuboid has a length greater than 3 cm.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the height of the cuboid.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Cuboid Volume and Dimensions"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N5-navalbase-2024-p1-q9",
+            "topicID": "N5",
+            "stem": "$T=2\\pi\\sqrt{\\frac{L}{g}}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Rearrange the formula to make $g$ the subject.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Rearranging Formula"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "S1-navalbase-2024-p1-q11",
+            "topicID": "S1",
+            "stem": "The table below shows the amount of time spent playing online games by a group of children in one particular week.\n\n| Time ($h$ hours) | Frequency |\n| :--- | :--- |\n| $0<h\\le2$ | 4 |\n| $2<h\\le4$ | 9 |\n| $4<h\\le6$ | 15 |\n| $6<h\\le8$ | 13 |\n| $8<h\\le10$ | 7 |\n| $10<h\\le12$ | 2 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Calculate an estimate of the mean time spent playing online games that week.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Explain why this is only an estimate of the mean time these children spent playing online games that week.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate an estimate of the standard deviation of the time spent playing online games that week.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Mean and Standard Deviation"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "N7-navalbase-2024-p1-q12",
+            "topicID": "N7",
+            "stem": "Solve the simultaneous equations. You must show your working.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$\\frac{x}{4}-\\frac{y}{2}=2$\n$3x=19+4y$",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Simultaneous Equations"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "S2-navalbase-2024-p1-q14",
+            "topicID": "S2",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "A bag contains black, blue and yellow balls. A ball is picked at random from the bag. The probability that the ball is blue is $\\frac{5}{9}.$ The probability that the ball is yellow is $\\frac{2}{15}$. Find the probability that the ball is black.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Another bag contains 10 red balls, 7 white balls and 8 blue balls. A further $n$ white balls are added to the bag. The probability of picking a white ball is now $\\frac{2}{5}$. Find the value of $n$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Probability Calculations"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "N2-navalbase-2024-p1-q16",
+            "topicID": "N2",
+            "stem": "$x$ and $y$ are related such that $x$ is inversely proportional to the square of $y$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "If $y$ is increased by 400%, find the percentage change in $x$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Percentage Change in Inverse Proportion"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "N7-navalbase-2024-p1-q19",
+            "topicID": "N7",
+            "stem": "Solve the equation $x^{2}+5x-16=0$ by completing the square.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Give your solutions correct to two decimal places.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Solving Quadratic Equation"
+        },
+        {
+            "questionNumber": 24,
+            "questionId": "N2-navalbase-2024-p1-q24",
+            "topicID": "N2",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Underline the following ratios that are equivalent to the ratio $a:b$.\n$\\frac{1}{b}:\\frac{1}{a}$\n$a^{3}:b^{3}$\n$3a:3b$\n$a+1:b+1$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "John and Sam each have an amount of money. The ratio John's amount: Sam's amount $=6:2.$ John gives Sam $13. The new ratio John's amount: Sam's amount $=2:5.$ Find how much money John has now.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Ratios"
+        },
+        {
+            "questionNumber": 26,
+            "questionId": "N9-navalbase-2024-p1-q26",
+            "topicID": "N9",
+            "stem": "A baking school offers beginner, intermediate and advanced baking classes on weekdays and weekends in August this year. The matrix B shows the number of participants attending the baking classes in August.\n$B=\\begin{pmatrix}20&22&9\\\\ 8&10&11\\end{pmatrix}$ (Rows: weekdays, weekends; Cols: beginner, intermediate, advanced)",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The fees for the beginner, intermediate and advanced baking classes are $30, $40 and $50 respectively. Represent the class fees by a $3\\times1$ matrix F.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Evaluate the matrix $C=BF$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "State what the elements of C represent.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "In September, there were a different number of participants attending baking classes. The number of participants attending beginner classes decreased by 20%. The number of participants attending intermediate classes increased by 10%. The number of participants attending advanced classes tripled. Calculate the percentage increase in the total amount of fees between the August and September classes.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Matrices Baking Classes"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N7-navalbase-2024-p2-q1",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve $\\frac{x}{5}+\\frac{2x-3}{4}=-6.$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Simplify $\\frac{2(p-3q)}{10r}\\div\\frac{(3q-p)^{2}}{r}$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Solve the inequality $x+1\\le\\frac{7x-2}{4}<\\frac{5x+19}{5}$",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Simplify $\\frac{2y^{2}+7y-9}{4y^{2}-81}.$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Algebraic Equations and Inequalities"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N3-navalbase-2024-p2-q2",
+            "topicID": "N3",
+            "stem": "(a) Cheryl wants to open a fixed deposit account with either Bank H or Bank L for a period of 4 years.\n\n| Bank H | Bank L |\n| :--- | :--- |\n| Fixed Deposit Account | Fixed Deposit Account |\n| \u2022 Minimum deposit of $10 000. | \u2022 No minimum amount required. |\n| \u2022 For the first $10 000, earn 0.05% simple interest per annum. | \u2022 Compound interest at the rate of 0.8% per annum. |\n| \u2022 For the subsequent amount, earn 0.95% simple interest per annum. | |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Cheryl deposited $30 000 into Bank H. Calculate the total amount in her account after 4 years.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Cheryl claimed that Bank H offers a better deal than Bank L. Do you agree with Cheryl's claim? Justify your conclusion with clear calculations.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "The exchange rate between Singapore Dollars (S$) and Chinese Yuan (CNY) is $S$1=CNY5.33$. The exchange rate between Hong Kong dollars (HK$) and Singapore Dollars is $HK$1=S$0.17$. Tan is planning a trip to Hong Kong and Guangzhou. He finds these hotel prices on a website: Guangzhou Hotel CNY825, Hong Kong Hotel HK$825. By comparing the exchange rates, explain which hotel charges a cheaper rate per night. Show your working clearly.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Tan books 4 nights in the Hong Kong hotel and 2 nights in the Guangzhou hotel. He pays using his credit card. The credit card company converts the prices to Singapore dollars and charges a fee of $k$% for the currency conversion. Given that the total amount Tan pays for the two hotels, including the credit card fee, is $890, find the value of $k$.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 12,
+            "paper": "Paper 2",
+            "title": "Financial Maths: Interest and Exchange Rates"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "G6-navalbase-2024-p2-q8",
+            "topicID": "G6",
+            "stem": "(a) A is the point $(1,-4)$ and B is the point $(-7, -2)$. The point C is the result of the translation of point B by $\\binom{5}{4}$",
+            "hasDiagram": false,
+            "diagramDescription": "Diagram for part b showing Trapezium OABC. Vector OA=a, OC=2c, CB=2a. P on OA such that OP:PB=1:3.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Find the length of AB.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Write down the column vector $\\vec{AB}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "Find the coordinates of point C.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iv",
+                    "questionText": "Find the equation of the line AC.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "OABC is a trapezium. $\\vec{OA}=a$, $\\vec{OC}=2c$ and $\\vec{CB}=2a$. $OP:PB=1:3$. Express $\\vec{OB}$ in terms of $a$ and $c$, as simply as possible.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Express $\\vec{CP}$ in terms of $a$ and $c$, as simply as possible.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "Explain why C, P and A do not lie on a straight line.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_iv",
+                    "questionText": "Write down the value of $\\frac{\\text{area of triangle OBC}}{\\text{area of trapezium OABC}}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 12,
+            "paper": "Paper 2",
+            "title": "Vectors and Coordinate Geometry"
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+  "topicId": "S1",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 5,
+        "questionId": "S1-navalbase-2024-p1-q5",
+        "topicID": "S1",
+        "stem": "A class of 12 boys and 8 girls took a test. The girl's marks were 3, 6, 7, 8, 9, 9, 10 and 10.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the mean mark for the girls.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "The mean mark for the boys were 8.0. Find the mean mark for the whole class.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Mean Calculation"
+      },
+      {
+        "questionNumber": 11,
+        "questionId": "S1-navalbase-2024-p1-q11",
+        "topicID": "S1",
+        "stem": "The table below shows the amount of time spent playing online games by a group of children in one particular week.\n\n| Time ($h$ hours) | Frequency |\n| :--- | :--- |\n| $0<h\\le2$ | 4 |\n| $2<h\\le4$ | 9 |\n| $4<h\\le6$ | 15 |\n| $6<h\\le8$ | 13 |\n| $8<h\\le10$ | 7 |\n| $10<h\\le12$ | 2 |",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Calculate an estimate of the mean time spent playing online games that week.",
+            "marks": 1,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Explain why this is only an estimate of the mean time these children spent playing online games that week.",
+            "marks": 1,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate of the standard deviation of the time spent playing online games that week.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Mean and Standard Deviation"
+      }
+    ],
+    "Paper 2": []
+  }
+}

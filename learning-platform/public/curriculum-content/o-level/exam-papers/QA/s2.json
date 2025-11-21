@@ -1,0 +1,222 @@
+{
+  "topicId": "S2",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 14,
+        "questionId": "S2-navalbase-2024-p1-q14",
+        "topicID": "S2",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "A bag contains black, blue and yellow balls. A ball is picked at random from the bag. The probability that the ball is blue is $\\frac{5}{9}.$ The probability that the ball is yellow is $\\frac{2}{15}$. Find the probability that the ball is black.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{14}{45}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify that the sum of probabilities for all mutually exclusive outcomes must equal 1.",
+                  "working": "$P(\\text{Black}) + P(\\text{Blue}) + P(\\text{Yellow}) = 1$",
+                  "reasoning": "The events are mutually exclusive and exhaustive."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the known probabilities and solve for $P(\\text{Black})$.",
+                  "working": "$P(\\text{Black}) = 1 - \\frac{5}{9} - \\frac{2}{15}$",
+                  "reasoning": "Algebraic rearrangement."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find a common denominator (45) to subtract the fractions.",
+                  "working": "$1 - \\frac{25}{45} - \\frac{6}{45} = \\frac{45 - 25 - 6}{45} = \\frac{14}{45}$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Another bag contains 10 red balls, 7 white balls and 8 blue balls. A further $n$ white balls are added to the bag. The probability of picking a white ball is now $\\frac{2}{5}$. Find the value of $n$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the initial total number of balls.",
+                  "working": "Initial Total = $10 + 7 + 8 = 25$",
+                  "reasoning": "Summing the quantities of red, white, and blue balls."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Formulate an expression for the new probability of picking a white ball after adding $n$ white balls.",
+                  "working": "New number of white balls = $7 + n$\nNew total number of balls = $25 + n$\nProbability = $\\frac{7+n}{25+n}$",
+                  "reasoning": "Probability is defined as favorable outcomes divided by total possible outcomes."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Set up the equation with the given probability and solve for $n$.",
+                  "working": "$\\frac{7+n}{25+n} = \\frac{2}{5}$\n$5(7+n) = 2(25+n)$\n$35 + 5n = 50 + 2n$\n$3n = 15$\n$n = 5$",
+                  "reasoning": "Cross-multiplication and solving the linear equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Probability Calculations"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111121650-p1-q101",
+        "topicID": "S2",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "A spinner is divided into three colored sections: Red, Green, and Blue. The probability of the spinner landing on Red is $\\frac{1}{4}$ and the probability of it landing on Green is $\\frac{3}{8}$. Calculate the probability that the spinner lands on Blue.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{8}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "The sum of probabilities for all sections is 1.",
+                  "working": "$P(\\text{Blue}) = 1 - P(\\text{Red}) - P(\\text{Green})$",
+                  "reasoning": "Total probability rule."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute values and calculate using a common denominator of 8.",
+                  "working": "$P(\\text{Blue}) = 1 - \\frac{1}{4} - \\frac{3}{8} = \\frac{8}{8} - \\frac{2}{8} - \\frac{3}{8}$",
+                  "reasoning": "Fraction arithmetic."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the result.",
+                  "working": "$\\frac{8-2-3}{8} = \\frac{3}{8}$",
+                  "reasoning": "Final subtraction."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A box contains 12 boys' names and 18 girls' names on identical cards. $k$ cards with boys' names are removed from the box. The probability of picking a card with a boy's name is now $\\frac{1}{4}$. Find the value of $k$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the initial total and express the new totals after removing $k$ cards.",
+                  "working": "Initial Total = $12 + 18 = 30$.\nNew Boys count = $12 - k$.\nNew Total count = $30 - k$.",
+                  "reasoning": "Adjusting the sample space and favorable outcomes based on the removal of items."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the probability equation.",
+                  "working": "$\\frac{12-k}{30-k} = \\frac{1}{4}$",
+                  "reasoning": "Equating the algebraic probability to the given value."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $k$.",
+                  "working": "$4(12-k) = 1(30-k)$\n$48 - 4k = 30 - k$\n$18 = 3k$\n$k = 6$",
+                  "reasoning": "Algebraic manipulation to isolate the variable."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Probability and Algebra"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111121650-p2-q101",
+        "topicID": "S2",
+        "stem": "Two fair 4-sided dice, numbered 1 to 4, are rolled. The score is the sum of the two numbers shown on the bottom face.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the probability that the score is 5.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of possible outcomes.",
+                  "working": "$4 \\times 4 = 16$ outcomes.",
+                  "reasoning": "Multiplication principle for independent events."
+                },
+                {
+                  "step": 2,
+                  "explanation": "List the outcomes where the sum is 5.",
+                  "working": "Pairs: $(1,4), (2,3), (3,2), (4,1)$. There are 4 favorable outcomes.",
+                  "reasoning": "Systematic listing."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the probability.",
+                  "working": "$\\frac{4}{16} = \\frac{1}{4}$",
+                  "reasoning": "Favorable outcomes divided by total outcomes."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the probability that the product of the two numbers is greater than 9.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{16}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the total outcomes (calculated previously).",
+                  "working": "Total outcomes = 16.",
+                  "reasoning": "Recall from part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "List the outcomes where the product is $> 9$.",
+                  "working": "Possible pairs:\n$(3, 4) \\rightarrow 12$\n$(4, 3) \\rightarrow 12$\n$(4, 4) \\rightarrow 16$\nNote: $(3,3)=9$ which is not greater than 9.",
+                  "reasoning": "Checking the highest value combinations."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the probability.",
+                  "working": "Total favorable = 3.\nProbability = $\\frac{3}{16}$",
+                  "reasoning": "Favorable outcomes divided by total outcomes."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Dice Probability"
+      }
+    ]
+  }
+}

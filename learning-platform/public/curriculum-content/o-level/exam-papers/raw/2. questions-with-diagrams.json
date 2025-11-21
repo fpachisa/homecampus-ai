@@ -1,7 +1,7 @@
 {
     "note": "Questions with diagrams (hasDiagram: true) are stored here separately. These questions require visual elements like graphs, geometric figures, or tables that need to be rendered alongside the question text.",
     "source": "acsi-2024-paper-1-2",
-    "totalDiagramQuestions": 60,
+    "totalDiagramQuestions": 84,
     "questions": [
         {
             "questionNumber": 5,
@@ -1961,6 +1961,726 @@
             "totalMarks": 10,
             "paper": "Paper 2",
             "title": "Electricity and Solar Panel"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "G3-huayi-2024-p1-q16",
+            "topicID": "G3",
+            "stem": "In the diagram, BDK is a straight line and $AB=AD.$ Angle $ABD=36^{\\circ}$, angle $CBD=49^{\\circ}$ and angle $CDK=121^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Quadrilateral ABCD with diagonal BD extended to K. Triangle ABD is isosceles with AB=AD. Angle ABD = 36. Angle CBD = 49. Exterior angle CDK = 121.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Explain why it is possible to draw a circle that passes through the points A, B, C and D. Give reasons for each step of your working.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Cyclic Quadrilateral Proof"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "G5-huayi-2024-p1-q19",
+            "topicID": "G5",
+            "stem": "A composite solid is made from a cylinder and two hemispheres. The cylinder has radius $p$ and length $2p$, while the hemispheres have radius $p$. The total surface area of the solid is six times the total surface area of a solid cone with radius $p$ and slant height $l$.",
+            "hasDiagram": true,
+            "diagramDescription": "Composite solid with a central cylinder of length 2p and two hemispherical ends of radius p.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find $l$ in terms of $p$.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Surface Area of Composite Solid"
+        },
+        {
+            "questionNumber": 24,
+            "questionId": "G3-huayi-2024-p1-q24",
+            "topicID": "G3",
+            "stem": "A, B and C are points on the circle with centre O. Q and R are points on the circle with centre P. CSR and BSQ are tangents on to both circles. AOB is a straight line.",
+            "hasDiagram": true,
+            "diagramDescription": "Two circles with centres O and P. Tangent lines CSR and BSQ intersect at S between the circles. AOB is diameter of circle O. Triangle CSQ and BSR are formed.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that triangle CQS is congruent to triangle BRS. Give a reason for each statement you make.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Angle $ABC=y^{\\circ}$. Find, in terms of $y$, angle BAC.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Find, in terms of $y$, angle QPR.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Tangents and Congruency"
+        },
+        {
+            "questionNumber": 25,
+            "questionId": "G7-huayi-2024-p1-q25",
+            "topicID": "G7",
+            "stem": "ORS is a triangle. J is a point on RS such that $RJ:JS=3:2$. $\\vec{OR}=\\mathbf{r}$ and $\\vec{OS}=\\mathbf{s}.$",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ORS. Point J on RS.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that $\\vec{OJ}=\\frac{1}{5}(2\\mathbf{r}+3\\mathbf{s})$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "X is a point such that $\\vec{RX}=\\frac{1}{5}(\\mathbf{r}+9\\mathbf{s})$. Explain why O, J and X lie on a straight line.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Vector Geometry"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N5-huayi-2024-p2-q3",
+            "topicID": "N5",
+            "stem": "(a) The first four terms of a sequence are 5, $\\frac{13}{4}$, $\\frac{17}{9}$, $\\frac{21}{16}$...",
+            "hasDiagram": true,
+            "diagramDescription": "A number grid showing numbers from 1 to 36 arranged in rows. A 2x2 rectangle outlines four numbers: 4, 5, 11, 12.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "State the fifth term of the sequence.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Find an expression, in terms of $n$, for the nth term, $T_{n}$, of this sequence.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Elijah finds a number grid from his board game. A rectangle outlining four numbers, as shown, can be placed anywhere on the grid. If $p$ represents the number in the top right corner of the rectangle, write down an expression, in terms of $p$, for the number in the bottom left corner of the rectangle.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Show that the difference between the products of the numbers in the opposite corners of the rectangle is always -7.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "Elijah says it is impossible for the sum of the four numbers in the rectangle to be 199. Justify with relevant working, why he is correct.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Number Sequences and Grid Puzzle"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "G4-huayi-2024-p2-q5",
+            "topicID": "G4",
+            "stem": "ABCD is a field on horizontal ground. $AD=163~m$, $BD=329~m$, $CD=152$ m and angle $BDC=48^{\\circ}$. The bearing of B from A is $151^{\\circ}$ and the bearing of D from A is $237^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Quadrilateral ABCD representing a field. North arrow at A. Angles and lengths given.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the bearing of D from B.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the distance from B to C.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "An aircraft is flying above D. Find the angle of elevation of the aircraft from C when it is 245 m vertically above D.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 2",
+            "title": "Bearings and Elevation"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "G5-huayi-2024-p2-q6",
+            "topicID": "G5",
+            "stem": "The diagram shows a semicircle, centre O, radius 16 cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Semicircle with centre O and radius 16cm. Chord AB. Shaded segment below chord AB. Distance from midpoint of AB to chord is 3.2cm? No, height of segment is 3.2cm.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that angle $AOB=1.287$ radians, correct to 3 decimal places.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the area of the shaded region.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c_i",
+                    "questionText": "The semicircle is the cross section of a water trough of length 2.8 m, standing on level ground. The shaded area represents the water in the trough. Calculate the volume of water, in $cm^{3}$, in the trough. Leave your answer in standard form.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c_ii",
+                    "questionText": "Calculate the number of litres of water that must be added to fill the trough.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Circular Measure and Volume"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "S1-huayi-2024-p2-q7",
+            "topicID": "S1",
+            "stem": "A researcher wants to conduct a study to find out if there is a correlation between the analytical skills of adults with age. The researcher invited 80 adults to solve a number puzzle. The cumulative frequency curve shows the distribution of the time taken.",
+            "hasDiagram": true,
+            "diagramDescription": "Cumulative frequency curve for time taken. X-axis 10 to 80s. Y-axis 0 to 80.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Use the curve to estimate the median time taken.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Use the curve to estimate the interquartile range of the time taken.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "20% of the adults took more than $n$ seconds to solve the puzzle. Find $n$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The frequency distribution of the data for the 80 adults invited to solve the number puzzle is shown in the table. Find an estimate of the standard deviation of the time taken by the 80 adults to solve the number puzzle.\n\n| Time taken, x (seconds) | Frequency |\n| :--- | :--- |\n| $0<x\\le20$ | 5 |\n| $20<x\\le40$ | 40 |\n| $40<x\\le60$ | 29 |\n| $60<x\\le80$ | 6 |",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The same group of adults were each given a word puzzle to solve. The box-and-whisker plot shows the distribution of the time taken. Make two comparisons between the performances of the adults in solving the two puzzles.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Statistics Cumulative Frequency and Box Plot"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "G4-huayi-2024-p2-q8-trig",
+            "topicID": "G4",
+            "stem": "In the diagram, XYZ is a straight line. $AY=20~m$, $AZ=12$ m and $YZ=16m$. The ratio of XY: YZ is 1: 4.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle AYZ with AZ=12, AY=20, YZ=16. Line extended from Y to X. XY is part of line XYZ.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Prove that triangle AYZ is right-angled.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the value of $\\cos \\angle AYX$, giving your answer as a fraction in its lowest terms.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The area of triangle AXY is $24m^{2}$. Lenard says: In another triangle AYW, whereby the length $YW=YX$ and its area is the same as that of triangle AXY, it is possible for angle Y to be acute. Explain why Lenard is correct. Use calculations to support your answer.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 2",
+            "title": "Trigonometry and Triangle Area"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "N1-huayi-2024-p2-q10",
+            "topicID": "N1",
+            "stem": "Javier and Stella are planning their exercise routines. Javier and Stella have a body mass of 70 kg and 60 kg respectively. The speed for walking and jogging of the two individuals are represented in the chart. They research the following information about the benefits of exercise.",
+            "hasDiagram": true,
+            "diagramDescription": "Bar chart comparing walking and jogging speeds for Javier and Stella. Text boxes with Health Advice and Calorie burn tables.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "In their first week of exercise, they each plan to go for four brisk walks. They will walk the same route each time. The four walks together meet the minimum target for the time for optimal health benefits in one week. Find the distance of one of these walks.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Find out how many more calories Javier burns in these four walks than Stella.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "After one month, they change their routines. Javier wants to gain additional health benefits. He decides to do a 4 km walk 3 times per week and do a 6 km jog 2 times per week. He will also attend a 45-minute yoga class 2 times per week. Stella wants to maintain optimal health benefits. She decides to do an 8 km jog 2 times per week. She will also attend a 30-minute weight training session 2 times per week. Javier says: 'We will both meet our targets for exercise. However, I will burn about 50% more calories than Stella during our exercise per week.' Is Javier correct? Justify your decision with clear calculations.",
+                    "marks": 7,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Exercise Planning Real-World Problem"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "G2-navalbase-2024-p1-q10",
+            "topicID": "G2",
+            "stem": "In the scale drawing, R is the centre of a rock bed, A is a ship and B is a port. The line AB shows the ship's course. Scale: 1 cm to 5 km.",
+            "hasDiagram": true,
+            "diagramDescription": "A scale drawing with points A, B and R. A north arrow is at A. Line AB is drawn. R is a point between A and B but off the line.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Measure the bearing of B from A.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The rock bed covers a 25 km radius. If the ship were to stay on course, state the distance at which the ship will first hit the rock bed.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Scale Drawing and Bearings"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "G2-navalbase-2024-p1-q15",
+            "topicID": "G2",
+            "stem": "In the diagram, BCD is a straight line and $BC:CD=3:5$",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABD with a line AC dividing it into two triangles ABC and ACD. BCD is a straight line.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the area of triangle ABC as a percentage of the area of the triangle ABD.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Area of Triangles Ratio"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "N5-navalbase-2024-p1-q17",
+            "topicID": "N5",
+            "stem": "The numbers 1 to 100 are arranged in a table. An L-shaped shaded frame can be placed around various numbers throughout the table. $L_{x}$ is used to refer to the shaded frame that is drawn around a particular number. For example, $L_{2}$ refers to the shaded frame shown above drawn around the number 2.\n\n| | 2 | 3 | ... | 10 |\n| :--- | :--- | :--- | :--- | :--- |\n| | 13 | | | |\n\n(Diagram shows L-shape covering 2, 13, 14)",
+            "hasDiagram": true,
+            "diagramDescription": "A number grid with 10 columns. An L-shape frame covers a number $n$, the number below it ($n+11$?), and the number to the right of that ($n+12$?). Wait, the example $L_2$ covers 2, 13, 14? Let's check the grid structure. \nRow 1: 2, 3... 10? No, usually 1-10. Let's assume standard 10-column grid.\n2 is in row 1, col 2. Below 2 is 12. Right of 12 is 13. \nIf $L_2$ covers 2, 12, 13, then the numbers are $n$, $n+10$, $n+11$.\nLet's check the image. Image shows 2, 13, 14? No, looking at crop 6180: \nRow 1: ... 2 3 ...\nRow 2: ... 13 14 ...\nWait, 2 is above 13? If 1-10 is row 1, then 11-20 is row 2. Then 2 is above 12. Why 13? \nMaybe the grid starts with 2? \nLet's look at the crop 6180 carefully. \nTop row: 2, 3, 4, ... 10. (Missing 1?)\nSecond row: 13, 14, ... 20. (Missing 11, 12?)\nThis implies the grid might be non-standard or shifted. \nHowever, looking at $L_2$, the frame surrounds 2, then goes down to 13, then right to 14? \nIf 2 is directly above 13, the difference is 11. \nLet's assume the L-shape consists of $n$, $n+11$, $n+12$ based on visual alignment or description. \nOr maybe the grid is width 11? 2+11 = 13. Yes. \nSo grid has 11 columns? \nLet's check part (a) for clues. 'State the largest $L_n$'. \nThe last number is 100. The L-shape needs to exist. \nIt needs $n$, a number below it, and a number to the right of the one below. \nIf grid is width 11. \nLet's re-read the text. 'The numbers 1 to 100 are arranged in a table'. \nIf 2 is above 13, diff is 11. So row length is 11? \nIf row length is 11: \nRow 1: 1..11 \nRow 2: 12..22 \nThen 2 is above 13. Correct. \nSo the L-shape for $L_n$ covers $n$, $n+11$, $n+12$. \nLargest $L_n$: The bottom right of the L is $n+12$. This must be $\\le 100$. \n$n+12 \\le 100 \\Rightarrow n \\le 88$. \nAlso need to ensure $n$ is not in the last column (if the L goes right) or $n+11$ is not in last column. \nThe L-shape seems to be: $n$ (top), $n+11$ (below), $n+12$ (right of below). \nSo $n+11$ must not be in the last column. \nLast column numbers are multiples of 11. \nSo $n+11$ cannot be a multiple of 11? No, if $n+11$ is in last column, there is no number to its right. \nSo $n+11$ cannot be $11k$. \nSo $n$ cannot be $11k$. \nMax $n = 88$. 88 is multiple of 11. So $L_{88}$ would involve 88, 99, 100? \nWait, 99 is in last column? No, $99 = 9 \\times 11$. Yes. \nIf 99 is in last column, 100 is in next row? Or does the table end at 100? \nIf table is 1 to 100, and width 11. \n$100 = 9 \\times 11 + 1$. \nSo 100 is in first column of last row. \n88 is in last col. Below 88 is 99. Right of 99 is 100? \nNo, 99 is last col. 100 is next row. \nSo we cannot form L shape at 88. \nMax $n$ such that $n+12 \\le 100$ and row constraint met. \nLet's verify 'sum of numbers is always a multiple of 3'. \nSum $= n + (n+11) + (n+12) = 3n + 23$. \nThis is not a multiple of 3. \nMaybe the L shape is different. \nLet's look at the diagram $L_2$ again. \nIf it's 2, 12, 13 (standard 10-col grid). \nSum $= n + n+10 + n+11 = 3n + 21 = 3(n+7)$. \nThis IS a multiple of 3. \nSo the grid is likely a standard 10-column grid (1-10, 11-20...). \nIn standard 10-col grid: \nRow 1: 1..10 \nRow 2: 11..20 \n2 is above 12. Right of 12 is 13. \nWait, the diagram shows 2, 13, 14? \nLet's re-examine crop 6180. \nRow 1: 2 3 4 5 6 7 8 9 10. (1 is missing or cut off). \nRow 2: 13 14 15 16 17 18 19 20. (11, 12 missing). \nIf 2 is above 13, the difference is 11. \nIf difference is 11, then sum is $3n+23$, not divisible by 3. \nMaybe the L shape includes 2, 3, 13? \nNo, description says 'L-shaped'. Usually vertical then horizontal. \nLet's assume the question implies the sum is a multiple of 3. \nThen the grid must be 10-column. \nIf grid is 10-column, then 2 is above 12. \nWhy does the crop show 13 below 2? \nMaybe the numbers are shifted? \nOr maybe I am misinterpreting the crop. \nLet's assume the question claim 'sum is multiple of 3' is correct. \nThen $Sum = 3n + k$ where $k$ is multiple of 3. \nIf grid width is $w$, numbers are $n, n+w, n+w+1$. \nSum $= 3n + 2w + 1$. \nFor $2w+1$ to be multiple of 3: \nIf $w=10, 2w+1=21$ (div by 3). \nIf $w=11, 2w+1=23$ (not div by 3). \nSo grid MUST be 10-column. \nSo the diagram in the paper might be misleading or I am misreading the alignment. \nHowever, if the grid is 10-column (1-10, 11-20...), then: \n$L_n$ numbers: $n, n+10, n+11$. \nSum $= 3n + 21 = 3(n+7)$. \n(a) Largest $L_n$. \nNeed $n+11 \\le 100$. $n \\le 89$. \nAlso $n+10$ must not be in last column (because $n+11$ is to its right). \nLast column numbers: 10, 20, ... 90, 100. \nSo $n+10 \\neq 10k$. $\\Rightarrow n \\neq 10k$. \nMax $n=89$. $89+10=99$ (not last col). $99+1=100$. \nSo $L_{89}$ works. Numbers: 89, 99, 100. \nSo answer to (a) is 89. \n(b) Expression: $3(n+7)$. \n(c) Explain: Factor of 3.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "State the largest $L_{n}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Write and simplify an expression, in terms of $n$, for the sum of the numbers in $L_{n}.$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Explain why the sum of the numbers is always a multiple of 3.",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Number Grid Patterns"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "G4-navalbase-2024-p1-q18",
+            "topicID": "G4",
+            "stem": "In the triangle ABD, AC is perpendicular to BD. Angle $ADC=48^{\\circ},$ $AC=8.4$ cm and $BC=5$ cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABD with altitude AC to base BD. AC=8.4, BC=5, Angle ADC=48.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate angle ABC.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate AD.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Trigonometry in Triangles"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "G4-navalbase-2024-p1-q20",
+            "topicID": "G4",
+            "stem": "In triangle ABC, angle $ABC=90^{\\circ},$ $BX=2XC$ and $\\sin\\angle AXC=\\frac{3}{5}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Right-angled triangle ABC with angle B=90. Point X is on BC. Line AX is drawn.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express as a fraction in its lowest terms, $\\tan\\angle AXB$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Express as a fraction in its lowest terms, $\\tan\\angle ACB$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Trigonometric Ratios"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "G1-navalbase-2024-p1-q21",
+            "topicID": "G1",
+            "stem": "The diagram shows a regular hexagon P and a regular n-sided polygon Q. Polygon Q has an exterior angle of $18^{\\circ}$",
+            "hasDiagram": true,
+            "diagramDescription": "A regular hexagon P attached to a regular polygon Q. Angles a, b, c, d, e, f are exterior angles or related angles. Specifically, 'a' is the angle between a side of Q extended and a side of P? Diagram shows angles a, b, c, d, e, f around the hexagon P. 'a' and 'f' are adjacent to Q.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the sum of angles $a, b, c, d, e$ and $f$.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Polygons and Angles"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "G3-navalbase-2024-p1-q22",
+            "topicID": "G3",
+            "stem": "A, B and C are points on the circle, centre O. DE is a tangent to the circle at A. Angle $AOC=4x^{\\circ}$ and angle $ACB=x^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with centre O. Tangent DAE at A. Triangle ABC inside. Angle AOC at centre is 4x. Angle ACB is x.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find, in terms of $x$, angle ABC. Give a reason for each step of your answer.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find, in terms of $x$, angle BAE. Give a reason for each step of your answer.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Circle Theorems"
+        },
+        {
+            "questionNumber": 23,
+            "questionId": "N6-navalbase-2024-p1-q23",
+            "topicID": "N6",
+            "stem": "A vaccine was introduced to a virus in an experiment. The number, N, of virus t hours after being introduced to the vaccine is given by $N=v\\times0.9^{2t}$ where v is the amount of vaccine introduced.",
+            "hasDiagram": true,
+            "diagramDescription": "Four diagrams showing shapes of N against t. Diagram 1: Decreasing curve convex. Diagram 2: Linear decreasing. Diagram 3: Increasing curve. Diagram 4: Increasing linear.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "After 1 hour, the number of virus has decreased to 81 000. Find v.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find in terms of $k$, the number of virus when $0.81^{t}=k$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the decrease in the number of virus after 2 hours as a percentage of the number of virus at the beginning.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Which of these diagrams represent the graph of N against t?",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Exponential Decay Function"
+        },
+        {
+            "questionNumber": 25,
+            "questionId": "G2-navalbase-2024-p1-q25",
+            "topicID": "G2",
+            "stem": "The diagram shows triangle ABC and parallelogram BDEF. FE bisects angle DEC and angle $FEC=x^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABC with parallelogram BDEF inscribed such that D is on AB, E on AC, F on BC. FE bisects angle DEC.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find angle ECF in terms of $x$. Give a reason for each step of your answer.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Show that triangle AED is similar to triangle ECF.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "State another triangle that is similar to AED and ECF.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Similarity and Parallelograms"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "S1-navalbase-2024-p2-q3",
+            "topicID": "S1",
+            "stem": "(a) In February 2021, a survey was carried out to find the number of days 500 patients stayed at a hospital. The graph shows the cumulative frequency curve for the data collected.",
+            "hasDiagram": true,
+            "diagramDescription": "Cumulative frequency curve showing Number of days (0-30) vs Cumulative Frequency (0-500).",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Use the curve to estimate the median number of days,",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Use the curve to estimate the interquartile range of the number of days,",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "Use the curve to estimate the percentage of patients who stayed more than 20 days in the hospital.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "In February 2022, the same survey was carried out again on another 500 patients with the following result shown in the box-and-whisker plot below. Make two comments comparing the number of days stayed in the hospital in February 2021 and February 2022. Use figures to support your answer.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "One patient in February 2021 was selected at random. Find the probability that the patient stayed for at most 20 days.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Two patients in February 2022 were selected at random. Find the probability that one of the patients stayed for at most 8 days while the other stayed for more than 8 days.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Cumulative Frequency and Probability"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "G5-navalbase-2024-p2-q5",
+            "topicID": "G5",
+            "stem": "The diagram shows a container which consists of a cylinder of radius $r$ cm and height $h$ cm joined to a hemisphere of radius $r$ cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Diagram of a cylinder on top of a hemisphere.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Given that the ratio of the volume of the hemisphere to the volume of the cylinder is 1 : 3, show that $h=2r$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "The container is filled with water to a depth of 8 cm. Find an expression, in terms of $\\pi$ and $r$, for the surface area of the container that is in contact with the water.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Three tin containers are geometrically similar. The heights of tin container A and tin container C are 8 cm and 16 cm respectively. The base area of tin container B is $\\frac{25}{64}$ of the base area of tin container C. Calculate the height of tin container B.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "The weight of tin container C is 450 g. Calculate the weight of tin container A.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Volume and Similarity"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "G3-navalbase-2024-p2-q6",
+            "topicID": "G3",
+            "stem": "The diagram, not drawn to scale, shows two concentric circles, centre O. AB and AD are tangents to the smaller circle at B and D respectively, centre O. AC is the diameter of the larger circle.",
+            "hasDiagram": true,
+            "diagramDescription": "Two concentric circles. Tangents AB and AD from A (on outer circle) to B and D (on inner circle). AC is diameter of outer circle.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that triangle ABC is congruent to triangle ADC. Give a reason for each statement you make.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "The radius of the larger circle is 8 cm and angle $BAO=42.5^{\\circ}$. Calculate the area of triangle AOB.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Calculate the area of the shaded region.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Concentric Circles and Tangents"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "G4-navalbase-2024-p2-q7",
+            "topicID": "G4",
+            "stem": "In the diagram, ABCDEFGH is a cuboid with dimensions 8 cm by 6 cm by 15 cm. V is the centre of the rectangular base.",
+            "hasDiagram": true,
+            "diagramDescription": "Cuboid ABCDEFGH. V is center of base ABCD.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that $EV=15.8$ cm, correct to 3 significant figures.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate angle ACE.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "A pyramid EDAC is cut out from the cuboid. Find the remaining volume of the cuboid.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Cuboid 3D Geometry"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N1-navalbase-2024-p2-q9",
+            "topicID": "N1",
+            "stem": "The table below shows the price board displayed at a petrol station on 12 April 2023.\n\n| Grade | Pump price (per litre) | Nett price (per litre) |\n| :--- | :--- | :--- |\n| Levo 98 | $3.41 | x |\n| Levo 95 | $2.92 | $2.77 |\n| Levo Diesel | $2.69 | $2.55 |\n\nPump price refers to the price before a discount is given, whereas nett price refers to the price after a discount is given. The discount given for the 3 grades is the same.",
+            "hasDiagram": true,
+            "diagramDescription": "A picture of a car.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $x$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Mrs Ong always drives her car from her house in Singapore to Malacca to visit her parents. Below is some information about her car.\n\nFuel tank capacity: 11.0952 gallon\nFuel consumption: 47 miles per gallon (mpg)\nFuel consumption is distance travelled per unit volume of fuel used.\n$1~mpg=0.42554~km/litres.$\n$1~gallon=3.7855$ litres.\n\nMrs Ong decided to visit her parents during Labour Day. She pumped a full tank of Levo 95 for the car and drove a distance of 244 km. The tank was left with 70% of fuel in the end. Mrs Ong made two claims:\n\"The fuel consumption was 47 mpg.\" and \"The total discount she received would allow her to travel an extra distance of approximately 13.6 km.\" Were her claims correct? Justify your decisions and show your calculations clearly.",
+                    "marks": 7,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Fuel Consumption and Discount"
         }
     ]
 }

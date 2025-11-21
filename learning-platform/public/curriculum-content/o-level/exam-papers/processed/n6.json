@@ -133,6 +133,83 @@
         "title": "Completing the Square"
       },
       {
+        "questionNumber": 10,
+        "questionId": "N6-huayi-2024-p1-q10",
+        "topicID": "N6",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $9-8x+x^{2}$ in the form $a+(x+b)^{2}$. Find the value of $a$ and of $b$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "a = -7, b = -4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Rearrange the expression in descending powers of $x$ to make it easier to work with.",
+                  "working": "$9-8x+x^{2} = x^{2}-8x+9$",
+                  "reasoning": "Standard quadratic form $ax^2+bx+c$ helps in applying the completing the square method."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Complete the square by taking half the coefficient of $x$, squaring it, subtracting it, and adding the constant term.",
+                  "working": "$(x - \\frac{8}{2})^{2} - (\\frac{8}{2})^{2} + 9$\n$= (x-4)^{2} - 4^{2} + 9$\n$= (x-4)^{2} - 16 + 9$",
+                  "reasoning": "To convert $x^2+bx$ into $(x+\\frac{b}{2})^2 - (\\frac{b}{2})^2$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the constant terms and rearrange to match the required form $a+(x+b)^{2}$.",
+                  "working": "$(x-4)^{2} - 7$\n$= -7 + (x-4)^{2}$",
+                  "reasoning": "The question asks for the specific format $a+(x+b)^2$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Identify the values of $a$ and $b$.",
+                  "working": "$a = -7, b = -4$",
+                  "reasoning": "Comparing $-7 + (x-4)^2$ with $a + (x+b)^2$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain why when $x=4$, the expression $9-8x+x^{2}$ has its minimum value.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Since $(x-4)^2 \\ge 0$ for all real values of $x$, the minimum value occurs when the squared term is zero, which is when $x-4=0$, so $x=4$.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the squared term from part (a).",
+                  "working": "From part (a), the expression is $-7 + (x-4)^{2}$.",
+                  "reasoning": "The vertex form explicitly shows the minimum/maximum properties."
+                },
+                {
+                  "step": 2,
+                  "explanation": "State the property of real squares.",
+                  "working": "$(x-4)^{2} \\ge 0$ for all real $x$.",
+                  "reasoning": "Any real number squared is non-negative."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine the condition for the minimum.",
+                  "working": "The expression is minimized when $(x-4)^{2}$ is at its lowest value (0).\n$x-4=0 \\Rightarrow x=4$.",
+                  "reasoning": "Adding the smallest possible number (0) to the constant (-7) gives the minimum total value."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Completing the Square"
+      },
+      {
         "questionNumber": 11,
         "questionId": "N6-anderson-2024-p1-q11",
         "topicID": "N6",
@@ -167,6 +244,60 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Quadratic Minimum Point"
+      },
+      {
+        "questionNumber": 12,
+        "questionId": "N6-huayi-2024-p1-q12",
+        "topicID": "N6",
+        "stem": "The points (4,20) and $(10,-4)$ satisfy the curve given by the equation $y=ax^{2}+bx-4$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Use an algebraic method to determine the values of $a$ and $b$.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "a = -1, b = 10",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute the first point $(4, 20)$ into the equation.",
+                  "working": "$20 = a(4)^{2} + b(4) - 4$\n$20 = 16a + 4b - 4$\n$24 = 16a + 4b$\nDivide by 4: $6 = 4a + b$ --- (1)",
+                  "reasoning": "Points lying on a curve must satisfy the curve's equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the second point $(10, -4)$ into the equation.",
+                  "working": "$-4 = a(10)^{2} + b(10) - 4$\n$-4 = 100a + 10b - 4$\n$0 = 100a + 10b$\nDivide by 10: $0 = 10a + b$ --- (2)",
+                  "reasoning": "Generates a second linear equation to form a simultaneous system."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve the simultaneous equations. From (2), express $b$ in terms of $a$.",
+                  "working": "From (2): $b = -10a$.",
+                  "reasoning": "Substitution method is efficient here."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Substitute $b$ into equation (1) to find $a$.",
+                  "working": "$6 = 4a + (-10a)$\n$6 = -6a$\n$a = -1$",
+                  "reasoning": "Solving for the first variable."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Substitute $a$ back to find $b$.",
+                  "working": "$b = -10(-1)$\n$b = 10$",
+                  "reasoning": "Solving for the second variable."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Finding Curve Coefficients"
       },
       {
         "questionNumber": 15,
@@ -293,6 +424,77 @@
         "title": "Completing the Square"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N6-gemini-2111113911-p1-q101",
+        "topicID": "N6",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $x^{2} + 12x + 10$ in the form $(x+a)^{2} + b$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$(x+6)^2 - 26$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the coefficient of $x$, which is 12. Halve it to get 6.",
+                  "working": "$(x + 6)^2$",
+                  "reasoning": "The term inside the bracket is always $(x + \\frac{\\text{coeff of } x}{2})$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the square of 6 and add the original constant 10.",
+                  "working": "$(x + 6)^2 - 6^2 + 10$\n$= (x + 6)^2 - 36 + 10$",
+                  "reasoning": "Completing the square formula: $x^2+kx = (x+\\frac{k}{2})^2 - (\\frac{k}{2})^2$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the constant terms.",
+                  "working": "$(x + 6)^2 - 26$",
+                  "reasoning": "Final arithmetic simplification."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, solve the equation $x^{2} + 12x + 10 = 0$, giving your answers in the form $p \\pm \\sqrt{q}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = -6 \\pm \\sqrt{26}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the completed square form from part (a).",
+                  "working": "$(x + 6)^2 - 26 = 0$",
+                  "reasoning": "Using the 'Hence' instruction implies using the previous result."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Isolate the squared term.",
+                  "working": "$(x + 6)^2 = 26$",
+                  "reasoning": "Prepare to take the square root."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Take the square root of both sides and solve for $x$.",
+                  "working": "$x + 6 = \\pm \\sqrt{26}$\n$x = -6 \\pm \\sqrt{26}$",
+                  "reasoning": "Remembering both positive and negative roots."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Solving Quadratics by Completing the Square"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N6-gemini-2011-p1-q102",
         "topicID": "N6",
@@ -344,6 +546,48 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Quadratic Graphs"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N6-gemini-2111113911-p1-q102",
+        "topicID": "N6",
+        "stem": "The curve $y = -x^{2} + px + q$ has a maximum point at $(3, 14)$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the values of the constants $p$ and $q$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "p = 6, q = 5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the vertex form of a quadratic equation. Since the coefficient of $x^2$ is -1 and the maximum is at $(3, 14)$, write the equation.",
+                  "working": "$y = -(x - 3)^2 + 14$",
+                  "reasoning": "Vertex form $y=a(x-h)^2+k$ directly uses the turning point $(h,k)$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the vertex form to match the general form given.",
+                  "working": "$y = -(x^2 - 6x + 9) + 14$\n$y = -x^2 + 6x - 9 + 14$\n$y = -x^2 + 6x + 5$",
+                  "reasoning": "Expansion allows comparison of coefficients."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare coefficients with $y = -x^2 + px + q$.",
+                  "working": "$p = 6$\n$q = 5$",
+                  "reasoning": "Equating the $x$ terms and constant terms."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Quadratic Coefficients from Vertex"
       }
     ],
     "Paper 2": [
@@ -417,6 +661,94 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Maximum of Quadratic Functions"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N6-gemini-2111113911-p2-q101",
+        "topicID": "N6",
+        "stem": "A curve has the equation $y = 2x^{2} - 5x - 3$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise the expression $2x^{2} - 5x - 3$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(2x+1)(x-3)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find two numbers that multiply to $a \\times c = 2 \\times -3 = -6$ and add to $b = -5$.",
+                  "working": "Numbers are $-6$ and $1$.",
+                  "reasoning": "Splitting the middle term method (AC method)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Split the middle term and factorise by grouping.",
+                  "working": "$2x^2 - 6x + x - 3$\n$= 2x(x-3) + 1(x-3)$",
+                  "reasoning": "Grouping terms to extract common factors."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Extract the common binomial factor.",
+                  "working": "$(2x+1)(x-3)$",
+                  "reasoning": "Final factorised form."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write down the coordinates of the points where the curve crosses the $x$-axis.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$(-\\frac{1}{2}, 0)$ and $(3, 0)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set $y=0$ to find $x$-intercepts using the factorised form.",
+                  "working": "$(2x+1)(x-3) = 0$",
+                  "reasoning": "The curve crosses the x-axis when $y=0$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $x$.",
+                  "working": "$2x+1 = 0 \\Rightarrow x = -\\frac{1}{2}$\n$x-3 = 0 \\Rightarrow x = 3$",
+                  "reasoning": "Zero product property."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find the equation of the line of symmetry of the curve.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x = 1.25$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "The line of symmetry is exactly halfway between the roots (x-intercepts).",
+                  "working": "$x = \\frac{-0.5 + 3}{2}$\n$x = \\frac{2.5}{2}$",
+                  "reasoning": "Symmetry property of parabolas."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value.",
+                  "working": "$x = 1.25$ (or $x = \\frac{5}{4}$)",
+                  "reasoning": "Midpoint calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Properties of Quadratic Curves"
       }
     ]
   }

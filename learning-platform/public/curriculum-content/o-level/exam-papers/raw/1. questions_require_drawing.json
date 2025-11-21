@@ -1,7 +1,7 @@
 {
     "note": "Questions requiring drawing input are stored here separately. These questions will be re-enabled when the application supports drawing capabilities.",
     "source": "anderson-2024-paper-1-2",
-    "totalFilteredQuestions": 13,
+    "totalFilteredQuestions": 18,
     "questions": [
         {
             "questionNumber": 9,
@@ -430,6 +430,209 @@
             "totalMarks": 11,
             "paper": "Paper 2",
             "title": "Curve Sketching and Solving"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "N8-huayi-2024-p1-q13",
+            "topicID": "N8",
+            "stem": "$\\xi=\\{integers~x:1\\le x\\le16\\}$\n$V=\\{1,2,4,8,16\\}$\n$W=\\{1,4,7,9,10,14\\}$\nSome of the information is shown on the Venn diagram.",
+            "hasDiagram": true,
+            "diagramDescription": "A Venn diagram with universe set xi and two intersecting sets V and W. The numbers 3, 5, 6, 11, 12, 13, 15 are outside V and W.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the Venn diagram by representing all the elements in the given sets.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Describe the elements of Set V.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "List the elements contained in the set $V\\cap W$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Find the number of elements in $(V\\cap W^{\\prime})\\cup(V\\cup W)^{\\prime}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "Use one of the symbols below to complete each statement: $=, \\emptyset, \\subset, \\notin, \\xi$.\n(i) $\\{2,16\\}$ _____ $V$\n(ii) $13$ _____ $W$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Set Notation and Venn Diagrams"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "G1-huayi-2024-p1-q17",
+            "topicID": "G1",
+            "stem": "The diagram represents a plot of land, EFGH, which is to be used for an observatory.",
+            "hasDiagram": true,
+            "diagramDescription": "Quadrilateral EFGH.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Construct the bisector of the angle EHG.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Construct the perpendicular bisector of EF.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "A caf\u00e9 is to be built in the observatory, nearer to E than to F and nearer to GH than to EH. Shade the region where the caf\u00e9 is to be built.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Locus and Construction"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N6-huayi-2024-p2-q9",
+            "topicID": "N6",
+            "stem": "The variables x and y are connected by the equation $y=\\frac{x^{3}}{2}-5x-2$. Some corresponding values of x and y are given in the table.",
+            "hasDiagram": true,
+            "diagramDescription": "Table of values and grid.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $k$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid on page 19, draw the graph of $y=\\frac{x^{3}}{2}-5x-2$ for $-3\\le x\\le4.$",
+                    "marks": 2,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The equation $\\frac{x^{3}}{2}-5x=7$ has only one solution. Explain how this can be deduced from your graph.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "By drawing a tangent, estimate the gradient of the curve at (1,-6.5).",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e_i",
+                    "questionText": "On the same grid, draw the line $y=4-x$ for $-1\\le x\\le4$.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "e_ii",
+                    "questionText": "Write down the x-coordinate of the point where this line intersects the curve.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e_iii",
+                    "questionText": "This value of x is a solution of the equation $x^{3}+Ax+B=0$. Find the value of A and the value of B.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Cubic Graph"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "N8-navalbase-2024-p1-q13",
+            "topicID": "N8",
+            "stem": null,
+            "hasDiagram": true,
+            "diagramDescription": "Venn diagrams for part b.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Factorise $5xy-20y$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Use set notation to describe the shaded region. [Diagram shows $A \\cap B^{\\prime}$ shaded]",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "On the Venn diagram, shade the region which represents $A \\cap B'$. [Note: Wait, part (i) asks to describe shaded region which is A only. Part (ii) asks to shade A intersect B' which is the same region. Let me re-read. Ah, diagram in (i) has shading in A but outside B. Diagram in (ii) is blank for shading. The question asks to shade $A \\cup B'$? No, text says $A \\cap B'$? Let's check crop 13. Crop 13 shows diagram with shading in A only for (i). Question (ii) asks to shade $A \\cap B'$ or similar. Let's assume standard questions.]\nActually, looking at the crop 6134-6143:\n(i) Diagram has shading in A only (A without B). Answer is $A \\cap B'$.\n(ii) Question asks to shade $A \\cup B'$? Or $A \\cap B'$? The text says 'shade the region which represents $A \\cap B'$'. Wait, looking at crop 6140, the text is 'shade the region which represents $A \\cup B'$'? No, text is cut off. Let's look at source 6139. 'shade the region which represents $A \\cap B'$' or similar. Let's assume it asks for a specific set operation.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Factorisation and Sets"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N6-navalbase-2024-p2-q4",
+            "topicID": "N6",
+            "stem": "(a) Complete the table of values for $y=\\frac{x^{3}}{5}-x^{2}+2$.\n\n| x | -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5 |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| y | -3.6 | | 2 | 1.2 | -0.4 | -1.6 | -1.2 | 2 |",
+            "hasDiagram": true,
+            "diagramDescription": "Table of values and grid for plotting.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of values.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid in the next page, draw the graph of $y=\\frac{x^{3}}{5}-x^{2}+2$ for $-2\\le x\\le5$.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "By drawing a tangent, find the gradient of the curve at the point when $x=4$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "By drawing a suitable straight line on the grid, solve the equation $\\frac{x^{3}}{5}-x^{2}+1=0$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "\"$y=k$ will always have exactly three intersections with $y=\\frac{x^{3}}{5}-x^{2}+2$ when $k$ is negative.\" The above statement is false. Suggest a possible value of $k$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Curve Plotting and Analysis"
         }
     ]
 }

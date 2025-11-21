@@ -1,0 +1,45 @@
+{
+  "topicId": "N3",
+  "questions": {
+    "Paper 1": [],
+    "Paper 2": [
+      {
+        "questionNumber": 2,
+        "questionId": "N3-navalbase-2024-p2-q2",
+        "topicID": "N3",
+        "stem": "(a) Cheryl wants to open a fixed deposit account with either Bank H or Bank L for a period of 4 years.\n\n| Bank H | Bank L |\n| :--- | :--- |\n| Fixed Deposit Account | Fixed Deposit Account |\n| • Minimum deposit of $10 000. | • No minimum amount required. |\n| • For the first $10 000, earn 0.05% simple interest per annum. | • Compound interest at the rate of 0.8% per annum. |\n| • For the subsequent amount, earn 0.95% simple interest per annum. | |",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Cheryl deposited $30 000 into Bank H. Calculate the total amount in her account after 4 years.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Cheryl claimed that Bank H offers a better deal than Bank L. Do you agree with Cheryl's claim? Justify your conclusion with clear calculations.",
+            "marks": 3,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b_i",
+            "questionText": "The exchange rate between Singapore Dollars (S$) and Chinese Yuan (CNY) is $S$1=CNY5.33$. The exchange rate between Hong Kong dollars (HK$) and Singapore Dollars is $HK$1=S$0.17$. Tan is planning a trip to Hong Kong and Guangzhou. He finds these hotel prices on a website: Guangzhou Hotel CNY825, Hong Kong Hotel HK$825. By comparing the exchange rates, explain which hotel charges a cheaper rate per night. Show your working clearly.",
+            "marks": 2,
+            "answerType": "proof"
+          },
+          {
+            "partId": "b_ii",
+            "questionText": "Tan books 4 nights in the Hong Kong hotel and 2 nights in the Guangzhou hotel. He pays using his credit card. The credit card company converts the prices to Singapore dollars and charges a fee of $k$% for the currency conversion. Given that the total amount Tan pays for the two hotels, including the credit card fee, is $890, find the value of $k$.",
+            "marks": 4,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 12,
+        "paper": "Paper 2",
+        "title": "Financial Maths: Interest and Exchange Rates"
+      }
+    ]
+  }
+}

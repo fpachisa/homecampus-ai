@@ -1,0 +1,27 @@
+{
+  "topicId": "G4",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 4,
+        "questionId": "G4-navalbase-2024-p1-q4",
+        "topicID": "G4",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The sine of an angle is 0.6, find the two possible values for angle.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Trigonometric Angles"
+      }
+    ],
+    "Paper 2": []
+  }
+}

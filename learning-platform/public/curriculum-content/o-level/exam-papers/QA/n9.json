@@ -1,0 +1,339 @@
+{
+  "topicId": "N9",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 26,
+        "questionId": "N9-navalbase-2024-p1-q26",
+        "topicID": "N9",
+        "stem": "A baking school offers beginner, intermediate and advanced baking classes on weekdays and weekends in August this year. The matrix B shows the number of participants attending the baking classes in August.\n$B=\\begin{pmatrix}20&22&9\\\\ 8&10&11\\end{pmatrix}$ (Rows: weekdays, weekends; Cols: beginner, intermediate, advanced)",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The fees for the beginner, intermediate and advanced baking classes are \\$30, \\$40 and \\$50 respectively. Represent the class fees by a $3\\times1$ matrix F.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$F = \\begin{pmatrix} 30 \\\\ 40 \\\\ 50 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the fees for each category.",
+                  "working": "Beginner: $30, Intermediate: $40, Advanced: $50",
+                  "reasoning": "List the values in the order specified by the columns of matrix B."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Format as a column matrix.",
+                  "working": "$F = \\begin{pmatrix} 30 \\\\ 40 \\\\ 50 \\end{pmatrix}$",
+                  "reasoning": "The question asks for a $3 \\times 1$ matrix (3 rows, 1 column)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Evaluate the matrix $C=BF$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$C = \\begin{pmatrix} 1930 \\\\ 1190 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication.",
+                  "working": "$C = \\begin{pmatrix} 20 & 22 & 9 \\\\ 8 & 10 & 11 \\end{pmatrix} \\begin{pmatrix} 30 \\\\ 40 \\\\ 50 \\end{pmatrix}$",
+                  "reasoning": "Substitute matrices B and F into the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the rows of B by the column of F.",
+                  "working": "Row 1: $(20 \\times 30) + (22 \\times 40) + (9 \\times 50) = 600 + 880 + 450 = 1930$\nRow 2: $(8 \\times 30) + (10 \\times 40) + (11 \\times 50) = 240 + 400 + 550 = 1190$",
+                  "reasoning": "Matrix multiplication involves the dot product of rows and columns."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final matrix.",
+                  "working": "$C = \\begin{pmatrix} 1930 \\\\ 1190 \\end{pmatrix}$",
+                  "reasoning": "Combine the calculated row values into the final result."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "State what the elements of C represent.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "The elements represent the total fees collected from the baking classes on weekdays and weekends respectively.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the rows and columns.",
+                  "working": "Rows of B represented Weekdays and Weekends. The operation multiplied number of participants by fee per participant.",
+                  "reasoning": "Multiplying Quantity $\\times$ Price gives Total Revenue."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Formulate the statement.",
+                  "working": "Top element (1930) is Weekday total fees. Bottom element (1190) is Weekend total fees.",
+                  "reasoning": "The interpretation must link the mathematical result back to the context of the problem."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "In September, there were a different number of participants attending baking classes. The number of participants attending beginner classes decreased by 20%. The number of participants attending intermediate classes increased by 10%. The number of participants attending advanced classes tripled. Calculate the percentage increase in the total amount of fees between the August and September classes.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "62.8%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total fees for August.",
+                  "working": "From matrix C: $1930 + 1190 = 3120$",
+                  "reasoning": "Sum the elements of matrix C calculated in part (b)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the new total fees for each category in September.",
+                  "working": "Total Beginner participants (Aug): $20 + 8 = 28$. Sep fees: $28 \\times (1 - 0.20) \\times 30 = 22.4 \\times 30 = 672$\nTotal Intermediate participants (Aug): $22 + 10 = 32$. Sep fees: $32 \\times (1 + 0.10) \\times 40 = 35.2 \\times 40 = 1408$\nTotal Advanced participants (Aug): $9 + 11 = 20$. Sep fees: $20 \\times 3 \\times 50 = 60 \\times 50 = 3000$",
+                  "reasoning": "Apply the percentage changes to the quantities, then multiply by the respective fees. (Note: While participants must be integers, we calculate exact value changes based on the rates provided)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate total September fees.",
+                  "working": "$672 + 1408 + 3000 = 5080$",
+                  "reasoning": "Sum the fees from all three categories."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate percentage increase.",
+                  "working": "Increase = $5080 - 3120 = 1960$\nPercentage Increase = $\\frac{1960}{3120} \\times 100 \\approx 62.8205...$",
+                  "reasoning": "Formula: $\\frac{\\text{New} - \\text{Old}}{\\text{Old}} \\times 100$."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "$62.8\\%$",
+                  "reasoning": "Standard O-level accuracy requirement."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Matrices Baking Classes"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2111121650-p1-q101",
+        "topicID": "N9",
+        "stem": "A stationery shop sells pens, notebooks, and files. The matrix $S$ shows the number of items sold on Monday and Tuesday.\n$S = \\begin{pmatrix} 15 & 10 & 5 \\\\ 12 & 8 & 6 \\end{pmatrix}$ (Rows: Monday, Tuesday; Cols: Pens, Notebooks, Files)",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The selling prices of a pen, a notebook, and a file are \\$2, \\$5, and \\$3 respectively. Represent these prices by a $3 \\times 1$ matrix $P$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix} 2 \\\\ 5 \\\\ 3 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the prices corresponding to the columns of S.",
+                  "working": "Pen: $2, Notebook: $5, File: $3",
+                  "reasoning": "Order must match the columns (Pens, Notebooks, Files)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Format as a column matrix.",
+                  "working": "$P = \\begin{pmatrix} 2 \\\\ 5 \\\\ 3 \\end{pmatrix}$",
+                  "reasoning": "Question requests a $3 \\times 1$ matrix."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the matrix $T = SP$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$T = \\begin{pmatrix} 95 \\\\ 82 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the multiplication.",
+                  "working": "$T = \\begin{pmatrix} 15 & 10 & 5 \\\\ 12 & 8 & 6 \\end{pmatrix} \\begin{pmatrix} 2 \\\\ 5 \\\\ 3 \\end{pmatrix}$",
+                  "reasoning": "Substitute matrices S and P."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform row by column multiplication.",
+                  "working": "Row 1: $(15)(2) + (10)(5) + (5)(3) = 30 + 50 + 15 = 95$\nRow 2: $(12)(2) + (8)(5) + (6)(3) = 24 + 40 + 18 = 82$",
+                  "reasoning": "Calculate the dot product for each row."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Construct the final matrix.",
+                  "working": "$T = \\begin{pmatrix} 95 \\\\ 82 \\end{pmatrix}$",
+                  "reasoning": "Result is a $2 \\times 1$ matrix."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Explain what the elements of $T$ represent.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "The elements represent the total revenue earned from the sales of stationery on Monday and Tuesday respectively.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the dimensions.",
+                  "working": "Rows correspond to Days (Mon, Tue). The calculation sums (Quantity $\\times$ Price).",
+                  "reasoning": "Sum of sales times price equals total revenue."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Stationery Sales Matrix"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-2111121650-p1-q102",
+        "topicID": "N9",
+        "stem": "Given that $A = \\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix}$ and $B = \\begin{pmatrix} 4 & 2 \\\\ -1 & 5 \\end{pmatrix}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the matrix $2A - B$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\begin{pmatrix} 2 & -4 \\\\ 1 & -1 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply matrix A by the scalar 2.",
+                  "working": "$2A = 2\\begin{pmatrix} 3 & -1 \\\\ 0 & 2 \\end{pmatrix} = \\begin{pmatrix} 6 & -2 \\\\ 0 & 4 \\end{pmatrix}$",
+                  "reasoning": "Scalar multiplication affects every element in the matrix."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract matrix B from 2A.",
+                  "working": "$\\begin{pmatrix} 6 & -2 \\\\ 0 & 4 \\end{pmatrix} - \\begin{pmatrix} 4 & 2 \\\\ -1 & 5 \\end{pmatrix} = \\begin{pmatrix} 6-4 & -2-2 \\\\ 0-(-1) & 4-5 \\end{pmatrix}$",
+                  "reasoning": "Subtract corresponding elements."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify.",
+                  "working": "$\\begin{pmatrix} 2 & -4 \\\\ 1 & -1 \\end{pmatrix}$",
+                  "reasoning": "Final arithmetic calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Matrix Operations"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2111121650-p2-q101",
+        "topicID": "N9",
+        "stem": "Given that $M = \\begin{pmatrix} 5 & 2 \\\\ 3 & 4 \\end{pmatrix}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find $M^{-1}$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{14} \\begin{pmatrix} 4 & -2 \\\\ -3 & 5 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the determinant of M.",
+                  "working": "$det(M) = (5)(4) - (2)(3) = 20 - 6 = 14$",
+                  "reasoning": "Determinant formula for $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$ is $ad - bc$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the inverse matrix formula.",
+                  "working": "$M^{-1} = \\frac{1}{14} \\begin{pmatrix} 4 & -2 \\\\ -3 & 5 \\end{pmatrix}$",
+                  "reasoning": "Swap positions of $a$ and $d$, change signs of $b$ and $c$, divide by determinant."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, solve the simultaneous equations:\n$5x + 2y = 24$\n$3x + 4y = 20$",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 4, y = 2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the equations in matrix form $MX = K$.",
+                  "working": "$\\begin{pmatrix} 5 & 2 \\\\ 3 & 4 \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 24 \\\\ 20 \\end{pmatrix}$",
+                  "reasoning": "Transform algebraic system to matrix equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Pre-multiply by $M^{-1}$ to isolate the variable matrix.",
+                  "working": "$\\begin{pmatrix} x \\\\ y \\end{pmatrix} = M^{-1} \\begin{pmatrix} 24 \\\\ 20 \\end{pmatrix} = \\frac{1}{14} \\begin{pmatrix} 4 & -2 \\\\ -3 & 5 \\end{pmatrix} \\begin{pmatrix} 24 \\\\ 20 \\end{pmatrix}$",
+                  "reasoning": "Using the result from part (a)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Perform matrix multiplication.",
+                  "working": "$\\frac{1}{14} \\begin{pmatrix} (4)(24) + (-2)(20) \\\\ (-3)(24) + (5)(20) \\end{pmatrix} = \\frac{1}{14} \\begin{pmatrix} 96 - 40 \\\\ -72 + 100 \\end{pmatrix}$",
+                  "reasoning": "Row by column multiplication."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify and solve.",
+                  "working": "$\\frac{1}{14} \\begin{pmatrix} 56 \\\\ 28 \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ 2 \\end{pmatrix}$",
+                  "reasoning": "Divide each element by the determinant (14)."
+                },
+                {
+                  "step": 5,
+                  "explanation": "State final values.",
+                  "working": "$x = 4, y = 2$",
+                  "reasoning": "Extract values from the resulting column vector."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Inverse Matrix and Simultaneous Equations"
+      }
+    ]
+  }
+}

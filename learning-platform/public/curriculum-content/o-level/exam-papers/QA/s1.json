@@ -1,0 +1,432 @@
+{
+  "topicId": "S1",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 5,
+        "questionId": "S1-navalbase-2024-p1-q5",
+        "topicID": "S1",
+        "stem": "A class of 12 boys and 8 girls took a test. The girl's marks were 3, 6, 7, 8, 9, 9, 10 and 10.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the mean mark for the girls.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7.75",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Sum the marks obtained by the girls.",
+                  "working": "Sum = 3 + 6 + 7 + 8 + 9 + 9 + 10 + 10 = 62",
+                  "reasoning": "To find the mean, we first need the total sum of all individual data points."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide the sum by the number of girls to find the mean.",
+                  "working": "Mean = \\frac{62}{8} = 7.75",
+                  "reasoning": "The formula for the mean is $\\bar{x} = \\frac{\\sum x}{n}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The mean mark for the boys were 8.0. Find the mean mark for the whole class.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7.9",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total marks for the boys.",
+                  "working": "Total marks (Boys) = 12 \\times 8.0 = 96",
+                  "reasoning": "Using $\\text{Sum} = \\text{Mean} \\times n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total marks for the whole class (boys and girls combined).",
+                  "working": "Total marks (Class) = 96 (Boys) + 62 (Girls) = 158",
+                  "reasoning": "We add the sum of the boys' marks to the sum of the girls' marks calculated in part (a)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide the class total by the total number of students.",
+                  "working": "Total students = 12 + 8 = 20\nMean = \\frac{158}{20} = 7.9",
+                  "reasoning": "The combined mean is the total sum divided by the total frequency."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Mean Calculation"
+      },
+      {
+        "questionNumber": 11,
+        "questionId": "S1-navalbase-2024-p1-q11",
+        "topicID": "S1",
+        "stem": "The table below shows the amount of time spent playing online games by a group of children in one particular week.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Time ($h$ hours)",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$0<h\\le2$",
+              4
+            ],
+            [
+              "$2<h\\le4$",
+              9
+            ],
+            [
+              "$4<h\\le6$",
+              15
+            ],
+            [
+              "$6<h\\le8$",
+              13
+            ],
+            [
+              "$8<h\\le10$",
+              7
+            ],
+            [
+              "$10<h\\le12$",
+              2
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Calculate an estimate of the mean time spent playing online games that week.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "5.64 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the mid-interval values ($x$) for each class.",
+                  "working": "Midpoints ($x$): 1, 3, 5, 7, 9, 11",
+                  "reasoning": "For grouped data, we use the midpoint of the class interval to represent the data values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the product of frequency and midpoint ($fx$) and sum them.",
+                  "working": "$fx$: \n$4(1)=4$\n$9(3)=27$\n$15(5)=75$\n$13(7)=91$\n$7(9)=63$\n$2(11)=22$\n\n$\\sum fx = 4+27+75+91+63+22 = 282$",
+                  "reasoning": "We need the total estimated hours, which is the sum of frequency times the midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide $\\sum fx$ by the total frequency ($\\sum f$).",
+                  "working": "$\\sum f = 4+9+15+13+7+2 = 50$\nMean = $\\frac{282}{50} = 5.64$",
+                  "reasoning": "Formula for estimated mean: $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Explain why this is only an estimate of the mean time these children spent playing online games that week.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "We do not know the exact time spent by each child, so we assume every child in a group spent the mid-interval amount of time.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "State the limitation of grouped data.",
+                  "working": "The exact individual values are not known.",
+                  "reasoning": "In a frequency table with ranges, the specific data points are lost."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Explain the assumption made.",
+                  "working": "Calculations assume all values lie exactly at the midpoint of the interval.",
+                  "reasoning": "This assumption introduces a slight error, making the result an estimate."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate of the standard deviation of the time spent playing online games that week.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2.51 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $fx^2$ for each group (frequency $\\times$ midpoint squared).",
+                  "working": "$x$: 1, 3, 5, 7, 9, 11\n$x^2$: 1, 9, 25, 49, 81, 121\n\n$fx^2$:\n$4(1)=4$\n$9(9)=81$\n$15(25)=375$\n$13(49)=637$\n$7(81)=567$\n$2(121)=242$",
+                  "reasoning": "The formula for standard deviation requires the sum of $fx^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Sum the $fx^2$ values.",
+                  "working": "$\\sum fx^2 = 4 + 81 + 375 + 637 + 567 + 242 = 1906$",
+                  "reasoning": "This is the numerator term in the standard deviation formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2}$\n$\\sigma = \\sqrt{\\frac{1906}{50} - (5.64)^2}$\n$\\sigma = \\sqrt{38.12 - 31.8096}$\n$\\sigma = \\sqrt{6.3104} \\approx 2.512$",
+                  "reasoning": "Substitute the values calculated. Note that $\\bar{x}$ was found in part (a)(i)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Mean and Standard Deviation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111121650-p1-q101",
+        "topicID": "S1",
+        "stem": "A group of 5 students measured their heights. The heights, in cm, are 152, 158, $x$, 165, and 170. The mean height of these students is 162 cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "165",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation for the mean.",
+                  "working": "$\\frac{152 + 158 + x + 165 + 170}{5} = 162$",
+                  "reasoning": "The mean is the sum of all values divided by the number of values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for the sum of heights.",
+                  "working": "Sum = $162 \\times 5 = 810$",
+                  "reasoning": "Multiply the mean by the total number of students."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $x$.",
+                  "working": "$645 + x = 810$\n$x = 810 - 645 = 165$",
+                  "reasoning": "Subtract the sum of the known heights from the total sum."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the median height.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "165 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Arrange the data in ascending order.",
+                  "working": "152, 158, 165, 165, 170",
+                  "reasoning": "To find the median, data must be ordered from smallest to largest. Note that $x=165$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the middle value.",
+                  "working": "The middle value is the 3rd number: 165.",
+                  "reasoning": "For $n=5$ (odd), the median is at position $\\frac{n+1}{2} = 3$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Mean and Median with Unknown"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S1-gemini-2111121650-p1-q102",
+        "topicID": "S1",
+        "stem": "The table shows the distribution of the number of pets owned by 40 families in a neighborhood.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Number of pets",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "rows": [
+            [
+              "Frequency",
+              12,
+              15,
+              8,
+              3,
+              2
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the mode of the distribution.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the category with the highest frequency.",
+                  "working": "The highest frequency is 15, which corresponds to 1 pet.",
+                  "reasoning": "The mode is the data value that occurs most frequently."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the mean number of pets owned.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1.2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total number of pets ($\\sum fx$).",
+                  "working": "$0(12) + 1(15) + 2(8) + 3(3) + 4(2) = 0 + 15 + 16 + 9 + 8 = 48$",
+                  "reasoning": "Multiply each number of pets by its frequency and sum the results."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide by the total number of families.",
+                  "working": "Mean = $\\frac{48}{40} = 1.2$",
+                  "reasoning": "Formula: $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Discrete Frequency Distribution"
+      }
+    ],
+    "Paper 2": [
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111121650-p2-q101",
+        "topicID": "S1",
+        "stem": "Two groups of students, Group A and Group B, took the same mathematics test. \n\nThe results for Group A are summarized as follows:\nMean = 65 marks\nStandard Deviation = 12 marks\n\nThe results for Group B are given in the table below:",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Marks ($x$)",
+            "$40 < x \\le 50$",
+            "$50 < x \\le 60$",
+            "$60 < x \\le 70$",
+            "$70 < x \\le 80$",
+            "$80 < x \\le 90$"
+          ],
+          "rows": [
+            [
+              "Frequency",
+              5,
+              12,
+              18,
+              10,
+              5
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate an estimate of the mean and standard deviation for Group B.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Mean = 65.6, SD = 11.6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify midpoints ($x$) and calculate $\\sum fx$.",
+                  "working": "Midpoints: 45, 55, 65, 75, 85\n$5(45) + 12(55) + 18(65) + 10(75) + 5(85) = 225 + 660 + 1170 + 750 + 425 = 3230$\nTotal Freq = 50",
+                  "reasoning": "We use midpoints for grouped data calculations."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the mean.",
+                  "working": "Mean = $\\frac{3230}{50} = 64.6$",
+                  "reasoning": "$\\bar{x} = \\frac{\\sum fx}{\\sum f}$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$5(45^2) + 12(55^2) + 18(65^2) + 10(75^2) + 5(85^2)$\n$= 10125 + 36300 + 76050 + 56250 + 36125 = 214850$",
+                  "reasoning": "Sum of frequency times midpoint squared is needed for SD."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate Standard Deviation.",
+                  "working": "$\\sigma = \\sqrt{\\frac{214850}{50} - 64.6^2} = \\sqrt{4297 - 4173.16} = \\sqrt{123.84} \\approx 11.13$",
+                  "reasoning": "Using $\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Using your answers from part (a), make two comparisons between the performance of Group A and Group B.",
+            "marks": 2,
+            "answerType": "text",
+            "solution": {
+              "finalAnswer": "1. Group A and Group B performed similarly on average (Mean A $\\approx$ Mean B). 2. Group B's results were more consistent than Group A's (SD B < SD A).",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the means (Measure of Central Tendency).",
+                  "working": "Mean A = 65, Mean B = 64.6. They are approximately equal.",
+                  "reasoning": "Mean indicates the average performance level."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare the standard deviations (Measure of Spread).",
+                  "working": "SD A = 12, SD B = 11.13. Since $11.13 < 12$, Group B has a smaller spread.",
+                  "reasoning": "A lower standard deviation implies more consistent results (less variation)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Comparison of Data Sets"
+      }
+    ]
+  }
+}

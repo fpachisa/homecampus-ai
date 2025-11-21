@@ -1,0 +1,71 @@
+{
+  "topicId": "N1",
+  "questions": {
+    "Paper 1": [
+      {
+        "questionNumber": 1,
+        "questionId": "N1-navalbase-2024-p1-q1",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\sqrt[4]{13.5^{2}-\\frac{6.56}{0.37}}.$",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 1,
+        "paper": "Paper 1",
+        "title": "Calculation and Approximation"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "N1-navalbase-2024-p1-q6",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The number $12250\\times\\frac{p}{q}$ is a perfect cube. $p$ and $q$ are prime numbers. Find $p$ and $q$.",
+            "marks": 3,
+            "answerType": "numerical"
+          },
+          {
+            "partId": "b",
+            "questionText": "$x$ is a number between 700 and 800. The highest common factor of $x$ and 12 250 is 250. Find the smallest possible value of $x$.",
+            "marks": 1,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Primes and Factors"
+      },
+      {
+        "questionNumber": 7,
+        "questionId": "N1-navalbase-2024-p1-q7",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $81^{2x}\\times9^{x}=27$, find $x$.",
+            "marks": 2,
+            "answerType": "numerical"
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices Equation"
+      }
+    ],
+    "Paper 2": []
+  }
+}
