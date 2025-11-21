@@ -1,0 +1,756 @@
+{
+  "prob-node-1": {
+    "nodeId": "prob-node-1",
+    "title": "Identifying Probability Experiments",
+    "section": "probability-experiments-concept",
+    "learningFocus": [
+      "Understand that probability experiments have uncertain outcomes",
+      "Identify when an outcome depends on chance",
+      "Distinguish probability experiments from deterministic processes"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Which of the following is a probability experiment? (a) Tossing a coin to decide who goes first, (b) Calculating 12 × 8",
+        "correctAnswer": "(a) Tossing a coin - the outcome depends on chance and cannot be predicted with certainty. (b) is not a probability experiment because 12 × 8 always equals 96 (deterministic)."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Explain why rolling a die is a probability experiment.",
+        "correctAnswer": "Rolling a die is a probability experiment because the outcome (which number lands face up) depends on chance and cannot be predicted with certainty before the die is rolled."
+      }
+    ],
+    "variationRules": {
+      "probabilityExperiments": [
+        "Tossing a coin",
+        "Rolling a die",
+        "Drawing a card from a shuffled deck",
+        "Spinning a spinner",
+        "Drawing a ball from a bag",
+        "Predicting tomorrow's weather",
+        "Selecting a random student"
+      ],
+      "notProbabilityExperiments": [
+        "Calculating 5 + 7",
+        "Measuring your height",
+        "Finding the area of a rectangle with known dimensions",
+        "Determining if 15 is odd or even"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question asking to identify OR explain probability experiment",
+      "CRITICAL: DO NOT include mathTool - this is about conceptual understanding",
+      "Mix identification questions with explanation questions",
+      "Use contexts students encounter: coins, dice, cards, weather, sports",
+      "Emphasize KEY IDEA: outcome cannot be predicted with certainty (depends on chance)",
+      "Contrast with deterministic processes (calculations, measurements of fixed quantities)",
+      "Students should articulate WHY something is/isn't a probability experiment"
+    ]
+  },
+
+  "prob-node-2": {
+    "nodeId": "prob-node-2",
+    "title": "Listing Simple Sample Spaces",
+    "section": "sample-space-simple",
+    "learningFocus": [
+      "List ALL possible outcomes (complete sample space)",
+      "Use correct set notation with braces { }",
+      "State n(S) = total number of possible outcomes"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A die is rolled. Write down the sample space and state the total number of possible outcomes.",
+        "correctAnswer": "S = {1, 2, 3, 4, 5, 6}, n(S) = 6"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A spinner is divided into five equal sectors of different colors: red, orange, blue, green, purple. Write down the sample space and state n(S).",
+        "correctAnswer": "S = {Red, Orange, Blue, Green, Purple}, n(S) = 5"
+      }
+    ],
+    "variationRules": {
+      "experiments": {
+        "coin": {"S": "{Head, Tail}", "n": 2},
+        "die": {"S": "{1, 2, 3, 4, 5, 6}", "n": 6},
+        "spinner5": {"S": "{Red, Orange, Blue, Green, Purple}", "n": 5},
+        "spinner4": {"S": "{Red, Blue, Yellow, Green}", "n": 4}
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - list sample space and state n(S)",
+      "CRITICAL: DO NOT include mathTool initially - students should write it themselves",
+      "Use simple experiments: coin toss, die roll, spinner with named sectors",
+      "Require BOTH sample space in set notation AND n(S) value",
+      "Emphasize completeness: ALL outcomes must be listed",
+      "Use braces { } for set notation",
+      "Vary spinner colors and number of sectors (4-6 sectors)"
+    ]
+  },
+
+  "prob-node-3": {
+    "nodeId": "prob-node-3",
+    "title": "Listing Sample Spaces with Distinct Objects",
+    "section": "sample-space-complex",
+    "learningFocus": [
+      "Use subscripts to distinguish identical-looking objects (B₁, B₂, W₁, W₂, W₃)",
+      "Recognize that visually identical objects are distinct outcomes",
+      "List sample space correctly with subscript notation"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A bag contains two identical black balls and three identical white balls. One ball is drawn at random. Write down the sample space and state the total number of possible outcomes.",
+        "correctAnswer": "S = {B₁, B₂, W₁, W₂, W₃}, n(S) = 5 (using subscripts to distinguish the balls)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A bag contains 5 identical blue marbles and 4 identical red marbles. One marble is drawn. State n(S).",
+        "correctAnswer": "n(S) = 9 (the marbles are distinct even though they look identical within each color)"
+      }
+    ],
+    "variationRules": {
+      "bagProblems": [
+        {"black": 2, "white": 3, "total": 5},
+        {"blue": 5, "red": 4, "total": 9},
+        {"green": 3, "yellow": 2, "total": 5},
+        {"red": 4, "blue": 3, "total": 7}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about drawing from bag with identical-looking objects",
+      "CRITICAL: DO NOT include mathTool",
+      "Emphasize using subscripts: B₁, B₂ for black balls; W₁, W₂, W₃ for white balls",
+      "Students must understand that identical-looking objects are still DISTINCT outcomes",
+      "Question can ask for full sample space OR just n(S)",
+      "Use 2-3 objects per color, total 5-9 objects maximum",
+      "Accept answer with or without explicit subscripts IF n(S) is correct"
+    ]
+  },
+
+  "prob-node-4": {
+    "nodeId": "prob-node-4",
+    "title": "Listing Large Sample Spaces with Ellipsis",
+    "section": "sample-space-complex",
+    "learningFocus": [
+      "Use ellipsis (...) for long lists",
+      "Calculate n(S) arithmetically without listing all outcomes",
+      "Handle consecutive integers efficiently"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A two-digit number is chosen at random. Write down the sample space using ellipsis and state the total number of possible outcomes.",
+        "correctAnswer": "S = {10, 11, 12, ..., 99}, n(S) = 90 (calculated as 99 - 9 = 90)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Ten identical cards numbered 11, 12, 13, ..., 20 are placed in a box. One card is drawn at random. Write down the sample space and state n(S).",
+        "correctAnswer": "S = {11, 12, 13, ..., 20}, n(S) = 10"
+      }
+    ],
+    "variationRules": {
+      "consecutiveIntegers": [
+        {"description": "two-digit numbers", "S": "{10, 11, 12, ..., 99}", "n": 90},
+        {"description": "cards 11-20", "S": "{11, 12, 13, ..., 20}", "n": 10},
+        {"description": "numbers 10-24", "S": "{10, 11, 12, ..., 24}", "n": 15},
+        {"description": "receipts 357-389", "S": "{357, 358, 359, ..., 389}", "n": 33}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question for large sample spaces",
+      "CRITICAL: DO NOT include mathTool",
+      "Use ellipsis notation: {10, 11, 12, ..., 99}",
+      "Students should calculate n(S) arithmetically, not by listing all outcomes",
+      "For consecutive integers from a to b: n(S) = b - a + 1",
+      "Common scenarios: two-digit numbers (90), numbered cards, receipt numbers",
+      "Emphasize efficient counting over explicit listing"
+    ]
+  },
+
+  "prob-node-5": {
+    "nodeId": "prob-node-5",
+    "title": "Understanding Equally Likely Outcomes",
+    "section": "equally-likely-outcomes",
+    "learningFocus": [
+      "Understand 'equally likely' means each outcome has the same chance",
+      "Identify fair/unbiased experiments",
+      "Recognize probability scale: 0 ≤ P(E) ≤ 1"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Are the outcomes equally likely when you toss a fair coin? Explain.",
+        "correctAnswer": "Yes, when tossing a fair coin, Head and Tail are equally likely because each outcome has the same chance of occurring (50%)."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Can a probability be 1.5? Why or why not?",
+        "correctAnswer": "No, probability must be between 0 and 1 inclusive (0 ≤ P(E) ≤ 1). A value of 1.5 is greater than 1, so it cannot be a valid probability."
+      }
+    ],
+    "variationRules": {
+      "fairExperiments": [
+        "fair coin toss",
+        "fair die roll",
+        "spinner with equal sectors",
+        "well-shuffled deck of cards"
+      ],
+      "probabilityScale": [
+        {"value": "1.5", "valid": false, "reason": "greater than 1"},
+        {"value": "0", "valid": true, "reason": "impossible event"},
+        {"value": "1", "valid": true, "reason": "certain event"},
+        {"value": "-0.2", "valid": false, "reason": "negative value"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about equally likely outcomes OR probability scale",
+      "CRITICAL: DO NOT include mathTool for conceptual questions",
+      "Questions about 'equally likely': fair coins, fair dice, equal spinner sectors",
+      "Questions about probability scale: Can P(E) be negative? Greater than 1?",
+      "Emphasize: 0 ≤ P(E) ≤ 1 for all events",
+      "P(E) = 0 means impossible, P(E) = 1 means certain",
+      "Students should explain reasoning, not just yes/no answers"
+    ]
+  },
+
+  "prob-node-6": {
+    "nodeId": "prob-node-6",
+    "title": "Calculating Simple Probabilities",
+    "section": "probability-calculation-counting",
+    "learningFocus": [
+      "Apply P(E) = n(E) / n(S)",
+      "Count favorable outcomes correctly",
+      "Simplify probability fractions"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A die is rolled. Find the probability of getting: (i) a 5, (ii) an even number",
+        "correctAnswer": "(i) P(5) = 1/6, (ii) P(even) = 3/6 = 1/2 (favorable outcomes: 2, 4, 6)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A card is drawn from a box containing 12 cards numbered 1, 2, 3, ..., 12. Find P(drawing a perfect square).",
+        "correctAnswer": "Perfect squares from 1-12: {1, 4, 9}. P(perfect square) = 3/12 = 1/4"
+      }
+    ],
+    "variationRules": {
+      "dieProblems": [
+        {"event": "rolling a 5", "n(E)": 1, "answer": "1/6"},
+        {"event": "rolling an even number", "n(E)": 3, "answer": "1/2"},
+        {"event": "rolling greater than 4", "n(E)": 2, "answer": "1/3"},
+        {"event": "rolling a prime", "n(E)": 3, "answer": "1/2"}
+      ],
+      "cardProblems": {
+        "range": "1-12",
+        "events": [
+          {"description": "perfect square", "favorable": [1, 4, 9], "n(E)": 3},
+          {"description": "prime number", "favorable": [2, 3, 5, 7, 11], "n(E)": 5},
+          {"description": "odd number", "favorable": [1, 3, 5, 7, 9, 11], "n(E)": 6}
+        ]
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question with 1-2 parts asking for probabilities",
+      "CRITICAL: DO NOT include mathTool - students should calculate",
+      "Use die rolls (n(S)=6) or numbered cards (n(S)=10 to 20)",
+      "Events: specific number, even/odd, prime, perfect square, greater than X",
+      "Students must: 1) Count favorable outcomes, 2) Apply formula, 3) Simplify fraction",
+      "Require simplified fractions (3/12 = 1/4)",
+      "Can ask for 2 parts if both use same sample space"
+    ]
+  },
+
+  "prob-node-7": {
+    "nodeId": "prob-node-7",
+    "title": "Probability with Numbered Balls",
+    "section": "probability-calculation-counting",
+    "learningFocus": [
+      "Calculate probabilities from bags with numbered objects",
+      "Handle ranges and conditions"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A bag contains balls numbered 10, 11, 12, ..., 24. One ball is drawn. Find the probability of drawing: (i) a '21', (ii) an odd number, (iii) a prime number",
+        "correctAnswer": "(i) P(21) = 1/15, (ii) P(odd) = 8/15 (odd: 11,13,15,17,19,21,23 = 7... wait: 11,13,15,17,19,21,23 = 7), (iii) P(prime) = 5/15 = 1/3 (primes: 11,13,17,19,23)"
+      }
+    ],
+    "variationRules": {
+      "ballRanges": [
+        {"range": "10-24", "n(S)": 15},
+        {"range": "15-30", "n(S)": 16},
+        {"range": "20-35", "n(S)": 16}
+      ],
+      "events": [
+        "specific number",
+        "odd number",
+        "even number",
+        "prime number",
+        "multiple of 3",
+        "perfect cube"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question with up to 3 parts",
+      "CRITICAL: DO NOT include mathTool",
+      "Use consecutive numbered balls in a range",
+      "Common ranges: 10-24 (n=15), 1-20 (n=20), 15-30 (n=16)",
+      "Events: specific number, odd/even, prime, multiples, perfect squares/cubes",
+      "Students must calculate n(S) from range, then count favorable outcomes",
+      "Ensure correct counting for each event type"
+    ]
+  },
+
+  "prob-node-8": {
+    "nodeId": "prob-node-8",
+    "title": "Playing Cards - Basic Probabilities",
+    "section": "probability-playing-cards",
+    "learningFocus": [
+      "Understand standard deck: 52 cards, 4 suits, 13 ranks",
+      "Know 26 black (clubs, spades), 26 red (diamonds, hearts)",
+      "Calculate probabilities for suits, colors, ranks"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A card is drawn from a standard pack of 52 playing cards. Find the probability of drawing: (i) a black card, (ii) a diamond",
+        "correctAnswer": "(i) P(black) = 26/52 = 1/2, (ii) P(diamond) = 13/52 = 1/4"
+      }
+    ],
+    "variationRules": {
+      "cardEvents": [
+        {"event": "black card", "n(E)": 26, "answer": "1/2"},
+        {"event": "red card", "n(E)": 26, "answer": "1/2"},
+        {"event": "diamond", "n(E)": 13, "answer": "1/4"},
+        {"event": "heart", "n(E)": 13, "answer": "1/4"},
+        {"event": "club", "n(E)": 13, "answer": "1/4"},
+        {"event": "spade", "n(E)": 13, "answer": "1/4"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question with 2-3 parts about basic card probabilities",
+      "CRITICAL: DO NOT include mathTool",
+      "Use standard deck: 52 cards total",
+      "Events: black/red card, specific suit (diamond, heart, club, spade)",
+      "Students must know: 26 black, 26 red, 13 cards per suit",
+      "Require simplified fractions",
+      "Focus on basic events first before complex ones"
+    ]
+  },
+
+  "prob-node-9": {
+    "nodeId": "prob-node-9",
+    "title": "Playing Cards - Composite Events",
+    "section": "probability-playing-cards",
+    "learningFocus": [
+      "Handle composite card events (red Ace, picture card)",
+      "Know picture cards: J, Q, K (12 total)",
+      "Use complementary counting when appropriate"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A card is drawn from a standard pack. Find the probability of drawing: (i) a red Ace, (ii) a picture card, (iii) a card which is not a diamond",
+        "correctAnswer": "(i) P(red Ace) = 2/52 = 1/26 (Ace of hearts, Ace of diamonds), (ii) P(picture) = 12/52 = 3/13 (J,Q,K in each of 4 suits), (iii) P(not diamond) = 39/52 = 3/4"
+      }
+    ],
+    "variationRules": {
+      "compositeEvents": [
+        {"event": "red Ace", "n(E)": 2, "answer": "1/26"},
+        {"event": "black King", "n(E)": 2, "answer": "1/26"},
+        {"event": "picture card", "n(E)": 12, "answer": "3/13"},
+        {"event": "not diamond", "n(E)": 39, "answer": "3/4"},
+        {"event": "not a nine", "n(E)": 48, "answer": "12/13"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question with 2-3 composite events",
+      "CRITICAL: DO NOT include mathTool",
+      "Composite events: red Ace, black King, picture card (J,Q,K), not a suit",
+      "Picture cards: J, Q, K only (NOT Ace) = 12 total",
+      "For 'not X' events, use complement: P(not diamond) = 1 - P(diamond) OR count directly (39/52)",
+      "Students must carefully count composite conditions",
+      "Ensure simplified fractions"
+    ]
+  },
+
+  "prob-node-10": {
+    "nodeId": "prob-node-10",
+    "title": "Impossible and Certain Events",
+    "section": "impossible-certain-events",
+    "learningFocus": [
+      "Identify impossible events: P(E) = 0 (no favorable outcomes)",
+      "Identify certain events: P(E) = 1 (all outcomes favorable)",
+      "Verify 0 ≤ P(E) ≤ 1"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A die is rolled. Find P(rolling a 7). What type of event is this?",
+        "correctAnswer": "P(rolling a 7) = 0/6 = 0. This is an impossible event because a standard die only shows 1-6."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Cards numbered 1-12 are in a box. Find P(drawing a number less than 20). What type of event is this?",
+        "correctAnswer": "P(number < 20) = 12/12 = 1. This is a certain event because all cards satisfy the condition."
+      }
+    ],
+    "variationRules": {
+      "impossibleEvents": [
+        {"experiment": "roll die", "event": "rolling a 7", "n(E)": 0},
+        {"experiment": "draw from 1-12", "event": "negative number", "n(E)": 0},
+        {"experiment": "toss coin", "event": "getting 'sideways'", "n(E)": 0}
+      ],
+      "certainEvents": [
+        {"experiment": "roll die", "event": "number from 1-6", "n(E)": "n(S)"},
+        {"experiment": "draw from 1-12", "event": "number < 20", "n(E)": "n(S)"},
+        {"experiment": "draw from 1-12", "event": "positive number", "n(E)": "n(S)"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about impossible OR certain event",
+      "CRITICAL: DO NOT include mathTool",
+      "Impossible events: P(E) = 0 - no outcomes satisfy condition",
+      "Certain events: P(E) = 1 - all outcomes satisfy condition",
+      "Common impossible: rolling 7 on standard die, negative number from positive set",
+      "Common certain: rolling 1-6 on die, positive number from 1-12",
+      "Students should calculate probability AND identify event type",
+      "Emphasize: impossible ≠ unlikely (P=0 vs P close to 0)"
+    ]
+  },
+
+  "prob-node-11": {
+    "nodeId": "prob-node-11",
+    "title": "Understanding Experimental vs Theoretical",
+    "section": "experimental-vs-theoretical",
+    "learningFocus": [
+      "Define theoretical: calculated using P(E) = n(E)/n(S)",
+      "Define experimental: observed from actual trials (relative frequency)",
+      "Understand why experimental ≠ theoretical in small samples"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "What is the theoretical probability of getting a head when tossing a fair coin? If you toss the coin 20 times and get 12 heads, what is the experimental probability? Why are they different?",
+        "correctAnswer": "Theoretical: P(Head) = 1/2 = 0.5. Experimental: 12/20 = 0.6. They are different because experimental probability varies due to randomness in small samples. With only 20 tosses, we don't expect to get exactly 10 heads every time."
+      }
+    ],
+    "variationRules": {
+      "experiments": [
+        {"type": "coin", "theoretical": "1/2", "trials": 20, "successes": 12, "experimental": "0.6"},
+        {"type": "coin", "theoretical": "1/2", "trials": 50, "successes": 28, "experimental": "0.56"},
+        {"type": "die rolling 6", "theoretical": "1/6", "trials": 60, "successes": 8, "experimental": "0.133"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question comparing theoretical and experimental",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide: theoretical probability, experimental results (trials and successes)",
+      "Students should: 1) State theoretical, 2) Calculate experimental, 3) Explain difference",
+      "Key explanation: randomness causes variation in small samples",
+      "Emphasize: experimental ≠ theoretical is EXPECTED, not an error",
+      "Use realistic trial counts: 10-100 tosses/rolls"
+    ]
+  },
+
+  "prob-node-12": {
+    "nodeId": "prob-node-12",
+    "title": "Calculating Relative Frequency",
+    "section": "relative-frequency-calculation",
+    "learningFocus": [
+      "Calculate relative frequency = occurrences / total trials",
+      "Express as fraction and decimal",
+      "Compare experimental with theoretical probability"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A coin is tossed 50 times. Heads appears 28 times. Calculate the relative frequency of getting heads. Compare with theoretical probability.",
+        "correctAnswer": "Relative frequency = 28/50 = 0.56. Theoretical P(Head) = 1/2 = 0.5. The experimental result (0.56) is close to but not exactly equal to the theoretical value (0.5)."
+      }
+    ],
+    "variationRules": {
+      "coinExperiments": [
+        {"trials": 50, "heads": 28, "relFreq": "0.56"},
+        {"trials": 100, "heads": 48, "relFreq": "0.48"},
+        {"trials": 80, "heads": 44, "relFreq": "0.55"}
+      ],
+      "dieExperiments": [
+        {"trials": 60, "sixes": 8, "relFreq": "0.133"},
+        {"trials": 100, "sixes": 18, "relFreq": "0.18"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question calculating relative frequency",
+      "CRITICAL: DO NOT include mathTool",
+      "Formula: Relative frequency = (number of occurrences) / (total trials)",
+      "Provide experimental data: number of trials and number of successes",
+      "Students should calculate relative frequency AND compare with theoretical",
+      "Express as both fraction and decimal",
+      "Use realistic experiments: coin tosses (theoretical 0.5), die rolls (theoretical 0.167)"
+    ]
+  },
+
+  "prob-node-13": {
+    "nodeId": "prob-node-13",
+    "title": "Law of Large Numbers Intuition",
+    "section": "law-of-large-numbers-intuition",
+    "learningFocus": [
+      "Understand experimental approaches theoretical as trials increase",
+      "Recognize high variation in small samples",
+      "Explain why more trials give better estimates"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "If theoretical P(red) = 0.5, which is more reliable: experimental result from 20 trials or from 200 trials? Why?",
+        "correctAnswer": "The result from 200 trials is more reliable because as the number of trials increases, the experimental probability approaches the theoretical probability. Larger samples have less random variation than small samples."
+      },
+      {
+        "id": "ex2",
+        "problemText": "A student tosses a coin 10 times and gets 7 heads. They conclude the coin is unfair. What would you tell them?",
+        "correctAnswer": "10 tosses is a very small sample. Due to randomness, it's normal to get 7 heads in 10 tosses even with a fair coin. To determine if the coin is truly unfair, they should conduct many more trials (hundreds or thousands). With a fair coin, experimental probability will approach 0.5 as trials increase."
+      }
+    ],
+    "variationRules": {
+      "scenarios": [
+        {"small": 10, "large": 100, "topic": "coin tosses"},
+        {"small": 20, "large": 200, "topic": "die rolls"},
+        {"small": 50, "large": 500, "topic": "spinner spins"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about reliability OR convergence",
+      "CRITICAL: DO NOT include mathTool",
+      "Key concepts: more trials → closer to theoretical, small samples → high variation",
+      "Question types: 1) Compare reliability of different sample sizes, 2) Explain unexpected small-sample results",
+      "Students should explain WHY large samples are better (less random variation)",
+      "Emphasize: experimental may NEVER exactly equal theoretical but gets arbitrarily close",
+      "Connect to real science: why experiments are repeated many times"
+    ]
+  },
+
+  "prob-node-14": {
+    "nodeId": "prob-node-14",
+    "title": "Probability Using Angles - Spinners",
+    "section": "probability-angles-sectors",
+    "learningFocus": [
+      "Recognize when outcomes are NOT equally likely (unequal sectors)",
+      "Apply P(sector) = (angle of sector) / 360°",
+      "Convert angle measurements to probability fractions"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A spinner is divided into sectors with angles: Red (90°), Blue (45°), Green (180°), Pink (45°). Find the probability that the spinner lands on: (i) red, (ii) green",
+        "correctAnswer": "(i) P(Red) = 90°/360° = 1/4, (ii) P(Green) = 180°/360° = 1/2"
+      }
+    ],
+    "variationRules": {
+      "spinnerConfigurations": [
+        {
+          "sectors": [
+            {"color": "Red", "angle": 90},
+            {"color": "Blue", "angle": 45},
+            {"color": "Green", "angle": 180},
+            {"color": "Pink", "angle": 45}
+          ]
+        },
+        {
+          "sectors": [
+            {"color": "Red", "angle": 120},
+            {"color": "Blue", "angle": 150},
+            {"color": "Yellow", "angle": 90}
+          ]
+        }
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question with 2-3 parts about spinner with UNEQUAL sectors",
+      "CRITICAL: DO NOT include mathTool",
+      "Formula: P(sector) = (angle of sector) / 360°",
+      "Provide angles for each sector (must sum to 360°)",
+      "Emphasize: outcomes are NOT equally likely because sectors have different sizes",
+      "Students should: 1) Use angle ratio formula, 2) Simplify fractions",
+      "Verify all sector probabilities sum to 1",
+      "Use 3-5 sectors with angles that give nice fractions (90°, 60°, 120°, 180°, 45°)"
+    ]
+  },
+
+  "prob-node-15": {
+    "nodeId": "prob-node-15",
+    "title": "Complementary Events",
+    "section": "complementary-events",
+    "learningFocus": [
+      "Understand P(not E) = all outcomes except E",
+      "Apply P(not E) = 1 - P(E)",
+      "Verify P(E) + P(not E) = 1"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A card is drawn from a standard deck. P(diamond) = 1/4. Find P(not diamond) using: (i) the complementary formula, (ii) direct counting. Verify both methods give the same answer.",
+        "correctAnswer": "(i) P(not diamond) = 1 - P(diamond) = 1 - 1/4 = 3/4. (ii) There are 39 cards that are not diamonds (52 - 13 = 39), so P(not diamond) = 39/52 = 3/4. Both methods give 3/4 ✓"
+      }
+    ],
+    "variationRules": {
+      "cardEvents": [
+        {"event": "diamond", "P(E)": "1/4", "P(not E)": "3/4"},
+        {"event": "black card", "P(E)": "1/2", "P(not E)": "1/2"},
+        {"event": "Ace", "P(E)": "1/13", "P(not E)": "12/13"}
+      ],
+      "dieEvents": [
+        {"event": "rolling a 6", "P(E)": "1/6", "P(not E)": "5/6"},
+        {"event": "rolling even", "P(E)": "1/2", "P(not E)": "1/2"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question finding complement using BOTH methods",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide P(E) and ask for P(not E)",
+      "Students should use BOTH: 1) Complement formula P(not E) = 1 - P(E), 2) Direct counting",
+      "Verify both methods give same answer",
+      "Emphasize: P(E) + P(not E) = 1 always",
+      "Use simple events: specific suit, color, die outcome"
+    ]
+  },
+
+  "prob-node-16": {
+    "nodeId": "prob-node-16",
+    "title": "When to Use Complement Method",
+    "section": "complementary-events",
+    "learningFocus": [
+      "Recognize when complement method is more efficient",
+      "Choose between complement and direct counting"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A die is rolled. Find P(not getting a 6) using the complement method.",
+        "correctAnswer": "P(not 6) = 1 - P(6) = 1 - 1/6 = 5/6"
+      },
+      {
+        "id": "ex2",
+        "problemText": "In a bag of 20 marbles (5 red, 15 blue), find P(not red).",
+        "correctAnswer": "P(not red) = 1 - P(red) = 1 - 5/20 = 1 - 1/4 = 3/4 OR directly: P(blue) = 15/20 = 3/4"
+      }
+    ],
+    "variationRules": {
+      "events": [
+        {"description": "not getting 6 on die", "complement": "1 - 1/6 = 5/6"},
+        {"description": "not red in bag", "complement": "1 - P(red)"},
+        {"description": "not diamond in deck", "complement": "1 - 1/4 = 3/4"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question using complement method",
+      "CRITICAL: DO NOT include mathTool",
+      "Ask for P(not E) explicitly",
+      "Students should apply: P(not E) = 1 - P(E)",
+      "Scenarios where complement is efficient: 'not X' where X is simple to calculate",
+      "Can also ask which method (complement vs direct) student prefers and why"
+    ]
+  },
+
+  "prob-node-17": {
+    "nodeId": "prob-node-17",
+    "title": "Real-World Probability - Prize Wheels",
+    "section": "real-world-probability",
+    "learningFocus": [
+      "Apply probability to real contexts (shopping, games)",
+      "Handle equal and unequal sectors",
+      "Interpret probability in decision-making"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A shopping mall prize wheel is divided into 6 equal sectors with prizes: $30, $50, $60, umbrella, $40, cheesecake. Find the probability that a customer wins: (i) an umbrella, (ii) a cash voucher",
+        "correctAnswer": "(i) P(umbrella) = 1/6 (one sector out of 6 equal sectors). (ii) P(cash voucher) = 4/6 = 2/3 (four sectors have cash: $30, $50, $60, $40)"
+      }
+    ],
+    "variationRules": {
+      "prizeWheels": [
+        {
+          "sectors": 6,
+          "prizes": ["$30", "$50", "$60", "umbrella", "$40", "cheesecake"],
+          "equal": true
+        },
+        {
+          "sectors": 8,
+          "prizes": ["Move 1", "Move 1", "Move 1", "Move 1", "Move 2", "Move 2", "Move 3", "Go Back"],
+          "equal": true
+        }
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question with 2-3 parts about real-world scenario",
+      "CRITICAL: DO NOT include mathTool",
+      "Contexts: shopping prize wheels, board game spinners, lottery scenarios",
+      "Can use equal sectors (count favorable) OR unequal sectors (use angles)",
+      "Events: specific prize, category of prizes (all cash, all physical items)",
+      "Students should: 1) Identify favorable outcomes, 2) Calculate probability, 3) Simplify",
+      "Make context engaging and realistic"
+    ]
+  },
+
+  "prob-node-18": {
+    "nodeId": "prob-node-18",
+    "title": "Real-World - Biased Experiments",
+    "section": "real-world-probability",
+    "learningFocus": [
+      "Handle non-equally likely outcomes (biased dice, weighted experiments)",
+      "Given probabilities for some outcomes, find others",
+      "Use fact that all probabilities sum to 1"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A biased die is rolled. The probability of rolling each number is: P(1) = 0.1, P(2) = 0.15, P(3) = 0.2, P(4) = 0.25, P(5) = 0.2. Find P(6).",
+        "correctAnswer": "Since all probabilities must sum to 1: P(1) + P(2) + P(3) + P(4) + P(5) + P(6) = 1. Therefore: 0.1 + 0.15 + 0.2 + 0.25 + 0.2 + P(6) = 1, which gives 0.9 + P(6) = 1, so P(6) = 1 - 0.9 = 0.1"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A spinner is weighted so that P(Red) = 0.4 and P(Blue) = 0.35. The only other color is Green. Find P(Green).",
+        "correctAnswer": "P(Red) + P(Blue) + P(Green) = 1. Therefore: 0.4 + 0.35 + P(Green) = 1, which gives 0.75 + P(Green) = 1, so P(Green) = 1 - 0.75 = 0.25"
+      }
+    ],
+    "variationRules": {
+      "biasedDie": [
+        {
+          "given": {"P(1)": 0.1, "P(2)": 0.15, "P(3)": 0.2, "P(4)": 0.25, "P(5)": 0.2},
+          "find": "P(6)",
+          "answer": 0.1
+        },
+        {
+          "given": {"P(1)": 0.05, "P(2)": 0.1, "P(3)": 0.15, "P(4)": 0.2, "P(5)": 0.3},
+          "find": "P(6)",
+          "answer": 0.2
+        }
+      ],
+      "weightedSpinners": [
+        {
+          "given": {"Red": 0.4, "Blue": 0.35},
+          "find": "Green",
+          "answer": 0.25
+        },
+        {
+          "given": {"Red": 0.5, "Yellow": 0.2},
+          "find": "Blue",
+          "answer": 0.3
+        }
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about biased/weighted experiment",
+      "CRITICAL: DO NOT include mathTool",
+      "Key principle: All probabilities must sum to 1",
+      "Provide probabilities for some outcomes, ask student to find missing probability",
+      "Context: biased dice, weighted spinners, loaded coins",
+      "Students should: 1) Add given probabilities, 2) Subtract from 1 to find missing",
+      "Use decimal probabilities (clearer for biased experiments)",
+      "Verify all provided probabilities are valid (0 ≤ P ≤ 1) and sum < 1"
+    ]
+  }
+}

@@ -10,6 +10,7 @@ import { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppNavigation } from '../../hooks/useAppNavigation';
 import { useAuth } from '../../contexts/AuthContext';
+import { useProgressSummary } from '../../hooks/useProgressSummary';
 import type { PathNode, PathLayer, PathProgress, DailyStreak } from '../../types/practice';
 import { yamlPathLoader } from '../../services/yamlPathLoader';
 import { pathProgressService } from '../../services/pathProgressService';
@@ -46,6 +47,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
   const { pathId } = useParams<{ pathId: string }>();
   const { goToPractice, goToHome } = useAppNavigation();
   const { user } = useAuth();
+  const progressSummary = useProgressSummary();
   const category = pathId!; // pathId is the category
   const { theme } = useTheme();
   const [nodes, setNodes] = useState<PathNode[]>([]);
@@ -374,7 +376,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
       <div
         ref={centerPanelRef}
         className="w-full md:w-1/2 min-h-[100dvh] overflow-y-auto relative flex flex-col pb-20 md:pb-0"
-        style={{  }}
+        style={{}}
       >
         {/* Header - Sticky */}
         <div
@@ -480,7 +482,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
           </h2>
         </div>
         <div className="flex-1 overflow-y-auto">
-          <LeaderboardPanel progress={progress} globalStreak={globalStreak} allNodes={nodes} />
+          <LeaderboardPanel progress={progress} globalStreak={globalStreak} allNodes={nodes} globalDailyProblems={progressSummary.dailyProblems} />
         </div>
       </div>
 
@@ -608,7 +610,7 @@ export const InteractivePathView: React.FC<InteractivePathViewProps> = () => {
                   </button>
                 </div>
                 <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-                  <LeaderboardPanelLazy progress={progress} globalStreak={globalStreak} allNodes={nodes} />
+                  <LeaderboardPanelLazy progress={progress} globalStreak={globalStreak} allNodes={nodes} globalDailyProblems={progressSummary.dailyProblems} />
                 </Suspense>
               </div>
             </div>

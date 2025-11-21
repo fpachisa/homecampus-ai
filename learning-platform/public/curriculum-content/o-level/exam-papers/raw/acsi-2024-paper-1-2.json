@@ -1,0 +1,993 @@
+{
+  "questions": [
+    {
+      "questionNumber": 1,
+      "questionId": "N2-acsi-2024-p1-q1",
+      "topicID": "N2",
+      "stem": "The point C lies on the line AB such AC: $AB=2:7$",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Write AC as a fraction of BC.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Given that AC is 24 cm, calculate the length of BC.",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 2,
+      "paper": "Paper 1",
+      "title": "Ratio of Line Segments"
+    },
+    {
+      "questionNumber": 2,
+      "questionId": "G4-acsi-2024-p1-q2",
+      "topicID": "G4",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "$sin~x^{\\circ}=0.66913$. Given that x is an obtuse angle, find x.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "$cos~y^{\\circ}=-cos~121^{\\circ}$. Given that y is an acute angle, find the value of y.",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 2,
+      "paper": "Paper 1",
+      "title": "Trigonometric Equations"
+    },
+    {
+      "questionNumber": 3,
+      "questionId": "S2-acsi-2024-p1-q3",
+      "topicID": "S2",
+      "stem": "During a game, Lee rolled two fair six-sided die. To obtain the score, he subtracted the lower number from the higher number. If the numbers shown on the dice were the same, his score is zero.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Construct a possibility diagram to show all possible outcomes.",
+          "marks": 1,
+          "answerType": "drawing"
+        },
+        {
+          "partId": "b",
+          "questionText": "Find the probability that Lee's score is 5.",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 2,
+      "paper": "Paper 1",
+      "title": "Dice Probability"
+    },
+    {
+      "questionNumber": 4,
+      "questionId": "N3-acsi-2024-p1-q4",
+      "topicID": "N3",
+      "stem": "A shopkeeper bought a pair of shorts for $24. He made a percentage profit of 45% despite selling it at a discount of 20% off the listed price.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "Calculate the listed price for this pair of shorts.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 2,
+      "paper": "Paper 1",
+      "title": "Profit and Discount"
+    },
+    {
+      "questionNumber": 5,
+      "questionId": "N6-acsi-2024-p1-q5",
+      "topicID": "N6",
+      "stem": "Part of the graph of a quadratic function is shown below. The graph passes through the point $A(1,15)$ and it cuts the x-axis at the points B and C. Given that C is (6, 0) and $x=2$ is the line of symmetry of the graph,",
+      "hasDiagram": true,
+      "diagramDescription": "A parabolic curve opening downwards plotted on a Cartesian coordinate system. It peaks above the x-axis, passes through point A(1, 15) on the left side of the peak, intersects the x-axis at B on the left and C(6, 0) on the right. The line of symmetry is marked as the vertical dashed line x = 2.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "write down the equation of the quadratic curve in the form $y=a(x-h)^{2}+k$.",
+          "marks": 2,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "find the positive value of x when $y=4,$ leaving your answer in exact form.",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3,
+      "paper": "Paper 1",
+      "title": "Quadratic Graph Properties"
+    },
+    {
+      "questionNumber": 6,
+      "questionId": "S1-acsi-2024-p1-q6",
+      "topicID": "S1",
+      "stem": "Justin drew this graph to show his mobile data usage for each of the following four months.",
+      "hasDiagram": true,
+      "diagramDescription": "A bar chart representing Mobile Data Usage (Gigabytes) over four months: Jan, Feb, Mar, Apr. The bars are replaced by images of mobile phones of increasing size. The height of the phone for Jan is lowest, Feb higher, Mar higher, and Apr is highest, reaching near the 50 mark on the y-axis. The width of the phones also increases with height.",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "State one aspect of the graph that may be misleading and explain how this may lead to a misinterpretation of the graph.",
+          "marks": 2,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 2,
+      "paper": "Paper 1",
+      "title": "Misleading Statistics"
+    },
+    {
+      "questionNumber": 7,
+      "questionId": "N1-acsi-2024-p1-q7",
+      "topicID": "N1",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "Simplify $(\\frac{1}{2}x^{2})^{3}\\div(4\\sqrt[3]{x^{5}})$ giving your answer in the form of $ax^n$, where a and n are rational numbers.",
+          "marks": 2,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 2,
+      "paper": "Paper 1",
+      "title": "Indices Simplification"
+    },
+    {
+      "questionNumber": 8,
+      "questionId": "N1-acsi-2024-p1-q8",
+      "topicID": "N1",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Express 13 824 as a product of its prime factors.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Explain why 13 824 is a perfect cube.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "c",
+          "questionText": "Given that a is a prime number, find the value of a such that $\\frac{1}{8a}\\times13824$ is a perfect square.",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3,
+      "paper": "Paper 1",
+      "title": "Prime Factors and Cubes"
+    },
+    {
+      "questionNumber": 9,
+      "questionId": "G2-acsi-2024-p1-q9",
+      "topicID": "G2",
+      "stem": "In the diagram, ABCD is a rectangle and E and F are points on AD and BC respectively. The ratio of the area of triangle ABF to the area of rectangle ABCD is 1: 9. The ratio of the area of triangle AFE to the area of rectangle ABCD is 1: 6.",
+      "hasDiagram": true,
+      "diagramDescription": "A rectangle ABCD with points E on side AD and F on side BC. Lines connect A to F, E to F, and D to F, dividing the rectangle into several triangles: ABF, AFE, EFD, and DFC. Triangle ABF is in the top right corner.",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "Explain with clear workings, if the following statements are true/false.\nA: The ratio of the area of triangle ABF to that of triangle AFE is 2: 3.\nB: The ratio of the area of triangle DFC to that of rectangle ABCD is 2: 5.\nC: The sum of the area of triangles ABF and triangle DFC is equal to the sum of the area of triangles AFE and EFD.",
+          "marks": 6,
+          "answerType": "proof"
+        }
+      ],
+      "totalMarks": 6,
+      "paper": "Paper 1",
+      "title": "Geometry Area Ratios"
+    },
+    {
+      "questionNumber": 10,
+      "questionId": "N2-acsi-2024-p1-q10",
+      "topicID": "N2",
+      "stem": "The ratio of the number of soccer balls and volleyballs in a sports shop was 11: 7. After 126 soccer balls were added and 233 volleyballs were sold, the ratio became 14: 3.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "How many volleyballs were there in the shop at first?",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3,
+      "paper": "Paper 1",
+      "title": "Ratio Word Problem"
+    },
+    {
+      "questionNumber": 11,
+      "questionId": "N5-acsi-2024-p1-q11",
+      "topicID": "N5",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "Explain why $(5n+2)^{2}-(5n-2)^{2}$ is a multiple of 8 for all integer values of n.",
+          "marks": 2,
+          "answerType": "proof"
+        }
+      ],
+      "totalMarks": 2,
+      "paper": "Paper 1",
+      "title": "Algebraic Proof"
+    },
+    {
+      "questionNumber": 12,
+      "questionId": "N5-acsi-2024-p1-q12",
+      "topicID": "N5",
+      "stem": "Factorise the following completely.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "$45b-18ab-2a^{2}+5a$",
+          "marks": 2,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "$2p^{2}-\\frac{2}{3}p-\\frac{1}{6}$",
+          "marks": 2,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 4,
+      "paper": "Paper 1",
+      "title": "Factorisation"
+    },
+    {
+      "questionNumber": 13,
+      "questionId": "N5-acsi-2024-p1-q13",
+      "topicID": "N5",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "Simplify $\\frac{x^{2}-9y^{2}}{3x^{2}+7xy-6y^{2}}$",
+          "marks": 3,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 3,
+      "paper": "Paper 1",
+      "title": "Algebraic Fractions"
+    },
+    {
+      "questionNumber": 14,
+      "questionId": "N8-acsi-2024-p1-q14",
+      "topicID": "N8",
+      "stem": "The sets P and Q consists of the points whose coordinates (x, y) are given by $P=\\{(x,y):y=2x+3\\}$ and $Q=\\{(0,0), (0, 3), (1, 5), (2, 5), (3, 9)\\}$ respectively.",
+      "hasDiagram": true,
+      "diagramDescription": "A standard two-set Venn diagram labeled P and Q within a universal set box. The sets overlap.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "List the elements in $P\\cap Q$.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "Shade the region which represents $(P^{\\prime}\\cup Q)^{\\prime}$.",
+          "marks": 1,
+          "answerType": "drawing"
+        }
+      ],
+      "totalMarks": 2,
+      "paper": "Paper 1",
+      "title": "Sets and Coordinates"
+    },
+    {
+      "questionNumber": 15,
+      "questionId": "G6-acsi-2024-p1-q15",
+      "topicID": "G6",
+      "stem": "The distance between the points $M(k,7)$ and $N(9,k)$ is $\\sqrt{20}$ units. Given that $k>10,$",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "find the value of k.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3,
+      "paper": "Paper 1",
+      "title": "Coordinate Geometry Distance"
+    },
+    {
+      "questionNumber": 16,
+      "questionId": "N4-acsi-2024-p1-q16",
+      "topicID": "N4",
+      "stem": "Mr Tan took 4 hours to travel from Town A to Town B. Mr Lim took 8 hours to travel in the opposite direction from Town B to Town A using the same route. They both started at 11am.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "What time did they pass each other?",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 2,
+      "paper": "Paper 1",
+      "title": "Relative Speed"
+    },
+    {
+      "questionNumber": 17,
+      "questionId": "N2-acsi-2024-p1-q17",
+      "topicID": "N2",
+      "stem": "Sam and Wilson can paint a house together in 6 days. They painted the house together for 5 days and then Sam completed the painting of the remaining house alone in 3 days.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "How many days would it take for Wilson to paint the entire house by himself?",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3,
+      "paper": "Paper 1",
+      "title": "Work Word Problem"
+    },
+    {
+      "questionNumber": 18,
+      "questionId": "S1-acsi-2024-p1-q18",
+      "topicID": "S1",
+      "stem": "The cumulative frequency curve below illustrates the wait time of 240 customers who visited a bank.",
+      "hasDiagram": true,
+      "diagramDescription": "A cumulative frequency graph plotting 'Time (Minutes)' on the x-axis (0 to 120) against 'Cumulative Frequency' on the y-axis (0 to 240). The curve starts at (0,0) and rises in an S-shape to (120, 240). Grid lines are provided for reading values.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Use the graph to estimate the 60th percentile,",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Use the graph to estimate the interquartile range of the wait time.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c",
+          "questionText": "Only 10% of the customers complained about the long wait time they experienced. What was the minimum wait time for these customers?",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "d",
+          "questionText": "Two customers are chosen at random. Find the probability that one customer waited for less than or equal to 60 minutes and the other waited for more than 100 minutes.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 7,
+      "paper": "Paper 1",
+      "title": "Cumulative Frequency"
+    },
+    {
+      "questionNumber": 19,
+      "questionId": "G4-acsi-2024-p1-q19",
+      "topicID": "G4",
+      "stem": "In the diagram below, triangle ABC is congruent to triangle PNA. Given that $BC=22$ cm, $AP=32$ cm and angle $ACB=91^{\\circ}$,",
+      "hasDiagram": true,
+      "diagramDescription": "Two triangles, ABC and PNA, are shown. Triangle ABC is on the left with a right-obtuse angle at C (91 degrees), and side BC labeled 22 cm. Triangle PNA is on the right, sharing vertex A with triangle ABC. A line segment connects B and N. Side AP is labeled 32 cm.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "calculate the length of BN,",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "calculate angle APN.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 5,
+      "paper": "Paper 1",
+      "title": "Congruent Triangles and Trigonometry"
+    },
+    {
+      "questionNumber": 20,
+      "questionId": "S1-acsi-2024-p1-q20",
+      "topicID": "S1",
+      "stem": "The mean of ten different numbers is 11.8.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Write down a number which will generate a mean of 12, when added to these ten numbers.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Each value within the ten numbers is adjusted as follows:\nIf the number is less than the mean, the number is decreased by 2,\nif the number is greater than the mean, the number is increased by 2 and\nif the number is equal to the mean, it remains unchanged.\nExplain clearly how these adjustments would affect the standard deviation.",
+          "marks": 2,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 3,
+      "paper": "Paper 1",
+      "title": "Mean and Standard Deviation"
+    },
+    {
+      "questionNumber": 21,
+      "questionId": "N9-acsi-2024-p1-q21",
+      "topicID": "N9",
+      "stem": "A tour agency sells cruise packages to Vietnam, Maldives and Taiwan at $1299, $1398 and $2538 respectively. The table below shows the number of customers who have signed up for the respective cruise packages via the tour agency from January to June and from July to December.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "The number of people who signed up for cruise packages to Vietnam, Maldives and Taiwan can be represented by the matrix $P=(\\begin{matrix}27&24\\\\ 23&29\\\\ 19&22\\end{matrix}).$ The elements of matrix C, where $C=AP$, represents the total earnings for each period. Write down the matrix A.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "Hence, by using matrix multiplication, determine the total earnings, C by the tour agency for each of the period respectively.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c",
+          "questionText": "Given $M=CR,$ where $R=(\\begin{matrix}1\\\\ 1\\end{matrix}),$ find the matrix M.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "d",
+          "questionText": "Describe what is represented by the element(s) of M.",
+          "marks": 1,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 6,
+      "paper": "Paper 1",
+      "title": "Matrices Application"
+    },
+    {
+      "questionNumber": 22,
+      "questionId": "G4-acsi-2024-p1-q22",
+      "topicID": "G4",
+      "stem": "P, Q and R are three points on level ground such that RPQ forms a right-angled triangle with PQ and RQ measuring 135 m and 205 m respectively. It is given that a building of height 50 m is situated at P and that the bearing of Q from P is 119°.",
+      "hasDiagram": true,
+      "diagramDescription": "A triangle RPQ on level ground with a North arrow at P. Angle RPQ is a right angle (90 degrees). The bearing of Q from P is marked as 119 degrees. Side PQ is 135 m and side RQ is 205 m.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Calculate the bearing of R from Q.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Calculate the largest possible angle of depression from the top of the building to any point on the path RQ.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 5,
+      "paper": "Paper 1",
+      "title": "Bearings and 3D Trigonometry"
+    },
+    {
+      "questionNumber": 23,
+      "questionId": "N4-acsi-2024-p1-q23",
+      "topicID": "N4",
+      "stem": "Jefferson and Victor were sent by their company to work in Washington D.C. and Beijing respectively. Jefferson rented a 696 sq ft apartment in Washington D.C. for 1800 USD while Victor rented a $60~m^{2}$ apartment in Beijing for 8000 CNY.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "Given that the currency exchange rate for both cities is $1~USD=7.25$ CNY and that $1~m^{2}=10.7639$ sq ft, illustrate with clear working, which apartment has a higher rental cost.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3,
+      "paper": "Paper 1",
+      "title": "Exchange Rates and Unit Conversion"
+    },
+    {
+      "questionNumber": 24,
+      "questionId": "G7-acsi-2024-p1-q24",
+      "topicID": "G7",
+      "stem": "In the grid, $\\vec{OA}=a$ and $\\vec{OB}=b$. Q is a point on the grid.",
+      "hasDiagram": true,
+      "diagramDescription": "A square grid showing vectors OA and OB starting from origin O. Point A is at (1, -2) relative to O. Point B is at (-2, 1) relative to O. Point Q is at (4, -1) relative to O. Each grid square is 1 unit by 1 unit.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Mark and label the point P such that $\\vec{OP}=-b-2a.$",
+          "marks": 1,
+          "answerType": "drawing"
+        },
+        {
+          "partId": "b",
+          "questionText": "Express $\\vec{OQ}$ in the form $m a+n b$, where m, n are real numbers.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "c",
+          "questionText": "Given that $\\vec{OC}=(\\begin{matrix}6\\\\ x\\end{matrix})$ and $\\vec{OC}$ is parallel to AB, find the value of x.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 4,
+      "paper": "Paper 1",
+      "title": "Vectors on Grid"
+    },
+    {
+      "questionNumber": 25,
+      "questionId": "N3-acsi-2024-p1-q25",
+      "topicID": "N3",
+      "stem": "Edwin deposited $P each into Bank A and Bank B. Bank A offered a simple interest of 4% per annum while Bank B offered an interest rate of 2% per half-year, compounded every six months. The difference in the amount Edwin received from both banks after a period of 7 years is $513.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "",
+          "questionText": "Find P, correct your answer to the nearest hundred.",
+          "marks": 4,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 4,
+      "paper": "Paper 1",
+      "title": "Compound vs Simple Interest"
+    },
+    {
+      "questionNumber": 26,
+      "questionId": "G1-acsi-2024-p1-q26",
+      "topicID": "G1",
+      "stem": "X, Y, and Z are three points on a horizontal sea level map as shown below. X is due North of Y and Z is due east of Y. Ship A is on a bearing of $070^{\\circ}$ from X and on a bearing of $350^{\\circ}$ from Z. It is given that 1 cm represents 2 km on the sea level.",
+      "hasDiagram": true,
+      "diagramDescription": "A map showing three points X, Y, Z forming a right-angled triangle with the right angle at Y. X is directly above Y (North). Z is directly to the right of Y (East).",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Label the position of Ship A and write down the actual distance AX.",
+          "marks": 2,
+          "answerType": "drawing"
+        },
+        {
+          "partId": "b",
+          "questionText": "A boat, B stationed along path XZ is equidistant from Y and Z. Label the position of B.",
+          "marks": 2,
+          "answerType": "drawing"
+        },
+        {
+          "partId": "c",
+          "questionText": "Showing your constructions clearly, draw a circle with centre O, on the map such that the lines XY, YZ and XZ are tangents to the circle. Hence write down the radius of the circle on the map.",
+          "marks": 2,
+          "answerType": "drawing"
+        }
+      ],
+      "totalMarks": 6,
+      "paper": "Paper 1",
+      "title": "Map Construction and Loci"
+    },
+    {
+      "questionNumber": 1,
+      "questionId": "N7-acsi-2024-p2-q1",
+      "topicID": "N7",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Solve the equation $2(x-5)=3x-1$.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Solve the inequality $7-4y>3(y+2)$.",
+          "marks": 2,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "c-i",
+          "questionText": "Given that $\\frac{1}{p}-\\frac{1}{2q}=\\frac{1}{3r},$ find p when $q=-1$ and $r=2,$",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c-ii",
+          "questionText": "rearrange the formula $\\frac{1}{p}-\\frac{1}{2q}=\\frac{1}{3r}$ to make q the subject.",
+          "marks": 3,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "d",
+          "questionText": "Solve the equation $\\frac{5}{x+2}-\\frac{3x}{2x-1}=3$. Give your solutions correct to 2 decimal places.",
+          "marks": 5,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 14,
+      "paper": "Paper 2",
+      "title": "Algebraic Equations and Inequalities"
+    },
+    {
+      "questionNumber": 2,
+      "questionId": "N1-acsi-2024-p2-q2",
+      "topicID": "N1",
+      "stem": "A manufacturing company produces electronic components for various devices. They are analyzing the production data for the past 3 months, which includes quantities of components produced and the corresponding costs.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a-i",
+          "questionText": "Express the total quantity produced from May to July in standard form correct to 3 significant figures.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "a-ii",
+          "questionText": "Calculate the average cost per unit for these 3 months. Express your answer in cents.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "a-iii",
+          "questionText": "Given that the percentage increase in the quantity produced from July to August is 11.8%, calculate the quantity produced in August. Leave your answer in standard form correct to 3 significant figures.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b-i",
+          "questionText": "The company wants to build a prototype of a particular electronic component they are manufacturing. The radius of the actual electronic component is $3.8\\times10^{-5}m.$ In a scale drawing, the radius of the prototype of the electronic component is 1.9 cm. Find the scale used for the drawing. Give your answer in the form n: 1.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b-ii",
+          "questionText": "Given that the prototype has a total surface area of $1.81\\times10^{-8}m^{2}$ find, in $cm^{2},$ the actual total surface area of the electronic component. Give your answer in standard form.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 9,
+      "paper": "Paper 2",
+      "title": "Standard Form and Scales"
+    },
+    {
+      "questionNumber": 3,
+      "questionId": "G1-acsi-2024-p2-q3",
+      "topicID": "G1",
+      "stem": "In Diagram I below, ABCDE is a regular pentagon, centre O. $OA=OB=4~cm.$ Diagram II shows a design for a new badge. The vertices of the regular pentagon ABCDE are joined by circular arcs whose centres are the opposite vertices. For example, the arc AB has centre D and radius AD.",
+      "hasDiagram": true,
+      "diagramDescription": "Diagram I shows a regular pentagon ABCDE inscribed in a circle with center O, with radii OA and OB marked. Diagram II shows a curvilinear pentagon where each side is an arc curved outwards, with one shaded segment on side AB.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "State the value of angle AOB.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Calculate the area of the pentagon ABCDE.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c-i",
+          "questionText": "Find angle ABD. Give reasons for each step of your working.",
+          "marks": 2,
+          "answerType": "proof"
+        },
+        {
+          "partId": "c-ii",
+          "questionText": "Show that the length of BD is approximately 7.61 cm.",
+          "marks": 2,
+          "answerType": "proof"
+        },
+        {
+          "partId": "c-iii",
+          "questionText": "Calculate the area of the shaded segment in Diagram II.",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c-iv",
+          "questionText": "Calculate the area of the face ABCDE of the badge.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 12,
+      "paper": "Paper 2",
+      "title": "Geometry of Pentagon and Circular Arcs"
+    },
+    {
+      "questionNumber": 4,
+      "questionId": "N5-acsi-2024-p2-q4",
+      "topicID": "N5",
+      "stem": "Here are the first four terms of a sequence: $2, \\frac{5}{3}, \\frac{10}{5}, \\frac{17}{7}$.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Find the fifth term of the sequence.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "$T_{n}$ is the nth term of the sequence. Find an expression, in terms of n, for $T_{n}$",
+          "marks": 2,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "c",
+          "questionText": "Find the value of $T_{25}-T_{24}$",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 4,
+      "paper": "Paper 2",
+      "title": "Number Patterns"
+    },
+    {
+      "questionNumber": 5,
+      "questionId": "G5-acsi-2024-p2-q5",
+      "topicID": "G5",
+      "stem": "The diagram shows a solid ornament in the shape of a cylinder with an upright cone cut out at one end and a hemisphere attached to the other end. The vertical heights of the cone and cylinder are x cm and 2x cm respectively.",
+      "hasDiagram": true,
+      "diagramDescription": "A solid object consisting of a central cylinder of height 2x. On top, a cone of height x is cut out (inverted cone void). On the bottom, a hemisphere is attached. The radius of the cylinder, cone base, and hemisphere is r.",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Find the ratio of the volume of the cone to that of the cylinder, expressing your answer as a fraction in the simplest form.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b-i",
+          "questionText": "If the volume of the cylinder is $345~cm^{3}$ and its height is 8 cm, calculate the radius of the cylinder,",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b-ii",
+          "questionText": "calculate the curved surface area of the cone,",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b-iii",
+          "questionText": "calculate the quantity of paint needed to paint the exterior of the ornament with a 0.2 mm thick coat of paint.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 9,
+      "paper": "Paper 2",
+      "title": "Mensuration of Composite Solid"
+    },
+    {
+      "questionNumber": 6,
+      "questionId": "G7-acsi-2024-p2-q6",
+      "topicID": "G7",
+      "stem": "In the diagram, OABC is a parallelogram and D is the midpoint of BC. BE and OC produced intersect at point F. It is given that BE: $BF=1:3$, OC: OF = 1:2, $\\vec{OA}=a$ and $\\vec{OC}=c.$",
+      "hasDiagram": true,
+      "diagramDescription": "Parallelogram OABC with OA=a and OC=c. Point D is on BC. Lines are extended to point F such that O-C-F is a straight line and B-E-F is a straight line.",
+      "parts": [
+        {
+          "partId": "a-i",
+          "questionText": "Express and simplify $\\vec{BF}$ in terms of a and c,",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "a-ii",
+          "questionText": "Express and simplify $\\vec{AE}$ in terms of a and c,",
+          "marks": 2,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "a-iii",
+          "questionText": "Express and simplify $\\vec{OD}$ in terms of a and c.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "Determine, with clear working shown, whether points O, D and E lie on a straight line.",
+          "marks": 3,
+          "answerType": "proof"
+        },
+        {
+          "partId": "c",
+          "questionText": "Find the value of $\\frac{\\text{area of triangle CDE}}{\\text{area of parallelogram OABC}}$",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 9,
+      "paper": "Paper 2",
+      "title": "Vectors in Geometry"
+    },
+    {
+      "questionNumber": 7,
+      "questionId": "N6-acsi-2024-p2-q7",
+      "topicID": "N6",
+      "stem": "Answer the whole of this question on a sheet of graph paper.",
+      "hasDiagram": false,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Complete the table of values for $y=2x+\\frac{1}{x^{2}}-4.$",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "On the grid opposite, draw the graph of $y=2x+\\frac{1}{x^{2}}-4$ for $-2\\le x\\le3,$",
+          "marks": 3,
+          "answerType": "drawing"
+        },
+        {
+          "partId": "c-i",
+          "questionText": "$y=b$ cuts the graph of $y=2x+\\frac{1}{x^{2}}-4$ at one point for $-2\\le x\\le3$, state the range of values of b.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "c-ii",
+          "questionText": "On the same grid, draw the graph of $3y-5x=4$ for $-2\\le x\\le3$",
+          "marks": 2,
+          "answerType": "drawing"
+        },
+        {
+          "partId": "c-iii",
+          "questionText": "Write down the x-coordinates of the points where the graph of $3y-5x=4$ intersects the curve for $-2\\le x\\le3$",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c-iv",
+          "questionText": "These values of x are solutions of the equation $x^{3}+Ax^{2}+B=0$. Find the value of A and the value of B.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 12,
+      "paper": "Paper 2",
+      "title": "Graphs of Functions"
+    },
+    {
+      "questionNumber": 8,
+      "questionId": "S1-acsi-2024-p2-q8",
+      "topicID": "S1",
+      "stem": "The box-and-whisker plots show the distribution of the masses (in grams) of eggs sold in Shop A and Shop B.",
+      "hasDiagram": true,
+      "diagramDescription": "Two box-and-whisker plots aligned vertically against a mass scale from 40 to 70 grams. Shop A's plot spans from about 45 to 67, with a box from 49 to 59 and median at 54. Shop B's plot spans from 41 to 61, with box from 44 to 53 and median at 50.",
+      "parts": [
+        {
+          "partId": "a-i",
+          "questionText": "There are 25 eggs with masses of more than 59 g sold in Shop A. Find the total number of eggs sold in Shop A.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "a-ii",
+          "questionText": "Make a comment comparing the averages and a comment comparing the distribution of the masses of the eggs sold in Shop A and Shop B. Use figures to support your answers.",
+          "marks": 3,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b-i",
+          "questionText": "In a sample of 80 eggs, 4 are cracked. One egg is selected from the sample at random. Find the probability that the egg is cracked.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b-ii",
+          "questionText": "Two eggs are selected from the sample at random. Find the probability that both eggs are cracked.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b-iii",
+          "questionText": "Three eggs are selected from the sample at random. Find the probability that at least one egg is cracked.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 9,
+      "paper": "Paper 2",
+      "title": "Statistics and Probability"
+    },
+    {
+      "questionNumber": 9,
+      "questionId": "N3-acsi-2024-p2-q9",
+      "topicID": "N3",
+      "stem": "Emily is considering signing up for a new credit card and has shortlisted three options: Card A, Card B and Card C. Each card offers distinct benefits, rewards, and imposes different annual fees.",
+      "hasDiagram": true,
+      "diagramDescription": "",
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Calculate the net rewards (which consist of cashback and sign-up bonus) for each credit card for an expenditure of SGD 2000 within the first month of card usage.",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Emily's monthly card expenditure is SGD 2000. Assuming Emily has signed up for credit card A, by considering only the annual fee and the net rewards, calculate the total amount she has to pay for her credit card bill after the first year of usage.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c",
+          "questionText": "Emily enjoys travelling. As such, travel perks are important to her. Additional information provided: Monthly Card Expenditure is SGD 2000, requires 5 Airport Lounge Access Passes per year (costing $50 each if bought). Determine which credit card might be the best choice for Emily if she signs up for the card and uses it for two consecutive years. Justify any decisions you make and show your calculations clearly.",
+          "marks": 7,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 12,
+      "paper": "Paper 2",
+      "title": "Financial Literacy"
+    }
+  ]
+}

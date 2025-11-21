@@ -1,0 +1,462 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "questionId": "N2-cchms-2024-p1-q1",
+            "topicID": "N2",
+            "stem": "The length of a court is 0.028 km and the width of the court is 16 m.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express the ratio of the length to the width of the court in its simplest form.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 1,
+            "paper": "Paper 1",
+            "title": "Ratio of Court Dimensions"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "G4-cchms-2024-p1-q2",
+            "topicID": "G4",
+            "stem": "Given that $0 < x < 180$, find the possible values of $x$ for $\\sin x^{\\circ} = 0.985$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Give your answers correct to 1 decimal place.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Solving Sine Equation"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N1-cchms-2024-p1-q3",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Simplify $\\frac{(4a^{4}b)^{3}}{10a^{3}b^{7}}$ leaving your answer in positive index form.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Given that $2^{x}=3$, $2^{y}=7$ and $2^{z}=\\frac{9}{49}$, use the laws of indices to find the value of $2^{3x-y+\\frac{1}{2}z}$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Simplifying Indices Expressions"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N1-cchms-2024-p1-q4",
+            "topicID": "N1",
+            "stem": "A group of students won $226 in a competition and shared the amount equally, leaving $4 leftover. Competing for a second time, the same group of students won $296. They shared the $296 along with the $4 left over from the first competition equally, with no amount remaining.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Assuming that each student received a whole number of dollars in both distributions, find the greatest possible number of students in the group.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Sharing Prize Money"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N3-cchms-2024-p1-q5",
+            "topicID": "N3",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "On 6 June 2020, Elijah invested some money in a bank which pays a simple interest at a rate of 3.5% per annum. He received a total interest of $680.40 on 6 June 2023. Find the amount of money Elijah invested in the bank.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Freddy invested $8000 in another bank that paid compound interest at a rate of 1.75% per annum, compounded quarterly. Find the total amount Freddy received at the end of 5 years. Give your answer correct to the nearest cent.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Simple and Compound Interest"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N5-cchms-2024-p1-q7",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write as a single fraction in its simplest form $\\frac{4-x}{x+2}-\\frac{2}{3-x}$",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Algebraic Fraction Subtraction"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "S1-cchms-2024-p1-q8",
+            "topicID": "S1",
+            "stem": "The table shows the distribution of the weights of 40 students.\n\n| Weight ($W$ kg) | $40 < W \\le 50$ | $50 < W \\le 60$ | $60 < W \\le 70$ | $70 < W \\le 80$ | $80 < W \\le 90$ |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| Frequency | 6 | 8 | $a$ | 11 | 3 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $a$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate an estimate for\n(i) the mean weight of the students,\n(ii) the standard deviation of the weights.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "An error in the weighing machine caused the students' weights to be recorded 2 kg more than their actual values. Explain how the mean and standard deviation will change after the error is rectified.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Mean and Standard Deviation"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N2-cchms-2024-p1-q9",
+            "topicID": "N2",
+            "stem": "Andy bought a limited-edition watch from an online website based in Thailand for 10 460 baht. Andy also paid $15 in Singapore dollars for shipping and GST of 9% on the cost of the watch. The exchange rate between Thai baht ($\\mathbb{B}$) and Singapore dollars (S$) was $\\mathbb{B}100 = S\\$P$. Andy spent a total of $436 in Singapore dollars.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $P$, giving your answer correct to 3 significant figures.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Currency Exchange Calculation"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "G6-cchms-2024-p1-q10",
+            "topicID": "G6",
+            "stem": "The gradient of the line joining the points $(-3+2a, 7)$ and $(a+1, 2)$ is $-\\frac{2}{3}$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $a$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Gradient Between Two Points"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "N7-cchms-2024-p1-q11",
+            "topicID": "N7",
+            "stem": "Given that $a^{2}-\\frac{6a}{b}+\\frac{9}{b^{2}}=0$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $ab$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Algebraic Equation Solving"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "N5-cchms-2024-p1-q12",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Factorise completely $4mn-16n^2-4m^2n+64n^3$.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Complete Factorisation"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "S2-cchms-2024-p1-q13",
+            "topicID": "S2",
+            "stem": "A bag contains 4 black coins, 7 red coins and 11 white coins. Two coins are drawn from the bag at random, one after another without replacement.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the probability that a white coin will be chosen on the second draw.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "$x$ yellow coins are added to the bag. The probability of picking a black coin in both draws is $\\frac{1}{50}$. Find the value of $x$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Probability with Coins"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "N6-cchms-2024-p1-q15",
+            "topicID": "N6",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express $x^{2}+5x+7$ in the form $(x+a)^{2}+b$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hence, explain why the expression will never be negative.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Completing the Square"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "N2-cchms-2024-p1-q20",
+            "topicID": "N2",
+            "stem": "It is given that $y$ is inversely proportional to the square root of $x$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the percentage change in $x$ when the value of $y$ decreases by 50%.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Inverse Proportion Percentage"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "N9-cchms-2024-p1-q21",
+            "topicID": "N9",
+            "stem": "The table shows the prices of movie tickets categorised by different days of the week and the various age groups.\n\n| | Monday to Thursday | Friday | Saturday and Sunday |\n| :--- | :--- | :--- | :--- |\n| Child | $6.00 | $8.50 | $9.00 |\n| Adult | $7.00 | $10.00 | $12.50 |\n| Senior Citizen | $6.50 | $9.00 | $10.00 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write down a $3\\times3$ matrix P to represent the above information.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "(i) The Ng family comprises a child, two adults and a senior citizen while the Tan family comprises three children and two adults. Represent this information as a $2\\times3$ matrix Q.\n(ii) Evaluate QP and explain what the elements represent.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Matrix Problem with Prices"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "N4-cchms-2024-p1-q22",
+            "topicID": "N4",
+            "stem": "Sam's daily morning routine involves getting breakfast before going to work. He travels by car. On a particular day, Sam leaves home at 8:00 am and arrives at the breakfast place at 8:15 am. He leaves the breakfast place at 8:30 am. He arrives at his office at 9:00 am. Sam's average speed for the whole journey is $42 \\text{ km/h}$. His average speed from home to the breakfast place is $10 \\text{ km/h}$ faster than his average speed from the breakfast place to the office.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the distance between the breakfast place and Sam's office.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Average Speed Journey"
+        },
+        {
+            "questionNumber": 24,
+            "questionId": "N5-cchms-2024-p1-q24",
+            "topicID": "N5",
+            "stem": "The first four terms in a sequence of numbers are $3+k, 1+k, -1+k, -3+k, ...$ where $k$ is a constant.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find an expression in terms of $n$ and $k$, for the $n$th term in this sequence.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "State two conditions on $k$ such that 39 is a term of the sequence.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Arithmetic Sequence with Constant"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N1-cchms-2024-p2-q1",
+            "topicID": "N1",
+            "stem": "The table shows the total electricity consumption in Singapore over three years.\n\n| Year | 2020 | 2021 | 2022 |\n| :--- | :--- | :--- | :--- |\n| Total Electricity Consumption in Gigawatt Hours (GWh) | 50 779 | 53 483 | 54 884 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "(i) In 2021, the electricity consumed by households took up 15.5% of the total electricity consumption. Calculate the amount of electricity consumed by households in 2021, correct to two significant figures.\n(ii) Calculate the percentage increase in the total electricity consumption from 2020 to 2022.\n(iii) Express the 2020 electricity consumption in kilowatt hours (kWh), leaving your answer in standard form, correct to two significant figures.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "A microprocessor is in the shape of a cube where the sides are 5 mm in length.\n(i) Find the maximum number of microprocessors that can be placed into a container with dimensions 10 cm by 2 cm by 8 cm.\n(ii) A model of the microprocessor was made to a scale of 10: 1. Given that the surface area of microprocessor is 150 mm\u00b2, find the surface area of the model microprocessor in square centimetres.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Electricity Consumption and Scales"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N7-cchms-2024-p2-q2",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve $2x-7=3(1-3x)$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Solve the inequalities $7x-1<13$ and $\\frac{x+1}{2}\\ge-2(x-2)$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Rearrange the formula $y=\\frac{x^{2}+5}{7x^{2}}$ to make $x$ the subject.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Solve the equation $\\frac{2x}{1-x}-3=\\frac{1}{2x-3}$. Give your solutions correct to two decimal places.",
+                    "marks": 5,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 13,
+            "paper": "Paper 2",
+            "title": "Algebraic Equations and Inequalities"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "G7-cchms-2024-p2-q7",
+            "topicID": "G7",
+            "stem": "(a) A, B, C and D are four points such that the coordinates of A and C are (4,2) and (10,-34) respectively. $\\vec{AB}=\\begin{pmatrix}-9\\\\ -12\\end{pmatrix}$ and $\\vec{AD}=\\begin{pmatrix}24\\\\ -12\\end{pmatrix}$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "(i) Find the coordinates of B.\n(ii) Find $|\\vec{AB}|$.\n(iii) It is given that E is a point on BD such that $\\vec{BE}=\\frac{1}{3}\\vec{BD}$. Show that A, C and E are collinear.",
+                    "marks": 6,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "A is the point (2,6), B is the point (-4,-2) and C is the point (6,-2). A line L passes through point C and is parallel to AB.\n(i) Find the equation of line L.\n(ii) Point D lies on line L such that AD // BC. Find the coordinates of point D.\n(iii) Show that ABCD is a rhombus.",
+                    "marks": 6,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 12,
+            "paper": "Paper 2",
+            "title": "Vectors and Coordinate Geometry"
+        }
+    ]
+}

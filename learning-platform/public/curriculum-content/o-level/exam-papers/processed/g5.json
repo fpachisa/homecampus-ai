@@ -3,6 +3,125 @@
   "questions": {
     "Paper 1": [
       {
+        "questionNumber": 8,
+        "questionId": "G5-greenridge-2024-p1-q8",
+        "topicID": "G5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Convert $40^{\\circ}$ into radians. Leave your answers in terms of $\\pi$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{2}{9}\\pi$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the conversion factor from degrees to radians.",
+                  "working": "180^{\\circ} = \\pi \\text{ radians} \\implies 1^{\\circ} = \\frac{\\pi}{180} \\text{ radians}",
+                  "reasoning": "To convert degrees to radians, we multiply the angle in degrees by $\\frac{\\pi}{180}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the given angle by the conversion factor and simplify the fraction.",
+                  "working": "40 \\times \\frac{\\pi}{180} = \\frac{40\\pi}{180} = \\frac{4\\pi}{18} = \\frac{2\\pi}{9}",
+                  "reasoning": "Simplify the fraction by dividing the numerator and denominator by their greatest common divisor (20)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Convert $23~km/h$ into $m/s$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6.39 m/s",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the distance from kilometers to meters.",
+                  "working": "23 \\text{ km} = 23 \\times 1000 = 23000 \\text{ m}",
+                  "reasoning": "There are 1000 meters in 1 kilometer."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert the time from hours to seconds.",
+                  "working": "1 \\text{ h} = 60 \\times 60 = 3600 \\text{ s}",
+                  "reasoning": "There are 60 minutes in an hour and 60 seconds in a minute."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide the distance in meters by the time in seconds.",
+                  "working": "\\frac{23000}{3600} = \\frac{230}{36} = \\frac{115}{18} \\approx 6.3888...",
+                  "reasoning": "Speed is distance divided by time. The result should be rounded to 3 significant figures."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "6.3888... \\approx 6.39",
+                  "reasoning": "Standard O-Level practice is to round non-exact numerical answers to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Unit Conversions"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "G5-greenridge-2024-p1-q9",
+        "topicID": "G5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the total surface area of a solid hemisphere with radius 6 cm.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "339 cm²",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the formula for the total surface area of a solid hemisphere.",
+                  "working": "\\text{Total Surface Area} = \\text{Curved Surface Area} + \\text{Base Area} = 2\\pi r^2 + \\pi r^2 = 3\\pi r^2",
+                  "reasoning": "A solid hemisphere consists of a curved outer surface and a flat circular base."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the radius into the formula.",
+                  "working": "3\\pi (6)^2 = 3\\pi (36)",
+                  "reasoning": "The radius $r$ is given as 6 cm."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the value.",
+                  "working": "108\\pi \\approx 339.292...",
+                  "reasoning": "Compute the exact value in terms of $\\pi$ first, then convert to a decimal."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "339.292... \\approx 339",
+                  "reasoning": "Final answers for angles or lengths/areas should be rounded to 3 significant figures unless specified otherwise."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Hemisphere Surface Area"
+      },
+      {
         "questionNumber": 23,
         "questionId": "G5-broadrick-2024-p1-q23",
         "topicID": "G5",
@@ -139,6 +258,77 @@
         "title": "Similar Cones Volume Ratio"
       },
       {
+        "questionNumber": 101,
+        "questionId": "G5-gemini-2111071107-p1-q101",
+        "topicID": "G5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Convert $\\frac{3\\pi}{4}$ radians into degrees.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "135^{\\circ}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the conversion factor from radians to degrees.",
+                  "working": "\\pi \\text{ radians} = 180^{\\circ} \\implies 1 \\text{ radian} = \\frac{180}{\\pi}^{\\circ}",
+                  "reasoning": "To convert radians to degrees, multiply by $\\frac{180}{\\pi}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the multiplication.",
+                  "working": "\\frac{3\\pi}{4} \\times \\frac{180}{\\pi} = \\frac{3 \\times 180}{4}",
+                  "reasoning": "The $\\pi$ terms cancel out."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the expression.",
+                  "working": "3 \\times 45 = 135",
+                  "reasoning": "180 divided by 4 is 45."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Convert $15~m/s$ into $km/h$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "54 km/h",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the conversion factors for distance and time.",
+                  "working": "1 \\text{ m} = \\frac{1}{1000} \\text{ km}, \\quad 1 \\text{ s} = \\frac{1}{3600} \\text{ h}",
+                  "reasoning": "We need to convert meters to kilometers and seconds to hours."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the conversion factor directly.",
+                  "working": "15 \\times \\frac{3600}{1000} = 15 \\times 3.6",
+                  "reasoning": "To convert m/s to km/h, you can multiply by 3.6 (which is $\\frac{3600}{1000}$)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final value.",
+                  "working": "15 \\times 3.6 = 54",
+                  "reasoning": "Perform the multiplication to get the speed in km/h."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Radian and Speed Conversions"
+      },
+      {
         "questionNumber": 102,
         "questionId": "G5-gemini-2011-p1-102",
         "topicID": "G5",
@@ -179,6 +369,54 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Cone to Sphere Recast"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G5-gemini-2111071107-p1-q102",
+        "topicID": "G5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the volume of a sphere with diameter 12 cm.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "905 cm³",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the radius of the sphere.",
+                  "working": "r = \\frac{\\text{diameter}}{2} = \\frac{12}{2} = 6 \\text{ cm}",
+                  "reasoning": "The formula for volume uses radius, not diameter."
+                },
+                {
+                  "step": 2,
+                  "explanation": "State the formula for the volume of a sphere.",
+                  "working": "V = \\frac{4}{3}\\pi r^3",
+                  "reasoning": "This is the standard mensuration formula for a sphere."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute the radius and calculate.",
+                  "working": "V = \\frac{4}{3}\\pi (6)^3 = \\frac{4}{3}\\pi (216) = 4\\pi(72) = 288\\pi",
+                  "reasoning": "Calculate the exact value first."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert to decimal and round to 3 significant figures.",
+                  "working": "288\\pi \\approx 904.778... \\approx 905",
+                  "reasoning": "Round the final answer to 3 s.f."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Volume of Sphere"
       }
     ],
     "Paper 2": [

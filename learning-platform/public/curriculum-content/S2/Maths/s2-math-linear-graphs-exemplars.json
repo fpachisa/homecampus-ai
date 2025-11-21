@@ -1,0 +1,1155 @@
+{
+  "linear-graphs-node-1": {
+    "nodeId": "linear-graphs-node-1",
+    "title": "Plotting Points on Cartesian Plane",
+    "section": "cartesian-plane-basics",
+
+    "learningFocus": [
+      "Understanding (x, y) coordinate notation",
+      "Plotting points in all four quadrants",
+      "Identifying quadrants by sign patterns"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Plot the point (-3, 4) on the Cartesian plane. In which quadrant does this point lie?",
+        "correctAnswer": "Quadrant II (x is negative, y is positive)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "The point P lies at coordinates (2, -5). State which quadrant P is in.",
+        "correctAnswer": "Quadrant IV"
+      }
+    ],
+
+    "variationRules": {
+      "coordinates": [
+        {"x": "negative", "y": "positive", "quadrant": "II"},
+        {"x": "positive", "y": "negative", "quadrant": "IV"},
+        {"x": "negative", "y": "negative", "quadrant": "III"},
+        {"x": "positive", "y": "positive", "quadrant": "I"}
+      ],
+      "xValues": [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6],
+      "yValues": [-6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6],
+      "questionTypes": [
+        "Plot point and identify quadrant",
+        "Given quadrant, identify which points could lie there",
+        "Read coordinates from plotted points"
+      ]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem. Maximum TWO questions ONLY if the second depends on the first",
+      "Use integer coordinates between -6 and 6",
+      "Vary quadrants across different problems",
+      "Include origin (0,0) occasionally",
+      "Test understanding of negative coordinates",
+      "DO NOT include mathTool - plotting is the exercise itself"
+    ]
+  },
+
+  "linear-graphs-node-2": {
+    "nodeId": "linear-graphs-node-2",
+    "title": "Identifying Linear Relationships",
+    "section": "recognizing-linear-relationships",
+
+    "learningFocus": [
+      "Constant rate of change concept",
+      "Checking differences in y-values",
+      "Distinguishing linear from non-linear"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A table shows x values: 0, 1, 2, 3 and y values: 2, 5, 8, 11. Is this a linear relationship? Explain your reasoning.",
+        "correctAnswer": "Yes, it is linear. The y-values increase by 3 each time (constant rate of change: +3)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "For the values x: 1, 2, 3, 4 and y: 1, 4, 9, 16, determine if the relationship is linear.",
+        "correctAnswer": "No, not linear. The differences are +3, +5, +7 (not constant). This is quadratic (y = x²)"
+      }
+    ],
+
+    "variationRules": {
+      "linearPatterns": [
+        {"change": 2, "start": 1},
+        {"change": 3, "start": 0},
+        {"change": -2, "start": 10},
+        {"change": 5, "start": -3},
+        {"change": 0.5, "start": 2}
+      ],
+      "nonLinearPatterns": [
+        {"type": "quadratic", "formula": "x²"},
+        {"type": "quadratic", "formula": "x² + 1"},
+        {"type": "exponential", "formula": "2^x"}
+      ],
+      "tableSizes": [4, 5, 6]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Present data as a table of x and y values",
+      "Mix linear and non-linear examples",
+      "For linear: ensure constant differences",
+      "For non-linear: use simple patterns (quadratic or exponential)",
+      "Ask students to explain their reasoning",
+      "DO NOT include mathTool - checking calculations is the exercise"
+    ]
+  },
+
+  "linear-graphs-node-3": {
+    "nodeId": "linear-graphs-node-3",
+    "title": "Understanding Gradient as Rise over Run",
+    "section": "introduction-to-gradient",
+
+    "learningFocus": [
+      "Gradient as rise ÷ run",
+      "Identifying vertical and horizontal change",
+      "Relating gradient to steepness"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A line rises 6 units for every 2 units it moves horizontally. Calculate the gradient.",
+        "correctAnswer": "Gradient = 6 ÷ 2 = 3"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Between two points, a line goes up 12 units while moving 4 units to the right. What is its gradient?",
+        "correctAnswer": "Gradient = 12 ÷ 4 = 3"
+      }
+    ],
+
+    "variationRules": {
+      "riseValues": [2, 3, 4, 5, 6, 8, 9, 10, 12, 15],
+      "runValues": [1, 2, 3, 4, 5, 6],
+      "gradientTypes": ["positive whole numbers", "positive fractions"],
+      "contexts": [
+        "rises X units for every Y units horizontally",
+        "goes up X while moving Y to the right",
+        "vertical change of X, horizontal change of Y"
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "expression": "2*x + 1",
+        "xMin": 0,
+        "xMax": 5,
+        "yMin": 0,
+        "yMax": 12,
+        "showGrid": true,
+        "showPoints": [
+          {"x": 0, "y": 1, "label": "Start"},
+          {"x": 2, "y": 5, "label": "End"}
+        ],
+        "color": "#3b82f6",
+        "caption": "The line shows rise and run between two points"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool when asking to identify rise/run from a graph",
+      "OMIT mathTool when asking to calculate gradient from given rise/run values (would show answer)",
+      "Use simple whole number gradients initially",
+      "Ensure rise and run values create recognizable gradients",
+      "For mathTool: use showPoints to mark two clear points on the line",
+      "Caption should prompt students to count rise and run on the grid"
+    ]
+  },
+
+  "linear-graphs-node-4": {
+    "nodeId": "linear-graphs-node-4",
+    "title": "Calculating Gradient from Two Points",
+    "section": "gradient-formula",
+
+    "learningFocus": [
+      "Formula m = (y₂ - y₁)/(x₂ - x₁)",
+      "Maintaining consistent order when subtracting",
+      "Handling negative coordinates"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Find the gradient of the line passing through points (1, 3) and (5, 11).",
+        "correctAnswer": "m = (11 - 3)/(5 - 1) = 8/4 = 2"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Calculate the gradient between (-2, 5) and (4, -1).",
+        "correctAnswer": "m = (-1 - 5)/(4 - (-2)) = -6/6 = -1"
+      }
+    ],
+
+    "variationRules": {
+      "point1Options": [
+        {"x": 1, "y": 2}, {"x": 2, "y": 5}, {"x": -1, "y": 3},
+        {"x": 0, "y": 1}, {"x": -2, "y": -3}, {"x": 3, "y": 7}
+      ],
+      "point2Options": [
+        {"x": 5, "y": 10}, {"x": 6, "y": 13}, {"x": 3, "y": 7},
+        {"x": 4, "y": 5}, {"x": 2, "y": 1}, {"x": 7, "y": 15}
+      ],
+      "gradientResults": ["positive integers", "negative integers", "fractions"],
+      "coordinateRanges": {"xMin": -5, "xMax": 8, "yMin": -6, "yMax": 15}
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Use clear integer coordinates",
+      "Include both positive and negative gradients",
+      "Vary whether coordinates are positive, negative, or mixed",
+      "Simplify fractions where possible",
+      "DO NOT include mathTool - calculation practice is the goal"
+    ]
+  },
+
+  "linear-graphs-node-5": {
+    "nodeId": "linear-graphs-node-5",
+    "title": "Positive, Negative, Zero, and Undefined Gradients",
+    "section": "types-of-gradients",
+
+    "learningFocus": [
+      "Positive gradient = line slopes upward",
+      "Negative gradient = line slopes downward",
+      "Zero gradient = horizontal line",
+      "Undefined gradient = vertical line"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Find the gradient of the line through (2, 5) and (6, 13). Is it positive, negative, zero, or undefined?",
+        "correctAnswer": "m = (13-5)/(6-2) = 8/4 = 2. Positive gradient (line slopes upward)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Calculate the gradient between points (3, 7) and (3, -2). What type of gradient is this?",
+        "correctAnswer": "m = (-2-7)/(3-3) = -9/0. Undefined gradient (vertical line)"
+      },
+      {
+        "id": "ex3",
+        "problemText": "What is the gradient of the line passing through (-1, 4) and (5, 4)?",
+        "correctAnswer": "m = (4-4)/(5-(-1)) = 0/6 = 0. Zero gradient (horizontal line)"
+      }
+    ],
+
+    "variationRules": {
+      "positiveGradientPoints": [
+        {"p1": {"x": 1, "y": 2}, "p2": {"x": 4, "y": 8}},
+        {"p1": {"x": -2, "y": 3}, "p2": {"x": 2, "y": 11}}
+      ],
+      "negativeGradientPoints": [
+        {"p1": {"x": 1, "y": 8}, "p2": {"x": 5, "y": 0}},
+        {"p1": {"x": -1, "y": 7}, "p2": {"x": 3, "y": -1}}
+      ],
+      "zeroGradientPoints": [
+        {"p1": {"x": -3, "y": 5}, "p2": {"x": 4, "y": 5}},
+        {"p1": {"x": 0, "y": -2}, "p2": {"x": 6, "y": -2}}
+      ],
+      "undefinedGradientPoints": [
+        {"p1": {"x": 3, "y": -2}, "p2": {"x": 3, "y": 8}},
+        {"p1": {"x": -1, "y": 0}, "p2": {"x": -1, "y": 7}}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "expression": "-2*x + 8",
+        "xMin": -2,
+        "xMax": 6,
+        "yMin": -2,
+        "yMax": 12,
+        "showGrid": true,
+        "showPoints": [
+          {"x": 1, "y": 6},
+          {"x": 4, "y": 0}
+        ],
+        "color": "#ef4444",
+        "caption": "This line has a negative gradient (slopes downward)"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool to show visual examples of different gradient types (context only, not revealing calculation)",
+      "OMIT mathTool when asking students to calculate and classify (would give answer visually)",
+      "Cover all four types: positive, negative, zero, undefined",
+      "For vertical lines: ensure x-coordinates are identical",
+      "For horizontal lines: ensure y-coordinates are identical",
+      "Ask students to both calculate AND classify the gradient type"
+    ]
+  },
+
+  "linear-graphs-node-6": {
+    "nodeId": "linear-graphs-node-6",
+    "title": "Finding and Understanding y-intercept",
+    "section": "understanding-y-intercept",
+
+    "learningFocus": [
+      "y-intercept is where line crosses y-axis",
+      "At y-intercept, x = 0",
+      "Reading y-intercept from graphs and equations"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "From the equation y = 3x + 5, identify the y-intercept.",
+        "correctAnswer": "y-intercept = 5 (or the point (0, 5))"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A line has gradient 2 and passes through the point (3, 11). Find the y-intercept.",
+        "correctAnswer": "Using y = mx + c: 11 = 2(3) + c, so 11 = 6 + c, therefore c = 5"
+      }
+    ],
+
+    "variationRules": {
+      "equations": [
+        {"m": 2, "c": 3},
+        {"m": -1, "c": 7},
+        {"m": 0.5, "c": -2},
+        {"m": 4, "c": 0},
+        {"m": -3, "c": -5}
+      ],
+      "pointsWithGradient": [
+        {"point": {"x": 2, "y": 9}, "m": 3},
+        {"point": {"x": 4, "y": 5}, "m": 0.5},
+        {"point": {"x": -1, "y": 8}, "m": 2}
+      ],
+      "yInterceptValues": [-5, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "expression": "2*x + 3",
+        "xMin": -3,
+        "xMax": 5,
+        "yMin": -2,
+        "yMax": 12,
+        "showGrid": true,
+        "showPoints": [
+          {"x": 0, "y": 3, "label": "(0, 3)", "color": "#10b981"}
+        ],
+        "color": "#3b82f6",
+        "caption": "The y-intercept is where the line crosses the y-axis"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool when asking to identify y-intercept from a graph (visual reading exercise)",
+      "OMIT mathTool when asking to calculate y-intercept from equation or point+gradient (would show answer)",
+      "For mathTool: use showPoints to highlight the y-intercept",
+      "When finding c from point and gradient, provide clear coordinates",
+      "Include equations in y = mx + c form",
+      "Test both reading from equations and calculating from points"
+    ]
+  },
+
+  "linear-graphs-node-7": {
+    "nodeId": "linear-graphs-node-7",
+    "title": "Connecting Gradient and y-intercept",
+    "section": "gradient-intercept-connection",
+
+    "learningFocus": [
+      "Both m and c define a unique line",
+      "Parallel lines: same m, different c",
+      "Identifying both features from graphs"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A line has equation y = -2x + 7. State the gradient and y-intercept.",
+        "correctAnswer": "Gradient m = -2, y-intercept c = 7"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Two lines are parallel. One has equation y = 3x + 2. If the other line has y-intercept 5, what is its equation?",
+        "correctAnswer": "y = 3x + 5 (same gradient 3, different y-intercept 5)"
+      }
+    ],
+
+    "variationRules": {
+      "lineEquations": [
+        {"m": 2, "c": 1},
+        {"m": -3, "c": 4},
+        {"m": 0.5, "c": -2},
+        {"m": 4, "c": 0},
+        {"m": -1, "c": 6}
+      ],
+      "parallelLinePairs": [
+        {"m": 2, "c1": 3, "c2": -1},
+        {"m": -1, "c1": 5, "c2": 2},
+        {"m": 3, "c1": 0, "c2": 4}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "expression": "2*x + 1",
+        "xMin": -3,
+        "xMax": 5,
+        "yMin": -3,
+        "yMax": 12,
+        "showGrid": true,
+        "showPoints": [
+          {"x": 0, "y": 1, "label": "c=1", "color": "#10b981"},
+          {"x": 2, "y": 5, "label": "rise=4, run=2", "color": "#ef4444"}
+        ],
+        "color": "#3b82f6",
+        "label": "y = 2x + 1",
+        "caption": "Gradient m = 2, y-intercept c = 1"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool when showing relationship between m and c visually",
+      "Ask students to identify BOTH gradient and y-intercept",
+      "Test understanding of parallel lines (same m)",
+      "Include questions about completing partial equations",
+      "For mathTool: use showPoints to highlight both features clearly"
+    ]
+  },
+
+  "linear-graphs-node-8": {
+    "nodeId": "linear-graphs-node-8",
+    "title": "Reading and Writing y = mx + c Equations",
+    "section": "gradient-intercept-form",
+
+    "learningFocus": [
+      "Standard form y = mx + c",
+      "Identifying m and c from equations",
+      "Writing equations given m and c"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Write the equation of a line with gradient 3 and y-intercept -2.",
+        "correctAnswer": "y = 3x - 2"
+      },
+      {
+        "id": "ex2",
+        "problemText": "From the equation y = -4x + 7, identify the gradient.",
+        "correctAnswer": "Gradient m = -4"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Write the equation: gradient -0.5, y-intercept 6.",
+        "correctAnswer": "y = -0.5x + 6"
+      }
+    ],
+
+    "variationRules": {
+      "gradients": [1, 2, 3, 4, 5, -1, -2, -3, -4, 0.5, -0.5, 1.5],
+      "yIntercepts": [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7],
+      "variations": [
+        "c = 0 (equations like y = 3x)",
+        "m = 1 (equations like y = x + 2)",
+        "m = -1 (equations like y = -x + 5)",
+        "fractional gradients"
+      ]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Test both directions: reading from equations and writing equations",
+      "Handle special cases: c = 0, m = 1, m = -1",
+      "Use proper notation: y = 2x - 3 (not y = 2x + -3)",
+      "Include fractional gradients occasionally",
+      "DO NOT include mathTool - algebraic manipulation is the focus"
+    ]
+  },
+
+  "linear-graphs-node-9": {
+    "nodeId": "linear-graphs-node-9",
+    "title": "Writing Equations from Graphs",
+    "section": "writing-equations-from-graph",
+
+    "learningFocus": [
+      "Reading y-intercept from graph",
+      "Calculating gradient using two points on graph",
+      "Combining to write y = mx + c"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A line crosses the y-axis at (0, 2) and passes through (3, 8). Write its equation.",
+        "correctAnswer": "c = 2, m = (8-2)/(3-0) = 6/3 = 2, so y = 2x + 2"
+      },
+      {
+        "id": "ex2",
+        "problemText": "From the graph showing y-intercept -1 and passing through (2, 5), find the equation.",
+        "correctAnswer": "c = -1, m = (5-(-1))/(2-0) = 6/2 = 3, so y = 3x - 1"
+      }
+    ],
+
+    "variationRules": {
+      "yIntercepts": [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5],
+      "secondPoints": [
+        {"x": 2, "rise": 4},
+        {"x": 3, "rise": 6},
+        {"x": 4, "rise": 8},
+        {"x": 1, "rise": 3}
+      ],
+      "gradientValues": [1, 2, 3, -1, -2, -3, 0.5, 1.5]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "expression": "2*x + 1",
+        "xMin": -2,
+        "xMax": 5,
+        "yMin": -2,
+        "yMax": 12,
+        "showGrid": true,
+        "showPoints": [
+          {"x": 0, "y": 1},
+          {"x": 3, "y": 7}
+        ],
+        "color": "#3b82f6",
+        "caption": "Use the graph to find the gradient and y-intercept"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool showing the line with clear points marked",
+      "For mathTool: Always show (0, c) and one other clear point",
+      "Ensure points land on grid intersections",
+      "Students should read c directly and calculate m",
+      "Caption should prompt to identify both m and c"
+    ]
+  },
+
+  "linear-graphs-node-10": {
+    "nodeId": "linear-graphs-node-10",
+    "title": "Real-World Linear Equations",
+    "section": "interpreting-real-world-equations",
+
+    "learningFocus": [
+      "Gradient as rate of change in context",
+      "y-intercept as initial value or fixed cost",
+      "Writing equations from word problems"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A phone plan costs \\$25 per month plus \\$0.10 per minute of calls. Write an equation for total cost C in terms of minutes m.",
+        "correctAnswer": "C = 0.10m + 25 (gradient = \\$0.10 per minute, y-intercept = \\$25 base fee)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A water tank contains 400 litres and drains at 15 litres per hour. Write an equation for water W after h hours.",
+        "correctAnswer": "W = -15h + 400 (gradient = -15 L/hour, initial amount = 400 L)"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "Phone/internet plans (base fee + per unit)",
+        "Car rental (daily rate + per km)",
+        "Water tank (draining/filling)",
+        "Taxi fare (initial + per km)",
+        "Savings account (initial + weekly deposit)"
+      ],
+      "baseFees": [10, 15, 20, 25, 30, 35, 40, 50],
+      "rates": [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.50, 1, 2, 5],
+      "initialAmounts": [100, 200, 300, 400, 500, 800, 1000]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Use realistic contexts familiar to students",
+      "Clearly state what m represents (rate) and c represents (initial/fixed)",
+      "Include both increasing (positive m) and decreasing (negative m) situations",
+      "Use appropriate units (dollars, litres, kilometres, etc.)",
+      "For currency, use escaped dollar: \\$25 (NOT $25$ which is LaTeX)",
+      "DO NOT include mathTool - word problem interpretation is the goal"
+    ]
+  },
+
+  "linear-graphs-node-11": {
+    "nodeId": "linear-graphs-node-11",
+    "title": "Finding Equation from Two Points",
+    "section": "two-point-method",
+
+    "learningFocus": [
+      "Two-step method: find m, then find c",
+      "Substituting point into y = mx + c to find c",
+      "Verifying answer with second point"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Find the equation of the line passing through (1, 5) and (4, 14).",
+        "correctAnswer": "Step 1: m = (14-5)/(4-1) = 9/3 = 3. Step 2: Using (1,5): 5 = 3(1) + c, so c = 2. Equation: y = 3x + 2"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A line passes through (-2, 8) and (3, -2). What is its equation?",
+        "correctAnswer": "m = (-2-8)/(3-(-2)) = -10/5 = -2. Using (3,-2): -2 = -2(3) + c, so c = 4. Equation: y = -2x + 4"
+      }
+    ],
+
+    "variationRules": {
+      "pointPairs": [
+        {"p1": {"x": 1, "y": 3}, "p2": {"x": 4, "y": 12}},
+        {"p1": {"x": 2, "y": 7}, "p2": {"x": 5, "y": 16}},
+        {"p1": {"x": -1, "y": 4}, "p2": {"x": 2, "y": 10}},
+        {"p1": {"x": 0, "y": 5}, "p2": {"x": 3, "y": 11}},
+        {"p1": {"x": -2, "y": -3}, "p2": {"x": 1, "y": 6}}
+      ],
+      "gradientResults": [1, 2, 3, -1, -2, -3, 0.5, -0.5],
+      "yInterceptResults": [-5, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Use integer coordinates that yield clean gradients",
+      "Include both positive and negative gradients",
+      "Mix positive, negative, and zero y-intercepts",
+      "Vary whether points are in positive or negative regions",
+      "DO NOT include mathTool - algebraic method practice is the goal"
+    ]
+  },
+
+  "linear-graphs-node-12": {
+    "nodeId": "linear-graphs-node-12",
+    "title": "Parallel and Perpendicular Lines",
+    "section": "parallel-perpendicular-lines",
+
+    "learningFocus": [
+      "Parallel lines have equal gradients (m₁ = m₂)",
+      "Finding equation of parallel line through given point",
+      "Understanding perpendicular gradients (extension)"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Find the equation of the line parallel to y = 2x + 3 that passes through (1, 7).",
+        "correctAnswer": "Parallel means same gradient: m = 2. Using (1,7): 7 = 2(1) + c, so c = 5. Equation: y = 2x + 5"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A line is parallel to y = -3x + 1 and has y-intercept 4. Write its equation.",
+        "correctAnswer": "Same gradient m = -3, given c = 4, so y = -3x + 4"
+      }
+    ],
+
+    "variationRules": {
+      "baseLines": [
+        {"m": 2, "c": 1},
+        {"m": 3, "c": -2},
+        {"m": -1, "c": 5},
+        {"m": -2, "c": 3},
+        {"m": 0.5, "c": 0}
+      ],
+      "throughPoints": [
+        {"x": 1, "y": 5},
+        {"x": 2, "y": 7},
+        {"x": -1, "y": 3},
+        {"x": 3, "y": 10},
+        {"x": 0, "y": 6}
+      ],
+      "newYIntercepts": [-4, -2, -1, 0, 2, 4, 6]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "expression": "2*x + 1",
+        "xMin": -2,
+        "xMax": 5,
+        "yMin": -2,
+        "yMax": 12,
+        "showGrid": true,
+        "color": "#3b82f6",
+        "label": "y = 2x + 1",
+        "caption": "A parallel line would have the same gradient (m = 2) but different y-intercept"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool to show the original line (parallel line not drawn - student finds it)",
+      "Emphasize that parallel means same gradient",
+      "Test both: finding equation given point, and given y-intercept",
+      "For perpendicular (extension): mention m₁ × m₂ = -1",
+      "Use clear integer gradients"
+    ]
+  },
+
+  "linear-graphs-node-13": {
+    "nodeId": "linear-graphs-node-13",
+    "title": "Creating Table of Values",
+    "section": "table-of-values-method",
+
+    "learningFocus": [
+      "Choosing appropriate x-values",
+      "Substituting to find y-values",
+      "Organizing in table format"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Create a table of values for y = 2x + 1 using x-values: -1, 0, 1, 2, 3.",
+        "correctAnswer": "x: -1, 0, 1, 2, 3 → y: -1, 1, 3, 5, 7"
+      },
+      {
+        "id": "ex2",
+        "problemText": "For the equation y = -3x + 4, find the y-values when x = 0, 1, 2.",
+        "correctAnswer": "When x=0: y=4; x=1: y=1; x=2: y=-2"
+      }
+    ],
+
+    "variationRules": {
+      "equations": [
+        {"m": 2, "c": 1},
+        {"m": 3, "c": -2},
+        {"m": -1, "c": 5},
+        {"m": -2, "c": 3},
+        {"m": 1, "c": 0}
+      ],
+      "xValueSets": [
+        [-2, -1, 0, 1, 2],
+        [-1, 0, 1, 2, 3],
+        [0, 1, 2, 3, 4],
+        [-3, -1, 0, 1, 3]
+      ],
+      "tableSizes": [3, 4, 5]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Always include x = 0 in the table (easy to check y-intercept)",
+      "Use integer x-values between -3 and 4",
+      "Provide the equation and x-values; students calculate y",
+      "Use equations that yield integer y-values at given x-points",
+      "DO NOT include mathTool - table creation is the exercise itself"
+    ]
+  },
+
+  "linear-graphs-node-14": {
+    "nodeId": "linear-graphs-node-14",
+    "title": "Graphing Using Gradient and y-intercept",
+    "section": "gradient-intercept-method",
+
+    "learningFocus": [
+      "Start at y-intercept (0, c)",
+      "Use rise/run from gradient to find next point",
+      "Drawing line through points"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Graph y = 3x + 2 using the gradient-intercept method. Describe your steps.",
+        "correctAnswer": "Step 1: Plot y-intercept (0, 2). Step 2: Gradient 3 = 3/1, so from (0,2) go right 1, up 3 to (1, 5). Step 3: Draw line through points."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Using gradient and y-intercept, explain how to graph y = -2x + 5.",
+        "correctAnswer": "Start at (0, 5). Gradient -2 = -2/1: go right 1, down 2 to (1, 3). Draw line."
+      }
+    ],
+
+    "variationRules": {
+      "equations": [
+        {"m": 2, "c": 1},
+        {"m": 3, "c": -1},
+        {"m": -1, "c": 4},
+        {"m": -2, "c": 3},
+        {"m": 1, "c": 2},
+        {"m": -3, "c": 6}
+      ],
+      "fractionalGradients": [
+        {"m": "1/2", "c": 3},
+        {"m": "2/3", "c": 1},
+        {"m": "-1/2", "c": 4}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "expression": "2*x + 1",
+        "xMin": -2,
+        "xMax": 5,
+        "yMin": -2,
+        "yMax": 12,
+        "showGrid": true,
+        "showPoints": [
+          {"x": 0, "y": 1, "label": "Start (0,1)"},
+          {"x": 1, "y": 3, "label": "Next (1,3)"}
+        ],
+        "color": "#3b82f6",
+        "caption": "From y-intercept (0,1), use gradient m=2 to find (1,3)"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool to demonstrate the method (showing completed graph as reference)",
+      "For questions asking students to graph: OMIT mathTool (would show answer)",
+      "Use gradients that are easy to visualize (whole numbers or simple fractions)",
+      "Caption should explain the rise/run movement",
+      "Test understanding of negative gradients (move down)"
+    ]
+  },
+
+  "linear-graphs-node-15": {
+    "nodeId": "linear-graphs-node-15",
+    "title": "Horizontal and Vertical Lines",
+    "section": "graphing-special-cases",
+
+    "learningFocus": [
+      "Horizontal lines: y = c (gradient = 0)",
+      "Vertical lines: x = a (undefined gradient)",
+      "Writing equations for special cases"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Write the equation of the horizontal line passing through the point (5, 3).",
+        "correctAnswer": "y = 3 (all points on this line have y-coordinate 3)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "What is the equation of the vertical line through (-2, 7)?",
+        "correctAnswer": "x = -2 (all points on this line have x-coordinate -2)"
+      },
+      {
+        "id": "ex3",
+        "problemText": "State the gradient of the line y = 5.",
+        "correctAnswer": "Gradient = 0 (horizontal line)"
+      }
+    ],
+
+    "variationRules": {
+      "horizontalLines": [
+        {"y": 3, "throughPoint": {"x": 5, "y": 3}},
+        {"y": -2, "throughPoint": {"x": -1, "y": -2}},
+        {"y": 0, "throughPoint": {"x": 4, "y": 0}},
+        {"y": 6, "throughPoint": {"x": 2, "y": 6}}
+      ],
+      "verticalLines": [
+        {"x": 2, "throughPoint": {"x": 2, "y": 5}},
+        {"x": -3, "throughPoint": {"x": -3, "y": 1}},
+        {"x": 0, "throughPoint": {"x": 0, "y": -2}},
+        {"x": 5, "throughPoint": {"x": 5, "y": 7}}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "xMin": -5,
+        "xMax": 5,
+        "yMin": -5,
+        "yMax": 5,
+        "showGrid": true,
+        "showPoints": [
+          {"x": -3, "y": 2, "label": "(-3, 2)"},
+          {"x": 1, "y": 2, "label": "(1, 2)"},
+          {"x": 4, "y": 2, "label": "(4, 2)"}
+        ],
+        "caption": "All points have y = 2. This is the horizontal line y = 2"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool to show examples of horizontal/vertical lines with multiple points marked",
+      "For horizontal line y = c: mark points with same y-coordinate",
+      "For vertical line x = a: mark points with same x-coordinate",
+      "Test both writing equations and identifying gradient type",
+      "Remind students: y = [number] is HORIZONTAL, x = [number] is VERTICAL"
+    ]
+  },
+
+  "linear-graphs-node-16": {
+    "nodeId": "linear-graphs-node-16",
+    "title": "Understanding Simultaneous Equations",
+    "section": "understanding-simultaneous-equations",
+
+    "learningFocus": [
+      "Solution must satisfy both equations",
+      "Substituting to verify solutions",
+      "Understanding 'simultaneous' means 'at the same time'"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Verify whether the point (2, 3) is a solution to the system: x + y = 5 and 2x - y = 1.",
+        "correctAnswer": "Eq1: 2 + 3 = 5 ✓. Eq2: 2(2) - 3 = 4 - 3 = 1 ✓. Yes, (2, 3) satisfies both equations."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Check if (1, 4) is the solution to: 3x + y = 7 and x - y = -3.",
+        "correctAnswer": "Eq1: 3(1) + 4 = 3 + 4 = 7 ✓. Eq2: 1 - 4 = -3 ✓. Yes, it is the solution."
+      }
+    ],
+
+    "variationRules": {
+      "systemsWithSolutions": [
+        {"eq1": {"a": 1, "b": 1, "c": 5}, "eq2": {"a": 2, "b": -1, "c": 1}, "solution": {"x": 2, "y": 3}},
+        {"eq1": {"a": 3, "b": 1, "c": 7}, "eq2": {"a": 1, "b": -1, "c": -3}, "solution": {"x": 1, "y": 4}},
+        {"eq1": {"a": 2, "b": 3, "c": 12}, "eq2": {"a": 1, "b": -1, "c": -1}, "solution": {"x": 3, "y": 2}}
+      ],
+      "pointsToCheck": [
+        {"correct": true},
+        {"correct": false}
+      ]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Provide the system and a point to verify",
+      "Include both valid solutions and non-solutions",
+      "Ask students to show substitution work for both equations",
+      "Use simple integer coefficients",
+      "DO NOT include mathTool - verification by substitution is the exercise"
+    ]
+  },
+
+  "linear-graphs-node-17": {
+    "nodeId": "linear-graphs-node-17",
+    "title": "Solving Graphically",
+    "section": "graphical-solution-method",
+
+    "learningFocus": [
+      "Graph both equations on same axes",
+      "Intersection point is the solution",
+      "Reading coordinates from intersection"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "From the graph showing lines y = x + 1 and y = -x + 5 intersecting at (2, 3), state the solution to the simultaneous equations.",
+        "correctAnswer": "x = 2, y = 3 (the coordinates of the intersection point)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Two lines 2x + y = 8 and x - y = 1 are graphed. They intersect at (3, 2). Verify this is the solution.",
+        "correctAnswer": "Eq1: 2(3) + 2 = 6 + 2 = 8 ✓. Eq2: 3 - 2 = 1 ✓. Yes, (3, 2) is the solution."
+      }
+    ],
+
+    "variationRules": {
+      "simpleSystems": [
+        {"eq1": {"a": 1, "b": -1, "c": 1}, "eq2": {"a": 1, "b": 1, "c": 5}},
+        {"eq1": {"a": 2, "b": 1, "c": 8}, "eq2": {"a": 1, "b": -1, "c": 1}},
+        {"eq1": {"a": 3, "b": 1, "c": 7}, "eq2": {"a": 1, "b": 1, "c": 3}}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "simultaneousEquationsSolver",
+      "parameters": {
+        "equation1": {"a": 1, "b": -1, "c": 1},
+        "equation2": {"a": 1, "b": 1, "c": 5},
+        "method": "graphical",
+        "highlightIntersection": true,
+        "caption": "The lines intersect at (2, 3), which is the solution"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool to show graphical solution method",
+      "For simultaneousEquationsSolver: use format {a, b, c} for ax + by = c",
+      "Intersection should be at integer coordinates for easy reading",
+      "Ask students to identify solution from graph OR verify given solution",
+      "Caption should explain that intersection = solution"
+    ]
+  },
+
+  "linear-graphs-node-18": {
+    "nodeId": "linear-graphs-node-18",
+    "title": "Substitution Method",
+    "section": "substitution-method",
+
+    "learningFocus": [
+      "Express one variable in terms of the other",
+      "Substitute into second equation",
+      "Solve for one variable, then back-substitute"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Solve using substitution: y = 2x + 1 and x + y = 7.",
+        "correctAnswer": "Substitute y = 2x + 1 into x + y = 7: x + (2x + 1) = 7, so 3x = 6, x = 2. Then y = 2(2) + 1 = 5. Solution: x = 2, y = 5"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Use substitution to solve: 2x + y = 11 and y = 3x + 1.",
+        "correctAnswer": "Substitute y = 3x + 1 into 2x + y = 11: 2x + (3x + 1) = 11, so 5x = 10, x = 2. Then y = 3(2) + 1 = 7. Solution: x = 2, y = 7"
+      }
+    ],
+
+    "variationRules": {
+      "systemsForSubstitution": [
+        {"eq1": "y = 2x + 1", "eq2": {"a": 1, "b": 1, "c": 7}},
+        {"eq1": "y = 3x + 1", "eq2": {"a": 2, "b": 1, "c": 11}},
+        {"eq1": "y = x - 2", "eq2": {"a": 3, "b": 1, "c": 4}},
+        {"eq1": "x = 2y - 1", "eq2": {"a": 1, "b": 2, "c": 5}}
+      ],
+      "solutions": [
+        {"x": 2, "y": 5},
+        {"x": 2, "y": 7},
+        {"x": 2, "y": 0},
+        {"x": 3, "y": 2}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "simultaneousEquationsSolver",
+      "parameters": {
+        "equation1": {"a": -2, "b": 1, "c": 1},
+        "equation2": {"a": 1, "b": 1, "c": 7},
+        "method": "substitution",
+        "showSteps": true,
+        "caption": "Substitution method: Express y from Eq1, substitute into Eq2"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool with showSteps: true to demonstrate method",
+      "One equation should have a variable already isolated (y = ... or x = ...)",
+      "Use simple coefficients that lead to integer solutions",
+      "Ask students to show all substitution steps",
+      "For simultaneousEquationsSolver: convert y = mx + c to ax + by = c format (e.g., y = 2x + 1 becomes -2x + y = 1)"
+    ]
+  },
+
+  "linear-graphs-node-19": {
+    "nodeId": "linear-graphs-node-19",
+    "title": "Elimination Method",
+    "section": "elimination-method",
+
+    "learningFocus": [
+      "Making coefficients equal by multiplication",
+      "Adding or subtracting equations to eliminate variable",
+      "Solving for remaining variable"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Solve using elimination: 3x + 2y = 16 and 3x - y = 7.",
+        "correctAnswer": "Subtract equations: (3x + 2y) - (3x - y) = 16 - 7, so 3y = 9, y = 3. Substitute into first: 3x + 2(3) = 16, so 3x = 10, x = 10/3. Solution: x = 10/3, y = 3"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Use elimination: 2x + 3y = 13 and x + y = 5.",
+        "correctAnswer": "Multiply second by 2: 2x + 2y = 10. Subtract from first: (2x + 3y) - (2x + 2y) = 13 - 10, so y = 3. Then x + 3 = 5, x = 2. Solution: x = 2, y = 3"
+      }
+    ],
+
+    "variationRules": {
+      "directElimination": [
+        {"eq1": {"a": 3, "b": 2, "c": 16}, "eq2": {"a": 3, "b": -1, "c": 7}},
+        {"eq1": {"a": 2, "b": 3, "c": 12}, "eq2": {"a": 2, "b": -1, "c": 4}},
+        {"eq1": {"a": 5, "b": 2, "c": 19}, "eq2": {"a": 5, "b": 3, "c": 22}}
+      ],
+      "requiresMultiplication": [
+        {"eq1": {"a": 2, "b": 3, "c": 13}, "eq2": {"a": 1, "b": 1, "c": 5}},
+        {"eq1": {"a": 3, "b": 2, "c": 12}, "eq2": {"a": 2, "b": 1, "c": 7}},
+        {"eq1": {"a": 4, "b": 3, "c": 22}, "eq2": {"a": 2, "b": 1, "c": 8}}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "simultaneousEquationsSolver",
+      "parameters": {
+        "equation1": {"a": 3, "b": 2, "c": 16},
+        "equation2": {"a": 3, "b": -1, "c": 7},
+        "method": "elimination",
+        "showSteps": true,
+        "caption": "Elimination method: Coefficients of x already match, subtract equations"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool with showSteps: true for demonstration",
+      "Mix cases: some with matching coefficients, some requiring multiplication",
+      "When coefficients match: decide if add or subtract based on signs",
+      "Use integer coefficients and solutions",
+      "For simultaneousEquationsSolver: use {a, b, c} format for ax + by = c"
+    ]
+  },
+
+  "linear-graphs-node-20": {
+    "nodeId": "linear-graphs-node-20",
+    "title": "Choosing the Best Method",
+    "section": "choosing-methods",
+
+    "learningFocus": [
+      "When to use graphical method",
+      "When substitution is most efficient",
+      "When elimination is most efficient"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "For the system y = 3x - 2 and 2x + y = 8, which algebraic method would be most efficient: substitution or elimination? Explain why.",
+        "correctAnswer": "Substitution is most efficient because y is already isolated in the first equation"
+      },
+      {
+        "id": "ex2",
+        "problemText": "For the system 4x + 3y = 18 and 4x - y = 6, which method is most efficient?",
+        "correctAnswer": "Elimination is most efficient because the coefficients of x already match (both are 4)"
+      }
+    ],
+
+    "variationRules": {
+      "substitutionCases": [
+        {"eq1": "y = 2x + 1", "eq2": {"a": 3, "b": 1, "c": 10}},
+        {"eq1": "x = y - 3", "eq2": {"a": 2, "b": 3, "c": 9}},
+        {"eq1": "y = -x + 5", "eq2": {"a": 2, "b": 1, "c": 7}}
+      ],
+      "eliminationCases": [
+        {"eq1": {"a": 3, "b": 2, "c": 12}, "eq2": {"a": 3, "b": -1, "c": 6}},
+        {"eq1": {"a": 5, "b": 3, "c": 19}, "eq2": {"a": 5, "b": 2, "c": 17}},
+        {"eq1": {"a": 2, "b": 1, "c": 7}, "eq2": {"a": 2, "b": 3, "c": 13}}
+      ]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Present a system and ask which method is best",
+      "Include clear indicators: isolated variable → substitution, matching coefficients → elimination",
+      "Ask students to explain their reasoning",
+      "Optionally: ask them to solve using their chosen method",
+      "DO NOT include mathTool - strategic thinking is the focus"
+    ]
+  }
+}

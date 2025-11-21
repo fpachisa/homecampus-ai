@@ -1,0 +1,1079 @@
+{
+  "linear-inequalities-node-1": {
+    "nodeId": "linear-inequalities-node-1",
+    "title": "Understanding Inequality Symbols",
+    "section": "understanding-inequality-symbols",
+
+    "learningFocus": [
+      "Meaning of <, >, ≤, ≥ symbols",
+      "Distinguishing strict vs inclusive inequalities",
+      "Translating word statements to inequality notation"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A motorist in a school zone must travel at a speed x where x ≤ 40 km/h. Can they travel at 35 km/h? Can they travel at 45 km/h?",
+        "correctAnswer": "Yes to 35 km/h (35 ≤ 40 is true). No to 45 km/h (45 ≤ 40 is false)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Imran, who is y years old, can watch NC16 movies. Write an inequality that y must satisfy.",
+        "correctAnswer": "y ≥ 16 (at least 16 years old)"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "Age restrictions (NC16, R21, minimum voting age)",
+        "Speed limits (school zones, highways)",
+        "Temperature constraints (above/below freezing)",
+        "Height requirements (rides, attractions)",
+        "Price ranges (at most, at least)"
+      ],
+      "symbols": ["<", ">", "≤", "≥"],
+      "keyWords": {
+        "atLeast": "≥",
+        "atMost": "≤",
+        "moreThan": ">",
+        "lessThan": "<",
+        "minimum": "≥",
+        "maximum": "≤"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Use real-world contexts familiar to students",
+      "Test both symbol recognition and word translation",
+      "Include checking if specific values satisfy inequalities",
+      "Ask students to explain inclusive vs exclusive boundaries",
+      "DO NOT include mathTool - symbol understanding is the exercise"
+    ]
+  },
+
+  "linear-inequalities-node-2": {
+    "nodeId": "linear-inequalities-node-2",
+    "title": "Inequalities Have Infinite Solutions",
+    "section": "inequalities-vs-equations",
+
+    "learningFocus": [
+      "Inequalities describe ranges, not single values",
+      "Checking if values satisfy an inequality",
+      "Understanding infinite solutions concept"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "For the inequality x > -2, state whether each value is a solution: (a) x = 0, (b) x = -3, (c) x = 5.6",
+        "correctAnswer": "(a) Yes, 0 > -2 is true. (b) No, -3 > -2 is false. (c) Yes, 5.6 > -2 is true"
+      },
+      {
+        "id": "ex2",
+        "problemText": "How many solutions does x < 5 have? Give three examples.",
+        "correctAnswer": "Infinitely many solutions. Examples: 4, 0, -100 (any value less than 5)"
+      }
+    ],
+
+    "variationRules": {
+      "inequalities": [
+        {"expression": "x > 3", "solutions": [4, 10, 3.1], "nonSolutions": [3, 2, -5]},
+        {"expression": "x ≤ -1", "solutions": [-1, -2, -10], "nonSolutions": [0, 1, 5]},
+        {"expression": "x ≥ 0", "solutions": [0, 1, 100], "nonSolutions": [-1, -5, -0.1]},
+        {"expression": "x < -2", "solutions": [-3, -10, -2.5], "nonSolutions": [-2, 0, 5]}
+      ],
+      "questionTypes": [
+        "Check if specific values are solutions",
+        "List multiple solutions",
+        "Identify non-solutions",
+        "Explain why infinitely many solutions exist"
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "numberLine",
+      "parameters": {
+        "min": -5,
+        "max": 5,
+        "intervals": [
+          {
+            "start": -2,
+            "end": null,
+            "startInclusive": false,
+            "color": "#fbbf24",
+            "label": "x > -2"
+          }
+        ],
+        "points": [
+          {"value": 0, "style": "closed", "label": "0 ✓", "color": "#10b981"},
+          {"value": -3, "style": "closed", "label": "-3 ✗", "color": "#ef4444"},
+          {"value": 3, "style": "closed", "label": "3 ✓", "color": "#10b981"}
+        ],
+        "showTickMarks": true,
+        "showTickLabels": true,
+        "caption": "The shaded region shows all solutions to x > -2"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem. Maximum TWO if dependent (e.g., check values, then list more solutions)",
+      "INCLUDE numberLine to show the infinite solution set visually",
+      "For numberLine intervals: use start/end with startInclusive/endInclusive matching inequality type",
+      "For numberLine: null means -∞ or +∞ (unbounded)",
+      "Use points array to mark specific values being tested",
+      "Color code points: green for solutions ✓, red for non-solutions ✗",
+      "Caption should explain what the shaded region represents"
+    ]
+  },
+
+  "linear-inequalities-node-3": {
+    "nodeId": "linear-inequalities-node-3",
+    "title": "Solving One-Step Inequalities",
+    "section": "one-step-inequalities",
+
+    "learningFocus": [
+      "Using addition/subtraction to solve inequalities",
+      "Using multiplication/division by positives to solve",
+      "Inequality symbol stays same for these operations"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Solve the inequality 3x < 27 and represent the solution on a number line.",
+        "correctAnswer": "Divide both sides by 3: x < 9"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Solve x + 4 < 3.",
+        "correctAnswer": "Subtract 4 from both sides: x < -1"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Solve 4x ≥ 32.",
+        "correctAnswer": "Divide both sides by 4: x ≥ 8"
+      }
+    ],
+
+    "variationRules": {
+      "additionSubtraction": [
+        {"inequality": "x + 5 < 12", "solution": "x < 7"},
+        {"inequality": "x - 3 ≥ 7", "solution": "x ≥ 10"},
+        {"inequality": "x + 2 > -1", "solution": "x > -3"}
+      ],
+      "multiplicationDivision": [
+        {"inequality": "2x ≤ 14", "solution": "x ≤ 7"},
+        {"inequality": "5x > 30", "solution": "x > 6"},
+        {"inequality": "x/3 ≥ 5", "solution": "x ≥ 15"}
+      ],
+      "coefficients": [1, 2, 3, 4, 5, 6, 10, 15],
+      "constants": [-10, -5, -3, -1, 0, 1, 3, 5, 7, 10, 12, 15, 20, 27, 30]
+    },
+
+    "mathTool": {
+      "toolName": "numberLine",
+      "parameters": {
+        "min": -2,
+        "max": 12,
+        "intervals": [
+          {
+            "start": null,
+            "end": 9,
+            "endInclusive": false,
+            "color": "#fbbf24",
+            "label": "x < 9"
+          }
+        ],
+        "showTickMarks": true,
+        "showTickLabels": true,
+        "showArrows": true,
+        "caption": "Solution: x < 9 (all values less than 9)"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Use simple one-step inequalities only (one operation to solve)",
+      "Include mix of addition, subtraction, multiplication, division",
+      "Only use POSITIVE coefficients in this node (negatives come later)",
+      "Ask to represent on number line OR provide the representation",
+      "INCLUDE numberLine for representation questions",
+      "OMIT mathTool when asking students to solve and draw their own number line (would show answer)",
+      "For numberLine: open circle (startInclusive/endInclusive: false) for strict inequalities <, >",
+      "For numberLine: closed circle (startInclusive/endInclusive: true) for inclusive inequalities ≤, ≥"
+    ]
+  },
+
+  "linear-inequalities-node-4": {
+    "nodeId": "linear-inequalities-node-4",
+    "title": "Solving Multi-Step Inequalities",
+    "section": "multi-step-inequalities",
+
+    "learningFocus": [
+      "Solving inequalities requiring multiple steps",
+      "Combining like terms and using distributive property",
+      "Handling variables on both sides"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Solve the inequality -4y - 5 ≥ 11.",
+        "correctAnswer": "Add 5: -4y ≥ 16. Divide by -4 (flip sign): y ≤ -4"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Solve -3 > 2(1 - x).",
+        "correctAnswer": "Expand: -3 > 2 - 2x. Subtract 2: -5 > -2x. Divide by -2 (flip sign): 5/2 < x or x > 5/2"
+      }
+    ],
+
+    "variationRules": {
+      "twoStepInequalities": [
+        {"inequality": "2x + 3 < 11", "steps": ["subtract 3", "divide by 2"], "solution": "x < 4"},
+        {"inequality": "5 - 3x ≥ 14", "steps": ["subtract 5", "divide by -3, flip"], "solution": "x ≤ -3"}
+      ],
+      "distributiveProperty": [
+        {"inequality": "2(x + 1) > 8", "solution": "x > 3"},
+        {"inequality": "3(x - 2) ≤ 9", "solution": "x ≤ 5"}
+      ],
+      "variablesBothSides": [
+        {"inequality": "3x + 5 < 2x + 13", "solution": "x < 8"},
+        {"inequality": "4x - 7 ≥ 3x + 2", "solution": "x ≥ 9"}
+      ]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Require 2-4 steps to solve",
+      "Include distributive property, combining like terms, variables on both sides",
+      "Mix inequalities that will require sign flipping (covered in next node)",
+      "Use integer solutions where possible",
+      "DO NOT include mathTool when solving - would show answer",
+      "Can include mathTool in solution verification (showing final number line)"
+    ]
+  },
+
+  "linear-inequalities-node-5": {
+    "nodeId": "linear-inequalities-node-5",
+    "title": "The Sign Reversal Rule",
+    "section": "inequalities-with-negatives",
+
+    "learningFocus": [
+      "CRITICAL RULE: flip sign when multiplying/dividing by negatives",
+      "Identifying when to apply the rule",
+      "Understanding why the rule maintains truth"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Solve -2x < 6.",
+        "correctAnswer": "Divide both sides by -2 (FLIP the sign): x > -3"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Solve -5y ≥ 20.",
+        "correctAnswer": "Divide both sides by -5 (FLIP the sign): y ≤ -4"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Solve 8 - x > 3.",
+        "correctAnswer": "Subtract 8: -x > -5. Multiply by -1 (FLIP): x < 5"
+      }
+    ],
+
+    "variationRules": {
+      "directNegativeCoefficient": [
+        {"inequality": "-2x < 6", "solution": "x > -3"},
+        {"inequality": "-3x ≥ 12", "solution": "x ≤ -4"},
+        {"inequality": "-x/2 > 4", "solution": "x < -8"}
+      ],
+      "subtractedVariable": [
+        {"inequality": "5 - x > 8", "solution": "x < -3"},
+        {"inequality": "10 - 2x ≤ 4", "solution": "x ≥ 3"},
+        {"inequality": "3 - x ≥ -2", "solution": "x ≤ 5"}
+      ],
+      "requiresMultipleSteps": [
+        {"inequality": "5 - 2x < 11", "solution": "x > -3"},
+        {"inequality": "-3x + 7 ≥ 16", "solution": "x ≤ -3"}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "numberLine",
+      "parameters": {
+        "min": -6,
+        "max": 2,
+        "intervals": [
+          {
+            "start": -3,
+            "end": null,
+            "startInclusive": false,
+            "color": "#fbbf24",
+            "label": "x > -3"
+          }
+        ],
+        "showTickMarks": true,
+        "showTickLabels": true,
+        "caption": "CRITICAL: When dividing -2x < 6 by -2, the sign flips from < to >"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "CRITICAL: Every problem must require sign flipping",
+      "Include explicit reminder to flip sign in problem or guidelines",
+      "Test both multiplication and division by negatives",
+      "Include cases like '5 - x' that require isolating negative variable",
+      "INCLUDE numberLine showing final solution with caption emphasizing the flip",
+      "Ask students to explain WHY the sign flips",
+      "Common error: students forget to flip - emphasize this heavily"
+    ]
+  },
+
+  "linear-inequalities-node-6": {
+    "nodeId": "linear-inequalities-node-6",
+    "title": "Special Cases and Word Problems",
+    "section": "special-cases-solving",
+
+    "learningFocus": [
+      "No solution (false statement like 0 < -5)",
+      "All real numbers (true statement like 0 > -4)",
+      "Translating word problems to inequalities"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A curry puff costs \\$1.60. By forming an inequality, find the maximum number that can be bought with \\$20.",
+        "correctAnswer": "Let x = number of curry puffs. 160x ≤ 2000 (cents). x ≤ 12.5. Maximum is 12 curry puffs"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Solve: x + 3 < x - 2. What do you notice?",
+        "correctAnswer": "Subtract x: 3 < -2 (false!). No solution - no value of x makes this true"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Solve: x + 5 > x + 1. What do you notice?",
+        "correctAnswer": "Subtract x: 5 > 1 (true!). All real numbers are solutions"
+      }
+    ],
+
+    "variationRules": {
+      "wordProblemContexts": [
+        "Buying items with budget (at most)",
+        "Minimum number needed (at least)",
+        "Age requirements",
+        "Score needed for passing grade",
+        "Bus capacity problems"
+      ],
+      "noSolutionCases": [
+        {"inequality": "x + 3 < x - 2", "result": "3 < -2 (false)"},
+        {"inequality": "2x + 5 < 2x + 1", "result": "5 < 1 (false)"}
+      ],
+      "allRealNumbersCases": [
+        {"inequality": "x + 5 > x + 1", "result": "5 > 1 (true)"},
+        {"inequality": "2x - 3 ≥ 2x - 7", "result": "-3 ≥ -7 (true)"}
+      ]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "For word problems: use realistic contexts and numbers",
+      "Clearly identify what the variable represents",
+      "Include key words: at least (≥), at most (≤), more than (>), less than (<)",
+      "For special cases: ask students what they notice when variables cancel",
+      "Explain that 0 < -5 is false (no solution) vs 0 > -4 is true (all real numbers)",
+      "For currency: use escaped dollar \\$20 (NOT $20$ which is LaTeX)",
+      "DO NOT include mathTool - problem-solving is the exercise"
+    ]
+  },
+
+  "linear-inequalities-node-7": {
+    "nodeId": "linear-inequalities-node-7",
+    "title": "Number Line Representation",
+    "section": "number-line-representation",
+
+    "learningFocus": [
+      "Open circle ○ for strict inequalities (<, >)",
+      "Closed circle ● for inclusive inequalities (≤, ≥)",
+      "Shading direction: left for <, right for >"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Represent x ≥ -2 on a number line.",
+        "correctAnswer": "Closed circle at -2, shade right (all values ≥ -2)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "From the number line showing an open circle at 3 with shading to the left, write the inequality.",
+        "correctAnswer": "x < 3"
+      }
+    ],
+
+    "variationRules": {
+      "inequalities": [
+        {"inequality": "x > 3", "circle": "open", "direction": "right"},
+        {"inequality": "x < -5", "circle": "open", "direction": "left"},
+        {"inequality": "x ≥ -2", "circle": "closed", "direction": "right"},
+        {"inequality": "x ≤ 5", "circle": "closed", "direction": "left"}
+      ],
+      "boundaryValues": [-6, -5, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 8, 10]
+    },
+
+    "mathTool": {
+      "toolName": "numberLine",
+      "parameters": {
+        "min": -6,
+        "max": 6,
+        "intervals": [
+          {
+            "start": -2,
+            "end": null,
+            "startInclusive": true,
+            "color": "#fbbf24",
+            "label": "x ≥ -2"
+          }
+        ],
+        "showTickMarks": true,
+        "showTickLabels": true,
+        "showArrows": true,
+        "caption": "Closed circle at -2 (included), shading right for all values ≥ -2"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Test both directions: inequality → number line AND number line → inequality",
+      "INCLUDE numberLine when showing representation or asking to read from diagram",
+      "OMIT mathTool when asking students to draw their own representation",
+      "For numberLine intervals parameter:",
+      "  - start: null means -∞ (unbounded left)",
+      "  - end: null means +∞ (unbounded right)",
+      "  - startInclusive: true for ≥, false for >",
+      "  - endInclusive: true for ≤, false for <",
+      "Memory trick in caption: 'Less than → shade LEFT (both start with L)'"
+    ]
+  },
+
+  "linear-inequalities-node-8": {
+    "nodeId": "linear-inequalities-node-8",
+    "title": "Interval Notation",
+    "section": "interval-notation",
+
+    "learningFocus": [
+      "Parentheses ( ) for excluded boundaries",
+      "Brackets [ ] for included boundaries",
+      "Always use ( ) with ∞ and -∞"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Write x < 5 in interval notation.",
+        "correctAnswer": "(-∞, 5)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Write the inequality for the interval [-3, ∞).",
+        "correctAnswer": "x ≥ -3"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Convert -2 < x ≤ 7 to interval notation.",
+        "correctAnswer": "(-2, 7]"
+      }
+    ],
+
+    "variationRules": {
+      "unboundedIntervals": [
+        {"inequality": "x < 5", "interval": "(-∞, 5)"},
+        {"inequality": "x ≤ 3", "interval": "(-∞, 3]"},
+        {"inequality": "x > -2", "interval": "(-2, ∞)"},
+        {"inequality": "x ≥ 0", "interval": "[0, ∞)"}
+      ],
+      "boundedIntervals": [
+        {"inequality": "-2 < x < 7", "interval": "(-2, 7)"},
+        {"inequality": "-1 ≤ x ≤ 4", "interval": "[-1, 4]"},
+        {"inequality": "0 ≤ x < 5", "interval": "[0, 5)"},
+        {"inequality": "-3 < x ≤ 2", "interval": "(-3, 2]"}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "numberLine",
+      "parameters": {
+        "min": -5,
+        "max": 9,
+        "intervals": [
+          {
+            "start": -2,
+            "end": 7,
+            "startInclusive": false,
+            "endInclusive": true,
+            "color": "#fbbf24",
+            "label": "(-2, 7]"
+          }
+        ],
+        "showTickMarks": true,
+        "showTickLabels": true,
+        "caption": "Interval notation (-2, 7] means -2 < x ≤ 7. Parenthesis = open circle, Bracket = closed circle"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Test conversion in both directions: inequality ↔ interval notation",
+      "Emphasize that ∞ and -∞ ALWAYS use parentheses ( )",
+      "INCLUDE numberLine showing the interval with caption explaining bracket/parenthesis meaning",
+      "Memory trick: 'SQUARE bracket [ ] = SOLID circle ● (both have corners)'",
+      "Memory trick: 'ROUND parenthesis ( ) = OPEN circle ○ (both are curved)'",
+      "Include both unbounded (with ∞) and bounded (finite) intervals"
+    ]
+  },
+
+  "linear-inequalities-node-9": {
+    "nodeId": "linear-inequalities-node-9",
+    "title": "Compound Inequalities (AND)",
+    "section": "compound-inequalities",
+
+    "learningFocus": [
+      "AND inequalities (intersection/overlap)",
+      "Compact form: a < x < b",
+      "Solving by treating as two separate inequalities"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Solve -3 ≤ 2x + 1 < 9.",
+        "correctAnswer": "Split: -3 ≤ 2x + 1 AND 2x + 1 < 9. Solve: -4 ≤ 2x AND 2x < 8. Solution: -2 ≤ x < 4 or [-2, 4)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Write x > -2 AND x ≤ 5 in compact form and interval notation.",
+        "correctAnswer": "Compact form: -2 < x ≤ 5. Interval notation: (-2, 5]"
+      }
+    ],
+
+    "variationRules": {
+      "compoundInequalities": [
+        {"compound": "-3 ≤ 2x + 1 < 9", "solution": "-2 ≤ x < 4", "interval": "[-2, 4)"},
+        {"compound": "1 < 3x - 2 ≤ 10", "solution": "1 < x ≤ 4", "interval": "(1, 4]"},
+        {"compound": "-6 < x + 2 < 3", "solution": "-8 < x < 1", "interval": "(-8, 1)"}
+      ],
+      "andStatements": [
+        {"statement": "x > -1 AND x < 4", "compact": "-1 < x < 4"},
+        {"statement": "x ≥ 0 AND x ≤ 8", "compact": "0 ≤ x ≤ 8"}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "numberLine",
+      "parameters": {
+        "min": -4,
+        "max": 6,
+        "intervals": [
+          {
+            "start": -2,
+            "end": 4,
+            "startInclusive": true,
+            "endInclusive": false,
+            "color": "#fbbf24",
+            "label": "-2 ≤ x < 4"
+          }
+        ],
+        "showTickMarks": true,
+        "showTickLabels": true,
+        "caption": "AND inequality: shaded region is the OVERLAP where both conditions are satisfied"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Focus on AND inequalities (intersection) in this node",
+      "Show how to split compound inequality a < x + b < c into two parts",
+      "Emphasize compact form a < x < b",
+      "INCLUDE numberLine showing the overlap region",
+      "For numberLine: single interval with appropriate start/end inclusiveness",
+      "Test conversion: AND statement ↔ compact form ↔ interval notation",
+      "Solutions should be finite intervals (not unbounded)"
+    ]
+  },
+
+  "linear-inequalities-node-10": {
+    "nodeId": "linear-inequalities-node-10",
+    "title": "Understanding Two-Variable Inequalities",
+    "section": "understanding-two-variables",
+
+    "learningFocus": [
+      "Two-variable inequalities describe regions, not lines",
+      "Checking if points (x, y) satisfy inequalities",
+      "Understanding half-plane solutions"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Does the point (2, 3) satisfy the inequality y < 2x + 1?",
+        "correctAnswer": "Substitute x=2, y=3: 3 < 2(2) + 1 → 3 < 5 ✓ TRUE. Yes, (2, 3) satisfies the inequality"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Check if (0, 5) satisfies y < 2x + 1.",
+        "correctAnswer": "Substitute x=0, y=5: 5 < 2(0) + 1 → 5 < 1 ✗ FALSE. No, (0, 5) does NOT satisfy the inequality"
+      }
+    ],
+
+    "variationRules": {
+      "inequalities": [
+        {"ineq": "y < 2x + 1", "satisfies": [[1, 2], [0, 0], [2, 3]], "notSatisfies": [[0, 5], [1, 4]]},
+        {"ineq": "y ≥ -x + 3", "satisfies": [[0, 3], [1, 3], [0, 5]], "notSatisfies": [[0, 2], [2, 0]]},
+        {"ineq": "2x + y ≤ 6", "satisfies": [[0, 0], [2, 2], [1, 3]], "notSatisfies": [[3, 4], [4, 2]]}
+      ],
+      "pointsToCheck": [
+        [0, 0], [1, 1], [2, 3], [-1, 2], [3, -1], [0, 5], [-2, -2]
+      ]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem. Maximum TWO if checking multiple points for same inequality",
+      "Focus on substitution and verification only (no graphing yet)",
+      "Provide clear coordinates and ask if they satisfy the inequality",
+      "Show substitution work: x=..., y=...",
+      "Include both points that satisfy and points that don't",
+      "Emphasize that inequality describes a REGION (half-plane), not just a line",
+      "DO NOT include mathTool - substitution practice is the goal"
+    ]
+  },
+
+  "linear-inequalities-node-11": {
+    "nodeId": "linear-inequalities-node-11",
+    "title": "Graphing Boundary Lines",
+    "section": "boundary-lines",
+
+    "learningFocus": [
+      "Converting inequality to equation for boundary (replace ≤ with =)",
+      "Solid line for ≤ and ≥ (boundary included)",
+      "Dashed line for < and > (boundary excluded)"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "For the inequality y < 2x + 3, what is the boundary line equation? Should it be solid or dashed?",
+        "correctAnswer": "Boundary: y = 2x + 3. Dashed line (< does not include boundary)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "For y ≥ -x + 1, state the boundary line and line type.",
+        "correctAnswer": "Boundary: y = -x + 1. Solid line (≥ includes boundary)"
+      }
+    ],
+
+    "variationRules": {
+      "strictInequalities": [
+        {"inequality": "y < 2x + 3", "boundary": "y = 2x + 3", "lineType": "dashed"},
+        {"inequality": "y > -x + 1", "boundary": "y = -x + 1", "lineType": "dashed"},
+        {"inequality": "2x + y < 6", "boundary": "2x + y = 6", "lineType": "dashed"}
+      ],
+      "inclusiveInequalities": [
+        {"inequality": "y ≤ 3x - 2", "boundary": "y = 3x - 2", "lineType": "solid"},
+        {"inequality": "y ≥ -2x + 5", "boundary": "y = -2x + 5", "lineType": "solid"},
+        {"inequality": "x + y ≤ 4", "boundary": "x + y = 4", "lineType": "solid"}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "linearInequalityGrapher",
+      "parameters": {
+        "coefficientX": 2,
+        "coefficientY": -1,
+        "constant": 3,
+        "inequalityType": "<",
+        "xMin": -3,
+        "xMax": 5,
+        "yMin": -3,
+        "yMax": 10,
+        "showGrid": true,
+        "shadeOpacity": 0,
+        "label": "y < 2x + 3",
+        "caption": "Dashed boundary line y = 2x + 3 because < does not include the boundary"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Ask to identify boundary equation and line type (solid/dashed)",
+      "INCLUDE linearInequalityGrapher showing ONLY the boundary line (shadeOpacity: 0)",
+      "For linearInequalityGrapher: use standard form ax + by = c format",
+      "  - For y < 2x + 3, convert to: -2x + y < 3 → coefficientX: -2, coefficientY: 1, constant: 3",
+      "  - Or rearrange to y-form and use: 2x - y > -3 → coefficientX: 2, coefficientY: -1, constant: -3",
+      "Memory trick: 'Line under symbol (≤, ≥) → line is SOLID (included)'",
+      "Do NOT ask about shading yet - that's the next node"
+    ]
+  },
+
+  "linear-inequalities-node-12": {
+    "nodeId": "linear-inequalities-node-12",
+    "title": "Determining Shading Direction",
+    "section": "shading-regions",
+
+    "learningFocus": [
+      "Using test point method (usually (0, 0))",
+      "Shade side with test point if TRUE",
+      "Shade opposite side if FALSE"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "For y < 2x + 3, use test point (0, 0) to determine which side to shade.",
+        "correctAnswer": "Test (0,0): 0 < 2(0) + 3 → 0 < 3 ✓ TRUE. Shade the side containing (0, 0) - below the line"
+      },
+      {
+        "id": "ex2",
+        "problemText": "For y ≥ -x + 2, test point (0, 0). Which side should be shaded?",
+        "correctAnswer": "Test (0,0): 0 ≥ -(0) + 2 → 0 ≥ 2 ✗ FALSE. Shade opposite side from (0, 0) - above the line"
+      }
+    ],
+
+    "variationRules": {
+      "withOriginTest": [
+        {"inequality": "y < 2x + 3", "testResult": "TRUE", "shading": "below (with origin)"},
+        {"inequality": "y ≥ -x + 2", "testResult": "FALSE", "shading": "above (opposite origin)"},
+        {"inequality": "y > x - 1", "testResult": "TRUE", "shading": "above (with origin)"}
+      ],
+      "throughOrigin": [
+        {"inequality": "y < 2x", "alternatePoint": [1, 0], "shading": "below"},
+        {"inequality": "y > -x", "alternatePoint": [0, 1], "shading": "above"}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "linearInequalityGrapher",
+      "parameters": {
+        "coefficientX": -2,
+        "coefficientY": 1,
+        "constant": 3,
+        "inequalityType": "<",
+        "xMin": -3,
+        "xMax": 5,
+        "yMin": -3,
+        "yMax": 10,
+        "showGrid": true,
+        "testPoint": {"x": 0, "y": 0, "label": "(0,0)"},
+        "showTestPoint": true,
+        "shadeOpacity": 0.4,
+        "label": "y < 2x + 3",
+        "caption": "Test point (0,0): 0 < 3 ✓ TRUE, so shade the side containing (0,0)"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Focus on test point method",
+      "Default test point is (0, 0) unless boundary passes through origin",
+      "INCLUDE linearInequalityGrapher with testPoint and showTestPoint: true",
+      "For linearInequalityGrapher testPoint: {x: 0, y: 0, label: '(0,0)'}",
+      "Point will be colored green if it satisfies (TRUE), red if not (FALSE)",
+      "Caption should explain the test result and shading decision",
+      "When boundary passes through (0,0), use alternate test point like (1,0) or (0,1)"
+    ]
+  },
+
+  "linear-inequalities-node-13": {
+    "nodeId": "linear-inequalities-node-13",
+    "title": "Complete Inequality Graphing",
+    "section": "complete-graphing-process",
+
+    "learningFocus": [
+      "Full process: boundary line + correct type + shading",
+      "Following systematic steps",
+      "Verifying graph with test points"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Graph the inequality y ≤ 3x - 2 completely.",
+        "correctAnswer": "Boundary: y = 3x - 2 (solid line). Test (0,0): 0 ≤ -2 FALSE. Shade opposite side (below line)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Graph 2x + y > 4.",
+        "correctAnswer": "Rearrange: y > -2x + 4. Boundary: y = -2x + 4 (dashed). Test (0,0): 0 > 4 FALSE. Shade above"
+      }
+    ],
+
+    "variationRules": {
+      "yFormInequalities": [
+        {"inequality": "y ≤ 3x - 2", "boundary": "solid", "shading": "below"},
+        {"inequality": "y > -x + 5", "boundary": "dashed", "shading": "above"},
+        {"inequality": "y < 2x + 1", "boundary": "dashed", "shading": "below"}
+      ],
+      "standardFormInequalities": [
+        {"inequality": "2x + y > 4", "rearranged": "y > -2x + 4"},
+        {"inequality": "3x - y ≤ 6", "rearranged": "y ≥ 3x - 6"},
+        {"inequality": "x + 2y < 8", "rearranged": "y < -0.5x + 4"}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "linearInequalityGrapher",
+      "parameters": {
+        "coefficientX": -3,
+        "coefficientY": 1,
+        "constant": -2,
+        "inequalityType": "<=",
+        "xMin": -2,
+        "xMax": 4,
+        "yMin": -8,
+        "yMax": 6,
+        "showGrid": true,
+        "shadeOpacity": 0.4,
+        "label": "y ≤ 3x - 2",
+        "caption": "Complete graph: solid boundary y = 3x - 2, shaded region below shows all solutions"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Ask for complete graph including boundary type and shading",
+      "INCLUDE linearInequalityGrapher showing complete solution",
+      "For linearInequalityGrapher in standard form ax + by ≤ c:",
+      "  - Rearrange to get by on left: by ≤ -ax + c",
+      "  - Then: coefficientX = -a, coefficientY = b, constant = c",
+      "Test both y = mx + c form and ax + by = c form",
+      "Caption should summarize: line type + boundary + shaded region",
+      "Quick rule in caption: y < expression → shade BELOW, y > expression → shade ABOVE"
+    ]
+  },
+
+  "linear-inequalities-node-14": {
+    "nodeId": "linear-inequalities-node-14",
+    "title": "Systems of Inequalities",
+    "section": "graphing-systems",
+
+    "learningFocus": [
+      "Graphing multiple inequalities on same axes",
+      "Identifying feasible region (overlap)",
+      "Understanding simultaneous satisfaction"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Graph the system: y ≤ x + 2 and y ≥ -x. Identify the feasible region.",
+        "correctAnswer": "Graph both on same axes. Feasible region is where both shadings overlap (darker region)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Does the point (1, 1) lie in the feasible region of: x ≥ 0, y ≥ 0, x + y ≤ 4?",
+        "correctAnswer": "Check all three: 1 ≥ 0 ✓, 1 ≥ 0 ✓, 1 + 1 ≤ 4 ✓. Yes, (1,1) is in the feasible region"
+      }
+    ],
+
+    "variationRules": {
+      "twoInequalitySystems": [
+        {"sys": ["y ≤ x + 2", "y ≥ -x"], "region": "between two lines"},
+        {"sys": ["y < 2x + 1", "y > x - 2"], "region": "band between lines"}
+      ],
+      "threeInequalitySystems": [
+        {"sys": ["x ≥ 0", "y ≥ 0", "x + y ≤ 4"], "region": "triangle in first quadrant"},
+        {"sys": ["x ≥ 0", "y ≥ 0", "2x + y ≤ 6"], "region": "triangular region"}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "linearInequalityGrapher",
+      "parameters": {
+        "inequalities": [
+          {
+            "coefficientX": -1,
+            "coefficientY": 1,
+            "constant": 2,
+            "inequalityType": "<=",
+            "color": "#3b82f6",
+            "label": "y ≤ x + 2"
+          },
+          {
+            "coefficientX": 1,
+            "coefficientY": 1,
+            "constant": 0,
+            "inequalityType": ">=",
+            "color": "#10b981",
+            "label": "y ≥ -x"
+          }
+        ],
+        "xMin": -3,
+        "xMax": 5,
+        "yMin": -3,
+        "yMax": 6,
+        "showGrid": true,
+        "shadeOpacity": 0.3,
+        "caption": "Feasible region is where BOTH shadings overlap (satisfies both inequalities)"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE linearInequalityGrapher with inequalities array for systems",
+      "For systems, use different colors for each inequality (blue, green, orange, red)",
+      "Lower shadeOpacity (0.2-0.3) so overlaps are visible",
+      "CRITICAL for linearInequalityGrapher inequalities array:",
+      "  Each element needs: {coefficientX, coefficientY, constant, inequalityType, color, label}",
+      "Caption should emphasize 'overlap' or 'feasible region'",
+      "Ask students to verify points by checking ALL inequalities"
+    ]
+  },
+
+  "linear-inequalities-node-15": {
+    "nodeId": "linear-inequalities-node-15",
+    "title": "Feasible Regions and Vertices",
+    "section": "feasible-regions-vertices",
+
+    "learningFocus": [
+      "Identifying corner points (vertices) of feasible region",
+      "Bounded vs unbounded regions",
+      "Finding vertices by solving boundary equations"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "For the system x ≥ 0, y ≥ 0, x + y ≤ 4, identify all vertices of the feasible region.",
+        "correctAnswer": "Vertices: (0, 0) where x=0 meets y=0; (4, 0) where x+y=4 meets y=0; (0, 4) where x+y=4 meets x=0"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Is the feasible region for x ≥ 1, y ≥ x + 1 bounded or unbounded?",
+        "correctAnswer": "Unbounded - extends infinitely upward and to the right"
+      }
+    ],
+
+    "variationRules": {
+      "boundedSystems": [
+        {"system": ["x ≥ 0", "y ≥ 0", "x + y ≤ 4"], "vertices": [[0,0], [4,0], [0,4]], "shape": "triangle"},
+        {"system": ["x ≥ 0", "y ≥ 0", "x ≤ 3", "y ≤ 2"], "vertices": [[0,0], [3,0], [3,2], [0,2]], "shape": "rectangle"}
+      ],
+      "unboundedSystems": [
+        {"system": ["x ≥ 1", "y ≥ x + 1"], "vertices": [[1, 2]], "description": "extends infinitely"},
+        {"system": ["x ≥ 0", "y ≥ 2x + 1"], "vertices": [[0, 1]], "description": "unbounded above"}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "linearInequalityGrapher",
+      "parameters": {
+        "inequalities": [
+          {
+            "coefficientX": -1,
+            "coefficientY": 0,
+            "constant": 0,
+            "inequalityType": "<=",
+            "color": "#3b82f6",
+            "label": "x ≥ 0"
+          },
+          {
+            "coefficientX": 0,
+            "coefficientY": -1,
+            "constant": 0,
+            "inequalityType": "<=",
+            "color": "#10b981",
+            "label": "y ≥ 0"
+          },
+          {
+            "coefficientX": 1,
+            "coefficientY": 1,
+            "constant": 4,
+            "inequalityType": "<=",
+            "color": "#f59e0b",
+            "label": "x + y ≤ 4"
+          }
+        ],
+        "testPoint": {"x": 1, "y": 1, "label": "(1,1)"},
+        "showTestPoint": true,
+        "xMin": -1,
+        "xMax": 5,
+        "yMin": -1,
+        "yMax": 5,
+        "showGrid": true,
+        "shadeOpacity": 0.25,
+        "caption": "Triangular bounded region. Vertices at (0,0), (4,0), (0,4) where boundary lines meet"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Ask to identify vertices (corner points) of feasible region",
+      "Test understanding of bounded (finite area) vs unbounded (infinite)",
+      "INCLUDE linearInequalityGrapher showing the system",
+      "Can use showTestPoint to mark vertices or test if point is in feasible region",
+      "For finding vertices algebraically: solve pairs of boundary equations simultaneously",
+      "Bounded regions typically have multiple vertices forming a polygon",
+      "Unbounded regions extend infinitely in at least one direction"
+    ]
+  },
+
+  "linear-inequalities-node-16": {
+    "nodeId": "linear-inequalities-node-16",
+    "title": "Real-World Inequality Applications",
+    "section": "special-cases-solving",
+
+    "learningFocus": [
+      "Translating real constraints to inequalities",
+      "Solving optimization problems",
+      "Interpreting solutions in context"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Ali's car consumes petrol at 8 litres per day. Before starting, he tops up to 100 litres. Given there must be at least 15 litres in the tank, find the maximum days he can travel.",
+        "correctAnswer": "Let x = days. Start: 100L. After x days: 100 - 8x. Inequality: 100 - 8x ≥ 15. Solve: -8x ≥ -85, x ≤ 10.625. Maximum 10 days"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A bus can carry a maximum of 45 students. How many buses are needed to ferry 520 students?",
+        "correctAnswer": "Let n = buses needed. 45n ≥ 520. Solve: n ≥ 11.56. Need at least 12 buses (can't have partial bus)"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "Budget problems (buying items within budget)",
+        "Capacity problems (buses, rooms, containers)",
+        "Time/resource depletion (petrol, battery, water tank)",
+        "Minimum scores needed (tests, grades)",
+        "Age restrictions (legal requirements)",
+        "Production constraints (manufacturing limits)"
+      ],
+      "constraints": [
+        "at least (≥)",
+        "at most (≤)",
+        "more than (>)",
+        "less than (<)",
+        "maximum (≤)",
+        "minimum (≥)"
+      ]
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "Use realistic contexts and numbers",
+      "Clearly state what variable represents",
+      "Include key constraint words: at least, at most, maximum, minimum",
+      "Ask to form inequality AND solve it AND interpret in context",
+      "For discrete items (buses, people), round appropriately (up for minimums, down for maximums)",
+      "Use escaped dollar \\$20 for currency (NOT $20$)",
+      "Solution should include units and context interpretation",
+      "DO NOT include mathTool - word problem solving is the exercise"
+    ]
+  }
+}

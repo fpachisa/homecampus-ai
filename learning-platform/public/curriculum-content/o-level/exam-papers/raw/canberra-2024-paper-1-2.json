@@ -1,0 +1,553 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "questionId": "N7-canberra-2024-p1-q1",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve $9-\\frac{1}{2}x=25$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 1,
+            "paper": "Paper 1",
+            "title": "Solving Linear Equation"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N2-canberra-2024-p1-q2",
+            "topicID": "N2",
+            "stem": "Ahmad, Simon and Bala share a sum of money in the ratio 3 : 2 : 5. If Bala has $900 more than Simon, what is the sum of money being shared by the three of them?",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the total sum of money.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Ratio Word Problem"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N5-canberra-2024-p1-q3",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write as a single fraction in its simplest form $\\frac{3}{2a-1}-\\frac{2}{1-2a}$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Algebraic Fraction Subtraction"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "S1-canberra-2024-p1-q4",
+            "topicID": "S1",
+            "stem": "Five positive integers have a mean of 5, median of 4, mode of 3 and a range of 7.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the five numbers.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Finding Integers from Statistics"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "N6-canberra-2024-p1-q6",
+            "topicID": "N6",
+            "stem": "The quadratic curve $y=x^{2}+4x-21$ can be written as $y=(x-a)(x+b)$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $a$ and the value of $b$, where $a$ and $b$ are positive integers.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Explain why $y$ will not have a value smaller than -25.",
+                    "marks": 1,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Quadratic Curve Properties"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N5-canberra-2024-p1-q7",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Expand and simplify $(3x-y)(y+x)$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Factorise completely $3-12a^{2}$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Expansion and Factorisation"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "N1-canberra-2024-p1-q8",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Given that $\\sqrt{a}\\times a^{3}\\div a^{x}=1$, find the value of $x$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Simplify $4\\div(\\frac{x}{2})^{-2}$, giving your answer in positive index.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Indices Equations and Simplification"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N6-canberra-2024-p1-q9",
+            "topicID": "N6",
+            "stem": "$x^{2}-10x+27$ can be expressed in the form $(x+p)^{2}+q$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $p$ and the value of $q$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hence write down the coordinates of the minimum point of the graph of $y=x^{2}-10x+27$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Completing the Square"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "G1-canberra-2024-p1-q11",
+            "topicID": "G1",
+            "stem": "The angles of a quadrilateral taken in order are $3x$, $6x$, $5x$ and $4x$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of $x$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Explain whether the quadrilateral is a parallelogram or a trapezium.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Quadrilateral Angles"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "G2-canberra-2024-p1-q12",
+            "topicID": "G2",
+            "stem": "A square pyramid P has base with side $x$ m, height $y$ m and a volume of $300~m^{3}$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the volume of a similar square pyramid, which has a height double that of the pyramid P.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the volume of another square pyramid with side $3x$ m and height $\\frac{2}{3}y$ m.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Volume of Pyramids"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "S1-canberra-2024-p1-q13",
+            "topicID": "S1",
+            "stem": "The following stem-and-leaf diagram shows the scores of students in a math test.\n\n| Stem | Leaf |\n| :--- | :--- |\n| 6 | 8 9 |\n| 7 | 0 2 3 3 4 4 4 7 8 |\n| 8 | 3 4 5 6 7 7 9 |\n| 9 | 1 3 7 |\n\nKey: 6|8 represents 68 marks",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the median score.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the interquartile range.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Stem-and-Leaf Statistics"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "N1-canberra-2024-p1-q15",
+            "topicID": "N1",
+            "stem": "As of 2023, the population of Singapore is approximately 5.64 million and the population of Malaysia is approximately 33.57 million.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the total population of both countries, giving your answer in standard form.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The population of Singapore in 2023 was 5% more than its population in 2013. Calculate the population of Singapore in 2013.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Population Standard Form"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "S2-canberra-2024-p1-q16",
+            "topicID": "S2",
+            "stem": "A box contains 15 marbles of which $x$ are green and the rest are yellow.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write down the probability, in terms of $x$, that a marble chosen from the box is yellow.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "When 5 more green marbles are added to the box, the probability of choosing a yellow marble becomes $\\frac{1}{2}$. Find the initial number of green marbles in the box.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Probability with Marbles"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "N1-canberra-2024-p1-q17",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Express 1500 as the product of its prime factors. Leave your answer in index notations.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "$p=2^{m}\\times3^{2}\\times n$, where $m$ and $n$ are positive integers. Find the values of $m$ and $n$ if the HCF of 1500 and $p$ is 6, given that $100<p<150$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "In a race, Car A, Car B and Car C took 3 minutes, 6 minutes and 8 minutes respectively to complete one lap around the racing track. If the race started at 7 pm, at what time will the cars be back at the starting point together again?",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Factors and Multiples"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "N2-canberra-2024-p1-q18",
+            "topicID": "N2",
+            "stem": "A length of 5 cm on a map represents an actual distance of 2.5 km.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the actual distance represented by 20 cm on the map, giving your answer in km.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the scale of the map in the form 1 : n.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the land area in $km^{2}$, which is represented by $30~cm^{2}$ on the map.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Map Scale and Area"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "N2-canberra-2024-p1-q21",
+            "topicID": "N2",
+            "stem": "12 men will take 54 days to complete a building project.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Assuming that the men work at the same rate, how long will it take for 9 men to complete the project?",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "How many days can be saved if 6 more men are added to the team?",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Inverse Proportion Workers"
+        },
+        {
+            "questionNumber": 24,
+            "questionId": "N9-canberra-2024-p1-q24",
+            "topicID": "N9",
+            "stem": "At Caf\u00e9 A, a latte costs $3.50, a croissant costs $2.70 and a sandwich costs $5.00. At Caf\u00e9 B, a latte costs $0.40 more, a croissant costs $0.20 less and a sandwich costs $0.50 less. This information can be represented by the matrix $Q=(\\begin{matrix}3.50&0.40\\\\ 2.70&-0.20\\\\ 5.00&-0.50\\end{matrix}).$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Azza buys 2 latte, 3 croissants and 3 sandwiches. Yu Fei buys 1 latte and 4 sandwiches. Represent their purchases in a $2\\times3$ matrix P.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Evaluate $M=PQ$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Should Azza buy from Caf\u00e9 A or Caf\u00e9 B? Give your reasons.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Matrix Cafe Prices"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N7-canberra-2024-p2-q1",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve the simultaneous equations. \n$4m+6n=58$\n$3m+5n=46$",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Write as a single fraction in the simplest form $\\frac{3x}{2x^{2}-50}-\\frac{1}{x-5}.$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "$x=\\sqrt[3]{\\frac{25y}{7z+2}}$\n(i) Find x when $y=25$ and $z=-1$.\n(ii) Rearrange the formula to make y the subject.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Solve the equation $\\frac{2x+3}{(3x+1)(x-1)}-2=0.$",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 12,
+            "paper": "Paper 2",
+            "title": "Algebraic Equations and Formulas"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N3-canberra-2024-p2-q3",
+            "topicID": "N3",
+            "stem": "(a) Wayne inherited a sum of money from his parents. He decided to invest 60% of the money and shares $\\frac{3}{4}$ of the remaining amount with his wife. The other $20 000 are meant for their travelling expenses. Calculate the sum of money he inherited.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the sum of money he inherited.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "A bank offers two investment packages. \n\n| Package A | Package B |\n| :--- | :--- |\n| Simple interest of 0.97% per annum. | Compound interest of 3.78% per annum. |\n| One time payout of 10% of the amount of the investment. | |\n\nWayne wants to invest $55 000 in one of the packages for 3 years. Which package should he choose if he wishes to reap the most benefits from the investment?",
+                    "marks": 5,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Wayne and his wife go on a seven days self-drive trip to Australia. They pay 150 AUD per day for car hire and 380 AUD per night for hotel. They pay using credit card and is charged with a fee of 2% for the currency conversion. The exchange rate between Singapore dollars and Australian dollars is $1=0.91$ AUD. Calculate the total amount, including credit card fee, Wayne is charged for car hire and accommodation. Give your answer in Singapore dollars, correct to the nearest dollar.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Investment and Travel Costs"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "N5-canberra-2024-p2-q8",
+            "topicID": "N5",
+            "stem": "The first four terms in a sequence of numbers are given below.\n$T_{1}=(1\\times3)+8=11$\n$T_{2}=(2\\times4)+12=20$\n$T_{3}=(3\\times5)+16=31$\n$T_{4}=(4\\times6)+20=44$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find $T_{5}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Show that the $n^{th}$ term of the sequence, $T_{n}$ is given by $n^{2}+6n+4$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "$T_{p-1}$ and $T_{P}$ are consecutive terms in the sequence. Find and simplify an expression, in terms of p, for the sum of $T_{p-1}$ and $T_{p}$.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Find the value of p when the sum of $T_{p-1}$ and $T_{p}$ is 303.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Quadratic Sequence"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N1-canberra-2024-p2-q9",
+            "topicID": "N1",
+            "stem": "Jim, his wife and their child visited Hokkaido, Japan. The tables below give information that can be used to work out some of their expenses.\n\n**Prices of flight tickets for a return trip**\n| Payment mode | Cash (Includes tax) | | Redemption with miles (Excludes tax of $115 per pax) | |\n| :--- | :--- | :--- | :--- | :--- |\n| Class | Business | Economy | Business | Economy |\n| Adult | $5500 | $1920 | 140 000 miles | 90 000 miles |\n| Child | $4000 | $1350 | | |\n\n**Amount of fuel used (litres/100 km)**\n| Type of car | Type of driving | | |\n| :--- | :--- | :--- | :--- |\n| | Sport Utility Vehicle (SUV) | Sedan car | Mini van |\n| City | 9.3 | 7.8 | 10.8 |\n| Out of city | 7.5 | 5.7 | 8.9 |\n| Combined | 8.8 | 6.2 | 9.5 |\n\n**Daily rates of driver**\n| Day(s) of hire | 8 hours | Additional time |\n| :--- | :--- | :--- |\n| 1 | $350 | $45 per hour |\n| 2 or more | $300 | $40 per hour |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "They travelled in business class and Jim had 150 000 miles to offset some of the cost of their flight tickets. Calculate the amount of money he paid for the tickets.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Jim engaged a driver for 10 hours and his family travelled in a SUV for one day during their trip. The driver picked them from their accommodation in the city to attractions outside the city. The driver drove the first stage of the journey at an average speed of $70~km/h$. The second stage of the journey is 32 km longer than the first stage. The driver drove at an average speed of $80~km/h$. The journey takes a total of 4 hours and 9 minutes. Fuel price for the vehicle was $1.70 per litre. Jim paid $550 to the driver. He thinks that he included a 20% tips in the amount paid to the driver. Is he correct? Justify your decision with calculations.",
+                    "marks": 8,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Travel Expenses Problem"
+        }
+    ]
+}

@@ -1,0 +1,778 @@
+{
+  "pythagoras-node-1": {
+    "nodeId": "pythagoras-node-1",
+    "title": "Identifying the Hypotenuse",
+    "section": "introduction",
+    "learningFocus": [
+      "Identify the hypotenuse in different triangle orientations",
+      "Understand hypotenuse is opposite the right angle",
+      "Recognize hypotenuse as the longest side"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In the right-angled triangle shown, which side is the hypotenuse?",
+        "correctAnswer": "AB (or the longest side opposite the right angle)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Triangle PQR has a right angle at Q. Which side is the hypotenuse?",
+        "correctAnswer": "PR (the side opposite the right angle)"
+      }
+    ],
+    "variationRules": {
+      "vertexLabels": [
+        ["A", "B", "C"],
+        ["P", "Q", "R"],
+        ["X", "Y", "Z"],
+        ["D", "E", "F"],
+        ["L", "M", "N"]
+      ],
+      "rightAnglePositions": [
+        "bottom-left corner",
+        "bottom-right corner",
+        "top vertex"
+      ],
+      "questionFormats": [
+        "Which side is the hypotenuse?",
+        "Identify the hypotenuse in this triangle",
+        "Name the longest side of this right-angled triangle"
+      ]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "adjacent": "variable",
+        "hypotenuse": "variable",
+        "showRightAngle": true,
+        "showAngleMark": false,
+        "caption": "variable"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem. Do NOT create multi-part questions.",
+      "CRITICAL: Include mathTool showing triangle structure - helps understanding WITHOUT revealing answer",
+      "Use different vertex label combinations for variety",
+      "Vary triangle orientation (rotate which corner has right angle)",
+      "Keep side labels simple (single letters or short values like '5 cm', '12 m')",
+      "Ensure the triangle diagram shows clear right angle marker",
+      "Question should ask student to identify which side is hypotenuse",
+      "Accept answers in form 'AB', 'side AB', or description 'longest side'"
+    ]
+  },
+
+  "pythagoras-node-2": {
+    "nodeId": "pythagoras-node-2",
+    "title": "Verifying Pythagorean Triples",
+    "section": "introduction",
+    "learningFocus": [
+      "State Pythagoras' Theorem: a² + b² = c²",
+      "Verify that three numbers form a Pythagorean triple",
+      "Recognize common triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Does the set of numbers {3, 4, 5} satisfy Pythagoras' Theorem? Show your working.",
+        "correctAnswer": "Yes. 3² + 4² = 9 + 16 = 25 = 5²"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A triangle has sides 5 cm, 12 cm and 13 cm. Verify whether these satisfy a² + b² = c².",
+        "correctAnswer": "Yes. 5² + 12² = 25 + 144 = 169 = 13²"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Do the numbers 7, 24, and 25 form a Pythagorean triple?",
+        "correctAnswer": "Yes. 7² + 24² = 49 + 576 = 625 = 25²"
+      }
+    ],
+    "variationRules": {
+      "pythagoreanTriples": [
+        [3, 4, 5],
+        [5, 12, 13],
+        [8, 15, 17],
+        [7, 24, 25],
+        [6, 8, 10],
+        [9, 12, 15],
+        [12, 16, 20],
+        [15, 20, 25]
+      ],
+      "nonTriples": [
+        [3, 4, 6],
+        [5, 11, 13],
+        [7, 8, 10],
+        [10, 11, 15]
+      ],
+      "questionFormats": [
+        "Verify whether {a, b, c} satisfy Pythagoras' Theorem",
+        "Do the numbers a, b, and c form a Pythagorean triple?",
+        "A triangle has sides a, b, and c. Check if a² + b² = c²",
+        "Does the set {a, b, c} satisfy a² + b² = c²?"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem asking to verify the triple",
+      "CRITICAL: DO NOT include mathTool - showing the triangle would reveal if it's right-angled",
+      "Mix Pythagorean triples (which satisfy) with non-triples (which don't)",
+      "Use 70% actual triples and 30% non-triples for variety",
+      "Present numbers in random order (not always smallest to largest)",
+      "Require students to show working: identify c as largest, then check a² + b² = c²",
+      "Accept both 'Yes, satisfies' and calculation showing equality",
+      "Include units occasionally (cm, m) but keep numbers manageable"
+    ]
+  },
+
+  "pythagoras-node-3": {
+    "nodeId": "pythagoras-node-3",
+    "title": "Finding the Hypotenuse - Exact Answers",
+    "section": "finding-hypotenuse",
+    "learningFocus": [
+      "Apply c² = a² + b² to find the hypotenuse",
+      "Calculate c = √(a² + b²)",
+      "Recognize Pythagorean triples for exact answers"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has legs of length 3 cm and 4 cm. Find the length of the hypotenuse.",
+        "correctAnswer": "5 cm"
+      },
+      {
+        "id": "ex2",
+        "problemText": "In triangle ABC with right angle at C, AC = 5 m and BC = 12 m. Calculate the length of AB.",
+        "correctAnswer": "13 m"
+      },
+      {
+        "id": "ex3",
+        "problemText": "The two shorter sides of a right-angled triangle are 8 cm and 15 cm. Find the hypotenuse.",
+        "correctAnswer": "17 cm"
+      }
+    ],
+    "variationRules": {
+      "pythagoreanTriples": {
+        "basic": [
+          {"a": 3, "b": 4, "c": 5},
+          {"a": 5, "b": 12, "c": 13},
+          {"a": 8, "b": 15, "c": 17},
+          {"a": 7, "b": 24, "c": 25}
+        ],
+        "multiples": [
+          {"a": 6, "b": 8, "c": 10},
+          {"a": 9, "b": 12, "c": 15},
+          {"a": 10, "b": 24, "c": 26},
+          {"a": 12, "b": 16, "c": 20},
+          {"a": 15, "b": 20, "c": 25}
+        ]
+      },
+      "units": ["cm", "m", "mm"],
+      "vertexLabels": [
+        ["A", "B", "C"],
+        ["P", "Q", "R"],
+        ["X", "Y", "Z"]
+      ]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "adjacent": "variable",
+        "showRightAngle": true,
+        "showAngleMark": false,
+        "caption": "variable"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem - find the hypotenuse only",
+      "CRITICAL: Include mathTool showing ONLY the two legs (opposite and adjacent)",
+      "DO NOT show hypotenuse value in mathTool - that would reveal the answer!",
+      "Use Pythagorean triples exclusively for this node (exact answers)",
+      "Vary presentation: 'legs of length 3 and 4' vs 'AC = 5, BC = 12'",
+      "Keep numbers reasonable (legs under 30 for basic triples)",
+      "Always include units in the question and require units in answer",
+      "Students should state final answer as 'c cm' not just the number",
+      "Rotate through different triples for variety",
+      "In mathTool, set caption to describe the triangle context"
+    ]
+  },
+
+  "pythagoras-node-4": {
+    "nodeId": "pythagoras-node-4",
+    "title": "Finding the Hypotenuse - Decimal Answers",
+    "section": "finding-hypotenuse",
+    "learningFocus": [
+      "Calculate hypotenuse for non-Pythagorean triples",
+      "Use calculator to find square roots",
+      "Round answers to 1 dp, 2 dp, or 3 sf as specified"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has legs of 7 cm and 9 cm. Find the hypotenuse to 1 decimal place.",
+        "correctAnswer": "11.4 cm"
+      },
+      {
+        "id": "ex2",
+        "problemText": "In triangle PQR with right angle at R, PR = 11 m and QR = 8 m. Calculate PQ to 2 decimal places.",
+        "correctAnswer": "13.60 m"
+      }
+    ],
+    "variationRules": {
+      "nonTriplePairs": [
+        {"a": 7, "b": 9, "answer": "11.4"},
+        {"a": 6, "b": 10, "answer": "11.7"},
+        {"a": 11, "b": 8, "answer": "13.6"},
+        {"a": 13, "b": 7, "answer": "14.8"},
+        {"a": 9, "b": 14, "answer": "16.6"},
+        {"a": 10, "b": 15, "answer": "18.0"},
+        {"a": 12, "b": 18, "answer": "21.6"}
+      ],
+      "roundingFormats": [
+        "to 1 decimal place",
+        "to 2 decimal places",
+        "to 3 significant figures"
+      ],
+      "units": ["cm", "m", "mm", "km"]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "adjacent": "variable",
+        "showRightAngle": true,
+        "showAngleMark": false
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: Include mathTool showing the two legs only (NOT hypotenuse)",
+      "Use non-Pythagorean pairs (not exact square roots)",
+      "Explicitly state rounding requirement in question",
+      "Vary between 1 dp, 2 dp, and 3 sf",
+      "Keep leg values between 5 and 20 for manageable calculations",
+      "Always include units in question and expected answer",
+      "Students must use calculator for √ calculation",
+      "Answer should be rounded as specified, with units"
+    ]
+  },
+
+  "pythagoras-node-5": {
+    "nodeId": "pythagoras-node-5",
+    "title": "Finding the Hypotenuse - Word Problems",
+    "section": "finding-hypotenuse",
+    "learningFocus": [
+      "Identify right-angled triangle in word problems",
+      "Extract relevant measurements from context",
+      "Apply Pythagoras to find hypotenuse in real situations"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A ladder of length x metres is placed against a wall. The base of the ladder is 3 m from the wall and reaches 4 m up the wall. Find the length of the ladder.",
+        "correctAnswer": "5 m"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A rectangular garden is 12 m long and 5 m wide. Find the length of the diagonal path across the garden.",
+        "correctAnswer": "13 m"
+      }
+    ],
+    "variationRules": {
+      "contexts": {
+        "ladder": {
+          "description": "A ladder is placed against a wall. The base is {distance} from the wall and reaches {height} up the wall.",
+          "question": "Find the length of the ladder",
+          "pairs": [
+            {"distance": "3 m", "height": "4 m", "answer": "5 m"},
+            {"distance": "5 m", "height": "12 m", "answer": "13 m"},
+            {"distance": "8 m", "height": "15 m", "answer": "17 m"}
+          ]
+        },
+        "diagonal": {
+          "description": "A rectangle is {length} long and {width} wide.",
+          "question": "Find the length of the diagonal",
+          "pairs": [
+            {"length": "12 m", "width": "5 m", "answer": "13 m"},
+            {"length": "8 cm", "width": "6 cm", "answer": "10 cm"},
+            {"length": "24 m", "width": "7 m", "answer": "25 m"}
+          ]
+        },
+        "kite": {
+          "description": "A kite is flying with {horizontal} of string out horizontally and risen {vertical} vertically.",
+          "question": "Find the total length of string from the person to the kite",
+          "pairs": [
+            {"horizontal": "40 m", "vertical": "30 m", "answer": "50 m"},
+            {"horizontal": "24 m", "vertical": "18 m", "answer": "30 m"}
+          ]
+        }
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: DO NOT include mathTool initially - let student visualize the triangle",
+      "Use realistic contexts: ladders, rectangles, kites, TV screens",
+      "Question should describe scenario and ask for ONE unknown length",
+      "Use Pythagorean triples for easier calculation (this is still foundational practice)",
+      "Include units appropriate to context (m for ladders, cm for screens)",
+      "Student must: 1) Identify the right triangle, 2) Label known values, 3) Calculate hypotenuse",
+      "Accept answers with or without working, as long as final answer is correct with units"
+    ]
+  },
+
+  "pythagoras-node-6": {
+    "nodeId": "pythagoras-node-6",
+    "title": "Finding a Shorter Side - Using c² - b²",
+    "section": "finding-shorter-sides",
+    "learningFocus": [
+      "Rearrange a² + b² = c² to find a leg: a² = c² - b²",
+      "Apply a = √(c² - b²) correctly",
+      "Distinguish finding hypotenuse from finding a leg"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In a right-angled triangle, the hypotenuse is 13 cm and one leg is 5 cm. Find the length of the other leg.",
+        "correctAnswer": "12 cm"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Triangle PQR has a right angle at Q. PQ = 15 m and PR = 17 m. Find the length of QR.",
+        "correctAnswer": "8 m"
+      }
+    ],
+    "variationRules": {
+      "pythagoreanTriples": [
+        {"c": 5, "b": 3, "a": 4},
+        {"c": 5, "b": 4, "a": 3},
+        {"c": 13, "b": 5, "a": 12},
+        {"c": 13, "b": 12, "a": 5},
+        {"c": 17, "b": 8, "a": 15},
+        {"c": 17, "b": 15, "a": 8},
+        {"c": 25, "b": 7, "a": 24},
+        {"c": 25, "b": 24, "a": 7},
+        {"c": 10, "b": 6, "a": 8},
+        {"c": 15, "b": 9, "a": 12}
+      ],
+      "units": ["cm", "m", "mm"],
+      "questionFormats": [
+        "hypotenuse is {c}, one leg is {b}, find the other leg",
+        "right angle at Q, PQ = {b}, PR = {c}, find QR"
+      ]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "hypotenuse": "variable",
+        "adjacent": "variable",
+        "showRightAngle": true,
+        "showAngleMark": false
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem - find ONE unknown leg",
+      "CRITICAL: Include mathTool showing hypotenuse and ONE known leg (NOT the unknown leg)",
+      "DO NOT show the unknown leg value in mathTool - that reveals the answer!",
+      "Always identify which side is the hypotenuse (use c as largest value)",
+      "Use Pythagorean triples for exact answers (no decimals in this foundational node)",
+      "Vary which leg is given vs unknown",
+      "Emphasize: 'hypotenuse is...' to make it clear which is c",
+      "Student must recognize to use a² = c² - b², not c² = a² + b²",
+      "Expected process: Square hypotenuse, square known leg, subtract, take square root",
+      "Include units in question and require units in answer"
+    ]
+  },
+
+  "pythagoras-node-7": {
+    "nodeId": "pythagoras-node-7",
+    "title": "Finding a Leg - Decimal Answers",
+    "section": "finding-shorter-sides",
+    "learningFocus": [
+      "Apply a = √(c² - b²) for non-Pythagorean values",
+      "Use calculator and round appropriately",
+      "Verify answer makes sense (leg must be shorter than hypotenuse)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has hypotenuse 20 cm and one leg 11 cm. Find the other leg to 1 decimal place.",
+        "correctAnswer": "16.7 cm"
+      }
+    ],
+    "variationRules": {
+      "nonTriplePairs": [
+        {"c": 20, "b": 11, "answer": "16.7"},
+        {"c": 18, "b": 10, "answer": "14.8"},
+        {"c": 22, "b": 14, "answer": "16.9"},
+        {"c": 30, "b": 18, "answer": "24.0"},
+        {"c": 25, "b": 20, "answer": "15.0"}
+      ],
+      "roundingFormats": [
+        "to 1 decimal place",
+        "to 2 decimal places",
+        "to 3 significant figures"
+      ],
+      "units": ["cm", "m", "mm"]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "hypotenuse": "variable",
+        "adjacent": "variable",
+        "showRightAngle": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: Include mathTool showing hypotenuse and known leg only",
+      "Use non-Pythagorean values requiring calculator",
+      "Always specify rounding precision",
+      "Ensure hypotenuse is clearly the longest value",
+      "Keep values manageable (c < 35, b < 25)",
+      "Students must: identify c, identify given leg b, calculate √(c² - b²)",
+      "Verify student understands this is DIFFERENT from finding hypotenuse"
+    ]
+  },
+
+  "pythagoras-node-8": {
+    "nodeId": "pythagoras-node-8",
+    "title": "Finding a Leg - Word Problems",
+    "section": "finding-shorter-sides",
+    "learningFocus": [
+      "Identify when hypotenuse is given in word problems",
+      "Extract measurements and determine unknown leg",
+      "Apply a² = c² - b² in real contexts"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A 10 m ladder leans against a wall and reaches 8 m up the wall. How far is the base of the ladder from the wall?",
+        "correctAnswer": "6 m"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A rectangle has diagonal 15 cm and length 9 cm. Find the width of the rectangle.",
+        "correctAnswer": "12 cm"
+      }
+    ],
+    "variationRules": {
+      "contexts": {
+        "ladder": [
+          {"ladder": "10 m", "height": "8 m", "base": "6 m"},
+          {"ladder": "13 m", "height": "12 m", "base": "5 m"},
+          {"ladder": "17 m", "height": "15 m", "base": "8 m"}
+        ],
+        "rectangle": [
+          {"diagonal": "13 cm", "length": "12 cm", "width": "5 cm"},
+          {"diagonal": "15 cm", "length": "9 cm", "width": "12 cm"},
+          {"diagonal": "25 m", "length": "24 m", "width": "7 m"}
+        ],
+        "ramp": [
+          {"ramp": "5 m", "horizontal": "3 m", "vertical": "4 m"}
+        ]
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: DO NOT include mathTool - let student identify triangle from context",
+      "Use contexts where hypotenuse is explicitly stated: 'ladder length', 'diagonal'",
+      "Question provides hypotenuse and ONE other side, asks for the third",
+      "Use Pythagorean triples for easier verification",
+      "Student must: 1) Identify hypotenuse, 2) Identify given leg, 3) Calculate using c² - b²",
+      "Common error: Students may add instead of subtract - question should prompt correct thinking",
+      "Include realistic units appropriate to context"
+    ]
+  },
+
+  "pythagoras-node-9": {
+    "nodeId": "pythagoras-node-9",
+    "title": "Ladder and Navigation Problems",
+    "section": "real-world-applications",
+    "learningFocus": [
+      "Identify right-angled triangles in real contexts",
+      "Apply Pythagoras to ladder problems (wall-ground-ladder)",
+      "Calculate navigation distances with perpendicular directions"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A 15 m ladder is placed 9 m from the base of a wall. How high up the wall does the ladder reach?",
+        "correctAnswer": "12 m"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A person walks 8 km north, then 6 km east. How far are they from their starting point in a straight line?",
+        "correctAnswer": "10 km"
+      }
+    ],
+    "variationRules": {
+      "ladderProblems": [
+        {"ladder": "15 m", "base": "9 m", "height": "12 m"},
+        {"ladder": "13 m", "base": "5 m", "height": "12 m"},
+        {"ladder": "17 m", "base": "8 m", "height": "15 m"},
+        {"ladder": "25 m", "base": "15 m", "height": "20 m"}
+      ],
+      "navigationProblems": [
+        {"north": "8 km", "east": "6 km", "distance": "10 km"},
+        {"north": "12 km", "east": "5 km", "distance": "13 km"},
+        {"north": "9 km", "east": "12 km", "distance": "15 km"},
+        {"south": "24 km", "west": "7 km", "distance": "25 km"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: DO NOT include mathTool - student should visualize triangle from description",
+      "For ladder: always form right triangle (ground, wall, ladder)",
+      "For navigation: perpendicular directions (north-south, east-west) form right angle",
+      "Use Pythagorean triples for easier mental verification",
+      "Question should describe realistic scenario",
+      "Student must: 1) Draw diagram, 2) Identify right triangle, 3) Apply Pythagoras",
+      "Vary what is being found: height, base distance, or hypotenuse",
+      "Include appropriate units (m for ladders, km for navigation)",
+      "Accept answers with units and reasonable rounding if needed"
+    ]
+  },
+
+  "pythagoras-node-10": {
+    "nodeId": "pythagoras-node-10",
+    "title": "Rectangle Diagonal Problems",
+    "section": "real-world-applications",
+    "learningFocus": [
+      "Apply Pythagoras to find rectangle diagonals",
+      "Use formula d² = l² + w²",
+      "Solve practical problems (TV screens, tables, fields)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A rectangular TV screen is 80 cm wide and 45 cm high. Find the diagonal length of the screen to 1 decimal place.",
+        "correctAnswer": "91.7 cm"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A rectangular garden is 12 m long and 5 m wide. Calculate the length of the diagonal path across the garden.",
+        "correctAnswer": "13 m"
+      }
+    ],
+    "variationRules": {
+      "contexts": {
+        "TVscreen": [
+          {"width": "80 cm", "height": "45 cm", "diagonal": "91.7 cm"},
+          {"width": "60 cm", "height": "32 cm", "diagonal": "68.1 cm"}
+        ],
+        "garden": [
+          {"length": "12 m", "width": "5 m", "diagonal": "13 m"},
+          {"length": "24 m", "width": "7 m", "diagonal": "25 m"},
+          {"length": "15 m", "width": "8 m", "diagonal": "17 m"}
+        ],
+        "field": [
+          {"length": "40 m", "width": "30 m", "diagonal": "50 m"}
+        ],
+        "table": [
+          {"length": "120 cm", "width": "90 cm", "diagonal": "150 cm"}
+        ]
+      }
+    },
+    "mathTool": {
+      "toolName": "rectangle",
+      "parameters": {
+        "length": "variable",
+        "width": "variable",
+        "highlightMode": "none",
+        "showFormula": false
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem - find the diagonal only",
+      "CRITICAL: Include mathTool showing rectangle with length and width labeled",
+      "DO NOT show diagonal in mathTool - student must calculate it",
+      "Use realistic contexts: TV screens, gardens, tables, fields",
+      "Mix exact answers (Pythagorean triples) with decimal answers",
+      "For non-triples, specify rounding precision",
+      "Question gives length and width, asks for diagonal",
+      "Students apply d² = l² + w² or recognize it's Pythagoras on the rectangle",
+      "Include appropriate units for context (cm for screens, m for gardens)"
+    ]
+  },
+
+  "pythagoras-node-11": {
+    "nodeId": "pythagoras-node-11",
+    "title": "3D Space Diagonals - Cuboids",
+    "section": "real-world-applications",
+    "learningFocus": [
+      "Apply Pythagoras twice for 3D problems",
+      "Calculate base diagonal first, then space diagonal",
+      "Use formula d² = l² + w² + h² or two-step method"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A box measures 12 cm long, 9 cm wide, and 8 cm high. Find the length of the space diagonal (from one corner to the opposite corner through the interior).",
+        "correctAnswer": "17 cm"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A room is 5 m long, 4 m wide, and 3 m high. Calculate the straight-line distance from one bottom corner to the opposite top corner to 1 decimal place.",
+        "correctAnswer": "7.1 m"
+      }
+    ],
+    "variationRules": {
+      "cuboidDimensions": [
+        {"length": "12 cm", "width": "9 cm", "height": "8 cm", "spaceDiagonal": "17 cm"},
+        {"length": "6 cm", "width": "6 cm", "height": "7 cm", "spaceDiagonal": "11 cm"},
+        {"length": "5 m", "width": "4 m", "height": "3 m", "spaceDiagonal": "7.1 m"},
+        {"length": "8 m", "width": "6 m", "height": "4 m", "spaceDiagonal": "10.8 m"}
+      ],
+      "contexts": [
+        "A box measures...",
+        "A room is...",
+        "A rectangular container has dimensions...",
+        "A cuboid has..."
+      ]
+    },
+    "mathTool": {
+      "toolName": "cuboid",
+      "parameters": {
+        "length": "variable",
+        "width": "variable",
+        "height": "variable",
+        "showSpaceDiagonal": false,
+        "showVertexLabels": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem - find space diagonal only",
+      "CRITICAL: Include mathTool showing cuboid with dimensions labeled",
+      "DO NOT show space diagonal in mathTool parameters - set showSpaceDiagonal: false",
+      "Question provides all three dimensions (length, width, height)",
+      "Students must apply Pythagoras TWICE:",
+      "  Step 1: Find base diagonal using √(l² + w²)",
+      "  Step 2: Use base diagonal with height: √((base diagonal)² + h²)",
+      "Alternatively: Use direct formula d = √(l² + w² + h²)",
+      "Mix exact answers with decimal answers requiring rounding",
+      "Use realistic contexts: boxes, rooms, containers",
+      "Include appropriate units",
+      "This is advanced - expect students to need guidance on two-step approach"
+    ]
+  },
+
+  "pythagoras-node-12": {
+    "nodeId": "pythagoras-node-12",
+    "title": "Testing for Right Triangles - Converse",
+    "section": "converse",
+    "learningFocus": [
+      "State the converse: IF a² + b² = c², THEN triangle is right-angled",
+      "Test if given sides form a right triangle",
+      "Identify longest side as c before testing"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A triangle has sides 7 cm, 24 cm, and 25 cm. Determine whether this is a right-angled triangle. Show your working.",
+        "correctAnswer": "Yes. 7² + 24² = 49 + 576 = 625 = 25². Therefore it is right-angled."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Does a triangle with sides 10 m, 11 m, and 12 m contain a right angle?",
+        "correctAnswer": "No. 10² + 11² = 100 + 121 = 221 ≠ 144 = 12². Not a right triangle."
+      },
+      {
+        "id": "ex3",
+        "problemText": "Three sides of a triangle are 5, 12, and 13. Use the converse of Pythagoras' Theorem to check if it has a right angle.",
+        "correctAnswer": "Yes. 5² + 12² = 25 + 144 = 169 = 13². Right-angled triangle."
+      }
+    ],
+    "variationRules": {
+      "rightTriangles": [
+        [3, 4, 5],
+        [5, 12, 13],
+        [8, 15, 17],
+        [7, 24, 25],
+        [6, 8, 10],
+        [9, 12, 15],
+        [12, 16, 20],
+        [20, 21, 29]
+      ],
+      "notRightTriangles": [
+        [10, 11, 12],
+        [5, 7, 9],
+        [8, 10, 13],
+        [6, 7, 10],
+        [11, 13, 15]
+      ],
+      "questionFormats": [
+        "Determine whether this is a right-angled triangle",
+        "Does this triangle contain a right angle?",
+        "Use the converse to check if it has a right angle",
+        "Is this a right-angled triangle? Show your working"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem - test ONE set of sides",
+      "CRITICAL: DO NOT include mathTool initially - would reveal if triangle is right-angled",
+      "Mix right triangles (60-70%) with non-right triangles (30-40%)",
+      "Present sides in random order (not always ascending)",
+      "Students must: 1) Identify longest side as c, 2) Calculate a² + b², 3) Calculate c², 4) Compare",
+      "Require working to be shown, not just yes/no answer",
+      "Accept format: 'Yes, because 3² + 4² = 25 = 5²' or similar",
+      "Emphasize the CONVERSE: testing IF sides satisfy the relationship",
+      "Use exact Pythagorean triples or clear non-triples (avoid ambiguous near-misses)"
+    ]
+  },
+
+  "pythagoras-node-13": {
+    "nodeId": "pythagoras-node-13",
+    "title": "Construction Checking - 3-4-5 Method",
+    "section": "converse",
+    "learningFocus": [
+      "Apply converse in construction contexts",
+      "Understand 3-4-5 rope method creates right angles",
+      "Verify corners are square using measurements"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A carpenter measures 90 cm along one edge and 120 cm along another edge. The diagonal measures 150 cm. Is the corner square (90°)? Use the converse of Pythagoras' Theorem.",
+        "correctAnswer": "Yes. 90² + 120² = 8100 + 14400 = 22500 = 150². The corner is square."
+      },
+      {
+        "id": "ex2",
+        "problemText": "To check if a wall corner is right-angled, measurements of 6 m, 8 m, and 10 m are used. Verify if this forms a 90° angle.",
+        "correctAnswer": "Yes. 6² + 8² = 36 + 64 = 100 = 10². This forms a right angle."
+      },
+      {
+        "id": "ex3",
+        "problemText": "Ancient Egyptians used a rope with 12 equally-spaced knots to form a triangle with sides of 3, 4, and 5 units. Explain why this creates a right angle.",
+        "correctAnswer": "Because 3² + 4² = 9 + 16 = 25 = 5². By the converse of Pythagoras' Theorem, this forms a right-angled triangle with the right angle opposite the longest side."
+      }
+    ],
+    "variationRules": {
+      "constructionMeasurements": [
+        {"a": "90 cm", "b": "120 cm", "c": "150 cm"},
+        {"a": "6 m", "b": "8 m", "c": "10 m"},
+        {"a": "1.5 m", "b": "2 m", "c": "2.5 m"},
+        {"a": "60 cm", "b": "80 cm", "c": "100 cm"},
+        {"a": "9 m", "b": "12 m", "c": "15 m"}
+      ],
+      "contexts": [
+        "carpenter checking corner",
+        "builder verifying wall is square",
+        "gardener laying out rectangular bed",
+        "Egyptian rope method with 3-4-5",
+        "construction site measuring"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: DO NOT include mathTool - context is about construction checking",
+      "Use multiples of 3-4-5 triangle (most practical for construction)",
+      "Present in practical contexts: carpentry, construction, gardening",
+      "Question provides three measurements and asks to verify right angle",
+      "Students must: 1) Recognize this is converse application, 2) Check if a² + b² = c²",
+      "Include units appropriate to construction (cm, m)",
+      "Emphasize practical application: ensuring corners are square",
+      "All provided measurements should form valid right triangles (this is about verification, not testing non-right cases)",
+      "Historical context (Egyptian rope) can be included for enrichment"
+    ]
+  }
+}

@@ -378,6 +378,83 @@
         "title": "Ratio Word Problem"
       },
       {
+        "questionNumber": 14,
+        "questionId": "N2-greenridge-2024-p1-q14",
+        "topicID": "N2",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$y$ is directly proportional to $\\sqrt[3]{x}$. Find the percentage increase of $y$ when $x$ increases by 700%.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "100%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the relationship between $y$ and $x$ using a constant $k$.",
+                  "working": "$y = k\\sqrt[3]{x}$",
+                  "reasoning": "Direct proportionality implies $y = k \\times (\\text{variable})$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the new value of $x$ ($x_{new}$) after a 700% increase.",
+                  "working": "$x_{new} = x + \\frac{700}{100}x = x + 7x = 8x$",
+                  "reasoning": "An increase of 700% means adding 7 times the original value to the original value."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new value of $y$ ($y_{new}$) by substituting $x_{new}$ into the equation.",
+                  "working": "$y_{new} = k\\sqrt[3]{8x} = k(\\sqrt[3]{8})(\\sqrt[3]{x}) = k(2)(\\sqrt[3]{x}) = 2(k\\sqrt[3]{x}) = 2y$",
+                  "reasoning": "We substitute $8x$ and simplify the cube root. Since $\\sqrt[3]{8}=2$, the new $y$ is twice the old $y$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the percentage increase in $y$.",
+                  "working": "$\\text{Percentage Increase} = \\frac{y_{new} - y}{y} \\times 100\\% = \\frac{2y - y}{y} \\times 100\\% = \\frac{y}{y} \\times 100\\% = 100\\%$",
+                  "reasoning": "Percentage change is calculated as $\\frac{\\text{change}}{\\text{original}} \\times 100\\%$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "6 men took 50 hours to paint a mural wall. How long does it take for 4 men to paint the same wall?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "75 hours",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the type of proportion and calculate the total man-hours required.",
+                  "working": "$\\text{Total Work} = \\text{Men} \\times \\text{Hours} = 6 \\times 50 = 300 \\text{ man-hours}$",
+                  "reasoning": "The number of men and the time taken are inversely proportional (more men, less time). The product remains constant."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the time taken for 4 men to complete the same total work.",
+                  "working": "$\\text{Time} = \\frac{\\text{Total Work}}{\\text{Number of Men}} = \\frac{300}{4}$",
+                  "reasoning": "Divide the constant total work by the new number of men."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Evaluate the final value.",
+                  "working": "$\\frac{300}{4} = 75 \\text{ hours}$",
+                  "reasoning": "Simple division."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Proportion Problems"
+      },
+      {
         "questionNumber": 17,
         "questionId": "N2-acsi-2024-p1-q17",
         "topicID": "N2",
@@ -841,6 +918,83 @@
         "title": "Map Scale and Area"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111071107-p1-q101",
+        "topicID": "N2",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$P$ is inversely proportional to the square of $Q$. If $Q$ decreases by 50%, find the percentage change in $P$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "300% increase",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the equation connecting $P$ and $Q$.",
+                  "working": "$P = \\frac{k}{Q^2}$",
+                  "reasoning": "Inverse proportion to the square implies $P = k/Q^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the new value of $Q$.",
+                  "working": "$Q_{new} = Q - 0.5Q = 0.5Q = \\frac{1}{2}Q$",
+                  "reasoning": "A decrease of 50% means the new value is half the original."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute $Q_{new}$ to find $P_{new}$.",
+                  "working": "$P_{new} = \\frac{k}{(0.5Q)^2} = \\frac{k}{0.25Q^2} = \\frac{1}{0.25} \\times \\frac{k}{Q^2} = 4P$",
+                  "reasoning": "Squaring 0.5 gives 0.25. Dividing by 0.25 is equivalent to multiplying by 4."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the percentage change.",
+                  "working": "$\\frac{4P - P}{P} \\times 100\\% = \\frac{3P}{P} \\times 100\\% = 300\\%$",
+                  "reasoning": "The positive result indicates an increase."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "8 taps can fill a water tank in 45 minutes. How long will it take for 5 taps to fill the same tank, assuming all taps flow at the same rate?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "72 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the constant representing the total work (tap-minutes).",
+                  "working": "$k = 8 \\times 45 = 360$",
+                  "reasoning": "This is an inverse proportion problem. Taps $\\times$ Time = Constant."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide the total work by the new number of taps.",
+                  "working": "$\\text{Time} = \\frac{360}{5}$",
+                  "reasoning": "We rearrange the formula: Time = Constant / Taps."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final time.",
+                  "working": "$360 \\div 5 = 72$",
+                  "reasoning": "Calculation yields 72 minutes."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Inverse Proportion and Percentage Change"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N2-gemini-1911-p1-102",
         "topicID": "N2",
@@ -1210,6 +1364,171 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Algebraic Inverse Proportion"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2111071107-p2-q101",
+        "topicID": "N2",
+        "stem": "The force, $F$ Newtons, between two magnetic particles is inversely proportional to the square of the distance, $d$ meters, between them.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $F = 20$ when $d = 4$, find a formula for $F$ in terms of $d$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$F = \\frac{320}{d^2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the general equation of proportionality.",
+                  "working": "$F = \\frac{k}{d^2}$",
+                  "reasoning": "\"Inversely proportional to the square\" means $y = k/x^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the given values to find $k$.",
+                  "working": "$20 = \\frac{k}{4^2} \\implies 20 = \\frac{k}{16}$",
+                  "reasoning": "Substitute $F=20$ and $d=4$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $k$ and write the final formula.",
+                  "working": "$k = 20 \\times 16 = 320 \\implies F = \\frac{320}{d^2}$",
+                  "reasoning": "Multiply both sides by 16 to isolate $k$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the value of $F$ when the distance is 10 meters.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "3.2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $d=10$ into the formula found in part (a).",
+                  "working": "$F = \\frac{320}{10^2}$",
+                  "reasoning": "Use the established relationship."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the expression.",
+                  "working": "$F = \\frac{320}{100} = 3.2$",
+                  "reasoning": "Simple division."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate the distance $d$ when the force is 80 Newtons.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $F=80$ into the formula.",
+                  "working": "$80 = \\frac{320}{d^2}$",
+                  "reasoning": "Set the equation equal to the known force."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rearrange to solve for $d^2$.",
+                  "working": "$d^2 = \\frac{320}{80} = 4$",
+                  "reasoning": "Multiply by $d^2$ and divide by 80."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $d$.",
+                  "working": "$d = \\sqrt{4} = 2$",
+                  "reasoning": "Take the positive square root as distance must be positive."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Applications of Inverse Proportion"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N2-gemini-2111071107-p2-q102",
+        "topicID": "N2",
+        "stem": "The period, $T$ seconds, of a pendulum is directly proportional to the square root of its length, $L$ meters.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "If a pendulum of length 1.44 meters has a period of 2.4 seconds, find the equation connecting $T$ and $L$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T = 2\\sqrt{L}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Write the general proportionality equation.",
+                  "working": "$T = k\\sqrt{L}$",
+                  "reasoning": "Direct proportion to square root."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute given values to find $k$.",
+                  "working": "$2.4 = k\\sqrt{1.44} \\implies 2.4 = k(1.2)$",
+                  "reasoning": "$\\sqrt{1.44} = 1.2$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $k$.",
+                  "working": "$k = \\frac{2.4}{1.2} = 2$",
+                  "reasoning": "Division yields the constant."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the length of the pendulum if the period is 5 seconds.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6.25 meters",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $T=5$ into the equation $T=2\\sqrt{L}$.",
+                  "working": "$5 = 2\\sqrt{L}$",
+                  "reasoning": "Use the formula from part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Isolate the square root term.",
+                  "working": "$\\sqrt{L} = \\frac{5}{2} = 2.5$",
+                  "reasoning": "Divide by the coefficient."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Square both sides to find $L$.",
+                  "working": "$L = 2.5^2 = 6.25$",
+                  "reasoning": "Inverse operation of square root is squaring."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Direct Proportion Involving Roots"
       }
     ]
   }

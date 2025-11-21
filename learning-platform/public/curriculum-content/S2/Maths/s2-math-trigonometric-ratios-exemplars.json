@@ -1,0 +1,950 @@
+{
+  "trig-node-1": {
+    "nodeId": "trig-node-1",
+    "title": "Identifying Triangle Parts Relative to an Angle",
+    "section": "introduction",
+    "learningFocus": [
+      "Identify hypotenuse (opposite the right angle)",
+      "Identify opposite side (opposite to the given angle)",
+      "Identify adjacent side (next to the given angle, not hypotenuse)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In triangle ABC with right angle at C and considering angle A, identify: (i) the hypotenuse, (ii) the opposite side, (iii) the adjacent side.",
+        "correctAnswer": "(i) AB (hypotenuse), (ii) BC (opposite to angle A), (iii) AC (adjacent to angle A)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Triangle PQR has a right angle at R. With reference to angle P, which side is the opposite side?",
+        "correctAnswer": "QR (the side opposite to angle P)"
+      }
+    ],
+    "variationRules": {
+      "vertexLabels": [
+        {"vertices": ["A", "B", "C"], "rightAngle": "C", "referenceAngle": "A"},
+        {"vertices": ["P", "Q", "R"], "rightAngle": "R", "referenceAngle": "P"},
+        {"vertices": ["X", "Y", "Z"], "rightAngle": "Z", "referenceAngle": "X"},
+        {"vertices": ["L", "M", "N"], "rightAngle": "N", "referenceAngle": "L"}
+      ],
+      "questionFormats": [
+        "With reference to angle {A}, which side is the opposite side?",
+        "Identify the adjacent side to angle {A}",
+        "In triangle {ABC}, name the hypotenuse",
+        "List all three sides: hypotenuse, opposite to angle {A}, adjacent to angle {A}"
+      ]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "adjacent": "variable",
+        "hypotenuse": "variable",
+        "angle": 0,
+        "angleLabel": "variable",
+        "showRightAngle": true,
+        "showAngleMark": true,
+        "caption": "variable"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem asking to identify sides relative to a given angle",
+      "CRITICAL: Include mathTool showing labeled triangle to help understanding",
+      "DO NOT show numeric side lengths initially - use letters (AB, BC, etc.)",
+      "Vary triangle orientation (rotate which vertex has right angle)",
+      "Emphasize that opposite and adjacent are RELATIVE to the angle being considered",
+      "In caption, specify: 'Identify sides with reference to angle {A}'",
+      "Set angle parameter to 0 and angleLabel to the reference angle letter",
+      "Students must understand: hypotenuse is always the same, but opposite and adjacent change depending on which angle is referenced"
+    ]
+  },
+
+  "trig-node-2": {
+    "nodeId": "trig-node-2",
+    "title": "Stating the Three Trigonometric Ratios",
+    "section": "introduction",
+    "learningFocus": [
+      "State sin θ = Opposite / Hypotenuse",
+      "State cos θ = Adjacent / Hypotenuse",
+      "State tan θ = Opposite / Adjacent",
+      "Recall SOH-CAH-TOA mnemonic"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In a right-angled triangle, write down an expression for sin θ in terms of opposite (opp), adjacent (adj), and hypotenuse (hyp).",
+        "correctAnswer": "sin θ = opp/hyp or Opposite/Hypotenuse"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Complete the ratio: cos θ = ?/?",
+        "correctAnswer": "cos θ = Adjacent/Hypotenuse or adj/hyp"
+      },
+      {
+        "id": "ex3",
+        "problemText": "What does the 'TOA' in SOH-CAH-TOA represent?",
+        "correctAnswer": "Tangent = Opposite / Adjacent"
+      }
+    ],
+    "variationRules": {
+      "ratioFormats": [
+        "sin θ = opp/hyp",
+        "cos θ = adj/hyp",
+        "tan θ = opp/adj"
+      ],
+      "questionTypes": [
+        "Write down an expression for {ratio}",
+        "Complete the ratio: {ratio} = ?/?",
+        "State the formula for {ratio}",
+        "What does {ratio} equal in terms of opposite, adjacent, hypotenuse?"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem - ask to state ONE ratio",
+      "CRITICAL: DO NOT include mathTool - this is about stating formulas from memory",
+      "Questions should test knowledge of SOH-CAH-TOA",
+      "Accept multiple formats: 'O/H', 'opp/hyp', 'Opposite/Hypotenuse'",
+      "Ensure students understand what each letter in SOH-CAH-TOA represents",
+      "Do not ask for numeric calculations yet - just ratio definitions"
+    ]
+  },
+
+  "trig-node-3": {
+    "nodeId": "trig-node-3",
+    "title": "Calculating Exact Ratio Values from Diagrams",
+    "section": "introduction",
+    "learningFocus": [
+      "Calculate sin θ, cos θ, or tan θ given labeled triangle",
+      "Express ratios as fractions",
+      "Understand ratios are side lengths divided"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In triangle ABC, angle A = 30°, BC = 5 cm (opposite), AC = 10 cm (hypotenuse). Calculate sin 30° as a fraction.",
+        "correctAnswer": "sin 30° = 5/10 = 1/2 or 0.5"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A right-angled triangle has opposite = 3, adjacent = 4, hypotenuse = 5. Find tan θ.",
+        "correctAnswer": "tan θ = 3/4 or 0.75"
+      }
+    ],
+    "variationRules": {
+      "triangleSides": [
+        {"opposite": 3, "adjacent": 4, "hypotenuse": 5},
+        {"opposite": 5, "adjacent": 12, "hypotenuse": 13},
+        {"opposite": 8, "adjacent": 15, "hypotenuse": 17},
+        {"opposite": 6, "adjacent": 8, "hypotenuse": 10}
+      ],
+      "ratiosToFind": ["sin θ", "cos θ", "tan θ"]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "adjacent": "variable",
+        "hypotenuse": "variable",
+        "angle": 0,
+        "angleLabel": "\\\\theta",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question asking to calculate ONE ratio",
+      "CRITICAL: Include mathTool showing triangle with numeric side lengths",
+      "Use Pythagorean triples for clean fraction answers",
+      "Question gives side lengths and asks for ratio value (not solving for side)",
+      "Students should: 1) Identify which sides are opp, adj, hyp, 2) Apply formula, 3) Calculate fraction",
+      "Accept answers as fractions or decimals",
+      "Set angleLabel to \\\\theta to show the angle symbol"
+    ]
+  },
+
+  "trig-node-4": {
+    "nodeId": "trig-node-4",
+    "title": "Finding Opposite Side Using Sine",
+    "section": "finding-sides-sine",
+    "learningFocus": [
+      "Apply: sin θ = opposite / hypotenuse",
+      "Rearrange to: opposite = hypotenuse × sin θ",
+      "Use calculator in degree mode"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In a right-angled triangle, angle A = 35°, hypotenuse = 10 cm. Find the length of the opposite side to 1 decimal place.",
+        "correctAnswer": "5.7 cm (opposite = 10 × sin 35° = 5.736...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Triangle ABC has a right angle at C. Angle B = 48°, AB = 20 m. Find the length of AC to 2 decimal places.",
+        "correctAnswer": "14.86 m (AC = 20 × sin 48°)"
+      }
+    ],
+    "variationRules": {
+      "angles": [25, 30, 35, 40, 45, 48, 52, 55, 60, 65],
+      "hypotenuseLengths": [10, 12, 15, 18, 20, 25, 30],
+      "units": ["cm", "m", "mm"],
+      "roundingFormats": [
+        "to 1 decimal place",
+        "to 2 decimal places",
+        "to 3 significant figures"
+      ]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "adjacent": "variable",
+        "hypotenuse": "variable",
+        "angle": "variable",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find the opposite side only",
+      "CRITICAL: Include mathTool showing angle and hypotenuse",
+      "DO NOT show opposite side value in mathTool - that's what student must find",
+      "Set mathTool angle parameter to the numeric angle value",
+      "Question provides: angle and hypotenuse",
+      "Student must: 1) Identify using sine, 2) Rearrange to opposite = hyp × sin θ, 3) Calculate",
+      "Always specify rounding precision",
+      "Use realistic angle values (20° to 70°)",
+      "Include units and require units in answer"
+    ]
+  },
+
+  "trig-node-5": {
+    "nodeId": "trig-node-5",
+    "title": "Finding Hypotenuse Using Sine",
+    "section": "finding-sides-sine",
+    "learningFocus": [
+      "Rearrange to: hypotenuse = opposite / sin θ",
+      "Distinguish from finding opposite (divide vs multiply)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has angle 37°, opposite side 5 cm. Find the hypotenuse to 1 decimal place.",
+        "correctAnswer": "8.3 cm (hypotenuse = 5 / sin 37° = 8.31...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "In triangle PQR with right angle at R, angle P = 52°, QR = 12 m. Find the length of PQ to 2 decimal places.",
+        "correctAnswer": "15.24 m (PQ = 12 / sin 52°)"
+      }
+    ],
+    "variationRules": {
+      "angles": [28, 32, 37, 42, 48, 52, 58, 62, 67],
+      "oppositeLengths": [5, 6, 7, 8, 10, 12, 15],
+      "units": ["cm", "m"],
+      "roundingFormats": [
+        "to 1 decimal place",
+        "to 2 decimal places"
+      ]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "adjacent": "variable",
+        "angle": "variable",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find hypotenuse using sine",
+      "CRITICAL: Include mathTool showing angle and opposite side",
+      "DO NOT show hypotenuse in mathTool",
+      "Question provides: angle and opposite side",
+      "Emphasize rearrangement: hypotenuse = opposite / sin θ (DIVIDE, not multiply)",
+      "Common error: students may multiply instead of divide - question should prompt correct thinking",
+      "Specify rounding precision",
+      "Verify answer makes sense: hypotenuse > opposite"
+    ]
+  },
+
+  "trig-node-6": {
+    "nodeId": "trig-node-6",
+    "title": "Finding Adjacent Side Using Cosine",
+    "section": "finding-sides-cosine",
+    "learningFocus": [
+      "Apply: cos θ = adjacent / hypotenuse",
+      "Rearrange to: adjacent = hypotenuse × cos θ",
+      "Distinguish adjacent from opposite"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In a right-angled triangle, angle = 40°, hypotenuse = 15 cm. Find the length of the adjacent side to 1 decimal place.",
+        "correctAnswer": "11.5 cm (adjacent = 15 × cos 40° = 11.49...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Triangle XYZ has a right angle at Z. Angle X = 55°, XZ = 12 m. Find the length of XY (the hypotenuse) - Wait, this is finding hypotenuse. CORRECTION: Angle X = 55°, XY = 18 m. Find XZ to 2 dp.",
+        "correctAnswer": "10.32 m (XZ = 18 × cos 55°)"
+      }
+    ],
+    "variationRules": {
+      "angles": [30, 35, 40, 45, 50, 55, 58, 62],
+      "hypotenuseLengths": [12, 15, 18, 20, 24, 28],
+      "units": ["cm", "m", "mm"],
+      "roundingFormats": [
+        "to 1 decimal place",
+        "to 2 decimal places"
+      ]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "hypotenuse": "variable",
+        "angle": "variable",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find adjacent side using cosine",
+      "CRITICAL: Include mathTool showing angle and hypotenuse",
+      "DO NOT show adjacent side in mathTool",
+      "Question provides: angle and hypotenuse",
+      "Student must: 1) Recognize to use cosine (adjacent and hypotenuse), 2) Rearrange, 3) Calculate",
+      "Emphasize difference from sine: cosine uses ADJACENT not opposite",
+      "Set mathTool to show opposite side (to make clear which is adjacent)",
+      "Specify rounding precision"
+    ]
+  },
+
+  "trig-node-7": {
+    "nodeId": "trig-node-7",
+    "title": "Finding Hypotenuse Using Cosine",
+    "section": "finding-sides-cosine",
+    "learningFocus": [
+      "Rearrange to: hypotenuse = adjacent / cos θ"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has angle 58°, adjacent side 12 m. Find the hypotenuse to 1 decimal place.",
+        "correctAnswer": "22.6 m (hypotenuse = 12 / cos 58° = 22.60...)"
+      }
+    ],
+    "variationRules": {
+      "angles": [32, 38, 44, 50, 58, 64],
+      "adjacentLengths": [8, 10, 12, 15, 18, 20],
+      "units": ["cm", "m"],
+      "roundingFormats": ["to 1 decimal place", "to 2 decimal places"]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "adjacent": "variable",
+        "opposite": "variable",
+        "angle": "variable",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find hypotenuse using cosine",
+      "CRITICAL: Include mathTool showing angle and adjacent side",
+      "DO NOT show hypotenuse",
+      "Question provides: angle and adjacent",
+      "Rearrangement: hypotenuse = adjacent / cos θ (DIVIDE)",
+      "Specify rounding"
+    ]
+  },
+
+  "trig-node-8": {
+    "nodeId": "trig-node-8",
+    "title": "Finding Opposite Side Using Tangent",
+    "section": "finding-sides-tangent",
+    "learningFocus": [
+      "Apply: tan θ = opposite / adjacent",
+      "Rearrange to: opposite = adjacent × tan θ",
+      "Recognize tangent does NOT use hypotenuse"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In a right-angled triangle, angle = 42°, adjacent side = 15 cm. Find the opposite side to 1 decimal place.",
+        "correctAnswer": "13.5 cm (opposite = 15 × tan 42° = 13.50...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Triangle PQR has a right angle at R. Angle P = 48°, PR = 20 m. Find QR to 2 decimal places.",
+        "correctAnswer": "22.20 m (QR = 20 × tan 48°)"
+      }
+    ],
+    "variationRules": {
+      "angles": [35, 38, 42, 46, 48, 52, 56, 60],
+      "adjacentLengths": [10, 12, 15, 18, 20, 24],
+      "units": ["cm", "m", "mm"],
+      "roundingFormats": ["to 1 decimal place", "to 2 decimal places"]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "adjacent": "variable",
+        "angle": "variable",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find opposite using tangent",
+      "CRITICAL: Include mathTool showing angle and adjacent side",
+      "DO NOT show opposite or hypotenuse in mathTool",
+      "Question provides: angle and adjacent",
+      "Emphasize: Use tangent when hypotenuse is NOT involved",
+      "Student must: 1) Recognize tan (no hypotenuse), 2) Rearrange to opp = adj × tan θ, 3) Calculate",
+      "Specify rounding"
+    ]
+  },
+
+  "trig-node-9": {
+    "nodeId": "trig-node-9",
+    "title": "Finding Adjacent Side Using Tangent",
+    "section": "finding-sides-tangent",
+    "learningFocus": [
+      "Rearrange to: adjacent = opposite / tan θ"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has angle 35°, opposite side 12 cm. Find the adjacent side to 1 decimal place.",
+        "correctAnswer": "17.1 cm (adjacent = 12 / tan 35° = 17.14...)"
+      }
+    ],
+    "variationRules": {
+      "angles": [28, 33, 35, 40, 45, 50, 55],
+      "oppositeLengths": [8, 10, 12, 15, 18],
+      "units": ["cm", "m"],
+      "roundingFormats": ["to 1 decimal place", "to 2 decimal places"]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "angle": "variable",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find adjacent using tangent",
+      "CRITICAL: Include mathTool showing angle and opposite",
+      "DO NOT show adjacent or hypotenuse",
+      "Rearrangement: adjacent = opposite / tan θ (DIVIDE)",
+      "Specify rounding"
+    ]
+  },
+
+  "trig-node-10": {
+    "nodeId": "trig-node-10",
+    "title": "Choosing the Correct Ratio",
+    "section": "finding-sides-tangent",
+    "learningFocus": [
+      "Determine which ratio to use based on given and unknown sides",
+      "Decision tree: which sides are involved?"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has angle 45°. You are given the opposite side and need to find the adjacent side. Which trigonometric ratio should you use?",
+        "correctAnswer": "Tangent (tan θ = opposite / adjacent)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "In a right triangle, you know the angle is 50° and the hypotenuse is 20 cm. You need to find the opposite side. State which ratio to use and set up the equation.",
+        "correctAnswer": "Use sine. sin 50° = opposite / 20, so opposite = 20 × sin 50°"
+      }
+    ],
+    "variationRules": {
+      "scenarios": [
+        {"given": "opposite and angle", "find": "adjacent", "ratio": "tangent"},
+        {"given": "adjacent and angle", "find": "hypotenuse", "ratio": "cosine"},
+        {"given": "hypotenuse and angle", "find": "opposite", "ratio": "sine"},
+        {"given": "opposite and angle", "find": "hypotenuse", "ratio": "sine"},
+        {"given": "adjacent and angle", "find": "opposite", "ratio": "tangent"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question asking to identify the correct ratio",
+      "CRITICAL: DO NOT include mathTool - this is about decision-making, not calculation",
+      "Question describes what is given and what needs to be found",
+      "Student must: 1) Identify which sides are involved, 2) Choose correct ratio",
+      "Accept: naming the ratio (sine/cosine/tangent) AND/OR setting up equation",
+      "This tests understanding of WHEN to use each ratio, not calculation skills",
+      "Mix different combinations of given/unknown"
+    ]
+  },
+
+  "trig-node-11": {
+    "nodeId": "trig-node-11",
+    "title": "Finding Angles Using Inverse Sine",
+    "section": "finding-angles",
+    "learningFocus": [
+      "Use sin⁻¹ when opposite and hypotenuse are given",
+      "Calculate ratio first, then apply inverse function",
+      "Understand inverse functions 'undo' trig functions"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has opposite side 6 cm and hypotenuse 10 cm. Find the angle to the nearest degree.",
+        "correctAnswer": "37° (θ = sin⁻¹(6/10) = sin⁻¹(0.6) = 36.87...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "In triangle ABC with right angle at C, BC = 8 m, AB = 15 m. Find angle A to 1 decimal place.",
+        "correctAnswer": "32.2° (angle A = sin⁻¹(8/15) = 32.23...)"
+      }
+    ],
+    "variationRules": {
+      "sidePairs": [
+        {"opposite": 3, "hypotenuse": 5},
+        {"opposite": 5, "hypotenuse": 13},
+        {"opposite": 6, "hypotenuse": 10},
+        {"opposite": 7, "hypotenuse": 12},
+        {"opposite": 8, "hypotenuse": 15},
+        {"opposite": 9, "hypotenuse": 14}
+      ],
+      "units": ["cm", "m"],
+      "roundingFormats": [
+        "to the nearest degree",
+        "to 1 decimal place"
+      ]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "hypotenuse": "variable",
+        "angle": 0,
+        "angleLabel": "\\\\theta",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find ONE angle using sin⁻¹",
+      "CRITICAL: Include mathTool showing opposite and hypotenuse with numeric values",
+      "DO NOT show angle value - set angle to 0 and angleLabel to \\\\theta",
+      "Question provides: opposite and hypotenuse side lengths",
+      "Student must: 1) Calculate ratio (opp/hyp), 2) Use sin⁻¹ on calculator, 3) Round appropriately",
+      "Emphasize process: ratio first, THEN inverse function",
+      "Specify rounding precision",
+      "Verify answer is between 0° and 90° for right triangle"
+    ]
+  },
+
+  "trig-node-12": {
+    "nodeId": "trig-node-12",
+    "title": "Finding Angles Using Inverse Cosine",
+    "section": "finding-angles",
+    "learningFocus": [
+      "Use cos⁻¹ when adjacent and hypotenuse are given"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has adjacent side 8 m and hypotenuse 15 m. Find the angle to 1 decimal place.",
+        "correctAnswer": "57.8° (θ = cos⁻¹(8/15) = 57.76...)"
+      }
+    ],
+    "variationRules": {
+      "sidePairs": [
+        {"adjacent": 5, "hypotenuse": 13},
+        {"adjacent": 8, "hypotenuse": 15},
+        {"adjacent": 9, "hypotenuse": 12},
+        {"adjacent": 7, "hypotenuse": 11}
+      ],
+      "units": ["cm", "m"],
+      "roundingFormats": ["to the nearest degree", "to 1 decimal place"]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "adjacent": "variable",
+        "hypotenuse": "variable",
+        "angle": 0,
+        "angleLabel": "\\\\theta",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find angle using cos⁻¹",
+      "CRITICAL: Include mathTool showing adjacent and hypotenuse",
+      "Question provides: adjacent and hypotenuse",
+      "Process: Calculate ratio (adj/hyp), then θ = cos⁻¹(ratio)",
+      "Specify rounding"
+    ]
+  },
+
+  "trig-node-13": {
+    "nodeId": "trig-node-13",
+    "title": "Finding Angles Using Inverse Tangent",
+    "section": "finding-angles",
+    "learningFocus": [
+      "Use tan⁻¹ when opposite and adjacent are given"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A right-angled triangle has opposite side 12 cm and adjacent side 9 cm. Find the angle to the nearest degree.",
+        "correctAnswer": "53° (θ = tan⁻¹(12/9) = 53.13...)"
+      }
+    ],
+    "variationRules": {
+      "sidePairs": [
+        {"opposite": 3, "adjacent": 4},
+        {"opposite": 5, "adjacent": 12},
+        {"opposite": 8, "adjacent": 6},
+        {"opposite": 12, "adjacent": 9},
+        {"opposite": 15, "adjacent": 10}
+      ],
+      "units": ["cm", "m"],
+      "roundingFormats": ["to the nearest degree", "to 1 decimal place"]
+    },
+    "mathTool": {
+      "toolName": "rightTriangle",
+      "parameters": {
+        "opposite": "variable",
+        "adjacent": "variable",
+        "angle": 0,
+        "angleLabel": "\\\\theta",
+        "showRightAngle": true,
+        "showAngleMark": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find angle using tan⁻¹",
+      "CRITICAL: Include mathTool showing opposite and adjacent",
+      "Question provides: opposite and adjacent (no hypotenuse)",
+      "Process: Calculate ratio (opp/adj), then θ = tan⁻¹(ratio)",
+      "Emphasize: Use tan⁻¹ when hypotenuse is NOT involved",
+      "Specify rounding"
+    ]
+  },
+
+  "trig-node-14": {
+    "nodeId": "trig-node-14",
+    "title": "Angle of Elevation - Finding Height",
+    "section": "angle-of-elevation-depression",
+    "learningFocus": [
+      "Define angle of elevation (measured UP from horizontal)",
+      "Set up right triangle from elevation context",
+      "Use tan to find height (typically)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A person stands 50 m from the base of a building. The angle of elevation to the top is 35°. Find the height of the building to 1 decimal place.",
+        "correctAnswer": "35.0 m (height = 50 × tan 35° = 35.01...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "From a point on level ground 38 m from the foot of a building, the angle of elevation to the top is 33°. Calculate the height of the building to 3 significant figures.",
+        "correctAnswer": "24.7 m (height = 38 × tan 33°)"
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        {"distance": "50 m", "angle": 35, "height": "35.0 m"},
+        {"distance": "38 m", "angle": 33, "height": "24.7 m"},
+        {"distance": "60 m", "angle": 40, "height": "50.3 m"},
+        {"distance": "45 m", "angle": 42, "height": "40.5 m"},
+        {"distance": "30 m", "angle": 48, "height": "33.3 m"}
+      ],
+      "objects": ["building", "tower", "tree", "flagpole", "cliff"]
+    },
+    "mathTool": {
+      "toolName": "elevationDepression",
+      "parameters": {
+        "type": "elevation",
+        "angle": "variable",
+        "distance": "variable",
+        "showTriangle": true,
+        "showRightAngle": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find height using angle of elevation",
+      "CRITICAL: Include mathTool with type='elevation' showing the setup",
+      "DO NOT include height parameter in mathTool - that's what student must find",
+      "Question provides: horizontal distance and angle of elevation",
+      "Student must: 1) Recognize right triangle (horizontal, vertical, line of sight), 2) Use tan (height/distance), 3) Rearrange and calculate",
+      "Common formula: tan(angle) = height / distance, so height = distance × tan(angle)",
+      "Use realistic contexts: person looking up at building, tree, tower",
+      "Specify rounding precision",
+      "Include units in answer"
+    ]
+  },
+
+  "trig-node-15": {
+    "nodeId": "trig-node-15",
+    "title": "Angle of Elevation - Finding Distance",
+    "section": "angle-of-elevation-depression",
+    "learningFocus": [
+      "Use angle of elevation to find horizontal distance",
+      "Rearrange: distance = height / tan(angle)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A tower is 40 m tall. From a point on level ground, the angle of elevation to the top is 37°. Find the distance from the point to the base of the tower to 1 decimal place.",
+        "correctAnswer": "53.1 m (distance = 40 / tan 37° = 53.06...)"
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        {"height": "40 m", "angle": 37, "distance": "53.1 m"},
+        {"height": "30 m", "angle": 42, "distance": "33.3 m"},
+        {"height": "25 m", "angle": 35, "distance": "35.7 m"},
+        {"height": "50 m", "angle": 45, "distance": "50.0 m"}
+      ]
+    },
+    "mathTool": {
+      "toolName": "elevationDepression",
+      "parameters": {
+        "type": "elevation",
+        "angle": "variable",
+        "height": "variable",
+        "showTriangle": true,
+        "showRightAngle": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find distance using elevation",
+      "CRITICAL: Include mathTool showing angle and height",
+      "DO NOT include distance parameter",
+      "Question provides: height and angle of elevation",
+      "Rearrangement: distance = height / tan(angle)",
+      "Specify rounding"
+    ]
+  },
+
+  "trig-node-16": {
+    "nodeId": "trig-node-16",
+    "title": "Angle of Depression - Understanding",
+    "section": "angle-of-elevation-depression",
+    "learningFocus": [
+      "Define angle of depression (measured DOWN from horizontal)",
+      "Recognize alternate angles (depression from A to B = elevation from B to A)",
+      "Set up triangle correctly"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "From the top of an 80 m cliff, the angle of depression to a boat is 28°. Find the horizontal distance from the base of the cliff to the boat to 1 decimal place.",
+        "correctAnswer": "150.5 m (distance = 80 / tan 28° = 150.48...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "An observer on a 45 m lighthouse sees a ship at an angle of depression of 15°. Calculate the distance from the lighthouse base to the ship to the nearest metre.",
+        "correctAnswer": "168 m (distance = 45 / tan 15°)"
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        {"height": "80 m", "angle": 28, "distance": "150.5 m", "observer": "cliff", "target": "boat"},
+        {"height": "45 m", "angle": 15, "distance": "168 m", "observer": "lighthouse", "target": "ship"},
+        {"height": "60 m", "angle": 20, "distance": "165 m", "observer": "tower", "target": "car"},
+        {"height": "100 m", "angle": 32, "distance": "160 m", "observer": "building", "target": "person"}
+      ]
+    },
+    "mathTool": {
+      "toolName": "elevationDepression",
+      "parameters": {
+        "type": "depression",
+        "angle": "variable",
+        "height": "variable",
+        "observerLabel": "variable",
+        "targetLabel": "variable",
+        "showTriangle": true,
+        "showRightAngle": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question - find distance using angle of depression",
+      "CRITICAL: Include mathTool with type='depression'",
+      "DO NOT include distance parameter in mathTool",
+      "Question provides: height of observer and angle of depression",
+      "Student must: 1) Understand depression angle, 2) Recognize right triangle, 3) Use tan(angle) = height/distance",
+      "Emphasize: Angle of depression from observer = angle of elevation from target (alternate angles)",
+      "Use contexts: cliff/boat, lighthouse/ship, tower/car, building/person",
+      "Set observerLabel and targetLabel appropriately",
+      "Specify rounding"
+    ]
+  },
+
+  "trig-node-17": {
+    "nodeId": "trig-node-17",
+    "title": "Ladder Problems - Real-World Applications",
+    "section": "multi-step-real-world",
+    "learningFocus": [
+      "Identify right triangle in ladder context",
+      "Determine what is given and unknown",
+      "Choose appropriate ratio"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A 12 m ladder leans against a wall, making an angle of 68° with the ground. How high up the wall does the ladder reach? Give your answer to 1 decimal place.",
+        "correctAnswer": "11.1 m (height = 12 × sin 68° = 11.13...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A ladder is placed 3 m from the base of a wall and reaches 8 m up the wall. Find the angle the ladder makes with the ground to the nearest degree.",
+        "correctAnswer": "69° (θ = tan⁻¹(8/3) = 69.44...)"
+      }
+    ],
+    "variationRules": {
+      "scenarios": [
+        {"type": "find height", "given": "ladder length and angle", "ladder": "12 m", "angle": 68},
+        {"type": "find angle", "given": "base distance and height", "base": "3 m", "height": "8 m"},
+        {"type": "find ladder length", "given": "height and angle", "height": "10 m", "angle": 72},
+        {"type": "find base distance", "given": "ladder and height", "ladder": "15 m", "height": "12 m"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: DO NOT include mathTool - let student visualize ladder triangle",
+      "Use realistic ladder scenarios",
+      "Vary what is given and what needs to be found",
+      "Question should describe practical situation clearly",
+      "Student must: 1) Draw/visualize triangle, 2) Identify given values, 3) Choose ratio, 4) Calculate",
+      "Specify rounding precision",
+      "Include units in answer"
+    ]
+  },
+
+  "trig-node-18": {
+    "nodeId": "trig-node-18",
+    "title": "Kite and Flagpole Problems",
+    "section": "multi-step-real-world",
+    "learningFocus": [
+      "Apply trigonometry to string/height problems",
+      "Identify when to use sine vs tangent"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A kite string is 85 m long. The angle of elevation from the person holding the string to the kite is 42°. Find the height of the kite above the ground to 1 decimal place.",
+        "correctAnswer": "56.9 m (height = 85 × sin 42° = 56.87...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A flagpole casts a shadow 24 m long when the sun's angle of elevation is 58°. Find the height of the flagpole to 1 decimal place.",
+        "correctAnswer": "38.4 m (height = 24 × tan 58° = 38.40...)"
+      }
+    ],
+    "variationRules": {
+      "kiteProblems": [
+        {"string": "85 m", "angle": 42, "height": "56.9 m"},
+        {"string": "60 m", "angle": 35, "height": "34.4 m"},
+        {"string": "75 m", "angle": 48, "height": "55.7 m"}
+      ],
+      "shadowProblems": [
+        {"shadow": "24 m", "angle": 58, "height": "38.4 m"},
+        {"shadow": "15 m", "angle": 52, "height": "19.2 m"},
+        {"shadow": "30 m", "angle": 45, "height": "30.0 m"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: DO NOT include mathTool",
+      "Kite problems: Use sine (string is hypotenuse, find opposite/height)",
+      "Shadow problems: Use tangent (shadow is adjacent, find opposite/height)",
+      "Question describes realistic scenario",
+      "Student must determine which ratio based on what represents what in triangle",
+      "Specify rounding"
+    ]
+  },
+
+  "trig-node-19": {
+    "nodeId": "trig-node-19",
+    "title": "Ramp and Slope Problems",
+    "section": "multi-step-real-world",
+    "learningFocus": [
+      "Find angle of incline given rise and run",
+      "Apply trigonometry to slope contexts"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A ramp rises 2.5 m over a horizontal distance of 18 m. Find the angle of incline to the nearest degree.",
+        "correctAnswer": "8° (angle = tan⁻¹(2.5/18) = 7.91...)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A wheelchair ramp must have a maximum angle of 5°. If it rises 0.8 m, what is the minimum horizontal length required? Give your answer to 1 decimal place.",
+        "correctAnswer": "9.1 m (distance = 0.8 / tan 5° = 9.14...)"
+      }
+    ],
+    "variationRules": {
+      "rampProblems": [
+        {"rise": "2.5 m", "run": "18 m", "type": "find angle"},
+        {"rise": "1.5 m", "run": "12 m", "type": "find angle"},
+        {"rise": "0.8 m", "maxAngle": 5, "type": "find minimum distance"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: DO NOT include mathTool",
+      "Use realistic ramp/slope scenarios",
+      "Typically use tangent: tan(angle) = rise / run",
+      "Can ask for angle given rise and run, OR ask for distance given rise and angle",
+      "Include accessibility context (wheelchair ramps)",
+      "Specify rounding"
+    ]
+  },
+
+  "trig-node-20": {
+    "nodeId": "trig-node-20",
+    "title": "Mixed Real-World Applications",
+    "section": "multi-step-real-world",
+    "learningFocus": [
+      "Choose appropriate trigonometric approach independently",
+      "Solve varied contextual problems",
+      "Interpret results with units"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A tree casts a 24 m shadow when the sun's angle of elevation is 58°. Find the height of the tree to 1 decimal place.",
+        "correctAnswer": "38.4 m (height = 24 × tan 58°)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "From an observer on a 45 m high building, a car on the road has an angle of depression of 32°. How far is the car from the base of the building to the nearest metre?",
+        "correctAnswer": "72 m (distance = 45 / tan 32° = 72.0...)"
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        "Tree and shadow (find height using tangent)",
+        "Building and car with depression angle (find distance)",
+        "Plane altitude and angle to airport (find horizontal distance)",
+        "Mountain climber on cliff looking down at camp (find distance)",
+        "Surveyor measuring across river (find width)"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question per problem",
+      "CRITICAL: DO NOT include mathTool - student must set up problem independently",
+      "Use diverse, realistic contexts",
+      "Mix finding sides (using sin/cos/tan) and finding angles (using inverses)",
+      "Student must: 1) Draw diagram, 2) Label knowns and unknowns, 3) Choose ratio, 4) Solve, 5) Interpret with units",
+      "Questions should require minimal scaffolding - students work independently",
+      "Specify rounding and always require units",
+      "Contexts should be engaging and practical"
+    ]
+  }
+}

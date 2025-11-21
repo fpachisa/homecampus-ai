@@ -116,6 +116,54 @@
         "title": "Solving Sine Equation"
       },
       {
+        "questionNumber": 11,
+        "questionId": "G4-greenridge-2024-p1-q11",
+        "topicID": "G4",
+        "stem": "Triangle ABC is such that $AB=16$ cm, $BC=63$ cm, $AC=65$ cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Do points A, B and C lie on the circumference of a circle? Explain with working.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Yes, points A, B, and C lie on the circumference of a circle with AC as the diameter.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of the squares of the two shorter sides.",
+                  "working": "$AB^2 + BC^2 = 16^2 + 63^2 = 256 + 3969 = 4225$",
+                  "reasoning": "To test for a right-angled triangle, we first sum the squares of the two smaller lengths."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the square of the longest side.",
+                  "working": "$AC^2 = 65^2 = 4225$",
+                  "reasoning": "We calculate the square of the hypotenuse candidate to compare with the result from step 1."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the Converse of Pythagoras' Theorem.",
+                  "working": "Since $AB^2 + BC^2 = AC^2$, $\\triangle ABC$ is a right-angled triangle where $\\angle ABC = 90^\\circ$.",
+                  "reasoning": "Equality confirms the triangle is right-angled at B."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Relate to circle properties.",
+                  "working": "Using the property 'Angle in a semicircle is $90^\\circ$', since $\\angle ABC = 90^\\circ$, points A, B, and C lie on a circle where AC is the diameter.",
+                  "reasoning": "A right-angled triangle can always be inscribed in a circle with the hypotenuse as the diameter."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Triangle Circle Property"
+      },
+      {
         "questionNumber": 16,
         "questionId": "G4-anderson-2024-p1-q16",
         "topicID": "G4",
@@ -283,6 +331,71 @@
         "title": "Solving Cosine Equation"
       },
       {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2111071107-p1-q101",
+        "topicID": "G4",
+        "stem": "A triangle $PQR$ has side lengths $PQ = 20$ cm, $QR = 21$ cm and $PR = 29$ cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that triangle $PQR$ is a right-angled triangle.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Since $PQ^2 + QR^2 = PR^2$, triangle $PQR$ is right-angled.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of squares of the shorter sides.",
+                  "working": "$PQ^2 + QR^2 = 20^2 + 21^2 = 400 + 441 = 841$",
+                  "reasoning": "Identify the two shorter sides to test the Pythagorean relationship."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the square of the longest side.",
+                  "working": "$PR^2 = 29^2 = 841$",
+                  "reasoning": "Find the square of the potential hypotenuse."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Conclude using the Converse of Pythagoras' Theorem.",
+                  "working": "Since $PQ^2 + QR^2 = PR^2$, by the Converse of Pythagoras' Theorem, $\\triangle PQR$ is a right-angled triangle.",
+                  "reasoning": "State the theorem used to draw the conclusion."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Hence, calculate the area of triangle $PQR$.",
+            "marks": 1,
+            "answerType": "numeric",
+            "solution": {
+              "finalAnswer": "210 cm²",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the base and height.",
+                  "working": "Since $\\angle PQR = 90^\\circ$, Base = $QR = 21$ cm, Height = $PQ = 20$ cm.",
+                  "reasoning": "In a right-angled triangle, the two legs perpendicular to each other serve as base and height."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the area.",
+                  "working": "Area $= \\frac{1}{2} \\times 21 \\times 20 = 210$ cm$^2$",
+                  "reasoning": "Apply the standard area of a triangle formula."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Pythagoras and Area"
+      },
+      {
         "questionNumber": 102,
         "questionId": "G4-gemini-1911-p1-102",
         "topicID": "G4",
@@ -394,6 +507,48 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Solving Tangent Equation"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G4-gemini-2111071107-p1-q102",
+        "topicID": "G4",
+        "stem": "Three towns $X$, $Y$ and $Z$ are located such that the distance $XY = 8$ km, $YZ = 15$ km and $XZ = 18$ km.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Determine, with working, whether angle $XYZ$ is a right angle.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "No, angle XYZ is not a right angle.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of squares of the two sides adjacent to angle $XYZ$.",
+                  "working": "$XY^2 + YZ^2 = 8^2 + 15^2 = 64 + 225 = 289$",
+                  "reasoning": "If angle XYZ were $90^\\circ$, $XZ$ would be the hypotenuse."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the square of the opposite side $XZ$.",
+                  "working": "$XZ^2 = 18^2 = 324$",
+                  "reasoning": "Calculate the square of the longest side for comparison."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare and conclude.",
+                  "working": "Since $289 \\neq 324$ (i.e., $XY^2 + YZ^2 \\neq XZ^2$), $\\triangle XYZ$ is not a right-angled triangle. Therefore, $\\angle XYZ$ is not a right angle.",
+                  "reasoning": "The Pythagorean relationship does not hold, so the angle is not $90^\\circ$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Testing Right Angles"
       }
     ],
     "Paper 2": [
@@ -585,6 +740,83 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Negative Sine Equation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2111071107-p2-q101",
+        "topicID": "G4",
+        "stem": "A vertical flagpole $TF$ of height 5.6 m stands on horizontal ground. A straight wire connects the top of the pole $T$ to a point $P$ on the ground. The distance $FP$ is 3.3 m.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the length of the wire $TP$.",
+            "marks": 2,
+            "answerType": "numeric",
+            "solution": {
+              "finalAnswer": "6.5 m",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the right-angled triangle.",
+                  "working": "Triangle $TFP$ is right-angled at $F$ (vertical pole, horizontal ground).",
+                  "reasoning": "Establish the geometric context to use Pythagoras' Theorem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply Pythagoras' Theorem.",
+                  "working": "$TP^2 = TF^2 + FP^2$\n$TP^2 = 5.6^2 + 3.3^2$\n$TP^2 = 31.36 + 10.89 = 42.25$",
+                  "reasoning": "The hypotenuse squared equals sum of squares of the other two sides."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for length.",
+                  "working": "$TP = \\sqrt{42.25} = 6.5$ m",
+                  "reasoning": "Take the square root to find the length."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The wire is replaced by a longer wire of length 7.5 m attached to the same top $T$ and a new point $Q$ on the ground. Calculate the distance of $Q$ from the base of the pole $F$.",
+            "marks": 2,
+            "answerType": "numeric",
+            "solution": {
+              "finalAnswer": "4.99 m (to 3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up Pythagoras' Theorem for the new triangle $TFQ$.",
+                  "working": "$TQ^2 = TF^2 + FQ^2$\n$7.5^2 = 5.6^2 + FQ^2$",
+                  "reasoning": "We know the hypotenuse ($TQ$) and the height ($TF$), we need to find the base ($FQ$)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rearrange to solve for $FQ$.",
+                  "working": "$FQ^2 = 7.5^2 - 5.6^2$\n$FQ^2 = 56.25 - 31.36 = 24.89$",
+                  "reasoning": "Isolate the unknown variable."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate final distance.",
+                  "working": "$FQ = \\sqrt{24.89} \\approx 4.9889...$",
+                  "reasoning": "Calculate square root."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "$FQ \\approx 4.99$ m",
+                  "reasoning": "Standard O-level rounding requirement."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Pythagoras in Context"
       },
       {
         "questionNumber": 102,

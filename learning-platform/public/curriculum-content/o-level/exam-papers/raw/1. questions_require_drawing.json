@@ -1,7 +1,7 @@
 {
     "note": "Questions requiring drawing input are stored here separately. These questions will be re-enabled when the application supports drawing capabilities.",
     "source": "anderson-2024-paper-1-2",
-    "totalFilteredQuestions": 10,
+    "totalFilteredQuestions": 13,
     "questions": [
         {
             "questionNumber": 9,
@@ -286,6 +286,150 @@
             "totalMarks": 9,
             "paper": "Paper 2",
             "title": "Cubic Graph and Equation"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "N6-greenridge-2024-p1-q18",
+            "topicID": "N6",
+            "stem": null,
+            "hasDiagram": true,
+            "diagramDescription": "Blank Cartesian axes for sketching.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$x^{2}-4x+5=(x-a)^{2}+b$. Find the value of a and of b.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The curve $y=x^{2}-4x+5$ is drawn. Write down the equation of the line of symmetry of the curve.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Sketch the curve $y=x^{2}-4x+5$ on the axes below. Indicate clearly the coordinates of the points where the graph crosses the axes and the minimum point on the curve.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Quadratic Graph Sketching"
+        },
+        {
+            "questionNumber": 25,
+            "questionId": "G1-greenridge-2024-p1-q25",
+            "topicID": "G1",
+            "stem": "The diagram shows the map of a park in the shape of a quadrilateral ABCD. The scale of the map is 1 cm to 10 m.",
+            "hasDiagram": true,
+            "diagramDescription": "Quadrilateral ABCD.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Construct the bisector of angle ABC.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Construct the perpendicular bisector of AB.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Shade the region inside ABCD that is closer to AB than to BC and closer to B than to A.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "A tree T is located inside the park ABCD such that it is 30 m from D and equidistant from A and B. Mark and label the exact position of T.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Locus Construction"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N6-greenridge-2024-p2-q7",
+            "topicID": "N6",
+            "stem": "(a) Complete the table of values for $y=2x+\\frac{9}{x}-11$. Values are given to 1 decimal place where appropriate.",
+            "questionTable": {
+                "type": "data",
+                "headers": [
+                    "x",
+                    "0.5",
+                    "1",
+                    "1.5",
+                    "2",
+                    "2.5",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                "rows": [
+                    [
+                        "y",
+                        8,
+                        0,
+                        -2,
+                        -2.5,
+                        -2.4,
+                        -2,
+                        -0.8,
+                        ""
+                    ]
+                ]
+            },
+            "hasDiagram": true,
+            "diagramDescription": "Grid for plotting graph.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of values.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid, draw the graph of $y=2x+\\frac{9}{x}-11$ for $0\\le x\\le5$.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "By drawing a tangent, find the gradient of the curve at (1.5,-2).",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d_i",
+                    "questionText": "On the same axes, draw the graph of the straight line $2y=12-3x$.",
+                    "marks": 1,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "d_ii",
+                    "questionText": "Write down the x-coordinates of the points where the graphs meet.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d_iii",
+                    "questionText": "These values of x are the solutions of the equation $7x^{2}+Ax+B=0$. Find the value of A and value of B.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Curve Sketching and Solving"
         }
     ]
 }

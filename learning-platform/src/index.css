@@ -212,10 +212,11 @@
     vertical-align: baseline;    /* Align with text baseline for proper positioning */
   }
 
-  /* Try to keep math with preceding text */
+  /* Try to keep math with preceding text - DISABLED: Causes unwanted line breaks
   span:has(> .math-renderer) {
-    display: inline-block;             /* Ensure parent span stays inline too */
+    display: inline-block;             
   }
+  */
 
   /* ============================================================================
      SCRATCH PAD - RESPONSIVE GRID LAYOUT

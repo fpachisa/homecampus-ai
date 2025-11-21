@@ -30,7 +30,19 @@ export async function loadGlobalStreak(uid: string): Promise<DailyStreak> {
         // This handles the case where old data exists without streakDates array
         const needsReconstruction = streakDates.length === 0 && gamification.lastActivityDate;
         if (needsReconstruction) {
-          streakDates = [gamification.lastActivityDate];
+          // Reconstruct all dates for the current streak
+          const currentStreakCount = gamification.currentStreak || 0;
+          const baseDate = new Date(gamification.lastActivityDate);
+
+          streakDates = [];
+          for (let i = currentStreakCount - 1; i >= 0; i--) {
+            const date = new Date(baseDate);
+            date.setDate(date.getDate() - i);
+            const dateStr = date.toISOString().split('T')[0]; // YYYY-MM-DD format
+            streakDates.push(dateStr);
+          }
+
+          console.log(`📅 Reconstructed streak: ${currentStreakCount} consecutive dates from ${gamification.lastActivityDate}`);
         }
 
         const streak = {

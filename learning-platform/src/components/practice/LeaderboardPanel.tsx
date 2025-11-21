@@ -7,14 +7,21 @@
 import React from 'react';
 import type { PathProgress, PathNode, DailyStreak } from '../../types/practice';
 import { useTheme } from '../../hooks/useTheme';
+import { getLocalDateString } from '../../utils/dateUtils';
 
 interface LeaderboardPanelProps {
   progress: PathProgress;
   globalStreak: DailyStreak;
   allNodes: PathNode[];
+  globalDailyProblems?: number;
 }
 
-export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({ progress, globalStreak, allNodes }) => {
+export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({
+  progress,
+  globalStreak,
+  allNodes,
+  globalDailyProblems
+}) => {
   const { theme } = useTheme();
 
   // Layer color scheme (matching CircularPathNode)
@@ -25,11 +32,15 @@ export const LeaderboardPanel: React.FC<LeaderboardPanelProps> = ({ progress, gl
     examPractice: '#EB459E',
   };
 
-  // Daily goal (5 problems) - safely handle undefined sessionHistory
+  // Daily goal (5 problems) - use global stats if provided, with date validation fallback
   const dailyGoalTarget = 5;
-  const todayProblems = progress.sessionHistory && progress.sessionHistory.length > 0
-    ? progress.sessionHistory[progress.sessionHistory.length - 1].problemsSolved
-    : 0;
+  const todayProblems = globalDailyProblems ?? (() => {
+    // Fallback: Check if last session is from today
+    if (!progress.sessionHistory || progress.sessionHistory.length === 0) return 0;
+    const lastSession = progress.sessionHistory[progress.sessionHistory.length - 1];
+    const today = getLocalDateString(new Date());
+    return lastSession.date === today ? lastSession.problemsSolved : 0;
+  })();
   const dailyGoalProgress = Math.min((todayProblems / dailyGoalTarget) * 100, 100);
 
   // Find suggested next node (incomplete nodes with prerequisites met)

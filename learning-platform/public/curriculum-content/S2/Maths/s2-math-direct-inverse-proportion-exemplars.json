@@ -1,0 +1,999 @@
+{
+  "proportion-node-1": {
+    "nodeId": "proportion-node-1",
+    "title": "Recognizing Direct Proportion",
+    "section": "recognizing-direct-proportion",
+
+    "learningFocus": [
+      "Understand that y/x remains constant in direct proportion",
+      "Recognize doubling/tripling patterns",
+      "Verify proportionality from tables"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The table shows library fines for overdue books:\n\nDays (x): 1, 2, 3, 4, 5\nFine (y cents): 15, 30, 45, 60, 75\n\nIs the fine directly proportional to the number of days? Verify by calculating y/x.",
+        "correctAnswer": "Yes. y/x = 15/1 = 30/2 = 45/3 = 15 (constant), so y is directly proportional to x"
+      },
+      {
+        "id": "ex2",
+        "problemText": "If 6 kg of biscuits cost \\$27, and the cost is directly proportional to mass, what happens to the cost when the mass is doubled to 12 kg?",
+        "correctAnswer": "The cost doubles to \\$54"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "library fines per day",
+        "cost of groceries per kg",
+        "distance traveled at constant speed",
+        "total cost per item",
+        "water flow per minute",
+        "calories consumed per hour"
+      ],
+      "verificationMethods": [
+        "Calculate y/x for multiple pairs and check if constant",
+        "Check if y₁/x₁ = y₂/x₂",
+        "Verify doubling x doubles y",
+        "Check if relationship passes through (0,0)"
+      ],
+      "constantValues": [5, 10, 15, 20, 25, 30, 50, 100]
+    },
+
+    "mathTool": {
+      "toolName": "scatterPlot",
+      "parameters": {
+        "points": [
+          {"x": 1, "y": 15},
+          {"x": 2, "y": 30},
+          {"x": 3, "y": 45}
+        ],
+        "xLabel": "variable",
+        "yLabel": "variable",
+        "title": "Direct Proportion Pattern"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE scatterPlot to show points lying on straight line through origin",
+      "Use simple integer coordinates that clearly show the proportional pattern",
+
+      "Create tables with 3-5 data pairs that have constant ratio",
+      "Contexts should be relatable: costs, distances, time, quantities",
+      "Ensure y/x gives the same value for all pairs in the table",
+
+      "Include recognition questions: 'Is y directly proportional to x?'",
+      "Include verification questions: 'Show that y/x is constant'",
+      "Include pattern questions: 'When x doubles, what happens to y?'",
+
+      "Common student errors to watch for:",
+      "- Thinking any increasing relationship is proportional",
+      "- Not checking if line passes through origin",
+      "- Confusing y = kx with y = kx + c"
+    ]
+  },
+
+  "proportion-node-2": {
+    "nodeId": "proportion-node-2",
+    "title": "Solving Problems Using Unitary Method",
+    "section": "unitary-method",
+
+    "learningFocus": [
+      "Find value of 1 unit first",
+      "Scale up to required amount",
+      "Apply to cost, weight, time problems"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "If 6 kg of biscuits cost \\$27, calculate the cost of 13 kg of biscuits using the unitary method.",
+        "correctAnswer": "1 kg costs \\$27 ÷ 6 = \\$4.50, so 13 kg costs \\$4.50 × 13 = \\$58.50"
+      },
+      {
+        "id": "ex2",
+        "problemText": "If 50 g of sweets cost \\$2.10, find the cost of 380 g of sweets (to nearest 5 cents).",
+        "correctAnswer": "1 g costs \\$2.10 ÷ 50 = \\$0.042, so 380 g costs \\$0.042 × 380 = \\$15.96 ≈ \\$15.95"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "cost per kg/g of food items",
+        "cost per meter of fabric/rope",
+        "distance per hour of travel",
+        "work done per day",
+        "water used per minute",
+        "paint needed per square meter"
+      ],
+      "unitAmounts": [1, 50, 100, 250, 500, 1000],
+      "initialQuantities": [6, 8, 12, 15, 20, 25, 50],
+      "targetQuantities": [10, 13, 24, 35, 75, 100, 200]
+    },
+
+    "mathTool": null,
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "DO NOT include mathTool - unitary method is a calculation process",
+
+      "Structure: State that n units = value, ask for m units",
+      "Solution must show TWO clear steps:",
+      "  Step 1: Find 1 unit = value/n",
+      "  Step 2: Find m units = (value/n) × m",
+
+      "Use realistic prices and quantities",
+      "Include some fractional results (e.g., cost ends in .50 or .25)",
+      "Specify rounding where needed (nearest cent, nearest 5 cents)",
+
+      "Variation: sometimes give fractional initial amounts (e.g., 3/4 kg)",
+
+      "Common contexts:",
+      "- Cost problems (most common)",
+      "- Distance/speed problems",
+      "- Work-rate problems"
+    ]
+  },
+
+  "proportion-node-3": {
+    "nodeId": "proportion-node-3",
+    "title": "Writing and Using y = kx",
+    "section": "equation-y-equals-kx",
+
+    "learningFocus": [
+      "Understand y = kx where k is constant of proportionality",
+      "Calculate k = y/x from given values",
+      "Use equation to find unknown values"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "y is directly proportional to x. When x = 4, y = 12. Find (i) an equation connecting x and y, (ii) the value of y when x = 8.",
+        "correctAnswer": "(i) k = 12/4 = 3, so y = 3x  (ii) y = 3 × 8 = 24"
+      },
+      {
+        "id": "ex2",
+        "problemText": "If y is directly proportional to x and y = 10 when x = 2, find the value of y when x = 7.",
+        "correctAnswer": "k = 10/2 = 5, y = 5x, when x = 7: y = 5 × 7 = 35"
+      }
+    ],
+
+    "variationRules": {
+      "kValues": [2, 3, 4, 5, 6, 10, 15, 20, 0.5, 1.5, 2.5],
+      "initialPairs": [
+        {"x": 2, "y": "depends on k"},
+        {"x": 4, "y": "depends on k"},
+        {"x": 5, "y": "depends on k"},
+        {"x": 10, "y": "depends on k"}
+      ],
+      "queryValues": [7, 8, 12, 15, 20, 25],
+      "reverseQueries": "sometimes ask to find x given y"
+    },
+
+    "mathTool": {
+      "toolName": "cartesianPlane",
+      "parameters": {
+        "points": [
+          {"x": 0, "y": 0},
+          {"x": 4, "y": 12},
+          {"x": 8, "y": 24}
+        ],
+        "showGrid": true,
+        "showAxes": true,
+        "xLabel": "x",
+        "yLabel": "y"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem. Maximum TWO if finding equation THEN using it",
+
+      "MathTool decision: INCLUDE cartesianPlane showing points on line through origin",
+      "Plot (0,0) plus 2-3 other points that satisfy y = kx",
+      "This reinforces that direct proportion passes through origin",
+
+      "Question structure:",
+      "- State 'y is directly proportional to x'",
+      "- Give one pair of values",
+      "- Part (i): Find equation connecting x and y",
+      "- Part (ii): Find y for new x value (or find x for new y)",
+
+      "Solution must show:",
+      "1. Calculate k = y/x",
+      "2. Write equation y = kx",
+      "3. Substitute to find unknown",
+
+      "Vary the constant k (use nice values like 2, 3, 5, 10)",
+      "Sometimes include fractional k (like 1.5, 2.5)",
+      "Sometimes reverse: give y, find x",
+
+      "Real-world interpretation: 'k represents the cost per kg' or 'speed in km/h'"
+    ]
+  },
+
+  "proportion-node-4": {
+    "nodeId": "proportion-node-4",
+    "title": "Graphs of Direct Proportion",
+    "section": "graphical-representation",
+
+    "learningFocus": [
+      "Recognize y = kx graphs as straight line through origin",
+      "Understand gradient = k",
+      "Distinguish y = kx from y = kx + c"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A graph shows the relationship y = 15x. (a) Does the graph pass through the origin? (b) What is the gradient? (c) Is y directly proportional to x?",
+        "correctAnswer": "(a) Yes, when x = 0, y = 0  (b) Gradient = 15  (c) Yes, because y = kx with k = 15 and passes through origin"
+      },
+      {
+        "id": "ex2",
+        "problemText": "The equation C = 0.2n + 20 represents mobile charges where C is cost and n is minutes. Is C directly proportional to n? Explain using the graph.",
+        "correctAnswer": "No. The equation has form y = kx + c where c = 20 ≠ 0. The graph does NOT pass through origin (y-intercept = 20), so not direct proportion"
+      }
+    ],
+
+    "variationRules": {
+      "directProportionEquations": [
+        "y = 3x",
+        "y = 5x",
+        "y = 10x",
+        "y = 15x",
+        "y = 0.5x",
+        "C = 2.5n"
+      ],
+      "notDirectProportion": [
+        "y = 2x + 3",
+        "y = 5x + 10",
+        "C = 0.2n + 20",
+        "y = -3x + 5"
+      ],
+      "graphQuestions": [
+        "Does graph pass through origin?",
+        "What is the gradient?",
+        "Is this direct proportion?",
+        "What does the gradient represent in context?"
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "functions": [
+          {"expression": "15*x", "label": "y = 15x", "color": "#3b82f6"}
+        ],
+        "xMin": 0,
+        "xMax": 10,
+        "yMin": 0,
+        "yMax": 150,
+        "showGrid": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE functionGraph to show straight line through origin",
+      "Graph y = kx with positive k",
+      "Visually demonstrates the proportional relationship",
+
+      "Key teaching points:",
+      "- Direct proportion MUST pass through (0, 0)",
+      "- Gradient of line equals k",
+      "- Steeper line means larger k",
+      "- If y-intercept ≠ 0, NOT direct proportion",
+
+      "Create comparison questions:",
+      "- Show y = kx (passes through origin) vs y = kx + c (does not)",
+      "- Ask students to identify which represents direct proportion",
+
+      "Graph reading questions:",
+      "- 'From the graph, find k'",
+      "- 'Calculate the gradient'",
+      "- 'Does this graph show direct proportion?'",
+
+      "Include non-examples: y = 2x + 3 is NOT direct proportion"
+    ]
+  },
+
+  "proportion-node-5": {
+    "nodeId": "proportion-node-5",
+    "title": "y ∝ x² Relationships",
+    "section": "y-proportional-x-squared",
+
+    "learningFocus": [
+      "Understand y ∝ x² means y = kx²",
+      "Calculate k = y/x²",
+      "Recognize quadrupling effect when x doubles"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "y is directly proportional to x² and y = 20 when x = 2. Find (i) an equation connecting x and y, (ii) the value of y when x = 5.",
+        "correctAnswer": "(i) k = 20/4 = 5, so y = 5x²  (ii) y = 5 × 25 = 125"
+      },
+      {
+        "id": "ex2",
+        "problemText": "The braking distance d meters of a vehicle is directly proportional to the square of its speed v m/s. When v = 10, d = 25. If speed doubles to 20 m/s, what is the new braking distance?",
+        "correctAnswer": "k = 25/100 = 0.25, d = 0.25v². When v = 20: d = 0.25 × 400 = 100 m (quadruples)"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "braking distance ∝ (speed)²",
+        "area of circle ∝ (radius)²",
+        "kinetic energy ∝ (velocity)²",
+        "intensity of light ∝ (distance)²",
+        "area of square ∝ (side)²"
+      ],
+      "kValues": [1, 2, 3, 5, 0.25, 0.5, 0.75],
+      "initialX": [2, 3, 4, 5, 10],
+      "targetX": [5, 6, 8, 10, 20, "double initial"]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "functions": [
+          {"expression": "3*x^2", "label": "y = 3x²", "color": "#8b5cf6"}
+        ],
+        "xMin": 0,
+        "xMax": 5,
+        "yMin": 0,
+        "yMax": 75,
+        "showGrid": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem. Maximum TWO if finding equation THEN using it",
+
+      "MathTool decision: INCLUDE functionGraph showing parabola passing through origin",
+      "Graph y = kx² to show curved relationship (NOT straight line)",
+      "Helps students distinguish from y = kx",
+
+      "Critical understanding: When x doubles, y quadruples (multiplies by 4)",
+      "Example: x = 2 → y = 20, x = 4 → y = 80 (not 40!)",
+
+      "Solution structure:",
+      "1. Calculate k = y/x² (remember to SQUARE x)",
+      "2. Write equation y = kx²",
+      "3. Substitute to find unknown",
+
+      "Real-world contexts emphasize the squared relationship:",
+      "- Braking distance increases rapidly with speed",
+      "- Area increases with square of dimensions",
+
+      "Include questions about the multiplicative effect:",
+      "'If x is doubled, by what factor does y increase?'",
+      "'If x triples, by what factor does y increase?' (Answer: 9×)"
+    ]
+  },
+
+  "proportion-node-6": {
+    "nodeId": "proportion-node-6",
+    "title": "y ∝ √x and Other Forms",
+    "section": "square-root-and-other-forms",
+
+    "learningFocus": [
+      "Understand y ∝ √x means y = k√x",
+      "Work with y ∝ x³ and other powers",
+      "Calculate k for various power relationships"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The length L cm of an earthworm is directly proportional to √N, where N is hours after birth. When N = 4, L = 5. Find (i) an equation connecting L and N, (ii) the length when N = 16 hours.",
+        "correctAnswer": "(i) k = 5/√4 = 5/2 = 2.5, so L = 2.5√N  (ii) L = 2.5√16 = 2.5 × 4 = 10 cm"
+      },
+      {
+        "id": "ex2",
+        "problemText": "y is directly proportional to x³. When x = 2, y = 24. Find the value of y when x = 3.",
+        "correctAnswer": "k = 24/8 = 3, y = 3x³. When x = 3: y = 3 × 27 = 81"
+      }
+    ],
+
+    "variationRules": {
+      "forms": [
+        "y ∝ √x (square root)",
+        "y ∝ x³ (cubic)",
+        "y ∝ x^(1/2) (same as square root)",
+        "y ∝ x^(3/2)"
+      ],
+      "contexts": [
+        "earthworm length ∝ √(time)",
+        "volume ∝ (side)³",
+        "orbital period ∝ (radius)^(3/2)"
+      ],
+      "kValues": [1, 2, 2.5, 3, 4, 5],
+      "perfectSquares": [4, 9, 16, 25, 36, 49, 64, 100]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "functions": [
+          {"expression": "3*sqrt(x)", "label": "y = 3√x", "color": "#10b981"}
+        ],
+        "xMin": 0,
+        "xMax": 16,
+        "yMin": 0,
+        "yMax": 12,
+        "showGrid": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE functionGraph for square root functions",
+      "Shows curved relationship that increases but at decreasing rate",
+      "Distinguishes from linear (y = kx) and quadratic (y = kx²)",
+
+      "For square root problems:",
+      "- Use perfect squares for x values (4, 9, 16, 25) to avoid messy decimals",
+      "- k = y/√x",
+      "- Emphasize: y = k√x NOT y = k√(x²) or y = kx",
+
+      "For cubic problems:",
+      "- k = y/x³",
+      "- Show rapid growth: when x doubles, y multiplies by 8",
+
+      "Common errors to watch:",
+      "- Forgetting to take square root (using y = kx instead of y = k√x)",
+      "- Squaring instead of taking square root",
+      "- For x³: forgetting to cube x when finding k",
+
+      "Keep numbers manageable - use small integers and perfect squares"
+    ]
+  },
+
+  "proportion-node-7": {
+    "nodeId": "proportion-node-7",
+    "title": "Recognizing Inverse Proportion",
+    "section": "recognizing-inverse-proportion",
+
+    "learningFocus": [
+      "Understand xy = k (constant product)",
+      "Recognize when x doubles, y halves",
+      "Verify inverse proportionality from tables"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The table shows speed and time for a 120 km journey:\n\nSpeed (x km/h): 10, 20, 30, 40, 60\nTime (y hours): 12, 6, 4, 3, 2\n\nIs time inversely proportional to speed? Verify by calculating xy.",
+        "correctAnswer": "Yes. xy = 10×12 = 20×6 = 30×4 = 120 (constant), so y is inversely proportional to x"
+      },
+      {
+        "id": "ex2",
+        "problemText": "If 10 workers take 12 days to complete a task, and the number of workers is inversely proportional to days, how many days would 15 workers take?",
+        "correctAnswer": "k = 10 × 12 = 120, so 15 × days = 120, days = 8"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "speed and time for fixed distance",
+        "workers and days for fixed work",
+        "taps and time to fill tank",
+        "men and hours for fixed job",
+        "rate and time for fixed amount"
+      ],
+      "verificationMethods": [
+        "Calculate xy for multiple pairs and check if constant",
+        "Check if x₁y₁ = x₂y₂",
+        "Verify doubling x halves y",
+        "Check if x triples, y becomes 1/3"
+      ],
+      "constantProducts": [60, 120, 180, 240, 300, 360]
+    },
+
+    "mathTool": {
+      "toolName": "scatterPlot",
+      "parameters": {
+        "points": [
+          {"x": 10, "y": 12},
+          {"x": 20, "y": 6},
+          {"x": 30, "y": 4},
+          {"x": 60, "y": 2}
+        ],
+        "xLabel": "variable",
+        "yLabel": "variable",
+        "title": "Inverse Proportion Pattern"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE scatterPlot showing curved inverse relationship",
+      "Points should show hyperbolic pattern (not linear)",
+      "Helps students distinguish from direct proportion",
+
+      "Create tables where xy = constant",
+      "Common contexts: speed-time, workers-days, taps-time",
+
+      "Key patterns to emphasize:",
+      "- When x doubles, y halves",
+      "- When x triples, y becomes 1/3",
+      "- When x is halved, y doubles",
+
+      "Verification: Calculate xy for ALL pairs in table",
+      "If xy is constant → inverse proportion",
+      "If y/x is constant → direct proportion (not inverse!)",
+
+      "Include questions like:",
+      "'Is y inversely proportional to x?'",
+      "'Verify by showing xy = constant'",
+      "'What happens to y when x doubles?'",
+
+      "Common student error: confusing xy = k with y/x = k"
+    ]
+  },
+
+  "proportion-node-8": {
+    "nodeId": "proportion-node-8",
+    "title": "Solving Inverse Proportion Problems",
+    "section": "solving-inverse-problems",
+
+    "learningFocus": [
+      "Calculate k = xy from given values",
+      "Use x₁y₁ = x₂y₂ to find unknowns",
+      "Apply to speed-time, workers-days problems"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A tank can be filled by 4 identical taps in 70 minutes. Find the time taken for 7 such taps to fill the same tank.",
+        "correctAnswer": "k = 4 × 70 = 280, so 7 × t = 280, t = 40 minutes"
+      },
+      {
+        "id": "ex2",
+        "problemText": "12 glassblowers can make 12 identical vases in 9 minutes. Assuming all work at the same rate, how long will it take 8 glassblowers to make 32 such vases?",
+        "correctAnswer": "First: 12 workers, 9 minutes, 12 vases means 1 vase per worker in 9 min. For 32 vases: 32 worker-periods needed. k = 12 × 9 = 108 for 12 vases. For 32 vases: 8 × t = 108 × (32/12), t = 36 minutes"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "taps filling tank",
+        "workers painting houses",
+        "glassblowers making vases",
+        "men digging trenches",
+        "machines producing items"
+      ],
+      "initialWorkers": [4, 5, 6, 8, 10, 12],
+      "initialTime": [5, 10, 15, 20, 30, 40, 60, 70],
+      "targetWorkers": [5, 6, 7, 8, 15, 20],
+      "workType": "assume all work at same rate"
+    },
+
+    "mathTool": null,
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "DO NOT include mathTool - inverse proportion solving is calculation-based",
+
+      "Problem structure:",
+      "- State that variables are inversely proportional",
+      "- Give initial pair (x₁, y₁)",
+      "- Ask for unknown when one variable changes",
+
+      "Solution method:",
+      "1. Find k = x₁y₁",
+      "2. Use k = x₂y₂ to find unknown",
+      "Alternative: Use x₁y₁ = x₂y₂ directly",
+
+      "Common contexts:",
+      "- Workers and days: more workers → less time",
+      "- Speed and time: faster speed → less time",
+      "- Taps and time: more taps → less time",
+
+      "ALWAYS state assumption: 'all work/travel at same rate'",
+
+      "Sanity check answers:",
+      "- More workers should mean less time",
+      "- Higher speed should mean less time",
+      "- Answer should make logical sense",
+
+      "Include variety: sometimes find number of workers, sometimes find time"
+    ]
+  },
+
+  "proportion-node-9": {
+    "nodeId": "proportion-node-9",
+    "title": "Combined Direct and Inverse Proportion",
+    "section": "combined-proportion-problems",
+
+    "learningFocus": [
+      "Identify which variables are direct vs inverse",
+      "Handle both relationships in one problem",
+      "Set up combined equations"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In 3 days, 5 men can paint 2 identical houses. Assuming all men work at the same rate, how long will it take 6 men to paint 7 such houses?",
+        "correctAnswer": "Houses ∝ men (direct), houses ∝ days (direct). 5 men, 3 days, 2 houses. For 2 houses: k = 5 × 3 = 15. For 1 house: 1 man needs 15/2 = 7.5 man-days. For 7 houses: 7 × 7.5 = 52.5 man-days. With 6 men: 52.5/6 = 8.75 days"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "men, days, houses (work problems)",
+        "workers, hours, items produced",
+        "taps, time, tanks filled",
+        "machines, days, products made"
+      ],
+      "relationships": {
+        "work_direct": "work ∝ workers, work ∝ time",
+        "work_inverse": "workers ∝ 1/time (for fixed work)",
+        "combined": "work = workers × time × rate"
+      }
+    },
+
+    "mathTool": null,
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "DO NOT include mathTool - complex multi-step calculations",
+
+      "Combined proportion means:",
+      "- Multiple variables in one problem",
+      "- Some relationships are direct, some inverse",
+      "- Example: Work ∝ men (direct), Work ∝ days (direct), but men ∝ 1/days (inverse for fixed work)",
+
+      "Solution approach:",
+      "1. Keep one quantity constant at a time",
+      "2. Use unitary method",
+      "3. Scale to final answer",
+
+      "Example breakdown:",
+      "'5 men paint 2 houses in 3 days, find time for 6 men to paint 7 houses'",
+      "Step 1: Find man-days for 1 house",
+      "Step 2: Calculate man-days for 7 houses",
+      "Step 3: Divide by 6 men to get days",
+
+      "ADVANCED level - ensure clear problem statement",
+      "State all assumptions explicitly"
+    ]
+  },
+
+  "proportion-node-10": {
+    "nodeId": "proportion-node-10",
+    "title": "Writing and Using y = k/x",
+    "section": "equation-y-equals-k-over-x",
+
+    "learningFocus": [
+      "Understand y ∝ 1/x means y = k/x",
+      "Calculate k = xy from given values",
+      "Use equation to find unknowns"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "y is inversely proportional to x. When x = 10, y = 12. Find (i) an equation connecting x and y, (ii) the value of y when x = 15.",
+        "correctAnswer": "(i) k = 10 × 12 = 120, so y = 120/x  (ii) y = 120/15 = 8"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Given that y is inversely proportional to x and y = 6 when x = 4, find the value of x when y = 8.",
+        "correctAnswer": "k = 4 × 6 = 24, y = 24/x. When y = 8: 8 = 24/x, so x = 24/8 = 3"
+      }
+    ],
+
+    "variationRules": {
+      "kValues": [12, 24, 36, 48, 60, 120, 180, 240],
+      "initialPairs": [
+        {"x": 4, "y": "k/4"},
+        {"x": 6, "y": "k/6"},
+        {"x": 10, "y": "k/10"},
+        {"x": 12, "y": "k/12"}
+      ],
+      "queryTypes": [
+        "find y given x",
+        "find x given y (requires rearrangement)"
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "functions": [
+          {"expression": "120/x", "label": "y = 120/x", "color": "#ec4899"}
+        ],
+        "xMin": 1,
+        "xMax": 30,
+        "yMin": 0,
+        "yMax": 30,
+        "showGrid": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem. Maximum TWO if finding equation THEN using it",
+
+      "MathTool decision: INCLUDE functionGraph showing hyperbola",
+      "Graph y = k/x with positive k in first quadrant",
+      "Shows curved inverse relationship",
+
+      "Solution structure:",
+      "1. Calculate k = xy using given pair",
+      "2. Write equation y = k/x (or xy = k)",
+      "3. Substitute to find unknown",
+
+      "Finding x when y is given requires rearrangement:",
+      "y = k/x → x = k/y",
+
+      "Use values of k that are products of common numbers (12, 24, 60, 120)",
+      "This gives nicer integer answers",
+
+      "Include both types:",
+      "- Find y given x (substitute directly)",
+      "- Find x given y (requires algebra: x = k/y)",
+
+      "Distinguish from direct proportion:",
+      "y = kx (direct) vs y = k/x (inverse)"
+    ]
+  },
+
+  "proportion-node-11": {
+    "nodeId": "proportion-node-11",
+    "title": "Graphs of Inverse Proportion (Hyperbolas)",
+    "section": "hyperbola-graphs",
+
+    "learningFocus": [
+      "Recognize rectangular hyperbola shape",
+      "Understand asymptotes at x = 0 and y = 0",
+      "Identify k from any point on curve"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The graph shows y = 120/x. (a) What is the shape of the graph? (b) What happens to y as x gets very large? (c) Can the curve ever touch the x-axis or y-axis?",
+        "correctAnswer": "(a) Rectangular hyperbola  (b) y approaches 0 but never reaches it  (c) No, the axes are asymptotes - curve approaches but never touches"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A hyperbola passes through the point (10, 12). If y is inversely proportional to x, find the value of k and write the equation.",
+        "correctAnswer": "k = 10 × 12 = 120, equation is y = 120/x"
+      }
+    ],
+
+    "variationRules": {
+      "equations": [
+        "y = 60/x",
+        "y = 120/x",
+        "y = 180/x",
+        "y = 240/x"
+      ],
+      "pointsOnCurve": [
+        {"x": 10, "y": 12},
+        {"x": 20, "y": 6},
+        {"x": 30, "y": 4}
+      ],
+      "graphQuestions": [
+        "What is the shape?",
+        "What are the asymptotes?",
+        "What happens as x increases?",
+        "Find k from the graph",
+        "Does curve touch axes?"
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "functions": [
+          {"expression": "120/x", "label": "y = 120/x", "color": "#f59e0b"}
+        ],
+        "xMin": 0,
+        "xMax": 120,
+        "yMin": 0,
+        "yMax": 30,
+        "showGrid": true,
+        "showAsymptotes": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE functionGraph with asymptotes shown",
+      "Display hyperbola with clear asymptotic behavior",
+      "Shows curve approaching but never touching axes",
+
+      "Key concepts to emphasize:",
+      "- Rectangular hyperbola (not parabola, not line)",
+      "- Asymptotes at x = 0 (y-axis) and y = 0 (x-axis)",
+      "- Curve never touches either axis",
+      "- As x → ∞, y → 0 (but never = 0)",
+      "- As x → 0, y → ∞",
+
+      "Graph reading questions:",
+      "- 'Pick any point and find k = xy'",
+      "- 'What happens to y as x increases?'",
+      "- 'Identify the asymptotes'",
+
+      "Distinguish from parabola:",
+      "- Parabola: y = kx² (direct proportion to square)",
+      "- Hyperbola: y = k/x (inverse proportion)",
+
+      "Larger k means curve is further from origin"
+    ]
+  },
+
+  "proportion-node-12": {
+    "nodeId": "proportion-node-12",
+    "title": "Inverse Square Law (y ∝ 1/x²)",
+    "section": "inverse-square-law",
+
+    "learningFocus": [
+      "Understand y ∝ 1/x² means y = k/x²",
+      "Calculate k = yx²",
+      "Recognize quartering effect when x doubles"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The force of attraction F between two magnets is inversely proportional to the square of the distance d between them. When d = 2 cm, F = 20 newtons. If distance is increased by 400% to 10 cm, find the new force.",
+        "correctAnswer": "k = 20 × 4 = 80, F = 80/d². When d = 10: F = 80/100 = 0.8 N"
+      },
+      {
+        "id": "ex2",
+        "problemText": "The intensity of light I is inversely proportional to the square of distance d from source. When d = 3, I = 16. Find intensity when d = 6.",
+        "correctAnswer": "k = 16 × 9 = 144, I = 144/d². When d = 6: I = 144/36 = 4 (quarters when distance doubles)"
+      }
+    ],
+
+    "variationRules": {
+      "contexts": [
+        "gravitational force ∝ 1/(distance)²",
+        "light intensity ∝ 1/(distance)²",
+        "sound volume ∝ 1/(distance)²",
+        "magnetic/electric force ∝ 1/(distance)²"
+      ],
+      "kValues": [16, 20, 36, 48, 64, 80, 100, 144],
+      "initialD": [2, 3, 4, 5],
+      "targetD": ["double", "half", 6, 8, 10, 12]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "functions": [
+          {"expression": "80/(x^2)", "label": "y = 80/x²", "color": "#06b6d4"}
+        ],
+        "xMin": 1,
+        "xMax": 15,
+        "yMin": 0,
+        "yMax": 25,
+        "showGrid": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE functionGraph showing steeper hyperbola",
+      "y = k/x² decreases FASTER than y = k/x",
+      "Visualizes rapid decrease with distance",
+
+      "Critical understanding: When x doubles, y quarters (÷4)",
+      "Example: d = 2 → F = 20, d = 4 → F = 5 (not 10!)",
+
+      "Solution structure:",
+      "1. Calculate k = yx² (remember to SQUARE x)",
+      "2. Write equation y = k/x²",
+      "3. Substitute to find unknown",
+
+      "Real-world contexts emphasize inverse square law:",
+      "- Light intensity decreases rapidly with distance",
+      "- Gravitational force weakens with distance²",
+      "- Sound decreases with distance²",
+
+      "Include questions about multiplicative effect:",
+      "'If distance doubles, by what factor does force decrease?' (Answer: ÷4)",
+      "'If distance triples, what happens to intensity?' (Answer: ÷9)",
+
+      "Compare to simple inverse: y = k/x decreases slower than y = k/x²"
+    ]
+  },
+
+  "proportion-node-13": {
+    "nodeId": "proportion-node-13",
+    "title": "Other Inverse Proportion Forms",
+    "section": "other-inverse-forms",
+
+    "learningFocus": [
+      "Understand y ∝ 1/√x means y = k/√x",
+      "Work with y ∝ 1/x³ and other inverse powers",
+      "Calculate k for various inverse relationships"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "y is inversely proportional to √x. When x = 4, y = 6. Find (i) an equation connecting x and y, (ii) the value of y when x = 16.",
+        "correctAnswer": "(i) k = 6 × √4 = 6 × 2 = 12, so y = 12/√x  (ii) y = 12/√16 = 12/4 = 3"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Given that t is inversely proportional to s³. When s = 2, t = 10. Find t when s = 4.",
+        "correctAnswer": "k = 10 × 8 = 80, t = 80/s³. When s = 4: t = 80/64 = 1.25"
+      }
+    ],
+
+    "variationRules": {
+      "forms": [
+        "y ∝ 1/√x (inverse square root)",
+        "y ∝ 1/x³ (inverse cubic)",
+        "y ∝ 1/x^(3/2)"
+      ],
+      "perfectSquares": [4, 9, 16, 25, 36, 64],
+      "perfectCubes": [8, 27, 64, 125],
+      "kValues": [12, 16, 24, 36, 48, 60, 80]
+    },
+
+    "mathTool": {
+      "toolName": "functionGraph",
+      "parameters": {
+        "functions": [
+          {"expression": "12/sqrt(x)", "label": "y = 12/√x", "color": "#10b981"}
+        ],
+        "xMin": 1,
+        "xMax": 25,
+        "yMin": 0,
+        "yMax": 12,
+        "showGrid": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE functionGraph for inverse square root",
+      "Shows inverse relationship with different rate of decrease",
+
+      "For inverse square root (y = k/√x):",
+      "- Use perfect squares for x (4, 9, 16, 25)",
+      "- k = y√x",
+      "- Decreases slower than y = k/x",
+
+      "For inverse cubic (y = k/x³):",
+      "- k = yx³",
+      "- Decreases VERY rapidly",
+      "- When x doubles, y becomes 1/8",
+
+      "Keep numbers manageable:",
+      "- Use perfect squares for √x problems",
+      "- Use perfect cubes for x³ problems",
+      "- Choose k to give nice answers",
+
+      "Common errors:",
+      "- Forgetting to take square root",
+      "- Forgetting to cube x",
+      "- Confusing y = k/√x with y = √(k/x)",
+
+      "ADVANCED level - ensure clear notation in questions"
+    ]
+  }
+}

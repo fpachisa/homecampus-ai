@@ -31,6 +31,7 @@ interface QuestionPart {
   questionText: string;
   marks: number;
   answerType: string;
+  table?: QuestionTableType;
   solution: PartSolution;
 }
 
@@ -126,14 +127,24 @@ export default function QuestionBankQA() {
             const paper1Questions = data.questions['Paper 1'] || [];
             const paper2Questions = data.questions['Paper 2'] || [];
 
-            // Normalize topicID to topicId (JSON uses uppercase ID)
+            // Normalize topicID to topicId (JSON uses uppercase ID) and map questionTable to table
             const normalizedP1 = paper1Questions.map((q: any) => ({
               ...q,
-              topicId: q.topicID || q.topicId
+              topicId: q.topicID || q.topicId,
+              table: q.table || q.questionTable,
+              parts: q.parts?.map((p: any) => ({
+                ...p,
+                table: p.table || p.questionTable
+              }))
             }));
             const normalizedP2 = paper2Questions.map((q: any) => ({
               ...q,
-              topicId: q.topicID || q.topicId
+              topicId: q.topicID || q.topicId,
+              table: q.table || q.questionTable,
+              parts: q.parts?.map((p: any) => ({
+                ...p,
+                table: p.table || p.questionTable
+              }))
             }));
 
             allQuestions.push(...normalizedP1, ...normalizedP2);
@@ -392,6 +403,13 @@ export default function QuestionBankQA() {
                         [{part.marks} mark{part.marks > 1 ? 's' : ''}]
                       </span>
                     </div>
+
+                    {/* Part Table - NEW */}
+                    {part.table && (
+                      <div className="mb-4 mt-2">
+                        <QuestionTable table={part.table} />
+                      </div>
+                    )}
 
                     {/* Solution for this part - Match Practice module styling */}
                     {showSolutions && part.solution && (

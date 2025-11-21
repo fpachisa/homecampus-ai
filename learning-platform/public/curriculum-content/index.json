@@ -1,94 +1,199 @@
 {
   "files": [
     {
+      "filename": "S1/Maths/s1-math-angles-parallel-lines.yaml",
+      "displayName": "Angles & Parallel Lines",
+      "category": "s1-math-angles-parallel-lines"
+    },
+    {
+      "filename": "S1/Maths/s1-math-approximation-estimation.yaml",
+      "displayName": "Approximation & Estimation",
+      "category": "s1-math-approximation-estimation"
+    },
+    {
+      "filename": "S1/Maths/s1-math-basic-algebra.yaml",
+      "displayName": "Basic Algebra",
+      "category": "s1-math-basic-algebra"
+    },
+    {
+      "filename": "S1/Maths/s1-math-data-handling.yaml",
+      "displayName": "Data Handling",
+      "category": "s1-math-data-handling"
+    },
+    {
+      "filename": "S1/Maths/s1-math-factors-multiples.yaml",
+      "displayName": "Factors & Multiples",
+      "category": "s1-math-factors-multiples"
+    },
+    {
+      "filename": "S1/Maths/s1-math-linear-functions-graphs.yaml",
+      "displayName": "Linear Functions & Graphs",
+      "category": "s1-math-linear-functions-graphs"
+    },
+    {
+      "filename": "S1/Maths/s1-math-percentage.yaml",
+      "displayName": "Percentage",
+      "category": "s1-math-percentage"
+    },
+    {
+      "filename": "S1/Maths/s1-math-perimeter-area.yaml",
+      "displayName": "Perimeter & Area",
+      "category": "s1-math-perimeter-area"
+    },
+    {
+      "filename": "S1/Maths/s1-math-ratio-rate-speed.yaml",
+      "displayName": "Ratio, Rate & Speed",
+      "category": "s1-math-ratio-rate-speed"
+    },
+    {
+      "filename": "S1/Maths/s1-math-real-numbers.yaml",
+      "displayName": "Real Numbers",
+      "category": "s1-math-real-numbers"
+    },
+    {
+      "filename": "S1/Maths/s1-math-simple-linear-equations.yaml",
+      "displayName": "Simple Linear Equations",
+      "category": "s1-math-simple-linear-equations"
+    },
+    {
+      "filename": "S2/Maths/s2-math-algebraic-fractions-formulae.yaml",
+      "displayName": "Algebraic Fractions & Formulae",
+      "category": "s2-math-algebraic-fractions-formulae"
+    },
+    {
+      "filename": "S2/Maths/s2-math-averages-statistical-data.yaml",
+      "displayName": "Averages & Statistical Data",
+      "category": "s2-math-averages-statistical-data"
+    },
+    {
+      "filename": "S2/Maths/s2-math-direct-inverse-proportion.yaml",
+      "displayName": "Direct & Inverse Proportion",
+      "category": "s2-math-direct-inverse-proportion"
+    },
+    {
+      "filename": "S2/Maths/s2-math-expansion-factorisation.yaml",
+      "displayName": "Expansion & Factorisation",
+      "category": "s2-math-expansion-factorisation"
+    },
+    {
       "filename": "S2/Maths/s2-math-linear-graphs.yaml",
-      "displayName": "S2 - Linear Graphs",
+      "displayName": "Linear Graphs",
       "category": "s2-math-linear-graphs"
     },
     {
-      "filename": "S4/Maths/s4-math-vectors.yaml",
-      "displayName": "S4 - Vectors",
-      "category": "s4-math-vectors"
+      "filename": "S2/Maths/s2-math-linear-inequalities.yaml",
+      "displayName": "Linear Inequalities",
+      "category": "s2-math-linear-inequalities"
     },
     {
-      "filename": "S4/Maths/s4-math-advanced-trigonometry.yaml",
-      "displayName": "S4 - Advanced Trigonometry",
-      "category": "s4-math-advanced-trigonometry"
+      "filename": "S2/Maths/s2-math-probability-single-event.yaml",
+      "displayName": "Probability (Single Event)",
+      "category": "s2-math-probability-single-event"
     },
     {
-      "filename": "S4/Maths/s4-math-quadratic-functions.yaml",
-      "displayName": "S4 - Quadratic Functions",
-      "category": "s4-math-quadratic-functions"
+      "filename": "S2/Maths/s2-math-pythagoras.yaml",
+      "displayName": "Pythagoras Theorem",
+      "category": "s2-math-pythagoras"
     },
     {
-      "filename": "S4/Maths/s4-math-probability.yaml",
-      "displayName": "S4 - Probability",
-      "category": "s4-math-probability"
+      "filename": "S2/Maths/s2-math-quadratic-equations-graphs.yaml",
+      "displayName": "Quadratic Equations & Graphs",
+      "category": "s2-math-quadratic-equations-graphs"
     },
     {
-      "filename": "S4/Maths/s4-math-integration.yaml",
-      "displayName": "S4 - Integration",
-      "category": "s4-math-integration"
+      "filename": "S2/Maths/s2-math-statistical-diagrams.yaml",
+      "displayName": "Statistical Diagrams",
+      "category": "s2-math-statistical-diagrams"
+    },
+    {
+      "filename": "S2/Maths/s2-math-trigonometric-ratios.yaml",
+      "displayName": "Trigonometric Ratios",
+      "category": "s2-math-trigonometric-ratios"
+    },
+    {
+      "filename": "S3/Maths/s3-math-circle-geometry.yaml",
+      "displayName": "Circle Geometry",
+      "category": "s3-math-circle-geometry"
+    },
+    {
+      "filename": "S3/Maths/s3-math-coordinate-geometry.yaml",
+      "displayName": "Coordinate Geometry",
+      "category": "s3-math-coordinate-geometry"
+    },
+    {
+      "filename": "S3/Maths/s3-math-exponential-logarithms.yaml",
+      "displayName": "Exponential & Logarithms",
+      "category": "s3-math-exponential-logarithms"
+    },
+    {
+      "filename": "S3/Maths/s3-math-exponents.yaml",
+      "displayName": "Exponents",
+      "category": "s3-math-exponents"
+    },
+    {
+      "filename": "S3/Maths/s3-math-quadratic-equations.yaml",
+      "displayName": "Quadratic Equations",
+      "category": "s3-math-quadratic-equations"
+    },
+    {
+      "filename": "S3/Maths/s3-math-relations-functions.yaml",
+      "displayName": "Relations & Functions",
+      "category": "s3-math-relations-functions"
+    },
+    {
+      "filename": "S3/Maths/s3-math-sets-venn-diagrams.yaml",
+      "displayName": "Sets & Venn Diagrams",
+      "category": "s3-math-sets-venn-diagrams"
+    },
+    {
+      "filename": "S3/Maths/s3-math-statistics.yaml",
+      "displayName": "Statistics",
+      "category": "s3-math-statistics"
+    },
+    {
+      "filename": "S3/Maths/s3-math-surds-radicals.yaml",
+      "displayName": "Surds & Radicals",
+      "category": "s3-math-surds-radicals"
+    },
+    {
+      "filename": "S3/Maths/s3-math-trigonometry.yaml",
+      "displayName": "Trigonometry",
+      "category": "s3-math-trigonometry"
+    },
+    {
+      "filename": "S4/Maths/s4-math-advanced-trig.yaml",
+      "displayName": "Advanced Trigonometry",
+      "category": "s4-math-advanced-trig"
     },
     {
       "filename": "S4/Maths/s4-math-differential-calculus.yaml",
-      "displayName": "S4 - Differential Calculus",
+      "displayName": "Differential Calculus",
       "category": "s4-math-differential-calculus"
+    },
+    {
+      "filename": "S4/Maths/s4-math-integration.yaml",
+      "displayName": "Integration",
+      "category": "s4-math-integration"
+    },
+    {
+      "filename": "S4/Maths/s4-math-probability.yaml",
+      "displayName": "Probability",
+      "category": "s4-math-probability"
     },
     {
       "filename": "S4/Maths/s4-math-quad.yaml",
       "displayName": "Quadratic Functions",
-      "category": "s4-math-quadi "
+      "category": "s4-math-quad"
     },
     {
-      "filename": "S3/Maths/s3-math-quadratic-equations.yaml",
-      "displayName": "S3 - Quadratic Equations",
-      "category": "s3-math-quadratic-equations"
+      "filename": "S4/Maths/s4-math-vectors-v1.yaml",
+      "displayName": "Vectors (v1)",
+      "category": "s4-math-vectors-v1"
     },
     {
-      "filename": "S3/Maths/s3-math-circle-geometry.yaml",
-      "displayName": "S3 - Circle Geometry",
-      "category": "s3-math-circle-geometry"
-    },
-    {
-      "filename": "S3/Maths/s3-math-trigonometry.yaml",
-      "displayName": "S3 - Trigonometry",
-      "category": "s3-math-trigonometry"
-    },
-    {
-      "filename": "S3/Maths/s3-math-exponential-logarithms.yaml",
-      "displayName": "S3 - Exponential & Logarithms",
-      "category": "s3-math-exponential-logarithms"
-    },
-    {
-      "filename": "S3/Maths/s3-math-sets-venn-diagrams.yaml",
-      "displayName": "S3 - Sets & Venn Diagrams",
-      "category": "s3-math-sets-venn-diagrams"
-    },
-    {
-      "filename": "S3/Maths/s3-math-exponents.yaml",
-      "displayName": "S3 - Exponents",
-      "category": "s3-math-exponents"
-    },
-    {
-      "filename": "S3/Maths/s3-math-surds-radicals.yaml",
-      "displayName": "S3 - Surds & Radicals",
-      "category": "s3-math-surds-radicals"
-    },
-    {
-      "filename": "S3/Maths/s3-math-relations-functions.yaml",
-      "displayName": "S3 - Relations & Functions",
-      "category": "s3-math-relations-functions"
-    },
-    {
-      "filename": "S3/Maths/s3-math-statistics.yaml",
-      "displayName": "S3 - Statistics",
-      "category": "s3-math-statistics"
-    },
-    {
-      "filename": "S3/Maths/s3-math-coordinate-geometry.yaml",
-      "displayName": "S3 - Coordinate Geometry",
-      "category": "s3-math-coordinate-geometry"
+      "filename": "S4/Maths/s4-math-vectors.yaml",
+      "displayName": "Vectors",
+      "category": "s4-math-vectors"
     }
   ]
 }

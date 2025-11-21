@@ -74,6 +74,71 @@
         "title": "Quadrilateral Angles"
       },
       {
+        "questionNumber": 13,
+        "questionId": "G1-greenridge-2024-p1-q13",
+        "topicID": "G1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the area of a regular hexagon with each side 7 cm.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "127 cm² (to 3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "A regular hexagon can be divided into 6 congruent equilateral triangles.",
+                  "working": "Side length $s = 7$ cm.",
+                  "reasoning": "Decomposing a complex polygon into triangles makes area calculation straightforward."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the area of one equilateral triangle using the sine rule for area.",
+                  "working": "Area of $\\triangle = \\frac{1}{2}ab \\sin C = \\frac{1}{2}(7)(7) \\sin 60^\\circ$",
+                  "reasoning": "The internal angle of an equilateral triangle is $60^\\circ$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply by 6 to find the total area and evaluate.",
+                  "working": "Total Area = $6 \\times \\frac{1}{2}(49)(\\frac{\\sqrt{3}}{2}) = 3 \\times 49 \\times \\frac{\\sqrt{3}}{2} = 73.5\\sqrt{3} \\approx 127.305...$",
+                  "reasoning": "Compute the exact value first, then round to 3 significant figures as per standard O-level instructions."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the interior angle of a regular 15-sided polygon.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "156°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the size of one exterior angle first.",
+                  "working": "Exterior Angle = $\\frac{360^\\circ}{n} = \\frac{360^\\circ}{15} = 24^\\circ$",
+                  "reasoning": "The sum of exterior angles of any convex polygon is always $360^\\circ$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the exterior angle from $180^\\circ$ to find the interior angle.",
+                  "working": "Interior Angle = $180^\\circ - 24^\\circ = 156^\\circ$",
+                  "reasoning": "Interior and exterior angles on a straight line sum to $180^\\circ$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Polygon Properties"
+      },
+      {
         "questionNumber": 101,
         "questionId": "G1-gemini-2011-p1-q101",
         "topicID": "G1",
@@ -137,6 +202,118 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Pentagon Exterior Angles"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G1-gemini-2111071107-p1-q101",
+        "topicID": "G1",
+        "stem": "The sum of the interior angles of a polygon is $1260^\\circ$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the number of sides of the polygon.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "9",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation using the sum of interior angles formula.",
+                  "working": "$(n-2) \\times 180 = 1260$",
+                  "reasoning": "The formula for the sum of interior angles is $(n-2) \\times 180^\\circ$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $n$.",
+                  "working": "$n-2 = \\frac{1260}{180} \\\\ n-2 = 7 \\\\ n = 9$",
+                  "reasoning": "Isolate $n$ to find the number of sides."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "If the polygon is regular, calculate the size of one exterior angle.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "40°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Divide the sum of exterior angles by the number of sides.",
+                  "working": "Exterior Angle = $\\frac{360^\\circ}{9} = 40^\\circ$",
+                  "reasoning": "For a regular polygon, all exterior angles are equal."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Interior and Exterior Angles"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G1-gemini-2111071107-p1-q102",
+        "topicID": "G1",
+        "stem": "The exterior angles of a pentagon are $x^\\circ$, $2x^\\circ$, $3x^\\circ$, $40^\\circ$, and $50^\\circ$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "45",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Sum the exterior angles and equate to $360^\\circ$.",
+                  "working": "$x + 2x + 3x + 40 + 50 = 360$",
+                  "reasoning": "The sum of exterior angles of any polygon is $360^\\circ$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify and solve for $x$.",
+                  "working": "$6x + 90 = 360 \\\\ 6x = 270 \\\\ x = 45$",
+                  "reasoning": "Basic algebraic manipulation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the largest interior angle of the pentagon.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "140°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify that the largest interior angle corresponds to the smallest exterior angle.",
+                  "working": "Exterior angles are: $45^\\circ, 90^\\circ, 135^\\circ, 40^\\circ, 50^\\circ$. The smallest is $40^\\circ$.",
+                  "reasoning": "Interior + Exterior = $180^\\circ$. To maximize the interior, minimize the exterior."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the interior angle.",
+                  "working": "$180^\\circ - 40^\\circ = 140^\\circ$",
+                  "reasoning": "Angles on a straight line."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Algebra in Polygons"
       }
     ],
     "Paper 2": [
@@ -332,6 +509,65 @@
         "totalMarks": 11,
         "paper": "Paper 2",
         "title": "Vectors Parallelogram Ratios"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G1-gemini-2111071107-p2-q101",
+        "topicID": "G1",
+        "stem": "Three regular polygons meet at a point such that there are no gaps between them. Two of the polygons are a square and a regular hexagon.",
+        "hasDiagram": false,
+        "diagramDescription": "A vertex where a square, a hexagon, and an unknown polygon meet.",
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the interior angle of the regular hexagon.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "120°",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the formula for the interior angle of a regular polygon with $n=6$.",
+                  "working": "$\\frac{(6-2) \\times 180}{6} = \\frac{720}{6} = 120^\\circ$",
+                  "reasoning": "Standard formula $\\frac{(n-2)180}{n}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the number of sides of the third regular polygon.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the sum of angles at the point where the polygons meet.",
+                  "working": "Interior of square = $90^\\circ$. Interior of hexagon = $120^\\circ$. Let interior of 3rd polygon be $y$.",
+                  "reasoning": "Angles at a point sum to $360^\\circ$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the interior angle of the third polygon.",
+                  "working": "$90 + 120 + y = 360 \\\\ 210 + y = 360 \\\\ y = 150^\\circ$",
+                  "reasoning": "Subtract known angles from 360."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the number of sides using the exterior angle method.",
+                  "working": "Exterior angle = $180 - 150 = 30^\\circ$. \\\\ Number of sides $n = \\frac{360}{30} = 12$.",
+                  "reasoning": "Using exterior angles is computationally faster than solving $\\frac{(n-2)180}{n} = 150$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Tessellation and Polygons"
       },
       {
         "questionNumber": 102,

@@ -80,6 +80,106 @@
         "title": "Probability with Coins"
       },
       {
+        "questionNumber": 15,
+        "questionId": "S2-greenridge-2024-p1-q15",
+        "topicID": "S2",
+        "stem": "A bag contains some green counters, some orange counters and some yellow counters. The probability of picking a green counter at random is 0.2. The probability of picking an orange counter at random is 0.1 more than the probability of choosing a yellow counter at random.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that the probability of picking a yellow counter at random is 0.35.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "0.35",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define the probabilities based on the information given.",
+                  "working": "Let $P(Y) = x$.\nThen $P(O) = x + 0.1$.\nGiven $P(G) = 0.2$.",
+                  "reasoning": "Establishing algebraic terms for the unknown probabilities allows us to set up an equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the property that the sum of all probabilities in a sample space is 1.",
+                  "working": "$P(G) + P(O) + P(Y) = 1$\n$0.2 + (x + 0.1) + x = 1$",
+                  "reasoning": "Since there are only green, orange, and yellow counters, their probabilities must sum to 1."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $x$.",
+                  "working": "$0.3 + 2x = 1$\n$2x = 0.7$\n$x = 0.35$",
+                  "reasoning": "Rearranging the linear equation to isolate the variable representing the probability of yellow."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "If there are 14 yellow counters, how many counters are there altogether?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "40",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the relationship between probability, number of specific outcomes, and total outcomes.",
+                  "working": "$P(Y) = \\frac{\\text{Number of Yellow Counters}}{\\text{Total Counters}}$",
+                  "reasoning": "Probability is defined as favorable outcomes divided by total possible outcomes."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the known values and solve for the total.",
+                  "working": "$0.35 = \\frac{14}{\\text{Total}}$\n$\\text{Total} = \\frac{14}{0.35}$",
+                  "reasoning": "Using the probability found in part (a) and the given number of counters."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final value.",
+                  "working": "$\\text{Total} = 40$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "If 3 orange counters are removed, what is the new probability of picking a yellow counter at random?",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{14}{37}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the new total number of counters.",
+                  "working": "Original Total = 40\nNew Total = $40 - 3 = 37$",
+                  "reasoning": "Removing counters affects the denominator of the probability fraction."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the number of yellow counters remaining.",
+                  "working": "Number of Yellow = 14",
+                  "reasoning": "Only orange counters were removed, so the number of yellow counters remains unchanged."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new probability.",
+                  "working": "New $P(Y) = \\frac{14}{37}$",
+                  "reasoning": "Using the new total count."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Probability Counters"
+      },
+      {
         "questionNumber": 16,
         "questionId": "S2-canberra-2024-p1-q16",
         "topicID": "S2",
@@ -316,6 +416,100 @@
         "title": "Probability with Cards"
       },
       {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111071107-p1-q101",
+        "topicID": "S2",
+        "stem": "A box contains cards that are either Red, Blue, or White. The probability of picking a Red card is $\\frac{1}{3}$. The probability of picking a Blue card is 3 times the probability of picking a White card.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Show that the probability of picking a White card is $\\frac{1}{6}$.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{6}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define the probabilities algebraically.",
+                  "working": "Let $P(W) = x$.\nThen $P(B) = 3x$.\nGiven $P(R) = \\frac{1}{3}$.",
+                  "reasoning": "Translating the word problem into algebraic expressions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Sum the probabilities to 1.",
+                  "working": "$\\frac{1}{3} + 3x + x = 1$\n$\\frac{1}{3} + 4x = 1$",
+                  "reasoning": "The sum of probabilities of all mutually exclusive events is 1."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $x$.",
+                  "working": "$4x = 1 - \\frac{1}{3}$\n$4x = \\frac{2}{3}$\n$x = \\frac{2}{12} = \\frac{1}{6}$",
+                  "reasoning": "Isolating $x$ to find the probability of White."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "If there are 5 White cards, find the total number of cards in the box.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "30",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the probability formula.",
+                  "working": "$P(W) = \\frac{\\text{Number of White}}{\\text{Total}}$\n$\\frac{1}{6} = \\frac{5}{\\text{Total}}$",
+                  "reasoning": "Equating the calculated probability to the ratio of counts."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for Total.",
+                  "working": "$\\text{Total} = 5 \\times 6 = 30$",
+                  "reasoning": "Cross-multiplication."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "If 5 Blue cards are added to the box, find the new probability of picking a Blue card.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{4}{7}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the original number of Blue cards.",
+                  "working": "$P(B) = 3 \\times \\frac{1}{6} = \\frac{1}{2}$.\nOriginal Blue = $\\frac{1}{2} \\times 30 = 15$.",
+                  "reasoning": "Finding the initial count before the change."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Update the counts for Blue cards and the Total.",
+                  "working": "New Blue count = $15 + 5 = 20$.\nNew Total = $30 + 5 = 35$.",
+                  "reasoning": "Adding cards increases both the specific category count and the total count."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new probability.",
+                  "working": "New $P(B) = \\frac{20}{35} = \\frac{4}{7}$",
+                  "reasoning": "Simplifying the fraction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Colored Cards"
+      },
+      {
         "questionNumber": 102,
         "questionId": "S2-gemini-2011-p1-q102",
         "topicID": "S2",
@@ -379,6 +573,65 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Club Membership Probability"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S2-gemini-2111071107-p1-q102",
+        "topicID": "S2",
+        "stem": "A biased spinner has four sections labelled A, B, C, and D. The probability of landing on A is 0.1 and the probability of landing on B is 0.3. The probability of landing on C is equal to the probability of landing on D.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the probability of landing on C.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.3",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the equation for the sum of probabilities.",
+                  "working": "$P(A) + P(B) + P(C) + P(D) = 1$\n$0.1 + 0.3 + x + x = 1$",
+                  "reasoning": "Let $x$ be the probability of C (and D). The sum must be 1."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $x$.",
+                  "working": "$0.4 + 2x = 1$\n$2x = 0.6$\n$x = 0.3$",
+                  "reasoning": "Basic algebra."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The spinner is spun 50 times. Calculate the expected number of times it lands on either B or C.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "30",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the probability of the combined event (B or C).",
+                  "working": "$P(B \\cup C) = P(B) + P(C) = 0.3 + 0.3 = 0.6$",
+                  "reasoning": "Since the events are mutually exclusive, we add their probabilities."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the expected frequency.",
+                  "working": "Expected number = $50 \\times 0.6 = 30$",
+                  "reasoning": "Expected value is Total Trials $\\times$ Probability."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Biased Spinner"
       }
     ],
     "Paper 2": [
@@ -475,6 +728,77 @@
         "totalMarks": 7,
         "paper": "Paper 2",
         "title": "Probability with Algebra"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2111071107-p2-q101",
+        "topicID": "S2",
+        "stem": "Bag A contains 2 black balls and 3 white balls. Bag B contains 4 black balls and 1 white ball. One ball is picked at random from Bag A and one ball is picked at random from Bag B.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the probability that both balls are white.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{25}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the individual probabilities.",
+                  "working": "$P(\\text{White from A}) = \\frac{3}{5}$\n$P(\\text{White from B}) = \\frac{1}{5}$",
+                  "reasoning": "Probability is favorable outcomes over total outcomes for each bag."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the probabilities for independent events.",
+                  "working": "$P(\\text{Both White}) = \\frac{3}{5} \\times \\frac{1}{5} = \\frac{3}{25}$",
+                  "reasoning": "The selection from Bag A does not affect Bag B, so events are independent."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the probability that exactly one black ball is picked.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{14}{25}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the two possible scenarios.",
+                  "working": "Scenario 1: Black from A and White from B.\nScenario 2: White from A and Black from B.",
+                  "reasoning": "\"Exactly one black\" can happen in two mutually exclusive ways."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate probability for Scenario 1.",
+                  "working": "$P(B_A \\cap W_B) = \\frac{2}{5} \\times \\frac{1}{5} = \\frac{2}{25}$",
+                  "reasoning": "Multiplying independent probabilities."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate probability for Scenario 2.",
+                  "working": "$P(W_A \\cap B_B) = \\frac{3}{5} \\times \\frac{4}{5} = \\frac{12}{25}$",
+                  "reasoning": "Multiplying independent probabilities."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Sum the probabilities.",
+                  "working": "Total Probability = $\\frac{2}{25} + \\frac{12}{25} = \\frac{14}{25}$",
+                  "reasoning": "Adding probabilities of mutually exclusive cases."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Two Bags"
       }
     ]
   }

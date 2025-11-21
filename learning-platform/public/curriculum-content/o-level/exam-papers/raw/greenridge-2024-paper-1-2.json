@@ -1,0 +1,589 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "questionId": "N1-greenridge-2024-p1-q1",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate $\\frac{\\sqrt[3]{123^{2}}}{\\frac{3}{5.01}+2}$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "An item costs $24 when rounded off to the nearest dollar. What is the maximum possible price of the item?",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Calculation and Approximation"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N1-greenridge-2024-p1-q2",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Given that $9^{12}=27^{x}$ find $x$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The number of people owning cars in a country increased by $p$% every year, from 5000 in the year 2020, to 6500 in the year 2024. Find the value of $p$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Indices and Growth"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N5-greenridge-2024-p1-q4",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Factorise $6x^{2}-x-2$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Quadratic Factorisation"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N5-greenridge-2024-p1-q5",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write $\\frac{2}{x-2}-\\frac{3}{2x+1}$ as a single fraction in its simplest form.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Algebraic Fraction Subtraction"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "S1-greenridge-2024-p1-q6",
+            "topicID": "S1",
+            "stem": "Six positive integers have a mean of 15, a median of 15 and a mode of 16. The range of these numbers is 7.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the six numbers.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Integers from Statistics"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N7-greenridge-2024-p1-q7",
+            "topicID": "N7",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve the inequality $\\frac{2x-3}{4}\\le\\frac{5-x}{5}$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Linear Inequality"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "G5-greenridge-2024-p1-q8",
+            "topicID": "G5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Convert $40^{\\circ}$ into radians. Leave your answers in terms of $\\pi$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Convert $23~km/h$ into $m/s$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Unit Conversions"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "G5-greenridge-2024-p1-q9",
+            "topicID": "G5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the total surface area of a solid hemisphere with radius 6 cm.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Hemisphere Surface Area"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "N5-greenridge-2024-p1-q10",
+            "topicID": "N5",
+            "stem": "Given $2c+b=\\frac{b-c}{a}$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Rearrange the formula to make $b$ the subject.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Rearranging Formula"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "G4-greenridge-2024-p1-q11",
+            "topicID": "G4",
+            "stem": "Triangle ABC is such that $AB=16$ cm, $BC=63$ cm, $AC=65$ cm.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Do points A, B and C lie on the circumference of a circle? Explain with working.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Triangle Circle Property"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "N5-greenridge-2024-p1-q12",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Factorise $a^{2}b^{4}-ab^{2}$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Expand and simplify $(3x+2)^{2}+4x(2-x)$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Algebraic Manipulation"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "G1-greenridge-2024-p1-q13",
+            "topicID": "G1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the area of a regular hexagon with each side 7 cm.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the interior angle of a regular 15-sided polygon.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Polygon Properties"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "N2-greenridge-2024-p1-q14",
+            "topicID": "N2",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$y$ is directly proportional to $\\sqrt[3]{x}$. Find the percentage increase of $y$ when $x$ increases by 700%.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "6 men took 50 hours to paint a mural wall. How long does it take for 4 men to paint the same wall?",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Proportion Problems"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "S2-greenridge-2024-p1-q15",
+            "topicID": "S2",
+            "stem": "A bag contains some green counters, some orange counters and some yellow counters. The probability of picking a green counter at random is 0.2. The probability of picking an orange counter at random is 0.1 more than the probability of choosing a yellow counter at random.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that the probability of picking a yellow counter at random is 0.35.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "If there are 14 yellow counters, how many counters are there altogether?",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "If 3 orange counters are removed, what is the new probability of picking a yellow counter at random?",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Probability Counters"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "N5-greenridge-2024-p1-q17",
+            "topicID": "N5",
+            "stem": "(a) These are the first four terms of a sequence: 2, 6, 10, 14.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find an expression, in terms of $n$, for the nth term of the sequence.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "One term in the sequence is 82. Find the value of n for this term.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Explain why 360 is not a term of this sequence.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The sum of the first n terms of another sequence is $-4n^{2}+54n$. Find the 8th term of this sequence.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Arithmetic Sequence"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "N7-greenridge-2024-p1-q19",
+            "topicID": "N7",
+            "stem": "Siti has x number of $5 notes. Aisha has y number of $2 notes. They have a total of 30 notes with total value $111.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Form and solve two simultaneous equations to calculate the amount of money Siti has.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Simultaneous Equations Money"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "S1-greenridge-2024-p1-q20",
+            "topicID": "S1",
+            "stem": "The number of customers, c, served in a day at a counter for 40 days are given below.",
+            "questionTable": {
+                "type": "data",
+                "headers": [
+                    "Number of customers c",
+                    "$0<c\\le5$",
+                    "$5<c\\le10$",
+                    "$10<c\\le15$",
+                    "$15<c\\le20$"
+                ],
+                "rows": [
+                    [
+                        "Frequency",
+                        11,
+                        18,
+                        9,
+                        2
+                    ]
+                ]
+            },
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the mean number of customers served.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the standard deviation.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "If 3 more customers were added to the counter each day, how would the mean and standard deviation be affected by this change?",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Grouped Data Statistics"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "N1-greenridge-2024-p1-q21",
+            "topicID": "N1",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express 5500 as a product of its prime factors.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The number $\\frac{5500~p}{q}$ is a perfect cube. $p$ and $q$ are prime numbers. Find the value of $p$ and the value of $q$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Bus A takes 50 minutes to complete a route. Bus B takes 1 hour to complete the same route. Bus C takes 75 minutes to complete the same route. All 3 buses left the same bus stop at 6 am one morning. What time will all 3 buses meet again?",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Primes and LCM"
+        },
+        {
+            "questionNumber": 23,
+            "questionId": "N9-greenridge-2024-p1-q23",
+            "topicID": "N9",
+            "stem": "A concert offers three types of seating areas, A, B and C, for Saturday and Sunday. The numbers of tickets sold for each type of seating area on each of these days in a particular week are shown in the following table.",
+            "questionTable": {
+                "type": "matrix",
+                "headers": [
+                    "",
+                    "A",
+                    "B",
+                    "C"
+                ],
+                "rows": [
+                    [
+                        "Saturday",
+                        1100,
+                        1000,
+                        1200
+                    ],
+                    [
+                        "Sunday",
+                        1400,
+                        1200,
+                        1300
+                    ]
+                ]
+            },
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The information in the table can be represented by a $2\\times3$ matrix S. Write down the matrix S.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Each ticket for type A, B and C seating area costs $110, $80 and $x$ respectively. Write down a $3\\times1$ matrix P to represent this information.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find, in terms of x, the matrix $T=SP$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Explain what is represented by the elements of matrix T.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "The company collected $688 500 from the sale of tickets for the weekend. Find the value of x.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Matrix Ticket Sales"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N5-greenridge-2024-p2-q1",
+            "topicID": "N5",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Simplify $\\frac{5a^{3}}{6b}\\div\\frac{2ab}{4a^{2}b}$",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Solve $\\frac{x}{8}=\\frac{50}{x}$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Simplify $\\frac{4v^{2}-1}{2pv+p-10v-5}.$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Solve $2x^{2}=3(3x-1).$ Give your solutions correct to two decimal places.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Algebraic Equations and Simplification"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N3-greenridge-2024-p2-q2",
+            "topicID": "N3",
+            "stem": null,
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Hamid borrowed a sum of money for 3 years at an interest rate of 3.5% per annum simple interest to pay for his car. If the total interest Hamid paid on the loan was $10 374, find the sum of money that he borrowed.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The table shows information collected by Hamid about his driving in 2023.\n\n| | |\n| :--- | :--- |\n| Total distance driven in 2023 | 16 992 km |\n| Average price paid for petrol | $2.72 per litre |\n| Average petrol consumption of his car | 6.7 litres per 100 km |\n\nCalculate the total amount Hamid paid for petrol in 2023.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "At the start of 2020, Hamid bought his car at a cash price of $120 500. Each year the value of the car decreases by 5% of its value at the start of the year. At the end of 2023, Hamid decided to sell his car.\n(i) Explain why the percentage reduction at the end of three years is not 15% of $120 500.\n(ii) Calculate the value of his car at the end of 2023. Give your answer correct to the nearest dollar.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Financial Mathematics"
+        }
+    ]
+}

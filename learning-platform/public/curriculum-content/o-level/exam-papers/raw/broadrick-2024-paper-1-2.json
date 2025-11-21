@@ -1,0 +1,560 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "questionId": "N1-broadrick-2024-p1-q1",
+            "topicID": "N1",
+            "stem": "Evaluate",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "1",
+                    "questionText": "$(-3.85)^2 - 10 - 0.9 \\times (-6) \\div 3.11 - 43$, giving your answer to 4 significant figures.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 1,
+            "paper": "Paper 1",
+            "title": "Order of Operations"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "S1-broadrick-2024-p1-q2",
+            "topicID": "S1",
+            "stem": "The frequency table shows the reaction time, t seconds, for a chemical to change the colour of the litmus paper in 100 laboratory sessions.\n\n| Time (t sec) | $0<t\\le1$ | $1<t\\le2$ | $2<t\\le3$ | $3<t\\le4$ | $4<t\\le5$ |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| Frequency | 8 | 28 | 44 | 18 | 2 |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate an estimate for the mean reaction time.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate an estimate for the standard deviation of the reaction times.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Statistics"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N1-broadrick-2024-p1-q3",
+            "topicID": "N1",
+            "stem": "Given that $\\frac{5^{x}}{2^{2x}\\times5^{3-x}}=2^{m}5^{n}$, express m and n in terms of x.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "3",
+                    "questionText": "Find the values of m and n.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Indices"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N1-broadrick-2024-p1-q4",
+            "topicID": "N1",
+            "stem": "The highest common factor of two numbers is 18.\nThe lowest common multiple of the two numbers is 324.\nBoth numbers are greater than 20.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "4",
+                    "questionText": "Find the two numbers.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "HCF and LCM"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "N2-broadrick-2024-p1-q5",
+            "topicID": "N2",
+            "stem": "A map has a scale of 1: 50 000.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The distance between two towns on the map is 7.5 cm. Calculate the actual distance between the two towns in kilometres.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "A lake covers an actual area of 2.25 square kilometres. Find the area of the lake on the map in square centimetres.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Map Scales"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "N1-broadrick-2024-p1-q6",
+            "topicID": "N1",
+            "stem": "A wooden block has a mass of 115 grams, correct to the nearest gram.\nThe volume of the block is 6 $cm^{3},$ correct to the nearest $cm^{3}.$",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "6",
+                    "questionText": "Find the largest possible density of the block in $g/cm^{3}$. ($Density=\\frac{Mass}{Volume}$)",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Limits of Accuracy"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N4-broadrick-2024-p1-q9",
+            "topicID": "N4",
+            "stem": "Keila travels from Singapore to Japan.\nShe wants to change 850 Singapore dollars (\\$) into Yen (\u00a5).\nThe exchange rate in Singapore is \\$100 = \u00a511600 and the exchange rate in Japan is \u00a51 = \\$0.0086.\nShe claims that she will receive more if she changes the money in Singapore.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "9",
+                    "questionText": "Justify if her claim is true. Show your working.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Exchange Rates"
+        },
+        {
+            "questionNumber": 11,
+            "questionId": "N1-broadrick-2024-p1-q11",
+            "topicID": "N1",
+            "stem": "The number $2^{p}\\times5^{q}\\times\\frac{5}{2}$ is a perfect cube where p and q are greater than 1.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "11",
+                    "questionText": "Find the smallest possible integer values of p and of q.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Prime Factorisation"
+        },
+        {
+            "questionNumber": 12,
+            "questionId": "N1-broadrick-2024-p1-q12",
+            "topicID": "N1",
+            "stem": "",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Simplify $(16y^{3})^{\\frac{3}{2}}$",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Given $5^{k}=125\\sqrt[3]{5\\sqrt{5}}$, use laws of indices to find the value of k. Show your working.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Indices"
+        },
+        {
+            "questionNumber": 13,
+            "questionId": "N8-broadrick-2024-p1-q13",
+            "topicID": "N8",
+            "stem": "Given that $\\xi=\\{integers~x:p\\le x<20\\}$, $A=$ {factors of 24}, $B=$ {prime numbers}, $C=$ {perfect squares}.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "List the elements of A if $p=2$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "For $p\\ge0$, list the elements of $(B\\cup C)^{\\prime}$ such that $n(B\\cup C)^{\\prime}=4$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the smallest p such that $A \\cap C = \\emptyset$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Set Language"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "N3-broadrick-2024-p1-q14",
+            "topicID": "N3",
+            "stem": "A company divided a bonus among its employees A, B, and C in the ratio 2:3:7. C's bonus was X% more than the combined bonus of A and B.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "14",
+                    "questionText": "Find X.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Ratio and Percentage"
+        },
+        {
+            "questionNumber": 17,
+            "questionId": "N5-broadrick-2024-p1-q17",
+            "topicID": "N5",
+            "stem": "Write as a single fraction in its simplest form",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "17",
+                    "questionText": "$\\frac{2x}{3x-1} - \\frac{4}{2x+1}$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Algebraic Fractions"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "N5-broadrick-2024-p1-q18",
+            "topicID": "N5",
+            "stem": "",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "ai",
+                    "questionText": "Factorise completely $24a^{2}b+12ab^{2}-ab$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "aii",
+                    "questionText": "Factorise completely $mn-18-9m+2n$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Expand and simplify $(-2x+3q)(x-2q)$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Algebraic Manipulation"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "N3-broadrick-2024-p1-q19",
+            "topicID": "N3",
+            "stem": "Rayden invested \\$20 000 at a rate of 0.3% per month compound interest.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the value of his investment at the end of 2 years.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Rayden then withdrew $\\frac{1}{5}$ of the accumulated amount at the end of the 2 years. Find the new rate of compound interest per month so that his remaining investment reaches the same value in (a) in another 3 years.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Compound Interest"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "N5-broadrick-2024-p1-q20",
+            "topicID": "N5",
+            "stem": "",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "20",
+                    "questionText": "Simplify $\\frac{2x^{2}-5xy-12y^{2}}{x^{2}-16y^{2}}$",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Algebraic Simplification"
+        },
+        {
+            "questionNumber": 23,
+            "questionId": "G5-broadrick-2024-p1-q23",
+            "topicID": "G5",
+            "stem": "A cylinder X has radius, r cm and height h cm. A hemisphere S is such that its radius is half of the radius of cylinder X.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The volume of the cylinder is 4 times that of the hemisphere. Express h in terms of r.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Another cylinder Y is geometrically similar to cylinder X. The ratio of the curved surface area of X: Y = 9 : 4. Find the height of cylinder Y in terms of r.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Mensuration"
+        },
+        {
+            "questionNumber": 24,
+            "questionId": "N5-broadrick-2024-p1-q24",
+            "topicID": "N5",
+            "stem": "The sum of the first n terms of a linear sequence is $5n^2 - n$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that the sum of the first n terms in the sequence is always even.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "By finding the first three terms in the sequence or otherwise, find, in terms of n, an expression for the nth term of the sequence.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Sequences"
+        },
+        {
+            "questionNumber": 25,
+            "questionId": "N9-broadrick-2024-p1-q25",
+            "topicID": "N9",
+            "stem": "In bookstore A, a fiction book costs \\$8, a non-fiction book costs \\$10 and a science book costs \\$11.50. In bookstore B, a fiction book costs \\$1.10 less, a non-fiction book costs \\$2.80 less and a science book costs \\$1.50 more than that in bookstore A. The information can be represented by the matrix.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Kevin bought 4 fiction books, 3 non-fiction books and 2 science books. Molly bought 2 fiction book and x science books. Represent their purchases, in terms of x, in a $2\\times3$ matrix P.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Evaluate the matrix $R=PQ$ where Q represents the cost matrix.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Explain what the elements in the first column of matrix R represent.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Molly can save \\$5.30 by purchasing in bookstore A. Using your answer in (b), find the value of x.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Matrices"
+        },
+        {
+            "questionNumber": 1,
+            "questionId": "N3-broadrick-2024-p2-q1",
+            "topicID": "N3",
+            "stem": "A company produces phones. In 2023, the company produced 3.6 million smartphones.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Due to increased demand, the company produced 4.2 million smartphones in 2024. Express this production figure in standard form.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the percentage increase in smartphone production from 2023 to 2024.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "In 2023, 4% of the total phones produced were not smartphones. Calculate the total number of phones produced in 2023. Express your answer in standard form.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 2",
+            "title": "Standard Form and Percentage"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "N7-broadrick-2024-p2-q2",
+            "topicID": "N7",
+            "stem": "",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Solve the equation. (Equation not fully visible, mark scheme suggests an equation leading to $12x - 8x^2 = 6 - 8x^2$)",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Solve the inequality $1-3p\\ge5$.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Rearrange the formula $3A=\\frac{Ap+h}{1-h}$ to make A the subject.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Solve the equation $\\frac{x}{(x-4)^2} - \\frac{3}{4-x} = 2$ (Inferred from mark scheme). Give your answers correct to two decimal places.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Algebra"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "N5-broadrick-2024-p2-q4",
+            "topicID": "N5",
+            "stem": "The table below shows the number of vertices (n) and number of diagonals (X) in a polygon.\n| Number of Vertices (n) | 3 | 4 | 5 | 6 | 8 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| Number of diagonals (X) | 0 | 2 | 5 | 9 | a |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Write down the value of a.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "bi",
+                    "questionText": "The number of diagonals is related to the number of vertices by the equation $X=pn^{2}+qn$ where p and q are constants. Using appropriate substitution, show that $16p+4q=2$ and $25p+5q=5$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "bii",
+                    "questionText": "Solve these simultaneous equations to find the values of p and of q.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "biii",
+                    "questionText": "Explain whether it is possible to have a n-sided polygon with 495 diagonals. Show your working clearly.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Number Patterns"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "N1-broadrick-2024-p2-q10",
+            "topicID": "N1",
+            "stem": "Tay is part of a student committee organizing a charity race event in 2025. He wants to estimate the cost per participant to cover all expenses. (Tables provided for costs of T-shirts, Goodie bags, Venue, Refreshments, Medals, and Local Courier rates).",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "How many percent more will Tay need to pay if he booked the venue 3 months in advance instead of 6 months in advance?",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "For a 50 kg purchase, calculate the amount of shipping fees charged by Singapore Post.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The event is scheduled to be in October. Tay estimated the number of participants to be 1000 and he plans to confirm the venue by February. He also wants to print double sided for the participant's T-shirt, and issue a goodie bag, refreshment and medal to each participant. He needs to decide how much registration fee he should charge each participant. He must be able donate at least 40% of the proceeds to the charity and still cover all the costs. Suggest a sensible amount for the registration fee of a participant. State your assumptions and decisions if any. Show your calculations clearly.",
+                    "marks": 7,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Real World Context"
+        }
+    ]
+}

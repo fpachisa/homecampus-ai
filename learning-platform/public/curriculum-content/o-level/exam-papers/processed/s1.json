@@ -176,6 +176,54 @@
         "title": "Data Misrepresentation"
       },
       {
+        "questionNumber": 6,
+        "questionId": "S1-greenridge-2024-p1-q6",
+        "topicID": "S1",
+        "stem": "Six positive integers have a mean of 15, a median of 15 and a mode of 16. The range of these numbers is 7.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the six numbers.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "12, 13, 14, 16, 16, 19",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the sum of the six numbers using the mean.",
+                  "working": "Sum = $6 \\times 15 = 90$.",
+                  "reasoning": "The mean is the sum of values divided by the count."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the Median and Mode. Let the numbers in ascending order be $x_1, x_2, x_3, x_4, x_5, x_6$.",
+                  "working": "Median = 15 $\\implies \\frac{x_3 + x_4}{2} = 15 \\implies x_3 + x_4 = 30$.\nMode = 16 $\\implies$ 16 must appear at least twice. Since the list is ascending and $x_3+x_4=30$, if $x_4=16$, then $x_3=14$.",
+                  "reasoning": "The median of an even set is the average of the two middle numbers. The mode is the most frequent number."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Use the Range and Sum to find the remaining numbers.",
+                  "working": "Current list: $x_1, x_2, 14, 16, 16, x_6$ (Assuming two 16s for now).\nRange = 7 $\\implies x_6 - x_1 = 7 \\implies x_6 = x_1 + 7$.\nSum = $x_1 + x_2 + 14 + 16 + 16 + (x_1 + 7) = 90$\n$2x_1 + x_2 + 53 = 90$\n$2x_1 + x_2 = 37$.",
+                  "reasoning": "Substitute known values into the sum equation to reduce variables."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $x_1$ and $x_2$ using constraints ($x_1 \\le x_2 \\le 14$).",
+                  "working": "If $x_1 = 12$, then $2(12) + x_2 = 37 \\implies 24 + x_2 = 37 \\implies x_2 = 13$.\nThis satisfies $12 \\le 13 \\le 14$.\nThen $x_6 = 12 + 7 = 19$.",
+                  "reasoning": "Test integer values that satisfy the ascending order condition."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Integers from Statistics"
+      },
+      {
         "questionNumber": 8,
         "questionId": "S1-cchms-2024-p1-q8",
         "topicID": "S1",
@@ -477,6 +525,107 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Mean and Standard Deviation"
+      },
+      {
+        "questionNumber": 20,
+        "questionId": "S1-greenridge-2024-p1-q20",
+        "topicID": "S1",
+        "stem": "The number of customers, c, served in a day at a counter for 40 days are given below.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Number of customers c",
+            "$0<c\\le5$",
+            "$5<c\\le10$",
+            "$10<c\\le15$",
+            "$15<c\\le20$"
+          ],
+          "rows": [
+            [
+              "Frequency",
+              11,
+              18,
+              9,
+              2
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the mean number of customers served.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7.75",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the mid-value ($x$) for each class interval.",
+                  "working": "Mid-values: 2.5, 7.5, 12.5, 17.5",
+                  "reasoning": "For grouped data, we use the midpoint of the interval to represent the data values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$ and divide by total frequency.",
+                  "working": "$\\sum fx = (11 \\times 2.5) + (18 \\times 7.5) + (9 \\times 12.5) + (2 \\times 17.5)$\n$= 27.5 + 135 + 112.5 + 35 = 310$\nMean = $\\frac{310}{40} = 7.75$",
+                  "reasoning": "Mean $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the standard deviation.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4.18",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$\\sum fx^2 = (11 \\times 2.5^2) + (18 \\times 7.5^2) + (9 \\times 12.5^2) + (2 \\times 17.5^2)$\n$= 68.75 + 1012.5 + 1406.25 + 612.5 = 3100$",
+                  "reasoning": "Standard deviation requires the sum of squares of the data points weighted by frequency."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2}$\n$= \\sqrt{\\frac{3100}{40} - 7.75^2}$\n$= \\sqrt{77.5 - 60.0625} = \\sqrt{17.4375} \\approx 4.1758$",
+                  "reasoning": "Use the computational formula for standard deviation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "If 3 more customers were added to the counter each day, how would the mean and standard deviation be affected by this change?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Mean becomes 10.75, Standard Deviation remains 4.18",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the effect of addition on the Mean.",
+                  "working": "New Mean = Old Mean + 3 = $7.75 + 3 = 10.75$.",
+                  "reasoning": "Adding a constant $k$ to every data value increases the mean by $k$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the effect of addition on the Standard Deviation.",
+                  "working": "New SD = Old SD = 4.18.",
+                  "reasoning": "Adding a constant shifts the data but does not change the spread (dispersion) of the data."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Grouped Data Statistics"
       },
       {
         "questionNumber": 24,
@@ -815,6 +964,48 @@
         "title": "Combined Mean and Statistics Logic"
       },
       {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111071107-p1-q101",
+        "topicID": "S1",
+        "stem": "Five positive integers have a mean of 7, a median of 6 and a mode of 4. The range of these numbers is 9.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the five numbers.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4, 4, 6, 8, 13",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of the five integers.",
+                  "working": "Sum = $5 \\times 7 = 35$.",
+                  "reasoning": "Sum = Mean $\\times$ Count."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify known positions based on Median and Mode.",
+                  "working": "Let integers be $x_1, x_2, x_3, x_4, x_5$.\nMedian = 6 $\\implies x_3 = 6$.\nMode = 4 $\\implies$ 4 appears most frequently. Since $x_3=6$, $x_1$ and $x_2$ must be 4.",
+                  "reasoning": "In an ordered list of 5, the 3rd number is the median. For mode to be 4 (smaller than median), the first two numbers must be 4."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Use Range and Sum to find $x_4$ and $x_5$.",
+                  "working": "Range = 9 $\\implies x_5 - x_1 = 9 \\implies x_5 - 4 = 9 \\implies x_5 = 13$.\nSum: $4 + 4 + 6 + x_4 + 13 = 35$\n$27 + x_4 = 35 \\implies x_4 = 8$.",
+                  "reasoning": "Substitute known values to solve for the remaining unknown."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Properties of Integers"
+      },
+      {
         "questionNumber": 102,
         "questionId": "S1-gemini-1911-p1-102",
         "topicID": "S1",
@@ -1002,6 +1193,82 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Dot Diagram Analysis"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S1-gemini-2111071107-p1-q102",
+        "topicID": "S1",
+        "stem": "The time, $t$ minutes, taken by 20 students to complete a quiz is recorded in the table below.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Time ($t$)",
+            "$10<t\\le20$",
+            "$20<t\\le30$",
+            "$30<t\\le40$"
+          ],
+          "rows": [
+            [
+              "Frequency",
+              4,
+              10,
+              6
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate an estimate for the mean time taken.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "26 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify mid-values ($x$) and calculate $\\sum fx$.",
+                  "working": "Mid-values: 15, 25, 35.\n$\\sum fx = (4 \\times 15) + (10 \\times 25) + (6 \\times 35) = 60 + 250 + 210 = 520$.",
+                  "reasoning": "Use midpoints for grouped data calculations."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide by total frequency.",
+                  "working": "Mean = $\\frac{520}{20} = 26$.",
+                  "reasoning": "Mean formula $\\bar{x} = \\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the standard deviation.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7.00",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$\\sum fx^2 = (4 \\times 15^2) + (10 \\times 25^2) + (6 \\times 35^2)$\n$= (4 \\times 225) + (10 \\times 625) + (6 \\times 1225)$\n$= 900 + 6250 + 7350 = 14500$.",
+                  "reasoning": "Sum of squares calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply SD formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{14500}{20} - 26^2} = \\sqrt{725 - 676} = \\sqrt{49} = 7$.",
+                  "reasoning": "Standard deviation formula."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Grouped Data Analysis"
       }
     ],
     "Paper 2": [
@@ -1240,6 +1507,42 @@
             ]
           ]
         }
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2111071107-p2-q101",
+        "topicID": "S1",
+        "stem": "The marks of two classes, A and B, in a mathematics test are summarized below.\nClass A: Mean = 65, Standard Deviation = 12\nClass B: Mean = 65, Standard Deviation = 5",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Compare and comment on the performance of the two classes in two ways.",
+            "marks": 2,
+            "answerType": "text",
+            "solution": {
+              "finalAnswer": "Both classes have the same average performance, but Class B is more consistent.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Compare the central tendency (Mean).",
+                  "working": "Both classes have a mean of 65.",
+                  "reasoning": "The mean indicates the average performance level."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare the spread (Standard Deviation).",
+                  "working": "Class A (SD = 12) > Class B (SD = 5).",
+                  "reasoning": "A lower standard deviation implies the data is less spread out, meaning the performance is more consistent."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 2",
+        "title": "Comparison of Data Sets"
       }
     ]
   }

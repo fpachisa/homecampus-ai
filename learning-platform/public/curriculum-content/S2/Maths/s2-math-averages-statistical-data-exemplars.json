@@ -1,0 +1,917 @@
+{
+  "avg-node-1": {
+    "nodeId": "avg-node-1",
+    "title": "Understanding Measures of Central Tendency",
+    "section": "s2-math-averages-introduction",
+    "learningFocus": [
+      "Understand that an average is a measure of central tendency",
+      "Recognize that averages represent the 'centre' of a dataset",
+      "Know that there are three types of averages: mean, median, and mode"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "What does it mean when we say an average is a 'measure of central tendency'?",
+        "correctAnswer": "A measure of central tendency tells us where the data points are centred about. It represents the data set with a single value that indicates the typical or central value in the distribution."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Name the three types of averages used in statistics.",
+        "correctAnswer": "The three types of averages are: (1) Mean (arithmetic average), (2) Median (middle value), and (3) Mode (most frequent value)."
+      }
+    ],
+    "variationRules": {
+      "keyTerms": [
+        "Central tendency",
+        "Measure of centre",
+        "Representative value",
+        "Typical value"
+      ],
+      "threeTypes": ["Mean", "Median", "Mode"]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE conceptual question about averages",
+      "CRITICAL: DO NOT include mathTool for conceptual understanding",
+      "Focus on WHAT an average represents, not HOW to calculate",
+      "Students should understand: average = single value representing entire dataset",
+      "Emphasize that different situations require different types of averages",
+      "Connect to real-world: life expectancy, median age, average household size"
+    ]
+  },
+
+  "avg-node-2": {
+    "nodeId": "avg-node-2",
+    "title": "Why Different Types of Averages",
+    "section": "s2-math-averages-introduction",
+    "learningFocus": [
+      "Understand that different scenarios require different averages",
+      "Recognize that each average has advantages and limitations",
+      "Preview when to use mean, median, or mode"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In a company, most employees earn around $2000-$2800 per month, but the CEO earns $10,000. Would the mean salary give a good picture of what most employees earn? Why or why not?",
+        "correctAnswer": "No, the mean would not give a good picture. The CEO's high salary ($10,000) is an extreme value that would pull the mean much higher than what most employees actually earn. The mean would suggest employees earn more than they really do. The median would be more appropriate here."
+      }
+    ],
+    "variationRules": {
+      "extremeValueScenarios": [
+        "Salaries with one very high earner",
+        "House prices with a few mansions",
+        "Test scores with one very low score",
+        "Ages with one very old person"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE scenario-based question",
+      "CRITICAL: DO NOT include mathTool",
+      "Present scenario where one type of average is clearly better than another",
+      "Common scenario: extreme values affecting mean",
+      "Students should explain WHY one average is better, not just identify which",
+      "Connect to real decision-making: choosing fair representation"
+    ]
+  },
+
+  "avg-node-3": {
+    "nodeId": "avg-node-3",
+    "title": "Calculating Mean of Raw Data",
+    "section": "s2-math-averages-mean",
+    "learningFocus": [
+      "Apply formula: Mean = sum of data values / number of data values",
+      "Distinguish between data values and number of data values",
+      "Calculate mean from small datasets"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The numbers of books borrowed by 5 students from a library are 3, 4, 4, 9, and 10. Calculate the mean number of books borrowed.",
+        "correctAnswer": "Mean = sum of data values / number of data values = (3 + 4 + 4 + 9 + 10) / 5 = 30 / 5 = 6 books"
+      },
+      {
+        "id": "ex2",
+        "problemText": "The heights of 7 students are 1.54 m, 1.67 m, 1.49 m, 1.54 m, 1.76 m, 1.69 m, and 1.58 m. Calculate the mean height.",
+        "correctAnswer": "Mean = (1.54 + 1.67 + 1.49 + 1.54 + 1.76 + 1.69 + 1.58) / 7 = 11.27 / 7 = 1.61 m"
+      }
+    ],
+    "variationRules": {
+      "datasets": [
+        {"context": "books borrowed", "n": 5, "range": "3-10"},
+        {"context": "test scores", "n": 6, "range": "60-90"},
+        {"context": "heights (m)", "n": 7, "range": "1.4-1.8"},
+        {"context": "ages (years)", "n": 5, "range": "10-15"}
+      ],
+      "keyReminder": "Data values are the actual numbers; number of data values is the count (n)"
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE calculation from raw data (5-8 values)",
+      "CRITICAL: DO NOT include mathTool",
+      "Formula: Mean = sum / n",
+      "Emphasize distinction: sum OF values vs number OF values",
+      "Use realistic contexts from curriculum: books, heights, ages, scores",
+      "Values should give non-integer means to show division properly",
+      "Students must show formula, substitution, and final answer"
+    ]
+  },
+
+  "avg-node-4": {
+    "nodeId": "avg-node-4",
+    "title": "Finding Unknown Given Mean",
+    "section": "s2-math-averages-mean",
+    "learningFocus": [
+      "Use mean formula to find unknown data value",
+      "Rearrange: sum of data values = mean × number of data values",
+      "Set up and solve equations involving mean"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The mean of $10, $15, $12, $20, and $x is $13. Find the value of x.",
+        "correctAnswer": "Mean = sum / n, so 13 = (10 + 15 + 12 + 20 + x) / 5. Therefore 13 × 5 = 57 + x, which gives 65 = 57 + x, so x = 8."
+      },
+      {
+        "id": "ex2",
+        "problemText": "The mean of six numbers is 17. Four of the numbers are 15, 17, 20, and 22. The remaining two numbers are equal. Find the two remaining numbers.",
+        "correctAnswer": "Sum of all six numbers = mean × n = 17 × 6 = 102. Sum of known four = 15 + 17 + 20 + 22 = 74. Sum of two remaining = 102 - 74 = 28. Since they're equal, each = 28 / 2 = 14."
+      }
+    ],
+    "variationRules": {
+      "problemTypes": [
+        {"type": "find single unknown", "equation": "mean × n = sum including x"},
+        {"type": "find two equal unknowns", "equation": "mean × n - known sum = 2x"},
+        {"type": "find remaining values", "method": "total sum minus known sum"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE problem finding unknown from given mean",
+      "CRITICAL: DO NOT include mathTool",
+      "Key insight: mean × number of values = sum of values",
+      "Problem types: (a) find single unknown x, (b) find two equal unknowns",
+      "Students must: set up equation, rearrange, solve",
+      "Show working clearly: Mean × n = sum, then solve for unknown",
+      "Use realistic contexts where possible"
+    ]
+  },
+
+  "avg-node-5": {
+    "nodeId": "avg-node-5",
+    "title": "Mean from Frequency Table",
+    "section": "s2-math-averages-mean",
+    "learningFocus": [
+      "Understand frequency distribution vs raw data",
+      "Apply formula: Mean = Σfx / Σf",
+      "Calculate products of value × frequency"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Weekly salary ($) | 1000 | 1100 | 1200 | 2100 | 2500\nNumber of employees | 20 | 8 | 10 | 7 | 5\n\nCalculate the mean weekly salary of the employees.",
+        "correctAnswer": "(i) Total employees = 20 + 8 + 10 + 7 + 5 = 50. (ii) Total salary = 20×$1000 + 8×$1100 + 10×$1200 + 7×$2100 + 5×$2500 = $20000 + $8800 + $12000 + $14700 + $12500 = $68000. (iii) Mean = $68000 / 50 = $1360."
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        {"variable": "Weekly salary ($)", "unit": "$"},
+        {"variable": "Test score", "unit": "marks"},
+        {"variable": "Number of siblings", "unit": "siblings"},
+        {"variable": "Age (years)", "unit": "years"}
+      ],
+      "tableStructure": {
+        "values": "4-6 different values (x)",
+        "frequencies": "4-6 corresponding frequencies (f)",
+        "calculation": "Σfx = sum of all (value × frequency)"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE frequency table problem",
+      "CRITICAL: DO NOT include mathTool",
+      "Formula: Mean = Σfx / Σf where x=value, f=frequency",
+      "Students must: (1) find Σf (total frequency), (2) calculate each fx, (3) find Σfx, (4) divide",
+      "Emphasize: sum of data values = Σfx, NOT just Σx",
+      "Provide table with 4-6 rows",
+      "Use realistic contexts from curriculum"
+    ]
+  },
+
+  "avg-node-6": {
+    "nodeId": "avg-node-6",
+    "title": "Understanding 'Even Out' Concept",
+    "section": "s2-math-averages-mean",
+    "learningFocus": [
+      "Visualize mean as 'leveling out' all values",
+      "Understand that if everyone had the mean value, total would be same",
+      "Connect to real-world: fair distribution"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Five students have 3, 4, 4, 9, and 10 books. The mean is 6 books. What does it mean if we say 'the mean evens out the values'?",
+        "correctAnswer": "If we redistribute the books so everyone has the same number (6 books each), the total would remain 30 books (5 × 6 = 30). The mean represents the value each person would have if we 'evened out' or distributed the books equally."
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        "Books distributed among students",
+        "Sweets shared equally",
+        "Money divided equally",
+        "Basketballs distributed to classes"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE conceptual question about 'even out' idea",
+      "CRITICAL: DO NOT include mathTool",
+      "Key concept: mean × n = total (if everyone had mean value)",
+      "Students should explain the leveling/distribution concept",
+      "Connect to: If Vani had 7 sweets and everyone got x (mean), each would have x",
+      "Real-world connection: fair distribution, equal sharing"
+    ]
+  },
+
+  "avg-node-7": {
+    "nodeId": "avg-node-7",
+    "title": "Why Not to Average Averages",
+    "section": "s2-math-averages-mean",
+    "learningFocus": [
+      "Understand that averaging means from different-sized groups gives wrong answer",
+      "Recognize that bases (group sizes) matter",
+      "Calculate correct overall mean using weighted approach"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Class A has 20 students with a mean score of 70. Class B has 30 students with a mean score of 80. What is the mean score for all 50 students? Is it simply (70 + 80) / 2 = 75?",
+        "correctAnswer": "No, we cannot just average the two means because the classes have different sizes (different bases). Correct calculation: Total score for Class A = 20 × 70 = 1400. Total score for Class B = 30 × 80 = 2400. Overall mean = (1400 + 2400) / (20 + 30) = 3800 / 50 = 76 (not 75)."
+      }
+    ],
+    "variationRules": {
+      "scenarios": [
+        {"group1": "20 students, mean 70", "group2": "30 students, mean 80"},
+        {"group1": "15 employees, mean $2000", "group2": "5 employees, mean $3000"},
+        {"group1": "25 runners, mean time 45 min", "group2": "10 runners, mean time 60 min"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE problem about averaging means from different-sized groups",
+      "CRITICAL: DO NOT include mathTool",
+      "Key lesson: Cannot average means when bases (group sizes) differ",
+      "Correct method: (sum1 + sum2) / (n1 + n2) where sum = mean × n",
+      "Students must explain WHY simple average of means is wrong",
+      "Emphasize: the bases may be different"
+    ]
+  },
+
+  "avg-node-8": {
+    "nodeId": "avg-node-8",
+    "title": "Estimating Mean from Grouped Data",
+    "section": "s2-math-averages-mean",
+    "learningFocus": [
+      "Understand that grouped data loses exact values",
+      "Use mid-value to represent class interval",
+      "Calculate: mid-value = (lower boundary + upper boundary) / 2",
+      "Recognize result is an estimate, not exact mean"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Time (minutes) | 15 ≤ x < 20 | 20 ≤ x < 25 | 25 ≤ x < 30 | 30 ≤ x < 35 | 35 ≤ x < 40\nFrequency | 5 | 10 | 20 | 15 | 18\n\nEstimate the mean time.",
+        "correctAnswer": "Find mid-values: (15+20)/2=17.5, (20+25)/2=22.5, (25+30)/2=27.5, (30+35)/2=32.5, (35+40)/2=37.5. Calculate: Σfx = 5×17.5 + 10×22.5 + 20×27.5 + 15×32.5 + 18×37.5 = 87.5 + 225 + 550 + 487.5 + 675 = 2025. Σf = 68. Estimated mean = 2025/68 = 29.8 minutes (to 1 d.p.)"
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        {"variable": "Time (minutes)", "intervals": "5-unit intervals"},
+        {"variable": "Age (years)", "intervals": "10-unit intervals"},
+        {"variable": "Score", "intervals": "10-unit intervals"},
+        {"variable": "Mass (kg)", "intervals": "5-unit intervals"}
+      ],
+      "midValueFormula": "Mid-value = (lower + upper) / 2"
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE grouped data problem",
+      "CRITICAL: DO NOT include mathTool",
+      "Key steps: (1) Find mid-value for each interval, (2) Calculate fx for each, (3) Sum to get Σfx, (4) Divide by Σf",
+      "Emphasize: This is an ESTIMATE because we don't know exact values, only intervals",
+      "Mid-value formula: (lower + upper) / 2 for interval a ≤ x < b",
+      "Provide 4-5 class intervals with frequencies",
+      "Students must show all mid-values and fx calculations"
+    ]
+  },
+
+  "avg-node-9": {
+    "nodeId": "avg-node-9",
+    "title": "Position of Median - Odd Number",
+    "section": "s2-math-averages-median",
+    "learningFocus": [
+      "Arrange data in ascending order first",
+      "Use formula: Position = (n+1)/2 for odd n",
+      "Identify median as the middle value"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Find the median of: 20, 25, 21, 24, 22, 26, 20",
+        "correctAnswer": "Step 1: Arrange in ascending order: 20, 20, 21, 22, 24, 25, 26. Step 2: n = 7 (odd). Position of median = (7+1)/2 = 4. Step 3: The 4th value is 22. Therefore, median = 22."
+      },
+      {
+        "id": "ex2",
+        "problemText": "The ages of 9 participants are: 32, 15, 20, 15, 25, 12, 18, 22, 19. Find the median age.",
+        "correctAnswer": "Arrange in order: 12, 15, 15, 18, 19, 20, 22, 25, 32. n = 9 (odd). Position = (9+1)/2 = 5. The 5th value is 19. Median = 19 years."
+      }
+    ],
+    "variationRules": {
+      "oddValues": [5, 7, 9, 11],
+      "contexts": [
+        "Ages (years)",
+        "Test scores",
+        "Travel times (minutes)",
+        "Prices ($)",
+        "Heights (cm)"
+      ],
+      "positionFormula": "Position = (n+1)/2 when n is odd"
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE median problem with ODD number of values",
+      "CRITICAL: DO NOT include mathTool",
+      "Students must: (1) Arrange in order, (2) Calculate position (n+1)/2, (3) Find value at that position",
+      "Use n = 5, 7, or 9 values",
+      "Present data UNSORTED to test ordering skill",
+      "Emphasize: MUST arrange in order first",
+      "Position formula gives single middle value for odd n"
+    ]
+  },
+
+  "avg-node-10": {
+    "nodeId": "avg-node-10",
+    "title": "Position of Median - Even Number",
+    "section": "s2-math-averages-median",
+    "learningFocus": [
+      "Use formula: Position = (n+1)/2 for even n (gives decimal)",
+      "Median lies BETWEEN two middle values",
+      "Calculate median as mean of two middle values"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Find the median of: 12, 8, 19, 30, 14, 21, 9, 5",
+        "correctAnswer": "Arrange in order: 5, 8, 9, 12, 14, 19, 21, 30. n = 8 (even). Position = (8+1)/2 = 4.5. This means median lies between 4th and 5th values. 4th value = 12, 5th value = 14. Median = (12 + 14)/2 = 13."
+      }
+    ],
+    "variationRules": {
+      "evenValues": [6, 8, 10],
+      "positionMeaning": "Position 4.5 means between 4th and 5th values",
+      "medianCalculation": "Median = mean of two middle values"
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE median problem with EVEN number of values",
+      "CRITICAL: DO NOT include mathTool",
+      "Students must: (1) Arrange in order, (2) Calculate position (n+1)/2, (3) Recognize decimal position means BETWEEN two values, (4) Average the two middle values",
+      "Use n = 6, 8, or 10 values",
+      "Key insight: Position 4.5 means median is between 4th and 5th values",
+      "Emphasize: Median = (4th value + 5th value) / 2",
+      "Present data unsorted"
+    ]
+  },
+
+  "avg-node-11": {
+    "nodeId": "avg-node-11",
+    "title": "Finding Unknown Given Median",
+    "section": "s2-math-averages-median",
+    "learningFocus": [
+      "Use median definition to set up equation",
+      "Consider position of median",
+      "Solve for unknown value"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The median of 9, 3, 6, 7, 5 and x is 6.5. Find a possible value of x.",
+        "correctAnswer": "n = 6 (even), so position = 3.5, meaning median is mean of 3rd and 4th values. If median = 6.5, then (3rd + 4th)/2 = 6.5, so 3rd + 4th = 13. Arranging known values: 3, 5, 6, 7, 9. For median to be 6.5, we need 3rd + 4th = 13. If x is between 6 and 7 (say x = 6.5), order becomes: 3, 5, 6, 6.5, 7, 9. Then 3rd = 6, 4th = 6.5, and (6+6.5)/2 = 6.25 ≠ 6.5. Try x = 7: order is 3, 5, 6, 7, 7, 9. Then (6+7)/2 = 6.5 ✓. So x = 7 works."
+      }
+    ],
+    "variationRules": {
+      "problemTypes": [
+        "Given median, find unknown x",
+        "Given median position, deduce x location"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE problem finding unknown from given median",
+      "CRITICAL: DO NOT include mathTool",
+      "Key approach: Determine what the middle value(s) must be, then find where x fits",
+      "For even n: median = (value at n/2 + value at n/2+1) / 2",
+      "Students must consider ordering and position",
+      "May have multiple possible answers - ask for 'a possible value'"
+    ]
+  },
+
+  "avg-node-12": {
+    "nodeId": "avg-node-12",
+    "title": "Median from Dot Diagram",
+    "section": "s2-math-averages-median",
+    "learningFocus": [
+      "Count total number of data values (sum of frequencies)",
+      "Find position of median",
+      "Count from left to locate median value"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The dot diagram shows visits to a supermarket in a week. Find the median number of visits.",
+        "correctAnswer": "Count total dots: 1+1+3+4+3+1 = 13 data values. Position = (13+1)/2 = 7. Count from left: 1st at 1, 2nd at 2, 3rd-5th at 3 (three dots), 6th-9th at 4 (four dots). The 7th value is at 4. Median = 4 visits.",
+        "mathTool": {
+          "toolName": "dotDiagram",
+          "params": {
+            "data": [
+              {"value": 1, "frequency": 1},
+              {"value": 2, "frequency": 1},
+              {"value": 3, "frequency": 3},
+              {"value": 4, "frequency": 4},
+              {"value": 5, "frequency": 3},
+              {"value": 6, "frequency": 1}
+            ],
+            "xLabel": "Number of Visits",
+            "title": "Visits to Supermarket"
+          }
+        }
+      }
+    ],
+    "variationRules": {
+      "dotDiagramContexts": [
+        "Number of siblings",
+        "Magazines bought per month",
+        "Books read",
+        "Goals scored"
+      ]
+    },
+    "mathTool": {
+      "usage": "INCLUDE",
+      "purpose": "Visualize distribution for median finding"
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE median problem from dot diagram",
+      "CRITICAL: Include dotDiagram mathTool",
+      "Students must: (1) Count total n, (2) Find position, (3) Count through dots to locate median",
+      "Use 10-15 total data values",
+      "Counting method: 1st dot = 1, 2nd dot = 2, etc., until reaching position",
+      "Emphasize: Each dot = one data value"
+    ]
+  },
+
+  "avg-node-13": {
+    "nodeId": "avg-node-13",
+    "title": "Median from Stem-and-Leaf",
+    "section": "s2-math-averages-median",
+    "learningFocus": [
+      "Count total leaves (data values)",
+      "Find median position",
+      "Count through leaves to locate median",
+      "Leaves must be sorted within each stem"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Stem-and-leaf diagram:\n3 | 5 6 6 7 8\n4 | 0 1 2 3 4 7 8 9\n5 | 0 1\n\nKey: 3|5 means 3.5 km\n\nFind the median distance.",
+        "correctAnswer": "Count total leaves: 5 + 8 + 2 = 15 values. Position = (15+1)/2 = 8. Count from top: leaves 1-5 in stem 3, leaves 6-13 in stem 4. The 8th value is the 3rd leaf in stem 4, which is 4|2 = 4.2 km. Median = 4.2 km."
+      }
+    ],
+    "variationRules": {
+      "stemAndLeafData": [
+        {"context": "distances (km)", "key": "3|5 means 3.5 km"},
+        {"context": "pH values", "key": "1|4 means 1.4"},
+        {"context": "scores", "key": "14|2 means 142"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE median problem from stem-and-leaf",
+      "CRITICAL: DO NOT include mathTool for stem-and-leaf",
+      "Students must: (1) Count all leaves, (2) Find position, (3) Count through leaves systematically",
+      "Provide 3-4 stems with 10-20 total leaves",
+      "Leaves MUST be sorted in ascending order (left to right)",
+      "Include clear key explaining notation",
+      "Counting tip: Count leaves within each stem, keep running total"
+    ]
+  },
+
+  "avg-node-14": {
+    "nodeId": "avg-node-14",
+    "title": "Understanding Median vs Mean with Outliers",
+    "section": "s2-math-averages-median",
+    "learningFocus": [
+      "Median is not affected by extreme values",
+      "Mean IS affected by extreme values",
+      "Compare both measures for same dataset"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Company A salaries: $2000, $2100, $2700, $2400, $2200, $2000, $10,000, $2800, $2600. (a) Calculate mean and median. (b) Which gives a better picture of typical salary? Why?",
+        "correctAnswer": "(a) Mean = ($2000+$2100+$2700+$2400+$2200+$2000+$10000+$2800+$2600)/9 = $28800/9 = $3200. For median: arrange: $2000, $2000, $2100, $2200, $2400, $2600, $2700, $2800, $10000. Position = 5. Median = $2400. (b) Median gives better picture. The $10,000 salary (CEO) is an extreme value that pulls the mean up to $3200, but most employees earn around $2000-$2800. The median of $2400 better represents typical salary."
+      }
+    ],
+    "variationRules": {
+      "scenarios": [
+        "Salaries with one very high earner",
+        "Test scores with one very low score",
+        "House prices with few expensive houses",
+        "Ages with one very old person"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE comparison problem with extreme value",
+      "CRITICAL: DO NOT include mathTool",
+      "Dataset should have 7-10 values with ONE clear outlier",
+      "Students must: (a) calculate both mean and median, (b) explain which is more appropriate",
+      "Key insight: Extreme value affects mean significantly but median hardly at all",
+      "This introduces why median is sometimes preferred"
+    ]
+  },
+
+  "avg-node-15": {
+    "nodeId": "avg-node-15",
+    "title": "Finding Mode from Raw Data",
+    "section": "s2-math-averages-mode",
+    "learningFocus": [
+      "Mode = value that appears most frequently",
+      "Identify highest frequency by counting",
+      "Recognize that mode can be any type of data (numerical or categorical)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The numbers of books 10 students read in a year are: 8, 9, 10, 10, 3, 5, 6, 10, 6, 1. Find the mode.",
+        "correctAnswer": "Count frequencies: 1 appears 1 time, 3 appears 1 time, 5 appears 1 time, 6 appears 2 times, 8 appears 1 time, 9 appears 1 time, 10 appears 3 times. The value 10 appears most frequently (3 times). Mode = 10 books."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Blouse sizes sold: 8, 8, 10, 8, 10, 12, 10, 8, 8, 12. Find the mode. Explain why the mode is useful for the shop owner.",
+        "correctAnswer": "Size 8 appears 5 times, size 10 appears 3 times, size 12 appears 2 times. Mode = size 8. This tells the shop owner that size 8 is the most popular size, so they should stock more of this size."
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        "Books read",
+        "Blouse sizes",
+        "Shoe sizes",
+        "Number of siblings",
+        "Favorite numbers",
+        "Goals scored"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE mode problem from raw data",
+      "CRITICAL: DO NOT include mathTool",
+      "Students must identify value with highest frequency",
+      "Dataset: 10-12 values with one value appearing 3-4 times",
+      "Mode definition: value(s) with highest frequency, NOT the frequency itself",
+      "Connect to practical use: what's most common/popular"
+    ]
+  },
+
+  "avg-node-16": {
+    "nodeId": "avg-node-16",
+    "title": "Mode from Frequency Table",
+    "section": "s2-math-averages-mode",
+    "learningFocus": [
+      "Mode = data value with highest frequency",
+      "Mode is NOT the highest frequency number itself",
+      "Look for largest value in frequency column, then identify corresponding data value"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Commission ($) | 1000 | 1200 | 1500 | 2000\nNumber of salesmen | 2 | 5 | 3 | 1\n\nState the mode of the frequency distribution.",
+        "correctAnswer": "The highest frequency is 5 (salesmen). This corresponds to commission of $1200. Mode = $1200 (NOT 5). The mode is the DATA VALUE with highest frequency."
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        {"variable": "Commission ($)", "unit": "$"},
+        {"variable": "Monthly salary ($)", "unit": "$"},
+        {"variable": "Test score", "unit": "marks"},
+        {"variable": "Number of books", "unit": "books"}
+      ],
+      "commonError": "Mode is the data value, NOT the frequency"
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE mode problem from frequency table",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide table with 4-5 data values and corresponding frequencies",
+      "One frequency should be clearly highest",
+      "CRITICAL REMINDER: Mode = data value with highest frequency, NOT the frequency itself",
+      "Common error: stating frequency instead of data value"
+    ]
+  },
+
+  "avg-node-17": {
+    "nodeId": "avg-node-17",
+    "title": "Bimodal and No Mode",
+    "section": "s2-math-averages-mode",
+    "learningFocus": [
+      "Dataset can have more than one mode (bimodal, multimodal)",
+      "Dataset can have no mode (all values same frequency)",
+      "Understand these special cases"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Dataset: 5, 7, 7, 9, 9, 12. (a) Find the mode(s). (b) What do we call this type of distribution?",
+        "correctAnswer": "(a) Both 7 and 9 appear twice (highest frequency). Modes = 7 and 9. (b) This is called bimodal because there are two modes."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Dataset: 3, 5, 8, 11, 14. Find the mode.",
+        "correctAnswer": "Each value appears exactly once (frequency = 1 for all). Since all have the same frequency, there is no mode. We say this dataset has no mode."
+      }
+    ],
+    "variationRules": {
+      "specialCases": [
+        {"type": "bimodal", "description": "Two values with same highest frequency"},
+        {"type": "multimodal", "description": "Three or more values with same highest frequency"},
+        {"type": "no mode", "description": "All values have same frequency"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE problem about bimodal OR no mode",
+      "CRITICAL: DO NOT include mathTool",
+      "Bimodal: Two values appear same number of times (more than others)",
+      "No mode: All values appear same number of times",
+      "Students should state both/all modes for bimodal",
+      "Emphasize: 'bimodal' terminology",
+      "These are valid situations, not errors"
+    ]
+  },
+
+  "avg-node-18": {
+    "nodeId": "avg-node-18",
+    "title": "Understanding Mode Changes",
+    "section": "s2-math-averages-mode",
+    "learningFocus": [
+      "Mode can change when data values are added or removed",
+      "Analyze how adding/removing values affects mode",
+      "Multiple values might need to be added to change mode"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Ribbon lengths: 100 cm, 110 cm, 95 cm, 60 cm, 20 cm, 60 cm, 110 cm, 88 cm, 102 cm, 120 cm. (i) State the modal length. (ii) If a ribbon of length 110 cm is removed, what will the new modal length be?",
+        "correctAnswer": "(i) Count frequencies: 110 cm appears 2 times, 60 cm appears 2 times, all others appear once. Modes = 60 cm and 110 cm (bimodal). (ii) If one 110 cm ribbon removed, 110 appears 1 time and 60 appears 2 times. New mode = 60 cm (only one mode now)."
+      }
+    ],
+    "variationRules": {
+      "changeTypes": [
+        "Remove value to change mode",
+        "Add value to create new mode",
+        "Add value to change bimodal to single mode"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE problem about mode changing",
+      "CRITICAL: DO NOT include mathTool",
+      "Present initial dataset and ask for mode",
+      "Then modify dataset (add or remove value) and ask for new mode",
+      "Students must recalculate frequencies after modification",
+      "Tests understanding that mode depends on current frequencies"
+    ]
+  },
+
+  "avg-node-19": {
+    "nodeId": "avg-node-19",
+    "title": "When to Use Mean",
+    "section": "s2-math-averages-choosing",
+    "learningFocus": [
+      "Mean is preferred when there are NO extreme values",
+      "Mean takes into account ALL data values",
+      "Mean is most commonly used average"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Test scores: 72, 75, 68, 71, 69, 73, 70, 74, 68, 72. Should you use mean, median, or mode to represent typical performance? Explain.",
+        "correctAnswer": "Mean is most appropriate. The scores are all close together (68-75) with no extreme values. The mean takes into account all the scores and will give an accurate picture of typical performance. All three measures would be similar, but mean is preferred when there are no outliers."
+      }
+    ],
+    "variationRules": {
+      "meanAppropriate": [
+        "Test scores without outliers",
+        "Heights of similar-aged students",
+        "Daily temperatures in same month",
+        "Prices of similar products"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE scenario where mean is appropriate",
+      "CRITICAL: DO NOT include mathTool",
+      "Dataset should have no extreme values (all values relatively close)",
+      "Students should identify mean as best choice AND explain why",
+      "Key reasoning: No outliers, so mean accurately represents centre",
+      "Mean advantage: Uses ALL data in calculation"
+    ]
+  },
+
+  "avg-node-20": {
+    "nodeId": "avg-node-20",
+    "title": "When to Use Median",
+    "section": "s2-math-averages-choosing",
+    "learningFocus": [
+      "Median is preferred when there ARE extreme values",
+      "Median is not affected by outliers",
+      "Median gives better picture when mean is distorted"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "House prices in a neighborhood: $300,000, $320,000, $350,000, $310,000, $330,000, $2,500,000. Should you use mean or median to represent typical house price? Explain.",
+        "correctAnswer": "Median is more appropriate. The $2,500,000 house is an extreme value (outlier) that would pull the mean much higher than what most houses cost. Mean would be misleading. The median would better represent the typical house price in this neighborhood because it's not affected by the one expensive house."
+      }
+    ],
+    "variationRules": {
+      "medianAppropriate": [
+        "Salaries with CEO earning much more",
+        "House prices with few mansions",
+        "Test scores with one student scoring very low",
+        "Ages with one very old person"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE scenario where median is appropriate",
+      "CRITICAL: DO NOT include mathTool",
+      "Dataset must have clear outlier(s)",
+      "Students should: (1) identify median as best, (2) explain outlier affects mean, (3) explain median is resistant to outliers",
+      "Key advantage: Median gives true centre when extremes distort mean"
+    ]
+  },
+
+  "avg-node-21": {
+    "nodeId": "avg-node-21",
+    "title": "When to Use Mode",
+    "section": "s2-math-averages-choosing",
+    "learningFocus": [
+      "Mode is appropriate when finding most common/popular value",
+      "Mode works for categorical data (mean and median don't)",
+      "Mode is useful for discrete data with repeated values"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A clothing store records sizes sold: 8, 10, 8, 12, 8, 10, 14, 8, 10, 8, 12. Which average should the store use to decide which size to stock most? Explain.",
+        "correctAnswer": "Mode is most appropriate. Mode = size 8 (appears 5 times). The store wants to know which size is most popular/common so they can stock more of it. Mean and median don't make sense for sizes (what does 'average size 9.5' mean?). The mode tells them directly: stock more size 8."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Favorite colors: Red, Blue, Blue, Green, Red, Blue, Yellow, Blue. Which average can you use?",
+        "correctAnswer": "Only mode can be used for categorical data like colors. Mode = Blue (appears 4 times). Mean and median don't make sense for categorical data because colors can't be added or ordered numerically."
+      }
+    ],
+    "variationRules": {
+      "modeAppropriate": [
+        "Clothing/shoe sizes (discrete, want most common)",
+        "Favorite colors/foods/subjects (categorical)",
+        "Most common number of children per family",
+        "Most popular product"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE scenario where mode is appropriate",
+      "CRITICAL: DO NOT include mathTool",
+      "Two main cases: (1) categorical data (colors, foods), (2) discrete numerical (sizes) where 'most common' matters",
+      "Students should explain: mode shows what's most popular/common",
+      "Key insight: For categorical data, mean and median impossible; only mode works",
+      "For sizes: Mode tells which to stock most"
+    ]
+  },
+
+  "avg-node-22": {
+    "nodeId": "avg-node-22",
+    "title": "Comparing All Three Measures",
+    "section": "s2-math-averages-choosing",
+    "learningFocus": [
+      "Calculate all three measures for same dataset",
+      "Compare their values",
+      "Understand how they differ and what each tells us"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Dataset: 5, 6, 7, 7, 8, 8, 8, 9, 20. Calculate (a) mean, (b) median, (c) mode. (d) Which measure is most affected by the value 20? Why?",
+        "correctAnswer": "(a) Mean = (5+6+7+7+8+8+8+9+20)/9 = 78/9 = 8.67. (b) Median: n=9, position=5. Arranged: 5,6,7,7,8,8,8,9,20. Median = 8. (c) Mode = 8 (appears 3 times). (d) Mean is most affected by 20. Without 20, mean ≈ 7.25, but with 20, mean = 8.67. Median stays same (8) and mode stays same (8) whether 20 is included or not."
+      }
+    ],
+    "variationRules": {
+      "datasets": [
+        {"description": "with one outlier", "effect": "mean affected most"},
+        {"description": "symmetrical distribution", "effect": "all three similar"},
+        {"description": "skewed distribution", "effect": "mean ≠ median"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE problem calculating all three measures",
+      "CRITICAL: DO NOT include mathTool",
+      "Dataset: 8-10 values with one clear outlier",
+      "Students must calculate all three and compare",
+      "Key comparison: Which is affected by outlier? (Mean)",
+      "This solidifies understanding of when each is appropriate"
+    ]
+  },
+
+  "avg-node-23": {
+    "nodeId": "avg-node-23",
+    "title": "Finding Dataset Given Averages",
+    "section": "s2-math-averages-choosing",
+    "learningFocus": [
+      "Work backwards from given measures",
+      "Use constraints to deduce possible values",
+      "Apply understanding of mean, median, and mode definitions"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Five numbers have a mean of 9, a median of 11, and a mode of 12. The largest number is four times the smallest number. Find the five numbers.",
+        "correctAnswer": "Since median = 11 and n = 5 (odd), the 3rd number is 11. Since mode = 12, at least two numbers are 12. They must be 4th and 5th (larger than median 11). So: _, _, 11, 12, 12. Mean = 9 means sum = 9 × 5 = 45. So first two numbers sum to 45 - 11 - 12 - 12 = 10. If smallest = a, largest = 12, but 'largest is four times smallest' means 12 = 4a, so a = 3. Then 3 + ? = 10, so ? = 7. Check: 3, 7, 11, 12, 12. Sum = 45, mean = 9 ✓. Median = 11 ✓. Mode = 12 ✓. Largest/smallest = 12/3 = 4 ✓. Answer: 3, 7, 11, 12, 12."
+      }
+    ],
+    "variationRules": {
+      "constraints": [
+        "Given mean, median, mode",
+        "Given relationships between values",
+        "Given count of data values"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE reverse-engineering problem",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide mean, median, mode and additional constraint",
+      "Students must use definitions backwards to construct dataset",
+      "Requires deep understanding of all three measures",
+      "Check: verify that constructed dataset satisfies all conditions"
+    ]
+  },
+
+  "avg-node-24": {
+    "nodeId": "avg-node-24",
+    "title": "Real-World Applications and Decision Making",
+    "section": "s2-math-averages-choosing",
+    "learningFocus": [
+      "Apply knowledge to real decision-making scenarios",
+      "Justify which average to use in practical contexts",
+      "Understand implications of choosing wrong average"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A company advertises 'average salary $4500'. The salaries are: $2000, $2200, $2100, $2300, $2000, $2400, $15000 (owner). (a) Is the company using mean or median? (b) Which average would be more honest for job seekers to know? Explain.",
+        "correctAnswer": "(a) Calculate: Mean = ($2000+$2200+$2100+$2300+$2000+$2400+$15000)/7 = $28000/7 = $4000 (not $4500). Median: arranged: $2000, $2000, $2100, $2200, $2300, $2400, $15000. Position 4 → median = $2200. They might be using neither exactly, but closer to mean. (b) Median would be more honest. Most employees earn around $2000-$2400. The owner's $15000 is an outlier that inflates the mean. Job seekers should know the median ($2200) to understand what typical employees actually earn."
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        "Job advertisements with salaries",
+        "Real estate 'average prices'",
+        "Student performance reporting",
+        "Product pricing strategies"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE real-world decision scenario",
+      "CRITICAL: DO NOT include mathTool",
+      "Present scenario where choice of average matters",
+      "Students should: (1) calculate relevant averages, (2) identify which is being used/should be used, (3) explain implications",
+      "Connect to ethics: Can averages be used misleadingly?",
+      "Emphasize informed decision-making"
+    ]
+  },
+
+  "avg-node-25": {
+    "nodeId": "avg-node-25",
+    "title": "Effect of Systematic Measurement Error",
+    "section": "s2-math-averages-choosing",
+    "learningFocus": [
+      "Understand how systematic errors affect averages",
+      "If all values have same error, correct the average",
+      "Apply error correction to mean, median, and mode"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Siti weighed seven oranges. The modal mass was 148 g, the median mass was 153 g, and the mean mass was 153.7 g. The weighing machine was inaccurate: each orange was actually 18 g MORE than recorded. Write the correct modal, median, and mean masses.",
+        "correctAnswer": "Since EVERY orange was 18 g heavier than measured, we add 18 g to each average: Correct mode = 148 + 18 = 166 g. Correct median = 153 + 18 = 171 g. Correct mean = 153.7 + 18 = 171.7 g."
+      }
+    ],
+    "variationRules": {
+      "errorTypes": [
+        "Systematic error (all values too high/low by same amount)",
+        "Weighing machine error",
+        "Temperature reading error",
+        "Timing device error"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE systematic error problem",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide averages calculated from incorrect measurements",
+      "State systematic error amount",
+      "Students correct each average by adding/subtracting error",
+      "Key insight: If ALL values off by constant, add/subtract constant from average",
+      "This applies to mean, median, AND mode"
+    ]
+  }
+}

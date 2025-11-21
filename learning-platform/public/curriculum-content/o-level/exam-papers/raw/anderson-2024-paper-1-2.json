@@ -1,0 +1,981 @@
+{
+  "questions": [
+    {
+      "questionNumber": 1,
+      "questionId": "N5-anderson-2024-p1-q1",
+      "topicID": "N5",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "Expand and simplify $a(5a-2b)(5a+2b)$.",
+          "marks": 2,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 2
+    },
+    {
+      "questionNumber": 2,
+      "questionId": "N1-anderson-2024-p1-q2",
+      "topicID": "N1",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "Given that $3^{x}+3^{x+2}=90$, find x.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 2
+    },
+    {
+      "questionNumber": 3,
+      "questionId": "N5-anderson-2024-p1-q3",
+      "topicID": "N5",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "Simplify $\\frac{2x^{2}+4xy-3x-6y}{2x^{2}+xy-6y^{2}}.$",
+          "marks": 3,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 4,
+      "questionId": "N1-anderson-2024-p1-q4",
+      "topicID": "N1",
+      "stem": "Two integers, A and B, can be written as products of prime factors. $A=3^{m+2}\\times7$, $B=q\\times3^{m}\\times7$. The lowest common multiple (LCM) of A and B is $3^{3}\\times5\\times7$.",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Write down the value of m and q.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Find the highest common factor of A and B.",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 5,
+      "questionId": "S1-anderson-2024-p1-q5",
+      "topicID": "S1",
+      "stem": "Below is a graph from the Annual Climate Singapore 2023, which shows the top 10 warmest years in Singapore since 1929.",
+      "hasDiagram": true,
+      "diagramDescription": "Bar graph titled 'Top 10 Warmest Years' showing temperature (in °C) on the y-axis (from 27.8 to 28.5) and years on the x-axis (2019, 2016, 1998, 2023, 2015, 1997, 2010, 2002, 2020, 2005). The bar for 2023 is labelled $28.2^{\\circ}C$ and a text box indicates '2023 is the 4th warmest year since 1929'.",
+      "diagram": {
+        "type": "mathTool",
+        "toolName": "barChart",
+        "config": {
+          "categories": ["2019", "2016", "1998", "2023", "2015", "1997", "2010", "2002", "2020", "2005"],
+          "values": [28.4, 28.3, 28.3, 28.2, 28.2, 28.2, 28.1, 28.1, 28.1, 28.1],
+          "xLabel": "Year",
+          "yLabel": "Temperature (°C)",
+          "title": "Top 10 Warmest Years",
+          "showValues": true,
+          "color": "#FF6B6B"
+        },
+        "note": "Y-axis minimum may need adjustment if barChart doesn't support custom min (should start at 27.8)"
+      },
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "State one aspect of the graph that may be misleading and explain how this may lead to a misinterpretation of the graph.",
+          "marks": 2,
+          "answerType": "proof"
+        }
+      ],
+      "totalMarks": 2
+    },
+    {
+      "questionNumber": 6,
+      "questionId": "N1-anderson-2024-p1-q6",
+      "topicID": "N1",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Simplify $(\\frac{y^{9}}{27x^{-6}})^{-\\frac{2}{3}},$ leaving your answer in positive index.",
+          "marks": 2,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "Given $\\frac{25}{125^{2-x}}=5^{y}$ express x in terms of y.",
+          "marks": 2,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 4
+    },
+    {
+      "questionNumber": 7,
+      "questionId": "N5-anderson-2024-p1-q7",
+      "topicID": "N5",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Factorise $9x^{2}+24xy+16y^{2}$ completely.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "Hence factorise $144a^{8}-(9a^{8}+24a^{4}y+16y^{2})$ completely.",
+          "marks": 2,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 8,
+      "questionId": "N2-anderson-2024-p1-q8",
+      "topicID": "N2",
+      "stem": "The intensity of a sound detected by a receiver is inversely proportional to the square of the distance of the receiver from the source of the sound. When the distance is $r$ metres, the intensity of the sound detected is $q$ decibels. When the distance is reduced by 40%,",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "find the intensity of the sound detected, in terms of q.",
+          "marks": 2,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "calculate the percentage difference in the intensity of the sound detected.",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 10,
+      "questionId": "G2-anderson-2024-p1-q10",
+      "topicID": "G2",
+      "stem": "ABCD is a rhombus and $RD=CS$. SCB, DCR and AQR are straight lines.",
+      "hasDiagram": true,
+      "diagramDescription": "Diagram showing a rhombus ABCD and points S, C, B, D, R, A, Q in a configuration where SCB, DCR, and AQR are straight lines. Points S, C, Q, B are collinear.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Diagram showing a rhombus ABCD and points S, C, B, D, R, A, Q in a configuration where SCB, DCR, and AQR are straight lines. Points S, C, Q, B are collinear.",
+        "notes": "Complex rhombus with extended lines SCB, DCR, AQR - no suitable tool"
+      },
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "Prove that triangles SCD and RDA are congruent.",
+          "marks": 3,
+          "answerType": "proof"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 11,
+      "questionId": "N6-anderson-2024-p1-q11",
+      "topicID": "N6",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "By expressing $x^{2}-10x-2$ in the form $(x-h)^{2}+k$, where h and k are constants, write down the coordinates of the minimum point of the graph of $y=x^{2}-10x-2$.",
+          "marks": 2,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 2
+    },
+    {
+      "questionNumber": 12,
+      "questionId": "N8-anderson-2024-p1-q12",
+      "topicID": "N8",
+      "stem": "$\\xi=\\{(x,y):$ x and y are integers, $-2\\le x<1$ and $-1\\le y\\le1\\}$ $P=\\{(x,y):x^{2}+y^{2}<2\\}$ $Q=\\{(x,y):xy<0\\}$",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Find the number of elements in the universal set $\\xi$.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b(i)",
+          "questionText": "List the elements of P in set notation.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b(ii)",
+          "questionText": "List the elements of Q in set notation.",
+          "marks": 1,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 14,
+      "questionId": "N8-anderson-2024-p1-q14",
+      "topicID": "N8",
+      "stem": "$W=\\{0,\\{0\\}\\}$.",
+      "hasDiagram": true,
+      "diagramDescription": "Venn diagram showing two overlapping sets A and B within a universal set $\\xi$. The region $A\\cup B'$ is shaded.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Venn diagram showing two overlapping sets A and B within a universal set $\\xi$. The region $A\\cup B'$ is shaded.",
+        "notes": "Venn diagram with A∪B' shading not available as standard option"
+      },
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Find $n(W)$",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "List all possible subsets of W.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "c",
+          "questionText": "Write down the set represented by the following shaded region.",
+          "marks": 1,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 15,
+      "questionId": "N7-anderson-2024-p1-q15",
+      "topicID": "N7",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "Solve the inequality $x-3\\le\\frac{5-x}{3}<\\frac{x+1}{2}.$",
+          "marks": 3,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 16,
+      "questionId": "G4-anderson-2024-p1-q16",
+      "topicID": "G4",
+      "stem": "The diagram shows a semi-circle BAC, with diameter $BC=34$ cm. AD and BCD are straight lines. Given that $\\cos\\angle ABC=\\frac{8}{17}$,",
+      "hasDiagram": true,
+      "diagramDescription": "Diagram showing a semicircle with diameter BC=34 cm. A is a point on the circumference. AD and BCD are straight lines, with D outside the semicircle on the extension of BC.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Diagram showing a semicircle with diameter BC=34 cm. A is a point on the circumference. AD and BCD are straight lines, with D outside the semicircle on the extension of BC.",
+        "notes": "Semicircle with extended line AD - circleSemicircle cannot show extension"
+      },
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "without solving for angle ABC and angle ACD, find the exact value of $\\cos\\angle ACD$.",
+          "marks": 4,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 4
+    },
+    {
+      "questionNumber": 17,
+      "questionId": "N5-anderson-2024-p1-q17",
+      "topicID": "N5",
+      "stem": "The sequence $T_{1}$, $T_{2}$, $T_{3}$, $T_{4}$ ... has the following first four terms. $T_{1}=2^{2}-1=3$, $T_{2}=3^{2}-2=7$, $T_{3}=4^{2}-3=13$, $T_{4}=5^{2}-4=21$.",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Find the 7th term of the sequence, $T_{7}$.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Write the expression for the nth term of the sequence.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "c",
+          "questionText": "Kelvin claims that the difference between 2 consecutive terms $T_{n+1}-T_{n}$ where n is a positive integer, will always be even. Do you agree? Explain your answer with clear workings.",
+          "marks": 3,
+          "answerType": "proof"
+        }
+      ],
+      "totalMarks": 5
+    },
+    {
+      "questionNumber": 18,
+      "questionId": "G6-anderson-2024-p1-q18",
+      "topicID": "G6",
+      "stem": "The diagram shows two congruent isosceles triangles, PQS and RSQ. PQ and RS are parallel to the x-axis. $P(-2,1)$ and $R(13,4)$.",
+      "hasDiagram": true,
+      "diagramDescription": "A coordinate plane with points P(-2,1) and R(13,4). PQS and RSQ are congruent isosceles triangles, forming a kite-like quadrilateral PQRS. PQ and RS are parallel to the x-axis.",
+      "diagram": {
+        "type": "mathTool",
+        "toolName": "cartesianPlane",
+        "config": {
+          "points": [
+            {"x": -2, "y": 1, "label": "P"},
+            {"x": 13, "y": 4, "label": "R"}
+          ],
+          "xMin": -5,
+          "xMax": 15,
+          "yMin": -1,
+          "yMax": 6,
+          "showGrid": true,
+          "showAxes": true
+        },
+        "note": "Students need to find point Q coordinates based on congruent isosceles triangles"
+      },
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Write down the coordinates of the point Q.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Find the equation of the line PR.",
+          "marks": 2,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "c",
+          "questionText": "W is a point on the x-axis such that RW is perpendicular to RS. Write down the coordinates of the point W.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "d",
+          "questionText": "Find the perimeter of PQRS.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 7
+    },
+    {
+      "questionNumber": 19,
+      "questionId": "N1-anderson-2024-p1-q19",
+      "topicID": "N1",
+      "stem": "In the year 2022, it was recorded that the average amount of waste generated in Singapore daily was $20.3$ thousand tonnes. Assuming that there are 365 days in a year,",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "find the total amount of waste generated in the year 2022, leaving your answer in standard form.",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 1
+    },
+    {
+      "questionNumber": 20,
+      "questionId": "N9-anderson-2024-p1-q20",
+      "topicID": "N9",
+      "stem": "A company sells chocolate muffins and banana muffins. These muffins are sold across three different outlets, which are Outlet A, Outlet B and Outlet C. The table shows the number of boxes of chocolate muffins and banana muffins produced at each of the three outlets in a particular day.",
+      "hasDiagram": true,
+      "diagramDescription": "Table showing number of boxes of muffins: Outlet A (36 Chocolate, 40 Banana), Outlet B (48 Chocolate, 39 Banana), Outlet C (45 Chocolate, x Banana). This is represented by matrix $Q=(\\begin{smallmatrix}36&40\\\\ 48&39\\\\ 45&x\\end{smallmatrix}).$",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Table showing number of boxes of muffins: Outlet A (36 Chocolate, 40 Banana), Outlet B (48 Chocolate, 39 Banana), Outlet C (45 Chocolate, x Banana). This is represented by matrix $Q=(\\begin{smallmatrix}36&40\\\\ 48&39\\\\ 45&x\\end{smallmatrix}).$",
+        "notes": "Table/matrix data representation - not geometric"
+      },
+      "parts": [
+        {
+          "partId": "a(i)",
+          "questionText": "The production cost for each box of chocolate muffin and each box of banana muffin is \\$3 and \\$4.50 respectively. Represent this information in a $2\\times1$ matrix, P.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "a(ii)",
+          "questionText": "Evaluate the matrix $R=QP$.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "State what each of the elements in matrix R represents.",
+          "marks": 1,
+          "answerType": "proof"
+        },
+        {
+          "partId": "c",
+          "questionText": "The company sells each box of muffins for 70% more than it costs to produce. On that day, the company sold $\\frac{5}{6}$ of each flavour of muffins in Outlet A, $\\frac{4}{5}$ of each flavour of muffins in Outlet B, and all the muffins in Outlet C. By using the matrix R, find the total amount collected from the sale of muffins from all three outlets.",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "d",
+          "questionText": "The total amount collected from the sales of muffins from all three outlets is \\$1454.52. Calculate the value of x.",
+          "marks": 1,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 7
+    },
+    {
+      "questionNumber": 21,
+      "questionId": "S2-anderson-2024-p1-q21",
+      "topicID": "S2",
+      "stem": "In a class of 36 students, each student is either in a sports team or a performing arts club. Each student is also either a member or is a leader in their respective co-curricular activities. One student is selected at random from the class. The probability that the student selected is in a sports team is $\\frac{1}{3}$.",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Given that there are 4 sports team members in the class, find the number of students who are leaders in a sports team.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Two students are selected at random from the class. The probability that both of them are members of a performing arts club is $\\frac{1}{42}$. Find the number of students who are members in a performing arts club.",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c",
+          "questionText": "In another class, the probability that a student is a leader in a co-curricular activity is $k$. The probability that a student is in a performing arts club is $m$. Derrick claimed that the probability of a student in this class being a leader or is in a performing arts club is $k+m$. Explain with reasons whether you agree with Derrick's claim.",
+          "marks": 1,
+          "answerType": "proof"
+        }
+      ],
+      "totalMarks": 5
+    },
+    {
+      "questionNumber": 22,
+      "questionId": "N2-anderson-2024-p1-q22",
+      "topicID": "N2",
+      "stem": "The scale of a map is $1:n$. A school garden measuring $8~cm^{2}$ on a map has an actual area of $2048~m^{2}$.",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "Find n.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 2
+    },
+    {
+      "questionNumber": 23,
+      "questionId": "N4-anderson-2024-p1-q23",
+      "topicID": "N4",
+      "stem": "4 technicians plan to repair 416 computers in 16 days. However, after repairing for 10 days, one of the technicians fell sick and could not continue. The remaining computers are to be repaired by the other three technicians. Assuming that the technicians work at the same rate,",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "calculate the total number of days needed for all 416 computers to be repaired.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 24,
+      "questionId": "S1-anderson-2024-p1-q24",
+      "topicID": "S1",
+      "stem": "The cumulative frequency diagram shows the time in hours that each of the 120 adults from Town A spend on exercise in one week. The box-and-whisker plot shows the time in hours that each of the 120 adults from Town B spend on exercise in one week.",
+      "hasDiagram": true,
+      "diagramDescription": "Top diagram is a cumulative frequency curve for weekly exercise time (hours, 0 to 10) for 120 adults from Town A. Bottom diagram is a box-and-whisker plot for weekly exercise time (hours, 0 to 10) for 120 adults from Town B.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Top diagram is a cumulative frequency curve for weekly exercise time (hours, 0 to 10) for 120 adults from Town A. Bottom diagram is a box-and-whisker plot for weekly exercise time (hours, 0 to 10) for 120 adults from Town B.",
+        "notes": "Cumulative frequency curve required - tool not available"
+      },
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Explain if you can find the probability of an adult spending exactly 5 hours on exercise weekly.",
+          "marks": 1,
+          "answerType": "proof"
+        },
+        {
+          "partId": "b",
+          "questionText": "The health promotion board recommends at least $k$ hours of weekly exercise for adults to stay fit and active. 60% of the adults in Town A meet this recommended weekly exercise hours. Find the value of k.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c",
+          "questionText": "Find the median and interquartile range of the weekly exercise hours of the adults in Town B.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "d",
+          "questionText": "Make two comparisons between the weekly exercise hours of the adults from Town A and Town B. State your reasons.",
+          "marks": 2,
+          "answerType": "proof"
+        }
+      ],
+      "totalMarks": 6
+    },
+    {
+      "questionNumber": 25,
+      "questionId": "G3-anderson-2024-p1-q25",
+      "topicID": "G3",
+      "stem": "The lines ABC and CDE are tangents to the circle at B and D respectively. F, G and H are points on the circle and the centre of the circle is O. The straight lines BD and HF intersect at J. It is given that $\\angle ACE=62^{\\circ}$ and $\\angle DHF=40^{\\circ}$.",
+      "hasDiagram": true,
+      "diagramDescription": "Circle geometry diagram. ABC and CDE are tangents to the circle at B and D. O is the centre. F, G, H are points on the circle. BD and HF intersect at J. $\\angle ACE=62^{\\circ}$ and $\\angle DHF=40^{\\circ}$.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Circle geometry diagram. ABC and CDE are tangents to the circle at B and D. O is the centre. F, G, H are points on the circle. BD and HF intersect at J. $\\angle ACE=62^{\\circ}$ and $\\angle DHF=40^{\\circ}$.",
+        "notes": "Complex circle geometry with multiple tangents, chords, and intersections"
+      },
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Find, giving reasons for each answer, $\\angle FGD$.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Find, giving reasons for each answer, $\\angle CDO$.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c",
+          "questionText": "Find, giving reasons for each answer, $\\angle BOF$.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "d",
+          "questionText": "Find, giving reasons for each answer, $\\angle FJD$.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 6
+    },
+    {
+      "questionNumber": 27,
+      "questionId": "G5-anderson-2024-p2-q27",
+      "topicID": "G5",
+      "stem": "A cone has a radius of 24 cm and a total surface area of $1536\\pi~cm^{2}$.",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Show that the volume of the cone is $6144\\pi~cm^{3}$.",
+          "marks": 3,
+          "answerType": "proof"
+        },
+        {
+          "partId": "b(i)",
+          "questionText": "The cone is recasted into a solid sphere. Find the radius of the sphere,",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b(ii)",
+          "questionText": "the total surface area of the sphere.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 7
+    },
+    {
+      "questionNumber": 28,
+      "questionId": "N3-anderson-2024-p2-q28",
+      "topicID": "N3",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Matthew invests \\$20 000 into a fixed deposit at $r\\%$ per month, compounded monthly. After 24 months he will be able to receive \\$21 337.05. Find the value of r.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Matthew buys a car on hire purchase. He made a 30% downpayment and takes up a 7 year loan which charges simple interest at 2.78% per annum. Given that he pays \\$1774.40 monthly instalment for the car, calculate the price of the car. Give your answer correct to the nearest dollar.",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c",
+          "questionText": "Matthew wants to invest in Japanese Yen (JPY) to make a profit. In April, he bought JPY with SGD 980. In June, he sold the JPY to get his money back in Singapore dollars. The exchange rates were: April: SGD 1 = JPY 114.5; June: SGD 1 = JPY 118.2. Calculate the percentage profit or loss that Matthew made.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 8
+    },
+    {
+      "questionNumber": 29,
+      "questionId": "N3-anderson-2024-p2-q29",
+      "topicID": "N3",
+      "stem": "A chess club currently has 37 male members and 16 female members. The club hosted a Valentine's Day event to attract married couples to join the club as new members. (Both husband and wife must be totally new to the club.) After this event, the percentage of female members became 40%.",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "Find the number of married couples who joined the club after the event.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 30,
+      "questionId": "S1-anderson-2024-p2-q30",
+      "topicID": "S1",
+      "stem": "The marks of a group of 19 students in a test were recorded, as the marks are shown in the stem and leaf diagram. The mode is 42 marks.",
+      "hasDiagram": true,
+      "diagramDescription": "Stem and leaf diagram: Stem 3, Leaf a, 0, 1, 2, 6. Stem 4, Leaf 1, 2, 2, 2, 6, 7. Stem 5, Leaf 0, 2, 4, 4, b, 5, 8, 9. Key: 4|1 means 41 marks. Table summarizing results for another group of 20 students: Mean = 48.2, Standard Deviation = 7.22.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Stem and leaf diagram: Stem 3, Leaf a, 0, 1, 2, 6. Stem 4, Leaf 1, 2, 2, 2, 6, 7. Stem 5, Leaf 0, 2, 4, 4, b, 5, 8, 9. Key: 4|1 means 41 marks. Table summarizing results for another group of 20 students: Mean = 48.2, Standard Deviation = 7.22.",
+        "notes": "Stem-and-leaf diagram - tool not available"
+      },
+      "parts": [
+        {
+          "partId": "i",
+          "questionText": "Find the value of a and b.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "ii",
+          "questionText": "Find the median mark.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "iii",
+          "questionText": "Calculate the mean and standard deviation of the marks.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "iv",
+          "questionText": "Make two comparisons between the marks obtain by the group of 19 students and by the group of 20 students.",
+          "marks": 2,
+          "answerType": "proof"
+        }
+      ],
+      "totalMarks": 7
+    },
+    {
+      "questionNumber": 31,
+      "questionId": "N7-anderson-2024-p2-q31",
+      "topicID": "N7",
+      "stem": null,
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Adam has some 50-cent and 20-cent coins in his wallet. Given that he has a total of 73 coins adding up to a value of \\$28.10, form 2 simultaneous equations to find the number of 50-cent and 20-cent coins he has.",
+          "marks": 5,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "Express $\\frac{4x}{4x^{2}-25}+\\frac{1}{5-2x}$ as a single fraction in its simplest form.",
+          "marks": 3,
+          "answerType": "algebraic"
+        }
+      ],
+      "totalMarks": 8
+    },
+    {
+      "questionNumber": 32,
+      "questionId": "G7-anderson-2024-p2-q32",
+      "topicID": "G7",
+      "stem": "The position vectors of points A and B are $\\binom{-9}{3}$ and $\\binom{1}{-12}$ respectively.",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Find the column vector $\\vec{BA}$.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "Find $|\\vec{BA}|$.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 33,
+      "questionId": "G5-anderson-2024-p2-q33",
+      "topicID": "G5",
+      "stem": "The diagram shows the cross section of a plastic pipe. The arc AB is part of the circle with centre O and radius 45 mm. The pipe has an uniform thickness of x mm. The shaded area represents the cross-sectional area that is filled with water. $AB=65.32~mm.$",
+      "hasDiagram": true,
+      "diagramDescription": "Diagram of a circular cross-section of a pipe with a concentric ring representing the thickness. The inner circle has a chord AB of length 65.32 mm. O is the centre. The inner radius is 45 mm. The thickness is x mm. A segment defined by chord AB is shaded.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Diagram of a circular cross-section of a pipe with a concentric ring representing the thickness. The inner circle has a chord AB of length 65.32 mm. O is the centre. The inner radius is 45 mm. The thickness is x mm. A segment defined by chord AB is shaded.",
+        "notes": "Concentric circles with shaded segment for pipe cross-section"
+      },
+      "parts": [
+        {
+          "partId": "i",
+          "questionText": "Show that $\\angle AOB=1.6243$ radians.",
+          "marks": 2,
+          "answerType": "proof"
+        },
+        {
+          "partId": "ii",
+          "questionText": "Given that the cross-sectional area of the pipe is $1398.29~mm^{2}$, find x.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 4
+    },
+    {
+      "questionNumber": 34,
+      "questionId": "G4-anderson-2024-p2-q34",
+      "topicID": "G4",
+      "stem": "The diagram shows the positions of 3 points A, B, and C, at sea level. $AB=4.83~km$ and $BC=7.24~km.$ The bearing of B from A is $064^{\\circ}$ and the bearing of C from B is $127^{\\circ}$.",
+      "hasDiagram": true,
+      "diagramDescription": "Diagram showing three points A, B, and C with distances and bearings. $AB=4.83~km$, $BC=7.24~km$. Bearing of B from A is $064^{\\circ}$. Bearing of C from B is $127^{\\circ}$. North lines are drawn at A and B.",
+      "diagram": {
+        "type": "mathTool",
+        "toolName": "bearings",
+        "config": {
+          "points": [
+            {"label": "A", "x": 0, "y": 0},
+            {"label": "B", "x": 4.83, "bearing": 64},
+            {"label": "C", "fromPoint": "B", "distance": 7.24, "bearing": 127}
+          ],
+          "showNorthLines": true,
+          "showBearings": true,
+          "showDistances": true
+        }
+      },
+      "parts": [
+        {
+          "partId": "i",
+          "questionText": "Show that $AC=10.368~km.$",
+          "marks": 3,
+          "answerType": "proof"
+        },
+        {
+          "partId": "ii",
+          "questionText": "Hence find the bearing of A from C.",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "iii",
+          "questionText": "A boat travels in a straight line from point B to reach the line AC. Find the shortest distance that the boat needs to travel.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "iv",
+          "questionText": "An object was detected directly below point C. The angle of depression of the object from B is $12^{\\circ}$. Find the distance of the object from C.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 10
+    },
+    {
+      "questionNumber": 35,
+      "questionId": "G1-anderson-2024-p2-q35",
+      "topicID": "G1",
+      "stem": "The diagram shows a part of a regular n-sided polygon. Given $\\angle a+\\angle b=72^{\\circ}$",
+      "hasDiagram": true,
+      "diagramDescription": "Part of a regular n-sided polygon. A diagonal is drawn connecting two vertices, forming a quadrilateral (or similar shape) with a portion of the polygon's sides. Angles a and b are internal angles formed by the diagonal and the sides of the polygon at two different vertices.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Part of a regular n-sided polygon. A diagonal is drawn connecting two vertices, forming a quadrilateral (or similar shape) with a portion of the polygon's sides. Angles a and b are internal angles formed by the diagonal and the sides of the polygon at two different vertices.",
+        "notes": "Partial regular n-sided polygon with diagonal - regularPolygon tool not available"
+      },
+      "parts": [
+        {
+          "partId": null,
+          "questionText": "find the value of n.",
+          "marks": 3,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 3
+    },
+    {
+      "questionNumber": 36,
+      "questionId": "G7-anderson-2024-p2-q36",
+      "topicID": "G7",
+      "stem": "CBEO is a parallelogram. The position vectors of C and E, relative to O, are $\\mathbf{a}$ and $\\mathbf{b}$ respectively. It is given that $3BC=5BD$ and $\\vec{AD}=\\frac{2}{3}\\vec{DE}$.",
+      "hasDiagram": true,
+      "diagramDescription": "A diagram showing points O, A, B, C, D, E. CBEO is a parallelogram. $\\vec{OC}=\\mathbf{a}$ and $\\vec{OE}=\\mathbf{b}$. Points C, D, B are collinear. Points A, D, E are collinear.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "A diagram showing points O, A, B, C, D, E. CBEO is a parallelogram. $\\vec{OC}=\\mathbf{a}$ and $\\vec{OE}=\\mathbf{b}$. Points C, D, B are collinear. Points A, D, E are collinear.",
+        "notes": "Complex parallelogram with collinear points and vector relationships"
+      },
+      "parts": [
+        {
+          "partId": "a(i)",
+          "questionText": "Find, in terms of $\\mathbf{a}$ and $\\mathbf{b}$, $\\vec{CD}$.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "a(ii)",
+          "questionText": "Find, in terms of $\\mathbf{a}$ and $\\mathbf{b}$, $\\vec{AD}$.",
+          "marks": 3,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "Is $\\vec{AC}$ parallel to $\\vec{OE}$? Justify your answer with appropriate working.",
+          "marks": 2,
+          "answerType": "proof"
+        },
+        {
+          "partId": "c(i)",
+          "questionText": "Find $\\frac{\\text{area of }\\triangle ADB}{\\text{area of }\\triangle ACD}$.",
+          "marks": 1,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c(ii)",
+          "questionText": "Find $\\frac{\\text{area of }\\triangle ADC}{\\text{area of }\\triangle AOE}$.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "c(iii)",
+          "questionText": "Find $\\frac{\\text{area of }\\triangle ADB}{\\text{area of }CDEO}$.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 11
+    },
+    {
+      "questionNumber": 38,
+      "questionId": "N7-anderson-2024-p2-q38",
+      "topicID": "N7",
+      "stem": "Mr Tan took part in a 42 km marathon run. He used x minutes to run the first 25 km at a constant speed.",
+      "hasDiagram": false,
+      "diagramDescription": null,
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "Write down an expression, in terms of $x,$ for his speed in $km/h$ for the first 25 km.",
+          "marks": 1,
+          "answerType": "algebraic"
+        },
+        {
+          "partId": "b",
+          "questionText": "For the last 17 km of the run, Mr Tan ran at a speed that is $2~km/h$ slower than his initial speed, and he took $(x-22.5)$ minutes. Write down an equation to represent this information and show that it simplifies to $2x^{2}-525x+33750=0$.",
+          "marks": 3,
+          "answerType": "proof"
+        },
+        {
+          "partId": "c",
+          "questionText": "Solve $2x^{2}-525x+33750=0.$",
+          "marks": 3,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "d",
+          "questionText": "Given that Mr Tan took more than 4 hours to complete his run, find the time he took for the whole run. Give your answer in hours and minutes.",
+          "marks": 2,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 9
+    },
+    {
+      "questionNumber": 39,
+      "questionId": "N3-anderson-2024-p2-q39",
+      "topicID": "N3",
+      "stem": "A book writer intends to sell her books to either Australia or Brazil, and she is planning to use Singapore post office Speedpost service to mail her books. The following table shows the mailing prices and other requirements.",
+      "hasDiagram": true,
+      "diagramDescription": "Table of Speedpost (International) Service Rates for different zones (A, B, C, D), weights (Document, 2kg, 5kg, 10kg, 20kg), and services (Express, Priority, Economy). Zone C includes Australia. Zone D includes Rest of the World (where Brazil is assumed to be, based on the question). A diagram shows package size constraints (Length, Width, Height, largest dimension $\\le 400$ mm, $L+W+H \\le 900$ mm). Each book dimension is 6 mm by 128 mm by 128 mm and weighs 75g.",
+      "diagram": {
+        "type": "needsSVG",
+        "description": "Table of Speedpost (International) Service Rates for different zones (A, B, C, D), weights (Document, 2kg, 5kg, 10kg, 20kg), and services (Express, Priority, Economy). Zone C includes Australia. Zone D includes Rest of the World (where Brazil is assumed to be, based on the question). A diagram shows package size constraints (Length, Width, Height, largest dimension $\\le 400$ mm, $L+W+H \\le 900$ mm). Each book dimension is 6 mm by 128 mm by 128 mm and weighs 75g.",
+        "notes": "Pricing table with package constraints - not geometric"
+      },
+      "parts": [
+        {
+          "partId": "a",
+          "questionText": "The writer wants to send an 18 kg parcel using Speedpost Economy. Calculate the percentage increase in the cost of sending to Brazil as compared to the cost of sending to Australia.",
+          "marks": 2,
+          "answerType": "numerical"
+        },
+        {
+          "partId": "b",
+          "questionText": "All the books have the same dimension of 6 mm by 128 mm by 128 mm and weighs 75g each. The cost to manufacture each book is \\$1.80. The author hopes to earn a profit of \\$3.00 for each book sold to Australia. By considering the manufacturing cost and the mailing cost to Australia, find the lowest possible price at which the writer should sell each book. Give your answer in dollars and cents correct to the nearest ten cents. Show your working clearly.",
+          "marks": 6,
+          "answerType": "numerical"
+        }
+      ],
+      "totalMarks": 8
+    }
+  ]
+}

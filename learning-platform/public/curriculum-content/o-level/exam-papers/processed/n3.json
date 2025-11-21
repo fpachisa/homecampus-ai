@@ -491,6 +491,71 @@
         "title": "Interest Rates and Compounding"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-2111071107-p1-q101",
+        "topicID": "N3",
+        "stem": "Mei Ling exchanges S$2000 into Japanese Yen (¥) for a holiday.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The exchange rate is ¥100 = S$0.92. Calculate the amount of Japanese Yen she receives, giving your answer correct to the nearest Yen.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "217 391 Yen",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the exchange rate for S$1.",
+                  "working": "S$0.92 = ¥100\nS$1 = \\frac{100}{0.92} ¥",
+                  "reasoning": "To convert Singapore dollars to Yen, we first find how much 1 SGD is worth in Yen."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the Singapore dollar amount by the calculated rate.",
+                  "working": "Amount in Yen = 2000 \\times \\frac{100}{0.92} \\approx 217391.304...",
+                  "reasoning": "Apply the unitary method to find the total value."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Round the answer to the nearest whole number.",
+                  "working": "217391.304... \\approx 217391",
+                  "reasoning": "The question asks for the answer correct to the nearest Yen."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "At the end of the holiday, Mei Ling has ¥15 000 left. She converts this back to Singapore dollars at a rate of S$1 = ¥112. Calculate the amount of Singapore dollars she receives.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "S$133.93",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Divide the Yen amount by the exchange rate to get Singapore dollars.",
+                  "working": "\\text{Amount in S\\$} = \\frac{15000}{112} \\approx 133.928...",
+                  "reasoning": "Since S$1 = ¥112, we divide the foreign currency by 112 to convert back to the home currency."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Round to 2 decimal places (cents).",
+                  "working": "133.928... \\approx 133.93",
+                  "reasoning": "Currency answers should always be rounded to 2 decimal places unless specified otherwise."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Exchange Rates"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N3-gemini-1911-p2-102",
         "topicID": "N3",
@@ -816,6 +881,133 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Standard Form and Percentage"
+      },
+      {
+        "questionNumber": 2,
+        "questionId": "N3-greenridge-2024-p2-q2",
+        "topicID": "N3",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Hamid borrowed a sum of money for 3 years at an interest rate of 3.5% per annum simple interest to pay for his car. If the total interest Hamid paid on the loan was $10 374, find the sum of money that he borrowed.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$98 800",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the known variables for Simple Interest.",
+                  "working": "Interest (I) = $10 374\nTime (T) = 3 years\nRate (R) = 3.5%",
+                  "reasoning": "We need to solve for the Principal (P) using the simple interest formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the Simple Interest formula $I = \\frac{PRT}{100}$ and rearrange for P.",
+                  "working": "10374 = \\frac{P \\times 3.5 \\times 3}{100}\n10374 = \\frac{10.5P}{100}",
+                  "reasoning": "Substitute the values into the standard formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for P.",
+                  "working": "P = \\frac{10374 \\times 100}{10.5}\nP = 98800",
+                  "reasoning": "Perform the algebraic manipulation to isolate P."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The table shows information collected by Hamid about his driving in 2023.\n\nCalculate the total amount Hamid paid for petrol in 2023.",
+            "table": {
+              "type": "data",
+              "headers": [
+                "",
+                ""
+              ],
+              "rows": [
+                [
+                  "Total distance driven in 2023",
+                  "16 992 km"
+                ],
+                [
+                  "Average price paid for petrol",
+                  "$2.72 per litre"
+                ],
+                [
+                  "Average petrol consumption of his car",
+                  "6.7 litres per 100 km"
+                ]
+              ]
+            },
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$3096.62",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total litres of petrol consumed.",
+                  "working": "\\text{Total Litres} = \\frac{\\text{Total Distance}}{100} \\times \\text{Consumption Rate}\n= \\frac{16992}{100} \\times 6.7\n= 169.92 \\times 6.7\n= 1138.464 \\text{ litres}",
+                  "reasoning": "The consumption is given per 100km, so we first find how many '100km blocks' were driven, then multiply by 6.7."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total cost.",
+                  "working": "\\text{Total Cost} = \\text{Total Litres} \\times \\text{Price per litre}\n= 1138.464 \\times 2.72\n= 3096.62208",
+                  "reasoning": "Multiply the volume of fuel by the unit price."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Round to the nearest cent.",
+                  "working": "3096.62208 \\approx 3096.62",
+                  "reasoning": "Financial answers should be rounded to 2 decimal places."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "At the start of 2020, Hamid bought his car at a cash price of \\$120 500. Each year the value of the car decreases by 5% of its value at the start of the year. At the end of 2023, Hamid decided to sell his car.\n(i) Explain why the percentage reduction at the end of three years is not 15% of \\$120 500.\n(ii) Calculate the value of his car at the end of 2023. Give your answer correct to the nearest dollar.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) See explanation. (ii) \\$98 148",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Answer part (i): Explain compound depreciation.",
+                  "working": "The depreciation is calculated on the reduced balance (the value at the start of each new year), not on the original principal amount every year. Therefore, it is compound depreciation, not simple depreciation.",
+                  "reasoning": "15% implies $3 \\times 5\\%$, which is simple interest logic. Depreciation usually works on the current value, meaning the absolute drop decreases each year."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify parameters for part (ii).",
+                  "working": "Principal (P) = $120 500\nRate (r) = 5%\nTime (n) = 4 years (Start 2020 to End 2023 covers 2020, 2021, 2022, 2023)",
+                  "reasoning": "We must count the years carefully. Start 2020 to End 2023 is exactly 4 years."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the compound depreciation formula.",
+                  "working": "A = P(1 - \\frac{r}{100})^n\nA = 120500(1 - 0.05)^4\nA = 120500(0.95)^4",
+                  "reasoning": "Use the standard formula for reducing balance depreciation."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate and round.",
+                  "working": "A = 120500 \\times 0.81450625\nA = 98148.003...\nA \\approx 98148",
+                  "reasoning": "The question asks for the answer correct to the nearest dollar."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Financial Mathematics"
       },
       {
         "questionNumber": 3,
@@ -1497,6 +1689,132 @@
         "totalMarks": 6,
         "paper": "Paper 2",
         "title": "Comparison of Investment Plans"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-2111071107-p2-q101",
+        "topicID": "N3",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "John invests a sum of money in a savings account paying simple interest. He invests $8000 and after 5 years, the total amount in the account (principal plus interest) is \\$9120. Calculate the annual interest rate.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2.8%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total interest earned.",
+                  "working": "Interest (I) = Total Amount - Principal\nI = 9120 - 8000 = 1120",
+                  "reasoning": "Simple interest is the difference between the final amount and the initial investment."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the simple interest formula to find the rate.",
+                  "working": "I = \\frac{PRT}{100}\n1120 = \\frac{8000 \\times R \\times 5}{100}",
+                  "reasoning": "Substitute known values ($P=8000, T=5, I=1120$) into the formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for R.",
+                  "working": "1120 = 400R\nR = \\frac{1120}{400} = 2.8",
+                  "reasoning": "Isolate R to find the percentage."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The table below shows the electricity consumption of a household in June.\n\n(i) Calculate the total energy consumption in kilowatt-hours (kWh) for the month of June (30 days).\n(ii) Given that electricity costs 29.5 cents per kWh, calculate the total cost of electricity for June. Give your answer in dollars.",
+            "table": {
+              "type": "data",
+              "headers": [
+                "Appliance",
+                "Power Rating",
+                "Usage"
+              ],
+              "rows": [
+                [
+                  "Air Conditioner",
+                  "1.5 kW",
+                  "8 hours per day"
+                ],
+                [
+                  "Refrigerator",
+                  "400 W",
+                  "24 hours per day"
+                ]
+              ]
+            },
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) 648 kWh (ii) $191.16",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert all power ratings to kW.",
+                  "working": "Refrigerator: 400 W = 0.4 kW",
+                  "reasoning": "Energy in kWh requires power in kW."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate daily energy usage.",
+                  "working": "Air Con: $1.5 \\text{ kW} \\times 8 \\text{ h} = 12 \\text{ kWh}$\nFridge: $0.4 \\text{ kW} \\times 24 \\text{ h} = 9.6 \\text{ kWh}$\nTotal Daily = $12 + 9.6 = 21.6 \\text{ kWh}$",
+                  "reasoning": "Energy = Power $\\times$ Time."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate monthly usage for June (30 days).",
+                  "working": "Monthly Usage = $21.6 \\times 30 = 648 \\text{ kWh}$",
+                  "reasoning": "Multiply daily usage by the number of days in the month."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate total cost.",
+                  "working": "Cost in cents = $648 \\times 29.5 = 19116 \\text{ cents}$\nCost in dollars = $\\frac{19116}{100} = 191.16$",
+                  "reasoning": "Multiply total units by unit cost and convert cents to dollars."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "A piece of artwork was purchased in 2019 for $4000. The value of the artwork appreciates by 8% per annum compound interest.\n(i) Calculate the value of the artwork in 2022.\n(ii) Calculate the percentage increase in the value of the artwork from 2019 to 2022.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(i) $5038.85 (ii) 25.97%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the value after 3 years (2019 to 2022).",
+                  "working": "A = P(1 + \\frac{r}{100})^n\nA = 4000(1 + 0.08)^3\nA = 4000(1.08)^3",
+                  "reasoning": "Use the compound interest formula for appreciation ($n=3$)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compute final value.",
+                  "working": "A = 4000 \\times 1.259712 = 5038.848\nRounded to 2 d.p.: $5038.85",
+                  "reasoning": "Money is rounded to 2 decimal places."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate percentage increase.",
+                  "working": "\\text{Percentage Increase} = \\frac{\\text{Final} - \\text{Original}}{\\text{Original}} \\times 100\\%\n= \\frac{5038.848 - 4000}{4000} \\times 100\\%\n= \\frac{1038.848}{4000} \\times 100\\%\n= 25.9712\\%",
+                  "reasoning": "Alternatively, calculate $(1.08^3 - 1) \\times 100\\%$. Round to 2 d.p. or 3 s.f."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 8,
+        "paper": "Paper 2",
+        "title": "Personal Finance"
       }
     ]
   }

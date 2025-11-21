@@ -130,3 +130,5 @@ coverage/
 
 # Claude Code settings (keep local only)
 .claude/settings.local.json
+# Allow exam paper JSONs explicitly
+!learning-platform/public/curriculum-content/**/*.json

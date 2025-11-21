@@ -64,6 +64,7 @@ interface OLevelQuestion {
     questionText: string;
     marks: number;
     answerType: string;
+    table?: QuestionTable;
     solution: {
       finalAnswer: string;
       stepByStep: Array<{
@@ -249,8 +250,11 @@ class OLevelPathLoader {
         }
       }
 
-      // Add structured table if present (only for first part)
-      if (partIndex === 0 && question.table) {
+      // Add structured table if present
+      // Priority: Part-specific table > Question-level table (only for first part)
+      if (part.table) {
+        preWrittenQuestion.questionTable = part.table;
+      } else if (partIndex === 0 && question.table) {
         preWrittenQuestion.questionTable = question.table;
       }
 

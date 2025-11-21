@@ -1,0 +1,1690 @@
+{
+  "expansion-factorisation-node-1": {
+    "nodeId": "expansion-factorisation-node-1",
+    "title": "Identifying Quadratic Expressions",
+    "section": "quadratic-definition",
+    "learningFocus": [
+      "Define quadratic expression as ax² + bx + c where a ≠ 0",
+      "Identify x² term as defining characteristic",
+      "Name coefficients: a (of x²), b (of x), c (constant)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Is the expression 3x² + 5x - 2 a quadratic expression? If yes, identify the values of a, b, and c.",
+        "correctAnswer": "Yes. a = 3, b = 5, c = -2"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Consider the expression 7x + 4. Is this a quadratic expression? Explain why or why not.",
+        "correctAnswer": "No. It is linear because there is no x² term (a = 0)"
+      }
+    ],
+    "variationRules": {
+      "coefficientRanges": {
+        "a": [1, 2, 3, 4, 5, -1, -2, -3],
+        "b": [1, 2, 3, 4, 5, 6, 7, -1, -2, -3, -4, -5, 0],
+        "c": [1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, 0]
+      },
+      "expressionTypes": [
+        "Standard form: ax² + bx + c",
+        "Missing b term: ax² + c",
+        "Missing c term: ax² + bx",
+        "Linear (non-quadratic): bx + c",
+        "Cubic (non-quadratic): ax³ + bx² + c"
+      ],
+      "questionTypes": [
+        "Is this quadratic? Identify a, b, c",
+        "True/false: Is this expression quadratic?",
+        "State why this is/isn't quadratic"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "CRITICAL: DO NOT include mathTool for definition questions - no visual needed",
+      "Use various forms: standard, missing terms, non-quadratic examples",
+      "Include both positive and negative coefficients",
+      "For missing terms, emphasize b=0 or c=0 (not omitted)",
+      "Mix quadratic and non-quadratic examples for discrimination",
+      "Always ask for coefficient identification when quadratic",
+      "Use unicode for exponents: x² not x^2"
+    ]
+  },
+
+  "expansion-factorisation-node-2": {
+    "nodeId": "expansion-factorisation-node-2",
+    "title": "Adding and Subtracting Quadratic Expressions",
+    "section": "add-subtract-quadratics",
+    "learningFocus": [
+      "Identify like terms in quadratic expressions",
+      "Combine x² terms, x terms, and constants separately",
+      "Handle negative coefficients and signs correctly"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Simplify: (3x² + 5x - 2) + (2x² - 3x + 7)",
+        "correctAnswer": "5x² + 2x + 5"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Simplify: (4x² - 6x + 1) - (x² + 2x - 5)",
+        "correctAnswer": "3x² - 8x + 6"
+      }
+    ],
+    "variationRules": {
+      "coefficientRanges": {
+        "x²_coefficients": [1, 2, 3, 4, 5, 6, -1, -2, -3],
+        "x_coefficients": [1, 2, 3, 4, 5, 6, 7, -1, -2, -3, -4, -5],
+        "constants": [1, 2, 3, 4, 5, 6, 7, 8, -1, -2, -3, -4, -5, -6]
+      },
+      "operationTypes": [
+        "Addition only",
+        "Subtraction only",
+        "Mixed addition and subtraction"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - this is algebraic manipulation",
+      "Always require full simplification in standard form ax² + bx + c",
+      "Include negative coefficients to test sign handling",
+      "For subtraction, ensure proper sign changes: -(a) = -a",
+      "Test combining like terms across x², x, and constant",
+      "Vary difficulty: 2 expressions (easier) to 3+ expressions (harder)",
+      "Final answer must be in descending power order: x² then x then constant"
+    ]
+  },
+
+  "expansion-factorisation-node-3": {
+    "nodeId": "expansion-factorisation-node-3",
+    "title": "Simplifying Multi-Variable Expressions",
+    "section": "multi-variable-simplification",
+    "learningFocus": [
+      "Recognize commutative property: xy = yx",
+      "Distinguish x²y from xy² (different terms)",
+      "Combine like terms with multiple variables"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Simplify: 3x²y + 2xy² - xy² + 5yx²",
+        "correctAnswer": "8x²y + xy²"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Simplify: 4ab + 2b² - 3ba + 5b² + ab",
+        "correctAnswer": "2ab + 7b²"
+      }
+    ],
+    "variationRules": {
+      "variableCombinations": [
+        "xy and yx (commutative pairs)",
+        "x²y and xy² (non-like terms)",
+        "ab, a²b, ab² (mixed powers)",
+        "pq, p²q, pq², p²q² (multiple powers)"
+      ],
+      "coefficientRanges": [1, 2, 3, 4, 5, -1, -2, -3, -4],
+      "variableLetters": ["x,y", "a,b", "p,q", "m,n", "r,s"]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - algebraic simplification only",
+      "ALWAYS include commutative pairs to test understanding: xy and yx",
+      "Include non-like terms that look similar: x²y vs xy²",
+      "Test student recognition: 3xy + 5yx = 8xy (combine)",
+      "But x²y and xy² cannot be combined (unlike terms)",
+      "Use 2-3 variables maximum to avoid confusion",
+      "Ensure some terms can combine, some cannot",
+      "Final answer should group like terms properly"
+    ]
+  },
+
+  "expansion-factorisation-node-4": {
+    "nodeId": "expansion-factorisation-node-4",
+    "title": "Single Bracket Expansion with Distributive Law",
+    "section": "distributive-law",
+    "learningFocus": [
+      "Apply distributive law: a(b+c) = ab + ac",
+      "Multiply each term inside bracket by outside term",
+      "Handle negative multipliers with sign changes"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand: 3(2x + 5)",
+        "correctAnswer": "6x + 15"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand: -2(4p - 3q)",
+        "correctAnswer": "-8p + 6q"
+      }
+    ],
+    "variationRules": {
+      "multipliers": [2, 3, 4, 5, -1, -2, -3, -4, -5],
+      "bracketTypes": [
+        "Two terms positive: (x+y)",
+        "One negative: (x-y)",
+        "Both negative: (-x-y)",
+        "With coefficients: (2x+3)"
+      ],
+      "termCounts": [2, 3]
+    },
+    "mathTool": {
+      "toolName": "distributiveVisualizer",
+      "parameters": {
+        "multiplier": "variable",
+        "terms": ["variable"],
+        "operation": "+",
+        "showSteps": true,
+        "showAnimation": false
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE mathTool when it helps visualization WITHOUT revealing answer",
+      "For simple expansion like 3(x+2), mathTool shows process not answer",
+      "CRITICAL: multiplier must match question (if question has -2, use -2)",
+      "CRITICAL: terms array must list individual terms from bracket",
+      "Example: For -2(4p-3q), use multiplier: -2, terms: ['4p', '-3q']",
+      "Sign handling rules: negative × positive = negative, negative × negative = positive",
+      "Test -(x+y) = -x-y and -(x-y) = -x+y patterns",
+      "Ensure all terms in bracket are multiplied (common error: 3(x+5) ≠ 3x+5)"
+    ]
+  },
+
+  "expansion-factorisation-node-5": {
+    "nodeId": "expansion-factorisation-node-5",
+    "title": "Expanding and Simplifying Multiple Single Brackets",
+    "section": "single-bracket-simplify",
+    "learningFocus": [
+      "Expand multiple single brackets",
+      "Identify like terms after expansion",
+      "Combine like terms with correct signs"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand and simplify: 3(2x+1) + 2(x-4)",
+        "correctAnswer": "8x - 5"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand and simplify: 2p(3p+q) - 6q(3p+2r)",
+        "correctAnswer": "6p² + 2pq - 18pq - 12qr = 6p² - 16pq - 12qr"
+      }
+    ],
+    "variationRules": {
+      "bracketCounts": [2, 3],
+      "operations": ["addition", "subtraction", "mixed"],
+      "termTypes": [
+        "Linear only: ax + b",
+        "With squares: x(x+2)",
+        "Multi-variable: p(3p+q)"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - process is sequential expansion then simplification",
+      "Process: Expand all brackets → Identify like terms → Combine",
+      "Test sign handling: 3(x+2) - 2(x-1) = 3x+6-2x+2 = x+8",
+      "Include multi-variable to test grouping: p(3p+q) = 3p²+pq",
+      "Ensure final answer combines all like terms",
+      "Test negative multipliers with subtraction between brackets",
+      "Final form should be fully simplified"
+    ]
+  },
+
+  "expansion-factorisation-node-6": {
+    "nodeId": "expansion-factorisation-node-6",
+    "title": "Double Bracket Expansion (FOIL Method)",
+    "section": "foil-method",
+    "learningFocus": [
+      "Apply (a+b)(c+d) = ac + ad + bc + bd",
+      "Use FOIL: First, Outer, Inner, Last",
+      "Generate all four terms systematically"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand: (x+3)(x+5)",
+        "correctAnswer": "x² + 8x + 15"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand and simplify: (2a+1)(3a+4)",
+        "correctAnswer": "6a² + 11a + 4"
+      }
+    ],
+    "variationRules": {
+      "bracketPatterns": [
+        "(x+a)(x+b) where a,b positive",
+        "(px+q)(rx+s) with coefficients",
+        "Same variable in both brackets",
+        "Different variables: (x+a)(y+b)"
+      ],
+      "coefficients": {
+        "leading": [1, 2, 3],
+        "constants": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "expand",
+        "showGrid": true,
+        "stepByStep": false
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid to visualize four-term expansion",
+      "CRITICAL: expression1 and expression2 must match question exactly",
+      "Example: For (x+3)(x+5), use expression1: 'x+3', expression2: 'x+5'",
+      "Grid shows four products: top-left (x²), middle terms (x), bottom-right (constant)",
+      "Emphasize combining middle terms: (x+3)(x+5) → x²+5x+3x+15 → x²+8x+15",
+      "Common error to warn against: (x+2)(x+3) ≠ x²+6 (missing middle term)",
+      "Grid helps students see where each term comes from",
+      "All positive terms first, then introduce negatives in next section"
+    ]
+  },
+
+  "expansion-factorisation-node-7": {
+    "nodeId": "expansion-factorisation-node-7",
+    "title": "Double Brackets with Negative Terms",
+    "section": "double-bracket-negatives",
+    "learningFocus": [
+      "Apply sign rules during multiplication",
+      "Handle (x-y)(a-b) with correct signs",
+      "Recognize (+)(+)=+, (+)(-)=-, (-)(-) = +"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand: (x-3)(x+5)",
+        "correctAnswer": "x² + 2x - 15"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand: (2p-q)(3p-4q)",
+        "correctAnswer": "6p² - 11pq + 4q²"
+      }
+    ],
+    "variationRules": {
+      "signPatterns": [
+        "(+,+)(+,+): both positive",
+        "(+,-)(+,+): one negative in first",
+        "(+,+)(+,-): one negative in second",
+        "(+,-)(+,-): negatives in both",
+        "(-,-)(+,+): both negative in first",
+        "(-,-)(-,-): all negative"
+      ]
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "expand",
+        "showGrid": true,
+        "stepByStep": false
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid to show sign changes visually",
+      "CRITICAL: Use exact expressions including negative signs",
+      "Example: For (x-3)(x+5), use expression1: 'x-3', expression2: 'x+5'",
+      "Sign rule reminders: (+)(+)=+, (+)(-)=-, (-)(+)=-, (-)(-) = +",
+      "Common errors: (x-2)(x-3) ≠ x²-5x-6 (wrong sign on last term)",
+      "Correct: (x-2)(x-3) = x²-3x-2x+6 = x²-5x+6",
+      "Grid shows sign of each product clearly",
+      "Test all combinations: (+,+), (+,-), (-,+), (-,-)"
+    ]
+  },
+
+  "expansion-factorisation-node-8": {
+    "nodeId": "expansion-factorisation-node-8",
+    "title": "Expanding (px+q)(rx+s) to Quadratic Form",
+    "section": "linear-brackets-to-quadratic",
+    "learningFocus": [
+      "Expand (px+q)(rx+s) to get prx² + (ps+qr)x + qs",
+      "Identify x² coefficient from p × r",
+      "Combine middle terms: psx + qrx"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand: (x+4)(x+6)",
+        "correctAnswer": "x² + 10x + 24"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand and simplify: (2x+1)(3x+2)",
+        "correctAnswer": "6x² + 7x + 2"
+      }
+    ],
+    "variationRules": {
+      "coefficientPairs": {
+        "p_r_pairs": ["1,1", "1,2", "2,1", "2,3", "3,2", "2,2"],
+        "q_s_values": [1, 2, 3, 4, 5, -1, -2, -3]
+      }
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "expand",
+        "showGrid": true,
+        "stepByStep": false
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid to show quadratic structure",
+      "Grid clearly shows: top-left (prx²), middle (psx+qrx), bottom-right (qs)",
+      "Example: (2x+1)(3x+2) → 6x²+4x+3x+2 → 6x²+7x+2",
+      "Emphasize pattern: x² coefficient = p×r = 2×3 = 6",
+      "Middle term coefficient = ps+qr = 2×2+1×3 = 7",
+      "Constant term = q×s = 1×2 = 2",
+      "This pattern is CRITICAL for factorisation (reverse process)",
+      "Test understanding with different p,r combinations"
+    ]
+  },
+
+  "expansion-factorisation-node-9": {
+    "nodeId": "expansion-factorisation-node-9",
+    "title": "Recognizing Rectangular Array Patterns",
+    "section": "rectangular-array-patterns",
+    "learningFocus": [
+      "Use 2×2 multiplication grid structure",
+      "Identify top-left (x²), middle (x terms), bottom-right (constant)",
+      "Connect grid visual to algebraic expansion"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Using a multiplication grid, expand (x+5)(x+3) and identify all four regions.",
+        "correctAnswer": "x² + 3x + 5x + 15 = x² + 8x + 15"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Use a grid to expand (2x+1)(x+4).",
+        "correctAnswer": "2x² + 8x + x + 4 = 2x² + 9x + 4"
+      }
+    ],
+    "variationRules": {
+      "expressions": [
+        "(x+a)(x+b) simple",
+        "(px+q)(x+r) one coefficient",
+        "(px+q)(rx+s) both coefficients"
+      ]
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "expand",
+        "showGrid": true,
+        "stepByStep": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid with stepByStep=true for sequential reveal",
+      "Question explicitly mentions using grid method",
+      "Grid shows four distinct regions with color coding",
+      "Green: x² terms, Blue: x terms, Orange: constants",
+      "Students should identify: 'top-left gives x²', 'middle two give x terms'",
+      "This builds foundation for factorisation (working backwards)"
+    ]
+  },
+
+  "expansion-factorisation-node-10": {
+    "nodeId": "expansion-factorisation-node-10",
+    "title": "Expanding with Higher Powers",
+    "section": "expand-squares-cubes",
+    "learningFocus": [
+      "Apply exponent rule: x × x² = x³",
+      "Handle mixed variables with powers",
+      "Distinguish like from unlike terms with powers"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand: ab(ac + b²)",
+        "correctAnswer": "a²bc + ab³"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand and simplify: x(xy+y) - y(xy+x)",
+        "correctAnswer": "x²y + xy - xy² - xy = x²y - xy²"
+      }
+    ],
+    "variationRules": {
+      "powerCombinations": [
+        "a·a² = a³",
+        "x·x = x²",
+        "ab·ac = a²bc",
+        "x²·y = x²y"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - focus is on exponent arithmetic",
+      "Test exponent addition: xᵃ × xᵇ = xᵃ⁺ᵇ",
+      "Common error: x·x² ≠ x² (wrong), correct is x³",
+      "For multi-variable: ab(ac) = a¹⁺¹bc = a²bc",
+      "Ensure students recognize: x²y and xy² are UNLIKE terms (cannot combine)",
+      "But x²y + 3x²y = 4x²y (like terms, can combine)",
+      "Test both expansion AND subsequent simplification"
+    ]
+  },
+
+  "expansion-factorisation-node-11": {
+    "nodeId": "expansion-factorisation-node-11",
+    "title": "Complex Multi-Bracket Expansion",
+    "section": "multi-bracket-expansion",
+    "learningFocus": [
+      "Expand three-bracket expressions",
+      "Use strategic order: expand pairs first",
+      "Manage complexity systematically"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand: (x+1)(x+2)(x+3)",
+        "correctAnswer": "x³ + 6x² + 11x + 6"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand and simplify: 2(x+1)(x-2) + 3(x+4)(x-1)",
+        "correctAnswer": "5x² + 13x + 8"
+      }
+    ],
+    "variationRules": {
+      "patterns": [
+        "Three brackets: (a+b)(c+d)(e+f)",
+        "Multiple double brackets: (a+b)(c+d) + (e+f)(g+h)",
+        "Coefficient outside: 2(x+1)(x+2)"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - too complex, focus on strategy",
+      "Strategy: (x+1)(x+2)(x+3) → [(x+1)(x+2)](x+3)",
+      "First expand (x+1)(x+2) = x²+3x+2",
+      "Then multiply result by (x+3): (x²+3x+2)(x+3)",
+      "For multiple expressions: expand each separately, then add",
+      "Test student ability to organize complex work",
+      "Final answer should combine all like terms"
+    ]
+  },
+
+  "expansion-factorisation-node-12": {
+    "nodeId": "expansion-factorisation-node-12",
+    "title": "Factorising by Extracting Common Factors",
+    "section": "extracting-common-factors",
+    "learningFocus": [
+      "Find HCF of all terms",
+      "Write in form a(b+c) from ab + ac",
+      "Verify by expanding factorised form"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise: 6x + 9",
+        "correctAnswer": "3(2x + 3)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise completely: 12ab + 18a",
+        "correctAnswer": "6a(2b + 3)"
+      }
+    ],
+    "variationRules": {
+      "hcfValues": [2, 3, 4, 5, 6],
+      "termTypes": [
+        "Numerical only: 6x + 9",
+        "One variable: 12a + 18",
+        "Two variables: 12ab + 18a",
+        "With squares: 5x² + 15x"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool for factorisation - algebraic process",
+      "Process: Find HCF → Factor out → Write a(b+c)",
+      "Verification: Expand a(b+c) should equal original",
+      "Test 'completely factorised': largest possible factor",
+      "Example: 6x+9 = 3(2x+3) is complete, but 6x+9 = 2(3x+4.5) is wrong",
+      "For 12ab+18a: HCF is 6a (both numerical 6 and variable a)",
+      "Emphasize: factorisation is REVERSE of expansion",
+      "Common error: 6x+9 = 6(x+9) is wrong (should be 3(2x+3))"
+    ]
+  },
+
+  "expansion-factorisation-node-13": {
+    "nodeId": "expansion-factorisation-node-13",
+    "title": "Factorising with Negative Common Factors",
+    "section": "negative-common-factors",
+    "learningFocus": [
+      "Extract -1 as common factor when appropriate",
+      "Apply sign changes: -x-y = -(x+y)",
+      "Handle negative coefficients correctly"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise: -6x - 9",
+        "correctAnswer": "-3(2x + 3)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: -15x + 6",
+        "correctAnswer": "-3(5x - 2) or 3(-5x + 2)"
+      }
+    ],
+    "variationRules": {
+      "negativePatterns": [
+        "Both negative: -ax - b",
+        "First negative: -ax + b",
+        "Second negative: ax - b with negative HCF"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - sign manipulation focus",
+      "Sign change rules: -x-y = -(x+y), -x+y = -(x-y)",
+      "For -6x-9: extract -3 to get -3(2x+3)",
+      "Alternative form acceptable: -3(2x+3) = 3(-2x-3)",
+      "Test: -15x+6 can be -3(5x-2) OR 3(-5x+2) - both valid",
+      "Verification critical: expand to check signs",
+      "Common error: forgetting sign change inside bracket"
+    ]
+  },
+
+  "expansion-factorisation-node-14": {
+    "nodeId": "expansion-factorisation-node-14",
+    "title": "Factorising with Squares and Cubes",
+    "section": "factor-higher-powers",
+    "learningFocus": [
+      "Extract highest power common to all terms",
+      "Handle x², x³ correctly",
+      "Combine numerical and algebraic HCF"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise: 6x² + 15x",
+        "correctAnswer": "3x(2x + 5)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise completely: 8a³b - 12a²b²",
+        "correctAnswer": "4a²b(2a - 3b)"
+      }
+    ],
+    "variationRules": {
+      "powerPatterns": [
+        "x² and x: extract x",
+        "x³ and x²: extract x²",
+        "a³b and a²b²: extract a²b",
+        "Mixed: numerical × algebraic HCF"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - algebraic factorisation",
+      "Highest power rule: from x³ and x², extract x²",
+      "Example: 6x³+9x² → 3x²(2x+3), NOT 3x(2x²+3x)",
+      "For multi-variable: 8a³b-12a²b²",
+      "  Numerical HCF: 4",
+      "  Variable HCF: a² (lowest power), b (lowest power)",
+      "  Combined: 4a²b(2a-3b)",
+      "Test complete factorisation: no further factoring possible",
+      "Verification: expand to check"
+    ]
+  },
+
+  "expansion-factorisation-node-15": {
+    "nodeId": "expansion-factorisation-node-15",
+    "title": "Understanding Quadratic Factorisation Process",
+    "section": "factorisation-concept",
+    "learningFocus": [
+      "Understand factorisation as reverse of expansion",
+      "Find factor pairs of constant c",
+      "Identify pair where sum equals coefficient b"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Explain how to factorise x² + 7x + 12 using factor pairs. What factors of 12 add to 7?",
+        "correctAnswer": "Factors of 12: (1,12), (2,6), (3,4). The pair (3,4) adds to 7. So x² + 7x + 12 = (x+3)(x+4)"
+      }
+    ],
+    "variationRules": {
+      "constants": [6, 8, 10, 12, 15, 18, 20],
+      "coefficients": [5, 6, 7, 8, 9, 11, 13]
+    },
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": 1,
+        "b": "variable",
+        "c": "variable",
+        "method": "factor-pairs",
+        "showSteps": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE factoringVisualizer to show factor pair process",
+      "CRITICAL: Set a=1 for simple factorisation section",
+      "CRITICAL: b and c must match question values",
+      "Visualizer shows: factor pairs of c, which pair sums to b",
+      "This is conceptual understanding section - explain the method",
+      "Target form: x² + bx + c = (x+p)(x+q) where pq=c, p+q=b",
+      "Use multiplication grid in reverse",
+      "Question asks for explanation, not just answer"
+    ]
+  },
+
+  "expansion-factorisation-node-16": {
+    "nodeId": "expansion-factorisation-node-16",
+    "title": "Factorising Simple Quadratics",
+    "section": "simple-quadratics",
+    "learningFocus": [
+      "List factor pairs of c systematically",
+      "Test sums to find pair equal to b",
+      "Write factorised form (x+p)(x+q)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise: x² + 5x + 6",
+        "correctAnswer": "(x + 2)(x + 3)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: x² + 9x + 20",
+        "correctAnswer": "(x + 4)(x + 5)"
+      }
+    ],
+    "variationRules": {
+      "constantValues": [6, 8, 10, 12, 15, 18, 20],
+      "factorPairs": {
+        "6": [[1,6], [2,3]],
+        "8": [[1,8], [2,4]],
+        "10": [[1,10], [2,5]],
+        "12": [[1,12], [2,6], [3,4]],
+        "15": [[1,15], [3,5]],
+        "18": [[1,18], [2,9], [3,6]],
+        "20": [[1,20], [2,10], [4,5]]
+      }
+    },
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": 1,
+        "b": "variable",
+        "c": "variable",
+        "method": "factor-pairs",
+        "showSteps": false
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE factoringVisualizer with showSteps=false (just shows answer)",
+      "All c values ≤ 20 (simple section)",
+      "All b and c positive (save negative for later)",
+      "Process: List factors of c → Find pair summing to b → Write (x+p)(x+q)",
+      "Example: x²+5x+6 → factors of 6: (1,6), (2,3) → 2+3=5 ✓ → (x+2)(x+3)",
+      "Verification: Expand (x+2)(x+3) = x²+5x+6 ✓",
+      "Test systematic approach, not guessing"
+    ]
+  },
+
+  "expansion-factorisation-node-17": {
+    "nodeId": "expansion-factorisation-node-17",
+    "title": "Systematic Factorisation with Reasoning",
+    "section": "systematic-factorisation",
+    "learningFocus": [
+      "Eliminate impossible factor pairs",
+      "Use b-coefficient to narrow choices",
+      "Explain factor selection reasoning"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise x² + 11x + 18 and explain why you chose those factors.",
+        "correctAnswer": "(x + 2)(x + 9). Factors of 18: (1,18)→19, (2,9)→11✓, (3,6)→9. We need sum=11, so (2,9)"
+      }
+    ],
+    "variationRules": {
+      "mediumConstants": [18, 20, 24, 28, 30, 36],
+      "eliminationCriteria": [
+        "Sum too large: eliminate",
+        "Sum too small: eliminate",
+        "Close to target: test"
+      ]
+    },
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": 1,
+        "b": "variable",
+        "c": "variable",
+        "method": "factor-pairs",
+        "showSteps": true,
+        "highlightFactors": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE factoringVisualizer with highlighting",
+      "Question explicitly asks for reasoning/explanation",
+      "Test student understanding beyond rote factoring",
+      "Example reasoning: 'I eliminated (1,18) because 1+18=19, too large'",
+      "Strategic thinking: if b is small, factors should be close together",
+      "If b is large, factors should be far apart",
+      "Build efficiency through logical elimination"
+    ]
+  },
+
+  "expansion-factorisation-node-18": {
+    "nodeId": "expansion-factorisation-node-18",
+    "title": "Factorising with Large Constant Terms",
+    "section": "large-constant",
+    "learningFocus": [
+      "List divisor pairs of large numbers systematically",
+      "Use prime factorisation when helpful",
+      "Handle many factor pairs without overwhelm"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise: x² + 17x + 60",
+        "correctAnswer": "(x + 5)(x + 12)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: x² + 23x + 72",
+        "correctAnswer": "(x + 3)(x + 24)"
+      }
+    ],
+    "variationRules": {
+      "largeConstants": [60, 72, 84, 90, 100, 120],
+      "systematicListing": [
+        "Start from 1 upward",
+        "Stop at sqrt(c)",
+        "Pairs: if d divides c, pair is (d, c/d)"
+      ]
+    },
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": 1,
+        "b": "variable",
+        "c": "variable",
+        "method": "factor-pairs",
+        "showSteps": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE factoringVisualizer to show systematic search",
+      "Constants > 50 to test organization",
+      "Emphasize systematic listing: 1, 2, 3, 4, 5, 6...",
+      "For 60: 1×60, 2×30, 3×20, 4×15, 5×12, 6×10",
+      "Test middle values often closest to b",
+      "Prime factorisation tip: 60 = 2²×3×5 helps find all divisors",
+      "Build stamina for complex factorisation"
+    ]
+  },
+
+  "expansion-factorisation-node-19": {
+    "nodeId": "expansion-factorisation-node-19",
+    "title": "Factorising with Both Factors Negative",
+    "section": "both-factors-negative",
+    "learningFocus": [
+      "Recognize b<0, c>0 means both factors negative",
+      "Write (x-p)(x-q) form correctly",
+      "Understand (-p)×(-q)=c, (-p)+(-q)=b"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise: x² - 7x + 10",
+        "correctAnswer": "(x - 2)(x - 5)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: x² - 8x + 15",
+        "correctAnswer": "(x - 3)(x - 5)"
+      }
+    ],
+    "variationRules": {
+      "negativePatterns": {
+        "c_values": [6, 10, 12, 15, 18],
+        "b_values": "negative of factor sums"
+      }
+    },
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": 1,
+        "b": "variable",
+        "c": "variable",
+        "method": "factor-pairs",
+        "showSteps": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE factoringVisualizer to show sign pattern",
+      "Pattern recognition: b<0 AND c>0 → both factors negative",
+      "Example: x²-7x+10 → need (-p)(-q)=10 and -p-q=-7",
+      "Factors of 10: (1,10), (2,5)",
+      "Test: -2-5=-7 ✓, so (x-2)(x-5)",
+      "Verification: (x-2)(x-5) = x²-5x-2x+10 = x²-7x+10 ✓",
+      "Common error: (x+2)(x+5) gives x²+7x+10 (wrong signs)"
+    ]
+  },
+
+  "expansion-factorisation-node-20": {
+    "nodeId": "expansion-factorisation-node-20",
+    "title": "Factorising with One Negative Factor",
+    "section": "one-negative-factor",
+    "learningFocus": [
+      "Recognize c<0 means opposite signs",
+      "Determine larger factor gets sign of b",
+      "Write (x+p)(x-q) or (x-p)(x+q) correctly"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise: x² + 5x - 6",
+        "correctAnswer": "(x + 6)(x - 1)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: x² - 3x - 10",
+        "correctAnswer": "(x - 5)(x + 2)"
+      }
+    ],
+    "variationRules": {
+      "negativeConstants": [-6, -8, -10, -12, -15, -18],
+      "signRules": [
+        "b>0: larger factor positive",
+        "b<0: larger factor negative"
+      ]
+    },
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": 1,
+        "b": "variable",
+        "c": "variable",
+        "method": "factor-pairs",
+        "showSteps": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE factoringVisualizer to show sign determination",
+      "Pattern: c<0 means one +, one -",
+      "Rule: Larger factor gets sign of b",
+      "Example: x²+5x-6 → factors of -6: (1,-6), (2,-3), (3,-2), (6,-1)",
+      "Need difference = 5 → try (6,-1): 6-1=5 ✓",
+      "Since b=+5 (positive), larger factor (6) is positive: (x+6)(x-1)",
+      "Example: x²-3x-10 → factors: (1,-10), (2,-5), (5,-2), (10,-1)",
+      "Need 5-2=3 or 2-5=-3 ✓ → (x-5)(x+2)",
+      "Verification critical for sign placement"
+    ]
+  },
+
+  "expansion-factorisation-node-21": {
+    "nodeId": "expansion-factorisation-node-21",
+    "title": "Sign Combination Strategy",
+    "section": "sign-determination-strategy",
+    "learningFocus": [
+      "Master all four sign scenarios",
+      "Quickly identify which scenario applies",
+      "Apply sign rules efficiently"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Determine signs then factorise: x² + 8x + 12",
+        "correctAnswer": "Both positive (c>0, b>0): (x + 2)(x + 6)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Determine signs then factorise: x² - 2x - 8",
+        "correctAnswer": "One each (c<0), larger negative (b<0): (x - 4)(x + 2)"
+      }
+    ],
+    "variationRules": {
+      "scenarios": [
+        "c>0, b>0 → (+,+)",
+        "c>0, b<0 → (-,-)",
+        "c<0, b>0 → larger +",
+        "c<0, b<0 → larger -"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - focus on strategic thinking",
+      "Question asks to determine signs FIRST, then factorise",
+      "Test quick scenario recognition from b and c signs",
+      "Four scenarios to master:",
+      "  1. c>0, b>0: both factors positive (x+p)(x+q)",
+      "  2. c>0, b<0: both factors negative (x-p)(x-q)",
+      "  3. c<0, b>0: larger positive (x+p)(x-q) where p>q",
+      "  4. c<0, b<0: larger negative (x-p)(x+q) where p>q",
+      "Build fluency through mixed practice"
+    ]
+  },
+
+  "expansion-factorisation-node-22": {
+    "nodeId": "expansion-factorisation-node-22",
+    "title": "Understanding Factorisation with a≠1",
+    "section": "understand-a-not-1",
+    "learningFocus": [
+      "Recognize when a≠1 requires different approach",
+      "Understand (px+q)(rx+s) form where pr=a",
+      "See why common factor method doesn't work"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Explain why 2x² + 7x - 15 cannot be factorised by just extracting common factors.",
+        "correctAnswer": "There is no common factor among 2x², 7x, and -15 other than 1. We need (px+q)(rx+s) form where pr=2"
+      }
+    ],
+    "variationRules": {
+      "leadingCoefficients": [2, 3, 4, 5, 6]
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "factorise",
+        "showGrid": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid in factorise mode",
+      "This is conceptual - explain WHY different method needed",
+      "Grid shows diagonal product pattern",
+      "Target form: (px+q)(rx+s) where pr=a, qs=c, ps+qr=b",
+      "Example: 2x²+7x-15 needs p·r=2, so try (2x+?)(x+?)",
+      "Question asks for understanding, not just answer"
+    ]
+  },
+
+  "expansion-factorisation-node-23": {
+    "nodeId": "expansion-factorisation-node-23",
+    "title": "Guess-and-Check Method for a≠1",
+    "section": "guess-and-check",
+    "learningFocus": [
+      "List factor pairs of a and c",
+      "Test combinations in multiplication frame",
+      "Check if x-coefficient sum equals b"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise using guess-and-check: 2x² + 7x + 3",
+        "correctAnswer": "(2x + 1)(x + 3)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: 3x² + 10x + 8",
+        "correctAnswer": "(3x + 4)(x + 2)"
+      }
+    ],
+    "variationRules": {
+      "aValues": [2, 3],
+      "cValues": [3, 4, 5, 6, 8, 10]
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "factorise",
+        "showGrid": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid to test combinations",
+      "Keep a=2 or 3 (not too complex)",
+      "Process: List factors of a: (1,2) or (1,3)",
+      "List factors of c, test in grid",
+      "For 2x²+7x+3: try (2x+1)(x+3)",
+      "Check middle: 2x·3 + 1·x = 6x+x = 7x ✓",
+      "If wrong, try different arrangement",
+      "Grid shows which combination works"
+    ]
+  },
+
+  "expansion-factorisation-node-24": {
+    "nodeId": "expansion-factorisation-node-24",
+    "title": "Reasoning Method (AC Method)",
+    "section": "reasoning-method",
+    "learningFocus": [
+      "Calculate diagonal product a×c",
+      "Find factors of (a×c) summing to b",
+      "Split middle term and group"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise using the AC method: 2x² + 7x - 15",
+        "correctAnswer": "(2x - 3)(x + 5)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: 3x² + 11x + 6",
+        "correctAnswer": "(3x + 2)(x + 3)"
+      }
+    ],
+    "variationRules": {
+      "acProducts": "calculated from a and c",
+      "bValues": "must have factor pairs"
+    },
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": "variable",
+        "b": "variable",
+        "c": "variable",
+        "method": "split-middle",
+        "showSteps": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE factoringVisualizer with split-middle method",
+      "CRITICAL: a, b, c must match question exactly",
+      "AC Method steps:",
+      "  1. Calculate AC = a×c = 2×(-15) = -30",
+      "  2. Find factors of -30 that sum to b=7: -3 and 10",
+      "  3. Split middle: 2x²-3x+10x-15",
+      "  4. Group: (2x²-3x)+(10x-15) = x(2x-3)+5(2x-3) = (x+5)(2x-3)",
+      "Visualizer shows each step clearly",
+      "More efficient than guess-and-check for large a"
+    ]
+  },
+
+  "expansion-factorisation-node-25": {
+    "nodeId": "expansion-factorisation-node-25",
+    "title": "Negative Leading Coefficient",
+    "section": "negative-leading",
+    "learningFocus": [
+      "Extract negative sign first",
+      "Factorise positive form inside",
+      "Show alternative representations"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise: -2x² - 7x + 15",
+        "correctAnswer": "-(2x² + 7x - 15) = -(2x - 3)(x + 5) or (3 - 2x)(x + 5)"
+      }
+    ],
+    "variationRules": {
+      "negativeA": [-2, -3, -4]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - focus on sign extraction",
+      "Process: Extract negative → Factorise positive form → Reapply negative",
+      "Example: -2x²-7x+15 = -(2x²+7x-15) = -(2x-3)(x+5)",
+      "Alternative: distribute negative into one factor: (3-2x)(x+5)",
+      "Both forms valid, show both",
+      "Verification: expand both to check"
+    ]
+  },
+
+  "expansion-factorisation-node-26": {
+    "nodeId": "expansion-factorisation-node-26",
+    "title": "Grouping Using Multiplication Frame",
+    "section": "grouping-frame-method",
+    "learningFocus": [
+      "Arrange four terms in 2×2 frame",
+      "Identify common factor in each row/column",
+      "Read (a+b)(c+d) from frame structure"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise using frame method: xy + 3x + 2y + 6",
+        "correctAnswer": "(x + 2)(y + 3)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: 2ac + 3ad + 4bc + 6bd",
+        "correctAnswer": "(a + 2b)(2c + 3d)"
+      }
+    ],
+    "variationRules": {
+      "termPatterns": [
+        "ac + ad + bc + bd",
+        "xy + ay + bx + ab",
+        "With coefficients: 2ac + 3ad + 4bc + 6bd"
+      ]
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "factorise",
+        "showGrid": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid in factorise mode",
+      "Frame method: arrange terms in 2×2 grid",
+      "Read factors from row/column headers",
+      "Example: xy + 3x + 2y + 6",
+      "  Grid: [x, 3; 2, 6] → factors (x+2)(y+3)",
+      "Verify by expanding: (x+2)(y+3) = xy+3x+2y+6 ✓",
+      "Grid makes factors obvious"
+    ]
+  },
+
+  "expansion-factorisation-node-27": {
+    "nodeId": "expansion-factorisation-node-27",
+    "title": "Grouping by Pairs Method",
+    "section": "grouping-pairs-method",
+    "learningFocus": [
+      "Group four terms into two pairs",
+      "Extract common factor from each pair",
+      "Identify common binomial factor"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise by grouping: 3x + 3y + ax + ay",
+        "correctAnswer": "(3 + a)(x + y)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: 2mn + 4m + 3n + 6",
+        "correctAnswer": "(2m + 3)(n + 2)"
+      }
+    ],
+    "variationRules": {
+      "pairingPatterns": [
+        "(ac+ad) + (bc+bd)",
+        "(xy+ay) + (bx+ab)",
+        "Various coefficient combinations"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - pairing method focus",
+      "Method: Group pairs → Extract from each → Final extraction",
+      "Example: 3x+3y+ax+ay = (3x+3y)+(ax+ay) = 3(x+y)+a(x+y) = (3+a)(x+y)",
+      "Key: both pairs must have same binomial factor",
+      "If not, try different pairing arrangement",
+      "Verification: expand to check"
+    ]
+  },
+
+  "expansion-factorisation-node-28": {
+    "nodeId": "expansion-factorisation-node-28",
+    "title": "Choosing Correct Term Arrangement",
+    "section": "term-arrangement",
+    "learningFocus": [
+      "Test different term pairings",
+      "Recognize when arrangement doesn't work",
+      "Rearrange strategically for successful grouping"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Find correct arrangement then factorise: pr + qr + ps + qs",
+        "correctAnswer": "Rearrange as (pr+ps)+(qr+qs) = p(r+s)+q(r+s) = (p+q)(r+s)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: ab + 2b + 3a + 6",
+        "correctAnswer": "(ab+2b)+(3a+6) = b(a+2)+3(a+2) = (b+3)(a+2)"
+      }
+    ],
+    "variationRules": {
+      "arrangementChallenges": [
+        "Terms not pre-grouped correctly",
+        "Multiple valid arrangements",
+        "Requires strategic rearrangement"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - strategic thinking focus",
+      "Challenge: terms given in non-obvious order",
+      "Student must rearrange before grouping",
+      "Test different pairings until common binomial emerges",
+      "Some expressions have multiple valid arrangements",
+      "Build problem-solving flexibility"
+    ]
+  },
+
+  "expansion-factorisation-node-29": {
+    "nodeId": "expansion-factorisation-node-29",
+    "title": "Combined Extraction and Grouping",
+    "section": "combined-techniques",
+    "learningFocus": [
+      "Extract common factor first when present",
+      "Apply grouping to remaining expression",
+      "Verify complete factorisation"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise completely: 6xy + 9x + 10y + 15",
+        "correctAnswer": "3(2xy + 3x + 10y/3 + 5)... Actually: (2x+5)(3y+3) = 3(2x+5)(y+1) or (6x+15)(y+1) = 3(2x+5)(y+1)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Factorise: 4ab + 6ac + 6b + 9c",
+        "correctAnswer": "(2a+3)(2b+3c)"
+      }
+    ],
+    "variationRules": {
+      "complexPatterns": [
+        "HCF present + grouping needed",
+        "Multiple steps required",
+        "Complete factorisation check"
+      ]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - multi-step process",
+      "Strategy: Check for HCF first → Extract if present → Group remaining",
+      "Example: 6xy+9x+10y+15",
+      "  No overall HCF",
+      "  Group: (6xy+9x)+(10y+15) = 3x(2y+3)+5(2y+3) = (3x+5)(2y+3)",
+      "Verify: no further factorisation possible",
+      "Test combining multiple techniques"
+    ]
+  },
+
+  "expansion-factorisation-node-30": {
+    "nodeId": "expansion-factorisation-node-30",
+    "title": "Perfect Square Sum Pattern",
+    "section": "perfect-square-sum-discovery",
+    "learningFocus": [
+      "Expand (a+b)² using distributive law",
+      "Combine to get a² + 2ab + b²",
+      "Avoid error (a+b)² ≠ a² + b²"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand (x + 3)² and explain each term.",
+        "correctAnswer": "(x+3)(x+3) = x² + 3x + 3x + 9 = x² + 6x + 9. The 6x comes from 2×3×x"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand (2a + 5)² and verify using area model.",
+        "correctAnswer": "4a² + 20a + 25"
+      }
+    ],
+    "variationRules": {
+      "perfectSquares": [
+        "(x+a)² where a = 1,2,3,4,5",
+        "(px+q)² where p = 2,3 and q = 1,2,3,5",
+        "Emphasize middle term = 2ab"
+      ]
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "expand",
+        "showGrid": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid to show (a+b)(a+b) structure",
+      "CRITICAL: expression1 and expression2 must be IDENTICAL",
+      "Example: For (x+3)², use expression1: 'x+3', expression2: 'x+3'",
+      "Grid shows: a², ab, ab, b² → a² + 2ab + b²",
+      "Emphasize: middle term is 2ab (TWO rectangles of area ab)",
+      "Common error: (x+3)² ≠ x²+9 (missing 6x)",
+      "Correct: (x+3)² = x²+6x+9",
+      "Build foundation for factorising perfect squares"
+    ]
+  },
+
+  "expansion-factorisation-node-31": {
+    "nodeId": "expansion-factorisation-node-31",
+    "title": "Perfect Square Difference Pattern",
+    "section": "perfect-square-difference-discovery",
+    "learningFocus": [
+      "Expand (a-b)² using distributive law",
+      "Understand (a-b)² = a² - 2ab + b²",
+      "Recognize (-b)² = b² (positive)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand (x - 5)² and identify each term.",
+        "correctAnswer": "(x-5)(x-5) = x² - 5x - 5x + 25 = x² - 10x + 25"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Compare (x+3)² and (x-3)². What is similar and what is different?",
+        "correctAnswer": "Both give x² + constant. (x+3)² = x²+6x+9, (x-3)² = x²-6x+9. Middle term sign differs but constant is positive in both"
+      }
+    ],
+    "variationRules": {
+      "subtractedValues": [1, 2, 3, 4, 5, 6, 7, 8],
+      "withCoefficients": ["(2x-1)²", "(3y-4)²", "(5a-2b)²"]
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "expand",
+        "showGrid": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid with identical expressions",
+      "CRITICAL: For (x-5)², use expression1: 'x-5', expression2: 'x-5'",
+      "Emphasize: (-b)² = b² so last term is POSITIVE",
+      "Common error: (x-5)² ≠ x²-25 (missing middle, wrong sign)",
+      "Correct: (x-5)² = x²-10x+25",
+      "Middle term is -2ab (negative from -b-b)",
+      "Last term is +b² (negative times negative = positive)",
+      "Compare with (a+b)² to show relationship"
+    ]
+  },
+
+  "expansion-factorisation-node-32": {
+    "nodeId": "expansion-factorisation-node-32",
+    "title": "Expanding Using Perfect Square Identities",
+    "section": "perfect-square-expansion",
+    "learningFocus": [
+      "Apply (a±b)² = a²±2ab+b² efficiently",
+      "Handle coefficients: (4a)² = 16a²",
+      "Calculate middle term correctly"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand (4y + 3)²",
+        "correctAnswer": "16y² + 24y + 9"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand (2x - 5y)²",
+        "correctAnswer": "4x² - 20xy + 25y²"
+      }
+    ],
+    "variationRules": {
+      "firstTerms": ["x", "2x", "3x", "4x", "5x", "2a", "3b"],
+      "secondTerms": [1, 2, 3, 4, 5, 6, "2y", "3b", "4c"],
+      "signs": ["+", "-"]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - using identity as shortcut",
+      "Identity: (a±b)² = a²±2ab+b²",
+      "Process: Square first, double product, square second",
+      "Example: (4y+3)² → (4y)² = 16y², 2(4y)(3) = 24y, 3² = 9",
+      "Common error: (2x)² = 2x² is WRONG, correct is 4x²",
+      "Test coefficient squaring: (ka)² = k²a²",
+      "Middle term: 2×first×second (must multiply coefficients)",
+      "For (2x-5y)²: middle is 2(2x)(-5y) = -20xy"
+    ]
+  },
+
+  "expansion-factorisation-node-33": {
+    "nodeId": "expansion-factorisation-node-33",
+    "title": "Factorising Perfect Square Trinomials",
+    "section": "perfect-square-factorisation",
+    "learningFocus": [
+      "Recognize a²±2ab+b² pattern",
+      "Take square roots of first and last terms",
+      "Verify middle term equals 2×√first×√last"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise x² + 10x + 25",
+        "correctAnswer": "(x + 5)²"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Check if 16y² + 20y + 25 is a perfect square, then factorise if possible.",
+        "correctAnswer": "Not a perfect square. √16y² = 4y, √25 = 5, but 2(4y)(5) = 40y ≠ 20y. Cannot factorise as perfect square"
+      }
+    ],
+    "variationRules": {
+      "perfectSquares": [
+        "x²+10x+25 = (x+5)²",
+        "x²-14x+49 = (x-7)²",
+        "4a²+12ab+9b² = (2a+3b)²",
+        "25x²-40xy+16y² = (5x-4y)²"
+      ],
+      "nonPerfectSquares": [
+        "x²+10x+24 (wrong constant)",
+        "16y²+20y+25 (wrong middle)"
+      ]
+    },
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": "variable",
+        "b": "variable",
+        "c": "variable",
+        "method": "factor-pairs",
+        "showSteps": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE factoringVisualizer for verification",
+      "Three tests for perfect square:",
+      "  1. Three terms",
+      "  2. First and last are perfect squares",
+      "  3. Middle = ±2×√first×√last",
+      "Example: x²+10x+25",
+      "  Test 1: ✓ three terms",
+      "  Test 2: √x² = x, √25 = 5 ✓",
+      "  Test 3: 10x = 2(x)(5)? Yes ✓",
+      "  Therefore: (x+5)²",
+      "Include NON-perfect squares to test discrimination",
+      "If not perfect square, state 'Not a perfect square'",
+      "Verification: expand (x+5)² = x²+10x+25 ✓"
+    ]
+  },
+
+  "expansion-factorisation-node-34": {
+    "nodeId": "expansion-factorisation-node-34",
+    "title": "Discovering Middle Term Cancellation",
+    "section": "difference-squares-discovery",
+    "learningFocus": [
+      "Expand (a+b)(a-b) and observe cancellation",
+      "Recognize -ab and +ab are opposites",
+      "Simplify to a² - b²"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand (x + 3)(x - 3) showing all four terms, then simplify.",
+        "correctAnswer": "x² - 3x + 3x - 9 = x² - 9"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Explain why (a+b)(a-b) has no middle term in the final answer.",
+        "correctAnswer": "When expanded, you get a² - ab + ab - b². The middle terms -ab and +ab are opposites and cancel to 0, leaving only a² - b²"
+      }
+    ],
+    "variationRules": {
+      "values": [2, 3, 4, 5, 6, 7, 8],
+      "withCoefficients": ["(2a+5)(2a-5)", "(3y+7)(3y-7)"]
+    },
+    "mathTool": {
+      "toolName": "multiplicationGrid",
+      "parameters": {
+        "expression1": "variable",
+        "expression2": "variable",
+        "mode": "expand",
+        "showGrid": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "INCLUDE multiplicationGrid to show cancellation visually",
+      "CRITICAL: expression1 and expression2 opposite signs only",
+      "Example: expression1: 'x+3', expression2: 'x-3'",
+      "Grid shows four terms: x², -3x, +3x, -9",
+      "Emphasize cancellation: -3x + 3x = 0",
+      "Result: only TWO terms (x² - 9)",
+      "This is discovery section - ask for explanation",
+      "Pattern: (a+b)(a-b) = a²-b² always (no middle term)"
+    ]
+  },
+
+  "expansion-factorisation-node-35": {
+    "nodeId": "expansion-factorisation-node-35",
+    "title": "Expanding Using Difference of Squares",
+    "section": "difference-squares-expansion",
+    "learningFocus": [
+      "Recognize (a+b)(a-b) pattern",
+      "Apply identity: square first - square second",
+      "Use as computational shortcut"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Expand (x + 5)(x - 5)",
+        "correctAnswer": "x² - 25"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Expand (3a + 4b)(3a - 4b)",
+        "correctAnswer": "9a² - 16b²"
+      }
+    ],
+    "variationRules": {
+      "simpleTerms": [3, 4, 5, 6, 7, 8, 9],
+      "coefficients": [2, 3, 4, 5],
+      "multiVariable": ["(2x+3y)(2x-3y)", "(5a+2b)(5a-2b)"]
+    },
+    "mathTool": null,
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+      "DO NOT include mathTool - using identity as shortcut",
+      "Identity: (a+b)(a-b) = a² - b²",
+      "Shortcut: Just square first, subtract square of second",
+      "Example: (x+5)(x-5) → x² - 5² = x² - 25",
+      "For (3a+4b)(3a-4b) → (3a)² - (4b)² = 9a² - 16b²",
+      "Order doesn't matter: (a-b)(a+b) = (a+b)(a-b) = a²-b²",
+      "Result always has exactly TWO terms",
+      "Test coefficient squaring: (ka)² = k²a²"
+    ]
+  },
+
+  "expansion-factorisation-node-36": {
+    "nodeId": "expansion-factorisation-node-36",
+    "title": "Factorising Difference of Squares",
+    "section": "difference-squares-factorisation-and-applications",
+    "learningFocus": [
+      "Recognize a² - b² pattern",
+      "Factorise as (a+b)(a-b)",
+      "Apply to mental math and problem solving"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Factorise x² - 64",
+        "correctAnswer": "(x + 8)(x - 8)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Calculate 103 × 97 using difference of squares.",
+        "correctAnswer": "103 × 97 = (100+3)(100-3) = 100² - 3² = 10000 - 9 = 9991"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Explain why x² + 25 cannot be factorised using difference of squares.",
+        "correctAnswer": "Difference of squares requires SUBTRACTION (a²-b²). x²+25 is a sum (+), not a difference (-), so the identity doesn't apply"
+      }
+    ],
+    "variationRules": {
+      "differences": [
+        "x²-4, x²-9, x²-16, x²-25, x²-36, x²-49, x²-64, x²-100",
+        "4a²-9, 9y²-16, 25x²-36",
+        "49a²-36b²"
+      ],
+      "mentalMath": [
+        "101×99, 103×97, 52×48, 71×69, 84×76"
+      ],
+      "consecutiveSquares": [
+        "50²-49², 100²-99², 51²-50²"
+      ]
+    },
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": "variable",
+        "b": 0,
+        "c": "variable",
+        "method": "difference-squares",
+        "showSteps": true
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem. Maximum TWO if mental math",
+      "INCLUDE factoringVisualizer with method='difference-squares'",
+      "CRITICAL: Set b=0 for difference of squares (no middle term)",
+      "CRITICAL: c must be negative for difference",
+      "Pattern recognition: Two terms, both squares, subtraction",
+      "Process: Take √first and √second, write (√first + √second)(√first - √second)",
+      "Example: x²-64 → √x²=x, √64=8 → (x+8)(x-8)",
+      "Mental math: 103×97 = (100+3)(100-3) = 100²-3² = 10000-9 = 9991",
+      "Consecutive squares: n²-(n-1)² = (n+n-1)(n-n+1) = (2n-1)(1) = 2n-1",
+      "CRITICAL: Distinguish from sum of squares (a²+b² CANNOT be factorised)",
+      "Include both factorisation and application problems",
+      "Verification: expand (a+b)(a-b) to check"
+    ]
+  }
+}

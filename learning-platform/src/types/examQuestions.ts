@@ -33,6 +33,7 @@ export interface QuestionPart {
     questionText: string;
     marks: number;
     answerType: "numerical" | "algebraic" | "proof" | "text" | "drawing";
+    table?: QuestionTable;       // NEW: Optional structured table for specific part
     solution: {
         finalAnswer: string;
         stepByStep: SolutionStep[];

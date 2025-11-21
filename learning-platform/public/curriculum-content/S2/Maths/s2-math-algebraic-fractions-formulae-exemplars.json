@@ -1,0 +1,939 @@
+{
+  "algebraic-fractions-node-1": {
+    "nodeId": "algebraic-fractions-node-1",
+    "title": "Understanding Algebraic Fractions",
+    "section": "understanding-algebraic-fractions",
+
+    "learningFocus": [
+      "Define algebraic fractions as A/B where A and/or B contain variables",
+      "Identify when fractions are undefined (denominator = 0)",
+      "Apply equivalent fractions rule: A/B = (A×C)/(B×C)"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Determine whether the following are algebraic fractions: a) $\\frac{5}{8}$ b) $\\frac{2y}{5}$ c) $\\frac{16}{4h+k}$",
+        "correctAnswer": "a) No (both numerator and denominator are numbers), b) Yes (numerator contains variable y), c) Yes (denominator contains variables h and k)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "The fraction $\\frac{5}{x-3}$ is undefined when the denominator equals zero. Find the value of x that makes this fraction undefined.",
+        "correctAnswer": "x = 3"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Show that $\\frac{3}{a}$ and $\\frac{15}{5a}$ are equivalent fractions.",
+        "correctAnswer": "$\\frac{3}{a} = \\frac{3 \\times 5}{a \\times 5} = \\frac{15}{5a}$, so they are equivalent"
+      }
+    ],
+
+    "variationRules": {
+      "variables": ["x", "y", "a", "b", "m", "n", "p", "t"],
+      "numeratorTypes": [
+        "{number}",
+        "{variable}",
+        "{number}{variable}",
+        "{number}{variable} + {number}",
+        "{variable}^2"
+      ],
+      "denominatorTypes": [
+        "{variable}",
+        "{number}{variable}",
+        "{variable} + {number}",
+        "{variable} - {number}",
+        "{number}{variable} + {number}",
+        "{variable}^2 + {number}"
+      ],
+      "undefinedValues": {
+        "simple": [0, 1, 2, 3, 4, 5, -1, -2, -3],
+        "range": "integers from -10 to 10"
+      }
+    },
+
+    "mathTool": null,
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem. Maximum TWO questions ONLY if the second depends on the first",
+
+      "DO NOT include mathTool for this section - these are conceptual questions about definitions and identification",
+
+      "For identification questions, ask about 2-3 fractions in one question",
+      "For 'undefined' questions, use simple linear denominators like (x-3), (2a+1), (5-b)",
+      "For equivalent fractions, multiply/divide both numerator and denominator by same value",
+
+      "Use clear mathematical notation: $\\frac{numerator}{denominator}$ format",
+      "Emphasize the condition B ≠ 0 in explanations",
+      "Vary variables - don't always use x"
+    ]
+  },
+
+  "algebraic-fractions-node-2": {
+    "nodeId": "algebraic-fractions-node-2",
+    "title": "Simplifying by Canceling Common Factors",
+    "section": "simplifying-algebraic-fractions-basic",
+
+    "learningFocus": [
+      "Identify common numerical factors in numerator and denominator",
+      "Identify common variable factors",
+      "Apply exponent rules: x^m/x^n = x^(m-n)"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Simplify $\\frac{8x^5 y}{12x^3 y^4}$",
+        "correctAnswer": "$\\frac{2x^2}{3y^3}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Simplify $\\frac{9x^4}{27x}$",
+        "correctAnswer": "$\\frac{x^3}{3}$ or $\\frac{1}{3}x^3$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Simplify $\\frac{15p}{10p^2}$",
+        "correctAnswer": "$\\frac{3}{2p}$"
+      }
+    ],
+
+    "variationRules": {
+      "coefficientPairs": [
+        {"num": 6, "den": 9, "gcd": 3},
+        {"num": 8, "den": 12, "gcd": 4},
+        {"num": 15, "den": 10, "gcd": 5},
+        {"num": 24, "den": 18, "gcd": 6},
+        {"num": 28, "den": 63, "gcd": 7},
+        {"num": 27, "den": 9, "gcd": 9}
+      ],
+      "variables": ["x", "y", "a", "b", "p", "q", "m", "n"],
+      "exponentPairs": [
+        {"num": 5, "den": 2},
+        {"num": 4, "den": 1},
+        {"num": 3, "den": 3},
+        {"num": 7, "den": 4},
+        {"num": 2, "den": 1}
+      ],
+      "multiVariable": true
+    },
+
+    "mathTool": {
+      "toolName": "algebraExpression",
+      "parameters": {
+        "expression": "variable",
+        "highlightLikeTerms": false,
+        "showCoefficients": true,
+        "showBreakdown": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE algebraExpression to show the structure of numerator and denominator BEFORE simplification",
+      "Set expression parameter to the UNSIMPLIFIED fraction's numerator or denominator for analysis",
+      "This helps students identify factors WITHOUT revealing the final simplified answer",
+
+      "Use coefficient pairs with GCD > 1 so there's always simplification needed",
+      "Include both single and multi-variable problems",
+      "For exponents: ensure numerator power ≥ denominator power for positive exponents, or < for fractions",
+
+      "Common student errors to avoid in answer checking:",
+      "- Canceling terms instead of factors",
+      "- Wrong exponent subtraction (x^5/x^2 ≠ x^2.5)",
+      "- Forgetting to simplify numerical coefficients",
+
+      "Final answer must have NO common factors except 1"
+    ]
+  },
+
+  "algebraic-fractions-node-3": {
+    "nodeId": "algebraic-fractions-node-3",
+    "title": "Factorization with Linear Expressions",
+    "section": "factorization-linear",
+
+    "learningFocus": [
+      "Factor out common terms from numerator",
+      "Factor out common terms from denominator",
+      "Cancel common binomial factors like (x+3)"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Simplify $\\frac{a^2 + 4ab^2}{3ab}$",
+        "correctAnswer": "$\\frac{a(a + 4b^2)}{3ab} = \\frac{a + 4b^2}{3b}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Simplify $\\frac{3t}{t^2 - 2t}$",
+        "correctAnswer": "$\\frac{3t}{t(t-2)} = \\frac{3}{t-2}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Simplify $\\frac{x^2 - 3x}{3x - 9}$",
+        "correctAnswer": "$\\frac{x(x-3)}{3(x-3)} = \\frac{x}{3}$"
+      }
+    ],
+
+    "variationRules": {
+      "commonFactorExpressions": [
+        {"numerator": "ax + ay", "denominator": "a", "common": "a"},
+        {"numerator": "a^2 + ab", "denominator": "ab", "common": "a"},
+        {"numerator": "xy + xz", "denominator": "x", "common": "x"},
+        {"numerator": "2pq + 4p", "denominator": "2p", "common": "2p"},
+        {"numerator": "3mn - 6m", "denominator": "3m", "common": "3m"}
+      ],
+      "binomialFactors": [
+        {"expression": "x(x+{a})", "binomial": "(x+{a})"},
+        {"expression": "{n}t(t-{b})", "binomial": "(t-{b})"},
+        {"expression": "m({c}m+{d})", "binomial": "({c}m+{d})"}
+      ],
+      "coefficients": [2, 3, 4, 5, 6],
+      "constants": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+
+    "mathTool": {
+      "toolName": "factoringVisualizer",
+      "parameters": {
+        "a": 1,
+        "b": "variable",
+        "c": "variable",
+        "method": "factor-pairs",
+        "showSteps": false,
+        "highlightFactors": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: CRITICAL - Use factoringVisualizer WITH showSteps: false",
+      "Reason: The tool can show factored form without revealing step-by-step simplification",
+      "ONLY use for simple linear factoring, NOT for complex algebraic expressions",
+      "For purely algebraic fractions, consider OMITTING mathTool entirely",
+
+      "Always factor BOTH numerator and denominator completely before canceling",
+      "Ensure there IS a common factor to cancel (don't create unsimplifiable fractions)",
+
+      "Variation patterns:",
+      "- Monomial common factor: 3xy/(6x) = y/2",
+      "- Binomial common factor: (x+2)(x+3)/(x+2) = (x+3)",
+      "- Mixed: x(x-5)/(3x-15) = x(x-5)/(3(x-5)) = x/3",
+
+      "State restrictions: denominators cannot equal zero"
+    ]
+  },
+
+  "algebraic-fractions-node-4": {
+    "nodeId": "algebraic-fractions-node-4",
+    "title": "Factorization with Quadratic Expressions",
+    "section": "factorization-quadratic",
+
+    "learningFocus": [
+      "Recognize difference of squares: a^2 - b^2 = (a+b)(a-b)",
+      "Factor trinomials: x^2 + bx + c = (x+p)(x+q)",
+      "Handle sign differences: (a-b) = -(b-a)"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Simplify $\\frac{m^2 - 4}{m + 2}$",
+        "correctAnswer": "$\\frac{(m+2)(m-2)}{m+2} = m - 2$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Simplify $\\frac{2m^2 - 4m}{m^2 - 4}$",
+        "correctAnswer": "$\\frac{2m(m-2)}{(m+2)(m-2)} = \\frac{2m}{m+2}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Simplify $\\frac{v^2 - 9}{3v - 9}$",
+        "correctAnswer": "$\\frac{(v+3)(v-3)}{3(v-3)} = \\frac{v+3}{3}$"
+      }
+    ],
+
+    "variationRules": {
+      "differenceOfSquares": [
+        {"expression": "x^2 - 4", "factored": "(x+2)(x-2)"},
+        {"expression": "a^2 - 9", "factored": "(a+3)(a-3)"},
+        {"expression": "p^2 - 16", "factored": "(p+4)(p-4)"},
+        {"expression": "m^2 - 25", "factored": "(m+5)(m-5)"},
+        {"expression": "t^2 - 1", "factored": "(t+1)(t-1)"}
+      ],
+      "trinomials": [
+        {"expression": "x^2 + 5x + 6", "factored": "(x+2)(x+3)"},
+        {"expression": "x^2 - 7x + 12", "factored": "(x-3)(x-4)"},
+        {"expression": "x^2 + x - 6", "factored": "(x+3)(x-2)"},
+        {"expression": "x^2 - 3x - 10", "factored": "(x-5)(x+2)"}
+      ],
+      "signPatterns": [
+        {"original": "(2k-h)", "equivalent": "-(h-2k)"},
+        {"original": "(a-b)", "equivalent": "-(b-a)"}
+      ]
+    },
+
+    "mathTool": null,
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "DO NOT include mathTool - factoring steps would reveal too much of the solution process",
+      "Students must work through factorization independently",
+
+      "Ensure both numerator and denominator are factorable",
+      "Common factor must exist between factored forms",
+
+      "Difference of squares patterns: a^2 - b^2 where b is a perfect square (1, 4, 9, 16, 25)",
+      "Trinomial patterns: ensure c and b values allow factoring with integer factors",
+
+      "Include sign variation problems: e.g., (3x-9) in denominator and (x-3) factor in numerator",
+      "Remind students: (a-b) = -1(b-a), so $\\frac{1}{x-5} = \\frac{-1}{5-x}$",
+
+      "Final answer should be fully simplified with no common factors"
+    ]
+  },
+
+  "algebraic-fractions-node-5": {
+    "nodeId": "algebraic-fractions-node-5",
+    "title": "Multiplying Algebraic Fractions",
+    "section": "multiplying-algebraic-fractions",
+
+    "learningFocus": [
+      "Apply multiplication rule: (a/b)×(c/d) = (ac)/(bd)",
+      "Cancel common factors diagonally before multiplying",
+      "Factor expressions to reveal cancellation opportunities"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Simplify $\\frac{ab}{c^2} \\times \\frac{4c}{6a^2b}$",
+        "correctAnswer": "$\\frac{2}{3ac}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Simplify $\\frac{p}{q} \\times \\frac{p^2r}{q^2} \\div \\frac{pr^2}{2q}$",
+        "correctAnswer": "$\\frac{2p^2}{q^3r}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Simplify $\\frac{4x-16}{x+y} \\times \\frac{5(x+y)}{8}$",
+        "correctAnswer": "$\\frac{4(x-4) \\times 5(x+y)}{(x+y) \\times 8} = \\frac{5(x-4)}{2}$"
+      }
+    ],
+
+    "variationRules": {
+      "simpleFractions": [
+        {"f1": "{a}{var1}/{b}{var2}", "f2": "{c}{var2}/{d}{var1}"},
+        {"f1": "{a}{var1}^2/{b}", "f2": "{c}/{d}{var1}"}
+      ],
+      "withFactoring": [
+        {"f1": "({n}x+{a})/({var})", "f2": "({var})/({m}x+{b})"},
+        {"f1": "(x^2-{a}^2)/(x+{a})", "f2": "(x-{b})/(x-{a})"}
+      ],
+      "coefficients": [2, 3, 4, 5, 6, 8, 10, 12],
+      "variables": ["x", "y", "a", "b", "p", "q", "m", "n"]
+    },
+
+    "mathTool": {
+      "toolName": "distributiveVisualizer",
+      "parameters": {
+        "multiplier": "variable",
+        "terms": ["variable", "variable"],
+        "operation": "+",
+        "showSteps": false,
+        "showAnimation": false
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE distributiveVisualizer ONLY for problems involving factored expressions like (x+2)(x+3)",
+      "Set showSteps: false to show structure without revealing full solution",
+      "OMIT mathTool for simple numerical coefficient problems",
+
+      "Efficient strategy emphasis:",
+      "- Factor all expressions first",
+      "- Cancel common factors across numerators and denominators",
+      "- THEN multiply what remains",
+
+      "Create problems where cancellation is POSSIBLE (makes the strategy valuable)",
+      "Example: (6ab)/(c) × (c^2)/(9a) should have 'c' and 'a' that cancel",
+
+      "Include multi-step problems: multiply two fractions where factoring helps",
+      "Vary complexity: some with monomials only, some with binomials",
+
+      "Final answer must be fully simplified"
+    ]
+  },
+
+  "algebraic-fractions-node-6": {
+    "nodeId": "algebraic-fractions-node-6",
+    "title": "Dividing Algebraic Fractions",
+    "section": "dividing-algebraic-fractions",
+
+    "learningFocus": [
+      "Understand reciprocal: reciprocal of a/b is b/a",
+      "Convert division to multiplication: (a/b)÷(c/d) = (a/b)×(d/c)",
+      "Apply Keep-Change-Flip (KCF) method"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Simplify $\\frac{p}{q} \\div \\frac{p^2r}{q^2}$",
+        "correctAnswer": "$\\frac{p}{q} \\times \\frac{q^2}{p^2r} = \\frac{q}{pr}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Simplify $\\frac{h^2-2h+1}{2h+1} \\div \\frac{h-1}{2h+1}$",
+        "correctAnswer": "$\\frac{(h-1)^2}{2h+1} \\times \\frac{2h+1}{h-1} = h-1$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "What is the reciprocal of $\\frac{2x+1}{3}$?",
+        "correctAnswer": "$\\frac{3}{2x+1}$"
+      }
+    ],
+
+    "variationRules": {
+      "divisionProblems": [
+        {"dividend": "{a}{var1}/{b}", "divisor": "{c}{var1}^2/{d}"},
+        {"dividend": "{var1}^2/{var2}", "divisor": "{var1}/{var2}^2"},
+        {"dividend": "({var}+{a})/{b}", "divisor": "({var}+{a})^2/{c}"}
+      ],
+      "reciprocalTypes": [
+        "simple variable: x → 1/x",
+        "coefficient: 3x → 1/(3x)",
+        "fraction: a/b → b/a",
+        "binomial: (x+2) → 1/(x+2)",
+        "complex: (2x+1)/3 → 3/(2x+1)"
+      ],
+      "coefficients": [2, 3, 4, 5, 6],
+      "variables": ["x", "y", "h", "m", "p", "q", "a", "b"]
+    },
+
+    "mathTool": {
+      "toolName": "fractionBar",
+      "parameters": {
+        "fraction1": "variable",
+        "fraction2": "variable",
+        "operation": "compare"
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem. Maximum TWO if asking to find reciprocal THEN divide",
+
+      "MathTool decision: INCLUDE fractionBar with operation='compare' to show original fractions side-by-side",
+      "This provides context without revealing the division/multiplication steps",
+      "Use simple numerical fractions for the mathTool (e.g., fraction1: '3/4', fraction2: '2/3')",
+
+      "Emphasize the KCF method clearly:",
+      "1. Keep first fraction the same",
+      "2. Change ÷ to ×",
+      "3. Flip second fraction (reciprocal)",
+
+      "Include reciprocal-finding questions separately to build understanding",
+      "For reciprocals: if expression is E, reciprocal is 1/E (or flip if already a fraction)",
+
+      "After converting to multiplication, apply multiplication strategies (cancel before multiplying)",
+
+      "Create problems where reciprocal results in nice cancellation",
+      "Final answer should be simplified"
+    ]
+  },
+
+  "algebraic-fractions-node-7": {
+    "nodeId": "algebraic-fractions-node-7",
+    "title": "Finding LCD for Algebraic Expressions",
+    "section": "finding-lcd",
+
+    "learningFocus": [
+      "Factor algebraic denominators completely",
+      "Identify all different factors",
+      "Select highest power of each factor for LCD"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Find the LCD of $\\frac{2}{3a}$ and $\\frac{3}{5a}$",
+        "correctAnswer": "LCD = 15a"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Find the LCD of $\\frac{3}{2b-4c}$ and $\\frac{2}{3b-6c}$",
+        "correctAnswer": "Factor: 2(b-2c) and 3(b-2c), LCD = 6(b-2c)"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Find the LCD of $\\frac{1}{x}$ and $\\frac{1}{x^2}$",
+        "correctAnswer": "LCD = x^2 (highest power of x)"
+      }
+    ],
+
+    "variationRules": {
+      "simpleDenominators": [
+        {"d1": "2a", "d2": "3a", "lcd": "6a"},
+        {"d1": "5x", "d2": "7x", "lcd": "35x"},
+        {"d1": "4m", "d2": "6m", "lcd": "12m"}
+      ],
+      "withFactoring": [
+        {"d1": "2(x+1)", "d2": "3(x+1)", "lcd": "6(x+1)"},
+        {"d1": "4(a-b)", "d2": "6(a-b)", "lcd": "12(a-b)"},
+        {"d1": "5(2p+1)", "d2": "10(2p+1)", "lcd": "10(2p+1)"}
+      ],
+      "differentPowers": [
+        {"d1": "x", "d2": "x^2", "lcd": "x^2"},
+        {"d1": "y^2", "d2": "y^3", "lcd": "y^3"},
+        {"d1": "a", "d2": "a^3", "lcd": "a^3"}
+      ],
+      "coefficients": [2, 3, 4, 5, 6, 10, 12]
+    },
+
+    "mathTool": null,
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "DO NOT include mathTool - LCD finding is a conceptual/algebraic process that doesn't benefit from visualization",
+
+      "LCD Process:",
+      "1. Factor each denominator completely",
+      "2. List all DIFFERENT factors that appear",
+      "3. For each factor, take the HIGHEST power",
+      "4. Multiply these factors together",
+
+      "Simple case: denominators like 3a and 5a → LCD = LCM(3,5) × a = 15a",
+      "Factoring case: 2(b-2c) and 3(b-2c) → LCD = LCM(2,3) × (b-2c) = 6(b-2c)",
+      "Power case: x and x^2 → LCD = x^2",
+
+      "Include variety:",
+      "- Simple numerical coefficients with same variable",
+      "- Denominators that need factoring first",
+      "- Different powers of same variable",
+
+      "Students should show factoring work before finding LCD"
+    ]
+  },
+
+  "algebraic-fractions-node-8": {
+    "nodeId": "algebraic-fractions-node-8",
+    "title": "Adding and Subtracting - Same Denominator",
+    "section": "adding-subtracting-same-denominator",
+
+    "learningFocus": [
+      "Add/subtract numerators while keeping denominator: (a/c)+(b/c) = (a+b)/c",
+      "Handle negative signs correctly",
+      "Simplify numerator after combining"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Express as a single fraction: $\\frac{2}{3a} + \\frac{3}{3a}$",
+        "correctAnswer": "$\\frac{2+3}{3a} = \\frac{5}{3a}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Express as a single fraction: $\\frac{5}{x-2} - \\frac{3}{x-2}$",
+        "correctAnswer": "$\\frac{5-3}{x-2} = \\frac{2}{x-2}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Simplify: $\\frac{3x+2}{4a} + \\frac{x-6}{4a}$",
+        "correctAnswer": "$\\frac{(3x+2)+(x-6)}{4a} = \\frac{4x-4}{4a} = \\frac{x-1}{a}$"
+      }
+    ],
+
+    "variationRules": {
+      "sameDenominatorPairs": [
+        {"d": "5a", "n1": "2", "n2": "3", "op": "add"},
+        {"d": "x+1", "n1": "7", "n2": "4", "op": "subtract"},
+        {"d": "2b", "n1": "5", "n2": "1", "op": "add"}
+      ],
+      "algebraicNumerators": [
+        {"d": "{var}+{a}", "n1": "{b}{var}", "n2": "{c}"},
+        {"d": "2{var}", "n1": "3{var}+{a}", "n2": "{var}-{b}"},
+        {"d": "{var}-{a}", "n1": "4{var}", "n2": "-{var}+{b}"}
+      ],
+      "coefficients": [2, 3, 4, 5, 6],
+      "constants": [1, 2, 3, 4, 5, 6, 7, 8],
+      "variables": ["a", "b", "x", "y", "m", "n"]
+    },
+
+    "mathTool": {
+      "toolName": "fractionBar",
+      "parameters": {
+        "fraction1": "2/5",
+        "fraction2": "3/5",
+        "operation": "add",
+        "showSteps": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE fractionBar to demonstrate the addition/subtraction process",
+      "Use SIMPLE numerical fractions (like 2/5 + 3/5) in mathTool to show concept",
+      "The actual question will use algebraic fractions, but visualization helps understanding",
+
+      "Key rule: Add/subtract NUMERATORS only, denominator stays the same",
+      "Emphasize: $\\frac{a}{c} + \\frac{b}{c} = \\frac{a+b}{c}$ NOT $\\frac{a+b}{2c}$",
+
+      "Sign handling is CRITICAL:",
+      "- Addition: $\\frac{3}{x} + \\frac{2}{x} = \\frac{3+2}{x} = \\frac{5}{x}$",
+      "- Subtraction: $\\frac{5}{x} - \\frac{2}{x} = \\frac{5-2}{x} = \\frac{3}{x}$",
+      "- With negatives: $\\frac{3}{x} - \\frac{x+2}{x} = \\frac{3-(x+2)}{x} = \\frac{3-x-2}{x} = \\frac{1-x}{x}$",
+
+      "After combining, simplify the numerator (combine like terms)",
+      "Check if result can be simplified further by factoring",
+
+      "Include problems where numerator simplification is needed"
+    ]
+  },
+
+  "algebraic-fractions-node-9": {
+    "nodeId": "algebraic-fractions-node-9",
+    "title": "Adding and Subtracting - Different Denominators",
+    "section": "adding-subtracting-different-denominators",
+
+    "learningFocus": [
+      "Find LCD of different algebraic denominators",
+      "Convert each fraction to equivalent fraction with LCD",
+      "Handle sign differences: (a-b) = -(b-a)"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Express as a single fraction in simplest form: $\\frac{2}{3a} + \\frac{5}{5a}$",
+        "correctAnswer": "LCD = 15a, $\\frac{10}{15a} + \\frac{15}{15a} = \\frac{25}{15a} = \\frac{5}{3a}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Express as a single fraction: $\\frac{3}{2b-4c} + \\frac{2}{3b-6c}$",
+        "correctAnswer": "Factor to 2(b-2c) and 3(b-2c), LCD = 6(b-2c), Answer = $\\frac{13}{6(b-2c)}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Simplify: $\\frac{2h}{h-2k} - \\frac{3k}{2k-h}$",
+        "correctAnswer": "Note: (2k-h) = -(h-2k), so $\\frac{2h}{h-2k} + \\frac{3k}{h-2k} = \\frac{2h+3k}{h-2k}$"
+      }
+    ],
+
+    "variationRules": {
+      "differentCoefficients": [
+        {"d1": "3a", "d2": "5a"},
+        {"d1": "2x", "d2": "7x"},
+        {"d1": "4m", "d2": "6m"}
+      ],
+      "factorablePatterns": [
+        {"d1": "2(b-2c)", "d2": "3(b-2c)"},
+        {"d1": "4(x+1)", "d2": "6(x+1)"},
+        {"d1": "5(a-3)", "d2": "10(a-3)"}
+      ],
+      "signDifferences": [
+        {"d1": "(a-b)", "d2": "(b-a)", "relationship": "opposites"},
+        {"d1": "(h-2k)", "d2": "(2k-h)", "relationship": "opposites"},
+        {"d1": "(x-y)", "d2": "(y-x)", "relationship": "opposites"}
+      ],
+      "coefficients": [2, 3, 4, 5, 6, 10],
+      "constants": [1, 2, 3, 4, 5, 6]
+    },
+
+    "mathTool": {
+      "toolName": "fractionBar",
+      "parameters": {
+        "fraction1": "1/4",
+        "fraction2": "1/6",
+        "operation": "add",
+        "showLCM": true,
+        "showSteps": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE fractionBar with showLCM: true",
+      "Use simple numerical example (like 1/4 + 1/6) to demonstrate LCD process",
+      "Actual question uses algebraic fractions",
+
+      "Process steps (students must follow):",
+      "1. Find LCD by factoring denominators",
+      "2. Convert each fraction: multiply num and den by missing factors",
+      "3. Add/subtract numerators",
+      "4. Simplify result",
+
+      "CRITICAL sign rule: (a-b) = -1(b-a)",
+      "Example: $\\frac{1}{x-3} = \\frac{-1}{3-x}$",
+      "When denominators are opposites, factor out -1 to make them same",
+
+      "Problem types:",
+      "- Different coefficients, same variable: 3a and 5a → LCD = 15a",
+      "- Need factoring: 2(b-2c) and 3(b-2c) → LCD = 6(b-2c)",
+      "- Opposite signs: (h-2k) and (2k-h) → recognize as opposites",
+
+      "Always simplify final answer completely"
+    ]
+  },
+
+  "algebraic-fractions-node-10": {
+    "nodeId": "algebraic-fractions-node-10",
+    "title": "Solving Equations with Fractions",
+    "section": "solving-equations-fractions",
+
+    "learningFocus": [
+      "Identify LCD of all fractions in equation",
+      "Multiply all terms by LCD to eliminate fractions",
+      "Solve resulting linear equation",
+      "Check solution doesn't make denominators zero"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Solve the equation: $\\frac{a-2}{5} + \\frac{a-1}{3} = 1$",
+        "correctAnswer": "LCD = 15, multiply: 3(a-2) + 5(a-1) = 15, gives 3a-6+5a-5=15, 8a=26, a = 13/4"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Solve: $\\frac{6}{2b-5} - \\frac{4}{b-3} = 0$",
+        "correctAnswer": "LCD = (2b-5)(b-3), gives 6(b-3) - 4(2b-5) = 0, simplify: 6b-18-8b+20=0, -2b+2=0, b=1"
+      }
+    ],
+
+    "variationRules": {
+      "linearEquations": [
+        {"eq": "(x+{a})/{b} + (x-{c})/{d} = {e}"},
+        {"eq": "(a-{p})/{q} + (a+{r})/{s} = {t}"}
+      ],
+      "withVariableDenominators": [
+        {"eq": "{a}/(x+{b}) - {c}/(x-{d}) = {e}"},
+        {"eq": "{p}/(2a-{q}) + {r}/(a+{s}) = 0"}
+      ],
+      "denominators": [2, 3, 4, 5, 6, 10],
+      "constants": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "rightHandSide": [0, 1, 2, 3, 4, 5, -1, -2]
+    },
+
+    "mathTool": {
+      "toolName": "balanceScale",
+      "parameters": {
+        "leftSide": "(a-2)/5 + (a-1)/3",
+        "rightSide": "1",
+        "operation": "multiply",
+        "operationValue": "15",
+        "showInverse": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: CRITICAL - INCLUDE balanceScale to show equation solving process",
+      "Set operation: 'multiply' and operationValue: '[LCD value]'",
+      "This visualizes the key step of multiplying both sides by LCD",
+
+      "Solving process:",
+      "1. Identify LCD of all fractions",
+      "2. Multiply EVERY term on both sides by LCD",
+      "3. Simplify (fractions eliminate)",
+      "4. Solve resulting linear equation",
+      "5. CHECK: solution must not make any denominator = 0",
+
+      "Example walkthrough:",
+      "$\\frac{x}{3} + \\frac{x-1}{4} = 2$",
+      "LCD = 12",
+      "Multiply: 12·(x/3) + 12·(x-1)/4 = 12·2",
+      "Simplify: 4x + 3(x-1) = 24",
+      "Solve: 4x + 3x - 3 = 24, 7x = 27, x = 27/7",
+      "Check: 27/7 ≠ 0 and doesn't make any denominator zero ✓",
+
+      "Include validation in answer: 'Check: x = [value] doesn't make denominators zero'",
+
+      "Vary difficulty: some with numerical denominators, some with algebraic"
+    ]
+  },
+
+  "algebraic-fractions-node-11": {
+    "nodeId": "algebraic-fractions-node-11",
+    "title": "Changing the Subject of a Formula",
+    "section": "changing-subject-formula",
+
+    "learningFocus": [
+      "Use inverse operations to isolate variables",
+      "Clear fractions by multiplying by LCD",
+      "Handle variables in denominators",
+      "Ensure coefficient of subject is 1"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Make v the subject of the formula: $\\frac{1}{f} = \\frac{1}{u} + \\frac{1}{v}$",
+        "correctAnswer": "$\\frac{1}{v} = \\frac{1}{f} - \\frac{1}{u} = \\frac{u-f}{fu}$, therefore $v = \\frac{fu}{u-f}$"
+      },
+      {
+        "id": "ex2",
+        "problemText": "Rearrange to make r the subject: $V = \\frac{4}{3}\\pi r^3$",
+        "correctAnswer": "$\\frac{4}{3}\\pi r^3 = V$, $r^3 = \\frac{3V}{4\\pi}$, $r = \\sqrt[3]{\\frac{3V}{4\\pi}}$"
+      },
+      {
+        "id": "ex3",
+        "problemText": "Make x the subject: $v^2 = u^2 + 2as$ where $a = \\frac{v^2-u^2}{2x}$",
+        "correctAnswer": "From $a = \\frac{v^2-u^2}{2x}$, multiply both sides by 2x: 2ax = v^2-u^2, so $x = \\frac{v^2-u^2}{2a}$"
+      }
+    ],
+
+    "variationRules": {
+      "fractionFormulae": [
+        {"formula": "1/f = 1/u + 1/v", "makeSubject": "v"},
+        {"formula": "1/R = 1/R1 + 1/R2", "makeSubject": "R1"},
+        {"formula": "v = u + at", "makeSubject": "a"},
+        {"formula": "s = ut + (1/2)at^2", "makeSubject": "a"}
+      ],
+      "geometricFormulae": [
+        {"formula": "V = (4/3)πr^3", "makeSubject": "r"},
+        {"formula": "A = πr^2", "makeSubject": "r"},
+        {"formula": "V = πr^2h", "makeSubject": "h"}
+      ],
+      "complexFormulae": [
+        {"formula": "a = (v^2-u^2)/(2s)", "makeSubject": "v"},
+        {"formula": "F = (9/5)C + 32", "makeSubject": "C"}
+      ]
+    },
+
+    "mathTool": {
+      "toolName": "balanceScale",
+      "parameters": {
+        "leftSide": "1/f",
+        "rightSide": "1/u + 1/v",
+        "showInverse": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE balanceScale to show equation balance principle",
+      "Shows that whatever operation is done to one side must be done to the other",
+      "Critical for formula rearrangement understanding",
+
+      "Rearrangement process:",
+      "1. Identify which variable to make the subject",
+      "2. Use inverse operations to isolate that variable",
+      "3. If variable is in denominator, multiply both sides by LCD",
+      "4. If variable is squared/cubed, take root",
+      "5. Ensure final form has subject alone with coefficient 1",
+
+      "Inverse operations:",
+      "- Addition ↔ Subtraction",
+      "- Multiplication ↔ Division",
+      "- Square ↔ Square root",
+      "- 1/x ↔ take reciprocal",
+
+      "Complex case example (1/f = 1/u + 1/v, make v subject):",
+      "Step 1: Isolate 1/v: $\\frac{1}{v} = \\frac{1}{f} - \\frac{1}{u}$",
+      "Step 2: Find common denominator: $\\frac{1}{v} = \\frac{u-f}{fu}$",
+      "Step 3: Take reciprocal: $v = \\frac{fu}{u-f}$",
+
+      "Final answer must have the subject completely isolated"
+    ]
+  },
+
+  "algebraic-fractions-node-12": {
+    "nodeId": "algebraic-fractions-node-12",
+    "title": "Finding Unknowns in Formulae",
+    "section": "finding-unknowns-formulae",
+
+    "learningFocus": [
+      "Substitute known values into formulae",
+      "Rearrange to isolate unknown variable",
+      "Solve resulting equations",
+      "Check solutions are in valid domain"
+    ],
+
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Given that $y = \\sqrt{\\frac{64}{3x+1}}$, find the value of x when y = 2.",
+        "correctAnswer": "Square both sides: 4 = 64/(3x+1), so 4(3x+1) = 64, 12x+4=64, 12x=60, x=5. Check: 3(5)+1=16≠0 ✓"
+      },
+      {
+        "id": "ex2",
+        "problemText": "The formula for the volume of a cylinder is $V = \\pi r^2 h$. If V = 150π and h = 6, find the radius r.",
+        "correctAnswer": "150π = πr^2(6), 150 = 6r^2, r^2 = 25, r = 5 (taking positive root)"
+      }
+    ],
+
+    "variationRules": {
+      "withSquareRoots": [
+        {"formula": "y = √(a/(bx+c))", "given": "y, a, b, c", "find": "x"},
+        {"formula": "v = √(u^2 + 2as)", "given": "v, u, a", "find": "s"}
+      ],
+      "withSquares": [
+        {"formula": "A = πr^2", "given": "A", "find": "r"},
+        {"formula": "s = ut + (1/2)at^2", "given": "s, u, t", "find": "a"}
+      ],
+      "withFractions": [
+        {"formula": "1/f = 1/u + 1/v", "given": "f, u", "find": "v"},
+        {"formula": "a = (v^2-u^2)/(2s)", "given": "a, v, u", "find": "s"}
+      ],
+      "numericalValues": {
+        "small": [1, 2, 3, 4, 5, 6, 8, 10],
+        "medium": [12, 15, 16, 20, 25, 30, 36],
+        "large": [50, 64, 100, 144, 150, 200]
+      }
+    },
+
+    "mathTool": {
+      "toolName": "balanceScale",
+      "parameters": {
+        "leftSide": "y",
+        "rightSide": "√(64/(3x+1))",
+        "operation": "multiply",
+        "operationValue": "variable",
+        "showInverse": true
+      }
+    },
+
+    "generationGuidelines": [
+      "GROUND RULE #1: Generate ONE question per problem",
+
+      "MathTool decision: INCLUDE balanceScale to show equation solving process",
+      "Demonstrates systematic approach to isolating unknown",
+
+      "Problem-solving process:",
+      "1. Write formula",
+      "2. Substitute ALL known values",
+      "3. Rearrange to isolate unknown",
+      "4. Solve equation",
+      "5. CHECK domain validity (no division by zero, no negative square roots)",
+
+      "Two approaches students can use:",
+      "A. Substitute first, then solve",
+      "B. Rearrange first to make unknown the subject, then substitute",
+      "(Either is acceptable, but A is usually simpler)",
+
+      "Domain checks are CRITICAL:",
+      "- For square roots: radicand must be ≥ 0",
+      "- For fractions: denominator ≠ 0",
+      "- For real-world contexts: answer must make sense (e.g., radius > 0)",
+
+      "Example with domain check:",
+      "Given: $y = \\sqrt{\\frac{64}{3x+1}}$, y = 2, find x",
+      "Solve: x = 5",
+      "Check: 3(5)+1 = 16 > 0 ✓ (denominator valid)",
+      "Check: 64/16 = 4 > 0 ✓ (radicand valid)",
+
+      "Include validation statement in answer"
+    ]
+  }
+}

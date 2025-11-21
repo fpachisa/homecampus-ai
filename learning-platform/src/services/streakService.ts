@@ -73,7 +73,7 @@ export const updateStreak = (streak: DailyStreak): DailyStreak => {
     // Start new streak
     updated.currentStreak = 1;
     updated.lastActivityDate = today;
-    updated.streakDates = [today];
+    updated.streakDates = [...updated.streakDates, today];
   }
   // Same day (should not happen due to check above, but safety)
   else if (updated.lastActivityDate === today) {

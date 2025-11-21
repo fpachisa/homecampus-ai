@@ -370,6 +370,151 @@
         }
       },
       {
+        "questionNumber": 23,
+        "questionId": "N9-greenridge-2024-p1-q23",
+        "topicID": "N9",
+        "stem": "A concert offers three types of seating areas, A, B and C, for Saturday and Sunday. The numbers of tickets sold for each type of seating area on each of these days in a particular week are shown in the following table.",
+        "questionTable": {
+          "type": "matrix",
+          "headers": [
+            "",
+            "A",
+            "B",
+            "C"
+          ],
+          "rows": [
+            [
+              "Saturday",
+              1100,
+              1000,
+              1200
+            ],
+            [
+              "Sunday",
+              1400,
+              1200,
+              1300
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The information in the table can be represented by a $2\\times3$ matrix S. Write down the matrix S.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$S = \\begin{pmatrix} 1100 & 1000 & 1200 \\\\ 1400 & 1200 & 1300 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract the numerical data from the table to form the matrix rows and columns.",
+                  "working": "Row 1 (Saturday): 1100, 1000, 1200\nRow 2 (Sunday): 1400, 1200, 1300",
+                  "reasoning": "A matrix is an ordered rectangular array of numbers. The rows represent the days and columns represent the seating areas."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Each ticket for type A, B and C seating area costs \\$110, \\$80 and \\$x respectively. Write down a $3\\times1$ matrix P to represent this information.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix} 110 \\\\ 80 \\\\ x \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Arrange the costs in a column matrix corresponding to the order of seating areas (A, B, C).",
+                  "working": "A: 110\nB: 80\nC: x",
+                  "reasoning": "A $3 \\times 1$ matrix is a column vector. The order must match the columns of matrix S for multiplication to be defined later."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Find, in terms of x, the matrix $T=SP$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T = \\begin{pmatrix} 201000 + 1200x \\\\ 250000 + 1300x \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication $SP$.",
+                  "working": "$\\begin{pmatrix} 1100 & 1000 & 1200 \\\\ 1400 & 1200 & 1300 \\end{pmatrix} \\begin{pmatrix} 110 \\\\ 80 \\\\ x \\end{pmatrix}$",
+                  "reasoning": "Matrix multiplication involves multiplying rows of the first matrix by columns of the second matrix."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the first row element (Saturday's total).",
+                  "working": "$(1100 \\times 110) + (1000 \\times 80) + (1200 \\times x) = 121000 + 80000 + 1200x = 201000 + 1200x$",
+                  "reasoning": "Sum of products of corresponding elements."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the second row element (Sunday's total).",
+                  "working": "$(1400 \\times 110) + (1200 \\times 80) + (1300 \\times x) = 154000 + 96000 + 1300x = 250000 + 1300x$",
+                  "reasoning": "Sum of products of corresponding elements."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Explain what is represented by the elements of matrix T.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "The elements represent the total ticket sales revenue collected on Saturday and Sunday respectively.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the result of the multiplication.",
+                  "working": "Row 1 corresponds to Saturday's row in S multiplied by Prices.\nRow 2 corresponds to Sunday's row in S multiplied by Prices.",
+                  "reasoning": "Multiplying (Quantity) by (Price/Unit) gives Total Revenue."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "e",
+            "questionText": "The company collected $688 500 from the sale of tickets for the weekend. Find the value of x.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 95$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Form an equation by summing the elements of T and equating to the total collection.",
+                  "working": "$(201000 + 1200x) + (250000 + 1300x) = 688500$",
+                  "reasoning": "The total revenue for the weekend is the sum of Saturday's revenue and Sunday's revenue."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the equation.",
+                  "working": "$451000 + 2500x = 688500$",
+                  "reasoning": "Combine constant terms and $x$ terms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for x.",
+                  "working": "$2500x = 688500 - 451000$\n$2500x = 237500$\n$x = \\frac{237500}{2500} = 95$",
+                  "reasoning": "Isolate x to find the price."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Matrix Ticket Sales"
+      },
+      {
         "questionNumber": 24,
         "questionId": "N9-canberra-2024-p1-q24",
         "topicID": "N9",
@@ -857,6 +1002,116 @@
         }
       },
       {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2111071107-p1-q101",
+        "topicID": "N9",
+        "stem": "A florist prepares two types of bouquets, Standard and Premium, using Roses, Lilies, and Tulips. The number of flowers used in each bouquet type is shown in the table below.",
+        "questionTable": {
+          "type": "matrix",
+          "headers": [
+            "",
+            "Roses",
+            "Lilies",
+            "Tulips"
+          ],
+          "rows": [
+            [
+              "Standard",
+              5,
+              3,
+              4
+            ],
+            [
+              "Premium",
+              10,
+              6,
+              8
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down a $2\\times3$ matrix B to represent the number of flowers in the bouquets.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$B = \\begin{pmatrix} 5 & 3 & 4 \\\\ 10 & 6 & 8 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Translate the table data directly into matrix format.",
+                  "working": "Row 1: 5, 3, 4\nRow 2: 10, 6, 8",
+                  "reasoning": "The matrix rows represent the bouquet types and columns represent the flower types."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The cost of a Rose, a Lily, and a Tulip are \\$2, \\$3, and \\$1.50 respectively. Write down a column matrix C to represent these costs.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$C = \\begin{pmatrix} 2 \\\\ 3 \\\\ 1.50 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Format the costs as a column vector.",
+                  "working": "Rose: 2, Lily: 3, Tulip: 1.50",
+                  "reasoning": "A column matrix is required to multiply with the $2\\times3$ matrix B."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Evaluate the matrix $D = BC$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$D = \\begin{pmatrix} 25 \\\\ 50 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform matrix multiplication.",
+                  "working": "$\\begin{pmatrix} 5 & 3 & 4 \\\\ 10 & 6 & 8 \\end{pmatrix} \\begin{pmatrix} 2 \\\\ 3 \\\\ 1.50 \\end{pmatrix}$",
+                  "reasoning": "Multiply rows of B by the column C."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate row values.",
+                  "working": "Row 1: $5(2) + 3(3) + 4(1.5) = 10 + 9 + 6 = 25$\nRow 2: $10(2) + 6(3) + 8(1.5) = 20 + 18 + 12 = 50$",
+                  "reasoning": "Sum the products of flower quantities and their respective costs."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "State what the elements of matrix D represent.",
+            "marks": 1,
+            "answerType": "text",
+            "solution": {
+              "finalAnswer": "The elements represent the total cost of flowers for one Standard bouquet and one Premium bouquet respectively.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Interpret the matrix product.",
+                  "working": "Row 1 is the cost for Standard. Row 2 is the cost for Premium.",
+                  "reasoning": "Quantity $\\times$ Cost = Total Cost."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Florist Costs"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N9-gemini-1911-p1-102",
         "topicID": "N9",
@@ -1090,6 +1345,77 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Matrix Algebra"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N9-gemini-2111071107-p1-q102",
+        "topicID": "N9",
+        "stem": "Two schools, East High and West High, participated in a sports carnival. The number of Gold, Silver, and Bronze medals won by each school is given below:\n\nEast High: 6 Gold, 4 Silver, 5 Bronze\nWest High: 4 Gold, 7 Silver, 3 Bronze",
+        "questionTable": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Represent the number of medals won by the two schools in a $2\\times3$ matrix M.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$M = \\begin{pmatrix} 6 & 4 & 5 \\\\ 4 & 7 & 3 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Organize data into rows for schools and columns for medal types.",
+                  "working": "Row 1 (East): 6, 4, 5\nRow 2 (West): 4, 7, 3",
+                  "reasoning": "Standard matrix representation of data."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Points are awarded for medals as follows: 5 points for Gold, 3 points for Silver, and 1 point for Bronze. Write down a matrix P such that the product MP gives the total points scored by each school.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$P = \\begin{pmatrix} 5 \\\\ 3 \\\\ 1 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Create a column matrix for the points.",
+                  "working": "Gold: 5, Silver: 3, Bronze: 1",
+                  "reasoning": "To calculate total points via matrix multiplication (Row $\\times$ Column), the points must be a column vector."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate MP and explain the significance of the larger element.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$MP = \\begin{pmatrix} 47 \\\\ 44 \\end{pmatrix}$. The larger element (47) indicates that East High won the sports carnival.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the product.",
+                  "working": "Row 1: $6(5) + 4(3) + 5(1) = 30 + 12 + 5 = 47$\nRow 2: $4(5) + 7(3) + 3(1) = 20 + 21 + 3 = 44$",
+                  "reasoning": "Summing the points for each school."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Interpret the result.",
+                  "working": "47 > 44, so East High has more points.",
+                  "reasoning": "The matrix elements represent total points. The higher score wins."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Sports Carnival Points"
       }
     ],
     "Paper 2": [
@@ -1278,6 +1604,111 @@
             ]
           ]
         }
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2111071107-p2-q101",
+        "topicID": "N9",
+        "stem": "A transport company uses buses and vans to transport passengers. The capacity of a bus is 40 adults and 10 children. The capacity of a van is 12 adults and 0 children.\n\nOn Monday, the company used 5 buses and 3 vans.\nOn Tuesday, the company used 4 buses and 6 vans.",
+        "questionTable": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Represent the number of vehicles used on Monday and Tuesday as a $2\\times2$ matrix V.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$V = \\begin{pmatrix} 5 & 3 \\\\ 4 & 6 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Format the vehicle usage data.",
+                  "working": "Row 1 (Mon): 5 Buses, 3 Vans\nRow 2 (Tue): 4 Buses, 6 Vans",
+                  "reasoning": "Rows represent days, columns represent vehicle types (Bus, Van)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Represent the capacities of the vehicles as a $2\\times2$ matrix C.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$C = \\begin{pmatrix} 40 & 10 \\\\ 12 & 0 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Format the capacity data.",
+                  "working": "Row 1 (Bus): 40 Adults, 10 Children\nRow 2 (Van): 12 Adults, 0 Children",
+                  "reasoning": "Rows represent vehicle types (matching columns of V), columns represent passenger types (Adults, Children)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate $T = VC$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$T = \\begin{pmatrix} 236 & 50 \\\\ 232 & 40 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform matrix multiplication.",
+                  "working": "$\\begin{pmatrix} 5 & 3 \\\\ 4 & 6 \\end{pmatrix} \\begin{pmatrix} 40 & 10 \\\\ 12 & 0 \\end{pmatrix}$",
+                  "reasoning": "Multiply rows of V by columns of C."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate elements.",
+                  "working": "$T_{11} = 5(40) + 3(12) = 200 + 36 = 236$\n$T_{12} = 5(10) + 3(0) = 50$\n$T_{21} = 4(40) + 6(12) = 160 + 72 = 232$\n$T_{22} = 4(10) + 6(0) = 40$",
+                  "reasoning": "Summing products for each position."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Explain the meaning of the element in the second row and first column of T.",
+            "marks": 1,
+            "answerType": "text",
+            "solution": {
+              "finalAnswer": "It represents the total number of adults that could be transported on Tuesday.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the intersection of labels.",
+                  "working": "Row 2 of V is Tuesday. Column 1 of C is Adults.",
+                  "reasoning": "The element at position (2,1) combines Tuesday's vehicle count with Adult capacity."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "e",
+            "questionText": "Find the total maximum number of passengers (adults and children) the company could transport over these two days.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "558 passengers",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Sum all elements in matrix T.",
+                  "working": "$236 + 50 + 232 + 40 = 558$",
+                  "reasoning": "Matrix T contains adults and children for both days. Summing all elements gives the grand total capacity."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 6,
+        "paper": "Paper 2",
+        "title": "Transport Capacity"
       },
       {
         "questionNumber": 102,

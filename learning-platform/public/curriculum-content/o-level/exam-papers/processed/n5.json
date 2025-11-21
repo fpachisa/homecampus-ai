@@ -129,6 +129,102 @@
         "title": "Algebraic Fraction Subtraction"
       },
       {
+        "questionNumber": 4,
+        "questionId": "N5-greenridge-2024-p1-q4",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise $6x^{2}-x-2$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(2x+1)(3x-2)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find two numbers that multiply to give $a \\times c$ ($6 \\times -2 = -12$) and add to give $b$ ($-1$).",
+                  "working": "Factors of -12: $-4, 3$. Sum: $-4 + 3 = -1$.",
+                  "reasoning": "Using the splitting the middle term method for quadratic factorisation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Split the middle term $-x$ using these factors.",
+                  "working": "$6x^2 - 4x + 3x - 2$",
+                  "reasoning": "Rewriting the expression to allow factorisation by grouping."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Factorise by grouping the first two and last two terms.",
+                  "working": "$2x(3x-2) + 1(3x-2)$",
+                  "reasoning": "Extracting common factors from pairs of terms."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factor out the common binomial bracket.",
+                  "working": "$(3x-2)(2x+1)$",
+                  "reasoning": "Completing the factorisation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Quadratic Factorisation"
+      },
+      {
+        "questionNumber": 5,
+        "questionId": "N5-greenridge-2024-p1-q5",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write $\\frac{2}{x-2}-\\frac{3}{2x+1}$ as a single fraction in its simplest form.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x+8}{(x-2)(2x+1)}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the Lowest Common Denominator (LCD).",
+                  "working": "LCD is $(x-2)(2x+1)$.",
+                  "reasoning": "To subtract fractions, denominators must be made equal."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine the fractions over the LCD.",
+                  "working": "$\\frac{2(2x+1) - 3(x-2)}{(x-2)(2x+1)}$",
+                  "reasoning": "Multiply the numerator of each fraction by the factor missing from its original denominator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand the numerator.",
+                  "working": "$\\frac{4x + 2 - 3x + 6}{(x-2)(2x+1)}$",
+                  "reasoning": "Be careful with the negative sign: $-3 \\times -2 = +6$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the numerator by collecting like terms.",
+                  "working": "$\\frac{x + 8}{(x-2)(2x+1)}$",
+                  "reasoning": "Combine $4x - 3x$ and $2 + 6$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Algebraic Fraction Subtraction"
+      },
+      {
         "questionNumber": 7,
         "questionId": "N5-anderson-2024-p1-q7",
         "topicID": "N5",
@@ -299,6 +395,60 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Expansion and Factorisation"
+      },
+      {
+        "questionNumber": 10,
+        "questionId": "N5-greenridge-2024-p1-q10",
+        "topicID": "N5",
+        "stem": "Given $2c+b=\\frac{b-c}{a}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Rearrange the formula to make $b$ the subject.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$b = \\frac{c(2a+1)}{1-a}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Remove the fraction by multiplying both sides by $a$.",
+                  "working": "$a(2c+b) = b-c$",
+                  "reasoning": "Isolating terms requires removing denominators first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the brackets.",
+                  "working": "$2ac + ab = b - c$",
+                  "reasoning": "Expand to access the variable $b$ inside the bracket."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Group all terms containing $b$ on one side and other terms on the other.",
+                  "working": "$ab - b = -c - 2ac$",
+                  "reasoning": "To make $b$ the subject, we must collect all $b$ terms together."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factorise $b$ out on the left side.",
+                  "working": "$b(a - 1) = -c(1 + 2a)$",
+                  "reasoning": "Isolating $b$ as a single factor."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Divide by $(a-1)$ to solve for $b$.",
+                  "working": "$b = \\frac{-c(1+2a)}{a-1}$ or $b = \\frac{c(2a+1)}{1-a}$",
+                  "reasoning": "Multiplying numerator and denominator by -1 gives a cleaner positive form."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Rearranging Formula"
       },
       {
         "questionNumber": 11,
@@ -472,6 +622,77 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Complete Factorisation"
+      },
+      {
+        "questionNumber": 12,
+        "questionId": "N5-greenridge-2024-p1-q12",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise $a^{2}b^{4}-ab^{2}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$ab^2(ab^2-1)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the highest common factor (HCF).",
+                  "working": "HCF of $a^2b^4$ and $ab^2$ is $ab^2$.",
+                  "reasoning": "Both terms share at least one $a$ and two $b$'s."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factor out the HCF.",
+                  "working": "$ab^2(ab^2 - 1)$",
+                  "reasoning": "Divide each original term by the HCF to find the terms inside the bracket."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Expand and simplify $(3x+2)^{2}+4x(2-x)$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$5x^2 + 20x + 4$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the perfect square $(3x+2)^2$.",
+                  "working": "$(3x)^2 + 2(3x)(2) + 2^2 = 9x^2 + 12x + 4$",
+                  "reasoning": "Using the identity $(a+b)^2 = a^2 + 2ab + b^2$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the second term $4x(2-x)$.",
+                  "working": "$8x - 4x^2$",
+                  "reasoning": "Distribute $4x$ into the bracket."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Combine all terms and simplify.",
+                  "working": "$(9x^2 + 12x + 4) + (8x - 4x^2)$",
+                  "reasoning": "Group like terms."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Collect like terms.",
+                  "working": "$(9x^2 - 4x^2) + (12x + 8x) + 4 = 5x^2 + 20x + 4$",
+                  "reasoning": "Final simplification."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Algebraic Manipulation"
       },
       {
         "questionNumber": 13,
@@ -656,6 +877,123 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Algebraic Fractions"
+      },
+      {
+        "questionNumber": 17,
+        "questionId": "N5-greenridge-2024-p1-q17",
+        "topicID": "N5",
+        "stem": "(a) These are the first four terms of a sequence: 2, 6, 10, 14.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find an expression, in terms of $n$, for the nth term of the sequence.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$4n - 2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the common difference.",
+                  "working": "$6-2=4$, $10-6=4$. Difference is 4.",
+                  "reasoning": "The sequence increases by a constant amount, so it relates to the 4 times table ($4n$)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Adjust the formula to fit the first term.",
+                  "working": "For $n=1$, $4(1) = 4$. We need 2. $4 - 2 = 2$.",
+                  "reasoning": "Subtract 2 from $4n$ to get the correct starting value."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "One term in the sequence is 82. Find the value of n for this term.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "21",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set the nth term expression equal to 82.",
+                  "working": "$4n - 2 = 82$",
+                  "reasoning": "We need to solve for $n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Solve for $n$.",
+                  "working": "$4n = 84 \\rightarrow n = 21$",
+                  "reasoning": "Add 2 to both sides, then divide by 4."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Explain why 360 is not a term of this sequence.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Solving $4n-2=360$ gives $n=90.5$, which is not an integer.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Equate the nth term to 360.",
+                  "working": "$4n - 2 = 360 \\rightarrow 4n = 362$",
+                  "reasoning": "Test if a valid position number $n$ exists."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Check if $n$ is an integer.",
+                  "working": "$n = \\frac{362}{4} = 90.5$",
+                  "reasoning": "Since sequence positions ($n$) must be whole numbers (integers), 360 cannot be in the sequence."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "The sum of the first n terms of another sequence is $-4n^{2}+54n$. Find the 8th term of this sequence.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "-6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Understand the relationship between Sum ($S_n$) and Term ($T_n$).",
+                  "working": "$T_8 = S_8 - S_7$",
+                  "reasoning": "The 8th term is the difference between the sum of the first 8 terms and the sum of the first 7 terms."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $S_8$.",
+                  "working": "$S_8 = -4(8)^2 + 54(8) = -4(64) + 432 = -256 + 432 = 176$",
+                  "reasoning": "Substitute $n=8$ into the formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate $S_7$.",
+                  "working": "$S_7 = -4(7)^2 + 54(7) = -4(49) + 378 = -196 + 378 = 182$",
+                  "reasoning": "Substitute $n=7$ into the formula."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate $T_8$.",
+                  "working": "$T_8 = 176 - 182 = -6$",
+                  "reasoning": "Perform the subtraction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Arithmetic Sequence"
       },
       {
         "questionNumber": 18,
@@ -1074,6 +1412,54 @@
         "title": "Algebraic Fraction Simplification"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2111071107-p1-q101",
+        "topicID": "N5",
+        "stem": "Given that $y = \\sqrt{\\frac{x+1}{x-2}}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Rearrange the formula to make $x$ the subject.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x = \\frac{2y^2+1}{y^2-1}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Square both sides to remove the square root.",
+                  "working": "$y^2 = \\frac{x+1}{x-2}$",
+                  "reasoning": "Inverse operation of square root is squaring."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply by the denominator to remove the fraction.",
+                  "working": "$y^2(x-2) = x+1 \\rightarrow xy^2 - 2y^2 = x+1$",
+                  "reasoning": "Expand to access the $x$ terms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Group terms with $x$ on one side.",
+                  "working": "$xy^2 - x = 1 + 2y^2$",
+                  "reasoning": "Collect all subject terms together."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factorise $x$ and divide.",
+                  "working": "$x(y^2 - 1) = 2y^2 + 1 \\rightarrow x = \\frac{2y^2+1}{y^2-1}$",
+                  "reasoning": "Isolate $x$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Rearranging Formula"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N5-gemini-1911-p1-102",
         "topicID": "N5",
@@ -1241,6 +1627,77 @@
         "title": "Factorisation by Grouping"
       },
       {
+        "questionNumber": 102,
+        "questionId": "N5-gemini-2111071107-p1-q102",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise $3x^2 - 5x - 12$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(3x+4)(x-3)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find factors of $ac$ ($3 \\times -12 = -36$) that add to $b$ ($-5$).",
+                  "working": "Factors are $-9$ and $4$.",
+                  "reasoning": "Splitting the middle term."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rewrite and group.",
+                  "working": "$3x^2 - 9x + 4x - 12 = 3x(x-3) + 4(x-3)$",
+                  "reasoning": "Factorising by grouping."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final factorisation.",
+                  "working": "$(3x+4)(x-3)$",
+                  "reasoning": "Extracting the common binomial."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Simplify $(\\frac{2x^3}{y})^{-2} \\times 4x^5$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{y^2}{x}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the negative index to the fraction.",
+                  "working": "$(\\frac{y}{2x^3})^2 \\times 4x^5$",
+                  "reasoning": "Negative power flips the fraction."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Square the terms inside the bracket.",
+                  "working": "$\\frac{y^2}{4x^6} \\times 4x^5$",
+                  "reasoning": "Power of a quotient rule."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the expression.",
+                  "working": "$\\frac{y^2 \\times 4x^5}{4x^6} = \\frac{y^2}{x}$",
+                  "reasoning": "Cancel 4 and subtract indices of $x$ ($5-6 = -1$ or $x$ in denominator)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Algebraic Manipulation and Indices"
+      },
+      {
         "questionNumber": 103,
         "questionId": "N5-gemini-2011-p1-q103",
         "topicID": "N5",
@@ -1324,6 +1781,159 @@
       }
     ],
     "Paper 2": [
+      {
+        "questionNumber": 1,
+        "questionId": "N5-greenridge-2024-p2-q1",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $\\frac{5a^{3}}{6b}\\div\\frac{2ab}{4a^{2}b}$",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{5a^4}{3b}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Change division to multiplication by flipping the second fraction.",
+                  "working": "$\\frac{5a^3}{6b} \\times \\frac{4a^2b}{2ab}$",
+                  "reasoning": "Standard rule for dividing fractions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the second fraction before multiplying.",
+                  "working": "$\\frac{4a^2b}{2ab} = 2a$",
+                  "reasoning": "Cancelling common factors $2, a, b$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply the remaining terms.",
+                  "working": "$\\frac{5a^3}{6b} \\times 2a = \\frac{10a^4}{6b}$",
+                  "reasoning": "Multiply numerators."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the final fraction.",
+                  "working": "$\\frac{5a^4}{3b}$",
+                  "reasoning": "Divide 10 and 6 by 2."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve $\\frac{x}{8}=\\frac{50}{x}$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = \\pm 20$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Cross multiply.",
+                  "working": "$x \\times x = 50 \\times 8 \\rightarrow x^2 = 400$",
+                  "reasoning": "Eliminating fractions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Square root both sides.",
+                  "working": "$x = \\pm\\sqrt{400}$",
+                  "reasoning": "Inverse of square."
+                },
+                {
+                  "step": 3,
+                  "explanation": "State both solutions.",
+                  "working": "$x = 20$ or $x = -20$",
+                  "reasoning": "Quadratic equations of type $x^2=k$ have two solutions."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Simplify $\\frac{4v^{2}-1}{2pv+p-10v-5}.$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{2v-1}{p-5}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the numerator using difference of squares.",
+                  "working": "$4v^2 - 1 = (2v)^2 - 1^2 = (2v-1)(2v+1)$",
+                  "reasoning": "$a^2 - b^2 = (a-b)(a+b)$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the denominator by grouping.",
+                  "working": "$p(2v+1) - 5(2v+1) = (p-5)(2v+1)$",
+                  "reasoning": "Group first two and last two terms."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Cancel the common factor.",
+                  "working": "$\\frac{(2v-1)(2v+1)}{(p-5)(2v+1)}$",
+                  "reasoning": "Cancel $(2v+1)$ from top and bottom."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Write final simplified form.",
+                  "working": "$\\frac{2v-1}{p-5}$",
+                  "reasoning": "Remaining terms."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "Solve $2x^{2}=3(3x-1).$ Give your solutions correct to two decimal places.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 4.14$ or $x = 0.36$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand and rearrange into general quadratic form $ax^2+bx+c=0$.",
+                  "working": "$2x^2 = 9x - 3 \\rightarrow 2x^2 - 9x + 3 = 0$",
+                  "reasoning": "Preparation for quadratic formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify a, b, and c.",
+                  "working": "$a=2, b=-9, c=3$",
+                  "reasoning": "Coefficients for the formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Substitute into Quadratic Formula.",
+                  "working": "$x = \\frac{-(-9) \\pm \\sqrt{(-9)^2 - 4(2)(3)}}{2(2)}$",
+                  "reasoning": "$x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the discriminant and solve.",
+                  "working": "$x = \\frac{9 \\pm \\sqrt{81-24}}{4} = \\frac{9 \\pm \\sqrt{57}}{4}$",
+                  "reasoning": "Simplifying under the root."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Calculate final values.",
+                  "working": "$x \\approx \\frac{9+7.5498}{4} \\approx 4.137$ and $x \\approx \\frac{9-7.5498}{4} \\approx 0.362$",
+                  "reasoning": "Rounding to 2 decimal places: $4.14$ and $0.36$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Algebraic Equations and Simplification"
+      },
       {
         "questionNumber": 4,
         "questionId": "N5-acsi-2024-p2-q4",
@@ -1948,6 +2558,95 @@
         "totalMarks": 6,
         "paper": "Paper 2",
         "title": "Quadratic Sequence Difference"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2111071107-p2-q101",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $\\frac{3x^2-12}{x^2+x-6}$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{3(x-2)}{x-2} = \\frac{3(x+2)}{x+3}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the numerator.",
+                  "working": "$3(x^2-4) = 3(x-2)(x+2)$",
+                  "reasoning": "Common factor 3, then difference of squares."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the denominator.",
+                  "working": "$x^2+x-6 = (x+3)(x-2)$",
+                  "reasoning": "Quadratic factorisation: numbers multiplying to -6 and adding to 1 are 3 and -2."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Cancel common factors.",
+                  "working": "$\\frac{3(x-2)(x+2)}{(x+3)(x-2)}$",
+                  "reasoning": "Cancel $(x-2)$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Final result.",
+                  "working": "$\\frac{3(x+2)}{x+3}$",
+                  "reasoning": "Simplified fraction."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the equation $\\frac{3}{x-1} + \\frac{2}{x} = 4$. Give your answers correct to 2 decimal places.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 2.00$ or $x = 0.25$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Combine fractions on the LHS.",
+                  "working": "$\\frac{3x + 2(x-1)}{x(x-1)} = 4$",
+                  "reasoning": "Common denominator $x(x-1)$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify numerator and cross multiply.",
+                  "working": "$3x + 2x - 2 = 4x(x-1) \\rightarrow 5x - 2 = 4x^2 - 4x$",
+                  "reasoning": "Expanding and equating."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Form quadratic equation.",
+                  "working": "$4x^2 - 9x + 2 = 0$",
+                  "reasoning": "Rearranging to $ax^2+bx+c=0$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve quadratic equation.",
+                  "working": "$(4x-1)(x-2) = 0$",
+                  "reasoning": "Factorisation or formula can be used. Here factorisation works."
+                },
+                {
+                  "step": 5,
+                  "explanation": "State final answers.",
+                  "working": "$x = 0.25$ or $x = 2$",
+                  "reasoning": "Solutions are exact, but question asks for 2 d.p., so $0.25$ and $2.00$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Algebraic Fractions and Equations"
       }
     ]
   }

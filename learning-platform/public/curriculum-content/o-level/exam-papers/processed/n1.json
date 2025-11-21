@@ -51,6 +51,83 @@
         "title": "Order of Operations"
       },
       {
+        "questionNumber": 1,
+        "questionId": "N1-greenridge-2024-p1-q1",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\frac{\\sqrt[3]{123^{2}}}{\\frac{3}{5.01}+2}$",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "9.52 (to 3 s.f.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the numerator.",
+                  "working": "$\\sqrt[3]{123^{2}} = \\sqrt[3]{15129} \\approx 24.7332$",
+                  "reasoning": "Evaluate the power and root first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the denominator.",
+                  "working": "$\\frac{3}{5.01} + 2 \\approx 0.5988 + 2 = 2.5988$",
+                  "reasoning": "Follow BODMAS/PEMDAS: division before addition."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide the numerator by the denominator.",
+                  "working": "$\\frac{24.7332}{2.5988} \\approx 9.51717...$",
+                  "reasoning": "Perform the final division."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "$9.51717... \\approx 9.52$",
+                  "reasoning": "Standard O-Level accuracy is 3 significant figures unless specified otherwise."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "An item costs $24 when rounded off to the nearest dollar. What is the maximum possible price of the item?",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "24.50",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the degree of accuracy.",
+                  "working": "Nearest dollar = $1.",
+                  "reasoning": "We are rounding to the nearest whole number."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the error interval.",
+                  "working": "Error = $\\frac{1}{2} \\times 1 = 0.5$",
+                  "reasoning": "The maximum error is half the unit of rounding."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the upper bound.",
+                  "working": "$24 + 0.5 = 24.5$",
+                  "reasoning": "The upper bound is the rounded value plus the error. While technically anything below 24.50 rounds to 24, in the context of 'maximum possible price' for bounds questions, the upper bound limit is the standard answer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Calculation and Approximation"
+      },
+      {
         "questionNumber": 2,
         "questionId": "N1-anderson-2024-p1-q2",
         "topicID": "N1",
@@ -97,6 +174,95 @@
         "totalMarks": 2,
         "paper": "Paper 1",
         "title": "Exponential Equation"
+      },
+      {
+        "questionNumber": 2,
+        "questionId": "N1-greenridge-2024-p1-q2",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Given that $9^{12}=27^{x}$ find $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "8",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express bases 9 and 27 as powers of 3.",
+                  "working": "$9 = 3^2$ and $27 = 3^3$",
+                  "reasoning": "To solve exponential equations, it is easiest to make the bases the same."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute these into the equation.",
+                  "working": "$(3^2)^{12} = (3^3)^x$",
+                  "reasoning": "Replace the bases in the original equation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Apply the power of a power law $(a^m)^n = a^{mn}$.",
+                  "working": "$3^{2 \\times 12} = 3^{3 \\times x} \\Rightarrow 3^{24} = 3^{3x}$",
+                  "reasoning": "Simplify the exponents."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Equate the exponents and solve for $x$.",
+                  "working": "$24 = 3x \\Rightarrow x = \\frac{24}{3} = 8$",
+                  "reasoning": "Since bases are equal, exponents must be equal."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The number of people owning cars in a country increased by $p$% every year, from 5000 in the year 2020, to 6500 in the year 2024. Find the value of $p$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6.78",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the parameters for compound growth.",
+                  "working": "Principal ($P$) = 5000, Amount ($A$) = 6500, Time ($n$) = $2024 - 2020 = 4$ years.",
+                  "reasoning": "Use the compound interest/growth formula: $A = P(1 + \\frac{r}{100})^n$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation.",
+                  "working": "$6500 = 5000(1 + \\frac{p}{100})^4$",
+                  "reasoning": "Substitute known values into the formula."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Isolate the power term.",
+                  "working": "$(1 + \\frac{p}{100})^4 = \\frac{6500}{5000} = 1.3$",
+                  "reasoning": "Divide both sides by the principal."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Take the 4th root and solve for $p$.",
+                  "working": "$1 + \\frac{p}{100} = \\sqrt[4]{1.3} \\approx 1.06779$\n$\\frac{p}{100} = 0.06779$\n$p = 6.779...$",
+                  "reasoning": "Inverse operation of power 4 is the 4th root."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Round to 3 significant figures.",
+                  "working": "$p \\approx 6.78$",
+                  "reasoning": "Standard accuracy for non-exact numerical answers."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Indices and Growth"
       },
       {
         "questionNumber": 3,
@@ -1055,6 +1221,106 @@
         "title": "Total Waste Standard Form"
       },
       {
+        "questionNumber": 21,
+        "questionId": "N1-greenridge-2024-p1-q21",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express 5500 as a product of its prime factors.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$2^2 \\times 5^3 \\times 11$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Perform prime factorization.",
+                  "working": "$5500 = 55 \\times 100$\n$= (5 \\times 11) \\times (10^2)$\n$= 5 \\times 11 \\times (2 \\times 5)^2$\n$= 5 \\times 11 \\times 2^2 \\times 5^2$",
+                  "reasoning": "Break down the number into factors until only prime numbers remain."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Group like bases.",
+                  "working": "$2^2 \\times (5^1 \\times 5^2) \\times 11 = 2^2 \\times 5^3 \\times 11$",
+                  "reasoning": "Combine powers using index laws."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The number $\\frac{5500~p}{q}$ is a perfect cube. $p$ and $q$ are prime numbers. Find the value of $p$ and the value of $q$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$p=2, q=11$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the prime factors of 5500 for a perfect cube.",
+                  "working": "$5500 = 2^2 \\times 5^3 \\times 11^1$. For a perfect cube, all indices must be multiples of 3.",
+                  "reasoning": "A number is a perfect cube if the exponent of every prime factor is divisible by 3."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine $p$ (numerator).",
+                  "working": "We have $2^2$. We need $2^3$. So we multiply by $2^1$. Thus $p=2$.",
+                  "reasoning": "Multiplying by $p$ adds to the powers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine $q$ (denominator).",
+                  "working": "We have $11^1$. We cannot multiply to reach $11^3$ because $p$ is a single prime. We must divide by $11^1$ to remove it. Thus $q=11$.",
+                  "reasoning": "Dividing by $q$ subtracts from the powers. Removing the factor 11 leaves $2^3 \\times 5^3$, which is a perfect cube."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Bus A takes 50 minutes to complete a route. Bus B takes 1 hour to complete the same route. Bus C takes 75 minutes to complete the same route. All 3 buses left the same bus stop at 6 am one morning. What time will all 3 buses meet again?",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "11:00 am",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert all times to minutes.",
+                  "working": "Bus A: 50 min\nBus B: 1 hour = 60 min\nBus C: 75 min",
+                  "reasoning": "Consistent units are required for LCM calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the Lowest Common Multiple (LCM) of 50, 60, and 75.",
+                  "working": "$50 = 2 \\times 5^2$\n$60 = 2^2 \\times 3 \\times 5$\n$75 = 3 \\times 5^2$\nLCM = $2^2 \\times 3 \\times 5^2 = 4 \\times 3 \\times 25 = 300$ minutes.",
+                  "reasoning": "The buses meet when their route times coincide, which corresponds to the LCM."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Convert LCM back to hours.",
+                  "working": "$300 \\text{ minutes} = 300 \\div 60 = 5 \\text{ hours}$.",
+                  "reasoning": "Convert minutes to hours to add to the start time."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the meeting time.",
+                  "working": "6:00 am + 5 hours = 11:00 am.",
+                  "reasoning": "Add the duration to the start time."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Primes and LCM"
+      },
+      {
         "questionNumber": 101,
         "questionId": "N1-gemini-1911-p1-101",
         "topicID": "N1",
@@ -1245,6 +1511,77 @@
         "title": "Indices and Exponential Equations"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111071107-p1-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\frac{4.2 \\times 10^5}{2.5 \\times 10^{-2}}$, giving your answer in standard form.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1.68 \\times 10^7$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Divide the coefficients and the powers of 10 separately.",
+                  "working": "Coefficient: $4.2 \\div 2.5 = 1.68$\nPowers: $10^5 \\div 10^{-2} = 10^{5 - (-2)} = 10^7$",
+                  "reasoning": "Apply index laws for division: $x^a \\div x^b = x^{a-b}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Combine into standard form.",
+                  "working": "$1.68 \\times 10^7$",
+                  "reasoning": "Ensure the coefficient is between 1 and 10 (inclusive of 1)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Estimate the value of $\\frac{59.8 + 4.12}{0.195}$, correct to 1 significant figure.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "300",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Round each number to 1 significant figure.",
+                  "working": "$59.8 \\approx 60$\n$4.12 \\approx 4$\n$0.195 \\approx 0.2$",
+                  "reasoning": "Estimation requires simplifying numbers to their most significant digit before calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform the calculation with estimated values.",
+                  "working": "$\\frac{60 + 4}{0.2} = \\frac{64}{0.2}$",
+                  "reasoning": "Simplify the numerator first."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Final division.",
+                  "working": "$\\frac{64}{0.2} = \\frac{640}{2} = 320$",
+                  "reasoning": "Division by 0.2 is equivalent to multiplying by 5 or dividing by 2/10."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round final result to 1 significant figure.",
+                  "working": "$320 \\approx 300$",
+                  "reasoning": "The question asks for the final answer correct to 1 significant figure."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Standard Form and Estimation"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N1-gemini-1911-p1-102",
         "topicID": "N1",
@@ -1420,6 +1757,71 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Bells and LCM"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2111071107-p1-q102",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Written as the product of its prime factors, $A = 2^3 \\times 3^2 \\times 5$ and $B = 2^2 \\times 3^4 \\times 7$. Find the Highest Common Factor (HCF) of $A$ and $B$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "36",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify common prime factors with the lowest power.",
+                  "working": "Common bases: 2 and 3.\nLowest power of 2: $2^2$\nLowest power of 3: $3^2$",
+                  "reasoning": "HCF is the product of common factors raised to their lowest respective powers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value.",
+                  "working": "$2^2 \\times 3^2 = 4 \\times 9 = 36$",
+                  "reasoning": "Evaluate the expression."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the smallest positive integer $k$ such that $\\sqrt{Ak}$ is an integer.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "10",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the indices of $A$.",
+                  "working": "$A = 2^3 \\times 3^2 \\times 5^1$.",
+                  "reasoning": "For a number to be a perfect square (so its square root is an integer), all prime factor indices must be even."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify indices that are odd.",
+                  "working": "Power of 2 is 3 (odd). Power of 5 is 1 (odd). Power of 3 is 2 (even, so it's fine).",
+                  "reasoning": "We need to multiply by factors that make these odd powers even."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine $k$.",
+                  "working": "Need one more 2 and one more 5.\n$k = 2^1 \\times 5^1 = 10$.",
+                  "reasoning": "Multiplying $A$ by $2 \\times 5$ makes $A \\times k = 2^4 \\times 3^2 \\times 5^2$, which is a perfect square."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Factors and Multiples"
       }
     ],
     "Paper 2": [
@@ -2024,6 +2426,77 @@
             ]
           ]
         }
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2111071107-p2-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The cash price of a laptop is \\$1500. It can be bought on hire purchase with a deposit of 15% of the cash price, followed by 12 monthly installments of \\$115. Calculate the difference between the hire purchase price and the cash price.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "\\$105",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the deposit amount.",
+                  "working": "$15\\% \\text{ of } 1500 = \\frac{15}{100} \\times 1500 = 225$",
+                  "reasoning": "Find the initial payment."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total of the installments.",
+                  "working": "$12 \\times 115 = 1380$",
+                  "reasoning": "Multiply the monthly cost by the number of months."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate total hire purchase price.",
+                  "working": "$225 + 1380 = 1605$",
+                  "reasoning": "Add deposit to total installments."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find the difference.",
+                  "working": "$1605 - 1500 = 105$",
+                  "reasoning": "Subtract cash price from hire purchase price."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Express the difference found in part (a) as a percentage of the cash price.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7%",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the percentage calculation.",
+                  "working": "$\\frac{105}{1500} \\times 100\\%$",
+                  "reasoning": "Percentage = (Part / Whole) * 100."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value.",
+                  "working": "$\\frac{105}{15} = 7$",
+                  "reasoning": "Simplify the fraction."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Financial Arithmetic"
       },
       {
         "questionNumber": 102,

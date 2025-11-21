@@ -1,0 +1,1966 @@
+{
+    "note": "Questions with diagrams (hasDiagram: true) are stored here separately. These questions require visual elements like graphs, geometric figures, or tables that need to be rendered alongside the question text.",
+    "source": "acsi-2024-paper-1-2",
+    "totalDiagramQuestions": 60,
+    "questions": [
+        {
+            "questionNumber": 5,
+            "questionId": "N6-acsi-2024-p1-q5",
+            "topicID": "N6",
+            "stem": "Part of the graph of a quadratic function is shown below. The graph passes through the point $A(1,15)$ and it cuts the x-axis at the points B and C. Given that C is (6, 0) and $x=2$ is the line of symmetry of the graph,",
+            "hasDiagram": true,
+            "diagramDescription": "A parabolic curve opening downwards plotted on a Cartesian coordinate system. It peaks above the x-axis, passes through point A(1, 15) on the left side of the peak, intersects the x-axis at B on the left and C(6, 0) on the right. The line of symmetry is marked as the vertical dashed line x = 2.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "write down the equation of the quadratic curve in the form $y=a(x-h)^{2}+k$.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "find the positive value of x when $y=4,$ leaving your answer in exact form.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Quadratic Graph Properties"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "S1-acsi-2024-p1-q6",
+            "topicID": "S1",
+            "stem": "Justin drew this graph to show his mobile data usage for each of the following four months.",
+            "hasDiagram": true,
+            "diagramDescription": "A bar chart representing Mobile Data Usage (Gigabytes) over four months: Jan, Feb, Mar, Apr. The bars are replaced by images of mobile phones of increasing size. The height of the phone for Jan is lowest, Feb higher, Mar higher, and Apr is highest, reaching near the 50 mark on the y-axis. The width of the phones also increases with height.",
+            "parts": [
+                {
+                    "partId": "",
+                    "questionText": "State one aspect of the graph that may be misleading and explain how this may lead to a misinterpretation of the graph.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Misleading Statistics"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "G2-acsi-2024-p1-q9",
+            "topicID": "G2",
+            "stem": "In the diagram, ABCD is a rectangle and E and F are points on AD and BC respectively. The ratio of the area of triangle ABF to the area of rectangle ABCD is 1: 9. The ratio of the area of triangle AFE to the area of rectangle ABCD is 1: 6.",
+            "hasDiagram": true,
+            "diagramDescription": "A rectangle ABCD with points E on side AD and F on side BC. Lines connect A to F, E to F, and D to F, dividing the rectangle into several triangles: ABF, AFE, EFD, and DFC. Triangle ABF is in the top right corner.",
+            "parts": [
+                {
+                    "partId": "",
+                    "questionText": "Explain with clear workings, if the following statements are true/false.\nA: The ratio of the area of triangle ABF to that of triangle AFE is 2: 3.\nB: The ratio of the area of triangle DFC to that of rectangle ABCD is 2: 5.\nC: The sum of the area of triangles ABF and triangle DFC is equal to the sum of the area of triangles AFE and EFD.",
+                    "marks": 6,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Geometry Area Ratios"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "S1-acsi-2024-p1-q18",
+            "topicID": "S1",
+            "stem": "The cumulative frequency curve below illustrates the wait time of 240 customers who visited a bank.",
+            "hasDiagram": true,
+            "diagramDescription": "A cumulative frequency graph plotting 'Time (Minutes)' on the x-axis (0 to 120) against 'Cumulative Frequency' on the y-axis (0 to 240). The curve starts at (0,0) and rises in an S-shape to (120, 240). Grid lines are provided for reading values.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Use the graph to estimate the 60th percentile,",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Use the graph to estimate the interquartile range of the wait time.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Only 10% of the customers complained about the long wait time they experienced. What was the minimum wait time for these customers?",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Two customers are chosen at random. Find the probability that one customer waited for less than or equal to 60 minutes and the other waited for more than 100 minutes.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Cumulative Frequency"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "G4-acsi-2024-p1-q19",
+            "topicID": "G4",
+            "stem": "In the diagram below, triangle ABC is congruent to triangle PNA. Given that $BC=22$ cm, $AP=32$ cm and angle $ACB=91^{\\circ}$,",
+            "hasDiagram": true,
+            "diagramDescription": "Two triangles, ABC and PNA, are shown. Triangle ABC is on the left with a right-obtuse angle at C (91 degrees), and side BC labeled 22 cm. Triangle PNA is on the right, sharing vertex A with triangle ABC. A line segment connects B and N. Side AP is labeled 32 cm.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "calculate the length of BN,",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "calculate angle APN.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Congruent Triangles and Trigonometry"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "G4-acsi-2024-p1-q22",
+            "topicID": "G4",
+            "stem": "P, Q and R are three points on level ground such that RPQ forms a right-angled triangle with PQ and RQ measuring 135 m and 205 m respectively. It is given that a building of height 50 m is situated at P and that the bearing of Q from P is 119\u00b0.",
+            "hasDiagram": true,
+            "diagramDescription": "A triangle RPQ on level ground with a North arrow at P. Angle RPQ is a right angle (90 degrees). The bearing of Q from P is marked as 119 degrees. Side PQ is 135 m and side RQ is 205 m.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the bearing of R from Q.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the largest possible angle of depression from the top of the building to any point on the path RQ.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Bearings and 3D Trigonometry"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "G1-acsi-2024-p2-q3",
+            "topicID": "G1",
+            "stem": "In Diagram I below, ABCDE is a regular pentagon, centre O. $OA=OB=4~cm.$ Diagram II shows a design for a new badge. The vertices of the regular pentagon ABCDE are joined by circular arcs whose centres are the opposite vertices. For example, the arc AB has centre D and radius AD.",
+            "hasDiagram": true,
+            "diagramDescription": "Diagram I shows a regular pentagon ABCDE inscribed in a circle with center O, with radii OA and OB marked. Diagram II shows a curvilinear pentagon where each side is an arc curved outwards, with one shaded segment on side AB.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "State the value of angle AOB.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate the area of the pentagon ABCDE.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c-i",
+                    "questionText": "Find angle ABD. Give reasons for each step of your working.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c-ii",
+                    "questionText": "Show that the length of BD is approximately 7.61 cm.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c-iii",
+                    "questionText": "Calculate the area of the shaded segment in Diagram II.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c-iv",
+                    "questionText": "Calculate the area of the face ABCDE of the badge.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 12,
+            "paper": "Paper 2",
+            "title": "Geometry of Pentagon and Circular Arcs"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "G5-acsi-2024-p2-q5",
+            "topicID": "G5",
+            "stem": "The diagram shows a solid ornament in the shape of a cylinder with an upright cone cut out at one end and a hemisphere attached to the other end. The vertical heights of the cone and cylinder are x cm and 2x cm respectively.",
+            "hasDiagram": true,
+            "diagramDescription": "A solid object consisting of a central cylinder of height 2x. On top, a cone of height x is cut out (inverted cone void). On the bottom, a hemisphere is attached. The radius of the cylinder, cone base, and hemisphere is r.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the ratio of the volume of the cone to that of the cylinder, expressing your answer as a fraction in the simplest form.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b-i",
+                    "questionText": "If the volume of the cylinder is $345~cm^{3}$ and its height is 8 cm, calculate the radius of the cylinder,",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b-ii",
+                    "questionText": "calculate the curved surface area of the cone,",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b-iii",
+                    "questionText": "calculate the quantity of paint needed to paint the exterior of the ornament with a 0.2 mm thick coat of paint.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Mensuration of Composite Solid"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "G7-acsi-2024-p2-q6",
+            "topicID": "G7",
+            "stem": "In the diagram, OABC is a parallelogram and D is the midpoint of BC. BE and OC produced intersect at point F. It is given that BE: $BF=1:3$, OC: OF = 1:2, $\\vec{OA}=a$ and $\\vec{OC}=c.$",
+            "hasDiagram": true,
+            "diagramDescription": "Parallelogram OABC with OA=a and OC=c. Point D is on BC. Lines are extended to point F such that O-C-F is a straight line and B-E-F is a straight line.",
+            "parts": [
+                {
+                    "partId": "a-i",
+                    "questionText": "Express and simplify $\\vec{BF}$ in terms of a and c,",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "a-ii",
+                    "questionText": "Express and simplify $\\vec{AE}$ in terms of a and c,",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "a-iii",
+                    "questionText": "Express and simplify $\\vec{OD}$ in terms of a and c.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Determine, with clear working shown, whether points O, D and E lie on a straight line.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the value of $\\frac{\\text{area of triangle CDE}}{\\text{area of parallelogram OABC}}$",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Vectors in Geometry"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "S1-acsi-2024-p2-q8",
+            "topicID": "S1",
+            "stem": "The box-and-whisker plots show the distribution of the masses (in grams) of eggs sold in Shop A and Shop B.",
+            "hasDiagram": true,
+            "diagramDescription": "Two box-and-whisker plots aligned vertically against a mass scale from 40 to 70 grams. Shop A's plot spans from about 45 to 67, with a box from 49 to 59 and median at 54. Shop B's plot spans from 41 to 61, with box from 44 to 53 and median at 50.",
+            "parts": [
+                {
+                    "partId": "a-i",
+                    "questionText": "There are 25 eggs with masses of more than 59 g sold in Shop A. Find the total number of eggs sold in Shop A.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a-ii",
+                    "questionText": "Make a comment comparing the averages and a comment comparing the distribution of the masses of the eggs sold in Shop A and Shop B. Use figures to support your answers.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b-i",
+                    "questionText": "In a sample of 80 eggs, 4 are cracked. One egg is selected from the sample at random. Find the probability that the egg is cracked.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b-ii",
+                    "questionText": "Two eggs are selected from the sample at random. Find the probability that both eggs are cracked.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b-iii",
+                    "questionText": "Three eggs are selected from the sample at random. Find the probability that at least one egg is cracked.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Statistics and Probability"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N3-acsi-2024-p2-q9",
+            "topicID": "N3",
+            "stem": "Emily is considering signing up for a new credit card and has shortlisted three options: Card A, Card B and Card C. Each card offers distinct benefits, rewards, and imposes different annual fees.",
+            "hasDiagram": true,
+            "diagramDescription": "",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the net rewards (which consist of cashback and sign-up bonus) for each credit card for an expenditure of SGD 2000 within the first month of card usage.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Emily's monthly card expenditure is SGD 2000. Assuming Emily has signed up for credit card A, by considering only the annual fee and the net rewards, calculate the total amount she has to pay for her credit card bill after the first year of usage.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Emily enjoys travelling. As such, travel perks are important to her. Additional information provided: Monthly Card Expenditure is SGD 2000, requires 5 Airport Lounge Access Passes per year (costing $50 each if bought). Determine which credit card might be the best choice for Emily if she signs up for the card and uses it for two consecutive years. Justify any decisions you make and show your calculations clearly.",
+                    "marks": 7,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 12,
+            "paper": "Paper 2",
+            "title": "Financial Literacy"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "N6-broadrick-2024-p1-q7",
+            "topicID": "N6",
+            "stem": "In the following graph, write down a possible value of n and the corresponding value of b for the equation $y=x^n+b$.",
+            "hasDiagram": true,
+            "diagramDescription": "A coordinate graph showing a curve passing through the point (1, -1). The curve is in the shape of a cubic or odd power function, starting from bottom left and going to top right.",
+            "parts": [
+                {
+                    "partId": "7",
+                    "questionText": "Find $n$ and $b$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Graphs of Functions"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "G4-broadrick-2024-p1-q8",
+            "topicID": "G4",
+            "stem": "In triangle ABC, $AB=14.6$ cm, $BC=7.6$ cm and angle $BAC=31^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABC with side AB=14.6, BC=7.6 and angle A=31 degrees.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find obtuse angle ACB.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the area of triangle ABC.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Trigonometry"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "S1-broadrick-2024-p1-q10",
+            "topicID": "S1",
+            "stem": "The graphs below show the average test scores of Class A and Class B over three consecutive years.",
+            "hasDiagram": true,
+            "diagramDescription": "Two bar charts showing scores for Class A and Class B for 2022, 2023, and 2024. The Class B chart has a truncated y-axis starting at 65, exaggerating the growth.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "What feature of the graph misleads readers to think that the scores of Class A in 2022 had increased to 6 times that in 2024?",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hailey claims that the scores of Class A and Class B shows the same improvement from 2022 to 2024. Do you agree? Explain your answer.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Misleading Statistics"
+        },
+        {
+            "questionNumber": 15,
+            "questionId": "G2-broadrick-2024-p1-q15",
+            "topicID": "G2",
+            "stem": "In the diagram, two circles with centres O and P respectively intersects at A. The two circles have the same radius and AB // OP.",
+            "hasDiagram": true,
+            "diagramDescription": "Two overlapping circles with centres O and P. A line connects O and P. A secant line passes through intersection B and A.",
+            "parts": [
+                {
+                    "partId": "15",
+                    "questionText": "Show that $AB=OP$.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Geometry Proofs"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "N6-broadrick-2024-p1-q16",
+            "topicID": "N6",
+            "stem": "",
+            "hasDiagram": true,
+            "diagramDescription": "Part (a) shows two intersecting lines AB and PQ on a Cartesian plane. Part (b) shows a parabola opening upwards intersecting the x-axis at -4 and 1.5.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Leanne says that the equation of the line AB is $2y=-4x+1$ and the equation of the line PQ is $4y=-9x+2$. Is she correct? Explain your answer.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The diagram shows the graph of $y=x^{2}+px+q$. (i) Write down equation of the graph in the form $y=x^{2}+px+q$. (ii) Find the coordinates of the minimum point.",
+                    "marks": 4,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Coordinate Geometry"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "G6-broadrick-2024-p1-q21",
+            "topicID": "G6",
+            "stem": "P is the point (-3, 1) and Q is the point (3, 3).",
+            "hasDiagram": true,
+            "diagramDescription": "A coordinate grid showing points P at (-3, 1) and Q at (3, 3).",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the length of the PQ.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The point R is such that PQR forms an isosceles triangle. The angle bisector of angle PQR has an equation of $y=x$. Find the coordinates of R.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Coordinate Geometry"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "G1-broadrick-2024-p1-q22",
+            "topicID": "G1",
+            "stem": "Regular pentagons and squares of the same sides are placed together in a pattern as shown in the diagram. Caleb claims that if he continues the pattern, a closed loop will form.",
+            "hasDiagram": true,
+            "diagramDescription": "A pattern showing alternating regular pentagons and squares connected by their sides, forming a curve.",
+            "parts": [
+                {
+                    "partId": "22",
+                    "questionText": "Explain whether his claim is true, showing your working clearly.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Polygons"
+        },
+        {
+            "questionNumber": 26,
+            "questionId": "N6-broadrick-2024-p1-q26",
+            "topicID": "N6",
+            "stem": "The diagrams show the speed-time graph and the corresponding distance-time graph of a car. The car travelled from a point P to Q and in the journey, its greatest speed attained was 1.5 km/min.",
+            "hasDiagram": true,
+            "diagramDescription": "Two graphs. First is speed-time with speed reaching 1.5 km/min. Second is distance-time showing total distance 92.25 km. Times 0800, 0820, 0900 and T are marked.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Convert $1.5~km/min$ to m/s.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Show that v, the initial speed, was $0.6~km/min$",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the speed of the car, in $m/s,$ at 0812.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The total distance travelled by the car is 92.25 km. Find the time, T, when it comes to a complete stop.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Kinematics"
+        },
+        {
+            "questionNumber": 27,
+            "questionId": "G7-broadrick-2024-p1-q27",
+            "topicID": "G7",
+            "stem": "ABC is a triangle. D is the point on BC such that $3BD=2DC.$ $\\vec{AB} = m$ and $\\vec{AC} = n$.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABC with D on BC. Vector arrows for m and n.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find $\\vec{AD}$ in terms of m and n.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "bi",
+                    "questionText": "R is on AD produced such that $\\vec{AR}=k\\vec{AD}$ and AC is parallel to BR. Show that $k=\\frac{5}{3}$.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "bii",
+                    "questionText": "Find the ratio of area of triangle ABD to area of triangle RBD.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Vectors"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "G6-broadrick-2024-p2-q3",
+            "topicID": "G6",
+            "stem": "A is the point (-3, -1) (inferred) and D is the point (0, 1.5) (inferred). B is a point on the y-axis.",
+            "hasDiagram": true,
+            "diagramDescription": "Quadrilateral ABCD on Cartesian axes. A is in third quadrant, B on negative y-axis, C in first or fourth, D on positive y-axis.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The line AB is parallel to $3y+5x-6=0$. Find the equation of the line AB.",
+                    "marks": 3,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the coordinates of C such that it is equidistant from B and D and it lies on the line $y=7.5-x$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the area of the quadrilateral ABCD.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Find the size of angle ABC.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Coordinate Geometry"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "G3-broadrick-2024-p2-q5",
+            "topicID": "G3",
+            "stem": "In the diagram, A, B, C and D are points on the circle with centre O. CT is tangent to the circle and AC is parallel to OT. Angle $AOC=100^{\\circ}$",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with centre O. Quadrilateral ABCD inscribed. Tangent CT at C. Line AC parallel to line OT.",
+            "parts": [
+                {
+                    "partId": "ai",
+                    "questionText": "Giving reason(s) for your workings, find angle ABC.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "aii",
+                    "questionText": "Giving reason(s) for your workings, find angle ADC.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "aiii",
+                    "questionText": "Giving reason(s) for your workings, find angle OTC.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Explain whether a circle can be drawn passing through the points A, O, C and D.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Given $CT=4.8$ cm, find the area of the minor segment ADC.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Geometry"
+        },
+        {
+            "questionNumber": 7,
+            "questionId": "S1-broadrick-2024-p2-q7",
+            "topicID": "S1",
+            "stem": "The cumulative frequency curve shows the distribution of the masses of 160 apples in tree A.",
+            "hasDiagram": true,
+            "diagramDescription": "Cumulative frequency curve for masses of apples. Also a box-and-whisker plot for Tree B.",
+            "parts": [
+                {
+                    "partId": "ai",
+                    "questionText": "Use the curve to estimate the median mass.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "aii",
+                    "questionText": "Use the curve to estimate the interquartile range of the masses.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "20% of the heaviest apples belong to the top grade. Find the minimum mass an apple needs to be in the top grade.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Two apples are chosen at random. Find the probability that one apple weighs less than 320 g and the other apple weighs more than 360 g. Give your answer to 3 significant figures.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The masses of 160 apples from tree B were recorded. The box-and-whisker plot shows the distribution of the masses. Explain if the following statement is true: \"In tree B, there are more apples weighing less than 320 g as compared to those weighing more than 360 g.\"",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "Justine claims that it is better to get the apples from tree B. Do you agree? Explain your answer using appropriate figures.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Statistics"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "G4-broadrick-2024-p2-q8",
+            "topicID": "G4",
+            "stem": "The diagram shows a box in the shape of a cuboid measuring 15 cm by 8 cm by 10 cm. The box has an open lid such that I and J are vertically above the midpoints of DH and CG respectively. A rod is placed inside the box such that it touches the box only at A and J.",
+            "hasDiagram": true,
+            "diagramDescription": "Cuboid ABCDEFGH with lid IJKL (partially shown). Rod AJ is indicated.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the length of BE.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the length of AG.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Show that the length of the rod, AJ, is 22.97 cm, correct to 4 significant figures.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Find angle JAG.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "3D Trigonometry"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "G5-broadrick-2024-p2-q9",
+            "topicID": "G5",
+            "stem": "An upright container is in the shape of a cone, mounted on a hemisphere. The centre of the base of the cone and the hemisphere coincides. The cone has a radius of 2 m and height of 3 m. The hemisphere has a radius of 3 m.",
+            "hasDiagram": true,
+            "diagramDescription": "Cone on top of a hemisphere.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the capacity of the container.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "There is a tap on the vertex of the cone. The container is filled with water such that the hemisphere and 90% of the cone are filled. Find the area which the water is in contact with the container.",
+                    "marks": 5,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 2",
+            "title": "Mensuration"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "N6-cchms-2024-p1-q6",
+            "topicID": "N6",
+            "stem": "From the diagrams below, select one of them which best illustrates each of the following statements.",
+            "hasDiagram": true,
+            "diagramDescription": "Five sketch graphs labelled Diagram 1 to Diagram 5. Diagram 1 is a straight line y=c. Diagram 2 is a straight line passing through origin. Diagram 3 is a straight line with positive y-intercept. Diagram 4 is an increasing curve starting from origin (like x^2 or x^3). Diagram 5 is a decreasing curve (inverse proportion).",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "$y=4\\pi x^{3}$",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The cost of a project $y$ is a linear function of $x$, where $x$ is the number of man-hours required to complete the project. The project has a fixed cost of $100.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "An object is travelling at a constant speed towards a fixed point O. The distance $y$ (in metres) represents how far the object is from point O at time $x$ (in minutes).",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Matching Graphs to Situations"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "G1-cchms-2024-p1-q14",
+            "topicID": "G1",
+            "stem": "A number of regular $n$-sided polygons are placed together in a ring to form a regular $N$-sided polygon as shown in the diagram below.",
+            "hasDiagram": true,
+            "diagramDescription": "A partial diagram showing three adjacent regular n-sided polygons forming part of a ring. The outer vertices form part of a larger regular N-sided polygon.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that $N=\\frac{2n}{n-4}$.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hence, explain why a regular octagon cannot be formed by placing smaller $n$-sided regular polygons in a ring.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Regular Polygons Ring"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "S1-cchms-2024-p1-q16",
+            "topicID": "S1",
+            "stem": "A company presented their 2023 financial report in this graph.",
+            "hasDiagram": true,
+            "diagramDescription": "A bar chart showing Profit (in $100 000) on the y-axis and time periods on the x-axis. The first bar for 'Jan to Jun' has height 20 and is narrower. The second bar for 'Jul to Dec' has height 60 and is much wider (about double the width) than the first bar.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "State one aspect of the graph that may be misleading and explain how they may lead to a misinterpretation.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Misleading Statistical Graph"
+        },
+        {
+            "questionNumber": 18,
+            "questionId": "G2-cchms-2024-p1-q18",
+            "topicID": "G2",
+            "stem": "The diagram shows a triangle AGD with the points C and B lying on AD and points E and F lying on GD. It is given that $CE // BF // AG$, $BF=2CE$ and $AG=3CE$.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle AGD with horizontal lines CE and BF drawn inside parallel to the base AG. C and B are on side AD. E and F are on side GD. The lines divide the triangle into smaller similar triangles.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that triangle DCE is similar to triangle DBF.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Given that the area of trapezium $BFEC = 15 \\text{ cm}^{2}$, find the area of trapezium AGFB.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Similar Triangles and Areas"
+        },
+        {
+            "questionNumber": 23,
+            "questionId": "G4-cchms-2024-p1-q23",
+            "topicID": "G4",
+            "stem": "Three points A, B and C lie on a horizontal ground are such that $AB=24$ m and $BC=53$ m. Point B is due north of C. The bearing of A from B is 122\u00b0.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABC with point B positioned North of C. A line from C goes North to B. Side BC is 53m. Side AB is 24m. The angle at B, inside the triangle relative to the North line, can be deduced from the bearing.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the distance AC.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the bearing of C from A.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the area of the triangular plot ABC.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Bearings and Triangle Area"
+        },
+        {
+            "questionNumber": 25,
+            "questionId": "G5-cchms-2024-p1-q25",
+            "topicID": "G5",
+            "stem": "The diagram below shows an indoor adventure park in the shape of a trapezoidal prism with a square base ABCD. The indoor adventure park is positioned on horizontal ground and the walls ADHE and BCGF are slanted. The top of the prism, EFGH, is the ceiling of the adventure park which is also horizontal. EFGH is a square and the centre of EFGH lies vertically above the centre of ABCD. $AB=120$ m, $AE=BF=CG=DH=10$ m and $\\angle ABF=60^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "3D diagram of a trapezoidal prism. Base ABCD is square. Top EFGH is square. Sides AE, BF, CG, DH are 10m slanted edges. Angle ABF is 60 degrees.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the area of ABFE.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The owner of the indoor park wants to build a flying fox feature from point H to point B. The angle of depression from point H to point B must not exceed $5^{\\circ}$, in order to meet the safety requirements. Explain, with mathematical working, whether the flying fox feature can be built.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Trapezoidal Prism Geometry"
+        },
+        {
+            "questionNumber": 26,
+            "questionId": "G7-cchms-2024-p1-q26",
+            "topicID": "G7",
+            "stem": "In the diagram below, PQRST is a trapezium made up of a parallelogram PQRS and an isosceles triangle PST where $PT=PS$. It is given that $\\vec{RS}=\\mathbf{a}$, $\\vec{RQ}=\\mathbf{b}$ and $SR=ST$.",
+            "hasDiagram": true,
+            "diagramDescription": "Trapezium PQRST composed of parallelogram PQRS on the right and triangle PST on the left. PT = PS. Vector RS is a, vector RQ is b.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that $\\vec{QS}=\\vec{PT}$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Hence or otherwise, prove that the trapezium is made up of three isosceles triangles PST.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Vector Proofs in Trapezium"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "G5-cchms-2024-p2-q3",
+            "topicID": "G5",
+            "stem": "The diagram shows two open containers, a right cylinder and an inverted frustum. The right cylinder has a base radius of 10 cm and a height of 20 cm. The frustum is formed by cutting a smaller cone off the bottom of a larger cone. The smaller cone that was cut off has a height of 4 cm. The larger cone has a base radius of 15 cm and a height of 12 cm. Three identical spherical marbles, each of radius 3 cm, are placed into the cylindrical container and water is poured in to a depth of $h$ cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Diagram showing a cylinder with 3 marbles and water, labeled with radius 10cm and height 20cm. Next to it is an inverted frustum (truncated cone) labeled with top radius 15cm, total height 12cm, and the missing tip height 4cm.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the volume of each marble, leaving your answer in terms of $\\pi$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the volume of the frustum, leaving your answer in terms of $\\pi$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "All the water from the cylinder, without the marbles, is then poured into the empty frustum, filling it completely without any overflow. Find the value of $h$, correct to two decimal places.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The exterior surface area of each container is painted. Find the total area painted.",
+                    "marks": 6,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 13,
+            "paper": "Paper 2",
+            "title": "Cylinder and Frustum Volumes"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "S1-cchms-2024-p2-q4",
+            "topicID": "S1",
+            "stem": "(a) 12 students from class A took a Mathematics test. The table below shows the test marks of the students. However, two of the students' marks are covered with ink.\n\n| | | | | |\n| :--- | :--- | :--- | :--- | :--- |\n| 40 | 95 | 84 | 47 | 63 |\n| 52 | 63 | 55 | 52 | 61 |",
+            "hasDiagram": true,
+            "diagramDescription": "A box-and-whisker plot for Mathematics Test Marks. Range appears to be from 40 to 95. Q1, Median, Q3 boxes are shown.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Given that the box-and-whisker plot below shows the distribution of the results, explain why the information may not be sufficient to find the missing marks of the two students.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Given further that the modal mark is 63, find the two missing marks.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "12 students from class B also took the same Mathematics test. The distribution of their test marks is shown on the cumulative frequency graph. Make a comment comparing the averages and a comment comparing the distribution of the Mathematics Test marks between the two classes. Use figures to support your answers.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Alice rolled a six-sided die, X, 100 times. Bala rolled another six-sided die, Y, 80 times. The number of times they each obtained a '6' is recorded in the table.\n\n| Die | Number of rolls | Number of times '6' is obtained |\n| :--- | :--- | :--- |\n| X | 100 | 16 |\n| Y | 80 | 18 |\n\n(i) Find the probability of rolling a '6' by Alice and Bala respectively.\n(ii) One of the dice is biased. Using your answers in (b)(i) determine which die, X or Y, is likely to be the unbiased 6-sided die. Explain your answer.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Test Scores and Dice Probabilities"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "G3-cchms-2024-p2-q6",
+            "topicID": "G3",
+            "stem": "A, B, C and D are points on the circle with centre O and radius 5 cm. AE is a tangent to the circle at A and OE is a straight line that passes through C. Angle $OEA=28^{\\circ}$ and $CD=5$ cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with centre O. Tangent AE meets circle at A. Line O-C-E intersects circle at C. Points A, B, C, D are on circle. CD is a chord. Shaded region is bounded by arc CD, line CE, and line AE.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find, giving a reason for each step of your working,\n(i) angle OAD,\n(ii) angle ABC.",
+                    "marks": 5,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the area of the shaded region.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Circle Properties and Tangents"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "N5-cchms-2024-p2-q8",
+            "topicID": "N5",
+            "stem": "(a) The figure shows the first three figures of a sequence formed by sticks of the same size.\n\n| Figure Number | Number of Squares |\n| :--- | :--- |\n| 1 | $(1+1)^{2}-1$ |\n| 2 | $(2+1)^{2}-1$ |\n| 3 | $(3+1)^{2}-1$ |",
+            "hasDiagram": true,
+            "diagramDescription": "Sequence of shapes made of sticks forming squares. Figure 1 has 3 squares. Figure 2 has 8 squares. Figure 3 has 15 squares. The pattern is a large square of size (n+1)x(n+1) with one corner square removed.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "(i) Find the number of small squares formed in Figure 5.\n(ii) Find, in terms of n, an expression for the number of squares in Figure n.\n(iii) Explain why the sum of the number of squares in two consecutive figures is always odd.",
+                    "marks": 4,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "The table below shows the $n^{th}$ terms of 4 sequences.\n\n| Sequence number | $n^{th}$ term |\n| :--- | :--- |\n| 1 | $4n+3$ |\n| 2 | $7n+1$ |\n| 3 | $14n$ |\n| 4 | $8n-1$ |\n\nFor each sequence, are the numbers in the sequence always multiples of 7, sometimes multiples of 7 or never multiples of 7? Write down the letter 'A', 'S' or 'N' to represent your answer.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 2",
+            "title": "Square Patterns and Sequences"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N3-cchms-2024-p2-q9",
+            "topicID": "N3",
+            "stem": "Sam is a 40-year-old man who earns a gross salary of $8000 a month. He is a Singaporean and an employee of a Singapore firm. Sam is required to put a certain percentage of his monthly gross salary into his Central Provident Fund (CPF) account.",
+            "hasDiagram": true,
+            "diagramDescription": "Two tables and a line graph. First table shows CPF Contribution Rates by age group. Second table shows Sam's monthly expenditure breakdown. The line graph shows Yearly Interest Rate of 5-year term Deposit from 2020 to 2024, fluctuating between 3% and 4.3%.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the amount of money Sam's employer must contribute to his CPF monthly.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Sam wants to plan his monthly savings and has tabulated his monthly expenditure as shown in the table. He hopes to save at least 20% of his salary each month after CPF deductions. Determine whether Sam is able to achieve his saving goals by clearly showing your calculations.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "After a year of saving, Sam decides to invest $15 000 of his savings for a period of 5 years. He comes up with 2 investment plans.\n\nPlan A: Sam can invest his money in a 5-year savings bond at the beginning of 2025. The interest rate for the 5-year term is shown in the table. The savings bond compounds annually.\n\nPlan B: Sam can invest his money at the beginning of 2025 into an insurance company's fixed deposit account for a period of 5 years, compounded yearly. The interest rate is fixed over the duration of the investment and is determined by the year of issuance. The interest rate for 2025 is not yet available. Sam finds the information about the interest rates offered by the insurance company for the last 5 years (shown in graph).\n\nDetermine which plan Sam should choose. Justify the decision you make and show your calculations clearly.",
+                    "marks": 5,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "CPF and Investment Planning"
+        },
+        {
+            "questionNumber": 10,
+            "questionId": "G3-canberra-2024-p1-q10",
+            "topicID": "G3",
+            "stem": "In the diagram, O is the centre of the circle and ABCD is a cyclic quadrilateral. Angle AOB = angle $ADC=70^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with center O. Points A, B, C, D on circumference. Central angle AOB is 70 degrees. Angle ADC is 70 degrees. Triangle ABC is drawn.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Explain why triangle ABC is an isosceles triangle. Give reasons for each step of your working.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Cyclic Quadrilateral Proof"
+        },
+        {
+            "questionNumber": 14,
+            "questionId": "G4-canberra-2024-p1-q14",
+            "topicID": "G4",
+            "stem": "In the diagram, there are two right-angled triangles $\\Delta ABD$ and $\\Delta CEB$ such that $AD=12$ cm, $BD=15$ cm and $BE=20$ cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Two right angled triangles. Triangle ABD with angle A = 90 deg. Triangle BCE with angle C = 90 deg. They are joined at B. Line DBE is a straight line.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find $\\cos \\angle ABD$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "If $\\Delta ABD$ and $\\Delta CEB$ are similar, find the length of BC.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Right-Angled Triangles Similarity"
+        },
+        {
+            "questionNumber": 19,
+            "questionId": "G6-canberra-2024-p1-q19",
+            "topicID": "G6",
+            "stem": "The coordinates of P and Q are (0, 3) and (15, 12) respectively.",
+            "hasDiagram": true,
+            "diagramDescription": "Coordinate axes with points P(0,3) on y-axis and Q(15,12) in first quadrant. Line segment PQ is drawn.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the equation of PQ.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the perimeter of trapezium OPQR, where O is the origin and R is the point of reflection of Q along the x-axis.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Coordinate Geometry Trapezium"
+        },
+        {
+            "questionNumber": 20,
+            "questionId": "S1-canberra-2024-p1-q20",
+            "topicID": "S1",
+            "stem": "The line chart below shows the sales performance of a company.",
+            "hasDiagram": true,
+            "diagramDescription": "Line graph showing sales from Jan to Jun. Y-axis starts at 95 and goes to 130. The line shows a steady increase from 100 in Jan to 125 in Jun.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Explain what is misleading about this line chart and how it may mislead the reader.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Misleading Line Chart"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "G5-canberra-2024-p1-q22",
+            "topicID": "G5",
+            "stem": "A logo, as shown below, has a circle with centre O and radius 2 cm, an equilateral triangle ABC of side 5 cm and an isosceles triangle ODF with $OD=OF$. DEF is a tangent to the circle at E and angle $DOF=2.4$ radians. Half of the circle lies inside triangle ABC.",
+            "hasDiagram": true,
+            "diagramDescription": "A composite shape. Equilateral triangle ABC is at the top. A circle with center O is partially inside ABC. An isosceles triangle ODF is at the bottom, intersecting the bottom half of the circle. DEF is a horizontal tangent line at the bottom of the circle.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the area of the shaded region.",
+                    "marks": 5,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Composite Logo Area"
+        },
+        {
+            "questionNumber": 23,
+            "questionId": "N4-canberra-2024-p1-q23",
+            "topicID": "N4",
+            "stem": "The diagram below shows the speed-time graph of a car which starts from rest.",
+            "hasDiagram": true,
+            "diagramDescription": "Speed-time graph. Starts at (0,0), goes to (15, 20), then to (40, u), then down to (60, 0).",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate the speed of the car after 9 seconds.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "Find the value of $u$, if the total distance covered in the first 40 seconds is 900 m.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Hence find the deceleration of the car at the last 20s.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 5,
+            "paper": "Paper 1",
+            "title": "Speed-Time Graph Calculations"
+        },
+        {
+            "questionNumber": 25,
+            "questionId": "G4-canberra-2024-p1-q25",
+            "topicID": "G4",
+            "stem": "In the diagram, a wooden ramp is shown where $\\angle BCF=90^{\\circ}$ and $\\angle CBF=35^{\\circ}$. ABCD, CDEF and ABFE are rectangles. $AB=40$ cm and $BC=75$ cm.",
+            "hasDiagram": true,
+            "diagramDescription": "3D wedge/ramp shape. Base ABCD. Vertical face BCF (triangle). Slanted face ABFE.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find $\\angle FAC$.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 3,
+            "paper": "Paper 1",
+            "title": "Angle in 3D Ramp"
+        },
+        {
+            "questionNumber": 26,
+            "questionId": "G5-canberra-2024-p1-q26",
+            "topicID": "G5",
+            "stem": "A conical container with a diameter of 10 cm and a height of 8 cm is filled with water to a depth of 4 cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Inverted cone. Top diameter 10, height 8. Water level at height 4 from bottom.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that the volume of the water in the container is $\\frac{25}{3}\\pi~cm^{3}$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the surface area of the inside of the container that is in contact with the water.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "The water in the cone is poured into a test tube. The test tube is made by joining together a cylinder of diameter 3 cm and a hemisphere of diameter 3 cm. Calculate the height of the water in the test tube.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Cone and Test Tube Volume"
+        },
+        {
+            "questionNumber": 2,
+            "questionId": "S1-canberra-2024-p2-q2",
+            "topicID": "S1",
+            "stem": "(a) The heights, in centimeters, of 100 plants of each of species A and species B are recorded. The cumulative frequency curves show the distributions of their heights.",
+            "hasDiagram": true,
+            "diagramDescription": "Cumulative frequency graph for Species A and Species B. X-axis Heights 20-65. Y-axis Cumulative Frequency 0-100.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Use the curve to estimate (a) the median height for species B, (b) the $40^{th}$ percentile for species A, (c) the interquartile range for species A.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Plants from species B are used for an event. Only plants with height within 10% of 50 cm are used. Find the percentage of plants from species B which are used.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "A box has 20 pots of plants. There are 5 pink pots, 9 blue pots and the remaining pots are green.\n(i) Two pots are taken from the box at random, without replacement. Find, as a fraction in its simplest form, the probability that one pot is pink and the other is blue.\n(ii) These two pots are returned to the box. Three pots are taken from the box at random, without replacement. Find, as a fraction in its simplest form, the probability that only one pot is green.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Cumulative Frequency and Probability"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "G3-canberra-2024-p2-q4",
+            "topicID": "G3",
+            "stem": "A, B, C and D are points on a circle. Line PCQ is a tangent to the circle. Line QE bisects angle AEC and is parallel to line CD.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with points A, B, C, D. Tangent line PCQ at C. Line QE bisects angle AEC inside the circle.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that $EC=ED$. Give a reason for each statement you make.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Show that triangle AEF is similar to triangle QCF. Give a reason for each statement you make.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Diameter $AD=28$ cm and angle QCF $=61^{\\circ}$. Calculate the area of segment CD.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 8,
+            "paper": "Paper 2",
+            "title": "Circle Geometry and Area"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "G4-canberra-2024-p2-q5",
+            "topicID": "G4",
+            "stem": "A, B, C and D are points on horizontal ground. $AB=35$ m and $BC=68$ m. The bearing of B from A is $137^{\\circ}$ and the bearing of C from B is $192^{\\circ}$. Angle $ABD=85^{\\circ}$ and angle $BCD=70^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Geometric diagram showing points A, B, C, D on a plane. North lines are drawn at A and B. Triangles ABC and DBC are formed.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Show that angle $ABC=125^{\\circ}$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate AC.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Calculate DC.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "A man travels in a straight line from D to C. X is the position of the man where it is the shortest distance from B during this journey. Show that $BX=63.9$ m.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "A drone is hovering vertically above B. The angle of elevation of the drone from C is $40.5^{\\circ}$. Calculate the greatest angle of elevation of the drone from a point on DC.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 12,
+            "paper": "Paper 2",
+            "title": "Bearings and 3D Elevation"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "G7-canberra-2024-p2-q6",
+            "topicID": "G7",
+            "stem": "In the diagram ABCD is a parallelogram. The diagonal AC and BD intersect at E. F is a point on AD such that $\\frac{AF}{AD}=\\frac{1}{3}$. G is the mid-point of AE. $\\vec{AF}=2p$ and $\\vec{AB}=6p+4q$.",
+            "hasDiagram": true,
+            "diagramDescription": "Parallelogram ABCD with diagonals intersecting at E. Point F on AD. Point G on AC. Vectors labelled.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Express $\\vec{DE}$ in terms of p and q, as simply as possible.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Express $\\vec{AG}$ in terms of p and q, as simply as possible.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Show that $\\vec{BG}=-3p-3q$.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Explain why B, G and F lie on a straight line.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "Calculate the ratio of the area of triangle ABF to the area of parallelogram ABCD.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Vectors in Parallelogram"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "N1-canberra-2024-p2-q9",
+            "topicID": "N1",
+            "stem": "Jim, his wife and their child visited Hokkaido, Japan. The tables below give information that can be used to work out some of their expenses.\n\n**Prices of flight tickets for a return trip**\n| Payment mode | Cash (Includes tax) | | Redemption with miles (Excludes tax of $115 per pax) | |\n| :--- | :--- | :--- | :--- | :--- |\n| Class | Business | Economy | Business | Economy |\n| Adult | $5500 | $1920 | 140 000 miles | 90 000 miles |\n| Child | $4000 | $1350 | | |\n\n**Amount of fuel used (litres/100 km)**\n| Type of car | Type of driving | | |\n| :--- | :--- | :--- | :--- |\n| | Sport Utility Vehicle (SUV) | Sedan car | Mini van |\n| City | 9.3 | 7.8 | 10.8 |\n| Out of city | 7.5 | 5.7 | 8.9 |\n| Combined | 8.8 | 6.2 | 9.5 |\n\n**Daily rates of driver**\n| Day(s) of hire | 8 hours | Additional time |\n| :--- | :--- | :--- |\n| 1 | $350 | $45 per hour |\n| 2 or more | $300 | $40 per hour |",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "They travelled in business class and Jim had 150 000 miles to offset some of the cost of their flight tickets. Calculate the amount of money he paid for the tickets.",
+                    "marks": 2,
+                    "answerType": "numerical",
+                    "solution": {
+                        "finalAnswer": "$9615",
+                        "stepByStep": [
+                            {
+                                "step": 1,
+                                "explanation": "Determine how the miles are used.",
+                                "working": "Jim has 150,000 miles. A Business class redemption requires 140,000 miles. He can redeem 1 ticket (for himself).",
+                                "reasoning": "He has enough for 1 adult ticket but not enough for more."
+                            },
+                            {
+                                "step": 2,
+                                "explanation": "Calculate cost for Jim (Redemption).",
+                                "working": "Tax only = $115.",
+                                "reasoning": "Redemption excludes tax, so tax must be paid in cash."
+                            },
+                            {
+                                "step": 3,
+                                "explanation": "Calculate cost for Wife and Child (Cash).",
+                                "working": "Wife (Adult Business) = $5500.\nChild (Business) = $4000.",
+                                "reasoning": "Remaining family members must pay full cash price."
+                            },
+                            {
+                                "step": 4,
+                                "explanation": "Sum the total cost.",
+                                "working": "$115 + 5500 + 4000 = 9615$",
+                                "reasoning": "Add all cash components."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Jim engaged a driver for 10 hours and his family travelled in a SUV for one day during their trip. The driver picked them from their accommodation in the city to attractions outside the city. The driver drove the first stage of the journey at an average speed of $70~km/h$. The second stage of the journey is 32 km longer than the first stage. The driver drove at an average speed of $80~km/h$. The journey takes a total of 4 hours and 9 minutes. Fuel price for the vehicle was $1.70 per litre. Jim paid $550 to the driver. He thinks that he included a 20% tips in the amount paid to the driver. Is he correct? Justify your decision with calculations.",
+                    "marks": 8,
+                    "answerType": "proof",
+                    "solution": {
+                        "finalAnswer": "No, Jim is incorrect. The tip was approximately 13%.",
+                        "stepByStep": [
+                            {
+                                "step": 1,
+                                "explanation": "Set up the equation for distance ($d_1$) of the first stage.",
+                                "working": "Let $d_1$ be the distance of stage 1.\nStage 2 distance = $d_1 + 32$.\nTotal time = 4h 9m = $4 \\frac{9}{60} = 4.15$ hours.\nTime = $\\frac{\\text{Distance}}{\\text{Speed}}$\n$\\frac{d_1}{70} + \\frac{d_1 + 32}{80} = 4.15$",
+                                "reasoning": "Total time is the sum of time taken for both stages."
+                            },
+                            {
+                                "step": 2,
+                                "explanation": "Solve for $d_1$.",
+                                "working": "Multiply by 560 (LCM of 70, 80):\n$8d_1 + 7(d_1 + 32) = 4.15 \\times 560$\n$8d_1 + 7d_1 + 224 = 2324$\n$15d_1 = 2100$\n$d_1 = 140$ km.",
+                                "reasoning": "Algebraic simplification."
+                            },
+                            {
+                                "step": 3,
+                                "explanation": "Calculate total distance travelled.",
+                                "working": "Total Distance = $d_1 + (d_1 + 32) = 140 + 172 = 312$ km.",
+                                "reasoning": "Sum of both stages."
+                            },
+                            {
+                                "step": 4,
+                                "explanation": "Calculate fuel cost.",
+                                "working": "Using 'Combined' rate for SUV (standard for mixed driving): 8.8 L / 100 km.\nFuel used = $\\frac{312}{100} \\times 8.8 = 27.456$ Litres.\nCost = $27.456 \\times 1.70 \\approx 46.68$.",
+                                "reasoning": "Fuel cost = Litres used $\\times$ Price per litre."
+                            },
+                            {
+                                "step": 5,
+                                "explanation": "Calculate Driver Hire cost.",
+                                "working": "Duration: 10 hours (1 day).\nBase (8h) = $350.\nOvertime (2h) = $2 \\times 45 = 90$.\nTotal Hire = $350 + 90 = 440$.",
+                                "reasoning": "Refer to 'Daily rates of driver' table for 1 day."
+                            },
+                            {
+                                "step": 6,
+                                "explanation": "Calculate total base cost and verify tip percentage.",
+                                "working": "Total Base Cost = Hire + Fuel = $440 + 46.68 = 486.68$.\nAmount Paid = $550.\nTip Amount = $550 - 486.68 = 63.32$.\nTip Percentage = $\\frac{63.32}{486.68} \\times 100 \\approx 13.0\\%$.",
+                                "reasoning": "Tip is the amount paid over the base cost."
+                            },
+                            {
+                                "step": 7,
+                                "explanation": "Conclusion.",
+                                "working": "13% < 20%. Therefore, Jim is incorrect.",
+                                "reasoning": "Compare calculated percentage with Jim's claim."
+                            }
+                        ]
+                    }
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Travel Expenses Problem"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "S1-greenridge-2024-p1-q3",
+            "topicID": "S1",
+            "stem": "School students were surveyed on their favourite brand of drink. The results are represented in the pie chart below.",
+            "hasDiagram": true,
+            "diagramDescription": "Pie chart showing percentages for four brands: Brand A 41%, Brand B 9%, Brand C 39%, Brand D 21%.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "State one error in the pie chart above.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "State one way to correct the error stated in part (a).",
+                    "marks": 1,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 2,
+            "paper": "Paper 1",
+            "title": "Pie Chart Analysis"
+        },
+        {
+            "questionNumber": 16,
+            "questionId": "G3-greenridge-2024-p1-q16",
+            "topicID": "G3",
+            "stem": "The figure below shows a circle with centre O. Points A, B and C lie on the circle. Angle $ABC=100^{\\circ}$.",
+            "hasDiagram": true,
+            "diagramDescription": "Circle with centre O. Chord AC. Point B on major arc? No, angle ABC is 100 degrees, which is obtuse, so B must be on the minor arc relative to AC if AC is not diameter. However, O is centre. Triangle AOC and triangle ABC drawn. B is on the circumference. Reflex angle AOC corresponds to angle ABC.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find angle OAC, giving reasons for each step of your working.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Circle Angle Calculation"
+        },
+        {
+            "questionNumber": 22,
+            "questionId": "G4-greenridge-2024-p1-q22",
+            "topicID": "G4",
+            "stem": "A, B and C are three points on horizontal ground. The bearing of A from B is $040^{\\circ}$. Angle ABC = $65^{\\circ}$ is NOT explicitly stated but a North arrow at B is shown, line BA is drawn, and angle between North and BA is marked. Wait, diagram shows angle at A is 65 degrees. Text says bearing of A from B is 040.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABC. North line at B. Line BA makes 40 degrees with North. Angle at A is 65 degrees. Line BC extends to the right.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the bearing of B from A.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the bearing of C from A.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Bearings"
+        },
+        {
+            "questionNumber": 24,
+            "questionId": "G6-greenridge-2024-p1-q24",
+            "topicID": "G6",
+            "stem": "The triangle with vertices A (2, 5), $B(-2,-3)$ and $C(2,-2)$ is shown in the diagram below.",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle ABC drawn on Cartesian plane.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Find the area of triangle ABC.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the coordinates of point D such that ABCD is a parallelogram.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Find the area of parallelogram ABCD.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Find angle BAC.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "Find the gradient of line AC.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "f",
+                    "questionText": "Find the cosine value of angle BCA in terms of p, where $p=BC.$",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                }
+            ],
+            "totalMarks": 6,
+            "paper": "Paper 1",
+            "title": "Coordinate Geometry Triangle"
+        },
+        {
+            "questionNumber": 3,
+            "questionId": "N8-greenridge-2024-p2-q3",
+            "topicID": "N8",
+            "stem": "$\\xi=$ {x: x is an integer, $2\\le x\\le14\\}$\n$A=$ {x: x is a prime number}\n$B=$ {x: x is a multiple of 3}",
+            "hasDiagram": true,
+            "diagramDescription": "Also contains a cone diagram for part b.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "List the elements in $(A\\cup B)^{\\prime}$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "List the elements in $A\\cap B$.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "Given that $C\\subset A$, $n(C)=3$ and $B\\cap C=\\emptyset$, list the elements of a possible set C.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "The diagram shows a cone P of height 24 cm. The volume of the liquid in the cone is half the volume of the cone. Calculate the depth, d cm, of the liquid.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "The volume of cone P is v $cm^{3}$. Cone T has radius which is double that of the cone P and its height is one-third that of the cone P. Express the volume of cone T in terms of v.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "A, B and C are points on the circumference of a circle. Angle $CAB=$ angle CBA. DA and DB are tangents to the circle from the point D. Prove that triangle ACD and triangle BCD are congruent.",
+                    "marks": 3,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Sets and Cone Volume"
+        },
+        {
+            "questionNumber": 4,
+            "questionId": "G3-greenridge-2024-p2-q4",
+            "topicID": "G3",
+            "stem": "The diagram shows the cross section of a cylinder, centre O, radius r, lying on its side. The cylinder contains water to a depth of 18 cm. The width, AB, of the surface of the water is 24 cm.",
+            "hasDiagram": true,
+            "diagramDescription": "Cross section of a cylinder with water. Centre O. Chord AB is water surface. Depth of water is 18cm. Vertical radius perpendicular to AB.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Use algebraic method to show that $r=13$ cm.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Show that angle AOB is $134.76^{\\circ}$ correct to 2 decimal places.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Hence calculate the area of the shaded segment.",
+                    "marks": 4,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "The length of the cylinder is 40 cm. The cylinder is turned so that it stands on one of its circular ends. In this position, the depth of the water is h cm. Find the value of h.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Circle Segment and Cylinder"
+        },
+        {
+            "questionNumber": 5,
+            "questionId": "G6-greenridge-2024-p2-q5",
+            "topicID": "G6",
+            "stem": "(a) A is the point (2,3) and B is the point (3,-5).",
+            "hasDiagram": true,
+            "diagramDescription": "Diagram for part b showing parallelogram OABC. Vector OA=2a, Vector OC=3c. T on OB. M on BC.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Find the equation of the line AB.",
+                    "marks": 2,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Find the length of AB.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "$\\vec{BC}=\\begin{pmatrix}-4\\\\ 3\\end{pmatrix}.$ Find the coordinates of point C.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b_i",
+                    "questionText": "OABC is a parallelogram. $\\vec{OA}=2a$ and $\\vec{OC}=3c$. M is the midpoint of BC. T is the point on OB such that OT: $TB=2:1$. Find $\\vec{OB}$ in terms of a and c.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_ii",
+                    "questionText": "Find $\\vec{OT}$ in terms of a and c.",
+                    "marks": 1,
+                    "answerType": "algebraic"
+                },
+                {
+                    "partId": "b_iii",
+                    "questionText": "Determine if the points A, T and M lie on a straight line.",
+                    "marks": 2,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Coordinate Geometry and Vectors"
+        },
+        {
+            "questionNumber": 6,
+            "questionId": "G4-greenridge-2024-p2-q6",
+            "topicID": "G4",
+            "stem": "The diagram shows three points, $A$, B and L on a horizontal field. $AL=37.5~m$, $AB=60$ m and angle $LAB=63^{\\circ}$",
+            "hasDiagram": true,
+            "diagramDescription": "Triangle LAB. AL=37.5m, AB=60m, Angle LAB=63 degrees.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Calculate LB.",
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Calculate angle LBA.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "T is top of a vertical tree at L. The angle of elevation of the top of the tree seen from A is $10^{\\circ}$. Find the height of the tree.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "A bird is hovering at a height of 3 m above the field. It spots a prey on the ground at angle of depression of $60^{\\circ}.$ Calculate the distance that the bird must fly to catch its prey.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 9,
+            "paper": "Paper 2",
+            "title": "Trigonometry Problems"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "S1-greenridge-2024-p2-q8",
+            "topicID": "S1",
+            "stem": "(a) The cumulative frequency graph shows the distribution of times of the first 120 runners to finish a marathon in 2022. This box-and-whisker plot represents the distribution of the times of the first 120 runners to finish the marathon in 2023.",
+            "hasDiagram": true,
+            "diagramDescription": "Cumulative frequency graph for 2022. Box plot for 2023.",
+            "parts": [
+                {
+                    "partId": "a_i",
+                    "questionText": "Use the two diagrams to complete this table for the two marathons.",
+                    "table": {
+                        "type": "data",
+                        "headers": [
+                            "Year",
+                            "Lower quartile",
+                            "Median",
+                            "Upper quartile",
+                            "Interquartile range"
+                        ],
+                        "rows": [
+                            [
+                                "2022",
+                                "",
+                                154.5,
+                                "",
+                                ""
+                            ],
+                            [
+                                "2023",
+                                145,
+                                "",
+                                155,
+                                10
+                            ]
+                        ]
+                    },
+                    "marks": 3,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "a_ii",
+                    "questionText": "Simon says that the runners in 2022 were quicker on average. Do you agree? Give a reason for your answer.",
+                    "marks": 1,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "a_iii",
+                    "questionText": "Complete the frequency table below for the runners in 2023.",
+                    "table": {
+                        "type": "data",
+                        "headers": [
+                            "Time (minutes)",
+                            "Frequency"
+                        ],
+                        "rows": [
+                            [
+                                "$135<t\\le140$",
+                                4
+                            ],
+                            [
+                                "$140<t\\le145$",
+                                ""
+                            ],
+                            [
+                                "$145<t\\le150$",
+                                32
+                            ],
+                            [
+                                "$150<t\\le155$",
+                                28
+                            ],
+                            [
+                                "$155<t\\le160$",
+                                ""
+                            ],
+                            [
+                                "$160<t\\le165$",
+                                9
+                            ]
+                        ]
+                    },
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "In a game two dice are used. Die A has 2 blue faces and 4 yellow faces. Die B has 4 blue faces and 2 pink faces. The two dice are thrown together.\n(i) Find the probability that (a) both dice show a blue face on top, (b) just one die shows a blue face on top.\n(ii) If both dice show blue, the player wins a prize. If just one show blue, the player throws both dice again. He also wins a prize if both show blue on the second throw. Calculate the probability that the player wins a prize on either the first throw or second throw.",
+                    "marks": 5,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 11,
+            "paper": "Paper 2",
+            "title": "Marathon Statistics and Probability"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "S1-greenridge-2024-p2-q9",
+            "topicID": "S1",
+            "stem": "Electricity tariffs are regulated by the Energy Market Authority (EMA) of Singapore and revised quarterly to reflect the actual cost of electricity. The cost of electricity per kilowatt(kWh) is known as the electricity tariff rate, which is revised every quarter by SP power.",
+            "hasDiagram": true,
+            "diagramDescription": "Bar chart of Quarterly Household Electricity Tariff from Jul-Sep 22 to Jan-Mar 24. Values fluctuate around 30 cents/kWh. Also a solar panel diagram.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Mr Faizal's average electricity consumption in January to March 2024 is shown in the table: Jan 24: 727, Feb 24: 682, Mar 24: 769. Show that Mr Faizal paid $217 on average per month for his family consumption from January to March 2024.",
+                    "marks": 2,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Mr Faizal stays in a terrace house in the east of Singapore. He is considering installing solar panel at his home. He did some research and gets a quotation from a company that installs solar panel. Based on his house type, he is recommended to use the 60-cells solar panel (dimensions roughly 1.0m x 1.65m). Dimensions of roof area for installation: 9m x 4m. Calculate the maximum number of solar panels that can be installed on the roof of Mr Faizal's house.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Using your answer in (a) and (b), determine if Mr Faizal should proceed with the installation of solar panel. Justify your answer and show your calculations clearly. State one assumption you have used.\n\nInformation for installation of solar panels:\nCost of installing every 10 solar panels: $5950\nAverage amount of electricity produced by 1 solar panel: 19 kWh per month\nMaintenance fee per year: $500\nLifespan of solar panels: 20 years",
+                    "marks": 6,
+                    "answerType": "proof"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Electricity and Solar Panel"
+        }
+    ]
+}

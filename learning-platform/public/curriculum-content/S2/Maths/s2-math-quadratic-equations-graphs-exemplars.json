@@ -1,0 +1,1325 @@
+{
+  "quadratic-equations-node-1": {
+    "nodeId": "quadratic-equations-node-1",
+    "title": "Recognizing Quadratic Equations",
+    "section": "quadratic-definition",
+    "learningFocus": [
+      "Define quadratic equation as ax\u00b2 + bx + c = 0 where a \u2260 0",
+      "Identify the three coefficients: a (quadratic), b (linear), c (constant)",
+      "Distinguish quadratic from linear and cubic equations"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Multiple choice identification",
+        "mathTool": null,
+        "rationale": "Tests basic recognition of quadratic form",
+        "problemText": "Which of the following equations is a quadratic equation? Explain why.\n\nA) 3x + 5 = 0\nB) 2x\u00b2 - 7x + 3 = 0\nC) x\u00b3 + 2x\u00b2 - 1 = 0\nD) 5 = 0",
+        "correctAnswer": "B) 2x\u00b2 - 7x + 3 = 0 is the quadratic equation because it has the form ax\u00b2 + bx + c = 0 where a \u2260 0. Here a = 2, b = -7, c = 3."
+      },
+      {
+        "context": "Coefficient identification",
+        "mathTool": null,
+        "rationale": "Reinforces understanding of standard form structure",
+        "problemText": "Identify the values of a, b, and c in the quadratic equation: 5x\u00b2 - 3x + 8 = 0",
+        "correctAnswer": "a = 5, b = -3, c = 8"
+      }
+    ],
+    "variationRules": {
+      "equations": [
+        "Simple: x\u00b2 + 5x + 6 = 0",
+        "Negative a: -2x\u00b2 + 3x - 1 = 0",
+        "Missing b: 3x\u00b2 - 12 = 0 (b = 0)",
+        "Missing c: x\u00b2 - 4x = 0 (c = 0)",
+        "Coefficient 1: x\u00b2 + x + 1 = 0",
+        "Large coefficients: 10x\u00b2 - 25x + 15 = 0",
+        "Fractional: \u00bdx\u00b2 + 2x - 3 = 0"
+      ],
+      "distractors": [
+        "Linear: 3x + 5 = 0",
+        "Cubic: x\u00b3 + 2x\u00b2 - 1 = 0",
+        "Quartic: x\u2074 - 16 = 0",
+        "Constant: 5 = 0",
+        "Not equation: x\u00b2 + 3x + 2"
+      ],
+      "contextVariations": [
+        "Multiple choice identification",
+        "True/false statements",
+        "Direct coefficient identification",
+        "Distinguishing from other equation types"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision: OMIT - No visualization needed for definition recognition",
+      "Focus on recognition, not solving",
+      "Include special cases: b = 0 or c = 0, but never a = 0",
+      "Use mix of positive and negative coefficients",
+      "Include distractors (linear, cubic) in multiple choice",
+      "Ensure students understand a \u2260 0 is critical"
+    ]
+  },
+  "quadratic-equations-node-2": {
+    "nodeId": "quadratic-equations-node-2",
+    "title": "Writing Quadratics in Standard Form",
+    "section": "standard-form-rearrangement",
+    "learningFocus": [
+      "Rearrange equations to ax\u00b2 + bx + c = 0 form",
+      "Move all terms to one side (making RHS = 0)",
+      "Combine like terms and handle sign changes correctly"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Simple rearrangement",
+        "mathTool": null,
+        "rationale": "Basic practice moving terms to LHS",
+        "problemText": "Rearrange the equation x\u00b2 + 3x = 10 into standard form ax\u00b2 + bx + c = 0.",
+        "correctAnswer": "x\u00b2 + 3x - 10 = 0"
+      },
+      {
+        "context": "Terms on both sides",
+        "mathTool": null,
+        "rationale": "Requires moving multiple terms with sign changes",
+        "problemText": "Write 2x\u00b2 = 5x + 12 in standard form.",
+        "correctAnswer": "2x\u00b2 - 5x - 12 = 0"
+      }
+    ],
+    "variationRules": {
+      "equations": [
+        "One term to move: x\u00b2 + 5x = 6",
+        "Multiple terms: 2x\u00b2 = 3x + 5",
+        "Negative leading: -x\u00b2 + 4x = 3",
+        "With expansion: x(x - 2) = 8",
+        "Like terms: x\u00b2 + 2x + x\u00b2 = 3x + 10",
+        "Fractions: \u00bdx\u00b2 = 3x - 2",
+        "Both sides populated: 2x\u00b2 + 3x = x + 10"
+      ],
+      "coefficientRanges": {
+        "a": [
+          -5,
+          -4,
+          -3,
+          -2,
+          -1,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "b": [
+          -10,
+          -8,
+          -5,
+          -3,
+          -1,
+          0,
+          1,
+          3,
+          5,
+          8,
+          10
+        ],
+        "c": [
+          -15,
+          -10,
+          -6,
+          -3,
+          0,
+          3,
+          6,
+          10,
+          15
+        ]
+      },
+      "contextVariations": [
+        "Simple rearrangement",
+        "Terms on both sides",
+        "Requires bracket expansion first",
+        "Requires combining like terms"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision: OMIT - Algebraic manipulation, no visualization needed",
+      "Emphasize correct sign handling when moving terms",
+      "Include equations requiring bracket expansion: x(x - 2) = 8 \u2192 x\u00b2 - 2x - 8 = 0",
+      "Watch for like terms that need combining: x\u00b2 + 2x + x\u00b2 = 3x + 10 \u2192 2x\u00b2 - x - 10 = 0",
+      "Final form should have all terms on LHS, 0 on RHS",
+      "Difficulty progression: simple \u2192 both sides \u2192 expansion \u2192 like terms"
+    ]
+  },
+  "quadratic-equations-node-3": {
+    "nodeId": "quadratic-equations-node-3",
+    "title": "Solving x\u00b2 = k",
+    "section": "solving-pure-quadratic",
+    "learningFocus": [
+      "Solve equations of form x\u00b2 = k by taking square roots",
+      "Understand why there are two solutions: x = \u00b1\u221ak",
+      "Recognize when k < 0 means no real solution"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Perfect square",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": 0,
+            "c": -25,
+            "form": "standard",
+            "showIntercepts": true,
+            "showVertex": false,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows both roots as x-intercepts on the graph",
+        "problemText": "Solve the equation x\u00b2 = 25",
+        "correctAnswer": "x = \u00b15, so x = 5 or x = -5"
+      },
+      {
+        "context": "Non-perfect square",
+        "mathTool": null,
+        "rationale": "Practices exact radical form",
+        "problemText": "Solve x\u00b2 = 7, giving your answer in exact form.",
+        "correctAnswer": "x = \u00b1\u221a7"
+      },
+      {
+        "context": "No real solution",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": 0,
+            "c": 9,
+            "form": "standard",
+            "showIntercepts": false,
+            "showVertex": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Graph shows parabola entirely above x-axis (no x-intercepts)",
+        "problemText": "Explain why the equation x\u00b2 = -9 has no real solution.",
+        "correctAnswer": "Because the square of any real number is always non-negative, so x\u00b2 can never equal -9."
+      }
+    ],
+    "variationRules": {
+      "kValues": {
+        "perfectSquares": [
+          1,
+          4,
+          9,
+          16,
+          25,
+          36,
+          49,
+          64,
+          81,
+          100
+        ],
+        "nonPerfectSquares": [
+          2,
+          3,
+          5,
+          7,
+          10,
+          11,
+          13,
+          15,
+          20
+        ],
+        "zero": [
+          0
+        ],
+        "negative": [
+          -1,
+          -4,
+          -9,
+          -16,
+          -25
+        ]
+      },
+      "contextVariations": [
+        "Perfect square (integer solutions)",
+        "Non-perfect square (radical solutions)",
+        "Zero (one solution: x = 0)",
+        "Negative k (no real solution)"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - INCLUDE parabolaGraph when showing connection to x-intercepts (helps visualize two roots or no roots)",
+      "  - OMIT for simple algebraic solving practice",
+      "  - Example with tool: x\u00b2 = 25, show parabola y = x\u00b2 - 25 crossing at x = \u00b15",
+      "  - Example without tool: 'Solve x\u00b2 = 7' (straightforward algebra)",
+      "ALWAYS include \u00b1 in solutions (both positive and negative roots)",
+      "For k = 0, emphasize one solution: x = 0",
+      "For k < 0, have students EXPLAIN why no real solution exists",
+      "Mix perfect squares (x = \u00b15) and non-perfect (x = \u00b1\u221a7) for variety",
+      "Connect algebraic solutions to graphical x-intercepts when using parabolaGraph"
+    ]
+  },
+  "quadratic-equations-node-4": {
+    "nodeId": "quadratic-equations-node-4",
+    "title": "Solving ax\u00b2 = k",
+    "section": "solving-ax-squared-equals-k",
+    "learningFocus": [
+      "Isolate x\u00b2 by dividing both sides by coefficient a",
+      "Apply square root principle after isolation",
+      "Handle fractional and decimal coefficients correctly"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Integer coefficient",
+        "mathTool": null,
+        "rationale": "Basic isolation practice",
+        "problemText": "Solve 3x\u00b2 = 48",
+        "correctAnswer": "x\u00b2 = 16, so x = \u00b14"
+      },
+      {
+        "context": "Requires rearrangement first",
+        "mathTool": null,
+        "rationale": "Combines rearrangement and isolation skills",
+        "problemText": "Solve 2x\u00b2 - 18 = 0, showing all steps.",
+        "correctAnswer": "2x\u00b2 = 18, x\u00b2 = 9, x = \u00b13"
+      }
+    ],
+    "variationRules": {
+      "coefficients": {
+        "a": [
+          2,
+          3,
+          4,
+          5,
+          "\u00bd",
+          "\u00bc",
+          0.5,
+          1.5
+        ],
+        "k": [
+          8,
+          12,
+          18,
+          20,
+          32,
+          45,
+          50,
+          72,
+          100
+        ]
+      },
+      "forms": [
+        "Direct: ax\u00b2 = k",
+        "Rearrangement needed: ax\u00b2 - k = 0 or ax\u00b2 = k + c"
+      ],
+      "contextVariations": [
+        "Integer coefficient (e.g., 3x\u00b2 = 48)",
+        "Fractional coefficient (e.g., \u00bdx\u00b2 = 8)",
+        "Needs rearrangement (e.g., 2x\u00b2 - 18 = 0)",
+        "Decimal coefficient (e.g., 0.5x\u00b2 = 12.5)"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision: OMIT - Focus on algebraic procedure, visualization not needed",
+      "CRITICAL STEPS: 1) Rearrange if needed, 2) Divide by a, 3) Apply \u00b1\u221a",
+      "Common error: Students take \u221a before isolating x\u00b2 \u2192 Warn about this",
+      "Always show intermediate step x\u00b2 = k/a before final answer",
+      "Include 'showing all steps' instruction to encourage clear working",
+      "Verify solutions by substitution: 'Check: if x = 4, then 3(4)\u00b2 = 48 \u2713'",
+      "Mix integer and fractional coefficients for variety"
+    ]
+  },
+  "quadratic-equations-node-5": {
+    "nodeId": "quadratic-equations-node-5",
+    "title": "Factorizing Quadratic Expressions",
+    "section": "factorization-review",
+    "learningFocus": [
+      "Factor expressions: x\u00b2 + bx + c = (x + p)(x + q) where p + q = b, pq = c",
+      "Handle positive c with positive b and negative b",
+      "Handle negative c (factors have opposite signs)"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Positive b and c",
+        "mathTool": {
+          "toolName": "factoringVisualizer",
+          "parameters": {
+            "a": 1,
+            "b": 7,
+            "c": 12,
+            "method": "factor-pairs",
+            "showSteps": true
+          }
+        },
+        "rationale": "Visualizes factor pair search: need two numbers that multiply to 12 and add to 7",
+        "problemText": "Factorise x\u00b2 + 7x + 12",
+        "correctAnswer": "(x + 3)(x + 4)"
+      },
+      {
+        "context": "Negative c",
+        "mathTool": {
+          "toolName": "factoringVisualizer",
+          "parameters": {
+            "a": 1,
+            "b": -2,
+            "c": -15,
+            "method": "factor-pairs",
+            "showSteps": true
+          }
+        },
+        "rationale": "Shows opposite sign factors: -5 and +3 multiply to -15, add to -2",
+        "problemText": "Factorise x\u00b2 - 2x - 15",
+        "correctAnswer": "(x - 5)(x + 3)"
+      }
+    ],
+    "variationRules": {
+      "signPatterns": {
+        "bothPositive": {
+          "description": "c > 0, b > 0 \u2192 (x + p)(x + q) both positive",
+          "examples": [
+            "x\u00b2 + 5x + 6",
+            "x\u00b2 + 8x + 15",
+            "x\u00b2 + 7x + 10"
+          ]
+        },
+        "bothNegative": {
+          "description": "c > 0, b < 0 \u2192 (x - p)(x - q) both negative",
+          "examples": [
+            "x\u00b2 - 5x + 6",
+            "x\u00b2 - 8x + 15",
+            "x\u00b2 - 7x + 10"
+          ]
+        },
+        "oppositeSigns": {
+          "description": "c < 0 \u2192 (x + p)(x - q) opposite signs",
+          "examples": [
+            "x\u00b2 + x - 6",
+            "x\u00b2 - 2x - 15",
+            "x\u00b2 + 3x - 10"
+          ]
+        }
+      },
+      "specialCases": {
+        "differenceOfSquares": [
+          "x\u00b2 - 4",
+          "x\u00b2 - 25",
+          "x\u00b2 - 49"
+        ],
+        "missingLinearTerm": [
+          "x\u00b2 - 9",
+          "x\u00b2 - 16"
+        ]
+      },
+      "coefficients": {
+        "b": [
+          -10,
+          -8,
+          -5,
+          -3,
+          -1,
+          1,
+          3,
+          5,
+          8,
+          10
+        ],
+        "c": [
+          -20,
+          -15,
+          -12,
+          -6,
+          6,
+          12,
+          15,
+          20
+        ]
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - INCLUDE factoringVisualizer to show factor pair search process",
+      "  - Parameters: a=1 (simple quadratics), b and c from equation, method='factor-pairs', showSteps=true",
+      "  - Example: For x\u00b2 + 7x + 12, tool shows pairs (1,12), (2,6), (3,4) and highlights (3,4) as correct",
+      "Sign patterns are critical:",
+      "  - c > 0, b > 0: both factors positive",
+      "  - c > 0, b < 0: both factors negative",
+      "  - c < 0: one positive, one negative factor",
+      "Include difference of squares: x\u00b2 - 16 = (x + 4)(x - 4)",
+      "Encourage verification by expanding: (x + 3)(x + 4) = x\u00b2 + 7x + 12 \u2713",
+      "Common error: Wrong signs \u2192 have students check p + q = b AND pq = c"
+    ]
+  },
+  "quadratic-equations-node-6": {
+    "nodeId": "quadratic-equations-node-6",
+    "title": "Using Zero Product Property",
+    "section": "zero-product-property",
+    "learningFocus": [
+      "Understand zero product property: if ab = 0, then a = 0 or b = 0",
+      "Solve factored equations: (x + p)(x + q) = 0",
+      "Handle sign changes correctly (x + p = 0 \u2192 x = -p)"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Already factored",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": -2,
+            "c": -15,
+            "form": "standard",
+            "showIntercepts": true,
+            "showRoots": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows solutions as x-intercepts at x = -3 and x = 5",
+        "problemText": "Solve the equation (x + 3)(x - 5) = 0",
+        "correctAnswer": "x + 3 = 0 or x - 5 = 0, so x = -3 or x = 5"
+      },
+      {
+        "context": "Non-unit coefficient",
+        "mathTool": null,
+        "rationale": "Practices solving 2x - 1 = 0 type linear equations",
+        "problemText": "Solve (2x - 1)(x + 4) = 0",
+        "correctAnswer": "2x - 1 = 0 or x + 4 = 0, so x = \u00bd or x = -4"
+      }
+    ],
+    "variationRules": {
+      "factorPatterns": [
+        "Simple: (x + 3)(x - 5) = 0",
+        "Both positive: (x + 2)(x + 6) = 0",
+        "Both negative: (x - 3)(x - 7) = 0",
+        "Non-unit coefficient: (2x - 1)(x + 4) = 0",
+        "Perfect square: (x - 3)\u00b2 = 0",
+        "Difference of squares: (x + 5)(x - 5) = 0"
+      ],
+      "rootValues": {
+        "integers": [
+          -8,
+          -5,
+          -3,
+          -1,
+          0,
+          1,
+          3,
+          5,
+          8
+        ],
+        "fractions": [
+          "\u00bd",
+          "-\u00bd",
+          "\u2153",
+          "-\u2154",
+          "\u00bc",
+          "\u2154"
+        ]
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - INCLUDE parabolaGraph to show roots as x-intercepts (connects algebra to graphs)",
+      "  - Calculate equivalent standard form: (x + 3)(x - 5) = x\u00b2 - 2x - 15, use a=1, b=-2, c=-15",
+      "  - Set showIntercepts=true to highlight the roots visually",
+      "  - OMIT when focus is purely on ZPP application without graphical connection",
+      "State the property explicitly: 'If ab = 0, then a = 0 or b = 0'",
+      "CRITICAL: Sign handling - x + 3 = 0 means x = -3 (not +3)",
+      "Include repeated roots: (x - 3)\u00b2 = 0 \u2192 x = 3 (one solution)",
+      "Verification: Substitute back to check: (\u22123 + 3)(\u22123 \u2212 5) = (0)(\u22128) = 0 \u2713",
+      "Common error: Students write x = 3 when factor is (x + 3) \u2192 emphasize sign change"
+    ]
+  },
+  "quadratic-equations-node-7": {
+    "nodeId": "quadratic-equations-node-7",
+    "title": "Complete Solution Process",
+    "section": "solving-by-factorization-complete",
+    "learningFocus": [
+      "Execute complete process: rearrange \u2192 factor \u2192 apply ZPP \u2192 solve",
+      "Extract common factors when present (e.g., x\u00b2 = 4x \u2192 x(x - 4) = 0)",
+      "Verify solutions by substitution"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Standard complete process",
+        "mathTool": {
+          "toolName": "factoringVisualizer",
+          "parameters": {
+            "a": 1,
+            "b": 5,
+            "c": -14,
+            "method": "factor-pairs",
+            "showSteps": true
+          }
+        },
+        "rationale": "Shows factorization step visually",
+        "problemText": "Solve the equation x\u00b2 + 5x = 14, showing all steps.",
+        "correctAnswer": "Step 1: x\u00b2 + 5x - 14 = 0\nStep 2: (x + 7)(x - 2) = 0\nStep 3: x = -7 or x = 2"
+      },
+      {
+        "context": "Common factor extraction",
+        "mathTool": null,
+        "rationale": "Critical case: students often miss x = 0 solution",
+        "problemText": "Solve x\u00b2 = 6x",
+        "correctAnswer": "x\u00b2 - 6x = 0, x(x - 6) = 0, so x = 0 or x = 6"
+      }
+    ],
+    "variationRules": {
+      "problemTypes": [
+        "Standard: x\u00b2 + 5x = 14 \u2192 x\u00b2 + 5x - 14 = 0",
+        "Common factor: x\u00b2 = 6x \u2192 x(x - 6) = 0",
+        "Both sides populated: x\u00b2 + 3x = 2x + 10",
+        "Requires expansion: x(x + 2) = 15",
+        "a \u2260 1: 2x\u00b2 + 5x - 3 = 0",
+        "Difference of squares: x\u00b2 = 16"
+      ],
+      "coefficients": {
+        "a": [
+          1,
+          2,
+          3
+        ],
+        "b": [
+          -8,
+          -5,
+          -3,
+          0,
+          3,
+          5,
+          8
+        ],
+        "c": [
+          -20,
+          -12,
+          -6,
+          0,
+          6,
+          12,
+          20
+        ]
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - INCLUDE factoringVisualizer for the factorization step (method='factor-pairs')",
+      "  - OMIT when focusing on special cases like common factor extraction",
+      "Complete process steps:",
+      "  1) Rearrange to standard form (all terms LHS, 0 on RHS)",
+      "  2) Factor the quadratic",
+      "  3) Apply zero product property",
+      "  4) Solve each linear equation",
+      "  5) Verify by substitution",
+      "CRITICAL CASE: x\u00b2 = 6x",
+      "  - Common error: Dividing both sides by x (loses x = 0 solution)",
+      "  - Correct: x\u00b2 - 6x = 0 \u2192 x(x - 6) = 0 \u2192 x = 0 or x = 6",
+      "For a \u2260 1, may need grouping or trial-and-error factorization",
+      "Always verify: Substitute solutions back into original equation",
+      "Difficulty progression: simple factorization \u2192 common factor \u2192 a \u2260 1"
+    ]
+  },
+  "quadratic-equations-node-8": {
+    "nodeId": "quadratic-equations-node-8",
+    "title": "Understanding Parabola Shape",
+    "section": "parabola-shape-basics",
+    "learningFocus": [
+      "Recognize y = x\u00b2 as parent quadratic function",
+      "Identify upward opening (a > 0) vs downward opening (a < 0)",
+      "Understand effect of |a| on width"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Analyzing parabola properties",
+        "mathTool": {
+          "toolName": "functionGraph",
+          "parameters": {
+            "expression": "-2*x^2",
+            "xMin": -3,
+            "xMax": 3,
+            "yMin": -10,
+            "yMax": 2,
+            "showGrid": true,
+            "color": "#ef4444"
+          }
+        },
+        "rationale": "Visual comparison shows downward opening and narrower shape",
+        "problemText": "For the parabola y = -2x\u00b2, describe the opening direction and how its width compares to y = x\u00b2.",
+        "correctAnswer": "Opens downward (because a = -2 < 0), and is narrower than y = x\u00b2 (because |a| = 2 > 1)"
+      },
+      {
+        "context": "Width comparison",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 0.5,
+            "b": 0,
+            "c": 0,
+            "form": "standard",
+            "showVertex": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows wider parabola compared to standard shape",
+        "problemText": "Sketch or describe the shape of y = \u00bdx\u00b2. How does it compare to the parent function y = x\u00b2?",
+        "correctAnswer": "Opens upward (a > 0), but is wider than y = x\u00b2 because |a| = \u00bd < 1"
+      }
+    ],
+    "variationRules": {
+      "aValues": {
+        "narrow": [
+          2,
+          3,
+          4,
+          -2,
+          -3
+        ],
+        "standard": [
+          1,
+          -1
+        ],
+        "wide": [
+          0.5,
+          0.25,
+          -0.5
+        ]
+      },
+      "contextVariations": [
+        "Opening direction only",
+        "Width comparison only",
+        "Combined opening and width analysis",
+        "Matching equation to graph"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - INCLUDE parabolaGraph or functionGraph to show shape visually",
+      "  - For parabolaGraph: use form='standard', set a to test value, b=0, c=0",
+      "  - For functionGraph: use expression like '2*x^2' or '-0.5*x^2'",
+      "  - Visual helps students SEE the opening direction and width differences",
+      "Key rules:",
+      "  - a > 0: opens upward (\u222a)",
+      "  - a < 0: opens downward (\u2229)",
+      "  - |a| > 1: narrower than y = x\u00b2",
+      "  - 0 < |a| < 1: wider than y = x\u00b2",
+      "Avoid solving equations - focus on shape recognition only",
+      "Compare to parent function y = x\u00b2 as reference"
+    ]
+  },
+  "quadratic-equations-node-9": {
+    "nodeId": "quadratic-equations-node-9",
+    "title": "Plotting Points to Draw Parabolas",
+    "section": "plotting-quadratics-table",
+    "learningFocus": [
+      "Create table of values for quadratic functions",
+      "Choose strategic x-values centered around vertex",
+      "Draw smooth parabola curve through points"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Table of values",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": -2,
+            "c": -3,
+            "form": "standard",
+            "showIntercepts": true,
+            "showVertex": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows the complete parabola that matches the table values",
+        "problemText": "Complete a table of values for y = x\u00b2 - 2x - 3 using x values from -2 to 4, then describe the shape you would draw.",
+        "correctAnswer": "x: -2, -1, 0, 1, 2, 3, 4\ny: 5, 0, -3, -4, -3, 0, 5\nThe parabola opens upward with vertex around (1, -4) and crosses x-axis at x = -1 and x = 3"
+      }
+    ],
+    "variationRules": {
+      "equations": [
+        "Simple: y = x\u00b2 - 4",
+        "Standard: y = x\u00b2 - 2x - 3",
+        "Downward: y = -x\u00b2 + 4x",
+        "With coefficient: y = 2x\u00b2 - 8x + 6"
+      ],
+      "xRanges": [
+        "Symmetric around 0: -3 to 3",
+        "Shifted: -1 to 5",
+        "Narrow: -2 to 2"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - INCLUDE parabolaGraph to show the complete curve after students create table",
+      "  - This validates their work and shows what the smooth curve should look like",
+      "  - Set showVertex=true and showIntercepts=true to highlight key features",
+      "Choose x-values centered around vertex for best view",
+      "Emphasize drawing SMOOTH curve, not connecting points with straight lines",
+      "Use symmetry to check accuracy: points equidistant from axis should have same y-value",
+      "Tables should have 5-7 points typically",
+      "Include at least one point on each side of vertex"
+    ]
+  },
+  "quadratic-equations-node-10": {
+    "nodeId": "quadratic-equations-node-10",
+    "title": "Vertex, Axis of Symmetry, and Intercepts",
+    "section": "parabola-key-features",
+    "learningFocus": [
+      "Find axis of symmetry: x = -b/(2a)",
+      "Calculate vertex: x-coordinate using formula, y by substitution",
+      "Locate y-intercept (c) and x-intercepts (solve equation)"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Vertex and axis calculation",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": -4,
+            "c": 3,
+            "form": "standard",
+            "showVertex": true,
+            "showAxisOfSymmetry": true,
+            "showIntercepts": false,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows vertex and axis of symmetry visually to confirm calculations",
+        "problemText": "For the parabola y = x\u00b2 - 4x + 3, find:\n(a) the axis of symmetry\n(b) the vertex coordinates",
+        "correctAnswer": "(a) x = -(-4)/(2\u00d71) = 2\n(b) Vertex at x = 2: y = (2)\u00b2 - 4(2) + 3 = 4 - 8 + 3 = -1, so vertex is (2, -1)"
+      },
+      {
+        "context": "Finding intercepts",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": 2,
+            "c": -8,
+            "form": "standard",
+            "showIntercepts": true,
+            "showVertex": false,
+            "showGrid": true
+          }
+        },
+        "rationale": "Highlights all three intercepts on the graph",
+        "problemText": "Identify all intercepts for y = x\u00b2 + 2x - 8",
+        "correctAnswer": "y-intercept: (0, -8)\nx-intercepts: Solve x\u00b2 + 2x - 8 = 0 \u2192 (x + 4)(x - 2) = 0 \u2192 x = -4 or x = 2\nSo (-4, 0) and (2, 0)"
+      }
+    ],
+    "variationRules": {
+      "equations": [
+        "Two x-intercepts: y = x\u00b2 - 4x + 3",
+        "One x-intercept: y = x\u00b2 - 4x + 4",
+        "No x-intercepts: y = x\u00b2 + 2x + 5",
+        "Downward: y = -x\u00b2 + 2x + 3",
+        "a \u2260 1: y = 2x\u00b2 - 8x + 6"
+      ],
+      "featureFocus": [
+        "Vertex and axis only",
+        "All intercepts",
+        "Combined: all key features"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question, or max TWO if second depends on first result",
+      "Exception here: Question has parts (a) and (b), but both relate to same calculation (vertex)",
+      "This is acceptable because finding vertex requires finding axis first (dependent steps)",
+      "MathTool Decision:",
+      "  - INCLUDE parabolaGraph to show features visually",
+      "  - Use showVertex=true for vertex questions",
+      "  - Use showAxisOfSymmetry=true to show the line x = -b/(2a)",
+      "  - Use showIntercepts=true when asking about intercepts",
+      "Formulas:",
+      "  - Axis of symmetry: x = -b/(2a)",
+      "  - Vertex x-coordinate: x = -b/(2a), then substitute to find y",
+      "  - y-intercept: set x = 0, get y = c",
+      "  - x-intercepts: solve ax\u00b2 + bx + c = 0",
+      "Distinguish minimum (a > 0) from maximum (a < 0) at vertex",
+      "Note: Parabola can have 0, 1, or 2 x-intercepts"
+    ]
+  },
+  "quadratic-equations-node-11": {
+    "nodeId": "quadratic-equations-node-11",
+    "title": "Understanding Roots Graphically",
+    "section": "roots-as-x-intercepts",
+    "learningFocus": [
+      "Understand roots are where parabola crosses x-axis (y = 0)",
+      "Connect algebraic solutions to graphical x-intercepts",
+      "Identify number of roots from graph: 0, 1, or 2"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Two distinct roots",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": -5,
+            "c": 6,
+            "form": "standard",
+            "showIntercepts": true,
+            "showRoots": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows the connection between algebraic roots (x = 2, x = 3) and graphical x-intercepts",
+        "problemText": "The parabola y = x\u00b2 - 5x + 6 crosses the x-axis at two points. Find these x-intercepts algebraically and explain what they represent.",
+        "correctAnswer": "Solve x\u00b2 - 5x + 6 = 0\n(x - 2)(x - 3) = 0\nx = 2 or x = 3\nThese are the roots of the equation, which appear as x-intercepts at (2, 0) and (3, 0) on the graph."
+      },
+      {
+        "context": "No real roots",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": 2,
+            "c": 5,
+            "form": "standard",
+            "showIntercepts": false,
+            "showVertex": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows parabola entirely above x-axis (no crossing points)",
+        "problemText": "How many real roots does the equation x\u00b2 + 2x + 5 = 0 have? Explain using the graph of y = x\u00b2 + 2x + 5.",
+        "correctAnswer": "Zero real roots. The parabola y = x\u00b2 + 2x + 5 opens upward and its vertex is above the x-axis, so it never crosses the x-axis. Therefore, no x-intercepts means no real solutions."
+      }
+    ],
+    "variationRules": {
+      "rootCases": {
+        "twoRoots": {
+          "description": "Parabola crosses x-axis twice",
+          "examples": [
+            "y = x\u00b2 - 5x + 6",
+            "y = x\u00b2 + x - 6",
+            "y = -x\u00b2 + 4"
+          ]
+        },
+        "oneRoot": {
+          "description": "Parabola touches x-axis (vertex on axis)",
+          "examples": [
+            "y = x\u00b2 - 4x + 4",
+            "y = (x - 3)\u00b2",
+            "y = -x\u00b2 + 6x - 9"
+          ]
+        },
+        "noRoots": {
+          "description": "Parabola doesn't cross x-axis",
+          "examples": [
+            "y = x\u00b2 + 2x + 5",
+            "y = x\u00b2 + 1",
+            "y = -x\u00b2 - 3"
+          ]
+        }
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - ALWAYS include parabolaGraph for this section - the visual is essential",
+      "  - Use showIntercepts=true and showRoots=true for cases with roots",
+      "  - This is the core learning: connecting algebra (roots) to graphs (x-intercepts)",
+      "Three cases to cover:",
+      "  - 2 x-intercepts \u2192 2 distinct real roots",
+      "  - 1 x-intercept \u2192 1 repeated root (vertex touches x-axis)",
+      "  - 0 x-intercepts \u2192 no real roots (parabola above or below x-axis)",
+      "Connection to factorization: (x - r\u2081)(x - r\u2082) = 0 gives roots r\u2081 and r\u2082",
+      "For no roots case: have students EXPLAIN using graph position",
+      "Emphasize: roots = x-intercepts = zeros = solutions to ax\u00b2 + bx + c = 0"
+    ]
+  },
+  "quadratic-equations-node-12": {
+    "nodeId": "quadratic-equations-node-12",
+    "title": "Estimating and Verifying Solutions",
+    "section": "reading-graph-solutions",
+    "learningFocus": [
+      "Estimate solutions from graph to reasonable accuracy",
+      "Verify graphical estimates by algebraic substitution",
+      "Solve inequalities using graphs: when is y > 0? when is y < 0?"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Estimation and verification",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": -3,
+            "c": -4,
+            "form": "standard",
+            "showIntercepts": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Graph allows estimation, then algebra confirms exact values",
+        "problemText": "From the graph of y = x\u00b2 - 3x - 4, estimate the solutions to x\u00b2 - 3x - 4 = 0. Then verify your estimate algebraically.",
+        "correctAnswer": "Graph shows x-intercepts near x = -1 and x = 4.\nVerification: (x + 1)(x - 4) = 0 \u2192 x = -1 or x = 4 \u2713"
+      },
+      {
+        "context": "Inequality from graph",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": -1,
+            "c": -6,
+            "form": "standard",
+            "showIntercepts": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows the region below x-axis (y < 0) between the two roots",
+        "problemText": "Using the graph of y = x\u00b2 - x - 6, for what values of x is y < 0?",
+        "correctAnswer": "The parabola is below the x-axis between the roots x = -2 and x = 3, so y < 0 when -2 < x < 3"
+      }
+    ],
+    "variationRules": {
+      "questionTypes": [
+        "Estimate and verify roots",
+        "Solve inequality y > 0",
+        "Solve inequality y < 0",
+        "Compare graphical vs algebraic accuracy"
+      ],
+      "inequalityRegions": {
+        "yGreaterThan0": "Outside roots if a > 0, between roots if a < 0",
+        "yLessThan0": "Between roots if a > 0, outside roots if a < 0"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - ALWAYS include parabolaGraph - essential for reading and estimating",
+      "  - Use showIntercepts=true to make estimation easier",
+      "  - For inequalities, students need to SEE regions above/below x-axis",
+      "Process:",
+      "  1) Read x-intercepts from graph",
+      "  2) Verify by algebraic solving",
+      "  3) For inequalities, identify which region",
+      "Inequality regions (for a > 0):",
+      "  - y > 0: parabola ABOVE x-axis \u2192 x < r\u2081 OR x > r\u2082",
+      "  - y < 0: parabola BELOW x-axis \u2192 r\u2081 < x < r\u2082",
+      "For a < 0, regions are reversed",
+      "Accuracy: Graphical is approximate, algebraic is exact",
+      "Always verify estimates algebraically"
+    ]
+  },
+  "quadratic-equations-node-13": {
+    "nodeId": "quadratic-equations-node-13",
+    "title": "Maximum and Minimum Values",
+    "section": "vertex-optimization",
+    "learningFocus": [
+      "Identify maximum value when a < 0, minimum when a > 0",
+      "Calculate vertex using x = -b/(2a), then substitute for y",
+      "Understand max/min value is y-coordinate of vertex"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Finding minimum",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": 1,
+            "b": -6,
+            "c": 5,
+            "form": "standard",
+            "showVertex": true,
+            "highlightVertex": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Highlights vertex at (3, -4) showing the minimum point",
+        "problemText": "Find the minimum value of y = x\u00b2 - 6x + 5. At what value of x does this minimum occur?",
+        "correctAnswer": "x = -(-6)/(2\u00d71) = 3\ny = (3)\u00b2 - 6(3) + 5 = 9 - 18 + 5 = -4\nMinimum value is -4, occurring at x = 3"
+      },
+      {
+        "context": "Finding maximum",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": -1,
+            "b": 4,
+            "c": -3,
+            "form": "standard",
+            "showVertex": true,
+            "highlightVertex": true,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows vertex at (2, 1) as the highest point on downward-opening parabola",
+        "problemText": "What is the maximum value of y = -x\u00b2 + 4x - 3? Justify your answer.",
+        "correctAnswer": "Since a = -1 < 0, parabola opens downward, so vertex is a maximum.\nx = -4/(2\u00d7(-1)) = 2\ny = -(2)\u00b2 + 4(2) - 3 = -4 + 8 - 3 = 1\nMaximum value is 1"
+      }
+    ],
+    "variationRules": {
+      "problemTypes": {
+        "minimum": {
+          "description": "a > 0, vertex is lowest point",
+          "examples": [
+            "y = x\u00b2 - 6x + 5",
+            "y = 2x\u00b2 + 8x + 3"
+          ]
+        },
+        "maximum": {
+          "description": "a < 0, vertex is highest point",
+          "examples": [
+            "y = -x\u00b2 + 4x - 3",
+            "y = -2x\u00b2 + 12x - 10"
+          ]
+        }
+      },
+      "contextVariations": [
+        "Pure math: find max/min",
+        "Real-world: max height, max area, min cost"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - INCLUDE parabolaGraph with showVertex=true and highlightVertex=true",
+      "  - Visual confirms whether vertex is max or min",
+      "  - Shows the y-coordinate clearly (the actual max/min value)",
+      "Critical distinction:",
+      "  - x-coordinate: WHERE the max/min occurs",
+      "  - y-coordinate: THE VALUE of the max/min",
+      "  - Question often asks for value (y) and location (x)",
+      "Process:",
+      "  1) Determine if max (a < 0) or min (a > 0)",
+      "  2) Find x-coordinate: x = -b/(2a)",
+      "  3) Find y-coordinate: substitute x into equation",
+      "  4) State: 'Maximum/Minimum value is [y] at x = [x]'",
+      "Real-world contexts: max profit, max height, min cost, max area",
+      "Common error: Confusing x-coordinate with the max/min value"
+    ]
+  },
+  "quadratic-equations-node-14": {
+    "nodeId": "quadratic-equations-node-14",
+    "title": "Area and Perimeter Optimization",
+    "section": "quadratic-area-problems",
+    "learningFocus": [
+      "Translate word problems to quadratic equations",
+      "Set up expressions for area and perimeter",
+      "Reject invalid solutions (negative dimensions)"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Rectangle dimensions",
+        "mathTool": null,
+        "rationale": "Focus on setup and solution rejection, no visualization needed",
+        "problemText": "A rectangle has length 3 cm more than its width. If the area is 40 cm\u00b2, find the dimensions of the rectangle.",
+        "correctAnswer": "Let width = w, then length = w + 3\nArea: w(w + 3) = 40\nw\u00b2 + 3w - 40 = 0\n(w + 8)(w - 5) = 0\nw = -8 or w = 5\nReject w = -8 (negative width impossible)\nWidth = 5 cm, Length = 8 cm"
+      },
+      {
+        "context": "Optimization",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": -1,
+            "b": 50,
+            "c": 0,
+            "form": "standard",
+            "showVertex": true,
+            "highlightVertex": true,
+            "xMin": 0,
+            "xMax": 50,
+            "showGrid": true
+          }
+        },
+        "rationale": "Shows area as function of width, with maximum at vertex (25, 625)",
+        "problemText": "A farmer has 100 meters of fence to enclose a rectangular field. What dimensions give the maximum area?",
+        "correctAnswer": "Let width = x, then length = 50 - x (since perimeter = 2(l + w) = 100)\nArea = x(50 - x) = -x\u00b2 + 50x\nMaximum at vertex: x = -50/(2\u00d7(-1)) = 25\nWidth = 25 m, Length = 25 m (square)\nMaximum area = 625 m\u00b2"
+      }
+    ],
+    "variationRules": {
+      "problemTypes": [
+        "Find dimensions given area",
+        "Find maximum area given perimeter",
+        "Garden border problems",
+        "Path width problems"
+      ],
+      "constraints": {
+        "areas": [
+          24,
+          40,
+          60,
+          96,
+          120
+        ],
+        "perimeters": [
+          40,
+          60,
+          80,
+          100,
+          120
+        ],
+        "relationships": [
+          "length = width + 3",
+          "length = 2\u00d7width",
+          "length = width - 2"
+        ]
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision:",
+      "  - OMIT for basic 'find dimensions' problems (algebraic focus)",
+      "  - INCLUDE parabolaGraph for optimization problems (shows max area at vertex)",
+      "  - For optimization, show area as function of one variable",
+      "Translation keys:",
+      "  - 'length is 3 more than width' \u2192 l = w + 3",
+      "  - 'perimeter is 100' \u2192 2(l + w) = 100",
+      "  - 'area is 40' \u2192 l \u00d7 w = 40",
+      "CRITICAL: Always reject negative or zero dimensions",
+      "For optimization: use vertex formula to find maximum/minimum",
+      "Realistic contexts: gardens, fields, enclosures, frames",
+      "Verification: Check dimensions satisfy original constraints"
+    ]
+  },
+  "quadratic-equations-node-15": {
+    "nodeId": "quadratic-equations-node-15",
+    "title": "Projectile Motion and Height-Time",
+    "section": "quadratic-projectile-motion",
+    "learningFocus": [
+      "Understand height as quadratic function of time: h = -at\u00b2 + vt + h\u2080",
+      "Find maximum height using vertex formula",
+      "Find landing time by solving h = 0, reject negative time"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Ball trajectory",
+        "mathTool": {
+          "toolName": "parabolaGraph",
+          "parameters": {
+            "a": -5,
+            "b": 20,
+            "c": 5,
+            "form": "standard",
+            "showVertex": true,
+            "showIntercepts": true,
+            "xMin": 0,
+            "xMax": 5,
+            "yMin": 0,
+            "yMax": 30,
+            "showGrid": true,
+            "caption": "Height (m) vs Time (s)"
+          }
+        },
+        "rationale": "Shows trajectory: vertex = max height, positive x-intercept = landing time",
+        "problemText": "A ball is thrown upward with the height (in meters) given by h = -5t\u00b2 + 20t + 5, where t is time in seconds. Find:\n(a) the maximum height reached\n(b) when the ball hits the ground",
+        "correctAnswer": "(a) Max at vertex: t = -20/(2\u00d7(-5)) = 2 seconds\nh = -5(4) + 40 + 5 = 25 meters\n(b) Solve -5t\u00b2 + 20t + 5 = 0\nt\u00b2 - 4t - 1 = 0\nUsing quadratic formula: t \u2248 4.24 seconds (reject negative root)"
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        "Ball thrown upward",
+        "Object dropped from height",
+        "Rocket launched",
+        "Diver jumping from platform"
+      ],
+      "parameters": {
+        "a": [
+          4.9,
+          5,
+          10
+        ],
+        "initialVelocity": [
+          10,
+          15,
+          20,
+          25,
+          30
+        ],
+        "initialHeight": [
+          0,
+          5,
+          10,
+          20,
+          50,
+          100
+        ]
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question, or TWO dependent parts like (a) and (b)",
+      "Parts (a) max height and (b) landing time are naturally connected",
+      "MathTool Decision:",
+      "  - INCLUDE parabolaGraph to show projectile trajectory",
+      "  - Set xMin=0 (time can't be negative)",
+      "  - Vertex shows (time at max height, max height value)",
+      "  - Positive x-intercept shows landing time",
+      "Model: h = -at\u00b2 + vt + h\u2080",
+      "  - a relates to gravity (typically 5 or 4.9)",
+      "  - v is initial upward velocity",
+      "  - h\u2080 is initial height",
+      "Max height: vertex y-coordinate (occurs at t = v/(2a))",
+      "Landing time: solve h = 0, use POSITIVE root only",
+      "CRITICAL: Always reject negative time (no physical meaning)",
+      "Common error: Confusing max height (y-value) with time at max (x-value)"
+    ]
+  },
+  "quadratic-equations-node-16": {
+    "nodeId": "quadratic-equations-node-16",
+    "title": "Number Relationships and Patterns",
+    "section": "quadratic-number-patterns",
+    "learningFocus": [
+      "Set up equations for consecutive integer problems (n, n+1, n+2)",
+      "Handle consecutive even/odd numbers (n, n+2, n+4)",
+      "Check both solutions for validity in problem context"
+    ],
+    "exemplarProblems": [
+      {
+        "context": "Consecutive integers",
+        "mathTool": null,
+        "rationale": "Focus on setup and context-based solution rejection",
+        "problemText": "The product of two consecutive positive integers is 72. Find the integers.",
+        "correctAnswer": "Let integers be n and n + 1\nn(n + 1) = 72\nn\u00b2 + n - 72 = 0\n(n + 9)(n - 8) = 0\nn = -9 or n = 8\nReject n = -9 (problem specifies positive integers)\nIntegers are 8 and 9"
+      },
+      {
+        "context": "Consecutive even numbers",
+        "mathTool": null,
+        "rationale": "Shows expansion and that both solutions can be valid",
+        "problemText": "Find two consecutive even numbers whose sum of squares is 340.",
+        "correctAnswer": "Let even numbers be n and n + 2\nn\u00b2 + (n + 2)\u00b2 = 340\nn\u00b2 + n\u00b2 + 4n + 4 = 340\n2n\u00b2 + 4n - 336 = 0\nn\u00b2 + 2n - 168 = 0\n(n + 14)(n - 12) = 0\nn = -14 or n = 12\nBoth are even: (-14, -12) or (12, 14)"
+      }
+    ],
+    "variationRules": {
+      "numberTypes": [
+        "Consecutive integers: n, n+1, n+2",
+        "Consecutive even: n, n+2 (where n even)",
+        "Consecutive odd: n, n+2 (where n odd)"
+      ],
+      "relationships": [
+        "Product equals k",
+        "Sum of squares equals k",
+        "Difference of squares equals k",
+        "One is square of other minus k"
+      ],
+      "constraints": {
+        "positive": "positive integers only",
+        "even": "even numbers",
+        "odd": "odd numbers",
+        "none": "any integers (both solutions may be valid)"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE #1: Ask ONE question per problem",
+      "MathTool Decision: OMIT - Focus on algebraic setup and reasoning",
+      "Notation:",
+      "  - Consecutive integers: n, n+1, n+2",
+      "  - Consecutive even/odd: n, n+2, n+4 (spacing of 2)",
+      "Common setups:",
+      "  - 'Product is 72': n(n+1) = 72",
+      "  - 'Sum of squares is 85': n\u00b2 + (n+1)\u00b2 = 85",
+      "CRITICAL: Check BOTH solutions for context appropriateness",
+      "  - 'Positive integers' \u2192 reject negative solution",
+      "  - 'Even numbers' \u2192 check both are even",
+      "  - No constraint \u2192 both solutions may be valid",
+      "Expansion carefully: (n+1)\u00b2 = n\u00b2 + 2n + 1, not n\u00b2 + 1",
+      "Verification: Substitute final answers back into problem statement"
+    ]
+  }
+}

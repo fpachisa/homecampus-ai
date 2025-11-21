@@ -1,0 +1,1397 @@
+{
+  "stat-node-1": {
+    "nodeId": "stat-node-1",
+    "title": "Identifying Categorical vs Numerical Data",
+    "section": "understanding-data-types",
+    "learningFocus": [
+      "Distinguish between categorical (labels/names) and numerical (measurements/counts) data",
+      "Recognize that some numbers are categorical (ID numbers, jersey numbers)",
+      "Explain reasoning for data type classification"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Classify each of the following as categorical or numerical data: (a) Colors of cars in a parking lot (b) Heights of students in a class (c) Football jersey numbers",
+        "correctAnswer": "(a) Categorical - colors are labels/categories, not measurements. (b) Numerical - heights are measurements that can be compared. (c) Categorical - jersey numbers are labels to identify players, not quantities you can measure or calculate with."
+      },
+      {
+        "id": "ex2",
+        "problemText": "A survey collects: student names, ages, and favorite subjects. Which of these are numerical data?",
+        "correctAnswer": "Only ages are numerical data (can be measured and compared). Names and favorite subjects are categorical data (labels/categories)."
+      }
+    ],
+    "variationRules": {
+      "categoricalExamples": [
+        "Colors (red, blue, green)",
+        "Countries (Singapore, Malaysia, Indonesia)",
+        "Favorite fruits (apple, banana, orange)",
+        "Types of transport (car, bus, MRT)",
+        "School subjects (Math, English, Science)",
+        "Blood types (A, B, AB, O)",
+        "Eye colors (brown, blue, green)"
+      ],
+      "numericalExamples": [
+        "Heights (in cm)",
+        "Weights (in kg)",
+        "Ages (in years)",
+        "Test scores",
+        "Number of siblings",
+        "Temperature (in °C)",
+        "Time taken (in minutes)"
+      ],
+      "trickyCategorical": [
+        "Phone numbers (look like numbers but are labels)",
+        "Postal codes (labels for locations)",
+        "Student ID numbers (labels to identify students)",
+        "Jersey numbers (labels for athletes)",
+        "Room numbers (labels for rooms)"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question asking to classify 2-3 data types",
+      "CRITICAL: DO NOT include mathTool - this is conceptual understanding",
+      "Include at least one 'tricky' example with numbers that are actually categorical",
+      "Mix obvious examples (colors, heights) with borderline cases (jersey numbers, phone numbers)",
+      "Students must explain WHY each is categorical or numerical",
+      "Emphasize: numerical = can measure or count; categorical = labels or categories",
+      "Test understanding by asking which data can be used in calculations (only numerical)"
+    ]
+  },
+
+  "stat-node-2": {
+    "nodeId": "stat-node-2",
+    "title": "Discrete vs Continuous Numerical Data",
+    "section": "understanding-data-types",
+    "learningFocus": [
+      "Identify discrete data (specific values, usually whole numbers)",
+      "Identify continuous data (any value in a range)",
+      "Understand why the distinction matters for choosing diagrams"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Classify as discrete or continuous: (a) Number of students in each class (b) Heights of students (c) Number of text messages sent per day",
+        "correctAnswer": "(a) Discrete - can only be whole numbers (0, 1, 2, 3...), cannot have 25.5 students. (b) Continuous - height can be any value (156.2 cm, 156.25 cm, etc.). (c) Discrete - can only be whole numbers (0, 1, 2, 3...), cannot send 5.5 messages."
+      }
+    ],
+    "variationRules": {
+      "discreteExamples": [
+        "Number of siblings (0, 1, 2, 3...)",
+        "Number of goals scored (0, 1, 2, 3...)",
+        "Shoe size (specific sizes: 8, 8.5, 9, 9.5...)",
+        "Number of books read",
+        "Number of pets owned",
+        "Dice roll results (1, 2, 3, 4, 5, 6)"
+      ],
+      "continuousExamples": [
+        "Height (can be any value: 156.234 cm)",
+        "Weight (can be any value: 45.7 kg)",
+        "Time taken (can be any value: 12.34 seconds)",
+        "Temperature (can be any value: 28.7°C)",
+        "Distance traveled",
+        "Amount of water (in liters)"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question classifying 2-3 numerical data types",
+      "CRITICAL: DO NOT include mathTool",
+      "Students must identify whether each is discrete or continuous",
+      "Key distinction: discrete = specific values only (often whole numbers), continuous = any value in range",
+      "Use mix of obvious (counting items = discrete) and less obvious (time = continuous, shoe size = discrete)",
+      "Students should explain WHY: 'Cannot have fractional value' OR 'Can take any value'",
+      "Connect to real-world: You can't have 2.5 siblings, but you can be 156.7 cm tall"
+    ]
+  },
+
+  "stat-node-3": {
+    "nodeId": "stat-node-3",
+    "title": "Matching Data Types to Diagram Types",
+    "section": "choosing-appropriate-diagrams",
+    "learningFocus": [
+      "Categorical data → bar chart, pie chart, or pictogram",
+      "Numerical data → dot diagram, histogram, or stem-and-leaf",
+      "Justify diagram choice based on data type"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A survey collects students' favorite fruits (apple, banana, orange, mango). Which type of diagram is most appropriate: (a) Histogram (b) Bar chart (c) Stem-and-leaf diagram? Explain your choice.",
+        "correctAnswer": "(b) Bar chart is most appropriate. The data is categorical (fruit types are categories, not numbers). Bar charts are used for categorical data. Histograms and stem-and-leaf diagrams are for numerical data only."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Data shows the masses (in kg) of 25 students. Suggest TWO appropriate statistical diagrams for this data.",
+        "correctAnswer": "Possible diagrams: dot diagram, histogram, or stem-and-leaf diagram. All three are appropriate because mass is numerical data. (Bar chart and pie chart would be WRONG because they are for categorical data only.)"
+      }
+    ],
+    "variationRules": {
+      "categoricalScenarios": [
+        {"data": "Favorite colors", "answer": "Bar chart or pie chart"},
+        {"data": "Types of pets owned", "answer": "Bar chart or pictogram"},
+        {"data": "Countries visited", "answer": "Bar chart"},
+        {"data": "Subjects chosen", "answer": "Bar chart or pie chart"},
+        {"data": "Sports played", "answer": "Bar chart or pictogram"}
+      ],
+      "numericalScenarios": [
+        {"data": "Test scores (n=30)", "answer": "Dot diagram, histogram, or stem-and-leaf"},
+        {"data": "Ages of participants", "answer": "Histogram or dot diagram"},
+        {"data": "Travel times (n=20)", "answer": "Dot diagram or stem-and-leaf"},
+        {"data": "Masses of students", "answer": "Stem-and-leaf or histogram"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about choosing appropriate diagram",
+      "CRITICAL: DO NOT include mathTool - this is about decision-making",
+      "Provide clear data type (categorical OR numerical)",
+      "Students must identify appropriate diagram type(s)",
+      "Key rule: Categorical → bar chart/pie chart, Numerical → dot diagram/histogram/stem-and-leaf",
+      "Students should explain WHY their choice is appropriate",
+      "Can ask for multiple valid options or ask to eliminate inappropriate options",
+      "Emphasize that histograms are NEVER for categorical data (common error)"
+    ]
+  },
+
+  "stat-node-4": {
+    "nodeId": "stat-node-4",
+    "title": "Considering Data Size and Purpose",
+    "section": "choosing-appropriate-diagrams",
+    "learningFocus": [
+      "Small datasets (< 30) → dot diagram or stem-and-leaf",
+      "Large datasets (100+) → grouped histogram",
+      "Purpose: preserve values → stem-and-leaf; show distribution → histogram"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "You have travel times (in minutes) for 15 employees. Would a dot diagram or a grouped histogram be more appropriate? Explain.",
+        "correctAnswer": "A dot diagram would be more appropriate. With only 15 values (small dataset), a dot diagram can show every individual value clearly. A grouped histogram is designed for large datasets (typically 50+ values) and would be unnecessary for just 15 data points."
+      },
+      {
+        "id": "ex2",
+        "problemText": "A researcher has heights of 200 students. They need to find the exact median height. Should they use a stem-and-leaf diagram or a grouped histogram? Why?",
+        "correctAnswer": "A grouped histogram would be more practical. With 200 values, a stem-and-leaf diagram would be extremely long and difficult to read. However, note that grouped histograms lose exact values, making it impossible to find the precise median. If exact values are critical, the researcher might need to use the raw data or a computer."
+      }
+    ],
+    "variationRules": {
+      "smallDatasetScenarios": [
+        {"size": 12, "suggested": "Dot diagram or stem-and-leaf", "avoid": "Grouped histogram (unnecessary)"},
+        {"size": 20, "suggested": "Dot diagram or stem-and-leaf", "avoid": "Grouped histogram (defeats purpose)"},
+        {"size": 25, "suggested": "Dot diagram or stem-and-leaf", "avoid": "Large class intervals"}
+      ],
+      "largeDatasetScenarios": [
+        {"size": 150, "suggested": "Grouped histogram", "avoid": "Dot diagram (too crowded)"},
+        {"size": 500, "suggested": "Grouped histogram", "avoid": "Stem-and-leaf (too long)"},
+        {"size": 100, "suggested": "Grouped histogram or stem-and-leaf", "avoid": "Dot diagram"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about appropriate diagram for given data size",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide dataset size and ask for most appropriate diagram",
+      "Key guidelines: Small (< 30) → dot diagram/stem-and-leaf, Large (100+) → grouped histogram",
+      "Can add purpose constraint: need exact values → stem-and-leaf, show pattern only → histogram",
+      "Students should explain trade-offs: dot diagram shows all values but impractical for large n",
+      "Common error: suggesting grouped histogram for 15 values (unnecessarily groups data)"
+    ]
+  },
+
+  "stat-node-5": {
+    "nodeId": "stat-node-5",
+    "title": "Features and Purpose of Dot Diagrams",
+    "section": "understanding-dot-diagrams",
+    "learningFocus": [
+      "Each dot represents one data value",
+      "Dots stack vertically for repeated values",
+      "Number line must have equal intervals and include ALL values in range",
+      "Best for small datasets (10-30 values)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "In a dot diagram showing travel times from 18 to 25 minutes, must the number line include 19 minutes even if no one has that travel time? Explain.",
+        "correctAnswer": "Yes, the number line must include ALL values from 18 to 25, including 19, even if the frequency for 19 is zero. This ensures equal intervals and prevents misinterpretation of the data. The number line should NOT have gaps."
+      },
+      {
+        "id": "ex2",
+        "problemText": "A dot diagram shows exam scores. There are 4 dots above the value 85. What does this tell you?",
+        "correctAnswer": "Four students scored exactly 85 marks on the exam. Each dot represents one student (one data value), and the dots are stacked vertically when multiple students get the same score."
+      }
+    ],
+    "variationRules": {
+      "keyFeatures": [
+        "Each dot = one observation/data value",
+        "Vertical stacking for repeated values",
+        "Horizontal number line with equal intervals",
+        "Must include ALL values from minimum to maximum (no gaps)",
+        "Height of stack = frequency of that value"
+      ],
+      "contexts": [
+        "Travel times (minutes)",
+        "Test scores",
+        "Number of siblings",
+        "Ages of participants",
+        "Masses (kg)",
+        "Number of books read"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about dot diagram features or interpretation",
+      "CRITICAL: DO NOT include mathTool for conceptual questions",
+      "Focus on KEY CONCEPTS: each dot = one value, dots stack vertically, no gaps in number line",
+      "Common misconceptions to test: 'Can we skip values with frequency 0?' (NO!)",
+      "Test understanding of stacking: 'What does stack height mean?' (frequency)",
+      "Emphasize equal intervals requirement",
+      "Connect to real contexts to make it concrete"
+    ]
+  },
+
+  "stat-node-6": {
+    "nodeId": "stat-node-6",
+    "title": "When to Use Dot Diagrams",
+    "section": "understanding-dot-diagrams",
+    "learningFocus": [
+      "Advantages: shows every individual value, easy to construct, reveals mode quickly",
+      "Limitations: impractical for large datasets, inefficient for many different values"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "State TWO advantages and ONE disadvantage of using a dot diagram to represent numerical data.",
+        "correctAnswer": "Advantages: (1) Shows every individual data value clearly (2) Easy and quick to construct from raw data (3) Mode is immediately visible as the tallest stack. Disadvantage: Not suitable for large datasets (e.g., 100+ values) because diagram becomes too crowded and difficult to read."
+      }
+    ],
+    "variationRules": {
+      "advantages": [
+        "Shows every individual value (unlike histograms which group data)",
+        "Easy to construct directly from raw data",
+        "Mode is immediately visible (tallest stack)",
+        "No data is lost or grouped",
+        "Simple for students to understand and draw"
+      ],
+      "disadvantages": [
+        "Impractical for large datasets (100+ values)",
+        "Becomes very wide if data has large range",
+        "Inefficient if many different values with low frequencies",
+        "Difficult to read if too many stacks",
+        "Not suitable for continuous data with many decimal places"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about advantages and/or disadvantages",
+      "CRITICAL: DO NOT include mathTool",
+      "Ask for 2 advantages and 1 disadvantage (or vice versa)",
+      "Students should explain WHY each is an advantage/disadvantage",
+      "Key advantage: preserves all values (contrast with histograms)",
+      "Key disadvantage: limited to small datasets",
+      "Can ask comparative question: 'When is dot diagram better than histogram?'"
+    ]
+  },
+
+  "stat-node-7": {
+    "nodeId": "stat-node-7",
+    "title": "Constructing Dot Diagrams - Equal Intervals",
+    "section": "constructing-dot-diagrams",
+    "learningFocus": [
+      "Identify range (minimum to maximum)",
+      "Draw number line with equal intervals",
+      "Include ALL values in range on number line",
+      "Place dots directly above corresponding values"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Data: 5, 7, 8, 5, 9, 7, 6, 8, 7, 5. (a) What values should appear on the number line? (b) How many dots should be stacked above the value 7?",
+        "correctAnswer": "(a) The number line should show all values from 5 (minimum) to 9 (maximum): 5, 6, 7, 8, 9. ALL these values must be marked even though no data value is 6. (b) Three dots above 7 because three data values equal 7.",
+        "mathTool": {
+          "toolName": "dotDiagram",
+          "params": {
+            "values": [5, 7, 8, 5, 9, 7, 6, 8, 7, 5],
+            "xLabel": "Value",
+            "title": "Dot Diagram Example"
+          }
+        }
+      }
+    ],
+    "variationRules": {
+      "datasets": [
+        {"data": [18, 20, 22, 20, 23, 18, 21, 22, 20], "range": "18-23"},
+        {"data": [2, 5, 3, 2, 4, 5, 3, 2, 4], "range": "2-5"},
+        {"data": [10, 12, 15, 10, 11, 12, 15, 11], "range": "10-15"},
+        {"data": [25, 28, 30, 25, 27, 28, 30, 25], "range": "25-30"}
+      ],
+      "contexts": [
+        "Number of goals scored",
+        "Test scores",
+        "Ages (years)",
+        "Number of siblings",
+        "Travel time (minutes)"
+      ]
+    },
+    "mathTool": {
+      "usage": "STRATEGIC",
+      "when": "Include dotDiagram when showing completed diagram or verifying answer",
+      "when_not": "When asking student to construct from scratch (let them try first)"
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about constructing dot diagram from small dataset (8-12 values)",
+      "Provide raw data as comma-separated list",
+      "Ask students to: (a) identify range, (b) list number line values, (c) count dots per value",
+      "STRATEGIC mathTool: Include dotDiagram in solution/verification phase, NOT in problem",
+      "Ensure dataset has repeated values (to test stacking)",
+      "Test understanding: must include ALL values in range even if frequency = 0",
+      "Use contexts from curriculum: travel times, test scores, ages"
+    ]
+  },
+
+  "stat-node-8": {
+    "nodeId": "stat-node-8",
+    "title": "Constructing Complete Dot Diagrams",
+    "section": "constructing-dot-diagrams",
+    "learningFocus": [
+      "Follow complete construction process",
+      "Label axis clearly with variable name and units",
+      "Ensure equal spacing between dots vertically"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The ages (in years) of 10 karaoke contestants are: 22, 25, 24, 22, 26, 25, 23, 22, 24, 25. Construct a dot diagram to represent this data.",
+        "correctAnswer": "1. Range: 22 to 26 years. 2. Number line with values 22, 23, 24, 25, 26 (equal intervals). 3. Plot dots: 3 above 22, 1 above 23, 2 above 24, 3 above 25, 1 above 26. 4. Label x-axis: 'Age (years)'.",
+        "mathTool": {
+          "toolName": "dotDiagram",
+          "params": {
+            "values": [22, 25, 24, 22, 26, 25, 23, 22, 24, 25],
+            "xLabel": "Age (years)",
+            "title": "Ages of Karaoke Contestants"
+          }
+        }
+      }
+    ],
+    "variationRules": {
+      "contexts": [
+        {"variable": "Travel time", "unit": "minutes", "range": "15-25"},
+        {"variable": "Test score", "unit": "marks", "range": "6-10"},
+        {"variable": "Number of text messages", "unit": "messages", "range": "3-9"},
+        {"variable": "Mass", "unit": "kg", "range": "28-35"}
+      ]
+    },
+    "mathTool": {
+      "usage": "INCLUDE_IN_ANSWER",
+      "params": {
+        "values": "Use raw data array",
+        "xLabel": "Must match context with units",
+        "title": "Descriptive title based on context"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question asking to construct complete dot diagram",
+      "CRITICAL: Include mathTool in answer to show correct construction",
+      "Provide dataset of 10-15 values with clear context",
+      "Students must: identify range, draw number line, plot dots, label axis",
+      "Emphasize proper labeling: 'Age (years)' not just 'Age'",
+      "Use realistic contexts from curriculum PDF",
+      "Ensure some values repeat (test stacking skill)"
+    ]
+  },
+
+  "stat-node-9": {
+    "nodeId": "stat-node-9",
+    "title": "Identifying Range, Mode, and Outliers",
+    "section": "interpreting-dot-diagrams",
+    "learningFocus": [
+      "Calculate range = maximum - minimum",
+      "Identify mode (tallest stack = highest frequency)",
+      "Recognize outliers (values far from main cluster)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The dot diagram shows the masses (in kg) of 20 students. Find: (a) the range, (b) the mode, (c) whether there are any outliers.",
+        "correctAnswer": "(a) Range = 36 - 28 = 8 kg (from minimum 28 kg to maximum 36 kg). (b) Mode = 32 kg (the tallest stack, appearing 5 times). (c) Yes, 28 kg is an outlier - it is significantly separated from the main cluster of data (30-36 kg).",
+        "mathTool": {
+          "toolName": "dotDiagram",
+          "params": {
+            "values": [28, 30, 31, 32, 32, 32, 32, 32, 33, 33, 33, 34, 34, 35, 35, 35, 36, 36, 36, 36],
+            "xLabel": "Mass (kg)",
+            "title": "Masses of Students",
+            "showMode": true
+          }
+        }
+      }
+    ],
+    "variationRules": {
+      "datasets": [
+        {"description": "with clear mode", "mode_frequency": "4-5", "include_outlier": true},
+        {"description": "with two modes (bimodal)", "mode_frequency": "same", "include_outlier": false},
+        {"description": "with outlier on high end", "outlier_position": "maximum", "separation": "3-4 units"},
+        {"description": "with outlier on low end", "outlier_position": "minimum", "separation": "3-4 units"}
+      ]
+    },
+    "mathTool": {
+      "usage": "INCLUDE",
+      "params": {
+        "showMode": "true to highlight modal value",
+        "highlightValue": "Can highlight outlier if discussing it"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question asking to find range, mode, and/or outliers",
+      "CRITICAL: Include mathTool with showMode=true to visualize mode",
+      "Dataset should have clear mode (one value with highest frequency)",
+      "Optionally include outlier (value 3+ units away from main cluster)",
+      "Students must: (a) calculate range with formula, (b) identify mode by frequency, (c) recognize outliers",
+      "Range formula: maximum - minimum (not just stating min and max)",
+      "Mode = most common value (not just 'tallest stack' without value)",
+      "Outlier requires explanation: WHY is it an outlier? (separated from main group)"
+    ]
+  },
+
+  "stat-node-10": {
+    "nodeId": "stat-node-10",
+    "title": "Describing Distributions",
+    "section": "interpreting-dot-diagrams",
+    "learningFocus": [
+      "Identify clusters (groups of values close together)",
+      "Describe symmetry or skewness",
+      "Use appropriate statistical terminology"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Briefly describe the distribution shown in the dot diagram of travel times (in minutes).",
+        "correctAnswer": "The data ranges from 18 to 30 minutes. Most values are clustered around 20-23 minutes. There is an extreme value at 30 minutes (outlier). The distribution is skewed to the right (positively skewed) due to the outlier.",
+        "mathTool": {
+          "toolName": "dotDiagram",
+          "params": {
+            "values": [18, 20, 20, 20, 21, 21, 21, 21, 22, 22, 22, 23, 23, 23, 30],
+            "xLabel": "Travel Time (minutes)",
+            "title": "Travel Times to Office"
+          }
+        }
+      }
+    ],
+    "variationRules": {
+      "distributionTypes": [
+        {"type": "symmetrical", "description": "values evenly spread on both sides of center"},
+        {"type": "skewed right", "description": "outlier on high end, most data on low end"},
+        {"type": "skewed left", "description": "outlier on low end, most data on high end"},
+        {"type": "bimodal", "description": "two distinct clusters or peaks"},
+        {"type": "uniform", "description": "values spread evenly across range"}
+      ],
+      "descriptionTerms": [
+        "Range from X to Y",
+        "Clustered around X-Y",
+        "Mode at X",
+        "Outlier at X",
+        "Symmetrical about X",
+        "Skewed to the right/left"
+      ]
+    },
+    "mathTool": {
+      "usage": "INCLUDE",
+      "purpose": "Provide visual for description practice"
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question asking to describe distribution",
+      "CRITICAL: Include mathTool showing dot diagram to describe",
+      "Students should use statistical terminology: range, cluster, outlier, symmetry, skewness",
+      "Good description includes: range, clustering patterns, any outliers, shape (symmetry/skewness)",
+      "Avoid vague descriptions: 'spread out' → specify where and how",
+      "Connect to context when possible: 'Most employees take 20-22 minutes'",
+      "Test vocabulary: symmetrical, skewed, cluster, outlier"
+    ]
+  },
+
+  "stat-node-11": {
+    "nodeId": "stat-node-11",
+    "title": "Using Tally Marks Correctly",
+    "section": "creating-frequency-tables",
+    "learningFocus": [
+      "Group tally marks in 5s with diagonal stroke",
+      "List all possible values systematically",
+      "Verify total frequency matches dataset size"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Scores: 3, 5, 4, 3, 6, 5, 4, 3, 5, 7, 6, 4. Create a frequency table with tally marks.",
+        "correctAnswer": "Score | Tally | Frequency\n3 | ||| | 3\n4 | ||| | 3\n5 | ||| | 3\n6 | || | 2\n7 | | | 1\nTotal: 12 ✓ (matches dataset size)"
+      }
+    ],
+    "variationRules": {
+      "datasets": [
+        {"size": 20, "range": "1-10", "context": "test scores"},
+        {"size": 15, "range": "5-9", "context": "number of siblings"},
+        {"size": 25, "range": "2-7", "context": "goals scored"}
+      ],
+      "tallyRules": [
+        "Group in 5s: |||| represents 5",
+        "Fifth mark crosses diagonally through first four",
+        "Makes counting easier and reduces errors",
+        "List values in ascending order"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question creating frequency table from raw data",
+      "CRITICAL: DO NOT include mathTool for frequency tables",
+      "Provide dataset of 12-25 values",
+      "Students must: list all values (min to max), use tally marks, count frequencies",
+      "Emphasize grouping in 5s: |||| not |||||",
+      "Include values that appear 5+ times to test tally grouping",
+      "Students should verify: sum of frequencies = total data values",
+      "Missing values (frequency = 0) should still be listed"
+    ]
+  },
+
+  "stat-node-12": {
+    "nodeId": "stat-node-12",
+    "title": "Organizing Frequency Tables",
+    "section": "creating-frequency-tables",
+    "learningFocus": [
+      "Table structure: Value | Tally | Frequency columns",
+      "Include all values from minimum to maximum",
+      "Check total frequency as verification"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "The number of books read by 18 students in a month: 2, 3, 5, 2, 4, 3, 2, 5, 4, 3, 5, 2, 3, 4, 5, 5, 3, 4. Construct a frequency table. Verify your total.",
+        "correctAnswer": "Books | Tally | Frequency\n2 | |||| | 4\n3 | |||| | 5\n4 | |||| | 4\n5 | |||| | 5\nTotal | | 18 ✓"
+      }
+    ],
+    "variationRules": {
+      "tableStructure": {
+        "columns": ["Value", "Tally", "Frequency"],
+        "verification": "Total row showing sum of frequencies"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question constructing organized frequency table",
+      "CRITICAL: DO NOT include mathTool",
+      "Dataset size: 15-20 values",
+      "Students must create proper 3-column table structure",
+      "All values from min to max must be listed (even if frequency = 0)",
+      "Emphasize verification step: does total match n?",
+      "Use real-world contexts: books read, goals scored, test scores"
+    ]
+  },
+
+  "stat-node-13": {
+    "nodeId": "stat-node-13",
+    "title": "Drawing Histograms from Frequency Tables",
+    "section": "constructing-ungrouped-histograms",
+    "learningFocus": [
+      "Draw and label both axes (x = values, y = frequency)",
+      "Bars must touch (no gaps) - this is the histogram convention",
+      "Bar height matches frequency from table",
+      "All bars have equal width"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Frequency table:\nScore | 2 | 3 | 4 | 5 | 6\nFreq  | 5 | 5 | 6 | 3 | 1\n\nDraw a histogram to represent this data.",
+        "correctAnswer": "Histogram with: x-axis labeled 'Score' showing 2, 3, 4, 5, 6; y-axis labeled 'Frequency' from 0 to 6; bars touching with heights 5, 5, 6, 3, 1 respectively.",
+        "mathTool": {
+          "toolName": "histogram",
+          "params": {
+            "data": [
+              {"value": 2, "frequency": 5},
+              {"value": 3, "frequency": 5},
+              {"value": 4, "frequency": 6},
+              {"value": 5, "frequency": 3},
+              {"value": 6, "frequency": 1}
+            ],
+            "xLabel": "Score",
+            "yLabel": "Frequency",
+            "title": "Distribution of Scores"
+          }
+        }
+      }
+    ],
+    "variationRules": {
+      "frequencyTables": [
+        {"values": [1, 2, 3, 4, 5], "frequencies": [2, 5, 6, 4, 3]},
+        {"values": [5, 6, 7, 8, 9], "frequencies": [3, 7, 8, 5, 2]},
+        {"values": [0, 1, 2, 3, 4], "frequencies": [1, 4, 6, 5, 4]}
+      ],
+      "contexts": ["Test scores", "Goals scored", "Number of siblings", "Books read"]
+    },
+    "mathTool": {
+      "usage": "INCLUDE_IN_ANSWER",
+      "params": {
+        "data": "Array of {value, frequency} objects",
+        "xLabel": "Variable name from context",
+        "yLabel": "Always 'Frequency'",
+        "title": "Descriptive title"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question drawing histogram from frequency table",
+      "CRITICAL: Include mathTool in answer showing correct histogram",
+      "Provide frequency table with 4-6 values",
+      "Students must: draw axes, label both axes, draw touching bars, match heights to frequencies",
+      "KEY FEATURE: bars MUST touch (no gaps) - this distinguishes histograms from bar charts",
+      "Equal width bars required",
+      "Use realistic contexts from curriculum"
+    ]
+  },
+
+  "stat-node-14": {
+    "nodeId": "stat-node-14",
+    "title": "Identifying Modal Class",
+    "section": "constructing-ungrouped-histograms",
+    "learningFocus": [
+      "Modal class = value with highest frequency (tallest bar)",
+      "Can be identified visually from histogram"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "From the histogram showing test scores, (a) identify the modal class, (b) how many students scored the modal value?",
+        "correctAnswer": "(a) Modal class = 7 (tallest bar). (b) 8 students scored 7 marks (height of tallest bar shows frequency).",
+        "mathTool": {
+          "toolName": "histogram",
+          "params": {
+            "data": [
+              {"value": 4, "frequency": 2},
+              {"value": 5, "frequency": 3},
+              {"value": 6, "frequency": 6},
+              {"value": 7, "frequency": 8},
+              {"value": 8, "frequency": 4},
+              {"value": 9, "frequency": 2}
+            ],
+            "xLabel": "Test Score",
+            "yLabel": "Frequency",
+            "title": "Distribution of Test Scores"
+          }
+        }
+      }
+    ],
+    "variationRules": {
+      "modalPatterns": [
+        {"description": "single clear mode", "structure": "one tallest bar"},
+        {"description": "bimodal", "structure": "two bars equally tall"},
+        {"description": "uniform", "structure": "all bars same height - no mode"}
+      ]
+    },
+    "mathTool": {
+      "usage": "INCLUDE",
+      "purpose": "Provide histogram for modal class identification"
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question identifying modal class from histogram",
+      "CRITICAL: Include mathTool showing histogram",
+      "Students must identify: (a) which value is mode, (b) its frequency",
+      "Modal class = tallest bar in histogram",
+      "Can ask follow-up: 'What percentage of students scored the modal value?'",
+      "Ensure one value has clearly highest frequency (avoid ties unless testing bimodal)"
+    ]
+  },
+
+  "stat-node-15": {
+    "nodeId": "stat-node-15",
+    "title": "Key Differences - Histograms vs Bar Charts",
+    "section": "comparing-histograms-bar-charts",
+    "learningFocus": [
+      "Data type: histogram = numerical, bar chart = categorical",
+      "Bar spacing: histogram bars touch, bar chart bars have gaps",
+      "X-axis: histogram = numerical scale, bar chart = category labels",
+      "Purpose: histogram = show distribution, bar chart = compare categories"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "State FOUR differences between a histogram and a bar chart.",
+        "correctAnswer": "1. Data type: Histogram for numerical data, bar chart for categorical data. 2. Bar spacing: Histogram bars touch (no gaps), bar chart bars have gaps. 3. X-axis: Histogram has numerical scale, bar chart has category labels. 4. Purpose: Histogram shows frequency distribution, bar chart compares different categories."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Why do bars touch in a histogram but have gaps in a bar chart?",
+        "correctAnswer": "Histogram bars touch because they represent continuous numerical data where values flow from one to the next (e.g., 5 to 6 with no gap between them). Bar chart bars have gaps because they represent separate discrete categories (e.g., 'Red' and 'Blue' are completely different categories with no connection between them). The gap emphasizes they are distinct categories."
+      }
+    ],
+    "variationRules": {
+      "keyDifferences": {
+        "dataType": "Histogram: numerical | Bar chart: categorical",
+        "barSpacing": "Histogram: bars touch | Bar chart: bars have gaps",
+        "xAxis": "Histogram: numerical scale | Bar chart: category labels",
+        "purpose": "Histogram: show distribution | Bar chart: compare categories",
+        "xAxisOrder": "Histogram: numerical order | Bar chart: any order"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about differences (list 3-4 differences) OR explanation (why bars touch/have gaps)",
+      "CRITICAL: DO NOT include mathTool for comparison questions",
+      "Focus on the 4 main differences: data type, bar spacing, x-axis type, purpose",
+      "Most important: bars touch vs gaps (this is visual distinguishing feature)",
+      "Students must explain WHY bars touch (continuous numerical) vs gaps (discrete categories)",
+      "Can ask: 'Which diagram for heights?' (histogram) 'Which for favorite colors?' (bar chart)"
+    ]
+  },
+
+  "stat-node-16": {
+    "nodeId": "stat-node-16",
+    "title": "Choosing Between Histogram and Bar Chart",
+    "section": "comparing-histograms-bar-charts",
+    "learningFocus": [
+      "Decision rule: numerical data → histogram, categorical data → bar chart",
+      "Justify choice based on data type"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "For each scenario, state whether a histogram or bar chart is more appropriate: (a) Eye colors of students (brown, blue, green, hazel) (b) Heights of students (in cm) (c) Favorite subjects (Math, English, Science, History)",
+        "correctAnswer": "(a) Bar chart - eye color is categorical data (categories/labels, not numbers). (b) Histogram - height is numerical data (measurements). (c) Bar chart - subjects are categorical data (categories, not numbers)."
+      }
+    ],
+    "variationRules": {
+      "categoricalScenarios": [
+        "Types of fruits (apple, banana, orange)",
+        "Countries visited",
+        "Favorite sports",
+        "Blood types (A, B, AB, O)",
+        "Modes of transport (car, bus, MRT)"
+      ],
+      "numericalScenarios": [
+        "Masses of students (kg)",
+        "Test scores",
+        "Ages of participants",
+        "Number of goals scored",
+        "Travel times (minutes)"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question with 3 scenarios to classify",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide mix of categorical and numerical scenarios",
+      "Students must: identify appropriate diagram type AND justify based on data type",
+      "Decision rule: Is data numerical (measurements/counts)? → Histogram. Is data categorical (labels/categories)? → Bar chart.",
+      "Common error: using histogram for categorical data (WRONG)",
+      "Include one tricky case: jersey numbers are categorical, not numerical"
+    ]
+  },
+
+  "stat-node-17": {
+    "nodeId": "stat-node-17",
+    "title": "Splitting Stems and Leaves Correctly",
+    "section": "basic-stem-and-leaf-construction",
+    "learningFocus": [
+      "Stem = leading digit(s), Leaf = trailing digit (always single digit)",
+      "For two-digit numbers: stem = tens digit, leaf = units digit",
+      "For three-digit numbers: stem = first two digits, leaf = last digit"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "For the values 142, 157, 164, what are the stems and leaves?",
+        "correctAnswer": "142: stem = 14, leaf = 2. 157: stem = 15, leaf = 7. 164: stem = 16, leaf = 4. (For three-digit numbers, stem is first two digits, leaf is last digit.)"
+      },
+      {
+        "id": "ex2",
+        "problemText": "A stem-and-leaf diagram shows '14 | 2 7 9'. The key states '14 | 2 means 142 cm'. List all the data values represented by this stem.",
+        "correctAnswer": "142 cm, 147 cm, 149 cm (three values with stem 14 and leaves 2, 7, 9)"
+      }
+    ],
+    "variationRules": {
+      "twoDigitNumbers": {
+        "example": "35",
+        "stem": "3",
+        "leaf": "5"
+      },
+      "threeDigitNumbers": {
+        "example": "157",
+        "stem": "15",
+        "leaf": "7"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about identifying stems and leaves",
+      "CRITICAL: DO NOT include mathTool for stem-and-leaf diagrams",
+      "Test understanding of stem/leaf split for 3-digit numbers",
+      "Students must correctly identify: stem = first 2 digits, leaf = last digit",
+      "Can provide stem-and-leaf line and ask to list all values (reverse process)",
+      "Emphasize: leaves are ALWAYS single digits (0-9)",
+      "Key notation: '14 | 2 means 142' is standard format"
+    ]
+  },
+
+  "stat-node-18": {
+    "nodeId": "stat-node-18",
+    "title": "Sorting Stems and Leaves",
+    "section": "basic-stem-and-leaf-construction",
+    "learningFocus": [
+      "Stems in ascending order (top to bottom)",
+      "Leaves in ascending order (left to right) within each stem",
+      "This is CRITICAL for finding median and describing distribution"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A student creates this stem-and-leaf diagram:\n14 | 7 2 5\n15 | 3 8 1 6\nWhat errors has the student made?",
+        "correctAnswer": "The leaves are not sorted in ascending order. Correct version:\n14 | 2 5 7 (leaves sorted left to right)\n15 | 1 3 6 8 (leaves sorted left to right)"
+      }
+    ],
+    "variationRules": {
+      "commonErrors": [
+        "Leaves in random order (unsorted)",
+        "Leaves in descending order (backwards)",
+        "Stems in wrong order",
+        "Missing stems in the range"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about sorting or identifying sorting errors",
+      "CRITICAL: DO NOT include mathTool",
+      "Common question types: (a) identify error in unsorted diagram, (b) sort given unsorted leaves",
+      "Emphasize CRITICAL RULE: Stems ascending (top to bottom), Leaves ascending (left to right)",
+      "Why sorting matters: enables finding median by counting, shows distribution clearly",
+      "Students must produce correctly sorted diagram or identify what's wrong"
+    ]
+  },
+
+  "stat-node-19": {
+    "nodeId": "stat-node-19",
+    "title": "Key and Proper Formatting",
+    "section": "basic-stem-and-leaf-construction",
+    "learningFocus": [
+      "Use vertical line separator: Stem | Leaves",
+      "Include key explaining notation (e.g., '14 | 2 means 142')",
+      "Include ALL stems in range even if no leaves"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Heights (cm): 151, 152, 155, 155, 158, 159, 162, 164, 165, 166. Construct a stem-and-leaf diagram with proper formatting and key.",
+        "correctAnswer": "Stem | Leaves\n15 | 1 2 5 5 8 9\n16 | 2 4 5 6\n\nKey: 15 | 1 means 151 cm\n\nNote: All stems from 15 to 16 are included."
+      }
+    ],
+    "variationRules": {
+      "keyFormats": [
+        "14 | 2 means 142",
+        "15 | 1 means 151 cm",
+        "16 | 3 means 163 points"
+      ],
+      "formatting": {
+        "separator": "Vertical line |",
+        "labels": "Stem | Leaves as header",
+        "spacing": "Space between stem and separator, space between leaves"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question constructing complete stem-and-leaf diagram",
+      "CRITICAL: DO NOT include mathTool",
+      "Dataset: 10-15 three-digit values",
+      "Students must include: (1) Stem | Leaves header, (2) Sorted stems and leaves, (3) Key explaining notation",
+      "Test understanding: must include ALL stems in range (e.g., if data has 14 and 16, must include 15 even with no leaves)",
+      "Proper format: '15 | 1 2 5 5 8 9' (spaces between leaves)",
+      "Context with units: heights (cm), scores, masses (kg)"
+    ]
+  },
+
+  "stat-node-20": {
+    "nodeId": "stat-node-20",
+    "title": "When and Why to Use Split Stems",
+    "section": "split-stems",
+    "learningFocus": [
+      "Use split stems when a stem has many leaves (typically 8+ leaves)",
+      "Split reveals distribution patterns more clearly",
+      "Reduces crowding and makes diagram more readable"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A stem '15' has 14 leaves: 0 1 1 2 3 4 5 5 6 6 7 7 8 9 9. Why would split stems be useful here?",
+        "correctAnswer": "With 14 leaves, the stem is very crowded and difficult to read. Split stems would separate this into two rows: 15 | 0 1 1 2 3 4 (leaves 0-4) and 15 | 5 5 6 6 7 7 8 9 9 (leaves 5-9). This makes the distribution clearer and easier to analyze."
+      }
+    ],
+    "variationRules": {
+      "whenToSplit": [
+        "Stem has 8+ leaves (crowded)",
+        "Want to show distribution shape more clearly",
+        "Many values concentrated in one stem",
+        "Pattern is hard to see in regular diagram"
+      ],
+      "advantages": [
+        "Less crowding makes diagram more readable",
+        "Shows distribution shape more clearly",
+        "Easier to identify modal groups",
+        "Patterns and gaps more visible"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about when/why to use split stems",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide scenario with crowded stem (8+ leaves)",
+      "Students should explain: (1) why split is needed (too crowded), (2) how it improves readability",
+      "Key trigger: 8+ leaves in single stem",
+      "Advantage: shows distribution pattern more clearly"
+    ]
+  },
+
+  "stat-node-21": {
+    "nodeId": "stat-node-21",
+    "title": "Constructing Split Stem Diagrams",
+    "section": "split-stems",
+    "learningFocus": [
+      "Split each stem into TWO rows: first for leaves 0-4, second for leaves 5-9",
+      "Maintain ascending order for both stems and leaves",
+      "Key remains same but indicates split stem notation"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Heights (cm): 151, 151, 152, 155, 155, 156, 157, 158, 159, 160, 161, 165, 166, 167. Construct a stem-and-leaf diagram with split stems.",
+        "correctAnswer": "Stem | Leaves\n15 | 1 1 2\n15 | 5 5 6 7 8 9\n16 | 0 1\n16 | 5 6 7\n\nKey: 15 | 1 means 151 cm\n\n(First 15 has leaves 0-4, second 15 has leaves 5-9)"
+      }
+    ],
+    "variationRules": {
+      "splitRule": {
+        "firstRow": "leaves 0, 1, 2, 3, 4",
+        "secondRow": "leaves 5, 6, 7, 8, 9"
+      },
+      "notation": [
+        "Some write stem twice: 15 | ... and 15 | ...",
+        "Some use asterisk: 15 | ... and 15* | ...",
+        "Both acceptable if explained in key"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question constructing split stem diagram",
+      "CRITICAL: DO NOT include mathTool",
+      "Dataset: 12-16 values where at least one stem has 6+ leaves",
+      "Students must split each stem into two rows: 0-4 and 5-9",
+      "Maintain ascending order within each half",
+      "Notation: can repeat stem or use 15/15*, as long as it's clear",
+      "Key should explain: '15 | 1 means 151 cm' (same as regular)"
+    ]
+  },
+
+  "stat-node-22": {
+    "nodeId": "stat-node-22",
+    "title": "Reading Values and Finding Median",
+    "section": "stem-and-leaf-advantages-interpretation",
+    "learningFocus": [
+      "Retrieve all original data values from diagram",
+      "Find median by counting to middle value(s)",
+      "Advantage: exact values are preserved (unlike histograms)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Stem-and-leaf diagram shows:\n14 | 2 4 7\n15 | 1 1 2 3 5 5 6\n16 | 0 1 4 6 7 8\n\nKey: 14 | 2 means 142 cm\n\nFind (a) the total number of values, (b) the median.",
+        "correctAnswer": "(a) Total = 3 + 7 + 6 = 16 values. (b) For 16 values (even), median is average of 8th and 9th values. Counting: 142, 144, 147 (3), 151, 151, 152, 153, 155 (8th), 155 (9th)... Median = (155 + 155) / 2 = 155 cm."
+      }
+    ],
+    "variationRules": {
+      "medianCases": [
+        {"n": "odd", "method": "middle value at position (n+1)/2"},
+        {"n": "even", "method": "average of values at positions n/2 and n/2+1"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question finding median from stem-and-leaf",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide complete stem-and-leaf diagram with 12-20 values",
+      "Students must: (1) count total values, (2) find median by counting to middle",
+      "For even n: median = average of two middle values",
+      "For odd n: median = single middle value",
+      "Key advantage: can read exact values (not grouped like histograms)",
+      "Show working: count from beginning to find 8th, 9th values"
+    ]
+  },
+
+  "stat-node-23": {
+    "nodeId": "stat-node-23",
+    "title": "Comparing Stem-and-Leaf with Histograms",
+    "section": "stem-and-leaf-advantages-interpretation",
+    "learningFocus": [
+      "Stem-and-leaf preserves exact values, histogram does not",
+      "Stem-and-leaf better for medium datasets (30-100), histogram better for large (100+)",
+      "Both show distribution shape"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Compare stem-and-leaf diagrams with histograms. State ONE advantage of each.",
+        "correctAnswer": "Advantage of stem-and-leaf: Preserves exact data values - you can read every original number (e.g., can find exact median). Advantage of histogram: Better for large datasets - remains readable with 100+ values, whereas stem-and-leaf becomes extremely long."
+      }
+    ],
+    "variationRules": {
+      "stemAndLeafAdvantages": [
+        "Preserves exact values (can retrieve all original data)",
+        "Easy to find median and quartiles (just count)",
+        "Shows distribution while keeping values"
+      ],
+      "histogramAdvantages": [
+        "Better for large datasets (100+ values)",
+        "Remains compact regardless of dataset size",
+        "Clearer visual of distribution shape for large n"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question comparing the two diagram types",
+      "CRITICAL: DO NOT include mathTool",
+      "Ask for advantage(s) of each, OR when to use each",
+      "Key trade-off: stem-and-leaf keeps values but gets long; histogram groups values but stays compact",
+      "Best use: stem-and-leaf for medium datasets when exact values matter",
+      "Best use: histogram for large datasets when pattern matters more than exact values",
+      "Both show distribution shape (similarity)"
+    ]
+  },
+
+  "stat-node-24": {
+    "nodeId": "stat-node-24",
+    "title": "Understanding Interval Notation",
+    "section": "understanding-class-intervals",
+    "learningFocus": [
+      "Notation a ≤ x < b means 'a included, b excluded'",
+      "Boundary value (b) belongs to NEXT interval, not this one",
+      "Intervals must be continuous (no gaps, no overlaps)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "For the interval 140 ≤ x < 150: (a) Is 140 included? (b) Is 150 included? (c) Is 149.9 included?",
+        "correctAnswer": "(a) Yes, 140 is included (≤ means 'less than or equal to'). (b) No, 150 is NOT included (< means 'less than', not 'less than or equal to'). 150 belongs to the NEXT interval. (c) Yes, 149.9 is included because it is less than 150."
+      },
+      {
+        "id": "ex2",
+        "problemText": "Three intervals are: 0 ≤ x < 10, 10 ≤ x < 20, 20 ≤ x < 30. Where does the value 10 belong?",
+        "correctAnswer": "10 belongs to the SECOND interval (10 ≤ x < 20). The first interval excludes 10 (x < 10), but the second interval includes it (10 ≤ x). This ensures continuous intervals with no gaps."
+      }
+    ],
+    "variationRules": {
+      "intervalExamples": [
+        {"interval": "0 ≤ x < 10", "includes": [0, 5.5, 9.9], "excludes": [10]},
+        {"interval": "140 ≤ x < 150", "includes": [140, 145, 149.9], "excludes": [150]},
+        {"interval": "20 ≤ x < 30", "includes": [20, 25.5, 29.99], "excludes": [30]}
+      ],
+      "boundaryTests": [
+        "Is lower boundary included? (YES)",
+        "Is upper boundary included? (NO)",
+        "Where does upper boundary go? (Next interval)"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question testing interval notation understanding",
+      "CRITICAL: DO NOT include mathTool",
+      "Focus on boundary values: students struggle with 'which boundary is included?'",
+      "Key learning: lower boundary IN, upper boundary OUT",
+      "Test with specific values: 'Does 150 belong to 140 ≤ x < 150?' (NO)",
+      "Emphasize continuity: upper of one interval = lower of next (no gaps)",
+      "Common notation: a ≤ x < b OR [a, b) OR 'a-b' (all mean same thing)"
+    ]
+  },
+
+  "stat-node-25": {
+    "nodeId": "stat-node-25",
+    "title": "Determining Interval Membership and Width",
+    "section": "understanding-class-intervals",
+    "learningFocus": [
+      "Correctly assign values to appropriate intervals",
+      "Calculate class width = upper boundary - lower boundary",
+      "All intervals must have equal width"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Class intervals: 10 ≤ x < 20, 20 ≤ x < 30, 30 ≤ x < 40. (a) Which interval contains 29? (b) What is the class width?",
+        "correctAnswer": "(a) 29 belongs to the interval 20 ≤ x < 30 (since 20 ≤ 29 < 30 is true). (b) Class width = 30 - 20 = 10 (or 40 - 30 = 10, or 20 - 10 = 10 - all intervals have same width)."
+      }
+    ],
+    "variationRules": {
+      "testValues": [
+        {"intervals": "0 ≤ x < 10, 10 ≤ x < 20", "test": 10, "belongs": "second"},
+        {"intervals": "140 ≤ x < 150, 150 ≤ x < 160", "test": 150, "belongs": "second"},
+        {"intervals": "20 ≤ x < 30, 30 ≤ x < 40", "test": 29.9, "belongs": "first"}
+      ],
+      "widthCalculation": {
+        "formula": "Class width = Upper boundary - Lower boundary",
+        "examples": ["20-10=10", "150-140=10", "30-20=10"]
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question about interval membership and/or width",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide 3-4 intervals with equal widths",
+      "Test boundary values specifically (e.g., where does 20 go if intervals are 10-20, 20-30?)",
+      "Class width calculation: upper - lower (should be same for all intervals)",
+      "Students must explain reasoning for membership",
+      "Verify understanding: all intervals must have equal width (standard requirement)"
+    ]
+  },
+
+  "stat-node-26": {
+    "nodeId": "stat-node-26",
+    "title": "Calculating Appropriate Class Width",
+    "section": "choosing-class-widths",
+    "learningFocus": [
+      "Aim for 5-10 intervals total",
+      "Approximate width = Range ÷ Desired number of intervals",
+      "Round to 'nice' numbers (5, 10, 20, 25, 50, 100)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Data ranges from 0 to 80. Calculate an appropriate class width if you want approximately 8 intervals.",
+        "correctAnswer": "Approximate width = Range ÷ Number of intervals = 80 ÷ 8 = 10. This gives class width of 10, which is a 'nice' round number. Intervals would be: 0 ≤ x < 10, 10 ≤ x < 20, ..., 70 ≤ x < 80 (exactly 8 intervals). ✓"
+      }
+    ],
+    "variationRules": {
+      "scenarios": [
+        {"range": "0-50", "desired": 5, "width": 10},
+        {"range": "0-100", "desired": 10, "width": 10},
+        {"range": "0-80", "desired": 8, "width": 10},
+        {"range": "100-200", "desired": 5, "width": 20}
+      ],
+      "niceNumbers": [1, 2, 5, 10, 20, 25, 50, 100],
+      "avoidNumbers": [7, 13, 23, 37]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question calculating appropriate class width",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide: data range (min to max) and desired number of intervals (~5-10)",
+      "Formula: Approximate width = Range ÷ Desired intervals",
+      "Then round to nearest 'nice' number: 1, 2, 5, 10, 20, 25, 50, 100",
+      "Students should verify: does this width give ~5-10 intervals?",
+      "Avoid awkward numbers like 7, 13, 23 (hard to work with)"
+    ]
+  },
+
+  "stat-node-27": {
+    "nodeId": "stat-node-27",
+    "title": "Problems with Poor Width Choices",
+    "section": "choosing-class-widths",
+    "learningFocus": [
+      "Too small width (e.g., width=1 for range 0-100) → too many intervals, defeats grouping purpose",
+      "Too large width (e.g., width=50 for range 0-100) → too few intervals, pattern hidden",
+      "Goal: balance between detail and clarity"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Data ranges from 0 to 100. Explain why a class width of 2 would be a poor choice.",
+        "correctAnswer": "A width of 2 would create 50 intervals (100 ÷ 2 = 50). This is far too many intervals - it defeats the purpose of grouping data. The histogram would be extremely wide and the pattern would be difficult to see. Better to use width of 10 (creating 10 intervals) or 20 (creating 5 intervals)."
+      }
+    ],
+    "variationRules": {
+      "poorChoices": [
+        {
+          "range": "0-100",
+          "width": 2,
+          "intervals": 50,
+          "problem": "Too many intervals - defeats grouping purpose"
+        },
+        {
+          "range": "0-100",
+          "width": 50,
+          "intervals": 2,
+          "problem": "Too few intervals - pattern completely hidden"
+        },
+        {
+          "range": "0-50",
+          "width": 1,
+          "intervals": 50,
+          "problem": "Like ungrouped data - no advantage"
+        }
+      ],
+      "goodChoices": [
+        {"range": "0-100", "width": 10, "intervals": 10, "assessment": "Good balance"},
+        {"range": "0-50", "width": 10, "intervals": 5, "assessment": "Clear pattern"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question explaining why a specific width is poor",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide obviously bad choice: too small (width=1 or 2) OR too large (width=half of range)",
+      "Students must: (1) calculate how many intervals result, (2) explain why this is problematic",
+      "Too small → 'defeats purpose of grouping, pattern hard to see'",
+      "Too large → 'hides all variation, most data in one bar'",
+      "Connect to guideline: aim for 5-10 intervals"
+    ]
+  },
+
+  "stat-node-28": {
+    "nodeId": "stat-node-28",
+    "title": "Creating Frequency Table with Intervals",
+    "section": "constructing-grouped-histograms",
+    "learningFocus": [
+      "Create table with class intervals as rows",
+      "Ensure all intervals have equal width and are continuous",
+      "Correctly assign each data value to its interval",
+      "Verify sum of frequencies = total number of data values"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Waiting times (minutes): 5, 12, 18, 22, 8, 15, 25, 19, 11, 28, 14, 21, 7, 16, 24. Using intervals 0 ≤ x < 10, 10 ≤ x < 20, 20 ≤ x < 30, create a frequency table.",
+        "correctAnswer": "Interval | Tally | Frequency\n0 ≤ x < 10 | ||| | 3 (values: 5, 8, 7)\n10 ≤ x < 20 | |||| |||| | 7 (values: 12, 18, 15, 19, 11, 14, 16)\n20 ≤ x < 30 | |||| | 5 (values: 22, 25, 28, 21, 24)\nTotal | | 15 ✓"
+      }
+    ],
+    "variationRules": {
+      "datasets": [
+        {"n": 15, "range": "0-30", "intervals": "0-10, 10-20, 20-30"},
+        {"n": 20, "range": "10-50", "intervals": "10-20, 20-30, 30-40, 40-50"},
+        {"n": 18, "range": "100-150", "intervals": "100-110, 110-120, 120-130, 130-140, 140-150"}
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question creating grouped frequency table",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide: raw dataset (15-20 values) and specified intervals",
+      "Intervals should be given (not student's choice) with equal widths",
+      "Students must: assign each value to correct interval, use tally marks, count frequencies",
+      "Verification: sum of frequencies must equal n",
+      "Test boundary understanding: where does boundary value go?"
+    ]
+  },
+
+  "stat-node-29": {
+    "nodeId": "stat-node-29",
+    "title": "Drawing Grouped Histogram from Table",
+    "section": "constructing-grouped-histograms",
+    "learningFocus": [
+      "X-axis shows interval boundaries (0, 10, 20, 30...)",
+      "Bars span from lower to upper boundary of each interval",
+      "Bar height = frequency for that interval",
+      "Identify modal class (interval with highest frequency)"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Frequency table:\nTime (min) | 0 ≤ x < 10 | 10 ≤ x < 20 | 20 ≤ x < 30 | 30 ≤ x < 40\nFrequency | 7 | 11 | 8 | 2\n\nDraw a histogram and identify the modal class.",
+        "correctAnswer": "Histogram with x-axis boundaries at 0, 10, 20, 30, 40 and bars with heights 7, 11, 8, 2. Modal class is 10 ≤ x < 20 (highest frequency of 11).",
+        "mathTool": {
+          "toolName": "histogram",
+          "params": {
+            "intervals": [
+              {"lower": 0, "upper": 10, "frequency": 7},
+              {"lower": 10, "upper": 20, "frequency": 11},
+              {"lower": 20, "upper": 30, "frequency": 8},
+              {"lower": 30, "upper": 40, "frequency": 2}
+            ],
+            "xLabel": "Time (minutes)",
+            "yLabel": "Frequency",
+            "title": "Waiting Times"
+          }
+        }
+      }
+    ],
+    "variationRules": {
+      "frequencyTables": [
+        {
+          "intervals": ["0-10", "10-20", "20-30", "30-40"],
+          "frequencies": [7, 11, 8, 2]
+        },
+        {
+          "intervals": ["10-20", "20-30", "30-40", "40-50"],
+          "frequencies": [5, 12, 15, 8]
+        }
+      ]
+    },
+    "mathTool": {
+      "usage": "INCLUDE_IN_ANSWER",
+      "params": {
+        "intervals": "Array of {lower, upper, frequency}",
+        "xLabel": "Variable with units",
+        "yLabel": "Always 'Frequency'"
+      }
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question drawing grouped histogram from frequency table",
+      "CRITICAL: Include mathTool in answer showing correct histogram",
+      "Provide grouped frequency table with 4-5 class intervals",
+      "Students must: draw histogram with correct boundaries, bar heights match frequencies, identify modal class",
+      "X-axis: mark boundaries (0, 10, 20, 30...), not interval notation",
+      "Modal class: interval with highest frequency (tallest bar)",
+      "Bars must touch (histogram convention)"
+    ]
+  },
+
+  "stat-node-30": {
+    "nodeId": "stat-node-30",
+    "title": "Same Data, Different Intervals",
+    "section": "impact-of-interval-choice",
+    "learningFocus": [
+      "Same dataset can look very different with different class widths",
+      "Narrow intervals show more detail but may look noisy",
+      "Wide intervals smooth data but hide patterns"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "Data ranges from 0 to 50. Compare histograms with: (a) class width 5 (10 intervals) vs (b) class width 25 (2 intervals). Which would show distribution pattern more clearly?",
+        "correctAnswer": "(a) Width 5 (10 intervals) would show distribution pattern more clearly because it provides good detail without being too crowded. (b) Width 25 (only 2 intervals) is too wide - it would hide all variation and most data would be in just one or two bars, making it impossible to see any pattern in the distribution."
+      }
+    ],
+    "variationRules": {
+      "comparisons": [
+        {
+          "dataRange": "0-50",
+          "narrow": {"width": 5, "intervals": 10, "assessment": "Good detail"},
+          "medium": {"width": 10, "intervals": 5, "assessment": "Best balance"},
+          "wide": {"width": 25, "intervals": 2, "assessment": "Too wide - pattern hidden"}
+        },
+        {
+          "dataRange": "0-100",
+          "narrow": {"width": 2, "intervals": 50, "assessment": "Too many - defeats grouping"},
+          "medium": {"width": 10, "intervals": 10, "assessment": "Clear pattern"},
+          "wide": {"width": 50, "intervals": 2, "assessment": "No detail"}
+        }
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question comparing interval choice effects",
+      "CRITICAL: DO NOT include mathTool",
+      "Provide same data range with 2-3 different class width options",
+      "Students should identify which shows pattern best and explain why",
+      "Too narrow: defeats purpose of grouping, looks like ungrouped data",
+      "Too wide: hides all variation, most data in one bar",
+      "Just right: 5-10 intervals showing clear pattern with adequate detail"
+    ]
+  },
+
+  "stat-node-31": {
+    "nodeId": "stat-node-31",
+    "title": "Critical Evaluation of Histograms",
+    "section": "impact-of-interval-choice",
+    "learningFocus": [
+      "Check if class width is reasonable",
+      "Verify all intervals have equal width",
+      "Consider if different intervals might show different pattern",
+      "Recognize potentially misleading histograms"
+    ],
+    "exemplarProblems": [
+      {
+        "id": "ex1",
+        "problemText": "A histogram shows test scores with intervals: 0-20, 20-30, 30-35, 35-50. Identify TWO problems with this histogram.",
+        "correctAnswer": "Problem 1: Unequal interval widths (first interval width 20, second width 10, third width 5, fourth width 15). This makes it impossible to fairly compare bar heights. Problem 2: The unequal widths could be misleading - a tall narrow bar might have fewer values than a short wide bar."
+      }
+    ],
+    "variationRules": {
+      "problems": [
+        "Unequal interval widths (unfair comparison)",
+        "Very few intervals (e.g., 2) - pattern hidden",
+        "Very many intervals (e.g., 50) - defeats grouping",
+        "Y-axis doesn't start at 0 (exaggerates differences)",
+        "Unclear interval boundaries"
+      ],
+      "evaluationChecklist": [
+        "Are all intervals equal width? (MUST be)",
+        "How many intervals? (Should be 5-10)",
+        "Is class width reasonable for data range?",
+        "Are interval boundaries clearly marked?",
+        "Could different intervals show different pattern?"
+      ]
+    },
+    "generationGuidelines": [
+      "GROUND RULE: Generate ONE question evaluating histogram for problems",
+      "CRITICAL: DO NOT include mathTool",
+      "Present histogram with obvious problem: unequal widths, too many/few intervals, unclear labels",
+      "Students must identify problem(s) and explain why problematic",
+      "Most serious: unequal widths (makes comparison invalid)",
+      "Other issues: too many/few intervals, misleading scales",
+      "Connect to honesty: histograms should represent data fairly"
+    ]
+  }
+}
