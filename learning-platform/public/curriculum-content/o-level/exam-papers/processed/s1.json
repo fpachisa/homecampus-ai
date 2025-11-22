@@ -289,6 +289,71 @@
         "title": "Integers from Statistics"
       },
       {
+        "questionNumber": 6,
+        "questionId": "S1-zhonghua-2024-p1-q6",
+        "topicID": "S1",
+        "stem": "The following numbers are given: 5.4, 4.8, 7.8, 6.4, 1.9, 9.3, 6.3, 8.7.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the median of the set of numbers.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "6.35",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Arrange the data set in ascending order.",
+                  "working": "1.9, 4.8, 5.4, 6.3, 6.4, 7.8, 8.7, 9.3",
+                  "reasoning": "To find the median, the data must be ordered from smallest to largest."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the middle position.",
+                  "working": "There are $n=8$ numbers (an even number). The median lies between the 4th and 5th terms.",
+                  "reasoning": "For an even set of numbers, the median is the average of the two middle numbers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the average of the two middle numbers.",
+                  "working": "$\\frac{6.3 + 6.4}{2} = 6.35$",
+                  "reasoning": "Compute the midpoint between the 4th term (6.3) and the 5th term (6.4)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the range of the set of numbers.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7.4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the maximum and minimum values in the set.",
+                  "working": "Maximum = 9.3, Minimum = 1.9",
+                  "reasoning": "The range is defined as the difference between the largest and smallest values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the difference.",
+                  "working": "$9.3 - 1.9 = 7.4$",
+                  "reasoning": "Subtract the minimum from the maximum."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Statistics Median and Range"
+      },
+      {
         "questionNumber": 7,
         "questionId": "S1-swisscottage-2024-p1-q7",
         "topicID": "S1",
@@ -1003,6 +1068,129 @@
           ],
           "key": "6|8 represents 68 marks"
         }
+      },
+      {
+        "questionNumber": 13,
+        "questionId": "S1-zhonghua-2024-p1-q13",
+        "topicID": "S1",
+        "stem": "The table shows the heights of 50 students, measured in January 2023.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Heights, h cm",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$130\\le h<140$",
+              "1"
+            ],
+            [
+              "$140\\le h<150$",
+              "4"
+            ],
+            [
+              "$150\\le h<160$",
+              "16"
+            ],
+            [
+              "$160\\le h<170$",
+              "27"
+            ],
+            [
+              "$170\\le h<180$",
+              "2"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Calculate an estimate for the mean height of the students,",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "160 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the mid-value ($x$) for each class interval.",
+                  "working": "130-140: $x=135$\n140-150: $x=145$\n150-160: $x=155$\n160-170: $x=165$\n170-180: $x=175$",
+                  "reasoning": "For grouped data, the midpoint of the interval represents the data values in that group."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the sum of the products of frequency and mid-value ($\\sum fx$).",
+                  "working": "$\\sum fx = (1 \\times 135) + (4 \\times 145) + (16 \\times 155) + (27 \\times 165) + (2 \\times 175)$\n$= 135 + 580 + 2480 + 4455 + 350 = 8000$",
+                  "reasoning": "The total sum of heights is estimated by summing frequency $\\times$ midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide by the total frequency ($\\sum f$).",
+                  "working": "Mean = $\\frac{8000}{50} = 160$",
+                  "reasoning": "Mean = $\\frac{\\sum fx}{\\sum f}$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "Calculate an estimate for the standard deviation of the heights.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "7.81 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the sum of frequency times mid-value squared ($\\sum fx^2$).",
+                  "working": "$\\sum fx^2 = (1 \\times 135^2) + (4 \\times 145^2) + (16 \\times 155^2) + (27 \\times 165^2) + (2 \\times 175^2)$\n$= 18225 + 84100 + 384400 + 735075 + 61250 = 1283050$",
+                  "reasoning": "This is required for the standard deviation formula."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Apply the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{\\sum fx^2}{\\sum f} - (\\bar{x})^2}$\n$= \\sqrt{\\frac{1283050}{50} - 160^2}$",
+                  "reasoning": "Using the computational formula for standard deviation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute the final value.",
+                  "working": "$= \\sqrt{25661 - 25600} = \\sqrt{61} \\approx 7.8102$",
+                  "reasoning": "Calculate the square root of the variance."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The heights of the same group of students were measured again in January 2024. The shortest height measured was 146 cm. The tallest height measured was 180 cm. State how the mean and standard deviation will change in January 2024.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Mean increases; Standard Deviation decreases.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the change in the mean.",
+                  "working": "Students grow over time, and the minimum height increased from the 130-140 range to 146 cm. Since the values generally increased, the mean will increase.",
+                  "reasoning": "The mean represents the average value, which rises as the individual data points increase."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Analyze the change in the standard deviation.",
+                  "working": "The original range was approx $130$ to $180$. The new range is $146$ to $180$. The range has narrowed significantly, meaning the heights are less spread out.",
+                  "reasoning": "Standard deviation measures the spread of data. Since the data is more clustered (the lower tail moved up significantly while the upper tail stayed similar), the spread decreases."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Statistics Heights"
       },
       {
         "questionNumber": 19,
@@ -2290,6 +2478,65 @@
         "title": "Stem and Leaf Diagram"
       },
       {
+        "questionNumber": 101,
+        "questionId": "S1-gemini-2211073352-p1-q101",
+        "topicID": "S1",
+        "stem": "The masses, in kg, of 9 pieces of luggage are recorded as follows: 12.5, 15.2, 11.8, 14.5, 15.2, 13.0, 16.1, 10.5, 14.5.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the mode of the masses.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "14.5 kg and 15.2 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the frequency of each number.",
+                  "working": "14.5 appears twice. 15.2 appears twice. All others appear once.",
+                  "reasoning": "The mode is the value(s) that occur most frequently."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the median mass.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "14.5 kg",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Arrange the data in ascending order.",
+                  "working": "10.5, 11.8, 12.5, 13.0, 14.5, 14.5, 15.2, 15.2, 16.1",
+                  "reasoning": "Data must be ordered to find the position of the median."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Locate the middle term.",
+                  "working": "$n=9$ (odd). The median is the $\\frac{9+1}{2} = 5$th term.",
+                  "reasoning": "For an odd number of observations, the median is the middle value."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Identify the value.",
+                  "working": "The 5th term is 14.5.",
+                  "reasoning": "Counting from the start of the ordered list."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Statistics Mode and Median"
+      },
+      {
         "questionNumber": 102,
         "questionId": "S1-gemini-1911-p1-102",
         "topicID": "S1",
@@ -2864,6 +3111,161 @@
         "totalMarks": 5,
         "paper": "Paper 1",
         "title": "Social Media Usage Statistics"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S1-gemini-2211073352-p1-q102",
+        "topicID": "S1",
+        "stem": "The table below shows the time taken, $t$ minutes, by 40 students to complete a puzzle.",
+        "questionTable": {
+          "type": "data",
+          "headers": [
+            "Time ($t$ min)",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "$5 < t \\le 10$",
+              "3"
+            ],
+            [
+              "$10 < t \\le 15$",
+              "11"
+            ],
+            [
+              "$15 < t \\le 20$",
+              "18"
+            ],
+            [
+              "$20 < t \\le 25$",
+              "8"
+            ]
+          ]
+        },
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate an estimate for the mean time taken.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "16.375 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Determine the midpoints ($x$) of the intervals.",
+                  "working": "7.5, 12.5, 17.5, 22.5",
+                  "reasoning": "Midpoint = (Lower Bound + Upper Bound) / 2."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate $\\sum fx$.",
+                  "working": "$\\sum fx = (3 \\times 7.5) + (11 \\times 12.5) + (18 \\times 17.5) + (8 \\times 22.5)$\n$= 22.5 + 137.5 + 315 + 180 = 655$",
+                  "reasoning": "Sum of products of frequency and midpoint."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide by total frequency.",
+                  "working": "$\\frac{655}{40} = 16.375$",
+                  "reasoning": "Mean = Total Sum / Total Frequency."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate an estimate for the standard deviation.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4.41 minutes",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate $\\sum fx^2$.",
+                  "working": "$\\sum fx^2 = (3 \\times 7.5^2) + (11 \\times 12.5^2) + (18 \\times 17.5^2) + (8 \\times 22.5^2)$\n$= 168.75 + 1718.75 + 5512.5 + 4050 = 11450$",
+                  "reasoning": "Sum of frequency times midpoint squared."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the standard deviation formula.",
+                  "working": "$\\sigma = \\sqrt{\\frac{11450}{40} - 16.375^2}$",
+                  "reasoning": "$\\sqrt{\\frac{\\sum fx^2}{\\sum f} - \\text{mean}^2}$"
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute the result.",
+                  "working": "$\\sigma = \\sqrt{286.25 - 268.14...} = \\sqrt{18.109...} \\approx 4.255$",
+                  "reasoning": "Final calculation to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Statistics Time Taken"
+      },
+      {
+        "questionNumber": 103,
+        "questionId": "S1-gemini-2211073352-p1-q103",
+        "topicID": "S1",
+        "stem": "A set of data values has a mean of 20 and a standard deviation of 4. Each value in the data set is multiplied by 2 and then 3 is added to the result.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the new mean.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "43",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the linear transformation to the mean.",
+                  "working": "New Mean = $(20 \\times 2) + 3$",
+                  "reasoning": "If $y = ax + b$, then $\\bar{y} = a\\bar{x} + b$. The mean is affected by both multiplication and addition."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value.",
+                  "working": "$40 + 3 = 43$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the new standard deviation.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "8",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the linear transformation to the standard deviation.",
+                  "working": "New SD = $4 \\times 2$",
+                  "reasoning": "If $y = ax + b$, the standard deviation is multiplied by $|a|$. Adding a constant ($b$) shifts the data but does not change the spread (standard deviation)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the value.",
+                  "working": "$8$",
+                  "reasoning": "Arithmetic calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Statistics Linear Transformation"
       }
     ],
     "Paper 2": [

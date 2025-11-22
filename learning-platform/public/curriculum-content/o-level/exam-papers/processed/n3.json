@@ -1030,6 +1030,54 @@
         "title": "Exchange Rates"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-2211073352-p1-q101",
+        "topicID": "N3",
+        "stem": "A sum of money is invested at a simple interest rate of 4% per annum. Calculate the number of years it takes for the sum of money to double in value.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the number of years.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "25 years",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the simple interest formula. Let the principal be $P$. For the money to double, the total amount must be $2P$, which means the Interest ($I$) earned must be equal to $P$.",
+                  "working": "Let Principal = $P$\nInterest $I = P$",
+                  "reasoning": "To double the money, the interest earned must equal the original principal amount."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute values into the Simple Interest formula $I = \\frac{PRT}{100}$.",
+                  "working": "$P = \\frac{P \\times 4 \\times T}{100}$",
+                  "reasoning": "Using the standard formula where R is the rate and T is time in years."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $T$. Divide both sides by $P$ (since $P \\neq 0$).",
+                  "working": "$1 = \\frac{4T}{100}$\n$100 = 4T$\n$T = \\frac{100}{4}$",
+                  "reasoning": "Rearranging the equation to isolate the variable T."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the final value.",
+                  "working": "$T = 25$",
+                  "reasoning": "The time required is 25 years."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Simple Interest Doubling Time"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N3-gemini-1911-p2-102",
         "topicID": "N3",
@@ -2079,6 +2127,125 @@
         "totalMarks": 11,
         "paper": "Paper 2",
         "title": "Investment and Travel Costs"
+      },
+      {
+        "questionNumber": 5,
+        "questionId": "N3-zhonghua-2024-p2-q5",
+        "topicID": "N3",
+        "stem": "Tom requires a 7 year loan of $120 000 to purchase a new car. Bank M charges an interest of 4% per annum compounded monthly. Bank N charges a simple interest of 4.3% per annum.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Determine which bank loan Tom should take. Justify your answer clearly.",
+            "marks": 4,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "Tom should take the loan from Bank N.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total amount payable for Bank M using the compound interest formula $A = P(1 + \\frac{r}{100n})^{nt}$. Here, the rate is compounded monthly ($n=12$).",
+                  "working": "Bank M (Compound Interest):\n$P = 120000, r = 4\\%, t = 7, n = 12$\n$A = 120000(1 + \\frac{4}{12 \\times 100})^{12 \\times 7}$\n$A = 120000(1 + \\frac{1}{300})^{84}$",
+                  "reasoning": "For monthly compounding, we divide the annual rate by 12 and multiply the number of years by 12."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Evaluate the amount for Bank M.",
+                  "working": "$A \\approx 120000(1.32219)$\n$A \\approx \\$158,662.77$",
+                  "reasoning": "Calculating the total repayment amount for the compound interest loan."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the total amount payable for Bank N using the simple interest formula. First find Interest $I = \\frac{PRT}{100}$, then add to Principal.",
+                  "working": "Bank N (Simple Interest):\n$I = \\frac{120000 \\times 4.3 \\times 7}{100}$\n$I = 1200 \\times 30.1 = \\$36,120$\nTotal Amount = $120000 + 36120 = \\$156,120$",
+                  "reasoning": "Simple interest is calculated on the principal only. The total debt is Principal + Interest."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Compare the total amounts payable and conclude.",
+                  "working": "Bank M Total: \\$158,662.77\nBank N Total: \\$156,120\nSince \\$156,120 < \\$158,662.77, Bank N is cheaper.",
+                  "reasoning": "A rational borrower chooses the loan with the lower total repayment amount."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Loan Interest Comparison"
+      },
+      {
+        "questionNumber": 6,
+        "questionId": "N3-zhonghua-2024-p2-q6",
+        "topicID": "N3",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The cash price of a furniture set is \\$10 850. Kate buys the sofa on hire purchase. She pays a deposit of one fifth of the cash price. She then makes 24 monthly payments of \\$x. Given that the total amount that Kate pays for the furniture set is \\$11 578, find the value of x.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$392",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the deposit amount.",
+                  "working": "Deposit = $\\frac{1}{5} \\times 10850 = \\$2170$",
+                  "reasoning": "The deposit is a fraction of the cash price paid upfront."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation for the total hire purchase price and solve for $x$. Total Price = Deposit + (Monthly Installment $\\times$ Number of Months).",
+                  "working": "$11578 = 2170 + (24 \\times x)$\n$24x = 11578 - 2170$\n$24x = 9408$",
+                  "reasoning": "Subtract the deposit from the total amount paid to find the total amount paid via installments."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide by the number of months to find the monthly payment.",
+                  "working": "$x = \\frac{9408}{24}$\n$x = 392$",
+                  "reasoning": "Isolating $x$ gives the monthly installment value."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The exchange rate between Singapore dollars (\\$) and US dollars (USD) is \\$1= USD 0.74. The exchange rate between British pounds (£) and Singapore dollars (\\$) is £1=\\$1.72. Kate wants to buy a handbag. The same handbag costs USD 234 on online shopping platform A and £234 on online shopping platform B. By comparing the exchange rates, explain how you can tell that the handbag costs more on online shopping platform B.",
+            "marks": 2,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See explanation.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the cost from Platform A (USD) into Singapore Dollars (SGD).",
+                  "working": "Platform A (USD 234):\nSince $\\$1 = \\text{USD } 0.74$,\nCost in SGD = $\\frac{234}{0.74} \\approx \\$316.22$",
+                  "reasoning": "To compare prices, we must convert them to a common currency (SGD)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert the cost from Platform B (£) into Singapore Dollars (SGD).",
+                  "working": "Platform B (£234):\nSince $£1 = \\$1.72$,\nCost in SGD = $234 \\times 1.72 = \\$402.48$",
+                  "reasoning": "Using the given exchange rate to convert Pounds to SGD."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compare the two values.",
+                  "working": "$\\$402.48 > \\$316.22$\nTherefore, the handbag costs more on Platform B.",
+                  "reasoning": "Comparing the final SGD values proves which platform is more expensive."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Hire Purchase and Exchange Rates"
       },
       {
         "questionNumber": 8,
@@ -3368,6 +3535,88 @@
         "title": "Hire Purchase and Interest"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N3-gemini-2211073352-p2-q101",
+        "topicID": "N3",
+        "stem": "Mr. Tan invests $50 000 for 3 years. He is considering two different investment plans. Plan A offers a simple interest of 3.8% per annum. Plan B offers an interest of 3.6% per annum, compounded half-yearly.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the total amount Mr. Tan will receive at the end of 3 years if he chooses Plan A.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$55 700",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the simple interest using $I = \\frac{PRT}{100}$.",
+                  "working": "$I = \\frac{50000 \\times 3.8 \\times 3}{100} = 500 \\times 11.4 = 5700$",
+                  "reasoning": "Simple interest is calculated on the principal amount."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add the interest to the principal to find the total amount.",
+                  "working": "Total Amount = $50000 + 5700 = \\$55 700$",
+                  "reasoning": "Total Amount = Principal + Interest."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the total amount Mr. Tan will receive at the end of 3 years if he chooses Plan B.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$55 648.33",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the parameters for compound interest. Since it is compounded half-yearly, the frequency $n=2$.",
+                  "working": "$P = 50000, r = 3.6, t = 3, n = 2$\nFormula: $A = P(1 + \\frac{r}{100n})^{nt}$",
+                  "reasoning": "Half-yearly compounding means interest is added twice a year."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the values into the formula.",
+                  "working": "$A = 50000(1 + \\frac{3.6}{200})^{2 \\times 3}$\n$A = 50000(1 + 0.018)^6$\n$A = 50000(1.018)^6$",
+                  "reasoning": "The rate per period is $3.6/2 = 1.8\\%$ and total periods is $3 \\times 2 = 6$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final value.",
+                  "working": "$A \\approx 50000(1.112966)$\n$A \\approx 55648.33$",
+                  "reasoning": "Compute the value to 2 decimal places (currency)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate the difference in interest earned between the two plans.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$51.67",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the difference between the total amounts calculated in parts (a) and (b).",
+                  "working": "Difference = $\\$55 700 - \\$55 648.33 = \\$51.67$",
+                  "reasoning": "Since the principal is the same, the difference in total amount is equal to the difference in interest earned."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Investment Plan Comparison"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N3-gemini-2111113911-p2-q102",
         "topicID": "N3",
@@ -3513,6 +3762,71 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Profit, Loss and Tax"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N3-gemini-2211073352-p2-q102",
+        "topicID": "N3",
+        "stem": "A motorcycle is sold for a cash price of $8800. It can also be bought on hire purchase with a deposit of 15% and equal monthly installments for 3 years. The hire purchase price is calculated based on a simple interest rate of 3.5% per annum charged on the initial balance.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the amount of the deposit.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1320",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate 15% of the cash price.",
+                  "working": "Deposit = $\\frac{15}{100} \\times 8800 = \\$1320$",
+                  "reasoning": "The deposit is the upfront payment required."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the monthly installment.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$229.56",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the initial balance (loan amount) after paying the deposit.",
+                  "working": "Balance = $8800 - 1320 = \\$7480$",
+                  "reasoning": "Interest is charged on the remaining amount owed."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the total interest on the balance for 3 years.",
+                  "working": "Interest = $\\frac{7480 \\times 3.5 \\times 3}{100} = \\$785.40$",
+                  "reasoning": "Using Simple Interest formula $I = Prt/100$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the total amount to be paid in installments and divide by the number of months.",
+                  "working": "Total Installment Amount = Balance + Interest = $7480 + 785.40 = \\$8265.40$\nNumber of months = $3 \\times 12 = 36$\nMonthly Installment = $\\frac{8265.40}{36} \\approx 229.594$",
+                  "reasoning": "The total loan plus interest is spread over 36 months."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to the nearest cent.",
+                  "working": "Monthly Installment = $\\$229.59$",
+                  "reasoning": "Currency is always given to 2 decimal places."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Hire Purchase Calculation"
       }
     ]
   }

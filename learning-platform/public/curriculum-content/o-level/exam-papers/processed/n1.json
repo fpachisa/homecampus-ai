@@ -703,6 +703,71 @@
         "title": "Prime Factors and HCF"
       },
       {
+        "questionNumber": 2,
+        "questionId": "N1-zhonghua-2024-p1-q2",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\frac{5048.9^{2}-30140}{14.69+9.656}$. Write your answer correct to 5 significant figures.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1 045 800",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the numerator.",
+                  "working": "$5048.9^2 - 30140 \\approx 25491391.21 - 30140 = 25461251.21$",
+                  "reasoning": "Evaluate the square term first, then subtract."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the denominator.",
+                  "working": "$14.69 + 9.656 = 24.346$",
+                  "reasoning": "Sum the values in the denominator."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide the numerator by the denominator.",
+                  "working": "$\\frac{25461251.21}{24.346} \\approx 1045808.396...$",
+                  "reasoning": "Perform the division using the calculated values."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Round to 5 significant figures.",
+                  "working": "$1045808.396... \\approx 1045800$",
+                  "reasoning": "Identify the 5th significant digit (0) and check the next digit (8) to round up."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write your answer to part (a) in standard form.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1.0458 \\times 10^6$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the number to standard form $A \\times 10^n$ where $1 \\le A < 10$.",
+                  "working": "$1045800 = 1.0458 \\times 10^6$",
+                  "reasoning": "Move the decimal point 6 places to the left to get a number between 1 and 10."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Calculation and Standard Form"
+      },
+      {
         "questionNumber": 3,
         "questionId": "N1-broadrick-2024-p1-q3",
         "topicID": "N1",
@@ -1843,6 +1908,60 @@
         "title": "Indices Equation"
       },
       {
+        "questionNumber": 7,
+        "questionId": "N1-zhonghua-2024-p1-q7",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $\\frac{(-2q)^{4}}{6\\sqrt{p^{5}}}\\times\\frac{3\\sqrt{p}}{-q}$. Leave your answer in positive index notation.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$-\\frac{8q^3}{p^2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the power of the product in the numerator.",
+                  "working": "$(-2q)^4 = (-2)^4 q^4 = 16q^4$",
+                  "reasoning": "Apply the power to both the coefficient and the variable."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Convert radicals to fractional indices.",
+                  "working": "$\\sqrt{p^5} = p^{\\frac{5}{2}}$ and $\\sqrt{p} = p^{\\frac{1}{2}}$",
+                  "reasoning": "Use the rule $\\sqrt[n]{x^m} = x^{\\frac{m}{n}}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Rewrite the expression.",
+                  "working": "$\\frac{16q^4}{6p^{\\frac{5}{2}}} \\times \\frac{3p^{\\frac{1}{2}}}{-q}$",
+                  "reasoning": "Substitute the simplified terms back into the fraction."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Group constants and variables.",
+                  "working": "Numbers: $\\frac{16 \\times 3}{6 \\times -1} = \\frac{48}{-6} = -8$\n$q$: $\\frac{q^4}{q^1} = q^{4-1} = q^3$\n$p$: $\\frac{p^{\\frac{1}{2}}}{p^{\\frac{5}{2}}} = p^{\\frac{1}{2} - \\frac{5}{2}} = p^{-2}$",
+                  "reasoning": "Simplify coefficients and apply index laws for division ($x^a \\div x^b = x^{a-b}$)."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Format the final answer with positive indices.",
+                  "working": "$-8q^3 p^{-2} = -\\frac{8q^3}{p^2}$",
+                  "reasoning": "Move the term with the negative index to the denominator."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Indices Simplification"
+      },
+      {
         "questionNumber": 8,
         "questionId": "N1-acsi-2024-p1-q8",
         "topicID": "N1",
@@ -2192,6 +2311,48 @@
         "title": "Prime Factorisation"
       },
       {
+        "questionNumber": 11,
+        "questionId": "N1-zhonghua-2024-p1-q11",
+        "topicID": "N1",
+        "stem": "264 1-cm cubes are to be arranged to form a cuboid. Only one length of the cuboid is a prime number.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find a possible set of dimensions of the cuboid.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4 cm by 6 cm by 11 cm (or 2, 11, 12 etc.)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the prime factorization of the volume (264).",
+                  "working": "$264 = 2 \\times 132 = 2^2 \\times 66 = 2^3 \\times 33 = 2^3 \\times 3 \\times 11$",
+                  "reasoning": "The volume of the cuboid is the product of its dimensions ($l \\times w \\times h$). Breaking it down helps find factors."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify a prime dimension.",
+                  "working": "Possible prime factors are 2, 3, or 11. Let's choose 11 as the prime length.",
+                  "reasoning": "The question states exactly one length is a prime number."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Determine the other two dimensions from the remaining factors.",
+                  "working": "Remaining product: $\\frac{264}{11} = 24$. We need two factors of 24 that are NOT prime (to satisfy 'Only one length... is prime' if interpreted strictly, or just find any valid set). \nPossible pairs for 24: $4 \\times 6$. (4 and 6 are not prime).\nDimensions: 4, 6, 11.",
+                  "reasoning": "Ensure the product equals 264."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Factors and Cuboid Dimensions"
+      },
+      {
         "questionNumber": 12,
         "questionId": "N1-broadrick-2024-p1-q12",
         "topicID": "N1",
@@ -2267,6 +2428,48 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Indices"
+      },
+      {
+        "questionNumber": 14,
+        "questionId": "N1-zhonghua-2024-p1-q14",
+        "topicID": "N1",
+        "stem": "Given that $9^{2x}=243\\times3^{x}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find x.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 1\\frac{2}{3}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express all terms with the base 3.",
+                  "working": "$9 = 3^2$, so $9^{2x} = (3^2)^{2x} = 3^{4x}$.\n$243 = 3^5$.",
+                  "reasoning": "To solve exponential equations, it is easiest to make the bases the same."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form the equation with indices.",
+                  "working": "$3^{4x} = 3^5 \\times 3^x$\n$3^{4x} = 3^{5+x}$",
+                  "reasoning": "Use the multiplication law of indices: $a^m \\times a^n = a^{m+n}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Equate the powers and solve for x.",
+                  "working": "$4x = 5 + x$\n$3x = 5$\n$x = \\frac{5}{3}$",
+                  "reasoning": "If bases are equal, the exponents must be equal."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices Equation"
       },
       {
         "questionNumber": 15,
@@ -3398,6 +3601,65 @@
         "title": "Calculation and Standard Form"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2211073352-p1-q101",
+        "topicID": "N1",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate $\\frac{\\sqrt{3.8 \\times 10^5}}{25.4^2 - 145}$. Write your answer correct to 4 significant figures.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1.233",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the numerator.",
+                  "working": "$\\sqrt{380000} \\approx 616.4414$",
+                  "reasoning": "Evaluate the square root."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the denominator.",
+                  "working": "$25.4^2 - 145 = 645.16 - 145 = 500.16$",
+                  "reasoning": "Square the term and subtract."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Divide and round.",
+                  "working": "$\\frac{616.4414}{500.16} \\approx 1.23248... \\rightarrow 1.232$",
+                  "reasoning": "Perform division and round to 4 s.f."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Write your answer to part (a) in standard form.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1.232 \\times 10^0$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert to standard form.",
+                  "working": "$1.232 = 1.232 \\times 10^0$",
+                  "reasoning": "The number is already between 1 and 10, so the power of 10 is 0."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Calculation and Standard Form"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N1-gemini-1911-p1-102",
         "topicID": "N1",
@@ -4008,6 +4270,48 @@
         "title": "Prime Factors and HCF"
       },
       {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2211073352-p1-q102",
+        "topicID": "N1",
+        "stem": "Given that $16^{x-1} = \\frac{1}{8} \\times 2^{x}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find x.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = \\frac{1}{3}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert all terms to base 2.",
+                  "working": "$16 = 2^4 \\Rightarrow 16^{x-1} = (2^4)^{x-1} = 2^{4x-4}$\n$\\frac{1}{8} = \\frac{1}{2^3} = 2^{-3}$",
+                  "reasoning": "Express bases as powers of 2."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form the equation.",
+                  "working": "$2^{4x-4} = 2^{-3} \\times 2^x$\n$2^{4x-4} = 2^{-3+x}$",
+                  "reasoning": "Apply index laws on the right hand side."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for x.",
+                  "working": "$4x - 4 = -3 + x$\n$3x = 1$\n$x = \\frac{1}{3}$",
+                  "reasoning": "Equate exponents and solve the linear equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Indices Equation"
+      },
+      {
         "questionNumber": 103,
         "questionId": "N1-gemini-2111185018-p1-q103",
         "topicID": "N1",
@@ -4199,10 +4503,52 @@
         }
       },
       {
+        "questionNumber": 1,
+        "questionId": "N1-zhonghua-2024-p2-q1",
+        "topicID": "N1",
+        "stem": "Write down the following numbers in ascending order.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$-\\frac{25}{37},(-0.51)^{\\frac{2}{3}},\\sqrt{0.36},0.\\dot{6},-\\frac{\\pi}{6}$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$-\\frac{25}{37}, -\\frac{\\pi}{6}, \\sqrt{0.36}, (-0.51)^{\\frac{2}{3}}, 0.\\dot{6}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert all numbers to decimals for easy comparison.",
+                  "working": "$-\\frac{25}{37} \\approx -0.6757$\n$(-0.51)^{\\frac{2}{3}} = ((-0.51)^2)^{\\frac{1}{3}} \\approx (0.2601)^{\\frac{1}{3}} \\approx 0.6383$\n$\\sqrt{0.36} = 0.6$\n$0.\\dot{6} = 0.666...$\n$-\\frac{\\pi}{6} \\approx -0.5236$",
+                  "reasoning": "Decimal approximation allows for direct comparison of values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Arrange the decimals in ascending order (smallest to largest).",
+                  "working": "$-0.6757 < -0.5236 < 0.6 < 0.6383 < 0.666...$",
+                  "reasoning": "Compare negative values first (larger magnitude is smaller number), then positive values."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Map back to original forms.",
+                  "working": "$-\\frac{25}{37}, -\\frac{\\pi}{6}, \\sqrt{0.36}, (-0.51)^{\\frac{2}{3}}, 0.\\dot{6}$",
+                  "reasoning": "Present the answer in the original format requested."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 2",
+        "title": "Ordering Numbers"
+      },
+      {
         "questionNumber": 2,
         "questionId": "N1-acsi-2024-p2-q2",
         "topicID": "N1",
-        "stem": "stem": "A manufacturing company produces electronic components for various devices. They are analyzing the production data for the past 3 months, which includes quantities of components produced and the corresponding costs. \n(Data: May: $5.8\\times10^5$ units @ \\$0.0211; \nJune: $4.3\\times10^6$ units @ \\$0.0183; \nJuly: $7.6\\times10^5$ units @ \\$0.0203)",
+        "stem": "A manufacturing company produces electronic components for various devices. They are analyzing the production data for the past 3 months, which includes quantities of components produced and the corresponding costs. \n(Data: May: $5.8\\times10^5$ units @ \\$0.0211; \nJune: $4.3\\times10^6$ units @ \\$0.0183; \nJuly: $7.6\\times10^5$ units @ \\$0.0203)",
         "hasDiagram": false,
         "diagramDescription": "",
         "parts": [
@@ -5214,6 +5560,48 @@
         "title": "Standard Form Application"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N1-gemini-2211073352-p2-q101",
+        "topicID": "N1",
+        "stem": "Write down the following numbers in descending order.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "$2^{-2}, \\sqrt[3]{0.008}, (0.2)^{2}, \\frac{3}{11}$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{11}, 2^{-2}, \\sqrt[3]{0.008}, (0.2)^{2}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert numbers to decimals.",
+                  "working": "$2^{-2} = \\frac{1}{4} = 0.25$\n$\\sqrt[3]{0.008} = 0.2$\n$(0.2)^2 = 0.04$\n$\\frac{3}{11} \\approx 0.2727$",
+                  "reasoning": "Evaluate powers and roots to compare values."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Arrange in descending order (largest to smallest).",
+                  "working": "$0.2727 > 0.25 > 0.2 > 0.04$",
+                  "reasoning": "Compare the decimal values."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write in original form.",
+                  "working": "$\\frac{3}{11}, 2^{-2}, \\sqrt[3]{0.008}, (0.2)^{2}$",
+                  "reasoning": "Final formatting."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 2",
+        "title": "Ordering Numbers"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N1-gemini-2011-p2-102",
         "topicID": "N1",
@@ -5295,6 +5683,48 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Utility Bills and Tiered Pricing"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N1-gemini-2211073352-p2-q102",
+        "topicID": "N1",
+        "stem": "Light travels at a speed of approximately $3 \\times 10^8$ m/s. The distance from a star to the Earth is $4.2 \\times 10^{16}$ m.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the time taken, in seconds, for light to travel from the star to the Earth. Give your answer in standard form.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$1.4 \\times 10^8$ seconds",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the formula Time = Distance / Speed.",
+                  "working": "Time $= \\frac{4.2 \\times 10^{16}}{3 \\times 10^8}$",
+                  "reasoning": "Physics/Math relationship for speed, distance, and time."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Divide the coefficients and the powers of 10 separately.",
+                  "working": "$\\frac{4.2}{3} \\times \\frac{10^{16}}{10^8} = 1.4 \\times 10^{16-8}$",
+                  "reasoning": "Apply index laws for division."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Finalize standard form.",
+                  "working": "$1.4 \\times 10^8$",
+                  "reasoning": "The coefficient 1.4 is already between 1 and 10."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 2",
+        "title": "Standard Form Application"
       },
       {
         "questionNumber": 103,

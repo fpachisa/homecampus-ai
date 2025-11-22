@@ -366,6 +366,54 @@
         "title": "Average Speed Journey"
       },
       {
+        "questionNumber": 22,
+        "questionId": "N4-zhonghua-2024-p1-q22",
+        "topicID": "N4",
+        "stem": "On Monday, a car travelling from work to home at an average speed of p $km/h$ takes 30 minutes to complete the journey. On Tuesday, the car decreased its average speed by q% and took 45 minutes instead to complete the same journey.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of q.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "33\\frac{1}{3}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Establish the relationship between Distance, Speed, and Time. Since the journey is the same, the distance is constant.",
+                  "working": "$\\text{Distance} = \\text{Speed} \\times \\text{Time}$",
+                  "reasoning": "Using the formula $D = S \\times T$ allows us to equate the distance for both days."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form an equation equating the distance travelled on Monday and Tuesday. Let the speed on Monday be $p$. The speed on Tuesday is reduced by $q\\%$, so it is $p(1 - \\frac{q}{100})$.",
+                  "working": "Monday Distance: $p \\times 30$\nTuesday Distance: $p(1 - \\frac{q}{100}) \\times 45$\n\n$30p = 45p(1 - \\frac{q}{100})$",
+                  "reasoning": "We can use minutes directly without converting to hours because the units are consistent on both sides of the equation."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve the equation for $q$. Divide both sides by $p$ (since $p \\neq 0$) and simplify.",
+                  "working": "$30 = 45(1 - \\frac{q}{100})$\n$\\frac{30}{45} = 1 - \\frac{q}{100}$\n$\\frac{2}{3} = 1 - \\frac{q}{100}$",
+                  "reasoning": "Isolating the term with $q$ makes it easier to solve."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Rearrange to find $q$.",
+                  "working": "$\\frac{q}{100} = 1 - \\frac{2}{3}$\n$\\frac{q}{100} = \\frac{1}{3}$\n$q = \\frac{100}{3} = 33\\frac{1}{3}$",
+                  "reasoning": "Convert the improper fraction to a mixed number for the final answer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Speed, Time and Percentage"
+      },
+      {
         "questionNumber": 23,
         "questionId": "N4-anderson-2024-p1-q23",
         "topicID": "N4",
@@ -737,6 +785,48 @@
         "title": "Multi-stage Travel"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-2211073352-p1-q101",
+        "topicID": "N4",
+        "stem": "A contractor estimates that $x$ identical pumps can empty a reservoir in 12 hours. If 2 additional pumps are used, the same reservoir can be emptied in 8 hours.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the relationship as inverse proportion. The amount of work (emptying the reservoir) is constant.",
+                  "working": "$\\text{Work} = \\text{Rate} \\times \\text{Time}$",
+                  "reasoning": "More pumps mean less time taken, indicating inverse proportion."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the equation equating the total pump-hours for both scenarios.",
+                  "working": "$12 \\times x = 8 \\times (x + 2)$",
+                  "reasoning": "The product of the number of pumps and the time taken must be equal."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve the linear equation for $x$.",
+                  "working": "$12x = 8x + 16$\n$12x - 8x = 16$\n$4x = 16$\n$x = 4$",
+                  "reasoning": "Expand the brackets and isolate $x$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Inverse Proportion"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N4-gemini-1911-p1-102",
         "topicID": "N4",
@@ -895,6 +985,54 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Estimation and Area"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N4-gemini-2211073352-p1-q102",
+        "topicID": "N4",
+        "stem": "A factory machine prints labels at a constant rate of $r$ labels per minute, taking 5 hours to complete a specific batch. If the machine's speed is increased by 25%, the time taken to print the same batch decreases.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the time taken, in hours, to complete the batch at the increased speed.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Define the relationship between Rate, Time, and Work (Batch size).",
+                  "working": "$\\text{Work} = \\text{Rate} \\times \\text{Time} = 5r$",
+                  "reasoning": "The total work is the product of the original rate and original time."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the new rate after a 25% increase.",
+                  "working": "$\\text{New Rate} = r \\times (1 + \\frac{25}{100}) = 1.25r$",
+                  "reasoning": "Increasing by 25% is equivalent to multiplying by 1.25."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new time using the constant Work.",
+                  "working": "$5r = 1.25r \\times \\text{New Time}$\n$\\text{New Time} = \\frac{5r}{1.25r} = \\frac{5}{1.25}$",
+                  "reasoning": "Equate the work done in both scenarios."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify to find the final answer.",
+                  "working": "$\\frac{5}{1.25} = \\frac{500}{125} = 4$ hours",
+                  "reasoning": "Perform the division to get the numerical value."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Rate and Percentage Change"
       }
     ],
     "Paper 2": [
@@ -1226,6 +1364,65 @@
         "totalMarks": 4,
         "paper": "Paper 2",
         "title": "Average Speed Calculation"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N4-gemini-2211073352-p2-q101",
+        "topicID": "N4",
+        "stem": "Mr. Tan is planning a holiday to Japan. He visits a money changer where the exchange rate is \\$1 SGD = 108 JPY.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the amount of Japanese Yen (JPY) he receives for \\$2500 SGD.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "270000",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply the amount in SGD by the exchange rate.",
+                  "working": "$2500 \\times 108 = 270000$",
+                  "reasoning": "Since 1 SGD buys 108 JPY, 2500 SGD buys 2500 times that amount."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "At the end of his trip, Mr. Tan has 32 400 JPY left. He converts this back to Singapore Dollars at a rate of 100 JPY = \\$0.91 SGD. Calculate the amount of SGD he receives, giving your answer to the nearest cent.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "294.84",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the value of 1 JPY in SGD based on the new rate.",
+                  "working": "$\\text{Rate}: 100 \\text{ JPY} = \\$0.91 \\text{ SGD} \\implies 1 \\text{ JPY} = \\frac{0.91}{100} = 0.0091 \\text{ SGD}$",
+                  "reasoning": "Unitary method helps to find the conversion factor."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the remaining JPY by the unit rate.",
+                  "working": "$32400 \\times 0.0091 = 294.84$",
+                  "reasoning": "Convert the total JPY amount to SGD."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Check rounding.",
+                  "working": "The calculated value is exactly 294.84, so no further rounding is needed.",
+                  "reasoning": "The question asks for the answer to the nearest cent."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Currency Exchange Rates"
       },
       {
         "questionNumber": 102,

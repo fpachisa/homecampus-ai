@@ -522,6 +522,89 @@
         "title": "Ratio and Salary"
       },
       {
+        "questionNumber": 12,
+        "questionId": "N2-zhonghua-2024-p1-q12",
+        "topicID": "N2",
+        "stem": "A model of a school is made. The actual floor area of the school field is 4050 square metres.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "On the model, the area of the school field is $20~cm^{2}$. Find the scale of the model in the form $1:n,$ where n is correct to two significant figures.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1 : 1400",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the ratio of the area of the model to the actual area.",
+                  "working": "Area Ratio = $20 \\text{ cm}^2 : 4050 \\text{ m}^2$",
+                  "reasoning": "We start by comparing the given areas directly."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the ratio to find the area represented by $1 \\text{ cm}^2$.",
+                  "working": "$1 \\text{ cm}^2 : \\frac{4050}{20} \\text{ m}^2$\n$1 \\text{ cm}^2 : 202.5 \\text{ m}^2$",
+                  "reasoning": "Dividing both sides by 20 simplifies the calculation for the next step."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the linear scale by taking the square root of the area ratio.",
+                  "working": "Linear Ratio = $\\sqrt{1} \\text{ cm} : \\sqrt{202.5} \\text{ m}$\n$1 \\text{ cm} : 14.2302... \\text{ m}$",
+                  "reasoning": "The ratio of lengths is the square root of the ratio of areas."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert the actual length from metres to centimetres to get the ratio in the form $1:n$.",
+                  "working": "$1 \\text{ m} = 100 \\text{ cm}$\n$1 \\text{ cm} : 14.2302... \\times 100 \\text{ cm}$\n$1 \\text{ cm} : 1423.02... \\text{ cm}$",
+                  "reasoning": "Scales must have the same units on both sides to be unitless."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Round $n$ to two significant figures.",
+                  "working": "$n \\approx 1400$\nScale = $1 : 1400$",
+                  "reasoning": "The question specifically asks for $n$ correct to two significant figures."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The scale on another model is 1: 4000. Find the area of the school field on this model.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "2.53125 $cm^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the linear scale to an area scale.",
+                  "working": "Linear Scale = $1 : 4000$\nArea Scale = $1^2 : 4000^2$\n$1 \\text{ unit}^2 : 16,000,000 \\text{ unit}^2$",
+                  "reasoning": "The ratio of areas is the square of the ratio of lengths."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Alternatively, convert the linear scale to relate cm to metres, then square it.",
+                  "working": "$1 \\text{ cm} : 4000 \\text{ cm}$\n$1 \\text{ cm} : 40 \\text{ m}$\nArea Scale = $1 \\text{ cm}^2 : 40^2 \\text{ m}^2$\n$1 \\text{ cm}^2 : 1600 \\text{ m}^2$",
+                  "reasoning": "Converting to mixed units ($1 \\text{ cm}$ to $x \\text{ m}$) is often more practical for map problems involving area."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the area on the model using the actual area.",
+                  "working": "Actual Area = $4050 \\text{ m}^2$\nModel Area = $\\frac{4050}{1600} \\text{ cm}^2$\nModel Area = $2.53125 \\text{ cm}^2$",
+                  "reasoning": "Since $1600 \\text{ m}^2$ is represented by $1 \\text{ cm}^2$, we divide the total actual area by 1600."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Map Scale and Area"
+      },
+      {
         "questionNumber": 14,
         "questionId": "N2-greenridge-2024-p1-q14",
         "topicID": "N2",
@@ -1963,6 +2046,77 @@
         "title": "Ratio Transfer"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N2-gemini-2211073352-p1-q101",
+        "topicID": "N2",
+        "stem": "A map has a scale of $1 : 25~000$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The actual distance between two towns is $4.5~km$. Calculate the distance, in centimetres, between the two towns on the map.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "18 cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the representative fraction to a relationship between cm and km.",
+                  "working": "Scale $1 : 25~000$ means $1 \\text{ cm}$ represents $25~000 \\text{ cm}$.\n$25~000 \\text{ cm} = \\frac{25000}{100000} \\text{ km} = 0.25 \\text{ km}$.\nSo, $1 \\text{ cm} : 0.25 \\text{ km}$.",
+                  "reasoning": "It is easier to work with mixed units (cm for map, km for actual) for this calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the map distance.",
+                  "working": "Map Distance = $\\frac{\\text{Actual Distance}}{\\text{Scale Factor in km}}$\nMap Distance = $\\frac{4.5}{0.25}$",
+                  "reasoning": "We divide the actual distance by the distance represented by 1 cm."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute the final value.",
+                  "working": "$\\frac{4.5}{0.25} = 18 \\text{ cm}$",
+                  "reasoning": "Calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "A forest on the map has an area of $12~cm^2$. Calculate the actual area of the forest in square kilometres.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.75 $km^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the area scale based on the linear scale derived in part (a).",
+                  "working": "Linear Scale: $1 \\text{ cm} : 0.25 \\text{ km}$\nArea Scale: $(1)^2 \\text{ cm}^2 : (0.25)^2 \\text{ km}^2$\n$1 \\text{ cm}^2 : 0.0625 \\text{ km}^2$",
+                  "reasoning": "Area scale is the square of the linear scale."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the actual area.",
+                  "working": "Actual Area = Map Area $\\times$ Area Scale Factor\nActual Area = $12 \\times 0.0625$",
+                  "reasoning": "Multiply the map area by the actual area represented by $1 \\text{ cm}^2$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Compute the final answer.",
+                  "working": "$12 \\times 0.0625 = 0.75 \\text{ km}^2$",
+                  "reasoning": "Calculation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Map Scale and Area"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N2-gemini-1911-p1-102",
         "topicID": "N2",
@@ -2466,6 +2620,54 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Ratio with One Quantity Changing"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N2-gemini-2211073352-p1-q102",
+        "topicID": "N2",
+        "stem": "The floor plan of an apartment is drawn to scale. An actual room with an area of $16~m^2$ is represented by an area of $4~cm^2$ on the plan.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the scale of the floor plan in the form $1:n$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1 : 200",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the ratio of areas.",
+                  "working": "$4 \\text{ cm}^2 : 16 \\text{ m}^2$",
+                  "reasoning": "Compare map area to actual area."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify to find the value for $1 \\text{ cm}^2$.",
+                  "working": "$1 \\text{ cm}^2 : 4 \\text{ m}^2$",
+                  "reasoning": "Divide both sides by 4."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the linear scale by square rooting.",
+                  "working": "$\\sqrt{1} \\text{ cm} : \\sqrt{4} \\text{ m}$\n$1 \\text{ cm} : 2 \\text{ m}$",
+                  "reasoning": "Linear scale is the square root of area scale."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert units to be the same (cm) to find $n$.",
+                  "working": "$1 \\text{ cm} : 200 \\text{ cm}$\nScale is $1 : 200$",
+                  "reasoning": "$1 \\text{ m} = 100 \\text{ cm}$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Map Scale and Area"
       },
       {
         "questionNumber": 103,
@@ -3326,6 +3528,83 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Inverse Variation (Speed and Time)"
+      },
+      {
+        "questionNumber": 103,
+        "questionId": "N2-gemini-2211073352-p2-q103",
+        "topicID": "N2",
+        "stem": "Two different maps, Map A and Map B, represent the same region.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Map A has a scale of $1:50~000$. A reservoir has an area of $16~cm^2$ on Map A. Calculate the actual area of the reservoir in square kilometres.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "4 $km^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the linear scale of Map A to relate cm and km.",
+                  "working": "$1 \\text{ cm} : 50~000 \\text{ cm}$\n$50~000 \\text{ cm} = 0.5 \\text{ km}$\nLinear Scale: $1 \\text{ cm} : 0.5 \\text{ km}$",
+                  "reasoning": "Converting to km simplifies the area calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find the area scale for Map A.",
+                  "working": "Area Scale: $1^2 \\text{ cm}^2 : 0.5^2 \\text{ km}^2$\n$1 \\text{ cm}^2 : 0.25 \\text{ km}^2$",
+                  "reasoning": "Square the linear relationship."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the actual area.",
+                  "working": "Actual Area = $16 \\times 0.25 = 4 \\text{ km}^2$",
+                  "reasoning": "Multiply map area by the area scale factor."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The same reservoir has an area of $4~cm^2$ on Map B. Find the scale of Map B in the form $1:n$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "1 : 100 000",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the actual area calculated in part (a) to set up the ratio for Map B.",
+                  "working": "Map B Area : Actual Area\n$4 \\text{ cm}^2 : 4 \\text{ km}^2$",
+                  "reasoning": "We know the actual area is invariant (unchanging)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the area ratio.",
+                  "working": "$1 \\text{ cm}^2 : 1 \\text{ km}^2$",
+                  "reasoning": "Divide both sides by 4."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find the linear scale for Map B.",
+                  "working": "$\\sqrt{1} \\text{ cm} : \\sqrt{1} \\text{ km}$\n$1 \\text{ cm} : 1 \\text{ km}$",
+                  "reasoning": "Take the square root of the area ratio."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Convert to the form $1:n$.",
+                  "working": "$1 \\text{ km} = 100~000 \\text{ cm}$\nScale is $1 : 100~000$",
+                  "reasoning": "Ensure both sides are in cm."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Map Scale and Area"
       }
     ]
   }

@@ -74,6 +74,83 @@
         "title": "Probability of Balls"
       },
       {
+        "questionNumber": 4,
+        "questionId": "S2-zhonghua-2024-p1-q4",
+        "topicID": "S2",
+        "stem": "A stack of coloured paper contains green, purple and blue sheets of paper. A piece of paper is selected at random from the stack.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "i",
+            "questionText": "The probability that the paper is green is 10%. The probability that the paper is purple is $\\frac{7}{20}$. Find the probability that the paper is blue.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{11}{20}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the percentage to a fraction to match the other probability.",
+                  "working": "10\\% = \\frac{10}{100} = \\frac{1}{10}",
+                  "reasoning": "Working with consistent units (fractions) makes subtraction easier."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the probabilities of green and purple from 1 (the total probability) to find the probability of blue.",
+                  "working": "P(\\text{Blue}) = 1 - P(\\text{Green}) - P(\\text{Purple}) \n= 1 - \\frac{1}{10} - \\frac{7}{20} \n= \\frac{20}{20} - \\frac{2}{20} - \\frac{7}{20}",
+                  "reasoning": "The sum of probabilities of all mutually exclusive outcomes in a sample space is always 1."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the result.",
+                  "working": "= \\frac{11}{20}",
+                  "reasoning": "Final calculation."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "ii",
+            "questionText": "A few pieces of green paper were added to the stack. The probability of picking a piece of purple paper from this stack at random is now $\\frac{1}{3}$. If there were 120 sheets of paper initially, find the new probability of picking a blue piece of paper.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{11}{21}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the initial number of purple and blue papers using the initial total of 120.",
+                  "working": "\\text{Initial Purple} = 120 \\times \\frac{7}{20} = 42 \n\\text{Initial Blue} = 120 \\times \\frac{11}{20} = 66",
+                  "reasoning": "We need the absolute counts because the probabilities change when the total number of papers changes."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the new total number of papers. Since only green papers were added, the number of purple papers remains 42. Use the new probability of purple to find the new total.",
+                  "working": "\\frac{\\text{Number of Purple}}{\\text{New Total}} = \\frac{1}{3} \n\\frac{42}{\\text{New Total}} = \\frac{1}{3} \n\\text{New Total} = 42 \\times 3 = 126",
+                  "reasoning": "The count of purple papers is the constant link between the old and new scenarios."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new probability of picking a blue paper. The number of blue papers (66) has not changed.",
+                  "working": "P(\\text{New Blue}) = \\frac{\\text{Number of Blue}}{\\text{New Total}} \n= \\frac{66}{126}",
+                  "reasoning": "Probability is favorable outcomes divided by total possible outcomes."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the fraction.",
+                  "working": "\\frac{66 \\div 6}{126 \\div 6} = \\frac{11}{21}",
+                  "reasoning": "Always express probabilities in simplest form."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Probability of Coloured Paper"
+      },
+      {
         "questionNumber": 8,
         "questionId": "S2-orchidpark-2024-p1-q8",
         "topicID": "S2",
@@ -1483,6 +1560,83 @@
         "title": "Logic Puzzle Times"
       },
       {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2211073352-p1-q101",
+        "topicID": "S2",
+        "stem": "A bag contains red, yellow, and blue counters. A counter is drawn at random from the bag.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "i",
+            "questionText": "The probability of drawing a red counter is $\\frac{1}{5}$ and the probability of drawing a yellow counter is 0.45. Calculate the probability of drawing a blue counter.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{7}{20}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert the decimal probability to a fraction.",
+                  "working": "0.45 = \\frac{45}{100} = \\frac{9}{20}",
+                  "reasoning": "Using fractions facilitates the subtraction from the total probability."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the known probabilities from 1.",
+                  "working": "P(\\text{Blue}) = 1 - \\frac{1}{5} - \\frac{9}{20} \n= \\frac{20}{20} - \\frac{4}{20} - \\frac{9}{20}",
+                  "reasoning": "The sum of probabilities for all outcomes (Red, Yellow, Blue) must equal 1."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final fraction.",
+                  "working": "= \\frac{7}{20}",
+                  "reasoning": "Final answer."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "ii",
+            "questionText": "There are initially 60 counters in the bag. 4 yellow counters are removed from the bag. Find the new probability of drawing a red counter.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{14}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the initial number of red counters.",
+                  "working": "\\text{Initial Red} = 60 \\times \\frac{1}{5} = 12",
+                  "reasoning": "We need the specific count of red counters, which does not change when yellow ones are removed."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the new total number of counters after removing 4 yellow ones.",
+                  "working": "\\text{New Total} = 60 - 4 = 56",
+                  "reasoning": "The sample space size decreases by the number of items removed."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new probability of drawing a red counter.",
+                  "working": "P(\\text{Red}) = \\frac{12}{56}",
+                  "reasoning": "Probability = (Number of Red) / (New Total)."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the fraction.",
+                  "working": "\\frac{12 \\div 4}{56 \\div 4} = \\frac{3}{14}",
+                  "reasoning": "Express in simplest form."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Counters in a Bag"
+      },
+      {
         "questionNumber": 102,
         "questionId": "S2-gemini-2011-p1-q102",
         "topicID": "S2",
@@ -1670,6 +1824,83 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Pet Survey Probability"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "S2-gemini-2211073352-p1-q102",
+        "topicID": "S2",
+        "stem": "A box contains cards numbered 1, 2, and 3. A card is picked at random.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "i",
+            "questionText": "The probability of picking a card numbered 1 is $\\frac{5}{12}$. The probability of picking a card numbered 2 is $\\frac{1}{4}$. Find the probability of picking a card numbered 3.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{3}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Make the denominators common to subtract from 1.",
+                  "working": "P(2) = \\frac{1}{4} = \\frac{3}{12}",
+                  "reasoning": "Common denominators make subtraction straightforward."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract the probabilities of 1 and 2 from the total.",
+                  "working": "P(3) = 1 - \\frac{5}{12} - \\frac{3}{12} \n= \\frac{12}{12} - \\frac{8}{12} \n= \\frac{4}{12}",
+                  "reasoning": "Total probability is 1."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify.",
+                  "working": "= \\frac{1}{3}",
+                  "reasoning": "Final simplified answer."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "ii",
+            "questionText": "Initially, there are 48 cards in the box. Some cards numbered 3 are added to the box. The new probability of picking a card numbered 1 is now $\\frac{1}{3}$. Find the new probability of picking a card numbered 2.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{1}{5}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the initial number of cards numbered 1 and 2.",
+                  "working": "\\text{Count of 1} = 48 \\times \\frac{5}{12} = 20 \n\\text{Count of 2} = 48 \\times \\frac{1}{4} = 12",
+                  "reasoning": "These counts remain constant as only cards numbered 3 are added."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the new probability of card 1 to find the new total number of cards.",
+                  "working": "\\frac{\\text{Count of 1}}{\\text{New Total}} = \\frac{1}{3} \n\\frac{20}{\\text{New Total}} = \\frac{1}{3} \n\\text{New Total} = 60",
+                  "reasoning": "We use the invariant quantity (count of 1s) to find the new sample space size."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new probability for card 2.",
+                  "working": "P(\\text{New 2}) = \\frac{\\text{Count of 2}}{\\text{New Total}} = \\frac{12}{60}",
+                  "reasoning": "Using the original count of 2s and the new total."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify.",
+                  "working": "= \\frac{1}{5}",
+                  "reasoning": "Final answer."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Numbered Cards"
       }
     ],
     "Paper 2": [
@@ -2732,6 +2963,77 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Wage Comparison"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "S2-gemini-2211073352-p2-q101",
+        "topicID": "S2",
+        "stem": "A group of students are asked to choose their favourite sport from Football, Basketball, and Tennis. A student is chosen at random from the group.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "The probability that a student chooses Football is 0.4. The probability that a student chooses Basketball is 35%. Find the probability that the student chooses Tennis.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.25",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert percentage to decimal.",
+                  "working": "35\\% = 0.35",
+                  "reasoning": "Consistent format (decimals) aids calculation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract known probabilities from 1.",
+                  "working": "P(\\text{Tennis}) = 1 - 0.4 - 0.35 \n= 0.25",
+                  "reasoning": "Sum of probabilities is 1."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "There are 200 students in the group initially. Later, 10 students change their choice from Football to Tennis. Find the new probability that a randomly selected student chooses Tennis.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$\\frac{3}{10}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the initial number of students who chose Tennis.",
+                  "working": "\\text{Initial Tennis} = 200 \\times 0.25 = 50",
+                  "reasoning": "Find the specific count before the change occurs."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Adjust the count for Tennis based on the students switching. The total number of students (200) remains unchanged.",
+                  "working": "\\text{New Tennis Count} = 50 + 10 = 60",
+                  "reasoning": "10 students moved TO Tennis, increasing its count."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the new probability.",
+                  "working": "P(\\text{Tennis}) = \\frac{60}{200}",
+                  "reasoning": "New favorable outcomes divided by the constant total."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify.",
+                  "working": "= \\frac{3}{10}",
+                  "reasoning": "Final answer in simplest form (or 0.3)."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 2",
+        "title": "Favourite Sports Survey"
       },
       {
         "questionNumber": 102,

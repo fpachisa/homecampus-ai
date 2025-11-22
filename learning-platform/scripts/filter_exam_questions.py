@@ -81,7 +81,7 @@ def filter_exam_questions(source_file, drawing_file, diagram_file):
 
 if __name__ == "__main__":
     base_path = "/Users/farhat/Documents/AI Systems/AITutor/aicampus/learning-platform/public/curriculum-content/o-level/exam-papers/raw/"
-    source_path = os.path.join(base_path, "woodgrove-2024-paper-1-2.json")
+    source_path = os.path.join(base_path, "zhonghua-2024-paper-1-2.json")
     drawing_path = os.path.join(base_path, "1. questions_require_drawing.json")
     diagram_path = os.path.join(base_path, "2. questions-with-diagrams.json")
     

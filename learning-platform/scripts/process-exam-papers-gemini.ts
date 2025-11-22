@@ -81,6 +81,7 @@ async function processFile(filename: string) {
     CRITICAL: FORMATTING RULES
     use unicode as much as possible. Use LaTeX where there is no unicode support.
     LaTeX: $\\frac{5}{6}$ ALWAYS use $..$ delimiters.
+    for real $ currency sign always use \\$ and do not mix actual LaTeX code $..$ (delimiters) with real $ (currency sign)    
     
     Input JSON:
     ${JSON.stringify(jsonData)}

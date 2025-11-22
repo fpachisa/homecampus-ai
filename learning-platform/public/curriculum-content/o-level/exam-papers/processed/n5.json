@@ -45,6 +45,65 @@
         "title": "Algebraic Expansion"
       },
       {
+        "questionNumber": 1,
+        "questionId": "N5-zhonghua-2024-p1-q1",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Expand and simplify $2a-3(a+5b)$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$-a - 15b$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the bracket by multiplying $-3$ with each term inside.",
+                  "working": "$2a - 3(a) - 3(5b) = 2a - 3a - 15b$",
+                  "reasoning": "Apply the distributive law $c(x+y) = cx + cy$. Pay attention to the negative sign."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Group and simplify like terms involving $a$.",
+                  "working": "$(2a - 3a) - 15b = -a - 15b$",
+                  "reasoning": "Combine coefficients of the variable $a$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Factorise completely $-3x^{2}+12y^{2}$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$3(2y-x)(2y+x)$ or $-3(x-2y)(x+2y)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify and factor out the common factor of $-3$ (or $3$).",
+                  "working": "$-3(x^2 - 4y^2)$",
+                  "reasoning": "Always look for a common factor first to simplify the expression inside the brackets."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Recognize the expression inside the bracket as a difference of two squares.",
+                  "working": "$-3((x)^2 - (2y)^2) = -3(x-2y)(x+2y)$",
+                  "reasoning": "Apply the identity $a^2 - b^2 = (a-b)(a+b)$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Algebraic Expansion and Factorisation"
+      },
+      {
         "questionNumber": 2,
         "questionId": "N5-navalbase-2024-p1-q2",
         "topicID": "N5",
@@ -1807,6 +1866,54 @@
         "title": "Factorisation Applications"
       },
       {
+        "questionNumber": 15,
+        "questionId": "N5-zhonghua-2024-p1-q15",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise $10x^{2}+11x-6$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$(5x-2)(2x+3)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the 'AC' method or cross-multiplication. Find two numbers that multiply to $10 \\times -6 = -60$ and add to $11$.",
+                  "working": "Factors are $+15$ and $-4$. ($15 \\times -4 = -60$, $15 + (-4) = 11$)",
+                  "reasoning": "To factorise $ax^2+bx+c$, we split the middle term $bx$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Split the middle term $11x$ using these factors.",
+                  "working": "$10x^2 + 15x - 4x - 6$",
+                  "reasoning": "Rewrite the expression to prepare for factorization by grouping."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Factorise by grouping the first two and last two terms.",
+                  "working": "$5x(2x+3) - 2(2x+3)$",
+                  "reasoning": "Extract common factors from each pair."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factor out the common binomial $(2x+3)$.",
+                  "working": "$(5x-2)(2x+3)$",
+                  "reasoning": "Finalize the factorization."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Quadratic Factorisation"
+      },
+      {
         "questionNumber": 17,
         "questionId": "N5-anderson-2024-p1-q17",
         "topicID": "N5",
@@ -2231,6 +2338,60 @@
         "title": "Algebraic Manipulation"
       },
       {
+        "questionNumber": 19,
+        "questionId": "N5-zhonghua-2024-p1-q19",
+        "topicID": "N5",
+        "stem": "$2a=\\frac{x}{3x-2y}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Rearrange the formula to make x the subject.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$x = \\frac{4ay}{6a-1}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Remove the fraction by multiplying both sides by the denominator.",
+                  "working": "$2a(3x-2y) = x$",
+                  "reasoning": "To isolate $x$, we first need to linearize the equation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Expand the brackets on the left side.",
+                  "working": "$6ax - 4ay = x$",
+                  "reasoning": "Distribute $2a$ to access the $x$ term inside the parenthesis."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Collect all terms containing $x$ on one side and other terms on the opposite side.",
+                  "working": "$6ax - x = 4ay$",
+                  "reasoning": "Move terms to group the subject variable."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Factorise $x$ out on the left side.",
+                  "working": "$x(6a - 1) = 4ay$",
+                  "reasoning": "Isolate $x$ as a single factor."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Divide by the bracket to make $x$ the subject.",
+                  "working": "$x = \\frac{4ay}{6a-1}$",
+                  "reasoning": "Final algebraic manipulation to solve for $x$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Subject of Formula"
+      },
+      {
         "questionNumber": 20,
         "questionId": "N5-broadrick-2024-p1-q20",
         "topicID": "N5",
@@ -2271,6 +2432,54 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Algebraic Simplification"
+      },
+      {
+        "questionNumber": 20,
+        "questionId": "N5-zhonghua-2024-p1-q20",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write as a single fraction in its simplest form $\\frac{6x}{18x-3}-\\frac{1}{1-6x}.$",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{2x+1}{6x-1}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the denominator of the first fraction.",
+                  "working": "$\\frac{6x}{3(6x-1)} - \\frac{1}{1-6x}$",
+                  "reasoning": "Identify common factors to simplify the expression."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the first fraction and recognize the sign change needed in the second denominator.",
+                  "working": "$\\frac{2x}{6x-1} - \\frac{1}{-(6x-1)}$",
+                  "reasoning": "Note that $1-6x = -(6x-1)$. Simplifying $\\frac{6x}{3}$ gives $2x$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Adjust the sign of the second fraction to match denominators.",
+                  "working": "$\\frac{2x}{6x-1} + \\frac{1}{6x-1}$",
+                  "reasoning": "Subtracting a negative fraction is equivalent to addition."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Combine the numerators over the common denominator.",
+                  "working": "$\\frac{2x+1}{6x-1}$",
+                  "reasoning": "Add the numerators since denominators are identical."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Algebraic Fractions"
       },
       {
         "questionNumber": 24,
@@ -2975,6 +3184,65 @@
         "title": "Expansion and Simplification"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2211073352-p1-q101",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Factorise completely $2x^3 - 18x$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$2x(x-3)(x+3)$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Extract the common factor $2x$.",
+                  "working": "$2x(x^2 - 9)$",
+                  "reasoning": "Always look for the highest common factor first."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Factorise the difference of squares inside the bracket.",
+                  "working": "$2x(x^2 - 3^2) = 2x(x-3)(x+3)$",
+                  "reasoning": "Use $a^2-b^2 = (a-b)(a+b)$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Simplify $3p - 2(p - 4q) + q$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$p + 9q$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Expand the bracket.",
+                  "working": "$3p - 2p + 8q + q$",
+                  "reasoning": "Multiply $-2$ by $p$ and $-4q$. Watch the signs: $-2 \\times -4q = +8q$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Collect like terms.",
+                  "working": "$(3p - 2p) + (8q + q) = p + 9q$",
+                  "reasoning": "Simplify the expression."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Algebraic Simplification and Factorisation"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N5-gemini-1911-p1-102",
         "topicID": "N5",
@@ -3567,6 +3835,48 @@
         "totalMarks": 5,
         "paper": "Paper 1",
         "title": "Factorisation by Grouping and Identities"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N5-gemini-2211073352-p1-q102",
+        "topicID": "N5",
+        "stem": "Given that $\\frac{1}{u} + \\frac{1}{v} = \\frac{1}{f}$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Express $f$ in terms of $u$ and $v$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$f = \\frac{uv}{u+v}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Combine the fractions on the left side using a common denominator.",
+                  "working": "$\\frac{v}{uv} + \\frac{u}{uv} = \\frac{1}{f} \\implies \\frac{v+u}{uv} = \\frac{1}{f}$",
+                  "reasoning": "The common denominator for $u$ and $v$ is $uv$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Invert both sides of the equation to make $f$ the subject.",
+                  "working": "$\\frac{uv}{v+u} = f$",
+                  "reasoning": "If $\\frac{A}{B} = \\frac{1}{C}$, then $C = \\frac{B}{A}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final answer clearly.",
+                  "working": "$f = \\frac{uv}{u+v}$",
+                  "reasoning": "Ensure the subject is on the left."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Subject of Formula"
       },
       {
         "questionNumber": 103,
@@ -5484,6 +5794,60 @@
         "totalMarks": 10,
         "paper": "Paper 2",
         "title": "Advanced Algebra and Equations"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N5-gemini-2211073352-p2-q101",
+        "topicID": "N5",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Simplify $\\frac{3x}{x^2+x-6} - \\frac{2}{x+3}$ as a single fraction in its simplest form.",
+            "marks": 4,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{x+4}{(x+3)(x-2)}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Factorise the quadratic denominator.",
+                  "working": "$x^2+x-6 = (x+3)(x-2)$",
+                  "reasoning": "Find factors of $-6$ that add to $+1$ ($+3$ and $-2$)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Rewrite the expression with the common denominator.",
+                  "working": "$\\frac{3x}{(x+3)(x-2)} - \\frac{2}{x+3}$",
+                  "reasoning": "The lowest common multiple of the denominators is $(x+3)(x-2)$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Adjust the second fraction to have the common denominator.",
+                  "working": "$\\frac{3x}{(x+3)(x-2)} - \\frac{2(x-2)}{(x+3)(x-2)}$",
+                  "reasoning": "Multiply numerator and denominator of the second term by $(x-2)$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Combine numerators and expand the bracket.",
+                  "working": "$\\frac{3x - 2(x-2)}{(x+3)(x-2)} = \\frac{3x - 2x + 4}{(x+3)(x-2)}$",
+                  "reasoning": "Be careful with the negative sign: $-2 \\times -2 = +4$."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Simplify the numerator.",
+                  "working": "$\\frac{x+4}{(x+3)(x-2)}$",
+                  "reasoning": "Combine like terms $3x - 2x = x$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Algebraic Fractions"
       },
       {
         "questionNumber": 103,

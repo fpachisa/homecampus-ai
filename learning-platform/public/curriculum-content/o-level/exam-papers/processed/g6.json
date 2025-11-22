@@ -854,6 +854,71 @@
         "title": "Coordinate Geometry"
       },
       {
+        "questionNumber": 101,
+        "questionId": "G6-gemini-2211073352-p1-q101",
+        "topicID": "G6",
+        "stem": "Given the vectors $\\vec{a} = \\binom{5}{-12}$ and $\\vec{b} = \\binom{-2}{3}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find $|\\vec{a}|$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "13",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Apply the formula for the magnitude of a column vector.",
+                  "working": "$|\\vec{a}| = \\sqrt{x^2 + y^2} = \\sqrt{5^2 + (-12)^2}$",
+                  "reasoning": "The magnitude represents the length of the vector and is calculated using Pythagoras' theorem."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the values.",
+                  "working": "$= \\sqrt{25 + 144} = \\sqrt{169} = 13$",
+                  "reasoning": "Simplify the square root to find the final integer value."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Express $2\\vec{a} - 3\\vec{b}$ as a column vector.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "\\binom{16}{-33}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute the column vectors into the expression.",
+                  "working": "$2\\binom{5}{-12} - 3\\binom{-2}{3}$",
+                  "reasoning": "Replace the vector variables with their given column matrix forms."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform scalar multiplication.",
+                  "working": "$\\binom{10}{-24} - \\binom{-6}{9}$",
+                  "reasoning": "Multiply each component inside the vector by the scalar outside."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Subtract the vectors component-wise.",
+                  "working": "$\\binom{10 - (-6)}{-24 - 9} = \\binom{16}{-33}$",
+                  "reasoning": "Subtract the x-components and y-components separately."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Vector Magnitude and Arithmetic"
+      },
+      {
         "questionNumber": 102,
         "questionId": "G6-gemini-1911-p1-102",
         "topicID": "G6",
@@ -1107,6 +1172,65 @@
         "totalMarks": 5,
         "paper": "Paper 1",
         "title": "Coordinate Geometry"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G6-gemini-2211073352-p1-q102",
+        "topicID": "G6",
+        "stem": "The coordinates of point P are $(-2, 4)$ and the coordinates of point Q are $(3, -1)$. M is the midpoint of PQ.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the position vector $\\vec{PQ}$.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "\\binom{5}{-5}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the formula $\\vec{PQ} = \\vec{OQ} - \\vec{OP}$.",
+                  "working": "$\\vec{PQ} = \\binom{3}{-1} - \\binom{-2}{4}$",
+                  "reasoning": "To find the vector from one point to another, subtract the position vector of the start point from the end point."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the difference.",
+                  "working": "$\\binom{3 - (-2)}{-1 - 4} = \\binom{5}{-5}$",
+                  "reasoning": "Perform the subtraction for x and y components."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Find the position vector of M.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "\\binom{0.5}{1.5}",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the coordinates of the midpoint M.",
+                  "working": "$M = (\\frac{-2+3}{2}, \\frac{4+(-1)}{2}) = (\\frac{1}{2}, \\frac{3}{2})$",
+                  "reasoning": "The midpoint formula is $(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2})$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Write as a position vector.",
+                  "working": "$\\vec{OM} = \\binom{0.5}{1.5}$",
+                  "reasoning": "Convert the coordinates $(x, y)$ directly into the column vector $\\binom{x}{y}$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Position Vectors and Midpoints"
       }
     ],
     "Paper 2": [
@@ -1601,6 +1725,183 @@
         "totalMarks": 10,
         "paper": "Paper 2",
         "title": "Vectors and Coordinate Geometry"
+      },
+      {
+        "questionNumber": 9,
+        "questionId": "G6-zhonghua-2024-p2-q9",
+        "topicID": "G6",
+        "stem": "(a) Point A is translated to point B by the vector $\\binom{-5}{4}$. The position vector of point B is $\\binom{3}{8}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a_i",
+            "questionText": "Find $|\\vec{OA}|$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "8.94",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the position vector of A.",
+                  "working": "$\\vec{AB} = \\binom{-5}{4}$ and $\\vec{OB} = \\binom{3}{8}$.\n$\\vec{OA} = \\vec{OB} - \\vec{AB} = \\binom{3}{8} - \\binom{-5}{4} = \\binom{3 - (-5)}{8 - 4} = \\binom{8}{4}$",
+                  "reasoning": "Using vector addition rules, $\\vec{OA} + \\vec{AB} = \\vec{OB}$, so $\\vec{OA} = \\vec{OB} - \\vec{AB}$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the magnitude of $\\vec{OA}$.",
+                  "working": "$|\\vec{OA}| = \\sqrt{8^2 + 4^2} = \\sqrt{64 + 16} = \\sqrt{80}$",
+                  "reasoning": "Apply Pythagoras' theorem to the components of the vector."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Evaluate to 3 significant figures.",
+                  "working": "$\\sqrt{80} \\approx 8.944... \\approx 8.94$",
+                  "reasoning": "Standard O-level precision requirement is 3 significant figures."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "a_ii",
+            "questionText": "P is a point that lies on AB and has coordinates (k, 10). Find the value of k.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "0.5",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Form the vector $\\vec{BP}$.",
+                  "working": "$\\vec{BP} = \\vec{OP} - \\vec{OB} = \\binom{k}{10} - \\binom{3}{8} = \\binom{k-3}{2}$",
+                  "reasoning": "To compare direction, we find the vector between a known point on the line (B) and point P."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Use the condition that P lies on AB (collinear).",
+                  "working": "$\\vec{BP} = \\lambda \\vec{AB} \\Rightarrow \\binom{k-3}{2} = \\lambda \\binom{-5}{4}$",
+                  "reasoning": "If points are collinear, the vectors formed by them are scalar multiples of each other."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $\\lambda$ using the y-component.",
+                  "working": "$2 = 4\\lambda \\Rightarrow \\lambda = 0.5$",
+                  "reasoning": "Equate the bottom rows of the column vectors."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for k using the x-component.",
+                  "working": "$k - 3 = 0.5(-5) \\Rightarrow k - 3 = -2.5 \\Rightarrow k = 0.5$",
+                  "reasoning": "Substitute $\\lambda$ back into the x-component equation."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 10,
+        "paper": "Paper 2",
+        "title": "Vectors"
+      },
+      {
+        "questionNumber": 12,
+        "questionId": "G6-zhonghua-2024-p2-q12",
+        "topicID": "G6",
+        "stem": "ABCD is a parallelogram and its diagonals intersect at point M. $\\vec{AB}=\\binom{8}{2}and\\vec{AM}=\\binom{2.5}{-2}.$ The coordinates of A are (0,4).",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "i",
+            "questionText": "Show that the position vector of C is $\\binom{5}{0}.$",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See proof",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Relate M to diagonal AC.",
+                  "working": "Since M is the intersection of diagonals in a parallelogram, M is the midpoint of AC. Therefore, $\\vec{AC} = 2\\vec{AM} = 2\\binom{2.5}{-2} = \\binom{5}{-4}$.",
+                  "reasoning": "Diagonals of a parallelogram bisect each other."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate position vector of C.",
+                  "working": "$\\vec{OC} = \\vec{OA} + \\vec{AC} = \\binom{0}{4} + \\binom{5}{-4} = \\binom{5}{0}$.",
+                  "reasoning": "Add the position vector of A to the vector AC."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "ii",
+            "questionText": "Find the coordinates of vertex D.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "(-3, -2)",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use vector properties of a parallelogram.",
+                  "working": "$\\vec{CD} = \\vec{BA} = -\\vec{AB} = \\binom{-8}{-2}$.",
+                  "reasoning": "Opposite sides of a parallelogram are equal and parallel, but direction matters (C to D is opposite to A to B)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate position vector of D.",
+                  "working": "$\\vec{OD} = \\vec{OC} + \\vec{CD} = \\binom{5}{0} + \\binom{-8}{-2} = \\binom{-3}{-2}$.",
+                  "reasoning": "Vector addition."
+                },
+                {
+                  "step": 3,
+                  "explanation": "State coordinates.",
+                  "working": "Coordinates of D are $(-3, -2)$.",
+                  "reasoning": "Convert position vector to coordinate format."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "iii",
+            "questionText": "Find the length of diagonal BD.",
+            "marks": 4,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "13.6",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find position vector of B.",
+                  "working": "$\\vec{OB} = \\vec{OA} + \\vec{AB} = \\binom{0}{4} + \\binom{8}{2} = \\binom{8}{6}$.",
+                  "reasoning": "Need coordinates of B to find vector BD."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find vector $\\vec{BD}$.",
+                  "working": "$\\vec{BD} = \\vec{OD} - \\vec{OB} = \\binom{-3}{-2} - \\binom{8}{6} = \\binom{-11}{-8}$.",
+                  "reasoning": "Calculate the vector connecting the two points."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate magnitude.",
+                  "working": "$|\\vec{BD}| = \\sqrt{(-11)^2 + (-8)^2} = \\sqrt{121 + 64} = \\sqrt{185}$",
+                  "reasoning": "Pythagoras' theorem."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Final calculation.",
+                  "working": "$\\sqrt{185} \\approx 13.601... \\approx 13.6$",
+                  "reasoning": "Round to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Parallelogram Vectors"
       },
       {
         "questionNumber": 101,
@@ -2165,6 +2466,94 @@
         "totalMarks": 6,
         "paper": "Paper 2",
         "title": "Coordinate Geometry"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G6-gemini-2211073352-p2-q101",
+        "topicID": "G6",
+        "stem": "OABC is a trapezium where $OA$ is parallel to $CB$ and $OA = 2CB$. $\\vec{OA} = 2\\mathbf{a}$ and $\\vec{OC} = \\mathbf{c}$. Point X lies on AC such that $AX:XC = 2:1$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "i",
+            "questionText": "Express $\\vec{CB}$ in terms of $\\mathbf{a}$ and/or $\\mathbf{c}$.",
+            "marks": 1,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\mathbf{a}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Use the parallel and length properties given.",
+                  "working": "Since $OA \\parallel CB$ and $OA = 2CB$, $\\vec{OA} = 2\\vec{CB}$.\n$2\\mathbf{a} = 2\\vec{CB} \\Rightarrow \\vec{CB} = \\mathbf{a}$.",
+                  "reasoning": "Vectors that are parallel are scalar multiples. The direction is the same (O to A, C to B implied by trapezium shape usually, but strictly parallel implies $\\vec{CB} = k\\vec{OA}$)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "ii",
+            "questionText": "Express $\\vec{OX}$ in terms of $\\mathbf{a}$ and $\\mathbf{c}$.",
+            "marks": 3,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{2}{3}\\mathbf{a} + \\frac{2}{3}\\mathbf{c}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find $\\vec{AC}$.",
+                  "working": "$\\vec{AC} = \\vec{OC} - \\vec{OA} = \\mathbf{c} - 2\\mathbf{a}$.",
+                  "reasoning": "Triangle law of subtraction."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Find $\\vec{AX}$.",
+                  "working": "Since $AX:XC = 2:1$, $AX = \\frac{2}{3}AC$.\n$\\vec{AX} = \\frac{2}{3}(\\mathbf{c} - 2\\mathbf{a})$.",
+                  "reasoning": "Fraction of the whole vector."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Find $\\vec{OX}$.",
+                  "working": "$\\vec{OX} = \\vec{OA} + \\vec{AX} = 2\\mathbf{a} + \\frac{2}{3}\\mathbf{c} - \\frac{4}{3}\\mathbf{a} = \\frac{2}{3}\\mathbf{a} + \\frac{2}{3}\\mathbf{c}$.",
+                  "reasoning": "Vector addition path."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "iii",
+            "questionText": "Show that O, X and B are collinear.",
+            "marks": 3,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "See proof",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find $\\vec{OB}$.",
+                  "working": "$\\vec{OB} = \\vec{OC} + \\vec{CB} = \\mathbf{c} + \\mathbf{a}$.",
+                  "reasoning": "Path O to C to B."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Compare $\\vec{OX}$ and $\\vec{OB}$.",
+                  "working": "$\\vec{OX} = \\frac{2}{3}\\mathbf{a} + \\frac{2}{3}\\mathbf{c} = \\frac{2}{3}(\\mathbf{a} + \\mathbf{c})$.\n$\\vec{OB} = \\mathbf{a} + \\mathbf{c}$.\nTherefore, $\\vec{OX} = \\frac{2}{3}\\vec{OB}$.",
+                  "reasoning": "Factorize the expression for $\\vec{OX}$ to see if it is a scalar multiple of $\\vec{OB}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Conclude collinearity.",
+                  "working": "Since $\\vec{OX} = k\\vec{OB}$ where $k=\\frac{2}{3}$, and they share a common point O, the points O, X, and B are collinear.",
+                  "reasoning": "Standard condition for collinearity involving a common point."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 2",
+        "title": "Trapezium Vector Geometry"
       },
       {
         "questionNumber": 102,

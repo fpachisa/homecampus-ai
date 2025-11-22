@@ -116,6 +116,48 @@
         "title": "Solving Sine Equation"
       },
       {
+        "questionNumber": 3,
+        "questionId": "G4-zhonghua-2024-p1-q3",
+        "topicID": "G4",
+        "stem": "Given that $\\sin\\theta=0.4$, find the two possible values for angle $\\theta$, where $0^{\\circ}\\le\\theta\\le180^{\\circ}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the two possible values for angle $\\theta$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$23.6^{\\circ}, 156.4^{\\circ}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the basic reference angle ($\\alpha$) by taking the inverse sine of the positive value.",
+                  "working": "$\\alpha = \\sin^{-1}(0.4) \\approx 23.578^{\\circ}$",
+                  "reasoning": "To solve for $\\theta$, we first find the acute angle associated with the ratio."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Determine the quadrants where sine is positive.",
+                  "working": "Since $\\sin\\theta > 0$, $\\theta$ lies in the 1st or 2nd quadrant.",
+                  "reasoning": "Using the ASTC rule, sine is positive in Quadrants 1 and 2."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the values of $\\theta$ in the respective quadrants.",
+                  "working": "1st Quadrant: $\\theta = 23.578^{\\circ} \\approx 23.6^{\\circ}$\n2nd Quadrant: $\\theta = 180^{\\circ} - 23.578^{\\circ} = 156.422^{\\circ} \\approx 156.4^{\\circ}$",
+                  "reasoning": "Angles in the 2nd quadrant are found by subtracting the reference angle from $180^{\\circ}$. Angles are rounded to 1 decimal place."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Trigonometric Angle Solutions"
+      },
+      {
         "questionNumber": 4,
         "questionId": "G4-navalbase-2024-p1-q4",
         "topicID": "G4",
@@ -570,6 +612,48 @@
         "title": "Finding Side Length from Area"
       },
       {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2211073352-p1-q101",
+        "topicID": "G4",
+        "stem": "Given that $\\cos x = -0.55$, find the value of $x$ where $0^{\\circ} \\le x \\le 180^{\\circ}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the value of $x$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$123.4^{\\circ}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the basic reference angle ($\\alpha$) using the positive value of the ratio.",
+                  "working": "$\\alpha = \\cos^{-1}(0.55) \\approx 56.633^{\\circ}$",
+                  "reasoning": "We ignore the negative sign initially to find the reference acute angle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Identify the correct quadrant based on the sign of the cosine ratio.",
+                  "working": "Since $\\cos x < 0$ and $0^{\\circ} \\le x \\le 180^{\\circ}$, $x$ must be in the 2nd quadrant.",
+                  "reasoning": "Cosine is negative in the 2nd and 3rd quadrants, but the given range restricts us to the 1st and 2nd."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the final angle.",
+                  "working": "$x = 180^{\\circ} - 56.633^{\\circ} = 123.367^{\\circ} \\approx 123.4^{\\circ}$",
+                  "reasoning": "Subtract the reference angle from $180^{\\circ}$ for the 2nd quadrant solution."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Obtuse Angle Trigonometry"
+      },
+      {
         "questionNumber": 102,
         "questionId": "G4-gemini-1911-p1-102",
         "topicID": "G4",
@@ -813,6 +897,48 @@
         "totalMarks": 3,
         "paper": "Paper 1",
         "title": "Finding Obtuse Angle from Area"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "G4-gemini-2211073352-p1-q102",
+        "topicID": "G4",
+        "stem": "In a right-angled triangle $PQR$, $\\angle PQR = 90^{\\circ}$. Given that $\\tan P = \\frac{5}{12}$ and the length of $PQ = 24$ cm.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the length of $QR$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$10$ cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the trigonometric ratio for tangent.",
+                  "working": "$\\tan P = \\frac{\\text{Opposite}}{\\text{Adjacent}} = \\frac{QR}{PQ}$",
+                  "reasoning": "Identify the sides relative to angle $P$. $QR$ is opposite and $PQ$ is adjacent."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the known values and solve for $QR$.",
+                  "working": "$\\frac{5}{12} = \\frac{QR}{24}$",
+                  "reasoning": "Equate the given ratio to the ratio of the side lengths."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the length.",
+                  "working": "$QR = \\frac{5}{12} \\times 24 = 5 \\times 2 = 10$",
+                  "reasoning": "Isolate $QR$ to find the length."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 2,
+        "paper": "Paper 1",
+        "title": "Right-Angled Triangles"
       }
     ],
     "Paper 2": [
@@ -1206,6 +1332,83 @@
         "totalMarks": 6,
         "paper": "Paper 2",
         "title": "Triangle Area and Cosine Rule"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "G4-gemini-2211073352-p2-q101",
+        "topicID": "G4",
+        "stem": "In triangle $ABC$, $AB = 8$ cm, $AC = 12$ cm and $\\angle BAC = 120^{\\circ}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the length of $BC$.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$17.4$ cm",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the correct rule to use.",
+                  "working": "Using the Cosine Rule: $a^2 = b^2 + c^2 - 2bc \\cos A$",
+                  "reasoning": "We have two sides and the included angle (SAS), so the Cosine Rule is appropriate."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the values into the formula.",
+                  "working": "$BC^2 = 8^2 + 12^2 - 2(8)(12)\\cos(120^{\\circ})$",
+                  "reasoning": "Plug in $c=8$, $b=12$, and $A=120^{\\circ}$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Evaluate the expression.",
+                  "working": "$BC^2 = 64 + 144 - 192(-0.5)$\n$BC^2 = 208 + 96 = 304$",
+                  "reasoning": "Note that $\\cos(120^{\\circ}) = -0.5$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Calculate the final length.",
+                  "working": "$BC = \\sqrt{304} \\approx 17.435$",
+                  "reasoning": "Take the square root and round to 3 significant figures."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Calculate the area of triangle $ABC$.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$41.6$ cm$^2$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Select the area formula for a triangle given SAS.",
+                  "working": "Area = $\\frac{1}{2}bc \\sin A$",
+                  "reasoning": "Use the sine area formula with the two known sides and the included angle."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute the values.",
+                  "working": "Area = $\\frac{1}{2}(8)(12)\\sin(120^{\\circ})$",
+                  "reasoning": "Plug in the side lengths and the angle."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate the area.",
+                  "working": "Area = $48 \\times \\frac{\\sqrt{3}}{2} \\approx 41.569$",
+                  "reasoning": "Compute the value and round to 3 significant figures."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Cosine Rule and Area of Triangle"
       },
       {
         "questionNumber": 102,

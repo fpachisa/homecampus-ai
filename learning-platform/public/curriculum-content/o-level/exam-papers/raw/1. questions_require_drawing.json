@@ -1,7 +1,7 @@
 {
     "note": "Questions requiring drawing input are stored here separately. These questions will be re-enabled when the application supports drawing capabilities.",
     "source": "anderson-2024-paper-1-2",
-    "totalFilteredQuestions": 33,
+    "totalFilteredQuestions": 36,
     "questions": [
         {
             "questionNumber": 9,
@@ -1146,6 +1146,111 @@
             "totalMarks": 11,
             "paper": "Paper 2",
             "title": "Curve Sketching and Analysis"
+        },
+        {
+            "questionNumber": 9,
+            "questionId": "G2-zhonghua-2024-p1-q9",
+            "topicID": "G2",
+            "stem": "In this scale drawing, A is a house on a piece of land. Scale: 1 cm to 10 m. An object is buried 100m from house A at a bearing of $200^{\\circ}$",
+            "hasDiagram": true,
+            "diagramDescription": "A scale drawing with point A and a North arrow pointing upwards.",
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Mark and label on the drawing the position, T, of the object.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "A house B is located equidistant between house A and the object T, and is on a bearing of between $90^{\\circ}$ and $180^{\\circ}$ from house A. Mark and label on the drawing a possible location of house B.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 4,
+            "paper": "Paper 1",
+            "title": "Scale Drawing and Bearings"
+        },
+        {
+            "questionNumber": 21,
+            "questionId": "N1-zhonghua-2024-p1-q21",
+            "topicID": "N1",
+            "stem": "The population of a town was tracked across a few decades. The population, P, after t years can be modelled by the equation $P=n\\times2^{0.1t}$ where n is the population in the year 1960.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "The initial population of the town was 310 people. Find n.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "Find the population of the town in the year 2000.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "From the above data, Geraldine concluded that the population in the year 2040 will be 32 times the population in the year 1960. By using calculations, explain whether Geraldine is correct.",
+                    "marks": 3,
+                    "answerType": "proof"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Sketch the graph of the function $P=n\\times2^{0.1t}$, using the information obtained in parts (a) and (b). Show the values on the axes clearly.",
+                    "marks": 2,
+                    "answerType": "drawing"
+                }
+            ],
+            "totalMarks": 7,
+            "paper": "Paper 1",
+            "title": "Exponential Growth Model"
+        },
+        {
+            "questionNumber": 8,
+            "questionId": "N6-zhonghua-2024-p2-q8",
+            "topicID": "N6",
+            "stem": "Complete the table of values for $y=\\frac{1}{2}(x^{3}+x^{2})-4x+3$.",
+            "hasDiagram": false,
+            "diagramDescription": null,
+            "parts": [
+                {
+                    "partId": "a",
+                    "questionText": "Complete the table of values.",
+                    "marks": 1,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "b",
+                    "questionText": "On the grid given, draw the graph of $y=\\frac{1}{2}(x^{3}+x^{2})-4x+3.$ for $-4\\le x\\le3$.",
+                    "marks": 3,
+                    "answerType": "drawing"
+                },
+                {
+                    "partId": "c",
+                    "questionText": "Use your graph to write an inequality in k where $\\frac{1}{2}(x^{3}+x^{2})-4x+3=k$ has three solutions.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "d",
+                    "questionText": "Using the graph, find the gradient of the curve at $x=-2.7$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                },
+                {
+                    "partId": "e",
+                    "questionText": "By drawing a suitable straight line on the grid, solve the equation $x^{3}+x^{2}-6x-2=0$.",
+                    "marks": 2,
+                    "answerType": "numerical"
+                }
+            ],
+            "totalMarks": 10,
+            "paper": "Paper 2",
+            "title": "Graph of Cubic Function"
         }
     ]
 }

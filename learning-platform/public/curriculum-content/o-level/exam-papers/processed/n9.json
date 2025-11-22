@@ -931,6 +931,129 @@
         "title": "Matrices Word Problem"
       },
       {
+        "questionNumber": 23,
+        "questionId": "N9-zhonghua-2024-p1-q23",
+        "topicID": "N9",
+        "stem": "Gwee is making cookies and brownies. A single chocolate cookie requires 14g of sugar, 10g of butter and 10g of chocolate. A slice of brownie requires 30g of sugar, 19g of butter and 25g of chocolate. This information can be represented by the matrix $A=(\\begin{matrix}14&10&10\\\\ 30&19&25\\end{matrix})$. Gwee wants to make x cookies and 20 brownies. This information can be represented by the matrix $B=(x~20)$",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find, in terms of x, the matrix $T=BA$",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$T = \\begin{pmatrix} 14x+600 & 10x+380 & 10x+500 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication $BA$.",
+                  "working": "$T = \\begin{pmatrix} x & 20 \\end{pmatrix} \\begin{pmatrix} 14 & 10 & 10 \\\\ 30 & 19 & 25 \\end{pmatrix}$",
+                  "reasoning": "Substitute the given matrices B and A into the equation T = BA."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Multiply the row of matrix B by the columns of matrix A.",
+                  "working": "$\\text{Element 1} = (x)(14) + (20)(30) = 14x + 600$\n$\\text{Element 2} = (x)(10) + (20)(19) = 10x + 380$\n$\\text{Element 3} = (x)(10) + (20)(25) = 10x + 500$",
+                  "reasoning": "Apply the row-by-column multiplication rule. The resulting matrix will be of order $1 \\times 3$."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Write the final matrix T.",
+                  "working": "$T = \\begin{pmatrix} 14x+600 & 10x+380 & 10x+500 \\end{pmatrix}$",
+                  "reasoning": "Combine the calculated elements into the matrix format."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Explain what the elements of the matrix T represent.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "The elements represent the total amount (in grams) of sugar, butter, and chocolate required respectively to bake $x$ cookies and 20 brownies.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Analyze the components of the multiplication.",
+                  "working": "Matrix B represents quantities of items (cookies, brownies).\nMatrix A represents ingredients per item (sugar, butter, chocolate).",
+                  "reasoning": "When multiplying quantity $\\times$ ingredients/item, the result is the total ingredients needed."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Formulate the explanation.",
+                  "working": "First element corresponds to column 1 of A (Sugar).\nSecond element corresponds to column 2 of A (Butter).\nThird element corresponds to column 3 of A (Chocolate).",
+                  "reasoning": "The explanation must specifically relate to the context of the problem (ingredients for the specific batch)."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "In the supermarket, the ingredients are sold in the following quantities:\n1 pack of sugar (500g)\n1 packet of butter (200g)\n1 pack of chocolate (240g)\nIf Gwee buys 2 packets of sugar, find the largest integer value of x.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "28",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate the total amount of sugar available.",
+                  "working": "Total Sugar = $2 \\times 500\\text{g} = 1000\\text{g}$",
+                  "reasoning": "Determine the upper limit for the sugar constraint."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up an inequality using the first element of matrix T.",
+                  "working": "$14x + 600 \\le 1000$",
+                  "reasoning": "The amount of sugar needed ($14x + 600$) cannot exceed the amount bought (1000g)."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve the inequality for x.",
+                  "working": "$14x \\le 1000 - 600$\n$14x \\le 400$\n$x \\le \\frac{400}{14}$\n$x \\le 28.571...$",
+                  "reasoning": "Isolate x to find the maximum possible value."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Determine the largest integer.",
+                  "working": "Largest integer $x = 28$",
+                  "reasoning": "Since x represents the number of cookies, it must be an integer."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "d",
+            "questionText": "State the corresponding quantity of butter and chocolate required.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Butter: 660g, Chocolate: 780g",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $x=28$ into the expression for butter (2nd element of T).",
+                  "working": "Butter needed = $10(28) + 380$\n$= 280 + 380$\n$= 660\\text{g}$",
+                  "reasoning": "Use the value of x found in part (c) to calculate the specific butter requirement."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Substitute $x=28$ into the expression for chocolate (3rd element of T).",
+                  "working": "Chocolate needed = $10(28) + 500$\n$= 280 + 500$\n$= 780\\text{g}$",
+                  "reasoning": "Use the value of x found in part (c) to calculate the specific chocolate requirement."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 7,
+        "paper": "Paper 1",
+        "title": "Matrices Baking Ingredients"
+      },
+      {
         "questionNumber": 24,
         "questionId": "N9-canberra-2024-p1-q24",
         "topicID": "N9",
@@ -2165,6 +2288,94 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Matrix Multiplication - Florist"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2211073352-p1-q101",
+        "topicID": "N9",
+        "stem": "A furniture factory produces chairs and tables. A chair requires 4 planks of wood, 12 screws, and 0.5 litres of varnish. A table requires 10 planks of wood, 30 screws, and 1.5 litres of varnish. This information is represented by the matrix $M = \\begin{pmatrix} 4 & 12 & 0.5 \\\\ 10 & 30 & 1.5 \\end{pmatrix}$. The factory receives an order for $p$ chairs and 15 tables, which can be represented by the matrix $N = \\begin{pmatrix} p & 15 \\end{pmatrix}$.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Find the matrix $R = NM$ in terms of $p$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$R = \\begin{pmatrix} 4p+150 & 12p+450 & 0.5p+22.5 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication $NM$.",
+                  "working": "$R = \\begin{pmatrix} p & 15 \\end{pmatrix} \\begin{pmatrix} 4 & 12 & 0.5 \\\\ 10 & 30 & 1.5 \\end{pmatrix}$",
+                  "reasoning": "Substitute matrices N and M into the expression."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Perform row-by-column multiplication.",
+                  "working": "Element 1: $4(p) + 10(15) = 4p + 150$\nElement 2: $12(p) + 30(15) = 12p + 450$\nElement 3: $0.5(p) + 1.5(15) = 0.5p + 22.5$",
+                  "reasoning": "Multiply the row of N by each column of M."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "The factory has a stock of 1000 screws. Calculate the maximum number of chairs that can be produced to fulfill the order.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "45",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the expression for screws from Matrix R.",
+                  "working": "Screws required = $12p + 450$ (This is the second element of R).",
+                  "reasoning": "The second column of M corresponds to screws, so the second element of R represents total screws."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Set up the inequality based on the stock limit.",
+                  "working": "$12p + 450 \\le 1000$",
+                  "reasoning": "Total usage cannot exceed available stock."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $p$.",
+                  "working": "$12p \\le 550$\n$p \\le 45.833...$",
+                  "reasoning": "Isolate p."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Find the largest integer.",
+                  "working": "$p = 45$",
+                  "reasoning": "The number of chairs must be an integer."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Using the value of $p$ found in part (b), calculate the total litres of varnish required.",
+            "marks": 1,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "45 litres",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Substitute $p=45$ into the varnish expression.",
+                  "working": "Varnish = $0.5p + 22.5$\n$= 0.5(45) + 22.5$\n$= 22.5 + 22.5$\n$= 45$",
+                  "reasoning": "Use the third element of matrix R which represents total varnish."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 1",
+        "title": "Furniture Production Matrix"
       },
       {
         "questionNumber": 102,
@@ -3474,6 +3685,88 @@
         "totalMarks": 5,
         "paper": "Paper 2",
         "title": "Bakery Production Costs"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N9-gemini-2211073352-p2-q101",
+        "topicID": "N9",
+        "stem": "A cinema has three categories of tickets: Adult, Student, and Child. The ticket prices are different for Weekdays and Weekends. This is given by matrix $P = \\begin{pmatrix} 10 & 8 & 6 \\\\ 14 & 10 & 8 \\end{pmatrix}$, where Row 1 is Weekday prices and Row 2 is Weekend prices. The columns represent Adult, Student, and Child respectively. The attendance for two movie sessions is given by matrix $A = \\begin{pmatrix} 50 & 60 \\\\ 20 & 30 \\\\ 10 & 15 \\end{pmatrix}$, where the rows represent Adult, Student, and Child, and the columns represent Session 1 and Session 2.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Calculate the matrix $R = PA$.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$R = \\begin{pmatrix} 720 & 930 \\\\ 980 & 1260 \\end{pmatrix}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Set up the matrix multiplication.",
+                  "working": "$R = \\begin{pmatrix} 10 & 8 & 6 \\\\ 14 & 10 & 8 \\end{pmatrix} \\begin{pmatrix} 50 & 60 \\\\ 20 & 30 \\\\ 10 & 15 \\end{pmatrix}$",
+                  "reasoning": "Multiply the $2 \\times 3$ price matrix by the $3 \\times 2$ attendance matrix."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate Row 1 (Weekday Revenue).",
+                  "working": "R1C1: $10(50) + 8(20) + 6(10) = 500 + 160 + 60 = 720$\nR1C2: $10(60) + 8(30) + 6(15) = 600 + 240 + 90 = 930$",
+                  "reasoning": "Sum of products for Weekday prices against attendance."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Calculate Row 2 (Weekend Revenue).",
+                  "working": "R2C1: $14(50) + 10(20) + 8(10) = 700 + 200 + 80 = 980$\nR2C2: $14(60) + 10(30) + 8(15) = 840 + 300 + 120 = 1260$",
+                  "reasoning": "Sum of products for Weekend prices against attendance."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Describe what the element in the second row and first column of matrix $R$ represents.",
+            "marks": 1,
+            "answerType": "proof",
+            "solution": {
+              "finalAnswer": "It represents the total revenue collected from Session 1 if the ticket prices were at Weekend rates.",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the source of the row and column.",
+                  "working": "Row 2 comes from Matrix P (Weekend Prices).\nColumn 1 comes from Matrix A (Session 1 Attendance).",
+                  "reasoning": "Matrix multiplication combines the row label of the first matrix with the column label of the second matrix."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "c",
+            "questionText": "Calculate the difference in total revenue between the two sessions if they were both screened on a Weekday.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "\\$210",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Identify the relevant data from Matrix R.",
+                  "working": "Weekday revenues are in Row 1.\nSession 1 Revenue = 720\nSession 2 Revenue = 930",
+                  "reasoning": "Extract the calculated values from part (a)."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Calculate the difference.",
+                  "working": "Difference = $930 - 720 = 210$",
+                  "reasoning": "Subtract the smaller revenue from the larger revenue."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 5,
+        "paper": "Paper 2",
+        "title": "Cinema Ticket Revenue"
       },
       {
         "questionNumber": 102,

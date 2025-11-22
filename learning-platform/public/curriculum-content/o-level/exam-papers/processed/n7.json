@@ -355,6 +355,66 @@
         "title": "Fractional Equation"
       },
       {
+        "questionNumber": 8,
+        "questionId": "N7-zhonghua-2024-p1-q8",
+        "topicID": "N7",
+        "stem": "The cost of a pen is \\$a. The cost of a marker is \\$b. Amelia buys 5 pens and 3 markers for \\$11.90. Benny buys 8 pens and 2 markers for \\$14.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Form and solve two simultaneous equations to find the cost of a pen and the cost of a marker.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Cost of a pen = $1.30, Cost of a marker = $1.80",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Form the first equation based on Amelia's purchase.",
+                  "working": "5a + 3b = 11.90 \\quad \\text{--- (1)}",
+                  "reasoning": "Total cost is the sum of the cost of pens and markers."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Form the second equation based on Benny's purchase.",
+                  "working": "8a + 2b = 14.00 \\quad \\text{--- (2)}",
+                  "reasoning": "Total cost is the sum of the cost of pens and markers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify equation (2) to make substitution easier.",
+                  "working": "4a + b = 7.00 \\implies b = 7 - 4a \\quad \\text{--- (3)}",
+                  "reasoning": "Dividing the entire equation by 2 simplifies the coefficients."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Substitute equation (3) into equation (1).",
+                  "working": "5a + 3(7 - 4a) = 11.90\n5a + 21 - 12a = 11.90",
+                  "reasoning": "Substitution eliminates variable $b$ to solve for $a$."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Solve for $a$.",
+                  "working": "-7a = 11.90 - 21\n-7a = -9.10\na = 1.30",
+                  "reasoning": "Isolate $a$ by performing algebraic operations."
+                },
+                {
+                  "step": 6,
+                  "explanation": "Substitute the value of $a$ back into equation (3) to find $b$.",
+                  "working": "b = 7 - 4(1.30)\nb = 7 - 5.20\nb = 1.80",
+                  "reasoning": "Use the found value of $a$ to determine the value of $b$."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Simultaneous Equations Word Problem"
+      },
+      {
         "questionNumber": 11,
         "questionId": "N7-cchms-2024-p1-q11",
         "topicID": "N7",
@@ -664,6 +724,89 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Simultaneous Equations on Curve"
+      },
+      {
+        "questionNumber": 17,
+        "questionId": "N7-zhonghua-2024-p1-q17",
+        "topicID": "N7",
+        "stem": "Jade has a sum of money in her bank account. She gives half of it to her mother and uses \\$150. She receives \\$500 on her pay day into the bank account. She then uses 20% of the amount in her bank account and is left with not more than \\$800.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "By using x to represent the original sum of money in Jade's bank account, write down an inequality in x.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$0.8(\\frac{1}{2}x + 350) \\leq 800$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Express the amount remaining after giving half to her mother and using $150.",
+                  "working": "\\text{Amount} = \\frac{1}{2}x - 150",
+                  "reasoning": "Start with $x$, subtract half ($0.5x$) and subtract 150."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add the $500 received on pay day.",
+                  "working": "\\text{New Amount} = (\\frac{1}{2}x - 150) + 500 = \\frac{1}{2}x + 350",
+                  "reasoning": "Update the expression with the deposit."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Account for using 20% of the money. If she uses 20%, she keeps 80%.",
+                  "working": "\\text{Remaining} = 0.8(\\frac{1}{2}x + 350)",
+                  "reasoning": "Multiplying by 0.8 is more efficient than subtracting 20%."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Form the inequality based on 'not more than $800'.",
+                  "working": "0.8(\\frac{1}{2}x + 350) \\leq 800",
+                  "reasoning": "'Not more than' translates to $\\leq$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve your inequality to find the largest possible value of x.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 1300$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Divide both sides by 0.8.",
+                  "working": "\\frac{1}{2}x + 350 \\leq \\frac{800}{0.8}\n\\frac{1}{2}x + 350 \\leq 1000",
+                  "reasoning": "Isolate the term containing $x$."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract 350 from both sides.",
+                  "working": "\\frac{1}{2}x \\leq 1000 - 350\n\\frac{1}{2}x \\leq 650",
+                  "reasoning": "Further isolate the $x$ term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Multiply by 2 to solve for $x$.",
+                  "working": "x \\leq 650 \\times 2\nx \\leq 1300",
+                  "reasoning": "Clear the fraction."
+                },
+                {
+                  "step": 4,
+                  "explanation": "State the largest possible value.",
+                  "working": "\\text{Largest value} = 1300",
+                  "reasoning": "Since $x$ must be less than or equal to 1300, the maximum is 1300."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Inequality Word Problem"
       },
       {
         "questionNumber": 19,
@@ -1523,6 +1666,60 @@
         "title": "Linear Inequalities"
       },
       {
+        "questionNumber": 101,
+        "questionId": "N7-gemini-2211073352-p1-q101",
+        "topicID": "N7",
+        "stem": "At a concert, an adult ticket costs \\$x and a child ticket costs \\$y. Mr. Tan buys 2 adult tickets and 3 child tickets for \\$66. Mrs. Lee buys 5 adult tickets and 2 child tickets for \\$110.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Form two simultaneous equations and solve them to find the cost of an adult ticket and a child ticket.",
+            "marks": 3,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "Adult ticket = $18, Child ticket = $10",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Form the equations based on the purchases.",
+                  "working": "2x + 3y = 66 \\quad \\text{--- (1)}\n5x + 2y = 110 \\quad \\text{--- (2)}",
+                  "reasoning": "Translate the word problem into algebraic equations."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Make the coefficients of $y$ the same. Multiply (1) by 2 and (2) by 3.",
+                  "working": "4x + 6y = 132 \\quad \\text{--- (3)}\n15x + 6y = 330 \\quad \\text{--- (4)}",
+                  "reasoning": "Prepare for elimination method."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Subtract equation (3) from equation (4).",
+                  "working": "(15x - 4x) + (6y - 6y) = 330 - 132\n11x = 198",
+                  "reasoning": "Eliminate $y$ to solve for $x$."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $x$.",
+                  "working": "x = \\frac{198}{11}\nx = 18",
+                  "reasoning": "Find the cost of the adult ticket."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Substitute $x=18$ into equation (1) to find $y$.",
+                  "working": "2(18) + 3y = 66\n36 + 3y = 66\n3y = 30\ny = 10",
+                  "reasoning": "Find the cost of the child ticket."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 3,
+        "paper": "Paper 1",
+        "title": "Simultaneous Equations (Tickets)"
+      },
+      {
         "questionNumber": 102,
         "questionId": "N7-gemini-1911-p1-102",
         "topicID": "N7",
@@ -2059,6 +2256,89 @@
         "totalMarks": 4,
         "paper": "Paper 1",
         "title": "Fractional Equation"
+      },
+      {
+        "questionNumber": 102,
+        "questionId": "N7-gemini-2211073352-p1-q102",
+        "topicID": "N7",
+        "stem": "A water tank contains $V$ litres of water. During a drought, $\\frac{1}{3}$ of the water evaporates. Then, 200 litres of rainwater are collected into the tank. Finally, 25% of the water in the tank is used for irrigation. The remaining volume is at least 450 litres.",
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Write down an inequality in terms of $V$ to represent this information.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$0.75(\\frac{2}{3}V + 200) \\geq 450$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Calculate volume after evaporation.",
+                  "working": "V - \\frac{1}{3}V = \\frac{2}{3}V",
+                  "reasoning": "If 1/3 is lost, 2/3 remains."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Add the rainwater.",
+                  "working": "\\frac{2}{3}V + 200",
+                  "reasoning": "Addition of volume."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Account for irrigation usage (25% used means 75% remains).",
+                  "working": "0.75(\\frac{2}{3}V + 200)",
+                  "reasoning": "Using a multiplier (0.75 or 3/4) represents the remaining amount."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Form the inequality.",
+                  "working": "0.75(\\frac{2}{3}V + 200) \\geq 450",
+                  "reasoning": "'At least' corresponds to $\\geq$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Solve the inequality to find the minimum initial volume of water in the tank.",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$V = 600$ litres",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert decimal to fraction and divide.",
+                  "working": "\\frac{3}{4}(\\frac{2}{3}V + 200) \\geq 450\n\\frac{2}{3}V + 200 \\geq 450 \\times \\frac{4}{3}\n\\frac{2}{3}V + 200 \\geq 600",
+                  "reasoning": "Isolate the bracketed term."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Subtract 200.",
+                  "working": "\\frac{2}{3}V \\geq 400",
+                  "reasoning": "Isolate the $V$ term."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Solve for $V$.",
+                  "working": "V \\geq 400 \\times \\frac{3}{2}\nV \\geq 600",
+                  "reasoning": "Multiply by the reciprocal of the coefficient."
+                },
+                {
+                  "step": 4,
+                  "explanation": "State minimum value.",
+                  "working": "Minimum V = 600",
+                  "reasoning": "The inequality indicates V must be 600 or greater."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 1",
+        "title": "Inequality Word Problem (Volume)"
       }
     ],
     "Paper 2": [
@@ -3121,6 +3401,95 @@
         "totalMarks": 6,
         "paper": "Paper 2",
         "title": "Solving Quadratic Equations"
+      },
+      {
+        "questionNumber": 3,
+        "questionId": "N7-zhonghua-2024-p2-q3",
+        "topicID": "N7",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Solve $\\frac{2x}{5}=2+\\frac{3x-11}{15}.$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 6\\frac{1}{3}$ or $\\frac{19}{3}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Multiply the entire equation by the lowest common multiple (LCM) of the denominators (5 and 15), which is 15.",
+                  "working": "15 \\times \\frac{2x}{5} = 15 \\times 2 + 15 \\times \\frac{3x-11}{15}",
+                  "reasoning": "Eliminating fractions makes the equation linear and easier to solve."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the terms.",
+                  "working": "3(2x) = 30 + (3x - 11)\n6x = 30 + 3x - 11",
+                  "reasoning": "Perform the multiplication."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Group like terms.",
+                  "working": "6x - 3x = 30 - 11\n3x = 19",
+                  "reasoning": "Move $x$ terms to one side and constants to the other."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $x$.",
+                  "working": "x = \\frac{19}{3} = 6\\frac{1}{3}",
+                  "reasoning": "Isolate $x$."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Simplify $\\frac{12p^{2}q^{2}}{7r^{3}}\\div\\frac{3p^{5}r}{14q^{3}}$ giving your answer in positive index notation.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{8q^5}{p^3r^4}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Change the division sign to multiplication and invert the second fraction (reciprocal).",
+                  "working": "\\frac{12p^{2}q^{2}}{7r^{3}} \\times \\frac{14q^{3}}{3p^{5}r}",
+                  "reasoning": "Standard rule for dividing algebraic fractions."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Group numbers and variables together.",
+                  "working": "\\frac{12 \\times 14}{7 \\times 3} \\times \\frac{p^2}{p^5} \\times \\frac{q^2 \\times q^3}{1} \\times \\frac{1}{r^3 \\times r}",
+                  "reasoning": "Simplifying coefficients and indices separately reduces errors."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the coefficients.",
+                  "working": "\\frac{168}{21} = 8 \\quad \\text{or} \\quad \\frac{12}{3} \\times \\frac{14}{7} = 4 \\times 2 = 8",
+                  "reasoning": "Calculate the numerical value."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Simplify the indices using laws of indices.",
+                  "working": "p: p^{2-5} = p^{-3} = \\frac{1}{p^3}\nq: q^{2+3} = q^5\nr: \\frac{1}{r^{3+1}} = \\frac{1}{r^4}",
+                  "reasoning": "Apply $a^m \\div a^n = a^{m-n}$ and $a^m \\times a^n = a^{m+n}$."
+                },
+                {
+                  "step": 5,
+                  "explanation": "Combine into final fraction.",
+                  "working": "\\frac{8q^5}{p^3r^4}",
+                  "reasoning": "Ensure all indices are positive as requested."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Algebraic Fractions and Indices"
       },
       {
         "questionNumber": 31,
@@ -4465,6 +4834,89 @@
         "totalMarks": 3,
         "paper": "Paper 2",
         "title": "Subject of Formula"
+      },
+      {
+        "questionNumber": 101,
+        "questionId": "N7-gemini-2211073352-p2-q101",
+        "topicID": "N7",
+        "stem": null,
+        "hasDiagram": false,
+        "diagramDescription": null,
+        "parts": [
+          {
+            "partId": "a",
+            "questionText": "Solve $\\frac{3x-1}{4} - \\frac{2x}{3} = \\frac{1}{6}.$",
+            "marks": 2,
+            "answerType": "numerical",
+            "solution": {
+              "finalAnswer": "$x = 5$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Find the LCM of denominators 4, 3, and 6, which is 12. Multiply the whole equation by 12.",
+                  "working": "12(\\frac{3x-1}{4}) - 12(\\frac{2x}{3}) = 12(\\frac{1}{6})",
+                  "reasoning": "Clearing fractions simplifies the algebraic manipulation."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify each term.",
+                  "working": "3(3x-1) - 4(2x) = 2",
+                  "reasoning": "Expand the brackets carefully."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Expand and collect like terms.",
+                  "working": "9x - 3 - 8x = 2\nx - 3 = 2",
+                  "reasoning": "Combine the $x$ terms."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Solve for $x$.",
+                  "working": "x = 2 + 3\nx = 5",
+                  "reasoning": "Final isolation of variable."
+                }
+              ]
+            }
+          },
+          {
+            "partId": "b",
+            "questionText": "Simplify $\\frac{5a^3b}{3c^2} \\div \\frac{15a^5}{9b^2c}$ giving your answer in positive index notation.",
+            "marks": 2,
+            "answerType": "algebraic",
+            "solution": {
+              "finalAnswer": "$\\frac{b^3}{a^2c}$",
+              "stepByStep": [
+                {
+                  "step": 1,
+                  "explanation": "Convert division to multiplication by flipping the second fraction.",
+                  "working": "\\frac{5a^3b}{3c^2} \\times \\frac{9b^2c}{15a^5}",
+                  "reasoning": "Standard algebraic fraction division rule."
+                },
+                {
+                  "step": 2,
+                  "explanation": "Simplify the numerical coefficients.",
+                  "working": "\\frac{5 \\times 9}{3 \\times 15} = \\frac{45}{45} = 1",
+                  "reasoning": "Cancel out common factors in numbers."
+                },
+                {
+                  "step": 3,
+                  "explanation": "Simplify the variables using index laws.",
+                  "working": "a: \\frac{a^3}{a^5} = \\frac{1}{a^2}\nb: b^1 \\times b^2 = b^3\nc: \\frac{c}{c^2} = \\frac{1}{c}",
+                  "reasoning": "Subtract powers for division, add for multiplication."
+                },
+                {
+                  "step": 4,
+                  "explanation": "Combine results.",
+                  "working": "1 \\times \\frac{1}{a^2} \\times b^3 \\times \\frac{1}{c} = \\frac{b^3}{a^2c}",
+                  "reasoning": "Assemble final expression."
+                }
+              ]
+            }
+          }
+        ],
+        "totalMarks": 4,
+        "paper": "Paper 2",
+        "title": "Algebraic Fractions and Indices (Practice)"
       },
       {
         "questionNumber": 102,
