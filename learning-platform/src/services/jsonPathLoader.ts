@@ -154,7 +154,7 @@ class JsonPathLoader {
             descriptor: {
                 aiGeneratedQuestions: false,
                 difficulty: 'medium', // Default
-                mathTool: null,
+                mathTool: undefined,
                 preWrittenQuestions: preWrittenQuestions,
                 // Required fields for type safety (even if unused for pre-written)
                 problemDescription: [],
